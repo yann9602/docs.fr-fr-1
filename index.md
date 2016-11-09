@@ -1,39 +1,42 @@
 ---
 layout: HubPage
-
-title: .NET Core Documentation
-description:
-keywords:
-author:
-manager:
+title: Documentation .NET Core
+description: 
+keywords: 
+author: 
+manager: 
 ms.date: 06/20/2016
 ms.topic: hubpage
-ms.prod:
-ms.service:
-ms.technology:
-ms.suite:
-ms.assetid:
+ms.prod: 
+ms.service: 
+ms.technology: 
+ms.suite: 
+ms.assetid: 
+translationtype: Human Translation
+ms.sourcegitcommit: 1c68e4bcceffb895a758a6f8abdda41cdafc3590
+ms.openlocfilehash: b9abce6984193957930ebf1ba74822b4cdfe6789
+
 ---
 
 <article id="main">
     <section id="hero-content" class="graph">
-        <h1>.NET Documentation</h1>
-        <h2>Welcome to .NET! This is the home of the technical documentation for .NET Core, C#, F# and Visual Basic, including basic concepts, getting started instructions, tutorials and samples. You can look for an answer to a challenging problem or learn .NET for the first time.</h2>
+        <h1>Documentation .NET</h1>
+        <h2>Bienvenue sur .NET ! C’est ici que vous trouverez la documentation technique concernant .NET Core, C#, F# et Visual Basic, notamment des concepts de base, des instructions pour bien démarrer, des didacticiels et des exemples. Vous pouvez rechercher la solution à un problème difficile ou apprendre à vous servir de .NET.</h2>
     </section>
     <aside class="alert section-border">
-        <p>Download .NET Core today</p>
+        <p>Téléchargez .NET Core dès aujourd’hui</p>
         <ol class="action-list">
-            <li><a href="https://dot.net/core" class="button-bordered button-translucent">Get it!</a></li>
+            <li><a href="https://dot.net/core" class="button-bordered button-translucent">Télécharger</a></li>
         </ol>
     </aside>
     <section id="featured" class="container">
-        <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Featured Content</h2>
+        <h2 class="section-heading"><span class="icon icon-lightbulb-checked"></span> Contenu proposé</h2>
         <div class="features row">
             <ul class="column-half">
-                <li><a href="docs/core/index.md">Get started with .NET Core</a></li>
+                <li><a href="docs/core/index.md">Bien démarrer avec .NET Core</a></li>
             </ul>
             <ul class="column-half">
-                <li><a href="https://docs.asp.net">Get started with ASP.NET Core</a></li>
+                <li><a href="https://docs.asp.net">Bien démarrer avec ASP.NET Core</a></li>
             </ul>
         </div>
     </section>
@@ -44,30 +47,30 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Learn the Platform</p>
+                            <p>Connaître la plateforme</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Get started with .NET Core and learn the fundamentals of the .NET platform.
+Découvrez .NET Core et les bases de la plateforme .NET.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="docs/welcome.md">
-                                    <h3>.NET Core Documentation</h3>
-                                    <p>Learn .NET Core concepts and language syntax.</p>
+                                    <h3>Documentation .NET Core</h3>
+                                    <p>Découvrez les concepts et la syntaxe du langage de .NET Core.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="api/index.md">
-                                    <h3>API Reference</h3>
-                                    <p>Browse the .NET API, organized by namespace.</p>
+                                    <h3>Informations de référence sur les API</h3>
+                                    <p>Parcourez les API .NET, classées par espace de noms.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="docs/core/index.md">
-                                    <h3>Getting Started with .NET Core</h3>
-                                    <p>Learn how to build .NET Core console apps at the command-line or in Visual Studio.</p>
+                                    <h3>Bien démarrer avec .NET Core</h3>
+                                    <p>Apprenez à créer des applications console .NET Core sur la ligne de commande ou dans Visual Studio.</p>
                                 </a>
                             </li>
                         </ul>
@@ -80,7 +83,7 @@ ms.assetid:
                             <p>Web &amp; Cloud</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how to create scalable web apps with ASP.NET Core, including deployment to Microsoft Azure.
+Apprenez à créer des applications web évolutives avec ASP.NET Core et à les déployer sur Microsoft Azure.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
@@ -88,19 +91,19 @@ ms.assetid:
                             <li class="column column-third">
                                 <a href="https://docs.asp.net">
                                     <h3>ASP.NET Core</h3>
-                                    <p>Learn how to build web sites and services using ASP.NET Core.</p>
+                                    <p>Apprenez à créer des sites web et des services à l’aide d’ASP.NET Core.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://docs.asp.net/en/latest/data">
-                                    <h3>Accessing Data</h3>
-                                    <p>Learn about Entity Framework for modeling your databases or how to access SQL Server and other databases using .NET.</p>
+                                    <h3>Accès aux données</h3>
+                                    <p>Découvrez comment utiliser Entity Framework pour modéliser vos bases de données et comment accéder à SQL Server et autres bases de données à l’aide de .NET.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://www.visualstudio.com/features/azure-tools-vs">
                                     <h3>Microsoft Azure</h3>
-                                    <p>Get Started developing applications using Microsoft Azure.</p>
+                                    <p>Commencez à développer des applications à l’aide de Microsoft Azure.</p>
                                 </a>
                             </li>
                         </ul>
@@ -113,21 +116,21 @@ ms.assetid:
                             <p>Mobile</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how .NET Core and Xamarin can enable you to develop for iOS and Android using C# or about building applications using the Universal Windows Platform (UWP) for Windows 10 devices.
+Découvrez comment .NET Core et Xamarin peuvent vous aider à développer des applications pour iOS et Android à l’aide du langage C#, et comment créer des applications à l’aide de la plateforme Windows universelle (UWP) pour les appareils Windows 10.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="https://developer.xamarin.com/guides/ios/getting_started/">
-                                    <h3>Android and iOS apps</h3>
-                                    <p>Learn how to build native iOS and Android applications with Xamarin.</p>
+                                    <h3>Applications Android et iOS</h3>
+                                    <p>Découvrez comment créer des applications iOS et Android natives avec Xamarin.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://developer.microsoft.com/en-us/windows/getstarted">
-                                    <h3>Universal Windows Platform</h3>
-                                    <p>Learn how to build Windows 10 UWP apps, which can run on all Windows 10 devices.</p>
+                                    <h3>Plateforme Windows universelle</h3>
+                                    <p>Apprenez à créer des applications UWP Windows 10 pouvant être exécutées sur tous les appareils Windows 10.</p>
                                 </a>
                             </li>
                         </ul>
@@ -137,24 +140,24 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Desktop</p>
+                            <p>Bureau</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how you can build desktop applications for Windows and macOS.
+Découvrez comment vous pouvez créer des applications de bureau pour Windows et Mac OS.
                         </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="https://msdn.microsoft.com/library/54xbah2z.aspx">
-                                    <h3>Windows Desktop</h3>
-                                    <p>Learn how to build Windows desktop applications with Windows Forms or Windows Presentation Framework (WPF).</p>
+                                    <h3>Bureau Windows</h3>
+                                    <p>Apprenez à créer des applications de bureau Windows avec Windows Forms et Windows Presentation Framework (WPF).</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="https://developer.xamarin.com/guides/cross-platform/macios/">
-                                    <h3>macOS Desktop</h3>
-                                    <p>Learn how to build macOS desktop applications with Xamarin.</p>
+                                    <h3>Poste de travail Mac OS</h3>
+                                    <p>Apprenez à créer des applications de bureau Mac OS avec Xamarin.</p>
                                 </a>
                             </li>
                         </ul>
@@ -164,30 +167,29 @@ ms.assetid:
                     <header class="journey-step-header row">
                         <div class="title column-third">
                             <span class="icon icon-tip"></span>
-                            <p>Gaming</p>
+                            <p>Jeux</p>
                         </div>
                         <p class="description column-two-thirds">
-                            Learn how to build games using .NET
-                        </p>
+Apprenez à créer des jeux à l’aide de .NET </p>
                     </header>
                     <section class="journey-step-elements content">
                         <ul class="row">
                             <li class="column column-third">
                                 <a href="http://docs.cryengine.com/display/CEPROG/CE%23+Programming">
                                     <h3>CRYENGINE</h3>
-                                    <p>Build games for desktop, console and mobile in C# with CRYENGINE.</p>
+                                    <p>Créez des jeux pour ordinateurs, consoles et mobiles en langage C# avec CRYENGINE.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="http://www.monogame.net/documentation/?page=main">
                                     <h3>MonoGame</h3>
-                                    <p>Build games for desktop, console and mobile in C# with MonoGame.</p>
+                                    <p>Créez des jeux pour ordinateurs, consoles et mobiles en langage C# avec MonoGame.</p>
                                 </a>
                             </li>
                             <li class="column column-third">
                                 <a href="http://docs.unity3d.com/Manual/index.html">
                                     <h3>Unity</h3>
-                                    <p>Build games for desktop, console and mobile in C# with Unity.</p>
+                                    <p>Créez des jeux pour ordinateurs, consoles et mobiles en langage C# avec Unity.</p>
                                 </a>
                             </li>
                         </ul>
@@ -197,3 +199,9 @@ ms.assetid:
         </section>
     </div>
 </article>
+
+
+
+<!--HONumber=Nov16_HO1-->
+
+
