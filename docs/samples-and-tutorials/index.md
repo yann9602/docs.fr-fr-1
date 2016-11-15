@@ -99,6 +99,6 @@ Une version définitive du code que vous allez générer est disponible dans le 
 Ce didacticiel montre comment déployer une application console existante sur un conteneur Windows. Une version définitive du code que vous allez générer est disponible dans le [dépôt dotnet / docs sur GitHub](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator).
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

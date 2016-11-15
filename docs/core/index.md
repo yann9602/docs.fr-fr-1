@@ -155,6 +155,6 @@ Les principales différences entre .NET Core et Mono sont les suivantes :
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

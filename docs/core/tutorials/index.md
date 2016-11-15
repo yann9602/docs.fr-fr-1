@@ -30,6 +30,6 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 Pour consulter des didacticiels sur le développement d’applications web ASP.NET Core, accédez à la [documentation ASP.NET Core](https://docs.asp.net).
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

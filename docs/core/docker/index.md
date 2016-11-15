@@ -26,6 +26,6 @@ Les didacticiels suivants sont disponibles pour en savoir plus sur l’utilisati
 Pour consulter des didacticiels sur le développement d’applications web ASP.NET Core, accédez à la [documentation ASP.NET Core](https://docs.asp.net).
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
