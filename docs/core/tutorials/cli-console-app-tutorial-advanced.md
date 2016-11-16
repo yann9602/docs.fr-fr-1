@@ -16,7 +16,7 @@ ms.openlocfilehash: 62c70ffdd25af909f110b3173231d436060ba383
 
 ---
 
-# <a name="-writing-net-core-console-apps-using-the-cli-tools-an-advanced-stepbystep-guide"></a>🔧 Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé
+# <a name="-writing-net-core-console-apps-using-the-cli-tools-an-advanced-stepbystep-guide"></a>Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé
 
 > **Remarque**
 > 
