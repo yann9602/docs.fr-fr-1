@@ -1,6 +1,6 @@
 ---
-title: Frameworks
-description: Frameworks
+title: Infrastructures et cibles
+description: "Explique les concepts de cibles de framework lors de l’écriture de code .NET."
 keywords: .NET, .NET Core
 author: richlander
 manager: wpickett
@@ -11,12 +11,12 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
 translationtype: Human Translation
-ms.sourcegitcommit: 246d381246e78a27b7097d6b8126f421b52014de
-ms.openlocfilehash: 5b87ddfcfc66ebc05e2e559517180f93813a0806
+ms.sourcegitcommit: 38561c2d25c6950d166bf706f4306c867e683b04
+ms.openlocfilehash: 72022e09f7604c80b45c4aac001daaad41fe24af
 
 ---
 
-# <a name="frameworks"></a>Frameworks
+# <a name="frameworks-and-targets"></a>Infrastructures et cibles
 
 L’écosystème .NET présente un concept de frameworks. Les frameworks définissent l’API que vous pouvez utiliser pour cibler une plateforme en particulier. Le .NET Framework 4.6 est l’une de ces plateformes. Les frameworks sont utilisés dans Visual Studio et d’autres IDE et éditeurs pour vous fournir l’ensemble d’API qui vous convient. Ils sont également utilisés par NuGet, pour la production et la consommation de packages NuGet, afin de vérifier que vous produisez et utilisez les packages appropriés (et les ressources sous-jacentes) pour le framework que vous ciblez. Les frameworks sont en quelque sorte une accréditation de l’écosystème .NET. Ils sont là pour vous éviter, vous et vos clients, de faire des erreurs et de voir l’exception @System.MissingMethodExceptiont les autres exceptions du même type pendant l’exécution.
 
@@ -61,6 +61,6 @@ Vous pouvez référencer une famille de frameworks à l’aide des formes courte
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 

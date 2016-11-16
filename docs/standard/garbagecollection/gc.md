@@ -11,14 +11,14 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
 translationtype: Human Translation
-ms.sourcegitcommit: 213ce098bcc2b5e31c55e759d895254d5ca33caa
-ms.openlocfilehash: 68815f7e7e96483eff218138dd1612a20e2eb1e6
+ms.sourcegitcommit: b022f5b9e8ac81c00a6e5aa189feab4e7157dfd4
+ms.openlocfilehash: 644fd73e79e0b6059991e1fb2e37c2d6bc812d7c
 
 ---
 
 # <a name="automatic-memory-management-and-garbage-collection"></a>Gestion automatique de la mémoire et garbage collection
 
-La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de l’exécution managée. Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.
+La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de l'exécution managée. Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.
 
 ## <a name="allocating-memory"></a>Allocation de mémoire
 
@@ -59,6 +59,6 @@ Pour la majorité des objets créés par votre application, vous pouvez laisser 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 
