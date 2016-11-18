@@ -13,7 +13,7 @@ ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 translationtype: Human Translation
 ms.sourcegitcommit: cb2e83b35b5a4aae14c89bcbdf26b064885a477a
-ms.openlocfilehash: af6c83755068cc311b59c1a337898c177cc6d537
+ms.openlocfilehash: 6b5bb7042fdaa453966a4fc576291b3c90ee5410
 
 ---
 
@@ -147,7 +147,7 @@ Les deux principaux frameworks basés sur des packages utilisés avec .NET Core 
 
 Le framework .NET Standard (TFM : `netstandard`) représente les API définies par et créées par-dessus la [bibliothèque .NET Standard](../standard/library.md). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Elles sont prises en charge sur n’importe quel runtime compatible .NET Standard, tels que .NET Core, .NET Framework et Mono/Xamarin. Chacun de ces runtimes prend en charge un ensemble de versions .NET Standard, selon les API qu’ils implémentent. 
 
-Le métapackage `NETStandard.Library` cible le framework `netstandard`. La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et aux API associées qui définissent la bibliothèque .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
+Le métapackage `NETStandard.Library` cible le framework `netstandard`. La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit la quarantaine de bibliothèques .NET et les API associées qui définissent la bibliothèque .NET Standard et y donne accès. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 
 Une [version de NETStandard.Library](versions/index.md) donnée correspond à la plus haute version de `netstandard` qu’elle a exposée (via sa fermeture). La référence de framework dans project.json sert à sélectionner les ressources appropriées dans les packages sous-jacents. Dans ce cas, les ressources `netstandard1.6` sont nécessaires, contrairement à `netstandard1.4` ou `net46`, par exemple. 
 
@@ -188,6 +188,6 @@ Le métapackage `Microsoft.NETCore.App` cible le framework `netcoreapp`. Il donn
 La plupart des bibliothèques supplémentaires fournies par `Microsoft.NETCore.App` ciblent aussi `netstandard`, vu que leurs dépendances sont satisfaites par d’autres bibliothèques `netstandard`. Cela signifie que les bibliothèques `netstandard` peuvent aussi référencer ces packages comme dépendances. 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
