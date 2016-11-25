@@ -11,24 +11,24 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
 translationtype: Human Translation
-ms.sourcegitcommit: aeb199a9aeb1584570ad2a2942e2f22c75a59616
-ms.openlocfilehash: aafa0c110dc3a2820f7e050d70b9450af1db35d8
+ms.sourcegitcommit: 37e14d5cdf1593f6a8b1ecee9d9828647b023548
+ms.openlocfilehash: 5493ccb77e62d20d5101728ef8ab1744ea697fb8
 
 ---
 
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS à l’aide de la ligne de commande
 
-Ce guide indique comment utiliser les outils d’interface de ligne de commande (CLI) .NET Core pour créer des applications console multiplateformes.  Il démarre avec l’application console la plus simple qui s’étend finalement sur plusieurs projets, notamment le test. Vous allez ajouter ces fonctionnalités pas à pas, en vous basant sur ce que vous avez déjà vu et créé.
+Ce guide indique comment utiliser les outils d’interface de ligne de commande (CLI) .NET Core pour créer des applications console multiplateformes de base.
 
 Si vous n’êtes pas familiarisé avec l’ensemble d’outils CLI .NET Core, consultez [Vue d’ensemble du SDK .NET Core](../sdk.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
-Avant de commencer, vérifiez que vous disposez des [outils d’interface de ligne de commande (CLI) .NET Core les plus récents](https://www.microsoft.com/net/core).  Vous aurez également besoin d’un éditeur de texte.
+Avant de commencer, vérifiez que vous disposez des [outils d’interface de ligne de commande (CLI) .NET Core les plus récents](https://www.microsoft.com/net/core). Vous aurez également besoin d’un éditeur de texte.
 
 ## <a name="hello-console-app"></a>Application console Hello
 
-Tout d’abord, accédez à un dossier ou créez-en un avec le nom de votre choix.  « Hello » est le nom choisi pour l’exemple de code qui se trouve [ici](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/Hello).
+Accédez à un dossier ou créez-en un avec le nom de votre choix. « Hello » est le nom choisi pour l’exemple de code qui se trouve [ici](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/Hello).
 
 Ouvrez une invite de commandes, puis tapez les commandes suivantes :
 
@@ -97,7 +97,7 @@ Hello, World!
 
 Vous pouvez également exécuter [`dotnet build`](../tools/dotnet-build.md) pour compiler le code sans exécuter les applications console de la build.
 
-### <a name="building-a-selfcontained-application"></a>Création d’une application autonome
+### <a name="building-a-self-contained-application"></a>Création d’une application autonome
 
 Essayons de compiler une application autonome plutôt qu’une application portable. Pour en savoir plus sur les différents types d’applications et sur la façon dont ils sont déployés, vous pouvez consultez des informations supplémentaires sur les [types de portabilité dans .NET Core](../deploying/index.md).
 
@@ -647,6 +647,6 @@ Si vous êtes intéressé par un exemple d’application console plus avancé, r
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
