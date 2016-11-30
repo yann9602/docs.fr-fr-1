@@ -26,7 +26,7 @@ Le moteur d’expression régulière .NET est un analyseur d’expression régul
 
 Quand les moteurs DFA exécutent des critères spéciaux, leur ordre de traitement est piloté par la chaîne d’entrée. Les moteurs commencent au début de la chaîne d’entrée et continuent de manière séquentielle pour déterminer si le caractère suivant correspond au modèle d’expression régulière. Ils peuvent garantir une correspondance avec la chaîne la plus longue possible. Étant donné qu’ils ne testent jamais le même caractère deux fois, les moteurs DFA ne prennent pas en charge la rétroaction. Toutefois, étant donné qu’un moteur DFA contient uniquement un état fini, il ne peut pas rechercher un modèle avec des références arrière, et comme il ne construit pas d’expansion explicite, il ne peut pas capturer de sous-expressions.
 
-Contrairement aux moteurs DFA, quand les moteurs NFA classiques exécutent des critères spéciaux, leur ordre de traitement est piloté par le modèle d’expression régulière. Lorsqu’il traite un élément de langage particulier, le moteur utilise une correspondance gourmande ; autrement dit, il cherche la chaîne d’entrée la plus longue possible. Mais il enregistre également son état après avoir trouvé la correspondance correcte d’une sous-expression. Si une correspondance finit par échouer, le moteur peut revenir à un état enregistré pour tenter d’autres correspondances. Ce processus consistant à abandonner une correspondance réussie de sous-expression pour que les éléments de langage ultérieurs dans l’expression régulière puissent également correspondre est appelé rétroaction. Les moteurs NFA utilisent la rétroaction pour tester toutes les expansions possibles d’une expression régulière dans un ordre spécifique et accepter la première correspondance. Comme un moteur NFA classique construit une expansion spécifique de l’expression régulière pour obtenir une correspondance correcte, il peut capturer des correspondances de sous-expressions et des références arrière correspondantes. Toutefois, comme un moteur NFA classique utilise la rétroaction, il peut visiter le même état plusieurs fois s’il y parvient par différents chemins. Par conséquent, il peut s’exécuter lentement de façon exponentielle dans le pire des cas. Comme un moteur NFA classique accepte la première correspondance trouvée, il peut également en négliger d’autres (éventuellement plus longues).
+Contrairement aux moteurs DFA, quand les moteurs NFA classiques exécutent des critères spéciaux, leur ordre de traitement est piloté par le modèle d’expression régulière. Lorsqu’il traite un élément de langage particulier, le moteur utilise une correspondance gourmande ; autrement dit, il cherche la chaîne d’entrée la plus longue possible. Mais il enregistre également son état après avoir trouvé la correspondance correcte d’une sous-expression. Si une correspondance finit par échouer, le moteur peut revenir à un état enregistré pour tenter d’autres correspondances. Ce processus consistant à abandonner une correspondance réussie de sous-expression pour que les éléments de langage ultérieurs dans l’expression régulière puissent également correspondre est appelé rétroaction. Les moteurs NFA utilisent la rétroaction pour tester toutes les expansions possibles d’une expression régulière dans un ordre spécifique et accepter la première correspondance. Comme un moteur NFA classique construit une expansion spécifique de l’expression régulière pour obtenir une correspondance correcte, il peut capturer des correspondances de sous-expressions et des références arrière correspondantes. Toutefois, comme un moteur NFA classique utilise la rétroaction, il peut visiter le même état plusieurs fois s’il y parvient par différents chemins. Par conséquent, il peut s’exécuter lentement de façon exponentielle dans le pire des cas. Comme un moteur NFA classique accepte la première correspondance trouvée, il peut également en négliger d’autres (éventuellement plus longues).
 
 Les moteurs NFA POSIX sont comme les moteurs NFA classiques, sauf qu’ils poursuivent la rétroaction jusqu’à garantir qu’ils ont trouvé la correspondance la plus longue possible. Ainsi, un moteur NFA POSIX est plus lent qu’un moteur NFA classique. Quand vous utilisez un moteur NFA POSIX, vous ne pouvez pas favoriser une correspondance plus courte au détriment d’une plus longue en modifiant l’ordre de la recherche rétroactive. 
 
@@ -39,11 +39,11 @@ Les moteurs NFA classiques ont la préférence des programmeurs, car ils offrent
 
 Pour tirer parti des avantages d’un moteur NFA classique, le moteur d’expression régulière .NET inclut un ensemble complet de constructions pour permettre aux programmeurs de diriger le moteur de rétroaction. Ces constructions peuvent être utilisées pour rechercher des correspondances plus rapidement ou pour favoriser des expansions spécifiques par rapport à d’autres.
 
-Les autres fonctionnalités du moteur d’expression régulière .NET sont les suivantes : 
+Les autres fonctionnalités du moteur d’expression régulière .NET sont les suivantes : 
 
 ### <a name="lazy-quantifiers"></a>Quantificateurs paresseux
 
-Quantificateurs paresseux : **??**, __*?__, **+?**, **{**_n_**,**_m_**}?**. Ces constructions indiquent au moteur de rétroaction de rechercher d’abord le nombre minimal de répétitions. Par opposition, les quantificateurs gourmands ordinaires essaient de trouver d’abord le nombre maximal de répétitions. L’exemple suivant illustre la différence entre les deux. Une expression régulière correspond à une phrase se terminant par un nombre qu’un groupe de capture est destiné à extraire. L’expression régulière `.+(\d+)\.` inclut le quantificateur gourmand `.+`, qui amène le moteur d’expression régulière à capturer uniquement le dernier chiffre du nombre. Par opposition, l’expression régulière `.+?(\d+)\.` inclut le quantificateur paresseux `.+?`, qui amène le moteur d’expression régulière à capturer le nombre entier.
+Quantificateurs paresseux : **??**, __*?__, **+?**, **{**_n_**,**_m_**}?**. Ces constructions indiquent au moteur de rétroaction de rechercher d’abord le nombre minimal de répétitions. Par opposition, les quantificateurs gourmands ordinaires essaient de trouver d’abord le nombre maximal de répétitions. L’exemple suivant illustre la différence entre les deux. Une expression régulière correspond à une phrase se terminant par un nombre qu’un groupe de capture est destiné à extraire. L’expression régulière `.+(\d+)\.` inclut le quantificateur gourmand `.+`, qui amène le moteur d’expression régulière à capturer uniquement le dernier chiffre du nombre. Par opposition, l’expression régulière `.+?(\d+)\.` inclut le quantificateur paresseux `.+?`, qui amène le moteur d’expression régulière à capturer le nombre entier.
 
 ```csharp
 using System;
@@ -126,7 +126,7 @@ Pour plus d’informations sur les quantificateurs paresseux, consultez [Quantif
 
 ### <a name="positive-lookahead"></a>Préanalyse positive
 
-Préanalyse positive : **(?**=_sous-expression_**)**. Cette fonctionnalité permet au moteur de rétroaction de revenir au même endroit dans le texte après avoir mis en correspondance une sous-expression. Elle s’avère utile pour effectuer une recherche dans le texte en vérifiant plusieurs modèles qui démarrent à la même position. Elle permet également au moteur de vérifier qu’une sous-chaîne existe à la fin de la correspondance sans inclure cette sous-chaîne dans le texte correspondant. L’exemple suivant utilise la préanalyse positive pour extraire les mots d’une phrase qui ne sont pas suivis de symboles de ponctuation.
+Préanalyse positive : **(?**=_sous-expression_**)**. Cette fonctionnalité permet au moteur de rétroaction de revenir au même endroit dans le texte après avoir mis en correspondance une sous-expression. Elle s’avère utile pour effectuer une recherche dans le texte en vérifiant plusieurs modèles qui démarrent à la même position. Elle permet également au moteur de vérifier qu’une sous-chaîne existe à la fin de la correspondance sans inclure cette sous-chaîne dans le texte correspondant. L’exemple suivant utilise la préanalyse positive pour extraire les mots d’une phrase qui ne sont pas suivis de symboles de ponctuation.
 
 ```csharp
 using System;
@@ -179,7 +179,7 @@ Pour plus d’informations sur les assertions de préanalyse positive, consultez
 
 ### <a name="negative-lookahead"></a>Préanalyse négative
 
-Préanalyse négative : **(?!**_sous-expression_**)**. Cette fonctionnalité ajoute la possibilité de mettre en correspondance une expression uniquement si une sous-expression ne correspond pas. Elle s’avère particulièrement efficace pour affiner une recherche, car il est souvent plus simple de fournir une expression pour un cas à éliminer qu’une expression pour les cas à inclure. Par exemple, il est difficile d’écrire une expression pour les mots qui ne commencent pas par « non ». L’exemple suivant utilise la préanalyse négative pour les exclure.
+Préanalyse négative : **(?!**_sous-expression_**)**. Cette fonctionnalité ajoute la possibilité de mettre en correspondance une expression uniquement si une sous-expression ne correspond pas. Elle s’avère particulièrement efficace pour affiner une recherche, car il est souvent plus simple de fournir une expression pour un cas à éliminer qu’une expression pour les cas à inclure. Par exemple, il est difficile d’écrire une expression pour les mots qui ne commencent pas par « non ». L’exemple suivant utilise la préanalyse négative pour les exclure.
 
 ```csharp
 using System;
@@ -226,7 +226,7 @@ Le modèle d'expression régulière `\b(?!non)\w+\b` est défini comme indiqué 
 Modèle | Description
 ------- | -----------
 `\b` | Commencer la correspondance à la limite d'un mot.
-`(?!non)` | Préanalyser pour garantir que la chaîne actuelle ne commence pas par « non ». Si c’est le cas, la correspondance échoue.
+`(?!non)` | Préanalyser pour garantir que la chaîne actuelle ne commence pas par « non ». Si c’est le cas, la correspondance échoue.
 `(\w+)` | Mettre en correspondance un ou plusieurs caractères alphabétiques.
 `\b` | Terminer la correspondance à la limite d'un mot.
  
@@ -234,7 +234,7 @@ Pour plus d’informations sur les assertions de préanalyse négative, consulte
 
 ### <a name="conditional-evaluation"></a>Évaluation conditionnelle
 
-Évaluation conditionnelle : **(?(**_expression_**)**_oui_&#124;_non_**)** et**(?(**_nom_**)**_oui_&#124;_non_**)**, où *expression* est une sous-expression à trouver, *nom* est le nom d’un groupe de capture, *oui* est la chaîne à trouver si *expression* est trouvée ou *nom* est un groupe capturé valide et non vide, et *non* est la sous-expression à trouver si *expression* est introuvable ou *nom* n’est pas un groupe capturé valide et non vide. Grâce à cette fonctionnalité, le moteur peut rechercher à l’aide de plusieurs autres modèles, selon le résultat d’une correspondance de sous-expression précédente ou le résultat d’une assertion de largeur nulle. Cette fonctionnalité permet une forme plus puissante de référence arrière qui permet, par exemple, de rechercher une sous-expression en fonction d’une sous-expression précédente trouvée. L’expression régulière utilisée dans l’exemple suivant trouve les paragraphes destinés à une utilisation à la fois interne et publique. Les paragraphes destinés à un usage interne uniquement commencent par une balise `<PRIVATE>`. Le modèle d’expression régulière `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` utilise une évaluation conditionnelle pour assigner le contenu des paragraphes destinés à une utilisation publique et interne à des groupes de capture distincts. Ces paragraphes peuvent ensuite être gérés différemment.
+Évaluation conditionnelle : **(?(**_expression_**)**_oui_&#124;_non_**)** et**(?(**_nom_**)**_oui_&#124;_non_**)**, où *expression* est une sous-expression à trouver, *nom* est le nom d’un groupe de capture, *oui* est la chaîne à trouver si *expression* est trouvée ou *nom* est un groupe capturé valide et non vide, et *non* est la sous-expression à trouver si *expression* est introuvable ou *nom* n’est pas un groupe capturé valide et non vide. Grâce à cette fonctionnalité, le moteur peut rechercher à l’aide de plusieurs autres modèles, selon le résultat d’une correspondance de sous-expression précédente ou le résultat d’une assertion de largeur nulle. Cette fonctionnalité permet une forme plus puissante de référence arrière qui permet, par exemple, de rechercher une sous-expression en fonction d’une sous-expression précédente trouvée. L’expression régulière utilisée dans l’exemple suivant trouve les paragraphes destinés à une utilisation à la fois interne et publique. Les paragraphes destinés à un usage interne uniquement commencent par une balise `<PRIVATE>`. Le modèle d’expression régulière `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` utilise une évaluation conditionnelle pour assigner le contenu des paragraphes destinés à une utilisation publique et interne à des groupes de capture distincts. Ces paragraphes peuvent ensuite être gérés différemment.
 
 ```csharp
 using System;
@@ -328,11 +328,11 @@ Pour plus d’informations sur l’évaluation conditionnelle, consultez [Constr
 
 ### <a name="balancing-group-definitions"></a>Définitions de groupe d'équilibrage
 
-Définitions de groupe d’équilibrage : **(?<**_nom1-nom2_**>** _sous-expression_**)**. Cette fonctionnalité permet au moteur d’expression régulière d’effectuer un suivi des constructions imbriquées telles que les parenthèses ou les crochets ouvrants et fermants. Pour obtenir un exemple, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
+Définitions de groupe d’équilibrage : **(?<**_nom1-nom2_**>** _sous-expression_**)**. Cette fonctionnalité permet au moteur d’expression régulière d’effectuer un suivi des constructions imbriquées telles que les parenthèses ou les crochets ouvrants et fermants. Pour obtenir un exemple, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
 
 ### <a name="nonbacktracking-subexpressions"></a>Sous-expressions non rétroactives
 
-Sous-expressions non rétroactives (également appelées sous-expressions gourmandes) : **(?>**_sous-expression_**)**. Cette fonctionnalité permet au moteur de rétroaction de garantir qu’une sous-expression correspond uniquement à la première correspondance trouvée pour cette sous-expression, comme si l’expression s’exécutait indépendamment de l’expression qui la contient. Si vous n’utilisez pas cette construction, les recherches rétroactives à partir de la plus grande expression peuvent modifier le comportement d’une sous-expression. Par exemple, l’expression régulière `(a+)\w` trouve un ou plusieurs caractères « a », ainsi qu’un caractère de mot qui suit la séquence de caractères « a », puis assigne la séquence de caractères « a » au premier groupe de capture. Toutefois, si le dernier caractère de la chaîne d’entrée est également un « a », il est mis en correspondance par l’élément de langage `\w` et n’est pas inclus dans le groupe capturé.
+Sous-expressions non rétroactives (également appelées sous-expressions gourmandes) : **(?>**_sous-expression_**)**. Cette fonctionnalité permet au moteur de rétroaction de garantir qu’une sous-expression correspond uniquement à la première correspondance trouvée pour cette sous-expression, comme si l’expression s’exécutait indépendamment de l’expression qui la contient. Si vous n’utilisez pas cette construction, les recherches rétroactives à partir de la plus grande expression peuvent modifier le comportement d’une sous-expression. Par exemple, l’expression régulière `(a+)\w` trouve un ou plusieurs caractères « a », ainsi qu’un caractère de mot qui suit la séquence de caractères « a », puis assigne la séquence de caractères « a » au premier groupe de capture. Toutefois, si le dernier caractère de la chaîne d’entrée est également un « a », il est mis en correspondance par l’élément de langage `\w` et n’est pas inclus dans le groupe capturé.
 
 ```csharp
 using System;
@@ -406,7 +406,7 @@ End Module
 '             Group 1: aaaaa
 ```
 
-L’expression régulière `((?>a+))\w` empêche ce comportement. Étant donné que tous les caractères « a » consécutifs sont trouvés sans rétroaction, le premier groupe de capture inclut tous les caractères « a » consécutifs. Si les caractères « a » ne sont pas suivis d’au moins un caractère autre que « a », la correspondance échoue.
+L’expression régulière `((?>a+))\w` empêche ce comportement. Étant donné que tous les caractères « a » consécutifs sont trouvés sans rétroaction, le premier groupe de capture inclut tous les caractères « a » consécutifs. Si les caractères « a » ne sont pas suivis d’au moins un caractère autre que « a », la correspondance échoue.
 
 ```csharp
 using System;
@@ -480,7 +480,7 @@ End Module
 
 Pour plus d’informations sur les sous-expressions non rétroactives, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
 
-### <a name="righttoleft-matching"></a>Mise en correspondance de droite à gauche
+### <a name="right-to-left-matching"></a>Mise en correspondance de droite à gauche
 
 La mise en correspondance de droite à gauche est spécifiée en fournissant l’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) à une méthode de mise en correspondance de constructeur de classe ou d’instance statique [Regex](xref:System.Text.RegularExpressions.Regex). Cette fonctionnalité s’avère utile lors de la recherche de droite à gauche au lieu de gauche à droite, ou dans les cas où il est plus efficace de commencer une correspondance dans la partie droite du modèle plutôt que la partie gauche. Comme l’illustre l’exemple suivant, l’utilisation de la mise en correspondance de droite à gauche peut modifier le comportement des quantificateurs gourmands. L’exemple effectue deux recherches d’une phrase qui se termine par un nombre. La recherche de gauche à droite qui utilise le quantificateur gourmand `+` trouve l’un des six chiffres dans la phrase, tandis que la recherche de droite à gauche trouve les six chiffres. Pour obtenir la description du modèle d’expression régulière, consultez l’exemple qui illustre les quantificateurs paresseux plus haut dans cette section.
 
@@ -555,7 +555,7 @@ Pour plus d’informations sur la mise en correspondance de droite à gauche, co
 
 ### <a name="positive-and-negative-lookbehind"></a>Postanalyse positive et négative
 
-Postanalyse positive et négative : **(?<**=_sous-expression_**)** pour une postanalyse positive et **(?<!**_sous-expression_**)** pour une postanalyse négative. Cette fonctionnalité est semblable à la préanalyse décrite précédemment dans cette rubrique. Comme le moteur d’expression régulière autorise une mise en correspondance complète de droite à gauche, les expressions régulières autorisent les postanalyses illimitées. La postanalyse positive et négative peut également servir à éviter d’imbriquer des quantificateurs lorsque la sous-expression imbriquée est un sur-ensemble d’une expression externe. Les expressions régulières comportant ces quantificateurs imbriqués offrent souvent des performances médiocres. L’exemple suivant vérifie qu’une chaîne commence et se termine par un caractère alphanumérique et que tout autre caractère contenu dans la chaîne fait partie d’un sur-ensemble plus grand. Il forme une partie de l’expression régulière utilisée pour valider des adresses e-mail. Pour plus d’informations, consultez [Guide pratique : vérifier que des chaînes sont dans un format d’adresse e-mail valide](verify-format.md).
+Postanalyse positive et négative : **(?<**=_sous-expression_**)** pour une postanalyse positive et **(?<!**_sous-expression_**)** pour une postanalyse négative. Cette fonctionnalité est semblable à la préanalyse décrite précédemment dans cette rubrique. Comme le moteur d’expression régulière autorise une mise en correspondance complète de droite à gauche, les expressions régulières autorisent les postanalyses illimitées. La postanalyse positive et négative peut également servir à éviter d’imbriquer des quantificateurs lorsque la sous-expression imbriquée est un sur-ensemble d’une expression externe. Les expressions régulières comportant ces quantificateurs imbriqués offrent souvent des performances médiocres. L’exemple suivant vérifie qu’une chaîne commence et se termine par un caractère alphanumérique et que tout autre caractère contenu dans la chaîne fait partie d’un sur-ensemble plus grand. Il forme une partie de l’expression régulière utilisée pour valider des adresses e-mail. Pour plus d’informations, consultez [Guide pratique : vérifier que des chaînes sont dans un format d’adresse e-mail valide](verify-format.md).
 
 ```csharp
 using System;
@@ -615,7 +615,7 @@ Modèle | Description
 ------- | ----------- 
 `^` | Commencer la correspondance au début de la chaîne.
 `[A-Z0-9]` | Mettre en correspondance n’importe quel caractère numérique ou alphanumérique. (La comparaison respecte la casse.)
-`([-!#$%&'.*+/=?^`{}&#124;~\w])*` | Mettre en correspondance zéro, une ou plusieurs occurrences de n’importe quel caractère de mot ou de l’un des caractères suivants : -, !, #, $, %, &, ', ., *, +, /, =, ?, ^, `, {, }, &#124;, ou ~.
+`([-!#$%&'.*+/=?^`{}&#124;~\w])*` | Mettre en correspondance zéro, une ou plusieurs occurrences de n’importe quel caractère de mot ou de l’un des caractères suivants : -, !, #, $, %, &, ', ., *, +, /, =, ?, ^, `, {, }, &#124;, ou ~.
 `(?<=[A-Z0-9])` | Postanalyser jusqu’au caractère précédent, qui doit être numérique ou alphanumérique. (La comparaison respecte la casse.)
 `$` | Termine la correspondance à la fin de la chaîne.
  
@@ -629,10 +629,10 @@ Titre | Description
 [Rétroaction](backtracking.md) | Fournit des informations sur la manière dont la rétroaction d’expression régulière se ramifie pour trouver d’autres correspondances.
 [Compilation et réutilisation](compilation.md) | Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.
 [Cohérence de thread](thread-safety.md) | Fournit des informations sur la sécurité des threads d’expression régulière et explique quand vous devez synchroniser l’accès aux objets d’expression régulière.
-[Expressions régulières .NET](regular-expressions.md) | Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.
+[Expressions régulières .NET](regular-expressions.md) | Fournit une vue d’ensemble de l’aspect du langage de programmation des expressions régulières.
 [Modèle objet d’expression régulière](object-model.md) | Fournit des informations et des exemples de code illustrant l’utilisation des classes d’expression régulière.
 [Exemples d’expressions régulières](regex-examples.md) | Contient des exemples de code qui illustrent l’utilisation des expressions régulières dans des applications courantes.
-[Langage des expressions régulières - Aide-mémoire](quick-ref.md) | Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.
+[Langage des expressions régulières - Aide-mémoire](quick-ref.md) | Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.
  
 ## <a name="reference"></a>Référence
 
