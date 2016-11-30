@@ -36,13 +36,13 @@ Membre RegexOptions | Caractère inline | Effet
  
 ## <a name="specifying-the-options"></a>Spécification des options
 
-Vous pouvez spécifier les options des expressions régulières de trois façons :
+Vous pouvez spécifier les options des expressions régulières de trois façons :
 
 * Dans le paramètre *options* d’un constructeur de classe [System.Text.RegularExpressions.Regex](xref:System.Text.RegularExpressions.Regex) comme [Regex.Regex(String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions)) ou d’une méthode de mise en correspondance de modèle statique (Shared en Visual Basic) comme [Regex.Match(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)). Le paramètre *options* est une combinaison OR au niveau du bit de valeurs énumérées [System.Text.RegularExpressions.RegexOptions](xref:System.Text.RegularExpressions.RegexOptions). 
 
   Quand des options sont fournies à une instance de [Regex](xref:System.Text.RegularExpressions.Regex) à l’aide du paramètre *options* d’un constructeur de classe, les options sont affectées à la propriété [System.Text.RegularExpressions.RegexOptions](xref:System.Text.RegularExpressions.RegexOptions). Cependant, la propriété [System.Text.RegularExpressions.RegexOptions](xref:System.Text.RegularExpressions.RegexOptions) ne reflète pas les options inline dans le modèle d’expression régulière lui-même. 
 
-  L'exemple suivant illustre cette situation. Il utilise le paramètre *options* de la méthode [Regex.Match(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise le paramètre *options* de la méthode [Regex.Match(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
   ```csharp
   string pattern = @"d \w+ \s";
@@ -71,7 +71,7 @@ Vous pouvez spécifier les options des expressions régulières de trois façons
 
 * En appliquant des options inline dans un modèle d’expression régulière avec la syntaxe **(?imnsx-imnsx)**. L’option s’applique au modèle depuis le point où elle est définie jusqu’à la fin du modèle ou jusqu’au point auquel sa définition est annulée par une autre option inline. Notez que la propriété [System.Text.RegularExpressions.RegexOptions](xref:System.Text.RegularExpressions.RegexOptions) d’une instance de [Regex](xref:System.Text.RegularExpressions.Regex) ne reflète pas ces options inline. Pour plus d’informations, consultez la rubrique [Constructions diverses dans les expressions régulières](miscellaneous.md).
 
-  L'exemple suivant illustre cette situation. Il utilise des options inline pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise des options inline pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
   ```csharp
   string pattern = @"(?ix) d \w+ \s";
@@ -98,7 +98,7 @@ Vous pouvez spécifier les options des expressions régulières de trois façons
 
 * En appliquant des options inline dans une construction de regroupement particulière au sein d’un modèle d’expression régulière avec la syntaxe **(?imnsx-imnsx:**_sous-expression_**)**. L'absence de signe avant un jeu d'options active ce dernier, tandis qu'un signe moins le désactive. (**?** est une partie fixe de la syntaxe de la construction du langage qui est obligatoire, que les options soient activées ou désactivées.) L'option ne s'applique qu'à ce groupe. Pour plus d’informations, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
 
-  L'exemple suivant illustre cette situation. Il utilise des options inline dans une construction de regroupement pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise des options inline dans une construction de regroupement pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
   ```csharp
   string pattern = @"\b(?ix: d \w+)\s";
@@ -130,7 +130,7 @@ Si des options sont spécifiées inline, un signe moins (-) avant une option ou 
 > Si les options d’expression régulière spécifiées dans le paramètre options d’un appel de constructeur ou de méthode entrent en conflit avec les options spécifiées inline dans un modèle d’expression régulière, ces dernières sont utilisées.
  
 
-Les cinq options d’expression régulière suivantes peuvent être définies avec le paramètre *options* et inline :
+Les cinq options d’expression régulière suivantes peuvent être définies avec le paramètre *options* et inline :
 
 * [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase)
 
@@ -142,7 +142,7 @@ Les cinq options d’expression régulière suivantes peuvent être définies av
 
 * [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace)
 
-Les cinq options d’expression régulière suivantes peuvent être définies avec le paramètre *options*, mais ne peuvent pas être définies inline :
+Les cinq options d’expression régulière suivantes peuvent être définies avec le paramètre *options*, mais ne peuvent pas être définies inline :
 
 * [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None)
 
@@ -192,7 +192,7 @@ Les sections suivantes répertorient les options prises en charge par les expres
 
 ## <a name="default-options"></a>Options par défaut
 
-L’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None) indique qu’aucune option n’a été spécifiée et que le moteur d’expression régulière utilise son comportement par défaut. Ce dernier est détaillé ci-après :
+L’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None) indique qu’aucune option n’a été spécifiée et que le moteur d’expression régulière utilise son comportement par défaut. Ce dernier est détaillé ci-après :
 
 * Le modèle est interprété en tant qu'expression régulière canonique, plutôt qu'en tant qu'expression régulière ECMAScript.
 
@@ -215,11 +215,11 @@ L’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.
  
 Comme l’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None) représente le comportement par défaut du moteur d’expression régulière, elle est rarement spécifiée de manière explicite dans un appel de méthode. Un constructeur ou une méthode de mise en correspondance de modèle statique sans paramètre options est appelé à la place.
 
-## <a name="caseinsensitive-matching"></a>Correspondance qui ne respecte pas la casse
+## <a name="case-insensitive-matching"></a>Correspondance qui ne respecte pas la casse
 
 L’option [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase), ou l’option inline **i**, fournit une correspondance qui ne respecte pas la casse. Par défaut, les conventions de gestion de la casse de la culture actuelle sont utilisées.
 
-L'exemple suivant définit un modèle d'expression régulière, `\bthe\w*\b`, qui met en correspondance tous les mots commençant par « the ». Comme le premier appel de la méthode Match utilise la comparaison avec respect de la casse par défaut, la chaîne « The » n’apparaît pas parmi les résultats de ce premier appel. Par contre, elle est trouvée quand la méthode [Match](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) est appelée avec le paramètre options défini sur [IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase). 
+L'exemple suivant définit un modèle d'expression régulière, `\bthe\w*\b`, qui met en correspondance tous les mots commençant par « the ». Comme le premier appel de la méthode Match utilise la comparaison avec respect de la casse par défaut, la chaîne « The » n’apparaît pas parmi les résultats de ce premier appel. Par contre, elle est trouvée quand la méthode [Match](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) est appelée avec le paramètre options défini sur [IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase). 
 
 ```csharp
 using System;
@@ -275,7 +275,7 @@ End Module
 '       Found them at index 18.
 ```
 
-L’exemple suivant modifie le modèle d’expression régulière proposé dans l’exemple précédent de manière à utiliser des options inline au lieu du paramètre *options* pour effectuer une comparaison sans respect de la casse. Le premier modèle définit l’option de non-respect de la casse dans une construction de regroupement qui s’applique uniquement à la lettre « t » de la chaîne « the ». Comme la construction de l’option intervient au début du modèle, le second modèle applique l’option de non-respect de la casse à l’expression régulière entière.
+L’exemple suivant modifie le modèle d’expression régulière proposé dans l’exemple précédent de manière à utiliser des options inline au lieu du paramètre *options* pour effectuer une comparaison sans respect de la casse. Le premier modèle définit l’option de non-respect de la casse dans une construction de regroupement qui s’applique uniquement à la lettre « t » de la chaîne « the ». Comme la construction de l’option intervient au début du modèle, le second modèle applique l’option de non-respect de la casse à l’expression régulière entière.
 
 ```csharp
 using System;
@@ -543,11 +543,11 @@ End Class
 '    Joe: 164
 ```
 
-## <a name="singleline-mode"></a>Mode à ligne simple
+## <a name="single-line-mode"></a>Mode à ligne simple
 
 L’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline), ou l’option inline s, indique au moteur d’expression régulière de traiter la chaîne d’entrée comme si elle était composée d’une seule ligne. Pour ce faire, elle modifie le comportement de l’élément de langage point (**.**) de manière à mettre en correspondance chaque caractère, y compris le caractère de saut de ligne **\n** ou \u000A.
 
-L’exemple suivant montre comment l’utilisation de l’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) modifie le comportement de l’élément de langage .. L'expression régulière `^.+` commence au début de la chaîne et correspond à tous les caractères. Par défaut, la correspondance se termine à la fin de la première ligne ; le modèle d’expressions régulières correspond au retour chariot, **\r** ou \u000D, mais il ne correspond pas à **\n**. Étant donné que l’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) interprète la chaîne d’entrée entière comme une ligne unique, il correspond à chaque caractère de la chaîne d’entrée, notamment **\n**.
+L’exemple suivant montre comment l’utilisation de l’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) modifie le comportement de l’élément de langage .. L'expression régulière `^.+` commence au début de la chaîne et correspond à tous les caractères. Par défaut, la correspondance se termine à la fin de la première ligne ; le modèle d’expressions régulières correspond au retour chariot, **\r** ou \u000D, mais il ne correspond pas à **\n**. Étant donné que l’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline) interprète la chaîne d’entrée entière comme une ligne unique, il correspond à chaque caractère de la chaîne d’entrée, notamment **\n**.
 
 ```csharp
 using System;
@@ -637,7 +637,7 @@ End Module
 
 Par défaut, les groupes de capture sont définis à l’aide de parenthèses dans le modèle d’expression régulière. Les groupes nommés se voient affecter un nom ou un nombre par l’option de langage **(?<**_nom_**>** _sous-expression_**)**, tandis que les groupes sans nom sont accessibles en fonction de leur index. Dans l’objet [GroupCollection](xref:System.Text.RegularExpressions.GroupCollection), les groupes sans nom précèdent les groupes nommés. 
 
-Les constructions de regroupement sont souvent utilisées pour simplement appliquer des quantificateurs à plusieurs éléments de langage, et les sous-chaînes capturées ne présentent aucun intérêt. Par exemple, si l'expression régulière suivante :
+Les constructions de regroupement sont souvent utilisées pour simplement appliquer des quantificateurs à plusieurs éléments de langage, et les sous-chaînes capturées ne présentent aucun intérêt. Par exemple, si l'expression régulière suivante :
 
 ```
 \b\(?((\w+),?\s?)+[\.!?]\)?
@@ -907,11 +907,11 @@ Le modèle d'expression régulière `\b\(?((?>\w+),?\s?)+[\.!?]\)?` est défini 
 Modèle | Description
 ------- | ----------- 
 `\b` | Commencer à la limite d'un mot.
-`\(?` | Mettre en correspondance zéro occurrence, ou plus, de la parenthèse ouvrante (« ( »).
+`\(?` | Mettre en correspondance zéro occurrence, ou plus, de la parenthèse ouvrante (« ( »).
 `(?>\w+),?` | Mettre en correspondance un ou plusieurs caractères alphabétiques, suivis de zéro virgule, ou plus. Ne pas effectuer de recherches rétroactives quand des caractères alphabétiques sont mis en correspondance.
 `\s?` | Mettre en correspondance zéro ou des espaces blancs.
 `((\w+),?\s?)+` | Mettre en correspondance la combinaison d'un ou plusieurs caractères alphabétiques, suivis de zéro ou d'une virgule, suivies de zéro ou d'un espace blanc, une ou plusieurs fois.
-`[\.!?]\)?` | Mettre en correspondance n'importe lequel des trois symboles de ponctuation, suivi de zéro ou d'une parenthèse fermante (« ) »).
+`[\.!?]\)?` | Mettre en correspondance n'importe lequel des trois symboles de ponctuation, suivi de zéro ou d'une parenthèse fermante (« ) »).
  
 Vous pouvez également utiliser l’élément inline **(?n)** pour supprimer les captures automatiques. L’exemple suivant modifie le modèle d’expression régulière précédent pour utiliser l’élément inline **(?n)** au lieu de l’option [RegexOptions.ExplicitCapture](xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture).
 
@@ -1091,7 +1091,7 @@ End Module
 
 ## <a name="compiled-regular-expressions"></a>Expressions régulières compilées
 
-Par défaut, les expressions régulières dans .NET sont interprétées. Quand un objet [Regex](xref:System.Text.RegularExpressions.Regex) est instancié ou qu’une méthode [Regex](xref:System.Text.RegularExpressions.Regex) statique est appelée, le modèle d’expression régulière est analysé de manière à générer un ensemble d’opcodes personnalisés, puis un interpréteur utilise ces opcodes pour exécuter l’expression régulière. Cela implique un compromis : le coût d'initialisation du moteur d'expression régulière est réduit au prix d'une baisse des performances au moment de l'exécution.
+Par défaut, les expressions régulières dans .NET sont interprétées. Quand un objet [Regex](xref:System.Text.RegularExpressions.Regex) est instancié ou qu’une méthode [Regex](xref:System.Text.RegularExpressions.Regex) statique est appelée, le modèle d’expression régulière est analysé de manière à générer un ensemble d’opcodes personnalisés, puis un interpréteur utilise ces opcodes pour exécuter l’expression régulière. Cela implique un compromis : le coût d'initialisation du moteur d'expression régulière est réduit au prix d'une baisse des performances au moment de l'exécution.
 
 Vous pouvez utiliser des expressions régulières compilées à la place d’expressions régulières interprétées en utilisant l’option [RegexOptions.Compiled](xref:System.Text.RegularExpressions.RegexOptions.Compiled). Dans ce cas, quand un modèle est transmis au moteur d’expression régulière, il est analysé de manière à générer un ensemble d’opcodes convertis ensuite en un code MSIL (Microsoft Intermediate Language), qui peut être directement communiqué au Common Language Runtime. Les expressions régulières compilées optimisent les performances d'exécution au détriment du temps d'initialisation.
 
@@ -1101,7 +1101,7 @@ Vous pouvez utiliser des expressions régulières compilées à la place d’exp
 
 Vous pouvez utiliser des expressions régulières compilées dans les appels d'expressions régulières statiques et d'instance. Dans les expressions régulières statiques, l’option [RegexOptions.Compiled](xref:System.Text.RegularExpressions.RegexOptions.Compiled) est transmise au paramètre options de la méthode de mise en correspondance de modèle d’expression régulière. Dans les expressions régulières d’instance, elle est transmise au paramètre options du constructeur de classe [Regex](xref:System.Text.RegularExpressions.Regex). Dans les deux cas, les performances s'en trouvent améliorées. 
 
-Toutefois, cette amélioration ne se produit que dans les conditions suivantes :
+Toutefois, cette amélioration ne se produit que dans les conditions suivantes :
 
 * Un objet [Regex](xref:System.Text.RegularExpressions.Regex) qui représente une expression régulière particulière est utilisé dans plusieurs appels de méthodes de mise en correspondance de modèle d’expression régulière.
 
@@ -1111,21 +1111,21 @@ Toutefois, cette amélioration ne se produit que dans les conditions suivantes 
 
 ## <a name="ignore-white-space"></a>Ignorer l’espace blanc
 
-Par défaut, l’espace blanc dans un modèle d’expression régulière est significatif ; il oblige le moteur d’expression régulière à mettre en correspondance un espace blanc dans la chaîne d’entrée. Ainsi, les expressions régulières `"\b\w+\s"` et `"\b\w+ "` sont pratiquement équivalentes. En outre, quand le signe dièse (**#**) est rencontré dans un modèle d’expression régulière, il est interprété comme un caractère littéral à mettre en correspondance.
+Par défaut, l’espace blanc dans un modèle d’expression régulière est significatif ; il oblige le moteur d’expression régulière à mettre en correspondance un espace blanc dans la chaîne d’entrée. Ainsi, les expressions régulières `"\b\w+\s"` et `"\b\w+ "` sont pratiquement équivalentes. En outre, quand le signe dièse (**#**) est rencontré dans un modèle d’expression régulière, il est interprété comme un caractère littéral à mettre en correspondance.
 
-L’option [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace), ou l’option inline **x**, modifie ce comportement par défaut comme suit :
+L’option [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace), ou l’option inline **x**, modifie ce comportement par défaut comme suit :
 
-* L’espace blanc sans séquence d’échappement dans le modèle d’expression régulière est ignoré. Pour faire partie d’un modèle d’expression régulière, les espaces blancs doivent être inclus dans une séquence d’échappement (par exemple, « **\s** » ou « **\**  »).
+* L’espace blanc sans séquence d’échappement dans le modèle d’expression régulière est ignoré. Pour faire partie d’un modèle d’expression régulière, les espaces blancs doivent être inclus dans une séquence d’échappement (par exemple, « **\s** » ou « **\**  »).
 
 * Le signe dièse (**#**) est interprété comme le début d’un commentaire, plutôt que comme un caractère littéral. Tout le texte d’un modèle d’expression régulière depuis le caractère **#** jusqu’à la fin de la chaîne est interprété comme un commentaire.
 
-Toutefois, dans les cas suivants, les espaces blancs d’une expression régulière ne sont pas ignorés, même si vous utilisez l’option [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) : 
+Toutefois, dans les cas suivants, les espaces blancs d’une expression régulière ne sont pas ignorés, même si vous utilisez l’option [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) : 
 
 * L'espace blanc dans une classe de caractères est toujours interprété de façon littérale. Par exemple, le modèle d'expression régulière `[ .,;:]` met en correspondance n'importe quel espace blanc, point, virgule, point-virgule ou symbole deux-points unique. 
 
 * L’espace blanc n’est pas autorisé dans un quantificateur entre accolades, comme **{**_n_**}**, **{**_n_**,}** et **{**_n_**,**_m_**}**. Par exemple, le modèle d’expression régulière **\d{1. 3}** ne peut pas mettre en correspondance les séquences d’un à trois chiffres, car il contient un espace blanc. 
 
-* L'espace blanc n'est pas autorisé dans une séquence de caractères qui introduit un élément de langage. Exemple : 
+* L'espace blanc n'est pas autorisé dans une séquence de caractères qui introduit un élément de langage. Exemple : 
 
     * L’élément de langage **(?:**_sous-expression_**)** représente un groupe sans capture, et la partie **(?:** de l’élément ne peut pas comporter d’espaces. Le modèle **(? :**_sous-expression_**)** lève une [ArgumentException](xref:System.ArgumentException) au moment de l’exécution, car le moteur d’expression régulière ne peut pas l’analyser, et le modèle **(? :**_sous-expression_**)** ne parvient pas à mettre en correspondance *sous-expression*.
 
@@ -1133,7 +1133,7 @@ Toutefois, dans les cas suivants, les espaces blancs d’une expression réguli�
 
 L'activation de cette option permet de simplifier les expressions régulières qui sont souvent difficiles à analyser et à comprendre. Elle améliore la lisibilité et rend possible la documentation d'une expression régulière. 
 
-L’exemple ci-après définit le modèle d’expression régulière suivant :
+L’exemple ci-après définit le modèle d’expression régulière suivant :
 
 `\b \(? ( (?>\w+) ,?\s? )+ [\.!?] \)? # Matches an entire sentence`.
 
@@ -1233,7 +1233,7 @@ End Module
 '       Instead, it is a nonsensical paragraph.
 ```
 
-## <a name="righttoleft-mode"></a>Mode de recherche de droite à gauche
+## <a name="right-to-left-mode"></a>Mode de recherche de droite à gauche
 
 Par défaut, le moteur d'expression régulière recherche de gauche à droite. Vous pouvez inverser le sens de la recherche à l’aide de l’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft). La recherche commence automatiquement à la position du dernier caractère de la chaîne. Pour les méthodes de mise en correspondance de modèle qui comprennent un paramètre de position de début, comme [Regex.Match(String, Int32)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.Int32)), la position de début est l’index de la position du caractère le plus à droite à laquelle la recherche doit commencer. 
 
@@ -1241,7 +1241,7 @@ Par défaut, le moteur d'expression régulière recherche de gauche à droite. V
 > Pour utiliser le mode de recherche de droite à gauche, vous devez fournir la valeur [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) au paramètre options d’un constructeur de classe [Regex](xref:System.Text.RegularExpressions.Regex) ou d’une méthode de mise en correspondance de modèle statique. La compilation ne peut pas être effectuée via une option inline. 
  
 
-L’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) modifie uniquement le sens de la recherche ; elle n’interprète pas le modèle d’expression régulière de droite à gauche. Par exemple, l'expression régulière `\bb\w+\s` met en correspondance les mots qui commencent par la lettre « b » et qui sont suivis d'un espace blanc. Dans l'exemple suivant, la chaîne d'entrée se compose de trois mots qui comprennent un ou plusieurs caractères « b ». Le premier mot commence par « b », le deuxième se termine par « b », tandis que le troisième comprend deux caractères « b » en son milieu. Comme le montre la sortie de l’exemple, seul le premier mot correspond au modèle d’expression régulière. 
+L’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) modifie uniquement le sens de la recherche ; elle n’interprète pas le modèle d’expression régulière de droite à gauche. Par exemple, l'expression régulière `\bb\w+\s` met en correspondance les mots qui commencent par la lettre « b » et qui sont suivis d'un espace blanc. Dans l'exemple suivant, la chaîne d'entrée se compose de trois mots qui comprennent un ou plusieurs caractères « b ». Le premier mot commence par « b », le deuxième se termine par « b », tandis que le troisième comprend deux caractères « b » en son milieu. Comme le montre la sortie de l’exemple, seul le premier mot correspond au modèle d’expression régulière. 
 
 ```csharp
 using System;
@@ -1347,11 +1347,11 @@ Par défaut, le moteur d’expression régulière utilise un comportement canoni
  
 L’option [RegexOptions.ECMAScript](xref:System.Text.RegularExpressions.RegexOptions.ECMAScript) ne peut être combinée qu’aux options [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase) et [RegexOptions.Multiline](xref:System.Text.RegularExpressions.RegexOptions.Multiline). L’utilisation d’une autre option dans une expression régulière aboutit à une [ArgumentOutOfRangeException](xref:System.ArgumentOutOfRangeException).
 
-Le comportement des expressions régulières ECMAScript et canoniques diffère dans trois domaines : la syntaxe de la classe de caractères, les groupes de capture avec référence circulaire et l’interprétation des séquences d’échappement octales ou des références arrière. 
+Le comportement des expressions régulières ECMAScript et canoniques diffère dans trois domaines : la syntaxe de la classe de caractères, les groupes de capture avec référence circulaire et l’interprétation des séquences d’échappement octales ou des références arrière. 
 
 * Syntaxe de la classe de caractères. Comme les expressions régulières canoniques prennent en charge Unicode, contrairement à ECMAScript, les classes de caractères dans ECMAScript possèdent une syntaxe plus limitée, et certains éléments de langage des classes de caractères ont une signification différente. Par exemple, ECMAScript ne prend pas en charge les éléments de langage tels que la catégorie Unicode ou les éléments de bloc *\p* et **\P**. De même, l’élément **\w**, qui correspond à un caractère alphabétique, est équivalent à la classe de caractères **[a-zA-Z_0-9]**, dans le cas de l’utilisation d’ECMAScript, et à **[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]**, dans le cas de l’utilisation du comportement canonique. Pour plus d’informations, consultez [Classes de caractères dans les expressions régulières](classes.md).
 
-  L’exemple suivant illustre la différence entre les mises en correspondance de modèle canonique et ECMAScript. Il définit une expression régulière, `\b(\w+\s*)+`, qui met en correspondance les mots suivis d'espaces blancs. L'entrée se compose de deux chaînes ; l'une d'elles utilise le jeu de caractères latin, l'autre le jeu de caractères cyrillique. Comme le montre la sortie, l’appel de méthode [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) qui utilise la correspondance ECMAScript ne parvient pas à mettre en correspondance les mots cyrilliques, contrairement à l’appel de méthode qui utilise la correspondance canonique. 
+  L’exemple suivant illustre la différence entre les mises en correspondance de modèle canonique et ECMAScript. Il définit une expression régulière, `\b(\w+\s*)+`, qui met en correspondance les mots suivis d'espaces blancs. L'entrée se compose de deux chaînes ; l'une d'elles utilise le jeu de caractères latin, l'autre le jeu de caractères cyrillique. Comme le montre la sortie, l’appel de méthode [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) qui utilise la correspondance ECMAScript ne parvient pas à mettre en correspondance les mots cyrilliques, contrairement à l’appel de méthode qui utilise la correspondance canonique. 
 
   ```csharp
   using System;
@@ -1421,7 +1421,7 @@ Le comportement des expressions régulières ECMAScript et canoniques diffère d
   '       ECMAScript matching: 'the whole world' matches the pattern.
   ```
 
-* Groupes de capture avec référence circulaire. Une classe de capture d'expression régulière avec une référence arrière à elle-même doit être mise à jour à chaque itération de capture. Comme le montre l'exemple suivant, cette fonctionnalité permet à l'expression régulière `((a+)(\1) ?)+` de mettre en correspondance la chaîne d'entrée «  aa aaaa aaaaaa  » dans le cas de l'utilisation de la correspondance ECMAScript, mais pas dans le cas de l'utilisation de la correspondance canonique. 
+* Groupes de capture avec référence circulaire. Une classe de capture d'expression régulière avec une référence arrière à elle-même doit être mise à jour à chaque itération de capture. Comme le montre l'exemple suivant, cette fonctionnalité permet à l'expression régulière `((a+)(\1) ?)+` de mettre en correspondance la chaîne d'entrée «  aa aaaa aaaaaa  » dans le cas de l'utilisation de la correspondance ECMAScript, mais pas dans le cas de l'utilisation de la correspondance canonique. 
 
   ```csharp
   using System;
@@ -1618,7 +1618,7 @@ Au lieu d’utiliser les comparaisons sans respect de la casse de la culture act
 > [!NOTE]
 > Pour effectuer une comparaison en utilisant la culture dite indifférente, vous devez fournir la valeur [RegexOptions.CultureInvariant](xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant) au paramètre options d’un constructeur de classe [Regex](xref:System.Text.RegularExpressions.Regex) ou d’une méthode de mise en correspondance de modèle statique. La compilation ne peut pas être effectuée via une option inline. 
  
-L’exemple suivant est identique à l’exemple précédent, à la différence que la méthode [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) statique est appelée avec des options qui incluent [RegexOptions.CultureInvariant](xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant). Même si la culture actuelle est définie sur Turc (Turquie), le moteur d'expression régulière parvient à mettre en correspondance « FILE » et « file » et à bloquer l'accès à la ressource de fichier. 
+L’exemple suivant est identique à l’exemple précédent, à la différence que la méthode [Regex.IsMatch(String, String, RegexOptions)](xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)) statique est appelée avec des options qui incluent [RegexOptions.CultureInvariant](xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant). Même si la culture actuelle est définie sur Turc (Turquie), le moteur d'expression régulière parvient à mettre en correspondance « FILE » et « file » et à bloquer l'accès à la ressource de fichier. 
 
 ```csharp
 CultureInfo defaultCulture = Thread.CurrentThread.CurrentCulture;
@@ -1662,7 +1662,7 @@ Thread.CurrentThread.CurrentCulture = defaultCulture
 
 ## <a name="see-also"></a>Voir aussi
 
-[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
+[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
 
 
 
