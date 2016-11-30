@@ -12,13 +12,13 @@ ms.devlang: dotnet
 ms.assetid: bf116df6-0042-46bf-be13-b69864816210
 translationtype: Human Translation
 ms.sourcegitcommit: 9584699ad7e745ae3cb059b1bb8327301c9a3286
-ms.openlocfilehash: 0c73fb0a12092877ff5b54221f4a80693d1d1152
+ms.openlocfilehash: 5271b63a47aa2fcc81cd9c8b1ffd22e618829412
 
 ---
 
 # <a name="handling-and-throwing-exceptions-in-net"></a>Gestion et levée d’exceptions dans .NET
 
-Les applications doivent pouvoir gérer de manière cohérente les erreurs qui se produisent au moment de l'exécution. .NET fournit un modèle pour avertir les applications de façon uniforme de la présence d’erreurs : les opérations .NET indiquent un échec en levant des exceptions.
+Les applications doivent pouvoir gérer de manière cohérente les erreurs qui se produisent au moment de l'exécution. .NET fournit un modèle pour avertir les applications de façon uniforme de la présence d’erreurs : les opérations .NET indiquent un échec en levant des exceptions.
 
 ## <a name="exceptions"></a>Exceptions
 
@@ -26,9 +26,9 @@ Une exception est une condition d'erreur ou un comportement inattendu rencontré
 
 Dans .NET, une exception est un objet qui hérite de la classe [System.Exception](xref:System.Exception). Une exception est levée à partir d'une partie du code où un problème s'est produit. L'exception remonte la pile jusqu'à sa prise en charge par l'application ou l'arrêt du programme.
 
-## <a name="exceptions-vs-traditional-errorhandling-methods"></a>Comparaison des exceptions et des méthodes traditionnelles de gestion des erreurs
+## <a name="exceptions-vs-traditional-error-handling-methods"></a>Comparaison des exceptions et des méthodes traditionnelles de gestion des erreurs
 
-Traditionnellement, le modèle de gestion des erreurs d'un langage reposait soit sur le mode unique utilisé par le langage en question pour détecter des erreurs et leur trouver des gestionnaires appropriés, soit sur le mécanisme de gestion des erreurs fourni par le système d'exploitation. La façon dont .NET implémente la gestion des exceptions offre les avantages suivants :
+Traditionnellement, le modèle de gestion des erreurs d'un langage reposait soit sur le mode unique utilisé par le langage en question pour détecter des erreurs et leur trouver des gestionnaires appropriés, soit sur le mécanisme de gestion des erreurs fourni par le système d'exploitation. La façon dont .NET implémente la gestion des exceptions offre les avantages suivants :
 
 - La gestion et la levée des exceptions fonctionne de la même façon pour les langages de programmation .NET.
 
@@ -42,7 +42,7 @@ Les exceptions offrent des avantages par rapport à d’autres méthodes de noti
 
 ## <a name="exception-class-and-properties"></a>Classe et propriétés d’exception
 
-La classe @System.Exception est la classe de base dont héritent les exceptions. Par exemple, la hiérarchie de classes @System.InvalidCastException se présente comme suit :
+La classe @System.Exception est la classe de base dont héritent les exceptions. Par exemple, la hiérarchie de classes @System.InvalidCastException se présente comme suit :
 
 ```
 Object
@@ -73,7 +73,7 @@ Le tableau suivant répertorie certaines exceptions courantes avec des exemples 
 | Type d'exception | Type de base | Description | Exemple |
 | -------------- | --------- | ----------- | ------- |
 | @System.Exception | @System.Object | Classe de base pour toutes les exceptions. | Aucun (utilisez une classe dérivée de cette exception). |
-| @System.IndexOutOfRangeException | @System.Exception | Levée par le runtime uniquement en cas d’indexation incorrecte du tableau. | Indexation d’un tableau en dehors de sa plage valide : `arr[arr.Length+1]` |
+| @System.IndexOutOfRangeException | @System.Exception | Levée par le runtime uniquement en cas d’indexation incorrecte du tableau. | Indexation d’un tableau en dehors de sa plage valide : `arr[arr.Length+1]` |
 | @System.NullReferenceException | @System.Exception | Levée par le runtime uniquement si un objet Null est référencé. | `object o = null; o.ToString();` |
 | @System.InvalidOperationException | @System.Exception | Levée par les méthodes en cas d’état non valide. | Appel de `Enumerator.GetNext()` après la suppression d’un élément de la collection sous-jacente. |
 | @System.ArgumentException | @System.Exception | Classe de base pour toutes les exceptions d’argument. | Aucun (utilisez une classe dérivée de cette exception). |
@@ -247,11 +247,11 @@ public class ProcessFile
 }
 ```
 
-## <a name="how-to-create-userdefined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
+## <a name="how-to-create-user-defined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
 
 .NET fournit une hiérarchie de classes d’exceptions qui sont en fin de compte dérivées de la classe de base @System.Exception. Toutefois, si aucune exception prédéfinie ne répond à vos besoins, vous pouvez créer vos propres classes d’exception en les dérivant de la classe @System.Exception.
 
-Quand vous créez vos propres exceptions, terminez le nom de la classe définie par l’utilisateur par le mot « Exception » et implémentez les trois constructeurs communs, comme indiqué dans l’exemple suivant. L’exemple définit une nouvelle classe d’exception nommée `EmployeeListNotFoundException`. La classe est dérivée de l’exception @System.Exception et inclut trois constructeurs.
+Quand vous créez vos propres exceptions, terminez le nom de la classe définie par l’utilisateur par le mot « Exception » et implémentez les trois constructeurs communs, comme indiqué dans l’exemple suivant. L’exemple définit une nouvelle classe d’exception nommée `EmployeeListNotFoundException`. La classe est dérivée de l’exception @System.Exception et inclut trois constructeurs.
 
 C#
 ```
@@ -384,7 +384,7 @@ public class MyFileNotFoundException : Exception
 
 ### <a name="include-three-constructors-in-custom-exception-classes"></a>Inclure trois constructeurs dans des classes d’exception personnalisées
 
-Utilisez au moins les trois constructeurs communs pendant la création de vos propres classes d’exception : le constructeur par défaut, un constructeur qui prend un message de type chaîne et un constructeur qui prend un message de type chaîne et une exception interne.
+Utilisez au moins les trois constructeurs communs pendant la création de vos propres classes d’exception : le constructeur par défaut, un constructeur qui prend un message de type chaîne et un constructeur qui prend un message de type chaîne et une exception interne.
 
 - @System.Exception.%23ctor,, qui utilise les valeurs par défaut.
 
@@ -392,15 +392,15 @@ Utilisez au moins les trois constructeurs communs pendant la création de vos pr
 
 - @System.Exception.%23ctor(System.String,System.Exception),, qui accepte un message de type chaîne et une exception interne.
 
-Pour obtenir un exemple, consultez [Guide pratique : créer des exceptions définies par l’utilisateur](#how-to-create-user-defined-exceptions).
+Pour obtenir un exemple, consultez [Guide pratique : créer des exceptions définies par l’utilisateur](#how-to-create-user-defined-exceptions).
 
 ### <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>Vérifier que les données d’exception sont disponibles quand le code s’exécute à distance
 
 Quand vous créez des exceptions définies par l’utilisateur, vous devez vérifier que les métadonnées des exceptions sont disponibles pour le code qui s’exécute à distance. 
 
-Par exemple, sur les runtimes .NET qui implémentent des domaines d’application, des exceptions peuvent se produire entre domaines d’application. Supposons que le domaine d’application A crée le domaine d’application B, lequel exécute du code qui lève une exception. Pour que le domaine d’application A intercepte et gère l’exception correctement, il doit pouvoir trouver l’assembly qui contient l’exception levée par le domaine d’application B. Si le domaine d’application B lève une exception qui est contenue dans un assembly sous sa base d’application, mais pas sous la base d’application du domaine d’application A, le domaine d’application A ne peut pas trouver l’exception et le Common Language Runtime lève une exception @System.IO.FileNotFoundException. Pour éviter cette situation, vous pouvez déployer l'assembly qui contient les informations sur les exceptions de deux façons :
+Par exemple, sur les runtimes .NET qui implémentent des domaines d’application, des exceptions peuvent se produire entre domaines d’application. Supposons que le domaine d’application A crée le domaine d’application B, lequel exécute du code qui lève une exception. Pour que le domaine d’application A intercepte et gère l’exception correctement, il doit pouvoir trouver l’assembly qui contient l’exception levée par le domaine d’application B. Si le domaine d’application B lève une exception qui est contenue dans un assembly sous sa base d’application, mais pas sous la base d’application du domaine d’application A, le domaine d’application A ne peut pas trouver l’exception et le Common Language Runtime lève une exception @System.IO.FileNotFoundException. Pour éviter cette situation, vous pouvez déployer l'assembly qui contient les informations sur les exceptions de deux façons :
 
-- Placez l'assembly dans une base d'application commune partagée par les deux domaines d'application.
+- Placez l'assembly dans une base d'application commune partagée par les deux domaines d'application.
 
     \- ou -
 
@@ -412,7 +412,7 @@ Le message d’erreur que l’utilisateur voit est dérivé de la chaîne de des
 
 ### <a name="use-grammatically-correct-error-messages"></a>Utiliser des messages d’erreur grammaticalement corrects
 
-Écrivez des phrases claires et insérez une ponctuation finale. Chaque phrase de la chaîne de description d'une exception doit se terminer par un point. Par exemple, « La table du journal a débordé. » est une chaîne de description appropriée.
+Écrivez des phrases claires et insérez une ponctuation finale. Chaque phrase de la chaîne de description d'une exception doit se terminer par un point. Par exemple, « La table du journal a débordé. » est une chaîne de description appropriée.
 
 ### <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>Dans les exceptions personnalisées, fournir des propriétés supplémentaires si nécessaire
 
@@ -424,7 +424,7 @@ La trace de la pile commence à l'instruction où l'exception est levée et se t
 
 ### <a name="use-exception-builder-methods"></a>Utiliser des méthodes de générateur d’exceptions
 
-Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation. Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent. Exemple :
+Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation. Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent. Exemple :
 
 C#
 ```
@@ -492,7 +492,7 @@ private static void TransferFunds(Account from, Account to, decimal amount)
 }
 ```
 
-Cet exemple illustre l’utilisation de `throw` pour lever de nouveau l’exception d’origine, ce qui peut permettre aux appelants de voir plus facilement la véritable cause du problème sans avoir à examiner la propriété @System.Exception.InnerException. Vous pouvez aussi lever une nouvelle exception et inclure l’exception d’origine comme exception interne :
+Cet exemple illustre l’utilisation de `throw` pour lever de nouveau l’exception d’origine, ce qui peut permettre aux appelants de voir plus facilement la véritable cause du problème sans avoir à examiner la propriété @System.Exception.InnerException. Vous pouvez aussi lever une nouvelle exception et inclure l’exception d’origine comme exception interne :
 
 C#
 ```
@@ -509,6 +509,6 @@ Pour en savoir plus sur le fonctionnement des exceptions dans .NET, consultez [W
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
