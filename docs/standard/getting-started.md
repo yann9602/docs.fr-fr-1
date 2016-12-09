@@ -3,12 +3,11 @@ title: "Bien démarrer avec .NET"
 description: "Répertorie les différents articles pour bien démarrer avec .NET, à la fois du point de vue des langages et de la plateforme."
 keywords: ".NET, Bien démarrer, C#, F#, Visual Basic"
 author: cartermp
-manager: wpickett
-ms.author: phcart
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-core-technologies
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 translationtype: Human Translation
@@ -25,7 +24,7 @@ Il existe plusieurs façons de bien démarrer avec .NET.  .NET étant une platef
 
 * Les articles [C# Getting Started](../csharp/getting-started/index.md) (Bien démarrer avec C#) et [C# Tutorials](../csharp/tutorials/index.md) (Didacticiels C#) fournissent plusieurs façons de se familiariser avec C#.
 
-* Les didacticiels [F# Getting Started](../fsharp/tutorials/getting-started/index.md) (Bien démarrer avec F#) fournissent trois méthodes principales d’utilisation de F# : avec Visual Studio, Visual Studio Code ou des outils en ligne de commande.
+* Les didacticiels [F# Getting Started](../fsharp/tutorials/getting-started/index.md) (Bien démarrer avec F#) fournissent trois méthodes principales d’utilisation de F# : avec Visual Studio, Visual Studio Code ou des outils en ligne de commande.
 
 * Les articles [Visual Basic Getting Started](../visual-basic/getting-started/index.md) (Bien démarrer avec Visual Basic ) fournissent des guides d’utilisation de Visual Basic dans Visual Studio et d’autres ressources de formation.
 

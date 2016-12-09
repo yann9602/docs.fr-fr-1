@@ -4,11 +4,10 @@ description: "En savoir plus sur les scripts dotnet-install pour installer les o
 keywords: dotnet-install, scripts dotnet-install, .NET Core
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
 translationtype: Human Translation
@@ -17,7 +16,7 @@ ms.openlocfilehash: 08a401abed36e68caa7172e05184d18469fef48f
 
 ---
 
-#<a name="dotnetinstall-scripts-reference"></a>Documentation sur les scripts dotnet-install
+#<a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
 ## <a name="name"></a>Nom
 dotnet-install.ps1 | dotnet-install.sh - script utilisé pour installer les outils de l’interface de ligne de commande (CLI) et le runtime partagé

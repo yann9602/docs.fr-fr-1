@@ -2,12 +2,12 @@
 title: "Vue d’ensemble du SDK .NET Core"
 description: "Vue d’ensemble du SDK .NET Core"
 keywords: .NET, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 26bc9822-e42b-48ec-b0d6-499dc604add7
 translationtype: Human Translation
@@ -35,9 +35,7 @@ Les programmes d’installation natifs s’adressent principalement aux ordinate
 
 Les scripts d’installation, quant à eux, ne nécessitent pas de privilèges d’administration. En revanche, ils n’installent pas les prérequis sur l’ordinateur ; vous devez tous les installer manuellement. Les scripts visent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration (notez les mises en garde concernant les prérequis répertoriés ci-dessus). Vous trouverez des informations complémentaires dans la [rubrique de référence sur les scripts d’installation](tools/dotnet-install-script.md). Si vous voulez savoir comment configurer le SDK sur votre serveur de builds CI, vous pouvez consulter le document qui traite de l’utilisation du [SDK avec les serveurs CI](tools/using-ci-with-cli.md). 
 
-Par défaut, le SDK s’installe « côte à côte » (SxS). Cela signifie que plusieurs versions des outils CLI peuvent coexister à un moment donné sur un même ordinateur. La façon dont la version appropriée est utilisée est expliquée plus en détail dans la [section Pilote](tools/index.md#driver) de la rubrique Outils en ligne de commande .NET Core. 
-
-
+Par défaut, le SDK s’installe « côte à côte » (SxS). Cela signifie que plusieurs versions des outils CLI peuvent coexister à un moment donné sur un même ordinateur. La façon dont la version appropriée est utilisée est expliquée plus en détail dans la [section Pilote](tools/index.md#driver) de la rubrique Outils en ligne de commande .NET Core.
 
 
 <!--HONumber=Nov16_HO3-->

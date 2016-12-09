@@ -2,12 +2,12 @@
 title: "Modèle d’extensibilité des outils CLI .NET Core"
 description: "Modèle d’extensibilité des outils CLI .NET Core"
 keywords: "CLI, extensibilité, commandes personnalisées, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 1bebd25a-120f-48d3-8c25-c89965afcbcd
 translationtype: Human Translation
@@ -29,14 +29,14 @@ Les outils CLI peuvent être étendus de deux façons :
 
 Les deux mécanismes d’extensibilité présentés ci-dessus ne sont pas exclusifs. Vous pouvez n’en utiliser qu’un ou les deux à la fois. Le choix de la méthode dépend en grande partie de l’objectif de votre extension.
 
-## <a name="perproject-based-extensibility"></a>Extensibilité par projet
+## <a name="per-project-based-extensibility"></a>Extensibilité par projet
 Les outils par projet sont des [applications console portables](../deploying/index.md) qui sont distribuées dans les packages NuGet. Les outils sont uniquement disponibles dans le contexte du projet qui les référence et pour lequel ils sont restaurés. Les appels en dehors du contexte du projet (par exemple, en dehors du répertoire qui contient le projet) échoueront, car la commande ne pourra pas être trouvée.
 
 Ces outils sont également parfaits pour les serveurs de build, puisque rien en dehors de `project.json` n’est nécessaire. Le processus de génération exécute la restauration pour le projet qu’il génère, et des outils seront disponibles. Les projets de langage, tels que F#, figurent également dans cette catégorie. Chaque projet ne peut être écrit que dans un langage. 
 
 Enfin, ce modèle d’extensibilité prend en charge la création d’outils qui ont besoin d’accéder à la sortie générée du projet. Par exemple, les outils d’affichage Razor des applications MVC [ASP.NET](https://www.asp.net/) appartiennent à cette catégorie. 
 
-### <a name="consuming-perproject-tools"></a>Utilisation des outils par projet
+### <a name="consuming-per-project-tools"></a>Utilisation des outils par projet
 L’utilisation de ces outils nécessite l’ajout d’un nœud `tools` à votre `project.json`. Dans le nœud `tools`, vous devez référencer le package dans lequel réside l’outil. Après l’exécution de `dotnet restore`, l’outil et ses dépendances sont restaurés. 
 
 Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Cela signifie que les outils qui chargent le code du projet possèdent deux composants : 
@@ -101,7 +101,7 @@ Un bon exemple de cette approche se trouve dans le [dépôt sur les outils CLI .
 * [Implémentation de la dépendance spécifique du framework](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestPackages/dotnet-desktop-and-portable)
 
 
-### <a name="pathbased-extensibility"></a>Extensibilité basée sur le chemin (PATH)
+### <a name="path-based-extensibility"></a>Extensibilité basée sur le chemin (PATH)
 L’extensibilité basée sur le chemin est généralement utilisée pour les ordinateurs de développement qui nécessitent un outil qui traite conceptuellement plusieurs projets. Le principal inconvénient de ce mécanisme d’extension est qu’il est limité à l’ordinateur sur lequel est installé l’outil. Si vous avez besoin de l’installer sur un autre ordinateur, vous devrez le déployer.
 
 Ce modèle d’extensibilité des outils CLI est très simple. Comme indiqué dans la [présentation des outils CLI .NET Core](index.md), le pilote `dotnet` peut exécuter toutes les commandes dont le nom respecte la convention `dotnet-<command>`. La logique de résolution par défaut sonde d’abord plusieurs emplacements avant d’arriver au chemin système. Si la commande demandée existe dans le chemin système et s’il s’agit d’un fichier binaire qui peut être appelé, le pilote `dotnet` l’appellera. 

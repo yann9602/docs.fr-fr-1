@@ -4,11 +4,10 @@ description: "Constructions diverses dans les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 478901dc-db6c-4d90-9d3b-f5cfdca2cbf5
 translationtype: Human Translation
@@ -228,7 +227,7 @@ End Module
 '       Group 1: Dreaded
 ```
 
-## <a name="endofline-comment"></a>Commentaire de fin de ligne
+## <a name="end-of-line-comment"></a>Commentaire de fin de ligne
 
 Un signe dièse (**#**) marque un commentaire en mode x, lequel démarre au caractère # sans séquence d’échappement à la fin du modèle d’expression régulière et continue jusqu’à la fin de la ligne. Pour utiliser cette construction, vous devez activer l’option **x** (par le biais d’options inline) ou fournir la valeur [RegexOptions.IgnorePatternWhitespace](xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace) au paramètre *option* au moment de l’instanciation de l’objet [Regex](xref:System.Text.RegularExpressions.Regex) ou de l’appel de la méthode [Regex](xref:System.Text.RegularExpressions.Regex) statique. 
 

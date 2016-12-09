@@ -3,11 +3,11 @@ title: "Guide pratique : supprimer des caractères non valides d’une chaîne"
 description: "Guide pratique pour supprimer des caractères non valides d’une chaîne"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: f1df4967-7887-41d2-b60f-0da9be67c8fa
 translationtype: Human Translation

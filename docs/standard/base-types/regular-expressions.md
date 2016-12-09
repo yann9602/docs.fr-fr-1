@@ -3,11 +3,11 @@ title: "Expressions régulières dans .NET"
 description: "Expressions régulières dans .NET"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d1a640cf-09ca-48f7-800c-a627a6d549c9
 translationtype: Human Translation
@@ -150,7 +150,7 @@ La méthode [Regex.Matches](xref:System.Text.RegularExpressions.Regex.Matches(Sy
 
 Notez que la chaîne d'entrée comprend la sous-chaîne « this? This ». Toutefois, en raison du signe de ponctuation intermédiaire, cette sous-chaîne n'est pas identifiée comme étant une duplication.
 
-### <a name="example-3-dynamically-building-a-culturesensitive-regular-expression"></a>Exemple 3 : création dynamique d'une expression régulière dépendante de la culture
+### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>Exemple 3 : création dynamique d'une expression régulière dépendante de la culture
 
 L’exemple suivant illustre la puissance des expressions régulières combinée à la souplesse offerte par les fonctionnalités de globalisation de .NET. Il utilise l’objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) pour déterminer le format de la devise dans la culture actuelle du système. Ensuite, à partir de cette information, il construit dynamiquement une expression régulière qui extrait du texte les valeurs en devise. Pour chaque correspondance, il extrait le sous-groupe qui contient uniquement la chaîne numérique, le convertit en une valeur [Decimal](xref:System.Decimal), puis calcule un total cumulé. 
 

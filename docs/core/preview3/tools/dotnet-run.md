@@ -2,12 +2,12 @@
 title: Commande dotnet-run | SDK .NET Core
 description: "La commande dotnet-run fournit une option pratique pour exécuter votre application à partir du code source."
 keywords: "dotnet-run, CLI, commande CLI, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 495ff50b-cb30-4d30-8f20-beb3d5e7c31f
 translationtype: Human Translation

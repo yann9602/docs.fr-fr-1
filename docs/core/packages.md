@@ -4,11 +4,9 @@ description: "Packages, métapackages et frameworks"
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
-manager: wpickett
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 translationtype: Human Translation
@@ -126,7 +124,7 @@ Le framework `.NETFramework,Version=4.6` représente les API disponibles dans le
 
 `.NETStandard,Version=1.3` est un framework basé sur des packages. Il s’appuie sur des packages qui ciblent le framework pour définir et exposer des interfaces API selon le framework.
 
-## <a name="packagebased-frameworks"></a>Frameworks basés sur des packages
+## <a name="package-based-frameworks"></a>Frameworks basés sur des packages
 
 Il existe une relation réciproque entre les frameworks et les packages. La première partie consiste à définir les API accessibles à un framework donné, par exemple `netstandard1.3`. Les packages qui ciblent `netstandard1.3` (ou des frameworks compatibles tels que `netstandard1.0`) définissent les API disponibles pour `netstandard1.3`. On pourrait croire à première vue qu’il s’agit d’une définition circulaire, mais il n’en est rien. Étant « basée sur des packages », la définition d’API pour le framework est issue de packages. Le framework lui-même ne définit pas d’API.
 

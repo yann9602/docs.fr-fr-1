@@ -3,12 +3,11 @@ title: Composants architecturaux de .NET
 description: "Décrit les principaux composants architecturaux de .NET tels que la bibliothèque .NET Standard, les runtimes .NET et les outils."
 keywords: ".NET, bibliothèque .NET Standard, .NET Standard, .NET Core, .NET Framework, Xamarin, MSBuild, C#, F#, VB, compilateurs"
 author: cartermp
-manager: wpickett
-ms.author: cartermp
+ms.author: mairaw
 ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-core-technologies
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
 translationtype: Human Translation

@@ -3,11 +3,11 @@ title: "Bibliothèques de classes .NET"
 description: "Bibliothèques de classes .NET"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
 translationtype: Human Translation
@@ -26,7 +26,7 @@ Il existe trois types de bibliothèques de classes que vous pouvez utiliser :
 *   Les bibliothèques de classes **portables** ont accès à un sous-ensemble d’API et sont utilisables par les applications et les bibliothèques qui ciblent plusieurs plateformes.
 *   Les bibliothèques de classes **.NET Core** sont une fusion du concept de bibliothèques spécifiques d’une plateforme et portables en un seul modèle qui offre le meilleur des deux.
 
-## <a name="platformspecific-class-libraries"></a>Bibliothèques de classes spécifiques d’une plateforme
+## <a name="platform-specific-class-libraries"></a>Bibliothèques de classes spécifiques d’une plateforme
 
 Les bibliothèques spécifiques d’une plateforme sont liées à une seule plateforme .NET (par exemple, .NET Framework sur Windows) et peuvent donc accepter des dépendances significatives sur un environnement d’exécution connu. Un tel environnement expose un ensemble connu d’API (API .NET et de système d’exploitation), et maintient et expose l’état attendu (par exemple, le Registre Windows).
 

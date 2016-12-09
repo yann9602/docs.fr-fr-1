@@ -4,11 +4,10 @@ description: "Langage des expressions régulières - Aide-mémoire"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 8c5dee8c-7bc7-4e6e-aff1-986965c4d98e
 translationtype: Human Translation
@@ -17,7 +16,7 @@ ms.openlocfilehash: f4319de43043605da63f469b59a5dfdb28badc8e
 
 ---
 
-# <a name="regular-expression-language-quick-reference"></a>Langage des expressions régulières - Aide-mémoire
+# <a name="regular-expression-language---quick-reference"></a>Langage des expressions régulières - Aide-mémoire
 
 Une expression régulière est un modèle que le moteur des expressions régulières tente de faire correspondre dans le texte d’entrée. Un modèle se compose d’un ou de plusieurs littéraux de caractère, opérateurs ou constructions. Pour obtenir une brève présentation, consultez [Expressions régulières dans .NET](regular-expressions.md). 
 

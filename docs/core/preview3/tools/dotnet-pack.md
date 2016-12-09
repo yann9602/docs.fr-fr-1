@@ -2,12 +2,12 @@
 title: Commande dotnet-pack | SDK .NET Core
 description: "La commande dotnet-pack crée des packages NuGet pour votre projet .NET Core."
 keywords: "dotnet-pack, CLI, commande CLI, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8b4b8cef-f56c-4a10-aa01-fde8bfaae53e
 translationtype: Human Translation
