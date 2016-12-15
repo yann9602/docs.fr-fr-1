@@ -1,0 +1,7 @@
+# [Comment : utiliser l'appel de code non managé pour lire un fichier audio (Guide de programmation C#)](how-to-use-platform-invoke-to-play-a-wave-file.md)
+# [Vue d'ensemble de l'interopérabilité (Guide de programmation C#)](interoperability-overview.md)
+# [Comment : utiliser des propriétés indexées dans la programmation COM Interop (Guide de programmation C#)](how-to-use-indexed-properties-in-com-interop-rogramming.md)
+# [Exemple de classe COM (Guide de programmation C#)](example-com-class.md)
+# [Procédure pas à pas : programmation Office (C# et Visual Basic)](walkthrough-office-programming.md)
+# [Interopérabilité (Guide de programmation C#)](interoperability.md)
+# [Comment : accéder aux objets Office Interop à l'aide des fonctionnalités Visual C# (Guide de programmation C#)](how-to-access-office-onterop-objects.md)
