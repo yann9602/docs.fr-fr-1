@@ -1,0 +1,5 @@
+# [Types Nullable (Guide de programmation C#)](index.md)
+## [Utilisation de types Nullable (Guide de programmation C#)](using-nullable-types.md)
+## [Boxing des types Nullable (Guide de programmation C#)](boxing-nullable-types.md)
+## [Comment : identifier un type Nullable (Guide de programmation C#)](how-to-identify-a-nullable-type.md)
+## [Comment : effectuer sans risque un cast du type bool? en bool (Guide de programmation C#)](how-to-safely-cast-from-bool-to-bool.md)
