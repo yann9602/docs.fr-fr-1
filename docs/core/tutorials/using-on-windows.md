@@ -3,16 +3,15 @@ title: "Bien démarrer avec .NET Core sur Windows"
 description: "Bien démarrer avec .NET Core sur Windows à l’aide de Visual Studio 2015"
 keywords: .NET, .NET Core
 author: bleroy
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
 translationtype: Human Translation
 ms.sourcegitcommit: 54da8aebd64e86c064214074bc261f72c3b0aedc
-ms.openlocfilehash: 299d479ce74a0e1f41ff42a0e6619f4964788194
+ms.openlocfilehash: bf7bf944ebbf3c53ee6206f86e1a168111b54378
 
 ---
 
@@ -276,6 +275,6 @@ Ce fichier project.json inclut des clauses supports pour UWP et .NET 4.6, et ci
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

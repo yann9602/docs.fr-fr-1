@@ -3,16 +3,15 @@ title: "Déploiement d’applications .NET Core"
 description: "Déploiement d’applications .NET Core"
 keywords: ".NET, .NET Core, Déploiement .NET Core"
 author: rpetrusha
-manager: wpickett
+ms.author: ronpet
 ms.date: 09/08/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
 ms.sourcegitcommit: 663f4102b82512e64ab39d8046c7298a7cf37de7
-ms.openlocfilehash: 96eb2cc7ca948b3e372fa1363b1741624d791d27
+ms.openlocfilehash: 5509f09b3f7957049194ea7af9952bb6b5ec7539
 
 ---
 
@@ -24,11 +23,11 @@ Vous pouvez créer deux types de déploiement pour les applications .NET Core :
 
 - Déploiement autonome. Contrairement à un déploiement dépendant du framework, un déploiement autonome ne s’appuie sur la présence d’aucun composant partagé sur le système cible. Tous les composants, notamment les bibliothèques .NET Core et le runtime .NET Core, sont inclus avec l’application et sont isolées des autres applications .NET Core. Les déploiements autonomes incluent un fichier exécutable (comme `app.exe` sur les plateformes Windows pour une application nommée `app`), qui est une version renommée de l’hôte .NET Core spécifique à la plateforme, et un fichier .dll (comme `app.dll`), qui est l’application elle-même.
 
-## <a name="frameworkdependent-deployments-fdd"></a>Déploiements dépendant du framework ##
+## <a name="framework-dependent-deployments-fdd"></a>Déploiements dépendant du framework ##
 
 Pour un déploiement dépendant du framework, vous déployez seulement votre application et les dépendances tierces. Vous ne devez pas déployer .NET Core car votre application utilise la version de .NET Core qui est présente sur le système cible. Il s’agit du modèle de déploiement par défaut pour les applications .NET Core.
 
-### <a name="why-create-a-frameworkdependent-deployment"></a>Pourquoi créer un déploiement dépendant du framework ? ###
+### <a name="why-create-a-framework-dependent-deployment"></a>Pourquoi créer un déploiement dépendant du framework ? ###
 
 Un déploiement dépendant du framework présente plusieurs avantages :
 
@@ -44,7 +43,7 @@ Il existe également quelques inconvénients :
 
 - Il est possible que le runtime et les bibliothèques .NET Core changent sans que vous le sachiez dans les versions futures. Dans de rares cas, ceci peut changer le comportement de votre application.
 
-### <a name="deploying-a-frameworkdependent-deployment"></a>Déploiement d’un déploiement dépendant du framework ###
+### <a name="deploying-a-framework-dependent-deployment"></a>Déploiement d’un déploiement dépendant du framework ###
 
 Le déploiement d’un déploiement dépendant du framework sans dépendances tierces implique simplement la génération, le test et la publication de l’application. Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’[utilitaire dotnet](../tools/dotnet.md) à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
 
@@ -101,7 +100,7 @@ L’ensemble complet des fichiers de l’application peut être déployé de la 
 
 Outre les fichiers binaires d’application, le programme d’installation doit également regrouper le programme d’installation du framework partagé ou vérifier qu’il est bien installé comme prérequis de l’installation de l’application.  L’installation du framework partagé nécessite un accès Administrateur/root car il est à l’échelle de la machine.
 
-### <a name="deploying-a-frameworkdependent-deployment-with-thirdparty-dependencies"></a>Déploiement d’un déploiement dépendant du framework avec des dépendances tierces ###
+### <a name="deploying-a-framework-dependent-deployment-with-third-party-dependencies"></a>Déploiement d’un déploiement dépendant du framework avec des dépendances tierces ###
 
 Déployer un déploiement dépendant du framework avec une ou plusieurs dépendances tierces implique trois étapes supplémentaires avant de pouvoir exécuter la commande `dotnet restore` :
 
@@ -121,11 +120,11 @@ Déployer un déploiement dépendant du framework avec une ou plusieurs dépenda
 
 Notez qu’un déploiement dépendant du framework avec des dépendances tierces n’est portable que dans la mesure de la portabilité de ses dépendances tierces. Par exemple, si une bibliothèque tierce prend en charge seulement macOS, l’application n’est pas portable sur des systèmes Windows. Ce cas peut se produire si la dépendance tierce elle-même dépend d’un code natif. Le serveur Kestrel en est un bon exemple. Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md#what-are-rids) pris en charge par la dépendance native (et qui existe dans le package NuGet).
 
-## <a name="selfcontained-deployments-scd"></a>Déploiements autonomes ##
+## <a name="self-contained-deployments-scd"></a>Déploiements autonomes ##
 
 Pour un déploiement autonome, vous déployez non seulement votre application et les dépendances tierces, mais aussi la version de .NET Core avec laquelle vous générez votre application. La création d’un déploiement autonome n’inclut cependant pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) lui-même sur les différentes plateformes (par exemple OpenSSL sur macOS). Ces services doivent donc être installés avant d’exécuter l’application. 
 
-### <a name="why-deploy-a-selfcontained-deployment"></a>Pourquoi déployer un déploiement autonome ? ###
+### <a name="why-deploy-a-self-contained-deployment"></a>Pourquoi déployer un déploiement autonome ? ###
 
 Le déploiement d’un déploiement autonome a deux avantages majeurs :
 
@@ -141,7 +140,7 @@ Elle a également plusieurs inconvénients :
 
 - Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.
 
-### <a name="a-namesimpleselfa-deploying-a-simple-selfcontained-deployment"></a> Déploiement d’un déploiement autonome simple ###
+### <a name="a-namesimpleselfa-deploying-a-simple-self-contained-deployment"></a><a name="simpleSelf"></a> Déploiement d’un déploiement autonome simple ###
 
 Le déploiement d’un déploiement autonome sans dépendances tierces implique la création du projet, la modification du fichier project.json, la génération, le test et la publication de l’application.  Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’utilitaire `dotnet` à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
 
@@ -262,7 +261,7 @@ Voici le fichier `project.json`complet pour ce projet.
 }
 ```
 
-### <a name="deploying-a-selfcontained-deployment-with-thirdparty-dependencies"></a>Déploiement d’un déploiement autonome avec des dépendances tierces ###
+### <a name="deploying-a-self-contained-deployment-with-third-party-dependencies"></a>Déploiement d’un déploiement autonome avec des dépendances tierces ###
 
 Le déploiement d’un déploiement autonome avec une ou plusieurs dépendances tierces implique l’ajout des dépendances tierces :
 
@@ -304,7 +303,7 @@ Quand vous déployez votre application, toutes les dépendances tierces utilisé
 
 Notez que vous pouvez déployer un déploiement autonome avec une bibliothèque tierce seulement sur des plateformes prises en charge par cette bibliothèque. Ceci est similaire à avoir des dépendances tierces avec des dépendances natives dans votre déploiement dépendant du framework. 
 
-### <a name="deploying-a-selfcontained-deployment-with-a-smaller-footprint"></a>Déploiement d’un déploiement autonome avec un encombrement réduit ###
+### <a name="deploying-a-self-contained-deployment-with-a-smaller-footprint"></a>Déploiement d’un déploiement autonome avec un encombrement réduit ###
 
 Si la disponibilité de l’espace de stockage adéquat sur les systèmes cibles peut poser un problème, vous pouvez réduire l’encombrement global de votre application en excluant certains composants système. Pour cela, vous définissez explicitement les composants .NET Core que votre application inclut dans votre fichier project.json.
 

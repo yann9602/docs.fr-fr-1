@@ -3,24 +3,24 @@ title: "Guide pratique : effectuer un aller-retour de valeurs de date et d’he
 description: "Guide pratique pour effectuer un aller-retour de valeurs de date et d’heure"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 15690f18-1bb9-4bb8-bc11-0b737e2f0859
 translationtype: Human Translation
 ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 00a09c8a60138a1828d4e8c62dd72b88abbf4bbe
+ms.openlocfilehash: b4bf747faff171e4a90a897e5f7ef442012e7699
 
 ---
 
-# <a name="how-to-roundtrip-date-and-time-values"></a>Guide pratique : effectuer un aller-retour de valeurs de date et d’heure
+# <a name="how-to-round-trip-date-and-time-values"></a>Guide pratique : effectuer un aller-retour de valeurs de date et d’heure
 
 Dans de nombreuses applications, une valeur de date et d’heure est destinée à identifier clairement un point unique dans le temps. Cette rubrique montre comment enregistrer et restaurer une valeur [DateTime](xref:System.DateTime) et une valeur [DateTimeOffset](xref:System.DateTimeOffset) afin que la valeur restaurée identifie la même heure que la valeur enregistrée.
 
-## <a name="to-roundtrip-a-datetime-value"></a>Pour effectuer un aller-retour d’une valeur DateTime
+## <a name="to-round-trip-a-datetime-value"></a>Pour effectuer un aller-retour d’une valeur DateTime
 
 1. Convertissez la valeur [DateTime](xref:System.DateTime) en sa représentation sous forme de chaîne en appelant la méthode [DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) avec le spécificateur de format « o ».
 
@@ -97,7 +97,7 @@ Console.WriteLine("Read {0} ({2}) from {1}.", restoredDate.ToString(), _
 
 Lors de l’aller-retour d’une valeur [DateTime](xref:System.DateTime), cette technique permet de conserver correctement l’heure pour toutes les heures locales et universelles. Par exemple, si une valeur [DateTime](xref:System.DateTime) locale est enregistrée sur un système situé dans le fuseau horaire Pacifique (États-Unis) et qu’elle est restaurée sur un système situé dans le fuseau horaire Centre (États-Unis), la date et l’heure restaurées ont deux heures de retard par rapport à l’heure d’origine, ce qui reflète le décalage horaire entre ces deux fuseaux horaires. En revanche, cette technique n’est pas nécessairement exacte pour les heures non spécifiées. Toutes les valeurs [DateTime](xref:System.DateTime) dont la propriété [Kind](xref:System.DateTime.Kind) a la valeur [Unspecified](xref:System.DateTimeKind.Unspecified) sont traitées comme s’il s’agissait d’heures locales. Si ce n’est pas le cas, la valeur [DateTime](xref:System.DateTime) n’identifie pas correctement le point adéquat dans le temps. La solution pour contourner cette limitation consiste à associer étroitement une valeur de date et d’heure avec son fuseau horaire pour l’opération d’enregistrement et de restauration.
 
-## <a name="to-roundtrip-a-datetimeoffset-value"></a>Pour effectuer un aller-retour d’une valeur DateTimeOffset
+## <a name="to-round-trip-a-datetimeoffset-value"></a>Pour effectuer un aller-retour d’une valeur DateTimeOffset
 
 Convertissez la valeur [DateTimeOffset](xref:System.DateTimeOffset) en sa représentation sous forme de chaîne en appelant la méthode [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) avec le spécificateur de format « o ».
 
@@ -179,6 +179,6 @@ Cette technique identifie toujours clairement une valeur [DateTimeOffset](xref:S
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

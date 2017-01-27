@@ -3,20 +3,19 @@ title: "Portage sur .NET Core - Analyse de vos dépendances tierces"
 description: "Portage sur .NET Core - Analyse de vos dépendances tierces"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: b446e9e0-72f6-48f6-92c6-70ad0ce3f86a
 translationtype: Human Translation
 ms.sourcegitcommit: 46061efa8e33c6a73befa5181eb33b8deb2fa637
-ms.openlocfilehash: 3e75ad86a42b9c8ecc23fe1303830b463a24c3bf
+ms.openlocfilehash: 7e4e96183484d102d102eeab97191f8be9b9be8a
 
 ---
 
-# <a name="porting-to-net-core-analyzing-your-thirdparty-party-dependencies"></a>Portage sur .NET Core - Analyse de vos dépendances tierces
+# <a name="porting-to-net-core---analyzing-your-third-party-party-dependencies"></a>Portage sur .NET Core - Analyse de vos dépendances tierces
 
 La première étape du processus de portage est de comprendre vos dépendances tierces.  Vous devez déterminer ceux d’entre eux (s’il y en a) qui ne s’exécutent pas encore sur .NET Core et développer un plan d’urgence pour ceux qui ne s’exécutent pas sur .NET Core.
 
@@ -99,6 +98,6 @@ Si vous portez une bibliothèque, consultez [Portage de vos bibliothèques](libr
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

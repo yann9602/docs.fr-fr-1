@@ -4,16 +4,15 @@ description: "Options des expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2db2c3e6-953e-4913-8168-d707c437f2df
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 21672e28d0e76b98f6dac698096fccb2ce4edd03
+ms.openlocfilehash: a2a9fe356a0b2e9cf9415714bc01b77ea86229fc
 
 ---
 
@@ -215,7 +214,7 @@ L’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.
  
 Comme l’option [RegexOptions.None](xref:System.Text.RegularExpressions.RegexOptions.None) représente le comportement par défaut du moteur d’expression régulière, elle est rarement spécifiée de manière explicite dans un appel de méthode. Un constructeur ou une méthode de mise en correspondance de modèle statique sans paramètre options est appelé à la place.
 
-## <a name="caseinsensitive-matching"></a>Correspondance qui ne respecte pas la casse
+## <a name="case-insensitive-matching"></a>Correspondance qui ne respecte pas la casse
 
 L’option [RegexOptions.IgnoreCase](xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase), ou l’option inline **i**, fournit une correspondance qui ne respecte pas la casse. Par défaut, les conventions de gestion de la casse de la culture actuelle sont utilisées.
 
@@ -543,7 +542,7 @@ End Class
 '    Joe: 164
 ```
 
-## <a name="singleline-mode"></a>Mode à ligne simple
+## <a name="single-line-mode"></a>Mode à ligne simple
 
 L’option [RegexOptions.Singleline](xref:System.Text.RegularExpressions.RegexOptions.Singleline), ou l’option inline s, indique au moteur d’expression régulière de traiter la chaîne d’entrée comme si elle était composée d’une seule ligne. Pour ce faire, elle modifie le comportement de l’élément de langage point (**.**) de manière à mettre en correspondance chaque caractère, y compris le caractère de saut de ligne **\n** ou \u000A.
 
@@ -1233,7 +1232,7 @@ End Module
 '       Instead, it is a nonsensical paragraph.
 ```
 
-## <a name="righttoleft-mode"></a>Mode de recherche de droite à gauche
+## <a name="right-to-left-mode"></a>Mode de recherche de droite à gauche
 
 Par défaut, le moteur d'expression régulière recherche de gauche à droite. Vous pouvez inverser le sens de la recherche à l’aide de l’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft). La recherche commence automatiquement à la position du dernier caractère de la chaîne. Pour les méthodes de mise en correspondance de modèle qui comprennent un paramètre de position de début, comme [Regex.Match(String, Int32)](xref:System.Text.RegularExpressions.Regex.Match(System.String,System.Int32)), la position de début est l’index de la position du caractère le plus à droite à laquelle la recherche doit commencer. 
 
@@ -1662,11 +1661,11 @@ Thread.CurrentThread.CurrentCulture = defaultCulture
 
 ## <a name="see-also"></a>Voir aussi
 
-[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
+[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

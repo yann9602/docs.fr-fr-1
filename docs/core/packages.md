@@ -4,16 +4,14 @@ description: "Packages, métapackages et frameworks"
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
-manager: wpickett
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 609b0845-49e7-4864-957b-21ffe1b93bf2
 translationtype: Human Translation
 ms.sourcegitcommit: cb2e83b35b5a4aae14c89bcbdf26b064885a477a
-ms.openlocfilehash: af6c83755068cc311b59c1a337898c177cc6d537
+ms.openlocfilehash: 6b5bb7042fdaa453966a4fc576291b3c90ee5410
 
 ---
 
@@ -126,7 +124,7 @@ Le framework `.NETFramework,Version=4.6` représente les API disponibles dans le
 
 `.NETStandard,Version=1.3` est un framework basé sur des packages. Il s’appuie sur des packages qui ciblent le framework pour définir et exposer des interfaces API selon le framework.
 
-## <a name="packagebased-frameworks"></a>Frameworks basés sur des packages
+## <a name="package-based-frameworks"></a>Frameworks basés sur des packages
 
 Il existe une relation réciproque entre les frameworks et les packages. La première partie consiste à définir les API accessibles à un framework donné, par exemple `netstandard1.3`. Les packages qui ciblent `netstandard1.3` (ou des frameworks compatibles tels que `netstandard1.0`) définissent les API disponibles pour `netstandard1.3`. On pourrait croire à première vue qu’il s’agit d’une définition circulaire, mais il n’en est rien. Étant « basée sur des packages », la définition d’API pour le framework est issue de packages. Le framework lui-même ne définit pas d’API.
 
@@ -147,7 +145,7 @@ Les deux principaux frameworks basés sur des packages utilisés avec .NET Core 
 
 Le framework .NET Standard (TFM : `netstandard`) représente les API définies par et créées par-dessus la [bibliothèque .NET Standard](../standard/library.md). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Elles sont prises en charge sur n’importe quel runtime compatible .NET Standard, tels que .NET Core, .NET Framework et Mono/Xamarin. Chacun de ces runtimes prend en charge un ensemble de versions .NET Standard, selon les API qu’ils implémentent. 
 
-Le métapackage `NETStandard.Library` cible le framework `netstandard`. La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et aux API associées qui définissent la bibliothèque .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
+Le métapackage `NETStandard.Library` cible le framework `netstandard`. La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit la quarantaine de bibliothèques .NET et les API associées qui définissent la bibliothèque .NET Standard et y donne accès. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 
 Une [version de NETStandard.Library](versions/index.md) donnée correspond à la plus haute version de `netstandard` qu’elle a exposée (via sa fermeture). La référence de framework dans project.json sert à sélectionner les ressources appropriées dans les packages sous-jacents. Dans ce cas, les ressources `netstandard1.6` sont nécessaires, contrairement à `netstandard1.4` ou `net46`, par exemple. 
 
@@ -188,6 +186,6 @@ Le métapackage `Microsoft.NETCore.App` cible le framework `netcoreapp`. Il donn
 La plupart des bibliothèques supplémentaires fournies par `Microsoft.NETCore.App` ciblent aussi `netstandard`, vu que leurs dépendances sont satisfaites par d’autres bibliothèques `netstandard`. Cela signifie que les bibliothèques `netstandard` peuvent aussi référencer ces packages comme dépendances. 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

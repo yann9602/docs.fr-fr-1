@@ -3,16 +3,15 @@ title: Effectuer des tests unitaires dans .NET Core
 description: Effectuer des tests unitaires dans .NET Core
 keywords: .NET, .NET Core
 author: ardalis
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
 translationtype: Human Translation
-ms.sourcegitcommit: 149086110d7470d97e1ab3e5969269626290b523
-ms.openlocfilehash: 94bae12916fd20f534916d97157605c6a9aa9202
+ms.sourcegitcommit: 352d4a1fe96b701ebf9e0d60d006cfb9ed77977c
+ms.openlocfilehash: e7cc50bd4ab9e5ef008639f70d9e827b349d5b3e
 
 ---
 
@@ -30,7 +29,7 @@ L’utilisation d’une suite de tests automatisés est l’un des meilleurs moy
 > [!NOTE]
 > Les développeurs éprouvent souvent des difficultés à trouver des noms appropriés pour leurs classes et méthodes de test. Comme point de départ, l’équipe produit ASP.NET suit [ces conventions](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests).
 
-Quand vous écrivez des tests unitaires, veillez à ne pas introduire accidentellement de dépendances vis-à-vis de l’infrastructure. Celles-ci ont tendance à ralentir et à fragiliser les tests. Il est donc préférable de les réserver aux tests d’intégration. Vous pouvez éviter ces dépendances cachées dans le code de votre application en suivant le [principe des dépendances explicites](http://deviq.com/explicit-dependencies-principle/) et en ayant recours à l’[injection de dépendances](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html) pour demander vos dépendances à partir du framework. Vous pouvez aussi conserver vos tests unitaires dans un projet distinct de celui qui abrite vos tests d’intégration et vérifier que ce dernier ne contient pas de références à des dépendances ou des dépendances à des packages d’infrastructure.
+Quand vous écrivez des tests unitaires, veillez à ne pas introduire accidentellement de dépendances vis-à-vis de l’infrastructure. Celles-ci ont tendance à ralentir et à fragiliser les tests. Il est donc préférable de les réserver aux tests d’intégration. Vous pouvez éviter ces dépendances cachées dans le code de votre application en suivant le [principe des dépendances explicites](http://deviq.com/explicit-dependencies-principle/) et en ayant recours à l’[injection de dépendances](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) pour demander vos dépendances à partir du framework. Vous pouvez aussi conserver vos tests unitaires dans un projet distinct de celui qui abrite vos tests d’intégration et vérifier que ce dernier ne contient pas de références à des dépendances ou des dépendances à des packages d’infrastructure.
 
 Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
 
@@ -40,6 +39,6 @@ L’équipe XUnit a écrit un didacticiel qui explique [comment utiliser xunit a
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

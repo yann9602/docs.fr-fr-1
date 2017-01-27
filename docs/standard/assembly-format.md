@@ -3,16 +3,16 @@ title: "Format de fichier d’assembly .NET"
 description: "Format de fichier d’assembly .NET"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 translationtype: Human Translation
 ms.sourcegitcommit: 30175813af95911c8ab4f2f0e39c40bed49a23b3
-ms.openlocfilehash: edd6975fe4acdba3e75084f10b4d71efebe42a4d
+ms.openlocfilehash: e6212a63e74f2d1525e87480b092861be9f92379
 
 ---
 
@@ -42,6 +42,6 @@ Vous pouvez écrire des outils ou des API pour traiter les assemblys. Les inform
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

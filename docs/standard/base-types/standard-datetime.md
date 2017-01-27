@@ -4,16 +4,15 @@ description: "Chaînes de format de date et d’heure standard"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: be239871-10cc-4949-b548-200bb260630a
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 1196459d74038edb1268c619dac3da69f38e7860
+ms.openlocfilehash: 56da9671a0849b0f0a94d8881cdc28e70bcf8549
 
 ---
 
@@ -376,7 +375,7 @@ Console.WriteLine(date1.ToString("m", _
 ' Displays 10 April
 ```
 
-## <a name="the-roundtrip-o-o-format-specifier"></a>Spécificateur de format aller-retour ("O", "o")
+## <a name="the-round-trip-o-o-format-specifier"></a>Spécificateur de format aller-retour ("O", "o")
 
 Le spécificateur de format standard "O" ou "o" représente une chaîne de format de date et d’heure personnalisée à l’aide d’un modèle qui conserve les informations de fuseau horaire et génère une chaîne de résultat conforme à la norme ISO 8601. Pour les valeurs [DateTime](xref:System.DateTime), ce spécificateur de format est conçu pour conserver des valeurs de date et d’heure avec la propriété [DateTime.Kind](xref:System.DateTime.Kind) dans le texte. La chaîne mise en forme peut être analysée de nouveau à l’aide de la méthode [DateTime.Parse(String, IFormatProvider, DateTimeStyles)](xref:System.DateTime.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)) ou [DateTime.ParseExact](xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)) si le paramètre styles a la valeur [DateTimeStyles.RoundtripKind](xref:System.Globalization.DateTimeStyles.RoundtripKind). 
 
@@ -752,6 +751,6 @@ La mise en forme dépend des propriétés de l’objet [DateTimeFormatInfo](xref
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

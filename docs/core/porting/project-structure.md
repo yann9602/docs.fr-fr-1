@@ -12,7 +12,7 @@ ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
 translationtype: Human Translation
 ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: ca63b25bb5f5e98167aaa8b74a7204fcd77b3523
+ms.openlocfilehash: 7a3f972debee1e90deda57e5604214ff4756da4a
 
 ---
 
@@ -33,13 +33,13 @@ Cet article est destiné à aider les propriétaires de projet qui veulent compi
   * Ne vous permet pas de partager votre bibliothèque .NET Core entre différents types de projets dans le même fichier solution. Pour prendre ceci en charge, la [création d’une bibliothèque de classes portable](#support-pcl) est une meilleure option.
   * Ne permet pas les modifications de génération ou de chargement de projet qui sont prises en charge par les tâches et les cibles MSBuild. Pour prendre ceci en charge, la [création d’une bibliothèque de classes portable](#support-pcl) est une meilleure option.
 
-* [**Séparer les projets existants des nouveaux projets .NET Core**][option-xproj-folder]
+* <a name="support-vs"></a>[**Séparer les projets existants des nouveaux projets .NET Core**][option-xproj-folder]
   
   *En voici les avantages :*
   * Continuation de la prise en charge du développement de projets existants sans devoir mettre à niveau pour les développeurs/collaborateurs qui n’ont pas Visual Studio 2015.
   * Réduction du risque de création de bogues dans des projets existants car aucune évolution du code n’est nécessaire dans ces projets.
 
-* [**Conserver les projets existants et créer des bibliothèques de classes portables ciblant .NET Core**][option-pcl]
+* <a name="support-pcl"></a>[**Conserver les projets existants et créer des bibliothèques de classes portables ciblant .NET Core**][option-pcl]
 
   *En voici les avantages :*
   * Références à vos bibliothèques .NET Core dans les projets pour ordinateurs et/ou web ciblant tout le .NET Framework dans la même solution.
@@ -58,7 +58,7 @@ Considérez le dépôt ci-dessous :
 
 Il existe différents moyens d’ajouter la prise en charge de .NET Core pour ce dépôt en fonction des contraintes et de la complexité des projets existants : ils sont décrits ci-dessous.
 
-## <a name="replace-existing-projects-with-a-multitargeted-net-core-project-xproj"></a>Remplacer les projets existants par un projet .NET Core multiciblé (xproj)
+## <a name="replace-existing-projects-with-a-multi-targeted-net-core-project-xproj"></a>Remplacer les projets existants par un projet .NET Core multiciblé (xproj)
 
 Le dépôt peut être réorganisé de sorte que tous les fichiers `*.csproj` existants soient supprimés et qu’un seul fichier `*.xproj` ciblant plusieurs frameworks soit créé.  Il s’agit d’une option intéressante car un même projet peut être compilé pour différents frameworks.  Elle a également la possibilité de gérer différentes options de compilation, différentes dépendances, etc., par framework ciblé.
 
@@ -125,6 +125,6 @@ Consultez [Documentation du portage vers .NET Core][porting-doc] pour obtenir de
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

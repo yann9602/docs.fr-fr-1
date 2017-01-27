@@ -4,16 +4,15 @@ description: "Comportement détaillé des expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6f11047f-45a4-4caf-a259-18abe08cc0d2
 translationtype: Human Translation
 ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: b217b59874ceafbb0e5e410878cc434974c5a863
+ms.openlocfilehash: fa0513a5b450742995bd86fca495ba9904e7361b
 
 ---
 
@@ -480,7 +479,7 @@ End Module
 
 Pour plus d’informations sur les sous-expressions non rétroactives, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
 
-### <a name="righttoleft-matching"></a>Mise en correspondance de droite à gauche
+### <a name="right-to-left-matching"></a>Mise en correspondance de droite à gauche
 
 La mise en correspondance de droite à gauche est spécifiée en fournissant l’option [RegexOptions.RightToLeft](xref:System.Text.RegularExpressions.RegexOptions.RightToLeft) à une méthode de mise en correspondance de constructeur de classe ou d’instance statique [Regex](xref:System.Text.RegularExpressions.Regex). Cette fonctionnalité s’avère utile lors de la recherche de droite à gauche au lieu de gauche à droite, ou dans les cas où il est plus efficace de commencer une correspondance dans la partie droite du modèle plutôt que la partie gauche. Comme l’illustre l’exemple suivant, l’utilisation de la mise en correspondance de droite à gauche peut modifier le comportement des quantificateurs gourmands. L’exemple effectue deux recherches d’une phrase qui se termine par un nombre. La recherche de gauche à droite qui utilise le quantificateur gourmand `+` trouve l’un des six chiffres dans la phrase, tandis que la recherche de droite à gauche trouve les six chiffres. Pour obtenir la description du modèle d’expression régulière, consultez l’exemple qui illustre les quantificateurs paresseux plus haut dans cette section.
 
@@ -641,6 +640,6 @@ Titre | Description
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 

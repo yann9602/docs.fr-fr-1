@@ -3,16 +3,16 @@ title: "Gestion et levée d’exceptions dans .NET"
 description: Guide pratique pour utiliser des exceptions dans .NET
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bf116df6-0042-46bf-be13-b69864816210
 translationtype: Human Translation
 ms.sourcegitcommit: 9584699ad7e745ae3cb059b1bb8327301c9a3286
-ms.openlocfilehash: 0c73fb0a12092877ff5b54221f4a80693d1d1152
+ms.openlocfilehash: 5271b63a47aa2fcc81cd9c8b1ffd22e618829412
 
 ---
 
@@ -26,7 +26,7 @@ Une exception est une condition d'erreur ou un comportement inattendu rencontré
 
 Dans .NET, une exception est un objet qui hérite de la classe [System.Exception](xref:System.Exception). Une exception est levée à partir d'une partie du code où un problème s'est produit. L'exception remonte la pile jusqu'à sa prise en charge par l'application ou l'arrêt du programme.
 
-## <a name="exceptions-vs-traditional-errorhandling-methods"></a>Comparaison des exceptions et des méthodes traditionnelles de gestion des erreurs
+## <a name="exceptions-vs-traditional-error-handling-methods"></a>Comparaison des exceptions et des méthodes traditionnelles de gestion des erreurs
 
 Traditionnellement, le modèle de gestion des erreurs d'un langage reposait soit sur le mode unique utilisé par le langage en question pour détecter des erreurs et leur trouver des gestionnaires appropriés, soit sur le mécanisme de gestion des erreurs fourni par le système d'exploitation. La façon dont .NET implémente la gestion des exceptions offre les avantages suivants :
 
@@ -247,7 +247,7 @@ public class ProcessFile
 }
 ```
 
-## <a name="how-to-create-userdefined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
+## <a name="how-to-create-user-defined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
 
 .NET fournit une hiérarchie de classes d’exceptions qui sont en fin de compte dérivées de la classe de base @System.Exception. Toutefois, si aucune exception prédéfinie ne répond à vos besoins, vous pouvez créer vos propres classes d’exception en les dérivant de la classe @System.Exception.
 
@@ -509,6 +509,6 @@ Pour en savoir plus sur le fonctionnement des exceptions dans .NET, consultez [W
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO3-->
 
 
