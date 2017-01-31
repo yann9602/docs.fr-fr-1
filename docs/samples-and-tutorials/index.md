@@ -3,16 +3,15 @@ title: Exemples et didacticiels
 description: Exemples et didacticiels
 keywords: .NET
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/25/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: .net-technologies
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: 8c3a58f97c9cb70e168a055cd874ee10ebb08c54
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: f44193d8f7bc9f67acb8b04966e02beca18a0653
 
 ---
 
@@ -22,7 +21,7 @@ Nous avons un catalogue varié d’exemples et de didacticiels que vous pouvez u
 
 Vous trouverez des ressources utiles pour apprendre le langage de programmation F# sur le [site de F# Foundation](http://fsharp.org/learn.html). 
 
-Concernant l’apprentissage d’ASP.NET Core, consultez le [site ASP.NET](https://docs.asp.net/en/latest/tutorials/index.html).
+Concernant l’apprentissage d’ASP.NET Core, consultez le [site ASP.NET](https://docs.microsoft.com/aspnet/core/tutorials/).
 
 En outre, si vous souhaitez explorer C# en ligne, essayez ces [didacticiels interactifs](http://go.microsoft.com/fwlink/?LinkId=817234).
 
@@ -99,6 +98,6 @@ Une version définitive du code que vous allez générer est disponible dans le 
 Ce didacticiel montre comment déployer une application console existante sur un conteneur Windows. Une version définitive du code que vous allez générer est disponible dans le [dépôt dotnet / docs sur GitHub](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator).
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
