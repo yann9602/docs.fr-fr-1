@@ -3,8 +3,8 @@ layout: HubPage
 hide_bc: true
 title: Documentation .NET
 translationtype: Human Translation
-ms.sourcegitcommit: c8b9e166a49c86dcabfa89887db1dce3a8e45f4f
-ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
+ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.openlocfilehash: 44b21665593717023aef7a85fe88a60d07519327
 
 ---
 <div id="main" class="v2">
@@ -86,7 +86,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/welcome">Qu’est-ce que .NET ?</a></h3>
-                                                <p><a href="https://www.microsoft.com/net">Pour commencer</a></p>
+                                                <p><a href="/dotnet/articles/standard/getting-started">Bien démarrer</a></p>
                                                 <p><a href="/dotnet/articles/standard/tour">Présentation de .NET</a></p>
                                                 <p><a href="/dotnet/articles/standard/components">Concepts de l’architecture .NET</a></p>
                                             </div>
@@ -105,10 +105,10 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/core">Guide .NET Core</a></h3>
-                                                <p><a href="/dotnet/articles/core/getting-started">Pour commencer</a></p>
+                                                <p><a href="/dotnet/articles/core/getting-started">Bien démarrer</a></p>
                                                 <p><a href="/dotnet/articles/core/tutorials">Didacticiels</a></p>
                                                 <p><a href="/dotnet/articles/core/porting">Portage à partir de .NET Framework</a></p>
-                                                <p><a href="https://docs.asp.net/en/latest/getting-started.html">ASP.NET Core</a></p>
+                                                <p><a href="/aspnet/core/getting-started">ASP.NET Core</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -124,10 +124,10 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3><a href="https://msdn.microsoft.com/library/w0x726c2(v=vs.110).aspx">Guide du .NET framework</a></h3>
-                                                <p><a href="https://msdn.microsoft.com/library/hh425099(v=vs.110).aspx">Pour commencer</a></p>
+                                                <h3><a href="https://msdn.microsoft.com/library/w0x726c2(v=vs.110).aspx">.NET Framework Guide</a> (Guide du .NET Framework)</h3>
+                                                <p><a href="https://msdn.microsoft.com/library/hh425099(v=vs.110).aspx">Bien démarrer</a></p>
                                                 <p><a href="https://msdn.microsoft.com/library/hh156542(v=vs.110).aspx">Didacticiels</a></p>
-                                                <p><a href="https://msdn.microsoft.com/library/54xbah2z(v=vs.110).aspx">Développement client</a></p>
+                                                <p><a href="https://msdn.microsoft.com/library/54xbah2z(v=vs.110).aspx">Développement d’applications clientes</a></p>
                                                 <p><a href="https://msdn.microsoft.com/library/bb400852(v=vs.110).aspx">ASP.NET</a></p>
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="https://developer.xamarin.com/guides/cross-platform/getting_started">Xamarin</a></h3>
-                                                <p><a href="https://developer.xamarin.com/guides/cross-platform/getting_started">Pour commencer</a></p>
+                                                <p><a href="https://developer.xamarin.com/guides/cross-platform/getting_started">Bien démarrer</a></p>
                                                 <p><a href="https://developer.xamarin.com/guides/ios">Guide Xamarin.iOS</a></p>
                                                 <p><a href="https://developer.xamarin.com/guides/android/getting_started">Guide Xamarin.Android</a></p>
                                                 <p><a href="https://developer.xamarin.com/guides/xamarin-forms">Guide Xamarin.Forms</a></p>
@@ -165,9 +165,9 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/csharp">Guide C#</a></h3>
-                                                <p><a href="/dotnet/articles/csharp/getting-started">Pour commencer</a></p>
-                                                <p><a href="/dotnet/articles/csharp/tour-of-csharp">Présentation du langage C#</a></p>
-                                                <p><a href="/dotnet/articles/csharp/language-reference">Référence du langage C#</a></p>
+                                                <p><a href="/dotnet/articles/csharp/getting-started">Bien démarrer</a></p>
+                                                <p><a href="/dotnet/articles/csharp/tour-of-csharp">Présentation de C#</a></p>
+                                                <p><a href="/dotnet/articles/csharp/language-reference">Informations de référence sur le langage C#</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -184,9 +184,9 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/fsharp">Guide F#</a></h3>
-                                                <p><a href="/dotnet/articles/fsharp/tutorials/getting-started">Pour commencer</a></p>
-                                                <p><a href="/dotnet/articles/fsharp/tour">Présentation du langage F#</a></p>
-                                                <p><a href="/dotnet/articles/fsharp/language-reference">Référence du langage F#</a></p>
+                                                <p><a href="/dotnet/articles/fsharp/tutorials/getting-started">Bien démarrer</a></p>
+                                                <p><a href="/dotnet/articles/fsharp/tour">Présentation de F#</a></p>
+                                                <p><a href="/dotnet/articles/fsharp/language-reference">Informations de référence du langage F#</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -203,9 +203,9 @@ ms.openlocfilehash: d8b2def6b766aa1af9318fe5b0620f4db4a2ee43
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/articles/visual-basic">Guide Visual Basic</a></h3>
-                                                <p><a href="/dotnet/articles/visual-basic/getting-started">Pour commencer</a></p>
+                                                <p><a href="/dotnet/articles/visual-basic/getting-started">Bien démarrer</a></p>
                                                 <p><a href="/dotnet/articles/visual-basic/walkthroughs">Présentation de Visual Basic</a></p>
-                                                <p><a href="/dotnet/articles/visual-basic/language-reference">Référence du langage Visual Basic</a></p>
+                                                <p><a href="/dotnet/articles/visual-basic/language-reference">Informations de référence sur le langage Visual Basic</a></p>
                                             </div>
                                         </div>
                                     </div>
