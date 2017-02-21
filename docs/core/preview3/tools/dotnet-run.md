@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-run | SDK .NET Core
+title: Commande dotnet-run | Microsoft Docs
 description: "La commande dotnet-run fournit une option pratique pour exécuter votre application à partir du code source."
 keywords: "dotnet-run, CLI, commande CLI, .NET Core"
 author: blackdwarf
@@ -9,18 +9,21 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 495ff50b-cb30-4d30-8f20-beb3d5e7c31f
+ms.assetid: 40d4e60f-9900-4a48-b03c-0bae06792d91
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 6f95125640e7341426c3a019771a6b8595d10e73
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 3f9d50dcc58ad4af836a6b19d8daf7bb6bf60341
 
 ---
 
-#<a name="dotnet-run"></a>dotnet-run
+#<a name="dotnet-run-net-core-tools-rc4"></a>dotnet-run (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [dotnet-run](../../tools/dotnet-run.md).
 
 ## <a name="name"></a>Nom 
 
-dotnet-run -- exécute le code source « sur place » sans commandes explicites de compilation ou de démarrage
+dotnet-run -- Exécute le code source « sur place » sans commandes explicites de compilation ou de démarrage.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -77,6 +80,6 @@ Exécutez le projet situé dans le répertoire actif (l’argument `--help` de c
 `dotnet run --configuration Release -- --help`
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

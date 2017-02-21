@@ -1,22 +1,25 @@
 ---
-title: Commande dotnet-test | SDK .NET Core
-description: "La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné."
+title: Commande dotnet-test | Microsoft Docs
+description: "La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné."
 keywords: "dotnet-test, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/07/2016
+ms.date: 02/08/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 3a0fa917-eb0a-4d7e-9217-d06e65455675
+ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 66c9f949980612f6e21b6d441c004cc09f4eb7d3
+ms.sourcegitcommit: 02f39bc959a56ab0fc2cfa57ce13f300a8a46107
+ms.openlocfilehash: 204ebdb5a945dcd0c9277f1d95c113e829303b32
 
 ---
 
-#<a name="dotnet-test"></a>dotnet-test
+#<a name="dotnet-test-net-core-tools-rc4"></a>dotnet-test (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [dotnet-test](../../tools/dotnet-test.md).
 
 ## <a name="name"></a>Nom
 
@@ -25,10 +28,10 @@ ms.openlocfilehash: 66c9f949980612f6e21b6d441c004cc09f4eb7d3
 ## <a name="synopsis"></a>Résumé
 
 `dotnet test [project] [--help] 
-    [--settings] [--listTests] [--testCaseFilter] 
-    [--testAdapterPath] [--logger] 
-    [--configuration] [--output] [--framework] [--diag]
-    [--noBuild]`  
+    [--settings] [--list-tests] [--filter] 
+    [--test-adapter-path] [--logger] 
+    [--configuration] [--framework] [--output] [--diag]
+    [--no-build] [--verbosity]`
 
 ## <a name="description"></a>Description
 
@@ -36,42 +39,7 @@ La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans 
 
 Les projets de test doivent également spécifier le test Runner. Pour ce faire, vous pouvez utiliser un élément `<PackageReference>` ordinaire, comme indiqué dans l’exemple de fichier projet suivant :
 
-```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161104-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk">
-      <Version>15.0.0-preview-20161024-02</Version>
-    </PackageReference>
-    <PackageReference Include="xunit">
-      <Version>2.2.0-beta3-build3402</Version>
-    </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio">
-      <Version>2.2.0-beta4-build1188</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
-```
+[!code-xml[Modèle XUnit de base](../../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
 ## <a name="options"></a>Options
 
@@ -83,49 +51,49 @@ Spécifie le chemin du projet de test. Si aucune valeur n’est spécifiée, le 
 
 Affiche une aide brève pour la commande.
 
-`-s | --settings <SETTINGS_FILE>`
+`-s|--settings <SETTINGS_FILE>`
 
 Paramètres à utiliser durant l’exécution des tests. 
 
-`-lt | --listTests`
+`-t|--list-tests`
 
 Répertorie tous les tests découverts dans le projet actuel. 
 
-`-tcf | --testCaseFilter <EXPRESSION>`
+`--filter <EXPRESSION>`
 
-Filtre les tests dans le projet actuel à l’aide de l’expression donnée. 
+Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus d’informations sur la prise en charge du filtrage, consultez [Running selective unit tests in Visual Studio using TestCaseFilter](https://aka.ms/vstest-filtering).
 
-`-tap | --testAdapterPath <TEST_ADAPTER_PATH>`
+`-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-Utilise les adaptateurs de test personnalisés à partir du chemin spécifié dans cette série de tests. 
+Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests. 
 
-`--logger <LOGGER>`
+`-l|--logger <LoggerUri/FriendlyName>`
 
-Spécifiez un journal pour les résultats de tests. 
+Spécifie un enregistreur d’événements pour les résultats de tests. 
 
 `-c|--configuration <Debug|Release>`
 
-Configuration dans laquelle effectuer la génération. La valeur par défaut est `Release`. 
+Configuration dans laquelle effectuer la génération. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
 
-`-o|--output [OUTPUT_DIRECTORY]`
-
-Répertoire dans lequel rechercher les binaires à exécuter.
-
-`-f|--framework [FRAMEWORK]`
+`-f|--framework <FRAMEWORK>`
 
 Recherche des binaires de test pour un framework spécifique.
 
-`-r|--runtime [RUNTIME_IDENTIFIER]`
+`-o|--output <OUTPUT_DIRECTORY>`
 
-Recherche des binaires de test pour le runtime spécifié.
+Répertoire dans lequel rechercher les binaires à exécuter.
 
-`--noBuild` 
-
-Ne génère pas le projet de test avant de l’exécuter. 
-
-`-d | --diag <DIAGNOSTICS_FILE>`
+`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
 Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié. 
+
+`--no-build` 
+
+Ne génère pas le projet de test avant de l’exécuter.
+
+`-v|--verbosity [quiet|minimal|normal|diagnostic]`
+
+Définit le niveau de détail de la commande. Vous pouvez spécifier les niveaux de détail suivants : q[uiet], m[inimal], n[ormal], d[etailed] et diag[nostic]. 
 
 ## <a name="examples"></a>Exemples
 
@@ -145,6 +113,6 @@ Exécutez les tests dans le projet test1 :
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

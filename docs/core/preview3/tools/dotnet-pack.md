@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-pack | SDK .NET Core
+title: Commande dotnet-pack | Microsoft Docs
 description: "La commande dotnet-pack crée des packages NuGet pour votre projet .NET Core."
 keywords: "dotnet-pack, CLI, commande CLI, .NET Core"
 author: blackdwarf
@@ -9,18 +9,21 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 8b4b8cef-f56c-4a10-aa01-fde8bfaae53e
+ms.assetid: 8dbbb3f7-b817-4161-a6c8-a3489d05e051
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 5aca8db50bf80606ff94562a6014c396b0ef770e
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8e266f9b34923b0ab69140d78a20afeca00e0b7c
 
 ---
 
-#<a name="dotnet-pack"></a>dotnet-pack
+#<a name="dotnet-pack-net-core-tools-rc4"></a>dotnet-pack (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [dotnet-pack](../../tools/dotnet-pack.md).
 
 ## <a name="name"></a>Nom
 
-`dotnet-pack` : Place le code dans un package NuGet
+`dotnet-pack` : Place le code dans un package NuGet.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -34,7 +37,7 @@ ms.openlocfilehash: 5aca8db50bf80606ff94562a6014c396b0ef770e
 
 La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet. Si l’option `--include-symbols` est présente, un autre package contenant les symboles de débogage est créé. 
 
-Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier nuspec, pour pouvoir être résolues lorsque le package est installé. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
+Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier `nuspec`, pour pouvoir être résolues quand le package est installé. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
 `dotnet pack` par défaut, génère d’abord le projet. Pour éviter ce problème, passez l’option `--no-build`. Cela peut être utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code vient d’être créé, par exemple. 
 
@@ -58,7 +61,7 @@ Ne génère pas le projet avant de créer le package.
 
 `--include-source`
 
-Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` du package NuGet. 
+Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`. 
 
 `--include-symbols`
 
@@ -95,7 +98,6 @@ Empaquetez le projet en cours et mettez à jour la version des packages obtenus 
 `dotnet pack --version-suffix "ci-1234"`
 
 
-
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

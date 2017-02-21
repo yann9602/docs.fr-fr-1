@@ -1,26 +1,29 @@
 ---
-title: Commande dotnet-test | SDK .NET Core
-description: "La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné."
+title: Commande dotnet-test | Microsoft Docs
+description: "La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné."
 keywords: "dotnet-test, CLI, commande CLI, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 3a0fa917-eb0a-4d7e-9217-d06e65455675
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: b12861f0ce3c40bf4db51994ea5d4a92b8ef0162
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 871a6f736272309f6fae74b06f437c7271df2321
 
 ---
 
-#<a name="dotnettest"></a>dotnet-test
+#<a name="dotnet-test"></a>dotnet-test
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-test (outils .NET Core RC4)](../preview3/tools/dotnet-test.md).
 
 ## <a name="name"></a>Nom
 
-`dotnet-test` : Exécute les tests unitaires à l’aide du Test Runner configuré
+`dotnet-test` : Exécute les tests unitaires à l’aide du Test Runner configuré.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -132,6 +135,6 @@ Exécutez les tests dans le projet test1 :
 [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

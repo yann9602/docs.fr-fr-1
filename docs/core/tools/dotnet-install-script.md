@@ -1,26 +1,28 @@
 ---
-title: Scripts dotnet-install | SDK .NET Core
-description: "En savoir plus sur les scripts dotnet-install pour installer les outils CLI .NET Core et le runtime partagé."
+title: "Scripts dotnet-install │ Microsoft Docs"
+description: "Découvrez les scripts dotnet-install pour installer les outils CLI .NET Core et le runtime partagé."
 keywords: dotnet-install, scripts dotnet-install, .NET Core
 author: blackdwarf
 ms.author: mairaw
-manager: wpickett
 ms.date: 10/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 30e969c55d08b3ac276c6e7786fa96985dbb0a6b
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8c5812828b5a19646d6ccbfe9f7cf2215889201f
 
 ---
 
-#<a name="dotnetinstall-scripts-reference"></a>Documentation sur les scripts dotnet-install
+#<a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Documentation sur les scripts dotnet-install (outils .NET Core RC4)](../preview3/tools/dotnet-install-script.md).
 
 ## <a name="name"></a>Nom
-dotnet-install.ps1 | dotnet-install.sh - script utilisé pour installer les outils de l’interface de ligne de commande (CLI) et le runtime partagé
+`dotnet-install.ps1` | `dotnet-install.sh` : script utilisé pour installer les outils de l’interface de ligne de commande (CLI) et le runtime partagé.
 
 ## <a name="synopsis"></a>Résumé
 Windows :
@@ -64,7 +66,7 @@ Version de l’interface CLI à installer. Vous devez spécifier la version en 
 
 `-InstallDir [DIR]`
 
-Chemin d’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est *% LocalAppData%\.dotnet*.
+Chemin d’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est *%LocalAppData%\Microsoft\dotnet*.
 
 `-Debug`
 
@@ -127,6 +129,6 @@ Mac OS/Linux :
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Organiser et tester des projets avec la ligne de commande .NET Core (SDK Preview 3)"
-description: "Organiser et tester des projets avec la ligne de commande .NET Core (SDK Preview 3)"
+title: "Organiser et tester des projets avec la ligne de commande .NET Core (outils .NET Core RC4) | Microsoft Docs"
+description: "Organiser et tester des projets avec la ligne de commande .NET Core (outils .NET Core RC4)"
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,16 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: be988f09-7349-43b0-97fb-3a703d4587ce
+ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
 translationtype: Human Translation
-ms.sourcegitcommit: 07b62bd7163193eff8dc8f61fda7a45a924bba2b
-ms.openlocfilehash: 0a3122a3c10838b74801bcc910070745cb9bf0d5
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: bcb5ce9772ca2f3e35ebd7ec948d011ec04296e0
 
 ---
 
-# <a name="organizing-and-testing-projects-with-the-net-core-command-line-sdk-preview-3"></a>Organiser et tester des projets avec la ligne de commande .NET Core (SDK Preview 3)
+# <a name="organizing-and-testing-projects-with-the-net-core-command-line-net-core-tools-rc4"></a>Organiser et tester des projets avec la ligne de commande .NET Core (outils .NET Core RC4)
 
-Ce didacticiel suit [Bien démarrer avec .NET Core sur Windows/Linux/Mac OS à l’aide de la ligne de commande (SDK Preview 3)](./using-with-xplat-cli-msbuild.md) pour montrer comment aller au-delà des scénarios « hello world » simples et ouvrir la voie à des applications plus avancées et bien organisées.
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [Bien démarrer avec .NET Core sur Windows/Linux/Mac OS à l’aide de la ligne de commande](../../tutorials/using-with-xplat-cli.md).
+
+Ce didacticiel suit la rubrique [Bien démarrer avec .NET Core sur Windows/Linux/Mac OS à l’aide de la ligne de commande (outils .NET Core RC4)](./using-with-xplat-cli-msbuild.md) pour montrer comment aller au-delà des scénarios « hello world » simples et ouvrir la voie à des applications plus avancées et bien organisées.
 
 ## <a name="using-folders-to-organize-code"></a>Utilisation de dossiers pour organiser le code
 
@@ -322,6 +325,6 @@ SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

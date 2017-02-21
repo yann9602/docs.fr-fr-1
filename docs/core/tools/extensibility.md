@@ -1,5 +1,5 @@
 ---
-title: "Modèle d’extensibilité des outils CLI .NET Core"
+title: "Modèle d’extensibilité des outils CLI .NET Core | Microsoft Docs"
 description: "Modèle d’extensibilité des outils CLI .NET Core"
 keywords: "CLI, extensibilité, commandes personnalisées, .NET Core"
 author: blackdwarf
@@ -11,12 +11,15 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 1bebd25a-120f-48d3-8c25-c89965afcbcd
 translationtype: Human Translation
-ms.sourcegitcommit: aeb199a9aeb1584570ad2a2942e2f22c75a59616
-ms.openlocfilehash: 4223f296224c9b62c88b72f0f643c8b8b6fc9f6b
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 0a136e69e103994a69084b09f481489880d5df42
 
 ---
 
 # <a name="net-core-cli-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core 
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core (outils .NET Core RC4)](../preview3/tools/extensibility.md).
 
 ## <a name="overview"></a>Vue d'ensemble
 Ce document explique les principales méthodes permettant d’étendre les outils CLI, et décrit les scénarios dans lesquels elles sont utilisées. Ce document décrit comment utiliser les outils et explique brièvement comment créer ces deux types d’outils. 
@@ -132,6 +135,6 @@ Les outils CLI .NET Core permettent deux principaux points d’extensibilité. 
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

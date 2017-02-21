@@ -1,25 +1,28 @@
 ---
-title: Commande dotnet-build | SDK .NET Core
+title: Commande dotnet-build | Microsoft Docs
 description: "La commande dotnet-build permet de générer un projet et l’ensemble de ses dépendances."
 keywords: dotnet-build, CLI, commande CLI, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/13/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 70285a83-4103-4617-be8b-d0e1e9a4a91d
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 344f8154c63bbb3c5ce6840bc7c7b1659950c223
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: bb64da75a2e7bc2d379bc1685b4187493792db78
 
 ---
 
-#<a name="dotnetbuild"></a>dotnet-build
+#<a name="dotnet-build"></a>dotnet-build
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-build (outils .NET Core RC4)](../preview3/tools/dotnet-build.md).
 
 ## <a name="name"></a>Nom 
-dotnet-build -- Permet de générer un projet et l’ensemble de ses dépendances. 
+`dotnet-build` : Génère un projet et l’ensemble de ses dépendances. 
 
 ## <a name="synopsis"></a>Résumé
 
@@ -76,11 +79,11 @@ Compile pour un framework spécifique. Le framework doit être défini dans le f
 
 Définit une configuration dans laquelle effectuer la génération.  Si aucune valeur n’est spécifiée, la valeur utilisée par défaut est `Debug`.
 
-`-r|--runtime [RUNTIME_IDENTIFIER]`
+`-r|--runtime <RUNTIME_IDENTIFIER>`
 
 Runtime cible de la génération. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../rid-catalog.md). 
 
-`--version-suffix [VERSION_SUFFIX]`
+`--version-suffix <VERSION_SUFFIX>`
 
 Définit par quoi `*` doit être remplacé dans le champ de version du fichier [project.json](project-json.md#version). Le format respecte les instructions de version de NuGet. 
 
@@ -111,6 +114,6 @@ Générer un projet et ses dépendances pour un runtime spécifique (dans cet ex
 `dotnet build --runtime ubuntu.16.04-x64`
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 
