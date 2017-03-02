@@ -3,16 +3,17 @@ title: "Guide pratique : permettre aux utilisateurs de résoudre des heures amb
 description: "Guide pratique pour permettre aux utilisateurs de résoudre des heures ambiguës"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/15/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d6858a5c-02ab-4367-9e08-fa22c051c38d
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 889bc6dc85ca475b5adaf9ab6d15dfcabffe1370
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: ede8d021a4f524cf37f7ad00b6aed89d1b1729f8
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -164,10 +165,5 @@ Dans cet exemple, toutes les références au fuseau horaire local sont faites vi
 [Dates, heures et fuseaux horaires](index.md)
 
 [Guide pratique pour résoudre des heures ambiguës](resolve-ambiguous-times.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

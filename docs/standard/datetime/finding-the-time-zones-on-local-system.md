@@ -3,16 +3,17 @@ title: "Recherche des fuseaux horaires définis sur un système local"
 description: "Recherche des fuseaux horaires définis sur un système local"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/15/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3a6ee323-f3cf-486d-aa0c-103931f1eba9
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 4f8913e3c193e7c76160ac45d576c4cf75d11fed
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: e61017e2a0e26295c3be7e8265674b1a5d2ae5a3
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -41,8 +42,3 @@ L'identificateur de fuseau horaire est un champ clé qui identifie le fuseau hor
 [Guide pratique pour énumérer les fuseaux horaires d’un ordinateur](enumerate-time-zones.md)
 
 [Conversion d’heures entre fuseaux horaires](converting-between-time-zones.md)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

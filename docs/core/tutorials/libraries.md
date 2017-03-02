@@ -3,16 +3,17 @@ title: "Développement de bibliothèques avec des outils multiplateformes"
 description: "Développement de bibliothèques avec des outils multiplateformes"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
 translationtype: Human Translation
-ms.sourcegitcommit: 0882a5ca2f7814e2fd168dce40705d11b199f102
-ms.openlocfilehash: caf72bec4a5d3276d1fdeafc4fa3816e5f00c296
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7f419e1fc2c9f442b08e19ede4e84f9cf6843a94
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -485,7 +486,7 @@ Les scénarios de consommation tels que celui-ci signifient que les API auxquell
 * **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en C#
 * **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en C#
 
-### <a name="projecttoproject-referencing"></a>Références entre projets
+### <a name="project-to-project-referencing"></a>Références entre projets
 
 La meilleure façon de référencer un projet consiste à effectuer les opérations suivantes :
 
@@ -576,9 +577,4 @@ $ dotnet test
 ```
 
 Et voilà !
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

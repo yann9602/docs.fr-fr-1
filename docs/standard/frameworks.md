@@ -3,16 +3,17 @@ title: Infrastructures et cibles
 description: "Explique les concepts de cibles de framework lors de l’écriture de code .NET."
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 09/19/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
 translationtype: Human Translation
-ms.sourcegitcommit: 38561c2d25c6950d166bf706f4306c867e683b04
-ms.openlocfilehash: 72022e09f7604c80b45c4aac001daaad41fe24af
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f0c1987f46bd3715c54e270c15eea4b8ee7b67e6
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -58,9 +59,4 @@ Vous pouvez référencer une famille de frameworks à l’aide des formes courte
 
 - `.NETFramework`
 - `net`
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

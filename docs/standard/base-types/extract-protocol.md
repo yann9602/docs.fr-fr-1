@@ -3,16 +3,17 @@ title: "Guide pratique : extraire un protocole et un numéro de port d’une UR
 description: "Guide pratique pour extraire un protocole et un numéro de port d’une URL"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d2462fb4-6d61-44ab-8466-73f1f06c3058
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 9c86a77271ac0b239e92f415bd7b26d51d762dd8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 578b70412e876001f4462e2409739acf3609097b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -92,9 +93,4 @@ Console.WriteLine(m.Groups("proto").Value + m.Groups("port").Value)
 [Expressions régulières .NET](regular-expressions.md)
 
 [Exemples d’expressions régulières](regex-examples.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

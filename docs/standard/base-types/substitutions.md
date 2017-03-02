@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 0fded615-1021-4468-a644-b491814305c6
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 4b2b547b6edd67590ad75851b8b287e55dc7d70c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: c8e82c2399916e5c17d1b54dd78a11ecfbc90bbf
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -156,7 +157,7 @@ Modèle | Description
 `\d*` | Met en correspondance zéro ou plusieurs chiffres décimaux.
 `(?<amount>\s?\d[.,]?\d*)` | Mettre en correspondance un espace blanc, suivi par un ou plusieurs chiffres décimaux, suivi par zéro ou un point ou une virgule, suivi par zéro ou plusieurs chiffres décimaux. C’est le groupe de capture nommé amount. Étant donné que le modèle de remplacement est `${amount}`, l’appel à la méthode [Regex.Replace](xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)) remplace l’intégralité de la sous-chaîne correspondante par ce groupe capturé. 
  
-## <a name="substituting-a-character"></a>Substitution d’un caractère $
+## <a name="substituting-a--character"></a>Substitution d’un caractère $
 
 La substitution **$$** insère un caractère « $ » littéral dans la chaîne remplacée. 
 
@@ -559,10 +560,5 @@ Faire correspondre à | Position | Chaîne avant la correspondance | Chaîne de 
 ## <a name="see-also"></a>Voir aussi
 
 [Langage des expressions régulières - Aide-mémoire](quick-ref.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

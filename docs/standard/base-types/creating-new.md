@@ -3,16 +3,17 @@ title: "Création de nouvelles chaînes"
 description: "Création de nouvelles chaînes"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 639397c7-e694-43e0-845b-1681c62bd9fd
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 43d6194afd948aeccbf051365e059794c74d2646
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 793b5bc4b26967104459fa2559c6127bb82f3a9d
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -162,10 +163,5 @@ Console.WriteLine("The new character array: {0}", New String(charArray))
 [Opérations de chaînes de base](basic-string-operations.md)
 
 [Mise en forme composite](composite-format.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

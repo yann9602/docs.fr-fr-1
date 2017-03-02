@@ -4,16 +4,16 @@ description: "Bonnes pratiques pour les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 096fd614-91bf-4296-be24-12f62b062294
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 00c7228c5cb906f41df5e60a318721008ecf0bb7
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: cf9c83de791fa4990a991689a26d4bbdd84cfe7d
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -686,7 +686,7 @@ Le langage d’expression régulière dans .NET comprend les éléments de langa
 **(?<**=_sous-expression_**)** | Postanalyse positive de largeur nulle. Effectuer une postanalyse de la position actuelle pour déterminer si *sous-expression* correspond à la chaîne d’entrée.
 **(?<!**_sous-expression_**)** | Postanalyse négative de largeur nulle. Effectuer une postanalyse de la position actuelle pour déterminer si *sous-expression* ne correspond pas à la chaîne d’entrée.
  
-## <a name="use-timeout-values"></a>Utilisation de valeurs de délai d’attente
+## <a name="use-time-out-values"></a>Utilisation de valeurs de délai d’attente
 
 Si une expression régulière traite une entrée qui correspond presque au modèle d'expression régulière, elle peut souvent se baser sur une rétroaction excessive, laquelle affecte considérablement ses performances. En plus d'envisager soigneusement l'utilisation de la rétroaction et de tester l'expression régulière sur une entrée presque correspondante, vous devez toujours définir une valeur de délai d'attente pour garantir la minimalisation de l'impact d'une rétroaction excessive, le cas échéant.
 
@@ -1102,10 +1102,5 @@ Titre | Description
 [Retour sur trace dans les expressions régulières](backtracking.md) | Aborde la rétroaction et la façon dont elle affecte les performances des expressions régulières, ainsi que les éléments de langage, qui offrent des alternatives à la rétroaction.
 [Langage des expressions régulières - Aide-mémoire](quick-ref.md) | Décrit les éléments du langage d’expression régulière dans .NET et propose des liens vers la documentation détaillée pour chaque élément de langage.
  
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

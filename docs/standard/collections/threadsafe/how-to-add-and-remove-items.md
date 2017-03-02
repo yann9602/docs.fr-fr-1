@@ -1,18 +1,19 @@
 ---
-title: "Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary"
-description: "Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary"
+title: "Guide pratique : ajouter et supprimer des éléments d&quot;un ConcurrentDictionary"
+description: "Guide pratique : ajouter et supprimer des éléments d&quot;un ConcurrentDictionary"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: b7c04a5f-a8e6-42ae-8c84-0e1ae18896eb
 translationtype: Human Translation
-ms.sourcegitcommit: c15f2da15c6448cf1c36dea2d5fd53e734bb6608
-ms.openlocfilehash: 90ad4f1f0266d948937ed462be15a4d4948ce7f8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: cf792c03c7ca23136736b86e8e9ed2449eca6b92
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -300,10 +301,5 @@ Par conséquent, il n’est pas garanti que les données retournées par `GetOrA
 [System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent)
 
 [Collections thread-safe](index.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

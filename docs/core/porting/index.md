@@ -3,16 +3,16 @@ title: "Portage vers .NET Core à partir du .NET Framework"
 description: "Portage vers .NET Core à partir du .NET Framework"
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 00d00d38-99af-44f4-a75f-defcd9729dc5
 translationtype: Human Translation
-ms.sourcegitcommit: ba6907f0054c3f4cdbaa687277ad70554670f0bb
-ms.openlocfilehash: 677fe36a17b56aae0198140d82a2bfdd0d6e8224
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 5ad986ee6cfba17602398adc54f88dc03c133499
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -54,9 +54,4 @@ Voici une courte liste des outils qui peuvent vous être utiles :
 
 [Analyse de vos dépendances tierces.](third-party-deps.md)
    
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

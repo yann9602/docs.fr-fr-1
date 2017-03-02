@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 translationtype: Human Translation
-ms.sourcegitcommit: 10e9195efdbfa031698a8b0f8e8c3479babd9727
-ms.openlocfilehash: a08b0a0f95d43eb995f015f7e408f77fe4ab9d63
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 9791191a4b79978838c97c8d8beb2049a8fb1696
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -37,8 +38,3 @@ Il existe plusieurs façons de bien démarrer avec .NET.  .NET étant une platef
 ## <a name="getting-started-using-docker-on-net-framework"></a>Bien démarrer avec Docker sur .NET Framework
 
 L’article [Docker sur .NET Framework](../framework/docker/index.md) montre comment vous pouvez utiliser .NET Framework sur des conteneurs Docker Windows.
-
-
-<!--HONumber=Nov16_HO3-->
-
-

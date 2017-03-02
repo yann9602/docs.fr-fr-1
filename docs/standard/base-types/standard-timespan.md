@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 4e0f02f1-4abd-47b5-8995-5c3ff45b0ce1
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: bb209c7bac71960fa0a679e546bedae486b412b8
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 4e6b58cd8b29b4a9d46bd43a03c1e8c6c45dfcaa
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -292,7 +293,7 @@ Les éléments entre crochets ([ et ]) sont facultatifs. Le signe deux-points (:
 ------- | -----------
 - | Signe négatif facultatif, qui indique un intervalle de temps négatif.
 *d* | Nombre facultatif de jours, sans zéros non significatifs.
-*hh* | Nombre d’heures, allant de 0 à 23. 
+*hh* | Nombre d’heures, allant de&0; à&23;. 
 *mm* | Nombre de minutes, allant de "00" à "59".
 *ss* | Nombre de secondes, allant de "0" à "59".
 . | Séparateur des fractions de seconde.
@@ -366,10 +367,5 @@ End Module
 [Mise en forme composite](composite-format.md)
 
 [Analyse de chaînes](parsing-strings.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

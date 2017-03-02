@@ -10,8 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
 translationtype: Human Translation
-ms.sourcegitcommit: 956a0766fe0171052983627f2cf2e8264d6b0365
-ms.openlocfilehash: f01c6521becb930923693a6b6867479f3b5d6df9
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: b752e23f37f83a68ef4a7a97108479f7736d53cd
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -53,17 +54,17 @@ Si vous avez utilisé DNX, vous avez utilisé les commandes de l’un de ses tro
 Le tableau ci-dessous montre la correspondance entre les commandes DNX/DNU et leurs équivalents CLI.
 
 
-| Commande DNX                       | Commande CLI       | Description                                                                                                       |
-|--------------------------------   |----------------   |-----------------------------------------------------------------------------------------------------------------  |
-| dnx run                           | dotnet run        | Exécute du code à partir de la source.                                                                                             |
-| dnu build                         | dotnet build      | Génère un fichier binaire IL de votre code.                                                                                  |
-| dnu pack                          | dotnet pack       | Empaquète votre code dans un package NuGet.                                                                          |
-| DNX \[commande] (par exemple, « dnx web »)   | N/A\*             | Dans le contexte de DNX, exécute une commande telle que définie dans le fichier project.json.                                                       |
-| dnu install                       | N/A\*             | Dans le contexte de DNX, installe un package en tant que dépendance.                                                              |
-| dnu restore                       | dotnet restore    | Restaure les dépendances spécifiées dans votre fichier project.json.                                                              |
-| dnu publish                       | dotnet publish    | Publie votre application pour le déploiement dans l’une des trois formes possibles (portable, portable avec natif et autonome).    |
-| dnu wrap                          | N/A\*             | Dans le contexte de DNX, encapsule un fichier project.json dans un fichier csproj.                                                                      |
-| dnu commands                      | N/A\*             | Dans le contexte de DNX, gère les commandes installées globalement.                                                             |
+| Commande DNX                        | Commande CLI        | Description                                                                                                         |
+|--------------------------------    |----------------    |-----------------------------------------------------------------------------------------------------------------    |
+| dnx run                            | dotnet run         | Exécute du code à partir de la source.                                                                                               |
+| dnu build                          | dotnet build       | Génère un fichier binaire IL de votre code.                                                                                    |
+| dnu pack                           | dotnet pack        | Empaquète votre code dans un package NuGet.                                                                            |
+| DNX \[commande] (par exemple, « dnx web »)     | N/A\*              | Dans le contexte de DNX, exécute une commande telle que définie dans le fichier project.json.                                                         |
+| dnu install                        | N/A\*              | Dans le contexte de DNX, installe un package en tant que dépendance.                                                                |
+| dnu restore                        | dotnet restore     | Restaure les dépendances spécifiées dans votre fichier project.json.                                                                |
+| dnu publish                        | dotnet publish     | Publie votre application pour le déploiement dans l’une des trois formes possibles (portable, portable avec natif et autonome).     |
+| dnu wrap                           | N/A\*              | Dans le contexte de DNX, encapsule un fichier project.json dans un fichier csproj.                                                                        |
+| dnu commands                       | N/A\*              | Dans le contexte de DNX, gère les commandes installées globalement.                                                               |
 
 (\*) - ces fonctionnalités ne sont pas prises en charge dans l’interface CLI de par sa conception. 
 
@@ -141,10 +142,5 @@ Dès que vous êtes prêt, vous pouvez tenter une restauration avec `dotnet rest
 
 L’exécution de `dotnet build` risque d’afficher des erreurs de build, même si leur nombre devrait rester limité. Dès lors que votre code se génère et s’exécute correctement, vous pouvez le tester avec le runner. Exécutez `dotnet <path-to-your-assembly>` et regardez-le s’exécuter.
 
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

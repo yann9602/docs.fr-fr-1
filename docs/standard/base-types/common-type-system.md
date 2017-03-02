@@ -4,16 +4,16 @@ description: "Approfondissement du système de type commun"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: b5482a1d-7bdc-40fe-aa45-10df930ceb5b
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 7d7f869b07d7cf00ffa69da117aa199d1b6e8f20
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 6be672acc84a76106e25b82574acad16beb4a8ac
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -533,8 +533,3 @@ Un type dérivé hérite de tous les membres de son type de base ; c'est-à-dir
 ## <a name="see-also"></a>Voir aussi
 
 [Conversion de type dans le .NET Framework](type-conversion.md)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

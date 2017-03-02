@@ -4,16 +4,16 @@ description: "Rétroaction dans les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 8a3e6298-26b7-4c99-bd97-c9892f6c9418
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 00e324803cf5c57eab1cc71eb819949247131479
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 58925ce755e995432f3ff205793a192f34999e12
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -228,7 +228,7 @@ Comme la sortie de l'exemple indique, il a fallu presque deux fois plus de temps
 
 * Il revient à la correspondance 4 enregistrée précédemment. Il détermine qu'il y a un caractère « a » supplémentaire à assigner à un groupe capturé supplémentaire. Enfin, il effectue en test pour déterminer la fin de la chaîne. Étant donné qu'il reste un caractère supplémentaire dans la chaîne, la correspondance échoue. Cette correspondance infructueuse requiert 4 comparaisons. Jusqu'à présent, un total de 13 comparaisons ont été effectuées.
 
-* Il revient à la correspondance 3 enregistrée précédemment. Il détermine qu'il y a deux caractères « a » supplémentaires à assigner à un groupe capturé supplémentaire. Toutefois, le test de fin de chaîne échoue. Il revient ensuite à la correspondance 3 et tente de faire correspondre les deux caractères « a » supplémentaire dans deux groupes capturés supplémentaires. Le test de fin de chaîne échoue encore. Ces correspondances infructueuses requièrent 12 comparaisons. Jusqu'à présent, un total de 25 comparaisons ont été effectuées. 
+* Il revient à la correspondance 3 enregistrée précédemment. Il détermine qu'il y a deux caractères « a » supplémentaires à assigner à un groupe capturé supplémentaire. Toutefois, le test de fin de chaîne échoue. Il revient ensuite à la correspondance&3; et tente de faire correspondre les deux caractères « a » supplémentaire dans deux groupes capturés supplémentaires. Le test de fin de chaîne échoue encore. Ces correspondances infructueuses requièrent 12 comparaisons. Jusqu'à présent, un total de 25 comparaisons ont été effectuées. 
 
 La comparaison de la chaîne d'entrée avec l'expression régulière continue de cette façon jusqu'à ce que le moteur des expressions régulières ait tenté toutes les combinaisons possibles des correspondances et conclue qu'il n'existe aucune correspondance. À cause des quantificateurs imbriqués, cette comparaison correspond à un O(2n) ou une opération exponentielle, où n est le nombre de caractères dans la chaîne d’entrée. Cela signifie que dans le pire des cas, une chaîne d'entrée de 30 caractères requiert environ 1 073 741 824 comparaisons et une chaîne d'entrée de 40 caractères requiert environ 1 099 511 627 776 comparaisons. Si vous utilisez des chaînes de longueurs identiques ou supérieures, l'exécution des méthodes d'expression régulières peut prendre très longtemps lorsqu'elles traitent une entrée qui ne correspond pas au modèle d'expression régulière.
 
@@ -236,7 +236,7 @@ La comparaison de la chaîne d'entrée avec l'expression régulière continue de
 
 La rétroaction vous permet de créer des expressions régulières puissantes et flexibles. Toutefois, comme la section précédente l'indiquait, ces avantages peuvent s'accompagner de performances médiocres. Pour empêcher une rétroaction excessive, vous devez définir un intervalle de délai d’attente quand vous instanciez un objet [Regex](xref:System.Text.RegularExpressions.Regex) ou appelez une méthode de mise en correspondance statique d’expression régulière. Cette situation est présentée dans la section suivante. Par ailleurs, .NET Core prend en charge trois éléments de langage d’expression régulière qui limitent ou suppriment la rétroaction et prennent en charge des expressions régulières complexes avec une perte de performances faible ou nulle : [sous-expressions non rétroactives](#nonbacktracking-subexpression), [assertions de postanalyse](#lookbehind-assertions) et [assertions de préanalyse](#lookahead-assertions). Pour plus d’informations sur chaque élément de langage, consultez [Constructions de regroupement dans les expressions régulières](grouping.md).
 
-### <a name="defining-a-timeout-interval"></a>Définir un intervalle de délai d’attente
+### <a name="defining-a-time-out-interval"></a>Définir un intervalle de délai d’attente
 
 Vous pouvez définir un intervalle de délai d’attente qui représente la durée maximale pendant laquelle le moteur d’expression régulière recherche une correspondance avant d’abandonner la tentative et de lever une exception [RegexMatchTimeoutException](xref:System.Text.RegularExpressions.RegexMatchTimeoutException). Vous spécifiez l’intervalle de délai d’attente en donnant une valeur [TimeSpan](xref:System.TimeSpan) au constructeur `Regex(String, RegexOptions, TimeSpan)` pour les expressions régulières d’instances. En outre, chaque méthode de mise en correspondance de modèle statique possède une surcharge avec une valeur [TimeSpan](xref:System.TimeSpan) pour le paramètre [Regex.Regex(String, RegexOptions, TimeSpan)] qui vous permet de spécifier une valeur de délai d’attente. Par défaut, l’intervalle de délai d’attente est défini sur [Regex.InfiniteMatchTimeout](xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout) et le moteur d’expression régulière n’expire pas. 
 
@@ -683,10 +683,5 @@ Modèle | Description
 [Constructions d’alternative dans les expressions régulières](alternation.md)
 
 [Constructions de regroupement dans les expressions régulières](grouping.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

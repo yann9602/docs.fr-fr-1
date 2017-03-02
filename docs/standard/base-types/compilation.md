@@ -3,16 +3,17 @@ title: "Compilation et réutilisation dans les expressions régulières"
 description: "Compilation et réutilisation dans les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3adea434-e2ed-4023-b4f5-b0608b4cf53f
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 1832403174276e48dc1857be8ff11fba2b9a250c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 7b3acb4571cddc19520f8534828d94844c9d59e6
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -48,10 +49,5 @@ En raison de la surcharge liée à l’instanciation d’objets et à la compila
 ## <a name="see-also"></a>Voir aussi
 
 [Expressions régulières .NET](regular-expressions.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

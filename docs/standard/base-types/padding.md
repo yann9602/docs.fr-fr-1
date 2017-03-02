@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1c8b3b44-d370-49e1-90b5-64ac81c02ae91c8b3b44-d370-49e1-90b5-64ac81c02ae9
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: b6c5d4c8a35aebdfca88801118cdeba25c0a7e65
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: bc3cc9028b232cc2ba6ca3130c4bdb261c4a0a42
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -60,10 +61,5 @@ Console.WriteLine(MyString.PadRight(20, "-"c))
 ## <a name="see-also"></a>Voir aussi
 
 [Opérations de chaînes de base](basic-string-operations.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

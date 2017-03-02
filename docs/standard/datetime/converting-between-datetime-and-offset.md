@@ -3,16 +3,17 @@ title: Conversion entre DateTime et DateTimeOffset
 description: Conversion entre DateTime et DateTimeOffset
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/15/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fab3af5b-5d0f-4384-a40a-1b5d99b30dd1
 translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: 312ac8cb7e901c4ceeff2e428620c2c4c615ca3d
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 2ba70e9ea39148d040bdb46d5e00ea50dcbb8980
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -417,7 +418,7 @@ Console.WriteLine("{0} converted to {1} {2}", _
 '       11/4/2007 4:00:00 AM -05:00 converted to 11/4/2007 1:00:00 AM Local
 ```
 
-## <a name="a-generalpurpose-conversion-method"></a>Méthode de conversion à usage général
+## <a name="a-general-purpose-conversion-method"></a>Méthode de conversion à usage général
 
 L’exemple suivant définit une méthode nommée `ConvertFromDateTimeOffset` qui convertit des valeurs [DateTimeOffset](xref:System.DateTimeOffset) en valeurs [DateTime](xref:System.DateTime). En fonction de son décalage, elle détermine si la valeur [DateTimeOffset](xref:System.DateTimeOffset) est une heure UTC, une heure locale ou autre, et elle définit la propriété [Kind](xref:System.DateTime.Kind) de la valeur de date et d’heure retournée, en conséquence. 
 
@@ -528,10 +529,5 @@ Notez que ce code part de deux hypothèses qui, selon l’application et la sour
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

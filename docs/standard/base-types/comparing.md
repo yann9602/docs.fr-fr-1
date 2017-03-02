@@ -3,16 +3,17 @@ title: "Comparaison de chaînes"
 description: "Comparaison de chaînes"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 920ee5e8-3d61-4941-b5af-fc50eaee427c
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 10c9ea3ebb50e8d8075d8a4e4ce007ddc29ff412
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 47ee37886fa2662a89730e9d52ee04987e37da2f
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -216,10 +217,5 @@ Les deux méthodes sont utiles quand elles sont utilisées conjointement avec la
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

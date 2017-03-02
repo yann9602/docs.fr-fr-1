@@ -3,16 +3,17 @@ title: "Guide pratique : définir et utiliser des fournisseurs de format numér
 description: "Guide pratique pour définir et utiliser des fournisseurs de format numérique personnalisés"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 9b184114-6612-4c1a-a2db-2e24e65b0f77
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 926195e48e9653525a502cf9403ae9c205bd0fe3
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: fdea0fe76b1c5f1e9ae23582219c847fe80b317f
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -244,9 +245,4 @@ Dans le cas de cet exemple, la méthode qui implémente [ICustomFormatter.Format
 ## <a name="see-also"></a>Voir aussi
 
 [Exécution d’opérations de mise en forme](performing-formatting-operations.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
