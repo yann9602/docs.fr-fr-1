@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 8c5dee8c-7bc7-4e6e-aff1-986965c4d98e
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: f4319de43043605da63f469b59a5dfdb28badc8e
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: a6644fc2431beafa2128287eeac73bd598ee304a
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -144,7 +145,7 @@ Une backreference permet qu'une sous-expression précédemment mise en correspon
 
 Construction de backreference | Description | Modèle | Correspondances
 ----------------------- | ----------- | ------- | -------
-**\**_numéro_ | Backreference. Correspond à la valeur d'une sous-expression numérotée. | `(\w)\1 ` | "ee" dans "seek"
+**\**_numéro_ | Backreference. Correspond à la valeur d'une sous-expression numérotée. | `(\w)\1    ` | "ee" dans "seek"
 **\k<**_nom_**>** | Backreference nommée. Correspond à la valeur d'une expression nommée. | `(?<char>\w)\k<char>` | "ee" dans "seek"
 
 ## <a name="alternation-constructs"></a>Constructions d'alternative
@@ -220,9 +221,4 @@ Construction | Définition | Exemple
 [Télécharger au format Word (.docx)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
     
 [Télécharger au format PDF (.pdf)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 
