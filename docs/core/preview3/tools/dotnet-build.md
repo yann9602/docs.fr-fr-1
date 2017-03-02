@@ -13,6 +13,7 @@ ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
 translationtype: Human Translation
 ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
 ms.openlocfilehash: c2c0ae3711c866268c4e8c066b4213e110e771b9
+ms.lasthandoff: 02/10/2017
 
 ---
 
@@ -53,7 +54,7 @@ Pour générer une application exécutable au lieu d’une bibliothèque, vous d
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.  
+Affiche une aide brève pour la commande.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -69,11 +70,11 @@ Définit une configuration dans laquelle effectuer la génération.  Si aucune v
 
 `-r|--runtime [RUNTIME_IDENTIFIER]`
 
-Runtime cible de la génération. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../../rid-catalog.md). 
+Runtime cible de la génération. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../../rid-catalog.md).
 
 `--version-suffix [VERSION_SUFFIX]`
 
-Définit par quoi `*` doit être remplacé dans le champ de version du fichier projet. Le format respecte les instructions de version de NuGet. 
+Définit par quoi `*` doit être remplacé dans le champ de version du fichier projet. Le format respecte les instructions de version de NuGet.
 
 `--build-profile`
 
@@ -100,9 +101,4 @@ Générer un projet et ses dépendances à l’aide de la configuration Release�
 Générer un projet et ses dépendances pour un runtime spécifique (dans cet exemple, Ubuntu 16.04) :
 
 `dotnet build --runtime ubuntu.16.04-x64`
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
