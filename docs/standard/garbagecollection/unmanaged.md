@@ -3,16 +3,17 @@ title: "Nettoyage de ressources non managées"
 description: "Nettoyage de ressources non managées"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 08/18/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 8c97c3e2-8619-47ce-ae29-d6a3140bfa83
 translationtype: Human Translation
-ms.sourcegitcommit: 213ce098bcc2b5e31c55e759d895254d5ca33caa
-ms.openlocfilehash: 692916bc5a9afd55dc4e3d0249386d2e3750895f
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 43ad8829de51775b23d1e00d9b4e2a4f4b240e94
+ms.lasthandoff: 03/03/2017
 
 ---
 
@@ -47,9 +48,4 @@ Les consommateurs de votre type peuvent ensuite appeler directement votre implé
 [Object.Finalize](xref:System.Object.Finalize) prévoit la finalisation de l’objet si les ressources non managées ne sont pas libérées par la méthode `Dispose`. 
 
 [GC.SuppressFinalize](xref:System.GC#System_GC_SuppressFinalize_System_Object_) : supprime la finalisation. Cette méthode est généralement appelée à partir d'une méthode `Dispose` pour empêcher un finaliseur de s'exécuter. 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
