@@ -3,16 +3,16 @@ title: Garbage Collection
 description: Garbage Collection
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: db39a0f5-e363-490f-a7e6-adb9a6ff2a8c
 translationtype: Human Translation
-ms.sourcegitcommit: 213ce098bcc2b5e31c55e759d895254d5ca33caa
-ms.openlocfilehash: 2406a03fa64eb02c70f05c1e8240e4bc5981e98d
+ms.sourcegitcommit: ffc0530b2263db0e073f351aac2d539de6701ead
+ms.openlocfilehash: 4646a7e8c75315bb1a13bc5fddecd77888f6ae69
+ms.lasthandoff: 01/18/2017
 
 ---
 
@@ -29,7 +29,7 @@ Le Garbage collector a un rôle de gestionnaire de mémoire automatique. Il four
 
 Le Garbage collector .NET est générationnel et comprend 3 générations. Chaque génération possède son propre tas qu’elle utilise pour le stockage des objets alloués. Il existe un principe de base selon lequel la plupart des objets sont soit éphémères, soit durables. C’est dans la génération 0 que les objets sont d’abord alloués. Souvent, les objets ne vivent pas au-delà de la première génération, car ils ne sont plus utilisés (hors de portée) au moment où le garbage collection suivant se produit. La collection de la génération 0 s’effectue rapidement, car le tas qui est associé à cette dernière est petit. La génération 1 est véritablement un espace de la deuxième chance. Les objets éphémères mais qui survivent à la collection de génération 0 (souvent basée sur un minutage fortuit) accèdent à la génération 1\. Les collections de génération 1 sont également rapides, car le tas qui lui est associé est également petit. Les deux premiers tas restent petits, car les objets sont soit collectés, soit promus au tas de la génération suivante. C’est dans la génération 2 que se trouvent tous les objets durables. La taille du tas de génération 2 peut augmenter pour qu’il devienne très volumineux, car les objets qu’il contient peuvent survivre longtemps et il n’existe pas de tas de génération 3 pour promouvoir davantage les objets.
 
-Le Garbage collector comporte un tas supplémentaire pour les objets volumineux, appelé « tas des objets volumineux ». Il est réservé aux objets qui ont une taille de 85 000 octets ou plus. Un tableau d’octets (Byte[]) comprenant 85 000 éléments est un exemple d’objet volumineux. Les objets volumineux ne sont pas alloués aux tas générationnels mais sont alloués directement au tas des objets volumineux.
+Le Garbage collector comporte un tas supplémentaire pour les objets volumineux, appelé « tas des objets volumineux » (LOH). Il est réservé aux objets qui ont une taille de 85 000 octets ou plus. Un tableau d’octets (Byte[]) comprenant 85 000 éléments est un exemple d’objet volumineux. Les objets volumineux ne sont pas alloués aux tas générationnels mais sont alloués directement au tas des objets volumineux.
 
 Les collections de génération 2 et du tas des objets volumineux peuvent prendre un temps considérable pour les programmes dont l’exécution a été longue ou qui ont exploité de grandes quantités de données. Les programmes des serveurs volumineux sont connus pour avoir des sauts de dizaines de gigaoctets. Le Garbage collector utilise différentes techniques pour réduire le temps pendant lequel il bloque l’exécution du programme. La principale approche consiste à faire autant de tâches de garbage collection que possible sur un thread d’arrière-plan d’une manière qui n’interfère pas avec l’exécution du programme. Le Garbage collector expose également plusieurs façons pour les développeurs d’influencer son comportement, ce qui peut être très utile pour améliorer les performances.
 
@@ -62,10 +62,5 @@ Titre | Description
 ## <a name="see-also"></a>Voir aussi
 
 [Nettoyage de ressources non managées](unmanaged.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

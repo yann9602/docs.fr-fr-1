@@ -3,16 +3,16 @@ title: "Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test"
 description: "Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test"
 keywords: .NET, .NET Core
 author: ardalis
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
 translationtype: Human Translation
-ms.sourcegitcommit: 15c55a87beb64f265a164db918c7721c7690fadf
-ms.openlocfilehash: a941a7e1bcafa4f342907f3160dbbf8e6ff4bac9
+ms.sourcegitcommit: 5687fc7ded899a478d1972ffea10a1e37d40124b
+ms.openlocfilehash: f1f08f550d7484869e67fe705dc789ca5dae8e2f
+ms.lasthandoff: 01/18/2017
 
 ---
 
@@ -21,6 +21,9 @@ ms.openlocfilehash: a941a7e1bcafa4f342907f3160dbbf8e6ff4bac9
 Article rédigé par [Steve Smith](http://ardalis.com) et [Bill Wagner](https://github.com/BillWagner)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)
+
+> [!NOTE]
+> Cette rubrique s'applique à .NET Core 1.0.
 
 ## <a name="creating-the-projects"></a>Création des projets
 
@@ -107,10 +110,6 @@ Le projet de test a besoin d’autres packages pour créer et exécuter des test
 
 ```json
 "dependencies": {
-  "Microsoft.NETCore.App": {
-    "type":"platform",
-    "version": "1.0.0"
-  },
   "xunit":"2.1.0",
   "dotnet-test-xunit": "1.0.0-rc2-192208-24",
   "PrimeService": {
@@ -211,9 +210,4 @@ Vous avez structuré cette solution de façon à simplifier l’ajout de nouveau
    
    > [!TIP]
    > Sur la plateforme Windows, vous pouvez utiliser MSTest. Pour en savoir plus, consultez le document sur l’[utilisation de MSTest sur Windows](./using-mstest-on-windows.md).
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
