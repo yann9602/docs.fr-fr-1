@@ -4,20 +4,20 @@ description: "Indépendance du langage et composants indépendants du langage"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/22/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 47a407d1c1e768a027aaca63ee7a668e992467b2
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: e36eab49717e6a5872c5812fce160d61eee50a4f
+ms.lasthandoff: 03/02/2017
 
 ---
 
-# <a name="language-independence-and-languageindependent-components"></a>Indépendance du langage et composants indépendants du langage
+# <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
 La plateforme .NET est indépendante du langage. Cela signifie qu’en tant que développeur, vous pouvez développer dans un des nombreux langages qui ciblent la plateforme .NET, comme C#, F# et Visual Basic. Vous pouvez accéder aux types et aux membres des bibliothèques de classes développées pour la plateforme .NET sans avoir à connaître le langage dans lequel ils ont été initialement écrits ni à suivre les conventions du langage d’origine. Si vous développez des composants, votre composant est accessible par toute application .NET, indépendamment de son langage.
 
@@ -321,10 +321,10 @@ Le [système de type commun](common-type-system.md) .NET inclut un certain nombr
 
 Type conforme à CLS | Description
 ------------------ | -----------
-[Byte](xref:System.Byte) | Entier 8 bits non signé 
-[Int16](xref:System.Int16) | Entier 16 bits signé 
-[Int32](xref:System.Int32) | Entier 32 bits signé 
-[Int64](xref:System.Int64) | Entier 64 bits signé
+[Byte](xref:System.Byte) | Entier&8; bits non signé 
+[Int16](xref:System.Int16) | Entier&16; bits signé 
+[Int32](xref:System.Int32) | Entier&32; bits signé 
+[Int64](xref:System.Int64) | Entier&64; bits signé
 [Single](xref:System.Single) | Valeur à virgule flottante simple précision
 [Double](xref:System.Double) | Valeur à virgule flottante double précision
 [Boolean](xref:System.Boolean) | Type de valeur true ou false 
@@ -338,10 +338,10 @@ Les types intrinsèques répertoriés dans le tableau suivant ne sont pas confor
 
 Type non conforme | Description | Alternative conforme à CLS
 ------------------ | ----------- | -------------------------
-[SByte](xref:System.SByte) | Type de données entier signé 8 bits | [Int16](xref:System.Int16)
-[UInt16](xref:System.UInt16) | Entier 16 bits non signé | [Int32](xref:System.Int32)
-[UInt32](xref:System.UInt32) | Entier 32 bits non signé | [Int64](xref:System.Int64)
-[UInt64](xref:System.UInt64) | Entier 64 bits non signé | [Int64](xref:System.Int64) (peut déborder), [BigInteger](xref:System.Numerics.BigInteger) ou [Double](xref:System.Double)
+[SByte](xref:System.SByte) | Type de données entier signé&8; bits | [Int16](xref:System.Int16)
+[UInt16](xref:System.UInt16) | Entier&16; bits non signé | [Int32](xref:System.Int32)
+[UInt32](xref:System.UInt32) | Entier&32; bits non signé | [Int64](xref:System.Int64)
+[UInt64](xref:System.UInt64) | Entier&64; bits non signé | [Int64](xref:System.Int64) (peut déborder), [BigInteger](xref:System.Numerics.BigInteger) ou [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Pointeur ou handle non signé | [IntPtr](xref:System.IntPtr)
  
  La bibliothèque de classes du .NET Framework ou toute autre bibliothèque de classes peut inclure d'autres types non conformes à CLS. Par exemple : 
@@ -782,7 +782,7 @@ Public Class [case]
 End Class
 ```
 
-L'exemple C# suivant peut instancier la classe `case` en utilisant le symbole @ pour lever l'ambiguïté de l'identificateur par rapport au mot clé de langage. Sans cela, le compilateur C# afficherait deux messages d'erreur : « Type attendu » et « Terme d'expression non valide 'case' ». 
+L’exemple C# suivant peut instancier la classe `case` en utilisant le symbole @ pour lever l’ambiguïté de l’identificateur par rapport au mot clé de langage. Sans cela, le compilateur C# afficherait deux messages d'erreur : « Type attendu » et « Terme d'expression non valide 'case' ». 
 
 ```csharp
 using System;
@@ -2816,7 +2816,7 @@ End Class
 
 Si vous développez une application plutôt qu'une bibliothèque (autrement dit, si vous n'exposez pas des types ou des membres qui peuvent être utilisés par d'autres développeurs d'applications), la conformité CLS des éléments de programme que votre application consomme n'a d'intérêt que si votre langage ne les prend pas en charge. Dans ce cas, votre compilateur de langage générera une erreur lorsque vous essaierez d'utiliser un élément non conforme à CLS. 
 
-## <a name="crosslanguage-interoperability"></a>Interopérabilité interlangage
+## <a name="cross-language-interoperability"></a>Interopérabilité interlangage
 
 L'indépendance du langage a plusieurs significations possibles. Une des significations implique la consommation de façon transparente des types écrits dans un langage à partir d’une application écrite dans un autre langage. Une deuxième signification, qui est le sujet de cet article, consiste à combiner du code écrit dans plusieurs langages dans un même assembly .NET Framework. 
 
@@ -2952,10 +2952,5 @@ Pour compiler avec C#, changez le nom du compilateur vbc en csc et changez l’e
 ```
 csc example.cs /r:UtilityLib.dll
 ```
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

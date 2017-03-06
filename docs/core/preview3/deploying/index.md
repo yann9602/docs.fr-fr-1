@@ -1,22 +1,24 @@
 ---
-title: "Déploiement d’applications .NET Core"
+title: "Déploiement d’applications .NET Core │ Microsoft Docs"
 description: "Déploiement d’applications .NET Core"
 keywords: ".NET, .NET Core, Déploiement .NET Core"
 author: rpetrusha
-manager: wpickett
-ms.date: 11/13/2016
+ms.author: ronpet
+ms.date: 07/02/2017
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: d99d1a68fd6d1daf68670d6d73c07fe1009d92d9
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 8917a7639f042cb25a469ee9ba7fb7cd582c3821
 
 ---
 
-# <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core #
+# <a name="net-core-application-deployment-net-core-tools-rc4"></a>Déploiement d’applications .NET Core (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour de la documentation sur les outils .NET Core Preview 2, consultez la rubrique [Déploiement d’applications .NET Core](../../deploying/index.md).
 
 Vous pouvez créer deux types de déploiement pour les applications .NET Core : 
 
@@ -109,20 +111,11 @@ Déployer un déploiement dépendant du framework avec une ou plusieurs dépenda
 
     ```xml
       <ItemGroup>
-        <PackageReference Include="Microsoft.NETCore.App">
-          <Version>1.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Newtonsoft.Json">
-          <Version>9.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Sdk">
-          <Version>1.0.0-alpha-20161102-2</Version>
-          <PrivateAssets>All</PrivateAssets>
-        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
       </ItemGroup>
     ```
 
-Notez la présence de la dépendance du SDK dans l’exemple ci-dessus. Ceci est normal, car cette dépendance est nécessaire pour restaurer toutes les cibles nécessaires au fonctionnement des outils en ligne de commande.  
+ Notez la présence de la dépendance du SDK dans l’exemple ci-dessus. Ceci est normal, car cette dépendance est obligatoire pour restaurer toutes les cibles nécessaires au fonctionnement des outils en ligne de commande.  
 
 2. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces. Pour télécharger le package, exécutez la commande `dotnet restore` après avoir ajouté la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
 
@@ -190,7 +183,7 @@ Le déploiement d’un déploiement autonome sans dépendances tierces implique 
     }
     ```
 
-3. Créez une balise `<RuntimeIdentifiers>` sous la section `<PropertyGroup>` dans votre fichier `csproj` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Par exemple, la section `runtimes` suivante indique que l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.11.
+3. Créez une balise `<RuntimeIdentifiers>` sous la section `<PropertyGroup>` dans votre fichier `csproj` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Dans l’exemple suivant, l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.11.
 
     ```xml
         <PropertyGroup>
@@ -201,15 +194,7 @@ Notez que vous devez également ajouter un point-virgule pour séparer les ident
 
 4. Exécutez la commande `dotnet restore`pour restaurer les dépendances spécifiées dans votre projet.
 
-5. Créez des versions debug de votre application sur chacune des plateformes cibles en utilisant la commande `dotnet build`. Sauf si vous spécifiez l’identificateur de runtime que vous voulez générer, la commande `dotnet build` crée une build seulement pour l’ID de runtime du système actif. Vous pouvez générer votre application pour les deux plateformes cibles avec les commandes :
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.11-x64
-    ```
-Les versions Debug de votre application pour chaque plateforme se trouvent dans le sous-répertoire `.\bin\Debug\netcoreapp1.0\<runtime_identifier>` du projet.
-
-6. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
    dotnet publish -c release -r win10-x64
@@ -217,15 +202,14 @@ Les versions Debug de votre application pour chaque plateforme se trouvent dans 
    ```
 Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.0\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
-7. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
+6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
 Voici le fichier `csproj`complet pour ce projet.
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -233,24 +217,6 @@ Voici le fichier `csproj`complet pour ce projet.
     <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>9.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
@@ -263,16 +229,7 @@ Le déploiement d’un déploiement autonome avec une ou plusieurs dépendances 
 
     ```xml
       <ItemGroup>
-        <PackageReference Include="Microsoft.NETCore.App">
-          <Version>1.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Sdk">
-          <Version>1.0.0-alpha-20161102-2</Version>
-          <PrivateAssets>All</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="Newtonsoft.Json">
-          <Version>9.0.1</Version>
-        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
       </ItemGroup>
     ```
 2. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces sur votre système. Pour rendre la dépendance disponible pour votre application, exécutez la commande `dotnet restore` après l’ajout de la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
@@ -280,8 +237,7 @@ Le déploiement d’un déploiement autonome avec une ou plusieurs dépendances 
 Voici le fichier csproj complet pour ce projet :
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -290,23 +246,8 @@ Voici le fichier csproj complet pour ce projet :
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>9.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
@@ -320,34 +261,21 @@ Si la disponibilité de l’espace de stockage adéquat sur les systèmes cibles
 
 Pour créer un déploiement autonome avec un encombrement réduit, commencez par les deux premières étapes de création d’un déploiement autonome. Une fois que vous avez exécuté la commande `dotnet new` et ajouté le code source C# à votre application, procédez comme suit :
 
-1. Ouvrez le fichier `csproj`et remplacez la section `frameworks` par ce qui suit :
+1. Ouvrez le fichier `csproj` et remplacez l’élément `<TargetFramework>` par ce qui suit :
 
     ```xml
-    <PropertyGroup>
       <TargetFramework>netstandard1.6</TargetFramework>
-  </PropertyGroup>
   ```
 Cette opération indique que, au lieu d’utiliser la totalité du framework `netcoreapp1.0`, qui comprend .NET Core CLR, la bibliothèque .NET Core et plusieurs autres composants système, notre application utilise seulement la bibliothèque .NET Standard.
 
-2. Remplacez la section `dependencies` par ce qui suit :
+2. Remplacez le `<ItemGroup>` contenant des références du package par ce qui suit :
 
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="NETSTandard.Library">
-        <Version>1.6.0</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR">
-        <Version>1.0.2</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy">
-        <Version>1.0.1</Version>
-      </PackageReference>
-      <PackageReference Include="Microsoft.NET.Sdk">
-        <Version>1.0.0-alpha-20161102-2</Version>
-        <PrivateAssets>All</PrivateAssets>
-      </PackageReference>
-    </ItemGroup>
-  ```
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+```
 
    Ceci définit les composants système utilisés par votre application. Les composants système packagés avec notre application incluent la bibliothèque .NET Standard, le runtime .NET Core et l’hôte .NET Core. Ceci produit un déploiement autonome avec un encombrement réduit.
 
@@ -360,18 +288,11 @@ Cette opération indique que, au lieu d’utiliser la totalité du framework `ne
     ```
     
 
-Un exemple complet de fichier `csproj` figure plus loin dans cette section.
+ Un exemple complet de fichier `csproj` figure plus loin dans cette section.
 
 4. Exécutez la commande `dotnet restore`pour restaurer les dépendances spécifiées dans votre projet.
 
-5. Créez des versions debug de votre application sur chacune des plateformes cibles en utilisant la commande `dotnet build`. Sauf si vous spécifiez l’identificateur de runtime que vous voulez générer, la commande `dotnet build` crée une build seulement pour l’ID de runtime du système actif. Vous pouvez générer votre application pour les deux plateformes cibles avec les commandes :
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.11-x64
-    ```
-
-6. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
    dotnet publish -c release -r win10-x64
@@ -379,49 +300,31 @@ Un exemple complet de fichier `csproj` figure plus loin dans cette section.
    ```
 Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netstandard1.6\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
-7. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
+6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
 Voici le fichier `csproj`complet pour ce projet.
 
 ```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
     <VersionPrefix>1.0.0</VersionPrefix>
     <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NETSTandard.Library">
-      <Version>1.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR">
-      <Version>1.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161102-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 ```
 
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

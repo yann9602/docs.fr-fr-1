@@ -4,16 +4,16 @@ description: "Guide pratique pour extraire le jour de la semaine à partir d’u
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 88a8f8b9-f5c9-4503-b968-84468b52bb8e
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: f7ae17ac6dbc23e18d18561d5e5ae7efc037c63e
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 1b9d1d497524e62e5758c9be7be7b586a421a258
+ms.lasthandoff: 03/03/2017
 
 ---
 
@@ -65,65 +65,65 @@ End Module
 
     a. Pour extraire le nom abrégé du jour de la semaine pour la culture actuelle, appelez la méthode d’instance [DateTime.ToString(String)](xref:System.DateTimeSystem.DateTime.ToString(System.String) ou [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) de la valeur de date et d’heure et indiquez la chaîne "ddd" comme paramètre de *format*. L'exemple suivant illustre l'appel de la méthode `ToString(String)`.
     
-    ```csharp
-    using System;
+```csharp
+using System;
 
-    public class Example
-    {
-       public static void Main()
-       {
-          DateTime dateValue = new DateTime(2008, 6, 11);
-          Console.WriteLine(dateValue.ToString("ddd"));   
-       }
-    }
-    // The example displays the following output:
-    //       Wed
-    ```
+public class Example
+{
+   public static void Main()
+   {
+  DateTime dateValue = new DateTime(2008, 6, 11);
+  Console.WriteLine(dateValue.ToString("ddd"));   
+   }
+}
+// The example displays the following output:
+//       Wed
+```
 
-    ```vb
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("ddd"))    
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       Wed
-    ```
+```vb
+Module Example
+   Public Sub Main()
+  Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("ddd"))    
+   End Sub
+End Module
+' The example displays the following output:
+'       Wed
+```
+
+    b. To extract the abbreviated weekday name for a specific culture, call the date and time value’s [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) or [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) instance method. Pass the string "ddd" as the *format* parameter. Pass either a [CultureInfo](xref:System.Globalization.CultureInfo) or a [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) object that represents the culture whose weekday name you want to retrieve as the *provider* parameter. The following code illustrates a call to the [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) method using a [CultureInfo](xref:System.Globalization.CultureInfo) object that represents the fr-FR culture.
     
-    b. Pour extraire le nom abrégé du jour de la semaine pour une culture spécifique, appelez la méthode d’instance [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) ou [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) de la valeur de date et d’heure. Indiquez la chaîne "ddd" comme paramètre de *format*. Indiquez comme paramètre de *fournisseur* un objet [CultureInfo](xref:System.Globalization.CultureInfo) ou [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) à l’aide d’un objet [CultureInfo](xref:System.Globalization.CultureInfo) qui représente la culture fr-FR.
-    
-    ```csharp
-    using System;
-    using System.Globalization;
+```csharp
+using System;
+using System.Globalization;
 
-    public class Example
-    {
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("ddd", 
                             new CultureInfo("fr-FR")));    
     }
-    }
-    // The example displays the following output:
-    //       mer. 
-    ```
+}
+// The example displays the following output:
+//       mer. 
+```
 
-    ```vb
-    Imports System.Globalization
+```vb
+Imports System.Globalization
 
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("ddd", 
-                            New CultureInfo("fr-FR")))    
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       mer.
-    ```
-    
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("ddd", 
+                        New CultureInfo("fr-FR")))
+   End Sub
+End Module
+' The example displays the following output:
+'       mer.
+```
+
 ## <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>Pour extraire le nom complet du jour de la semaine d'une date spécifique
 
 1. Si vous utilisez la représentation sous forme de chaîne d’une date, convertissez-la en une valeur [DateTime](xref:System.DateTime) ou [DateTimeOffset](xref:System.DateTimeOffset) à l’aide de la méthode [DateTime.Parse](xref:System.DateTime.Parse(System.String)) ou [DateTimeOffset.Parse](xref:System.DateTimeOffset.Parse(System.String)) statique.
@@ -131,66 +131,66 @@ End Module
 2. Vous pouvez extraire le nom abrégé du jour de la semaine au format de la culture actuelle ou d'une culture spécifique :
 
     a. Pour extraire le nom abrégé du jour de la semaine pour la culture actuelle, appelez la méthode d’instance [DateTime.ToString(String)](xref:System.DateTimeSystem.DateTime.ToString(System.String) ou [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) de la valeur de date et d’heure et indiquez la chaîne "dddd" comme paramètre de *format*. L'exemple suivant illustre l'appel de la méthode `ToString(String)`.
-    
-    ```csharp
-    using System;
 
-    public class Example
-    {
+```csharp
+using System;
+
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("dddd"));    
     }
-    }
-    // The example displays the following output:
-    //       Wednesday
-    ```
+}
+// The example displays the following output:
+//       Wednesday
+```
 
-    ```vb
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("dddd"))
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       Wednesday
-    ```
-    
-    b. Pour extraire le nom du jour de la semaine pour une culture spécifique, appelez la méthode d’instance [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) ou [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) de la valeur de date et d’heure. Indiquez la chaîne "dddd" comme paramètre de *format*. Indiquez comme paramètre de *fournisseur* un objet [CultureInfo](xref:System.Globalization.CultureInfo) ou [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) qui représente la culture au format de laquelle vous souhaitez récupérer le nom du jour de la semaine. Le code suivant illustre un appel de la méthode [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) à l’aide d’un objet [CultureInfo](xref:System.Globalization.CultureInfo) qui représente la culture es-ES.
-    
-    ```csharp
-    using System;
-    using System.Globalization;
+```vb
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("dddd"))
+   End Sub
+End Module
+' The example displays the following output:
+'       Wednesday
+```
 
-    public class Example
-    {
+    b. To extract the weekday name for a specific culture, call the date and time value’s [DateTime.ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) or [DateTimeOffset.ToString(String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) instance method. Pass the string "dddd" as the *format* parameter. Pass either a [CultureInfo](xref:System.Globalization.CultureInfo) or a [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) object that represents the culture whose weekday name you want to retrieve as the *provider* parameter. The following code illustrates a call to the [ToString(String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) method using a [CultureInfo](xref:System.Globalization.CultureInfo) object that represents the es-ES  culture.
+
+```csharp
+using System;
+using System.Globalization;
+
+public class Example
+{
     public static void Main()
     {
         DateTime dateValue = new DateTime(2008, 6, 11);
         Console.WriteLine(dateValue.ToString("dddd", 
                             new CultureInfo("es-ES")));    
     }
-    }
-    // The example displays the following output:
-    //       miércoles.
-    ```
+}
+// The example displays the following output:
+//       miércoles.
+```
 
-    ```vb
-    Imports System.Globalization
+```vb
+Imports System.Globalization
 
-    Module Example
-       Public Sub Main()
-          Dim dateValue As Date = #6/11/2008#
-          Console.WriteLine(dateValue.ToString("dddd", _
-                            New CultureInfo("es-ES")))     
-       End Sub
-    End Module
-    ' The example displays the following output:
-    '       miércoles.
-    ```
-    
+Module Example
+   Public Sub Main()
+      Dim dateValue As Date = #6/11/2008#
+      Console.WriteLine(dateValue.ToString("dddd", _
+                        New CultureInfo("es-ES"))) 
+   End Sub
+End Module
+' The example displays the following output:
+'       miércoles.
+```
+
 ## <a name="example"></a>Exemple
 
 L’exemple illustre des appels aux propriétés [Datetime.DayOfWeek](xref:System.DateTime.DayOfWeek) et [DateTimeOffset.DayOfWeek](xref:System.DateTimeOffset.DayOfWeek) et aux méthodes [DateTime.ToString(String)](xref:System.DateTime.ToString(System.String) ou [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) pour récupérer le nombre qui représente le jour de la semaine, le nom abrégé du jour de la semaine et le nom complet du jour de la semaine pour une date particulière. 
@@ -476,9 +476,4 @@ End Module
 
 [Chaînes de format de date et d’heure personnalisées](custom-datetime.md)
     
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

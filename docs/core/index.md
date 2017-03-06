@@ -10,8 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f2b312cb-f80c-4b0d-9101-93908f06a6fa
 translationtype: Human Translation
-ms.sourcegitcommit: 8ada0e4c57febd4068be69330e7f9633517ce7ff
-ms.openlocfilehash: 66d9060cd92cfe5718c55eb54e721c1239e6f2f1
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 26210b19de4f7bf70c085735771b0175945f38d4
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -151,9 +152,4 @@ Les principales différences entre .NET Core et Mono sont les suivantes :
 - **Plateformes** : Mono prend en charge un grand nombre de plateformes et de processeurs.
 - **Open Source** : Mono et .NET Core utilisent tous deux une licence MIT et sont des projets .NET Foundation.
 - **Priorité** : les plateformes mobiles sont la principale priorité de Mono depuis quelques années, alors que .NET Core accorde la priorité aux charges de travail cloud.
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

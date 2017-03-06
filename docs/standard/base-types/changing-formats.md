@@ -3,16 +3,17 @@ title: "Exemple d’expression régulière : modification des formats de date"
 description: "Exemple d’expression régulière : modification des formats de date"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3e196697-981c-4c1d-93dd-c3b236ef36dd
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 8b333db10f7dc9d0e4701899b7af46f45f60aa8e
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: f801e8761ad2dfe80915cc4425c359cfae99949e
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -141,9 +142,4 @@ Modèle | Description
 [Expressions régulières .NET](regular-expressions.md)
 
 [Exemples d’expressions régulières](regex-examples.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

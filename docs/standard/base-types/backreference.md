@@ -4,16 +4,16 @@ description: "Constructions de références arrière dans les expressions régul
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c453ed78-650f-4c3c-9ab4-9d89d250bf88
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: f55ea60d11abcfce4b5fb502e66c513646707bef
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: d6fdf23898cacc7ce569f868b3a31b71eff5c716
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -367,10 +367,5 @@ End Module
 ## <a name="see-also"></a>Voir aussi
 
 [Langage des expressions régulières - Aide-mémoire](quick-ref.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

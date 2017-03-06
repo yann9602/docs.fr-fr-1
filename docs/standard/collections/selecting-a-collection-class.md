@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 0a60fca7-e082-48d4-9dda-30b0d3e67ec7
 translationtype: Human Translation
-ms.sourcegitcommit: cfe65fcba1b3fdc09ffcac704a760d8ce29ea60b
-ms.openlocfilehash: 38f5a970738103bd96c9570f4d6e8ee540af6ee1
+ms.sourcegitcommit: 763433b00ae7d01cfa0c7fa250f51d23a95f6f15
+ms.openlocfilehash: d174d0cb910035340fb317521f3ad930d16853c2
+ms.lasthandoff: 01/18/2017
 
 ---
 
@@ -70,7 +71,7 @@ Considérez les questions suivantes :
     
 ## <a name="linq-to-objects"></a>LINQ to Objects
 
-La fonctionnalité LINQ to Objects permet aux développeurs d’utiliser des requêtes LINQ pour accéder aux objets en mémoire pour autant que le type d’objet implémente [System.Collections.IEnumerable](https://docs.microsoft.com/dotnet/core/api/System.Collections.IEnumerable) ou [System.Collections.Generic.IEnumerable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IEnumerable-1). Les requêtes LINQ fournissent un modèle commun pour accéder aux données, sont généralement plus concises et lisibles que les boucles foreach standard et intègrent des fonctions de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [LINQ (Language-Integrated Query)](../../csharp/linq.md).
+La fonctionnalité LINQ to Objects permet aux développeurs d’utiliser des requêtes LINQ pour accéder aux objets en mémoire pour autant que le type d’objet implémente [System.Collections.IEnumerable](https://docs.microsoft.com/dotnet/core/api/System.Collections.IEnumerable) ou [System.Collections.Generic.IEnumerable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IEnumerable-1). Les requêtes LINQ fournissent un modèle commun pour accéder aux données, sont généralement plus concises et lisibles que les boucles foreach standard et intègrent des fonctions de filtrage, de classement et de regroupement. Pour plus d’informations, consultez [LINQ (Language-Integrated Query)](../../csharp/linq/index.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -81,9 +82,4 @@ La fonctionnalité LINQ to Objects permet aux développeurs d’utiliser des req
 [System.Collections.Generic](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic)
 
 [Collections thread-safe](threadsafe/index.md)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

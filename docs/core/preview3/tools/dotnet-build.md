@@ -1,22 +1,26 @@
 ---
-title: Commande dotnet-build | SDK .NET Core
+title: Commande dotnet-build | Microsoft Docs
 description: "La commande dotnet-build permet de générer un projet et l’ensemble de ses dépendances."
 keywords: dotnet-build, CLI, commande CLI, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/13/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 70285a83-4103-4617-be8b-d0e1e9a4a91d
+ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 04c4d77b31bf4a1bdb425d837c490440e7312e57
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: c2c0ae3711c866268c4e8c066b4213e110e771b9
+ms.lasthandoff: 02/10/2017
 
 ---
 
-#<a name="dotnet-build"></a>dotnet-build
+#<a name="dotnet-build-net-core-tools-rc4"></a>dotnet-build (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [dotnet-build](../../tools/dotnet-build.md).
 
 ## <a name="name"></a>Nom 
 dotnet-build -- Permet de générer un projet et l’ensemble de ses dépendances. 
@@ -31,7 +35,7 @@ dotnet-build -- Permet de générer un projet et l’ensemble de ses dépendance
 ## <a name="description"></a>Description
 
 La commande `dotnet build` permet de générer plusieurs fichiers sources à partir d’un projet source et de ses dépendances, sous la forme d’un fichier binaire. Par défaut, le fichier binaire obtenu est en langage intermédiaire (IL) et possède une extension DLL. 
-`dotnet build` dépose également un fichier `\*.deps` qui décrit ce dont l’ordinateur hôte a besoin pour exécuter l’application.  
+`dotnet build` dépose également un fichier `*.deps` qui décrit ce dont l’ordinateur hôte a besoin pour exécuter l’application.  
 
 La génération nécessite l’existence d’un fichier de ressource (fichier qui répertorie toutes les dépendances de votre application), ce qui signifie que vous devez exécuter [`dotnet restore`](dotnet-restore.md) avant de générer votre code.
 
@@ -50,7 +54,7 @@ Pour générer une application exécutable au lieu d’une bibliothèque, vous d
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.  
+Affiche une aide brève pour la commande.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -66,11 +70,11 @@ Définit une configuration dans laquelle effectuer la génération.  Si aucune v
 
 `-r|--runtime [RUNTIME_IDENTIFIER]`
 
-Runtime cible de la génération. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../../rid-catalog.md). 
+Runtime cible de la génération. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../../rid-catalog.md).
 
 `--version-suffix [VERSION_SUFFIX]`
 
-Définit par quoi `*` doit être remplacé dans le champ de version du fichier projet. Le format respecte les instructions de version de NuGet. 
+Définit par quoi `*` doit être remplacé dans le champ de version du fichier projet. Le format respecte les instructions de version de NuGet.
 
 `--build-profile`
 
@@ -97,9 +101,4 @@ Générer un projet et ses dépendances à l’aide de la configuration Release�
 Générer un projet et ses dépendances pour un runtime spécifique (dans cet exemple, Ubuntu 16.04) :
 
 `dotnet build --runtime ubuntu.16.04-x64`
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

@@ -4,16 +4,16 @@ description: "Constructions de regroupement dans les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/29/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: e0bf3718-e64b-460b-b73d-66678cec6093
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: d27c8c68ea49f150fa0ae5c5c8b437c8c42c9c90
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 05fcdadee5d932a53941386f97971c24cc912fd8
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -52,7 +52,7 @@ La construction de regroupement suivante capture une sous-expression mise en cor
 
 **(**_sous-expression_**)**
 
-où *sous-expression* représente un modèle d’expression régulière valide. Les captures qui utilisent des parenthèses sont numérotées automatiquement de la gauche vers la droite en fonction de l'ordre des parenthèses ouvrantes dans l'expression régulière, à partir de 1. La capture numérotée 0 représente le texte mis en correspondance par le modèle d’expression régulière entier.
+où *sous-expression* représente un modèle d’expression régulière valide. Les captures qui utilisent des parenthèses sont numérotées automatiquement de la gauche vers la droite en fonction de l'ordre des parenthèses ouvrantes dans l'expression régulière, à partir de 1. La capture numérotée&0; représente le texte mis en correspondance par le modèle d’expression régulière entier.
 
 > [!NOTE]
 > Par défaut, l’élément de langage (sous-expression) capture la sous-expression mise en correspondance. Toutefois, si le paramètre RegexOptions d’une méthode de mise en correspondance de modèle d’expression régulière comprend l’indicateur RegexOptions.ExplicitCapture ou que l’option n est appliquée à cette sous-expression (voir Options de groupe plus loin dans cette rubrique), la sous-expression mise en correspondance n’est pas capturée.
@@ -613,7 +613,7 @@ Next
 '    'decidedly ' found at index 9. 
 ```
 
-## <a name="zerowidth-positive-lookahead-assertions"></a>Assertions de préanalyse positive de largeur nulle
+## <a name="zero-width-positive-lookahead-assertions"></a>Assertions de préanalyse positive de largeur nulle
 
 La construction de regroupement suivante définit une assertion de préanalyse positive de largeur nulle :
 
@@ -692,7 +692,7 @@ Modèle | Description
 `\w+` | Mettre en correspondance un ou plusieurs caractères alphabétiques.
 `(?=\sis\b)` | Détermine si les caractères alphabétiques sont suivis d'un espace blanc et de la chaîne « is », qui se termine à la limite d'un mot. Si tel est le cas, la recherche de correspondance réussit.
 
-## <a name="zerowidth-negative-lookahead-assertions"></a>Assertions de préanalyse négative de largeur nulle
+## <a name="zero-width-negative-lookahead-assertions"></a>Assertions de préanalyse négative de largeur nulle
 
 La construction de regroupement suivante définit une assertion de préanalyse négative de largeur nulle :
 
@@ -806,7 +806,7 @@ Modèle | Description
 `\b` | Terminer la correspondance à la limite d'un mot.
 `\p{P})` | Si le caractère suivant n'est pas un symbole de ponctuation (tel qu'un point ou une virgule), la recherche de correspondance réussit.
  
-## <a name="zerowidth-positive-lookbehind-assertions"></a>Assertions de postanalyse positive de largeur nulle
+## <a name="zero-width-positive-lookbehind-assertions"></a>Assertions de postanalyse positive de largeur nulle
 
 La construction de regroupement suivante définit une assertion de postanalyse positive de largeur nulle :
 
@@ -866,7 +866,7 @@ Modèle | Description
  
 Les assertions de postanalyse positive de largeur nulle permettent également de limiter la rétroactivité quand le ou les derniers caractères d'un groupe capturé doivent être une partie des caractères qui correspondent au modèle d'expression régulière de ce groupe. Par exemple, si un groupe capture tous les caractères alphabétiques consécutifs, vous pouvez utiliser une assertion de postanalyse positive de largeur nulle pour imposer que le dernier caractère soit un caractère alphabétique. 
 
-## <a name="zerowidth-negative-lookbehind-assertions"></a>Assertions de postanalyse négative de largeur nulle
+## <a name="zero-width-negative-lookbehind-assertions"></a>Assertions de postanalyse négative de largeur nulle
 
 La construction de regroupement suivante définit une assertion de postanalyse négative de largeur nulle :
 
@@ -1158,12 +1158,7 @@ Le premier groupe de capture met en correspondance chaque mot de la phrase. Le s
 
 ## <a name="see-also"></a>Voir aussi
 
-[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
+[Langage des expressions régulières - Aide-mémoire](quick-ref.md)
 
 [Retour sur trace dans les expressions régulières](backtracking.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

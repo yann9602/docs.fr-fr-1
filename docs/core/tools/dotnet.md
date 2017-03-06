@@ -1,22 +1,25 @@
 ---
-title: Commande dotnet | SDK .NET Core
-description: "En savoir plus sur la commande dotnet (le pilote générique des outils .NET Core CLI) et sur son utilisation."
+title: Commande dotnet | Microsoft Docs
+description: "Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser."
 keywords: dotnet, CLI, commandes CLI, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 93015521-2127-4fe9-8fce-ca79bcc4ff49
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 77c37ac3d4d0ba9ad1feac539debe40b0ee31161
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: a6a4bc5dad16bb1455fd8f7bc6a5c3609a06b88a
 
 ---
 
 #<a name="dotnet-command"></a>Commande dotnet
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Commande dotnet (outils .NET Core RC4)](../preview3/tools/dotnet.md).
 
 ## <a name="name"></a>Nom
 
@@ -84,7 +87,9 @@ Générez un projet et ses dépendances dans un répertoire donné :
 
 `dotnet build`
 
-Exécutez une application portable nommée `myapp.dll` : `dotnet myapp.dll`
+Exécutez une application portable nommée `myapp.dll` :
+
+`dotnet myapp.dll`
 
 ## <a name="environment"></a>Environnement 
 
@@ -101,6 +106,6 @@ Spécifie l’emplacement de l’index de service que doit utiliser l’hôte pa
 Spécifie si les données concernant l’utilisation des outils .NET Core doivent être collectées et envoyées à Microsoft. `true` pour ne pas adhérer à la fonctionnalité de télémétrie (valeurs : True, 1 ou Oui) ; sinon, `false` (valeurs : False, 0 ou Non). Si aucune valeur n’est définie, la valeur utilisée par défaut est `false`, c’est-à-dire que la fonctionnalité de télémétrie est activée.
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

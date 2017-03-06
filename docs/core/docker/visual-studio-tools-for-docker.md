@@ -3,16 +3,17 @@ title: Visual Studio Tools pour Docker
 description: Utilisation de Visual Studio Tools pour Docker
 keywords: ".NET, .NET Core, Docker, ASP.NET Core, Visual Studio 2015"
 author: spboyer
-manager: wpickett
+ms.author: shboyer
 ms.date: 09/16/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
 translationtype: Human Translation
-ms.sourcegitcommit: 03193513706967a46f74bccdba08a56946dd67df
-ms.openlocfilehash: f2792154a2f231fffc8e6f79c32b96e05edc71fa
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: d3ea05484650d64284affa70c7377df929e44bfc
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -123,9 +124,4 @@ microsoft/aspnetcore       1.0.1               189ad4312ce7        5 days ago   
 ```
 
 Vous pourriez vous attendre à ce que l’image de production ou de version ait une taille inférieure à celle de l’image **dev**en raison de l’utilisation du mappage de volume, le débogueur et l’application ont été en réalité exécutés à partir de votre machine locale et non pas dans le conteneur. L’image **latest** a packagé tout le code de l’application nécessaire pour l’exécuter sur un ordinateur hôte : le delta correspond donc à la taille du code de votre application.
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

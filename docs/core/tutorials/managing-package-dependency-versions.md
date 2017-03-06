@@ -10,8 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
 translationtype: Human Translation
-ms.sourcegitcommit: dd32f1dd4d17ab1bb01b5578237cc950b147898c
-ms.openlocfilehash: 676ffd19ac3e39b8260d626a81e9c1db8d58f19b
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: cf6c9757ab451f88c80fedb2dfebf7f5e320f365
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -71,7 +72,7 @@ Si c’est le cas, vous devez vérifier que le métapackage avec lequel vous com
 
 Si c’est le cas, vous devez fixer vos autres dépendances sur 1.0.  Consultez les versions de package et les numéros de build appropriés à la fin de cet article.
 
-### <a name="a-note-on-using-a-splat-string-when-versioning"></a>Remarque sur l’utilisation d’une chaîne se terminant par un astérisque (\*) lors de la gestion de version
+### <a name="a-note-on-using-a-splat-string--when-versioning"></a>Remarque sur l’utilisation d’une chaîne se terminant par un astérisque (\*) lors de la gestion de version
 
 Vous avez peut-être adopté un modèle de gestion de version qui utilise une chaîne se terminant par un astérisque (\*) comme la suivante : `"System.Collections":"4.0.11-*"`.
 
@@ -84,9 +85,4 @@ Vous avez peut-être adopté un modèle de gestion de version qui utilise une ch
 [List of all runtime packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt)(Liste de tous les packages d’exécution et leurs versions pour 1.0).
 
 [List of all .NET Core application packages and their versions for 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt) (Liste de tous les packages d’application .NET Core et leurs versions pour 1.0).
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

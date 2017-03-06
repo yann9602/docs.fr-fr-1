@@ -4,16 +4,16 @@ description: "Ancres dans les expressions régulières"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/28/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 96dff1be-3005-4ba5-af1b-323182a26085
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: b2162a90d5cb6f3472a9d323a3e46e137c9edf82
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 53345ba6ffda09a21cf4c626124797a3818aa504
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -188,7 +188,7 @@ Modèle | Description
 `(\w+\s\w+)` | Mettre en correspondance un ou plusieurs caractères de mot suivis d'un espace, suivi d'un ou plusieurs caractères de mot. Il s'agit du quatrième groupe de capture.
 `,` | Mettre en correspondance une virgule.
 `\s\d{4}` | Mettre en correspondance un espace suivi de quatre chiffres décimaux.
-`(-(\d{4}`&#124;`present))?` |  Mettre en correspondance zéro ou une occurrence d'un trait d'union suivie de quatre chiffres décimaux ou de la chaîne « present ». Il s'agit du sixième groupe de capture. Il inclut également un septième groupe de capture. 
+`(-(\d{4}`&#124;`present))?` |    Mettre en correspondance zéro ou une occurrence d'un trait d'union suivie de quatre chiffres décimaux ou de la chaîne « present ». Il s'agit du sixième groupe de capture. Il inclut également un septième groupe de capture. 
 `,?` | Mettre en correspondance zéro ou une occurrence d'une virgule.
 `(\s\d{4}(-(\d{4}`&#124;`present))?,?)+` | Mettre en correspondance une ou plusieurs occurrences des éléments suivants : un espace, quatre chiffres décimaux, zéro ou une occurrence d'un trait d'union suivie de quatre chiffres décimaux ou de la chaîne « present » et zéro ou une virgule. Il s'agit du cinquième groupe de capture.
  
@@ -835,7 +835,7 @@ Modèle | Description
 `\w*` | Mettre en correspondance zéro, un ou plusieurs caractères alphabétiques.
 `\b` | Terminer la correspondance à la limite d'un mot.
  
-## <a name="nonword-boundary-b"></a>Limite n'appartenant pas à un mot : \B
+## <a name="non-word-boundary-b"></a>Limite n'appartenant pas à un mot : \B
 
 L’ancre **\B** spécifie que la correspondance ne doit pas se produire à la limite d’un mot. Elle est le contraire de l’ancre **\b**.
 
@@ -895,9 +895,4 @@ Modèle | Description
 
 [Options des expressions régulières](options.md)
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

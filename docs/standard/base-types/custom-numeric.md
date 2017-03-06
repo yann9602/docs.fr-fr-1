@@ -4,16 +4,16 @@ description: "Chaînes de format numériques personnalisées"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b1c16ee-956f-4e9c-8502-c3dd6598c51d
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: e36c0117f6f011589299fa59a8abd139870c2257
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 017ee2b6feb87841f31660fe6cb76ccbefd5c83b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -80,26 +80,26 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 // Displays 0.6
 
 value = 1234567890;
-Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture)); 
+Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0}", value)); 
+                                "{0:0,0}", value));    
 // Displays 1,234,567,890      
 
 CultureInfo elGR = CultureInfo.CreateSpecificCulture("el-GR");
-Console.WriteLine(value.ToString("0,0", elGR)); 
-Console.WriteLine(String.Format(elGR, "{0:0,0}", value));   
+Console.WriteLine(value.ToString("0,0", elGR));    
+Console.WriteLine(String.Format(elGR, "{0:0,0}", value));    
 // Displays 1.234.567.890
 
 value = 1234567890.123456;
-Console.WriteLine(value.ToString("0,0.0", CultureInfo.InvariantCulture));   
+Console.WriteLine(value.ToString("0,0.0", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.0}", value));   
+                                "{0:0,0.0}", value));    
 // Displays 1,234,567,890.1  
 
 value = 1234.567890;
-Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture));  
+Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.00}", value));  
+                                "{0:0,0.00}", value));    
 // Displays 1,234.57
 ```
 
@@ -132,9 +132,9 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 0.6
 
 value = 1234567890
-Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture))  
+Console.WriteLine(value.ToString("0,0", CultureInfo.InvariantCulture))    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0}", value))  
+                                "{0:0,0}", value))    
 ' Displays 1,234,567,890      
 Dim elGR As CultureInfo = CultureInfo.CreateSpecificCulture("el-GR")
 Console.WriteLine(value.ToString("0,0", elGR))
@@ -148,13 +148,13 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 1,234,567,890.1  
 
 value = 1234.567890
-Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture))   
+Console.WriteLine(value.ToString("0,0.00", CultureInfo.InvariantCulture))    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:0,0.00}", value))   
+                                "{0:0,0.00}", value))    
 ' Displays 1,234.57
 ```
 
-## <a name="the-custom-specifier"></a>Spécificateur personnalisé "#"
+## <a name="the--custom-specifier"></a>Spécificateur personnalisé "#"
 
 Le spécificateur de format personnalisé "#" sert de symbole d'espace réservé des chiffres. Si la valeur qui est mise en forme comprend un chiffre à l'emplacement où le symbole « # » apparaît dans la chaîne de format, ce chiffre est copié dans la chaîne de résultat. Sinon, rien n'est stocké à cet emplacement dans la chaîne résultante. 
 
@@ -252,7 +252,7 @@ End Module
 '      The value is: ' .324'
 ```
 
-## <a name="the-custom-specifier"></a>Le spécificateur personnalisé "."
+## <a name="the--custom-specifier"></a>Le spécificateur personnalisé "."
 
 Le spécificateur de format personnalisé "." insère un séparateur décimal localisé dans la chaîne de résultat. Le premier point de la chaîne de format détermine l'emplacement du séparateur décimal dans la valeur mise en forme. Tout autre point est ignoré. 
 
@@ -326,7 +326,7 @@ Dim value As Double
 ' Displays 8.6E+4
 ```
 
-## <a name="the-custom-specifier"></a>Spécificateur personnalisé ","
+## <a name="the--custom-specifier"></a>Spécificateur personnalisé ","
 
 Le caractère "," sert à la fois de séparateur de groupes et de spécificateur de mise à l'échelle des nombres. 
 
@@ -336,7 +336,7 @@ Le caractère "," sert à la fois de séparateur de groupes et de spécificateu
   
 * Spécificateur de mise à l'échelle des nombres : si une ou plusieurs virgules sont spécifiées immédiatement à gauche du séparateur décimal explicite ou implicite, le nombre à mettre en forme est divisé par 1000 pour chaque virgule. Par exemple, si la chaîne « 0,, » est utilisée pour mettre en forme le nombre 100 millions, la sortie est « 100 ». 
 
-Vous pouvez utiliser des spécificateurs de séparateur de groupes et de mise à l'échelle des nombres dans la même chaîne de format. Par exemple, si la chaîne « #,0,, » et la culture indifférente sont utilisées pour mettre en forme le nombre 1 milliard, la sortie est « 1,000 ». 
+Vous pouvez utiliser des spécificateurs de séparateur de groupes et de mise à l'échelle des nombres dans la même chaîne de format. Par exemple, si la chaîne « #,0,, » et la culture indifférente sont utilisées pour mettre en forme le nombre&1; milliard, la sortie est « 1,000 ». 
 
 L'exemple suivant illustre l'utilisation de la virgule comme séparateur de groupes.
 
@@ -370,9 +370,9 @@ L'exemple suivant illustre l'utilisation de la virgule comme spécificateur pour
 
 ```csharp
 double value = 1234567890;
-Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture)); 
+Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture));    
 Console.WriteLine(String.Format(CultureInfo.InvariantCulture, 
-                                "{0:#,,}", value)); 
+                                "{0:#,,}", value));    
 // Displays 1235   
 
 Console.WriteLine(value.ToString("#,,,", CultureInfo.InvariantCulture));
@@ -389,7 +389,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ```vb
 Dim value As Double = 1234567890
   Console.WriteLine(value.ToString("#,,", CultureInfo.InvariantCulture))    
-  Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "{0:#,,}", value))  
+  Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "{0:#,,}", value))    
   ' Displays 1235   
 
   Console.WriteLine(value.ToString("#,,,", CultureInfo.InvariantCulture))
@@ -403,7 +403,7 @@ Dim value As Double = 1234567890
 ' Displays 1,235
 ```
 
-## <a name="the-custom-specifier"></a>Spécificateur personnalisé "%"
+## <a name="the--custom-specifier"></a>Spécificateur personnalisé "%"
 
 Un signe de pourcentage (%) dans une chaîne de format entraîne la multiplication d'un nombre par 100 avant sa mise en forme. Le symbole de pourcentage localisé est inséré dans le nombre à l'emplacement où le caractère % apparaît dans la chaîne de format. Le caractère de pourcentage utilisé est défini par la propriété [PercentSymbol](xref:System.Globalization.NumberFormatInfo.PercentSymbol) de l’objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) actuel.
 
@@ -425,7 +425,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 8.6% 
 ```
 
-## <a name="the-custom-specifier"></a>Spécificateur personnalisé "‰"
+## <a name="the--custom-specifier"></a>Spécificateur personnalisé "‰"
 
 Un caractère « pour mille » (‰ ou \u2030) dans une chaîne de format entraîne la multiplication d'un nombre par 1 000 avant sa mise en forme. Le symbole « pour mille » approprié est inséré dans la chaîne retournée, à l'emplacement où le symbole ‰ apparaît dans la chaîne de format. Le caractère « pour mille » utilisé est défini par la propriété [NumberFormatInfo.PerMilleSymbol](xref:System.Globalization.NumberFormatInfo.PerMilleSymbol) de l’objet qui fournit les informations de mise en forme spécifique à la culture.
 
@@ -491,7 +491,7 @@ Console.WriteLine(String.Format(CultureInfo.InvariantCulture,
 ' Displays 8.6E004
 ```
 
-## <a name="the-escape-character"></a>Caractère d’échappement "\"
+## <a name="the--escape-character"></a>Caractère d’échappement "\"
 
 Les symboles "#", "0", ".", ",", "%" et "‰" dans une chaîne de format sont interprétés comme des spécificateurs de format plutôt que comme des caractères littéraux. En fonction de leur position dans une chaîne de format personnalisée, les "E" majuscules et minuscules ainsi que les symboles + et - peuvent également être interprétés comme des spécificateurs de format. 
 
@@ -500,7 +500,7 @@ Pour éviter qu'un caractère soit interprété comme un spécificateur de forma
 Pour inclure une barre oblique inverse dans une chaîne de résultat, vous devez la placer dans une séquence d'échappement avec une autre barre oblique inverse (\\). 
 
 > [!NOTE]
-> Certains compilateurs, tels que le compilateur C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d’échappement. Pour garantir l’interprétation correcte d’une chaîne durant la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuelle (le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse. L'exemple C# suivant illustre ces deux approches.
+> Certains compilateurs, tels que le compilateur C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d’échappement. Pour garantir l’interprétation correcte d’une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuelle (le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse. L'exemple C# suivant illustre ces deux approches.
 
 L’exemple suivant utilise le caractère d’échappement pour empêcher l’opération de mise en forme d’interpréter les caractères "#", "0" et "\" comme des caractères d’échappement ou des spécificateurs de format. L’exemple utilise une barre oblique inverse supplémentaire pour garantir qu’une barre oblique inverse est interprétée comme un caractère littéral.
 
@@ -540,7 +540,7 @@ Console.WriteLine(String.Format("{0:\\\\\\ ##0 dollars and \0\0 cents \\\\\\}",
 ' Displays \\\ 123 dollars and 00 cents \\\
 ```
 
-## <a name="the-section-separator"></a>Séparateur de section ";"
+## <a name="the--section-separator"></a>Séparateur de section ";"
 
 Le point-virgule (;) est un spécificateur de format conditionnel qui applique une mise en forme différente à un nombre suivant que sa valeur est positive, négative ou nulle. Pour entraîner ce comportement, une chaîne de format personnalisée peut contenir jusqu'à trois sections séparées par des points-virgules. Ces sections sont décrites dans le tableau suivant. 
 
@@ -598,11 +598,11 @@ Console.WriteLine(String.Format("{0:" + fmt3 + "}", zeroValue))
 
 ## <a name="notes"></a>Notes
 
-### <a name="floatingpoint-infinities-and-nan"></a>Infinis à virgule flottante et NaN
+### <a name="floating-point-infinities-and-nan"></a>Infinis à virgule flottante et NaN
 
 Quelle que soit la chaîne de format, si la valeur d’un type virgule flottante [Single](xref:System.Single) ou [Double](xref:System.Double) est l’infini positif, l’infini négatif ou une valeur qui n’est pas un nombre, la chaîne mise en forme est, respectivement, la valeur de la propriété [PositiveInfinitySymbol](xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol), [NegativeInfinitySymbol](xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol) ou [NaNSymbol](xref:System.Globalization.NumberFormatInfo.NaNSymbol) qui est spécifiée par l’objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) actuellement applicable. 
 
-### <a name="rounding-and-fixedpoint-format-strings"></a>Arrondi et chaînes de format à virgule fixe
+### <a name="rounding-and-fixed-point-format-strings"></a>Arrondi et chaînes de format à virgule fixe
 
 Pour les chaînes de format à virgule fixe (c'est-à-dire les chaînes de format ne contenant pas de caractères de format de notation scientifique), les nombres sont arrondis au même nombre de décimales que d'espaces réservés de chiffres à droite du séparateur décimal. Si la chaîne de format ne contient pas de virgule décimale, le nombre est arrondi à l'entier le plus proche. Si le nombre possède plus de chiffres que d'espaces réservés de chiffres à gauche de la virgule décimale, les chiffres supplémentaires sont copiés dans la chaîne résultante immédiatement avant le premier espace réservé de chiffre.
 
@@ -647,10 +647,5 @@ Console.WriteLine(value2)
 [Guide pratique pour remplir un nombre avec des zéros non significatifs](pad-number.md)
 
 [Mise en forme composite](composite-format.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

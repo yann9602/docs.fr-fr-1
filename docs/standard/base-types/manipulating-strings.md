@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: da3c277e-b06e-48bd-ae1f-1e7e4240b93e
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 8a01a4406ce45faa18504c7995ddca47117cc825
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 0ad6a7ef456e7967b3c23e58cd7afa97a4b786de
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -35,10 +36,5 @@ ms.openlocfilehash: 8a01a4406ce45faa18504c7995ddca47117cc825
 [Mise en forme des types](formatting-types.md) : explique comment mettre en forme des chaînes à l’aide de spécificateurs de format de chaîne.
 
 [Analyse de chaînes](parsing-strings.md) : explique comment convertir des chaînes en types.
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

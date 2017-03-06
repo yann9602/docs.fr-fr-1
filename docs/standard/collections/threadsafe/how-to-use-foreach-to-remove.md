@@ -1,18 +1,19 @@
 ---
-title: "Guide pratique : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection"
-description: "Guide pratique : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection"
+title: "Guide pratique : utiliser la boucle ForEach pour supprimer les éléments d&quot;un BlockingCollection"
+description: "Guide pratique : utiliser la boucle ForEach pour supprimer les éléments d&quot;un BlockingCollection"
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: f3db5825-b5c9-4e8b-80bc-e11760d9523e
 translationtype: Human Translation
-ms.sourcegitcommit: c15f2da15c6448cf1c36dea2d5fd53e734bb6608
-ms.openlocfilehash: 618b5c7c1b8219f4e9225277064ff3c498ff3382
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: ccee6060aa95b80f424a959e76ceabede473ed86
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -133,9 +134,4 @@ Pour énumérer la collection sans la modifier, utilisez seulement `foreach` san
 [System.Collections.Concurrent](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent)
 
 [Vue d’ensemble de BlockingCollection](blockingcollection-overview.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,26 +1,29 @@
 ---
-title: Commande dotnet-restore | SDK .NET Core
-description: "Découvrez comment restaurer les dépendances et les outils spécifiques aux projets avec la commande dotnet-restore."
+title: Commande dotnet-restore | Microsoft Docs
+description: "Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore."
 keywords: "dotnet-restore, CLI, commande CLI, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 60489b25-38de-47e6-bed1-59d9f42e2d46
+ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: 6fb08a8765ad720b51e796aa0991087413d02e44
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 594956488dee39903feba44e10d6bb81801412a4
 
 ---
 
-#<a name="dotnet-restore"></a>dotnet-restore
+#<a name="dotnet-restore-net-core-tools-rc4"></a>dotnet-restore (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [dotnet-restore](../../tools/dotnet-restore.md).
 
 ## <a name="name"></a>Nom
 
-`dotnet-restore` : restaure les dépendances et les outils d’un projet
+`dotnet-restore` : Restaure les dépendances et les outils d’un projet.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -84,7 +87,7 @@ Restaurez des dépendances et des outils pour le projet se trouvant dans le rép
 
 Restaurez des dépendances et des outils pour le projet `app1` se trouvant à l’emplacement donné :
 
-`dotnet restore ~/projects/app1/app1.csproj``
+`dotnet restore ~/projects/app1/app1.csproj`
     
 Restaurez les dépendances et les outils pour le projet se trouvant dans le répertoire actif en utilisant le chemin de fichier fourni comme source de secours :
 
@@ -100,6 +103,6 @@ Restaurez des dépendances et des outils pour le projet se trouvant dans le rép
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

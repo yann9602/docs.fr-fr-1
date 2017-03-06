@@ -10,14 +10,15 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
 translationtype: Human Translation
-ms.sourcegitcommit: 54da8aebd64e86c064214074bc261f72c3b0aedc
-ms.openlocfilehash: bf7bf944ebbf3c53ee6206f86e1a168111b54378
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 29019587d2d847c5184d07024fa763c8af805d50
 
 ---
 
 # <a name="getting-started-with-net-core-on-windows-using-visual-studio-2015"></a>Bien démarrer avec .NET Core sur Windows à l’aide de Visual Studio 2015
 
-par [Bertrand Le Roy](https://github.com/bleroy) et [Phillip Carter](https://github.com/cartermp)
+> [!WARNING]
+> Cette rubrique s’applique à Visual Studio 2015 - Outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Bien démarrer avec .NET Core sur Windows à l’aide de Visual Studio 2017](../preview3/tutorials/using-on-windows-vs-2017.md).
 
 Visual Studio 2015 fournit un environnement de développement complet pour le développement d’applications .NET Core. Les procédures figurant dans ce document décrivent les étapes nécessaires pour créer un certain nombre de solutions .NET Core standard ou des solutions incluant des composants .NET Core à l’aide de Visual Studio. Les scénarios présentés incluent le test et l’utilisation de bibliothèques tierces qui n’ont pas été explicitement générées pour la version la plus récente de .NET Core. 
 
@@ -228,11 +229,11 @@ Fermez la solution précédente si elle a été ouverte : vous allez commencer 
 -------------------------------------
 Les outils de bibliothèque de classes portable peuvent modifier automatiquement votre bibliothèque de classes portable pour cibler .NET Standard. 
 
-1.  Double-cliquez sur le nœud « Propriétés » pour ouvrir la page de propriétés du projet
+1.    Double-cliquez sur le nœud « Propriétés » pour ouvrir la page de propriétés du projet
 
-2.  Sous l’en-tête « Ciblage », cliquez sur le lien hypertexte « Cibler .NET Platform Standard »
+2.    Sous l’en-tête « Ciblage », cliquez sur le lien hypertexte « Cibler .NET Platform Standard »
 
-3.  Cliquez sur « Oui » quand vous êtes invité à confirmer l’opération
+3.    Cliquez sur « Oui » quand vous êtes invité à confirmer l’opération
 
 Les outils sélectionnent automatiquement la version de .NET Standard qui inclut toutes les cibles initiales de votre bibliothèque de classes portable. Vous pouvez cibler une version différente de .NET Standard à l’aide de la liste déroulante .NET Standard dans la page de propriétés du projet.
  
@@ -240,17 +241,17 @@ Les outils sélectionnent automatiquement la version de .NET Standard qui inclut
 
 ### <a name="manually-edit-projectjson-to-target-net-standard-from-an-existing-portable-class-library"></a>Modifiez manuellement project.json pour cibler .NET Standard à partir d’une bibliothèque de classes portable existante
 
-1.  Si votre fichier project.json contient « dnxcore50 » dans l’élément « support », supprimez-le
+1.    Si votre fichier project.json contient « dnxcore50 » dans l’élément « support », supprimez-le
 
-2.  Supprimez la dépendance sur « Microsoft.NETCore »
+2.    Supprimez la dépendance sur « Microsoft.NETCore »
 
-3.  Modifiez la dépendance sur « Microsoft.NETCore.Portable.Compatibility » en remplaçant la version « 1.0.0 » par la version « 1.0.1 »
+3.    Modifiez la dépendance sur « Microsoft.NETCore.Portable.Compatibility » en remplaçant la version « 1.0.0 » par la version « 1.0.1 »
 
-4.  Ajoutez une dépendance sur « NETStandard.Library » version « 1.6.0 »
+4.    Ajoutez une dépendance sur « NETStandard.Library » version « 1.6.0 »
 
-5.  Dans l’élément « frameworks », supprimez le framework « dotnet » (et l’élément « imports » qu’elle contient)
+5.    Dans l’élément « frameworks », supprimez le framework « dotnet » (et l’élément « imports » qu’elle contient)
 
-6.  Ajoutez ` "netstandard1.x” : { } ` à l’élément frameworks, où x est remplacé par la version de .NET Standard que vous voulez cibler
+6.    Ajoutez ` "netstandard1.x” : { } ` à l’élément frameworks, où x est remplacé par la version de .NET Standard que vous voulez cibler
 
 ### <a name="example-projectjson"></a>Exemple de fichier project.json
 
@@ -275,6 +276,6 @@ Ce fichier project.json inclut des clauses supports pour UWP et .NET 4.6, et ci
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

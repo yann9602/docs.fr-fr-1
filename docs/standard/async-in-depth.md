@@ -3,16 +3,17 @@ title: "Async en détail"
 description: "Explication détaillée du fonctionnement du code asynchrone dans .NET"
 keywords: .NET, .NET Core, .NET Standard
 author: cartermp
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
 translationtype: Human Translation
-ms.sourcegitcommit: de0dab146fc811e895dc32f98f877db5e757f82b
-ms.openlocfilehash: 6536a608a4ee1bb10f41907a28114193a300a52c
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 4c66c1dc6fb1d51eb2a7d6566fbf62b5f19b556b
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -35,7 +36,7 @@ L’utilisation de `await` permet à votre application ou service d’effectuer 
 
 Pour en savoir plus sur les tâches et les différentes façons d’interagir avec elles, lisez l’[article Task-based Asynchronous Pattern (TAP)](https://msdn.microsoft.com/library/hh873175.aspx) (Modèle asynchrone basé sur des tâches).
 
-## <a name="deeper-dive-into-tasks-for-an-iobound-operation"></a>Approfondissement : Tâches pour une opération utilisant des E/S
+## <a name="deeper-dive-into-tasks-for-an-io-bound-operation"></a>Approfondissement : Tâches pour une opération utilisant des E/S
 
 La section suivante décrit en détail toutes les étapes d’un appel d’E/S asynchrone standard. Commençons par deux exemples.
 
@@ -44,7 +45,7 @@ Le premier exemple appelle une méthode async et retourne une tâche active qui 
 ```csharp
 public Task<string> GetHtmlAsync()
 {
-    // Execution is synchronous here
+     // Execution is synchronous here
     var client = new HttpClient();
     
     return client.GetStringAsync("http://www.dotnetfoundation.org");
@@ -117,7 +118,7 @@ Plus important encore, parce que le travail utilisant des E/S ne se sert pratiqu
 
 Par ailleurs, la répartition du travail sur le thread d’interface utilisateur (par exemple, la mise à jour d’une interface utilisateur) est très simple avec des méthodes `async` et n’engendre pas de travail supplémentaire (par exemple, l’appel d’un délégué thread-safe).
 
-## <a name="deeper-dive-into-task-and-taskt-for-a-cpubound-operation"></a>Approfondissement : Task et Task<T> pour une opération utilisant le processeur
+## <a name="deeper-dive-into-task-and-taskt-for-a-cpu-bound-operation"></a>Approfondissement : Task et Task<T> pour une opération utilisant le processeur
 
 Le code `async` utilisant le processeur est un peu différent du code `async` utilisant des E/S.  Comme le travail est effectué sur le processeur, il n’est pas possible de dédier un thread au calcul.  L’utilisation de `async` et `await` est un moyen d’interagir avec un thread en arrière-plan et de faire en sorte que l’appelant de la méthode async reste réactif.  Notez que cela ne protège en rien les données partagées.  Si vous utilisez des données partagées, vous devez quand même appliquer une stratégie de synchronisation appropriée.
 
@@ -146,8 +147,3 @@ Une fois que `await` a été trouvé, l’exécution de `CalculateResult()` est 
 ### <a name="why-does-async-help-here"></a>Pourquoi async est-il utile ici ?
 
 `async` et `await` sont la meilleure approche pour gérer les travaux utilisant l’UC quand vous avez besoin de réactivité. Il existe plusieurs modèles d’utilisation d’async avec des tâches utilisant le processeur. Notez que l’utilisation d’async représente un coût, même s’il est faible, et qu’elle n’est donc pas recommandée pour les boucles serrées.  C’est à vous de déterminer la façon dont vous écrivez votre code autour de cette nouvelle fonctionnalité.
-
-
-<!--HONumber=Nov16_HO1-->
-
-

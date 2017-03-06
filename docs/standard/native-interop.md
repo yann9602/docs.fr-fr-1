@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
 translationtype: Human Translation
-ms.sourcegitcommit: 3aeaba5c8cf800c652941b5e6c2bc9f072849893
-ms.openlocfilehash: 36041eda54290484741c375ae776b7bf1a74d7a1
+ms.sourcegitcommit: d18b21b67c154c4a8cf8211aa5d1473066c53656
+ms.openlocfilehash: 13a4e4e7a588d55e82c5c4cde8f825c3b4502bb4
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -273,7 +274,7 @@ La raison pour laquelle le marshaling est nécessaire est que les types des code
 
 ```cs
 [DllImport("somenativelibrary.dll"]
-static extern int MethodA([MarshalAs(UnmanagedType.LPStr) string parameter);
+static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
 
 ```
 
@@ -350,9 +351,4 @@ La classe `StatClass` représente une structure qui est retournée par l’appel
 *   [Wiki PInvoke.net](http://www.pinvoke.net), un excellent Wiki avec des informations sur les API Win32 courantes et comment les appeler.
 *   [P/Invoke sur MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
 *   [Documentation Mono sur P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

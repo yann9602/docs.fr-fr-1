@@ -4,16 +4,16 @@ description: Mise en forme des types
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: cf497639-9f91-45cb-836f-998d1cea2f43
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 6c6ddfdbe288fe012adf31fd4d45af1b697d1132
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: dc0693c2e2c034c4c71b4270ef2812be4af72e72
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -666,7 +666,7 @@ Titre | Définition
 [Chaînes de format d’énumération](enumeration-format.md) | Décrit les chaînes de format standard qui sont utilisées pour créer des représentations sous forme de chaîne de valeurs d'énumération.
 [Guid.ToString(String)](xref:System.Guid.ToString(System.String)) | Décrit les chaînes de format standard pour les valeurs [Guid](xref:System.Guid).
 
-## <a name="culturesensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>Mise en forme dépendante de la culture avec les fournisseurs de format et l'interface IFormatProvider
+## <a name="culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface"></a>Mise en forme dépendante de la culture avec les fournisseurs de format et l'interface IFormatProvider
 
 Si les spécificateurs de format vous permettent de personnaliser la mise en forme d'objets, la production, pour ces derniers, d'une représentation sous forme de chaîne explicite requiert souvent des informations de mise en forme supplémentaires. Par exemple, la mise en forme d'un nombre en tant que valeur monétaire en utilisant la chaîne de format standard "C" ou une chaîne de format personnalisée telle que "$ #, #.00" requiert au minimum l'existence d'informations à inclure dans la chaîne mise en forme concernant le symbole monétaire, le séparateur de groupes et le séparateur décimal appropriés. Dans .NET, ces informations de mise en forme supplémentaires sont disponibles via l’interface [IFormatProvider](xref:System.IFormatProvider), laquelle est fournie comme paramètre à une ou plusieurs surcharges de la méthode `ToString` de types numériques et de types de date et d’heure. Des implémentations de l’interface [IFormatProvider](xref:System.IFormatProvider) sont utilisées dans .NET pour prendre en charge la mise en forme spécifique à la culture. L’exemple suivant montre comment la représentation d’un objet sous forme de chaîne évolue quand il est mis en forme avec trois objets [IFormatProvider](xref:System.IFormatProvider) représentant des cultures différentes.
 
@@ -730,7 +730,7 @@ Méthode `ToString` de types de date et d'heure | [System.Globalization.DateTime
 
 Vous pouvez aussi implémenter votre propre fournisseur de format en remplacement de l'une de ces classes. Toutefois, la méthode `GetFormat` de votre implémentation doit retourner un objet du type répertorié dans le tableau précédent s'il doit fournir des informations de mise en forme à la méthode `ToString`.
 
-### <a name="culturesensitive-formatting-of-numeric-values"></a>Mise en forme dépendante de la culture des valeurs numériques
+### <a name="culture-sensitive-formatting-of-numeric-values"></a>Mise en forme dépendante de la culture des valeurs numériques
 
 Par défaut, la mise en forme des valeurs numériques est dépendante de la culture. Si vous ne spécifiez pas de culture lorsque vous appelez une méthode de mise en forme, les conventions de mise en forme de la culture actuelle du thread sont utilisées. Ceci est illustré dans l’exemple ci-dessous où la culture actuelle du thread est changée quatre fois avant que la méthode [Decimal.ToString(String)](xref:System.Decimal.ToString(System.String)) soit appelée. Dans chaque cas, la chaîne obtenue reflète les conventions de mise en forme de la culture actuelle. Ceci tient au fait que les méthodes `ToString` et `ToString(String)` encapsulent les appels à la méthode `ToString(String, IFormatProvider)` de chaque type numérique. 
 
@@ -856,7 +856,7 @@ End Module
 '       fr:    1 043,630
 ```
 
-### <a name="culturesensitive-formatting-of-date-and-time-values"></a>Mise en forme dépendante de la culture des valeurs de date et d’heure
+### <a name="culture-sensitive-formatting-of-date-and-time-values"></a>Mise en forme dépendante de la culture des valeurs de date et d’heure
 
 Par défaut, la mise en forme des valeurs de date et d'heure est dépendante de la culture. Si vous ne spécifiez pas de culture lorsque vous appelez une méthode de mise en forme, les conventions de mise en forme de la culture actuelle du thread sont utilisées. Ceci est illustré dans l’exemple ci-dessous où la culture actuelle du thread est changée quatre fois avant que la méthode [DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)) soit appelée. Dans chaque cas, la chaîne obtenue reflète les conventions de mise en forme de la culture actuelle. En effet, les méthodes [DateTime.ToString()](xref:System.DateTime.ToString), [DateTime.ToString(String)](xref:System.DateTime.ToString(System.String)), [DateTimeOffset.ToString()](xref:System.DateTimeOffset.ToString(System.String)) et [DateTimeOffset.ToString(String)](xref:System.DateTimeOffset.ToString(System.String)) incluent les appels aux méthodes [DateTime.ToString (String, IFormatProvider)](xref:System.DateTime.ToString(System.String,System.IFormatProvider)) et [DateTimeOffset.ToString (String, IFormatProvider)](xref:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)) dans un wrapper.
 
@@ -1401,9 +1401,4 @@ Titre | Définition
 [System.IFormatProvider](xref:System.IFormatProvider)
 
 [System.ICustomFormatter](xref:System.ICustomFormatter)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

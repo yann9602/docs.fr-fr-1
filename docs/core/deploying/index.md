@@ -10,12 +10,15 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 663f4102b82512e64ab39d8046c7298a7cf37de7
-ms.openlocfilehash: 5509f09b3f7957049194ea7af9952bb6b5ec7539
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 694502a105224543063cfc08e9310dc02c1d2319
 
 ---
 
 # <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core #
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Déploiement d’applications .NET Core (outils .NET Core RC4)](../preview3/deploying/index.md).
 
 Vous pouvez créer deux types de déploiement pour les applications .NET Core : 
 
@@ -391,6 +394,6 @@ Voici le fichier `project.json`complet pour ce projet.
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

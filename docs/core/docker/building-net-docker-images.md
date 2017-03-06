@@ -11,8 +11,9 @@ ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 03c28597-7e73-46d6-a9c3-f9cb55642739
 translationtype: Human Translation
-ms.sourcegitcommit: 1cb9e19ec9c9c0764244aeec5f62b812cbd91aef
-ms.openlocfilehash: 8cc784c267e9ca85ae110f8c92e0191f6fee6596
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 038a67e3e7c3c9c120d76faa82cfc046233ab5df
+ms.lasthandoff: 03/02/2017
 
 ---
  
@@ -219,10 +220,5 @@ api                 latest               ef17184c8de6        1 hour ago        2
 
 L’utilisation du générateur Docker pour ajouter les fichiers nécessaires à l’application API Web a simplifié le processus de création des versions de développement et de production des images.  Les outils sont multiplateformes : ils fournissent également un script PowerShell pour obtenir les mêmes résultats sur Windows, et Visual Studio Code permet le débogage pas à pas de l’application au sein du conteneur. En comprenant les variantes des images et les scénarios cibles, vous pouvez optimiser votre processus de développement interne, tout en obtenant des images optimisées pour les déploiements de production.  
 
-
-
-
-
-<!--HONumber=Nov16_HO3-->
 
 

@@ -4,16 +4,15 @@ description: Mise en forme composite
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/25/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a01efc8f-c242-4535-bd32-acd0032d9590
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 9bcf2ff74237f7e7faf2890849c2d68a0a602353
+ms.sourcegitcommit: 90ade65e167770bdbcbbf79707fe48e6fbc030c0
+ms.openlocfilehash: 5b61b4736880d57f02070150d8613d860505b268
 
 ---
 
@@ -25,7 +24,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 
 * [String.Format](xref:System.String.Format(System.IFormatProvider,System.String,System.Object)), qui retourne une chaîne de résultat mise en forme. 
 
-* [StringBuilder.AppendFormat](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider, System.String, System.Object), qui ajoute une chaîne de résultat mise en forme à un objet [StringBuilder](xref:System.Text.StringBuilder).
+* [StringBuilder.AppendFormat](xref:System.Text.StringBuilder.AppendFormat(System.IFormatProvider,System.String,System.Object)), qui ajoute une chaîne de résultat mise en forme à un objet [StringBuilder](xref:System.Text.StringBuilder).
 
 * Certaines surcharges de la méthode [Console](xref:System.Console) `WriteLine`, qui affichent une chaîne de résultat mise en forme sur la console.  
 
@@ -41,7 +40,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 
 Une chaîne de format composite et une liste d'objets sont utilisées comme arguments des méthodes qui prennent en charge la fonctionnalité de mise en forme composite. Une chaîne de format composite est constituée de zéro, une ou plusieurs séquences de texte fixe mélangées à un ou plusieurs éléments de format. Le texte fixe correspond à toute chaîne que vous choisissez, et chaque élément de format correspond à un objet ou une structure boxed dans la liste. La fonctionnalité de mise en forme composite retourne une nouvelle chaîne résultante, dans laquelle chaque élément de format est remplacé par la représentation sous forme de chaîne de l’objet correspondant dans la liste.
 
-Prenons le fragment de code [Format](xref:System.String.Format(System.String.Format(System.IFormatProvider,System.String,System.Object)) suivant.
+Prenons le fragment de code [Format](xref:System.String.Format(System.IFormatProvider,System.String,System.Object)) suivant.
 
 ```csharp
 string name = "Fred";
@@ -230,9 +229,9 @@ Chaque valeur de la liste de paramètres qui correspond à un élément de mise 
 
 3. Si la valeur implémente l’interface [IFormattable](xref:System.IFormattable), la méthode [ToString(String,IFormatProvider)](xref:System.IFormattable.ToString(System.String,System.IFormatProvider)) de l’interface est appelée. La valeur *formatString*, s’il en existe une dans l’élément de mise en forme, est passée à la méthode, ou bien la valeur `null` dans le cas contraire. L’argument [IFormatProvider](xref:System.IFormatProvider)est déterminé comme suit :
 
-    *   Pour une valeur numérique, si une méthode de mise en forme composite avec l’argument non null [IFormatProvider](xref:System.IFormatProvider) est appelée, le runtime demande un objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) de sa méthode [IFormatProvider.GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)). S’il ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre [IFormatProvider](xref:System.IFormatProvider), l’objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo de la culture de thread actuelle est utilisé. 
+    *   Pour une valeur numérique, si une méthode de mise en forme composite avec l’argument non null [IFormatProvider](xref:System.IFormatProvider) est appelée, le runtime demande un objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) de sa méthode [IFormatProvider.GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)). Si elle ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre [IFormatProvider](xref:System.IFormatProvider), l’objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) de la culture de thread actuelle est utilisé. 
     
-    * Pour une valeur de date et d’heure, si une méthode de mise en forme composite avec l’argument non null [IFormatProvider](xref:System.IFormatProvider) est appelée, le runtime demande un objet [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) de sa méthode [IFormatProvider.GetFormat](xref:System.IFormatProvider._GetFormat(System.Type). S’il ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre [IFormatProvider](xref:System.IFormatProvider), l’objet [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) de la culture de thread actuelle est utilisé. 
+    * Pour une valeur de date et d’heure, si une méthode de mise en forme composite avec l’argument non null [IFormatProvider](xref:System.IFormatProvider) est appelée, le runtime demande un objet [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) auprès de sa méthode [IFormatProvider.GetFormat](xref:System.IFormatProvider.GetFormat(System.Type)). S’il ne peut pas en fournir un, si la valeur de l’argument est `null` ou si la méthode de mise en forme composite n’a pas de paramètre [IFormatProvider](xref:System.IFormatProvider), l’objet [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) de la culture de thread actuelle est utilisé. 
     
     * Pour les objets d’autres types, si la mise en forme composite est appelée avec un argument [IFormatProvider](xref:System.IFormatProvider), sa valeur (notamment un `null` si aucun objet [IFormatProvider](xref:System.IFormatProvider) n’est fourni) est transmise directement à l’implémentation de [IFormattable.ToString](xref:System.IFormattable.ToString(System.String,System.IFormatProvider)). Sinon, un objet [CultureInfo](xref:System.Globalization.CultureInfo) qui représente la culture de thread actuelle est passé à l’implémentation de [IFormattable.ToString](xref:System.IFormattable.ToString(System.String,System.IFormatProvider)). 
     
@@ -377,6 +376,6 @@ Console.WriteLine(FormatPrice)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO1-->
 
 

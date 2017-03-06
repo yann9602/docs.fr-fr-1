@@ -1,22 +1,25 @@
 ---
-title: "Documentation de référence sur project.json"
+title: "Informations de référence sur project.json | Microsoft Docs"
 description: "Documentation de référence sur project.json"
 keywords: .NET, .NET Core, project.json
 author: aL3891
 ms.author: mairaw
-ms.date: 09/30/2016
+ms.date: 12/21/2016
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 3aef32bd-ee2a-4e24-80f8-a2b615e0336d
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: ce3dbad938c01fd0f9d79cefb29884be986b8e1f
+ms.sourcegitcommit: 8fba5c76375763abf90e2e17d3bcc9d0039089f0
+ms.openlocfilehash: 2cdb43a9095217498c12c97548e4aa632b13a59c
 
 ---
 
 # <a name="projectjson-reference"></a>Documentation de référence sur project.json
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour obtenir la documentation sur les outils .NET Core RC4, consultez la section [Outils de l’interface de ligne de commande .NET Core (outils .NET Core RC4)](../preview3/tools/index.md).
 
 Le fichier project.json est utilisé dans les projets .NET Core pour définir des métadonnées de projet, des informations de compilation et des dépendances. Cette rubrique répertorie toutes les propriétés que vous pouvez définir dans votre fichier project.json.
 
@@ -322,7 +325,7 @@ Exemple :
 Type : object
 
 Objet qui définit les dépendances de package du projet. Chaque clé de cet objet correspond au nom d’un package, et chaque valeur contient des informations de version.
-Pour plus d’informations, consultez l’article sur la [résolution des dépendances](https://docs.nuget.org/ndocs/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3-x) sur le site de la documentation NuGet.
+Pour plus d’informations, consultez l’article sur la [résolution des dépendances](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3x) sur le site de la documentation NuGet.
 
 Exemple :
 
@@ -344,7 +347,7 @@ Exemple :
 ### <a name="version"></a>version
 Type : chaîne
 
-Spécifie la version ou la plage de versions de la dépendance. Utilisez le caractère générique \* pour spécifier une [version de dépendance flottante](https://docs.nuget.org/ndocs/consume-packages/dependency-resolution#floating-versions).
+Spécifie la version ou la plage de versions de la dépendance. Utilisez le caractère générique \* pour spécifier une [version de dépendance flottante](https://docs.microsoft.com/nuget/consume-packages/dependency-resolution#floating-versions).
 
 Exemple :
 
@@ -508,7 +511,7 @@ Type : String[]
 
 Liste des avertissements à ignorer.
 
-Par exemple :
+Exemple :
 
 ```json
 {
@@ -518,7 +521,7 @@ Par exemple :
 }
 ```
 
-Il ignore les avertissements `The variable 'var' is assigned but its value is never used` et `The variable 'var' is assigned but its value is never used`
+Il ignore les avertissements `The variable 'var' is declared but never used` et `The variable 'var' is assigned but its value is never used`.
 
 ### <a name="additionalarguments"></a>additionalArguments
 Type : String[]
@@ -1643,7 +1646,7 @@ Exemple :
 ## <a name="usersecretsid"></a>userSecretsId
 Type : chaîne
 
-Spécifie un identificateur de secret utilisateur à utiliser au moment du développement. Pour plus d’informations, consultez [Stockage sécurisé des secrets d’application lors du développement](https://docs.asp.net/en/latest/security/app-secrets.html).
+Spécifie un identificateur de secret utilisateur à utiliser au moment du développement. Pour plus d’informations, consultez [Stockage sécurisé des secrets d’application lors du développement](https://docs.microsoft.com/aspnet/core/security/app-secrets).
 
 Exemple :
 
@@ -1655,6 +1658,6 @@ Exemple :
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

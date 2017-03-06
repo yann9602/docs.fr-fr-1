@@ -3,16 +3,17 @@ title: "Bibliothèques de framework"
 description: "Bibliothèques de framework"
 keywords: .NET, .NET Core
 author: richlander
-manager: wpickett
+ms.author: ronpet
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
 translationtype: Human Translation
-ms.sourcegitcommit: 093b852fe1ed2307ebce914381fe47388b435c95
-ms.openlocfilehash: 7283ed099cefa4b0e137869724f8e87dda0d451a
+ms.sourcegitcommit: 9df468c7225dbf1e3317ea34bd8b2285361a69f4
+ms.openlocfilehash: f14e6552b2f59694f5cf877ee8ab76ffa026f18f
+ms.lasthandoff: 01/18/2017
 
 ---
 
@@ -30,15 +31,15 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 
 .NET inclut un ensemble de types primitifs qui sont utilisés (à des degrés divers) dans tous les programmes. Ces types contiennent des données, comme des nombres, des chaînes, des octets et des objets arbitraires. Le langage C# comprend des mots clés pour ces types. Un exemple d’ensemble de ces types est indiqué ci-dessous, avec les mots clés C# correspondants.
 
-*   [System.Object](https://msdn.microsoft.com/library/system.object.aspx) ([object](https://msdn.microsoft.com/library/9kkx3h3c.aspx)) : Classe de base par excellence dans le système de type CRL. Elle constitue la racine de la hiérarchie des types.
-*   [System.Int16](https://msdn.microsoft.com/library/system.int16.aspx) ([short](https://msdn.microsoft.com/library/ybs77ex4.aspx)) : Type entier signé 16 bits. L’entier non signé [UInt16](https://msdn.microsoft.com/library/system.uint16.aspx) existe également.
-*   [System.Int32](https://msdn.microsoft.com/library/system.int32.aspx) ([int](https://msdn.microsoft.com/library/5kzh1b5w.aspx)) : Type entier signé 32 bits. L’entier non signé [UInt32](https://msdn.microsoft.com/library/x0sksh43.aspx) existe également.
-*   [System.Single](https://msdn.microsoft.com/library/system.single.aspx) ([float](https://msdn.microsoft.com/library/b1e65aza.aspx)) : Type virgule flottante 32 bits.
-*   [System.Decimal](https://msdn.microsoft.com/library/system.decimal.aspx) ([decimal](https://msdn.microsoft.com/library/364x0z75.aspx)) : Type décimal 128 bits.
-*   [System.Byte](https://msdn.microsoft.com/library/system.byte.aspx) ([byte](https://msdn.microsoft.com/library/5bdb6693.aspx)) : entier non signé 8 bits qui représente un octet de mémoire.
-*   [System.Boolean](https://msdn.microsoft.com/library/system.boolean.aspx) ([bool](https://msdn.microsoft.com/library/c8f5xwh7.aspx)) : Type booléen qui représente « true » ou « false ».
-*   [System.Char](https://msdn.microsoft.com/library/system.char.aspx) ([char](https://msdn.microsoft.com/library/x9h8tsay.aspx)) : Type numérique 16 bits qui représente un caractère Unicode.
-*   [System.String](https://msdn.microsoft.com/library/system.string.aspx) ([string](https://msdn.microsoft.com/library/362314fe.aspx)) : Représente une série de caractères. Différent de `char[]`, mais permet l’indexation dans chaque `char` individuel de `string`.
+* [System.Object](https://msdn.microsoft.com/library/system.object.aspx) ([object](https://msdn.microsoft.com/library/9kkx3h3c.aspx)) : Classe de base par excellence dans le système de type CRL. Elle constitue la racine de la hiérarchie des types.
+* [System.Int16](https://msdn.microsoft.com/library/system.int16.aspx) ([short](https://msdn.microsoft.com/library/ybs77ex4.aspx)) : Type entier signé 16 bits. L’entier non signé [UInt16](https://msdn.microsoft.com/library/system.uint16.aspx) existe également.
+* [System.Int32](https://msdn.microsoft.com/library/system.int32.aspx) ([int](https://msdn.microsoft.com/library/5kzh1b5w.aspx)) : Type entier signé 32 bits. L’entier non signé [UInt32](https://msdn.microsoft.com/library/x0sksh43.aspx) existe également.
+* [System.Single](https://msdn.microsoft.com/library/system.single.aspx) ([float](https://msdn.microsoft.com/library/b1e65aza.aspx)) : Type virgule flottante 32 bits.
+* [System.Decimal](https://msdn.microsoft.com/library/system.decimal.aspx) ([decimal](https://msdn.microsoft.com/library/364x0z75.aspx)) : Type décimal 128 bits.
+* [System.Byte](https://msdn.microsoft.com/library/system.byte.aspx) ([byte](https://msdn.microsoft.com/library/5bdb6693.aspx)) : entier non signé 8 bits qui représente un octet de mémoire.
+* [System.Boolean](https://msdn.microsoft.com/library/system.boolean.aspx) ([bool](https://msdn.microsoft.com/library/c8f5xwh7.aspx)) : Type booléen qui représente « true » ou « false ».
+* [System.Char](https://msdn.microsoft.com/library/system.char.aspx) ([char](https://msdn.microsoft.com/library/x9h8tsay.aspx)) : Type numérique 16 bits qui représente un caractère Unicode.
+* [System.String](https://msdn.microsoft.com/library/system.string.aspx) ([string](https://msdn.microsoft.com/library/362314fe.aspx)) : Représente une série de caractères. Différent de `char[]`, mais permet l’indexation dans chaque `char` individuel de `string`.
 
 ## <a name="data-structures"></a>Structures de données
 
@@ -58,14 +59,9 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 *   [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) : API qui permet de charger et d’interroger des documents XML avec LINQ.
 *   [StreamReader](https://msdn.microsoft.com/library/system.io.streamreader.aspx) : API qui permet de lire des fichiers ([StreamWriter](https://msdn.microsoft.com/library/system.io.stringwriter.aspx)). Peut être utilisée pour écrire des fichiers.
 
-## <a name="appmodel-apis"></a>API de modèle d’application
+## <a name="app-model-apis"></a>API de modèle d’application
 
 Il existe de nombreux modèles d’application qui peuvent être utilisés avec .NET, fournis par plusieurs sociétés.
 
 *   [ASP.NET](http://asp.net) : Fournit un framework web pour créer des sites et des services web. Pris en charge sur Windows, Linux et Mac OS (dépend de la version d’ASP.NET).
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

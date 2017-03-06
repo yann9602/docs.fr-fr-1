@@ -1,6 +1,6 @@
 ---
-title: Commande dotnet | SDK .NET Core
-description: "En savoir plus sur la commande dotnet (le pilote générique des outils .NET Core CLI) et sur son utilisation."
+title: Commande dotnet | Microsoft Docs
+description: "Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser."
 keywords: dotnet, CLI, commandes CLI, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 93015521-2127-4fe9-8fce-ca79bcc4ff49
+ms.assetid: 256e468e-eaaa-4715-b5fb-8cbddcf80e69
 translationtype: Human Translation
-ms.sourcegitcommit: 1a84c694945fe0c77468eb77274ab46618bccae6
-ms.openlocfilehash: bbc13c8cca82e660f0f8ccf7d88c0340d9c06e68
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: c80b5e7e26366b5253816e81a8203f90690eec1e
 
 ---
 
-#<a name="dotnet-command"></a>Commande dotnet
+#<a name="dotnet-command-net-core-tools-rc4"></a>Commande dotnet (outils .NET Core RC4)
+
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [Commande dotnet](../../tools/dotnet.md).
 
 ## <a name="name"></a>Nom
 
@@ -70,9 +73,9 @@ Les commandes suivantes sont disponibles pour dotnet :
 * [dotnet-pack](dotnet-pack.md)
    * Crée un package NuGet à partir de votre code.
 * [dotnet-migrate](dotnet-migrate.md)
-   * Migre un projet Preview 2 valide vers un projet Preview 3
+   * Migre un projet Preview 2 valide vers un projet RC4.
 * [dotnet-msbuild](dotnet-msbuild.md)
-   * Fournit l’accès à la ligne de commande MSBuild
+   * Fournit l’accès à la ligne de commande MSBuild.
 
 ## <a name="examples"></a>Exemples
 
@@ -107,6 +110,6 @@ Spécifie si les données concernant l’utilisation des outils .NET Core doiven
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

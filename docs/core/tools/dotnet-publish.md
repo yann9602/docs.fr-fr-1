@@ -1,26 +1,29 @@
 ---
-title: Commande dotnet-publish | SDK .NET Core
+title: Commande dotnet-publish | Microsoft Docs
 description: "La commande dotnet-publish publie votre projet .NET Core dans un répertoire."
 keywords: "dotnet-publish, CLI, commande CLI, .NET Core"
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 10/07/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8a7e1c52-5c57-4bf5-abad-727450ebeefd
 translationtype: Human Translation
-ms.sourcegitcommit: c6ee3f5663d0a3f62914e8de474cca4d15340c9d
-ms.openlocfilehash: 2b00a2c6da73c2252997b63aca8fc475cac8999f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 1cf1611ab83874ad44855521d21040d102206338
 
 ---
 
-#<a name="dotnetpublish"></a>dotnet-publish
+#<a name="dotnet-publish"></a>dotnet-publish
+
+> [!WARNING]
+> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-publish (outils .NET Core RC4)](../preview3/tools/dotnet-publish.md).
 
 ## <a name="name"></a>Nom
 
-`dotnet-publish` : Package l’application et toutes ses dépendances dans un dossier, en préparation de sa publication
+`dotnet-publish` : Place l’application et toutes ses dépendances dans un dossier, pour la préparer à la publication.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -102,6 +105,6 @@ Publiez l’application actuelle à l’aide du framework `netcoreapp1.0` et du 
 * [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Feb17_HO2-->
 
 

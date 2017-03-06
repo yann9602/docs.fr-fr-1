@@ -4,16 +4,16 @@ description: "Encodage de caractères dans .NET"
 keywords: .NET, .NET Core
 author: stevehoag
 ms.author: shoag
-manager: wpickett
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bce54e41-e9dc-493a-8988-1cbadc340fe8
 translationtype: Human Translation
-ms.sourcegitcommit: b20713600d7c3ddc31be5885733a1e8910ede8c6
-ms.openlocfilehash: 6080f5fa12a2391dd138828e0afc2219f1e3a11b
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: a8f42fa6a37f8de6f13186ea2ac17b2b2ced1601
+ms.lasthandoff: 03/02/2017
 
 ---
 
@@ -592,7 +592,7 @@ Quand une méthode tente d'encoder ou de décoder un caractère, mais qu'il n'ex
 > [!IMPORTANT]
 > Les problèmes les plus courants des opérations d'encodage se produisent quand un caractère Unicode ne peut pas être mappé à un encodage de page de codes particulier. Les problèmes les plus courants des opérations de décodage se produisent quand des séquences d'octets non valides ne peut pas être traduites en caractères Unicode valides. Pour ces raisons, vous devez savoir quelle stratégie de secours est utilisée par un objet de codage particulier. Chaque fois que c'est possible, vous devez spécifier la stratégie de secours utilisée par un objet d'encodage quand vous instanciez l'objet.
  
-### <a name="bestfit-fallback"></a>Stratégie de secours la mieux adaptée
+### <a name="best-fit-fallback"></a>Stratégie de secours la mieux adaptée
 
 Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il existe très peu de pages de codes contenant des caractères qui ne peuvent pas être mappés à Unicode.) La stratégie de secours la mieux adaptée correspond aux valeurs par défaut des encodages de pages de codes et de jeux de caractères codés sur deux octets, qui sont récupérés par les surcharges [Encoding.GetEncoding(Int32)](xref:System.Text.Encoding.GetEncoding(System.Int32)) et [Encoding.GetEncoding(String)](xref:System.Text.Encoding.GetEncoding(System.String)).
 
@@ -1502,10 +1502,5 @@ End Module
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

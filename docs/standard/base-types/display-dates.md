@@ -3,20 +3,21 @@ title: "Guide pratique : afficher des dates dans des calendriers non grégorien
 description: "Guide pratique pour afficher des dates dans des calendriers non grégoriens"
 keywords: .NET, .NET Core
 author: stevehoag
-manager: wpickett
+ms.author: shoag
 ms.date: 07/26/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 93f06e1d-544b-4ccc-a0b2-95cd674852cb
 translationtype: Human Translation
-ms.sourcegitcommit: fb00da6505c9edb6a49d2003ae9bcb8e74c11d6c
-ms.openlocfilehash: 783b51f3145d8b11e79b99cfdc4baefe127306e3
+ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.openlocfilehash: 69a33b3e162c07a1d8a065a150c6db96f04334f6
+ms.lasthandoff: 03/02/2017
 
 ---
 
-# <a name="how-to-display-dates-in-nongregorian-calendars"></a>Guide pratique : afficher des dates dans des calendriers non grégoriens
+# <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Guide pratique : afficher des dates dans des calendriers non grégoriens
 
 Les types [DateTime](xref:System.DateTime) et [DateTimeOffset](xref:System.DateTimeOffset) utilisent le calendrier grégorien comme calendrier par défaut. Cela signifie que l’appel de la méthode `ToString` d’une valeur de date et d’heure affiche la représentation sous forme de chaîne de la date et de l’heure dans le calendrier grégorien, même si ces date et heure ont été créées à l’aide d’un autre calendrier. Ceci est illustré dans l’exemple suivant, qui utilise deux méthodes différentes pour créer une valeur de date et d’heure avec le calendrier persan, mais affiche toujours ces valeurs de date et d’heure dans le calendrier grégorien quand il appelle la méthode [ToString](xref:System.DateTime.ToString). Cet exemple reflète deux techniques couramment utilisées, mais incorrectes, pour l’affichage de la date dans un calendrier particulier.
 
@@ -331,9 +332,4 @@ Quel que soit le calendrier utilisé pour créer une valeur [DateTime](xref:Syst
 ## <a name="see-also"></a>Voir aussi
 
 [Exécution d’opérations de mise en forme](performing-formatting-operations.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

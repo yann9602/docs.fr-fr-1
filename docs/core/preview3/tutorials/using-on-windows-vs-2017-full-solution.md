@@ -1,5 +1,5 @@
 ---
-title: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017"
+title: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017 │ Microsoft Docs"
 description: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017"
 keywords: .NET, .NET Core
 author: bleroy
@@ -8,16 +8,17 @@ ms.date: 11/16/2016
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
-ms.assetid: d743134a-08a3-4ff6-aab7-49f71f0568c3
+ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
 translationtype: Human Translation
-ms.sourcegitcommit: 07b62bd7163193eff8dc8f61fda7a45a924bba2b
-ms.openlocfilehash: 9e65979d2f41e39e89109c2c5480acaebbef757f
+ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
+ms.openlocfilehash: 04f5264eaaa16be299e0d72f587ee232a5e61ca9
 
 ---
 
-# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017
+# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017-net-core-tools-rc4"></a>Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017 (outils .NET Core RC4)
 
-par [Bertrand Le Roy](https://github.com/bleroy) et [Phillip Carter](https://github.com/cartermp)
+> [!WARNING]
+> Cette rubrique s’applique aux outils .NET Core RC4. Pour la version Preview 2 des outils .NET Core, consultez la rubrique [Bien démarrer avec .NET Core sur Windows à l’aide de Visual Studio 2015](../../tutorials/using-on-windows.md).
 
 Visual Studio 2017 fournit un environnement de développement complet pour le développement d’applications .NET Core. Les procédures décrites dans ce document expliquent comment créer une solution .NET Core classique qui inclut des bibliothèques réutilisables, des tests et utilise des bibliothèques tierces. 
 
@@ -66,7 +67,7 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 
 ### <a name="writing-the-console-app"></a>Écriture de l’application console
 
-1. Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution et ajoutez un nouveau projet **Application console (.NET Core)**. Nommez-le « App », puis définissez l’emplacement sur `Golden\src`.
+1. Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution et ajoutez un nouveau projet **Application console (.NET Core)**. Nommez-le « Application ».
 
 2. Dans le projet **App**, ouvrez le menu contextuel du nœud **Dépendances**, puis choisissez **Ajouter**, **Référence**. 
 
@@ -74,7 +75,7 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 
 6. Ouvrez le menu contextuel du nœud **App**, puis choisissez **Définir comme projet de démarrage**. Ainsi, il est possible d’appuyer sur F5 ou Ctrl+F5 pour démarrer l’application console.
 
-7. Ouvrez le fichier `Program.cs`, ajoutez une directive `using Library;` en haut du fichier, puis ajoutez `Console.WriteLine($"The answer is {new Thing().Get(42)}");` à la méthode `Main`.
+7. Ouvrez le fichier `Program.cs`, ajoutez une directive `using Library;` en haut du fichier, puis ajoutez `Console.WriteLine($"The answer is {new Thing().Get(42)}.");` à la méthode `Main`.
 
 8. Définissez un point d’arrêt après la ligne que vous venez d’ajouter.
 
@@ -84,6 +85,6 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 
