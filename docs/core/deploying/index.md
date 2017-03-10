@@ -1,24 +1,22 @@
 ---
-title: "Déploiement d’applications .NET Core"
+title: "Déploiement d’applications .NET Core │ Microsoft Docs"
 description: "Déploiement d’applications .NET Core"
 keywords: ".NET, .NET Core, Déploiement .NET Core"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 09/08/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 694502a105224543063cfc08e9310dc02c1d2319
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: 0e186665619bd76c5ba3d1e605b885a12aa15c66
+ms.lasthandoff: 03/07/2017
 
 ---
 
-# <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core #
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Déploiement d’applications .NET Core (outils .NET Core RC4)](../preview3/deploying/index.md).
+# <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
 
 Vous pouvez créer deux types de déploiement pour les applications .NET Core : 
 
@@ -50,7 +48,7 @@ Il existe également quelques inconvénients :
 
 Le déploiement d’un déploiement dépendant du framework sans dépendances tierces implique simplement la génération, le test et la publication de l’application. Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’[utilitaire dotnet](../tools/dotnet.md) à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
 
-1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez [dotnet new](../tools/dotnet-new.md) pour créer un nouveau projet de console C#.
+1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez `[dotnet new console](../tools/dotnet-new.md)` pour créer un projet de console C#.
 
 2. Ouvrez le fichier `Program.cs` dans un éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte, puis affiche les différents mots entrés par l’utilisateur. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
@@ -93,9 +91,9 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 4. Créez une version Debug de votre application à l’aide de la commande [dotnet build](../tools/dotnet-build.md).
 
-5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application à l’aide de la commande `dotnet publish -f netcoreapp1.0 -c release`. Ceci crée une version de publication (au lieu d’une version debug) de votre application.
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application à l’aide de la commande `dotnet publish -f netcoreapp1.1 -c release`. Ceci crée une version de publication (au lieu d’une version debug) de votre application.
 
-   Les fichiers résultants sont placés dans un répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.0` de votre projet.
+   Les fichiers résultants sont placés dans un répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.1` de votre projet.
 
 6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
@@ -107,17 +105,15 @@ Outre les fichiers binaires d’application, le programme d’installation doit 
 
 Déployer un déploiement dépendant du framework avec une ou plusieurs dépendances tierces implique trois étapes supplémentaires avant de pouvoir exécuter la commande `dotnet restore` :
 
-1. Ajouter des références à des bibliothèques tierces à la section `dependencies` de votre fichier `project.json`. La section `dependencies` suivante utilise Json.NET comme bibliothèque tierce.
+1. Ajouter des références à des bibliothèques tierces à la section `<ItemGroup>` de votre fichier `csproj`. La section `<ItemGroup>` suivante présente le `<ItemGroup>` qui contient les dépendances du projet par défaut avec Json.NET comme bibliothèque tierce.
 
-    ```json
-    "dependencies": {
-      "Microsoft.NETCore.App": {
-        "type": "platform",
-        "version": "1.0.0"
-      },
-      "Newtonsoft.Json": "9.0.1"
-    },
+    ```xml
+      <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+      </ItemGroup>
     ```
+
+ Notez la présence de la dépendance du SDK dans l’exemple ci-dessus. Ceci est normal, car cette dépendance est obligatoire pour restaurer toutes les cibles nécessaires au fonctionnement des outils en ligne de commande.  
 
 2. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces. Pour télécharger le package, exécutez la commande `dotnet restore` après avoir ajouté la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
 
@@ -143,11 +139,11 @@ Elle a également plusieurs inconvénients :
 
 - Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.
 
-### <a name="a-namesimpleselfa-deploying-a-simple-self-contained-deployment"></a><a name="simpleSelf"></a> Déploiement d’un déploiement autonome simple ###
+### <a name="simpleSelf"></a> Déploiement d’un déploiement autonome simple ###
 
-Le déploiement d’un déploiement autonome sans dépendances tierces implique la création du projet, la modification du fichier project.json, la génération, le test et la publication de l’application.  Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’utilitaire `dotnet` à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
+Le déploiement d’un déploiement autonome sans dépendances tierces implique la création du projet, la modification du fichier csproj, la génération, le test et la publication de l’application.  Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’utilitaire `dotnet` à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
 
-1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez `dotnet new` pour créer un nouveau projet de console C#.
+1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez `dotnet new console` pour créer un nouveau projet de console C#.
 
 2. Ouvrez le fichier `Program.cs` dans un éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte, puis affiche les différents mots entrés par l’utilisateur. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
@@ -185,121 +181,72 @@ Le déploiement d’un déploiement autonome sans dépendances tierces implique 
     }
     ```
 
-3. Ouvrez le fichier `project.json` et, dans la section `frameworks`, supprimez la ligne suivante :
+3. Créez une balise `<RuntimeIdentifiers>` sous la section `<PropertyGroup>` dans votre fichier `csproj` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Dans l’exemple suivant, l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.11.
 
-   ```json
-   "type": "platform",
-   ```
-La section Framework doit ressembler à ceci une fois que vous l’avez modifiée :
-
-    ```json
-    "frameworks": {
-      "netcoreapp1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.App": {
-             "version": "1.0.0"
-          }
-        }
-      }
-    }
+    ```xml
+        <PropertyGroup>
+          <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+        </PropertyGroup>
     ```
-La suppression de l’attribut `"type": "platform"` indique que le framework est fourni comme un ensemble de composants locaux à notre application, au lieu d’un package de plateforme à l’échelle du système.
+Notez que vous devez également ajouter un point-virgule pour séparer les identificateurs de runtime. Notez également que l’élément `<RuntimeIdentifier>` peut être placé dans n’importe quel `<PropertyGroup>` au sein de votre fichier `csproj`. Un exemple complet de fichier `csproj` figure plus loin dans cette section.
 
-4. Créez une section `runtimes` dans votre fichier `project.json` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Par exemple, la section `runtimes` suivante indique que l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.10.
+4. Exécutez la commande `dotnet restore`pour restaurer les dépendances spécifiées dans votre projet.
 
-    ```json
-        "runtimes": {
-          "win10-x64": {},
-          "osx.10.10-x64": {}
-        }
-    ```
-Notez que vous devez également ajouter une virgule pour séparer la section `runtimes` de la section précédente.
-Un exemple complet de fichier `project.json` figure plus loin dans cette section.
-
-6. Exécutez la commande `dotnet restore`pour restaurer les dépendances spécifiées dans votre projet.
-
-7. Créez des versions debug de votre application sur chacune des plateformes cibles en utilisant la commande `dotnet build`. Sauf si vous spécifiez l’identificateur de runtime que vous voulez générer, la commande `dotnet build` crée une build seulement pour l’ID de runtime du système actif. Vous pouvez générer votre application pour les deux plateformes cibles avec les commandes :
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.10-x64
-    ```
-Les versions Debug de votre application pour chaque plateforme se trouvent dans le sous-répertoire `.\bin\Debug\netcoreapp1.0\<runtime_identifier>` du projet.
-
-8. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
    dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.10-x64
+   dotnet publish -c release -r osx.10.11-x64
    ```
-Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.0\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
+Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.1\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
-9. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
+6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
-Voici le fichier `project.json`complet pour ce projet.
+Voici le fichier `csproj`complet pour ce projet.
 
-```json
-{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true
-  },
-  "dependencies": {},
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "version": "1.0.0"
-        }
-      }
-    }
-  },
-  "runtimes": {
-    "win10-x64": {},
-    "osx.10.10-x64": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+</Project>
 ```
+
 
 ### <a name="deploying-a-self-contained-deployment-with-third-party-dependencies"></a>Déploiement d’un déploiement autonome avec des dépendances tierces ###
 
 Le déploiement d’un déploiement autonome avec une ou plusieurs dépendances tierces implique l’ajout des dépendances tierces :
 
-1. Ajouter des références à des bibliothèques tierces à la section `dependencies` de votre fichier `project.json`. La section `dependencies` suivante utilise Json.NET comme bibliothèque tierce.
+1. Ajouter des références à des bibliothèques tierces à la section `<ItemGroup>` de votre fichier `csproj`. La section `<ItemGroup>` suivante utilise Json.NET comme bibliothèque tierce.
 
-    ```json
-    "dependencies": {
-      "Microsoft.NETCore.App": "1.0.0",
-      "Newtonsoft.Json": "9.0.1"
-    },
+    ```xml
+      <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+      </ItemGroup>
     ```
 2. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces sur votre système. Pour rendre la dépendance disponible pour votre application, exécutez la commande `dotnet restore` après l’ajout de la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
 
-Voici le fichier project.json complet pour ce projet :
+Voici le fichier csproj complet pour ce projet :
 
-```json
-{
-  "version": "1.0.0-*",
-  "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true
-  },
-  "dependencies": {
-    "Microsoft.NETCore.App": "1.0.0",
-    "Newtonsoft.Json": "9.0.1"
-  },
-  "frameworks": {
-    "netcoreapp1.0": {
-    }
-  },
-  "runtimes": {
-    "win10-x64": {},
-    "osx.10.10-x64": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+</Project>
 ```
 
 Quand vous déployez votre application, toutes les dépendances tierces utilisées dans votre application sont également incluses avec vos fichiers d’application. Il n’est pas nécessaire que les bibliothèques tierces soient déjà présentes sur le système sur lequel l’application s’exécute.
@@ -308,92 +255,68 @@ Notez que vous pouvez déployer un déploiement autonome avec une bibliothèque 
 
 ### <a name="deploying-a-self-contained-deployment-with-a-smaller-footprint"></a>Déploiement d’un déploiement autonome avec un encombrement réduit ###
 
-Si la disponibilité de l’espace de stockage adéquat sur les systèmes cibles peut poser un problème, vous pouvez réduire l’encombrement global de votre application en excluant certains composants système. Pour cela, vous définissez explicitement les composants .NET Core que votre application inclut dans votre fichier project.json.
+Si la disponibilité de l’espace de stockage adéquat sur les systèmes cibles peut poser un problème, vous pouvez réduire l’encombrement global de votre application en excluant certains composants système. Pour cela, vous définissez explicitement les composants .NET Core que votre application inclut dans votre fichier csproj.
 
-Pour créer un déploiement autonome avec un encombrement réduit, commencez par les deux premières étapes de création d’un déploiement autonome. Une fois que vous avez exécuté la commande `dotnet new` et ajouté le code source C# à votre application, procédez comme suit :
+Pour créer un déploiement autonome avec un encombrement réduit, commencez par les deux premières étapes de création d’un déploiement autonome. Une fois que vous avez exécuté la commande `dotnet new console` et ajouté le code source C# à votre application, procédez comme suit :
 
-1. Ouvrez le fichier `project.json`et remplacez la section `frameworks` par ce qui suit :
+1. Ouvrez le fichier `csproj` et remplacez l’élément `<TargetFramework>` par ce qui suit :
 
-    ```json
-    "frameworks": {
-      "netstandard1.6": { }
-    }
-    ```
-Ceci fait deux choses :
+  ```xml
+  <TargetFramework>netstandard1.6</TargetFramework>
+  ```
+Cette opération indique que, au lieu d’utiliser la totalité du framework `netcoreapp1.0`, qui comprend .NET Core CLR, la bibliothèque .NET Core et plusieurs autres composants système, notre application utilise seulement la bibliothèque .NET Standard.
 
-    * Il indique que, au lieu d’utiliser la totalité du framework `netcoreapp1.0`, qui comprend .NET Core CLR, la bibliothèque .NET Core et plusieurs autres composants système, notre application utilise seulement la bibliothèque .NET Standard.
+2. Remplacez le `<ItemGroup>` contenant des références du package par ce qui suit :
 
-    * La suppression de l’attribut `"type": "platform"` indique que le framework est fourni comme un ensemble de composants locaux à notre application, au lieu d’un package de plateforme à l’échelle du système.
+  ```xml
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+  ```
 
-2. Remplacez la section `dependencies` par ce qui suit :
-
-    ```json
-    "dependencies": {
-      "NETStandard.Library": "1.6.0",
-      "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
-      "Microsoft.NETCore.DotNetHostPolicy":  "1.0.1"
-    },
-    ```
    Ceci définit les composants système utilisés par votre application. Les composants système packagés avec notre application incluent la bibliothèque .NET Standard, le runtime .NET Core et l’hôte .NET Core. Ceci produit un déploiement autonome avec un encombrement réduit.
 
-3. Comme vous l’avez fait dans l’exemple [Déploiement d’un déploiement autonome simple](#simpleSelf), créez une section `runtimes` dans votre fichier `project.json` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Par exemple, la section `runtimes` suivante indique que l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.10.
+3. Comme vous l’avez fait dans l’exemple [Déploiement d’un déploiement autonome simple](#simpleSelf), créez un élément `<RuntimeIdentifiers>` dans un `<PropertyGroup>` au sein de votre fichier `csproj` qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme que vous ciblez. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime. Dans l’exemple suivant, l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.11.
 
-    ```json
-        "runtimes": {
-          "win10-x64": {},
-          "osx.10.10-x64": {}
-        }
+    ```xml
+    <PropertyGroup>
+      <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+    </PropertyGroup>
     ```
-Notez que vous devez également ajouter une virgule pour séparer la section `runtimes` de la section précédente.
-Un exemple complet de fichier `project.json` figure plus loin dans cette section.
+    
+   Un exemple complet de fichier `csproj` figure plus loin dans cette section.
 
 4. Exécutez la commande `dotnet restore`pour restaurer les dépendances spécifiées dans votre projet.
 
-5. Créez des versions debug de votre application sur chacune des plateformes cibles en utilisant la commande `dotnet build`. Sauf si vous spécifiez l’identificateur de runtime que vous voulez générer, la commande `dotnet build` crée une build seulement pour l’ID de runtime du système actif. Vous pouvez générer votre application pour les deux plateformes cibles avec les commandes :
-
-    ```console
-    dotnet build -r win10-x64
-    dotnet build -r osx.10.10-x64
-    ```
-
-6. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
    dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.10-x64
+   dotnet publish -c release -r osx.10.11-x64
    ```
 Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netstandard1.6\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
-7. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
+6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
-Voici le fichier `project.json`complet pour ce projet.
+Voici le fichier `csproj`complet pour ce projet.
 
-```json
-   {
-     "version": "1.0.0-*",
-     "buildOptions": {
-       "debugType": "portable",
-       "emitEntryPoint": true
-     },
-     "dependencies": {
-       "NETStandard.Library": "1.6.0",
-       "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
-       "Microsoft.NETCore.DotNetHostPolicy":  "1.0.1"
-     },
-     "frameworks": {
-       "netstandard1.6": { }
-     },
-     "runtimes": {
-       "win10-x64": {},
-       "osx.10.10-x64": {}
-     }
-   }
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <DebugType>Portable</DebugType>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="1.0.1" />
+  </ItemGroup>
+</Project>
 ```
-
-
-
-<!--HONumber=Feb17_HO2-->
 
 

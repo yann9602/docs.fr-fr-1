@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 76ab06edfed3cb124ac79f0d5d0c3480c0a5f170
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 095ebad90e3f0b188d208d22f6f16b9552f8ea86
+ms.openlocfilehash: ca9d57a3ef3382c4957de5edb55959f1a3f13ee0
+ms.lasthandoff: 03/06/2017
 
 ---
 
@@ -34,7 +34,9 @@ Quand vous écrivez des tests unitaires, veillez à ne pas introduire accidentel
 
 Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
 
-Essayez cette [procédure pas à pas : création de tests unitaires avec xunit et l’interface CLI .NET](unit-testing-with-dotnet-test.md).
+Essayez cette [procédure pas à pas : création de tests unitaires avec xUnit et l’interface CLI .NET](unit-testing-with-dotnet-test.md). 
 
-L’équipe XUnit a écrit un didacticiel qui explique [comment utiliser xunit avec .NET Core et Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).
+L’équipe XUnit a écrit un didacticiel qui explique [comment utiliser xUnit avec .NET Core et Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).
+
+Si vous préférez utiliser MSTest, essayez la [procédure pas à pas : création de tests unitaires avec MSTest et l’interface CLI .NET](unit-testing-with-mstest.md).
 
