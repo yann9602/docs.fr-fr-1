@@ -1,8 +1,0 @@
-# [Comment : imprimer un formulaire à l'aide du composant PrintForm](how-to-print-a-form-by-using-the-printform-component.md)
-# [Comment : imprimer la zone cliente d'un formulaire](how-to-print-the-client-area-of-a-form.md)
-# [Deploying Applications That Reference the PrintForm Component](deploying-applications-that-reference-the-printform-component.md)
-# [Adding Printable Reports to Visual Studio Applications](adding-printable-reports-to-visual-studio-applications.md)
-# [Printing and Reporting](printing-and-reporting.md)
-# [Comment : imprimer des zones clientes et non clientes d'un formulaire](how-to-print-client-and-non-client-areas-of-a-form.md)
-# [Comment : imprimer un formulaire à défilement variable](how-to-print-a-scrollable-form.md)
-# [PrintForm Component](printform-component.md)

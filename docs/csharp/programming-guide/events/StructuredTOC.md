@@ -1,7 +1,0 @@
-# [Événements (Guide de programmation C#)](index.md)
-## [Comment : s'abonner et annuler l'abonnement à des événements (Guide de programmation C#)](how-to-subscribe-to-and-unsubscribe-from-events.md)
-## [Comment : publier des événements conformes aux indications du .NET Framework (Guide de programmation C#)](how-to-publish-events-that-conform-to-net-framework-guidelines.md)
-## [Comment : déclencher les événements de la classe de base dans les classes dérivées (Guide de programmation C#)](how-to-raise-base-class-events-in-derived-classes.md)
-## [Comment : implémenter des événements d'interface (Guide de programmation C#)](how-to-implement-interface-events.md)
-## [Comment : utiliser un dictionnaire pour stocker des instances d'événements (Guide de programmation C#)](how-to-use-a-dictionary-to-store-event-instances.md)
-## [Comment : implémenter des accesseurs d'événement personnalisés (Guide de programmation C#)](how-to-implement-custom-event-accessors.md)

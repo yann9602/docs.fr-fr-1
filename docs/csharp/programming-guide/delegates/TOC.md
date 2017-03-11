@@ -1,5 +1,0 @@
-# [Utilisation de délégués](using-delegates.md)
-# [Délégués avec méthodes nommées et méthodes anonymes](delegates-with-named-vs-anonymous-methods.md)
-# [Délégués](index.md)
-# [Comment : déclarer, instancier et utiliser un délégué](how-to-declare-instantiate-and-use-a-delegate.md)
-# [Comment : combiner des délégués (délégués multicast)](how-to-combine-delegates-multicast-delegates.md)

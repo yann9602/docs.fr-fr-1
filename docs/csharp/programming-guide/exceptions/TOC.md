@@ -1,8 +1,0 @@
-# [Comment : intercepter une exception non-CLS](how-to-catch-a-non-cls-exception.md)
-# [Comment : gérer une exception à l'aide de try/catch](how-to-handle-an-exception-using-try-catch.md)
-# [Gestion des exceptions](exception-handling.md)
-# [Utilisation d'exceptions](using-exceptions.md)
-# [Création et levée d'exceptions](creating-and-throwing-exceptions.md)
-# [Exceptions générées par le compilateur](compiler-generated-exceptions.md)
-# [Comment : exécuter le code de nettoyage à l'aide de finally](how-to-execute-cleanup-code-using-finally.md)
-# [Exceptions et gestion des exceptions](exceptions-and-exception-handling.md)
