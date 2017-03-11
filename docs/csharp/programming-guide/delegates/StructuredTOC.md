@@ -1,0 +1,5 @@
+# [Délégués (guide de programmation C#)](index.md)
+## [Utilisation de délégués (guide de programmation C#)](using-delegates.md)
+## [Délégués avec méthodes nommées et méthodes anonymes (Guide de programmation C#)](delegates-with-named-vs-anonymous-methods.md)
+## [Comment : combiner des délégués (délégués multicast) (Guide de programmation C#)](how-to-combine-delegates-multicast-delegates.md)
+## [Comment : déclarer, instancier et utiliser un délégué (Guide de programmation C#)](how-to-declare-instantiate-and-use-a-delegate.md)
