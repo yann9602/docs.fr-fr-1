@@ -46,19 +46,19 @@ La méthode <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> peut ê
   
 -   Utilisez la méthode `DownloadFile` pour télécharger le fichier, en spécifiant l'emplacement du fichier cible sous forme de chaîne ou d'URI et en spécifiant l'emplacement dans lequel stocker le fichier.  Cet exemple télécharge le fichier `WineList.txt` à partir de `http://www.cohowinery.com/downloads` et l'enregistre dans `C:\Documents and Settings\All Users\Documents`.  
   
-     [!code-vb[VbResourceTasks#9](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_1.vb)]  
+     [!code-vb[VbResourceTasks#9](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_1.vb)]  
   
 ### Pour télécharger un fichier en spécifiant un délai d'attente  
   
 -   Utilisez la méthode `DownloadFile` pour télécharger le fichier en spécifiant l'emplacement du fichier cible sous forme de chaîne ou d'URI, en spécifiant l'emplacement dans lequel stocker le fichier et en spécifiant le délai d'attente en millisecondes \(la valeur par défaut étant de 1000\).  Cet exemple télécharge le fichier `WineList.txt` à partir du site `http://www.cohowinery.com/downloads` et le sauvegarde dans `C:\Documents and Settings\All Users\Documents` en spécifiant un délai d'attente de 500 millisecondes :  
   
-     [!code-vb[VbResourceTasks#10](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_2.vb)]  
+     [!code-vb[VbResourceTasks#10](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_2.vb)]  
   
 ### Pour télécharger un fichier en fournissant un nom d'utilisateur et un mot de passe  
   
 -   Utilisez la méthode `DownLoadFile` pour télécharger le fichier, en spécifiant l'emplacement du fichier cible sous forme de chaîne ou d'URI et en spécifiant l'emplacement dans lequel stocker le fichier, le nom d'utilisateur et le mot de passe.  Cet exemple télécharge le fichier `WineList.txt` à partir du site `http://www.cohowinery.com/downloads` et le sauvegarde dans `C:\Documents and Settings\All Users\Documents`, avec le nom d'utilisateur `anonymous` et un mot de passe vide.  
   
-     [!code-vb[VbResourceTasks#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-download-a-file_3.vb)]  
+     [!code-vb[VbResourceTasks#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-download-a-file_3.vb)]  
   
     > [!IMPORTANT]
     >  Le protocole FTP utilisé par la méthode `DownLoadFile` envoie les informations, y compris les mots de passe, en texte brut, et ne doit pas être utilisé pour transmettre des informations sensibles.  

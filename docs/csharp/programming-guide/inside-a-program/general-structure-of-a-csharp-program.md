@@ -18,7 +18,7 @@ caps.handback.revision: 21
 # Structure g&#233;n&#233;rale d&#39;un programme C# (guide de programmation C#)
 Les programmes C\# peuvent contenir un ou plusieurs fichiers.  Chaque fichier peut comporter zéro ou plusieurs espaces de noms \(namespace\).  Un espace de noms peut contenir des types comme les classes, les structures, les interfaces, les énumérations et les délégués, en plus d'autres espaces de noms.  Le squelette du programme C\# suivant contient tous ces éléments.  
   
- [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/class2.cs#34)]  
+ [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
   
 ## Rubriques connexes  
  Pour plus d'informations :  

@@ -44,9 +44,9 @@ La déclaration de procédure détermine le mécanisme de passage.  Si un param�
 ## Exemple  
  L'exemple suivant substitue une déclaration de paramètre `ByRef`.  Dans l'appel qui force `ByVal`, notez les deux niveaux de parenthèses.  
   
- [!code-vb[VbVbcnProcedures#39](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-force-an-argument_1.vb)]  
+ [!code-vb[VbVbcnProcedures#39](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#40](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-force-an-argument_2.vb)]  
+ [!code-vb[VbVbcnProcedures#40](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
   
  Lorsque `str` est placé entre des parenthèses supplémentaires dans la liste d'arguments, la procédure `setNewString` ne peut pas modifier sa valeur dans le code appelant, et `MsgBox` affiche "Cannot be replaced if passed ByVal".  Lorsque `str` n'est pas placé entre des parenthèses supplémentaires, la procédure peut le modifier, et `MsgBox` affiche "This is a new value for the inString argument".  
   

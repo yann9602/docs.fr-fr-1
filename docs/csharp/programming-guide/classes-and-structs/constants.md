@@ -25,7 +25,7 @@ Les constantes sont des valeurs immuables qui sont connues au moment de la compi
   
  Les constantes doivent être initialisées à mesure qu'elles sont déclarées.  Par exemple :  
   
- [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_1.cs)]  
+ [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
   
  Dans cet exemple, la constante `months` est toujours 12 et ne peut pas être modifiée, même par la classe elle\-même.  En fait, lorsque le compilateur rencontre un identificateur constant dans du code source C\# \(par exemple, `months`\), il substitue la valeur littérale directement dans le code IL \(Intermediate Language\) qu'il produit.  Étant donné qu'il n'y a aucune adresse de variable associée à une constante au moment de l'exécution, les champs `const` ne peuvent pas être passés par référence et ne peuvent pas apparaître comme l\-value dans une expression.  
   
@@ -34,17 +34,17 @@ Les constantes sont des valeurs immuables qui sont connues au moment de la compi
   
  Plusieurs constantes du même type peuvent être déclarées en même temps, par exemple :  
   
- [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_2.cs)]  
+ [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
   
  L'expression qui est utilisée pour initialiser une constante peut faire référence à une autre constante si elle ne crée pas de référence circulaire.  Par exemple :  
   
- [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_3.cs)]  
+ [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
   
  Les constantes peuvent être marquées comme étant [publiques](../../../csharp/language-reference/keywords/public.md), [privées](../../../csharp/language-reference/keywords/private.md), [protégées](../../../csharp/language-reference/keywords/protected.md), [internes](../../../csharp/language-reference/keywords/internal.md) ou  `protected` `internal`.  Ces modificateurs d'accès définissent comment les utilisateurs de la classe peuvent accéder à la constante.  Pour plus d'informations, consultez [Modificateurs d'accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
  Les constantes sont accédées comme s'il s'agissait de champs [statiques](../../../csharp/language-reference/keywords/static.md) car la valeur de la constante est identique pour toutes les instances du type.  Vous n'utilisez pas le mot clé `static` pour les déclarer.  Les expressions qui ne sont pas dans la classe qui définit la constante doivent utiliser le nom de la classe, un point et le nom de la constante pour accéder à la constante.  Par exemple :  
   
- [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/constants_4.cs)]  
+ [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

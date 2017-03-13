@@ -27,7 +27,7 @@ caps.handback.revision: 7
 Cet exemple retourne une valeur `Boolean` qui indique si une chaîne représente un nom de fichier ou un chemin d'accès.  La validation vérifie si le nom contient des caractères qui ne sont pas autorisés par le système de fichiers.  
   
 ## Exemple  
- [!code-vb[VbVbcnRegEx#4](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/how-to-validate-file-nam_1.vb)]  
+ [!code-vb[VbVbcnRegEx#4](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/how-to-validate-file-names-and-paths_1.vb)]  
   
  Cet exemple ne vérifie pas si le nom a placé des deux\-points incorrectement, ou des répertoires sans nom, ou encore si la longueur du nom dépasse la longueur maximale définie par le système.  Il ne vérifie pas non plus si l'application a l'autorisation nécessaire pour accéder à la ressource du système de fichiers avec le nom spécifié.  
   

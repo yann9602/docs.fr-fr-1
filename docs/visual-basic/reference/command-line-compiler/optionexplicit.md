@@ -50,7 +50,7 @@ Entraîne le compilateur à signaler des erreurs si les variables ne sont pas d�
 ## Exemple  
  Le code suivant compile si `/optionexplicit-` est utilisé.  
   
- [!code-vb[VbVbalrCompiler#5](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/optionexplicit_1.vb)]  
+ [!code-vb[VbVbalrCompiler#5](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/optionexplicit_1.vb)]  
   
 ## Voir aussi  
  [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   

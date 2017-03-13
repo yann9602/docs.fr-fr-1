@@ -30,7 +30,7 @@ Vous pouvez créer directement un document, fragment ou élément XML dans le co
   
 -   Créez l'élément XML inline en utilisant la syntaxe de littéral XML qui est identique à la syntaxe XML réelle.  
   
-     [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-create-xml-literals_1.vb)]  
+     [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]  
   
      Exécutez le code.  Le résultat généré par ce code est le suivant :  
   
@@ -48,7 +48,7 @@ Vous pouvez créer directement un document, fragment ou élément XML dans le co
   
 -   Créez le document XML inline.  Le code suivant crée un document XML qui possède une syntaxe de littéral, une déclaration XML, une instruction de traitement, un commentaire et un élément contenant un autre élément.  
   
-     [!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-create-xml-literals_2.vb)]  
+     [!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]  
   
      Exécutez le code.  Le résultat généré par ce code est le suivant :  
   

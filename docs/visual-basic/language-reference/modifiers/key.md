@@ -27,14 +27,14 @@ Le mot clé `Key` vous permet de spécifier le comportement des propriétés de 
   
  Vous désignez une propriété d'un type anonyme comme propriété de clé en plaçant le mot clé `Key` devant sa déclaration dans la liste d'initialisation.  Dans l'exemple suivant, `Airline` et `FlightNo` sont des propriétés de clé, à l'inverse de `Gate`.  
   
- [!code-vb[VbVbalrAnonymousTypes#26](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_1.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#26](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_1.vb)]  
   
  Lorsqu'un nouveau type anonyme est créé, il hérite directement de <xref:System.Object>.  Le compilateur substitue trois membres hérités : <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A> et <xref:System.Object.ToString%2A>.  Le code de substitution produit pour <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A> est basé sur les propriétés de clé.  Si le type ne présente pas de propriétés de clé, <xref:System.Object.GetHashCode%2A> et <xref:System.Object.Equals%2A> ne sont pas substitués.  
   
 ## Égalité  
  Deux instances de type anonymes sont égales si elles sont des instances du même type et si les valeurs de leurs propriétés de clé sont égales.  Dans les exemples suivants, `flight2` est égale à `flight1` de l'exemple précédent parce que ce sont des instances du même type anonyme et qu'elles ont des valeurs correspondantes pour leurs propriétés de clé.  Toutefois, `flight3` n'est pas égale à `flight1` parce qu'elle a une valeur différente pour une propriété de clé, `FlightNo`.  L'instance `flight4` n'est pas du même type que `flight1` parce qu'elles désignent des propriétés différentes comme propriétés de clé.  
   
- [!code-vb[VbVbalrAnonymousTypes#27](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_2.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#27](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_2.vb)]  
   
  Si deux instances sont déclarées uniquement avec des propriétés ne correspondant pas à une clé, avec un nom, un type, un ordre et une valeur identiques, les deux instances ne sont pas égales.  Une instance sans propriété de clé est uniquement égale à elle\-même.  
   
@@ -45,20 +45,20 @@ Le mot clé `Key` vous permet de spécifier le comportement des propriétés de 
   
  Les instances d'un type anonyme qui ont les mêmes valeurs pour toutes les propriétés de clé ont la même valeur de code de hachage, même si les propriétés ne correspondant pas à une clé n'ont pas de valeurs correspondantes.  L'instruction suivante retourne `True`.  
   
- [!code-vb[VbVbalrAnonymousTypes#37](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_3.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#37](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_3.vb)]  
   
  Les instances d'un type anonyme qui ont des valeurs différentes pour une ou plusieurs propriétés de clé ont des valeurs de code de hachage différentes.  L'instruction suivante retourne `False`.  
   
- [!code-vb[VbVbalrAnonymousTypes#38](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_4.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#38](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_4.vb)]  
   
  Les instances de types anonymes qui désignent des propriétés différentes comme propriétés de clé ne sont pas des instances du même type.  Elles ont des valeurs de code de hachage différentes même lorsque les noms et valeurs de toutes les propriétés sont les mêmes.  L'instruction suivante retourne `False`.  
   
- [!code-vb[VbVbalrAnonymousTypes#39](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_5.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#39](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_5.vb)]  
   
 ## Valeurs en lecture seule  
  Les valeurs des propriétés de clé ne peuvent pas être modifiées.  Par exemple, les champs `Airline` et `FlightNo` sont en lecture seule dans `flight1` dans les exemples précédents, mais `Gate` peut être modifié.  
   
- [!code-vb[VbVbalrAnonymousTypes#28](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/key_6.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#28](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_6.vb)]  
   
 ## Voir aussi  
  [Anonymous Type Definition](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)   

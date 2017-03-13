@@ -42,7 +42,7 @@ Spécifie la description d'une propriété.
 ## Exemple  
  Cet exemple utilise la balise `<value>` pour décrire la valeur que contient la propriété `Counter`.  
   
- [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/value_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/value_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

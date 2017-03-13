@@ -29,10 +29,10 @@ L'opérateur de multiplication \(`*`\) calcule le produit de ses opérandes.  De
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `*` binaire \(consultez [operator](../../../csharp/language-reference/keywords/operator.md)\).  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#50](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#50)]  
+ [!code-cs[csRefOperators#50](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_1.cs)]  
   
 ## Exemple  
- [!code-cs[csRefOperators#51](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#51)]  
+ [!code-cs[csRefOperators#51](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_2.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

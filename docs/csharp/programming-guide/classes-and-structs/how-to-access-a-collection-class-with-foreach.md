@@ -23,12 +23,12 @@ L'exemple de code suivant explique comment écrire une classe de collection non 
   
  Dans l'exemple, le segment de code suivant utilise la classe `Tokens` utilise la classe pour décomposer la phrase « ceci est un exemple de phrase. » en jetons à l'aide des séparateurs ' ' et '\-'.  Le code affiche ensuite ces jetons en utilisant une instruction `foreach`.  
   
- [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-access-a-collecti_1.cs)]  
+ [!code-cs[csProgGuideCollections#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_1.cs)]  
   
 ## Exemple  
  En interne, la classe `Tokens` utilise un tableau pour stocker les jetons.  Étant donné que les tableaux implémentent <xref:System.Collections.IEnumerator> et <xref:System.Collections.IEnumerable>, l'exemple de code aurait pu utiliser les méthodes d'énumération du tableau \(<xref:System.Collections.IEnumerable.GetEnumerator%2A>, <xref:System.Collections.IEnumerator.MoveNext%2A>, <xref:System.Collections.IEnumerator.Reset%2A> et <xref:System.Collections.IEnumerator.Current%2A>\) au lieu de les définir dans la classe `Tokens`.  Les définitions de méthode sont incluses dans l'exemple pour clarifier la façon dont elles sont définies et le rôle de chacune d'entre\-elles.  
   
- [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-access-a-collecti_2.cs)]  
+ [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_2.cs)]  
   
  En C\#, il n'est pas nécessaire qu'une classe de collection implémente <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> pour être compatible avec `foreach`.  Si la classe possède les membres <xref:System.Collections.IEnumerable.GetEnumerator%2A>, <xref:System.Collections.IEnumerator.MoveNext%2A>, <xref:System.Collections.IEnumerator.Reset%2A> et <xref:System.Collections.IEnumerator.Current%2A> requis, cela fonctionnera avec `foreach`.  L'omission des interfaces est intéressante dans la mesure où elle vous permet de définir un type de retour pour `Current` plus spécifique que <xref:System.Object> et d'assurer une sécurité de type.  Cela garantit la sécurité de type.  
   

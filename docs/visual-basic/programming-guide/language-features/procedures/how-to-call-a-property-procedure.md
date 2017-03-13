@@ -39,7 +39,7 @@ Appelez une procédure de propriété en stockant une valeur dans la propriété
   
      L'exemple suivant permet de lire la valeur de la propriété <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> en appelant  implicitement sa procédure `Get`.  
   
-     [!code-vb[VbVbalrDateProperties#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/VbVbalrDateProperties/Module1.vb#4)]  
+     [!code-vb[VbVbalrDateProperties#4](./codesnippet/VisualBasic/how-to-call-a-property-procedure_1.vb)]  
   
 2.  Si la propriété accepte des arguments, faites suivre le nom de propriété de parenthèses à l'intérieur desquelles vous joindrez la liste d'arguments.  Si aucun argument n'est spécifié, vous pouvez ne pas mettre les parenthèses.  
   
@@ -53,7 +53,7 @@ Appelez une procédure de propriété en stockant une valeur dans la propriété
   
      L'exemple suivant permet de définir la valeur de la propriété <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> en appelant implicitement la procédure `Set`.  
   
-     [!code-vb[VbVbcnProcedures#11](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-a-property-p_2.vb)]  
+     [!code-vb[VbVbcnProcedures#11](./codesnippet/VisualBasic/how-to-call-a-property-procedure_2.vb)]  
   
 2.  Si la propriété accepte des arguments, faites suivre le nom de propriété de parenthèses à l'intérieur desquelles vous joindrez la liste d'arguments.  Si aucun argument n'est spécifié, vous pouvez ne pas mettre les parenthèses.  
   

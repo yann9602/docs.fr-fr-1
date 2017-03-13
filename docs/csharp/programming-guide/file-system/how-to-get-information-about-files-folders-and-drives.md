@@ -41,7 +41,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
 ## Exemple  
  L'exemple suivant montre diverses manières d'accéder aux informations relatives aux fichiers et aux dossiers.  
   
- [!code-cs[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#6)]  
+ [!code-cs[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-get-information-about-files-folders-and-drives_1.cs)]  
   
 ## Programmation fiable  
  Lorsque vous traitez des chaînes de chemin d'accès spécifiées par l'utilisateur, vous devez également gérer les exceptions levées dans les cas suivants :  

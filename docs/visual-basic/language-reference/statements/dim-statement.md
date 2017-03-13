@@ -309,19 +309,19 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 ## <a name="example"></a>Exemple  
  L’exemple suivant déclare les variables à l’aide de la `Dim` instruction avec différentes options.  
   
- [!code-vb[VbVbalrStatements#141](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/dim-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#141](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/dim-statement_1.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant répertorie les nombres premiers entre 1 et 30. La portée des variables locales est décrite dans les commentaires de code.  
   
- [!code-vb[VbVbalrStatements#142](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/dim-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#142](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/dim-statement_2.vb)]  
   
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, le `speedValue` variable est déclarée au niveau de la classe. Le `Private` mot clé est utilisé pour déclarer la variable. La variable est accessible par n’importe quelle procédure la `Car` classe.  
   
- [!code-vb[VbVbalrStatements#144](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/dim-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#144](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/dim-statement_3.vb)]  
   
- [!code-vb[VbVbalrStatements#145](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/dim-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#145](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/dim-statement_4.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Const (instruction)](../../../visual-basic/language-reference/statements/const-statement.md)   

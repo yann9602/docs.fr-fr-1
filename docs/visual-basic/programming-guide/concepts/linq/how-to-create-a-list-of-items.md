@@ -28,7 +28,7 @@ Le code fourni dans cette rubrique définit une classe `Student` et crée une li
 ## Exemple  
  Si vous travaillez sur la procédure pas à pas, vous pouvez utiliser ce code pour le fichier Module1.vb du projet créé.  Remplacez simplement les lignes marquées de \*\*\* dans la méthode `Main` par les requêtes et les exécutions de requête qui sont fournies dans la procédure pas à pas.  
   
- [!code-vb[VbLINQHowToCreateList#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/how-to-create-a-list-of-_1.vb)]  
+ [!code-vb[VbLINQHowToCreateList#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/how-to-create-a-list-of-items_1.vb)]  
   
 ## Voir aussi  
  [Vidéo : écriture de requêtes dans Visual Basic](http://msdn.microsoft.com/library/bb820884.aspx)   

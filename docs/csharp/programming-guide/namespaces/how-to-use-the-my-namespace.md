@@ -31,16 +31,16 @@ L'espace de noms <xref:Microsoft.VisualBasic.MyServices> \(`My` en Visual Basic\
   
      Vous pouvez également souhaiter inclure la ligne suivante dans la section `using` au démarrage de votre programme.  
   
-     [!code-cs[csProgGuideNamespaces#18](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces3.cs#18)]  
+     [!code-cs[csProgGuideNamespaces#18](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_1.cs)]  
   
 ## Exemple  
  Cet exemple appelle plusieurs méthodes statiques contenues dans l'espace de noms `MyServices`.  Pour que ce code se compile, une référence à Microsoft.VisualBasic.DLL doit être ajoutée au projet.  
   
- [!code-cs[csProgGuideNamespaces#19](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces3.cs#19)]  
+ [!code-cs[csProgGuideNamespaces#19](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_2.cs)]  
   
  Toutes les classes de l'espace de noms `MyServices` ne peuvent pas être appelées à partir d'une application C\# : par exemple, la classe <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> n'est pas compatible.  Dans ce cas particulier, les méthodes statiques qui font partie de <xref:Microsoft.VisualBasic.FileIO.FileSystem>, également contenues dans VisualBasic.dll, peuvent être utilisées à la place.  Par exemple, voici comment utiliser une de ces méthodes pour dupliquer un répertoire :  
   
- [!code-cs[csProgGuideNamespaces#20](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces3.cs#20)]  
+ [!code-cs[csProgGuideNamespaces#20](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_3.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

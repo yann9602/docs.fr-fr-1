@@ -23,7 +23,7 @@ Le but d'un bloc [try\-catch](../../../csharp/language-reference/keywords/try-ca
 ## Exemple  
  Dans cet exemple, <xref:System.IndexOutOfRangeException> n'est pas l'exception la plus appropriée : <xref:System.ArgumentOutOfRangeException> a de plus de sens pour la méthode parce que l'erreur est provoquée par l'argument `index` passé par l'appelant.  
   
- [!code-cs[csProgGuideExceptions#5](../../../csharp/programming-guide/exceptions/codesnippet/csharp/how-to-handle-an-excepti_1.cs)]  
+ [!code-cs[csProgGuideExceptions#5](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/how-to-handle-an-exception-using-try-catch_1.cs)]  
   
 ## Commentaires  
  Le code qui provoque une exception est joint dans le bloc `try`.  Une instruction `catch` est ajoutée immédiatement après pour gérer `IndexOutOfRangeException`, si elle se produit.  Le bloc `catch` gère l'`IndexOutOfRangeException` et lève à la place l'exception plus appropriée `ArgumentOutOfRangeException`.  Pour fournir à l'appelant autant d'informations que possible, pensez à spécifier l'exception d'origine comme <xref:System.Exception.InnerException%2A> de la nouvelle exception.  Comme la propriété <xref:System.Exception.InnerException%2A> a pour valeur [readonly](../../../csharp/language-reference/keywords/readonly.md), vous devez l'assigner dans le constructeur de la nouvelle exception.  

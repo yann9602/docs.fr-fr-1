@@ -29,7 +29,7 @@ L’opérateur d’incrément \(`++`\) incrémente son opérande de 1. L’opé
  Les types numériques et d’énumération ont des opérateurs d’incrément prédéfinis. Les types définis par l’utilisateur peuvent surcharger l’opérateur `++`. Les opérations sur les types intégraux sont en général autorisées sur l’énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#3](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#3)]  
+ [!code-cs[csRefOperators#3](../../../csharp/language-reference/operators/codesnippet/CSharp/increment-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

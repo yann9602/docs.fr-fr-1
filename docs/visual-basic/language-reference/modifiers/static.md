@@ -45,7 +45,7 @@ Spécifie qu'une ou plusieurs variables locales déclarées doivent continuer à
 ## Exemple  
  L'exemple suivant illustre l'utilisation du mot clé `Static` :  
   
- [!code-vb[VbVbalrKeywords#5](../../../visual-basic/language-reference/codesnippet/visualbasic/static_1.vb)]  
+ [!code-vb[VbVbalrKeywords#5](../../../visual-basic/language-reference/codesnippet/VisualBasic/static_1.vb)]  
   
  La variable `Static` `totalSales` est initialisée une seule fois sur 0.  Chaque fois que vous entrez `updateSales`, `totalSales` a encore la valeur la plus récente que vous avez calculé pour lui.  
   

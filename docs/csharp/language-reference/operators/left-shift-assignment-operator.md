@@ -39,7 +39,7 @@ x = x << y
  L'opérateur `<<=` ne peut pas être surchargé directement, mais les types définis par l'utilisateur peuvent surcharger l'opérateur [\<\<](../../../csharp/language-reference/operators/left-shift-operator.md) \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  
   
 ## Exemple  
- [!code-cs[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#12)]  
+ [!code-cs[csRefOperators#12](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-assignment-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

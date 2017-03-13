@@ -31,7 +31,7 @@ sealed class B : A {}
 ## Exemple  
  Dans l'exemple suivant, `Z` hérite de `Y` mais `Z` ne peut pas substituer le fonction virtuelle `F` qui est déclarée dans `X` et sealed dans `Y`.  
   
- [!code-cs[csrefKeywordsModifiers#16](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#16)]  
+ [!code-cs[csrefKeywordsModifiers#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/sealed_1.cs)]  
   
  Lorsque vous définissez de nouvelles méthodes ou propriétés dans une classe, vous pouvez empêcher les classes dérivées de les substituer en ne les déclarant pas comme [virtual](../../../csharp/language-reference/keywords/virtual.md).  
   
@@ -46,7 +46,7 @@ sealed class B : A {}
  Pour plus d'exemples, consultez [Classes abstract et sealed et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 ## Exemple  
- [!code-cs[csrefKeywordsModifiers#17](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#17)]  
+ [!code-cs[csrefKeywordsModifiers#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/sealed_2.cs)]  
   
  Dans l'exemple précédent, si vous tentez d'hériter de la classe sealed en utilisant une instruction telle que :  
   

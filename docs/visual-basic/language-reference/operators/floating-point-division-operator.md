@@ -85,7 +85,7 @@ expression1 / expression2
 ## Exemple  
  Cet exemple utilise l'opérateur `/` pour effectuer une division à virgule flottante.  Le résultat est le quotient des deux opérandes.  
   
- [!code-vb[VbVbalrOperators#16](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/floating-point-division-_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-operator_1.vb)]  
   
  Les expressions de l'exemple précédent retournent les valeurs 2,5 et 3,333333.  Notez que le résultat possède toujours une virgule flottante \(`Double`\), bien que les deux opérandes soient des constantes entières.  
   

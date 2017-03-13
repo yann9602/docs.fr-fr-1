@@ -38,9 +38,9 @@ Le tableau suivant répertorie les conversions implicites prédéfinies de point
 ## Exemple  
  Dans l'exemple suivant, un pointeur vers `int` est converti en un pointeur vers `byte`.  Notez que le pointeur pointe vers l'octet adressé le plus bas de la variable.  Lorsque vous incrémentez successivement le résultat, jusqu'à la taille de `int` \(4 octets\), vous pouvez afficher les octets restants de la variable.  
   
- [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#3)]  
+ [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-conversions_1.cs)]  
   
- [!code-cs[csProgGuidePointers#4](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#4)]  
+ [!code-cs[csProgGuidePointers#4](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-conversions_2.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

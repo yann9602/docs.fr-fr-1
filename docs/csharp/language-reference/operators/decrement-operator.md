@@ -27,7 +27,7 @@ L'opérateur de décrémentation \(`--`\) décrémente son opérande d'une unit�
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `--` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  Les opérations sur les types intégraux sont en général autorisées sur énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#8](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#8)]  
+ [!code-cs[csRefOperators#8](../../../csharp/language-reference/operators/codesnippet/CSharp/decrement-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

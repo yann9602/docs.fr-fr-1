@@ -28,11 +28,11 @@ Les classes génériques et les méthodes combinent un niveau de réutilisabilit
   
  Notez que T est disponible à la classe `Node` imbriquée.  Lorsque `GenericList<T>` est instancié avec un type concret, comme un `GenericList<int>`, par exemple, chaque occurrence de `T` est remplacée par `int`.  
   
- [!code-cs[csProgGuideGenerics#2](../../../csharp/programming-guide/generics/codesnippet/csharp/introduction-to-generics_1.cs)]  
+ [!code-cs[csProgGuideGenerics#2](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_1.cs)]  
   
  L'exemple de code suivant montre comment le code client utilise la classe `GenericList<T>` générique pour créer une liste d'entiers.  En changeant simplement l'argument de type, le code suivant pourrait être facilement modifié pour créer des listes de chaînes ou tout autre type personnalisé :  
   
- [!code-cs[csProgGuideGenerics#3](../../../csharp/programming-guide/generics/codesnippet/csharp/introduction-to-generics_2.cs)]  
+ [!code-cs[csProgGuideGenerics#3](../../../csharp/programming-guide/generics/codesnippet/CSharp/introduction-to-generics_2.cs)]  
   
 ## Voir aussi  
  <xref:System.Collections.Generic>   

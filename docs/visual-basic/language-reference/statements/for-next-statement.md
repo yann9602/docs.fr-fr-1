@@ -75,11 +75,11 @@ Next [ counter ]
   
  Dans l'exemple suivant, la variable d' `index` démarre avec une valeur de 1 et est incrémenté à chaque itération de la boucle, en terminant après que la valeur des portées 5. d' `index` .  
   
- [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_1.vb)]  
   
  Dans l'exemple suivant, la variable d' `number` commence à 2 et est réduite par 0,25 sur chaque itération de la boucle, en terminant après que la valeur des portées 0 d' `number` .  L'argument d' `Step` d' `-.25` réduit la valeur de 0,25 sur chaque itération de la boucle.  
   
- [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_2.vb)]  
   
 > [!TIP]
 >  [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md) ou [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md) convient lorsque vous ne connaissez pas à l'avance le nombre de fois pour exécuter les instructions de la boucle.  Toutefois, si vous devez exécuter la boucle un certain nombre de fois, il est préférable d'utiliser `For`...`Next`.  Vous déterminez le nombre d'itérations lorsque vous entrez la boucle pour la première fois.  
@@ -87,7 +87,7 @@ Next [ counter ]
 ## Imbrication de boucles  
  Vous pouvez imbriquer les boucles `For` en plaçant une boucle à l'intérieur d'une autre.  L'exemple suivant illustre des structures `For`...`Next` imbriquées avec différentes valeurs d'étape.  La boucle externe crée une chaîne pour chaque itération de la boucle.  La boucle interne décrémente une variable de compteur de boucle pour chaque itération de la boucle.  
   
- [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_3.vb)]  
   
  Lorsque les boucles d'imbrication, chaque aller\-retour doivent avoir une seule variable d' `counter` .  
   
@@ -100,7 +100,7 @@ Next [ counter ]
   
  L'exemple ci\-dessous illustre l'utilisation des instructions `Continue For` et `Exit For`.  
   
- [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_4.vb)]  
   
  Vous pouvez placer n'importe quel nombre d'instructions `Exit For` dans une boucle `For`...`Next`.  Utilisée dans des boucles `For`…`Next` imbriquées, l'instruction `Exit For` quitte la boucle la plus profonde et transfère le contrôle au niveau d'imbrication supérieur suivant.  
   
@@ -168,17 +168,17 @@ Next [ counter ]
 ## Exemple  
  L'exemple suivant supprime tous les éléments d'une liste générique.  Au lieu de [For Each...Next, instruction](../../../visual-basic/language-reference/statements/for-each-next-statement.md), l'exemple illustre une instruction d' `For`…`Next` qui itère dans l'ordre décroissant.  L'exemple utilise cette technique car la méthode d' `removeAt` fait avoir des éléments après l'élément supprimé une valeur d'index la plus basse.  
   
- [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_5.vb)]  
   
 ## Exemple  
  L'exemple suivant effectue une itération au sein d'une énumération qui est déclarée à l'aide de [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md).  
   
- [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_6.vb)]  
   
 ## Exemple  
  Dans l'exemple suivant, les paramètres d'instruction utilisent une classe ayant des surcharges d'opérateurs pour les opérateurs `+`, `-`, `>=` et `<=`.  
   
- [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
 ## Voir aussi  
  <xref:System.Collections.Generic.List%601>   

@@ -26,7 +26,7 @@ caps.handback.revision: 11
 
 Tout élément de programme — tel qu'une variable, une classe ou un membre — peut avoir le même nom qu'un mot clé restreint.  Vous pouvez, par exemple, créer une variable appelée `Loop`.  Cependant, pour faire référence à votre version de variable — qui porte le même nom que le mot clé `Loop` restreint — vous devez soit la faire précéder d'une chaîne de qualification complète, soit la placer entre crochets \(`[ ]`\), comme le montrent les exemples suivants :  
   
- [!code-vb[VbVbcnConventions#8](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/keywords-as-element-name_1.vb)]  
+ [!code-vb[VbVbcnConventions#8](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/keywords-as-element-names-in-code_1.vb)]  
   
  Si vous ne procédez pas de l'une de ces façons, Visual Basic part du principe que le mot clé `Loop` intrinsèque est utilisé et il génère une erreur, comme ci\-dessous :  
   

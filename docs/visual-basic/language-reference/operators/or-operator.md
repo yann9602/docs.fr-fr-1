@@ -86,14 +86,14 @@ result = expression1 Or expression2
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise le `Or` opérateur effectue une disjonction logique inclusive sur deux expressions. Le résultat est un `Boolean` valeur représentant si une des deux expressions est `True`.  
   
- [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/or-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_1.vb)]  
   
  L’exemple précédent produit des résultats de `True`, `True`, et `False`, respectivement.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise le `Or` opérateur effectue une disjonction logique inclusive sur les bits individuels de deux expressions numériques. Le bit du modèle de résultat est défini si un des bits correspondants dans les opérandes est défini sur 1.  
   
- [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/or-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_2.vb)]  
   
  L’exemple précédent produit les résultats de 10, 14 et 14, respectivement.  
   

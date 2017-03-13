@@ -66,7 +66,7 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
 ##  <a name="BKMK_ArrayElements"></a> Éléments de tableau dans un tableau simple  
  L’exemple suivant déclare une variable tableau contenant le nombre d’élèves de chaque niveau scolaire dans une école primaire.  
   
- [!code-vb[VbVbalrArrays#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrArrays#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_1.vb)]  
   
  Le tableau `students` de l’exemple précédent contient sept éléments. Les index des éléments s’échelonnent de 0 à 6. Il est plus simple d’utiliser ce tableau que de déclarer sept variables.  
   
@@ -81,7 +81,7 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
   
  L’exemple suivant montre comment faire référence aux premier, deuxième et dernier éléments du tableau `students`.  
   
- [!code-vb[VbVbalrArrays#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_2.vb)]  
+ [!code-vb[VbVbalrArrays#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_2.vb)]  
   
  Vous pouvez faire référence au tableau dans son ensemble en utilisant uniquement le nom de la variable tableau sans index.  
   
@@ -90,55 +90,55 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
 ##  <a name="BKMK_CreatingAnArray"></a> Création d’un tableau  
  Vous pouvez définir la taille d’un tableau de différentes manières. Vous pouvez indiquer la taille au moment où vous déclarez le tableau, comme l’illustre l’exemple suivant.  
   
- [!code-vb[VbVbalrArrays#12](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_3.vb)]  
+ [!code-vb[VbVbalrArrays#12](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_3.vb)]  
   
  Vous pouvez aussi utiliser une clause `New` pour indiquer la taille d’un tableau au moment de le créer, comme l’illustre l’exemple suivant.  
   
- [!code-vb[VbVbalrArrays#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_4.vb)]  
+ [!code-vb[VbVbalrArrays#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_4.vb)]  
   
  Si vous disposez déjà d’un tableau, vous pouvez redéfinir sa taille à l’aide de l’instruction `Redim`. Vous pouvez faire en sorte que l’instruction `Redim` garde les valeurs qui se trouvent dans le tableau ou qu’elle crée un tableau vide. L’exemple suivant montre les différentes utilisations possibles de l’instruction `Redim` pour modifier la taille d’un tableau existant.  
   
- [!code-vb[VbVbalrArrays#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_5.vb)]  
+ [!code-vb[VbVbalrArrays#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_5.vb)]  
   
  Pour plus d’informations, consultez [ReDim Statement](../../../../visual-basic/language-reference/statements/redim-statement.md).  
   
 ##  <a name="BKMK_StoringValues"></a> Stockage de valeurs dans un tableau  
  Vous pouvez accéder à chaque emplacement d’un tableau en utilisant un index de type `Integer`. Vous pouvez stocker des valeurs dans un tableau et les récupérer par la suite en référençant chaque emplacement du tableau en utilisant son index entre parenthèses. Dans le cas des tableaux multidimensionnels, les index sont séparés par des virgules \(,\). Vous avez besoin d’un index pour chaque dimension de tableau. Dans l’exemple suivant, des instructions stockent des valeurs dans des tableaux.  
   
- [!code-vb[VbVbalrArrays#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_6.vb)]  
+ [!code-vb[VbVbalrArrays#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_6.vb)]  
   
  Dans l’exemple suivant, des instructions obtiennent des valeurs à partir de tableaux.  
   
- [!code-vb[VbVbalrArrays#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_7.vb)]  
+ [!code-vb[VbVbalrArrays#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_7.vb)]  
   
 ##  <a name="BKMK_Populating"></a> Remplissage d’un tableau avec des valeurs initiales  
  En utilisant un littéral de tableau, vous pouvez créer un tableau contenant un jeu de valeurs initiales. Un littéral de tableau se compose d’une liste de valeurs séparées par des virgules mise entre accolades \(`{}`\).  
   
  Quand vous créez un tableau en utilisant un littéral de tableau, vous pouvez soit indiquer le type du tableau, soit utiliser l’inférence de type pour déterminer le type du tableau. Le code suivant illustre les deux options.  
   
- [!code-vb[VbVbalrCollectionInitializers#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_8.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_8.vb)]  
   
  Quand vous utilisez l’inférence de type, le type du tableau est déterminé par le type dominant dans la liste de valeurs fournie pour le littéral de tableau. Le type dominant est un type unique auquel tous les autres types du littéral de tableau peuvent s’étendre. Si ce type unique ne peut pas être déterminé, le type dominant est le type unique auquel tous les autres types du tableau peuvent se réduire. Si aucun de ces types uniques ne peut être déterminé, le type dominant est `Object`. Par exemple, si la liste de valeurs fournie au littéral de tableau contient des valeurs de type `Integer`, `Long` et `Double`, le tableau qui en résulte est de type `Double`. Les types `Integer` et `Long` s’étendent seulement à `Double`. Par conséquent, `Double` est le type dominant. Pour plus d’informations, consultez [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). Ces règles d’inférence s’appliquent aux types déduits pour les tableaux qui correspondent à des variables locales définies dans un membre de classe. Bien que vous puissiez utiliser des littéraux de tableau pour créer des variables de niveau classe, vous ne pouvez pas utiliser l’inférence de type au niveau de la classe. Par conséquent, les littéraux de tableau spécifiés au niveau de la classe déduisent que les valeurs fournies pour le littéral de tableau sont de type `Object`.  
   
  Vous pouvez spécifier explicitement le type des éléments d’un tableau créé en utilisant un littéral de tableau. Dans ce cas, les valeurs du littéral de tableau doivent s’étendre au type des éléments du tableau. Dans l’exemple de code suivant, un tableau de type `Double` est créé à partir d’une liste d’entiers.  
   
- [!code-vb[VbVbalrCollectionInitializers#4](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_9.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#4](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_9.vb)]  
   
 ###  <a name="BKMK_NestedArrayLiterals"></a> Littéraux de tableau imbriqués  
  Vous pouvez créer un tableau multidimensionnel en utilisant des littéraux de tableau imbriqués. Les littéraux de tableau imbriqués doivent avoir une dimension et un nombre de dimensions \(ou rang\) qui soient en cohérence avec le tableau obtenu. L’exemple de code suivant crée un tableau d’entiers à deux dimensions en utilisant un littéral de tableau.  
   
- [!code-vb[VbVbalrCollectionInitializers#7](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_10.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#7](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_10.vb)]  
   
  Dans l’exemple précédent, une erreur se produirait si le nombre d’éléments contenus dans les littéraux de tableau imbriqués ne correspondaient pas. Il en serait de même si vous ne déclariez pas explicitement la variable tableau comme étant à deux dimensions.  
   
 > [!NOTE]
 >  Quand vous spécifiez des littéraux de tableau imbriqués de différentes dimensions, vous pouvez éviter une erreur en mettant les littéraux de tableau internes entre parenthèses. Les parenthèses forcent l’évaluation de l’expression de littéral de tableau, et les valeurs obtenues sont utilisées avec le littéral de tableau externe, comme l’illustre le code suivant.  
   
- [!code-vb[VbVbalrCollectionInitializers#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_11.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#11](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_11.vb)]  
   
  Quand vous créez un tableau multidimensionnel en utilisant des littéraux de tableau imbriqués, vous pouvez utiliser l’inférence de type. Quand vous utilisez l’inférence de type, le type déduit est le type dominant pour toutes les valeurs contenues dans les littéraux de tableau pour un niveau d’imbrication. Dans l’exemple de code suivant, un tableau à deux dimensions de type `Double` est créé à partir de valeurs de type `Integer` et `Double`.  
   
- [!code-vb[VbVbalrCollectionInitializers#8](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_12.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#8](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_12.vb)]  
   
  Pour obtenir des exemples supplémentaires, consultez [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md).  
   
@@ -147,19 +147,19 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
   
  L’exemple suivant itère au sein d’un tableau unidimensionnel en utilisant l’[For...Next, instruction](../../../../visual-basic/language-reference/statements/for-next-statement.md). La méthode <xref:System.Array.GetUpperBound%2A> retourne la valeur la plus élevée possible de l’index. La valeur d’index la plus basse est toujours 0.  
   
- [!code-vb[VbVbalrArrays#41](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_13.vb)]  
+ [!code-vb[VbVbalrArrays#41](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_13.vb)]  
   
  L’exemple suivant itère au sein d’un tableau multidimensionnel en utilisant une instruction `For...Next`. La méthode <xref:System.Array.GetUpperBound%2A> dispose d’un paramètre qui spécifie la dimension.`GetUpperBound(0)` retourne la valeur d’index supérieure pour la première dimension et `GetUpperBound(1)` retourne la valeur d’index supérieure pour la deuxième.  
   
- [!code-vb[VbVbalrArrays#42](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_14.vb)]  
+ [!code-vb[VbVbalrArrays#42](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_14.vb)]  
   
  L’exemple suivant itère au sein d’un tableau unidimensionnel en utilisant une instruction [For Each...Next, instruction](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
- [!code-vb[VbVbalrArrays#43](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_15.vb)]  
+ [!code-vb[VbVbalrArrays#43](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_15.vb)]  
   
  L’exemple suivant itère au sein d’un tableau multidimensionnel en utilisant une instruction `For Each...Next`. Cependant, vous bénéficiez d’un contrôle accru sur les éléments d’un tableau multidimensionnel si vous utilisez une instruction `For…Next` imbriquée, comme dans un exemple précédent, plutôt qu’une instruction `For Each…Next`.  
   
- [!code-vb[VbVbalrArrays#44](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_16.vb)]  
+ [!code-vb[VbVbalrArrays#44](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_16.vb)]  
   
 ##  <a name="BKMK_ReturnValues"></a> Tableaux en tant que valeurs de retour et paramètres  
  Pour retourner un tableau à partir d’une procédure `Function`, spécifiez le type de données du tableau et le nombre de dimensions en tant que type de retour de l’instruction [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md). Dans la fonction, déclarez une variable tableau locale avec le même type de données et le même nombre de dimensions. Dans l’instruction [Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md), incluez la variable tableau locale sans parenthèses.  
@@ -168,23 +168,23 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
   
  Dans l’exemple suivant, la fonction `GetNumbers` retourne un `Integer()`. Ce type de tableau est un tableau unidimensionnel de type `Integer`. La procédure `ShowNumbers` accepte un argument `Integer()`.  
   
- [!code-vb[VbVbalrArrays#51](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_17.vb)]  
+ [!code-vb[VbVbalrArrays#51](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_17.vb)]  
   
  Dans l’exemple suivant, la fonction `GetNumbersMultiDim` retourne un `Integer(,)`. Ce type de tableau est un tableau à deux dimensions de type `Integer`.  La procédure `ShowNumbersMultiDim` accepte un argument `Integer(,)`.  
   
- [!code-vb[VbVbalrArrays#52](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_18.vb)]  
+ [!code-vb[VbVbalrArrays#52](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_18.vb)]  
   
 ##  <a name="BKMK_JaggedArrays"></a> Tableaux en escalier  
  Un tableau qui contient d’autres tableaux sous forme d’éléments est ce que l’on appelle un tableau de tableaux ou un tableau en escalier. Un tableau en escalier et chaque élément qu’il contient peut avoir une ou plusieurs dimensions. Parfois, la structure de données de votre application est à deux dimensions, mais pas rectangulaire.  
   
  L’exemple suivant présente un tableau de mois, dont chaque élément est un tableau de jours. Sachant que les mois ne comptent pas tous le même nombre de jours, les éléments ne forment pas un tableau rectangulaire à deux dimensions. Par conséquent, un tableau en escalier est utilisé à la place d’un tableau multidimensionnel.  
   
- [!code-vb[VbVbalrArrays#21](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_19.vb)]  
+ [!code-vb[VbVbalrArrays#21](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_19.vb)]  
   
 ##  <a name="BKMK_ZeroLength"></a> Tableaux de longueur zéro  
  Un tableau qui ne contient aucun élément est aussi appelé un tableau de longueur zéro. Une variable qui contient un tableau de longueur zéro n’a pas la valeur `Nothing`. Pour créer un tableau qui ne contient aucun élément, déclarez une des dimensions du tableau avec la valeur \-1, comme dans l’exemple suivant.  
   
- [!code-vb[VbVbalrArrays#14](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_20.vb)]  
+ [!code-vb[VbVbalrArrays#14](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_20.vb)]  
   
  Vous pouvez être amené à créer un tableau de longueur zéro dans les cas suivants :  
   
@@ -233,7 +233,7 @@ Dim prices(3, 4, 5) As Long
   
  L’exemple suivant appelle la fonction `TypeName` pour déterminer le type du tableau et le type de ses éléments. Le type du tableau est `Integer(,)` et celui de ses éléments est `Integer`.  
   
- [!code-vb[VbVbalrArrays#15](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_21.vb)]  
+ [!code-vb[VbVbalrArrays#15](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_21.vb)]  
   
 ##  <a name="BKMK_Collections"></a> Les collections comme alternative aux tableaux  
  Les tableaux s’avèrent particulièrement utiles pour créer et utiliser un nombre fixe d’objets fortement typés. Les collections offrent plus de souplesse quand il s’agit d’utiliser des groupes d’objets. Contrairement aux tableaux, le groupe d’objets que vous utilisez peut croître et se réduire dynamiquement à mesure qu’évoluent les besoins de l’application.  
@@ -249,7 +249,7 @@ Dim prices(3, 4, 5) As Long
 ### Exemple  
  L’exemple suivant utilise la classe générique <xref:System.Collections.Generic.List%601?displayProperty=fullName> du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] pour créer une collection de listes d’objets `Customer`.  
   
- [!code-vb[VbVbalrArrays#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/visualbasic/index_22.vb)]  
+ [!code-vb[VbVbalrArrays#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_22.vb)]  
   
  La déclaration de la collection `CustomerFile` précise qu’elle ne peut contenir que des éléments de type `Customer`. De même, elle offre une capacité initiale de 200 éléments. La procédure `AddNewCustomer` vérifie la validité du nouvel élément, puis l’ajoute à la collection. La procédure `PrintCustomers` utilise une boucle `For Each` pour parcourir la collection et afficher ses éléments.  
   

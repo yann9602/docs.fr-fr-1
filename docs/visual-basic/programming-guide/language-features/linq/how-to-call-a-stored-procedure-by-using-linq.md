@@ -72,8 +72,8 @@ LINQ \(Language\-Integrated Query\) facilite l'accès aux informations provenant
   
      Ajoutez le code suivant à l'événement `Load` pour appeler l'une ou l'autre des procédures stockées exposées comme méthodes pour votre contexte de données.  
   
-     [!code-vb[VbLINQtoSQLHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form3.vb#1)]  
-    [!code-vb[VbLINQtoSQLHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form3.vb#2)]  
+     [!code-vb[VbLINQtoSQLHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-call-a-stored-procedure-by-using-linq_1.vb)]  
+    [!code-vb[VbLINQtoSQLHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-call-a-stored-procedure-by-using-linq_2.vb)]  
   
 4.  Appuyez sur F5 pour exécuter votre projet et consulter les résultats.  
   

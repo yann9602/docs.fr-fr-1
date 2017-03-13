@@ -114,7 +114,7 @@ End Class
 ## Exemple  
  L'exemple suivant utilise une instruction `Class` pour définir une classe et plusieurs membres.  
   
- [!code-vb[VbVbalrStatements#62](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/class-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#62](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/class-statement_1.vb)]  
   
 ## Voir aussi  
  [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   

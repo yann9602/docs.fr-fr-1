@@ -41,7 +41,7 @@ x & y
 ## Exemple  
  Dans l'exemple suivant, l'expression conditionnelle dans la deuxième instruction d' `if` a uniquement le premier opérande parce que l'opérande retourne `false`.  
   
- [!code-cs[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#48)]  
+ [!code-cs[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-and-operator_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

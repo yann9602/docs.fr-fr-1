@@ -30,12 +30,12 @@ L'opérateur & peut fonctionner comme opérateur unaire ou binaire.
   
  L'opérateur `&` évalue les deux opérateurs indépendamment de la valeur du premier.  Par exemple :  
   
- [!code-cs[csRefOperators#37](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#37)]  
+ [!code-cs[csRefOperators#37](../../../csharp/language-reference/operators/codesnippet/CSharp/and-operator_1.cs)]  
   
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `&` binaire \(consultez [operator](../../../csharp/language-reference/keywords/operator.md)\).  Les opérations sur les types intégraux sont en général autorisées sur énumération.  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#38](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#38)]  
+ [!code-cs[csRefOperators#38](../../../csharp/language-reference/operators/codesnippet/CSharp/and-operator_2.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

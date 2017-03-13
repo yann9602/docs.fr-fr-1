@@ -30,12 +30,12 @@ Il est parfois utile de posséder des données sur les caractères de votre cha�
 ## Exemple  
  Cet exemple montre comment fractionner une chaîne en tableau `Char`, et comment fractionner une chaîne en tableau `String` de ses caractères de texte Unicode.  Cette distinction s'explique par le fait que les caractères de texte Unicode peuvent être composés d'au moins deux caractères `Char` \(par exemple, une paire de substitution ou une séquence de caractères d'association\).  Pour plus d'informations, consultez <xref:System.Globalization.TextElementEnumerator> et « The Unicode Standard » à l'adresse http:\/\/www.unicode.org.  
   
- [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-a-string-_2_1.vb)]  
+ [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_1.vb)]  
   
 ## Exemple  
  Il est plus difficile de fractionner une chaîne en ses caractères de texte Unicode, mais cette procédure est nécessaire si vous avez besoin d'informations sur la représentation visuelle d'une chaîne.  Cet exemple utilise la méthode <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> pour obtenir des informations sur les caractères de texte Unicode qui composent une chaîne.  
   
- [!code-vb[VbVbalrStrings#76](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-a-string-_2_2.vb)]  
+ [!code-vb[VbVbalrStrings#76](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_2.vb)]  
   
 ## Voir aussi  
  <xref:System.String.Chars%2A>   

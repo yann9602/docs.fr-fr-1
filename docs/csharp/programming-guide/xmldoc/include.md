@@ -47,7 +47,7 @@ caps.handback.revision: 19
 ## Exemple  
  Cet exemple fait appel à plusieurs fichiers.  Le premier, qui utilise \<include\>, est indiqué ci\-dessous :  
   
- [!code-cs[csProgGuideDocComments#5](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/include_1.cs)]  
+ [!code-cs[csProgGuideDocComments#5](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/include_1.cs)]  
   
  Le deuxième fichier, xml\_include\_tag.doc, contient les commentaires de documentation suivants :  
   

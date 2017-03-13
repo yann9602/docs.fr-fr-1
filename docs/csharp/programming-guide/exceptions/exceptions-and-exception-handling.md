@@ -9,7 +9,7 @@ Les fonctionnalités de gestion des exceptions du langage C\# vous aident à gé
   
  Dans cet exemple, une méthode teste une division par zéro et intercepte l'erreur.  Sans la gestion des exceptions, ce programme se terminerait sur une erreur **L'exception DivideByZeroException n'a pas été gérée**.  
   
- [!code-cs[csProgGuideExceptions#18](../../../csharp/programming-guide/exceptions/codesnippet/csharp/exceptions-and-exception_1.cs)]  
+ [!code-cs[csProgGuideExceptions#18](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exceptions-and-exception-handling_1.cs)]  
   
 ## Vue d'ensemble des exceptions  
  Les exceptions ont les propriétés suivantes :  

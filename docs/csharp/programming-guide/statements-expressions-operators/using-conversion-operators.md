@@ -29,12 +29,12 @@ Il est possible d'utiliser les opérateurs de conversion `implicit`, qui sont pl
 ## Exemple  
  Voici un exemple d'opérateur de conversion explicite.  Cet opérateur convertit le type <xref:System.Byte> en un type valeur appelé `Digit`.  Tous les octets ne pouvant pas être convertis en un chiffre, la conversion est explicite, ce qui signifie qu'un cast doit être utilisé, comme illustré dans la méthode `Main`.  
   
- [!code-cs[csProgGuideStatements#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-conversion-operators_1.cs)]  
+ [!code-cs[csProgGuideStatements#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-conversion-operators_1.cs)]  
   
 ## Exemple  
  Cet exemple montre un opérateur de conversion implicite en définissant un opérateur de conversion qui annule ce que l'exemple antérieur a fait : il convertit d'une classe de valeur appelée `Digit` en type <xref:System.Byte> intégral.  Tout chiffre pouvant être converti en un <xref:System.Byte>, il n'y a aucun besoin de forcer les utilisateurs à être explicites à propos de la conversion.  
   
- [!code-cs[csProgGuideStatements#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-conversion-operators_2.cs)]  
+ [!code-cs[csProgGuideStatements#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-conversion-operators_2.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

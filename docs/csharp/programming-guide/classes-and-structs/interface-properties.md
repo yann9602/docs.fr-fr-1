@@ -19,7 +19,7 @@ caps.handback.revision: 13
 # Propri&#233;t&#233;s d&#39;interface (Guide de programmation C#)
 Les propriétés peuvent être déclarées sur une [interface](../../../csharp/language-reference/keywords/interface.md).  Exemple d'accesseur d'indexeur d'interface :  
   
- [!code-cs[csProgGuideProperties#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_1.cs)]  
+ [!code-cs[csProgGuideProperties#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_1.cs)]  
   
  L'accesseur d'une propriété d'interface ne possède pas de corps.  Ainsi, les accesseurs ont pour objet d'indiquer si la propriété est en lecture\-écriture, en écriture seule ou en lecture seule.  
   
@@ -28,19 +28,19 @@ Les propriétés peuvent être déclarées sur une [interface](../../../csharp/l
   
  Vous pourriez utiliser le nom complet de la propriété, qui fait référence à l'interface dans laquelle le membre est déclaré.  Par exemple :  
   
- [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_2.cs)]  
+ [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
   
  C'est ce qu'on appelle [Implémentation d’interface explicite](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md).  Par exemple, si la classe `Employee` implémente deux interfaces `ICitizen` et `IEmployee`, et que ces deux interfaces possèdent la propriété `Name`, l'implémentation explicite des membres d'interface est nécessaire.  Ainsi, la déclaration de propriété suivante :  
   
- [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_2.cs)]  
+ [!code-cs[csProgGuideProperties#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_2.cs)]  
   
  implémente la propriété `Name` sur l'interface `IEmployee`, tandis que la déclaration :  
   
- [!code-cs[csProgGuideProperties#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_3.cs)]  
+ [!code-cs[csProgGuideProperties#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_3.cs)]  
   
  implémente la propriété `Name` sur l'interface `ICitizen`.  
   
- [!code-cs[csProgGuideProperties#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/interface-properties_4.cs)]  
+ [!code-cs[csProgGuideProperties#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/interface-properties_4.cs)]  
   
   **`210 Hazem Abolrous`**    
 ## Résultat de l'exemple  

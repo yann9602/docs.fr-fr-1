@@ -7,7 +7,7 @@ La méthode `Main` est le point d'entrée d'une application Windows ou d'une app
   
  Il ne peut y avoir qu'un seul point d'entrée dans un programme C\#.  Si plusieurs classes comportent une méthode `Main`, vous devez compiler votre programme avec l'option de compilateur **\/main** pour spécifier la méthode `Main` à utiliser comme point d'entrée.  Pour plus d'informations, consultez [\/main \(Specify Location of Main Method\)](../../../csharp/language-reference/compiler-options/main-compiler-option.md).  
   
- [!code-cs[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/main-and-command-line-ar_1.cs)]  
+ [!code-cs[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]  
   
 ## Vue d'ensemble  
   

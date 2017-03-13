@@ -96,12 +96,12 @@ IntelliSense quand Option Infer est désactivé
 ## Exemple  
  Les exemples suivants montrent comment l'instruction `Option Infer` active l'inférence de type de variable locale.  
   
- [!code-vb[VbVbalrTypeInference#6](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/option-infer-statement_1.vb)]  
+ [!code-vb[VbVbalrTypeInference#6](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant montre que le type au moment de l'exécution peut être différent quand une variable est identifiée comme `Object`.  
   
- [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/option-infer-statement_2.vb)]  
+ [!code-vb[VbVbalrTypeInference#11](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/option-infer-statement_2.vb)]  
   
 ## Voir aussi  
  [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   

@@ -24,7 +24,7 @@ L'opérateur d'assignation \(`=`\) stocke la valeur de l'opérande de droite dan
  L'opérateur d'assignation ne peut pas être surchargé.  Toutefois, vous pouvez définir des opérateurs de conversion implicites pour un type, qui vous permettent d'utiliser l'opérateur d'assignation avec ces types.  Pour plus d'informations, consultez [Utilisation d'opérateurs de conversion](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md).  
   
 ## Exemple  
- [!code-cs[csRefOperators#49](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#49)]  
+ [!code-cs[csRefOperators#49](../../../csharp/language-reference/operators/codesnippet/CSharp/assignment-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

@@ -33,26 +33,26 @@ Lorsque vous définissez une classe générique, vous pouvez appliquer des restr
 ## Pourquoi utiliser des contraintes ?  
  Si vous souhaitez examiner un élément dans une liste générique afin de déterminer s'il est valide ou pour le comparer à un autre élément, le compilateur doit être assuré que l'opérateur ou la méthode qu'il doit appeler sera prise en charge par tous les arguments de type pouvant être spécifiés par le code client.  Cette assurance est obtenue par l'application d'une ou plusieurs contraintes à votre définition de classe générique.  Par exemple, la contrainte de classe de base indique au compilateur qui seuls les objets de ce type ou dérivés de ce type seront utilisés comme arguments de type.  Lorsque le compilateur a cette assurance, il peut autoriser aux méthodes de ce type d'être appelées dans la classe générique.  Les contraintes sont appliquées à l'aide du mot clé contextuel `where`.  L'exemple de code suivant montre la fonctionnalité que nous pouvons ajouter à la classe `GenericList<T>` \(dans [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)\) en appliquant une contrainte de classe de base.  
   
- [!code-cs[csProgGuideGenerics#11](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_1.cs)]  
+ [!code-cs[csProgGuideGenerics#11](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_1.cs)]  
   
  La contrainte permet à la classe générique d'utiliser la propriété `Employee.Name`, car il est garanti que tous les éléments de type T sont soit un objet `Employee`, soit un objet qui hérite de `Employee`.  
   
  Plusieurs contraintes peuvent être appliquées au même paramètre de type, et les contraintes elles\-mêmes peuvent être des types génériques, comme suit :  
   
- [!code-cs[csProgGuideGenerics#12](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_2.cs)]  
+ [!code-cs[csProgGuideGenerics#12](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_2.cs)]  
   
  En contraignant le paramètre de type, vous augmentez le nombre d'opérations et d'appels de méthode autorisés au niveau de celui pris en charge par le type contraignant et tous les types dans sa hiérarchie d'héritage.  Par conséquent, en concevant des classes ou des méthodes génériques, si vous exécutez des opérations sur les membres génériques au\-delà de la simple assignation ou que vous appelez des méthodes non prises en charge par `System.Object`, vous devez appliquer des contraintes au paramètre de type.  
   
  En appliquant la contrainte `where T : class`, évitez d'utiliser les opérateurs `==` et `!=` sur le paramètre de type, car ces opérateurs testent uniquement l'identité des références, pas l'égalité des valeurs.  C'est le cas même si ces opérateurs sont surchargés dans un type utilisé comme un argument.  Le code suivant illustre ce point; la sortie a la valeur false même si la classe <xref:System.String> surcharge l'opérateur `==`.  
   
- [!code-cs[csProgGuideGenerics#13](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_3.cs)]  
+ [!code-cs[csProgGuideGenerics#13](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_3.cs)]  
   
  La raison à ce comportement réside dans le fait qu'au moment de la compilation, le compilateur sait uniquement que T est un type référence, et par conséquent doit utiliser les opérateurs par défaut, valides pour tous les types référence.  Si vous devez tester l'égalité des valeurs, il est recommandé d'appliquer également la contrainte `where T : IComparable<T>` et d'implémenter cette interface dans toute classe qui sera utilisée pour construire la classe générique.  
   
 ## Utilisation de contraintes dans plusieurs paramètres  
  Vous pouvez appliquer des contraintes à plusieurs paramètres et plusieurs contraintes à un paramètre unique comme le montre l'exemple suivant :  
   
- [!code-cs[csProgGuideGenerics#64](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_4.cs)]  
+ [!code-cs[csProgGuideGenerics#64](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_4.cs)]  
   
 ## Paramètres de type unbounded  
  Les paramètres de type qui n'ont aucune contrainte, tels que T dans la classe publique `SampleClass<T>{}`, sont appelés paramètres de type unbounded.  Les paramètres de type unbounded obéissent aux règles suivantes :  
@@ -66,13 +66,13 @@ Lorsque vous définissez une classe générique, vous pouvez appliquer des restr
 ## Paramètres de type en tant que contraintes  
  L'utilisation d'un paramètre de type générique comme contrainte est utile lorsqu'une fonction membre dotée de son propre paramètre de type doit contraindre ce paramètre au paramètre du type conteneur, comme le montre l'exemple suivant :  
   
- [!code-cs[csProgGuideGenerics#14](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_5.cs)]  
+ [!code-cs[csProgGuideGenerics#14](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_5.cs)]  
   
  Dans l'exemple précédent, `T` est une contrainte de type naked dans le contexte de la méthode `Add`, et un paramètre de type unbounded dans le contexte de la classe `List`.  
   
  Les paramètres de type peuvent également être utilisés comme contraintes dans les définitions de classes génériques.  Notez que le paramètre de type doit être déclaré dans des crochets pointus, ainsi que tous les autres paramètres de type :  
   
- [!code-cs[csProgGuideGenerics#15](../../../csharp/programming-guide/generics/codesnippet/csharp/constraints-on-type-para_6.cs)]  
+ [!code-cs[csProgGuideGenerics#15](../../../csharp/programming-guide/generics/codesnippet/CSharp/constraints-on-type-parameters_6.cs)]  
   
  L'utilité de contraintes de paramètres type avec les classes génériques est très limitée, car le compilateur ne peut rien deviner à propos du paramètre de type en dehors du fait qu'elle dérive de `System.Object`.  Utilisez des paramètres de type naked sur les classes génériques dans les scénarios dans lesquels vous souhaitez mettre en application une relation d'héritage entre deux paramètres de type.  
   

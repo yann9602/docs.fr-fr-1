@@ -30,7 +30,7 @@ Les expressions incorporées vous permettent de créer des littéraux XML qui co
   
  Vous pouvez, par exemple, créer un littéral d'élément XML, en combinant des expressions incorporées au contenu d'un texte littéral.  
   
- [!code-vb[VbXMLSamples#27](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_1.vb)]  
+ [!code-vb[VbXMLSamples#27](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_1.vb)]  
   
  Si `isbnNumber` contient l'entier 12345 et `modifiedDate` contient la date 3\/5\/2006, lorsque ce code s'exécute, la valeur de `book` est :  
   
@@ -55,27 +55,27 @@ Les expressions incorporées vous permettent de créer des littéraux XML qui co
   
 -   Exemple d'expression incorporée dans un nom d'élément XML :  
   
-     [!code-vb[VbXMLSamples#32](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_2.vb)]  
+     [!code-vb[VbXMLSamples#32](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_2.vb)]  
   
 -   Exemple d'expression incorporée dans le contenu d'un élément XML :  
   
-     [!code-vb[VbXMLSamples#33](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_3.vb)]  
+     [!code-vb[VbXMLSamples#33](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_3.vb)]  
   
 -   Exemple d'expression incorporée dans un nom d'attribut d'élément XML :  
   
-     [!code-vb[VbXMLSamples#34](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_4.vb)]  
+     [!code-vb[VbXMLSamples#34](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_4.vb)]  
   
 -   Exemple d'expression incorporée dans une valeur d'attribut d'élément XML :  
   
-     [!code-vb[VbXMLSamples#35](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_5.vb)]  
+     [!code-vb[VbXMLSamples#35](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_5.vb)]  
   
 -   Exemple d'expression incorporée dans un attribut d'élément XML :  
   
-     [!code-vb[VbXMLSamples#36](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_6.vb)]  
+     [!code-vb[VbXMLSamples#36](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_6.vb)]  
   
 -   Exemple d'expression incorporée dans un élément racine de document XML :  
   
-     [!code-vb[VbXMLSamples#37](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/embedded-expressions-in-_7.vb)]  
+     [!code-vb[VbXMLSamples#37](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/embedded-expressions-in-xml_7.vb)]  
   
  Si vous activez `Option Strict`, le compilateur vérifie que le type de chaque expression incorporée s'étend au type requis.  La seule exception est l'élément racine d'un document XML, vérifié quand le code s'exécute.  Si vous compilez sans `Option Strict`, vous pouvez incorporer des expressions de type `Object` et leur type est vérifié au moment de l'exécution.  
   

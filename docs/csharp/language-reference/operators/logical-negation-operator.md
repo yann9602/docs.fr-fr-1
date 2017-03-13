@@ -26,7 +26,7 @@ L'opérateur de négation logique \(`!`\) est un opérateur unaire qui nie l'op�
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `!` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  
   
 ## Exemple  
- [!code-cs[csRefOperators#7](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#7)]  
+ [!code-cs[csRefOperators#7](../../../csharp/language-reference/operators/codesnippet/CSharp/logical-negation-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

@@ -53,7 +53,7 @@ Passage d'un argument à un paramètre
 ## Type de données de paramètre  
  Définissez un type de données pour un paramètre en utilisant la clause `As` dans sa déclaration.  Par exemple, la fonction suivante accepte une chaîne et un entier.  
   
- [!code-vb[VbVbcnProcedures#32](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-parameters-and_1.vb)]  
+ [!code-vb[VbVbcnProcedures#32](./codesnippet/VisualBasic/procedure-parameters-and-arguments_1.vb)]  
   
  Si le commutateur de vérification de type \([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)\) est `Off,` la clause `As` est facultative, sauf si un paramètre l'utilise, dans quel cas tous les paramètres doivent l'utiliser.  Si la vérification de type est `On`, la clause `As` est requise pour tous les paramètres de procédure.  
   

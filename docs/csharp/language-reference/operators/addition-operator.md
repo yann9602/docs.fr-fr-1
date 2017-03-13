@@ -32,7 +32,7 @@ L'opérateur `+` peut fonctionner comme opérateur unaire ou binaire.
  Les types définis par l'utilisateur peuvent surcharger les opérateurs `+` unaires et binaires `+`.  Les opérations sur les types intégraux sont en général autorisées sur énumération.  Pour plus d'informations, consultez [d'opérateur](../../../csharp/language-reference/keywords/operator.md).  
   
 ## Exemple  
- [!code-cs[csRefOperators#28](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#28)]  
+ [!code-cs[csRefOperators#28](../../../csharp/language-reference/operators/codesnippet/CSharp/addition-operator_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

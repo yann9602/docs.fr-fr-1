@@ -27,7 +27,7 @@ La plupart des requêtes dans la documentation préliminaire de langage Integrat
 ## Méthodes d'extension d'opérateur de requête standard  
  L'exemple suivant présente une *expression de requête* simple et la requête sémantiquement équivalente écrite comme une *requête basée sur une méthode*.  
   
- [!code-cs[csLINQGettingStarted#22](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#22)]  
+ [!code-cs[csLINQGettingStarted#22](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/query-syntax-and-method-syntax-in-linq_1.cs)]  
   
  La sortie des deux exemples est identique.  Vous pouvez voir que le type de la variable de requête est le même dans les deux formes : <xref:System.Collections.Generic.IEnumerable%601>.  
   

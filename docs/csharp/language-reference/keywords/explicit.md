@@ -21,11 +21,11 @@ caps.handback.revision: 21
 # explicit (r&#233;f&#233;rence C#)
 Le mot clé `explicit` déclare un opérateur de conversion de type défini par l'utilisateur qui doit être appelé avec un cast.  Par exemple, cet opérateur convertit d'une classe appelée Fahrenheit en une classe appelée Celsius :  
   
- [!code-cs[csrefKeywordsConversion#2](../../../csharp/language-reference/keywords/codesnippet/csharp/explicit_1.cs)]  
+ [!code-cs[csrefKeywordsConversion#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/explicit_1.cs)]  
   
  Cet opérateur de conversion peut être appelé comme suit :  
   
- [!code-cs[csrefKeywordsConversion#3](../../../csharp/language-reference/keywords/codesnippet/csharp/explicit_2.cs)]  
+ [!code-cs[csrefKeywordsConversion#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/explicit_2.cs)]  
   
  L'opérateur de conversion convertit un type source en type cible.  Le type source fournit l'opérateur de conversion.  À la différence de la conversion implicite, les opérateurs de conversion explicite doivent être appelés au moyen d'une conversion.  Si une opération de conversion risque de provoquer des exceptions ou de perdre des informations, vous devez la marquer comme `explicit`.  Ceci empêche le compilateur d'appeler en mode silencieux l'opération de conversion, ce qui pourrait entraîner des conséquences imprévisibles.  
   
@@ -36,12 +36,12 @@ Le mot clé `explicit` déclare un opérateur de conversion de type défini par 
 ## Exemple  
  L'exemple suivant fournit une classe `Fahrenheit` et une classe `Celsius`, chacune fournissant un opérateur de conversion explicite à l'autre classe.  
   
- [!code-cs[csrefKeywordsConversion#1](../../../csharp/language-reference/keywords/codesnippet/csharp/explicit_3.cs)]  
+ [!code-cs[csrefKeywordsConversion#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/explicit_3.cs)]  
   
 ## Exemple  
  L'exemple ci\-dessous définit un struct, `Digit`, qui représente un seul chiffre décimal.  Un opérateur est défini pour des conversions de `byte` à `Digit`, et comme tous les octets ne peuvent pas être convertis en `Digit`, la conversion est explicite.  
   
- [!code-cs[csrefKeywordsConversion#4](../../../csharp/language-reference/keywords/codesnippet/csharp/explicit_4.cs)]  
+ [!code-cs[csrefKeywordsConversion#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/explicit_4.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

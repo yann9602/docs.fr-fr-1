@@ -26,13 +26,13 @@ Lorsque vous utilisez un initialiseur de collection pour créer une collection, 
 ## Exemple  
  L'exemple suivant affiche une collection `OrderCollection` contenant une méthode `Add` publique qu'un initialiseur de collection peut utiliser pour ajouter des objets de type `Order`.  La méthode `Add` vous permet d'utiliser la syntaxe raccourcie de l'initialiseur de collection.  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo2#4](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-a-collecti_1.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo2#4](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_1.vb)]  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo2#1](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-a-collecti_2.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo2#1](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_2.vb)]  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo2#2](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-a-collecti_3.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo2#2](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_3.vb)]  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo2#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-a-collecti_4.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo2#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_4.vb)]  
   
 ## Voir aussi  
  [Collection Initializers](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)   

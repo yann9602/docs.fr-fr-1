@@ -33,7 +33,7 @@ Vous pouvez fournir une boîte de dialogue standard qui indique la progression d
 ## Exemple  
  Le code suivant copie le répertoire spécifié par `sourcePath` dans celui spécifié par `destinationPath`.  Ce code fournit également une boîte de dialogue standard qui affiche la quantité de temps estimée restante avant la fin de l'opération.  
   
- [!code-cs[csFilesandFolders#11](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#11)]  
+ [!code-cs[csFilesandFolders#11](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-provide-a-progress-dialog-box-for-file-operations_1.cs)]  
   
 ## Voir aussi  
  [Système de fichiers et Registre](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)

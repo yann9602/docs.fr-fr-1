@@ -27,7 +27,7 @@ caps.handback.revision: 14
 Cet exemple définit et appelle la fonction `MessageBox` dans user32.dll et lui passe une chaîne.  
   
 ## Exemple  
- [!code-vb[VbVbalrInterop#1](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#1)]  
+ [!code-vb[VbVbalrInterop#1](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-call-windows-apis_1.vb)]  
   
 ## Compilation du code  
  Cet exemple nécessite :  

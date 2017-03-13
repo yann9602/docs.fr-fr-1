@@ -36,13 +36,13 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2
   
 -   Utilisez la méthode `ReadAllText` de l'objet `My.Computer.FileSystem` pour lire le contenu d'un fichier texte dans une chaîne en fournissant le chemin d'accès.  L'exemple suivant lit le contenu du fichier test.txt dans une chaîne puis l'affiche dans un message.  
   
-     [!code-vb[VbFileIORead#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-text-fi_1_1.vb)]  
+     [!code-vb[VbFileIORead#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files_1.vb)]  
   
 ### Pour lire un fichier texte encodé  
   
 -   Utilisez la méthode `ReadAllText` de l'objet `My.Computer.FileSystem` pour lire le contenu d'un fichier texte dans une chaîne en fournissant le chemin d'accès et le type d'encodage du fichier.  L'exemple suivant lit le contenu du fichier UTF32 test.txt dans une chaîne puis l'affiche dans un message.  
   
-     [!code-vb[VbFileIORead#3](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-text-fi_1_2.vb)]  
+     [!code-vb[VbFileIORead#3](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files_2.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

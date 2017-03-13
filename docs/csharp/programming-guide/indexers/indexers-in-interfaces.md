@@ -27,14 +27,14 @@ Les indexeurs peuvent être déclarés sur une [interface](../../../csharp/langu
   
  Exemple d'accesseur d'indexeur d'interface :  
   
- [!code-cs[csProgGuideIndexers#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/indexers-in-interfaces_1.cs)]  
+ [!code-cs[csProgGuideIndexers#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_1.cs)]  
   
  La signature d'un indexeur doit différer des signatures de tous les autres indexeurs déclarés dans la même interface.  
   
 ## Exemple  
  L'exemple suivant montre comment implémenter des indexeurs d'interface.  
   
- [!code-cs[csProgGuideIndexers#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/indexers-in-interfaces_2.cs)]  
+ [!code-cs[csProgGuideIndexers#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_2.cs)]  
   
  Dans l'exemple précédent, vous pouvez utiliser l'implémentation explicite du membre d'interface à l'aide du nom qualifié complet du membre d'interface.  Par exemple :  
   

@@ -32,9 +32,9 @@ Utilisez l'opérateur d'indirection du pointeur pour obtenir la variable à l'em
 ## Exemple  
  Dans l'exemple suivant, des pointeurs de types différents accèdent à une variable du type `char`.  Notez que l'adresse de `theChar` variera d'exécution en exécution, car l'adresse physique allouée à une variable peut changer.  
   
- [!code-cs[csProgGuidePointers#5](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#5)]  
+ [!code-cs[csProgGuidePointers#5](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_1.cs)]  
   
- [!code-cs[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#6)]  
+ [!code-cs[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_2.cs)]  
   
   **Valeur de theChar \= Z**   
 **Adresse de theChar \= 12F718**  

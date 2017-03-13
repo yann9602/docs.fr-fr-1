@@ -75,11 +75,11 @@ Une procédure `Sub` est une série d'instructions [!INCLUDE[vbprvb](../../../..
 ### Illustration de déclaration et d'appel  
  La procédure `Sub` ci\-dessous indique à l'opérateur la tâche que l'application est sur le point d'exécuter, et affiche également des informations de date.  Au lieu de dupliquer ce code au début de chaque tâche, l'application appelle simplement  `tellOperator`  depuis différents emplacements.  Chaque appel passe une chaîne dans l'argument  `task`  qui identifie la tâche en cours de démarrage.  
   
- [!code-vb[VbVbcnProcedures#2](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/sub-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#2](./codesnippet/VisualBasic/sub-procedures_1.vb)]  
   
  L'exemple suivant montre un appel typique à  `tellOperator`  
   
- [!code-vb[VbVbcnProcedures#3](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/sub-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#3](./codesnippet/VisualBasic/sub-procedures_2.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

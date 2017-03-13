@@ -33,7 +33,7 @@ Il est souvent nécessaire de stocker des valeurs lors de l'exécution de calcul
 ## Assignation de valeurs  
  Vous devez utiliser les instructions d'assignation pour effectuer des calculs et assigner le résultat à une variable, comme indiqué dans l'exemple suivant :  
   
- [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/index_1.vb)]  
   
 > [!NOTE]
 >  Dans cet exemple, le signe égal \(`=`\) représente un opérateur d'assignation, et non un opérateur d'égalité.  La valeur est assignée à la variable `applesSold`.  

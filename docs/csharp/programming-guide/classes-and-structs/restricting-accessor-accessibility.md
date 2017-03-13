@@ -23,7 +23,7 @@ caps.handback.revision: 26
 # Restriction d&#39;accessibilit&#233; de l&#39;accesseur (Guide de programmation C#)
 Les parties [get](../../../csharp/language-reference/keywords/get.md) et [set](../../../csharp/language-reference/keywords/set.md) d'une propriété ou d'un indexeur s'appellent des *accesseurs*.  Par défaut, ces accesseurs ont la même visibilité, ou niveau d'accès : celle de la propriété ou de l'indexeur auquel ils appartiennent.  Pour plus d'informations, consultez [niveaux d'accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md).  Toutefois, il peut s'avérer utile de restreindre l'accès à l'un de ces accesseurs.  En général, cela implique de restreindre l'accessibilité de l'accesseur `set`, tout en gardant l'accesseur `get` publiquement accessible.  Par exemple :  
   
- [!code-cs[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_1.cs)]  
+ [!code-cs[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_1.cs)]  
   
  Dans cet exemple, une propriété appelée `Name` définit un accesseur `get` et `set`.  L'accesseur `get` reçoit le niveau d'accessibilité de la propriété elle\-même, `public` dans ce cas, alors que l'accesseur `set` est restreint explicitement par l'application du modificateur d'accès [protected](../../../csharp/language-reference/keywords/protected.md) à l'accesseur lui\-même.  
   
@@ -41,12 +41,12 @@ Les parties [get](../../../csharp/language-reference/keywords/get.md) et [set](.
 ## Modificateurs d'accès sur les accesseurs de substitution  
  Lorsque vous substituez une propriété ou un indexeur, les accesseurs remplacés doivent être accessibles au code de substitution.  Par ailleurs, le niveau d'accessibilité à la fois de la propriété et de l'indexeur, ainsi que celui des accesseurs doit correspondre à la propriété\/l'indexeur et aux accesseurs substitués correspondants.  Par exemple :  
   
- [!code-cs[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_2.cs)]  
+ [!code-cs[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_2.cs)]  
   
 ## Implémentation d'interfaces  
  Lorsque vous utilisez un accesseur pour implémenter une interface, l'accesseur peut ne pas avoir de modificateur d'accès.  Toutefois, si vous implémentez l'interface à l'aide d'un accesseur, tel que `get`, l'autre accesseur peut avoir un modificateur d'accès, comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_3.cs)]  
+ [!code-cs[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_3.cs)]  
   
 ## Domaine d'accessibilité de l'accesseur  
  Si vous utilisez un modificateur d'accès sur l'accesseur, le [domaine d'accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md) de l'accesseur est déterminé par ce modificateur.  
@@ -58,7 +58,7 @@ Les parties [get](../../../csharp/language-reference/keywords/get.md) et [set](.
   
  L'exemple montre également qu'un modificateur d'accès restrictif, tel que `private` ou `protected`, sur l'accesseur `set` de la propriété `Name` dans `DerivedClass` empêche l'accès à l'accesseur et génère une erreur lorsque vous le lui assignez.  
   
- [!code-cs[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/restricting-accessor-acc_4.cs)]  
+ [!code-cs[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_4.cs)]  
   
 ## Commentaires  
  Notez que si vous remplacez la déclaration `new private string Id` par `new public string Id`, vous obtenez la sortie :  

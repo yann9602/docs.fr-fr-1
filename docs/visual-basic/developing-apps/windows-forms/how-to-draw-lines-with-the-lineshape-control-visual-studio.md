@@ -52,8 +52,8 @@ Vous pouvez utiliser le contrôle <xref:Microsoft.VisualBasic.PowerPacks.LineSha
   
 4.  Ajoutez le code suivant à une procédure `Event` :  
   
-     [!code-cs[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerpacksLineCS/VbPowerpacksLine.cs#1)]
-     [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerpacksLine/VBPowerpacksLine.vb#1)]  
+     [!code-cs[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
+     [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.PowerPacks.LineShape>   

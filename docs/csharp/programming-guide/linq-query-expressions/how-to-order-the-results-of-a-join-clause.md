@@ -8,7 +8,7 @@ Cet exemple indique comment classer les résultats d'une opération de jointure.
 ## Exemple  
  Cette requête crée une jointure de groupe, puis classe les groupes selon l'élément de catégorie, qui est encore dans la portée.  À l'intérieur de l'initialiseur de type anonyme, une sous\-requête classe tous les éléments correspondants à partir de la séquence de produits.  
   
- [!code-cs[csProgGuideLINQ#81](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#81)]  
+ [!code-cs[csProgGuideLINQ#81](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-order-the-results-of-a-join-clause_1.cs)]  
   
 ## Compilation du code  
   

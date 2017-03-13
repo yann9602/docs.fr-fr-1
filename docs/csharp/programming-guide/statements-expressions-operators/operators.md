@@ -22,11 +22,11 @@ En C\#, un *opérateur* est un élément de programme qui s'applique à un ou p
   
  L'instruction C\# suivante contient un seul opérateur unaire et un seul opérande. L'opérateur d'incrément, `++`, modifie la valeur de l'opérande `y`.  
   
- [!code-cs[csProgGuideStatements#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/operators_1.cs)]  
+ [!code-cs[csProgGuideStatements#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_1.cs)]  
   
  L'instruction C\# suivante contient deux opérateurs binaires, chacun avec deux opérandes. L'opérateur d'assignation, `=`, a la variable de type entier `y` et l'expression `2 + 3` comme opérandes. L'expression `2 + 3` elle\-même se compose de l'opérateur Addition et de deux opérandes, `2` et `3`.  
   
- [!code-cs[csProgGuideStatements#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/operators_2.cs)]  
+ [!code-cs[csProgGuideStatements#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/operators_2.cs)]  
   
 ## Opérateurs, évaluation et priorité des opérateurs  
  Un opérande peut être une expression valide qui est composée d'une longueur quelconque de code, et qui peut comporter plusieurs sous\-expressions. Dans une expression qui contient plusieurs opérateurs, l'ordre dans lequel les opérateurs sont appliqués est déterminé par la *priorité des opérateurs*, *l'associativité* et les parenthèses.  

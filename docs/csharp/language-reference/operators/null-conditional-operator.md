@@ -30,7 +30,7 @@ L'opérateur `??` est appelé l'l'opérateur de fusion Null.  Il retourne l'opé
  Le résultat d'un opérateur ?? n'est pas interprété comme une constante même si ses deux arguments sont des constantes.  
   
 ## Exemple  
- [!code-cs[csRefOperators#53](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#53)]  
+ [!code-cs[csRefOperators#53](../../../csharp/language-reference/operators/codesnippet/CSharp/null-conditional-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

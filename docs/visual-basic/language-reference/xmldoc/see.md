@@ -42,7 +42,7 @@ Spécifie un lien vers un autre membre.
 ## Exemple  
  Cet exemple utilise les balises `<see>` dans la section Notes `UpdateRecord` pour faire référence à la méthode `DoesRecordExist`.  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/see_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/see_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

@@ -28,11 +28,11 @@ L'objet `TextFieldParser` vous permet d'analyser et de traiter de très gros fic
 ## Analyse de différents types de fichiers texte  
  Les fichiers texte peuvent avoir des champs à largeur différente, délimités par un caractère tel qu'une virgule ou un espace de tabulation.  Définissez `TextFieldType` et le séparateur, comme dans l'exemple suivant, qui utilise la méthode `SetDelimiters` pour définir un fichier texte délimité par des tabulations :  
   
- [!code-vb[VbVbalrTextFieldParser#21](../../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/parsing-text-files-with-_1.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#21](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_1.vb)]  
   
  D'autres fichiers texte peuvent avoir des largeurs de champ fixes.  Dans de tels cas, vous devez affecter le `TextFieldType` à `FixedWidth` et définir les largeurs de chaque champ, comme dans l'exemple suivant.  Cet exemple utilise la méthode `SetFieldWidths` pour définir les colonnes de texte : la première colonne a une largeur de 5 caractères, la deuxième de 10, la troisième de 11, tandis que la quatrième a une largeur variable.  
   
- [!code-vb[VbVbalrTextFieldParser#22](../../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/parsing-text-files-with-_2.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#22](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_2.vb)]  
   
  Une fois le format défini, vous pouvez parcourir le fichier à l'aide de la méthode `ReadFields` pour traiter tour à tour chaque ligne.  
   

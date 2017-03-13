@@ -20,7 +20,7 @@ En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` ma
   
  Pour masquer un membre hérité, déclarez\-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez\-le à l'aide du mot\-clé `new`.  Exemple :  
   
- [!code-cs[csrefKeywordsOperator#8](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#8)]  
+ [!code-cs[csrefKeywordsOperator#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_1.cs)]  
   
  Dans cet exemple, `BaseC.Invoke` est masqué par `DerivedC.Invoke`.  Le champ `x` n'est pas affecté parce qu'il n'est pas masqué par un nom semblable.  
   
@@ -39,12 +39,12 @@ En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` ma
 ## Exemple  
  Dans cet exemple, une classe de base, `BaseC` et une classe dérivée, `DerivedC`, utilisent le même nom de champ `x`, masquant ainsi la valeur du champ hérité.  Cet exemple illustre l'utilisation du modificateur `new`.  Il montre aussi comment accéder aux membres masqués de la classe de base en utilisant leurs noms complets.  
   
- [!code-cs[csrefKeywordsOperator#9](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#9)]  
+ [!code-cs[csrefKeywordsOperator#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_2.cs)]  
   
 ## Exemple  
  Dans cet exemple, une classe imbriquée masque une classe du même nom dans la classe de base.  Cet exemple illustre l'utilisation du modificateur `new` pour éliminer le message d'avertissement, ainsi que l'accès aux membres de la classe masquée à l'aide de leurs noms complets.  
   
- [!code-cs[csrefKeywordsOperator#10](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#10)]  
+ [!code-cs[csrefKeywordsOperator#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_3.cs)]  
   
  Si vous supprimez le modificateur `new`, le programme peut encore être compilé et exécuté, mais vous obtiendrez l'avertissement suivant :  
   

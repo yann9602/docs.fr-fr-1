@@ -55,7 +55,7 @@ double x = 3D;
 ## Exemple  
  Dans l'exemple suivant, [int](../../../csharp/language-reference/keywords/int.md), [short](../../../csharp/language-reference/keywords/short.md), [float](../../../csharp/language-reference/keywords/float.md) et `double` sont ajoutés pour donner un résultat `double`.  
   
- [!code-cs[csrefKeywordsTypes#9](../../../csharp/language-reference/keywords/codesnippet/csharp/double_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/double_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

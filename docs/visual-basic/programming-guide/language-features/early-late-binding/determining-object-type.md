@@ -31,15 +31,15 @@ Les variables objets génériques \(c'est\-à\-dire les variables que vous décl
 ## TypeName et TypeOf…Is  
  La fonction `TypeName` retourne une chaîne et représente le meilleur choix lorsque vous devez stocker ou afficher le nom de classe d'un objet, comme illustré dans le fragment de code suivant :  
   
- [!code-vb[VbVbalrOOP#92](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#92)]  
+ [!code-vb[VbVbalrOOP#92](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_1.vb)]  
   
  L'opérateur `TypeOf...Is` représente le meilleur choix lorsqu'il s'agit de tester le type d'un objet, car il est beaucoup plus rapide qu'une comparaison de chaînes équivalente à l'aide de la fonction `TypeName`.  Le fragment de code suivant utilise `TypeOf...Is` dans une instruction `If...Then...Else`.  
   
- [!code-vb[VbVbalrOOP#93](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#93)]  
+ [!code-vb[VbVbalrOOP#93](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_2.vb)]  
   
  Néanmoins, il convient d'apporter certaines précisions.  L'opérateur `TypeOf...Is` retourne `True` si l'objet est d'un type spécifique ou s'il est dérivé d'un type spécifique.  Quasiment toutes vos actions dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] reposent sur l'utilisation d'objets, y compris des éléments qui ne sont pas forcément perçues comme des objets, par exemple les chaînes et les entiers.  Ces objets sont dérivés et héritent des méthodes de <xref:System.Object>.  Lorsqu'un `Integer` lui est passé et qu'il est évalué avec `Object`, l'opérateur `TypeOf...Is` retourne `True`.  L'exemple suivant indique que le paramètre `InParam` est à la fois du type `Object` et `Integer` :  
   
- [!code-vb[VbVbalrOOP#94](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#94)]  
+ [!code-vb[VbVbalrOOP#94](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_3.vb)]  
   
  L'exemple suivant utilise à la fois `TypeOf...Is` et `TypeName` pour déterminer le type d'objet passé dans l'argument `Ctrl`.  La procédure `TestObject` appelle `ShowType` à l'aide de trois sortes de contrôles différents.  
   
@@ -51,7 +51,7 @@ Les variables objets génériques \(c'est\-à\-dire les variables que vous décl
   
 3.  Ajoutez le code suivant à votre formulaire :  
   
-     [!code-vb[VbVbalrOOP#95](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#95)]  
+     [!code-vb[VbVbalrOOP#95](../../../../visual-basic/misc/codesnippet/VisualBasic/determining-object-type_4.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Information.TypeName%2A>   

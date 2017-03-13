@@ -66,14 +66,14 @@ result = expression1 OrElse expression2
 ## Exemple  
  L'exemple suivant utilise l'opérateur `OrElse` pour effectuer une disjonction logique sur deux expressions.  Le résultat est une valeur `Boolean` qui indique si l'une des deux expressions est true.  Si la première expression est `True`, la seconde n'est pas évaluée.  
   
- [!code-vb[VbVbalrOperators#37](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/orelse-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#37](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/orelse-operator_1.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : `True`, `True` et `False`.  Dans le calcul de `firstCheck`, la seconde expression n'est pas évaluée parce que la première a déjà la valeur `True`.  Toutefois, la seconde expression est évaluée dans le calcul de `secondCheck`.  
   
 ## Exemple  
  L'exemple suivant affiche une instruction `If`...`Then` qui contient deux appels de procédure.  Si le premier appel retourne `True`, la seconde procédure n'est pas appelée.  Si la seconde procédure effectue des tâches importantes qui doivent toujours être effectuées lorsque cette section de code est exécutée, des résultats inattendus pourraient se produire.  
   
- [!code-vb[VbVbalrOperators#38](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/orelse-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#38](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/orelse-operator_2.vb)]  
   
 ## Voir aussi  
  [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   

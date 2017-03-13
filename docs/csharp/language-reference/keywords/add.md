@@ -23,7 +23,7 @@ Le mot clé contextuel `add` sert à définir un accesseur d'événement personn
 ## Exemple  
  L'exemple suivant illustre un événement qui a des accesseurs `add` et [remove](../../../csharp/language-reference/keywords/remove.md) personnalisés.  Pour obtenir l'exemple complet, consultez [Comment : implémenter des événements d'interface](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).  
   
- [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/csharp/add_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/add_1.cs)]  
   
  En général, vous n'avez pas besoin de fournir vos propres accesseurs d'événements personnalisés.  Les accesseurs générés automatiquement par le compilateur lorsque vous déclarez un événement sont suffisants pour la plupart des scénarios.  
   

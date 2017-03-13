@@ -74,18 +74,18 @@ Force le compilateur à donner des informations de type COM dans les assemblys s
 ### Interfaces génériques  
  Les interfaces génériques incorporées depuis un assembly d'interopérabilité ne peuvent pas être utilisées.  L'exemple suivant le démontre.  
   
- [!code-vb[VbLinkCompiler#1](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/vblinkcompiler/module1.vb#1)]  
+ [!code-vb[VbLinkCompiler#1](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/link_1.vb)]  
   
 ### Types ayant des paramètres génériques  
  Les types qui ont un paramètre générique dont le type est incorporé depuis un assembly d'interopérabilité ne peuvent pas être utilisés si ce type est issu d'un assembly externe.  Cette restriction ne s'applique pas aux interfaces.  Par exemple, considérez l'interface <xref:Microsoft.Office.Interop.Excel.Range> définie dans l'assembly <xref:Microsoft.Office.Interop.Excel>.  Si une bibliothèque incorpore des types d'interopérabilité de l'assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique possédant un paramètre dont le type est l'interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme indiqué dans l'exemple de code suivant.  
   
- [!code-vb[VbLinkCompiler#2](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/vblinkcompiler/utility.vb#2)]  
-[!code-vb[VbLinkCompiler#3](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/vblinkcompiler/utility.vb#3)]  
-[!code-vb[VbLinkCompiler#4](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/vblinkcompiler/utility.vb#4)]  
+ [!code-vb[VbLinkCompiler#2](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/link_2.vb)]  
+[!code-vb[VbLinkCompiler#3](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/link_3.vb)]  
+[!code-vb[VbLinkCompiler#4](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/link_4.vb)]  
   
  Dans l'exemple suivant, le code client peut appeler la méthode qui retourne l'interface générique <xref:System.Collections.IList> sans erreur.  
   
- [!code-vb[VbLinkCompiler#5](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/vblinkcompiler/module1.vb#5)]  
+ [!code-vb[VbLinkCompiler#5](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/link_5.vb)]  
   
 ## Exemple  
  Le code suivant compile le fichier source `OfficeApp.vb` et référence des assemblys issus de `COMData1.dll` et `COMData2.dll` pour générer `OfficeApp.exe`.  

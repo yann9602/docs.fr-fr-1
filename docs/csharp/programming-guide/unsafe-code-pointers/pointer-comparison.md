@@ -23,9 +23,9 @@ Vous pouvez appliquer les opérateurs suivants pour comparer des pointeurs de to
  Les opérateurs de comparaison comparent les adresses des deux opérandes comme s'il s'agissait d'entiers non signés.  
   
 ## Exemple  
- [!code-cs[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#16)]  
+ [!code-cs[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_1.cs)]  
   
- [!code-cs[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#17)]  
+ [!code-cs[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_2.cs)]  
   
 ## Résultat de l'exemple  
  `True`  

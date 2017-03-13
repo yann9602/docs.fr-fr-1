@@ -26,15 +26,15 @@ Un *champ* est une variable de tout type déclaré directement dans une [classe]
   
  Les champs sont déclarés dans le bloc de classe en spécifiant le niveau d'accès du champ, suivi du type du champ, suivi du nom du champ.  Par exemple :  
   
- [!code-cs[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_1.cs)]  
+ [!code-cs[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_1.cs)]  
   
  L'accès à un champ dans un objet se fait en ajoutant un point après le nom d'objet, suivi du nom du champ, comme dans `objectname.fieldname`.  Par exemple :  
   
- [!code-cs[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_2.cs)]  
+ [!code-cs[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_2.cs)]  
   
  Un champ peut se voir affecter une valeur initiale à l'aide de l'opérateur d'assignation dans la déclaration de champ.  Par exemple, pour donner automatiquement au champ `day` la valeur `"Monday"`, déclarez `day` comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/fields_3.cs)]  
+ [!code-cs[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_3.cs)]  
   
  Les champs sont initialisés immédiatement avant le constructeur pour l'instance d'objet appelée.  Si le constructeur assigne la valeur d'un champ, il remplace toute valeur donnée au cours de la déclaration de champ.  Pour plus d'informations, consultez [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md).  
   

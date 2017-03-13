@@ -33,24 +33,24 @@ L'objet `TextFieldParser` permet d'analyser facilement et efficacement les fichi
   
 1.  Créez un `TextFieldParser`.  Le code suivant crée le `TextFieldParser` nommé `Reader` et ouvre le fichier `test.log`.  
   
-     [!code-vb[VbFileIORead#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-fixed-w_1.vb)]  
+     [!code-vb[VbFileIORead#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_1.vb)]  
   
 2.  Affectez à la propriété `TextFieldType` la valeur `FixedWidth` en définissant la largeur et le format.  Le code suivant définit les colonnes de texte. La première a une largeur de 5 caractères, la deuxième de 10, la troisième de 11, tandis que la quatrième a une largeur variable.  
   
-     [!code-vb[VbFileIORead#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-fixed-w_2.vb)]  
+     [!code-vb[VbFileIORead#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_2.vb)]  
   
 3.  Parcourez les champs du fichier.  Si des lignes sont endommagées, signalez une erreur poursuivez l'analyse.  
   
-     [!code-vb[VbFileIORead#11](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-fixed-w_3.vb)]  
+     [!code-vb[VbFileIORead#11](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_3.vb)]  
   
 4.  Fermez les blocs `While` et `Using` avec `End While` et `End Using`.  
   
-     [!code-vb[VbFileIORead#12](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-fixed-w_4.vb)]  
+     [!code-vb[VbFileIORead#12](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_4.vb)]  
   
 ## Exemple  
  Cet exemple lit le fichier `test.log`.  
   
- [!code-vb[VbFileIORead#13](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-fixed-w_5.vb)]  
+ [!code-vb[VbFileIORead#13](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_5.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

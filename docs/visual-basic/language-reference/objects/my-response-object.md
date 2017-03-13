@@ -32,7 +32,7 @@ Obtient l'objet <xref:System.Web.HttpResponse> associé à <xref:System.Web.UI.P
 ## Exemple  
  L'exemple suivant obtient la collection d'en\-têtes de l'objet `My.Request` et utilise l'objet `My.Response` pour l'écrire dans la page ASP.NET.  
   
- [!code-vb[VbVbalrMyWeb#1](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/my-response-object_1.aspx)]  
+ [!code-vb[VbVbalrMyWeb#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-response-object_1.aspx)]  
   
 ## Voir aussi  
  <xref:System.Web.HttpResponse>   

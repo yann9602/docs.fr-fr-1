@@ -31,7 +31,7 @@ La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> peut 
   
      Cet exemple écrit la chaîne `"This is a test string."` dans le fichier nommé `Testfile.txt`.  
   
-     [!code-vb[VbFileIOWrite#6](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-append-to-text-fi_1.vb)]  
+     [!code-vb[VbFileIOWrite#6](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-append-to-text-files_1.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

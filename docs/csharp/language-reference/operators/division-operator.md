@@ -27,7 +27,7 @@ L'opérateur de division \(`/`\) divise le premier opérande par le second opér
  Lorsque vous divisez deux entiers, le résultat est toujours un entier.  Par exemple, le résultat de 7\/3 est 2.  Pour déterminer le reste du 7 \/ 3, utilisez l'opérateur de reste \([%](../../../csharp/language-reference/operators/modulus-operator.md)\).  Pour obtenir un quotient sous la forme d'un nombre rationnel ou d'une fraction, affectez le type `float` ou `double` au dividende ou au diviseur.  Vous pouvez attribuer un type implicitement si vous exprimez le dividende ou un diviseur d'un nombre décimal en plaçant un chiffre à droite de la virgule décimale, comme le montre l'exemple suivant.  
   
 ## Exemple  
- [!code-cs[csRefOperators#42](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#42)]  
+ [!code-cs[csRefOperators#42](../../../csharp/language-reference/operators/codesnippet/CSharp/division-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

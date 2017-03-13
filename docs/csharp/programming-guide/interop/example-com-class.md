@@ -38,7 +38,7 @@ Ci\-dessous un exemple d'une classe que vous exposeriez comme un objet COM.  Une
  La classe implémente l'interface de classe \(elle peut implémenter plus d'une interface, mais la première implémentation sera l'interface de classe par défaut\).  Implémentez les méthodes et les propriétés exposées à COM à cet emplacement.  Ces propriétés et méthodes doivent être marquées comme publiques et doivent correspondre aux déclarations de l'interface de classe.  Déclarez également les événements déclenchés par la classe à cet emplacement.  Ils doivent être marqués comme publics et doivent correspondre aux déclarations dans l'interface d'événement.  
   
 ## Exemple  
- [!code-cs[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/csharp/example-com-class_1.cs)]  
+ [!code-cs[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/example-com-class_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

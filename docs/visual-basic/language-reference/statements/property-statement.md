@@ -198,22 +198,22 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   **Valeur de retour.** Pour retourner une valeur d’un `Get` procédure, vous pouvez affecter la valeur au nom de propriété ou l’inclure dans un `Return` instruction. L’exemple suivant affecte la valeur de retour au nom de propriété `quoteForTheDay` puis utilise la `Exit Property` instruction à retourner.  
   
-     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/property-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
-     [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/property-statement_2.vb)]  
+     [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_2.vb)]  
   
      Si vous utilisez `Exit Property` sans assigner une valeur à `name`, le `Get` procédure retourne la valeur par défaut pour le type de données.  
   
      La `Return` instruction en même temps affecte le `Get` procédure retourner de valeur et termine la procédure. L’exemple suivant illustre ce point.  
   
-     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/property-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_1.vb)]  
   
-     [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/property-statement_3.vb)]  
+     [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_3.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant déclare une propriété dans une classe.  
   
- [!code-vb[VbVbalrStatements#51](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/property-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#51](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_4.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Propriétés implémentées automatiquement](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   

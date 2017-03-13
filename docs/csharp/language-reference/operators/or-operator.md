@@ -26,7 +26,7 @@ Binaire        `|`  binaires sont prédéfinis pour les types intégraux et `boo
  Les types définis par l'utilisateur peuvent surcharger l'opérateur          `|` \(consultez [operator](../../../csharp/language-reference/keywords/operator.md)\).  
   
 ## Exemple  
- [!code-cs[csRefOperators#31](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#31)]  
+ [!code-cs[csRefOperators#31](../../../csharp/language-reference/operators/codesnippet/CSharp/or-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

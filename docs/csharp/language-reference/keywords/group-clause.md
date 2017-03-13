@@ -24,18 +24,18 @@ La clause `group` retourne une séquence d'objets <xref:System.Linq.IGrouping%60
   
  Vous pouvez terminer une expression de requête avec une clause `group`, comme indiqué dans l'exemple suivant :  
   
- [!code-cs[cscsrefQueryKeywords#10](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#10)]  
+ [!code-cs[cscsrefQueryKeywords#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_1.cs)]  
   
  Si vous souhaitez effectuer des opérations de requête supplémentaires sur chaque groupe, vous pouvez spécifier un identificateur temporaire en utilisant le mot clé contextuel [into](../../../csharp/language-reference/keywords/into.md).  Lorsque vous utilisez `into`, vous devez continuer la requête et finalement la terminer avec une instruction `select` ou une autre clause `group`, comme indiqué dans l'extrait suivant :  
   
- [!code-cs[cscsrefQueryKeywords#11](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#11)]  
+ [!code-cs[cscsrefQueryKeywords#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_2.cs)]  
   
  Des exemples plus complets d'utilisation de `group` avec et sans `into` sont fournis dans la section Exemples de cette rubrique.  
   
 ## Énumération des résultats d'une requête de groupe  
  Étant donné que les objets <xref:System.Linq.IGrouping%602> produits par une requête `group` sont essentiellement une liste de listes, vous devez utiliser une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquée pour accéder aux éléments de chaque groupe.  La boucle externe itère au sein des clés de groupe et la boucle interne itère au sein de chaque élément du groupe lui\-même.  Un groupe peut avoir une clé, mais aucun élément.  Voici à quoi ressemble la boucle `foreach` qui exécute la requête dans les exemples de code précédents :  
   
- [!code-cs[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#12)]  
+ [!code-cs[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_3.cs)]  
   
 ## Types de clés  
  Les clés de groupe peuvent être de tout type, comme une chaîne, un type numérique intégré; un type nommé défini par l'utilisateur ou un type anonyme.  
@@ -43,17 +43,17 @@ La clause `group` retourne une séquence d'objets <xref:System.Linq.IGrouping%60
 ### Regroupement par chaîne  
  Les exemples de code précédents ont utilisé un `char`.  Une clé de chaîne aurait pu être spécifiée facilement à la place, par exemple le nom de famille complet :  
   
- [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#13)]  
+ [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_4.cs)]  
   
 ### Regroupement par booléen  
  L'exemple suivant illustre l'utilisation d'une valeur booléenne pour une clé pour diviser les résultats en deux groupes.  Notez que la valeur est produite par une sous\-expression dans la clause `group`.  
   
- [!code-cs[cscsrefQueryKeywords#14](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#14)]  
+ [!code-cs[cscsrefQueryKeywords#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_5.cs)]  
   
 ### Regroupement par plage numérique.  
  L'exemple suivant utilise une expression pour créer des clés de groupe numériques qui représentent une plage de centiles.  Notez l'utilisation de [let](../../../csharp/language-reference/keywords/let-clause.md) en tant qu'emplacement adéquat pour stocker un résultat d'appel de méthode, de sorte que vous n'avez pas à appeler la méthode deux fois dans la clause `group`.  Notez également dans la clause `group` que pour éviter une exception « division par zéro », le code vérifie que l'étudiant n'a pas une moyenne de zéro.  Pour plus d'informations sur l'utilisation sans risque de méthodes dans les expressions de requête, consultez [Comment : gérer des exceptions dans des expressions de requête](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).  
   
- [!code-cs[cscsrefQueryKeywords#15](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#15)]  
+ [!code-cs[cscsrefQueryKeywords#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_6.cs)]  
   
 ### Regroupement par clés composites  
  Utilisez une clé composite lorsque vous souhaitez grouper des éléments d'après plusieurs clés.  Vous créez une clé composite en utilisant un type anonyme ou un type nommé pour conserver l'élément clé.  Dans l'exemple suivant, supposons qu'une classe `Person` a été déclarée avec les membres nommés `surname` et `city`.  La clause `group` provoque la création d'un groupe séparé pour chaque ensemble de personnes avec le même nom et la même ville.  
@@ -66,12 +66,12 @@ La clause `group` retourne une séquence d'objets <xref:System.Linq.IGrouping%60
   
  Le résultat d'une clause `group` est une séquence de séquences.  Par conséquent, pour accéder aux éléments individuels dans chaque groupe retourné, utilisez une boucle `foreach` imbriquée à l'intérieur de la boucle qui itère au sein des clés de groupe, comme indiqué dans l'exemple suivant.  
   
- [!code-cs[cscsrefQueryKeywords#16](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#16)]  
+ [!code-cs[cscsrefQueryKeywords#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_7.cs)]  
   
 ## Exemple  
  Cet exemple indique comment exécuter une logique supplémentaire sur les groupes après les avoir créés, en utilisant une *continuation* avec `into`.  Pour plus d'informations, consultez [into](../../../csharp/language-reference/keywords/into.md).  L'exemple suivant interroge chaque groupe pour sélectionner uniquement ceux dont la valeur de clé est une voyelle.  
   
- [!code-cs[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Group.cs#17)]  
+ [!code-cs[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
   
 ## Notes  
  À la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.  

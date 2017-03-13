@@ -15,7 +15,7 @@ Une jointure externe gauche est une jointure dans laquelle chaque élément de l
 > [!NOTE]
 >  La valeur par défaut pour un type référence est `null`; par conséquent, l'exemple vérifie une référence null avant d'accéder à chaque élément de chaque collection d' `Pet` .  
   
- [!code-cs[CsLINQProgJoining#7](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#7)]  
+ [!code-cs[CsLINQProgJoining#7](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-left-outer-joins_1.cs)]  
   
 ## Compilation du code  
   

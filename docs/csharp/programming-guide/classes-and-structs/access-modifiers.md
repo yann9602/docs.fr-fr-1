@@ -36,7 +36,7 @@ Tous les types et membres de type ont un niveau d'accessibilité, qui contrôle 
   
  Les exemples suivants montrent comment spécifier des modificateurs d'accès sur un type ou un membre :  
   
- [!code-cs[csProgGuideObjects#72](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/access-modifiers_1.cs)]  
+ [!code-cs[csProgGuideObjects#72](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_1.cs)]  
   
  Tous les modificateurs d'accès ne peuvent pas être utilisés par tous les types ou membres dans tous les contextes, et dans certains cas l'accessibilité d'un membre de type est contrainte par l'accessibilité de son type conteneur.  Les sections suivantes fournissent plus de détails sur l'accessibilité.  
   
@@ -62,7 +62,7 @@ Tous les types et membres de type ont un niveau d'accessibilité, qui contrôle 
   
  Pour définir le niveau d'accès d'un membre de classe ou de struct, ajoutez le mot clé approprié à la déclaration de membre, comme indiqué dans l'exemple suivant.  
   
- [!code-cs[csProgGuideObjects#73](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/access-modifiers_2.cs)]  
+ [!code-cs[csProgGuideObjects#73](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_2.cs)]  
   
 > [!NOTE]
 >  Le niveau d'accessibilité interne protégé signifie protégé OU interne, et non protégé ET interne.  En d'autres termes, un membre interne protégé peut être accessible à partir de n'importe quelle classe dans le même assembly, y compris les classes dérivées.  Pour limiter l'accessibilité aux seules classes dérivées du même assembly, déclarez la classe elle\-même comme interne et déclarez ses membres comme protégés.  

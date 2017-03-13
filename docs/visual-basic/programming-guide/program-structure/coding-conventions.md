@@ -70,7 +70,7 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Insérez un espace entre le délimiteur de commentaire \('\) et le texte de commentaire.  
   
-     [!code-vb[VbVbalrGuidelines#2](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#2)]  
+     [!code-vb[VbVbalrGuidelines#2](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_1.vb)]  
   
 -   N'entourez pas les commentaires avec des blocs d'astérisques mis en forme.  
   
@@ -78,7 +78,7 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Avec la méthode `Main`, utilisez la construction par défaut pour les nouvelles applications console et utilisez `My` pour les arguments de ligne de commande.  
   
-     [!code-vb[VbVbalrGuidelines#3](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#3)]  
+     [!code-vb[VbVbalrGuidelines#3](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_2.vb)]  
   
 ## Indications concernant le langage  
   
@@ -86,16 +86,16 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Pour concaténer des chaînes, utilisez une perluète \(&\).  
   
-     [!code-vb[VbVbalrGuidelines#4](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#4)]  
+     [!code-vb[VbVbalrGuidelines#4](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_3.vb)]  
   
 -   Pour ajouter des chaînes dans des boucles, utilisez l'objet <xref:System.Text.StringBuilder>.  
   
-     [!code-vb[VbVbalrGuidelines#5](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#5)]  
+     [!code-vb[VbVbalrGuidelines#5](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_4.vb)]  
   
 ### Délégués souples dans les gestionnaires d'événements  
  N'appliquez pas explicitement les arguments \(Objet et EventArgs\) aux gestionnaires d'événements.  Si vous n'utilisez pas les arguments d'événement passés à un événement \(par exemple, expéditeur pour Objet, e pour EventArgs\), utilisez les délégués simplifiés et omettez les arguments d'événement dans votre code :  
   
- [!code-vb[VbVbalrGuidelines#7](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#7)]  
+ [!code-vb[VbVbalrGuidelines#7](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_5.vb)]  
   
 ### Type de données non signé  
   
@@ -105,32 +105,32 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Utilisez la syntaxe concise lorsque vous initialisez des tableaux sur la ligne de déclaration.  Par exemple, utilisez la syntaxe suivante.  
   
-     [!code-vb[VbVbalrGuidelines#8](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#8)]  
+     [!code-vb[VbVbalrGuidelines#8](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_6.vb)]  
   
      N'utilisez pas la syntaxe suivante.  
   
-     [!code-vb[VbVbalrGuidelines#9](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#9)]  
+     [!code-vb[VbVbalrGuidelines#9](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_7.vb)]  
   
 -   Mettez l'indicateur de tableau sur le type, pas sur la variable.  Par exemple, utilisez la syntaxe suivante :  
   
-     [!code-vb[VbVbalrGuidelines#11](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#11)]  
+     [!code-vb[VbVbalrGuidelines#11](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_8.vb)]  
   
      N'utilisez pas la syntaxe suivante :  
   
-     [!code-vb[VbVbalrGuidelines#10](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#10)]  
+     [!code-vb[VbVbalrGuidelines#10](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_9.vb)]  
   
 -   Utilisez la syntaxe { } lorsque vous déclarez et initialisez des tableaux comportant des types de données de base.  Par exemple, utilisez la syntaxe suivante :  
   
-     [!code-vb[VbVbalrGuidelines#12](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#12)]  
+     [!code-vb[VbVbalrGuidelines#12](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_10.vb)]  
   
      N'utilisez pas la syntaxe suivante :  
   
-     [!code-vb[VbVbalrGuidelines#13](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#13)]  
+     [!code-vb[VbVbalrGuidelines#13](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_11.vb)]  
   
 ### Utilisation du mot clé "With"  
  Lorsque vous créez une série d'appels à un objet, envisagez l'utilisation du mot clé `With` :  
   
- [!code-vb[VbVbalrGuidelines#15](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#15)]  
+ [!code-vb[VbVbalrGuidelines#15](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_12.vb)]  
   
 ### Utilisez les instructions Try...Catch et Using pour la gestion des exceptions  
  N'utilisez pas `On Error Goto`.  
@@ -142,29 +142,29 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Utilisez l'instanciation courte.  Par exemple, utilisez la syntaxe suivante :  
   
-     [!code-vb[VbVbalrGuidelines#21](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#21)]  
+     [!code-vb[VbVbalrGuidelines#21](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_13.vb)]  
   
      La ligne précédente est équivalente à ce qui suit :  
   
-     [!code-vb[VbVbalrGuidelines#22](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#22)]  
+     [!code-vb[VbVbalrGuidelines#22](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_14.vb)]  
   
 -   Utilisez des initialiseurs d'objets pour les nouveaux objets au lieu du constructeur sans paramètre :  
   
-     [!code-vb[VbVbalrGuidelines#23](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#23)]  
+     [!code-vb[VbVbalrGuidelines#23](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_15.vb)]  
   
 ### Gestion des événements  
   
 -   Utilisez `Handles` plutôt que `AddHandler` :  
   
-     [!code-vb[VbVbalrGuidelines#24](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#24)]  
+     [!code-vb[VbVbalrGuidelines#24](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_16.vb)]  
   
 -   Utilisez `AddressOf` et n'instanciez pas le délégué explicitement :  
   
-     [!code-vb[VbVbalrGuidelines#25](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#25)]  
+     [!code-vb[VbVbalrGuidelines#25](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_17.vb)]  
   
 -   Lorsque vous définissez un événement, utilisez la syntaxe concise et laissez le compilateur définir le délégué :  
   
-     [!code-vb[VbVbalrGuidelines#26](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#26)]  
+     [!code-vb[VbVbalrGuidelines#26](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_18.vb)]  
   
 -   Ne vérifiez pas si un événement est `Nothing` \(null\) avant d'appeler la méthode `RaiseEvent`.  `RaiseEvent` recherche la valeur `Nothing` avant de déclencher l'événement.  
   
@@ -182,37 +182,37 @@ Microsoft développe les exemples et la documentation qui suivent les instructio
   
 -   Utilisez des expressions incorporées pour inclure des valeurs et créer du code XML à partir de valeurs existantes au lieu d'utiliser des appels d'API tels que la méthode `Add` :  
   
-     [!code-vb[VbVbalrGuidelines#27](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#27)]  
+     [!code-vb[VbVbalrGuidelines#27](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_19.vb)]  
   
 ### Requêtes LINQ  
   
 -   Utilisez des noms explicites pour les variables de requête :  
   
-     [!code-vb[VbVbalrGuidelines#28](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#28)]  
+     [!code-vb[VbVbalrGuidelines#28](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_20.vb)]  
   
 -   Fournit des noms pour les éléments d'une requête qui permettent de s'assurer que les noms de propriété des types anonymes sont correctement capitalisés à l'aide de la casse Pascal :  
   
-     [!code-vb[VbVbalrGuidelines#29](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#29)]  
+     [!code-vb[VbVbalrGuidelines#29](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_21.vb)]  
   
 -   Renommez les propriétés lorsque les noms de propriété dans le résultat sont ambigus.  Par exemple, si votre requête retourne un nom de client et un ID de commande, renommez\-les au lieu de les laisser au format `Name` et `ID` dans le résultat :  
   
-     [!code-vb[VbVbalrGuidelines#30](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#30)]  
+     [!code-vb[VbVbalrGuidelines#30](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_22.vb)]  
   
 -   Utilisez l'inférence de type dans la déclaration des variables de requête et de portée :  
   
-     [!code-vb[VbVbalrGuidelines#31](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#31)]  
+     [!code-vb[VbVbalrGuidelines#31](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_23.vb)]  
   
 -   Alignez les clauses de requête sous l'instruction `From` :  
   
-     [!code-vb[VbVbalrGuidelines#32](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#32)]  
+     [!code-vb[VbVbalrGuidelines#32](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_24.vb)]  
   
 -   Utilisez les clauses `Where` avant les autres clauses de requête afin de vous assurer que les clauses de requête ultérieures s'appliqueront au groupe de données réduit et filtré :  
   
-     [!code-vb[VbVbalrGuidelines#33](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#33)]  
+     [!code-vb[VbVbalrGuidelines#33](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_25.vb)]  
   
 -   Utilisez la clause `Join` pour définir explicitement une jointure au lieu de la définir implicitement à l'aide de la clause `Where`:  
   
-     [!code-vb[VbVbalrGuidelines#34](../../../visual-basic/programming-guide/program-structure/codesnippet/visualbasic/VBProject/Class1.vb#34)]  
+     [!code-vb[VbVbalrGuidelines#34](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_26.vb)]  
   
 ## Voir aussi  
  [Instructions de codage sécurisé](../Topic/Secure%20Coding%20Guidelines.md)

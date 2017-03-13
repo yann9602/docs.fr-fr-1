@@ -30,7 +30,7 @@ La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> ret
   
 -   Utilisez la méthode `GetDirectories` en fournissant le nom et le chemin d'accès du répertoire à rechercher.  L'exemple suivant retourne tous les répertoires de la structure de répertoire qui contiennent le mot « Logs » dans leur nom et les ajoute à `ListBox1`.  
   
-     [!code-vb[VbVbcnFileAccess#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-find-subdirectori_1.vb)]  
+     [!code-vb[VbVbcnFileAccess#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-find-subdirectories-with-a-specific-pattern_1.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

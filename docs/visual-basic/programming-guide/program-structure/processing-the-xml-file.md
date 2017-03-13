@@ -49,7 +49,7 @@ Le compilateur génère une chaîne d'identification pour chaque construction de
 ## Exemple  
  Le code ci\-dessous illustre la manière dont les chaînes d'identification sont générées pour une classe et ses membres.  
   
- [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/processing-the-xml-file_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/processing-the-xml-file_1.vb)]  
   
 ## Voir aussi  
  [\/doc](../../../visual-basic/reference/command-line-compiler/doc.md)   

@@ -24,7 +24,7 @@ L'exemple simple suivant illustre la méthode standard pour déclarer des évén
 >  Ne déclarez pas des événements virtuels dans une classe de base et ne les substituez pas dans une classe dérivée.  Le compilateur c\# ne gère pas correctement et il est impossible de prédire si un abonné à l'événement dérivé s'abonnera effectivement à l'événement de classe de base.  
   
 ## Exemple  
- [!code-cs[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-raise-base-class-_1.cs)]  
+ [!code-cs[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-raise-base-class-events-in-derived-classes_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

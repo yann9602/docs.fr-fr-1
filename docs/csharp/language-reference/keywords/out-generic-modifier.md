@@ -30,7 +30,7 @@ Pour les paramètres de type générique, le mot clé `out` spécifie que le par
 ## Exemple  
  L'exemple suivant indique comment déclarer, étendre et implémenter une interface générique covariante.  Il montre également comment utiliser la conversion implicite pour les classes qui implémentent une interface covariante.  
   
- [!code-cs[csVarianceKeywords#3](../../../csharp/language-reference/keywords/codesnippet/csharp/out-generic-modifier_1.cs)]  
+ [!code-cs[csVarianceKeywords#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/out-generic-modifier_1.cs)]  
   
  Dans une interface générique, un paramètre de type peut être déclaré covariant s'il satisfait aux conditions suivantes :  
   
@@ -44,7 +44,7 @@ Pour les paramètres de type générique, le mot clé `out` spécifie que le par
 ## Exemple  
  L'exemple suivant indique comment déclarer, instancier et appeler un délégué générique covariant.  Il indique également comment convertir implicitement des types délégués.  
   
- [!code-cs[csVarianceKeywords#4](../../../csharp/language-reference/keywords/codesnippet/csharp/out-generic-modifier_2.cs)]  
+ [!code-cs[csVarianceKeywords#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/out-generic-modifier_2.cs)]  
   
  Dans un délégué générique, un type peut être déclaré covariant s'il est utilisé uniquement comme un type de retour de méthode et n'est pas utilisé pour les arguments de méthode.  
   

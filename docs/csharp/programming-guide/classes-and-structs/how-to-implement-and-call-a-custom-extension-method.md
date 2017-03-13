@@ -37,7 +37,7 @@ Cette rubrique indique comment implémenter vos propres méthodes d'extension po
 ## Exemple  
  L'exemple suivant implémente une méthode d'extension nommée `WordCount` dans la classe `CustomExtensions.StringExtension`.  La méthode fonctionne sur la classe <xref:System.String>, spécifiée comme premier paramètre de méthode.  L'espace de noms `CustomExtensions` est importé dans l'espace de noms de l'application et la méthode est appelée à l'intérieur de la méthode `Main`.  
   
- [!code-cs[csProgGuideExtensionMethods#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-implement-and-cal_1.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-and-call-a-custom-extension-method_1.cs)]  
   
 ## Compilation du code  
  Pour exécuter ce code, copiez\-le et collez\-le dans un projet d'application console Visual C\# qui a été créé dans [!INCLUDE[vs_current_short](../../../csharp/programming-guide/classes-and-structs/includes/vs-current-short-md.md)].  Par défaut, ce projet cible la version 3.5 du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] et il possède une référence à System.Core.dll et une directive `using` pour System.Linq.  Si une ou plusieurs de ces spécifications sont absentes du projet, vous pouvez les ajouter manuellement.  Pour plus d'informations, consultez [How to: Create a LINQ Project](../Topic/How%20to:%20Create%20a%20LINQ%20Project.md).  

@@ -52,7 +52,7 @@ Vous pouvez calculer des valeurs numériques à l'aide d'expressions numériques
   
 -   Vous pouvez utiliser une instruction d'assignation pour assigner la valeur représentée par une expression numérique à une autre variable, comme illustré dans cet exemple.  
   
-     [!code-vb[VbVbalrOperators#82](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-calculate-numeric_1.vb)]  
+     [!code-vb[VbVbalrOperators#82](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_1.vb)]  
   
      Dans l'exemple précédent, la valeur de l'expression située à droite de l'opérateur égal \(`=`\) \(equals\) est assignée à la variable `j` située à gauche de l'opérateur ; par conséquent, `j` a la valeur 276.  
   
@@ -65,7 +65,7 @@ Vous pouvez calculer des valeurs numériques à l'aide d'expressions numériques
   
 -   Utilisez des parenthèses pour insérer les opérations à effectuer en premier lieu.  L'exemple suivant affiche deux résultats différents avec les mêmes opérandes et opérateurs.  
   
-     [!code-vb[VbVbalrOperators#83](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-calculate-numeric_2.vb)]  
+     [!code-vb[VbVbalrOperators#83](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_2.vb)]  
   
      Dans l'exemple précédent, le calcul de `j` exécute d'abord l'opérateur d'addition \(`+`\) parce que les parenthèses qui entourent `(67 + i)` substituent la priorité normale et la valeur assignée à `j` est de 276 \(4 fois 69\).  Le calcul de `k` exécute les opérateurs dans leur priorité normale \(`*` avant `+`\) et la valeur assignée à `k` est de 270 \(268 plus 2\).  
   

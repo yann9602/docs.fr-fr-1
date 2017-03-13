@@ -32,7 +32,7 @@ Les opérateurs de concaténation joignent plusieurs chaînes en une seule. Il e
   
  Ces opérateurs peuvent également concaténer les variables `String`, comme illustré ici.  
   
- [!code-vb[VbVbalrOperators#76](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/concatenation-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#76](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/concatenation-operators_1.vb)]  
   
 ## Différences entre ces deux opérateurs de concaténation  
  L'objectif principal de [\+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md) consiste à ajouter deux nombres. Toutefois, il peut également concaténer des opérandes numériques avec des opérandes de chaîne. L'opérateur `+` comporte un ensemble complexe de règles qui déterminent s'il faut ajouter, concaténer, signaler une erreur du compilateur ou lever une exception <xref:System.InvalidCastException> d'exécution.  

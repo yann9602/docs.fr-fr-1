@@ -27,19 +27,19 @@ Les exceptions sont utilisées pour indiquer qu'une erreur s'est produite pendan
   
      Par exemple, si un paramètre de méthode possède une valeur non valide :  
   
-     [!code-cs[csProgGuideExceptions#12](../../../csharp/programming-guide/exceptions/codesnippet/csharp/creating-and-throwing-ex_1.cs)]  
+     [!code-cs[csProgGuideExceptions#12](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_1.cs)]  
   
 -   Un appel inapproprié à un objet est fait, suivant l'état de l'objet.  
   
      Par exemple, en tentant d'écrire dans un fichier en lecture seule.  Dans les cas où un état d'objet n'autorise pas d'opération, levez une instance de <xref:System.InvalidOperationException> ou un objet basé sur une dérivation de cette classe.  Voici un exemple d'une méthode qui lève un objet <xref:System.InvalidOperationException> :  
   
-     [!code-cs[csProgGuideExceptions#13](../../../csharp/programming-guide/exceptions/codesnippet/csharp/creating-and-throwing-ex_2.cs)]  
+     [!code-cs[csProgGuideExceptions#13](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_2.cs)]  
   
 -   Lorsqu'un argument de méthode provoque une exception.  
   
      Dans ce cas, l'exception d'origine doit être interceptée et une instance <xref:System.ArgumentException> doit être créée.  L'exception d'origine doit être passée au constructeur de <xref:System.ArgumentException> en tant que paramètre <xref:System.Exception.InnerException%2A> :  
   
-     [!code-cs[csProgGuideExceptions#14](../../../csharp/programming-guide/exceptions/codesnippet/csharp/creating-and-throwing-ex_3.cs)]  
+     [!code-cs[csProgGuideExceptions#14](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_3.cs)]  
   
  Les exceptions contiennent une propriété nommée <xref:System.Exception.StackTrace%2A>.  Cette chaîne contient le nom des méthodes sur la pile des appels actuelle, avec le nom de fichier et le numéro de ligne où l'exception a été levée pour chaque méthode.  Un objet <xref:System.Exception.StackTrace%2A> étant créé automatiquement par le Common Language Runtime \(CLR\) à partir du point de l'instruction `throw`, les exceptions doivent être levées à partir du point où la trace de la pile doit commencer.  
   
@@ -61,7 +61,7 @@ Les exceptions sont utilisées pour indiquer qu'une erreur s'est produite pendan
 ## Définition de classes d'exceptions  
  Les programmes peuvent lever une classe d'exception prédéfinie dans l'espace de noms <xref:System> \(sauf dans les endroits précédemment notés\) ou créer leurs propres classes d'exception en les dérivant de <xref:System.Exception>.  Les classes dérivées doivent définir au moins quatre constructeurs : un constructeur par défaut, un qui définit la propriété du message et un qui définit les deux propriétés <xref:System.Exception.Message%2A> et <xref:System.Exception.InnerException%2A>.  Le quatrième constructeur est utilisé pour sérialiser l'exception.  Les nouvelles classes d'exception doivent être sérialisables.  Par exemple :  
   
- [!code-cs[csProgGuideExceptions#15](../../../csharp/programming-guide/exceptions/codesnippet/csharp/creating-and-throwing-ex_4.cs)]  
+ [!code-cs[csProgGuideExceptions#15](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_4.cs)]  
   
  Les nouvelles propriétés doivent uniquement être ajoutées à la classe d'exceptions lorsque les données qu'elles fournissent sont utiles à la résolution de l'exception.  Si les nouvelles propriétés sont ajoutées à la classe d'exceptions dérivée, `ToString()` doit être substitué pour retourner les informations ajoutées.  
   

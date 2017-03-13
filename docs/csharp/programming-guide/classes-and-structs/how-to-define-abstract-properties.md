@@ -36,7 +36,7 @@ L'exemple suivant explique comment définir des propriétés [abstraites](../../
 ## Exemple  
  Ce fichier déclare la classe `Shape` qui contient la propriété `Area` du type `double`.  
   
- [!code-cs[csProgGuideInheritance#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-abstract-p_1.cs)]  
+ [!code-cs[csProgGuideInheritance#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-abstract-properties_1.cs)]  
   
 -   Les modificateurs sur la propriété sont placés sur la déclaration de propriété proprement dite.  Par exemple :  
   
@@ -49,12 +49,12 @@ L'exemple suivant explique comment définir des propriétés [abstraites](../../
 ## Exemple  
  Le code suivant présente trois sous\-classes de `Shape` qui substituent la propriété `Area` pour fournir leur propre implémentation.  
   
- [!code-cs[csProgGuideInheritance#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-abstract-p_2.cs)]  
+ [!code-cs[csProgGuideInheritance#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-abstract-properties_2.cs)]  
   
 ## Exemple  
  Le code suivant présente un programme test qui crée un certain nombre d'objets dérivés de `Shape` et imprime les zones correspondantes.  
   
- [!code-cs[csProgGuideInheritance#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-abstract-p_3.cs)]  
+ [!code-cs[csProgGuideInheritance#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-abstract-properties_3.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

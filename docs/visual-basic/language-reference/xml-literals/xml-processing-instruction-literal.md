@@ -66,7 +66,7 @@ Littéral représentant un objet <xref:System.Xml.Linq.XProcessingInstruction>.
 ## Exemple  
  L'exemple suivant crée une instruction de traitement qui identifie une feuille de style pour un document XML.  
   
- [!code-vb[VbXMLSamples#28](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-processing-instructi_1.vb)]  
+ [!code-vb[VbXMLSamples#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-processing-instruction-literal_1.vb)]  
   
 ## Voir aussi  
  <xref:System.Xml.Linq.XProcessingInstruction>   

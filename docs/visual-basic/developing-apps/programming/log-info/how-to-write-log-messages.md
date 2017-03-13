@@ -28,7 +28,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
 ## Exemple  
  Cet exemple utilise la méthode `My.Application.Log.WriteEntry` pour écrire les informations de traçage.  
   
- [!code-vb[VbVbalrMyApplicationLog#11](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbalrMyApplicationLog/Form1.vb#11)]  
+ [!code-vb[VbVbalrMyApplicationLog#11](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/how-to-write-log-messages_1.vb)]  
   
 ## Sécurité .NET Framework  
  Vérifiez que les données que vous écrivez dans le journal n’incluent pas d’informations sensibles, comme des mots de passe utilisateur. Pour plus d'informations, consultez [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  

@@ -32,7 +32,7 @@ Utilisez la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory
   
 -   Utilisez la méthode `CopyDirectory` en spécifiant les noms de répertoires source et de destination.  L'exemple suivant copie le répertoire nommé `TestDirectory1` dans `TestDirectory2` en remplaçant les fichiers existants.  
   
-     [!code-vb[VbVbcnMyFileSystem#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-a-directory-_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#16](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-a-directory-to-another-directory_1.vb)]  
   
      Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il est localisé dans **Système de fichiers \- Traitement de lecteurs, de dossiers et de fichiers**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   

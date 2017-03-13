@@ -33,15 +33,15 @@ Une constante est un nom significatif qui symbolise un nombre ou une chaîne inv
 ## Utilisation de l'instruction Const  
  Une instruction `Const` peut représenter une valeur mathématique ou de date\/heure :  
   
- [!code-vb[VbEnumsTask#10](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#10)]  
+ [!code-vb[VbEnumsTask#10](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_1.vb)]  
   
  Elle peut également définir des constantes `String` :  
   
- [!code-vb[VbEnumsTask#13](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#13)]  
+ [!code-vb[VbEnumsTask#13](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_2.vb)]  
   
  L'expression à la droite du signe égal \(`=`\) est souvent un nombre ou une chaîne littérale, mais elle peut également être une expression dont le résultat est un nombre ou une chaîne \(même si cette expression ne peut pas contenir d'appels à des fonctions\).  Vous pouvez également définir des constantes en termes de constantes définies préalablement :  
   
- [!code-vb[VbEnumsTask#15](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#15)]  
+ [!code-vb[VbEnumsTask#15](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_3.vb)]  
   
 ## Portée des constantes définies par l'utilisateur  
  La portée d'une instruction `Const` est identique à celle d'une variable déclarée au même emplacement.  Vous pouvez spécifier la portée de l'une des façons suivantes :  
@@ -59,8 +59,8 @@ Une constante est un nom significatif qui symbolise un nombre ou une chaîne inv
 ### Comment éviter des références circulaires  
  Dans la mesure où les constantes peuvent être définies en termes d'autres constantes, le risque est de créer un *cycle* \(ou une référence circulaire\) par inadvertance entre deux constantes ou plus.  Un cycle se produit en présence d'au moins deux constantes publiques \(Public\), chacune étant définie par rapport à l'autre, comme illustré dans cet exemple :  
   
- [!code-vb[VbEnumsTask#16](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#16)]  
-[!code-vb[VbEnumsTask#17](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#17)]  
+ [!code-vb[VbEnumsTask#16](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_4.vb)]  
+[!code-vb[VbEnumsTask#17](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/user-defined-constants_5.vb)]  
   
  Lorsqu'un cycle se produit, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] génère une erreur de compilateur.  
   

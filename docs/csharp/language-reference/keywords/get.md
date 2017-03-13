@@ -23,11 +23,11 @@ Le mot clé `get` définit une méthode *d'accesseur* dans une propriété ou un
   
  Voici un exemple d'accesseur `get` dans une propriété nommée `Seconds` :  
   
- [!code-cs[csrefKeywordsContextual#1](../../../csharp/language-reference/keywords/codesnippet/csharp/get_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/get_1.cs)]  
   
  Voici un exemple d'accesseur `get` dans une propriété implémentée automatiquement :  
   
- [!code-cs[csrefKeywordsContextual#2](../../../csharp/language-reference/keywords/codesnippet/csharp/get_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/get_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

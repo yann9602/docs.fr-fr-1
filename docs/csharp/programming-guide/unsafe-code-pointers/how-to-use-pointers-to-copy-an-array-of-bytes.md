@@ -23,9 +23,9 @@ L'exemple suivant utilise des pointeurs pour copier des octets d'un tableau vers
  Cet exemple utilise le mot clé [unsafe](../../../csharp/language-reference/keywords/unsafe.md), qui vous permet d'utiliser des pointeurs dans la méthode `Copy`.  L'instruction [fixed](../../../csharp/language-reference/keywords/fixed-statement.md) permet de déclarer des pointeurs vers les tableaux source et destination.  Elle *fixe* l'emplacement des tableaux source et de destination en mémoire pour qu'ils ne soient déplacés par le garbage collection.  Les blocs de mémoire pour les tableaux sont désépinglés lorsque le bloc `fixed` est rempli.  Étant donné que la méthode `Copy` de cet exemple utilise le mot clé `unsafe`, il doit être compilé avec l'option de compilateur **\/unsafe**.  Pour définir l'option dans Visual Studio, cliquez avec le bouton droit sur le nom du projet, puis cliquez sur **Propriétés**.  Dans l'onglet **Build**, sélectionnez **Autoriser du code unsafe**.  
   
 ## Exemple  
- [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#3)]  
+ [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-use-pointers-to-copy-an-array-of-bytes_1.cs)]  
   
- [!code-cs[csProgGuidePointers#18](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#18)]  
+ [!code-cs[csProgGuidePointers#18](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-use-pointers-to-copy-an-array-of-bytes_2.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

@@ -45,7 +45,7 @@ Un *événement* est une action ou une occurrence \(par exemple un clic de souri
   
      L'exemple suivant définit un événement et une variable `WithEvents` qui font référence à la classe qui déclenche l'événement.  La procédure `Sub` de gestion des événements utilise une clause `Handles` pour spécifier la classe et l'événement qu'elle gère.  
   
-     [!code-vb[VbVbcnProcedures#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-event-han_1.vb)]  
+     [!code-vb[VbVbcnProcedures#4](./codesnippet/VisualBasic/how-to-call-an-event-handler_1.vb)]  
   
 ### Pour appeler un gestionnaire d'événements à l'aide d'AddHandler  
   
@@ -57,7 +57,7 @@ Un *événement* est une action ou une occurrence \(par exemple un clic de souri
   
      L'exemple suivant définit une procédure `Sub` pour gérer l'événement <xref:System.Windows.Forms.Form.Closing> d'un formulaire.  Il utilise ensuite l'[AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) pour associer la procédure `catchClose` en tant que gestionnaire d'événements pour <xref:System.Windows.Forms.Form.Closing>.  
   
-     [!code-vb[VbVbcnProcedures#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-event-han_2.vb)]  
+     [!code-vb[VbVbcnProcedures#5](./codesnippet/VisualBasic/how-to-call-an-event-handler_2.vb)]  
   
      Vous pouvez dissocier un gestionnaire d'événements d'un événement en exécutant l'[RemoveHandler Statement](../../../../visual-basic/language-reference/statements/removehandler-statement.md).  
   

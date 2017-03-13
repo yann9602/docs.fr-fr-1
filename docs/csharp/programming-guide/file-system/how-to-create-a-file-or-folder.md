@@ -22,7 +22,7 @@ caps.handback.revision: 22
 Vous pouvez créer par programmation un dossier sur votre ordinateur, créer un sous\-dossier, créer un fichier dans le sous\-dossier, puis écrire les données dans le fichier.  
   
 ## Exemple  
- [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#10)]  
+ [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
   
  Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n'est levée.  Toutefois, <xref:System.IO.File.Create%2A?displayProperty=fullName> remplace un fichier existant par un nouveau fichier.  L'exemple utilise une instruction `if`\-`else` pour empêcher le remplacement d'un fichier existant.  
   

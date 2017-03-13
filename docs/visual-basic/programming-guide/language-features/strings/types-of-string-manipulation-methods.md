@@ -27,7 +27,7 @@ Il existe plusieurs méthodes différentes pour analyser et manipuler vos chaîn
 ## Langage Visual Basic et le .NET Framework  
  Les méthodes [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] sont utilisées en tant que fonctions inhérentes du langage.  Elles peuvent être utilisées sans qualification dans votre code.  L'exemple suivant illustre une utilisation classique d'une commande [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] de manipulation de chaîne :  
   
- [!code-vb[VbVbalrStrings#44](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_1.vb)]  
+ [!code-vb[VbVbalrStrings#44](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_1.vb)]  
   
  Dans cet exemple, la fonction `Mid` effectue une opération directe sur `aString` et assigne la valeur à `bString`.  
   
@@ -39,14 +39,14 @@ Il existe plusieurs méthodes différentes pour analyser et manipuler vos chaîn
 #### Méthodes partagées  
  Une méthode partagée est issue de la classe `String` et ne nécessite pas une instance de cette classe.  Ces méthodes peuvent être désignées par le nom de la classe \(`String`\) plutôt que par une instance de la classe `String`.  Par exemple :  
   
- [!code-vb[VbVbalrStrings#45](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_2.vb)]  
+ [!code-vb[VbVbalrStrings#45](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_2.vb)]  
   
  Dans l'exemple précédent, la méthode <xref:System.String.Copy%2A?displayProperty=fullName> est une méthode statique, qui agit sur une expression qui lui est attribuée et qui assigne le résultat à `bString`.  
   
 #### Méthodes d'instance  
  En revanche, les méthodes d'instance proviennent d'une instance particulière de `String` et doivent être désignées par le nom de l'instance.  Par exemple :  
   
- [!code-vb[VbVbalrStrings#46](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/types-of-string-manipula_3.vb)]  
+ [!code-vb[VbVbalrStrings#46](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/types-of-string-manipulation-methods_3.vb)]  
   
  Dans cet exemple, la méthode <xref:System.String.Substring%2A?displayProperty=fullName> est une méthode de l'instance de `String` \(c'est\-à\-dire `aString`\).  Elle effectue une opération sur `aString` et assigne la valeur à `bString`.  
   

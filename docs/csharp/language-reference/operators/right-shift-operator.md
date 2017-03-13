@@ -31,7 +31,7 @@ L'opérateur de décalage vers la droite \(`>>`\) décale le premier opérande v
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `>>` ; le type du premier opérande doit être un type défini par l'utilisateur et le type du second opérande doit être [int](../../../csharp/language-reference/keywords/int.md).  Pour plus d'informations, consultez [operator](../../../csharp/language-reference/keywords/operator.md).  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#26](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#26)]  
+ [!code-cs[csRefOperators#26](../../../csharp/language-reference/operators/codesnippet/CSharp/right-shift-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

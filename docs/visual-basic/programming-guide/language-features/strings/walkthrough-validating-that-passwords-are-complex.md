@@ -31,7 +31,7 @@ Cette méthode vérifie certaines caractéristiques du mot de passe fort et met 
 ## Exemple  
   
 ### Code  
- [!code-vb[VbVbcnRegEx#1](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/walkthrough-validating-t_1.vb)]  
+ [!code-vb[VbVbcnRegEx#1](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/walkthrough-validating-that-passwords-are-complex_1.vb)]  
   
 ## Compilation du code  
  Appelez cette méthode en passant la chaîne qui contient ce mot de passe.  

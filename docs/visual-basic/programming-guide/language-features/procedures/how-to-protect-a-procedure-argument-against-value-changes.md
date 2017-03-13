@@ -38,11 +38,11 @@ Si une procédure déclare un paramètre comme [ByRef](../../../../visual-basic/
 ## Exemple  
  L'exemple suivant illustre deux procédures qui acceptent une variable tableau et opèrent sur ses éléments.  La procédure `increase` ajoute simplement la valeur 1 à chaque élément.  La procédure `replace` assigne un nouveau tableau au paramètre `a()`, puis ajoute la valeur 1 à chaque élément.  Cependant, la réassignation n'affecte pas la variable tableau sous\-jacente dans le code appelant.  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#38](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_2.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-protect-a-procedu_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_3.vb)]  
   
  Le premier appel `MsgBox` affiche "After increase\(n\): 11, 21, 31, 41".  Étant donné que le tableau  `n`  est un type référence,  `replace`  peut modifier ses membres, même si le mécanisme de passage est `ByVal`.  
   

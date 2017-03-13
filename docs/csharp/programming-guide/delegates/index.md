@@ -21,7 +21,7 @@ Un [délégué](../../../csharp/language-reference/keywords/delegate.md) est un 
   
  Les délégués sont utilisés pour passer des méthodes comme arguments à d'autres méthodes.  Les gestionnaires d'événements sont tout simplement des méthodes appelées par le biais de délégués.  Vous créez une méthode personnalisée, et une classe telle qu'un contrôle Windows peut appeler votre méthode lorsqu'un certain événement se produit.  L'exemple suivant illustre une déclaration de délégué :  
   
- [!code-cs[csProgGuideDelegates#20](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#20)]  
+ [!code-cs[csProgGuideDelegates#20](../../../csharp/programming-guide/delegates/codesnippet/CSharp/index_1.cs)]  
   
  Toute méthode de n'importe quelle classe ou structure accessible qui correspond au type de délégué, peut être assignée au délégué.  La méthode peut être une méthode d'instance ou statique.  Cela permet de modifier par programme les appels de méthode, mais également d'insérer du nouveau code dans les classes existantes.  
   

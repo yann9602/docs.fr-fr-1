@@ -27,7 +27,7 @@ Les constantes sont des champs dont les valeurs sont définies à la compilation
  Pour définir des constantes non intégrales, une approche consiste à les regrouper dans une classe static unique nommée `Constants`.  Cela requiert que toutes les références aux constantes soient précédées par le nom de classe, comme dans l'exemple suivant.  
   
 ## Exemple  
- [!code-cs[csProgGuideObjects#89](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-constants_1.cs)]  
+ [!code-cs[csProgGuideObjects#89](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-constants_1.cs)]  
   
  L'utilisation du qualificateur de nom de classe permet de garantir que les personnes qui utilisent la constante, y compris vous\-même, comprennent qu'elle est fixe et qu'elle ne peut pas être modifiée.  
   

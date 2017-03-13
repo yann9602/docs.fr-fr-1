@@ -72,7 +72,7 @@ LINQ \(Language\-Integrated Query\) facilite l'accès aux informations de la bas
   
 3.  Après l'instruction `End Class` de la classe Form1, ajoutez le code suivant pour créer un type `CustomerInfo` pour stocker les résultats de la requête pour cet exemple.  
   
-     [!code-vb[VbLINQToSQLHowTos#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form8.vb#16)]  
+     [!code-vb[VbLINQToSQLHowTos#16](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_1.vb)]  
   
 4.  Lorsque vous avez ajouté des tables au Concepteur O\/R, le concepteur a ajouté un objet <xref:System.Data.Linq.DataContext> à votre projet.  Cet objet contient le code indispensable pour accéder à ces tables, ainsi qu'aux collections et objets individuels de chaque table.  L'objet <xref:System.Data.Linq.DataContext> pour votre projet est nommé d'après le nom de votre fichier .dbml.  Pour ce projet, l'objet <xref:System.Data.Linq.DataContext> est nommé `northwindDataContext`.  
   
@@ -80,7 +80,7 @@ LINQ \(Language\-Integrated Query\) facilite l'accès aux informations de la bas
   
      Ajoutez le code suivant à l'événement `Load` de la classe Form1 pour interroger les tables qui sont exposées comme propriétés de votre contexte de données.  La clause `Select` de la requête créera un nouveau type `CustomerInfo` au lieu d'un type anonyme pour chaque élément du résultat de la requête.  
   
-     [!code-vb[VbLINQToSQLHowTos#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form8.vb#15)]  
+     [!code-vb[VbLINQToSQLHowTos#15](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-return-a-linq-query-result-as-a-specific-type_2.vb)]  
   
 5.  Appuyez sur F5 pour exécuter votre projet et consulter les résultats.  
   

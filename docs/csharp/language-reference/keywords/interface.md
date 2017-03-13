@@ -23,7 +23,7 @@ Une interface contient uniquement les signatures des [méthodes](../../../csharp
  Pour plus d'informations et d'exemples, consultez [Interfaces](../../../csharp/programming-guide/interfaces/index.md).  
   
 ## Exemple  
- [!code-cs[csrefKeywordsTypes#14](../../../csharp/language-reference/keywords/codesnippet/csharp/interface_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/interface_1.cs)]  
   
  Une interface peut être membre d'un espace de noms ou d'une classe, et peut contenir les signatures des membres suivants :  
   
@@ -46,7 +46,7 @@ Une interface contient uniquement les signatures des [méthodes](../../../csharp
 ## Exemple  
  L'exemple ci\-après illustre l'implémentation d'une interface.  Dans cet exemple, l'interface contient la déclaration de propriété et la classe, l'implémentation.  Une instance d'une classe qui implémente `IPoint` a `x` et `y` propriétés entières.  
   
- [!code-cs[csrefKeywordsTypes#15](../../../csharp/language-reference/keywords/codesnippet/csharp/interface_2.cs)]  
+ [!code-cs[csrefKeywordsTypes#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/interface_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

@@ -45,7 +45,7 @@ Spécifie les exceptions qui peuvent être levées.
 ## Exemple  
  Cet exemple utilise les balises `<exception>` pour décrire une exception que la fonction `IntDivide` peut lever.  
   
- [!code-vb[VbVbcnXmlDocComments#3](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/exception_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#3](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/exception_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

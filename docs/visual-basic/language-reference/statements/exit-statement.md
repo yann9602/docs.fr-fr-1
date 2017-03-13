@@ -75,17 +75,17 @@ Exit { Do | For | Function | Property | Select | Sub | Try | Whil
 ## Exemple  
  Dans l'exemple suivant, la condition de boucle arrête la boucle lorsque la variable `index` est supérieure à 100.  Cependant, avec l'instruction `If` dans la boucle, l'instruction `Exit Do` arrête la boucle lorsque la variable d'index est supérieure à 10.  
   
- [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant assigne la valeur de retour au nom de la fonction `myFunction`, puis utilise l'instruction `Exit Function` pour retourner de la fonction  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_2.vb)]  
   
 ## Exemple  
  L'exemple suivant utilise [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) pour assigner la valeur de retour et pour quitter la fonction.  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/exit-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_3.vb)]  
   
 ## Voir aussi  
  [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)   

@@ -53,7 +53,7 @@ Fournit des propriétés permettant d'accéder à une instance de chaque formula
 ## Exemple  
  Cet exemple modifie le titre du formulaire `SidebarMenu` par défaut.  
   
- [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/my-forms-object_1.vb)]  
+ [!code-vb[VbVbalrMyForms#2](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-forms-object_1.vb)]  
   
  Pour que cet exemple fonctionne, votre projet doit avoir un formulaire nommé `SidebarMenu`.  Pour plus d'informations, consultez [How to: Add Windows Forms to a Project](http://msdn.microsoft.com/fr-fr/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
   

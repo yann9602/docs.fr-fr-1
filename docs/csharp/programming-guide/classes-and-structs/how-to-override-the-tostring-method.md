@@ -19,7 +19,7 @@ caps.handback.revision: 21
 # Comment&#160;: substituer la m&#233;thode ToString (Guide de programmation C#)
 Chaque classe ou struct hérite implicitement de la classe <xref:System.Object> en C\#.  Par conséquent, chaque objet en C\# obtient la méthode <xref:System.Object.ToString%2A>, qui retourne une représentation sous forme de chaîne de cet objet.  Par exemple, toutes les variables de type `int` ont une méthode `ToString` qui leur permet de retourner leur contenu sous la forme d'une chaîne :  
   
- [!code-cs[csProgGuideInheritance#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_1.cs)]  
+ [!code-cs[csProgGuideInheritance#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_1.cs)]  
   
  Lorsque vous créez une classe ou une structure personnalisée, vous devez substituer la méthode <xref:System.Object.ToString%2A> afin de fournir des informations sur votre type au code client.  
   
@@ -40,11 +40,11 @@ Chaque classe ou struct hérite implicitement de la classe <xref:System.Object> 
   
      L'exemple suivant retourne non seulement le nom de la classe en plus des données spécifiques à une instance particulière de la classe.  
   
-     [!code-cs[csProgGuideInheritance#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_2.cs)]  
+     [!code-cs[csProgGuideInheritance#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_2.cs)]  
   
      Vous pouvez tester la méthode `ToString` comme indiqué dans l'exemple de code suivant :  
   
-     [!code-cs[csProgGuideInheritance#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-override-the-tost_3.cs)]  
+     [!code-cs[csProgGuideInheritance#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_3.cs)]  
   
 ## Voir aussi  
  <xref:System.IFormattable>   

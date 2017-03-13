@@ -25,7 +25,7 @@ caps.handback.revision: 11
 L'exemple de code suivant définit une valeur `Boolean` qui indique si une chaîne représente une date ou une heure valide.  
   
 ## Exemple  
- [!code-vb[VbVbcnRegEx#2](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/visualbasic/how-to-validate-strings-_1.vb)]  
+ [!code-vb[VbVbcnRegEx#2](../../../../visual-basic/programming-guide/language-features/strings/codesnippet/VisualBasic/how-to-validate-strings-that-represent-dates-or-times_1.vb)]  
   
 ## Compilation du code  
  Remplacez `("01/01/03")` et `"9:30 PM"` par la date et l'heure que vous souhaitez valider.  Vous pouvez remplacer la chaîne par une autre chaîne codée de manière irréversible, à l'aide d'une variable `String` ou d'une méthode qui retourne une chaîne, telle que `InputBox`.  

@@ -23,7 +23,7 @@ Les indexeurs permettent aux instances d'une classe ou d'un struct d'être index
   
  Dans l'exemple suivant, une classe générique est définie et fournie avec des méthodes d'accesseur [get](../../../csharp/language-reference/keywords/get.md) et [set](../../../csharp/language-reference/keywords/set.md) simples en tant que moyen d'affecter et de récupérer des valeurs.  La classe `Program` classe crée une instance de cette classe pour le stockage des chaînes.  
   
- [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideIndexers#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
 > [!NOTE]
 >  Pour plus d'exemples, consultez [Rubriques connexes](../../../csharp/programming-guide/indexers/index.md#BKMK_RelatedSections).  

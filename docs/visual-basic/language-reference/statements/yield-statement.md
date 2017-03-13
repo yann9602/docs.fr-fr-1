@@ -91,12 +91,12 @@ Next
   
  Le type de retour de la méthode d'itérateur est <xref:System.Collections.Generic.IEnumerable%601>, un type d'interface d'itérateur.  Lorsque la méthode d'itérateur est appelée, elle retourne un objet énumérable qui contient les puissances d'un nombre.  
   
- [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/yield-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant montre un utilisateur d' `Get` qui est un itérateur.  La déclaration de propriété inclut un modificateur d' `Iterator` .  
   
- [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/yield-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
   
  Pour obtenir d'autres exemples, consultez [Itérateurs](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md).  
   

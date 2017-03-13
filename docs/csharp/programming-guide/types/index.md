@@ -42,7 +42,7 @@ caps.handback.revision: 53
   
  Le compilateur utilise les informations de type afin de s'assurer que toutes les opérations effectuées dans votre code sont de *type sécurisé*.  Par exemple, si vous déclarez une variable de type [int](../../../csharp/language-reference/keywords/int.md), le compilateur vous permet d'utiliser la variable dans les opérations d'addition et de soustraction.  Si vous essayez d'effectuer ces mêmes opérations avec une variable de type [bool](../../../csharp/language-reference/keywords/bool.md), le compilateur génère une erreur, comme le montre l'exemple suivant :  
   
- [!code-cs[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
 > [!NOTE]
 >  Les développeurs C et C\+\+ remarqueront qu'en C\#, [bool](../../../csharp/language-reference/keywords/bool.md) n'est pas convertible en [int](../../../csharp/language-reference/keywords/int.md).  
@@ -52,11 +52,11 @@ caps.handback.revision: 53
 ### Spécification de types dans les déclarations de variable  
  Lorsque vous déclarez une variable ou une constante dans un programme, vous devez spécifier son type ou utiliser le mot clé [var](../../../csharp/language-reference/keywords/var.md) pour permettre au compilateur de déduire le type.  L'exemple suivant montre des déclarations de variable qui utilisent à la fois des types numériques intégrés et des types complexes définis par l'utilisateur :  
   
- [!code-cs[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_2.cs)]  
+ [!code-cs[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_2.cs)]  
   
  Les types de paramètres de méthode et de valeurs de retour sont spécifiés dans la signature de méthode.  La signature suivante présente une méthode qui nécessite [int](../../../csharp/language-reference/keywords/int.md) comme argument d'entrée et retourne une chaîne :  
   
- [!code-cs[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_3.cs)]  
+ [!code-cs[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_3.cs)]  
   
  Une fois déclarée, une variable ne peut pas être déclarée de nouveau avec un autre type et une valeur incompatible avec son type déclaré ne peut pas lui être assignée.  Par exemple, vous ne pouvez pas déclarer [int](../../../csharp/language-reference/keywords/int.md) et lui assigner la valeur booléenne [true](../../../csharp/language-reference/keywords/true-literal.md).  En revanche, vous pouvez convertir des valeurs vers d'autres types, notamment lorsque vous les assignez à de nouvelles variables ou les passez en tant qu'arguments de méthode.  Toute *conversion de type* qui n'entraîne aucune perte de données est réalisée automatiquement par le compilateur.  Une conversion susceptible d'entraîner la perte de données exige un *cast* dans le code source.  
   
@@ -107,13 +107,13 @@ char c = 'Z';
   
  Vous utilisez le mot clé [struct](../../../csharp/language-reference/keywords/struct.md) pour créer vos propres types valeur personnalisés.  En règle générale, un struct est utilisé comme conteneur pour un petit jeu de variables connexes, comme le montre l'exemple suivant :  
   
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_4.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
  Pour plus d'informations sur les structs, consultez [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md).  Pour plus d'informations sur les types valeur dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)], consultez [Système de type commun](../../../standard/base-types/common-type-system.md).  
   
  L'autre catégorie de types valeur est [enum](../../../csharp/language-reference/keywords/enum.md).  Un enum définit un jeu de constantes intégrales nommées.  Par exemple, l'énumération <xref:System.IO.FileMode?displayProperty=fullName> de la bibliothèque de classes .NET Framework contient un jeu d'entiers constants nommés qui indiquent comment un fichier doit être ouvert.  Il est défini comme le montre l'exemple suivant :  
   
- [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_5.cs)]  
+ [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
  La constante `System.IO.FileMode.Create` a une valeur de 2.  Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source, et pour cette raison il est préférable d'utiliser des énumérations au lieu de numéros littéraux constants.  Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=fullName>.  
   
@@ -137,7 +137,7 @@ IMyInterface iface = new MyClass();
   
  Tous les tableaux sont des types référence, même si leurs éléments sont des types valeur.  Les tableaux proviennent implicitement de la classe <xref:System.Array?displayProperty=fullName>, mais vous les déclarez et les utilisez avec la syntaxe simplifiée fournie par C\#, comme le montre l'exemple qui suit :  
   
- [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_6.cs)]  
+ [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
   
  Les types référence prennent complètement en charge l'héritage.  Lorsque vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n'est pas définie comme [sealed](../../../csharp/language-reference/keywords/sealed.md) et d'autres classes peuvent hériter de votre classe et substituer vos méthodes virtuelles.  Pour plus d'informations sur la création de vos propres classes, consultez [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md).  Pour plus d'informations sur l'héritage et les méthodes virtuelles, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
@@ -146,7 +146,7 @@ IMyInterface iface = new MyClass();
   
  Parce que les littéraux sont typés et que tous les types dérivent en définitive de <xref:System.Object?displayProperty=fullName>, vous pouvez écrire et compiler du code tel que celui\-ci :  
   
- [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_7.cs)]  
+ [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## Types génériques  
  Vous pouvez déclarer un type avec un ou plusieurs *paramètres de type* faisant office d'espace réservé pour le type réellement concerné \(*type concret*\) que le code client spécifie lorsqu'il crée une instance du type.  Ces types sont appelés  *types génériques*.  Par exemple, le type .NET Framework <xref:System.Collections.Generic.List%601?displayProperty=fullName> dispose d'un paramètre de type qui, par convention, porte le nom *T*.  Lorsque vous créez une instance du type, vous spécifiez le type des objets que la liste doit contenir comme, par exemple, l'objet String :  

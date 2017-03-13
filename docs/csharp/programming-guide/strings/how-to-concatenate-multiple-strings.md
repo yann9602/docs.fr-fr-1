@@ -23,12 +23,12 @@ La *concaténation* consiste à ajouter une chaîne à la fin d'une autre chaîn
 ## Exemple  
  L'exemple suivant indique comment fractionner un long littéral de chaîne en plus petites chaînes pour améliorer la lisibilité du code source.  Les diverses parties seront concaténées en une chaîne unique lors de la compilation.  Il n'y a aucune incidence sur les performances d'exécution, quel que soit le nombre de chaînes impliquées.  
   
- [!code-cs[csProgGuideStrings#30](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#30)]  
+ [!code-cs[csProgGuideStrings#30](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_1.cs)]  
   
 ## Exemple  
  Pour concaténer des variables chaîne, vous pouvez utiliser l'opérateur `+` ou `+=` ou la méthode <xref:System.String.Concat%2A?displayProperty=fullName>, <xref:System.String.Format%2A?displayProperty=fullName> ou <xref:System.Text.StringBuilder.Append%2A?displayProperty=fullName>.  L'opérateur `+` est facile à utiliser et convient au code intuitif.  Même si vous utilisez plusieurs opérateurs \+ dans une instruction, le contenu de la chaîne est copié une seule fois.  Mais si vous répétez plusieurs fois cette opération, par exemple dans une boucle, des problèmes de performance peuvent se poser.  Observez par exemple le code suivant :  
   
- [!code-cs[csProgGuideStrings#23](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#23)]  
+ [!code-cs[csProgGuideStrings#23](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_2.cs)]  
   
 > [!NOTE]
 >  Dans les opérations de concaténation de chaîne, le compilateur C\# traite une chaîne null de la même manière qu'une chaîne vide mais il ne convertit pas la valeur de la chaîne null d'origine.  
@@ -37,7 +37,7 @@ La *concaténation* consiste à ajouter une chaîne à la fin d'une autre chaîn
   
  Toutefois, si les performances sont une considération importante, vous devez toujours utiliser la classe <xref:System.Text.StringBuilder> pour concaténer des chaînes.  Le code suivant utilise la méthode <xref:System.Text.StringBuilder.Append%2A> de la classe <xref:System.Text.StringBuilder> pour concaténer des chaînes sans l'effet de chaînage de l'opérateur `+`.  
   
- [!code-cs[csProgGuideStrings#22](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#22)]  
+ [!code-cs[csProgGuideStrings#22](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-concatenate-multiple-strings_3.cs)]  
   
 ## Voir aussi  
  <xref:System.String>   

@@ -36,7 +36,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 3.  Dans la <xref:System.Windows.Forms.Control.Click> Gestionnaire d’événements pour Button1, ajoutez le code suivant :  
   
-     [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/visualbasic/VbVbcnMyApplicationLogFiltering/Form1.vb#1)]  
+     [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-filtering-my-application-log-output_1.vb)]  
   
 4.  Exécutez l’application dans le débogueur.  
   

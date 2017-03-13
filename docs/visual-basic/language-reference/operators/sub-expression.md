@@ -63,7 +63,7 @@ End Sub
 ## Exemple  
  L'exemple suivant présente une expression lambda qui écrit une valeur sur la console.  L'exemple montre la syntaxe d'expression lambda sur une ou plusieurs lignes d'une sous\-routine.  Pour plus d'exemples, consultez [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
- [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#15)]  
+ [!code-vb[VbVbalrLambdas#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/sub-expression_1.vb)]  
   
 ## Voir aussi  
  [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   

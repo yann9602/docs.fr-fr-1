@@ -28,12 +28,12 @@ L'instruction `goto` transfère directement le contrôle du programme à une ins
 ## Exemple  
  L'exemple illustre l'utilisation de `goto` dans une instruction [switch](../../../csharp/language-reference/keywords/switch.md).  
   
- [!code-cs[csrefKeywordsJump#4](../../../csharp/language-reference/keywords/codesnippet/csharp/goto_1.cs)]  
+ [!code-cs[csrefKeywordsJump#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/goto_1.cs)]  
   
 ## Exemple  
  L'exemple suivant illustre l'utilisation de `goto` pour sortir des boucles imbriquées.  
   
- [!code-cs[csrefKeywordsJump#5](../../../csharp/language-reference/keywords/codesnippet/csharp/goto_2.cs)]  
+ [!code-cs[csrefKeywordsJump#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/goto_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

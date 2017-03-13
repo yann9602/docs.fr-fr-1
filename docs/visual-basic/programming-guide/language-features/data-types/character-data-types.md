@@ -32,7 +32,7 @@ caps.handback.revision: 23
 ## Type Char  
  Le type de données `Char` est un caractère Unicode à deux octets \(16 bits\) unique.  Si une variable stocke toujours exactement un caractère, déclarez\-la comme `Char`.  Par exemple :  
   
- [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/character-data-types_1.vb)]  
+ [!code-vb[VbVbalrCharTypes#1](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_1.vb)]  
   
  Chaque valeur possible dans une variable `Char` ou `String` est un *point de code*, ou code de caractère, dans le jeu de caractères Unicode.  Les caractères Unicode incluent le jeu de caractères ASCII de base, plusieurs autres lettres de l'alphabet, des accents, des symboles monétaires, des fractions, des signes diacritiques ainsi que des symboles mathématiques et techniques.  
   
@@ -44,7 +44,7 @@ caps.handback.revision: 23
 ## Type String  
  Le type de données `String` est une séquence de zéro ou de plusieurs caractères Unicode à deux octets \(16 bits\).  Si une variable peut contenir un nombre indéfini de caractères, déclarez\-la comme `String`.  Par exemple :  
   
- [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/visualbasic/character-data-types_2.vb)]  
+ [!code-vb[VbVbalrCharTypes#2](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/character-data-types_2.vb)]  
   
  Pour plus d'informations, consultez [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md).  
   

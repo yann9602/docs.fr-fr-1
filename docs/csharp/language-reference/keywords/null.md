@@ -23,7 +23,7 @@ Le mot clé `null` est un littéral qui représente une référence null, c'est\
   
  L'exemple suivant illustre certains comportements du mot clé null :  
   
- [!code-cs[csrefKeywordsLiteral#1](../../../csharp/language-reference/keywords/codesnippet/csharp/null_1.cs)]  
+ [!code-cs[csrefKeywordsLiteral#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/null_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

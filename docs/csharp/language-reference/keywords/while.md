@@ -22,17 +22,17 @@ caps.handback.revision: 22
 L'instruction `while` répète une instruction ou un bloc d'instructions jusqu'à ce qu'une expression spécifique corresponde à la valeur `false`.  
   
 ## Exemple  
- [!code-cs[csrefKeywordsIteration#5](../../../csharp/language-reference/keywords/codesnippet/csharp/while_1.cs)]  
+ [!code-cs[csrefKeywordsIteration#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/while_1.cs)]  
   
 ## Exemple  
- [!code-cs[csrefKeywordsIteration#6](../../../csharp/language-reference/keywords/codesnippet/csharp/while_2.cs)]  
+ [!code-cs[csrefKeywordsIteration#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/while_2.cs)]  
   
 ## Exemple  
  Parce que le test de l'expression `while` a lieu avant chaque exécution de la boucle, une boucle `while` est exécutée plusieurs fois ou pas du tout.  Cela diffère de la boucle [do](../../../csharp/language-reference/keywords/do.md), qui s'exécute une ou plusieurs fois.  
   
  Une boucle `while` peut être terminée lorsqu'une instruction [break](../../../csharp/language-reference/keywords/break.md), [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), ou [throw](../../../csharp/language-reference/keywords/throw.md) transfère le contrôle à l'extérieur de la boucle.  Pour transmettre le contrôle à la prochaine itération sans sortir de la boucle, utilisez l'instruction [continue](../../../csharp/language-reference/keywords/continue.md).  Remarquez la différence de sortie des trois exemples précédents, selon l'emplacement où `int n` est incrémenté.  Dans l'exemple ci\-dessous, aucune sortie n'est générée.  
   
- [!code-cs[csrefKeywordsIteration#7](../../../csharp/language-reference/keywords/codesnippet/csharp/while_3.cs)]  
+ [!code-cs[csrefKeywordsIteration#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/while_3.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

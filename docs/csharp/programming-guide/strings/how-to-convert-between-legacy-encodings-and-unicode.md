@@ -22,7 +22,7 @@ En C\#, toutes les chaînes en mémoire sont encodées au format Unicode \(UTF\-
 ## Exemple  
  L'exemple suivant indique comment convertir un fichier texte encodé au format ASCII 8 bits, en interprétant le texte source d'après la page de codes Windows 737.  
   
- [!code-cs[csProgGuideStrings#34](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#34)]  
+ [!code-cs[csProgGuideStrings#34](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-between-legacy-encodings-and-unicode_1.cs)]  
   
 ## Voir aussi  
  [Chaînes](../../../csharp/programming-guide/strings/index.md)

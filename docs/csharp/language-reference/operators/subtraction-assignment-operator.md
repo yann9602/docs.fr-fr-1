@@ -39,7 +39,7 @@ x = x / y
  L'opérateur `/=` ne peut pas être surchargé directement, mais les types définis par l'utilisateur peuvent surcharger l'opérateur [\/](../../../csharp/language-reference/operators/division-operator.md) \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  Sur tous les opérateurs d'assignation composée, surcharger l'opérateur binaire surcharge implicitement l'assignation composée équivalente.  
   
 ## Exemple  
- [!code-cs[csRefOperators#5](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#5)]  
+ [!code-cs[csRefOperators#5](../../../csharp/language-reference/operators/codesnippet/CSharp/subtraction-assignment-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

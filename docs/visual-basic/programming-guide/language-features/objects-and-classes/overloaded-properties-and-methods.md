@@ -34,15 +34,15 @@ La surcharge consiste à créer plusieurs procédures, constructeurs d'instance 
 ## Utilisation de la surcharge  
  La surcharge est particulièrement utile lorsque votre modèle objet impose l'utilisation de noms identiques pour des procédures qui s'appliquent à des types de données différents.  Par exemple, les procédures `Display` d'une classe pouvant afficher plusieurs types de données distincts peuvent se présenter comme suit :  
   
- [!code-vb[VbVbalrOOP#64](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#64)]  
+ [!code-vb[VbVbalrOOP#64](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_1.vb)]  
   
  Sans surcharge, vous devez créer des noms distincts pour chacune des procédures, même si celles\-ci effectuent les mêmes tâches, comme le montre l'exemple suivant :  
   
- [!code-vb[VbVbalrOOP#65](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#65)]  
+ [!code-vb[VbVbalrOOP#65](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_2.vb)]  
   
  La surcharge facilite l'utilisation des propriétés ou des méthodes, car elle propose un choix de divers types de données disponibles.  Par exemple, la méthode `Display` surchargée décrite ci\-dessus peut être appelée par l'une des lignes de code suivantes :  
   
- [!code-vb[VbVbalrOOP#66](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#66)]  
+ [!code-vb[VbVbalrOOP#66](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_3.vb)]  
   
  Au moment de l'exécution, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] appelle la procédure correcte en fonction des types de données des paramètres spécifiés.  
   
@@ -72,11 +72,11 @@ La surcharge consiste à créer plusieurs procédures, constructeurs d'instance 
   
 2.  Ajoutez le code suivant à la classe `TaxClass` :  
   
-     [!code-vb[VbVbalrOOP#67](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#67)]  
+     [!code-vb[VbVbalrOOP#67](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_4.vb)]  
   
 3.  Ajoutez la procédure suivante à votre formulaire :  
   
-     [!code-vb[VbVbalrOOP#68](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#68)]  
+     [!code-vb[VbVbalrOOP#68](../../../../visual-basic/misc/codesnippet/VisualBasic/overloaded-properties-and-methods_5.vb)]  
   
 4.  Ajoutez un bouton à votre formulaire et appelez la procédure `ShowTax` à partir de l'événement de bouton `Button1_Click`.  
   

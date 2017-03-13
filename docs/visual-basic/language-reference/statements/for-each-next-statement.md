@@ -73,7 +73,7 @@ Next [ element ]
   
  Dans l'exemple suivant, l'instruction d' `For Each`…`Next` itère au sein de tous les éléments d'une collection de listes.  
   
- [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
  Pour obtenir d'autres exemples, consultez [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md) et [Tableaux](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
@@ -82,7 +82,7 @@ Next [ element ]
   
  L'exemple suivant illustre des structures `For Each`…`Next` imbriquées.  
   
- [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_2.vb)]  
   
  Lorsque vous emboîtez des boucles, chaque boucle doit avoir une seule variable d' `element` .  
   
@@ -95,7 +95,7 @@ Next [ element ]
   
  L'exemple suivant montre comment utiliser les instructions `Continue For` et `Exit For`.  
   
- [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_3.vb)]  
   
  Vous pouvez placer n'importe quel nombre d'instructions `Exit For` dans une boucle `For Each`.  Utilisée dans des boucles `For Each` imbriquées, l'instruction `Exit For` quitte la boucle la plus profonde et transfère le contrôle au niveau d'imbrication supérieur suivant.  
   
@@ -114,7 +114,7 @@ Next [ element ]
   
  L'exemple suivant utilise une fonction d'itérateur.  La fonction d'itérateur a une instruction d' `Yield` qui est à l'intérieur d'une boucle d' [For… next](../../../visual-basic/language-reference/statements/for-next-statement.md) .  Dans la méthode d' `ListEvenNumbers`, chaque itération du corps d'instruction d' `For Each` crée un appel à la fonction d'itérateur, qui continue à l'instruction d' `Yield` .  
   
- [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
  Pour plus d'informations, consultez [Itérateurs](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md), [yield, instruction](../../../visual-basic/language-reference/statements/yield-statement.md) et [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
@@ -142,7 +142,7 @@ Next [ element ]
   
  Dans l'exemple suivant, l'assignation d' `m` comme valeur initiale pour `n` ne compile pas lorsque `Option Strict` est activé parce que la conversion d' `Long` à `Integer` est une conversion restrictive.  Toutefois, dans l'instruction `For Each`, aucune erreur de compilateur n'est signalée, même si l'affectation à `number` nécessite la même conversion de `Long` à `Integer`.  Dans l'instruction `For Each` qui contient un nombre élevé, une erreur d'exécution se produit lorsque <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> est appliqué au nombre élevé.  
   
- [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_5.vb)]  
   
 ### Appels IEnumerator  
  Lorsque l'exécution d'une boucle `For Each`...`Next` commence, Visual Basic vérifie que `group` fait référence à un objet de collection valide.  Si tel n'est pas le cas, il lève une exception.  Sinon, il appelle la méthode <xref:System.Collections.IEnumerator.MoveNext%2A> et la propriété <xref:System.Collections.IEnumerator.Current%2A> de l'objet énumérateur pour retourner le premier élément.  Si `MoveNext` indique qu'il n'y a aucun élément suivant, c'est\-à\-dire si la collection est vide, la boucle `For Each` s'arrête et le contrôle est passé à l'instruction qui suit l'instruction `Next`.  Sinon, Visual Basic affecte `element` au premier élément et exécute le bloc d'instructions.  
@@ -163,7 +163,7 @@ Next [ element ]
 ## Exemple  
  L'exemple suivant répertorie tous les dossiers dans le répertoire C:\\ à l'aide de la classe <xref:System.IO.DirectoryInfo>.  
   
- [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_6.vb)]  
   
 ## Exemple  
  L'exemple suivant affiche une procédure pour trier une collection.  L'exemple trie les instances d'une classe d' `Car` stockées dans <xref:System.Collections.Generic.List%601>.  La classe `Car` implémente l'interface <xref:System.IComparable%601> , qui exige que la méthode <xref:System.IComparable%601.CompareTo%2A> soit implémentée.  
@@ -172,7 +172,7 @@ Next [ element ]
   
  Dans la méthode `ListCars` , l'instruction `cars.Sort()` trie la liste.  Cet appel à la méthode <xref:System.Collections.Generic.List%601.Sort%2A> de <xref:System.Collections.Generic.List%601> entraîne l'appel de la méthode `CompareTo` automatiquement pour les objets de type `Car` dans `List`.  
   
- [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/for-each-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
 ## Voir aussi  
  [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   

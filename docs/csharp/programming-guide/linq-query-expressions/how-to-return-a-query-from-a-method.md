@@ -10,7 +10,7 @@ Cet exemple indique comment retourner une requête à partir d'une méthode comm
 ## Exemple  
  Dans l'exemple suivant, la première méthode retourne une requête comme valeur de retour et la seconde méthode retourne une requête comme paramètre `out` .  Notez que dans les deux cas, c'est une requête qui est retournée, et non des résultats de requête.  
   
- [!code-cs[csProgGuideLINQ#80](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#80)]  
+ [!code-cs[csProgGuideLINQ#80](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-return-a-query-from-a-method_1.cs)]  
   
 ## Compilation du code  
   

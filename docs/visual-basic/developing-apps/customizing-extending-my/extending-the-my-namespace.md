@@ -47,7 +47,7 @@ L'espace de noms `My` de Visual Basic expose des propriétés et des méthodes q
   
  Par exemple, supposez que vous utilisez fréquemment l'objet `My.User` pour accéder au contexte de sécurité actuel de l'utilisateur exécutant votre application.  Votre société utilise toutefois un objet utilisateur personnalisé pour exposer d'autres informations et fonctions pour les utilisateurs de la société.  Dans ce scénario, vous pouvez remplacer la valeur par défaut de la propriété `My.User.CurrentPrincipal` par une instance de votre propre objet principal personnalisé, comme décrit dans l'exemple suivant.  
   
- [!code-vb[VbVbcnExtendingMy#1](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_1.vb)]  
+ [!code-vb[VbVbcnExtendingMy#1](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_1.vb)]  
   
  La définition de la propriété `CurrentPrincipal` sur l'objet `My.User` modifie l'identité sous laquelle l'application s'exécute.  L'objet `My.User` retourne, quant à lui, des informations sur l'utilisateur récemment défini.  
   
@@ -56,7 +56,7 @@ L'espace de noms `My` de Visual Basic expose des propriétés et des méthodes q
   
  L'exemple suivant ajoute une propriété nommée `DnsServerIPAddresses` à l'objet `My.Computer` :  
   
- [!code-vb[VbVbcnExtendingMy#2](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_2.vb)]  
+ [!code-vb[VbVbcnExtendingMy#2](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_2.vb)]  
   
 ##  <a name="addingcustom"></a> Ajout d'objets personnalisés à l'espace de noms My  
  Bien que l'espace de noms `My` fournisse des solutions pour de nombreuses tâches de programmation courantes, il est possible qu'il ne permette pas de traiter certaines tâches.  Par exemple, votre application peut accéder aux services d'annuaire personnalisés pour les données utilisateur ou utiliser des assemblys qui ne sont pas installés par défaut avec Visual Basic.  Vous pouvez étendre l'espace de noms `My` pour inclure des solutions personnalisées aux tâches courantes spécifiques à votre environnement.  L'espace de noms `My` peut être facilement étendu pour ajouter de nouveaux membres et répondre aux besoins croissants de votre application.  Par ailleurs, vous pouvez déployer vos extensions de l'espace de noms `My` aux autres développeurs comme modèle Visual Basic.  
@@ -64,20 +64,20 @@ L'espace de noms `My` de Visual Basic expose des propriétés et des méthodes q
 ###  <a name="addingtonamespace"></a> Ajout de membres à l'espace de noms My  
  Dans la mesure où `My` est un espace de noms comme les autres, vous pouvez y ajouter des propriétés de niveau supérieur en ajoutant simplement un module et en définissant un `Namespace` de type `My`.  Annotez le module avec l'attribut `HideModuleName`, comme expliqué dans l'exemple suivant.  L'attribut `HideModuleName` garantit qu'IntelliSense n'affiche pas le nom du module lorsqu'il affiche les membres de l'espace de noms `My`.  
   
- [!code-vb[VbVbcnExtendingMy#3](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_3.vb)]  
+ [!code-vb[VbVbcnExtendingMy#3](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_3.vb)]  
   
  Pour ajouter des membres à l'espace de noms `My`, ajoutez autant de propriétés que nécessaire au module.  Pour chaque propriété ajoutée à l'espace de noms `My`, ajoutez un champ privé de type `ThreadSafeObjectProvider(Of T)`, où le type est le type retourné par votre propriété personnalisée.  Ce champ est utilisé pour créer des instances d'objet thread\-safe à retourner par la propriété en appelant la méthode `GetInstance`.  En conséquence, chaque thread qui accède à la propriété étendue reçoit sa propre instance du type retourné.  L'exemple suivant ajoute une propriété nommée `SampleExtension` de type `SampleExtension` à l'espace de noms `My` :  
   
- [!code-vb[VbVbcnExtendingMy#4](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_4.vb)]  
+ [!code-vb[VbVbcnExtendingMy#4](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_4.vb)]  
   
 ##  <a name="addingevents"></a> Ajout d'événements aux objets personnalisés My  
  Vous pouvez utiliser l'objet `My.Application` pour exposer des événements pour vos objets `My` personnalisés en étendant la classe partielle `MyApplication` dans l'espace de noms `My`.  Pour les projets Windows, vous pouvez double\-cliquer sur le nœud **My Project** de votre projet dans l'**Explorateur de solutions**.  Dans le **Concepteur de projets** de Visual Basic, cliquez sur l'onglet `Application`, puis sur le bouton `View Application Events`.  Un nouveau fichier nommé ApplicationEvents.vb est créé.  Il contient le code suivant, qui permet d'étendre la classe `MyApplication`.  
   
- [!code-vb[VbVbcnExtendingMy#5](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_5.vb)]  
+ [!code-vb[VbVbcnExtendingMy#5](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_5.vb)]  
   
  Vous pouvez ajouter des gestionnaires d'événements pour vos objets `My` personnalisés en ajoutant des gestionnaires d'événements personnalisés à la classe `MyApplication`.  Les événements personnalisés vous permettent d'ajouter du code qui s'exécute lors de l'ajout ou de la suppression d'un gestionnaire d'événements ou au déclenchement de l'événement.  Notez que le code `AddHandler` d'un événement personnalisé s'exécute uniquement si un utilisateur ajoute le code permettant de gérer l'événement.  Par exemple, considérez que l'objet `SampleExtension` de la section précédente contient un événement `Load` pour lequel vous souhaitez ajouter un gestionnaire d'événements personnalisé.  L'exemple de code suivant affiche un gestionnaire d'événements personnalisé nommé `SampleExtensionLoad` qui est appelé lorsque l'événement `My.SampleExtension.Load` est déclenché.  Lors de l'ajout du code destiné à gérer le nouvel événement `My.SampleExtensionLoad`, la partie `AddHandler` de ce code d'événement personnalisé s'exécute.  La méthode `MyApplication_SampleExtensionLoad` incluse dans l'exemple de code affiche l'exemple d'un gestionnaire d'événements qui gère l'événement `My.SampleExtensionLoad`.  Notez que l'événement `SampleExtensionLoad` est disponible lorsque vous sélectionnez l'option **MyApplication Événements**  dans la liste déroulante de gauche située au\-dessus de l'éditeur de code lors de la modification du fichier ApplicationEvents.vb.  
   
- [!code-vb[VbVbcnExtendingMy#6](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/visualbasic/extending-the-my-namespace_6.vb)]  
+ [!code-vb[VbVbcnExtendingMy#6](../../../visual-basic/developing-apps/customizing-extending-my/codesnippet/VisualBasic/extending-the-my-namespace_6.vb)]  
   
 ##  <a name="design"></a> Règles de conception  
  Lorsque vous développez des extensions de l'espace de noms `My`, utilisez les indications suivantes afin de réduire les coûts de maintenance de vos composants d'extension.  

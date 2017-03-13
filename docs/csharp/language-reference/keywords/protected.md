@@ -24,7 +24,7 @@ Le mot clé `protected` est un modificateur d'accès au membre.  Un membre prot�
 ## Exemple  
  Un membre protégé d'une classe de base est accessible dans une classe dérivée seulement si l'accès s'effectue par le biais du type de la classe dérivée.  Considérons par exemple le segment de code suivant :  
   
- [!code-cs[csrefKeywordsModifiers#11](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#11)]  
+ [!code-cs[csrefKeywordsModifiers#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_1.cs)]  
   
  L'instruction `a.x = 10` génère une erreur car elle figure au sein de la méthode statique Main, et pas dans une instance de la classe B.  
   
@@ -33,7 +33,7 @@ Le mot clé `protected` est un modificateur d'accès au membre.  Un membre prot�
 ## Exemple  
  Dans cet exemple, la classe `DerivedPoint` est dérivée de `Point`.  Ainsi, vous pouvez accéder aux membres protégés de la classe de base directement à partir de la classe dérivée.  
   
- [!code-cs[csrefKeywordsModifiers#12](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#12)]  
+ [!code-cs[csrefKeywordsModifiers#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/protected_2.cs)]  
   
  Si vous remplacez les niveaux d'accès de `x` et `y` par [private](../../../csharp/language-reference/keywords/private.md), le compilateur affiche les messages d'erreur suivants :  
   

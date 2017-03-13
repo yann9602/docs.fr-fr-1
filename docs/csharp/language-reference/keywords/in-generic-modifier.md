@@ -32,12 +32,12 @@ Pour les paramètres de type générique, le mot clé `in` spécifie que le para
 ## Exemple  
  L'exemple suivant indique comment déclarer, étendre et implémenter une interface générique contravariante.  Il montre également comment vous pouvez utiliser la conversion implicite pour les classes qui implémentent cette interface.  
   
- [!code-cs[csVarianceKeywords#1](../../../csharp/language-reference/keywords/codesnippet/csharp/in-generic-modifier_1.cs)]  
+ [!code-cs[csVarianceKeywords#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/in-generic-modifier_1.cs)]  
   
 ## Exemple  
  L'exemple suivant indique comment déclarer, instancier et appeler un délégué générique contravariant.  Il montre également comment vous pouvez convertir implicitement un type délégué.  
   
- [!code-cs[csVarianceKeywords#2](../../../csharp/language-reference/keywords/codesnippet/csharp/in-generic-modifier_2.cs)]  
+ [!code-cs[csVarianceKeywords#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/in-generic-modifier_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

@@ -30,7 +30,7 @@ Le nom [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbtec
 ## Expressions de requête  
  Les expressions de requête dans Visual Basic peuvent être exprimées dans une syntaxe déclarative semblable à celle de SQL ou de XQuery.  Lors de la compilation, la syntaxe de requête est convertie en appels de méthode à l'implémentation d'un fournisseur LINQ des méthodes d'extension d'opérateur de requête standard.  Les applications déterminent les opérateurs de requête standard qui sont dans la portée en spécifiant l'espace de noms approprié avec une instruction `Imports`.  La syntaxe pour une expression de requête Visual Basic se présente sous la forme suivante :  
   
- [!code-vb[VbLINQVbFeatures#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_1.vb)]  
+ [!code-vb[VbLINQVbFeatures#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_1.vb)]  
   
  Pour plus d'informations, consultez [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
@@ -41,18 +41,18 @@ Le nom [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbtec
   
  L'exemple suivant illustre l'inférence de type locale.  Pour utiliser cet exemple, vous devez affecter à `Option Infer` la valeur `On`.  
   
- [!code-vb[VbLINQVbFeatures#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_2.vb)]  
+ [!code-vb[VbLINQVbFeatures#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_2.vb)]  
   
  L'inférence de type locale permet également de créer des types anonymes, qui sont décrits plus loin dans cette section et sont nécessaires aux requêtes LINQ.  
   
  Dans l'exemple LINQ suivant, l'inférence de type se produit si `Option Infer` a la valeur `On` ou `Off`.  Une erreur de compilation se produit si `Option Infer` a la valeur `Off` et `Option Strict` a la valeur `On`.  
   
- [!code-vb[VbLINQVbFeatures#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_3.vb)]  
+ [!code-vb[VbLINQVbFeatures#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_3.vb)]  
   
 ## Initialiseurs d'objets  
  Les initialiseurs d'objets sont utilisés dans les expressions de requête lorsque vous devez créer un type anonyme pour contenir les résultats d'une requête.  Ils peuvent également être utilisés pour initialiser des objets de types nommés en dehors de requêtes.  À l'aide d'un initialiseur d'objet, vous pouvez initialiser un objet sur une ligne sans appeler explicitement un constructeur.  Supposons que vous ayez une classe nommée `Customer` possédant des propriétés `Name` et `Phone` publiques, ainsi que d'autres propriétés, un initialiseur d'objet peut être utilisé de la manière suivante :  
   
- [!code-vb[VbLINQVbFeatures#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_4.vb)]  
+ [!code-vb[VbLINQVbFeatures#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_4.vb)]  
   
  Pour plus d'informations, consultez [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
@@ -61,7 +61,7 @@ Le nom [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbtec
   
  Un *type anonyme* est généré dynamiquement par le compilateur.  Le nom du type est assigné par le compilateur et il peut varier avec chaque nouvelle compilation.  Le nom ne peut donc pas être utilisé directement.  Les types anonymes sont initialisés de la manière suivante :  
   
- [!code-vb[VbLINQVbFeatures#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_5.vb)]  
+ [!code-vb[VbLINQVbFeatures#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_5.vb)]  
   
  Pour plus d'informations, consultez [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
@@ -70,36 +70,36 @@ Le nom [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbtec
   
  La méthode d'extension suivante ajoute une méthode d'impression à la classe <xref:System.String>.  
   
- [!code-vb[VbLINQVbFeatures#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_6.vb)]  
+ [!code-vb[VbLINQVbFeatures#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_6.vb)]  
   
  Cette méthode est appelée comme une méthode d'instance ordinaire de <xref:System.String>:  
   
- [!code-vb[VbLINQVbFeatures#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_7.vb)]  
+ [!code-vb[VbLINQVbFeatures#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_7.vb)]  
   
  Pour plus d'informations, consultez [méthodes d'extension.](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
   
 ## Expressions lambda  
  Une expression lambda est une fonction sans nom qui calcule et retourne une valeur unique.  Contrairement aux fonctions nommées, une expression lambda peut être définie et exécutée simultanément.  L'exemple suivant affiche 4.  
   
- [!code-vb[VbLINQVbFeatures#8](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_8.vb)]  
+ [!code-vb[VbLINQVbFeatures#8](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_8.vb)]  
   
  Vous pouvez assigner la définition d'expression lambda à un nom de variable, puis utiliser ce nom pour appeler la fonction.  L'exemple suivant affiche également 4.  
   
- [!code-vb[VbLINQVbFeatures#12](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_9.vb)]  
+ [!code-vb[VbLINQVbFeatures#12](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_9.vb)]  
   
  Dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)], les expressions lambda sont à la base d'un grand nombre d'opérateurs de requête standard.  Le compilateur crée des expressions lambda pour capturer les calculs qui sont définis dans des méthodes de requête fondamentales, telles que `Where`, `Select`, `Order By`, `Take While`, etc.  
   
  Par exemple, le code suivant définit une requête qui retourne tous les étudiants de second cycle dans une liste d'étudiants.  
   
- [!code-vb[VbLINQVbFeatures#9](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_10.vb)]  
+ [!code-vb[VbLINQVbFeatures#9](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_10.vb)]  
   
  La définition de la requête est compilée dans un code semblable à l'exemple suivant, qui utilise deux expressions lambda pour spécifier les arguments pour `Where` et `Select`.  
   
- [!code-vb[VbLINQVbFeatures#10](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_11.vb)]  
+ [!code-vb[VbLINQVbFeatures#10](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_11.vb)]  
   
  Les deux versions peuvent être exécutées à l'aide d'une boucle `For Each` :  
   
- [!code-vb[VbLINQVbFeatures#11](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/features-that-support-linq_12.vb)]  
+ [!code-vb[VbLINQVbFeatures#11](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_12.vb)]  
   
  Pour plus d'informations, consultez [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   

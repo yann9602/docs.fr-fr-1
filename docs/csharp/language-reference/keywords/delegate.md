@@ -38,7 +38,7 @@ public delegate int TestDelegate(MyType m, long num);
  Le délégué doit être instancié avec une méthode ou une expression lambda qui présente un type de retour compatible et des paramètres d'entrée.  Pour plus d'informations sur le degré de variance qui est autorisé dans la signature de méthode, consultez [Variance dans les délégués](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md).  Pour son utilisation avec des méthodes anonymes, le délégué et le code à lui associer sont déclarés ensemble.  Les deux manières d'instancier un délégué sont présentées dans cette section.  
   
 ## Exemple  
- [!code-cs[csrefKeywordsTypes#8](../../../csharp/language-reference/keywords/codesnippet/csharp/delegate_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/delegate_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

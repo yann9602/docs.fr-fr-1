@@ -128,7 +128,7 @@ Un littéral qui représente une <xref:System.Xml.Linq.XElement> objet.
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment créer un élément XML simple qui a deux éléments vides imbriqués.  
   
- [!code-vb[VbXMLSamples#20](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_1.vb)]  
   
  L’exemple affiche le texte suivant. Notez que le littéral conserve la structure des éléments vides.  
   
@@ -142,7 +142,7 @@ Un littéral qui représente une <xref:System.Xml.Linq.XElement> objet.
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser des expressions incorporées pour nommer un élément et de créer des attributs.  
   
- [!code-vb[VbXMLSamples#21](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_2.vb)]  
+ [!code-vb[VbXMLSamples#21](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_2.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -153,7 +153,7 @@ Un littéral qui représente une <xref:System.Xml.Linq.XElement> objet.
 ## <a name="example"></a>Exemple  
  L'exemple suivant déclare `ns` en tant que préfixe d'espace de noms XML. Ensuite, il utilise le préfixe d’espace de noms pour créer un littéral XML et affiche le formulaire final de l’élément.  
   
- [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-element-literal_3.vb)]  
+ [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_3.vb)]  
   
  Ce code affiche le texte suivant :  
   

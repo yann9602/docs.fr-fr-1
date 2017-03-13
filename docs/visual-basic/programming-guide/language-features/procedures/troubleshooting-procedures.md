@@ -50,7 +50,7 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
  **Approche correcte :** pour pouvoir modifier les éléments d'un tableau qui doit être retourné, définissez un tableau interne comme variable locale.  L'exemple suivant se compile sans erreur.  
   
- [!code-vb[VbVbcnProcedures#66](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
 ## Argument non modifié par un appel de procédure  
  Si vous envisagez de permettre à une procédure de modifier un élément de programmation sous\-jacent d'un argument dans le code appelant, vous devez le passer par référence.  Cependant, une procédure peut accéder aux éléments d'un argument de type référence même si vous le passez par valeur.  
@@ -61,13 +61,13 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
  L'exemple suivant permet de définir deux procédures qui acceptent une variable tableau par valeur et opèrent sur ses éléments.  La procédure `increase` ajoute simplement la valeur 1 à chaque élément.  La procédure `replace` assigne un nouveau tableau au paramètre `a()`, puis ajoute la valeur 1 à chaque élément.  Cependant, la réassignation n'affecte pas la variable tableau sous\-jacente dans le code appelant, car `a()` est déclaré `ByVal`.  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#38](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_3.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
   
  L'exemple suivant permet d'appeler `increase` et `replace`.  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_4.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
   
  Le premier appel `MsgBox` affiche "After increase\(n\): 11, 21, 31, 41".  Parce que `n` est un type référence, `increase` peut modifier ses membres, même s'il est passé `ByVal`.  
   
@@ -75,7 +75,7 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
  **Approche correcte :** pour pouvoir modifier un élément variable sous\-jacent lui\-même, passez\-le par référence.  L'exemple suivant illustre la modification dans la déclaration de `replace` qui lui permet de remplacer un tableau par un autre dans le code appelant.  
   
- [!code-vb[VbVbcnProcedures#64](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_5.vb)]  
+ [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
 ## Impossible de définir une surcharge  
  Si vous souhaitez définir une version surchargée d'une procédure, vous devez utiliser le même nom, mais une signature différente.  Si le compilateur ne peut pas différencier votre déclaration d'une surcharge assortie de la même signature, il génère une erreur.  
@@ -117,9 +117,9 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
  L'exemple suivant illustre le processus de résolution de surcharge.  
   
- [!code-vb[VbVbcnProcedures#62](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_6.vb)]  
+ [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
   
- [!code-vb[VbVbcnProcedures#63](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_7.vb)]  
+ [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
   
  Dans le premier appel, le compilateur élimine la première surcharge parce que le type du premier argument \(`Short`\) est restreint au type du paramètre correspondant \(`Byte`\).  Il élimine ensuite la troisième surcharge parce que chaque type d'argument dans la deuxième surcharge \(`Short` et `Single`\) est étendu au type correspondant dans la troisième surcharge \(`Integer` et `Single`\).  La deuxième surcharge requérant une extension moins importante, le compilateur l'utilise pour l'appel.  
   
@@ -127,7 +127,7 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
  **Approche correcte :** pour pouvoir appeler une procédure surchargée sans ambiguïté, utilisez la [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) pour faire correspondre les types de données des arguments aux types des paramètres.  L'exemple suivant illustre un appel à `z` qui force la résolution sur la deuxième surcharge.  
   
- [!code-vb[VbVbcnProcedures#65](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/troubleshooting-procedures_8.vb)]  
+ [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   
 ### Résolution de surcharge avec des arguments Optional et ParamArray  
  Si deux surcharges d'une procédure ont des signatures identiques, mais que le dernier paramètre est déclaré [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) dans l'une et [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) dans l'autre, le compilateur résout un appel à cette procédure d'après la correspondance la plus proche.  Pour plus d'informations, consultez [Overload Resolution](../../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md).  

@@ -35,18 +35,18 @@ Contrairement à un événement qui n'est pas personnalisé, une déclaration `C
   
      Par exemple, si `Custom Event` a été défini par `Custom Event Test(ByVal sender As Object, ByVal i As Integer)`, le délégué correspondant est le suivant :  
   
-     [!code-vb[VbVbalrEventError#18](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_1.vb)]  
+     [!code-vb[VbVbalrEventError#18](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_1.vb)]  
   
 2.  Remplacez la liste des paramètres de l'événement personnalisé par une clause `As` qui spécifie le type délégué.  
   
      Pour reprendre l'exemple précédent, la déclaration `Custom Event` est réécrite comme suit :  
   
-     [!code-vb[VbVbalrEventError#19](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_2.vb)]  
+     [!code-vb[VbVbalrEventError#19](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_2.vb)]  
   
 ## Exemple  
  Cet exemple déclare `Custom Event` et spécifie la clause `As` requise avec un type délégué.  
   
- [!code-vb[VbVbalrEventError#2](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/custom-modifier-is-not-v_3.vb)]  
+ [!code-vb[VbVbalrEventError#2](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types_3.vb)]  
   
 ## Voir aussi  
  [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)   

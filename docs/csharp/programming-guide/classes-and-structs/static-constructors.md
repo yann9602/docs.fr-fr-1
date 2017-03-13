@@ -19,7 +19,7 @@ caps.handback.revision: 23
 # Constructeurs statiques (Guide de programmation C#)
 Un constructeur statique est utilisé pour initialiser n'importe quelle donnée [statique](../../../csharp/language-reference/keywords/static.md), ou pour effectuer une action particulière devant être effectuée une seule fois.  Il est appelé automatiquement avant que la première instance soit créée ou que des membres statiques soient référencés.  
   
- [!code-cs[csProgGuideObjects#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-constructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-constructors_1.cs)]  
   
  Les constructeurs statiques ont les propriétés suivantes :  
   
@@ -40,7 +40,7 @@ Un constructeur statique est utilisé pour initialiser n'importe quelle donnée 
 ## Exemple  
  Dans cet exemple, la classe `Bus` a un constructeur static.  Lorsque la première instance de `Bus` est créée \(`bus1`\), le constructeur static est appelé pour initialiser la classe.  L'exemple de sortie vérifie que le constructeur static est exécuté une seule fois, même si deux instances de `Bus` sont créées, et qu'il est exécuté avant le constructeur d'instance ne le soit.  
   
- [!code-cs[csProgGuideObjects#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-constructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-constructors_2.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

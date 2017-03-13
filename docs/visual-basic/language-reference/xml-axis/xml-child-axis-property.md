@@ -59,7 +59,7 @@ object.<child>
 ## Exemple  
  L'exemple suivant montre comment accéder aux nœuds enfants nommés `phone` à partir de l'objet `contact`.  
   
- [!code-vb[VbXMLSamples#17](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-child-axis-property_1.vb)]  
+ [!code-vb[VbXMLSamples#17](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-child-axis-property_1.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -68,7 +68,7 @@ object.<child>
 ## Exemple  
  L'exemple suivant montre comment accéder aux nœuds enfants nommés `phone` à partir de la collection retournée par la propriété d'axe enfant `contact` de l'objet `contacts`.  
   
- [!code-vb[VbXMLSamples#18](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-child-axis-property_2.vb)]  
+ [!code-vb[VbXMLSamples#18](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-child-axis-property_2.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -77,7 +77,7 @@ object.<child>
 ## Exemple  
  L'exemple suivant déclare `ns` en tant que préfixe d'espace de noms XML.  Il utilise ensuite le préfixe de l'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié `ns:name`.  
   
- [!code-vb[VbXMLSamples#19](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-child-axis-property_3.vb)]  
+ [!code-vb[VbXMLSamples#19](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-child-axis-property_3.vb)]  
   
  Ce code affiche le texte suivant :  
   

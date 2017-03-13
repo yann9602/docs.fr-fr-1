@@ -62,7 +62,7 @@ Spécifie les attributs à appliquer à un élément de programmation déclaré.
 ## Exemple  
  L'exemple suivant applique l'attribut <xref:System.Runtime.InteropServices.DllImportAttribute> à une définition squelette d'une procédure `Function`.  
   
- [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/attribute-list_1.vb)]  
+ [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/attribute-list_1.vb)]  
   
  <xref:System.Runtime.InteropServices.DllImportAttribute> indique que la procédure attribuée représente un point d'entrée dans une bibliothèque de liens dynamiques \(DLL\) non managée.  L'attribut fournit le nom de DLL comme argument positionnel et l'autre information comme initialiseurs de variable.  
   

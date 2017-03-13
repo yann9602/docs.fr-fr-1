@@ -27,7 +27,7 @@ L'objet `My.Resources` fournit l'accès aux ressources de l'application et vous 
 ## Récupération de ressources  
  Plusieurs ressources telles que les fichiers audio, les icônes, les images et les chaînes peuvent être récupérées par le biais de l'objet `My.Resources`.  Par exemple, vous pouvez accéder aux fichiers de ressources spécifiques de la culture de l'application.  L'exemple suivant définit l'icône du formulaire comme étant l'icône nommée `Form1Icon` stockée dans le fichier de ressources de l'application.  
   
- [!code-vb[VbVbcnMy#7](../../../visual-basic/developing-apps/development-with-my/codesnippet/visualbasic/rapid-application-develo_1.vb)]  
+ [!code-vb[VbVbcnMy#7](../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/rapid-application-development-with-my-resources-and-my-settings_1.vb)]  
   
  L'objet `My.Resources` expose uniquement des ressources globales.  Il ne fournit pas l'accès aux fichiers de ressources associés aux formulaires.  Vous devez accéder aux ressources du formulaire à partir du formulaire.  Pour plus d'informations, consultez [Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/fr-fr/9a96220d-a19b-4de0-9f48-01e5d82679e5).  
   

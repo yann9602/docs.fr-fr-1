@@ -26,7 +26,7 @@ En réponse à la déclaration d'une instance d'un type anonyme, le compilateur 
 ## Code généré par le compilateur  
  Pour la définition suivante de `product`, le compilateur crée une nouvelle définition de classe qui contient des propriétés `Name`, `Price`et `OnHand`.  
   
- [!code-vb[VbVbalrAnonymousTypes#25](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_1.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#25](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_1.vb)]  
   
  La définition de classe contient des définitions de propriété semblables à celles qui suivent.  Notez qu'il n'existe aucune méthode `Set` pour les propriétés de clé.  Les valeurs des propriétés de clé sont en lecture seule.  
   
@@ -75,13 +75,13 @@ End Class
   
      Par exemple, `Equals` retourne uniquement la valeur `True` pour `employee01` et `employee08` dans les exemples suivants.  Le commentaire précédant chaque ligne spécifie la raison pour laquelle la nouvelle instance ne correspond pas à `employee01`.  
   
-     [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_2.vb)]  
+     [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_2.vb)]  
   
 -   `GetHashcode` fournit un algorithme GetHashCode unique approprié.  L'algorithme utilise uniquement les propriétés de clé pour calculer le code de hachage.  
   
 -   `ToString` retourne une chaîne de valeurs de propriété concaténées, comme l'illustre l'exemple suivant.  Les propriétés de clé et celles ne correspondant pas à une clé sont incluses.  
   
-     [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/anonymous-type-definition_3.vb)]  
+     [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_3.vb)]  
   
  Les propriétés d'un type anonyme nommées explicitement ne peuvent pas être en conflit avec ces méthodes générées.  Autrement dit, vous ne pouvez pas utiliser `.Equals`, `.GetHashCode` ou `.ToString` pour nommer une propriété.  
   

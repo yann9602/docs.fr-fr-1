@@ -22,15 +22,15 @@ Dans les versions de C\# antérieures à 2.0, la seule façon de déclarer un [d
   
  La création de méthodes anonymes est essentiellement un moyen de passer un bloc de code en paramètre de délégué.  En voici deux exemples :  
   
- [!code-cs[csProgGuideDelegates#6](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#6)]  
+ [!code-cs[csProgGuideDelegates#6](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_1.cs)]  
   
- [!code-cs[csProgGuideDelegates#5](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#5)]  
+ [!code-cs[csProgGuideDelegates#5](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_2.cs)]  
   
  En utilisant des méthodes anonymes, vous réduisez la charge de travail liée au codage de l'instanciation de délégués, car vous n'avez pas à créer de méthode distincte.  
   
  Par exemple, la spécification d'un bloc de code au lieu d'un délégué peut être utile dans une situation où le travail nécessité par la création d'une méthode ne semble pas justifié.  Un bon exemple pourrait être le moment où vous démarrez un nouveau thread.  Cette classe crée un thread et contient également le code exécuté par le thread sans créer une méthode supplémentaire pour le délégué.  
   
- [!code-cs[csProgGuideDelegates#7](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#7)]  
+ [!code-cs[csProgGuideDelegates#7](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_3.cs)]  
   
 ## Notes  
  La portée des paramètres d'une méthode anonyme est *anonymous\-method\-block*.  
@@ -39,7 +39,7 @@ Dans les versions de C\# antérieures à 2.0, la seule façon de déclarer un [d
   
  Les variables locales et les paramètres dont la portée contient une déclaration de méthode anonyme sont appelés des variables *externes* de la méthode anonyme.  Par exemple, dans le segment de code suivant, `n` est une variable externe :  
   
- [!code-cs[csProgGuideDelegates#8](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#8)]  
+ [!code-cs[csProgGuideDelegates#8](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_4.cs)]  
   
  Une référence à la variable externe `n` parle  *capturées* lorsque le délégué est créé.  Contrairement aux variables locales, la durée de vie d'une variable capturée s'étend jusqu'à ce que les délégués qui font référence aux méthodes anonymes soient éligibles pour le garbage collection.  
   
@@ -58,7 +58,7 @@ Dans les versions de C\# antérieures à 2.0, la seule façon de déclarer un [d
   
  Dans chaque cas, un message est affiché lorsque le délégué est appelé.  
   
- [!code-cs[csProgGuideDelegates#4](../../../csharp/programming-guide/delegates/codesnippet/csharp/csrefDelegates/Delegates.cs#4)]  
+ [!code-cs[csProgGuideDelegates#4](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_5.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

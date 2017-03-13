@@ -67,7 +67,7 @@ La *durée de vie* d'un élément déclaré est la période pendant laquelle il 
  L'exemple suivant déclare une variable à l'aide du mot clé [Static](../../../../visual-basic/language-reference/modifiers/static.md).  \(Notez que vous n'avez pas besoin du mot clé `Dim` lorsque [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) utilise un modificateur, tel que `Static`.\)  
   
 ### Code  
- [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/visualbasic/lifetime_1.vb)]  
+ [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/VisualBasic/lifetime_1.vb)]  
   
 ### Commentaires  
  Dans l'exemple précédent, la variable `applesSold` continue d'exister après que la procédure `runningTotal` retourne au code appelant.  La prochaine fois que `runningTotal` est appelé, `applesSold` conserve sa valeur précédemment calculée.  

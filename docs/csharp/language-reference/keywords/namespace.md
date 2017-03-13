@@ -22,7 +22,7 @@ caps.handback.revision: 28
 # Espace de noms (r&#233;f&#233;rence C#)
 Le mot clé d' `namespace` est utilisé pour déclarer une portée qui contient un ensemble d'objets connexes.  Vous pouvez utiliser un espace de noms pour organiser des éléments de code et créer globalement de types uniques.  
   
- [!code-cs[csrefKeywordsNamespace#1](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_1.cs)]  
+ [!code-cs[csrefKeywordsNamespace#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_1.cs)]  
   
 ## Notes  
  Au sein d'un espace de noms, vous pouvez déclarer un ou plusieurs des types suivants :  
@@ -45,12 +45,12 @@ Le mot clé d' `namespace` est utilisé pour déclarer une portée qui contient 
   
  Il est possible de définir un espace de noms dans deux déclarations ou plus.  Par exemple, le code suivant définit deux classes comme appartenant à l'espace de noms `MyCompany` :  
   
- [!code-cs[csrefKeywordsNamespace#2](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_2.cs)]  
+ [!code-cs[csrefKeywordsNamespace#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_2.cs)]  
   
 ## Exemple  
  L'exemple suivant montre comment appeler une méthode statique dans un espace de noms imbriqué.  
   
- [!code-cs[csrefKeywordsNamespace#3](../../../csharp/language-reference/keywords/codesnippet/csharp/namespace_3.cs)]  
+ [!code-cs[csrefKeywordsNamespace#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/namespace_3.cs)]  
   
 ## Pour plus d'informations  
  Pour plus d'informations sur l'utilisation des espaces de noms, consultez les rubriques suivantes :  

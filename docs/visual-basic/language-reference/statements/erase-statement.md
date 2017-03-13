@@ -43,7 +43,7 @@ Erase arraylist
 ## Exemple  
  L'exemple suivant utilise l'instruction `Erase` pour effacer deux tableaux et libérer leur mémoire \(respectivement 1 000 et 100 éléments de stockage\).  L'instruction `ReDim` assigne ensuite une nouvelle instance de tableau au tableau à trois dimensions.  
   
- [!code-vb[VbVbalrStatements#19](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/erase-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#19](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/erase-statement_1.vb)]  
   
 ## Voir aussi  
  [Nothing](../../../visual-basic/language-reference/nothing.md)   

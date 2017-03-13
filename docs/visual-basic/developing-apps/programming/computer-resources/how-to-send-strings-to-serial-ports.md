@@ -35,7 +35,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour envoyer des ch
   
  La méthode <xref:System.IO.Ports.SerialPort.WriteLine%2A> envoie les données au port série.  
   
- [!code-vb[VbVbalrMyComputer#33](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class2.vb#33)]  
+ [!code-vb[VbVbalrMyComputer#33](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-send-strings-to-serial-ports_1.vb)]  
   
 ## Compilation du code  
   

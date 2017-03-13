@@ -30,12 +30,12 @@ Vous pouvez convertir une [chaîne](../../../csharp/language-reference/keywords/
   
  Les exemples suivants illustrent des appels à `Parse` et `TryParse` qui ont réussi ou échoué.  
   
- [!code-cs[csProgGuideTypes#5555](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_1.cs)]  
-[!code-cs[csProgGuideTypes#25](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_2.cs)]  
-[!code-cs[csProgGuideTypes#26](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_3.cs)]  
-[!code-cs[csProgGuideTypes#27](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_4.cs)]  
-[!code-cs[csProgGuideTypes#28](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_5.cs)]  
-[!code-cs[csProgGuideTypes#100](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_6.cs)]  
+ [!code-cs[csProgGuideTypes#5555](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_1.cs)]  
+[!code-cs[csProgGuideTypes#25](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_2.cs)]  
+[!code-cs[csProgGuideTypes#26](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_3.cs)]  
+[!code-cs[csProgGuideTypes#27](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_4.cs)]  
+[!code-cs[csProgGuideTypes#28](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_5.cs)]  
+[!code-cs[csProgGuideTypes#100](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_6.cs)]  
   
 ## Exemple  
  Le tableau suivant répertorie quelques unes des méthodes de la classe <xref:System.Convert> que vous pouvez utiliser.  
@@ -54,8 +54,8 @@ Vous pouvez convertir une [chaîne](../../../csharp/language-reference/keywords/
   
  Cet exemple appelle la méthode <xref:System.Convert.ToInt32%28System.String%29?displayProperty=fullName> pour convertir une entrée de type [chaîne](../../../csharp/language-reference/keywords/string.md) en [int](../../../csharp/language-reference/keywords/int.md).  Le code intercepte les deux exceptions les plus communes qui peuvent être levées par cette méthode, <xref:System.FormatException> et <xref:System.OverflowException>.  Si le nombre peut être incrémenté sans entraîner de dépassement au niveau de l'emplacement de stockage des entiers, le programme ajoute 1 au résultat et imprime la sortie.  
   
- [!code-cs[csProgGuideTypes#5555](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_1.cs)]  
-[!code-cs[csProgGuideTypes#24](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-string-_1_7.cs)]  
+ [!code-cs[csProgGuideTypes#5555](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_1.cs)]  
+[!code-cs[csProgGuideTypes#24](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_7.cs)]  
   
 ## Voir aussi  
  [Types](../../../csharp/programming-guide/types/index.md)   

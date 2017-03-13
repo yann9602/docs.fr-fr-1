@@ -33,14 +33,14 @@ La clause `join` est utile pour associer des éléments de séquences source dif
 ## Jointure interne  
  L'exemple suivant présente une équijointure interne simple.  Cette requête produit une séquence en deux dimensions des paires « nom de produit\/catégorie ».  La même chaîne de catégorie apparaîtra dans plusieurs éléments.  Si un élément de `categories` n'a aucun `products` correspondant, cette catégorie n'apparaîtra pas dans les résultats.  
   
- [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#24)]  
+ [!code-cs[cscsrefQueryKeywords#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_1.cs)]  
   
  Pour plus d'informations, consultez [Comment : effectuer des jointures internes](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md).  
   
 ## Group Join  
  Une clause `join` avec une expression `into` est appelée une jointure groupée.  
   
- [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#25)]  
+ [!code-cs[cscsrefQueryKeywords#25](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_2.cs)]  
   
  Une jointure groupée produit une séquence de résultat hiérarchique, qui associe des éléments dans la séquence source gauche à un ou plusieurs éléments correspondants dans la séquence source droite.  Une jointure groupée n'a aucun équivalent en termes relationnels ; il s'agit essentiellement d'une séquence de tableaux d'objets.  
   
@@ -50,14 +50,14 @@ La clause `join` est utile pour associer des éléments de séquences source dif
   
  Bien sûr, vous pouvez également utiliser le résultat d'une jointure groupée comme générateur d'une autre sous\-requête :  
   
- [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#26)]  
+ [!code-cs[cscsrefQueryKeywords#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_3.cs)]  
   
  Pour plus d'informations, consultez [Comment : effectuer des jointures groupées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md).  
   
 ## Jointure externe gauche  
  Dans une jointure externe gauche, tous les éléments de la séquence source gauche sont retournés, même s'ils n'ont aucun élément correspondant dans la séquence droite.  Pour effectuer une jointure externe gauche dans [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)], utilisez la méthode `DefaultIfEmpty` en association avec une jointure groupée pour spécifier un élément de droite par défaut à produire si un élément de gauche n'a aucune correspondance.  Vous pouvez utiliser `null` comme valeur par défaut pour tout type référence ou vous pouvez spécifier un type par défaut défini par l'utilisateur.  Un type par défaut défini par l'utilisateur est présenté dans l'exemple suivant :  
   
- [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#27)]  
+ [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
  Pour plus d'informations, consultez [Procédures : effectuer des jointures externes gauches](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md).  
   
@@ -78,7 +78,7 @@ La clause `join` est utile pour associer des éléments de séquences source dif
 ## Exemple  
  L'exemple suivant compare les résultats d'une jointure interne, d'une jointure groupée et d'une jointure externe gauche sur les mêmes sources de données en utilisant les mêmes clés correspondantes.  Du code supplémentaire est ajouté à ces exemples pour clarifier les résultats dans l'affichage de la console.  
   
- [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Join.cs#23)]  
+ [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
   
 ## Notes  
  Une clause `join` qui n'est pas suivie par `into` est traduite en un appel de méthode <xref:System.Linq.Enumerable.Join%2A>.  Une clause `join` qui est suivie par `into` est traduite en un appel de méthode <xref:System.Linq.Enumerable.GroupJoin%2A>.  

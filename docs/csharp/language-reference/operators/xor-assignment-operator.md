@@ -38,7 +38,7 @@ x = x ^ y
  L'opérateur ^\= ne peut pas être surchargé directement, mais les types définis par l'utilisateur peuvent surcharger l'opérateur [^ operator](../../../csharp/language-reference/operators/xor-operator.md) \(consultez [operator](../../../csharp/language-reference/keywords/operator.md)\).  
   
 ## Exemple  
- [!code-cs[csRefOperators#23](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#23)]  
+ [!code-cs[csRefOperators#23](../../../csharp/language-reference/operators/codesnippet/CSharp/xor-assignment-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

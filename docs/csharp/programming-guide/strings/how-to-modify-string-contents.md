@@ -21,17 +21,17 @@ Parce que les chaînes sont *immuables*, il n'est pas possible \(sans utiliser d
 ## Exemple  
  L'exemple suivant indique différentes façons de remplacer ou de supprimer des sous\-chaînes dans une chaîne spécifiée.  
   
- [!code-cs[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#28)]  
+ [!code-cs[csProgGuideStrings#28](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_1.cs)]  
   
 ## Exemple  
  Pour accéder aux différents caractères d'une chaîne en utilisant la notation de tableau, vous pouvez utiliser l'objet <xref:System.Text.StringBuilder>, qui surcharge l'opérateur `[]` pour permettre l'accès à la mémoire tampon de caractères interne.  Vous pouvez également convertir la chaîne en un tableau de caractères en utilisant la méthode <xref:System.String.ToCharArray%2A>.  L'exemple suivant utilise `ToCharArray` pour créer le tableau.  Certains éléments de ce tableau sont ensuite modifiés.  Un constructeur String prenant les tableaux de caractères comme paramètres d'entrée est alors appelé pour créer une chaîne.  
   
- [!code-cs[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#24)]  
+ [!code-cs[csProgGuideStrings#24](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_2.cs)]  
   
 ## Exemple  
  L'exemple suivant est fourni pour les cas très rares où vous voulez modifier une chaîne sur place en utilisant du code non sécurisé, procédant ainsi comme avec les tableaux de caractères de style C.  L'exemple indique comment accéder aux différents caractères « sur place » en utilisant le mot clé fixed.  Il montre également un effet secondaire possible des opérations risquées réalisées sur les chaînes, lié à la façon dont le compilateur C\# stocke \(interne\) les chaînes en interne.  En général, il est préférable de ne pas utiliser cette technique, sauf en cas d'absolue nécessité.  
   
- [!code-cs[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#29)]  
+ [!code-cs[csProgGuideStrings#29](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-modify-string-contents_3.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

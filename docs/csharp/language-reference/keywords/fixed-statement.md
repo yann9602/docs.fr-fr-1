@@ -23,11 +23,11 @@ L'instruction `fixed` empêche le Garbage Collector de déplacer une variable mo
   
  L'instruction `fixed` place un pointeur vers une variable managée et met cette variable en attente pendant l'exécution de l'instruction.  Sans `fixed`, les pointeurs sur des variables managées seraient de peu d'utilité puisque le recyclage pourrait déplacer les variables de manière imprévisible.  Le compilateur C\# vous permet seulement d'affecter un pointeur à une variable managée dans une instruction `fixed`.  
   
- [!code-cs[csrefKeywordsFixedLock#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefFixedLock/csrefKeywordsFixedLock.cs#1)]  
+ [!code-cs[csrefKeywordsFixedLock#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_1.cs)]  
   
  Vous pouvez initialiser un pointeur à l'aide d'un tableau, d'une chaîne, d'une mémoire tampon de taille fixe, ou de l'adresse d'une variable.  L'exemple suivant illustre l'utilisation d'adresses, de tableaux et de chaînes variables.  Pour plus d'informations sur les mémoires tampon de taille fixe, consultez [Mémoires tampons de taille fixe](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md).  
   
- [!code-cs[csrefKeywordsFixedLock#2](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefFixedLock/csrefKeywordsFixedLock.cs#2)]  
+ [!code-cs[csrefKeywordsFixedLock#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_2.cs)]  
   
  Vous pouvez initialiser plusieurs pointeurs, à condition qu'ils soient du même type.  
   
@@ -37,7 +37,7 @@ fixed (byte* ps = srcarray, pd = dstarray) {...}
   
  Pour initialiser des pointeurs de types différents, imbriquez simplement les instructions `fixed`, comme illustré dans l'exemple suivant.  
   
- [!code-cs[csrefKeywordsFixedLock#3](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefFixedLock/csrefKeywordsFixedLock.cs#3)]  
+ [!code-cs[csrefKeywordsFixedLock#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_3.cs)]  
   
  Après l'exécution du code contenu dans l'instruction, toutes les variables épinglées sont mises hors attente et soumises au recyclage.  Aussi, ne pointez pas sur ces variables hors de l'instruction `fixed`.  
   
@@ -47,7 +47,7 @@ fixed (byte* ps = srcarray, pd = dstarray) {...}
  En mode unsafe, vous pouvez allouer de la mémoire à la pile dans laquelle elle n'est pas soumise au recyclage, et la mise en attente n'est donc pas nécessaire.  Pour plus d'informations, consultez [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md).  
   
 ## Exemple  
- [!code-cs[csrefKeywordsFixedLock#4](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefFixedLock/csrefKeywordsFixedLock.cs#4)]  
+ [!code-cs[csrefKeywordsFixedLock#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/fixed-statement_4.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

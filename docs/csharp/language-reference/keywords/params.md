@@ -29,7 +29,7 @@ En utilisant le mot clé `params` vous pouvez spécifier un [paramètre de méth
 ## Exemple  
  L'exemple suivant montre différents moyens d'envoyer des arguments à un paramètre `params`.  
   
- [!code-cs[csrefKeywordsMethodParams#5](../../../csharp/language-reference/keywords/codesnippet/csharp/params_1.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/params_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

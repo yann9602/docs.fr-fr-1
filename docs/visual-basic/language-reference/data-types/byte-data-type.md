@@ -44,7 +44,7 @@ Contient des entiers 8 bits \(1 octet\) non signés dont la valeur est comprise 
 ## Exemple  
  Dans l'exemple suivant, `b` est une variable `Byte`.  Les instructions montrent la plage de la variable et l'application d'opérateurs de décalage de bits vers lui.  
   
- [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/byte-data-type_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/byte-data-type_1.vb)]  
   
 ## Voir aussi  
  <xref:System.Byte?displayProperty=fullName>   

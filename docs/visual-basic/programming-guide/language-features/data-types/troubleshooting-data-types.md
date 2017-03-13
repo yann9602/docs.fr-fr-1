@@ -50,7 +50,7 @@ Cette page répertorie des problèmes courants qui peuvent se produire lorsque v
   
  L'exemple suivant présente une comparaison correcte et incorrecte de deux valeurs `Double`.  
   
- [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
   
  L'exemple précédent utilise la méthode <xref:System.Double.ToString%2A> de la structure <xref:System.Double> pour spécifier une plus grande précision que le mot clé `CStr`.  La valeur par défaut est 15 chiffres, mais le format « G17 » l'étend à 17 chiffres.  
   
@@ -66,7 +66,7 @@ Cette page répertorie des problèmes courants qui peuvent se produire lorsque v
   
  L'exemple suivant montre l'imprécision potentielle des opérandes à virgule flottante.  
   
- [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
   
  L'exemple précédent utilise la méthode <xref:System.Double.ToString%2A> de la structure <xref:System.Double> pour spécifier une plus grande précision que le mot clé `CStr`.  La valeur par défaut est 15 chiffres, mais le format « G17 » l'étend à 17 chiffres.  
   
@@ -103,7 +103,7 @@ Cette page répertorie des problèmes courants qui peuvent se produire lorsque v
   
  [!CODE [VbVbalrStatements#49](../CodeSnippet/VS_Snippets_VBCSharp/VbVbalrStatements#49)]  
   
- [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/troubleshooting-data-types_4.vb)]  
+ [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
   
  Il existe toujours un risque lié à l'utilisation de conversions restrictives, car elles peuvent échouer au moment de l'exécution.  Par exemple, une conversion de `String` en `Char` peut échouer si la valeur `String` contient plusieurs caractères.  Par conséquent, l'utilisation du caractère de type `C` est préconisée.  
   

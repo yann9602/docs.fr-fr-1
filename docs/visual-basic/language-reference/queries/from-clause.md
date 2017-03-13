@@ -49,11 +49,11 @@ From element [ As type ] In collection [ _ ]
   
  Vous pouvez spécifier plusieurs clauses `From` dans une requête pour identifier plusieurs collections devant être jointes.  Lorsque vous spécifiez plusieurs collections, elles sont itérées indépendamment, mais vous pouvez les joindre les unes aux autres si elles sont liées.  Pour joindre des collections de manière implicite, utilisez la clause `Select` ; pour les joindre de manière explicite, utilisez la clause `Join` ou la clause `Group Join`.  Si vous le souhaitez, vous pouvez spécifier des variables de portée et des collections multiples dans une clause `From` unique, chaque variable de portée et chaque collection étant séparée de ses voisines par une virgule.  L'exemple de code qui suit montre les deux options de syntaxe pour la clause `From`.  
   
- [!code-vb[VbSimpleQuerySamples#21](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#21)]  
+ [!code-vb[VbSimpleQuerySamples#21](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_1.vb)]  
   
  La clause `From` définit la portée d'une requête semblable à la portée d'une boucle `For`.  Par conséquent, chaque variable de portée `element` de la requête doit recevoir un nom unique.  Comme vous pouvez spécifier plusieurs clauses `From` par requête, les clauses `From` suivantes peuvent se reporter à des variables de portée de la clause `From`, ou se reporter pour aligner des variables de portée d'une clause `From` précédente.  Par exemple, l'exemple suivant affiche une clause `From` imbriquée, où la collection dans la deuxième clause est basée sur une propriété de la variable de portée de la première clause.  
   
- [!code-vb[VbSimpleQuerySamples#22](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#22)]  
+ [!code-vb[VbSimpleQuerySamples#22](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_2.vb)]  
   
  Chaque clause `From` peut être suivie de toute combinaison de clauses de requête supplémentaires pour affiner la requête.  Vous pouvez affiner la requête des manières suivantes :  
   
@@ -76,7 +76,7 @@ From element [ As type ] In collection [ _ ]
 ## Exemple  
  L'expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour chaque objet `Customer` de la collection `customers`.  La clause `Where` utilise la variable de portée pour restreindre la sortie aux clients de la région spécifiée.  La boucle `For Each` affiche le nom de société pour chaque client dans le résultat de la requête.  
   
- [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#23)]  
+ [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/from-clause_3.vb)]  
   
 ## Voir aussi  
  [Queries](../../../visual-basic/language-reference/queries/queries.md)   

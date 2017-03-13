@@ -109,7 +109,7 @@ result = string Like pattern
 ## Exemple  
  Cet exemple utilise l'opérateur `Like` pour comparer des chaînes de plusieurs modèles.  Les résultats se dirigent vers une variable `Boolean` qui indique si chaque chaîne satisfait le modèle.  
   
- [!code-vb[VbVbalrOperators#30](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/like-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#30](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/like-operator_1.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Strings.InStr%2A>   

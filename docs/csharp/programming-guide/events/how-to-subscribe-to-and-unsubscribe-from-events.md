@@ -30,7 +30,7 @@ Vous vous abonnez à un événement qui est publié par une autre classe lorsque
   
      [!INCLUDE[csprcs](../../../csharp/includes/csprcs-md.md)] crée une méthode de gestionnaire d'événements vide et l'ajoute à votre code.  Vous pouvez également ajouter manuellement le code en mode **Code**.  Par exemple, les lignes de code ci\-après déclarent une méthode de gestionnaire d'événements qui est appelée lorsque la classe `Form` déclenche l'événement `Load`.  
   
-     [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-subscribe-to-and-_1.cs)]  
+     [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   
      La ligne de code nécessaire pour s'abonner à l'événement est également générée automatiquement dans la méthode `InitializeComponent` du fichier Form1.Designer.cs de votre projet.  Elle se présente comme suit :  
   

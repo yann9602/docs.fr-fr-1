@@ -31,7 +31,7 @@ Une procédure *récursive* est une procédure qui s'appelle elle\-même.  En g�
   
  La procédure suivante utilise la récurrence pour calculer la factorielle de son argument d'origine.  
   
- [!code-vb[VbVbcnProcedures#51](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/recursive-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#51](./codesnippet/VisualBasic/recursive-procedures_1.vb)]  
   
 ## Considérations sur les procédures récursives  
  **Conditions de limitation** Vous devez concevoir une procédure récursive à tester pour au moins une condition qui peut mettre fin à la récurrence, et vous devez également gérer les situations pour lesquelles aucune de ces conditions n'est satisfaite pour un nombre raisonnable d'appels récursifs.  Si aucune condition ne peut être satisfaite sans erreur, votre procédure s'expose à un risque élevé d'exécution dans une boucle infinie.  

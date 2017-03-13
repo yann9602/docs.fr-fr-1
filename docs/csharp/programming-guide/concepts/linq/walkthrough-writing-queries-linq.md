@@ -62,7 +62,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 -   Ajoutez la classe `Student` et la liste initialisée d'étudiants à la classe `Program` dans votre projet.  
   
-     [!code-cs[CsLinqGettingStarted#11](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#11)]  
+     [!code-cs[CsLinqGettingStarted#11](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_1.cs)]  
   
 #### Pour ajouter un nouvel étudiant à la liste des étudiants  
   
@@ -76,7 +76,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
      Notez également que la variable de portée de la requête, `student`, sert de référence à chaque `Student` dans la source, en fournissant l'accès au membre pour chaque objet.  
   
- [!code-cs[CsLINQGettingStarted#12](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#12)]  
+ [!code-cs[CsLINQGettingStarted#12](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_2.cs)]  
   
 ## Exécution de la requête  
   
@@ -90,7 +90,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 2.  Après avoir ajouté ce code, générez et exécutez l'application en appuyant sur Ctrl \+ F5 pour visualiser les résultats dans la fenêtre de **console**.  
   
- [!code-cs[CsLINQGettingStarted#13](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#13)]  
+ [!code-cs[CsLINQGettingStarted#13](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_3.cs)]  
   
 #### Pour ajouter une autre condition de filtre  
   
@@ -130,11 +130,11 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 1.  Le regroupement est une fonction puissante des expressions de requête.  Une requête avec une clause group produit une séquence de groupes dont chaque groupe contient lui\-même un `Key` et une séquence composée de tous les membres de ce groupe.  La nouvelle requête suivante regroupe les étudiants en utilisant la première lettre de leur nom comme clé.  
   
-     [!code-cs[CsLINQGettingStarted#14](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#14)]  
+     [!code-cs[CsLINQGettingStarted#14](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_4.cs)]  
   
 2.  Notez que le type de la requête a maintenant changé.  Il produit désormais une séquence de groupes qui ont un type `char` comme clé et une séquence d'objets `Student`.  Étant donné que le type de la requête a changé, le code suivant modifie également la boucle d'exécution `foreach` :  
   
-     [!code-cs[CsLINQGettingStarted#15](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#15)]  
+     [!code-cs[CsLINQGettingStarted#15](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_5.cs)]  
   
 3.  Appuyez sur Ctrl \+ F5 pour exécuter l'application et visualiser les résultats dans la fenêtre de **console**.  
   
@@ -144,7 +144,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 1.  Le codage explicite de `IEnumerables` de `IGroupings` peut rapidement s'avérer laborieux.  Vous pouvez écrire la même requête et la même boucle `foreach` beaucoup plus facilement à l'aide de `var`.  Le mot clé `var` ne modifie pas les types de vos objets ; il indique simplement au compilateur de déduire les types.  Modifiez le type d' `studentQuery` et l'itération `group`variable par `var` et réexécuter la requête.  Notez que dans la boucle `foreach` interne, la variable d'itération est encore typée comme `Student` et que la requête fonctionne exactement comme précédemment.  Modifiez la variable d'itération `s` en `var` et exécutez à nouveau la requête.  Vous pouvez constater que les résultats obtenus sont exactement les mêmes.  
   
-     [!code-cs[CsLINQGettingStarted#16](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#16)]  
+     [!code-cs[CsLINQGettingStarted#16](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_6.cs)]  
   
      Pour plus d'informations sur [var](../../../../csharp/language-reference/keywords/var.md), consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
@@ -152,7 +152,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 1.  Lorsque vous exécutez la requête précédente, vous remarquez que les groupes ne sont pas dans l'ordre alphabétique.  Pour modifier cet ordre, vous devez fournir une clause `orderby` après la clause `group`.  Toutefois, pour utiliser une clause `orderby`, vous avez d'abord besoin d'un identificateur servant de référence aux groupes créés par la clause `group`.  Fournissez l'identificateur à l'aide du mot clé `into`, comme suit :  
   
-     [!code-cs[csLINQGettingStarted#17](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#17)]  
+     [!code-cs[csLINQGettingStarted#17](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_7.cs)]  
   
      Lorsque vous exécuterez cette requête, vous verrez que les groupes seront désormais classés dans l'ordre alphabétique.  
   
@@ -160,7 +160,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 1.  Vous pouvez utiliser le mot clé `let` pour introduire un identificateur pour tous les résultats d'expression dans l'expression de requête.  Cet identificateur peut être pratique, comme dans l'exemple suivant, ou améliorer les performances en stockant les résultats d'une expression afin d'éviter qu'ils ne soient calculés plusieurs fois.  
   
-     [!code-cs[csLINQGettingStarted#18](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#18)]  
+     [!code-cs[csLINQGettingStarted#18](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_8.cs)]  
   
      Pour plus d'informations, consultez [let, clause](../../../../csharp/language-reference/keywords/let-clause.md).  
   
@@ -168,17 +168,17 @@ Cette procédure pas à pas présente les fonctionnalités du langage C\# utilis
   
 1.  Comme décrit dans [Query Syntax and Method Syntax in LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md), certaines opérations de requête peuvent être exprimées uniquement à l'aide de la syntaxe de méthode.  Le code suivant calcule la note totale de chaque `Student` dans la séquence source, puis appelle la méthode `Average()` sur les résultats de cette requête pour calculer la note moyenne de la classe.  Notez la présence de parenthèses de part et d'autre de l'expression de requête.  
   
-     [!code-cs[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#19)]  
+     [!code-cs[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_9.cs)]  
   
 #### Pour transformer ou projeter la clause select  
   
 1.  Il n'est pas rare qu'une requête produise une séquence dont les éléments diffèrent des éléments des séquences sources.  Supprimez ou commentez votre requête et votre boucle d'exécution précédentes et remplacez\-les par le code suivant.  Notez que la requête retourne une séquence de chaînes \(pas de `Students`\) et que ce fait est répercuté dans la boucle `foreach`.  
   
-     [!code-cs[csLINQGettingStarted#20](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#20)]  
+     [!code-cs[csLINQGettingStarted#20](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_10.cs)]  
   
 2.  Le code utilisé précédemment dans cette procédure pas à pas indique que la note moyenne de la classe est d'environ 334.  Pour produire une séquence de `Students` dont la note totale est supérieure à la moyenne de classe, avec les `Student ID` correspondants, vous pouvez utiliser un type anonyme dans l'instruction `select` :  
   
-     [!code-cs[csLINQGettingStarted#21](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#21)]  
+     [!code-cs[csLINQGettingStarted#21](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_11.cs)]  
   
 ## Étapes suivantes  
  Une fois que vous êtes familiarisé avec les aspects de base de l'utilisation de requêtes en C\#, vous êtes prêt à lire la documentation et les exemples pour le type spécifique de fournisseur [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] qui vous intéresse :  

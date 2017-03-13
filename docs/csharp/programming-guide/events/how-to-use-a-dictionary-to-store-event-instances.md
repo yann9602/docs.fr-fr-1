@@ -19,7 +19,7 @@ caps.handback.revision: 16
 Une utilisation de `accessor-declarations` consiste à exposer un grand nombre d'événements sans allouer de champ pour chaque événement, mais en utilisant à la place un dictionnaire pour stocker les instances d'événements.  Ceci est utile uniquement si vous disposez de nombreux événements, mais que vous prévoyez que la plupart des événements ne seront pas implémentés.  
   
 ## Exemple  
- [!code-cs[csProgGuideEvents#9](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-use-a-dictionary-_1.cs)]  
+ [!code-cs[csProgGuideEvents#9](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-use-a-dictionary-to-store-event-instances_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

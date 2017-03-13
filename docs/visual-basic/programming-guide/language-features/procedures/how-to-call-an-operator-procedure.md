@@ -53,7 +53,7 @@ Vous devez appeler une procédure d'opérateur en utilisant le symbole d'opérat
 ## Exemple  
  L'exemple suivant crée deux structures <xref:System.TimeSpan>, les ajoute et stocke le résultat dans une troisième structure <xref:System.TimeSpan>.  La structure <xref:System.TimeSpan> définit des procédures d'opérateur pour surcharger plusieurs opérateurs standard.  
   
- [!code-vb[VbVbcnProcedures#29](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-operator-_1.vb)]  
+ [!code-vb[VbVbcnProcedures#29](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
   
  Étant donné que <xref:System.TimeSpan> surcharge l'opérateur `+` standard, l'exemple précédent appelle une procédure d'opérateur lorsqu'il calcule la valeur de `combinedSpan`.  
   

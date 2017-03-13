@@ -49,7 +49,7 @@ Lorsque vous écrivez votre code, vous pouvez être amené à créer de longues 
   
      Dans l'exemple ci\-dessous, l'instruction est répartie sur quatre lignes à l'aide de caractères de continuation terminant toutes les lignes à l'exception de la dernière.  
   
-     [!code-vb[VbVbcnConventions#20](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/how-to-break-and-combine_1.vb)]  
+     [!code-vb[VbVbcnConventions#20](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_1.vb)]  
   
      L'utilisation de cette séquence simplifie la lecture de votre code, tant à l'écran que sur papier.  
   
@@ -65,7 +65,7 @@ Lorsque vous écrivez votre code, vous pouvez être amené à créer de longues 
   
 -   Séparez les instructions par un caractère deux\-points \(`:`\), comme dans l'exemple suivant.  
   
-     [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/how-to-break-and-combine_2.vb)]  
+     [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_2.vb)]  
   
 ## Voir aussi  
  [Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)   

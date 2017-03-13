@@ -36,7 +36,7 @@ throw new MyException();
 ## Exemple  
  Cet exemple illustre la méthode de levée d'une exception avec l'instruction `throw`.  
   
- [!code-cs[csrefKeywordsExceptions#5](../../../csharp/language-reference/keywords/codesnippet/csharp/throw_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/throw_1.cs)]  
   
 ## Exemple de code  
  Consultez les exemples dans [try\-catch](../../../csharp/language-reference/keywords/try-catch.md) et [Comment : lever explicitement des exceptions](../Topic/How%20to:%20Explicitly%20Throw%20Exceptions.md).  

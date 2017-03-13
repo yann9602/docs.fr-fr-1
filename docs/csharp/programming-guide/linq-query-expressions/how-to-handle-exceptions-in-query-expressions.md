@@ -10,14 +10,14 @@ Il est possible d'appeler n'importe quelle méthode dans le contexte d'une expre
 ## Exemple  
  L'exemple suivant indique comment déplacer le code de gestion des exceptions à l'extérieur d'une expression de requête.  C'est possible uniquement lorsque la méthode ne dépend d'aucune variable locale de la requête.  
   
- [!code-cs[csProgGuideLINQ#10](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#10)]  
+ [!code-cs[csProgGuideLINQ#10](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-exceptions-in-query-expressions_1.cs)]  
   
 ## Exemple  
  Dans certains cas, la meilleure réponse à une exception levée depuis l'intérieur d'une requête peut être d'arrêter immédiatement l'exécution de la requête.  L'exemple suivant indique comment gérer des exceptions qui peuvent être levées depuis l'intérieur d'un corps de requête.  Supposez que `SomeMethodThatMightThrow` peut potentiellement lever une exception qui requiert l'arrêt de l'exécution de la requête.  
   
  Notez que le bloc `try` englobe la boucle `foreach` et pas la requête elle\-même.  Cela est dû au fait que la boucle `foreach` est le point auquel la requête est réellement exécutée.  Pour plus d'informations, consultez [Introduction to LINQ Queries \(C\#\)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
   
- [!code-cs[csProgGuideLINQ#12](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#12)]  
+ [!code-cs[csProgGuideLINQ#12](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-exceptions-in-query-expressions_2.cs)]  
   
 ## Compilation du code  
   

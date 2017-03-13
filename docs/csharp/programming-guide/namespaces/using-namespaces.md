@@ -26,32 +26,32 @@ Les espaces de noms sont énormément employés dans les programmes C\# de deux 
   
  Par exemple, en incluant la ligne :  
   
- [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/using.cs#1)]  
+ [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/using-namespaces_1.cs)]  
   
  Au démarrage d'un programme, le programmeur peut utiliser le code :  
   
- [!code-cs[csProgGuide#31](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#31)]  
+ [!code-cs[csProgGuide#31](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/using-namespaces_2.cs)]  
   
  à la place de :  
   
- [!code-cs[csProgGuide#30](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#30)]  
+ [!code-cs[csProgGuide#30](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/using-namespaces_3.cs)]  
   
 ## Alias d'espaces de noms  
  Les [using, directive](../../../csharp/language-reference/keywords/using-directive.md) peuvent également permettre de créer un alias pour un [espace de noms](../../../csharp/language-reference/keywords/namespace.md).  Par exemple, si vous utilisez un espace de noms écrit qui contient des espaces de noms imbriqués, déclarer un alias vous offre un moyen pratique d'en référencer un en particulier, comme suit :  
   
- [!code-cs[csProgGuideNamespaces#7](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces2.cs#7)]  
+ [!code-cs[csProgGuideNamespaces#7](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_4.cs)]  
   
 ## Utilisation d'espaces de noms pour contrôler la portée  
  Le mot clé `namespace` permet de déclarer une portée.  La capacité de créer des portées dans votre projet aide à organiser le code et vous permet de créer des types globalement uniques.  Dans l'exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l'une étant imbriquée dans l'autre.  [. Opérateur](../../../csharp/language-reference/operators/member-access-operator.md) est utilisé pour distinguer la méthode appelée.  
   
- [!code-cs[csProgGuideNamespaces#8](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#8)]  
+ [!code-cs[csProgGuideNamespaces#8](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_5.cs)]  
   
 ## Noms complets  
  Les espaces de noms et les types ont des titres uniques décrits par des noms qualifiés complets qui indiquent une hiérarchie logique.  Par exemple, l'instruction `A.B` implique que `A` est le nom de l'espace de noms ou du type, et que `B` est imbriqué à l'intérieur.  
   
  Dans l'exemple suivant, on trouve des classes et des espaces de noms imbriqués.  Le nom qualifié complet est indiqué sous la forme d'un commentaire à la suite de chaque entité.  
   
- [!code-cs[csProgGuideNamespaces#9](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#9)]  
+ [!code-cs[csProgGuideNamespaces#9](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_6.cs)]  
   
  Dans le segment de code précédent :  
   
@@ -65,27 +65,27 @@ Les espaces de noms sont énormément employés dans les programmes C\# de deux 
   
  En utilisant le segment de code précédent, vous pouvez ajouter une nouvelle classe membre `C3` à l'espace de noms `N1.N2`, comme suit :  
   
- [!code-cs[csProgGuideNamespaces#10](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#10)]  
+ [!code-cs[csProgGuideNamespaces#10](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_7.cs)]  
   
  En général, utilisez `::` pour référencer un alias d'espace de noms ou `global::` pour référencer l'espace de noms global et `.` pour qualifier des types ou des membres.  
   
  C'est une erreur d'utiliser `::` avec un alias qui référence un type au lieu d'un espace de noms.  Par exemple :  
   
- [!code-cs[csProgGuideNamespaces#11](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces2.cs#11)]  
+ [!code-cs[csProgGuideNamespaces#11](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_8.cs)]  
   
- [!code-cs[csProgGuideNamespaces#12](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces2.cs#12)]  
+ [!code-cs[csProgGuideNamespaces#12](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_9.cs)]  
   
  N'oubliez pas que le mot `global` n'est pas un alias prédéfini. Par conséquent, `global.X` n'a pas de signification particulière.  Il acquiert une signification particulière uniquement lorsqu'il est utilisé avec `::`.  
   
  L'avertissement du compilateur CS0440 est généré si vous définissez un alias nommé global, car `global::` référence toujours l'espace de noms global et pas un alias.  Par exemple, la ligne suivante génère l'avertissement  :  
   
- [!code-cs[csProgGuideNamespaces#13](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces2.cs#13)]  
+ [!code-cs[csProgGuideNamespaces#13](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_10.cs)]  
   
  L'utilisation de `::` avec des alias est une bonne idée et protège contre l'introduction inattendue de types supplémentaires.  Prenons l'exemple suivant :  
   
- [!code-cs[csProgGuideNamespaces#14](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#14)]  
+ [!code-cs[csProgGuideNamespaces#14](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_11.cs)]  
   
- [!code-cs[csProgGuideNamespaces#15](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#15)]  
+ [!code-cs[csProgGuideNamespaces#15](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/using-namespaces_12.cs)]  
   
  Il fonctionne, mais si un type nommé `Alias` est introduit par la suite, `Alias.` crée une liaison avec ce type à la place.  L'utilisation de `Alias::Exception` permet de s'assurer que cet `Alias` est traité comme un alias d'espace de noms et non pris pour un type.  
   

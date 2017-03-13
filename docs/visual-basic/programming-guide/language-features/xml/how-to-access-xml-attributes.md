@@ -28,7 +28,7 @@ caps.handback.revision: 18
 Cet exemple indique comment utiliser une propriété d'axe d'attribut pour accéder aux attributs XML d'un élément XML par nom.  Il utilise, en particulier, la propriété d'axe d'attribut `type` pour accéder à l'attribut nommé `type` dans l'objet `phone`.  
   
 ## Exemple  
- [!code-vb[VbXMLSamples#11](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-access-xml-attrib_1.vb)]  
+ [!code-vb[VbXMLSamples#11](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-access-xml-attributes_1.vb)]  
   
 ## Voir aussi  
  <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName>   

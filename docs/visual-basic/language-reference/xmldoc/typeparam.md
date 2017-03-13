@@ -45,7 +45,7 @@ Définit un nom de paramètre de type et une description.
 ## Exemple  
  Cet exemple utilise la balise `<typeparam>` pour décrire le paramètre `id`.  
   
- [!code-vb[VbVbcnXmlDocComments#8](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/typeparam_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#8](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/typeparam_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

@@ -38,7 +38,7 @@ Parties d'une requête LINQ
   
  En implémentant l'inférence de type local, également connue sous le nom de *type implicite*, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] rend le typage plus pratique.  Cette fonctionnalité est utilisée dans l'exemple précédent et vous verrez qu'elle est utilisée dans les exemples et la documentation [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)].  En Visual Basic, l'inférence de type local s'effectue en utilisant simplement une instruction `Dim` sans clause `As`.  Dans l'exemple suivant, `city` est fortement typé comme chaîne \(string\).  
   
- [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_1.vb)]  
+ [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
   
 > [!NOTE]
 >  L'inférence de type local fonctionne uniquement lorsque `Option Infer` a la valeur `On`.  Pour plus d'informations, consultez [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
@@ -47,16 +47,16 @@ Parties d'une requête LINQ
   
  Vous devrez peut\-être spécifier un type explicite pour une variable de portée qui ne correspond pas au type retourné par la source de données.  Vous pouvez spécifier le type de la variable de portée à l'aide d'une clause `As`.  Toutefois, une erreur se produit si la conversion est une [conversion restrictive](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) et que `Option Strict` a la valeur `On`.  Par conséquent, il est recommandé d'exécuter la conversion sur les valeurs récupérées à partir de la source de données.  Vous pouvez convertir les valeurs de la source de données en type de variable de portée explicite à l'aide de la méthode <xref:System.Linq.Enumerable.Cast%2A>.  Vous pouvez également effectuer un cast des valeurs sélectionnées dans la clause `Select` vers un type explicite qui est différent du type de la variable de portée.  Ces points sont illustrés dans le code suivant.  
   
- [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_2.vb)]  
+ [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_2.vb)]  
   
 ## Requêtes qui retournent des éléments entiers des données source  
  L'exemple suivant présente une opération de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] qui retourne une séquence d'éléments sélectionnés à partir des données source.  La source, `names`, contient un tableau de chaînes, et le résultat de la requête est une séquence contenant des chaînes qui commencent par la lettre M.  
   
- [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_3.vb)]  
+ [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_3.vb)]  
   
  Cela équivaut au code suivant, mais est beaucoup plus court et plus facile écrire.  Le style privilégié par Visual Basic est la fiabilité de l'inférence de type local dans les requêtes.  
   
- [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/type-relationships-in-qu_4.vb)]  
+ [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_4.vb)]  
   
  Les relations suivantes existent dans les deux exemples de code précédents, que les types soient déterminés implicitement ou explicitement.  
   

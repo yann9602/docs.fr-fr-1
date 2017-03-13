@@ -79,7 +79,7 @@ Les classes sont déclarées à l'aide du mot clé `class`, comme illustré dans
 ## Exemple  
  L'exemple suivant explique comment déclarer des champs, constructeurs et méthodes de classe.  Il illustre aussi l'instanciation d'un objet et l'impression des données d'une instance.  Dans cet exemple, deux classes sont déclarées. La première classe, `Child`, contient deux champs privés \(`name` et `age`\) et deux méthodes publiques.  La deuxième classe, `StringTest`, est utilisée pour contenir `Main`.  
   
- [!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/csharp/class_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]  
   
 ## Commentaires  
  Notez que, dans l'exemple qui précède, les champs privés \(`name` et `age`\) ne sont accessibles que par le biais des méthodes publiques de la classe `Child`.  Par exemple, vous ne pouvez pas imprimer le nom de l'enfant, à partir de la méthode `Main`, en utilisant une instruction de ce type :  

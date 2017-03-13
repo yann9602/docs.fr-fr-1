@@ -34,7 +34,7 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
   
 -   Utilisez la méthode `GetFiles` en fournissant le nom et le chemin d'accès du répertoire que vous souhaitez rechercher et en spécifiant le modèle.  L'exemple suivant retourne tous les fichiers avec l'extension `.dll` dans le répertoire et les ajoute à `ListBox1`.  
   
-     [!code-vb[VbFileIOMisc#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-find-files-with-a_1.vb)]  
+     [!code-vb[VbFileIOMisc#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-find-files-with-a-specific-pattern_1.vb)]  
   
 ## Sécurité .NET Framework  
  Les conditions ci\-dessous peuvent générer une exception.  

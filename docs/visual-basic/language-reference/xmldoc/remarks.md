@@ -44,7 +44,7 @@ Spécifie une section Notes pour le membre.
 ## Exemple  
  Cet exemple utilise la balise `<remarks>` pour expliquer le rôle de la méthode `UpdateRecord` retourne.  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/remarks_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/remarks_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

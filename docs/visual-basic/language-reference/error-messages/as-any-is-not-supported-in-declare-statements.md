@@ -30,11 +30,11 @@ Le type de données `Any` était utilisé avec les instructions `Declare` dans V
   
 1.  Déclarez les paramètres du type spécifique que vous souhaitez utiliser, comme dans l'exemple suivant.  
   
-     [!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/as-any-is-not-supported-_1.vb)]  
+     [!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]  
   
 2.  Utilisez l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour spécifier `As Any` lorsque `Void*` est attendu par la procédure appelée.  
   
-     [!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/as-any-is-not-supported-_2.vb)]  
+     [!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]  
   
 ## Voir aussi  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>   

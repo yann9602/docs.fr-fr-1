@@ -19,7 +19,7 @@ caps.handback.revision: 31
 # Structures (Guide de programmation C#)
 Les structs sont définis à l'aide du mot clé [struct](../../../csharp/language-reference/keywords/struct.md), par exemple :  
   
- [!code-cs[csProgGuideObjects#39](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#39](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/structs_1.cs)]  
   
  Les structs partagent presque tous la même syntaxe que les classes, bien qu'ils soient plus limités que ces dernières :  
   

@@ -37,14 +37,14 @@ Le mot clé `base` sert à accéder aux membres de la classe de base à partir d
 ## Exemple  
  Dans cet exemple, la classe de base `Person` et la classe dérivée `Employee` possèdent toutes les deux une méthode nommée `Getinfo`.  En utilisant le mot clé `base`, il est possible d'appeler la méthode `Getinfo` de la classe de base à partir de la classe dérivée.  
   
- [!code-cs[csrefKeywordsAccess#1](../../../csharp/language-reference/keywords/codesnippet/csharp/base_1.cs)]  
+ [!code-cs[csrefKeywordsAccess#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_1.cs)]  
   
  Pour d'autres exemples, consultez [new](../../../csharp/language-reference/keywords/new.md), [virtual](../../../csharp/language-reference/keywords/virtual.md) et [override](../../../csharp/language-reference/keywords/override.md).  
   
 ## Exemple  
  Cet exemple indique comment spécifier le constructeur de classe de base appelé lors de la création d'instances d'une classe dérivée.  
   
- [!code-cs[csrefKeywordsAccess#2](../../../csharp/language-reference/keywords/codesnippet/csharp/base_2.cs)]  
+ [!code-cs[csrefKeywordsAccess#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

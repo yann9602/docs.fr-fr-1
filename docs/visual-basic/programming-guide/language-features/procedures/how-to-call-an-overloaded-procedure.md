@@ -37,9 +37,9 @@ L'avantage présenté par la surcharge d'une procédure réside dans la flexibil
   
      L'exemple suivant appelle la procédure `post` déclarée dans [How to: Define Multiple Versions of a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-multiple-versions-of-a-procedure.md).  Il obtient l'identification de client, détermine si c'est un `String` ou un `Integer` puis, dans les deux cas, appelle la même procédure.  
   
-     [!code-vb[VbVbcnProcedures#56](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-overloade_1.vb)]  
+     [!code-vb[VbVbcnProcedures#56](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_1.vb)]  
   
-     [!code-vb[VbVbcnProcedures#57](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-an-overloade_2.vb)]  
+     [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/how-to-call-an-overloaded-procedure_2.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

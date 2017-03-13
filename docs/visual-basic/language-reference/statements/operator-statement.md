@@ -176,7 +176,7 @@ End Operator
 ## Exemple  
  L'exemple de code suivant utilise l'instruction `Operator` pour définir le plan d'une structure qui inclut des procédures d'opérateur pour les opérateurs `And`, `Or`, `IsFalse` et `IsTrue`.  `And` et `Or` acceptent chacun deux opérandes de type `abc` et retournent le type `abc`.  `IsFalse` et `IsTrue` acceptent chacun un opérande unique de type `abc` et retournent `Boolean`.  Ces définitions permettent au code appelant d'utiliser `And`, `AndAlso`, `Or` et `OrElse` avec des opérandes de type `abc`.  
   
- [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/operator-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
   
 ## Voir aussi  
  [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   

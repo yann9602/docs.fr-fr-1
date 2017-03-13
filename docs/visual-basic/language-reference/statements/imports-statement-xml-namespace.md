@@ -56,7 +56,7 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## Exemple  
  L'exemple suivant importe un espace de noms XML par défaut et un espace de noms XML identifié par le préfixe `ns`.  Il crée ensuite des littéraux XML qui utilisent les deux espaces de noms.  
   
- [!code-vb[VbXMLSamples#45](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/imports-statement-xml-na_1.vb)]  
+ [!code-vb[VbXMLSamples#45](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_1.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -72,7 +72,7 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## Exemple  
  L'exemple suivant importe le préfixe d'espace de noms XML `ns`.  Il crée alors un littéral XML qui utilise le préfixe d'espace de noms et affiche le formulaire final de l'élément.  
   
- [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/imports-statement-xml-na_2.vb)]  
+ [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_2.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -90,7 +90,7 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## Exemple  
  L'exemple suivant importe le préfixe d'espace de noms XML `ns`.  Il utilise alors le préfixe de l'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié `ns:name`.  
   
- [!code-vb[VbXMLSamples#19](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/imports-statement-xml-na_3.vb)]  
+ [!code-vb[VbXMLSamples#19](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/imports-statement-xml-namespace_3.vb)]  
   
  Ce code affiche le texte suivant :  
   

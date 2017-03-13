@@ -49,11 +49,11 @@ Entraîne le compilateur à donner des informations de type dans le ou les fichi
 ## Exemple  
  Le code suivant crée un module.  
   
- [!code-vb[VbVbalrCompiler#47](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/addmodule_1.vb)]  
+ [!code-vb[VbVbalrCompiler#47](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_1.vb)]  
   
  Le code suivant importe les types du module.  
   
- [!code-vb[VbVbalrCompiler#48](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/addmodule_2.vb)]  
+ [!code-vb[VbVbalrCompiler#48](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_2.vb)]  
   
  Lorsque vous exécutez `t1`, la sortie correspond à `802`.  
   

@@ -23,7 +23,7 @@ Vous pouvez stocker plusieurs variables du même type dans une structure de donn
   
  Les exemples suivants créent des tableaux unidimensionnels, multidimensionnels et en escalier :  
   
- [!code-cs[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
 ## Vue d'ensemble des tableaux  
  Un tableau possède les propriétés suivantes :  

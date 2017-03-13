@@ -21,7 +21,7 @@ En C\# 2.0 et versions ultérieures, les tableaux unidimensionnels qui ont une 
   
  L'exemple de code suivant montre comment une méthode générique seule qui prend un paramètre d'entrée <xref:System.Collections.Generic.IList%601> peut itérer à la fois au sein d'une liste et d'un tableau \(en l'occurrence un tableau d'entiers\).  
   
- [!code-cs[csProgGuideGenerics#35](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-and-arrays_1.cs)]  
+ [!code-cs[csProgGuideGenerics#35](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-and-arrays_1.cs)]  
   
 ## Voir aussi  
  <xref:System.Collections.Generic>   

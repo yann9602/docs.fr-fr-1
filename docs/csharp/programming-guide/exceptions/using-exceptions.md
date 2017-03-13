@@ -21,21 +21,21 @@ En C\#, les erreurs qui se produisent dans le programme au moment de l'exécutio
   
  Les exceptions sont représentées par des classes dérivées de <xref:System.Exception>.  Cette classe identifie le type d'exception et contient les propriétés détaillées sur l'exception.  Lever une exception implique de créer une instance d'une classe dérivée d'exception, de configurer les propriétés de l'exception, le cas échéant, puis de lever l'objet à l'aide du mot clé `throw`.  Par exemple :  
   
- [!code-cs[csProgGuideExceptions#1](../../../csharp/programming-guide/exceptions/codesnippet/csharp/using-exceptions_1.cs)]  
+ [!code-cs[csProgGuideExceptions#1](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_1.cs)]  
   
  Après avoir levé une exception, le runtime vérifie l'instruction actuelle pour voir si elle se trouve au sein d'un bloc `try`.  Si tel est le cas, tous les blocs `catch` associés au bloc `try` font l'objet d'un contrôle permettant de déterminer s'ils peuvent intercepter l'exception.  Les blocs `Catch` spécifient généralement des types d'exception ; si le type du bloc `catch` est identique à celui de l'exception, ou d'une classe de base de l'exception, le bloc `catch` peut gérer la méthode.  Par exemple :  
   
- [!code-cs[csProgGuideExceptions#2](../../../csharp/programming-guide/exceptions/codesnippet/csharp/using-exceptions_2.cs)]  
+ [!code-cs[csProgGuideExceptions#2](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_2.cs)]  
   
  Si l'instruction qui lève une exception ne se trouve pas à l'intérieur d'un bloc `try`, ou si le bloc `try` qui la contient n'a pas de bloc `catch` correspondant, le runtime vérifie que la méthode d'appel dispose d'une instruction `try` et de blocs `catch`.  Le runtime continue jusqu'à la pile appelante, à la recherche d'un bloc `catch` compatible.  Une fois le bloc `catch` trouvé et exécuté, le contrôle est passé à l'instruction suivante après le bloc `catch`.  
   
  Une instruction `try` peut contenir plusieurs blocs `catch`.  La première instruction `catch` qui peut gérer l'exception est exécutée ; toutes les instructions `catch` suivantes, même compatibles, sont ignorées.  Par conséquent, les blocs catch doivent toujours être classés du plus spécifique \(ou plus dérivé\) au moins spécifique.  Par exemple :  
   
- [!code-cs[csProgGuideExceptions#3](../../../csharp/programming-guide/exceptions/codesnippet/csharp/using-exceptions_3.cs)]  
+ [!code-cs[csProgGuideExceptions#3](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_3.cs)]  
   
  Avant que le bloc `catch` ne soit exécuté, le runtime vérifie la présence de blocs `finally`.  Les blocs `Finally` permettent au programmeur de nettoyer tout état ambigu qui pourrait subsister après l'abandon d'un bloc `try` ou de libérer les ressources externes \(telles que les handles graphiques, les connexions de bases de données ou les flux de fichiers\) sans attendre que le garbage collector du runtime ne finalise les objets.  Par exemple :  
   
- [!code-cs[csProgGuideExceptions#4](../../../csharp/programming-guide/exceptions/codesnippet/csharp/using-exceptions_4.cs)]  
+ [!code-cs[csProgGuideExceptions#4](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_4.cs)]  
   
  Si `WriteByte()` a levé une exception, le code du deuxième bloc `try` qui essaie de rouvrir le fichier échoue si `file.Close()` n'est pas appelé et le fichier reste verrouillé.  Étant donné que les blocs `finally` sont exécutés même lorsqu'une exception est levée, le bloc `finally` de l'exemple précédent autorise le fichier à être fermé correctement et permet d'éviter une erreur.  
   

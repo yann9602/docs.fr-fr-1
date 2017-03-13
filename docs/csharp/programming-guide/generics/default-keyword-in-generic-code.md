@@ -27,7 +27,7 @@ Dans les classes et méthodes génériques se pose le problème de savoir commen
   
  L'exemple suivant de la classe `GenericList<T>` montre comment utiliser le mot clé `default`.  Pour plus d'informations, consultez [Vue d'ensemble des génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md).  
   
- [!code-cs[csProgGuideGenerics#41](../../../csharp/programming-guide/generics/codesnippet/csharp/default-keyword-in-gener_1.cs)]  
+ [!code-cs[csProgGuideGenerics#41](../../../csharp/programming-guide/generics/codesnippet/CSharp/default-keyword-in-generic-code_1.cs)]  
   
 ## Voir aussi  
  <xref:System.Collections.Generic>   

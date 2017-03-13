@@ -27,11 +27,11 @@ Une définition de classe ou de struct ressemble à un plan qui spécifie ce que
   
  Les instances de classes sont créées à l'aide du [nouvel opérateur](../../../csharp/language-reference/keywords/new-operator.md).  Dans l'exemple suivant, `Person` est le type et `person1` et `person 2` sont des instances, ou objets, de ce type.  
   
- [!code-cs[csProgGuideStatements#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_1.cs)]  
+ [!code-cs[csProgGuideStatements#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_1.cs)]  
   
  Parce que les structs sont des types valeur, une variable d'objet de struct conserve une copie de l'objet entier.  Les instances de structs peuvent également être créées à l'aide de l'opérateur `new`, mais cela n'est pas obligatoire, comme illustré dans l'exemple suivant :  
   
- [!code-cs[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_2.cs)]  
+ [!code-cs[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_2.cs)]  
   
  La mémoire pour `p1` et `p2` est allouée sur la pile des threads.  Cette mémoire est récupérée avec le type ou la méthode dans laquelle elle est déclarée.  C'est l'une des raisons pour lesquelles les structs sont copiés lors de l'assignation.  Par contraste, la mémoire allouée pour une instance de classe est récupérée automatiquement \(par le garbage collector\) par le Common Language Runtime lorsque toutes les références à l'objet sont sorties de la portée.  Il n'est pas possible de détruire de façon déterministe un objet de classe comme cela est possible en C\+\+.  Pour plus d'informations sur le garbage collection dans [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)], consultez [Garbage Collection](../Topic/Garbage%20Collection.md).  
   
@@ -45,7 +45,7 @@ Une définition de classe ou de struct ressemble à un plan qui spécifie ce que
   
 -   Pour déterminer si les champs d'instance dans deux instances de struct ont les mêmes valeurs, utilisez la méthode <xref:System.ValueType.Equals%2A?displayProperty=fullName>.  Étant donné que tous les structs héritent implicitement de <xref:System.ValueType?displayProperty=fullName>, vous appelez directement la méthode sur votre objet comme indiqué dans l'exemple suivant :  
   
- [!code-cs[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/objects_3.cs)]  
+ [!code-cs[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_3.cs)]  
   
  L'implémentation <xref:System.ValueType?displayProperty=fullName> de `Equals` utilise la réflexion parce qu'elle doit être en mesure de déterminer la nature des champs dans tout struct.  Lorsque vous créez vos propres structs, remplacez la méthode `Equals` pour fournir un algorithme d'égalité efficace et spécifique à votre type.  
   

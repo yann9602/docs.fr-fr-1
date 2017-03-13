@@ -74,7 +74,7 @@ object.@<attribute>
 ## Exemple  
  L'exemple suivant illustre comment obtenir les valeurs des attributs XML nommés `type` à partir d'une collection d'éléments XML nommés `phone`.  
   
- [!code-vb[VbXMLSamples#12](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_1.vb)]  
+ [!code-vb[VbXMLSamples#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_1.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -89,7 +89,7 @@ object.@<attribute>
 ## Exemple  
  L'exemple suivant indique comment créer des attributs pour un élément XML de façon déclarative, dans le cadre du XML, et dynamiquement en ajoutant un attribut à une instance d'un objet <xref:System.Xml.Linq.XElement>.  L'attribut `type` est créé de façon déclarative tandis que l'attribut `owne` est créé dynamiquement.  
   
- [!code-vb[VbXMLSamples#44](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_2.vb)]  
+ [!code-vb[VbXMLSamples#44](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_2.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -100,7 +100,7 @@ object.@<attribute>
 ## Exemple  
  L'exemple suivant utilise la syntaxe de crochets pointus pour obtenir la valeur de l'attribut XML nommé `number-type`, qui n'est pas un identificateur valide dans [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)].  
   
- [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_3.vb)]  
+ [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_3.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -109,7 +109,7 @@ object.@<attribute>
 ## Exemple  
  L'exemple suivant déclare `ns` en tant que préfixe d'espace de noms XML.  Il utilise alors le préfixe de l'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié "`ns:name`".  
   
- [!code-vb[VbXMLSamples#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-attribute-axis-prope_4.vb)]  
+ [!code-vb[VbXMLSamples#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_4.vb)]  
   
  Ce code affiche le texte suivant :  
   

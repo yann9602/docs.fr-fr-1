@@ -41,7 +41,7 @@ Indique que le texte contient plusieurs lignes de code.
 ## Exemple  
  Cet exemple utilise la balise \<code\> pour inclure l'exemple de code pour utiliser le champ `ID`.  
   
- [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/code_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/code_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

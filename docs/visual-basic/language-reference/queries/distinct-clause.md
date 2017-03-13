@@ -38,7 +38,7 @@ Distinct
 ## Exemple  
  L'expression de requête suivante joint une liste de clients et une liste de commandes passées par ces clients.  La clause `Distinct` est incluse pour retourner une liste de noms de clients et de dates de commandes uniques.  
   
- [!code-vb[VbSimpleQuerySamples#20](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#20)]  
+ [!code-vb[VbSimpleQuerySamples#20](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/distinct-clause_1.vb)]  
   
 ## Voir aussi  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

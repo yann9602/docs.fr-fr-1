@@ -71,7 +71,7 @@ End Function
 ## Exemple  
  L'exemple suivant montre comment appeler une procédure avec des arguments passés par position et avec des arguments passés par nom.  La procédure a deux paramètres optionnels.  
   
- [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/visualbasic/optional_1.vb)]  
+ [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/VisualBasic/optional_1.vb)]  
   
 ## Voir aussi  
  [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   

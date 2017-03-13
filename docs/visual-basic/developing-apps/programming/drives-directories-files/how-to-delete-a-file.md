@@ -30,19 +30,19 @@ La méthode `DeleteFile` de l'objet `My.Computer.FileSystem` vous permet de supp
   
 -   Utilisez la méthode `DeleteFile` pour supprimer le fichier.  Le code suivant illustre comment supprimer le fichier nommé `test.txt`.  
   
-     [!code-vb[VbVbcnMyFileSystem#22](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#22](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_1.vb)]  
   
 ### Pour supprimer un fichier texte et demander à l'utilisateur de confirmer que le fichier doit être supprimé  
   
 -   Utilisez la méthode `DeleteFile` pour supprimer le fichier, en affectant `showUI` à `AllDialogs`.  Le code suivant illustre comment supprimer le fichier nommé `test.txt` et permettre à l'utilisateur de confirmer que le fichier doit être supprimé.  
   
-     [!code-vb[VbFileIOMisc#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_2.vb)]  
+     [!code-vb[VbFileIOMisc#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_2.vb)]  
   
 ### Pour supprimer un fichier texte et l'envoyer à la Corbeille  
   
 -   Utilisez la méthode `DeleteFile` pour supprimer le fichier, en spécifiant `SendToRecycleBin` pour le paramètre `recycle`.  Le code suivant illustre comment supprimer le fichier nommé `test.txt` et l'envoyer à la **Corbeille**.  
   
-     [!code-vb[VbFileIOMisc#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-delete-a-file_3.vb)]  
+     [!code-vb[VbFileIOMisc#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-delete-a-file_3.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

@@ -28,7 +28,7 @@ La *compilation conditionnelle* permet de compiler de façon sélective des bloc
   
  Vous désignez des blocs de code à compiler de façon conditionnelle avec la directive `#If...Then...#Else`.  Pour créer, par exemple, des versions en langue française et allemande de la même application à partir du même code source, incorporez des segments de code propres à la plateforme dans des instructions `#If...Then` à l'aide des constantes prédéfinies `FrenchVersion` et `GermanVersion`.  L'exemple suivant vous indique comment procéder :  
   
- [!code-vb[VbVbalrConditionalComp#5](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/conditional-compilation_1.vb)]  
+ [!code-vb[VbVbalrConditionalComp#5](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/conditional-compilation_1.vb)]  
   
  Si vous attribuez à la constante de compilation conditionnelle `FrenchVersion` la valeur `True` au moment de la compilation, le code conditionnel de la version française est compilé.  Si vous attribuez la valeur `True` à la constante `GermanVersion`, le compilateur utilise la version allemande.  Si aucune des deux n'a la valeur `True`, c'est le code écrit dans le dernier bloc `Else` qui est exécuté.  
   

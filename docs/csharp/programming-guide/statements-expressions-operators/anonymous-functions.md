@@ -34,7 +34,7 @@ Une fonction anonyme est une instruction ou expression "inline" qui peut être u
   
  L'exemple suivant montre l'évolution de la création de délégué de C\# 1.0 à C\# 3.0 :  
   
- [!code-cs[csProgGuideLINQ#65](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#65)]  
+ [!code-cs[csProgGuideLINQ#65](../../../csharp/programming-guide/arrays/codesnippet/CSharp/anonymous-functions_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

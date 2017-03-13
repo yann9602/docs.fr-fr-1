@@ -25,7 +25,7 @@ Une utilisation de la combinaison de `catch` et `finally` permet d'obtenir et d'
  Pour plus d'informations et d'exemples sur la relève d'exceptions, consultez [try\-catch](../../../csharp/language-reference/keywords/try-catch.md) et [Levées d'exceptions](../Topic/How%20to:%20Explicitly%20Throw%20Exceptions.md).  Pour plus d'informations sur le bloc d' `finally` , consultez [try\-finally](../../../csharp/language-reference/keywords/try-finally.md).  
   
 ## Exemple  
- [!code-cs[csrefKeywordsExceptions#1](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch-finally_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch-finally_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

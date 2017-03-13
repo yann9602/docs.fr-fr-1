@@ -44,7 +44,7 @@ Le compilateur [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/l
 ## Exemples  
  L'exemple suivant contient deux éléments XML, externe et interne.  Ces deux éléments contiennent un espace blanc dans leur contenu de texte.  L'espace blanc de l'élément externe est insignifiant, parce qu'il ne contient qu'un espace blanc et un élément XML.  L'espace blanc de l'élément interne est significatif, parce qu'il contient un espace blanc et du texte.  
   
- [!code-vb[VbXMLSamples#29](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/white-space-in-xml-liter_1.vb)]  
+ [!code-vb[VbXMLSamples#29](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/white-space-in-xml-literals_1.vb)]  
   
  Au moment de l'exécution ce code affiche le texte suivant.  
   

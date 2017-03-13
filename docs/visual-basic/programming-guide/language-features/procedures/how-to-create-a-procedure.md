@@ -60,7 +60,7 @@ Vous insérez une procédure entre une instruction de déclaration initiale \(`S
 ## Exemple  
  La procédure `Function` suivante calcule le côté le plus long, ou hypoténuse, d'un triangle rectangle, d'après les valeurs des deux autres côtés.  
   
- [!code-vb[VbVbcnProcedures#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-create-a-procedure_1.vb)]  
+ [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-create-a-procedure_1.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

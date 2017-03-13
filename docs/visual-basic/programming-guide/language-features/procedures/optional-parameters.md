@@ -57,12 +57,12 @@ sub name(argument 1, , , argument 4)
   
  Le premier appel à `MsgBox` fournit les trois arguments dans l'ordre dans lequel `MsgBox` les définit.  Le deuxième appel fournit uniquement l'argument requis.  Le troisième et le quatrième appel fournissent le premier et le troisième argument.  Le troisième appel le fait par position et le quatrième appel le fait par nom.  
   
- [!code-vb[VbVbcnProcedures#47](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/optional-parameters_1.vb)]  
+ [!code-vb[VbVbcnProcedures#47](./codesnippet/VisualBasic/optional-parameters_1.vb)]  
   
 ## Détermination de la présence d'un argument facultatif  
  Une procédure ne peut pas détecter au moment de l'exécution si un argument donné a été omis ou si le code appelant a explicitement fourni la valeur par défaut.  Pour établir cette distinction, vous pouvez définir une valeur improbable comme valeur par défaut.  La procédure suivante définit le paramètre facultatif  `office`, puis teste sa valeur par défaut,  `QJZ`, pour déterminer s'il a été omis dans l'appel :  
   
- [!code-vb[VbVbcnProcedures#46](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/optional-parameters_2.vb)]  
+ [!code-vb[VbVbcnProcedures#46](./codesnippet/VisualBasic/optional-parameters_2.vb)]  
   
  Si le paramètre facultatif est un type référence tel que `String`, vous pouvez utiliser `Nothing` comme valeur par défaut, à condition qu'il ne s'agisse pas d'une valeur attendue pour l'argument.  
   

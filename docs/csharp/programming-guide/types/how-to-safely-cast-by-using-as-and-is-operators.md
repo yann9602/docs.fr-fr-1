@@ -23,7 +23,7 @@ Parce que les objets sont polymorphes, la variable d'un type de classe de base p
 ## Exemple  
  Les exemples suivants indiquent comment utiliser les opérateurs `is` et `as` pour effectuer un cast d'un type référence en un autre sans risquer de lever une exception.  Ils montrent également comment utiliser l'opérateur `as` avec des types valeur Nullable.  
   
- [!code-cs[csProgGuideTypes#40](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-safely-cast-by-us_1.cs)]  
+ [!code-cs[csProgGuideTypes#40](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-safely-cast-by-using-as-and-is-operators_1.cs)]  
   
 ## Voir aussi  
  [Types](../../../csharp/programming-guide/types/index.md)   

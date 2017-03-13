@@ -55,7 +55,7 @@ Cette procédure pas à pas explique comment déclarer et déclencher des évén
   
 -   Utilisez le mot clé `Event` pour déclarer un événement dans la classe `Widget`.  Notez qu'un événement peut comporter des arguments `ByVal` et `ByRef`, comme l'illustre l'événement `PercentDone` de `Widget` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#1)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#1](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_1.vb)]  
   
  Lorsque l'objet appelant reçoit un événement `PercentDone`, l'argument `Percent` contient le pourcentage de tâche réalisé.  L'argument `Cancel` peut avoir la valeur `True` pour annuler la méthode ayant déclenché l'événement.  
   
@@ -68,11 +68,11 @@ Cette procédure pas à pas explique comment déclarer et déclencher des évén
   
 1.  Pour simplifier l'accès à la propriété `Timer` utilisée par cette classe, ajoutez une instruction `Imports` en haut de la section des déclarations de votre module de classe, au\-dessus de l'instruction `Class Widget`.  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#2)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#2](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_2.vb)]  
   
 2.  Ajoutez le code suivant à la classe `Widget` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Widget.vb#3)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#3](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-declaring-and-raising-events_3.vb)]  
   
  Lorsque votre application appelle la méthode `LongTask`, la classe `Widget` déclenche l'événement `PercentDone` chaque `MinimumInterval` seconde.  Lorsque l'événement est retourné, la méthode `LongTask` contrôle si l'argument `Cancel` avait la valeur `True`.  
   

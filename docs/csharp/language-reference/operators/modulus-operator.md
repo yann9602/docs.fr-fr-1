@@ -25,7 +25,7 @@ l'opérateur d' `%` calcule le reste après avoir divisé son premier opérande 
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `%` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#9](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#9)]  
+ [!code-cs[csRefOperators#9](../../../csharp/language-reference/operators/codesnippet/CSharp/modulus-operator_1.cs)]  
   
 ## Commentaires  
  Notez les erreurs d'arrondi associées au type double.  

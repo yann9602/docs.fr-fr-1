@@ -24,7 +24,7 @@ Le mot clé contextuel `equals` est utilisé dans une clause `join` dans une exp
 ## Exemple  
  L'exemple suivant illustre l'utilisation du mot clé `equals` dans une clause `join`.  
   
- [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/csharp/equals_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/equals_1.cs)]  
   
 ## Voir aussi  
  [Expressions de requête \(LINQ\)](../../../csharp/programming-guide/linq-query-expressions/index.md)

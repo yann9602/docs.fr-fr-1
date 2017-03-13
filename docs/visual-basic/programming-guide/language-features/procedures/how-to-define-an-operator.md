@@ -39,11 +39,11 @@ Si vous avez défini une classe ou une structure, vous pouvez définir le compor
 ## Exemple  
  L'exemple suivant définit l'opérateur `+` pour une structure appelée  `height`.  La structure utilise des hauteurs exprimées en pieds et pouces.  Un *pouce* équivaut à 2,54 centimètres et un *pied* équivaut à 12 pouces.  Pour garantir des valeurs normalisées \(pouces \< 12,0\), le constructeur exécute une arithmétique *modulo* 12.  L'opérateur `+` utilise le constructeur pour générer des valeurs normalisées.  
   
- [!code-vb[VbVbcnProcedures#25](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-an-operator_1.vb)]  
+ [!code-vb[VbVbcnProcedures#25](./codesnippet/VisualBasic/how-to-define-an-operator_1.vb)]  
   
  Vous pouvez tester la structure  `height`  à l'aide du code suivant.  
   
- [!code-vb[VbVbcnProcedures#26](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-an-operator_2.vb)]  
+ [!code-vb[VbVbcnProcedures#26](./codesnippet/VisualBasic/how-to-define-an-operator_2.vb)]  
   
  Pour plus d'informations et d'exemples, consultez la page [Surcharge d'opérateur dans Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703) \(en anglais\).  
   

@@ -41,7 +41,7 @@ Spécifie la classe ou le module qui contient la procédure `Sub Main`.
   
  Lorsque `location` est une classe qui hérite de <xref:System.Windows.Forms.Form>, le compilateur fournit une procédure `Main` par défaut qui démarre l'application si la classe n'a aucune procédure `Main`.  Cela vous permet de compiler le code à partir de la ligne de commande créée dans l'environnement de développement.  
   
- [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/main_1.vb)]  
+ [!code-vb[VbVbalrCompiler#16](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/main_1.vb)]  
   
 ### Pour définir \/main dans l'environnement de développement intégré Visual Studio  
   

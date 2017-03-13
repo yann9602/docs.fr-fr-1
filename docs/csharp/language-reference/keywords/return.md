@@ -27,7 +27,7 @@ L'instruction `return` termine l'exécution de la méthode où elle apparaît et
 ## Exemple  
  Dans l'exemple suivant, la méthode `A()` retourne la variable `Area` comme une valeur [double](../../../csharp/language-reference/keywords/double.md).  
   
- [!code-cs[csrefKeywordsJump#6](../../../csharp/language-reference/keywords/codesnippet/csharp/return_1.cs)]  
+ [!code-cs[csrefKeywordsJump#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/return_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

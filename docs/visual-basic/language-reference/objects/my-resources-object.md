@@ -61,29 +61,29 @@ Fournit des propriétés et des classes pour accéder aux ressources de l'applic
 ## Exemple  
  Cet exemple définit le titre d'un formulaire la ressource de type chaîne nommée `Form1Title` dans le fichier de ressources de l'application.  Pour que l'exemple fonctionne, l'application doit avoir une chaîne nommée `Form1Title` dans son fichier de ressources.  Pour plus d'informations, consultez [How to: Add or Remove Resources](http://msdn.microsoft.com/fr-fr/7b77bc06-3952-4799-b029-def3f8f7f88d).  
   
- [!code-vb[VbVbalrMyResources#1](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#1)]  
+ [!code-vb[VbVbalrMyResources#1](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_1.vb)]  
   
 ## Exemple  
  Cet exemple affecte à l'icône du formulaire l'icône nommée `Form1Icon` qui est enregistrée dans le fichier de ressources de l'application.  Pour que l'exemple fonctionne, l'application doit avoir une icône nommée `Form1Icon` dans son fichier de ressources.  
   
- [!code-vb[VbVbalrMyResources#2](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#2)]  
+ [!code-vb[VbVbalrMyResources#2](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_2.vb)]  
   
 ## Exemple  
  Cet exemple affecte l'image d'arrière\-plan d'un formulaire à la ressource d'image nommée `Form1Background`, qui se trouve dans le fichier de ressources de l'application.  Pour que cet exemple fonctionne, l'application doit avoir une ressource d'image nommée `Form1Background` dans son fichier de ressources.  
   
- [!code-vb[VbVbalrMyResources#3](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#3)]  
+ [!code-vb[VbVbalrMyResources#3](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_3.vb)]  
   
 ## Exemple  
  Cet exemple lit le son stocké comme une ressource audio nommée `Form1Greeting` dans le fichier de ressources de l'application.  Pour que l'exemple fonctionne, l'application doit avoir une ressource audio nommée `Form1Greeting` dans son fichier de ressources.  La méthode `My.Computer.Audio.Play` n'est disponible que pour les applications Windows Forms.  
   
- [!code-vb[VbVbalrMyResources#4](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#4)]  
+ [!code-vb[VbVbalrMyResources#4](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_4.vb)]  
   
 ## Exemple  
  Cet exemple récupère la version de culture française d'une ressource de type chaîne de l'application.  la ressource est nommée `Message`.  pour modifier la culture que les utilisations d'objet d' `My.Resources` , l'exemple utilise <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.  
   
  Pour que cet exemple fonctionne, l'application doit avoir une chaîne nommée `Message` dans son fichier de ressources, et l'application doit utiliser la version de culture française de ce fichier de ressources, Resources.fr\-FR.resx.  Pour plus d'informations, consultez [How to: Add or Remove Resources](http://msdn.microsoft.com/fr-fr/7b77bc06-3952-4799-b029-def3f8f7f88d).  Si l'application n'a pas la version de culture française du fichier de ressources, l'objet d' `My.Resource` récupère la ressource du fichier de ressources de la culture par défaut.  
   
- [!code-vb[VbVbalrMyResources#10](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#10)]  
+ [!code-vb[VbVbalrMyResources#10](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_5.vb)]  
   
 ## Voir aussi  
  [How to: Add or Remove Resources](http://msdn.microsoft.com/fr-fr/7b77bc06-3952-4799-b029-def3f8f7f88d)   

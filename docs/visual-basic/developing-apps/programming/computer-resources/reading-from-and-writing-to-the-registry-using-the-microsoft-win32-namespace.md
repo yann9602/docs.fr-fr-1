@@ -42,11 +42,11 @@ Même si `My.Computer.Registry` doit normalement couvrir vos principaux besoins 
 ## <a name="reading-a-value-from-the-registry"></a>Lecture d’une valeur à partir du Registre  
  Le code suivant montre comment lire une chaîne à partir de HKEY_CURRENT_USER.  
   
- [!code-vb[VbResourceTasks#20](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/reading-from-and-writing_1.vb)]  
+ [!code-vb[VbResourceTasks#20](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace_1.vb)]  
   
  Le code suivant lit, incrémente puis écrit une chaîne dans HKEY_CURRENT_USER.  
   
- [!code-vb[VbResourceTasks#21](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/reading-from-and-writing_2.vb)]  
+ [!code-vb[VbResourceTasks#21](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace_2.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.SystemException>   

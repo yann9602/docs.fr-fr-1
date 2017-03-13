@@ -24,7 +24,7 @@ En C\#, les arguments peuvent être passés aux paramètres par valeur ou par r�
   
  L'exemple suivant illustre la différence entre paramètres de valeur et de référence.  
   
- [!code-cs[csProgGuideParameters#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/passing-parameters_1.cs)]  
+ [!code-cs[csProgGuideParameters#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/passing-parameters_1.cs)]  
   
  Pour plus d'informations, consultez les rubriques suivantes :  
   

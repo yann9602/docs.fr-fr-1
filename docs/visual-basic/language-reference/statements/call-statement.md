@@ -49,7 +49,7 @@ Transfère le contrôle à une procédure `Function`, `Sub` ou à une procédure
 ## Exemple  
  Le code suivant présente deux situations où le mot clé d' `Call` est nécessaire pour appeler une procédure.  Dans les deux exemples, l'expression appelée ne commence pas par un identificateur.  
   
- [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/call-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/call-statement_1.vb)]  
   
 ## Voir aussi  
  [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   

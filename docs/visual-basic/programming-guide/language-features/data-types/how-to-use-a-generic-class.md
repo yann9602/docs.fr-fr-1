@@ -52,7 +52,7 @@ Une classe qui accepte des *paramètres de type* est appelée *classe génériqu
   
      L’exemple suivant utilise la même classe (<xref:System.Collections.Generic.Queue%601?displayProperty=fullName>) pour créer deux objets de file d’attente qui contiennent des éléments de différents types de données. Il ajoute des éléments à la fin de chaque file d’attente, puis supprime et affiche les éléments du début de chaque file d’attente.  
   
-     [!code-vb[VbVbalrDataTypes#9](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/how-to-use-a-generic-class_1.vb)]  
+     [!code-vb[VbVbalrDataTypes#9](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-use-a-generic-class_1.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   

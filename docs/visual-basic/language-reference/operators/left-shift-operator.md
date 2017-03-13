@@ -65,7 +65,7 @@ result = pattern << amount
 ## Exemple  
  L'exemple suivant utilise l'opérateur `<<` pour effectuer des décalages arithmétiques vers la gauche sur des valeurs intégrales.  Le résultat a toujours le même type de données que celui de l'expression décalée.  
   
- [!code-vb[VbVbalrOperators#12](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/left-shift-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-operator_1.vb)]  
   
  Les résultats de l'exemple précédent sont les suivants :  
   

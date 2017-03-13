@@ -52,7 +52,7 @@ En [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes
 ## Exemple  
  L'exemple suivant teste des paires de variables `Object` pour vérifier si elles pointent vers la même instance de classe.  
   
- [!code-vb[VbVbalrKeywords#14](../../../../visual-basic/language-reference/codesnippet/visualbasic/how-to-determine-whether_1_1.vb)]  
+ [!code-vb[VbVbalrKeywords#14](../../../../visual-basic/language-reference/codesnippet/VisualBasic/how-to-determine-whether-two-objects-are-identical_1.vb)]  
   
  L'exemple précédent affiche la sortie suivante.  
   

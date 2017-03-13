@@ -24,17 +24,17 @@ La clause `where` est utilisée dans une expression de requête pour spécifier 
 ## Exemple  
  Dans l'exemple suivant, la clause `where` élimine par filtrage tous les nombres excepté ceux inférieurs à cinq.  Si vous supprimez la clause `where`, tous les nombres de la source de données seront retournés.  L'expression `num < 5` est le prédicat qui est appliqué à chaque élément.  
   
- [!code-cs[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#5)]  
+ [!code-cs[cscsrefQueryKeywords#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_1.cs)]  
   
 ## Exemple  
  Dans une clause `where`  unique, vous pouvez spécifier autant de prédicats que nécessaire à l'aide des opérateurs [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) et [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md).  Dans l'exemple suivant, la requête spécifie deux prédicats pour sélectionner uniquement les nombres pairs inférieurs à cinq.  
   
- [!code-cs[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#6)]  
+ [!code-cs[cscsrefQueryKeywords#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_2.cs)]  
   
 ## Exemple  
  Une clause `where` peut contenir une ou plusieurs méthodes qui retournent des valeurs booléennes.  Dans l'exemple suivant, la clause `where` utilise une méthode pour déterminer si la valeur actuelle de la variable de portée est paire ou impaire.  
   
- [!code-cs[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Where.cs#7)]  
+ [!code-cs[cscsrefQueryKeywords#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-clause_3.cs)]  
   
 ## Notes  
  La clause `where` est un mécanisme de filtrage.  Elle peut être placée à presque n'importe quel endroit d'une expression de requête, sauf qu'elle ne peut pas être la première ni la dernière clause.  Une clause `where` peut apparaître avant ou après une clause [group](../../../csharp/language-reference/keywords/group-clause.md) selon que vous devez ou non filtrer les éléments de la source avant ou après qu'ils soient regroupés.  

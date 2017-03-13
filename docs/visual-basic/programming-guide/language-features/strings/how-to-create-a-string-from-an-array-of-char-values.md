@@ -25,7 +25,7 @@ caps.handback.revision: 10
 Cet exemple crée la chaîne "abcd" en utilisant des caractères isolés.  
   
 ## Exemple  
- [!code-vb[VbVbalrStrings#61](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-create-a-string-f_1.vb)]  
+ [!code-vb[VbVbalrStrings#61](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-create-a-string-from-an-array-of-char-values_1.vb)]  
   
 ## Compilation du code  
  Cette méthode n'a aucune exigence particulière.  

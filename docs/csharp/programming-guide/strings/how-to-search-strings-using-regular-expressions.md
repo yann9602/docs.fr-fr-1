@@ -22,12 +22,12 @@ La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName> p
 ## Exemple  
  Le code suivant est une application console qui exécute une recherche simple de chaînes dans un tableau, sans respect de la casse.  La méthode statique <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=fullName> exécute la recherche en fonction de la chaîne à rechercher et une chaîne qui contient le modèle de recherche.  Dans ce cas, un troisième argument est utilisé pour indiquer que la casse doit être ignorée.  Pour plus d'informations, consultez <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>.  
   
- [!code-cs[csProgGuideStrings#17](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#17)]  
+ [!code-cs[csProgGuideStrings#17](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-search-strings-using-regular-expressions_1.cs)]  
   
 ## Exemple  
  Le code suivant est une application console qui utilise des expressions régulières pour valider le format de chaque chaîne dans un tableau.  La validation requiert que chaque chaîne prenne la forme d'un numéro de téléphone dans lequel trois groupes de chiffres sont séparés par des tirets, les deux premiers groupes contenant trois chiffres, et le troisième groupe avec quatre chiffres.  Cette opération s'effectue à l'aide de l'expression régulière `^\\d{3}-\\d{3}-\\d{4}$`.  Pour plus d'informations, consultez [Langage des expressions régulières \- Aide\-mémoire](../Topic/Regular%20Expression%20Language%20-%20Quick%20Reference.md).  
   
- [!code-cs[csProgGuideStrings#18](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#18)]  
+ [!code-cs[csProgGuideStrings#18](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-search-strings-using-regular-expressions_2.cs)]  
   
 ## Voir aussi  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName>   

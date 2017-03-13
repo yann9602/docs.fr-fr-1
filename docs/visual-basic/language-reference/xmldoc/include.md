@@ -51,7 +51,7 @@ Fait référence à un autre fichier qui décrit les types et membres dans votre
 ## Exemple  
  Cet exemple utilise la balise `<include>` pour importer des commentaires de documentation membre d'un fichier nommé `commentFile.xml`.  
   
- [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/include_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/include_1.vb)]  
   
  Le format du `commentFile.xml` est le suivant :  
   

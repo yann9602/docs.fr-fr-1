@@ -22,7 +22,7 @@ Retourne la valeur [bool](../../../csharp/language-reference/keywords/bool.md) `
   
  Avec les valeurs booléennes Nullable, l'expression `a != b` n'équivaut pas nécessairement à `!(a == b)` puisque que l'une des valeurs ou les deux peuvent être Null.  Vous devez surcharger à la fois les opérateurs `true` et `false` séparément pour identifier comme il se doit les valeurs Null dans l'expression.  L'exemple suivant montre comment surcharger et utiliser les opérateurs `true` et `false`.  
   
- [!code-cs[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#16)]  
+ [!code-cs[csrefKeywordsOperator#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/true-operator_1.cs)]  
   
  Vous pouvez utiliser un type qui surcharge les opérateurs `true` et `false` pour l'expression de contrôle dans les instructions [if](../../../csharp/language-reference/keywords/if-else.md), [do](../../../csharp/language-reference/keywords/do.md), [while](../../../csharp/language-reference/keywords/while.md) et [for](../../../csharp/language-reference/keywords/for.md), ainsi que dans les [expressions conditionnelles](../../../csharp/language-reference/operators/conditional-operator.md).  
   

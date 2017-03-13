@@ -82,11 +82,11 @@ Une procédure d'opérateur est une série d'instructions [!INCLUDE[vbprvb](../.
 ### Illustration de déclaration et d'appel  
  La structure suivante stocke une valeur entière 128 bits signée comme parties constitutives de poids fort et de poids faible.  Elle définit l'opérateur `+` pour ajouter deux valeurs  `veryLong`  et générer une valeur  `veryLong`  résultante.  
   
- [!code-vb[VbVbcnProcedures#23](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/operator-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#23](./codesnippet/VisualBasic/operator-procedures_1.vb)]  
   
  L'exemple suivant montre un appel classique à l'opérateur `+` dont la valeur est  `veryLong`.  
   
- [!code-vb[VbVbcnProcedures#24](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/operator-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#24](./codesnippet/VisualBasic/operator-procedures_2.vb)]  
   
  Pour plus d'informations et d'exemples, consultez la page [Surcharge d'opérateur dans Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703) \(en anglais\).  
   

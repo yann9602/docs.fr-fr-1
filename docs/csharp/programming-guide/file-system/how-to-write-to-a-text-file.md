@@ -25,7 +25,7 @@ Ces exemples montrent différentes manières d'écrire du texte dans un fichier.
  Ces exemples écrivent tous des littéraux de chaîne dans les fichiers, mais il est plus probable que vous utilisiez la méthode <xref:System.String.Format%2A>, qui possède de nombreux contrôles pour écrire des types de valeurs différents justifiés à droite ou à gauche dans un champ, avec ou sans le remplissage, etc.  Vous pouvez également utiliser la fonctionnalité C\# [d'interpolation de chaîne](../../../csharp/language-reference/keywords/interpolated-strings.md).  
   
 ## Exemple  
- [!code-cs[csFilesandFolders#3](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#3)]  
+ [!code-cs[csFilesandFolders#3](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-write-to-a-text-file_1.cs)]  
   
  Ces exemples écrivent tous des littéraux de chaîne dans les fichiers, mais il est plus probable que vous utilisiez la méthode <xref:System.String.Format%2A>, qui possède de nombreux contrôles pour écrire des types de valeurs différents justifiés à droite ou à gauche dans un champ, avec ou sans le remplissage, etc.  Vous pouvez également utiliser la fonctionnalité C\# [d'interpolation de chaîne](../../../csharp/language-reference/keywords/interpolated-strings.md).  
   

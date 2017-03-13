@@ -35,7 +35,7 @@ Vous pouvez combiner des littéraux XML avec des expressions incorporées pour c
   
 -   L'exemple suivant indique comment insérer le texte contenu dans la variable `contactName` entre l'ouverture et la fermeture des éléments de nom.  
   
-     [!code-vb[VbXMLSamples#39](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_1.vb)]  
+     [!code-vb[VbXMLSamples#39](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_1.vb)]  
   
      Cet exemple produit la sortie suivante :  
   
@@ -49,7 +49,7 @@ Vous pouvez combiner des littéraux XML avec des expressions incorporées pour c
   
 -   L'exemple suivant indique comment insérer le texte contenu dans la variable `phoneType` comme valeur de l'attribut `type`.  
   
-     [!code-vb[VbXMLSamples#40](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_2.vb)]  
+     [!code-vb[VbXMLSamples#40](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_2.vb)]  
   
      Cet exemple produit la sortie suivante :  
   
@@ -65,7 +65,7 @@ Vous pouvez combiner des littéraux XML avec des expressions incorporées pour c
   
      Lorsque vous créez des éléments à l'aide de cette technique, vous devez les fermer avec la balise \<\/\>.  
   
-     [!code-vb[VbXMLSamples#41](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-embed-expressions_3.vb)]  
+     [!code-vb[VbXMLSamples#41](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-embed-expressions-in-xml-literals_3.vb)]  
   
      Cet exemple produit la sortie suivante :  
   

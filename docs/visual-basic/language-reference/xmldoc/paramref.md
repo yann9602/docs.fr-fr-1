@@ -42,7 +42,7 @@ Met en forme un mot comme un paramètre.
 ## Exemple  
  Cet exemple utilise la balise `<paramref>` pour faire référence au paramètre `id`.  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/paramref_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/paramref_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

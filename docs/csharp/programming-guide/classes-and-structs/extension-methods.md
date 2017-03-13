@@ -24,13 +24,13 @@ Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des
   
  L'exemple suivant indique comment appeler la méthode `OrderBy` d'opérateur de requête standard sur un tableau d'entiers.  L'expression entre parenthèses est une expression lambda.  De nombreux opérateurs de requête standard prennent des expressions lambda comme paramètres, mais ce n'est pas requis pour les méthodes d'extension.  Pour plus d'informations, consultez [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
- [!code-cs[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_1.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_1.cs)]  
   
  Les méthodes d'extension sont définies comme méthodes statiques mais sont appelées en utilisant la syntaxe de méthode d'instance.  Leur premier paramètre spécifie les types sur lesquels la méthode s'applique et le paramètre est précédé par le modificateur [this](../../../csharp/language-reference/keywords/this.md).  Les méthodes d'extension sont uniquement dans la portée lorsque vous importez explicitement l'espace de noms dans votre code source avec une directive `using`.  
   
  L'exemple suivant présente une méthode d'extension définie pour la classe <xref:System.String?displayProperty=fullName>.  Notez qu'elle est définie à l'intérieur d'une classe statique, non imbriquée et non générique :  
   
- [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_2.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_2.cs)]  
   
  La méthode d'extension `WordCount` peut être mise à portée avec cette directive `using` :  
   
@@ -70,7 +70,7 @@ using System.Linq;
   
  Lorsque le compilateur ne trouve pas de méthode d'instance avec une signature correspondante, il crée une liaison avec une méthode d'extension correspondante, s'il en existe une.  
   
- [!code-cs[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/extension-methods_3.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_3.cs)]  
   
 ## Indications générales  
  En général, nous vous recommandons d'implémenter des méthodes d'extension modérément et uniquement lorsque cela est nécessaire.  Dès que cela est possible, le code client qui doit étendre un type existant doit le faire en créant un type dérivé du type existant.  Pour plus d'informations, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  

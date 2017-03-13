@@ -45,28 +45,28 @@ Lorsque vous appelez une procédure `Sub` ou `Function`, vous pouvez passer des 
   
  Par exemple, la procédure `Sub` suivante accepte trois arguments :  
   
- [!code-vb[VbVbcnProcedures#41](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_1.vb)]  
+ [!code-vb[VbVbcnProcedures#41](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_1.vb)]  
   
  Lorsque vous appelez cette procédure, vous pouvez fournir les arguments par position, par nom ou les deux.  
   
 ## Passage des arguments par position  
  Vous pouvez appeler la procédure  `studentInfo`  avec des arguments passés par position et séparés par des virgules, comme le montre l'exemple suivant :  
   
- [!code-vb[VbVbcnProcedures#42](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_2.vb)]  
+ [!code-vb[VbVbcnProcedures#42](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_2.vb)]  
   
  Si vous omettez un argument facultatif dans une liste d'arguments positionnels, vous devez marquer son emplacement à l'aide d'une virgule.  L'exemple suivant appelle  `studentInfo`  sans l'argument  `age`  :  
   
- [!code-vb[VbVbcnProcedures#43](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_3.vb)]  
+ [!code-vb[VbVbcnProcedures#43](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_3.vb)]  
   
 ## Passage des arguments par nom  
  Vous pouvez également appeler  `studentInfo`  avec des arguments passés par nom et séparés par des virgules, comme le montre l'exemple suivant :  
   
- [!code-vb[VbVbcnProcedures#44](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_4.vb)]  
+ [!code-vb[VbVbcnProcedures#44](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_4.vb)]  
   
 ## Mélange d'arguments par position et par nom  
  Vous pouvez fournir des arguments à la fois par position et par nom dans un seul appel de procédure, comme le montre l'exemple suivant :  
   
- [!code-vb[VbVbcnProcedures#45](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-pos_5.vb)]  
+ [!code-vb[VbVbcnProcedures#45](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_5.vb)]  
   
  Dans l'exemple précédent, aucune virgule supplémentaire n'est nécessaire pour marquer l'emplacement de l'argument  `age`  ayant été omis, car  `birth`  est passé par nom.  
   

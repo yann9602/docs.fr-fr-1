@@ -28,7 +28,7 @@ Une méthode partielle a sa signature définie dans une partie d'un type partiel
   
  L'exemple suivant présente une méthode partielle définie dans deux parties d'une classe partielle :  
   
- [!code-cs[csrefKeywordsContextual#9](../../../csharp/language-reference/keywords/codesnippet/csharp/partial-method_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-method_1.cs)]  
   
  Pour plus d'informations, consultez [Classes et méthodes partielles](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
   

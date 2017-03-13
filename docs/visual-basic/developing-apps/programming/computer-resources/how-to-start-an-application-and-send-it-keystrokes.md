@@ -27,7 +27,7 @@ caps.handback.revision: 15
 Cet exemple utilise la fonction `Shell` pour démarrer l'application de calculatrice, puis multiplie deux nombres en envoyant des séquences de touches à l'aide de la méthode `My.Computer.Keyboard.SendKeys`.  
   
 ## Exemple  
- [!code-vb[VbVbalrMyComputer#25](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class2.vb#25)]  
+ [!code-vb[VbVbalrMyComputer#25](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-start-an-application-and-send-it-keystrokes_1.vb)]  
   
 ## Programmation fiable  
  Une exception <xref:System.ArgumentException> est levée si une application avec l'identificateur de processus demandé ne peut pas être trouvée.  

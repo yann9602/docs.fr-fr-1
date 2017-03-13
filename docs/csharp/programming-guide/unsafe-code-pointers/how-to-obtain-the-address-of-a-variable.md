@@ -34,9 +34,9 @@ int* p = &number; //address-of operator &
 ## Exemple  
  Dans cet exemple, un pointeur vers `int`, `p`, est déclaré et se voit assigner l'adresse d'une variable entière, `number`.  La variable `number` est initialisée à la suite de l'assignation à \*p.  Si vous indiquez cette instruction d'assignation sous la forme d'un commentaire, l'initialisation de la variable `number` est supprimée, mais aucune erreur de compilation n'est émise.  Remarquez l'utilisation de l'opérateur `->` d'[accès au membre](../../../csharp/programming-guide/unsafe-code-pointers/how-to-access-a-member-with-a-pointer.md) pour obtenir et afficher l'adresse stockée dans le pointeur.  
   
- [!code-cs[csProgGuidePointers#7](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#7)]  
+ [!code-cs[csProgGuidePointers#7](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-address-of-a-variable_1.cs)]  
   
- [!code-cs[csProgGuidePointers#8](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#8)]  
+ [!code-cs[csProgGuidePointers#8](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-address-of-a-variable_2.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

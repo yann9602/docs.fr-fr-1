@@ -45,7 +45,7 @@ Spécifie une autorisation requise pour le membre.
 ## Exemple  
  Cet exemple utilise la balise `<permission>` pour décrire que le <xref:System.Security.Permissions.FileIOPermission> est requis par la méthode `ReadFile`.  
   
- [!code-vb[VbVbcnXmlDocComments#7](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/permission_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#7](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/permission_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

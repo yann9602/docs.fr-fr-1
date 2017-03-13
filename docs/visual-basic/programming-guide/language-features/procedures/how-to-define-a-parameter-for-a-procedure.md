@@ -45,7 +45,7 @@ Un *paramètre* permet au code appelant de passer une valeur à la procédure lo
   
      L'exemple suivant définit le plan d'une procédure `Sub` avec trois paramètres.  Les deux premiers sont requis et le troisième est facultatif.  Les déclarations de paramètre sont séparées dans la liste de paramètres par des virgules.  
   
-     [!code-vb[VbVbcnProcedures#33](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-paramete_1.vb)]  
+     [!code-vb[VbVbcnProcedures#33](./codesnippet/VisualBasic/how-to-define-a-parameter-for-a-procedure_1.vb)]  
   
      Les premiers paramètres acceptent un objet  `customer`  et `updateCustomer` peut directement mettre à jour la variable passée à `c` parce que l'argument est passé [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).  La procédure ne peut pas modifier les valeurs des deux derniers arguments parce qu'ils sont passés [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).  
   

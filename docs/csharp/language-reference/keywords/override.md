@@ -24,7 +24,7 @@ Le modificateur `override` est nécessaire pour étendre ou modifier l'implémen
 ## Exemple  
  Dans cet exemple, la classe `Square` doit fournir une implémentation substituée de `Area` car `Area` est héritée de la classe abstraite `ShapesClass` :  
   
- [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#1)]  
+ [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_1.cs)]  
   
  Une méthode `override` fournit une nouvelle implémentation d'un membre hérité d'une classe de base.  La méthode substituée par une déclaration `override` est appelée méthode de base substituée.  La méthode de base substituée doit avoir la même signature que la méthode `override`.  Pour plus d'informations sur l'héritage, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
@@ -41,7 +41,7 @@ Le modificateur `override` est nécessaire pour étendre ou modifier l'implémen
 ## Exemple  
  Cet exemple définit une classe de base nommée `Employee`, et une classe dérivée nommée `SalesEmployee`.  La classe `SalesEmployee` inclut une propriété supplémentaire, `salesbonus`, et substitue la méthode `CalculatePay` afin de prendre en compte cette dernière.  
   
- [!code-cs[csrefKeywordsModifiers#9](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#9)]  
+ [!code-cs[csrefKeywordsModifiers#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/override_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

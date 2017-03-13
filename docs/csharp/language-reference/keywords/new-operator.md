@@ -54,7 +54,7 @@ int i = 0;
 ## Exemple  
  Dans l'exemple suivant, un objet de `struct` et un objet de classe sont créés et initialisés à l'aide de l'opérateur `new`, puis des valeurs leur sont attribuées.  Les valeurs par défaut et les valeurs attribuées sont affichées.  
   
- [!code-cs[csrefKeywordsOperator#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#7)]  
+ [!code-cs[csrefKeywordsOperator#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-operator_1.cs)]  
   
  Notez dans l'exemple que la valeur par défaut d'une chaîne est `null`.  C'est pourquoi elle n'est pas affichée.  
   

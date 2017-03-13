@@ -58,23 +58,23 @@ Les arguments nommés et facultatifs, qui ont été introduits dans [!INCLUDE[cs
   
 2.  Ajoutez les directives `using` suivantes au début du fichier de code.  
   
-     [!code-cs[csProgGuideNamedAndOptional#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#4)]  
+     [!code-cs[csProgGuideNamedAndOptional#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_1.cs)]  
   
 ### Pour afficher du texte dans un document Word  
   
 1.  Dans la classe `Program` de Program.cs, ajoutez la méthode suivante pour créer une application Word et un document Word.  La méthode [Add](http://go.microsoft.com/fwlink/?LinkId=145381) comporte quatre paramètres optionnels.  Cet exemple utilise leur valeur par défaut.  Par conséquent, aucun argument n'est nécessaire dans l'instruction appelante.  
   
-     [!code-cs[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#6)]  
+     [!code-cs[csProgGuideNamedAndOptional#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_2.cs)]  
   
 2.  Ajoutez le code suivant à la fin de la méthode pour définir l'emplacement où le texte doit être affiché dans le document et le texte à afficher.  
   
-     [!code-cs[csProgGuideNamedAndOptional#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#7)]  
+     [!code-cs[csProgGuideNamedAndOptional#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_3.cs)]  
   
 ### Pour exécuter l'application  
   
 1.  Ajoutez l'instruction suivante à Main.  
   
-     [!code-cs[csProgGuideNamedAndOptional#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#8)]  
+     [!code-cs[csProgGuideNamedAndOptional#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_4.cs)]  
   
 2.  Appuyez sur CTRL\+F5 pour exécuter le projet.  Un document Word contenant le texte spécifié s'affiche.  
   
@@ -87,11 +87,11 @@ Paramètres ConvertToTable
   
      Les arguments nommés et optionnels vous permettent de spécifier des valeurs pour les seuls paramètres que vous souhaitez modifier.  Ajoutez le code suivant à la fin de la méthode `DisplayInWord` pour créer un tableau simple.  L'argument spécifie que les virgules de la chaîne de texte dans `range` séparent les cellules du tableau.  
   
-     [!code-cs[csProgGuideNamedAndOptional#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#9)]  
+     [!code-cs[csProgGuideNamedAndOptional#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_5.cs)]  
   
      Dans les versions antérieures de C\#, l'appel à `ConvertToTable` requiert un argument de référence pour chaque paramètre, comme indiqué dans le code suivant.  
   
-     [!code-cs[csProgGuideNamedAndOptional#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#14)]  
+     [!code-cs[csProgGuideNamedAndOptional#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_6.cs)]  
   
 2.  Appuyez sur CTRL\+F5 pour exécuter le projet.  
   
@@ -99,16 +99,16 @@ Paramètres ConvertToTable
   
 1.  Pour modifier le tableau afin qu'il comporte une colonne et trois lignes, remplacez la dernière ligne de `DisplayInWord` par l'instruction suivante, puis appuyez sur CTRL\+F5.  
   
-     [!code-cs[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#10)]  
+     [!code-cs[csProgGuideNamedAndOptional#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_7.cs)]  
   
 2.  Pour spécifier un format prédéfini pour le tableau, remplacez la dernière ligne de `DisplayInWord` par l'instruction suivante, puis appuyez sur CTRL\+F5.  Le format peut correspondre à n'importe quelle constante [WdTableFormat](http://go.microsoft.com/fwlink/?LinkId=145382).  
   
-     [!code-cs[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#11)]  
+     [!code-cs[csProgGuideNamedAndOptional#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_8.cs)]  
   
 ## Exemple  
  Le code suivant inclut l'exemple complet.  
   
- [!code-cs[csProgGuideNamedAndOptional#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/wordprogram.cs#12)]  
+ [!code-cs[csProgGuideNamedAndOptional#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-named-and-optional-arguments-in-office-programming_9.cs)]  
   
 ## Voir aussi  
  [Arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)

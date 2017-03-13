@@ -67,7 +67,7 @@ object...<descendant>
 ## Exemple  
  L'exemple suivant indique comment accéder à la valeur du premier nœud descendant nommé `name` et aux valeurs de tous les nœuds descendants nommés `phone` à partir de l'objet `contacts`.  
   
- [!code-vb[VbXMLSamples#25](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-descendant-axis-prop_1.vb)]  
+ [!code-vb[VbXMLSamples#25](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-descendant-axis-property_1.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -78,7 +78,7 @@ object...<descendant>
 ## Exemple  
  L'exemple suivant déclare `ns` en tant que préfixe d'espace de noms XML.  Il utilise alors le préfixe de l'espace de noms pour créer un littéral XML et accéder à la valeur du premier nœud enfant, avec le nom qualifié "`ns:name`".  
   
- [!code-vb[VbXMLSamples#26](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-descendant-axis-prop_2.vb)]  
+ [!code-vb[VbXMLSamples#26](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-descendant-axis-property_2.vb)]  
   
  Ce code affiche le texte suivant :  
   

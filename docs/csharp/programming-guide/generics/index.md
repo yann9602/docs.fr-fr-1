@@ -19,7 +19,7 @@ caps.handback.revision: 23
 # G&#233;n&#233;riques (guide de programmation C#)
 Les génériques ont été ajoutés à la version 2.0 du langage C\# et du Common Language Runtime \(CLR\).  Les génériques introduisent dans le .NET Framework le concept de paramètres de type, qui rendent possible la réception des classes et des méthodes dont la spécification d'un ou de plusieurs types diffère jusqu'à ce que la classe ou la méthode soit déclarée et instanciée par code client.  Par exemple, en utilisant un paramètre T de type générique, vous pouvez écrire une classe unique qu'un autre code client peut utiliser sans induire le coût ou le risque de casts d'exécution ou d'opérations de boxing, comme illustré ici :  
   
- [!code-cs[csProgGuideGenerics#1](../../../csharp/programming-guide/generics/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideGenerics#1](../../../csharp/programming-guide/generics/codesnippet/CSharp/index_1.cs)]  
   
 ## Vue d'ensemble des génériques  
   

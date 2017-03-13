@@ -31,7 +31,7 @@ L'opérateur de décalage vers la gauche \(`<<`\) décale le premier opérande v
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `<<` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\) ; le type du premier opérande doit être un type défini par l'utilisateur et le type du second opérande doit être `int`.  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#14](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#14)]  
+ [!code-cs[csRefOperators#14](../../../csharp/language-reference/operators/codesnippet/CSharp/left-shift-operator_1.cs)]  
   
 ## Commentaires  
  Notez que `i<<1` et `i<<33` fournissent le même résultat, car 1 et 33 possèdent les cinq mêmes bits d'ordre bas.  

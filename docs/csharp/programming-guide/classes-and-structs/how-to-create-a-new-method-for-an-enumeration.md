@@ -23,7 +23,7 @@ Vous pouvez utiliser des méthodes d'extension pour ajouter les fonctionnalités
 ## Exemple  
  Dans l'exemple suivant, l'énumération `Grades` représente les notes possibles sous forme de lettre qu'un étudiant peut obtenir dans une classe.  Une méthode d'extension nommée `Passing` est ajoutée au type `Grades` afin que chaque instance de ce type sache maintenant si cela représente une note d'admission ou pas.  
   
- [!code-cs[csProgGuideExtensionMethods#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-create-a-new-meth_1.cs)]  
+ [!code-cs[csProgGuideExtensionMethods#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-create-a-new-method-for-an-enumeration_1.cs)]  
   
  Notez que la classe `Extensions` contient également une variable statique mise à jour dynamiquement et que la valeur de retour de la méthode d'extension reflète la valeur actuelle de cette variable.  Cela montre qu'en arrière\-plan les méthodes d'extension sont appelées directement sur la classe statique dans laquelle elles sont définies.  
   

@@ -31,7 +31,7 @@ Indique qu'une procédure externe possède un autre nom dans sa DLL.
   
  Dans l'exemple suivant, le mot clé `Alias` est utilisé pour fournir le nom de la fonction dans advapi32.dll, `GetUserNameA`, ce `getUserName` est utilisé à sa place dans cet exemple.  La fonction `getUserName` est appelée dans la sous\-fonction `getUser`, qui affiche le nom de l'utilisateur actuel.  
   
- [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/alias-clause_1.vb)]  
+ [!code-vb[VbVbalrStatements#15](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/alias-clause_1.vb)]  
   
 ## Voir aussi  
  [Mots clés](../../../visual-basic/language-reference/keywords/index.md)

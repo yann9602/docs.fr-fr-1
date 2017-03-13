@@ -76,12 +76,12 @@ La *surcharge* d'une procédure consiste à définir celle\-ci en plusieurs vers
 ## Versions multiples d'une procédure  
  Supposons que vous écriviez une procédure `Sub` pour publier une transaction relative au solde d'un client, et que vous vouliez faire référence au client par son nom ou son numéro de compte.  Pour ce faire, vous pouvez définir deux procédures `Sub` différentes, comme dans l'exemple suivant :  
   
- [!code-vb[VbVbcnProcedures#73](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_1.vb)]  
+ [!code-vb[VbVbcnProcedures#73](./codesnippet/VisualBasic/procedure-overloading_1.vb)]  
   
 ### Versions surchargées  
  La première solution consiste à surcharger un seul nom de procédure.  Vous pouvez utiliser le mot clé [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) pour définir une version de la procédure pour chaque liste de paramètres comme suit :  
   
- [!code-vb[VbVbcnProcedures#72](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_2.vb)]  
+ [!code-vb[VbVbcnProcedures#72](./codesnippet/VisualBasic/procedure-overloading_2.vb)]  
   
 #### Surcharges supplémentaires  
  Si vous voulez également accepter le montant d'une transaction sous forme d'un type `Decimal` ou `Single`, vous pouvez surcharger davantage `post` pour permettre cette variation.  Si vous avez effectué cette opération sur chacune des surcharges de l'exemple précédent, vous devez obtenir quatre procédures `Sub` portant toutes le même nom, mais avec quatre signatures différentes.  
@@ -89,9 +89,9 @@ La *surcharge* d'une procédure consiste à définir celle\-ci en plusieurs vers
 ## Avantages de la surcharge  
  L'avantage présenté par la surcharge d'une procédure réside dans la flexibilité de l'appel.  Pour utiliser la procédure `post` déclarée dans l'exemple précédent, le code appelant peut obtenir l'identification du client selon un type `String` ou `Integer`, puis appeler la même procédure dans les deux cas.  L'exemple suivant illustre ce comportement :  
   
- [!code-vb[VbVbcnProcedures#56](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_3.vb)]  
+ [!code-vb[VbVbcnProcedures#56](./codesnippet/VisualBasic/procedure-overloading_3.vb)]  
   
- [!code-vb[VbVbcnProcedures#57](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/procedure-overloading_4.vb)]  
+ [!code-vb[VbVbcnProcedures#57](./codesnippet/VisualBasic/procedure-overloading_4.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

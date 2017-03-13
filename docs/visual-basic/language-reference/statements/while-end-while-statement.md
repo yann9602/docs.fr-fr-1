@@ -78,17 +78,17 @@ End While
 ## Exemple  
  Dans l'exemple suivant, les instructions dans la boucle poursuivent leur exécution jusqu'à ce que la variable `index` soit supérieure à 10.  
   
- [!code-vb[VbVbalrStatements#171](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#171](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_1.vb)]  
   
 ## Exemple  
  L'exemple ci\-dessous illustre l'utilisation des instructions `Continue While` et `Exit While`.  
   
- [!code-vb[VbVbalrStatements#172](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#172](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_2.vb)]  
   
 ## Exemple  
  L'exemple suivant lit toutes les lignes dans un fichier texte.  La méthode <xref:System.IO.File.OpenText%2A> ouvre le fichier et retourne un <xref:System.IO.StreamReader> qui lit les caractères.  Dans l'état d' `While` , la méthode d' <xref:System.IO.StreamReader.Peek%2A> d' `StreamReader` détermine si le fichier contient des caractères spéciaux.  
   
- [!code-vb[VbVbalrStatements#173](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/while-end-while-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#173](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_3.vb)]  
   
 ## Voir aussi  
  [Loop Structures](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   

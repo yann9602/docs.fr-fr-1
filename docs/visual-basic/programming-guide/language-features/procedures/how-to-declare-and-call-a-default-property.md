@@ -41,43 +41,43 @@ Une *propriété par défaut* est une classe ou une propriété de structure à 
   
 3.  Spécifiez au moins un paramètre pour la propriété.  Vous ne pouvez pas définir une propriété par défaut qui ne prend pas au moins un argument.  
   
-     [!code-vb[VbVbcnProcedures#17](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_1.vb)]  
+     [!code-vb[VbVbcnProcedures#17](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_1.vb)]  
   
 ### Pour appeler une propriété par défaut  
   
 1.  Déclarez une variable de la classe conteneur ou du type structure.  
   
-     [!code-vb[VbVbcnProcedures#16](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_2.vb)]  
+     [!code-vb[VbVbcnProcedures#16](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_2.vb)]  
   
 2.  Utilisez le nom de variable seul dans une expression où vous incluriez normalement le nom de propriété.  
   
-     [!code-vb[VbVbcnProcedures#21](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_3.vb)]  
+     [!code-vb[VbVbcnProcedures#21](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_3.vb)]  
   
 3.  Faites suivre le nom de variable d'une liste d'arguments entre parenthèses.  Une propriété par défaut doit prendre au moins un argument.  
   
-     [!code-vb[VbVbcnProcedures#20](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_4.vb)]  
+     [!code-vb[VbVbcnProcedures#20](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_4.vb)]  
   
 4.  Pour récupérer la valeur de propriété par défaut, utilisez le nom de variable, avec une liste d'arguments, dans une expression ou à la suite du signe égal \(`=`\) dans une instruction d'assignation.  
   
-     [!code-vb[VbVbcnProcedures#15](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_5.vb)]  
+     [!code-vb[VbVbcnProcedures#15](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_5.vb)]  
   
 5.  Pour définir la valeur de propriété par défaut, utilisez le nom de variable, avec une liste d'arguments, à gauche d'une instruction d'assignation.  
   
-     [!code-vb[VbVbcnProcedures#14](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_6.vb)]  
+     [!code-vb[VbVbcnProcedures#14](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_6.vb)]  
   
 6.  Vous pouvez toujours spécifier le nom de propriété par défaut avec le nom de variable, comme vous le feriez pour accéder à une autre propriété.  
   
-     [!code-vb[VbVbcnProcedures#19](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_7.vb)]  
+     [!code-vb[VbVbcnProcedures#19](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_7.vb)]  
   
 ## Exemple  
  L'exemple suivant déclare une propriété par défaut dans une classe.  
   
- [!code-vb[VbVbcnProcedures#12](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_8.vb)]  
+ [!code-vb[VbVbcnProcedures#12](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_8.vb)]  
   
 ## Exemple  
  L'exemple suivant montre comment appeler la propriété par défaut `myProperty` sur la classe `class1`.  Les trois instructions d'assignation stockent des valeurs dans `myProperty`, et l'appel <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> lit les valeurs.  
   
- [!code-vb[VbVbcnProcedures#13](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-declare-and-call-_9.vb)]  
+ [!code-vb[VbVbcnProcedures#13](./codesnippet/VisualBasic/how-to-declare-and-call-a-default-property_9.vb)]  
   
  La propriété <xref:Microsoft.VisualBasic.Collection.Item%2A> de diverses classes de collection représente l'utilisation la plus courante d'une propriété par défaut.  
   

@@ -30,7 +30,7 @@ Le mot clé `this` fait référence à l'instance actuelle de la classe et est �
   
 -   Qualification de membres masqués par des noms similaires, par exemple :  
   
- [!code-cs[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/csharp/this_1.cs)]  
+ [!code-cs[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_1.cs)]  
   
 -   Passage d'un objet comme paramètre à d'autres méthodes, par exemple :  
   
@@ -40,14 +40,14 @@ Le mot clé `this` fait référence à l'instance actuelle de la classe et est �
   
 -   Déclaration d'indexeurs, par exemple :  
   
- [!code-cs[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/csharp/this_2.cs)]  
+ [!code-cs[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_2.cs)]  
   
  Les fonctions membre static, parce qu'elles existent au niveau de la classe et pas dans le cadre d'un objet, n'ont pas de pointeur `this`.  Faire référence à `this` dans une méthode statique est une erreur.  
   
 ## Exemple  
  Dans cet exemple, `this` est utilisé pour qualifier les membres de la classe `Employee`, `name` et `alias`, qui sont masqués par des noms similaires.  Il est également utilisé pour passer un objet à la méthode `CalcTax`, qui appartient à une autre classe.  
   
- [!code-cs[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/csharp/this_3.cs)]  
+ [!code-cs[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_3.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

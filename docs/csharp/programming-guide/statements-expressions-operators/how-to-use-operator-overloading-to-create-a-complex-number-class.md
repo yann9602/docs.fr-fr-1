@@ -23,7 +23,7 @@ caps.handback.revision: 15
 Cet exemple montre comment utiliser la surcharge d'opérateur pour créer une classe de nombres complexes `Complex` qui définit une addition complexe.  Le programme affiche les parties imaginaires et réelles des nombres et le résultat de l'addition en utilisant une substitution de la méthode `ToString`.  
   
 ## Exemple  
- [!code-cs[csProgGuideStatements#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-use-operator-over_1.cs)]  
+ [!code-cs[csProgGuideStatements#16](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-use-operator-overloading-to-create-a-complex-number-class_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

@@ -201,11 +201,11 @@ End Function
   
  La `Return` instruction assigne la valeur de retour et quitte la fonction, comme le montre l’exemple suivant simultanément.  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_1.vb)]  
   
  L’exemple suivant affecte la valeur de retour pour le nom de la fonction `myFunction` puis utilise la `Exit Function` instruction à retourner.  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_2.vb)]  
   
  Le `Exit Function` et `Return` instructions provoquent la sortie immédiate d’un `Function` procédure. Un nombre quelconque de `Exit Function` et `Return` instructions peuvent apparaître n’importe où dans la procédure, et vous pouvez mélanger `Exit Function` et `Return` instructions.  
   
@@ -248,19 +248,19 @@ End Function
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise la `Function` instruction pour déclarer le nom, les paramètres et les code formant le corps d’un `Function` procédure. Le `ParamArray` modificateur permet à la fonction d’accepter un nombre variable d’arguments.  
   
- [!code-vb[VbVbalrStatements#25](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#25](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_3.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant appelle la fonction déclarée dans l’exemple précédent.  
   
- [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/function-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_4.vb)]  
   
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, `DelayAsync` est un `Async``Function` qui a un type de retour de <xref:System.Threading.Tasks.Task%601>. `DelayAsync` a une instruction `Return` qui retourne un entier. Par conséquent, la déclaration de fonction de `DelayAsync` doit avoir un type de retour de `Task(Of Integer)`. Étant donné que le type de retour est `Task(Of Integer)`, l’évaluation de la `Await` expression dans `DoSomethingAsync` génère un nombre entier. Cela est illustré dans cette déclaration : `Dim result As Integer = Await delayTask`.  
   
  Le `startButton_Click` procédure est un exemple d’un `Async Sub` procédure. Étant donné que `DoSomethingAsync` est un `Async` la tâche pour l’appel à une fonction, `DoSomethingAsync` doit être attendue, comme le montre l’instruction suivante : `Await DoSomethingAsync()`. Le `startButton_Click``Sub` procédure doit être définie avec la `Async` modificateur, car elle possède une `Await` expression.  
   
- [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/visualbasic/asyncfunctionvb/mainwindow.xaml.vb#1)]  
+ [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)   

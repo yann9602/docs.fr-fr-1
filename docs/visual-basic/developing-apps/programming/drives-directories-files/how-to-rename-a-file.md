@@ -28,7 +28,7 @@ Utilisez la méthode `RenameFile` de l'objet `My.Computer.FileSystem` pour renom
   
 -   Utilisez la méthode `My.Computer.FileSystem.RenameFile` pour renommer un fichier.  Cet exemple renomme le fichier `Test.txt` dans `SecondTest.txt`.  
   
-     [!code-vb[VbVbcnMyFileSystem#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-rename-a-file_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-rename-a-file_1.vb)]  
   
  Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, l'extrait est localisé dans **Système de fichiers \- Traitement de lecteurs, de dossiers et de fichiers**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   

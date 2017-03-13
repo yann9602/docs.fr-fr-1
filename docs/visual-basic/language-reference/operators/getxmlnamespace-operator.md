@@ -47,7 +47,7 @@ GetXmlNamespace(xmlNamespacePrefix)
 ## Exemple  
  L'exemple suivant importe `ns` en tant que préfixe d'espace de noms XML.  Il utilise ensuite le préfixe d'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié `ns:phone`.  Il passe alors ce nœud enfant à la sous\-routine `ShowName`, qui construit un nom qualifié en utilisant l'opérateur `GetXmlNamespace`.  La sous\-routine `ShowName` passe ensuite le nom qualifié à la méthode <xref:System.Xml.Linq.XNode.Ancestors%2A> pour obtenir le nœud parent `ns:contact`.  
   
- [!code-vb[VbXMLSamples#38](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/getxmlnamespace-operator_1.vb)]  
+ [!code-vb[VbXMLSamples#38](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/getxmlnamespace-operator_1.vb)]  
   
  Lorsque vous appelez `TestGetXmlNamespace.RunSample()`, une boîte de message s'affiche, qui contient le texte suivant :  
   

@@ -67,7 +67,7 @@ Un *opérateur* est un élément de code qui exécute une opération sur un ou p
   
  Plusieurs opérateurs peuvent effectuer des actions dans une expression ou une instruction unique, comme le montrent les exemples ci\-dessous.  
   
- [!code-vb[VbVbalrOperators#56](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/index_1.vb)]  
+ [!code-vb[VbVbalrOperators#56](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/index_1.vb)]  
   
  Dans l'exemple précédent, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] exécute les opérations de l'expression à droite de l'opérateur d'assignation \(`=`\), puis assigne la valeur du résultat à la variable `x` située à gauche.  Le nombre d'opérateurs pouvant être combinés dans une expression est illimité, mais la connaissance de [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) est nécessaire pour garantir que vous obtiendrez les résultats escomptés.  
   

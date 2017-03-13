@@ -80,12 +80,12 @@ number1 Mod number2
 ## Exemple  
  L'exemple suivant utilise l'opérateur `Mod` pour diviser deux nombres et retourner seulement le reste.  Si l'un des nombres est à virgule flottante, le résultat est un nombre à virgule flottante représentant le reste.  
   
- [!code-vb[VbVbalrOperators#31](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/mod-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#31](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/mod-operator_1.vb)]  
   
 ## Exemple  
  L'exemple suivant montre l'imprécision potentielle des opérandes à virgule flottante.  Dans la première instruction, les opérandes sont `Double` et 0,2 représente une fraction binaire se répétant à l'infini avec une valeur stockée de 0,20000000000000001.  Dans la deuxième instruction, le caractère de type de littéral `D` force les deux opérandes sur la valeur `Decimal` et 0,2 a une représentation précise.  
   
- [!code-vb[VbVbalrOperators#32](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/mod-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#32](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/mod-operator_2.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Conversion.Int%2A>   

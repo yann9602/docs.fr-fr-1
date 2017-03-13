@@ -87,14 +87,14 @@ result = expression1 Xor expression2
 ## Exemple  
  Cet exemple utilise l'opérateur `Xor` pour effectuer une exclusion logique \(disjonction logique exclusive\) sur deux expressions.  Le résultat est une valeur `Boolean` qui indique si une seule des expressions a la valeur `True`.  
   
- [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xor-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_1.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : `False`, `True` et `False`.  
   
 ## Exemple  
  Cet exemple utilise l'opérateur `Xor` pour effectuer une exclusion logique \(disjonction logique exclusive\) sur les bits de deux expressions numériques.  Le bit du modèle de résultat est défini si un seul des bits correspondants dans les opérandes a la valeur 1.  
   
- [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xor-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_2.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : 2, 12 et 14.  
   

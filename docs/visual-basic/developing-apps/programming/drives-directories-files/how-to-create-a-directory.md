@@ -30,7 +30,7 @@ Utilisez la méthode `CreateDirectory` de l'objet `My.Computer.FileSystem` pour 
   
 -   Utilisez la méthode `CreateDirectory` en spécifiant le chemin d'accès complet de l'emplacement où le répertoire doit être créé.  Cet exemple crée le répertoire `NewDirectory` dans `C:\Documents and Settings\All Users\Documents`.  
   
-     [!code-vb[VbVbcnMyFileSystem#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-directory_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-directory_1.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

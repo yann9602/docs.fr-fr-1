@@ -136,7 +136,7 @@ static void Main()
 ## <a name="example"></a>Exemple  
  Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.  
   
- [!code-cs[csrefKeywordsExceptions#2](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_1.cs)]  
   
 ## <a name="example"></a>Exemple  
  Dans l'exemple suivant, deux blocs catch sont utilisés, et l'exception la plus spécifique, qui apparaît la première, est interceptée.  
@@ -145,7 +145,7 @@ static void Main()
   
  Si vous placez le bloc catch le moins spécifique en premier dans l'exemple, le message d'erreur suivant s'affiche : `A previous catch clause already catches all exceptions of this or a super type ('System.Exception')`.  
   
- [!code-cs[csrefKeywordsExceptions#3](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_2.cs)]  
+ [!code-cs[csrefKeywordsExceptions#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_2.cs)]  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant illustre la gestion des exceptions pour les méthodes async. Pour intercepter une exception levée par une tâche async, placez l'expression `await` dans un bloc `try` et interceptez-la dans un bloc `catch`.  
@@ -154,14 +154,14 @@ static void Main()
   
  Supprimez les marques de commentaire de la ligne `throw new OperationCancelledException` pour illustrer ce qui se passe quand vous annulez un processus asynchrone. La propriété `IsCanceled` de la tâche a la valeur `true` et l'exception est interceptée dans le bloc `catch`. Sous certaines conditions qui s'appliquent à cet exemple, la propriété `IsFaulted` de la tâche a la valeur `true` et `IsCanceled` a la valeur `false`.  
   
- [!code-cs[csAsyncExceptions#2](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_3.cs)]  
+ [!code-cs[csAsyncExceptions#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_3.cs)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant illustre la gestion des exceptions quand plusieurs tâches peuvent entraîner plusieurs exceptions. Le `try` bloc attend la tâche retournée par un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. La tâche est terminée quand les trois tâches auxquelles WhenAll est appliqué sont terminées.  
   
  Chacune de ces trois tâches provoque une exception. Le `catch` bloc effectue une itération dans les exceptions qui sont trouvent dans le `Exception.InnerExceptions` propriétés de la tâche qui a été renvoyée par <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>.  
   
- [!code-cs[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/csharp/try-catch_4.cs)]  
+ [!code-cs[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_4.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

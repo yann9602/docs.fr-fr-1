@@ -24,11 +24,11 @@ En plus d'être utilisé pour spécifier l'ordre des opérations dans une expres
   
 1.  Spécifiez des casts, ou conversions de type.  
   
-     [!code-cs[csRefOperators#1](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#1)]  
+     [!code-cs[csRefOperators#1](../../../csharp/language-reference/operators/codesnippet/CSharp/invocation-operator_1.cs)]  
   
 2.  Appelez des méthodes ou des délégués.  
   
-     [!code-cs[csRefOperators#2](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#2)]  
+     [!code-cs[csRefOperators#2](../../../csharp/language-reference/operators/codesnippet/CSharp/invocation-operator_2.cs)]  
   
 ## Notes  
  Un cast appelle explicitement l'opérateur de conversion d'un type en un autre ; le cast échoue si aucun opérateur de conversion de ce genre n'est défini.  Pour définir un opérateur de conversion, consultez [explicit](../../../csharp/language-reference/keywords/explicit.md) et [implicit](../../../csharp/language-reference/keywords/implicit.md).  

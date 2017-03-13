@@ -32,7 +32,7 @@ Les énumérations offrent un moyen pratique d'utiliser des ensembles de constan
   
 -   Qualifiez le nom de membre avec l'énumération.  Par exemple, l'exemple suivant assigne le membre `Saturday` de l'énumération `FirstDayOfWeek` à la variable `DayValue`.  
   
-     [!code-vb[VbEnumsTask#19](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#19)]  
+     [!code-vb[VbEnumsTask#19](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-refer-to-an-enumeration-member_1.vb)]  
   
 ## Voir aussi  
  [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)   

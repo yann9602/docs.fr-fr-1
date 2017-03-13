@@ -35,21 +35,21 @@ L'ajout d'une instruction `Enum` dans la section des déclarations d'une classe 
   
 1.  Écrivez une déclaration qui inclut un niveau d'accès de code, le mot clé `Enum` et un nom valide, comme dans les exemples suivants, qui déclarent chacun un `Enum` différent.  
   
-     [!code-vb[VbEnumsTask#3](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#3)]  
+     [!code-vb[VbEnumsTask#3](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_1.vb)]  
   
 2.  Définissez les constantes dans l'énumération.  Par défaut, la première constante d'une énumération est initialisée à la valeur `0` et les constantes suivantes sont initialisées à une valeur de plus que la constante précédente.  Par exemple, l'énumération suivante \(`Days`\) contient une constante nommée `Sunday` avec la valeur `0`, une constante nommée `Monday` avec la valeur `1`, une constante nommée `Tuesday` avec la valeur `2`, et ainsi de suite.  
   
-     [!code-vb[VbEnumsTask#4](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#4)]  
+     [!code-vb[VbEnumsTask#4](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_2.vb)]  
   
 3.  Vous pouvez assigner explicitement des valeurs à des constantes dans une énumération en utilisant une instruction d'assignation.  Vous pouvez assigner une valeur entière, y compris des nombres négatifs.  Par exemple, vous pouvez définir des constantes avec des valeurs inférieures à zéro pour représenter des conditions d'erreur.  Dans l'énumération suivante, la valeur `–1` est explicitement assignée à la constante `Invalid` et la valeur `0` est assignée à la constante `Sunday`.  Dans la mesure où `Saturday` est la première constante de l'énumération, la valeur `0` lui est également assignée.  La valeur de `Monday` est `1` \(un de plus que la valeur de `Sunday`\), la valeur de `Tuesday` est `2`, et ainsi de suite.  
   
-     [!code-vb[VbEnumsTask#5](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#5)]  
+     [!code-vb[VbEnumsTask#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_3.vb)]  
   
 ### Pour déclarer une énumération en tant que type explicite  
   
 -   Spécifiez le type de l'énumération à l'aide de la clause `As`, comme indiqué dans l'exemple suivant.  
   
-     [!code-vb[VbEnumsTask#6](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#6)]  
+     [!code-vb[VbEnumsTask#6](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-enumerations_4.vb)]  
   
 ## Voir aussi  
  [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)   

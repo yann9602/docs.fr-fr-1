@@ -45,7 +45,7 @@ Continue { Do | For | While }
 ## Exemple  
  L'exemple de code suivant utilise l'instruction `Continue While` pour passer à la colonne suivante d'un tableau si un diviseur est nul.  L'instruction `Continue While` est à l'intérieur d'une boucle `For`.  Elle effectue un transfert vers l'instruction `While col < lastcol`, qui est l'itération suivante de la boucle `While` la plus profonde qui contient la boucle `For`.  
   
- [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/continue-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/continue-statement_1.vb)]  
   
 ## Voir aussi  
  [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   

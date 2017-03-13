@@ -35,7 +35,7 @@ Vous pouvez stocker une valeur dans une propriété en plaçant le nom de la pro
   
      L'exemple suivant affecte la valeur Midi à la propriété `TimeOfDay` de [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)], en appelant sa procédure `Set` implicitement.  
   
-     [!code-vb[VbVbcnProcedures#11](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-put-a-value-in-a-_1.vb)]  
+     [!code-vb[VbVbcnProcedures#11](./codesnippet/VisualBasic/how-to-put-a-value-in-a-property_1.vb)]  
   
 2.  Si la propriété accepte des arguments, faites suivre le nom de propriété de parenthèses à l'intérieur desquelles vous joindrez la liste d'arguments.  Si aucun argument n'est spécifié, vous pouvez ne pas mettre les parenthèses.  
   

@@ -33,7 +33,7 @@ Cet exemple convertit une chaîne hexadécimale en un entier à l'aide de la mé
   
      Le premier argument de la méthode <xref:System.Convert.ToInt32%2A> est la chaîne à convertir.  Le deuxième argument décrit la base dans laquelle le nombre est exprimé ; hexadécimal est de base 16.  
   
-     [!code-vb[VbVbalrStrings#62](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-hexadecim_1.vb)]  
+     [!code-vb[VbVbalrStrings#62](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-hexadecimal-strings-to-numbers_1.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Conversion.Hex%2A>   

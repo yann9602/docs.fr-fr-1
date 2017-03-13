@@ -101,17 +101,17 @@ If condition Then [ statements ] [ Else [ elsestatements ] ]
 ## Exemple  
  L'exemple suivant illustre l'utilisation de la syntaxe sur plusieurs lignes de l'instruction `If`...`Then`...`Else`.  
   
- [!code-vb[VbVbalrStatements#101](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/if-then-else-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#101](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant contient des instructions `If`...`Then`...`Else` imbriquées.  
   
- [!code-vb[VbVbalrStatements#102](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/if-then-else-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#102](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_2.vb)]  
   
 ## Exemple  
  L'exemple suivant illustre l'utilisation de la syntaxe à une seule ligne.  
   
- [!code-vb[VbVbalrStatements#103](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/if-then-else-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#103](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_3.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Interaction.Choose%2A>   

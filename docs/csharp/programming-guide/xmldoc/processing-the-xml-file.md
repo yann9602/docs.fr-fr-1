@@ -82,7 +82,7 @@ Le compilateur génère une chaîne d'identification pour chaque construction de
 ## Exemples  
  Les exemples ci\-dessous illustrent la manière dont les chaînes d'identification doivent être générées pour une classe et ses membres :  
   
- [!code-cs[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#21)]  
+ [!code-cs[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/processing-the-xml-file_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

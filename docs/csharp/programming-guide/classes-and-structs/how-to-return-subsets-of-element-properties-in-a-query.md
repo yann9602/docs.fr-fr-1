@@ -31,7 +31,7 @@ select student.ID;
 ## Exemple  
  L'exemple suivant indique comment utiliser un type anonyme pour retourner uniquement un sous\-ensemble des propriétés de chaque élément source qui correspond à la condition spécifiée.  
   
- [!code-cs[csProgGuideLINQ#31](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#31)]  
+ [!code-cs[csProgGuideLINQ#31](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-return-subsets-of-element-properties-in-a-query_1.cs)]  
   
  Notez que le type anonyme utilise les noms de l'élément source pour ses propriétés si aucun nom n'est spécifié.  Pour attribuer de nouveaux noms aux propriétés dans le type anonyme, écrivez l'instruction `select` comme suit :  
   

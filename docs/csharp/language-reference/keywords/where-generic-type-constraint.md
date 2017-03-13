@@ -27,17 +27,17 @@ Dans une définition de type générique, la clause `where` permet de spécifier
   
  Outre les contraintes d'interface, une clause `where` peut contenir une contrainte de classe de base qui déclare qu'un type doit avoir la classe spécifiée en tant que classe de base \(ou être cette classe\) pour être utilisé comme un argument de type pour ce type générique.  Si une telle contrainte est utilisée, elle doit apparaître avant toute autre contrainte pesant sur ce paramètre de type.  
   
- [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
   
  La clause `where` peut également inclure une contrainte de constructeur.  Il est possible de créer une instance d'un paramètre de type à l'aide de l'opérateur new ; toutefois, il faut que le paramètre de type soit contraint par la contrainte du constructeur, `new()`.  La contrainte [new\(\)](../../../csharp/language-reference/keywords/new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut.  Par exemple :  
   
- [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
   
  La contrainte `new()` apparaît en dernier dans la clause `where`.  
   
  Avec plusieurs paramètres de type, utilisez une clause `where` pour chaque paramètre de type, par exemple :  
   
- [!code-cs[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/csharp/where-generic-type-const_3.cs)]  
+ [!code-cs[csrefKeywordsContextual#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_3.cs)]  
   
  Vous pouvez également joindre des contraintes aux paramètres de type des méthodes génériques, comme ceci :  
   

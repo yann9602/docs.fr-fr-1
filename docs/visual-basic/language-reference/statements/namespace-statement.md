@@ -86,17 +86,17 @@ End Namespace
 ## Exemple  
  L'exemple suivant déclare deux espaces de noms, l'un imbriqué dans l'autre.  
   
- [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant déclare plusieurs espaces de noms imbriqués sur une seule ligne, et est équivalent à l'exemple précédent.  
   
- [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_2.vb)]  
   
 ## Exemple  
  L'exemple suivant accède à la classe définie dans les précédents exemples.  
   
- [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/namespace-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_3.vb)]  
   
 ## Exemple  
  L'exemple suivant définit la structure d'une nouvelle classe de liste générique et l'ajoute à l'espace de noms <xref:System.Collections.Generic?displayProperty=fullName>.  

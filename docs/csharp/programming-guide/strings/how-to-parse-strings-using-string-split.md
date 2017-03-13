@@ -24,7 +24,7 @@ L’exemple de code suivant montre comment analyser une chaîne à l’aide de l
  Cet exemple utilise des caractères de séparation \(espaces, virgules, points, deux\-points et onglets\) qui sont tous passés dans un tableau à <xref:System.String.Split%2A>.  Chaque mot dans la phrase de la chaîne cible est affiché séparément du tableau de chaînes résultant.  
   
 ## Exemple  
- [!code-cs[csProgGuideStrings#16](../../../csharp/programming-guide/strings/codesnippet/csharp/CSRefStrings/Strings.cs#16)]  
+ [!code-cs[csProgGuideStrings#16](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-parse-strings-using-string-split_1.cs)]  
   
 ## Exemple  
  Par défaut, String.Split retourne des chaînes vides quand deux caractères de séparation apparaissent de façon contiguë dans la chaîne cible.  Vous pouvez passer un paramètre StringSplitOptions.RemoveEmptyEntries facultatif pour exclure toutes les chaînes vides dans la sortie.  

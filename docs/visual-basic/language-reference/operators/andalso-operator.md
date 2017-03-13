@@ -66,14 +66,14 @@ result = expression1 AndAlso expression2
 ## Exemple  
  L'exemple suivant utilise l'opérateur `AndAlso` pour effectuer une conjonction logique sur deux expressions.  Le résultat est une valeur `Boolean` qui indique si l'expression conjointe entière est true.  Si la première expression est `False`, la seconde n'est pas évaluée.  
   
- [!code-vb[VbVbalrOperators#24](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/andalso-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#24](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_1.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : `True`, `False` et `False`.  Dans le calcul de `secondCheck`, la seconde expression n'est pas évaluée parce que la première a déjà la valeur `False`.  Toutefois, la seconde expression est évaluée dans le calcul de `thirdCheck`.  
   
 ## Exemple  
  L'exemple suivant montre une procédure `Function` qui recherche une valeur donnée parmi les éléments d'un tableau.  Si le tableau est vide ou si la longueur de tableau a été dépassée, l'instruction `While` ne teste pas l'élément de tableau pour la valeur de recherche.  
   
- [!code-vb[VbVbalrOperators#25](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/andalso-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#25](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/andalso-operator_2.vb)]  
   
 ## Voir aussi  
  [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   

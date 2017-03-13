@@ -38,7 +38,7 @@ Cet exemple indique comment utiliser la classe <xref:System.BitConverter> pour c
 > [!NOTE]
 >  La sortie peut différer selon l'ordre de primauté des octets utilisé dans l'architecture de votre ordinateur.  
   
- [!code-cs[csProgGuideTypes#22](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-byte-ar_1.cs)]  
+ [!code-cs[csProgGuideTypes#22](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-byte-array-to-an-int_1.cs)]  
   
 ## Exemple  
  Dans cet exemple, la méthode <xref:System.BitConverter.GetBytes%28System.Int32%29> de la classe <xref:System.BitConverter> est appelée pour convertir un `int` en un tableau d'octets.  
@@ -46,7 +46,7 @@ Cet exemple indique comment utiliser la classe <xref:System.BitConverter> pour c
 > [!NOTE]
 >  La sortie peut différer selon l'ordre de primauté des octets utilisé dans l'architecture de votre ordinateur.  
   
- [!code-cs[csProgGuideTypes#23](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/how-to-convert-a-byte-ar_2.cs)]  
+ [!code-cs[csProgGuideTypes#23](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-byte-array-to-an-int_2.cs)]  
   
 ## Voir aussi  
  <xref:System.BitConverter>   

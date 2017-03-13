@@ -44,14 +44,14 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
   
  Les exceptions particulières gérées et les actions particulières effectuées sur chaque fichier ou dossier sont fournies uniquement à titre d'exemples.  Vous devez modifier ce code en fonction de vos besoins.  Pour plus d'informations, consultez les commentaires du code.  
   
- [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#1)]  
+ [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
   
 ## Exemple  
  L'exemple suivant indique comment itérer au sein de fichiers et de dossiers dans une arborescence de répertoires sans utiliser la récurrence.  Cette technique utilise le type de collection générique <xref:System.Collections.Generic.Stack%601>, à savoir une pile de type dernier entré, premier sorti \(LIFO, Last\-In\-First\-Out\).  
   
  Les exceptions particulières gérées et les actions particulières effectuées sur chaque fichier ou dossier sont fournies uniquement à titre d'exemples.  Vous devez modifier ce code en fonction de vos besoins.  Pour plus d'informations, consultez les commentaires du code.  
   
- [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#2)]  
+ [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
   
  Il est généralement trop long de tester chaque dossier afin de déterminer si votre application a l'autorisation de l'ouvrir.  Par conséquent, l'exemple de code englobe simplement cette partie de l'opération dans un bloc `try/catch`.  Vous pouvez modifier le bloc `catch` afin que, lorsque l'accès à un dossier vous est refusé, vous essayiez d'élever vos autorisations et d'y accéder de nouveau.  En règle générale, interceptez uniquement les exceptions que vous pouvez gérer sans laisser votre application dans un état inconnu.  
   

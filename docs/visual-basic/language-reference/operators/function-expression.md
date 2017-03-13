@@ -67,19 +67,19 @@ End Function
 ## Exemple  
  Les exemples suivants illustrent deux façons de créer des expressions lambda simples.  La première utilise un `Dim` pour fournir un nom pour la fonction.  Pour appeler la fonction, envoyez une valeur pour le paramètre.  
   
- [!code-vb[VbVbalrLambdas#1](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#1)]  
+ [!code-vb[VbVbalrLambdas#1](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_1.vb)]  
   
- [!code-vb[VbVbalrLambdas#2](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#2)]  
+ [!code-vb[VbVbalrLambdas#2](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_2.vb)]  
   
 ## Exemple  
  Vous pouvez également déclarer et exécuter simultanément la fonction.  
   
- [!code-vb[VbVbalrLambdas#3](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#3)]  
+ [!code-vb[VbVbalrLambdas#3](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_3.vb)]  
   
 ## Exemple  
  L'exemple suivant est une expression lambda qui incrémente son argument et retourne la valeur.  L'exemple montre la syntaxe d'expression lambda sur une ou plusieurs lignes d'une fonction.  Pour plus d'exemples, consultez [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
- [!code-vb[VbVbalrLambdas#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#14)]  
+ [!code-vb[VbVbalrLambdas#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/function-expression_4.vb)]  
   
 ## Exemple  
  Les expressions lambda sont à la base d'un grand nombre d'opérateurs de requête dans [!INCLUDE[vbteclinqext](../../../csharp/getting-started/includes/vbteclinqext-md.md)]et peuvent être utilisées explicitement dans les requêtes basées sur une méthode.  L'exemple suivant montre une requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] typique, suivie de la traduction de la requête au format de la méthode.  

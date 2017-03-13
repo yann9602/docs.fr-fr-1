@@ -46,12 +46,12 @@ Where condition
 ## Exemple  
  L'expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour chaque objet `Customer` de la collection `customers`.  La clause `Where` utilise la variable de portée pour restreindre la sortie aux clients de la région spécifiée.  La boucle `For Each` affiche le nom de société pour chaque client dans le résultat de la requête.  
   
- [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#23)]  
+ [!code-vb[VbSimpleQuerySamples#23](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/where-clause_1.vb)]  
   
 ## Exemple  
  l'exemple suivant utilise `And` et des opérateurs logiques d' `Or` dans la clause d' `Where` .  
   
- [!code-vb[VbSimpleQuerySamples#31](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#31)]  
+ [!code-vb[VbSimpleQuerySamples#31](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/where-clause_2.vb)]  
   
 ## Voir aussi  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

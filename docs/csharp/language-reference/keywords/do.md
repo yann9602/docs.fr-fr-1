@@ -24,7 +24,7 @@ L'instruction `do` répète une instruction ou un bloc d'instructions jusqu'à c
 ## Exemple  
  Dans l'exemple suivant, les instructions de boucle `do-while` s'exécutent tant que la variable `x` est inférieure à 5.  
   
- [!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/csharp/do_1.cs)]  
+ [!code-cs[csrefKeywordsIteration#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/do_1.cs)]  
   
  Contrairement à l'instruction [while](../../../csharp/language-reference/keywords/while.md), une boucle `do-while` est exécutée une fois avant que l'expression conditionnelle ne soit évaluée.  
   

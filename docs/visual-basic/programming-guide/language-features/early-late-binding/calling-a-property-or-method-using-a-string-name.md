@@ -44,11 +44,11 @@ Dans la plupart des cas, vous pouvez découvrir les propriétés et méthodes d'
   
  Supposons que vous ajoutez une référence à un assembly contenant une classe appelée `MathClass` dotée d'une nouvelle fonction appelée `SquareRoot`, comme illustré dans le code suivant :  
   
- [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#53)]  
+ [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_1.vb)]  
   
  Votre application peut utiliser des contrôles de zone de texte pour contrôler la méthode et les arguments qui seront appelés.  Par exemple, si `TextBox1` contient l'expression à évaluer et si `TextBox2` est utilisé pour entrer le nom de la fonction, vous pouvez utiliser le code suivant pour appeler la fonction `SquareRoot` pour l'expression contenue dans `TextBox1` :  
   
- [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#54)]  
+ [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_2.vb)]  
   
  Si vous entrez "64" dans `TextBox1`, "SquareRoot" dans `TextBox2` et que vous appelez ensuite la procédure `CallMath`, la racine carrée du nombre contenu dans `TextBox1` est évaluée.  Le code de cet exemple appelle la fonction `SquareRoot` \(qui accepte une chaîne qui contient l'expression à évaluer comme un argument obligatoire\) et retourne « 8 » dans `TextBox1` \(la racine carrée de 64\).  Évidemment, si l'utilisateur entre une chaîne non valide dans `TextBox2`, si la chaîne contient le nom d'une propriété et non celui d'une méthode ou si la méthode possède un argument obligatoire supplémentaire, il se produit une erreur d'exécution.  Vous devez ajouter un code robuste de gestion des erreurs lorsque vous utilisez la fonction `CallByName` afin d'anticiper les erreurs de ce type.  
   

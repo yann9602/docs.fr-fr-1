@@ -46,7 +46,7 @@ Spécifie qu'un ou plusieurs éléments de programmation déclarés sont accessi
 ## Exemple  
  La classe suivante utilise le modificateur `Friend` pour permettre à d'autres éléments de programmation du même assembly d'accéder à certains membres.  
   
- [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/friend_1.vb)]  
+ [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/friend_1.vb)]  
   
 ## Utilisation  
  Vous pouvez utiliser le modificateur d' `Friend` dans ces contextes :  

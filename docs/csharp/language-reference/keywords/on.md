@@ -24,7 +24,7 @@ Le mot clé contextuel `on` est utilisé dans la [clause de jointure](../../../c
 ## Exemple  
  L'exemple suivant illustre l'utilisation de `on` dans une clause `join`.  
   
- [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/csharp/on_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/on_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

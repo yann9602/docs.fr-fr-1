@@ -64,7 +64,7 @@ CType(expression, typename)
 ## Exemple  
  L'exemple suivant utilise la fonction `CType` pour convertir une expression en type de données `Single` .  
   
- [!code-vb[VbVbalrFunctions#24](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/ctype-function_1.vb)]  
+ [!code-vb[VbVbalrFunctions#24](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/ctype-function_1.vb)]  
   
  Pour obtenir d'autres exemples, consultez [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md).  
   

@@ -29,7 +29,7 @@ Cette rubrique montre comment convertir les octets d'un tableau d'octets en une 
 ## Exemple  
  Cet exemple utilise la méthode <xref:System.Text.Encoding.GetString%2A> de la classe d'encodage <xref:System.Text.Encoding.Unicode%2A?displayProperty=fullName> pour convertir tous les octets d'un tableau d'octets en une chaîne.  
   
- [!code-vb[VbVbalrStrings#72](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-convert-an-array-_1.vb)]  
+ [!code-vb[VbVbalrStrings#72](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-an-array-of-bytes-into-a-string_1.vb)]  
   
  Vous pouvez choisir entre plusieurs options d'encodage pour convertir un tableau d'octets en une chaîne :  
   

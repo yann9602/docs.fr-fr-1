@@ -34,7 +34,7 @@ Les destructeurs permettent de détruire les instances des classes.
   
  Par exemple, voici la déclaration d'un destructeur pour la classe `Car` :  
   
- [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/destructors_1.cs)]  
+ [!code-cs[csProgGuideObjects#86](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_1.cs)]  
   
  Le destructeur appelle implicitement <xref:System.Object.Finalize%2A> sur la classe de base de l'objet.  Ainsi, le code du destructeur précédent est traduit implicitement dans le code suivant :  
   
@@ -78,7 +78,7 @@ protected override void Finalize()
 ## Exemple  
  Dans l'exemple suivant, trois classes sont créées qui forment une chaîne d'héritage.  La classe `First` est la classe de base, la classe `Second` est dérivée de la classe `First` et la classe `Third` est dérivée de la classe `Second`.  Tous les trois possèdent des destructeurs.  Dans `Main()`, une instance de la classe la plus dérivée est créée.  Lorsque le programme s'exécute, notez que les destructeurs sont appelés automatiquement pour les trois classes, dans l'ordre, du plus dérivé au moins dérivé.  
   
- [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/destructors_2.cs)]  
+ [!code-cs[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

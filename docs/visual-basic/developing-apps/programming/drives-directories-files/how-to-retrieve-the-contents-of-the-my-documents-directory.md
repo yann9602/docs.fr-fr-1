@@ -27,7 +27,7 @@ L'objet <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> peut être utilis
   
 -   Utilisez la méthode `ReadAllText` pour lire le texte de chaque fichier dans un répertoire spécifique.  Le code suivant spécifie un répertoire et un fichier, puis utilise `ReadAllText` pour les lire dans la chaîne nommée `patients`.  
   
-     [!code-vb[VbVbcnMyFileSystem#15](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-retrieve-the-cont_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#15](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-retrieve-the-contents-of-the-my-documents-directory_1.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>   

@@ -35,7 +35,7 @@ La procédure `Sub` ne retourne pas de valeur au code appelant.  Vous appelez ce
   
      L'exemple suivant appelle la fonction <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] pour activer une fenêtre d'application.  <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> accepte le titre de la fenêtre comme unique argument.  Elle ne retourne pas de valeur au code appelant.  Si un processus Notepad n'est pas en cours d'exécution, l'exemple lève un <xref:System.ArgumentException>.  La procédure `Shell` suppose que les applications se trouvent dans les chemins d'accès spécifiés.  
   
-     [!code-vb[VbVbalrCatRef#11](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-a-procedure-_1_1.vb)]  
+     [!code-vb[VbVbalrCatRef#11](./codesnippet/VisualBasic/how-to-call-a-procedure-that-does-not-return-a-value_1.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Interaction.Shell%2A>   

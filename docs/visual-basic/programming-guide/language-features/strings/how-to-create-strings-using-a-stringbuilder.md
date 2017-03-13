@@ -27,7 +27,7 @@ Cet exemple construit une longue chaîne à partir de plusieurs chaînes plus pe
 ## Exemple  
  L'exemple suivant crée une instance de la classe <xref:System.Text.StringBuilder>, ajoute 1 000 chaînes à cette instance, puis retourne sa représentation sous forme de chaîne.  
   
- [!code-vb[VbVbalrStrings#70](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-create-strings-us_1.vb)]  
+ [!code-vb[VbVbalrStrings#70](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-create-strings-using-a-stringbuilder_1.vb)]  
   
 ## Voir aussi  
  [Utilisation de la classe StringBuilder](../Topic/Using%20the%20StringBuilder%20Class%20in%20the%20.NET%20Framework.md)   

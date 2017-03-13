@@ -30,7 +30,7 @@ L'opérateur `~` effectue une opération de complément de bits sur son opérand
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `~` .  Pour plus d'informations, consultez [operator](../../../csharp/language-reference/keywords/operator.md).  Les opérations sur les types intégraux sont en général autorisées sur énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#25](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#25)]  
+ [!code-cs[csRefOperators#25](../../../csharp/language-reference/operators/codesnippet/CSharp/bitwise-complement-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

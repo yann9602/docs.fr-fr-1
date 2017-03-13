@@ -155,7 +155,7 @@ result = string Like pattern
 ## Exemple  
  L'exemple suivant montre les différentes utilisations des opérateurs de comparaison relationnels dont vous vous servez pour comparer des expressions.  Les opérateurs de comparaison relationnels retournent un résultat `Boolean` qui indique si l'expression spécifiée a la valeur `True`.  Lorsque vous appliquez les opérateurs `>` et `<` à des chaînes, la comparaison est effectuée à l'aide de l'ordre de tri alphabétique normal des chaînes.  Cet ordre peut dépendre de vos paramètres régionaux.  Le fait que le tri respecte la casse ou non dépend du paramètre [Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md).  
   
- [!code-vb[VbVbalrOperators#1](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#1](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   
  Dans l'exemple précédent, la première comparaison retourne `False` et les comparaisons restantes retournent `True`.  
   

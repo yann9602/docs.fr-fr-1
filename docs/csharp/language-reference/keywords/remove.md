@@ -23,7 +23,7 @@ Le mot clé contextuel `remove` sert à définir un accesseur d'événement pers
 ## Exemple  
  L'exemple suivant illustre un événement avec des accesseurs [add](../../../csharp/language-reference/keywords/add.md) et `remove` personnalisés.  Pour obtenir l'exemple complet, consultez [Comment : implémenter des événements d'interface](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).  
   
- [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/csharp/remove_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/remove_1.cs)]  
   
  En général, vous n'avez pas besoin de fournir vos propres accesseurs d'événements personnalisés.  Les accesseurs générés automatiquement par le compilateur lorsque vous déclarez un événement sont suffisants pour la plupart des scénarios.  
   

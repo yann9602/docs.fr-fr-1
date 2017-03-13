@@ -33,9 +33,9 @@ for (int i = 65; i < 123; i++)
   
  Remarquez que l'expression `charPointer[i]` équivaut à l'expression `*(charPointer + i)`, et vous pouvez obtenir le même résultat en utilisant l'une ou l'autre expression.  
   
- [!code-cs[csProgGuidePointers#11](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#11)]  
+ [!code-cs[csProgGuidePointers#11](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-access-an-array-element-with-a-pointer_1.cs)]  
   
- [!code-cs[csProgGuidePointers#12](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#12)]  
+ [!code-cs[csProgGuidePointers#12](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-access-an-array-element-with-a-pointer_2.cs)]  
   
   **Lettres majuscules :**  
 **ABCDEFGHIJKLMNOPQRSTUVWXYZ**  

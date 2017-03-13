@@ -97,7 +97,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) 
 ## Exemple  
  L'exemple suivant fractionne la définition de la classe `sampleClass` en deux déclarations, dont chacune définit une procédure `Sub` différente.  
   
- [!code-vb[VbVbalrKeywords#3](../../../visual-basic/language-reference/codesnippet/visualbasic/partial_1.vb)]  
+ [!code-vb[VbVbalrKeywords#3](../../../visual-basic/language-reference/codesnippet/VisualBasic/partial_1.vb)]  
   
  Les deux définitions partielles de l'exemple précédent peuvent être dans le même fichier source ou dans deux fichiers sources différents.  
   

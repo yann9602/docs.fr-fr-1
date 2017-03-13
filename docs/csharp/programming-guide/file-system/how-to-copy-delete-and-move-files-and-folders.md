@@ -23,17 +23,17 @@ Les exemples suivants indiquent comment copier, déplacer et supprimer des fichi
 ## Exemple  
  L'exemple suivant montre comment copier des fichiers et des répertoires.  
   
- [!code-cs[csFilesandFolders#7](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#7)]  
+ [!code-cs[csFilesandFolders#7](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-copy-delete-and-move-files-and-folders_1.cs)]  
   
 ## Exemple  
  L'exemple suivant montre comment déplacer des fichiers et des répertoires.  
   
- [!code-cs[csFilesandFolders#8](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#8)]  
+ [!code-cs[csFilesandFolders#8](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-copy-delete-and-move-files-and-folders_2.cs)]  
   
 ## Exemple  
  L'exemple suivant montre comment supprimer des fichiers et des répertoires.  
   
- [!code-cs[csFilesandFolders#9](../../../csharp/programming-guide/file-system/codesnippet/csharp/csFilesFolders/FileIteration.cs#9)]  
+ [!code-cs[csFilesandFolders#9](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-copy-delete-and-move-files-and-folders_3.cs)]  
   
 ## Voir aussi  
  <xref:System.IO?displayProperty=fullName>   

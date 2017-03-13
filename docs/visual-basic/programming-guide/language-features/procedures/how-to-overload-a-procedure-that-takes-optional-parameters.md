@@ -47,11 +47,11 @@ Si une procédure possède un ou plusieurs paramètres [Optional](../../../../vi
   
      L'exemple suivant affiche une procédure définie par un paramètre facultatif, un jeu d'équivalents de deux procédures surchargées et enfin des exemples de versions surchargées non valides et valides.  
   
-     [!code-vb[VbVbcnProcedures#59](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_1.vb)]  
+     [!code-vb[VbVbcnProcedures#59](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_1.vb)]  
   
-     [!code-vb[VbVbcnProcedures#60](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_2.vb)]  
+     [!code-vb[VbVbcnProcedures#60](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_2.vb)]  
   
-     [!code-vb[VbVbcnProcedures#61](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_1_3.vb)]  
+     [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_3.vb)]  
   
 ## Paramètres facultatifs multiples  
  Pour créer une procédure disposant de plusieurs paramètres facultatifs, vous avez normalement besoin de plus de deux versions surchargées.  Par exemple, s'il y a deux paramètres optionnels, et le code appelant peut fournir ou omettre indépendamment chacun de l'autre, vous avez besoin de quatre versions surchargées, une pour chaque combinaison possible d'arguments fournis.  

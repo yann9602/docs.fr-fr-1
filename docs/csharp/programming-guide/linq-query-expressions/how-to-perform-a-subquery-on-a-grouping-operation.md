@@ -10,7 +10,7 @@ Cette rubrique présente deux façons différentes de créer une requête qui or
  Pour plus d'informations sur les continuations, consultez [into](../../../csharp/language-reference/keywords/into.md).  L'exemple suivant utilise une structure de données en mémoire comme source de données, mais les mêmes principes s'appliquent à tout type de source de données [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)].  
   
 ## Exemple  
- [!code-cs[csProgGuideLINQ#23](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#23)]  
+ [!code-cs[csProgGuideLINQ#23](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-a-subquery-on-a-grouping-operation_1.cs)]  
   
 ## Compilation du code  
  Cet exemple contient des références aux objets définis dans l'exemple d'application dans [Comment : interroger une collection d'objets](../../../csharp/programming-guide/linq-query-expressions/how-to-query-a-collection-of-objects.md).  Pour compiler et exécuter cette méthode, collez\-la dans la classe `StudentClass` de cette application et ajoutez\-lui un appel de la méthode `Main`.  

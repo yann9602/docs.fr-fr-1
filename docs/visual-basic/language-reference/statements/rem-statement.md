@@ -53,7 +53,7 @@ REM comment
 ## Exemple  
  L'exemple suivant illustre l'instruction `REM` qui est utilisée pour inclure des notes explicatives dans un programme.  Il montre également qu'il est possible d'utiliser le guillemet simple \(`'`\) à la place de `REM`.  
   
- [!code-vb[VbVbalrStatements#6](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/rem-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#6](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/rem-statement_1.vb)]  
   
 ## Voir aussi  
  [Comments in Code](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)   

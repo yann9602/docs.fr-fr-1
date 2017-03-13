@@ -42,12 +42,12 @@ Le mot clé `volatile` indique qu'un champ peut être modifié par plusieurs thr
 ## Exemple  
  L'exemple ci\-dessous montre comment déclarer une variable de champ public comme `volatile`.  
   
- [!code-cs[csrefKeywordsModifiers#24](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#24)]  
+ [!code-cs[csrefKeywordsModifiers#24](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_1.cs)]  
   
 ## Exemple  
  L'exemple suivant montre comment il est possible de créer un thread auxiliaire ou de travail et de l'utiliser pour effectuer le traitement en parallèle avec le thread principal.  Pour obtenir des informations générales sur le multithreading, consultez [Threading](../Topic/Managed%20Threading.md) et [Thread](../Topic/Threading%20\(C%23%20and%20Visual%20Basic\).md).  
   
- [!code-cs[csProgGuideThreading#1](../../../csharp/language-reference/keywords/codesnippet/csharp/volatile_2.cs)]  
+ [!code-cs[csProgGuideThreading#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/volatile_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

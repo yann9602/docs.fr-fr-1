@@ -63,7 +63,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 ## Exemple  
  Voici un exemple d'une classe statique qui contient deux méthodes qui convertissent la température de Celsius en Fahrenheit et de Fahrenheit en Celsius :  
   
- [!code-cs[csProgGuideObjects#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-classes-and-stati_1.cs)]  
+ [!code-cs[csProgGuideObjects#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-classes-and-static-class-members_1.cs)]  
   
 ## Membres statiques  
  Une classe non statique peut contenir des méthodes, des champs, des propriétés ou des événements statiques.  Le membre statique peut être appelé sur une classe même quand aucune instance de la classe n'a été créée.  Le membre statique est toujours accédé par le nom de classe, et non par le nom d'instance.  Une seule copie d'un membre statique existe, quel que soit le nombre d'instances de la classe créées.  Les méthodes et propriétés statiques ne peuvent pas accéder à des champs et des événements non statiques dans leur type contenant, et ils ne peuvent pas accéder à une variable d'instance de tout objet à moins qu'elle ne soit passée explicitement dans un paramètre de méthode.  
@@ -78,11 +78,11 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Vous déclarez des membres de classe statique en utilisant le mot clé `static` avant le type de retour du membre, comme illustré dans l'exemple suivant :  
   
- [!code-cs[csProgGuideObjects#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-classes-and-stati_2.cs)]  
+ [!code-cs[csProgGuideObjects#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-classes-and-static-class-members_2.cs)]  
   
  Les membres statiques sont initialisés avant que le membre statique fasse l'objet d'un accès pour la première fois, et avant que le constructeur statique, le cas échéant, soit appelé.  Pour accéder à un membre de classe statique, utilisez le nom de la classe au lieu d'un nom de variable pour spécifier l'emplacement du membre, comme illustré dans l'exemple suivant :  
   
- [!code-cs[csProgGuideObjects#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/static-classes-and-stati_3.cs)]  
+ [!code-cs[csProgGuideObjects#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-classes-and-static-class-members_3.cs)]  
   
  Si votre classe contient des champs statiques, fournissez un constructeur statique qui les initialise lorsque la classe est chargée.  
   

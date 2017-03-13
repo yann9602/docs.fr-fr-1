@@ -43,7 +43,7 @@ Spécifie qu'une classe peut être utilisée uniquement comme classe de base et 
 ## Exemple  
  L'exemple suivant illustre à la fois l'héritage et la substitution forcés.  La classe de base `shape` définit une variable `acrossLine`.  Les classes `circle` et `square` dérivent de `shape`.  Elles héritent de la définition de `acrossLine`, mais elles doivent définir la fonction `area`parce que ce calcul est différent pour chaque type de forme.  
   
- [!code-vb[VbVbalrKeywords#2](../../../visual-basic/language-reference/codesnippet/visualbasic/mustinherit_1.vb)]  
+ [!code-vb[VbVbalrKeywords#2](../../../visual-basic/language-reference/codesnippet/VisualBasic/mustinherit_1.vb)]  
   
  Vous pouvez déclarer `shape1` et `shape2` comme type `shape`.  Toutefois, vous ne pouvez pas créer un objet de `shape` parce que la fonctionnalité de la fonction `area` est manquante et il est marqué comme `MustInherit`.  
   

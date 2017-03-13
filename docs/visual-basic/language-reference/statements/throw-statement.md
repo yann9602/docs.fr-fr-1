@@ -52,7 +52,7 @@ Throw [ expression ]
 ## Exemple  
  Le code suivant utilise l'instruction `Throw` pour lever une exception :  
   
- [!code-vb[VbVbalrStatements#84](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/throw-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#84](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/throw-statement_1.vb)]  
   
 ## Configuration requise  
  **Espace de noms :** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

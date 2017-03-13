@@ -24,7 +24,7 @@ Utilisez le mot clé `operator` pour surcharger un opérateur intégré ou fourn
 ## Exemple  
  La formulation suivante est une classe extrêmement simplifiée pour les nombres fractionnels.  Elle surcharge les opérateurs \+ et \* pour effectuer des additions et des multiplications de fractions, et fournit également un opérateur qui convertit un type fraction en type double.  
   
- [!code-cs[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/csharp/operator_1.cs)]  
+ [!code-cs[csrefKeywordsConversion#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/operator_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

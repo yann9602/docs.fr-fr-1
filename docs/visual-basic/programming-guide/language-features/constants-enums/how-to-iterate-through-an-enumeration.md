@@ -29,7 +29,7 @@ Les énumérations offrent un moyen pratique d'utiliser des ensembles de constan
   
 -   Déclarez un tableau et convertissez l'énumération en ce tableau avec la méthode <xref:System.Enum.GetValues%2A>, avant de passer le tableau comme vous le feriez avec toute autre variable.  L'exemple suivant affiche chaque membre de l'énumération <xref:Microsoft.VisualBasic.FirstDayOfWeek> qui itère au sein de l'énumération.  
   
-     [!code-vb[VbEnumsTask#7](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#7)]  
+     [!code-vb[VbEnumsTask#7](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-iterate-through-an-enumeration_1.vb)]  
   
 ## Voir aussi  
  [Enumerations Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)   

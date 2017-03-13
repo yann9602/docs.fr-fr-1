@@ -24,7 +24,7 @@ Le modificateur `abstract` indique que l'élément en cours de modification a un
 ## Exemple  
  Dans cet exemple, la classe `Square` doit fournir une implémentation de `Area` puisqu'elle dérive de `ShapesClass`:  
   
- [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#1)]  
+ [!code-cs[csrefKeywordsModifiers#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_1.cs)]  
   
  Les classes abstraites présentent les fonctionnalités suivantes :  
   
@@ -66,12 +66,12 @@ Le modificateur `abstract` indique que l'élément en cours de modification a un
   
  Une classe abstraite qui implémente une interface peut mapper les méthodes d'interface sur des méthodes abstraites.  Par exemple :  
   
- [!code-cs[csrefKeywordsModifiers#2](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#2)]  
+ [!code-cs[csrefKeywordsModifiers#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_2.cs)]  
   
 ## Exemple  
  Dans cet exemple, la classe `DerivedClass` est dérivée d'une classe abstraite `BaseClass`.  La classe abstraite contient une méthode abstraite, `AbstractMethod`, et deux propriétés abstraites, `X` et `Y`.  
   
- [!code-cs[csrefKeywordsModifiers#3](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#3)]  
+ [!code-cs[csrefKeywordsModifiers#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/abstract_3.cs)]  
   
  Dans l'exemple précédent, si vous tentez d'instancier la classe abstraite en utilisant une instruction comme celle\-ci :  
   

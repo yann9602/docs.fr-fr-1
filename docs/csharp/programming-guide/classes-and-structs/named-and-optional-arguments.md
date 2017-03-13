@@ -55,7 +55,7 @@ caps.handback.revision: 43
 ## Exemple  
  Le code suivant implémente les exemples de cette section.  
   
- [!code-cs[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/program.cs#1)]  
+ [!code-cs[csProgGuideNamedAndOptional#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_1.cs)]  
   
 ## Arguments facultatifs  
  La définition d'une méthode, d'un constructeur, d'un indexeur ou d'un délégué peut spécifier que ses paramètres sont obligatoires ou optionnels.  Tout appel doit fournir des arguments pour tous les paramètres obligatoires, mais peut omettre les arguments des paramètres optionnels.  
@@ -70,7 +70,7 @@ caps.handback.revision: 43
   
  Les paramètres optionnels sont définis à la fin de la liste de paramètres, après tous les paramètres obligatoires.  Si l'appelant fournit un argument pour l'un des paramètres d'une suite de paramètres optionnels, il doit spécifier des arguments pour tous les paramètres optionnels précédents.  Les intervalles séparés par des virgules ne sont pas pris en charge dans la liste d'arguments.  Par exemple, dans le code suivant, la méthode d'instance `ExampleMethod` est définie avec un paramètre obligatoire et deux paramètres optionnels.  
   
- [!code-cs[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/optional.cs#15)]  
+ [!code-cs[csProgGuideNamedAndOptional#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_2.cs)]  
   
  L'appel suivant à `ExampleMethod` provoque une erreur du compilateur, car un argument est fourni pour le troisième paramètre mais pas pour le deuxième.  
   
@@ -91,7 +91,7 @@ Paramètres optionnels dans ExampleMethod
 ## Exemple  
  Dans l'exemple suivant, le constructeur associé à `ExampleClass` comporte un paramètre, qui est optionnel.  La méthode d'instance `ExampleMethod` comporte un paramètre obligatoire, `required`, et deux paramètres optionnels, `optionalstr` et `optionalint`.  Le code de `Main` illustre les différentes façons dont le constructeur et la méthode peuvent être appelés.  
   
- [!code-cs[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/optional.cs#2)]  
+ [!code-cs[csProgGuideNamedAndOptional#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_3.cs)]  
   
 ## Interfaces COM  
  Avec la prise en charge des objets dynamiques et d'autres améliorations, les arguments nommés et facultatifs améliorent considérablement l'interopérabilité avec les API COM, telles que les API d'automation Office.  
@@ -103,11 +103,11 @@ Paramètres AutoFormat
   
  Dans la version C\# 3.0 et les versions antérieures, un argument est obligatoire pour chaque paramètre, comme indiqué dans l'exemple suivant.  
   
- [!code-cs[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/namedandoptcom.cs#3)]  
+ [!code-cs[csProgGuideNamedAndOptional#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_4.cs)]  
   
  Toutefois, vous pouvez simplifier considérablement l'appel à `AutoFormat` à l'aide des arguments nommés et optionnels introduits dans la version C\# 4.0.  Les arguments nommés et optionnels vous permettent d'omettre l'argument pour un paramètre optionnel si vous ne souhaitez pas modifier la valeur par défaut du paramètre.  Dans l'appel suivant, une valeur est spécifiée pour un seul des sept paramètres.  
   
- [!code-cs[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/namedandoptionalsnippets/namedandoptcom.cs#13)]  
+ [!code-cs[csProgGuideNamedAndOptional#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/named-and-optional-arguments_5.cs)]  
   
  Pour plus d'informations et d'exemples, consultez [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md) et [Comment : accéder aux objets Office Interop à l'aide des fonctionnalités Visual C\#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md).  
   

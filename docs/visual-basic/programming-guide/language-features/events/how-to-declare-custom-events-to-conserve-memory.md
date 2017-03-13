@@ -34,7 +34,7 @@ Il existe plusieurs situations où il est important pour une application d'écon
   
  Tous les événements de la classe utilisent le champ `Events` pour assurer le suivi des méthodes qui gèrent chaque événement.  
   
- [!code-vb[VbVbalrEvents#22](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#22)]  
+ [!code-vb[VbVbalrEvents#22](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-custom-events-to-conserve-memory_1.vb)]  
   
 ## Voir aussi  
  <xref:System.ComponentModel.EventHandlerList>   

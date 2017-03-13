@@ -67,12 +67,12 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
 ## Exemple  
  L'exemple de code suivant effectue une jointure implicite pour combiner une liste de clients avec leurs commandes.  
   
- [!code-vb[VbSimpleQuerySamples#13](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#13)]  
+ [!code-vb[VbSimpleQuerySamples#13](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/join-clause_1.vb)]  
   
 ## Exemple  
  L'exemple de code suivant joint deux collections à l'aide de la clause `Join`.  
   
- [!code-vb[VbSimpleQuerySamples#12](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples2.vb#12)]  
+ [!code-vb[VbSimpleQuerySamples#12](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/join-clause_2.vb)]  
   
  Cet exemple produira un résultat analogue à celui\-ci :  
   
@@ -85,7 +85,7 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
 ## Exemple  
  L'exemple de code suivant joint deux collections en utilisant la clause `Join` avec deux colonnes clés.  
   
- [!code-vb[VbSimpleQuerySamples#17](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples3.vb#17)]  
+ [!code-vb[VbSimpleQuerySamples#17](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/join-clause_3.vb)]  
   
  L'exemple produira un résultat analogue à celui\-ci :  
   

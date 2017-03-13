@@ -23,20 +23,20 @@ Le mot clé `checked` sert à activer explicitement le contrôle de dépassement
   
  Par défaut, une expression qui contient uniquement des valeurs constantes provoque une erreur de compilateur si l'expression produit une valeur qui est à l'extérieur de la plage du type de destination.  Si l'expression contient une ou plusieurs valeurs non constantes, le compilateur ne détecte pas le dépassement de capacité.  L'évaluation de l'expression assignée à `i2` dans l'exemple suivant ne provoque pas d'erreur du compilateur.  
   
- [!code-cs[csrefKeywordsChecked#3](../../../csharp/language-reference/keywords/codesnippet/csharp/checked_1.cs)]  
+ [!code-cs[csrefKeywordsChecked#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/checked_1.cs)]  
   
  Par défaut, le dépassement de capacité éventuel au moment de l'exécution de ces expressions non constantes n'est pas vérifié, et elles ne déclenchent pas d'exceptions de dépassement de capacité.  L'exemple précédent affiche \-2,147,483,639 comme somme de deux entiers positifs.  
   
  Le contrôle de dépassement peut être activé par les options du compilateur, la configuration de l'environnement ou l'utilisation du mot clé `checked`.  Les exemples suivants montrent comment utiliser une expression `checked` ou un bloc `checked` pour détecter le dépassement de capacité produit par la somme précédente au moment de l'exécution.  Les deux exemples déclenchent une exception de dépassement de capacité.  
   
- [!code-cs[csrefKeywordsChecked#4](../../../csharp/language-reference/keywords/codesnippet/csharp/checked_2.cs)]  
+ [!code-cs[csrefKeywordsChecked#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/checked_2.cs)]  
   
  Le mot clé [unchecked](../../../csharp/language-reference/keywords/unchecked.md) peut être utilisé pour empêcher la vérification du dépassement de capacité.  
   
 ## Exemple  
  Cet exemple indique comment utiliser `checked` pour activer la vérification du dépassement au moment de l'exécution.  
   
- [!code-cs[csrefKeywordsChecked#1](../../../csharp/language-reference/keywords/codesnippet/csharp/checked_3.cs)]  
+ [!code-cs[csrefKeywordsChecked#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/checked_3.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

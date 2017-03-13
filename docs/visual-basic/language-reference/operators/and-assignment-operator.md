@@ -51,7 +51,7 @@ variableorproperty &= expression
 ## Exemple  
  L'exemple suivant utilise l'opérateur `&=` pour concaténer deux variables `String` et assigner le résultat à la première variable.  
   
- [!code-vb[VbVbalrOperators#3](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/and-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#3](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/and-assignment-operator_1.vb)]  
   
 ## Voir aussi  
  [& Operator](../../../visual-basic/language-reference/operators/concatenation-operator.md)   

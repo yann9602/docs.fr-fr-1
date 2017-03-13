@@ -66,11 +66,11 @@ Cette procédure pas à pas montre comment vous pouvez utiliser les fonctionnali
   
 1.  Recherchez l'endroit dans la méthode `Main` du projet marqué comme suit :  
   
-     [!code-vb[VbLINQWalkthrough#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_1.vb)]  
+     [!code-vb[VbLINQWalkthrough#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_1.vb)]  
   
      Copiez le code suivant et collez\-le.  
   
-     [!code-vb[VbLINQWalkthrough#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_2.vb)]  
+     [!code-vb[VbLINQWalkthrough#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_2.vb)]  
   
 2.  Placez le pointeur de la souris sur `studentQuery` dans votre code pour vérifier que le type assigné par le compilateur est `IEnumerable(Of Student)`.  
   
@@ -81,7 +81,7 @@ Cette procédure pas à pas montre comment vous pouvez utiliser les fonctionnali
   
 1.  Ajoutez la boucle `For Each` suivante sous la requête dans votre projet.  
   
-     [!code-vb[VbLINQWalkthrough#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_3.vb)]  
+     [!code-vb[VbLINQWalkthrough#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_3.vb)]  
   
 2.  Placez le pointeur de la souris sur la variable de contrôle de boucle `studentRecord` pour consulter son type de données.  Le type de `studentRecord`, `Student`, est déduit car `studentQuery` retourne une collection d'instances `Student`.  
   
@@ -112,7 +112,7 @@ Cette procédure pas à pas montre comment vous pouvez utiliser les fonctionnali
   
 1.  Ajoutez le code de cette section pour introduire un identificateur local dans l'expression de requête.  L'identificateur local contiendra un résultat intermédiaire.  Dans l'exemple suivant, `name` est un identificateur qui contient une concaténation du nom et du prénom de l'étudiant.  Un identificateur local peut être utilisé pour des raisons pratiques ou peut améliorer les performances en stockant les résultats d'une expression qui, sinon, serait calculée plusieurs fois.  
   
-     [!code-vb[VbLINQWalkthrough#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_4.vb)]  
+     [!code-vb[VbLINQWalkthrough#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_4.vb)]  
   
 2.  Générez et exécutez l'application en appuyant sur CTRL\+F5.  Notez les résultats dans la fenêtre de console.  
   
@@ -120,7 +120,7 @@ Cette procédure pas à pas montre comment vous pouvez utiliser les fonctionnali
   
 1.  Ajoutez la requête et la boucle `For Each` de cette section pour créer une requête qui génère une séquence dont les éléments diffèrent des éléments dans la source.  Dans l'exemple suivant, la source est une collection d'objets `Student`, mais un seul membre de chaque objet est retourné : le prénom des étudiants dont le nom est Garcia.  Étant donné que `currentStudent.First` est une chaîne, le type de données de la séquence retournée par `studentQuery3` est `IEnumerable(Of String)`, une séquence de chaînes.  Comme dans les exemples précédents, l'assignation d'un type de données à `studentQuery3` est effectuée par le compilateur à l'aide de l'inférence de type local.  
   
-     [!code-vb[VbLINQWalkthrough#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_5.vb)]  
+     [!code-vb[VbLINQWalkthrough#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_5.vb)]  
   
 2.  Placez le pointeur de la souris sur `studentQuery3` dans votre code pour vérifier que le type assigné est `IEnumerable(Of String)`.  
   
@@ -132,14 +132,14 @@ Cette procédure pas à pas montre comment vous pouvez utiliser les fonctionnali
   
      L'exemple suivant crée une requête qui retourne le nom et le classement dans l'ordre des dix étudiants les mieux classés.  Dans cet exemple, le type de `studentQuery4` doit être déduit car la clause `Select` retourne une instance d'un type anonyme, et un type anonyme n'a pas de nom utilisable.  
   
-     [!code-vb[VbLINQWalkthrough#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_6.vb)]  
+     [!code-vb[VbLINQWalkthrough#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_6.vb)]  
   
 2.  Générez et exécutez l'application en appuyant sur CTRL\+F5.  Notez les résultats dans la fenêtre de console.  
   
 ## Exemples supplémentaires  
  Maintenant que vous avez assimilé les éléments fondamentaux, voici une liste d'exemples supplémentaires pour illustrer la souplesse et la puissance des requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)].  Chaque exemple est précédé d'une brève description de leur fonction.  Placez le pointeur de la souris sur la variable de résultat de requête pour chaque requête pour consulter le type déduit. Utilisez une boucle d' `For Each` pour produire les résultats.  
   
- [!code-vb[VbLINQWalkthrough#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/visualbasic/walkthrough-writing-quer_1_7.vb)]  
+ [!code-vb[VbLINQWalkthrough#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_7.vb)]  
   
 ## Informations supplémentaires  
  Une fois que vous vous êtes familiarisé avec les concepts de base relatifs à l'utilisation des requêtes, vous pouvez consulter la documentation et les exemples pour le type spécifique de fournisseur [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] qui vous intéresse :  

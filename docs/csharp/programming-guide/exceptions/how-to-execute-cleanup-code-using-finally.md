@@ -20,12 +20,12 @@ caps.handback.revision: 21
 # Comment&#160;: ex&#233;cuter le code de nettoyage &#224; l&#39;aide de finally (Guide de programmation C#)
 L'objectif d'une instruction `finally` est de garantir que le nettoyage nécessaire d'objets, généralement d'objets qui contiennent des ressources externes, se produise immédiatement, même en cas de levée d'exception.  Un exemple de nettoyage de ce type est d'appeler <xref:System.IO.Stream.Close%2A> sur un <xref:System.IO.FileStream> immédiatement après utilisation au lieu d'attendre que l'objet soit récupéré par garbage collection par le common language runtime, comme suit :  
   
- [!code-cs[csProgGuideExceptions#16](../../../csharp/programming-guide/exceptions/codesnippet/csharp/how-to-execute-cleanup-c_1.cs)]  
+ [!code-cs[csProgGuideExceptions#16](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/how-to-execute-cleanup-code-using-finally_1.cs)]  
   
 ## Exemple  
  Pour transformer le code précédent en instruction `try-catch-finally`, le code de nettoyage est séparé du code actif, comme suit.  
   
- [!code-cs[csProgGuideExceptions#17](../../../csharp/programming-guide/exceptions/codesnippet/csharp/how-to-execute-cleanup-c_2.cs)]  
+ [!code-cs[csProgGuideExceptions#17](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/how-to-execute-cleanup-code-using-finally_2.cs)]  
   
  Une exception pouvant arriver n'importe quand dans le bloc `try` avant l'appel à `OpenWrite()` ou l'appel `OpenWrite()` lui\-même pouvant échouer, nous n'avons aucune garantie que le fichier est ouvert lorsque nous essayons de le fermer.  Le bloc `finally` ajoute un contrôle pour s'assurer que l'objet <xref:System.IO.FileStream> n'est pas `null` avant d'appeler la méthode <xref:System.IO.Stream.Close%2A>.  Sans le contrôle `null`, le bloc `finally` peut lever sa propre <xref:System.NullReferenceException>, mais la levée d'exceptions dans des blocs `finally` doit être évitée si possible.  
   

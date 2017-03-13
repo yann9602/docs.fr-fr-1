@@ -46,13 +46,13 @@ Si une procédure dispose d'un paramètre [ParamArray](../../../../visual-basic/
 ## Exemple  
  L'exemple suivant affiche une procédure définie avec un paramètre [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md), puis un jeu équivalent de procédures surchargées.  
   
- [!code-vb[VbVbcnProcedures#69](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_1.vb)]  
+ [!code-vb[VbVbcnProcedures#69](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#70](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_2.vb)]  
+ [!code-vb[VbVbcnProcedures#70](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_2.vb)]  
   
  Vous ne pouvez pas surcharger une procédure avec une liste de paramètres qui accepte un tableau unidimensionnel comme tableau de paramètres.  Toutefois, vous pouvez utiliser les signatures des autres surcharges implicites.  Les déclarations suivantes illustrent ce principe.  
   
- [!code-vb[VbVbcnProcedures#71](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-overload-a-proced_0_3.vb)]  
+ [!code-vb[VbVbcnProcedures#71](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters_3.vb)]  
   
  Le code dans les versions surchargées n'a pas à tester si le code appelant a fourni une ou plusieurs valeurs pour le paramètre `ParamArray`, ou si tel est le cas, le nombre de valeurs.  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] passe le contrôle à la version qui correspond à la liste d'arguments appelants.  
   

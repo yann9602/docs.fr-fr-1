@@ -51,7 +51,7 @@ Lorsque vous définissez une classe ou un struct, vous décidez s'il est utile d
 ## Exemple  
  L'exemple suivant montre comment implémenter l'égalité des valeurs dans une classe \(type référence\).  
   
- [!code-cs[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-value-equa_1.cs)]  
+ [!code-cs[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_1.cs)]  
   
  Sur les classes \(types référence\), l'implémentation par défaut des deux méthodes <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> effectue une comparaison d'égalité des références, et non pas une vérification de l'égalité des valeurs.  Lorsqu'un implémenteur substitue la méthode virtuelle, l'objectif est de lui donner une sémantique d'égalité des valeurs.  
   
@@ -60,7 +60,7 @@ Lorsque vous définissez une classe ou un struct, vous décidez s'il est utile d
 ## Exemple  
  L'exemple suivant montre comment implémenter l'égalité des valeurs dans un struct \(type valeur\) :  
   
- [!code-cs[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-define-value-equa_2.cs)]  
+ [!code-cs[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_2.cs)]  
   
  Pour les structs, l'implémentation par défaut de <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> \(qui est la version substituée dans <xref:System.ValueType?displayProperty=fullName>\) exécute une vérification de l'égalité des valeurs en utilisant la réflexion pour comparer les valeurs de chaque champ du type.  Lorsqu'un implémenteur substitue la méthode `Equals` virtuelle dans un struct, l'objectif est de fournir un moyen plus efficace pour la vérification de l'égalité des valeurs et de baser éventuellement la comparaison sur un sous\-ensemble du champ ou des propriétés du struct.  
   

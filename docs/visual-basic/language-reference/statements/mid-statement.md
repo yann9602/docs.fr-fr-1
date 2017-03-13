@@ -68,7 +68,7 @@ Mid( _
 ## Exemple  
  L'exemple suivant utilise l'instruction `Mid` pour remplacer un nombre spécifié de caractères dans une variable chaîne par les caractères d'une autre chaîne.  
   
- [!code-vb[VbVbalrStrings#5](../../../visual-basic/language-reference/functions/codesnippet/visualbasic/mid-statement_1.vb)]  
+ [!code-vb[VbVbalrStrings#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/mid-statement_1.vb)]  
   
 ## Configuration requise  
  **Espace de noms :** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

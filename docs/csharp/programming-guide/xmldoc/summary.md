@@ -38,7 +38,7 @@ caps.handback.revision: 15
  Compilez avec [\/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation et les placer dans un fichier.  Pour créer la documentation finale qui est basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil de type [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061).  
   
 ## Exemple  
- [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/summary_1.cs)]  
+ [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_1.cs)]  
   
  L'exemple précédent génère le fichier XML suivant.  
   
@@ -68,7 +68,7 @@ caps.handback.revision: 15
 ## Exemple  
  L'exemple suivant indique comment faire une référence `cref` à un type générique.  
   
- [!code-cs[csProgGuideDocComments#11](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/summary_2.cs)]  
+ [!code-cs[csProgGuideDocComments#11](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_2.cs)]  
   
  L'exemple précédent génère le fichier XML suivant.  
   

@@ -146,37 +146,37 @@ End Enum
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser la `Enum` instruction. Notez que le membre est appelé `EggSizeEnum.Medium`, et non comme `Medium`.  
   
- [!code-vb[VbEnumsTask#41](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#41)]  
+ [!code-vb[VbEnumsTask#41](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_1.vb)]  
   
 ## <a name="example"></a>Exemple  
  La méthode dans l’exemple suivant est en dehors de la `Egg` classe. Par conséquent, `EggSizeEnum` est le nom complet en tant que `Egg.EggSizeEnum`.  
   
- [!code-vb[VbEnumsTask#42](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#42)]  
+ [!code-vb[VbEnumsTask#42](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_2.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant utilise la `Enum` instruction pour définir un ensemble des valeurs des constantes nommées. Dans ce cas, les valeurs sont des couleurs que vous pouvez choisir de concevoir des formulaires de saisie de données pour une base de données.  
   
- [!code-vb[VbEnumsTask#30](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#30)]  
+ [!code-vb[VbEnumsTask#30](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_3.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre les valeurs qui incluent des nombres positifs et négatifs.  
   
- [!code-vb[VbEnumsTask#31](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#31)]  
+ [!code-vb[VbEnumsTask#31](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_4.vb)]  
   
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, un `As` clause est utilisée pour spécifier le `datatype` d’une énumération.  
   
- [!code-vb[VbEnumsTask#6](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#6)]  
+ [!code-vb[VbEnumsTask#6](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_5.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser une énumération au niveau du bit. Plusieurs valeurs peuvent être assignées à une instance d’une énumération au niveau du bit. Le `Enum` déclaration comprend le <xref:System.FlagsAttribute> attribut qui indique que l’énumération peut être traitée comme un ensemble d’indicateurs.  
   
- [!code-vb[VbEnumsTask#61](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#61)]  
+ [!code-vb[VbEnumsTask#61](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_6.vb)]  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant itère une énumération. Il utilise le <xref:System.Enum.GetNames%2A> méthode pour récupérer un tableau des noms de membres de l’énumération, et <xref:System.Enum.GetValues%2A> pour récupérer un tableau de valeurs de membre.  
   
- [!code-vb[VbEnumsTask#51](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class1.vb#51)]  
+ [!code-vb[VbEnumsTask#51](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_7.vb)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Enum>   

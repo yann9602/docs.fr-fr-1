@@ -25,12 +25,12 @@ La clause `orderby` entraîne le tri en ordre croissant ou décroissant de la s�
 ## Exemple  
  Dans l'exemple suivant, la première requête trie les mots en ordre alphabétique à partir de A et la deuxième requête trie les mêmes mots en ordre décroissant.  Le mot clé `ascending` est la valeur de tri par défaut et peut être omis.  
   
- [!code-cs[cscsrefQueryKeywords#20](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Orderby.cs#20)]  
+ [!code-cs[cscsrefQueryKeywords#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/orderby-clause_1.cs)]  
   
 ## Exemple  
  L'exemple suivant effectue un tri principal sur les noms des étudiants, puis un tri secondaire sur leurs prénoms.  
   
- [!code-cs[cscsrefQueryKeywords#22](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Orderby.cs#22)]  
+ [!code-cs[cscsrefQueryKeywords#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/orderby-clause_2.cs)]  
   
 ## Notes  
  À la compilation, la clause `orderby` est traduite en un appel à la méthode <xref:System.Linq.Enumerable.OrderBy%2A>.  Plusieurs clés dans la clause `orderby` se traduisent en appels de méthode <xref:System.Linq.Enumerable.ThenBy%2A>.  

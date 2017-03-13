@@ -37,7 +37,7 @@ public virtual double Area()
   
  Vous ne pouvez pas utiliser le modificateur `virtual` avec les modificateurs `static`, `abstract, private` ou `override`.  L'exemple suivant affiche une propriété virtuelle :  
   
- [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#26)]  
+ [!code-cs[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
  Les propriétés virtual se comportent comme les méthodes abstraites, à l'exception des différences dans la syntaxe de déclaration et d'appel.  
   
@@ -56,7 +56,7 @@ public Cylinder(double r, double h): base(r, h) {}
   
  Le programme suivant calcule et affiche la zone appropriée pour chaque illustration en appelant l'implémentation appropriée de la méthode d' `Area()` , selon l'objet associé à la méthode.  
   
- [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#23)]  
+ [!code-cs[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

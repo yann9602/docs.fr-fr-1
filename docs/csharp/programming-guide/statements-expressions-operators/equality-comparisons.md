@@ -21,7 +21,7 @@ Il est parfois nécessaire de comparer deux valeurs pour déterminer si elles so
 ## Égalité des références  
  L'égalité des références signifie que deux références d'objet renvoient au même objet sous\-jacent.  Cette situation peut résulter d'une assignation simple, comme illustré dans l'exemple suivant.  
   
- [!code-cs[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/equality-comparisons_1.cs)]  
+ [!code-cs[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/equality-comparisons_1.cs)]  
   
  Dans ce code, deux objets sont créés, mais après l'instruction d'assignation, les deux références renvoient au même objet.  Par conséquent, les objets présentent une égalité des références.  Utilisez la méthode <xref:System.Object.ReferenceEquals%2A> pour déterminer si deux références renvoient au même objet.  
   

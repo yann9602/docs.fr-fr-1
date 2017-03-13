@@ -28,7 +28,7 @@ caps.handback.revision: 18
 Cet exemple indique comment utiliser une propriété d'axe enfant pour accéder à tous les éléments enfants XML qui ont un nom spécifié dans un élément XML.  Il utilise, en particulier, la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour obtenir la valeur du premier élément de la collection que la propriété d'axe enfant `name` retourne.  La propriété d'axe enfant `name` obtient tous les éléments enfants nommés `phone` dans l'objet `contact`.  Cet exemple utilise également la propriété d'axe enfant `phone` pour accéder à tous les éléments enfants nommés `phone` contenu dans l'objet `contact`.  
   
 ## Exemple  
- [!code-vb[VbXMLSamples#10](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-access-xml-child-_1.vb)]  
+ [!code-vb[VbXMLSamples#10](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-access-xml-child-elements_1.vb)]  
   
 ## Compilation du code  
  Cet exemple nécessite :  

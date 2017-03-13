@@ -23,11 +23,11 @@ Les définitions de type partiel autorisent le fractionnement de la définition 
   
  Dans File1.cs :  
   
- [!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/csharp/partial-type_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_1.cs)]  
   
  Dans File2.cs, la déclaration :  
   
- [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/csharp/partial-type_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]  
   
 ## Notes  
  Le fractionnement d'une classe, d'une structure ou d'un type d'interface sur plusieurs fichiers peut être utile dans le cadre de projets de grande taille ou de code généré automatiquement, comme celui fourni par le [Windows Forms Designer](http://msdn.microsoft.com/fr-fr/3c3d61f8-f36c-4d41-b9c3-398376fabb15).  Un type partiel peut contenir une [méthode partielle](../../../csharp/language-reference/keywords/partial-method.md).  Pour plus d'informations, consultez [Classes et méthodes partielles](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  

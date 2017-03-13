@@ -55,12 +55,12 @@ Pour les paramètres de type générique, le mot clé `Out` spécifie que le typ
 ## Exemple  
  L'exemple suivant indique comment déclarer, étendre et implémenter une interface générique covariante.  Il montre également comment utiliser la conversion implicite pour les classes qui implémentent une interface covariante.  
   
- [!code-vb[vbVarianceKeywords#3](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/out-generic-modifier_1.vb)]  
+ [!code-vb[vbVarianceKeywords#3](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/out-generic-modifier_1.vb)]  
   
 ## Exemple  
  L'exemple suivant indique comment déclarer, instancier et appeler un délégué générique covariant.  Il montre également comment vous pouvez utiliser la conversion implicite pour les types délégués.  
   
- [!code-vb[vbVarianceKeywords#4](../../../visual-basic/language-reference/modifiers/codesnippet/visualbasic/out-generic-modifier_2.vb)]  
+ [!code-vb[vbVarianceKeywords#4](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/out-generic-modifier_2.vb)]  
   
 ## Voir aussi  
  [Variance dans les interfaces génériques](../Topic/Variance%20in%20Generic%20Interfaces%20\(C%23%20and%20Visual%20Basic\).md)   

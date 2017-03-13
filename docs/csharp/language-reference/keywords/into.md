@@ -24,7 +24,7 @@ Le mot clé contextuel `into` peut être utilisé pour créer un identificateur 
 ## Exemple  
  L'exemple suivant illustre l'utilisation du mot clé `into` pour activer un identificateur temporaire `fruitGroup` qui a un type déduit de `IGrouping`.  En utilisant l'identificateur, vous pouvez appeler la méthode <xref:System.Linq.Enumerable.Count%2A> sur chaque groupe et sélectionner uniquement ceux qui contiennent deux mots ou plus.  
   
- [!code-cs[cscsrefQueryKeywords#18](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/Into.cs#18)]  
+ [!code-cs[cscsrefQueryKeywords#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/into_1.cs)]  
   
  L'utilisation d'`into` dans une clause `group` est nécessaire uniquement lorsque vous souhaitez effectuer des opérations de requête supplémentaires sur chaque groupe.  Pour plus d'informations, consultez [group, clause](../../../csharp/language-reference/keywords/group-clause.md).  
   

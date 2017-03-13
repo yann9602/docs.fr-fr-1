@@ -30,7 +30,7 @@ Une expression de requête doit commencer par une clause `from`.  En outre, une 
   
  Dans l'exemple suivant, `numbers` est la source de données et `num` est la variable de portée.  Notez que les deux variables sont fortement typées même lorsque le mot clé [var](../../../csharp/language-reference/keywords/var.md) est utilisé.  
   
- [!code-cs[cscsrefQueryKeywords#1](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/From.cs#1)]  
+ [!code-cs[cscsrefQueryKeywords#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_1.cs)]  
   
 ## Variable de portée  
  Le compilateur déduit le type de la variable de portée lorsque la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>.  Par exemple, si la source a un type de `IEnumerable<Customer>`, alors la variable de portée est déduite pour être `Customer`.  Vous devez spécifier le type explicitement uniquement lorsque la source est un type `IEnumerable` non générique tel que <xref:System.Collections.ArrayList>.  Pour plus d'informations, consultez [How to: Query an ArrayList with LINQ](../Topic/How%20to:%20Query%20an%20ArrayList%20with%20LINQ.md).  
@@ -42,14 +42,14 @@ Une expression de requête doit commencer par une clause `from`.  En outre, une 
 ## Clauses from composées  
  Dans quelques cas, chaque élément dans la séquence source peut être une séquence ou contenir une séquence.  Par exemple, votre source de données peut être un `IEnumerable<Student>` où chaque objet Student dans la séquence contient une liste de notes d'examens.  Pour accéder à la liste interne dans chaque élément `Student`, vous pouvez utiliser des clauses `from` composées.  Cette technique est proche de celle consistant à utiliser des instructions [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquées.  Vous pouvez ajouter des clauses [where](../../../csharp/language-reference/keywords/partial-method.md) ou [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) à l'une et l'autre des clauses `from` pour filtrer les résultats.  L'exemple suivant présente une séquence d'objets `Student` et chacun contient un `List` interne des entiers qui représentent des notes d'examens.  Pour accéder à la liste interne, utilisez une clause `from` composée.  Vous pouvez insérer des clauses entre les deux clauses `from` si nécessaire.  
   
- [!code-cs[cscsrefQueryKeywords#2](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/From.cs#2)]  
+ [!code-cs[cscsrefQueryKeywords#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_2.cs)]  
   
 ## Utilisation de plusieurs clauses pour effectuer des jointures  
  Une clause `from` composée est utilisée pour accéder aux collections internes dans une source de données unique.  Toutefois, une requête peut également contenir plusieurs clauses `from` qui génèrent des requêtes supplémentaires de sources de données indépendantes.  Cette technique vous permet d'effectuer certains types d'opérations de jointure qui ne sont pas possibles en utilisant la [clause de jointure](../../../csharp/language-reference/keywords/join-clause.md).  
   
  L'exemple suivant montre comment utiliser deux clauses `from` pour former une jointure croisée complète de deux sources de données.  
   
- [!code-cs[cscsrefQueryKeywords#3](../../../csharp/language-reference/keywords/codesnippet/csharp/csquerykeywords/From.cs#3)]  
+ [!code-cs[cscsrefQueryKeywords#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_3.cs)]  
   
  Pour plus d'informations sur les opérations de jointure qui utilisent plusieurs clauses `from`, consultez [Comment : effectuer des opérations de jointure personnalisées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md).  
   

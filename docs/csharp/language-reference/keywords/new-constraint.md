@@ -21,12 +21,12 @@ La contrainte `new` spécifie que tout argument de type dans une déclaration de
 ## Exemple  
  Appliquez la contrainte `new` à un paramètre de type lorsque votre classe générique crée des instances du type, comme le montre l'exemple suivant :  
   
- [!code-cs[csrefKeywordsOperator#5](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#5)]  
+ [!code-cs[csrefKeywordsOperator#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-constraint_1.cs)]  
   
 ## Exemple  
  Lorsque vous utilisez la contrainte `new()` avec d'autres contraintes, elle doit être spécifiée en dernier :  
   
- [!code-cs[csrefKeywordsOperator#6](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#6)]  
+ [!code-cs[csrefKeywordsOperator#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-constraint_2.cs)]  
   
  Pour plus d'informations, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
   

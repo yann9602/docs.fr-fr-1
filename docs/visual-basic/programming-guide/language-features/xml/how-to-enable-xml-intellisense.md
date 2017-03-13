@@ -84,11 +84,11 @@ XML IntelliSense dans Visual Basic fournit le mot intégral des éléments défi
   
 2.  Au début du fichier de code, ajoutez une instruction `Imports` pour l'espace de noms XML cible, comme indiqué à l'exemple suivant.  
   
-     [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-enable-xml-intell_1.vb)]  
+     [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-enable-xml-intellisense_1.vb)]  
   
      Pour importer un espace de noms XML en tant qu'espace de noms par défaut, à savoir un espace de noms appliqué aux éléments et attributs XML sans préfixe d'espace de noms, ajoutez une instruction `Imports` pour l'espace de noms XML cible par défaut.  Ne spécifiez pas de préfixe d'espace de noms.  Ce qui suit est un exemple d'instruction `Imports`.  
   
-     [!code-vb[VbXmlSamples#50](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-enable-xml-intell_2.vb)]  
+     [!code-vb[VbXmlSamples#50](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-enable-xml-intellisense_2.vb)]  
   
 #### Pour importer un espace de noms XML pour tous les fichiers d'un projet  
   

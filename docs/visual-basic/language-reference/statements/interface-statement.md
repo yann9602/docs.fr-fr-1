@@ -104,7 +104,7 @@ End Interface
   
      Si vous assignez une instance de classe à une variable, le niveau d'accès de ses membres varie selon que le type de données de la variable est l'interface sous\-jacente ou la classe d'implémentation.  L'exemple suivant illustre ce comportement.  
   
-     [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/interface-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_1.vb)]  
   
      Si vous accédez aux membres d'une classe par l'intermédiaire de `varAsInterface`, ils disposent tous d'un accès public.  Toutefois, si vous accédez aux membres par l'intermédiaire de `varAsClass`, la procédure `Sub` `doSomething` dispose d'un accès privé.  
   
@@ -117,7 +117,7 @@ End Interface
 ## Exemple  
  L'exemple suivant utilise l'instruction `Interface` pour définir une interface nommée `thisInterface`, qui doit être implémentée avec une instruction `Property` et une instruction `Function`.  
   
- [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/interface-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_2.vb)]  
   
  Notez que les instructions `Property` et `Function` n'introduisent pas de blocs se terminant par `End Property` et `End Function` dans l'interface.  L'interface définit uniquement les signatures de ses membres.  Les blocs `Property` et `Function` complets apparaissent dans une classe qui implémente `thisInterface`.  
   

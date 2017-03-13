@@ -32,14 +32,14 @@ Les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)]
 ## Variables IEnumerable \<T\> dans les requêtes LINQ  
  Les variables de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] sont typées comme <xref:System.Collections.Generic.IEnumerable%601> ou de type dérivé comme <xref:System.Linq.IQueryable%601>.  Lorsque vous avez une variable de requête typée comme `IEnumerable<Customer>`, cela signifie simplement que la requête, lorsqu'elle est exécutée, génère une séquence de zéro objets `Customer` ou plus.  
   
- [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#34)]  
+ [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_1.cs)]  
   
  Pour plus d'informations, consultez [Type Relationships in LINQ Query Operations](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).  
   
 ## Gestion des déclarations de type générique par le compilateur  
  Si vous le souhaitez, vous pouvez éviter d'utiliser la syntaxe générique à l'aide du mot clé [var](../../../../csharp/language-reference/keywords/var.md).  Le mot clé `var` indique au compilateur de déduire le type d'une variable de requête de la source de données spécifiée dans la clause `from`.  L'exemple suivant génère le même code compilé que dans l'exemple précédent :  
   
- [!code-cs[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/csharp/GettingStarted/Class1.cs#35)]  
+ [!code-cs[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_2.cs)]  
   
  Le mot clé `var` est utile lorsque le type de la variable est évident ou lorsqu'il n'est pas particulièrement important de spécifier explicitement les types génériques imbriqués tels que ceux générés par les requêtes de groupe.  En général, si vous utilisez `var`, vous devez savoir que cela peut compliquer la lecture de votre code.  Pour plus d'informations, consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   

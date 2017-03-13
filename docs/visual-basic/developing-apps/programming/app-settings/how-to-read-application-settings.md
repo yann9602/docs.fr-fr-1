@@ -30,7 +30,7 @@ Vous pouvez lire un paramètre utilisateur en accédant à la propriété du par
 ## Exemple  
  Cet exemple affiche la valeur du paramètre `Nickname`.  
   
- [!code-vb[VbVbalrMyResources#14](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#14)]  
+ [!code-vb[VbVbalrMyResources#14](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-read-application-settings_1.vb)]  
   
  Pour que cet exemple fonctionne, votre application doit avoir un paramètre `Nickname` de type `String`.  Pour plus d’informations, consultez [Gestion des paramètres d'une application \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet).  
   

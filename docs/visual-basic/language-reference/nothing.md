@@ -36,11 +36,11 @@ Représente la valeur par défaut d'un type de données.  Pour les types référ
   
  Si une variable est d'un type valeur qui n'est pas nullable, lui assigner `Nothing` le définit la valeur par défaut pour son type déclaré.  Si ce type contient des membres de variable, ils ont tous leurs valeurs par défaut.  L'exemple suivant illustre cela pour les types scalaires.  
   
- [!code-vb[VbVbalrKeywords#7](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_1.vb)]  
+ [!code-vb[VbVbalrKeywords#7](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_1.vb)]  
   
  si une variable est d'un type référence, l'assignant à `Nothing` aux ensembles variables à une référence d' `null` du type de la variable.  Une variable qui a une référence d' `null` n'est pas associé à un objet.  C'est ce qu'illustre l'exemple suivant.  
   
- [!code-vb[VbVbalrKeywords#8](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_2.vb)]  
+ [!code-vb[VbVbalrKeywords#8](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_2.vb)]  
   
  En vérifiant si une variable de référence \(ou type valeur nullable\) est `null`, n'utilisez pas `= Nothing` ou `<> Nothing`.  Utilisez toujours `Is Nothing` ou `IsNot Nothing`.  
   
@@ -48,7 +48,7 @@ Représente la valeur par défaut d'un type de données.  Pour les types référ
   
  L'exemple suivant montre les comparaisons qui utilisent les opérateurs `Is` et `IsNot`.  
   
- [!code-vb[VbVbalrKeywords#9](../../visual-basic/language-reference/codesnippet/visualbasic/nothing_3.vb)]  
+ [!code-vb[VbVbalrKeywords#9](../../visual-basic/language-reference/codesnippet/VisualBasic/nothing_3.vb)]  
   
  Si vous déclarez une variable sans utiliser de clause `As` et que vous la définissez sur `Nothing`, la variable a un type `Object`.  Un exemple est `Dim something = Nothing`.  Une erreur de compilation se produit dans ce cas lorsque `Option Strict` est activé et `Option Infer` est désactivé.  
   

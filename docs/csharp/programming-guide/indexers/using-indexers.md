@@ -56,7 +56,7 @@ public int this [int index]   // Indexer declaration
  Notez que lorsque l'accès à un indexeur est évalué, par exemple, dans une instruction `Console.Write`, l'accesseur [get](../../../csharp/language-reference/keywords/get.md) est appelé.  C'est pourquoi une erreur de compilation se produit si aucun accesseur `get` n'existe.  
   
 ### Code  
- [!code-cs[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-indexers_1.cs)]  
+ [!code-cs[csProgGuideIndexers#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_1.cs)]  
   
 ## Indexation de l'utilisation d'autres valeurs  
  C\# ne limite pas les index au type entier.  Par exemple, il peut être utile d'utiliser une chaîne avec un indexeur.  Il est possible de l'implémenter en recherchant la chaîne dans la collection. La valeur appropriée est alors retournée.  Comme les accesseurs peuvent être surchargés, les versions chaîne et entier peuvent coexister.  
@@ -67,7 +67,7 @@ public int this [int index]   // Indexer declaration
  Cet exemple déclare une classe stockant les jours de la semaine.  L'accesseur `get` déclaré prend une chaîne, le nom d'un jour, et retourne l'entier correspondant.  Par exemple, dimanche retourne 0, lundi retourne 1 et ainsi de suite.  
   
 ### Code  
- [!code-cs[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-indexers_2.cs)]  
+ [!code-cs[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_2.cs)]  
   
 ## Programmation fiable  
  La sécurité et la fiabilité des indexeurs peuvent être améliorées de deux manières principales :  

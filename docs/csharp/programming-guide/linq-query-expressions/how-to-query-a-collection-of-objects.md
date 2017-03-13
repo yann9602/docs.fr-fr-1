@@ -10,7 +10,7 @@ Cet exemple montre comment effectuer une requête simple sur une liste d'objets 
 ## Exemple  
  La requête suivante retourne les étudiants qui ont reçu une note supérieure ou égale à 90 lors de leur premier examen.  
   
- [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#15)]  
+ [!code-cs[csProgGuideLINQ#15](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-query-a-collection-of-objects_1.cs)]  
   
  Cette requête est volontairement simple pour vous permettre d'expérimenter.  Par exemple, vous pouvez essayer plus de prédicats dans la clause `where` ou utiliser une clause `orderby` pour trier les résultats.  
   

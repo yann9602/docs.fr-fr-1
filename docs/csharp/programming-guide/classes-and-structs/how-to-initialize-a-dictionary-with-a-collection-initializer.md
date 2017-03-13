@@ -21,7 +21,7 @@ Un <xref:System.Collections.Generic.Dictionary%602> contient une collection de p
 ## Exemple  
  Dans l'exemple de code suivant, un <xref:System.Collections.Generic.Dictionary%602> est initialisé avec les instances de type `StudentName`.  
   
- [!code-cs[csProgGuideLINQ#34](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#34)]  
+ [!code-cs[csProgGuideLINQ#34](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-initialize-a-dictionary-with-a-collection-initializer_1.cs)]  
   
  Notez les deux paires d'accolades dans chaque élément de la collection.  Les accolades les plus à l'intérieur encadrent l'initialiseur d'objet pour `StudentName` et les accolades les plus à l'extérieur encadrent l'initialiseur pour la paire clé\/valeur qui sera ajoutée au <xref:System.Collections.Generic.Dictionary%602> `students`.  Enfin, l'initialiseur de collection pour le dictionnaire est entièrement entre accolades.  
   

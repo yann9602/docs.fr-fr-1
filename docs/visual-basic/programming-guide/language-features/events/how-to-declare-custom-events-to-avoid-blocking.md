@@ -34,7 +34,7 @@ Il existe plusieurs cas où il est important qu'un gestionnaire d'événements n
   
  Lorsque le code déclenche l'événement `Click`, l'accesseur `RaiseEvent` appelle tous les délégués de gestionnaire d'événements de façon asynchrone à l'aide de la méthode <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A>.  Étant donné que cette méthode appelle chaque gestionnaire sur un thread de travail et retourne immédiatement, les gestionnaires ne peuvent pas se bloquer mutuellement.  
   
- [!code-vb[VbVbalrEvents#27](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#27)]  
+ [!code-vb[VbVbalrEvents#27](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-declare-custom-events-to-avoid-blocking_1.vb)]  
   
 ## Voir aussi  
  <xref:System.Collections.ArrayList>   

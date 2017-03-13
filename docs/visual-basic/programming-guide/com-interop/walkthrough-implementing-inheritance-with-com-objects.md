@@ -103,15 +103,15 @@ Vous pouvez dériver des classes Visual Basic à partir de classes `Public` dans
   
 6.  Ajoutez le code suivant en haut de `MathClass` pour hériter de la classe COM.  
   
-     [!code-vb[VbVbalrInterop#31](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#31)]  
+     [!code-vb[VbVbalrInterop#31](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_1.vb)]  
   
 7.  Surchargez la méthode publique de la classe de base en ajoutant le code suivant à `MathClass` :  
   
-     [!code-vb[VbVbalrInterop#32](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#32)]  
+     [!code-vb[VbVbalrInterop#32](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_2.vb)]  
   
 8.  Étendez la classe héritée en ajoutant le code suivant à `MathClass` :  
   
-     [!code-vb[VbVbalrInterop#33](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#33)]  
+     [!code-vb[VbVbalrInterop#33](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_3.vb)]  
   
  La nouvelle classe hérite des propriétés de la classe de base dans l'objet COM, surcharge une méthode et définit une nouvelle méthode pour étendre la classe.  
   
@@ -121,7 +121,7 @@ Vous pouvez dériver des classes Visual Basic à partir de classes `Public` dans
   
 2.  Dans la procédure de gestionnaire d'événements `Click` du bouton, ajoutez le code suivant pour créer une instance de `MathClass` et appeler les méthodes surchargées :  
   
-     [!code-vb[VbVbalrInterop#34](../../../visual-basic/programming-guide/com-interop/codesnippet/visualbasic/vbvbalrinterop/Class1.vb#34)]  
+     [!code-vb[VbVbalrInterop#34](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_4.vb)]  
   
 3.  Exécutez le projet en appuyant sur F5.  
   

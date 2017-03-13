@@ -75,7 +75,7 @@ En [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes
  L'exemple suivant indique quand les arguments doivent être passés par valeur ou par référence.  La procédure `Calculate` contient à la fois les paramètres `ByVal` et `ByRef`.  À partir d'un taux d'intérêt, `rate`, et d'une somme d'argent, `debt`, la tâche de la procédure consiste à calculer une nouvelle valeur pour `debt` qui est le résultat de l'application du taux d'intérêt à la valeur d'origine de `debt`.  Étant donné que `debt` est un paramètre `ByRef`, le nouveau total est représenté dans la valeur de l'argument du code appelant qui correspond à `debt`.  `rate` est un paramètre `ByVal` car `Calculate` ne doit pas modifier sa valeur.  
   
 ### Code  
- [!code-vb[VbVbcnProcedures#74](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/passing-arguments-by-val_1.vb)]  
+ [!code-vb[VbVbcnProcedures#74](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

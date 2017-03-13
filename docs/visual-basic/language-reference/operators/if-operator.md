@@ -49,11 +49,11 @@ If( [argument1,] argument2, argument3 )
   
  Un opérateur `If` appelé avec trois travaux d'arguments agit comme une fonction `IIf`, à cette exception près qu'il utilise l'évaluation de court\-circuit.  Une fonction `IIf` évalue toujours les trois arguments, alors qu'un opérateur `If` qui a trois arguments n'en évalue que deux.  Le premier argument `If` est évalué et le résultat est casté en tant que valeur `Boolean`, `True` ou `False`.  Si la valeur est `True`, `argument2` est évalué et sa valeur est retournée, mais `argument3` n'est pas évalué.  Si la valeur de l'expression `Boolean` est `False`, `argument3` est évalué et sa valeur est retournée, mais `argument2` n'est pas évalué.  Les exemples suivants illustrent l'utilisation de l'opérateur `If` lorsque trois arguments sont utilisés :  
   
- [!code-vb[VbVbalrOperators#100](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/if-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#100](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_1.vb)]  
   
  L'exemple suivant illustre la valeur d'évaluation de court\-circuit.  L'exemple affiche deux tentatives de diviser la variable `number` par la variable `divisor`, sauf lorsque le `divisor` est nul.  Dans ce cas, une valeur 0 doit être retournée, et aucune tentative ne doit être faite pour effectuer la division, puisqu'une erreur d'exécution en résulterait.  L'expression `If` utilisant l'évaluation de court\-circuit, elle évalue soit le deuxième soit le troisième argument, en fonction de la valeur du premier argument.  Si le premier argument est vrai, le diviseur n'est pas nul : l'évaluation du deuxième argument et la division peuvent se faire en toute sécurité.  Si le premier argument est faux, seul le troisième argument est évalué et un 0 est retourné.  Par conséquent, lorsque le diviseur est 0, aucune tentative n'est faite pour effectuer la division et aucune erreur n'en résulte.  Toutefois, l'expression `IIf` n'utilisant pas l'évaluation de court\-circuit, le deuxième argument est évalué même lorsque le premier argument est faux.  Le résultat est une erreur de division par zéro à l'exécution.  
   
- [!code-vb[VbVbalrOperators#101](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/if-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#101](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_2.vb)]  
   
 ## Opérateur If appelé avec deux arguments  
  Le premier argument à `If` peut être omis.  Cela permet à l'opérateur d'être appelé en n'utilisant que deux arguments.  La liste qui suit s'applique uniquement lorsque l'opérateur `If` est appelé avec deux arguments.  
@@ -68,7 +68,7 @@ If( [argument1,] argument2, argument3 )
   
  Lorsque l'argument `Boolean` est omis, le premier argument doit être une référence ou un type Nullable.  Si le premier argument s'évalue à la valeur `Nothing`, la valeur du deuxième argument est retournée.  Dans tous les autres cas, la valeur du premier argument est retournée.  L'exemple suivant illustre comment cette évaluation fonctionne.  
   
- [!code-vb[VbVbalrOperators#102](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/if-operator_3.vb)]  
+ [!code-vb[VbVbalrOperators#102](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_3.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Interaction.IIf%2A>   

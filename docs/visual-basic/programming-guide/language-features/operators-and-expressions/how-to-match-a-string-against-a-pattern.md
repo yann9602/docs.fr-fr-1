@@ -42,7 +42,7 @@ Pour déterminer si une expression du [String Data Type](../../../../visual-basi
   
      L'exemple suivant teste si `myString` se compose exactement du caractère unique `H`.  
   
-     [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_1.vb)]  
+     [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_1.vb)]  
   
 ### Pour faire correspondre un caractère de l'expression de chaîne avec un caractère générique  
   
@@ -50,7 +50,7 @@ Pour déterminer si une expression du [String Data Type](../../../../visual-basi
   
      L'exemple suivant teste si `myString` se compose du caractère unique `W`, suivi exactement de deux caractères d'une valeur quelconque.  
   
-     [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_2.vb)]  
+     [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_2.vb)]  
   
 ### Pour faire correspondre un caractère de l'expression de chaîne avec une liste de caractères  
   
@@ -58,7 +58,7 @@ Pour déterminer si une expression du [String Data Type](../../../../visual-basi
   
      L'exemple suivant teste si `myString` se compose d'un caractère valide, suivi exactement de l'un des caractères `A`, `C` ou `E`.  
   
-     [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_3.vb)]  
+     [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_3.vb)]  
   
      Notez que cette mise en correspondance respecte la casse.  
   
@@ -68,7 +68,7 @@ Pour déterminer si une expression du [String Data Type](../../../../visual-basi
   
      L'exemple suivant teste si `myString` se compose des caractères `num`, suivis exactement de l'un des caractères `i`, `j`, `k`, `l`, `m` ou `n`.  
   
-     [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_4.vb)]  
+     [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_4.vb)]  
   
      Notez que cette mise en correspondance respecte la casse.  
   
@@ -85,7 +85,7 @@ Pour déterminer si une expression du [String Data Type](../../../../visual-basi
   
      L'exemple suivant teste le numéro de téléphone à sept chiffres `phoneNum` pour exactement trois chiffres, suivis d'un espace, d'un trait d'union \(`–`\), d'un point \(`.`\) ou d'aucun caractère, suivi d'exactement quatre chiffres.  
   
-     [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-match-a-string-ag_5.vb)]  
+     [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_5.vb)]  
   
 ## Voir aussi  
  [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   

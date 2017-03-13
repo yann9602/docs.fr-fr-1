@@ -19,9 +19,9 @@ caps.handback.revision: 27
 # Initialiseurs d&#39;objets et de collection (Guide de programmation C#)
 Les initialiseurs d'objet vous permettent d'assigner des valeurs aux champs ou propriétés accessibles d'un objet au moment de la création sans avoir à appeler un constructeur suivi de lignes d'instructions d'assignation.  La syntaxe de l'initialiseur de l'objet vous permet de spécifier les arguments d'un constructeur ou de les omettre \(et la syntaxe de parenthèses\).  L'exemple suivant montre comment utiliser l'initialiseur de l'objet de type nommé, `Cat`, et comment appeler le constructeur par défaut.  Notez l'utilisation de propriétés implémentées automatiquement dans la classe `Cat`.  Pour plus d'informations, consultez [Propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).  
   
- [!code-cs[csProgGuideLINQ#39](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#39)]  
+ [!code-cs[csProgGuideLINQ#39](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_1.cs)]  
   
- [!code-cs[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#45)]  
+ [!code-cs[csProgGuideLINQ#45](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_2.cs)]  
   
 ## Initialiseurs d'objet avec des types anonymes  
  Même si les initialiseurs d'objets peuvent être utilisés dans n'importe quel contexte, ils sont particulièrement utiles dans les expressions de requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)].  Les expressions de requête utilisent fréquemment des [types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md), et ne peuvent être initialisées qu'à l'aide d'un initialiseur d'objet, comme indiqué dans la déclaration suivante.  
@@ -32,7 +32,7 @@ var pet = new { Age = 10, Name = "Fluffy" };
   
  Les types anonymes permettent à la clause `select` d'une expression de requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] de transformer les objets de la séquence d'origine en objets dont la valeur et la forme peuvent différer de l'original.  Cela s'avère utile si vous souhaitez stocker uniquement une partie des informations de chaque objet d'une séquence.  Dans l'exemple suivant, supposons qu'un objet de produit \(`p`\) contient de nombreux champs et méthodes et que vous souhaitez uniquement créer une séquence d'objets qui contiennent le nom de produit et le prix unitaire.  
   
- [!code-cs[csProgGuideLINQ#40](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#40)]  
+ [!code-cs[csProgGuideLINQ#40](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_3.cs)]  
   
  Lorsque cette requête est exécutée, la variable `productInfos` contient une séquence d'objets qui sont accessibles dans une instruction `foreach` comme indiqué dans cet exemple :  
   
@@ -61,11 +61,11 @@ List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };
   
  L'initialiseur de collection suivant utilise des initialiseurs d'objets pour initialiser les objets de la classe `Cat` définis dans un exemple précédent.  Notez que les initialiseurs d'objets individuels sont placés entre accolades et séparés par une virgule.  
   
- [!code-cs[csProgGuideLINQ#41](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#41)]  
+ [!code-cs[csProgGuideLINQ#41](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_4.cs)]  
   
  Vous pouvez spécifier [Null](../../../csharp/language-reference/keywords/null.md) comme un élément dans un initialiseur de collection si la méthode `Add` de la collection l'autorise.  
   
- [!code-cs[csProgGuideLINQ#42](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#42)]  
+ [!code-cs[csProgGuideLINQ#42](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_5.cs)]  
   
  Vous pouvez spécifier des éléments indexés si la collection prend en charge l'indexation.  
   
@@ -79,7 +79,7 @@ var numbers = new Dictionary<int, string> {
 ```  
   
 ## Exemple  
- [!code-cs[csProgGuideLINQ#46](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#46)]  
+ [!code-cs[csProgGuideLINQ#46](../../../csharp/programming-guide/arrays/codesnippet/CSharp/object-and-collection-initializers_6.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

@@ -96,7 +96,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 ## Exemple  
  L'exemple suivant augmente la taille de la dernière dimension d'un tableau dynamique sans perte de données existantes dans le tableau, puis réduit la taille avec une perte de données partielle.  Enfin, il réduit la taille à sa valeur d'origine et réinitialise tous les éléments du tableau.  
   
- [!code-vb[VbVbalrStatements#52](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/redim-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#52](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/redim-statement_1.vb)]  
   
  L'instruction `Dim` crée un tableau à trois dimensions.  Étant donné que chaque dimension est déclarée avec une limite de 10, l'index de tableau pour chaque dimension peut aller de 0 à 10.  Dans la discussion suivante, les trois dimensions sont appelées « couche », « ligne » et « colonne ».  
   

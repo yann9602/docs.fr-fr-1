@@ -48,7 +48,7 @@ Lorsque vous appelez une procédure, vous devez faire suivre le nom de procédur
   
      L'exemple suivant appelle la fonction [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.  
   
-     [!code-vb[VbVbcnProcedures#34](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-pass-arguments-to_1.vb)]  
+     [!code-vb[VbVbcnProcedures#34](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
   
      L'exemple précédent fournit le premier argument requis qui représente la chaîne de message à afficher.  Omet un argument pour le deuxième paramètre facultatif qui spécifie les boutons à afficher sur le message.  Parce que l'appel ne fournit pas de valeur, `MsgBox` utilise la valeur par défaut, `MsgBoxStyle.OKOnly` qui affiche uniquement un bouton **OK**.  
   

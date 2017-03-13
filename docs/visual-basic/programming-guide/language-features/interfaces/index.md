@@ -46,7 +46,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
  Par exemple, le code suivant définit une interface avec une fonction, une propriété et un événement.  
   
- [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#17)]  
+ [!code-vb[VbVbalrOOP#17](../../../../visual-basic/misc/codesnippet/VisualBasic/index_1.vb)]  
   
 ## Implémentation des interfaces  
  Le mot réservé [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] `Implements` est utilisé de deux manières.  L'instruction `Implements` signifie qu'une classe ou une structure implémente une interface.  Le mot clé `Implements` signifie qu'un membre de classe ou un membre de structure implémente un membre d'interface spécifique.  
@@ -59,7 +59,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
  Par exemple, le code suivant montre comment déclarer une sous\-routine nommée `Sub1` qui implémente une méthode d'une interface :  
   
- [!code-vb[VbVbalrOOP#69](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#69)]  
+ [!code-vb[VbVbalrOOP#69](../../../../visual-basic/misc/codesnippet/VisualBasic/index_2.vb)]  
   
  Les types de paramètres et les types de retour du membre qui implémente doivent correspondre à la déclaration du membre ou de la propriété d'interface dans l'interface.  La façon la plus répandue d'implémenter un élément d'interface consiste à utiliser un membre portant le même nom que l'interface, comme dans l'exemple précédent.  
   
@@ -67,7 +67,7 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
  `Implements` permet également d'écrire une méthode unique implémentant plusieurs méthodes définies dans une interface, comme dans l'exemple suivant :  
   
- [!code-vb[VbVbalrOOP#70](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#70)]  
+ [!code-vb[VbVbalrOOP#70](../../../../visual-basic/misc/codesnippet/VisualBasic/index_3.vb)]  
   
  Vous pouvez utiliser un membre privé pour implémenter un membre d'interface.  Quand un membre privé implémente un membre d'interface, ce membre devient disponible via l'interface, même s'il n'est pas directement disponible avec les variables objets pour la classe.  
   
@@ -76,15 +76,15 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
   
  L'exemple suivant définit deux interfaces.  La seconde interface, `Interface2`, hérite d'`Interface1` et définit une propriété et une méthode supplémentaires.  
   
- [!code-vb[VbVbalrOOP#39](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#39)]  
+ [!code-vb[VbVbalrOOP#39](../../../../visual-basic/misc/codesnippet/VisualBasic/index_4.vb)]  
   
  L'exemple suivant implémente `Interface1`, l'interface définie dans l'exemple précédent :  
   
- [!code-vb[VbVbalrOOP#40](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#40)]  
+ [!code-vb[VbVbalrOOP#40](../../../../visual-basic/misc/codesnippet/VisualBasic/index_5.vb)]  
   
  Ce dernier exemple implémente `Interface2`, y compris une méthode héritée d'`Interface1` :  
   
- [!code-vb[VbVbalrOOP#41](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/OOP.vb#41)]  
+ [!code-vb[VbVbalrOOP#41](../../../../visual-basic/misc/codesnippet/VisualBasic/index_6.vb)]  
   
  Vous pouvez implémenter une propriété en lecture seule à l'aide d'une propriété readwrite \(autrement dit, vous n'êtes pas tenu de la déclarer en lecture seule dans la classe d'implémentation\).  L'implémentation d'une interface promet d'implémenter au moins les membres que l'interface déclare, mais vous pouvez offrir davantage de fonctionnalités, comme par exemple permettre l'accès en écriture à votre propriété.  
   

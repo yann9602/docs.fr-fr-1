@@ -9,7 +9,7 @@ caps.handback.revision: 21
   
  L'exemple suivant présente l'ensemble de l'opération de requête.  L'opération complète inclut la création d'une source de données, la définition de l'expression de requête et l'exécution de la requête dans une instruction `foreach`.  
   
- [!code-cs[csProgGuideLINQ#11](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#11)]  
+ [!code-cs[csProgGuideLINQ#11](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
  Pour plus d'informations sur l'essentiel de [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)] en C\#, consultez [Getting Started with LINQ in C\#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md).  
   

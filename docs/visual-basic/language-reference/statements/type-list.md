@@ -90,17 +90,17 @@ Spécifie les *paramètres de type* pour un élément de programmation *généri
 ## Exemple  
  L'exemple suivant affiche une définition squelette d'une classe de dictionnaire générique, y compris une fonction squelette pour ajouter une nouvelle entrée au dictionnaire.  
   
- [!code-vb[VbVbalrStatements#3](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_1.vb)]  
+ [!code-vb[VbVbalrStatements#3](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_1.vb)]  
   
 ## Exemple  
  Étant donné que `dictionary` est générique, le code qui l'utilise peut créer divers objets à partir de celui\-ci, chacun disposant des mêmes fonctionnalités, mais agissant sur un type de données différent.  L'exemple suivant affiche une ligne de code qui crée un objet `dictionary` avec les entrées `String` et les clés `Integer`.  
   
- [!code-vb[VbVbalrStatements#4](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_2.vb)]  
+ [!code-vb[VbVbalrStatements#4](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_2.vb)]  
   
 ## Exemple  
  L'exemple suivant affiche la définition squelette équivalente générée par l'exemple précédent.  
   
- [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/type-list_3.vb)]  
+ [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_3.vb)]  
   
 ## Voir aussi  
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)   

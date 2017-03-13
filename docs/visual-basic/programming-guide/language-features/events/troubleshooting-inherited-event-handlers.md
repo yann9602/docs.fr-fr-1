@@ -33,7 +33,7 @@ Cette rubrique décrit les problèmes courants relatifs aux gestionnaires d'év�
   
 -   Un gestionnaire d'événements hérité ne doit pas inclure de clause [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md).  La méthode de la classe de base est déjà associée à l'événement et se déclenche en conséquence.  Supprimez la clause `Handles` de la méthode héritée.  
   
-     [!code-vb[VbVbalrEvents#32](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#32)]  
+     [!code-vb[VbVbalrEvents#32](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/troubleshooting-inherited-event-handlers_1.vb)]  
   
 -   Si la méthode héritée ne comporte aucun mot clé `Handles`, vérifiez que votre code ne contient aucune [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) supplémentaire, ni aucune méthode susceptible de gérer le même événement.  
   

@@ -71,7 +71,7 @@ Permet de déclarer un délégué.  Un délégué est un type référence qui fa
 ## Exemple  
  L'exemple suivant utilise l'instruction `Delegate` pour déclarer un délégué afin de fonctionner sur deux nombres et de retourner un nombre.  La méthode `DelegateTest` accepte une instance d'un délégué de ce type et s'en sert pour fonctionner sur deux nombres.  
   
- [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/delegate-statement_1.vb)]  
+ [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
   
 ## Voir aussi  
  [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   

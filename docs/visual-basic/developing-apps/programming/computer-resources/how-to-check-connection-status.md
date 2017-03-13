@@ -32,7 +32,7 @@ La propriété <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A> peut 
   
 -   Déterminez si la propriété `IsAvailable` a la valeur `True` ou `False`.  Le code suivant vérifie l'état de la propriété et le signale :  
   
-     [!code-vb[VbResourceTasks#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-check-connection-_1.vb)]  
+     [!code-vb[VbResourceTasks#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-check-connection-status_1.vb)]  
   
      Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Connectivité et réseau**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   

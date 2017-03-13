@@ -21,14 +21,14 @@ Vous n'utilisez pas d'expressions lambda directement dans la syntaxe de requête
 ## Exemple  
  L'exemple suivant montre comment utiliser une expression lambda dans une requête fondée sur une méthode à l'aide de l'opérateur de requête standard <xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName>.  Notez que la méthode <xref:System.Linq.Enumerable.Where%2A> dans cet exemple a un paramètre d'entrée du type délégué <xref:System.Func%601> et que ce délégué accepte un entier comme entrée et retourne un booléen.  L'expression lambda peut être convertie en ce délégué.  Si c'était une requête [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq-md.md)] qui avait utilisé la méthode <xref:System.Linq.Queryable.Where%2A?displayProperty=fullName>, le type de paramètre serait un `Expression<Func\<int,bool>>`, mais l'expression lambda se présenterait exactement sous la même forme.  Pour plus d'informations sur le type Expression, consultez <xref:System.Linq.Expressions.Expression?displayProperty=fullName>.  
   
- [!code-cs[csProgGuideLINQ#1](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#1)]  
+ [!code-cs[csProgGuideLINQ#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-lambda-expressions-in-a-query_1.cs)]  
   
 ## Exemple  
  L'exemple suivant montre comment utiliser une expression lambda dans un appel de méthode d'une expression de requête.  Le lambda est nécessaire, car l'opérateur de requête standard <xref:System.Linq.Enumerable.Sum%2A> ne peut pas être appelé à l'aide de la syntaxe de requête.  
   
  La requête regroupe d'abord les étudiants d'après leur niveau de notes, comme défini dans l'enum `GradeLevel`.  Puis, pour chaque, il ajoute les notes totales de chaque étudiant.  Cela requiert deux opérations `Sum`.  La `Sum` interne calcule la note totale pour chaque étudiant, et le `Sum` calcule un total combiné cumulé pour tous les étudiants du groupe.  
   
- [!code-cs[csProgGuideLINQ#2](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#2)]  
+ [!code-cs[csProgGuideLINQ#2](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-lambda-expressions-in-a-query_2.cs)]  
   
 ## Compilation du code  
  Pour exécuter ce code, copiez et collez la méthode dans le `StudentClass` qui est fourni dans [Comment : interroger une collection d'objets](../../../csharp/programming-guide/linq-query-expressions/how-to-query-a-collection-of-objects.md), et appelez\-la à partir de la méthode `Main`.  

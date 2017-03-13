@@ -23,11 +23,11 @@ Le mot clé `set` définit une méthode d'*accesseur* dans une propriété ou un
   
  Ceci est un exemple d'accesseur `set` pour une propriété nommée `Seconds` :  
   
- [!code-cs[csrefKeywordsContextual#1](../../../csharp/language-reference/keywords/codesnippet/csharp/set_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/set_1.cs)]  
   
  Voici un exemple d'accesseur `set` dans une propriété implémentée automatiquement :  
   
- [!code-cs[csrefKeywordsContextual#2](../../../csharp/language-reference/keywords/codesnippet/csharp/set_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/set_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

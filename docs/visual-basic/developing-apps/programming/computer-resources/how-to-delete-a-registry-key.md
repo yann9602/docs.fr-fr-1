@@ -36,7 +36,7 @@ Les méthodes <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29>
   
 -   Utilisez la méthode `DeleteSubKey` pour supprimer une clé de Registre.  Cet exemple supprime la clé Software\/TestApp dans la ruche CurrentUser.  Vous pouvez spécifier la chaîne appropriée dans le code ou faire en sorte que celui\-ci repose sur des informations fournies par l'utilisateur.  
   
-     [!code-vb[VbResourceTasks#19](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-delete-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#19](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-delete-a-registry-key_1.vb)]  
   
 ## Programmation fiable  
  La méthode `DeleteSubKey` retourne une chaîne vide si la paire clé\/valeur n'existe pas.  

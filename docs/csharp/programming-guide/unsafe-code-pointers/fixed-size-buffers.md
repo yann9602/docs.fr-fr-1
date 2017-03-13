@@ -31,11 +31,11 @@ private fixed char name[30];
   
  Par exemple, avant C\# 2.0, le `struct` suivant avait une taille de 8 octets.  Le tableau `pathName` est une référence au tableau alloué par tas :  
   
- [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#19)]  
+ [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
   
  Avec C\# 2.0, un `struct` peut contenir un tableau intégré.  Dans l'exemple suivant, le tableau `fixedBuffer` a une taille fixe.  Pour accéder aux éléments du tableau, vous utilisez une instruction `fixed` pour établir un pointeur vers le premier élément.  L'instruction `fixed` épingle une instance de `fixedBuffer` à un emplacement spécifique en mémoire.  
   
- [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#20)]  
+ [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
  La taille du tableau `char` de 128 éléments est de 256 octets.  Les mémoires tampons [char](../../../csharp/language-reference/keywords/char.md) de taille fixe occupent toujours deux octets par caractère, quel que soit l'encodage.  Cela est vrai même lorsque les mémoires tampons de caractères sont marshalées en fonction de méthodes API ou de structs avec `CharSet = CharSet.Auto` ou `CharSet = CharSet.Ansi`.  Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.CharSet>.  
   

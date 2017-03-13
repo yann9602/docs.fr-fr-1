@@ -46,11 +46,11 @@ Vous pouvez créer une grille de propriétés pour les paramètres utilisateur e
   
 3.  Définissez l'objet `My.Settings` comme étant l'objet sélectionné pour la grille de propriétés.  
   
-     [!code-vb[VbVbalrMyResources#11](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#11)]  
+     [!code-vb[VbVbalrMyResources#11](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_1.vb)]  
   
 4.  Configurez la grille de propriétés pour afficher uniquement les paramètres utilisateur.  
   
-     [!code-vb[VbVbalrMyResources#12](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#12)]  
+     [!code-vb[VbVbalrMyResources#12](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_2.vb)]  
   
     > [!NOTE]
     >  Pour afficher uniquement les paramètres de portée application, utilisez l'attribut de <xref:System.Configuration.ApplicationScopedSettingAttribute> au lieu d' <xref:System.Configuration.UserScopedSettingAttribute>.  

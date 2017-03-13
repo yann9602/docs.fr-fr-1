@@ -46,7 +46,7 @@ Introduit une opération de conversion de type qui ne lève pas d'exception.
 ## Exemple  
  L'exemple suivant montre comment utiliser `TryCast`.  
   
- [!code-vb[VbVbalrKeywords#6](../../../visual-basic/language-reference/codesnippet/visualbasic/trycast-operator_1.vb)]  
+ [!code-vb[VbVbalrKeywords#6](../../../visual-basic/language-reference/codesnippet/VisualBasic/trycast-operator_1.vb)]  
   
 ## Voir aussi  
  [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   

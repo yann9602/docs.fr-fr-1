@@ -32,7 +32,7 @@ Si vous avez deux variables qui font référence à des objets, vous pouvez util
   
 -   Utilisez [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) ou [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) avec les deux variables comme opérandes.  
   
-     [!code-vb[VbVbalrOperators#69](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-test-whether-two-_1.vb)]  
+     [!code-vb[VbVbalrOperators#69](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-test-whether-two-objects-are-the-same_1.vb)]  
   
  Vous souhaitez éventuellement entreprendre une certaine action selon que deux objets font référence ou non à la même instance.  L'exemple précédent compare le contrôle `c` au contrôle actif du formulaire `f`.  S'il n'y a aucun contrôle actif, ou s'il y en a et qu'il ne s'agit pas de la même instance de contrôle que `c`, l'instruction `If` échoue et la procédure est retournée sans traitement supplémentaire.  
   

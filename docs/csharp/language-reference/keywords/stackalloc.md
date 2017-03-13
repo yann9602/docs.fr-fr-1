@@ -43,7 +43,7 @@ block = stackalloc int[100];
  L'exemple suivant calcule et affiche les 20 premiers numéros dans la séquence de Fibonacci.  Chaque numéro est la somme des deux nombres précédents.  Dans le code, un bloc de mémoire d'une taille suffisante pour contenir 20 éléments de type `int` est alloué sur la pile, et non sur le tas.  L'adresse du bloc est stockée dans le pointeur `fib`.  Cette mémoire ne fait pas l'objet de garbage collection et ne doit donc pas être épinglée \(par le biais de [fixed](../../../csharp/language-reference/keywords/fixed-statement.md)\).  La durée de vie du bloc de mémoire est limitée à la durée de vie de la méthode qui le définit.  Vous ne pouvez pas libérer la mémoire avant le retour de la méthode.  
   
 ## Exemple  
- [!code-cs[csrefKeywordsOperator#15](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#15)]  
+ [!code-cs[csrefKeywordsOperator#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/stackalloc_1.cs)]  
   
 ## Sécurité  
  Le code unsafe est moins sûr que les alternatives safe.  Toutefois, l'utilisation de `stackalloc` active automatiquement les fonctionnalités de détection de dépassement de mémoire tampon dans le common language runtime \(CLR\).  Si un dépassement de mémoire tampon est détecté, le processus est terminé aussi rapidement que possible, afin de réduire les risques d'exécution de code malveillant.  

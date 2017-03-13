@@ -25,7 +25,7 @@ caps.handback.revision: 15
 Cet exemple crée un fichier texte vide dans le chemin d'accès spécifié à l'aide de la méthode <xref:System.IO.File.Create%2A> de la classe <xref:System.IO.File>.  
   
 ## Exemple  
- [!code-vb[VbFileIOMisc#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-create-a-file_1.vb)]  
+ [!code-vb[VbFileIOMisc#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-file_1.vb)]  
   
 ## Compilation du code  
  Utilisez la variable `file` pour écrire dans le fichier.  

@@ -22,11 +22,11 @@ Lorsqu'un type ou une méthode générique est compilé dans le langage intermé
   
  Par exemple, supposons que votre code de programme ait déclaré une pile construite d'entiers :  
   
- [!code-cs[csProgGuideGenerics#42](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_1.cs)]  
+ [!code-cs[csProgGuideGenerics#42](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_1.cs)]  
   
  À ce stade, le runtime génère une version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> classe dont l'entier a été substitué correctement à son paramètre.  Maintenant, chaque fois que le code de programme utilise une pile d'entiers, le runtime réutilise la classe <xref:System.Collections.Generic.Stack%601> spécialisée générée.  Dans l'exemple suivant, deux instances d'une pile d'entiers sont créées, et elles partagent une instance unique du code `Stack<int>` :  
   
- [!code-cs[csProgGuideGenerics#43](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_2.cs)]  
+ [!code-cs[csProgGuideGenerics#43](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_2.cs)]  
   
  Toutefois, supposons qu'une autre classe <xref:System.Collections.Generic.Stack%601> avec un type valeur différent tel qu'un `long` ou une structure définie par l'utilisateur comme son paramètre est créée à un autre endroit dans votre code.  Le runtime génère alors une autre version du type générique et substitue un `long` aux emplacements appropriés dans le MSIL.  Les conversions ne sont plus nécessaires parce que chaque classe générique spécialisée contient le type valeur en mode natif.  
   
@@ -34,17 +34,17 @@ Lorsqu'un type ou une méthode générique est compilé dans le langage intermé
   
  Par exemple, supposons que vous ayez deux types référence, une classe `Customer` et une classe `Order`, et supposons également que vous ayez créé une pile de types `Customer` :  
   
- [!code-cs[csProgGuideGenerics#47](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_3.cs)]  
+ [!code-cs[csProgGuideGenerics#47](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_3.cs)]  
   
- [!code-cs[csProgGuideGenerics#44](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_4.cs)]  
+ [!code-cs[csProgGuideGenerics#44](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_4.cs)]  
   
  À ce stade, le runtime génère une version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> qui stocke des références d'objet qui seront remplies ultérieurement au lieu de stocker des données.  Supposons que la ligne suivante de code crée une pile d'un autre type référence, qui est nommée `Order` :  
   
- [!code-cs[csProgGuideGenerics#45](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_5.cs)]  
+ [!code-cs[csProgGuideGenerics#45](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_5.cs)]  
   
  Contrairement aux types valeur, une autre version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> n'est pas créée pour le type `Order`.  À la place, une instance de la version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> est créée et la variable `orders` est définie pour la référencer.  Supposons que vous ayez rencontré ensuite une ligne de code pour créer une pile d'un type `Customer` :  
   
- [!code-cs[csProgGuideGenerics#46](../../../csharp/programming-guide/generics/codesnippet/csharp/generics-in-the-run-time_6.cs)]  
+ [!code-cs[csProgGuideGenerics#46](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_6.cs)]  
   
  Comme avec l'utilisation précédente de la classe <xref:System.Collections.Generic.Stack%601> créée à l'aide du type `Order`, une autre instance de la classe <xref:System.Collections.Generic.Stack%601> spécialisée est créée.  Les pointeurs contenus ici sont configurés pour référencer une zone de mémoire de la taille d'un type `Customer`.  Dans la mesure où le nombre de types référence peut varier de manière importante d'un programme à l'autre, l'implémentation C\# de génériques réduit sensiblement le volume du code en ramenant à une unité le nombre de classes spécialisées créées par le compilateur pour les classes génériques de types référence.  
   

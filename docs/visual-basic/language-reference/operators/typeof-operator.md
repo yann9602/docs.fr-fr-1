@@ -68,7 +68,7 @@ result = TypeOf objectexpression IsNot typename
 ## Exemple  
  L'exemple suivant utilise des expressions `TypeOf`...`Is` pour tester la compatibilité du type de deux variables de référence d'objet avec différents types de données.  
   
- [!code-vb[VbVbalrOperators#39](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/typeof-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#39](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/typeof-operator_1.vb)]  
   
  La variable `refInteger` a un type au moment de l'exécution de `Integer`.  Il est compatible avec `Integer` mais pas avec `Double`.  La variable `refForm` a un type au moment de l'exécution de <xref:System.Windows.Forms.Form>.  Il est compatible avec <xref:System.Windows.Forms.Form> car il s'agit de son type, avec <xref:System.Windows.Forms.Control> car <xref:System.Windows.Forms.Form> hérite de <xref:System.Windows.Forms.Control>, et avec <xref:System.ComponentModel.IComponent> car <xref:System.Windows.Forms.Form> hérite de <xref:System.ComponentModel.Component>, qui implémente <xref:System.ComponentModel.IComponent>.  Toutefois, `refForm` n'est pas compatible avec <xref:System.Windows.Forms.Label>.  
   

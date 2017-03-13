@@ -34,20 +34,20 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> 
   
 1.  Utilisez la méthode `GetFiles` pour retourner la liste des fichiers. Cet exemple retourne tous les fichiers .rtf qui se trouvent dans le répertoire spécifié.  
   
-     [!code-vb[VbFileIOMisc#36](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-files-with-a_1.vb)]  
+     [!code-vb[VbFileIOMisc#36](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-files-with-a-specific-pattern-to-a-directory_1.vb)]  
   
 2.  Utilisez la méthode `CopyFile` pour copier les fichiers. Cet exemple copie les fichiers dans le répertoire nommé `testdirectory`.  
   
-     [!code-vb[VbVbcnMyFileSystem#88](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-files-with-a_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#88](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-files-with-a-specific-pattern-to-a-directory_2.vb)]  
   
 3.  Terminez l’instruction `For` par une instruction `Next`.  
   
-     [!code-vb[VbVbcnMyFileSystem#89](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-files-with-a_3.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#89](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-files-with-a-specific-pattern-to-a-directory_3.vb)]  
   
 ## Exemple  
  L’exemple suivant, qui présente les extraits de code ci\-dessus dans leur intégralité, copie tous les fichiers .rtf du répertoire spécifié dans le répertoire nommé `testdirectory`.  
   
- [!code-vb[VbFileIOMisc#37](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-copy-files-with-a_4.vb)]  
+ [!code-vb[VbFileIOMisc#37](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-copy-files-with-a-specific-pattern-to-a-directory_4.vb)]  
   
 ## Sécurité .NET Framework  
  Les conditions ci\-dessous peuvent générer une exception.  

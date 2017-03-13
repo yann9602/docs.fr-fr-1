@@ -48,12 +48,12 @@ Spécifie qu'une fonction ou un accesseur d' `Get` est un itérateur.
 ## Exemple  
  L'exemple suivant illustre une fonction d'itérateur.  La fonction d'itérateur a une instruction d' `Yield` qui est à l'intérieur d'une boucle de [Pour… next](../../../visual-basic/language-reference/statements/for-next-statement.md) .  Chaque itération du corps du didacticiel de [Pour chaque](../../../visual-basic/language-reference/statements/for-each-next-statement.md) dans `Main` crée un appel à la fonction d'itérateur d' `Power` .  Chaque appel à la fonction d'itérateur continue à l'exécution suivante de l'instruction d' `Yield` , qui se produit pendant l'itération suivante de la boucle d' `For…Next` .  
   
- [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/iterator_1.vb)]  
+ [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_1.vb)]  
   
 ## Exemple  
  l'exemple suivant montre un accesseur d' `Get` qui est un itérateur.  Le modificateur d' `Iterator` est dans la déclaration de propriété.  
   
- [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/iterator_2.vb)]  
+ [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/iterator_2.vb)]  
   
  Pour obtenir d'autres exemples, consultez [Itérateurs](../Topic/Iterators%20\(C%23%20and%20Visual%20Basic\).md).  
   

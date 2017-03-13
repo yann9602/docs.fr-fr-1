@@ -52,7 +52,7 @@ Return expression
 ## Exemple  
  L'exemple suivant utilise plusieurs fois l'instruction `Return` pour retourner au code appelant lorsque la procédure ne doit pas effectuer d'autres opérations.  
   
- [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/return-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#53](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/return-statement_1.vb)]  
   
 ## Voir aussi  
  [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   

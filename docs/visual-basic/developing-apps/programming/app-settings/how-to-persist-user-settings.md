@@ -35,7 +35,7 @@ Vous pouvez utiliser la méthode `My.Settings.Save` pour rendre persistantes les
 ## Exemple  
  Cet exemple modifie la valeur du paramètre utilisateur `LastChanged` et enregistre cette modification en appelant la méthode `My.Settings.Save`.  
   
- [!code-vb[VbVbalrMyResources#5](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/visualbasic/VbVbalrMyResources2/Form1.vb#5)]  
+ [!code-vb[VbVbalrMyResources#5](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-persist-user-settings_1.vb)]  
   
  Pour que cet exemple fonctionne, votre application doit avoir un paramètre utilisateur `LastChanged` de type `Date`.  Pour plus d’informations, consultez [Gestion des paramètres d'une application \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet).  
   

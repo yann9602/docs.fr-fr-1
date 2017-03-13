@@ -21,7 +21,7 @@ Cette rubrique présente les trois façons d'écrire une requête [!INCLUDE[vbte
 ## Syntaxe de requête  
  La méthode recommandée pour écrire la plupart des requêtes consiste à utiliser la *syntaxe de requête* pour créer des *expressions de requête*.  L'exemple suivant présente trois expressions de requête.  La première expression de requête montre comment filtrer ou restreindre des résultats en appliquant des conditions avec une clause `where`.  Tous les éléments de la séquence source dont la valeur est supérieure à 7 ou inférieure à 3 sont retournés.  La deuxième expression montre comment classer les résultats retournés.  La troisième expression montre comment regrouper des résultats en fonction d'une clé.  Cette requête retourne deux groupes en fonction de la première lettre du mot.  
   
- [!code-cs[csProgGuideLINQ#5](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#5)]  
+ [!code-cs[csProgGuideLINQ#5](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-write-linq-queries_1.cs)]  
   
  Notez que le type des requêtes est <xref:System.Collections.Generic.IEnumerable%601>.  Toutes ces requêtes pourraient être écrites à l'aide de `var`, comme montré dans l'exemple suivant :  
   
@@ -34,25 +34,25 @@ Cette rubrique présente les trois façons d'écrire une requête [!INCLUDE[vbte
 ## Syntaxe de méthode  
  Certaines opérations de requête doivent être exprimées comme un appel de méthode.  Les plus répandues de ces méthodes retournent des valeurs numériques uniques, telles que <xref:System.Linq.Enumerable.Sum%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc.  Ces méthodes doivent toujours être appelées en dernier dans toutes les requêtes car elles ne représentent qu'une valeur unique et ne peuvent pas servir de source pour une opération de requête supplémentaire.  L'exemple suivant présente un appel de méthode dans une expression de requête :  
   
- [!code-cs[csProgGuideLINQ#6](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#6)]  
+ [!code-cs[csProgGuideLINQ#6](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-write-linq-queries_2.cs)]  
   
 ## Exemple  
  Si la méthode a des paramètres, ceux\-ci sont fournis sous la forme d'une expression [lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideLINQ#7](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#7)]  
+ [!code-cs[csProgGuideLINQ#7](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-write-linq-queries_3.cs)]  
   
  Dans les requêtes précédentes, seule la requête 4 s'exécute immédiatement.  Cela s'explique par le fait qu'elle retourne une valeur unique et non pas une collection <xref:System.Collections.Generic.IEnumerable%601> générique.  La méthode elle\-même doit utiliser `foreach` pour calculer sa valeur.  
   
  Chacune des requêtes précédentes peut être écrite en utilisant des types implicites avec [var](../../../csharp/language-reference/keywords/var.md), comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideLINQ#8](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#8)]  
+ [!code-cs[csProgGuideLINQ#8](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-write-linq-queries_4.cs)]  
   
 ## Exemple  
   
 ## Syntaxe de méthode et de requête mixte  
  Cet exemple montre comment utiliser la syntaxe de méthode sur les résultats d'une clause de requête.  Encadrez simplement l'expression de requête entre parenthèses, puis appliquez l'opérateur point et appelez la méthode.  Dans l'exemple suivant, la requête 7 retourne les nombres dont la valeur est comprise entre 3 et 7.  Toutefois, il est généralement préférable d'utiliser une deuxième variable pour stocker le résultat de l'appel de méthode.  De cette manière, il est moins probable que la requête soit confondue avec les résultats de la requête.  
   
- [!code-cs[csProgGuideLINQ#9](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#9)]  
+ [!code-cs[csProgGuideLINQ#9](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-write-linq-queries_5.cs)]  
   
  Comme la requête 7 retourne une valeur unique et non pas une collection, la requête s'exécute immédiatement.  
   

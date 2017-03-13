@@ -35,20 +35,20 @@ L'objet `My.Computer.Audio` comporte des méthodes permettant de lire les sons.
   
  Dans l'exemple suivant, la méthode d' `My.Computer.Audio.Play` lit un son.  Lorsque `AudioPlayMode.WaitToComplete` est spécifié, `My.Computer.Audio.Play` attend que le son s'arrête pour que l'exécution du code appelant continue.  En utilisant cet exemple, vous devez vous assurer que le nom de fichier fait référence à un fichier son .wav présent sur votre ordinateur  
   
- [!code-vb[VbVbalrMyComputer#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#15)]  
+ [!code-vb[VbVbalrMyComputer#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_1.vb)]  
   
  Dans l'exemple suivant, la méthode d' `My.Computer.Audio.Play` lit un son.  En utilisant cet exemple, vous devez vous assurer que les ressources de l'application incluent un fichier son .wav nommé Waterfall.  
   
- [!code-vb[VbVbalrMyComputer#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#16)]  
+ [!code-vb[VbVbalrMyComputer#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_2.vb)]  
   
 ## Lire les sons de bouclage  
  Dans l'exemple suivant, la méthode d' `My.Computer.Audio.Play` lit le son spécifié en arrière\-plan lorsque `PlayMode.BackgroundLoop` est spécifié.  En utilisant cet exemple, vous devez vous assurer que le nom de fichier fait référence à un fichier son .wav présent sur votre ordinateur.  
   
- [!code-vb[VbVbalrMyComputer#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#11)]  
+ [!code-vb[VbVbalrMyComputer#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_3.vb)]  
   
  Dans l'exemple suivant, la méthode d' `My.Computer.Audio.Play` lit le son spécifié en arrière\-plan lorsque `PlayMode.BackgroundLoop` est spécifié.  En utilisant cet exemple, vous devez vous assurer que les ressources de l'application incluent un fichier son .wav nommé Waterfall.  
   
- [!code-vb[VbVbalrMyComputer#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#12)]  
+ [!code-vb[VbVbalrMyComputer#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_4.vb)]  
   
  L'exemple de code précédent est également disponible sous forme de extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Applications Windows Forms \> Son**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   
@@ -61,7 +61,7 @@ L'objet `My.Computer.Audio` comporte des méthodes permettant de lire les sons.
   
  L'exemple suivant arrête un son en en arrière\-plan.  
   
- [!code-vb[VbVbalrMyComputer#18](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#18)]  
+ [!code-vb[VbVbalrMyComputer#18](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_5.vb)]  
   
  L'exemple de code précédent est également disponible sous forme de extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Applications Windows Forms \> Son**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   
@@ -72,7 +72,7 @@ L'objet `My.Computer.Audio` comporte des méthodes permettant de lire les sons.
   
  L'exemple suivant utilise la méthode d' `My.Computer.Audio.PlaySystemSound` pour lire un son système.  
   
- [!code-vb[VbVbalrMyComputer#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class1.vb#17)]  
+ [!code-vb[VbVbalrMyComputer#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_6.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Devices.Audio>   

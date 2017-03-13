@@ -35,7 +35,7 @@ L'exemple suivant indique comment regrouper des éléments dans des blocs qui re
 ## Exemple  
  L'exemple suivant montre la méthode d'extension et le code client qui l'utilise.  
   
- [!code-cs[cscsrefContiguousGroups#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/how-to-group-results-by-_1.cs)]  
+ [!code-cs[cscsrefContiguousGroups#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-group-results-by-contiguous-keys_1.cs)]  
   
  Pour utiliser la méthode d'extension dans votre projet, copiez la classe statique `MyExtensions` vers un fichier de code source nouveau ou existant et, si nécessaire, ajoutez une directive `using` pour l'espace de noms où elle se trouve.  
   

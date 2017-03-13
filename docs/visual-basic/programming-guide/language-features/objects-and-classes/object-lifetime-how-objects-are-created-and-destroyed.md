@@ -51,11 +51,11 @@ Une instance de classe \(objet\) est créée à l'aide du mot clé `New`.  Des t
   
  Pour créer un constructeur pour une classe, créez une procédure nommée `Sub New` n'importe où dans la définition de la classe.  Pour créer un constructeur paramétrable, spécifiez les noms et les types de données des arguments de `Sub New` comme vous le feriez pour spécifier les arguments d'une autre procédure, comme dans le code suivant :  
   
- [!code-vb[VbVbalrOOP#42](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/WhidbeyStuff.vb#42)]  
+ [!code-vb[VbVbalrOOP#42](../../../../visual-basic/misc/codesnippet/VisualBasic/object-lifetime-how-objects-are-created-and-destroyed_1.vb)]  
   
  Les constructeurs sont souvent surchargés, comme dans le code suivant :  
   
- [!code-vb[VbVbalrOOP#116](../../../../visual-basic/misc/codesnippet/visualbasic/VbVbalrOOP/WhidbeyStuff.vb#116)]  
+ [!code-vb[VbVbalrOOP#116](../../../../visual-basic/misc/codesnippet/VisualBasic/object-lifetime-how-objects-are-created-and-destroyed_2.vb)]  
   
  Quand vous définissez une classe dérivée d'une autre classe, la première ligne d'un constructeur doit être un appel au constructeur de la classe de base, à moins que celle\-ci contienne un constructeur accessible qui n'accepte aucun paramètre.  Un appel à la classe de base contenant le constructeur ci\-dessus, par exemple, serait `MyBase.New(s)`.  Sinon, `MyBase.New` est facultatif et le runtime [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] l'appelle implicitement.  
   

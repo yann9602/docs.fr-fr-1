@@ -50,7 +50,7 @@ Importe un espace de noms à partir d'un assembly spécifié.
 ## Exemple  
  Le code suivant compile si `/imports:system` est spécifié :  
   
- [!code-vb[VbVbalrCompiler#21](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/imports_1.vb)]  
+ [!code-vb[VbVbalrCompiler#21](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/imports_1.vb)]  
   
 ## Voir aussi  
  [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   

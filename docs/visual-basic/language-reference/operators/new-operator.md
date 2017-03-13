@@ -34,11 +34,11 @@ Présente une clause `New` pour créer une instance de l'objet, spécifie une co
   
  Vous pouvez utiliser une clause `New` dans une instruction de déclaration ou une instruction d'assignation.  Lorsque l'instruction est exécutée, elle appelle le constructeur approprié de la classe spécifiée, en passant les arguments que vous avez fournis.  L'exemple suivant illustre cela en créant des instances d'une classe `Customer` qui a deux constructeurs, l'un ne prenant aucun paramètre et l'autre prenant un paramètre de chaîne.  
   
- [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/visualbasic/new-operator_1.vb)]  
+ [!code-vb[VbVbalrKeywords#11](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_1.vb)]  
   
  Étant donné que les tableaux sont des classes, `New` peut créer une nouvelle instance de tableau, comme indiqué dans les exemples suivants.  
   
- [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/visualbasic/new-operator_2.vb)]  
+ [!code-vb[VbVbalrKeywords#12](../../../visual-basic/language-reference/codesnippet/VisualBasic/new-operator_2.vb)]  
   
  Le Common Language Runtime \(CLR\) lève une erreur <xref:System.OutOfMemoryException> s'il n'y a pas assez de mémoire pour créer la nouvelle instance.  
   

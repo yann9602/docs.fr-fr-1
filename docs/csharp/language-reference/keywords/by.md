@@ -24,7 +24,7 @@ Le mot clé contextuel `by` est utilisé dans la clause `group` dans une express
 ## Exemple  
  L'exemple suivant illustre l'utilisation du mot clé contextuel `by` dans une clause `group` pour spécifier que les étudiants doivent être groupés d'après la première lettre de leur nom.  
   
- [!code-cs[csrefKeywordsContextual#10](../../../csharp/language-reference/keywords/codesnippet/csharp/by_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/by_1.cs)]  
   
 ## Voir aussi  
  [Expressions de requête \(LINQ\)](../../../csharp/programming-guide/linq-query-expressions/index.md)

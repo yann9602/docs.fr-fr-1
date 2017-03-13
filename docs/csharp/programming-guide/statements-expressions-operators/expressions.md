@@ -42,13 +42,13 @@ System.Convert.ToInt32("35")
 ## Littéraux et noms simples  
  Les deux types d'expressions les plus simples sont littéraux et noms simples.  Un littéral est une valeur constante qui n'a aucun nom.  Par exemple, dans l'exemple de code suivant, `5` et `"Hello World"` sont des valeurs littérales :  
   
- [!code-cs[csProgGuideStatements#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/expressions_1.cs)]  
+ [!code-cs[csProgGuideStatements#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/expressions_1.cs)]  
   
  Pour plus d'informations sur les littéraux, consultez [Types](../../../csharp/language-reference/keywords/types.md).  
   
  Dans l'exemple précédent, `i` et `s` sont des noms simples qui identifient des variables locales.  Lorsque ces variables sont utilisées dans une expression, le nom de variable est évalué à la valeur stockée actuellement à l'emplacement de la variable en mémoire.  Ceci est démontré dans l'exemple suivant :  
   
- [!code-cs[csProgGuideStatements#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/expressions_2.cs)]  
+ [!code-cs[csProgGuideStatements#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/expressions_2.cs)]  
   
 ## Expressions d'appel  
  Dans l'exemple de code suivant, l'appel à `DoWork` est une autre expression d'appel.  

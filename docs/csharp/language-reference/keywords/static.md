@@ -24,13 +24,13 @@ Utilisez le modificateur `static` pour déclarer un membre statique, qui apparti
 ## Exemple  
  La classe suivante est déclarée comme `static` et contient uniquement des méthodes `static` :  
   
- [!code-cs[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#18)]  
+ [!code-cs[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_1.cs)]  
   
  Une déclaration de constante ou de type est de manière implicite un membre statique.  
   
  Un membre statique ne peut pas être référencé par le biais d'une instance.  À la place, il est référencé à l'aide du nom de type.  Par exemple, considérons la classe suivante :  
   
- [!code-cs[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#19)]  
+ [!code-cs[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_2.cs)]  
   
  Pour faire référence au membre statique `x`, utilisez le nom complet `MyBaseC.MyStruct.x` \(à moins qu'il soit accessible à partir de la même portée\) :  
   
@@ -54,12 +54,12 @@ Console.WriteLine(MyBaseC.MyStruct.x);
 ## Exemple  
  Dans cet exemple, le code lit le nom et l'identificateur d'un nouvel employé, incrémente d'une unité le compteur d'employés et affiche les informations concernant le nouvel employé et le nouveau nombre d'employés.  Par souci de simplicité, ce programme lit le nombre actuel d'employés à partir du clavier.  Dans une application réelle, cette information doit être lue à partir d'un fichier.  
   
- [!code-cs[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#20)]  
+ [!code-cs[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_3.cs)]  
   
 ## Exemple  
  Cet exemple montre que, bien qu'il soit possible d'initialiser un champ statique à l'aide d'un autre champ statique non encore déclaré, les résultats seront indéfinis jusqu'à vous affectiez explicitement une valeur au champ statique.  
   
- [!code-cs[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#21)]  
+ [!code-cs[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_4.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

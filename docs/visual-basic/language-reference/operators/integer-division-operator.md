@@ -73,7 +73,7 @@ expression1 \ expression2
 ## Exemple  
  Cet exemple utilise l'opérateur `\` pour effectuer une division d'entier.  Le résultat est un entier qui représente le quotient entier des deux opérandes avec le reste abandonné.  
   
- [!code-vb[VbVbalrOperators#18](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/integer-division-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#18](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/integer-division-operator_1.vb)]  
   
  Les expressions dans l'exemple précédent retournent respectivement les valeurs 2 ; 3 ; 33 et \-22.  
   

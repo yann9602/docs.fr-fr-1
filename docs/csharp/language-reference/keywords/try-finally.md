@@ -29,11 +29,11 @@ En utilisant un bloc `finally`, vous pouvez nettoyer toutes les ressources qui s
 ## Exemple  
  Dans l'exemple suivant, une instruction de conversion non valide entraîne la levée d'une exception `System.InvalidCastException`.  L'exception est non gérée.  
   
- [!code-cs[csrefKeywordsExceptions#4](../../../csharp/language-reference/keywords/codesnippet/csharp/try-finally_1.cs)]  
+ [!code-cs[csrefKeywordsExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-finally_1.cs)]  
   
  Dans l'exemple suivant, une exception de la méthode `TryCast` est interceptée dans une méthode située plus haut dans la pile des appels.  
   
- [!code-cs[csrefKeywordsExceptions#6](../../../csharp/language-reference/keywords/codesnippet/csharp/try-finally_2.cs)]  
+ [!code-cs[csrefKeywordsExceptions#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-finally_2.cs)]  
   
  Pour plus d'informations sur `finally`, consultez [try\-catch\-finally](../../../csharp/language-reference/keywords/try-catch-finally.md).  
   

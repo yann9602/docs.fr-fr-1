@@ -20,7 +20,7 @@ Dans les termes de base de données relationnelle, une *jointure interne* génè
 ## Exemple de jointure de clé simple  
  L'exemple suivant crée deux collections qui contiennent des objets de deux types définis par l'utilisateur, `Person` et `Pet`.  La requête utilise la clause `join` dans C\# pour faire correspondre des objets `Person` avec des objets `Pet` dont `Owner` est `Person`.  La clause `select` dans C\# définit l'apparence des objets résultants.  Dans cet exemple, les objets résultants sont des types anonymes qui se composent du prénom du propriétaire et du nom de l'animal domestique.  
   
- [!code-cs[CsLINQProgJoining#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#1)]  
+ [!code-cs[CsLINQProgJoining#1](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_1.cs)]  
   
  Notez que l'objet `Person` dont `LastName` est « Huff » n'apparaît pas dans le jeu de résultats, car aucun objet `Pet` qui a `Pet.Owner` n'est égal à `Person`.  
   
@@ -31,7 +31,7 @@ Dans les termes de base de données relationnelle, une *jointure interne* génè
   
  L'exemple suivant utilise une liste d'objets `Employee` et une liste d'objets `Student` pour déterminer quels employés sont également des étudiants.  Ces deux types ont une propriété `FirstName` et `LastName` de type <xref:System.String>.  Les fonctions qui créent les clés de jointure à partir des éléments de chaque liste retournent un type anonyme qui se compose des propriétés `FirstName` et `LastName` de chaque élément.  L'opération de jointure compare ces clés composites à la recherche d'une égalité et retourne des paires d'objets dans chaque liste présentant une correspondance entre le prénom et le nom.  
   
- [!code-cs[CsLINQProgJoining#2](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#2)]  
+ [!code-cs[CsLINQProgJoining#2](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_2.cs)]  
   
 ## Exemple  
   
@@ -44,7 +44,7 @@ Dans les termes de base de données relationnelle, une *jointure interne* génè
   
  La deuxième clause `join` dans C\# met en corrélation les types anonymes retournés par la première jointure avec les objets `Dog` de la liste de chiens fournie, selon une clé composite qui se compose de la propriété `Owner` de type `Person` et de la première lettre du nom de l'animal.  Elle retourne une séquence de types anonymes qui contiennent les propriétés `Cat.Name` et `Dog.Name` de chaque paire correspondante.  Étant donné qu'il s'agit d'une jointure interne, seuls les objets de la première source de données qui ont une correspondance dans la deuxième source de données sont retournés.  
   
- [!code-cs[CsLINQProgJoining#3](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#3)]  
+ [!code-cs[CsLINQProgJoining#3](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_3.cs)]  
   
 ## Exemple  
   
@@ -57,7 +57,7 @@ Dans les termes de base de données relationnelle, une *jointure interne* génè
   
  Le résultat de `query1` est équivalent au jeu de résultats qui aurait été obtenu en utilisant la clause `join` sans la clause `into` pour effectuer une jointure interne.  La variable `query2` illustre cette requête équivalente.  
   
- [!code-cs[CsLINQProgJoining#4](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#4)]  
+ [!code-cs[CsLINQProgJoining#4](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-inner-joins_4.cs)]  
   
 ## Compilation du code  
   

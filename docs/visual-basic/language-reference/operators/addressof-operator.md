@@ -45,12 +45,12 @@ AddressOf procedurename
 ## Exemple  
  Cet exemple utilise l'opérateur `AddressOf` pour désigner un délégué qui va gérer l'événement `Click` d'un bouton.  
   
- [!code-vb[VbVbalrDelegates#8](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addressof-operator_1.vb)]  
+ [!code-vb[VbVbalrDelegates#8](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addressof-operator_1.vb)]  
   
 ## Exemple  
  L'exemple suivant utilise l'opérateur `AddressOf` pour désigner la fonction de démarrage d'un thread.  
   
- [!code-vb[VbVbalrDelegates#9](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addressof-operator_2.vb)]  
+ [!code-vb[VbVbalrDelegates#9](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addressof-operator_2.vb)]  
   
 ## Voir aussi  
  [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)   

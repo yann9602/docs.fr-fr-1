@@ -37,7 +37,7 @@ Les classes et structs sont deux des constructions de base du système de type c
 ## Exemple  
  Dans l'exemple suivant, `MyCustomClass` est défini avec trois membres au niveau supérieur de l'espace de noms `ProgrammingGuide`.  Une instance \(objet\) de `MyCustomClass` est créée dans la méthode `Main` dans la classe `Program`, et les méthodes et propriétés de l'objet sont accessibles à l'aide de la notation par point.  
   
- [!code-cs[csProgGuideObjects#88](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideObjects#88](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
 ## Encapsulation  
  L'*encapsulation* est parfois connu sous le nom de premier pilier ou principe de la programmation orientée objet.  D'après le principe d'encapsulation, une classe ou un struct peut spécifier le degré d'accessibilité de chacun de ses membres au code situé en dehors de la classe ou du struct.  Les méthodes et variables qui ne sont pas censées être utilisées depuis l'extérieur de la classe ou de l'assembly peuvent être masquées afin de limiter le risque d'erreurs de codage ou d'utilisation malveillante.  

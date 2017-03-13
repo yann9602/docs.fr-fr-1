@@ -70,12 +70,12 @@ Lorsque vous utilisez le mot clé `yield` dans une instruction, vous indiquez qu
   
  Le type de retour de la méthode Iterator est <xref:System.Collections.IEnumerable>, qui est un type interface itérateur.  Lorsque la méthode Iterator est appelée, elle retourne un objet énumérable contenant les puissances d'un nombre.  
   
- [!code-cs[csrefKeywordsContextual#5](../../../csharp/language-reference/keywords/codesnippet/csharp/yield_1.cs)]  
+ [!code-cs[csrefKeywordsContextual#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_1.cs)]  
   
 ## Exemple  
  L'exemple suivant illustre un accesseur `get` qui est un itérateur.  Dans cet exemple, chaque instruction `yield return` retourne une instance d'une classe définie par l'utilisateur.  
   
- [!code-cs[csrefKeywordsContextual#21](../../../csharp/language-reference/keywords/codesnippet/csharp/yield_2.cs)]  
+ [!code-cs[csrefKeywordsContextual#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

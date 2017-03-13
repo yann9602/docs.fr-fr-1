@@ -17,14 +17,14 @@ La jointure groupée permet de produire des structures de données hiérarchique
 ### Exemple de Group Join  
  L'exemple suivant effectue une jointure groupée d'objets de type `Person` et `Pet` basés sur `Person` qui correspond à la propriété `Pet.Owner`.  Contrairement à une jointure non groupée qui produit une paire d'éléments pour chaque correspondance, la jointure groupée produit un seul objet résultant pour chaque élément de la première collection, un objet `Person` dans cet exemple.  Les éléments correspondants de la deuxième collection, qui sont des objets `Pet` dans cet exemple, sont groupés dans une collection.  Enfin, la fonction de sélection de résultat crée un type anonyme pour chaque correspondance qui se compose de `Person.FirstName` et d'une collection d'objets `Pet`.  
   
- [!code-cs[CsLINQProgJoining#5](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#5)]  
+ [!code-cs[CsLINQProgJoining#5](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-grouped-joins_1.cs)]  
   
 ## Exemple  
   
 ### Group Join pour créer un exemple XML  
  Les jointures groupées sont appropriées pour créer du XML à l'aide de [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].  L'exemple suivant est semblable à l'exemple précédent mais au lieu de créer des types anonymes, la fonction de sélection de résultat crée des éléments XML qui représentent les objets joints.  Pour plus d'informations sur [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)], consultez [LINQ to XML](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
   
- [!code-cs[CsLINQProgJoining#6](../../../csharp/programming-guide/linq-query-expressions/codesnippet/csharp/Joins/joins.cs#6)]  
+ [!code-cs[CsLINQProgJoining#6](../../../csharp/programming-guide/linq-query-expressions/codesnippet/CSharp/how-to-perform-grouped-joins_2.cs)]  
   
 ## Compilation du code  
   

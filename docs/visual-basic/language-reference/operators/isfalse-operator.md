@@ -35,7 +35,7 @@ Détermine si une expression est `False`.
 ## Exemple  
  L'exemple de code suivant définit le plan d'une structure qui inclut des définitions pour les opérateurs `IsFalse` et `IsTrue`.  
   
- [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/isfalse-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/isfalse-operator_1.vb)]  
   
 ## Voir aussi  
  [IsTrue Operator](../../../visual-basic/language-reference/operators/istrue-operator.md)   

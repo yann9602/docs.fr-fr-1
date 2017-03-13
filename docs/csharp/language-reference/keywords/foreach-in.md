@@ -44,7 +44,7 @@ L'instruction `foreach` répète un groupe d'instructions incorporées pour chaq
   
 -   une boucle `foreach` qui comptabilise les éléments du tableau  
   
- [!code-cs[csrefKeywordsIteration#4](../../../csharp/language-reference/keywords/codesnippet/csharp/foreach-in_1.cs)]  
+ [!code-cs[csrefKeywordsIteration#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/foreach-in_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

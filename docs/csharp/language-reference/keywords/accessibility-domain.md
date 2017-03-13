@@ -23,7 +23,7 @@ Le domaine d'accessibilité d'un membre indique dans quelles sections du program
 ## Exemple  
  Cet exemple met en jeu un type de niveau supérieur, `T1`, et deux classes imbriquées, `M1` et `M2`.  Les classes contiennent des champs dotés d'accessibilités déclarées différentes.  Dans la méthode `Main`, un commentaire suit chaque instruction pour indiquer le domaine d'accessibilité de chaque membre.  Notez que les instructions qui tentent de référencer les membres inaccessibles ont été placées en commentaire.  Si vous voulez examiner les erreurs de compilation causées par la référence à un membre inaccessible, supprimez une marque de commentaire à chaque fois.  
   
- [!code-cs[csrefKeywordsModifiers#4](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#4)]  
+ [!code-cs[csrefKeywordsModifiers#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/accessibility-domain_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

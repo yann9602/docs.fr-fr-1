@@ -26,7 +26,7 @@ Le mot clé `event` est utilisé pour déclarer un événement dans une classe d
 ## Exemple  
  L'exemple suivant montre comment déclarer et déclencher un événement qui utilise <xref:System.EventHandler> comme type délégué sous\-jacent.  Pour obtenir l'exemple de code complet qui illustre aussi comment utiliser le type délégué générique <xref:System.EventHandler%601> et comment s'abonner à un événement et créer une méthode de gestionnaire d'événements, consultez [Comment : publier des événements conformes aux indications du .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
   
- [!code-cs[csrefKeywordsModifiers#7](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsModifiers/csrefKeywordsModifiers.cs#7)]  
+ [!code-cs[csrefKeywordsModifiers#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/event_1.cs)]  
   
  Les événements constituent un type spécial de délégué multicast qui peut uniquement être appelé au sein de la classe ou de la structure où ils sont déclarés \(la classe d'éditeur\).  Si d'autres classes ou structures s'abonnent à l'événement, leurs méthodes de gestionnaire d'événements sont appelées lorsque la classe d'éditeur déclenche l'événement.  Pour plus d'informations et d'exemples de code, consultez [Événements](../../../csharp/programming-guide/events/index.md) et [Délégués](../../../csharp/programming-guide/delegates/index.md).  
   

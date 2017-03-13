@@ -26,7 +26,7 @@ Les propriétés combinent des aspects à la fois des champs et des méthodes.  
   
  Pour déclarer les propriétés dans le bloc de classe, vous devez spécifier le niveau d'accès du champ, suivi du type puis du nom de la propriété, et enfin d'un bloc de code qui déclare un accesseur `get` et\/ou un accesseur `set`.  Par exemple :  
   
- [!code-cs[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_1.cs)]  
+ [!code-cs[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_1.cs)]  
   
  Dans cet exemple, `Month` est déclaré comme une propriété afin que l'accesseur `set` puisse s'assurer que la valeur `Month` est définie entre 1 et 12.  La propriété `Month` utilise un champ privé pour suivre la valeur réelle.  L'emplacement réel des données d'une propriété est souvent appelé « magasin de stockage » de la propriété. Il est courant pour les propriétés d'utiliser des champs privés comme magasin de stockage.  Le champ reçoit un marqueur indiquant qu'il est privé pour garantir qu'il ne pourra être modifié que par appel de la propriété.  Pour plus d'informations sur les restrictions d'accès public et privé, consultez [Modificateurs d'accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
@@ -35,32 +35,32 @@ Les propriétés combinent des aspects à la fois des champs et des méthodes.  
 ## Accesseur get  
  Le corps de l'accesseur `get` ressemble à celui d'une méthode.  Il doit retourner une valeur de type de propriété.  L'exécution de l'accesseur `get` équivaut à la lecture de la valeur du champ.  Par exemple, lorsque vous retournez la variable privée de l'accesseur `get` et que les optimisations sont activées, le compilateur fait en sorte que l'appel à la méthode d'accesseur `get` soit inline pour qu'il n'y ait pas surcharge d'appels à la méthode.  Toutefois, une méthode d'accesseur `get` virtuelle ne peut pas être inline, car le compilateur ne sait pas au moment de la compilation quelle méthode sera réellement appelée à l'exécution.  Voici un accesseur `get` qui retourne la valeur d'un champ privé `name` :  
   
- [!code-cs[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_2.cs)]  
+ [!code-cs[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_2.cs)]  
   
  Lorsque vous référencez la propriété, sauf dans le cas où il s'agit de la cible d'une assignation, l'accesseur `get` est appelé pour lire la valeur de la propriété.  Par exemple :  
   
- [!code-cs[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_3.cs)]  
+ [!code-cs[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_3.cs)]  
   
  L'accesseur `get` doit se terminer dans une instruction [return](../../../csharp/language-reference/keywords/return.md) ou [throw](../../../csharp/language-reference/keywords/throw.md), et le contrôle ne peut pas s'écouler du corps de l'accesseur.  
   
  Modifier l'état de l'objet à l'aide de l'accesseur `get` n'est pas une bonne habitude de programmation.  Par exemple, l'accesseur ci\-dessous a pour effet secondaire de modifier l'état de l'objet à chaque accès au champ `number`.  
   
- [!code-cs[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_4.cs)]  
+ [!code-cs[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_4.cs)]  
   
  L'accesseur `get` peut être utilisé pour retourner la valeur du champ ou pour la calculer et la retourner.  Par exemple :  
   
- [!code-cs[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_5.cs)]  
+ [!code-cs[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_5.cs)]  
   
  Dans le segment de code précédent, si vous n'assignez pas de valeur à la propriété `Name`, une valeur NA est retournée.  
   
 ## Accesseur set  
  L'accesseur `set` est semblable à une méthode dont le type de retour est [void](../../../csharp/language-reference/keywords/void.md).  Il utilise un paramètre implicite nommé `value`, dont le type est celui de la propriété.  Dans l'exemple suivant, un accesseur `set` est ajouté à la propriété `Name` :  
   
- [!code-cs[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_6.cs)]  
+ [!code-cs[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_6.cs)]  
   
  Lorsque vous assignez une valeur à la propriété, l'accesseur `set` est appelé à l'aide d'un argument qui fournit la nouvelle valeur.  Par exemple :  
   
- [!code-cs[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_7.cs)]  
+ [!code-cs[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_7.cs)]  
   
  C'est une erreur d'utiliser le nom du paramètre implicite `value` pour une déclaration de variable locale dans un accesseur `set`.  
   
@@ -79,29 +79,29 @@ Les propriétés combinent des aspects à la fois des champs et des méthodes.  
 ## Exemple  
  Cet exemple illustre les propriétés d'instance, statiques et en lecture seule.  Il accepte le nom de l'employé à partir du clavier, incrémente `NumberOfEmployees` d'une unité et affiche le nom et le matricule de l'employé.  
   
- [!code-cs[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_8.cs)]  
+ [!code-cs[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_8.cs)]  
   
 ## Exemple  
  Cet exemple illustre comment accéder à une propriété dans une classe de base masquée par une autre propriété portant le même nom dans une classe dérivée.  
   
- [!code-cs[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_9.cs)]  
+ [!code-cs[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_9.cs)]  
   
  Points importants de l'exemple précédent :  
   
 -   La propriété `Name` dans la classe dérivée masque la propriété `Name` dans la classe de base.  Dans ce cas, le modificateur `new` est utilisé dans la déclaration de la propriété dans la classe dérivée :  
   
-     [!code-cs[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_10.cs)]  
+     [!code-cs[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_10.cs)]  
   
 -   Le cast `(Employee)` permet d'accéder à la propriété masquée dans la classe de base :  
   
-     [!code-cs[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_11.cs)]  
+     [!code-cs[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_11.cs)]  
   
      Pour plus d'informations sur le masquage de membres, consultez [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md).  
   
 ## Exemple  
  Dans cet exemple, deux classes, `Cube` et `Square`, implémentent une classe abstraite, `Shape`, et substituent sa propriété abstract `Area`.  Notez l'utilisation du modificateur [override](../../../csharp/language-reference/keywords/override.md) sur les propriétés.  Le programme accepte l'arête comme entrée et calcule la surface du carré et du cube.  Il accepte aussi la surface comme entrée et calcule l'arête correspondante du carré et du cube.  
   
- [!code-cs[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-properties_12.cs)]  
+ [!code-cs[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

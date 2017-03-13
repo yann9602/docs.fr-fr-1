@@ -147,19 +147,19 @@ Option Strict { On | Off }
 ## Exemple  
  Les exemples suivants illustrent des erreurs de compilation provoquées par les conversions de types implicites qui sont des conversions restrictives.  Cette catégorie d'erreurs correspond à la condition **Conversion implicite** sur la **Page Compiler**.  
   
- [!code-vb[VbVbalrStatements#161](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#161](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant illustre une erreur de compilation provoquée par la liaison tardive.  Cette catégorie d'erreurs correspond à la condition **Liaison tardive ; l'appel peut échouer au moment de l'exécution** sur la **Page Compiler**.  
   
- [!code-vb[VbVbalrStatements#162](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#162](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_2.vb)]  
   
 ## Exemple  
  Les exemples suivants illustrent des erreurs provoquées par des variables qui sont déclarées avec un type implicite d'`Object`.  Cette catégorie d'erreurs correspond à la condition **Type implicite ; objet pris par défaut** sur la **Page Compiler**.  
   
- [!code-vb[VbVbalrStatements#163](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#163](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_3.vb)]  
   
- [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-strict-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#164](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-strict-statement_4.vb)]  
   
 ## Voir aussi  
  [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   

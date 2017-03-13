@@ -30,11 +30,11 @@ L'objet `My.Computer.FileSystem` fournit la méthode `ReadAllBytes` pour la lect
   
 -   Utilisez la méthode `ReadAllBytes` qui retourne le contenu d'un fichier sous forme de tableau d'octets.  Cet exemple montre comment lire le fichier `C:/Documents and Settings/selfportrait.jpg`.  
   
-     [!code-vb[VbVbcnMyFileSystem#78](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-binary-_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#78](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-binary-files_1.vb)]  
   
 -   Pour les fichiers binaires volumineux, vous pouvez utiliser la méthode <xref:System.IO.FileStream.Read%2A> de l'objet <xref:System.IO.FileStream> pour lire uniquement une certaine partie du fichier à la fois.  Vous pouvez ensuite limiter la partie du fichier chargée en mémoire pour chaque opération de lecture.  L'exemple de code suivant copie un fichier et permet à l'appelant de spécifier la partie du fichier à lire en mémoire pour chaque opération de lecture.  
   
-     [!code-vb[VbVbcnMyFileSystem#91](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-read-from-binary-_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#91](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-binary-files_2.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent lever une exception :  

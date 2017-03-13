@@ -68,7 +68,7 @@ Définit une liste ou une table.
 ## Exemple  
  Cet exemple utilise la balise `<list>` pour définir une liste à puces dans la section Notes.  
   
- [!code-vb[VbVbcnXmlDocComments#5](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/list_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#5](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/list_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

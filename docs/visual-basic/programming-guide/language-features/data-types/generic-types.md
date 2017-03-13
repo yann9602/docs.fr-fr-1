@@ -64,7 +64,7 @@ Tournevis configuré comme un outil générique
   
  Par exemple, vous pouvez créer et utiliser une classe « queue » qui agit sur un type de données spécifique, tel que `String`. Vous pouvez déclarer cette classe à partir de <xref:System.Collections.Generic.Queue%601?displayProperty=fullName>, comme indiqué dans l’exemple suivant.  
   
- [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_1.vb)]  
   
  Vous pouvez maintenant utiliser `stringQ` pour agir uniquement sur des valeurs `String`. Étant donné que `stringQ` est spécifique aux valeurs `String` au lieu d’être généralisé pour les valeurs `Object`, aucune liaison tardive ou conversion de type n’est nécessaire. Cela permet de réduire le délai d’exécution et les erreurs d’exécution.  
   
@@ -73,15 +73,15 @@ Tournevis configuré comme un outil générique
 ## Exemple d’une classe générique  
  L’exemple suivant présente une définition squelette d’une classe générique.  
   
- [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_2.vb)]  
   
  Dans le squelette ci\-dessus, `t` est un *paramètre de type*, c’est\-à\-dire un espace réservé pour un type de données que vous fournissez quand vous déclarez la classe. Ailleurs dans votre code, vous pouvez déclarer des versions différentes de `classHolder` en fournissant différents types de données pour `t`. L’exemple suivant illustre deux déclarations.  
   
- [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_3.vb)]  
   
  Les instructions ci\-dessus déclarent des *classes construites*, dans lesquelles un type spécifique remplace le paramètre de type. Ce remplacement est propagé partout dans le code de la classe construite. L’exemple suivant montre à quoi ressemble la procédure `processNewItem` dans `integerClass`.  
   
- [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_4.vb)]  
+ [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_4.vb)]  
   
  Pour un exemple plus complet, consultez [Comment : définir une classe qui fournisse des fonctionnalités identiques pour différents types de données](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
@@ -119,7 +119,7 @@ Tournevis configuré comme un outil générique
 ### Exemple de contrainte  
  L’exemple suivant présente une définition squelette d’une classe avec une contrainte qui exige que l’argument de type implémente <xref:System.IComparable>.  
   
- [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_5.vb)]  
+ [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_5.vb)]  
   
  Si du code tente ensuite de construire une classe de `itemManager` en fournissant un type qui n’implémente pas <xref:System.IComparable>, le compilateur signale une erreur.  
   
@@ -141,7 +141,7 @@ Tournevis configuré comme un outil générique
 ### Exemple de liste de contraintes  
  L’exemple suivant présente une définition squelette d’une classe générique avec une liste de contraintes sur le paramètre de type. Dans le code qui crée une instance de cette classe, l’argument de type doit implémenter les deux interfaces <xref:System.IComparable> et <xref:System.IDisposable>, être un type référence et exposer un constructeur sans paramètre accessible.  
   
- [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/visualbasic/generic-types_6.vb)]  
+ [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_6.vb)]  
   
 ## Termes importants  
  La terminologie suivante s’applique aux types génériques :  

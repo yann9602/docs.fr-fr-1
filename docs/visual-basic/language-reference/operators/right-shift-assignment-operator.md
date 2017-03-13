@@ -55,7 +55,7 @@ variableorproperty >>= amount
 ## Exemple  
  L'exemple suivant utilise l'opérateur `>>=` pour décaler le modèle binaire d'une variable `Integer` vers la droite selon les valeurs spécifiées et assigner le résultat à cette variable.  
   
- [!code-vb[VbVbalrOperators#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-assignment-o_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-assignment-operator_1.vb)]  
   
 ## Voir aussi  
  [\>\> Operator](../../../visual-basic/language-reference/operators/right-shift-operator.md)   

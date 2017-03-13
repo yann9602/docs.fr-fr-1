@@ -46,7 +46,7 @@ RaiseEvent eventname[( argumentlist )]
   
  Si l'événement n'a pas été déclaré dans le module dans lequel il est déclenché, une erreur se produit.  Le fragment de code suivant illustre une déclaration de l'événement et une procédure dans laquelle l'événement est déclenché.  
   
- [!code-vb[VbVbalrEvents#37](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#37)]  
+ [!code-vb[VbVbalrEvents#37](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_1.vb)]  
   
  Vous ne pouvez pas utiliser `RaiseEvent` pour générer des événements qui ne sont pas déclarés de façon explicite dans le module.  Par exemple, tous les formulaires héritent d'un événement <xref:System.Windows.Forms.Control.Click> de <xref:System.Windows.Forms.Form?displayProperty=fullName> ; il ne peut pas être déclenché à l'aide de `RaiseEvent` dans un formulaire dérivé.  Si vous déclarez un événement `Click` dans le module formulaire, celui\-ci occulte l'événement <xref:System.Windows.Forms.Control.Click> appartenant au formulaire.  Vous pouvez toujours appeler l'événement <xref:System.Windows.Forms.Control.Click> du formulaire en appelant la méthode <xref:System.Windows.Forms.Control.OnClick%2A>.  
   
@@ -71,12 +71,12 @@ RaiseEvent eventname[( argumentlist )]
   
  Ajoutez une variable `WithEvents` à la section des déclarations de la classe `Form1`.  
   
- [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#14)]  
+ [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_2.vb)]  
   
 ## Exemple  
  Ajoutez le code suivant au code pour `Form1`.  Remplacez toute procédure en double éventuelle, telle que `Form_Load` ou `Button_Click`.  
   
- [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#15)]  
+ [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_3.vb)]  
   
  Appuyez sur F5 pour exécuter l'exemple précédent, puis cliquez sur le bouton **Démarrer**.  La première zone de texte commence le compte à rebours des secondes.  Lorsque la durée totale \(10 secondes\) s'est écoulée, la première zone de texte affiche « Terminé ».  
   

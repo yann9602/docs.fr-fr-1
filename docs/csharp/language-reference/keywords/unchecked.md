@@ -23,7 +23,7 @@ Le mot clé `unchecked` sert à supprimer le contrôle de dépassement pour les 
   
  Dans un contexte non vérifié \(unchecked\), si une expression produit une valeur qui est hors de la plage du type de destination, le résultat n'est pas marqué d'un indicateur.  Le calcul de l'exemple suivant étant exécuté dans un bloc ou une expression `unchecked`, le fait que le résultat est trop volumineux pour un entier est ignoré, et la valeur \-2,147,483,639 est assignée à `int1`.  
   
- [!code-cs[csrefKeywordsChecked#5](../../../csharp/language-reference/keywords/codesnippet/csharp/unchecked_1.cs)]  
+ [!code-cs[csrefKeywordsChecked#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/unchecked_1.cs)]  
   
  Si l'environnement `unchecked` est supprimé, une erreur de compilation se produit.  Le dépassement de capacité peut être détecté au moment de la compilation parce que tous les termes de l'expression sont des constantes.  
   
@@ -34,7 +34,7 @@ Le mot clé `unchecked` sert à supprimer le contrôle de dépassement pour les 
 ## Exemple  
  Cet exemple indique comment utiliser le mot clé `unchecked`.  
   
- [!code-cs[csrefKeywordsChecked#2](../../../csharp/language-reference/keywords/codesnippet/csharp/unchecked_2.cs)]  
+ [!code-cs[csrefKeywordsChecked#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/unchecked_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

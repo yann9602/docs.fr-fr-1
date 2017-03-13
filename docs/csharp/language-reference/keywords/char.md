@@ -30,7 +30,7 @@ Le mot clé d' `char` est utilisé pour déclarer une instance de la structure d
 ## Littéraux  
  Les constantes de type `char` peuvent être représentées sous la forme de littéraux de caractères, d'une séquence d'échappement hexadécimal ou de caractères Unicode.  Vous pouvez également convertir les codes de caractères de type intégral.  Dans l'exemple suivant, quatre variables `char` sont initialisées avec le même caractère \(`X`\) :  
   
- [!code-cs[csrefKeywordsTypes#19](../../../csharp/language-reference/keywords/codesnippet/csharp/char_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/char_1.cs)]  
   
 ## Conversions  
  Un `char` peut être converti implicitement en [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), [long](../../../csharp/language-reference/keywords/long.md), [ulong](../../../csharp/language-reference/keywords/ulong.md), [float](../../../csharp/language-reference/keywords/float.md), [double](../../../csharp/language-reference/keywords/double.md) ou [decimal](../../../csharp/language-reference/keywords/decimal.md).  En revanche, il n'y a pas de conversion implicite des autres types en type `char`.  

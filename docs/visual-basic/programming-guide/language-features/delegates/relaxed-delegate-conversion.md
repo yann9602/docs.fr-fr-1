@@ -30,32 +30,32 @@ La conversion simplifiée des délégués vous permet d'assigner des subs et des
   
 -   Une conversion étendue doit avoir lieu, du type de données de chaque paramètre de délégué en type de données du paramètre correspondant de la fonction ou du `Sub` assigné.  Dans l'exemple suivant, le délégué `Del1` possède un seul paramètre, un `Integer`.  Le paramètre `m` dans les expressions lambda assignées doit présenter un type de données pour lequel il existe une conversion étendue de `Integer`, tel que `Long` ou `Double`.  
   
-     [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#1)]  
+     [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
   
-     [!code-vb[VbVbalrRelaxedDelegates#2](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#2)]  
+     [!code-vb[VbVbalrRelaxedDelegates#2](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_2.vb)]  
   
      Les conversions restrictives sont autorisées uniquement lorsque `Option Strict` a la valeur `Off`.  
   
-     [!code-vb[VbVbalrRelaxedDelegates#8](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module2.vb#8)]  
+     [!code-vb[VbVbalrRelaxedDelegates#8](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_3.vb)]  
   
 -   Une conversion étendue doit avoir lieu dans le sens opposé, du type de retour de la fonction ou du `Sub` assigné en type de retour du délégué.  Dans les exemples suivants, le corps de chaque expression lambda assignée doit avoir la valeur d'un type de données qui s'étend à `Integer` étant donné que le type de retour de `del1` est `Integer`.  
   
-     [!code-vb[VbVbalrRelaxedDelegates#3](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#3)]  
+     [!code-vb[VbVbalrRelaxedDelegates#3](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_4.vb)]  
   
  Si `Option Strict` a la valeur `Off`, la restriction étendue est supprimée dans les deux directions.  
   
- [!code-vb[VbVbalrRelaxedDelegates#4](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module2.vb#4)]  
+ [!code-vb[VbVbalrRelaxedDelegates#4](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_5.vb)]  
   
 ## Omission des spécifications de paramètres  
  Les délégués simplifiés vous permettent également d'omettre complètement les spécifications de paramètres dans la méthode assignée :  
   
- [!code-vb[VbVbalrRelaxedDelegates#5](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#5)]  
+ [!code-vb[VbVbalrRelaxedDelegates#5](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_6.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#6](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#6)]  
+ [!code-vb[VbVbalrRelaxedDelegates#6](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_7.vb)]  
   
  Notez que vous ne pouvez pas spécifier certains paramètres et en omettre d'autres.  
   
- [!code-vb[VbVbalrRelaxedDelegates#15](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#15)]  
+ [!code-vb[VbVbalrRelaxedDelegates#15](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_8.vb)]  
   
  L'omission des paramètres est utile par exemple lors de la définition d'un gestionnaire d'événements, où plusieurs paramètres complexes sont impliqués.  Les arguments de certains gestionnaires d'événements ne sont pas utilisés.  À la place, le gestionnaire accède directement à l'état du contrôle dans lequel l'événement est enregistré et ignore les arguments.  Les délégués simplifiés vous permettent d'omettre les arguments dans les déclarations qui ne comprennent aucune ambiguïté.  Dans l'exemple suivant, la méthode `OnClick` intégralement spécifiée peut être réécrite en tant que `RelaxedOnClick`.  
   
@@ -74,22 +74,22 @@ End Sub
   
  Dans l'exemple suivant, les fonctions `f1`, `f2`, `f3` et `f4` peuvent toutes être assignées à `Del1`.  
   
- [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#1)]  
+ [!code-vb[VbVbalrRelaxedDelegates#1](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_1.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#7](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#7)]  
+ [!code-vb[VbVbalrRelaxedDelegates#7](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_9.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#9](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#9)]  
+ [!code-vb[VbVbalrRelaxedDelegates#9](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_10.vb)]  
   
  L'exemple suivant est valide uniquement lorsque `Option Strict` a la valeur `Off`.  
   
- [!code-vb[VbVbalrRelaxedDelegates#14](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module2.vb#14)]  
+ [!code-vb[VbVbalrRelaxedDelegates#14](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_11.vb)]  
   
 ## Déplacement des retours de la fonction  
  La conversion simplifiée des délégués vous permet d'assigner une fonction à un délégué `Sub`, en ignorant la valeur de retour de la fonction.  Toutefois, vous ne pouvez pas assigner un `Sub` à un délégué de fonction.  Dans l'exemple suivant, l'adresse de la fonction `doubler` est assignée au délégué `Sub` `Del3`.  
   
- [!code-vb[VbVbalrRelaxedDelegates#10](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#10)]  
+ [!code-vb[VbVbalrRelaxedDelegates#10](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_12.vb)]  
   
- [!code-vb[VbVbalrRelaxedDelegates#11](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/visualbasic/VbVbalrRelaxedDelegates/Module1.vb#11)]  
+ [!code-vb[VbVbalrRelaxedDelegates#11](../../../../visual-basic/programming-guide/language-features/delegates/codesnippet/VisualBasic/relaxed-delegate-conversion_13.vb)]  
   
 ## Voir aussi  
  [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)   

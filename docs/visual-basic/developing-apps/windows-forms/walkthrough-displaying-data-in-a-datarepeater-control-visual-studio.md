@@ -158,13 +158,13 @@ Cette procédure pas à pas propose un scénario complet de base permettant d’
   
 5.  Dans le gestionnaire d’événements <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>, ajoutez le code suivant pour alterner les couleurs via `BackColor`.  
   
-     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterAppCS/DataRepeaterWalkthrough.cs#1)]
-     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterApp/DataRepeaterWalkthrough.vb#1)]  
+     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_1.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_1.vb)]  
   
 6.  Dans le gestionnaire d’événements <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DrawItem>, ajoutez le code suivant pour modifier la propriété `ForeColor` d’une étiquette en fonction d’une condition :  
   
-     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterAppCS/DataRepeaterWalkthrough.cs#2)]
-     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterApp/DataRepeaterWalkthrough.vb#2)]  
+     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_2.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_2.vb)]  
   
 7.  Appuyez sur F5 pour exécuter l’application et visualiser les personnalisations.  
   
@@ -177,15 +177,15 @@ Cette procédure pas à pas propose un scénario complet de base permettant d’
   
 2.  Ajoutez le code suivant à l’événement `Form_Load`.  
   
-     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterAppCS/DataRepeaterWalkthrough.cs#3)]
-     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterApp/DataRepeaterWalkthrough.vb#3)]  
+     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_3.vb)]  
   
 3.  Dans la liste déroulante Nom de la classe, cliquez sur **BindingNavigatorDeleteItem**. Dans la liste déroulante Nom de la méthode, cliquez sur **EnabledChanged**.  
   
 4.  Ajoutez le code suivant au gestionnaire d'événements `BindingNavigatorDeleteItem_EnabledChanged` :  
   
-     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterAppCS/DataRepeaterWalkthrough.cs#4)]
-     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterApp/DataRepeaterWalkthrough.vb#4)]  
+     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_4.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_4.vb)]  
   
     > [!NOTE]
     >  Cette étape est nécessaire car <xref:System.Windows.Forms.BindingSource> active le bouton **DeleteItem** chaque fois que l’enregistrement actif est modifié.  
@@ -209,8 +209,8 @@ Cette procédure pas à pas propose un scénario complet de base permettant d’
   
 5.  Double\-cliquez sur le contrôle <xref:System.Windows.Forms.Button> pour ouvrir l’éditeur de code et ajoutez le code suivant au gestionnaire d’événements `SearchButton_Click`.  
   
-     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/DataRepeaterAppCS/DataRepeaterWalkthrough.cs#5)]
-     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/DataRepeaterApp/DataRepeaterWalkthrough.vb#5)]  
+     [!code-cs[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_5.cs)]
+     [!code-vb[VbPowerPacksDataRepeaterWalkthrough#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio_5.vb)]  
   
 6.  Appuyez sur F5 pour exécuter l'application. Tapez un ID client dans **SearchTextBox** et cliquez sur le bouton **Search**.  
   

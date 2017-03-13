@@ -44,7 +44,7 @@ Indique que le texte d'une description constitue du code.
 ## Exemple  
  Cet exemple utilise la balise `<c>` dans la section sommaire pour indiquer que `Counter` constitue du code.  
   
- [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/c_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/c_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

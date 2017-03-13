@@ -25,7 +25,7 @@ Pour les types valeur prédéfinis, l'opérateur d'égalité \(`==`\) retourne t
  Les types valeur définis par l'utilisateur peuvent surcharger l'opérateur `==` \(consultez [operateur](../../../csharp/language-reference/keywords/operator.md)\).  Les types référence définis par l'utilisateur peuvent faire de même, même si par défaut `==` se comporte comme décrit ci\-dessus pour les types référence prédéfinis et définis par l'utilisateur.  Si `==` est surchargé, [\!\=](../../../csharp/language-reference/operators/not-equal-operator.md) doit l'être également.  Les opérations sur les types intégraux sont en général autorisées sur énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#36](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#36)]  
+ [!code-cs[csRefOperators#36](../../../csharp/language-reference/operators/codesnippet/CSharp/equality-comparison-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

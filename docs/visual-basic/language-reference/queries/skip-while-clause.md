@@ -49,7 +49,7 @@ Skip While expression
 ## Exemple  
  L'exemple de code suivant utilise la clause `Skip While` pour ignorer des résultats jusqu'à ce que le premier client des États\-Unis soit trouvé.  
   
- [!code-vb[VbSimpleQuerySamples#3](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#3)]  
+ [!code-vb[VbSimpleQuerySamples#3](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/skip-while-clause_1.vb)]  
   
 ## Voir aussi  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

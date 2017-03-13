@@ -25,7 +25,7 @@ Tous les types numériques et d'énumération définissent un opérateur relatio
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `>` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  Si `>` est surchargé, [\<](../../../csharp/language-reference/operators/less-than-operator.md) doit l'être également.  Lorsqu'un opérateur binaire est surchargé, l'opérateur d'assignation correspondant \(s'il y en a un\) est, lui aussi, implicitement surchargé.  
   
 ## Exemple  
- [!code-cs[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#29)]  
+ [!code-cs[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/CSharp/greater-than-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

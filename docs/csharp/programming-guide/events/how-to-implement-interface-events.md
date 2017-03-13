@@ -62,7 +62,7 @@ Une [interface](../../../csharp/language-reference/keywords/interface.md) peut d
   
  En fournissant vos propres accesseurs, vous pouvez spécifier si les deux événements sont représentés par le même événement de votre classe, ou par des événements différents.  Par exemple, si les événements doivent être déclenchés à des moments différents en fonction des spécifications de l'interface, vous pouvez associer chaque événement à une implémentation distincte de votre classe.  Dans l'exemple suivant, les abonnés déterminent quel événement `OnDraw` ils reçoivent en exécutant un cast de la référence de la forme en une interface `IShape` ou `IDrawingObject`.  
   
- [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-implement-interfa_1.cs)]  
+ [!code-cs[csProgGuideEvents#10](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

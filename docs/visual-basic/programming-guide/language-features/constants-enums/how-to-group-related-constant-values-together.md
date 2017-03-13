@@ -28,11 +28,11 @@ Une énumération est le meilleur moyen de regrouper des constantes connexes.  L
   
 1.  Écrivez une déclaration qui inclut un niveau d'accès de code, le mot clé `Enum` et un nom valide.  Cet exemple crée l'énumération `Private`, `temperatureValues`.  
   
-     [!code-vb[VbEnumsTask#21](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#21)]  
+     [!code-vb[VbEnumsTask#21](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-group-related-constant-values-together_1.vb)]  
   
 2.  Définissez les constantes dans l'énumération.  Cet exemple crée l'énumération `Public` `temperatureValues` et assigne ses valeurs.  
   
-     [!code-vb[VbEnumsTask#1](../../../../visual-basic/language-reference/statements/codesnippet/visualbasic/WindowsApplication1/Class2.vb#1)]  
+     [!code-vb[VbEnumsTask#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/how-to-group-related-constant-values-together_2.vb)]  
   
 ## Voir aussi  
  [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)   

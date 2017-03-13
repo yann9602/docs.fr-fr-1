@@ -26,7 +26,7 @@ caps.handback.revision: 16
 Cet exemple appelle la méthode <xref:System.String.IndexOf%2A> sur un objet <xref:System.String> pour rapporter l'index de la première occurrence d'une sous\-chaîne.  
   
 ## Exemple  
- [!code-vb[VbVbalrStrings#71](../../../../visual-basic/language-reference/functions/codesnippet/visualbasic/how-to-search-within-a-s_1.vb)]  
+ [!code-vb[VbVbalrStrings#71](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-search-within-a-string_1.vb)]  
   
 ## Compilation du code  
  Cet exemple nécessite :  

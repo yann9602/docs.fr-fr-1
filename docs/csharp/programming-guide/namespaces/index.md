@@ -19,19 +19,19 @@ caps.handback.revision: 27
 # Espaces de noms (Guide de programmation C#)
 Les espaces de noms sont énormément employés en programmation C\#, de deux manières.  Premièrement, le .NET Framework utilise des espaces de noms pour organiser ses nombreuses classes, comme suit :  
   
- [!code-cs[csProgGuide#22](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#22)]  
+ [!code-cs[csProgGuide#22](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_1.cs)]  
   
  `System` est un espace de noms et `Console` est une classe dans cet espace de noms.  Le mot clé `using` peut être utilisé pour le nom complet ne soit pas requis, comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/using.cs#1)]  
+ [!code-cs[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_2.cs)]  
   
- [!code-cs[csProgGuide#25](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/csProgGuide/progGuide.cs#25)]  
+ [!code-cs[csProgGuide#25](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/index_3.cs)]  
   
  Pour plus d'informations, consultez [using, directive](../../../csharp/language-reference/keywords/using-directive.md).  
   
  Deuxièmement, déclarer ses propres espaces de noms peut vous aider à contrôler la portée des noms de classes et de méthodes dans les projets de programmation plus volumineux.  Utilisez le mot clé [namespace](../../../csharp/language-reference/keywords/namespace.md) pour déclarer un espace de noms, comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideNamespaces#6](../../../csharp/programming-guide/namespaces/codesnippet/csharp/Namespaces/Namespaces.cs#6)]  
+ [!code-cs[csProgGuideNamespaces#6](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/index_4.cs)]  
   
 ## Vue d'ensemble des espaces de noms  
  Les espaces de noms possèdent les propriétés suivantes :  

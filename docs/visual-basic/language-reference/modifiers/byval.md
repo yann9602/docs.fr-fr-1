@@ -41,7 +41,7 @@ Spécifie qu'un argument est passé de telle manière que la procédure ou la pr
 ## Exemple  
  L'exemple suivant montre l'utilisation du paramètre `ByVal` qui passe le mécanisme avec un argument de type référence.  Dans cet exemple, l'argument est `c1`, une instance de la classe `Class1`.  `ByVal` empêche le code dans les procédures de modifier la valeur sous\-jacente de l'argument de référence, `c1`, mais ne protège pas les champs et les propriétés accessibles de `c1`.  
   
- [!code-vb[VbVbalrKeywords#10](../../../visual-basic/language-reference/codesnippet/visualbasic/byval_1.vb)]  
+ [!code-vb[VbVbalrKeywords#10](../../../visual-basic/language-reference/codesnippet/VisualBasic/byval_1.vb)]  
   
 ## Voir aussi  
  [Mots clés](../../../visual-basic/language-reference/keywords/index.md)   

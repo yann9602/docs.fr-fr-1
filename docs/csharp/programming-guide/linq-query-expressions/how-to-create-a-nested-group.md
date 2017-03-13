@@ -6,7 +6,7 @@ caps.handback.revision: 12
 L'exemple suivant indique comment créer des groupes imbriqués dans une expression de requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq-md.md)].  Chaque groupe créé par année d'étude ou niveau d'étude est subdivisé en groupes par noms d'individus.  
   
 ## Exemple  
- [!code-cs[csProgGuideLINQ#24](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#24)]  
+ [!code-cs[csProgGuideLINQ#24](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-create-a-nested-group_1.cs)]  
   
  Notez que trois boucles `foreach` imbriquées sont requises pour itérer au sein des éléments internes d'un groupe imbriqué.  
   

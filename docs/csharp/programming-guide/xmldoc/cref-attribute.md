@@ -21,7 +21,7 @@ L'attribut `cref` dans une balise de documentation XML signifie « référence 
 ## Exemple  
  L'exemple suivant montre les attributs `cref` utilisés dans des balises [\<see\>](../../../csharp/programming-guide/xmldoc/see.md).  
   
- [!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/csharp/cref-attribute_1.cs)]  
+ [!code-cs[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]  
   
  Une fois compilé, le programme produit le fichier XML suivant.  Notez que l'attribut `cref` pour la méthode `GetZero`, par exemple, a été transformé par le compilateur sur `"M:TestNamespace.TestClass.GetZero"`.  Le préfixe  « M » : signifie « méthode » et représente une convention reconnue par les outils de documentation tels que Sandcastle.  Pour obtenir une liste complète de préfixes, consultez [Traitement du fichier XML](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md).  
   

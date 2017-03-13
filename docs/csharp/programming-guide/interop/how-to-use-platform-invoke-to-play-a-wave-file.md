@@ -26,9 +26,9 @@ L'exemple de code C\# suivant illustre comment utiliser les services d'appel de 
   
  La boîte de dialogue **Fichiers ouverts** utilise les paramètres de filtre suivants pour afficher uniquement les fichiers dotés d'une extension .wav :  
   
- [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_1.cs)]  
+ [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_1.cs)]  
   
- [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_2.cs)]  
+ [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_2.cs)]  
   
 ## Compilation du code  
   
@@ -40,7 +40,7 @@ L'exemple de code C\# suivant illustre comment utiliser les services d'appel de 
   
 3.  Copiez le code suivant et collez\-le dans le fichier `Form1.Designer.cs`, dans la méthode `InitializeComponent()`, après tout code existant.  
   
-     [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/csharp/how-to-use-platform-invo_3.cs)]  
+     [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_3.cs)]  
   
 4.  Compilez et exécutez le code.  
   

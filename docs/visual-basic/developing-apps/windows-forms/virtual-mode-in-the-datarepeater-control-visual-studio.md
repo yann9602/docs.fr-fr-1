@@ -49,33 +49,33 @@ Lorsque vous souhaitez afficher de très grandes quantités de données sous for
   
 3.  Implémentez un gestionnaire pour l'événement <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValueNeeded> afin de fournir des valeurs à chaque contrôle.  Cet événement est déclenché lorsqu'un nouveau <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem> fait l'objet d'un défilement dans l'affichage.  Le code se présentera comme dans l'exemple suivant, lequel concerne une source de données appelée `Employees`.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#1)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#1)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_1.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_1.cs)]  
   
 4.  Implémentez un gestionnaire pour l'événement <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed> afin de stocker les données.  Cet événement est déclenché lorsqu'un utilisateur valide des modifications apportées à un contrôle enfant de <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>.  Le code se présentera comme dans l'exemple suivant, lequel concerne une source de données appelée `Employees`.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#2)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#2)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_2.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_2.cs)]  
   
 5.  Implémentez un gestionnaire pour l'événement <xref:System.Windows.Forms.Control.KeyDown> de chaque contrôle enfant et surveillez la touche Échap.  Appelez la méthode <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.CancelEdit%2A> pour empêcher le déclenchement de l'événement <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>.  Le code ressemblera à l'exemple suivant.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#3)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#3)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_3.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#3](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_3.cs)]  
   
 6.  Implémentez un gestionnaire pour l'événement <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.NewItemNeeded>.  Cet événement est déclenché lorsque l'utilisateur ajoute un nouvel élément au contrôle <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>.  Le code se présentera comme dans l'exemple suivant, lequel concerne une source de données appelée `Employees`.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#4)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#4)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_4.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#4](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_4.cs)]  
   
 7.  Implémentez un gestionnaire pour l'événement <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemsRemoved>.  Cet événement se produit lorsqu'un utilisateur supprime un élément existant.  Le code se présentera comme dans l'exemple suivant, lequel concerne une source de données appelée `Employees`.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#5)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#5)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_5.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#5](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_5.cs)]  
   
 8.  Pour la validation au niveau du contrôle, vous pouvez implémenter des gestionnaires pour les événements <xref:System.Windows.Forms.Control.Validating> des contrôles enfants.  Le code ressemblera à l'exemple suivant.  
   
-     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/visualbasic/VbPowerPacksDataRepeaterVirtualMode/VbPowerPacksDataRepeaterVirtualMode.vb#6)]
-     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/csharp/VbPowerPacksDataRepeaterVirtualModeCS/VbPowerPacksDataRepeaterVirtualMode.cs#6)]  
+     [!code-vb[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/virtual-mode-in-the-datarepeater-control-visual-studio_6.vb)]
+     [!code-cs[VbPowerPacksDataRepeaterVirtualMode#6](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/virtual-mode-in-the-datarepeater-control-visual-studio_6.cs)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemValuePushed>   

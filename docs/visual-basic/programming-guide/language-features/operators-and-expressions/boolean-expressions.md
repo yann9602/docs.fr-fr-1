@@ -33,12 +33,12 @@ caps.handback.revision: 19
 
 Une *expression booléenne* correspond à une valeur du [type de données booléen](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) : `True` ou `False`.  Les expressions `Boolean` peuvent se présenter sous plusieurs formes.  La forme la plus simple est la comparaison directe de la valeur d'une variable `Boolean` à un littéral `Boolean`, comme le montre l'exemple suivant :  
   
- [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_1.vb)]  
+ [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_1.vb)]  
   
 ## Deux significations de l'opérateur \=  
  Notez que l'instruction d'assignation `newCustomer = True` ressemble à l'expression de l'exemple précédent, mais elle effectue une fonction différente et est utilisée différemment.  Dans l'exemple précédent, l'expression `newCustomer = True` représente une valeur Boolean et le signe `=` est interprété comme un opérateur de comparaison.  Dans une instruction autonome, le signe `=` est interprété comme un opérateur d'assignation et assigne la valeur de droite à la variable de gauche.  L'exemple suivant illustre ce comportement.  
   
- [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_2.vb)]  
+ [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_2.vb)]  
   
  Pour plus d'informations, consultez [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md) et [Statements](../../../../visual-basic/language-reference/statements/index.md).  
   
@@ -59,7 +59,7 @@ Une *expression booléenne* correspond à une valeur du [type de données boolé
 ## Opérateurs de court\-circuit  
  Les opérateurs logiques `AndAlso` et `OrElse` se comportent comme des *courts\-circuits*.  Un opérateur de court\-circuit évalue premièrement l'opérande de gauche.  Si l'opérande de gauche détermine la valeur de l'expression globale, l'exécution du programme se poursuit sans évaluer l'expression de droite.  L'exemple suivant illustre ce comportement.  
   
- [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_3.vb)]  
+ [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_3.vb)]  
   
  Dans l'exemple précédent, l'opérateur évalue l'expression de gauche, `45 < 12`.  Puisque l'expression de gauche a pour valeur `False`, l'expression logique globale doit avoir la valeur `False`.  L'exécution du programme ignore ainsi l'exécution du code dans le bloc `If` sans évaluer l'expression de droite, `testFunction(3)`.  Cet exemple n'appelle pas `testFunction()` parce que l'expression de gauche falsifie l'expression globale.  
   
@@ -68,7 +68,7 @@ Une *expression booléenne* correspond à une valeur du [type de données boolé
 ### Comparaison avec des opérateurs n'effectuant pas de court\-circuit  
  En revanche, les deux côtés de l'opérateur logique sont évalués lors de l'utilisation des opérateurs logiques `And` et `Or`.  L'exemple suivant illustre ce comportement.  
   
- [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/boolean-expressions_4.vb)]  
+ [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_4.vb)]  
   
  L'exemple précédent appelle `testFunction()` même si l'expression de gauche a la valeur `False`.  
   

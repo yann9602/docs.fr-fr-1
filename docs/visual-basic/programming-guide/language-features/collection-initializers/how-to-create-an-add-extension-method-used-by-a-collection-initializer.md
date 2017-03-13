@@ -28,11 +28,11 @@ Lorsque vous utilisez un initialiseur de collection pour créer une collection, 
 ## Exemple  
  L'exemple suivant indique comment ajouter une méthode d'extension au type <xref:System.Collections.Generic.List%601> générique afin qu'un initialiseur de collection puisse être utilisé pour ajouter des objets de type `Employee`.  La méthode d'extension vous permet d'utiliser la syntaxe raccourcie de l'initialiseur de collection.  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo1#1](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-an-add-ext_1.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo1#1](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-an-add-extension-method-used-by-a-collection-initializer_1.vb)]  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo1#2](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-an-add-ext_2.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo1#2](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-an-add-extension-method-used-by-a-collection-initializer_2.vb)]  
   
- [!code-vb[VbVbalrCollectionInitializersHowTo1#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/visualbasic/how-to-create-an-add-ext_3.vb)]  
+ [!code-vb[VbVbalrCollectionInitializersHowTo1#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-an-add-extension-method-used-by-a-collection-initializer_3.vb)]  
   
 ## Voir aussi  
  [Collection Initializers](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)   

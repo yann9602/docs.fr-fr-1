@@ -78,7 +78,7 @@ LINQ \(Language\-Integrated Query\) facilite l'accès aux informations de la bas
   
      Ajoutez le code suivant à l'événement `Load` pour interroger les tables qui sont exposées comme propriétés de votre contexte de données et triez les résultats.  La requête trie les résultats en fonction du nombre de commandes client, par ordre décroissant.  Les clients qui ont le même nombre de commandes sont classés par nom de société par ordre croissant \(valeur par défaut\).  
   
-     [!code-vb[VbLINQToSQLHowTos#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/visualbasic/StoredProcedureHowTo/Form4.vb#10)]  
+     [!code-vb[VbLINQToSQLHowTos#10](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-sort-query-results-by-using-linq_1.vb)]  
   
 4.  Appuyez sur F5 pour exécuter votre projet et consulter les résultats.  
   

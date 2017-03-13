@@ -42,7 +42,7 @@ Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant*
 ## Exemple  
  L'exemple suivant définit une procédure `Sub` pour publier une transaction par rapport au compte d'un client.  Il utilise le mot clé `Overloads` pour définir deux versions de la procédure, un qui accepte le client par son nom et l'autre par son numéro de compte.  
   
- [!code-vb[VbVbcnProcedures#72](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-multiple-v_1.vb)]  
+ [!code-vb[VbVbcnProcedures#72](./codesnippet/VisualBasic/how-to-define-multiple-versions-of-a-procedure_1.vb)]  
   
  Le code appelant peut obtenir l'identification de client en tant que `String` ou en tant que `Integer`, puis utiliser la même instruction appelante dans les deux cas.  
   

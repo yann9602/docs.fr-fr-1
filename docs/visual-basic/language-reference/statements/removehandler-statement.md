@@ -48,7 +48,7 @@ RemoveHandler event, AddressOf eventhandler
 >  Pour les événements personnalisés, l'instruction `RemoveHandler` appelle l'accesseur `RemoveHandler` de l'événement.  Pour plus d'informations sur les événements personnalisés, consultez [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## Exemple  
- [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/visualbasic/VbVbalrEvents/Class1.vb#17)]  
+ [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/removehandler-statement_1.vb)]  
   
 ## Voir aussi  
  [AddHandler Statement](../../../visual-basic/language-reference/statements/addhandler-statement.md)   

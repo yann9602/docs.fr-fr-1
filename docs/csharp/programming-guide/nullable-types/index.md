@@ -20,7 +20,7 @@ caps.handback.revision: 44
 # Types Nullable (Guide de programmation C#)
 Les types Nullable sont des instances du struct <xref:System.Nullable%601?displayProperty=fullName>.  Un type Nullable peut représenter la plage correcte de valeurs pour son type valeur sous\-jacent, plus une valeur `null` supplémentaire.  Par exemple, un `Nullable<Int32>`, prononcé « Nullable d'Int32 », peut avoir une valeur comprise entre \-2147483648 et 2147483647, ou la valeur `null`.  Les valeurs [true](../../../csharp/language-reference/keywords/true.md) [false](../../../csharp/language-reference/keywords/false.md) ou [Null](../../../csharp/language-reference/keywords/null.md) peuvent être assignées à un type `Nullable<bool>`.  La possibilité d'assigner `null` à des types numériques et booléens est particulièrement utile lorsque vous utilisez des bases de données et d'autres types de données contenant des éléments auxquels vous ne pouvez pas assigner de valeur.  Par exemple, un champ booléen dans une base de données peut stocker les valeurs `true` ou `false`, ou peut être indéfini.  
   
- [!code-cs[csProgGuideTypes#3](../../../csharp/programming-guide/nullable-types/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideTypes#3](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
   
  La sortie suivante sera affichée :  
   

@@ -25,7 +25,7 @@ Tous les types numériques et d'énumération définissent un opérateur relatio
  Les types définis par l'utilisateur peuvent surcharger l'opérateur `<=`.  Pour plus d'informations, consultez [operator](../../../csharp/language-reference/keywords/operator.md).  Si `<=` est surchargé, [\>\=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) doit l'être également.  Les opérations sur les types intégraux sont en général autorisées sur énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#32](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#32)]  
+ [!code-cs[csRefOperators#32](../../../csharp/language-reference/operators/codesnippet/CSharp/less-than-equal-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

@@ -36,22 +36,22 @@ La méthode `CreateSubKey` de l'objet `My.Computer.Registry` peut être utilisé
   
 -   Utilisez la méthode `CreateSubKey`, en spécifiant sous quelle ruche placer la clé ainsi que le nom de la clé.  Le paramètre  `Subkey`  ne respecte pas la casse.  Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER.  
   
-     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
   
 #### Pour créer une clé de Registre et y définir une valeur  
   
 1.  Utilisez la méthode `CreateSubkey`, en spécifiant sous quelle ruche placer la clé ainsi que le nom de la clé.  Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER.  
   
-     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_1.vb)]  
+     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
   
 2.  Définissez la valeur avec la méthode `SetValue`.  Cet exemple définit la valeur de chaîne "  "MyTestKeyValue" sur "This is a test value".  
   
-     [!code-vb[VbResourceTasks#14](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_2.vb)]  
+     [!code-vb[VbResourceTasks#14](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_2.vb)]  
   
 ## Exemple  
  Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER, puis définit la valeur de chaîne `MyTestKeyValue` à `This is a test value`.  
   
- [!code-vb[VbResourceTasks#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/how-to-create-a-registry_3.vb)]  
+ [!code-vb[VbResourceTasks#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_3.vb)]  
   
 ## Programmation fiable  
  Examinez la structure du Registre afin de trouver un emplacement approprié pour votre clé.  Par exemple, vous souhaiterez peut\-être ouvrir la clé HKEY\_CURRENT\_USER\\Software de l'utilisateur actuel et créer une clé avec le nom de votre société.  Vous pouvez ensuite ajouter les valeurs du Registre à la clé de votre société.  

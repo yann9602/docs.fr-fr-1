@@ -57,13 +57,13 @@ En règle générale, vous ne pouvez pas appeler une procédure avec un nombre d
 ## Exemple  
  l'exemple suivant définit et appelle la fonction `calcSum`.  Le modificateur d' `ParamArray` pour le paramètre `args` permet à la fonction d'accepter un nombre variable d'arguments.  
   
- [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/parameter-arrays_1.vb)]  
+ [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/parameter-arrays_1.vb)]  
   
  L'exemple suivant définit une procédure avec un tableau de paramètres, et renvoie les valeurs de tous les éléments de tableau passés au tableau de paramètres.  
   
- [!code-vb[VbVbcnProcedures#48](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/parameter-arrays_2.vb)]  
+ [!code-vb[VbVbcnProcedures#48](./codesnippet/VisualBasic/parameter-arrays_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#49](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/parameter-arrays_3.vb)]  
+ [!code-vb[VbVbcnProcedures#49](./codesnippet/VisualBasic/parameter-arrays_3.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Information.UBound%2A>   

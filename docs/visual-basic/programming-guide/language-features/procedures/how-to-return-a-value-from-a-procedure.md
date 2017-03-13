@@ -35,11 +35,11 @@ Une procédure `Function` retourne une valeur au code appelant en exécutant une
   
      La procédure `Function` suivante calcule le côté le plus long, ou hypoténuse, d'un triangle rectangle et le retourne au code appelant.  
   
-     [!code-vb[VbVbcnProcedures#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-return-a-value-fr_1.vb)]  
+     [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_1.vb)]  
   
      L'exemple suivant présente un appel typique à `hypotenuse` qui stocke la valeur retournée.  
   
-     [!code-vb[VbVbcnProcedures#6](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-return-a-value-fr_2.vb)]  
+     [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_2.vb)]  
   
 ### Pour retourner une valeur à l'aide de la fonction Exit ou End  
   

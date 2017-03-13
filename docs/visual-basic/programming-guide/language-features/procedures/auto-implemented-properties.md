@@ -30,15 +30,15 @@ Les *propriétés implémentées automatiquement* vous permettent de spécifier 
   
  Avec les propriétés implémentées automatiquement, une propriété, y compris une valeur par défaut, peut être déclarée en une seule ligne.  L'exemple suivant montre trois déclarations de propriété.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#1](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_1.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#1](./codesnippet/VisualBasic/auto-implemented-properties_1.vb)]  
   
  Une propriété implémentée automatiquement est équivalente à une propriété dont la valeur de propriété est stockée dans un champ privé.  L'exemple de code suivant montre une propriété implémentée automatiquement.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#5](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_2.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#5](./codesnippet/VisualBasic/auto-implemented-properties_2.vb)]  
   
  L'exemple de code suivant montre le code équivalent pour l'exemple précédent de propriété implémentée automatiquement.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#2](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_3.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#2](./codesnippet/VisualBasic/auto-implemented-properties_3.vb)]  
   
  Le code suivant montre l'implémentation des propriétés en lecture seule :  
   
@@ -73,7 +73,7 @@ End Class
 ## Initialisation d'une propriété implémentée automatiquement  
  Toute expression pouvant être utilisée pour initialiser un champ est valide pour l'initialisation d'une propriété implémentée automatiquement.  Quand vous initialisez une propriété implémentée automatiquement, l'expression est évaluée et passée à la procédure `Set` pour la propriété.  Les exemples de code suivants montrent certaines propriétés implémentées automatiquement qui incluent des valeurs initiales.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#3](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_4.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#3](./codesnippet/VisualBasic/auto-implemented-properties_4.vb)]  
   
  Vous ne pouvez pas initialiser une propriété implémentée automatiquement qui est membre d'une `Interface` ou qui est marquée `MustOverride`.  
   
@@ -81,7 +81,7 @@ End Class
   
  Quand vous déclarez une propriété implémentée automatiquement en tant que tableau, vous ne pouvez pas spécifier des limites d'index de tableau explicites.  Toutefois, vous pouvez fournir une valeur à l'aide d'un initialiseur de tableau, comme indiqué dans les exemples suivants.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#4](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/auto-implemented-propert_1_5.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#4](./codesnippet/VisualBasic/auto-implemented-properties_5.vb)]  
   
 ## Définitions de propriétés qui requièrent la syntaxe standard  
  Les propriétés implémentées automatiquement sont pratiques et prennent en charge de nombreux scénarios de programmation.  Toutefois, dans certains cas, vous ne pouvez pas utiliser une propriété implémentée automatiquement, mais devez utiliser à la place une syntaxe de propriété standard ou *développée*.  

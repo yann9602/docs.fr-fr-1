@@ -33,7 +33,7 @@ Cette rubrique décrit comment utiliser `My.Computer.Ports` pour afficher les po
   
  En général, un utilisateur sélectionne le port série que l'application doit utiliser dans la liste de ports disponibles.  Dans cet exemple, les noms de ports série sont stockés dans un contrôle <xref:System.Windows.Forms.ListBox>.  Pour plus d'informations, consultez [ListBox, contrôle](../Topic/ListBox%20Control%20\(Windows%20Forms\).md).  
   
- [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/visualbasic/VbVbalrMyComputer/Class2.vb#45)]  
+ [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
  Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Connectivité et réseau**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
   

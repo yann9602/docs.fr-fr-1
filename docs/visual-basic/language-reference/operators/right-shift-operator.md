@@ -69,7 +69,7 @@ result = pattern >> amount
 ## Exemple  
  L'exemple suivant utilise l'opérateur `>>` pour effectuer des décalages arithmétiques vers la droite sur des valeurs intégrales.  Le résultat a toujours le même type de données que celui de l'expression décalée.  
   
- [!code-vb[VbVbalrOperators#14](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_1.vb)]  
   
  Les résultats de l'exemple précédent sont les suivants :  
   
@@ -87,7 +87,7 @@ result = pattern >> amount
   
  L'exemple suivant affiche des décalages arithmétiques sur une valeur négative.  
   
- [!code-vb[VbVbalrOperators#55](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/right-shift-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#55](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_2.vb)]  
   
  Les résultats de l'exemple précédent sont les suivants :  
   

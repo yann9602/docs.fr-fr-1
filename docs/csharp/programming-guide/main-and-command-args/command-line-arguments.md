@@ -18,16 +18,16 @@ caps.handback.revision: 27
 # Arguments de ligne de commande (Guide de programmation C#)
 Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méthode de l'une des façons suivantes :  
   
- [!code-cs[csProgGuideMain#2](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_1.cs)]  
+ [!code-cs[csProgGuideMain#2](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_1.cs)]  
   
- [!code-cs[csProgGuideMain#3](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_2.cs)]  
+ [!code-cs[csProgGuideMain#3](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_2.cs)]  
   
 > [!NOTE]
 >  Pour activer des arguments de ligne de commande dans la méthode `Main` dans une application Windows Forms, vous devez modifier manuellement la signature de `Main` dans program.cs.  Le code généré par le Concepteur Windows Forms crée un `Main` sans paramètre d'entrée.  Vous pouvez également utiliser <xref:System.Environment.CommandLine%2A?displayProperty=fullName> ou <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=fullName> pour accéder aux arguments de ligne de commande à partir de n'importe quel emplacement d'une application console ou Windows.  
   
  Le paramètre de la méthode `Main` est un tableau <xref:System.String> qui représente les arguments de la ligne de commande.  En général, la vérification de l'existence des arguments s'effectue en testant la propriété `Length`. Exemple :  
   
- [!code-cs[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_3.cs)]  
+ [!code-cs[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_3.cs)]  
   
  Vous pouvez aussi convertir les arguments de type chaîne en arguments numériques à l'aide de la classe <xref:System.Convert> ou de la méthode `Parse`.  Par exemple, l'instruction ci\-dessous convertit `string` en nombre `long` en utilisant la méthode <xref:System.Int64.Parse%2A> :  
   
@@ -56,7 +56,7 @@ long num = Convert.ToInt64(s);
   
 1.  Collez le code suivant dans un éditeur de texte et enregistrez le fichier sous forme de fichier texte avec le nom `Factorial.cs`.  
   
-     [!code-cs[csProgGuideMain#16](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/command-line-arguments_4.cs)]  
+     [!code-cs[csProgGuideMain#16](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_4.cs)]  
   
 2.  Dans l'écran **Démarrer** ou le menu **Démarrer**, ouvrez une fenêtre **Invite de commandes Développeur** Visual Studio, puis accédez au dossier qui contient le fichier que vous venez de créer.  
   

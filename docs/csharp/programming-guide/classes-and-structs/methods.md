@@ -30,17 +30,17 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
   
  Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre. Cette classe contient trois méthodes :  
   
- [!code-cs[csProgGuideObjects#40](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_1.cs)]  
+ [!code-cs[csProgGuideObjects#40](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_1.cs)]  
   
 ## Accès aux méthodes  
  L'appel d'une méthode sur un objet revient à accéder à un champ. Après le nom de l'objet, ajoutez un point, le nom de la méthode et les parenthèses. Les arguments sont répertoriés entre les parenthèses et séparés par des virgules. Les méthodes de la classe `Motorcycle` peuvent donc être appelées comme dans l'exemple suivant :  
   
- [!code-cs[csProgGuideObjects#41](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_2.cs)]  
+ [!code-cs[csProgGuideObjects#41](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_2.cs)]  
   
 ## Paramètres de méthode et Arguments  
  La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom de l'argument \(le cas échéant\) utilisé dans le code appelant ne doit pas nécessairement être le même que celui du paramètre défini dans la méthode. Exemple :  
   
- [!code-cs[csProgGuideObjects#74](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_3.cs)]  
+ [!code-cs[csProgGuideObjects#74](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_3.cs)]  
   
 ## Passer par référence et passer par valeur  
  Par défaut, quand un type valeur est passé à une méthode, une copie est passée au lieu de l'objet lui\-même. Ainsi, les modifications apportées à l'argument n'ont aucun effet sur la copie d'origine dans la méthode d'appel. Vous pouvez passer un type valeur par référence en utilisant le mot clé ref. Pour plus d'informations, consultez [Passage de paramètres de type valeur](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md). Pour obtenir la liste des types valeur intégrés, consultez [Tableau des types valeur](../../../csharp/language-reference/keywords/value-types-table.md).  
@@ -49,11 +49,11 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
   
  Vous créez un type référence à l'aide du mot clé `class`, comme le montre l'exemple suivant.  
   
- [!code-cs[csProgGuideObjects#42](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_4.cs)]  
+ [!code-cs[csProgGuideObjects#42](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_4.cs)]  
   
  Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L'exemple suivant passe un objet de type `SampleRefType` à la méthode `ModifyObject`.  
   
- [!code-cs[csProgGuideObjects#75](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_5.cs)]  
+ [!code-cs[csProgGuideObjects#75](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_5.cs)]  
   
  L'exemple produit essentiellement la même chose que l'exemple précédent, dans la mesure où il passe un argument par valeur à une méthode. Mais, puisqu'un type référence est utilisé, le résultat est différent. La modification apportée dans `ModifyObject` au champ `value` du paramètre, `obj`, modifie également le champ `value` de l'argument, `rt`, dans la méthode `TestRefType`. La méthode `TestRefType` affiche 33 en tant que sortie.  
   
@@ -62,13 +62,13 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 ## Valeurs de retour  
  Les méthodes peuvent retourner une valeur à l'appelant. Si le type de retour, le type répertorié avant le nom de la méthode, n'est pas `void`, la méthode peut retourner la valeur à l'aide du mot clé `return`. Une instruction avec le mot clé `return` suivi d'une valeur qui correspond au type de retour retourne cette valeur à l'appelant de la méthode. Le mot clé `return` arrête également l'exécution de la méthode. Si le type de retour est `void`, une instruction `return` sans valeur est quand même utile pour arrêter l'exécution de la méthode. Sans le mot clé `return`, la méthode arrête de s'exécuter quand elle atteint la fin du bloc de code. Les méthodes dotées d'un type de retour non void doivent utiliser le mot clé `return` pour retourner une valeur. Par exemple, ces deux méthodes utilisent le mot clé `return` pour retourner des entiers :  
   
- [!code-cs[csProgGuideObjects#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_6.cs)]  
+ [!code-cs[csProgGuideObjects#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_6.cs)]  
   
  Pour utiliser une valeur retournée à partir d'une méthode, la méthode d'appel peut utiliser l'appel de méthode proprement dit partout où une valeur du même type peut suffire. Vous pouvez également affecter la valeur de retour à une variable. Par exemple, les deux exemples de code suivants remplissent le même objectif :  
   
- [!code-cs[csProgGuideObjects#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_7.cs)]  
+ [!code-cs[csProgGuideObjects#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_7.cs)]  
   
- [!code-cs[csProgGuideObjects#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/methods_8.cs)]  
+ [!code-cs[csProgGuideObjects#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_8.cs)]  
   
  L'utilisation d'une variable locale, dans cet exemple, `result`, pour stocker une valeur est facultative. Elle peut favoriser la lisibilité du code ou s'avérer nécessaire si vous avez besoin de stocker la valeur d'origine de l'argument pour la portée entière de la méthode.  
   
@@ -95,7 +95,7 @@ static void Main(string[] args) { int[,] matrix = new int[2, 2]; FillMatrix(matr
   
  La méthode `startButton_Click` est un exemple de méthode async dont le type de retour est void. Étant donné que `DoSomethingAsync` est une méthode async, la tâche pour l'appel à `DoSomethingAsync` doit être attendue, comme le montre l'instruction suivante : `await DoSomethingAsync();`. La méthode `startButton_Click` doit être définie avec le modificateur `async` car la méthode a une expression `await`.  
   
- [!code-cs[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/asyncmethodcs/mainwindow.xaml.cs#2)]  
+ [!code-cs[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_9.cs)]  
   
  Une méthode async ne peut pas déclarer de paramètres [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out.md), mais elle peut appeler des méthodes qui comportent ces paramètres.  
   

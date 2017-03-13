@@ -34,7 +34,7 @@ Cette rubrique est la deuxième des deux rubriques consacrées à la manipulatio
   
 1.  Tapez le code suivant dans `Form1` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#4)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_1.vb)]  
   
      Le mot clé `WithEvents` spécifie que la variable `mWidget` est utilisée pour gérer les événements d'un objet.  Pour spécifier le type d'objet, vous devez fournir le nom de la classe à partir de laquelle cet objet sera créé.  
   
@@ -56,13 +56,13 @@ Cette rubrique est la deuxième des deux rubriques consacrées à la manipulatio
   
 3.  Ajoutez le code suivant au gestionnaire d'événements `mWidget_PercentDone` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#5)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_2.vb)]  
   
      Chaque fois que l'événement `PercentDone` est déclenché, la procédure événementielle affiche le pourcentage réalisé dans un contrôle `Label`.  La méthode `DoEvents` permet que l'étiquette soit repeinte et donne également à l'utilisateur la possibilité de cliquer sur le bouton **Annuler**.  
   
 4.  Ajoutez le code suivant pour le gestionnaire d'événements `Button2_Click` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#6)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_3.vb)]  
   
  Si l'utilisateur clique sur le bouton **Annuler** pendant l'exécution de la méthode `LongTask`, l'événement `Button2_Click` est exécuté dès que l'instruction `DoEvents` permet le traitement de l'événement.  La variable de classe `mblnCancel` prend la valeur `True` ; l'événement `mWidget_PercentDone` la teste ensuite et assigne la valeur `True` à l'argument `ByRef Cancel`.  
   
@@ -79,7 +79,7 @@ Cette rubrique est la deuxième des deux rubriques consacrées à la manipulatio
   
 3.  Ajoutez le code suivant pour la procédure événementielle `Form1_Load` afin de créer le `Widget`:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#7)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_4.vb)]  
   
  Lorsque ce code s'exécute, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] crée un objet `Widget` et associe ses événements aux procédures événementielles de `mWidget`.  À partir de ce moment, chaque fois que l'objet `Widget` déclenche son événement `PercentDone`, la procédure événementielle `mWidget_PercentDone` est exécutée.  
   
@@ -87,7 +87,7 @@ Cette rubrique est la deuxième des deux rubriques consacrées à la manipulatio
   
 -   Ajoutez le code suivant au gestionnaire d'événements `Button1_Click` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#8)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_5.vb)]  
   
  Avant que la méthode `LongTask` ne soit appelée, l'étiquette qui affiche le pourcentage de réalisation doit être initialisée, et l'indicateur de classe `Boolean` utilisé pour l'annulation de la méthode doit avoir la valeur `False`.  
   
@@ -116,7 +116,7 @@ Cette rubrique est la deuxième des deux rubriques consacrées à la manipulatio
   
 -   Ajoutez la ligne de code suivante à la procédure `Button1_Click`, juste avant la ligne `mWidget.LongTask(12.2, 0.33)` :  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/visualbasic/VbEventWalkthrough/Form1.vb#9)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_6.vb)]  
   
  Le code ci\-dessus crée un nouvel objet `Widget` chaque fois que l'on clique sur le bouton.  Dès que la méthode `LongTask` s'achève, la référence à l'objet `Widget` est libérée et l'objet `Widget` est détruit.  
   

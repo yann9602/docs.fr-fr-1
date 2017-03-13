@@ -58,7 +58,7 @@ float x = 3.5F;
 ## Exemple  
  Dans l'exemple suivant, un [int](../../../csharp/language-reference/keywords/int.md), un [short](../../../csharp/language-reference/keywords/short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`.  \(N'oubliez pas que `float` est un alias pour le type <xref:System.Single?displayProperty=fullName>.\) Notez l'absence de [double](../../../csharp/language-reference/keywords/double.md) dans l'expression.  
   
- [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/csharp/float_1.cs)]  
+ [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/float_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

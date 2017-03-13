@@ -23,7 +23,7 @@ Une interface contient des définitions pour un groupe de fonctionnalités conne
   
  Vous définissez une interface à l'aide du mot clé [interface](../../../csharp/language-reference/keywords/interface.md), comme le montre l'exemple suivant.  
   
- [!code-cs[csProgGuideInheritance#47](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_1.cs)]  
+ [!code-cs[csProgGuideInheritance#47](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_1.cs)]  
   
  Toute classe ou tout struct qui implémentent l'interface <xref:System.IEquatable%601> doivent contenir une définition pour une méthode <xref:System.IEquatable%601.Equals%2A> qui correspond à la signature spécifiée par l'interface.  Ainsi, vous pouvez compter sur une classe qui implémente `IEquatable<T>` pour contenir une méthode `Equals` avec laquelle une instance de la classe peut déterminer si elle est égale à une autre instance de la même classe.  
   
@@ -39,7 +39,7 @@ Une interface contient des définitions pour un groupe de fonctionnalités conne
   
  L'exemple suivant illustre une implémentation de l'interface IEquatable\<T\>.  La classe d'implémentation, `Car`, doit fournir une implémentation de la méthode <xref:System.IEquatable%601.Equals%2A>.  
   
- [!code-cs[csProgGuideInheritance#48](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/index_2.cs)]  
+ [!code-cs[csProgGuideInheritance#48](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_2.cs)]  
   
  Les propriétés et indexeurs d'une classe peuvent définir des accesseurs supplémentaires pour une propriété ou un indexeur qui est défini dans une interface.  Par exemple, une interface peut déclarer une propriété qui a un accesseur [get](../../../csharp/language-reference/keywords/get.md).  La classe qui implémente l'interface peut déclarer la même propriété avec à la fois un accesseur `get` et un accesseur [set](../../../csharp/language-reference/keywords/set.md).  Toutefois, si la propriété ou l'indexeur utilisent une implémentation explicite, les accesseurs doivent correspondre.  Pour plus d'informations sur l'implémentation explicite, consultez [Implémentation d’interface explicite](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md) et [Propriétés d'interface](../../../csharp/programming-guide/classes-and-structs/interface-properties.md).  
   

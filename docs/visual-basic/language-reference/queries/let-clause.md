@@ -48,7 +48,7 @@ Let variable = expression [, ...]
 ## Exemple  
  L'exemple de code suivant utilise la clause `Let` pour calculer 10 pour cent de remise sur les produits.  
   
- [!code-vb[VbSimpleQuerySamples#16](../../../visual-basic/language-reference/queries/codesnippet/visualbasic/VbSimpleQuerySamples/QuerySamples1.vb#16)]  
+ [!code-vb[VbSimpleQuerySamples#16](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/let-clause_1.vb)]  
   
 ## Voir aussi  
  [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   

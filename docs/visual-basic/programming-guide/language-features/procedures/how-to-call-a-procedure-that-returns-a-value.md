@@ -51,7 +51,7 @@ Une procédure `Function` retourne une valeur au code appelant.  Vous l'appelez 
 ## Exemple  
  L'exemple suivant appelle [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.Environ%2A> pour récupérer la valeur d'une variable d'environnement du système d'exploitation.  La première ligne appelle `Environ` dans une expression et la deuxième ligne l'appelle dans une instruction d'assignation.  `Environ` accepte le nom de variable comme unique argument.  Il retourne la valeur de la variable au code appelant.  
   
- [!code-vb[VbVbcnProcedures#7](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-call-a-procedure-_0_1.vb)]  
+ [!code-vb[VbVbcnProcedures#7](./codesnippet/VisualBasic/how-to-call-a-procedure-that-returns-a-value_1.vb)]  
   
 ## Voir aussi  
  [Function, procédures](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   

@@ -31,7 +31,7 @@ La directive `#Region` vous permet de réduire et de masquer des sections de cod
   
 -   Placez la section de code entre les instructions `#Region` et `#End Region`, comme dans l'exemple suivant :  
   
-     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/visualbasic/how-to-collapse-and-hide_1.vb)]  
+     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
   
      Le bloc `#Region` peut être utilisé plusieurs fois dans un fichier de code ; par conséquent, les utilisateurs ont la possibilité de définir leurs propres blocs de procédures et classes qui peuvent, à leur tour, être réduits.  Les blocs `#Region` peuvent également être imbriqués dans d'autres blocs `#Region`.  
   

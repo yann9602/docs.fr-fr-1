@@ -58,7 +58,7 @@ Définit des constantes conditionnelles du compilateur.
 ## Exemple  
  Le code suivant définit deux constantes de compilation conditionnelle, puis les utilise.  
   
- [!code-vb[VbVbalrCompiler#45](../../../visual-basic/reference/command-line-compiler/codesnippet/visualbasic/define_1.vb)]  
+ [!code-vb[VbVbalrCompiler#45](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/define_1.vb)]  
   
 ## Voir aussi  
  [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   

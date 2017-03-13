@@ -68,7 +68,7 @@ Branches correctes et incorrectes dans les constructions Try
 ## Exemple  
  L'exemple ci\-dessous utilise l'instruction `GoTo` pour créer une branche vers les étiquettes de ligne au sein d'une procédure.  
   
- [!code-vb[VbVbalrStatements#31](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/goto-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#31](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/goto-statement_1.vb)]  
   
 ## Voir aussi  
  [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   

@@ -28,7 +28,7 @@ L'opérateur d'inégalité \(`!=`\) retourne false si les opérandes sont égaux
  Les types valeur définis par l'utilisateur peuvent surcharger l'opérateur `!=` \(consultez [opérateur](../../../csharp/language-reference/keywords/operator.md)\).  Les types référence définis par l'utilisateur peuvent faire de même, même si par défaut, `!=` se comporte comme décrit ci\-dessus pour les types référence prédéfinis et définis par l'utilisateur.  Si `!=` est surchargé, [\=\=](../../../csharp/language-reference/operators/equality-comparison-operator.md) doit l'être également.  Les opérations sur les types intégraux sont en général autorisées sur énumération.  
   
 ## Exemple  
- [!code-cs[csRefOperators#33](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#33)]  
+ [!code-cs[csRefOperators#33](../../../csharp/language-reference/operators/codesnippet/CSharp/not-equal-operator_1.cs)]  
   
 ## Voir aussi  
  [Référence C\#](../../../csharp/language-reference/index.md)   

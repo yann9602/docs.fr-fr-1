@@ -56,7 +56,7 @@ variableorproperty <<= amount
 ## Exemple  
  L'exemple suivant utilise l'opérateur `<<=` pour décaler le modèle binaire d'une variable `Integer` vers la gauche selon les valeurs spécifiées et assigner le résultat à cette variable.  
   
- [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/left-shift-assignment-op_1_1.vb)]  
+ [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-assignment-operator_1.vb)]  
   
 ## Voir aussi  
  [\<\< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md)   

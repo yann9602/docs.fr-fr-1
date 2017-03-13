@@ -23,12 +23,12 @@ Cet exemple indique comment effectuer des opérations de jointure qui ne sont pa
   
  La deuxième méthode produit une séquence de tous les produits dont l'ID de catégorie est répertorié dans la liste de catégories sur le côté gauche.  Notez l'utilisation de la clause `let` et de la méthode `Contains` pour créer un tableau temporaire.  Il est également possible de créer le tableau avant la requête et d'éliminer la première clause `from`.  
   
- [!code-cs[csProgGuideLINQ#64](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#64)]  
+ [!code-cs[csProgGuideLINQ#64](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-custom-join-operations_1.cs)]  
   
 ## Exemple  
  Dans l'exemple suivant, la requête doit joindre deux séquences en fonction des clés correspondantes qui, dans le cas de la séquence interne \(côté droit\), ne peuvent pas être obtenues avant la clause de jointure elle\-même.  Si cette jointure a été effectuée avec une clause `join`, la méthode `Split` devra être appelée pour chaque élément.  L'utilisation de plusieurs clauses `from` permet à la requête d'éviter la charge mémoire inhérente à la répétition de l'appel de méthode.  Toutefois, puisque `join` est optimisée, cela peut se révéler plus rapide que l'utilisation de plusieurs clauses `from` dans ce cas particulier.  Les résultats varieront principalement en fonction du coût de l'appel.  
   
- [!code-cs[csProgGuideLINQ#13](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#13)]  
+ [!code-cs[csProgGuideLINQ#13](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-perform-custom-join-operations_2.cs)]  
   
 ## Compilation du code  
   

@@ -19,7 +19,7 @@ caps.handback.revision: 15
 Représente la valeur booléenne true.  
   
 ## Exemple  
- [!code-cs[csrefKeywordsOperator#14](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#14)]  
+ [!code-cs[csrefKeywordsOperator#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/true-literal_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

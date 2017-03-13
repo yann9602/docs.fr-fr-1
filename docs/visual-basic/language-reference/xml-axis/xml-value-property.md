@@ -60,7 +60,7 @@ object.Value
 ## Exemple  
  L'exemple suivant indique comment utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour accéder au premier nœud d'une collection d'objets <xref:System.Xml.Linq.XElement>.  Cet exemple utilise la propriété d'axe enfant pour obtenir la collection de tous les nœuds enfants nommés `phone` et se trouvant dans l'objet `contact`.  
   
- [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-value-property_1.vb)]  
+ [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_1.vb)]  
   
  Ce code affiche le texte suivant :  
   
@@ -69,7 +69,7 @@ object.Value
 ## Exemple  
  L'exemple suivant indique comment obtenir la valeur d'un attribut XML à partir d'une collection d'objets <xref:System.Xml.Linq.XAttribute>.  L'exemple utilise la propriété de l'axe de l'attribut pour afficher la valeur de l'attribut `type` pour tous les éléments `phone`.  
   
- [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/xml-value-property_2.vb)]  
+ [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_2.vb)]  
   
  Ce code affiche le texte suivant :  
   

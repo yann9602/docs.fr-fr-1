@@ -26,11 +26,11 @@ Les crochets \(`[]`\) sont utilisés pour les tableaux, les indexeurs et les att
 ## Notes  
  Un type de tableau est un type suivi de `[]` :  
   
- [!code-cs[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#43)]  
+ [!code-cs[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_1.cs)]  
   
  Pour accéder à un élément d'un tableau, l'index de l'élément souhaité est placé entre crochets :  
   
- [!code-cs[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#44)]  
+ [!code-cs[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_2.cs)]  
   
  Une exception est levée si un index de tableau est hors limites.  
   
@@ -38,15 +38,15 @@ Les crochets \(`[]`\) sont utilisés pour les tableaux, les indexeurs et les att
   
  Par exemple, le .NET Framework définit un type `Hashtable` qui associe des clés et des valeurs d'un type arbitraire :  
   
- [!code-cs[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#45)]  
+ [!code-cs[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_3.cs)]  
   
  Des crochets sont également utilisés pour spécifier des [Attributs](../Topic/Attributes%20\(C%23%20and%20Visual%20Basic\).md) :  
   
- [!code-cs[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#46)]  
+ [!code-cs[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_4.cs)]  
   
  Vous pouvez utiliser des crochets pour ignorer un pointeur dans un index :  
   
- [!code-cs[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/csharp/csrefOperators/csrefOperators.cs#47)]  
+ [!code-cs[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_5.cs)]  
   
  Aucune vérification des limites n'est effectuée.  
   

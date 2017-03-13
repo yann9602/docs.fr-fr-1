@@ -51,7 +51,7 @@ Définit un nom et une description de paramètre.
 ## Exemple  
  Cet exemple utilise la balise `<param>` pour décrire le paramètre `id`.  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/visualbasic/param_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/param_1.vb)]  
   
 ## Voir aussi  
  [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

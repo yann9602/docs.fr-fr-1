@@ -32,11 +32,11 @@ Les initialiseurs d'objets vous permettent de spécifier des propriétés pour u
 ## Déclarations  
  Les déclarations d'instances de types nommés et anonymes peuvent sembler presque identiques, mais leurs effets ne sont pas les mêmes.  Chaque catégorie a ses propres capacités et restrictions.  L'exemple suivant montre une manière pratique de déclarer et d'initialiser une instance de classe nommée, `Customer`, en utilisant une liste d'initialiseurs d'objets.  Remarquez que le nom de la classe est spécifié après le mot clé `New`.  
   
- [!code-vb[VbVbalrObjectInit#1](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_1.vb)]  
+ [!code-vb[VbVbalrObjectInit#1](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_1.vb)]  
   
  Un type anonyme n'a aucun nom utilisable.  Par conséquent, une instanciation de type anonyme ne peut pas inclure de nom de classe.  
   
- [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_2.vb)]  
+ [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
   
  Les spécifications et résultats des deux déclarations ne sont pas les mêmes.  Pour `namedCust`, une classe `Customer` ayant une propriété `Name` doit déjà exister, et la déclaration crée une instance de cette classe.  Pour `anonymousCust`, le compilateur définit une nouvelle classe possédant une propriété, une chaîne appelée `Name`, et crée une nouvelle instance de cette classe.  
   
@@ -45,48 +45,48 @@ Les initialiseurs d'objets vous permettent de spécifier des propriétés pour u
   
  Chaque initialisation de la liste d'initialiseurs se compose de l'assignation d'une valeur initiale à un membre de la classe.  Les noms et types de données des membres sont déterminés quand la classe est définie.  Dans les exemples qui suivent, la classe `Customer` doit exister et doit comporter des membres nommés `Name` et `City`, capables d'accepter des valeurs de chaînes.  
   
- [!code-vb[VbVbalrObjectInit#3](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_3.vb)]  
+ [!code-vb[VbVbalrObjectInit#3](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_3.vb)]  
   
  Vous pouvez également obtenir le même résultat en utilisant le code suivant :  
   
- [!code-vb[VbVbalrObjectInit#4](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_4.vb)]  
+ [!code-vb[VbVbalrObjectInit#4](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_4.vb)]  
   
  Chacune de ces déclarations équivaut à l'exemple suivant, qui crée un objet `Customer` en utilisant le constructeur par défaut, puis spécifie des valeurs initiales pour les propriétés `Name` et `City`, en utilisant une instruction `With`.  
   
- [!code-vb[VbVbalrObjectInit#5](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_5.vb)]  
+ [!code-vb[VbVbalrObjectInit#5](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_5.vb)]  
   
  Si la classe `Customer` contient un constructeur paramétrable qui vous permet d'envoyer une valeur pour `Name`, par exemple, vous pouvez également déclarer et initialiser un objet `Customer` par les méthodes suivantes :  
   
- [!code-vb[VbVbalrObjectInit#6](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_6.vb)]  
+ [!code-vb[VbVbalrObjectInit#6](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_6.vb)]  
   
  Vous n'avez pas à initialiser toutes les propriétés, comme le montre code suivant.  
   
- [!code-vb[VbVbalrObjectInit#7](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_7.vb)]  
+ [!code-vb[VbVbalrObjectInit#7](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_7.vb)]  
   
  Toutefois, la liste d'initialisation ne peut pas être vide.  Les propriétés non initialisées conservent leurs valeurs par défaut.  
   
 ### Inférence de type avec les types nommés  
  Vous pouvez raccourcir le code pour la déclaration de `cust1` en combinant des initialiseurs d'objets et l'inférence de type local.  Cela vous permet d'omettre la clause `As` dans la déclaration de variable.  Le type de données de la variable est déduit du type de l'objet créé par l'assignation.  Dans l'exemple suivant, le type de `cust6` est `Customer`.  
   
- [!code-vb[VbVbalrObjectInit#8](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_8.vb)]  
+ [!code-vb[VbVbalrObjectInit#8](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_8.vb)]  
   
 ### Remarques sur les types nommés  
   
 -   Un membre de classe ne peut pas être initialisé plus d'une fois dans la liste d'initialiseurs d'objets.  La déclaration de `cust7` provoque une erreur.  
   
-     [!code-vb[VbVbalrObjectInit#9](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_9.vb)]  
+     [!code-vb[VbVbalrObjectInit#9](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_9.vb)]  
   
 -   Un membre peut être utilisé pour s'initialiser lui\-même ou initialiser un autre champ.  Si un membre fait l'objet d'un accès avant qu'il n'ait été initialisé, comme dans la déclaration suivante pour `cust8`, la valeur par défaut est utilisée.  Souvenez\-vous que lorsqu'une déclaration qui utilise un initialiseur d'objet est traitée, la première chose qui se passe est que le constructeur approprié est appelé.  Après cela, les champs individuels de la liste d'initialiseurs sont initialisés.  Dans les exemples qui suivent, la valeur par défaut de `Name` est assignée à `cust8`, et une valeur initialisée est assignée en `cust9`.  
   
-     [!code-vb[VbVbalrObjectInit#10](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_10.vb)]  
+     [!code-vb[VbVbalrObjectInit#10](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_10.vb)]  
   
      L'exemple suivant utilise le constructeur paramétrable de `cust3` et `cust4` pour déclarer et initialiser `cust10` et `cust11`.  
   
-     [!code-vb[VbVbalrObjectInit#11](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_11.vb)]  
+     [!code-vb[VbVbalrObjectInit#11](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_11.vb)]  
   
 -   Les initialiseurs d'objets peuvent être imbriqués.  Dans l'exemple qui suit, `AddressClass` est une classe qui a deux propriétés, `City` et `State`, et la classe `Customer` a une propriété `Address` qui est une instance d' `AddressClass`.  
   
-     [!code-vb[VbVbalrObjectInit#12](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_12.vb)]  
+     [!code-vb[VbVbalrObjectInit#12](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_12.vb)]  
   
 -   La liste d'initialisation ne peut pas être vide.  
   
@@ -105,7 +105,7 @@ Les initialiseurs d'objets vous permettent de spécifier des propriétés pour u
 ## Types anonymes  
  Les types anonymes utilisent les initialiseurs d'objets pour créer des instances de types nouveaux que vous ne définissez ni ne nommez explicitement.  Au contraire, le compilateur génère un type d'après les propriétés que vous désignez, dans la liste d'initialiseurs d'objets.  Le nom du type de données n'étant pas spécifié, ce dernier est considéré comme un *type anonyme*.  Comparez, par exemple, la déclaration suivante à la déclaration préalable correspondant à `cust6`.  
   
- [!code-vb[VbVbalrObjectInit#13](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_13.vb)]  
+ [!code-vb[VbVbalrObjectInit#13](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_13.vb)]  
   
  La seule différence est syntaxique : aucun nom n'est spécifié après `New` pour le type de données.  Toutefois, ce qui se passe est assez différent.  Le compilateur définit un nouveau type anonyme qui a deux propriétés, `Name` et `City`et crée une instance de ce type avec les valeurs spécifiées.  L'inférence de type détermine les types `Name` et `City` de l'exemple comme étant des chaînes.  
   
@@ -120,19 +120,19 @@ Les initialiseurs d'objets vous permettent de spécifier des propriétés pour u
   
 -   En général, la plupart ou la totalité des propriétés d'une déclaration de type anonyme est constituée de propriétés de clé, indiquées en tapant le mot clé `Key` devant le nom de la propriété.  
   
-     [!code-vb[VbVbalrObjectInit#14](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_14.vb)]  
+     [!code-vb[VbVbalrObjectInit#14](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_14.vb)]  
   
      Pour plus d'informations sur les propriétés de clé, consultez [Key](../../../../visual-basic/language-reference/modifiers/key.md).  
   
 -   À l'instar des types nommés, les listes d'initialiseurs pour les définitions de types anonymes doivent déclarer au moins une propriété.  
   
-     [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_2.vb)]  
+     [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
   
 -   Lorsqu'une instance de type anonyme est déclarée, le compilateur génère une définition de type anonyme correspondante.  Les noms et types de données des propriétés sont pris à la déclaration d'instance et sont inclus par le compilateur dans la définition.  Les propriétés ne sont pas nommées ni définies en avance, comme elles seraient dans le cas d'un type nommé.  Leurs types sont déduits.  Vous ne pouvez pas spécifier les types de données des propriétés en utilisant une clause `As`.  
   
 -   Les types anonymes peuvent également établir les noms et valeurs de leurs propriétés de nombreuses manières différentes.  Par exemple, une propriété de type anonyme peut prendre à la fois le nom et la valeur d'une variable, ou le nom et la valeur de la propriété d'un autre objet.  
   
-     [!code-vb[VbVbalrObjectInit#15](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/visualbasic/object-initializers-name_15.vb)]  
+     [!code-vb[VbVbalrObjectInit#15](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_15.vb)]  
   
      Pour plus d'informations sur les options de définition des propriétés dans les types anonymes, consultez [Comment : déduire les types et les noms de propriétés dans des déclarations de types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
   

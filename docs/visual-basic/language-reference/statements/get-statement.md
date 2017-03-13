@@ -80,16 +80,16 @@ End Get
   
      L'exemple suivant illustre deux méthodes utilisées par la propriété en lecture seule `quoteForTheDay` pour retourner la valeur contenue dans la variable privée `quoteValue`.  
   
-     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/get-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_1.vb)]  
   
-     [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/get-statement_2.vb)]  
+     [!code-vb[VbVbalrStatements#28](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_2.vb)]  
   
-     [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/get-statement_3.vb)]  
+     [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_3.vb)]  
   
 ## Exemple  
  L'exemple suivant utilise l'instruction `Get` pour retourner la valeur d'une propriété.  
   
- [!code-vb[VbVbalrStatements#30](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/get-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#30](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_4.vb)]  
   
 ## Voir aussi  
  [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)   

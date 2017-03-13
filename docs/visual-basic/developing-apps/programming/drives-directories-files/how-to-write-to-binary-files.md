@@ -31,7 +31,7 @@ La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> écr
   
 -   Utilisez la méthode `WriteAllBytes`, en fournissant le chemin d'accès, le nom et les octets à écrire.  Cet exemple ajoute le tableau de données `CustomerData` au fichier nommé `CollectedData.dat`.  
   
-     [!code-vb[VbVbcnMyFileSystem#27](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/visualbasic/how-to-write-to-binary-f_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#27](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-to-binary-files_1.vb)]  
   
 ## Programmation fiable  
  Les conditions ci\-dessous peuvent générer une exception.  

@@ -52,14 +52,14 @@ Vous devez quelquefois utiliser des caractères spéciaux dans votre code, autre
 ## Parenthèses  
  Vous utilisez des parenthèses lorsque vous définissez une procédure, par exemple un `Sub` ou `Function`.  Vous devez placer les listes des arguments de la procédure entre parenthèses.  Vous utilisez également des parenthèses pour insérer des variables ou des arguments dans des groupes logiques, en particulier pour substituer l'ordre de priorité des opérateurs par défaut dans une expression complexe.  L'exemple suivant illustre ce comportement.  
   
- [!code-vb[VbVbcnConventions#11](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_1.vb)]  
+ [!code-vb[VbVbcnConventions#11](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_1.vb)]  
   
  Après l'exécution du code précédent, `d` a la valeur 8.225 et `e` a la valeur 3.  Le calcul de `d` utilise la priorité par défaut de `/` sur `+` et équivaut à `d = b + (c / a)`.  Les parenthèses dans le calcul de `e` substituent la priorité par défaut.  
   
 ## Séparateurs  
  Comme leur nom l'indique, les séparateurs séparent les différentes sections de code.  En [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)], c'est le signe deux\-points \(`:`\) qui est le caractère séparateur.  Utilisez des séparateurs lorsque vous voulez inclure plusieurs instructions sur une ligne unique au lieu de lignes séparées.  Vous économisez ainsi de l'espace et améliorez la lisibilité de votre code.  Dans l'exemple ci\-dessous, trois instructions sont séparées par un signe deux\-points.  
   
- [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_2.vb)]  
+ [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_2.vb)]  
   
  Pour plus d'informations, consultez [Procédure : diviser et combiner des instructions dans le code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
@@ -68,7 +68,7 @@ Vous devez quelquefois utiliser des caractères spéciaux dans votre code, autre
 ## Concaténation  
  Utilisez l'opérateur `&` pour créer une *concaténation*, c'est\-à\-dire lier plusieurs chaînes.  Ne confondez pas cet opérateur avec l'opérateur `+`, qui permet d'ajouter des valeurs numériques.  Si vous utilisez l'opérateur `+` pour créer une concaténation de valeurs numériques, vous risquez d'obtenir des résultats incorrects.  C'est ce qu'illustre l'exemple suivant.  
   
- [!code-vb[VbVbcnConventions#13](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_3.vb)]  
+ [!code-vb[VbVbcnConventions#13](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_3.vb)]  
   
  Après l'exécution du code précédent, `resultA` a la valeur 21.01 et `resultB` a la valeur 10.0111.  
   
@@ -78,12 +78,12 @@ Vous devez quelquefois utiliser des caractères spéciaux dans votre code, autre
 ### Point \(.\) Opérateur  
  Utilisez l'opérateur `.` sur une classe, une structure, une interface ou une énumération en tant qu'opérateur d'accès au membre.  Le membre peut être un champ, une propriété, un événement ou une méthode.  L'exemple suivant illustre ce comportement.  
   
- [!code-vb[VbVbcnConventions#14](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_4.vb)]  
+ [!code-vb[VbVbcnConventions#14](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_4.vb)]  
   
 ### Point d'exclamation \(\!\) Opérateur  
  Utilisez l'opérateur `!` uniquement dans une classe ou une interface en tant qu'opérateur d'accès de type dictionnaire.  La classe ou l'interface doit avoir une propriété par défaut qui accepte un seul argument `String`.  L'identificateur qui suit immédiatement l'opérateur `!` devient la valeur de l'argument transmis en tant que string pour la propriété par défaut.  C'est ce qu'illustre l'exemple suivant.  
   
- [!code-vb[VbVbcnConventions#15](../../../visual-basic/programming-guide/language-features/codesnippet/visualbasic/special-characters-in-code_5.vb)]  
+ [!code-vb[VbVbcnConventions#15](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_5.vb)]  
   
  Toutes les trois lignes de sortie de `MsgBox` affichent la valeur `32856`.  La première ligne utilise l'accès traditionnel à la propriété `index`, la seconde utilise le fait que `index` est la propriété par défaut de la classe `hasDefault` et la troisième utilise l'accès de type dictionnaire à la classe.  
   

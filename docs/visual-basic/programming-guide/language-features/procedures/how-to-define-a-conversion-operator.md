@@ -35,11 +35,11 @@ Si vous avez défini une classe ou  structure, vous pouvez définir un opérateu
 ## Exemple  
  L'exemple suivant définit des opérateurs de conversion entre une structure appelée  `digit`  et un `Byte`.  
   
- [!code-vb[VbVbcnProcedures#27](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-conversi_1.vb)]  
+ [!code-vb[VbVbcnProcedures#27](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_1.vb)]  
   
  Vous pouvez tester la structure `digit` à l'aide du code suivant.  
   
- [!code-vb[VbVbcnProcedures#28](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-define-a-conversi_2.vb)]  
+ [!code-vb[VbVbcnProcedures#28](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_2.vb)]  
   
 ## Voir aussi  
  [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   

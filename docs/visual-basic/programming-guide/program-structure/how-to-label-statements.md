@@ -41,7 +41,7 @@ Les blocs d'instructions sont composés de lignes de code délimitées par le si
   
      Par exemple, les lignes de code suivantes sont étiquetées respectivement par `Jump` et `120` :  
   
-     [!code-vb[VbVbalrStatements#708](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/how-to-label-statements_1.vb)]  
+     [!code-vb[VbVbalrStatements#708](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/how-to-label-statements_1.vb)]  
   
 ## Voir aussi  
  [Statements](../../../visual-basic/programming-guide/language-features/statements.md)   

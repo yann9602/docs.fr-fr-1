@@ -26,7 +26,7 @@ caps.handback.revision: 11
 Cet exemple indique comment importer le préfixe d'espace de noms XML `ns` et l'utiliser dans un littéral et des propriétés d'axe XML.  
   
 ## Exemple  
- [!code-vb[VbXMLSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/how-to-declare-and-use-x_1.vb)]  
+ [!code-vb[VbXMLSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-declare-and-use-xml-namespace-prefixes_1.vb)]  
   
 ## Compilation du code  
  Cet exemple nécessite :  

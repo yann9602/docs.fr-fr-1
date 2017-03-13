@@ -62,7 +62,7 @@ public delegate void EventHandler(object sender, EventArgs e);
 ## Exemple  
  L'exemple suivant illustre les étapes précédentes en utilisant une classe EventArgs personnalisée et <xref:System.EventHandler%601> comme type d'événement.  
   
- [!code-cs[csProgGuideEvents#2](../../../csharp/programming-guide/events/codesnippet/csharp/how-to-publish-events-th_1.cs)]  
+ [!code-cs[csProgGuideEvents#2](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-publish-events-that-conform-to-net-framework-guidelines_1.cs)]  
   
 ## Voir aussi  
  <xref:System.Delegate>   

@@ -73,14 +73,14 @@ result = Not expression
 ## Exemple  
  L'exemple suivant utilise l'opérateur `Not` pour effectuer une négation logique sur une expression `Boolean`.  Le résultat est une valeur `Boolean` qui représente l'inverse de la valeur de l'expression.  
   
- [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/not-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_1.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : `False` et `True`.  
   
 ## Exemple  
  L'exemple suivant utilise l'opérateur `Not` pour effectuer une négation logique sur les bits individuels d'une expression numérique.  Le bit dans le modèle de résultat a la valeur de l'inverse du bit correspondant dans le modèle d'opérande, y compris le bit de signe.  
   
- [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/not-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_2.vb)]  
   
  L'exemple précédent produit respectivement les résultats suivants : \-11, \-9, et \-7.  
   

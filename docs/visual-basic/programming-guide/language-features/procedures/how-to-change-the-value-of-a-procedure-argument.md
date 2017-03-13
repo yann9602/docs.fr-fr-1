@@ -66,11 +66,11 @@ Lorsque vous appelez une procédure, chaque argument que vous fournissez corresp
 ## Exemple  
  L'exemple suivant illustre deux procédures qui acceptent une variable tableau et opèrent sur ses éléments.  La procédure `increase` ajoute simplement la valeur 1 à chaque élément.  La procédure `replace` assigne un nouveau tableau au paramètre `a()`, puis ajoute la valeur 1 à chaque élément.  
   
- [!code-vb[VbVbcnProcedures#35](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#36](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_2.vb)]  
+ [!code-vb[VbVbcnProcedures#36](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#37](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-change-the-value-_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-change-the-value-of-a-procedure-argument_3.vb)]  
   
  Le premier appel `MsgBox` affiche "After increase\(n\): 11, 21, 31, 41".  Étant donné que le tableau  `n`  est un type référence,  `replace`  peut modifier ses membres, même si le mécanisme de passage est `ByVal`.  
   

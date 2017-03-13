@@ -94,11 +94,11 @@ Lorsque vous surchargez une procédure, vous devez utiliser une *signature* diff
 ## Surcharges implicites des paramètres facultatifs  
  Une procédure avec un paramètre [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) équivaut à deux procédures surchargées, l'une avec l'argument facultatif et l'autre sans cet argument.  Vous ne pouvez pas surcharger une procédure avec une liste de paramètres correspondant à l'un ou l'autre de ceux\-ci.  Les déclarations suivantes illustrent ce principe.  
   
- [!code-vb[VbVbcnProcedures#58](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_1.vb)]  
+ [!code-vb[VbVbcnProcedures#58](./codesnippet/VisualBasic/considerations-in-overloading-procedures_1.vb)]  
   
- [!code-vb[VbVbcnProcedures#60](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_2.vb)]  
+ [!code-vb[VbVbcnProcedures#60](./codesnippet/VisualBasic/considerations-in-overloading-procedures_2.vb)]  
   
- [!code-vb[VbVbcnProcedures#61](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_3.vb)]  
+ [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/considerations-in-overloading-procedures_3.vb)]  
   
  Dans le cas d'une procédure possédant plusieurs arguments facultatifs, il existe un ensemble de surcharges implicites, qui peuvent se produire de manière logique, comme dans l'exemple précédent.  
   
@@ -113,13 +113,13 @@ Lorsque vous surchargez une procédure, vous devez utiliser une *signature* diff
   
  Les déclarations suivantes illustrent ces surcharges implicites.  
   
- [!code-vb[VbVbcnProcedures#68](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_4.vb)]  
+ [!code-vb[VbVbcnProcedures#68](./codesnippet/VisualBasic/considerations-in-overloading-procedures_4.vb)]  
   
- [!code-vb[VbVbcnProcedures#70](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_5.vb)]  
+ [!code-vb[VbVbcnProcedures#70](./codesnippet/VisualBasic/considerations-in-overloading-procedures_5.vb)]  
   
  Vous ne pouvez pas surcharger une procédure avec une liste de paramètres qui accepte un tableau unidimensionnel comme tableau de paramètres.  Toutefois, vous pouvez utiliser les signatures des autres surcharges implicites.  Les déclarations suivantes illustrent ce principe.  
   
- [!code-vb[VbVbcnProcedures#71](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/considerations-in-overlo_6.vb)]  
+ [!code-vb[VbVbcnProcedures#71](./codesnippet/VisualBasic/considerations-in-overloading-procedures_6.vb)]  
   
 ## Programmation sans type en remplacement de la surcharge  
  Si vous souhaitez permettre au code appelant à de passer des types de données différents à un paramètre, est une approche alternative programmation sans type.  Vous pouvez affecter au commutateur de vérification de type la valeur `Off` avec l'[Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) ou l'option du compilateur [\/optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md).  Vous ne devez donc pas déclarer le type de données du paramètre.  Cependant, cette approche présente les inconvénients suivants par rapport à la surcharge :  

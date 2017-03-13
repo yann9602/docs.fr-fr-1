@@ -101,23 +101,23 @@ Ajoute deux nombres ou retourne la valeur positive d'une expression numérique. 
 ## Exemple  
  Cet exemple suivant utilise l'opérateur `+` pour ajouter des nombres.  Si les opérandes sont tous numériques, Visual Basic calcule le résultat arithmétique.  Le résultat arithmétique représente la somme des deux opérandes.  
   
- [!code-vb[VbVbalrOperators#6](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#6](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_1.vb)]  
   
  Vous pouvez également utiliser l'opérateur `+` pour concaténer des chaînes.  Si les opérandes sont tous des chaînes, Visual Basic les concatène.  Le résultat de concaténation représente une chaîne unique composée du contenu des deux opérandes l'un après l'autre.  
   
  Si les opérandes sont de types mixtes, le résultat dépend du paramètre de l'[Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  L'exemple suivant illustre le résultat lorsque `Option Strict` est `On`.  
   
- [!code-vb[VbVbalrOperators#53](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#53](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_2.vb)]  
   
- [!code-vb[VbVbalrOperators#50](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_3.vb)]  
-[!code-vb[VbVbalrOperators#51](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_4.vb)]  
+ [!code-vb[VbVbalrOperators#50](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_3.vb)]  
+[!code-vb[VbVbalrOperators#51](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_4.vb)]  
   
  L'exemple suivant illustre le résultat lorsque `Option Strict` est `Off`.  
   
- [!code-vb[VbVbalrOperators#54](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_5.vb)]  
+ [!code-vb[VbVbalrOperators#54](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_5.vb)]  
   
- [!code-vb[VbVbalrOperators#50](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_3.vb)]  
-[!code-vb[VbVbalrOperators#52](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/addition-operator_6.vb)]  
+ [!code-vb[VbVbalrOperators#50](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_3.vb)]  
+[!code-vb[VbVbalrOperators#52](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-operator_6.vb)]  
   
  Pour éliminer toute ambiguïté, vous devez utiliser l'opérateur `&` au lieu de `+` pour la concaténation.  
   

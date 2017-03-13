@@ -65,18 +65,18 @@ Force le compilateur à donner des informations de type COM dans les assemblys s
 ### Interfaces génériques  
  Les interfaces génériques incorporées depuis un assembly d'interopérabilité ne peuvent pas être utilisées.  L'exemple suivant le démontre.  
   
- [!code-cs[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/csharp/vblinkcompilercs/program.cs#1)]  
+ [!code-cs[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_1.cs)]  
   
 ### Types ayant des paramètres génériques  
  Les types qui ont un paramètre générique dont le type est incorporé depuis un assembly d'interopérabilité ne peuvent pas être utilisés si ce type est issu d'un assembly externe.  Cette restriction ne s'applique pas aux interfaces.  Par exemple, considérez l'interface <xref:Microsoft.Office.Interop.Excel.Range> définie dans l'assembly <xref:Microsoft.Office.Interop.Excel>.  Si une bibliothèque incorpore des types d'interopérabilité de l'assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique possédant un paramètre dont le type est l'interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme indiqué dans l'exemple de code suivant.  
   
- [!code-cs[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/csharp/vblinkcompilercs/utility.cs#2)]  
-[!code-cs[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/csharp/vblinkcompilercs/utility.cs#3)]  
-[!code-cs[VbLinkCompilerCS#4](../../../csharp/language-reference/compiler-options/codesnippet/csharp/vblinkcompilercs/utility.cs#4)]  
+ [!code-cs[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_2.cs)]  
+[!code-cs[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_3.cs)]  
+[!code-cs[VbLinkCompilerCS#4](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_4.cs)]  
   
  Dans l'exemple suivant, le code client peut appeler la méthode qui retourne l'interface générique <xref:System.Collections.IList> sans erreur.  
   
- [!code-cs[VbLinkCompilerCS#5](../../../csharp/language-reference/compiler-options/codesnippet/csharp/vblinkcompilercs/program.cs#5)]  
+ [!code-cs[VbLinkCompilerCS#5](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_5.cs)]  
   
 ## Exemple  
  Le code suivant compile le fichier source `OfficeApp.cs` et référence des assemblys depuis `COMData1.dll` et `COMData2.dll` pour produire `OfficeApp.exe`.  

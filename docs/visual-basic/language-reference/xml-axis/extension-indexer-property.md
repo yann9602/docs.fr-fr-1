@@ -59,7 +59,7 @@ object(index)
 ## Exemple  
  L'exemple suivant indique comment utiliser l'indexeur d'extension pour accéder au deuxième nœud enfant dans une collection d'objets <xref:System.Xml.Linq.XElement>.  Pour accéder à la collection, utilisez la propriété d'axe enfant, qui obtient tous les éléments enfants nommés `phone` dans l'objet `contact`.  
   
- [!code-vb[VbXMLSamples#24](../../../visual-basic/language-reference/operators/codesnippet/visualbasic/extension-indexer-property_1.vb)]  
+ [!code-vb[VbXMLSamples#24](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/extension-indexer-property_1.vb)]  
   
  Ce code affiche le texte suivant :  
   

@@ -24,14 +24,14 @@ Vous pouvez créer un tableau implicitement typé dans lequel le type de l'insta
   
  Les exemples suivants indiquent comment créer un tableau implicitement typé :  
   
- [!code-cs[csProgGuideLINQ#37](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#37)]  
+ [!code-cs[csProgGuideLINQ#37](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-arrays_1.cs)]  
   
  Dans l'exemple précédent, notez qu'avec des tableaux implicitement typés, aucun crochet n'est utilisé à gauche de l'instruction d'initialisation.  Notez également que les tableaux en escalier sont initialisés en utilisant `new []`, à l'instar des tableaux unidimensionnels.  
   
 ## Tableaux implicitement typés dans les initialiseurs d'objets  
  Lorsque vous créez un type anonyme qui contient un tableau, le tableau doit être implicitement typé dans l'initialiseur d'objet du type.  Dans l'exemple suivant, `contacts` est un tableau implicitement typé de types anonymes dont chacun contient un tableau nommé `PhoneNumbers`.  Notez que le mot clé `var` n'est pas utilisé à l'intérieur des initialiseurs d'objets.  
   
- [!code-cs[csProgGuideLINQ#38](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#38)]  
+ [!code-cs[csProgGuideLINQ#38](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-arrays_2.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

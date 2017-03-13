@@ -24,7 +24,7 @@ Passe le contrôle d'instruction d' `continue` à l'itération suivante d' [whil
 ## Exemple  
  Dans cet exemple, un compteur est initialisé pour compter de 1 à 10.  À l'aide de l'instruction d' `continue` avec l'expression `(i < 9)`, les instructions entre `continue` et la fin de le corps d' `for` sont ignorées.  
   
- [!code-cs[csrefKeywordsJump#3](../../../csharp/language-reference/keywords/codesnippet/csharp/continue_1.cs)]  
+ [!code-cs[csrefKeywordsJump#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/continue_1.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

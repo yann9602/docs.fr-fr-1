@@ -49,7 +49,7 @@ Fournit des propriétés permettant de créer et d'accéder à une instance uniq
 ## Exemple  
  Cet exemple appelle la méthode `FahrenheitToCelsius` du service Web XML `TemperatureConverter` et retourne le résultat.  
   
- [!code-vb[VbVbalrMyWebService#1](../../../visual-basic/language-reference/objects/codesnippet/visualbasic/VbVbalrMyWebService/Form1.vb#1)]  
+ [!code-vb[VbVbalrMyWebService#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-webservices-object_1.vb)]  
   
  Pour que cet exemple fonctionne, votre projet doit référencer un service Web appelé `Converter` et ce dernier exposer la méthode `ConvertTemperature`.  Pour plus d'informations, consultez [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   

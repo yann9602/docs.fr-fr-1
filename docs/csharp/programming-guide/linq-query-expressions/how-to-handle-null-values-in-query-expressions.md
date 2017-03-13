@@ -8,14 +8,14 @@ Cet exemple indique comment gérer des valeurs Null éventuelles dans les collec
 ## Exemple  
  Vous pouvez coder de manière défensive pour éviter une exception de référence Null comme indiqué dans l'exemple suivant :  
   
- [!code-cs[csProgGuideLINQ#82](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#82)]  
+ [!code-cs[csProgGuideLINQ#82](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-null-values-in-query-expressions_1.cs)]  
   
  Dans l'exemple précédent, la clause `where` élimine par filtrage tous les éléments Null dans la séquence de catégories.  Cette technique est indépendante du contrôle de valeur Null dans la clause join.  Dans cet exemple, l'expression conditionnelle avec Null fonctionne parce que `Products.CategoryID` est de type `int?` qui est un raccourci pour `Nullable<int>`.  
   
 ## Exemple  
  Dans une clause de jointure, si seule l'une des clés de comparaison est un type valeur Nullable, vous pouvez caster l'autre en un type Nullable dans l'expression de requête.  Dans l'exemple suivant, supposons que `EmployeeID` soit une colonne qui contient des valeurs de type `int?` :  
   
- [!code-cs[csProgGuideLINQ#83](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csRef30LangFeatures_2.cs#83)]  
+ [!code-cs[csProgGuideLINQ#83](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-handle-null-values-in-query-expressions_2.cs)]  
   
 ## Voir aussi  
  <xref:System.Nullable%601>   

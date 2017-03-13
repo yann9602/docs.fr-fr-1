@@ -37,9 +37,9 @@ p--;
 ## Exemple  
  Dans cet exemple, vous circulez dans un tableau en incrémentant le pointeur de la taille de `int`.  À chaque étape, vous affichez l'adresse et le contenu de l'élément de tableau.  
   
- [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers2.cs#3)]  
+ [!code-cs[csProgGuidePointers#3](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-increment-and-decrement-pointers_1.cs)]  
   
- [!code-cs[csProgGuidePointers#13](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/csharp/Pointers/Pointers.cs#13)]  
+ [!code-cs[csProgGuidePointers#13](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-increment-and-decrement-pointers_2.cs)]  
   
   **Valeur : 0 @ Adresse : 12860272**  
 **Valeur : 1 @ Adresse : 12860276**  

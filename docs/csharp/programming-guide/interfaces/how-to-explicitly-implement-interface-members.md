@@ -19,17 +19,17 @@ caps.handback.revision: 16
 Cet exemple déclare une [interface](../../../csharp/language-reference/keywords/interface.md), `IDimensions`, et une classe, `Box`, qui implémente de façon explicite les membres d'interface `getLength` et `getWidth`.  Les membres sont accessibles via l'instance d'interface `dimensions`.  
   
 ## Exemple  
- [!code-cs[csProgGuideInheritance#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_1.cs)]  
+ [!code-cs[csProgGuideInheritance#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_1.cs)]  
   
 ## Programmation fiable  
   
 -   Notez que les lignes suivantes, dans la méthode `Main`, sont transformées en commentaires, parce qu'elles produiraient des erreurs de compilation.  Un membre d'interface qui est implémenté de façon explicite n'est pas accessible à partir d'une instance de [classe](../../../csharp/language-reference/keywords/class.md) :  
   
-     [!code-cs[csProgGuideInheritance#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_2.cs)]  
+     [!code-cs[csProgGuideInheritance#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_2.cs)]  
   
 -   Notez également que les lignes suivantes, dans la méthode `Main`, impriment correctement les dimensions de la zone, car les méthodes sont appelées à partir d'une instance de l'interface :  
   
-     [!code-cs[csProgGuideInheritance#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/how-to-explicitly-implem_1_3.cs)]  
+     [!code-cs[csProgGuideInheritance#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-explicitly-implement-interface-members_3.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

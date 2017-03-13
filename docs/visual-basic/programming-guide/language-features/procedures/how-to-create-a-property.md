@@ -63,11 +63,11 @@ Entourez une définition de propriété entre une instruction `Property` et une 
 ## Exemple  
  L'exemple suivant crée une propriété en lecture\/écriture qui stocke un nom complet comme deux noms constitutifs, le prénom et le nom.  Lorsque le code appelant lit `fullName`, la procédure `Get` combine les deux noms constitutifs et retourne le nom complet.  Lorsque le code appelant assigne un nouveau nom complet, la procédure `Set` tente de le décomposer en deux noms constitutifs.  S'il ne trouve pas d'espace, il le stocke en tant que prénom.  
   
- [!code-vb[VbVbcnProcedures#8](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-create-a-property_1.vb)]  
+ [!code-vb[VbVbcnProcedures#8](./codesnippet/VisualBasic/how-to-create-a-property_1.vb)]  
   
  L'exemple suivant montre des appels typiques aux procédures Property de `fullName`.  Le premier appel définit la valeur de propriété et le deuxième appel la récupère.  
   
- [!code-vb[VbVbcnProcedures#9](../../../../visual-basic/programming-guide/language-features/procedures/codesnippet/visualbasic/how-to-create-a-property_2.vb)]  
+ [!code-vb[VbVbcnProcedures#9](./codesnippet/VisualBasic/how-to-create-a-property_2.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

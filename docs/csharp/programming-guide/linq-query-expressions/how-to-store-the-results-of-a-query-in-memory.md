@@ -16,7 +16,7 @@ Fondamentalement, une requête est un jeu d'instructions sur la récupération e
  Lorsque vous stockez les résultats de la requête, nous vous recommandons d'assigner l'objet de collection retourné à une nouvelle variable comme indiqué dans l'exemple suivant :  
   
 ## Exemple  
- [!code-cs[csProgGuideLINQ#25](../../../csharp/programming-guide/arrays/codesnippet/csharp/csLINQProgRef/csrefLINQHowTos.cs#25)]  
+ [!code-cs[csProgGuideLINQ#25](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-store-the-results-of-a-query-in-memory_1.cs)]  
   
 ## Compilation du code  
   

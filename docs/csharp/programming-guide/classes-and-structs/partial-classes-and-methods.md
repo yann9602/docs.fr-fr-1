@@ -29,7 +29,7 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
 -   Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../../csharp/language-reference/keywords/partial-type.md), comme indiqué ici :  
   
- [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_1.cs)]  
+ [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
   
  Le mot clé `partial` indique que d'autres parties de la classe, du struct ou de l'interface peuvent être définies dans l'espace de noms.  Toutes les parties doivent utiliser le mot clé `partial`.  Toutes les parties doivent être disponibles lors de la compilation pour former le type final.  Toutes les parties doivent avoir la même accessibilité : `public`, `private`, etc.  
   
@@ -42,15 +42,15 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
  L'exemple suivant montre que les types imbriqués peuvent être partiels, même si le type dans lequel ils sont imbriqués n'est pas partiel lui\-même.  
   
- [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_2.cs)]  
+ [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
   
  À la compilation, les attributs de définitions de type partiel sont fusionnés.  Observez par exemple les déclarations suivantes :  
   
- [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_3.cs)]  
+ [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
   
  Elles sont équivalentes aux déclarations suivantes :  
   
- [!code-cs[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_4.cs)]  
+ [!code-cs[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_4.cs)]  
   
  Les éléments suivants sont fusionnés à partir de toutes les définitions de type partiel :  
   
@@ -66,24 +66,24 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
  Observez par exemple les déclarations suivantes :  
   
- [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_5.cs)]  
+ [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
   
  Elles sont équivalentes aux déclarations suivantes :  
   
- [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_6.cs)]  
+ [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
   
 ### Restrictions  
  Il y a plusieurs règles à suivre lorsque vous utilisez des définitions de classe partielles :  
   
 -   Toutes les définitions de type partiel conçues comme des parties du même type doivent être modifiées avec `partial`.  Par exemple, les déclarations de classe suivantes génèrent une erreur :  
   
-     [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_7.cs)]  
+     [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
   
 -   Le modificateur `partial` peut uniquement apparaître juste avant les mots clés `class`, `struct` ou `interface`.  
   
 -   Les types partiels imbriqués sont autorisés dans les définitions de type partiel, comme illustré dans l'exemple suivant :  
   
-     [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_8.cs)]  
+     [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
   
 -   Toutes les définitions de type partiel conçues comme des parties du même type doivent être définies dans le même assembly et dans le même module \(fichier .exe ou .dll\).  Les définitions partielles ne peuvent pas couvrir plusieurs modules.  
   
@@ -117,7 +117,7 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
  Dans l'exemple suivant, les champs et le constructeur de la classe, `CoOrds`, sont déclarés dans une définition de classe partielle, et le membre, `PrintCoOrds`, est déclaré dans une autre définition de classe partielle.  
   
 ### Code  
- [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_9.cs)]  
+ [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
   
 ## Exemple 2  
   
@@ -125,7 +125,7 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
  L'exemple suivant montre que vous pouvez également développer des interfaces et des structs partiels.  
   
 ### Code  
- [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/partial-classes-and-meth_10.cs)]  
+ [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
   
 ## Méthodes partielles  
  Une classe partielle ou un struct partiel peut contenir une méthode partielle.  Une partie de la classe contient la signature de la méthode.  Une implémentation facultative peut être définie dans la même partie ou dans une autre partie.  Si l'implémentation n'est pas fournie, les méthodes et tous les appels à la méthode sont supprimés à la compilation.  

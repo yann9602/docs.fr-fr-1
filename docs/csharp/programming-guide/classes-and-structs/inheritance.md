@@ -37,7 +37,7 @@ Héritage de classe
   
  L'exemple suivant illustre la manière dont les relations de classe démontrées dans l'illustration précédente sont exprimées en C\#.  Il indique également comment `WorkItem` substitue la méthode virtuelle <xref:System.Object.ToString%2A?displayProperty=fullName> et comment la classe `ChangeRequest` hérite de l'implémentation `WorkItem` de la méthode.  
   
- [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/inheritance_1.cs)]  
+ [!code-cs[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
   
 ## Méthodes virtuelles et abstraites  
  Lorsqu'une classe de base déclare une méthode comme [virtuelle](../../../csharp/language-reference/keywords/virtual.md), une classe dérivée peut [substituer](../../../csharp/language-reference/keywords/override.md) la méthode avec sa propre implémentation.  Si une classe de base déclare un membre comme [abstrait](../../../csharp/language-reference/keywords/abstract.md), cette méthode doit être substituée dans toute classe non abstraite qui hérite directement de cette classe.  Si une classe dérivée est elle\-même abstraite, elle hérite des membres abstraits sans les implémenter.  Les membres virtuels et abstraits sont la base du polymorphisme, qui est la deuxième caractéristique principale de la programmation orientée objet.  Pour plus d'informations, consultez [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  

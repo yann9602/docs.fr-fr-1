@@ -43,12 +43,12 @@ string s = method.ReturnType.GetInterface
 ```  
   
 ## Exemple  
- [!code-cs[csrefKeywordsOperator#12](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#12)]  
+ [!code-cs[csrefKeywordsOperator#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/typeof_1.cs)]  
   
 ## Exemple  
  Cet exemple utilise la méthode <xref:System.Object.GetType%2A> pour déterminer le type utilisé pour contenir le résultat d'un calcul numérique.  Cela dépend des besoins en mémoire du nombre résultant.  
   
- [!code-cs[csrefKeywordsOperator#13](../../../csharp/language-reference/keywords/codesnippet/csharp/csrefKeywordsOperator/csrefKeywordsOperators.cs#13)]  
+ [!code-cs[csrefKeywordsOperator#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/typeof_2.cs)]  
   
 ## Spécification du langage C\#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  

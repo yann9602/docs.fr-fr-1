@@ -89,12 +89,12 @@ Option Compare { Binary | Text }
 ## Exemple  
  L'exemple suivant utilise l'instruction `Option Compare` pour définir la comparaison binaire comme méthode de comparaison de chaînes par défaut.  Pour utiliser ce code, supprimez les commentaires de l'instruction `Option Compare Binary` et placez\-la en haut du fichier source.  
   
- [!code-vb[VbVbalrStatements#45](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-compare-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#45](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-compare-statement_1.vb)]  
   
 ## Exemple  
  L'exemple suivant utilise l'instruction `Option Compare` pour définir l'ordre de tri de texte sans respect de la casse comme méthode de comparaison de chaînes par défaut.  Pour utiliser ce code, supprimez les commentaires de l'instruction `Option Compare Text` et placez\-la en haut du fichier source.  
   
- [!code-vb[VbVbalrStatements#46](../../../visual-basic/language-reference/error-messages/codesnippet/visualbasic/option-compare-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#46](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-compare-statement_2.vb)]  
   
 ## Voir aussi  
  <xref:Microsoft.VisualBasic.Strings.InStr%2A>   

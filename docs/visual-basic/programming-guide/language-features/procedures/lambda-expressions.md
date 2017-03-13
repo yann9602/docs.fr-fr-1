@@ -35,19 +35,19 @@ Une *expression lambda* est une fonction ou une sous\-routine sans nom qui peut 
   
  L'exemple suivant est une expression lambda qui incrémente son argument et retourne la valeur.  L'exemple montre la syntaxe d'expression lambda sur une ou plusieurs lignes d'une fonction.  
   
- [!code-vb[VbVbalrLambdas#14](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#14)]  
+ [!code-vb[VbVbalrLambdas#14](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_1.vb)]  
   
  L'exemple suivant présente une expression lambda qui écrit une valeur sur la console.  L'exemple montre la syntaxe d'expression lambda sur une ou plusieurs lignes d'une sous\-routine.  
   
- [!code-vb[VbVbalrLambdas#15](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#15)]  
+ [!code-vb[VbVbalrLambdas#15](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_2.vb)]  
   
  Remarquez que dans les exemples précédents, les expressions lambda sont assignées à un nom de variable.  Chaque fois que vous faites référence à la variable, vous appelez l'expression lambda.  Vous pouvez également déclarer et appeler une expression lambda simultanément, comme illustré dans l'exemple suivant.  
   
- [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#3)]  
+ [!code-vb[VbVbalrLambdas#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_3.vb)]  
   
  Une expression lambda peut être retournée comme valeur d'un appel de fonction \(comme le montre l'exemple de la section [Contexte](#context) ultérieurement dans cette rubrique\) ou passée comme argument à un paramètre qui accepte un type délégué, comme dans l'exemple ci\-dessous.  
   
- [!code-vb[VbVbalrLambdas#8](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class2.vb#8)]  
+ [!code-vb[VbVbalrLambdas#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_4.vb)]  
   
 ## Syntaxe d'expression lambda  
  La syntaxe d'une expression lambda est similaire à celle d'une fonction ou d'une sous\-routine standard.  Les différences sont les suivantes :  
@@ -125,7 +125,7 @@ End Class
   
  L'accès aux variables locales et aux paramètres figurant dans la portée contenante peut s'étendre au\-delà de la durée de vie de cette portée.  Tant qu'un délégué qui fait référence à une expression lambda n'est pas disponible pour l'opération garbage collection, l'accès aux variables dans l'environnement d'origine est conservé.  Dans l'exemple suivant, la variable `target` est locale à `makeTheGame`, la méthode dans laquelle l'expression lambda `playTheGame` est définie.  Notez que l'expression lambda retournée, assignée à `takeAGuess` dans `Main`, a encore accès à la variable locale `target`.  
   
- [!code-vb[VbVbalrLambdas#12](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class6.vb#12)]  
+ [!code-vb[VbVbalrLambdas#12](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_5.vb)]  
   
  L'exemple suivant montre la large gamme de droits d'accès de l'expression lambda imbriquée.  Lorsque l'expression lambda retournée est exécutée depuis `Main` sous la forme `aDel`, elle accède aux éléments suivants :  
   
@@ -139,16 +139,16 @@ End Class
   
 -   Un paramètre de l'expression lambda dans laquelle elle est imbriquée : `level2`  
   
- [!code-vb[VbVbalrLambdas#9](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class3.vb#9)]  
+ [!code-vb[VbVbalrLambdas#9](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_6.vb)]  
   
 ## Conversion en type délégué  
  Une expression lambda peut être convertie implicitement en type délégué compatible.  Pour plus d'informations sur les spécifications générales en matière de compatibilité, consultez [Relaxed Delegate Conversion](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  L'exemple de code suivant présente une expression lambda qui est implicitement convertie vers `Func(Of Integer, Boolean)` ou une signature de délégué correspondante.  
   
- [!code-vb[VbVbalrLambdas#16](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#16)]  
+ [!code-vb[VbVbalrLambdas#16](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_7.vb)]  
   
  L'exemple de code suivant présente une expression lambda qui est implicitement convertie vers `Sub(Of Double, String, Double)` ou une signature de délégué correspondante.  
   
- [!code-vb[VbVbalrLambdas#23](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/class7.vb#23)]  
+ [!code-vb[VbVbalrLambdas#23](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_8.vb)]  
   
  Lorsque vous assignez des expressions lambda aux délégués ou les passez en tant qu'arguments aux procédures, vous pouvez spécifier les noms de paramètres, mais omettre leurs types de données, en permettant l'extraction des types du délégué.  
   
@@ -156,11 +156,11 @@ End Class
   
 -   L'exemple suivant définit une expression lambda qui retourne la valeur `True` si l'argument nullable a une valeur assignée, et `False` si sa valeur est `Nothing`.  
   
-     [!code-vb[VbVbalrLambdas#4](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#4)]  
+     [!code-vb[VbVbalrLambdas#4](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_9.vb)]  
   
 -   L'exemple suivant définit une expression lambda qui retourne l'index du dernier élément dans un tableau.  
   
-     [!code-vb[VbVbalrLambdas#5](../../../../visual-basic/language-reference/operators/codesnippet/visualbasic/vbvbalrlambdas/Class1.vb#5)]  
+     [!code-vb[VbVbalrLambdas#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/lambda-expressions_10.vb)]  
   
 ## Voir aussi  
  [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   

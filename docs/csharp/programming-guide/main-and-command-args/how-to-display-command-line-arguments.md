@@ -30,7 +30,7 @@ Les arguments fournis à un fichier exécutable sur la ligne de commande sont ac
 ## Exemple  
  Cet exemple affiche les arguments de ligne de commande passés à une application en ligne de commande.  La sortie indiquée se trouve au\-dessus de la première entrée du tableau ci\-dessus.  
   
- [!code-cs[csProgGuideMain#9](../../../csharp/programming-guide/inside-a-program/codesnippet/csharp/how-to-display-command-l_1.cs)]  
+ [!code-cs[csProgGuideMain#9](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/how-to-display-command-line-arguments_1.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   

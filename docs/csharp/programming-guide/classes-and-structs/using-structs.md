@@ -18,7 +18,7 @@ caps.handback.revision: 28
 # Utilisation de structs (Guide de programmation&#160;C#)
 Le type `struct` est approprié pour représenter des objets légers tels que `Point`, `Rectangle` et `Color`. Bien qu’il soit aussi pratique de représenter un point comme [classe](../../../csharp/language-reference/keywords/class.md) avec des [propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), un [struct](../../../csharp/language-reference/keywords/struct.md) peut être plus efficace dans certains scénarios. Par exemple, si vous déclarez un tableau de 1 000 objets `Point`, vous devez allouer de la mémoire supplémentaire pour faire référence à chacun des objets. Dans ce cas, un struct est moins onéreux. Étant donné que le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] contient un objet appelé <xref:System.Drawing.Point>, le struct dans cet exemple est nommé à la place « CoOrds ».  
   
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
  Définir un constructeur par défaut \(sans paramètre\) pour un struct constitue une erreur. Vous ne devez pas non plus initialiser un champ d'instance dans le corps d'un struct. Vous pouvez initialiser des membres de struct uniquement en utilisant un constructeur paramétrable ou en accédant individuellement aux membres après que le struct a été déclaré. Tout membre privé \(ou inaccessible\) peut uniquement être initialisé dans un constructeur.  
   
@@ -38,9 +38,9 @@ Le type `struct` est approprié pour représenter des objets légers tels que `P
  Cet exemple illustre l’initialisation du type `struct` à l’aide des constructeurs par défaut et des constructeurs paramétrables.  
   
 ### Code  
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
- [!code-cs[csProgGuideObjects#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_2.cs)]  
+ [!code-cs[csProgGuideObjects#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_2.cs)]  
   
 ## Exemple 2  
   
@@ -48,9 +48,9 @@ Le type `struct` est approprié pour représenter des objets légers tels que `P
  Cet exemple montre une caractéristique propre aux structs. Il crée un objet CoOrds sans utiliser l’opérateur `new`. Si vous remplacez le mot `struct` par le mot `class`, le programme ne peut pas se compiler.  
   
 ### Code  
- [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_1.cs)]  
+ [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
- [!code-cs[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/csharp/using-structs_3.cs)]  
+ [!code-cs[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_3.cs)]  
   
 ## Voir aussi  
  [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
