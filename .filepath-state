@@ -8966,11 +8966,11 @@
   "331d87d3f88b14d939ea0877989af574f6725a13": [
     "docs\\visual-basic\\developing-apps\\windows-forms\\how-to-draw-lines-with-the-lineshape-control-visual-studio.md"
   ],
-  "d54cc26105ee48f43478fa5f2731a7bac6485495": [
-    "docs\\visual-basic\\misc\\bc36627.md"
-  ],
   "b962956ad8fced61aad949e2c8c1c92add34cd03": [
     "docs\\visual-basic\\language-reference\\modifiers\\private.md"
+  ],
+  "d54cc26105ee48f43478fa5f2731a7bac6485495": [
+    "docs\\visual-basic\\misc\\bc36627.md"
   ],
   "193f3a87b9ae6a46554cb01212070a4441496627": [
     "docs\\visual-basic\\developing-apps\\development-with-my\\default-object-instances-provided-by-my-forms-and-my-webservices.md"
