@@ -8,9 +8,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4d823e71-19ac-4419-953e-b47aa58f5538
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 3f409ddcdba5ca87e255c7715fa391548790cf93
-ms.lasthandoff: 03/02/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 
