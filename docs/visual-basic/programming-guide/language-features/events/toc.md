@@ -1,0 +1,6 @@
+# [Événements](index.md)
+## [Procédure pas à pas : déclaration et déclenchement des événements](walkthrough-declaring-and-raising-events.md)
+## [Procédure pas à pas : gestion des événements](walkthrough-handling-events.md)
+## [Guide pratique : déclarer des événements personnalisés pour éviter les blocages](how-to-declare-custom-events-to-avoid-blocking.md)
+## [Guide pratique : déclarer des événements personnalisés pour économiser la mémoire](how-to-declare-custom-events-to-conserve-memory.md)
+## [Dépannage des gestionnaires d’événements hérités](troubleshooting-inherited-event-handlers.md)
