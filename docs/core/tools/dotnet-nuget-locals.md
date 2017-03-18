@@ -11,9 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 3d8ca57c3c9c25a59b98552784b057182c9100a3
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 #<a name="dotnet-nuget-locals"></a>dotnet-nuget-locals

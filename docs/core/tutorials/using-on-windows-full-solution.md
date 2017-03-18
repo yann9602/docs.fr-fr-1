@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: b8505f88b324fcdf3a51d75c455ec5869e058774
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 

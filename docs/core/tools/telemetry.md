@@ -11,9 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: c816bf4c93430a009e61ddf2a3673c43f49b8de9
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 

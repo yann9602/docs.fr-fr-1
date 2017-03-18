@@ -11,9 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: ffdc40ba-ef33-463e-aa35-b0af1fe615a2
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: a000e49a8672affe5b3bb9bd8a5f7e8095ab0aa9
-ms.lasthandoff: 03/07/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 #<a name="dotnet-msbuild"></a>dotnet-msbuild
