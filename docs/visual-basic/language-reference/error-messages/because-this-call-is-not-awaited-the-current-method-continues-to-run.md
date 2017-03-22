@@ -1,39 +1,56 @@
 ---
-title: "Dans la mesure o&#249; cet appel n&#39;est pas attendu, la m&#233;thode actuelle continue de s&#39;ex&#233;cuter avant la fin de l&#39;appel. | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc42358"
-  - "vbc42358"
-helpviewer_keywords: 
-  - "BC42358"
+title: "Étant donné que cet appel n’est pas attendu, la méthode actuelle continue de s’exécuter avant la fin de l’appel | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc42358
+- vbc42358
+helpviewer_keywords:
+- BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
----
-# Dans la mesure o&#249; cet appel n&#39;est pas attendu, la m&#233;thode actuelle continue de s&#39;ex&#233;cuter avant la fin de l&#39;appel.
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a9165414bc08b62aab20410e7af187fa4b45c162
+ms.lasthandoff: 03/13/2017
 
-Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continue avant la fin de l’appel. Envisagez d’appliquer l’opérateur « Await » au résultat de l’appel.  
+---
+# <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Dans la mesure où cet appel n'est pas attendu, la méthode actuelle continue de s'exécuter avant la fin de l'appel.
+Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continue avant la fin de l’appel. Envisagez d’appliquer l’opérateur « Await » au résultat de l’appel.  
   
- La méthode actuelle appelle une méthode asynchrone qui retourne <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> et n’applique pas l’opérateur [Await](../../../visual-basic/language-reference/operators/await-operator.md) au résultat. L'appel à la méthode asynchrone lance une tâche asynchrone. Toutefois, étant donné qu'aucun opérateur `Await` n'est appliqué, le programme se poursuit sans attendre la tâche à exécuter. Dans la plupart des cas, ce comportement est inattendu. En général, les autres aspects de la méthode d'appel dépendent des résultats de l'appel ou, au moins, la méthode appelée est censée se terminer avant le retour de la méthode qui contient l'appel.  
+ La méthode actuelle appelle une méthode asynchrone qui retourne un <xref:System.Threading.Tasks.Task>ou un <xref:System.Threading.Tasks.Task%601>et n’applique pas la [Await](../../../visual-basic/language-reference/operators/await-operator.md) opérateur au résultat.</xref:System.Threading.Tasks.Task%601> </xref:System.Threading.Tasks.Task> L'appel à la méthode asynchrone lance une tâche asynchrone. Toutefois, étant donné qu'aucun opérateur `Await` n'est appliqué, le programme se poursuit sans attendre la tâche à exécuter. Dans la plupart des cas, ce comportement est inattendu. En général, les autres aspects de la méthode d'appel dépendent des résultats de l'appel ou, au moins, la méthode appelée est censée se terminer avant le retour de la méthode qui contient l'appel.  
   
- Une question tout aussi importante n’est autre que de savoir ce que deviennent les exceptions générées dans la méthode asynchrone appelée. Une exception générée dans une méthode qui retourne <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> est stockée dans la tâche renvoyée. Si vous n'attendez pas la tâche ou si vous vérifiez explicitement les exceptions, l'exception est perdue. Si vous attendez la tâche, l'exception est renvoyée.  
+ Une question tout aussi importante n’est autre que de savoir ce que deviennent les exceptions générées dans la méthode asynchrone appelée. Une exception est levée dans une méthode qui retourne un <xref:System.Threading.Tasks.Task>ou <xref:System.Threading.Tasks.Task%601>est stocké dans la tâche retournée.</xref:System.Threading.Tasks.Task%601> </xref:System.Threading.Tasks.Task> Si vous n'attendez pas la tâche ou si vous vérifiez explicitement les exceptions, l'exception est perdue. Si vous attendez la tâche, l'exception est renvoyée.  
   
  À titre de recommandation, vous devriez toujours attendre l'appel.  
   
- Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements en tant qu’erreurs, consultez [Configuration d'avertissements en Visual Basic](/visual-studio/ide/configuring-warnings-in-visual-basic).  
+ Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements comme des erreurs, consultez la page [configuration d’avertissements en Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
- **ID d’erreur :** BC42358  
+ **ID d’erreur :** BC42358  
   
-### Pour traiter cet avertissement  
+### <a name="to-address-this-warning"></a>Pour traiter cet avertissement  
   
 -   Envisagez de supprimer l'avertissement uniquement si vous êtes certain que vous ne souhaitez pas attendre l'exécution de l'appel asynchrone et que la méthode appelée ne génèrera pas d'exception. Dans ce cas, vous pouvez supprimer l'avertissement en affectant le résultat de la tâche à une variable.  
   
@@ -88,7 +105,7 @@ Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continu
   
     ```  
   
-     Dans l'exemple, si vous choisissez Appel \#1 ou Appel \#2, la méthode asynchrone inattendue \(`CalledMethodAsync`\) se termine une fois que son appelant \(`CallingMethodAsync`\) et l'appelant de l'appelant \(`StartButton_Click`\) sont terminés. La dernière ligne de la sortie suivante vous indique lorsque la méthode appelée se termine. L'entrée et la sortie du gestionnaire d'événements qui appelle `CallingMethodAsync` dans l'exemple complet sont marquées dans la sortie.  
+     Dans l'exemple, si vous choisissez Appel #1 ou Appel #2, la méthode asynchrone inattendue (`CalledMethodAsync`) se termine une fois que son appelant (`CallingMethodAsync`) et l'appelant de l'appelant (`StartButton_Click`) sont terminés. La dernière ligne de la sortie suivante vous indique lorsque la méthode appelée se termine. L'entrée et la sortie du gestionnaire d'événements qui appelle `CallingMethodAsync` dans l'exemple complet sont marquées dans la sortie.  
   
     ```  
   
@@ -100,14 +117,14 @@ Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continu
         Task.Delay is finished--returning from called method.  
     ```  
   
-## Exemple  
- L'application suivante de Windows Presentation Foundation \(WPF\) contient les méthodes de l'exemple précédent. Les étapes suivantes permettent d'installer l'application.  
+## <a name="example"></a>Exemple  
+ L'application suivante de Windows Presentation Foundation (WPF) contient les méthodes de l'exemple précédent. Les étapes suivantes permettent d'installer l'application.  
   
-1.  Créez une application WPF et nommez\-la `AsyncWarning`.  
+1.  Créez une application WPF et nommez-la `AsyncWarning`.  
   
-2.  Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml**.  
+2.  Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .  
   
-     Si l'onglet n'est pas visible, ouvrez le menu contextuel pour MainWindow.xaml dans l'**Explorateur de solutions**, puis choisissez **Afficher le code**.  
+     Si l'onglet n'est pas visible, ouvrez le menu contextuel pour MainWindow.xaml dans l' **Explorateur de solutions**, puis choisissez **Afficher le code**.  
   
 3.  Remplacez le code dans la vue **XAML** de MainWindow.xaml, par le code suivant.  
   
@@ -126,7 +143,7 @@ Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continu
   
      Une fenêtre simple contenant un bouton et une zone de texte apparaît dans la vue **Design** de MainWindow.xaml.  
   
-     Pour plus d’informations sur le Concepteur XAML, consultez [Création d'une interface utilisateur à l'aide du concepteur XAML](/visual-studio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Pour plus d’informations sur la création de votre propre interface utilisateur simple, consultez les sections « Pour créer une application WPF » et « Pour concevoir une simple fenêtre MainWindow WPF » de la [Procédure pas à pas : accès au Web avec Async et Await](../Topic/Walkthrough:%20Accessing%20the%20Web%20by%20Using%20Async%20and%20Await%20\(C%23%20and%20Visual%20Basic\).md).  
+     Pour plus d’informations sur le concepteur XAML, consultez [création d’une interface utilisateur à l’aide du concepteur XAML](https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Pour plus d’informations sur la façon de créer votre propre interface utilisateur simple, consultez le « pour créer une application WPF » et « pour concevoir un MainWindow WPF simple » sections de [procédure pas à pas : accès Web à l’aide de Async et Await](http://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042).  
   
 4.  Remplacez le code situé dans MainWindow.xaml.vb par le code suivant.  
   
@@ -209,10 +226,10 @@ Cet appel n’étant pas attendu, l’exécution de la méthode actuelle continu
     ' Exiting the Click event handler.  
     ```  
   
-5.  Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.  
+5.  Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .  
   
      La sortie attendue apparaît à la fin du code.  
   
-## Voir aussi  
- [Await Operator](../../../visual-basic/language-reference/operators/await-operator.md)   
- [Programmation asynchrone avec Async et Await](../Topic/Asynchronous%20Programming%20with%20Async%20and%20Await%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>Voir aussi  
+ [Await (opérateur)](../../../visual-basic/language-reference/operators/await-operator.md)   
+ [Programmation asynchrone avec Async et Await](../../../visual-basic/programming-guide/concepts/async/index.md)

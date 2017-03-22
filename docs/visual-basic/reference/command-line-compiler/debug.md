@@ -1,31 +1,47 @@
 ---
-title: "/debug (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "debug compiler switches"
-  - "/debug compiler option [Visual Basic]"
-  - "-debug compiler option [Visual Basic]"
-  - "debug compiler option [Visual Basic]"
+title: /Debug (Visual Basic) | Documents Microsoft
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- debug compiler switches
+- /debug compiler option [Visual Basic]
+- -debug compiler option [Visual Basic]
+- debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# /debug (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 7384e69f066022e861a4277f418df3f4d094c3be
+ms.lasthandoff: 03/13/2017
 
-Entraîne le compilateur à générer des informations de débogage et à les placer dans le ou les fichiers de sortie.  
+---
+# <a name="debug-visual-basic"></a>/debug (Visual Basic)
+Indique au compilateur de générer des informations de débogage et les placer dans les fichiers de sortie.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 /debug[+ | -]  
@@ -33,34 +49,32 @@ Entraîne le compilateur à générer des informations de débogage et à les pl
 /debug:[full | pdbonly]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
   
-|||  
-|-|-|  
 |Terme|Définition|  
-|`+`  &#124; `-`|Facultatif.  Si vous spécifiez `+` ou `/debug`, le compilateur générera des informations de débogage et les placera dans un fichier .pdb.  Spécifier `-` équivaut à ne pas spécifier `/debug`.|  
-|`full`  &#124; `pdbonly`|Facultatif.  Spécifie le type d'informations de débogage générées par le compilateur.  Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d'attacher un débogueur au programme en cours d'exécution.  L'argument `pdbonly` permet un débogage du code source lorsque le programme est démarré dans le débogueur, mais affiche du code en langage assembleur uniquement lorsque le programme en cours d'exécution est attaché au débogueur.|  
+|---|---|  
+|`+` &#124; `-`|Facultatif. Spécification de `+` ou `/debug` indique au compilateur de générer des informations de débogage et les placer dans un fichier .pdb. Spécification de `-` a le même effet que de ne pas spécifier `/debug`.|  
+|`full` &#124; `pdbonly`|Facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. Le `pdbonly` argument permet le débogage du code source lorsque le programme est démarré dans le débogueur, mais affiche du code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|  
   
-## Notes  
- Utilisez cette option pour créer des générations de débogage.  Si vous ne spécifiez pas `/debug`, `/debug+` ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.  
+## <a name="remarks"></a>Remarques  
+ Utilisez cette option pour créer des versions debug. Si vous ne spécifiez pas `/debug`, `/debug+`, ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.  
   
- Par défaut, les informations de débogage ne sont pas émises \(`/debug-`\).  Pour émettre des informations de débogage, spécifiez `/debug` ou `/debug+`.  
+ Par défaut, les informations de débogage ne sont pas émises (`/debug-`). Pour émettre des informations de débogage, spécifiez `/debug` ou `/debug+`.  
   
- Pour plus d'informations sur la configuration des performances de débogage d'une application, consultez [Simplification du débogage d'une image](../Topic/Making%20an%20Image%20Easier%20to%20Debug.md).  
+ Pour plus d’informations sur la configuration des performances de débogage d’une application, consultez [Simplification du débogage d’une image](http://msdn.microsoft.com/library/7d90ea7a-150f-4f97-98a7-f9c26541b9a3).  
   
-||  
-|-|  
-|Pour définir \/debug dans l'environnement de développement intégré Visual Studio|  
-|1.  Un projet étant sélectionné dans l'**Explorateur de solutions**, cliquez dans le menu **Projet** sur **Propriétés**.  Pour plus d'informations, consultez [Introduction to the Project Designer](http://msdn.microsoft.com/fr-fr/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Cliquez sur l'onglet **Compiler**.<br />3.  Cliquez sur **Options avancées de compilation**.<br />4.  Modifiez la valeur dans la zone **Générer des infos de débogage**.|  
+|Pour définir /debug dans Visual Studio environnement de développement intégré|  
+|---|  
+|1.  Après avoir sélectionné un projet dans l’ **Explorateur de solutions**, dans le menu **Projet** , cliquez sur **Propriétés**. Pour plus d’informations, consultez [Introduction au Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Cliquez sur l’onglet **Compiler**.<br />3.  Cliquez sur **Options avancées de compilation**.<br />4.  Modifiez la valeur dans la **générer les informations de débogage** boîte.|  
   
-## Exemple  
- L'exemple suivant place des informations de débogage dans le fichier de sortie `App.exe`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant place des informations de débogage dans le fichier de sortie `App.exe`.  
   
 ```  
 vbc /debug /out:app.exe test.vb  
 ```  
   
-## Voir aussi  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)   
  [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

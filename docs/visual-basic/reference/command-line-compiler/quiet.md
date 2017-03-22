@@ -1,42 +1,58 @@
 ---
-title: "/quiet | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "/quiet"
-  - "quiet"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "-quiet compiler option [Visual Basic]"
-  - "/quiet compiler option [Visual Basic]"
-  - "quiet compiler option [Visual Basic]"
+title: /quiet | Documents Microsoft
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- /quiet
+- quiet
+dev_langs:
+- VB
+helpviewer_keywords:
+- -quiet compiler option [Visual Basic]
+- /quiet compiler option [Visual Basic]
+- quiet compiler option [Visual Basic]
 ms.assetid: 5d77fa23-4c50-4708-8535-649912b098e8
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# /quiet
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: feafed7464248c38ec70087795a28ead8b8793f3
+ms.lasthandoff: 03/13/2017
 
-Empêche le compilateur d'afficher du code pour des erreurs et des avertissements liés à la syntaxe.  
+---
+# <a name="quiet"></a>/quiet
+Empêche le compilateur d'afficher le code pour les erreurs et les avertissements liés à la syntaxe.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 /quiet  
 ```  
   
-## Notes  
- Par défaut, `/quiet` n'est pas activée.  Lorsque le compilateur signale une erreur ou un avertissement lié à la syntaxe, il renvoie également la ligne du code source.  Pour les applications qui analysent les résultats de la compilation, il est parfois plus pratique que le compilateur exporte uniquement le texte du diagnostic.  
+## <a name="remarks"></a>Notes  
+ Par défaut, l'option `/quiet` n'est pas activée. Lorsque le compilateur signale une erreur de syntaxe ou un avertissement, il renvoie également la ligne de code source. Pour les applications qui analysent les résultats de la compilation, il peut être plus pratique pour la sortie du compilateur est uniquement le texte de diagnostic.  
   
- Dans l'exemple suivant, `Module1` extrait une erreur qui inclut le code source compilé sans `/quiet`.  
+ Dans l’exemple suivant, `Module1` génère une erreur qui inclut le code source compilé sans `/quiet`.  
   
 ```  
 Module Module1  
@@ -54,20 +70,20 @@ End Module
   
  `~`  
   
- Lorsque ce code est compilé avec `/quiet`, le compilateur extrait uniquement ce qui suit :  
+ Compilé avec `/quiet`, le compilateur extrait uniquement ce qui suit :  
   
  `E:\test\t2.vb(3) : error BC30451: Name 'x' is not declared.`  
   
 > [!NOTE]
->  L'option `/quiet` n'est pas accessible dans l'environnement de développement Visual Studio. Elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+>  La `/quiet` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## Exemple  
- Le code suivant compile `T2.vb` et n'affiche pas de code pour les diagnostics du compilateur liés à la syntaxe :  
+## <a name="example"></a>Exemple  
+ Le code suivant compile `T2.vb` et n’affiche pas de code pour les diagnostics du compilateur liés à la syntaxe :  
   
 ```  
 vbc /quiet t2.vb  
 ```  
   
-## Voir aussi  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
  [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

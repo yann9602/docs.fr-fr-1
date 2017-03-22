@@ -1,42 +1,58 @@
 ---
-title: "Using the iteration variable in a lambda expression may have unexpected results | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc42324"
-  - "bc42324"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC42324"
+title: "À l’aide de la variable d’itération dans une expression lambda peut avoir des résultats inattendus | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc42324
+- bc42324
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
----
-# Using the iteration variable in a lambda expression may have unexpected results
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 5b293ec344d816e40d369757fa4d11710b7ecd8d
+ms.lasthandoff: 03/13/2017
 
-L'utilisation de la variable d'itération dans une expression lambda peut provoquer des résultats inattendus.À la place, créez une variable locale dans la boucle et assignez\-lui la valeur de la variable d'itération.  
+---
+# <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>L’utilisation de la variable d’itération dans une expression lambda peut provoquer des résultats inattendus
+L’utilisation d’une variable d’itération dans une expression lambda peut avoir des résultats inattendus. Au lieu de cela, créez une variable locale dans la boucle et assignez-lui la valeur de la variable d’itération.  
   
- Cet avertissement apparaît lorsque vous utilisez une variable d'itération de la boucle dans une expression lambda déclarée à l'intérieur de la boucle.  Par exemple, l'exemple suivant entraîne l'affichage de l'avertissement.  
+ Cet avertissement s’affiche lorsque vous utilisez une variable d’itération de boucle dans une expression lambda qui est déclarée à l’intérieur de la boucle. Par exemple, l’exemple suivant génère l’avertissement apparaît.  
   
-```vb#  
+```vb  
 For i As Integer = 1 To 10  
     ' The warning is given for the use of i.  
     Dim exampleFunc As Func(Of Integer) = Function() i  
 Next  
 ```  
   
- L'exemple suivant affiche les résultats inattendus qui peuvent se produire.  
+ L’exemple suivant montre les résultats inattendus peuvent se produire.  
   
-```vb#  
+```vb  
 Module Module1  
     Sub Main()  
         Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
@@ -53,7 +69,7 @@ Module Module1
 End Module  
 ```  
   
- La boucle `For` crée un tableau d'expressions lambda où chacune retourne la variable de la valeur d'itération de la boucle `i`.  Lorsque les expressions lambda sont évaluées dans la boucle `For Each`, vous pouvez vous attendre à consulter 0, 1, 2, 3 et 4 affichés, les valeurs consécutives d' `i` dans la boucle `For`.  À la place, vous voyez la dernière valeur d' `i` affichée cinq fois :  
+ Le `For` boucle crée un tableau d’expressions lambda où chacune retourne la valeur de la variable d’itération de boucle `i`. Lorsque les expressions lambda sont évaluées dans le `For Each` boucle, que vous attendez à voir 0, 1, 2, 3 et 4 affichés, les valeurs consécutives de `i` dans les `For` boucle. Au lieu de cela, vous voyez la valeur finale du `i` affichée cinq fois :  
   
  `5`  
   
@@ -65,31 +81,31 @@ End Module
   
  `5`  
   
- Par défaut, ce message est un avertissement.  Pour plus d'informations sur le masquage des avertissements ou le traitement des avertissements en tant qu'erreurs, consultez [Configuration d'avertissements en Visual Basic](/visual-studio/ide/configuring-warnings-in-visual-basic).  
+ Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements comme des erreurs, consultez la page [configuration d’avertissements en Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
- **ID d'erreur :** BC42324  
+ **ID d’erreur :** BC42324  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Assignez la valeur de la variable d'itération à une variable locale et utilisez cette dernière dans l'expression lambda.  
+-   Affecter la valeur de la variable d’itération à une variable locale et utilisez la variable locale dans l’expression lambda.  
   
-    ```vb#  
-    Module Module1  
-        Sub Main()  
-            Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
+```vb  
+Module Module1  
+    Sub Main()  
+        Dim array1 As Func(Of Integer)() = New Func(Of Integer)(4) {}  
   
-            For i As Integer = 0 To 4  
-                Dim j = i  
-                array1(i) = Function() j  
-            Next  
+        For i As Integer = 0 To 4  
+            Dim j = i  
+            array1(i) = Function() j  
+        Next  
   
-            For Each funcElement In array1  
-                System.Console.WriteLine(funcElement())  
-            Next  
+        For Each funcElement In array1  
+            System.Console.WriteLine(funcElement())  
+        Next  
   
-        End Sub  
-    End Module  
-    ```  
+    End Sub  
+End Module  
+```  
   
-## Voir aussi  
- [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a>Voir aussi  
+ [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

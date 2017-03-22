@@ -1,38 +1,54 @@
 ---
-title: "Nested Control Structures (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, control flow"
-  - "control structures, nested"
-  - "conditional statements, nested"
-  - "statements [Visual Basic], control flow"
-  - "control flow, nested control statements"
-  - "structures, nested control"
-  - "nested control statements"
+title: "Imbriqué des Structures de contrôle (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic code, control flow
+- control structures, nested
+- conditional statements, nested
+- statements [Visual Basic], control flow
+- control flow, nested control statements
+- structures, nested control
+- nested control statements
 ms.assetid: cf60b061-65d9-44a8-81f2-b0bdccd23a05
 caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 20
----
-# Nested Control Structures (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 4afc0afc2ad63d03f2c4251640d3682b2b184504
+ms.lasthandoff: 03/13/2017
 
-Vous pouvez insérer des instructions de contrôle dans d'autres instructions de contrôle, par exemple un bloc `If...Then...Else` dans une boucle `For...Next`.  Dans ce cas, l'instruction de contrôle est *imbriquée* dans une autre instruction de contrôle.  
+---
+# <a name="nested-control-structures-visual-basic"></a>Structures de contrôle imbriquées (Visual Basic)
+Vous pouvez placer des instructions de contrôle dans d’autres instructions de contrôle, par exemple un `If...Then...Else` bloquer dans un `For...Next` boucle. Une instruction de contrôle dans une autre instruction de contrôle est dite *imbriquées*.  
   
-## Niveaux d'imbrication  
- Dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)], les structures de contrôle peuvent être imbriquées selon le nombre de niveaux voulu.  Il est courant de mettre en retrait le corps de chaque structure imbriquée afin d'accroître la lisibilité.  L'éditeur d'environnement de développement intégré le fait automatiquement.  
+## <a name="nesting-levels"></a>Niveaux d’imbrication  
+ Contrôler les structures dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] peuvent être imbriquées sur autant de niveaux que vous le souhaitez. Il est courant d’améliorer la lisibilité des structures imbriquées en retrait le corps de chacun d’eux. L’éditeur d’environnement (IDE) de développement intégré fait automatiquement.  
   
- Dans l'exemple suivant, la procédure `sumRows` additionne les éléments positifs de chaque ligne de la matrice.  
+ Dans l’exemple suivant, la procédure `sumRows` additionne les éléments positifs de chaque ligne de la matrice.  
   
 ```  
 Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)  
@@ -48,15 +64,15 @@ Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)
 End Sub  
 ```  
   
- Dans l'exemple précédent, la première instruction `Next` ferme la boucle `For` interne et la dernière instruction `Next` ferme la boucle `For` externe.  
+ Dans l’exemple précédent, la première `Next` instruction ferme interne `For` boucle et le dernier `Next` instruction ferme externe `For` boucle.  
   
- De même, dans les instructions `If` imbriquées, les instructions `End If` s'appliquent automatiquement à l'instruction `If` précédente la plus proche.  Les boucles `Do` imbriquées fonctionnent de la même manière, dans le sens où l'instruction `Loop` la plus profonde correspond à l'instruction `Do` la plus profonde.  
+ De même, imbriqués dans `If` instructions, le `End If` instructions s’appliquent automatiquement à la précédente la plus proche `If` instruction. Imbriquées `Do` boucles fonctionnent de la même manière, avec le plus interne `Loop` instruction correspondant à celui du `Do` instruction.  
   
 > [!NOTE]
->  Pour de nombreuses structures de contrôle, lorsque vous cliquez sur un mot clé, tous les mots clés de la structure sont mis en surbrillance.  Par exemple, lorsque vous cliquez sur `If` dans une construction `If...Then...Else`, toutes les instances des mots clés `If`, `Then`, `ElseIf`, `Else` et  `End If` de la construction sont mises en surbrillance.  Pour passer au mot clé en surbrillance suivant ou revenir au précédent, appuyez sur CTRL\+MAJ\+FLÈCHE BAS ou CTRL\+MAJ\+FLÈCHE HAUT.  
+>  Pour de nombreuses structures de contrôle, lorsque vous cliquez sur un mot clé, tous les mots clés de la structure sont mis en surbrillance. Par exemple, lorsque vous cliquez sur `If` dans un `If...Then...Else` construction, toutes les instances de `If`, `Then`, `ElseIf`, `Else`, et `End If` dans la construction sont mises en surbrillance. Pour passer au mot clé en surbrillance suivant ou précédent, appuyez sur CTRL + MAJ + BAS ou CTRL + MAJ + flèche haut.  
   
-## Imbrication de genres de structures de contrôle différents  
- Vous pouvez imbriquer un genre de structure de contrôle dans un autre.  L'exemple suivant utilise un bloc `With` à l'intérieur d'une boucle `For Each` et des blocs `If` imbriqués à l'intérieur du bloc `With`.  
+## <a name="nesting-different-kinds-of-control-structures"></a>Imbrication des différents types de Structures de contrôle  
+ Vous pouvez imbriquer un type au sein d’un autre type de contrôle. L’exemple suivant utilise un `With` bloquer à l’intérieur d’un `For Each` une boucle et imbriqués `If` bloque à l’intérieur de la `With` bloc.  
   
 ```  
 For Each ctl As System.Windows.Forms.Control In Me.Controls  
@@ -73,16 +89,16 @@ For Each ctl As System.Windows.Forms.Control In Me.Controls
 Next ctl  
 ```  
   
-## Chevauchement de structures de contrôle  
- Vous ne devez pas faire en sorte que des structures de contrôle se chevauchent.  Cela signifie que toute structure imbriquée doit être entièrement contenue dans la structure la plus profonde suivante.  Par exemple, la disposition suivante n'est pas valide car la boucle `For` se termine avant la fin du bloc `With` interne.  
+## <a name="overlapping-control-structures"></a>Structures de contrôle qui se chevauchent  
+ Structures de contrôle ne peut pas se chevauchent. Cela signifie que toute structure imbriquée doit être entièrement contenue dans la structure la plus profonde suivante. Par exemple, la disposition suivante n’est pas valide, car le `For` boucle se termine avant interne `With` fin du bloc.  
   
- ![Diagramme graphique d'imbrication non valide](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.png "NestExampleInvalid")  
+ ![Diagramme graphique d’imbrication non valide](../../../../visual-basic/programming-guide/language-features/control-flow/media/nestexampleinvalid.gif "NestExampleInvalid")  
 Imbrication non valide de structures For et With  
   
- Le compilateur [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] détecte ces chevauchements de structures de contrôle et signale une erreur de compilation.  
+ Le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur détecte les structures de contrôle qui se chevauchent et signale une erreur de compilation.  
   
-## Voir aussi  
- [Control Flow](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)   
- [Decision Structures](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)   
- [Loop Structures](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
- [Other Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
+## <a name="see-also"></a>Voir aussi  
+ [Flux de contrôle](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)   
+ [Structures de décision](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)   
+ [Structures de boucle](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
+ [Autres structures de contrôle](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)

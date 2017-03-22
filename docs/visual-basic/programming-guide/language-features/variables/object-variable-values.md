@@ -1,51 +1,67 @@
 ---
-title: "Object Variable Values (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "object variables, values"
-  - "values, of object variables"
-  - "data types [Visual Basic], object variable"
-  - "variables [Visual Basic], object"
+title: "Valeurs des variables (Visual Basic) de l’objet | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- object variables, values
+- values, of object variables
+- data types [Visual Basic], object variable
+- variables [Visual Basic], object
 ms.assetid: 31555704-58a3-49f1-9a0a-6421f605664f
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# Object Variable Values (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ff219571de9c76802d3f8d3046cf6b6f9d5be9d5
+ms.lasthandoff: 03/13/2017
 
-Une variable du type de données Object \([Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)\) peut faire référence à des données de n'importe quel type.  La valeur que vous stockez dans une variable `Object` est conservée quelque part en mémoire, alors que la variable contient un pointeur vers les données.  
+---
+# <a name="object-variable-values-visual-basic"></a>Valeurs des variables objets (Visual Basic)
+Une variable de la [Type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md) peuvent faire référence à des données de n’importe quel type. La valeur que vous stockez dans un `Object` variable est conservée quelque part en mémoire, alors que la variable contient un pointeur vers les données.  
   
-## Fonctions classifieur d'objets  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] fournit des fonctions qui retournent des informations sur les éléments auxquels une variable `Object` fait référence, comme illustré dans le tableau suivant.  
+## <a name="object-classifier-functions"></a>Fonctions classifieur d’objets  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]Fournit des fonctions qui retournent des informations sur ce qu’un `Object` variable fait référence, comme indiqué dans le tableau suivant.  
   
-|Fonction|Retourne True si la variable objet fait référence à|  
-|--------------|---------------------------------------------------------|  
-|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|Un tableau de valeurs au lieu d'une valeur unique|  
-|<xref:Microsoft.VisualBasic.Information.IsDate%2A>|Une valeur [Date Data Type](../../../../visual-basic/language-reference/data-types/date-data-type.md) ou une chaîne pouvant être interprétée comme une valeur associée à la date et l'heure|  
-|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|Un objet de type <xref:System.DBNull> qui représente des données manquantes ou inexistantes|  
-|<xref:Microsoft.VisualBasic.Information.IsError%2A>|Un objet d'exception qui dérive de <xref:System.Exception>|  
-|<xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Nothing](../../../../visual-basic/language-reference/nothing.md) signifie qu'il n'y a pas d'objet actuellement assigné à la variable|  
-|<xref:Microsoft.VisualBasic.Information.IsNumeric%2A>|Un nombre ou une chaîne pouvant être interprété comme un nombre|  
-|<xref:Microsoft.VisualBasic.Information.IsReference%2A>|Un type référence \(tel qu'une chaîne, un tableau, un délégué ou un type classe\)|  
+|Fonction|Retourne la valeur True si la variable objet fait référence à|  
+|--------------|---------------------------------------------------|  
+|<xref:Microsoft.VisualBasic.Information.IsArray%2A></xref:Microsoft.VisualBasic.Information.IsArray%2A>|Un tableau de valeurs, plutôt qu’une seule valeur|  
+|<xref:Microsoft.VisualBasic.Information.IsDate%2A></xref:Microsoft.VisualBasic.Information.IsDate%2A>|A [Type de données Date](../../../../visual-basic/language-reference/data-types/date-data-type.md) valeur ou une chaîne qui peut être interprétée comme une valeur de date et d’heure|  
+|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A></xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|Un objet de type <xref:System.DBNull>qui représente des données manquantes ou inexistantes</xref:System.DBNull>|  
+|<xref:Microsoft.VisualBasic.Information.IsError%2A></xref:Microsoft.VisualBasic.Information.IsError%2A>|Un objet d’exception qui dérive de<xref:System.Exception></xref:System.Exception>|  
+|<xref:Microsoft.VisualBasic.Information.IsNothing%2A></xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Rien ne](../../../../visual-basic/language-reference/nothing.md), autrement dit, aucun objet n’est assignée à la variable|  
+|<xref:Microsoft.VisualBasic.Information.IsNumeric%2A></xref:Microsoft.VisualBasic.Information.IsNumeric%2A>|Un nombre ou une chaîne pouvant être interprétée comme un nombre|  
+|<xref:Microsoft.VisualBasic.Information.IsReference%2A></xref:Microsoft.VisualBasic.Information.IsReference%2A>|Un type référence (par exemple, une chaîne, tableau, délégué ou type de classe)|  
   
  Vous pouvez utiliser ces fonctions pour éviter de soumettre une valeur non valide à une opération ou une procédure.  
   
-## TypeOf, opérateur  
- Vous pouvez également utiliser [TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md) pour déterminer si une variable objet fait actuellement référence à un type de données spécifique.  L'expression `TypeOf`...`Is` prend la valeur `True` si le type d'exécution de l'opérande est dérivé du type spécifié ou qu'il implémente celui\-ci.  
+## <a name="typeof-operator"></a>TypeOf, opérateur  
+ Vous pouvez également utiliser le [TypeOf, opérateur](../../../../visual-basic/language-reference/operators/typeof-operator.md) pour déterminer si une variable objet fait actuellement référence à un type de données spécifique. The `TypeOf`... `Is` l’expression `True` si le type au moment de l’exécution de l’opérande est dérivé ou implémente le type spécifié.  
   
- L'exemple suivant utilise `TypeOf` sur les variables objets qui font référence aux types valeur et référence.  
+ L’exemple suivant utilise `TypeOf` sur les variables objets faisant référence aux types valeur et référence.  
   
 ```  
 ' The following statement puts a value type (Integer) in an Object variable.  
@@ -61,7 +77,7 @@ If TypeOf frm Is Label Then Debug.WriteLine("frm is Label")
 If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")  
 ```  
   
- L'exemple précédent écrit les lignes suivantes dans la fenêtre de **débogage** :  
+ L’exemple précédent écrit les lignes suivantes à la **Debug** fenêtre :  
   
  `num is Integer`  
   
@@ -71,17 +87,17 @@ If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")
   
  `frm is Object`  
   
- La variable objet `num` fait référence aux données de type `Integer`, et `frm` fait référence à un objet de la classe <xref:System.Windows.Forms.Form>.  
+ La variable objet `num` fait référence aux données de type `Integer`, et `frm` fait référence à un objet de classe <xref:System.Windows.Forms.Form>.</xref:System.Windows.Forms.Form>  
   
-## Tableaux d'objets  
- Vous pouvez déclarer et utiliser un tableau de variables `Object`.  Cela peut vous être utile lorsque vous devez gérer plusieurs types de données et classes d'objets.  Tous les éléments d'un tableau doivent posséder le même type de données déclaré.  En déclarant le type de données `Object`, vous pouvez stocker des objets et des instances de classes parmi d'autres types de données dans le tableau.  
+## <a name="object-arrays"></a>Tableaux d’objets  
+ Vous pouvez déclarer et utiliser un tableau de `Object` variables. Cela est utile lorsque vous avez besoin gérer une variété de types de données et des classes d’objet. Tous les éléments dans le tableau doivent avoir les mêmes données déclarées de type. Déclaration de type de données `Object` vous permet de stocker des objets et instances de classes parmi d’autres types de données dans le tableau.  
   
-## Voir aussi  
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
- [Object Variable Declaration](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)   
- [Object Variable Assignment](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)   
- [How to: Refer to the Current Instance of an Object](../../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)   
- [How to: Determine What Type an Object Variable Refers To](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-what-type-an-object-variable-refers-to.md)   
- [How to: Determine Whether Two Objects Are Related](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)   
- [How to: Determine Whether Two Objects Are Identical](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
+ [Déclaration des variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)   
+ [Assignation des variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)   
+ [Comment : faire référence à l’Instance actuelle d’un objet](../../../../visual-basic/programming-guide/language-features/variables/how-to-refer-to-the-current-instance-of-an-object.md)   
+ [Comment : déterminer le Type désigné par une Variable objet](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-what-type-an-object-variable-refers-to.md)   
+ [Comment : déterminer si deux objets sont liés.](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)   
+ [Comment : déterminer si deux objets sont identiques](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)   
  [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)

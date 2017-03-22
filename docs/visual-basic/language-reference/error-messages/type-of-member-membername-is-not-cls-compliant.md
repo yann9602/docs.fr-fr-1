@@ -1,54 +1,70 @@
 ---
-title: "Type of member &#39;&lt;membername&gt;&#39; is not CLS-compliant | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc40025"
-  - "vbc40025"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC40025"
+title: "Type de membre &quot;&lt;membername&gt;&quot; n’est pas conforme à CLS | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc40025
+- vbc40025
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Type of member &#39;&lt;membername&gt;&#39; is not CLS-compliant
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3ea35f54cf8f0fb5a11148b8017456feb8d3524a
+ms.lasthandoff: 03/13/2017
 
-Le type de données spécifié pour ce membre ne fait pas partie du [Indépendance du langage et composants indépendants du langage](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\).  Cette erreur ne provient pas de votre composant, parce que le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] et [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] prennent en charge ce type de données.  Toutefois, il est possible qu'un autre composant écrit dans le code strictement conforme CLS ne prenne pas en charge ce type de données.  Ce composant peut ne pas interagir avec succès avec votre composant.  
+---
+# <a name="type-of-member-39ltmembernamegt39-is-not-cls-compliant"></a>Type de membre '&lt;membername&gt;' n’est pas conforme CLS
+Type de données spécifié pour ce membre n’est pas inclus dans le [indépendance du langage et composants indépendants du langage](https://msdn.microsoft.com/library/12a7a7h3) (CLS). Ce n’est pas une erreur dans votre composant, parce que le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] et [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] prennent en charge ce type de données. Toutefois, un autre composant écrit dans le code strictement conforme CLS ne prenne pas en charge ce type de données. Ce composant n’est peut-être pas en mesure d’interagir correctement avec votre composant.  
   
- Les types de données [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] suivants ne sont pas conformes CLS :  
+ Les types de données [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] suivants ne sont pas conformes CLS :  
   
--   [SByte Data Type](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+-   [SByte (type de données)](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [UInteger Data Type](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+-   [UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [ULong Data Type](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+-   [ULong (type de données)](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [UShort Data Type](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+-   [UShort (type de données)](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
- Par défaut, ce message est un avertissement.  Pour plus d'informations sur le masquage des avertissements ou le traitement des avertissements en tant qu'erreurs, consultez [Configuration d'avertissements en Visual Basic](/visual-studio/ide/configuring-warnings-in-visual-basic).  
+ Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements comme des erreurs, consultez la page [configuration d’avertissements en Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
- **ID d'erreur :** BC40025  
+ **ID d’erreur :** BC40025  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Si votre composant sert d'interface uniquement avec d'autres composants du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)], ou ne sert pas d'interface avec d'autres composants, aucune modification n'est nécessaire.  
+-   Si votre composant sert d’interface uniquement avec d’autres [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] composants ou n’envoie pas d’interface avec d’autres composants, vous ne devez pas modifier quoi que ce soit.  
   
--   Si vous utilisez un composant non écrit pour le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)], vous pouvez déterminer, par réflexion ou à partir de la documentation, s'il prend en charge ce type de données.  Si tel est le cas, aucune modification n'est nécessaire.  
+-   Si vous utilisez un composant non écrit pour le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)], vous pouvez déterminer, par réflexion ou à partir de la documentation, s’il prend en charge ce type de données. Si c’est le cas, il est inutile de modifier quoi que ce soit.  
   
--   Si vous utilisez un composant qui ne prend pas en charge ce type de données, vous devez le remplacer par le type conforme CLS le plus proche.  Par exemple, vous pouvez peut\-être utiliser `Integer` à la place d'`UInteger` si vous n'avez pas besoin de la plage de valeurs qui est supérieure à 2 147 483 647.  Si vous avez besoin de la plage étendue, vous pouvez remplacer `UInteger` par `Long`.  
+-   Si vous utilisez un composant qui ne prend pas en charge ce type de données, vous devez le remplacer par le type conforme CLS le plus proche. Par exemple, vous pouvez utiliser `UInteger` au lieu de `Integer` si vous n’avez pas besoin de la plage de valeurs située au-dessus de 2 147 483 647. Si vous avez besoin de la plage étendue, vous pouvez remplacer `UInteger` par `Long`.  
   
--   Si vous utilisez des objets Automation ou COM, gardez à l'esprit que certains types ont des largeurs des données différentes de celles du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)].  Par exemple, `uint` correspond souvent à 16 bits dans d'autres environnements.  Si vous passez un argument de 16 bits à un tel composant, déclarez\-le comme type de données `UShort` et non comme `UInteger` dans votre code [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] managé.  
+-   Si vous interfacez avec des objets Automation ou COM, n’oubliez pas que certains types ont des largeurs de données différentes de celles du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]. Par exemple, `uint` correspond souvent à 16 bits dans d’autres environnements. Si vous passez un argument de 16 bits à un tel composant, déclarez-le en tant que `UShort` au lieu de `UInteger` dans votre [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] code.  
   
-## Voir aussi  
- [Réflexion](../Topic/Reflection%20in%20the%20.NET%20Framework.md)   
- [\<PAVE OVER\> Writing CLS\-Compliant Code](http://msdn.microsoft.com/fr-fr/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+## <a name="see-also"></a>Voir aussi  
+ [Réflexion](http://msdn.microsoft.com/library/d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775)   
+ [\<PAVE sur > écrire du Code conforme CLS](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)

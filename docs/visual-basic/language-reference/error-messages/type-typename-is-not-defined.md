@@ -1,48 +1,64 @@
 ---
-title: "Type &#39;&lt;typename&gt;&#39; is not defined | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30002"
-  - "bc30002"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30002"
+title: "Type &quot;&lt;typename&gt;&quot; n’est pas défini | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30002
+- bc30002
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
 caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
----
-# Type &#39;&lt;typename&gt;&#39; is not defined
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 09aa7c535fd5e17ddcd0e743fb5ec17ebadd4f7d
+ms.lasthandoff: 03/13/2017
 
-L'instruction a fait référence à un type qui n'a pas été défini.  Vous pouvez définir un type dans une instruction de déclaration, telle que `Enum`, `Structure`, `Class` ou `Interface`.  
+---
+# <a name="type-39lttypenamegt39-is-not-defined"></a>Type '&lt;typename&gt;' n’est pas défini
+L’instruction a fait référence à un type qui n’a pas été défini. Vous pouvez définir un type dans une instruction de déclaration, tel que `Enum`, `Structure`, `Class`, ou `Interface`.  
   
- **ID d'erreur :** BC30002  
+ **ID d’erreur :** BC30002  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Vérifiez que la définition de type et sa référence utilisent toutes les deux la même orthographe.  
+-   Vérifiez que la définition de type et sa référence utilisent tous deux la même orthographe.  
   
--   Vérifiez que la définition de type est accessible à la référence.  Par exemple, si le type se trouve dans un autre module et a été déclaré `Private`, déplacez la définition de type vers le module de référence ou déclarez\-le `Public`.  
+-   Assurez-vous que la définition de type est accessible à la référence. Par exemple, si le type est dans un autre module et a été déclaré `Private`, déplacez la définition de type vers le module de référence ou déclarez-le `Public`.  
   
--   Vérifiez que l'espace de noms du type n'est pas redéfini au sein de votre projet.  Si tel est le cas, utilisez le mot clé `Global` pour qualifier intégralement le nom du type.  Par exemple, si un projet définit un espace de noms nommé `System`, il n'est pas possible d'accéder au type <xref:System.Object?displayProperty=fullName> à moins que celui\-ci ne soit entièrement qualifié avec le mot clé `Global` : `Global.System.Object`.  
+-   Assurez-vous que l’espace de noms du type n’est pas redéfinie dans votre projet. Dans le cas, utilisez le `Global` (mot clé) pour qualifier complètement le nom de type. Par exemple, si un projet définit un espace de noms `System`, le <xref:System.Object?displayProperty=fullName>type n’est pas accessible sauf s’il est qualifié avec le `Global` mot clé : `Global.System.Object`.</xref:System.Object?displayProperty=fullName>  
   
--   Si le type est défini, mais que la bibliothèque d'objets ou de types dans laquelle il est défini n'est pas inscrite en [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)], cliquez sur **Ajouter une référence** dans le menu **Projet**, puis sélectionnez la bibliothèque d'objets ou de types appropriée.  
+-   Si le type est défini, mais la bibliothèque d’objets ou la bibliothèque de type dans lequel il est défini n’est pas enregistré dans [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], cliquez sur **ajouter une référence** sur la **projet** menu, puis sélectionnez la bibliothèque d’objets appropriée ou la bibliothèque de types.  
   
--   Vérifiez que le type se trouve dans un assembly qui fait partie du profil .NET Framework ciblé.  Pour plus d'informations, consultez [Troubleshooting .NET Framework Targeting Errors](/visual-studio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
+-   Assurez-vous que le type est dans un assembly qui fait partie du profil .NET Framework ciblé. Pour plus d’informations, consultez [erreurs de ciblage de .NET Framework dépannage](https://docs.microsoft.com/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)   
- [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)   
- [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)   
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Gestion des références dans un projet](/visual-studio/ide/managing-references-in-a-project)
+ [Enum, instruction](../../../visual-basic/language-reference/statements/enum-statement.md)   
+ [Structure (instruction)](../../../visual-basic/language-reference/statements/structure-statement.md)   
+ [Class, instruction](../../../visual-basic/language-reference/statements/class-statement.md)   
+ [Interface, instruction](../../../visual-basic/language-reference/statements/interface-statement.md)   
+ [Gestion des références dans un projet](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project)

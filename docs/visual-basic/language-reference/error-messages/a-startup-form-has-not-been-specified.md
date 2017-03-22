@@ -1,38 +1,54 @@
 ---
-title: "A startup form has not been specified | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrAppModel_NoStartupForm"
-dev_langs: 
-  - "VB"
+title: "Un formulaire de démarrage n’a pas été spécifié. | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbrAppModel_NoStartupForm
+dev_langs:
+- VB
 ms.assetid: 8e04af49-4bef-49de-a7ec-e407e9873da7
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# A startup form has not been specified
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 598bbdb7e2269f568a0dcf120cb2e8c5c8bc6812
+ms.lasthandoff: 03/13/2017
 
-L'application utilise la classe <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>, mais ne spécifie pas le formulaire de démarrage.  
+---
+# <a name="a-startup-form-has-not-been-specified"></a>Un formulaire de démarrage n'a pas été spécifié
+L’application utilise le <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>de classe, mais ne spécifie pas le formulaire de démarrage.</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
   
- Cela peut se produire si la case à cocher **Activer l'infrastructure de l'application** est activée dans le concepteur de projets, mais que le **Formulaire de démarrage** n'a pas été spécifié.  Pour plus d'informations, consultez [Page Application, Concepteur de projets \(Visual Basic\)](/visual-studio/ide/reference/application-page-project-designer-visual-basic).  
+ Cela peut se produire si le **activer l’infrastructure d’application** case à cocher est activée dans le Concepteur de projets, mais les **formulaire de démarrage** n’est pas spécifié. Pour plus d’informations, consultez [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Spécifiez un objet de démarrage pour l'application.  
+1.  Spécifiez un objet de démarrage de l’application.  
   
-     Pour plus d'informations, consultez [Page Application, Concepteur de projets \(Visual Basic\)](/visual-studio/ide/reference/application-page-project-designer-visual-basic).  
+     Pour plus d’informations, consultez [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
-2.  Substituez la méthode <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> pour affecter le formulaire de démarrage à la propriété <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>.  
+2.  Remplacer la <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>pour définir le <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>propriété à l’écran de démarrage.</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> </xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>  
   
-## Voir aussi  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>   
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>   
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>   
- [Overview of the Visual Basic Application Model](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>   
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>   
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>   
+ [Vue d’ensemble du modèle d’application Visual Basic](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)

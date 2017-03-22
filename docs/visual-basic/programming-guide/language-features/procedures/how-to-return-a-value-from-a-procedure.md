@@ -1,65 +1,81 @@
 ---
-title: "How to: Return a Value from a Procedure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, procedures"
-  - "procedures, returning from"
-  - "procedures, returning a value"
+title: "Comment : retourner une valeur d’une procédure (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic code, procedures
+- procedures, returning from
+- procedures, returning a value
 ms.assetid: 4bcc4724-2b4e-4df8-9b4b-16054607f87d
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# How to: Return a Value from a Procedure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 98f0fb0740a021a16e87454bfaebbfad7858477c
+ms.lasthandoff: 03/13/2017
 
-Une procédure `Function` retourne une valeur au code appelant en exécutant une instruction  `Return` ou en rencontrant une instruction `Exit Function` ou `End Function`.  
+---
+# <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a>Comment : retourner une valeur d'une procédure (Visual Basic)
+A `Function` procédure retourne une valeur au code appelant soit en exécutant une `Return` instruction ou en utilisant un `Exit Function` ou `End Function` instruction.  
   
-### Pour retourner une valeur à l'aide de l'instruction Return  
+### <a name="to-return-a-value-using-the-return-statement"></a>Pour retourner une valeur à l’aide de l’instruction Return  
   
-1.  Insérez une instruction `Return` au point où la tâche de la procédure est effectuée.  
+1.  Placer un `Return` instruction au point où la tâche de la procédure est terminée.  
   
-2.  Faites suivre le mot clé `Return` d'une expression qui cède la valeur que vous souhaitez retourner au code appelant.  
+2.  Suivez le `Return` mot clé avec une expression qui retourne la valeur que vous souhaitez retourner au code appelant.  
   
-3.  Une même procédure peut contenir plusieurs instructions `Return`.  
+3.  Vous pouvez avoir plusieurs `Return` instruction dans la même procédure.  
   
-     La procédure `Function` suivante calcule le côté le plus long, ou hypoténuse, d'un triangle rectangle et le retourne au code appelant.  
+     Les éléments suivants `Function` procédure calcule le côté le plus long, ou hypoténuse, d’un triangle rectangle et le retourne au code appelant.  
   
-     [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_1.vb)]  
+     [!code-vb[VbVbcnProcedures n °&1;](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_1.vb)]  
   
-     L'exemple suivant présente un appel typique à `hypotenuse` qui stocke la valeur retournée.  
+     L’exemple suivant montre un appel typique à `hypotenuse`, qui stocke la valeur retournée.  
   
-     [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_2.vb)]  
+     [!code-vb[VbVbcnProcedures n °&6;](./codesnippet/VisualBasic/how-to-return-a-value-from-a-procedure_2.vb)]  
   
-### Pour retourner une valeur à l'aide de la fonction Exit ou End  
+### <a name="to-return-a-value-using-exit-function-or-end-function"></a>Pour retourner une valeur à l’aide de la fonction de sortie ou fin  
   
-1.  Assignez une valeur au nom de la procédure à au moins un endroit dans la procédure `Function`.  
+1.  Au moins un endroit dans le `Function` procédure, assignez une valeur au nom de la procédure.  
   
-2.  Lorsque vous exécutez une instruction `Exit Function` ou `End Function`, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] retourne la valeur la plus récemment assignée au nom de la procédure.  
+2.  Lorsque vous exécutez un `Exit Function` ou `End Function` instruction, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] renvoie la valeur la plus récemment assignée au nom de la procédure.  
   
-3.  Une même procédure peut contenir plusieurs instructions `Exit Function` et vous pouvez mixer les instructions `Return` et `Exit Function` dans la même procédure.  
+3.  Vous pouvez avoir plusieurs `Exit Function` instruction dans la même procédure et vous pouvez mélanger `Return` et `Exit Function` instructions dans la même procédure.  
   
-4.  Une procédure `Function` peut contenir uniquement une instruction `End Function`.  
+4.  Vous pouvez avoir un seul `End Function` instruction dans un `Function` procédure.  
   
-     Pour plus d'informations, consultez « Valeur de retour » dans [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+     Pour plus d’informations et un exemple, consultez « Valeur de retour » dans [Function, instruction](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
-## Voir aussi  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Procédures de propriété](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)   
- [Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md)   
- [How to: Create a Procedure that Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md)   
- [How to: Call a Procedure That Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a>Voir aussi  
+ [Procédures](./index.md)   
+ [Procédures Sub](./sub-procedures.md)   
+ [Procédures de propriété](./property-procedures.md)   
+ [Procédures d’opérateur](./operator-procedures.md)   
+ [Arguments et paramètres de procédure](./procedure-parameters-and-arguments.md)   
+ [Function (instruction)](../../../../visual-basic/language-reference/statements/function-statement.md)   
+ [Return (instruction)](../../../../visual-basic/language-reference/statements/return-statement.md)   
+ [Comment : créer une procédure qui retourne une valeur](./how-to-create-a-procedure-that-returns-a-value.md)   
+ [Guide pratique : appeler une procédure qui retourne une valeur](./how-to-call-a-procedure-that-returns-a-value.md)

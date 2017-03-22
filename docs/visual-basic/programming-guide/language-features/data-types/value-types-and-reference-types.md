@@ -1,36 +1,52 @@
 ---
-title: "Value Types and Reference Types | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "reference data types"
-  - "reference types"
-  - "value types"
-  - "value data types"
-  - "types [Visual Basic]"
-  - "data types [Visual Basic], value types"
-  - "data types [Visual Basic], reference types"
+title: "Types valeur et Types référence | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- reference data types
+- reference types
+- value types
+- value data types
+- types [Visual Basic]
+- data types [Visual Basic], value types
+- data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# Value Types and Reference Types
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: de8016b4b2a5550b32373a41c89a484fa996c596
+ms.lasthandoff: 03/13/2017
 
-En Visual Basic, les types de données sont implémentés en fonction de leur classification.  Les types de données [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] peuvent être classés selon qu'une variable d'un certain type stocke ses propres données ou un pointeur vers les données.  Si elle enregistre ses propres données, il s'agit d'un *type valeur* ; si elle contient un pointeur vers les données stockées à un autre endroit de la mémoire, il s'agit d'un *type référence*.  
+---
+# <a name="value-types-and-reference-types"></a>Types valeur et types référence
+Dans Visual Basic, les types de données sont implémentés en fonction de leur classification. Le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] des types de données peuvent être classées en fonction du fait qu’une variable d’un type particulier enregistre ses propres données ou un pointeur vers les données. Si elle enregistre ses propres données, il est un *type valeur*; si elle contient un pointeur vers les données ailleurs dans la mémoire, il est un *type référence*.  
   
-## Types valeur  
- Un type de données est un *type valeur* s'il contient des données dans l'espace qui lui est alloué en mémoire.  Les types valeur incluent les éléments suivants :  
+## <a name="value-types"></a>Types valeur  
+ Un type de données est un *type valeur* s’il conserve des données au sein de sa propre allocation de mémoire. Les types valeur sont les suivantes :  
   
 -   Tous les types de données numériques  
   
@@ -38,33 +54,33 @@ En Visual Basic, les types de données sont implémentés en fonction de leur cl
   
 -   Toutes les structures, même si leurs membres sont des types référence  
   
--   Les énumérations, dans la mesure où leur type sous\-jacent est toujours `SByte`, `Short`, `Integer`, `Long`, `Byte`, `UShort`, `UInteger` ou `ULong`.  
+-   Énumérations, car leur type sous-jacent est toujours `SByte`, `Short`, `Integer`, `Long`, `Byte`, `UShort`, `UInteger`, ou`ULong`  
   
- chaque structure est un type valeur, même si elle contient des membres de type référence.  Pour cette raison, les types valeur comme `Char` et l' `Integer` sont implémentés par les structures .NET Framework.  
+ Chaque structure est un type valeur, même s’il contient des membres de type référence. Pour cette raison, types valeur tels que `Char` et `Integer` sont implémentés par les structures de .NET Framework.  
   
- Vous pouvez déclarer un type valeur en utilisant le mot clé réservé \(par exemple, `Decimal`\).  Vous pouvez également utiliser le mot clé `New` pour initialiser un type valeur.  Cela s'avère particulièrement utile si le type possède un constructeur qui accepte des paramètres.  Le constructeur <xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29> en constitue un exemple ; il génère une nouvelle valeur `Decimal` à partir des parties fournies.  
+ Vous pouvez déclarer un type valeur à l’aide du mot clé réservé, par exemple, `Decimal`. Vous pouvez également utiliser le `New` (mot clé) pour initialiser un type valeur. Cela est particulièrement utile si le type possède un constructeur qui accepte des paramètres. Est un exemple du <xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29>constructeur, ce qui génère un nouveau `Decimal` valeur System.Byte.</xref:System.Decimal.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Byte%29>  
   
-## Types référence  
- Un *type référence* contient un pointeur vers un autre emplacement en mémoire contenant les données.  Les types référence incluent les éléments suivants :  
+## <a name="reference-types"></a>Types référence  
+ A *type référence* contient un pointeur vers un autre emplacement de mémoire qui contient les données. Types de référence sont les suivants :  
   
 -   `String`  
   
 -   Tous les tableaux, même si leurs éléments sont des types valeur  
   
--   Les types classe, tels que <xref:System.Windows.Forms.Form>.  
+-   Types classe, tels que<xref:System.Windows.Forms.Form></xref:System.Windows.Forms.Form>  
   
 -   Délégués  
   
- Une classe est un *type référence*.  C'est pour cette raison que les types référence comme `Object` et `String` sont pris en charge par les classes [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)].  Notez que chaque tableau est un type référence, même si ses membres sont des types valeur.  
+ Une classe est un *type référence*. Pour cette raison, les types référence comme `Object` et `String` sont pris en charge par [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] classes. Notez que chaque tableau est un type référence, même si ses membres sont des types valeur.  
   
- Étant donné que chaque type référence représente une classe sous\-jacente.NET Framework, vous devez utiliser le mot clé de [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) lorsque vous l'initialisez.  L'instruction suivante initialise un tableau.  
+ Étant donné que chaque type référence représente une classe .NET Framework sous-jacent, vous devez utiliser le [nouveau opérateur](../../../../visual-basic/language-reference/operators/new-operator.md) mot clé lorsque vous l’initialisez. L’instruction suivante initialise un tableau.  
   
 ```  
 Dim totals() As Single = New Single(8) {}  
 ```  
   
-## Éléments qui ne sont pas des types  
- Les éléments de programmation suivants ne sont pas considérés comme des types car vous ne pouvez les spécifier comme type de données pour un élément déclaré :  
+## <a name="elements-that-are-not-types"></a>Éléments qui ne sont pas des Types  
+ Les éléments de programmation suivants ne constituent pas des types, car vous ne pouvez pas spécifier un d’eux en tant que type de données pour un élément déclaré :  
   
 -   Espaces de noms  
   
@@ -74,17 +90,17 @@ Dim totals() As Single = New Single(8) {}
   
 -   Propriétés et procédures  
   
--   Variables, constantes et champs  
+-   Variables, des constantes et des champs  
   
-## Utilisation du type de données Object  
- Vous pouvez assigner au choix un type référence ou un type valeur à une variable de type de données `Object`.  Une variable `Object` contient toujours un pointeur vers les données, jamais les données elles\-mêmes.  Toutefois, si vous assignez un type valeur à une variable `Object`, elle se comporte comme si elle contenait ses propres données.  Pour plus d'informations, consultez [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md).  
+## <a name="working-with-the-object-data-type"></a>Utilisation du Type de données objet  
+ Vous pouvez affecter un type référence ou un type valeur à une variable de la `Object` type de données. Une `Object` variable contient toujours un pointeur vers les données, jamais les données elles-mêmes. Toutefois, si vous assignez un type valeur à une `Object` variable, il se comporte comme si elle contenait ses propres données. Pour plus d’informations, consultez [Type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md).  
   
- Vous pouvez déterminer si une variable d' `Object` fonctionne comme un type référence ou un type valeur en la passant à la méthode d' <xref:Microsoft.VisualBasic.Information.IsReference%2A> dans la classe d' <xref:Microsoft.VisualBasic.Information> de l'espace de noms d' <xref:Microsoft.VisualBasic?displayProperty=fullName> .  <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName> retourne la valeur `True` si le contenu de la variable `Object` représente un type référence.  
+ Vous pouvez déterminer si une `Object` variable agit comme un type référence ou un type valeur en la passant à la <xref:Microsoft.VisualBasic.Information.IsReference%2A>méthode dans la <xref:Microsoft.VisualBasic.Information>classe de la <xref:Microsoft.VisualBasic?displayProperty=fullName>espace de noms.</xref:Microsoft.VisualBasic?displayProperty=fullName> </xref:Microsoft.VisualBasic.Information> </xref:Microsoft.VisualBasic.Information.IsReference%2A> <xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName>Retourne `True` si le contenu de la `Object` variable représente un type référence.</xref:Microsoft.VisualBasic.Information.IsReference%2A?displayProperty=fullName>  
   
-## Voir aussi  
- [Nullable Value Types](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [Efficient Use of Data Types](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Types valeur Nullable](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
+ [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
+ [Structure (instruction)](../../../../visual-basic/language-reference/statements/structure-statement.md)   
+ [Utilisation efficace des Types de données](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
+ [Type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
  [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)

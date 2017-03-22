@@ -1,49 +1,65 @@
 ---
-title: "COM Interoperability in .NET Framework Applications (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "interoperability, COM and .NET framework objects"
-  - "COM interop"
-  - "shared components"
+title: "Interopérabilité COM dans les Applications .NET Framework (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- interoperability, COM and .NET framework objects
+- COM interop
+- shared components
 ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# COM Interoperability in .NET Framework Applications (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 308ee8e495efa9368ef55d781f6b6dc314db51ac
+ms.lasthandoff: 03/13/2017
 
-Avant d'utiliser des objets  COM et des objets .NET Framework dans la même application, vous devez résoudre les différences entre ces objets concernant la manière dont ils existent dans la mémoire.  Un objet .NET Framework se trouve dans la mémoire managée \(la mémoire contrôlée par le Common Language Runtime\) et peut être déplacé par le runtime si nécessaire.  Un objet COM se trouve dans la mémoire non managée et n'est pas censé se déplacer vers un autre emplacement dans la mémoire.  [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)] et le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] fournissent des outils pour contrôler l'interaction de ces composants managés et non managés.  Pour plus d'informations sur le code managé, consultez [Common Language Runtime](../Topic/Common%20Language%20Runtime%20\(CLR\).md).  
+---
+# <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interopérabilité COM dans les applications .NET Framework (Visual Basic)
+Lorsque vous souhaitez utiliser les objets COM et .NET Framework dans la même application, vous devez résoudre les différences dans la façon dont les objets existent dans la mémoire. Un objet .NET Framework se trouve dans la mémoire managée, la mémoire contrôlée par le common language runtime et peut être déplacé par le runtime si nécessaire. Un objet COM se trouve dans la mémoire non managée et n’est pas prévu de passer à un autre emplacement de mémoire. [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]et [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] fournissent des outils pour contrôler l’interaction de ces composants managés et. Pour plus d’informations sur le code managé, consultez [Common Language Runtime](http://msdn.microsoft.com/library/059a624e-f7db-4134-ba9f-08b676050482).  
   
- Outre les objets COM dans les applications .NET, vous pouvez utiliser [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] pour développer des objets accessibles à partir du code non managé via COM.  
+ Outre l’utilisation des objets COM dans les applications .NET, vous pouvez également utiliser [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour développer des objets accessibles à partir de code non managé via COM.  
   
- Les liens dans cette page fournissent des détails sur les interactions entre les objets COM et les objets .NET Framework.  
+ Les liens de cette page fournissent des détails sur les interactions entre les objets COM et .NET Framework.  
   
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)  
- Propose des liens vers des rubriques traitant de l'interopérabilité COM en Visual Basic, y compris les objets COM, les contrôles ActiveX, les DLL Win32, les objets managés et l'héritage d'objets COM.  
+ Fournit des liens vers des rubriques traitant de l’interopérabilité COM dans Visual Basic, y compris COM objets ActiveX contrôles, les DLL Win32, les objets managés et l’héritage d’objets COM.  
   
- [COM Interop Wrapper Error](/visual-cpp/misc/com-interop-wrapper-error)  
- Décrit les conséquences et les options si le système de projet ne peut pas créer un wrapper d'interopérabilité COM pour un composant particulier.  
+ [Erreur de Wrapper COM Interop](https://docs.microsoft.com/cpp/misc/com-interop-wrapper-error)  
+ Décrit les conséquences et les options si le système de projet ne peut pas créer un wrapper d’interopérabilité COM pour un composant particulier.  
   
- [Interoperating with Unmanaged Code](../Topic/Interoperating%20with%20Unmanaged%20Code.md)  
- Décrit brièvement certains problèmes d'interaction entre le code managé et le code non managé et propose des liens pour une étude plus approfondie.  
+ [Interopération avec du Code non managé](https://msdn.microsoft.com/library/sd10k43k)  
+ Certains problèmes d’interaction entre du code managé et décrit brièvement et fournit des liens pour approfondir ce sujet.  
   
- [COM Wrappers](../Topic/COM%20Wrappers.md)  
- Présente les wrappers RCW \(Runtime Callable Wrapper\), qui permettent au code managé d'appeler les méthodes COM, ainsi que les wrappers CCW \(COM Callable Wrapper\), qui permettent aux clients COM d'appeler les méthodes d'objets .NET.  
+ [Wrappers COM](http://msdn.microsoft.com/library/e56c485b-6b67-4345-8e66-fd21835a6092)  
+ Traite des wrappers RCW, qui permettent au code managé d’appeler les méthodes COM, et par COM, qui permettent aux clients COM d’appeler les méthodes d’objets .NET.  
   
- [Advanced COM Interoperability](http://msdn.microsoft.com/fr-fr/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
- Propose des liens vers des rubriques traitant de l'interopérabilité COM par rapport aux wrappers, aux exceptions, à l'héritage, au threading, aux événements, aux conversions et au marshaling.  
+ [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ Fournit des liens vers des rubriques traitant de l’interopérabilité COM en ce qui concerne les wrappers, exceptions, l’héritage, threads, événements, les conversions et marshaling.  
   
- [Tlbimp.exe \(Type Library Importer\)](../Topic/Tlbimp.exe%20\(Type%20Library%20Importer\).md)  
- Présente l'outil que vous pouvez utiliser pour convertir les définitions de type trouvées dans une bibliothèque de types COM en définitions équivalentes dans un assembly Common Language Runtime.
+ [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ Décrit l’outil que vous pouvez utiliser pour convertir les définitions de type trouvées dans une bibliothèque de types COM en définitions équivalentes dans un assembly du common language runtime.

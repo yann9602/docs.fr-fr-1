@@ -1,37 +1,53 @@
 ---
-title: "Troubleshooting Arrays (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "troubleshooting arrays"
-  - "arrays [Visual Basic], initialization errors"
-  - "troubleshooting Visual Basic, arrays"
-  - "arrays [Visual Basic], compilation errors"
-  - "arrays [Visual Basic], declaration errors"
-  - "arrays [Visual Basic], troubleshooting"
+title: "Dépannage des tableaux (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- troubleshooting arrays
+- arrays [Visual Basic], initialization errors
+- troubleshooting Visual Basic, arrays
+- arrays [Visual Basic], compilation errors
+- arrays [Visual Basic], declaration errors
+- arrays [Visual Basic], troubleshooting
 ms.assetid: f4e971c7-c0a4-4ed7-a77a-8d71039f266f
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# Troubleshooting Arrays (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: db38c0c2a4f8b74a6b862f86f426b4d8837f4424
+ms.lasthandoff: 03/13/2017
 
-Cette page répertorie quelques problèmes courants qui peuvent se produire lors de l'utilisation des tableaux.  
+---
+# <a name="troubleshooting-arrays-visual-basic"></a>Dépannage des tableaux (Visual Basic)
+Cette page répertorie quelques problèmes courants qui peuvent se produire lorsque vous travaillez avec des tableaux.  
   
-## Déclaration d'erreurs de compilation et initialisation d'un tableau  
- Les erreurs de compilation peuvent être dues à une mauvaise compréhension des règles de déclaration, de création et d'initialisation des tableaux.  Les causes d'erreurs les plus courantes sont les suivantes :  
+## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Erreurs de compilation déclarer et initialiser un tableau  
+ Erreurs de compilation peuvent survenir à une mauvaise compréhension des règles de déclaration, la création et initialisation des tableaux. Les causes les plus courantes d’erreurs sont les suivants :  
   
--   fournir une clause [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) après avoir spécifié les longueurs de dimension dans la déclaration des variables du tableau.  Les lignes de code suivantes affichent des déclarations non valides de ce type.  
+-   En fournissant un [nouveau opérateur](../../../../visual-basic/language-reference/operators/new-operator.md) clause après avoir spécifié les longueurs de dimensions dans la déclaration de variable tableau. Les lignes de code suivantes affichent des déclarations non valides de ce type.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -39,15 +55,15 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
--   spécifier des longueurs de dimension supérieures au tableau de niveau supérieur d'un tableau en escalier.  La ligne de code suivante affiche une déclaration non valide de ce type ;  
+-   Spécification des longueurs de dimensions plus longtemps que le tableau de niveau supérieur d’un tableau en escalier. La ligne de code suivant montre une déclaration non valide de ce type.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
--   omettre le mot clé `New` lors de la spécification des valeurs d'éléments.  La ligne de code suivante affiche une déclaration non valide de ce type ;  
+-   En omettant le `New` mot clé lorsque vous spécifiez les valeurs d’élément. La ligne de code suivant montre une déclaration non valide de ce type.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
--   fournir une clause `New` sans accolades \(`{}`\).  Les lignes de code suivantes affichent des déclarations non valides de ce type.  
+-   En fournissant un `New` clause sans accolades (`{}`). Les lignes de code suivantes affichent des déclarations non valides de ce type.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
@@ -57,15 +73,15 @@ Cette page répertorie quelques problèmes courants qui peuvent se produire lors
   
      `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
-## Accès à un tableau hors limites  
- Le processus d'initialisation d'un tableau assigne une limite supérieure et une limite inférieure à chaque dimension.  Chaque accès à un élément du tableau doit spécifier un index ou un indice valide pour chaque dimension.  Si un index est en dessous de sa limite inférieure ou au\-dessus de sa limite supérieure, une d'exception <xref:System.IndexOutOfRangeException> se produit.  Le compilateur ne peut pas détecter une telle erreur, donc une erreur se produit au moment de l'exécution.  
+## <a name="accessing-an-array-out-of-bounds"></a>Accès à un tableau hors limites  
+ Le processus d’initialisation d’un tableau assigne une limite supérieure et inférieure à chaque dimension. Chaque accès à un élément du tableau doit spécifier un index valide ou un indice, pour chaque dimension. Si un index est inférieure à sa limite inférieure ou supérieure sa limite supérieure, une <xref:System.IndexOutOfRangeException>résultats de l’exception.</xref:System.IndexOutOfRangeException> Le compilateur ne peut pas détecter une telle erreur, donc une erreur se produit au moment de l’exécution.  
   
-### Détermination des limites  
- Si un autre composant passe un tableau à votre code, par exemple en tant qu'argument de procédure, vous ne connaissez pas la taille de ce tableau ou les longueurs de ses dimensions.  Vous devez toujours déterminer la limite supérieure de chaque dimension d'un tableau avant d'essayer d'accéder aux éléments.  Si le tableau a été créé par des moyens autres qu'une clause `New` de [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)], la limite inférieure peut avoir une valeur différente de 0 et il est plus sûr de déterminer également cette limite inférieure.  
+### <a name="determining-bounds"></a>Détermination des limites  
+ Si un autre composant passe un tableau à votre code, par exemple en tant qu’argument de procédure, vous ne connaissez pas la taille de ce tableau ni les longueurs de ses dimensions. Vous devez toujours déterminer la limite supérieure de chaque dimension d’un tableau avant de tenter d’accéder aux éléments. Si le tableau a été créé par un moyen autre qu’un [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] `New` clause, la limite inférieure peut avoir une valeur différente de 0, et il est plus sûre pour déterminer cette limite inférieure.  
   
-### Spécification de la dimension  
- Lorsque vous déterminez les limites d'un tableau multidimensionnel, veillez à bien spécifier la dimension.  Les paramètres `dimension` des méthodes <xref:System.Array.GetLowerBound%2A> et <xref:System.Array.GetUpperBound%2A> sont de base 0, tandis que les paramètres `Rank` des fonctions <xref:Microsoft.VisualBasic.Information.LBound%2A> et <xref:Microsoft.VisualBasic.Information.UBound%2A> de [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] sont de base 1.  
+### <a name="specifying-the-dimension"></a>Spécification de la Dimension  
+ Pour déterminer les limites d’un tableau multidimensionnel, veillez à vous spécifiez comment la dimension. Le `dimension` paramètres de le <xref:System.Array.GetLowerBound%2A>et <xref:System.Array.GetUpperBound%2A>méthodes sont basées sur 0 lors de la `Rank` paramètres de le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] <xref:Microsoft.VisualBasic.Information.LBound%2A>et <xref:Microsoft.VisualBasic.Information.UBound%2A>fonctions sont de base 1.</xref:Microsoft.VisualBasic.Information.UBound%2A> </xref:Microsoft.VisualBasic.Information.LBound%2A> </xref:System.Array.GetUpperBound%2A> </xref:System.Array.GetLowerBound%2A>  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+ [Comment : initialiser une Variable tableau en Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

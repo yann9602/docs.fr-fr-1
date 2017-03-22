@@ -1,53 +1,69 @@
 ---
-title: "Expression of type &lt;type&gt; is not queryable | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc36593"
-  - "vbc36593"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC36593"
+title: "Expression de type &lt;type&gt; ne peut pas être interrogée | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc36593
+- vbc36593
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC36593
 ms.assetid: 6f1f5860-bf97-4885-9ebb-bc87d028095c
 caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 5
----
-# Expression of type &lt;type&gt; is not queryable
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1e7e1e2652cf730ef6d14b0579d8a3ee3de67fbb
+ms.lasthandoff: 03/13/2017
 
-L'expression de type '\<type\>' ne peut pas être interrogée.Vérifiez que vous n'omettez pas une référence d'assembly et\/ou une importation d'espace de noms pour le fournisseur LINQ.  
+---
+# <a name="expression-of-type-lttypegt-is-not-queryable"></a>Expression de type &lt;type&gt; ne peut pas être interrogée
+Expression de type \<type > ne peut pas être interrogée. Assurez-vous que vous ne manque une importation d’espace de noms de référence ou d’assembly pour le fournisseur LINQ.  
   
- Les types pouvant être interrogés sont définis dans les espaces de noms <xref:System.Linq>, <xref:System.Data.Linq> et <xref:System.Xml.Linq>.  Vous devez importer un ou plusieurs de ces espaces de noms pour exécuter des requêtes LINQ.  
+ Types pouvant être interrogés sont définis dans le <xref:System.Linq>, <xref:System.Data.Linq>, et <xref:System.Xml.Linq>espaces de noms.</xref:System.Xml.Linq> </xref:System.Data.Linq> </xref:System.Linq> Vous devez importer un ou plusieurs de ces espaces de noms pour effectuer des requêtes LINQ.  
   
- L'espace de noms <xref:System.Linq> vous permet d'interroger des objets tels que des collections et des tableaux en utilisant des requêtes LINQ.  
+ Le <xref:System.Linq>espace de noms vous permet de requêtes sur des objets tels que des collections et des tableaux à l’aide de LINQ.</xref:System.Linq>  
   
- L'espace de noms <xref:System.Data.Linq> vous permet d'interroger des groupes de données ADO.NET et des bases de données SQL Server en utilisant des requêtes LINQ.  
+ Le <xref:System.Data.Linq>vous permet d’interroger des groupes de données ADO.NET et des bases de données SQL Server à l’aide de LINQ.</xref:System.Data.Linq>  
   
- L'espace de noms <xref:System.Xml.Linq> vous permet d'interroger le code XML en utilisant des requêtes LINQ et d'utiliser les fonctionnalités XML dans Visual Basic.  
+ Le <xref:System.Xml.Linq>espace de noms vous permet d’interroger XML à l’aide de LINQ et à utiliser les fonctionnalités XML dans Visual Basic.</xref:System.Xml.Linq>  
   
- **ID d'erreur :** BC36593  
+ **ID d’erreur :** BC36593  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Ajoutez une instruction `Import` pour l'espace de noms <xref:System.Linq>, <xref:System.Data.Linq> ou <xref:System.Xml.Linq> dans votre fichier de code.  Vous pouvez également importer des espaces de noms pour votre projet à l'aide de la page **Références** du Concepteur de projets \(**My Project**\).  
+1.  Ajouter un `Import` instruction pour le <xref:System.Linq>, <xref:System.Data.Linq>, ou <xref:System.Xml.Linq>espace de noms à votre fichier de code.</xref:System.Xml.Linq> </xref:System.Data.Linq> </xref:System.Linq> Vous pouvez également importer des espaces de noms pour votre projet à l’aide de la **références** page du Concepteur de projets (**mon projet**).  
   
-2.  Vérifiez que le type que vous avez identifié comme source de votre requête est un type pouvant être interrogé.  Autrement dit, un type qui implémente <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IQueryable%601>.  
+2.  Vérifiez que le type que vous avez identifié comme source de votre requête est un type requêtable. Autrement dit, un type qui implémente <xref:System.Collections.Generic.IEnumerable%601>ou <xref:System.Linq.IQueryable%601>.</xref:System.Linq.IQueryable%601> </xref:System.Collections.Generic.IEnumerable%601>  
   
-## Voir aussi  
- <xref:System.Linq>   
- <xref:System.Data.Linq>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Linq></xref:System.Linq>   
+ <xref:System.Data.Linq></xref:System.Data.Linq>   
  <xref:System.Xml.Linq>   
- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
+ [Introduction à LINQ en Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
  [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)   
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)   
- [References and the Imports Statement](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)   
- [Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [Page Références, Concepteur de projets \(Visual Basic\)](/visual-studio/ide/reference/references-page-project-designer-visual-basic)
+ [Références et l’instruction Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)   
+ [Instruction Imports (espace de noms et type .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
+ [Page Références, Concepteur de projet (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/references-page-project-designer-visual-basic)

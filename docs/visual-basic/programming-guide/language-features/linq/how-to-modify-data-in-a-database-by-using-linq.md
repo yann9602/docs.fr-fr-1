@@ -1,63 +1,79 @@
 ---
-title: "How to: Modify Data in a Database by Using LINQ (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "inserting rows [LINQ to SQL]"
-  - "deleting rows [LINQ to SQL]"
-  - "updating rows [LINQ to SQL]"
-  - "inserting data [Visual Basic]"
-  - "deleting data"
-  - "data [Visual Basic], updating"
-  - "updating data [LINQ]"
-  - "queries [LINQ in Visual Basic], data changes in database"
-  - "queries [LINQ in Visual Basic], how-to topics"
+title: "Comment : modifier des données dans une base de données à l’aide de LINQ (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- inserting rows [LINQ to SQL]
+- deleting rows [LINQ to SQL]
+- updating rows [LINQ to SQL]
+- inserting data [Visual Basic]
+- deleting data
+- data [Visual Basic], updating
+- updating data [LINQ]
+- queries [LINQ in Visual Basic], data changes in database
+- queries [LINQ in Visual Basic], how-to topics
 ms.assetid: cf52635f-0c1b-46c3-aff1-bdf181cf19b1
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# How to: Modify Data in a Database by Using LINQ (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 44ca3e44d8411a6329d176eb778677bfab2b365c
+ms.lasthandoff: 03/13/2017
 
-Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux informations d'une base de données et la modification des valeurs dans la base.  
+---
+# <a name="how-to-modify-data-in-a-database-by-using-linq-visual-basic"></a>Comment : modifier des données dans une base de données à l'aide de LINQ (Visual Basic)
+Intégrés au langage de requêtes de requête (LINQ) facilitent l’accès aux informations de base de données et modifier les valeurs dans la base de données.  
   
- L'exemple suivant indique comment créer une nouvelle application qui récupère et met à jour les informations d'une base de données SQL Server.  
+ L’exemple suivant montre comment créer une nouvelle application qui Récupère et les informations mises à jour dans une base de données SQL Server.  
   
- Les exemples de cette rubrique utilisent l'exemple de base de données Northwind.  Si vous ne disposez pas de l'exemple de base de données Northwind sur votre ordinateur de développement, vous pouvez le télécharger sur le site Web du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkID=98088).  Pour obtenir des instructions, consultez [Téléchargement d'exemples de bases de données](../Topic/Downloading%20Sample%20Databases.md).  
+ Les exemples de cette rubrique utilisent la base de données Northwind. Si vous n’avez pas la base de données Northwind sur votre ordinateur de développement, vous pouvez le télécharger à partir de la [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=98088) site Web. Pour obtenir des instructions, consultez la page [téléchargement d’exemples de bases de données](https://msdn.microsoft.com/library/bb399411).  
   
-### Pour créer une connexion à une base de données  
+### <a name="to-create-a-connection-to-a-database"></a>Pour créer une connexion à une base de données  
   
-1.  Dans Visual Studio, ouvrez l'**Explorateur de serveurs**\/**Explorateur de bases de données** en cliquant sur **Explorateur de serveurs** ou **Explorateur de bases de données** dans le menu **Affichage**.  
+1.  Dans Visual Studio, ouvrez **Explorateur de serveurs**/**Database Explorer** en cliquant sur les **affichage** menu, puis sélectionnez **Explorateur de serveurs**/**Explorateur de base de données**.  
   
-2.  Dans l'**Explorateur de serveurs**\/**Explorateur de bases de données**, cliquez avec le bouton droit sur **Connexions de données** et cliquez sur **Ajouter une connexion**.  
+2.  Avec le bouton droit **des connexions de données** dans **Explorateur de serveurs**/**Database Explorer**, puis cliquez sur **ajouter une connexion**.  
   
-3.  Spécifiez une connexion valide à l'exemple de base de données Northwind.  
+3.  Spécifiez une connexion valide à la base de données Northwind.  
   
-### Pour ajouter un projet à l'aide d'un fichier LINQ to SQL  
+### <a name="to-add-a-project-with-a-linq-to-sql-file"></a>Pour ajouter un projet avec LINQ au fichier SQL  
   
-1.  Dans le menu **Fichier** de Visual Studio, pointez sur **Nouveau**, puis cliquez sur **Projet**.  Sélectionnez **Application Windows Forms** Visual Basic comme type de projet.  
+1.  Dans Visual Studio, sur le **fichier** menu, pointez sur **nouveau** , puis **projet**. Sélectionnez Visual Basic **Application Windows Forms** comme type de projet.  
   
-2.  Dans le menu **Projet**, cliquez sur **Ajouter un nouvel élément**.  Sélectionnez le modèle d'élément **Classes LINQ to SQL**.  
+2.  Dans le menu **Projet** , cliquez sur **Ajouter un nouvel élément**. Sélectionnez le **Classes LINQ to SQL** modèle d’élément.  
   
-3.  Nommez le fichier `northwind.dbml`.  Cliquez sur **Ajouter**.  Le fichier `northwind.dbml` s'ouvre dans le Concepteur Objet\/Relationnel \(Concepteur O\/R\).  
+3.  Nommez le fichier `northwind.dbml`. Cliquez sur **Ajouter**. Le Concepteur Objet/Relationnel (Concepteur O/R) est ouvert pour la `northwind.dbml` fichier.  
   
-### Pour ajouter des tables à interroger et modifier au Concepteur O\/R  
+### <a name="to-add-tables-to-query-and-modify-to-the-designer"></a>Pour ajouter des tables à interroger et modifier au concepteur  
   
-1.  Dans l'**Explorateur de serveurs**\/**Explorateur de bases de données**, développez la connexion à la base de données Northwind.  Développez le dossier **Tables**.  
+1.  Dans **Explorateur de serveurs**/**Database Explorer**, développez la connexion à la base de données Northwind. Développez le **Tables** dossier.  
   
-     Si vous avez fermé le Concepteur O\/R, vous pouvez le rouvrir en double\-cliquant sur le fichier `northwind.dbml` que vous avez ajouté précédemment.  
+     Si vous avez fermé le Concepteur O/R, vous pouvez le rouvrir en double-cliquant sur le `northwind.dbml` fichier que vous avez ajouté précédemment.  
   
-2.  Cliquez sur la table Customers et faites\-la glisser dans le volet gauche du concepteur.  
+2.  Cliquez sur la table Customers et faites-la glisser vers le volet gauche du concepteur.  
   
      Le concepteur crée un nouvel objet Customer pour votre projet.  
   
@@ -65,17 +81,17 @@ Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux inform
   
 4.  Enregistrez votre projet.  
   
-### Pour ajouter du code en vue de modifier la base de données et afficher les résultats  
+### <a name="to-add-code-to-modify-the-database-and-display-the-results"></a>Pour ajouter du code pour modifier la base de données et afficher les résultats  
   
-1.  À partir de la **Boîte à outils**, faites glisser un contrôle <xref:System.Windows.Forms.DataGridView> sur le Windows Form par défaut pour votre projet, Form1.  
+1.  À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.DataGridView>contrôle sur le formulaire Windows par défaut pour votre projet, Form1.</xref:System.Windows.Forms.DataGridView>  
   
-2.  Lorsque vous avez ajouté des tables au Concepteur O\/R, le concepteur a ajouté un objet <xref:System.Data.Linq.DataContext> à votre projet.  Cet objet contient du code que vous pouvez utiliser pour accéder à la table Customers.  Il contient également du code qui définit un objet Customer local et une collection Customers pour la table.  L'objet <xref:System.Data.Linq.DataContext> pour votre projet est nommé d'après le nom de votre fichier .dbml.  Pour ce projet, l'objet <xref:System.Data.Linq.DataContext> est nommé `northwindDataContext`.  
+2.  Lorsque vous avez ajouté des tables au Concepteur O/R, le concepteur a ajouté un <xref:System.Data.Linq.DataContext>objet à votre projet.</xref:System.Data.Linq.DataContext> Cet objet contient le code que vous pouvez utiliser pour accéder à la table Customers. Il contient également le code qui définit un objet Customer local et une collection de clients pour la table. Le <xref:System.Data.Linq.DataContext>objet pour votre projet est nommé d’après le nom de votre fichier .dbml.</xref:System.Data.Linq.DataContext> Pour ce projet, le <xref:System.Data.Linq.DataContext>est nommé `northwindDataContext`.</xref:System.Data.Linq.DataContext>  
   
-     Vous pouvez créer une instance de l'objet <xref:System.Data.Linq.DataContext> dans votre code et interroger et modifier la collection Customers spécifiée par le Concepteur O\/R.  Les modifications que vous apportez à la collection Customers ne se sont pas répercutées dans la base de données, tant que vous ne les soumettez pas en appelant la méthode <xref:System.Data.Linq.DataContext.SubmitChanges%2A> de l'objet <xref:System.Data.Linq.DataContext>.  
+     Vous pouvez créer une instance de la <xref:System.Data.Linq.DataContext>de l’objet dans votre code et interroger et modifier la collection Customers spécifiée par le Concepteur O/R.</xref:System.Data.Linq.DataContext> Les modifications que vous apportez à la collection de clients ne sont pas répercutées dans la base de données jusqu'à ce que vous les envoyez en appelant le <xref:System.Data.Linq.DataContext.SubmitChanges%2A>Procédé de la <xref:System.Data.Linq.DataContext>objet.</xref:System.Data.Linq.DataContext> </xref:System.Data.Linq.DataContext.SubmitChanges%2A>  
   
-     Double\-cliquez sur le Windows Form, Form1, pour ajouter le code à l'événement <xref:System.Windows.Forms.Form.Load> et interroger la table Customers exposée comme une propriété de votre <xref:System.Data.Linq.DataContext>.  Ajoutez le code ci\-dessous :  
+     Double-cliquez sur le Windows Form, Form1, pour ajouter du code à l' <xref:System.Windows.Forms.Form.Load>événement pour interroger la table Customers exposée comme une propriété de votre <xref:System.Data.Linq.DataContext>.</xref:System.Data.Linq.DataContext> </xref:System.Windows.Forms.Form.Load> Ajoutez le code suivant :  
   
-    ```vb#  
+    ```vb  
     Private db As northwindDataContext  
   
     Private Sub Form1_Load(ByVal sender As System.Object,   
@@ -95,11 +111,11 @@ Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux inform
     End Sub  
     ```  
   
-3.  À partir de la **Boîte à outils**, faites glisser trois contrôles <xref:System.Windows.Forms.Button> vers le formulaire.  Sélectionnez le premier contrôle `Button`.  Dans la fenêtre **Propriétés**, donnez au `Name` du contrôle `Button` la valeur `AddButton` et au `Text` la valeur `Ajouter`.  Sélectionnez le deuxième bouton et affectez à la propriété `Name` la valeur `UpdateButton` et à la propriété `Text` la valeur `Mise à jour`.  Sélectionnez le troisième bouton et affectez à la propriété `Name` la valeur `DeleteButton` et à la propriété `Text` la valeur `Supprimer`.  
+3.  À partir de la **boîte à outils**, faites glisser trois <xref:System.Windows.Forms.Button>contrôles vers le formulaire.</xref:System.Windows.Forms.Button> Sélectionnez le premier `Button` contrôle. Dans le **propriétés** , configurez la `Name` de la `Button` le contrôle à `AddButton` et `Text` à `Add`. Sélectionnez le deuxième bouton et définissez la `Name` propriété `UpdateButton` et `Text` propriété `Update`. Sélectionnez le troisième bouton et définissez la `Name` propriété `DeleteButton` et `Text` propriété `Delete`.  
   
-4.  Double\-cliquez sur le bouton **Ajouter** pour ajouter le code à son événement `Click`.  Ajoutez le code ci\-dessous :  
+4.  Double-cliquez sur le **ajouter** bouton pour ajouter du code à son `Click` événement. Ajoutez le code suivant :  
   
-    ```vb#  
+    ```vb  
     Private Sub AddButton_Click(ByVal sender As System.Object,   
                                 ByVal e As System.EventArgs  
                                ) Handles AddButton.Click  
@@ -122,9 +138,9 @@ Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux inform
     End Sub  
     ```  
   
-5.  Double\-cliquez sur le bouton **Mise à jour** pour ajouter le code à son événement `Click`.  Ajoutez le code ci\-dessous :  
+5.  Double-cliquez sur le **mise à jour** bouton pour ajouter du code à son `Click` événement. Ajoutez le code suivant :  
   
-    ```vb#  
+    ```vb  
     Private Sub UpdateButton_Click(ByVal sender As System.Object, _  
                                    ByVal e As System.EventArgs  
                                   ) Handles UpdateButton.Click  
@@ -143,9 +159,9 @@ Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux inform
     End Sub  
     ```  
   
-6.  Double\-cliquez sur le bouton **Supprimer** pour ajouter le code à son événement `Click`.  Ajoutez le code ci\-dessous :  
+6.  Double-cliquez sur le **supprimer** bouton pour ajouter du code à son `Click` événement. Ajoutez le code suivant :  
   
-    ```vb#  
+    ```vb  
     Private Sub DeleteButton_Click(ByVal sender As System.Object, _  
                                    ByVal e As System.EventArgs  
                                   ) Handles DeleteButton.Click  
@@ -164,12 +180,11 @@ Les requêtes LINQ \(Language\-Integrated Query\) facilitent l'accès aux inform
     End Sub  
     ```  
   
-7.  Appuyez sur F5 pour exécuter votre projet.  Cliquez sur **Ajouter** pour ajouter un nouvel enregistrement.  Cliquez sur **Mise à jour** pour modifier le nouvel enregistrement.  Cliquez sur **Supprimer** pour supprimer le nouvel enregistrement.  
+7.  Appuyez sur F5 pour exécuter votre projet. Cliquez sur **Add** pour ajouter un nouvel enregistrement. Cliquez sur **mise à jour** pour modifier le nouvel enregistrement. Cliquez sur **supprimer** pour supprimer l’enregistrement.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Queries](../../../../visual-basic/language-reference/queries/queries.md)   
- [LINQ à SQL](../Topic/LINQ%20to%20SQL.md)   
- [Méthodes DataContext \(Concepteur O\/R\)](/visual-studio/data-tools/datacontext-methods-o-r-designer)   
- [Procédure : assigner des procédures stockées pour effectuer des mises à jour, des insertions et des suppressions \(Concepteur O\/R\)](../Topic/How%20to:%20Assign%20stored%20procedures%20to%20perform%20updates,%20inserts,%20and%20deletes%20\(O-R%20Designer\).md)   
- [Procédure pas à pas : création de classes LINQ to SQL \(Concepteur O\/R\)](../Topic/Walkthrough:%20Creating%20LINQ%20to%20SQL%20Classes%20\(O-R%20Designer\).md)
+ [Requêtes](../../../../visual-basic/language-reference/queries/queries.md)   
+ [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)   
+ [Méthodes DataContext (Concepteur O/R)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)   
+ [Comment : assigner des procédures stockées pour effectuer des mises à jour, insertions et suppressions (Concepteur O/R)](http://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

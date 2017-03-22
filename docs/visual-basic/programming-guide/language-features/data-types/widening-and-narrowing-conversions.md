@@ -1,112 +1,127 @@
 ---
-title: "Widening and Narrowing Conversions (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "widening conversions"
-  - "narrowing conversions"
-  - "conversions, type"
-  - "data types [Visual Basic], changing"
-  - "variables [Visual Basic], changing data type"
-  - "conversions, exceptions during conversion"
-  - "type conversion, exceptions during conversion"
-  - "conversions, data type"
-  - "conversions, narrowing"
-  - "type conversion, narrowing"
-  - "data type conversion, widening"
-  - "data type conversion, narrowing"
-  - "changing data types"
-  - "type conversion, widening"
-  - "data type conversion, exceptions during conversion"
-  - "conversions, widening"
+title: "Conversions étendues et restrictives (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- widening conversions
+- narrowing conversions
+- conversions, type
+- data types [Visual Basic], changing
+- variables [Visual Basic], changing data type
+- conversions, exceptions during conversion
+- type conversion, exceptions during conversion
+- conversions, data type
+- conversions, narrowing
+- type conversion, narrowing
+- data type conversion, widening
+- data type conversion, narrowing
+- changing data types
+- type conversion, widening
+- data type conversion, exceptions during conversion
+- conversions, widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# Widening and Narrowing Conversions (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 88c5db6e7e82a88ae8015b581e5a795ec389d003
+ms.lasthandoff: 03/13/2017
 
-Le fait que le résultat se situe ou non dans la plage du type de données de destination constitue un élément d'information important dans la conversion de type.  
+---
+# <a name="widening-and-narrowing-conversions-visual-basic"></a>Conversions étendues et restrictives (Visual Basic)
+Un facteur important lors d’une conversion de type est si le résultat de la conversion est dans la plage du type de données de destination.  
   
- *Une conversion étendue* modifie une valeur à un type de données qui peut tenir compte de la valeur possible des données d'origine.  Les conversions étendues préservent la valeur source, mais peuvent modifier sa représentation.  Cela se produit si vous convertissez un type intégral à `Decimal`, ou d' `Char` à `String`.  
+ A *conversion étendue* modifie une valeur de type de données pouvant autoriser toutes les valeurs possibles des données d’origine.  Les conversions étendues préservent la valeur source, mais peuvent modifier sa représentation. Cela se produit si vous convertissez un type intégral en `Decimal`, ou à partir de `Char` à `String`.  
   
- Dans une *conversion restrictive*, la valeur est convertie dans un type de données susceptible de ne pas pouvoir accueillir certaines valeurs possibles des données.  Par exemple, une valeur fractionnaire est arrondie lorsqu'elle est convertie en un type intégral, et un type numérique converti à `Boolean` est réduit au `True` ou à `False`.  
+ Une *conversion restrictive* modifie une valeur en un type de données qui peut ne pas pouvoir contenir certaines des valeurs possibles. Par exemple, une valeur fractionnaire est arrondie lorsqu’elle est convertie en un type intégral et un type numérique converti en `Boolean` est réduit à la valeur `True` ou `False`.  
   
-## Conversions étendues  
- Le tableau suivant répertorie les conversions étendues standard.  
+## <a name="widening-conversions"></a>Conversions étendues  
+ Le tableau suivant présente les conversions étendues standard.  
   
-|||  
-|-|-|  
-|Type de données|Extension aux types de données <sup>1</sup>|  
+|Type de données|S’étend aux types de données <sup>1</sup>|  
+|---|---|  
 |[SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|`SByte`, `Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
 |[Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|`Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`|  
-|[Short](../../../../visual-basic/language-reference/data-types/short-data-type.md)|`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
+|[Courte](../../../../visual-basic/language-reference/data-types/short-data-type.md)|`Short`, `Integer`, `Long`, `Decimal`, `Single`, `Double`|  
 |[UShort](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|`UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`|  
 |[Entier](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|`Integer`, `Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
-|[UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double` <sup>2</sup>|  
-|[Long](../../../../visual-basic/language-reference/data-types/long-data-type.md)|`Long`, `Decimal`, `Single`, `Double` <sup>2</sup>|  
-|[ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|`ULong`, `Decimal`, `Single`, `Double` <sup>2</sup>|  
-|[Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`, `Single`, `Double` <sup>2</sup>|  
+|[UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|`UInteger`, `Long`, `ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
+|[Long](../../../../visual-basic/language-reference/data-types/long-data-type.md)|`Long`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
+|[ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|`ULong`, `Decimal`, `Single`, `Double`<sup>2</sup>|  
+|[Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`, `Single`, `Double`<sup>2</sup>|  
 |[Single](../../../../visual-basic/language-reference/data-types/single-data-type.md)|`Single`, `Double`|  
 |[Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|`Double`|  
-|Tout type énuméré \([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)\)|Son type intégral sous\-jacent et tout type auquel le type sous\-jacent s'étend.|  
+|Tout type énuméré ([Enum](../../../../visual-basic/language-reference/statements/enum-statement.md))|Son type intégral sous-jacent et tout type auquel s’étend le type sous-jacent.|  
 |[Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`Char`, `String`|  
-|Tableau `Char`|Tableau `Char`, `String`|  
+|Tableau `Char`|`Char`tableau,`String`|  
 |Tout type|[Objet](../../../../visual-basic/language-reference/data-types/object-data-type.md)|  
-|Tout type dérivé|tout type de base dont il est dérivé <sup>3</sup>.|  
-|Tout type|Toute interface qu'il implémente.|  
-|[Nothing](../../../../visual-basic/language-reference/nothing.md)|tout type de données ou type d'objet.|  
+|N’importe quel type dérivé|Un type à partir de laquelle elle est dérivée de base <sup>3</sup>.|  
+|Tout type|Toute interface qu’il implémente.|  
+|[Nothing](../../../../visual-basic/language-reference/nothing.md)|N’importe quel type de données ou un type d’objet.|  
   
- <sup>1</sup> Par définition, chaque type de données s'élargit par lui\-même.  
+ <sup>1</sup> par définition, chaque type de données s’élargit par lui-même.  
   
- <sup>2</sup> Les conversions de `Integer`, `UInteger`, `Long`, `ULong` ou `Decimal` en `Single` ou `Double` peuvent entraîner un manque de précision, mais jamais une perte d'amplitude.  Elles n'entraînent donc jamais de perte d'information.  
+ <sup>2</sup> les conversions de `Integer`, `UInteger`, `Long`, `ULong`, ou `Decimal` à `Single` ou `Double` peuvent entraîner une perte de précision, mais jamais une perte d’amplitude. En ce sens qu’ils n’entraînent pas de perte d’informations.  
   
- <sup>3</sup> Il peut sembler surprenant qu'une conversion entre un type dérivé et l'un de ses types de base soit étendue.  Cela s'explique par le fait que le type dérivé contient tous les membres du type de base ; il se qualifie donc comme une instance du type de base.  Dans le sens opposé, le type de base ne contient aucun nouveau membre défini par le type dérivé.  
+ <sup>3</sup> il peut sembler surprenant qu’une conversion entre un type dérivé à l’un de ses types de base soit étendue. La justification est que le type dérivé contient tous les membres du type de base, donc il correspond à une instance du type de base. Dans le sens opposé, le type de base ne contient pas tous les nouveaux membres définis par le type dérivé.  
   
- Les conversions étendues réussissent toujours au moment de l'exécution et sans jamais aucune perte de données.  Vous pouvez toujours les exécuter implicitement, que l'[Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) attribue la valeur `On` ou `Off` au commutateur de vérification de type.  
+ Les conversions étendues réussissent toujours au moment de l’exécution et sans jamais aucune perte de données. Vous pouvez toujours les exécuter implicitement, que la [Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md) définit le type de commutateur à la vérification de la `On` ou `Off`.  
   
-## Conversions restrictives  
+## <a name="narrowing-conversions"></a>Conversions restrictives  
  Les conversions restrictives standard sont les suivantes :  
   
--   Conversions inverses des conversions étendues dans le tableau précédent \(excepté que chaque type s'élargit par lui\-même\).  
+-   La table inverses des conversions étendues dans l’exemple précédent (excepté que chaque type s’élargit par lui-même)  
   
--   Conversions entre un type [Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) et tout type numérique \(dans l'un et l'autre sens\).  
+-   Les conversions dans les deux sens entre [booléenne](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) et tout type numérique  
   
--   Conversions de n'importe quel type numérique en un type énuméré \(`Enum`\).  
+-   Les conversions à partir de n’importe quel type numérique à tout type énuméré (`Enum`)  
   
--   Conversions dans l'un et l'autre sens entre [String](../../../../visual-basic/language-reference/data-types/string-data-type.md) et tout type numérique, `Boolean` ou [Date](../../../../visual-basic/language-reference/data-types/date-data-type.md).  
+-   Les conversions dans les deux sens entre [chaîne](../../../../visual-basic/language-reference/data-types/string-data-type.md) et tout type numérique, `Boolean`, ou [Date](../../../../visual-basic/language-reference/data-types/date-data-type.md)  
   
--   Conversions entre un type de données ou un type d'objet et un type dérivé de lui.  
+-   Les conversions d’un type de données ou un objet de type à un type dérivé  
   
- Les conversions restrictives ne réussissent pas toujours au moment de l'exécution et peuvent échouer ou entraîner la perte de données.  Une erreur se produit si le type de données de destination ne peut pas accueillir la valeur convertie.  Par exemple, une conversion numérique peut provoquer un dépassement de capacité.  Le compilateur ne vous permet pas d'exécuter des conversions restrictives implicitement sauf si l'[Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) attribue la valeur `Off` au commutateur de vérification de type.  
+ Les conversions restrictives ne pas toujours réussisse au moment de l’exécution et peut échouer ou entraîner une perte de données. Une erreur se produit si le type de données de destination ne peut pas recevoir la valeur convertie. Par exemple, une conversion numérique peut provoquer un dépassement de capacité. Le compilateur ne vous permet pas d’effectuer des conversions restrictives implicitement sauf si la [Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md) définit le type de commutateur à la vérification de la `Off`.  
   
 > [!NOTE]
->  L'erreur de conversion restrictive est supprimée pour les conversions à partir des éléments d'une collection `For Each…Next` vers la variable de contrôle de boucle.  Pour plus d'informations et d'exemples, consultez la section « Conversions restrictives » dans [For Each...Next, instruction](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
+>  L’erreur de conversion restrictive est supprimée pour les conversions entre les éléments dans un `For Each…Next` collection à la variable de contrôle de boucle. Pour plus d’informations et d’exemples, consultez la section « Conversions restrictives » dans [For Each... L’instruction suivante](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
-### Utilisation des conversions restrictives  
- Utilisez une conversion restrictive lorsque vous savez que la valeur source peut être convertie dans le type de données de destination sans erreur ni perte de données.  Par exemple, si vous avez `String` qui contient « true » ou « False », vous pouvez utiliser le mot clé d' `CBool` pour le convertir en `Boolean`.  
+### <a name="when-to-use-narrowing-conversions"></a>Quand utiliser des Conversions restrictives  
+ Vous utilisez une conversion restrictive lorsque vous savez que la valeur source peut être convertie au type de données de destination sans erreur ni perte de données. Par exemple, si vous avez un `String` que vous savez contient « True » ou « False », vous pouvez utiliser la `CBool` (mot clé) à convertir en `Boolean`.  
   
-## Exceptions pendant la conversion  
- Étant donné que les conversions étendues aboutissent toujours, elles ne lèvent pas d'exceptions.  Les conversions restrictives, lorsqu'elles échouent, lèvent le plus souvent les exceptions suivantes :  
+## <a name="exceptions-during-conversion"></a>Exceptions lors de la Conversion  
+ Étant donné que les conversions étendues toujours réussissent, ils ne lèvent pas d’exceptions. Généralement, les conversions restrictives, en cas d’échec, lever les exceptions suivantes :  
   
--   <xref:System.InvalidCastException> — si aucune conversion n'est définie entre les deux types  
+-   <xref:System.InvalidCastException>— Si aucune conversion n’est définie entre les deux types</xref:System.InvalidCastException>  
   
--   <xref:System.OverflowException> — \(types intégraux uniquement\) si la valeur convertie est trop grande pour le type cible  
+-   <xref:System.OverflowException>— (types intégraux uniquement) si la valeur convertie est trop grande pour le type de cible</xref:System.OverflowException>  
   
- Si une classe ou une structure définit [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) pour qu'il serve d'opérateur de conversion vers ou depuis cette classe ou cette structure, `CType` peut lever n'importe quelle exception qu'il estime appropriée.  De plus, `CType` peut appeler des fonctions  [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] ou des méthodes [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] qui peuvent à leur tour lever diverses exceptions.  
+ Si une classe ou une structure définit un [CType, fonction](../../../../visual-basic/language-reference/functions/ctype-function.md) comme un opérateur de conversion vers ou depuis cette classe ou structure, qui `CType` peut lever une exception appropriée. En outre, qui `CType` peut appeler [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] fonctions ou [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] méthodes, qui peuvent à leur tour lever diverses exceptions.  
   
-## Modification lors des conversions de type référence  
- Une conversion à partir d'un *type référence* ne copie que le pointeur vers la valeur.  La valeur elle\-même n'est ni copiée ni modifiée.  Seul peut être modifié le type de données de la variable contenant le pointeur.  Dans l'exemple suivant, le type de données est converti de la classe dérivée vers sa classe de base, mais l'objet vers lequel pointent les deux variables reste inchangé.  
+## <a name="changes-during-reference-type-conversions"></a>Modifications apportées au cours des Conversions de Type référence  
+ Une conversion d’un *type référence* ne copie que le pointeur vers la valeur. La valeur elle-même n’est ni copiée ni modifiée. La seule chose que vous pouvez modifier est le type de données de la variable contenant le pointeur. Dans l’exemple suivant, le type de données est converti de la classe dérivée vers sa classe de base, mais l’objet qui les deux variables pointent désormais vers est inchangé.  
   
 ```  
 ' Assume class cSquare inherits from class cShape.  
@@ -117,12 +132,12 @@ Dim square As cSquare = New cSquare
 shape = square  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Conversions Between Strings and Other Types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)   
- [How to: Convert an Object to Another Type in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)   
- [Array Conversions](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)   
- [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+ [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
+ [Conversions implicites et explicites](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
+ [Conversions entre des chaînes et d’autres Types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)   
+ [Comment : convertir un objet en un autre Type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)   
+ [Conversions de tableaux](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)   
+ [Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
+ [Fonctions de conversion de types](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

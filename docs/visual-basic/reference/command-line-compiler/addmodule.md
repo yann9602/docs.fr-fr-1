@@ -1,64 +1,81 @@
 ---
-title: "/addmodule | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "/addmodule compiler option [Visual Basic]"
-  - "addmodule compiler option [Visual Basic]"
-  - "-addmodule compiler option [Visual Basic]"
+title: /addmodule | Documents Microsoft
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- /addmodule compiler option [Visual Basic]
+- addmodule compiler option [Visual Basic]
+- -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# /addmodule
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 949962905ec933dc42301bf8c21654e73dbe2f70
+ms.lasthandoff: 03/13/2017
 
-Entraîne le compilateur à donner des informations de type dans le ou les fichiers spécifiés disponibles pour le projet en cours de compilation.  
+---
+# <a name="addmodule"></a>/addmodule
+Entraîne la mise à disposition par le compilateur de toutes les informations de type à partir du ou des fichiers spécifiés, pour le projet en cours de compilation.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 /addmodule:fileList  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
  `fileList`  
- Obligatoire.  Liste de fichiers délimitée par des virgules qui contient des métadonnées, mais pas de manifestes des assemblys.  Les noms de fichiers contenant des espaces doivent être mis entre guillemets \(" "\).  
+ Obligatoire. Liste délimitée par des virgules des fichiers qui contiennent des métadonnées, mais ne contiennent pas de manifestes d’assembly. Les noms de fichier contenant des espaces doivent être entourés de guillemets (« »).  
   
-## Notes  
- Les fichiers répertoriés par le paramètre `fileList` doivent être créés à l'aide de l'option `/target:module` ou avec l'équivalent de `/target:module` d'un autre compilateur.  
+## <a name="remarks"></a>Remarques  
+ Les fichiers répertoriés par le `fileList` paramètre doit être créé avec la `/target:module` option, ou avec l’équivalent d’un autre compilateur `/target:module`.  
   
- Tous les modules ajoutés par `/addmodule` doivent se trouver dans le même répertoire que le fichier de sortie au moment de l'exécution.  Vous pouvez donc spécifier un module dans n'importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l'application au moment de l'exécution.  Si tel n'est pas le cas, une erreur <xref:System.TypeLoadException> se produit.  
+ Tous les modules ajoutés avec `/addmodule` doit être dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit être dans le répertoire de l’application en cours d’exécution. Si elle n’est pas le cas, vous obtenez un <xref:System.TypeLoadException>erreur.</xref:System.TypeLoadException>  
   
- Si vous spécifiez \(implicitement ou explicitement\) une option [\/target](../../../visual-basic/reference/command-line-compiler/target.md) différente de `/target:module` avec `/addmodule`, les fichiers passés à `/addmodule` sont inclus dans l'assembly du projet.  Un assembly est requis pour exécuter un fichier de sortie contenant un ou plusieurs fichiers ajoutés avec `/addmodule`.  
+ Si vous spécifiez (implicitement ou explicitement) n’importe quel[/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) option autre que `/target:module` avec `/addmodule`, les fichiers que vous transmettez à `/addmodule` font partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui contient un ou plusieurs fichiers ajoutés avec `/addmodule`.  
   
- Utilisez [\/reference](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées à partir d'un fichier qui contient un assembly.  
+ Utilisez [Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer des métadonnées à partir d’un fichier qui contient un assembly.  
   
 > [!NOTE]
->  L'option `/addmodule` n'est pas disponible dans l'environnement de développement Visual Studio. Elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+>  La `/addmodule` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant crée un module.  
   
- [!code-vb[VbVbalrCompiler#47](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_1.vb)]  
+ [!code-vb[VbVbalrCompiler&#47;](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_1.vb)]  
   
  Le code suivant importe les types du module.  
   
- [!code-vb[VbVbalrCompiler#48](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_2.vb)]  
+ [!code-vb[VbVbalrCompiler&#48;](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/addmodule_2.vb)]  
   
- Lorsque vous exécutez `t1`, la sortie correspond à `802`.  
+ Lorsque vous exécutez `t1`, il renvoie `802`.  
   
-## Voir aussi  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [\/target](../../../visual-basic/reference/command-line-compiler/target.md)   
- [\/reference](../../../visual-basic/reference/command-line-compiler/reference.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)   
+ [Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)   
  [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

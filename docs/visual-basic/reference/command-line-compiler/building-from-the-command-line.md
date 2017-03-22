@@ -1,60 +1,77 @@
 ---
-title: "G&#233;n&#233;ration &#224; partir de la ligne de commande (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "builds [Visual Basic], ligne de commande"
-  - "compilateur Visual Basic, à propos du compilateur Visual Basic"
-  - "ligne de commande [Visual Basic], compilateurs"
-  - "ligne de commande [Visual Basic], génération à partir de"
-  - "ligne de commande [Visual Basic], builds"
-  - "compilateurs, appeler à partir de la ligne de commande"
-  - "générations à partir de la ligne de commande"
-  - "compiler le code source"
-  - "compilateurs de ligne de commande, Visual Basic"
-  - "ligne de commande [Visual Basic], Visual Basic"
+title: "Génération à partir de la ligne de commande (Visual Basic) | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- builds [Visual Basic], command-line
+- Visual Basic compiler, about Visual Basic compiler
+- command line [Visual Basic], compilers
+- command line [Visual Basic], building from
+- command line [Visual Basic], builds
+- compilers, invoking from command line
+- command-line builds
+- compiling source code
+- command-line compilers, Visual Basic
+- command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# G&#233;n&#233;ration &#224; partir de la ligne de commande (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 49f84c221e18457ab46534ca46da7c4764a8ee40
+ms.lasthandoff: 03/13/2017
 
-Un projet [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] est composé d'un ou plusieurs fichiers source séparés.  Durant le processus de compilation, ces fichiers sont rassemblés sous forme de package \(fichier exécutable unique permettant d'exécuter une application\).  
+---
+# <a name="building-from-the-command-line-visual-basic"></a>Génération à partir de la ligne de commande (Visual Basic)
+Un [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] projet se compose d’un ou plusieurs fichiers source séparés. Pendant le processus appelé compilation, ces fichiers sont regroupés en un seul package, un seul fichier exécutable qui peut être exécuté en tant qu’application.  
   
- Le compilateur de ligne de commande [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] fournit une alternative aux programmes de compilation dans l'environnement de développement intégré \(IDE\) de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)].  Le compilateur de ligne de commande est prévu pour les situations où vous n'avez pas besoin de l'ensemble des fonctionnalités IDE; par exemple, lorsque vous utilisez ou écrivez du code pour des ordinateurs dont la mémoire système ou l'espace de stockage est limité.  
+ [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]fournit un compilateur de ligne de commande comme alternative aux programmes de compilation dans le [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] l’environnement de développement intégré (IDE). Le compilateur de ligne de commande est conçu pour les situations dans lesquelles vous nécessitent l’ensemble des fonctionnalités de l’IDE, par exemple, lorsque vous êtes à l’aide ou écriture pour les ordinateurs avec un espace mémoire ou stockage limitées sur le système.  
   
- Lorsque la compilation est effectuée à partir de la ligne de commande, vous devez faire référence de manière explicite à la bibliothèque Runtime Microsoft [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] par l'intermédiaire de l'option du compilateur `/reference`.  
+ Lors de la compilation à partir de la ligne de commande, vous devez explicitement référencer Microsoft [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] bibliothèque d’exécution via la `/reference` option du compilateur.  
   
- Pour compiler des fichiers sources à partir de l'IDE de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)], cliquez dans le menu **Générer** sur la commande **Générer**.  
+ Pour compiler des fichiers sources à partir la [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] IDE, choisissez le **générer** commande à partir de la **Build** menu.  
   
 > [!TIP]
->  Lorsque vous générez des fichiers projet à l'aide de l'IDE de Visual Studio, vous pouvez afficher des informations sur la commande associée d' **vbc** et ses commutateurs dans la fenêtre Sortie.  Pour afficher ces informations, ouvrez [Options \(boîte de dialogue\), Projets et solutions, Générer et exécuter](/visual-studio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), puis affectez **Commentaires de sortie de génération du projet MSBuild** à **Normal** ou un niveau supérieur de commentaires.  Pour plus d'informations, consultez [Comment : afficher, enregistrer et configurer des fichiers journaux de génération](../Topic/How%20to:%20View,%20Save,%20and%20Configure%20Build%20Log%20Files.md).  
+>  Lorsque vous générez des fichiers de projet à l’aide de l’IDE de Visual Studio, vous pouvez afficher des informations sur les **vbc** commande et ses commutateurs dans la fenêtre Sortie. Pour afficher ces informations, ouvrez le [boîte de dialogue Options, projets et Solutions, générer et exécuter](https://docs.microsoft.com/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), puis définissez la **niveau de détail de sortie de génération du projet MSBuild** à **Normal** ou un niveau supérieur de détail. Pour plus d’informations, consultez l’article [Comment : afficher, enregistrer et configurer des fichiers journaux de génération](http://msdn.microsoft.com/library/75d38b76-26d6-4f43-bbe7-cbacd7cc81e7).  
   
- Vous pouvez compiler les fichiers du projet \(.vbproj\) à une invite de commandes à l'aide de MSBuild.  Pour plus d'informations, consultez [Command\-Line Reference](/visual-studio/msbuild/msbuild-command-line-reference) et [Walkthrough: Using MSBuild](../Topic/Walkthrough:%20Using%20MSBuild.md).  
+ Vous pouvez compiler des fichiers projet (.vbproj) à une invite de commandes à l’aide de MSBuild. Pour plus d’informations, consultez [référence de ligne de commande](https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference) et [procédure pas à pas : utilisation de MSBuild](http://msdn.microsoft.com/library/b8a8b866-bb07-4abf-b9ec-0b40d281c310).  
   
-## Dans cette section  
- [How to: Invoke the Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)  
- Explique comment appeler le compilateur de ligne de commande à l'invite de commande MS\-DOS ou à partir d'un sous\-répertoire spécifique.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Guide pratique : appeler le compilateur de ligne de commande](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)  
+ Décrit comment appeler le compilateur de ligne de commande à l’invite de commandes MS-DOS ou à partir d’un sous-répertoire spécifique.  
   
  [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- Fournit une liste d'exemples de lignes de commande que vous pouvez modifier pour vos besoins.  
+ Fournit une liste d’exemples de lignes de commande que vous pouvez modifier pour votre usage personnel.  
   
-## Rubriques connexes  
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
- Fournit les listes d'options du compilateur, organisées de manière alphabétique ou selon les besoins.  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
+ Fournit des listes d’options du compilateur, organisées par ordre alphabétique ou par objet.  
   
- [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
- Explique comment compiler des sections de code précises.  
+ [Compilation conditionnelle](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
+ Décrit comment compiler des sections de code.  
   
- [Génération et nettoyage de solutions et de projets dans Visual Studio](/visual-studio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
- Explique comment organiser le contenu inclus dans les différentes générations, choisir les propriétés de projet et vérifier que les projets sont générés dans l'ordre approprié.
+ [Génération et nettoyage de solutions et de projets dans Visual Studio](https://docs.microsoft.com/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
+ Explique comment organiser ce qui figureront dans les différentes générations, choisir les propriétés du projet et vous assurer que les projets sont générés dans l’ordre correct.

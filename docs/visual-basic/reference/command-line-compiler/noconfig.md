@@ -1,50 +1,66 @@
 ---
-title: "/noconfig | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "noconfig compiler option [Visual Basic]"
-  - "-noconfig compiler option [Visual Basic]"
-  - "/noconfig compiler option [Visual Basic]"
+title: /noconfig | Documents Microsoft
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- noconfig compiler option [Visual Basic]
+- -noconfig compiler option [Visual Basic]
+- /noconfig compiler option [Visual Basic]
 ms.assetid: a7405067-bd21-4171-adf4-a126fa3ad6c3
 caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
----
-# /noconfig
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 304d0e7fc787adb1d7776a2c047090ffc230fcc1
+ms.lasthandoff: 03/13/2017
 
-Spécifie que le compilateur ne doit pas référencer automatiquement les assemblys [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] communément utilisés ou importer les espaces de noms `System` et `Microsoft.VisualBasic`.  
+---
+# <a name="noconfig"></a>/noconfig
+Spécifie que le compilateur ne doit pas référencer automatiquement les communément utilisées [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] assemblys ou importer les `System` et `Microsoft.VisualBasic` espaces de noms.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 /noconfig  
 ```  
   
-## Notes  
- L'option `/noconfig` indique au compilateur de ne pas compiler à l'aide du fichier Vbc.rsp qui se situe dans le même répertoire que le fichier Vbc.exe.  Le fichier Vbc.rsp référence les assemblys [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)] couramment utilisés et importe les espaces de noms `System` et `Microsoft.VisualBasic`.  Le compilateur référence implicitement l'assembly System.dll à moins que l'option `/nostdlib` soit spécifiée.  L'option `/nostdlib` indique au compilateur de ne pas compiler à l'aide du fichier Vbc.rsp ou de référencer automatiquement l'assembly System.dll.  
+## <a name="remarks"></a>Remarques  
+ La `/noconfig` option indique au compilateur ne pas de compiler avec le fichier Vbc.rsp, qui se trouve dans le même répertoire que le fichier Vbc.exe. Le fichier Vbc.rsp référence couramment utilisées [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] les assemblys et les importations de la `System` et `Microsoft.VisualBasic` espaces de noms. Le compilateur référence implicitement l’assembly System.dll à moins que le `/nostdlib` option est spécifiée. La `/nostdlib` option indique au compilateur pas compiler avec Vbc.rsp ou de référencer automatiquement l’assembly System.dll.  
   
 > [!NOTE]
->  Les assemblys Mscorlib.dll et Microsoft.VisualBasic.dll sont toujours référencés.  
+>  Les assemblys Mscorlib.dll et de Microsoft.VisualBasic.dll sont toujours référencés.  
   
- Vous pouvez modifier le fichier Vbc.rsp pour spécifier des options du compilateur supplémentaires qui doivent être incluses dans chaque compilation Vbc.exe \(sauf en cas de spécification de l'option `/noconfig`\).  Pour plus d'informations, consultez [@ \(Specify Response File\)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md).  
+ Vous pouvez modifier le fichier Vbc.rsp pour spécifier des options de compilateur supplémentaires qui doivent être incluses dans chaque compilation Vbc.exe (sauf si vous spécifiez la `/noconfig` option). Pour plus d’informations, consultez [@ (Spécifier un fichier réponse)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md).  
   
- Le compilateur traite les dernières options passées à la commande `vbc`.  En conséquence, toute option incluse sur la ligne de commande substitue la définition de la même option dans le fichier Vbc.rsp.  
+ Le compilateur traite les options passées à la `vbc` commande dernier. Par conséquent, toute option de ligne de commande remplace le paramètre de la même option dans le fichier Vbc.rsp.  
   
 > [!NOTE]
->  L'option `/noconfig` n'est pas disponible dans l'environnement de développement Visual Studio. Elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+>  La `/noconfig` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## Voir aussi  
- [\/nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)   
- [Visual Basic Command\-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [@ \(Specify Response File\)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)   
- [\/reference](../../../visual-basic/reference/command-line-compiler/reference.md)
+## <a name="see-also"></a>Voir aussi  
+ [/nostdlib (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nostdlib.md)   
+ [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [@ (Spécifier un fichier réponse)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)   
+ [Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)

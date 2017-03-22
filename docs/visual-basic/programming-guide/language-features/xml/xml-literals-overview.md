@@ -1,73 +1,89 @@
 ---
-title: "XML Literals Overview (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "XML literals [Visual Basic], about XML literals"
-  - "declaring XML literals [Visual Basic]"
-  - "LINQ to XML [Visual Basic], XML literals"
-  - "literals [Visual Basic], XML"
+title: "Vue d’ensemble des littéraux XML (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- XML literals [Visual Basic], about XML literals
+- declaring XML literals [Visual Basic]
+- LINQ to XML [Visual Basic], XML literals
+- literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# XML Literals Overview (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 57d036910ba9e49385caca28de222a8a8e28ec56
+ms.lasthandoff: 03/13/2017
 
-Un *littéral XML* vous permet d'incorporer directement du XML dans votre code [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)]. La syntaxe littérale XML, similaire à la syntaxe XML 1.0, représente des objets [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)]. Cela facilite la création par programmation des éléments et des documents XML, car votre code possède la même structure que le XML final.  
+---
+# <a name="xml-literals-overview-visual-basic"></a>Vue d'ensemble des littéraux XML (Visual Basic)
+Un *littéral XML* vous permet d’incorporer directement du XML dans votre [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] code. La syntaxe de littéral XML représente [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objets, qui est similaire à la syntaxe XML 1.0. Cela rend plus facile de créer par programme des documents et éléments XML, car votre code possède la même structure que le XML final.  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)]compile des littéraux XML dans des objets [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].  [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] fournit un modèle objet simple pour la création et la manipulation du XML, et ce modèle s'intègre bien à [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext-md.md)].  Pour plus d'informations, consultez <xref:System.Xml.Linq.XElement>.  
+ [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]Compile les littéraux XML en [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objets. [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]fournit un modèle objet simple pour la création et la manipulation du XML et ce modèle s’intègre bien avec [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)]. Pour plus d’informations, consultez <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement>  
   
- Vous pouvez incorporer une expression [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] dans un littéral XML.  Au moment de l'exécution, votre application crée un objet [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] pour chaque littéral, en intégrant les valeurs des expressions incorporées.  Cela vous permet de spécifier du contenu dynamique dans un littéral XML.  Pour plus d'informations, consultez [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ Vous pouvez incorporer un [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] expression dans un littéral XML. Au moment de l’exécution, votre application crée un [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objet pour chaque littéral, en intégrant les valeurs des expressions incorporées. Cela vous permet de spécifier un contenu dynamique dans un littéral XML. Pour plus d’informations, consultez [Expressions incorporées en XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
- Pour plus d'informations sur les différences entre la syntaxe de littéral XML et la syntaxe XML 1.0, consultez [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
+ Pour plus d’informations sur les différences entre la syntaxe de littéral XML et la syntaxe XML 1.0, consultez [des littéraux XML et la spécification XML 1.0 mais](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
   
-## Littéraux simples  
- Vous pouvez créer un objet [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] dans votre code [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] en tapant ou collant du code XML valide.  Un littéral d'élément XML retourne un objet <xref:System.Xml.Linq.XElement>.  Pour plus d'informations, consultez [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) et [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  L'exemple suivant crée un élément XML possédant plusieurs éléments enfants.  
+## <a name="simple-literals"></a>Littéraux simples  
+ Vous pouvez créer un [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] de l’objet dans votre [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] code en tapant ou collant du code XML valide. Un littéral d’élément XML retourne un <xref:System.Xml.Linq.XElement>objet.</xref:System.Xml.Linq.XElement> Pour plus d’informations, consultez [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) et [des littéraux XML et la spécification XML 1.0 mais](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md). L’exemple suivant crée un élément XML qui comporte plusieurs éléments enfants.  
   
- [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
+ [!code-vb[VbXMLSamples n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
   
- Vous pouvez créer un document XML en commençant un littéral XML par `<?xml version="1.0"?>`, comme indiqué dans l'exemple suivant.  Un littéral de document XML retourne un objet <xref:System.Xml.Linq.XDocument>.  Pour plus d'informations, consultez [XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
+ Vous pouvez créer un document XML en commençant un littéral XML par `<?xml version="1.0"?>`, comme illustré dans l’exemple suivant. Un littéral de document XML retourne un <xref:System.Xml.Linq.XDocument>objet.</xref:System.Xml.Linq.XDocument> Pour plus d’informations, consultez [littéral de Document XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples n °&6;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
 > [!NOTE]
->  La syntaxe de littéral XML de [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] n'est pas identique à la syntaxe de la spécification XML 1.0.  Pour plus d'informations, consultez [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
+>  La syntaxe de littéral XML dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] n’est pas identique à la syntaxe de la spécification XML 1.0. Pour plus d’informations, consultez [des littéraux XML et la spécification XML 1.0 mais](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
   
-## Continuation de ligne  
- Un littéral XML peut couvrir plusieurs lignes sans utiliser des caractères de continuation de ligne \(la séquence espace\-trait de soulignement\-entrée\).  Cela facilite la comparaison des littéraux XML du code avec les documents XML.  
+## <a name="line-continuation"></a>Continuation de ligne  
+ Un littéral XML peut couvrir plusieurs lignes sans utiliser de caractères de continuation de ligne (la séquence espace-trait de soulignement-entrée). Cela facilite la comparaison des littéraux XML dans le code avec des documents XML.  
   
- Le compilateur traite les caractères de continuation de ligne en tant que partie d'un littéral XML.  Par conséquent, vous devez utiliser la séquence espace\-trait de soulignement\-entrée uniquement lorsqu'elle appartient à l'objet [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].  
+ Le compilateur traite les caractères de continuation de ligne dans le cadre d’un littéral XML. Par conséquent, vous devez utiliser la séquence espace-trait de soulignement-entrée uniquement lorsqu’elle appartient à le [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objet.  
   
- Toutefois, vous avez besoin de caractères de continuation de ligne si vous avez une expression multiligne dans une expression incorporée.  Pour plus d'informations, consultez [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ En revanche, vous devez les caractères de continuation de ligne si vous avez une expression multiligne dans une expression incorporée. Pour plus d’informations, consultez [Expressions incorporées en XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
-## Incorporation de requêtes dans les littéraux XML  
- Vous pouvez utiliser une requête dans une expression incorporée.  Dans ce cas, les éléments retournés par la requête sont ajoutés à l'élément XML.  Cela vous permet d'ajouter du contenu dynamique, tel que le résultat de la requête d'un utilisateur, à un littéral XML.  
+## <a name="embedding-queries-in-xml-literals"></a>Incorporation de requêtes dans les littéraux XML  
+ Vous pouvez utiliser une requête dans une expression incorporée. Lorsque vous effectuez cette opération, les éléments retournés par la requête sont ajoutés à l’élément XML. Cela vous permet d’ajouter du contenu dynamique, tel que le résultat de la requête de l’utilisateur, à un littéral XML.  
   
- Par exemple, le code suivant utilise une requête incorporée pour créer des éléments XML à partir des membres du tableau `phoneNumbers2`, puis ajoute ces éléments comme enfants de `contact2`.  
+ Par exemple, le code suivant utilise une requête incorporée pour créer des éléments XML à partir des membres de la `phoneNumbers2` de tableau, puis ajoutez ces éléments en tant qu’enfants de `contact2`.  
   
- [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
+ [!code-vb[VbXMLSamples&#7;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
   
-## Comment le compilateur crée des objets à partir des littéraux XML  
- Le compilateur [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] traduit des littéraux XML en appels aux constructeurs [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] équivalents pour développer l'objet [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].  Par exemple, le compilateur [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] traduira l'exemple de code suivant en appel au constructeur <xref:System.Xml.Linq.XProcessingInstruction> pour l'instruction de version XML, en appels au constructeur <xref:System.Xml.Linq.XElement> pour les éléments `<contact>`, `<name>`et `<phone>` et en appels au constructeur <xref:System.Xml.Linq.XAttribute> pour l'attribut `type`.  Plus précisément, étant donné les attributs dans l'exemple suivant, le compilateur [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] appellera deux fois le constructeur <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>.  Les premiers passeront la valeur `type` pour le paramètre `name` et la valeur `home` pour le paramètre `value`.  Le deuxième passera également la valeur `type` pour le paramètre `name`, mais la valeur `work` pour le paramètre `value`.  
+## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>Comment le compilateur crée des objets à partir des littéraux XML  
+ Le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur traduit les littéraux XML en appels à l’équivalent [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] constructeurs pour créer le [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objet. Par exemple, le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur convertit le code suivant dans un appel à la <xref:System.Xml.Linq.XProcessingInstruction>constructeur pour l’instruction de version XML, les appels à la <xref:System.Xml.Linq.XElement>constructeur pour le `<contact>`, `<name>`, et `<phone>` des éléments et les appels à la <xref:System.Xml.Linq.XAttribute>constructeur pour le `type` attribut.</xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XProcessingInstruction> En particulier, étant donné les attributs dans l’exemple suivant, la [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur appellera le <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>deux fois le constructeur.</xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> La première passe la valeur `type` pour la `name` paramètre et la valeur `home` pour la `value` paramètre. La deuxième passe également la valeur `type` pour la `name` paramètre, mais la valeur `work` pour la `value` paramètre.  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples n °&6;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Xml.Linq.XElement>   
- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
- [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)   
- [XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)   
- [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
- [XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md)
+ [Création de code XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
+ [Expressions incorporées en XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)   
+ [Littéral de Document XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)   
+ [Littéral d’élément XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
+ [Littéraux XML](../../../../visual-basic/language-reference/xml-literals/index.md)

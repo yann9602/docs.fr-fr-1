@@ -1,35 +1,51 @@
 ---
-title: "Events cannot be declared with a delegate type that has a return type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc31084"
-  - "vbc31084"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC31084"
+title: "Les événements ne peuvent pas être déclarés avec un type délégué ayant un type de retour | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc31084
+- vbc31084
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC31084
 ms.assetid: 6111c5ca-d30b-490a-812e-dd422e221c7d
 caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
----
-# Events cannot be declared with a delegate type that has a return type
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 9829a0270d1969121f02bf6e46779b0e447cbb80
+ms.lasthandoff: 03/13/2017
 
-Un délégué a été spécifié pour une procédure de fonction.  
+---
+# <a name="events-cannot-be-declared-with-a-delegate-type-that-has-a-return-type"></a>Les événements ne peuvent pas être déclarés avec un type délégué ayant un type de retour
+Un délégué a été spécifié pour une procédure function.  
   
- **ID d'erreur :** BC31084  
+ **ID d’erreur :** BC31084  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Spécifiez un délégué pour une procédure `Sub`.  
+-   Spécifiez un délégué pour un `Sub` procédure.  
   
-## Voir aussi  
- [Events](../../../visual-basic/programming-guide/language-features/events/events.md)
+## <a name="see-also"></a>Voir aussi  
+ [Événements](../../../visual-basic/programming-guide/language-features/events/index.md)

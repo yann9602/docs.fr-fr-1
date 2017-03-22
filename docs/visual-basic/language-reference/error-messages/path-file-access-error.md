@@ -1,36 +1,52 @@
 ---
-title: "Path/File access error | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID75"
-dev_langs: 
-  - "VB"
+title: "Erreur d’accès chemin-fichier | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbrID75
+dev_langs:
+- VB
 ms.assetid: 6ce3a161-7316-46bd-a785-0d50e5414020
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
----
-# Path/File access error
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ac730bac76540331206daebe600445ca54cc15a9
+ms.lasthandoff: 03/13/2017
 
-Au cours d'une opération d'accès au fichier ou au disque, le système d'exploitation n'a pas pu établir de liaison entre le chemin d'accès et le nom de fichier.  
+---
+# <a name="pathfile-access-error"></a>Erreur dans le chemin d’accès
+Pendant une opération d’accès au fichier ou l’accès au disque, le système d’exploitation ne peut pas établir une connexion entre le chemin d’accès et le nom de fichier.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Assurez\-vous que la spécification de fichier est correctement mise en forme.  Un nom de fichier peut contenir un chemin d'accès qualifié complet \(absolu\) ou relatif.  Un chemin d'accès qualifié complet commence par le nom du lecteur \(si le chemin d'accès se trouve sur un autre lecteur\) et répertorie le chemin explicite de la racine au fichier.  Tout chemin non complet est relatif au lecteur actif et au répertoire en cours.  
+1.  Assurez-vous que la spécification de fichier est correctement formatée. Un nom de fichier peut contenir un complet (absolu) ou par rapport chemin d’accès. Un chemin d’accès qualifié complet commence par le nom du lecteur (si le chemin d’accès se trouve sur un autre lecteur) et répertorie le chemin d’accès explicite à partir de la racine dans le fichier. N’importe quel chemin d’accès qui n’est pas complet est relatif au lecteur en cours et active.  
   
-2.  Vérifiez que vous n'avez pas tenté d'enregistrer un fichier qui remplacerait un fichier existant en lecture seule.  Si tel est le cas, modifiez l'attribut de lecture seule du fichier cible ou enregistrez le fichier sous un nom différent.  
+2.  Assurez-vous que vous n’avez tenté pas enregistrer un fichier qui remplace un fichier existant en lecture seule. Si c’est le cas, modifiez l’attribut en lecture seule du fichier cible ou enregistrez le fichier avec un nom de fichier différent.  
   
-3.  Vérifiez que vous n'avez pas tenté d'ouvrir un fichier en lecture seule en mode séquentiel`Output`ou `Append`.  Si tel est le cas, ouvrez le fichier en mode `Input` ou modifiez l'attribut en lecture seule du fichier.  
+3.  Assurez-vous que vous n’avez pas tenté d’ouvrir un fichier en lecture seule dans séquentiel`Output`ou `Append` mode. Si c’est le cas, ouvrez le fichier dans `Input` mode ou modifiez l’attribut en lecture seule du fichier.  
   
-4.  Vérifiez que vous n'avez pas tenté de modifier un projet [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] à l'intérieur d'une base de données ou d'un document.  
+4.  Assurez-vous que vous n’avez pas tenté de modifier un [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] projet au sein d’une base de données ou un document.  
   
-## Voir aussi  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Voir aussi  
+ [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)

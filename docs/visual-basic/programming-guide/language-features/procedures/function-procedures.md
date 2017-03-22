@@ -1,41 +1,58 @@
 ---
-title: "Proc&#233;dures Function (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procédures Function"
-  - "valeurs de retour, procédures function"
-  - "code Visual Basic, procédures"
-  - "procédures, appeler"
-  - "procédures, procédures Function"
-  - "syntaxe, procédures Function"
+title: "Fonction procédures (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Function procedures
+- return values, function procedures
+- Visual Basic code, procedures
+- procedures, calling
+- procedures, Function procedures
+- syntax, function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
 caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
----
-# Proc&#233;dures Function (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 11baaa6985f0681aa9c67c4f2470fb9917db5b78
+ms.lasthandoff: 03/13/2017
 
-Une procédure `Function` est une série d'instructions [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] délimitées par les instructions `Function` et `End Function`.  La procédure `Function` effectue une tâche puis retourne le contrôle au code appelant.  Lorsqu'elle retourne le contrôle, elle retourne également une valeur au code appelant.  
+---
+# <a name="function-procedures-visual-basic"></a>Procédures Function (Visual Basic)
+A `Function` procédure est une série de [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] instructions placées par le `Function` et `End Function` instructions. Le `Function` procédure effectue une tâche, puis retourne le contrôle au code appelant. Lorsqu’elle retourne le contrôle, elle retourne également une valeur au code appelant.  
   
- Chaque fois que la procédure est appelée, ses instructions sont exécutées à partir de la première instruction exécutable située après l'instruction `Function` jusqu'à la première instruction `End Function`, `Exit Function` ou `Return` rencontrée.  
+ Chaque fois que la procédure est appelée, ses instructions sont exécutées, commençant par la première instruction exécutable après le `Function` instruction et se terminant par la première `End Function`, `Exit Function`, ou `Return` instruction rencontrée.  
   
- Vous pouvez définir une procédure `Function` dans un module, une classe ou une structure.  La valeur par défaut est `Public`, ce qui signifie que vous pouvez l'appeler de n'importe où dans une application qui a accès au module, à la classe ou à la structure dans laquelle vous l'avez définie.  
+ Vous pouvez définir un `Function` procédure dans un module, classe ou structure. Il est `Public` par défaut, ce qui signifie que vous pouvez l’appeler depuis n’importe où dans votre application qui a accès au module, classe ou une structure dans laquelle vous définie.  
   
- Une procédure `Function` peut accepter des arguments tels que les constantes, les variables ou les expressions qui sont passées à la procédure par le code appelant.  
+ Un `Function` procédure peut prendre des arguments, tels que les constantes, variables ou expressions qui sont passées par le code appelant.  
   
-## Syntaxe de déclaration  
- La syntaxe de déclaration d'une procédure `Function` est la suivante :  
+## <a name="declaration-syntax"></a>Syntaxe de déclaration  
+ La syntaxe de déclaration d’un `Function` comme suit :  
   
 ```vb  
 [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
@@ -43,12 +60,12 @@ Une procédure `Function` est une série d'instructions [!INCLUDE[vbprvb](../../
 End Function  
 ```  
   
- Les *modificateurs* peuvent spécifier un niveau d'accès et des informations relatives à la surcharge, la substitution, le partage et l'occultation.  Pour plus d'informations, consultez [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ Le *modificateurs* peut spécifier des informations concernant la surcharge, substitution, le partage et l’occultation et niveau d’accès. Pour plus d’informations, consultez [Function, instruction](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
- Vous déclarez chaque paramètre de la même façon que pour [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md).  
+ Vous déclarez chaque paramètre de la même façon que pour [procédures Sub](./sub-procedures.md).  
   
-### Type de données  
- Chaque procédure `Function` possède un type de données, comme n'importe quelle variable.  Ce type de données est spécifié par la clause `As` dans l'instruction `Function` et il détermine le type de données de la valeur que la fonction retourne au code appelant.  Les exemples de déclarations suivants illustrent ce principe.  
+### <a name="data-type"></a>Type de données  
+ Chaque `Function` procédure possède un type de données, fait de simplement chaque variable. Ce type de données est spécifié par le `As` clause dans la `Function` instruction, qui détermine le type de données de la valeur de la fonction retourne au code appelant. Les exemples de déclarations suivants illustrent ce principe.  
   
 ```vb  
 Function yesterday() As Date  
@@ -58,62 +75,62 @@ Function findSqrt(ByVal radicand As Single) As Single
 End Function  
 ```  
   
- Pour plus d'informations, consultez « Éléments » dans [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ Pour plus d’informations, consultez « Parties » dans [Function, instruction](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
-## Retour de valeurs  
- La valeur qu'une procédure d' `Function` envoie vers le code appelant est appelée sa valeur de retour.  La procédure retourne cette valeur selon l'une des deux méthodes suivantes :  
+## <a name="returning-values"></a>Retour de valeurs  
+ La valeur un `Function` procédure envoie la restauration vers le code appelant est appelée sa valeur de retour. La procédure retourne cette valeur de deux manières :  
   
--   Il utilise l'instruction `Return` pour spécifier la valeur de retour et retourne immédiatement le contrôle au programme appelant.  L'exemple suivant illustre ce comportement.  
+-   Il utilise le `Return` pour spécifier la valeur de retour et retourne le contrôle immédiatement au programme appelant. L'exemple suivant illustre ce comportement.  
   
-    ```vb  
-    Function FunctionName [(ParameterList)] As ReturnType  
-        ' The following statement immediately transfers control back  
-        ' to the calling code and returns the value of Expression.  
-        Return Expression  
-    End Function  
-    ```  
+```vb  
+Function FunctionName [(ParameterList)] As ReturnType  
+    ' The following statement immediately transfers control back  
+    ' to the calling code and returns the value of Expression.  
+    Return Expression  
+End Function  
+```  
   
--   Elle assigne une valeur à son nom de fonction dans une ou plusieurs instructions de la procédure.  Le contrôle ne retourne pas au programme appelant tant qu'une instruction `Exit Function` ou `End Function` n'a pas été exécutée.  L'exemple suivant illustre ce comportement.  
+-   Il assigne une valeur à son propre nom de fonction dans une ou plusieurs instructions de la procédure. Contrôle ne retourne pas au programme appelant jusqu'à un `Exit Function` ou `End Function` instruction est exécutée. L'exemple suivant illustre ce comportement.  
   
-    ```vb  
-    Function FunctionName [(ParameterList)] As ReturnType  
-        ‘ The following statement does not transfer control back to the calling code.  
-        FunctionName = Expression  
-        ' When control returns to the calling code, Expression is the return value.  
-    End Function  
-    ```  
+```vb  
+Function FunctionName [(ParameterList)] As ReturnType  
+    ' The following statement does not transfer control back to the calling code.  
+    FunctionName = Expression  
+    ' When control returns to the calling code, Expression is the return value.  
+End Function  
+```  
   
- L'assignation de la valeur de retour au nom de la fonction permet à la procédure de conserver le contrôle jusqu'à ce que celui\-ci rencontre une instruction `Exit Function` ou `End Function`.  Vous pouvez ainsi assigner une valeur préliminaire et l'ajuster ultérieurement si nécessaire.  
+ L’avantage de l’affectation de la valeur de retour pour le nom de fonction est que le contrôle ne retourne pas de la procédure, jusqu'à ce qu’il rencontre un `Exit Function` ou `End Function` instruction. Cela permet d’assigner une valeur préliminaire et l’ajuster ultérieurement si nécessaire.  
   
- Pour plus d'informations sur le retour des valeurs, consultez [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  Pour plus d'informations sur le retour des tableaux, consultez l' [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Pour plus d’informations sur les valeurs de retour, voir [Function, instruction](../../../../visual-basic/language-reference/statements/function-statement.md). Pour plus d’informations sur le renvoi des tableaux, consultez [tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-## Syntaxe d'appel  
- Vous appelez une procédure `Function` en incluant son nom et ses arguments soit à droite d'une instruction d'assignation soit dans une expression.  Vous devez fournir les valeurs de tous les arguments qui ne sont pas facultatifs et mettre la liste des arguments entre parenthèses.  Si aucun argument n'est spécifié, vous pouvez ne pas mettre les parenthèses.  
+## <a name="calling-syntax"></a>Syntaxe d’appel  
+ Vous appelez un `Function` procédure en incluant son nom et ses arguments soit à droite d’une instruction d’assignation ou dans une expression. Vous devez fournir des valeurs pour tous les arguments qui ne sont pas facultatifs, et vous devez placer la liste d’arguments entre parenthèses. Si aucun argument n’est fourni, vous pouvez omettre les parenthèses.  
   
- La syntaxe d'appel à une procédure `Function` est la suivante :  
+ La syntaxe d’un appel à une `Function` comme suit :  
   
- *l\-value*  `=` *functionname* `[(` *argumentlist* `)]`  
+ *lvalue*`=`*functionname* `[(` *argumentlist*    `)]`  
   
- `If ((` *functionname* `[(` *argumentlist* `)] / 3) <=` *expression* `) Then`  
+ `If ((`*functionname* `[(` *argumentlist* `)] / 3) <=` *expression*  `) Then`  
   
- Lorsque vous appelez une procédure `Function`, vous n'avez pas besoin d'utiliser sa valeur de retour.  Si vous ne l'utilisez pas, toutes les actions de la fonction sont exécutées, mais la valeur de retour est ignorée.  La méthode <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> est souvent appelée de cette manière.  
+ Lorsque vous appelez un `Function` procédure, il est inutile d’utiliser sa valeur de retour. Si vous ne le faites pas, toutes les actions de la fonction sont exécutées, mais la valeur de retour est ignorée. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>est souvent appelée de cette manière.</xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>  
   
-### Illustration de déclaration et d'appel  
- La procédure `Function` suivante calcule le côté le plus long, ou hypoténuse, d'un triangle rectangle, d'après les valeurs des deux autres côtés.  
+### <a name="illustration-of-declaration-and-call"></a>Illustration de déclaration et d’appel  
+ Les éléments suivants `Function` procédure calcule le côté le plus long, ou hypoténuse, d’un triangle rectangle, d’après les valeurs des deux autres côtés.  
   
- [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/function-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures n °&1;](./codesnippet/VisualBasic/function-procedures_1.vb)]  
   
- L'exemple suivant montre un appel typique à `hypotenuse`.  
+ L’exemple suivant montre un appel typique à `hypotenuse`.  
   
- [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/function-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures n °&6;](./codesnippet/VisualBasic/function-procedures_2.vb)]  
   
-## Voir aussi  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Procédures de propriété](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md)   
- [How to: Create a Procedure that Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md)   
- [How to: Return a Value from a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-return-a-value-from-a-procedure.md)   
- [How to: Call a Procedure That Returns a Value](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a>Voir aussi  
+ [Procédures](./index.md)   
+ [Procédures Sub](./sub-procedures.md)   
+ [Procédures de propriété](./property-procedures.md)   
+ [Procédures d’opérateur](./operator-procedures.md)   
+ [Arguments et paramètres de procédure](./procedure-parameters-and-arguments.md)   
+ [Function (instruction)](../../../../visual-basic/language-reference/statements/function-statement.md)   
+ [Comment : créer une procédure qui retourne une valeur](./how-to-create-a-procedure-that-returns-a-value.md)   
+ [Comment : retourner une valeur d’une procédure](./how-to-return-a-value-from-a-procedure.md)   
+ [Guide pratique : appeler une procédure qui retourne une valeur](./how-to-call-a-procedure-that-returns-a-value.md)

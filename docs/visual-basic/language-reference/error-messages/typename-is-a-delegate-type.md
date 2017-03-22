@@ -1,44 +1,60 @@
 ---
-title: "&#39;&lt;typename&gt;&#39; is a delegate type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc32008"
-  - "vbc32008"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32008"
+title: "«&lt;typename&gt;&quot; est un type délégué | Documents Microsoft"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc32008
+- vbc32008
+dev_langs:
+- VB
+helpviewer_keywords:
+- BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
 caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
----
-# &#39;&lt;typename&gt;&#39; is a delegate type
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3d6cc283f7e9815eb9b723a450731998f14b3424
+ms.lasthandoff: 03/13/2017
 
-'\<nomtype\>' est un type délégué.Une construction déléguée accepte une seule expression AddressOf en tant que liste d'arguments.Une expression AddressOf peut souvent être utilisée à la place d'une construction déléguée.  
+---
+# <a name="39lttypenamegt39-is-a-delegate-type"></a>«&lt;typename&gt;' est un type délégué
+«\<typename >' est un type délégué. Une construction déléguée accepte une seule expression AddressOf en tant que liste d’arguments. Une expression AddressOf peut souvent être utilisée au lieu d’une construction déléguée.  
   
- Une clause `New` qui crée une instance d'une classe déléguée fournit une liste d'arguments non valide au constructeur délégué.  
+ Un `New` clause crée une instance d’une classe déléguée fournit une liste d’arguments non valide au constructeur délégué.  
   
- Vous pouvez fournir seulement une expression `AddressOf` lors de la création d'une nouvelle instance déléguée.  
+ Vous pouvez fournir une seule `AddressOf` expression lors de la création d’une nouvelle instance de délégué.  
   
- Cette erreur peut se produire si vous ne passez au constructeur délégué aucun argument, si vous en passez plusieurs ou un seul qui n'est pas une expression `AddressOf` valide.  
+ Cette erreur peut se produire si vous ne passez pas d’arguments au constructeur délégué, si vous passez plusieurs arguments, ou si vous passez un argument unique qui n’est pas valide `AddressOf` expression.  
   
- **ID d'erreur :** BC32008  
+ **ID d’erreur :** BC32008  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Utilisez une seule expression `AddressOf` dans la liste d'arguments pour la classe déléguée dans la clause `New`.  
+-   Utiliser un seul `AddressOf` expression dans la liste d’arguments pour la classe déléguée dans la `New` clause.  
   
-## Voir aussi  
- [New Operator](../../../visual-basic/language-reference/operators/new-operator.md)   
- [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Delegates](../../../visual-basic/programming-guide/language-features/delegates/delegates.md)   
- [How to: Invoke a Delegate Method](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+## <a name="see-also"></a>Voir aussi  
+ [New, opérateur](../../../visual-basic/language-reference/operators/new-operator.md)   
+ [AddressOf (opérateur)](../../../visual-basic/language-reference/operators/addressof-operator.md)   
+ [Délégués](../../../visual-basic/programming-guide/language-features/delegates/index.md)   
+ [Guide pratique : appeler une méthode déléguée](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)

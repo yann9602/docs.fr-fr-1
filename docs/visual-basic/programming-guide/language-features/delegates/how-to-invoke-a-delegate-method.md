@@ -1,27 +1,43 @@
 ---
-title: "How to: Invoke a Delegate Method (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: "Comment : appeler une méthode déléguée (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
 caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
----
-# How to: Invoke a Delegate Method (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 29b20eb6089886c8111711388472004bbacea312
+ms.lasthandoff: 03/13/2017
 
-Cet exemple montre comment associer une méthode à un délégué, puis comment appeler cette méthode par le biais du délégué.  
+---
+# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Comment : appeler une méthode déléguée (Visual Basic)
+Cet exemple montre comment associer une méthode à un délégué, puis appeler cette méthode par le biais du délégué.  
   
-### Création du délégué et des procédures correspondantes  
+### <a name="create-the-delegate-and-matching-procedures"></a>Création du délégué et les procédures correspondantes  
   
 1.  Créez un délégué nommé `MySubDelegate`.  
   
@@ -39,7 +55,7 @@ Cet exemple montre comment associer une méthode à un délégué, puis comment 
     End Class  
     ```  
   
-3.  Définissez une méthode qui crée une instance du délégué et appelle la méthode associée au délégué en appelant la méthode `Invoke` intégrée.  
+3.  Définissez une méthode qui crée une instance du délégué et appelle la méthode associée au délégué en appelant intégré `Invoke` méthode.  
   
     ```  
     Protected Sub DelegateTest()  
@@ -51,8 +67,8 @@ Cet exemple montre comment associer une méthode à un délégué, puis comment 
     End Sub  
     ```  
   
-## Voir aussi  
- [Delegate Statement](../../../../visual-basic/language-reference/statements/delegate-statement.md)   
- [Delegates](../../../../visual-basic/programming-guide/language-features/delegates/delegates.md)   
- [Events](../../../../visual-basic/programming-guide/language-features/events/events.md)   
- [Applications multithread](../Topic/Multithreaded%20Applications%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>Voir aussi  
+ [Delegate, instruction](../../../../visual-basic/language-reference/statements/delegate-statement.md)   
+ [Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md)   
+ [Événements](../../../../visual-basic/programming-guide/language-features/events/index.md)   
+ [Applications multithread](http://msdn.microsoft.com/library/a06a1a56-dd16-44e8-bc01-2c2255511bc6)
