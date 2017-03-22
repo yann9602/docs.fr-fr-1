@@ -39,11 +39,11 @@ Commandes .NET Core (télémétrie non activée) :
 - `dotnet restore`
 - `dotnet run`
 
-##<a name="behavior"></a>Comportement
+## <a name="behavior"></a>Comportement
 
 La fonctionnalité de télémétrie des outils .NET Core est activée par défaut. Vous pouvez ne pas adhérer à la fonctionnalité de télémétrie en définissant une variable d’environnement DOTNET_CLI_TELEMETRY_OPTOUT (par exemple, `export` sous Linux/Mac OS, `set` sur Windows) sur True (par exemple, « true », 1).
 
-##<a name="data-points"></a>Points de données
+## <a name="data-points"></a>Points de données
 
 La fonctionnalité recueille les données suivantes :
 
@@ -57,7 +57,7 @@ La fonctionnalité recueille les données suivantes :
 
 La fonctionnalité ne collecte pas les informations personnelles, telles que les noms d’utilisateurs et les adresses e-mail. Elle n’analyse pas votre code et n’extrait pas de données relatives au projet qui peuvent être considérées comme sensibles, telles que le nom, le dépôt ou l’auteur (si ceux-ci ont été définis dans votre project.json). Nous souhaitons savoir comment vous utilisez les outils, et non ce que vous créez avec les outils. Si vous vous rendez compte que des données sensibles ont été collectées, il s’agit d’un bogue. Dans ce cas, [signalez le problème](https://github.com/dotnet/cli/issues) pour que celui-ci soit résolu.
 
-##<a name="license"></a>Licence
+## <a name="license"></a>Licence
 
 La distribution Microsoft de .NET Core est concédée sous licence avec le [CLUF de la BIBLIOTHÈQUE .NET MICROSOFT](https://aka.ms/dotnet-core-eula). Celui-ci comprend la section « DONNÉES » ci-dessous, qui permet d’activer la télémétrie.
 
@@ -97,3 +97,4 @@ A command is running to initially populate your local package cache, to
 improve restore speed and enable offline access. This command will take up to 
 a minute to complete and will only happen once. 
 ```
+
