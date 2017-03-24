@@ -1,25 +1,23 @@
 ---
 title: Commande dotnet-restore | Microsoft Docs
-description: "Découvrez comment restaurer les dépendances et les outils spécifiques aux projets avec la commande dotnet-restore."
+description: "Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore."
 keywords: "dotnet-restore, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/07/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 60489b25-38de-47e6-bed1-59d9f42e2d46
+ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
+ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
+ms.openlocfilehash: a55cd932045a59f08146dff367a87eb6fe61f6e5
+ms.lasthandoff: 03/07/2017
 
 ---
 
 #<a name="dotnet-restore"></a>dotnet-restore
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-restore (outils .NET Core RC4)](../preview3/tools/dotnet-restore.md).
 
 ## <a name="name"></a>Nom
 
@@ -27,33 +25,30 @@ ms.openlocfilehash: df8174aa3252568d7112305af07e6399d96ca32f
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet restore [root] [--help] [--force-english-output] [--source]  
-    [--packages] [--disable-parallel] [--fallbacksource] [--configfile] 
-    [--no-cache] [--infer-runtimes] [--verbosity] [--ignore-failed-sources]`
+```
+dotnet restore [root] [-s|--source] [-r|--runtime] [--packages] [--disable-parallel] [--configfile] [--no-cache] [--ignore-failed-sources] [--no-dependencies] [-v|--verbosity]
+dotnet restore [-h|--help]
+```
 
 ## <a name="description"></a>Description
 
-La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier [project.json](project-json.md). Par défaut, la restauration des dépendances et celle des outils sont effectuées en parallèle.
+La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ainsi que les outils spécifiques aux projets qui sont spécifiés dans le fichier projet. Par défaut, la restauration des dépendances et celle des outils sont effectuées en parallèle.
 
 Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis par le fichier de configuration NuGet.config. Un flux par défaut est disponible au moment de l’installation des outils CLI. Vous pouvez spécifier plusieurs flux en créant votre propre fichier NuGet.config dans le répertoire du projet. Les flux peuvent également être spécifiés par appel dans l’invite de commandes. 
 
 Pour les dépendances, vous pouvez spécifier l’emplacement des packages restaurés pendant l’opération de restauration à l’aide de l’argument `--packages`. Si aucune valeur n’est spécifiée, le cache du package NuGet par défaut est utilisé. Il se trouve dans le répertoire `.nuget/packages`, situé dans le répertoire de base de l’utilisateur, sur tous les systèmes d’exploitation (par exemple, */home/user1* sur Linux ou *C:\Users\user1* sur Windows).
 
-Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier [project.json](project-json.md). 
+Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 
 ## <a name="options"></a>Options
 
-`[root]` 
+`root` 
     
- Liste des projets ou des dossiers du projet à restaurer. Chaque valeur peut être le chemin d’un fichier [project.json](project-json.md) ou [global.json](global-json.md), ou d’un dossier. Si un dossier est spécifié, l’opération de restauration recherchera de manière récursive un fichier [project.json](project-json.md) dans tous les sous-répertoires et restaurations pour chaque fichier [project.json](project-json.md) trouvé.
+Chemin facultatif du fichier projet à restaurer. 
 
 `-h|--help`
 
 Affiche une aide brève pour la commande.
-
- `--force-english-output`
-
-Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).
 
 `-s|--source <SOURCE>`
 
@@ -67,10 +62,6 @@ Spécifie le répertoire dans lequel placer les packages restaurés.
 
 Désactive la restauration de plusieurs projets en parallèle. 
 
-`-f|--fallbacksource <FEED>`
-
-Spécifie la liste des sources de packages à utiliser comme solutions de secours lors de la restauration si toutes les autres sources échouent. Tous les formats de flux valides sont autorisés. Vous pouvez spécifier plusieurs sources de secours en spécifiant cette option plusieurs fois.
-
 `--configfile <FILE>`
 
 Fichier de configuration NuGet (NuGet.config) à utiliser pour l’opération de restauration.
@@ -79,17 +70,17 @@ Fichier de configuration NuGet (NuGet.config) à utiliser pour l’opération de
 
 Spécifie de ne pas mettre en cache les packages et les requêtes HTTP.
 
-`--infer-runtimes`
-
-Option temporaire permettant d’autoriser NuGet à déduire les identificateurs de runtime pour les dépôts hérités.
-
-`--verbosity [LEVEL]`
-
-Niveau de détail à utiliser pour la journalisation. Valeurs autorisées : `Debug`, `Verbose`, `Information`, `Minimal`, `Warning` et `Error`.
-
 ` --ignore-failed-sources`
 
 Avertir en cas d’échec des sources uniquement si des packages répondent aux exigences de versions.
+
+`--no-dependencies`
+
+Quand vous restaurez un projet avec des références de P2P, ne restaurez pas les références, uniquement le projet racine.
+
+`--verbosity <LEVEL>`
+
+Affiche la quantité de détails définie dans la sortie. Le niveau peut être `normal`, `quiet` ou `detailed`.
 
 ## <a name="examples"></a>Exemples
 
@@ -99,7 +90,7 @@ Restaurez des dépendances et des outils pour le projet se trouvant dans le rép
 
 Restaurez des dépendances et des outils pour le projet `app1` se trouvant à l’emplacement donné :
 
-`dotnet restore ~/projects/app1/project.json`
+`dotnet restore ~/projects/app1/app1.csproj`
     
 Restaurez les dépendances et les outils pour le projet se trouvant dans le répertoire actif en utilisant le chemin de fichier fourni comme source de secours :
 
@@ -112,8 +103,4 @@ Restaurez les dépendances et les outils pour le projet se trouvant dans le rép
 Restaurez des dépendances et des outils pour le projet se trouvant dans le répertoire actif et affichez uniquement les erreurs dans la sortie :
 
 `dotnet restore --verbosity Error`
-
-
-<!--HONumber=Feb17_HO2-->
-
 

@@ -1,0 +1,107 @@
+---
+title: "Inférence de Type local (Visual Basic) | Documents Microsoft"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- local type inference
+- vb.TypeInfer
+dev_langs:
+- VB
+helpviewer_keywords:
+- Option Infer statement
+- local type inference [Visual Basic]
+- implicitly-typed local variables [Visual Basic]
+- variables [Visual Basic], type inference
+- inference [Visual Basic]
+- type inference [Visual Basic]
+ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
+caps.latest.revision: 43
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Machine Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2bb673ce871b8e875f62c373404a849c139ab598
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="local-type-inference-visual-basic"></a>Inférence de type local (Visual Basic)
+Le compilateur Visual Basic utilise *l’inférence de type* pour déterminer les types de données des variables locales déclarées sans un `As` clause. Le compilateur déduit le type de la variable du type de l’expression d’initialisation. Cela vous permet de déclarer des variables sans déclarer explicitement un type, comme illustré dans l’exemple suivant. À la suite les déclarations, les deux `num1` et `num2` sont fortement typés comme entiers.  
+  
+ [!code-vb[VbVbalrTypeInference n °&1;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_1.vb)]  
+  
+> [!NOTE]
+>  Si vous ne souhaitez pas `num2` dans l’exemple précédent doit être tapé comme un `Integer`, vous pouvez spécifier un autre type à l’aide d’une déclaration telle que `Dim num3 As Object = 3` ou `Dim num4 As Double = 3`.  
+  
+ Inférence de type local s’applique au niveau de la procédure. Il ne peut pas être utilisé pour déclarer des variables au niveau du module (dans une classe, une structure, un module ou une interface, mais pas dans une procédure ou un bloc). Si `num2` dans l’exemple précédent ont un champ d’une classe au lieu d’une variable locale dans une procédure, la déclaration génère une erreur avec `Option Strict` et classe `num2` comme un `Object` avec `Option Strict` désactivé. De même, l’inférence de type local ne s’applique pas aux variables de niveau procédure déclarées en tant que `Static`.  
+  
+## <a name="type-inference-vs-late-binding"></a>Tapez l’inférence vs. Liaison tardive  
+ Code utilise l’inférence de type ressemble au code qui s’appuie sur la liaison tardive. Toutefois, l’inférence de type type fort à la variable au lieu de laisser sous la forme `Object`. Le compilateur utilise l’initialiseur de variable pour déterminer le type de variable au moment de la compilation pour produire un code à liaison anticipée. Dans l’exemple précédent, `num2`, comme `num1`, est typé comme un `Integer`.  
+  
+ Le comportement de variables à liaison anticipée diffère de celui des variables à liaison tardive, dont le type est connu uniquement au moment de l’exécution. Connaître que le type tôt permet au compilateur d’identifier les problèmes avant l’exécution, allouer la mémoire précisément et effectuer d’autres optimisations. Liaison anticipée permet également de l’environnement de développement intégré (IDE) pour fournir l’aide IntelliSense sur les membres d’un objet Visual Basic. Liaison anticipée est également recommandée pour des performances. C’est parce que toutes les données stockées dans une variable à liaison tardive doivent être encapsulées en tant que type `Object`, ainsi que l’accès aux membres du type au moment de l’exécution ralentit le programme.  
+  
+## <a name="examples"></a>Exemples  
+ L’inférence de type se produit lorsqu’une variable locale est déclarée sans un `As` clause et initialisé. Le compilateur utilise le type de la valeur initiale assignée en tant que le type de la variable. Par exemple, chacune des lignes de code suivants déclare une variable de type `String`.  
+  
+ [!code-vb[VbVbalrTypeInference n °&2;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_2.vb)]  
+  
+ Le code suivant montre deux méthodes pour créer un tableau d’entiers.  
+  
+ [!code-vb[VbVbalrTypeInference n °&3;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_3.vb)]  
+  
+ Il est pratique d’utiliser l’inférence de type pour déterminer le type d’une variable de contrôle de boucle. Dans le code suivant, le compilateur déduit que `number` est un `Integer` car `someNumbers2` à partir de l’exemple précédent est un tableau d’entiers.  
+  
+ [!code-vb[VbVbalrTypeInference n °&4;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_4.vb)]  
+  
+ Inférence de type local peut être utilisé dans `Using` instructions pour établir le type de nom de la ressource, comme le montre l’exemple suivant.  
+  
+ [!code-vb[VbVbalrTypeInference&#7;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_5.vb)]  
+  
+ Le type d’une variable peut également être déduit à partir des valeurs de retour des fonctions, comme le montre l’exemple suivant. Les deux `pList1` et `pList2` sont des tableaux de processus car `Process.GetProcesses` retourne un tableau de processus.  
+  
+ [!code-vb[VbVbalrTypeInference n °&5;](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_6.vb)]  
+  
+## <a name="option-infer"></a>Option Infer  
+ `Option Infer`vous permet de que spécifier si l’inférence de type local est autorisée dans un fichier particulier. Pour activer ou bloquer l’option, tapez une des instructions suivantes au début du fichier.  
+  
+ `Option Infer On`  
+  
+ `Option Infer Off`  
+  
+ Si vous ne spécifiez pas de valeur pour `Option Infer` dans votre code, la valeur par défaut du compilateur est `Option Infer On`. Pour les projets mis à niveau à partir de [!INCLUDE[vb_orcas_long](../../../../visual-basic/misc/includes/vb_orcas_long_md.md)] ou version antérieure, la valeur par défaut du compilateur est `Option Infer Off`.  
+  
+ Si la valeur définie pour `Option Infer` dans un fichier est en conflit avec la valeur définie dans l'IDE ou sur la ligne de commande, la valeur contenue dans le fichier est prioritaire.  
+  
+ Pour plus d’informations, consultez [Option Infer, instruction](../../../../visual-basic/language-reference/statements/option-infer-statement.md) et [Page Compiler, Concepteur de projets (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
+  
+## <a name="restrictions"></a>Restrictions  
+ L’inférence de type peut être utilisé uniquement pour les variables locales non statiques ; Il ne peut pas être utilisé pour déterminer le type de fonctions, des propriétés ou champs de classe.  
+  
+## <a name="see-also"></a>Voir aussi  
+ [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
+ [Liaison anticipée et liaison tardive](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)   
+ [For Each... Instruction suivante](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)   
+ [Pour... Instruction suivante](../../../../visual-basic/language-reference/statements/for-next-statement.md)   
+ [Instruction Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)   
+ [/optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)   
+ [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

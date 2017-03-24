@@ -1,0 +1,5 @@
+# [Accès aux paramètres d’application](accessing-application-settings.md)
+## [Guide pratique : créer des grilles de propriétés pour les paramètres utilisateur](how-to-create-property-grids-for-user-settings.md)
+## [Guide pratique : rendre persistants les paramètres utilisateur](how-to-persist-user-settings.md)
+## [Guide pratique : modifier les paramètres utilisateur](how-to-change-user-settings.md)
+## [Guide pratique : lire des paramètres d’application](how-to-read-application-settings.md)

@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a01efc8f-c242-4535-bd32-acd0032d9590
 translationtype: Human Translation
-ms.sourcegitcommit: 90ade65e167770bdbcbbf79707fe48e6fbc030c0
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 5b61b4736880d57f02070150d8613d860505b268
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -373,9 +374,4 @@ Console.WriteLine(FormatPrice)
 [Chaînes de format TimeSpan standard](standard-timespan.md)
 
 [Chaînes de format TimeSpan personnalisées](custom-timespan.md)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

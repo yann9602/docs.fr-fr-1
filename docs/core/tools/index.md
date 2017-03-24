@@ -4,22 +4,20 @@ description: "Présentation de l’interface de ligne de commande (CLI) et de se
 keywords: "CLI, outils CLI, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/06/2016
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: b70e9ac0-c8be-49f7-9332-95ab93e0e7bc
+ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 1d7a3d90c6ba9079fe5d36b9c9922928d6a6f137
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: 4e3137d8506342662d145481d5e9fde1d53b9ba3
+ms.lasthandoff: 03/13/2017
 
 ---
 
-# <a name="net-core-command-line-interface-tools"></a>Outils de l’interface de ligne de commande de .NET Core
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Outils de l’interface de ligne de commande .NET Core (outils .NET Core RC4)](../preview3/tools/index.md).
+# <a name="net-core-command-line-interface-tools-net-core-sdk-10-tools"></a>Outils de l’interface de ligne de commande .NET Core (outils SDK .NET Core 1.0)
 
 L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d’outils multiplateforme fondamentale pour le développement d’applications .NET Core. Elle est dite « de fondation », car il s’agit de la couche principale sur laquelle les autres outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de builds, peuvent se baser. 
 
@@ -38,6 +36,7 @@ Par défaut, les outils CLI sont installés « côte à côte ». Cela signif
 Les commandes suivantes sont installées par défaut :
 
 * [new](dotnet-new.md)
+* [migrate](dotnet-migrate.md)
 * [restore](dotnet-restore.md)
 * [run](dotnet-run.md)
 * [build](dotnet-build.md)
@@ -52,7 +51,7 @@ Il existe également un moyen d’importer davantage de commandes pour chaque pr
 Avant de rentrer dans les détails, voyons comment utiliser les outils CLI. L’exemple suivant utilise plusieurs commandes de l’installation standard des outils CLI pour initialiser une application console simple, restaurer les dépendances, générer l’application, puis l’exécuter. 
 
 ```console
-dotnet new
+dotnet new console
 dotnet restore
 dotnet build --output /stuff
 dotnet /stuff/new.dll
@@ -88,8 +87,11 @@ Les outils CLI permettent aux applications d’être portables principalement d
 
 Pour plus d’informations sur ces deux méthodes, consultez la rubrique [Déploiement d’applications .NET Core](../deploying/index.md). 
 
-## <a name="migration-from-dnx"></a>Migration à partir des outils DNX
-Si vous utilisiez les outils DNX dans .NET Core 1.0 RC1, vous vous demandez peut-être ce qu’ils sont devenus et quel rapport il existe entre eux et les nouveaux outils. En bref, les outils DNX ont été remplacés par les outils CLI de .NET Core. Si vous disposez de projets existants ou si vous vous demandez quelles sont les nouvelles commandes, consultez la rubrique sur la [migration des outils DNX vers les outils CLI](../migrating-from-dnx.md). 
+## <a name="migration-from-projectjson"></a>Migration à partir de project.json
+Si vous avez utilisé les outils Preview 2 et des projets *project.json*, vous pouvez consulter la documentation sur la commande [dotnet migrate](dotnet-migrate.md) pour vous familiariser avec la commande et la migration de votre projet. 
+
+> [!NOTE]
+> La commande `dotnet migrate` ne migre pas les fichiers *project.json* antérieurs à Preview 2. 
 
 ## <a name="extensibility"></a>Extensibilité
 Bien sûr, tous les outils que vous utilisiez précédemment ne font pas partie des outils CLI. Toutefois, les outils CLI .NET Core possèdent un modèle d’extensibilité qui vous permet de spécifier des outils supplémentaires pour vos projets. Pour plus d’informations, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core](extensibility.md).
@@ -98,9 +100,4 @@ Bien sûr, tous les outils que vous utilisiez précédemment ne font pas partie 
 Vous venez de voir une brève présentation des principales fonctionnalités des outils CLI. Pour plus d’informations, consultez les rubriques de référence et les rubriques conceptuelles de ce site. D’autres ressources sont également disponibles :
 * Dépôt GitHub [dotnet/CLI](https://github.com/dotnet/cli/)
 * [Instructions pour bien démarrer](https://aka.ms/dotnetcoregs/)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

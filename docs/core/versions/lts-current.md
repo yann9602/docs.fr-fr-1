@@ -10,8 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: fedc7025-f320-4cba-957b-ef74885f66de
 translationtype: Human Translation
-ms.sourcegitcommit: 1ef17b16b85c81a0b96bb1712db3734dc67d801d
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 582a521e6a30b740465890b6cb8c773061a98ea6
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -41,8 +42,3 @@ Pour savoir quelles modifications spécifiques, telles que les correctifs de bog
 ### <a name="further-reading"></a>informations supplémentaires
 * [Fiche d’information sur le cycle de vie de support .NET Core](https://www.microsoft.com/net/core/support)
 * [Versions et systèmes d’exploitation actuellement pris en charge](https://github.com/dotnet/core/blob/master/roadmap.md)
-
-
-<!--HONumber=Feb17_HO1-->
-
-

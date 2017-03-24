@@ -10,8 +10,9 @@ ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 translationtype: Human Translation
-ms.sourcegitcommit: 2ad428dcda9ef213a8487c35a48b33929259abba
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: f44193d8f7bc9f67acb8b04966e02beca18a0653
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -96,8 +97,3 @@ Une version définitive du code que vous allez générer est disponible dans le 
 **[Exécution d’applications console .NET Framework dans des conteneurs Windows](../framework/docker/console.md)**
 
 Ce didacticiel montre comment déployer une application console existante sur un conteneur Windows. Une version définitive du code que vous allez générer est disponible dans le [dépôt dotnet / docs sur GitHub](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator).
-
-
-<!--HONumber=Jan17_HO3-->
-
-

@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 636c86fed9952542a256c075eb9e388b70cff174
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: 7be49f3ac7a7806e631eacf5004343919654881e
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -129,33 +129,28 @@ Vous pouvez voir ces mises à jour correctives dans les exemples project.json ci
 
 Une fois la version stable de .NET Core v1.0.0 publiée, de nouvelles API sont ajoutées aux bibliothèques .NET Core pour permettre de nouveaux scénarios. Les différents métapackages sont mis à jour pour référencer les packages de bibliothèque .NET Core mis à jour. Les métapackages reçoivent une version dans le cadre d’un correctif (x.y) qui correspond à la version de framework la plus élevée. Les différents frameworks sont mis à jour pour décrire les nouvelles API. Une nouvelle distribution .NET Core est fournie avec un numéro de version correspondant au métapackage `Microsoft.NETCore.App`.
 
-Vous pouvez voir ces mises à jour secondaires dans les exemples project.json ci-dessous.
+Vous pouvez voir les mises à jour secondaires illustrées dans le fichier projet suivant :
 
-```
-{
-  "dependencies": {
-    "Microsoft.NETCore.App": "1.1.0"
-  },
-  "frameworks": {
-    "netcoreapp1.1": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+</Project>
 ```
 
 ### <a name="shipping-a-major-release"></a>Publication d’une version principale
 
 Avec une version stable de .NET Core v1.y.z, de nouvelles API sont ajoutées aux bibliothèques .NET Core pour permettre de nouveaux scénarios de mises à jour principales. Par exemple, pour la suppression de la prise en charge d’une plateforme. Les différents métapackages sont mis à jour pour référencer les packages de bibliothèque .NET Core mis à jour. Le métapackage `Microsoft.NETCore.App` et le framework `netcore` reçoivent une version dans le cadre d’une version principale (x.). Le métapackage `NETStandard.Library` reçoit probablement une version dans le cadre d’une version secondaire (x.y), étant donné qu’il s’applique à plusieurs implémentations de .NET. Une nouvelle distribution .NET Core serait alors fournie avec un numéro de version correspondant au métapackage `Microsoft.NETCore.App`.
 
-L’exemple ci-dessous vous montre les mises à jour de version principale démontrées dans la documentation de référence sur les métapackages project.json.
+Vous pouvez voir les mises à jour principales illustrées dans le fichier projet suivant. (Notez que `netcoreapp2.0` n’a pas été publié.)
 
-```
-{
-  "dependencies": {
-    "Microsoft.NETCore.App": "2.0.0"
-  },
-  "frameworks": {
-    "netcoreapp2.0": {}
-  }
-}
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+</Project>
+
 ```
 

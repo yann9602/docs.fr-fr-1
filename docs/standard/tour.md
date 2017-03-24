@@ -56,7 +56,7 @@ Il n’existe aucun mot clé analogue pour libérer de la mémoire, car la libé
 
 Les types dans une portée donnée sont normalement hors de portée à la fin d’une méthode, point auquel ils peuvent être récupérés. Toutefois, vous pouvez indiquer au récupérateur de mémoire qu’un objet en particulier est hors de portée avant la fin de la méthode à l’aide de l’instruction `using` :
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L6-L9)]
+[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 Une fois que le bloc `using` a terminé, le récupérateur de mémoire sait que l’objet `stream` dans l’exemple précédent peut être collecté et sa mémoire récupérée.
 
@@ -68,7 +68,7 @@ Le runtime .NET fournit des services supplémentaires pour assurer la sûreté d
 
 L’exemple suivant lève une exception en raison de la sûreté de la mémoire.
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L11-L12)]
+[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 ## <a name="type-safety"></a>Cohérence des types
 

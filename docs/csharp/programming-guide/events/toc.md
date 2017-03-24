@@ -1,0 +1,7 @@
+# [Événements](index.md)
+## [Comment : s’abonner et annuler l’abonnement à des événements](how-to-subscribe-to-and-unsubscribe-from-events.md)
+## [Comment : publier des événements conformes aux indications du .NET Framework](how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+## [Comment : déclencher les événements de la classe de base dans les classes dérivées](how-to-raise-base-class-events-in-derived-classes.md)
+## [Comment : implémenter des événements d’interface](how-to-implement-interface-events.md)
+## [Comment : utiliser un dictionnaire pour stocker des instances d’événements](how-to-use-a-dictionary-to-store-event-instances.md)
+## [Comment : implémenter des accesseurs d’événement personnalisés](how-to-implement-custom-event-accessors.md)
