@@ -21,7 +21,7 @@ ms.lasthandoff: 03/13/2017
 
 Les délégués définissent un type, qui spécifie la signature d’une méthode particulière. Une méthode (statique ou d’instance) qui répond à cette signature peut être attribuée à une variable de ce type, puis appelée directement (avec les arguments appropriés) ou passée elle-même comme argument à une autre méthode, puis appelée. L’exemple suivant montre l’utilisation des délégués.
 
-```cs
+```csharp
 public class Program
 {
 
@@ -55,7 +55,7 @@ Pour simplifier le processus de développement, .NET inclut un ensemble de types
 
 Nous pouvons maintenant reprendre notre exemple ci-dessus et le réécrire à l’aide du délégué `Func<>` au lieu d’un type personnalisé. Le programme continue à s’exécuter exactement de la même façon.
 
-```cs
+```csharp
 public class Program
 {
 
@@ -78,7 +78,7 @@ Dans cet exemple simple, il peut sembler un peu superflu de définir une méthod
 
 En guise d’exemple, nous allons utiliser notre délégué anonyme pour filtrer une liste uniquement sur les nombres pairs et les imprimer dans la console.
 
-```cs
+```csharp
 public class Program
 {
 
@@ -115,7 +115,7 @@ Les expressions lambda ont été initialement introduites dans C# 3.0 comme l�
 
 Dans la mesure où une expression lambda est simplement une autre façon de spécifier un délégué, nous pouvons réécrire l’exemple ci-dessus pour utiliser une expression lambda au lieu d’un délégué anonyme.
 
-```cs
+```csharp
 public class Program
 {
 
@@ -143,7 +143,7 @@ Si vous jetez un œil aux lignes en surbrillance, vous pouvez voir à quoi resse
 
 Comme les expressions lambda sont juste des délégués, elles peuvent servir de gestionnaire d’événements sans aucun problème, comme l’illustre l’extrait de code suivant.
 
-```cs
+```csharp
 public MainWindow()
 {
     InitializeComponent();

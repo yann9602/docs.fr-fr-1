@@ -29,7 +29,7 @@ Les génériques sont également disponibles au moment de l’exécution, ou **r
 
 Voici un petit programme qui illustre à quel point il est efficace de connaître le type de structure de données au moment de l’exécution :
 
-```cs
+```csharp
   using System;
   using System.Collections;
   using System.Collections.Generic;

@@ -31,7 +31,7 @@ L’instruction `using`en C# et l’instruction `Using` en Visual Basic simpli
 
 L’exemple suivant utilise l’instruction `using` pour créer et libérer un objet [System.IO.StreamReader](xref:System.IO.StreamReader).
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -77,7 +77,7 @@ End Module
 
 Notez que, bien que la classe [StreamReader](xref:System.IO.StreamReader) implémente l’interface [IDisposable](xref:System.IDisposable), ce qui signifie qu’elle utilise une ressource non managée, l’exemple n’appelle pas explicitement la méthode [StreamReader.Dispose](xref:System.IO.StreamReader.Dispose(System.Boolean)). Quand le compilateur C# ou Visual Basic rencontre l’instruction `using`, il émet en langage intermédiaire qui est équivalent au code suivant contenant explicitement un bloc `try/finally`. 
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -134,7 +134,7 @@ End Module
 
 L’instruction `using` en C# vous permet d’acquérir plusieurs ressources dans une seule instruction, ce qui revient en interne à plusieurs instructions using imbriquées. L’exemple suivant instancie deux objets [StreamReader](xref:System.IO.StreamReader) pour lire le contenu de deux fichiers différents. 
 
-```cs
+```csharp
 using System;
 using System.IO;
 
@@ -171,7 +171,7 @@ Au lieu d’encapsuler un bloc `try/finally` dans une instruction `using`, vous 
 
 L’exemple suivant est similaire à l’exemple précédent, mais il utilise un bloc `try/catch/finally` pour instancier, utiliser et supprimer un objet [StreamReader](xref:System.IO.StreamReader), ainsi que pour gérer les exceptions levées par le constructeur [StreamReader](xref:System.IO.StreamReader) et sa méthode [ReadToEnd](xref:System.IO.StreamReader.ReadToEnd). Notez que le code du bloc `finally` vérifie que l’objet qui implémente [IDisposable](xref:System.IDisposable) n’est pas `null` avant d’appeler la méthode [Dispose](xref:System.IDisposable.Dispose). La non-exécution de cette opération peut générer une exception [NullReferenceException](xref:System.NullReferenceException) au moment de l’exécution. 
 
-```cs
+```csharp
 using System;
 using System.Globalization;
 using System.IO;
