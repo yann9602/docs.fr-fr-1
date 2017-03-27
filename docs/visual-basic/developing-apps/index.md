@@ -1,57 +1,68 @@
 ---
-title: "D&#233;veloppement d’applications avec Visual Basic | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic, développer des applications"
-  - "applications (Visual Basic)"
+title: "Développement d’applications avec Visual Basic | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Visual Basic, developing applications
+- applications [Visual Basic]
 ms.assetid: 1e1c0c81-6d95-4167-a98b-44b1efb6d25f
 caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
----
-# D&#233;veloppement d’applications avec Visual Basic
-[!INCLUDE[vs2017banner](../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 2baf921be083da58911c474bf2506f08360f17b7
+ms.lasthandoff: 03/22/2017
 
-Cette section décrit la documentation conceptuelle relative au langage Visual Basic.  
+---
+# <a name="developing-applications-with-visual-basic"></a>Développement d’applications avec Visual Basic
+Cette section décrit la documentation conceptuelle du langage Visual Basic.  
   
-## Dans cette section  
- [Using the Visual Basic Development Environment](../../visual-basic/developing-apps/using-ide/using-the-visual-basic-development-environment.md)  
- Contient l'aide sur les fonctionnalités de Visual Basic Editor, telles que **Extraits de code IntelliSense**, **Propriétés du projet**, et sur la création de la documentation XML pour Visual Basic.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Programmation dans Visual Basic](../../visual-basic/developing-apps/programming/index.md)  
+ Aborde divers sujets de programmation.  
   
- [Programming in Visual Basic](../../visual-basic/developing-apps/programming/index.md)  
- Aborde divers sujets relatifs à la programmation.  
+ [Développement avec My](../../visual-basic/developing-apps/development-with-my/index.md)  
+ Présente une nouvelle fonctionnalité appelée `My` qui permet d’accéder à des informations et des instances d’objet par défaut liées à une application et à son environnement d’exécution.  
   
- [Development with My](../../visual-basic/developing-apps/development-with-my/index.md)  
- Présente une nouvelle fonctionnalité appelée `My`, qui donne accès à des informations et des instances d'objet par défaut associées à une application et son environnement d'exécution.  
+ [Accès aux données dans les applications Visual Basic](../../visual-basic/developing-apps/accessing-data.md)  
+ Contient l’aide sur l’accès aux données dans Visual Basic.   
   
- [Accessing Data in Visual Basic Applications](../../visual-basic/developing-apps/accessing-data.md)  
- Contient de l'aide relative à l'accès aux données dans Visual Basic.  
-  
- [Debugging Your Visual Basic Application](../../visual-basic/developing-apps/debugging.md)  
- Fournit des pointeurs vers la documentation relative aux fonctionnalités de débogage intégrées dans Visual Studio.  
-  
- [Creating and Using Components in Visual Basic](../../visual-basic/developing-apps/creating-and-using-components.md)  
+ [Création et utilisation de composants dans Visual Basic](../../visual-basic/developing-apps/creating-and-using-components.md)  
  Définit le terme *composant* et explique quand et comment créer des composants.  
   
- [Printing and Reporting](../../visual-basic/developing-apps/printing/printing-and-reporting.md)  
- Fournit des vues d'ensemble et des liens vers la documentation relative à l'impression et au reporting.  
+ [Impression et création de rapports](../../visual-basic/developing-apps/printing/printing-and-reporting.md)  
+ Fournit des vues d’ensemble et des liens vers la documentation relative à l’impression et à la création de rapports.  
   
- [Windows Forms Application Basics](../../visual-basic/developing-apps/windows-forms/windows-forms-application-basics.md)  
- Fournit des informations sur la création d'applications Windows Forms à l'aide de Visual Studio.  
+ [Concepts de base de l’application Windows Forms](../../visual-basic/developing-apps/windows-forms/windows-forms-application-basics.md)  
+ Fournit des informations sur la création d’applications Windows Forms à l’aide de Visual Studio.  
   
- [Customizing Projects and Extending My](../../visual-basic/developing-apps/customizing-extending-my/customizing-projects-and-extending-my.md)  
+ [Personnalisation des projets et extension de My](../../visual-basic/developing-apps/customizing-extending-my/customizing-projects-and-extending-my.md)  
  Décrit comment personnaliser des modèles de projet pour fournir des objets `My` supplémentaires.  
   
-## Rubriques connexes  
- [Visual Basic Programming Guide](../../visual-basic/programming-guide/index.md)  
- Passe en revue les éléments essentiels de la programmation avec Visual Basic.  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Guide de programmation Visual Basic](../../visual-basic/programming-guide/index.md)  
+ Décrit les éléments essentiels de la programmation avec Visual Basic.  
   
- [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)  
- Contient la documentation de référence pour le langage Visual Basic.
+ [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)  
+ Contient la documentation de référence du langage Visual Basic.
