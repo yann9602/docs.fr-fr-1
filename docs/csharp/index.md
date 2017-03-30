@@ -10,9 +10,9 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d9efc2b1b8ad38a6444e7362da13ce3838476abd
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 75908d895017c31e36da6702f1b69816afb91d14
+ms.openlocfilehash: 8721c71bf69210cf73d7e703f19a22e267e36a28
+ms.lasthandoff: 03/28/2017
 
 ---
 
@@ -27,7 +27,7 @@ Le guide C# représente une mine d’informations sur le langage C#. Ce site s�
     - Si vous avez déjà développé, mais pas en C#, lisez la [présentation du langage C#](tour-of-csharp/index.md). Vous apprendrez la syntaxe de base et la structure du langage, et vous pourrez utiliser la présentation du langage pour comparer C# à d’autres langages que vous avez déjà utilisés. Vous pouvez également parcourir les [didacticiels](tutorials/index.md) pour essayer des programmes C# de base. Sinon, consultez la section [Concepts C#](concepts.md) pour découvrir les fonctionnalités du langage C# en détail.
 
 * Développeurs expérimentés en C# :
-    - Si vous avez déjà utilisé C#, commencez par lire le contenu de la dernière version du langage. Découvrez [Nouveautés de C# 6](csharp-6.md) pour connaître les nouvelles fonctionnalités de la version actuelle. Explorez ensuite les [Concepts C#](concepts.md) que vous souhaitez approfondir.
+    - Si vous avez déjà utilisé C#, commencez par lire le contenu de la dernière version du langage. Consultez [Nouveautés de C#](whats-new/index.md) pour connaître les nouvelles fonctionnalités de la version actuelle. Explorez ensuite les [Concepts C#](concepts.md) que vous souhaitez approfondir.
  
 ## <a name="how-the-c-guide-is-organized"></a>Organisation du guide du langage C#
 
@@ -42,8 +42,8 @@ Il existe sept sections dans le Guide du langage C#. Vous pouvez les lire dans l
 * [Présentation de C#](tour-of-csharp/index.md) : 
     - Cette section présente une vue d’ensemble du langage. Vous découvrirez les éléments qui composent les programmes C# et les fonctionnalités du langage. Vous verrez de petits exemples de tous les éléments de syntaxe du langage C# et des discussions sur ses principaux sujets. 
 
-* [Dernières fonctionnalités](whats-new.md) :
-    - Découvrez les nouvelles fonctionnalités du langage. Découvrez les nouveaux outils tels que C# Interactive (REPL de C#) et le Kit de développement logiciel (SDK) .NET Compiler Platform. Vous découvrirez comment évolue le langage. Vous verrez en quoi les nouveaux outils peuvent vous rendre plus productif dans l’exploration du langage et l’automatisation des tâches. 
+* [Dernières fonctionnalités](whats-new/index.md) :
+    - Découvrez les nouvelles fonctionnalités du langage. Découvrez les nouveaux outils tels que C# Interactive (REPL de C#) et le kit SDK .NET Compiler Platform. Vous découvrirez comment évolue le langage. Vous verrez en quoi les nouveaux outils peuvent vous rendre plus productif dans l’exploration du langage et l’automatisation des tâches. 
 
 * [C# Interactive](interactive/index.md) :
     - C# Interactive est une boucle REPL (Read-Eval-Print Loop) utilisable pour explorer le langage C#. Il peut également être utilisé pour explorer les différentes bibliothèques et infrastructures en essayant différentes actions selon une approche interactive. Dans cette section, vous apprendrez à installer et à lancer C# Interactive et découvrirez comment l’utiliser pour explorer les API. Vous apprendrez également à utiliser C# Interactive pour exporter des classes testées en vue d’une utilisation ultérieure.  
