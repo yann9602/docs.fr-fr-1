@@ -35,6 +35,6 @@ Les rubriques suivantes sont disponibles :
 
 - [Bien démarrer avec Visual Studio Code](with-visual-studio-code.md)
 
-   Visual Studio Code est un éditeur de programmation pour Windows, Linux et macOS qui prend en charge IntelliSense (saisie semi-automatique de code) et le débogage.
+   Visual Studio Code est un éditeur de code source pour Windows, Linux et macOS qui prend en charge IntelliSense (saisie semi-automatique de code) et le débogage.
 
    Cette rubrique vous montre comment créer et exécuter une application Hello World simple avec Visual Studio Code et .NET Core.
