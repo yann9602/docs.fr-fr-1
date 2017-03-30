@@ -1,31 +1,48 @@
 ---
-title: "Getting Started with Visual Basic | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "getting started, Visual Basic"
-  - "Visual Basic, getting started"
+title: "Bien démarrer avec Visual Basic | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- getting started, Visual Basic
+- Visual Basic, getting started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 caps.latest.revision: 36
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 36
----
-# Getting Started with Visual Basic
-[!INCLUDE[vs2017banner](../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2d94b01f24ea1c45ecbf6b14ecfdf164d8b8b10c
+ms.lasthandoff: 03/13/2017
 
+---
+# <a name="getting-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](../../visual-basic/getting-started/breaking-changes-in-visual-studio-2015.md)  
  Répertorie les modifications de cette version qui peuvent empêcher une application de se compiler ou de modifier son comportement au moment de l’exécution.  
   
- [Additional Resources for Visual Basic Programmers](../../visual-basic/getting-started/additional-resources.md)  
+ [Ressources supplémentaires pour les programmeurs Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
  Fournit une liste de sites web et de newsgroups susceptibles de vous aider à trouver des solutions à des problèmes courants.  
   
  [Formation Visual Basic](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
@@ -34,27 +51,27 @@ Cette section de la documentation vous aide à commencer à développer des appl
  [Obtention de Visual Basic](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)  
  Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, y compris les versions gratuites.  
   
-## Rubriques connexes  
- [Programmation orientée objet dans Visual Basic](../Topic/Object-Oriented%20Programming%20\(C%23%20and%20Visual%20Basic\).md)  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Programmation orientée objet](../programming-guide/concepts/object-oriented-programming.md)  
  Fournit des liens vers les pages qui présentent la programmation orientée objet et décrivent comment créer vos propres objets et comment utiliser des objets pour simplifier votre codage.  
   
- [Samples](../../visual-basic/sample-applications.md)  
- Fournit des liens vers un exemple de code en [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)].  
+ [Exemples](../../visual-basic/sample-applications.md)  
+ Fournit des liens vers un exemple de code en [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
   
- [Walkthroughs](../../visual-basic/walkthroughs.md)  
- Fournit une liste de pages d'aide qui illustrent les aspects du langage [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)].  
+ [Procédures pas à pas](../../visual-basic/walkthroughs.md)  
+ Fournit une liste de pages d'aide qui illustrent les aspects du langage [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
   
- [Nous contacter](/visual-studio/ide/talk-to-us)  
+ [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
  Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.  
   
- [Visual Studio](http://msdn.microsoft.com/fr-fr/06ddebea-2c83-4a45-bb48-6264c797ed93)  
- Fournit des liens vers la documentation de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs-md.md)].  
+ [Visual Studio](http://msdn.microsoft.com/en-us/06ddebea-2c83-4a45-bb48-6264c797ed93)  
+ Fournit des liens vers la documentation de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)].  
   
- [C\#](../../csharp/csharp.md)  
- Fournit des liens vers la documentation sur le développement d'applications à l'aide de [!INCLUDE[csprcs](../../csharp/includes/csprcs-md.md)].  
+ [C#](../../csharp/csharp.md)  
+ Fournit des liens vers la documentation sur le développement d'applications à l'aide de [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)].  
   
- [Visual C\+\+](/visual-cpp/top/visual-cpp-in-visual-studio-2015)  
- Fournit des liens vers la documentation Visual C\+\+.  
+ [Visual C++](https://docs.microsoft.com/cpp/)  
+ Fournit des liens vers la documentation Visual C++.  
   
- [Office and SharePoint Development](/office-dev/office-dev/office-and-sharepoint-development-in-visual-studio)  
- Fournit des informations sur l'utilisation de Microsoft Office et de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs-md.md)] dans le cadre d'une application d'entreprise.
+ [Développement Office et SharePoint](https://msdn.microsoft.com/library/d2tx7z6d)  
+ Fournit des informations sur l'utilisation de Microsoft Office et de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] dans le cadre d'une application d'entreprise.

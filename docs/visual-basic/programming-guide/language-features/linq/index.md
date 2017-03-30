@@ -1,63 +1,78 @@
 ---
-title: "LINQ en Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "nouveautés (Visual Basic)"
+title: LINQ en Visual Basic | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- what's new [Visual Basic]
 ms.assetid: ddba5545-ff6e-46c3-8967-5c4280db5aca
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# LINQ en Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 26d2ceac051905f5ac46b59f6fd2598e924355c7
+ms.lasthandoff: 03/13/2017
 
-Cette section contient des vues d'ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser Visual Basic et [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext-md.md)].  
+---
+# <a name="linq-in-visual-basic"></a>LINQ en Visual Basic
+Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser Visual Basic et [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)].  
   
-## Dans cette section  
- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- Présente les fournisseurs, opérateurs, structures de requête et fonctionnalités de langage [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)].  
+## <a name="in-this-section"></a>Dans cette section  
+ [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ Fournit une introduction aux fournisseurs, aux opérateurs, à la structure des requêtes et aux fonctionnalités du langage [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)].  
   
- [How to: Query a Database](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
- Illustre la manière de se connecter à une base de données SQL Server et d'exécuter une requête en utilisant LINQ.  
+ [Guide pratique : interroger une base de données](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
+ Fournit un exemple de connexion à une base de données SQL Server et d’exécution d’une requête avec LINQ.  
   
- [How to: Call a Stored Procedure](../../../../visual-basic/programming-guide/language-features/linq/how-to-call-a-stored-procedure-by-using-linq.md)  
- Illustre la manière de se connecter à une base de données SQL Server et d'appeler une procédure stockée par LINQ.  
+ [Guide pratique : appeler une procédure stockée](../../../../visual-basic/programming-guide/language-features/linq/how-to-call-a-stored-procedure-by-using-linq.md)  
+ Fournit un exemple de connexion à une base de données SQL Server et d’appel à une procédure stockée avec LINQ.  
   
- [How to: Modify Data in a Database](../../../../visual-basic/programming-guide/language-features/linq/how-to-modify-data-in-a-database-by-using-linq.md)  
- Illustre la manière de se connecter à une base de données SQL Server et de récupérer et modifier des données par LINQ.  
+ [Guide pratique : modifier des données dans une base de données](../../../../visual-basic/programming-guide/language-features/linq/how-to-modify-data-in-a-database-by-using-linq.md)  
+ Fournit un exemple de connexion à une base de données SQL Server et de récupération et de modification des données avec LINQ.  
   
- [How to: Combine Data with Joins](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)  
- Illustre la manière de joindre des données comme une base de données par LINQ.  
+ [Guide pratique : combiner des données avec des jointures](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)  
+ Fournit des exemples de jointures de données similaires aux jointures de bases de données avec LINQ.  
   
- [How to: Sort Query Results](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)  
- Illustre la manière de commander les résultats d'une requête par LINQ.  
+ [Guide pratique : trier les résultats d’une requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)  
+ Fournit un exemple de classement des résultats d’une requête avec LINQ.  
   
- [How to: Filter Query Results](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)  
- Illustre la manière d'inclure les critères de recherche dans une requête par LINQ.  
+ [Guide pratique : filtrer les résultats d’une requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)  
+ Fournit un exemple d’inclusion des critères de recherche dans une requête avec LINQ.  
   
- [How to: Count, Sum, or Average Data](../../../../visual-basic/programming-guide/language-features/linq/how-to-count-sum-or-average-data-by-using-linq.md)  
- Illustre la manière d'inclure des fonctions d'agrégation de données de type Nombre, Somme ou Moyenne des données, retournées par une requête LINQ.  
+ [Guide pratique : compter, additionner ou faire la moyenne de données](../../../../visual-basic/programming-guide/language-features/linq/how-to-count-sum-or-average-data-by-using-linq.md)  
+ Fournit des exemples d’inclusion des fonctions d’agrégation à des données Count, Sum ou Average retournées par une requête avec LINQ.  
   
- [How to: Find the Minimum or Maximum Value in a Query Result](../../../../visual-basic/programming-guide/language-features/linq/how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
- Illustre la manière d'inclure des fonctions d'agrégation pour déterminer les valeurs minimales et maximales des données retournées par une requête LINQ.  
+ [Guide pratique : rechercher la valeur minimale ou maximale dans un résultat de requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
+ Fournit des exemples d’inclusion des fonctions d’agrégation pour déterminer les valeurs minimales et maximales des données retournées par une requête avec LINQ.  
   
- [How to: Return a LINQ Query Result as a Specific Type](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)  
- Illustre la manière de retourner les résultats d'une requête LINQ en tant que type spécifique, et non en tant que type anonyme.  
+ [Guide pratique : retourner un résultat de requête LINQ comme type spécifique](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)  
+ Fournit un exemple de renvoi des résultats d’une requête LINQ sous un type spécifique plutôt qu’un type anonyme.  
   
-## Voir aussi  
- [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)   
- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)   
- [Vue d'ensemble de LINQ to DataSet](../Topic/LINQ%20to%20DataSet%20Overview.md)   
- [LINQ à SQL](../Topic/LINQ%20to%20SQL.md)   
- [Exemples LINQ](../Topic/LINQ%20Samples.md)   
- [Procédure pas à pas : création de classes LINQ to SQL \(Concepteur O\/R\)](../Topic/Walkthrough:%20Creating%20LINQ%20to%20SQL%20Classes%20\(O-R%20Designer\).md)
+## <a name="see-also"></a>Voir aussi  
+ [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md)   
+ [Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)   
+ [Vue d’ensemble de LINQ to DataSet](https://msdn.microsoft.com/library/bb399399)   
+ [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)
