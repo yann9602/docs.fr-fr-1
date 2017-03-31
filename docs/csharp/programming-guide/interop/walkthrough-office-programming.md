@@ -156,8 +156,6 @@ Visual Studio présente les nouvelles fonctionnalités de C# et de Visual Basic 
   
      Ce code illustre plusieurs fonctionnalités nouvelles en C# : la possibilité d'omettre le mot clé `ref` dans la programmation COM, les arguments nommés et les arguments facultatifs. Ces fonctionnalités existent déjà en Visual Basic. La méthode [PasteSpecial](http://go.microsoft.com/fwlink/?LinkId=147099) comporte sept paramètres, tous définis en tant que paramètres de référence optionnels. Avant Visual C# 2010, vous deviez définir les variables d’objet à utiliser comme arguments pour les sept paramètres, même si vous n’aviez aucune valeur significative à transmettre. Les arguments nommés et les arguments facultatifs vous permettent de désigner les paramètres auxquels vous souhaitez accéder par leur nom et d'envoyer des arguments à ces seuls paramètres. Dans cet exemple, les arguments sont envoyés pour indiquer qu'un lien vers le classeur dans le Presse-papiers doit être créé (paramètre `Link`) et que ce lien doit être affiché dans le document Word sous forme d'une icône (paramètre `DisplayAsIcon`). Visual C# 2010 vous permet également d'omettre le mot clé `ref` pour ces arguments. Comparez le segment de code suivant de Visual C# 2008 et la ligne unique requise en Visual C# 2010 :  
   
-     [!code-cs[csOfficeWalkthrough#11](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_11.cs)]  
-  
 ### <a name="to-run-the-application"></a>Pour exécuter l’application  
   
 1.  Appuyez sur F5 pour exécuter l'application. Excel démarre et affiche un tableau qui contient les informations des deux comptes de `bankAccounts`. Puis, un document Word apparaît qui contient un lien vers le tableau Excel.  
