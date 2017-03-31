@@ -36,7 +36,7 @@ ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : programmation Office (C# et Visual Basic)
-[!INCLUDE[vs_dev10_long](../../../csharp/programming-guide/interop/includes/vs_dev10_long_md.md)] présente les nouvelles fonctionnalités de C# et de Visual Basic qui améliorent la programmation Microsoft Office. Chaque langage a ajouté des fonctionnalités déjà existantes dans l'autre langage.  
+Visual Studio présente les nouvelles fonctionnalités de C# et de Visual Basic qui améliorent la programmation Microsoft Office. Chaque langage a ajouté des fonctionnalités déjà existantes dans l'autre langage.  
   
  Les nouvelles fonctionnalités de C# incluent les arguments nommés et les arguments facultatifs, les valeurs de retour dont le type est `dynamic`, et, en programmation COM, la possibilité d'omettre le mot clé `ref` et d'accéder aux propriétés indexées. Les nouvelles fonctionnalités de Visual Basic incluent les propriétés implémentées automatiquement, les instructions dans les expressions lambda et les initialiseurs de collection.  
   
