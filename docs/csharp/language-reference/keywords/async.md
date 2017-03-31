@@ -61,7 +61,7 @@ string contents = await contentsTask;
  Le mot clé `async` est contextuel, car il est un mot clé uniquement lorsqu'il modifie une méthode, une expression lambda ou une méthode anonyme. Dans tous les autres contextes, il est interprété comme un identificateur.  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant montre la structure et le flux de contrôle entre un gestionnaire d'événements asynchrones, `StartButton_Click`, et une méthode async, `ExampleMethodAsync`. Le résultat de la méthode async est la longueur d'un site Web téléchargé. Le code convient pour une application Windows Presentation Foundation (WPF) ou une application Windows Store que vous créez dans [!INCLUDE[vs_dev12](../../../csharp/getting-started/includes/vs_dev12_md.md)] ; consultez les commentaires du code pour configurer l'application.  
+ L'exemple suivant montre la structure et le flux de contrôle entre un gestionnaire d'événements asynchrones, `StartButton_Click`, et une méthode async, `ExampleMethodAsync`. Le résultat de la méthode async est la longueur d'un site Web téléchargé. Le code convient pour une application Windows Presentation Foundation (WPF) ou une application Windows Store que vous créez dans Visual Studio; consultez les commentaires du code pour configurer l'application.  
   
 ```csharp  
 // You can run this code in Visual Studio 2013 as a WPF app or a Windows Store app.  
