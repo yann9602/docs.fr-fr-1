@@ -1,68 +1,84 @@
 ---
-title: "How to: Dial Modems Attached to Serial Ports in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "modems, dialing"
-  - "serial ports, dialing"
-  - "My.Computer.Ports object"
+title: "Guide pratique pour passer des appels avec des modems attachés aux ports série dans Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- modems, dialing
+- serial ports, dialing
+- My.Computer.Ports object
 ms.assetid: 3834db40-f431-45f1-b671-dc91787164b6
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# How to: Dial Modems Attached to Serial Ports in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 4916c7bc3fc60b25dba8386294f11d07346cb358
+ms.lasthandoff: 03/13/2017
 
-Cette rubrique montre comment utiliser `My.Computer.Ports` pour appeler un modem avec [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)].  
+---
+# <a name="how-to-dial-modems-attached-to-serial-ports-in-visual-basic"></a>Guide pratique pour passer des appels avec des modems attachés aux ports série dans Visual Basic
+Cette rubrique explique comment utiliser `My.Computer.Ports` pour passer un appel avec un modem dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
   
- En général, le modem est connecté à l'un des ports série de l'ordinateur.  Pour que votre application communique avec le modem, elle doit envoyer des commandes au port série approprié.  
+ En règle générale, le modem est connecté à l’un des ports série sur l’ordinateur. Pour que l’application puisse communiquer avec le modem, elle doit envoyer des commandes au port série approprié.  
   
-### Pour utiliser un modem  
+### <a name="to-dial-a-modem"></a>Pour communiquer avec un modem  
   
-1.  Déterminez le port série auquel le modem est connecté.  Cet exemple suppose que le modem est connecté à COM1.  
+1.  Déterminez le port série auquel le modem est connecté. Cet exemple part du principe que le modem est connecté à COM1.  
   
-2.  Utilisez la méthode `My.Computer.Ports.OpenSerialPort` pour obtenir une référence au port.  Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+2.  Utilisez la méthode `My.Computer.Ports.OpenSerialPort` pour obtenir une référence au port. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
-     Le bloc `Using` permet à l'application de fermer le port série même s'il génère une exception.  Tout le code qui manipule le port série doit apparaître dans ce bloc ou dans un bloc `Try...Catch...Finally`.  
+     Le bloc `Using` permet à l’application de fermer le port série, même si cela génère une exception. Tout le code qui manipule le port série doit apparaître dans ce bloc, ou dans un bloc `Try...Catch...Finally`.  
   
      [!code-vb[VbVbalrMyComputer#28](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-dial-modems-attached-to-serial-ports_1.vb)]  
   
-3.  Définissez la propriété `DtrEnable` pour indiquer que l'ordinateur est prêt à accepter une transmission entrante du modem.  
+3.  Définissez la propriété `DtrEnable` pour indiquer que l’ordinateur est prêt à accepter une transmission en provenance du modem.  
   
      [!code-vb[VbVbalrMyComputer#29](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-dial-modems-attached-to-serial-ports_2.vb)]  
   
-4.  Envoyez la commande de numérotation et le numéro de téléphone au modem via le port série à l'aide de la méthode <xref:System.IO.Ports.SerialPort.Write%2A>.  
+4.  Envoyez la commande de numérotation et le numéro de téléphone au modem par l’intermédiaire du port série à l’aide de la méthode <xref:System.IO.Ports.SerialPort.Write%2A>.  
   
      [!code-vb[VbVbalrMyComputer#30](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-dial-modems-attached-to-serial-ports_3.vb)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrMyComputer#27](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-dial-modems-attached-to-serial-ports_4.vb)]  
   
- Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Connectivité et réseau**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve sous **Connectivité et réseau**. Pour plus d’informations, consultez [Extraits de code](https://docs.microsoft.com/visualstudio/ide/code-snippets).  
   
-## Compilation du code  
- Cet exemple requiert une référence à l'espace de noms <xref:System?displayProperty=fullName>.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite une référence à l’espace de noms <xref:System?displayProperty=fullName>.  
   
-## Programmation fiable  
- Cet exemple suppose que le modem est connecté à COM1.  Nous recommandons que votre code permette à l'utilisateur de sélectionner le port série souhaité dans une liste de ports disponibles.  Pour plus d'informations, consultez [How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+## <a name="robust-programming"></a>Programmation fiable  
+ Cet exemple part du principe que le modem est connecté à COM1. Nous recommandons que le code autorise l’utilisateur à sélectionner le port série dans la liste des ports disponibles. Pour plus d’informations, consultez [Guide pratique pour afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Cet exemple utilise un bloc `Using` pour vérifier que l'application ferme le port même si une exception est levée.  Pour plus d'informations, consultez [Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Cet exemple utilise un bloc `Using` pour garantir que l’application ferme le port même si elle lève une exception. Pour plus d’informations, consultez [using, instruction](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
- Dans cet exemple, l'application déconnecte le port série après avoir utilisé le modem.  Dans la pratique, vous souhaitez éventuellement transférer des données au modem et vice versa.  Pour plus d'informations, consultez [How to: Receive Strings From Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md).  
+ Dans cet exemple, l’application déconnecte le port série après avoir utilisé le modem. Dans la pratique, vous souhaiterez transférer des données vers et à partir du modem. Pour plus d’informations, consultez [Guide pratique pour recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.Devices.Ports>   
  <xref:System.IO.Ports.SerialPort?displayProperty=fullName>   
- [How to: Send Strings to Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)   
- [How to: Receive Strings From Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)   
- [How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+ [Guide pratique pour envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)   
+ [Guide pratique pour recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)   
+ [Guide pratique pour afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)

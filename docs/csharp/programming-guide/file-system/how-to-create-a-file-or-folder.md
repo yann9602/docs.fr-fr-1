@@ -1,36 +1,54 @@
 ---
-title: "Comment&#160;: cr&#233;er un fichier ou un dossier (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "créer des fichiers (C#)"
-  - "créer des dossiers (C#)"
-  - "fichiers (C#)"
-  - "dossiers (C#)"
+title: "Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- folders [C#]
+- creating files [C#]
+- files [C#]
+- creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
 caps.latest.revision: 22
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 22
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: bba53c8d175d95aa3b89ba458517d439a8d2bb11
+ms.lasthandoff: 03/13/2017
+
 ---
-# Comment&#160;: cr&#233;er un fichier ou un dossier (Guide de programmation C#)
-Vous pouvez créer par programmation un dossier sur votre ordinateur, créer un sous\-dossier, créer un fichier dans le sous\-dossier, puis écrire les données dans le fichier.  
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#)
+Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csFilesandFolders#10](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-create-a-file-or-folder_1.cs)]  
   
- Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n'est levée.  Toutefois, <xref:System.IO.File.Create%2A?displayProperty=fullName> remplace un fichier existant par un nouveau fichier.  L'exemple utilise une instruction `if`\-`else` pour empêcher le remplacement d'un fichier existant.  
+ Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée. Toutefois, <xref:System.IO.File.Create%2A?displayProperty=fullName> remplace un fichier existant par un nouveau fichier. L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.  
   
- En effectuant les modifications suivantes dans l'exemple, vous pouvez spécifier différentes issues suivant qu'un fichier d'un certain nom existe déjà.  Si ce fichier n'existe pas, le code en crée un.  Si ce fichier existe, le code y ajoute des données.  
+ En apportant les modifications suivantes dans l’exemple, vous pouvez spécifier des résultats différents si un fichier avec un nom spécifique existe déjà. Si un tel fichier n’existe pas, le code en crée un. Si un tel fichier existe, le code ajoute des données à ce fichier.  
   
 -   Spécifiez un nom de fichier non aléatoire.  
   
-    ```c#  
+    ```csharp  
     // Comment out the following line.  
     //string fileName = System.IO.Path.GetRandomFileName();  
   
@@ -39,9 +57,9 @@ Vous pouvez créer par programmation un dossier sur votre ordinateur, créer un 
   
     ```  
   
--   Remplacez l'instruction `if`\-`else` par l'instruction `using` dans le code suivant.  
+-   Remplacez l’instruction `if`-`else` par l’instruction `using` dans le code suivant.  
   
-    ```c#  
+    ```csharp  
     using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))   
     {  
         for (byte i = 0; i < 100; i++)  
@@ -52,28 +70,28 @@ Vous pouvez créer par programmation un dossier sur votre ordinateur, créer un 
   
     ```  
   
- Exécutez plusieurs fois l'exemple pour vérifier que les données sont ajoutées au fichier à chaque fois.  
+ Exécutez l’exemple plusieurs fois pour vérifier que les données sont ajoutées au fichier à chaque fois.  
   
- Pour d'autres valeurs `FileMode` que vous pouvez essayer, consultez <xref:System.IO.FileMode>.  
+ Pour découvrir d’autres valeurs `FileMode` que vous pouvez essayer, consultez <xref:System.IO.FileMode>.  
   
- Les conditions ci\-dessous peuvent générer une exception.  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le nom de dossier est incorrect.  Il contient par exemple des caractères non valides ou se compose uniquement d'un espace blanc \(classe <xref:System.ArgumentException>\).  Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemin d'accès valides.  
+-   Le nom du dossier est mal formé. Par exemple, il contient des caractères non valides ou est constitué uniquement d’espaces blancs (classe <xref:System.ArgumentException>). Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemins valides.  
   
--   Le dossier parent du dossier à créer est en lecture seule \(<xref:System.IO.IOException>, classe\).  
+-   Le dossier parent du dossier à créer est en lecture seule (<xref:System.IO.IOException> classe).  
   
--   Le nom du dossier est `null` \(classe <xref:System.ArgumentNullException>\).  
+-   Le nom du dossier est `null` (classe <xref:System.ArgumentNullException>).  
   
--   Le nom du dossier est trop long \(classe <xref:System.IO.PathTooLongException>\).  
+-   Le nom du dossier est trop long (classe <xref:System.IO.PathTooLongException>).  
   
--   Le nom du dossier se compose uniquement du signe deux\-points ":" \(classe <xref:System.IO.PathTooLongException>\).  
+-   Le nom du dossier est constitué uniquement d’un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException> classe).  
   
-## Sécurité .NET Framework  
- Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans des situations où le niveau de confiance n'est pas total.  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans des situations de confiance partielle.  
   
- Si vous n'êtes pas autorisé à créer le dossier, l'exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.  
+ Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)

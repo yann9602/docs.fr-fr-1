@@ -1,31 +1,49 @@
 ---
-title: "true, litt&#233;ral (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "true literal (mot clé C#)"
+title: "true, littéral (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- true literal keyword [C#]
 ms.assetid: 7e36d493-1acf-460d-9258-a6d76c6b5a3a
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 05c985256e3008feece8048012ff36316856e6fb
+ms.lasthandoff: 03/13/2017
+
 ---
-# true, litt&#233;ral (r&#233;f&#233;rence C#)
+# <a name="true-literal-c-reference"></a>true, littéral (référence C#)
 Représente la valeur booléenne true.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csrefKeywordsOperator#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/true-literal_1.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [false](../../../csharp/language-reference/keywords/false.md)

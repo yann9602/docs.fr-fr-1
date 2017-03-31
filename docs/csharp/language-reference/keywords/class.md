@@ -1,25 +1,44 @@
 ---
-title: "class (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "class_CSharpKeyword"
-  - "class"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "class (mot clé C#)"
+title: "class (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- class_CSharpKeyword
+- class
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 30
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 92750040466914389abc3e8bf1de84c44bb0987c
+ms.lasthandoff: 03/13/2017
+
 ---
-# class (r&#233;f&#233;rence C#)
-Les classes sont déclarées à l'aide du mot clé `class`, comme illustré dans l'exemple suivant :  
+# <a name="class-c-reference"></a>class (référence C#)
+Les classes sont déclarées à l’aide du mot clé `class`, comme l’illustre l’exemple suivant :  
   
 ```  
   
@@ -30,23 +49,23 @@ Les classes sont déclarées à l'aide du mot clé `class`, comme illustré dans
 }  
 ```  
   
-## Notes  
- Seul l'héritage unique en c.  Cela signifie qu'une classe ne peut hériter de l'implémentation que d'une seule classe de base.  En revanche, une classe peut implémenter plusieurs interfaces.  Le tableau suivant comporte des exemples d'héritage de classe et d'implémentation d'interface.  
+## <a name="remarks"></a>Remarques  
+ Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut uniquement hériter de l’implémentation d’une seule classe de base. Toutefois, une classe peut implémenter plusieurs interfaces. Le tableau suivant répertorie des exemples d’héritage de classe et d’implémentation d’interface :  
   
 |Héritage|Exemple|  
-|--------------|-------------|  
-|Aucun|`class ClassA { }`|  
+|-----------------|-------------|  
+|Aucun.|`class ClassA { }`|  
 |Single|`class DerivedClass: BaseClass { }`|  
 |Aucun, implémente deux interfaces|`class ImplClass: IFace1, IFace2 { }`|  
 |Unique, implémente une seule interface|`class ImplDerivedClass: BaseClass, IFace1 { }`|  
   
- Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d'autres classes, peuvent être [public](../../../csharp/language-reference/keywords/public.md) ou [interne](../../../csharp/language-reference/keywords/internal.md).  Les classes sont `internal` par défaut.  
+ Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d’autres classes, peuvent être [public](../../../csharp/language-reference/keywords/public.md) ou [internal](../../../csharp/language-reference/keywords/internal.md). Par défaut, les classes sont `internal`.  
   
- Les membres de classe, y compris les classes imbriquées, peuvent être [public](../../../csharp/language-reference/keywords/public.md), `protected internal`, [protégé](../../../csharp/language-reference/keywords/protected.md), [interne](../../../csharp/language-reference/keywords/internal.md), ou [privé](../../../csharp/language-reference/keywords/private.md).  Les membres sont [privé](../../../csharp/language-reference/keywords/private.md) par défaut.  
+ Les membres de classe, notamment les classes imbriquées, peuvent être [public](../../../csharp/language-reference/keywords/public.md), `protected internal`, [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md) ou [private](../../../csharp/language-reference/keywords/private.md). Par défaut, les membres sont [private](../../../csharp/language-reference/keywords/private.md).  
   
- Pour plus d'informations, consultez [Modificateurs d'accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Pour plus d’informations, consultez [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
- Vous pouvez déclarer les classes génériques ayant des paramètres de type.  Pour plus d'informations, consultez l' [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md).  
+ Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md).  
   
  Une classe peut contenir les déclarations des membres suivants :  
   
@@ -76,29 +95,29 @@ Les classes sont déclarées à l'aide du mot clé `class`, comme illustré dans
   
 -   [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md)  
   
-## Exemple  
- L'exemple suivant explique comment déclarer des champs, constructeurs et méthodes de classe.  Il illustre aussi l'instanciation d'un objet et l'impression des données d'une instance.  Dans cet exemple, deux classes sont déclarées. La première classe, `Child`, contient deux champs privés \(`name` et `age`\) et deux méthodes publiques.  La deuxième classe, `StringTest`, est utilisée pour contenir `Main`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`) et deux méthodes publiques. La deuxième, `StringTest`, contient `Main`.  
   
  [!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]  
   
-## Commentaires  
- Notez que, dans l'exemple qui précède, les champs privés \(`name` et `age`\) ne sont accessibles que par le biais des méthodes publiques de la classe `Child`.  Par exemple, vous ne pouvez pas imprimer le nom de l'enfant, à partir de la méthode `Main`, en utilisant une instruction de ce type :  
+## <a name="comments"></a>Commentaires  
+ Notez que, dans l’exemple qui précède, les champs privés (`name` et `age`) ne sont accessibles que par le biais des méthodes publiques de la classe `Child`. Par exemple, vous ne pouvez pas imprimer le nom de l’enfant à partir de la méthode `Main` en utilisant une instruction comme celle-ci :  
   
 ```  
 Console.Write(child1.name);   // Error  
 ```  
   
- L'accès aux membres privés de `Child` à partir de `Main` serait possible uniquement si `Main` était un membre de la classe.  
+ L’accès aux membres privés de `Child` à partir de `Main` est uniquement possible si `Main` est un membre de la classe.  
   
- Les types déclarés dans une classe sans modificateur d'accès ont comme valeur par défaut à `private`, les données membres dans cet exemple ont toujours `private` si le mot clé ont été supprimés.  
+ Du fait que les types déclarés dans une classe sans modificateur d’accès sont par défaut `private`, les données membres dans cet exemple sont toujours `private` si le mot clé est supprimé.  
   
- Notez enfin que pour l'objet créé à l'aide du constructeur par défaut \(`child3`\), le champ  a été initialisé par défaut à la valeur zéro.  
+ Notez enfin que pour l’objet créé à l’aide du constructeur par défaut (`child3`), le champ de l’âge est initialisé par défaut à la valeur zéro.  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Types référence](../../../csharp/language-reference/keywords/reference-types.md)

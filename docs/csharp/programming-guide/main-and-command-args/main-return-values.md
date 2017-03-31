@@ -1,44 +1,62 @@
 ---
-title: "Valeurs de retour Main() (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "Main (méthode C#), valeurs de retour"
+title: Valeurs de retour de Main() (Guide de programmation C#) | Microsoft Docs
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
 caps.latest.revision: 20
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 20
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 846c52b7d5429a23f354dd6a732ddb62563a55bf
+ms.lasthandoff: 03/13/2017
+
 ---
-# Valeurs de retour Main() (Guide de programmation C#)
-La méthode `Main` peut retourner `void`.  
+# <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
+La méthode `Main` peut retourner `void` :  
   
  [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_1.cs)]  
   
- Elle peut également retourner `int` :  
+ Elle peut également retourner un `int` :  
   
  [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_2.cs)]  
   
- Si la valeur de retour de `Main` n'est pas utilisée, retourner `void` autorise un code légèrement plus simple.  Toutefois, retourner un entier permet au programme de communiquer des informations d'état à d'autres programmes ou scripts qui appellent le fichier exécutable.  L'exemple suivant affiche la façon d'accéder à la valeur de retour de `Main`.  
+ Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.  
   
-## Exemple  
- Dans cet exemple, un fichier de commandes est utilisé pour exécuter un programme et tester la valeur de retour de la fonction `Main`.  Lorsqu'un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d'environnement appelée `ERRORLEVEL`.  Un fichier de commandes peut donc déterminer le résultat de l'exécution en inspectant la variable `ERRORLEVEL`.  Traditionnellement, une valeur de retour de zéro indique que l'exécution a réussi.  L'exemple suivant est un programme simple qui retourne la valeur zéro de la fonction `Main`.  Le zéro indique que le programme a fonctionné avec succès.  Enregistrez le programme en tant que MainReturnValTest.cs.  
+## <a name="example"></a>Exemple  
+ Dans cet exemple, un fichier de commandes est utilisé pour exécuter un programme et tester la valeur de retour de la fonction `Main`. Quand un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d’environnement appelée `ERRORLEVEL`. Un fichier de commandes peut déterminer le résultat de l’exécution en consultant la variable `ERRORLEVEL`. En règle générale, une valeur de retour de zéro indique la réussite de l’exécution. L’exemple suivant est un programme simple qui retourne zéro depuis la fonction `Main`. La valeur zéro indique que le programme a été exécuté correctement. Enregistrez le programme sous le nom MainReturnValTest.cs.  
   
  [!code-cs[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_3.cs)]  
   
-## Exemple  
- Étant donné que cet exemple utilise un fichier de commandes, il vaut mieux compiler le code d'une invite de commandes.  Suivez les instructions dans [How to: Set Environment Variables for the Visual Studio Command Line](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) pour activer des générations en ligne de commande ou utilisez l'invite de commandes de Visual Studio, disponible dans le menu **Démarrer** sous **Visual Studio Tools**.  De l'invite de commandes, naviguez jusqu'au dossier dans lequel vous avez enregistré le programme.  La commande suivante compile MainReturnValTest.cs et produit le fichier exécutable MainReturnValTest.exe.  
+## <a name="example"></a>Exemple  
+ Comme cet exemple utilise un fichier de commandes, il est préférable de compiler le code à partir d’une invite de commandes. Suivez les instructions de [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) pour permettre des générations en ligne de commande ou utilisez l’invite de commandes de Visual Studio, disponible à partir du menu **Démarrer** sous **Visual Studio Tools**. À partir de l’invite de commandes, accédez au dossier où vous avez enregistré le programme. La commande suivante compile MainReturnValTest.cs et produit le fichier exécutable MainReturnValTest.exe.  
   
  `csc MainReturnValTest.cs`  
   
- Ensuite, créez un fichier de commandes pour exécuter MainReturnValTest.exe et afficher le résultat.  Collez le code suivant dans un fichier texte et enregistrez\-le en tant que `test.bat` dans le dossier qui contient MainReturnValTest.cs et MainReturnValTest.exe.  Exécutez le fichier de commandes `test` en tapant ce qui suit à l'invite de commandes.  
+ Ensuite, créez un fichier de commandes pour exécuter MainReturnValTest.exe et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous le nom `test.bat` dans le dossier qui contient MainReturnValTest.cs et MainReturnValTest.exe. Exécutez le fichier de commandes en tapant `test` à l’invite de commandes.  
   
- Étant donné que le code retourne zéro, le fichier de commandes signalera la réussite.  Toutefois, si vous modifiez MainReturnValTest.cs pour retourner une valeur différente de zéro et recompiler ensuite le programme, l'exécution suivante du fichier de commandes signalera la défaillance.  
+ Comme le code retourne zéro, le fichier de commandes indique la réussite. Cependant, si vous modifiez MainReturnValTest.cs pour qu’il retourne une valeur différente de zéro puis que vous recompilez le programme, l’exécution suivante du fichier de commandes indiquera un échec.  
   
 ```  
 rem test.bat  
@@ -59,14 +77,14 @@ MainReturnValTest
 :end  
 ```  
   
-## Résultat de l'exemple  
+## <a name="sample-output"></a>Résultat de l'exemple  
  `Execution succeeded`  
   
  `Return value = 0`  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Main\(\) et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/main-and-command-line-arguments.md)   
- [Comment : afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)   
- [Comment : accéder à des arguments de ligne de commande à l'aide de foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)   
+ [Guide pratique pour afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)   
+ [Guide pratique pour accéder à des arguments de ligne de commande à l’aide de foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)

@@ -1,23 +1,41 @@
 ---
-title: "Types pointeur (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "pointeurs (C#)"
-  - "code unsafe (C#), pointeurs"
+title: "Types pointeur (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- unsafe code [C#], pointers
+- pointers [C#]
 ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
 caps.latest.revision: 19
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 19
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 100fa20e69c9a1cd6133437c29d1d5955e871656
+ms.lasthandoff: 03/13/2017
+
 ---
-# Types pointeur (Guide de programmation C#)
-Dans un contexte unsafe, un type peut être un type pointeur, un type valeur ou un type référence.  La déclaration d'un type pointeur peut prendre l'une des formes suivantes :  
+# <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
+Dans un contexte unsafe, un type peut être un type pointeur, un type valeur ou un type référence. La déclaration d'un type pointeur peut prendre l'une des formes suivantes :  
   
 ```  
 type* identifier;  
@@ -34,18 +52,18 @@ void* identifier; //allowed but not recommended
   
 -   Tout type struct défini par l'utilisateur qui contient des champs de types unmanaged uniquement.  
   
- Les types pointeur n'héritent pas de [object](../../../csharp/language-reference/keywords/object.md) et aucune conversion n'existe entre types pointeur et `object`.  Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs.  Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.  
+ Les types pointeur n’héritent pas de [object](../../../csharp/language-reference/keywords/object.md), et aucune conversion n’est possible entre les types pointeur et `object`. Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs. Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.  
   
- Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque \(\*\) est écrit conjointement au type sous\-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur.  Par exemple :  
+ Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque (*) est écrit conjointement au type sous-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur. Exemple :  
   
 ```  
 int* p1, p2, p3;   // Ok  
 int *p1, *p2, *p3;   // Invalid in C#  
 ```  
   
- Un pointeur ne peut pas pointer vers une référence ou un [struct](../../../csharp/language-reference/keywords/struct.md) qui contient des références, car une référence d'objet peut être récupérée par le récupérateur de mémoire, même si un pointeur pointe vers elle.  Le récupérateur de mémoire ne se préoccupe pas de savoir si un objet est pointé par des types pointeur.  
+ Un pointeur ne peut pas pointer vers une référence ou vers un [struct](../../../csharp/language-reference/keywords/struct.md) qui contient des références, car une référence d’objet peut être collectée par le récupérateur de mémoire, même si un pointeur pointe vers elle. Le récupérateur de mémoire ne se préoccupe pas de savoir si un objet est pointé par des types pointeur.  
   
- La valeur de la variable pointeur de type `myType*` est l'adresse d'une variable de type `myType`.  Les éléments suivants sont des exemples de déclarations de type pointeur :  
+ La valeur de la variable pointeur de type `myType*` est l'adresse d'une variable de type `myType`. Les éléments suivants sont des exemples de déclarations de type pointeur :  
   
 |Exemple|Description|  
 |-------------|-----------------|  
@@ -55,7 +73,7 @@ int *p1, *p2, *p3;   // Invalid in C#
 |`char* p`|`p` est un pointeur vers un caractère.|  
 |`void* p`|`p` est un pointeur vers un type inconnu.|  
   
- L'opérateur d'indirection de pointeur \* peut être utilisé pour accéder au contenu à l'emplacement vers lequel pointe la variable pointeur.  Observez par exemple la déclaration suivante :  
+ L'opérateur d'indirection de pointeur * peut être utilisé pour accéder au contenu à l'emplacement vers lequel pointe la variable pointeur. Observez par exemple la déclaration suivante :  
   
 ```  
 int* myVariable;  
@@ -63,7 +81,7 @@ int* myVariable;
   
  L'expression `*myVariable` désigne la variable `int` trouvée à l'adresse contenue dans `myVariable`.  
   
- Plusieurs exemples de pointeurs sont présentés dans les rubriques [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md) et [Conversions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md).  L'exemple suivant montre la nécessité d'un pointeur intérieur pour le mot clé `unsafe` et les instructions `fixed`, et comment l'incrémenter.  Vous pouvez coller ce code dans la fonction Main d'une application console pour l'exécuter. \(N'oubliez pas d'activer le code unsafe dans le **Concepteur de projets** ; choisissez **Projet**, **Propriétés** dans la barre de menus, puis sélectionnez **Autoriser le code unsafe** dans l'onglet **Générer**.\)  
+ Plusieurs exemples de pointeurs sont présentés dans les rubriques [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md) et [Conversions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md).  L'exemple suivant montre la nécessité d'un pointeur intérieur pour le mot clé `unsafe` et les instructions `fixed`, et comment l'incrémenter.  Vous pouvez coller ce code dans la fonction Main d'une application console pour l'exécuter. (N’oubliez pas d’autoriser le code unsafe dans le **Concepteur de projet**. Pour cela, choisissez **Projet**, **Propriétés** dans la barre de menus, puis sélectionnez **Autoriser le code unsafe** dans l’onglet **Générer**.)  
   
 ```  
 // Normal pointer to an object.  
@@ -109,31 +127,31 @@ Console.ReadLine();
   
 ```  
   
- L'opérateur d'indirection ne peut pas être appliqué à un pointeur de type `void*`.  Toutefois, vous pouvez utiliser un cast pour convertir un pointeur void en n'importe quel autre type pointeur, et inversement.  
+ L'opérateur d'indirection ne peut pas être appliqué à un pointeur de type `void*`. Toutefois, vous pouvez utiliser un cast pour convertir un pointeur void en n'importe quel autre type pointeur, et inversement.  
   
- Un pointeur peut être `null`.  Le fait d'appliquer un opérateur d'indirection à un pointeur Null donne lieu à un comportement défini par l'implémentation.  
+ Un pointeur peut être `null`. Le fait d'appliquer un opérateur d'indirection à un pointeur Null donne lieu à un comportement défini par l'implémentation.  
   
- Sachez que le passage de pointeurs entre méthodes peut engendrer un comportement non défini.  Par exemple, retourner un pointeur à une variable locale via un paramètre Out ou Ref ou en tant que résultat de fonction.  Si le pointeur a été défini dans un bloc fixed, la variable vers laquelle il pointe peut ne plus être fixed.  
+ Sachez que le passage de pointeurs entre méthodes peut engendrer un comportement non défini. Par exemple, retourner un pointeur à une variable locale via un paramètre Out ou Ref ou en tant que résultat de fonction. Si le pointeur a été défini dans un bloc fixed, la variable vers laquelle il pointe peut ne plus être fixed.  
   
  Le tableau suivant répertorie les opérateurs et les instructions qui peuvent fonctionner sur des pointeurs dans un contexte unsafe :  
   
-|Opérateur\/Instruction|Utilisation|  
-|----------------------------|-----------------|  
-|\*|Exécute l'indirection de pointeur.|  
-|\-\>|Accède à un membre d'un struct via un pointeur.|  
-|\[\]|Indexe un pointeur.|  
+|Opérateur/Instruction|Utilisation|  
+|-------------------------|---------|  
+|*|Exécute l'indirection de pointeur.|  
+|->|Accède à un membre d'un struct via un pointeur.|  
+|[]|Indexe un pointeur.|  
 |`&`|Obtient l'adresse d'une variable.|  
-|\+\+ et \-\-|Incrémente et décrémente les pointeurs.|  
-|\+ et \-|Exécute des opérations arithmétiques sur les pointeurs.|  
-|\=\=, \!\=, \<, \>, \<\=, et \>\=|Compare des pointeurs.|  
+|++ et --|Incrémente et décrémente les pointeurs.|  
+|+ et -|Exécute des opérations arithmétiques sur les pointeurs.|  
+|==, !=, \<, >, \<= et >=|Compare des pointeurs.|  
 |`stackalloc`|Alloue de la mémoire sur la pile.|  
 |Instruction `fixed`|Résout temporairement une variable afin de pouvoir rechercher son adresse.|  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [Conversions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)   
  [Expressions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)   

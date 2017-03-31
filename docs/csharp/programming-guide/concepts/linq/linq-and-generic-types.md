@@ -1,48 +1,67 @@
 ---
-title: "LINQ and Generic Types (C#) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "LINQ [C#], generic types"
-  - "generic types [LINQ]"
-  - "generics [LINQ]"
+title: "LINQ et types génériques (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- LINQ [C#], generic types
+- generic types [LINQ]
+- generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
 caps.latest.revision: 18
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1951d53b069104f3439aa2fe3ee3975bae0e1659
+ms.lasthandoff: 03/13/2017
+
 ---
-# LINQ and Generic Types (C#)
-Les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] sont basées sur des types génériques introduits dans la version 2.0 du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)].  Il n'est pas nécessaire de connaître parfaitement les génériques pour commencer à écrire des requêtes.  Toutefois, il est important de comprendre deux concepts de base :  
+# <a name="linq-and-generic-types-c"></a>LINQ et types génériques (C#)
+Les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] sont basées sur des types génériques, qui ont été introduits dans la version 2.0 du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]. Vous ne devez pas avoir une connaissance approfondie des génériques avant de commencer à écrire des requêtes. Il peut cependant être important de comprendre deux concepts de base :  
   
-1.  Lorsque vous créez une instance d'une classe de collection générique telle que <xref:System.Collections.Generic.List%601>, vous remplacez le « T » par le type des objets contenus dans la liste.  Par exemple, une liste de chaînes est exprimée sous la forme `List<string>` et une liste d'objets `Customer` sous la forme `List<Customer>`.  Une liste générique est fortement typée et offre de nombreux avantages par rapport aux collections qui stockent leurs éléments en tant que <xref:System.Object>.  Si vous essayez d'ajouter un `Customer` à un `List<string>`, vous obtiendrez une erreur à la compilation.  Vous pouvez facilement utiliser des collections génériques car il n'est pas nécessaire d'effectuer un cast de type au moment de l'exécution.  
+1.  Quand vous créez une instance d’une classe de collection générique comme <xref:System.Collections.Generic.List%601>, vous remplacez le « T » par le type des objets de la liste. Par exemple, une liste de chaînes est exprimée sous la forme `List<string>`, et une liste d’objets `Customer` est exprimée sous la forme `List<Customer>`. Une liste générique est fortement typée et offre de nombreux avantages sur les collections qui stockent leurs éléments en tant que <xref:System.Object>. Si vous essayez d’ajouter un `Customer` à un `List<string>`, vous obtenez une erreur à la compilation. Il est facile d’utiliser des collections génériques, car vous ne devez pas effectuer un cast de type à l’exécution.  
   
-2.  <xref:System.Collections.Generic.IEnumerable%601> est l'interface qui permet l'énumération des classes de collections génériques à l'aide de l'instruction `foreach`.  Les classes de collections génériques prennent en charge <xref:System.Collections.Generic.IEnumerable%601> et les classes de collections non génériques, telles que <xref:System.Collections.ArrayList>, prennent en charge <xref:System.Collections.IEnumerable>.  
+2.  <xref:System.Collections.Generic.IEnumerable%601> est l’interface qui permet l’énumération des classes de collection génériques avec l’instruction `foreach`. Les classes de collection génériques prennent en charge <xref:System.Collections.Generic.IEnumerable%601> tout comme des classes de collections non génériques telles que <xref:System.Collections.ArrayList> prennent en charge <xref:System.Collections.IEnumerable>.  
   
- Pour plus d'informations sur les génériques, consultez [Génériques](../../../../csharp/programming-guide/generics/index.md).  
+ Pour plus d’informations sur les génériques, consultez [Génériques](../../../../csharp/programming-guide/generics/index.md).  
   
-## Variables IEnumerable \<T\> dans les requêtes LINQ  
- Les variables de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)] sont typées comme <xref:System.Collections.Generic.IEnumerable%601> ou de type dérivé comme <xref:System.Linq.IQueryable%601>.  Lorsque vous avez une variable de requête typée comme `IEnumerable<Customer>`, cela signifie simplement que la requête, lorsqu'elle est exécutée, génère une séquence de zéro objets `Customer` ou plus.  
+## <a name="ienumerablet-variables-in-linq-queries"></a>Variables IEnumerable<T\> dans les requêtes LINQ  
+ Les variables de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] sont de type <xref:System.Collections.Generic.IEnumerable%601> ou d’un type dérivé comme <xref:System.Linq.IQueryable%601>. Quand vous voyez une variable de requête typée en `IEnumerable<Customer>`, cela signifie simplement que la requête génère à l’exécution une séquence de zéro ou plusieurs objets `Customer`.  
   
  [!code-cs[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_1.cs)]  
   
- Pour plus d'informations, consultez [Type Relationships in LINQ Query Operations](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).  
+ Pour plus d’informations, consultez [Relations des types dans des opérations de requête LINQ](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).  
   
-## Gestion des déclarations de type générique par le compilateur  
- Si vous le souhaitez, vous pouvez éviter d'utiliser la syntaxe générique à l'aide du mot clé [var](../../../../csharp/language-reference/keywords/var.md).  Le mot clé `var` indique au compilateur de déduire le type d'une variable de requête de la source de données spécifiée dans la clause `from`.  L'exemple suivant génère le même code compilé que dans l'exemple précédent :  
+## <a name="letting-the-compiler-handle-generic-type-declarations"></a>Laisser le compilateur gérer les déclarations de types génériques  
+ Si vous préférez, vous pouvez éviter une syntaxe générique en utilisant le mot clé [var](../../../../csharp/language-reference/keywords/var.md). Le mot clé `var` indique au compilateur d’inférer le type d’une variable de requête en examinant la source de données spécifiée dans la clause `from`. L’exemple suivant génère le même code compilé que l’exemple précédent :  
   
  [!code-cs[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_2.cs)]  
   
- Le mot clé `var` est utile lorsque le type de la variable est évident ou lorsqu'il n'est pas particulièrement important de spécifier explicitement les types génériques imbriqués tels que ceux générés par les requêtes de groupe.  En général, si vous utilisez `var`, vous devez savoir que cela peut compliquer la lecture de votre code.  Pour plus d'informations, consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+ Le mot clé `var` est utile quand le type de la variable est évident ou quand il est particulièrement important de spécifier explicitement des types génériques imbriqués, comme ceux qui sont produits par des requêtes de groupe. D’une façon générale, si vous utilisez `var`, sachez qu’il peut rendre votre code plus difficile à lire par d’autres développeurs. Pour plus d’informations, consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
-## Voir aussi  
- [Getting Started with LINQ in C\#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Bien démarrer avec LINQ en C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
  [Génériques](../../../../csharp/programming-guide/generics/index.md)

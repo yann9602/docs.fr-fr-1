@@ -1,72 +1,90 @@
 ---
-title: "static (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "static"
-  - "static_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "static (mot clé C#)"
+title: "static (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- static
+- static_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
 caps.latest.revision: 26
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 26
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 9126a882984799a5c726ecc5d82b3f3db707858a
+ms.lasthandoff: 03/13/2017
+
 ---
-# static (r&#233;f&#233;rence C#)
-Utilisez le modificateur `static` pour déclarer un membre statique, qui appartient au type lui\-même plutôt qu'à un objet spécifique.  Le modificateur `static` peut être utilisé avec des classes, champs, méthodes, propriétés, opérateurs, événements et constructeurs, mais il ne peut pas être utilisé avec des indexeurs, des destructeurs ou des types autres que des classes.  Pour plus d'informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+# <a name="static-c-reference"></a>static (référence C#)
+Utilisez le modificateur `static` pour déclarer un membre statique, qui appartient au type lui-même plutôt qu’à un objet spécifique. Le modificateur `static` peut être utilisé avec des classes, des champs, des méthodes, des propriétés, des opérateurs, des événements et des constructeurs. En revanche, il ne peut pas être utilisé avec des indexeurs, des destructeurs ni des types autres que des classes. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
-## Exemple  
- La classe suivante est déclarée comme `static` et contient uniquement des méthodes `static` :  
+## <a name="example"></a>Exemple  
+ La classe suivante est déclarée comme `static` et contient uniquement des méthodes `static` :  
   
  [!code-cs[csrefKeywordsModifiers#18](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_1.cs)]  
   
- Une déclaration de constante ou de type est de manière implicite un membre statique.  
+ Une déclaration de constante ou de type est implicitement un membre statique.  
   
- Un membre statique ne peut pas être référencé par le biais d'une instance.  À la place, il est référencé à l'aide du nom de type.  Par exemple, considérons la classe suivante :  
+ Un membre statique ne peut pas être référencé via une instance. Au lieu de cela, il est référencé via le nom de type. Par exemple, considérons la classe suivante :  
   
  [!code-cs[csrefKeywordsModifiers#19](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_2.cs)]  
   
- Pour faire référence au membre statique `x`, utilisez le nom complet `MyBaseC.MyStruct.x` \(à moins qu'il soit accessible à partir de la même portée\) :  
+ Pour faire référence au membre statique `x`, utilisez le nom complet `MyBaseC.MyStruct.x`, à moins que le membre soit accessible à partir de la même portée :  
   
-```c#  
+```csharp  
 Console.WriteLine(MyBaseC.MyStruct.x);  
 ```  
   
- Alors qu'une instance de classe contient une copie distincte de tous les champs d'instances de la classe, il existe une seule copie de chaque champ statique.  
+ Alors qu’une instance d’une classe contient une copie distincte de tous les champs d’instance de la classe, il existe une seule copie de chaque champ statique.  
   
- Il est impossible d'utiliser [this](../../../csharp/language-reference/keywords/this.md) pour référencer des méthodes statiques ou des accesseurs de propriétés.  
+ Il n’est pas possible d’utiliser [this](../../../csharp/language-reference/keywords/this.md) pour référencer des méthodes statiques ou des accesseurs de propriété.  
   
  Si le mot clé `static` est appliqué à une classe, tous les membres de la classe doivent être statiques.  
   
- Les classes et les classes statiques peuvent avoir des constructeurs statiques.  Les constructeurs statiques sont appelés à un moment donné situé entre le début du programme et l'instanciation de la classe.  
+ Les classes et les classes statiques peuvent avoir des constructeurs statiques. Les constructeurs statiques sont appelés à un moment donné entre le démarrage du programme et l’instanciation de la classe.  
   
 > [!NOTE]
->  L'utilisation du mot clé `static` est plus limitée qu'en C\+\+.  Pour comparer avec le mot clé en C\+\+, consultez [Statique](/visual-cpp/misc/static-cpp).  
+>  L’utilisation du mot clé `static` est plus restreinte que dans C++. Pour comparer avec le mot clé C++, consultez [Static](https://docs.microsoft.com/cpp/misc/static-cpp).  
   
- Pour illustrer les membres statiques, considérez une classe qui représente un employé d'une entreprise.  Partez de l'hypothèse que la classe contient une méthode permettant de compter les employés et un champ pour stocker le nombre d'employés.  La méthode et le champ n'appartiennent à aucun employé d'instance.  À la place, ils appartiennent à la classe de l'entreprise.  En conséquence, ils doivent être déclarés comme membres statiques de la classe.  
+ Pour illustrer les membres statiques, considérons une classe qui représente un employé d’une entreprise. Supposons que la classe contient une méthode pour compter les employés et un champ pour stocker le nombre d’employés. La méthode et le champ n’appartiennent à aucune instance d’employé. Au lieu de cela, ils appartiennent à la classe entreprise. Par conséquent, ils doivent être déclarés comme membres statiques de cette classe.  
   
-## Exemple  
- Dans cet exemple, le code lit le nom et l'identificateur d'un nouvel employé, incrémente d'une unité le compteur d'employés et affiche les informations concernant le nouvel employé et le nouveau nombre d'employés.  Par souci de simplicité, ce programme lit le nombre actuel d'employés à partir du clavier.  Dans une application réelle, cette information doit être lue à partir d'un fichier.  
+## <a name="example"></a>Exemple  
+ Cet exemple lit le nom et l’ID d’un nouvel employé, incrémente d’une unité le compteur d’employés et affiche les informations concernant le nouvel employé et le nouveau nombre d’employés. Pour plus de simplicité, ce programme lit le nombre actuel d’employés à partir du clavier. Dans une application réelle, ces informations doivent être lues à partir d’un fichier.  
   
  [!code-cs[csrefKeywordsModifiers#20](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_3.cs)]  
   
-## Exemple  
- Cet exemple montre que, bien qu'il soit possible d'initialiser un champ statique à l'aide d'un autre champ statique non encore déclaré, les résultats seront indéfinis jusqu'à vous affectiez explicitement une valeur au champ statique.  
+## <a name="example"></a>Exemple  
+ Cet exemple montre que bien que vous puissiez initialiser un champ statique à l’aide d’un autre champ statique encore non déclaré, les résultats sont indéfinis tant que vous n’assignez pas explicitement une valeur au champ statique.  
   
  [!code-cs[csrefKeywordsModifiers#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/static_4.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
  [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

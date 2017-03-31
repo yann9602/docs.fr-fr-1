@@ -1,56 +1,72 @@
 ---
-title: "File Access with Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "file access"
-  - "files, input and output"
-  - "file access, Visual Basic"
-  - "files, I/O"
-  - "file I/O classes"
-  - "data [Visual Basic], accessing from files"
-  - "files, accessing"
-  - "file access, using components"
-  - "My.Computer.FileSystem object, accessing files"
-  - "I/O [Visual Basic]"
-  - "sequential access"
+title: "Accès au fichier avec Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- file access
+- files, input and output
+- file access, Visual Basic
+- files, I/O
+- file I/O classes
+- data [Visual Basic], accessing from files
+- files, accessing
+- file access, using components
+- My.Computer.FileSystem object, accessing files
+- I/O [Visual Basic]
+- sequential access
 ms.assetid: 231533bf-d049-4345-befa-3fb78fe6517d
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# File Access with Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2a2a60f9033d6bdec0b9a0d5905adb2b1953bf66
+ms.lasthandoff: 03/13/2017
 
-L'objet `My.Computer.FileSystem` fournit des outils pour utiliser les fichiers et les dossiers.  Ses propriétés, méthodes et événements vous permettent de créer, copier, déplacer, examiner et supprimer des fichiers et des dossiers.  `My.Computer.FileSystem` offre de meilleures performances que les fonctions héritées \(`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`, etc.\) qui sont fournies par [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] pour la compatibilité descendante.  
+---
+# <a name="file-access-with-visual-basic"></a>Accès au fichier avec Visual Basic
+L’objet `My.Computer.FileSystem` fournit des outils pour l’utilisation des fichiers et des dossiers. Ses propriétés, méthodes et événements permettent de créer, copier, déplacer, examiner et supprimer des fichiers et des dossiers. `My.Computer.FileSystem` offre de meilleures performances que les fonctions héritées (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`, etc.) qui sont fournies par [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour une compatibilité descendante.  
   
-## Dans cette section  
- [Reading from Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- Répertorie les rubriques qui décrivent l'utilisation de l'objet `My.Computer.FileSystem` pour lire les fichiers.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
+ Répertorie les rubriques qui traitent de l’utilisation de l’objet `My.Computer.FileSystem` pour lire des fichiers.  
   
- [Writing to Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- Répertorie les rubriques qui décrivent l'utilisation de l'objet `My.Computer.FileSystem` pour écrire dans les fichiers.  
+ [Écriture dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
+ Répertorie les rubriques qui traitent de l’utilisation de l’objet `My.Computer.FileSystem` pour écrire dans des fichiers  
   
- [Creating, Deleting, and Moving Files and Directories](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
- Répertorie les rubriques qui décrivent l'utilisation de l'objet `My.Computer.FileSystem` pour créer, copier, supprimer et déplacer des fichiers et des dossiers.  
+ [Création, suppression et déplacement de fichiers et de répertoires](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
+ Répertorie les rubriques qui traitent de l’utilisation de l’objet `My.Computer.FileSystem` pour la création, la copie, la suppression et le déplacement de fichiers et de dossiers.  
   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- Explique comment utiliser `TextFieldReader` pour analyser des fichiers texte tels que des journaux.  
+ [Analyse des fichiers texte avec l’objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
+ Explique comment utiliser `TextFieldReader` pour analyser des fichiers texte tels que les journaux.  
   
- [File Encodings](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
- Décrit les encodages de fichier et leur utilisation.  
+ [Codages de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
+ Décrit les encodages de fichiers et leur utilisation.  
   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- Explique comment créer un utilitaire qui rapporte des informations concernant les fichiers et les dossiers.  
+ [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ Montre comment créer un utilitaire qui fournit des informations sur les fichiers et les dossiers.  
   
- [Troubleshooting: Reading from and Writing to Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
- Répertorie les problèmes couramment rencontrés lors de la lecture et de l'écriture dans des fichiers texte et suggère des solutions pour chaque problème.
+ [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
+ Répertorie les problèmes courants rencontrés lors des opérations de lecture et d’écriture dans des fichiers texte, et suggère des solutions pour chaque problème.

@@ -1,28 +1,46 @@
 ---
-title: "Tableau des conversions num&#233;riques implicites (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "conversions (C#), numériques implicites"
-  - "conversions numériques implicites (C#)"
-  - "conversions numériques (C#), implicites"
-  - "types (C#), conversions numériques implicites"
+title: "Tableau des conversions numériques implicites (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- conversions [C#], implicit numeric
+- implicit numeric conversions [C#]
+- numeric conversions [C#], implicit
+- types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
 caps.latest.revision: 12
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 12
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: e4a0eca529b7c66cca527cfef3078a2c5bd24555
+ms.lasthandoff: 03/13/2017
+
 ---
-# Tableau des conversions num&#233;riques implicites (r&#233;f&#233;rence C#)
-Le tableau suivant répertorie les conversions numériques implicites prédéfinies.  Des conversions implicites peuvent avoir lieu dans de nombreuses situations, notamment lors de l'appel de méthodes et de la définition d'instructions d'assignation.  
+# <a name="implicit-numeric-conversions-table-c-reference"></a>Tableau des conversions numériques implicites (référence C#)
+Le tableau suivant montre les conversions numériques implicites prédéfinies. Les conversions implicites peuvent se produire dans de nombreuses situations, comme les appels de méthode et les instructions d’assignation.  
   
-|From|Pour|  
-|----------|----------|  
+|De|À|  
+|----------|--------|  
 |[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|`short`, `int`, `long`, `float`, `double` ou `decimal`|  
 |[byte](../../../csharp/language-reference/keywords/byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double` ou `decimal`|  
 |[short](../../../csharp/language-reference/keywords/short.md)|`int`, `long`, `float`, `double` ou `decimal`|  
@@ -34,22 +52,22 @@ Le tableau suivant répertorie les conversions numériques implicites prédéfin
 |[float](../../../csharp/language-reference/keywords/float.md)|`double`|  
 |[ulong](../../../csharp/language-reference/keywords/ulong.md)|`float`, `double` ou `decimal`|  
   
-## Notes  
+## <a name="remarks"></a>Remarques  
   
--   Précision, mais pas d'amplitude peut\-être être perdue dans les conversions à partir de `int`, `uint`, `long`, ou `ulong` à `float` et de `long` ou `ulong` à `double`.  
+-   C’est la précision, et non la magnitude, qui peut être perdue lors de conversions de `int`, `uint`, `long` ou `ulong` à `float`, et de `long` ou `ulong` à `double`.  
   
--   Il n'y a pas de conversions implicites vers le type `char`.  
+-   Il n’y a pas de conversion implicite possible vers le type `char`.  
   
--   Il n'y a pas de conversions implicites entre les types virgule flottante et le type `decimal`.  
+-   Il n’y a pas non plus de conversion implicite possible entre les types virgule flottante et le type `decimal`.  
   
--   Une expression constante de type `int` peut être convertie en `sbyte`, `byte`, `short`, `ushort`, `uint` ou `ulong`, à condition que sa valeur se trouve dans la plage de valeurs autorisées pour le type de destination.  
+-   Une expression constante de type `int` peut être convertie en `sbyte`, `byte`, `short`, `ushort`, `uint` ou `ulong`, à condition que la valeur de l’expression constante se trouve dans la plage du type de destination.  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
  [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   

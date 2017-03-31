@@ -1,75 +1,92 @@
 ---
-title: "float (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "float"
-  - "float_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "float (mot clé C#)"
-  - "chiffres à virgule flottante (C#), float (mot clé)"
+title: "float (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- float
+- float_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- float keyword [C#]
+- floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 1c3a66e4f9c690effb35e280e00e29930ec64d75
+ms.lasthandoff: 03/13/2017
+
 ---
-# float (r&#233;f&#233;rence C#)
-Le mot clé `float` désigne un type simple qui stocke des valeurs 32 bits en virgule flottante.  Le tableau suivant indique la plage de valeurs approximative et la précision fournies par le type `float`.  
+# <a name="float-c-reference"></a>float (référence C#)
+Le mot clé `float` désigne un type simple qui stocke des valeurs à virgule flottante de 32 bits. Le tableau suivant montre la précision et la plage approximative pour le type `float`.  
   
 |Type|Plage approximative|Précision|Type .NET Framework|  
-|----------|-------------------------|---------------|-------------------------|  
-|`float`|\-3,4 × 10<sup>38</sup>à \+3,4 × 10<sup>38</sup>|7 chiffres|<xref:System.Single?displayProperty=fullName>|  
+|----------|-----------------------|---------------|-------------------------|  
+|`float`|-3,4 × 10<sup>38</sup> à +3,4 × 10<sup>38</sup>|7 chiffres|<xref:System.Single?displayProperty=fullName>|  
   
-## Littéraux  
- Par défaut, un littéral numérique réel situé à droite de l'opérateur d'assignation est considéré de type [double](../../../csharp/language-reference/keywords/double.md).  Par conséquent, si vous souhaitez initialiser une variable de type float, utilisez le suffixe `f` ou `F`, comme indiqué ci\-après :  
+## <a name="literals"></a>Littéraux  
+ Par défaut, un littéral numérique réel sur le côté droit de l’opérateur d’assignation est traité comme un [double](double.md). Par conséquent, pour initialiser une variable de type float, utilisez le suffixe `f` ou `F`, comme dans l’exemple suivant :  
   
-```  
-  
+```csharp
 float x = 3.5F;  
-```  
+```
   
- Si vous ne spécifiez aucun suffixe dans la déclaration ci\-dessus, une erreur de compilation se produit, car vous essayez de stocker une valeur [double](../../../csharp/language-reference/keywords/double.md) dans une variable `float`.  
+ Si vous n’utilisez pas de suffixe dans la déclaration précédente, vous obtiendrez une erreur de compilation, puisque vous essayez de stocker une valeur [double](double.md) dans une variable `float`.  
   
-## Conversions  
- Vous pouvez combiner, au sein d'une expression, des types numériques intégraux et des types virgule flottante.  Dans ce cas, les types intégraux sont convertis en types en virgule flottante.  L'expression est évaluée selon les règles suivantes :  
+## <a name="conversions"></a>Conversions  
+ Vous pouvez combiner des types numériques intégraux et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :  
   
--   Si l'un des types virgule flottante est [double](../../../csharp/language-reference/keywords/double.md), le résultat de l'évaluation est aussi de type [double](../../../csharp/language-reference/keywords/double.md) ou de type [bool](../../../csharp/language-reference/keywords/bool.md) dans des expressions relationnelles ou booléennes.  
+-   Si l’un des types virgule flottante est [double](double.md), l’expression prend la valeur [double](double.md) ou [bool](bool.md) dans les expressions relationnelles ou booléennes.  
   
--   Si l'expression ne comporte pas de type [double](../../../csharp/language-reference/keywords/double.md), le résultat de l'évaluation est de type `float` ou [bool](../../../csharp/language-reference/keywords/bool.md) dans des expressions relationnelles ou booléennes.  
+-   S’il n’existe aucun type [double](double.md) dans l’expression, elle prend la valeur `float` ou [bool](bool.md) dans les expressions relationnelles ou booléennes.  
   
- Une expression en virgule flottante peut contenir les ensembles de valeurs suivants :  
+ Une expression à virgule flottante peut contenir les ensembles de valeurs suivants :  
   
--   Zéro positif et zéro négatif  
+-   Zéro positif et négatif  
   
--   Nombre positif infini et nombre négatif infini  
+-   Infini positif et négatif  
   
--   Valeur non numérique \(NaN ou Not\-a\-Number\)  
+-   Valeur NaN (N’est pas un nombre)  
   
--   Ensemble fini des valeurs différentes de zéro  
+-   L’ensemble fini de valeurs différentes de zéro  
   
- Pour plus d'informations sur ces valeurs, consultez IEEE Standard for Binary Floating\-Point Arithmetic, disponible sur le site Web [IEEE](http://go.microsoft.com/fwlink/?LinkId=26269).  
+ Pour plus d’informations sur ces valeurs, consultez IEEE Standard for Binary Floating-Point Arithmetic, disponible sur le site web de l’[IEEE](http://go.microsoft.com/fwlink/?LinkId=26269).  
   
-## Exemple  
- Dans l'exemple suivant, un [int](../../../csharp/language-reference/keywords/int.md), un [short](../../../csharp/language-reference/keywords/short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`.  \(N'oubliez pas que `float` est un alias pour le type <xref:System.Single?displayProperty=fullName>.\) Notez l'absence de [double](../../../csharp/language-reference/keywords/double.md) dans l'expression.  
+## <a name="example"></a>Exemple  
+ Dans l’exemple suivant, un [int](int.md), un [short](short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`. N’oubliez pas que `float` est un alias du type <xref:System.Single?displayProperty=fullName>. Notez qu’il n’y a aucune valeur [double](double.md) dans l’expression.  
   
  [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/float_1.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Single>   
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Cast et conversions de types](../../../csharp/programming-guide/types/casting-and-type-conversions.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
- [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
- [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+ [Mots clés C#](index.md)   
+ [Tableau des types intégraux](integral-types-table.md)   
+ [Tableau des types intégrés](built-in-types-table.md)   
+ [Tableau des conversions numériques implicites](implicit-numeric-conversions-table.md)   
+ [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)

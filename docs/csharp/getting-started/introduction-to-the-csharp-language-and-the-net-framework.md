@@ -1,82 +1,100 @@
 ---
-title: "Introduction to the C# Language and the .NET Framework | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "C# language, about C# language"
-  - "Visual C#, about"
+title: "Introduction au langage C# et au .NET Framework | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- C# language, about C# language
+- Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
 caps.latest.revision: 32
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 32
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: bfd3c08f69461d65140ef948672774a7435c326d
+ms.lasthandoff: 03/13/2017
+
 ---
-# Introduction to the C# Language and the .NET Framework
-C\# est un langage orienté objet de type sécurisé et élégant qui permet aux développeurs de générer diverses applications sécurisées et fiables qui s'exécutent sur le [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)].  Vous pouvez utiliser le langage C\# pour créer entre autres des applications clientes Windows, des services Web XML, des composants distribués, des applications client\-serveur et des applications de base de données.  Visual C\# fournit un éditeur de code avancé, des concepteurs d'interfaces utilisateur pratiques, un débogueur intégré et de nombreux autres outils pour faciliter le développement d'applications basées sur le langage C\# et [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)].  
+# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction au langage C# et au .NET Framework
+C# est un langage élégant et de type sécurisé orienté objet qui permet aux développeurs de créer toute une gamme d'applications sûres et solides exécutées sur [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore. Visual C# fournit un éditeur de code avancé, des concepteurs d’interface utilisateur pratiques, un débogueur intégré et de nombreux autres outils pour faciliter le développement d’applications basées sur le langage C# et le [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)].  
   
 > [!NOTE]
->  La documentation de [!INCLUDE[csprcs](../../csharp/includes/csprcs-md.md)] suppose que vous possédez des connaissances de base sur les concepts de programmation.  Si vous êtes débutant complet, il peut être utile d'explorer [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr-md.md)], disponible sur le Web.  Vous pouvez également tirer parti de carnets et ressources Web à propos de C\# pour acquérir des compétences de programmation pratiques.  
+>  La documentation de [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] suppose que vous avez une compréhension des concepts de base de la programmation. Si vous êtes un débutant complet, vous souhaiterez peut-être consulter [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)], qui est disponible sur le Web. Vous pouvez également tirer parti de la documentation et des ressources Web sur C# pour acquérir des compétences de programmation pratiques.  
   
-## Langage C\#  
- La syntaxe C\# est très expressive, mais elle est également simple et facile à apprendre.  La syntaxe de C\# est facile à reconnaître à ses accolades si vous connaissez déjà les langages C, C\+\+ ou Java.  Si vous connaissez déjà l'un de ces langages, vous pouvez devenir très vite productif en C\#.  La syntaxe C\# permet de répondre à de nombreuses complexités de C\+\+ en fournissant des fonctionnalités puissantes telles que des types valeur Nullable, des énumérations, des délégués, des expressions lambda et des accès directs à la mémoire qui n'existent pas en Java.  C\# prend en charge des méthodes et types génériques qui améliorent la cohérence et les performances des types, ainsi que des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d'itération personnalisés simples à utiliser par le code client.  Les expressions [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext-md.md)] transforment les requêtes fortement typées en construction de langage de premier ordre.  
+## <a name="c-language"></a>Langage C#  
+ La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe avec accolades de C# sera facile à reconnaître pour toute personne familiarisée avec C, C++ ou Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C# simplifie beaucoup des complexités de C++ et fournit des fonctionnalités puissantes, comme les types valeur Nullable, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire, qui ne figurent pas dans Java. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)] font des requêtes fortement typées une construction de première classe du langage.  
   
- En tant que langage orienté objet, C\# prend en charge les concepts d'encapsulation, d'héritage et de polymorphisme.  Toutes les variables et méthodes, y compris la méthode `Main`, point d'entrée de l'application, sont encapsulées dans des définitions de classe.  Une classe peut hériter directement d'une classe parente, mais elle peut implémenter un nombre quelconque d'interfaces.  Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot clé `override`, ce qui évite toute redéfinition accidentelle.  En C\#, le type struct ressemble à une classe légère ; alloué par pile, il peut implémenter des interfaces mais ne prend pas l'héritage en charge.  
+ En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Toutes les variables et méthodes, y compris la méthode `Main`, le point d’entrée de l’application, sont encapsulées dans des définitions de classe. Une classe peut hériter directement d'une classe parent, mais peut implémenter un nombre quelconque d'interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est comme une classe légère : il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage.  
   
- Outre ces principes orientés objet de base, C\# permet de développer facilement des composants logiciel à travers plusieurs constructions de langage innovatrices, y compris les éléments suivants :  
+ Outre ces principes orientés objet de base, C# facilite le développement de composants logiciels à travers plusieurs constructions de langage novatrices, y compris ce qui suit :  
   
--   Les signatures de méthodes encapsulées, appelées *délégués*, qui activent les notifications d'événement de type sécurisé.  
+-   Des signatures de méthode encapsulées appelées *délégués*, qui activent les notifications d’événement de type sécurisé.  
   
--   Les propriétés, utilisées comme accesseurs pour les variables membres privés.  
+-   Les propriétés, qui sont utilisées comme accesseurs pour les variables de membre privé.  
   
--   Les attributs, qui fournissent des métadonnées déclaratives à propos des types au moment de l'exécution.  
+-   Les attributs, qui fournissent des métadonnées déclaratives sur les types au moment de l’exécution.  
   
--   Les commentaires de la documentation XML inline.  
+-   Commentaires de documentation XML inline.  
   
--   [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext-md.md)] qui fournit des fonctions de requête intégrées à travers diverses sources de données.  
+-   [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)], qui fournit des fonctions de requête intégrées sur diverses sources de données.  
   
- Si vous devez interagir avec d'autres logiciels Windows tels que des objets COM ou des DLL Win32 natives, vous pouvez le faire en C\# à l'aide d'un processus appelé « interopérabilité ». L'interopérabilité offre aux programmes C\# autant de possibilités qu'une application C\+\+ native.  C\# prend en charge les pointeurs et le concept de code « unsafe » lorsque l'accès direct à la mémoire est absolument essentiel.  
+ Si vous devez interagir avec d’autres logiciels Windows, comme les objets COM ou les DLL Win32 natives, vous pouvez faire cela dans C# via un processus appelé « Interopérabilité ». L’interopérabilité permet aux programmes C# de faire presque tout ce qu’une application native C++ peut faire. C# prend même en charge les pointeurs et le concept de code « unsafe » pour les cas où l’accès direct à la mémoire est absolument essentiel.  
   
- En C\#, le processus de génération est plus simple qu'en C et C\+\+ et plus souple qu'en Java.  Il n'y a pas de fichiers d'en\-tête séparés et les méthodes et types peuvent être déclarés dans n'importe quel ordre.  Un fichier source C\# peut définir tout nombre de classes, structures, interfaces et événements.  
+ Le processus de génération de C# est simple par rapport à C et C++ et plus souple qu’avec Java. Il n’existe aucun fichier d’en-tête distinct, et les types et méthodes n’ont pas à être déclarés dans un ordre particulier. Un fichier source C# peut définir un nombre quelconque de classes, structs, interfaces et événements.  
   
- Voici quelques ressources C\# supplémentaires :  
+ Voici des ressources C# supplémentaires :  
   
--   Vous trouverez une bonne présentation générale du langage dans le chapitre 1 de [Spécification du langage C\#](../../csharp/language-reference/language-specification.md).  
+-   Pour une bonne présentation générale du langage, consultez le chapitre 1 de la [Spécification du langage C#](../../csharp/language-reference/language-specification.md).  
   
--   Pour plus d'informations sur des aspects spécifiques du langage C\#, consultez [Référence C\#](../../csharp/language-reference/index.md).  
+-   Pour plus d’informations sur des aspects spécifiques du langage C#, consultez la [Référence de C#](../../csharp/language-reference/index.md).  
   
--   Pour plus d'informations sur [!INCLUDE[vbteclinq](../../csharp/includes/vbteclinq-md.md)], consultez [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md).  
+-   Pour plus d’informations sur [!INCLUDE[vbteclinq](../../csharp/includes/vbteclinq_md.md)], consultez [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).  
   
--   Pour accéder aux ressources et articles les plus récents de l'équipe Visual C\#, consultez le [Centre de développement Visual C\#](http://go.microsoft.com/fwlink/?LinkId=47811).  
+-   Pour découvrir les derniers articles et ressources de l’équipe Visual C#, consultez le [Centre de développement Visual C#](http://go.microsoft.com/fwlink/?LinkId=47811).  
   
-## Architecture de la plateforme du .NET Framework  
- Les programmes en C\# s'exécutent sur le [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)], composant intégral de Windows qui inclut un système d'exécution virtuel appelé Common Language Runtime \(CLR\) et un ensemble unifié de bibliothèques de classes.  Le CLR est l'implémentation commerciale de l'infrastructure du langage commun \(CLI, Common Language Infrastructure\) de Microsoft, norme internationale constituant la base de toute création d'environnements d'exécution et de développement et assurant le fonctionnement homogène des langages et des bibliothèques.  
+## <a name="net-framework-platform-architecture"></a>Architecture de la plateforme .NET Framework  
+ C# s’exécute sur [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)], un composant intégral de Windows qui inclut un système d’exécution virtuel appelé Common Language Runtime (CLR) et un ensemble unifié de bibliothèques de classes. CLR est l’implémentation commerciale par Microsoft de la Common Language Infrastructure (CLI), une norme internationale qui sert de base pour la création d’environnements de développement et d’exécution dans lesquels les langages et bibliothèques fonctionnent ensemble en toute transparence.  
   
- Le code source écrit en C\# est compilé dans un langage intermédiaire conforme à la spécification CLI.  Le code IL de ce langage intermédiaire, ainsi que les ressources telles que les bitmaps et les chaînes, sont stockés sur le disque dans un fichier exécutable appelé assembly, dont l'extension est généralement .exe ou .dll.  Un assembly contient un manifeste qui fournit des spécifications sur les types, la version, la culture et les conditions de sécurité de l'assembly.  
+ Le code source écrit en C# est compilé dans un langage intermédiaire (IL) qui est conforme à la spécification CLI. Le code de langage intermédiaire et les ressources, comme les bitmaps et les chaînes, sont stockés sur disque dans un fichier exécutable appelé assembly, généralement avec l’extension .exe ou .dll. Un assembly contient un manifeste qui fournit des informations sur les types de l’assembly, sa version, sa culture et ses conditions de sécurité.  
   
- À l'exécution du programme C\#, l'assembly est chargé dans le CLR, qui peut prendre différentes mesures sur la base des informations du manifeste.  Ensuite, si les conditions de sécurité sont respectées, le CLR effectue une compilation juste\-à\-temps pour convertir le code du langage intermédiaire en instructions machine natives.  Le CLR fournit également d'autres services en rapport avec les opérations automatiques de garbage collection et la gestion des exceptions et des ressources.  Le code exécuté par le CLR est quelquefois appelé « code managé », par contraste avec le « code non managé », compilé dans le langage machine natif ciblant un système spécifique.  Le diagramme suivant illustre les relations entre les temps de compilation et d'exécution des fichiers en code source C\#, des bibliothèques de classes .NET Framework, des assemblys et du CLR.  
+ Lorsque le programme C# est exécuté, l’assembly est chargé dans CLR, qui peut prendre différentes mesures selon les informations contenues dans le manifeste. Ensuite, si les exigences de sécurité sont satisfaites, CLR effectue une compilation juste à temps (JIT) pour convertir le code de langage intermédiaire en instructions machine natives. CLR fournit également d’autres services connexes liés au nettoyage automatique de la mémoire (garbage collection), à la gestion des exceptions et à la gestion des ressources. Le code exécuté par CLR est parfois appelé « code managé », contrairement au « code non managé » qui est compilé dans le langage machine natif ciblant un système spécifique. Le diagramme suivant illustre les relations de compilation et d’exécution des fichiers de code source de C#, les bibliothèques de classes .NET Framework, les assemblys et CLR.  
   
  ![Du code source C&#35; à l'exécution machine](../../csharp/getting-started/media/netarchitecture.png "NETarchitecture")  
   
- L'interopérabilité des langages est une fonctionnalité clé du [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)].  Étant donné que le code IL \(Intermediate Language\) produit par le compilateur C\# respecte la spécification de type commun \(CTS\), il peut, lorsqu'il est généré à partir de C\#, interagir avec le code généré à partir des versions .NET de Visual Basic, Visual C\+\+, Visual J\# ou d'un des vingt autres langages respectant la norme CTS.  Un même assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencer l'un l'autre exactement comme s'ils avaient été écrits dans le même langage.  
+ L’interopérabilité des langages est une fonctionnalité essentielle de [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]. Étant donné que le code de langage intermédiaire produit par le compilateur C# est conforme à la spécification de type commun (CTS), le code de langage intermédiaire généré à partir de C# peut interagir avec du code qui a été généré à partir des versions .NET de Visual Basic, Visual C++ ou un des plus de 20 autres langages compatibles CTS. Un seul assembly peut contenir plusieurs modules écrits dans différents langages .NET, et les types peuvent se référencent mutuellement comme s’ils avaient été écrits dans la même langue.  
   
- Outre les services d'exécution, le [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)] inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms, qui fournissent une large gamme de fonctionnalités couvrant de nombreuses utilisations, de l'entrée\/sortie de fichiers aux contrôles Windows Forms, en passant par la manipulation de chaînes et l'analyse XML.  Une application C\# standard utilise largement la bibliothèque de classes [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort-md.md)] pour assurer les tâches de maintenance courantes les plus fastidieuses.  
+ Outre les services de runtime [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms qui fournissent une grande variété de fonctionnalités utiles pour tous les éléments allant de l’entrée et la sortie de fichiers pour la manipulation de chaînes à l’analyse de XML, en passant par les contrôles Windows Forms. Une application C# standard utilise énormément la bibliothèque de classes [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] pour gérer les tâches fastidieuses.  
   
- Pour plus d'informations sur le .NET Framework, consultez [Overview of the Microsoft .NET Framework](http://msdn.microsoft.com/fr-fr/d05daf50-00fe-45c7-8383-06fe41697355).  
+ Pour plus d’informations sur .NET Framework, consultez [Présentation de Microsoft .NET Framework](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355).  
   
-## Chapitres proposés  
- [C\# Language Fundamentals](http://go.microsoft.com/fwlink/?LinkId=195416) dans [Learning C\# 3.0: Master the fundamentals of C\# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
+## <a name="featured-book-chapters"></a>Chapitres proposés  
+ [C# Language Fundamentals](http://go.microsoft.com/fwlink/?LinkId=195416) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
   
- [C\# and .NET Programming](http://go.microsoft.com/fwlink/?LinkId=195413) dans [Learning C\# 3.0: Master the fundamentals of C\# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
+ [C# and .NET Programming](http://go.microsoft.com/fwlink/?LinkId=195413) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
   
- [Présentation de C\#](http://go.microsoft.com/fwlink/?LinkId=221226) dans [Débuter avec Visual C\# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
+ [Présentation de C#](http://go.microsoft.com/fwlink/?LinkId=221226) dans [Débuter avec Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
   
- [Visual Studio 2008 and C\# Express 2008](http://go.microsoft.com/fwlink/?LinkId=195414) dans [Learning C\# 3.0: Master the fundamentals of C\# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
+ [Visual Studio 2008 et C# Express 2008](http://go.microsoft.com/fwlink/?LinkId=195414) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
   
-## Voir aussi  
- [C\#](../../csharp/csharp.md)   
- [Mises en route de Visual Basic et Visual C\#](/visual-studio/ide/getting-started-with-visual-csharp-and-visual-basic)
+## <a name="see-also"></a>Voir aussi  
+ [C#](../../csharp/csharp.md)   
+ [Bien démarrer avec Visual Basic et Visual C#](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

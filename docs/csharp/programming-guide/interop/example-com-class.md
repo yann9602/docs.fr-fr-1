@@ -1,46 +1,64 @@
 ---
-title: "Exemple de classe COM (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "COM, exposer des objets Visual C# à"
-  - "exemples (C#), Classes COM"
+title: Exemple de classe COM (Guide de programmation C#) | Microsoft Docs
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- examples [C#], COM classes
+- COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 2525d322bf3284c82356253d1383edbcd3928084
+ms.lasthandoff: 03/13/2017
+
 ---
-# Exemple de classe COM (Guide de programmation C#)
-Ci\-dessous un exemple d'une classe que vous exposeriez comme un objet COM.  Une fois que le code a été placé dans un fichier .cs et ajouté à votre projet, attribuez la valeur **True** à la propriété **Inscrire pour COM Interop**.  Pour plus d'informations, consultez [NIB: How to: Register a Component for COM Interop](http://msdn.microsoft.com/fr-fr/4de7d474-56e8-4027-994d-d47ca4725c5e).  
+# <a name="example-com-class-c-programming-guide"></a>Exemple de classe COM (Guide de programmation C#)
+Voici un exemple de classe pouvant être exposée en tant qu’objet COM. Après avoir placé ce code dans un fichier .cs et l’avoir ajouté à votre projet, affectez la valeur **True** à la propriété **Inscrire pour COM Interop**. Pour plus d’informations, consultez [NIB : Guide pratique pour inscrire un composant pour COM Interop](http://msdn.microsoft.com/en-us/4de7d474-56e8-4027-994d-d47ca4725c5e).  
   
- L'exposition d'objets Visual C\# à COM requiert la déclaration d'une interface de classe, d'une interface d'événement, si elle est requise, et de la classe elle\-même.  Les membres de la classe doivent se conformer aux règles suivantes pour être visibles par COM :  
+ L’exposition d’objets Visual C# à COM nécessite de déclarer une interface de classe, une interface d’événements si nécessaire, et la classe proprement dite. Les membres de classe doivent suivre ces règles pour être visibles par COM :  
   
 -   La classe doit être publique.  
   
--   Les propriétés, les méthodes et les événements doivent être publics.  
+-   Les propriétés, méthodes et événements doivent être publics.  
   
--   Les propriétés et les méthodes doivent être déclarées sur l'interface de classe.  
+-   Les propriétés et méthodes doivent être déclarées dans l’interface de classe.  
   
--   Les événements doivent être déclarés dans l'interface d'événements.  
+-   Les événements doivent être déclarés dans l’interface d’événement.  
   
- Les autres membres publics de la classe qui ne sont pas déclarés dans ces interfaces ne seront pas visibles pour COM, mais seront visibles pour d'autres objets .NET Framework.  
+ Les autres membres publics de la classe qui ne sont pas déclarés dans ces interfaces ne seront pas visibles par COM, mais ils seront visibles par d’autres objets .NET Framework.  
   
- Pour exposer des propriétés et des méthodes à COM, vous devez les déclarer dans l'interface de classe, les marquer avec l'attribut `DispId` et les implémenter dans la classe.  L'ordre dans lequel les membres sont déclarés dans l'interface est l'ordre utilisé pour la vtable COM.  
+ Pour exposer des propriétés et des méthodes à COM, vous devez les déclarer sur l’interface de classe, les marquer avec un attribut `DispId` et les implémenter dans la classe. L’ordre dans lequel les membres sont déclarés dans l’interface est l’ordre utilisé pour la vtable COM.  
   
- Pour exposer des événements à partir de votre classe, vous devez les déclarer sur l'interface d'événements et les marquer avec un attribut `DispId`.  La classe ne doit pas implémenter cette interface.  
+ Pour exposer des événements à partir de votre classe, vous devez les déclarer sur l’interface d’événement et les marquer avec un attribut `DispId`. La classe ne doit pas implémenter cette interface.  
   
- La classe implémente l'interface de classe \(elle peut implémenter plus d'une interface, mais la première implémentation sera l'interface de classe par défaut\).  Implémentez les méthodes et les propriétés exposées à COM à cet emplacement.  Ces propriétés et méthodes doivent être marquées comme publiques et doivent correspondre aux déclarations de l'interface de classe.  Déclarez également les événements déclenchés par la classe à cet emplacement.  Ils doivent être marqués comme publics et doivent correspondre aux déclarations dans l'interface d'événement.  
+ La classe implémente l’interface de classe ; elle peut implémenter plusieurs interfaces, mais la première implémentation sera l’interface de classe par défaut. Implémentez ici les méthodes et propriétés exposées à COM. Elles doivent être marquées comme publiques et doivent correspondre aux déclarations dans l’interface de classe. Vous devez aussi déclarer ici les événements déclenchés par la classe. Ils doivent être marqués comme publics et doivent correspondre aux déclarations dans l’interface d’événement.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideInterop#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/example-com-class_1.cs)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Interopérabilité](../../../csharp/programming-guide/interop/interoperability.md)   
- [Générer, page du Concepteur de projets \(C\#\)](/visual-studio/ide/reference/build-page-project-designer-csharp)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Interopérabilité](../../../csharp/programming-guide/interop/index.md)   
+ [Page Générer, Concepteur de projet (C#)](https://docs.microsoft.com/visualstudio/ide/reference/build-page-project-designer-csharp)

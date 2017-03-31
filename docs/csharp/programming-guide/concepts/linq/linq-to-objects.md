@@ -1,0 +1,62 @@
+---
+title: LINQ to Objects (C#) | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
+caps.latest.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 33402b552672fa79925fd1264444f39b19c02cd9
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
+Le terme « LINQ to Objects » fait référence à l’utilisation directe de requêtes LINQ avec n’importe quelle collection <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>, sans utiliser un fournisseur LINQ intermédiaire, ou une API comme [LINQ to SQL](https://msdn.microsoft.com/library/bb386976) ou [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13). Vous pouvez utiliser LINQ pour interroger des collections énumérables comme <xref:System.Collections.Generic.List%601>, <xref:System.Array> ou <xref:System.Collections.Generic.Dictionary%602>. La collection peut être définie par l’utilisateur ou retournée par une API du .NET Framework.  
+  
+ Fondamentalement, LINQ to Objects représente une nouvelle approche des collections. Auparavant, vous deviez écrire des boucles `foreach` complexes pour spécifier comment récupérer les données d'une collection. Avec l’approche LINQ, vous écrivez du code déclaratif qui décrit ce que vous voulez récupérer.  
+  
+ De plus, les requêtes LINQ offrent trois avantages principaux par rapport aux boucles `foreach` classiques :  
+  
+1.  Elles sont plus concises et lisibles, en particulier durant le filtrage de plusieurs conditions.  
+  
+2.  Elles fournissent de puissantes fonctionnalités de filtrage, de classement et de regroupement avec un minimum de code d'application.  
+  
+3.  Elles peuvent être portées vers d'autres sources de données avec peu ou pas de changements.  
+  
+ En général, plus l’opération que vous voulez effectuer sur les données est complexe, plus vous avez intérêt à utiliser LINQ à la place des techniques d’itération classiques.  
+  
+ Cette section a pour objectif de montrer l’approche basée sur LINQ avec quelques exemples sélectionnés. Elle ne se veut pas exhaustive.  
+  
+## <a name="in-this-section"></a>Dans cette section  
+ [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+ Explique comment LINQ peut être utilisé pour interroger et transformer des chaînes et des collections de chaînes. Inclut également des liens vers les rubriques qui présentent ces principes.  
+  
+ [LINQ et la réflexion (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-reflection.md)  
+ Contient un lien vers un exemple qui montre comment LINQ utilise la réflexion.  
+  
+ [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
+ Explique comment LINQ peut être utilisé pour interagir avec les systèmes de fichiers. Inclut également des liens vers les rubriques qui présentent ces concepts.  
+  
+ [Guide pratique pour interroger un ArrayList avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)  
+ Montre comment interroger une ArrayList en C#.  
+  
+ [Guide pratique pour ajouter des méthodes personnalisées pour les requêtes LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)  
+ Explique comment étendre l’ensemble des méthodes utilisables pour les requêtes LINQ en ajoutant des méthodes d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>.  
+  
+ [LINQ (Language-Integrated Query) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
+ Fournit des liens vers des rubriques qui présentent LINQ, ainsi que des exemples de code effectuant des requêtes.

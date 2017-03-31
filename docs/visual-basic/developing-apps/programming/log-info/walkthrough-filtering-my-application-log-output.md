@@ -1,40 +1,57 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: filtrage de la sortie de My.Application.Log (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.Log (objet), filtrage de la sortie"
-  - "My.Application.Log (objet), filtrage de la sortie"
-  - "journaux des événements application, le filtrage de sortie"
+title: Filtrage de la sortie de My.Application.Log (Visual Basic) | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- My.Log object, filtering output
+- My.Application.Log object, filtering output
+- application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
 caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
----
-# Proc&#233;dure pas &#224; pas&#160;: filtrage de la sortie de My.Application.Log (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: caa4b8be16e5000d02d82a83199a25d13ad07bba
+ms.lasthandoff: 03/13/2017
 
-Cette procédure pas à pas montre comment modifier le filtrage de journal par défaut le `My.Application.Log` objet, pour contrôler les informations passées à partir de la `Log` objet aux écouteurs et celles qui sont écrites par les écouteurs. Vous pouvez modifier le comportement de journalisation même après la création de l’application, car les informations de configuration sont stockées dans le fichier de configuration de l’application.  
+---
+# <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
+Cette procédure pas à pas montre comment modifier le filtrage de journal par défaut de l’objet `My.Application.Log` pour contrôler les informations passées de l’objet `Log` aux écouteurs et celles qui sont écrites par les écouteurs. Vous pouvez modifier le comportement de journalisation même après avoir généré l’application, car les informations de configuration sont stockées dans le fichier de configuration de l’application.  
   
 ## <a name="getting-started"></a>Prise en main  
- Chaque message qui `My.Application.Log` écritures a un niveau de gravité associé, les mécanismes de filtrage utilisent pour contrôler la sortie de journal. Cet exemple d’application utilise `My.Application.Log` pour écrire plusieurs méthodes d’enregistrer des messages avec différents niveaux de gravité.  
+ Chaque message écrit par `My.Application.Log` a un niveau de gravité associé que les mécanismes de filtrage utilisent pour contrôler la sortie de journal. Cet exemple d’application utilise les méthodes `My.Application.Log` pour écrire plusieurs messages de journal avec différents niveaux de gravité.  
   
 #### <a name="to-build-the-sample-application"></a>Pour générer l’exemple d’application  
   
-1.  Ouvrez une nouvelle [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] projet d’Application Windows.  
+1.  Ouvrez un nouveau projet d’application Windows [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
   
 2.  Ajoutez un bouton nommé Button1 à Form1.  
   
-3.  Dans la <xref:System.Windows.Forms.Control.Click> Gestionnaire d’événements pour Button1, ajoutez le code suivant :  
+3.  Dans le gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> de Button1, ajoutez le code suivant :  
   
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-filtering-my-application-log-output_1.vb)]  
   
@@ -42,7 +59,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 5.  Appuyez sur **Button1**.  
   
-     L’application écrit les informations suivantes au fichier de sortie et le journal de débogage de l’application.  
+     L’application écrit les informations suivantes dans le fichier journal et la sortie de débogage de l’application.  
   
      `DefaultSource Information: 0 : In Button1_Click`  
   
@@ -50,21 +67,20 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 6.  Fermez l'application.  
   
-     Pour plus d’informations sur la façon d’afficher la fenêtre de sortie de débogage de l’application, consultez [fenêtre sortie](/visual-studio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez la page [procédure pas à pas : Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+     Pour plus d’informations sur la consultation de la fenêtre de sortie de débogage de l’application, consultez [Fenêtre Sortie](https://docs.microsoft.com/visualstudio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
   
     > [!NOTE]
-    >  Par défaut, l’application vide la sortie du fichier journal lorsque l’application se ferme.  
+    >  Par défaut, l’application vide la sortie du fichier journal quand elle se ferme.  
   
-     Dans l’exemple ci-dessus, le deuxième appel à la <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> méthode et l’appel à la <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> méthode génère la sortie de journal, lors du premier et dernier appels à la `WriteEntry` n’est pas le cas de méthode. C’est parce que les niveaux de gravité de `WriteEntry` et `WriteException` sont « Informations » et « Erreur », qui sont autorisées par le `My.Application.Log` l’objet filtrage de journal par défaut. Toutefois, les événements avec les niveaux de gravité « Démarrage » et « Stop » ne peuvent pas produire la sortie de journal.  
+     Dans l’exemple ci-dessus, le deuxième appel à la méthode <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> et l’appel à la méthode <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> génèrent la sortie de journal, ce qui n’est pas le cas des premier et dernier appels à la méthode `WriteEntry`. Étant donné que les niveaux de gravité de `WriteEntry` et `WriteException` sont « Information » et « Erreur », ceux-ci sont autorisés par le filtrage de journal par défaut de l’objet `My.Application.Log`. Toutefois, les événements avec les niveaux de gravité « Démarrage » et « Arrêt » ne peuvent pas générer une sortie de journal.  
   
-## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrage de tous les écouteurs de My.Application.Log  
- Le `My.Application.Log` object utilise un <xref:System.Diagnostics.SourceSwitch> nommé `DefaultSwitch` pour contrôler les messages qu’il passe de le `WriteEntry` et `WriteException` méthodes aux écouteurs de journalisation. Vous pouvez configurer `DefaultSwitch` dans le fichier de configuration de l’application en définissant sa valeur à l’un de le <xref:System.Diagnostics.SourceLevels> valeurs d’énumération. Par défaut, sa valeur est « Information ».  
+## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrage de tous les écouteurs My.Application.Log  
+ L’objet `My.Application.Log` utilise un <xref:System.Diagnostics.SourceSwitch> nommé `DefaultSwitch` pour contrôler les messages qu’il passe des méthodes `WriteEntry` et `WriteException` aux écouteurs de journalisation. Vous pouvez configurer `DefaultSwitch` dans le fichier de configuration de l’application en lui affectant l’une des valeurs d’énumération <xref:System.Diagnostics.SourceLevels>. Par défaut, sa valeur est « Information ».  
   
- Ce tableau indique le niveau de gravité requis pour le journal écrire un message dans les écouteurs, étant donné que `DefaultSwitch` paramètre.  
+ Ce tableau affiche le niveau de gravité requis pour le journal afin d’écrire un message pour les écouteurs, avec un paramètre `DefaultSwitch` particulier.  
   
-|||  
-|-|-|  
-|Valeur DefaultSwitch|Gravité du message requise pour la sortie|  
+|Valeur DefaultSwitch|Gravité du message nécessaire pour la sortie|  
+|---|---| 
 |`Critical`|`Critical`|  
 |`Error`|`Critical` ou `Error`|  
 |`Warning`|`Critical`, `Error` ou `Warning`|  
@@ -75,13 +91,13 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
 |`Off`|Tous les messages sont bloqués.|  
   
 > [!NOTE]
->  Le `WriteEntry` et `WriteException` les méthodes ont une surcharge qui ne spécifie pas un niveau de gravité. Le niveau de gravité implicite de la `WriteEntry` surcharge est « Information » et le niveau de gravité implicite de la `WriteException` surcharge est « Erreur ».  
+>  Les méthodes `WriteEntry` et `WriteException` ont chacune une surcharge qui ne spécifie pas de niveau de gravité. Le niveau de gravité implicite de la surcharge `WriteEntry` est « Information » et le niveau de gravité implicite de la surcharge `WriteException` est « Erreur ».  
   
- Ce tableau explique la sortie de journal indiquée dans l’exemple précédent : avec la valeur par défaut `DefaultSwitch` définition de « Information », seul le deuxième appel à la `WriteEntry` méthode et l’appel à la `WriteException` sortie de journal produisent la méthode.  
+ Ce tableau explique la sortie de journal affichée dans l’exemple précédent : avec la valeur « Information » du paramètre `DefaultSwitch` par défaut, seuls le deuxième appel à la méthode `WriteEntry` et l’appel à la méthode `WriteException` génèrent la sortie de journal.  
   
-#### <a name="to-log-only-activity-tracing-events"></a>Pour consigner les événements de suivi d’activité uniquement  
+#### <a name="to-log-only-activity-tracing-events"></a>Pour enregistrer uniquement les événements de traçage d’activités  
   
-1.  Avec le bouton droit app.config dans le **l’Explorateur de solutions** et sélectionnez **Open**.  
+1.  Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.  
   
      ou  
   
@@ -93,13 +109,13 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
     3.  Cliquez sur **Ajouter**.  
   
-2.  Recherchez la `<switches>` section, qui se trouve dans le `<system.diagnostics>` section, qui se trouve dans le niveau supérieur `<configuration>` section.  
+2.  Recherchez la section `<switches>` dans la section `<system.diagnostics>`, qui se trouve dans la section `<configuration>` de niveau supérieur.  
   
-3.  Recherchez l’élément qui ajoute `DefaultSwitch` à la collection de commutateurs. Il doit ressembler à cet élément :  
+3.  Recherchez l’élément qui ajoute `DefaultSwitch` à la collection de commutateurs. Il doit ressembler à l’élément ci-après :  
   
      `<add name="DefaultSwitch" value="Information" />`  
   
-4.  Modifiez la valeur de la `value` l’attribut « ActivityTracing ».  
+4.  Remplacez la valeur de l’attribut `value` par « ActivityTracing ».  
   
 5.  Le contenu du fichier app.config doit être similaire au code XML suivant :  
   
@@ -134,7 +150,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 7.  Appuyez sur **Button1**.  
   
-     L’application écrit les informations suivantes au fichier de sortie et le journal de débogage de l’application :  
+     L’application écrit les informations suivantes dans le fichier journal et la sortie de débogage de l’application :  
   
      `DefaultSource Start: 4 : Entering Button1_Click`  
   
@@ -142,21 +158,21 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 8.  Fermez l'application.  
   
-9. Modifiez la valeur de la `value` attribut par « Information ».  
+9. Rétablissez la valeur « Information » de l’attribut `value`.  
   
     > [!NOTE]
-    >  Le `DefaultSwitch` basculer uniquement les contrôles de paramètre `My.Application.Log`. Il ne modifie pas la [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort-md.md)] <xref:System.Diagnostics.Trace?displayProperty=fullName> et <xref:System.Diagnostics.Debug?displayProperty=fullName> comportement des classes.  
+    >  Le paramètre de commutateur `DefaultSwitch` contrôle uniquement `My.Application.Log`. Il ne modifie pas le comportement des classes <xref:System.Diagnostics.Trace?displayProperty=fullName> et <xref:System.Diagnostics.Debug?displayProperty=fullName> du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)].  
   
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Filtrage individuel des écouteurs My.Application.Log  
- L’exemple précédent montre comment modifier le filtrage pour toutes les `My.Application.Log` sortie. Cet exemple montre comment filtrer un écouteur de journalisation. Par défaut, une application a deux écouteurs qui écrivent dans la sortie de débogage de l’application et le fichier journal.  
+ L’exemple précédent indique comment modifier le filtrage de toute la sortie `My.Application.Log`. Cet exemple montre comment filtrer un écouteur de journalisation. Par défaut, une application a deux écouteurs qui écrivent dans le fichier journal et la sortie de débogage de l’application.  
   
- Le fichier de configuration contrôle le comportement des écouteurs de journalisation en permettant à chacun d'entre eux d’avoir un filtre, qui est similaire à un commutateur de `My.Application.Log`. Un écouteur de journalisation génère un message uniquement si la gravité est autorisée par les deux le journal `DefaultSwitch` et filtre de l’écouteur journal.  
+ Le fichier de configuration contrôle le comportement des écouteurs de journalisation en permettant à chacun d’eux d’avoir un filtre similaire à un commutateur pour `My.Application.Log`. Un écouteur de journalisation ne génère un message que si la gravité de ce dernier est acceptée par le `DefaultSwitch` du journal et le filtre de l’écouteur de journalisation.  
   
- Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de débogage et l’ajouter à la `Log` objet. L’écouteur de débogage par défaut doit être supprimé de la `Log` de l’objet, il est clair que les messages de débogage proviennent le nouvel écouteur de débogage.  
+ Cet exemple montre comment configurer le filtrage d’un nouvel écouteur de débogage et l’ajouter à l’objet `Log`. L’écouteur de débogage par défaut doit être supprimé de l’objet `Log` ; ainsi, il apparaît clairement que les messages de débogage proviennent du nouvel écouteur de débogage.  
   
-#### <a name="to-log-only-activity-tracing-events"></a>Pour consigner uniquement les événements de suivi d’activité  
+#### <a name="to-log-only-activity-tracing-events"></a>Pour enregistrer uniquement les événements de traçage d’activités  
   
-1.  Avec le bouton droit app.config dans le **l’Explorateur de solutions** et choisissez **Open**.  
+1.  Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.  
   
      ou  
   
@@ -168,11 +184,11 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
     3.  Cliquez sur **Ajouter**.  
   
-2.  Avec le bouton droit app.config dans **l’Explorateur de solutions**. Choisissez **Open**.  
+2.  Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions**. Choisissez **Ouvrir**.  
   
-3.  Recherchez la `<listeners>` section, dans la `<source>` section avec le `name` attribut « DefaultSource », situé dans le `<sources>` section. Le `<sources>` section est sous le `<system.diagnostics>` section, dans le niveau supérieur `<configuration>` section.  
+3.  Recherchez la section `<listeners>`, dans la section `<source>` avec l’attribut `name` « DefaultSource » sous la section `<sources>`. La section `<sources>` est sous la section `<system.diagnostics>`, dans la section `<configuration>` de niveau supérieur.  
   
-4.  Ajoutez cet élément à la `<listeners>` section :  
+4.  Ajoutez cet élément à la section `<listeners>` :  
   
     ```xml  
     <!-- Remove the default debug listener. -->  
@@ -196,7 +212,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
     </add>  
     ```  
   
-     Le <xref:System.Diagnostics.EventTypeFilter> filtre prend l’une de la <xref:System.Diagnostics.SourceLevels> valeurs d’énumération en tant que son `initializeData` attribut.  
+     Le filtre <xref:System.Diagnostics.EventTypeFilter> considère l’une des valeurs d’énumération <xref:System.Diagnostics.SourceLevels> comme son attribut `initializeData`.  
   
 7.  Le contenu du fichier app.config doit être similaire au code XML suivant :  
   
@@ -243,24 +259,24 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 9. Appuyez sur **Button1**.  
   
-     L’application écrit les informations suivantes au fichier journal de l’application :  
+     L’application écrit les informations suivantes dans le fichier journal de l’application :  
   
      `Default Information: 0 : In Button1_Click`  
   
      `Default Error: 2 : Error in the application.`  
   
-     L’application écrit moins d’informations à la sortie de débogage de l’application en raison du filtrage plus restrictif.  
+     L’application écrit moins d’informations dans la sortie de débogage de l’application à cause du filtrage plus restrictif.  
   
      `Default Error   2   Error`  
   
 10. Fermez l'application.  
   
- Pour plus d’informations sur la modification des paramètres de journal après le déploiement, consultez la page [utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  
+ Pour plus d’informations sur la modification des paramètres de journal après le déploiement, consultez [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : Détermination où des informations My.application.log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)   
- [Procédure pas à pas : Modifier l’emplacement des informations My.application.log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
- [Procédure pas à pas : Création d’écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
- [Comment : écrire des Messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
- [Commutateurs de traçage](../Topic/Trace%20Switches.md)   
- [Informations de journalisation de l’Application](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+ [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)   
+ [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
+ [Procédure pas à pas : création d’écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
+ [Guide pratique pour écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
+ [Commutateurs de traçage](http://msdn.microsoft.com/library/8ab913aa-f400-4406-9436-f45bc6e54fbe)   
+ [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

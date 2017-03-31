@@ -1,34 +1,52 @@
 ---
-title: "Comment&#160;: d&#233;clencher les &#233;v&#233;nements de la classe de base dans les classes d&#233;riv&#233;es (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "événements (C#), dans des classes dérivées"
+title: "Guide pratique pour déclencher les événements de la classe de base dans les classes dérivées (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 4f3990959bb62676562dc21e1e5eabfb8ead20d5
+ms.lasthandoff: 03/13/2017
+
 ---
-# Comment&#160;: d&#233;clencher les &#233;v&#233;nements de la classe de base dans les classes d&#233;riv&#233;es (Guide de programmation C#)
-L'exemple simple suivant illustre la méthode standard pour déclarer des événements dans une classe de base afin qu'ils puissent également être déclenchés à partir de classes dérivées.  Ce modèle est largement utilisé dans les classes Windows Forms de la bibliothèque de classes [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort-md.md)].  
+# <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>Guide pratique pour déclencher les événements de la classe de base dans les classes dérivées (Guide de programmation C#)
+L’exemple suivant montre la méthode standard employée pour déclarer des événements dans une classe de base pour qu’ils puissent être déclenchés à partir de classes dérivées. Ce modèle est largement utilisé dans les classes Windows Forms de la bibliothèque de classes [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)].  
   
- Lors de la création d'une classe pouvant être utilisée comme classe de base pour d'autres classes, vous devez tenir compte du fait que les événements constituent un type particulier de délégués, ne pouvant être appelés qu'à partir de la classe qui les a déclarés.  Les classes dérivées ne peuvent pas appeler directement les événements déclarés dans la classe de base.  Même si, quelquefois, vous pouvez souhaiter qu'un événement ne puisse être déclenché que par la classe de base, dans la plupart des cas, vous devez permettre à la classe dérivée d'appeler les événements de la classe de base.  À cette fin, vous pouvez créer une méthode d'appel protégée dans la classe de base qui encapsule l'événement.  En appelant ou en remplaçant cette méthode d'appel, les classes dérivées peuvent appeler indirectement l'événement.  
+ Lorsque vous créez une classe qui peut être utilisée comme classe de base pour d’autres classes, tenez compte du fait que les événements constituent un type spécial de délégué qui ne peut être appelé qu’à partir de la classe qui les a déclarés. Les classes dérivées ne peuvent pas appeler directement les événements qui sont déclarés dans la classe de base. Même si vous pouvez avoir besoin d’un événement qui ne peut être déclenché que par la classe de base, la plupart du temps, vous devez permettre à la classe dérivée d’appeler les événements de la classe de base. Pour ce faire, vous pouvez créer une méthode d’appel protégée dans la classe de base qui encapsule l’événement. En appelant ou en substituant cette méthode d’appel, les classes dérivées peuvent appeler indirectement l’événement.  
   
 > [!NOTE]
->  Ne déclarez pas des événements virtuels dans une classe de base et ne les substituez pas dans une classe dérivée.  Le compilateur c\# ne gère pas correctement et il est impossible de prédire si un abonné à l'événement dérivé s'abonnera effectivement à l'événement de classe de base.  
+>  Ne déclarez pas les événements virtuels dans une classe de base et substituez-les dans une classe dérivée. Le compilateur C# ne gère pas correctement ce type d’événement et il n’est pas possible de prévoir si un abonné de l’événement dérivé s’abonnera à l’événement de classe de base.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideEvents#1](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-raise-base-class-events-in-derived-classes_1.cs)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Événements](../../../csharp/programming-guide/events/index.md)   
  [Délégués](../../../csharp/programming-guide/delegates/index.md)   
- [Modificateurs d'accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
- [Création de gestionnaires d'événements dans les Windows Forms](../Topic/Creating%20Event%20Handlers%20in%20Windows%20Forms.md)
+ [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
+ [Création de gestionnaires d’événements dans les Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)

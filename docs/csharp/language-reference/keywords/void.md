@@ -1,27 +1,45 @@
 ---
-title: "void (R&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "void_CSharpKeyword"
-  - "void"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "void (mot clé C#)"
+title: "void (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- void_CSharpKeyword
+- void
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: b4aa3c7c54e5e4d53975262adbbd9b54c701a69e
+ms.lasthandoff: 03/13/2017
+
 ---
-# void (R&#233;f&#233;rence C#)
-Si utilisé comme type de retour d'une méthode, `void` spécifie que la méthode ne retourne pas de valeur.  
+# <a name="void-c-reference"></a>void (Référence C#)
+Quand le mot clé `void` est utilisé en tant que type de retour pour une méthode, il spécifie que cette méthode ne retourne aucune valeur.  
   
- n'est pas autorisée`void` dans la liste de paramètres d'une méthode.  Une méthode sans paramètres qui ne retourne aucune valeur se déclare comme suit :  
+ `void` n’est pas autorisé dans la liste des paramètres d’une méthode. Une méthode sans paramètres qui ne retourne aucune valeur se déclare comme suit :  
   
 ```  
 public void SampleMethod()  
@@ -31,17 +49,17 @@ public void SampleMethod()
   
 ```  
   
- `void` est également utilisé dans un contexte non sécurisé pour déclarer un pointeur vers un type inconnu.  Pour plus d'informations, consultez [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
+ `void` est également utilisé dans un contexte unsafe pour déclarer un pointeur vers un type inconnu. Pour plus d’informations, consultez [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
   
  `void` est un alias pour le type <xref:System.Void?displayProperty=fullName> .NET Framework.  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Types référence](../../../csharp/language-reference/keywords/reference-types.md)   
  [Types valeur](../../../csharp/language-reference/keywords/value-types.md)   
  [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   

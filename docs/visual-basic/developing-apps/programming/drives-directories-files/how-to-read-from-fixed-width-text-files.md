@@ -1,45 +1,61 @@
 ---
-title: "How to: Read From Fixed-width Text Files in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "fixed-width text file"
-  - "reading text files, fixed-width"
-  - "files, parsing"
-  - "text files, tasks"
-  - "text files, reading"
+title: Guide pratique pour lire des fichiers texte de largeur fixe en Visual Basic | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- fixed-width text file
+- reading text files, fixed-width
+- files, parsing
+- text files, tasks
+- text files, reading
 ms.assetid: 99be5692-967a-4e85-993e-cd18139a5a69
 caps.latest.revision: 24
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 24
----
-# How to: Read From Fixed-width Text Files in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: c1ce67620d96a35ccf1223cc4de9d34ca1aaa722
+ms.lasthandoff: 03/13/2017
 
-L'objet `TextFieldParser` permet d'analyser facilement et efficacement les fichiers texte structurés, tels que les journaux.  
+---
+# <a name="how-to-read-from-fixed-width-text-files-in-visual-basic"></a>Guide pratique pour lire des fichiers texte de largeur fixe en Visual Basic
+L’objet `TextFieldParser` permet d’analyser facilement et efficacement les fichiers texte structurés, tels que les journaux.  
   
- La propriété `TextFieldType` définit si le fichier analysé est un fichier délimité ou un fichier dont les champs de texte ont une largeur fixe.  Dans un fichier texte à largeur fixe, le champ à la fin peut avoir une largeur variable.  Pour spécifier que le champ à la fin a une largeur variable, définissez\-le de sorte qu'il ait une largeur inférieure ou égale à zéro.  
+ La propriété `TextFieldType` définit si le fichier analysé est un fichier délimité ou un fichier qui comporte des champs de texte de longueur fixe. Dans un fichier texte de largeur fixe, le champ situé à la fin peut avoir une largeur variable. Pour spécifier que le champ situé à la fin a une largeur variable, définissez-le pour que sa largeur soit inférieure ou égale à zéro.  
   
-### Pour lire un fichier texte à largeur fixe  
+### <a name="to-parse-a-fixed-width-text-file"></a>Pour analyser un fichier texte de largeur fixe  
   
-1.  Créez un `TextFieldParser`.  Le code suivant crée le `TextFieldParser` nommé `Reader` et ouvre le fichier `test.log`.  
+1.  Créez un `TextFieldParser`. Le code suivant crée le `TextFieldParser` nommé `Reader` et ouvre le fichier `test.log`.  
   
      [!code-vb[VbFileIORead#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_1.vb)]  
   
-2.  Affectez à la propriété `TextFieldType` la valeur `FixedWidth` en définissant la largeur et le format.  Le code suivant définit les colonnes de texte. La première a une largeur de 5 caractères, la deuxième de 10, la troisième de 11, tandis que la quatrième a une largeur variable.  
+2.  Définissez la propriété `TextFieldType` en tant que `FixedWidth`, en définissant la largeur et le format. Le code suivant définit les colonnes de texte. La première a une largeur de 5 caractères, la deuxième de 10 caractères, la troisième de 11 caractères et la quatrième a une largeur variable.  
   
      [!code-vb[VbFileIORead#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_2.vb)]  
   
-3.  Parcourez les champs du fichier.  Si des lignes sont endommagées, signalez une erreur poursuivez l'analyse.  
+3.  Parcourez les champs du fichier à l’aide d’une boucle. Si des lignes sont endommagées, signalez une erreur et poursuivez l’analyse.  
   
      [!code-vb[VbFileIORead#11](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_3.vb)]  
   
@@ -47,29 +63,29 @@ L'objet `TextFieldParser` permet d'analyser facilement et efficacement les fichi
   
      [!code-vb[VbFileIORead#12](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_4.vb)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Cet exemple lit le fichier `test.log`.  
   
  [!code-vb[VbFileIORead#13](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_5.vb)]  
   
-## Programmation fiable  
- Les conditions ci\-dessous peuvent générer une exception.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Une ligne ne peut pas être analysée avec le format spécifié \(<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>\).  Le message d'exception spécifie la ligne qui provoque l'exception, tandis que la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> est assignée au texte contenu dans la ligne.  
+-   Une ligne ne peut pas être analysée à l’aide du format spécifié (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Le message d’exception spécifie la ligne qui provoque l’exception, tandis que le texte contenu dans la ligne est assigné à la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A>.  
   
--   Le fichier spécifié n'existe pas \(<xref:System.IO.FileNotFoundException>\).  
+-   Le fichier spécifié n’existe pas (<xref:System.IO.FileNotFoundException>).  
   
--   Une situation de niveau de confiance partiel dans laquelle l'utilisateur n'a pas les autorisations suffisantes pour accéder au fichier.  \(<xref:System.Security.SecurityException>\).  
+-   Situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.Security.SecurityException>).  
   
--   Le chemin d'accès est trop long \(<xref:System.IO.PathTooLongException>  
+-   Le chemin est trop long (<xref:System.IO.PathTooLongException>).  
   
--   L'utilisateur n'a pas les autorisations suffisantes pour accéder au fichier \(<xref:System.UnauthorizedAccessException>\).  
+-   L’utilisateur ne dispose pas des autorisations suffisantes pour accéder au fichier (<xref:System.UnauthorizedAccessException>).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=fullName>   
- [How to: Read From Comma\-Delimited Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)   
- [How to: Read From Text Files with Multiple Formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)   
- [Parsing Text Files with the TextFieldParser Object](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)   
- [Troubleshooting: Reading from and Writing to Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
- [Dépannage des exceptions : Microsoft.VisualBasic.FileIO.TextFieldParser.MalformedLineException](../Topic/Troubleshooting%20Exceptions:%20Microsoft.VisualBasic.FileIO.TextFieldParser.MalformedLineException.md)
+ [Guide pratique pour lire des fichiers texte délimités par des virgules](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)   
+ [Guide pratique pour lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)   
+ [Analyse des fichiers texte avec l’objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)   
+ [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)   
+ [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
+ 

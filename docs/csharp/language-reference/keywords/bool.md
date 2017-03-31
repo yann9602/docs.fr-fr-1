@@ -1,57 +1,75 @@
 ---
-title: "bool (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "bool_CSharpKeyword"
-  - "bool"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "bool (mot clé C#)"
+title: "bool (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- bool_CSharpKeyword
+- bool
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 30
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ef8cc9a0584829eeed06e7fc3c2227f0683ef413
+ms.lasthandoff: 03/13/2017
+
 ---
-# bool (r&#233;f&#233;rence C#)
-Le mot clé `bool` est un alias de <xref:System.Boolean?displayProperty=fullName>.  Il est utilisé pour déclarer des variables afin de stocker les valeurs booléennes, [true](../../../csharp/language-reference/keywords/true.md) et [false](../../../csharp/language-reference/keywords/false.md).  
+# <a name="bool-c-reference"></a>bool (référence C#)
+Le mot clé `bool` est un alias de <xref:System.Boolean?displayProperty=fullName>. Il s’utilise pour déclarer des variables qui stockent les valeurs booléennes [true](../../../csharp/language-reference/keywords/true.md) et [false](../../../csharp/language-reference/keywords/false.md).  
   
 > [!NOTE]
->  Si vous nécessitez une variable booléenne qui peut également avoir une valeur `null, utilisez` , `bool?`.  Pour plus d'informations, consultez [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md).  
+>  Si vous avez besoin d’une variable booléenne qui peut également avoir la valeur `null`, utilisez `bool?`. Pour plus d’informations, consultez [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md).  
   
-## Littéraux  
- Vous pouvez assigner une valeur booléenne à une variable `bool`.  Vous pouvez également assigner à une variable `bool` une expression dont le résultat est de type `bool`.  
+## <a name="literals"></a>Littéraux  
+ Vous pouvez assigner une valeur booléenne à une variable `bool`. Vous pouvez également assigner à une variable `bool` une expression dont le résultat est une valeur `bool`.  
   
  [!code-cs[csrefKeywordsTypes#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_1.cs)]  
   
- \(La valeur par défaut de la variable `bool` est `false`.  \(La valeur par défaut de la variable `bool?` est `null`.  
+ La valeur par défaut d’une variable `bool` est `false`. La valeur par défaut d’une variable `bool?` est `null`.  
   
-## Conversions  
- En langage C\+\+, une valeur de type `bool` peut être convertie en une valeur de type `int`. En d'autres termes, `false` équivaut à zéro et `true` équivaut à toute valeur différente de zéro.  En langage C\#, il n'y a pas de conversion possible entre le type `bool` et les autres types.  Par exemple, l'instruction `if` suivante n'est pas valide en C\# :  
+## <a name="conversions"></a>Conversions  
+ Dans C++, une valeur de type `bool` peut être convertie en une valeur de type `int`. En d’autres termes, `false` équivaut à zéro et `true` équivaut à une valeur différente de zéro. Dans C#, il n’y a pas de conversion possible entre le type `bool` et les autres types. Par exemple, l’instruction `if` suivante n’est pas valide dans C# :  
   
  [!code-cs[csrefKeywordsTypes#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_2.cs)]  
   
- Pour tester une variable du type `int`, vous devez la comparer explicitement à une valeur telle que zéro, comme suit :  
+ Pour tester une variable du type `int`, vous devez la comparer explicitement à une valeur, telle que zéro, comme suit :  
   
  [!code-cs[csrefKeywordsTypes#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_3.cs)]  
   
-## Exemple  
- Dans cet exemple, vous entrez un caractère et le programme contrôle si le caractère que vous avez entré est une lettre.  Si c'est une lettre, le programme vérifie s'il s'agit d'une minuscule ou d'une majuscule.  Ces contrôles sont effectués avec <xref:System.Char.IsLetter%2A>, et <xref:System.Char.IsLower%2A>, qui retournent tous les deux le type `bool` :  
+## <a name="example"></a>Exemple  
+ Dans cet exemple, vous tapez un caractère, et le programme vérifie si le caractère entré est une lettre. Si c’est une lettre, le programme vérifie s’il s’agit d’une minuscule ou d’une majuscule. Ces vérifications sont effectuées avec <xref:System.Char.IsLetter%2A> et <xref:System.Char.IsLower%2A>, qui retournent toutes les deux le type `bool` :  
   
  [!code-cs[csrefKeywordsTypes#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/bool_4.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
  [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
