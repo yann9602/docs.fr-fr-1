@@ -1,1 +1,0 @@
-Microsoft Synchronization Services pour ADO.NET
