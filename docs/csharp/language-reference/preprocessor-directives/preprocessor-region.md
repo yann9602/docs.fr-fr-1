@@ -39,8 +39,7 @@ ms.lasthandoff: 03/13/2017
 `#region` vous permet de spécifier un bloc de code que vous pouvez développer ou réduire quand vous utilisez la fonctionnalité [Mode Plan](https://docs.microsoft.com/visualstudio/ide/outlining) de l’éditeur de code Visual Studio. Dans les fichiers de code volumineux, il peut être pratique de réduire ou masquer une ou plusieurs régions pour vous concentrer sur la partie du fichier sur laquelle vous êtes en train de travailler. L’exemple suivant montre comment définir une région :  
   
 ```  
-  
-      #region MyClass definition  
+#region MyClass definition  
 public class MyClass   
 {  
     static void Main()   
@@ -59,3 +58,4 @@ public class MyClass
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+
