@@ -1,56 +1,75 @@
 ---
-title: "base (r&#233;f&#233;rence C#) | Microsoft Docs"
-description: base keyword (C#)
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "base"
-  - "BaseClass.BaseClass"
-  - "base_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "base (mot clé C#)"
+title: "base (référence C#) | Microsoft Docs"
+description: "base, mot clé (C#)"
+keywords: "base (C#) ; base, mot clé (C#) ; base, mot clé (référence C#) ; base, mot clé (référence du langage C#)"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- base
+- BaseClass.BaseClass
+- base_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
 caps.latest.revision: 14
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 14
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: adebe9f77cf1fe40a4aa8b00a2ef65c499d27ad3
+ms.lasthandoff: 03/13/2017
+
 ---
-# base (r&#233;f&#233;rence C#)
-Le mot clé `base` sert à accéder aux membres de la classe de base à partir d'une classe dérivée :  
+# <a name="base-c-reference"></a>base (référence C#)
+Le mot clé `base` sert à accéder aux membres de la classe de base à partir d’une classe dérivée :  
   
--   Appelle une méthode de la classe de base qui a été substituée par une autre méthode.  
+-   Il appelle une méthode de la classe de base qui a été substituée par une autre méthode.  
   
--   Spécifie quel constructeur de classe de base devrait être appelé lors de la création d'instances de la classe dérivée.  
+-   Il spécifie quel constructeur de classe de base doit être appelé lors de la création d’instances de la classe dérivée.  
   
- L'accès à une classe de base n'est autorisé que dans un constructeur, une méthode d'instance ou un accesseur de propriété d'instance.  
+ L’accès à une classe de base est autorisé uniquement dans un constructeur, une méthode d’instance ou un accesseur de propriété d’instance.  
   
- Le fait d'utiliser le mot clé `base` à partir d'une méthode statique constitue une erreur.  
+ L’utilisation du mot clé `base` à partir d’une méthode statique est une erreur.  
   
- La classe de base accédée est la classe de base spécifiée dans la déclaration de classe.  Par exemple, si vous spécifiez `class ClassB : ClassA`, les membres de ClassA sont accessibles à partir de ClassB, indépendamment de la classe de base de ClassA.  
+ La classe de base accessible est la classe de base spécifiée dans la déclaration de classe. Par exemple, si vous spécifiez `class ClassB : ClassA`, les membres de ClassA sont accessibles à partir de ClassB, quelle que soit la classe de base de ClassA.  
   
-## Exemple  
- Dans cet exemple, la classe de base `Person` et la classe dérivée `Employee` possèdent toutes les deux une méthode nommée `Getinfo`.  En utilisant le mot clé `base`, il est possible d'appeler la méthode `Getinfo` de la classe de base à partir de la classe dérivée.  
+## <a name="example"></a>Exemple  
+ Dans cet exemple, la classe de base `Person` et la classe dérivée `Employee` ont toutes les deux une méthode nommée `Getinfo`. En utilisant le mot clé `base`, vous pouvez appeler la méthode `Getinfo` de la classe de base à partir de la classe dérivée.  
   
  [!code-cs[csrefKeywordsAccess#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_1.cs)]  
   
- Pour d'autres exemples, consultez [new](../../../csharp/language-reference/keywords/new.md), [virtual](../../../csharp/language-reference/keywords/virtual.md) et [override](../../../csharp/language-reference/keywords/override.md).  
+ Pour obtenir d’autres exemples, consultez [new](../../../csharp/language-reference/keywords/new.md), [virtual](../../../csharp/language-reference/keywords/virtual.md) et [override](../../../csharp/language-reference/keywords/override.md).  
   
-## Exemple  
- Cet exemple indique comment spécifier le constructeur de classe de base appelé lors de la création d'instances d'une classe dérivée.  
+## <a name="example"></a>Exemple  
+ Cet exemple montre comment spécifier le constructeur de classe de base qui est appelé lors de la création d’instances d’une classe dérivée.  
   
  [!code-cs[csrefKeywordsAccess#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/base_2.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [this](../../../csharp/language-reference/keywords/this.md)

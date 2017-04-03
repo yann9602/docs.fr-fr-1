@@ -3,17 +3,17 @@ title: "Présentation de .NET"
 description: "Visite guidée de certaines fonctionnalités principales de la plateforme .NET."
 keywords: ".NET, .NET Core, Présentation, Langages de programmation, Non sécurisé, Gestion de la mémoire, Cohérence des types, Asynchrone"
 author: cartermp
-manager: wpickett
-ms.author: phcart
-ms.date: 11/16/2016
+ms.author: wiwagn
+ms.date: 02/09/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 translationtype: Human Translation
-ms.sourcegitcommit: 2c57b5cebd63b1d94b127cd269e3b319fb24dd97
-ms.openlocfilehash: 02e2fa22e36fd2f6618527ad3c89cbbd8587dfe2
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
+ms.lasthandoff: 03/22/2017
 
 ---
 
@@ -34,7 +34,7 @@ Pour savoir comment configurer un environnement de développement pour exécuter
 
 ## <a name="programming-languages"></a>Langages de programmation
 
-.NET prend en charge plusieurs langages de programmation.  Les runtimes .NET implémentent le [Common Language Infrastructure (CLI)](https://www.visualstudio.com/en-us/mt639507), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages.  Cela signifie que vous pouvez choisir n’importe quel langage .NET pour générer des applications et services sur .NET.
+.NET prend en charge plusieurs langages de programmation.  Les runtimes .NET implémentent le [Common Language Infrastructure (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages.  Cela signifie que vous pouvez choisir n’importe quel langage .NET pour générer des applications et services sur .NET.
 
 Microsoft développe et prend en charge activement trois langages .NET : C#, F# et Visual Basic .NET. 
 
@@ -54,21 +54,27 @@ Les deux lignes suivantes allouent de la mémoire :
 
 Il n’existe aucun mot clé analogue pour libérer de la mémoire, car la libération de mémoire se produit automatiquement quand le récupérateur de mémoire réclame la mémoire dans son exécution planifiée.
 
-Les types dans une portée donnée sont normalement hors de portée à la fin d’une méthode, point auquel ils peuvent être récupérés. Toutefois, vous pouvez indiquer au récupérateur de mémoire qu’un objet en particulier est hors de portée avant la fin de la méthode à l’aide de l’instruction `using` :
+Le garbage collector est juste un des services qui garantissent la *sûreté de la mémoire*.  L’invariant de la sûreté de la mémoire est très simple : un programme a une mémoire sécurisée s’il accède uniquement à la mémoire qui a été allouée (et non libérée).  Par exemple, le runtime garantit que les programmes n’indexent pas à la fin d’un tableau ou accèdent à un champ fantôme à la fin d’un objet.
+
+Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException` pour appliquer la sûreté de la mémoire.
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
-Une fois que le bloc `using` a terminé, le récupérateur de mémoire sait que l’objet `stream` dans l’exemple précédent peut être collecté et sa mémoire récupérée.
+## <a name="working-with-unmanaged-resources"></a>Utilisation des ressources non managées
 
-En F#, les règles concernant ce point ont une sémantique légèrement différente.  Pour en savoir plus sur la gestion des ressources en F#, consultez [Resource Management: The `use` Keyword](../fsharp/language-reference/resource-management-the-use-keyword.md) (Gestion des ressources : mot clé « use »).
+Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET.  Par exemple, un handle de fichier est une ressource non managée.  Un objet @System.IO.FileStream est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas.  Quand vous avez fini d’utiliser l’objet FileStream, vous devez libérer le handle de fichier.
 
-Une des fonctionnalités les moins évidentes et pourtant assez importantes que le récupérateur de mémoire active est la sûreté de la mémoire. L’invariant de la sûreté de la mémoire est très simple : un programme a une mémoire sécurisée s’il accède uniquement à la mémoire qui a été allouée (et non libérée). Les pointeurs non résolus sont toujours des bogues et leur suivi est souvent très difficile.
+Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface @System.IDisposable.  Quand vous avez fini d’utiliser l’objet, vous appelez la méthode @System.IDisposable.Dispose de l’objet qui est chargée de libérer les ressources non managées.  Les langages .NET fournissent une syntaxe `using` pratique pour ces objets, comme dans l’exemple suivant :
 
-Le runtime .NET fournit des services supplémentaires pour assurer la sûreté de la mémoire, qui ne sont pas naturellement offerts par un récupérateur de mémoire. Il garantit que les programmes n’indexent pas à la fin d’un tableau ou accèdent à un champ fantôme à la fin d’un objet.
+[!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-L’exemple suivant lève une exception en raison de la sûreté de la mémoire.
+Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode @System.IDisposable.Dispose de l’objet `stream` qui libère le handle de fichier.  Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
+Pour plus d’informations, consultez les pages suivantes :
+
+* Pour C#, [using, instruction](../csharp/language-reference/keywords/using-statement.md)
+* Pour F#, [Gestion des ressources : le mot clé `use` ](../fsharp/language-reference/resource-management-the-use-keyword.md)
+* Pour Visual Basic, [Using, instruction](../visual-basic/language-reference/statements/using-statement.md)
 
 ## <a name="type-safety"></a>Cohérence des types
 
@@ -102,7 +108,7 @@ Les génériques sont une fonctionnalité qui a été ajoutée dans .NET Framewo
 
 Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type `List`, par exemple, soit générique, il fallait utiliser des éléments qui étaient de type `object`. Cela entraînait des variations de performances ainsi que des problèmes sémantiques, sans oublier les possibles erreurs d’exécution subtiles. Les erreurs les plus connues dans cette dernière catégorie interviennent quand une structure de données contient, par exemple, des entiers et des chaînes et qu’une exception `InvalidCastException` est levée pendant l’utilisation des membres de la liste.
 
-L’exemple suivant montre une exécution de programme de base utilisant une instance des types @System.Collections.Generic.List%601.
+L’exemple suivant montre une exécution de programme de base utilisant une instance des types @System.Collections.Generic.List.
 
 [!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
 
@@ -147,8 +153,4 @@ Si vous êtes intéressé par une présentation des fonctionnalités de F#, cons
 Si vous voulez vous familiariser avec l’écriture de votre propre code, consultez [Getting Started](getting-started.md) (Bien démarrer).
 
 Pour obtenir des informations sur les composants importants de .NET, consultez [Composants architecturaux de .NET](components.md).
-
-
-<!--HONumber=Nov16_HO3-->
-
 

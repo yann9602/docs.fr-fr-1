@@ -1,0 +1,110 @@
+---
+title: "Classification des opérateurs de requête standard en fonction de leur mode d’exécution (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
+caps.latest.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: cb79fe22bd551599eef7f20bd34492a2930d5609
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Classification des opérateurs de requête standard en fonction de leur mode d’exécution (C#)
+Les implémentations LINQ to Objects des méthodes d’opérateur de requête standard s’exécutent de deux manières principales : immédiate ou différée. En outre, les opérateurs de requête qui utilisent l’exécution différée peuvent être divisés en deux catégories : ceux prenant en charge la diffusion en continu et ceux ne la prenant pas en charge. Le fait de connaître le mode d’exécution des différents opérateurs de requête peut vous aider à comprendre les résultats obtenus à partir d’une requête donnée. Ceci est particulièrement vrai si la source de données change ou si vous générez une requête sur une autre requête. Cette rubrique classe les opérateurs de requête standard selon leur mode d’exécution.  
+  
+## <a name="manners-of-execution"></a>Modes d’exécution  
+  
+### <a name="immediate"></a>Immédiat  
+ L’exécution immédiate signifie que la source de données est lue et que l’opération est effectuée au point où la requête est déclarée dans le code. Tous les opérateurs de requête standard qui retournent un résultat unique et non énumérable s’exécutent immédiatement.  
+  
+### <a name="deferred"></a>Différé  
+ L’exécution différée signifie que l’opération n’est pas effectuée au point où la requête est déclarée dans le code. L’opération est effectuée uniquement quand la variable de requête est énumérée, par exemple à l’aide d’une instruction `foreach`. Cela signifie que les résultats de l’exécution de la requête dépendent du contenu de la source de données au moment de l’exécution de la requête, et non au moment de sa définition. Si la variable de requête est énumérée plusieurs fois, les résultats peuvent différer chaque fois. Presque tous les opérateurs de requête standard dont le type de retour est <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IOrderedEnumerable%601> s’exécutent de manière différée.  
+  
+ Les opérateurs de requête qui utilisent l’exécution différée peuvent également être classés comme prenant en charge la diffusion en continu ou non.  
+  
+#### <a name="streaming"></a>Diffusion en continu  
+ Les opérateurs prenant en charge la diffusion en continu n’ont pas à lire toutes les données sources avant de générer des éléments. Au moment de l’exécution, un opérateur prenant en charge la diffusion en continu effectue son opération sur chaque élément source à mesure qu’il est lu et génère l’élément si nécessaire. Ce type d’opérateur continue à lire des éléments source jusqu’à ce qu’un élément de résultat puisse être produit. Cela signifie que plusieurs éléments source peuvent être lus pour produire un élément de résultat.  
+  
+#### <a name="non-streaming"></a>Sans diffusion en continu  
+ Les opérateurs ne prenant pas en charge la diffusion en continu doivent lire toutes les données source avant de générer un élément de résultat. Les opérations telles que le tri ou le regroupement font partie de cette catégorie. Au moment de l’exécution, les opérateurs de requête ne prenant pas en charge la diffusion en continu lisent toutes les données source, les placent dans une structure de données, puis effectuent l’opération et génèrent les éléments de résultat.  
+  
+## <a name="classification-table"></a>Tableau de classification  
+ Le tableau suivant classe chaque méthode d’opérateur de requête standard en fonction de son mode d’exécution.  
+  
+> [!NOTE]
+>  Si un opérateur est présent dans deux colonnes, deux séquences d’entrée sont impliquées dans l’opération et chacune d’elles est évaluée différemment. Dans ces cas, la première séquence dans la liste de paramètres est toujours évaluée de façon différée, avec diffusion en continu.  
+  
+|Opérateur de requête standard|Type de retour|Exécution immédiate|Exécution différée avec diffusion en continu|Exécution différée sans diffusion en continu|  
+|-----------------------------|-----------------|-------------------------|----------------------------------|---------------------------------------|  
+|<xref:System.Linq.Enumerable.Aggregate%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.All%2A>|<xref:System.Boolean>|x|||  
+|<xref:System.Linq.Enumerable.Any%2A>|<xref:System.Boolean>|x|||  
+|<xref:System.Linq.Enumerable.AsEnumerable%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Average%2A>|Valeur numérique unique|x|||  
+|<xref:System.Linq.Enumerable.Cast%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Concat%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Contains%2A>|<xref:System.Boolean>|x|||  
+|<xref:System.Linq.Enumerable.Count%2A>|<xref:System.Int32>|x|||  
+|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Distinct%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.ElementAt%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.Empty%2A>|<xref:System.Collections.Generic.IEnumerable%601>|x|||  
+|<xref:System.Linq.Enumerable.Except%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x|x|  
+|<xref:System.Linq.Enumerable.First%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.FirstOrDefault%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.GroupBy%2A>|<xref:System.Collections.Generic.IEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.GroupJoin%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x|x|  
+<xref:System.Linq.Enumerable.Intersect%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x|x|  
+|<xref:System.Linq.Enumerable.Join%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x|x|  
+|<xref:System.Linq.Enumerable.Last%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.LastOrDefault%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.LongCount%2A>|<xref:System.Int64>|x|||  
+|<xref:System.Linq.Enumerable.Max%2A>|Valeur numérique unique, TSource ou TResult|x|||  
+|<xref:System.Linq.Enumerable.Min%2A>|Valeur numérique unique, TSource ou TResult|x|||  
+|<xref:System.Linq.Enumerable.OfType%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.OrderBy%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.OrderByDescending%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.Range%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Repeat%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Reverse%2A>|<xref:System.Collections.Generic.IEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.Select%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.SelectMany%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.SequenceEqual%2A>|<xref:System.Boolean>|x|||  
+|<xref:System.Linq.Enumerable.Single%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.SingleOrDefault%2A>|TSource|x|||  
+|<xref:System.Linq.Enumerable.Skip%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.SkipWhile%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Sum%2A>|Valeur numérique unique|x|||  
+|<xref:System.Linq.Enumerable.Take%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+<xref:System.Linq.Enumerable.TakeWhile%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.ThenBy%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.ThenByDescending%2A>|<xref:System.Linq.IOrderedEnumerable%601>|||x|  
+|<xref:System.Linq.Enumerable.ToArray%2A>|Tableau TSource|x|||  
+|<xref:System.Linq.Enumerable.ToDictionary%2A>|<xref:System.Collections.Generic.Dictionary%602>|x|||  
+|<xref:System.Linq.Enumerable.ToList%2A>|<xref:System.Collections.Generic.IList%601>|x|||  
+|<xref:System.Linq.Enumerable.ToLookup%2A>|<xref:System.Linq.ILookup%602>|x|||  
+|<xref:System.Linq.Enumerable.Union%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+|<xref:System.Linq.Enumerable.Where%2A>|<xref:System.Collections.Generic.IEnumerable%601>||x||  
+  
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Linq.Enumerable>   
+ [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
+ [Syntaxe des expressions de requête pour les opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)   
+ [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)

@@ -1,26 +1,44 @@
 ---
-title: "Comment&#160;: cr&#233;er une cl&#233; dans le Registre (Visual C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "clés, créer dans registre"
-  - "clés de Registre, créer (C#)"
-  - "Registre, ajouter des clés et des valeurs (C#)"
+title: "Guide pratique pour créer une clé dans le Registre (Visual C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- registry, adding keys and values [C#]
+- registry keys, creating [C#]
+- keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
 caps.latest.revision: 14
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 14
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3a377a85acdc31b426171ab6583bff92b24889b3
+ms.lasthandoff: 03/13/2017
+
 ---
-# Comment&#160;: cr&#233;er une cl&#233; dans le Registre (Visual C#)
-Cet exemple ajoute la paire de valeurs "Name" et "Isabella" au Registre de l'utilisateur en cours, sous la clé "Names".  
+# <a name="how-to-create-a-key-in-the-registry-visual-c"></a>Guide pratique pour créer une clé dans le Registre (Visual C#)
+Cet exemple ajoute la paire de valeurs « Name » et « Isabella » dans le Registre de l’utilisateur actuel, sous la clé « Names ».  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```  
 Microsoft.Win32.RegistryKey key;  
@@ -29,38 +47,38 @@ key.SetValue("Name", "Isabella");
 key.Close();  
 ```  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
   
--   Copiez le code et collez\-le dans la méthode `Main` d'une application console.  
+-   Copiez le code et collez-le dans la méthode `Main` d’une application console.  
   
--   Remplacez le paramètre `Names` par le nom d'une clé située immédiatement au\-dessous du nœud HKEY\_CURRENT\_USER du Registre.  
+-   Remplacez le paramètre `Names` par le nom d’une clé qui existe directement sous le nœud HKEY_CURRENT_USER du Registre.  
   
--   Remplacez le paramètre `Nam`e par le nom d'une valeur située immédiatement au\-dessous du nœud Names.  
+-   Remplacez le paramètre `Nam`e par le nom d’une valeur qui existe directement sous le nœud Names.  
   
-## Programmation fiable  
- Examinez la structure du Registre afin de trouver un emplacement approprié pour votre clé.  Vous pouvez par exemple ouvrir la clé Software de l'utilisateur en cours et créer une clé avec le nom de votre société.  Vous pouvez ensuite ajouter les valeurs du Registre à la clé de votre société.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Examinez la structure du Registre pour rechercher un emplacement approprié pour votre clé. Par exemple, vous souhaiterez peut-être ouvrir la clé Software de l’utilisateur actuel et créer une clé avec le nom de votre société. Ensuite, ajoutez les valeurs de Registre à la clé de votre société.  
   
- Les conditions ci\-dessous peuvent générer une exception :  
+ Les conditions ci-dessous peuvent générer une exception :  
   
 -   Le nom de la clé est null.  
   
--   L'utilisateur n'a pas l'autorisation de créer des clés de Registre.  
+-   L’utilisateur ne dispose pas des autorisations nécessaires pour créer des clés de Registre.  
   
--   Le nom de la clé dépasse la limite de 255 caractères.  
+-   Le nom de la clé dépasse la limite de 255 caractères.  
   
 -   La clé est fermée.  
   
 -   La clé de Registre est en lecture seule.  
   
-## Sécurité .NET Framework  
- Pour des raisons de sécurité, il est préférable d'écrire des données dans le dossier utilisateur \(`Microsoft.Win32.Registry.CurrentUser`\) plutôt que sur l'ordinateur local \(`Microsoft.Win32.Registry.LocalMachine`\).  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Il est plus sûr d’écrire des données dans le dossier utilisateur (`Microsoft.Win32.Registry.CurrentUser`) que sur l’ordinateur local (`Microsoft.Win32.Registry.LocalMachine`).  
   
- Lorsque vous créez une valeur de Registre, vous devez déterminer la marche à suivre si cette valeur existe déjà.  Il est possible qu'un autre processus, peut\-être nuisible, ait déjà créé la valeur et puisse y accéder.  Lorsque vous placez des données dans la valeur du Registre, elles sont disponibles pour les autres processus.  Pour empêcher cela, utilisez la méthode `Overload:Microsoft.Win32.RegistryKey.GetValue`.  Elle retourne null si la clé n'existe pas.  
+ Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour éviter ce problème, utilisez la méthode `Overload:Microsoft.Win32.RegistryKey.GetValue` . Elle retourne null si la clé n’existe pas encore.  
   
- Pour des raisons de sécurité, il est déconseillé de stocker des données confidentielles, telles que des mots de passe, en texte brut dans le Registre, même si la clé de Registre est protégée par des listes de contrôle d'accès \(ACL, Access Control Lists\).  
+ Il est dangereux de stocker des données confidentielles, telles que des mots de passe, dans le Registre sous forme de texte brut, même si la clé de Registre est protégée par des listes de contrôle d’accès.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)   
- [Lire, écrire et effectuer des suppressions dans le Registre en C\#](http://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)   
+ [Read, write and delete from the registry with C# (Lire, écrire et supprimer du Registre avec C#)](http://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)

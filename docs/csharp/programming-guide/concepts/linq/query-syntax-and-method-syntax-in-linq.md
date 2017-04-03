@@ -1,53 +1,72 @@
 ---
-title: "Query Syntax and Method Syntax in LINQ (C#) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "LINQ [C#], query syntax vs. method syntax"
-  - "queries [LINQ in C#], syntax comparisons"
+title: "Syntaxe de requête et syntaxe de méthode dans LINQ (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- LINQ [C#], query syntax vs. method syntax
+- queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 28
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 687741ed357fd13424c4e2f9eeda3d2b531fd129
+ms.lasthandoff: 03/13/2017
+
 ---
-# Query Syntax and Method Syntax in LINQ (C#)
-La plupart des requêtes dans la documentation préliminaire de langage Integrated Query \([!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)]\) sont écrites à l'aide de la syntaxe déclarative de requête LINQ.  Toutefois, la syntaxe de requête doit être traduite en appels de méthode pour le common langage runtime \(CLR\) .NET lorsque le code est compilé.  Ces appels de méthode appelle les opérateurs de requête standard, qui ont des noms tels qu' `Where`, `Select`, `GroupBy`, `Join`, `Max`, et `Average`.  Vous pouvez les appeler directement à l'aide de la syntaxe de méthode au lieu de la syntaxe de requête.  
+# <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe de requête et syntaxe de méthode dans LINQ (C#)
+La plupart des requêtes de la documentation de présentation de Langage Integrated Query ([!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]) sont écrites à l’aide de la syntaxe de requête déclarative de LINQ. Toutefois, la syntaxe de requête doit être traduite en appels de méthode pour le Common Langage Runtime (CLR) .NET lorsque le code est compilé. Ces appels de méthode appellent les opérateurs de requête standard, qui ont des noms tels que `Where`, `Select`, `GroupBy`, `Join`, `Max` et `Average`. Vous pouvez les appeler directement en utilisant la syntaxe de méthode à la place de la syntaxe de requête.  
   
- La syntaxe de requête et la syntaxe de méthode sont sémantiquement identiques, mais de nombreuses personnes recherchez la syntaxe de requête plus simple et plus facile à lire.  Certaines requêtes doivent être exprimées comme un appel de méthode.  Par exemple, vous devez utiliser un appel de méthode pour exprimer une requête qui récupère le nombre d'éléments qui correspondent à une condition spécifiée.  Vous devez également utiliser un appel de méthode pour une requête qui récupère l'élément qui a la valeur maximale dans une séquence source.  En général, la documentation de référence pour les opérateurs de requête standard dans l'espace de noms <xref:System.Linq> utilise la syntaxe de méthode.  Par conséquent, même lorsque vous commencez à écrire des requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)], il est utile de se familiariser avec l'utilisation de la syntaxe de méthode dans les requêtes et dans les expressions de requête elles\-mêmes.  
+ La syntaxe de requête et la syntaxe de méthode sont identiques sémantiquement, mais de nombreuses personnes trouvent la syntaxe de requête plus simple et plus facile à lire. Certaines requêtes doivent être exprimées en tant qu’appels de méthode. Par exemple, vous devez utiliser un appel de méthode pour exprimer une requête qui récupère le nombre d’éléments qui correspondent à une condition spécifiée. Vous devez également utiliser un appel de méthode pour une requête qui récupère dans une séquence source l’élément qui a la valeur maximale. En général, la documentation de référence des opérateurs de requête standard dans l’espace de noms <xref:System.Linq> utilise la syntaxe de méthode. Par conséquent, même lorsque vous commencez à écrire des requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], il est utile de se familiariser avec l’utilisation de la syntaxe de méthode dans les requêtes et dans les expressions de requête elles-mêmes.  
   
-## Méthodes d'extension d'opérateur de requête standard  
- L'exemple suivant présente une *expression de requête* simple et la requête sémantiquement équivalente écrite comme une *requête basée sur une méthode*.  
+## <a name="standard-query-operator-extension-methods"></a>Méthodes d’extension d’opérateur de requête standard  
+ L’exemple suivant présente une *expression de requête* simple et la requête sémantiquement équivalente écrite en tant que *requête fondée sur une méthode*.  
   
  [!code-cs[csLINQGettingStarted#22](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/query-syntax-and-method-syntax-in-linq_1.cs)]  
   
- La sortie des deux exemples est identique.  Vous pouvez voir que le type de la variable de requête est le même dans les deux formes : <xref:System.Collections.Generic.IEnumerable%601>.  
+ La sortie des deux exemples est identique. Vous pouvez voir que le type de la variable de requête est le même dans les deux formes : <xref:System.Collections.Generic.IEnumerable%601>.  
   
- Pour comprendre la requête basée sur une méthode, examinons\-la plus attentivement.  Du côté droit de l'expression, remarquez que la clause `where` est maintenant exprimée comme une méthode d'instance sur l'objet `numbers`, qui, comme vous pouvez vous en rappeler, a un type `IEnumerable<int>`.  Si vous êtes un habitué de l'interface <xref:System.Collections.Generic.IEnumerable%601> générique, vous savez qu'elle n'a pas de méthode `Where`.  Toutefois, si vous appelez la liste de saisie semi\-automatique IntelliSense dans l'IDE de Visual Studio, vous ne verrez pas seulement une méthode `Where`, mais de nombreuses autres méthodes telles que `Select`, `SelectMany`, `Join` et `Orderby`.  Il s'agit de tous les opérateurs de requête standard.  
+ Pour comprendre la requête basée sur une méthode, examinons-la de plus près. Du côté droit de l’expression, remarquez que la clause `where` est maintenant exprimée comme une méthode d’instance sur l’objet `numbers`, qui, comme vous vous en rappelez, a un type `IEnumerable<int>`. Si vous êtes un habitué de l’interface <xref:System.Collections.Generic.IEnumerable%601> générique, vous savez qu’elle n’a pas de méthode `Where`. Toutefois, si vous appelez la liste de saisie semi-automatique IntelliSense dans l’IDE de Visual Studio, vous ne verrez pas seulement une méthode `Where`, mais de nombreuses autres méthodes telles que `Select`, `SelectMany`, `Join` et `Orderby`. Il s’agit de tous les opérateurs de requête standard.  
   
  ![Opérateurs de requête standard dans Intellisense](../../../../csharp/programming-guide/concepts/linq/media/standardqueryops.png "StandardQueryOps")  
   
- Même s'il semble que <xref:System.Collections.Generic.IEnumerable%601> a été redéfini pour inclure ces méthodes supplémentaires, ce n'est pas le cas, en réalité.  Les opérateurs de requête standard sont implémentés comme nouveau type de méthode appelé *méthodes d'extension*.  Les méthodes d'extensions « étendent » un type existant ; elles peuvent être appelées comme s'il s'agissait de méthodes d'instance sur le type.  Les opérateurs de requête standard étendent <xref:System.Collections.Generic.IEnumerable%601> et c'est pourquoi vous pouvez écrire `numbers.Where(...)`.  
+ Même s’il semble que <xref:System.Collections.Generic.IEnumerable%601> a été redéfini pour inclure ces méthodes supplémentaires, ce n’est pas le cas, en réalité. Les opérateurs de requête standard sont implémentés comme un nouveau type de méthode, appelé *méthodes d’extension*. Les méthodes d’extension « étendent » un type existant. Elles peuvent être appelées comme s’il s’agissait de méthodes d’instance sur le type. Les opérateurs de requête standard étendent <xref:System.Collections.Generic.IEnumerable%601>, si bien que vous pouvez écrire `numbers.Where(...)`.  
   
- Pour commencer à utiliser [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)], tout ce que vous devez savoir sur les méthodes d'extension est la façon de les mettre à portée de votre application à l'aide des directives `using` appropriées.  Cette opération est expliquée plus en détails dans [How to: Create a LINQ Project](../Topic/How%20to:%20Create%20a%20LINQ%20Project.md).  Du point de vue de votre application, une méthode d'extension et une méthode d'instance normale n'ont pas de différence.  
+ Pour commencer à utiliser [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], tout ce que vous devez savoir sur les méthodes d’extension est la façon de les mettre à portée de votre application à l’aide des directives `using` appropriées. Du point de vue de votre application, une méthode d’extension et une méthode d’instance normale sont identiques.  
   
- Pour plus d'informations sur les méthodes d'extension, consultez [Méthodes d'extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  Pour plus d'informations sur les opérateurs de requête standard, consultez [Standard Query Operators Overview](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).  Certains fournisseurs [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)], comme [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq-md.md)] et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)], implémentent leurs propres opérateurs de requête standard et leurs propres méthodes d'extension supplémentaires pour d'autres types que <xref:System.Collections.Generic.IEnumerable%601>.  
+ Pour plus d’informations sur les méthodes d’extension, consultez [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Pour plus d’informations sur les opérateurs de requête standard, consultez [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md). Certains fournisseurs [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], tels que [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], implémentent leurs propres opérateurs de requête standard et des méthodes d’extension supplémentaires pour d’autres types que <xref:System.Collections.Generic.IEnumerable%601>.  
   
-## Expressions lambda  
- Dans l'exemple précédent, notez que l'expression conditionnelle \(`num % 2 == 0`\) est passée comme argument intégré à la méthode d' `Where` : `Where(num => num % 2 == 0).`cette expression inline est appelé une expression lambda.  C'est un moyen pratique d'écrire du code qui devrait normalement être écrit de façon plus fastidieuse comme une méthode anonyme ou un délégué générique ou une arborescence d'expression.  En C\#, `=>` est l'opérateur lambda, qui se lit « est redirigé vers ».  Le `num` à gauche de l'opérateur est la variable d'entrée qui correspond à `num` dans l'expression de requête.  Le compilateur peut déduire le type de `num` car il sait que `numbers` est un type <xref:System.Collections.Generic.IEnumerable%601> générique.  Le corps de l'expression lambda est exactement le même que l'expression dans une syntaxe de requête ou dans toute autre expression ou instruction C\# ; il peut inclure des appels de méthode et une autre logique complexe.  La « valeur de retour » est simplement le résultat de l'expression.  
+## <a name="lambda-expressions"></a>Expressions lambda  
+ Dans l’exemple précédent, notez que l’expression conditionnelle (`num % 2 == 0`) est passée comme argument de ligne à la méthode `Where` : `Where(num => num % 2 == 0).` Cette expression inline est appelée expression lambda. C’est un moyen pratique d’écrire du code qui devrait autrement être écrit sous une forme plus fastidieuse, comme une méthode anonyme, un délégué générique ou une arborescence d’expressions. En C#, `=>` est l’opérateur lambda, qui se lit « conduit à ». Le `num` situé à gauche de l’opérateur est la variable d’entrée qui correspond à `num` dans l’expression de requête. Le compilateur peut déduire le type de `num`, car il sait que `numbers` est un type <xref:System.Collections.Generic.IEnumerable%601> générique. Le corps de l’expression lambda est identique à l’expression dans la syntaxe de requête ou dans toute autre expression ou instruction C#. Il peut inclure des appels de méthode et une autre logique complexe. La « valeur de retour » est simplement le résultat de l’expression.  
   
- Vous n'avez pas besoin d'utiliser fréquemment les expressions lambda pour commencer à utiliser [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)].  Toutefois, quelques requêtes peuvent être exprimées uniquement en syntaxe de méthode et certaines d'entre elles requièrent des expressions lambda.  Une fois que vous vous êtes familiarisé avec les expressions lambda, vous constaterez qu'elles sont un outil puissant et flexible dans votre boîte à outils [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq-md.md)].  Pour plus d'informations, consultez [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ Vous n’avez pas besoin d’utiliser fréquemment les expressions lambda pour commencer à utiliser [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. Toutefois, certaines requêtes peuvent être exprimées uniquement dans la syntaxe de méthode. Parmi elles, certaines nécessitent des expressions lambda. Une fois que vous serez plus familiarisé avec les expressions lambda, vous constaterez qu’elles sont un outil puissant et flexible dans votre boîte à outils [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. Pour plus d’informations, voir [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
-## Composabilité des requêtes  
- Dans l'exemple de code précédent, notez que la méthode `OrderBy` est appelée en utilisant l'opérateur point sur l'appel de `Where`.  `Where` produit une séquence filtrée, puis `Orderby` fonctionne sur cette séquence en la triant.  Étant donné que les requêtes retournent un `IEnumerable`, vous les composez dans la syntaxe de méthode en chaînant les appels de méthode ensemble.  Le compilateur effectue cette opération en arrière\-plan lorsque vous écrivez des requêtes à l'aide de la syntaxe de requête.  Étant donné qu'une variable de requête ne stocke pas les résultats de la requête, vous pouvez la modifier ou l'utiliser à tout moment comme base d'une nouvelle requête, même après son exécution.  
+## <a name="composability-of-queries"></a>Composabilité des requêtes  
+ Dans l’exemple de code précédent, notez que la méthode `OrderBy` est appelée à l’aide de l’opérateur point sur l’appel à `Where`. `Where` produit une séquence filtrée, puis `Orderby` agit sur cette séquence en la triant. Étant donné que les requêtes retournent un `IEnumerable`, vous les composez dans la syntaxe de méthode en chaînant les appels de méthode ensemble. Le compilateur effectue cette opération en arrière-plan lorsque vous écrivez des requêtes à l’aide de la syntaxe de requête. De plus, étant donné qu’une variable de requête ne stocke pas les résultats de la requête, vous pouvez la modifier ou l’utiliser à tout moment comme base d’une nouvelle requête, même après son exécution.  
   
-## Voir aussi  
- [Getting Started with LINQ in C\#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+## <a name="see-also"></a>Voir aussi  
+ [Bien démarrer avec LINQ en C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

@@ -1,63 +1,79 @@
 ---
-title: "How to: Rename a File in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "I/O [Visual Basic], renaming files"
-  - "files, renaming"
+title: Guide pratique pour renommer un fichier en Visual Basic | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- I/O [Visual Basic], renaming files
+- files, renaming
 ms.assetid: 0ea7e0c8-2cb2-4bf5-a00d-7b6e3c08a3bc
 caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
----
-# How to: Rename a File in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a0a31353ce3ee0c48907f9550f6961260f92b64a
+ms.lasthandoff: 03/13/2017
 
-Utilisez la méthode `RenameFile` de l'objet `My.Computer.FileSystem` pour renommer un fichier en fournissant l'emplacement actuel, le nom de fichier et le nouveau nom de fichier.  Cette méthode ne peut pas être utilisée pour déplacer un fichier ; utilisez plutôt la méthode `MoveFile` pour déplacer et renommer le fichier.  
+---
+# <a name="how-to-rename-a-file-in-visual-basic"></a>Guide pratique pour renommer un fichier en Visual Basic
+Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour renommer un fichier en fournissant l’emplacement actuel, le nom actuel du fichier et le nouveau nom du fichier. Cette méthode ne peut pas être utilisée pour déplacer un fichier. Utilisez la méthode `MoveFile` pour déplacer et renommer le fichier.  
   
-### Pour renommer un fichier  
+### <a name="to-rename-a-file"></a>Pour renommer un fichier  
   
--   Utilisez la méthode `My.Computer.FileSystem.RenameFile` pour renommer un fichier.  Cet exemple renomme le fichier `Test.txt` dans `SecondTest.txt`.  
+-   Pour renommer un fichier, utilisez la méthode `My.Computer.FileSystem.RenameFile`. Dans cet exemple, le nom de fichier `Test.txt` est remplacé par `SecondTest.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-rename-a-file_1.vb)]  
   
- Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, l'extrait est localisé dans **Système de fichiers \- Traitement de lecteurs, de dossiers et de fichiers**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système de fichiers - Traitement des lecteurs, dossiers et fichiers**. Pour plus d’informations, consultez [Extraits de code](https://docs.microsoft.com/visualstudio/ide/code-snippets).  
   
-## Programmation fiable  
- Les conditions ci\-dessous peuvent générer une exception.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le chemin d'accès n'est pas valide pour l'une des raisons suivantes : il correspond à une chaîne de longueur nulle, ne contient que des espaces blancs, comporte des caractères non valides ou représente un chemin d'accès de périphérique \(commençant par \\\\.  \\\) \(<xref:System.ArgumentException>\).  
+-   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (commençant par \\\\.\\) (<xref:System.ArgumentException>).  
   
--   `newName` contient des informations relatives au chemin d'accès \(<xref:System.ArgumentException>\).  
+-   `newName` contient des informations de chemin (<xref:System.ArgumentException>).  
   
--   Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` \(<xref:System.ArgumentNullException>\).  
+-   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `newName` a la valeur `Nothing` ou est une chaîne vide \(<xref:System.ArgumentNullException>\).  
+-   `newName` est `Nothing` ou une chaîne vide (<xref:System.ArgumentNullException>).  
   
--   Le fichier source n'est pas valide ou n'existe pas \(<xref:System.IO.FileNotFoundException>\).  
+-   Le fichier source n’est pas valide ou n’existe pas (<xref:System.IO.FileNotFoundException>).  
   
--   Un fichier ou répertoire existe avec le nom spécifié dans `newName` \(<xref:System.IO.IOException>\).  
+-   Un fichier ou un répertoire porte déjà le nom spécifié dans `newName` (<xref:System.IO.IOException>).  
   
--   Le chemin d'accès dépasse la longueur maximale définie par le système \(<xref:System.IO.PathTooLongException>\).  
+-   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux\-points \(:\) ou n'a pas un format correct \(<xref:System.NotSupportedException>\).  
+-   Un nom de fichier ou de répertoire dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
   
--   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès \(<xref:System.Security.SecurityException>\).  
+-   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
--   L'utilisateur n'a pas l'autorisation requise \(<xref:System.UnauthorizedAccessException>\).  
+-   L’utilisateur n’a pas l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>   
- [Comment : déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)   
- [Creating, Deleting, and Moving Files and Directories](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)   
- [How to: Create a Copy of a File in the Same Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)   
- [How to: Create a Copy of a File in a Different Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+ [Guide pratique pour déplacer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)   
+ [Création, suppression et déplacement de fichiers et de répertoires](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)   
+ [Guide pratique pour créer une copie d'un fichier dans le même répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)   
+ [Guide pratique : créer une copie d'un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)

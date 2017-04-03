@@ -1,46 +1,64 @@
 ---
-title: "Constructeurs priv&#233;s (guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "langage C#, constructeurs privés"
-  - "constructeurs privés (C#)"
+title: "Constructeurs privés (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- C# language, private constructors
+- private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
 caps.latest.revision: 19
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 19
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 6f63f4a2189848f8d12ae09eab215c7e15a57863
+ms.lasthandoff: 03/13/2017
+
 ---
-# Constructeurs priv&#233;s (guide de programmation C#)
-Un constructeur privé est une instance spéciale de constructeur.  Un tel constructeur est généralement utilisé dans les classes qui contiennent uniquement des membres statiques.  Si une classe possède un ou plusieurs constructeurs privés et aucun constructeur public, les autres classes \(à l'exception des classes imbriquées\) ne peuvent pas créer des instances de cette classe.  Par exemple :  
+# <a name="private-constructors-c-programming-guide"></a>Constructeurs privés (guide de programmation C#)
+Un constructeur privé est un constructeur d’instance spécial. Il est généralement utilisé dans les classes qui contiennent uniquement des membres statiques. Si une classe a un ou plusieurs constructeurs privés, mais n’a aucun constructeur public, les autres classes (à l’exception des classes imbriquées) ne peuvent pas créer d’instances de cette classe. Exemple :  
   
  [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_1.cs)]  
   
- La déclaration du constructeur vide empêche la génération automatique d'un constructeur par défaut.  Notez que si vous n'utilisez pas un modificateur d'accès avec le constructeur, ce dernier sera néanmoins privé par défaut.  Toutefois, le modificateur [private](../../../csharp/language-reference/keywords/private.md) est habituellement utilisé explicitement pour qu'il soit clair que la classe ne peut pas être instanciée.  
+ La déclaration du constructeur vide empêche la génération automatique d’un constructeur par défaut. Notez que si vous n’utilisez pas de modificateur d’accès avec le constructeur, le constructeur est toujours privé par défaut. En règle générale, le modificateur [private](../../../csharp/language-reference/keywords/private.md) est explicitement utilisé pour spécifier que la classe ne peut pas être instanciée.  
   
- Les constructeurs privés sont utilisés pour empêcher la création d'instances d'une classe lorsqu'il n'existe pas de champ d'instance ou de méthode, telle que la classe <xref:System.Math>, ou lorsqu'une méthode est appelée pour obtenir une instance d'une classe.  Si toutes les méthodes dans la classe sont statiques, envisagez de rendre la classe entière statique.  Pour plus d'informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Les constructeurs privés servent à empêcher la création d’instances d’une classe quand il n’y a pas de champs ou de méthodes d’instance (par exemple, la classe <xref:System.Math>) ou quand une méthode est appelée pour obtenir une instance d’une classe. Si toutes les méthodes dans la classe sont statiques, définissez la classe entière comme statique. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
-## Exemple  
- Exemple de classe qui utilise un constructeur privé :  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre une classe qui utilise un constructeur privé.  
   
  [!code-cs[csProgGuideObjects#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_2.cs)]  
   
- Notez que si vous supprimez les marques de commentaire de l'instruction suivante tirée de l'exemple, une erreur est générée, car le constructeur est alors inaccessible à cause de son niveau de protection :  
+ Notez que si vous décommentez l’instruction suivante dans l’exemple, une erreur est générée, car le constructeur a un niveau de protection qui le rend inaccessible :  
   
  [!code-cs[csProgGuideObjects#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/private-constructors_3.cs)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
  [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [privées](../../../csharp/language-reference/keywords/private.md)   
+ [private](../../../csharp/language-reference/keywords/private.md)   
  [public](../../../csharp/language-reference/keywords/public.md)

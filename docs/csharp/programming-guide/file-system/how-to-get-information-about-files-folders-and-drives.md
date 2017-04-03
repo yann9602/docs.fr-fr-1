@@ -1,22 +1,40 @@
 ---
-title: "Comment&#160;: obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation&#160;C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "fichiers (C#), obtenir des informations sur"
+title: "Guide pratique pour obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 30
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 16950f835938846804ade1a8ad23d907aa69b9c3
+ms.lasthandoff: 03/13/2017
+
 ---
-# Comment&#160;: obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation&#160;C#)
-Dans le .NET Framework, vous pouvez accéder aux informations de système de fichiers à l'aide des classes suivantes :  
+# <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Guide pratique pour obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#)
+Dans le .NET Framework, vous pouvez accéder aux informations sur le système de fichiers en utilisant les classes suivantes :  
   
 -   <xref:System.IO.FileInfo?displayProperty=fullName>  
   
@@ -28,35 +46,35 @@ Dans le .NET Framework, vous pouvez accéder aux informations de système de f
   
 -   <xref:System.IO.File?displayProperty=fullName>  
   
- Les classes <xref:System.IO.FileInfo> et <xref:System.IO.DirectoryInfo> représentent un fichier ou un répertoire et contiennent des propriétés qui exposent nombre des attributs de fichier pris en charge par le système de fichiers NTFS.  Elles contiennent également des méthodes pour ouvrir, fermer, déplacer et supprimer des fichiers et des dossiers.  Vous pouvez créer des instances de ces classes en passant une chaîne qui représente le nom du fichier, du dossier ou du lecteur au constructeur :  
+ Les classes <xref:System.IO.FileInfo> et <xref:System.IO.DirectoryInfo> représentent un fichier ou un répertoire. Elles contiennent des propriétés qui exposent une grande partie des attributs de fichiers pris en charge par le système de fichiers NTFS. Elles contiennent également des méthodes pour ouvrir, fermer, déplacer et supprimer des fichiers et dossiers. Vous pouvez créer des instances de ces classes en passant une chaîne qui représente le nom du fichier, dossier ou lecteur dans le constructeur :  
   
-```c#  
+```csharp  
 System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");  
 ```  
   
- Vous pouvez également obtenir les noms des fichiers, des dossiers ou des lecteurs en appelant <xref:System.IO.DirectoryInfo.GetDirectories%2A?displayProperty=fullName>, <xref:System.IO.DirectoryInfo.GetFiles%2A?displayProperty=fullName> et <xref:System.IO.DriveInfo.RootDirectory%2A?displayProperty=fullName>.  
+ Vous pouvez aussi obtenir les noms des fichiers, dossiers ou lecteurs en appelant <xref:System.IO.DirectoryInfo.GetDirectories%2A?displayProperty=fullName>, <xref:System.IO.DirectoryInfo.GetFiles%2A?displayProperty=fullName> et <xref:System.IO.DriveInfo.RootDirectory%2A?displayProperty=fullName>.  
   
- Les classes <xref:System.IO.Directory?displayProperty=fullName> et <xref:System.IO.File?displayProperty=fullName> fournissent des méthodes statiques permettant d'extraire des informations sur des répertoires et des fichiers.  
+ Les classes <xref:System.IO.Directory?displayProperty=fullName> et <xref:System.IO.File?displayProperty=fullName> fournissent des méthodes statiques pour récupérer des informations sur les fichiers et répertoires.  
   
-## Exemple  
- L'exemple suivant montre diverses manières d'accéder aux informations relatives aux fichiers et aux dossiers.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant illustre différentes manières d’accéder aux informations sur les fichiers et dossiers.  
   
  [!code-cs[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-get-information-about-files-folders-and-drives_1.cs)]  
   
-## Programmation fiable  
- Lorsque vous traitez des chaînes de chemin d'accès spécifiées par l'utilisateur, vous devez également gérer les exceptions levées dans les cas suivants :  
+## <a name="robust-programming"></a>Programmation fiable  
+ Quand vous traitez des chaînes de chemin spécifiées par l’utilisateur, vous devez également gérer les exceptions dans les cas suivants :  
   
--   Le nom de fichier est incorrect.  Il contient par exemple des caractères non valides ou se compose uniquement d'un espace blanc.  
+-   Le nom de fichier est mal formé. Par exemple, il contient des caractères non valides ou uniquement des espaces blancs.  
   
 -   Le nom de fichier est null.  
   
--   Le nom de fichier dépasse la longueur maximale définie par le système.  
+-   Le nom de fichier est plus long que la longueur maximale définie par le système.  
   
--   Le nom de fichier comporte le signe deux\-points \(:\).  
+-   Le nom de fichier contient un signe deux-points (:).  
   
- Si l'application ne dispose pas des autorisations nécessaires pour lire le fichier spécifié, la méthode `Exists` retourne `false`, qu'il existe ou non un chemin d'accès, mais ne lève pas d'exception.  
+ Si l’application ne dispose pas des autorisations suffisantes pour lire le fichier spécifié, la méthode `Exists` retourne `false` indépendamment de l’existence d’un chemin. La méthode ne lève pas d’exception.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)

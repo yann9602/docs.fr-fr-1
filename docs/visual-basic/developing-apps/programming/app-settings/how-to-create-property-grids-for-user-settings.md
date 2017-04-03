@@ -1,50 +1,66 @@
 ---
-title: "How to: Create Property Grids for User Settings in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "My.Settings object, creating property grids for user settings"
-  - "user settings, creating property grids"
-  - "property grids, creating for user settings"
-  - "property grids"
+title: "Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- My.Settings object, creating property grids for user settings
+- user settings, creating property grids
+- property grids, creating for user settings
+- property grids
 ms.assetid: b0bc737e-50d1-43d1-a6df-268db6e6f91c
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
----
-# How to: Create Property Grids for User Settings in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 17fab50b0f95bacd12d7044ec95c6cef2453d250
+ms.lasthandoff: 03/13/2017
 
-Vous pouvez créer une grille de propriétés pour les paramètres utilisateur en remplissant un contrôle <xref:System.Windows.Forms.PropertyGrid> à l'aide des propriétés des paramètres utilisateur de l'objet `My.Settings`.  
+---
+# <a name="how-to-create-property-grids-for-user-settings-in-visual-basic"></a>Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic
+Vous pouvez créer une grille de propriétés pour les paramètres utilisateur en remplissant un contrôle <xref:System.Windows.Forms.PropertyGrid> avec les propriétés des paramètres utilisateur de l’objet `My.Settings`.  
   
 > [!NOTE]
->  Pour que cet exemple fonctionne, vous devez configurer les paramètres utilisateur de votre application.  Pour plus d’informations, consultez [Gestion des paramètres d'une application \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet).  
+>  Pour que cet exemple fonctionne, les paramètres utilisateur de votre application doivent être configurés. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet).  
   
- L'objet `My.Settings` expose chaque paramètre comme une propriété.  Le nom de la propriété et celui du paramètre sont identiques, de même que le type de propriété et le type de paramètre.  La **Portée** du paramètre détermine si la propriété est en lecture seule : la propriété d'un paramètre de portée **Application** est en lecture seule, tandis que la propriété d'un paramètre de portée **Utilisateur** est en mode lecture\-écriture.  Pour plus d’informations, consultez [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ L’objet `My.Settings` expose chaque paramètre en tant que propriété. Le nom de la propriété est le même que le nom du paramètre, et le type de la propriété est le même que le type du paramètre. La **portée** du paramètre détermine si la propriété est en lecture seule. La propriété d’un paramètre de portée **Application** est en lecture seule, tandis que la propriété d’un paramètre de portée **Utilisateur** est en lecture-écriture. Pour plus d’informations, consultez [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
->  Vous ne pouvez pas modifier ni enregistrer les valeurs des paramètres de portée application au moment de l'exécution.  Les paramètres de portée application ne peuvent être modifiés que lors de la création de l'application \(via le **Concepteur de projets**\) ou de la modification du fichier de configuration de l'application.  Pour plus d’informations, consultez [Gestion des paramètres d'une application \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet).  
+>  Vous ne pouvez pas changer ou enregistrer les valeurs des paramètres de portée application au moment de l’exécution. Les paramètres de portée application peuvent être changés uniquement lors de la création de l’application (par l’intermédiaire du **Concepteur de projet**) ou en modifiant le fichier de configuration de l’application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet).  
   
- Cet exemple utilise un contrôle <xref:System.Windows.Forms.PropertyGrid> pour accéder aux propriétés des paramètres utilisateur de l'objet `My.Settings`.  Par défaut, la <xref:System.Windows.Forms.PropertyGrid> affiche toutes les propriétés de l'objet `My.Settings`.  Toutefois, les propriétés des paramètres utilisateur ont l'attribut <xref:System.Configuration.UserScopedSettingAttribute>.  Cet exemple affecte à la propriété <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> du <xref:System.Windows.Forms.PropertyGrid> la valeur <xref:System.Configuration.UserScopedSettingAttribute> pour afficher uniquement les propriétés des paramètres utilisateur.  
+ Cet exemple utilise un contrôle <xref:System.Windows.Forms.PropertyGrid> pour accéder aux propriétés des paramètres utilisateur de l’objet `My.Settings`. Par défaut, <xref:System.Windows.Forms.PropertyGrid> affiche toutes les propriétés de l’objet `My.Settings`. Toutefois, les propriétés des paramètres utilisateur ont l’attribut <xref:System.Configuration.UserScopedSettingAttribute>. Cet exemple affecte <xref:System.Configuration.UserScopedSettingAttribute> comme propriété <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> de la <xref:System.Windows.Forms.PropertyGrid> pour afficher uniquement les propriétés des paramètres utilisateur.  
   
-### Pour ajouter une grille de propriétés de paramètres utilisateur  
+### <a name="to-add-a-user-setting-property-grid"></a>Pour ajouter une grille de propriétés de paramètres utilisateur  
   
-1.  Ajoutez le contrôle **PropertyGrid** de la **Boîte à outils** à l'aire de conception de votre application, représentée dans cet exemple par  `Form1`.  
+1.  Faites glisser le contrôle **PropertyGrid** de la **boîte à outils** vers l’aire de conception de votre application, que l’on suppose être ici `Form1`.  
   
-     Le nom par défaut du contrôle de la grille de propriétés est `PropertyGrid1`.  
+     Le nom par défaut du contrôle de grille de propriétés est `PropertyGrid1`.  
   
-2.  Double\-cliquez sur l'aire de conception de `Form1` pour ouvrir le code pour le gestionnaire d'événements de chargement du formulaire.  
+2.  Double-cliquez sur l’aire de conception de `Form1` pour ouvrir le code du gestionnaire d’événements de chargement de formulaire.  
   
-3.  Définissez l'objet `My.Settings` comme étant l'objet sélectionné pour la grille de propriétés.  
+3.  Définissez l’objet `My.Settings` comme objet sélectionné pour la grille des propriétés.  
   
      [!code-vb[VbVbalrMyResources#11](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_1.vb)]  
   
@@ -53,14 +69,14 @@ Vous pouvez créer une grille de propriétés pour les paramètres utilisateur e
      [!code-vb[VbVbalrMyResources#12](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-create-property-grids-for-user-settings_2.vb)]  
   
     > [!NOTE]
-    >  Pour afficher uniquement les paramètres de portée application, utilisez l'attribut de <xref:System.Configuration.ApplicationScopedSettingAttribute> au lieu d' <xref:System.Configuration.UserScopedSettingAttribute>.  
+    >  Pour afficher uniquement les paramètres de portée application, utilisez l’attribut <xref:System.Configuration.ApplicationScopedSettingAttribute> au lieu de <xref:System.Configuration.UserScopedSettingAttribute>.  
   
-## Programmation fiable  
- L'application enregistre les paramètres utilisateur lorsqu'elle s'arrête.  Pour enregistrer les paramètres immédiatement, appelez la méthode `My.Settings.Save`.  Pour plus d’informations, consultez [How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
+## <a name="robust-programming"></a>Programmation fiable  
+ L’application enregistre les paramètres utilisateur quand elle s’arrête. Pour enregistrer les paramètres immédiatement, appelez la méthode `My.Settings.Save`. Pour plus d’informations, consultez [Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
   
-## Voir aussi  
- [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md)   
- [How to: Read Application Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)   
- [How to: Change User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)   
- [How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)   
- [Gestion des paramètres d'une application \(.NET\)](/visual-studio/ide/managing-application-settings-dotnet)
+## <a name="see-also"></a>Voir aussi  
+ [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md)   
+ [Guide pratique pour lire des paramètres d’application en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)   
+ [Guide pratique pour modifier les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)   
+ [Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)   
+ [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet)

@@ -1,41 +1,58 @@
 ---
-title: "How to: Check Connection Status in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Web connections"
-  - "IsAvailable property, about IsAvailable"
-  - "connections, checking status"
-  - "connection status"
+title: "Guide pratique pour vérifier l’état de la connexion en Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- Web connections
+- IsAvailable property, about IsAvailable
+- connections, checking status
+- connection status
 ms.assetid: 4d9ee8ab-9a6f-4279-ace4-b75afc976a74
 caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
----
-# How to: Check Connection Status in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 81386ee1f8c8cefbcd34a05d594277b9de772b8d
+ms.lasthandoff: 03/13/2017
 
-La propriété <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A> peut être utilisée pour déterminer si l'ordinateur dispose d'un réseau actif ou d'une connexion Internet.  
+---
+# <a name="how-to-check-connection-status-in-visual-basic"></a>Guide pratique pour vérifier l'état de la connexion en Visual Basic
+Vous pouvez utiliser la propriété <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A> pour déterminer si l’ordinateur dispose d’une connexion Internet ou réseau active.  
   
- [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note-settings-general-md.md)]  
+[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
-### Pour vérifier si un ordinateur a une connexion active  
+### <a name="to-check-whether-a-computer-has-a-working-connection"></a>Pour vérifier si un ordinateur dispose d’une connexion active  
   
--   Déterminez si la propriété `IsAvailable` a la valeur `True` ou `False`.  Le code suivant vérifie l'état de la propriété et le signale :  
+-   Vérifiez si la propriété `IsAvailable` est `True` ou `False`. Le code suivant vérifie l’état de la propriété et le signale :  
   
      [!code-vb[VbResourceTasks#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-check-connection-status_1.vb)]  
   
-     Cet exemple de code est également disponible sous forme d'extrait de code IntelliSense.  Dans le sélecteur d'extrait de code, il se trouve dans **Connectivité et réseau**.  Pour plus d'informations, consultez [Extraits de code](/visual-studio/ide/code-snippets).  
+     Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve sous **Connectivité et réseau**. Pour plus d’informations, consultez [Extraits de code](https://docs.microsoft.com/visualstudio/ide/code-snippets).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=fullName>   
  <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>
+

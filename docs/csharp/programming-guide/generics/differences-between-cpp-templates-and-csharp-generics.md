@@ -1,42 +1,60 @@
 ---
-title: "Diff&#233;rences entre les templates&#160;C++ et les g&#233;n&#233;riques&#160;C# (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "génériques (C#), comparés aux modèles C++"
+title: "Différences entre les modèles C++ et les génériques C# (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
 caps.latest.revision: 14
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 14
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d3171b1e3f48907778be6e256780e06bad36481f
+ms.lasthandoff: 03/13/2017
+
 ---
-# Diff&#233;rences entre les templates&#160;C++ et les g&#233;n&#233;riques&#160;C# (Guide de programmation C#)
-Les génériques C\# et les modèles C\+\+ sont des fonctionnalités de langage qui assurent la prise en charge des types paramétrés.  Il existe toutefois de nombreuses différences entre les deux.  Au niveau de la syntaxe, les génériques C\# offrent une approche plus simple aux types paramétrés, sans la complexité des modèles C\+\+.  De plus, C\# n'essaie pas d'offrir toutes les fonctionnalités fournies par les modèles C\+\+.  Au niveau de l'implémentation, la différence principale est que les substitutions de type générique C\# sont exécutées pendant l'exécution et que les informations de type générique sont ainsi conservées pour les objets instanciés.  Pour plus d'informations, consultez [Génériques dans le runtime](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
+# <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Différences entre les modèles C++ et les génériques C# (Guide de programmation C#)
+Les génériques C# et les modèles C++ sont des fonctionnalités linguistiques qui prennent en charge les types paramétrables. Toutefois, il existe de nombreuses différences entre les deux. Au niveau de la syntaxe, les génériques C# constituent une approche plus simple des types paramétrables, sans la complexité des modèles C++. De plus, C# n’essaie pas de fournir toutes les fonctionnalités fournies par les modèles C++. Au niveau de l’implémentation, la principale différence est que les substitutions de type générique C# sont effectuées au moment de l’exécution. Ainsi, les informations de type générique sont conservées pour les objets instanciés. Pour plus d’informations, consultez [Génériques dans le runtime](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
   
- Les différences clés entre génériques C\# et modèles C\+\+ sont les suivantes :  
+ Voici les principales différences entre les modèles C++ et les génériques C# :  
   
--   Les génériques C\# n'offrent pas la même souplesse que les modèles C\+\+.  Par exemple, il n'est pas possible d'appeler des opérateurs arithmétiques dans une classe générique C\#, bien qu'il soit possible d'appeler des opérateurs définis par l'utilisateur.  
+-   Les génériques C# n’offrent pas le même niveau de flexibilité que les modèles C++. Par exemple, il n’est pas possible d’appeler des opérateurs arithmétiques dans une classe générique C#, bien qu’il soit possible d’appeler des opérateurs définis par l’utilisateur.  
   
--   C\# n'autorise pas les paramètres de modèle sans type, tels que `template C<int i> {}`.  
+-   C# n’autorise pas les paramètres de modèle sans type, tels que `template C<int i> {}`.  
   
--   C\# ne prend pas en charge la spécialisation explicite, à savoir l'implémentation personnalisée d'un modèle pour un type spécifique.  
+-   C# ne prend pas en charge la spécialisation explicite (une implémentation personnalisée d’un modèle pour un type spécifique).  
   
--   C\# ne prend pas en charge la spécialisation partielle, à savoir l'implémentation personnalisée d'un sous\-ensemble des arguments de type.  
+-   C# ne prend pas en charge la spécialisation partielle (une implémentation personnalisée pour un sous-ensemble des arguments de type).  
   
--   C\# n'autorise pas le paramètre de type à être utilisé comme classe de base pour le type générique.  
+-   C# n’autorise pas l’utilisation du paramètre de type comme classe de base pour le type générique.  
   
--   C\# ne permet pas aux paramètres de type d'avoir des types par défaut.  
+-   C# n’autorise pas les paramètres de type à avoir des types par défaut.  
   
--   En C\#, un paramètre de type générique ne peut pas être un générique, bien que des types construits puissent être utilisés comme des génériques.  C\+\+ autorise les paramètres de modèle.  
+-   En C#, un paramètre de type générique ne peut pas être lui-même un générique, bien que les types construits puissent être utilisés comme des génériques. C++ autorise les paramètres de modèle.  
   
--   C\+\+ autorise un code qui peut ne pas être valide pour tous les paramètres de type dans le modèle, dont on vérifie ensuite qu'il utilise le type spécifique utilisé comme paramètre de type.  C\# requiert que le code d'une classe soit écrit de telle manière qu'il fonctionnera avec tout type qui satisfait aux contraintes.  Par exemple, il est possible en C\+\+ d'écrire une fonction qui utilise les opérateurs arithmétiques `+` et `-` sur les objets du paramètre de type, qui produira une erreur au moment de l'instanciation du modèle avec un type qui ne prend pas en charge ces opérateurs.  C\# n'autorise pas ceci. Les seules constructions de langage autorisées sont celles qui peuvent être déduites des contraintes.  
+-   C++ autorise le code qui peut ne pas être valide pour tous les paramètres de type dans le modèle, qui est ensuite vérifié pour identifier le type spécifique utilisé comme paramètre de type. C# exige que le code dans une classe soit écrit de telle sorte qu’il fonctionne avec tout type qui satisfait aux contraintes. Par exemple, en C++ il est possible d’écrire une fonction qui utilise les opérateurs arithmétiques `+` et `-` sur des objets du paramètre de type, ce qui générera une erreur au moment de l’instanciation du modèle avec un type qui ne prend pas en charge ces opérateurs. Ceci n’est pas autorisé par C#. Les seules constructions de langage autorisées sont celles qui peuvent être déduites des contraintes.  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
- [Modèles](/visual-cpp/cpp/templates-cpp)
+ [Modèles](https://docs.microsoft.com/cpp/cpp/templates-cpp)

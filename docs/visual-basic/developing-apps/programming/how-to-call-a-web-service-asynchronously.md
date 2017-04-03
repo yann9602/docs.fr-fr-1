@@ -1,43 +1,59 @@
 ---
-title: "How to: Call a Web Service Asynchronously (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "asynchronous calls"
-  - "Web services, accessing"
+title: "Guide pratique pour appeler un service web de manière asynchrone (Visual Basic) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- asynchronous calls
+- Web services, accessing
 ms.assetid: ff8046f4-f1f2-4d8b-90b7-95e3f7415418
 caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
----
-# How to: Call a Web Service Asynchronously (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: stevehoag
+ms.author: shoag
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a88c7250ba844603bcbc33d0768a45c40f18f53e
+ms.lasthandoff: 03/13/2017
 
-Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone d'un service web pour qu'il puisse récupérer le résultat d'un appel de méthode asynchrone.  Cet exemple utilise le service web DemoTemperatureService disponible à l'adresse http:\/\/www.xmethods.  net.  
+---
+# <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Guide pratique pour appeler un service web de manière asynchrone (Visual Basic)
+Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone d'un service web pour qu'il puisse récupérer le résultat d'un appel de méthode asynchrone. Cet exemple utilise le service web DemoTemperatureService disponible à l’adresse http://www.xmethods.net.  
   
- Quand vous faites référence à un service web dans votre projet dans l'IDE \(Integrated Development Environment\) de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs-md.md)], il est ajouté à l'objet `My.WebServices` et l'IDE génère une classe proxy cliente pour accéder à un service web spécifié.  
+ Quand vous faites référence à un service web dans votre projet dans l'IDE (Integrated Development Environment) de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)], il est ajouté à l'objet `My.WebServices` et l'IDE génère une classe proxy cliente pour accéder à un service web spécifié.  
   
- La classe proxy vous permet d'appeler les méthodes du service web de manière synchrone \(votre application attend que la fonction soit terminée\).  De plus, le proxy crée des membres supplémentaires pour aider à appeler la méthode de manière asynchrone.  Pour chaque fonction du service web, *Nom\_Fonction\_Service\_Web*, le proxy crée une sous\-routine *Nom\_Fonction\_Service\_Web*`Async`, un événement *Nom\_Fonction\_Service\_Web*`Completed` et une classe *Nom\_Fonction\_Service\_Web*`CompletedEventArgs`.  Cet exemple montre comment utiliser les membres asynchrones pour accéder à la fonction `getTemp` du service web DemoTemperatureService.  
+ La classe proxy vous permet d'appeler les méthodes du service web de manière synchrone (votre application attend que la fonction soit terminée). De plus, le proxy crée des membres supplémentaires pour aider à appeler la méthode de manière asynchrone. Pour chaque fonction du service web, *NameOfWebServiceFunction*, le proxy crée une sous-routine *NameOfWebServiceFunction*`Async`, un événement *NameOfWebServiceFunction*`Completed` et une classe *NameOfWebServiceFunction*`CompletedEventArgs`. Cet exemple montre comment utiliser les membres asynchrones pour accéder à la fonction `getTemp` du service web DemoTemperatureService.  
   
 > [!NOTE]
 >  Ce code ne fonctionne pas dans les applications web, car ASP.NET ne prend pas en charge l'objet `My.WebServices`.  
   
-### Pour appeler un service web de manière asynchrone  
+### <a name="to-call-a-web-service-asynchronously"></a>Pour appeler un service web de manière asynchrone  
   
-1.  Faites référence au service web DemoTemperatureService disponible à l'adresse http:\/\/www.xmethods.  net.  L'adresse est  
+1.  Référencez le service web DemoTemperatureService disponible à l’adresse http://www.xmethods.net. L'adresse est  
   
     ```  
     http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl  
     ```  
   
-2.  Ajoutez un gestionnaire d'événements pour l'événement `getTempCompleted` :  
+2.  Ajoutez un gestionnaire d'événements pour l'événement `getTempCompleted` :  
   
     ```  
     Private Sub getTempCompletedHandler(ByVal sender As Object,   
@@ -50,13 +66,13 @@ Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone 
     > [!NOTE]
     >  Vous ne pouvez pas utiliser l'instruction `Handles` pour associer un gestionnaire d'événements aux événements de l'objet `My.WebServices`.  
   
-3.  Ajoutez un champ pour suivre si le gestionnaire d'événements a été ajouté à l'événement `getTempCompleted` :  
+3.  Ajoutez un champ pour suivre si le gestionnaire d'événements a été ajouté à l'événement `getTempCompleted` :  
   
     ```  
     Private handlerAttached As Boolean = False  
     ```  
   
-4.  Ajoutez une méthode pour ajouter le gestionnaire d'événements à l'événement `getTempCompleted`, si nécessaire, et pour appeler la méthode `getTempAsynch` :  
+4.  Ajoutez une méthode pour ajouter le gestionnaire d'événements à l'événement `getTempCompleted`, si nécessaire, et pour appeler la méthode `getTempAsynch` :  
   
     ```  
     Sub CallGetTempAsync(ByVal zipCode As Integer)  
@@ -70,8 +86,8 @@ Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone 
     End Sub  
     ```  
   
-     Pour appeler la méthode web `getTemp` de manière asynchrone, appelez la méthode `CallGetTempAsync`.  Quand la méthode web se termine, sa valeur de retour est passée au gestionnaire d'événements `getTempCompletedHandler`.  
+     Pour appeler la méthode web `getTemp` de manière asynchrone, appelez la méthode `CallGetTempAsync`. Quand la méthode web se termine, sa valeur de retour est passée au gestionnaire d'événements `getTempCompletedHandler`.  
   
-## Voir aussi  
- [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)   
- [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a>Voir aussi  
+ [Accès aux services web d’une application](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)   
+ [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)

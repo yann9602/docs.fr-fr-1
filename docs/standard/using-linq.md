@@ -25,7 +25,7 @@ LINQ fournit des fonctionnalités d’interrogation au niveau du langage et une 
 
 Syntaxe de requête au niveau du langage :
 
-```cs
+```csharp
 var linqExperts = from p in programmers
                   where p.IsNewToLINQ
                   select new LINQExpert(p);
@@ -34,7 +34,7 @@ var linqExperts = from p in programmers
 
 Même exemple en utilisant l’API `IEnumerable<T>` :
 
-```cs
+```csharp
 var linqExperts = programmers.Where(p => IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
 
@@ -46,7 +46,7 @@ Imaginez que vous avez une liste d’animaux domestiques, mais que vous voulez l
 
 Code impératif traditionnel :
 
-```cs
+```csharp
 var petLookup = new Dictionary<int, Pet>();
 
 foreach (var pet in pets)
@@ -60,7 +60,7 @@ L’intention du code n’est pas de créer un `Dictionary<int, Pet>` et d’y a
 
 Expression LINQ équivalente :
 
-```cs
+```csharp
 var petLookup = pets.ToDictionary(pet => pet.RFID);
 
 ```
@@ -73,7 +73,7 @@ Pour la plupart des logiciels en général, tout tourne autour du traitement de 
 
 Imaginons que vous recherchez tous les éléments XML avec une valeur d’attribut spécifique.
 
-```cs
+```csharp
 public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement documentRoot, string elementName,
                                            string attributeName, string value)
 {
@@ -92,14 +92,14 @@ Les fournisseurs LINQ ne vous permettent pas seulement d’interagir avec le XML
 
 C’est une question qui revient souvent. Après tout,
 
-```cs
+```csharp
 var filteredItems = myItems.Where(item => item.Foo);
 
 ```
 
 est beaucoup plus concis que ce qui suit :
 
-```cs
+```csharp
 var filteredItems = from item in myItems
                     where item.Foo
                     select item;
@@ -132,7 +132,7 @@ Voici une démonstration rapide de quelques-uns des éléments essentiels de LIN
 
 *   Les indispensables : `Where`, `Select` et `Aggregate` :
 
-```cs
+```csharp
 // Filtering a list
 var germanShepards = dogs.Where(dog => dog.Breed == DogBreed.GermanShepard);
 
@@ -156,7 +156,7 @@ int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 
 *   Aplanissement d’une liste de listes :
 
-```cs
+```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 
@@ -164,7 +164,7 @@ var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 
 *   Union entre deux ensembles (avec un comparateur personnalisé) :
 
-```cs
+```csharp
 public class DogHairLengthComparer : IEqualityComparer<Dog>
 {
     public bool Equals(Dog a, Dog b)
@@ -200,7 +200,7 @@ var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthCompa
 
 *   Intersection entre deux ensembles :
 
-```cs
+```csharp
 // Gets the volunteers who spend share time with two humane societies.
 var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
@@ -209,7 +209,7 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
 
 *   Tri :
 
-```cs
+```csharp
 // Get driving directions, ordering by if it's toll-free before estimated driving time.
 var results = DirectionsProcessor.GetDirections(start, end)
               .OrderBy(direction => direction.HasNoTolls)
@@ -219,7 +219,7 @@ var results = DirectionsProcessor.GetDirections(start, end)
 
 *   Enfin, un exemple plus avancé : déterminer si les valeurs des propriétés de deux instances du même type sont égales (emprunté à [ce billet StackOverflow](http://stackoverflow.com/a/844855) et modifié) :
 
-```cs
+```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
 {
     if (self != null && to != null)
@@ -248,7 +248,7 @@ PLINQ, ou Parallel LINQ, est un moteur d’exécution parallèle pour les expres
 
 Considérez ce qui suit :
 
-```cs
+```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
 {
     var seed = default(UInt64);

@@ -1,50 +1,68 @@
 ---
-title: "Comment&#160;: lire un fichier texte (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "StreamReader.ReadToEnd"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "lire des données, fichiers texte"
-  - "lire des fichiers texte"
-  - "fichiers texte, lire"
-  - "fichiers texte, écrire dans"
+title: Guide pratique pour lire un fichier texte (Guide de programmation C#) | Microsoft Docs
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- StreamReader.ReadToEnd
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- text files, writing to
+- reading text files
+- reading data, text files
+- text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d545aa7f25da49b3ca0fc50b0c5a55c9c0d2b967
+ms.lasthandoff: 03/13/2017
+
 ---
-# Comment&#160;: lire un fichier texte (Guide de programmation C#)
-Cet exemple lit le contenu d'un fichier texte à l'aide de les méthodes statiques <xref:System.IO.File.ReadAllText%2A> et <xref:System.IO.File.ReadAllLines%2A> de la classe d' <xref:System.IO.File?displayProperty=fullName> .  
+# <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Guide pratique pour lire un fichier texte (Guide de programmation C#)
+Cet exemple montre la lecture du contenu d’un fichier texte à l’aide des méthodes statiques <xref:System.IO.File.ReadAllText%2A> et <xref:System.IO.File.ReadAllLines%2A> de la classe <xref:System.IO.File?displayProperty=fullName>.  
   
- Pour obtenir un exemple qui utilise <xref:System.IO.StreamReader>, consultez [Comment : lire un fichier texte ligne par ligne](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).  
+ Pour obtenir un exemple qui utilise <xref:System.IO.StreamReader>, consultez [Guide pratique pour lire un fichier texte ligne par ligne](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).  
   
 > [!NOTE]
->  Les fichiers utilisés dans cet exemple sont créés dans la rubrique [Comment : écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).  
+>  Les fichiers qui sont utilisés dans cet exemple sont créés dans la rubrique [Guide pratique pour écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csFilesandFolders#4](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-read-from-a-text-file_1.cs)]  
   
-## Compilation du code  
- Copiez le code et collez \-le dans une application console C\#.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Copiez le code et collez-le dans une application console C#.  
   
- Si vous n'utilisez pas les fichiers texte de [Comment : écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), remplacez l'argument en `ReadAllText` et à `ReadAllLines` par le chemin d'accès approprié et le nom de fichier sur votre ordinateur.  
+ Si vous n’utilisez pas les fichiers texte de la rubrique [Guide pratique pour écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), remplacez l’argument par `ReadAllText` et `ReadAllLines`, en fournissant le chemin et le nom correspondants sur votre ordinateur.  
   
-## Programmation fiable  
- Les conditions ci\-dessous peuvent générer une exception.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le fichier n'existe pas ou n'existe pas à l'emplacement spécifié.  Vérifiez le chemin d'accès et l'orthographe du nom de fichier.  
+-   Le fichier n’existe pas ou ne se trouve pas à l’emplacement spécifié. Vérifiez le chemin et l’orthographe du nom de fichier.  
   
-## Sécurité .NET Framework  
- Ne comptez pas sur le nom d'un fichier pour en déterminer le contenu du fichier.  Par exemple, le fichier `myFile.cs` ne peut pas être un fichier source C\#.  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Ne comptez pas sur le nom d’un fichier pour en déduire le contenu. Par exemple, le fichier `myFile.cs` peut ne pas être un fichier source C#.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre](../../../csharp/programming-guide/file-system/file-system-and-the-registry.md)
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)

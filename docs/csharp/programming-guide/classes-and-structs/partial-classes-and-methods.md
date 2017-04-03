@@ -1,50 +1,68 @@
 ---
-title: "Classes et m&#233;thodes partielles (Guide de programmation&#160;C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "langage C#, classes et méthodes partielles"
-  - "classes partielles (C#)"
-  - "méthodes partielles (C#)"
+title: "Classes et méthodes partielles (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- partial methods [C#]
+- partial classes [C#]
+- C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
 caps.latest.revision: 35
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 35
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3c74328ec5a42d7c480f367585cf6c94cd2b1d84
+ms.lasthandoff: 03/13/2017
+
 ---
-# Classes et m&#233;thodes partielles (Guide de programmation&#160;C#)
-Il est possible de fractionner la définition d'une [classe](../../../csharp/language-reference/keywords/class.md) ou d'un [struct](../../../csharp/language-reference/keywords/struct.md), ou d'une [interface](../../../csharp/language-reference/keywords/interface.md) ou d'une méthode sur deux fichiers sources ou plus.  Chaque fichier source contient une section de la définition de type ou de méthode, et toutes les parties sont combinées lorsque l'application est compilée.  
+# <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
+Il est possible de fractionner la définition d’une [classe](../../../csharp/language-reference/keywords/class.md), d’un [struct](../../../csharp/language-reference/keywords/struct.md), d’une [interface](../../../csharp/language-reference/keywords/interface.md) ou d’une méthode entre deux fichiers sources ou plus. Chaque fichier source contient une section de la définition de méthode ou de type, et toutes les parties sont combinées au moment où l’application est compilée.  
   
-## Classes partielles  
- Il est souhaitable de fractionner une définition de classe dans plusieurs situations :  
+## <a name="partial-classes"></a>Classes partielles  
+ Il peut être utile de fractionner une définition de classe dans les situations suivantes :  
   
--   Dans le cadre de projets volumineux, la répartition d'une classe en plusieurs fichiers distincts permet à plusieurs programmeurs d'y travailler simultanément.  
+-   Dans des projets volumineux, le fractionnement d’une classe entre plusieurs fichiers distincts permet à plusieurs programmeurs d’y travailler simultanément.  
   
--   Lorsque vous travaillez avec une source générée automatiquement, le code peut être ajouté à la classe sans qu'il soit nécessaire de recréer le fichier source.  Visual Studio utilise cette approche lors de la création de formulaires Windows Forms, de code wrapper de service Web, etc.  Vous pouvez créer un code qui utilise ces classes sans avoir à modifier le fichier créé par Visual Studio.  
+-   Quand vous utilisez une source générée automatiquement, vous pouvez ajouter du code à la classe sans avoir à recréer le fichier source. Visual Studio suit cette approche pour créer des formulaires Windows Forms, du code wrapper de service web, etc. Vous pouvez écrire du code qui utilise ces classes sans avoir à modifier le fichier créé par Visual Studio.  
   
--   Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../../csharp/language-reference/keywords/partial-type.md), comme indiqué ici :  
+-   Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../../csharp/language-reference/keywords/partial-type.md), comme ci-dessous :  
   
  [!code-cs[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
   
- Le mot clé `partial` indique que d'autres parties de la classe, du struct ou de l'interface peuvent être définies dans l'espace de noms.  Toutes les parties doivent utiliser le mot clé `partial`.  Toutes les parties doivent être disponibles lors de la compilation pour former le type final.  Toutes les parties doivent avoir la même accessibilité : `public`, `private`, etc.  
+ Le mot clé `partial` indique que d’autres parties de la classe, du struct ou de l’interface peuvent être définies dans l’espace de noms. Toutes les parties doivent utiliser le mot clé `partial`. Toutes les parties doivent être disponibles à la compilation pour former le type final. Toutes les parties doivent avoir la même accessibilité : `public`, `private`, etc.  
   
- Si une partie est déclarée comme abstract, l'ensemble du type est considéré comme abstract.  Si une partie est déclarée comme sealed, l'ensemble du type est considéré comme sealed.  Si une partie déclare un type de base, l'ensemble du type hérite de cette classe.  
+ Si une partie est déclarée comme abstract, l’ensemble du type est considéré comme abstract. Si une partie est déclarée comme sealed, l’ensemble du type est considéré comme sealed. Si une partie déclare un type de base, l’ensemble du type hérite de cette classe.  
   
- Toutes les parties qui spécifient une classe de base doivent se mettre d'accord, mais les parties qui omettent une classe de base héritent tout de même du type de base.  Les parties peuvent spécifier différentes interfaces de base, et le type final implémente toutes les interfaces répertoriées par toutes les déclarations partielles.  Tous les membres de classe, de struct ou d'interface déclarés dans une définition partielle sont disponibles pour toutes les autres parties.  Le type final est la combinaison de toutes les parties lors de la compilation.  
+ Toutes les parties qui spécifient une classe de base doivent être en accord, mais les parties qui omettent une classe de base héritent tout de même du type de base. Les parties peuvent spécifier des interfaces de base différentes. Le type final implémente alors toutes les interfaces indiquées dans toutes les déclarations partielles. Tous les membres de classe, de struct ou d’interface déclarés dans une définition partielle sont disponibles pour toutes les autres parties. Le type final est la combinaison de toutes les parties au moment de la compilation.  
   
 > [!NOTE]
->  Le modificateur `partial` n'est pas disponible sur les déclarations de délégué ou d'énumération.  
+>  Le modificateur `partial` n’est pas disponible sur les déclarations de délégué ou d’énumération.  
   
- L'exemple suivant montre que les types imbriqués peuvent être partiels, même si le type dans lequel ils sont imbriqués n'est pas partiel lui\-même.  
+ L’exemple suivant montre que les types imbriqués peuvent être partiels, même si le type dans lequel ils sont imbriqués n’est pas partiel lui-même.  
   
  [!code-cs[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
   
- À la compilation, les attributs de définitions de type partiel sont fusionnés.  Observez par exemple les déclarations suivantes :  
+ Au moment de la compilation, les attributs de définitions de type partiel sont fusionnés. Observez, par exemple, les déclarations suivantes :  
   
  [!code-cs[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
   
@@ -54,7 +72,7 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
  Les éléments suivants sont fusionnés à partir de toutes les définitions de type partiel :  
   
--   Commentaires XML  
+-   commentaires XML  
   
 -   interfaces  
   
@@ -64,7 +82,7 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
 -   membres  
   
- Observez par exemple les déclarations suivantes :  
+ Observez, par exemple, les déclarations suivantes :  
   
  [!code-cs[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
   
@@ -72,24 +90,24 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
  [!code-cs[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
   
-### Restrictions  
- Il y a plusieurs règles à suivre lorsque vous utilisez des définitions de classe partielles :  
+### <a name="restrictions"></a>Restrictions  
+ Il y a plusieurs règles à respecter quand vous utilisez des définitions de classe partielle :  
   
--   Toutes les définitions de type partiel conçues comme des parties du même type doivent être modifiées avec `partial`.  Par exemple, les déclarations de classe suivantes génèrent une erreur :  
+-   Toutes les définitions de type partiel conçues comme des parties du même type doivent être modifiées avec `partial`. Par exemple, les déclarations de classe suivantes génèrent une erreur :  
   
      [!code-cs[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
   
--   Le modificateur `partial` peut uniquement apparaître juste avant les mots clés `class`, `struct` ou `interface`.  
+-   Le modificateur `partial` peut uniquement être placé juste avant les mots clés `class`, `struct` ou `interface`.  
   
--   Les types partiels imbriqués sont autorisés dans les définitions de type partiel, comme illustré dans l'exemple suivant :  
+-   Les types partiels imbriqués sont autorisés dans les définitions de type partiel, comme illustré dans l’exemple suivant :  
   
      [!code-cs[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
   
--   Toutes les définitions de type partiel conçues comme des parties du même type doivent être définies dans le même assembly et dans le même module \(fichier .exe ou .dll\).  Les définitions partielles ne peuvent pas couvrir plusieurs modules.  
+-   Toutes les définitions de type partiel conçues comme des parties du même type doivent être définies dans le même assembly et dans le même module (fichier .exe ou .dll). Les définitions partielles ne peuvent pas être fractionnées entre plusieurs modules.  
   
--   Le nom de la classe et les paramètres de type de générique doivent correspondre sur toutes les définitions de type partiel.  Les types génériques peuvent être partiels.  Chaque déclaration partielle doit utiliser les mêmes noms de paramètres dans le même ordre.  
+-   Le nom de classe et les paramètres de type générique doivent correspondre dans toutes les définitions de type partiel. Les types génériques peuvent être partiels. Chaque déclaration partielle doit utiliser les mêmes noms de paramètres, dans le même ordre.  
   
--   Les mots clés suivants sur une définition de type partiel sont facultatifs, mais s'ils sont présents sur une définition de type partiel, ils ne peuvent pas être en conflit avec les mots clés spécifiés sur une autre définition partielle pour le même type :  
+-   Les mots clés suivants sont facultatifs dans une définition de type partiel. S’ils sont utilisés dans une définition de type partiel, ils ne doivent pas être en conflit avec les mots clés spécifiés dans une autre définition partielle pour le même type :  
   
     -   [public](../../../csharp/language-reference/keywords/public.md)  
   
@@ -105,36 +123,36 @@ Il est possible de fractionner la définition d'une [classe](../../../csharp/lan
   
     -   classe de base  
   
-    -   Modificateur [new](../../../csharp/language-reference/keywords/new.md) \(parties imbriquées\)  
+    -   modificateur [new](../../../csharp/language-reference/keywords/new.md) (parties imbriquées)  
   
     -   contraintes génériques  
   
-         Pour plus d'informations, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
+         Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
   
-## Exemple 1  
+## <a name="example-1"></a>Exemple 1  
   
-### Description  
- Dans l'exemple suivant, les champs et le constructeur de la classe, `CoOrds`, sont déclarés dans une définition de classe partielle, et le membre, `PrintCoOrds`, est déclaré dans une autre définition de classe partielle.  
+### <a name="description"></a>Description  
+ Dans l’exemple suivant, les champs et le constructeur de la classe `CoOrds` sont déclarés dans une définition de classe partielle, et le membre `PrintCoOrds` est déclaré dans une autre définition de classe partielle.  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-cs[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
   
-## Exemple 2  
+## <a name="example-2"></a>Exemple 2  
   
-### Description  
- L'exemple suivant montre que vous pouvez également développer des interfaces et des structs partiels.  
+### <a name="description"></a>Description  
+ L’exemple suivant montre que vous pouvez également développer des interfaces et des structs partiels.  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-cs[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
   
-## Méthodes partielles  
- Une classe partielle ou un struct partiel peut contenir une méthode partielle.  Une partie de la classe contient la signature de la méthode.  Une implémentation facultative peut être définie dans la même partie ou dans une autre partie.  Si l'implémentation n'est pas fournie, les méthodes et tous les appels à la méthode sont supprimés à la compilation.  
+## <a name="partial-methods"></a>Méthodes partielles  
+ Une classe partielle ou un struct partiel peut contenir une méthode partielle. Une partie de la classe contient la signature de la méthode. Une implémentation facultative peut être définie dans la même partie ou dans une autre partie. Si l’implémentation n’est pas fournie, la méthode et tous les appels à cette méthode sont supprimés au moment de la compilation.  
   
- Les méthodes partielles permettent à l'implémenteur d'une partie d'une classe de définir une méthode, semblable à un événement.  L'implémenteur de l'autre partie de la classe peut décider s'il faut implémenter la méthode ou pas.  Si la méthode n'est pas implémentée, le compilateur supprime la signature de méthode et tous les appels à la méthode.  Les appels à la méthode, y compris tous les résultats qui se produiraient depuis l'évaluation des arguments dans les appels, n'ont aucun effet au moment de l'exécution.  Par conséquent, tout code dans la classe partielle peut utiliser librement une méthode partielle, même si l'implémentation n'est pas fournie.  Aucune erreur de compilation ou d'exécution ne sera générée si la méthode est appelée mais non implémentée.  
+ Les méthodes partielles permettent à l’implémenteur d’une partie d’une classe de définir une méthode, comme pour un événement. L’implémenteur de l’autre partie de la classe peut décider s’il faut implémenter la méthode ou non. Si la méthode n’est pas implémentée, le compilateur supprime la signature de méthode et tous les appels à la méthode. Les appels à la méthode, y compris tous les résultats retournés par l’évaluation des arguments dans les appels, n’ont aucun effet au moment de l’exécution. C’est pourquoi le code dans la classe partielle peut utiliser librement une méthode partielle, même si l’implémentation n’est pas fournie. Aucune erreur de compilation ou d’exécution n’est générée si la méthode est appelée, mais qu’elle n’est pas finalement implémentée.  
   
- Les méthodes partielles sont particulièrement utiles comme moyen de personnaliser le code généré.  Elles permettent de réserver un nom et une signature de méthode, de sorte que le code généré peut appeler la méthode, mais le développeur peut décider s'il faut implémenter la méthode.  En grande partie comme les classes partielles, les méthodes partielles permettent au code créé par un générateur de code et au code créé par un développeur humain de fonctionner ensemble sans coûts en temps d'exécution.  
+ Les méthodes partielles sont particulièrement utiles pour personnaliser le code généré. Elles permettent de réserver un nom et une signature de méthode. Ainsi, le code généré peut appeler la méthode, mais le développeur peut décider d’implémenter ou non la méthode. En grande partie comme les classes partielles, les méthodes partielles permettent d’utiliser conjointement du code créé par un générateur de code et du code créé manuellement par un développeur sans impact sur le temps d’exécution.  
   
- Une déclaration de méthode partielle se compose de deux parties : la définition et l'implémentation.  Celles\-ci peuvent être situées dans des parties distinctes d'une classe partielle, ou dans la même partie.  En l'absence de déclaration d'implémentation, le compilateur optimise la fois la déclaration de définition et tous les appels à la méthode.  
+ Une déclaration de méthode partielle se compose de deux parties : la définition et l’implémentation. Celles-ci peuvent être situées dans des parties distinctes ou dans la même partie d’une classe partielle. En l’absence de déclaration d’implémentation, le compilateur optimise à la fois la déclaration de définition et tous les appels à la méthode.  
   
 ```  
 // Definition in file1.cs  
@@ -147,26 +165,26 @@ partial void onNameChanged()
 }  
 ```  
   
--   Les déclarations de méthodes partielles doivent commencer par le mot clé contextuel [partial](../../../csharp/language-reference/keywords/partial-type.md) et la méthode doit retourner [void](../../../csharp/language-reference/keywords/void.md).  
+-   Une déclaration de méthode partielle doit commencer par le mot clé contextuel [partial](../../../csharp/language-reference/keywords/partial-type.md), et la méthode doit retourner [void](../../../csharp/language-reference/keywords/void.md).  
   
--   Les méthodes partielles peuvent avoir les paramètres [ref](../../../csharp/language-reference/keywords/ref.md) mais pas [out](../../../csharp/language-reference/keywords/out.md).  
+-   Les méthodes partielles peuvent avoir des paramètres [ref](../../../csharp/language-reference/keywords/ref.md), mais pas [out](../../../csharp/language-reference/keywords/out.md).  
   
--   Les méthodes partielles sont implicitement [privées](../../../csharp/language-reference/keywords/private.md), et par conséquent, elles ne peuvent pas être [virtuelles](../../../csharp/language-reference/keywords/virtual.md).  
+-   Les méthodes partielles sont implicitement [private](../../../csharp/language-reference/keywords/private.md) et, par conséquent, elles ne peuvent pas être [virtual](../../../csharp/language-reference/keywords/virtual.md).  
   
--   Les méthodes partielles ne peuvent pas être [externes](../../../csharp/language-reference/keywords/extern.md), car la présence du corps détermine si elles définissent ou implémentent.  
+-   Les méthodes partielles ne peuvent pas être [extern](../../../csharp/language-reference/keywords/extern.md), car la présence du corps détermine si elles sont utilisées pour la définition ou pour l’implémentation.  
   
--   Les méthodes partielles avoir des modificateurs [static](../../../csharp/language-reference/keywords/static.md) et [unsafe](../../../csharp/language-reference/keywords/unsafe.md).  
+-   Les méthodes partielles peuvent avoir des modificateurs [static](../../../csharp/language-reference/keywords/static.md) et [unsafe](../../../csharp/language-reference/keywords/unsafe.md).  
   
--   Les méthodes partielles peuvent être génériques.  Les contraintes sont placées sur la déclaration de méthode partielle de définition et peuvent être répétées facultativement sur celle d'implémentation.  Les noms de paramètre et de paramètre de type ne doivent pas obligatoirement être identiques dans la déclaration d'implémentation et dans celle de définition.  
+-   Les méthodes partielles peuvent être génériques. Les contraintes sont placées sur la déclaration de méthode partielle de définition et peuvent être répétées facultativement sur la déclaration d’implémentation. Les noms de paramètre et de paramètre de type ne doivent pas obligatoirement être identiques dans la déclaration d’implémentation et la déclaration de définition.  
   
--   Vous pouvez créer un [délégué](../../../csharp/language-reference/keywords/delegate.md) pour une méthode partielle qui a été définie et implémentée, mais pas pour une méthode partielle qui a été uniquement définie.  
+-   Vous pouvez créer un [délégué](../../../csharp/language-reference/keywords/delegate.md) pour une méthode partielle qui a été définie et implémentée, mais pas pour une méthode partielle qui a uniquement été définie.  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)   
- [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md)   
+ [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)   
  [Interfaces](../../../csharp/programming-guide/interfaces/index.md)   
- [partiel, Type](../../../csharp/language-reference/keywords/partial-type.md)
+ [partial (type)](../../../csharp/language-reference/keywords/partial-type.md)

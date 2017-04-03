@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
 translationtype: Human Translation
-ms.sourcegitcommit: eb98c703946d8be0757288ae9e00aab87b32e407
-ms.openlocfilehash: 939c6dd0621e3b1121aca52915b04bf51af1d1ef
+ms.sourcegitcommit: 633dcc6d966125139cb21c4e70dac4d4794ee9a4
+ms.openlocfilehash: da326fb823c16c7795a6a05ad302c13918b435aa
+ms.lasthandoff: 03/20/2017
 
 ---
 
@@ -67,7 +68,7 @@ La spécification de la bibliothèque .NET Standard est un ensemble d’API norm
 
 La spécification officielle est un ensemble de fichiers .cs qui définissent les API qui font partie de la norme. Le [répertoire ref](https://github.com/dotnet/corefx/tree/master/src/System.Runtime/ref) de chaque [composant](https://github.com/dotnet/corefx/tree/master/src) définit les API de la bibliothèque .NET Standard. Bien que les artefacts ref résident dans le [dépôt CoreFX](https://github.com/dotnet/corefx), ils ne sont pas spécifiques de .NET Core.
 
-Le métapackage [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) ([source](https://github.com/dotnet/corefx/blob/master/pkg/NETStandard.Library/NETStandard.Library.packages.targets)) décrit l’ensemble des bibliothèques qui définissent (en partie) une ou plusieurs versions de la bibliothèque .NET Standard.
+Le métapackage [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) ([source](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) décrit l’ensemble des bibliothèques qui définissent (en partie) une ou plusieurs versions de la bibliothèque .NET Standard.
 
 Un composant donné, comme System.Runtime, décrit ce qui suit :
 
@@ -110,7 +111,7 @@ La bibliothèque .NET Standard est compatible avec un sous-ensemble de profils d
 
 La compatibilité des bibliothèques de classes portables est fournie par le package NuGet [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility). Cette dépendance est nécessaire quand vous référencez des packages NuGet qui contiennent des bibliothèques de classes portables basées sur un profil.
 
-Les bibliothèques de classes portables basées sur un profil packagées en `netstandard` sont plus faciles à utiliser que les bibliothèques de classes portables basées sur un profil généralement packagées en project.json. Les packages `netstandard` sont compatibles avec les utilisateurs existants.
+Les bibliothèques de classes portables basées sur un profil packagées en `netstandard` sont plus faciles à utiliser que les bibliothèques de classes portables basées sur un profil packagées de manière habituelle. Les packages `netstandard` sont compatibles avec les utilisateurs existants.
 
 Voici l’ensemble des profils de bibliothèques de classes portables qui sont compatibles avec .NET Standard : 
 
@@ -131,9 +132,4 @@ Voici l’ensemble des profils de bibliothèques de classes portables qui sont c
 ## <a name="targeting-net-standard-library"></a>Ciblage de la bibliothèque .NET Standard
 
 Vous pouvez [créer des bibliothèques .NET Standard](../core/tutorials/libraries.md) en combinant le framework `netstandard` et le métapackage NETStandard.Library. Vous pouvez voir des exemples de [ciblage de la bibliothèque .NET Standard avec les outils .NET Core](../core/packages.md).
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

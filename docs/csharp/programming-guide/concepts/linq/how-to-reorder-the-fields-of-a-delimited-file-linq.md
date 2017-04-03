@@ -1,0 +1,100 @@
+---
+title: "Guide pratique pour réorganiser les champs d’un fichier délimité (LINQ) (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
+caps.latest.revision: 3
+author: BillWagner
+ms.author: wiwagn
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: a7417143a1dbe2e07e7983fb12d6f3e55e70f461
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Guide pratique pour réorganiser les champs d’un fichier délimité (LINQ) (C#)
+Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. Avec la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
+  
+ Dans l’exemple suivant, supposons que les trois colonnes représentent le nom, le prénom et l’ID de l’étudiant. Les champs sont classés par ordre alphabétique, selon le nom des étudiants. La requête produit une séquence dans laquelle la colonne ID apparaît en premier, suivie d’une deuxième colonne qui comprend à la fois le prénom et le nom de l’étudiant. Les lignes sont réorganisées d’après le champ ID. Les résultats sont enregistrés dans un nouveau fichier et les données d’origine ne sont pas modifiées.  
+  
+### <a name="to-create-the-data-file"></a>Pour créer le fichier de données  
+  
+1.  Copiez les lignes suivantes dans un fichier texte nommé spreadsheet1.csv. Enregistrez le fichier dans votre dossier de projet.  
+  
+    ```  
+    Adams,Terry,120  
+    Fakhouri,Fadi,116  
+    Feng,Hanying,117  
+    Garcia,Cesar,114  
+    Garcia,Debra,115  
+    Garcia,Hugo,118  
+    Mortensen,Sven,113  
+    O'Donnell,Claire,112  
+    Omelchenko,Svetlana,111  
+    Tucker,Lance,119  
+    Tucker,Michael,122  
+    Zabokritski,Eugene,121  
+    ```  
+  
+## <a name="example"></a>Exemple  
+  
+```csharp  
+class CSVFiles  
+{  
+    static void Main(string[] args)  
+    {  
+        // Create the IEnumerable data source  
+        string[] lines = System.IO.File.ReadAllLines(@"../../../spreadsheet1.csv");  
+  
+        // Create the query. Put field 2 first, then  
+        // reverse and combine fields 0 and 1 from the old field  
+        IEnumerable<string> query =  
+            from line in lines  
+            let x = line.Split(',')  
+            orderby x[2]  
+            select x[2] + ", " + (x[1] + " " + x[0]);  
+  
+        // Execute the query and write out the new file. Note that WriteAllLines  
+        // takes a string[], so ToArray is called on the query.  
+        System.IO.File.WriteAllLines(@"../../../spreadsheet2.csv", query.ToArray());  
+  
+        Console.WriteLine("Spreadsheet2.csv written to disk. Press any key to exit");  
+        Console.ReadKey();  
+    }  
+}  
+/* Output to spreadsheet2.csv:  
+111, Svetlana Omelchenko  
+112, Claire O'Donnell  
+113, Sven Mortensen  
+114, Cesar Garcia  
+115, Debra Garcia  
+116, Fadi Fakhouri  
+117, Hanying Feng  
+118, Hugo Garcia  
+119, Lance Tucker  
+120, Terry Adams  
+121, Eugene Zabokritski  
+122, Michael Tucker  
+ */  
+```  
+  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.  
+  
+## <a name="see-also"></a>Voir aussi  
+ [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
+ [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)   
+ [Guide pratique : générer du code XML à partir de fichiers CSV](http://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)

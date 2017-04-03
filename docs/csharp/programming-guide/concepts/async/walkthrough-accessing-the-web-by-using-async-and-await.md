@@ -1,0 +1,731 @@
+---
+title: "Procédure pas à pas : accès au web avec Async et Await (C#) | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-csharp
+ms.topic: get-started-article
+dev_langs:
+- CSharp
+ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
+caps.latest.revision: 4
+author: BillWagner
+ms.author: wiwagn
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: f2cd8842a9fcc0a075d6504c5f310d8de88dc09c
+ms.lasthandoff: 03/13/2017
+
+---
+# <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : accès au web avec Async et Await (C#)
+Vous pouvez écrire des programmes asynchrones plus facilement et intuitivement en utilisant les fonctionnalités introduites dans [!INCLUDE[vs_dev11_long](../../../../csharp/includes/vs_dev11_long_md.md)]. Vous pouvez écrire du code asynchrone qui ressemble au code synchrone et laisser le compilateur gérer les difficiles fonctions de rappel et continuations qu’implique généralement le code asynchrone.  
+  
+ Pour plus d’informations sur la fonctionnalité Async, consultez [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md).  
+  
+ Cette procédure pas à pas commence avec une application Windows Presentation Foundation (WPF) synchrone qui additionne le nombre d’octets figurant dans une liste de sites web. La procédure pas à pas convertit ensuite l’application en solution asynchrone en utilisant les nouvelles fonctionnalités.  
+  
+ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez télécharger « Exemple Async : Accès à la procédure web (C# et Visual Basic) » à partir des [exemples de code de développeur](http://go.microsoft.com/fwlink/?LinkId=255191).  
+  
+ Dans cette procédure pas à pas, vous effectuez les tâches suivantes :  
+  
+-   [Pour créer une application WPF](#CreateWPFApp)  
+  
+-   [Pour concevoir une simple fenêtre MainWindow WPF](#MainWindow)  
+  
+-   [Pour ajouter une référence](#AddRef)  
+  
+-   [Pour ajouter les directives using nécessaires](#usingDir)  
+  
+-   [Pour créer une application synchrone](#synchronous)  
+  
+-   [Pour tester la solution synchrone](#testSynch)  
+  
+-   [Pour convertir GetURLContents en méthode asynchrone](#GetURLContents)  
+  
+-   [Pour convertir SumPageSizes en méthode asynchrone](#SumPageSizes)  
+  
+-   [Pour convertir startButton_Click en méthode asynchrone](#startButton)  
+  
+-   [Pour tester la solution asynchrone](#testAsynch)  
+  
+-   [Pour remplacer la méthode GetURLContentsAsync par une méthode .NET Framework](#GetURLContentsAsync)  
+  
+-   [Exemple](#BKMK_CompleteCodeExamples)  
+  
+## <a name="prerequisites"></a>Conditions préalables  
+ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordinateur. Pour plus d’informations, consultez le [site web de Microsoft](http://go.microsoft.com/fwlink/?LinkId=235233).  
+  
+###  <a name="CreateWPFApp"></a> Pour créer une application WPF  
+  
+1.  Démarrez Visual Studio.  
+  
+2.  Dans la barre de menus, sélectionnez **Fichier**, **Nouveau**, **Projet**.  
+  
+     La boîte de dialogue **Nouveau projet** s'affiche.  
+  
+3.  Dans le volet **Modèles installés**, choisissez Visual C#, puis **Application WPF** dans la liste des types de projets.  
+  
+4.  Dans la zone de texte **Nom**, entrez `AsyncExampleWPF`, puis choisissez le bouton **OK**.  
+  
+     Le nouveau projet s’affiche dans l’**Explorateur de solutions**.  
+  
+##  <a name="BKMK_DesignWPFMainWin"></a>   
+###  <a name="MainWindow"></a> Pour concevoir une simple fenêtre MainWindow WPF  
+  
+1.  Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .  
+  
+2.  Si la fenêtre **Boîte à outils** n’est pas visible, ouvrez le menu **Affichage**, puis choisissez **Boîte à outils**.  
+  
+3.  Ajoutez un contrôle **Button** et un contrôle **TextBox** à la fenêtre **MainWindow**.  
+  
+4.  Mettez en surbrillance le contrôle **TextBox** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :  
+  
+    -   Affectez la valeur `resultsTextBox` à la propriété **Name**.  
+  
+    -   Affectez la valeur 250 à la propriété **Height**.  
+  
+    -   Affectez la valeur 500 à la propriété **Width**.  
+  
+    -   Sous l’onglet **Texte**, spécifiez une police à espacement fixe, comme Lucida Console ou Global Monospace.  
+  
+5.  Mettez en surbrillance le contrôle **Button** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :  
+  
+    -   Affectez la valeur `startButton` à la propriété **Name**.  
+  
+    -   Remplacez la valeur **Button** de la propriété **Content** par **Démarrer**.  
+  
+6.  Placez la zone de texte et le bouton de manière à ce qu’ils apparaissent tous les deux dans la fenêtre **MainWindow**.  
+  
+     Pour plus d’informations sur le concepteur XAML WPF, consultez [Création d’une interface utilisateur à l’aide du concepteur XAML](https://docs.microsoft.com/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).  
+  
+##  <a name="BKMK_AddReference"></a>   
+###  <a name="AddRef"></a> Pour ajouter une référence  
+  
+1.  Dans l’**Explorateur de solutions**, mettez en surbrillance le nom de votre projet.  
+  
+2.  Dans la barre de menus, choisissez **Projet**, **Ajouter une référence**.  
+  
+     La boîte de dialogue **Gestionnaire de références** s’affiche.  
+  
+3.  En haut de la boîte de dialogue, vérifiez que votre projet cible .NET Framework 4.5 ou version ultérieure.  
+  
+4.  Dans la zone **Assemblys**, choisissez **Framework** s’il n’est pas déjà sélectionné.  
+  
+5.  Dans la liste de noms, cochez la case **System.Net.Http**.  
+  
+6.  Choisissez le bouton **OK** pour fermer la boîte de dialogue.  
+  
+##  <a name="BKMK_AddStatesandDirs"></a>   
+###  <a name="usingDir"></a> Pour ajouter les directives using nécessaires  
+  
+1.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour MainWindow.xaml.cs, puis choisissez **Afficher le code**.  
+  
+2.  Ajoutez les directives `using` suivantes en haut du fichier de code, si elles ne sont pas déjà présentes.  
+  
+    ```cs  
+    using System.Net.Http;  
+    using System.Net;  
+    using System.IO;  
+    ```  
+  
+##  <a name="BKMK_CreatSynchApp"></a>   
+###  <a name="synchronous"></a> Pour créer une application synchrone  
+  
+1.  Dans la fenêtre de conception, MainWindow.xaml, double-cliquez sur le bouton **Démarrer** pour créer le gestionnaire d’événements `startButton_Click` dans MainWindow.xaml.cs.  
+  
+2.  Dans MainWindow.xaml.cs, copiez le code suivant dans le corps de `startButton_Click` :  
+  
+    ```cs  
+    resultsTextBox.Clear();  
+    SumPageSizes();  
+    resultsTextBox.Text += "\r\nControl returned to startButton_Click.";  
+    ```  
+  
+     Le code appelle la méthode qui pilote l'application, `SumPageSizes`, et affiche un message quand le contrôle redevient `startButton_Click`.  
+  
+3.  Le code de la solution synchrone contient les quatre méthodes suivantes :  
+  
+    -   `SumPageSizes`, qui obtient la liste des URL des pages web à partir de `SetUpURLList`, puis qui appelle `GetURLContents` et `DisplayResults` pour traiter chaque URL.  
+  
+    -   `SetUpURLList`, qui dresse et retourne la liste des adresses web.  
+  
+    -   `GetURLContents`, qui télécharge le contenu de chaque site web et retourne le contenu sous la forme d'un tableau d'octets.  
+  
+    -   `DisplayResults`, qui affiche le nombre d'octets dans le tableau d'octets pour chaque URL.  
+  
+     Copiez les quatre méthodes suivantes, puis collez-les sous le gestionnaire d’événements `startButton_Click` dans MainWindow.xaml.cs :  
+  
+    ```cs  
+    private void SumPageSizes()  
+    {  
+        // Make a list of web addresses.  
+        List<string> urlList = SetUpURLList();   
+  
+        var total = 0;  
+        foreach (var url in urlList)  
+        {  
+            // GetURLContents returns the contents of url as a byte array.  
+            byte[] urlContents = GetURLContents(url);  
+  
+            DisplayResults(url, urlContents);  
+  
+            // Update the total.  
+            total += urlContents.Length;  
+        }  
+  
+        // Display the total count for all of the web addresses.  
+        resultsTextBox.Text +=   
+            string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);  
+    }  
+  
+    private List<string> SetUpURLList()  
+    {  
+        var urls = new List<string>   
+        {   
+            "http://msdn.microsoft.com/library/windows/apps/br211380.aspx",  
+            "http://msdn.microsoft.com",  
+            "http://msdn.microsoft.com/library/hh290136.aspx",  
+            "http://msdn.microsoft.com/library/ee256749.aspx",  
+            "http://msdn.microsoft.com/library/hh290138.aspx",  
+            "http://msdn.microsoft.com/library/hh290140.aspx",  
+            "http://msdn.microsoft.com/library/dd470362.aspx",  
+            "http://msdn.microsoft.com/library/aa578028.aspx",  
+            "http://msdn.microsoft.com/library/ms404677.aspx",  
+            "http://msdn.microsoft.com/library/ff730837.aspx"  
+        };  
+        return urls;  
+    }  
+  
+    private byte[] GetURLContents(string url)  
+    {  
+        // The downloaded resource ends up in the variable named content.  
+        var content = new MemoryStream();  
+  
+        // Initialize an HttpWebRequest for the current URL.  
+        var webReq = (HttpWebRequest)WebRequest.Create(url);  
+  
+        // Send the request to the Internet resource and wait for  
+        // the response.  
+        // Note: you can't use HttpWebRequest.GetResponse in a Windows Store app.  
+        using (WebResponse response = webReq.GetResponse())  
+        {  
+            // Get the data stream that is associated with the specified URL.  
+            using (Stream responseStream = response.GetResponseStream())  
+            {  
+                // Read the bytes in responseStream and copy them to content.    
+                responseStream.CopyTo(content);  
+            }  
+        }  
+  
+        // Return the result as a byte array.  
+        return content.ToArray();  
+    }  
+  
+    private void DisplayResults(string url, byte[] content)  
+    {  
+        // Display the length of each website. The string format   
+        // is designed to be used with a monospaced font, such as  
+        // Lucida Console or Global Monospace.  
+        var bytes = content.Length;  
+        // Strip off the "http://".  
+        var displayURL = url.Replace("http://", "");  
+        resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);  
+    }  
+    ```  
+  
+##  <a name="BKMK_TestSynchSol"></a>   
+###  <a name="testSynch"></a> Pour tester la solution synchrone  
+  
+1.  Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .  
+  
+     Une sortie semblable à la liste suivante doit apparaître.  
+  
+    ```  
+  
+    msdn.microsoft.com/library/windows/apps/br211380.aspx        383832  
+    msdn.microsoft.com                                            33964  
+    msdn.microsoft.com/library/hh290136.aspx               225793  
+    msdn.microsoft.com/library/ee256749.aspx               143577  
+    msdn.microsoft.com/library/hh290138.aspx               237372  
+    msdn.microsoft.com/library/hh290140.aspx               128279  
+    msdn.microsoft.com/library/dd470362.aspx               157649  
+    msdn.microsoft.com/library/aa578028.aspx               204457  
+    msdn.microsoft.com/library/ms404677.aspx               176405  
+    msdn.microsoft.com/library/ff730837.aspx               143474  
+  
+    Total bytes returned:  1834802  
+  
+    Control returned to startButton_Click.  
+  
+    ```  
+  
+     Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temps, le thread d'interface utilisateur est bloqué alors qu'il attend que les ressources demandées se téléchargent. Par conséquent, vous ne pouvez pas déplacer, agrandir, réduire ni même fermer la fenêtre d’affichage une fois que vous avez choisi le bouton **Démarrer**. Ces efforts échouent jusqu'à ce que les nombres d'octets commencent à apparaître. Si un site web ne répond pas, vous n'avez aucune indication précise sur le site en question qui a échoué. Il est même difficile d'arrêter l'attente et de fermer le programme.  
+  
+##  <a name="BKMK_ConvertGtBtArr"></a>   
+###  <a name="GetURLContents"></a> Pour convertir GetURLContents en méthode asynchrone  
+  
+1.  Pour convertir la solution synchrone en une solution asynchrone, le meilleur endroit pour démarrer est dans `GetURLContents`, car les appels à la méthode <xref:System.Net.HttpWebRequest> <xref:System.Net.HttpWebRequest.GetResponse%2A> et à la méthode <xref:System.IO.Stream> <xref:System.IO.Stream.CopyTo%2A> se situent à l’endroit où l’application accède au web. Le .NET Framework facilite la conversion en fournissant des versions asynchrones des deux méthodes.  
+  
+     Pour plus d’informations sur les méthodes utilisées dans `GetURLContents`, consultez <xref:System.Net.WebRequest>.  
+  
+    > [!NOTE]
+    >  Quand vous suivez les étapes décrites dans cette procédure pas à pas, plusieurs erreurs de compilation apparaissent. Vous pouvez les ignorer et poursuivre la procédure.  
+  
+     Remplacez la méthode appelée à la troisième ligne de `GetURLContents` dont la valeur est `GetResponse` par la méthode <xref:System.Net.WebRequest.GetResponseAsync%2A> asynchrone basée sur les tâches.  
+  
+    ```cs  
+    using (WebResponse response = webReq.GetResponseAsync())  
+    ```  
+  
+2.  `GetResponseAsync` retourne <xref:System.Threading.Tasks.Task%601>. Dans ce cas, la *variable de retour de tâche*, `TResult`, est de type <xref:System.Net.WebResponse>. La tâche est une promesse de produire un objet `WebResponse` réel une fois que les données demandées ont été téléchargées et que la tâche s'est exécutée entièrement.  
+  
+     Pour récupérer la valeur `WebResponse` de la tâche, appliquez un opérateur [await](../../../../csharp/language-reference/keywords/await.md) à l’appel à `GetResponseAsync`, comme le montre le code suivant.  
+  
+<CodeContentPlaceHolder>5</CodeContentPlaceHolder>  
+     L’opérateur `await` suspend l’exécution de la méthode actuelle, `GetURLContents`, jusqu’à ce que la tâche attendue soit terminée. Entre-temps, le contrôle retourne à l'appelant de la méthode actuelle. Dans cet exemple, la méthode actuelle est `GetURLContents` et l'appelant est `SumPageSizes`. Quand la tâche est terminée, l'objet `WebResponse` promis est produit sous forme de valeur de la tâche attendue et assigné à la variable `response`.  
+  
+     The previous statement can be separated into the following two statements to clarify what happens.  
+  
+<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
+     L'appel à `webReq.GetResponseAsync` retourne un `Task(Of WebResponse)` ou `Task<WebResponse>`. Un opérateur await est alors appliqué à la tâche pour récupérer la valeur `WebResponse`.  
+  
+     If your async method has work to do that doesn’t depend on the completion of the task, the method can continue with that work between these two statements, after the call to the async method and before the `await` operator is applied. For examples, see [How to: Make Multiple Web Requests in Parallel by Using async and await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) and [How to: Extend the async Walkthrough by Using Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
+  
+3.  Comme vous avez ajouté l’opérateur `await` à l’étape précédente, une erreur de compilation se produit. L’opérateur peut être utilisé uniquement dans les méthodes marquées avec le modificateur [async](../../../../csharp/language-reference/keywords/async.md). Ignorez l'erreur quand que vous répétez les étapes de conversion pour remplacer l'appel à `CopyTo` par un appel à `CopyToAsync`.  
+  
+    -   Remplacez le nom de la méthode appelée par <xref:System.IO.Stream.CopyToAsync%2A>.  
+  
+    -   La méthode `CopyTo` ou `CopyToAsync` copie les octets dans son argument, `content`, et ne retourne pas de valeur significative. Dans la version synchrone, l'appel à `CopyTo` est une simple instruction qui ne retourne aucune valeur. La version asynchrone, `CopyToAsync`, retourne <xref:System.Threading.Tasks.Task>. La tâche fonctionne comme Task(void) et permet à la méthode d’être attendue. Appliquez `Await` ou `await` à l'appel à `CopyToAsync`, comme le montre le code suivant.  
+  
+<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
+         L'instruction précédente abrège les deux lignes de code suivantes.  
+  
+<CodeContentPlaceHolder>8</CodeContentPlaceHolder>  
+4.  Tout ce qui reste à faire dans `GetURLContents` consiste à adapter la signature de la méthode. L’opérateur `await` peut être utilisé uniquement dans les méthodes marquées avec le modificateur [async](../../../../csharp/language-reference/keywords/async.md). Ajoutez le modificateur pour marquer la méthode en tant que *méthode async*, comme le montre le code suivant.  
+  
+<CodeContentPlaceHolder>9</CodeContentPlaceHolder>  
+5.  Le type de retour d’une méthode async peut uniquement être <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> ou `void` en C#. En règle générale, le type de retour `void` est utilisé uniquement dans un gestionnaire d’événements asynchrones, où `void` est obligatoire. Dans d’autres cas, vous utilisez `Task(T)` si la méthode exécutée comporte une instruction [return](../../../../csharp/language-reference/keywords/return.md) qui retourne une valeur de type T et vous utilisez `Task` si la méthode exécutée ne retourne aucune valeur significative. Vous pouvez considérer que le type de retour `Task` signifie Task(void).  
+  
+     Pour plus d’informations, consultez [Types de retour Async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+  
+     La méthode `GetURLContents` comporte une instruction return et l'instruction retourne un tableau d'octets. Ainsi, le type de retour de la version asynchrone est Task(T), où T est un tableau d'octets. Apportez les modifications suivantes dans la signature de la méthode :  
+  
+    -   Remplacez le type de retour par `Task<byte[]>`.  
+  
+    -   Par convention, les méthodes asynchrones portent des noms qui se terminent par « Async ». Renommez alors la méthode `GetURLContentsAsync`.  
+  
+     Le code suivant illustre ces modifications.  
+  
+    ```cs  
+    private async Task<byte[]> GetURLContentsAsync(string url)  
+    ```  
+  
+     Avec ces quelques modifications, la conversion de `GetURLContents` en méthode asynchrone est terminée.  
+  
+##  <a name="BKMK_ConvertSumPagSzs"></a>   
+###  <a name="SumPageSizes"></a> Pour convertir SumPageSizes en méthode asynchrone  
+  
+1.  Répétez les étapes de la procédure précédente pour `SumPageSizes`. Tout d'abord, modifiez l'appel à `GetURLContents` en appel asynchrone.  
+  
+    -   Remplacez le nom de la méthode appelée `GetURLContents` par `GetURLContentsAsync`, si vous ne l'avez pas déjà fait.  
+  
+    -   Appliquez `await` à la tâche que `GetURLContentsAsync` retourne pour obtenir la valeur du tableau d’octets.  
+  
+     Le code suivant illustre ces modifications.  
+  
+    ```cs  
+    byte[] urlContents = await GetURLContentsAsync(url);  
+    ```  
+  
+     L'instruction précédente abrège les deux lignes de code suivantes.  
+  
+    ```cs  
+    // GetURLContentsAsync returns a Task<T>. At completion, the task  
+    // produces a byte array.  
+    //Task<byte[]> getContentsTask = GetURLContentsAsync(url);  
+    //byte[] urlContents = await getContentsTask;  
+    ```  
+  
+2.  Apportez les modifications suivantes dans la signature de la méthode :  
+  
+    -   Marquez la méthode avec le modificateur `async`.  
+  
+    -   Ajoutez « Async » au nom de la méthode.  
+  
+    -   Il n'existe aucune variable de retour de tâche, T, cette fois, car `SumPageSizesAsync` ne retourne pas de valeur pour T. (La méthode ne comporte pas d’instruction `return`.) Toutefois, la méthode doit retourner un `Task` pour pouvoir être attendue. Par conséquent, remplacez le type de retour de la méthode `void` par `Task`.  
+  
+     Le code suivant illustre ces modifications.  
+  
+    ```cs  
+    private async Task SumPageSizesAsync()  
+    ```  
+  
+     La conversion de `SumPageSizes` en `SumPageSizesAsync` est terminée.  
+  
+##  <a name="BKMK_Cnvrtbttn1"></a>   
+###  <a name="startButton"></a> Pour convertir startButton_Click en méthode asynchrone  
+  
+1.  Dans le gestionnaire d'événements, remplacez le nom de la méthode appelée `SumPageSizes` par `SumPageSizesAsync`, si vous ne l'avez pas déjà fait.  
+  
+2.  Étant donné que `SumPageSizesAsync` est une méthode async, modifiez le code dans le gestionnaire d'événements de sorte à attendre le résultat.  
+  
+     L'appel à `SumPageSizesAsync` reflète l'appel à `CopyToAsync` dans `GetURLContentsAsync`. L'appel retourne un `Task`, et non un `Task(T)`.  
+  
+     Comme dans les procédures précédentes, vous pouvez convertir l'appel à l'aide d'une ou deux instructions. Le code suivant illustre ces modifications.  
+  
+    ```cs  
+    // One-step async call.  
+    await SumPageSizesAsync();  
+  
+    // Two-step async call.  
+    //Task sumTask = SumPageSizesAsync();  
+    //await sumTask;  
+    ```  
+  
+3.  Pour empêcher une nouvelle entrée accidentelle de l’opération, ajoutez l’instruction suivante en haut de `startButton_Click` pour désactiver le bouton **Démarrer**.  
+  
+    ```cs  
+    // Disable the button until the operation is complete.  
+    startButton.IsEnabled = false;  
+    ```  
+  
+     Vous pouvez réactiver le bouton à la fin du gestionnaire d'événements.  
+  
+    ```cs  
+    // Reenable the button in case you want to run the operation again.  
+    startButton.IsEnabled = true;  
+    ```  
+  
+     Pour plus d’informations sur la réentrance, consultez [Gestion de la réentrance dans les applications asynchrones (C#)](../../../../csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps.md).  
+  
+4.  Enfin, ajoutez le modificateur `async` à la déclaration pour que le gestionnaire d’événements puisse attendre `SumPagSizesAsync`.  
+  
+    ```cs  
+    private async void startButton_Click(object sender, RoutedEventArgs e)  
+    ```  
+  
+     En règle générale, les noms des gestionnaires d'événements ne sont pas modifiés. Le type de retour n’est pas remplacé par `Task`, car les gestionnaires d’événements doivent retourner `void`.  
+  
+     La conversion du projet depuis un traitement synchrone vers un traitement asynchrone est terminée.  
+  
+##  <a name="BKMK_testAsynchSolution"></a>   
+###  <a name="testAsynch"></a> Pour tester la solution asynchrone  
+  
+1.  Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .  
+  
+2.  Une sortie semblable à la sortie de la solution synchrone doit apparaître. En revanche, observez les différences ci-après.  
+  
+    -   Les résultats ne se produisent pas tous en même temps, une fois le traitement terminé. Par exemple, les deux programmes contiennent une ligne dans `startButton_Click` qui efface la zone de texte. L’objectif est d’effacer la zone de texte entre les exécutions si vous choisissez le bouton **Démarrer** une deuxième fois, une fois qu’un jeu de résultats est apparu. Dans la version synchrone, la zone de texte s’efface juste avant que les nombres n’apparaissent pour la deuxième fois, quand les téléchargements sont terminés et que le thread d’interface utilisateur est libre d’effectuer autre chose. Dans la version asynchrone, la zone de texte s’efface immédiatement après avoir choisi le bouton **Démarrer**.  
+  
+    -   Plus important encore, le thread d'interface utilisateur n'est pas bloqué pendant les téléchargements. Vous pouvez déplacer ou redimensionner la fenêtre pendant le téléchargement, la comptabilisation et l'affichage des ressources web. Si l’un des sites web est lent ou ne répond pas, vous pouvez annuler l’opération en choisissant le bouton **Fermer** (le x dans le champ rouge situé dans le coin supérieur droit).  
+  
+##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
+###  <a name="GetURLContentsAsync"></a> Pour remplacer la méthode GetURLContentsAsync par une méthode .NET Framework  
+  
+1.  Le .NET Framework 4.5 propose de nombreuses méthodes async que vous pouvez utiliser. L’une d’elles, la méthode <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, remplit les fonctions nécessaires dans le cadre de cette procédure pas à pas. Vous pouvez l'utiliser à la place de la méthode `GetURLContentsAsync` que vous avez créée précédemment.  
+  
+     La première étape consiste à créer un objet `HttpClient` dans la méthode `SumPageSizesAsync`. Ajoutez la déclaration suivante au début de la méthode.  
+  
+    ```cs  
+    // Declare an HttpClient object and increase the buffer size. The  
+    // default buffer size is 65,536.  
+    HttpClient client =  
+        new HttpClient() { MaxResponseContentBufferSize = 1000000 };  
+    ```  
+  
+2.  Dans `SumPageSizesAsync,`, remplacez l'appel à votre méthode `GetURLContentsAsync` par un appel à la méthode `HttpClient`.  
+  
+    ```  
+    byte[] urlContents = await client.GetByteArrayAsync(url);  
+    ```  
+  
+3.  Supprimez ou commentez la méthode `GetURLContentsAsync` que vous avez écrite.  
+  
+4.  Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .  
+  
+     Le comportement de cette version du projet doit correspondre à celui décrit par la procédure « Pour tester la solution asynchrone » mais avec encore moins d'efforts de votre part.  
+  
+##  <a name="BKMK_CompleteCodeExamples"></a> Exemple  
+ Le code suivant inclut l'exemple complet de la conversion d'une solution synchrone en solution asynchrone à l'aide de la méthode `GetURLContentsAsync` asynchrone que vous avez écrite. Remarquez qu’il ressemble fortement à la solution synchrone d’origine.  
+  
+```cs  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;  
+using System.Windows;  
+using System.Windows.Controls;  
+using System.Windows.Data;  
+using System.Windows.Documents;  
+using System.Windows.Input;  
+using System.Windows.Media;  
+using System.Windows.Media.Imaging;  
+using System.Windows.Navigation;  
+using System.Windows.Shapes;  
+  
+// Add the following using directives, and add a reference for System.Net.Http.  
+using System.Net.Http;  
+using System.IO;  
+using System.Net;  
+  
+namespace AsyncExampleWPF  
+{  
+    public partial class MainWindow : Window  
+    {  
+        public MainWindow()  
+        {  
+            InitializeComponent();  
+        }  
+  
+        private async void startButton_Click(object sender, RoutedEventArgs e)  
+        {  
+            // Disable the button until the operation is complete.  
+            startButton.IsEnabled = false;  
+  
+            resultsTextBox.Clear();  
+  
+            // One-step async call.  
+            await SumPageSizesAsync();  
+  
+            // Two-step async call.  
+            //Task sumTask = SumPageSizesAsync();  
+            //await sumTask;  
+  
+            resultsTextBox.Text += "\r\nControl returned to startButton_Click.\r\n";  
+  
+            // Reenable the button in case you want to run the operation again.  
+            startButton.IsEnabled = true;  
+        }  
+  
+        private async Task SumPageSizesAsync()  
+        {  
+            // Make a list of web addresses.  
+            List<string> urlList = SetUpURLList();  
+  
+            var total = 0;  
+  
+            foreach (var url in urlList)  
+            {  
+                byte[] urlContents = await GetURLContentsAsync(url);  
+  
+                // The previous line abbreviates the following two assignment statements.  
+  
+                // GetURLContentsAsync returns a Task<T>. At completion, the task  
+                // produces a byte array.  
+                //Task<byte[]> getContentsTask = GetURLContentsAsync(url);  
+                //byte[] urlContents = await getContentsTask;  
+  
+                DisplayResults(url, urlContents);  
+  
+                // Update the total.            
+                total += urlContents.Length;  
+            }  
+            // Display the total count for all of the websites.  
+            resultsTextBox.Text +=  
+                string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);  
+        }  
+  
+        private List<string> SetUpURLList()  
+        {  
+            List<string> urls = new List<string>   
+            {   
+                "http://msdn.microsoft.com/library/windows/apps/br211380.aspx",  
+                "http://msdn.microsoft.com",  
+                "http://msdn.microsoft.com/library/hh290136.aspx",  
+                "http://msdn.microsoft.com/library/ee256749.aspx",  
+                "http://msdn.microsoft.com/library/hh290138.aspx",  
+                "http://msdn.microsoft.com/library/hh290140.aspx",  
+                "http://msdn.microsoft.com/library/dd470362.aspx",  
+                "http://msdn.microsoft.com/library/aa578028.aspx",  
+                "http://msdn.microsoft.com/library/ms404677.aspx",  
+                "http://msdn.microsoft.com/library/ff730837.aspx"  
+            };  
+            return urls;  
+        }  
+  
+        private async Task<byte[]> GetURLContentsAsync(string url)  
+        {  
+            // The downloaded resource ends up in the variable named content.  
+            var content = new MemoryStream();  
+  
+            // Initialize an HttpWebRequest for the current URL.  
+            var webReq = (HttpWebRequest)WebRequest.Create(url);  
+  
+            // Send the request to the Internet resource and wait for  
+            // the response.                  
+            using (WebResponse response = await webReq.GetResponseAsync())  
+  
+            // The previous statement abbreviates the following two statements.  
+  
+            //Task<WebResponse> responseTask = webReq.GetResponseAsync();  
+            //using (WebResponse response = await responseTask)  
+            {  
+                // Get the data stream that is associated with the specified url.  
+                using (Stream responseStream = response.GetResponseStream())  
+                {  
+                    // Read the bytes in responseStream and copy them to content.   
+                    await responseStream.CopyToAsync(content);  
+  
+                    // The previous statement abbreviates the following two statements.  
+  
+                    // CopyToAsync returns a Task, not a Task<T>.  
+                    //Task copyTask = responseStream.CopyToAsync(content);  
+  
+                    // When copyTask is completed, content contains a copy of  
+                    // responseStream.  
+                    //await copyTask;  
+                }  
+            }  
+            // Return the result as a byte array.  
+            return content.ToArray();  
+        }  
+  
+        private void DisplayResults(string url, byte[] content)  
+        {  
+            // Display the length of each website. The string format   
+            // is designed to be used with a monospaced font, such as  
+            // Lucida Console or Global Monospace.  
+            var bytes = content.Length;  
+            // Strip off the "http://".  
+            var displayURL = url.Replace("http://", "");  
+            resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);  
+        }  
+    }  
+}  
+```  
+  
+ Le code suivant inclut l'exemple complet de la solution qui utilise la méthode `HttpClient`, `GetByteArrayAsync`.  
+  
+```cs  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;  
+using System.Windows;  
+using System.Windows.Controls;  
+using System.Windows.Data;  
+using System.Windows.Documents;  
+using System.Windows.Input;  
+using System.Windows.Media;  
+using System.Windows.Media.Imaging;  
+using System.Windows.Navigation;  
+using System.Windows.Shapes;  
+  
+// Add the following using directives, and add a reference for System.Net.Http.  
+using System.Net.Http;  
+using System.IO;  
+using System.Net;  
+  
+namespace AsyncExampleWPF  
+{  
+    public partial class MainWindow : Window  
+    {  
+        public MainWindow()  
+        {  
+            InitializeComponent();  
+        }  
+  
+        private async void startButton_Click(object sender, RoutedEventArgs e)  
+        {  
+            resultsTextBox.Clear();  
+  
+            // Disable the button until the operation is complete.  
+            startButton.IsEnabled = false;  
+  
+            // One-step async call.  
+            await SumPageSizesAsync();  
+  
+            //// Two-step async call.  
+            //Task sumTask = SumPageSizesAsync();  
+            //await sumTask;  
+  
+            resultsTextBox.Text += "\r\nControl returned to startButton_Click.\r\n";  
+  
+            // Reenable the button in case you want to run the operation again.  
+            startButton.IsEnabled = true;  
+        }  
+  
+        private async Task SumPageSizesAsync()  
+        {  
+            // Declare an HttpClient object and increase the buffer size. The  
+            // default buffer size is 65,536.  
+            HttpClient client =  
+                new HttpClient() { MaxResponseContentBufferSize = 1000000 };  
+  
+            // Make a list of web addresses.  
+            List<string> urlList = SetUpURLList();  
+  
+            var total = 0;  
+  
+            foreach (var url in urlList)  
+            {  
+                // GetByteArrayAsync returns a task. At completion, the task  
+                // produces a byte array.  
+                byte[] urlContents = await client.GetByteArrayAsync(url);                 
+  
+                // The following two lines can replace the previous assignment statement.  
+                //Task<byte[]> getContentsTask = client.GetByteArrayAsync(url);  
+                //byte[] urlContents = await getContentsTask;  
+  
+                DisplayResults(url, urlContents);  
+  
+                // Update the total.  
+                total += urlContents.Length;  
+            }  
+  
+            // Display the total count for all of the websites.  
+            resultsTextBox.Text +=  
+                string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);  
+        }  
+  
+        private List<string> SetUpURLList()  
+        {  
+            List<string> urls = new List<string>   
+            {   
+                "http://msdn.microsoft.com/library/windows/apps/br211380.aspx",  
+                "http://msdn.microsoft.com",  
+                "http://msdn.microsoft.com/library/hh290136.aspx",  
+                "http://msdn.microsoft.com/library/ee256749.aspx",  
+                "http://msdn.microsoft.com/library/hh290138.aspx",  
+                "http://msdn.microsoft.com/library/hh290140.aspx",  
+                "http://msdn.microsoft.com/library/dd470362.aspx",  
+                "http://msdn.microsoft.com/library/aa578028.aspx",  
+                "http://msdn.microsoft.com/library/ms404677.aspx",  
+                "http://msdn.microsoft.com/library/ff730837.aspx"  
+            };  
+            return urls;  
+        }  
+  
+        private void DisplayResults(string url, byte[] content)  
+        {  
+            // Display the length of each website. The string format   
+            // is designed to be used with a monospaced font, such as  
+            // Lucida Console or Global Monospace.  
+            var bytes = content.Length;  
+            // Strip off the "http://".  
+            var displayURL = url.Replace("http://", "");  
+            resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);  
+        }  
+    }  
+}  
+```  
+  
+## <a name="see-also"></a>Voir aussi  
+ [Exemple Async : Accès à la procédure web (C# et Visual Basic)](http://go.microsoft.com/fwlink/?LinkId=255191)   
+ [async](../../../../csharp/language-reference/keywords/async.md)   
+ [await](../../../../csharp/language-reference/keywords/await.md)   
+ [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
+ [Types de retour Async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)   
+ [Programmation asynchrone basée sur les tâches](http://go.microsoft.com/fwlink/?LinkId=204847)   
+ [Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)   
+ [Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

@@ -1,35 +1,53 @@
 ---
-title: "where (contrainte de type g&#233;n&#233;rique) (R&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "whereconstraint"
-  - "whereconstraint_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "where (contrainte de type générique) (C#)"
+title: "where (contrainte de type générique) (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- whereconstraint
+- whereconstraint_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- where (generic type constraint) [C#]
 ms.assetid: d7aa871b-0714-416a-bab2-96f87ada4310
 caps.latest.revision: 10
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 10
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: d5c0b9fff370893d890518c6a95a74889b3f2295
+ms.lasthandoff: 03/13/2017
+
 ---
-# where (contrainte de type g&#233;n&#233;rique) (R&#233;f&#233;rence C#)
-Dans une définition de type générique, la clause `where` permet de spécifier des contraintes sur les types qui peuvent être utilisés comme arguments pour un paramètre de type défini dans une déclaration générique.  Vous pouvez, par exemple, déclarer une classe générique, `MyGenericClass`, telle que le paramètre de type `T` implémente l'interface <xref:System.IComparable%601> :  
+# <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
+Dans une définition de type générique, la clause `where` permet de spécifier des contraintes sur les types qui peuvent être utilisés comme arguments pour un paramètre de type défini dans une déclaration générique. Vous pouvez, par exemple, déclarer une classe générique, `MyGenericClass`, telle que le paramètre de type `T` implémente l’interface <xref:System.IComparable%601> :  
   
 <CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
 > [!NOTE]
->  Pour plus d'informations sur la clause where dans une expression de requête, consultez [where, clause](../../../csharp/language-reference/keywords/where-clause.md).  
+>  Pour plus d’informations sur la clause where dans une expression de requête, consultez [where, clause](../../../csharp/language-reference/keywords/where-clause.md).  
   
- Outre les contraintes d'interface, une clause `where` peut contenir une contrainte de classe de base qui déclare qu'un type doit avoir la classe spécifiée en tant que classe de base \(ou être cette classe\) pour être utilisé comme un argument de type pour ce type générique.  Si une telle contrainte est utilisée, elle doit apparaître avant toute autre contrainte pesant sur ce paramètre de type.  
+ Outre les contraintes d’interface, une clause `where` peut contenir une contrainte de classe de base qui déclare qu’un type doit avoir la classe spécifiée en tant que classe de base (ou être cette classe) pour être utilisé comme un argument de type pour ce type générique. Si une telle contrainte est utilisée, elle doit apparaître avant toute autre contrainte pesant sur ce paramètre de type.  
   
  [!code-cs[csrefKeywordsContextual#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_1.cs)]  
   
- La clause `where` peut également inclure une contrainte de constructeur.  Il est possible de créer une instance d'un paramètre de type à l'aide de l'opérateur new ; toutefois, il faut que le paramètre de type soit contraint par la contrainte du constructeur, `new()`.  La contrainte [new\(\)](../../../csharp/language-reference/keywords/new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut.  Par exemple :  
+ La clause `where` peut également inclure une contrainte de constructeur. Il est possible de créer une instance d’un paramètre de type à l’aide de l’opérateur new ; toutefois, il est nécessaire que le paramètre de type soit contraint par la contrainte du constructeur, `new()`. La [contrainte new()](../../../csharp/language-reference/keywords/new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut. Exemple :  
   
  [!code-cs[csrefKeywordsContextual#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/where-generic-type-constraint_2.cs)]  
   
@@ -45,22 +63,22 @@ Dans une définition de type générique, la clause `where` permet de spécifier
 public bool MyMethod<T>(T t) where T : IMyInterface { }  
 ```  
   
- Remarquez que la syntaxe décrivant les contraintes de paramètre de type sur les délégués est la même que celle des méthodes :  
+ Notez que la syntaxe décrivant les contraintes de paramètre de type sur les délégués est la même que celle des méthodes :  
   
 ```  
 delegate T MyDelegate<T>() where T : new()  
 ```  
   
- Pour plus d'informations sur les délégués génériques, consultez [Délégués génériques](../../../csharp/programming-guide/generics/generic-delegates.md).  
+ Pour plus d’informations sur les délégués génériques, consultez [Délégués génériques](../../../csharp/programming-guide/generics/generic-delegates.md).  
   
- Pour plus d'informations sur la syntaxe et l'utilisation de contraintes, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
+ Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
  [new, contrainte](../../../csharp/language-reference/keywords/new-constraint.md)   
  [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)

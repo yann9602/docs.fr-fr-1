@@ -1,45 +1,63 @@
 ---
-title: "D&#233;limiteurs pour les balises de documentation (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/** */ délimiteurs pour les balises de documentation C#"
-  - "/// délimiteur pour les balises de documentation"
-  - "XML (C#), délimiteurs"
+title: "Délimiteurs pour les balises de documentation (Guide de programmation C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- XML [C#], delimiters
+- /** */ delimiters for C# documentation tags
+- /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
 caps.latest.revision: 21
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 21
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: ba3b38a8bce9f5b49ef863acfae04bc2a39c052a
+ms.lasthandoff: 03/13/2017
+
 ---
-# D&#233;limiteurs pour les balises de documentation (Guide de programmation C#)
-Pour être utilisés, les commentaires de document XML requièrent des délimiteurs, qui indiquent au compilateur où commence et se termine un commentaire de documentation.  Vous pouvez utiliser les types de délimiteurs ci\-dessous avec les balises de documentation XML :  
+# <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Délimiteurs pour les balises de documentation (Guide de programmation C#)
+L’utilisation de commentaires de documentation XML exige des délimiteurs, qui indiquent au compilateur où un commentaire de documentation commence et se termine. Vous pouvez utiliser les genres de délimiteurs ci-dessous avec les balises de documentation XML :  
   
  `///`  
- Délimiteur sur une ligne.  Il s'agit de la forme illustrée dans les exemples de documentation et utilisée par les modèles de projets Visual C\#.  S'il y a un caractère espace blanc qui suit le délimiteur, ce caractère n'est pas inclus dans la sortie XML.  
+ Délimiteur à une ligne. Il s’agit de la forme illustrée dans les exemples de documentation et utilisée par les modèles de projet Visual C#. Si un caractère espace blanc suit le délimiteur, ce caractère n’est pas inclus dans la sortie XML.  
   
 > [!NOTE]
->  L'IDE de Visual Studio inclut une fonctionnalité appelée Édition de commentaire intelligente qui insère automatiquement les balises \<summary\> et \<\/summary\>, et place le curseur dans ces balises lorsque vous tapez le délimiteur `///` dans l'éditeur de code.  Accédez à cette fonctionnalité à partir de [Options, Éditeur de texte, C\#, Mise en forme](/visual-studio/ide/reference/options-text-editor-csharp-formatting) dans vos pages de propriétés de projet.  
+>  L’IDE Visual Studio offre une fonctionnalité d’édition de commentaire intelligente, qui insère automatiquement les balises \<summary> et \</summary>, et place le curseur dans ces balises quand vous tapez le délimiteur `///` dans l’Éditeur de code. Vous pouvez accéder à cette fonctionnalité à partir d’[Options, Éditeur de texte, C#, Mise en forme](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-csharp-formatting) dans les pages de propriétés de votre projet.  
   
  `/** */`  
  Séparateurs multilignes.  
   
- Il y a des règles de mise en forme à suivre lorsque vous utilisez les délimiteurs `/** */`.  
+ Il existe des règles de mise en forme à suivre quand vous utilisez les délimiteurs `/** */`.  
   
--   Sur la ligne qui contient le délimiteur `/**` , si le reste de la ligne correspond à un espace blanc, la ligne n'est pas traitée comme commentaire.  Si le premier caractère après le délimiteur `/**`  est un espace blanc, il est ignoré et le reste de la ligne est traité.  Sinon, tout le texte de la ligne qui suit le délimiteur `/**` est traité comme une partie du commentaire.  
+-   Sur la ligne qui contient le délimiteur `/**`, si le reste de la ligne n’est constitué que d’espace blanc, la ligne n’est pas traitée pour les commentaires. Si le premier caractère après le délimiteur `/**` est un espace blanc, celui-ci est ignoré et le reste de la ligne est traité. Sinon, tout le texte de la ligne après le délimiteur `/**` est traité comme faisant partie du commentaire.  
   
--   Sur la ligne qui contient le délimiteur `*/` , si seul un espace blanc précède le délimiteur `*/`, la ligne est ignorée.  Sinon, le texte précédant le délimiteur `*/` sur la ligne est traité comme une partie du commentaire, sujet aux règles des critères spéciaux décrites dans le paragraphe suivant.  
+-   Sur la ligne qui contient le délimiteur `*/`, s’il n’y a que des espaces blancs jusqu’au délimiteur `*/`, cette ligne est ignorée. Sinon, le texte de la ligne jusqu’au délimiteur `*/` est traité comme faisant partie du commentaire, conformément aux règles de critères spéciaux décrites dans la puce suivante.  
   
--   Pour les lignes après celle qui commence par le délimiteur `/**`, le compilateur recherche un modèle commun au début de chaque ligne.  Le modèle peut se composer d'un espace blanc facultatif et un astérisque \(`*`\), suivis par d'autres espaces blancs facultatifs.  Si le compilateur trouve un modèle commun au début de chaque ligne qui ne commence pas par le délimiteur `/**` ou le délimiteur `*/`, il ignore ce modèle pour chaque ligne.  
+-   Pour les lignes situées après celle qui commence par le délimiteur `/**`, le compilateur recherche un modèle commun au début de chaque ligne. Le modèle peut se composer d’un espace blanc facultatif et d’un astérisque (`*`), suivi d’autres espaces blancs facultatifs. Si le compilateur détecte un modèle commun au début de chaque ligne qui ne commence pas par le délimiteur `/**` ou `*/`, il ignore ce modèle pour chaque ligne.  
   
  Les exemples suivants illustrent ces règles.  
   
--   La seule partie du commentaire suivant qui sera traitée est la ligne commençant par `<summary>`.  Les trois formats de balise produisent les mêmes commentaires.  
+-   La seule partie du commentaire suivant qui sera traitée est la ligne qui commence par `<summary>`. Les trois formats de balise produisent les mêmes commentaires.  
   
     ```  
     /** <summary>text</summary> */   
@@ -54,7 +72,7 @@ Pour être utilisés, les commentaires de document XML requièrent des délimite
   
     ```  
   
--   Le compilateur identifie un modèle commun " \* " au début des deuxième et troisième lignes.  Le modèle n'est pas inclus dans la sortie.  
+-   Le compilateur identifie un modèle commun « * » au début des deuxième et troisième lignes. Le modèle n’est pas inclus dans la sortie.  
   
     ```  
     /**   
@@ -62,7 +80,7 @@ Pour être utilisés, les commentaires de document XML requièrent des délimite
      * text </summary>*/   
     ```  
   
--   Le compilateur ne trouve aucun modèle commun dans le commentaire suivant parce que le deuxième caractère sur la troisième ligne n'est pas un astérisque.  Par conséquent, tout le texte sur les deuxième et troisième lignes est traité en tant que commentaire.  
+-   Le compilateur ne détecte aucun modèle commun dans le commentaire suivant, car le deuxième caractère sur la troisième ligne n’est pas un astérisque. Ainsi, tout le texte des deuxième et troisième lignes est traité comme faisant partie du commentaire.  
   
     ```  
     /**   
@@ -71,7 +89,7 @@ Pour être utilisés, les commentaires de document XML requièrent des délimite
     */   
     ```  
   
--   Le compilateur ne trouve aucune séquence dans ce commentaire pour deux raisons.  En premier lieu, le nombre d'espaces avant que l'astérisque n'est pas cohérent.  D'autre part, la cinquième ligne commence par une tabulation, qui ne correspond pas à des espaces.  Par conséquent, tout le texte entre les lignes deux et cinq est traité en tant que commentaire.  
+-   Le compilateur ne détecte aucun modèle dans le commentaire suivant pour deux raisons. Tout d’abord, le nombre d’espaces avant l’astérisque n’est pas cohérent. Ensuite, la cinquième ligne commence par une tabulation, qui ne correspond pas à des espaces. Ainsi, tout le texte des lignes deux à cinq est traité comme faisant partie du commentaire.  
   
     ```  
     /**   
@@ -82,8 +100,8 @@ Pour être utilisés, les commentaires de document XML requièrent des délimite
     */   
     ```  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Commentaires de documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)   
- [\/doc \(Process Documentation Comments\)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
- [Commentaires de documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)   
+ [/doc (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
+ [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)

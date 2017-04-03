@@ -1,46 +1,65 @@
 ---
-title: "&lt;summary&gt; (guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "<summary>"
-  - "summary"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "<summary> (balise XML C#)"
-  - "summary (balise XML C#)"
+title: '&lt;summary&gt; (Guide de programmation C#) | Microsoft Docs'
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- <summary>
+- summary
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- <summary> C# XML tag
+- summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: b74e5bf964ff82f88fe2822257a64eccb5697535
+ms.lasthandoff: 03/13/2017
+
 ---
-# &lt;summary&gt; (guide de programmation C#)
-## Syntaxe  
+# <a name="ltsummarygt-c-programming-guide"></a>&lt;summary&gt; (Guide de programmation C#)
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 <summary>description</summary>  
 ```  
   
-#### Paramètres  
+#### <a name="parameters"></a>Paramètres  
  `description`  
- Résumé de l'objet.  
+ Résumé de l’objet.  
   
-## Notes  
- La balise \<summary\> doit être utilisée pour décrire un type ou un membre d'un type.  Utilisez [\<remarks\>](../../../csharp/programming-guide/xmldoc/remarks.md) pour ajouter des informations complémentaires à une description de type.  Utilisez l'[attribut cref](../../../csharp/programming-guide/xmldoc/cref-attribute.md) pour activer des outils documentaires tels que [Sandcastle \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkId=124061) permettant de créer des liens hypertexte internes aux pages de documentation pour les éléments de code.  
+## <a name="remarks"></a>Remarques  
+ La balise \<summary> doit être utilisée pour décrire un type ou un membre de type. Utilisez [\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) pour ajouter des informations supplémentaires à une description de type. Utilisez l’[attribut cref](../../../csharp/programming-guide/xmldoc/cref-attribute.md) pour activer des outils de documentation tels que [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) afin de créer des liens hypertexte internes aux pages de documentation pour les éléments de code.  
   
- Le texte de la balise \<summary\> est la seule source d'information sur le type dans IntelliSense. Il est également affiché dans l'[Object Browser Window](http://msdn.microsoft.com/fr-fr/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda).  
+ Le texte de la balise \<summary> est la seule source d’informations sur le type dans IntelliSense et il est également affiché dans la fenêtre Explorateur d’objets.  
   
- Compilez avec [\/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation et les placer dans un fichier.  Pour créer la documentation finale qui est basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil de type [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061).  
+ Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_1.cs)]  
   
- L'exemple précédent génère le fichier XML suivant.  
+ L’exemple précédent génère le fichier XML suivant.  
   
 ```  
 <?xml version="1.0"?>  
@@ -65,12 +84,12 @@ caps.handback.revision: 15
 </doc>  
 ```  
   
-## Exemple  
- L'exemple suivant indique comment faire une référence `cref` à un type générique.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment effectuer une référence `cref` à un type générique.  
   
  [!code-cs[csProgGuideDocComments#11](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_2.cs)]  
   
- L'exemple précédent génère le fichier XML suivant.  
+ L’exemple précédent génère le fichier XML suivant.  
   
 ```  
 <?xml version="1.0"?>  
@@ -97,6 +116,6 @@ caps.handback.revision: 15
   
 ```  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Balises recommandées pour les commentaires de documentation](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

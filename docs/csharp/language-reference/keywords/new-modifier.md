@@ -1,48 +1,66 @@
 ---
-title: "new, modificateur (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "new modifier (mot clé C#)"
+title: "new, modificateur (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
 caps.latest.revision: 28
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 28
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 3c636d50e6c871c529104d5f2985e861f9a652b2
+ms.lasthandoff: 03/13/2017
+
 ---
-# new, modificateur (r&#233;f&#233;rence C#)
-En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` masque explicitement un membre qui est hérité d'une classe de base.  Lorsque vous masquez un membre hérité, la version dérivée du membre remplace la version de classe de base.  Bien que vous puissiez masquer des membres sans utiliser le modificateur `new`, vous obtenez un avertissement du compilateur.  Si vous utilisez `new` pour masquer explicitement un membre, il supprime cet avertissement.  
+# <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
+En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` masque explicitement un membre qui est hérité d'une classe de base. Lorsque vous masquez un membre hérité, la version dérivée du membre remplace la version de classe de base. Bien que vous puissiez masquer des membres sans utiliser le modificateur `new`, vous obtenez un avertissement du compilateur. Si vous utilisez `new` pour masquer explicitement un membre, il supprime cet avertissement.  
   
- Pour masquer un membre hérité, déclarez\-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez\-le à l'aide du mot\-clé `new`.  Exemple :  
+ Pour masquer un membre hérité, déclarez-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez-le à l'aide du mot-clé `new`. Exemple :  
   
  [!code-cs[csrefKeywordsOperator#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_1.cs)]  
   
- Dans cet exemple, `BaseC.Invoke` est masqué par `DerivedC.Invoke`.  Le champ `x` n'est pas affecté parce qu'il n'est pas masqué par un nom semblable.  
+ Dans cet exemple, `BaseC.Invoke` est masqué par `DerivedC.Invoke`. Le champ `x` n'est pas affecté parce qu'il n'est pas masqué par un nom semblable.  
   
  Le masquage de noms par le biais de l'héritage peut prendre l'une des formes suivantes :  
   
--   En général, une constante, un champ, une propriété ou un type qui est introduit dans une classe ou une structure masque tous les membres de la classe de base qui partagent son nom.  Il existe des cas spéciaux.  Par exemple, si vous déclarez un nouveau champ avec le nom `N` pour avoir un type qui n'est pas invocable, et qu'un type de base déclare `N` en tant que méthode, le nouveau champ ne masquera pas la déclaration de base dans la syntaxe d'appel.  Pour plus d'informations, voir la [spécification du langage C\#](http://go.microsoft.com/fwlink/?LinkId=199552) \(voir la section relative à la recherche de membres dans la section « Expressions »\).  
+-   En général, une constante, un champ, une propriété ou un type qui est introduit dans une classe ou une structure masque tous les membres de la classe de base qui partagent son nom.  Il existe des cas spéciaux.  Par exemple, si vous déclarez un nouveau champ avec le nom `N` pour avoir un type qui n'est pas invocable, et qu'un type de base déclare `N` en tant que méthode, le nouveau champ ne masquera pas la déclaration de base dans la syntaxe d'appel.  Pour plus d’informations, consultez la [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552) (section « Recherche de membres » dans « Expressions »).  
   
--   Une méthode introduite dans une classe ou une structure masque les propriétés, les champs et les types qui partagent ce nom, dans la classe de base.  Cela masque également toutes les méthodes de la classe de base ayant la même signature.  
+-   Une méthode introduite dans une classe ou une structure masque les propriétés, les champs et les types qui partagent ce nom, dans la classe de base. Cela masque également toutes les méthodes de la classe de base ayant la même signature.  
   
 -   Un indexeur introduit dans une classe ou un struct masque tous les indexeurs de la classe de base ayant la même signature.  
   
- L'utilisation de `new` et de[override](../../../csharp/language-reference/keywords/override.md) sur le même membre est une erreur, car les deux modificateurs ont des significations mutuellement exclusives.  Le modificateur `new` crée un nouveau membre avec le même nom et entraîne le masquage du membre d'origine.  Le modificateur `override` étend l'implémentation pour un membre hérité.  
+ L’utilisation des opérateurs `new` et [override](../../../csharp/language-reference/keywords/override.md) sur le même membre est une erreur, car ces deux modificateurs ont des significations qui s’excluent mutuellement. Le modificateur `new` crée un nouveau membre avec le même nom et entraîne le masquage du membre d'origine. Le modificateur `override` étend l'implémentation pour un membre hérité.  
   
  L'utilisation du modificateur `new` dans une déclaration qui ne masque pas un membre hérité génère un avertissement.  
   
-## Exemple  
- Dans cet exemple, une classe de base, `BaseC` et une classe dérivée, `DerivedC`, utilisent le même nom de champ `x`, masquant ainsi la valeur du champ hérité.  Cet exemple illustre l'utilisation du modificateur `new`.  Il montre aussi comment accéder aux membres masqués de la classe de base en utilisant leurs noms complets.  
+## <a name="example"></a>Exemple  
+ Dans cet exemple, une classe de base, `BaseC` et une classe dérivée, `DerivedC`, utilisent le même nom de champ `x`, masquant ainsi la valeur du champ hérité. Cet exemple illustre l'utilisation du modificateur `new`. Il montre aussi comment accéder aux membres masqués de la classe de base en utilisant leurs noms complets.  
   
  [!code-cs[csrefKeywordsOperator#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_2.cs)]  
   
-## Exemple  
- Dans cet exemple, une classe imbriquée masque une classe du même nom dans la classe de base.  Cet exemple illustre l'utilisation du modificateur `new` pour éliminer le message d'avertissement, ainsi que l'accès aux membres de la classe masquée à l'aide de leurs noms complets.  
+## <a name="example"></a>Exemple  
+ Dans cet exemple, une classe imbriquée masque une classe du même nom dans la classe de base. Cet exemple illustre l'utilisation du modificateur `new` pour éliminer le message d'avertissement, ainsi que l'accès aux membres de la classe masquée à l'aide de leurs noms complets.  
   
  [!code-cs[csrefKeywordsOperator#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/new-modifier_3.cs)]  
   
@@ -52,14 +70,14 @@ En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` ma
 The keyword new is required on 'MyDerivedC.x' because it hides inherited member 'MyBaseC.x'.  
 ```  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
- [Versioning avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
+ [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
  [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)
