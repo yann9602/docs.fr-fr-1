@@ -10,9 +10,9 @@ ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: f44193d8f7bc9f67acb8b04966e02beca18a0653
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: ff143583ba62fc1d82561e739a75107e50ebee88
+ms.openlocfilehash: c10736e81d4f43d6ba70b71c25878dc4068a4a10
+ms.lasthandoff: 03/20/2017
 
 ---
 
@@ -86,6 +86,14 @@ Ce didacticiel illustre plusieurs fonctionnalités de LINQ et les éléments de 
 **[Microservices hébergés dans Docker](../csharp/tutorials/microservices.md)**
 
 Ce didacticiel montre comment créer un microservice ASP.NET Core et l’héberger dans Docker. Une version définitive du code que vous allez générer est disponible dans le [dépôt dotnet / docs sur GitHub](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice).
+
+**[Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac](../core/tutorials/using-on-mac-vs.md)**
+
+Ce didacticiel vous explique comment créer une application console .NET Core simple à l’aide de Visual Studio pour Mac.
+
+**[Génération d’une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac](../core/tutorials/using-on-mac-vs-full-solution.md)**
+
+Ce didacticiel vous montre comment créer une solution complète .NET Core qui inclut une bibliothèque réutilisable et un test unitaire.
 
 ## <a name="deploying-to-containers"></a>Déploiement sur des conteneurs
 

@@ -1,103 +1,108 @@
 ---
 title: "Outils de l’interface de ligne de commande (CLI) .NET Core │ Microsoft Docs"
-description: "Présentation de l’interface de ligne de commande (CLI) et de ses principales fonctionnalités"
+description: "Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI)."
 keywords: "CLI, outils CLI, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/20/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 4e3137d8506342662d145481d5e9fde1d53b9ba3
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
+ms.openlocfilehash: d00277ceb7fd1c8a7186da330ab2bc4ad40c59a7
+ms.lasthandoff: 03/22/2017
 
 ---
 
-# <a name="net-core-command-line-interface-tools-net-core-sdk-10-tools"></a>Outils de l’interface de ligne de commande .NET Core (outils SDK .NET Core 1.0)
+# <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
 
-L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d’outils multiplateforme fondamentale pour le développement d’applications .NET Core. Elle est dite « de fondation », car il s’agit de la couche principale sur laquelle les autres outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de builds, peuvent se baser. 
-
-Elle est également multiplateforme par défaut et sa surface est la même sur toutes les plateformes prises en charge. Cela signifie que vous pouvez les utiliser de la même façon sur toutes les plateformes prises en charge. 
+L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d’outils multiplateforme pour le développement d’applications .NET. CLI est une fondation sur laquelle les autres outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de builds, peuvent se baser.
 
 ## <a name="installation"></a>Installation
-Comme pour n’importe quel ensemble d’outils, la première étape consiste à se procurer les outils sur l’ordinateur. Selon le cas, vous pouvez utiliser les programmes d’installation natifs pour installer les outils CLI ou utiliser le script de l’interpréteur de commandes d’installation.
 
-Les programmes d’installation natifs s’adressent principalement aux ordinateurs des développeurs. Les outils CLI sont distribués selon le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensembles MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement comme il se doit pour permettre à l’utilisateur d’utiliser les outils CLI immédiatement après l’installation. Cependant, ils nécessitent aussi de disposer de privilèges d’administration sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans la [page de prise en main de .NET Core](https://aka.ms/dotnetcoregs).
+Utilisez les programmes d’installation natifs ou les scripts shell d’installation :
 
-Les scripts d’installation, quant à eux, ne nécessitent pas de privilèges d’administration. En revanche, ils n’installent pas les prérequis sur l’ordinateur ; vous devez tous les installer manuellement. Les scripts visent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration (notez les mises en garde concernant les prérequis répertoriés ci-dessus). Vous trouverez des informations complémentaires dans la [rubrique de référence sur les scripts d’installation](dotnet-install-script.md). Pour savoir comment configurer les outils CLI sur votre serveur de builds avec intégration continue, consultez la rubrique [Outils CLI et serveurs d’intégration continue](using-ci-with-cli.md). 
+* Les programmes d’installation natifs sont principalement utilisés sur les ordinateurs des développeurs et s’appuient sur le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensembles MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement pour une utilisation immédiate par le développeur, mais requièrent des privilèges d’administrateur sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).
+* Les scripts de shell servent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration. Les scripts d’installation n’installent pas les composants requis sur l’ordinateur, qui doivent être installés manuellement. Pour plus d’informations, consultez la [rubrique de référence sur les scripts d’installation](dotnet-install-script.md). Pour plus d’informations sur la configuration de l’interface CLI sur votre serveur de builds avec intégration continue (CI), consultez [Utilisation du SDK et des outils .NET Core avec l’intégration continue](using-ci-with-cli.md).
 
-Par défaut, les outils CLI sont installés « côte à côte ». Cela signifie que plusieurs versions des outils CLI peuvent coexister à un moment donné sur un même ordinateur. La façon dont la version appropriée est utilisée est expliquée plus en détail dans la section [Pilote](#driver). 
+Par défaut, l’interface CLI s’installe en parallèle (SxS) et plusieurs versions des outils CLI peuvent donc coexister sur un même ordinateur. La méthode permettant d’identifier la version utilisée sur un ordinateur sur lequel plusieurs versions sont installées est expliquée plus en détail dans la section [Pilote](#driver).
 
-### <a name="what-commands-come-in-the-box"></a>Quelles sont les commandes fournies ?
+## <a name="cli-commands"></a>Commandes CLI
+
 Les commandes suivantes sont installées par défaut :
 
+### <a name="basic-commands"></a>Commandes de base
+
 * [new](dotnet-new.md)
-* [migrate](dotnet-migrate.md)
 * [restore](dotnet-restore.md)
-* [run](dotnet-run.md)
 * [build](dotnet-build.md)
-* [test](dotnet-test.md)
 * [publish](dotnet-publish.md)
+* [run](dotnet-run.md)
+* [test](dotnet-test.md)
+* [vstest](dotnet-vstest.md)
 * [pack](dotnet-pack.md)
+* [migrate](dotnet-migrate.md)
+* [clean](dotnet-clean.md)
+* [sln](dotnet-sln.md)
 
-Il existe également un moyen d’importer davantage de commandes pour chaque projet et d’ajouter vos propres commandes. Vous en trouverez une explication détaillée dans la [section relative à l’extensibilité](#extensibility). 
+### <a name="project-modification-commands"></a>Commandes de modification de projet
 
-## <a name="working-with-the-cli"></a>Utilisation des outils CLI
+* [add package](dotnet-add-package.md)
+* [add reference](dotnet-add-reference.md)
+* [remove package](dotnet-remove-package.md)
+* [remove reference](dotnet-remove-reference.md)
+* [list reference](dotnet-list-reference.md)
 
-Avant de rentrer dans les détails, voyons comment utiliser les outils CLI. L’exemple suivant utilise plusieurs commandes de l’installation standard des outils CLI pour initialiser une application console simple, restaurer les dépendances, générer l’application, puis l’exécuter. 
+### <a name="advanced-commands"></a>Commandes avancées
+
+* [nuget delete](dotnet-nuget-delete.md)
+* [nuget locals](dotnet-nuget-locals.md)
+* [nuget push](dotnet-nuget-push.md)
+* [msbuild](dotnet-msbuild.md)
+* [dotnet install script](dotnet-install-script.md)
+
+L’interface CLI adopte un modèle d’extensibilité qui vous permet de spécifier des outils supplémentaires pour vos projets. Pour plus d’informations, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core](extensibility.md).
+
+## <a name="command-structure"></a>Structure de commande
+
+La structure de commande CLI se compose du [pilote (« dotnet »)](#driver), de [la commande (« verbe ») ](#command-verb)et éventuellement des [arguments](#arguments) et [options](#options) de la commande. Ce modèle apparaît dans la plupart des opérations de l’interface CLI, notamment la création d’une application console et son exécution à partir de la ligne de commande, comme le montrent les commandes suivantes, exécutées à partir d’un répertoire nommé *my_app* :
 
 ```console
 dotnet new console
 dotnet restore
-dotnet build --output /stuff
-dotnet /stuff/new.dll
+dotnet build --output /build_output
+dotnet /build_output/my_app.dll
 ```
 
-Comme vous pouvez le voir dans l’exemple précédent, l’utilisation des outils CLI suit un modèle. Dans ce modèle, nous pouvons identifier les trois parties principales de chaque commande :
-
-1. [Le pilote (« dotnet »)](#driver)
-2. [La commande, ou « verbe »](#the-verb)
-3. [Les arguments de la commande](#the-arguments)
-
 ### <a name="driver"></a>Pilote
-Le pilote s’appelle [dotnet](dotnet.md). Il s’agit de la première partie de ce que vous appelez. Le pilote est chargé de deux choses :
 
-1. L’exécution des applications portables
-2. L’exécution du verbe
+Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécution d’une [application dépendant de l’infrastructure](../app-types.md) ou l’exécution d’une commande. La seule fois où `dotnet` est utilisé sans commande est lorsqu’il est utilisé pour démarrer une application.
 
-Son action dépend de ce qui est spécifié sur la ligne de commande. Dans le premier cas, vous devez spécifier une DLL d’application portable que `dotnet` exécute comme ceci : `dotnet /path/to/your.dll`. 
+Pour exécuter une application dépendant de l’infrastructure, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`.
 
-Dans le deuxième cas, le pilote tente d’appeler la commande spécifiée. Cela démarre alors le processus d’exécution de la commande CLI. D’abord, le pilote détermine la version des outils que vous souhaitez. Vous pouvez spécifier la version dans le fichier [global.json](global-json.md) à l’aide de la propriété `version`. S’il n’est pas disponible, le pilote recherche la dernière version des outils qui est installée sur le disque, et utilise cette version. Une fois que la version est déterminée, il exécute la commande. 
+Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. D’abord, le pilote détermine la version des outils à utiliser. Si la version n’est pas spécifiée dans les options de la commande, le pilote utilise la dernière version disponible. Pour spécifier une version autre que la dernière version installée, utilisez l’option `--fx-version <VERSION>` (voir la référence de la [commande dotnet](dotnet.md)). Une fois que la version SDK est déterminée, le pilote exécute la commande.
 
-### <a name="the-verb"></a>Le « verbe »
-Le verbe est une commande qui exécute une action. `dotnet build` génère le code. `dotnet publish` publie le code. Le verbe est implémenté comme une application console qui est nommée `dotnet-{verb}`, conformément à la convention. Toute la logique est implémentée dans l’application console qui représente le verbe. 
+### <a name="command-verb"></a>Commande (« verbe »)
 
-### <a name="the-arguments"></a>Les arguments
-Les arguments que vous passez sur la ligne de commande sont les arguments du verbe ou de la commande appelé(e). Par exemple, lorsque vous tapez `dotnet publish --output publishedapp`, l’argument `--output` est passé à la commande `publish`. 
+La commande (ou « verbe ») est une commande qui exécute une action. Par exemple, `dotnet build` génère votre code. `dotnet publish` publie le code. Les commandes sont implémentées comme une application console à l’aide d’une convention `dotnet-{verb}`. 
 
-## <a name="types-of-application-portability"></a>Types de portabilité des applications
-Les outils CLI permettent aux applications d’être portables principalement de deux manières :
+### <a name="arguments"></a>Arguments
 
-1. Avec des applications entièrement portables pouvant s’exécuter là où .NET Core est installé
-2. Avec des déploiements autonomes
+Les arguments que vous passez sur la ligne de commande sont les arguments de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish my_app.csproj`, l’argument `my_app.csproj` indique le projet à publier et est transmis à la commande `publish`.
 
-Pour plus d’informations sur ces deux méthodes, consultez la rubrique [Déploiement d’applications .NET Core](../deploying/index.md). 
+### <a name="options"></a>Options
+
+Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish --output /build_output`, l’option `--output` et sa valeur sont passés à la commande `publish`. 
 
 ## <a name="migration-from-projectjson"></a>Migration à partir de project.json
-Si vous avez utilisé les outils Preview 2 et des projets *project.json*, vous pouvez consulter la documentation sur la commande [dotnet migrate](dotnet-migrate.md) pour vous familiariser avec la commande et la migration de votre projet. 
 
-> [!NOTE]
-> La commande `dotnet migrate` ne migre pas les fichiers *project.json* antérieurs à Preview 2. 
+Si vous avez utilisé les outils Preview 2 pour produire des projets *project.json*, consultez la rubrique [dotnet migrate](dotnet-migrate.md) pour plus d’informations sur la migration de votre projet vers MSBuild/*.csproj*. Pour les projets .NET Core créés avant la version des outils de Preview 2, mettez à jour manuellement le projet en suivant les instructions de la rubrique [Migration de DNX vers l’interface CLI .NET Core (project.json)](../migration/from-dnx.md) puis utilisez `dotnet migrate` ou mettez directement à niveau vos projets.
 
-## <a name="extensibility"></a>Extensibilité
-Bien sûr, tous les outils que vous utilisiez précédemment ne font pas partie des outils CLI. Toutefois, les outils CLI .NET Core possèdent un modèle d’extensibilité qui vous permet de spécifier des outils supplémentaires pour vos projets. Pour plus d’informations, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core](extensibility.md).
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-## <a name="summary"></a>Résumé
-Vous venez de voir une brève présentation des principales fonctionnalités des outils CLI. Pour plus d’informations, consultez les rubriques de référence et les rubriques conceptuelles de ce site. D’autres ressources sont également disponibles :
-* Dépôt GitHub [dotnet/CLI](https://github.com/dotnet/cli/)
-* [Instructions pour bien démarrer](https://aka.ms/dotnetcoregs/)
+* [Référentiel GitHub dotnet/CLI](https://github.com/dotnet/cli/)
+* [Guide d’installation de .NET Core](https://aka.ms/dotnetcoregs/)
 

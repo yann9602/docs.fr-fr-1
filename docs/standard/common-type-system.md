@@ -11,9 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 58c0d68b6840a07c9e5eb1848b3531181f14e973
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: 1680934b40c3055d2c33ed7457d8734dccbd0a8c
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -30,7 +30,7 @@ Pour que cela se fasse de manière transparente, il doit exister un moyen commun
 *   Établir un framework pour l’exécution multilingue.
 *   Fournir un modèle orienté objet pour prendre en charge l’implémentation de différents langages sur la plateforme .NET.
 *   Définir un ensemble de règles que tous les langages doivent respecter pour utiliser les types.
-*   Fournir une bibliothèque contenant les types primitifs de base utilisés dans le développement d’applications (par ex., `Boolean`, `Byte`, `Char`, etc.).
+*   Fournir une bibliothèque contenant les types primitifs de base utilisés dans le développement d’applications (par ex., `Boolean`, `Byte`, `Char`, etc.)
 
 CTS définit deux grandes sortes de types qui doivent être pris en charge : les types valeur et référence. Leur nom pointe sur leur définition.
 

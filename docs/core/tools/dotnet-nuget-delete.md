@@ -1,37 +1,45 @@
 ---
-title: Commande dotnet-nuget-delete | Microsoft Docs
+title: Commande dotnet-nuget-delete - CLI .NET Core | Microsoft Docs
 description: La commande nuget-dotnet-delete supprime ou retire un package du serveur.
 keywords: dotnet-nuget-delete, CLI, commande CLI, .NET Core
 author: karann-msft
 ms.author: mairaw
-ms.date: 03/06/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 6ddffde4-c789-4e90-990e-d35f6a6565d4
 translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 2ce157e3f32f3e899245e38bb4520b17be3e0b32
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 4b8694b83089d85646c9abd7e7f598cdb5879162
+ms.lasthandoff: 03/22/2017
 
 ---
-#<a name="dotnet-nuget-delete"></a>dotnet-nuget-delete
+
+# <a name="dotnet-nuget-delete"></a>dotnet-nuget delete
 
 ## <a name="name"></a>Nom
 
-`dotnet-nuget-delete` -Supprime ou retire un package du serveur. 
+`dotnet-nuget-delete` -Supprime ou retire un package du serveur.
 
 ## <a name="synopsis"></a>Résumé
 
-```
-dotnet nuget delete [<package_name> <package_version>] [-s|--source] [--non-interactive] [-k|--api-key] [--force-english-output]
-dotnet nuget delete [-h|--help]
-```
+`dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [-s|--source] [--non-interactive] [-k|--api-key] [--force-english-output] [-h|--help]`
 
 ## <a name="description"></a>Description
 
-La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour NuGet.org, l’action consiste à supprimer le package de la liste.
+La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour [nuget.org](https://www.nuget.org/), l’action consiste à supprimer le package de la liste.
+
+## <a name="arguments"></a>Arguments
+
+`PACKAGE_NAME`
+
+Package à supprimer.
+
+`PACKAGE_VERSION`
+
+Version du package à supprimer.
 
 ## <a name="options"></a>Options
 
@@ -57,11 +65,11 @@ Oblige la sortie de la ligne de commande à être en anglais.
 
 ## <a name="examples"></a>Exemples
 
-Supprime la version 1.0 du package MyPackage :
+Supprime la version 1.0 du package `Microsoft.AspNetCore.Mvc` :
 
-`dotnet nuget delete MyPackage 1.0` 
+`dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0` 
 
-Supprime la version 1.0 du package MyPackage sans inviter l’utilisateur à fournir ses informations d’identification ou d’autres données :
+Supprime la version 1.0 du package `Microsoft.AspNetCore.Mvc` sans inviter l’utilisateur à fournir ses informations d’identification ou d’autres données :
 
-`dotnet nuget delete MyPackage 1.0 --non-interactive`
+`dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive`
 

@@ -11,9 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: e36eab49717e6a5872c5812fce160d61eee50a4f
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: 815d9c24c139ef738b256c7bee791756a2fdb3b3
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -321,10 +321,10 @@ Le [système de type commun](common-type-system.md) .NET inclut un certain nombr
 
 Type conforme à CLS | Description
 ------------------ | -----------
-[Byte](xref:System.Byte) | Entier&8; bits non signé 
-[Int16](xref:System.Int16) | Entier&16; bits signé 
-[Int32](xref:System.Int32) | Entier&32; bits signé 
-[Int64](xref:System.Int64) | Entier&64; bits signé
+[Byte](xref:System.Byte) | Entier 8 bits non signé 
+[Int16](xref:System.Int16) | Entier 16 bits signé 
+[Int32](xref:System.Int32) | Entier 32 bits signé 
+[Int64](xref:System.Int64) | Entier 64 bits signé
 [Single](xref:System.Single) | Valeur à virgule flottante simple précision
 [Double](xref:System.Double) | Valeur à virgule flottante double précision
 [Boolean](xref:System.Boolean) | Type de valeur true ou false 
@@ -338,15 +338,15 @@ Les types intrinsèques répertoriés dans le tableau suivant ne sont pas confor
 
 Type non conforme | Description | Alternative conforme à CLS
 ------------------ | ----------- | -------------------------
-[SByte](xref:System.SByte) | Type de données entier signé&8; bits | [Int16](xref:System.Int16)
-[UInt16](xref:System.UInt16) | Entier&16; bits non signé | [Int32](xref:System.Int32)
-[UInt32](xref:System.UInt32) | Entier&32; bits non signé | [Int64](xref:System.Int64)
-[UInt64](xref:System.UInt64) | Entier&64; bits non signé | [Int64](xref:System.Int64) (peut déborder), [BigInteger](xref:System.Numerics.BigInteger) ou [Double](xref:System.Double)
+[SByte](xref:System.SByte) | Type de données entier signé 8 bits | [Int16](xref:System.Int16)
+[UInt16](xref:System.UInt16) | Entier 16 bits non signé | [Int32](xref:System.Int32)
+[UInt32](xref:System.UInt32) | Entier 32 bits non signé | [Int64](xref:System.Int64)
+[UInt64](xref:System.UInt64) | Entier 64 bits non signé | [Int64](xref:System.Int64) (peut déborder), [BigInteger](xref:System.Numerics.BigInteger) ou [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Pointeur ou handle non signé | [IntPtr](xref:System.IntPtr)
  
  La bibliothèque de classes du .NET Framework ou toute autre bibliothèque de classes peut inclure d'autres types non conformes à CLS. Par exemple : 
  
- * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int`* nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
+ * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int`*nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
 
   ```csharp
   using System;

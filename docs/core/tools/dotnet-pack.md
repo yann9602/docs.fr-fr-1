@@ -1,25 +1,23 @@
 ---
-title: Commande dotnet-pack | Microsoft Docs
+title: Commande dotnet-pack - CLI .NET Core | Microsoft Docs
 description: "La commande dotnet-pack crée des packages NuGet pour votre projet .NET Core."
 keywords: "dotnet-pack, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/12/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 8b4b8cef-f56c-4a10-aa01-fde8bfaae53e
+ms.assetid: 8dbbb3f7-b817-4161-a6c8-a3489d05e051
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: d439dc83cc4538b44634197f3dce1bf7ad2ad6c7
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 6bb8d618cc092131bd6a904fb66f02c4f3a9ecca
+ms.lasthandoff: 03/22/2017
 
 ---
 
-#<a name="dotnet-pack"></a>dotnet-pack
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-pack (outils .NET Core RC4)](../preview3/tools/dotnet-pack.md).
+# <a name="dotnet-pack"></a>dotnet-pack
 
 ## <a name="name"></a>Nom
 
@@ -27,28 +25,27 @@ ms.openlocfilehash: d439dc83cc4538b44634197f3dce1bf7ad2ad6c7
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet pack [--help] [--output]  
-    [--no-build] [--build-base-path]  
-    [--configuration]  [--version-suffix]
-    [project]`  
+`dotnet pack [<PROJECT>] [-o|--output] [--no-build] [--include-symbols] [--include-source] [-c|--configuration] [--version-suffix <VERSION_SUFFIX>] [-s|--serviceable] [-v|--verbosity] [-h|--help]`
 
 ## <a name="description"></a>Description
 
-La commande `dotnet pack` génère le projet et crée les packages NuGet. Cette opération entraîne la création de deux packages avec l’extension `nupkg`. L’un d’eux contient le code et l’autre contient les symboles de débogage. 
+La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet. Si l’option `--include-symbols` est présente, un autre package contenant les symboles de débogage est créé. 
 
-Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier nuspec, pour pouvoir être résolues lorsque le package est installé. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
+Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
-`dotnet pack` par défaut, génère d’abord le projet. Pour éviter ce problème, passez l’option `--no-build`. Cela peut être utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code vient d’être créé, par exemple. 
+Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Elle est souvent utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code a déjà été créé. 
+
+## <a name="arguments"></a>Arguments
+
+`PROJECT` 
+    
+Projet à empaqueter. Il s’agit du chemin d’accès d’un [fichier csproj](csproj.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut. 
 
 ## <a name="options"></a>Options
 
 `-h|--help`
 
 Affiche une aide brève pour la commande.  
-
-`[project]` 
-    
-Projet à empaqueter. Il peut s’agir du chemin d’un fichier [project.json](project-json.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est choisi par défaut. 
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -58,17 +55,29 @@ Place les packages générés dans le répertoire spécifié.
 
 Ne génère pas le projet avant de créer le package. 
 
-`--build-base-path`
+`--include-symbols`
 
-Place les artefacts de build temporaires dans le répertoire spécifié. Par défaut, ils sont placés dans le répertoire `obj` du répertoire actif. 
+Génère les symboles `nupkg`. 
 
-`-c|--configuration <Debug|Release>`
+`--include-source`
 
-Configuration à utiliser lors de la génération du projet. Si aucune valeur n’est spécifiée, la valeur utilisée par défaut sera `Debug`.
+Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`. 
 
-`--version-suffix`
+`-c|--configuration <CONFIGURATION>`
 
-Remplace l’étoile du suffixe de version de package `-*` par une chaîne spécifiée.
+Configuration à utiliser lors de la génération du projet. Si elle n’est pas spécifiée, la configuration par défaut est `Debug`.
+
+`--version-suffix <VERSION_SUFFIX>`
+
+Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.
+
+`-s|--serviceable`
+
+Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).
+
+`--verbosity <LEVEL>`
+
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
 ## <a name="examples"></a>Exemples
 
@@ -76,23 +85,18 @@ Empaquetez le projet dans le répertoire actif :
 
 `dotnet pack`
 
-Empaquetez le projet app1 :
+Empaqueter le projet `app1` :
 
-`dotnet pack ~/projects/app1/project.json`
+`dotnet pack ~/projects/app1/project.csproj`
     
-Empaquetez le projet dans le répertoire actif et placez les packages résultants dans le dossier spécifié :
+Empaqueter le projet dans le répertoire actif et placer les packages résultants dans le dossier `nupkgs` :
 
 `dotnet pack --output nupkgs`
 
-Empaquetez le projet dans le répertoire actif du dossier spécifié et ignorez l’étape de génération :
+Empaqueter le projet dans le répertoire actif du dossier `nupkgs` et ignorer l’étape de génération :
 
 `dotnet pack --no-build --output nupkgs`
 
-Empaquetez le projet en cours et mettez à jour la version des packages obtenus avec le suffixe donné. Par exemple, la version `1.0.0-*` sera remplacée par `1.0.0-ci-1234`.
+Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
 
 `dotnet pack --version-suffix "ci-1234"`
-
-
-<!--HONumber=Feb17_HO2-->
-
-

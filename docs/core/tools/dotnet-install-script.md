@@ -4,106 +4,150 @@ description: "Découvrez les scripts dotnet-install pour installer les outils C
 keywords: dotnet-install, scripts dotnet-install, .NET Core
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/12/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 59b9c456-2bfd-4adc-8202-a1c6a0a6c787
+ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 8c5812828b5a19646d6ccbfe9f7cf2215889201f
+ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
+ms.openlocfilehash: fbc1ce8d864a5c2150c61f4b8bf7cb8544921634
+ms.lasthandoff: 03/22/2017
 
 ---
 
-#<a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Documentation sur les scripts dotnet-install (outils .NET Core RC4)](../preview3/tools/dotnet-install-script.md).
+# <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
 ## <a name="name"></a>Nom
-`dotnet-install.ps1` | `dotnet-install.sh` : script utilisé pour installer les outils de l’interface de ligne de commande (CLI) et le runtime partagé.
+
+`dotnet-install.ps1` | `dotnet-install.sh` : script utilisé pour installer les outils de l’interface de ligne de commande (CLI) .NET Core et le runtime partagé.
 
 ## <a name="synopsis"></a>Résumé
+
 Windows :
 
-`dotnet-install.ps1 [-Channel] [-Version]
-    [-InstallDir] [-Debug] [-NoPath] 
-    [-SharedRuntime]`
+`dotnet-install.ps1 [-Channel] [-Version] [-InstallDir] [-Architecture] [-SharedRuntime] [-DebugSymbols] [-DryRun] [-NoPath] [-AzureFeed] [-ProxyAddress]`
 
 Mac OS/Linux :
 
-`dotnet-install.sh [--channel] [--version]
-    [--install-dir] [--debug] [--no-path] 
-    [--shared-runtime]`
+`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--debug-symbols] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--help]`
 
 ## <a name="description"></a>Description
-Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger les scripts à partir de notre [dépôt GitHub sur les outils CLI](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/scripts/obtain). 
 
-Ils sont principalement utilisés pour faciliter l’automatisation et les installations non administrateur. Il existe deux scripts : un script PowerShell qui fonctionne avec Windows, et un script d’interpréteur de commandes qui fonctionne avec Linux/OS X. Ces deux scripts ont le même comportement. Le script d’interpréteur de commandes accepte également les commutateurs PowerShell. Vous pouvez donc les utiliser partout. 
+Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger les scripts à partir du [référentiel GitHub sur les outils CLI](https://github.com/dotnet/cli/tree/rel/1.0.0/scripts/obtain). 
 
-Les scripts d’installation téléchargent le fichier ZIP/tarball à partir des cibles de builds CLI, puis poursuivent l’installation dans l’emplacement par défaut ou dans un emplacement spécifié par `--install-dir`. Par défaut, le script d’installation télécharge le SDK et l’installe. Si vous souhaitez seulement obtenir le runtime partagé, vous pouvez spécifier l’argument `--shared-runtime`. 
+La principale utilité de ces scripts réside dans les scénarios d’automatisation et les installations non administrateur. Il existe deux scripts : un script PowerShell qui fonctionne sous Windows. L’autre script est un script bash fonctionnant sous Linux/OS X. Les deux scripts ont le même comportement. Le script bash lit également les commutateurs PowerShell, pour vous permettre d’utiliser les commutateurs PowerShell avec le script sur les systèmes Linux/OS X. 
 
-Par défaut, le script ajoute l’emplacement d’installation $PATH pour la session active. Il peut être remplacé si l’argument `--no-path` est utilisé. 
+Les scripts d’installation téléchargent le fichier ZIP/tarball à partir des cibles de builds CLI, puis poursuivent l’installation dans l’emplacement par défaut ou dans un emplacement spécifié par `-InstallDir|--install-dir`. Par défaut, les scripts d’installation téléchargent et installent le Kit de développement logiciel (SDK). Si vous souhaitez obtenir uniquement le runtime partagé, spécifiez l’argument `--shared-runtime`. 
 
-Avant d’exécuter le script, installez toutes les [dépendances](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) nécessaires.
+Par défaut, le script ajoute l’emplacement d’installation $PATH pour la session active. Remplacez ce comportement par défaut en spécifiant l’argument `--no-path`. 
 
-Vous pouvez installer une version spécifique à l’aide de l’argument `--version`. La version doit être spécifiée en trois parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut sera celle du premier fichier [global.json](global-json.md) trouvé dans la hiérarchie au-dessus du dossier dans lequel le script a été appelé, et qui contient la propriété `version`. Si cette propriété est absente, la propriété « Latest » est utilisée.
+Avant d’exécuter le script, installez les [dépendances](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) nécessaires.
 
-Vous pouvez également utiliser ce script pour obtenir le SDK ou les fichiers binaires de débogage de runtime partagé avec les symboles de débogage, à l’aide de l’argument `--debug`. Si vous ne faites pas cela lors de la première installation et si vous vous rendez compte plus tard que vous avez besoin de symboles de débogage, vous pouvez réexécuter le script avec cet argument et la version de bits que vous avez installée. 
+Vous pouvez installer une version spécifique à l’aide de l’argument `--version`. La version doit être spécifiée en trois parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut sera celle du premier fichier [global.json](global-json.md) trouvé dans la hiérarchie au-dessus du dossier dans lequel le script est appelé, et qui contient la propriété `version`. Si ce fichier n’est pas présent, la version la plus récente sera utilisée.
+
+Vous pouvez également utiliser ce script pour obtenir le SDK ou les fichiers binaires de débogage de runtime partagé avec les symboles de débogage, à l’aide de l’argument `--debug`. Si vous n’effectuez pas cette opération lors de la première installation et réalisez ultérieurement que vous avez besoin des symboles de débogage, vous pouvez réexécuter le script avec l’argument `--debug` et la version du Kit de développement logiciel (SDK) installé pour obtenir les symboles de débogage. 
 
 ## <a name="options"></a>Options
-Les options diffèrent d’une implémentation de script à l’autre. 
+
+Remarque : les options diffèrent d’une implémentation de script à l’autre. 
 
 ### <a name="powershell-windows"></a>PowerShell (Windows)
-`-Channel [CHANNEL]`
 
-Le canal (par exemple, `future`, `preview`, `production`) à partir duquel effectuer l’installation. La valeur par défaut est `production`.
+`-Channel <CHANNEL>`
 
-`-Version [VERSION]`
+Spécifie le canal source pour l’installation. Les valeurs sont `future`, `preview` et `production`. La valeur par défaut est `production`.
 
-Version de l’interface CLI à installer. Vous devez spécifier la version en trois parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut sera celle du premier fichier [global.json](global-json.md) qui contient la propriété `version`. Si cette propriété est absente, la propriété Latest est utilisée.     
+`-Version <VERSION>`
 
-`-InstallDir [DIR]`
+Spécifie la version de l’interface CLI à installer. Vous devez spécifier une version en 3 parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut est celle du premier fichier [global.json](global-json.md) qui contient la propriété `version`. Si ce fichier n’est pas présent, la version la plus récente sera utilisée.
 
-Chemin d’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est *%LocalAppData%\Microsoft\dotnet*.
+`-InstallDir <DIRECTORY>`
 
-`-Debug`
+Spécifie le chemin d’accès de l’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est *% LocalAppData%\.dotnet*.
 
-`true` pour indiquer que les packages volumineux contenant des symboles de débogage doivent être utilisés ; sinon, `false`. La valeur par défaut est `false`.
+`-Architecture <ARCHITECTURE>`
 
-`-NoPath`
-
-`true` pour indiquer que le préfixe /installdir n’est pas exporté dans le chemin de la session actuelle ; sinon, `false`. La valeur par défaut est `false`, c’est-à-dire que PATH est modifié. Les outils CLI sont ainsi disponibles immédiatement après l’installation. 
+Architecture des fichiers binaires .NET Core à installer. Les valeurs possibles sont `auto`, `x64` et `x86`. La valeur par défaut est `auto`, qui représente l’architecture de système d’exploitation en cours d’exécution.
 
 `-SharedRuntime`
 
-`true` pour installer uniquement les bits du runtime partagé ; `false` pour installer le SDK dans son intégralité. La valeur par défaut est `false`.
+S’il est défini, ce commutateur limite l’installation au runtime partagé. La totalité du SDK n’est pas installée.
+
+`-DebugSymbols` (voir la REMARQUE)
+
+Si cette option est définie, le programme d’installation inclut les symboles de débogage dans l’installation.
+
+> [!NOTE]
+> Le commutateur `-DebugSymbols` n’est pas actuellement disponible, mais cela est prévu dans une prochaine version.
+
+`-DryRun`
+
+Si cette option est définie, le script n’effectue pas l’installation, mais affiche à la place la ligne de commande à utiliser pour installer la version d’interface CLI .NET actuellement demandée. Par exemple, si vous spécifiez la version `latest`, elle affiche un lien avec la version spécifique, pour que cette commande puisse être utilisée de façon déterministe dans un script de génération. Elle affiche également l’emplacement du fichier binaire si vous préférez l’installer ou le télécharger vous-même.
+
+`-NoPath`
+
+Si cette option est définie, le préfixe /installdir n’est pas exporté dans le chemin de la session actuelle. Par défaut, le script modifie le chemin, ce qui rend les outils CLI disponibles immédiatement après l’installation.
+
+`-AzureFeed`
+
+Spécifie l’URL du flux Azure à utiliser par ce programme d’installation. Il n’est pas recommandé de modifier cette valeur. La valeur par défaut est `https://dotnetcli.azureedge.net/dotnet`.
+
+`-ProxyAddress`
+
+Si cette option est définie, le programme d’installation utilise le proxy pendant la création de demandes web.
 
 ### <a name="bash-macoslinux"></a>Interpréteur de commandes (Mac OS/Linux)
-`--channel [CHANNEL]`
 
-Le canal (par exemple « future », « preview », « production ») à partir duquel effectuer l’installation. La valeur par défaut est « Production ».
+`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--shared-runtime] [--debug-symbols] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--help]`
 
-`--version [VERSION]`
+`--channel <CHANNEL>`
 
-Version de l’interface CLI à installer. Vous devez spécifier la version en trois parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut sera celle du premier fichier [global.json](global-json.md) qui contient la propriété `version`. Si cette propriété est absente, la propriété Latest est utilisée.     
+Spécifie le canal source pour l’installation. Les valeurs sont `future`, `dev` et `production`. La valeur par défaut est `production`.
 
-`--install-dir [DIR]`
+`--version <VERSION>`
 
-Chemin d’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est `$HOME/.dotnet`.
+Spécifie la version de l’interface CLI à installer. Vous devez spécifier une version en 3 parties (par exemple, 1.0.0-13232). Si vous ne spécifiez pas de version, la valeur utilisée par défaut est celle du premier fichier [global.json](global-json.md) qui contient la propriété `version`. Si ce fichier n’est pas présent, la version la plus récente sera utilisée.
 
-`--debug`
+`--install-dir <DIRECTORY>`
 
-`true` pour indiquer que les packages volumineux contenant des symboles de débogage doivent être utilisés ; sinon, `false`. La valeur par défaut est `false`.
+Spécifie le chemin d’accès de l’installation. S’il n’existe pas déjà, le répertoire est créé. La valeur par défaut est `$HOME/.dotnet`.
 
-`--no-path`
+`--architecture <ARCHITECTURE>`
 
-`true` pour indiquer que le préfixe /installdir n’est pas exporté dans le chemin de la session actuelle ; sinon, `false`. La valeur par défaut est `false`, c’est-à-dire que PATH est modifié. Les outils CLI sont ainsi disponibles immédiatement après l’installation.  
+Architecture des fichiers binaires .NET Core à installer. Les valeurs possibles sont `auto`, `x64` et `amd64`. La valeur par défaut est `auto`, qui représente l’architecture de système d’exploitation en cours d’exécution.
 
 `--shared-runtime`
 
-`true` pour installer uniquement les bits du runtime partagé ; `false` pour installer le SDK dans son intégralité. La valeur par défaut est `false`.
+S’il est défini, ce commutateur limite l’installation au runtime partagé. La totalité du SDK n’est pas installée.
+
+`--debug-symbols`
+
+Si cette option est définie, le programme d’installation inclut les symboles de débogage dans l’installation.
+
+> [!NOTE]
+> Ce commutateur n’est pas actuellement disponible, mais cela est prévu dans une prochaine version.
+
+`--dry-run`
+
+Si cette option est définie, le script n’effectue pas l’installation, mais affiche à la place la ligne de commande à utiliser pour installer la version d’interface CLI .NET actuellement demandée. Par exemple, si vous spécifiez la version `latest`, elle affiche un lien avec la version spécifique, pour que cette commande puisse être utilisée de façon déterministe dans un script de génération. Elle affiche également l’emplacement du fichier binaire si vous préférez l’installer ou le télécharger vous-même.
+
+`--no-path`
+
+Si cette option est définie, le préfixe /installdir n’est pas exporté dans le chemin de la session actuelle. Par défaut, le script modifie le chemin, ce qui rend les outils CLI disponibles immédiatement après l’installation.
+
+`--verbose`
+
+Affiche les informations de diagnostic.
+
+`--azure-feed`
+
+Spécifie l’URL du flux Azure à utiliser par ce programme d’installation. Il n’est pas recommandé de modifier cette valeur. La valeur par défaut est `https://dotnetcli.azureedge.net/dotnet`.
+
+`--help`
+
+Affiche l’aide pour le script.
 
 ## <a name="examples"></a>Exemples
 
@@ -126,9 +170,3 @@ Windows :
 Mac OS/Linux :
 
 `./dotnet-install.sh --channel preview --install-dir ~/cli`
-
-
-
-<!--HONumber=Feb17_HO2-->
-
-

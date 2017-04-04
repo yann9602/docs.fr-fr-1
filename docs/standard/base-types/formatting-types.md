@@ -11,9 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: cf497639-9f91-45cb-836f-998d1cea2f43
 translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: dc0693c2e2c034c4c71b4270ef2812be4af72e72
-ms.lasthandoff: 03/02/2017
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: e9b8ad13a48dd43236769b130d6f8a75b7b023ca
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -1185,7 +1185,7 @@ Console.WriteLine(result)
 
 En plus de remplacer un élément de format par la représentation sous forme de chaîne de l'objet correspondant, les éléments de format vous permettent également de contrôler les éléments suivants : 
 
-* La façon spécifique dont un objet est représenté sous forme de chaîne, si l’objet implémente l’interface [IFormattable](xref:System.IFormattable) et prend en charge les chaînes de format. Ceci se fait en faisant suivre l’index de l’élément de format d’un caractère « : » (deux-points), suivi d’une chaîne de format valide. L’exemple précédent a fait cela en mettant en forme une valeur de date avec la chaîne de format "d" (modèle de date courte) (par exemple `{0:d}`) et en mettant en forme une valeur numérique avec la chaîne de format "C2" (par exemple `{2:C2}` pour représenter le nombre comme valeur monétaire avec deux décimales. 
+* La façon spécifique dont un objet est représenté sous forme de chaîne, si l’objet implémente l’interface [IFormattable](xref:System.IFormattable) et prend en charge les chaînes de format. Ceci se fait en faisant suivre l’index de l’élément de format d’un caractère « : » (deux-points), suivi d’une chaîne de format valide. L’exemple précédent a fait cela en mettant en forme une valeur de date avec la chaîne de format "d" (modèle de date courte) (par exemple `{0:d}`) et en mettant en forme une valeur numérique avec la chaîne de format "C2" (par exemple `{2:C2}` pour représenter le nombre comme valeur monétaire avec deux décimales). 
 
 * La largeur du champ qui contient la représentation sous forme de chaîne de l'objet, et l'alignement de la représentation sous forme de chaîne de ce champ. Ceci se fait en faisant suivre l’index de l’élément de format d’un caractère « , » (virgule), suivie de la largeur du champ. La chaîne est alignée à droite dans le champ si la largeur du champ est une valeur positive, et elle est alignée à gauche si la largeur du champ est une valeur négative. L'exemple suivant aligne à gauche des valeurs de date dans un champ de 20 caractères, et aligne à droite des valeurs décimales avec une décimale dans un champ de 11 caractères. 
 
