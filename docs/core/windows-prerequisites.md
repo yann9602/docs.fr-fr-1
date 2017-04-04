@@ -56,7 +56,7 @@ Il existe différentes éditions de Visual Studio 2017. Vous pouvez télécharg
 
 Pour vérifier que vous exécutez la dernière version de Visual Studio 2017, procédez comme suit :
  +
- +*Dans le menu**Aide**, choisissez **À propos de Microsoft Visual Studio**. +*La boîte de dialogue **À propos de Microsoft Visual Studio** doit indiquer le numéro de version 15.0.26228.4 ou supérieur.
+ +*Dans le menu**Aide**, choisissez**À propos de Microsoft Visual Studio**. +*La boîte de dialogue **À propos de Microsoft Visual Studio** doit indiquer le numéro de version 15.0.26228.4 ou supérieur.
 
 Vous trouverez plus d’informations sur les modifications apportées à Visual Studio 2017 dans les [notes de publication](https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes).
 
