@@ -4,15 +4,15 @@ description: "Déploiement d’applications .NET Core"
 keywords: ".NET, .NET Core, Déploiement .NET Core"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 03/06/2017
+ms.date: 03/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 195664ae6409be02ca132900d9c513a7b412acd4
-ms.openlocfilehash: 0e186665619bd76c5ba3d1e605b885a12aa15c66
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: 24bca179bc153a6bb469e38067e457fa61a9d2b3
+ms.openlocfilehash: ef742b932a3a76359e3f06129dce0bf127a1977e
+ms.lasthandoff: 03/14/2017
 
 ---
 
@@ -48,11 +48,11 @@ Il existe également quelques inconvénients :
 
 Le déploiement d’un déploiement dépendant du framework sans dépendances tierces implique simplement la génération, le test et la publication de l’application. Un exemple simple écrit en C# illustre le processus. L’exemple utilise l’[utilitaire dotnet](../tools/dotnet.md) à partir de la ligne de commande. Vous pouvez cependant utiliser aussi un environnement de développement, comme Visual Studio ou Visual Studio Code, pour compiler, tester et publier l’exemple.
 
-1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez `[dotnet new console](../tools/dotnet-new.md)` pour créer un projet de console C#.
+1. Créez un répertoire pour votre projet et, à partir de la ligne de commande, tapez [`dotnet new console`](../tools/dotnet-new.md) pour créer un nouveau projet de console C#.
 
 2. Ouvrez le fichier `Program.cs` dans un éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte, puis affiche les différents mots entrés par l’utilisateur. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
-    ```cs
+    ```csharp
     using System;
     using System.Text.RegularExpressions;
 
@@ -91,9 +91,9 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 4. Créez une version Debug de votre application à l’aide de la commande [dotnet build](../tools/dotnet-build.md).
 
-5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application à l’aide de la commande `dotnet publish -f netcoreapp1.1 -c release`. Ceci crée une version de publication (au lieu d’une version debug) de votre application.
+5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application à l’aide de la commande `dotnet publish -f netcoreapp1.1 -c Release`. Ceci crée une version de publication (au lieu d’une version Debug) de votre application.
 
-   Les fichiers résultants sont placés dans un répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.1` de votre projet.
+   Les fichiers résultants sont placés dans un répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\Release\netcoreapp1.1` de votre projet.
 
 6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
@@ -103,7 +103,7 @@ Outre les fichiers binaires d’application, le programme d’installation doit 
 
 ### <a name="deploying-a-framework-dependent-deployment-with-third-party-dependencies"></a>Déploiement d’un déploiement dépendant du framework avec des dépendances tierces ###
 
-Déployer un déploiement dépendant du framework avec une ou plusieurs dépendances tierces implique trois étapes supplémentaires avant de pouvoir exécuter la commande `dotnet restore` :
+Déployer un déploiement dépendant du framework avec une ou plusieurs dépendances tierces implique deux étapes supplémentaires avant de pouvoir exécuter la commande `dotnet restore` :
 
 1. Ajouter des références à des bibliothèques tierces à la section `<ItemGroup>` de votre fichier `csproj`. La section `<ItemGroup>` suivante présente le `<ItemGroup>` qui contient les dépendances du projet par défaut avec Json.NET comme bibliothèque tierce.
 
@@ -147,7 +147,7 @@ Le déploiement d’un déploiement autonome sans dépendances tierces implique 
 
 2. Ouvrez le fichier `Program.cs` dans un éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte, puis affiche les différents mots entrés par l’utilisateur. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
-    ```cs
+    ```csharp
     using System;
     using System.Text.RegularExpressions;
 
@@ -195,24 +195,22 @@ Notez que vous devez également ajouter un point-virgule pour séparer les ident
 5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
-   dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.11-x64
+   dotnet publish -c Release -r win10-x64
+   dotnet publish -c Release -r osx.10.11-x64
    ```
-Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netcoreapp1.1\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
+Ceci crée une version de publication (au lieu d’une version Debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\Release\netcoreapp1.1\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
 6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
-Voici le fichier `csproj`complet pour ce projet.
+Voici le fichier `csproj`complet pour ce projet :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
 </Project>
@@ -239,8 +237,6 @@ Voici le fichier csproj complet pour ce projet :
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
@@ -292,24 +288,22 @@ Cette opération indique que, au lieu d’utiliser la totalité du framework `ne
 5. Une fois que vous avez débogué et testé le programme, vous pouvez créer les fichiers à déployer avec votre application pour chaque plateforme qu’elle cible en utilisant la commande `dotnet publish` pour les deux plates-formes comme suit :
 
    ```console
-   dotnet publish -c release -r win10-x64
-   dotnet publish -c release -r osx.10.11-x64
+   dotnet publish -c Release -r win10-x64
+   dotnet publish -c Release -r osx.10.11-x64
    ```
-Ceci crée une version de publication (au lieu d’une version debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\release\netstandard1.6\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
+Ceci crée une version de publication (au lieu d’une version Debug) de votre application pour chaque plateforme cible. Les fichiers résultants sont placés dans un sous-répertoire nommé `publish` qui se trouve dans un sous-répertoire du sous-répertoire `.\bin\Release\netstandard1.6\<runtime_identifier>` de votre projet. Notez que chaque sous-répertoire contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
 6. En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est utile principalement pour le débogage des exceptions ; vous pouvez choisir de ne pas le placer dans le package avec les fichiers de votre application.
 
 Les fichiers publiés peuvent être déployés de la façon de votre choix. Par exemple, vous pouvez les packager dans un fichier zip, utiliser une simple commande `copy` ou les déployer avec n’importe quel package d’installation de votre choix. 
 
-Voici le fichier `csproj`complet pour ce projet.
+Voici le fichier `csproj`complet pour ce projet :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard1.6</TargetFramework>
-    <VersionPrefix>1.0.0</VersionPrefix>
-    <DebugType>Portable</DebugType>
     <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>

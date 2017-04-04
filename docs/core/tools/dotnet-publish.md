@@ -1,54 +1,50 @@
 ---
-title: Commande dotnet-publish | Microsoft Docs
+title: Commande dotnet-publish - CLI .NET Core | Microsoft Docs
 description: "La commande dotnet-publish publie votre projet .NET Core dans un répertoire."
 keywords: "dotnet-publish, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 10/07/2016
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 8a7e1c52-5c57-4bf5-abad-727450ebeefd
+ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
 translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 1cf1611ab83874ad44855521d21040d102206338
+ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
+ms.openlocfilehash: 48bfe6c77ee6c5d905069f47da5512ac63a24b2a
+ms.lasthandoff: 03/22/2017
 
 ---
 
-#<a name="dotnet-publish"></a>dotnet-publish
-
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [dotnet-publish (outils .NET Core RC4)](../preview3/tools/dotnet-publish.md).
+# <a name="dotnet-publish"></a>dotnet-publish
 
 ## <a name="name"></a>Nom
 
-`dotnet-publish` : Place l’application et toutes ses dépendances dans un dossier, pour la préparer à la publication.
+`dotnet-publish` - Empaquette l’application et ses dépendances dans un dossier en vue d’un déploiement sur un système d’hébergement.
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet publish [project] 
-    [--help] [--framework]  
-    [--runtime] [--build-base-path] [--output]  
-    [--version-suffix] [--configuration] [--native-subdirectory] [--no-build]`
+`dotnet publish [<PROJECT>] [-f|--framework] [-r|--runtime] [-o|--output] [-c|--configuration] [--version-suffix] [-v|--verbosity] [-h|--help]`
 
 ## <a name="description"></a>Description
 
-`dotnet publish` compile l’application, parcourt ses dépendances spécifiées dans le fichier [project.json](project-json.md) et publie l’ensemble de fichiers obtenus dans un répertoire. 
+`dotnet publish` compile l’application, parcourt ses dépendances spécifiées dans le fichier projet et publie l’ensemble de fichiers obtenus dans un répertoire. La sortie contient les éléments suivants :
 
-Selon le type d’application portable, le répertoire obtenu contiendra les éléments suivants :
+* Le code de langage intermédiaire (IL) dans un assembly avec l’extension `*.dll`.
+* Le fichier *\*.deps.json* qui contient toutes les dépendances du projet.
+* Le fichier *\*.runtime.config.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
+* Les dépendances de l’application. Ces dernières sont copiées du cache NuGet vers le dossier de sortie.
 
-1. *Application portable* - code en langage intermédiaire de l’application et toutes les dépendances gérées de l’application.
-    * *Application portable avec dépendances natives* - même chose que ci-dessus, mais avec un sous-répertoire pour la plateforme prise en charge de chaque dépendance native. 
-2. *Application autonome* - même chose que ci-dessus, mais avec l’intégralité du runtime pour la plateforme ciblée.
+Le résultat de la commande `dotnet publish` est prêt pour le déploiement sur un système hôte (par exemple, un serveur, un PC, un Mac ou un ordinateur portable) et pour l’exécution ; c’est le seul moyen officiellement pris en charge de préparer l’application en vue de son déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md). Pour connaître la structure des répertoires d’une application publiée, consultez la page [Structure de répertoires](https://docs.microsoft.com/en-us/aspnet/core/hosting/directory-structure).
 
-Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+## <a name="arguments"></a>Arguments
+
+`PROJECT` 
+
+Projet à publier. S’il n’est pas spécifié, la valeur utilisée par défaut est le répertoire actif. 
 
 ## <a name="options"></a>Options
-
-`[project]` 
-
-Projet à publier. Si `[project]` n’est pas spécifié, la valeur utilisée par défaut sera le répertoire actif. Cette valeur peut être le chemin du fichier [project.json](project-json.md) ou du répertoire du projet qui contient le fichier [project.json](project-json.md). Si aucun fichier [project.json](project-json.md) n’est trouvé, `dotnet publish` génère une erreur. 
 
 `-h|--help`
 
@@ -56,55 +52,47 @@ Affiche une aide brève pour la commande.
 
 `-f|--framework <FRAMEWORK>`
 
-Publie l’application pour un identificateur de framework donné. Si aucun identificateur n’est spécifié, l’identificateur du [project.json](project-json.md#frameworks) est choisi par défaut. Si aucun framework valide n’est trouvé, la commande génère une erreur. Si plusieurs frameworks valides sont trouvés, la commande publie l’application pour tous les frameworks valides. 
+Publie l’application pour le [framework cible](../../standard/frameworks.md) spécifié. Le framework cible doit être spécifié dans le fichier projet.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publie l’application pour un runtime donné. Pour connaître les identificateurs de runtime que vous pouvez utiliser, consultez le [catalogue des identificateurs de runtime ](../rid-catalog.md).
+Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
 
-`-b|--build-base-path <OUTPUT_DIRECTORY>`
+`-o|--output <OUTPUT_DIRECTORY>`
 
-Répertoire dans lequel placer les sorties temporaires.
+Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
 
-`-o|--output <OUTPUT_PATH>`
+`-c|--configuration <CONFIGURATION>`
 
-Spécifiez le chemin du répertoire. Si aucune valeur n’est spécifiée, il s’agira par défaut de *_./bin/[configuration]/[framework]/_* pour les applications portables ou de *_./bin/[configuration]/[framework]/[runtime]_* pour les déploiements autonomes.
+Configuration à utiliser lors de la génération du projet. La valeur par défaut est `Debug`.
 
-`--version-suffix [VERSION_SUFFIX]`
+`--version-suffix <VERSION_SUFFIX>`
 
-Définit par quoi `*` doit être remplacé dans le champ de version du fichier project.json.
+Définit le suffixe de version qui remplace l’astérisque (`*`) dans le champ de version du fichier projet.
 
-`-c|--configuration [Debug|Release]`
+`-v|--verbosity <LEVEL>`
 
-Configuration à utiliser lors de la publication. La valeur par défaut est `Debug`.
-
-`[--native-subdirectory]` Mécanisme temporaire permettant d’inclure dans la sortie les sous-répertoires des ressources natives des packages de dépendances. 
-
-`[--no-build]` Ne génère pas les projets avant la publication.
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
 ## <a name="examples"></a>Exemples
 
-Publiez une application à l’aide du framework trouvé dans `project.json`. Si `project.json` contient le nœud [runtimes](project-json.md#runtimes), publiez l’application pour l’identificateur de runtime de la plateforme actuelle.
+Publier le projet dans le répertoire actif :
 
 `dotnet publish`
 
-Publiez l’application à l’aide du [project.json](project-json.md) spécifié :
+Publier l’application à l’aide du fichier projet spécifié :
 
-`dotnet publish ~/projects/app1/project.json`
+`dotnet publish ~/projects/app1/app1.csproj`
     
-Publiez l’application actuelle à l’aide du framework `netcoreapp1.0` :
+Publier le projet dans le répertoire actif à l’aide du framework `netcoreapp1.1` :
 
-`dotnet publish --framework netcoreapp1.0`
+`dotnet publish --framework netcoreapp1.1`
     
-Publiez l’application actuelle à l’aide du framework `netcoreapp1.0` et du runtime pour `OS X 10.10` (l’identificateur de runtime doit se trouver sous le nœud [runtimes](project-json.md#runtimes) `project.json`) :
+Publier l’application actuelle à l’aide du framework `netcoreapp1.1` et du runtime pour `OS X 10.10` (vous devez lister cet identificateur de runtime dans le fichier projet) :
 
-`dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
+`dotnet publish --framework netcoreapp1.1 --runtime osx.10.11-x64`
 
 ## <a name="see-also"></a>Voir aussi
-* [Frameworks](../../standard/frameworks.md)
+
+* [Frameworks cibles](../../standard/frameworks.md)
 * [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
-
-
-<!--HONumber=Feb17_HO2-->
-
-
