@@ -11,9 +11,9 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2e2ad151a91e5aabb36f18a7478e39d972573eb1
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
+ms.openlocfilehash: ca0acaaf61d87a9a55204d1ff44e3572c64d54d0
+ms.lasthandoff: 04/04/2017
 
 ---
 
@@ -35,6 +35,7 @@ Les rubriques suivantes sont disponibles :
 
 - [Bien démarrer avec Visual Studio Code](with-visual-studio-code.md)
 
-   Visual Studio Code est un éditeur de code source pour Windows, Linux et macOS qui prend en charge IntelliSense (saisie semi-automatique de code) et le débogage.
+   Visual Studio Code est un éditeur de code gratuit optimisé pour la création et le débogage d’applications cloud et web modernes. Il prend en charge IntelliSense et est disponible pour Linux, macOS et Windows.
 
    Cette rubrique vous montre comment créer et exécuter une application Hello World simple avec Visual Studio Code et .NET Core.
+
