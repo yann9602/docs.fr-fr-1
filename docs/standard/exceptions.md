@@ -11,8 +11,9 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bf116df6-0042-46bf-be13-b69864816210
 translationtype: Human Translation
-ms.sourcegitcommit: 9584699ad7e745ae3cb059b1bb8327301c9a3286
-ms.openlocfilehash: 5271b63a47aa2fcc81cd9c8b1ffd22e618829412
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: 7c9ccd455bf0d14122c0547177cc29ace6ebde42
+ms.lasthandoff: 03/13/2017
 
 ---
 
@@ -62,7 +63,7 @@ La classe @System.Exception a les propriétés suivantes qui vous permettront de
 | @System.Exception.Source | Obtient ou définit le nom de l'application ou de l'objet qui est à l'origine de l'erreur. |
 | @System.Exception.StackTrace | Contient une trace de pile qui peut être utilisée pour déterminer où une erreur s’est produite. La trace de la pile comprend le nom du fichier source et le numéro de ligne du programme si les informations de débogage sont disponibles. |
 
-La plupart des classes qui héritent de @System.Exception n’implémentent pas de membres supplémentaires et ne fournissent pas de fonctionnalités supplémentaires. Elles héritent simplement de @System.Exception. Par conséquent, vous pouvez trouver les informations les plus importantes d’une exception dans la hiérarchie des classes d’exception, le nom de l’exception et les informations contenues dans l’exception.
+La plupart des classes qui héritent de @System.Exception n’implémentent pas de membres supplémentaires ni ne fournissent de fonctionnalités supplémentaires, elles héritent simplement de @System.Exception. Par conséquent, vous pouvez trouver les informations les plus importantes d’une exception dans la hiérarchie des classes d’exception, le nom de l’exception et les informations contenues dans l’exception.
 
 Nous vous recommandons de lever et d’intercepter uniquement des objets qui dérivent de @System.Exception,, mais vous pouvez lever comme exception n’importe quel objet qui dérive de la classe @System.Object. Notez que tous les langages ne prennent pas forcément en charge la levée et l’interception d’objets qui ne dérivent pas de @System.Exception.
 
@@ -112,7 +113,7 @@ public class ProcessFile
 Le Common Language Runtime intercepte les exceptions qui ne sont pas interceptées par un bloc catch. Selon la configuration du runtime, une boîte de dialogue de débogage s’affiche, le programme s’arrête et une boîte de dialogue s’affiche avec des informations sur l’exception, ou une erreur est imprimée dans STDERR.
 
 > [!NOTE] 
-> Toute ligne de code ou presque peut générer une exception, notamment les exceptions qui sont levées par le Common Language Runtime lui-même, telles que @System.OutOfMemoryException. La plupart des applications n’ont pas à traiter ces exceptions, mais vous devez être conscient de cette possibilité quand vous écrivez des bibliothèques destinées à d’autres utilisateurs. Afin d’obtenir des suggestions pour savoir quand définir du code dans un bloc Try, consultez les [Bonnes pratiques pour les exceptions](#best-practices-for-exceptions).
+> Presque toutes les lignes de code peuvent provoquer une exception, en particulier les exceptions levées par le Common Language Runtime lui-même, comme @System.OutOfMemoryException. La plupart des applications n’ont pas à traiter ces exceptions, mais vous devez être conscient de cette possibilité quand vous écrivez des bibliothèques destinées à d’autres utilisateurs. Afin d’obtenir des suggestions pour savoir quand définir du code dans un bloc Try, consultez les [Bonnes pratiques pour les exceptions](#best-practices-for-exceptions).
  
 ## <a name="how-to-use-specific-exceptions-in-a-catch-block"></a>Guide pratique pour utiliser des exceptions spécifiques dans un bloc Catch
 
@@ -120,7 +121,7 @@ L’exemple de code précédent illustre une instruction `catch` de base qui int
 
 Quand une exception se produit, elle remonte la pile et chaque bloc catch a la possibilité de la gérer. L’ordre des instructions catch est important. Placez les blocs catch ciblés sur des exceptions spécifiques avant un bloc catch d’exceptions générales, sinon le compilateur peut générer une erreur. Le bloc catch approprié est déterminé en mettant en correspondance le type de l’exception avec le nom de l’exception spécifiée dans le bloc catch. S’il n’existe aucun bloc catch spécifique, l’exception est interceptée par un bloc catch général, le cas échéant.
 
-Le code suivant exemple utilise un bloc `try`/`catch` pour intercepter @System.InvalidCastException. L’exemple crée une classe appelée `Employee` avec une propriété unique, `Emlevel` (niveau de l’employé). Une méthode `PromoteEmployee` prend un objet et incrémente le niveau de l’employé. Une exception @System.InvalidCastException se produit quand une instance @System.DateTime est passée à la méthode `PromoteEmployee`.
+L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une exception @System.InvalidCastException. L’exemple crée une classe appelée `Employee` avec une propriété unique, le niveau de l’employé (`Emlevel`). Une méthode `PromoteEmployee` prend un objet et incrémente le niveau de l’employé. Une exception @System.InvalidCastException se produit quand une instance @System.DateTime est passée à la méthode `PromoteEmployee`.
 
 C#
 ```
@@ -210,7 +211,7 @@ class ArgumentOutOfRangeExample
 
 Vous pouvez lever explicitement une exception à l’aide de l’instruction `throw`. Vous pouvez aussi lever de nouveau une exception interceptée à l’aide de l’instruction `throw`. En codage, il est conseillé d’ajouter des informations à une exception levée une deuxième fois pour fournir plus d’informations durant le débogage.
 
-L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une éventuelle exception @System.IO.FileNotFoundException. À la suite du bloc `try`, un bloc `catch` intercepte l’exception @System.IO.FileNotFoundException et écrit un message dans la console si le fichier de données est introuvable. L’instruction suivante est `throw`, qui lève une nouvelle exception @System.IO.FileNotFoundException et ajoute des informations de texte à l’exception.
+L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une exception @System.IO.FileNotFoundException possible. À la suite du bloc `try`, un bloc `catch` intercepte l’exception @System.IO.FileNotFoundException et écrit un message dans la console si le fichier de données est introuvable. L’instruction suivante est `throw`, qui lève une nouvelle exception @System.IO.FileNotFoundException et ajoute des informations de texte à l’exception.
 
 C#
 ```
@@ -249,7 +250,7 @@ public class ProcessFile
 
 ## <a name="how-to-create-user-defined-exceptions"></a>Guide pratique pour créer des exceptions définies par l’utilisateur
 
-.NET fournit une hiérarchie de classes d’exceptions qui sont en fin de compte dérivées de la classe de base @System.Exception. Toutefois, si aucune exception prédéfinie ne répond à vos besoins, vous pouvez créer vos propres classes d’exception en les dérivant de la classe @System.Exception.
+.NET fournit une hiérarchie de classes d’exception dérivées de la classe de base @System.Exception. Toutefois, si aucune exception prédéfinie ne répond à vos besoins, vous pouvez créer vos propres classes d’exception en les dérivant de la classe @System.Exception.
 
 Quand vous créez vos propres exceptions, terminez le nom de la classe définie par l’utilisateur par le mot « Exception » et implémentez les trois constructeurs communs, comme indiqué dans l’exemple suivant. L’exemple définit une nouvelle classe d’exception nommée `EmployeeListNotFoundException`. La classe est dérivée de l’exception @System.Exception et inclut trois constructeurs.
 
@@ -506,9 +507,4 @@ catch (Exception ex)
 ## <a name="see-also"></a>Voir aussi
 
 Pour en savoir plus sur le fonctionnement des exceptions dans .NET, consultez [What Every Dev needs to Know About Exceptions in the Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md) (Tout ce que doit savoir un développeur sur les exceptions dans le runtime).
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 
