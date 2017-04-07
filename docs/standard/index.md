@@ -11,17 +11,15 @@ ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: be44dce8181be45f6d73fcf498a873fb94aa56a6
-ms.lasthandoff: 04/05/2017
+ms.sourcegitcommit: 7bbd8f5d94127b35697ad267b2661da2c757aa20
+ms.openlocfilehash: 0fbe1dda72ad666304f5c817f4bfd477c3e81d83
+ms.lasthandoff: 04/06/2017
 
 ---
 
 # <a name="net-platform-guide"></a>Guide de la plateforme .NET
 
 > [!NOTE]
-Cet article va être réécrit.
-
 > Consultez les [didacticiels « Bien démarrer avec .NET Core »](../core/getting-started.md) pour savoir comment créer une application .NET Core simple. Il suffit de quelques minutes pour créer votre première application et la rendre opérationnelle.
 
 .NET est une plateforme de développement généraliste. Elle peut être utilisée pour n’importe quel type d’application ou charge de travail faisant appel à des solutions généralistes. Elle comporte plusieurs fonctionnalités clés susceptibles de séduire de nombreux développeurs, notamment la gestion automatique de la mémoire et les langages de programmation modernes, qui facilitent sensiblement la création d’applications de haute qualité. .NET met à votre disposition un environnement de programmation général avec de nombreuses fonctionnalités pratiques, tout en donnant un accès précis aux API et mémoire natives.
