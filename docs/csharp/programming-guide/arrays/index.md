@@ -1,23 +1,41 @@
 ---
-title: "Tableaux (guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "tableaux (C#)"
-  - "langage C#, tableaux"
+title: Tableaux (Guide de programmation C#) | Microsoft Docs
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- arrays [C#]
+- C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
 caps.latest.revision: 33
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 33
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: ada8ff44630118ce0e8b8d71668e2c56ebef4bbb
+ms.lasthandoff: 03/31/2017
+
 ---
-# Tableaux (guide de programmation C#)
-Vous pouvez stocker plusieurs variables du même type dans une structure de données de tableau.  Vous déclarez un tableau en spécifiant le type de ses éléments.  
+# <a name="arrays-c-programming-guide"></a>Tableaux (guide de programmation C#)
+Vous pouvez stocker plusieurs variables du même type dans une structure de données de type tableau. Vous déclarez un tableau en spécifiant le type de ses éléments.  
   
  `type[] arrayName;`  
   
@@ -25,39 +43,37 @@ Vous pouvez stocker plusieurs variables du même type dans une structure de donn
   
  [!code-cs[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
   
-## Vue d'ensemble des tableaux  
+## <a name="array-overview"></a>Vue d’ensemble du tableau  
  Un tableau possède les propriétés suivantes :  
   
--   Un tableau peut être [Unidimensionnel](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md), [Multidimensionnel](../../../csharp/programming-guide/arrays/multidimensional-arrays.md) ou [En escalier](../../../csharp/programming-guide/arrays/jagged-arrays.md).  
+-   Un tableau peut être [unidimensionnel](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md), [multidimensionnel](../../../csharp/programming-guide/arrays/multidimensional-arrays.md) ou [en escalier](../../../csharp/programming-guide/arrays/jagged-arrays.md).  
   
--   Le nombre de dimensions et la longueur de chaque dimension sont des valeurs établies lorsque l'instance de tableau est créée.  Ces valeurs ne peuvent pas être modifiées pendant la durée de vie de l'instance.  
+-   Le nombre de dimensions et la longueur de chaque dimension sont établis lors de la création de l’instance de tableau. Ces valeurs ne peuvent pas être modifiées pendant la durée de vie de l’instance.  
   
--   Les valeurs par défaut des éléments de tableau numériques sont égales à zéro et les éléments de référence ont la valeur Null.  
+-   Les valeurs par défaut des éléments de tableau numériques sont définies sur zéro et les éléments de référence sont définis sur Null.  
   
--   Un tableau en escalier est un tableau de tableaux, et par conséquent ses éléments sont des types référence et sont initialisés à `null`.  
+-   Un tableau en escalier est un tableau de tableaux, et par conséquent ses éléments sont des types référence et sont initialisés sur `null`.  
   
--   Les tableaux sont indexés à partir de zéro : un tableau avec `n` éléments est indexé de `0` à `n-1`.  
+-   Les tableaux sont indexés sur zéro : un tableau avec `n` éléments est indexée de `0` à `n-1`.  
   
--   Les éléments du tableau peuvent être de n'importe quel autre type, y compris un type tableau.  
+-   Les éléments de tableau peuvent être de n’importe quel type, y compris un type tableau.  
   
--   Les types de tableaux sont des [types référence](../../../csharp/language-reference/keywords/reference-types.md) dérivés du type de base abstrait <xref:System.Array>.  Puisque ce type implémente <xref:System.Collections.IEnumerable> et <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser l'itération [foreach](../../../csharp/language-reference/keywords/foreach-in.md) sur tous les tableaux en C\#.  
+-   Les types tableau sont des [types référence](../../../csharp/language-reference/keywords/reference-types.md) dérivés du type de base abstrait <xref:System.Array>. Étant donné que ce type implémente <xref:System.Collections.IEnumerable> et <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser l’itération [foreach](../../../csharp/language-reference/keywords/foreach-in.md) sur tous les tableaux en C#.  
   
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
   
--   [Tableaux en tant qu'objets](../../../csharp/programming-guide/arrays/arrays-as-objects.md)  
+-   [Tableaux comme objets](../../../csharp/programming-guide/arrays/arrays-as-objects.md)  
   
 -   [Utilisation de foreach avec des tableaux](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)  
   
--   [Passage de tableaux en tant qu'arguments](../../../csharp/programming-guide/arrays/passing-arrays-as-arguments.md)  
+-   [Passage de tableaux en tant qu’arguments](../../../csharp/programming-guide/arrays/passing-arrays-as-arguments.md)  
   
--   [Passage de tableaux à l'aide de paramètres ref et out](../../../csharp/programming-guide/arrays/passing-arrays-using-ref-and-out.md)  
+-   [Passage de tableaux à l’aide de paramètres ref et out](../../../csharp/programming-guide/arrays/passing-arrays-using-ref-and-out.md)   
   
--   [En savoir plus sur les variables](http://go.microsoft.com/fwlink/?LinkId=221230) dans [Débuter avec Visual C\# 2010](http://go.microsoft.com/fwlink/?LinkId=221214) \(en anglais\)  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
-  
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   
- [Array Collection Type](http://msdn.microsoft.com/fr-fr/8a9964de-8941-47b1-a3cf-a01bc88db9e8)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
+ [Type de collection Array](http://msdn.microsoft.com/en-us/8a9964de-8941-47b1-a3cf-a01bc88db9e8)

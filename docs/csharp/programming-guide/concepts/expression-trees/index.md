@@ -20,9 +20,9 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: 401ac8986dee5f9f1504fb6c4e1f627d87f0f236
-ms.openlocfilehash: 4c30202de9524f276050d77320da79748817cdf0
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 87195c8936aba485919d6c717fcbfaa1b282bddc
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
@@ -41,7 +41,7 @@ Les arborescences d'expressions représentent du code dans une structure de donn
   
  Les exemples de code suivants montrent comment le compilateur C# crée une arborescence d’expressions qui représente l’expression lambda `num => num < 5`.  
   
-```cs  
+```csharp  
 Expression<Func<int, bool>> lambda = num => num < 5;  
 ```  
   
@@ -50,7 +50,7 @@ Expression<Func<int, bool>> lambda = num => num < 5;
   
  L’exemple de code suivant montre comment créer une arborescence d’expressions qui représente l’expression lambda `num => num < 5` à l’aide de l’API.  
   
-```cs  
+```csharp  
 // Add the following using directive to your code file:  
 // using System.Linq.Expressions;  
   
@@ -67,7 +67,7 @@ Expression<Func<int, bool>> lambda1 =
   
  Dans le .NET Framework 4 ou ultérieur, l’API des arborescences d’expressions prend également en charge les affectations et les expressions de flux de contrôle, comme les boucles, les blocs conditionnels et les blocs `try-catch`. À l’aide de l’API, vous pouvez créer des arborescences d’expressions qui sont plus complexes que celles qui peuvent être créées à partir d’expressions lambda par le compilateur C#. L’exemple suivant montre comment créer une arborescence d’expressions qui calcule la factorielle d’un nombre.  
   
-```cs  
+```csharp  
 // Creating a parameter expression.  
 ParameterExpression value = Expression.Parameter(typeof(int), "value");  
   
@@ -105,14 +105,14 @@ int factorial = Expression.Lambda<Func<int, int>>(block, value).Compile()(5);
   
 Console.WriteLine(factorial);  
 // Prints 120.  
-```  
-  
- Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010 (ou ultérieur)](http://go.microsoft.com/fwlink/?LinkId=169513).  
+```
+
+Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010](http://go.microsoft.com/fwlink/p/?LinkId=169513) (ou ultérieur).
   
 ## <a name="parsing-expression-trees"></a>Analyse des arborescences d’expressions  
  L’exemple de code suivant montre comment l’arborescence d’expressions qui représente l’expression lambda `num => num < 5` peut être décomposée selon ses différentes parties.  
   
-```cs  
+```csharp  
 // Add the following using directive to your code file:  
 // using System.Linq.Expressions;  
   
@@ -141,7 +141,7 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
   
  L’exemple de code suivant montre comment compiler une arborescence d’expressions et exécuter le code résultant.  
   
-```cs  
+```csharp  
 // Creating an expression tree.  
 Expression<Func<int, bool>> expr = num => num < 5;  
   
