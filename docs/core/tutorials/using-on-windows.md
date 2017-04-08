@@ -12,3 +12,4 @@ ms.lasthandoff: 03/13/2017
 ## <a name="content-retired"></a>Contenu retiré.
 
 Pour obtenir un didacticiel de démarrage sur .NET Core et Visual Studio 2017, consultez [(Génération d’une application C# Hello World avec .NET Core dans Visual Studio 2017](../../csharp/getting-started/with-visual-studio.md).
+
