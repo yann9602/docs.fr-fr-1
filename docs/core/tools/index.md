@@ -11,9 +11,9 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: d00277ceb7fd1c8a7186da330ab2bc4ad40c59a7
-ms.lasthandoff: 04/05/2017
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: 978dd62d655d0168b5a9c1c9732bc69ca9b256eb
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -79,7 +79,7 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>Pilote
 
-Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécution d’une [application dépendant de l’infrastructure](../app-types.md) ou l’exécution d’une commande. La seule fois où `dotnet` est utilisé sans commande est lorsqu’il est utilisé pour démarrer une application.
+Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécution d’une [application dépendant de l’infrastructure](../deploying/index.md) ou l’exécution d’une commande. La seule fois où `dotnet` est utilisé sans commande est lorsqu’il est utilisé pour démarrer une application.
 
 Pour exécuter une application dépendant de l’infrastructure, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`.
 
@@ -104,5 +104,5 @@ Si vous avez utilisé les outils Preview 2 pour produire des projets *project.j
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Référentiel GitHub dotnet/CLI](https://github.com/dotnet/cli/)
-* [Guide d’installation de .NET Core](https://aka.ms/dotnetcoregs/)
+* [Guide d’installation de .NET Core](https://aka.ms/dotnetcoregs)
 
