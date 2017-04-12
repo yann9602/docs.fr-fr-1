@@ -2,7 +2,7 @@
 title: Effectuer des jointures externes gauches
 description: Guide pratique pour effectuer des jointures externes gauches.
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

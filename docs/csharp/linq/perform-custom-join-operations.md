@@ -2,7 +2,7 @@
 title: "Effectuer des opérations de jointure personnalisées"
 description: "Guide pratique pour effectuer des opérations de jointure personnalisées."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

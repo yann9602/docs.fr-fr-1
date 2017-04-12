@@ -2,7 +2,7 @@
 title: "Gérer des valeurs Null dans des expressions de requête"
 description: "Comment gérer des valeurs Null dans des expressions de requête."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

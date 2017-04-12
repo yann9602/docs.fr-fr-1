@@ -2,8 +2,8 @@
 title: Types de base | Guide C#
 description: "Découvrez les types de base (numérique, chaîne et objet) disponibles dans tous les programmes C#"
 keywords: .NET, .NET Core, C#
-author: stevehoag
-ms.author: shoag
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/10/2016
 ms.topic: article
 ms.prod: .net

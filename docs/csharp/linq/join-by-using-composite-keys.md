@@ -2,7 +2,7 @@
 title: "Effectuer des jointures à l’aide de clés composites"
 description: "Guide pratique pour effectuer des jointures à l’aide de clés composites."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

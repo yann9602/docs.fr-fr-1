@@ -2,7 +2,7 @@
 title: "Interroger une collection d’objets"
 description: Comment interroger les collections.
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

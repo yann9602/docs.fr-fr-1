@@ -2,7 +2,7 @@
 title: "Créer un groupe imbriqué"
 description: "Indique comment créer un groupe imbriqué."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

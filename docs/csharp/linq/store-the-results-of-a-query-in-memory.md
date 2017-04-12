@@ -2,7 +2,7 @@
 title: "Stocker les résultats d’une requête dans la mémoire"
 description: "Comment enregistrer les résultats."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016
