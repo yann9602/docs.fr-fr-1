@@ -1,0 +1,314 @@
+---
+title: "&lt;customBinding&gt; | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
+caps.latest.revision: 24
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 24
+---
+# &lt;customBinding&gt;
+Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.  
+  
+## Syntaxe  
+  
+```  
+  
+<customBinding>  
+    <binding name="string"  
+        closeTimeout="TimeSpan"  
+        openTimeout="TimeSpan"   
+        receiveTimeout="TimeSpan"  
+        sendTimeout="TimeSpan"  
+       <compositeDuplex clientBaseAddress="Uri"/>  
+       <reliableSession acknowledgementInterval="TimeSpan"  
+           advancedFlowControl="Boolean"   
+           bufferedMessagesQuota="Integer"  
+           inactivityTimeout="TimeSpan"  
+           maxPendingChannels="Integer"  
+           maxRetryCount="Integer"   
+           ordered="Boolean" />  
+       <pnrpPeerResolver />  
+       <windowsStreamSecurity protectionLevel="None/Sign/EncryptAndSign"/>  
+       <sslStreamSecurity requireClientCertificate="Boolean" />  
+              <transactionFlow transactionProtocol="OleTransactions/WSAtomicTransactionOctober2004"/>  
+       <security   
+          defaultAlgorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
+           authenticationMode="UserNameForAnonymous"  
+           contextMode="Cookie"   
+           defaultProtectionLevel="Sign"  
+           enableKeyDerivation="false"  
+           keyEntropyMode="ClientEntropy"   
+                  messageProtectionOrder="SignBeforeEncryptAndEncryptSignature"   
+           securityVersion="WSSecurityXXX2005">  
+           <localClientSettings cacheCookies="false"  
+               detectReplays="false"  
+               maxCookieCachingTime="00:07:24" />  
+           <localServiceSettings replayCacheSize="9"  
+               maxClockSkew="00:00:03"   
+               replayWindow="00:07:22.2190000" />  
+       </security>  
+       <binaryMessageEncoding maxReadPoolSize="Integer"  
+           maxWritePoolSize="Integer"  
+           maxSessionSize="Integer" />  
+       <httpsTransport manualAddressing="Boolean"  
+           maxMessageSize="Integer"  
+           authenticationScheme="Negotiate"   
+           bypassProxyOnLocal="Boolean"  
+           hostNameComparisonMode="Exact"   
+           mapAddressingHeadersToHttpHeaders="Boolean"   
+           proxyaddress="Uri"  
+           realm="String"   
+           requireClientCertificate="Boolean" />  
+       <peerTransport manualAddressing="false"  
+          maxMessageSize="20002"  
+          listenIPAddress="202.10.1.9"   
+          messageAuthentication="false"  
+          peerNodeAuthenticationMode="None"  
+          port="1000" />  
+  
+<security   
+      defaultAlgorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
+   authenticationMode="UserNameForAnonymous"  
+   bootstrapBindingConfiguration="String"  
+   bootstrapBindingSectionName="String"  
+   defaultProtectionLevel="None/Sign/EncryptAndSign"  
+      requireDerivedKeys="Boolean"  
+   securityHeaderLayout="Strict/Lax/LaxTimestampFirst/LaxTimestampLast"  
+   includeTimestamp="Boolean"  
+   keyEntropyMode="ClientEntropy/ServerEntropy/CombinedEntropy"   
+   messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/EncryptBeforeSign"   
+   protectTokens="Boolean"  
+   requireSecurityContextCancellation="Boolean"  
+   securityVersion=" WSSecurityJan2004/WSSecurityXXX2005"  
+   requireSignatureConfirmation="Boolean" >  
+   <localClientSettings cacheCookies="Boolean"  
+      detectReplays="Boolean"  
+      replayCacheSize="Integer"  
+      maxClockSkew="TimeSpan"  
+      maxCookieCachingTime="TimeSpan"  
+      replayWindow="TimeSpan"  
+      sessionKeyRenewalInterval="TimeSpan"  
+      sessionKeyRolloverInterval="TimeSpan"  
+      reconnectOnTransportFailure="Boolean"  
+      timestampValidityDuration="TimeSpan"  
+      cookieRenewalThresholdPercentage="Integer" />  
+   <localServiceSettings detectReplays="Boolean"  
+      issuedCookieLifeTime="TimeSpan"  
+      maxStatefulNegotiations="Integer"  
+            replayCacheSize="Integer"  
+      maxClockSkew="TimeSpan"   
+      negotiationTimeout="TimeSpan"  
+      replayWindow="TimeSpan"  
+      inactivityTimeout="TimeSpan"  
+      sessionKeyRenewalInterval="TimeSpan"  
+      sessionKeyRolloverInterval="TimeSpan"  
+      reconnectOnTransportFailure="Boolean"  
+      maxConcurrentSessions="Integer"  
+      timestampValidityDuration="TimeSpan" />  
+   <federationParameters trustVersion="WSTrustApr2004/WSTrustFeb2005" />  
+<security   
+   defaultAlgorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/ Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
+   authenticationMode="UserNameForAnonymous"  
+   bootstrapBindingConfiguration="String"  
+   bootstrapBindingSectionName="String"  
+   defaultProtectionLevel="None/Sign/EncryptAndSign"  
+      requireDerivedKeys="Boolean"  
+   securityHeaderLayout="Strict/Lax/LaxTimestampFirst/LaxTimestampLast"  
+   includeTimestamp="Boolean"  
+   keyEntropyMode="ClientEntropy/ServerEntropy/CombinedEntropy"   
+   messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/EncryptBeforeSign"   
+   protectTokens="Boolean"  
+   requireSecurityContextCancellation="Boolean"  
+   securityVersion=" WSSecurityJan2004/WSSecurityXXX2005"  
+   requireSignatureConfirmation="Boolean" >  
+   <localClientSettings cacheCookies="Boolean"  
+      detectReplays="Boolean"  
+      replayCacheSize="Integer"  
+      maxClockSkew="TimeSpan"  
+      maxCookieCachingTime="TimeSpan"  
+      replayWindow="TimeSpan"  
+      sessionKeyRenewalInterval="TimeSpan"  
+      sessionKeyRolloverInterval="TimeSpan"  
+      reconnectOnTransportFailure="Boolean"  
+      timestampValidityDuration="TimeSpan"  
+      cookieRenewalThresholdPercentage="Integer" />  
+   <localServiceSettings detectReplays="Boolean"  
+      issuedCookieLifeTime="TimeSpan"  
+      maxStatefulNegotiations="Integer"  
+            replayCacheSize="Integer"  
+      maxClockSkew="TimeSpan"   
+      negotiationTimeout="TimeSpan"  
+      replayWindow="TimeSpan"  
+      inactivityTimeout="TimeSpan"  
+      sessionKeyRenewalInterval="TimeSpan"  
+      sessionKeyRolloverInterval="TimeSpan"  
+      reconnectOnTransportFailure="Boolean"  
+      maxConcurrentSessions="Integer"  
+      timestampValidityDuration="TimeSpan" />  
+   <federationParameters trustVersion="WSTrustApr2004/WSTrustFeb2005" />  
+   <GenericIssuedTokenParameters>   
+      <LocalIssuerIssuedTokenParameters keyType=" SymmeticKey/PublicKey"  
+        keySize="Integer"  
+        tokenType="String" />  
+     <IssuedTokenParametersEndpointAddress address="URI"  
+        bindingConfiguration="String"  
+        binding="String" />  
+     <IssuedTokenClient localIssuerChannelBehaviors="String"  
+        cacheIssuedTokens="Boolean"  
+        maxIssuedTokenCachingTime="TimeSpan"  
+        keyEntropyMode="ClientEntropy/ServerEntropy/CombinedEntropy" />  
+     <IssuedTokenClientBehavior issuerAddress="String"  
+        behaviorConfiguration="String" />  
+     <IssuedTokenClientBehavior address="URI"  
+        bindingConfiguration="String"  
+        binding="String" />  
+   </GenericIssuedTokenParameters>   
+</security>  
+</binding>  
+</customBinding>  
+```  
+  
+## Attributs et éléments  
+ Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+  
+### Attributs  
+  
+|Attribut|Description|  
+|--------------|-----------------|  
+|closeTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de fermeture.  Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>.  La valeur par défaut est 00:01:00.|  
+|name|Chaîne qui contient le nom de configuration de la liaison.  Cette valeur est une chaîne définie par l'utilisateur qui sert de chaîne d'identification à la liaison personnalisée.  Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d'avoir un nom.  Pour plus d'informations sur la configuration par défaut, ainsi que sur les comportements et les liaisons sans nom, consultez [Configuration simplifiée](../../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|openTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture.  Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>.  La valeur par défaut est 00:01:00.|  
+|receiveTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception.  Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>.  La valeur par défaut est 00:01:00.|  
+|sendTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi.  Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>.  La valeur par défaut est 00:01:00.|  
+  
+### Éléments enfants  
+  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<compositeDuplex\>](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée.  Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP.  En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion.  Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|  
+|[\<pnrpPeerResolver\>](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Spécifie un programme de résolution de nom d'homologue PNRP \(Peer Name Resolution Protocol\).  Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|  
+|[\<reliableSession\>](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Spécifie le paramètre de WS\-Reliable Messaging.  Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD \(Exactly\-Once\-Delivery\).  Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|  
+|[\<sécurité\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée.  Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|  
+|[\<sslStreamSecurity\>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL.  Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|  
+|[\<transactionFlow\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l'attribut `transactionProtocol`.  Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|  
+|[\<windowsStreamSecurity\>](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée.  Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|  
+  
+### Éléments parents  
+  
+|Élément|Description|  
+|-------------|-----------------|  
+|liaisons|Contient toutes les liaisons pour les applications de Windows Communication Foundation.|  
+  
+## Notes  
+ Les liaisons personnalisées permettent d'exercer un contrôle total sur la pile de messagerie WCF.  Les liaisons spécialement conçues peuvent être créées en ajoutant des éléments de configuration pour des entités spécifiques.  Par exemple, l'utilisateur peut associer les sections `httpsTransport`, `reliableSession` et `security` pour créer une liaison fiable et sécurisée basée sur https.  
+  
+ Une liaison individuelle définit la pile de messages en spécifiant les éléments de configuration des éléments de la pile suivant leur l'ordre d'apparition dans cette pile.  Chaque élément définit et configure l'élément de la pile.  Il doit y avoir un seul élément de transport dans chaque liaison personnalisée.  Sans cet élément, la pile de messagerie est incomplète.  
+  
+ L'ordre dans lequel les éléments apparaissent dans la pile est important car il s'agit de l'ordre dans lequel les opérations sont appliquées au message.  Voici l'ordre recommandé des éléments de la pile :  
+  
+1.  Transactions \(facultatif\)  
+  
+2.  Messagerie fiable \(facultatif\)  
+  
+3.  Sécurité \(facultatif\)  
+  
+4.  Transport  
+  
+5.  Encodeur \(facultatif\)  
+  
+ Utilisez une liaison personnalisée lorsque l'une des liaisons fournies par le système ne répond pas aux spécifications de votre service.  Une liaison personnalisée peut être utilisée, par exemple, pour activer l'utilisation d'un nouveau transport ou d'un nouvel encodeur à un point de terminaison de service.  
+  
+ Une liaison personnalisée est construite à l'aide d'une collection <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> d'éléments de liaison « empilés » dans un ordre spécifique :  
+  
+-   Tout en haut de cette pile figure un <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> facultatif qui autorise des transactions de flux.  
+  
+-   Puis figure un <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> facultatif qui fournit une session et un mécanisme de classement tel que défini dans la spécification WS\-ReliableMessaging.  Cette notion de session peut traverser les intermédiaires SOAP et de transport.  
+  
+-   Puis figure un élément de liaison facultatif qui fournit des fonctionnalités de sécurité telles que l'autorisation, l'authentification, la protection et la confidentialité.  Les éléments de liaison de sécurité suivants sont fournis par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] :  
+  
+    -   <xref:System.ServiceModel.Channels.SecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
+  
+-   Les modèles de messages facultatifs spécifiés par des éléments de liaison figurent ci\-dessous :  
+  
+-   <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>  
+  
+-   Les éléments de liaison d'assistance\/de mises à niveau de transport facultatifs sont les suivants :  
+  
+    -   <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+  
+-   L'élément suivant est un message obligatoire qui encode l'élément de liaison.  Vous pouvez utiliser votre propre transport ou utiliser l'une des liaisons d'encodage des messages suivantes :  
+  
+    -   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
+  
+-   Au bas de la pile se trouve un élément de transport obligatoire.  Vous pouvez utiliser votre propre transport ou utiliser l'un des éléments de liaison de transport fourni par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] :  
+  
+    -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.PeerTransportBindingElement>  
+  
+ Le tableau suivant récapitule les options de chaque couche.  
+  
+|Couche|Options|Obligatoire|  
+|------------|-------------|-----------------|  
+|Flux de transaction|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Non|  
+|Fiabilité|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Non|  
+|Sécurité|Symétrique, asymétrique, au niveau du transport|Non|  
+|Modification de la forme|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Non|  
+|Mises à niveau de transport|Flux SSL, flux Windows, programme de résolution d'homologue|Non|  
+|Encodage|Text, Binary, MTOM, Custom|Oui|  
+|Transport|TCP, canaux nommés, HTTP, HTTPS, versions de MSMQ, personnalisé|Oui|  
+  
+ De plus, vous pouvez définir vos propres éléments de liaison et les insérer entre chacune des couches définies précédentes.  
+  
+ Pour en savoir plus sur l'utilisation d'une liaison personnalisée afin de modifier une liaison fournie par le système, consultez [Comment : personnaliser une liaison fournie par le système](../../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
+  
+## Voir aussi  
+ <xref:System.ServiceModel.Channels.Binding>   
+ <xref:System.ServiceModel.Channels.BindingElement>   
+ <xref:System.ServiceModel.Configuration.BindingsSection>   
+ <xref:System.ServiceModel.Channels.CustomBinding>   
+ [\<liaison\>](../../../../../docs/framework/misc/binding.md)   
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
+ [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
+ [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ [customBinding Element](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
+ [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/fr-fr/bd8b277b-932f-472f-a42a-b02bb5257dfb)

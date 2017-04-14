@@ -1,35 +1,44 @@
 ---
-title: Utilisation des types de base
-description: Utilisation des types de base
-keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
-ms.date: 07/22/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: e53e414f-e0b6-4076-a6ab-189ba93e23cd
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 2be90e0a3e6627152532ff607768dbbb333045d7
-ms.lasthandoff: 04/05/2017
-
+title: "Utilisation des types de base dans .NET Framework | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "types, base"
+  - "types de base"
+  - "système de type, types de base"
+ms.assetid: 028d0ce8-ebc2-4a88-a16f-17508f6d0bd6
+caps.latest.revision: 14
+author: "rpetrusha"
+ms.author: "ronpet"
+manager: "wpickett"
+caps.handback.revision: 14
 ---
-
-# <a name="working-with-base-types"></a>Utilisation des types de base
-
-Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.
-
-## <a name="in-this-section"></a>Dans cette section
-
-[Conversion de type](type-conversion.md) : explique comment convertir un type en un autre.
-
-[Mise en forme des types](formatting-types.md) : explique comment mettre en forme des chaînes à l’aide de spécificateurs de format de chaîne.
-
-[Manipulation des chaînes](manipulating-strings.md) : explique comment manipuler et mettre en forme des chaînes.
-
-[Analyse de chaînes](parsing-strings.md) : explique comment convertir des chaînes en types.
-
-[Système de type commun](common-type-system.md) : décrit les types utilisés dans .NET.
-
+# Utilisation des types de base dans .NET Framework
+Cette section décrit les opérations réalisables sur les types de base du .NET Framework, notamment les opérations de mise en forme et de conversion ainsi que d'autres opérations courantes.  
+  
+## Dans cette section  
+ [Conversion de type dans le .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
+ Explique comment convertir un type en un autre.  
+  
+ [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)  
+ Décrit comment mettre en forme les chaînes à l'aide de spécificateurs de format de chaîne.  
+  
+ [Manipulation des chaînes](../../../docs/standard/base-types/manipulating-strings.md)  
+ Explique comment manipuler et mettre en forme des chaînes.  
+  
+ [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
+ Explique comment convertir des chaînes en types .NET Framework.  
+  
+## Rubriques connexes  
+ [Système de type commun](../../../docs/standard/base-types/common-type-system.md)  
+ Décrit les types utilisés par le .NET Framework.  
+  
+ [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)  
+ Décrit comment utiliser des fuseaux horaires et des conversions de fuseau horaire dans des applications prenant en charge les fuseaux horaires.

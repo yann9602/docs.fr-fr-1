@@ -1,0 +1,164 @@
+---
+title: "Consid&#233;rations sur les performances (Entity Framework) | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
+caps.latest.revision: 6
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 6
+---
+# Consid&#233;rations sur les performances (Entity Framework)
+Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Framework et fournit des points à prendre en considération pour vous aider à améliorer les performances des applications Entity Framework.  
+  
+## Étapes de l'exécution des requêtes  
+ Pour mieux comprendre les performances des requêtes dans Entity Framework, il est utile de comprendre les opérations qui se produisent lorsqu'une requête s'exécute sur un modèle conceptuel et retourne des données sous la forme d'objets.  Le tableau ci\-dessous décrit cette série d'opérations.  
+  
+|Opération|Coût relatif|Fréquence|Commentaires|  
+|---------------|------------------|---------------|------------------|  
+|Chargement des métadonnées|Modéré|Une fois dans chaque domaine d'application.|Les métadonnées de modèle et de mappage utilisées par Entity Framework sont chargées dans un <xref:System.Data.Metadata.Edm.MetadataWorkspace>.  Ces métadonnées sont mises en cache globalement et sont disponibles pour d'autres instances d'<xref:System.Data.Objects.ObjectContext> dans le même domaine d'application.|  
+|Ouverture de la connexion de base de données|Modéré<sup>1</sup>|Autant que nécessaire.|Étant donné qu'une connexion ouverte à la base de données consomme des ressources précieuses, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] ouvre et ferme la connexion de base de données uniquement lorsque cela est nécessaire.  Vous pouvez également ouvrir explicitement la connexion.  Pour plus d'informations, consultez [Managing Connections and Transactions](http://msdn.microsoft.com/fr-fr/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).|  
+|Génération d'affichages|High|Une fois dans chaque domaine d'application.  \(Ils peuvent être prégénérés.\)|Avant qu'Entity Framework puisse exécuter une requête sur un modèle conceptuel ou enregistrer des modifications apportées à la source de données, il doit générer un ensemble d'affichages des requêtes locaux pour accéder à la base de données.  En raison du coût élevé de la génération de ces affichages, vous pouvez prégénérer les affichages et les ajouter au projet au moment de la conception.  Pour plus d'informations, consultez [How to: Pre\-Generate Views to Improve Query Performance](http://msdn.microsoft.com/fr-fr/b18a9d16-e10b-4043-ba91-b632f85a2579).|  
+|Préparation de la requête|Modéré<sup>2</sup>|Une fois pour chaque requête individuelle.|Inclut les coûts relatifs à la composition de la commande de requête, à la génération d'une arborescence de commandes basée sur les métadonnées de modèle et de mappage et à la définition de la forme des données retournées.  Comme les commandes de requête Entity SQL et LINQ sont à présent mises en cache, il est possible d'exécuter ultérieurement une même requête pour économiser du temps.  Vous pouvez toujours utiliser des requêtes LINQ compilées pour réduire ce coût dans les exécutions ultérieures et les requêtes compilées peuvent être plus efficaces que les requêtes LINQ qui sont automatiquement mises en cache.  Pour plus d'informations, consultez [Requêtes compilées \(LINQ to Entities\)](../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  Pour obtenir des informations générales sur l'exécution des requêtes LINQ, consultez [LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md). **Note:**  Les requêtes LINQ to Entities qui appliquent l'opérateur `Enumerable.Contains` aux collections en mémoire ne sont pas automatiquement mises en cache.  Le paramétrage des collections en mémoire dans les requêtes LINQ compilées n'est pas autorisé.|  
+|Exécution de la requête|Faible<sup>2</sup>|Une fois pour chaque requête.|Coût de l'exécution de la commande sur la source de données à l'aide du fournisseur de données ADO.NET.  Comme la plupart des sources de données mettent en cache les plans de requête, les exécutions ultérieures des mêmes requêtes permettent d'économiser du temps.|  
+|Chargement et validation de types|Faible<sup>3</sup>|Une fois pour chaque instance <xref:System.Data.Objects.ObjectContext>.|Les types sont chargés et validés par rapport aux types que le modèle conceptuel définit.|  
+|Suivi|Faible<sup>3</sup>|Une fois pour chaque objet retourné par une requête.  <sup>4</sup>|Si une requête utilise l'option de fusion <xref:System.Data.Objects.MergeOption>, cette étape n'affecte pas les performances.<br /><br /> Si la requête utilise l'option de fusion <xref:System.Data.Objects.MergeOption>, <xref:System.Data.Objects.MergeOption> ou <xref:System.Data.Objects.MergeOption>, les résultats de la requête sont suivis dans le <xref:System.Data.Objects.ObjectStateManager>.  Une clé <xref:System.Data.EntityKey> est générée pour chaque objet de suivi que la requête retourne et est utilisée pour créer une entrée <xref:System.Data.Objects.ObjectStateEntry> dans le <xref:System.Data.Objects.ObjectStateManager>.  Si un <xref:System.Data.Objects.ObjectStateEntry> existant est trouvé pour <xref:System.Data.EntityKey>, l'objet existant est retourné.  Si l'option <xref:System.Data.Objects.MergeOption> ou <xref:System.Data.Objects.MergeOption> est utilisée, l'objet est mis à jour avant d'être retourné.<br /><br /> Pour plus d'informations, consultez [Identity Resolution, State Management, and Change Tracking](http://msdn.microsoft.com/fr-fr/3bd49311-0e72-4ea4-8355-38fe57036ba0).|  
+|Matérialisation des objets|Modéré<sup>3</sup>|Une fois pour chaque objet retourné par une requête.  <sup>4</sup>|Processus de lecture de l'objet <xref:System.Data.Common.DbDataReader> retourné, de création d'objets et de définition des valeurs de propriété basées sur les valeurs dans chaque instance de la classe <xref:System.Data.Common.DbDataRecord>.  Si l'objet existe déjà dans <xref:System.Data.Objects.ObjectContext> et que la requête utilise les options de fusion <xref:System.Data.Objects.MergeOption> ou <xref:System.Data.Objects.MergeOption>, cette étape n'affecte pas les performances.  Pour plus d'informations, consultez [Identity Resolution, State Management, and Change Tracking](http://msdn.microsoft.com/fr-fr/3bd49311-0e72-4ea4-8355-38fe57036ba0).|  
+  
+ <sup>1</sup> Lorsqu'un fournisseur de sources de données implémente un regroupement de connexions, le coût de l'ouverture d'une connexion est distribué sur l'ensemble du pool.  Le fournisseur .NET pour SQL Server prend en charge le regroupement de connexions.  
+  
+ <sup>2</sup> Le coût augmente avec la complexité de la requête.  
+  
+ <sup>3</sup> Le coût total augmente de façon proportionnelle au nombre d'objets retournés par la requête.  
+  
+ <sup>4</sup> Cette charge mémoire n'est pas nécessaire pour les requêtes EntityClient car les requêtes EntityClient retournent un <xref:System.Data.EntityClient.EntityDataReader> à la place d'objets.  Pour plus d'informations, consultez [Fournisseur EntityClient pour Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+  
+## Considérations supplémentaires  
+ D'autres considérations pouvant affecter les performances des applications Entity Framework sont exposées ci\-dessous.  
+  
+### Exécution de la requête  
+ Comme les requêtes peuvent consommer beaucoup de ressources, considérez à quel point dans votre code et sur quel ordinateur une requête est exécutée.  
+  
+#### Exécution différée \/ exécution immédiate  
+ Lorsque vous créez une requête <xref:System.Data.Objects.ObjectQuery%601> ou LINQ, la requête peut ne pas être exécutée immédiatement.  L'exécution de la requête est différée jusqu'à ce que les résultats soient requis, comme par exemple lors d'une énumération `foreach` \(C\#\) ou `For Each` \(Visual Basic\) ou lorsqu'elle est affectée pour remplir une collection <xref:System.Collections.Generic.List%601>.  L'exécution de la requête commence immédiatement lorsque vous appelez la méthode <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> sur un <xref:System.Data.Objects.ObjectQuery%601> ou lorsque vous appelez une méthode LINQ qui retourne une requête singleton, telle que <xref:System.Linq.Enumerable.First%2A> ou <xref:System.Linq.Enumerable.Any%2A>.  Pour plus d'informations, consultez [Object Queries](http://msdn.microsoft.com/fr-fr/0768033c-876f-471d-85d5-264884349276) et [Exécution de la requête \(LINQ to Entities\)](../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md).  
+  
+#### Exécution côté client de requêtes LINQ  
+ Bien que l'exécution d'une requête LINQ se produise sur l'ordinateur qui héberge la source de données, certaines parties d'une requête LINQ peuvent être évaluées sur l'ordinateur client.  Pour plus d'informations, consultez la section Exécution sur les magasins de la rubrique [Exécution de la requête \(LINQ to Entities\)](../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md).  
+  
+### Complexité des requêtes et du mappage  
+ La complexité des requêtes individuelles et du mappage dans le modèle d'entité aura un effet significatif sur les performances des requêtes.  
+  
+#### Complexité du mappage  
+ Les modèles qui sont plus complexes qu'un mappage un\-à\-un simple entre des entités dans le modèle conceptuel et des tables dans le modèle de stockage génèrent des commandes plus complexes que les modèles qui ont un mappage un\-à\-un.  
+  
+#### Complexité des requêtes  
+ Les requêtes qui requièrent un grand nombre de jointures dans les commandes exécutées sur la source de données ou qui retournent une grande quantité de données peuvent affecter les performances des façons suivantes :  
+  
+-   Des requêtes sur un modèle conceptuel qui paraissent simples peuvent provoquer l'exécution de requêtes plus complexes sur la source de données.  Cela peut se produire parce qu'Entity Framework traduit une requête sur un modèle conceptuel en une requête équivalente sur la source de données.  Lorsqu'un jeu d'entités individuel dans le modèle conceptuel est mappé à plusieurs tables dans la source de données ou lorsqu'une relation entre des entités est mappée à une table de jointures, la commande de requête exécutée sur la requête de source de données peut requérir une ou plusieurs jointures.  
+  
+    > [!NOTE]
+    >  Utilisez la méthode <xref:System.Data.Objects.ObjectQuery.ToTraceString%2A> des classes <xref:System.Data.Objects.ObjectQuery%601> ou <xref:System.Data.EntityClient.EntityCommand> pour consulter les commandes exécutées sur la source de données pour une requête donnée.  Pour plus d'informations, consultez [How to: View the Store Commands](http://msdn.microsoft.com/fr-fr/f9771c6e-3b62-4b24-a5d4-55d68e14fa79).  
+  
+-   Les requêtes Entity SQL imbriquées peuvent créer des jointures sur le serveur et peuvent retourner un grand nombre de lignes.  
+  
+     Vous trouverez ci\-dessous un exemple de requête imbriquée dans une clause de projection :  
+  
+    ```  
+    SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2   
+        FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1   
+        FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
+    ```  
+  
+     En outre, de telles requêtes provoquent la création par le pipeline de requête d'une requête individuelle avec la duplication d'objets sur l'ensemble des requêtes imbriquées.  En raison de cela, une colonne individuelle peut être dupliquée plusieurs fois.  Sur certaines bases de données, notamment SQL Server, cela peut provoquer une augmentation très importante de la taille de la table TempDB, ce qui peut réduire les performances du serveur.  Vous devez faire très attention lorsque vous exécutez des requêtes imbriquées.  
+  
+-   Toutes les requêtes qui retournent une grande quantité de données peuvent provoquer une diminution des performances si le client effectue des opérations qui consomment des ressources d'une façon proportionnelle à la taille du jeu de résultats.  Dans de tels cas, vous devez envisager de limiter la quantité de données retournées par la requête.  Pour plus d'informations, consultez [How to: Page Through Query Results](http://msdn.microsoft.com/fr-fr/ffc0f920-e7de-42e0-9b12-ef356421d030).  
+  
+ Toutes les commandes générées automatiquement par Entity Framework peuvent être plus complexes que des commandes semblables écrites explicitement par un développeur de base de données.  Si vous avez besoin d'un contrôle explicite sur les commandes exécutées sur votre source de données, envisagez de définir un mappage à une fonction table ou à une procédure stockée.  
+  
+#### Relationships  
+ Pour obtenir des performances de requête optimales, vous devez définir des relations entre les entités en tant qu'associations dans le modèle d'entité et entant que relations logiques dans la source de données.  
+  
+### Chemins d'accès des requêtes  
+ Par défaut, lorsque vous exécutez une requête <xref:System.Data.Objects.ObjectQuery%601>, les objets connexes ne sont pas retournés \(bien que les objets qui représentent les relations elles\-mêmes le soient\).  Vous pouvez charger les objets connexes de l'une des trois manières suivantes :  
+  
+1.  Définissez le chemin d'accès de la requête <xref:System.Data.Objects.ObjectQuery%601> avant qu'elle soit exécutée.  
+  
+2.  Appelez la méthode `Load` au niveau de la propriété de navigation exposée par l'objet.  
+  
+3.  Affectez à l'option <xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A> de l'objet <xref:System.Data.Objects.ObjectContext> la valeur `true`.  Notez que cela se fait automatiquement lorsque vous générez le code de couche objet avec [Entity Data Model Designer](http://msdn.microsoft.com/fr-fr/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  Pour plus d'informations, consultez [Generated Code Overview](http://msdn.microsoft.com/fr-fr/6a88ea38-6a90-4107-bc33-531b79ce5b6a).  
+  
+ Au moment de choisir l'option à utiliser, sachez qu'il y a une corrélation entre le nombre de demandes adressées à la base de données et la quantité de données retournées dans une requête individuelle.  Pour plus d'informations, consultez [Loading Related Objects](http://msdn.microsoft.com/fr-fr/452347d2-7b3b-44cd-9001-231299a28cb1).  
+  
+#### Utilisation des chemins d'accès de requête  
+ Les chemins d'accès de requête définissent le graphique des objets qu'une requête retourne.  Lorsque vous définissez un chemin d'accès de requête, il suffit d'adresser une demande unique à la base de données pour que tous les objets définis par le chemin d'accès soient retournés.  L'utilisation de chemins d'accès de requête peut se traduire par l'exécution de commandes complexes sur la source de données à partir de requêtes d'objet d'apparence simple.  Cela s'explique par le fait qu'une ou plusieurs jointures sont nécessaires pour qu'une même requête retourne des objets connexes.  Cette complexité est plus prononcée dans le cas de requêtes exécutées sur un modèle d'entité complexe, par exemple, une entité avec héritage ou un chemin d'accès qui inclut des relations plusieurs\-à\-plusieurs.  
+  
+> [!NOTE]
+>  Utilisez la méthode <xref:System.Data.Objects.ObjectQuery.ToTraceString%2A> pour voir la commande qui sera générée par un <xref:System.Data.Objects.ObjectQuery%601>.  Pour plus d'informations, consultez [How to: View the Store Commands](http://msdn.microsoft.com/fr-fr/f9771c6e-3b62-4b24-a5d4-55d68e14fa79).  
+  
+ Lorsqu'un chemin d'accès de requête comprend un trop grand nombre d'objets connexes ou que les objets contiennent une trop grande quantité de données de ligne, la source de données peut ne pas être en mesure de faire aboutir la requête.  Cela se produit si la requête a besoin d'un stockage temporaire intermédiaire qui dépasse les capacités de la source de données.  En pareil cas, vous pouvez réduire la complexité de la requête de source de données en chargeant explicitement les objets connexes.  
+  
+#### Chargement explicite d'objets connexes  
+ Vous pouvez charger explicitement des objets connexes en appelant la méthode `Load` sur une propriété de navigation qui retourne <xref:System.Data.Objects.DataClasses.EntityCollection%601> ou <xref:System.Data.Objects.DataClasses.EntityReference%601>.  Le chargement explicite d'objets requiert un aller\-retour à la base de données chaque fois que la méthode `Load` est appelée.  
+  
+> [!NOTE]
+>  Si vous appelez `Load` tout en effectuant une boucle sur une collection d'objets retournés, comme par exemple lorsque vous utilisez l'instruction `foreach` \(`For Each` en Visual Basic\), le fournisseur spécifique à la source de données doit prendre en charge plusieurs jeux de résultats actifs sur une même connexion.  Pour une base de données SQL Server, vous devez spécifier la valeur `MultipleActiveResultSets = true` dans la chaîne de connexion du fournisseur.  
+  
+ Vous pouvez également utiliser la méthode <xref:System.Data.Objects.ObjectContext.LoadProperty%2A> en l'absence de propriétés <xref:System.Data.Objects.DataClasses.EntityCollection%601> ou <xref:System.Data.Objects.DataClasses.EntityReference%601> sur les entités.  Cela peut s'avérer utile lorsque vous utilisez des entités POCO.  
+  
+ Bien que le chargement explicite d'objets connexes réduise le nombre de jointures ainsi que la quantité de données redondantes, la méthode `Load` requiert des connexions répétées à la base de données, ce qui peut devenir coûteux lors du chargement explicite d'un grand nombre d'objets.  
+  
+### Enregistrement des modifications  
+ Lorsque vous appelez la méthode <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> sur <xref:System.Data.Objects.ObjectContext>, une commande distincte de création, mise à jour ou suppression est générée pour chaque objet ajouté, mis à jour ou supprimé dans le contexte.  Ces commandes sont exécutées sur la source de données dans une transaction unique.  Comme avec les requêtes, les performances des opérations de création, mise à jour et suppression dépendent de la complexité du mappage dans le modèle conceptuel.  
+  
+### Transactions distribuées  
+ Des opérations dans une transaction explicite qui requièrent des ressources gérées par DTC \(Distributed Transaction Coordinator\) seront beaucoup plus coûteuses qu'une opération semblable qui ne requiert pas DTC.  La promotion DTC se produira dans les situations suivantes :  
+  
+-   Transaction explicite avec une opération sur une base de données SQL Server 2000 ou une autre source de données qui effectue toujours une promotion DTC des transactions explicites.  
+  
+-   Transaction explicite avec une opération sur SQL Server 2005 lorsque la connexion est gérée par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  Cela se produit parce que SQL Server 2005 effectue une promotion DTC chaque fois qu'une connexion est fermée et rouverte dans une même transaction, ce qui est le comportement par défaut d'[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  Cette promotion de DTC ne se produit pas lorsque vous utilisez SQL Server 2008. Pour éviter cette promotion lors de l'utilisation de SQL Server 2005, vous devez explicitement ouvrir et fermer la connexion dans la transaction.  Pour plus d'informations, consultez [Managing Connections and Transactions](http://msdn.microsoft.com/fr-fr/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+  
+ Une transaction explicite est utilisée lorsqu'une ou plusieurs opérations sont exécutées au sein d'une transaction <xref:System.Transactions>.  Pour plus d'informations, consultez [Managing Connections and Transactions](http://msdn.microsoft.com/fr-fr/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+  
+## Stratégies pour l'amélioration des performances  
+ Vous pouvez améliorer les performances globales des requêtes dans Entity Framework en utilisant les stratégies ci\-dessous.  
+  
+#### Prégénérer des affichages  
+ La génération d'affichages basés sur un modèle d'entité représente un coût significatif la première fois qu'une application exécute une requête.  Utilisez l'utilitaire EdmGen.exe pour prégénérer des affichages sous la forme d'un fichier de code Visual Basic ou C\# qui peut être ajouté au projet pendant la conception.  Vous pouvez aussi utiliser un modèle Text Template Transformation Toolk pour générer des vues précompilées.  Les vues prégénérées sont validées au moment de l'exécution pour garantir qu'elles sont cohérentes avec la version actuelle du modèle d'entité spécifié.  Pour plus d'informations, consultez [How to: Pre\-Generate Views to Improve Query Performance](http://msdn.microsoft.com/fr-fr/b18a9d16-e10b-4043-ba91-b632f85a2579) et [Isolation des performances à l'aide des vues précompilées\/prégénérées dans Entity Framework 4](http://go.microsoft.com/fwlink/?LinkID=201337&clcid=0x409).  
+  
+ Tenez compte des éléments suivants lors de l'utilisation de très grands modèles :  
+  
+ Le format des métadonnées .NET limite le nombre de caractères de la chaîne utilisateur dans un binaire donné à 16,777,215 \(0xFFFFFF\).  Si vous générez des vues pour un très grand modèle et le fichier correspondant atteint la taille limite, vous obtenez l'erreur de compilation « Pas d'espace logique restant pour la création de chaînes utilisateur supplémentaires. ».  Cette limitation s'applique à tous les binaires gérés.  Pour plus d'informations, consultez le [blog](http://go.microsoft.com/fwlink/?LinkId=201476) qui illustre comment éviter l'erreur lors de l'utilisation de modèles grands et complexes.  
+  
+#### Envisager d'utiliser l'option de fusion NoTracking pour les requêtes  
+ Effectuer le suivi des objets retournés dans le contexte de l'objet a un coût obligatoire.  Les objets doivent être joints à une instance <xref:System.Data.Objects.ObjectContext> pour que les modifications apportées aux objets soient détectées et pour garantir que plusieurs demandes pour la même entité logique retournent la même instance de l'objet.  Si vous n'envisagez pas d'effectuer des mises à jour ni des suppressions d'objets et que vous n'avez pas besoin de la gestion des identités, envisagez d'utiliser les options de fusion <xref:System.Data.Objects.MergeOption> lorsque vous exécutez des requêtes.  
+  
+#### Retourner la quantité appropriée de données  
+ Dans certains scénarios, il est beaucoup plus rapide de spécifier un chemin d'accès de requête à l'aide de la méthode <xref:System.Data.Objects.ObjectQuery%601.Include%2A> car cela requiert moins d'allers\-retours à la base de données.  Toutefois, dans d'autres scénarios, des allers\-retours supplémentaires à la base de données pour charger des objets connexes peuvent être plus rapides, car des requêtes plus simples avec moins de jointures entraînent une redondance de données moins importante.  De ce fait, nous vous recommandons de tester les performances des différentes méthodes de récupération des objets connexes.  Pour plus d'informations, consultez [Loading Related Objects](http://msdn.microsoft.com/fr-fr/452347d2-7b3b-44cd-9001-231299a28cb1).  
+  
+ Pour éviter de retourner trop de données dans une même requête, envisagez de paginer les résultats de la requête en groupes plus maniables.  Pour plus d'informations, consultez [How to: Page Through Query Results](http://msdn.microsoft.com/fr-fr/ffc0f920-e7de-42e0-9b12-ef356421d030).  
+  
+#### Limiter l'étendue d'ObjectContext  
+ Dans la plupart des cas, vous devez créer une instance <xref:System.Data.Objects.ObjectContext> dans une instruction `using` \(`Using…End Using` en Visual Basic\).  Cela peut augmenter les performances en garantissant la suppression automatique des ressources associées au contexte de l'objet à la fin de l'exécution d'un bloc d'instructions.  Toutefois, lorsque des contrôles sont liés aux objets gérés par le contexte de l'objet, l'instance <xref:System.Data.Objects.ObjectContext> doit être conservée aussi longtemps que la liaison est requise, puis supprimée manuellement.  Pour plus d'informations, consultez [Managing Connections and Transactions](http://msdn.microsoft.com/fr-fr/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+  
+#### Envisager d'ouvrir la connexion de base de données manuellement  
+ Lorsque votre application exécute une série de requêtes d'objet ou appelle fréquemment <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> pour assurer la persistance des opérations de création, mise à jour et suppression dans la source de données, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] doit ouvrir et fermer continuellement la connexion à la source de données.  En pareils cas, envisagez d'ouvrir manuellement la connexion au démarrage de ces opérations et de fermer ou supprimer la connexion une fois les opérations terminées.  Pour plus d'informations, consultez [Managing Connections and Transactions](http://msdn.microsoft.com/fr-fr/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+  
+## Données de performances  
+ Certaines données de performances relatives à Entity Framework sont fournies dans les publications suivantes sur le [blog de l'équipe ADO.NET](http://go.microsoft.com/fwlink/?LinkId=91905):  
+  
+-   [Exploration des performances d'ADO.NET Entity Framework \- partie 1](http://go.microsoft.com/fwlink/?LinkId=123907)  
+  
+-   [Exploration des performances d'ADO.NET Entity Framework \- partie 2](http://go.microsoft.com/fwlink/?LinkId=123907)  
+  
+-   [Comparaison des performances d'ADO.NET Entity Framework](http://go.microsoft.com/fwlink/?LinkID=123913)  
+  
+## Voir aussi  
+ [Points à prendre en considération pour le développement et le déploiement](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

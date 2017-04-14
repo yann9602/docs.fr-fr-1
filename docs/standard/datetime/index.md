@@ -1,73 +1,98 @@
 ---
-title: Dates, heures et fuseaux horaires
-description: Dates, heures et fuseaux horaires
-keywords: .NET, .NET Core
-author: stevehoag
-manager: wpickett
-ms.date: 07/22/2016
-ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
-ms.assetid: 76e6cacc-1c0c-4a71-8cb8-018c112385ba
-translationtype: Human Translation
-ms.sourcegitcommit: c40c28da09e8a122b542463c197196c82c81dd19
-ms.openlocfilehash: a4d0a68ac32c3d722a1479ca2b067892fd88bf52
-
+title: "Dates, heures et fuseaux horaires | Microsoft Docs"
+ms.custom: ""
+ms.date: "04/10/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "données de date et d'heure (.NET Framework)"
+  - "heure (.NET Framework), fuseaux horaires"
+  - "objet de fuseau horaire (.NET Framework)"
+  - "fuseaux horaires (.NET Framework)"
+  - "heures (.NET Framework), fuseaux horaires"
+ms.assetid: 295c16e0-641b-4771-94b3-39c1ffa98c13
+caps.latest.revision: 22
+author: "rpetrusha"
+ms.author: "ronpet"
+manager: "wpickett"
+caps.handback.revision: 22
 ---
-
-# <a name="dates-times-and-time-zones"></a>Dates, heures et fuseaux horaires
-
-Outre la structure [System.DateTime](xref:System.DateTime) élémentaire, .NET fournit les classes suivantes qui prennent en charge l’utilisation des fuseaux horaires :
-
-* [System.TimeZoneInfo](xref:System.TimeZoneInfo)
-    
-  Utilisez cette classe pour travailler avec le fuseau horaire local du système et le fuseau horaire UTC.
+# Dates, heures et fuseaux horaires
+Outre la structure <xref:System.DateTime> de base, le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] fournit les classes suivantes qui prennent en charge l'utilisation de fuseaux horaires :  
   
-* [System.DateTimeOffset](xref:System.DateTimeOffset)  
-
-  Utilisez cette structure pour travailler avec des dates et heures dont le décalage (ou différence) par rapport à l'heure UTC est connu. La structure [DateTimeOffset](xref:System.DateTimeOffset)] associe une valeur de date et d’heure au décalage de cette heure par rapport à l’heure UTC. En raison de sa relation avec l’heure UTC, une valeur individuelle de date et d’heure identifie de façon univoque un point unique dans le temps. Cela rend une valeur [DateTimeOffset](xref:System.DateTimeOffset)] plus portable d’un ordinateur à un autre qu’une valeur [DateTime](xref:System.DateTime)]. 
+-   <xref:System.TimeZone>  
   
-Cette section de la documentation fournit les informations dont vous avez besoin pour travailler avec les fuseaux horaires et pour créer des applications prenant en charge les fuseaux horaires, qui peuvent convertir des dates et des heures d’un fuseau horaire à un autre.
-
-## <a name="in-this-section"></a>Dans cette section
-
-[Vue d’ensemble des fuseaux horaires](time-zone-overview.md) : Décrit la terminologie, les concepts et les problèmes impliqués dans la création d’applications prenant en charge les fuseaux horaires.
-    
-[Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](choosing-between-datetime.md) : Explique quand utiliser les types [System.DateTime](xref:System.DateTime), [System.DateTimeOffset](xref:System.DateTimeOffset) et [System.TimeZoneInfo](xref:System.TimeZoneInfo) lorsque vous travaillez avec des données de date et d’heure.
-    
-[Recherche des fuseaux horaires définis sur un système local](finding-the-time-zones-on-local-system.md) : Décrit comment énumérer les fuseaux horaires trouvés sur un système local.
-
-[Instanciation d’un objet DateTimeOffset](instantiating-a-datetimeoffset-object.md) : Décrit comment un objet [System.DateTimeOffset](xref:System.DateTimeOffset) peut être instancié et comment une valeur [System.DateTime](xref:System.DateTime) peut être convertie en valeur [System.DateTimeOffset](xref:System.DateTimeOffset).
-
-[Exécution d’opérations arithmétiques avec des dates et heures](performing-arithmetic-operations.md) : Traite les problèmes liés à l’ajout, la soustraction et la comparaison de valeurs [System.DateTime](xref:System.DateTime) et [System.DateTimeOffset](xref:System.DateTimeOffset).
-
-[Conversion entre DateTime et DateTimeOffset](converting-between-datetime-and-offset.md) : Explique comment convertir des valeurs [System.DateTime](xref:System.DateTime) et [System.DateTimeOffset](xref:System.DateTimeOffset).
-
-[Conversion d’heures entre fuseaux horaires](converting-between-time-zones.md) : Décrit comment convertir les heures d’un fuseau horaire dans un autre fuseau horaire.
-
-[Guide pratique : énumérer les fuseaux horaires d’un ordinateur](enumerate-time-zones.md) : Fournit des exemples qui énumèrent les fuseaux horaires définis dans le Registre d’un ordinateur et qui permettent aux utilisateurs de sélectionner un fuseau horaire prédéfini dans une liste.
-
-[Guide pratique : accéder aux objets UTC et aux objets de fuseau horaire local prédéfinis](access-utc-and-local.md) : Décrit comment accéder au temps universel coordonné et au fuseau horaire local.
-
-[Guide pratique : instancier un objet TimeZoneInfo](instantiate-time-zone-info.md) : Décrit comment instancier un objet [System.TimeZoneInfo](xref:System.TimeZoneInfo) à partir du Registre du système local.
-
-[Guide pratique : utiliser des fuseaux horaires dans des opérations arithmétiques de date et d’heure](use-time-zones-in-arithmetic.md) : Explique comment effectuer des opérations arithmétiques de date et d’heure qui reflètent les règles d’ajustement d’un fuseau horaire.
-
-[Guide pratique : résoudre des heures ambiguës](resolve-ambiguous-times.md) : Décrit comment résoudre une heure ambiguë en la mappant sur l’heure d’hiver du fuseau horaire.
-
-[Guide pratique : permettre aux utilisateurs de résoudre des heures ambiguës](let-users-resolve-ambiguous-times.md) : Décrit comment permettre à un utilisateur de déterminer le mappage entre une heure locale ambiguë et le temps universel coordonné.
-
-## <a name="reference"></a>Référence
-
-[System.TimeZoneInfo](xref:System.TimeZoneInfo)
-
-[System.DateTimeOffset](xref:System.DateTimeOffset)
-
-[System.DateTime](xref:System.DateTime)
-
-
-
-<!--HONumber=Nov16_HO3-->
-
-
+     Faites appel à cette classe pour utiliser le fuseau horaire local du système et le temps universel coordonné \(UTC, Coordinated Universal Time\).  Les fonctionnalités de la classe <xref:System.TimeZone> sont en grande partie remplacées par la classe <xref:System.TimeZoneInfo>.  
+  
+-   <xref:System.TimeZoneInfo>  
+  
+     Faites appel à cette classe pour utiliser tout fuseau horaire prédéfini sur un système, créer des fuseaux horaires et convertir facilement des dates et des heures d'un fuseau horaire à un autre.  Pour tout nouveau développement, utilisez la classe <xref:System.TimeZoneInfo> au lieu de la classe <xref:System.TimeZone>.  
+  
+-   <xref:System.DateTimeOffset>  
+  
+     Faite appel à cette structure pour utiliser des dates et heures dont le décalage \(ou différence\) par rapport à l'heure UTC est connu.  La structure <xref:System.DateTimeOffset> associe une valeur de date et d'heure à son décalage par rapport à l'heure UTC.  Par conséquent, une valeur de date et d'heure individuelle identifie de manière univoque un point unique dans le temps.  Ainsi, il est plus facile de porter une valeur <xref:System.DateTimeOffset> d'un ordinateur à un autre qu'une valeur <xref:System.DateTime>.  
+  
+ Cette section de la documentation indique comment utiliser des fuseaux horaires et créer des applications qui les prennent en charge et qui peuvent convertir des dates et des heures entre fuseaux horaires.  
+  
+## Dans cette section  
+ [Vue d'ensemble des fuseaux horaires](../../../docs/standard/datetime/time-zone-overview.md)  
+ Présente la terminologie, les concepts et les problèmes relatifs à la création d'applications prenant en charge des fuseaux horaires.  
+  
+ [Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)  
+ Indique quand utiliser les types <xref:System.DateTime>, <xref:System.DateTimeOffset> et <xref:System.TimeZoneInfo> lorsque vous travaillez avec des données de date et d'heure.  
+  
+ [Recherche des fuseaux horaires définis sur un système local](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)  
+ Décrit comment énumérer les fuseaux horaires trouvés sur un système local.  
+  
+ [Comment : énumérer les fuseaux horaires d'un ordinateur](../../../docs/standard/datetime/enumerate-time-zones.md)  
+ Fournit des exemples qui énumèrent les fuseaux horaires définis dans le Registre d'un ordinateur et permettent aux utilisateurs de sélectionner un fuseau horaire prédéfini dans une liste.  
+  
+ [Comment : accéder aux objets UTC et aux objets de fuseau horaire local prédéfinis](../../../docs/standard/datetime/access-utc-and-local.md)  
+ Décrit comment accéder au temps universel coordonné et au fuseau horaire local.  
+  
+ [Comment : instancier un objet TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)  
+ Décrit comment instancier un objet <xref:System.TimeZoneInfo> à partir du Registre du système local.  
+  
+ [Instanciation d'un objet DateTimeOffset](../../../docs/standard/datetime/instantiating-a-datetimeoffset-object.md)  
+ Indique comment instancier un objet <xref:System.DateTimeOffset> et convertir une valeur <xref:System.DateTime> en une valeur <xref:System.DateTimeOffset>.  
+  
+ [Comment : créer des fuseaux horaires sans règles d'ajustement](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)  
+ Décrit comment créer un fuseau horaire personnalisé qui ne prend pas en charge le passage à\/de l'heure d'été.  
+  
+ [Comment : créer des fuseaux horaires avec des règles d'ajustement](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)  
+ Décrit comment créer un fuseau horaire personnalisé qui prend en charge un ou plusieurs passages à\/de l'heure d'été.  
+  
+ [Enregistrement et restauration de fuseaux horaires](../../../docs/standard/datetime/saving-and-restoring-time-zones.md)  
+ Décrit la prise en charge de <xref:System.TimeZoneInfo> à des fins de sérialisation et de désérialisation des données de fuseau horaire, et illustre quelques scénarios d'utilisation de ces fonctionnalités.  
+  
+ [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)  
+ Décrit comment créer un fuseau horaire personnalisé et enregistrer ses informations dans un fichier de ressources.  
+  
+ [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)  
+ Décrit comment instancier des fuseaux horaires personnalisés enregistrés dans un fichier de ressources incorporées.  
+  
+ [Exécution d'opérations arithmétiques avec des dates et heures](../../../docs/standard/datetime/performing-arithmetic-operations.md)  
+ Discute les problèmes rencontrés lors de l'ajout, de la soustraction et de la comparaison des valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.  
+  
+ [Comment : utiliser des fuseaux horaires en arithmétique de date et heure](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)  
+ Discute comment effectuer des opérations arithmétiques de date et heure qui reflètent les règles d'ajustement d'un fuseau horaire.  
+  
+ [Conversion entre DateTime et DateTimeOffset](../../../docs/standard/datetime/converting-between-datetime-and-offset.md)  
+ Décrit comment convertir les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.  
+  
+ [Conversion d'heures entre fuseaux horaires](../../../docs/standard/datetime/converting-between-time-zones.md)  
+ Décrit comment convertir les heures d'un fuseau horaire à un autre.  
+  
+ [Comment : résoudre des heures ambiguës](../../../docs/standard/datetime/resolve-ambiguous-times.md)  
+ Décrit comment résoudre une heure ambiguë en la mappant à l'heure d'hiver du fuseau horaire.  
+  
+ [Comment : permettre aux utilisateurs de résoudre des heures ambiguës](../../../docs/standard/datetime/let-users-resolve-ambiguous-times.md)  
+ Décrit comment un utilisateur peut déterminer le mappage entre une heure locale ambiguë et le temps universel coordonné.  
+  
+## Référence  
+ <xref:System.TimeZoneInfo?displayProperty=fullName>

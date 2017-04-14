@@ -1,60 +1,59 @@
 ---
-title: "Types de collections triées"
-description: "Types de collections triées"
-keywords: .NET, .NET Core
-author: mairaw
-ms.author: mairaw
-ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: bdc9c13e-e56a-433b-a293-c92364f6e9cb
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 28d5024f759b3a7474aef1fa344d39f9933b6322
-ms.lasthandoff: 03/13/2017
-
+title: "Types de collections tri&#233;es | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "collections (.NET Framework), SortedList (type de collection)"
+  - "regrouper des données dans des collections, SortedList (type de collection)"
+  - "SortedDictionary (type de collection)"
+  - "SortedList (classe), regrouper des données dans des collections"
+  - "SortedList (type de collection)"
+ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
+caps.latest.revision: 16
+author: "mairaw"
+ms.author: "mairaw"
+manager: "wpickett"
+caps.handback.revision: 16
 ---
-
-# <a name="sorted-collection-types"></a>Types de collections triées  
- 
- La classe [System.Collections.SortedList](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList), la classe générique [System.Collections.Generic.SortedList&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedList-2) et la classe générique [System.Collections.Generic.SortedDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2) sont similaires à la classe [Hashtable](https://docs.microsoft.com/dotnet/core/api/System.Collections.Hashtable) et à la classe générique [Dictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.Dictionary-2) dans la mesure où elles implémentent l’interface [IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary), mais elles conservent leurs éléments triés par clé et elles n’ont pas les caractéristiques de récupération et d’insertion O(1) des tables de hachage. Les trois classes ont plusieurs fonctionnalités en commun :  
-
- *   Les trois classes implémentent l’interface [System.Collections.IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary). Les deux classes génériques implémentent également l’interface générique [System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IDictionary-2).  
- 
- *   Chaque élément est une paire clé/valeur utilisée à des fins d’énumération.   
+# Types de collections tri&#233;es
+La classe <xref:System.Collections.SortedList?displayProperty=fullName>, la classe générique <xref:System.Collections.Generic.SortedList%602?displayProperty=fullName> et la classe générique <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=fullName> sont semblables à la classe <xref:System.Collections.Hashtable> et à la classe générique <xref:System.Collections.Generic.Dictionary%602> car elles implémentent l'interface <xref:System.Collections.IDictionary>, mais conservent leurs éléments triés par clé et ne possèdent pas les caractéristiques d'insertion et de récupération O\(1\) des tables de hachage.  Les trois classes possèdent plusieurs fonctionnalités en commun :  
   
-> [!NOTE]  
-> La classe [SortedList](https://docs.microsoft.com/dotnet/core/api/System.Collections.SortedList) non générique retourne des objets [DictionaryEntry](https://docs.microsoft.com/dotnet/core/api/System.Collections.DictionaryEntry) lorsqu’elle est énumérée, bien que les deux types génériques retournent des objets [KeyValuePair&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.KeyValuePair-2).  
-   
-*   Les éléments sont triés selon une implémentation [System.Collections.IComparer](https://docs.microsoft.com/dotnet/core/api/System.Collections.IComparer) (pour la classe `SortedList` non générique) ou une implémentation [System.Collections.Generic.IComparer&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IComparer-1) (pour les deux classes génériques).  
-   
- *   Chaque classe fournit des propriétés qui retournent des collections contenant uniquement les clés ou uniquement les valeurs.  
-   
-Le tableau suivant répertorie certaines des différences entre les deux classes de liste triée et la classe [SortedDictionary<TKey, TValue>](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedDictionary-2).  
-   
- `SortedList` (classe non générique) et `SortedList<TKey, TValue>` (classe générique) | `SortedDictionary<TKey, TValue>` (classe générique)  
- --------------------------------------------------------------------------------- | ------------------------------  
- Les propriétés qui retournent des clés et des valeurs sont indexées, ce qui permet une récupération indexée efficace. | Aucune récupération indexée.  
- La récupération est O(log n). | La récupération est O(log n).  
- L’insertion et la suppression sont généralement O(n). Toutefois, l’insertion est O(1) pour les données qui se trouvent déjà en ordre de tri, de sorte que chaque élément soit ajouté à la fin de la liste. (Cela suppose qu’un redimensionnement n’est pas requis.) | L’insertion et la suppression sont O(log n).  
- Utilise moins de mémoire qu’un `SortedDictionary<TKey, TValue>`. | Utilise plus de mémoire que la classe non générique `SortedList` et la classe générique `SortedList<TKey, TValue>`.  
+-   Les trois classes implémentent toutes l'interface <xref:System.Collections.IDictionary?displayProperty=fullName>.  Les deux classes génériques implémentent également l'interface générique <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>.  
   
- Pour les listes triées ou les dictionnaires qui doivent être accessibles simultanément à partir de plusieurs threads, vous pouvez ajouter une logique de tri à une classe qui dérive de [ConcurrentDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentDictionary-2).  
+-   Chaque élément est une paire clé\/valeur à des fins d'énumération.  
   
- > [!NOTE]  
- > Pour les valeurs qui contiennent leurs propres clés (par exemple, des enregistrements d’employés qui contiennent un ID d’employé), vous pouvez créer une collection à clé qui possède certaines caractéristiques d’une liste et certaines caractéristiques d’un dictionnaire en dérivant de la classe générique [KeyedCollection&lt;TKey, TItem&gt;]().  
-   
- La classe [SortedSet&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.SortedSet-1) fournit une arborescence auto-équilibrée qui maintient les données en ordre de tri après les insertions, les suppressions et les recherches. Cette classe et la classe [HashSet&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.HashSet-1) implémentent l’interface [ISet&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.ISet-1).  
-   
-## <a name="see-also"></a>Voir aussi  
+    > [!NOTE]
+    >  La classe <xref:System.Collections.SortedList> non générique retourne des objets <xref:System.Collections.DictionaryEntry> lorsqu'elle est énumérée, même si les deux types génériques retournent des objets <xref:System.Collections.Generic.KeyValuePair%602>.  
   
-[System.Collections.IDictionary](https://docs.microsoft.com/dotnet/core/api/System.Collections.IDictionary)  
-   
-[System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IDictionary-2)  
-   
-[ConcurrentDictionary&lt;TKey, TValue&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Concurrent.ConcurrentDictionary-2)  
- 
-[Types de collection couramment utilisés](commonly-used-collection-types.md) 
-
+-   Les éléments sont triés selon une implémentation d'<xref:System.Collections.IComparer?displayProperty=fullName> \(pour la classe <xref:System.Collections.SortedList> non générique\) ou une implémentation d'<xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> \(pour les deux classes génériques\).  
+  
+-   Chaque classe fournit des propriétés qui retournent des collections contenant uniquement les clés ou uniquement les valeurs.  
+  
+ Le tableau suivant répertorie certaines des différences entre les deux classes de liste triée et la classe <xref:System.Collections.Generic.SortedDictionary%602>.  
+  
+|Classe non générique <xref:System.Collections.SortedList> et classe générique <xref:System.Collections.Generic.SortedList%602>|Classe générique <xref:System.Collections.Generic.SortedDictionary%602>|  
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|Les propriétés qui retournent des clés et des valeurs sont indexées, entraînant ainsi une extraction indexée efficace.|Aucune extraction indexée.|  
+|L'extraction correspond à O\(log `n`\).|L'extraction correspond à O\(log `n`\).|  
+|L'insertion et la suppression correspondent généralement à O\(`n`\) ; toutefois, l'insertion correspond à O\(1\) pour les données qui sont déjà dans l'ordre de tri, afin que chaque élément soit ajouté à la fin de la liste. \(Cela suppose qu'il n'est pas nécessaire d'effectuer un redimensionnement.\)|L'insertion et la suppression correspondent à O \(log `n`\).|  
+|Requiert moins de mémoire qu'un <xref:System.Collections.Generic.SortedDictionary%602>.|Requiert plus de mémoire que la classe non générique <xref:System.Collections.SortedList> et la classe générique <xref:System.Collections.Generic.SortedList%602>.|  
+  
+ Pour les listes ou les dictionnaires triés qui doivent être accessibles simultanément à partir de plusieurs threads, vous pouvez ajouter une logique de tri à une classe qui dérive de <xref:System.Collections.Concurrent.ConcurrentDictionary%602>.  
+  
+> [!NOTE]
+>  Pour les valeurs qui contiennent leurs propres clés \(par exemple, les enregistrements d'employé qui contiennent un numéro d'ID de l'employé\), vous pouvez créer une collection à clé qui possède certaines caractéristiques d'une liste et certaines caractéristiques d'un dictionnaire, en dérivant de la classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602>.  
+  
+ À partir du [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], la classe <xref:System.Collections.Generic.SortedSet%601> fournit une arborescence autonome qui maintient les données triées dans un certain ordre après les insertions, les suppressions et les recherches.  Cette classe et la classe<xref:System.Collections.Generic.HashSet%601> implémentent l'interface <xref:System.Collections.Generic.ISet%601>.  
+  
+## Voir aussi  
+ <xref:System.Collections.IDictionary?displayProperty=fullName>   
+ <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>   
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602>   
+ [Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)

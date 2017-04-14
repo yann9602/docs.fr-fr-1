@@ -1,0 +1,6 @@
+# [<linkedConfiguration> (élément)](linkedconfiguration-element.md)
+# [Schéma des sections de configuration](configuration-sections-schema.md)
+# [<assemblyBinding> (élément)](assemblybinding-element-for-configuration.md)
+# [Schéma des fichiers de configuration](index.md)
+# [Schéma des paramètres d'application](application-settings-schema.md)
+# [<configuration>, élément](configuration-element.md)

@@ -1,40 +1,43 @@
 ---
-title: "Manipulation des chaînes"
-description: "Manipulation des chaînes"
-keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
-ms.date: 07/22/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: da3c277e-b06e-48bd-ae1f-1e7e4240b93e
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 0ad6a7ef456e7967b3c23e58cd7afa97a4b786de
-ms.lasthandoff: 03/13/2017
-
+title: "Manipulation de cha&#238;nes dans .NET Framework | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "manipuler des chaînes"
+  - "chaînes (.NET Framework), manipuler"
+ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
+caps.latest.revision: 11
+author: "rpetrusha"
+ms.author: "ronpet"
+manager: "wpickett"
+caps.handback.revision: 11
 ---
-
-# <a name="manipulating-strings"></a>Manipulation des chaînes
-
-.NET offre un ensemble complet de routines qui vous permettent de créer, comparer et modifier des chaînes efficacement, ainsi que d’analyser rapidement de grandes quantités de texte et de données pour rechercher, supprimer et remplacer des modèles de texte.
-
-## <a name="in-this-section"></a>Dans cette section
-
-[Bonnes pratiques pour l’utilisation de chaînes](best-practices-strings.md) : examine les méthodes de casse, de comparaison et de tri de chaînes dans .NET, puis fournit des recommandations pour la sélection d’une méthode de gestion des chaînes. 
-
-[Expressions régulières](regular-expressions.md) : fournit des informations détaillées sur les expressions régulières .NET, notamment les éléments de langage, le comportement des expressions régulières et des exemples.
-
-[Opérations de chaînes de base](basic-string-operations.md) : décrit les opérations de chaînes fournies par les classes @System.String et @System.Text.StringBuilder, notamment la création de chaînes à partir de tableaux d’octets, la comparaison de valeurs de chaîne et la modification de chaînes existantes.
-
-[Encodage de caractères dans .NET](character-encoding.md) : explique comment encoder et décoder des formats de caractères comme Unicode.
-
-[Conversion de type](type-conversion.md) : explique comment convertir un type en un autre.
-
-[Mise en forme des types](formatting-types.md) : explique comment mettre en forme des chaînes à l’aide de spécificateurs de format de chaîne.
-
-[Analyse de chaînes](parsing-strings.md) : explique comment convertir des chaînes en types.
-
-
+# Manipulation de cha&#238;nes dans .NET Framework
+Le .NET Framework fournit un ensemble complet de routines qui vous permettent de créer, comparer et modifier des chaînes avec efficacité, ainsi que d'analyser rapidement des volumes importants de texte et de données afin de rechercher, supprimer et remplacer des modèles de texte.  
+  
+## Dans cette section  
+ [Meilleures pratiques pour l'utilisation de chaînes](../../../docs/standard/base-types/best-practices-strings.md)  
+ Examine les méthodes de tri, de comparaison et d'application de la casse appropriée des chaînes du .NET Framework et fournit des recommandations pour la sélection d'une méthode de manipulation de chaînes.  
+  
+ [Expressions régulières du .NET Framework](../../../docs/standard/base-types/regular-expressions.md)  
+ Fournit des informations détaillées à propos des expressions régulières .NET Framework, notamment les éléments de langage, le comportement d'expression régulière et des exemples.  
+  
+ [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)  
+ Décrit des opérations de chaîne fournies par les classes <xref:System.Text.StringBuilder?displayProperty=fullName> et <xref:System.String?displayProperty=fullName>, notamment la création de nouvelles chaînes à partir de tableaux d'octets, la comparaison de valeurs de chaînes et la modification de chaînes existantes.  
+  
+## Rubriques connexes  
+ [Conversion de type dans le .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
+ Explique les techniques et les règles utilisées pour convertir des types à l'aide du .NET Framework.  
+  
+ [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)  
+ Explique comment utiliser la bibliothèque de classes de base pour implémenter la mise en forme, comment mettre en forme des types numériques, des types de chaînes et comment mettre en forme pour une culture spécifique.  
+  
+ [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
+ Décrit comment initialiser des objets aux valeurs décrites par des représentations sous forme de chaîne de ces objets.  L'analyse est l'opération inverse de la mise en forme.

@@ -1,0 +1,77 @@
+---
+title: "Storeadm.exe (Isolated Storage Tool) | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+  - "C++"
+  - "jsharp"
+helpviewer_keywords: 
+  - "Storeadm.exe"
+  - "listing stores for current user"
+  - "Isolated Storage tool"
+  - "stores, current user"
+  - "removing stores"
+ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
+caps.latest.revision: 17
+author: "mairaw"
+ms.author: "mairaw"
+manager: "wpickett"
+caps.handback.revision: 17
+---
+# Storeadm.exe (Isolated Storage Tool)
+L'outil Isolated Storage \(Stockage isolé\) répertorie ou supprime tous les magasins existants de l'utilisateur en cours.  
+  
+ Cet outil est installé automatiquement avec Visual Studio.  Pour exécuter l'outil, utilisez l'invite de commandes développeur \(ou l'invite de commandes Visual Studio dans Windows 7\).  Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+  
+ À l'invite de commandes, tapez le texte suivant :  
+  
+## Syntaxe  
+  
+```  
+  
+storeadm [/list][/machine][/remove][/roaming][/quiet]  
+```  
+  
+#### Paramètres  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\/h**\[**elp**\]|Affiche la syntaxe et les options de commande de l'outil.|  
+|**\/list**|Affiche tous les magasins existants de l'utilisateur en cours.  Sont inclus les magasins de toutes les applications ou de tous les assemblys exécutés par cet utilisateur.|  
+|**\/machine**|Sélectionne le magasin de l'ordinateur.  Utilisez cette option avec l'option **\/list** ou **\/remove** pour spécifier que l'action doit s'appliquer au magasin de l'ordinateur.<br /><br /> Nouveau dans le .NET Framework 2.0|  
+|**\/quiet**|Spécifie le mode silencieux ; supprime la sortie d'informations pour n'afficher que les messages d'erreur.|  
+|**\/remove**|Supprime définitivement tous les magasins existants de l'utilisateur en cours.|  
+|**\/roaming**|Sélectionne le magasin itinérant.  Utilisez cette option avec les options **\/list** ou **\/remove** pour spécifier que cette action doit s'appliquer au magasin itinérant.|  
+|**\/?**|Affiche la syntaxe et les options de commande de l'outil.|  
+  
+## Notes  
+ Lorsque vous exécutez Storeadm.exe à partir de la ligne de commande sans spécifier d'options, la syntaxe et les options de l'outil s'affichent.  
+  
+ Les options **\/list** et **\/remove** sont généralement utilisées l'une après l'autre ; si deux options ou plus sont spécifiées, elles seront alors exécutées dans leur ordre d'apparition sur la ligne de commande.  
+  
+ Les applications peuvent enregistrer soit dans l'un des deux magasins d'un utilisateur, soit dans le magasin de l'ordinateur :  
+  
+-   Le magasin local est situé à un emplacement assuré de ne pas être itinérant \(sous Windows 2000 et ultérieur\), même si le profil d'utilisateur itinérant est activé pour cet utilisateur.  
+  
+-   Le magasin itinérant est situé à un emplacement pouvant être itinérant, mais uniquement lorsque l'itinérance est activée pour l'utilisateur via l'administration de Windows NT.  
+  
+-   Le magasin de l'ordinateur est commun à tous les utilisateurs sur un ordinateur et est stocké sous un répertoire commun de cet ordinateur.  
+  
+    > [!NOTE]
+    >  Le magasin d'ordinateur est une nouveauté du .NET Framework version 2.0.  
+  
+ Que l'itinérance soit ou non réellement activée pour l'utilisateur n'affecte pas l'administration de Storeadm.exe.  L'exécution de l'outil sans option applique toutes les actions au magasin local.  L'exécution de l'outil avec l'option **\/roaming** affecte toutes les actions au magasin qui est capable d'effectuer l'itinérance.  L'exécution de l'outil avec l'option **\/machine** affecte toutes les actions au magasin de l'ordinateur.  
+  
+## Voir aussi  
+ [Tools](../../../docs/framework/tools/index.md)   
+ [Stockage isolé](../../../docs/standard/io/isolated-storage.md)   
+ [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

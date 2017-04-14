@@ -1,0 +1,1 @@
+interface multidocument (MDI)
