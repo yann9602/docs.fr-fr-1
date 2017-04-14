@@ -1,0 +1,7 @@
+# [Collections et structures de données](index.md)
+# [Sélection d'une classe de collection](selecting-a-collection-class.md)
+# [Types de collections couramment utilisés](commonly-used-collection-types.md)
+# [Quand utiliser les collections génériques](when-to-use-generic-collections.md)
+# [Comparaisons et tris dans les collections](comparisons-and-sorts-within-collections.md)
+# [Types de collections triées](sorted-collection-types.md)
+# [Types collection Hashtable et Dictionary](hashtable-and-dictionary-collection-types.md)
