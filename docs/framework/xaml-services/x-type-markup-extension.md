@@ -68,7 +68,7 @@ Fournit l'objet CLR <xref:System.Type> qui est le type sous\-jacent pour un type
 ## Remarques sur l'utilisation de WPF  
   
 ### Espace de noms XAML par défaut et mappage de types  
- L'espace de noms XAML par défaut pour la programmation WPF contient la plupart des types XAML dont vous avez besoin pour les scénarios XAML standard. Cela vous permet souvent d'éviter l'utilisation de préfixes lors du référencement de valeurs de types XAML.  Vous devrez peut\-être mapper un préfixe si vous référencez un type d'un assembly personnalisé, ou pour les types qui existent dans un assembly WPF mais qui sont dans un espace de noms CLR qui n'a pas été mappé à l'espace de noms XAML par défaut.  Pour plus d'informations sur les préfixes, les espaces de noms XAML et le mappage des espaces de noms CLR, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ L'espace de noms XAML par défaut pour la programmation WPF contient la plupart des types XAML dont vous avez besoin pour les scénarios XAML standard. Cela vous permet souvent d'éviter l'utilisation de préfixes lors du référencement de valeurs de types XAML.  Vous devrez peut\-être mapper un préfixe si vous référencez un type d'un assembly personnalisé, ou pour les types qui existent dans un assembly WPF mais qui sont dans un espace de noms CLR qui n'a pas été mappé à l'espace de noms XAML par défaut.  Pour plus d'informations sur les préfixes, les espaces de noms XAML et le mappage des espaces de noms CLR, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ### Propriétés de types prenant en charge Typename\-as\-String  
  WPF prend en charge des techniques permettant la spécification de la valeur de certaines propriétés de type <xref:System.Type> sans requérir une utilisation d'extension de balisage `x:Type`.  À la place, vous pouvez spécifier la valeur comme une chaîne qui nomme le type.  Les exemples de ceci sont <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=fullName> et <xref:System.Windows.Style.TargetType%2A?displayProperty=fullName>.  La prise en charge de ce comportement n'est pas fournie via des convertisseurs de type ou des extensions de balisage.  À la place, c'est un comportement de report implémenté via <xref:System.Windows.FrameworkElementFactory>.  
@@ -88,6 +88,6 @@ Fournit l'objet CLR <xref:System.Type> qui est le type sous\-jacent pour un type
   
 ## Voir aussi  
  <xref:System.Windows.Style>   
- [Application d'un style et création de modèles](../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Vue d'ensemble du langage XAML \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [Extensions de balisage et XAML WPF](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+ [Application d'un style et création de modèles](../../../ocs/framework/wpf/controls/styling-and-templating.md)   
+ [Vue d'ensemble du langage XAML \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)   
+ [Extensions de balisage et XAML WPF](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

@@ -46,9 +46,9 @@ Fournit un identificateur unique pour les éléments de balisage.  Dans de nombr
  Les Frameworks peuvent spécifier une propriété particulière dans leur modèle objet pour en faire un alias pour `x:Uid` en appliquant l'attribut <xref:System.Windows.Markup.UidPropertyAttribute> au type défini.  Si une infrastructure spécifie une propriété particulière, elle est valide pour spécifier `x:Uid` et le membre ajouté en alias sur le même objet.  Si `x:Uid` et le membre ajouté en alias sont spécifiés, l'API des services XAML .NET Framework lève généralement <xref:System.Xaml.XamlDuplicateMemberException> pour ce cas.  
   
 ## Remarques sur l'utilisation de WPF  
- Pour plus d'informations sur le rôle de `x:Uid` dans le processus de localisation WPF et dans le formulaire BAML de XAML, consultez [Globalisation pour WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) ou <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
+ Pour plus d'informations sur le rôle de `x:Uid` dans le processus de localisation WPF et dans le formulaire BAML de XAML, consultez [Globalisation pour WPF](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md) ou <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
   
 ## Voir aussi  
  <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>   
  <xref:Microsoft.Build.Tasks.Windows.UidManager>   
- [Globalisation pour WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+ [Globalisation pour WPF](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)

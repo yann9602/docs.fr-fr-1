@@ -52,11 +52,11 @@ Active le placement des îlots de données XML dans une production XAML.  Les é
 ## Remarques sur l'utilisation de WPF  
  L'objet `x:XData` est utilisé principalement comme objet enfant d'un <xref:System.Windows.Data.XmlDataProvider>, ou bien comme objet enfant de la propriété <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> \(en XAML, cela est exprimé en général dans la syntaxe des éléments de propriété\).  
   
- En règle générale, les données doivent redéfinir l'espace de noms XML de base dans l'îlot de données en tant que nouvel espace de noms XML par défaut \(ayant pour valeur une chaîne vide\).  C'est plus facile pour les îlots de données simples car les expressions <xref:System.Windows.Data.Binding.XPath%2A> utilisées pour référencer et lier les données peuvent éviter l'inclusion de préfixes.  Les îlots de données plus complexes peuvent choisir de définir plusieurs préfixes pour les données et d'utiliser un préfixe spécifique pour l'espace de noms XML à la racine.  Dans ce cas, toutes les références d'expression <xref:System.Windows.Data.Binding.XPath%2A> devront inclure le préfixe mappé par espace de noms approprié.  Pour plus d'informations, consultez [Vue d'ensemble de la liaison de données](../../../docs/framework/wpf/data/data-binding-overview.md).  
+ En règle générale, les données doivent redéfinir l'espace de noms XML de base dans l'îlot de données en tant que nouvel espace de noms XML par défaut \(ayant pour valeur une chaîne vide\).  C'est plus facile pour les îlots de données simples car les expressions <xref:System.Windows.Data.Binding.XPath%2A> utilisées pour référencer et lier les données peuvent éviter l'inclusion de préfixes.  Les îlots de données plus complexes peuvent choisir de définir plusieurs préfixes pour les données et d'utiliser un préfixe spécifique pour l'espace de noms XML à la racine.  Dans ce cas, toutes les références d'expression <xref:System.Windows.Data.Binding.XPath%2A> devront inclure le préfixe mappé par espace de noms approprié.  Pour plus d'informations, consultez [Vue d'ensemble de la liaison de données](../../../ocs/framework/wpf/data/data-binding-overview.md).  
   
  Techniquement parlant, `x:XData` peut être utilisé comme contenu de toute propriété de type <xref:System.Xml.Serialization.IXmlSerializable>.  Cependant <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> est toutefois la seule implémentation apparente.  
   
 ## Voir aussi  
  <xref:System.Windows.Data.XmlDataProvider>   
- [Vue d'ensemble de la liaison de données](../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Binding, extension de balisage](../../../docs/framework/wpf/advanced/binding-markup-extension.md)
+ [Vue d'ensemble de la liaison de données](../../../ocs/framework/wpf/data/data-binding-overview.md)   
+ [Binding, extension de balisage](../../../ocs/framework/wpf/advanced/binding-markup-extension.md)

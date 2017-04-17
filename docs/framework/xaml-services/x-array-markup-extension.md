@@ -74,8 +74,8 @@ Fournit une prise en charge générale pour les tableaux d'objets en XAML, via u
   
  `</x:Array>`  
   
- Pour les types personnalisés utilisés comme éléments de tableau, la classe doit également prendre en charge les spécifications instanciées en XAML comme éléments objet.  Pour plus d'informations, consultez [XAML et classes personnalisées pour WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
+ Pour les types personnalisés utilisés comme éléments de tableau, la classe doit également prendre en charge les spécifications instanciées en XAML comme éléments objet.  Pour plus d'informations, consultez [XAML et classes personnalisées pour WPF](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
   
 ## Voir aussi  
- [Extensions de balisage et XAML WPF](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
+ [Extensions de balisage et XAML WPF](../../../ocs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
  [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

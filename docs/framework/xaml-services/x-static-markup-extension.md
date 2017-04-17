@@ -79,9 +79,9 @@ Référence à une entité de code statique par valeur définie dans [!INCLUDE[T
   
 -   Vous référencez un type d'un assembly personnalisé.  
   
--   Vous référencez un type qui existe dans un assembly WMPF, mais qui se trouve dans un espace de noms CLR qui n'a pas été mappé pour faire partie de l'espace de noms XAML par défaut WPF.  Le mappage d'espaces de noms CLR dans l'espace de noms XAML par défaut pour WPF est exécuté par les définitions dans les différents assemblys WPF \(pour plus d'informations sur ce concept, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)\).  Les espaces de noms CLR non mappés peuvent exister si cet espace de noms CLR est composé principalement de définitions de classe qui ne sont généralement pas prévues pour XAML, telles que <xref:System.Windows.Threading>.  
+-   Vous référencez un type qui existe dans un assembly WMPF, mais qui se trouve dans un espace de noms CLR qui n'a pas été mappé pour faire partie de l'espace de noms XAML par défaut WPF.  Le mappage d'espaces de noms CLR dans l'espace de noms XAML par défaut pour WPF est exécuté par les définitions dans les différents assemblys WPF \(pour plus d'informations sur ce concept, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)\).  Les espaces de noms CLR non mappés peuvent exister si cet espace de noms CLR est composé principalement de définitions de classe qui ne sont généralement pas prévues pour XAML, telles que <xref:System.Windows.Threading>.  
   
- Pour plus d'informations sur l'utilisation des préfixes et des espaces de noms XAML pour WPF, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ Pour plus d'informations sur l'utilisation des préfixes et des espaces de noms XAML pour WPF, consultez [Espaces de noms XAML et mappage d'espace de noms pour XAML WPF](../../../ocs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 ## Voir aussi  
  [x:Type Markup Extension](../../../docs/framework/xaml-services/x-type-markup-extension.md)   

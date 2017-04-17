@@ -65,4 +65,4 @@ Modifie le comportement de compilation du balisage XAML lorsque `x:Class` est é
   
 ## Voir aussi  
  [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md)   
- [XAML et classes personnalisées pour WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+ [XAML et classes personnalisées pour WPF](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

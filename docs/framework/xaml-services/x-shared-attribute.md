@@ -40,7 +40,7 @@ Quand la valeur est définie sur `false`, modifie le comportement de récupérat
   
  La ressource d'origine change en cas de modification d'un objet retourné via une API de ressource <xref:System.Windows.FrameworkElement.FindResource%2A> ou de modification directe d'un objet dans un <xref:System.Windows.ResourceDictionary>.  Si les références à cette ressource étaient des références de ressource dynamiques, les consommateurs de cette ressource obtiendront la ressource modifiée.  
   
- \(Si les références à la ressource étaient des références de ressource statiques, les modifications apportées à la ressource après le temps de traitement [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] sont sans importance.  Pour plus d'informations sur les références de ressources dynamiques et statiques, consultez [Ressources XAML](../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ \(Si les références à la ressource étaient des références de ressource statiques, les modifications apportées à la ressource après le temps de traitement [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] sont sans importance.  Pour plus d'informations sur les références de ressources dynamiques et statiques, consultez [Ressources XAML](../../../ocs/framework/wpf/advanced/xaml-resources.md).  
   
  La spécification explicite de `x:Shared="true"` est rare effectuée parce que c'est déjà la valeur par défaut.  Il n'y a aucun équivalent direct de code pour `x:Shared` dans le modèle d'objet WPF ; il peut être spécifié uniquement dans une utilisation de XAML et doit être traité soit par le comportement WPF par défaut, soit dans un flux de nœud XAML intermédiaire sur le chemin d'accès du chargement, si le traitement est effectué à l'aide des services XAML .NET Framework et des lecteurs XAML.  
   
@@ -58,5 +58,5 @@ Quand la valeur est définie sur `false`, modifie le comportement de récupérat
   
 ## Voir aussi  
  <xref:System.Windows.ResourceDictionary>   
- [Ressources XAML](../../../docs/framework/wpf/advanced/xaml-resources.md)   
- [Éléments de base](../../../docs/framework/wpf/advanced/base-elements.md)
+ [Ressources XAML](../../../ocs/framework/wpf/advanced/xaml-resources.md)   
+ [Éléments de base](../../../ocs/framework/wpf/advanced/base-elements.md)

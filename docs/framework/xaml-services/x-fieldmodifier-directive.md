@@ -58,8 +58,8 @@ Modifie le comportement de compilation XAML, de manière à ce que les champs de
  Par défaut, la classe partielle de l'élément racine est publique ; toutefois, vous pouvez la rendre non publique à l'aide de [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md).  L'[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md) affecte également le niveau d'accès de l'instance de la classe d'élément racine.  Vous pouvez placer `x:Name` et `x:FieldModifier` dans l'élément racine, mais cela permet uniquement de créer une copie du champ public de l'élément racine, le niveau d'accès de la classe d'élément racine réel étant toujours contrôlé par [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md).  
   
 ## Voir aussi  
- [XAML et classes personnalisées pour WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [Code\-behind et XAML dans WPF](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
+ [XAML et classes personnalisées pour WPF](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
+ [Code\-behind et XAML dans WPF](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
  [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)   
- [Génération d'une application WPF \(WPF\)](../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
+ [Génération d'une application WPF \(WPF\)](../../../ocs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
  [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)
