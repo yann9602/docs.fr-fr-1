@@ -102,5 +102,5 @@ Dans de nombreuses applications, une valeur de date et d'heure est destinée à 
   
 ## Voir aussi  
  [Exécution d'opérations de mise en forme](../../../docs/standard/base-types/performing-formatting-operations.md)   
- [Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)   
+ [Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo](../../../ocs/standard/datetime/choosing-between-datetime.md)   
  [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

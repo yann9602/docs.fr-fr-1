@@ -40,5 +40,5 @@ Cette section décrit les opérations réalisables sur les types de base du .NET
  [Système de type commun](../../../docs/standard/base-types/common-type-system.md)  
  Décrit les types utilisés par le .NET Framework.  
   
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)  
+ [Dates, heures et fuseaux horaires](../../../ml/index.xml)  
  Décrit comment utiliser des fuseaux horaires et des conversions de fuseau horaire dans des applications prenant en charge les fuseaux horaires.

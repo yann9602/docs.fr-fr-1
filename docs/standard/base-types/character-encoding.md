@@ -267,4 +267,4 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
  <xref:System.Text.DecoderFallback>   
  <xref:System.Text.Encoding>   
  <xref:System.Text.EncoderFallback>   
- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
+ [Globalisation et localisation](../../../ml/index.xml)

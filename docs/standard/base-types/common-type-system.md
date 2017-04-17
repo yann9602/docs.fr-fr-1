@@ -282,7 +282,7 @@ Le système de type commun \(CTS, Common Type System\) définit la façon dont l
   
 <a name="Events"></a>   
 ### Événements  
- Un événement définit un incident auquel il est possible de répondre, et définit les méthodes permettant de s'abonner à l'événement, d'annuler cet abonnement et de déclencher l'événement.  Les événements sont souvent utilisés pour signaler d'autres types de changements d'état.  Pour plus d'informations, consultez [Événements](../../../docs/standard/events/index.md).  
+ Un événement définit un incident auquel il est possible de répondre, et définit les méthodes permettant de s'abonner à l'événement, d'annuler cet abonnement et de déclencher l'événement.  Les événements sont souvent utilisés pour signaler d'autres types de changements d'état.  Pour plus d'informations, consultez [Événements](../../../ml/index.xml).  
   
 <a name="NestedTypes"></a>   
 ### Types imbriqués  
@@ -323,5 +323,5 @@ Le système de type commun \(CTS, Common Type System\) définit la façon dont l
   
 ## Voir aussi  
  [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=217856)   
- [Common Language Runtime](../../../docs/standard/clr.md)   
+ [Common Language Runtime](../../../ocs/standard/clr.md)   
  [Conversion de type dans le .NET Framework](../../../docs/standard/base-types/type-conversion.md)
