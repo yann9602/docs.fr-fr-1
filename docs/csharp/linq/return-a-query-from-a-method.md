@@ -2,7 +2,7 @@
 title: "Retourner une requête à partir d’une méthode"
 description: "Comment retourner une requête."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

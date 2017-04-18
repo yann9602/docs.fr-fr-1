@@ -2,7 +2,7 @@
 title: "Effectuer une sous-requête sur une opération de regroupement"
 description: "Guide pratique pour effectuer une sous-requête sur une opération de regroupement."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

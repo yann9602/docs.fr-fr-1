@@ -2,7 +2,7 @@
 title: "Regrouper des résultats par clés contiguës"
 description: "Comment regrouper des résultats par clés contiguës."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

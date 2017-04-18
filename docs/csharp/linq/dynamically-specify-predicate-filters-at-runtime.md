@@ -2,7 +2,7 @@
 title: "Spécifier dynamiquement des filtres de prédicat au moment de l’exécution"
 description: "Guide pratique pour spécifier dynamiquement des filtres de prédicat au moment de l’exécution."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016

@@ -2,7 +2,7 @@
 title: "Concepts de base des expressions de requête"
 description: "Présente les concepts liés aux expressions de requête"
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016

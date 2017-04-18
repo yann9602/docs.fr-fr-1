@@ -2,7 +2,7 @@
 title: "Regrouper les résultats d’une requête"
 description: "Comment regrouper des résultats."
 keywords: .NET, .NET Core, C#
-author: stevehoag
+author: BillWagner
 manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
