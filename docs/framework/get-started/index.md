@@ -18,9 +18,9 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 404c69662c992bfba3399225fdca12376f33baa9
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 8571258a2fa4e7bd5180301e30e0fea8117eede6
+ms.openlocfilehash: 83ffd29d4301ae8848cc01de8e7def045b24a0ca
+ms.lasthandoff: 04/15/2017
 
 ---
 # <a name="getting-started-with-the-net-framework"></a>Mise en route du .NET Framework
@@ -68,7 +68,7 @@ Le .NET Framework est un environnement d'exécution qui gère les applications c
   
  Pour développer des applications ou des composants .NET Framework, procédez comme suit :  
   
-1.  Si elle n’est pas préinstallée sur votre système d’exploitation, installez la version du .NET Framework que votre application cible. La dernière version de production du .NET Framework est la version 4.7 qui est préinstallée sur Windows 10 Creative Update, mais qui n’est pas disponible dans les versions antérieures du système d’exploitation Windows. Pour la configuration système requise du .NET Framework, consultez [Configuration requise](../../../docs/framework/get-started/system-requirements.md). Pour plus d’informations sur l’installation d’autres versions du .NET Framework, consultez [Guide d’installation](../../../docs/framework/install/guide-for-developers.md). Il existe des packages .NET Framework supplémentaires proposés hors bande. Pour plus d’informations sur ces packages, consultez [Versions finales hors plage du .NET Framework](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).  
+1.  Si elle n’est pas préinstallée sur votre système d’exploitation, installez la version du .NET Framework que votre application cible. La dernière version de production du .NET Framework est la version 4.7, qui est préinstallée sur Windows 10 Creative Update, mais n’est pas disponible dans les versions antérieures du système d’exploitation Windows. Pour la configuration système requise du .NET Framework, consultez [Configuration requise](../../../docs/framework/get-started/system-requirements.md). Pour plus d’informations sur l’installation d’autres versions du .NET Framework, consultez [Guide d’installation](../../../docs/framework/install/guide-for-developers.md). Il existe des packages .NET Framework supplémentaires proposés hors bande. Pour plus d’informations sur ces packages, consultez [Versions finales hors plage du .NET Framework](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).  
   
 2.  Sélectionnez le ou les langages .NET Framework à utiliser pour développer vos applications. Microsoft propose plusieurs langages, notamment Visual Basic, C#, Visual F# et C++. (Un langage de programmation qui vous permet de développer des applications pour le .NET Framework respecte la [spécification CLI (Common Language Infrastructure)](http://go.microsoft.com/fwlink/?LinkId=199862).)  
   
@@ -92,3 +92,4 @@ Le .NET Framework est un environnement d'exécution qui gère les applications c
  [Nouveautés](../../../docs/framework/whats-new/index.md)   
  [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkId=227195)   
  [Guide de développement](../../../docs/framework/development-guide.md)
+
