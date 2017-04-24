@@ -45,7 +45,7 @@ caps.handback.revision: 18
 # &#201;v&#233;nements de la dur&#233;e de vie d&#39;un objet
 Cette rubrique décrit les événements [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spécifiques qui correspondent aux étapes de la durée de vie de création, d'utilisation et de destruction d'un objet.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

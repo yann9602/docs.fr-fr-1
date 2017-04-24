@@ -25,7 +25,7 @@ caps.handback.revision: 16
 # Validation et rappels de propri&#233;t&#233;s de d&#233;pendance
 Cette rubrique décrit comment créer des propriétés de dépendance à l'aide d'implémentations personnalisées alternatives pour des fonctionnalités associées aux propriétés telles que la détermination de validation, les rappels appelés lors de chaque modification de la valeur effective de la propriété et la substitution possible d'influences extérieures sur la détermination de valeur.  Cette rubrique traite également des scénarios pour lesquels le développement des comportements du système de propriétés par défaut à l'aide de ces techniques est approprié.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

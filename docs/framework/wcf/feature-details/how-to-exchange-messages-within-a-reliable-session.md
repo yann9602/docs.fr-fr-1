@@ -35,7 +35,7 @@ Cette rubrique décrit les étapes requises pour activer une session fiable util
   
 3.  Créez un fichier Web.config pour configurer un point de terminaison pour `CalculatorService` qui utilise <xref:System.ServiceModel.WSHttpBinding> avec la session fiable activée et la remise ordonnée des messages requise.  
   
-     [!code[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]  
+     <!-- TODO: review snippet reference [!code[c_HowTo_UseReliableSession#2111](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/web.config#2111)]  -->  
   
 4.  Créez un fichier Service.svc qui contient la ligne :  
   
@@ -63,7 +63,7 @@ Cette rubrique décrit les étapes requises pour activer une session fiable util
   
 4.  Svcutil.exe génère également la configuration du client qui utilise la classe <xref:System.ServiceModel.WSHttpBinding>.Ce fichier doit être nommé dans le fichier App.config lors de l'utilisation de [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].  
   
-     [!code[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]  
+     <!-- TODO: review snippet reference [!code[C_HowTo_UseReliableSession#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_usereliablesession/common/app.config#2211)]  -->  
   
 5.  Créez une instance `ClientCalculator` dans une application, puis appelez les opérations de service.  
   

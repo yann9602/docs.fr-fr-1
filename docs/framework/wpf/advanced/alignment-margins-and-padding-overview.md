@@ -25,7 +25,7 @@ caps.handback.revision: 19
 # Vue d&#39;ensemble de l&#39;alignement, des marges et du remplissage
 La classe <xref:System.Windows.FrameworkElement> expose plusieurs propriétés, utilisées pour positionner des éléments enfants de manière précise.  Cette rubrique présente quatre des propriétés les plus importantes : <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, <xref:System.Windows.Controls.Border.Padding%2A> et <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>.  Il est important de comprendre les effets de ces propriétés, car elles servent de base au contrôle de la position des éléments dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wcpsdk_layout_amp_introduction"></a>   
 ## Introduction au positionnement d'un élément  

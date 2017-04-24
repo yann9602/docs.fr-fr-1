@@ -28,7 +28,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
  Cette rubrique traite d'abord des concepts fondamentaux de la liaison de données [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], puis traite ensuite de l'utilisation de la classe <xref:System.Windows.Data.Binding> et d'autres fonctionnalités de liaison de données.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_data_binding"></a>   
 ## Qu'est\-ce que la liaison de données ?  
@@ -64,7 +64,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="basic_data_binding_concepts"></a>   
 ## Concepts de base des liaisons de données  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  Indépendamment de l'élément que vous liez et de la nature de votre source de données, chaque liaison suit toujours le modèle représenté par l'illustration suivante :  
   
@@ -128,7 +128,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="creating_a_binding"></a>   
 ## Création d'une liaison  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  Pour récapituler quelques\-uns des concepts couverts dans les sections précédentes, vous établissez une liaison à l'aide de l'objet <xref:System.Windows.Data.Binding>, et chaque liaison comporte généralement quatre composants : la cible de la liaison, la propriété cible, la source de liaison et le chemin d'accès à la valeur source.  Cette section décrit comment installer une liaison.  
   
@@ -220,7 +220,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="binding_to_collections"></a>   
 ## Liaisons de collections  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  Un objet source de liaison peut être traité comme un objet unique dont les propriétés contiennent des données, ou comme une collection de données d'objets polymorphiques souvent rassemblés \(tel que le résultat d'une requête à une base de données\).  Jusqu'à présent, nous n'avons traité que des liaisons avec des objets uniques ; cependant, les liaisons avec une collection de données sont des scénarios courants.  Par exemple, un scénario courant consiste à utiliser un <xref:System.Windows.Controls.ItemsControl> tel qu'un <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.ListView> ou un <xref:System.Windows.Controls.TreeView> pour afficher une collection de données, comme dans l'application représentée dans la section [Qu'est\-ce que la liaison de données ?](#what_is_data_binding).  
   
@@ -242,7 +242,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
 ### Vues de collection  
  Une fois que votre <xref:System.Windows.Controls.ItemsControl> est lié à une collection de données, il peut être utile de trier, filtrer ou grouper les données.  Pour ce faire, vous utilisez des vues de collection, qui sont des classes implémentant l'interface <xref:System.ComponentModel.ICollectionView>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_are_collection_views"></a>   
 #### Que sont les vues de collection ?  
@@ -369,7 +369,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
 <a name="data_validation"></a>   
 ## Validation des données  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  La plupart des applications acceptant une entrée utilisateur doivent posséder une logique de validation pour s'assurer que l'utilisateur a entré les informations prévues.  Les contrôles de validation peuvent être basés sur le type, la plage, le format ou sur toute autre exigence spécifique à l'application.  Cette section traite du fonctionnement de la validation des données dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   

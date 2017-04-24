@@ -25,7 +25,7 @@ caps.handback.revision: 17
 # Param&#232;tres du Registre pour le rendu des graphiques
 Cette rubrique donne une vue d'ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="overview"></a>   
 ## Quand utiliser les paramètres du Registre pour le rendu des graphiques  

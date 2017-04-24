@@ -83,8 +83,8 @@ Comme une page Web peut être affichée n'importe où dans le monde, les opérat
 ## Exemple  
  L'exemple suivant contient à la fois la source HTML et le code pour un formulaire Web ASP.NET qui demande à l'utilisateur d'entrer une valeur de date et d'heure.  Un script côté client écrit également des informations sur les date et heure locales de la demande de l'utilisateur et le décalage par rapport à l'heure UTC \(offset de fuseau horaire de l'utilisateur\) dans un champ masqué.  Ces informations sont ensuite analysées par le serveur qui retourne une page Web affichant l'entrée de l'utilisateur.  Les date et heure de la demande de l'utilisateur sont également affichées en utilisant l'heure locale de l'utilisateur, l'heure sur le serveur et l'heure UTC.  
   
- [!code-csharp[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/cs/GetDateInfo.aspx#1)]
- [!code-vb[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/vb/GetDateInfo.aspx#1)]  
+ <!-- TODO: review snippet reference [!code-csharp[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/cs/GetDateInfo.aspx#1)]  -->
+ <!-- TODO: review snippet reference [!code-vb[Formatting.HowTo.ParseDateInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseDateInput/vb/GetDateInfo.aspx#1)]  -->  
   
  Le script côté client appelle la méthode `toLocaleString` JavaScript.  Une chaîne qui suit les conventions de mise en forme des paramètres régionaux de l'utilisateur est alors générée. Elle a plus de chances d'être analysée avec succès sur le serveur.  
   

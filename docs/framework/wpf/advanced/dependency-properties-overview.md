@@ -27,7 +27,7 @@ caps.handback.revision: 29
 # Vue d&#39;ensemble des propri&#233;t&#233;s de d&#233;pendance
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit un jeu des services qui peuvent être utilisés pour étendre les fonctionnalités d'une propriété [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)].  Ensemble, ces services sont en général connus sous le nom de système de propriétés [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Une propriété stockée par le système de propriétés [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est appelée [propriété de dépendance](GTMT). Cette vue d'ensemble décrit le système de propriétés [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et les fonctionnalités d'une [propriété de dépendance](GTMT). Elle s'intéresse notamment à l'utilisation des [propriétés de dépendance](GTMT) existantes en XAML et dans le code.  Cette vue d'ensemble introduit également des aspects spécialisés des propriétés de dépendance, comme les métadonnées de propriété de dépendance, et explique comment créer votre propre propriété de dépendance dans une classe personnalisée.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

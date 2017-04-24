@@ -24,7 +24,7 @@ caps.handback.revision: 29
 # Vue d&#39;ensemble des documents dynamiques
 Les documents dynamiques sont conçus pour optimiser l'affichage et la lisibilité.  Au lieu d'avoir une disposition prédéfinie, ces documents ajustent et refluent dynamiquement leur contenu en fonction des variables d'exécution telles que la taille de la fenêtre, la résolution du périphérique et les préférences de l'utilisateur \(en option\).  En outre, les documents dynamiques offrent des fonctionnalités de document avancées, telles que la pagination et les colonnes.  Cette rubrique donne une vue d'ensemble des documents dynamiques et explique comment les créer.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_a_flow_document"></a>   
 ## Description d'un document dynamique  

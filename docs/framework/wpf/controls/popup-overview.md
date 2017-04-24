@@ -22,7 +22,7 @@ caps.handback.revision: 33
 # Vue d&#39;ensemble de Popup
 Le contrôle <xref:System.Windows.Controls.Primitives.Popup> permet d'afficher le contenu dans une fenêtre séparée qui flotte au\-dessus de la fenêtre d'application actuelle par rapport à un élément désigné ou une coordonnée d'écran.  Cette rubrique présente le contrôle <xref:System.Windows.Controls.Primitives.Popup> et fournit des informations quant à son utilisation.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="What_Is_a_Popup_"></a>   
 ## Qu'est\-ce qu'un Popup ?  

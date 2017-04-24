@@ -23,7 +23,7 @@ caps.handback.revision: 24
 # Vue d&#39;ensemble des sources de liaison
 Dans la liaison de données, l'objet de [source de liaison](GTMT) fait référence à l'objet dont vous obtenez vos données.  Cette rubrique traite des types d'objets que vous pouvez utiliser comme source de liaison.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="binding_sources"></a>   
 ## Types de sources de liaison  

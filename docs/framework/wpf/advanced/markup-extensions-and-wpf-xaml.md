@@ -35,7 +35,7 @@ caps.handback.revision: 23
 # Extensions de balisage et XAML WPF
 Cette rubrique introduit le concept des extensions de balisage pour le XAML, notamment leurs règles de syntaxe, leur finalité et le modèle d'objet de classe sous\-jacent.  Les extensions de balisage sont une fonctionnalité générale du langage XAML et de l'implémentation .NET des services XAML.  Cette rubrique détaille spécifiquement des extensions de balisage pour une utilisation dans XAML WPF.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="XAML_Processors_and_Markup_Extensions"></a>   
 ## Processeurs XAML et extensions de balisage  

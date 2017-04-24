@@ -22,7 +22,7 @@ caps.handback.revision: 29
 # Vue d&#39;ensemble de la cr&#233;ation de contr&#244;les
 L'extensibilité du modèle de contrôle [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] réduit considérablement le besoin de créer un contrôle.  Toutefois, vous serez parfois amené à devoir créer un contrôle personnalisé dans certains cas.  Cette rubrique traite des fonctionnalités qui limitent votre besoin de créer un contrôle personnalisé et des différents modèles de création de contrôle dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Cette rubrique montre également comment créer un nouveau contrôle.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="when_to_write_a_new_control"></a>   
 ## Alternatives à l'écriture d'un nouveau contrôle  

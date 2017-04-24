@@ -29,7 +29,7 @@ caps.handback.revision: 20
 # Vue d&#39;ensemble des transformations
 Cette rubrique décrit comment utiliser les classes <xref:System.Windows.Media.Transform> [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] pour faire pivoter, mettre à l'échelle, déplacer \(appliquer une translation\) et incliner des objets <xref:System.Windows.FrameworkElement>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="whatIsATransformSection"></a>   
 ## Qu'est\-ce qu'une transformation ?  

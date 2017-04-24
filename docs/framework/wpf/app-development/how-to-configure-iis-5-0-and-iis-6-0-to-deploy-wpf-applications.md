@@ -32,7 +32,7 @@ Vous pouvez déployer une application [!INCLUDE[TLA#tla_winclient](../../../../i
   
  Cette rubrique décrit comment configurer [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] et [!INCLUDE[TLA#tla_iis60](../../../../includes/tlasharptla-iis60-md.md)] pour déployer des applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 > [!NOTE]
 >  Vous pouvez vérifier la présence de la chaîne *UserAgent* dans le Registre afin de déterminer si [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] est installé sur le système.  Pour plus de détails et pour obtenir un script qui examine la chaîne *UserAgent* afin de déterminer si [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] est installé sur un système, consultez [Détecter si .NET Framework 3.0 est installé](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md).  

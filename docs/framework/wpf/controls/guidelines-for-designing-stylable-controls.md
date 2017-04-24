@@ -22,7 +22,7 @@ caps.handback.revision: 17
 # Recommandations pour la conception de contr&#244;les auxquels un style peut &#234;tre appliqu&#233;
 Ce document récapitule un ensemble de meilleures pratiques à prendre en compte lors de la conception d'un contrôle auquel il soit facile d'appliquer un style et un modèle.  Ces meilleures pratiques font suite aux nombreux tâtonnements que nous avons expérimentés lors de nos travaux sur les styles de contrôles de thème pour le jeu de contrôles intégré de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Nous avons découvert que la réussite de l'application d'un style dépend autant de la qualité de conception d'un modèle d'objet que du style lui\-même.  Ce document s'adresse aux auteurs de contrôles et non aux auteurs de styles.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Terminology"></a>   
 ## Terminologie  

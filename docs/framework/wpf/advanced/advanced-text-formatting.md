@@ -28,7 +28,7 @@ caps.handback.revision: 12
 > [!NOTE]
 >  Tous les exemples de code dans ce document se trouvent dans [Mise en forme de texte avancée, exemple](http://go.microsoft.com/fwlink/?LinkID=159965).  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prereq"></a>   
 ## Composants requis  

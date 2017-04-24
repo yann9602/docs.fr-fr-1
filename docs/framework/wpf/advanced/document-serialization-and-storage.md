@@ -24,7 +24,7 @@ caps.handback.revision: 23
 # S&#233;rialisation et stockage de documents
 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] fournit un environnement puissant pour créer et afficher des documents de haute qualité.  Grâce à des fonctionnalités améliorées prenant en charge les documents fixes comme les documents dynamiques, des contrôles d'affichage avancés et des fonctions graphiques 2D et 3D puissantes, les applications [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] offrent un niveau de qualité et une expérience utilisateur inégalés.  La possibilité de gérer une représentation en mémoire d'un document de manière flexible est une fonctionnalité clé de [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] ; en outre, la quasi\-totalité des applications requièrent de pouvoir enregistrer et charger efficacement des documents d'un magasin de données.  Le processus de conversion d'un document d'une représentation en mémoire interne en un magasin de données externes est nommé [sérialisation](GTMT).  Le processus inverse de lecture d'un magasin de données et de recréation de l'instance en mémoire d'origine est appelé désérialisation.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="AboutSerialization"></a>   
 ## À propos de la sérialisation de documents  

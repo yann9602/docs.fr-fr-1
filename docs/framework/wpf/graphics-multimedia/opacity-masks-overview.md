@@ -89,8 +89,8 @@ Exemple de masque d'opacité DrawingBrush
 ## Utilisation d'un gradient comme un masque d'opacité  
  Pour créer un remplissage dégradé, vous spécifiez deux points de dégradé ou plus.  Chaque point de dégradé contient une couleur et une position \(consultez [Vue d'ensemble de la peinture avec des couleurs unies ou des dégradés](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) pour plus d'informations sur la création et l'utilisation de gradients\).  Le processus est le même lors de l'utilisation d'un gradient comme un masque d'opacité, mais, au lieu de fusionner des couleurs, le gradient du masque d'opacité fusionne des valeurs de canal alpha.  De ce fait, la couleur réelle du contenu du gradient n'importe pas ; seul compte le canal alpha, l'opacité, ou chaque couleur.  Voici un exemple :  
   
- [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]
- [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#LinearGradientOpacityMaskonImage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  -->  
   
 <a name="specifyinggradientcolors"></a>   
 ## Spécification de points de dégradé pour un masque d'opacité  
@@ -106,8 +106,8 @@ Exemple de masque d'opacité DrawingBrush
   
  Dans la ligne précédente, *aa* représente une valeur hexadécimale à deux chiffres utilisée pour spécifier l'opacité de la couleur.  *rr*, *vv* et *bb* représentent chacun une valeur hexadécimale à deux chiffres utilisée pour spécifier les quantités de rouge, de vert et de bleu dans la couleur.  Chaque chiffre hexadécimal peut avoir une valeur de 0 à 9 ou de A à F.  0 est la plus petite valeur et F est la plus grande.   Une valeur alpha 00 spécifie une couleur qui est totalement transparente, alors qu'une valeur alpha FF crée une couleur qui est totalement opaque.  Dans l'exemple suivant, la notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] est utilisée pour spécifier deux couleurs.  La première est totalement opaque, alors que la seconde est totalement transparente.  
   
- [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]
- [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#AARRGGBBValueonOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  -->  
   
 <a name="usingimageasopacitymask"></a>   
 ## Utilisation d'une image comme un masque d'opacité  
@@ -118,15 +118,15 @@ Exemple de masque d'opacité
   
  Pour utiliser une image comme un masque d'opacité, utilisez un <xref:System.Windows.Media.ImageBrush> pour contenir l'image.  Lorsque vous créez une image à utiliser comme un masque d'opacité, enregistrez l'image dans un format qui prend en charge plusieurs niveaux de transparence, tel que [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)].  L'exemple suivant affiche le code utilisé pour créer l'illustration précédente.  
   
- [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#uielementopacitymask)]
- [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#uielementopacitymask)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#uielementopacitymask)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#UIElementOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#uielementopacitymask)]  -->  
   
 <a name="tilingimageopacitymask"></a>   
 ### Utilisation d'une image en mosaïque comme un masque d'opacité  
  Dans l'exemple suivant, la même image est utilisée avec un autre <xref:System.Windows.Media.ImageBrush>, mais les fonctionnalités de mosaïque du pinceau sont utilisées pour produire des mosaïques de l'image de 50 pixels carrés.  
   
- [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#tiledimageasopacitymask)]
- [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#tiledimageasopacitymask)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/ImageBrushExample.xaml#tiledimageasopacitymask)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledImageasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/ImageBrushExample.xaml#tiledimageasopacitymask)]  -->  
   
 <a name="drawingbrushasopacitymask"></a>   
 ## Création d'un masque d'opacité à partir d'un dessin  
@@ -137,15 +137,15 @@ Exemple de masque d'opacité DrawingBrush
   
  Pour utiliser un dessin comme un masque d'opacité, utilisez un <xref:System.Windows.Media.DrawingBrush> pour contenir le dessin.  L'exemple suivant affiche le code utilisé pour créer l'illustration précédente :  
   
- [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#opacitymaskfromdrawing)]
- [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#OpacityMaskfromDrawing](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  -->  
   
 <a name="tileddrawingbrush"></a>   
 ### Utilisation d'un dessin en mosaïque comme un masque d'opacité  
  Comme le <xref:System.Windows.Media.ImageBrush>, le <xref:System.Windows.Media.DrawingBrush> peut être fait pour disposer en mosaïque son dessin.  Dans l'exemple suivant, un pinceau de dessin est utilisé pour créer un masque d'opacité en mosaïque.  
   
- [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#tileddrawingasopacitymask)]
- [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksExample/CS/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  -->
+ <!-- TODO: review snippet reference [!code-xml[OpacityMasksExample#TiledDrawingasOpacityMask](../../../../samples/snippets/xaml/VS_Snippets_Wpf/OpacityMasksExample/XAML/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  -->  
   
 ## Voir aussi  
  [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   

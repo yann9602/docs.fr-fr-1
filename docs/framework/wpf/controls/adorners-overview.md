@@ -21,7 +21,7 @@ caps.handback.revision: 34
 # Vue d&#39;ensemble des ornements
 Les ornements sont un type spécial de <xref:System.Windows.FrameworkElement>, utilisés pour fournir des signaux visuels à un utilisateur.  Parmi les autres utilisations, les ornements peuvent être utilisés pour ajouter des handles fonctionnels aux éléments ou fournir des informations d'état à propos d'un contrôle.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="about_Adorners"></a>   
 ## À propos des ornements  

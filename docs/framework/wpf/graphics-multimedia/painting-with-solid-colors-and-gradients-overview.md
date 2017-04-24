@@ -26,7 +26,7 @@ caps.handback.revision: 18
 # Vue d&#39;ensemble de la peinture avec des couleurs unies ou des d&#233;grad&#233;s
 Cette rubrique décrit comment utiliser les objets <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush> et <xref:System.Windows.Media.RadialGradientBrush> pour peindre avec des couleurs unies, des dégradés linéaires et des dégradés radiaux.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="solidcolor"></a>   
 ## Peinture d'une zone avec une couleur unie  

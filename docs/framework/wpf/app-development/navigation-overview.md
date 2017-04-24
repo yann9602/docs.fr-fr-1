@@ -43,7 +43,7 @@ caps.handback.revision: 65
 > [!NOTE]
 >  Dans cette rubrique, le terme « navigateur » désigne uniquement les navigateurs qui peuvent héberger des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], à savoir [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] et Firefox pour le moment.  Lorsque des fonctionnalités [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spécifiques sont prises en charge uniquement par un navigateur donné, la version du navigateur en question est indiquée.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="XAMLBrowserApplications"></a>   
 ## Navigation dans les applications WPF  

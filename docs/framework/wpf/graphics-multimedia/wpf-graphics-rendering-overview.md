@@ -22,7 +22,7 @@ caps.handback.revision: 48
 # Vue d&#39;ensemble du rendu graphique de WPF
 Cette rubrique propose une vue d'ensemble de la couche visuelle de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Elle se concentre sur le rôle de la classe <xref:System.Windows.Media.Visual> pour la prise en charge du rendu dans le modèle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="role_of_visual_object"></a>   
 ## Rôle de l'objet visuel  

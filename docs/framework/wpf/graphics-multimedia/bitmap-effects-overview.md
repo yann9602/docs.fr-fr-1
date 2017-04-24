@@ -24,7 +24,7 @@ Les effets bitmap permettent aux concepteurs et développeurs d'appliquer des ef
 > [!IMPORTANT]
 >  Dans le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] et les versions ultérieures, la classe <xref:System.Windows.Media.Effects.BitmapEffect> est obsolète.  Si vous essayez d'utiliser la classe <xref:System.Windows.Media.Effects.BitmapEffect>, vous obtiendrez une exception obsolète.  L'alternative non obsolète à la classe<xref:System.Windows.Media.Effects.BitmapEffect> est la classe <xref:System.Windows.Media.Effects.Effect>.  Dans la plupart des cas, la classe <xref:System.Windows.Media.Effects.Effect> est nettement plus rapide.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wpf_effects"></a>   
 ## Effets bitmap WPF  

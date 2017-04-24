@@ -26,7 +26,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
 > [!NOTE]
 >  L'outil LocBaml n'est pas une application prête pour la production.  Il est présenté comme un exemple qui fait appel à un certain nombre d'API de localisation et montre comment vous pouvez écrire un outil de localisation.  
 >   
->  [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+>    
   
 <a name="Introduction"></a>   
 ## Vue d'ensemble  

@@ -26,7 +26,7 @@ caps.handback.revision: 33
 # Vue d&#39;ensemble des d&#233;clarations de liaison
 Cette rubrique traite des différentes manières de déclarer une liaison.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Prereq"></a>   
 ## Composants requis  

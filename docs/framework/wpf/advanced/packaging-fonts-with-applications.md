@@ -27,7 +27,7 @@ Cette rubrique fournit une vue d'ensemble de la manière d'empaqueter des police
 > [!NOTE]
 >  Comme avec la plupart des types de logiciels, les fichiers de police font l'objet d'une licence et ne sont pas vendus.  Les licences qui régissent l'utilisation de polices varient d'un fournisseur à l'autre mais en général, la plupart des licences \(y compris celles qui portent sur des polices [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)]\) fournies avec des applications et [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], n'autorisent pas l'incorporation de polices dans des applications ni leur redistribution.  Par conséquent, en tant que développeur, il vous incombe de veiller à disposer des droits de licence requis pour toute police incorporée dans une application ou redistribuée d'une autre manière.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="introduction_to_packaging_fonts"></a>   
 ## Introduction à l'empaquetage de polices  

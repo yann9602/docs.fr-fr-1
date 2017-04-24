@@ -46,7 +46,7 @@ Les utilisateurs interagissent avec les applications autonomes [!INCLUDE[TLA#tla
 > [!NOTE]
 >  Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergées par navigateur, y compris les [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages libres [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], ne fournissent pas leurs propres fenêtres.  À la place, elles sont hébergées dans des fenêtres fournies par [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)].  Consultez [Vue d'ensemble des applications de navigateur XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="TheWindowClass"></a>   
 ## La classe Window  
@@ -136,7 +136,7 @@ Les utilisateurs interagissent avec les applications autonomes [!INCLUDE[TLA#tla
 ## Durée de vie d'une fenêtre  
  Comme avec toute classe, une fenêtre a une durée de vie qui commence lors de sa première instanciation, après quoi elle est ouverte, activée et désactivée et finalement fermée.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Opening_a_Window"></a>   
 ### Ouverture d'une fenêtre  
@@ -414,7 +414,7 @@ Les utilisateurs interagissent avec les applications autonomes [!INCLUDE[TLA#tla
   
  Vous pouvez également modifier l'apparence et le comportement d'une bordure de zone non cliente en configurant le mode de redimensionnement d'une fenêtre, le style de fenêtre, et si celle\-ci apparaît sous forme d'un bouton dans la barre des tâches du bureau.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Resize_Mode"></a>   
 ### Mode redimensionnement  

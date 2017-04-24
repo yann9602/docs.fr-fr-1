@@ -23,7 +23,7 @@ caps.handback.revision: 25
 # Vue d&#39;ensemble de GridView
 Le mode d'affichage <xref:System.Windows.Controls.GridView> est l'un des modes d'affichage d'un contrôle <xref:System.Windows.Controls.ListView>.  La classe <xref:System.Windows.Controls.GridView> et ses classes de prise en charge vous permettent, à vous et à vos utilisateurs, de voir des collections d'éléments dans une table qui utilise généralement des boutons comme en\-têtes de colonnes interactifs.  Cette rubrique introduit la classe <xref:System.Windows.Controls.GridView> et décrit son utilisation.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="DefiningaListViewthatusesGridViewView"></a>   
 ## Qu'est\-ce qu'une vue GridView ?  

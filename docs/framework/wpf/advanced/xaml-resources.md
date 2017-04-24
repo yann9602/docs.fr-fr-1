@@ -27,7 +27,7 @@ Une ressource est un objet qui peut être réutilisé dans différents endroits 
 > [!NOTE]
 >  Les fichiers de ressources décrites dans cette rubrique sont différents que les fichiers de ressources décrites dans [ressource d’Application WPF, de contenu et les fichiers de données](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md) et différent de ressources incorporés ou liés décrits dans [ressources de gestion de l’Application (.NET)](../Topic/Managing%20Application%20Resources%20\(.NET\).md).  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="usingresources"></a>   
 ## <a name="using-resources-in-xaml"></a>Utilisation des ressources en XAML  

@@ -24,7 +24,7 @@ caps.handback.revision: 13
 # Dessin du texte mis en forme
 Cette rubrique fournit une vue d'ensemble des fonctionnalités de l'objet <xref:System.Windows.Media.FormattedText>.  Cet objet offre un contrôle de bas niveau pour le dessin de texte dans des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="technology_overview"></a>   
 ## Vue d'ensemble de la technologie  

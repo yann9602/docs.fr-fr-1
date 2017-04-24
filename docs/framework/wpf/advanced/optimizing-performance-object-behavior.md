@@ -25,7 +25,7 @@ caps.handback.revision: 11
 # Optimisation des performances&#160;: comportement d&#39;objets
 Le fait de bien comprendre le comportement intrinsèque des objets [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous aidera à effectuer les bons compromis entre fonctionnalités et performances.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Not_Removing_Event_Handlers"></a>   
 ## Le fait de ne pas supprimer les gestionnaires d'événements sur des objets peut conserver des objets actifs  

@@ -29,7 +29,7 @@ caps.handback.revision: 28
 # Vue d&#39;ensemble des &#233;v&#233;nements rout&#233;s
 Cette rubrique décrit le concept d'événements routés dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Elle définit la terminologie liée aux événements routés, explique le routage des événements routés dans une arborescence d'éléments, fournit un résumé de la gestion des événements routés et présente la création d'événements routés personnalisés.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

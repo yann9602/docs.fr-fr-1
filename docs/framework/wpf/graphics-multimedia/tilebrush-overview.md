@@ -22,7 +22,7 @@ caps.handback.revision: 11
 # Vue d&#39;ensemble de TileBrush
 Les objets <xref:System.Windows.Media.TileBrush> vous offrent de nombreux outils pour contrôler la peinture d'une zone à l'aide d'une image, d'un <xref:System.Windows.Media.Drawing> ou d'un <xref:System.Windows.Media.Visual>.  Cette rubrique décrit comment utiliser les fonctionnalités de <xref:System.Windows.Media.TileBrush> pour mieux contrôler la façon de peindre une zone avec <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush> ou <xref:System.Windows.Media.VisualBrush>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisite"></a>   
 ## Composants requis  

@@ -29,7 +29,7 @@ caps.handback.revision: 35
 # Vue d&#39;ensemble des compl&#233;ments WPF
 <a name="Introduction"></a> Le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] inclut un modèle de complément que les développeurs peuvent utiliser pour créer des applications prenant en charge l'extensibilité des compléments.  Ce modèle de complément permet la création de compléments qui s'intègrent aux fonctionnalités des applications et les étendent.  Dans certains scénarios, les applications doivent également afficher les [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] fournies par les compléments.  Cette rubrique montre comment [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] optimise le modèle de complément [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour prendre en charge ces scénarios, l'architecture sur laquelle ils s'appuient, ses avantages et ses limitations.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Requirements"></a>   
 ## Composants requis  

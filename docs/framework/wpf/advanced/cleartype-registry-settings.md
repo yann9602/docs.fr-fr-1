@@ -22,7 +22,7 @@ caps.handback.revision: 12
 # Param&#232;tres du Registre ClearType
 Cette rubrique présente une vue d'ensemble des paramètres du Registre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] qui sont utilisés par les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="overview"></a>   
 ## Vue d'ensemble de la technologie  

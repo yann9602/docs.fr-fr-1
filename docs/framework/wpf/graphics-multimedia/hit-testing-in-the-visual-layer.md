@@ -22,7 +22,7 @@ caps.handback.revision: 41
 # Test de positionnement dans la couche visuelle
 Cette rubrique propose une vue d'ensemble de la fonctionnalité de test de positionnement fournie par la couche visuelle.  La prise en charge du test de positionnement vous permet de déterminer si la valeur d'une géométrie ou d'un point tombe dans le contenu rendu d'un <xref:System.Windows.Media.Visual>, ce qui vous permet d'implémenter un comportement d'interface utilisateur tel qu'un rectangle de sélection pour sélectionner plusieurs objets.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="hit_testing_scenarios"></a>   
 ## Scénarios de test de positionnement  

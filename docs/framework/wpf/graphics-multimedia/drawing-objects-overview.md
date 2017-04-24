@@ -26,7 +26,7 @@ caps.handback.revision: 24
 # Vue d&#39;ensemble des objets Drawing
 Cette rubrique présente les objets <xref:System.Windows.Media.Drawing> et décrit comment les utiliser pour dessiner efficacement des formes, des images, du texte et des médis.  Utilisez les objets <xref:System.Windows.Media.Drawing> lorsque vous créez des images clipart, dessinez avec un <xref:System.Windows.Media.DrawingBrush> ou utilisez les objets <xref:System.Windows.Media.Visual>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="whatisadrawingsection"></a>   
 ## Qu'est\-ce qu'un objet Drawing ?  

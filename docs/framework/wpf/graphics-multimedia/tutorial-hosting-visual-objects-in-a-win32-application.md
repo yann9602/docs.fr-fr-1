@@ -25,7 +25,7 @@ caps.handback.revision: 13
   
  Ce didacticiel décrit comment écrire une application d'exemple, [Test de  positionnement avec interopérabilité Win32, exemple](http://go.microsoft.com/fwlink/?LinkID=159995), qui héberge des objets visuels [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans une fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="requirements"></a>   
 ## Configuration requise  

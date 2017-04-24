@@ -22,7 +22,7 @@ caps.handback.revision: 18
 # M&#233;tadonn&#233;es de propri&#233;t&#233; d&#39;infrastructure
 Des options de métadonnées de propriété d'infrastructure sont signalées pour les propriétés d'éléments objet considérés au [niveau de l'infrastructure WPF](GTMT) dans l'architecture [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  En général, la désignation [niveau d'infrastructure WPF](GTMT) implique la gestion de fonctionnalités telles que le rendu, la liaison de données et les ajustements du système de propriétés par les [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] de présentation et les fichiers exécutables de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Les métadonnées de propriété d'infrastructure sont interrogées par ces systèmes afin d'identifier les caractéristiques spécifiques aux fonctionnalités de propriétés d'élément particuliers.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

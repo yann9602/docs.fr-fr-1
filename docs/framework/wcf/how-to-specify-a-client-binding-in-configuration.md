@@ -49,7 +49,7 @@ Dans cet exemple, une application console cliente est créée pour utiliser un s
   
 4.  SvcUtil.exe génère également la configuration du client qui utilise le <xref:System.ServiceModel.BasicHttpBinding> classe. Lorsque vous utilisez [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], nommez ce fichier App.config. Notez que les informations d'adresse et de liaison ne sont pas spécifiées n'importe où à l'intérieur de l'implémentation du service. Par ailleurs, il n'est pas nécessaire d'écrire du code pour récupérer ces informations à partir du fichier de configuration.  
   
-     [!code[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/common/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]  
+     <!-- TODO: review snippet reference [!code[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/common/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]  -->  
   
 5.  Créez une instance de `ClientCalculator` dans une application, puis appelez les opérations de service.  
   

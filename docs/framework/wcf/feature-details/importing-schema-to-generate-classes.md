@@ -68,7 +68,7 @@ Pour générer des classes à partir des schémas qui sont utilisables avec [!IN
   
  Par exemple, considérons le schéma suivant.  
   
- [!code[c_SchemaImportExport#10](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
+ <!-- TODO: review snippet reference [!code[c_SchemaImportExport#10](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  -->  
   
  L'exemple suivant utilise la propriété `Namespaces` pour mapper l'espace de noms « http://schemas.contoso.com/carSchema » à « Contoso.Cars ».  
   
@@ -98,18 +98,18 @@ Pour générer des classes à partir des schémas qui sont utilisables avec [!IN
 ### <a name="import-options-choosing-collection-types"></a>Options d’importation : choix des types de collection  
  Deux modèles spéciaux au format XML représentent des collections d'éléments : les listes d'éléments et les associations entre un élément et un autre. Les éléments suivants sont un exemple d'une liste de chaînes.  
   
- [!code[C_SchemaImportExport#11](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  
+ <!-- TODO: review snippet reference [!code[C_SchemaImportExport#11](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  -->  
   
  Les éléments suivants sont un exemple d'une association entre une chaîne et un entier (`city name` et `population`).  
   
- [!code[C_SchemaImportExport#12](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  
+ <!-- TODO: review snippet reference [!code[C_SchemaImportExport#12](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#12)]  -->  
   
 > [!NOTE]
 >  Toute association peut aussi être considérée comme une liste. Par exemple, vous pouvez considérer l'association précédente comme une liste d'objets `city` complexes qui contiennent deux champs (un champ de chaîne et un champ d'entier). Les deux modèles sont représentés dans le schéma XSD. Il n'est pas possible de distinguer une liste et une association, donc ces modèles sont toujours traités comme des listes sauf si une annotation spéciale spécifique à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est présente dans le schéma. L’annotation indique qu’un modèle donné représente une association. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
  Normalement, une liste est importée sous la forme d'un contrat de données de collection qui dérive d'une liste générique ou sous la forme d'un tableau du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], selon si le schéma adopte ou non le modèle de désignation standard pour les collections. Cette opération est décrite plus en détail dans [des Types de collections dans les contrats de données](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md). Les associations sont importées normalement comme un <xref:System.Collections.Generic.Dictionary%602> ou d’un contrat de données de collection qui dérive de l’objet dictionary.\</TKey, TValue> Par exemple, considérons le schéma suivant.  
   
- [!code[c_SchemaImportExport#13](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  
+ <!-- TODO: review snippet reference [!code[c_SchemaImportExport#13](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#13)]  -->  
   
  Celui-ci serait importé comme suit (les champs sont montrés au lieu des propriétés à des fin de lisibilité).  
   

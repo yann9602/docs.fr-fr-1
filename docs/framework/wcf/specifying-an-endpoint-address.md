@@ -48,13 +48,13 @@ Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Définition des adresses de point de terminaison dans la configuration  
  Pour définir un point de terminaison dans un fichier de configuration, utilisez la [ <> \> ](http://msdn.microsoft.com/fr-fr/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
   
- [!code[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  
+ <!-- TODO: review snippet reference [!code[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  -->  
   
  Lors de la <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> est appelée (autrement dit, lorsque l’application d’hébergement tente de démarrer le service), le système recherche un [ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/service.md) élément avec un attribut de nom qui indique « UE. Samples.HelloService ». Si le [ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/service.md) élément est trouvé, le système charge la classe spécifiée et crée des points de terminaison en utilisant les définitions de point de terminaison dans le fichier de configuration. Ce mécanisme vous permet de charger et de démarrer un service avec deux lignes de code tout en laissant la liaison et les informations d’adressage hors de votre code. L'avantage de cette approche est que ces modifications peuvent être apportées sans devoir recompiler ou redéployer l'application.  
   
  Les en-têtes facultatifs sont déclarés dans un [ <> \</> \> ](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md). Les éléments suivants sont un exemple des éléments utilisé pour spécifier des points de terminaison pour un service dans un fichier de configuration qui fait la distinction entre deux en-tête : clients "Gold" de http://tempuri1.org/ et clients "Standard" de http://tempuri2.org/. Le client appelant ce service doit avoir approprié [ <> \> ](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md) dans son fichier de configuration.  
   
- [!code[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  
+ <!-- TODO: review snippet reference [!code[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  -->  
   
  Les en-tête peuvent également être définis sur les messages individuels au lieu de tous les messages sur un point de terminaison (comme montré précédemment). Pour cela, à l’aide de <xref:System.ServiceModel.OperationContextScope> pour créer un nouveau contexte dans une application cliente pour ajouter un en-tête personnalisé au message sortant, comme illustré dans l’exemple suivant.  
   

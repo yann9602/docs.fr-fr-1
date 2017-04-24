@@ -22,7 +22,7 @@ caps.handback.revision: 19
 # Vue d&#39;ensemble de l&#39;expanseur
 Le contrôle <xref:System.Windows.Controls.Expander> offre une façon de fournir du contenu dans une zone développable qui ressemble à une fenêtre et inclut un en\-tête.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="CreatinganExpanderinXAML"></a>   
 ## Création d'un expanseur simple  

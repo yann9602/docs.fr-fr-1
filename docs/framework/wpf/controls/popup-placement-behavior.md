@@ -27,7 +27,7 @@ A <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu d
 > [!NOTE]
 >  Le <xref:System.Windows.Controls.ToolTip> et <xref:System.Windows.Controls.ContextMenu> classes également définir ces cinq propriétés et se comportent de la même façon.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Positioning"></a>   
 ## <a name="positioning-the-popup"></a>Positionnement Popup  

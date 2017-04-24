@@ -23,7 +23,7 @@ caps.handback.revision: 15
 # H&#233;ritage de la valeur de propri&#233;t&#233;
 L'héritage de valeur de propriété est une fonctionnalité du système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  L'héritage de valeur de propriété permet aux éléments enfants dans une arborescence d'éléments d'obtenir la valeur d'une propriété particulière auprès d'éléments parents, en héritant cette valeur telle que définie dans l'élément parent le plus proche.  L'élément parent pourrait également avoir obtenu sa valeur par héritage de valeur de propriété. Le système effectue donc potentiellement un traitement récursif jusqu'à la racine de page.  L'héritage de valeur de propriété n'est pas le comportement par défaut du système de propriétés. Une propriété doit être établie avec un paramètre de métadonnées particulier pour pouvoir initialiser l'héritage de valeur de propriété sur les éléments enfants.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Property_Value_Inheritance_is_Containment_Inheritance"></a>   
 ## L'héritage de valeur de propriété correspond à l'héritage de contenance  

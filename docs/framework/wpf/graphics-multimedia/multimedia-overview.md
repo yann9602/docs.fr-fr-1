@@ -22,7 +22,7 @@ caps.handback.revision: 18
 # Vue d&#39;ensemble du multim&#233;dia
 Les fonctionnalités multimédias de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] permettent d'intégrer de l'audio et de la vidéo dans vos applications afin d'améliorer l'expérience de l'utilisateur. Cette rubrique présente les fonctionnalités multimédias de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="mediaapi"></a>   
 ## API de médias  

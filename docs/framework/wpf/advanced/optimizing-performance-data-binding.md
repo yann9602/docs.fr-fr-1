@@ -24,7 +24,7 @@ La liaison de données [!INCLUDE[TLA#tla_winclient](../../../../includes/tlashar
   
  Cette rubrique fournit des recommandations sur les performances de la liaison de données.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="HowDataBindingReferencesAreResolved"></a>   
 ## Comment sont résolues les références de liaison de données  

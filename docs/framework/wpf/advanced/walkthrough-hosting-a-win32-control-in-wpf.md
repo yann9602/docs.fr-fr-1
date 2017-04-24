@@ -24,7 +24,7 @@ caps.handback.revision: 17
   
  Cette rubrique, [Hébergement d'un contrôle ListBox Win32 dans Windows Presentation Foundation, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=159998), vous présente une application qui héberge un contrôle de zone de liste [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  Cette procédure générale peut être étendue à l'hébergement de toute fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="requirements"></a>   
 ## Configuration requise  

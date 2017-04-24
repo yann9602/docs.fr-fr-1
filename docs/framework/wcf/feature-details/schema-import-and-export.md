@@ -53,7 +53,7 @@ caps.handback.revision: 14
   
  Par exemple, il est impossible d'importer le fragment de schéma suivant à l'aide des paramètres d'importation par défaut.  
   
- [!code[c_SchemaImportExport#9](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#9)]  
+ <!-- TODO: review snippet reference [!code[c_SchemaImportExport#9](../../../../samples/snippets/common/VS_Snippets_CFX/c_schemaimportexport/common/source.config#9)]  -->  
   
  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Référence du schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Lorsqu'un schéma ne se conforme pas aux règles des contrats de données, utilisez un autre moteur de sérialisation. Par exemple, le <xref:System.Xml.Serialization.XmlSerializer> utilise son propre mécanisme d’importation de schéma. De plus, il existe un mode spécial d’importation dans lequel la plage du schéma pris en charge est développée. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]la section sur la génération de <xref:System.Xml.Serialization.IXmlSerializable> tape [importation du schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md).  
   

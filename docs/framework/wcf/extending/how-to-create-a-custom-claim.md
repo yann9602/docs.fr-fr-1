@@ -59,7 +59,7 @@ L’infrastructure de modèle d’identité dans [!INCLUDE[indigo1](../../../../
          L'exemple de code suivant définit un type de ressource personnalisé nommé `MyResourceType`.  
   
          [!code-csharp[c_CustomClaim#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#2)]
-         [!code-vb[c_CustomClaim#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#2)]  
+         <!-- TODO: review snippet reference [!code-vb[c_CustomClaim#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#2)]  -->  
   
     3.  Choisissez un droit défini par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ou une valeur unique pour un droit personnalisé.  
   
@@ -70,7 +70,7 @@ L’infrastructure de modèle d’identité dans [!INCLUDE[indigo1](../../../../
          L’exemple de code suivant crée une revendication personnalisée avec un type de revendication `http://example.org/claims/complexcustomclaim`, un type de ressource personnalisé `MyResourceType`et avec le <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> à droite.  
   
      [!code-csharp[c_CustomClaim#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#5)]
-     [!code-vb[c_CustomClaim#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#5)]  
+     <!-- TODO: review snippet reference [!code-vb[c_CustomClaim#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#5)]  -->  
   
 ## <a name="example"></a>Exemple  
  L'exemple de code suivant montre comment créer une revendication personnalisée avec un type de ressource primitif et un type de ressource non primitif.  

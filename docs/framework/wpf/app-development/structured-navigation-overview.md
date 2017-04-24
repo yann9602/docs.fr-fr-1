@@ -25,7 +25,7 @@ Le contenu qui peut être hébergé par une [!INCLUDE[TLA#tla_xbap](../../../../
   
  La classe <xref:System.Windows.Controls.Page> n'implémente pas la prise en charge de la navigation structurée.  En lieu et place, la classe <xref:System.Windows.Navigation.PageFunction%601> est dérivée de <xref:System.Windows.Controls.Page> et l'étend avec les constructions de base requises pour la navigation structurée.  Cette rubrique explique comment définir une navigation structurée à l'aide de <xref:System.Windows.Navigation.PageFunction%601>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Structured_Navigation"></a>   
 ## Navigation structurée  

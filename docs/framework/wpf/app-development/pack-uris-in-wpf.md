@@ -46,7 +46,7 @@ Dans [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)], des [!
   
  Pour fournir un mécanisme cohérent d'identification et de chargement de ces types de fichiers à partir de ces emplacements, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tire parti de l'extensibilité du *modèle URI à en\-tête pack*.  Cette rubrique fournit une vue d'ensemble du modèle, explique comment construire des [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] à en\-tête pack pour divers scénarios, décrit la résolution des [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] et [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] absolus et relatifs et enfin, démontre comment utiliser les [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] à en\-tête pack à partir des balises et du code.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="The_Pack_URI_Scheme"></a>   
 ## Modèle URI à en\-tête pack  

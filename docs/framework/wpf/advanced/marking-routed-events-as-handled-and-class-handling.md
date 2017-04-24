@@ -34,7 +34,7 @@ caps.handback.revision: 18
 # Marquage des &#233;v&#233;nements rout&#233;s comme g&#233;r&#233;s et gestion de classe
 Les gestionnaires d'un événement routé peuvent marquer l'événement géré dans les données d'événement.  La gestion de l'événement raccourcira l'itinéraire efficacement.  La gestion de classe est un concept de programmation pris en charge par les événements routés.  Un gestionnaire de classe a la possibilité de gérer un événement routé particulier à un niveau de la classe avec un gestionnaire appelé avant tout gestionnaire d'instance sur toute instance de la classe.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

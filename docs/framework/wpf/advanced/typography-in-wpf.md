@@ -21,7 +21,7 @@ caps.handback.revision: 26
 # Typographie dans WPF
 Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Ces fonctionnalités incluent l'amélioration de la qualité et des performances de rendu de texte, une prise en charge de la typographie [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)], un texte international amélioré, une prise en charge de police améliorée et de nouvelles interfaces de programmation d'applications \(API, Application Programming Interface\) textes.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## Amélioration de la qualité et des performances du texte  

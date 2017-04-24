@@ -21,7 +21,7 @@ caps.handback.revision: 52
 # Vue d&#39;ensemble de la gestion d&#39;applications
 Toutes les applications tendent à partager un jeu de fonctionnalités commun qui s'applique à l'implémentation et à la gestion.  Cette rubrique fournit une vue d'ensemble de la fonctionnalité dans la classe d' <xref:System.Windows.Application> pour créer et gérer des applications.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 ## La classe d'application  
  Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], les fonctionnalités communes de portée application sont encapsulées dans la classe d' <xref:System.Windows.Application> .  La classe d' <xref:System.Windows.Application> inclut les fonctionnalités suivantes :  
@@ -133,7 +133,7 @@ Toutes les applications tendent à partager un jeu de fonctionnalités commun qu
 ## Durée de vie d'une application  
  La durée de vie d'une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est marquée par plusieurs événements déclenchés par <xref:System.Windows.Application> pour vous tenir informé du moment où votre application a démarré, a été activée et désactivée et arrêtée.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Splash_Screen"></a>   
 ### Écran de démarrage  

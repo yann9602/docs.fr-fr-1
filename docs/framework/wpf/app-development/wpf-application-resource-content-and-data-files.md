@@ -43,7 +43,7 @@ Les applications [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.
   
  Cette rubrique décrit comment configurer et utiliser des fichiers de données d'application.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Resource_Files"></a>   
 ## Fichiers de ressources  

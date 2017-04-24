@@ -36,7 +36,7 @@ Cet exemple montre comment créer un complément qui retourne une [!INCLUDE[TLA#
 ## Exemple  
  La création d'un complément qui retourne une [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] requiert un code spécifique pour chaque segment de pipeline, le complément et l'application hôte.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Contract"></a>   
 ## Implémentation du segment de pipeline du contrat  

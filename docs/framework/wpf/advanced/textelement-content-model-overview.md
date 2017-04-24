@@ -24,7 +24,7 @@ caps.handback.revision: 7
 # Vue d&#39;ensemble du mod&#232;le de contenu de TextElement
 Cette vue d'ensemble de modèle de contenu décrit le contenu pris en charge pour un <xref:System.Windows.Documents.TextElement>.  La classe <xref:System.Windows.Documents.Paragraph> est un type de <xref:System.Windows.Documents.TextElement>.  Un modèle de contenu décrit les types d'objets\/d'éléments qui peuvent être contenus dans d'autres.  Cette vue d'ensemble résume le modèle de contenu utilisé pour les objets dérivés de <xref:System.Windows.Documents.TextElement>.  Pour plus d'informations, consultez [Vue d'ensemble des documents dynamiques](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="text_element_classes"></a>   
 ## Diagramme de modèle de contenu  

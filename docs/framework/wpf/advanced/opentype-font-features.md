@@ -23,7 +23,7 @@ caps.handback.revision: 37
 # Fonctionnalit&#233;s des polices OpenType
 Cette rubrique fournit une vue d’ensemble de certaines des fonctionnalités clés de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] technologie de police dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>Format des polices OpenType  

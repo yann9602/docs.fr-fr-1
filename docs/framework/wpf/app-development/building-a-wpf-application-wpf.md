@@ -21,7 +21,7 @@ caps.handback.revision: 42
 # G&#233;n&#233;ration d&#39;une application WPF (WPF)
 Les applications [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] peuvent être générées comme fichiers exécutables [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] \(.exe\), comme bibliothèques \(.dll\) ou une combinaison des deux types d'assemblys.  Cette rubrique présente comment générer des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit les principales étapes du processus de génération.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Building_a_WPF_Application_using_Command_Line"></a>   
 ## Génération d'une application WPF  

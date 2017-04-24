@@ -26,7 +26,7 @@ caps.handback.revision: 7
 # Optimisation des performances&#160;: graphiques 2D et acquisition d&#39;images
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit une large gamme de fonctionnalités graphiques 2D et d'acquisition d'images qui peuvent être optimisées pour répondre aux spécifications de votre application.  Cette rubrique fournit des informations sur l'optimisation des performances dans ces domaines.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Drawing_and_Shapes"></a>   
 ## Dessin et formes  

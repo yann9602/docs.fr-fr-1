@@ -22,7 +22,7 @@ caps.handback.revision: 27
 # Vue d&#39;ensemble de ToolBar
 Les contrôles <xref:System.Windows.Controls.ToolBar> sont les conteneurs d'un groupe de commandes ou des contrôles généralement associés dans leur fonction.  Un <xref:System.Windows.Controls.ToolBar> contient généralement des boutons qui appellent des commandes.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="ToolBarControl"></a>   
 ## Contrôle ToolBar  

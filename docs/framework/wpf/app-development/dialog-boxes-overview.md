@@ -38,7 +38,7 @@ Applications autonomes possèdent en général une fenêtre principale qui affic
   
  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]vous permet de créer plusieurs types de boîtes de dialogue, y compris les messages, les boîtes de dialogue courantes et boîtes de dialogue personnalisées. Cette rubrique présente chacune et le [boîte de dialogue, exemple](http://go.microsoft.com/fwlink/?LinkID=159984) fournit des exemples correspondants.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Message_Boxes"></a>   
 ## <a name="message-boxes"></a>Boîtes de message  

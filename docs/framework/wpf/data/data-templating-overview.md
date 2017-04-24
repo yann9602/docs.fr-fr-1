@@ -24,7 +24,7 @@ caps.handback.revision: 24
 # Vue d&#39;ensemble des mod&#232;les de donn&#233;es
 Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modèle de création de modèles de données vous offre une grande souplesse pour définir la présentation de vos données. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les contrôles ont des fonctionnalités intégrées pour prendre en charge la personnalisation de la présentation des données. Cette rubrique montre tout d’abord comment définir un <xref:System.Windows.DataTemplate> et présente d’autres fonctionnalités de création de modèles de données, telles que la sélection des modèles basés sur la logique personnalisée et la prise en charge pour l’affichage des données hiérarchiques.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Prerequisites"></a>   
 ## <a name="prerequisites"></a>Conditions préalables  
@@ -36,7 +36,7 @@ Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.
   
 <a name="DataTemplating_Basic"></a>   
 ## <a name="data-templating-basics"></a>Principes fondamentaux de création de modèles de données  
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
  Pour illustrer pourquoi <xref:System.Windows.DataTemplate> est important, nous allons étudier un exemple de liaison de données. Dans cet exemple, nous avons un <xref:System.Windows.Controls.ListBox> qui est lié à une liste de `Task` objets. Chaque `Task` objet a un `TaskName` (chaîne), un `Description` (chaîne), un `Priority` (int) et une propriété de type `TaskType`, qui est un `Enum` avec les valeurs `Home` et `Work`.  
   

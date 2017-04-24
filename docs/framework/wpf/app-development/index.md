@@ -35,7 +35,7 @@ caps.handback.revision: 20
   
  Pour générer cet ensemble d'applications, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implémente une pléthore de services.  Cette rubrique fournit une vue d'ensemble de ces services et explique où trouver plus d'informations.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Application_Management"></a>   
 ## Gestion d'applications  

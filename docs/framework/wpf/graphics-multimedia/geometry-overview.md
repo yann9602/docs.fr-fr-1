@@ -28,7 +28,7 @@ caps.handback.revision: 22
 # Vue d&#39;ensemble de Geometry
 Cette vue d'ensemble décrit l'utilisation des classes [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> pour décrire les formes.  Cette rubrique compare également les différences entre les objets <xref:System.Windows.Media.Geometry> et les éléments <xref:System.Windows.Shapes.Shape>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="wcpsdk_graphics_geometry_introduction"></a>   
 ## Qu'est\-ce qu'une géométrie ?  

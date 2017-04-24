@@ -36,7 +36,7 @@ Bouton qui utilise un modèle de contrôle personnalisé
  ![Bouton avec une bordure rouge.](../../../../docs/framework/wpf/controls/media/ndp-buttonmouseover.png "NDP\_ButtonMouseOver")  
 Bouton qui utilise un modèle de contrôle personnalisé et sur lequel le pointeur de la souris se trouve  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

@@ -28,7 +28,7 @@ caps.handback.revision: 22
 > [!NOTE]
 >  Une attention particulière est accordée au scénario de *contrôle hybride*.  Un contrôle hybride possède un contrôle d'une technologie imbriqué dans un contrôle d'une autre technologie.  Il est également appelé *interopérabilité imbriquée*.  Un *contrôle hybride à plusieurs niveaux* possède plusieurs niveaux d'imbrication de contrôle hybride.  Un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] qui contient un contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], contenant un autre contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], est un exemple d'interopérabilité imbriquée à plusieurs niveaux.  Les contrôles hybrides à plusieurs niveaux ne sont pas pris en charge.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Windows_Presentation_Foundation_Application_Hosting"></a>   
 ## Hébergement des contrôles Windows Forms dans WPF  

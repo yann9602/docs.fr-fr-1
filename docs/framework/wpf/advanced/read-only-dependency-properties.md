@@ -22,7 +22,7 @@ caps.handback.revision: 7
 # Propri&#233;t&#233;s de d&#233;pendance en lecture seule
 Cette rubrique décrit les propriétés de dépendance en lecture seule, y compris les propriétés de dépendance en lecture seule existantes et les scénarios et techniques pour créer une propriété de dépendance en lecture seule personnalisée.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

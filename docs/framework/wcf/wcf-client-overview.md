@@ -81,7 +81,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  Par exemple, un fichier de configuration généré pour un `ISampleService` utilisé dans les exemples précédents contient les informations suivantes sur le point de terminaison.  
   
- [!code[C_GeneratedCodeFiles#19](../../../samples/snippets/common/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
+ <!-- TODO: review snippet reference [!code[C_GeneratedCodeFiles#19](../../../samples/snippets/common/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  -->  
   
  Ce fichier de configuration spécifie un point de terminaison cible dans l'élément `<client>`. [!INCLUDE[crabout](../../../includes/crabout-md.md)]l’utilisation de plusieurs points de terminaison cible, consultez la <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=fullName> ou <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=fullName> constructeurs.  
   

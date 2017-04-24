@@ -25,7 +25,7 @@ La rédaction de remarques ou de commentaires sur papier est une activité telle
   
  Cette rubrique passe en revue plusieurs types d'annotations courants, en particulier les pense\-bêtes et les surbrillances, et explique en quoi [!INCLUDE[TLA#tla_caf](../../../../includes/tlasharptla-caf-md.md)] simplifie leur utilisation dans les applications via les contrôles d'affichage de document [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)].  Les contrôles d'affichage de document [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] qui prennent en charge les annotations comprennent <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que les contrôles dévirés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase>, tels que <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="caf1_type_stickynotes"></a>   
 ## Pense\-bêtes  

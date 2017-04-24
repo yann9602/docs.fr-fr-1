@@ -31,8 +31,8 @@ Cet exemple montre comment créer un contrôle pourvu d'une [touche d'accès rap
   
  Le contrôle <xref:System.Windows.Controls.Label> ne prend pas en charge l'habillage du texte.  Si vous avez besoin d'une étiquette couvrant plusieurs lignes, vous pouvez imbriquer un autre élément qui prend en charge l'habillage du texte et le placer à l'intérieur de l'étiquette.  L'exemple suivant montre comment utiliser un <xref:System.Windows.Controls.TextBlock> pour faire une étiquette couvrant plusieurs lignes de texte.  
   
- [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]
- [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  
+ <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]  -->
+ <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  -->  
   
  **Ajouter une touche d'accès rapide et de l'habillage du texte à votre étiquette**  
   
@@ -42,8 +42,8 @@ Cet exemple montre comment créer un contrôle pourvu d'une [touche d'accès rap
   
  L'exemple suivant montre comment créer un <xref:System.Windows.Controls.Label> pourvu d'une touche d'accès rapide et prenant en charge l'habillage du texte.  Pour activer l'habillage du texte, l'exemple définit la propriété <xref:System.Windows.Controls.AccessText.TextWrapping%2A> et utilise un caractère de soulignement pour spécifier la touche d'accès rapide.  \(Le caractère qui suit immédiatement le caractère de soulignement est la touche d'accès rapide.\)  
   
- [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]
- [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  
+ <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]  -->
+ <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  -->  
   
 ## Voir aussi  
  [How to: Set the Target Property of a Label](http://msdn.microsoft.com/fr-fr/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)

@@ -22,7 +22,7 @@ caps.handback.revision: 17
 # Vue d&#39;ensemble des transformations 3D
 Cette rubrique décrit comment appliquer des transformations à des modèles 3D dans le système graphique [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Les transformations permettent au développeur de repositionner, redimensionner et réorienter des modèles sans modifier les valeurs de base qui les définissent.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 ## Espace de coordonnées 3D  
  Le contenu graphique 3D [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est encapsulé dans un élément, <xref:System.Windows.Controls.Viewport3D>, cette boîte participe à la structure du document à deux dimensions.  Le système graphique traite Viewport3D comme un élément visuel à deux dimensions comme de nombreux autres dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Viewport3D fonctionne comme une fenêtre – une fenêtre d'affichage – dans une scène tridimensionnelle.  Plus précisément, c'est une surface sur laquelle une scène 3D est projetée.  Même si vous pouvez utiliser Viewport3D avec d'autres objets de dessin 2D dans la même scène graphique, vous ne pouvez pas interpénétrer d'objets 2D et 3D dans un Viewport3D.  Dans la discussion suivante, l'espace de coordonnées décrit est contenu par l'élément Viewport3D.  

@@ -22,7 +22,7 @@ caps.handback.revision: 26
 # D&#233;ploiement d&#39;une application WPF (WPF)
 Une fois les applications [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] générées, elles doivent être déployées.  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] et le [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] incluent plusieurs technologies de déploiement.  La technologie de déploiement utilisée pour déployer une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépend du type d'application.  Cette rubrique fournit une vue d'ensemble des différentes technologies de déploiement et explique leur utilisation avec les spécifications de déploiement de chaque type d'application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Deployment_Technologies"></a>   
 ## Technologies de déploiement  

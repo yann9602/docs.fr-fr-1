@@ -22,7 +22,7 @@ caps.handback.revision: 14
 # Attributs et commentaires de localisation
 Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont des propriétés, dans le code source [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], fournies par les développeurs pour définir des règles et donner des conseils concernant la localisation.  Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contiennent deux ensembles d'informations : les attributs d'adaptabilité et les commentaires de localisation au format libre.  Les attributs d'adaptabilité sont utilisés par l'API de localisation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour indiquer les ressources à localiser.  Les commentaires au format libre sont des informations que l'auteur de l'application veut inclure.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Localizer_Comments_"></a>   
 ## Commentaires de localisation  

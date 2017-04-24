@@ -23,7 +23,7 @@ caps.handback.revision: 21
 # Optimisation des performances&#160;: contr&#244;les
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] comporte de nombreux composants d'interface utilisateur communs utilisés dans la plupart des applications Windows.  Cette rubrique présente des techniques qui permettent d'améliorer les performances de votre interface utilisateur.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Displaying"></a>   
 ## Affichage de grands groupes de données  

@@ -26,7 +26,7 @@ caps.handback.revision: 27
 # Peinture avec des objets d&#39;image, de dessin et visuels
 Cette rubrique explique comment utiliser les objets <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush> <xref:System.Windows.Media.VisualBrush> pour peindre une zone avec une image, un <xref:System.Windows.Media.Drawing> ou un <xref:System.Windows.Media.Visual>.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prereqs"></a>   
 ## Composants requis  

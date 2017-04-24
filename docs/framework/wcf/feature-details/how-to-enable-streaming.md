@@ -52,7 +52,7 @@ caps.handback.revision: 13
   
     1.  L'extrait de code de configuration suivant tiré de l'exemple présente l'affectation du mode de diffusion en continu à la propriété `TransferMode` sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   
-         [!code[c_HowTo_EnableStreaming#103](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]  
+         <!-- TODO: review snippet reference [!code[c_HowTo_EnableStreaming#103](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]  -->  
   
     2.  L'extrait de code suivant affiche l'affectation à la propriété `TransferMode` la diffusion en continu sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   

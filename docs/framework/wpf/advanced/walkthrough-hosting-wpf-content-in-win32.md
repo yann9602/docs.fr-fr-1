@@ -23,7 +23,7 @@ caps.handback.revision: 20
   
  Ce didacticiel explique comment écrire un exemple d'application, [Hébergement de contenu WPF dans un exemple de fenêtre Win32](http://go.microsoft.com/fwlink/?LinkID=160004), qui héberge du contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans une fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  Vous pouvez étendre cet exemple pour héberger n'importe quelle fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)].  Compte tenu de la présence de code managé et non managé dans l'application, celle\-ci est écrite en [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="requirements"></a>   
 ## Spécifications  

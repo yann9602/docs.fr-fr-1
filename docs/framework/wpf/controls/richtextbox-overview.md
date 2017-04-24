@@ -22,7 +22,7 @@ caps.handback.revision: 10
 # Vue d&#39;ensemble de RichTextBox
 Le contrôle <xref:System.Windows.Controls.RichTextBox> vous permet d'afficher ou de modifier le contenu d'un flux, y compris les paragraphes, images, tableaux, etc.  Cette rubrique présente la classe <xref:System.Windows.Controls.TextBox> et fournit des exemples de la manière de l'utiliser en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] et [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="textbox_or_richtextbox"></a>   
 ## TextBox ou RichTextBox ?  

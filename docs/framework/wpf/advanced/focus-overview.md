@@ -26,7 +26,7 @@ Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-m
   
  La classe <xref:System.Windows.Input.Keyboard> est principalement responsable du focus clavier et la classe <xref:System.Windows.Input.FocusManager> du focus logique. Il ne s'agit toutefois pas d'une distinction absolue.  En effet, un élément qui a le focus clavier possède également le focus logique, tandis qu'un élément qui a le focus logique ne possède pas nécessairement le focus clavier.  Ce principe se vérifie lorsque vous utilisez la classe <xref:System.Windows.Input.Keyboard> pour définir l'élément qui a le focus clavier, car elle définit également le focus logique sur l'élément.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Keyboard_Focus"></a>   
 ## Focus clavier  

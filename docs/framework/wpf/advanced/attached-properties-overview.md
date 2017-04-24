@@ -21,7 +21,7 @@ caps.handback.revision: 27
 # Vue d&#39;ensemble des propri&#233;t&#233;s jointes
 Une propriété jointe est un concept défini par XAML.  Elle est conçue pour être utilisée comme un type de propriété globale qui peut être défini sur tout objet.  Dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], les propriétés attachées sont généralement définies comme une forme spécialisée de la propriété de dépendance qui n'a pas le « wrapper » de propriété classique.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

@@ -21,7 +21,7 @@ caps.handback.revision: 9
 # Contr&#244;les
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est fourni avec beaucoup des composants d'interface utilisateur courants utilisés dans presque chaque application Windows, tels que <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.Menu> et <xref:System.Windows.Controls.ListBox>.  Historiquement, ces objets sont connus sous le nom de contrôles.  Alors que le Kit de développement logiciel [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] continue à utiliser le terme « contrôle » pour désigner vaguement toute classe qui représente un objet visible dans une application, il est important de noter qu'une classe n'a pas besoin d'hériter de la classe <xref:System.Windows.Controls.Control> pour avoir une présence visible.  Les classes qui héritent de la classe <xref:System.Windows.Controls.Control> contiennent un <xref:System.Windows.Controls.ControlTemplate> qui permet au consommateur d'un contrôle de modifier radicalement l'apparence du contrôle sans devoir créer une sous\-classe.  Cette rubrique aborde la manière dont les contrôles \(à la fois ceux qui héritent de la classe <xref:System.Windows.Controls.Control> et ceux qui ne le font pas\) sont communément utilisés dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="creating_an_instance_of_a_control"></a>   
 ## Création d'une instance d'un contrôle  

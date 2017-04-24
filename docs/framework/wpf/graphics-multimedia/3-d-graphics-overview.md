@@ -22,7 +22,7 @@ caps.handback.revision: 20
 # Vue d&#39;ensemble des graphiques 3D
 <a name="introduction"></a> La fonctionnalité [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] permet aux développeurs de dessiner, de transformer et d'animer des graphiques 3D dans le balisage et le code procédural.  Les développeurs peuvent regrouper les graphiques [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] et [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] pour créer des contrôles riches, pour fournir les illustrations complexes de données ou pour améliorer l'expérience utilisateur de l'interface d'une application. La prise en charge de [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] n'est pas conçue pour fournir une plateforme complète de développement de jeu. Cette rubrique fournit une introduction de la fonctionnalité [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] dans le système graphique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="threed_in_2d"></a>   
 ## 3D dans un conteneur 2D  

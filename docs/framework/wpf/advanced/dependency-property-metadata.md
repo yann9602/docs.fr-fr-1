@@ -24,7 +24,7 @@ caps.handback.revision: 23
 # M&#233;tadonn&#233;es de propri&#233;t&#233; de d&#233;pendance
 Le système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inclut un système de rapport de métadonnées qui va au\-delà de ce qui peut être signalé à propos d'une propriété par réflexion ou par les caractéristiques [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] générales.  Les métadonnées d'une [propriété de dépendance](GTMT) peuvent également être assignées de manière unique par la classe qui définit une [propriété de dépendance](GTMT), peuvent être changée lorsque la [propriété de dépendance](GTMT) est ajoutée à une autre classe, et peuvent être substituées par toutes les classes dérivées qui héritent la [propriété de dépendance](GTMT) de la classe de base de définition.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

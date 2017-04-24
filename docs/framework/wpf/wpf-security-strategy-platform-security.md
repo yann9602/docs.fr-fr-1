@@ -35,7 +35,7 @@ Bien que [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] fourni
   
  Le reste de cette rubrique traite des fonctionnalités dans chacune de ces couches qui concernent plus particulièrement [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Operating_System_Security"></a>   
 ## Sécurité du système d'exploitation  

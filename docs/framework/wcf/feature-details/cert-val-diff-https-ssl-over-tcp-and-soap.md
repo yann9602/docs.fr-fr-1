@@ -28,7 +28,7 @@ Vous pouvez utiliser des certificats dans [!INCLUDE[indigo1](../../../../include
  Lors de l'utilisation du protocole HTTPS pour communiquer entre un client et un service, le certificat avec lequel le serveur effectue l'authentification doit prendre en charge l'approbation de chaîne par défaut.Autrement dit, il doit être chaîné à une autorité de certification racine approuvée.Aucun contrôle en ligne n'est effectué pour voir si le certificat a été révoqué.Vous pouvez compenser ce comportement en enregistrant un rappel <xref:System.Net.Security.RemoteCertificateValidationCallback>, comme illustré dans le code ci\-dessous.  
   
  [!code-csharp[c_CertificateValidationDifferences#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#1)]
- [!code-vb[c_CertificateValidationDifferences#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#1)]  
+ <!-- TODO: review snippet reference [!code-vb[c_CertificateValidationDifferences#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#1)]  -->  
   
  où la signature pour `ValidateServerCertificate` est comme suit :  
   

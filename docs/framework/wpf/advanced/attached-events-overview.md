@@ -26,7 +26,7 @@ caps.handback.revision: 10
 # Vue d&#39;ensemble des &#233;v&#233;nements attach&#233;s
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] définit un composant de langage et un type d'événement appelé *événement attaché*.  Le concept d'un événement attaché vous permet d'ajouter un gestionnaire pour un événement particulier à un élément arbitraire plutôt qu'à un élément qui définit réellement l'événement ou qui en hérite.  Dans ce cas, ni l'objet qui déclenche potentiellement l'événement ni l'instance de gestion de destination ne définit ou "possède" l'événement.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="prerequisites"></a>   
 ## Composants requis  

@@ -26,7 +26,7 @@ caps.handback.revision: 30
 # Vue d&#39;ensemble du glisser-d&#233;placer
 Cette rubrique offre une vue d'ensemble de la prise en charge du glisser\-déplacer dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Le glisser\-déplacer fait généralement référence à une méthode de transfert de données qui implique l'utilisation d'une souris \(ou d'un autre dispositif de pointage\) pour sélectionner un ou plusieurs objets, les faire glisser vers une cible de déplacement souhaitée dans l'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] et les y déplacer.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="Drag_and_Drop_Support"></a>   
 ## Prise en charge du glisser\-déplacer dans WPF  

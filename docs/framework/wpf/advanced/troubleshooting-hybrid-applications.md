@@ -26,7 +26,7 @@ caps.handback.revision: 25
 # D&#233;pannage des applications hybrides
 <a name="introduction"></a> Cette rubrique décrit quelques problèmes courants qui peuvent se produire lors de la création d'applications hybrides qui utilisent à la fois les technologies [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="overlapping_controls"></a>   
 ## Contrôles superposés  

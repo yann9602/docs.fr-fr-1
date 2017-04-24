@@ -49,7 +49,7 @@ caps.handback.revision: 13
   
  L'exemple suivant affiche une classe, `LibraryPatron`, qui inclut une collection d'un type spécifique, le `LibraryItem`. La deuxième classe définit le type `LibraryItem`. Les troisième et quatrième classes \(`Book` et `Newspaper`\) héritent de la classe `LibraryItem`.  
   
- [!code-csharp[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_standalonedatacontractserializer/cs/source.cs#3)]
+ <!-- TODO: review snippet reference [!code-csharp[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_standalonedatacontractserializer/cs/source.cs#3)]  -->
  [!code-vb[c_StandaloneDataContractSerializer#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_standalonedatacontractserializer/vb/source.vb#3)]  
   
  Le code suivant construit une instance du sérialiseur à l'aide du paramètre `knownTypes`.  

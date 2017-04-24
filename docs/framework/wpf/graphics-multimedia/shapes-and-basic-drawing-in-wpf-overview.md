@@ -27,7 +27,7 @@ Cette rubrique donne une vue d'ensemble de la façon de dessiner avec les objets
   
  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre plusieurs couches d'accès aux services graphiques et de rendu.  À la couche supérieure, les objets <xref:System.Windows.Shapes.Shape> sont faciles à utiliser et fournissent de nombreuses fonctionnalités utiles, telles que la disposition et la participation dans le système d'événement [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="shapes"></a>   
 ## Objets de forme  

@@ -30,7 +30,7 @@ caps.handback.revision: 16
   
  Cette rubrique résume le modèle de contenu pour le contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et les types de contrôle.  Le modèle de contenu décrit le contenu qui peut être utilisé dans un contrôle. Cette rubrique répertorie également les propriétés de contenu pour chaque modèle de contenu.  Une propriété de contenu est une propriété utilisée pour stocker le contenu d'un objet.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="classes_that_contain_arbitrary_content"></a>   
 ## Classes qui contiennent du contenu arbitraire  

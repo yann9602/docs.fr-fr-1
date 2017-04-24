@@ -52,8 +52,8 @@ Cette rubrique vous initie aux animations d'image clé.  Les animations d'image 
   
  L'exemple suivant utilise <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pour animer un élément <xref:System.Windows.Shapes.Rectangle> vers quatre emplacements différents.  
   
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
   
  Tout comme une animation From\/To\/By, une animation d'image clé peut être appliquée à une propriété en utilisant un <xref:System.Windows.Media.Animation.Storyboard> dans le balisage et le code ou en utilisant la méthode <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> dans le code.  Vous pouvez également utiliser une animation d'image clé pour créer un <xref:System.Windows.Media.Animation.AnimationClock> et l'appliquer à une ou plusieurs propriétés.  Pour plus d'informations sur les différentes méthodes pour appliquer des animations, consultez [Vue d'ensemble des techniques d'animation de propriétés](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).  
   
@@ -130,8 +130,8 @@ Cette rubrique vous initie aux animations d'image clé.  Les animations d'image 
   
 -   Parce que la valeur 10 secondes a été affectée à la propriété <xref:System.Windows.Media.Animation.Timeline.Duration%2A> de l'animation, l'animation maintient sa dernière valeur pendant deux secondes avant de terminer à \= 0:0:10.  
   
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]
- [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
   
 <a name="interpolationmethods"></a>   
 ## Méthodes d'interpolation  
@@ -173,8 +173,8 @@ Cette rubrique vous initie aux animations d'image clé.  Les animations d'image 
 ### Interpolation spline  
  L'interpolation spline peut être utilisée pour accomplir des effets de minutage plus proches de la réalité.  Parce que les animations sont si souvent utilisées pour imiter des effets qui se produisent dans la réalité, les développeurs peuvent avoir besoin d'un contrôle précis de l'accélération et de la décélération des objets et d'une manipulation au plus près des segments de minutage.  Les images clés de spline vous permettent d'effectuer une animation avec l'interpolation spline.  Avec d'autres images clés, vous spécifiez une <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> et un <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>.  Avec une image clé de spline, vous spécifiez également un <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>.  L'exemple suivant illustre une image clé de spline unique pour une <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>.  Remarquez la propriété <xref:System.Windows.Media.Animation.KeySpline> ; c'est ce qui rend une image clé de spline différente des autres types d'images clés.  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
   
  Une [courbe de Bézier cubique](GTMT) est définie par un point de départ, un point de fin et deux points de contrôle.  La propriété <xref:System.Windows.Media.Animation.KeySpline> d'une image clé de spline définit les deux points de contrôle d'une courbe de Bézier qui s'étend de \(0,0\) à \(1,1\).  Le premier point de contrôle contrôle le facteur de courbe de la première moitié de la courbe de Bézier, et le deuxième contrôle le facteur de courbe de la seconde moitié de la courbe de Bézier.  La courbe résultante décrit le taux de changement pour cette image clé de spline.  Plus la courbe est raide, plus l'image clé modifie rapidement ses valeurs.  Lorsque la courbe s'aplatit, l'image clé modifie ses valeurs plus lentement.  
   
@@ -185,8 +185,8 @@ Cette rubrique vous initie aux animations d'image clé.  Les animations d'image 
  ![Courbe de Bézier](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm\_keyspline\_0\_1\_1\_0")  
 Spline clé avec les points de contrôle \(0.0, 1.0\) et \(1.0, 0.0\)  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
   
  Cette image clé s'anime rapidement lorsqu'elle commence, ralentit, puis accélère à nouveau avant qu'elle ne se termine.  
   
@@ -195,15 +195,15 @@ Spline clé avec les points de contrôle \(0.0, 1.0\) et \(1.0, 0.0\)
  ![Courbe de Bézier](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm\_keyspline\_025\_050\_075\_10")  
 Spline clé avec les points de contrôle \(0.25, 0.5\) et \(0.75, 1.0\)  
   
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]
- [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->  
   
  Parce que la courbure de la courbe de Bézier change très peu, cette image clé s'anime à une fréquence presque constante ; elle ralentit quelque peu vers la fin.  
   
  L'exemple suivant utilise <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pour animer la position du rectangle.  Comme <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> utilise des objets <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>, la transition entre chaque valeur d'image clé utilise l'interpolation spline.  
   
- [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]
- [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->  
   
  L'interpolation spline peut être difficile à comprendre ; des essais avec les différents paramètres peuvent vous aider.  [Animation de spline clé, exemple](http://go.microsoft.com/fwlink/?LinkID=160011) vous permet de modifier les valeurs de la spline clé et de voir son résultat dans une animation.  
   
@@ -213,8 +213,8 @@ Spline clé avec les points de contrôle \(0.25, 0.5\) et \(0.75, 1.0\)
   
  Dans l'exemple suivant, <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> est créé qui utilise une interpolation linéaire, spline et discrète.  
   
- [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]
- [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#combointerpolationexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->  
   
 <a name="keytimes"></a>   
 ## En savoir plus sur la durée et les temps clés  
@@ -235,8 +235,8 @@ Spline clé avec les points de contrôle \(0.25, 0.5\) et \(0.75, 1.0\)
   
 -   La quatrième image clé s'anime de 500 à 600.  Elle démarre à la fin de la troisième image clé \(à l'heure \= 9 secondes\) et est lue pendant 1 seconde, en terminant à l'heure \= 0:0:10.  
   
- [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#timespankeytimeexample)]
- [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#timespankeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#timespankeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#timespankeytimeexample)]  -->  
   
 ### Valeurs de pourcentage  
  Une valeur de pourcentage spécifie que l'image clé se termine à un pourcentage de la <xref:System.Windows.Media.Animation.Timeline.Duration%2A>de l'animation.  En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous devez spécifier le pourcentage sous forme de nombre suivi du symbole `%`.  Dans le code, utilisez la méthode <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> et passez\-lui une valeur <xref:System.Double> qui indique le pourcentage.  La valeur doit être supérieure ou égale à 0 et inférieure ou égale à 100 %.  L'exemple suivant illustre une animation avec une durée de 10 secondes et quatre images clés dont les temps clés sont spécifiés comme des pourcentages.  
@@ -249,8 +249,8 @@ Spline clé avec les points de contrôle \(0.25, 0.5\) et \(0.75, 1.0\)
   
 -   La quatrième image clé s'anime de 500 à 600.  Elle démarre à la fin de la troisième image clé \(à l'heure \= 9 secondes\) et est lue pendant 1 seconde, en terminant à l'heure \= 0:0:10 \(1 x 10 \= 10\).  
   
- [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#percentagekeytimeexample)]
- [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#percentagekeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#percentagekeytimeexample)]  -->  
   
 ### Valeur spéciale, Uniform  
  Utilisez la minuterie <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> lorsque vous souhaitez que les images clés aient toutes la même durée.  
@@ -265,16 +265,16 @@ Spline clé avec les points de contrôle \(0.25, 0.5\) et \(0.75, 1.0\)
   
 -   La quatrième image clé s'anime de 500 à 600.  Elle démarre à la fin de la deuxième image clé \(à l'heure \= 7.5 secondes\) et est lue pendant 2.5 secondes, en terminant à l'heure \= 0:0:1.  
   
- [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#uniformkeytimeexample)]
- [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#uniformkeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#uniformkeytimeexample)]  -->  
   
 ### Valeur spéciale, Paced  
  Utilisez la minuterie <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> lorsque vous souhaitez animer à une fréquence constante.  
   
  Un temps clé <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> alloue le temps disponible d'après la longueur de chacune des images clés pour déterminer la durée de chaque image.  Cela garantit le déroulement à allure constante de l'animation.  L'exemple suivant illustre une animation avec une durée de 10 secondes et trois images clés dont les temps clés sont spécifiés comme <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.  
   
- [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#pacedkeytimeexample)]
- [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#pacedkeytimeexample)]  
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  -->
+ <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#pacedkeytimeexample)]  -->  
   
  Notez que, si le dernier temps clé de l'image clé est <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> ou <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>, son temps clé résolu aura la valeur 100 %.  Si la première image clé dans une animation à plusieurs images est rythmée, son temps clé résolu aura la valeur 0.  \(Si la collection d'images clé contient uniquement une image clé unique qui est rythmée, son temps clé résolu aura la valeur 100 %.\)  
   

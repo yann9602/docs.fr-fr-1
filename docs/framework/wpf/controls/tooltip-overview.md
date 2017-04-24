@@ -22,7 +22,7 @@ caps.handback.revision: 21
 # Vue d&#39;ensemble de l&#39;info-bulle
 Une info\-bulle est une petite fenêtre indépendante qui apparaît lorsqu'un utilisateur place le pointeur de la souris sur un élément, tel qu'un <xref:System.Windows.Controls.Button>.  Cette rubrique présente l'info\-bulle et explique comment créer et personnaliser son contenu.  
   
- [!INCLUDE[autoOutline](../Token/autoOutline_md.md)]  
+   
   
 <a name="what_is_a_tooltip"></a>   
 ## Qu'est\-ce qu'une info\-bulle ?  
