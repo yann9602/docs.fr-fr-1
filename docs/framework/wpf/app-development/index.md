@@ -39,11 +39,7 @@ ms.lasthandoff: 04/08/2017
   
  Pour générer cet ensemble d’applications, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implémente de nombreux services. Cette rubrique fournit une vue d’ensemble de ces services et explique où trouver plus d’informations.  
   
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> 4eb4097... fix build error
   
 <a name="Application_Management"></a>   
 ## <a name="application-management"></a>Gestion des applications  
