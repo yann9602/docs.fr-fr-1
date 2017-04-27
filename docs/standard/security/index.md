@@ -24,9 +24,9 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: cd8012c393050091b801bbe10e53d0c910ca2620
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 1fabc43044b6e0fa765a7c2f225add8b7eb923f5
+ms.openlocfilehash: a1914325966fc1b65cf4677328a165fbe1e0f776
+ms.lasthandoff: 04/13/2017
 
 ---
 # <a name="security-in-the-net-framework"></a>Sécurité dans le .NET Framework
@@ -51,9 +51,10 @@ Le Common Language Runtime et le .NET Framework offrent un grand nombre de class
  [Instructions de codage sécurisé pour le code non managé](../../../docs/framework/security/secure-coding-guidelines-for-unmanaged-code.md)  
  Aborde certaines meilleures pratiques, ainsi que les problèmes de sécurité rencontrés pendant l'appel de code non managé.  
   
- [Windows Identity Foundation](../../../docs/framework/security/windows-identity-foundation.md)  
+ [Windows Identity Foundation](../../../docs/framework/security/index.md)  
  Explique comment vous pouvez implémenter l'identité basée sur des demandes dans vos applications.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Guide de développement](../../../docs/framework/development-guide.md)  
  Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.
+
