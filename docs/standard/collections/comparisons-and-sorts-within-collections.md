@@ -1,204 +1,71 @@
 ---
-title: Comparaisons et tris dans les collections
-description: Comparaisons et tris dans les collections
-keywords: .NET, .NET Core
+title: Comparaisons et tris dans les collections | Microsoft Docs
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- sorting data, collections
+- IComparable.CompareTo method
+- Collections classes
+- Equals method
+- collections [.NET Framework], comparisons
+ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
+caps.latest.revision: 11
 author: mairaw
 ms.author: mairaw
-ms.date: 06/20/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: c7b7c005-628d-427a-91ad-af0c3958c00e
+manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 6826c0c2e86d0a1add1f88b001c13143ee098634
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 0da0bed43cb7871f522b94b134afb164d8ee3ab5
+ms.lasthandoff: 04/18/2017
 
 ---
-
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
-
-Les classes [System.Collections](https://docs.microsoft.com/dotnet/core/api/System.Collections) effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d’un élément à supprimer ou le renvoi d’une valeur d’une paire clé-valeur.
-
-Les collections utilisent généralement un comparateur d’égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons. 
-
-## <a name="checking-for-equality"></a>Vérification de l'égalité
-
-Les méthodes telles que `Contains`, `IndexOf`, `LastIndexOf` et `Remove` utilisent un comparateur d'égalité pour les éléments de collection. Si la collection est générique, les éléments font l’objet d’une comparaison d’égalité, selon les consignes suivantes :
-
-*   Si le type T implémente l’interface générique [IEquatable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IEquatable-1), le comparateur d’égalité est la méthode `Equals` de cette interface.
-
-*   Si le type T n'implémente pas `IEquatable<T>`, `Object.Equals` est utilisé.
-
-De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation [IEqualityComparer&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IEqualityComparer-1), qui est utilisée pour comparer l’égalité de clés.
-
-## <a name="determining-sort-order"></a>Détermination de l'ordre de tri
-
-Les méthodes telles que `BinarySearch` et `Sort` utilisent un comparateur de classement pour les éléments de collection. Les comparaisons peuvent être effectuées entre les éléments d’une collection, ou entre un élément et une valeur spécifiée. Pour comparer des objets, il existe le concept d’un comparateur par défaut et d’un comparateur explicite. 
-
-Le comparateur par défaut s’appuie sur au moins l’un des objets comparés pour implémenter l’interface `IComparable`. Il est recommandé d’implémenter `IComparable` sur toutes les classes utilisées comme valeurs dans une collection de listes ou comme clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d’égalité est déterminée selon ce qui suit :
-
-*   Si le type T implémente l’interface générique [System.IComparable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IComparable-1), le comparateur par défaut est la méthode `CompareTo(T)` de cette interface.
-
-*   Si le type T implémente l’interface générique [System.IComparable](https://docs.microsoft.com/dotnet/core/api/System.IComparable), le comparateur par défaut est la méthode `CompareTo`(Object) de cette interface.
-
-*   Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.
-
-Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation `IComparer` comme paramètre. Par exemple, la méthode `List<T>.Sort` accepte une implémentation [System.Collections.Generic.IComparer&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IComparer-1). 
-
-## <a name="equality-and-sort-example"></a>Exemple d'égalité et de tri
-
-Le code suivant illustre une implémentation d’[IEquatable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IEquatable-1) et d’[IComparable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IComparable-1) sur un objet métier simple. De plus, quand l’objet est stocké dans une liste et trié, vous voyez que l’appel de la méthode `Sort()` se traduit par l’utilisation du comparateur par défaut pour le type de partie et par l’implémentation de la méthode `Sort(Comparison<T>)` à l’aide d’une méthode anonyme.
-
-C#
-
-```csharp
-using System;
-using System.Collections.Generic;
-// Simple business object. A PartId is used to identify the type of part 
-// but the part name can change. 
-public class Part : IEquatable<Part> , IComparable<Part>
-{
-    public string PartName { get; set; }
-
-    public int PartId { get; set; }
-
-    public override string ToString()
-    {
-        return "ID: " + PartId + "   Name: " + PartName;
-    }
-    public override bool Equals(object obj)
-    {
-        if (obj == null) return false;
-        Part objAsPart = obj as Part;
-        if (objAsPart == null) return false;
-        else return Equals(objAsPart);
-    }
-    public int SortByNameAscending(string name1, string name2)
-    {
-
-        return name1.CompareTo(name2);
-    }
-
-    // Default comparer for Part type.
-    public int CompareTo(Part comparePart)
-    {
-          // A null value means that this object is greater.
-        if (comparePart == null)
-            return 1;
-
-        else
-            return this.PartId.CompareTo(comparePart.PartId);
-    }
-    public override int GetHashCode()
-    {
-        return PartId;
-    }
-    public bool Equals(Part other)
-    {
-        if (other == null) return false;
-        return (this.PartId.Equals(other.PartId));
-    }
-    // Should also override == and != operators.
-
-}
-public class Example
-{
-    public static void Main()
-    {
-        // Create a list of parts.
-        List<Part> parts = new List<Part>();
-
-        // Add parts to the list.
-        parts.Add(new Part() { PartName = "regular seat", PartId = 1434 });
-        parts.Add(new Part() { PartName= "crank arm", PartId = 1234 });
-        parts.Add(new Part() { PartName = "shift lever", PartId = 1634 }); ;
-        // Name intentionally left null.
-        parts.Add(new Part() {  PartId = 1334 });
-        parts.Add(new Part() { PartName = "banana seat", PartId = 1444 });
-        parts.Add(new Part() { PartName = "cassette", PartId = 1534 });
-
-
-        // Write out the parts in the list. This will call the overridden 
-        // ToString method in the Part class.
-        Console.WriteLine("\nBefore sort:");
-        foreach (Part aPart in parts)
-        {
-            Console.WriteLine(aPart);
-        }
-
-
-        // Call Sort on the list. This will use the 
-        // default comparer, which is the Compare method 
-        // implemented on Part.
-        parts.Sort();
-
-
-        Console.WriteLine("\nAfter sort by part number:");
-        foreach (Part aPart in parts)
-        {
-            Console.WriteLine(aPart);
-        }
-
-        // This shows calling the Sort(Comparison(T) overload using 
-        // an anonymous method for the Comparison delegate. 
-        // This method treats null as the lesser of two values.
-        parts.Sort(delegate(Part x, Part y)
-        {
-            if (x.PartName == null && y.PartName == null) return 0;
-            else if (x.PartName == null) return -1;
-            else if (y.PartName == null) return 1;
-            else return x.PartName.CompareTo(y.PartName);
-        });
-
-        Console.WriteLine("\nAfter sort by name:");
-        foreach (Part aPart in parts)
-        {
-            Console.WriteLine(aPart);
-        }
-
-        /*
-
-            Before sort:
-        ID: 1434   Name: regular seat
-        ID: 1234   Name: crank arm
-        ID: 1634   Name: shift lever
-        ID: 1334   Name:
-        ID: 1444   Name: banana seat
-        ID: 1534   Name: cassette
-
-        After sort by part number:
-        ID: 1234   Name: crank arm
-        ID: 1334   Name:
-        ID: 1434   Name: regular seat
-        ID: 1444   Name: banana seat
-        ID: 1534   Name: cassette
-        ID: 1634   Name: shift lever
-
-        After sort by name:
-        ID: 1334   Name:
-        ID: 1444   Name: banana seat
-        ID: 1534   Name: cassette
-        ID: 1234   Name: crank arm
-        ID: 1434   Name: regular seat
-        ID: 1634   Name: shift lever
-
-         */
-
-    }
-}
-```
-
-## <a name="see-also"></a>Voir aussi
-
-[IComparer](https://docs.microsoft.com/dotnet/core/api/System.Collections.IComparer)
-
-[IEquatable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IEquatable-1)
-
-[IComparer&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.Collections.Generic.IComparer-1)
-
-[IComparable](https://docs.microsoft.com/dotnet/core/api/System.IComparable)
-
-[IComparable&lt;T&gt;](https://docs.microsoft.com/dotnet/core/api/System.IComparable-1)
-
+Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d’un élément à supprimer ou le renvoi d’une valeur d’une paire clé-valeur.  
+  
+ Les collections utilisent généralement un comparateur d’égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons.  
+  
+<a name="BKMK_Checkingforequality"></a>   
+## <a name="checking-for-equality"></a>Vérification de l'égalité  
+ Les méthodes telles que `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A> et `Remove` utilisent un comparateur d’égalité pour les éléments de collection. Si la collection est générique, les éléments font l’objet d’une comparaison d’égalité, selon les consignes suivantes :  
+  
+-   Si le type T implémente l’interface générique <xref:System.IEquatable%601>, le comparateur d’égalité est la méthode <xref:System.IEquatable%601.Equals%2A> de cette interface.  
+  
+-   Si le type T n’implémente pas <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=fullName> est utilisé.  
+  
+ De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation <xref:System.Collections.Generic.IEqualityComparer%601>, qui est utilisée pour comparer l’égalité de clés. Pour obtenir un exemple, consultez le constructeur <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=fullName>.  
+  
+<a name="BKMK_Determiningsortorder"></a>   
+## <a name="determining-sort-order"></a>Détermination de l'ordre de tri  
+ Les méthodes telles que `BinarySearch` et `Sort` utilisent un comparateur de classement pour les éléments de collection. Les comparaisons peuvent être effectuées entre les éléments d'une collection, ou entre un élément et une valeur spécifiée. Pour comparer des objets, il existe le `default comparer` et le `explicit comparer`.  
+  
+ Le comparateur par défaut repose sur au moins l'un des objets comparés pour implémenter l'interface **IComparable** . Il est recommandé d'implémenter **IComparable** sur toutes les classes utilisées en tant que valeurs dans une collection de listes ou en tant que clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d’égalité est déterminée selon ce qui suit :  
+  
+-   Si le type T implémente l’interface générique <xref:System.IComparable%601?displayProperty=fullName>, le comparateur par défaut est la méthode <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=fullName> de cette interface  
+  
+-   Si le type T implémente l’interface non générique <xref:System.IComparable?displayProperty=fullName>, le comparateur par défaut est la méthode <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=fullName> de cette interface.  
+  
+-   Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.  
+  
+ Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> accepte une implémentation de <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName>.  
+  
+ Le paramètre de culture actuel du système peut affecter les comparaisons et les tris d’une collection. Par défaut, les comparaisons et les tris des classes **Collections** sont dépendants de la culture. Pour ignorer le paramètre de culture et donc obtenir des résultats cohérents de comparaison et de tri, utilisez <xref:System.Globalization.CultureInfo.InvariantCulture%2A> avec des surcharges de membre qui acceptent <xref:System.Globalization.CultureInfo>. Pour plus d’informations, consultez [Performing Culture-Insensitive String Operations in Collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) et [Performing Culture-Insensitive String Operations in Arrays](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
+  
+<a name="BKMK_Equalityandsortexample"></a>   
+## <a name="equality-and-sort-example"></a>Exemple d'égalité et de tri  
+ Le code suivant illustre une implémentation de <xref:System.IEquatable%601> et <xref:System.IComparable%601> sur un objet métier simple. De plus, quand l'objet est stocké dans une liste, puis trié, vous verrez que l'appel de la méthode <xref:System.Collections.Generic.List%601.Sort> se traduit par l'utilisation du comparateur par défaut pour le type `Part`, et par l'implémentation de la méthode <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> à l'aide d'une méthode anonyme.  
+  
+ [!code-csharp[System.Collections.Generic.List.Sort#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.sort/cs/program.cs#1)]
+ [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]  
+  
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Collections.IComparer>   
+ <xref:System.IEquatable%601>   
+ <xref:System.Collections.Generic.IComparer%601>   
+ <xref:System.IComparable>   
+ <xref:System.IComparable%601>

@@ -21,9 +21,9 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 887ddf85b1da556feee211c4b29f0a08550c84ad
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 1fabc43044b6e0fa765a7c2f225add8b7eb923f5
+ms.openlocfilehash: 1d0c203313b33aeba26aded268467b1a1b181118
+ms.lasthandoff: 04/13/2017
 
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
@@ -150,7 +150,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
 -   Les types de compression basés sur le chemin <xref:System.IO.Compression.ZipFile> et <xref:System.IO.Compression.ZipFileExtensions> ne sont pas disponibles. À la place, utilisez les types de l'espace de noms [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx).  
   
- Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d'informations, consultez [Comment : effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou <xref:System.IO.WindowsRuntimeStreamExtensions>.  
+ Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d'informations, consultez la page [Guide pratique : effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
  Pour plus d'informations sur les opérations d'E/S dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], consultez [Démarrage rapide : lecture et écriture dans un fichier](http://go.microsoft.com/fwlink/p/?LinkId=243072) sur le centre de développement Windows.  
   
@@ -182,3 +182,4 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
 -   [Fichiers mappés en mémoire](../../../docs/standard/io/memory-mapped-files.md)  
   
  Décrit les fichiers mappés en mémoire, qui contiennent le contenu de fichiers stockés sur le disque dans la mémoire virtuelle. Vous pouvez utiliser des fichiers mappés en mémoire afin de modifier des fichiers très volumineux et de créer la mémoire partagée pour la communication entre processus.
+
