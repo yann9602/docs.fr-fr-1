@@ -2,6 +2,7 @@
 title: "Atténuation : Allocation d’espace du contrôle de grille à des colonnes en étoile | Microsoft Docs"
 ms.custom: 
 ms.date: 04/07/2017
+ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
