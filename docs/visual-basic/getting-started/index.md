@@ -30,16 +30,16 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2d94b01f24ea1c45ecbf6b14ecfdf164d8b8b10c
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
+ms.openlocfilehash: 31c50b38b2bfdc68e0f2ab03bc4d3b67e843a09d
+ms.lasthandoff: 05/01/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](../../visual-basic/getting-started/breaking-changes-in-visual-studio-2015.md)  
+ [Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](breaking-changes-in-visual-studio.md)  
  Répertorie les modifications de cette version qui peuvent empêcher une application de se compiler ou de modifier son comportement au moment de l’exécution.  
   
  [Ressources supplémentaires pour les programmeurs Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
@@ -48,7 +48,7 @@ Cette section de la documentation vous aide à commencer à développer des appl
  [Formation Visual Basic](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
  Fournit des liens vers les ressources permettant d’apprendre à programmer en Visual Basic.  
   
- [Obtention de Visual Basic](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)  
+ [Obtention de Visual Basic](https://www.visualstudio.com/downloads/)  
  Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, y compris les versions gratuites.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
@@ -64,7 +64,7 @@ Cette section de la documentation vous aide à commencer à développer des appl
  [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
  Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.  
   
- [Visual Studio](http://msdn.microsoft.com/en-us/06ddebea-2c83-4a45-bb48-6264c797ed93)  
+ [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/)  
  Fournit des liens vers la documentation de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)].  
   
  [C#](../../csharp/csharp.md)  
