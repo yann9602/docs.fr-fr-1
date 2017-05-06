@@ -1,12 +1,11 @@
 ---
-title: Utilisation des types de base dans .NET Framework | Microsoft Docs
+title: Utilisation des types de base dans .NET | Microsoft Docs
 ms.custom: 
 ms.date: 03/30/2017
-ms.prod: .net-framework-4.6
+ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -19,13 +18,13 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 57d672e45e5b316f155f4bdb05320a4a6c4129db
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: 9169510da6b6d5022b59a3a520b79933c783ce05
+ms.openlocfilehash: 490a09798518b3750ff5ae2fc19259f201ffc964
+ms.lasthandoff: 04/11/2017
 
 ---
-# <a name="working-with-base-types-in-the-net-framework"></a>Utilisation des types de base dans .NET Framework
-Cette section décrit les opérations de type de base .NET Framework, y compris la mise en forme, la conversion et les opérations courantes.  
+# <a name="working-with-base-types-in-net"></a>Utilisation des types de base dans .NET
+Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Conversion de type dans le .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
