@@ -10,9 +10,9 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 translationtype: Human Translation
-ms.sourcegitcommit: 7cb3ed91b4dd80286035f8f445e7bbb43641e4e9
-ms.openlocfilehash: b0fd29de1879990dada25cd50df83f6675bf85d9
-ms.lasthandoff: 04/20/2017
+ms.sourcegitcommit: 6b30f41e3fb07a962542a09a41c698efee7ebb5a
+ms.openlocfilehash: 0a37c8dd2e1264d0b1b946ef9fe479ce4cf828fb
+ms.lasthandoff: 04/26/2017
 
 ---
 
@@ -80,3 +80,4 @@ Pour obtenir des exemples étape par étape de déploiement d’applications .NE
 [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md)   
 [Packages, métapackages et frameworks](../packages.md)   
 [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
+
