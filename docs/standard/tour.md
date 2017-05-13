@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
-ms.lasthandoff: 03/22/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/18/2017
 
 ---
 
@@ -108,7 +109,7 @@ Les génériques sont une fonctionnalité qui a été ajoutée dans .NET Framewo
 
 Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type `List`, par exemple, soit générique, il fallait utiliser des éléments qui étaient de type `object`. Cela entraînait des variations de performances ainsi que des problèmes sémantiques, sans oublier les possibles erreurs d’exécution subtiles. Les erreurs les plus connues dans cette dernière catégorie interviennent quand une structure de données contient, par exemple, des entiers et des chaînes et qu’une exception `InvalidCastException` est levée pendant l’utilisation des membres de la liste.
 
-L’exemple suivant montre une exécution de programme de base utilisant une instance des types @System.Collections.Generic.List.
+L’exemple suivant montre une exécution de programme de base utilisant une instance des types @System.Collections.Generic.List%601 types.
 
 [!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
 
