@@ -27,9 +27,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e91cc4fea9fbe57b257e17915cd28b3b82f12f6e
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -110,3 +111,4 @@ class Program
  [Mots clés d’espaces de noms](../../../csharp/language-reference/keywords/namespace-keywords.md)   
  [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)   
  [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)
+
