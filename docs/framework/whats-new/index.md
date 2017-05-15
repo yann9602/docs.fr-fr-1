@@ -17,10 +17,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ec57b79f67f826dbe61aa81bb5f82e20d61db2e3
-ms.openlocfilehash: cec16529ea93773362715cac7694b451ce3dddfe
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: e36d3523a52def454e7ed0233f2179ab88ab3bcb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/11/2017
+ms.lasthandoff: 05/14/2017
 
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
@@ -528,14 +528,14 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 ```xaml
 <GroupDescriptions>
      <PropertyGroupDescription 
-         PropertyName=”Age” 
+         PropertyName="Age" 
          CustomSort= 
-              ”{x:Static PropertyGroupDescription.CompareNamesAscending}”/>
+              "{x:Static PropertyGroupDescription.CompareNamesAscending}"/>
      </PropertyGroupDescription>
 </GroupDescriptions>
 
 <SortDescriptions>
-     <SortDescription PropertyName=”LastName”/>
+     <SortDescription PropertyName="LastName"/>
 </SortDescriptions>
 ```
 
@@ -553,7 +553,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
 ```xml
 <runtime>
-   <AppContextSwitchOverrides value=”Switch.System.Windows.DoNotScaleForDpiChanges=false”/>
+   <AppContextSwitchOverrides value="Switch.System.Windows.DoNotScaleForDpiChanges=false"/>
 </runtime>
 ```
 
@@ -647,7 +647,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
  Les clients doivent installer le fournisseur CSP fourni par le fabricant des modules HSM ou les fournisseurs de magasin de clés CNG sur les serveurs d’applications ou les ordinateurs clients pour accéder aux données Toujours chiffré protégées par des clés principales de colonnes stockées dans un module HSM.
 
- Amélioration du comportement de la connexion <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> SqlClient fournit désormais automatiquement une connexion plus rapide à un groupe de disponibilité AlwaysOn. Il détecte de façon transparente si votre application se connecte à un groupe de disponibilité AlwaysOn sur un autre sous-réseau, détecte rapidement le serveur actif actuel et fournit une connexion au serveur. Avant cette mise en production, une application devait définir la chaîne de connexion à inclure `“MultisubnetFailover=true”` pour indiquer qu’elle était connectée à un groupe de disponibilité AlwaysOn. Si le mot clé de connexion n’était pas défini sur `true`, une application pouvait rencontrer un dépassement du délai lors de la connexion à un groupe de disponibilité AlwaysOn. Avec cette version, une application *n’a plus* besoin de définir <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> sur `true`. Pour plus d’informations sur la prise en charge de SqlClient pour les groupes de disponibilité AlwaysOn, consultez [Prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
+ Amélioration du comportement de la connexion <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> SqlClient fournit désormais automatiquement une connexion plus rapide à un groupe de disponibilité AlwaysOn. Il détecte de façon transparente si votre application se connecte à un groupe de disponibilité AlwaysOn sur un autre sous-réseau, détecte rapidement le serveur actif actuel et fournit une connexion au serveur. Avant cette mise en production, une application devait définir la chaîne de connexion à inclure `"MultisubnetFailover=true"` pour indiquer qu’elle était connectée à un groupe de disponibilité AlwaysOn. Si le mot clé de connexion n’était pas défini sur `true`, une application pouvait rencontrer un dépassement du délai lors de la connexion à un groupe de disponibilité AlwaysOn. Avec cette version, une application *n’a plus* besoin de définir <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> sur `true`. Pour plus d’informations sur la prise en charge de SqlClient pour les groupes de disponibilité AlwaysOn, consultez [Prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
 <a name="WPF461"></a> 
 ### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
@@ -675,7 +675,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
 - Les fichiers doivent être en texte brut UTF-16 LE qui commence par la marque d’ordre d’octet.
 
-- Chaque ligne doit comporter un mot (dans les listes de mots ajoutés et exclus) ou une paire de corrections automatiques avec les mots séparés par une barre verticale (“&#124;”) (dans la liste de mots Correction automatique).
+- Chaque ligne doit comporter un mot (dans les listes de mots ajoutés et exclus) ou une paire de corrections automatiques avec les mots séparés par une barre verticale (« &#124; ») (dans la liste de mots Correction automatique).
 
 - Ces fichiers sont considérés en lecture seule et ne sont pas modifiés par le système.
 

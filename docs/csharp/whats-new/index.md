@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
-translationtype: Human Translation
-ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
-ms.openlocfilehash: a5abc801decbcedb4980b8b4992d128aa1e1bb2e
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 4ff34455c7cc6135f7324b18d3aebca576d70edf
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 05/02/2017
 Les fonctionnalités clés répertoriées ci-dessous ont été introduites dans des versions antérieures du langage C# et de Visual Studio .NET.  
   
  * Visual Studio .NET 2013 : 
-     - Cette version de Visual Studio incluait des correctifs de bogues, des améliorations des performances ainsi que des préversions de la plateforme de compilation .NET (« Roslyn »), aujourd’hui connue sous le nom de <!--Link to ../roslyn/index.md-->.NET Compiler Platform SDK.
+     - Cette version de Visual Studio incluait des correctifs de bogues, des améliorations des performances ainsi que des préversions de la plateforme de compilation .NET (« Roslyn »), aujourd’hui connue sous le nom de .NET Compiler Platform SDK<!--Link to ../roslyn/index.md-->.
 
  * C# 5, Visual Studio .NET 2012 : 
      - `Async` / `await`, et attributs des [informations sur l’appelant](../programming-guide/concepts/caller-information.md).
