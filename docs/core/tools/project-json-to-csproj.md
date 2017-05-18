@@ -10,16 +10,17 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-translationtype: Human Translation
-ms.sourcegitcommit: b4fb772973607b94e120377879a5dbdde2a25271
-ms.openlocfilehash: 9d0af9769264b7f22c90ffb6a831b42f06c6bb94
-ms.lasthandoff: 03/15/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
+ms.openlocfilehash: 7062102ff17c13b7cf25a1cfbb266c696221151b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/30/2017
 
 ---
 
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
-Par [Nate McMaster](http://github.com/natemcmaster)
+Par [Nate McMaster](https://github.com/natemcmaster)
 
 Pendant le développement des outils .NET Core, une modification de conception importante a été effectuée pour ne plus prendre en charge les fichiers *project.json* et passer les projets .NET Core au format MSBuild/csproj à la place.
 
@@ -323,7 +324,7 @@ Il n’existe aucun équivalent dans csproj.
 
 ```xml
 <PropertyGroup>
-  <RuntimeIdentifiers>win7-x64;osx.10-11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
+  <RuntimeIdentifiers>win7-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
 </PropertyGroup>
 ```
 
@@ -664,7 +665,6 @@ La disposition du package à l’intérieur du fichier .nupkg peut être modifi�
 ```
 
 ## <a name="see-also"></a>Voir aussi
-[Informations de référence sur project.json](project-json.md)
 
 [Vue d’ensemble générale des modifications de l’interface CLI](../tools/cli-msbuild-architecture.md)
 
