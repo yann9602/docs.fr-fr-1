@@ -20,23 +20,21 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 22822d80170e33be59253ecb0d74ec5eb2344751
-ms.openlocfilehash: 933d5f6a864820f5e694c0a9c7eab7b4fe5f790f
+ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
+ms.openlocfilehash: 50f027408357a5d98ef1bfe305ab675fc97abba8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/04/2017
+ms.lasthandoff: 05/17/2017
 
 ---
 
 # <a name="net-framework-guide"></a>Guide du .NET framework
 
 > [!NOTE]
->  Cet ensemble de contenu .NET Framework inclut des informations relatives aux versions 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 et 4.7. Pour télécharger le .NET Framework, consultez [Installation du .NET Framework](../../docs/framework/install/guide-for-developers.md). Pour obtenir la liste des nouvelles fonctionnalités et des modifications dans le .NET Framework 4.5, le [!INCLUDE[net_v46](../../includes/net-v46-md.md)], leurs versions intermédiaires et le .NET Framework 4.7, consultez [Nouveautés du .NET Framework](../../docs/framework/whats-new/index.md). Pour obtenir la liste des plateformes prises en charge, consultez la [Configuration requise pour .NET Framework](../../docs/framework/get-started/system-requirements.md).  
+>  Cet ensemble de contenu .NET Framework inclut des informations relatives aux versions 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 et 4.7. Pour télécharger le .NET Framework, consultez [Installation du .NET Framework](../../docs/framework/install/guide-for-developers.md). Pour obtenir la liste des nouvelles fonctionnalités et des modifications dans le .NET Framework 4.5, le [!INCLUDE[net_v46](../../includes/net-v46-md.md)], leurs versions intermédiaires et le .NET Framework 4.7, consultez [Nouveautés du .NET Framework](../../docs/framework/whats-new/index.md). Pour obtenir la liste des plateformes prises en charge, consultez la [Configuration requise pour .NET Framework](../../docs/framework/get-started/system-requirements.md). 
 
-Le .NET Framework propose plusieurs services, notamment la gestion de la mémoire, la cohérence des types, la sûreté de la mémoire, des fonctionnalités de sécurité, la mise en réseau et le déploiement d’applications. Il fournit des structures de données et des API faciles à utiliser qui permettent d’abstraire le système d’exploitation Windows de niveau inférieur. Vous pouvez utiliser divers langages de programmation avec le .NET Framework, notamment C#, F# et Visual Basic.
+ Le .NET Framework est une plateforme de développement permettant de générer des applications pour le web, Windows, Windows Phone, Windows Server et Microsoft Azure. Il se compose du common language runtime (CLR) et de la bibliothèque de classes .NET Framework, qui offre une vaste gamme de fonctionnalités et prend en charge de nombreux standards.
 
- Le .NET Framework est une plateforme de développement permettant de générer des applications pour Windows, Windows Phone, Windows Server et Microsoft Azure. Il se compose du common language runtime (CLR) et de la bibliothèque de classes .NET Framework, qui offre une vaste gamme de fonctionnalités et prend en charge de nombreux standards.  
-
-Le .NET Framework propose plusieurs services, notamment la gestion de la mémoire, la cohérence des types, la sûreté de la mémoire, des fonctionnalités de sécurité, la mise en réseau et le déploiement d’applications. Il fournit des structures de données et des API faciles à utiliser qui permettent d’abstraire le système d’exploitation Windows de niveau inférieur. Vous pouvez utiliser divers langages de programmation avec le .NET Framework, notamment C#, F# et Visual Basic.
+Le .NET Framework propose plusieurs services, notamment la gestion de la mémoire, la cohérence des types, la sûreté de la mémoire, la sécurité, la mise en réseau et le déploiement d’applications. Il fournit des structures de données et des API faciles à utiliser qui permettent d’abstraire le système d’exploitation Windows de niveau inférieur. Vous pouvez utiliser divers langages de programmation avec le .NET Framework, notamment C#, F# et Visual Basic.  
 
 Pour une présentation générale du .NET Framework à destination des utilisateurs et des développeurs, consultez [Bien démarrer](../../docs/framework/get-started/index.md). Pour une présentation de l’architecture et des fonctionnalités clés du .NET Framework, consultez la [vue d’ensemble](../../docs/framework/get-started/overview.md).  
 
@@ -71,3 +69,4 @@ Fournit la syntaxe, des exemples de code et des informations associées pour cha
   
 [API et bibliothèques de classes supplémentaires](../../docs/framework/additional-apis/index.md)  
 Fournit la documentation pour les classes contenues dans les mises en production hors bande (OOB), ainsi que pour les classes qui ciblent des plateformes ou des implémentations spécifiques du .NET Framework.
+
