@@ -32,6 +32,7 @@ ms.lasthandoff: 05/14/2017
 -->
 * [Prise en charge multiplateforme](../../core/index.md) :
     - Grâce à sa prise en charge de .NET Core, C# s’exécute sur plusieurs plateformes. Si vous souhaitez essayer C# sur Mac OS ou sur une des nombreuses distributions Linux prises en charge, apprenez-en plus sur .NET Core.
+
 <!--
 - [.NET Compiler Platform SDK](../roslyn/index.md):
     - The .NET Compiler Platform SDK enables you to write code that performs static analysis on C# code. You can use these APIs to find potential errors, or bad practices, suggest fixes, and even implement those fixes.
