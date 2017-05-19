@@ -6,7 +6,7 @@
 
 <!-- .NET Core Content -->
 # [Guide .NET Core](core/index.md)
-## [Prise en main](core/getting-started.md)
+## [Bien démarrer](core/get-started.md)
 ## [Prérequis pour Windows](core/windows-prerequisites.md)
 ## [Conditions préalables macOS](core/macos-prerequisites.md)
 ## [Didacticiels](core/tutorials/index.md)
@@ -81,9 +81,9 @@
 <!-- End .NET Core Content -->
 
 <!-- .NET Framework Content -->
-# [.NET Framework Guide](framework/index.md) (Guide du .NET Framework)
+# [Guide du .NET Framework](framework/index.md)
 ## [Nouveautés](framework/whats-new/)
-## [Prise en main](framework/get-started/)
+## [Bien démarrer](framework/get-started/)
 ## [Guide de migration](framework/migration-guide/)
 ## [Guide de .NET Framework sur Docker](framework/docker/index.md)
 ### [Exécution des applications console dans des conteneurs](framework//docker/console.md)
@@ -121,7 +121,7 @@
 
 <!-- Start of C# Content -->
 # [Guide C#](csharp/index.md)
-## [Prise en main](csharp/getting-started/)
+## [Bien démarrer](csharp/getting-started/)
 ## [Didacticiels](csharp/tutorials/)
 ## [Présentation de C#](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
@@ -187,7 +187,7 @@
 ### [Fonctions comme valeurs de première classe](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
 
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
-### [Prise en main](fsharp/tutorials/getting-started/index.md)
+### [Bien démarrer](fsharp/tutorials/getting-started/index.md)
 #### [Bien démarrer avec Visual Studio](fsharp/tutorials/getting-started/getting-started-visual-studio.md)
 #### [Bien démarrer avec Visual Studio Code et Ionide](fsharp/tutorials/getting-started/getting-started-vscode.md)
 #### [Bien démarrer avec les outils en ligne de commande](fsharp/tutorials/getting-started/getting-started-command-line.md)
