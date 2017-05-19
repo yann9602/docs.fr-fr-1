@@ -1,6 +1,6 @@
 ---
 title: "Bien démarrer avec Visual Basic | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-05-01
 ms.prod: .net
 ms.technology:
 - devlang-visual-basic
@@ -29,17 +29,22 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
-ms.openlocfilehash: 31c50b38b2bfdc68e0f2ab03bc4d3b67e843a09d
-ms.lasthandoff: 05/01/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
+ms.openlocfilehash: ada42b9a033b548f5e2967040c44f7c790014211
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](breaking-changes-in-visual-studio.md)  
+
+[Nouveautés de Visual Basic](whats-new.md)   
+Répertorie les nouvelles fonctionnalités de chacune des versions de Visual Basic .NET.
+
+[Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](breaking-changes-in-visual-studio.md)  
  Répertorie les modifications de cette version qui peuvent empêcher une application de se compiler ou de modifier son comportement au moment de l’exécution.  
   
  [Ressources supplémentaires pour les programmeurs Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
