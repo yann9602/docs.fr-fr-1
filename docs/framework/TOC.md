@@ -1,4 +1,4 @@
-# [Guide de développement .NET Framework](development-guide.md)
+# [Guide de développement](development-guide.md)
 ## [Application Essentials](../standard/application-essentials.md)
 ## [Données et modélisation](data/index.md)
 ## [Applications clientes](develop-client-apps.md)
@@ -15,4 +15,3 @@
 ## [Développement pour plusieurs plateformes](../standard/cross-platform/index.md)
 ## [Déploiement](deployment/index.md)
 ## [Performances](performance/index.md)
-
