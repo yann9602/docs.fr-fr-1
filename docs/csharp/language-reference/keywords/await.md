@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5c2db2c58449cadcc33904f31cca215fb78405d2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 3656141c32a04e3a32a2992185f4c418c6915482
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="await-c-reference"></a>await (référence C#)
@@ -48,13 +49,38 @@ L'opérateur `await` est appliqué à une tâche dans une méthode asynchrone po
   
  Dans le code suivant, la méthode <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> retourne un `Task\<byte[]>`, `getContentsTask`. La tâche est une promesse de produire le tableau d’octets réel quand la tâche est terminée. L'opérateur `await` est appliqué à `getContentsTask` pour suspendre l'exécution dans `SumPageSizesAsync` jusqu'à ce que `getContentsTask` soit terminé. Entre-temps, le contrôle revient à l'appelant de `SumPageSizesAsync`. Quand `getContentsTask` est terminé, l'expression `await` s'évalue en tableau d'octets.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+  
+private async Task SumPageSizesAsync()  
+{  
+    // To use the HttpClient type in desktop apps, you must include a using directive and add a   
+    // reference for the System.Net.Http namespace.  
+    HttpClient client = new HttpClient();  
+    // . . .  
+    Task<byte[]> getContentsTask = client.GetByteArrayAsync(url);  
+    byte[] urlContents = await getContentsTask;  
+  
+    // Equivalently, now that you see how it works, you can write the same thing in a single line.  
+    //byte[] urlContents = await client.GetByteArrayAsync(url);  
+    // . . .  
+}  
+  
+```  
+  
 > [!IMPORTANT]
 >  Pour obtenir un exemple complet, consultez [Procédure pas à pas : accès au web avec async et await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Vous pouvez télécharger l’exemple à partir des [exemples de code pour les développeurs](http://go.microsoft.com/fwlink/?LinkID=255191&clcid=0x409) sur le site web de Microsoft. L'exemple est dans le projet AsyncWalkthrough_HttpClient.  
   
  Comme indiqué dans l'exemple précédent, si `await` est appliqué au résultat d'un appel de méthode qui retourne un `Task<TResult>`, alors le type de l'expression `await` est TResult. Si `await` est appliqué au résultat d'un appel de méthode qui retourne un `Task`, alors le type de l'expression `await` est void. L'exemple suivant illustre la différence.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```csharp  
+// Keyword await used with a method that returns a Task<TResult>.  
+TResult result = await AsyncMethodThatReturnsTaskTResult();  
+  
+// Keyword await used with a method that returns a Task.  
+await AsyncMethodThatReturnsTask();  
+  
+```  
+  
  Une expression `await` ne bloque pas le thread sur lequel elle s'exécute. Elle indique plutôt au compilateur de signer le reste de la méthode async comme une continuation sur la tâche attendue. Le contrôle revient alors à l'appelant de la méthode async. Quand la tâche est terminée, elle appelle sa continuation et l'exécution de la méthode async reprend là où elle s'était arrêtée.  
   
  Une expression `await` peut se produire uniquement dans le corps d'une méthode immédiatement englobante, une expression lambda ou une méthode anonyme marquée par un modificateur `async`. Le terme *await* sert de mot clé uniquement dans ce contexte. Partout ailleurs, il est interprété en tant qu'identificateur. Dans la méthode, l’expression lambda ou la méthode anonyme, une expression `await` ne peut pas se produire dans le corps d’une fonction synchrone, dans une expression de requête, dans le bloc d’une [instruction lock](../../../csharp/language-reference/keywords/lock-statement.md) ou dans un contexte [unsafe](../../../csharp/language-reference/keywords/unsafe.md).  
@@ -73,7 +99,7 @@ L'opérateur `await` est appliqué à une tâche dans une méthode asynchrone po
 ## <a name="example"></a>Exemple  
  L'exemple Windows Forms suivant illustre l'utilisation de `await` dans une méthode async, `WaitAsynchronouslyAsync`. Comparez le comportement de cette méthode avec celui de `WaitSynchronously`. Sans opérateur `await` appliqué à une tâche, `WaitSynchronously` s’exécute de façon synchrone en dépit de l’utilisation du modificateur `async` dans sa définition et d’un appel à <xref:System.Threading.Thread.Sleep%2A?displayProperty=fullName> dans son corps.  
   
-```cs  
+```csharp  
   
 private async void button1_Click(object sender, EventArgs e)  
 {  

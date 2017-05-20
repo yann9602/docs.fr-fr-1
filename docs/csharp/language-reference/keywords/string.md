@@ -34,14 +34,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a616808a8e6ff5e259c503c0143db4b8f73bdef2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 737a0902a0cb010a74b59560abe43f5cfb6550db
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="string-c-reference"></a>string (référence C#)
-Le type `string` représente une séquence de zéro, un ou plusieurs caractères Unicode. `string` est un alias de <xref:System.String> dans le .NET Framework.  
+Le type `string` représente une séquence de zéro, un ou plusieurs caractères Unicode. `string` est un alias pour <xref:System.String> dans le .NET Framework.  
   
  Bien que `string` soit un type référence, les opérateurs d’égalité (`==` et `!=`) sont définis pour comparer les valeurs d’objets `string`, pas les références. Cela permet de tester l’égalité de chaînes de façon plus intuitive. Exemple :  
   
@@ -125,12 +126,12 @@ Console.WriteLine(a);
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Bonnes pratiques pour l’utilisation de chaînes](http://msdn.microsoft.com/library/b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7)   
+ [Bonnes pratiques pour l’utilisation de chaînes](../../../standard/base-types/best-practices-strings.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Types référence](../../../csharp/language-reference/keywords/reference-types.md)   
  [Types valeur](../../../csharp/language-reference/keywords/value-types.md)   
- [Opérations de chaînes de base](http://msdn.microsoft.com/library/8133d357-90b5-4b62-9927-43323d99b6b6)   
- [Création de chaînes](http://msdn.microsoft.com/library/06fdf123-2fac-4459-8904-eb48ab908a30)   
+ [Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)   
+ [Création de chaînes](../../../standard/base-types/creating-new.md)   
  [Tableau des formats des résultats numériques](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)
 

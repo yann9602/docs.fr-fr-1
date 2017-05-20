@@ -14,10 +14,11 @@ ms.assetid: 1849fb03-f075-421f-863c-e8fb32773cdf
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b6d2acd628d823caa78076ebbf9b4236a9935f3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 5c11af47434ec00e812f966d5937c138a5ac3640
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -29,10 +30,22 @@ Quand vous appelez l’une des méthodes qui retournent <xref:System.Collections
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+XElement po = XElement.Load("PurchaseOrder.xml");  
+IEnumerable<XElement> items =  
+    from el in po.Descendants("ProductName")  
+    select el;  
+foreach(XElement prdName in items)  
+    Console.WriteLine(prdName.Name + ":" + (string) prdName);  
+```  
+  
  Ce code génère la sortie suivante :  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```  
+ProductName:Lawnmower  
+ProductName:Baby Monitor  
+```  
+  
  Les autres méthodes qui retournent <xref:System.Collections.Generic.IEnumerable%601> de collections <xref:System.Xml.Linq.XElement> suivent le même modèle. Leurs signatures sont semblables à <xref:System.Xml.Linq.XContainer.Elements%2A> et <xref:System.Xml.Linq.XContainer.Descendants%2A>. Voici la liste complète des méthodes qui ont des signatures de méthodes semblables :  
   
 -   <xref:System.Xml.Linq.XNode.Ancestors%2A>  
@@ -54,7 +67,7 @@ Quand vous appelez l’une des méthodes qui retournent <xref:System.Collections
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique dans un espace de noms](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
-```cs  
+```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
 XElement po = XElement.Load("PurchaseOrderInNamespace.xml");  
 IEnumerable<XElement> items =  

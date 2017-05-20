@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f104657c66e067ffe657f8387fef2178e3b2e62b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 336a4a7bb485a48282dd740bafb81421e0cba693
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="decimal-c-reference"></a>decimal (référence C#)
@@ -77,7 +78,7 @@ myMoney = (decimal)x;
  Pour plus d’informations sur les conversions numériques explicites, consultez [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md).  
   
 ## <a name="formatting-decimal-output"></a>Application d'un format à un résultat de type decimal  
- Vous pouvez appliquer un format aux résultats à l’aide de la méthode `String.Format`, ou par l’intermédiaire de la méthode <xref:System.Console.Write%2A?displayProperty=fullName>, qui appelle `String.Format()`. Le format monétaire est spécifié à l'aide du format de chaîne monétaire standard « C » ou « c », comme le montre le second exemple traité ultérieurement dans cet article. Pour plus d’informations sur la méthode `String.Format`, consultez <xref:System.String.Format%2A?displayProperty=fullName>.  
+ Vous pouvez appliquer un format à un résultat à l'aide de la méthode `String.Format`, ou de la méthode <xref:System.Console.Write%2A?displayProperty=fullName>, qui appelle `String.Format()`. Le format monétaire est spécifié à l'aide du format de chaîne monétaire standard « C » ou « c », comme le montre le second exemple traité ultérieurement dans cet article. Pour plus d'informations sur la méthode `String.Format`, consultez <xref:System.String.Format%2A?displayProperty=fullName>.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant provoque une erreur du compilateur en essayant d’ajouter les variables [double](../../../csharp/language-reference/keywords/double.md) et `decimal`.  
@@ -112,11 +113,11 @@ Console.WriteLine((double)dec + dub);
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Decimal>   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
  [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
- [Chaînes de format numériques standard](http://msdn.microsoft.com/library/580e57eb-ac47-4ffd-bccd-3a1637c2f467)
+ [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
