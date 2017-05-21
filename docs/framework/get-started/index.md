@@ -18,10 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ddcefb2b35f8cbf06a3abcc16158eee850f799ff
-ms.openlocfilehash: 5713faed77786a87dc349a1c7e02ec9703b3700d
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 42d0ddd649ffaaaf375c3396e4a82b066c9719e9
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/19/2017
 
 ---
 # <a name="get-started-with-the-net-framework"></a>Bien démarrer avec le .NET Framework
@@ -82,11 +82,11 @@ Le .NET Framework est un environnement d'exécution qui gère les applications c
 |Titre|Description|
 |-----------|-----------------|
 |[Vue d’ensemble](../../../docs/framework/get-started/overview.md)|Fournit des informations détaillées pour les développeurs qui génèrent les applications ciblant le .NET Framework.|
+|[Guide d’installation](../../../docs/framework/install/index.md)|Fournit des informations sur l'installation du .NET Framework.|  
 |[Versions finales hors plage de .NET Framework](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)|Décrit les versions finales hors plage du .NET Framework et leur utilisation dans votre application.|
 |[Configuration système requise](../../../docs/framework/get-started/system-requirements.md)|Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework.|
 |[.NET Core et Open-Source](../../../docs/framework/get-started/net-core-and-open-source.md)|Décrit les nouveautés du .NET Core par rapport au .NET Framework, et comment accéder aux projets .NET Core open source.|
 |[Documentation .NET Core](https://docs.microsoft.com/dotnet/)|Documentation de référence sur les concepts et les API de .NET Core.|
-|[Guide d’installation](../../../docs/framework/install/guide-for-developers.md)|Fournit des informations sur l'installation du .NET Framework.|
 
 ## <a name="see-also"></a>Voir aussi
  [Guide du .NET Framework](../../../docs/framework/index.md)   
