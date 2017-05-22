@@ -14,20 +14,21 @@ ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a47129d3c84d7bfb49929529a50b064c8424b4c3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: bcd325d72ac14f2b33860fbc9e2662c33ca2703d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Guide pratique pour chaîner des appels à des méthodes d’axe (LINQ to XML) (C#)
 Un schéma courant que vous utiliserez dans votre code consiste à appeler une méthode d’axe, puis à appeler l’un des axes de méthode d’extension.  
   
- Il existe deux axes qui portent le nom de `Elements` et qui retournent une collection d’éléments : la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> et la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>. Vous pouvez combiner ces deux axes pour rechercher tous les éléments d’un nom spécifié à une profondeur donnée dans l’arborescence.  
+ Il existe deux axes avec le nom `Elements` qui retournent une collection d'éléments : la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> et la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName>. Vous pouvez combiner ces deux axes pour rechercher tous les éléments d’un nom spécifié à une profondeur donnée dans l’arborescence.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> et <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> pour rechercher tous les éléments `Name` dans tous les éléments `Address` qui sont compris dans l’ensemble des éléments `PurchaseOrder`.  
+ Cet exemple utilise <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName> et <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> pour rechercher tous les éléments `Name` dans tous les éléments `Address` de tous les éléments `PurchaseOrder`.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
@@ -54,7 +55,7 @@ foreach (XElement e in names)
 <Name>Jessica Arnold</Name>  
 ```  
   
- Cela fonctionne parce que l’une des implémentations de l’axe `Elements` agit comme une méthode d’extension sur <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement> est dérivé de <xref:System.Xml.Linq.XContainer>. Vous pouvez donc appeler la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> sur les résultats d’un appel à la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>.  
+ Cela fonctionne car l'une des implémentations de l'axe `Elements` est en tant que méthode d'extension sur l'objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement> dérivant de <xref:System.Xml.Linq.XContainer>, vous pouvez appeler la méthode <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> sur les résultats d'un appel à la méthode <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>.  
   
 ## <a name="example"></a>Exemple  
  Quelquefois, vous souhaitez récupérer tous les éléments à une profondeur d'élément spécifique lorsqu'il peut y avoir ou ne pas y avoir d'ancêtres intermédiaires. Par exemple, dans le document suivant, vous pourriez souhaiter récupérer tous les éléments `ConfigParameter` qui sont des enfants de l'élément `Customer`, mais pas le `ConfigParameter` qui est un enfant de l'élément `Root`.  
@@ -81,7 +82,7 @@ foreach (XElement e in names)
 </Root>  
 ```  
   
- Pour ce faire, vous pouvez utiliser l’axe <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> de la façon suivante :  
+ Pour cela, vous pouvez utiliser l'axe <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=fullName> comme suit :  
   
 ```csharp  
 XElement root = XElement.Load("Irregular.xml");  

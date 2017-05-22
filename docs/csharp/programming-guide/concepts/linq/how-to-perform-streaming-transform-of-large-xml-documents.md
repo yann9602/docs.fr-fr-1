@@ -19,25 +19,26 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 02919c2e1e76991a3b37533da57b5c3ce4ded3c6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: fc8716c2190ac42b66ba8d76ccfec152ea804c4a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Guide pratique pour effectuer une transformation de streaming de documents XML volumineux (C#)
 Vous devez parfois transformer des fichiers XML volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un très grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de streaming à la place.  
   
- Il est préférable d'appliquer des techniques de streaming dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire pour votre application.  
+ Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire pour votre application.  
   
  Même si vous utilisez la technique décrite dans [Guide pratique pour diffuser des fragments XML en continu avec accès aux informations d’en-tête (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), si vous tentez d’assembler une arborescence XML qui contient le document transformé, l’utilisation de la mémoire sera trop élevée.  
   
- Il existe deux approches principales. L’une d’elles consiste à utiliser les caractéristiques de traitement différé de <xref:System.Xml.Linq.XStreamingElement>. Une autre approche consiste à créer un <xref:System.Xml.XmlWriter> et à utiliser les capacités de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] pour écrire des éléments dans un <xref:System.Xml.XmlWriter>. Cette rubrique illustre les deux approches.  
+ Il existe deux approches principales. L'une d'elles consiste à utiliser les caractéristiques de traitement différé de <xref:System.Xml.Linq.XStreamingElement>. Une autre consiste à créer un objet <xref:System.Xml.XmlWriter> et à utiliser les fonctionnalités de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] pour écrire des éléments dans un objet <xref:System.Xml.XmlWriter>. Cette rubrique illustre les deux approches.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant s’appuie sur celui fourni dans [Guide pratique pour diffuser des fragments XML en continu avec accès aux informations d’en-tête (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
   
- Il utilise les capacités d’exécution différée de <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
+ Il utilise les capacités d'exécution différée de <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
   
  Notez que l'axe personnalisé (`StreamCustomerItem`) est spécifiquement écrit de sorte qu'il s'attende à recevoir un document possédant des éléments `Customer`, `Name` et `Item`, et que ces éléments seront disposés comme dans le document  Source.xml suivant. Une implémentation plus robuste serait toutefois préparée à analyser un document non valide.  
   
@@ -213,7 +214,7 @@ static void Main(string[] args)
   
  Cet exemple utilise le même document source, Source.xml, que l'exemple précédent dans cette rubrique. Il produit également exactement la même sortie.  
   
- Il est préférable d’utiliser <xref:System.Xml.Linq.XStreamingElement> pour diffuser le code XML de sortie plutôt que d’écrire dans un <xref:System.Xml.XmlWriter>.  
+ L'utilisation de l'objet <xref:System.Xml.Linq.XStreamingElement> pour diffuser en continu le code XML de sortie est préférable à l'écriture dans un objet <xref:System.Xml.XmlWriter>.  
   
 ```csharp  
 static IEnumerable<XElement> StreamCustomerItem(string uri)  

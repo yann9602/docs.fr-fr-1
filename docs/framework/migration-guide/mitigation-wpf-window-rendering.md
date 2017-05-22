@@ -18,7 +18,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: c911513551e9629a4a6975762c1952c73c50f733
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-wpf-window-rendering"></a>Atténuation : rendu de la fenêtre WPF
@@ -48,7 +48,7 @@ Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] s'exécutant sur Wi
   
     -   `false`, pour désactiver le découpage des fenêtres selon les limites de l'écran pendant le rendu.  
   
--   En définissant la propriété <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> sur `true` au démarrage de l’application.  
+-   En définissant la propriété <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> avec la valeur `true` au démarrage de l'application.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications du runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

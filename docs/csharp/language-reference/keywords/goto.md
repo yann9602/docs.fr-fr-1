@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 700376096d969052a9f4633f565f9d9fd4dfec46
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="goto-c-reference"></a>goto (référence C#)
@@ -58,7 +59,7 @@ L’instruction `goto` transfère le contrôle du programme directement à une i
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [GoTo, instruction](https://docs.microsoft.com/cpp/cpp/goto-statement-cpp)   
  [Instructions de saut](../../../csharp/language-reference/keywords/jump-statements.md)

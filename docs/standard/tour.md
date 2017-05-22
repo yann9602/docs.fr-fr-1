@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: ee6ced104137a453267b409fea05716d781ef83f
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
+ms.openlocfilehash: 50e5b333f892cf469e9f3fe57a0325ac6d8e641f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -28,7 +28,7 @@ Consultez [Composants architecturaux de .NET](components.md) pour en savoir plus
 
 ## <a name="how-to-run-the-code-samples"></a>Guide pratique pour exécuter les exemples de code
 
-Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez [Bien démarrer](getting-started.md).  Vous pouvez copier et coller les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
+Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez [Bien démarrer](get-started.md).  Vous pouvez copier et coller les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
 
 > [!NOTE]
 À l’avenir, ce site de documentation pourra exécuter ces exemples de code dans votre navigateur.
@@ -151,7 +151,7 @@ Si vous êtes intéressé par une présentation des fonctionnalités de C#, cons
 
 Si vous êtes intéressé par une présentation des fonctionnalités de F#, consultez [Tour of F#](../fsharp/tour.md) (Présentation de F#).
 
-Si vous voulez vous familiariser avec l’écriture de votre propre code, consultez [Getting Started](getting-started.md) (Bien démarrer).
+Si vous voulez vous familiariser avec l’écriture de votre propre code, consultez [Getting Started](get-started.md) (Bien démarrer).
 
 Pour obtenir des informations sur les composants importants de .NET, consultez [Composants architecturaux de .NET](components.md).
 
