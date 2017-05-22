@@ -20,19 +20,19 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
-ms.openlocfilehash: 50f027408357a5d98ef1bfe305ab675fc97abba8
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: a2ef49f9192c7fa414b02e7e41a270606f52bb3c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/19/2017
 
 ---
 
-# <a name="net-framework-guide"></a>Guide du .NET framework
+# <a name="net-framework-guide"></a>Guide du .NET Framework
 
 > [!NOTE]
->  Cet ensemble de contenu .NET Framework inclut des informations relatives aux versions 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 et 4.7. Pour télécharger le .NET Framework, consultez [Installation du .NET Framework](../../docs/framework/install/guide-for-developers.md). Pour obtenir la liste des nouvelles fonctionnalités et des modifications dans le .NET Framework 4.5, le [!INCLUDE[net_v46](../../includes/net-v46-md.md)], leurs versions intermédiaires et le .NET Framework 4.7, consultez [Nouveautés du .NET Framework](../../docs/framework/whats-new/index.md). Pour obtenir la liste des plateformes prises en charge, consultez la [Configuration requise pour .NET Framework](../../docs/framework/get-started/system-requirements.md). 
+> Dans cette documentation du .NET Framework, vous trouverez des informations relatives aux versions 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 et 4.7. Pour télécharger le .NET Framework, consultez [Installation du .NET Framework](../../docs/framework/install/guide-for-developers.md). Pour obtenir la liste des nouvelles fonctionnalités et des modifications dans le .NET Framework 4.5, le [!INCLUDE[net_v46](../../includes/net-v46-md.md)], leurs versions intermédiaires et le .NET Framework 4.7, consultez [Nouveautés du .NET Framework](../../docs/framework/whats-new/index.md). Pour obtenir la liste des plateformes prises en charge, consultez la [Configuration requise pour .NET Framework](../../docs/framework/get-started/system-requirements.md). 
 
- Le .NET Framework est une plateforme de développement permettant de générer des applications pour le web, Windows, Windows Phone, Windows Server et Microsoft Azure. Il se compose du common language runtime (CLR) et de la bibliothèque de classes .NET Framework, qui offre une vaste gamme de fonctionnalités et prend en charge de nombreux standards.
+Le .NET Framework est une plateforme de développement permettant de générer des applications pour le web, Windows, Windows Phone, Windows Server et Microsoft Azure. Il se compose du common language runtime (CLR) et de la bibliothèque de classes .NET Framework, qui offre une vaste gamme de fonctionnalités et prend en charge de nombreux standards.
 
 Le .NET Framework propose plusieurs services, notamment la gestion de la mémoire, la cohérence des types, la sûreté de la mémoire, la sécurité, la mise en réseau et le déploiement d’applications. Il fournit des structures de données et des API faciles à utiliser qui permettent d’abstraire le système d’exploitation Windows de niveau inférieur. Vous pouvez utiliser divers langages de programmation avec le .NET Framework, notamment C#, F# et Visual Basic.  
 
@@ -46,9 +46,10 @@ Le .NET Framework étant fourni avec Windows, vous pouvez exécuter des applicat
 
 Pour savoir comment réparer votre installation du .NET Framework si vous rencontrez des erreurs pendant l’installation, consultez [Réparer le .NET Framework](./install/repair.md).
 
-Pour plus d’informations sur le téléchargement du .NET Framework, consultez [Installation du .NET Framework](../../docs/framework/install/guide-for-developers.md).  
+Pour plus d’informations détaillées sur le téléchargement du .NET Framework, consultez [Installer le .NET Framework pour les développeurs](../../docs/framework/install/guide-for-developers.md).  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a>Dans cette section
+
 [Nouveautés](../../docs/framework/whats-new/index.md)  
 Décrit les nouvelles fonctionnalités et modifications clés des dernières versions du .NET Framework. Inclut les listes des types et membres obsolètes et fournit un guide pour la migration de vos applications à partir de la version antérieure du .NET Framework.  
   
