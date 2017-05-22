@@ -17,31 +17,33 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: e36d3523a52def454e7ed0233f2179ab88ab3bcb
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 416e97cd7f59b0fc63052673acee8b55a3c11c1f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/19/2017
 
 ---
+
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
-<a name="introduction"></a> Cet article résume les principales nouvelles fonctionnalités et améliorations des versions suivantes du .NET Framework :
+<a name="introduction"></a> Cet article résume les principales nouvelles fonctionnalités et améliorations des versions suivantes du .NET Framework :  
+ 
+[.NET Framework 4.7](#v47)   
+[.NET Framework 4.6.2](#v462)   
+[.NET Framework 4.6.1](#v461)   
+[.NET 2015 et .NET Framework 4.6](#v46)   
+[.NET Framework 4.5.2](#v452)   
+[.NET Framework 4.5.1](#v451)   
+[.NET Framework 4.5](#core)   
 
- [.NET Framework 4.7](#v47)   
- [.NET Framework 4.6.2](#v462)   
- [.NET Framework 4.6.1](#v461)   
- [.NET 2015 et .NET Framework 4.6](#v46)   
- [.NET Framework 4.5.2](#v452)   
- [.NET Framework 4.5.1](#v451)   
- [.NET Framework 4.5](#core)   
-
- Cet article ne fournit pas d'informations complètes sur chacune des nouvelles fonctionnalités et peut faire l'objet de modifications. Pour obtenir des informations générales sur le .NET Framework, consultez [Prise en main](../../../docs/framework/get-started/index.md). Pour connaître les plateformes prises en charge, consultez [Configuration requise](~/docs/framework/get-started/system-requirements.md). Pour obtenir des liens de téléchargement et des instructions d’installation, consultez [Guide d’installation](../../../docs/framework/install/guide-for-developers.md).
+Cet article ne fournit pas d'informations complètes sur chacune des nouvelles fonctionnalités et peut faire l'objet de modifications. Pour obtenir des informations générales sur le .NET Framework, consultez [Prise en main](../../../docs/framework/get-started/index.md). Pour connaître les plateformes prises en charge, consultez [Configuration requise](~/docs/framework/get-started/system-requirements.md). Pour obtenir des liens de téléchargement et des instructions d’installation, consultez [Guide d’installation](../../../docs/framework/install/guide-for-developers.md).
 
 > [!NOTE]
->  L’équipe .NET Framework publie aussi des fonctionnalités hors bande avec NuGet pour étendre la prise en charge des plateformes et introduire des nouveautés, telles que les collections immuables et les types de vecteurs compatibles SIMD. Pour plus d’informations, consultez [Autres bibliothèques de classes et API](../additional-apis/index.md) et [Versions finales hors plage de .NET Framework](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md). Consultez la [liste complète des packages NuGet](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/) pour le .NET Framework, ou abonnez-vous à [notre flux](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/).
+> L’équipe .NET Framework publie aussi des fonctionnalités hors bande avec NuGet pour étendre la prise en charge des plateformes et introduire des nouveautés, telles que les collections immuables et les types de vecteurs compatibles SIMD. Pour plus d’informations, consultez [Autres bibliothèques de classes et API](../additional-apis/index.md) et [Versions finales hors plage de .NET Framework](~/docs/framework/get-started/the-net-framework-and-out-of-band-releases.md). Consultez la [liste complète des packages NuGet](https://blogs.msdn.microsoft.com/dotnet/p/nugetpackages/) pour le .NET Framework, ou abonnez-vous à [notre flux](https://nuget.org/api/v2/curated-feeds/dotnetframework/Packages/).
 
 <a name="v47"></a> 
 ## <a name="introducing-the-net-framework-47"></a>Présentation du .NET Framework 4.7
- Le .NET Framework 4.7 repose sur le .NET Framework versions 4.6, 4.6.1 et 4.6.2, auxquelles il ajoute un grand nombre de nouveaux correctifs et plusieurs nouvelles fonctionnalités, tout en restant un produit très stable.
+
+Le .NET Framework 4.7 repose sur le .NET Framework versions 4.6, 4.6.1 et 4.6.2, auxquelles il ajoute un grand nombre de nouveaux correctifs et plusieurs nouvelles fonctionnalités, tout en restant un produit très stable.
 
 ### <a name="downloading-and-installing-the-net-framework-47"></a>Téléchargement et installation du .NET Framework 4.7
  
@@ -159,7 +161,8 @@ Les API d’impression de WPF de la classe <xref:System.Printing.PrintQueue?disp
 
 <a name="v462"></a> 
 ## <a name="whats-new-in-the-net-framework-462"></a>Nouveautés du .NET Framework 4.6.2
- [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] inclut de nouvelles fonctionnalités dans les domaines suivants :
+
+[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] inclut de nouvelles fonctionnalités dans les domaines suivants :
 
 - [ASP.NET](#ASPNET462)
 
@@ -219,9 +222,9 @@ End Class
 
  Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-|Nom|Valeur|
-|----------|-----------|
-|The rating must be between 1 and 10.|La note doit être comprise entre 1 et 10.|
+| Nom                                 | Valeur                                     |
+| ------------------------------------ | ----------------------------------------- |
+| The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
  Ce fichier peut ensuite
 
@@ -231,12 +234,10 @@ End Class
  ASP.NET autorise désormais l’utilisation de méthodes retournant des tâches avec les fournisseurs de magasins d’état de session, ce qui permet ainsi aux applications ASP.NET de profiter de la scalabilité des opérations asynchrones. Pour prendre en charge les opérations asynchrones avec les fournisseurs de magasins d’état de session, ASP.NET propose une nouvelle interface, <xref:System.Web.SessionState.ISessionStateModule?displayProperty=fullName>, qui hérite de <xref:System.Web.IHttpModule> et permet aux développeurs d’implémenter leurs propres fournisseurs de modules d’état de session et de magasins de sessions asynchrones. L’interface se définit comme suit :
 
 ```csharp
-
 public interface ISessionStateModule : IHttpModule {
     void ReleaseSessionState(HttpContext context);
     Task ReleaseSessionStateAsync(HttpContext context);
 }
-
 ```
 
  Par ailleurs, la classe <xref:System.Web.SessionState.SessionStateUtility> comporte deux nouvelles méthodes, <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateReadOnly%2A> et <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateRequired%2A>, qui peuvent être utilisées pour prendre en charge les opérations asynchrones.
@@ -633,13 +634,11 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
  L’exemple de code suivant montre combien il est facile de générer une signature pour un flux d’octets à l’aide de la nouvelle prise en charge des certificats X509 ECDSA inclus dans [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].
 
- [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)]
- [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
+ [!code-csharp[whatsnew.461.crypto#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#1)] [!code-vb[whatsnew.461.crypto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code461.vb#1)]
 
  Cela contraste fortement avec le code nécessaire pour générer une signature dans .NET Framework 4.6.
 
- [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)]
- [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
+ [!code-csharp[whatsnew.461.crypto#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.461.crypto/cs/Code46.cs#2)] [!code-vb[whatsnew.461.crypto#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.461.crypto/vb/Code46.vb#2)]
 
 <a name="ADO.NET461"></a> 
 ### <a name="adonet"></a>ADO.NET
@@ -831,13 +830,11 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
         - Améliorations apportées à l'API RSA afin que les opérations courantes ne nécessitent plus de conversion. Par exemple, le chiffrement des données utilisant un objet <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> nécessite un code comme celui qui suit dans les versions antérieures du .NET Framework.
 
-             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
-             [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
+             [!code-csharp[WhatsNew.Casting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]    [!code-vb[WhatsNew.Casting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
 
              Le code qui utilise les nouvelles API de chiffrement dans le .NET Framework 4.6 peut être réécrit comme suit pour éviter la conversion.
 
-             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]
-             [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
+             [!code-csharp[WhatsNew.Casting#2](../../../samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#2)]    [!code-vb[WhatsNew.Casting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#2)]
 
     - **Prise en charge de la conversion des dates et heures vers ou à partir d’Unix**
 
