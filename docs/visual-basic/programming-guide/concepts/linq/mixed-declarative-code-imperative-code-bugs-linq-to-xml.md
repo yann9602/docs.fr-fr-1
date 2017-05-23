@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 08edcabc3f0238c499f87c713f205ee5a517a1ea
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -61,7 +62,6 @@ Dim root As XElement = _
 For Each e As XElement In root.Elements()  
     root.Add(New XElement(e.Name, e.Value))  
 Next  
-  
 ```  
   
  Ce code entre dans une boucle infinie. L'instruction `foreach` itère au sein de l'axe `Elements()` et ajoute de nouveaux éléments à l'élément `doc`. Elle finit par itérer également au sein des éléments qu'elle vient d'ajouter. Et puisqu'elle alloue de nouveaux objets à chaque itération de la boucle, elle finira par consommer toute la mémoire disponible.  
@@ -79,7 +79,6 @@ For Each e As XElement In root.Elements().ToList()
     root.Add(New XElement(e.Name, e.Value))  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  À présent, le code fonctionne. Il en résulte l'arborescence XML suivante :  
@@ -109,7 +108,6 @@ For Each e As XElement In root.Elements()
     e.Remove()  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  Toutefois, ce code ne fait pas ce que vous voulez. Dans cette situation, après que vous avez supprimé le premier élément, A, il est supprimé de l'arborescence XML contenue dans la racine et le code dans la méthode Elements qui effectue l'itération ne peut trouver l'élément suivant.  
@@ -136,7 +134,6 @@ For Each e As XElement In root.Elements().ToList()
     e.Remove()  
 Next  
 Console.WriteLine(root)  
-  
 ```  
   
  Ce code génère la sortie suivante :  
@@ -156,7 +153,6 @@ Dim root As XElement = _
     </Root>  
 root.RemoveAll()  
 Console.WriteLine(root)  
-  
 ```  
   
 ## <a name="why-cant-linq-automatically-handle-this"></a>Pourquoi LINQ ne peut-il gérer cela automatiquement ?  
@@ -169,7 +165,6 @@ Dim z = _
     From e In root.Elements() _  
     Where (TestSomeCondition(e)) _  
     Select DoMyProjection(e)  
-  
 ```  
   
  Un tel code d'analyse devrait analyser les méthodes TestSomeCondition et DoMyProjection, et toutes les méthodes appelées par ces méthodes, pour déterminer si du code a des effets secondaires. Mais le code d'analyse ne pourrait pas simplement rechercher le code qui aurait des effets secondaires. Il lui faudrait sélectionner uniquement le code ayant des effets secondaires sur les éléments enfants de `root` dans cette situation.  
@@ -197,8 +192,8 @@ Dim root As XElement = _
 Dim newRoot As XElement = New XElement("Root", _  
     root.Elements(), root.Elements())  
 Console.WriteLine(newRoot)  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ to XML (Visual Basic) de la programmation avancée](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

@@ -9,9 +9,10 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 7be49f3ac7a7806e631eacf5004343919654881e
+ms.contentlocale: fr-fr
 ms.lasthandoff: 04/05/2017
 
 ---
@@ -151,6 +152,5 @@ Vous pouvez voir les mises à jour principales illustrées dans le fichier proje
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 </Project>
-
 ```
 

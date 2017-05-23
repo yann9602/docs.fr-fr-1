@@ -15,10 +15,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 40b4b94ac3058dda88b44c82110d4c749566e2b2
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-long-path-support"></a>Atténuation : Prise en charge des chemins d’accès longs
@@ -37,22 +38,19 @@ En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../inc
  Pour les applications qui ciblent [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], vous pouvez annuler la prise en charge des longs chemins d’accès en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier app.config :  
   
 ```xml  
-  
 <runtime>   
    <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=true" />   
 </runtime>  
-  
 ```  
   
  Pour les applications qui ciblent des versions antérieures de .NET Framework mais s’exécutent sur [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ou version ultérieure, vous pouvez accepter la prise en charge des longs chemins d’accès en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) de votre fichier app.config :  
   
 ```xml  
-  
 <runtime>   
    <AppContextSwitchOverrides value="Switch.System.IO.BlockLongPaths=false" />   
 </runtime>  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+

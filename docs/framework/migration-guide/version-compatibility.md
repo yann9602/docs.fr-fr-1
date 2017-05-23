@@ -35,14 +35,12 @@ La compatibilité descendante signifie qu'une application développée pour une 
  Pour définir les versions spécifiques sur lesquelles votre application s’exécute, ajoutez un ou plusieurs éléments [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de votre application. Chaque élément `<supportedRuntime>` fournit une liste des versions prises en charge de l'exécution ; la première spécifie la version préférée et la dernière correspond à la version la moins préférée.  
   
 ```xml  
-  
 <configuration>  
    <startup>  
       <supportedRuntime version="v2.0.50727" />  
       <supportedRuntime version="v4.0" />  
    </startup>  
 </configuration>  
-  
 ```  
   
  Pour plus d’informations, consultez [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.x](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).  
@@ -98,3 +96,4 @@ La compatibilité descendante signifie qu'une application développée pour une 
  [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Politique de support pour Microsoft .NET Framework](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
  [Problèmes de migration de .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+

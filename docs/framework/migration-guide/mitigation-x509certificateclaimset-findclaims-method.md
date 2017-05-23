@@ -14,9 +14,10 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: c234d6ddeda50dfefff8c49a2e14d623cdd8d861
+ms.contentlocale: fr-fr
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -32,22 +33,19 @@ ms.lasthandoff: 04/18/2017
  Si cette modification n’est pas souhaitable, les applications qui ciblent le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] et versions ultérieures peuvent ne pas y adhérer en ajoutant le paramètre de configuration suivant dans la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application :  
   
 ```xml  
-  
 <runtime>  
    <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=true" />   
 </runtime>  
-  
 ```  
   
  De plus, les applications qui ciblent des versions antérieures du .NET Framework, mais qui s’exécutent sur le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] ou ultérieur peuvent adhérer à ce comportement en ajoutant le paramètre de configuration suivant dans la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application :  
   
 ```xml  
-  
 <runtime>  
     <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=false" />   
 </runtime>  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)
+

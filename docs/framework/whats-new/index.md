@@ -880,7 +880,6 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
               // new code
            }
         }
-
         ```
 
          Il est préférable d'utiliser un format homogène pour les commutateurs, car ils constituent un contrat formel exposé par une bibliothèque. Voici les deux formats évidents.

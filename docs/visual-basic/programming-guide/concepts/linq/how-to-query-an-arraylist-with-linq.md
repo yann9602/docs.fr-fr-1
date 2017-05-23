@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: f48b06c23b1e28fccb953638954a8d9afefe574e
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -30,10 +31,8 @@ ms.lasthandoff: 03/13/2017
 Lorsque vous utilisez LINQ pour requête non générique <xref:System.Collections.IEnumerable>collections telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour répercuter le type spécifique des objets dans la collection.</xref:System.Collections.ArrayList> </xref:System.Collections.IEnumerable> Par exemple, si vous avez un <xref:System.Collections.ArrayList>de `Student` objets, votre [à partir de la Clause](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :</xref:System.Collections.ArrayList>  
   
 ```  
-  
 Dim query = From student As Student In arrList   
 ...  
-  
 ```  
   
  En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément de la <xref:System.Collections.ArrayList>à un `Student`.</xref:System.Collections.ArrayList>  
@@ -97,3 +96,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+

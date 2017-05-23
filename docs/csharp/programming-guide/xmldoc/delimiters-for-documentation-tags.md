@@ -29,9 +29,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: ba3b38a8bce9f5b49ef863acfae04bc2a39c052a
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -69,7 +70,6 @@ L’utilisation de commentaires de documentation XML exige des délimiteurs, qui
     /**   
      * <summary>text</summary>   
     */  
-  
     ```  
   
 -   Le compilateur identifie un modèle commun « * » au début des deuxième et troisième lignes. Le modèle n’est pas inclus dans la sortie.  
@@ -105,3 +105,4 @@ L’utilisation de commentaires de documentation XML exige des délimiteurs, qui
  [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)   
  [/doc (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
  [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+

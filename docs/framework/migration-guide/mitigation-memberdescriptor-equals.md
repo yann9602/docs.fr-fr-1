@@ -36,17 +36,14 @@ En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../inc
 -   Vous pouvez refuser cette modification sans modifier votre code source en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier app.config :  
   
     ```xml  
-  
     <runtime>  
         <AppContextSwitchOverrides value = "Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=true" />  
      </runtime>  
-  
     ```  
   
 -   Vous pouvez modifier votre code source pour restaurer le comportement précédent en comparant manuellement les propriétés <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> et <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> après avoir appelé la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName>, comme dans le fragment de code suivant.  
   
     ```csharp  
-  
     if (memberDescriptor1.Equals(memberDescriptor2) &   
         memberDescriptor1.Description.Equals(memberDescriptor2.Category)) {  
           // Code to execute if true.  
@@ -54,28 +51,23 @@ En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../inc
     else {  
           // Code to execute if false.     
     }  
-  
     ```  
   
     ```  
-  
     If memberDescriptor1.Equals(memberDescriptor2) And   
         memberDescriptor1.Description.Equals(memberDescriptor2.Category)  
           // Code to execute if True.  
     Else  
           // Code to execute if False.     
     End If  
-  
     ```  
   
  Pour les applications qui ciblent [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] et versions antérieures, vous pouvez activer cette modification en ajoutant la valeur suivante à votre fichier app.config :  
   
 ```xml  
-  
 <runtime>  
     <AppContextSwitchOverrides value="Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=true />  
 </runtime>  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  

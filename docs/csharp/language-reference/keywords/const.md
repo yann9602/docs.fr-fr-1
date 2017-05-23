@@ -30,9 +30,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 700e80272384a946609d538c5516f0480b7fed27
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -40,7 +41,6 @@ ms.lasthandoff: 03/13/2017
 Vous utilisez le mot clé `const` pour déclarer un champ constant ou un élément local constant. Les champs et les éléments locaux constants ne sont pas des variables et ne peuvent pas être modifiés. Les constantes peuvent être des chiffres, des valeurs booléennes, des chaînes ou une référence null. Ne créez pas une constante pour représenter des informations qui doivent être modifiées. Par exemple, n'utilisez pas un champ constant pour stocker le prix d'un service, le numéro de version du produit ou le nom de la marque d'une société. Ces valeurs peuvent changer dans le temps, et dans la mesure où les compilateurs propagent les constantes, le code compilé avec vos bibliothèques devra être recompilé pour refléter ces modifications. Consultez également le mot clé [readonly](../../../csharp/language-reference/keywords/readonly.md). Exemple :  
   
 ```  
-  
       const int x = 0;  
 public const double gravitationalConstant = 6.673e-11;  
 private const string productName = "Visual C#";  
@@ -86,3 +86,4 @@ public const int c2 = c1 + 100;
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
  [readonly](../../../csharp/language-reference/keywords/readonly.md)
+

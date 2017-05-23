@@ -50,7 +50,6 @@ L'opérateur `await` est appliqué à une tâche dans une méthode asynchrone po
  Dans le code suivant, la méthode <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> retourne un `Task\<byte[]>`, `getContentsTask`. La tâche est une promesse de produire le tableau d’octets réel quand la tâche est terminée. L'opérateur `await` est appliqué à `getContentsTask` pour suspendre l'exécution dans `SumPageSizesAsync` jusqu'à ce que `getContentsTask` soit terminé. Entre-temps, le contrôle revient à l'appelant de `SumPageSizesAsync`. Quand `getContentsTask` est terminé, l'expression `await` s'évalue en tableau d'octets.  
   
 ```csharp  
-  
 private async Task SumPageSizesAsync()  
 {  
     // To use the HttpClient type in desktop apps, you must include a using directive and add a   
@@ -64,7 +63,6 @@ private async Task SumPageSizesAsync()
     //byte[] urlContents = await client.GetByteArrayAsync(url);  
     // . . .  
 }  
-  
 ```  
   
 > [!IMPORTANT]
@@ -78,7 +76,6 @@ TResult result = await AsyncMethodThatReturnsTaskTResult();
   
 // Keyword await used with a method that returns a Task.  
 await AsyncMethodThatReturnsTask();  
-  
 ```  
   
  Une expression `await` ne bloque pas le thread sur lequel elle s'exécute. Elle indique plutôt au compilateur de signer le reste de la méthode async comme une continuation sur la tâche attendue. Le contrôle revient alors à l'appelant de la méthode async. Quand la tâche est terminée, elle appelle sa continuation et l'exécution de la méthode async reprend là où elle s'était arrêtée.  
@@ -100,7 +97,6 @@ await AsyncMethodThatReturnsTask();
  L'exemple Windows Forms suivant illustre l'utilisation de `await` dans une méthode async, `WaitAsynchronouslyAsync`. Comparez le comportement de cette méthode avec celui de `WaitSynchronously`. Sans opérateur `await` appliqué à une tâche, `WaitSynchronously` s’exécute de façon synchrone en dépit de l’utilisation du modificateur `async` dans sa définition et d’un appel à <xref:System.Threading.Thread.Sleep%2A?displayProperty=fullName> dans son corps.  
   
 ```csharp  
-  
 private async void button1_Click(object sender, EventArgs e)  
 {  
     // Call the method that runs asynchronously.  
@@ -137,3 +133,4 @@ public async Task<string> WaitSynchronously()
  [Programmation asynchrone avec async et await](../../../csharp/programming-guide/concepts/async/index.md)   
  [Procédure pas à pas : accès au web avec async et await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [async](../../../csharp/language-reference/keywords/async.md)
+

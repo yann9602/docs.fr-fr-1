@@ -19,9 +19,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 931f984b2267d0782cdbad22cb00f7a698de357e
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -218,7 +219,6 @@ Task returnedTask = Task_MethodAsync();
 await returnedTask;  
 // or, in a single statement  
 await Task_MethodAsync();  
-  
 ```  
   
  Chaque tâche retournée représente le travail en cours. Une tâche encapsule des informations sur l’état du processus asynchrone et, éventuellement, le résultat final du processus ou l’exception que le processus déclenche s’il ne réussit pas.  
@@ -351,3 +351,4 @@ namespace AsyncFirstExample
 ## <a name="see-also"></a>Voir aussi  
  [async](../../../../csharp/language-reference/keywords/async.md)   
  [await](../../../../csharp/language-reference/keywords/await.md)
+

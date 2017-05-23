@@ -42,7 +42,6 @@ ms.lasthandoff: 05/15/2017
 Les classes sont déclarées à l’aide du mot clé `class`, comme l’illustre l’exemple suivant :  
   
 ```  
-  
       class TestClass  
 {  
     // Methods, properties, fields, events, delegates   
@@ -122,3 +121,4 @@ Console.Write(child1.name);   // Error
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Types référence](../../../csharp/language-reference/keywords/reference-types.md)
+

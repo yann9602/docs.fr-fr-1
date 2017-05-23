@@ -28,9 +28,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 100fa20e69c9a1cd6133437c29d1d5955e871656
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -124,7 +125,6 @@ Console.ReadLine();
 //12  
 //--------  
 //12  
-  
 ```  
   
  L'opérateur d'indirection ne peut pas être appliqué à un pointeur de type `void*`. Toutefois, vous pouvez utiliser un cast pour convertir un pointeur void en n'importe quel autre type pointeur, et inversement.  
@@ -160,3 +160,4 @@ Console.ReadLine();
  [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)   
  [Conversion boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md)
+

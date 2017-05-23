@@ -456,7 +456,6 @@ public class MethodCallVisitor : Visitor
         }
     }
 }
-
 ```
 
 Et la sortie de l’arborescence d’expressions sera :

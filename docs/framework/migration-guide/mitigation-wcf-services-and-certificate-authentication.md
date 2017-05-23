@@ -41,7 +41,6 @@ Le .NET Framework 4.6 ajoute TLS 1.1 et TLS 1.2 à la liste des protocoles W
      Le fichier de configuration suivant effectue ceci :  
   
     ```xml  
-  
     <configuration>  
         <system.serviceModel>  
             <bindings>  
@@ -58,7 +57,6 @@ Le .NET Framework 4.6 ajoute TLS 1.1 et TLS 1.2 à la liste des protocoles W
             </bindings>  
         </system.ServiceModel>  
     </configuration>  
-  
     ```  
   
 -   Si la liaison est configurée de façon dynamique dans le code source, mettez à jour la propriété <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=fullName> pour utiliser TLS 1.1 (<xref:System.Security.Authentication.SslProtocols?displayProperty=fullName>) ou une version antérieure du protocole dans le code source.  

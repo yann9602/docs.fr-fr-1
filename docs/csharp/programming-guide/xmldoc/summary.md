@@ -32,9 +32,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: b74e5bf964ff82f88fe2822257a64eccb5697535
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -113,9 +114,9 @@ ms.lasthandoff: 03/13/2017
         </member>  
     </members>  
 </doc>  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Balises recommandées pour les commentaires de documentation](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+

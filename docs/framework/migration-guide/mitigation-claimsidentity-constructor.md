@@ -15,9 +15,10 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 84016664708b9b7fc61a9535e5f7910417caa6f1
+ms.contentlocale: fr-fr
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -31,14 +32,13 @@ ms.lasthandoff: 04/18/2017
  Si ce comportement n’est pas souhaitable, vous pouvez restaurer le comportement précédent en réglant `Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity` dans votre fichier de configuration d’application sur `true`. Pour cela, vous ajoutez le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) de votre fichier web.config :  
   
 ```  
-  
 <configuration>  
    <runtime>  
       <AppContextSwitchOverrides value="Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity=true" />  
    </runtime>  
 </configuration>  
-  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+

@@ -55,7 +55,6 @@ condition ? first_expression : second_expression;
  Vous pouvez exprimer des calculs qui pourraient sinon requérir une construction `if-else` plus concise en utilisant l'opérateur conditionnel. Par exemple, le code suivant utilise en premier lieu une instruction `if`, puis un opérateur conditionnel pour classifier un entier positif ou négatif.  
   
 ```  
-  
 int input = Convert.ToInt32(Console.ReadLine());  
 string classify;  
   
@@ -67,7 +66,6 @@ else
   
 // ?: conditional operator.  
 classify = (input > 0) ? "positive" : "negative";  
-  
 ```  
   
  L'opérateur conditionnel est associatif sur sa droite. L'expression `a ? b : c ? d : e` est évaluée comme `a ? b : (c ? d : e)`, et non pas sous la forme `(a ? b : c) ? d : e`.  
@@ -84,3 +82,4 @@ classify = (input > 0) ? "positive" : "negative";
  [if-else](../../../csharp/language-reference/keywords/if-else.md)   
  [Opérateurs ?. et ?](../../../csharp/language-reference/operators/null-conditional-operators.md)   
  [?? Opérateur](../../../csharp/language-reference/operators/null-conditional-operator.md)
+
