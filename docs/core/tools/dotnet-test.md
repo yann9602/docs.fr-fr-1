@@ -4,16 +4,17 @@ description: "La commande `dotnet test` est utilisée pour exécuter des tests u
 keywords: "dotnet-test, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 03/25/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 26b5834135db8041995a137f5008d00cdf14d820
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3cc29c37879a3edafb05b482698393f521b6c3b3
+ms.openlocfilehash: b4b0ac5a58fa37e5b39bcba262ba0fac443725e6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/26/2017
 
 ---
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 03/22/2017
 
 ## <a name="description"></a>Description
 
-La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. Les tests unitaires sont des projets de bibliothèques de classes qui ont des dépendances dans le framework de test unitaire (par exemple, MSText, NUnit ou xUnit) et dans le lanceur de tests dotnet du framework de test unitaire. Ils sont empaquetés sous forme de packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
+La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. Les tests unitaires sont des projets d’application console qui ont des dépendances dans l’infrastructure de tests unitaires (par exemple, MSTest, NUnit ou xUnit) et dans le Test Runner dotnet de l’infrastructure de tests unitaires. Ils sont empaquetés sous forme de packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
 
 Les projets de test doivent également spécifier le lanceur de tests. Pour ce faire, vous pouvez utiliser un élément `<PackageReference>` ordinaire, comme indiqué dans l’exemple de fichier projet suivant :
 
@@ -103,3 +104,4 @@ Exécuter les tests dans le projet `test1` :
 
 * [Frameworks cibles](../../standard/frameworks.md)
 * [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
+
