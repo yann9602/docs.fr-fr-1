@@ -36,10 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ac8a0f8f3889a9de9fbb6a43241c5ab855e938ab
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 692e0a53391556c6327e493d3d45e811db4cfdb7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="additional-resources-for-visual-basic-programmers"></a>Ressources supplémentaires pour les programmeurs Visual Basic
@@ -80,7 +81,7 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |Terme|Définition|  
 |----------|----------------|  
 |[Groupes de discussion MSDN](http://go.microsoft.com/fwlink/?LinkId=145961)|Offre une expérience de groupe de discussion, qui vous permet de communiquer avec des experts du monde entier au sein d'une communauté.|  
-|[Discussions MSDN](http://go.microsoft.com/fwlink/?LinkId=145962)|Propose des discussions sur les produits ou les technologies Microsoft. Chaque conversation est hébergée par un ou plusieurs experts Microsoft. Des transcriptions sont disponibles pour des conversations complètes.|  
+|[Discussions MSDN](http://go.microsoft.com/fwlink/?LinkId=145962)|Propose des discussions sur les produits ou les technologies Microsoft. Chaque conversation est hébergée par un ou plusieurs experts Microsoft. Des transcriptions des conversations complétées sont disponibles.|  
   
 ### <a name="videos-and-webcasts"></a>Vidéos et Webcasts  
   

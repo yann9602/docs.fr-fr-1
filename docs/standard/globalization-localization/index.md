@@ -21,10 +21,11 @@ caps.latest.revision: 42
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: d6313cea51b98b3b19363f3c465e5adf241ab3d4
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 46a0ccb9db4d468e68b1e8d1d278308e6e87e85e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>Globalisation et localisation d'applications .NET Framework
@@ -66,13 +67,13 @@ Le développement d'une [application mondialisable](http://msdn.microsoft.com/go
  Décrit les meilleures pratiques en matière de globalisation, de localisation et de développement d'applications ASP.NET mondialisables.  
   
 ## <a name="reference"></a>Référence  
- <xref:System.Globalization?displayProperty=fullName> namespace  
- Contient des classes qui définissent des informations liées à la culture, notamment la langue, le pays ou la région, les calendriers utilisés, les formats des dates, des monnaies et des nombres, ainsi que l’ordre de tri à respecter pour les chaînes.  
+ Espace de noms <xref:System.Globalization?displayProperty=fullName>  
+ Contient des classes qui définissent des informations liées à la culture, notamment la langue, le pays ou la région, les calendriers utilisés, les formats des dates, des monnaies et des nombres, ainsi que l'ordre de tri à respecter pour les chaînes.  
   
- <xref:System.Resources> namespace  
+ Espace de noms <xref:System.Resources>  
  Fournit des classes pour créer, manipuler et utiliser des ressources.  
   
- <xref:System.Text> namespace  
+ Espace de noms <xref:System.Text>  
  Contient des classes représentant les encodages de caractères ASCII, ANSI, Unicode et autres.  
   
  [Resgen.exe (Resource File Generator)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)  

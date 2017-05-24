@@ -10,9 +10,10 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: cf497639-9f91-45cb-836f-998d1cea2f43
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: e9b8ad13a48dd43236769b130d6f8a75b7b023ca
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -809,7 +810,7 @@ Vous pouvez également mettre en forme une valeur numérique pour une culture sp
 
 * Un objet [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) définissant les conventions de mise en forme propres à la culture qui doivent être utilisées. Sa méthode [GetFormat](xref:System.Globalization.NumberFormatInfo.GetFormat(System.Type)) retourne une instance d’elle-même.
 
-L’exemple suivant utilise des objets [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) qui représentent les cultures Anglais (États-Unis) et Anglais (Royaume-Uni), ainsi que les cultures neutres Français et Russe pour mettre en forme un nombre à virgule flottante.
+L’exemple suivant utilise des objets [NumberFormatInfo](xref:System.Globalization.NumberFormatInfo) qui représentent les cultures Anglais (États-Unis) et Anglais (Grande-Bretagne), ainsi que les cultures neutres Français et Russe pour mettre en forme un nombre à virgule flottante.
 
 ```csharp
 using System;
@@ -935,7 +936,7 @@ Vous pouvez également mettre en forme une valeur de date et d’heure pour une 
 
 * Un objet [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) définissant les conventions de mise en forme propres à la culture qui doivent être utilisées. Sa méthode [GetFormat](xref:System.Globalization.DateTimeFormatInfo.GetFormat(System.Type)) retourne une instance d’elle-même.
 
-L’exemple suivant utilise des objets [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) qui représentent les cultures Anglais (États-Unis) et Anglais (Royaume-Uni), ainsi que les cultures neutres Français et Russe pour mettre en forme une date. 
+L’exemple suivant utilise des objets [DateTimeFormatInfo](xref:System.Globalization.DateTimeFormatInfo) qui représentent les cultures Anglais (États-Unis) et Anglais (Grande-Bretagne), ainsi que les cultures neutres Français et Russe pour mettre en forme une date. 
 
 ```csharp
 using System;

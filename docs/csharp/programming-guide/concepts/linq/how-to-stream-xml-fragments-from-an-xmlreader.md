@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4bb11e120a123b701e45916b983032797c0ea8b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 06e2cf4b350fecf8e8310519c573ac140f05267a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Guide pratique pour diffuser des fragments XML en continu à partir d’un XmlReader (C#)
@@ -41,10 +42,61 @@ Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de c
 ## <a name="example"></a>Exemple  
  Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l'interroger à l'aide d'une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+static IEnumerable<XElement> StreamRootChildDoc(StringReader stringReader)  
+{  
+    using (XmlReader reader = XmlReader.Create(stringReader))  
+    {  
+        reader.MoveToContent();  
+        // Parse the file and display each of the nodes.  
+        while (reader.Read())  
+        {  
+            switch (reader.NodeType)  
+            {  
+                case XmlNodeType.Element:  
+                    if (reader.Name == "Child") {  
+                        XElement el = XElement.ReadFrom(reader) as XElement;  
+                        if (el != null)  
+                            yield return el;  
+                    }  
+                    break;  
+            }  
+        }  
+    }  
+}  
+  
+static void Main(string[] args)  
+{  
+    string markup = @"<Root>  
+      <Child Key=""01"">  
+        <GrandChild>aaa</GrandChild>  
+      </Child>  
+      <Child Key=""02"">  
+        <GrandChild>bbb</GrandChild>  
+      </Child>  
+      <Child Key=""03"">  
+        <GrandChild>ccc</GrandChild>  
+      </Child>  
+    </Root>";  
+  
+    IEnumerable<string> grandChildData =  
+        from el in StreamRootChildDoc(new StringReader(markup))  
+        where (int)el.Attribute("Key") > 1  
+        select (string)el.Element("GrandChild");  
+  
+    foreach (string str in grandChildData) {  
+        Console.WriteLine(str);  
+    }  
+}  
+```  
+  
  Cet exemple génère la sortie suivante :  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```  
+bbb  
+ccc  
+```  
+  
  Dans cet exemple, le document source est très petit. Toutefois, cet exemple aurait un faible encombrement mémoire même s'il y avait des millions d'éléments `Child`.  
   
 ## <a name="see-also"></a>Voir aussi  

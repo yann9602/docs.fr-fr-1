@@ -1,10 +1,9 @@
 # [Didacticiels](index.md)
-## [🔧 Utilisation de Visual Studio pour créer, déboguer et déployer une application](create-debug-deploy.md)
-## [🔧 Utilisation de C# Interactive pour explorer et tester](exploring-with-csharp-interactive.md)
-## [🔧 Création de bibliothèques portables](creating-portable-libraries.md)
-## [🔧 Programmation asynchrone d’interface utilisateur](asynchronous-ui-programming.md)
-## [🔧 Programmation asynchrone de serveur](asynchronous-server-programming.md)
-## [🔧 Programmation simultanée](concurrent-programming.md)
+<!--## [🔧 Using C# Interactive to explore and experiment](exploring-with-csharp-interactive.md)-->
+<!--## [🔧 Creating portable libraries](creating-portable-libraries.md)-->
+<!--## [🔧 Asynchronous UI programming](asynchronous-ui-programming.md)-->
+<!--## [🔧 Asynchronous server programming](asynchronous-server-programming.md)-->
+<!--## [🔧 Concurrent programming](concurrent-programming.md)-->
 ## [Héritage dans C# et .NET](inheritance.md)
 ## [Application console](console-teleprompter.md)
 ## [Client REST](console-webapiclient.md)

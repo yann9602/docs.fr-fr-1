@@ -14,10 +14,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 10af942724ce0207bc6e64f1ebabfdcd2d3488bd
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="retargeting-changes-in-the-net-framework-452"></a>Reciblage des modifications dans le .NET Framework 4.5.2
@@ -39,7 +40,7 @@ Dans de rares cas, les modifications de reciblage peuvent affecter les applicati
   
 |Fonctionnalité|Modification|Impact|Portée|  
 |-------------|------------|------------|-----------|  
-|Récupération des données au format HTML depuis le Presse-papiers avec la méthode <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName>|Pour les applications qui ciblent [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ou qui s’exécutent sur le .NET Framework 4.5.1 ou versions antérieures, <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName> récupère les données au format HTML sous forme de chaîne ASCII. Ainsi, les caractères non-ASCII (caractères dont les codes ASCII sont supérieurs à 0x7F) sont représentés par deux caractères aléatoires. Par exemple, é (0xE9) est représenté par Ã© (0xC3 0xA9).<br /><br /> Pour les applications qui ciblent le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ou version ultérieure et qui s'exécutent sur le .NET Framework 4.5.2, <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName> récupère les données au format HTML sous la forme de données UTF-8, qui représentent correctement les caractères supérieurs à 0x7F.|Si vous avez implémenté une solution de contournement pour ce problème de codage des chaînes au format HTML (par exemple, en codant explicitement la chaîne HTML récupérée à partir du Presse-papiers en la transférant à la méthode <xref:System.Text.UTF8Encoding.GetString%2A?displayProperty=fullName>) et que vous reciblez votre application depuis la version 4 vers la version 4.5, cette solution devrait être supprimée.|Mineur|  
+|Récupération des données au format HTML depuis le Presse-papiers avec la méthode <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName>|Pour les applications qui ciblent le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ou qui s'exécutent sur le .NET Framework 4.5.1 ou des versions antérieures, <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName> récupère les données au format HTML sous forme de chaîne ASCII. Ainsi, les caractères non-ASCII (caractères dont les codes ASCII sont supérieurs à 0x7F) sont représentés par deux caractères aléatoires. Par exemple, é (0xE9) est représenté par Ã© (0xC3 0xA9).<br /><br /> Pour les applications qui ciblent le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ou version ultérieure et qui s'exécutent sur le .NET Framework 4.5.2, <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=fullName> récupère les données au format HTML sous la forme de données UTF-8, qui représentent correctement les caractères supérieurs à 0x7F.|Si vous avez implémenté une solution de contournement pour ce problème de codage des chaînes au format HTML (par exemple, en codant explicitement la chaîne HTML récupérée à partir du Presse-papiers en la transférant à la méthode <xref:System.Text.UTF8Encoding.GetString%2A?displayProperty=fullName>) et que vous reciblez votre application depuis la version 4 vers la version 4.5, cette solution devrait être supprimée.|Mineur|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications du runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-5-2.md)   

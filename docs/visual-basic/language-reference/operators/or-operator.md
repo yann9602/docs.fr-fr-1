@@ -40,9 +40,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: f3f6c013df6cd5c3b99e465bdc8bb0b4ead6bdf4
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -52,7 +53,6 @@ Effectue une disjonction logique sur deux `Boolean` expressions ou une disjoncti
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-  
 result = expression1 Or expression2  
 ```  
   
@@ -119,3 +119,4 @@ result = expression1 Or expression2
  [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
  [OrElse, opérateur](../../../visual-basic/language-reference/operators/orelse-operator.md)   
  [Opérateurs logiques et au niveau du bit en Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+

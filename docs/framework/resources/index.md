@@ -22,10 +22,11 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 3bbfaf3272444fbd2127f01ae4d5c9ca0db7bd39
-ms.lasthandoff: 04/08/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: ffe0b574b00e3ce420d83658f5844f26c3f8ea72
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="resources-in-desktop-apps"></a>Ressources dans des applications de bureau
@@ -50,23 +51,23 @@ Presque toutes les applications d'une qualité de niveau "production" doivent ut
  Pour plus d’informations, consultez l’article [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).  
   
 ## <a name="retrieving-resources"></a>Récupération de ressources  
- Au moment de l’exécution, une application charge les ressources localisées appropriées par thread, suivant la culture spécifiée par la propriété <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>. Cette valeur de propriété est dérivée comme suit :  
+ Au moment de l'exécution, une application charge les ressources localisées appropriées sur une base par thread, selon la culture spécifiée par la propriété <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>. Cette valeur de propriété est dérivée comme suit :  
   
--   En affectant directement un objet <xref:System.Globalization.CultureInfo> représentant la culture localisée sur la propriété <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=fullName>.  
+-   En assignant directement un objet <xref:System.Globalization.CultureInfo> qui représente la culture localisée à la propriété <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=fullName>.  
   
--   Si une culture n’est pas explicitement affectée, en récupérant la culture d’interface utilisateur par défaut du thread de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName>.  
+-   Si une culture n'est pas explicitement assignée, en extrayant la culture d'interface utilisateur par défaut du thread de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName>.  
   
 -   Si une culture d'interface utilisateur par défaut du thread n'est pas explicitement assignée, en extrayant la culture de l'utilisateur actuel sur l'ordinateur local en appelant la fonction Windows `GetUserDefaultUILanguage`.  
   
- Pour plus d’informations sur la définition de la culture actuelle d’interface utilisateur, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>.  
+ Pour plus d'informations sur la façon dont la culture d'interface utilisateur actuelle est définie, consultez les pages de référence <xref:System.Globalization.CultureInfo> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName>.  
   
- Ensuite, pour récupérer les ressources pour la culture d’interface utilisateur actuelle ou pour une culture spécifique, utilisez la classe <xref:System.Resources.ResourceManager?displayProperty=fullName>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources dans les applications de bureau, l’espace de noms <xref:System.Resources?displayProperty=fullName> contient les types supplémentaires que vous pouvez utiliser pour récupérer des ressources. à savoir :  
+ Vous pouvez ensuite extraire des ressources pour la culture de l'interface utilisateur actuelle ou pour une culture spécifique en utilisant la classe <xref:System.Resources.ResourceManager?displayProperty=fullName>. Bien que la classe <xref:System.Resources.ResourceManager> soit la plus fréquemment utilisée pour extraire des ressources dans les applications de bureau, l'espace de noms <xref:System.Resources?displayProperty=fullName> contient les types supplémentaires que vous pouvez utiliser pour récupérer des ressources. Elles incluent notamment :  
   
--   La classe <xref:System.Resources.ResourceReader>, qui vous permet d’énumérer des ressources incorporées dans un assembly ou stockées dans un fichier .resources binaire autonome. C'est utile lorsque vous ne connaissez pas les noms exacts des ressources disponibles au moment de l'exécution.  
+-   La classe <xref:System.Resources.ResourceReader>, qui vous permet d'énumérer des ressources incorporées dans un assembly ou stockées dans un fichier .resources binaire. C'est utile lorsque vous ne connaissez pas les noms exacts des ressources disponibles au moment de l'exécution.  
   
--   La classe <xref:System.Resources.ResXResourceReader>, qui permet d’extraire des ressources d’un fichier XML (.resx).  
+-   La classe <xref:System.Resources.ResXResourceReader>, qui permet d'accéder aux ressources d'un fichier XML (.resx).  
   
--   La classe <xref:System.Resources.ResourceSet>, qui vous permet de récupérer les ressources d’une culture spécifique sans observer les règles de secours. Les ressources peuvent être stockées dans un assembly ou un fichier .resources binaire. Vous pouvez également développer une implémentation <xref:System.Resources.IResourceReader> qui vous permet d’utiliser la classe <xref:System.Resources.ResourceSet> pour récupérer des ressources d’une autre source.  
+-   La classe <xref:System.Resources.ResourceSet>, qui vous permet de récupérer les ressources d'une culture spécifique sans observer les règles de secours. Les ressources peuvent être stockées dans un assembly ou un fichier .resources binaire. Vous pouvez également développer une implémentation de <xref:System.Resources.IResourceReader> qui vous permet d'utiliser la classe <xref:System.Resources.ResourceSet> pour récupérer les ressources d'une autre source.  
   
 -   La classe <xref:System.Resources.ResXResourceSet>, qui permet de récupérer tous les éléments dans un fichier de ressources XML en mémoire.  
   

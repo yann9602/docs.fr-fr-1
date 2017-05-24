@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7de999848870de80996f308affde088088e32e52
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 76dc6ebe2cc2489d83a2693a3143d36d46c8ef82
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Guide pratique pour utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)
@@ -39,7 +40,79 @@ Dans LINQ, les arborescences d’expressions sont utilisées pour représenter d
   
  Les méthodes de fabrique de l’espace de noms <xref:System.Linq.Expressions> sont utilisées pour créer des arborescences d’expressions qui représentent les expressions qui composent l’ensemble de la requête. Les expressions qui représentent des appels aux méthodes d’opérateur de requête standard référencent les implémentations <xref:System.Linq.Queryable> de ces méthodes. La dernière arborescence d’expressions est passée à l’implémentation <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> du fournisseur de la source de données `IQueryable` pour créer une requête exécutable de type `IQueryable`. Les résultats sont obtenus par l’énumération de cette variable de requête.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+// Add a using directive for System.Linq.Expressions.  
+  
+string[] companies = { "Consolidated Messenger", "Alpine Ski House", "Southridge Video", "City Power & Light",  
+                   "Coho Winery", "Wide World Importers", "Graphic Design Institute", "Adventure Works",  
+                   "Humongous Insurance", "Woodgrove Bank", "Margie's Travel", "Northwind Traders",  
+                   "Blue Yonder Airlines", "Trey Research", "The Phone Company",  
+                   "Wingtip Toys", "Lucerne Publishing", "Fourth Coffee" };  
+  
+// The IQueryable data to query.  
+IQueryable<String> queryableData = companies.AsQueryable<string>();  
+  
+// Compose the expression tree that represents the parameter to the predicate.  
+ParameterExpression pe = Expression.Parameter(typeof(string), "company");  
+  
+// ***** Where(company => (company.ToLower() == "coho winery" || company.Length > 16)) *****  
+// Create an expression tree that represents the expression 'company.ToLower() == "coho winery"'.  
+Expression left = Expression.Call(pe, typeof(string).GetMethod("ToLower", System.Type.EmptyTypes));  
+Expression right = Expression.Constant("coho winery");  
+Expression e1 = Expression.Equal(left, right);  
+  
+// Create an expression tree that represents the expression 'company.Length > 16'.  
+left = Expression.Property(pe, typeof(string).GetProperty("Length"));  
+right = Expression.Constant(16, typeof(int));  
+Expression e2 = Expression.GreaterThan(left, right);  
+  
+// Combine the expression trees to create an expression tree that represents the  
+// expression '(company.ToLower() == "coho winery" || company.Length > 16)'.  
+Expression predicateBody = Expression.OrElse(e1, e2);  
+  
+// Create an expression tree that represents the expression  
+// 'queryableData.Where(company => (company.ToLower() == "coho winery" || company.Length > 16))'  
+MethodCallExpression whereCallExpression = Expression.Call(  
+    typeof(Queryable),  
+    "Where",  
+    new Type[] { queryableData.ElementType },  
+    queryableData.Expression,  
+    Expression.Lambda<Func<string, bool>>(predicateBody, new ParameterExpression[] { pe }));  
+// ***** End Where *****  
+  
+// ***** OrderBy(company => company) *****  
+// Create an expression tree that represents the expression  
+// 'whereCallExpression.OrderBy(company => company)'  
+MethodCallExpression orderByCallExpression = Expression.Call(  
+    typeof(Queryable),  
+    "OrderBy",  
+    new Type[] { queryableData.ElementType, queryableData.ElementType },  
+    whereCallExpression,  
+    Expression.Lambda<Func<string, string>>(pe, new ParameterExpression[] { pe }));  
+// ***** End OrderBy *****  
+  
+// Create an executable query from the expression tree.  
+IQueryable<string> results = queryableData.Provider.CreateQuery<string>(orderByCallExpression);  
+  
+// Enumerate the results.  
+foreach (string company in results)  
+    Console.WriteLine(company);  
+  
+/*  This code produces the following output:  
+  
+    Blue Yonder Airlines  
+    City Power & Light  
+    Coho Winery  
+    Consolidated Messenger  
+    Graphic Design Institute  
+    Humongous Insurance  
+    Lucerne Publishing  
+    Northwind Traders  
+    The Phone Company  
+    Wide World Importers  
+*/  
+```  
+  
  Ce code utilise un nombre fixe d’expressions dans le prédicat qui est passé à la méthode `Queryable.Where`. Toutefois, vous pouvez écrire une application qui combine un nombre variable d’expressions de prédicat dépendant des entrées utilisateur. Vous pouvez également varier les opérateurs de requête standard qui sont appelés dans la requête, en fonction des entrées utilisateur.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  

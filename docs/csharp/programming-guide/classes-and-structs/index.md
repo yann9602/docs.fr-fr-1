@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6023f09a9a355c9ab00252f9e2ac6cc45abf42ce
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: d855989586fdee8b98bd994125ebb5c59776040a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Classes et structs (Guide de programmation C#)
@@ -76,9 +77,9 @@ Les classes et structs sont deux des constructions de base du système de type c
   
 -   [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
   
--   [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
-  
 -   [Événements](../../../csharp/programming-guide/events/index.md)  
+  
+-   [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
   
 -   [Indexeurs](../../../csharp/programming-guide/indexers/index.md)  
   
@@ -90,7 +91,7 @@ Les classes et structs sont deux des constructions de base du système de type c
  Certaines méthodes et propriétés sont censées être appelées ou accessibles par le code qui se trouve à l’extérieur de votre classe ou de votre struct, connu sous le terme de *code client*. D’autres méthodes et propriétés peuvent être uniquement utilisables dans la classe ou le struct proprement dits. Il est important de limiter l’accessibilité de votre code afin que seul le code client prévu puisse y accéder. Vous pouvez spécifier l’accessibilité de vos types et de leurs membres vis-à-vis du code client à l’aide des modificateurs d’accès [public](../../../csharp/language-reference/keywords/public.md), [protected](../../../csharp/language-reference/keywords/protected.md), [internal](../../../csharp/language-reference/keywords/internal.md), `protected internal` et [private](../../../csharp/language-reference/keywords/private.md). L’accessibilité par défaut est `private`. Pour plus d’informations, consultez la page [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
 ### <a name="inheritance"></a>Héritage  
- Les classes (mais pas les structs) prennent en charge le concept d'héritage. Une classe qui dérive d’une autre classe (la *classe de base*) contient automatiquement tous les membres publics, protégés et internes de la classe de base, sauf ses constructeurs et destructeurs. Pour plus d’informations, consultez les pages [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md) et [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
+ Les classes (mais pas les structs) prennent en charge le concept d'héritage. Une classe qui dérive d’une autre classe (la *classe de base*) contient automatiquement tous les membres publics, protégés et internes de la classe de base, sauf ses constructeurs et finaliseurs. Pour plus d’informations, consultez les pages [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md) et [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
   
  Les classes peuvent être déclarées comme [abstraites](../../../csharp/language-reference/keywords/abstract.md), ce qui signifie qu’une ou plusieurs de leurs méthodes n’ont aucune implémentation. Bien que les classes abstraites ne puissent pas être instanciées directement, elles peuvent servir de classes de base à d’autres classes qui fournissent l’implémentation manquante. Les classes peuvent également être déclarées comme [scellées](../../../csharp/language-reference/keywords/sealed.md) pour empêcher d’autres classes d’hériter d’elles. Pour plus d’informations, consultez la page [Classes abstraites et scellées et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   

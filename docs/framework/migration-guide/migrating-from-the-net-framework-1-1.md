@@ -17,9 +17,10 @@ caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 6a9df183b13a84f8ded047892c0e4b7f7d5f0d60
+ms.contentlocale: fr-fr
 ms.lasthandoff: 04/18/2017
 
 ---
@@ -37,7 +38,6 @@ ms.lasthandoff: 04/18/2017
           <supportedRuntime version="v4.0"/>  
        </startup>  
     </configuration>  
-  
     ```  
   
 -   Vous pouvez recompiler l'application avec un compilateur qui cible le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] et utiliser la boîte de dialogue de compatibilité des projets **** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild) utilisé par [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
@@ -59,7 +59,6 @@ ms.lasthandoff: 04/18/2017
       <CompatSortNLSVersion enabled="4096"/>  
    </runtime>  
 </configuration>  
-  
 ```  
   
  Toutefois, dans certains cas, vous devrez peut-être modifier votre code source et recompiler votre application.  
@@ -76,3 +75,4 @@ ms.lasthandoff: 04/18/2017
  L'impact des types et membres déconseillés est quelque peu différent pour les applications de reciblées et les applications recompilées. L'utilisation de types et membres obsolètes n'affectera pas une application reciblée, sauf si le type ou le membre obsolète a été supprimé physiquement de son assembly. Recompiler une application qui utilise des types ou des membres obsolètes entraîne généralement un avertissement du compilateur plutôt qu'une erreur du compilateur. Toutefois, dans certains cas, cela entraîne une erreur du compilateur, et le code qui utilise le type ou le membre obsolète ne se compile pas correctement. Dans ce cas, vous devez réécrire le code source qui appelle le type ou membre obsolète avant de recompiler votre application. Pour plus d'informations sur les types et membres obsolètes, consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md).  
   
  Pour évaluer l’impact de types et membres déconseillés depuis la mise en production de [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md). Passez en revue les listes de types et membres obsolètes pour le [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)], le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] et le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].
+

@@ -18,10 +18,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 09f682d9c3a1cf5d42bba878676d84b9328a1a81
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
@@ -34,14 +35,12 @@ La compatibilité descendante signifie qu'une application développée pour une 
  Pour définir les versions spécifiques sur lesquelles votre application s’exécute, ajoutez un ou plusieurs éléments [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de votre application. Chaque élément `<supportedRuntime>` fournit une liste des versions prises en charge de l'exécution ; la première spécifie la version préférée et la dernière correspond à la version la moins préférée.  
   
 ```xml  
-  
 <configuration>  
    <startup>  
       <supportedRuntime version="v2.0.50727" />  
       <supportedRuntime version="v4.0" />  
    </startup>  
 </configuration>  
-  
 ```  
   
  Pour plus d’informations, consultez [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.x](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).  
@@ -49,7 +48,7 @@ La compatibilité descendante signifie qu'une application développée pour une 
 ## <a name="version-compatibility-for-components"></a>Compatibilité des versions pour les composants  
  Une application peut contrôler la version .NET Framework sur laquelle elle s'exécute, mais un composant ne le peut pas. Les composants et bibliothèques de classes sont chargés dans le contexte d'une application particulière et s'exécutent donc automatiquement sur la version du .NET Framework sur lequel l'application s'exécute.  
   
- À cause de cette restriction, les garanties de compatibilité sont particulièrement importantes pour les composants. À compter de la version 4 du .NET Framework, vous pouvez spécifier le degré auquel un composant est supposé rester compatible sur plusieurs versions en appliquant l’attribut <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=fullName> à ce composant. Les outils peuvent utiliser cet attribut pour détecter des violations potentielles de la garantie de compatibilité dans les versions ultérieures d'un composant.  
+ À cause de cette restriction, les garanties de compatibilité sont particulièrement importantes pour les composants. Depuis .NET Framework 4, vous pouvez spécifier le degré auquel un composant est supposé rester compatible entre plusieurs versions en appliquant l'attribut <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=fullName> à ce composant. Les outils peuvent utiliser cet attribut pour détecter des violations potentielles de la garantie de compatibilité dans les versions ultérieures d'un composant.  
   
 ## <a name="backward-compatibility-and-the-net-framework-45"></a>Compatibilité descendante et .NET Framework 4.5  
  Le .NET Framework 4.5 et ses versions intermédiaires (4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2 et 4.7) présentent une compatibilité descendante avec les applications générées à l’aide des versions antérieures du .NET Framework. En d'autres termes, les applications et composants générés avec les versions antérieures du .NET Framework fonctionneront sur .NET Framework 4.5 sans être modifiés. Toutefois, par défaut, les applications sont exécutées sur la version du Common Language Runtime pour laquelle elles ont été développées. Par conséquent, il est possible que vous deviez fournir un fichier de configuration pour permettre à votre application de s'exécuter sur .NET Framework 4.5. Pour plus d’informations, consultez la section [Compatibilité des versions pour les applications](#Apps) plus haut dans cet article.  
@@ -97,3 +96,4 @@ La compatibilité descendante signifie qu'une application développée pour une 
  [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Politique de support pour Microsoft .NET Framework](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
  [Problèmes de migration de .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+

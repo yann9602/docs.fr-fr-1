@@ -32,9 +32,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 7c79935e7f15f31abca7efddbc443239d5db2f58
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -44,7 +45,6 @@ Déclare qu'une procédure gère un événement spécifié.
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-  
 proceduredeclaration Handles eventlist  
 ```  
   
@@ -86,3 +86,4 @@ proceduredeclaration Handles eventlist
  [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)   
  [RaiseEvent (instruction)](../../../visual-basic/language-reference/statements/raiseevent-statement.md)   
  [Événements](../../../visual-basic/programming-guide/language-features/events/index.md)
+

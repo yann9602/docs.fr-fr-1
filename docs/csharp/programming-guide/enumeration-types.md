@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8c23c17967474af0f91c0dda6d071073234736c6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 2014047f17f766023ba4db4981aad6e6d4902381
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Types énumération (Guide de programmation C#)
@@ -105,10 +106,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
  Pour plus d’informations, consultez <xref:System.Enum?displayProperty=fullName>.  
   
  Vous pouvez également créer une méthode pour un enum à l’aide d’une méthode d’extension. Pour plus d’informations, consultez [Guide pratique pour créer une méthode pour une énumération](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).  
-  
-## <a name="featured-book-chapter"></a>Chapitre proposé  
- [En savoir plus sur les variables](http://go.microsoft.com/fwlink/?LinkId=221230) dans [Bien démarrer avec Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
-  
+
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Enum?displayProperty=fullName>   
  [Guide de programmation C#](../../csharp/programming-guide/index.md)   

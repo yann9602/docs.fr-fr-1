@@ -34,9 +34,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e4016ee35ed487fd2ca48074d2e483778719dff3
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -50,7 +51,6 @@ Une instruction `if` identifie l’instruction à exécuter en fonction de la va
  En C#, une instruction `if` peut prendre deux formes, comme le montre l’exemple suivant.  
   
 ```csharp  
-  
 // if-else statement  
 if (condition)  
 {  
@@ -160,3 +160,4 @@ if (!(m >= n || m >= p))
  [?, opérateur](../../../csharp/language-reference/operators/conditional-operator.md)   
  [if-else, instruction (C++)](https://docs.microsoft.com/cpp/cpp/if-else-statement-cpp)   
  [switch](../../../csharp/language-reference/keywords/switch.md)
+
