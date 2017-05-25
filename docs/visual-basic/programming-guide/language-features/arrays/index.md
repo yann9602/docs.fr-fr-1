@@ -34,10 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1eeccc9b4f1cb00d434b1af61656b64bb860dbb8
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 324055a730b977faad637a14362b5c906931c721
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 # <a name="arrays-in-visual-basic"></a>Tableaux dans Visual Basic
@@ -50,7 +51,6 @@ Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le n
  Voici quelques exemples sommaires avant d’entrer dans les détails :  
   
 ```vb  
-  
 'Declare a single-dimension array of 5 values  
 Dim numbers(4) As Integer   
   
@@ -121,7 +121,7 @@ Dim sales()() As Double = New Double(11)() {}
   
  Vous pouvez faire référence au tableau dans son ensemble en utilisant uniquement le nom de la variable tableau sans index.  
   
- Le tableau `students` de l’exemple précédent utilise un seul index et est dit unidimensionnel. Un tableau qui utilise plusieurs index ou indices est dit multidimensionnel. Pour plus d’informations, consultez la suite de cette rubrique, ainsi que la page [Dimensions du tableau dans Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
+ Le tableau `students` de l’exemple précédent utilise un seul index et est dit unidimensionnel. Un tableau qui utilise plusieurs index ou indices est dit multidimensionnel. Pour plus d’informations, consultez la suite de cette rubrique, ainsi que la page [Array Dimensions in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
 ##  <a name="BKMK_CreatingAnArray"></a> Création d’un tableau  
  Vous pouvez définir la taille d’un tableau de différentes manières. Vous pouvez indiquer la taille au moment où vous déclarez le tableau, comme l’illustre l’exemple suivant.  
@@ -154,7 +154,7 @@ Dim sales()() As Double = New Double(11)() {}
   
  [!code-vb[VbVbalrCollectionInitializers#3](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_8.vb)]  
   
- Quand vous utilisez l’inférence de type, le type du tableau est déterminé par le type dominant dans la liste de valeurs fournie pour le littéral de tableau. Le type dominant est un type unique auquel tous les autres types du littéral de tableau peuvent s’étendre. Si ce type unique ne peut pas être déterminé, le type dominant est le type unique auquel tous les autres types du tableau peuvent se réduire. Si aucun de ces types uniques ne peut être déterminé, le type dominant est `Object`. Par exemple, si la liste de valeurs fournie au littéral de tableau contient des valeurs de type `Integer`, `Long`et `Double`, le tableau qui en résulte est de type `Double`. Les types `Integer` et `Long` s’étendent seulement à `Double`. Par conséquent, `Double` est le type dominant. Pour plus d’informations, consultez [Conversions étendues et restrictives](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). Ces règles d’inférence s’appliquent aux types déduits pour les tableaux qui correspondent à des variables locales définies dans un membre de classe. Bien que vous puissiez utiliser des littéraux de tableau pour créer des variables de niveau classe, vous ne pouvez pas utiliser l’inférence de type au niveau de la classe. Par conséquent, les littéraux de tableau spécifiés au niveau de la classe déduisent que les valeurs fournies pour le littéral de tableau sont de type `Object`.  
+ Quand vous utilisez l’inférence de type, le type du tableau est déterminé par le type dominant dans la liste de valeurs fournie pour le littéral de tableau. Le type dominant est un type unique auquel tous les autres types du littéral de tableau peuvent s’étendre. Si ce type unique ne peut pas être déterminé, le type dominant est le type unique auquel tous les autres types du tableau peuvent se réduire. Si aucun de ces types uniques ne peut être déterminé, le type dominant est `Object`. Par exemple, si la liste de valeurs fournie au littéral de tableau contient des valeurs de type `Integer`, `Long`et `Double`, le tableau qui en résulte est de type `Double`. Les types `Integer` et `Long` s’étendent seulement à `Double`. Par conséquent, `Double` est le type dominant. Pour plus d’informations, consultez [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). Ces règles d’inférence s’appliquent aux types déduits pour les tableaux qui correspondent à des variables locales définies dans un membre de classe. Bien que vous puissiez utiliser des littéraux de tableau pour créer des variables de niveau classe, vous ne pouvez pas utiliser l’inférence de type au niveau de la classe. Par conséquent, les littéraux de tableau spécifiés au niveau de la classe déduisent que les valeurs fournies pour le littéral de tableau sont de type `Object`.  
   
  Vous pouvez spécifier explicitement le type des éléments d’un tableau créé en utilisant un littéral de tableau. Dans ce cas, les valeurs du littéral de tableau doivent s’étendre au type des éléments du tableau. Dans l’exemple de code suivant, un tableau de type `Double` est créé à partir d’une liste d’entiers.  
   
@@ -181,11 +181,11 @@ Dim sales()() As Double = New Double(11)() {}
 ##  <a name="BKMK_Iterating"></a> Itération au sein d’un tableau  
  Quand vous itérez au sein d’un tableau, vous accédez à chaque élément du tableau de l’index le plus bas jusqu’à l’index le plus haut.  
   
- L’exemple suivant itère au sein d’un tableau unidimensionnel en utilisant [l’instruction For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md). La méthode <xref:System.Array.GetUpperBound%2A> renvoie la valeur la plus élevée que l’index peut avoir. La valeur d’index la plus basse est toujours 0.  
+ L’exemple suivant itère au sein d’un tableau unidimensionnel en utilisant [l’instruction For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md). La méthode <xref:System.Array.GetUpperBound%2A> retourne la valeur la plus élevée possible de l’index. La valeur d’index la plus basse est toujours 0.  
   
  [!code-vb[VbVbalrArrays#41](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_13.vb)]  
   
- L’exemple suivant itère au sein d’un tableau multidimensionnel en utilisant une instruction `For...Next` . La méthode <xref:System.Array.GetUpperBound%2A> possède un paramètre qui spécifie la dimension. `GetUpperBound(0)` retourne la valeur d’index supérieure pour la première dimension et `GetUpperBound(1)` retourne la valeur d’index supérieure pour la deuxième.  
+ L’exemple suivant itère au sein d’un tableau multidimensionnel en utilisant une instruction `For...Next` . La méthode <xref:System.Array.GetUpperBound%2A> dispose d’un paramètre qui spécifie la dimension. `GetUpperBound(0)` retourne la valeur d’index supérieure pour la première dimension et `GetUpperBound(1)` retourne la valeur d’index supérieure pour la deuxième.  
   
  [!code-vb[VbVbalrArrays#42](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_14.vb)]  
   
@@ -224,7 +224,7 @@ Dim sales()() As Double = New Double(11)() {}
   
  Vous pouvez être amené à créer un tableau de longueur zéro dans les cas suivants :  
   
--   Sans risquer une exception <xref:System.NullReferenceException>, votre code doit accéder aux membres de la classe <xref:System.Array>, comme <xref:System.Array.Length%2A> ou <xref:System.Array.Rank%2A>, ou appeler une fonction [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] comme <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
+-   Sans risquer une exception <xref:System.NullReferenceException>, votre code doit accéder aux membres de la classe <xref:System.Array>, tels que <xref:System.Array.Length%2A> ou <xref:System.Array.Rank%2A> ou appeler une fonction [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], telle que <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
   
 -   Vous tenez à ce que le code de consommation reste simple en n’ayant pas à vérifier la présence de `Nothing` comme un cas particulier.  
   
@@ -241,7 +241,7 @@ Dim prices(3, 4, 5) As Long
   
  La taille globale du tableau dans la variable `prices` est (3 + 1) x (4 + 1) x (5 + 1) = 120.  
   
- Vous pouvez trouver la taille d’un tableau via la propriété <xref:System.Array.Length%2A>. Vous pouvez trouver la longueur de chaque dimension d’un tableau multidimensionnel en utilisant la méthode <xref:System.Array.GetLength%2A>.  
+ Vous pouvez trouver la taille d’un tableau en utilisant la propriété <xref:System.Array.Length%2A>. Vous pouvez trouver la longueur de chaque dimension d’un tableau multidimensionnel en utilisant la méthode <xref:System.Array.GetLength%2A>.  
   
  Vous pouvez redimensionner une variable tableau en lui assignant un nouvel objet tableau ou en utilisant l’instruction `ReDim` .  
   
@@ -257,11 +257,11 @@ Dim prices(3, 4, 5) As Long
 ##  <a name="BKMK_ArrayTypes"></a> Types de tableau et autres types  
  À chaque tableau correspond un type de données, mais celui-ci se distingue du type de données de ses éléments. Le type de données varie d’un tableau à un autre. En effet, le type de données d’un tableau est déterminé par le nombre de dimensions (ou *rang*) qu’il possède et par le type de données de ses éléments. Deux variables tableau ne sont considérées appartenir au même type de données que si elles ont le même rang et si leurs éléments ont le même type de données. Les longueurs des dimensions d’un tableau n’influent pas sur le type de données du tableau.  
   
- Chaque tableau hérite de la classe <xref:System.Array?displayProperty=fullName> et vous pouvez déclarer une variable comme étant du type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. De même, [l’instruction ReDim](../../../../visual-basic/language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. Pour ces raisons et au titre de la cohérence des types, il est recommandé de déclarer chaque tableau en tant que type spécifique ( `Integer` dans l’exemple précédent).  
+ Chaque tableau hérite de la classe <xref:System.Array?displayProperty=fullName> et vous pouvez déclarer une variable de type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. De même, [l’instruction ReDim](../../../../visual-basic/language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. Pour ces raisons et au titre de la cohérence des types, il est recommandé de déclarer chaque tableau en tant que type spécifique ( `Integer` dans l’exemple précédent).  
   
  Vous pouvez déterminer le type de données d’un tableau ou de ses éléments de plusieurs façons.  
   
--   Vous pouvez appeler la méthode <xref:System.Object.GetType%2A?displayProperty=fullName> sur la variable pour recevoir un objet <xref:System.Type> pour le type d’exécution de la variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.  
+-   Vous pouvez appeler la méthode <xref:System.Object.GetType%2A?displayProperty=fullName> sur la variable pour recevoir un objet <xref:System.Type> correspondant au type au moment de l’exécution de la variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.  
   
 -   Vous pouvez passer la variable à la fonction <xref:Microsoft.VisualBasic.Information.TypeName%2A> pour recevoir un `String` contenant le nom du type au moment de l’exécution.  
   
@@ -278,12 +278,12 @@ Dim prices(3, 4, 5) As Long
   
  Pour certaines collections, vous pouvez assigner une clé à un objet que vous placez dans la collection pour vous permettre de récupérer rapidement l’objet à l’aide de la clé.  
   
- Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
+ Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Une collection générique applique la sécurité du type afin qu’aucun autre type de données ne puisse être ajouté à celle-ci. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
   
  Pour plus d’informations sur les collections, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
   
 ### <a name="example"></a>Exemple  
- L’exemple suivant utilise la classe générique [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] <xref:System.Collections.Generic.List%601?displayProperty=fullName> pour créer une collection de listes d’objets `Customer`.  
+ L’exemple suivant utilise la classe générique <xref:System.Collections.Generic.List%601?displayProperty=fullName> du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] pour créer une collection de listes d’objets `Customer`.  
   
  [!code-vb[VbVbalrArrays#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_22.vb)]  
   
@@ -293,7 +293,7 @@ Dim prices(3, 4, 5) As Long
   
 |Terme|Définition|  
 |----------|----------------|  
-|[Dimensions du tableau dans Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)|Explique le rang et les dimensions des tableaux.|  
+|[Array Dimensions in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)|Explique le rang et les dimensions des tableaux.|  
 |[Comment : initialiser une variable tableau en Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)|Explique comment remplir les tableaux de valeurs initiales.|  
 |[Comment : trier un tableau dans Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-sort-an-array.md)|Montre comment trier les éléments d’un tableau par ordre alphabétique.|  
 |[Guide pratique : assigner un tableau à un autre tableau](../../../../visual-basic/programming-guide/language-features/arrays/how-to-assign-one-array-to-another-array.md)|Décrit les règles et les étapes à suivre pour assigner un tableau à une autre variable tableau.|  
@@ -303,3 +303,4 @@ Dim prices(3, 4, 5) As Long
  <xref:System.Array>   
  [Instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)   
  [ReDim (instruction)](../../../../visual-basic/language-reference/statements/redim-statement.md)
+

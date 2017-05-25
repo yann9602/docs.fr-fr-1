@@ -1,5 +1,5 @@
 ---
-title: "Nouveautés de C# | Guide C#"
+title: "Nouveautés de C# - Guide C# | Microsoft Docs"
 description: "Évolution du langage C#"
 keywords: "C#, dernières fonctionnalités, nouveautés, Roslyn"
 author: BillWagner
@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 4ff34455c7cc6135f7324b18d3aebca576d70edf
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: f337a916f0a15c6e81b228ec378a34e97055f68e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 05/14/2017
 
 
 * [C# 7](csharp-7.md) :
-    - Cette page décrit les dernières fonctionnalités du langage C#. Cela concerne actuellement C# 7, disponible dans [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/).
+    - Cette page décrit les dernières fonctionnalités du langage C#. Cela concerne C# 7, actuellement disponible dans [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/).
 
 * [C# 6](csharp-6.md) :
     - Cette page décrit les nouvelles fonctionnalités de C# 6. Ces fonctionnalités sont disponibles dans Visual Studio 2015 pour les développeurs Windows, et dans .NET Core 1.0 pour les développeurs s’intéressant à C# sur Mac OS et Linux.

@@ -1,6 +1,6 @@
 ---
-title: "Présentation rapide du langage C# | Guide du langage C#"
-description: "Novice en C# ? Découvrez les principes de base du langage."
+title: "Visite guidée de C# - Guide C# | Microsoft Docs"
+description: "Vous débutez en C# ? Découvrez les principes de base du langage."
 keywords: ".NET, .NET Core, C#, Abécédaire du langage C#, Guide du langage C#"
 author: BillWagner
 ms.author: wiwagn
@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: d09d4c8696447ff83fe66f9376413345f369ca99
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: f122f59dd6f194facd98f4c6fa7f84c658c02a90
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -49,7 +49,7 @@ Hello, World
 ```
 
 > [!IMPORTANT]
-> La commande `csc` effectue la compilation pour la totalité de l’infrastructure ; elle n’est pas nécessairement disponible sur toutes les plateformes.
+> La commande `csc` effectue la compilation pour la totalité du framework ; elle n’est pas nécessairement disponible sur toutes les plateformes.
 
 
 Le programme « Hello, World » commence par une directive `using` qui fait référence à l’espace de noms `System`. Les espaces de noms représentent un moyen hiérarchique d’organiser les bibliothèques et les programmes C#. Les espaces de noms contiennent des types et d’autres espaces de noms ; par exemple, l’espace de noms `System` contient plusieurs types, notamment la classe `Console` référencée dans le programme, et d’autres espaces de noms, tels que `IO` et `Collections`. Une directive `using` qui fait référence à un espace de noms donné permet l’utilisation non qualifiée des types membres de cet espace de noms. En raison de la directive `using`, le programme peut utiliser `Console.WriteLine` comme raccourci pour `System.Console.WriteLine`.

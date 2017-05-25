@@ -1,5 +1,5 @@
 ---
-title: Docker et .NET Core
+title: Docker et .NET Core | Microsoft Docs
 description: Docker et .NET Core
 keywords: Docker, .NET, .NET Core
 author: spboyer
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: cae32148-aef4-4e64-a7f0-88072bad4400
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 7146e08095260361af1263cf79072476664eee23
-ms.lasthandoff: 04/05/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 70e854fbeb9d9da64815e2a67f7a0fe36695a17a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -25,3 +26,4 @@ Les didacticiels suivants sont disponibles pour en savoir plus sur l’utilisati
 - [Visual Studio Tools pour Docker](visual-studio-tools-for-docker.md)
 
 Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
+
