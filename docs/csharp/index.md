@@ -1,5 +1,5 @@
 ---
-title: Guide C#
+title: Guide C# | Microsoft Docs
 description: Guide C#
 keywords: .NET, .NET Core
 author: BillWagner
@@ -9,10 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
-translationtype: Human Translation
-ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
-ms.openlocfilehash: 2ebb4a32d7898f38596ccc526a721c8f811a5951
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: b87601e339a73b7d9f3132d80496742317439ffa
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 05/02/2017
 
 Le guide C# représente une mine d’informations sur le langage C#. Ce site s’adresse à des publics très différents. En fonction de votre expérience en programmation, ou avec le langage C# et .NET, vous pouvez explorer les différentes sections de ce guide.
 
-* Pour les nouveaux développeurs :
+* Pour les développeurs débutants :
     - Commencez par notre section [didacticiels](tutorials/index.md). Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro. Les didacticiels fournissent une procédure pas à pas pour créer des programmes. Vous apprendrez les concepts du langage et découvrirez comment générer vos propres programmes C#. Si vous préférez commencer par lire des informations d’ensemble, essayez notre [présentation du langage C#](tour-of-csharp/index.md). Elle explique les concepts du langage C#. Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.
 
 * Pour les développeurs qui découvrent C# : 

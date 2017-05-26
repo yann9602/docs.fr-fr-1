@@ -1,6 +1,6 @@
 ---
-title: Gestion de version .NET Core
-description: Gestion de version .NET Core
+title: Gestion de versions .NET Core | Microsoft Docs
+description: Gestion de versions .NET Core
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
@@ -10,18 +10,18 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 7be49f3ac7a7806e631eacf5004343919654881e
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 3cdd3ff040bfd9d307f0d0c0a07fbd0d972cbd3e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/05/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="net-core-versioning"></a>Gestion de version .NET Core
+# <a name="net-core-versioning"></a>Gestion de versions .NET Core
 
-.NET Core est une plateforme constituée de [packages NuGet](../packages.md) et de frameworks, et qui est distribuée comme un ensemble. Chacune de ces couches de plate-forme peut être créée séparément pour une meilleure agilité du produit et pour décrire précisément les modifications apportées au produit. Même si la gestion de version est très flexible, il est souhaitable d’attribuer une version à l’ensemble de la plateforme afin de faciliter la compréhension du produit.
+.NET Core est une plateforme de [packages NuGet](../packages.md) et de frameworks distribuée en un seul ensemble. Chacune de ces couches de plateforme peut être créée séparément pour une meilleure continuité du produit et pour décrire précisément les modifications apportées au produit. Même si la gestion de versions est très flexible, il est souhaitable d’attribuer une version à l’ensemble de la plateforme afin de comprendre plus facilement le produit.
 
-À certains égards, le produit est unique, car il est décrit et fourni via un gestionnaire de package (NuGet) sous forme de packages. .NET Core s’obtient généralement sous la forme d’un SDK autonome. Cependant, ce SDK n’est pas différent des packages NuGet, il est simplement plus pratique. La gestion de version s’applique donc principalement aux packages, et les autres gestions de version découlent de celle-ci.
+Le produit est en quelque sorte unique, décrit et fourni sous forme de packages par un gestionnaire de package (NuGet). .NET Core s’obtient généralement sous la forme d’un SDK autonome. Cependant, ce SDK n’est pas différent des packages NuGet, il est simplement plus pratique. La gestion de versions s’applique donc principalement aux packages, les autres gestions de versions découlant de celle-ci.
 
 ## <a name="semantic-versioning"></a>Gestion sémantique de version
 
@@ -59,12 +59,12 @@ Pour déterminer les éléments à incrémenter lorsqu’il existe plusieurs mod
 .NET Core peut être défini et se voir attribuer une version de la manière suivante :
 
 - Une implémentation du runtime et du framework, distribuée sous forme de packages. La version de chaque package est attribuée indépendamment, en particulier pour les versions correctives.
-- Un ensemble de métapackages qui référence des packages de granularité fine comme un ensemble avec version. Les versions des métapackages sont gérées séparément de celles des packages.
-- Un ensemble de frameworks (par exemple, `netstandard`) qui représente un ensemble API qui s’agrandit progressivement, décrit dans un ensemble d’instantanés avec version.
+- Un ensemble de métapackages qui référence des packages précis comme un ensemble de versions. Les versions des métapackages sont gérées séparément de celles des packages.
+- Un ensemble de frameworks (par exemple, `netstandard`) qui représente un jeu d’API qui s’enrichit progressivement, décrit dans un jeu d’instantanés avec version.
 
 ### <a name="packages"></a>Packages
 
-L’évolution et l’attribution des versions des packages de bibliothèque sont réalisées indépendamment. Les packages qui se chevauchent avec le système .NET Framework.\* utilisent généralement les versions 4.x, s’alignant ainsi sur la gestion de version .NET Framework 4.x (choix historique). Les packages qui n’entraînent pas de chevauchement avec les bibliothèques .NET Framework (par exemple, [System.Reflection.Metadata](https://www.nuget.org/packages/System.Reflection.Metadata)) commencent généralement à 1.0 et s’incrémentent par la suite.
+L’évolution et l’attribution des versions des packages de bibliothèque sont réalisées indépendamment. Les packages qui se chevauchent avec le système .NET Framework.\* Les assemblys utilisent généralement les versions 4.x, s’alignant ainsi sur la gestion de versions de .NET Framework 4.x (choix historique). Les packages qui n’entraînent pas de chevauchement avec les bibliothèques .NET Framework (par exemple, [System.Reflection.Metadata](https://www.nuget.org/packages/System.Reflection.Metadata)) commencent généralement à 1.0 et s’incrémentent par la suite.
 
 Les packages décrits par [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) reçoivent un traitement spécial, car ils sont à la base de la plateforme.
 
