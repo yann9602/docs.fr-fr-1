@@ -123,7 +123,7 @@ Les classes et structs sont deux des constructions de base du système de type c
  Dans une méthode de classe ou de struct, vous pouvez utiliser le type implicite pour indiquer au compilateur de déterminer le type approprié au moment de la compilation. Pour plus d’informations, consultez la page [Variables locales implicitement typées](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)

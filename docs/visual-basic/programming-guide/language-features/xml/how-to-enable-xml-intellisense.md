@@ -33,9 +33,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 84af19189fa3fc510c8d4f8e408cbb2a393d8b8f
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -52,7 +53,7 @@ XML IntelliSense dans Visual Basic fournit le mot intégral des éléments défi
   
  Pour plus d’informations sur les fonctionnalités de XML IntelliSense dans Visual Basic, consultez [XML IntelliSense dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md). Pour plus d’informations sur l’importation d’espaces de noms XML, consultez [l’instruction Imports (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md) ou [Page références, Concepteur de projets (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/references-page-project-designer-visual-basic).  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
  ![lien vers la vidéo](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo") pour obtenir une version vidéo de cette rubrique, consultez la page [vidéo Comment : activer XML IntelliSense dans Visual Basic](http://go.microsoft.com/fwlink/?LinkId=102466). Pour une démonstration vidéo connexe, consultez [comment activer XML IntelliSense and Use XML Namespaces ?](http://go.microsoft.com/fwlink/?LinkId=143035).  
   
