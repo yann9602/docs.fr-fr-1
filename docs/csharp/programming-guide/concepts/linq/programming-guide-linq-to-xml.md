@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 5e1e95d92123b2874aace0c36005a8a07a6203fc
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/24/2017
 
 ---
 # <a name="programming-guide-linq-to-xml-c"></a>Guide de programmation (LINQ to XML) (C#)
@@ -39,8 +40,8 @@ Cette section fournit des informations conceptuelles et de procédure sur la pro
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Vue d’ensemble de la programmation LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)|Fournit une vue d’ensemble des classes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], ainsi que des informations détaillées sur trois des principales classes : <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XDocument>.|  
-|[Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)|Fournit des informations conceptuelles et basées sur les tâches concernant la création des arborescences XML. Vous pouvez créer des arborescences XML à l’aide de la construction fonctionnelle ou en analysant du texte XML à partir d’une chaîne ou d’un fichier. Vous pouvez également utiliser un <xref:System.Xml.XmlReader> pour remplir une arborescence XML.|  
+|[Vue d’ensemble de la programmation LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)|Fournit une vue d'ensemble des classes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] et des informations détaillées sur trois des classes les plus importantes : <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XDocument>.|  
+|[Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)|Fournit des informations conceptuelles et basées sur les tâches concernant la création des arborescences XML. Vous pouvez créer des arborescences XML à l'aide de la construction fonctionnelle ou en analysant du texte XML à partir d'une chaîne ou d'un fichier. Vous pouvez également utiliser un objet <xref:System.Xml.XmlReader> pour remplir une arborescence XML.|  
 |[Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)|Fournit des informations détaillées sur la création d’arborescences XML qui utilisent des espaces de noms.|  
 |[Sérialisation d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)|Décrit plusieurs approches de la sérialisation d’une arborescence XML et fournit des conseils sur l’approche à utiliser.|  
 |[Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)|Énumère et décrit les méthodes d’axe [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], que vous devez comprendre pour pouvoir écrire des requêtes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].|  
