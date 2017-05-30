@@ -200,7 +200,7 @@ Les diagnostics de compatibilité .NET sont des analyseurs issus de la technolog
 |Portée|Limité|  
 |Version|4.5|  
 |Type|Exécution|  
-|API affectées|<xref:System.Xml.Linq.LoadOptions?displayProperty=fullName>|  
+|API affectées|<xref:System.Xml.Linq.LoadOptions.SetLineInfo?displayProperty=fullName>|  
 |Analyseurs|CD0019|  
   
 <a name="diagnostic20"></a>   
