@@ -15,10 +15,11 @@ caps.latest.revision: 9
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 87898a4a6ba3d3ef4c53fd1c6b8f94ff353f10e4
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Quand utiliser une collection thread-safe
@@ -45,7 +46,7 @@ ms.lasthandoff: 04/18/2017
   
  Quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, la règle de deux threads ne s’applique pas à <xref:System.Collections.Concurrent.ConcurrentQueue%601>, qui possède alors une très bonne scalabilité. <xref:System.Collections.Generic.Queue%601> n’évolue pas bien dans ce scénario.  
   
- Dans les scénarios producteur-consommateur mixtes, quand le temps de traitement est très court, un <xref:System.Collections.Generic.Queue%601> qui a un externe verrou évolue mieux que <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Toutefois, lorsque le temps de traitement est autour de 500 opérations en virgule flottante ou plus, le <xref:System.Collections.Concurrent.ConcurrentQueue%601> évolue mieux.  
+ Dans les scénarios producteur-consommateur mixtes, quand le temps de traitement est très court, un <xref:System.Collections.Generic.Queue%601> qui a un externe verrou évolue mieux que <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Toutefois, quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, <xref:System.Collections.Concurrent.ConcurrentQueue%601> évolue mieux.  
   
 ## <a name="concurrentstack-vs-stack"></a>Comparaison de ConcurrentStack et de Stack  
  Dans les scénarios producteur-consommateur purs, quand le temps de traitement est très court, <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=fullName> et <xref:System.Collections.Generic.Stack%601?displayProperty=fullName> qui a un verrou externe s’exécuteront probablement de la même manière avec un thread d’exécution de type push dédié et un thread d’exécution de type pop dédié. Toutefois, à mesure que le nombre de threads augmente, les deux types ralentissent à cause de l’augmentation des conflits, et <xref:System.Collections.Generic.Stack%601> peut fonctionner mieux que <xref:System.Collections.Concurrent.ConcurrentStack%601>. Quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, les deux types évoluent à peu près au même rythme.  
@@ -55,7 +56,7 @@ ms.lasthandoff: 04/18/2017
  L’utilisation de <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> et de <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> peut accélérer considérablement les temps d’accès.  
   
 ## <a name="concurrentdictionary-vs-dictionary"></a>Comparaison de ConcurrentDictionary et de Dictionary  
- En général, utilisez un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> dans tout scénario où vous ajoutez et mettez à jour des clés ou des valeurs simultanément à partir de plusieurs threads. Dans les scénarios qui impliquent des mises à jour fréquentes et des lectures relativement peu nombreuses, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> offre généralement des avantages modestes. Dans les scénarios qui impliquent de nombreuses lectures et de nombreuses mises à jour, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> est généralement beaucoup plus rapide, quel que soit le nombre de cœurs des ordinateurs.  
+ En général, vous devez utiliser un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> dans tout scénario où vous ajoutez et mettez à jour des clés ou des valeurs simultanément à partir de plusieurs threads. Dans les scénarios qui impliquent des mises à jour fréquentes et des lectures relativement peu nombreuses, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> offre généralement des avantages modestes. Dans les scénarios qui impliquent de nombreuses lectures et de nombreuses mises à jour, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> est généralement beaucoup plus rapide, quel que soit le nombre de cœurs des ordinateurs.  
   
  Dans les scénarios qui impliquent des mises à jour fréquentes, vous pouvez augmenter le degré d’accès concurrentiel dans <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, puis mesurer pour voir si les performances augmentent sur les ordinateurs qui ont plus de cœurs. Si vous modifiez le niveau d’accès concurrentiel, évitez, autant que possible, les opérations globales.  
   

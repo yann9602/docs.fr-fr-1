@@ -18,15 +18,15 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9460c8b6ca8db927af4064e3567eca34c1bf5c91
-ms.openlocfilehash: c7acce9d41af7e72b04b89751a7b186c9581dfea
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: 75b3c39fa2739b58fdee5c2183d5dfaaeb2f6af5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-grid-control39s-space-allocation-to-star-columns"></a>Atténuation : Allocation d’espace du contrôle de grille à des colonnes en étoile
 
-À compter des applications qui ciblent .NET Framework 4.7, WPF remplace l’algorithme que le contrôle <xref:System.Windows.Controls.Grid> utilise pour allouer de l’espace aux colonnes \*. 
+À compter des applications qui ciblent le .NET Framework 4.7, WPF remplace l’algorithme que le contrôle <xref:System.Windows.Controls.Grid> utilise pour allouer de l’espace aux colonnes \*. 
 
 ## <a name="whats-changed"></a>Nouveautés
 
@@ -64,7 +64,7 @@ Tout ce que qui a été évoqué sur les colonnes et les largeurs dans cette rub
 
 Le nouvel algorithme modifie la largeur réelle affectée aux colonnes \* dans plusieurs cas :
 
-- Lorsqu’une ou plusieurs colonnes \* ont également une largeur minimale ou maximale qui remplace l’allocation proportionnelle pour cette colonne. (La largeur minimale peut dériver d’une déclaration <xref:System.Windows.FrameworkElement.MinWidth%2A> explicite, ou d’un minimum implicite obtenu à partir du contenu de la colonne. La largeur maximale ne peut être définie qu’explicitement, par une déclaration <xref:System.Windows.FrameworkElement.MaxWidth%2A>.)
+- Lorsqu’une ou plusieurs colonnes \* ont également une largeur minimale ou maximale qui remplace l’allocation proportionnelle pour cette colonne. (La largeur minimale peut dériver d’une déclaration <xref:System.Windows.FrameworkElement.MinWidth%2A> explicite, ou d’un minimum implicite obtenu à partir du contenu de la colonne. La largeur maximale ne peut être définie qu’explicitement, à partir d’une déclaration <xref:System.Windows.FrameworkElement.MaxWidth%2A>.)
 
 - Lorsqu’une ou plusieurs colonnes \* déclarent un très grand poids \*, supérieur à 10 ^ 298.
 

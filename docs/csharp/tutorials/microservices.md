@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 57c49b555d7989a27fb4a2943b72cd2c4849694b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ed747cf589e1f4731d78af7cc206ff3674d666b2
+ms.openlocfilehash: b2ce10b3c079ff2c881f6dbe297ead33b8254476
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 
@@ -35,7 +36,7 @@ Au passage, vous verrez également certaines fonctionnalités du langage C# :
 * Traitement des demandes HTTP entrantes et création de la réponse HTTP
 * Guide pratique de travail avec les types valeur Nuallable
 
-Vous pouvez récupérer le code sur notre [référentiel GitHub.](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)
+Vous pouvez [afficher ou télécharger l’exemple d’application](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice) de cette rubrique. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ### <a name="why-docker"></a>Pourquoi Docker ?
 
@@ -145,7 +146,7 @@ Les valeurs du dictionnaire de requêtes sont de type `StringValue`. Ce type peu
 
 Ensuite, vous devez convertir les chaînes en valeurs de type double. La méthode que vous allez utiliser pour convertir la chaîne en double est `double.TryParse()` :
 
-```cs
+```csharp
 bool TryParse(string s, out double result);
 ```
 
@@ -173,7 +174,7 @@ Pour tester facilement le code d’analyse, mettez à jour la réponse pour incl
 
 La tâche suivante consiste à créer des prévisions météorologiques aléatoires. Commençons avec un conteneur de données qui contient les valeurs que vous souhaiteriez pour les prévisions météorologiques :
 
-```cs
+```csharp
 public class WeatherReport
 {
     private static readonly string[] PossibleConditions = new string[]
@@ -285,10 +286,6 @@ docker build -t weather-microservice .
 
 Cette commande génère l’image de conteneur sur la base de toutes les informations de votre fichier Docker. L’argument `-t` fournit une balise ou un nom pour cette image de conteneur. Dans la ligne de commande ci-dessus, la balise utilisée pour le conteneur Docker est `weather-microservice`. Lorsque cette commande est terminée, vous disposez d’un conteneur prêt à exécuter votre nouveau service. 
 
-> [!Note]
-> La commande copy va copier toutes les ressources, ainsi que la source de votre application.
-> Vous devez supprimer les répertoires `obj`, `bin` et `out` répertoires de votre machine locale avant de créer votre image Docker.
-
 Exécutez la commande suivante pour démarrer le conteneur et lancer votre service :
 
 ```console
@@ -343,7 +340,7 @@ docker rm hello-docker
 Si vous souhaitez supprimer des images inutilisées dans votre machine, utilisez cette commande :
 
 ```console
-docker rmi hello-docker
+docker rmi weather-microservice
 ```
 
 ## <a name="conclusion"></a>Conclusion 
