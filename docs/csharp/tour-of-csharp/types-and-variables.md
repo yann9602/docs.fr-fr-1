@@ -1,6 +1,6 @@
 ---
 title: "Variables et types C# | Présentation rapide du langage C#"
-description: "Présentation de la définition de types et la déclaration de variables en langage C#"
+description: "En savoir plus sur la définition des types et la déclaration de variables en C#"
 keywords: ".NET, csharp, type, type référence, type valeur"
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 93d09003ea4c54e6851ce00bbc4edecf039d0324
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 24d405ad33cb4f11dd9e7ba7edb39f10db8041a1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -89,7 +90,7 @@ Un type `interface` définit un contrat en tant que jeu nommé de membres de la 
 
 Un type `delegate` représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont semblables aux types de fonction fournis par les langages fonctionnels. Ils sont également similaires au concept de pointeurs de fonction dans d’autres langages, mais contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 
-Les types de classes, `struct`, `interface` et `delegate` prennent tous en charge les génériques, ce qui leur permet d’être paramétrés avec d’autres types.
+Les types , `class`, `struct`, `interface` et `delegate` prennent tous en charge les génériques, ce qui leur permet d’être paramétrés avec d’autres types.
 
 Un type `enum` est un type distinct avec des constantes nommées. Chaque type `enum` a un type sous-jacent qui doit être un des huit types intégraux. L’ensemble de valeurs d’un type `enum` est le même que l’ensemble de valeurs du type sous-jacent.
 
@@ -101,9 +102,9 @@ Le système de types de C# est unifié afin qu’une valeur de n’importe quel 
 
 [!code-csharp[Boxing](../../../samples/snippets/csharp/tour/types-and-variables/Program.cs#L1-L10)]
 
-Lorsqu’une valeur d’un type valeur est convertie en type `object`, une instance `object`, également appelée « boîte », est allouée pour contenir la valeur, et la valeur est copiée dans cette boîte. À l’inverse, lorsqu’une référence `object` est castée en un type valeur, une vérification est effectuée pour s’assurer que l’instance `object` est une boîte du bon type valeur, et, si la vérification réussit, la valeur de la zone est copiée.
+Quand une valeur d’un type valeur est convertie en type `object`, une instance `object`, également appelée « boîte », est allouée pour contenir la valeur, et la valeur est copiée dans cette boîte. À l’inverse, lorsqu’une référence `object` est castée en un type valeur, une vérification est effectuée pour s’assurer que l’instance `object` est une boîte du bon type valeur, et, si la vérification réussit, la valeur de la zone est copiée.
 
-Le système de type unifié de C# signifie que les types valeur peuvent devenir des objets « à la demande. » En raison de l’unification, les bibliothèques à usage général qui utilisent le type `object` peuvent être utilisées avec les types référence et les types valeur.
+Le système des types unifié de C# signifie que les types valeur peuvent devenir des objets « à la demande ». En raison de l’unification, les bibliothèques à usage général qui utilisent le type `object` peuvent être utilisées avec les types référence et les types valeur.
 
 Il existe plusieurs types de *variables* en C#, y compris les champs, les éléments de tableau, les variables locales et les paramètres. Les variables représentent des emplacements de stockage, et chaque variable possède un type qui détermine les valeurs pouvant être stockées dans la variable, comme indiqué ci-dessous.
 
@@ -120,7 +121,7 @@ Il existe plusieurs types de *variables* en C#, y compris les champs, les élém
 * Type tableau
     - Une référence `null`, une référence à une instance de ce type de tableau ou une instance d’un type de tableau compatible
 * Type délégué
-    - Une référence `null` ou une référence à une instance d’un compatible qui délègue un type
+    - Une référence `null` ou une référence à une instance d’un type délégué compatible
 
 >[!div class="step-by-step"]
 [Précédent](program-structure.md)

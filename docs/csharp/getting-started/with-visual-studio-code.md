@@ -1,23 +1,24 @@
 ---
 title: "Bien démarrer avec Visual Studio Code | Guide C#"
 description: "Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code."
-keywords: C#, bien commencer, acquisition, installer, Visual Studio Code, multiplateforme
+keywords: "C#, bien démarrer, acquisition, installer, Visual Studio Code, multiplateforme"
 author: kendrahavens
 ms.author: mairaw
-ms.date: 03/07/2017
+ms.date: 5/02/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 76c23597-4cf9-467e-8a47-0c3703ce37e7
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4550129f4e6f1eeb3521ad7fe3233f2bda49e5c5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
+ms.openlocfilehash: a8233995046e6fdf980bf630da18908a02d2bfb0
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/14/2017
 
 ---
 
-# <a name="getting-started-with-visual-studio-code"></a>Bien démarrer avec Visual Studio Code
+# <a name="get-started-with-visual-studio-code"></a>Bien démarrer avec Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications serveur qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
@@ -94,6 +95,6 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 > Pour plus d’informations et de conseils sur le débogage de .NET Core avec OmniSharp dans VS Code, consultez les [Instructions de configuration du débogueur .NET Core](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ## <a name="see-also"></a>Voir aussi
-- [Configuration de Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)
-- [Débogage dans Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)
+[Configuration de Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)   
+[Débogage dans Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)
 
