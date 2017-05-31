@@ -2,6 +2,7 @@
 title: "Atténuation : CspParameters.ParentWindowHandle attend un HWND | Microsoft Docs"
 ms.custom: 
 ms.date: 04/07/2017
+ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
@@ -16,10 +17,11 @@ caps.latest.revision: 5
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9460c8b6ca8db927af4064e3567eca34c1bf5c91
-ms.openlocfilehash: 22c258b06a5cc8fa3fec72665d7e413b0cdd11ee
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: 31898c86adc687b63a1b7f02eee98aae9b16c5f7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-cspparametersparentwindowhandle-expects-an-hwnd"></a>Atténuation : CspParameters.ParentWindowHandle attend un HWND
@@ -46,7 +48,7 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 Les développeurs qui avaient identifié que la valeur correcte était l’adresse de l’emplacement de mémoire qui détenait la valeur `form.Handle` peuvent désactiver ce changement de comportement en définissant le <xref:System.Security.AppContext> `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` sur `true` :
 
-- En définissant des commutateurs de compatibilité par programme dans l’instance [AppContext](assetID:///T:System.Security.AppContext).
+- En définissant par programmation des commutateurs de compatibilité sur l’instance <xref:System.Security.AppContext>.
 
 - En ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :
    
