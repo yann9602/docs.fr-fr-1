@@ -10,17 +10,18 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 41e8976e7b133380687a65265fd5ebe9a810a4ff
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: 360e93af03e00547116d1af1816c2b9b29524881
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 
 # <a name="console-application"></a>Application console
 
 ## <a name="introduction"></a>Introduction
-Ce didacticiel vous présente un certain nombre de fonctionnalités dans .NET Core et le langage C#. Vous apprendrez à :
+Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
 *    Principes de base de l’interface de ligne de commande (CLI) de .NET Core
 *    La structure d’une application de console C#
 *    E/S console
@@ -33,7 +34,7 @@ Il existe un grand nombre de fonctionnalités dans ce didacticiel. Nous allons l
 ## <a name="prerequisites"></a>Conditions préalables
 Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page de [.NET Core](https://www.microsoft.com/net/core). Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. 
 ## <a name="create-the-application"></a>Création de l’application
-La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Cela crée les fichiers de démarrage pour une application « Hello World » de base.
+La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Elle crée les fichiers de démarrage d’une application « Hello World » de base.
 
 Avant d’apporter des modifications, examinons les étapes nécessaires pour exécuter l’application simple Hello World. Après avoir créé l’application, saisissez `dotnet restore` à l’invite de commandes. Cette commande exécute le processus de restauration de package NuGet. NuGet est un gestionnaire de packages .NET. Cette commande télécharge les dépendances manquantes pour votre projet. Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place, donc la première exécution téléchargera le framework .NET Core. Après cette étape initiale, vous devrez exécuter `dotnet restore` lorsque vous ajoutez de nouveaux packages dépendants ou mettez à jour les versions de vos dépendances. Ce processus crée également le fichier de verrouillage du projet (project.lock.json) dans votre répertoire de projet. Ce fichier permet de gérer les dépendances du projet. Il contient l’emplacement local de toutes les dépendances du projet. Vous n’avez pas besoin de placer le fichier dans le contrôle de code source, car Il est généré lorsque vous exécutez `dotnet restore`. 
 
@@ -53,7 +54,7 @@ namespace TeleprompterConsole
 ```
 
 ## <a name="reading-and-echoing-the-file"></a>Lecture et affichage du fichier
-La première fonction à ajouter consiste à lire un fichier texte et à afficher tout le texte dans la console. Tout d’abord, nous allons ajouter un fichier texte. Copiez le fichier [sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) à partir du référentiel GitHub pour cet [exemple](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) dans votre répertoire de projet. Il servira de script pour votre application.
+La première fonctionnalité à ajouter est la capacité à lire un fichier texte et à afficher tout le texte dans la console. Tout d’abord, nous allons ajouter un fichier texte. Copiez le fichier [sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) à partir du dépôt GitHub pour cet [exemple](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) dans votre répertoire de projet. Il servira de script pour votre application. Si vous voulez des informations sur la façon de télécharger l’exemple d’application de cette rubrique, consultez les instructions de la rubrique [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 Ensuite, ajoutez la méthode suivante dans votre classe Program (juste en dessous de la méthode `Main`) :
 
@@ -256,7 +257,7 @@ private static async Task RunTeleprompter()
 }
 ```
 
-La nouvelle méthode ici est l’appel @System.Threading.Tasks.Task.WhenAny (System.Threading.Tasks.Task[]). Elle crée une `Task` qui se termine dès que les tâches de sa liste d’arguments se terminent.
+La nouvelle méthode ici est l’appel @System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[]). Elle crée une `Task` qui se termine dès que les tâches de sa liste d’arguments se terminent.
 
 Ensuite, vous devez mettre à jour les méthodes `ShowTeleprompter` et `GetInput` pour utiliser l’objet `config` pour le délai :
 
