@@ -10,16 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f2c81b7e18f36bde5b46c0c6df5c8122cd303931
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6b30f41e3fb07a962542a09a41c698efee7ebb5a
+ms.openlocfilehash: 0ea7299d87dc69784e3bed93e48d83e4a0076a20
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/26/2017
 
 ---
 
 # <a name="c-tuple-types"></a>Types tuple C# #
 
-Les tuples C# sont des types que vous définissez à l’aide d’une syntaxe simplifiée. Les avantages incluent une syntaxe simplifiée, des règles de conversion basées sur le nombre (appelé « arité ») et les types de champs, et des règles cohérentes pour les copies et les affectations. En échange, les tuples ne prennent pas en charge certains idiomes orientés objet associés à l’héritage. Vous pouvez bénéficier d’une présentation des tuples dans la section correspondante de la rubrique [Nouveautés de C# 7](csharp-7.md#tuples).
+Les tuples C# sont des types que vous définissez à l’aide d’une syntaxe simplifiée. Les avantages incluent une syntaxe simplifiée, des règles de conversion basées sur le nombre (appelé « arité ») et les types de champs, et des règles cohérentes pour les copies et les affectations. En échange, les tuples ne prennent pas en charge certains idiomes orientés objet associés à l’héritage. Vous pouvez bénéficier d’une présentation des tuples dans la section correspondante de la rubrique [Nouveautés de C# 7](whats-new/csharp-7.md#tuples).
 
 Dans cette rubrique, vous allez apprendre les règles de langage régissant les tuples dans C# 7, voir différentes façons de les utiliser et bénéficier de conseils de base sur l’utilisation des tuples.
 
@@ -65,7 +66,7 @@ Il est important de comprendre les notions de base sous-jacentes des nouveaux tu
 
 ## <a name="assignment-and-tuples"></a>Affectation et tuples
 
-Le langage prend en charge l’affectation entre les types tuple qui ont le même nombre de champs et les mêmes types pour chacun de ces champs. Ces types doivent être des correspondances exactes au moment de la compilation. Les autres conversions ne sont pas prises en compte pour les affectations. Examinons les types d’affectation qui sont autorisés entre les types tuple.
+Le langage prend en charge l’assignation entre types tuple qui ont le même nombre de champs et les conversions implicites pour les types de chacun de ces champs. Les autres conversions ne sont pas prises en compte pour les affectations. Examinons les types d’affectation qui sont autorisés entre les types tuple.
 
 Prenez en compte les variables utilisées dans les exemples suivants :
 
@@ -181,7 +182,7 @@ Il est également possible d’utiliser le mot clé `var` avec une ou toutes les
 ```
 Notez que vous ne pouvez pas utiliser un type spécifique en dehors des parenthèses, même si tous les champs du tuple ont le même type.
 
-### <a name="deconstring-user-defined-types"></a>Déconstruction des types définis par l’utilisateur
+### <a name="deconstructing-user-defined-types"></a>Déconstruction des types définis par l’utilisateur
 
 N’importe quel type tuple peut être déconstruit comme indiqué ci-dessus. Il est également facile d’activer la déconstruction sur n’importe quel type défini par l’utilisateur (classes, structs ou même interfaces).
 

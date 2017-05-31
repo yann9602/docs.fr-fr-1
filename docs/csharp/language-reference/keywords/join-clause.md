@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c80cce6cbb29946dfc2d0407781cd4ba698a2ea2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 26027418b70d211dcadf6ace58b24927d94e427a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="join-clause-c-reference"></a>join, clause (référence C#)
@@ -88,7 +89,7 @@ La clause `join` est utile pour associer des éléments de différentes séquenc
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>Jointures sur des collections d’objets et sur des tables relationnelles  
  Dans une expression de requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)], les opérations de jointure sont effectuées sur des collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)], les clauses `join` explicites sont nécessaires seulement quand deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.  
   
- Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)], consultez [Procédure : mapper des relations de base de données](http://msdn.microsoft.com/library/538def39-8399-46fb-b02d-60ede4e050af).  
+ Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)], consultez [Procédure : mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
   
 ## <a name="composite-keys"></a>Clés composites  
  Vous pouvez tester l’égalité de plusieurs valeurs en utilisant une clé composite. Pour plus d’informations, consultez [Guide pratique pour effectuer des opérations de jointure à l’aide de clés composites](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md). Vous pouvez aussi utiliser des clés composites dans une clause `group`.  
@@ -99,7 +100,7 @@ La clause `join` est utile pour associer des éléments de différentes séquenc
  [!code-cs[cscsrefQueryKeywords#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_5.cs)]  
   
 ## <a name="remarks"></a>Remarques  
- Une clause `join` qui n’est pas suivie de `into` est traduite en appel de méthode <xref:System.Linq.Enumerable.Join%2A>. Une clause `join` qui n’est pas suivie de `into` est traduite en appel de méthode <xref:System.Linq.Enumerable.Join%2A>.  
+ Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.Join%2A>. Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.GroupJoin%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Mots clés de requête (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   

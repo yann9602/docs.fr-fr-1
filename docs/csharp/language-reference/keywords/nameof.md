@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ce73de9177d6138b9acb00f3c7d3ace8e7a064f2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: dc1c456c71efb3cc6e60a8fdc77384e65975f110
+ms.openlocfilehash: da3fef282ac71de07057131069bf58d4f761ad2d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="nameof-c-and-visual-basic-reference"></a>nameof (référence C# et Visual Basic)
@@ -44,8 +45,7 @@ Pour le signalement des erreurs dans le code, le raccordement aux liens MVC (mod
   
 ```csharp  
 if (x == null) throw new ArgumentNullException(nameof(x));  
-WriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode”  
-  
+WriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode"  
 ```  
   
 ## <a name="key-use-cases"></a>Principaux cas d'usage  
@@ -56,7 +56,6 @@ WriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode”
 void f(string s) {  
     if (s == null) throw new ArgumentNullException(nameof(s));  
 }  
-  
 ```  
   
  Liens d'action MVC :  
@@ -65,7 +64,6 @@ void f(string s) {
              @typeof(UserController),  
              @nameof(UserController.SignUp))  
 %>  
-  
 ```  
   
  INotifyPropertyChanged :  
@@ -74,13 +72,11 @@ int p {
     get { return this.p; }  
     set { this.p = value; PropertyChanged(this, new PropertyChangedEventArgs(nameof(this.p)); } // nameof(p) works too  
 }  
-  
 ```  
   
  Propriété de dépendance XAML :  
  ```csharp  
 public static DependencyProperty AgeProperty = DependencyProperty.Register(nameof(Age), typeof(int), typeof(C));  
-  
 ```  
   
  Journalisation :  
@@ -88,7 +84,6 @@ public static DependencyProperty AgeProperty = DependencyProperty.Register(nameo
 void f(int i) {  
     Log(nameof(f), "method entry");  
 }  
-  
 ```  
   
  Attributs :  
@@ -121,11 +116,10 @@ nameof(c.Method2) -> "Method2"
 nameof(z) -> "z" // inside of Method2 ok, inside Method1 is a compiler error  
 nameof(Stuff) = "Stuff"  
 nameof(T) -> "T" // works inside of method but not in attributes on the method  
-nameof(f) -> “f”  
+nameof(f) -> "f"  
 nameof(f<T>) -> syntax error  
 nameof(f<>) -> syntax error  
-nameof(Method2()) -> error “This expression does not have a name”  
-  
+nameof(Method2()) -> error "This expression does not have a name"  
 ```  
   
  Une grande partie des exemples ci-dessus s'appliquent aussi à Visual Basic.  Voici quelques exemples propres à Visual Basic :  
@@ -139,7 +133,6 @@ Dim x = Nothing
 NameOf(x.ToString(2)) -> ' error  "This expression does not have a name"  
 Dim o = Nothing  
 NameOf(o.Equals) -> ' result "Equals".  Warning: "Access of static member of instance; instance will not be evaluated"  
-  
 ```  
   
 ## <a name="remarks"></a>Notes  
@@ -147,8 +140,22 @@ NameOf(o.Equals) -> ' result "Equals".  Warning: "Access of static member of ins
   
  L'argument doit être une expression d'un point de vue syntaxique. Il existe donc beaucoup d'éléments non autorisés qu'il n'est pas utile de répertorier ici.  En revanche, nous mentionnerons les éléments suivants qui génèrent des erreurs : les types prédéfinis (par exemple, `int` ou `void`), les types Nullable (`Point?`), les types tableau (`Customer[,]`), les types pointeur (`Buffer*`), les alias qualifiés (`A::B`), les types génériques indépendants (`Dictionary<,>`), les symboles de prétraitement (`DEBUG`) et les étiquettes (`loop:`).  
   
- Si vous avez besoin d'obtenir le nom qualifié complet, vous pouvez utiliser l'expression `typeof` avec `nameof`.  
-  
+ Si vous avez besoin d'obtenir le nom qualifié complet, vous pouvez utiliser l'expression `typeof` avec `nameof`.  Exemple :
+```csharp  
+class C {
+    void f(int i) {  
+        Log($"{typeof(C)}.{nameof(f)}", "method entry");  
+    }
+}
+``` 
+
+ Malheureusement, `typeof` n’est pas une expression constante comme `nameof`, `typeof` ne peut donc pas être utilisé en conjonction avec `nameof` dans les mêmes emplacements que `nameof`.  Par exemple, le code suivant entraîne une erreur de compilation CS0182 :
+ ```csharp  
+[DebuggerDisplay("={" + typeof(C) + nameof(GetString) + "()}")]  
+class C {  
+    string GetString() { }  
+}  
+```    
  Les exemples montrent que vous pouvez utiliser un nom de type et accéder à un nom de méthode d'instance.  Il n'est pas nécessaire d'avoir une instance du type, comme c'est le cas dans les expressions évaluées.  Utiliser le nom de type peut être très pratique dans certains cas et, comme vous référencez seulement le nom et que vous n'utilisez pas de données d'instance, vous n'avez pas besoin de combiner une variable d'instance ou une expression.  
   
  Vous pouvez référencer les membres d'une classe dans les expressions d'attribut sur la classe.  
@@ -156,7 +163,7 @@ NameOf(o.Equals) -> ' result "Equals".  Warning: "Access of static member of ins
  Il n'existe aucun moyen pour obtenir des informations de signature comme « `Method1 (str, str)` ».  Pour cela, vous pouvez utiliser une expression, `Expression e = () => A.B.Method1("s1", "s2")`, puis extraire MemberInfo de l'arborescence de l'expression qui en résulte.  
   
 ## <a name="language-specifications"></a>Spécifications du langage  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
  Pour plus d’informations, consultez [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md).  
   
@@ -166,3 +173,4 @@ NameOf(o.Equals) -> ' result "Equals".  Warning: "Access of static member of ins
  [typeof](../../../csharp/language-reference/keywords/typeof.md)   
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)   
  [Guide de programmation Visual Basic](../../../visual-basic/programming-guide/index.md)
+

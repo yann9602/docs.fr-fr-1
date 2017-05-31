@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d750209f2d970044aac2f3b8b119412a58595171
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 0184e07012ffe1a1300dc5af7e99e0d5a3517d6b
+ms.openlocfilehash: 8fc483fb52babd27f897958b17c0303710c6cce4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/02/2017
 
 ---
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 03/13/2017
 L’article précédent décrit les modèles d’événements les plus courants. .NET Core a un modèle plus souple. Dans cette version, la définition `EventHandler<TEventArgs>` n’a plus la contrainte selon laquelle `TEventArgs` doit être une classe dérivée de `System.EventArgs`.
 
 Ceci accroît la flexibilité pour vous et offre une compatibilité descendante. Commençons par la flexibilité. La classe System.EventArgs introduit une méthode : `MemberwiseClone()`, qui crée une copie superficielle de l’objet.
-Cette méthode doit utiliser la [réflexion](reflection.md) pour implémenter ses fonctionnalités pour n’importe quelle classe dérivée de `EventArgs`. Ces fonctionnalités sont plus faciles à créer dans une classe dérivée spécifique. Cela signifie concrètement que la dérivation depuis System.EventArgs est une contrainte qui limite vos conceptions, mais n’offre aucun avantage supplémentaire.
+Cette méthode doit utiliser la réflexion afin d’implémenter ses fonctionnalités pour n’importe quelle classe dérivée de `EventArgs`. Ces fonctionnalités sont plus faciles à créer dans une classe dérivée spécifique. Cela signifie concrètement que la dérivation depuis System.EventArgs est une contrainte qui limite vos conceptions, mais n’offre aucun avantage supplémentaire.
 En fait, vous pouvez changer les définitions de `FileFoundArgs` et de `SearchDirectoryArgs` de façon à ce qu’ils ne dérivent pas de `EventArgs`.
 Le programme fonctionnera exactement de la même façon.
 

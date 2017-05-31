@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0c2a9740a23ff370c1376dfa737b7e2dcd33def7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 3814213389119f1fb6692fd57b0f5636a81025bb
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="how-to-use-a-thread-pool-c"></a>Guide pratique pour utiliser un pool de threads (C#)
@@ -30,7 +31,7 @@ Le *regroupement de threads* est une forme de multithreading dans lequel les tâ
   
  L’exemple suivant utilise le pool de threads .NET Framework pour calculer le résultat de `Fibonacci` pour dix nombres compris entre 20 et 40. Chaque résultat `Fibonacci` est représenté par la classe `Fibonacci`, qui fournit une méthode nommée `ThreadPoolCallback` qui effectue le calcul. Un objet représentant chaque valeur `Fibonacci` est créé, et la méthode `ThreadPoolCallback` est passée à <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>, qui assigne un thread disponible du pool pour exécuter la méthode.  
   
- Étant donné que chaque objet `Fibonacci` se voit attribuer une valeur semi-aléatoire à calculer, et parce que chaque thread est en concurrence pour le temps processeur, vous ne pouvez pas savoir à l’avance la durée nécessaire pour calculer les dix résultats. C’est pourquoi chaque objet `Fibonacci` est passé à une instance de la classe <xref:System.Threading.ManualResetEvent> pendant la construction. Chaque objet signale à l’objet d’événement fourni quand son calcul est terminé, ce qui permet au thread principal de bloquer l’exécution avec <xref:System.Threading.WaitHandle.WaitAll%2A> jusqu’à ce que les dix objets `Fibonacci` aient calculé un résultat. La méthode `Main` affiche ensuite chaque résultat `Fibonacci`.  
+ Étant donné que chaque objet `Fibonacci` se voit attribuer une valeur semi-aléatoire à calculer, et parce que chaque thread est en concurrence pour le temps processeur, vous ne pouvez pas savoir à l’avance la durée nécessaire pour calculer les dix résultats. C’est pourquoi chaque objet `Fibonacci` reçoit une instance de la classe <xref:System.Threading.ManualResetEvent> pendant la construction. Chaque objet signale l’objet d’événement fourni quand son calcul est terminé, ce qui permet au thread principal de bloquer l’exécution avec <xref:System.Threading.WaitHandle.WaitAll%2A> jusqu’à ce que les dix objets `Fibonacci` aient calculé un résultat. La méthode `Main` affiche ensuite chaque résultat `Fibonacci`.  
   
 ## <a name="example"></a>Exemple  
   
@@ -159,4 +160,4 @@ Fibonacci(27) = 196418
  [Regroupement de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)   
  [Threading (C++)](../../../../csharp/programming-guide/concepts/threading/index.md)   
  @System.Threading.Monitor   
- [Sécurité](http://msdn.microsoft.com/library/9a9621d7-8883-4a4f-a874-65e8e09e20a6)
+ [Sécurité](../../../../standard/security/index.md)

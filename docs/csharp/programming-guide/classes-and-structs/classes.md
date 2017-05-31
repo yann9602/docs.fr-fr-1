@@ -1,5 +1,5 @@
 ---
-title: Classes (guide de programmation C#) | Microsoft Docs
+title: Classes (Guide de programmation C#) | Microsoft Docs
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,13 +29,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1a7d66be3ce0a4a24fd95d5b77787dcad5598f4d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 1f327e7171df8b91d4c5a787c879069a4e44f562
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
-# <a name="classes-c-programming-guide"></a>Classes (guide de programmation C#)
+# <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 Une *classe* est une construction qui vous permet de créer vos propres types personnalisés en regroupant des variables d’autres types, méthodes et événements. Une classe s’apparente à un plan. Elle définit les données et le comportement d’un type. Si la classe n’est pas déclarée comme static, le code client peut l’utiliser en créant des *objets* ou des *instances* assignés à une variable. La variable reste en mémoire jusqu’à ce que toutes les références à celle-ci soient hors de portée. À ce stade, le CLR la marque comme admissible pour le garbage collection. Si la classe est déclarée comme [static](../../../csharp/language-reference/keywords/static.md), il existe une seule copie en mémoire et le code client peut y accéder uniquement par le biais de la classe elle-même, et non par le biais d’une *variable d’instance*. Pour plus d’informations, consultez [Classes static et membres de classe static](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
  Contrairement aux structs, les classes prennent en charge l’*héritage*, caractéristique fondamentale de la programmation orientée objet. Pour plus d’informations, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
@@ -84,14 +85,14 @@ Une *classe* est une construction qui vous permet de créer vos propres types pe
  [!code-cs[csProgGuideObjects#84](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/classes_6.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Programmation orientée objet](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)   
+ [Programmation orientée objet](../concepts/object-oriented-programming.md)   
  [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)   
  [Membres](../../../csharp/programming-guide/classes-and-structs/members.md)   
  [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   
  [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
+ [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
  [Objets](../../../csharp/programming-guide/classes-and-structs/objects.md)

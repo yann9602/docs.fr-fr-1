@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8fb5101eabd95dd6574caf344a428afcd4bf648c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 6ce347ec50378590946c756b3adbf64fe855874d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="collections-c"></a>Collections (C#)
@@ -31,7 +32,7 @@ Pour de nombreuses applications, vous voulez créer et gérer des groupes d’ob
   
  Une collection est une classe, vous devez déclarer une instance de la classe avant de pouvoir ajouter des éléments à la collection.  
   
- Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
+ Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Une collection générique applique la sécurité du type afin qu’aucun autre type de données ne puisse être ajouté à celle-ci. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
   
 > [!NOTE]
 >  Pour les exemples de cette rubrique, ajoutez des instructions [using](../../../csharp/language-reference/keywords/using-directive.md) pour les espaces de noms `System.Collections.Generic` et `System.Linq`.  
@@ -60,7 +61,7 @@ Pour de nombreuses applications, vous voulez créer et gérer des groupes d’ob
   
 <a name="BKMK_SimpleCollection"></a>
 ## <a name="using-a-simple-collection"></a>Utilisation d’une collection simple  
- Les exemples de cette section utilisent la classe <xref:System.Collections.Generic.List%601> générique, qui vous permet d’utiliser une liste fortement typée d’objets.  
+ Les exemples de cette section utilisent la classe <xref:System.Collections.Generic.List%601> générique, qui vous permet d’utiliser une liste d’objets fortement typée.  
   
  L’exemple suivant crée une liste de chaînes, puis itère au sein des chaînes à l’aide d’une instruction [foreach](../../../csharp/language-reference/keywords/foreach-in.md).  
   
@@ -156,7 +157,7 @@ numbers.ForEach(
 // Output: 0 2 4 6 8  
 ```  
   
- Pour le type d’éléments de <xref:System.Collections.Generic.List%601>, vous pouvez également définir votre propre classe. Dans l’exemple suivant, la classe `Galaxy` utilisée par <xref:System.Collections.Generic.List%601> est définie dans le code.  
+ Pour le type d’éléments de <xref:System.Collections.Generic.List%601>, vous pouvez également définir votre propre classe. Dans l’exemple suivant, la classe `Galaxy` qui est utilisée par <xref:System.Collections.Generic.List%601> est définie dans le code.  
   
 ```csharp  
 private static void IterateThroughList()  
@@ -202,33 +203,33 @@ public class Galaxy
   
 <a name="BKMK_Generic"></a>
 ### <a name="systemcollectionsgeneric-classes"></a>Classes System.Collections.Generic  
- Vous pouvez créer une collection générique en utilisant l’une des classes de l’espace de noms <xref:System.Collections.Generic>. Une collection générique est utile quand chaque élément de la collection a le même type de données. Une collection générique applique un typage fort en autorisant uniquement l’ajout des types de données souhaités.  
+ Vous pouvez créer une collection générique en utilisant l’une des classes dans l’espace de noms <xref:System.Collections.Generic>. Une collection générique est utile quand chaque élément de la collection a le même type de données. Une collection générique applique un typage fort en autorisant uniquement l’ajout des types de données souhaités.  
   
- Le tableau suivant répertorie certaines des classes fréquemment utilisées de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> :  
+ Le tableau suivant liste quelques classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> fréquemment utilisées :  
 
 |Classe|Description| 
 |---|---|  
 |<xref:System.Collections.Generic.Dictionary%602>|Représente une collection de paires clé/valeur organisées en fonction de la clé.|  
 |<xref:System.Collections.Generic.List%601>|Représente une liste d’objets accessibles par index. Fournit des méthodes de recherche, de tri et de modification de listes.|  
 |<xref:System.Collections.Generic.Queue%601>|Représente une collection d’objets premier entré, premier sorti (FIFO).|  
-|<xref:System.Collections.Generic.SortedList%602>|Représente une collection de paires clé-valeur triées par clé en fonction de l’implémentation <xref:System.Collections.Generic.IComparer%601> associée.|  
+|<xref:System.Collections.Generic.SortedList%602>|Représente une collection de paires clé/valeur triées par clé en fonction de l'implémentation <xref:System.Collections.Generic.IComparer%601> associée.|  
 |<xref:System.Collections.Generic.Stack%601>|Représente une collection d’objets dernier entré, premier sorti (LIFO).|  
   
  Pour plus d’informations, consultez [Types de collections couramment utilisés](../../../standard/collections/commonly-used-collection-types.md), [Sélection d’une classe de collection](../../../standard/collections/selecting-a-collection-class.md) et @System.Collections.Generic.  
   
 <a name="BKMK_Concurrent"></a>
 ### <a name="systemcollectionsconcurrent-classes"></a>Classes System.Collections.Concurrent  
- Dans .NET Framework 4, les collections figurant dans l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads.  
+ Dans .NET Framework 4 ou ultérieur, les collections de l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection à partir de plusieurs threads.  
   
- L’espace de noms <xref:System.Collections.Concurrent> fournit des classes qui doivent être utilisées à la place des types correspondants dans les espaces de noms <xref:System.Collections.Generic?displayProperty=fullName> et <xref:System.Collections?displayProperty=fullName> chaque fois que plusieurs threads accèdent simultanément à la collection. Pour plus d’informations, consultez [Collections thread-Safe](../../../standard/collections/threadsafe/index.md) et <xref:System.Collections.Concurrent>.  
+ Les classes de l’espace de noms <xref:System.Collections.Concurrent> doivent être utilisées à la place des types correspondants dans les espaces de noms <xref:System.Collections.Generic?displayProperty=fullName> et <xref:System.Collections?displayProperty=fullName> chaque fois que plusieurs threads accèdent simultanément à la collection. Pour plus d’informations, consultez [Collections thread-safe](../../../standard/collections/thread-safe/index.md) et <xref:System.Collections.Concurrent>.  
   
- Parmi les classes incluses dans l’espace de noms <xref:System.Collections.Concurrent> figurent les classes <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601> et <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
+ Certaines classes incluses dans l’espace de noms <xref:System.Collections.Concurrent> sont <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601> et <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
   
 <a name="BKMK_Collections"></a>
 ### <a name="systemcollections-classes"></a>Classes System.Collections  
  Les classes de l’espace de noms <xref:System.Collections?displayProperty=fullName> ne stockent pas les éléments comme des objets spécifiquement typés, mais comme des objets de type `Object`.  
   
- Chaque fois que possible, vous devez utiliser les collections génériques de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> ou <xref:System.Collections.Concurrent> plutôt que les types hérités de l’espace de noms `System.Collections`.  
+ Si possible, vous devez utiliser les collections génériques dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> ou <xref:System.Collections.Concurrent> à la place des types hérités de l’espace de noms `System.Collections`.  
   
  Le tableau suivant répertorie certaines des classes fréquemment utilisées de l’espace de noms `System.Collections` :  
   
@@ -239,7 +240,7 @@ public class Galaxy
 |<xref:System.Collections.Queue>|Représente une collection d’objets premier entré, premier sorti (FIFO).|  
 |<xref:System.Collections.Stack>|Représente une collection d’objets dernier entré, premier sorti (LIFO).|  
   
- L’espace de noms <xref:System.Collections.Specialized> fournit des classes de collection spécialisées et fortement typées, telles que les collections à chaîne unique et les dictionnaires hybrides et de liste liée.  
+ L’espace de noms <xref:System.Collections.Specialized> fournit des classes de collection spécialisées et fortement typées, telles que les collections à chaîne unique et les dictionnaires de liste liée et hybrides.  
 
 <a name="BKMK_KeyValuePairs"></a>
 ## <a name="implementing-a-collection-of-keyvalue-pairs"></a>Implémentation d’une collection de paires clé/valeur  
@@ -396,11 +397,11 @@ public class Element
 
 <a name="BKMK_Sorting"></a>
 ## <a name="sorting-a-collection"></a>Tri d’une collection  
- L’exemple suivant illustre une procédure de tri d’une collection. Il trie les instances de la classe `Car` stockées dans un <xref:System.Collections.Generic.List%601>. La classe `Car` implémente l’interface <xref:System.IComparable%601>, qui exige que la méthode <xref:System.IComparable%601.CompareTo%2A> soit implémentée.  
+ L’exemple suivant illustre une procédure de tri d’une collection. L’exemple trie les instances de la classe `Car` stockées dans un <xref:System.Collections.Generic.List%601>. La classe `Car` implémente l’interface <xref:System.IComparable%601>, ce qui implique l’implémentation de la méthode <xref:System.IComparable%601.CompareTo%2A>.  
   
  Chaque appel à la méthode <xref:System.IComparable%601.CompareTo%2A> effectue une comparaison unique qui est utilisée pour le tri. Le code écrit par l’utilisateur dans la méthode `CompareTo` retourne une valeur pour chaque comparaison de l’objet actuel avec un autre objet. La valeur retournée est inférieure à zéro si l’objet actuel est inférieur à l’autre objet, supérieure à zéro l’objet actuel est supérieur à l’autre et égale à zéro s’ils sont égaux. Cela vous permet de définir dans le code les critères définissant « supérieur à », « inférieur à » et « égal à ».  
   
- Dans la méthode `ListCars`, l’instruction `cars.Sort()` trie la liste. Cet appel à la méthode <xref:System.Collections.Generic.List%601.Sort%2A> de <xref:System.Collections.Generic.List%601> entraîne l’appel automatique de la méthode `CompareTo` pour les objets de type `Car` dans `List`.  
+ Dans la méthode `ListCars`, l’instruction `cars.Sort()` trie la liste. Cet appel à la méthode <xref:System.Collections.Generic.List%601.Sort%2A> de <xref:System.Collections.Generic.List%601> entraîne l’appel automatique de la méthode `CompareTo` pour les objets `Car` dans `List`.  
   
 ```csharp  
 private static void ListCars()  
@@ -478,9 +479,9 @@ public class Car : IComparable<Car>
   
  Même si vous pouvez définir une collection personnalisée, il est généralement préférable d’utiliser les collections comprises dans le .NET Framework, lesquelles sont décrites dans [Types de collections](#BKMK_KindsOfCollections), plus haut dans cette rubrique.  
   
- L’exemple suivant définit une classe de collection personnalisée nommée `AllColors`. Cette classe implémente l’interface <xref:System.Collections.IEnumerable>, qui exige que la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> soit implémentée.  
+ L’exemple suivant définit une classe de collection personnalisée nommée `AllColors`. Cette classe implémente l’interface <xref:System.Collections.IEnumerable>, ce qui implique l’implémentation de la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A>.  
   
- La méthode `GetEnumerator` retourne une instance de la classe `ColorEnumerator`. `ColorEnumerator` implémente l’interface <xref:System.Collections.IEnumerator>, ce qui exige que la propriété <xref:System.Collections.IEnumerator.Current%2A>, la méthode <xref:System.Collections.IEnumerator.MoveNext%2A> et la méthode <xref:System.Collections.IEnumerator.Reset%2A> soient implémentées.  
+ La méthode `GetEnumerator` retourne une instance de la classe `ColorEnumerator`. `ColorEnumerator` implémente l’interface <xref:System.Collections.IEnumerator>, ce qui implique l’implémentation de la propriété <xref:System.Collections.IEnumerator.Current%2A>, la méthode <xref:System.Collections.IEnumerator.MoveNext%2A> et la méthode <xref:System.Collections.IEnumerator.Reset%2A>.  
   
 ```csharp  
 private static void ListColors()  
@@ -593,7 +594,7 @@ private static IEnumerable<int> EvenSequence(
  [Concepts de programmation (C#)](../../../csharp/programming-guide/concepts/index.md)   
  [Option Strict, instruction](../../../visual-basic/language-reference/statements/option-strict-statement.md)   
  [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)   
- [Parallel LINQ (PLINQ)](http://msdn.microsoft.com/library/3d4d0cd3-bde4-490b-99e7-f4e41be96455)   
+ [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)   
  [Collections et structures de données](../../../standard/collections/index.md)   
  [Création et manipulation de collections](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)   
  [Sélection d’une classe de collection](../../../standard/collections/selecting-a-collection-class.md)   

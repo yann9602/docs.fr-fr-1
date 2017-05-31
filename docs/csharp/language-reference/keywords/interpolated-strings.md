@@ -26,17 +26,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a3e2641e5c7cd3ce98ca869889848e8cdf4eed62
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: ee9d0f9803c6de056644587578792568ab25b4da
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/14/2017
 
 ---
 # <a name="interpolated-strings-c-reference"></a>Chaînes interpolées (référence C#)
 
 Permettent de construire des chaînes.  Une chaîne interpolée ressemble à une chaîne de modèle contenant des *expressions interpolées*.  Une chaîne interpolée retourne une chaîne qui remplace les expressions interpolées qu’elle contient par leur représentation sous forme de chaîne.  
 
-Les arguments d’une chaîne interpolée sont plus faciles à comprendre qu’une [chaîne de format composite](../../../standard/base-types/composite-format.md#composite-format-string).  Par exemple, la chaîne interpolée  
+Les arguments d’une chaîne interpolée sont plus faciles à comprendre qu’une [chaîne de format composite](../../../standard/base-types/composite-formatting.md#composite-format-string).  Par exemple, la chaîne interpolée  
   
 ```csharp  
 Console.WriteLine($"Name = {name}, hours = {hours:hh}"); 
@@ -75,17 +76,17 @@ Trois conversions de type implicite sont possibles à partir d’une chaîne int
 
    [!code-cs[interpolated-strings1](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings1.cs#1)]  
 
-   Il s’agit du résultat final d’une interprétation de chaîne. Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont converties en une seule accolade. 
+   Il s’agit du résultat final d’une interprétation de chaîne. Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont converties en une seule accolade. 
 
-2. La conversion d’une chaîne interpolée en une variable <xref:System.IFormattable> permettant de créer plusieurs chaînes de résultats avec un contenu spécifique à la culture, à partir d’une instance <xref:System.IFormattable>. Ce type de conversion est utile pour inclure des éléments, tels que les formats numériques et les formats de date adaptés à une culture.  Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont conservées tant que vous ne mettez pas en forme la chaîne en appelant explicitement ou implicitement la méthode @System.Object.ToString.  Toutes les expressions d’interpolation contenues sont converties en {0}, {1}, etc.  
+2. La conversion d’une chaîne interpolée en variable <xref:System.IFormattable> qui permet de créer plusieurs chaînes de résultats avec un contenu spécifique de la culture, à partir d’une seule instance <xref:System.IFormattable>. Ce type de conversion est utile pour inclure des éléments, tels que les formats numériques et les formats de date adaptés à une culture.  Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont conservées tant que vous ne mettez pas en forme la chaîne en appelant explicitement ou implicitement la méthode @System.Object.ToString.  Toutes les expressions d’interpolation contenues sont converties en {0}, {1}, etc.  
 
-   L’exemple suivant utilise la réflexion pour afficher les membres, ainsi que les valeurs de champ et de propriété d’une variable <xref:System.IFormattable> créée à partir d’une chaîne interpolée. Il passe également la variable <xref:System.IFormattable> à la méthode @System.Console(System.String).
+   L’exemple suivant utilise la réflexion pour afficher les membres ainsi que les valeurs de champ et de propriété d’une variable <xref:System.IFormattable> créée à partir d’une chaîne interpolée. Il passe également la variable <xref:System.IFormattable> à la méthode @System.Console(System.String).
 
    [!code-cs[interpolated-strings2](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings2.cs#1)]  
 
    Notez que la chaîne interpolée ne peut être inspectée qu’à l’aide de la réflexion. Si elle est passée à une méthode de mise en forme de chaîne, telle que @System.Console.WriteLine(System.String), ses éléments de mise en forme sont résolus et la chaîne de résultat est retournée. 
 
-3. La conversion d’une chaîne interpolée en une variable <xref:System.FormattableString> qui représente une chaîne de format composite. L’inspection de la chaîne de format composite et de son rendu sous forme de chaîne de résultat, peut, par exemple, vous aider à réduire les risques d’attaque par injection pendant la création d’une requête.  <xref:System.FormattableString> inclut également les surcharges <xref:System.FormattableString.ToString> qui permettent de générer des chaînes de résultat pour @System.Globalization.InvariantCulture et @System.Globalization.CurrentCulture.  Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont conservées, sauf si vous appliquez une mise en forme.  Toutes les expressions d’interpolation contenues sont converties en {0}, {1}, etc.  
+3. La conversion d’une chaîne interpolée en variable <xref:System.FormattableString> qui représente une chaîne de format composite. L’inspection de la chaîne de format composite et de son rendu sous forme de chaîne de résultat, peut, par exemple, vous aider à réduire les risques d’attaque par injection pendant la création d’une requête.  <xref:System.FormattableString> inclut également les surcharges <xref:System.FormattableString.ToString> qui vous permettent de générer des chaînes de résultat pour @System.Globalization.InvariantCulture et @System.Globalization.CurrentCulture.  Toutes les occurrences d’accolades doubles (« {{ » et « }} ») sont conservées, sauf si vous appliquez une mise en forme.  Toutes les expressions d’interpolation contenues sont converties en {0}, {1}, etc.  
 
    [!code-cs[interpolated-strings3](../../../../samples/snippets/csharp/language-reference/keywords/interpolated-strings3.cs#1)]  
 
@@ -95,6 +96,6 @@ Trois conversions de type implicite sont possibles à partir d’une chaîne int
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IFormattable?displayProperty=fullName>   
  <xref:System.FormattableString?displayProperty=fullName>   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Référence du langage C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 

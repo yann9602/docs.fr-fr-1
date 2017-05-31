@@ -28,14 +28,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 59bb61d8dd530e87f342d38acb131fab5e25febf
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 1aaa231a807ec50b8bcb922bf0dd218ec72d24ff
+ms.openlocfilehash: 21180ce100f81e38b327347e548929a47a2e029d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/25/2017
 
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
-Les variables locales peuvent avoir un « type » déduit de `var` au lieu d’un type explicit. Le mot clé `var` indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation. Le type déduit peut être un type intégré, un type anonyme, un type défini par l’utilisateur ou un type défini dans la bibliothèque de classes .NET Framework. Pour plus d’informations sur l’initialisation des tableaux avec `var`, consultez [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
+Les variables locales peuvent être déclarées sans donner de type explicite. Le mot clé `var` indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation. Le type déduit peut être un type intégré, un type anonyme, un type défini par l’utilisateur ou un type défini dans la bibliothèque de classes .NET Framework. Pour plus d’informations sur l’initialisation des tableaux avec `var`, consultez [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
   
  Les exemples suivants montrent différentes manières de déclarer des variables locales avec `var` :  
   
@@ -107,3 +108,4 @@ Les variables locales peuvent avoir un « type » déduit de `var` au lieu d�
  [for](../../../csharp/language-reference/keywords/for.md)   
  [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)   
  [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)
+

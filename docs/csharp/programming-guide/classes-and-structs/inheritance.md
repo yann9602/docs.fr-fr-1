@@ -32,10 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4590130fed9606f0f0592895de548c4bd7865db7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 4ad15bc57b3ec3b6b06f671f560dce426af64ccc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="inheritance-c-programming-guide"></a>Héritage (Guide de programmation C#)
@@ -47,7 +48,7 @@ L’héritage, avec l’encapsulation et le polymorphisme, est l’une des trois
   
  D’un point de vue conceptuel, une classe dérivée est une spécialisation de la classe de base. Par exemple, si vous avez une classe de base `Animal`, vous pouvez avoir une classe dérivée nommée `Mammal` et une autre classe dérivée nommée `Reptile`. Un `Mammal` est un `Animal`, et un `Reptile` est un `Animal`, mais chaque classe dérivée représente des spécialisations différentes de la classe de base.  
   
- Lorsque vous définissez une classe à dériver d’une autre classe, la classe dérivée obtient implicitement tous les membres de la classe de base, à l’exception de ses constructeurs et de ses destructeurs. La classe dérivée peut ainsi réutiliser le code de la classe de base sans avoir à le réimplémenter. Vous pouvez ajouter d’autres membres à la classe dérivée. De cette manière, la classe dérivée étend les fonctionnalités de la classe de base.  
+ Quand vous définissez une classe à dériver d’une autre classe, la classe dérivée obtient implicitement tous les membres de la classe de base, à l’exception de ses constructeurs et de ses finaliseurs. La classe dérivée peut ainsi réutiliser le code de la classe de base sans avoir à le réimplémenter. Vous pouvez ajouter d’autres membres à la classe dérivée. De cette manière, la classe dérivée étend les fonctionnalités de la classe de base.  
   
  L’illustration suivante montre une classe `WorkItem` qui représente un élément de travail dans un processus métier. Comme toutes les classes, elle dérive de <xref:System.Object?displayProperty=fullName> et hérite de toutes ses méthodes. `WorkItem` ajoute cinq de ses propres membres. Cela inclut un constructeur, parce que les constructeurs ne sont pas hérités. La classe `ChangeRequest` hérite de `WorkItem` et représente un type particulier d’élément de travail. `ChangeRequest` ajoute deux membres supplémentaires aux membres qu’elle hérite de `WorkItem` et de <xref:System.Object>. Elle doit ajouter son propre constructeur et ajoute également `originalItemID`. La propriété `originalItemID` permet à l’instance `ChangeRequest` d’être associée au `WorkItem` d’origine auquel s’applique la demande de modification.  
   

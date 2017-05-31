@@ -1,76 +1,95 @@
 ---
-title: "/linkresource (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/linkresource"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/linkresource compiler option [C#]"
-  - "linkres compiler option [C#]"
-  - "/linkres compiler option [C#]"
-  - "-linkres compiler option [C#]"
-  - "-linkresource compiler option [C#]"
-  - "linkresource compiler option [C#]"
+title: "-linkresource (Options du compilateur C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /linkresource
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /linkresource compiler option [C#]
+- linkres compiler option [C#]
+- /linkres compiler option [C#]
+- -linkres compiler option [C#]
+- -linkresource compiler option [C#]
+- linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: d9a3bc4dc4b51d6170c67f9d2f95b6805497b31c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
+
 ---
-# /linkresource (C# Compiler Options)
-Crée un lien vers une ressource .NET Framework dans le fichier de sortie.  Le fichier de ressources n'est pas ajouté au fichier de sortie.  Cela diffère de l'option [\/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) qui incorpore un fichier de ressources dans un fichier de sortie.  
+# <a name="linkresource-c-compiler-options"></a>/linkresource (Options du compilateur C#)
+Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fichier de ressources n’est pas ajouté au fichier de sortie. Cette option diffère de l’option [/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) qui incorpore un fichier de ressources dans le fichier de sortie.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 /linkresource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
  `filename`  
- Fichier de ressources .NET Framework avec lequel vous voulez établir un lien à partir de l'assembly.  
+ Fichier de ressources .NET Framework que vous voulez lier à l’assembly.  
   
- `identifier` \(facultatif\)  
- Nom logique de la ressource, c'est\-à\-dire le nom utilisé pour charger cette dernière.  La valeur par défaut est le nom du fichier.  
+ `identifier`(facultatif)  
+ Nom logique de la ressource. Il s’agit du nom utilisé pour charger la ressource. La valeur par défaut est le nom du fichier.  
   
- `accessibility-modifier` \(facultatif\)  
- Accessibilité de la ressource : public ou private.  La valeur par défaut est public.  
+ `accessibility-modifier`(facultatif)  
+ Accessibilité de la ressource : publique ou privée. La valeur par défaut est « public ».  
   
-## Notes  
- Par défaut, les ressources liées sont public dans l'assembly lorsqu'elles sont créées avec le compilateur C\#.  Pour que les ressources soient private, spécifiez `private` comme modificateur d'accessibilité.  Aucun autre modificateur que `public` ou `private` n'est autorisé.  
+## <a name="remarks"></a>Remarques  
+ Par défaut, les ressources liées sont publiques dans l’assembly quand elles sont créées avec le compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucun autre modificateur que `public` ou `private` n’est autorisé.  
   
- L'option **\/linkresource** nécessite une option [\/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) différente de **\/target:module**.  
+ **/linkresource** nécessite une option [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) autre que **/target:module**.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../Topic/Resgen.exe%20\(Resource%20File%20Generator\).md) ou dans l'environnement de développement, il est accessible avec des membres dans l'espace de noms <xref:System.Resources>.  Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=fullName>.  Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource`\* dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l'exécution.  
+ Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](http://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=fullName>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource`* dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l'exécution.  
   
- Le fichier spécifié par `filename` peut avoir n'importe quel format.  Par exemple, vous pouvez décider d'intégrer une DLL native dans l'assembly. Ainsi, elle pourra être installée dans le Global Assembly Cache et sera accessible depuis le code managé de l'assembly.  La procédure ci\-après indique comment effectuer cette opération.  Vous pouvez faire la même chose dans Assembly Linker.  La procédure ci\-après indique comment effectuer cette opération.  Pour plus d'informations, consultez [Al.exe \(Assembly Linker\)](../Topic/Al.exe%20\(Assembly%20Linker\).md) et [Utilisation d'assemblys et du Global Assembly Cache](../Topic/Working%20with%20Assemblies%20and%20the%20Global%20Assembly%20Cache.md).  
+ Le fichier spécifié dans `filename` peut avoir n’importe quel format. C’est le cas, par exemple, si vous voulez qu’une DLL native fasse partie de l'assembly pour qu’elle puisse être installée dans le Global Assembly Cache et accessible à partir du code managé dans l'assembly. Le deuxième des exemples suivants montre comment effectuer cette opération. Vous pouvez effectuer la même opération dans Assembly Linker. Le troisième des exemples suivants montre comment effectuer cette opération. Pour plus d’informations, consultez [Al.exe (Assembly Linker)](https://msdn.microsoft.com/library/c405shex) et [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md).  
   
- **\/linkres** est la forme abrégée de **\/linkresource**.  
+ **/linkres** est la forme abrégée de **/linkresource**.  
   
- Cette option du compilateur n'est pas disponible dans Visual Studio et ne peut pas être modifiée par programme.  
+ Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
-## Exemple  
- Compilez `in.cs` et liez ce fichier au fichier de ressources `rf.resource` :  
+## <a name="example"></a>Exemple  
+ Compiler `in.cs` et créer un lien vers le fichier de ressources `rf.resource` :  
   
 ```  
 csc /linkresource:rf.resource in.cs  
 ```  
   
-## Exemple  
- Compilez `A.cs` dans une DLL, liez à une DLL native N.dll et placez la sortie dans le GAC \(Global Assembly Cache\).  Dans cet exemple, A.dll et N.dll résideront dans le GAC.  
+## <a name="example"></a>Exemple  
+ Compiler `A.cs` dans une DLL, créer un lien vers une DLL native N.dll et placer la sortie dans le Global Assembly Cache (GAC). Dans cet exemple, A.dll et N.dll résident dans le GAC.  
   
 ```  
 csc /linkresource:N.dll /t:library A.cs  
 gacutil -i A.dll  
 ```  
   
-## Exemple  
- Cet exemple effectue la même opération que le précédent, mais en utilisant les options Assembly Linker.  
+## <a name="example"></a>Exemple  
+ Cet exemple obtient le même résultat, mais en utilisant des options Assembly Linker.  
   
 ```  
 csc /t:module A.cs  
@@ -78,8 +97,8 @@ al /out:A.dll A.netmodule /link:N.dll
 gacutil -i A.dll  
 ```  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Al.exe \(Assembly Linker\)](../Topic/Al.exe%20\(Assembly%20Linker\).md)   
- [Utilisation d'assemblys et du Global Assembly Cache](../Topic/Working%20with%20Assemblies%20and%20the%20Global%20Assembly%20Cache.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Al.exe (Assembly Linker)](https://msdn.microsoft.com/library/c405shex)   
+ [Utilisation d’assemblys et du Global Assembly Cache](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)   
+ [NIB Procédure : modification des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)

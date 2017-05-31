@@ -30,17 +30,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 020be199391789360ae9a25858bef54d8259ae56
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: ae705e7df4515cd0c7481f64fa63b2e844a7d564
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="lock-statement-c-reference"></a>lock, instruction (Informations de référence sur C#)
 Le mot clé `lock` marque un bloc d’instructions comme étant une section critique en obtenant le verrou d’exclusion mutuelle pour un objet donné, en exécutant une instruction, puis en libérant le verrou. L’exemple suivant inclut une instruction `lock`.  
   
 ```  
-  
 class Account  
 {  
     decimal balance;  
@@ -58,7 +58,6 @@ class Account
         }  
     }  
 }  
-  
 ```  
   
  Pour plus d’informations, consultez [Synchronisation des threads](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4).  
@@ -68,7 +67,7 @@ class Account
   
  La section [Threading](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c) présente le threading.  
   
- Le mot clé `lock` appelle <xref:System.Threading.Monitor.Enter%2A> au début du bloc et <xref:System.Threading.Monitor.Exit%2A> à la fin du bloc. Une <xref:System.Threading.ThreadInterruptedException> est levée si <xref:System.Threading.Thread.Interrupt%2A> interrompt un thread qui attend d’entrer dans une instruction `lock`.  
+ Le mot clé `lock` appelle <xref:System.Threading.Monitor.Enter%2A> au début du bloc et <xref:System.Threading.Monitor.Exit%2A> à la fin du bloc. Une exception <xref:System.Threading.ThreadInterruptedException> est levée si <xref:System.Threading.Thread.Interrupt%2A> interrompt un thread qui attend de passer une instruction `lock`.  
   
  D’une façon générale, évitez de verrouiller sur un type `public` ou sur des instances qui sont au-delà du contrôle de votre code. Les constructions courantes `lock (this)`, `lock (typeof (MyType))` et `lock ("myLock")` enfreignent cette directive :  
   
@@ -98,12 +97,13 @@ class Account
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.MethodImplAttributes>   
  <xref:System.Threading.Mutex>   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Threading](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés d’instructions](../../../csharp/language-reference/keywords/statement-keywords.md)   
  @System.Threading.Monitor   
- [Interlocked Operations](http://msdn.microsoft.com/library/cbda7114-c752-4f3e-ada1-b1e8dd262f2b)   
- [AutoResetEvent](http://msdn.microsoft.com/library/6d39c48d-6b37-4a9b-8631-f2924cfd9c18)   
+ [Interlocked Operations](../../../standard/threading/interlocked-operations.md)   
+ [AutoResetEvent](../../../standard/threading/autoresetevent.md)   
  [Synchronisation des threads](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)
+

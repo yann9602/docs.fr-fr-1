@@ -1,62 +1,79 @@
 ---
-title: "How to: Find Files with a Specific Pattern in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "files, finding"
-  - "pattern matching"
-  - "patterns, matching"
+title: "Guide pratique pour rechercher des fichiers avec un modèle spécifique en Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- files, finding
+- pattern matching
+- patterns, matching
 ms.assetid: 25e3b71d-b844-4293-9e4e-f06c5836b5cc
 caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
----
-# How to: Find Files with a Specific Pattern in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: bb86918d68f40a2279a1a2729da33f9cd9e9e66e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
-La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> retourne une collection en lecture seule de chaînes représentant les noms de chemin des fichiers.  Vous pouvez utiliser le paramètre `wildCards` pour spécifier un modèle spécifique.  Si vous souhaitez inclure des sous\-répertoires dans la recherche, affectez le paramètre `searchType` à `SearchOption.SearchAllSubDirectories`.  
+---
+# <a name="how-to-find-files-with-a-specific-pattern-in-visual-basic"></a>Guide pratique pour rechercher des fichiers avec un modèle spécifique en Visual Basic
+La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> retourne une collection en lecture seule de chaînes représentant les noms de chemins des fichiers. Vous pouvez utiliser le paramètre `wildCards` pour indiquer un modèle spécifique. Si vous voulez inclure des sous-répertoires dans la recherche, affectez la valeur `SearchOption.SearchAllSubDirectories` au paramètre `searchType`.  
   
- Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n'est trouvé.  
+ Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n’est détecté.  
   
 > [!NOTE]
->  Pour plus d'informations sur retourner une liste des fichiers à l'aide de la classe d' `DirectoryInfo` de l'espace de noms d' `System.IO` , consultez l' <xref:System.IO.DirectoryInfo.GetFiles%2A>.  
+>  Pour plus d’informations sur la façon de retourner une liste de fichiers à l’aide de la classe `DirectoryInfo` de l’espace de noms `System.IO`, consultez <xref:System.IO.DirectoryInfo.GetFiles%2A>.  
   
-### Pour rechercher des fichiers avec un modèle spécifié  
+### <a name="to-find-files-with-a-specified-pattern"></a>Pour rechercher des fichiers avec un modèle spécifique  
   
--   Utilisez la méthode `GetFiles` en fournissant le nom et le chemin d'accès du répertoire que vous souhaitez rechercher et en spécifiant le modèle.  L'exemple suivant retourne tous les fichiers avec l'extension `.dll` dans le répertoire et les ajoute à `ListBox1`.  
+-   Utilisez la méthode `GetFiles`, en fournissant le nom et le chemin du répertoire à rechercher et en spécifiant le modèle. L’exemple suivant retourne tous les fichiers ayant l’extension `.dll` contenus dans le répertoire, et il les ajoute à `ListBox1`.  
   
      [!code-vb[VbFileIOMisc#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-find-files-with-a-specific-pattern_1.vb)]  
   
-## Sécurité .NET Framework  
- Les conditions ci\-dessous peuvent générer une exception.  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le chemin d'accès n'est pas valide pour l'une des raisons suivantes : il correspond à une chaîne de longueur nulle, ne contient que des espaces blancs, comporte des caractères non valides ou représente un chemin d'accès de périphérique \(commençant par \\\\.  \\\) \(<xref:System.ArgumentException>\).  
+-   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (commençant par \\\\.\\) (<xref:System.ArgumentException>).  
   
--   Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` \(<xref:System.ArgumentNullException>\).  
+-   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `directory` n'existe pas \(<xref:System.IO.DirectoryNotFoundException>\).  
+-   `directory` n’existe pas (<xref:System.IO.DirectoryNotFoundException>).  
   
--   `directory` pointe sur un fichier existant \(<xref:System.IO.IOException>\).  
+-   `directory` pointe vers un fichier existant (<xref:System.IO.IOException>).  
   
--   Le chemin d'accès dépasse la longueur maximale définie par le système \(<xref:System.IO.PathTooLongException>\).  
+-   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   Un nom de fichier ou de dossier du chemin d'accès contient un signe deux\-points \(:\) ou n'a pas un format correct \(<xref:System.NotSupportedException>\).  
+-   Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
   
--   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès \(<xref:System.Security.SecurityException>\).  
+-   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
--   L'utilisateur n'a pas les autorisations nécessaires \(<xref:System.UnauthorizedAccessException>\).  
+-   L’utilisateur ne dispose pas des autorisations nécessaires (<xref:System.UnauthorizedAccessException>).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A>   
- [How to: Find Subdirectories with a Specific Pattern](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)   
- [Troubleshooting: Reading from and Writing to Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
- [How to: Get the Collection of Files in a Directory](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+ [Guide pratique pour rechercher des sous-répertoires avec un modèle spécifique](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)   
+ [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)   
+ [Guide pratique pour placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
