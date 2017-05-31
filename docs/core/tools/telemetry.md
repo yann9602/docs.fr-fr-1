@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 480df976-7568-4df4-9d26-9911357b5a31
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: c816bf4c93430a009e61ddf2a3673c43f49b8de9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
+ms.openlocfilehash: eda9e6f30defb93737aa67563aa6e606a8a2fb91
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/14/2017
 
 ---
 
@@ -59,7 +60,7 @@ La fonctionnalité ne collecte pas les informations personnelles, telles que les
 
 ## <a name="license"></a>Licence
 
-La distribution Microsoft de .NET Core est concédée sous licence avec le [CLUF de la BIBLIOTHÈQUE .NET MICROSOFT](https://aka.ms/dotnet-core-eula). Celui-ci comprend la section « DONNÉES » ci-dessous, qui permet d’activer la télémétrie.
+La distribution Microsoft de .NET Core est concédée sous licence avec le [CLUF de la BIBLIOTHÈQUE .NET MICROSOFT](https://aka.ms/dotnet-core-eula). Celui-ci comprend la section « DATA » ci-dessous, qui permet d’activer la télémétrie.
 
 Les [packages NuGet .NET](https://www.nuget.org/profiles/dotnetframework) utilisent la même licence, mais ne permettent pas la télémétrie (voir la section [Portée](#scope) ci-dessus).
 
