@@ -51,7 +51,7 @@ L’option **/filealign** permet de spécifier la taille des sections de votre f
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /filealign:number  
 ```  
   

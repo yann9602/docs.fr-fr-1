@@ -43,7 +43,7 @@ L’option **/lib** spécifie l’emplacement des assemblys référencés au moy
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /lib:dir1[,dir2]  
 ```  
   
@@ -86,7 +86,7 @@ L’option **/lib** spécifie l’emplacement des assemblys référencés au moy
 ## <a name="example"></a>Exemple  
  Compilez t2.cs pour créer un fichier .exe. Le compilateur recherche les références d’assembly dans le répertoire de travail et dans le répertoire racine du lecteur C.  
   
-```  
+```console  
 csc /lib:c:\ /reference:t2.dll t2.cs  
 ```  
   

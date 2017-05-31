@@ -48,7 +48,7 @@ L’option **/reference** indique au compilateur d’importer des informations d
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /reference:[alias=]filename  
 /reference:filename  
 ```  
@@ -95,7 +95,7 @@ L’option **/reference** indique au compilateur d’importer des informations d
   
  Cela configure les alias externes « GridV1 » et « GridV2 » que vous utilisez dans votre programme au moyen d’une instruction extern :  
   
-```  
+```csharp  
 extern alias GridV1;  
 extern alias GridV2;  
 // Using statements go here.  
@@ -103,13 +103,13 @@ extern alias GridV2;
   
  Une fois cette opération effectuée, vous pouvez référencer le contrôle de grille de grid.dll en ajoutant un préfixe au nom du contrôle GridV1, comme suit :  
   
-```  
+```csharp  
 GridV1::Grid  
 ```  
   
  Par ailleurs, vous pouvez référencer le contrôle de grille de grid20.dll en ajoutant un préfixe au nom du contrôle GridV2, comme suit :  
   
-```  
+```csharp  
 GridV2::Grid   
 ```  
   

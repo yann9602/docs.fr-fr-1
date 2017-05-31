@@ -43,7 +43,7 @@ Cette option ajoute un module créé avec le commutateur target:module à la com
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /addmodule:file[;file2]  
 ```  
   
@@ -63,7 +63,7 @@ Cette option ajoute un module créé avec le commutateur target:module à la com
 ## <a name="example"></a>Exemple  
  Compilez le fichier source `input.cs` et ajoutez les métadonnées de `metad1.netmodule` et `metad2.netmodule` pour produire `out.exe` :  
   
-```  
+```console  
 csc /addmodule:metad1.netmodule;metad2.netmodule /out:out.exe input.cs  
 ```  
   

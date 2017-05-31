@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e9a640c0cfa1d0494457f8ffe94bf15877b24919
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -42,7 +43,7 @@ L’option **/target:winexe** indique au compilateur de créer un programme Wind
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /target:winexe  
 ```  
   
@@ -70,7 +71,7 @@ L’option **/target:winexe** indique au compilateur de créer un programme Wind
 ## <a name="example"></a>Exemple  
  Compilez `in.cs` en un programme Windows :  
   
-```  
+```console  
 csc /target:winexe in.cs  
 ```  
   

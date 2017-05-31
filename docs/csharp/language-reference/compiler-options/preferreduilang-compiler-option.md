@@ -43,7 +43,7 @@ L’option de compilateur `/preferreduilang` vous permet de spécifier la langue
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /preferreduilang: language  
 ```  
   

@@ -46,7 +46,7 @@ Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fi
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /linkresource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
@@ -76,14 +76,14 @@ Crée un lien vers une ressource .NET Framework dans le fichier de sortie. Le fi
 ## <a name="example"></a>Exemple  
  Compiler `in.cs` et créer un lien vers le fichier de ressources `rf.resource` :  
   
-```  
+```console  
 csc /linkresource:rf.resource in.cs  
 ```  
   
 ## <a name="example"></a>Exemple  
  Compiler `A.cs` dans une DLL, créer un lien vers une DLL native N.dll et placer la sortie dans le Global Assembly Cache (GAC). Dans cet exemple, A.dll et N.dll résident dans le GAC.  
   
-```  
+```console  
 csc /linkresource:N.dll /t:library A.cs  
 gacutil -i A.dll  
 ```  
@@ -91,7 +91,7 @@ gacutil -i A.dll
 ## <a name="example"></a>Exemple  
  Cet exemple obtient le même résultat, mais en utilisant des options Assembly Linker.  
   
-```  
+```console  
 csc /t:module A.cs  
 al /out:A.dll A.netmodule /link:N.dll   
 gacutil -i A.dll  

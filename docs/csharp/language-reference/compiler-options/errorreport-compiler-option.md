@@ -46,7 +46,7 @@ Cette option fournit un moyen pratique de signaler une erreur interne du compila
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /errorreport:{ none | prompt | queue | send }  
 ```  
   

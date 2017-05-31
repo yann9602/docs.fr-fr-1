@@ -43,7 +43,7 @@ L’option **/checked** spécifie si une instruction arithmétique entière qui 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /checked[+ | -]  
 ```  
   
@@ -69,7 +69,7 @@ L’option **/checked** spécifie si une instruction arithmétique entière qui 
 ## <a name="example"></a>Exemple  
  La commande suivante compile `t2.cs`. L’utilisation de `/checked` dans la commande spécifie que toute instruction arithmétique entière dans le fichier qui n’est pas dans la portée d’un mot clé `checked` ou `unchecked`, et qui produit une valeur en dehors de la plage du type de données, provoque une exception au moment de l’exécution.  
   
-```  
+```console  
 csc t2.cs /checked  
 ```  
   

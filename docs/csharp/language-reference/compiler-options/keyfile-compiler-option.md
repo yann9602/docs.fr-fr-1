@@ -43,7 +43,7 @@ Spécifie le nom du fichier contenant la clé de chiffrement.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /keyfile:file  
 ```  
   

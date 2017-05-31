@@ -43,7 +43,7 @@ Cette option fait en sorte que le compilateur réserve de l’espace dans le fic
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /delaysign[ + | - ]  
 ```  
   

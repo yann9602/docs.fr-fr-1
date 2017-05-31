@@ -41,7 +41,7 @@ L’option du compilateur **/appconfig** permet à une application C# d’indiq
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /appconfig:file  
 ```  
   
@@ -64,7 +64,7 @@ L’option du compilateur **/appconfig** permet à une application C# d’indiq
 ## <a name="example"></a>Exemple  
  L’exemple suivant affiche un fichier app.config qui permet à une application d’avoir des références à la fois à l’implémentation .NET Framework et à l’implémentation .NET Framework pour Silverlight de tout assembly .NET Framework qui existe dans les deux implémentations. L’option du compilateur **/appconfig** spécifie l’emplacement de ce fichier app.config.  
   
-```  
+```xml  
 <configuration>  
       <runtime>  
       <assemblyBinding>  
