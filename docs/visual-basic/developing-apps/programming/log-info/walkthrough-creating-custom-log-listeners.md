@@ -32,16 +32,16 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: c7dd6ed1875abd37e72baf97950d21a110c5a6a8
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 98cec8d5077e777f18c18ad1af0040b3359151f7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Procédure pas à pas : création d'écouteurs de journalisation personnalisés (Visual Basic)
 Cette procédure pas à pas illustre comment créer un écouteur de journalisation personnalisé et le configurer pour écouter la sortie de l’objet `My.Application.Log`.  
   
-## <a name="getting-started"></a>Prise en main  
+## <a name="getting-started"></a>Commencer  
  Les écouteurs de journalisation doivent hériter de la classe <xref:System.Diagnostics.TraceListener>.  
   
 #### <a name="to-create-the-listener"></a>Pour créer l’écouteur  
@@ -116,7 +116,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
   
 3.  Ajoutez cet élément à la section `<listeners>` :  
   
-    ```  
+    ```xml  
     <add name="SimpleLog" />  
     ```  
   
@@ -124,7 +124,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
   
 5.  Ajoutez cet élément à cette section `<sharedListeners>` :  
   
-    ```  
+    ```xml  
     <add name="SimpleLog" type="SimpleLogStrongName" />  
     ```  
   

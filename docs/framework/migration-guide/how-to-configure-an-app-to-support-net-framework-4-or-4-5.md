@@ -59,7 +59,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
   
 2.  Ajoutez l'élément [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l'application, comme suit :  
   
-    ```  
+    ```xml  
     <configuration>  
       <startup>  
         <supportedRuntime version="<version>"/>  

@@ -33,10 +33,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: f2563a334248740ff1bd4fc49662229d8f3bf27e
+ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
+ms.openlocfilehash: 5e3d68e6a64ec9f8e9cd8bfd13fa8174da568299
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : modification de l'emplacement des informations My.Application.Log (Visual Basic)
@@ -65,7 +65,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 3.  Ajoutez ces éléments à cette section `<listeners>` .  
   
-    ```  
+    ```xml  
     <!-- Uncomment to connect the application file log. -->  
     <!-- <add name="FileLog" /> -->  
     <!-- Uncomment to connect the event log. -->  
@@ -84,7 +84,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 6.  Ajoutez ces éléments à cette section `<sharedListeners>` .  
   
-    ```  
+    ```xml  
     <add name="FileLog"  
          type="Microsoft.VisualBasic.Logging.FileLogTraceListener,   
                Microsoft.VisualBasic, Version=8.0.0.0,   
@@ -115,7 +115,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 7.  Le contenu du fichier app.config doit être similaire au code XML suivant :  
   
-    ```  
+    ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
     <configuration>  
       <system.diagnostics>  
@@ -178,15 +178,15 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 2.  L’attribut `type` donne le nom du type d’écouteur. Ce type doit hériter de la classe <xref:System.Diagnostics.TraceListener>. Utilisez le nom de type avec un nom fort pour être sûr que le type correct est utilisé. Pour plus d’informations, consultez la section « Pour référencer un type avec un nom fort » ci-dessous.  
   
-     Voici quelques-uns des types que vous pouvez utiliser :  
+     Voici quelques-uns des types que vous pouvez utiliser :  
   
-    -   Un écouteur <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName>, qui écrit dans un fichier journal.  
+    -   Écouteur <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName>, qui écrit dans un journal.  
   
-    -   Un écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName>, qui écrit les informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData`.  
+    -   Écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName>, qui écrit des informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData`.  
   
-    -   Les écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName>, qui écrivent dans le fichier spécifié par le paramètre `initializeData`.  
+    -   Écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName>, qui écrivent dans le fichier spécifié dans le paramètre `initializeData`.  
   
-    -   Un écouteur <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName>, qui écrit dans la console de ligne de commande.  
+    -   Écouteur <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName>, qui écrit dans la console de ligne de commande.  
   
      Pour plus d’informations sur les emplacements où d’autres types d’écouteurs de journalisation écrivent les informations, consultez la documentation de ce type.  
   
@@ -213,5 +213,5 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
  <xref:System.Diagnostics.TraceListener>   
  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName>   
  <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName>   
- [How to: Write Event Information to a Text File](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)   
+ [Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)   
  [Guide pratique : écrire dans le journal des événements de l’application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
