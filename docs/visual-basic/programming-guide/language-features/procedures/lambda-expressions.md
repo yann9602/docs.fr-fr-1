@@ -35,9 +35,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: e50593e76afecfe8807c3cb5bac479245d2feaef
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -108,7 +109,6 @@ Public Class Form1
     End Function  
   
 End Class  
-  
 ```  
   
  Vous pouvez ajouter le même gestionnaire d’événements à l’aide d’une expression lambda asynchrone dans un [AddHandler, instruction](../../../../visual-basic/language-reference/statements/addhandler-statement.md). Pour ajouter ce gestionnaire, ajoutez un modificateur `Async` avant la liste des paramètres lambda, comme le montre l'exemple suivant.  
@@ -131,7 +131,6 @@ Public Class Form1
     End Function  
   
 End Class  
-  
 ```  
   
  Pour plus d’informations sur la création et l’utilisation des méthodes asynchrones, consultez [programmation asynchrone avec Async et Await](../../../../visual-basic/programming-guide/concepts/async/index.md).  
@@ -188,3 +187,4 @@ End Class
  [Comment : passer des procédures à une autre procédure en Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)   
  [Comment : créer une Expression Lambda](./how-to-create-a-lambda-expression.md)   
  [Conversion simplifiée des délégués](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+

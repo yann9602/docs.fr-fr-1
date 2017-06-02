@@ -4,16 +4,17 @@ description: "La commande `dotnet test` est utilisée pour exécuter des tests u
 keywords: "dotnet-test, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 03/25/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 26b5834135db8041995a137f5008d00cdf14d820
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae036cfcad341ffc859336a7ab2a49feec145715
+ms.openlocfilehash: 734cf337fdd0d33f6c2b6d929b795b2307135550
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/18/2017
 
 ---
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 03/22/2017
 
 ## <a name="description"></a>Description
 
-La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. Les tests unitaires sont des projets de bibliothèques de classes qui ont des dépendances dans le framework de test unitaire (par exemple, MSText, NUnit ou xUnit) et dans le lanceur de tests dotnet du framework de test unitaire. Ils sont empaquetés sous forme de packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
+La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. Les tests unitaires sont des projets d’application console qui ont des dépendances dans l’infrastructure de tests unitaires (par exemple, MSTest, NUnit ou xUnit) et dans le Test Runner dotnet de l’infrastructure de tests unitaires. Ils sont empaquetés sous forme de packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
 
 Les projets de test doivent également spécifier le lanceur de tests. Pour ce faire, vous pouvez utiliser un élément `<PackageReference>` ordinaire, comme indiqué dans l’exemple de fichier projet suivant :
 
@@ -55,7 +56,7 @@ Répertorie tous les tests découverts dans le projet actuel.
 
 `--filter <EXPRESSION>`
 
-Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus d’informations sur la prise en charge du filtrage, consultez [Running selective unit tests in Visual Studio using TestCaseFilter](https://aka.ms/vstest-filtering).
+Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -97,9 +98,46 @@ Exécutez les tests du projet dans le répertoire actif :
 
 Exécuter les tests dans le projet `test1` :
 
-`dotnet test ~/projects/test1/test1.csproj` 
+`dotnet test ~/projects/test1/test1.csproj`
+
+## <a name="filter-option-details"></a>Détails de l’option de filtre
+
+`--filter <EXPRESSION>`
+
+`<Expression>` est au format `<property><operator><value>[|&<Expression>]`.
+
+`<property>` est un attribut de `Test Case`. Les propriétés suivantes sont prises en charge par les principales infrastructures de tests unitaires :
+
+| Infrastructure de test | Propriétés prises en charge                                                                                      |
+| :------------: | --------------------------------------------------------------------------------------------------------- |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Nom</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
+| Xunit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
+
+La section `<operator>` décrit la relation entre la propriété et la valeur :
+
+| Opérateur | Fonction        |
+| :------: | --------------- |
+| `=`      | Correspondance exacte     |
+| `!=`     | Pas de correspondance exacte |
+| `~`      | Contient        |
+
+`<value>` est une chaîne. Toutes les recherches respectent la casse.
+
+Une expression sans `<operator>` est automatiquement considérée comme `contains` sur la propriété `FullyQualifiedName` (par exemple, `dotnet test --filter xyz` est identique à `dotnet test --filter FullyQualifiedName~xyz`).
+
+Les expressions peuvent être associées à des opérateurs conditionnels :
+
+| Opérateur | Fonction |
+| :------: | :------: |
+| `|`      | OU       |
+| `&`      | AND      |
+
+Vous pouvez inclure des expressions entre parenthèses lorsque vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).
+
+Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Frameworks cibles](../../standard/frameworks.md)
-* [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
+[Frameworks et cibles](../../standard/frameworks.md)   
+[Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
+

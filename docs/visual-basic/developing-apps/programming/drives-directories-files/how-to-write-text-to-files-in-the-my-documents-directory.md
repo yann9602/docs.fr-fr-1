@@ -1,36 +1,53 @@
 ---
-title: "How to: Write Text to Files in the My Documents Directory in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "files, writing to"
-  - "text, writing to files"
-  - "examples [Visual Basic], text files"
-  - "writing to files, in My Documents"
+title: "Guide pratique pour insérer du texte dans les fichiers du répertoire Mes Documents dans Visual Basic │ Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- files, writing to
+- text, writing to files
+- examples [Visual Basic], text files
+- writing to files, in My Documents
 ms.assetid: 1c726124-781d-4976-9baa-ed46814ff3fe
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
----
-# How to: Write Text to Files in the My Documents Directory in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 848f7c3eac56f85d2af4c613645d54b70061d072
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
-L'objet `My.Computer.FileSystem.SpecialDirectories` vous permet d'accéder aux répertoires spéciaux, tels que le répertoire **Mes documents**.  
+---
+# <a name="how-to-write-text-to-files-in-the-my-documents-directory-in-visual-basic"></a>Comment : insérer du texte dans les fichiers du répertoire Mes Documents dans Visual Basic
+L’objet `My.Computer.FileSystem.SpecialDirectories` vous permet d’accéder à des répertoires spéciaux, comme le répertoire **Mes documents**.  
   
-## Procédure  
+## <a name="procedure"></a>Procédure  
   
-#### Pour écrire de nouveaux fichiers texte dans le répertoire Mes documents  
+#### <a name="to-write-new-text-files-in-the-my-documents-directory"></a>Pour écrire de nouveaux fichiers texte dans le répertoire Mes Documents  
   
-1.  Utilisez la propriété `My.Computer.FileSystem.SpecialDirectories.MyDocuments` pour fournir le chemin d'accès.  
+1.  Utilisez la propriété `My.Computer.FileSystem.SpecialDirectories.MyDocuments` pour fournir le chemin.  
   
      [!code-vb[VbFileIOWrite#1](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files-in-the-my-documents-directory_1.vb)]  
   
@@ -38,21 +55,21 @@ L'objet `My.Computer.FileSystem.SpecialDirectories` vous permet d'accéder aux r
   
      [!code-vb[VbVbcnMyFileSystem#14](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files-in-the-my-documents-directory_2.vb)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-vb[VbFileIOWrite#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-write-text-to-files-in-the-my-documents-directory_3.vb)]  
   
-## Compilation du code  
- Remplacez `test.txt` par le nom du fichier dans lequel vous souhaitez écrire.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Remplacez `test.txt` par le nom du fichier dans lequel vous voulez écrire.  
   
-## Programmation fiable  
- Ce code lève de nouveau toutes les exceptions qui peuvent se produire lorsque vous écrivez du texte dans le fichier.  Vous pouvez réduire la probabilité d'exceptions en utilisant les contrôles Windows Forms, tels que les composants [OpenFileDialog](../Topic/OpenFileDialog%20Component%20\(Windows%20Forms\).md) et [SaveFileDialog](../Topic/SaveFileDialog%20Component%20\(Windows%20Forms\).md) qui limitent les choix de l'utilisateur aux noms de fichiers valides.  Toutefois, l'utilisation de ces contrôles n'est pas sans poser de problèmes.  Le système de fichiers peut changer entre le moment où l'utilisateur sélectionne un fichier et le moment où le code s'exécute.  La gestion des exceptions est donc presque toujours nécessaire lors de l'utilisation de fichiers.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Ce code lève de nouveau toutes les exceptions qui peuvent se produire lors de l’écriture de texte dans le fichier. Vous pouvez réduire la probabilité d’exceptions en utilisant des contrôles Windows Forms comme les composants [OpenFileDialog](../../../../framework/winforms/controls/openfiledialog-component-windows-forms.md) et [SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md) qui limitent les choix de l’utilisateur à des noms de fichier valides. Toutefois, l’utilisation de ces contrôles n’est pas infaillible. Le système de fichiers peut changer entre le moment où l’utilisateur sélectionne un fichier et celui où le code s’exécute. La gestion des exceptions est donc presque toujours nécessaire quand vous utilisez des fichiers.  
   
-## Sécurité .NET Framework  
- Si vous exécutez le programme dans un contexte partiellement fiable, le code peut lever une exception en raison de privilèges insuffisants.  Pour plus d'informations, consultez [Notions fondamentales de la sécurité d'accès du code](../Topic/Code%20Access%20Security%20Basics.md).  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Si vous l’exécutez dans un contexte de confiance partielle, le code peut lever une exception en raison de privilèges insuffisants. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8).  
   
- Cet exemple crée un fichier.  Si une application doit créer un fichier, elle doit disposer de l'autorisation Créer pour le dossier.  Les autorisations sont définies à l'aide de listes de contrôle d'accès.  Si le fichier existe déjà, l'application a uniquement besoin de l'autorisation Écrire, ce qui représente un privilège inférieur.  Lorsque cela est possible, il est plus sûr de créer le fichier au cours du déploiement et de n'accorder les privilèges Lire que sur un seul fichier \(plutôt que les privilèges Créer sur un dossier\).  En outre, il est plus sûr d'écrire les données dans des dossiers utilisateur que dans le dossier racine ou le dossier **Program Files**.  Pour plus d'informations, consultez [ACL Technology Overview](http://msdn.microsoft.com/fr-fr/06fbf66d-6f02-4378-b863-b2f12e349045).  
+ Cet exemple crée un fichier. Si une application doit créer un fichier, elle doit disposer de l’autorisation de création sur le dossier. Les autorisations sont définies à l’aide des listes de contrôle d’accès. Si le fichier existe déjà, l’application a uniquement besoin de l’autorisation d’écriture, ce qui représente une autorisation inférieure. Quand cela est possible, il est plus sûr de créer le fichier pendant le déploiement et de n’accorder les privilèges de lecture que sur un seul fichier, plutôt que d’accorder des privilèges de création sur un dossier. Par ailleurs, il est plus sûr d’écrire les données dans des dossiers utilisateur que dans le dossier racine ou le dossier **Program Files**. Pour plus d’informations, consultez [Vue d’ensemble de la technologie ACL](http://msdn.microsoft.com/en-us/06fbf66d-6f02-4378-b863-b2f12e349045).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IO.Path.Combine%2A?displayProperty=fullName>   
  <xref:Microsoft.VisualBasic.Devices.Computer>   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>   

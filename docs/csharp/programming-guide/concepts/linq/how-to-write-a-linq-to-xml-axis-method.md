@@ -14,10 +14,11 @@ ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9d85a92fc4d9f1d2ed53ff01e23c20877b3952b9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: afaaaa497a16c1dbf0f3e0e81351f5c614732d44
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/30/2017
 
 
 ---
@@ -25,7 +26,7 @@ ms.lasthandoff: 03/13/2017
 Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise deux méthodes d’extension. La première méthode d’extension, `GetXPath`, agit sur <xref:System.Xml.Linq.XObject> et retourne une expression XPath qui, après évaluation, retourne le nœud ou l’attribut. La deuxième méthode d’extension, `Find`, agit sur <xref:System.Xml.Linq.XElement>. Elle retourne une collection d’objets <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XElement> qui contiennent du texte spécifié.  
+ L’exemple suivant utilise deux méthodes d’extension. La première méthode d'extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject> et retourne une expression XPath qui, après évaluation, retourne le nœud ou l'attribut. La deuxième méthode d'extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>. Elle retourne une collection d'objets <xref:System.Xml.Linq.XAttribute> et <xref:System.Xml.Linq.XElement> qui contiennent du texte spécifié.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   

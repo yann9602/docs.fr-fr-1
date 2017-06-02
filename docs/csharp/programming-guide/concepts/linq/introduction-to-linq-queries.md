@@ -34,10 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 957ab9907c16e494f87873934fe4caccc146c975
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a7d963bad57beb968631e1cf79d7e97dd1554de1
+ms.openlocfilehash: d4739a1ba1c09b29aba25d5439592b82610a2092
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>Introduction aux requêtes LINQ (C#)
@@ -77,7 +78,6 @@ IQueryable<Customer> custQuery =
     from cust in db.Customers  
     where cust.City == "London"  
     select cust;  
-  
 ```  
   
  Pour plus d’informations sur la création de types de sources de données spécifiques, consultez la documentation relative aux différents fournisseurs [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. Toutefois, la règle de base est très simple : une source de données [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] peut être n’importe quel objet prenant en charge l’interface générique <xref:System.Collections.Generic.IEnumerable%601> ou une interface qui hérite de cette interface.  
@@ -88,7 +88,7 @@ IQueryable<Customer> custQuery =
 ##  <a name="query"></a> La requête  
  La requête spécifie les informations à récupérer à partir de la ou des sources de données. Si vous le souhaitez, une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d’être retournées. Une requête est stockée dans une variable de requête et initialisée avec une expression de requête. Pour faciliter l’écriture de requêtes, le langage C# propose désormais une nouvelle syntaxe de requête.  
   
- La requête de l’exemple précédent retourne tous les nombres pairs du tableau d’entiers. L’expression de requête contient trois clauses : `from`, `where` et `select`. Si vous connaissez le langage SQL, vous aurez remarqué que l’ordre des clauses est inverse à celui du langage SQL. La clause `from` spécifie la source de données, la clause `where` applique le filtre et la clause `select` spécifie le type des éléments retournés. Ces clauses de requête, ainsi que certaines autres, sont abordées en détail dans la section [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md). Pour le moment, le point important à retenir est que dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], la variable de requête n’effectue aucune action et ne retourne aucune donnée. Elle stocke simplement les informations qui seront nécessaires pour produire des résultats lors de l’exécution ultérieure de la requête. Pour plus d’informations sur la construction des requêtes en arrière-plan, consultez [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)[Vue d’ensemble des opérateurs de requête standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
+ La requête de l’exemple précédent retourne tous les nombres pairs du tableau d’entiers. L’expression de requête contient trois clauses : `from`, `where` et `select`. Si vous connaissez le langage SQL, vous aurez remarqué que l’ordre des clauses est inverse à celui du langage SQL. La clause `from` spécifie la source de données, la clause `where` applique le filtre et la clause `select` spécifie le type des éléments retournés. Ces clauses de requête, ainsi que certaines autres, sont abordées en détail dans la section [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md). Pour le moment, le point important à retenir est que dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], la variable de requête n’effectue aucune action et ne retourne aucune donnée. Elle stocke simplement les informations qui seront nécessaires pour produire des résultats lors de l’exécution ultérieure de la requête. Pour plus d’informations sur la construction des requêtes en arrière-plan, consultez [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
 > [!NOTE]
 >  Les requêtes peuvent également être exprimées à l’aide d’une syntaxe de méthode. Pour plus d’informations, consultez [Syntaxe de requête et syntaxe de méthode dans LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).  
@@ -122,3 +122,4 @@ IQueryable<Customer> custQuery =
  [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [foreach, in](../../../../csharp/language-reference/keywords/foreach-in.md)   
  [Mots clés de requête (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)
+

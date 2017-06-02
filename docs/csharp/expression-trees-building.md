@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4673690c95d1a1fcea950db272cf0685a9d4c888
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
+ms.openlocfilehash: 5cce6b538e27f654c1f4fec732a9c69372f8c9ad
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
 
@@ -170,8 +171,7 @@ BlockExpression body = Expression.Block(
 
 Le code de génération de l’arborescence d’expressions pour la fonction factorielle est un peu plus long, plus compliqué et truffé d’étiquettes, d’instructions break et d’autres éléments que nous souhaitons éviter lors de nos tâches quotidiennes de codage. 
 
-Dans cette section, j’ai également mis à jour le code de visiteur pour visiter tous les nœuds de cette arborescence d’expressions et écrire des informations sur les nœuds créés dans cet exemple. Le code se trouve dans [la section Exemples](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees).
-Vous pouvez expérimenter par vous-même : générez-le et exécutez les exemples.
+Dans cette section, j’ai également mis à jour le code de visiteur pour visiter tous les nœuds de cette arborescence d’expressions et écrire des informations sur les nœuds créés dans cet exemple. Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees) à partir du dépôt GitHub dotnet/docs. Essayez par vous-même en créant et en exécutant les exemples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="examining-the-apis"></a>Examen des API
 

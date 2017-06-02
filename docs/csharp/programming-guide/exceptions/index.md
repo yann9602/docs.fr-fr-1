@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95563b84f633789fb35eed64c510a11c44b3492b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 561113241f7433d8e0f7f1f1f96f0338ebe81ae3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
@@ -93,7 +94,7 @@ Les fonctionnalités de gestion des exceptions du langage C# vous aident à gér
  [try-catch](../../../csharp/language-reference/keywords/try-catch.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
- [Exceptions](http://msdn.microsoft.com/library/f99a1d29-a2a8-47af-9707-9909f9010735)   
+ [Exceptions](../../../standard/exceptions/index.md)   
  [Hiérarchie des exceptions](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [Écrire du code .NET fiable](http://go.microsoft.com/fwlink/?LinkId=112400)   
  [Minidumps pour exceptions spécifiques](http://go.microsoft.com/fwlink/?LinkId=112408)

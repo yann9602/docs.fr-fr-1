@@ -1,6 +1,6 @@
 ---
 title: "byte (référence C#) | Microsoft Docs"
-ms.date: 2015-07-20
+ms.date: 2017-03-14
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -30,28 +30,36 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7c522506b4541edb2a81036e93e8872711f849b9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 57c4b1c7ead9386ff4067da5915a55a79f5e562e
+ms.openlocfilehash: fce94687cbf055219913758d49642c8e4a999db3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="byte-c-reference"></a>byte (référence C#)
-Le mot clé `byte` désigne un type intégral qui stocke des valeurs comme indiqué dans le tableau suivant.  
+
+`byte` désigne un type intégral qui stocke des valeurs comme indiqué dans le tableau suivant.  
   
 |Type|Plage|Taille|Type .NET Framework|  
 |----------|-----------|----------|-------------------------|  
 |`byte`|0 à 255|Entier 8 bits non signé|<xref:System.Byte?displayProperty=fullName>|  
   
 ## <a name="literals"></a>Littéraux  
- Vous pouvez déclarer et initialiser une variable `byte` comme dans cet exemple :  
+
+ Vous pouvez déclarer et initialiser une variable `byte` en lui assignant un littéral décimal, un littéral hexadécimal ou un littéral binaire (à compter de C# 7). Si le littéral entier est en dehors de la plage de `byte` (autrement dit, s’il est inférieur à <xref:System.Byte.MinValue?displayProperty=fullName> ou supérieur à <xref:System.Byte.MaxValue?displayProperty=fullName>), une erreur de compilation se produit.
+
+Dans l’exemple suivant, les entiers égaux à 201 représentés comme des littéraux décimaux, hexadécimaux et binaires sont implicitement convertis des valeurs [int](../../../csharp/language-reference/keywords/int.md) en `byte`.    
   
-```  
-byte myByte = 255;  
-```  
-  
- Dans la déclaration précédente, le littéral entier `255` est implicitement converti de [int](../../../csharp/language-reference/keywords/int.md) en `byte`. Si le littéral entier est en dehors de la plage autorisée pour le type `byte`, une erreur de compilation se produit.  
-  
+[!code-cs[Byte](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Byte)]  
+
+> [!NOTE] 
+> Vous utilisez le préfixe `0x` ou `0X` pour désigner un littéral hexadécimal, et le préfixe `0b` ou `0B` pour désigner un littéral binaire. Les littéraux décimaux n’ont pas de préfixe.
+
+À compter de C# 7, vous pouvez également utiliser le trait de soulignement, `_`, comme un séparateur numérique pour améliorer la lisibilité, comme dans l’exemple suivant.
+
+[!code-cs[Byte](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#ByteS)]  
+ 
 ## <a name="conversions"></a>Conversions  
  Il y a une conversion implicite prédéfinie du type `byte` en [short](../../../csharp/language-reference/keywords/short.md), [ushort](../../../csharp/language-reference/keywords/ushort.md), [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), [long](../../../csharp/language-reference/keywords/long.md), [ulong](../../../csharp/language-reference/keywords/ulong.md), [float](../../../csharp/language-reference/keywords/float.md), [double](../../../csharp/language-reference/keywords/double.md) ou [decimal](../../../csharp/language-reference/keywords/decimal.md).  
   
@@ -111,7 +119,7 @@ SampleMethod((byte)5);
   
  Pour plus d’informations sur les expressions arithmétiques combinant des types virgule flottante et des types intégraux, consultez [float](../../../csharp/language-reference/keywords/float.md) et [double](../../../csharp/language-reference/keywords/double.md).  
   
- Pour plus d’informations sur les règles des conversions numériques implicites, consultez [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
+ Pour plus d’informations sur les règles des conversions numériques implicites, consultez le [tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
@@ -119,8 +127,8 @@ SampleMethod((byte)5);
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Byte>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
  [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   

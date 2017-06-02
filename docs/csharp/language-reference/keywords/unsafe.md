@@ -30,9 +30,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: afedd3d99aea9f73d175fd2957a7d586ebce6d72
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -42,7 +43,6 @@ Le mot clé `unsafe` désigne un contexte non sécurisé, qui est requis pour to
  Vous pouvez utiliser le modificateur `unsafe` dans la déclaration d’un type ou d’un membre. Toute l’étendue de texte du type ou du membre est ainsi considérée comme un contexte unsafe. Par exemple, ce qui suit est une méthode déclarée avec le modificateur `unsafe` :  
   
 ```  
-  
       unsafe static void FastCopy(byte[] src, byte[] dst, int count)  
 {  
     // Unsafe context: can use pointers here.  
@@ -52,14 +52,12 @@ Le mot clé `unsafe` désigne un contexte non sécurisé, qui est requis pour to
  La portée du contexte unsafe s’étend de la liste de paramètres à la fin de la méthode, de sorte que les pointeurs peuvent également être utilisés dans la liste de paramètres :  
   
 ```  
-  
 unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}  
 ```  
   
  Vous pouvez également avoir recours à un bloc unsafe pour utiliser un code unsafe dans ce bloc. Exemple :  
   
 ```  
-  
       unsafe  
 {  
     // Unsafe context: can use pointers here.  
@@ -72,7 +70,7 @@ unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}
  [!code-cs[csrefKeywordsModifiers#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/unsafe_1.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
@@ -81,3 +79,4 @@ unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}
  [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [Mémoires tampons de taille fixe](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+

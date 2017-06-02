@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7ca42afd69e814ce448bfea97c2dbf480830a74a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: 21abcf70cce2d6c9052629ce60d08e9ec6ac16e7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World -- Votre premier programme (guide de programmation C#)
@@ -42,7 +43,7 @@ La procédure suivante crée une version C# du traditionnel programme « Hello
   
  Pour plus d’exemples concernant les concepts de base, consultez [Bien démarrer avec Visual Basic et Visual C#](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-and-run-a-console-application"></a>Pour créer et exécuter une application console  
   
@@ -102,7 +103,7 @@ La procédure suivante crée une version C# du traditionnel programme « Hello
   
  Pour plus d’informations sur l’utilisation des arguments de ligne de commande, consultez les exemples des rubriques [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md) et [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4).  
   
- L’appel à <xref:System.Console.ReadKey%2A> à la fin de la méthode `Main` empêche la fenêtre de console de se fermer avant que vous ayez pu lire la sortie lorsque vous exécutez votre programme en mode débogage, avec la touche F5.  
+ L’appel à <xref:System.Console.ReadKey%2A> à la fin de la méthode `Main` empêche la fenêtre de console de se fermer avant que vous ayez pu lire la sortie quand vous exécutez votre programme en mode débogage, avec la touche F5.  
   
 ## <a name="input-and-output"></a>Entrées et sorties  
  Les programmes C# utilisent généralement les services d’entrée/sortie fournis par la bibliothèque runtime du .NET Framework. L’instruction `System.Console.WriteLine("Hello World!");` utilise la méthode <xref:System.Console.WriteLine%2A>. C’est l’une des méthodes de sortie de la classe <xref:System.Console> de la bibliothèque runtime. Elle affiche son paramètre de chaîne dans le flux de sortie standard suivi d’une nouvelle ligne. D’autres méthodes <xref:System.Console> sont disponibles pour différentes opérations d’entrée et de sortie. Si vous incluez la directive `using System;` au début du programme, vous pouvez utiliser directement les classes et les méthodes <xref:System> sans les qualifier complètement. Par exemple, vous pouvez appeler `Console.WriteLine` au lieu de `System.Console.WriteLine` :  
@@ -146,10 +147,7 @@ La procédure suivante crée une version C# du traditionnel programme « Hello
   
      `Hello`  
   
- Pour plus d’informations sur le compilateur C# et ses options, consultez [Options du compilateur C #](../../../csharp/language-reference/compiler-options/index.md).  
-  
-## <a name="featured-book-chapter"></a>Chapitre proposé  
- [Writing a C# Program](http://go.microsoft.com/fwlink/?LinkId=221227) dans [Beginning Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
+ Pour plus d’informations sur le compilateur C# et ses options, consultez [Options du compilateur C #](../../../csharp/language-reference/compiler-options/index.md).
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   

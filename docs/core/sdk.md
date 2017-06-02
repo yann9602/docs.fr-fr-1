@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 26bc9822-e42b-48ec-b0d6-499dc604add7
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 41093464c0dc2631217d89e2e715d05b78051284
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
+ms.openlocfilehash: 5ecc2dd249ab0e1e25e2fcaa4f7548f91085e54a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/10/2017
 
 ---
 
@@ -32,7 +33,7 @@ Il comprend les composants suivants :
 ## <a name="acquiring-the-net-core-sdk"></a>Obtention du SDK .NET Core
 Comme pour n’importe quel ensemble d’outils, la première étape consiste à se procurer les outils sur l’ordinateur. Selon le cas, vous pouvez utiliser les programmes d’installation natifs pour installer le SDK ou utiliser le script de l’interpréteur de commandes d’installation.
 
-Les programmes d’installation natifs s’adressent principalement aux ordinateurs des développeurs. Le SDK est distribué selon le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensemble MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement comme il se doit pour permettre à l’utilisateur d’exploiter le SDK de suite après l’installation. Cependant, ils nécessitent aussi de disposer de privilèges d’administration sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans la [page de prise en main de .NET Core](https://aka.ms/dotnetcoregs).
+Les programmes d’installation natifs s’adressent principalement aux ordinateurs des développeurs. Le SDK est distribué selon le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensemble MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement comme il se doit pour permettre à l’utilisateur d’exploiter le SDK de suite après l’installation. Cependant, ils nécessitent aussi de disposer de privilèges d’administration sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).
 
 Les scripts d’installation, quant à eux, ne nécessitent pas de privilèges d’administration. En revanche, ils n’installent pas les prérequis sur l’ordinateur ; vous devez tous les installer manuellement. Les scripts visent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration (notez les mises en garde concernant les prérequis répertoriés ci-dessus). Vous trouverez des informations complémentaires dans la [rubrique de référence sur les scripts d’installation](tools/dotnet-install-script.md). Si vous voulez savoir comment configurer le SDK sur votre serveur de builds CI, vous pouvez consulter le document qui traite de l’utilisation du [SDK avec les serveurs CI](tools/using-ci-with-cli.md). 
 

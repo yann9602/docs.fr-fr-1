@@ -35,17 +35,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a8580acf6fd23f9de264d3fed47d268898d498a6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 06a97ffe88fdae344b07d04b6ce560d4c163d431
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Stockage de données dans le Presse-papiers et lecture du Presse-papiers (Visual Basic)
 Le Presse-papiers peut être utilisé pour stocker des données, telles que du texte et des images. Comme le Presse-papiers est partagé par tous les processus actifs, il peut être utilisé pour transférer des données entre ces processus. L’objet `My.Computer.Clipboard` permet d’accéder facilement au Presse-papiers et de lire et écrire dedans.  
   
 ## <a name="reading-from-the-clipboard"></a>Lecture à partir du Presse-papiers  
- Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText%2A> pour lire le texte figurant dans le Presse-papiers. Le code suivant lit le texte et l’affiche dans une boîte de message. Du texte doit être stocké dans le Presse-papiers pour que l’exemple s’exécute correctement.  
+ Utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText%2A> pour lire le texte dans le Presse-papiers. Le code suivant lit le texte et l’affiche dans une boîte de message. Du texte doit être stocké dans le Presse-papiers pour que l’exemple s’exécute correctement.  
   
  [!code-vb[VbVbcnMyClipboard#4](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_1.vb)]  
   
@@ -60,14 +61,14 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
  Les éléments placés dans le Presse-papiers sont conservés même après l’arrêt de l’application.  
   
 ## <a name="determining-the-type-of-file-stored-in-the-clipboard"></a>Détermination du type de fichier stocké dans le Presse-papiers  
- Les données du Presse-papiers peuvent présenter différentes formes, telles que du texte, un fichier audio ou une image. Afin de déterminer quel type de fichier figure dans le Presse-papiers, vous pouvez utiliser des méthodes telles que <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A> et <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A>. La méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> peut être utilisée si vous disposez d’un format personnalisé que vous souhaitez vérifier.  
+ Les données du Presse-papiers peuvent présenter différentes formes, telles que du texte, un fichier audio ou une image. Pour déterminer le type de fichier qui se trouve dans le Presse-papiers, vous pouvez utiliser des méthodes telles que <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A> et <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A>. Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> si vous avez un format personnalisé que vous souhaitez vérifier.  
   
  Utilisez la fonction `ContainsImage` pour déterminer si les données contenues dans le Presse-papiers sont une image. Le code suivant vérifie si les données sont une image et en rend compte en conséquence.  
   
  [!code-vb[VbResourceTasks#13](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_3.vb)]  
   
 ## <a name="clearing-the-clipboard"></a>Effacement du contenu du Presse-papiers  
- La méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear%2A> efface le contenu du Presse-papiers. Comme le Presse-papiers est partagé par d’autres processus, l’effacement de son contenu peut avoir un impact sur ces processus.  
+ La méthode <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear%2A> efface le Presse-papiers. Comme le Presse-papiers est partagé par d’autres processus, l’effacement de son contenu peut avoir un impact sur ces processus.  
   
  Le code suivant met en œuvre la méthode `Clear`.  
   

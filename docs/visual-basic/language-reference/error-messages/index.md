@@ -33,9 +33,9 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e22d81efef735f4b6619054cb15f21790efabf5e
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 17edc1598b806f073ad93e470dc8764cfeb1e4eb
+ms.openlocfilehash: 8c42c213a3933f35750d2ad7db9c88867aacd549
+ms.lasthandoff: 04/17/2017
 
 ---
 # <a name="error-messages-visual-basic"></a>Messages d'erreur (Visual Basic)
@@ -57,6 +57,7 @@ Lorsque vous écrivez, compilez ou exécutez une application Visual Basic, les t
 ## <a name="compile-time-errors"></a>Erreurs au moment de la compilation  
  Si le compilateur Visual Basic rencontre un problème dans le code, une erreur de compilation se produit. Dans l’éditeur de code, vous pouvez facilement identifier la ligne de code qui a provoqué l’erreur, car une ligne ondulée apparaît dessous. Le message d’erreur s’affiche si vous pointez sur la ligne ondulée ou ouvrez la **Liste d’erreurs**, qui affiche également les autres messages.  
   
- Si un identificateur a une ligne ondulée et qu’un trait de soulignement court apparaît sous le caractère le plus à droite, vous pouvez générer un stub pour la classe, le constructeur, la méthode, la propriété, le champ ou l’enum. Pour plus d’informations, consultez la page [Générer à partir de l’utilisation](https://docs.microsoft.com/cpp/misc/generate-from-usage).  
+ Si un identificateur a une ligne ondulée et qu’un trait de soulignement court apparaît sous le caractère le plus à droite, vous pouvez générer un stub pour la classe, le constructeur, la méthode, la propriété, le champ ou l’enum. Pour plus d’informations, consultez la page [Générer à partir de l’utilisation](https://docs.microsoft.com/visualstudio/ide/visual-csharp-intellisense#generate-from-usage).
   
  En résolvant les avertissements du compilateur Visual Basic, vous pourrez écrire du code qui s’exécute plus rapidement et présente moins de bogues. Ces avertissements identifient le code susceptible de provoquer des erreurs lors de l’exécution de l’application. Par exemple, le compilateur vous avertit si vous tentez d’appeler un membre d’une variable objet non affectée, de retourner une valeur à partir d’une fonction sans définir la valeur renvoyée, ou d’exécuter un bloc `Try` contenant des erreurs dans la logique d’interception des exceptions. Pour plus d’informations sur les avertissements, et pour savoir comment les activer et les désactiver, consultez la page [Configurer les avertissements en Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).
+

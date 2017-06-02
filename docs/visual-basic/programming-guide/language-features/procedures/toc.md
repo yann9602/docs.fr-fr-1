@@ -34,6 +34,7 @@
 ### [Passage des arguments par position et par nom](passing-arguments-by-position-and-by-name.md)
 ### [Paramètres facultatifs](optional-parameters.md)
 ### [tableaux de paramètres](parameter-arrays.md)
+## [Valeurs de retour de référence](ref-return-values.md)
 ## [Procédures récursives](recursive-procedures.md)
 ## [Surcharge de procédure](procedure-overloading.md)
 ### [Guide pratique : définir plusieurs versions d’une procédure](how-to-define-multiple-versions-of-a-procedure.md)

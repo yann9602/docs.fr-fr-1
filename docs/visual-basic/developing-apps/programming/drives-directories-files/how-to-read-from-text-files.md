@@ -34,19 +34,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 362745101d1a8f7dd61b5e3aabe1c27190c46c07
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 4ea4f6ebfaf06a8b2b5d161d9986eebd28f50d5b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>Guide pratique pour lire des fichiers texte dans Visual Basic
-La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> de l’objet `My.Computer.FileSystem` permet de lire un fichier texte. L'encodage du fichier peut être spécifié si le contenu de ce dernier utilise l'encodage ASCII ou UTF-8.  
+La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> de l'objet `My.Computer.FileSystem` vous permet de lire un fichier texte. L'encodage du fichier peut être spécifié si le contenu de ce dernier utilise l'encodage ASCII ou UTF-8.  
   
  Si vous lisez un fichier avec des caractères étendus, vous devez spécifier son encodage.  
   
 > [!NOTE]
->  Pour lire un fichier ligne par ligne, utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.OpenTextFileReader%2A> de l’objet `My.Computer.FileSystem`. La méthode `OpenTextFileReader` retourne un objet <xref:System.IO.StreamReader>. Vous pouvez utiliser la méthode <xref:System.IO.StreamReader.ReadLine%2A> de l’objet `StreamReader` pour lire un fichier ligne par ligne. Vous pouvez tester la fin du fichier avec la méthode <xref:System.IO.StreamReader.EndOfStream%2A> de l’objet `StreamReader`.  
+>  Pour lire un fichier, une ligne de texte à la fois, utilisez la méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.OpenTextFileReader%2A> de l'objet `My.Computer.FileSystem`. La méthode `OpenTextFileReader` retourne un objet <xref:System.IO.StreamReader>. Vous pouvez utiliser la méthode <xref:System.IO.StreamReader.ReadLine%2A> de l"objet `StreamReader` pour lire un fichier une ligne à la fois. Vous pouvez tester la fin du fichier à l'aide de la méthode <xref:System.IO.StreamReader.EndOfStream%2A> de l'objet `StreamReader`.  
   
 ### <a name="to-read-from-a-text-file"></a>Pour lire un fichier texte  
   
@@ -63,21 +64,21 @@ La méthode <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (<xref:System.ArgumentException>).  
+-   Le chemin d'accès n'est pas valide pour une des raisons suivantes : il s'agit d'une chaîne de longueur nulle ; il ne contient que des espaces blancs ; il contient des caractères non valides ou il s'agit d'un chemin d'accès de périphérique (<xref:System.ArgumentException>).  
   
--   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
+-   Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Le fichier n’existe pas (<xref:System.IO.FileNotFoundException>).  
+-   Le fichier n'existe pas (<xref:System.IO.FileNotFoundException>).  
   
--   Le fichier est utilisé par un autre processus ou une erreur d’E/S s’est produite (<xref:System.IO.IOException>).  
+-   Le fichier est utilisé par un autre processus, ou une erreur E/S se produit (<xref:System.IO.IOException>).  
   
--   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+-   Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   Un nom de fichier ou de répertoire dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
+-   Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
--   Il n’y a pas assez de mémoire pour écrire la chaîne dans la mémoire tampon (<xref:System.OutOfMemoryException>).  
+-   Il n'y a pas assez de mémoire pour écrire la chaîne dans la mémoire tampon (<xref:System.OutOfMemoryException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
+-   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).  
   
  Ne vous basez pas sur le nom d'un fichier pour en déterminer le contenu. Par exemple, il se peut que le fichier nommé Form1.vb ne soit pas un fichier source [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
   

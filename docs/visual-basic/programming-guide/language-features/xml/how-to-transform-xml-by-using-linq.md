@@ -32,9 +32,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 9f97466727064ea275c051b5916b0fb297e9e23a
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -43,7 +44,7 @@ ms.lasthandoff: 03/13/2017
   
  L’exemple de cette rubrique transforme le contenu d’un document source XML en HTML pour les afficher dans un navigateur.  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-transform-an-xml-document"></a>Pour transformer un document XML  
   

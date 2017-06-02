@@ -33,10 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 497f4ea3dfd175248ff733cceb691b2aa0c758e9
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3cc9bec56817bbccd5faa8e05535cb565a11baac
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Utilisation des journaux des applications dans Visual Basic
@@ -54,11 +55,11 @@ Les objets `My.Applicaton.Log` et `My.Log` facilitent l’écriture des informat
  ![Configuration de My Log](../../../../visual-basic/developing-apps/programming/log-info/media/mylogconfig.png "MyLogConfig")  
   
 ## <a name="where-messages-are-logged"></a>Emplacement d’enregistrement des messages  
- Si l’assembly n’a pas de fichier de configuration, les objets `My.Application.Log` et `My.Log` écrivent dans la sortie de débogage de l’application (via la classe <xref:System.Diagnostics.DefaultTraceListener>). En outre, l’objet `My.Application.Log` écrit dans le fichier journal de l’assembly (via la classe <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>), tandis que l’objet `My.Log` écrit dans la sortie de la page web ASP.NET (via la classe <xref:System.Web.WebPageTraceListener>).  
+ Si l’assembly n’a pas de fichier de configuration, les objets `My.Application.Log` et `My.Log` écrivent dans la sortie de débogage de l’application (par l’intermédiaire de la classe <xref:System.Diagnostics.DefaultTraceListener>). En outre, l’objet `My.Application.Log` écrit dans le fichier journal de l’assembly (par l’intermédiaire de la classe <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>), tandis que l’objet `My.Log` écrit dans la sortie de la page web ASP.NET (par l’intermédiaire de la classe <xref:System.Web.WebPageTraceListener>).  
   
- La sortie de débogage peut être affichée dans la fenêtre **Sortie** de [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] lors de l’exécution de votre application en mode débogage. Pour ouvrir la fenêtre **Sortie** , cliquez sur l’élément de menu **Déboguer** , pointez sur **Windows**, puis cliquez sur **Sortie**. Dans la fenêtre **Sortie** , sélectionnez **Déboguer** dans la zone **Afficher la sortie à partir de** .  
+ La sortie de débogage peut être affichée dans la fenêtre [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] **Output** window when running your application in debug mode. Pour ouvrir la fenêtre **Sortie** , cliquez sur l’élément de menu **Déboguer** , pointez sur **Windows**, puis cliquez sur **Sortie**. Dans la fenêtre **Sortie** , sélectionnez **Déboguer** dans la zone **Afficher la sortie à partir de** .  
   
- Par défaut, `My.Application.Log` écrit le fichier journal dans le chemin des données d’application de l’utilisateur. Vous pouvez obtenir le chemin dans la propriété <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> de l’objet <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A>. Le format de ce chemin est le suivant :  
+ Par défaut, `My.Application.Log` écrit le fichier journal dans le chemin des données d’application de l’utilisateur. Vous pouvez obtenir le chemin à partir de la propriété <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> de l’objet <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A>. Le format de ce chemin est le suivant :  
   
  `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`  
   
@@ -68,10 +69,10 @@ Les objets `My.Applicaton.Log` et `My.Log` facilitent l’écriture des informat
   
  Les valeurs de `CompanyName`, de `ProductName`et de `ProductVersion` proviennent des informations d’assembly de l’application. La forme du nom du fichier journal est *nom_assembly*.log, où *nom_assembly* est le nom de fichier de l’assembly sans l’extension. Si plusieurs fichiers journaux sont nécessaires, par exemple dans le cas où le journal d’origine n’est pas disponible au moment où l’application tente d’écrire dans le journal, la forme du nom du fichier journal est *nom_assembly*-*iteration*.log, où `iteration` est un nombre positif de type `Integer`.  
   
- Vous pouvez remplacer le comportement par défaut en ajoutant ou en modifiant les fichiers de configuration de l’ordinateur et de l’application. Pour plus d’informations, consultez [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).  
+ Vous pouvez remplacer le comportement par défaut en ajoutant ou en modifiant les fichiers de configuration de l’ordinateur et de l’application. Pour plus d'informations, consultez [Walkthrough: Changing Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).  
   
 ## <a name="configuring-log-settings"></a>Configuration des paramètres de journalisation  
- L’objet `Log` a une implémentation par défaut qui fonctionne sans app.config, qui est un fichier de configuration d’application. Pour modifier les valeurs par défaut, vous devez ajouter un fichier de configuration avec les nouveaux paramètres. Pour plus d’informations, consultez [Procédure pas à pas : filtrage de la sortie de My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
+ L’objet `Log` a une implémentation par défaut qui fonctionne sans app.config, qui est un fichier de configuration d’application. Pour modifier les valeurs par défaut, vous devez ajouter un fichier de configuration avec les nouveaux paramètres. Pour plus d'informations, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
   
  Les sections de configuration de la journalisation se trouvent dans le nœud `<system.diagnostics>` du nœud `<configuration>` principal du fichier app.config. Les informations de la journalisation sont définies dans plusieurs nœuds :  
   

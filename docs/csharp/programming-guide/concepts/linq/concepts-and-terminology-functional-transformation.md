@@ -14,10 +14,11 @@ ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3e4ff1807605164afc95eaebf37a131d9dddb79c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 87a8efd8e8631ac200a95069f889d6756cbd5a4a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -48,7 +49,7 @@ Cette rubrique présente les concepts et la terminologie des transformations fon
  Pour plus d’informations sur la programmation fonctionnelle, consultez [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md).  
   
 #### <a name="domain-specific-fp-languages"></a>Langages de programmation fonctionnelle spécifiques aux domaines  
- Bien que les langages de programmation fonctionnelle généraux n'aient pas été adoptés à grande échelle, les langages de programmation fonctionnelle spécifiques aux domaines ont eu un meilleur succès. Par exemple, les feuilles de style en cascade (CSS, Cascading Style Sheets) sont utilisées pour déterminer l’apparence et la convivialité de nombreuses pages web et les feuilles de style XSLT (Extensible Stylesheet Language Transformations) sont utilisées de manière intensive dans la manipulation de données XML. Pour plus d’informations sur XSLT, consultez [Transformations XSLT](http://msdn.microsoft.com/library/202f8820-224c-494f-b61e-cd127eac6e03).  
+ Bien que les langages de programmation fonctionnelle généraux n'aient pas été adoptés à grande échelle, les langages de programmation fonctionnelle spécifiques aux domaines ont eu un meilleur succès. Par exemple, les feuilles de style en cascade (CSS, Cascading Style Sheets) sont utilisées pour déterminer l’apparence et la convivialité de nombreuses pages web et les feuilles de style XSLT (Extensible Stylesheet Language Transformations) sont utilisées de manière intensive dans la manipulation de données XML. Pour plus d’informations sur XSLT, consultez [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md).  
   
 ## <a name="terminology"></a>Terminologie  
  Le tableau suivant définit certains termes liés aux transformations fonctionnelles.  
@@ -64,7 +65,7 @@ Cette rubrique présente les concepts et la terminologie des transformations fon
  Pour plus d’informations, consultez [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
  collection  
- Ensemble structuré de données, généralement d'un type uniforme. Pour être compatible avec LINQ, une collection doit implémenter l’interface <xref:System.Collections.IEnumerable> ou l’interface <xref:System.Linq.IQueryable> (ou l’un de leurs équivalents génériques, <xref:System.Collections.Generic.IEnumerator%601> ou <xref:System.Linq.IQueryable%601>).  
+ Ensemble structuré de données, généralement d'un type uniforme. Pour être compatible avec LINQ, une collection doit implémenter l'interface <xref:System.Collections.IEnumerable> ou l'interface <xref:System.Linq.IQueryable> (ou l'un de leurs équivalents génériques, <xref:System.Collections.Generic.IEnumerator%601> ou <xref:System.Linq.IQueryable%601>).  
   
  tuple (types anonymes)  
  Concept mathématique, un tuple est une séquence limitée d'objets, chacun d'un type spécifique. Un tuple porte également le nom de liste ordonnée. Les types anonymes sont une implémentation linguistique de ce concept, qui permet à un type de classe non nommé d'être déclaré et à un objet de ce type d'être instancié en même temps.  

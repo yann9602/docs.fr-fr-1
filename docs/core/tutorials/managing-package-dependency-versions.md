@@ -56,19 +56,19 @@ Nous garantissons que si vous avez fixé vos dépendances sur celles fournies av
 
 Bien qu’il existe une longue liste de tous les packages et de leurs versions publiées avec .NET Core 1.0, vous n’avez pas à la parcourir si votre code correspond à certains scénarios.
 
-**Dépendez-vous uniquement de** `NETStandard.Library`** ?**
+**Dépendez-vous uniquement de** `NETStandard.Library`**?**
 
 Si c’est le cas, vous devez fixer votre package `NETStandard.Library` sur la version `1.6`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
 
-**Dépendez-vous uniquement de** `Microsoft.NETCore.App`** ?**
+**Dépendez-vous uniquement de** `Microsoft.NETCore.App`**?**
 
 Si c’est le cas, vous devez fixer votre package `Microsoft.NETCore.App` sur la version `1.0.0`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
 
-**[Supprimez](../deploying/reducing-dependencies.md)-vous vos dépendances de métapackage** `NETStandard.Library` **ou** `Microsoft.NETCore.App` ** ?**
+**[Supprimez](../deploying/reducing-dependencies.md)-vous vos dépendances de métapackage** `NETStandard.Library` **ou** `Microsoft.NETCore.App` **?**
 
 Si c’est le cas, vous devez vérifier que le métapackage avec lequel vous commencez est fixé sur 1.0.  Les packages individuels desquels vous dépendez après la suppression sont également fixés sur 1.0.
 
-**Dépendez-vous de packages hors des métapackages** `NETStandard.Library` **ou** `Microsoft.NETCore.App`** ?**
+**Dépendez-vous de packages hors des métapackages** `NETStandard.Library` **ou** `Microsoft.NETCore.App`**?**
 
 Si c’est le cas, vous devez fixer vos autres dépendances sur 1.0.  Consultez les versions de package et les numéros de build appropriés à la fin de cet article.
 

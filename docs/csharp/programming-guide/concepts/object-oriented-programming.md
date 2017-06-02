@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 74872957345de77f43f3ac649ed6f809aea5f784
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 3f3e6aa047e0de279d15298408c4593c5fb17666
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
@@ -43,7 +44,7 @@ C# offre une prise en charge complète de la programmation orientée objet, y co
   
          [Constructeurs](#Constructors)  
   
-         [Destructeurs](#Destructors)  
+         [Finaliseurs](#Finalizers)  
   
          [Événements](#Events)  
   
@@ -197,13 +198,13 @@ public class SampleClass
   
  [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md).  
   
-####  <a name="Destructors"></a> Destructeurs  
- Les destructeurs permettent de détruire les instances des classes. Dans le .NET Framework, le garbage collector gère automatiquement l'allocation et la libération de mémoire pour les objets managés figurant dans votre application. Toutefois, vous pouvez avoir besoin de destructeurs pour nettoyer toutes les ressources non managées créées par votre application. Il ne peut y avoir qu'un seul destructeur pour une même classe.  
+####  <a name="Finalizers"></a> Finaliseurs  
+ Les finaliseurs permettent de détruire des instances de classes. Dans le .NET Framework, le garbage collector gère automatiquement l'allocation et la libération de mémoire pour les objets managés figurant dans votre application. Toutefois, vous pouvez avoir besoin de finaliseurs pour nettoyer toutes les ressources non managées créées par votre application. Il ne peut y avoir qu'un seul finaliseur pour une même classe.  
   
- Pour plus d’informations sur les destructeurs et l’opération de garbage collection dans le .NET Framework, consultez [Garbage collection](../../../standard/garbagecollection/index.md).  
+ Pour plus d’informations sur les finaliseurs et l’opération de garbage collection dans le .NET Framework, consultez [Garbage collection](../../../standard/garbage-collection/index.md).  
   
 ####  <a name="Events"></a> Événements  
- Les événements permettent à une classe ou un objet de notifier d'autres classes ou objets lorsqu'une situation intéressante se produit. La classe qui envoie (ou déclenche) l’événement est appelée *éditeur* et les classes qui reçoivent (ou gèrent) l’événement sont appelées *abonnés*. Pour plus d’informations sur les événements, leur déclenchement et leur gestion, consultez [Événements](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Les événements permettent à une classe ou un objet de notifier d'autres classes ou objets lorsqu'une situation intéressante se produit. La classe qui envoie (ou déclenche) l’événement est appelée *éditeur* et les classes qui reçoivent (ou gèrent) l’événement sont appelées *abonnés*. Pour plus d’informations sur les événements, leur déclenchement et leur gestion, consultez [Événements](../../../standard/events/index.md).  
   
 -   Pour déclarer un événement dans une classe, utilisez le mot clé [event](../../../csharp/language-reference/keywords/event.md).  
   
@@ -311,7 +312,7 @@ var sampleObject =
  Pour plus d’informations, consultez [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ##  <a name="Inheritance"></a> Héritage  
- Il vous permet de créer une nouvelle classe qui réutilise, étend et modifie le comportement défini dans une autre classe. La classe dont les membres sont hérités est la *classe de base* et la classe qui hérite de ces membres s’appelle la *classe dérivée*. Toutefois, toutes les classes dans C# héritent implicitement de la classe <xref:System.Object>, qui prend en charge la hiérarchie de classes .NET et fournit des services de bas niveau à toutes les classes.  
+ Il vous permet de créer une nouvelle classe qui réutilise, étend et modifie le comportement défini dans une autre classe. La classe dont les membres sont hérités porte le nom de *classe de base* et la classe qui hérite de ces membres porte le nom de *classe dérivée*. Toutefois, toutes les classes dans C# héritent implicitement de la classe <xref:System.Object> qui prend en charge la hiérarchie de classes .NET et fournit des services de bas niveau à toutes les classes.  
   
 > [!NOTE]
 >  C# ne prend pas en charge l’héritage multiple. Vous pouvez donc spécifier une seule classe de base pour une classe dérivée.  
@@ -413,7 +414,7 @@ sampleObject.Field = "Sample string";
  Un *délégué* est un type qui définit une signature de méthode et peut fournir une référence à toute méthode avec une signature compatible. Vous pouvez appeler la méthode par le biais du délégué. Les délégués sont utilisés pour passer des méthodes comme arguments à d'autres méthodes.  
   
 > [!NOTE]
->  Les gestionnaires d'événements sont tout simplement des méthodes appelées par le biais de délégués. Pour plus d’informations sur l’utilisation de délégués dans la gestion des événements, consultez [Événements](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+>  Les gestionnaires d'événements sont tout simplement des méthodes appelées par le biais de délégués. Pour plus d’informations sur l’utilisation de délégués dans la gestion des événements, consultez [Événements](../../../standard/events/index.md).  
   
  Pour créer un délégué :  
   

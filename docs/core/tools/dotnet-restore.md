@@ -4,16 +4,17 @@ description: "Découvrez comment restaurer les dépendances et les outils spéci
 keywords: "dotnet-restore, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 03/24/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 92da0806eb6c365a4622668242edc28d9966ed26
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 602c173ff8d114a76c5598cd0826485ac32a2e72
+ms.openlocfilehash: fd4fd6ef2e8482a2b961ccbca1f5227d80c8be53
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/29/2017
 
 ---
 
@@ -37,6 +38,8 @@ Pour les dépendances, vous pouvez spécifier l’emplacement des packages resta
 
 Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 
+Le comportement de la commande `dotnet restore` est affecté par certains paramètres du fichier *Nuget.Config*, le cas échéant. Par exemple, si vous définissez `globalPackagesFolder` dans *NuGet.Config*, les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur NuGet.Config](https://docs.microsoft.com/nuget/schema/nuget-config-file).
+
 ## <a name="arguments"></a>Arguments
 
 `ROOT` 
@@ -57,7 +60,7 @@ Spécifie la source de package NuGet à utiliser pendant l’opération de resta
 
 Spécifie un runtime pour la restauration du package. Cela permet de restaurer les packages des runtimes qui ne sont pas explicitement listés dans la balise `<RuntimeIdentifiers>` du fichier *.csproj*. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Fournissez plusieurs identificateurs de runtime en spécifiant cette option plusieurs fois.
 
-`--packages <PACKAGES_DIRECTORY]`
+`--packages <PACKAGES_DIRECTORY>`
 
 Spécifie le répertoire des packages restaurés. 
 
@@ -103,7 +106,7 @@ Restaurer les dépendances et les outils du projet se trouvant dans le répertoi
 
 `dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages` 
 
-Restaurez des dépendances et des outils pour le projet se trouvant dans le répertoire actif et affichez uniquement les erreurs dans la sortie :
+Restaurer les dépendances et les outils du projet se trouvant dans le répertoire actif et afficher uniquement une sortie minimale :
 
-`dotnet restore --verbosity Error`
+`dotnet restore --verbosity minimal`
 

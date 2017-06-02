@@ -32,10 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9e5c3012ce057387497f97e713eb625ac2f2a7d1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 87497d48c04a00e09c82550d49dc85d7be719edf
+ms.openlocfilehash: 7ca43aa68edc89420dd320f92b50311d7279ac06
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/19/2017
 
 ---
 # <a name="c-reference"></a>Référence C#
@@ -64,10 +65,11 @@ Cette section fournit des ressources de référence sur les mots clés, les opé
  Fournit des pointeurs vers la dernière version des spécifications C# au format Microsoft Word.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [FAQ sur C#](http://go.microsoft.com/fwlink/?LinkId=70367)  
- Fournit une liste croissante des questions fréquemment posées sur C# dans le Centre de développement C#.  
-  
- [Articles de la Base de connaissance Microsoft sur C#](http://go.microsoft.com/fwlink/?LinkId=70368)  
+<!--
+ [C# FAQ](http://go.microsoft.com/fwlink/?LinkId=70367)  
+ Provides a growing list of C# Frequently Asked Questions in the C# Developer Center.  
+-->  
+ [Articles de la Base de connaissance Microsoft sur C#.](http://go.microsoft.com/fwlink/?LinkId=70368)  
  Ouvre une page de recherche Microsoft pour rechercher les articles de la Base de connaissances qui sont disponibles sur MSDN.  
   
  [C#](../../csharp/csharp.md)  
@@ -78,3 +80,4 @@ Cette section fournit des ressources de référence sur les mots clés, les opé
   
  [Guide de programmation C#](../../csharp/programming-guide/index.md)  
  Inclut des informations sur l’utilisation du langage de programmation C#.
+

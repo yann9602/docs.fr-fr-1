@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdcdb812-6f13-4f20-9e90-0c0977937142
-translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: 3ca312509d7ba7a7759d1ac294f79cc359419c52
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: cc2e823be1a3d1c0267d98c95b25126bd7d048d4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 
 # <a name="unit-testing-in-net-core-using-dotnet-test"></a>Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test
 
-Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test/) avant de commencer.
+Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ### <a name="creating-the-source-project"></a>Création du projet source
 
@@ -48,7 +49,7 @@ namespace Prime.Services
 
 ### <a name="creating-the-test-project"></a>Création du projet de test
 
-Accédez de nouveau au répertoire *unit-testing-using-dotnet-test* et créez le répertoire *PrimeServices.Tests*. La structure de répertoires est indiquée ci-dessous :
+Revenez au répertoire *unit-testing-using-dotnet-test* et créez le répertoire *PrimeService.Tests*. La structure de répertoires est indiquée ci-dessous :
 
 ```
 /unit-testing-using-dotnet-test

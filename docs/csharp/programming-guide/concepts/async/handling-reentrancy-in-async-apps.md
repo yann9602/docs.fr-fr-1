@@ -19,9 +19,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 7be76ad572be522071d9e8c2ae9cf8c770fd1fd0
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -319,7 +320,6 @@ TOTAL bytes returned:  890591
  La sortie suivante montre le résultat obtenu si l’utilisateur choisit le bouton **Démarrer** une seule fois. L’étiquette A indique que le résultat part de la première fois que le bouton **Démarrer** est choisi. Les numéros indiquent l'ordre des URL dans la liste des cibles de téléchargement.  
   
 ```  
-  
 #Starting group A.  
 #Task assigned for group A.  
   
@@ -391,7 +391,6 @@ C-8. msdn.microsoft.com/library/ff730837.aspx               148010
 TOTAL bytes returned:  920526  
   
 #Group C is complete.  
-  
 ```  
   
  Les groupes B et C démarrent avant que le groupe A ait terminé, mais la sortie de chaque groupe apparaît séparément. Toute la sortie du groupe A apparaît en premier, suivie de toute la sortie du groupe B, puis de toute la sortie du groupe C. L’application affiche toujours les groupes dans l’ordre et, pour chaque groupe, elle affiche toujours les informations sur les sites web, dans l’ordre où les URL apparaissent dans la liste des URL.  
@@ -732,3 +731,4 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
 ## <a name="see-also"></a>Voir aussi  
  [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
+

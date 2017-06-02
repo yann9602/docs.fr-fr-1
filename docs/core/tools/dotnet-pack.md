@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8dbbb3f7-b817-4161-a6c8-a3489d05e051
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 6bb8d618cc092131bd6a904fb66f02c4f3a9ecca
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 14c2e01ab0c30c9f1cbfdcc53ea85fe51a4d8c2e
+ms.openlocfilehash: 5a2ea69825fa336b1d8ce2283e214d02c16347e3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/01/2017
 
 ---
 
@@ -33,7 +34,9 @@ La commande `dotnet pack` génère le projet et crée les packages NuGet. Le ré
 
 Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
-Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Elle est souvent utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code a déjà été créé. 
+Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Elle est souvent utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code a déjà été créé.
+
+Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
 
 ## <a name="arguments"></a>Arguments
 
@@ -100,3 +103,8 @@ Empaqueter le projet dans le répertoire actif du dossier `nupkgs` et ignorer l�
 Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
 
 `dotnet pack --version-suffix "ci-1234"`
+
+Affectez `2.1.0` à la version du package à l’aide de la propriété MSBuild `PackageVersion` :
+
+`dotnet pack /p:PackageVersion=2.1.0`
+

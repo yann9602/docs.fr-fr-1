@@ -20,9 +20,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 64a708e3b88f48ad30d3f3ad25141a31f3d8f73d
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -124,7 +125,6 @@ TOTAL bytes returned:  890591
  Le code suivant illustre ces modifications, marquées par des astérisques. Vous pouvez ajouter les modifications apportées au code à la fin de cette rubrique, ou vous pouvez télécharger l’application finie de [Async exemples : réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571). Le nom du projet est DisableStartButton.  
   
 ```vb  
-  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
     ' This line is commented out to make the results clearer in the output.  
     'ResultsTextBox.Text = ""  
@@ -161,7 +161,6 @@ End Sub
   
         ' *** Declare a System.Threading.CancellationTokenSource.  
         Dim cts As CancellationTokenSource  
-  
     ```  
   
 2.  Dans `StartButton_Click`, déterminez si une opération est déjà en cours d'exécution. Si la valeur de `cts` est `Nothing`, aucune opération n’est déjà active. Si la valeur n’est pas `Nothing`, l’opération est déjà en cours d’exécution est annulée.  
@@ -171,7 +170,6 @@ End Sub
     If cts IsNot Nothing Then  
         cts.Cancel()  
     End If  
-  
     ```  
   
 3.  Définissez `cts` sur une autre valeur qui représente le processus en cours.  
@@ -180,7 +178,6 @@ End Sub
     ' *** Now set cts to cancel the current process if the button is chosen again.  
     Dim newCTS As CancellationTokenSource = New CancellationTokenSource()  
     cts = newCTS  
-  
     ```  
   
 4.  À la fin de `StartButton_Click`, le processus en cours est terminé, ainsi que la valeur de `cts` à `Nothing`.  
@@ -190,7 +187,6 @@ End Sub
     If cts Is newCTS Then  
         cts = Nothing  
     End If  
-  
     ```  
   
  Le code suivant illustre toutes les modifications dans `StartButton_Click` : Les ajouts sont marqués par des astérisques.  
@@ -226,7 +222,6 @@ Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
         cts = Nothing  
     End If  
 End Sub  
-  
 ```  
   
  Dans `AccessTheWebAsync`, apportez les modifications suivantes.  
@@ -275,7 +270,6 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
     ResultsTextBox.Text &=  
         String.Format(vbCrLf & vbCrLf & "TOTAL bytes returned:  " & total & vbCrLf)  
 End Function  
-  
 ```  
   
  Si vous choisissez la **Démarrer** plusieurs fois pendant l’exécution de cette application, il doit produire des résultats qui ressemblent à la sortie suivante.  
@@ -318,7 +312,6 @@ TOTAL bytes returned:  890591
  La sortie suivante montre le résultat si l’utilisateur choisit le **Démarrer** ne bouton qu’une seule fois. L’étiquette de la lettre A, indique que le résultat est la première fois à partir de la **Démarrer** bouton est choisi. Les numéros indiquent l'ordre des URL dans la liste des cibles de téléchargement.  
   
 ```  
-  
 #Starting group A.  
 #Task assigned for group A.  
   
@@ -390,7 +383,6 @@ C-8. msdn.microsoft.com/library/ff730837.aspx               148010
 TOTAL bytes returned:  920526  
   
 #Group C is complete.  
-  
 ```  
   
  Les groupes B et C démarrent avant que le groupe A ait terminé, mais la sortie de chaque groupe apparaît séparément. Toutes les opérations effectuées pour le groupe A apparaît en premier, suivie de toutes les opérations effectuées pour le groupe B et ensuite toutes les opérations effectuées pour le groupe C. L’application toujours affiche les groupes dans l’ordre et, pour chaque groupe, affiche toujours les informations sur les sites Web individuels dans l’ordre où les URL apparaissent dans la liste des URL.  
@@ -705,3 +697,4 @@ End Function
 ## <a name="see-also"></a>Voir aussi  
  [Procédure pas à pas : Accès Web en utilisant Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
  [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+

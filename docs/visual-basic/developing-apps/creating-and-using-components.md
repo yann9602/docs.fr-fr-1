@@ -1,5 +1,5 @@
 ---
-title: "Création et utilisation de composants en Visual Basic | Microsoft Docs"
+title: "Création et utilisation de composants dans Visual Basic | Microsoft Docs"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,18 +27,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9ca4df41897fafc5d7981c85741ae4fa1a8c641f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 1235f62f6ac0878e16387c35150764f3585bc004
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants en Visual Basic
+# <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants dans Visual Basic
 Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=fullName> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. Un composant [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] est un objet réutilisable qui peut interagir avec d’autres objets, qui permet de contrôler les ressources externes et qui offre une prise en charge au moment du design.  
   
- Une fonctionnalité importante des composants est leur concevabilité, ce qui signifie qu’une classe qui correspond à un composant peut être utilisée dans l’environnement de développement intégré (IDE) de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)]. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. Notez que la prise en charge de base au moment du design pour les composants est intégrée au [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]. Un développeur de composant n’a pas besoin d’effectuer du travail supplémentaire pour tirer parti de la fonctionnalité de base au moment du design.  
+ Une caractéristique importante des composants est qu’ils peuvent servir au design, ce qui signifie qu’une classe qui est un composant peut être utilisée dans l’environnement de développement intégré (IDE) de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)]. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. Notez que la prise en charge de base au moment du design pour les composants est intégrée au [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]. Un développeur de composant n’a pas besoin d’effectuer du travail supplémentaire pour tirer parti de la fonctionnalité de base au moment du design.  
   
- Un *contrôle* est similaire à un composant, dans la mesure où tous les deux sont concevables. Toutefois, un contrôle fournit une interface utilisateur, ce qui n’est pas le cas d’un composant. Un contrôle doit dériver de l’une des classes de contrôle de base : <xref:System.Windows.Forms.Control> ou <xref:System.Web.UI.Control>.  
+ Un *contrôle* est similaire à un composant dans la mesure où tous les deux peuvent servir au design. Toutefois, un contrôle fournit une interface utilisateur, ce qui n’est pas le cas d’un composant. Un contrôle doit dériver de l’une des classes de contrôle de base : <xref:System.Windows.Forms.Control> ou <xref:System.Web.UI.Control>.  
   
 ## <a name="when-to-create-a-component"></a>Quand créer un composant  
  Si votre classe doit être utilisée sur une aire de conception (telle que le concepteur Windows Forms ou Web Forms), mais qu’elle n’a pas d’interface utilisateur, elle doit être un composant et implémenter <xref:System.ComponentModel.IComponent>, ou dériver d’une classe qui implémente directement ou indirectement <xref:System.ComponentModel.IComponent>.  
@@ -54,7 +55,7 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
  Pour plus d’informations sur la prise en charge au moment du design, consultez [Attributs en mode design pour les composants](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3) et [Extension de la prise en charge au moment du design](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
   
 ## <a name="component-classes"></a>Classes de composant  
- L’espace de noms <xref:System.ComponentModel> fournit des classes qui sont utilisées pour implémenter le comportement au moment de l’exécution et au moment du design des composants et des contrôles. Cet espace de noms inclut les classes et les interfaces de base servant à l’implémentation des attributs et des convertisseurs de type, à la liaison à des sources de données et à la gestion des licences des composants.  
+ L’espace de noms <xref:System.ComponentModel> fournit des classes utilisées pour implémenter le comportement des composants et des contrôles au moment de l’exécution et au moment du design. Cet espace de noms inclut les classes et les interfaces de base servant à l’implémentation des attributs et des convertisseurs de type, à la liaison à des sources de données et à la gestion des licences des composants.  
   
  Les classes de composant principales sont les suivantes :  
   
@@ -95,7 +96,7 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
  [Classes de composant](http://msdn.microsoft.com/library/ce2e5647-e673-4c2b-8125-ffebbd9d71bc)  
  Explique comment une classe devient un composant, comment exposer les fonctionnalités des composants, comment contrôler l’accès aux composants et comment contrôler la création des instances de composants.  
   
- [Dépannage de la création de contrôles et de composants](http://msdn.microsoft.com/library/e9c8c099-2271-4737-882f-50f336c7a55e)  
+ [Dépannage de la création de contrôles et de composants](../../framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
  Explique comment résoudre certains problèmes courants.  
   
 ## <a name="see-also"></a>Voir aussi  

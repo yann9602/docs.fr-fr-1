@@ -1,28 +1,47 @@
 ---
-title: "Savoir quand utiliser les mots cl&#233;s override et new (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "new (mot clé C#)"
-  - "override (mot clé C#)"
-  - "polymorphisme (C#), utiliser override et new (C#)"
+title: "Déterminer quand utiliser les mots clés override et new (Guide de programmation C#) │ Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- override keyword [C#]
+- new keyword [C#]
+- polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
 caps.latest.revision: 16
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 4e7d42f65ec8e7a3d9246d801d5efe074f0714b1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
+
 ---
-# Savoir quand utiliser les mots cl&#233;s override et new (Guide de programmation C#)
-En C\#, une méthode dans une classe dérivée peut avoir le même nom qu'une méthode dans la classe de base.  Vous pouvez spécifier comment les méthodes interagissent en utilisant les mots clés [new](../../../csharp/language-reference/keywords/new.md) et [override](../../../csharp/language-reference/keywords/override.md).  Le modificateur `override` *étend* la méthode de classe de base, et le modificateur `new` *le masque*.  La différence est illustrée dans les exemples de cette rubrique.  
+# <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Savoir quand utiliser les mots clés override et new (Guide de programmation C#)
+En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../../csharp/language-reference/keywords/new.md) et [override](../../../csharp/language-reference/keywords/override.md). Le modificateur `override` *étend* la méthode de classe de base et le modificateur `new` la *masque*. La différence est illustrée dans les exemples de cette rubrique.  
   
- Dans une application de console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`.  `DerivedClass` hérite de `BaseClass`.  
+ Dans une application console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`. `DerivedClass` hérite de `BaseClass`.  
   
-```c#  
+```csharp  
 class BaseClass  
 {  
     public void Method1()  
@@ -38,20 +57,19 @@ class DerivedClass : BaseClass
         Console.WriteLine("Derived - Method2");  
     }  
 }  
-  
 ```  
   
  Dans la méthode `Main`, déclarez les variables `bc`, `dc` et `bcdc`.  
   
--   `bc` est du type `BaseClass` et sa valeur est du type `BaseClass`.  
+-   `bc` est de type `BaseClass` et sa valeur est de type `BaseClass`.  
   
--   `dc` est du type `DerivedClass` et sa valeur est du type `DerivedClass`.  
+-   `dc` est de type `DerivedClass` et sa valeur est de type `DerivedClass`.  
   
--   `bcdc` est du type `BaseClass` et sa valeur est du type `DerivedClass`.  Il s'agit de la variable à laquelle prêter attention.  
+-   `bcdc` est de type `BaseClass` et sa valeur est de type `DerivedClass`. Il s’agit de la variable à surveiller.  
   
- Étant donné que `bc` et `bcdc` ont le type `BaseClass`, ils peuvent uniquement accéder directement à `Method1`, à moins que vous n'utilisiez le casting.  La variable `dc` peut accéder à `Method1` et `Method2`.  Ces relations sont illustrées dans le code suivant.  
+ Comme `bc` et `bcdc` ont le type `BaseClass`, ils ne peuvent accéder directement qu’à `Method1`, sauf si vous effectuez un cast. La variable `dc` peut accéder à `Method1` et `Method2`. Ces relations sont illustrées dans le code suivant.  
   
-```c#  
+```csharp  
 class Program  
 {  
     static void Main(string[] args)  
@@ -71,36 +89,33 @@ class Program
     // Derived - Method2  
     // Base - Method1  
 }  
-  
 ```  
   
- Ensuite, ajoutez le code suivant à la méthode `Method2` à `BaseClass`.  La signature de cette méthode correspond à celle de la méthode `Method2` dans `DerivedClass`.  
+ Ensuite, ajoutez la méthode `Method2` suivante à `BaseClass`. La signature de cette méthode correspond à celle de la méthode `Method2` dans `DerivedClass`.  
   
-```c#  
+```csharp  
 public void Method2()  
 {  
     Console.WriteLine("Base - Method2");  
 }  
-  
 ```  
   
- Étant donné que `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d'appel peut être ajoutée pour les variables `bc` et `bcdc` de `BaseClass`, comme indiqué dans le code suivant.  
+ Comme `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d’appel peut être ajoutée pour les variables `BaseClass` `bc` et `bcdc`, comme illustré dans le code suivant.  
   
-```c#  
+```csharp  
 bc.Method1();  
 bc.Method2();  
 dc.Method1();  
 dc.Method2();  
 bcdc.Method1();  
 bcdc.Method2();  
-  
 ```  
   
- Lorsque vous générez le projet, vous constatez que l'ajout de la méthode `Method2` dans `BaseClass` provoque un avertissement.  L'avertissement indique que la méthode `Method2` dans `DerivedClass` masque la méthode `Method2` dans `BaseClass`.  Il est recommandé d'utiliser le mot clé `new` dans la définition de `Method2` si vous envisagez de provoquer ce résultat.  Vous pouvez également renommer l'une des méthodes `Method2` pour résoudre l'avertissement, mais ce n'est pas toujours pratique.  
+ Quand vous générez le projet, vous constatez que l’ajout de la méthode `Method2` dans `BaseClass` génère un avertissement. L’avertissement indique que la méthode `Method2` dans `DerivedClass` masque la méthode `Method2` dans `BaseClass`. Il est recommandé d’utiliser le mot clé `new` dans la définition de `Method2` si vous avez l’intention de provoquer ce résultat. Sinon, vous pouvez renommer l’une des méthodes `Method2` pour résoudre l’avertissement, mais ce n’est pas toujours pratique.  
   
- Avant d'ajouter `new`, exécutez le programme pour consulter la sortie générée par les instructions d'appel supplémentaires.  Les résultats suivantes s'affichent.  
+ Avant d’ajouter `new`, exécutez le programme pour afficher la sortie produite par les instructions d’appel supplémentaires. Les résultats suivants s'affichent.  
   
-```c#  
+```csharp  
 // Output:  
 // Base - Method1  
 // Base - Method2  
@@ -108,46 +123,42 @@ bcdc.Method2();
 // Derived - Method2  
 // Base - Method1  
 // Base - Method2  
-  
 ```  
   
- Le mot clé `new` conserve les relations qui génèrent cette sortie, mais il supprime l'avertissement.  Les variables qui ont le type `BaseClass` continuent à accéder aux membres de `BaseClass`, et la variable qui a le type `DerivedClass` continue à accéder d'abord aux membres dans `DerivedClass`, et à considérer ensuite les membres hérités de `BaseClass`.  
+ Le mot clé `new` conserve les relations qui génèrent cette sortie, mais supprime l’avertissement. Les variables de type `BaseClass` continuent d’accéder aux membres de `BaseClass` et la variable de type `DerivedClass` continue d’accéder aux membres dans `DerivedClass` avant de prendre en compte les membres hérités de `BaseClass`.  
   
- Pour supprimer l'avertissement, ajoutez le modificateur `new` à la définition de `Method2` dans `DerivedClass`, comme indiqué dans le code suivant.  Le modificateur peut être ajouté avant ou après `public`.  
+ Pour supprimer l’avertissement, ajoutez le modificateur `new` à la définition de `Method2` dans `DerivedClass`, comme illustré dans le code suivant. Le modificateur peut être ajouté avant ou après `public`.  
   
-```c#  
+```csharp  
 public new void Method2()  
 {  
     Console.WriteLine("Derived - Method2");  
 }  
-  
 ```  
   
- Exécutez à nouveau le programme afin de vérifier que la sortie n'a pas changé.  Vérifiez également que l'avertissement ne s'affiche plus.  À l'aide de `new`, vous déclarez que vous réalisez que le membre qu'il modifie masque un membre hérité de la classe de base.  Pour plus d'informations sur le masquage des noms par l'intermédiaire de l'héritage, consultez [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md).  
+ Réexécutez le programme pour vérifier que la sortie n’a pas changé. Vérifiez aussi que l’avertissement ne s’affiche plus. À l’aide de `new`, vous déclarez que vous êtes conscient que le membre qu’il modifie masque un membre hérité de la classe de base. Pour plus d’informations sur le masquage de nom par héritage, consultez [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md).  
   
- Pour contraster ce comportement aux effets de l'utilisation de `override`, ajoutez la méthode suivante à `DerivedClass`.  Le modificateur `override` peut être ajouté avant ou après `public`.  
+ Pour comparer ce comportement aux effets de l’utilisation de `override`, ajoutez la méthode suivante à `DerivedClass`. Le modificateur `override` peut être ajouté avant ou après `public`.  
   
-```c#  
+```csharp  
 public override void Method1()  
 {  
     Console.WriteLine("Derived - Method1");  
 }  
-  
 ```  
   
- Ajoutez le modificateur `virtual` à la définition de `Method1` dans `BaseClass`.  Le modificateur `virtual` peut être ajouté avant ou après `public`.  
+ Ajoutez le modificateur `virtual` à la définition de `Method1` dans `BaseClass`. Le modificateur `virtual` peut être ajouté avant ou après `public`.  
   
-```c#  
+```csharp  
 public virtual void Method1()  
 {  
     Console.WriteLine("Base - Method1");  
 }  
-  
 ```  
   
- Réexécutez le projet.  Notez en particulier les deux dernières lignes de la sortie suivante.  
+ Réexécutez le projet. Notez en particulier les deux dernières lignes de la sortie suivante.  
   
-```c#  
+```csharp  
 // Output:  
 // Base - Method1  
 // Base - Method2  
@@ -155,14 +166,13 @@ public virtual void Method1()
 // Derived - Method2  
 // Derived - Method1  
 // Base - Method2  
-  
 ```  
   
- L'utilisation du modificateur `override` permet à `bcdc` d'accéder à la méthode `Method1` définie dans `DerivedClass`.  En général, c'est le comportement voulu dans les hiérarchies d'héritage.  Vous voulez des objets dont les valeurs sont créées depuis  la classe dérivée pour utiliser les méthodes définies dans la classe dérivée.  Vous réalisez ce comportement avec `override` pour étendre la méthode de la classe de base.  
+ L’utilisation du modificateur `override` permet à `bcdc` d’accéder à la méthode `Method1` définie dans `DerivedClass`. En règle générale, il s’agit du comportement souhaité dans les hiérarchies d’héritage. Vous voulez que les objets dont les valeurs sont créées à partir de la classe dérivée utilisent les méthodes définies dans la classe dérivée. Vous obtenez ce comportement en utilisant `override` pour étendre la méthode de classe de base.  
   
- Le code suivant inclut l'exemple complet.  
+ Le code suivant contient l’exemple complet.  
   
-```c#  
+```csharp  
 using System;  
 using System.Text;  
   
@@ -228,12 +238,11 @@ namespace OverrideAndNew
         }  
     }  
 }  
-  
 ```  
   
- L'exemple suivant illustre un comportement similaire dans un contexte différent.  L'exemple définit trois classes : une classe de base nommée `Car` et deux classes dérivés de celle\-ci, `ConvertibleCar` et `Minivan`.  La classe de base contient une méthode `DescribeCar`.  La méthode affiche une description de base d'une voiture, puis appelle `ShowDetails` pour fournir des informations supplémentaires.  Chacune des trois classes définit une méthode `ShowDetails`.  Le modificateur `new` est utilisé pour définir `ShowDetails` dans la classe `ConvertibleCar`.  Le modificateur `override` est utilisé pour définir `ShowDetails` dans la classe `Minivan`.  
+ L’exemple suivant illustre un comportement similaire dans un autre contexte. L’exemple définit trois classes : une classe de base nommée `Car` et deux de ses classes dérivées, `ConvertibleCar` et `Minivan`. La classe de base contient une méthode `DescribeCar`. La méthode affiche une description de base d’une voiture et appelle ensuite `ShowDetails` pour fournir des informations supplémentaires. Chacune des trois classes définit une méthode `ShowDetails`. Le modificateur `new` est utilisé pour définir `ShowDetails` dans la classe `ConvertibleCar`. Le modificateur `override` est utilisé pour définir `ShowDetails` dans la classe `Minivan`.  
   
-```c#  
+```csharp  
 // Define the base class, Car. The class defines two methods,  
 // DescribeCar and ShowDetails. DescribeCar calls ShowDetails, and each derived  
 // class also defines a ShowDetails method. The example tests which version of  
@@ -273,12 +282,11 @@ class Minivan : Car
         System.Console.WriteLine("Carries seven people.");  
     }  
 }  
-  
 ```  
   
- L'exemple teste quelle version de `ShowDetails` est appelée.  La méthode suivante, `TestCars1`, déclare une instance de chaque classe, puis appelle `DescribeCar` sur chaque instance.  
+ L’exemple vérifie la version de `ShowDetails` qui est appelée. La méthode suivante, `TestCars1`, déclare une instance de chaque classe, puis appelle `DescribeCar` sur chaque instance.  
   
-```c#  
+```csharp  
 public static void TestCars1()  
 {  
     System.Console.WriteLine("\nTestCars1");  
@@ -300,13 +308,11 @@ public static void TestCars1()
     car3.DescribeCar();  
     System.Console.WriteLine("----------");  
 }  
-  
 ```  
   
- `TestCars1` génère la sortie suivante.  Notez en particulier les résultats de `car2`, qui ne correspondent probablement pas à ce que vous attendiez.  Le type de l'objet est `ConvertibleCar`, mais `DescribeCar` n'accède pas à la version de `ShowDetails` qui est définie dans la classe `ConvertibleCar`, car cette méthode est déclarée avec le modificateur `new`, et non le modificateur `override`.  Par conséquent, un objet `ConvertibleCar` affiche la même description qu'un objet `Car`.  Comparez les résultats pour `car3`, qui est un objet `Minivan`.  Dans ce cas, la méthode `ShowDetails` déclarée dans la classe `Minivan` écrase la méthode `ShowDetails` déclarée dans la classe `Car` et la description affichée décrit un espacement fixe.  
+ `TestCars1` génère la sortie suivante. Notez en particulier les résultats de `car2`, qui ne correspondent probablement pas à ce que vous attendiez. Le type de l’objet est `ConvertibleCar`, mais `DescribeCar` n’accède pas à la version de `ShowDetails` qui est défini dans la classe `ConvertibleCar`, car cette méthode est déclarée avec le modificateur `new`, et non `override`. Par conséquent, un objet `ConvertibleCar` affiche la même description qu’un objet `Car`. Comparez les résultats pour `car3`, qui est un objet `Minivan`. Dans ce cas, la méthode `ShowDetails` déclarée dans la classe `Minivan` substitue la méthode `ShowDetails` déclarée dans la classe `Car` et la description affichée décrit un minivan.  
   
-```c#  
-  
+```csharp  
 // TestCars1  
 // ----------  
 // Four wheels and an engine.  
@@ -318,12 +324,11 @@ public static void TestCars1()
 // Four wheels and an engine.  
 // Carries seven people.  
 // ----------  
-  
 ```  
   
- `TestCars2` crée une liste d'objets qui ont le type `Car`.  Les valeurs des objets sont instanciées à partir des classes `Car`, `ConvertibleCar` et `Minivan`.  `DescribeCar` est appelé sur chaque élément de la liste.  Le code suivant montre la définition de `TestCars2`.  
+ `TestCars2` crée une liste d’objets de type `Car`. Les valeurs des objets sont instanciées à partir des classes `Car`, `ConvertibleCar` et `Minivan`. `DescribeCar` est appelé sur chaque élément de la liste. Le code suivant illustre la définition de `TestCars2`.  
   
-```c#  
+```csharp  
 public static void TestCars2()  
 {  
     System.Console.WriteLine("\nTestCars2");  
@@ -338,12 +343,11 @@ public static void TestCars2()
         System.Console.WriteLine("----------");  
     }  
 }  
-  
 ```  
   
- Le code suivant s'affiche.  Notez qu'il est identique à la sortie affichée par `TestCars1`.  La méthode `ShowDetails` de la classe `ConvertibleCar` n'est pas appelée, que le type de l'objet soit `ConvertibleCar`, comme dans `TestCars1` ou `Car`, comme dans `TestCars2`.  Inversement, `car3` appelle la méthode `ShowDetails` de la classe `Minivan` dans les deux cas, avec le type `Minivan` ou `Car`.  
+ La sortie suivante s’affiche. Notez qu’elle est identique à la sortie affichée par `TestCars1`. La méthode `ShowDetails` de la classe `ConvertibleCar` n’est pas appelée, que le type de l’objet soit `ConvertibleCar`, comme dans `TestCars1`, ou `Car`, comme dans `TestCars2`. À l’inverse, `car3` appelle la méthode `ShowDetails` à partir de la classe `Minivan` dans les deux cas, que son type soit `Minivan` ou `Car`.  
   
-```c#  
+```csharp  
 // TestCars2  
 // ----------  
 // Four wheels and an engine.  
@@ -355,13 +359,11 @@ public static void TestCars2()
 // Four wheels and an engine.  
 // Carries seven people.  
 // ----------  
-  
 ```  
   
- Les méthodes `TestCars3` et `TestCars4` terminent l'exemple.  Ces méthodes appellent `ShowDetails` directement, tout d'abord à partir d'objets déclarés comme ayant le type `ConvertibleCar` et `Minivan` \(`TestCars3`\), puis à partir d'objets déclarés comme ayant le type `Car` \(`TestCars4`\).  Le code suivant définit ces deux méthodes.  
+ Les méthodes `TestCars3` et `TestCars4` terminent l’exemple. Ces méthodes appellent `ShowDetails` directement, d’abord à partir des objets déclarés avec le type `ConvertibleCar` et `Minivan` (`TestCars3`), puis à partir des objets déclarés avec le type `Car` (`TestCars4`). Le code suivant définit ces deux méthodes.  
   
-```c#  
-  
+```csharp  
 public static void TestCars3()  
 {  
     System.Console.WriteLine("\nTestCars3");  
@@ -381,12 +383,11 @@ public static void TestCars4()
     car2.ShowDetails();  
     car3.ShowDetails();  
 }  
-  
 ```  
   
  Les méthodes produisent la sortie suivante, qui correspond aux résultats du premier exemple de cette rubrique.  
   
-```c#  
+```csharp  
 // TestCars3  
 // ----------  
 // A roof that opens up.  
@@ -396,12 +397,11 @@ public static void TestCars4()
 // ----------  
 // Standard transportation.  
 // Carries seven people.  
-  
 ```  
   
- Le code suivant montre le projet terminé et sa sortie.  
+ Le code suivant illustre le projet complet et sa sortie.  
   
-```c#  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -562,12 +562,12 @@ namespace OverrideAndNew2
     }  
   
 }  
-  
 ```  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [Versioning avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
- [de base](../../../csharp/language-reference/keywords/base.md)   
+ [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
+ [base](../../../csharp/language-reference/keywords/base.md)   
  [abstract](../../../csharp/language-reference/keywords/abstract.md)
+

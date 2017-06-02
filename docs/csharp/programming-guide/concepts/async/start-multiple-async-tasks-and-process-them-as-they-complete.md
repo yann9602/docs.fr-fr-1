@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ae131d70af5e4f469b99e2544b8de220fbf92a26
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 0ab1c8d117327c9f5805d184b263a0932ab0bc3f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)
@@ -34,7 +35,7 @@ En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullNa
 >  Pour exécuter les exemples, Visual Studio 2012 ou version ultérieure et .NET Framework 4.5 ou version ultérieure doivent être installés sur votre ordinateur.  
   
 ## <a name="downloading-the-example"></a>Téléchargement de l'exemple  
- Vous pouvez télécharger l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046), puis effectuer les opérations suivantes.  
+ Téléchargez l’intégralité du projet Windows Presentation Foundation (WPF) à partir de la page [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046), puis procédez comme suit.  
   
 1.  Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.  
   
@@ -59,27 +60,38 @@ En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullNa
   
  Le projet **CancelAfterOneTask** inclut déjà une requête qui, lorsqu’elle est exécutée, crée une collection de tâches. Chaque appel à `ProcessURLAsync` dans le code suivant retourne un <xref:System.Threading.Tasks.Task%601> où `TResult` est un entier.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+IEnumerable<Task<int>> downloadTasksQuery =  
+    from url in urlList select ProcessURL(url, client, ct);  
+```  
+  
  Dans le fichier MainWindow.xaml.cs du projet, apportez les modifications suivantes à la méthode `AccessTheWebAsync`.  
   
 -   Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> à la place de <xref:System.Linq.Enumerable.ToArray%2A>.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+    ```csharp  
+    List<Task<int>> downloadTasks = downloadTasksQuery.ToList();  
+    ```  
+  
 -   Ajoutez une boucle while qui effectue les étapes suivantes pour chaque tâche dans la collection.  
   
     1.  Elle attend un appel à `WhenAny` pour identifier la première tâche dans la collection afin de terminer son téléchargement.  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
+        ```csharp  
+        Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);  
+        ```  
+  
     2.  Elle supprime cette tâche de la collection.  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
+        ```csharp  
+        downloadTasks.Remove(firstFinishedTask);  
+        ```  
+  
     3.  Elle attend `firstFinishedTask`, qui est retourné par un appel à `ProcessURLAsync`. La variable `firstFinishedTask` est un <xref:System.Threading.Tasks.Task%601> où `TReturn` est un entier. La tâche est déjà terminée, mais vous l’attendez pour récupérer la longueur du site web téléchargé, comme le montre l’exemple suivant.  
   
-        ```cs  
+        ```csharp  
         int length = await firstFinishedTask;  
         resultsTextBox.Text += String.Format("\r\nLength of the download:  {0}", length);  
-        VBCopy Code  
-        Dim length = Await firstFinishedTask  
         ```  
   
  Vous devez exécuter le projet plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.  
@@ -94,7 +106,7 @@ En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullNa
   
  Vous pouvez télécharger le projet à partir de la page [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046).  
   
-```cs  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -232,6 +244,6 @@ namespace ProcessTasksAsTheyFinish
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Threading.Tasks.Task.WhenAny%2A>   
- [Réglage de votre application Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
+ [Réglage de votre application asynchrone (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
+ [Programmation asynchrone avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046)

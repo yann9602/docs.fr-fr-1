@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 17fab50b0f95bacd12d7044ec95c6cef2453d250
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 533492c030188307f1596b24f1c2fa81940ebfe7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-create-property-grids-for-user-settings-in-visual-basic"></a>Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic
@@ -50,7 +51,7 @@ Vous pouvez créer une grille de propriétés pour les paramètres utilisateur e
 > [!NOTE]
 >  Vous ne pouvez pas changer ou enregistrer les valeurs des paramètres de portée application au moment de l’exécution. Les paramètres de portée application peuvent être changés uniquement lors de la création de l’application (par l’intermédiaire du **Concepteur de projet**) ou en modifiant le fichier de configuration de l’application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet).  
   
- Cet exemple utilise un contrôle <xref:System.Windows.Forms.PropertyGrid> pour accéder aux propriétés des paramètres utilisateur de l’objet `My.Settings`. Par défaut, <xref:System.Windows.Forms.PropertyGrid> affiche toutes les propriétés de l’objet `My.Settings`. Toutefois, les propriétés des paramètres utilisateur ont l’attribut <xref:System.Configuration.UserScopedSettingAttribute>. Cet exemple affecte <xref:System.Configuration.UserScopedSettingAttribute> comme propriété <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> de la <xref:System.Windows.Forms.PropertyGrid> pour afficher uniquement les propriétés des paramètres utilisateur.  
+ Cet exemple utilise un contrôle <xref:System.Windows.Forms.PropertyGrid> pour accéder aux propriétés des paramètres utilisateur de l’objet `My.Settings`. Par défaut, <xref:System.Windows.Forms.PropertyGrid> affiche toutes les propriétés de l’objet `My.Settings`. Toutefois, les propriétés des paramètres utilisateur ont l’attribut <xref:System.Configuration.UserScopedSettingAttribute>. Cet exemple affecte la valeur <xref:System.Configuration.UserScopedSettingAttribute> à la propriété <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> de <xref:System.Windows.Forms.PropertyGrid> pour afficher uniquement les propriétés des paramètres utilisateur.  
   
 ### <a name="to-add-a-user-setting-property-grid"></a>Pour ajouter une grille de propriétés de paramètres utilisateur  
   

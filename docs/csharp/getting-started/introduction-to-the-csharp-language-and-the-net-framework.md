@@ -28,17 +28,18 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bfd3c08f69461d65140ef948672774a7435c326d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
+ms.openlocfilehash: a2c5986dfb9ed4f80e15e8e3ddf061ef858a1e93
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction au langage C# et au .NET Framework
 C# est un langage élégant et de type sécurisé orienté objet qui permet aux développeurs de créer toute une gamme d'applications sûres et solides exécutées sur [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)]. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore. Visual C# fournit un éditeur de code avancé, des concepteurs d’interface utilisateur pratiques, un débogueur intégré et de nombreux autres outils pour faciliter le développement d’applications basées sur le langage C# et le [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)].  
   
 > [!NOTE]
->  La documentation de [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] suppose que vous avez une compréhension des concepts de base de la programmation. Si vous êtes un débutant complet, vous souhaiterez peut-être consulter [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)], qui est disponible sur le Web. Vous pouvez également tirer parti de la documentation et des ressources Web sur C# pour acquérir des compétences de programmation pratiques.  
+> La documentation de [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] suppose que vous avez une compréhension des concepts de base de la programmation. Si vous êtes un débutant complet, vous souhaiterez peut-être consulter [!INCLUDE[csprcsxpr](../../csharp/getting-started/includes/csprcsxpr_md.md)], qui est disponible sur le Web. Vous pouvez également tirer parti de la documentation et des ressources Web sur C# pour acquérir des compétences de programmation pratiques.  
   
 ## <a name="c-language"></a>Langage C#  
  La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe avec accolades de C# sera facile à reconnaître pour toute personne familiarisée avec C, C++ ou Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C# simplifie beaucoup des complexités de C++ et fournit des fonctionnalités puissantes, comme les types valeur Nullable, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire, qui ne figurent pas dans Java. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions [!INCLUDE[vbteclinqext](../../csharp/getting-started/includes/vbteclinqext_md.md)] font des requêtes fortement typées une construction de première classe du langage.  
@@ -85,15 +86,6 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
  Outre les services de runtime [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms qui fournissent une grande variété de fonctionnalités utiles pour tous les éléments allant de l’entrée et la sortie de fichiers pour la manipulation de chaînes à l’analyse de XML, en passant par les contrôles Windows Forms. Une application C# standard utilise énormément la bibliothèque de classes [!INCLUDE[dnprdnshort](../../csharp/getting-started/includes/dnprdnshort_md.md)] pour gérer les tâches fastidieuses.  
   
  Pour plus d’informations sur .NET Framework, consultez [Présentation de Microsoft .NET Framework](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355).  
-  
-## <a name="featured-book-chapters"></a>Chapitres proposés  
- [C# Language Fundamentals](http://go.microsoft.com/fwlink/?LinkId=195416) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
-  
- [C# and .NET Programming](http://go.microsoft.com/fwlink/?LinkId=195413) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
-  
- [Présentation de C#](http://go.microsoft.com/fwlink/?LinkId=221226) dans [Débuter avec Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
-  
- [Visual Studio 2008 et C# Express 2008](http://go.microsoft.com/fwlink/?LinkId=195414) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
   
 ## <a name="see-also"></a>Voir aussi  
  [C#](../../csharp/csharp.md)   

@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7ac24019390be8501e32b944fb1f9527636815eb
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 22ef950c85b5d19141ea346a9e02d58003f45232
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="yield-c-reference"></a>yield (Référence C#)
@@ -41,7 +42,11 @@ Lorsque vous utilisez le mot clé `yield` dans une instruction, vous indiquez qu
   
  L'exemple suivant montre les deux formulaires de l'instruction `yield`.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+yield return <expression>;  
+yield break;  
+```  
+  
 ## <a name="remarks"></a>Remarques  
  Utilisez une instruction `yield return` pour retourner chaque élément un par un.  
   
@@ -76,7 +81,14 @@ Lorsque vous utilisez le mot clé `yield` dans une instruction, vous indiquez qu
 ## <a name="technical-implementation"></a>Implémentation technique  
  Le code suivant retourne `IEnumerable<string>` depuis une méthode Iterator, puis itère au sein de ses éléments.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```csharp  
+IEnumerable<string> elements = MyIteratorMethod();  
+foreach (string element in elements)  
+{  
+   ...  
+}  
+```  
+  
  L'appel à `MyIteratorMethod` n'exécute pas le corps de la méthode. À la place, l'appel retourne `IEnumerable<string>` dans la variable `elements`.  
   
  Dans une itération de la boucle `foreach`, la méthode <xref:System.Collections.IEnumerator.MoveNext%2A> est appelée pour `elements`. Cet appel exécute le corps de `MyIteratorMethod` jusqu'à ce que l'instruction `yield return` suivante soit atteinte. L’expression retournée par l’instruction `yield return` détermine non seulement la valeur de la variable `element` pour la consommation par le corps de boucle, mais également la propriété <xref:System.Collections.Generic.IEnumerator%601.Current%2A> des éléments, qui est `IEnumerable<string>`.  
@@ -96,7 +108,7 @@ Lorsque vous utilisez le mot clé `yield` dans une instruction, vous indiquez qu
  [!code-cs[csrefKeywordsContextual#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_2.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   

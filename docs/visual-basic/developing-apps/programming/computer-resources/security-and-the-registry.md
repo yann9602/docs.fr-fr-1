@@ -1,52 +1,69 @@
 ---
-title: "Security and the Registry (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "security [Visual Basic], registry"
-  - "registry, security issues"
+title: "Sécurité et Registre (Visual Basic) │ Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- security [Visual Basic], registry
+- registry, security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
 caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
----
-# Security and the Registry (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 506271ec92eaf26409b7b380d12f6ae0622f9f90
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
-Cette page discute des conséquences pour la sécurité liées au stockage de données dans le Registre.  
+---
+# <a name="security-and-the-registry-visual-basic"></a>Sécurité et Registre (Visual Basic)
+Cette page décrit les implications en matière de sécurité du stockage des données dans le Registre.  
   
-## Autorisations  
- Pour des raisons de sécurité, il est déconseillé de stocker des données confidentielles, telles que des mots de passe, en texte brut dans le Registre, même si la clé de Registre est protégée par des listes de contrôle d'accès \(ACL, Access Control Lists\).  
+## <a name="permissions"></a>Autorisations  
+ Il est dangereux de stocker des données confidentielles (comme des mots de passe) dans le Registre sous forme de texte brut, même si la clé de Registre est protégée par des listes de contrôle d’accès.  
   
- L'utilisation du Registre peut compromettre la sécurité par l'accord d'accès inappropriés aux ressources du système ou aux informations protégées.  Pour utiliser ces propriétés, vous devez posséder des autorisations de lecture et d'écriture de l'énumération <xref:System.Security.Permissions.RegistryPermissionAccess>, qui contrôle l'accès aux variables de Registre.  Tout code s'exécutant avec une confiance totale \(dans la stratégie de sécurité par défaut, tout code installé sur le disque dur local de l'utilisateur\) détient les autorisations nécessaires pour accéder au Registre.  Pour plus d'informations, consultez la classe <xref:System.Security.Permissions.RegistryPermission>.  
+ L’utilisation du Registre peut compromettre la sécurité en accordant un accès inapproprié à des ressources système ou à des informations protégées. Pour utiliser ces propriétés, vous devez disposer des autorisations de lecture et d’écriture de l’énumération <xref:System.Security.Permissions.RegistryPermissionAccess>, qui contrôle l’accès aux variables de Registre. Tout code s’exécutant avec une confiance totale (sous la stratégie de sécurité par défaut, il s’agit de n’importe quel code installé sur le disque dur local de l’utilisateur) dispose des autorisations nécessaires pour accéder au Registre. Pour plus d’informations, consultez la classe <xref:System.Security.Permissions.RegistryPermission>.  
   
- Les variables de Registre ne doivent pas être stockées dans des emplacements de mémoire où elles sont accessibles à du code sans <xref:System.Security.Permissions.RegistryPermission>.  De même, lorsque vous accordez des autorisations, accordez les privilèges minimaux nécessaires pour effectuer le travail.  
+ Les variables de Registre ne doivent pas être stockées dans des emplacements de mémoire où du code sans <xref:System.Security.Permissions.RegistryPermission> peut y accéder. De même, quand vous accordez des autorisations, accordez les privilèges minimaux nécessaires pour effectuer la tâche.  
   
- Les valeurs d'accès de l'autorisation Registre sont définies par l'énumération <xref:System.Security.Permissions.RegistryPermissionAccess>.  Le tableau suivant décrit en détail ses membres.  
+ Les valeurs de l’autorisation d’accès au Registre sont définies par l’énumération <xref:System.Security.Permissions.RegistryPermissionAccess>. Le tableau suivant détaille ses membres.  
   
 |Valeur|Accès aux variables de Registre|  
-|------------|-------------------------------------|  
-|`AllAccess`|Création, lecture et écriture|  
+|-----------|----------------------------------|  
+|`AllAccess`|Créer, lire et écrire|  
 |`Create`|Créer|  
-|`NoAccess`|Pas d'accès|  
+|`NoAccess`|Pas d’accès|  
 |`Read`|Lecture|  
-|`Write`|Écrire|  
+|`Write`|Write|  
   
-## Vérification des valeurs dans les clés de Registre  
- Lorsque vous créez une valeur de Registre, vous devez déterminer la marche à suivre si cette valeur existe déjà.  Il est possible qu'un autre processus, peut\-être nuisible, ait déjà créé la valeur et puisse y accéder.  Lorsque vous placez des données dans la valeur du Registre, elles sont disponibles pour les autres processus.  Pour empêcher cela, utilisez la méthode `GetValue`.  Elle retourne `Nothing` si la clé n'existe pas.  
+## <a name="checking-values-in-registry-keys"></a>Vérification des valeurs dans les clés de Registre  
+ Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour l’éviter, utilisez la méthode `GetValue`. Elle retourne `Nothing` si la clé n’existe pas encore.  
   
 > [!IMPORTANT]
->  Lors de la lecture du Registre à partir d'une application Web, l'identité de l'utilisateur actuel dépend de l'authentification et de l'emprunt d'identité implémentés dans l'application Web.  
+>  Lors de la lecture du Registre à partir d’une application web, l’identité de l’utilisateur actuel dépend de l’authentification et de l’emprunt d’identité implémentés dans l’application web.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   
- [Reading from and Writing to the Registry](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+ [Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)

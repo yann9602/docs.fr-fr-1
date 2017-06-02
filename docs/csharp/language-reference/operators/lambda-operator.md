@@ -32,10 +32,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a75967e61d2c674e87e321de1fb6e4062cca4f19
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 287cf223b1e2fc62cdf8a73db95000337cedebef
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="gt-operator-c-reference"></a>=&gt;, opérateur (Informations de référence sur C#)
@@ -43,17 +44,40 @@ Le jeton `=>` est appelé opérateur lambda. Il est utilisé dans les *expressio
   
  L’exemple suivant montre deux façons de rechercher et d’afficher la longueur de la chaîne la plus courte dans un tableau de chaînes. La première partie de l’exemple applique une expression lambda (`w => w.Length`) à chaque élément du tableau `words` puis utilise la méthode <xref:System.Linq.Enumerable.Min%2A> pour déterminer la plus petite longueur. À titre de comparaison, la deuxième partie de l’exemple montre une solution plus longue qui utilise la syntaxe de requête à faire la même chose.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+string[] words = { "cherry", "apple", "blueberry" };  
+  
+// Use method syntax to apply a lambda expression to each element  
+// of the words array.   
+int shortestWordLength = words.Min(w => w.Length);  
+Console.WriteLine(shortestWordLength);  
+  
+// Compare the following code that uses query syntax.  
+// Get the lengths of each word in the words array.  
+var query = from w in words  
+            select w.Length;  
+// Apply the Min method to execute the query and get the shortest length.  
+int shortestWordLength2 = query.Min();  
+Console.WriteLine(shortestWordLength2);  
+  
+// Output:   
+// 5  
+// 5  
+```  
+  
 ## <a name="remarks"></a>Remarques  
  L’opérateur `=>` a la même priorité que l’opérateur d’affectation (`=`) et est associatif à droite.  
   
  Vous pouvez spécifier explicitement le type de la variable d’entrée ou laisser le compilateur l’inférer. Dans les deux cas, la variable est fortement typée à la compilation. Quand vous spécifiez un type, vous devez placer le nom de type et le nom de la variable entre parenthèses, comme le montre l’exemple suivant.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```csharp  
+int shortestWordLength = words.Min((string w) => w.Length);  
+```  
+  
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment écrire une expression lambda pour la surcharge de l’opérateur de requête standard <xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName>, qui prend deux arguments. Comme l’expression lambda a plusieurs paramètres, les paramètres doivent être placés entre parenthèses. Le deuxième paramètre, `index`, représente l’index de l’élément actif dans la collection. L’expression `Where` retourne toutes les chaînes dont les longueurs sont inférieures à leurs emplacements d’index dans le tableau.  
   
-```cs  
+```csharp  
 static void Main(string[] args)  
 {  
     string[] digits = { "zero", "one", "two", "three", "four", "five",   

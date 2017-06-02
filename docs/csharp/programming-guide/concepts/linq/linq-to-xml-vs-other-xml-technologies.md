@@ -19,23 +19,24 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 8ac37ce1a225a66069e34abedd2ee0c273b8f8a9
-ms.lasthandoff: 03/13/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML, différences par rapport à d'autres technologies XML
-Cette rubrique compare [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] aux technologies XML suivantes : <xref:System.Xml.XmlReader>, XSLT, MSXML et XmlLite. Ces informations peuvent vous aider à décider de la technologie à utiliser.  
+Cette rubrique compare [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] aux technologies XML suivantes : <xref:System.Xml.XmlReader>, XSLT, MSXML et XmlLite. Ces informations peuvent vous aider à décider de la technologie à utiliser.  
   
  Pour une comparaison de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] et du modèle DOM (Document Objet Model), consultez [LINQ to XML, différences par rapport à DOM (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md).  
   
 ## <a name="linq-to-xml-vs-xmlreader"></a>LINQ to XML, différences par rapport à XmlReader  
- <xref:System.Xml.XmlReader> est un analyseur rapide, vers l’avant uniquement et sans mise en cache.  
+ <xref:System.Xml.XmlReader> est un analyseur rapide, avant uniquement et sans mise en cache.  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] est implémenté sur <xref:System.Xml.XmlReader> et ils sont étroitement intégrés. Cependant, vous pouvez également utiliser <xref:System.Xml.XmlReader> indépendamment.  
+ [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] est implémenté sur <xref:System.Xml.XmlReader> et tous deux sont étroitement intégrés. Toutefois, vous pouvez également utiliser un <xref:System.Xml.XmlReader> seul.  
   
- Par exemple, supposez que vous créez un service Web qui analysera des centaines de documents XML par seconde et que les documents ont la même structure, ce qui signifie que vous n'avez qu'une seule implémentation du code à écrire pour analyser le XML. Dans ce cas, vous voudrez probablement utiliser <xref:System.Xml.XmlReader> seul.  
+ Par exemple, supposez que vous créez un service Web qui analysera des centaines de documents XML par seconde et que les documents ont la même structure, ce qui signifie que vous n'avez qu'une seule implémentation du code à écrire pour analyser le XML. Dans ce cas, vous souhaiterez probablement utiliser un <xref:System.Xml.XmlReader> seul.  
   
  En revanche, si vous créez un système qui analyse beaucoup de petits documents XML et que chacun d’eux est différent, il est préférable de tirer parti des améliorations de productivité fournies par [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
   
@@ -46,7 +47,7 @@ Cette rubrique compare [!INCLUDE[sqltecxlinq](../../../../csharp/programming-gui
   
  Toutefois, XSLT ne tire pas parti des connaissances en C# et Visual Basic que de nombreux développeurs possèdent. Il exige des développeurs qu'ils écrivent du code dans un langage de programmation différent et complexe. L'utilisation de deux systèmes de développement non intégrés tels que C# (ou Visual Basic) et XSLT rend les systèmes logiciels plus difficiles à développer et à gérer.  
   
- Une fois que vous maîtrisez les expressions de requête [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], les transformations [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] représentent une technologie puissante et facile à utiliser. En résumé, vous formez votre document XML en utilisant la construction fonctionnelle, en extrayant des données de différentes sources, en construisant des objets <xref:System.Xml.Linq.XElement> dynamiquement et en assemblant le tout dans une nouvelle arborescence XML. La transformation peut générer un document complètement nouveau. La construction de transformations dans [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] est relativement facile et intuitive, et le code obtenu est bien lisible. Cela permet de réduire les coûts de développement et de maintenance.  
+ Une fois que vous maîtrisez les expressions de requête [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], les transformations [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] représentent une technologie puissante et facile à utiliser. En résumé, vous formez votre document XML en utilisant la construction fonctionnelle, en extrayant des données de diverses sources, en construisant des objets <xref:System.Xml.Linq.XElement> de manière dynamique et en assemblant l'ensemble dans une nouvelle arborescence XML. La transformation peut générer un document complètement nouveau. La construction de transformations dans [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] est relativement facile et intuitive, et le code obtenu est bien lisible. Cela permet de réduire les coûts de développement et de maintenance.  
   
  [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] n'a pas pour but de remplacer XSLT. XSLT est toujours l'outil de prédilection pour les transformations XML complexes et centrées sur les documents, en particulier si la structure du document n'est pas bien définie.  
   

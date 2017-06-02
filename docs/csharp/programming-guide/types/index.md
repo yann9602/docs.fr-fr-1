@@ -35,10 +35,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 61f23020b8a5dd0136d54e0a2ceb925bebca88cc
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 74604c2dfe16e6f90d5c0534fad3d72906dc07cc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
@@ -90,7 +91,7 @@ ms.lasthandoff: 03/31/2017
 ## <a name="the-common-type-system"></a>Système de type commun  
  Il est important de comprendre deux points fondamentaux à propos du système de type dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] :  
   
--   Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, notamment les types numériques intégrés comme <xref:System.Int32?displayProperty=fullName> (C# keyword: [int](../../../csharp/language-reference/keywords/int.md)), dérivent en fin de compte d’un seul type de base : <xref:System.Object?displayProperty=fullName> (C# keyword: [object](../../../csharp/language-reference/keywords/object.md)). Cette hiérarchie de types unifiée est appelée [Système de type commun](http://msdn.microsoft.com/library/53c57c96-83e1-4ee3-9543-9ac832671a89) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+-   Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, notamment les types numériques intégrés comme <xref:System.Int32?displayProperty=fullName> (mot clé C# : [int](../../../csharp/language-reference/keywords/int.md)), dérivent au final d’un seul type de base, qui est <xref:System.Object?displayProperty=fullName> (mot clé C# : [object](../../../csharp/language-reference/keywords/object.md)). Cette hiérarchie de types unifiée est appelée [Système de type commun](../../../standard/base-types/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
 -   Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET Framework, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé [struct](../../../csharp/language-reference/keywords/struct.md) sont des types valeur ; tous les types numériques intégrés sont `structs`. Les types que vous définissez à l’aide du mot clé [class](../../../csharp/language-reference/keywords/class.md) sont des types référence. Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.  
   
@@ -100,10 +101,10 @@ ms.lasthandoff: 03/31/2017
 Types valeur et types référence dans le CTS  
   
 > [!NOTE]
->  Vous pouvez voir que les types couramment utilisés sont organisés dans l’espace de noms <xref:System>. Toutefois, l’espace de noms qui contient un type n’a aucune incidence sur le fait qu’il s’agisse d’un type valeur ou d’un type référence.  
+>  Vous pouvez voir que les types couramment utilisés sont tous organisés dans l’espace de noms <xref:System>. Toutefois, l’espace de noms qui contient un type n’a aucune incidence sur le fait qu’il s’agisse d’un type valeur ou d’un type référence.  
   
 ### <a name="value-types"></a>Types valeur  
- Les types valeur sont dérivés de <xref:System.ValueType?displayProperty=fullName>, qui est dérivé de <xref:System.Object?displayProperty=fullName>. Les types dérivés de <xref:System.ValueType?displayProperty=fullName> ont un comportement spécifique dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
+ Les types valeur dérivent de <xref:System.ValueType?displayProperty=fullName>, qui dérive de <xref:System.Object?displayProperty=fullName>. Les types qui dérivent de <xref:System.ValueType?displayProperty=fullName> ont un comportement spécial dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
   
  Il existe deux catégories de types valeur : [struct](../../../csharp/language-reference/keywords/struct.md) et [enum](../../../csharp/language-reference/keywords/enum.md).  
   
@@ -122,21 +123,21 @@ int i = 5;
 char c = 'Z';  
 ```  
   
- Les types valeur sont scellés (*sealed*), ce qui signifie par exemple que vous ne pouvez pas dériver un type de <xref:System.Int32?displayProperty=fullName>. Vous ne pouvez pas non plus définir un struct pour qu’il hérite d’une classe ou d’un struct défini par l’utilisateur car un struct peut uniquement hériter de <xref:System.ValueType?displayProperty=fullName>. Toutefois, un struct peut implémenter une ou plusieurs interfaces. Vous pouvez effectuer un cast d’un type struct en un type interface. En conséquence, une opération de *boxing* encapsule le struct dans un objet de type référence sur le tas managé. Les opérations de boxing surviennent lorsque vous passez un type valeur à une méthode qui accepte un <xref:System.Object?displayProperty=fullName> comme paramètre d’entrée. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Les types valeur sont scellés (*sealed*), ce qui signifie que par exemple que vous ne pouvez pas dériver un type de <xref:System.Int32?displayProperty=fullName>. Vous ne pouvez pas non plus définir un struct pour qu’il hérite d’une classe ou d’un struct défini par l’utilisateur car un struct peut uniquement hériter de <xref:System.ValueType?displayProperty=fullName>. Toutefois, un struct peut implémenter une ou plusieurs interfaces. Vous pouvez effectuer un cast d’un type struct en un type interface. En conséquence, une opération de *boxing* encapsule le struct dans un objet de type référence sur le tas managé. Les opérations de boxing se produisent quand vous passez un type valeur à une méthode qui prend un <xref:System.Object?displayProperty=fullName> comme paramètre d’entrée. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
  Vous utilisez le mot clé [struct](../../../csharp/language-reference/keywords/struct.md) pour créer vos propres types valeur personnalisés. En règle générale, un struct est utilisé comme conteneur pour un petit jeu de variables connexes, comme le montre l'exemple suivant :  
   
  [!code-cs[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
   
- Pour plus d’informations sur les structs, consultez [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md). Pour plus d’informations sur les types valeur dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)], consultez [Système de type commun](http://msdn.microsoft.com/library/53c57c96-83e1-4ee3-9543-9ac832671a89).  
+ Pour plus d’informations sur les structs, consultez [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md). Pour plus d’informations sur les types valeur dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)], consultez [Système de type commun](../../../standard/base-types/common-type-system.md).  
   
- L’autre catégorie de types valeur est [enum](../../../csharp/language-reference/keywords/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=fullName> dans la bibliothèque de classes .NET Framework contient un ensemble de nombres entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :  
+ L’autre catégorie de types valeur est [enum](../../../csharp/language-reference/keywords/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=fullName> dans la bibliothèque de classes du .NET Framework contient un ensemble d’entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :  
  
  [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
- La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d’informations, consultez <xref:System.IO.FileMode?displayProperty=fullName>.  
+ La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=fullName>.  
   
- Tous les enums héritent de <xref:System.Enum?displayProperty=fullName>, qui hérite de <xref:System.ValueType?displayProperty=fullName>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../../../csharp/programming-guide/enumeration-types.md).  
+ Toutes les énumérations héritent de <xref:System.Enum?displayProperty=fullName>, qui hérite de <xref:System.ValueType?displayProperty=fullName>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../../../csharp/programming-guide/enumeration-types.md).  
   
 ### <a name="reference-types"></a>Types référence  
  Un type qui est défini comme une [classe](../../../csharp/language-reference/keywords/class.md), un [délégué](../../../csharp/language-reference/keywords/delegate.md), un tableau ou une [interface](../../../csharp/language-reference/keywords/interface.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de l’objet à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md) ou que vous ne lui avez pas assigné un objet créé ailleurs à l’aide de `new, as shown in the following example:`  
@@ -151,9 +152,9 @@ MyClass mc2 = mc;
 IMyInterface iface = new MyClass();  
 ```  
   
- Quand l’objet est créé, la mémoire est allouée sur le tas managé et la variable contient uniquement une référence à l’emplacement de l’objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé, et dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire](http://msdn.microsoft.com/library/d4850de5-fa63-4936-a250-5678d118acba).  
+ Quand l’objet est créé, la mémoire est allouée sur le tas managé et la variable contient uniquement une référence à l’emplacement de l’objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé, et dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire](../../../standard/automatic-memory-management.md).  
   
- Tous les tableaux sont des types référence, même si leurs éléments sont des types valeur. Les tableaux sont implicitement dérivés de la classe <xref:System.Array?displayProperty=fullName>, mais vous les déclarer et les utiliser avec la syntaxe simplifiée fournie par C#, comme illustré dans l’exemple suivant :  
+ Tous les tableaux sont des types référence, même si leurs éléments sont des types valeur. Les tableaux dérivent implicitement de la classe <xref:System.Array?displayProperty=fullName>, mais vous les déclarez et vous les utilisez avec la syntaxe simplifiée fournie par C#, comme illustré dans l’exemple suivant :  
   
  [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
   
@@ -209,6 +210,6 @@ stringList.Add(4);
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Conversion des types de données XML](http://msdn.microsoft.com/library/a2aa99ba-8239-4818-9281-f1d72ee40bde)   
+ [Conversion des types de données XML](../../../standard/data/xml/conversion-of-xml-data-types.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)
 

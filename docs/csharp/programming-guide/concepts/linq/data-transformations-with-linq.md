@@ -37,10 +37,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b7f8874e9a22ca14bee009cab98e13d96bd9621
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: f8db095447a2360f275215c5190f479d11288d3c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformations de données avec LINQ (C#)
@@ -119,14 +120,14 @@ ms.lasthandoff: 03/13/2017
  Une séquence de sortie ne contient pas toujours des éléments ou des propriétés d’élément de la séquence source. La sortie peut être plutôt une séquence de valeurs calculée en utilisant les éléments sources comme arguments d’entrée. La requête simple suivante, quand elle est exécutée, génère en sortie une séquence de chaînes dont les valeurs représentent un calcul basé sur la séquence source d’éléments de type `double`.  
   
 > [!NOTE]
->  Les méthodes d’appel dans les expressions de requête ne sont pas prises en charge si la requête est traduite dans un autre domaine. Par exemple, vous ne pouvez pas appeler une méthode C# ordinaire dans [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)], car SQL Server n’a pas de contexte pour cette méthode. Toutefois, vous pouvez mapper des procédures stockées à des méthodes et appeler celles-ci. Pour plus d’informations, consultez [Procédures stockées](http://msdn.microsoft.com/library/4d23dd7a-a85f-44ff-a717-af7d0950c0fc).  
+>  Les méthodes d’appel dans les expressions de requête ne sont pas prises en charge si la requête est traduite dans un autre domaine. Par exemple, vous ne pouvez pas appeler une méthode C# ordinaire dans [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)], car SQL Server n’a pas de contexte pour cette méthode. Toutefois, vous pouvez mapper des procédures stockées à des méthodes et appeler celles-ci. Pour plus d’informations, consultez [Procédures stockées](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
   
  [!code-cs[CsLINQGettingStarted#10](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_4.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ (Language-Integrated Query) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)   
  [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)   
- [LINQ to DataSet](http://msdn.microsoft.com/library/743e3755-3ecb-45a2-8d9b-9ed41f0dcf17)   
+ [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)   
  [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)   
  [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [select, clause](../../../../csharp/language-reference/keywords/select-clause.md)

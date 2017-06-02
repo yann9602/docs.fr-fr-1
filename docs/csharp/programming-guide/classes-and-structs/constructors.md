@@ -1,33 +1,77 @@
 ---
-title: "Constructeurs (guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "constructeurs [C#]"
-  - "classes [C#], constructeurs"
-  - "langage C#, constructeurs"
+title: Constructeurs (Guide de programmation C#) | Microsoft Docs
+ms.date: 2017-05-05
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- constructors [C#]
+- classes [C#], constructors
+- C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
 caps.latest.revision: 23
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 23
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 064d8f8b3068596cd1d4fc2dd073f165f0ebadcb
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
+
 ---
-# Constructeurs (guide de programmation C#)
-À chaque fois qu'une [classe](../../../csharp/language-reference/keywords/class.md) ou qu'un [struct](../../../csharp/language-reference/keywords/struct.md) est créé, son constructeur est appelé.  Une classe ou un struct peut avoir plusieurs constructeurs qui prennent des arguments différents.  Les constructeurs permettent au programmeur de définir des valeurs par défaut, de limiter l'instanciation et d'écrire un code souple d'utilisation et facile à lire.  Pour plus d'informations et d'exemples, consultez [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md) et [Constructeurs d'instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+# <a name="constructors-c-programming-guide"></a>Constructeurs (Guide de programmation C#)
+Chaque fois qu’une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md) est créé, son constructeur est appelé. Une classe ou un struct peut avoir plusieurs constructeurs qui prennent des arguments différents. Les constructeurs permettent au programmeur de définir des valeurs par défaut, de limiter l’instanciation et d’écrire un code flexible et facile à lire. Pour obtenir plus d’informations et d’exemples, consultez [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md) et [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+
+## <a name="default-constructors"></a>Constructeurs par défaut
   
- Si vous ne fournissez pas de constructeur pour votre objet, C\# en créera un par défaut qui instanciera l'objet et affectera à toutes les variables membres les valeurs par défaut répertoriées dans [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md).  Pour plus d'informations et d'exemples, consultez [Constructeurs d'instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+Si vous ne fournissez pas de constructeur pour votre classe, C# en crée un par défaut qui instancie l’objet et affecte aux variables membres les valeurs par défaut listées dans le [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md). Si vous ne fournissez pas de constructeur pour votre struct, C# répond sur un *constructeur par défaut implicite* pour initialiser automatiquement chaque champ d’un type de valeur à sa valeur par défaut listée dans le [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md). Pour obtenir plus d’informations et d’exemples, consultez [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+
+## <a name="constructor-syntax"></a>Syntaxe du constructeur
+
+Un constructeur est une méthode dont le nom est le même que celui de son type. Sa signature de méthode inclut uniquement le nom de la méthode et sa liste de paramètres ; elle n’inclut pas de type de retour. L’exemple suivant affiche le constructeur d’une classe nommée `Person`.
+
+[!code-cs[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#1)]  
+
+Si un constructeur peut être implémenté comme une seule instruction, vous pouvez utiliser une [définition de corps d’expression](../statements-expressions-operators/expression-bodied-members.md). L’exemple suivant définit une classe `Location` dont le constructeur a un seul paramètre de chaîne nommé *name*. La définition de corps d’expression assigne l’argument à la propriété `Name`.
+
+[!code-cs[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
+
+## <a name="static-constructors"></a>Constructeurs statiques
+
+Les exemples précédents ont tous montré des constructeurs d’instances qui permettent de créer un objet. Une classe ou un struct peut également avoir un constructeur statique qui initialise les membres statiques du type.  Les constructeurs statiques sont sans paramètre. Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, le compilateur C# fournit un constructeur statique par défaut qui initialise les champs à leur valeur par défaut listée dans le [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md). 
+
+L’exemple suivant utilise un constructeur statique pour initialiser un champ statique.
+
+[!code-cs[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#2)]  
+
+Vous pouvez également définir un constructeur statique avec une définition de corps d’expression, comme l’illustre l’exemple suivant. 
+
+[!code-cs[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#3)]  
+
+Pour obtenir plus d’informations et d’exemples, consultez [Constructeurs statiques](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
   
- Les classes et structs statiques peuvent également avoir des constructeurs.  Pour plus d'informations et d'exemples, consultez [Constructeurs statiques](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
-  
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Utilisation de constructeurs](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  
   
- [Constructeurs d'instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)  
+ [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)  
   
  [Constructeurs privés](../../../csharp/programming-guide/classes-and-structs/private-constructors.md)  
   
@@ -35,9 +79,9 @@ caps.handback.revision: 23
   
  [Comment : écrire un constructeur de copie](../../../csharp/programming-guide/classes-and-structs/how-to-write-a-copy-constructor.md)  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [statiques](../../../csharp/language-reference/keywords/static.md)   
- [Pourquoi les initialiseurs fonctionnent\-ils dans l'ordre opposée comme constructeurs ? Première partie](http://go.microsoft.com/fwlink/?LinkId=112374)
+ [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
+ [static](../../../csharp/language-reference/keywords/static.md)   
+ [Why Do Initializers Run In The Opposite Order As Constructors? Part One](http://go.microsoft.com/fwlink/?LinkId=112374)

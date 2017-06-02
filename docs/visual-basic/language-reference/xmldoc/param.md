@@ -31,9 +31,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 41852a7fc41595050940d87f9e741df5cb23361c
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -42,7 +43,7 @@ Définit un nom de paramètre et une description.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <param name="name">description</param>  
 ```  
   

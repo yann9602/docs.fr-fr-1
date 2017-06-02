@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3f4add34162d8b63d033d7cb32828af67901eb11
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d91daf2005998d81609803982f5fc2c231fe7ad3
+ms.openlocfilehash: 4e873d15ae2b2e7a475ea758678423f6ec3b14b3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/16/2017
 
 ---
 
@@ -44,85 +45,15 @@ Vous pouvez générer le fichier XML au moment de la compilation en procédant c
 
 Les commentaires de documentation XML utilisent des barres obliques triples (`///`) et le corps d’un commentaire au format XML. Exemple :
 
-```csharp
-/// <summary>
-/// This class does something.
-/// </summary>
-public class SomeClass
-{
-}
-```
+[!code-csharp[Commentaires sur la documentation XML](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
-Examinons en détail la documentation d’une bibliothèque mathématique très basique visant à faciliter la compréhension/la collaboration des nouveaux développeurs, ainsi que son utilisation par des développeurs tiers.
+Examinons en détail la documentation d’une bibliothèque mathématique très basique visant à faciliter la compréhension/la contribution des nouveaux développeurs, ainsi que son utilisation par des développeurs tiers.
 
 Voici le code de la bibliothèque mathématique simple :
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-public class Math
-{
-    // Adds two integers and returns the result
-    public static int Add(int a, int b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    // Adds two doubles and returns the result
-    public static double Add(double a, double b)
-    {
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    // Subtracts an integer from another and returns the result
-    public static int Subtract(int a, int b)
-    {
-        return a - b;
-    }
-
-    // Subtracts a double from another and returns the result
-    public static double Subtract(double a, double b)
-    {
-        return a - b;
-    }
-
-    // Multiplies two integers and returns the result
-    public static int Multiply(int a, int b)
-    {
-        return a * b;
-    }
-
-    // Multiplies two doubles and returns the result
-    public static double Multiply(double a, double b)
-    {
-        return a * b;
-    }
-
-    // Divides an integer by another and returns the result
-    public static int Divide(int a, int b)
-    {
-        return a / b;
-    }
-
-    // Divides a double by another and returns the result
-    public static double Divide(double a, double b)
-    {
-        return a / b;
-    }
-}
-```
+[!code-csharp[Exemple de bibliothèque](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
 L’exemple de bibliothèque prend en charge quatre opérations arithmétiques principales `add`, `subtract`, `multiply` et `divide` sur des types de données `int` et `double`.
 
@@ -134,32 +65,7 @@ Comme mentionné précédemment, les balises de documentation XML peuvent être 
 La balise `<summary>` ajoute des informations succinctes relatives à un type ou un membre.
 Je vais expliquer son utilisation en l’ajoutant à la définition de la classe `Math` et à la première méthode `Add`. N’hésitez pas à l’appliquer au reste de votre code.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main Math class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    // Adds two integers and returns the result
-    /// <summary>
-    /// Adds two integers and returns the result.
-    /// </summary>
-    public static int Add(int a, int b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-}
-```
+[!code-csharp[Balise summary](../../samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
 La balise `<summary>` est très importante, et nous vous recommandons de l’inclure, car son contenu est la principale source d’informations sur les types ou les membres dans IntelliSense ou un document de référence des API.
 
@@ -167,131 +73,37 @@ La balise `<summary>` est très importante, et nous vous recommandons de l’inc
 
 La balise `<remarks>` complète les informations relatives aux types ou aux membres fournies par la balise `<summary>`. Dans cet exemple, vous allez simplement l’ajouter à la classe.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main Math class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-/// <remarks>
-/// This class can add, subtract, multiply and divide.
-/// </remarks>
-public class Math
-{
-
-}
-```
+[!code-csharp[Balise remarks](../../samples/snippets/csharp/concepts/codedoc/remarks-tag.cs)]
 
 ### <a name="ltreturnsgt"></a>&lt;returns&gt;
 
 La balise `<returns>` décrit la valeur de retour d’une déclaration de méthode.
 Comme auparavant, l’exemple suivant illustre la balise `<returns>` sur la première méthode `Add`. Vous pouvez effectuer la même opération sur d’autres méthodes.
 
-```csharp
-// Adds two integers and returns the result
-/// <summary>
-/// Adds two integers and returns the result.
-/// </summary>
-/// <returns>
-/// The sum of two integers.
-/// </returns>
-public static int Add(int a, int b)
-{
-    // If any parameter is equal to the max value of an integer
-    // and the other is greater than zero
-    if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-        throw new System.OverflowException();
-
-    return a + b;
-}
-```
+[!code-csharp[Balise returns](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
 
 ### <a name="ltvaluegt"></a>&lt;value&gt;
 
 La balise `<value>` est similaire à la balise `<returns>`, excepté que vous l’utilisez pour les propriétés.
 En supposant que votre bibliothèque `Math` a une propriété statique appelée `PI`, voici comment utiliser cette balise :
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main Math class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-/// <remarks>
-/// This class can add, subtract, multiply and divide.
-/// These operations can be performed on both integers and doubles
-/// </remarks>
-public class Math
-{
-    /// <value>Gets the value of PI.</value>
-    public static double PI { get; }
-}
-```
+[!code-csharp[Balise value](../../samples/snippets/csharp/concepts/codedoc/value-tag.cs)]
 
 ### <a name="ltexamplegt"></a>&lt;example&gt;
 
 La balise `<example>` permet d’inclure un exemple de votre documentation XML.
 Cela implique l’utilisation de la balise enfant `<code>`.
 
-```csharp
-// Adds two integers and returns the result
-/// <summary>
-/// Adds two integers and returns the result.
-/// </summary>
-/// <returns>
-/// The sum of two integers.
-/// </returns>
-/// <example>
-/// <code>
-/// int c = Math.Add(4, 5);
-/// if (c > 10)
-/// {
-///     Console.WriteLine(c);
-/// }
-/// </code>
-/// </example>
-public static int Add(int a, int b)
-{
-    // If any parameter is equal to the max value of an integer
-    // and the other is greater than zero
-    if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-        throw new System.OverflowException();
-
-    return a + b;
-}
-```
+[!code-csharp[Balise example](../../samples/snippets/csharp/concepts/codedoc/example-tag.cs)]
 
 La balise `code` conserve les sauts de ligne et la mise en retrait pour les exemples plus longs.
 
 ### <a name="ltparagt"></a>&lt;para&gt;
 
 La balise `<para>` permet de mettre en forme le contenu de sa balise parente. `<para>` est généralement utilisée dans une balise, telle que `<remarks>` ou `<returns>`, pour diviser du texte en paragraphes.
-Vous pouvez poursuivre et mettre en forme le contenu de la balise `<remarks>` pour la définition de votre classe.
+Vous pouvez mettre en forme le contenu de la balise `<remarks>` pour la définition de votre classe.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main Math class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-/// <remarks>
-/// <para>This class can add, subtract, multiply and divide.</para>
-/// <para>These operations can be performed on both integers and doubles.</para>
-/// </remarks>
-public class Math
-{
-
-}
-```
+[!code-csharp[Balise para](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
 
 ### <a name="ltcgt"></a>&lt;c&gt;
 
@@ -299,165 +111,23 @@ Toujours concernant la mise en forme, vous utilisez la balise `<c>` pour le marq
 Elle est semblable à la balise `<code>`, mais inline. Elle est utile quand vous voulez afficher un exemple de code rapide comme partie du contenu d’une balise.
 Mettons à jour la documentation de la classe `Math`.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-
-}
-```
+[!code-csharp[Balise c](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
 
 ### <a name="ltexceptiongt"></a>&lt;exception&gt;
 
 En utilisant la balise `<exception>`, vous informez vos développeurs qu’une méthode peut lever des exceptions spécifiques.
 Si vous examinez votre bibliothèque `Math`, vous pouvez voir que les deux méthodes `Add` lèvent une exception si une certaine condition est remplie. Il est toutefois moins évident de voir que la méthode `Divide` utilisée avec un entier lève également une exception si le paramètre `b` est égal à zéro. Ajoutez maintenant une documentation d’exception à cette méthode.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Adds two integers and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Add(4, 5);
-    /// if (c > 10)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than 0.</exception>
-    public static int Add(int a, int b)
-    {
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    /// <summary>
-    /// Adds two doubles and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two doubles.
-    /// </returns>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than zero.</exception>
-    public static double Add(double a, double b)
-    {
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    /// <summary>
-    /// Divides an integer by another and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The division of two integers.
-    /// </returns>
-    /// <exception cref="System.DivideByZeroException">Thrown when a division by zero occurs.</exception>
-    public static int Divide(int a, int b)
-    {
-        return a / b;
-    }
-
-    /// <summary>
-    /// Divides a double by another and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The division of two doubles.
-    /// </returns>
-    public static double Divide(double a, double b)
-    {
-        return a / b;
-    }
-}
-```
+[!code-csharp[Balise exception](../../samples/snippets/csharp/concepts/codedoc/exception-tag.cs)]
 
 L’attribut `cref` référence une exception qui est disponible à partir de l’environnement de compilation actuel.
-Il peut s’agir de n’importe quel type défini dans le projet ou un assembly référencé. Le compilateur émet un avertissement si sa valeur ne peut pas être résolue.
+Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé. Le compilateur émet un avertissement si sa valeur ne peut pas être résolue.
 
 ### <a name="ltseegt"></a>&lt;see&gt;
 
 La balise `<see>` vous permet de créer un lien interactif vers une page de documentation pour un autre élément de code. Dans notre prochain exemple, nous allons créer un lien interactif entre les deux méthodes `Add`.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Adds two integers and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Add(4, 5);
-    /// if (c > 10)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than 0.</exception>
-    /// See <see cref="Math.Add(double, double)"/> to add doubles.
-    public static int Add(int a, int b)
-    {
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    /// <summary>
-    /// Adds two doubles and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two doubles.
-    /// </returns>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than zero.</exception>
-    /// See <see cref="Math.Add(int, int)"/> to add integers.
-    public static double Add(double a, double b)
-    {
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-}
-```
+[!code-csharp[Balise see](../../samples/snippets/csharp/concepts/codedoc/see-tag.cs)]
 
 `cref` est un attribut **obligatoire** qui représente une référence à un type ou à ses membres et qui est disponible à partir de l’environnement de compilation actuel. Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé.
 
@@ -465,47 +135,7 @@ public class Math
 
 Vous pouvez utiliser la balise `<seealso>` de la même façon que la balise `<see>`. La seule différence est que son contenu est généralement placé dans une section "Voir aussi". Ici, nous allons ajouter une balise `seealso` sous la méthode `Add` utilisée avec un entier pour référencer d’autres méthodes de la classe qui acceptent des paramètres entiers :
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Adds two integers and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Add(4, 5);
-    /// if (c > 10)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than 0.</exception>
-    /// See <see cref="Math.Add(double, double)"/> to add doubles.
-    /// <seealso cref="Math.Subtract(int, int)"/>
-    /// <seealso cref="Math.Multiply(int, int)"/>
-    /// <seealso cref="Math.Divide(int, int)"/>
-    public static int Add(int a, int b)
-    {
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-}
-```
+[!code-csharp[Balise seealso](../../samples/snippets/csharp/concepts/codedoc/seealso-tag.cs)]
 
 L’attribut `cref` représente une référence à un type ou à ses membres et est disponible à partir de l’environnement de compilation actuel.
 Il peut s’agir de tout type défini dans le projet ou dans un assembly référencé.
@@ -514,440 +144,45 @@ Il peut s’agir de tout type défini dans le projet ou dans un assembly référ
 
 La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple sur la méthode `Add` double : le paramètre décrit par la balise est spécifié dans l’attribut `name` **obligatoire**.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Adds two doubles and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two doubles.
-    /// </returns>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than zero.</exception>
-    /// See <see cref="Math.Add(int, int)"/> to add integers.
-    /// <param name="a">A double precision number.</param>
-    /// <param name="b">A double precision number.</param>
-    public static double Add(double a, double b)
-    {
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-}
-```
+[!code-csharp[Balise param](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
 ### <a name="lttypeparamgt"></a>&lt;typeparam&gt;
 
 Vous utilisez la balise `<typeparam>` exactement comme la balise `<param>`, mais pour permettre aux déclarations de types ou de méthodes génériques de décrire un paramètre générique.
-Lancez-vous et ajoutez une méthode générique rapide à votre classe `Math` pour vérifier si une quantité est supérieure à une autre.
+Ajoutez une méthode générique rapide à votre classe `Math` pour vérifier si une quantité est supérieure à une autre.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Checks if an IComparable is greater than another.
-    /// </summary>
-    /// <typeparam name="T">A type that inherits from the IComparable interface.</typeparam>
-    public static bool GreaterThan<T>(T a, T b) where T : IComparable
-    {
-        return a.CompareTo(b) > 0;
-    }
-}
-```
+[!code-csharp[Balise typeparam](../../samples/snippets/csharp/concepts/codedoc/typeparam-tag.cs)]
 
 ### <a name="ltparamrefgt"></a>&lt;paramref&gt;
 
-Alors que vous êtes occupé à décrire ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, il peut parfois arriver que vous souhaitiez créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. Comme pour la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **obligatoire**.
+Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. Comme pour la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **obligatoire**.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Adds two doubles <paramref name="a"/> and <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two doubles.
-    /// </returns>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than zero.</exception>
-    /// See <see cref="Math.Add(int, int)"/> to add integers.
-    /// <param name="a">A double precision number.</param>
-    /// <param name="b">A double precision number.</param>
-    public static double Add(double a, double b)
-    {
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-}
-```
+[!code-csharp[Balise paramref](../../samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
 ### <a name="lttypeparamrefgt"></a>&lt;typeparamref&gt;
 
 Vous utilisez la balise `<typeparamref>` exactement comme la balise `<paramref>`, mais pour permettre aux déclarations de types ou de méthodes génériques de décrire un paramètre générique.
 Vous pouvez utiliser la même méthode générique que celle créée précédemment.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// </summary>
-public class Math
-{
-    /// <summary>
-    /// Checks if an IComparable <typeparamref name="T"/> is greater than another.
-    /// </summary>
-    /// <typeparam name="T">A type that inherits from the IComparable interface.</typeparam>
-    public static bool GreaterThan<T>(T a, T b) where T : IComparable
-    {
-        return a.CompareTo(b) > 0;
-    }
-}
-```
+[!code-csharp[Balise typeparamref](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
 
 ### <a name="ltlistgt"></a>&lt;list&gt;
 
 La balise `<list>` vous permet de mettre en forme des informations de documentation sous la forme d’une liste triée, d’une liste non triée ou d’un tableau.
-Vous allez créer une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
+Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// <list type="bullet">
-/// <item>
-/// <term>Add</term>
-/// <description>Addition Operation</description>
-/// </item>
-/// <item>
-/// <term>Subtract</term>
-/// <description>Subtraction Operation</description>
-/// </item>
-/// <item>
-/// <term>Multiply</term>
-/// <description>Multiplication Operation</description>
-/// </item>
-/// <item>
-/// <term>Divide</term>
-/// <description>Division Operation</description>
-/// </item>
-/// </list>
-/// </summary>
-public class Math
-{
+[!code-csharp[Balise list](../../samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
-}
-```
-
-Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut`type` par `number` ou `table`, respectivement.
+Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `type` par `number` ou `table`, respectivement.
 
 ### <a name="putting-it-all-together"></a>En résumé
 
-Vous avez suivi ce didacticiel et appliqué les balises à votre code, si nécessaire. Votre code doit maintenant ressembler à ce qui suit :
+Si vous avez suivi ce didacticiel et appliqué les balises à votre code au besoin, votre code doit maintenant ressembler à ce qui suit :
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <summary>
-/// The main <c>Math</c> class.
-/// Contains all methods for performing basic math functions.
-/// <list type="bullet">
-/// <item>
-/// <term>Add</term>
-/// <description>Addition Operation</description>
-/// </item>
-/// <item>
-/// <term>Subtract</term>
-/// <description>Subtraction Operation</description>
-/// </item>
-/// <item>
-/// <term>Multiply</term>
-/// <description>Multiplication Operation</description>
-/// </item>
-/// <item>
-/// <term>Divide</term>
-/// <description>Division Operation</description>
-/// </item>
-/// </list>
-/// </summary>
-/// <remarks>
-/// <para>This class can add, subtract, multiply and divide.</para>
-/// <para>These operations can be performed on both integers and doubles.</para>
-/// </remarks>
-public class Math
-{
-    // Adds two integers and returns the result
-    /// <summary>
-    /// Adds two integers <paramref name="a"/> and <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Add(4, 5);
-    /// if (c > 10)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than 0.</exception>
-    /// See <see cref="Math.Add(double, double)"/> to add doubles.
-    /// <seealso cref="Math.Subtract(int, int)"/>
-    /// <seealso cref="Math.Multiply(int, int)"/>
-    /// <seealso cref="Math.Divide(int, int)"/>
-    /// <param name="a">An integer.</param>
-    /// <param name="b">An integer.</param>
-    public static int Add(int a, int b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
+[!code-csharp[Bibliothèque avec balises](../../samples/snippets/csharp/concepts/codedoc/tagged-library.cs)]
 
-        return a + b;
-    }
-
-    // Adds two doubles and returns the result
-    /// <summary>
-    /// Adds two doubles <paramref name="a"/> and <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The sum of two doubles.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// double c = Math.Add(4.5, 5.4);
-    /// if (c > 10)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.OverflowException">Thrown when one parameter is max 
-    /// and the other is greater than 0.</exception>
-    /// See <see cref="Math.Add(int, int)"/> to add integers.
-    /// <seealso cref="Math.Subtract(double, double)"/>
-    /// <seealso cref="Math.Multiply(double, double)"/>
-    /// <seealso cref="Math.Divide(double, double)"/>
-    /// <param name="a">A double precision number.</param>
-    /// <param name="b">A double precision number.</param>
-    public static double Add(double a, double b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    // Subtracts an integer from another and returns the result
-    /// <summary>
-    /// Subtracts <paramref name="b"/> from <paramref name="a"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The difference between two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Subtract(4, 5);
-    /// if (c > 1)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// See <see cref="Math.Subtract(double, double)"/> to subtract doubles.
-    /// <seealso cref="Math.Add(int, int)"/>
-    /// <seealso cref="Math.Multiply(int, int)"/>
-    /// <seealso cref="Math.Divide(int, int)"/>
-    /// <param name="a">An integer.</param>
-    /// <param name="b">An integer.</param>
-    public static int Subtract(int a, int b)
-    {
-        return a - b;
-    }
-
-    // Subtracts a double from another and returns the result
-    /// <summary>
-    /// Subtracts a double <paramref name="b"/> from another double <paramref name="a"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The difference between two doubles.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// double c = Math.Subtract(4.5, 5.4);
-    /// if (c > 1)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// See <see cref="Math.Subtract(int, int)"/> to subtract integers.
-    /// <seealso cref="Math.Add(double, double)"/>
-    /// <seealso cref="Math.Multiply(double, double)"/>
-    /// <seealso cref="Math.Divide(double, double)"/>
-    /// <param name="a">A double precision number.</param>
-    /// <param name="b">A double precision number.</param>
-    public static double Subtract(double a, double b)
-    {
-        return a - b;
-    }
-
-    // Multiplies two integers and returns the result
-    /// <summary>
-    /// Multiplies two integers <paramref name="a"/> and <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The product of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Multiply(4, 5);
-    /// if (c > 100)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// See <see cref="Math.Multiply(double, double)"/> to multiply doubles.
-    /// <seealso cref="Math.Add(int, int)"/>
-    /// <seealso cref="Math.Subtract(int, int)"/>
-    /// <seealso cref="Math.Divide(int, int)"/>
-    /// <param name="a">An integer.</param>
-    /// <param name="b">An integer.</param>
-    public static int Multiply(int a, int b)
-    {
-        return a * b;
-    }
-
-    // Multiplies two doubles and returns the result
-    /// <summary>
-    /// Multiplies two doubles <paramref name="a"/> and <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The product of two doubles.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// double c = Math.Multiply(4.5, 5.4);
-    /// if (c > 100.0)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// See <see cref="Math.Multiply(int, int)"/> to multiply integers.
-    /// <seealso cref="Math.Add(double, double)"/>
-    /// <seealso cref="Math.Subtract(double, double)"/>
-    /// <seealso cref="Math.Divide(double, double)"/>
-    /// <param name="a">A double precision number.</param>
-    /// <param name="b">A double precision number.</param>
-    public static double Multiply(double a, double b)
-    {
-        return a * b;
-    }
-
-    // Divides an integer by another and returns the result
-    /// <summary>
-    /// Divides an integer <paramref name="a"/> by another integer <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The quotient of two integers.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// int c = Math.Divide(4, 5);
-    /// if (c > 1)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// <exception cref="System.DivideByZeroException">Thrown when <paramref name="b"/> is equal to 0.</exception>
-    /// See <see cref="Math.Divide(double, double)"/> to divide doubles.
-    /// <seealso cref="Math.Add(int, int)"/>
-    /// <seealso cref="Math.Subtract(int, int)"/>
-    /// <seealso cref="Math.Multiply(int, int)"/>
-    /// <param name="a">An integer dividend.</param>
-    /// <param name="b">An integer divisor.</param>
-    public static int Divide(int a, int b)
-    {
-        return a / b;
-    }
-
-    // Divides a double by another and returns the result
-    /// <summary>
-    /// Divides a double <paramref name="a"/> by another double <paramref name="b"/> and returns the result.
-    /// </summary>
-    /// <returns>
-    /// The quotient of two doubles.
-    /// </returns>
-    /// <example>
-    /// <code>
-    /// double c = Math.Divide(4.5, 5.4);
-    /// if (c > 1.0)
-    /// {
-    ///     Console.WriteLine(c);
-    /// }
-    /// </code>
-    /// </example>
-    /// See <see cref="Math.Divide(int, int)"/> to divide integers.
-    /// <seealso cref="Math.Add(double, double)"/>
-    /// <seealso cref="Math.Subtract(double, double)"/>
-    /// <seealso cref="Math.Multiply(double, double)"/>
-    /// <param name="a">A double precision dividend.</param>
-    /// <param name="b">A double precision divisor.</param>
-    public static double Divide(double a, double b)
-    {
-        return a / b;
-    }
-}
-```
-
-À partir de votre code, vous pouvez générer un site web de documentation très détaillée complet avec des références croisées interactives, mais vous êtes maintenant confronté à un autre problème : votre code est devenu difficile à lire.
-Cela va être un cauchemar pour les développeurs qui veulent collaborer à ce code, avec autant d’informations à passer en revue. Heureusement, il existe une balise XML qui peut vous aider à gérer ce problème :
+À partir de votre code, vous pouvez générer un site web de documentation détaillée complet avec des références croisées interactives. Vous êtes maintenant confronté à un autre problème : votre code est devenu difficile à lire.
+Avec toutes ces informations à parcourir, cela va être un cauchemar pour les développeurs qui veulent contribuer à ce code. Heureusement, il existe une balise XML qui peut vous aider à gérer ce problème :
 
 ### <a name="ltincludegt"></a>&lt;include&gt;
 
@@ -955,289 +190,11 @@ La balise `<include>` vous permet de faire référence à des commentaires se tr
 
 Vous allez maintenant déplacer toutes vos balises XML dans un fichier XML distinct nommé `docs.xml`. Vous pouvez nommer ce fichier comme vous le souhaitez.
 
-```xml
-<docs>
-    <members name="math">
-        <Math>
-            <summary>
-            The main <c>Math</c> class.
-            Contains all methods for performing basic math functions.
-            </summary>
-            <remarks>
-            <para>This class can add, subtract, multiply and divide.</para>
-            <para>These operations can be performed on both integers and doubles.</para>
-            </remarks>
-        </Math>
-        <AddInt>
-            <summary>
-            Adds two integers <paramref name="a"/> and <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The sum of two integers.
-            </returns>
-            <example>
-            <code>
-            int c = Math.Add(4, 5);
-            if (c > 10)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            <exception cref="System.OverflowException">Thrown when one parameter is max 
-            and the other is greater than 0.</exception>
-            See <see cref="Math.Add(double, double)"/> to add doubles.
-            <seealso cref="Math.Subtract(int, int)"/>
-            <seealso cref="Math.Multiply(int, int)"/>
-            <seealso cref="Math.Divide(int, int)"/>
-            <param name="a">An integer.</param>
-            <param name="b">An integer.</param>
-        </AddInt>
-        <AddDouble>
-            <summary>
-            Adds two doubles <paramref name="a"/> and <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The sum of two doubles.
-            </returns>
-            <example>
-            <code>
-            double c = Math.Add(4.5, 5.4);
-            if (c > 10)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            <exception cref="System.OverflowException">Thrown when one parameter is max 
-            and the other is greater than 0.</exception>
-            See <see cref="Math.Add(int, int)"/> to add integers.
-            <seealso cref="Math.Subtract(double, double)"/>
-            <seealso cref="Math.Multiply(double, double)"/>
-            <seealso cref="Math.Divide(double, double)"/>
-            <param name="a">A double precision number.</param>
-            <param name="b">A double precision number.</param>
-        </AddDouble>
-        <SubtractInt>
-            <summary>
-            Subtracts <paramref name="b"/> from <paramref name="a"/> and returns the result.
-            </summary>
-            <returns>
-            The difference between two integers.
-            </returns>
-            <example>
-            <code>
-            int c = Math.Subtract(4, 5);
-            if (c > 1)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            See <see cref="Math.Subtract(double, double)"/> to subtract doubles.
-            <seealso cref="Math.Add(int, int)"/>
-            <seealso cref="Math.Multiply(int, int)"/>
-            <seealso cref="Math.Divide(int, int)"/>
-            <param name="a">An integer.</param>
-            <param name="b">An integer.</param>
-        </SubtractInt>
-        <SubtractDouble>
-            <summary>
-            Subtracts a double <paramref name="b"/> from another double <paramref name="a"/> and returns the result.
-            </summary>
-            <returns>
-            The difference between two doubles.
-            </returns>
-            <example>
-            <code>
-            double c = Math.Subtract(4.5, 5.4);
-            if (c > 1)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            See <see cref="Math.Subtract(int, int)"/> to subtract integers.
-            <seealso cref="Math.Add(double, double)"/>
-            <seealso cref="Math.Multiply(double, double)"/>
-            <seealso cref="Math.Divide(double, double)"/>
-            <param name="a">A double precision number.</param>
-            <param name="b">A double precision number.</param>
-        </SubtractDouble>
-        <MultiplyInt>
-            <summary>
-            Multiplies two integers <paramref name="a"/> and <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The product of two integers.
-            </returns>
-            <example>
-            <code>
-            int c = Math.Multiply(4, 5);
-            if (c > 100)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            See <see cref="Math.Multiply(double, double)"/> to multiply doubles.
-            <seealso cref="Math.Add(int, int)"/>
-            <seealso cref="Math.Subtract(int, int)"/>
-            <seealso cref="Math.Divide(int, int)"/>
-            <param name="a">An integer.</param>
-            <param name="b">An integer.</param>
-        </MultiplyInt>
-        <MultiplyDouble>
-            <summary>
-            Multiplies two doubles <paramref name="a"/> and <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The product of two doubles.
-            </returns>
-            <example>
-            <code>
-            double c = Math.Multiply(4.5, 5.4);
-            if (c > 100.0)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            See <see cref="Math.Multiply(int, int)"/> to multiply integers.
-            <seealso cref="Math.Add(double, double)"/>
-            <seealso cref="Math.Subtract(double, double)"/>
-            <seealso cref="Math.Divide(double, double)"/>
-            <param name="a">A double precision number.</param>
-            <param name="b">A double precision number.</param>
-        </MultiplyDouble>
-        <DivideInt>
-            <summary>
-            Divides an integer <paramref name="a"/> by another integer <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The quotient of two integers.
-            </returns>
-            <example>
-            <code>
-            int c = Math.Divide(4, 5);
-            if (c > 1)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            <exception cref="System.DivideByZeroException">Thrown when <paramref name="b"/> is equal to 0.</exception>
-            See <see cref="Math.Divide(double, double)"/> to divide doubles.
-            <seealso cref="Math.Add(int, int)"/>
-            <seealso cref="Math.Subtract(int, int)"/>
-            <seealso cref="Math.Multiply(int, int)"/>
-            <param name="a">An integer dividend.</param>
-            <param name="b">An integer divisor.</param>
-        </DivideInt>
-        <DivideDouble>
-            <summary>
-            Divides a double <paramref name="a"/> by another double <paramref name="b"/> and returns the result.
-            </summary>
-            <returns>
-            The quotient of two doubles.
-            </returns>
-            <example>
-            <code>
-            double c = Math.Divide(4.5, 5.4);
-            if (c > 1.0)
-            {
-                Console.WriteLine(c);
-            }
-            </code>
-            </example>
-            See <see cref="Math.Divide(int, int)"/> to divide integers.
-            <seealso cref="Math.Add(double, double)"/>
-            <seealso cref="Math.Subtract(double, double)"/>
-            <seealso cref="Math.Multiply(double, double)"/>
-            <param name="a">A double precision dividend.</param>
-            <param name="b">A double precision divisor.</param>
-        </DivideDouble>
-    </members>
-</docs>
-```
+[!code-xml[Exemple de code XML](../../samples/snippets/csharp/concepts/codedoc/include.xml)]
 
 Dans le code XML ci-dessus, les commentaires de documentation de chaque membre apparaissent directement dans une balise nommée en fonction de ce qu’il fait. Vous pouvez choisir votre propre stratégie. Maintenant que vous avez vos commentaires XML dans un fichier distinct, voyons comment votre code peut être rendu plus lisible à l’aide de la balise `<include>` :
 
-```csharp
-/*
-    The main Math class
-    Contains all methods for performing basic math functions
-*/
-/// <include file='docs.xml' path='docs/members[@name="math"]/Math/*'/>
-public class Math
-{
-    // Adds two integers and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/AddInt/*'/>
-    public static int Add(int a, int b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == int.MaxValue && b > 0) || (b == int.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    // Adds two doubles and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/AddDouble/*'/>
-    public static double Add(double a, double b)
-    {
-        // If any parameter is equal to the max value of an integer
-        // and the other is greater than zero
-        if ((a == double.MaxValue && b > 0) || (b == double.MaxValue && a > 0))
-            throw new System.OverflowException();
-
-        return a + b;
-    }
-
-    // Subtracts an integer from another and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/SubtractInt/*'/>
-    public static int Subtract(int a, int b)
-    {
-        return a - b;
-    }
-
-    // Subtracts a double from another and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/SubtractDouble/*'/>
-    public static double Subtract(double a, double b)
-    {
-        return a - b;
-    }
-
-    // Multiplies two integers and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/MultiplyInt/*'/>
-    public static int Multiply(int a, int b)
-    {
-        return a * b;
-    }
-
-    // Multiplies two doubles and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/MultiplyDouble/*'/>
-    public static double Multiply(double a, double b)
-    {
-        return a * b;
-    }
-
-    // Divides an integer by another and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/DivideInt/*'/>
-    public static int Divide(int a, int b)
-    {
-        return a / b;
-    }
-
-    // Divides a double by another and returns the result
-    /// <include file='docs.xml' path='docs/members[@name="math"]/DivideDouble/*'/>
-    public static double Divide(double a, double b)
-    {
-        return a / b;
-    }
-}
-```
+[!code-csharp[Balise include](../../samples/snippets/csharp/concepts/codedoc/include-tag.cs)]
 
 Et voilà : notre code est à nouveau lisible, et aucune information de documentation n’a été perdue. 
 

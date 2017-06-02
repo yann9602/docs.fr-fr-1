@@ -8,6 +8,7 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: dab9e2f9-9088-4089-b990-fbc3d8dcd611
+redirect_url: /dotnet/articles/core/tutorials/index
 translationtype: Human Translation
 ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: f802ecbc81238197fc759e9e1f1343e4b0e3f2df

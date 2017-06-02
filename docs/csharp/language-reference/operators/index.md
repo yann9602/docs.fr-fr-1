@@ -41,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fd70919f68c7c48894e7c944aeb1a74c73513e8e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: c4e018ec0073086a82d52ccd37463c070e9fb6e6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="c-operators"></a>Opérateurs C#
@@ -66,9 +67,7 @@ C# fournit de nombreux opérateurs, qui sont des symboles spécifiant quelles op
  [f(x)](../../../csharp/language-reference/operators/invocation-operator.md) : appel de fonction.  
   
  [a&#91;x&#93;](../../../csharp/language-reference/operators/index-operator.md) : indexation de l’objet d’agrégation.  
-  
- [a?&#91;x&#93;](../../../csharp/language-reference/operators/null-conditional-operators.md) : indexation conditionnelle Null.  Retourne `null` si l’opérande de gauche a la valeur `null`.  
-  
+   
  [x++](../../../csharp/language-reference/operators/increment-operator.md) : incrément suffixé.  Retourne la valeur de x et met à jour l'emplacement de stockage avec la valeur de x augmentée de un (ajoute généralement l'entier 1).  
   
  [x--](../../../csharp/language-reference/operators/decrement-operator.md) : décrément suffixé.  Retourne la valeur de x et met à jour l'emplacement de stockage avec la valeur de x diminuée de un (soustrait généralement l'entier 1).  
@@ -222,7 +221,7 @@ C# fournit de nombreux opérateurs, qui sont des symboles spécifiant quelles op
 ## <a name="arithmetic-overflow"></a>Dépassement arithmétique  
  Les opérateurs arithmétiques ([+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [*](../../../csharp/language-reference/operators/multiplication-operator.md) et [/](../../../csharp/language-reference/operators/division-operator.md)) peuvent produire des résultats qui sont en dehors de la plage de valeurs possibles pour le type numérique concerné. Reportez-vous à la section d'un opérateur particulier pour obtenir plus d'informations, mais en règle générale, les points suivants s'appliquent :  
   
-- Le dépassement arithmétique d’un entier lève une exception <xref:System.OverflowException> ou ignore les bits les plus significatifs du résultat. La division d'un entier par zéro lève toujours une exception @System.DivideByZeroException.  
+- Le dépassement arithmétique d'un entier lève soit une exception <xref:System.OverflowException> ou ignore les bits les plus significatifs du résultat. La division d'un entier par zéro lève toujours une exception @System.DivideByZeroException.  
 
    En cas de dépassement d’un entier, ce qui se produit dépend du contexte d’exécution, lequel peut être [checked ou unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md). Dans un contexte checked, une exception <xref:System.OverflowException> est levée. Dans un contexte unchecked, les bits les plus significatifs du résultat sont ignorés et l'exécution se poursuit. Ainsi, C# vous donne la possibilité de traiter ou d'ignorer le dépassement. Par défaut, les opérations arithmétiques se produisent dans un contexte *unchecked*. 
 
@@ -230,11 +229,11 @@ C# fournit de nombreux opérateurs, qui sont des symboles spécifiant quelles op
    
 -   Le dépassement arithmétique ou la division par zéro d'une virgule flottante ne lèvent jamais d'exception, car les types à virgule flottante se basent sur IEEE 754 et peuvent représenter l'infini et NaN (n'est pas un nombre).  
   
--   Le dépassement de capacité arithmétique [Décimal](../../../csharp/language-reference/keywords/decimal.md) lève toujours une exception <xref:System.OverflowException>. La division décimale par zéro lève toujours une exception <xref:System.DivideByZeroException>.  
+-   Le dépassement arithmétique d’un nombre [décimal](../../../csharp/language-reference/keywords/decimal.md) lève toujours une exception <xref:System.OverflowException>. La division d'un nombre décimal par zéro lève toujours une exception <xref:System.DivideByZeroException>.  
   
   
 ## <a name="see-also"></a>Voir aussi  
- [Référence du langage C#](../../../csharp/language-reference/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [C#](../../../csharp/csharp.md)   
  [Opérateurs surchargeables](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)   

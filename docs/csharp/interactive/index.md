@@ -1,6 +1,6 @@
 ---
-title: C# Interactive | Guide du langage C#
-description: Explorez le Shell interactif C# et utilisez-le pour explorer les API et les infrastructures.
+title: C# Interactive - Guide C# | Microsoft Docs
+description: Explorez le shell de C# Interactive et utilisez-le pour explorer les API et les frameworks
 keywords: .NET, .NET Core, C#
 ms.date: 06/25/2016
 ms.topic: article
@@ -8,10 +8,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: abed9e00-2ddc-468e-9cca-d033bd6a7e36
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 90e886a98f4eb02bb221f1a76fdf232596124672
-ms.lasthandoff: 03/13/2017
+redirect_url: /dotnet/articles/csharp/index
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 10da3bd3f6e30c2eed56b9c566f5b8edd2a9b242
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 

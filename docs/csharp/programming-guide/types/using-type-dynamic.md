@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f9ee1f0cae90120692fa4f41d2f432551281ab6d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 7e2310df174a7c38fafba3fed4e4bd3de4fa377a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Utilisation du type dynamic (Guide de programmation C#)
@@ -72,7 +73,7 @@ ms.lasthandoff: 03/13/2017
  [!code-cs[CsProgGuideTypes#55](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/using-type-dynamic_7.cs)]  
   
 ## <a name="dynamic-language-runtime"></a>Dynamic Language Runtime  
- Le composant Dynamic Language Runtime (DLR) est une nouvelle API de [!INCLUDE[net_v40_short](../../../csharp/programming-guide/types/includes/net_v40_short_md.md)]. Il fournit l’infrastructure qui prend en charge le type `dynamic` en C#, ainsi que l’implémentation des langages de programmation dynamique tels qu’IronPython et IronRuby. Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](http://msdn.microsoft.com/library/f769a271-8aff-4bea-bfab-6160217ce23d).  
+ Le composant Dynamic Language Runtime (DLR) est une nouvelle API de [!INCLUDE[net_v40_short](../../../csharp/programming-guide/types/includes/net_v40_short_md.md)]. Il fournit l’infrastructure qui prend en charge le type `dynamic` en C#, ainsi que l’implémentation des langages de programmation dynamique tels qu’IronPython et IronRuby. Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
 ## <a name="com-interop"></a>COM Interop  
  [!INCLUDE[csharp_dev10_long](../../../csharp/programming-guide/classes-and-structs/includes/csharp_dev10_long_md.md)] inclut plusieurs fonctionnalités qui améliorent l’interopérabilité avec les API COM telles que les API Office Automation. L’utilisation du type `dynamic` et des [arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md) fait partie des améliorations offertes.  
@@ -88,6 +89,6 @@ ms.lasthandoff: 03/13/2017
 |Titre|Description|  
 |-----------|-----------------|  
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|Décrit l’utilisation du mot clé `dynamic`.|  
-|[Vue d’ensemble du Dynamic Language Runtime](http://msdn.microsoft.com/library/f769a271-8aff-4bea-bfab-6160217ce23d)|Fournit une vue d’ensemble du DLR, qui est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques.|  
+|[Vue d’ensemble du Dynamic Language Runtime](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Fournit une vue d’ensemble du DLR, qui est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques.|  
 |[Procédure pas à pas : création et utilisation d’objets dynamiques](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)|Fournit des instructions pas à pas pour la création d’un objet dynamique personnalisé et pour la création d’un projet qui accède à une bibliothèque `IronPython`.|  
 |[Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)|Montre comment créer un projet qui utilise les arguments nommés et facultatifs, le type `dynamic` et d’autres améliorations qui simplifient l’accès aux objets d’API Office.|

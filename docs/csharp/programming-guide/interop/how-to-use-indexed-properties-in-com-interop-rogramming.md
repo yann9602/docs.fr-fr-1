@@ -1,55 +1,74 @@
 ---
-title: "Comment&#160;: utiliser des propri&#233;t&#233;s index&#233;es dans la programmation COM&#160;Interop (Guide de programmation&#160;C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "propriétés indexées (C#)"
-  - "programmation Office (C#), propriétés indexées"
-  - "propriétés (C#), indexées"
+title: "Guide pratique pour utiliser des propriétés indexées dans la programmation COM Interop (Guide de programmation C#) │ Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- indexed properties [C#]
+- Office programming [C#], indexed properties
+- properties [C#], indexed
 ms.assetid: 756bfc1e-7c28-4d4d-b114-ac9288c73882
 caps.latest.revision: 20
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 20
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: ae550ba7d3f2767cf7cc64a14bc177d15f426c36
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
+
 ---
-# Comment&#160;: utiliser des propri&#233;t&#233;s index&#233;es dans la programmation COM&#160;Interop (Guide de programmation&#160;C#)
-Les *propriétés indexées* améliorent la façon dont les propriétés COM qui ont des paramètres sont consommées dans la programmation en C\#.  Les propriétés indexées opèrent avec d'autres fonctionnalités introduites dans Visual C\# 2010, telles que les [arguments nommés et optionnels](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md), un nouveau type \([dynamique](../../../csharp/language-reference/keywords/dynamic.md)\) et des [informations de type incorporées](../Topic/Walkthrough:%20Embedding%20Types%20from%20Managed%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md), pour améliorer la programmation Microsoft Office.  
+# <a name="how-to-use-indexed-properties-in-com-interop-programming-c-programming-guide"></a>Comment : utiliser des propriétés indexées dans la programmation COM Interop (Guide de programmation C#)
+Les *propriétés indexées* améliorent la façon dont les propriétés COM avec des paramètres sont consommées dans la programmation C#. Les propriétés indexées fonctionnent avec d’autres fonctionnalités dans Visual C#, comme les [arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md), un nouveau type ([dynamique](../../../csharp/language-reference/keywords/dynamic.md)) et [les informations de type incorporées](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md), pour améliorer la programmation Microsoft Office.  
   
- Dans les versions antérieures de C\#, les méthodes sont uniquement accessibles en tant que propriétés si la méthode `get` ne comporte aucun paramètre et que la méthode `set` ne contient qu'un seul et unique paramètre de valeur.  Toutefois, toutes les propriétés COM ne sont pas confrontées à ces restrictions.  Par exemple, la propriété [Range](http://go.microsoft.com/fwlink/?LinkId=166053) d'Excel a un accesseur `get` qui requiert un paramètre pour le nom de la plage.  Dans le passé, étant donné que vous n'avez pas pu accéder directement à la propriété `Range`, vous deviez utiliser à la place la méthode `get_Range`, comme indiqué dans l'exemple suivant.  
+ Dans les versions antérieures de C#, les méthodes sont accessibles comme des propriétés uniquement si la méthode `get` n’a aucun paramètre et que la méthode `set` a un seul et unique paramètre de valeur. Toutefois, toutes les propriétés COM ne respectent pas ces restrictions. Par exemple, la propriété [Range](http://go.microsoft.com/fwlink/?LinkId=166053) d’Excel a un accesseur `get` qui nécessite un paramètre pour le nom de la plage. Dans le passé, parce que vous ne pouviez pas accéder à la propriété `Range` directement, vous deviez utiliser la méthode `get_Range` à la place, comme indiqué dans l’exemple suivant.  
   
  [!code-cs[csProgGuideIndexedProperties#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_1.cs)]  
   
- Les propriétés indexées vous permettent d'écrire à la place ce qui suit :  
+ Les propriétés indexées vous permettent d’écrire ce qui suit à la place :  
   
  [!code-cs[csProgGuideIndexedProperties#2](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_2.cs)]  
   
 > [!NOTE]
->  L'exemple précédent utilise également la fonctionnalité d'[arguments optionnels](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md), introduite dans Visual C\# 2010, qui vous permet d'omettre `Type.Missing`.  
+>  L’exemple précédent utilise également la fonctionnalité des [arguments facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md), qui vous permet d’omettre `Type.Missing`.  
   
- De la même façon, pour définir la valeur de la propriété `Value` d'un objet [Range](http://go.microsoft.com/fwlink/?LinkId=179211) dans Visual C\# 2008 et versions antérieures, deux arguments sont obligatoires.  L'un fournit un argument pour un paramètre optionnel qui spécifie le type de la valeur de plage.  L'autre fournit la valeur pour la propriété `Value`.  Avant Visual C\# 2010, C\# a autorisé un seul argument.  Par conséquent, au lieu d'utiliser une méthode set normale, vous deviez utiliser la méthode `set_Value` ou une propriété différente, [Value2](http://go.microsoft.com/fwlink/?LinkId=166050).  Les exemples suivants illustrent ces techniques.  Tous deux affectent à la cellule A1 la valeur `Name`.  
+ De la même façon que pour définir la valeur de la propriété `Value` d’un objet [Range](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) dans Visual C# 2008 et versions antérieures, deux arguments sont nécessaires. L’un fournit un argument pour un paramètre facultatif qui spécifie le type de la valeur de la plage. L’autre fournit la valeur de la propriété `Value`. Les exemples suivants illustrent ces techniques. Les deux définissent la valeur de la cellule A1 sur `Name`.
   
  [!code-cs[csProgGuideIndexedProperties#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_3.cs)]  
   
- Les propriétés indexées vous permettent d'écrire à la place le code suivant :  
+ Les propriétés indexées vous permettent d’écrire le code suivant à la place.  
   
  [!code-cs[csProgGuideIndexedProperties#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_4.cs)]  
   
- Vous ne pouvez pas créer vos propres propriétés indexées.  La fonctionnalité prend en charge uniquement l'utilisation des propriétés indexées existantes.  
+ Vous ne pouvez pas créer vos propres propriétés indexées. La fonctionnalité prend uniquement en charge la consommation de propriétés indexées existantes.  
   
-## Exemple  
- Le code suivant illustre un exemple complet.  Pour plus d'informations sur la définition d'un projet qui accède à l'API Office, consultez [Comment : accéder aux objets Office Interop à l'aide des fonctionnalités Visual C\#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md).  
+## <a name="example"></a>Exemple  
+ L'exemple de code suivant illustre l'exemple complet. Pour plus d’informations sur la configuration d’un projet qui accède à l’API Office, consultez [Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md).  
   
  [!code-cs[csProgGuideIndexedProperties#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-indexed-properties-in-com-interop-rogramming_5.cs)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)   
  [dynamic](../../../csharp/language-reference/keywords/dynamic.md)   
  [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)   
- [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)   
- [Comment : accéder aux objets Office Interop à l'aide des fonctionnalités Visual C\#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)   
+ [Guide pratique pour utiliser des arguments nommés et facultatifs dans la programmation Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)   
+ [Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](../../../csharp/programming-guide/interop/how-to-access-office-onterop-objects.md)   
  [Procédure pas à pas : programmation Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)

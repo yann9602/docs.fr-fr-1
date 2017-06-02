@@ -30,9 +30,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: f064ed0710a83e4bf0eaf5c35b962c29443f9d23
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -44,14 +45,12 @@ Le mot clé `enum` est utilisé pour déclarer une énumération. Il s’agit d�
  Par défaut, le premier énumérateur a la valeur 0 et chaque énumérateur successif est augmenté de 1. Par exemple, dans l’énumération suivante, `Sat` est `0`, `Sun` est `1`, `Mon` est `2`, et ainsi de suite.  
   
 ```  
-  
 enum Days {Sat, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
  Les énumérateurs peuvent utiliser des initialiseurs pour remplacer les valeurs par défaut, comme illustré dans l’exemple suivant.  
   
 ```  
-  
 enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
@@ -60,7 +59,6 @@ enum Days {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
  Chaque type énumération a un type sous-jacent qui peut être tout type intégral sauf [char](../../../csharp/language-reference/keywords/char.md). Le type sous-jacent par défaut des éléments de l’énumération est [int](../../../csharp/language-reference/keywords/int.md). Pour déclarer une énumération d’un autre type intégral, comme [byte](../../../csharp/language-reference/keywords/byte.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme illustré dans l’exemple suivant.  
   
 ```  
-  
 enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};  
 ```  
   
@@ -76,7 +74,6 @@ enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
  Le type sous-jacent spécifie la quantité de stockage allouée pour chaque énumérateur. Cependant, un cast explicite est nécessaire pour convertir du type `enum` en un type intégral. Par exemple, l’instruction suivante affecte l’énumérateur `Sun` à une variable du type [int](../../../csharp/language-reference/keywords/int.md) en utilisant un cast pour convertir de `enum` en `int`.  
   
 ```  
-  
 int x = (int)Days.Sun;  
 ```  
   
@@ -112,7 +109,7 @@ int x = (int)Days.Sun;
  `5`  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
@@ -122,3 +119,4 @@ int x = (int)Days.Sun;
  [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+

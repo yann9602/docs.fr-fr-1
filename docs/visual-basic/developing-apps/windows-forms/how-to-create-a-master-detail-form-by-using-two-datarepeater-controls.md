@@ -28,9 +28,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 23789bb11cab17b50928651e1dc00d5d59640c0f
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -39,7 +40,7 @@ Vous pouvez afficher les données associées à l’aide de deux ou plusieurs <x
   
  Vous pouvez afficher les données associées en faisant glisser des éléments de détail qui partagent le même nœud de la table principale de la **des Sources de données** fenêtre sur un <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>contrôle.</xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> Par exemple, si vous avez une source de données qui possède une table Customers et une table connexe Orders, vous consultez les deux tables en tant que nœuds de niveau supérieur dans l’arborescence de la **des Sources de données** fenêtre. Développez le nœud clients afin que vous puissiez voir les colonnes. Notez que la dernière colonne de la liste est un nœud extensible qui représente la table Orders. Ce nœud représente les commandes connexes d’un client.  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-display-related-data-in-two-datarepeater-controls"></a>Pour afficher les données associées dans deux contrôles DataRepeater  
   

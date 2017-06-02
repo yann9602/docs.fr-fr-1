@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8734f639e45f12ddd987a1c34e7f3ac38aa7d73f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
+ms.openlocfilehash: e7f4cfa81de3c4db41d9303abf65cfd0edc926a4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/01/2017
 
 ---
 # <a name="async-c-reference"></a>async (référence C#)
@@ -61,10 +62,10 @@ string contents = await contentsTask;
  Le mot clé `async` est contextuel, car il est un mot clé uniquement lorsqu'il modifie une méthode, une expression lambda ou une méthode anonyme. Dans tous les autres contextes, il est interprété comme un identificateur.  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant montre la structure et le flux de contrôle entre un gestionnaire d'événements asynchrones, `StartButton_Click`, et une méthode async, `ExampleMethodAsync`. Le résultat de la méthode async est la longueur d'un site Web téléchargé. Le code convient pour une application Windows Presentation Foundation (WPF) ou une application Windows Store que vous créez dans Visual Studio; consultez les commentaires du code pour configurer l'application.  
+ L'exemple suivant montre la structure et le flux de contrôle entre un gestionnaire d'événements asynchrones, `StartButton_Click`, et une méthode async, `ExampleMethodAsync`. Le résultat de la méthode async est la longueur d'un site Web téléchargé. Le code convient pour une application WPF (Windows Presentation Foundation) ou une application du Windows Store que vous créez dans Visual Studio ; consultez les commentaires du code pour configurer l’application.  
   
 ```csharp  
-// You can run this code in Visual Studio 2013 as a WPF app or a Windows Store app.  
+// You can run this code in Visual Studio as a WPF app or a Windows Store app.  
 // You need a button (StartButton) and a textbox (ResultsTextBox).  
 // Remember to set the names and handler so that you have something like this:  
 // <Button Content="Button" HorizontalAlignment="Left" Margin="88,77,0,0" VerticalAlignment="Top" Width="75"  

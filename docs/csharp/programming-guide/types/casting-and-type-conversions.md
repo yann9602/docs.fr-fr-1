@@ -32,10 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 28c6b9da6d94bd402e720db48d5c7a2977344f05
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
+ms.openlocfilehash: d421f0115642efa73dbeb893dba912b96d5f4dc6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/31/2017
 
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (Guide de programmation C#)
@@ -103,11 +104,8 @@ Giraffe g2 = (Giraffe) a;
  C# fournit les opérateurs [is](../../../csharp/language-reference/keywords/is.md) et [as](../../../csharp/language-reference/keywords/as.md) pour vous permettre de tester la compatibilité avant d’effectuer réellement un cast. Pour plus d’informations, consultez [Guide pratique pour effectuer sans risque un cast à l’aide des opérateurs as et is](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
-  
-## <a name="featured-book-chapter"></a>Chapitre proposé  
- [En savoir plus sur les variables](http://go.microsoft.com/fwlink/?LinkId=221230) dans [Bien démarrer avec Visual C# 2010](http://go.microsoft.com/fwlink/?LinkId=221214)  
-  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Types](../../../csharp/programming-guide/types/index.md)   

@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cc316600acd5f551dad8fbd4b7260c512231da5e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 99231dca529afe13aede6de9c537e160e970a850
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Guide pratique pour afficher les ports série disponibles en Visual Basic
@@ -47,7 +48,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
 ## <a name="example"></a>Exemple  
  Cet exemple exécute une boucle sur toutes les chaînes retournées par la propriété `My.Computer.Ports.SerialPortNames`. Ces chaînes correspondent aux noms des ports série disponibles sur l’ordinateur.  
   
- En règle générale, un utilisateur sélectionne le port série que l’application doit utiliser dans la liste des ports disponibles. Dans cet exemple, les noms des ports série sont stockés dans un contrôle <xref:System.Windows.Forms.ListBox>. Pour plus d’informations, consultez [ListBox Control](http://msdn.microsoft.com/library/b0172473-c5f2-411e-aaa4-c8f17cb5eed4).  
+ En règle générale, un utilisateur sélectionne le port série que l’application doit utiliser dans la liste des ports disponibles. Dans cet exemple, les noms de port série sont stockés dans un contrôle <xref:System.Windows.Forms.ListBox>. Pour plus d’informations, consultez [ListBox Control](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
   
  [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
@@ -60,10 +61,10 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
   
 -   Un accès aux membres de l’espace de noms <xref:System.Windows.Forms>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
--   L’ajout d’un contrôle <xref:System.Windows.Forms.ListBox> nommé `ListBox1` dans votre formulaire  
+-   Votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.ListBox> nommé `ListBox1`.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Il n’est pas nécessaire d’utiliser le contrôle <xref:System.Windows.Forms.ListBox> pour afficher les noms des ports série disponibles. Vous pouvez utiliser un contrôle <xref:System.Windows.Forms.ComboBox> ou un autre contrôle. Si l’application n’a pas à obtenir de réponse de l’utilisateur, vous pouvez utiliser un contrôle <xref:System.Windows.Forms.TextBox> pour afficher les informations.  
+ Vous n’avez pas besoin d’utiliser le contrôle <xref:System.Windows.Forms.ListBox> pour afficher les noms des ports série disponibles. À la place, vous pouvez utiliser un contrôle <xref:System.Windows.Forms.ComboBox> ou autre. Si l’application n’a pas besoin d’une réponse de l’utilisateur, vous pouvez utiliser un contrôle <xref:System.Windows.Forms.TextBox> pour afficher les informations.  
   
 > [!NOTE]
 >  Les noms de port retournés par `My.Computer.Ports.SerialPortNames` peuvent ne pas être corrects sur Windows 98. Pour éviter les erreurs d’application, utilisez la gestion des exceptions, comme les instructions `Try...Catch...Finally` et `Using`, lorsque vous utilisez les noms de ports pour ouvrir des ports.  

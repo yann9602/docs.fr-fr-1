@@ -36,10 +36,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 12e99815d1fd1b9c57706653e41a360802a6d80c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 94842349ae1c0fa3ccbdb2279b05a0faeb2f5d30
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-log-messages-when-the-application-starts-or-shuts-down-visual-basic"></a>Guide pratique pour enregistrer des messages quand l'application démarre ou s'arrête (Visual Basic)
@@ -73,7 +74,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 2.  Dans le menu **Déclarations** , choisissez **Arrêt**.  
   
-     L’application déclenche l’événement <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> après l’exécution de l’application principale, mais avant son arrêt.  
+     L’application déclenche l’événement <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> après l’exécution de l’application principale, mais avant qu’elle s’arrête.  
   
 3.  Ajoutez la méthode `My.Application.Log.WriteEntry` au gestionnaire d’événements `Shutdown` .  
   
@@ -88,5 +89,5 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   
  <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>   
  <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>   
- [Page Application, Concepteur de projets (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)   
+ [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)   
  [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)

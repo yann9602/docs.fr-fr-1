@@ -1,140 +1,168 @@
 ---
 title: "Modèle d’extensibilité des outils CLI .NET Core | Microsoft Docs"
-description: "Modèle d’extensibilité des outils CLI .NET Core"
+description: "Découvrez comment étendre les outils de l’interface de ligne de commande (CLI)."
 keywords: "CLI, extensibilité, commandes personnalisées, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 06/20/2016
+ms.date: 04/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
-ms.assetid: 1bebd25a-120f-48d3-8c25-c89965afcbcd
-translationtype: Human Translation
-ms.sourcegitcommit: 796df1549a7553aa93158598d62338c02d4df73e
-ms.openlocfilehash: 0a136e69e103994a69084b09f481489880d5df42
+ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 5a9c7ba999e278f4c5fbec51fa547b3e35828f88
+ms.openlocfilehash: 7e5cfdf644b3f4c6c5cc4f4e6f77ec72910b1f47
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/26/2017
 
 ---
 
-# <a name="net-core-cli-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core 
+# <a name="net-core-cli-tools-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
-> [!WARNING]
-> Cette rubrique s'applique aux outils .NET Core Preview 2. Pour la version RC4 des outils .NET Core, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core (outils .NET Core RC4)](../preview3/tools/extensibility.md).
-
-## <a name="overview"></a>Vue d'ensemble
-Ce document explique les principales méthodes permettant d’étendre les outils CLI, et décrit les scénarios dans lesquels elles sont utilisées. Ce document décrit comment utiliser les outils et explique brièvement comment créer ces deux types d’outils. 
+Ce document décrit les différentes méthodes permettant d’étendre les outils de l’interface de ligne de commande (CLI) .NET Core et explique les scénarios dans lesquels elles sont utilisées.
+Vous verrez comment utiliser les outils et comment créer les différents types d’outils.
 
 ## <a name="how-to-extend-cli-tools"></a>Extension des outils CLI
-Les outils CLI peuvent être étendus de deux façons :
+Vous pouvez étendre les outils CLI de trois façons :
 
-1. Via les packages NuGet, par projet
-2. Via le chemin (PATH) du système
+1. [Par le biais des packages NuGet, par projet](#per-project-based-extensibility)
 
-Les deux mécanismes d’extensibilité présentés ci-dessus ne sont pas exclusifs. Vous pouvez n’en utiliser qu’un ou les deux à la fois. Le choix de la méthode dépend en grande partie de l’objectif de votre extension.
+  Les outils par projet sont contenus dans le contexte du projet, mais ils permettent une installation rapide grâce à une restauration.
+
+2. [Par le biais des packages NuGet avec des cibles personnalisées](#custom-targets)
+
+  Les cibles personnalisées vous permettent d’étendre facilement le processus de génération avec des tâches personnalisées.
+
+3. [Par le biais du chemin (PATH) du système](#path-based-extensibility)
+
+  Les outils basés sur le chemin sont efficaces pour les outils généraux multiprojets qui sont utilisables sur un seul ordinateur.
+
+Les trois mécanismes d’extensibilité présentés ci-dessus ne sont pas exclusifs. Vous pouvez utiliser un seul, une partie ou la totalité d’entre eux. Le choix de la méthode dépend en grande partie de l’objectif de votre extension.
 
 ## <a name="per-project-based-extensibility"></a>Extensibilité par projet
-Les outils par projet sont des [applications console portables](../deploying/index.md) qui sont distribuées dans les packages NuGet. Les outils sont uniquement disponibles dans le contexte du projet qui les référence et pour lequel ils sont restaurés. Les appels en dehors du contexte du projet (par exemple, en dehors du répertoire qui contient le projet) échoueront, car la commande ne pourra pas être trouvée.
+Les outils par projet sont des [déploiements dépendants du framework](../deploying/index.md#framework-dependent-deployments-fdd) qui sont distribués dans les packages NuGet. Les outils sont uniquement disponibles dans le contexte du projet qui les référence et pour lequel ils sont restaurés. Les appels en dehors du contexte du projet (par exemple, en dehors du répertoire qui contient le projet) échouent parce que la commande est introuvable.
 
-Ces outils sont également parfaits pour les serveurs de build, puisque rien en dehors de `project.json` n’est nécessaire. Le processus de génération exécute la restauration pour le projet qu’il génère, et des outils seront disponibles. Les projets de langage, tels que F#, figurent également dans cette catégorie. Chaque projet ne peut être écrit que dans un langage. 
+Ces outils sont parfaits pour les serveurs de build, puisque rien en dehors du fichier projet n’est nécessaire. Le processus de génération exécute la restauration pour le projet qu’il génère, et des outils seront disponibles. Les projets de langage, tels que F#, figurent également dans cette catégorie puisque chaque projet ne peut être écrit que dans un langage.
 
-Enfin, ce modèle d’extensibilité prend en charge la création d’outils qui ont besoin d’accéder à la sortie générée du projet. Par exemple, les outils d’affichage Razor des applications MVC [ASP.NET](https://www.asp.net/) appartiennent à cette catégorie. 
+Enfin, ce modèle d’extensibilité prend en charge la création d’outils qui ont besoin d’accéder à la sortie générée du projet. Par exemple, les outils d’affichage Razor des applications MVC [ASP.NET](https://www.asp.net/) appartiennent à cette catégorie.
 
 ### <a name="consuming-per-project-tools"></a>Utilisation des outils par projet
-L’utilisation de ces outils nécessite l’ajout d’un nœud `tools` à votre `project.json`. Dans le nœud `tools`, vous devez référencer le package dans lequel réside l’outil. Après l’exécution de `dotnet restore`, l’outil et ses dépendances sont restaurés. 
+Vous devez ajouter un élément `<DotNetCliToolReference>` à votre fichier projet pour chaque outil que vous souhaitez utiliser. À l’intérieur de l’élément `<DotNetCliToolReference>`, vous référencez le package dans lequel réside l’outil et spécifiez la version dont vous avez besoin. Après l’exécution de [`dotnet restore`](dotnet-restore.md), l’outil et ses dépendances sont restaurés.
 
-Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Cela signifie que les outils qui chargent le code du projet possèdent deux composants : 
+Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Étant donné que l’interface CLI utilise MSBuild comme moteur de génération, nous vous recommandons d’écrire ces parties de l’outil sous forme de [cibles](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) et [tâches](https://docs.microsoft.com/visualstudio/msbuild/msbuild-tasks) MSBuild personnalisées puisqu’elles peuvent ensuite prendre part à l’ensemble du processus de génération. Elles peuvent aussi facilement récupérer tout ou partie des données produites par la génération, notamment l’emplacement des fichiers de sortie ou la configuration en cours de génération. Toutes ces informations deviennent un jeu de propriétés MSBuild qui peut être lu à partir de toutes les cibles. Vous verrez comment ajouter une cible personnalisée à l’aide de NuGet plus loin dans ce document.
 
-1. Le demandeur principal des outils
-2. Tout autre outil contenant la logique à utiliser 
+Voyons un exemple d’ajout d’un outil simple de type « tools-only » à un projet simple. Prenons un exemple de commande appelé `dotnet-api-search` qui vous permette de parcourir les packages NuGet à la recherche de l’API spécifiée. Voici le fichier projet de l’application console qui utilise cet outil :
 
-Pourquoi deux composants ? Les outils qui doivent charger la sortie de génération d’un projet doivent avoir un graphique de dépendance unifié avec le projet qu’ils utilisent. En ajoutant le bit de dépendance, nous permettons à NuGet de résoudre ces dépendances en tant que graphique unifié. Le demandeur est là pour évaluer l’emplacement, ainsi que les frameworks de l’outil de dépendance. Le demandeur peut accepter tous les arguments de redirection (`-c`, `-o`, `-b`) que l’utilisateur spécifie, et rechercher l’outil de dépendance. Il peut également implémenter des stratégies lorsqu’il existe plusieurs outils de dépendance pour plusieurs frameworks (par exemple, doit-il tous les exécuter ou n’en exécuter qu’un seul ?) En règle générale, une logique peut être entièrement partagée par ces deux outils. 
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
 
-Voyons un exemple d’ajout d’un outil simple de type « tools-only » à un projet simple. Prenons un exemple de commande appelé `dotnet-api-search` qui vous permette de parcourir les packages NuGet à la recherche de l’API spécifiée. Voici le fichier `project.json` de l’application console qui utilise cet outil :
-
-```json
-{
-    "version": "1.0.0",
-    "compilationOptions": {
-        "emitEntryPoint": true
-    },
-    "dependencies": {
-        "Microsoft.NETCore.App": {
-            "type": "platform",
-            "version": "1.0.0"
-        }
-    },
-    "tools": {
-        "dotnet-api-search": {
-            "version": "1.0.0",
-            "imports": ["dnxcore50"]
-        }
-    },
-    "frameworks": {
-        "netcoreapp1.0": {}
-    }
-}
+  <!-- The tools reference -->
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-api-search" Version="1.0.0" />
+  </ItemGroup>
+</Project>
 ```
 
-Le nœud `tools` est structuré de la même façon que le nœud `dependencies`. Il a besoin, au minimum, de l’ID de package du package qui contient l’outil et sa version. Dans l’exemple ci-dessus, nous voyons qu’il existe une autre instruction : `imports`. Cela influe sur le processus de restauration de l’outil et spécifie que l’outil est également compatible, en plus des frameworks ciblés dont dispose l’outil, avec le `dnxcore50` cible. Pour plus d’informations, consultez la [documentation de référence project.json](project-json.md).
+L’élément `<DotNetCliToolReference>` est structuré de la même façon que l’élément `<PackageReference>`. Pour procéder à la restauration, il a besoin de l’ID de package du package qui contient l’outil et sa version.
 
 ### <a name="building-tools"></a>Outils de création
-Comme nous l’avons mentionné précédemment, les outils sont des applications console portables. Ils peuvent être créés comme toute autre application console. Une fois l’outil créé, utilisez la commande [`dotnet pack`](dotnet-pack.md) pour créer un package NuGet (nupkg) devant contenir votre code, les informations sur ses dépendances, etc. L’auteur est libre de nommer le package comme il l’entend. Toutefois, l’application qui s’y trouve, le fichier binaire de l’outil, doit respecter la convention de `dotnet-<command>` afin de pouvoir être appelée par `dotnet`. 
+Comme nous l’avons mentionné précédemment, les outils sont des applications console portables. Vous les créez comme toute autre application console.
+Une fois l’outil créé, utilisez la commande [`dotnet pack`](dotnet-pack.md) pour créer un package NuGet (fichier .nupkg) devant contenir votre code, les informations sur ses dépendances, etc. Vous pouvez donner n’importe quel nom au package. Toutefois, l’application qui s’y trouve, le fichier binaire de l’outil, doit respecter la convention de `dotnet-<command>` pour pouvoir être appelée par `dotnet`.
 
-Étant donné que les outils sont des applications portables, l’utilisateur qui utilise un outil doit disposer de la version des bibliothèques .NET Core à l’aide desquelles l’outil a été développé, afin de pouvoir l’exécuter. Toute autre dépendance que l’outil utilise et qui ne figure pas dans les bibliothèques .NET Core est restaurée et placée dans le cache de NuGet. L’outil entier est, par conséquent, exécuté à l’aide des assemblys des bibliothèques .NET Core et du cache de NuGet. 
+> [!NOTE]
+> Dans les versions antérieures à RC3 des outils en ligne de commande .NET Core, la commande `dotnet pack` présentait un bogue qui empêchait la compression de `runtime.config.json` avec l’outil. L’absence de ce fichier aboutit à des erreurs lors de l’exécution. Si vous rencontrez ce comportement, veillez à utiliser les outils les plus récents et essayez `dotnet pack` une nouvelle fois.
 
-Ces types d’outils ont un graphique de dépendance qui est complètement distinct du graphique de dépendance du projet qui les utilise. Le processus de restauration restaure d’abord les dépendances du projet, puis restaure chacun des outils et leurs dépendances. 
+Étant donné que les outils sont des applications portables, l’utilisateur qui utilise un outil doit disposer de la version des bibliothèques .NET Core à l’aide desquelles l’outil a été développé, afin de pouvoir l’exécuter. Toute autre dépendance que l’outil utilise et qui ne figure pas dans les bibliothèques .NET Core est restaurée et placée dans le cache de NuGet. L’outil entier est, par conséquent, exécuté à l’aide des assemblys des bibliothèques .NET Core et du cache de NuGet.
 
-Vous trouverez des exemples plus complets dans le [dépôt sur les outils CLI .NET Core](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestProjects). Vous pouvez également voir l’[implémentation des outils utilisés](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestPackages) dans le même dépôt. 
+Ces types d’outils ont un graphique de dépendance qui est complètement distinct du graphique de dépendance du projet qui les utilise. Le processus de restauration restaure d’abord les dépendances du projet, puis restaure chacun des outils et leurs dépendances.
 
-Le processus de création d’outils chargeant les sorties de génération du projet pour l’exécution est légèrement différent. Comme mentionné précédemment, pour ces types d’outils, il existe deux composants :
+Vous trouverez des exemples plus complets dans le [dépôt sur les outils CLI .NET Core](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestProjects).
+Vous pouvez également voir l’[implémentation des outils utilisés](https://github.com/dotnet/cli/tree/rel/1.0.1/TestAssets/TestPackages) dans le même dépôt.
 
-1. Un répartiteur que l’utilisateur appelle
-2. Une dépendance spécifique au framework qui contient la logique de recherche et d’utilisation des sorties de génération
+### <a name="custom-targets"></a>Cibles personnalisées
+NuGet peut [empaqueter des fichiers de cibles et de propriétés MSBuild personnalisées](https://docs.microsoft.com/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package). Suite à l’adoption de MSBuild dans les outils CLI .NET Core, le même mécanisme d’extensibilité s’applique désormais aux projets .NET Core. Vous utilisez ce type d’extensibilité quand vous souhaitez étendre le processus de génération, accéder à tous les artefacts dans le processus de génération, tels que les fichiers générés, inspecter la configuration sous laquelle la build est appelée, etc.
 
-Les commandes [Entity Framework (EF)](https://github.com/aspnet/EntityFramework) et la commande [`dotnet test`](dotnet-test.md) constituent de bons exemples. Dans les deux cas, nous avons un outil qui est référencé dans le nœud `tools` du `project.json` et qui est le répartiteur principal. L’utilisateur appelle cet outil sur la ligne de commande. La deuxième pièce du puzzle est la dépendance donnée dans les dépendances principales du projet (les dépendances racines ou celles spécifiques au framework). Ce package contient la logique de l’outil. Le package est une dépendance normale. Il sera donc restauré dans le cadre du processus de restauration du projet. 
+Dans l’exemple suivant, vous pouvez voir le fichier projet de la cible à l’aide de la syntaxe `csproj`. Celle-ci indique à la commande [`dotnet pack`](dotnet-pack.md) les éléments à empaqueter. Les fichiers de cibles et les assemblys sont placés dans le dossier *build* à l’intérieur du package. Notez l’élément `<ItemGroup>` dont la propriété `Label` a la valeur `dotnet pack instructions`, et la cible définie en dessous.
 
-À la différence du type d’outils précédent, ces outils font partie du graphique du projet qui les utilise. Ceci s’explique par le fait qu’ils doivent accéder au code du projet et, potentiellement, à toutes ses dépendances. C’est le cas, par exemple, des outils Entity Framework, car ils doivent analyser les assemblys pour trouver le code dont ils ont besoin (par ex. les migrations).  
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Sample Packer</Description>
+    <VersionPrefix>0.1.0-preview</VersionPrefix>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>SampleTargets.PackerTarget</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Pkg\dist-template.xml;compiler\resources\**\*" Exclude="bin\**;obj\**;**\*.xproj;packages\**" />
+    <None Include="build\SampleTargets.PackerTarget.targets" />
+  </ItemGroup>
+  <ItemGroup Label="dotnet pack instructions">
+    <Content Include="build\*.targets">
+      <Pack>true</Pack>
+      <PackagePath>build\</PackagePath>
+    </Content>
+  </ItemGroup>
+  <Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">
+    <!-- Collect these items inside a target that runs after build but before packaging. -->
+    <ItemGroup>
+      <Content Include="$(OutputPath)\*.dll;$(OutputPath)\*.json">
+        <Pack>true</Pack>
+        <PackagePath>build\</PackagePath>
+      </Content>
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="1.0.1-beta-000933"/>
+    <PackageReference Include="Microsoft.Build.Framework" Version="0.1.0-preview-00028-160627" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="0.1.0-preview-00028-160627" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>463c66f0-921d-4d34-8bde-7c9d0bffaf7b</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD1_3</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  </PropertyGroup>
+</Project>
+```
 
-Cette solution à deux niveaux permet également un modèle d’appel plus propre. La plupart des commandes CLI qui suppriment certains artefacts du disque (par exemple, `dotnet build`, `dotnet publish`) permettent aux utilisateurs de rediriger les sorties vers un autre emplacement à l’aide de l’argument `--output`, `--build-base-path` ou `--configuration`. Pour les outils Entity Framework, par exemple, pour être en mesure de trouver la sortie de génération de votre projet, vous devez fournir les mêmes arguments avec les mêmes valeurs *à la fois* pour le pilote `dotnet` et la commande `ef`. Avec le modèle d’appel, les utilisateurs passent tous les arguments à l’outil répartiteur qui les utilise ensuite pour trouver le fichier binaire nécessaire contenant la logique parmi les répertoires de sortie. 
+L’utilisation de cibles personnalisées s’effectue en fournissant un `<PackageReference>` qui pointe vers le package et sa version dans le projet en cours d’extension. Contrairement aux outils, le package des cibles personnalisées n’est pas inclus dans la fermeture de dépendance du projet de consommation.
 
-Un bon exemple de cette approche se trouve dans le [dépôt sur les outils CLI .NET Core](https://github.com/dotnet/cli) :
+L’utilisation de la cible personnalisée dépend uniquement de la façon dont vous la configurez. Puisqu’il s’agit d’une cible MSBuild, elle peut dépendre d’une cible donnée, exécutée après une autre cible, et peut également être appelée manuellement à l’aide de la commande `dotnet msbuild /t:<target-name>`.
 
-* [Exemple de fichier project.json](https://github.com/dotnet/cli/blob/rel/1.0.0-preview2/TestAssets/DesktopTestProjects/AppWithDirectDependencyDesktopAndPortable/project.json)
-* [Implémentation du répartiteur](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestPackages/dotnet-dependency-tool-invoker)
-* [Implémentation de la dépendance spécifique du framework](https://github.com/dotnet/cli/tree/rel/1.0.0-preview2/TestAssets/TestPackages/dotnet-desktop-and-portable)
-
+Toutefois, si vous souhaitez procurer une meilleure expérience à vos utilisateurs, vous pouvez combiner des outils par projet et des cibles personnalisées. Dans ce scénario, l’outil par projet se contenterait essentiellement d’accepter tous les paramètres nécessaires à partir desquels il générerait l’invocation [`dotnet msbuild`](dotnet-msbuild.md) nécessaire pour exécuter la cible. Vous pouvez voir un exemple de ce type de synergie sur le dépôt des [exemples du MVP Summit 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) du projet [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer).
 
 ### <a name="path-based-extensibility"></a>Extensibilité basée sur le chemin (PATH)
 L’extensibilité basée sur le chemin est généralement utilisée pour les ordinateurs de développement qui nécessitent un outil qui traite conceptuellement plusieurs projets. Le principal inconvénient de ce mécanisme d’extension est qu’il est limité à l’ordinateur sur lequel est installé l’outil. Si vous avez besoin de l’installer sur un autre ordinateur, vous devrez le déployer.
 
-Ce modèle d’extensibilité des outils CLI est très simple. Comme indiqué dans la [présentation des outils CLI .NET Core](index.md), le pilote `dotnet` peut exécuter toutes les commandes dont le nom respecte la convention `dotnet-<command>`. La logique de résolution par défaut sonde d’abord plusieurs emplacements avant d’arriver au chemin système. Si la commande demandée existe dans le chemin système et s’il s’agit d’un fichier binaire qui peut être appelé, le pilote `dotnet` l’appellera. 
+Ce modèle d’extensibilité des outils CLI est très simple. Comme indiqué dans la [présentation des outils CLI .NET Core](index.md), le pilote `dotnet` peut exécuter toutes les commandes dont le nom respecte la convention `dotnet-<command>`. La logique de résolution par défaut sonde d’abord plusieurs emplacements avant de revenir au chemin (PATH) système. Si la commande demandée existe dans le chemin système et s’il s’agit d’un fichier binaire qui peut être appelé, le pilote `dotnet` l’appellera.
 
-La seule qualité indispensable au fichier binaire est d’être exécutable par le système d’exploitation. Sur les systèmes Unix, il peut s’agir de tous les fichiers dont le bit d’exécution est défini via `chmod +x`. Sur les systèmes Windows, il peut s’agir de n’importe quel fichier que Windows peut exécuter. 
+Le fichier doit être exécutable. Sur les systèmes Unix, il peut s’agir de tous les fichiers dont le bit d’exécution est défini via `chmod +x`. Sur Windows, vous pouvez utiliser des fichiers *cmd*.
 
-Voyons par exemple une implémentation très simple d’une commande `dotnet clean`. Nous allons utiliser `bash` pour implémenter cette commande. La commande supprime les répertoires `bin/` et `obj/` situés dans le répertoire actif. Si l’argument `--lock` lui est passé, elle supprime également le fichier `project.lock.json`. L’intégralité de la commande est affichée ci-dessous. 
+Examinons l’implémentation simple d’un outil « Hello World ». Nous allons utiliser `bash` et `cmd` sur Windows.
+La commande suivante répète simplement « Hello World » dans la console.
 
 ```bash
 #!/bin/bash
 
-# Delete the bin and obj dirs
-rm -rf bin/ obj/
-
-LOCK_FILE=$1
-if [[ "$LOCK_FILE" = "--lock" ]]; then
-    rm project.lock.json
-fi
-
-
-echo "Cleaning complete..."
+echo "Hello World!"
 ```
 
-Sur Mac OS, nous pouvons enregistrer ce script en tant que `dotnet-clean` et définir son bit exécutable avec `chmod +x dotnet-clean`. Nous pouvons ensuite créer un lien symbolique vers le script dans `/usr/local/bin` à l’aide de la commande `ln -s dotnet-clean /usr/local/bin/`. Cela permet d’appeler la commande Clean à l’aide de la syntaxe `dotnet clean`. Vous pouvez tester cela en créant une application, en exécutant `dotnet build` sur l’application, puis en exécutant `dotnet clean`. 
+```cmd
+echo "Hello World"
+```
 
-## <a name="conclusion"></a>Conclusion
-Les outils CLI .NET Core permettent deux principaux points d’extensibilité. Les outils par projet sont contenus dans le contexte du projet, mais ils permettent une installation rapide grâce à une restauration. Les outils basés sur le chemin sont efficaces pour les outils généraux multiprojets qui sont utilisables sur un seul ordinateur. 
+Sur Mac OS, nous pouvons enregistrer ce script en tant que `dotnet-hello` et définir son bit exécutable avec `chmod +x dotnet-hello`. Nous pouvons ensuite créer un lien symbolique vers le script dans `/usr/local/bin` à l’aide de la commande `ln -s dotnet-hello /usr/local/bin/`. Cela permet d’appeler la commande à l’aide de la syntaxe `dotnet hello`.
 
-
-
-<!--HONumber=Feb17_HO2-->
-
+Sur Windows, nous pouvons enregistrer ce script en tant que `dotnet-hello.cmd` et le placer dans un emplacement figurant dans un chemin système (ou vous pouvez l’ajouter à un dossier qui existe déjà dans le chemin). Après cela, vous pouvez simplement utiliser `dotnet hello` pour exécuter cet exemple.
 

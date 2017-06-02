@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4c4f3ab00b4de2a6f38858dd5f332db3d47eb85b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 7acde09659624fd097471824e6407dc181d88893
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Variance dans les interfaces génériques (C#)
@@ -44,20 +45,59 @@ ms.lasthandoff: 03/13/2017
   
  La covariance permet à une méthode d’avoir un type de retour plus dérivé que celui défini par le paramètre de type générique de l’interface. Pour illustrer la fonctionnalité de covariance, considérez ces interfaces génériques : `IEnumerable<Object>` et `IEnumerable<String>`. L’interface `IEnumerable<String>` n’hérite pas de l’interface `IEnumerable<Object>`. Toutefois, le type `String` hérite du type `Object` et, dans certains cas, vous pouvez assigner des objets de ces interfaces de l’un à l’autre. Ceci est illustré dans l’exemple de code suivant.  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- Dans les versions antérieures du .NET Framework, ce code provoque une erreur de compilation en C# avec `Option Strict On`. Cependant, vous pouvez désormais utiliser `strings` au lieu de `objects`, comme illustré dans l’exemple précédent, parce que l’interface <xref:System.Collections.Generic.IEnumerable%601> est covariante.  
+```csharp  
+IEnumerable<String> strings = new List<String>();  
+IEnumerable<Object> objects = strings;  
+```  
+  
+ Dans les versions antérieures du .NET Framework, ce code provoque une erreur de compilation en C# avec `Option Strict On`. Cependant, vous pouvez désormais utiliser `strings` au lieu d’`objects`, comme illustré dans l’exemple précédent, parce que l’interface <xref:System.Collections.Generic.IEnumerable%601> est covariante.  
   
  La contravariance permet à une méthode d’avoir des types d’argument moins dérivés que ceux spécifiés par le paramètre générique de l’interface. Pour illustrer la contravariance, supposez que vous avez créé une classe `BaseComparer` pour comparer des instances de la classe `BaseClass`. La classe `BaseComparer` implémente l'interface `IEqualityComparer<BaseClass>`. Étant donné que l’interface <xref:System.Collections.Generic.IEqualityComparer%601> est maintenant contravariante, vous pouvez utiliser `BaseComparer` pour comparer des instances des classes qui héritent de la classe `BaseClass`. Ceci est illustré dans l’exemple de code suivant.  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
+```csharp  
+// Simple hierarchy of classes.  
+class BaseClass { }  
+class DerivedClass : BaseClass { }  
+  
+// Comparer class.  
+class BaseComparer : IEqualityComparer<BaseClass>   
+{  
+    public int GetHashCode(BaseClass baseInstance)  
+    {  
+        return baseInstance.GetHashCode();  
+    }  
+    public bool Equals(BaseClass x, BaseClass y)  
+    {  
+        return x == y;  
+    }  
+}  
+class Program  
+{  
+    static void Test()  
+    {  
+        IEqualityComparer<BaseClass> baseComparer = new BaseComparer();  
+  
+        // Implicit conversion of IEqualityComparer<BaseClass> to   
+        // IEqualityComparer<DerivedClass>.  
+        IEqualityComparer<DerivedClass> childComparer = baseComparer;  
+    }  
+}  
+```  
+  
  Pour obtenir d’autres exemples, consultez [Utilisation de la variance dans les interfaces pour les collections génériques (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md).  
   
  La variance dans les interfaces génériques est prise en charge uniquement pour les types référence. Les types valeur ne prennent pas en charge la variance. Par exemple, `IEnumerable<int>` ne peut pas être converti implicitement en `IEnumerable<object>`, car les entiers sont représentés par un type valeur.  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
- Il est également important de se souvenir que les classes qui implémentent des interfaces variantes sont toujours invariantes. Par exemple, bien que <xref:System.Collections.Generic.List%601> implémente l’interface covariante <xref:System.Collections.Generic.IEnumerable%601>, vous ne pouvez pas convertir implicitement `List<Object>` en `List<String>`. Ceci est illustré dans l’exemple de code suivant.  
+```csharp  
+IEnumerable<int> integers = new List<int>();  
+// The following statement generates a compiler errror,  
+// because int is a value type.  
+// IEnumerable<Object> objects = integers;  
+```  
   
-```cs  
+ Il est également important de se souvenir que les classes qui implémentent des interfaces variantes sont toujours invariantes. Par exemple, même si <xref:System.Collections.Generic.List%601> implémente l’interface covariante <xref:System.Collections.Generic.IEnumerable%601>, vous ne pouvez pas convertir implicitement `List<Object>` en `List<String>`. En voici une illustration dans l’exemple de code suivant.  
+  
+```csharp  
 // The following line generates a compiler error  
 // because classes are invariant.  
 // List<Object> list = new List<String>();  
@@ -69,5 +109,5 @@ IEnumerable<Object> listObjects = new List<String>();
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation de la variance dans les interfaces pour les collections génériques (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md)   
  [Création d’interfaces génériques de type variant (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md)   
- [Interfaces génériques](http://msdn.microsoft.com/library/88bf5b04-d371-4edb-ba38-01ec7cabaacf)   
+ [Interfaces génériques](../../../../standard/generics/interfaces.md)   
  [Variance dans les délégués (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)

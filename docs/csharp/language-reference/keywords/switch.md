@@ -36,9 +36,10 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: b6f8b110e087093bd47573a1a4a05752be91e743
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -208,7 +209,7 @@ Sans critères spéciaux, ce code peut être écrit comme suit. L’utilisation 
 Notez que la clause `when` dans l’exemple qui tente de tester si un objet `Shape` est `null` ne s’exécute pas. Le modèle de type correct à utiliser pour tester un `null` est `case null:`.
 
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
 

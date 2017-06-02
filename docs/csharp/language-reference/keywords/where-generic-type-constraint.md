@@ -30,16 +30,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d5c0b9fff370893d890518c6a95a74889b3f2295
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: e5baa75c55d58a4d975fc42472f90ff4125cbb5c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/24/2017
 
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 Dans une définition de type générique, la clause `where` permet de spécifier des contraintes sur les types qui peuvent être utilisés comme arguments pour un paramètre de type défini dans une déclaration générique. Vous pouvez, par exemple, déclarer une classe générique, `MyGenericClass`, telle que le paramètre de type `T` implémente l’interface <xref:System.IComparable%601> :  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
+```csharp  
+public class MyGenericClass<T> where T:IComparable { }  
+```  
+  
 > [!NOTE]
 >  Pour plus d’informations sur la clause where dans une expression de requête, consultez [where, clause](../../../csharp/language-reference/keywords/where-clause.md).  
   
@@ -59,13 +63,13 @@ Dans une définition de type générique, la clause `where` permet de spécifier
   
  Vous pouvez également joindre des contraintes aux paramètres de type des méthodes génériques, comme ceci :  
   
-```  
+```csharp  
 public bool MyMethod<T>(T t) where T : IMyInterface { }  
 ```  
   
  Notez que la syntaxe décrivant les contraintes de paramètre de type sur les délégués est la même que celle des méthodes :  
   
-```  
+```csharp  
 delegate T MyDelegate<T>() where T : new()  
 ```  
   
@@ -74,7 +78,7 @@ delegate T MyDelegate<T>() where T : new()
  Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   

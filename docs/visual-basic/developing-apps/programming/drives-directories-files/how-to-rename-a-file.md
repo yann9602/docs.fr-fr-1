@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a0a31353ce3ee0c48907f9550f6961260f92b64a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a090fa8df6347a98b5c971c26664e6dd1098a594
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Guide pratique pour renommer un fichier en Visual Basic
@@ -51,13 +52,13 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (commençant par \\\\.\\) (<xref:System.ArgumentException>).  
+-   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).  
   
 -   `newName` contient des informations de chemin (<xref:System.ArgumentException>).  
   
--   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
+-   Le chemin n’est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `newName` est `Nothing` ou une chaîne vide (<xref:System.ArgumentNullException>).  
+-   `newName` est soit `Nothing` soit une chaîne vide (<xref:System.ArgumentNullException>).  
   
 -   Le fichier source n’est pas valide ou n’existe pas (<xref:System.IO.FileNotFoundException>).  
   
@@ -65,11 +66,11 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
   
 -   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   Un nom de fichier ou de répertoire dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
+-   Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
+-   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
--   L’utilisateur n’a pas l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
+-   L’utilisateur ne dispose pas de l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile%2A>   

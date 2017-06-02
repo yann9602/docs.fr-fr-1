@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: af1f16016053d3c1b3cae34ff0cb6a3ce8cee9e7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: a2f2e9b9239836b051820bda66523822e95cdf52
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out, modificateur de paramètre (référence C#)
@@ -66,7 +67,7 @@ Toutefois, la surcharge est autorisée si une méthode prend un argument `ref` o
   
  Vous ne pouvez pas utiliser les mots clés `ref` et `out` pour les types de méthodes suivants :  
   
--   Les méthodes Async, que vous définissez à l’aide du modificateur [async](../../../csharp/language-reference/keywords/async.md).  
+-   Méthodes async, que vous définissez à l’aide du modificateur [async](../../../csharp/language-reference/keywords/async.md).  
   
 -   Les méthodes Iterator, qui incluent une instruction [yield return](../../../csharp/language-reference/keywords/yield.md) ou `yield break`.  
 
@@ -93,7 +94,7 @@ Dans l’exemple précédent, la variable `number` est fortement typée en `int`
  [!code-cs[csrefKeywordsMethodParams#7](../../../../samples/snippets/csharp/language-reference/keywords/out/out-7.cs)]  
    
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   

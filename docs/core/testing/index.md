@@ -1,5 +1,5 @@
 ---
-title: Effectuer des tests unitaires dans .NET Core
+title: Tests unitaires dans .NET Core | Microsoft Docs
 description: Effectuer des tests unitaires dans .NET Core
 keywords: .NET, .NET Core
 author: ardalis
@@ -9,19 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 815ac74c-4bd9-4a94-a87c-78288b27c0e2
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: ca9d57a3ef3382c4957de5edb55959f1a3f13ee0
-ms.lasthandoff: 04/05/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 4983af5386efc6b713f10f200687535b7dc36a11
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
 # <a name="unit-testing-in-net-core"></a>Effectuer des tests unitaires dans .NET Core
 
-Article rédigé par [Steve Smith](http://ardalis.com) et [Bill Wagner](https://github.com/BillWagner)
-
-.NET Core a été conçu dans une optique de testabilité et pour faciliter plus que jamais la création de tests unitaires pour vos applications. Cet article présente brièvement les tests unitaires et explique ce qui les distingue des autres types de test.
-Des ressources liées montrent comment ajouter un projet de test à une solution et comment exécutez les tests unitaires via la ligne de commande ou Visual Studio.
+.NET Core a été conçu dans une optique de testabilité et pour faciliter plus que jamais la création de tests unitaires pour vos applications. Cet article présente brièvement les tests unitaires et explique ce qui les distingue des autres types de test. Des ressources liées montrent comment ajouter un projet de test à une solution et comment exécutez les tests unitaires via la ligne de commande ou Visual Studio.
 
 ## <a name="getting-started-with-testing"></a>Bien démarrer avec les tests
  
@@ -34,9 +32,8 @@ Quand vous écrivez des tests unitaires, veillez à ne pas introduire accidentel
 
 Pour en savoir plus sur les tests unitaires dans les projets .NET Core :
 
-Essayez cette [procédure pas à pas : création de tests unitaires avec xUnit et l’interface CLI .NET](unit-testing-with-dotnet-test.md). 
-
-L’équipe XUnit a écrit un didacticiel qui explique [comment utiliser xUnit avec .NET Core et Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).
-
-Si vous préférez utiliser MSTest, essayez la [procédure pas à pas : création de tests unitaires avec MSTest et l’interface CLI .NET](unit-testing-with-mstest.md).
+* Essayez cette [procédure pas à pas : création de tests unitaires avec xUnit et l’interface CLI .NET](unit-testing-with-dotnet-test.md). 
+* L’équipe XUnit a écrit un didacticiel qui explique [comment utiliser xUnit avec .NET Core et Visual Studio](http://xunit.github.io/docs/getting-started-dotnet-core.html).
+* Si vous préférez utiliser MSTest, essayez la [procédure pas à pas : création de tests unitaires avec MSTest et l’interface CLI .NET](unit-testing-with-mstest.md).
+* Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
