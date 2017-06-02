@@ -58,7 +58,7 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  Montre comment créer et écrire dans un nouveau fichier texte du répertoire **Mes documents**.  
   
  [Guide pratique : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
- Montre comment écrire dans un fichier à l’aide d’un objet <xref:System.IO.StreamWriter?displayProperty=fullName>.  
+ Montre comment écrire dans un fichier avec un objet <xref:System.IO.StreamWriter?displayProperty=fullName>.  
   
 ## <a name="reference"></a>Référence  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  

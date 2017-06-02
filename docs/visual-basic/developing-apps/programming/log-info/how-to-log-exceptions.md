@@ -41,7 +41,7 @@ ms.lasthandoff: 05/22/2017
 # <a name="how-to-log-exceptions-in-visual-basic"></a>Guide pratique pour enregistrer des exceptions en Visual Basic
 Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur les exceptions qui se produisent dans votre application. Ces exemples montrent comment utiliser la méthode `My.Application.Log.WriteException` pour enregistrer des exceptions que vous interceptez explicitement et des exceptions qui ne sont pas gérées.  
   
- Pour enregistrer des informations de traçage, utilisez la méthode `My.Application.Log.WriteEntry`. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>.  
+ Pour enregistrer des informations de traçage, utilisez la méthode `My.Application.Log.WriteEntry`. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>  
   
 ### <a name="to-log-a-handled-exception"></a>Pour enregistrer une exception gérée  
   
@@ -55,7 +55,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 3.  Placez le code susceptible de générer une exception dans le bloc `Try`.  
   
-     Supprimez les commentaires des lignes `Dim` et `MsgBox` pour provoquer une exception <xref:System.NullReferenceException>.  
+     Supprimez les commentaires des lignes `Dim` et `MsgBox` pour déclencher une exception <xref:System.NullReferenceException>.  
   
      [!code-vb[VbVbalrMyApplicationLog#7](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/how-to-log-exceptions_3.vb)]  
   

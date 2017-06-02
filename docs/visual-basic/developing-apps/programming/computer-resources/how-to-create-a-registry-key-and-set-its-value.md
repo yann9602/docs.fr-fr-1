@@ -75,9 +75,9 @@ Vous pouvez utiliser la méthode `CreateSubKey` de l’objet `My.Computer.Regist
   
  Lors de la lecture du Registre à partir d’une application web, l’utilisateur actuel dépend de l’authentification et de l’emprunt d’identité implémenté dans l’application web.  
   
- Il est plus sûr d’écrire des données dans le dossier de l’utilisateur (<xref:Microsoft.Win32.Registry.CurrentUser>) que sur l’ordinateur local (<xref:Microsoft.Win32.Registry.LocalMachine>).  
+ Il est plus sûr d’écrire des données dans le dossier utilisateur (<xref:Microsoft.Win32.Registry.CurrentUser>) que sur l’ordinateur local (<xref:Microsoft.Win32.Registry.LocalMachine>).  
   
- Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour éviter ce problème, utilisez la méthode <xref:Microsoft.Win32.RegistryKey.GetValue%2A>. Elle retourne `Nothing` si la clé n’existe pas encore.  
+ Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour l’éviter, utilisez la méthode <xref:Microsoft.Win32.RegistryKey.GetValue%2A>. Elle retourne `Nothing` si la clé n’existe pas encore.  
   
  Il est dangereux de stocker des données confidentielles (telles que des mots de passe) dans le Registre sous forme de texte brut, même si la clé de Registre est protégée par des listes de contrôle d’accès.  
   
@@ -87,14 +87,14 @@ Vous pouvez utiliser la méthode `CreateSubKey` de l’objet `My.Computer.Regist
   
 -   L’utilisateur ne dispose pas des autorisations nécessaires pour créer des clés de Registre (<xref:System.Security.SecurityException>).  
   
--   Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
+-   Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
   
 -   La clé est fermée (<xref:System.IO.IOException>).  
   
 -   La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Pour exécuter ce processus, votre assembly doit obtenir un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8).  
+ Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   

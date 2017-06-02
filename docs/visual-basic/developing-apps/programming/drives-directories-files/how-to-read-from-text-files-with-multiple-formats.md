@@ -45,7 +45,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-read-from-text-files-with-multiple-formats-in-visual-basic"></a>Guide pratique pour lire des fichiers texte avec plusieurs formats en Visual Basic
-L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyser facilement et efficacement des fichiers texte structurés, tels que des journaux. Vous pouvez traiter un fichier contenant plusieurs formats en utilisant la méthode `PeekChars` pour déterminer le format de chaque ligne à mesure que vous analysez le fichier.  
+L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyser facilement et efficacement les fichiers texte structurés, tels que les journaux. Vous pouvez traiter un fichier contenant plusieurs formats en utilisant la méthode `PeekChars` pour déterminer le format de chaque ligne à mesure que vous analysez le fichier.  
   
 ### <a name="to-parse-a-text-file-with-multiple-formats"></a>Pour analyser un fichier texte avec plusieurs formats  
   
@@ -64,7 +64,7 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyse
   
      [!code-vb[VbFileIORead#4](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_1.vb)]  
   
-3.  Créez un objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>, en définissant la largeur et le format.  
+3.  Créez un nouvel objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> en définissant la largeur et le format.  
   
      [!code-vb[VbFileIORead#5](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-text-files-with-multiple-formats_2.vb)]  
   
@@ -84,7 +84,7 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> permet d’analyse
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Une ligne ne peut pas être analysée à l’aide du format spécifié (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Le message d’exception spécifie la ligne qui provoque l’exception, tandis que le texte contenu dans la ligne est assigné à la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A>.  
+-   Une ligne ne peut pas être analysée à l’aide du format spécifié (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Le message d’exception spécifie la ligne qui provoque l’exception, tandis que la propriété <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> est assignée au texte contenu dans la ligne.  
   
 -   Le fichier spécifié n’existe pas (<xref:System.IO.FileNotFoundException>).  
   

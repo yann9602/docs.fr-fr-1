@@ -52,7 +52,7 @@ Utilisez la méthode `CreateDirectory` de l’objet `My.Computer.FileSystem` pou
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Le format du nom du répertoire est incorrect. Par exemple, il contient des caractères non valides ou est constitué uniquement d’espaces blancs (<xref:System.ArgumentException>).  
+-   Le format du nom du répertoire est incorrect. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (<xref:System.ArgumentException>).  
   
 -   Le répertoire parent du répertoire à créer est en lecture seule (<xref:System.IO.IOException>).  
   
@@ -60,11 +60,11 @@ Utilisez la méthode `CreateDirectory` de l’objet `My.Computer.FileSystem` pou
   
 -   Le nom du répertoire est trop long (<xref:System.IO.PathTooLongException>).  
   
--   Le nom du répertoire est un signe deux-points « : » (<xref:System.NotSupportedException>).  
+-   Le nom du répertoire est un signe deux-points (:) (<xref:System.NotSupportedException>).  
   
--   L’utilisateur n’est pas autorisé à créer le répertoire (<xref:System.UnauthorizedAccessException>).  
+-   L’utilisateur n’a pas l’autorisation de créer le répertoire (<xref:System.UnauthorizedAccessException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires dans une situation de confiance partielle (<xref:System.Security.SecurityException>).  
+-   L’utilisateur ne dispose pas des autorisations dans une situation de confiance partielle (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.CreateDirectory%2A>   

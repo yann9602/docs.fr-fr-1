@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour supprimer un fichier en Visual Basic | Microsoft Docs
+title: Guide pratique pour supprimer un fichier dans Visual Basic | Microsoft Docs
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -40,7 +40,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="how-to-delete-a-file-in-visual-basic"></a>Comment : supprimer un fichier dans Visual Basic
+# <a name="how-to-delete-a-file-in-visual-basic"></a>Guide pratique pour supprimer un fichier dans Visual Basic
 La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de supprimer un fichier. Elle offre entre autres les options suivantes : envoyer ou non le fichier supprimé à la **Corbeille**, demander ou non à l’utilisateur de confirmer que le fichier doit être supprimé et l’action à effectuer quand l’utilisateur annule l’opération.  
   
 ### <a name="to-delete-a-text-file"></a>Pour supprimer un fichier texte  
@@ -64,23 +64,23 @@ La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de su
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (commençant par \\\\.\\) (<xref:System.ArgumentException>).  
+-   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).  
   
--   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
+-   Le chemin n’est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+-   Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
+-   Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).  
   
 -   Le fichier est en cours d’utilisation (<xref:System.IO.IOException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
+-   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).  
   
--   Le fichier n’existe pas (<xref:System.IO.FileNotFoundException>).  
+-   Le fichier n'existe pas (<xref:System.IO.FileNotFoundException>).  
   
--   L’utilisateur n’a pas l’autorisation nécessaire pour supprimer le fichier, ou le fichier est en lecture seule (<xref:System.UnauthorizedAccessException>).  
+-   L’utilisateur n’a pas l’autorisation de supprimer le fichier ou le fichier est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
--   Il existe une situation de niveau de confiance partiel où l’utilisateur n’a pas les autorisations suffisantes (<xref:System.Security.SecurityException>).  
+-   Une situation de confiance partielle dans laquelle l’utilisateur ne dispose pas des autorisations suffisantes existe (<xref:System.Security.SecurityException>).  
   
 -   L’utilisateur a annulé l’opération et `onUserCancel` a la valeur `ThrowException` (<xref:System.OperationCanceledException>).  
   

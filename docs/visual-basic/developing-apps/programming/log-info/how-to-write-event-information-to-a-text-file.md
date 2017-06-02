@@ -39,7 +39,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Comment : écrire des informations sur des événements dans un fichier texte (Visual Basic)
+# <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Guide pratique pour écrire des informations sur des événements dans un fichier texte (Visual Basic)
 Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur les événements qui se produisent dans votre application. Cet exemple montre comment utiliser la méthode `My.Application.Log.WriteEntry` pour enregistrer des informations de traçage dans un fichier journal.  
   
 ### <a name="to-add-and-configure-the-file-log-listener"></a>Pour ajouter et configurer l’écouteur de journalisation du fichier  
@@ -62,7 +62,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 3.  Ajoutez cet élément à cette section `<listeners>` :  
   
-    ```xml  
+    ```  
     <add name="FileLogListener" />  
     ```  
   
@@ -70,7 +70,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
   
 5.  Ajoutez cet élément à cette section `<sharedListeners>` :  
   
-    ```xml  
+    ```  
     <add name="FileLogListener"   
         type="Microsoft.VisualBasic.Logging.FileLogTraceListener,   
               Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral,   

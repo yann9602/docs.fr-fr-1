@@ -60,11 +60,11 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception :  
   
--   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (commençant par \\\\.\\) (<xref:System.ArgumentException>).  
+-   Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).  
   
 -   Le système n’a pas pu récupérer le chemin absolu (<xref:System.ArgumentException>).  
   
--   Le chemin n’est pas valide, car il est `Nothing` (<xref:System.ArgumentNullException>).  
+-   Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
 -   Le fichier source n’est pas valide ou n’existe pas (<xref:System.IO.FileNotFoundException>).  
   
@@ -76,17 +76,17 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
   
 -   Un fichier du même nom dans le dossier cible est en cours d’utilisation (<xref:System.IO.IOException>).  
   
--   Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou son format n’est pas valide (<xref:System.NotSupportedException>).  
+-   Un nom de fichier ou de dossier dans le chemin contient un signe deux-points (:) ou n’a pas un format correct (<xref:System.NotSupportedException>).  
   
--   `ShowUI` a la valeur `True`, `onUserCancel` a la valeur `ThrowException`, et l’utilisateur a annulé l’opération (<xref:System.OperationCanceledException>).  
+-   `ShowUI` a la valeur `True`, `onUserCancel` a la valeur `ThrowException` et l’utilisateur a annulé l’opération (<xref:System.OperationCanceledException>).  
   
--   `ShowUI` a la valeur `True`, `onUserCancel` a la valeur `ThrowException`, et une erreur d’E/S non spécifiée s’est produite (<xref:System.OperationCanceledException>).  
+-   `ShowUI`a la valeur `True`, `onUserCancel` a la valeur `ThrowException` et une erreur d’E/S non spécifiée se produit (<xref:System.OperationCanceledException>).  
   
--   Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+-   Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
--   L’utilisateur n’a pas l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
+-   L’utilisateur ne dispose pas de l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
+-   L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>   
@@ -95,4 +95,4 @@ Utilisez la méthode `My.Computer.FileSystem.CopyFile` pour copier des fichiers.
  [Guide pratique pour copier des fichiers avec un modèle spécifique dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)   
  [Guide pratique pour créer une copie d’un fichier dans un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)   
  [Guide pratique pour copier un répertoire vers un autre répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)   
- [Guide pratique pour renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+ [Guide pratique : renommer un fichier](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

@@ -48,7 +48,7 @@ Cette page décrit les implications en matière de sécurité du stockage des do
   
  Les variables de Registre ne doivent pas être stockées dans des emplacements de mémoire où du code sans <xref:System.Security.Permissions.RegistryPermission> peut y accéder. De même, quand vous accordez des autorisations, accordez les privilèges minimaux nécessaires pour effectuer la tâche.  
   
- Les valeurs de l’autorisation d’accès au Registre sont définies par l’énumération <xref:System.Security.Permissions.RegistryPermissionAccess>. Le tableau suivant détaille ses membres.  
+ Les valeurs des autorisations d’accès au Registre sont définies par l’énumération <xref:System.Security.Permissions.RegistryPermissionAccess>. Le tableau suivant détaille ses membres.  
   
 |Valeur|Accès aux variables de Registre|  
 |-----------|----------------------------------|  
