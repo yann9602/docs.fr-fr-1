@@ -33,128 +33,84 @@ La mise en forme est le processus de conversion d'une instance d'une classe, d'u
 .NET assure une prise en charge évoluée de la mise en forme qui permet aux développeurs de surmonter ces difficultés. 
 
 > [!NOTE]
-> La mise en forme convertit la valeur d'un type en une représentation sous forme de chaîne. L'analyse est l'opération inverse de la mise en forme. Une opération d'analyse crée une instance d'un type de données à partir de sa représentation sous forme de chaîne. Pour plus d’informations sur la conversion de chaînes en d’autres types de données, consultez [Analyse de chaînes](parsing-strings.md).
-
-Cette vue d'ensemble contient les sections suivantes :
-
-* [Mise en forme dans .NET](#formatting-in-net)
-
-* [Mise en forme par défaut à l’aide de la méthode ToString](#default-formatting-using-the-tostring-method)
-
-* [Substitution de la méthode ToString](#overriding-the-tostring-method)
-
-* [Méthode ToString et chaînes de format](#the-tostring-method-and-format-strings)
-
-    * [Chaînes de format standard](#standard-format-strings)
-    
-    * [Chaînes de format personnalisées](#custom-format-strings)
-    
-    * [Chaînes de format et types .NET](#format-strings-and-net-types)
-    
-* [Mise en forme dépendante de la culture avec les fournisseurs de format et l’interface IFormatProvider](#culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface)
-
-    * [Mise en forme dépendante de la culture des valeurs numériques](#culture-sensitive-formatting-of-numeric-values)
-    
-    * [Mise en forme dépendante de la culture des valeurs de date et d’heure](#culture-sensitive-formatting-of-date-and-time-values)
-    
-* [Interface IFormattable](#the-iformattable-interface)
-
-* [Mise en forme composite](#composite-formatting)
-
-* [Mise en forme personnalisée avec ICustomFormatter](#custom-formatting-with-icustomformatter)
-
-* [Rubriques connexes](#related-topics)
-
-* [Référence](#reference)
-
-## <a name="formatting-in-net"></a>Mise en forme dans .NET
-
-Le mécanisme de base de la mise en forme est l’implémentation par défaut de la méthode [Object.ToString](xref:System.Object.ToString), décrite dans la section [Mise en forme par défaut à l’aide de la méthode ToString](#default-formatting-using-the-tostring-method), plus loin dans cette rubrique. Toutefois, .NET propose différentes manières de modifier et d’étendre sa prise en charge par défaut de la mise en forme. Notamment :
-
-* Substitution de la méthode [Object.ToString](xref:System.Object.ToString) pour définir une représentation sous forme de chaîne personnalisée de la valeur d’un objet. Pour plus d’informations, consultez la section [Substitution de la méthode ToString](#overriding-the-tostring-method), plus loin dans cette rubrique.
-
-* Définition de spécificateurs de format qui permettent à la représentation sous forme de chaîne de la valeur d'un objet de prendre plusieurs formes. Par exemple, dans l'instruction suivante, le spécificateur de format "X" convertit un entier en la représentation sous forme de chaîne d'une valeur hexadécimale.
-
-  ```csharp
-  int integerValue = 60312;
-  Console.WriteLine(integerValue.ToString("X"));   // Displays EB98.
-  ```
-
-  ```vb
-  Dim integerValue As Integer = 60312
-  Console.WriteLine(integerValue.ToString("X"))   ' Displays EB98.
-  ```
+>  La mise en forme convertit la valeur d'un type en une représentation sous forme de chaîne. L'analyse est l'opération inverse de la mise en forme. Une opération d'analyse crée une instance d'un type de données à partir de sa représentation sous forme de chaîne. Pour plus d’informations sur la conversion de chaînes en d’autres types de données, consultez [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md).  
   
-  Pour plus d’informations sur les spécificateurs de format, consultez la section [Méthode ToString et chaînes de format](#the-tostring-method-and-format-strings).
+ Le .NET Framework assure une prise en charge évoluée de la mise en forme qui permet aux développeurs surmonter ces difficultés.  
   
-* Utilisation de fournisseurs de format pour tirer parti des conventions de mise en forme d'une culture spécifique. Par exemple, l'instruction suivante affiche une valeur monétaire en utilisant les conventions de mise en forme de la culture en-US. 
-
-  ```csharp
-  double cost = 1632.54; 
-  Console.WriteLine(cost.ToString("C", 
-                  new System.Globalization.CultureInfo("en-US")));   
-  // The example displays the following output:
-  //       $1,632.54
-  ```
-
-  ```vb
-  Dim cost As Double = 1632.54
-  Console.WriteLine(cost.ToString("C", New System.Globalization.CultureInfo("en-US")))
-  ' The example displays the following output:
-  '       $1,632.54
-  ```
+ Cette vue d'ensemble contient les sections suivantes :  
   
-  Pour plus d’informations sur la mise en forme avec des fournisseurs de format, consultez la section [Mise en forme dépendante de la culture avec les fournisseurs de format et l’interface IFormatProvider](#culture-sensitive-formatting-with-format-providers-and-the-iformatprovider-interface).  
+-   [Mise en forme dans le .NET Framework](#NetFormatting)  
   
-* Implémentation de l’interface [IFormattable](xref:System.IFormattable) pour prendre en charge la conversion de chaînes avec la classe [Convert](xref:System.Convert) et la mise en forme composite. Pour plus d’informations, consultez la section [Interface IFormattable](#the-iformattable-interface).
-
-* Utilisation de la mise en forme composite pour incorporer la représentation sous forme de chaîne d'une valeur dans une chaîne plus grande. Pour plus d’informations, consultez la section [Mise en forme composite](#composite-formatting).
-
-* Implémentation des interfaces [ICustomFormatter](xref:System.ICustomFormatter) et [IFormatProvider](xref:System.IFormatProvider) pour fournir une solution de mise en forme personnalisée. Pour plus d’informations, consultez la section [Mise en forme personnalisée avec ICustomFormatter](#custom-formatting-with-icustomformatter).
-
-Les sections suivantes étudient ces méthodes de conversion d'un objet en sa représentation sous forme de chaîne.
-
-## <a name="default-formatting-using-the-tostring-method"></a>Mise en forme par défaut à l’aide de la méthode ToString
-
-Chaque type qui est dérivé de [System.Object](xref:System.Object) hérite automatiquement d’une méthode [ToString](xref:System.Object.ToString) sans paramètre, laquelle retourne le nom du type par défaut. L’exemple suivant illustre la méthode [ToString](xref:System.Object.ToString) par défaut. Il définit une classe nommée `Automobile` qui n'a pas d'implémentation. Quand cette classe est instanciée et que sa méthode [ToString](xref:System.Object.ToString) est appelée, elle affiche son nom de type. Notez que la méthode [ToString](xref:System.Object.ToString) n’est pas appelée explicitement dans cet exemple. La méthode [Console.WriteLine(Object)](xref:System.Console.WriteLine(System.Object)) appelle implicitement la méthode [ToString](xref:System.Object.ToString) de l’objet qui lui est passé comme argument. 
-
-```csharp
-using System;
-
-public class Automobile
-{
-   // No implementation. All members are inherited from Object.
-}
-
-public class Example
-{
-   public static void Main()
-   {
-      Automobile firstAuto = new Automobile();
-      Console.WriteLine(firstAuto);
-   }
-}
-// The example displays the following output:
-//       Automobile
-```
-
-```vb 
-Public Class Automobile
-   ' No implementation. All members are inherited from Object.
-End Class
-
-Module Example
-   Public Sub Main()
-      Dim firstAuto As New Automobile()
-      Console.WriteLine(firstAuto)
-   End Sub
-End Module
-' The example displays the following output:
-'       Automobile
-```
-
-Étant donné que tous les types autres que les interfaces sont dérivés d’[Object](xref:System.Object), ces fonctionnalités sont fournies automatiquement à vos classes ou structures personnalisées. Toutefois, les fonctionnalités offertes par la méthode [ToString](xref:System.Object.ToString) par défaut sont limitées : bien qu’elle identifie le type, elle ne fournit aucune information relative à une instance du type. Pour fournir une représentation sous forme de chaîne d’un objet qui donne des informations sur cet objet, vous devez substituer la méthode [ToString](xref:System.Object.ToString).
-
+-   [Mise en forme par défaut à l'aide de la méthode ToString](#DefaultToString)  
+  
+-   [Substitution de la méthode ToString](#OverrideToString)  
+  
+-   [Méthode ToString et chaînes de format](#FormatStrings)  
+  
+    -   [Chaînes de format standard](#standardStrings)  
+  
+    -   [Chaînes de format personnalisées](#customStrings)  
+  
+    -   [Chaînes de format et types de bibliothèques de classe .NET Framework](#stringRef)  
+  
+-   [Mise en forme dépendante de la culture avec les fournisseurs de format et l'interface IFormatProvider](#FormatProviders)  
+  
+    -   [Mise en forme dépendante de la culture des valeurs numériques](#numericCulture)  
+  
+    -   [Mise en forme dépendante de la culture des valeurs de date et d'heure](#dateCulture)  
+  
+-   [Interface IFormattable](#IFormattable)  
+  
+-   [Mise en forme composite](#CompositeFormatting)  
+  
+-   [Mise en forme personnalisée avec ICustomFormatter](#Custom)  
+  
+-   [Rubriques connexes](#RelatedTopics)  
+  
+-   [Référence](#Reference)  
+  
+<a name="NetFormatting"></a>   
+## Mise en forme dans le .NET Framework  
+ Le mécanisme de base de la mise en forme est l'implémentation par défaut de la méthode <xref:System.Object.ToString%2A?displayProperty=fullName>, décrite ultérieurement dans la section [Mise en forme par défaut à l'aide de la méthode ToString](#DefaultToString), plus loin dans cette rubrique. Toutefois, le .NET Framework propose différentes manières de modifier et d'étendre sa prise en charge par défaut de la mise en forme. Notamment :  
+  
+-   Substitution de la méthode <xref:System.Object.ToString%2A?displayProperty=fullName> pour définir une représentation sous forme de chaîne personnalisée de la valeur d'un objet. Pour plus d'informations, consultez la section [Substitution de la méthode ToString](#OverrideToString), plus loin dans cette rubrique.  
+  
+-   Définition de spécificateurs de format qui permettent à la représentation sous forme de chaîne de la valeur d'un objet de prendre plusieurs formes. Par exemple, dans l'instruction suivante, le spécificateur de format "X" convertit un entier en la représentation sous forme de chaîne d'une valeur hexadécimale.  
+  
+     [!code-csharp[Conceptual.Formatting.Overview#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/specifier1.cs#3)]
+     [!code-vb[Conceptual.Formatting.Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/specifier1.vb#3)]  
+  
+     Pour plus d'informations sur les spécificateurs de format, consultez la section [Méthode ToString et chaînes de format](#FormatStrings).  
+  
+-   Utilisation de fournisseurs de format pour tirer parti des conventions de mise en forme d'une culture spécifique. Par exemple, l'instruction suivante affiche une valeur monétaire en utilisant les conventions de mise en forme de la culture en\-US.  
+  
+     [!code-csharp[Conceptual.Formatting.Overview#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/specifier1.cs#10)]
+     [!code-vb[Conceptual.Formatting.Overview#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/specifier1.vb#10)]  
+  
+     Pour plus d'informations sur la mise en forme avec des fournisseurs de format, consultez la section [Fournisseurs de format et interface IFormatProvider](#FormatProviders).  
+  
+-   Implémentation de l'interface <xref:System.IFormattable> pour prendre en charge la conversion de chaînes avec la classe <xref:System.Convert> et la mise en forme composite. Pour plus d'informations, consultez la section [Interface IFormattable](#IFormattable).  
+  
+-   Utilisation de la mise en forme composite pour incorporer la représentation sous forme de chaîne d'une valeur dans une chaîne plus grande. Pour plus d'informations, consultez la section [Mise en forme composite](#CompositeFormatting).  
+  
+-   Implémentation d'<xref:System.ICustomFormatter> et d'<xref:System.IFormatProvider> pour fournir une solution de mise en forme personnalisée et complète. Pour plus d'informations, consultez la section [Mise en forme personnalisée avec ICustomFormatter](#Custom).  
+  
+ Les sections suivantes étudient ces méthodes de conversion d'un objet en sa représentation sous forme de chaîne.  
+  
+ [Retour au début](#Introduction)  
+  
+<a name="DefaultToString"></a>   
+## Mise en forme par défaut à l'aide de la méthode ToString  
+ Chaque type qui est dérivé d'<xref:System.Object?displayProperty=fullName> hérite automatiquement d'une méthode `ToString` sans paramètre, laquelle retourne le nom du type par défaut. L'exemple suivant illustre la méthode `ToString` par défaut. Il définit une classe nommée `Automobile` qui n'a pas d'implémentation. Lorsque cette classe est instanciée et que sa méthode `ToString` est appelée, elle affiche son nom de type. Notez que la méthode `ToString` n'est pas appelée explicitement dans cet exemple. La méthode <xref:System.Console.WriteLine%28System.Object%29?displayProperty=fullName> appelle implicitement la méthode `ToString` de l'objet qui lui est passé comme argument.  
+  
+ [!code-csharp[Conceptual.Formatting.Overview#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/default1.cs#1)]
+ [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]  
+  
+> [!WARNING]
+>  À partir de [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[wrt](../../../includes/wrt-md.md)] inclut une interface [IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx) avec une méthode unique, [IStringable.ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx), qui fournit la prise en charge par défaut de la mise en forme. Toutefois, nous recommandons que les types managés n'implémentent pas l'interface `IStringable`. Pour plus d'informations, consultez la section « [!INCLUDE[wrt](../../../includes/wrt-md.md)] et interface `IStringable` » à la page de référence de <xref:System.Object.ToString%2A?displayProperty=fullName>.  
+  
+ Étant donné que tous les types autres que les interfaces sont dérivés de <xref:System.Object>, ces fonctionnalités sont fournies automatiquement à vos classes ou structures personnalisées. Toutefois, les fonctionnalités offertes par la méthode `ToString` par défaut sont limitées : Bien qu'elle identifie le type, elle ne fournit aucune information relative à une instance du type. Pour fournir une représentation sous forme de chaîne d'un objet qui donne des informations sur cet objet, vous devez substituer la méthode `ToString`.  
+  
 > [!NOTE]
 > Les structures héritent de [ValueType](xref:System.ValueType), qui, à son tour, est dérivé d’[Object](xref:System.Object). Bien que [ValueType](xref:System.ValueType) substitue [Object.ToString](xref:System.Object.ToString), son implémentation est identique.
 

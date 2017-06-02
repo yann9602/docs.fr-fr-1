@@ -1,0 +1,767 @@
+---
+title: "Comparaison des services Web ASP.NET et de WCF du point de vue du d&#233;veloppement | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
+caps.latest.revision: 10
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 10
+---
+# Comparaison des services Web ASP.NET et de WCF du point de vue du d&#233;veloppement
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a une option de mode de compatibilité ASP.NET pour permettre la programmation et la configuration d'applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] comme services Web ASP.NET, et reproduire leur comportement.  Les sections suivantes proposent une comparaison entre les services Web ASP.NET et [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] en évoquant les exigences requises pour développer des applications qui utilisent ces deux technologies.  
+  
+## Représentation des données  
+ Le développement d'un service Web avec ASP.NET commence en général par la définition de tous les types de données complexes que le service doit utiliser.  ASP.NET repose sur le <xref:System.Xml.Serialization.XmlSerializer> pour traduire en XML des données représentées par les types .NET Framework pour la transmission en direction ou depuis un service et pour traduire des données reçues comme XML en objets .NET Framework.  La définition des types de données complexes à utiliser par un service ASP.NET nécessite de définir les classes .NET Framework que le <xref:System.Xml.Serialization.XmlSerializer> peut sérialiser depuis le XML ou vers celui\-ci.  Ces classes peuvent être écrites manuellement ou générées à partir des définitions des types dans le schéma XML à l'aide de l'utilitaire de prise en charge des types de données\/schémas XML de ligne de commande, xsd.exe.  
+  
+ Les éléments suivants répertorient les problèmes clés à connaître lors de la définition des classes .NET Framework que le <xref:System.Xml.Serialization.XmlSerializer> peut sérialiser en XML ou depuis celui\-ci :  
+  
+-   Seuls les champs et les propriétés publics des objets .NET Framework sont traduits en XML.  
+  
+-   Les instances de classes de collection peuvent être sérialisées en XML uniquement si les classes implémentent l'interface <xref:System.Collections.IEnumerable> ou <xref:System.Collections.ICollection>.  
+  
+-   Les classes qui implémentent l'interface <xref:System.Collections.IDictionary>, telles que <xref:System.Collections.Hashtable>, ne peuvent pas être sérialisées en XML.  
+  
+-   Le grand nombre de types d'attributs dans l'espace de noms <xref:System.Xml.Serialization> peut être ajouté à une classe .NET Framework et à ses membres pour contrôler le mode de représentation en XML des instances de la classe.  
+  
+ Le développement d'applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] commence aussi généralement par la définition de types complexes.  Il est possible de configurer [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour qu'il utilise les mêmes types .NET Framework que les services Web ASP.NET.  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> peuvent être ajoutés aux types .NET Framework pour indiquer que les instances du type seront sérialisées en XML, et quels champs ou propriétés particuliers du type seront sérialisés, comme indiqué dans l'exemple de code suivant.  
+  
+```  
+//Example One:   
+[DataContract]  
+public class LineItem  
+{  
+    [DataMember]  
+    public string ItemNumber;  
+    [DataMember]  
+    public decimal Quantity;  
+    [DataMember]  
+    public decimal UnitPrice;  
+}  
+  
+//Example Two:   
+public class LineItem  
+{  
+    [DataMember]  
+    private string itemNumber;  
+    [DataMember]  
+    private decimal quantity;  
+    [DataMember]  
+    private decimal unitPrice;  
+  
+    public string ItemNumber  
+    {  
+      get  
+      {  
+          return this.itemNumber;  
+      }  
+  
+      set  
+      {  
+          this.itemNumber = value;  
+      }  
+    }  
+  
+    public decimal Quantity  
+    {  
+        get  
+        {  
+            return this.quantity;  
+        }  
+  
+        set  
+        {  
+            this.quantity = value;  
+        }  
+    }  
+  
+    public decimal UnitPrice  
+    {  
+      get  
+      {  
+          return this.unitPrice;  
+      }  
+  
+      set  
+      {  
+          this.unitPrice = value;  
+      }  
+    }  
+}  
+  
+//Example Three:   
+public class LineItem  
+{  
+     private string itemNumber;  
+     private decimal quantity;  
+     private decimal unitPrice;  
+  
+     [DataMember]  
+     public string ItemNumber  
+     {  
+       get  
+       {  
+          return this.itemNumber;  
+       }  
+  
+       set  
+       {  
+           this.itemNumber = value;  
+       }  
+     }  
+  
+     [DataMember]  
+     public decimal Quantity  
+     {  
+          get  
+          {  
+              return this.quantity;  
+          }  
+  
+          set  
+          {  
+             this.quantity = value;  
+          }  
+     }  
+  
+     [DataMember]  
+     public decimal UnitPrice  
+     {  
+          get  
+          {  
+              return this.unitPrice;  
+          }  
+  
+          set  
+          {  
+              this.unitPrice = value;  
+          }  
+     }  
+}  
+  
+```  
+  
+ <xref:System.Runtime.Serialization.DataContractAttribute> signifie que zéro ou plusieurs des champs ou des propriétés d'un type vont être sérialisés, alors que <xref:System.Runtime.Serialization.DataMemberAttribute> indique qu'une propriété ou un champ particulier va être sérialisé.  <xref:System.Runtime.Serialization.DataContractAttribute> peut être appliqué à une classe ou à une structure.  Le <xref:System.Runtime.Serialization.DataMemberAttribute> peut être appliqué à un champ ou à une propriété, et les champs et les propriétés auxquels l'attribut est appliqué peuvent être publics ou privés.  Les instances des types auxquelles sont appliquées le <xref:System.Runtime.Serialization.DataContractAttribute> sont appelées des contrats de données dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Elles sont sérialisées en XML à l'aide de <xref:System.Runtime.Serialization.DataContractSerializer>.  
+  
+ Les éléments suivants répertorient une liste des différences principales entre l'utilisation de <xref:System.Runtime.Serialization.DataContractSerializer> et celle de <xref:System.Xml.Serialization.XmlSerializer> et les divers attributs de l'espace de noms <xref:System.Xml.Serialization>.  
+  
+-   Le <xref:System.Xml.Serialization.XmlSerializer> et les attributs de l'espace de noms <xref:System.Xml.Serialization> sont conçus pour vous permettre de mapper des types .NET Framework à des types valides définis dans le schéma XML, ils fournissent ainsi un contrôle très précis sur la manière de représenter un type en XML.  Les <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> fournissent très peu de contrôle sur la manière de représenter un type en XML.  Vous pouvez spécifier uniquement les espaces de noms et les noms utilisés pour représenter le type et ses champs ou propriétés dans le XML, et la séquence dans laquelle les champs et propriétés apparaissent dans le XML :  
+  
+    ```  
+    [DataContract(  
+    Namespace="urn:Contoso:2006:January:29",  
+    Name="LineItem")]  
+    public class LineItem  
+    {  
+         [DataMember(Name="ItemNumber",IsRequired=true,Order=0)]  
+         public string itemNumber;  
+         [DataMember(Name="Quantity",IsRequired=false,Order = 1)]  
+         public decimal quantity;  
+         [DataMember(Name="Price",IsRequired=false,Order = 2)]  
+         public decimal unitPrice;  
+    }  
+    ```  
+  
+     Tout ce qui concerne la structure du XML utilisé pour représenter le type .NET est déterminé par le <xref:System.Runtime.Serialization.DataContractSerializer>.  
+  
+-   En ne permettant qu'un contrôle limité sur la manière de représenter un type en XML, le processus de sérialisation devient très prévisible pour le <xref:System.Runtime.Serialization.DataContractSerializer>, et, par conséquent, plus facile à optimiser.  Un avantage pratique de la conception de <xref:System.Runtime.Serialization.DataContractSerializer> est d'offrir de meilleures performances, une amélioration d'environ dix pour cent.  
+  
+-   Les attributs à utiliser avec le <xref:System.Xml.Serialization.XmlSerializer> n'indiquent pas quels champs ou propriétés du type sont sérialisés en XML, alors que le <xref:System.Runtime.Serialization.DataMemberAttribute> à utiliser avec le <xref:System.Runtime.Serialization.DataContractSerializer> indique explicitement les champs ou les propriétés sérialisées.  Par conséquent, les contrats de données sont des contrats explicites sur la structure des données qu'une application doit envoyer et recevoir.  
+  
+-   Le <xref:System.Xml.Serialization.XmlSerializer> peut traduire uniquement les membres publics d'un objet .NET en XML, le <xref:System.Runtime.Serialization.DataContractSerializer> peut traduire les membres des objets en XML indépendamment des modificateurs d'accès de ces membres.  
+  
+-   Étant donné qu'il peut sérialiser en XML les membres non publics des types, le <xref:System.Runtime.Serialization.DataContractSerializer> offre moins de restrictions sur la variété des types .NET qu'il peut sérialiser en XML.  En particulier, il peut traduire en XML des types tels que <xref:System.Collections.Hashtable> qui implémentent l'interface <xref:System.Collections.IDictionary>.  Il est plus probable que <xref:System.Runtime.Serialization.DataContractSerializer> puisse sérialiser les instances d'un type .NET préexistant en XML sans avoir à modifier la définition du type ou à développer un wrapper qui lui sera destiné.  
+  
+-   Une autre conséquence de la capacité de <xref:System.Runtime.Serialization.DataContractSerializer> d'accéder aux membres non publics d'un type est qu'il requiert une confiance totale, ce qui n'est pas le cas de <xref:System.Xml.Serialization.XmlSerializer>.  L'autorisation d'accès au code de confiance totale permet un accès complet à toutes les ressources sur un ordinateur qui sont accessibles à l'aide des informations d'identification dans le cadre desquelles le code s'exécute.  Ces options doivent être utilisées avec prudence dans la mesure où du code d'un niveau de confiance suffisant accède à toutes les ressources de votre ordinateur.  
+  
+-   Le <xref:System.Runtime.Serialization.DataContractSerializer> incorpore une prise en charge du suivi des versions :  
+  
+    -   Le <xref:System.Runtime.Serialization.DataMemberAttribute> a une propriété <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> qui peut prendre une valeur false pour les membres ajoutés aux nouvelles versions d'un contrat de données qui ne figuraient pas dans les versions antérieures, ce qui permet aux applications avec la version plus récente du contrat de traiter des versions antérieures.  
+  
+    -   En implémentant l'interface <xref:System.Runtime.Serialization.IExtensibleDataObject> par le contrat de données, il est possible pour le <xref:System.Runtime.Serialization.DataContractSerializer> de passer des membres définis dans des versions plus récentes d'un contrat de données par l'intermédiaire d'applications avec des versions antérieures du contrat.  
+  
+ En dépit de toutes ces différences, le XML dans lequel <xref:System.Xml.Serialization.XmlSerializer> sérialise un type par défaut est sémantiquement identique au XML dans lequel <xref:System.Runtime.Serialization.DataContractSerializer> sérialise un type, à condition que l'espace de noms du XML soit défini explicitement.  La classe suivante, qui a des attributs utilisables avec les deux sérialiseurs, est traduite dans un XML à la sémantique identique par le <xref:System.Xml.Serialization.XmlSerializer> et par le <xref:System.Runtime.Serialization.DataContractAttribute> :  
+  
+```  
+[Serializable]  
+[XmlRoot(Namespace="urn:Contoso:2006:January:29")]  
+[DataContract(Namespace="urn:Contoso:2006:January:29")]  
+public class LineItem  
+{  
+     [DataMember]  
+     public string ItemNumber;  
+     [DataMember]  
+     public decimal Quantity;  
+     [DataMember]  
+     public decimal UnitPrice;  
+}  
+  
+```  
+  
+ Le Kit de développement logiciel \(SDK\) Windows inclut un outil de ligne de commande appelé [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). De même que l'outil xsd.exe utilisé avec les services Web ASP.NET, Svcutil.exe peut générer des définitions de types de données .NET depuis le schéma XML.  Les types sont des contrats de données si le <xref:System.Runtime.Serialization.DataContractSerializer> peut émettre du XML au format défini par le schéma XML ; sinon, ils sont destinés à être sérialisés à l'aide du <xref:System.Xml.Serialization.XmlSerializer>.  L'outil, Svcutil.exe, peut aussi générer le schéma XML à partir des contrats de données qui utilisent son commutateur `/dataContractOnly`.  
+  
+> [!NOTE]
+>  Bien que les services ASP.NET Web utilisent le <xref:System.Xml.Serialization.XmlSerializer>, et que le mode de compatibilité ASP.NET [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fait reproduire aux services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] le comportement des services Web ASP.NET, l'option de compatibilité ASP.NET n'oblige pas à faire appel à <xref:System.Xml.Serialization.XmlSerializer>.  Il est toujours possible d'utiliser le <xref:System.Runtime.Serialization.DataContractSerializer> avec des services qui s'exécutent en mode de compatibilité ASP.NET.  
+  
+## Développement des services  
+ Pour développer un service à l'aide d'ASP.NET, il est d'usage d'ajouter l'attribut <xref:System.Web.Services.WebService> à une classe, et le <xref:System.Web.Services.WebMethodAttribute> à une des méthodes de cette classe qui servent d'opérations du service :  
+  
+```  
+[WebService]  
+public class Service : T:System.Web.Services.WebService  
+{  
+    [WebMethod]  
+    public string Echo(string input)   
+    {  
+       return input;  
+    }  
+}  
+```  
+  
+ ASP.NET 2.0 introduit la possibilité d'ajouter l'attribut <xref:System.Web.Services.WebService> et <xref:System.Web.Services.WebMethodAttribute> à une interface plutôt qu'à une classe, et d'écrire une classe pour implémenter l'interface :  
+  
+```  
+[WebService]  
+public interface IEcho  
+{  
+    [WebMethod]  
+    string Echo(string input);  
+}  
+  
+public class Service : IEcho  
+{  
+  
+   public string Echo(string input)  
+   {  
+        return input;  
+    }  
+}  
+```  
+  
+ L'utilisation de cette option est recommandée, car l'interface avec l'attribut <xref:System.Web.Services.WebService> représente un contrat pour les opérations effectuées par le service qui peuvent être réutilisées avec différentes classes qui implémentent éventuellement ce même contrat de différentes façons.  
+  
+ Un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est fourni en définissant un ou plusieurs points de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Un point de terminaison est défini par une adresse, une liaison et un contrat de service.  L'adresse définit l'emplacement du service.  La liaison spécifie le mode de communication avec le service.  Le contrat de service définit les opérations que le service peut effectuer.  
+  
+ Le contrat de service est défini habituellement en premier en ajoutant <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute> à une interface :  
+  
+```  
+[ServiceContract]  
+public interface IEcho  
+{  
+     [OperationContract]  
+     string Echo(string input);  
+}  
+```  
+  
+ Le <xref:System.ServiceModel.ServiceContractAttribute> spécifie que l'interface définit un contrat de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], et le <xref:System.ServiceModel.OperationContractAttribute> indique laquelle des méthodes \(le cas échéant\) de l'interface définit les opérations du contrat de service.  
+  
+ Une fois qu'un contrat de service a été défini, il est implémenté dans une classe, en implémentant par la classe l'interface qui définit le contrat de service :  
+  
+```  
+public class Service : IEcho  
+{  
+    public string Echo(string input)  
+    {  
+       return input;  
+    }  
+}  
+```  
+  
+ Une classe qui implémente un contrat de service est connue sous le nom d'un type de service dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+  
+ L'étape suivante consiste à associer une adresse et une liaison à un type de service.  Cette opération s'effectue généralement dans un fichier de configuration, soit en modifiant le fichier directement, soit à l'aide d'un éditeur de configurations fourni avec [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Voici un exemple d'un fichier de configuration.  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+     <system.serviceModel>  
+      <services>  
+      <service name="Service ">  
+       <endpoint   
+        address="EchoService"  
+        binding="basicHttpBinding"  
+        contract="IEchoService "/>  
+      </service>  
+      </services>  
+     </system.serviceModel>  
+</configuration>  
+  
+```  
+  
+ La liaison spécifie le jeu de protocoles permettant de communiquer avec l'application.  Le tableau suivant répertorie les liaisons fournies par le système qui représentent des options courantes.  
+  
+|Nom|Objectif|  
+|---------|--------------|  
+|BasicHttpBinding|Interopérabilité avec les services et les clients Web qui prennent en charge WS\-BasicProfile 1.1 et Basic Security Profile 1.0.|  
+|WSHttpBinding|Interopérabilité avec les services et clients Web qui prennent en charge les protocoles WS\-\* sur HTTP.|  
+|WSDualHttpBinding|Communication HTTP en duplex au cours de laquelle le récepteur d'un message initial ne répond pas directement à l'expéditeur initial, mais peut transmettre pendant un certain temps un nombre illimité de réponses à l'aide de HTTP conformément aux protocoles WS\-\*.|  
+|WSFederationBinding|Communication HTTP au cours de laquelle l'accès aux ressources d'un service peut être contrôlé en fonction des informations d'identification émises par un fournisseur d'informations d'identification identifié explicitement.|  
+|NetTcpBinding|Communication sécurisée, fiable, hautes performances entre des entités logicielles [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sur un réseau.|  
+|NetNamedPipeBinding|Communication sécurisée, fiable, hautes performances entre des entités logicielles [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sur le même ordinateur.|  
+|NetMsmqBinding|Communication entre des entités logicielles [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide de MSMQ.|  
+|MsmqIntegrationBinding|Communication entre une entité logicielle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et une autre entité logicielle à l'aide de MSMQ.|  
+|NetPeerTcpBinding|Communication entre des entités logicielles [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide de réseaux homologues Windows.|  
+  
+ La liaison fournie par le système, <xref:System.ServiceModel.BasicHttpBinding>, incorpore le jeu de protocoles pris en charge par les services Web ASP.NET.  
+  
+ Les liaisons personnalisées pour les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont définies facilement comme des collections de classes d'élément de liaison utilisées par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour implémenter des protocoles individuels.  Les nouveaux éléments de liaison peuvent être écrits pour représenter des protocoles supplémentaires.  
+  
+ Le comportement interne des types de service peut être ajusté à l'aide des propriétés d'une famille de classes appelées des comportements.  Dans ce contexte, la classe <xref:System.ServiceModel.ServiceBehaviorAttribute> est utilisée pour spécifier que le type de service doit être multithread.  
+  
+```  
+[ServiceBehavior(ConcurrencyMode=ConcurrencyMode.Multiple]  
+public class DerivativesCalculatorServiceType: IDerivativesCalculator  
+  
+```  
+  
+ Certains comportements, comme <xref:System.ServiceModel.ServiceBehaviorAttribute>, sont des attributs.  Ceux dont les propriétés peuvent être définies par les administrateurs, peuvent être modifiés dans la configuration d'une application.  
+  
+ Pour programmer des types de service, la classe <xref:System.ServiceModel.OperationContext> est fréquemment utilisée.  Sa propriété statique <xref:System.ServiceModel.OperationContext.Current%2A> fournit l'accès aux informations du contexte d'exécution d'une opération.  <xref:System.ServiceModel.OperationContext> est semblable aux classes <xref:System.Web.HttpContext> et <xref:System.EnterpriseServices.ContextUtil>.  
+  
+## Hébergement  
+ Les services Web ASP.NET sont compilés dans un assembly de bibliothèque de classes.  Un fichier appelé le fichier de service est fourni avec l'extension .asmx et contient une directive `@ WebService` qui identifie la classe qui contient le code pour le service et l'assembly qui la contient.  
+  
+```  
+<%@ WebService Language="C#" Class="Service,ServiceAssembly" %>  
+```  
+  
+ Le fichier de service est copié dans une racine d'application ASP.NET dans les services IIS \(Internet Information Services\), et l'assembly est copié dans le sous\-répertoire \\bin de cette racine de l'application.  L'application est ensuite accessible depuis l'URL du fichier de service dans la racine de l'application.  
+  
+ Les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peuvent être hébergés facilement dans les services IIS 5.1 ou 6.0, le service WAS \(Windows Process Activation Service\) fourni dans le cadre des services IIS 7.0, et dans toutes les applications .NET.  Pour héberger un service dans les services IIS 5.1 ou 6.0, le service doit utiliser HTTP comme protocole de transport de communications.  
+  
+ Pour héberger un service dans les services IIS 5.1, 6.0 ou dans le service WAS, procédez comme suit :  
+  
+1.  Compilez le type de service dans un assembly de bibliothèque de classes.  
+  
+2.  Créez un fichier de service avec une extension .svc et une directive `@ ServiceHost` pour identifier le type de service :  
+  
+    ```  
+    <%@ServiceHost language=”c#” Service="MyService" %>  
+    ```  
+  
+3.  Copiez le fichier de service dans un répertoire virtuel, et l'assembly dans le sous\-répertoire \\bin de ce répertoire virtuel.  
+  
+4.  Copiez le fichier de configuration dans le répertoire virtuel et nommez\-le Web.config.  
+  
+ L'application est ensuite accessible depuis l'URL du fichier de service dans la racine de l'application.  
+  
+ Pour héberger un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans une application .NET, compilez le type de service dans un assembly de bibliothèque de classes référencé par l'application et programmez l'application pour héberger le service à l'aide de la classe <xref:System.ServiceModel.ServiceHost>.  Les éléments suivants sont un exemple de la programmation de base requise :  
+  
+```  
+string httpBaseAddress = "http://www.contoso.com:8000/";  
+string tcpBaseAddress = "net.tcp://www.contoso.com:8080/";  
+  
+Uri httpBaseAddressUri = new Uri(httpBaseAddress);  
+Uri tcpBaseAddressUri = new Uri(tcpBaseAddress);  
+  
+Uri[] baseAdresses = new Uri[] {   
+ httpBaseAddressUri,  
+ tcpBaseAddressUri};  
+  
+using(ServiceHost host = new ServiceHost(  
+typeof(Service), //”Service” is the name of the service type baseAdresses))  
+{  
+     host.Open();  
+  
+     […] //Wait to receive messages  
+     host.Close();  
+}  
+```  
+  
+ Cet exemple indique comment les adresses pour un ou plusieurs protocoles de transport sont spécifiées dans la construction d'un <xref:System.ServiceModel.ServiceHost>.  Ces adresses sont connues sous le nom d'adresses de base.  
+  
+ L'adresse fournie pour un point de terminaison d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est une adresse relative à une adresse de base de l'hôte du point de terminaison.  L'hôte peut avoir une adresse de base pour chaque protocole de transport de communication.  Dans l'exemple de configuration du fichier de configuration précédent, l'objet <xref:System.ServiceModel.BasicHttpBinding> sélectionné comme point de terminaison fait appel à HTTP comme protocole de transport, l'adresse du point de terminaison, `EchoService`, est donc relative à l'adresse de base HTTP de l'hôte.  Dans le cas de l'hôte de l'exemple précédent, l'adresse de base HTTP est http:\/\/www.contoso.com:8000\/.  Pour un service hébergé dans les services IIS ou WAS, l'adresse de base est l'URL du fichier de service du service.  
+  
+ Seuls les services hébergé dans les services IIS ou WAS, et configurés exclusivement avec HTTP comme protocole de transport, peuvent utiliser l'option de mode de compatibilité ASP.NET [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  L'activation de cette option requiert les étapes suivantes.  
+  
+1.  Le programmeur doit ajouter l'attribut <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> au type de service et spécifier que le mode de compatibilité ASP.NET est autorisé ou requis.  
+  
+    ```  
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(  
+          RequirementsMode=AspNetCompatbilityRequirementsMode.Require)]  
+    public class DerivativesCalculatorServiceType: IDerivativesCalculator  
+    ```  
+  
+2.  L'administrateur doit configurer l'application pour qu'elle utilise le mode de compatibilité ASP.NET.  
+  
+    ```  
+    <configuration>  
+         <system.serviceModel>  
+          <services>  
+          […]  
+          </services>  
+          <serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>  
+        </system.serviceModel>  
+    </configuration>  
+    ```  
+  
+     Les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peuvent aussi être configurées pour utiliser .asmx comme l'extension de leurs fichiers de service plutôt que .svc.  
+  
+    ```  
+    <system.web>  
+         <compilation>  
+          <compilation debug="true">  
+          <buildProviders>  
+           <remove extension=".asmx"/>  
+           <add extension=".asmx"   
+            type="System.ServiceModel.ServiceBuildProvider,   
+            Systemm.ServiceModel,   
+            Version=3.0.0.0,   
+            Culture=neutral,   
+            PublicKeyToken=b77a5c561934e089" />  
+          </buildProviders>  
+          </compilation>  
+         </compilation>  
+    </system.web>  
+    ```  
+  
+     Cette option peut vous éviter d'avoir à modifier des clients configurés pour utiliser les URL de fichiers de service .asmx lors de la modification d'un service pour utiliser [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+  
+## Développement client  
+ Les clients pour les services Web ASP.NET sont générés à l'aide de l'outil de ligne de commande, WSDL.exe, qui fournit l'URL du fichier .asmx comme entrée.  L'outil correspondant fourni par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  Il génère un module de code avec la définition du contrat de service et la définition d'une classe de client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Il génère également un fichier de configuration avec l'adresse et la liaison du service.  
+  
+ Pour programmer un client d'un service distant, il est généralement recommandé de programmer selon un modèle asynchrone.  Le code généré par l'outil WSDL.exe fournit toujours un modèle synchrone et asynchrone par défaut.  Le code généré par le [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) peut fournir l'un et l'autre modèle.  Il fournit le modèle synchrone par défaut.  Si l'outil est exécuté avec le commutateur `/async`, le code généré fournit le modèle asynchrone.  
+  
+ Il n'y a aucune garantie que les noms dans les classes clientes [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] générées par l'outil WSDL.exe d'ASP.NET, par défaut, correspondent aux noms dans les classes clientes [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] générées par l'outil Svcutil.exe.  En particulier, les noms des propriétés des classes qui doivent être sérialisées à l'aide du <xref:System.Xml.Serialization.XmlSerializer> reçoivent par défaut le suffixe Property dans le code généré par l'outil Svcutil.exe, ce qui n'est pas le cas avec l'outil WSDL.exe.  
+  
+## Représentation de message  
+ Les en\-têtes des messages SOAP envoyés et reçus par les services Web ASP.NET peuvent être personnalisés.  Une classe est dérivée de <xref:System.Web.Services.Protocols.SoapHeader> pour définir la structure de l'en\-tête, puis, le <xref:System.Web.Services.Protocols.SoapHeaderAttribute> est utilisé pour indiquer la présence de l'en\-tête.  
+  
+```  
+public class SomeProtocol : SoapHeader  
+{  
+     public long CurrentValue;  
+     public long Total;  
+}  
+  
+[WebService]  
+public interface IEcho  
+{  
+     SomeProtocol ProtocolHeader  
+     {  
+      get;  
+     set;  
+     }  
+  
+     [WebMethod]  
+     [SoapHeader("ProtocolHeader")]  
+     string PlaceOrders(PurchaseOrderType order);  
+}  
+  
+public class Service: WebService, IEcho  
+{  
+     private SomeProtocol protocolHeader;  
+  
+     public SomeProtocol ProtocolHeader  
+     {  
+         get  
+         {  
+              return this.protocolHeader;  
+         }  
+  
+         set  
+         {  
+              this.protocolHeader = value;  
+         }  
+     }  
+  
+     string PlaceOrders(PurchaseOrderType order)  
+     {  
+         long currentValue = this.protocolHeader.CurrentValue;  
+     }  
+}  
+```  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit les attributs, <xref:System.ServiceModel.MessageContractAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute>et <xref:System.ServiceModel.MessageBodyMemberAttribute> pour décrire la structure des messages SOAP envoyés et reçus par un service.  
+  
+```  
+[DataContract]  
+public class SomeProtocol  
+{  
+     [DataMember]  
+     public long CurrentValue;  
+     [DataMember]  
+     public long Total;  
+}  
+  
+[DataContract]  
+public class Item  
+{  
+     [DataMember]  
+     public string ItemNumber;  
+     [DataMember]  
+     public decimal Quantity;  
+     [DataMember]  
+     public decimal UnitPrice;  
+}  
+  
+[MessageContract]  
+public class ItemMesage  
+{  
+     [MessageHeader]  
+     public SomeProtocol ProtocolHeader;  
+     [MessageBody]  
+     public Item Content;  
+}  
+  
+[ServiceContract]  
+public interface IItemService  
+{  
+     [OperationContract]  
+     public void DeliverItem(ItemMessage itemMessage);  
+}  
+```  
+  
+ Cette syntaxe génère une représentation explicite de la structure des messages, alors que la structure des messages est impliquée par le code d'un service Web ASP.NET.  De plus, dans la syntaxe ASP.NET, les en\-têtes des messages sont représentés comme des propriétés du service, telles que la propriété `ProtocolHeader` dans l'exemple précédent, alors que dans la syntaxe [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], ils sont représentés plus correctement comme des propriétés de messages.  De plus, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] autorise l'ajout d'en\-têtes de message à la configuration de points de terminaison.  
+  
+```  
+<service name="Service ">  
+     <endpoint   
+      address="EchoService"  
+      binding="basicHttpBinding"  
+      contract="IEchoService ">  
+      <headers>  
+      <dsig:X509Certificate   
+       xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">  
+       ...  
+      </dsig:X509Certificate>  
+      </headers>  
+     </endpoint>  
+</service>  
+  
+```  
+  
+ Cette option vous permet d'éviter toute référence aux en\-têtes de protocole d'infrastructure dans le code pour un client ou un service : les en\-têtes sont ajoutés aux messages selon le mode de configuration du point de terminaison.  
+  
+## Service Description  
+ L'émission d'une demande HTTP GET pour le fichier .asmx d'un service Web ASP.NET avec la requête WSDL entraîne la génération de WSDL par ASP.NET pour décrire le service.  Il retourne ce WSDL en réponse à la demande.  
+  
+ ASP.NET 2.0 permet de valider la conformité d'un service avec Basic Profile 1.1 de Web Services\-Interoperability Organization \(WS\-I\), et d'insérer une revendication que le service est conforme dans son WSDL.  Cette opération est effectuée à l'aide des paramètres `ConformsTo` et `EmitConformanceClaims` de l'attribut <xref:System.Web.Services.WebServiceBindingAttribute>.  
+  
+```  
+  
+[WebService(Namespace = "http://tempuri.org/")]  
+[WebServiceBinding(  
+     ConformsTo = WsiProfiles.BasicProfile1_1,  
+     EmitConformanceClaims=true)]  
+public interface IEcho  
+```  
+  
+ Le WSDL généré par ASP.NET pour un service peut être personnalisé.  Les personnalisations s'effectuent en créant une classe dérivée de <xref:System.Web.Services.Description.ServiceDescriptionFormatExtension> pour ajouter des éléments au WSDL.  
+  
+ L'émission d'une demande HTTP GET avec la requête WSDL pour le fichier .svc d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec un point de terminaison HTTP hébergé dans les services IIS 5.1, 6.0 ou WAS entraîne la réponse de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec du WSDL pour décrire le service.  L'émission d'une demande HTTP GET avec la requête WSDL à l'adresse de base HTTP d'un service hébergé dans une application .NET a le même effet si httpGetEnabled a la valeur true.  
+  
+ Toutefois, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] répond également aux demandes WS\-MetadataExchange avec du WSDL qu'il génère pour décrire un service.  Les services Web ASP.NET n'offrent pas de prise en charge intégrée pour les demandes WS\-MetadataExchange.  
+  
+ Il est possible de personnaliser de manière extensive le WSDL généré par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] .  La classe <xref:System.ServiceModel.Description.ServiceMetadataBehavior> fournit des fonctions pour personnaliser le WSDL.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peut aussi être configuré pour ne pas générer de WSDL, mais pour utiliser un fichier WSDL statique à une URL donnée.  
+  
+```  
+<behaviors>  
+     <behavior name="DescriptionBehavior">  
+     <metadataPublishing   
+      enableMetadataExchange="true"   
+      enableGetWsdl="true"   
+      enableHelpPage="true"   
+      metadataLocation=  
+      "http://localhost/DerivativesCalculatorService/Service.WSDL"/>  
+     </behavior>  
+</behaviors>  
+```  
+  
+## Gestion des exceptions  
+ Dans les services Web ASP.NET, les exceptions non prises en charge sont retournées aux clients comme des erreurs SOAP.  Vous pouvez aussi lever explicitement des instances de la classe <xref:System.Web.Services.Protocols.SoapException> et avoir plus de contrôle sur le contenu de l'erreur SOAP transmise au client.  
+  
+ Dans les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les exceptions non prises en charge ne sont pas retournées aux clients comme des erreurs SOAP afin d'empêcher d'exposer accidentellement des informations sensibles par l'intermédiaire des exceptions.  Un paramètre de configuration est fourni pour que les exceptions non prises en charge soient retournées aux clients à des fins de débogage.  
+  
+ Pour retourner des erreurs SOAP aux clients, vous pouvez lever des instances du type générique, <xref:System.ServiceModel.FaultException%601>, à l'aide du type de contrat de données comme type générique.  Vous pouvez aussi ajouter des attributs <xref:System.ServiceModel.FaultContractAttribute> aux opérations pour spécifier les erreurs qu'une opération peut générer.  
+  
+```  
+[DataContract]  
+public class MathFault  
+{   
+     [DataMember]  
+     public string operation;  
+     [DataMember]  
+     public string problemType;  
+}  
+  
+[ServiceContract]  
+public interface ICalculator  
+{  
+     [OperationContract]  
+     [FaultContract(typeof(MathFault))]  
+     int Divide(int n1, int n2);  
+}  
+```  
+  
+ Cette opération entraîne la publication des erreurs possibles dans le WSDL pour le service, ce qui permet aux programmeurs du client d'anticiper sur les erreurs possibles à l'issue d'une opération, et d'écrire les instructions catch appropriées.  
+  
+```  
+try  
+{  
+     result = client.Divide(value1, value2);  
+}  
+catch (FaultException<MathFault> e)  
+{  
+ Console.WriteLine("FaultException<MathFault>: Math fault while doing "   
+  + e.Detail.operation   
+  + ". Problem: "   
+  + e.Detail.problemType);  
+}  
+```  
+  
+## Gestion des états  
+ La classe utilisée pour implémenter un service Web ASP.NET peut être dérivée de <xref:System.Web.Services.WebService>.  
+  
+```  
+public class Service : WebService, IEcho  
+{  
+  
+ public string Echo(string input)  
+ {  
+  return input;  
+ }  
+}  
+```  
+  
+ Dans ce cas, la classe peut être programmée pour utiliser la propriété Context de la classe de base <xref:System.Web.Services.WebService> pour accéder à un objet <xref:System.Web.HttpContext>.  L'objet <xref:System.Web.HttpContext> peut être utilisé pour mettre à jour et récupérer des informations d'état d'application en utilisant sa propriété Application, et pour mettre à jour et récupérer des informations d'état de session en utilisant sa propriété Session.  
+  
+ ASP.NET permet un contrôle important sur l'emplacement de stockage réel des informations d'état de session accessibles à l'aide de la propriété Session du <xref:System.Web.HttpContext>.  Elles peuvent être stockées dans des cookies, une base de données, la mémoire du serveur actuel ou la mémoire d'un serveur désigné.  Le choix s'opère dans le fichier de configuration du service.  
+  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit des objets extensibles pour la gestion d'état.  Les objets extensibles sont des objets qui implémentent <xref:System.ServiceModel.IExtensibleObject%601>.  Les objets extensibles les plus importants sont <xref:System.ServiceModel.ServiceHostBase> et <xref:System.ServiceModel.InstanceContext>.  `ServiceHostBase` vous permet de maintenir l'état accessible par toutes les instances de tous les types de services sur le même hôte, alors que `InstanceContext` vous permet de maintenir l'état accessible par tout code s'exécutant dans la même instance d'un type de service.  
+  
+ Dans ce contexte, le type de service, `TradingSystem`, possède un <xref:System.ServiceModel.ServiceBehaviorAttribute> qui spécifie que les appels généraux de la même instance cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont acheminés vers la même instance du type de service.  
+  
+```  
+[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
+public class TradingSystem: ITradingService  
+```  
+  
+ La classe, `DealData`, définit l'état accessible par tout code qui s'exécute dans la même instance d'un type de service.  
+  
+```  
+internal class DealData: IExtension<InstanceContext>  
+{  
+ public string DealIdentifier = null;  
+ public Trade[] Trades = null;  
+}  
+```  
+  
+ Dans le code du type de service qui implémente l'une des opérations du contrat de service, un objet d'état `DealData` est ajouté à l'état de l'instance actuelle du type de service.  
+  
+```  
+string ITradingService.BeginDeal()  
+{  
+ string dealIdentifier = Guid.NewGuid().ToString();  
+ DealData state = new DealData(dealIdentifier);  
+ OperationContext.Current.InstanceContext.Extensions.Add(state);  
+ return dealIdentifier;  
+}  
+```  
+  
+ Cet objet d'état peut être ensuite récupéré et modifié par le code qui implémente une autre opération des opérations du contrat de service.  
+  
+```  
+void ITradingService.AddTrade(Trade trade)  
+{  
+ DealData dealData =  OperationContext.Current.InstanceContext.Extensions.Find<DealData>();  
+ dealData.AddTrade(trade);  
+}  
+```  
+  
+ Si ASP.NET fournit le contrôle sur l'emplacement réel de stockage des informations d'état dans la classe <xref:System.Web.HttpContext>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], du moins dans sa version initiale, ne fournit aucun contrôle sur l'emplacement de stockage des objets extensibles.  Il n'en faut pas plus pour sélectionner le mode de compatibilité ASP.NET pour un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  Si la gestion d'état configurable est impérative, choisir ensuite le mode de compatibilité ASP.NET vous permet d'utiliser les fonctions de la classe <xref:System.Web.HttpContext> exactement telles qu'elles sont utilisées dans ASP.NET, et de configurer aussi l'emplacement de stockage des informations d'état gérées à l'aide de la classe <xref:System.Web.HttpContext>.  
+  
+## Sécurité  
+ Les options permettant de sécuriser les services Web ASP.NET sont celles qui permettent de sécuriser toute application IIS.  Comme les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peuvent être hébergées non seulement dans les services IIS mais aussi dans un fichier exécutable .NET, les options permettant de sécuriser des applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doivent être indépendantes des fonctions des services IIS.  Toutefois, les fonctions fournies pour les services Web ASP.NET sont aussi disponibles pour les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'exécutent en mode de compatibilité ASP.NET.  
+  
+### Sécurité : authentification  
+ Les services IIS fournissent des fonctions de contrôle de l'accès aux applications qui permettent de sélectionner un accès anonyme ou un ensemble de modes d'authentification : l'authentification Windows, l'authentification Digest, l'authentification de base et l'authentification .NET Passport.  L'option d'authentification Windows peut être utilisée pour contrôler l'accès aux services Web ASP.NET.  Toutefois, lorsque les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont hébergées dans les services IIS, ces services doivent être configurés pour autoriser l'accès anonyme à l'application, afin que l'authentification puisse être gérée par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], qui prend en charge l'authentification Windows entre autres options.  Les autres options intégrées incluent les jetons de nom d'utilisateur, les certificats X.509, les jetons SAML et la carte CardSpace, mais il est possible de définir aussi des mécanismes d'authentification personnalisés.  
+  
+### Sécurité : emprunt d'identité  
+ ASP.NET fournit un élément d'identité qui permet à un service Web ASP.NET d'emprunter à un utilisateur particulier son identité ou les informations d'identification de l'utilisateur fournies dans la demande actuelle.  Cet élément peut être utilisé pour configurer l'emprunt d'identité dans les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'exécutent en mode de compatibilité ASP.NET.  
+  
+ Le système de configuration [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit son propre élément d'identité pour désigner un utilisateur particulier dont l'identité est empruntée.  De plus, les clients et les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peuvent être configurés indépendamment pour l'emprunt d'identité.  Les clients peuvent être configurés pour emprunter l'identité de l'utilisateur actuel lorsqu'ils transmettent des demandes.  
+  
+```  
+<behaviors>  
+     <behavior name="DerivativesCalculatorClientBehavior">  
+      <clientCredentials>  
+      <windows allowedImpersonationLevel="Impersonation"/>  
+      </clientCredentials>  
+     </behavior>  
+</behaviors>  
+```  
+  
+ Les opérations de service peuvent être configurées pour emprunter les informations d'identification de l'utilisateur qui fourni la demande actuelle.  
+  
+```  
+[OperationBehavior(Impersonation = ImpersonationOption.Required)]  
+public void Receive(Message input)  
+```  
+  
+### Sécurité : autorisation à l'aide des listes de contrôle d'accès  
+ Les listes de contrôle d'accès \(ACL\) peuvent être utilisées pour restreindre l'accès aux fichiers .asmx.  Toutefois, les listes de contrôle d'accès sur les fichiers .svc [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont ignorées sauf en mode de compatibilité ASP.NET.  
+  
+### Sécurité : autorisation basée sur les rôles  
+ L'option d'authentification IIS Windows peut être utilisée conjointement avec l'élément d'autorisation fourni par le langage de configuration ASP.NET pour faciliter l'autorisation basée sur les rôles pour les services Web ASP.NET selon les groupes Windows auxquels les utilisateurs sont assignés.  ASP.NET 2.0 introduit un mécanisme plus général d'autorisation basée sur les rôles : les fournisseurs de rôles.  
+  
+ Les fournisseurs de rôles sont des classes qui implémentent toutes une interface de base pour s'informer des rôles auxquels un utilisateur est assigné, mais chaque fournisseur de rôle sait comment récupérer ces information issues d'une source différente.  ASP.NET 2.0 fournit un fournisseur de rôles qui peut récupérer des affectations de rôle d'une base de données Microsoft SQL Server, ainsi qu'un autre fournisseur qui peut récupérer des affectations de rôles issues du Gestionnaire d'autorisations Windows Server 2003.  
+  
+ En fait, le mécanisme du fournisseur de rôle peut être utilisé indépendamment d'ASP.NET dans une application .NET, ainsi que dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  L'exemple de configuration suivant pour une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] montre comment l'utilisation d'un fournisseur de rôles ASP.NET est une option sélectionnée au moyen de l'objet <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>.  
+  
+```  
+<system.serviceModel>  
+     <services>  
+         <service name="Service.ResourceAccessServiceType"   
+             behaviorConfiguration="ServiceBehavior">  
+             <endpoint   
+              address="ResourceAccessService"   
+              binding="wsHttpBinding"   
+              contract="Service.IResourceAccessContract"/>  
+         </service>  
+     </services>  
+     <behaviors>  
+       <behavior name="ServiceBehavior">  
+       <serviceAuthorization principalPermissionMode="UseAspNetRoles"/>  
+      </behavior>  
+     </behaviors>  
+</system.serviceModel>  
+```  
+  
+### Sécurité : autorisation basée sur les revendications  
+ L'une des innovations les plus importantes de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est la prise en charge complète permettant d'autoriser l'accès aux ressources protégées basées sur des revendications.  Les revendications se composent d'un type, d'un droit et d'une valeur, un permis de conduire, par exemple.  Elle produit un jeu de revendications relatives au porteur, dont l'une d'entre elles est la date de naissance du porteur.  Le type de cette revendication est la date de naissance, la valeur de la revendication est la date de naissance du conducteur.  Le droit que confère une revendication au porteur spécifie ce que le porteur peut faire avec la valeur de la revendication.  Dans le cas de la revendication de la date de naissance du conducteur, ce droit est la propriété : le conducteur possède cette date de naissance mais il ne peut pas, par exemple, la modifier.  L'autorisation basée sur les revendications intègre l'autorisation basée sur les rôles, parce que les rôles sont un type de revendication.  
+  
+ L'autorisation basée sur les revendications s'accomplit en comparant un jeu de revendications aux spécifications d'accès de l'opération et, selon le résultat de cette comparaison, l'accès à l'opération est accordé ou refusé.  Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous pouvez spécifier une classe pour exécuter l'autorisation basée sur des revendications, là encore en assignant une valeur à la propriété `ServiceAuthorizationManager` de <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>.  
+  
+```  
+<behaviors>  
+     <behavior name='ServiceBehavior'>  
+     <serviceAuthorization   
+     serviceAuthorizationManagerType=  
+                   'Service.AccessChecker, Service' />  
+     </behavior>  
+</behaviors>  
+```  
+  
+ Les classes utilisées pour exécuter l'autorisation basée sur les revendications doivent dériver de <xref:System.ServiceModel.ServiceAuthorizationManager>, qui contient une méthode à substituer, `AccessCheck()`.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] appelle cette méthode chaque fois qu'une opération du service est invoquée et fournit un objet <xref:System.ServiceModel.OperationContext>, qui contient les revendications de l'utilisateur dans sa propriété `ServiceSecurityContext.AuthorizationContext`.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est chargé d'assembler les revendications sur l'utilisateur à partir du jeton de sécurité fourni par celui\-ci pour l'authentification. Il reste ensuite à évaluer la validité de ces revendications pour effectuer l'opération en question.  
+  
+ Le fait que [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] assemble automatiquement des revendications de tout type de jeton de sécurité est une innovation très significative, parce qu'elle permet au code pour l'autorisation basée sur les revendications d'être entièrement indépendant du mécanisme d'authentification.  Par contraste, l'autorisation à l'aide des listes de contrôle d'accès ou des rôles dans ASP.NET est étroitement liée à l'authentification Windows.  
+  
+### Sécurité : confidentialité  
+ La confidentialité des messages échangés avec les services Web ASP.NET peut être garantie au niveau du transport en configurant l'application dans les services IIS pour qu'elle utilise le protocole HTTPS \(Secure Hypertext Transfer Protocol\).  Il en va de même pour les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hébergées dans les services IIS.  Cependant, les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hébergées en dehors des services IIS peuvent également être configurées pour utiliser un protocole de transport sécurisé.  Plus important, les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peuvent aussi être configurées pour sécuriser les messages avant qu'ils soient transportés, à l'aide du protocole WS\-Security.  La sécurisation uniquement du corps d'un message à l'aide de WS\-Security lui permet d'être transmis confidentiellement par des intermédiaires avant d'atteindre sa destination finale.  
+  
+## Globalisation  
+ Le langage de configuration ASP.NET vous permet de spécifier la culture pour les services individuels.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne prend pas en charge ce paramètre de configuration sauf en mode de compatibilité ASP.NET.  Pour localiser un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui n'utilise pas le mode de compatibilité ASP.NET, compilez le type de service dans des assemblys spécifiques à la culture et utilisez des points de terminaison séparés spécifiques à la culture pour chaque assembly spécifique à la culture.  
+  
+## Voir aussi  
+ [Comparaison des services Web ASP.NET et de WCF en fonction de l'objectif et des normes utilisées](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

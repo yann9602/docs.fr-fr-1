@@ -1,0 +1,53 @@
+---
+title: "Protection des informations de connexion | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
+caps.latest.revision: 4
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 4
+---
+# Protection des informations de connexion
+La protection de l'accès à votre source de données représente l'un de vos principaux objectifs lorsque vous sécurisez une application.  Une chaîne de connexion présente une vulnérabilité potentielle si elle n'est pas sécurisée.  Le stockage d'informations de connexion au format texte brut ou sa conservation dans la mémoire risque de compromettre l'ensemble de votre système.  Des chaînes de connexion incorporées dans votre code source peuvent être lues à l'aide de [Ildasm.exe \(IL Disassembler\)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour afficher MSIL \(Microsoft intermediate language\) dans un assembly compilé.  
+  
+ Des vulnérabilités de sécurité impliquant des chaînes de connexion peuvent se produire en fonction du type d'authentification utilisé, de la manière dont les chaînes de connexion sont conservées dans la mémoire et sur le disque, et des techniques utilisées pour les construire au moment de l'exécution.  
+  
+## Utiliser l'authentification Windows  
+ Pour aider à limiter l'accès à votre source de données, vous devez sécuriser des informations de connexion telles que l'ID utilisateur, le mot de passe et le nom de source de données.  Afin d'éviter l'exposition d'informations utilisateur, il est recommandé d'utiliser l'authentification Windows \(parfois appelée *sécurité intégrée*\) dès que possible.  L'authentification Windows est spécifiée dans une chaîne de connexion à l'aide des mots clés `Integrated Security` ou `Trusted_Connection`, ce qui supprime le recours à un ID utilisateur et à un mot de passe.  Lors de l'utilisation de l'authentification Windows, les utilisateurs sont authentifiés par Windows et l'accès aux ressources de serveur et de base de données est déterminé en octroyant des autorisations aux utilisateurs et aux groupes Windows.  
+  
+ Dans les cas où l'utilisation de l'authentification Windows n'est pas possible, vous devez être extrêmement prudent, car les informations d'authentification utilisateur sont exposées dans la chaîne de connexion.  Dans une application ASP.NET, vous pouvez configurer un compte Windows en tant qu'identité fixe utilisée pour la connexion à des bases de données et autres ressources réseau.  Vous activez l'emprunt d'identité dans l'élément d'identité au sein du fichier **web.config** et vous spécifiez un nom d'utilisateur et un mot de passe.  
+  
+```  
+<identity impersonate="true"   
+        userName="MyDomain\UserAccount"   
+        password="*****" />  
+```  
+  
+ Le compte d'identité fixe doit être un compte avec des privilèges faibles auquel seules les autorisations nécessaires dans la base de données ont été octroyées.  En outre, vous devez chiffrer le fichier de configuration afin que le nom d'utilisateur et le mot de passe ne soient pas exposés en texte clair.  
+  
+## N'utilisez pas de fichiers UDL \(Universal Data Link\)  
+ Évitez de stocker des chaînes de connexion pour <xref:System.Data.OleDb.OleDbConnection> dans un fichier UDL \(Universal Data Link\).  Les fichiers UDL sont stockés en texte clair et ne peuvent pas être chiffrés.  Un fichier UDL est une ressource basée sur un fichier externe pour votre application et il ne peut pas être sécurisé ou chiffré à l'aide du .NET Framework.  
+  
+## Évitez les attaques par injection à l'aide de générateurs de chaînes de connexion  
+ Une attaque par injection de chaîne de connexion peut se produire lorsqu'une concaténation de chaîne dynamique est utilisée pour générer des chaînes de connexion en fonction de l'entrée utilisateur.  Si l'entrée utilisateur n'est pas validée et que du texte ou des caractères malveillants ne sont pas placés dans une séquence d'échappement, un attaquant peut éventuellement accéder à des données sensibles ou à d'autres ressources sur le serveur.  Pour résoudre ce problème, ADO.NET 2.0 a introduit de nouvelles classes de générateur de chaîne de connexion pour valider la syntaxe de chaîne de connexion et garantir que des paramètres supplémentaires ne sont pas introduits.  Pour plus d'informations, consultez [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+  
+## Utilisez Persist Security Info\=False  
+ La valeur par défaut pour `Persist Security Info` est False ; nous vous recommandons d'utiliser cette valeur par défaut dans toutes les chaînes de connexion.  Le paramétrage de `Persist Security Info` avec la valeur `true` ou `yes` permet d'obtenir des informations sensibles pour la sécurité, dont l'ID utilisateur et le mot de passe, à partir d'une connexion une fois celle\-ci ouverte.  Lorsque `Persist Security Info` possède la valeur `false` ou `no`, les informations de sécurité sont ignorées après leur utilisation pour ouvrir la connexion, ce qui garantit qu'une source qui n'est pas digne de confiance ne dispose pas d'un accès à des informations sensibles sur la sécurité.  
+  
+## Chiffrez les fichiers de configuration  
+ Vous pouvez également stocker des chaînes de connexion dans des fichiers de configuration, ce qui évite d'avoir à les incorporer dans le code de votre application.  Les fichiers de configuration sont des fichiers XML standard pour lesquels le .NET Framework a défini un ensemble commun d'éléments.  En général, les chaînes de connexion dans les fichiers de configuration sont stockées dans l'élément **\<connectionStrings\>** dans le fichier **app.config** pour une application Windows, ou dans le fichier **web.config** pour une application ASP.NET.  Pour plus d'informations sur les éléments de base concernant le stockage, l'extraction et le chiffrement des chaînes de connexion à partir des fichiers de configuration, consultez [Chaînes de connexion et fichiers de configuration](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+  
+## Voir aussi  
+ [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
+ [Encrypting Configuration Information Using Protected Configuration](../Topic/Encrypting%20Configuration%20Information%20Using%20Protected%20Configuration.md)   
+ [PAVE Security in Native and .NET Framework Code](http://msdn.microsoft.com/fr-fr/bd61be84-c143-409a-a75a-44253724f784)   
+ [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

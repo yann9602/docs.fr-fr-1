@@ -1,0 +1,37 @@
+---
+title: "D&#233;veloppement pour plusieurs plateformes avec le .NET Framework | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+  - "C++"
+  - "jsharp"
+ms.assetid: b153baaa-130c-4169-860b-e580591de91e
+caps.latest.revision: 13
+author: "mairaw"
+ms.author: "mairaw"
+manager: "wpickett"
+caps.handback.revision: 13
+---
+# D&#233;veloppement pour plusieurs plateformes avec le .NET Framework
+Vous pouvez développer des applications pour les plateformes Microsoft et non\-Microsoft à l'aide du .NET Framework et de Visual Studio.  
+  
+## Options pour le développement interplateforme  
+ Pour développer pour plusieurs plateformes, vous pouvez partager le code source ou les binaires, et effectuer des appels entre le code .NET Framework et les API Windows Runtime.  
+  
+|Pour...|Utilisez...|  
+|-------------|-----------------|  
+|Partager le code source entre les applications Windows Phone 8.1 et Windows 8.1|**Projets partagés** \(modèle Applications universelles dans Visual Studio 2013 Update 2\).<br /><br /> -   Actuellement, Visual Basic n'est pas pris en charge.<br />-   Vous pouvez séparer le code propre à la plateforme à l'aide d'instructions \#`if`.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [Créer des applications Windows universelles qui ciblent Windows et Windows Phone](http://msdn.microsoft.com/library/windows/apps/dn609832.aspx) \(article MSDN\)<br />-   [Utilisation de Visual Studio pour créer des applications XAML universelles](http://blogs.msdn.com/b/visualstudio/archive/2014/04/14/using-visual-studio-to-build-universal-xaml-apps.aspx) \(billet de blog\)<br />-   [Utilisation de Visual Studio pour créer des applications XAML convergentes](http://channel9.msdn.com/Events/Build/2014/3-591) \(vidéo\)|  
+|Partager les binaires entre des applications qui ciblent différentes plateformes|Des **projets de bibliothèque de classes portables** pour le code compatible avec toutes les plateformes.<br /><br /> -   Cette approche est généralement utilisée pour du code qui implémente une logique métier.<br />-   Vous pouvez utiliser Visual Basic ou C\#.<br />-   La prise en charge des API varie d'une plateforme à l'autre.<br />-   Les projets de bibliothèque de classes portables qui ciblent Windows 8.1 et Windows Phone 8.1 prennent en charge XAML et les API Windows Runtime.  Ces fonctionnalités ne sont pas disponibles pour les anciennes versions de la bibliothèque de classes portables.<br />-   Au besoin, vous pouvez abstraire le code propre à une plateforme en utilisant des interfaces ou des classes abstraites.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [Bibliothèque de classes portable](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) \(article MSDN\)<br />-   [Comment exploiter les bibliothèques de classes portables](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx) \(billet de blog\)<br />-   [Utilisation de la bibliothèque de classes portables avec MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md) \(article MSDN\)<br />-   [Ressources d'application pour les bibliothèques qui ciblent des plateformes multiples](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md) \(article MSDN\)<br />-   [Analyseur de portabilité .NET](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b) \(extension de Visual Studio\)|  
+|Partager le code source entre des applications pour des plateformes autres que Windows 8.1 et Windows Phone 8.1|La fonctionnalité **Ajouter en tant que lien**.<br /><br /> -   Cette approche convient pour la logique d'application qui est commune aux deux applications, mais qui n'est pas portable pour une raison ou pour une autre.  Vous pouvez utiliser cette fonctionnalité pour du code C\# ou Visual Basic.<br />     Par exemple, Windows Phone 8 et Windows 8 partagent des API Windows Runtime, mais les bibliothèques de classes portables ne prennent pas en charge Windows Runtime pour ces plateformes.  Vous pouvez utiliser la fonctionnalité `Add as link` pour partager du code Windows Runtime entre une application Windows Phone 8 et une application Windows Store qui cible Windows 8.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [Partager du code à l'aide de la fonctionnalité Ajouter en tant que lien](http://msdn.microsoft.com/library/windowsphone/develop/jj714082\(v=vs.105\).aspx) \(article MSDN\)<br />-   [Procédure : ajout d'éléments existants à un projet](http://msdn.microsoft.com/library/vstudio/9f4t9t92\(v=vs.100\).aspx) \(article MSDN\)|  
+|Écrire des applications Windows Store à l'aide du .NET Framework ou appeler des API Windows Runtime à partir d'un code .NET Framework|Des **API Windows Runtime** à partir de votre code .NET Framework C\# ou Visual Basic, et utilisez le .NET Framework pour créer des applications du Windows Store.  Gardez à l'esprit que les API diffèrent entre les deux plateformes.  Toutefois, certaines classes vous permettent de gérer ces différences.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md) \(article MSDN\)<br />-   [Transmission d'un URI au Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md) \(article MSDN\)<br />-   <xref:System.IO.WindowsRuntimeStreamExtensions> \(page de référence d'API MSDN\)<br />-   <xref:System.WindowsRuntimeSystemExtensions> \(page de référence d'API MSDN\)|  
+|Créer des applications .NET Framework pour des plateformes non\-Microsoft|Des **assemblys de référence de bibliothèque de classes portables** dans le .NET Framework, et une extension Visual Studio ou un outil tiers tel que Xamarin.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [La bibliothèque de classes portables est désormais disponible sur toutes les plateformes.](http://blogs.msdn.com/b/dotnet/archive/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms.aspx) \(billet de blog\)<br />-   [Xamarin](http://xamarin.com/visual-studio) \(site web Xamarin\)|  
+|utiliser JavaScript et HTML pour le développement interplateforme|Les **modèles Application universelle** dans Visual Studio 2013 Update 2 pour que le développement prenne en charge les API Windows Runtime pour Windows 8.1 et Windows Phone 8.1.  Actuellement, vous ne pouvez pas utiliser JavaScript et HTML avec des API .NET Framework pour développer des applications interplateformes.<br /><br /> Pour plus d'informations, consultez :<br /><br /> -   [Modèles de projet JavaScript pour les applications du Windows Store](http://msdn.microsoft.com/library/windows/apps/hh758331.aspx)<br />-   [Comment porter une application Windows Runtime utilisant JavaScript vers Windows Phone](http://msdn.microsoft.com/library/windows/apps/dn636144.aspx)|

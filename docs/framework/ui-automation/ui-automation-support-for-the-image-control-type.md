@@ -1,0 +1,91 @@
+---
+title: "UI Automation Support for the Image Control Type | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-bcl"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "UI Automation, Image control type"
+  - "control types, Image"
+  - "Image control type"
+ms.assetid: 4e0eeefb-e09b-46d2-b83b-0a7e35543ab8
+caps.latest.revision: 21
+author: "Xansky"
+ms.author: "mhopkins"
+manager: "markl"
+caps.handback.revision: 21
+---
+# UI Automation Support for the Image Control Type
+> [!NOTE]
+>  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
+  
+ Cette rubrique fournit des informations sur la prise en charge d’[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour le type de contrôle Image. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], un type de contrôle est un ensemble de conditions qu’un contrôle doit réunir pour pouvoir utiliser la propriété <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>. Les conditions incluent des recommandations spécifiques pour l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les valeurs de propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et les modèles de contrôle.  
+  
+ Les contrôles d’image utilisés en tant qu’icônes, graphismes d’information ou graphiques prennent en charge le type de contrôle Image. Les contrôles utilisés comme images d’arrière\-plan ou de filigrane ne prennent pas en charge le type de contrôle Image.  
+  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Image. Les exigences [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles Image, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+  
+<a name="Required_UI_Automation_Tree_Structure"></a>   
+## Arborescence UI Automation requise  
+ Le tableau suivant illustre la vue de contrôle et la vue de contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] concernant les contrôles Image, et décrit ce que peut contenir chaque vue. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+  
+|Vue de contrôle|Vue de contenu|  
+|---------------------|--------------------|  
+|Image|Image \(selon que l’image contient des informations \(en fonction de la valeur de la propriété `IsContentElement`\)\)|  
+  
+<a name="Required_UI_Automation_Properties"></a>   
+## Propriétés UI Automation requises  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement adaptée au type de contrôle Image. Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+  
+|Propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|-------------------------------------------------------------------------------------|------------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Voir les notes.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Voir les notes.|Rectangle externe qui contient l’ensemble du contrôle.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Voir les notes.|Le point interactif du contrôle d’image doit être un point dans le rectangle englobant du contrôle Image.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Voir les notes.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Voir les notes.|La propriété Name doit être exposée pour tous les contrôles d’image qui contiennent des informations. Pour accéder par programme à ces informations, il convient de fournir un équivalent textuel du graphique. Si le contrôle d’image est purement décoratif, il doit s’afficher uniquement dans la vue de contrôle de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et n’est pas tenu d’avoir un nom. Les infrastructures d’interface utilisateur doivent prendre en charge une propriété de texte de remplacement ou ALT sur les images qu’il est possible de définir dans leur infrastructure. Cette propriété est ensuite mise en correspondance avec la propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Name.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Voir les notes.|S’il existe une étiquette de texte statique, cette propriété doit exposer une référence à ce contrôle.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Image|Cette valeur est identique pour toutes les infrastructures d’interface utilisateur.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|« image »|Chaîne localisée correspondant au type de contrôle Image.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Voir les notes.|Le contrôle Image doit être inclus dans la vue de contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] lorsqu’il contient des informations significatives qui n’ont pas encore été exposées à l’utilisateur final.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Le contrôle Image est toujours inclus dans la vue de contrôle de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Voir les notes.|La propriété HelpText expose une chaîne localisée qui décrit l’apparence visuelle réelle du contrôle \(par exemple, un carré rouge avec un « X » blanc\) ou d’autres informations d’info\-bulle associées à l’image.<br /><br /> Cette propriété doit être prise en charge lorsqu’une longue description est nécessaire pour transmettre plus d’informations sur le contrôle Image. Par exemple, un diagramme ou un graphique complexe. Cette propriété correspond à la balise HTML LongDesc et à la balise SVG \(Scalable Vector Graphics\) Desc. Les développeurs qui travaillent avec des contrôles Image doivent prendre en charge une propriété pour pouvoir définir la description visuelle sur le contrôle. Cette propriété doit être mappée à la propriété UI Automation VisualDescription.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|Voir les notes.|Si le contrôle Image représente des informations d’état sur un élément particulier à l’écran, le contrôle doit être contenu dans l’élément. Quand l’image est contenue dans un élément, cet élément doit prendre en charge la propriété Status et déclencher les notifications appropriées lorsque l’état change.<br /><br /> Si une image correspond à un contrôle autonome et transmet un état, la propriété Status doit être prise en charge.|  
+  
+<a name="Required_UI_Automation_Control_Patterns"></a>   
+## Modèles de contrôle UI Automation requis  
+ Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles Image. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+  
+|Modèle de contrôle|Prise en charge|Notes|  
+|------------------------|---------------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Selon le cas|Le contrôle Image prend en charge le modèle Élément de grille si le contrôle est à l’intérieur d’un conteneur de grille.|  
+|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Selon le cas|Le contrôle Image prend en charge le modèle Élément de grille si le contrôle est à l’intérieur d’un conteneur disposant de contrôles Header.|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Never|Si le contrôle Image contient une image interactive, le contrôle doit prendre en charge un type de contrôle qui prend en charge le modèle Invoke, tel que le type de contrôle Button.|  
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Never|Les contrôles Image ne doivent pas prendre en charge le modèle Selection Item.|  
+  
+<a name="Required_UI_Automation_Events"></a>   
+## Événements UI Automation requis  
+ Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles Image. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+  
+|Événement [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge|Notes|  
+|-------------------------------------------------------------------------------------|---------------------|-----------|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Never|None|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Never|Aucun|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Never|Aucun|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Never|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Obligatoire|None|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|Aucun|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|Aucun|  
+  
+## Voir aussi  
+ <xref:System.Windows.Automation.ControlType.Image>   
+ [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
+ [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)

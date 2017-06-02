@@ -1,0 +1,40 @@
+---
+title: "BindingElement | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: fdbfde0c-2e52-4fc5-9eb8-14b42e647263
+caps.latest.revision: 6
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 6
+---
+# BindingElement
+BindingElement  
+  
+## Syntaxe  
+  
+```  
+class BindingElement  
+{  
+};  
+```  
+  
+## Méthodes  
+ La classe BindingElement hérite mais ne définit pas de méthodes ou de propriétés supplémentaires.  
+  
+## Spécifications  
+  
+|MOF|Déclaré dans Servicemodel.mof.|  
+|---------|------------------------------------|  
+|Espace de noms|Défini dans root\\ServiceModel|  
+  
+## Voir aussi  
+ <xref:System.ServiceModel.Channels.Binding>

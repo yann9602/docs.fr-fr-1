@@ -1,0 +1,91 @@
+---
+title: "Personnalisation des autorisations avec emprunt d&#39;identit&#233; dans SQL Server | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
+caps.latest.revision: 6
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 6
+---
+# Personnalisation des autorisations avec emprunt d&#39;identit&#233; dans SQL Server
+De nombreuses applications utilisent des procédures stockées pour accéder aux données, en se basant sur le chaînage des propriétés de manière à limiter l'accès aux tables de base.  Vous pouvez accorder des autorisations EXECUTE sur les procédures stockées, en révoquant ou refusant des autorisations sur les tables de base.  SQL Server ne vérifie pas les autorisations de l'appelant si la procédure stockée et les tables ont le même propriétaire.  Toutefois, le chaînage des propriétés ne fonctionne pas si les objets ont des propriétaires différents ou dans le cas d'instructions SQL dynamiques.  
+  
+ Vous pouvez utiliser la clause EXECUTE AS dans une procédure stockée lorsque l'appelant ne possède pas d'autorisations sur les objets de base de données référencés.  Avec la clause EXECUTE AS, le contexte d'exécution est basculé vers l'utilisateur proxy.  Tout le code, de même que les appels de procédures stockées ou de déclencheurs, s'exécute dans le contexte de sécurité de l'utilisateur proxy.  Le contexte d'exécution de l'appelant d'origine est rétabli uniquement après exécution de la procédure ou lorsqu'une instruction REVERT est émise.  
+  
+## Changement de contexte avec l'instruction EXECUTE AS  
+ L'instruction  Transact\-SQL EXECUTE AS vous permet de basculer le contexte d'exécution d'une instruction en empruntant l'identité d'un autre utilisateur de connexion ou de base de données.  Cette technique est utile pour tester des requêtes et des procédures en tant qu'un autre utilisateur.  
+  
+```  
+EXECUTE AS LOGIN = 'loginName';  
+EXECUTE AS USER = 'userName';  
+```  
+  
+ Vous devez posséder des autorisations IMPERSONATE sur la connexion ou l'utilisateur dont vous empruntez l'identité.  Cette autorisation est implicite pour `sysadmin` dans toutes les bases de données et pour les membres du rôle `db_owner` dans les bases de données qu'ils possèdent.  
+  
+## Octroi d'autorisations avec la clause EXECUTE AS  
+ Vous pouvez utiliser la clause EXECUTE AS dans l'en\-tête de définition d'une procédure stockée, d'un déclencheur ou d'une fonction définie par l'utilisateur \(sauf pour les fonctions table inline\).  La procédure est alors exécutée dans le contexte du nom d'utilisateur ou du mot clé spécifié dans la clause EXECUTE AS.  Vous pouvez créer dans la base de données un utilisateur proxy qui n'est pas mappé à une connexion, en lui accordant uniquement les autorisations nécessaires sur les objets auxquels la procédure accède.  Seul l'utilisateur proxy spécifié dans la clause EXECUTE AS doit posséder des autorisations sur tous les objets auxquels le module accède.  
+  
+> [!NOTE]
+>  Pour certaines actions, comme TRUNCATE TABLE, aucune autorisation ne peut être accordée.  En incorporant l'instruction dans une procédure et en spécifiant un utilisateur proxy possédant des autorisations ALTER TABLE, vous pouvez étendre les autorisations de troncation de la table aux appelants possédant uniquement des autorisations EXECUTE sur la procédure.  
+  
+ Le contexte spécifié dans la clause EXECUTE AS est valide pour la durée de la procédure, y compris les procédures et déclencheurs imbriqués.  Le contexte de l'appelant est rétabli une fois l'exécution terminée ou lorsque l'instruction REVERT est émise.  
+  
+ Pour utiliser la clause EXECUTE AS dans une procédure, les trois étapes suivantes sont nécessaires :  
+  
+1.  Dans la base de données, créez un utilisateur proxy qui n'est pas mappé à une connexion.  Cette étape n'est pas obligatoire, mais elle s'avère utile lors de la gestion des autorisations.  
+  
+```  
+CREATE USER proxyUser WITHOUT LOGIN  
+```  
+  
+1.  Accordez les autorisations nécessaires à l'utilisateur proxy.  
+  
+2.  Ajoutez la clause EXECUTE AS à la procédure stockée ou à la fonction définie par l'utilisateur.  
+  
+```  
+CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...  
+```  
+  
+> [!NOTE]
+>  Les applications qui nécessitent un audit peuvent s'arrêter car le contexte de sécurité d'origine de l'appelant n'est pas conservé.  Les fonctions intégrées qui retournent l'identité de l'utilisateur actif, comme SESSION\_USER, USER ou USER\_NAME, retournent l'utilisateur associé à la clause EXECUTE AS, et non l'appelant d'origine.  
+  
+### Utilisation de la clause EXECUTE AS avec l'instruction REVERT  
+ Vous pouvez utiliser l'instruction Transact\-SQL REVERT pour rétablir le contexte d'exécution d'origine.  
+  
+ La clause facultative, WITH NO REVERT COOKIE \= @variableName, vous permet de rétablir le contexte d'origine de l'appelant si la variable @variableName contient la valeur correcte.  Vous pouvez ainsi rétablir le contexte d'exécution de l'appelant dans les environnements utilisant le regroupement de connexions.  Dans la mesure où la valeur de @variableName est connue uniquement de l'appelant de l'instruction EXECUTE AS, l'appelant peut garantir que le contexte d'exécution ne peut pas être modifié par l'utilisateur final qui appelle l'application.  Une fois fermée, la connexion retourne dans le regroupement de connexions.  Pour plus d'informations sur le regroupement de connexions dans ADO.NET, voir [Regroupement de connexions SQL Server \(ADO.NET\)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+  
+### Spécification du contexte d'exécution  
+ Parallèlement à la spécification d'un utilisateur, vous pouvez utiliser la clause EXECUTE AS avec chacun des mots clés suivants.  
+  
+-   CALLER.  L'exécution en tant que CALLER est la valeur par défaut. Si aucune autre option n'est spécifiée, la procédure s'exécute dans le contexte de sécurité de l'appelant.  
+  
+-   OWNER.  L'exécution en tant que OWNER exécute la procédure dans le contexte de sécurité du propriétaire de la procédure.  Si la procédure est créée dans un schéma détenu par `dbo` ou le propriétaire de la base de données, la procédure s'exécutera avec des autorisations illimitées.  
+  
+-   SELF.  L'exécution en tant que SELF exécute la procédure dans le contexte de sécurité du créateur de la procédure stockée.  Cela revient à exécuter la procédure en tant qu'un utilisateur spécifié, ce dernier étant la personne qui crée ou modifie la procédure.  
+  
+## Ressources externes  
+ Pour plus d'informations, voir les ressources ci\-dessous.  
+  
+|Ressource|Description|  
+|---------------|-----------------|  
+|[Changement de contexte](http://msdn.microsoft.com/library/ms188268.aspx) dans la documentation en ligne de SQL Server|Contient des liens vers les rubriques décrivant comment utiliser la clause EXECUTE AS.|  
+|[Utilisation de EXECUTE AS pour créer des ensembles d'autorisations personnalisées](http://msdn.microsoft.com/library/ms190384.aspx) et [Utilisation de EXECUTE AS dans des modules](http://msdn.microsoft.com/library/ms178106.aspx) dans la documentation en ligne de SQL Server|Rubriques décrivant comment utiliser la clause EXECUTE AS.|  
+  
+## Voir aussi  
+ [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
+ [Vue d'ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)   
+ [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
+ [Gestion des autorisations à l'aide des procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)   
+ [Écriture de code SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)   
+ [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)   
+ [Modification de données à l'aide de procédures stockées\)](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)   
+ [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

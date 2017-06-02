@@ -1,0 +1,150 @@
+---
+title: "SqlMetal.exe (outil de g&#233;n&#233;ration de code) | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+  - "C++"
+  - "jsharp"
+helpviewer_keywords: 
+  - "SQLMetal (LINQ to SQL)"
+  - "outil de génération de code"
+  - "SQLMetal.exe"
+  - "LINQ to SQL, sérialization"
+  - "LINQ to SQL, fichiers DBML"
+  - "LINQ to SQL, SQLMetal"
+ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
+caps.latest.revision: 43
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 43
+---
+# SqlMetal.exe (outil de g&#233;n&#233;ration de code)
+L'outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
+  
+-   À partir d'une base de données, générez le code source et les attributs de mappage ou un fichier de mappage.  
+  
+-   À partir d'une base de données, générez un fichier .dbml \(database markup language\) intermédiaire à des fins de personnalisation.  
+  
+-   À partir d'un fichier .dbml, générez du code et des attributs de mappage ou un fichier de mappage.  
+  
+ Cet outil est installé automatiquement avec Visual Studio. Par défaut, ce fichier se trouve à l'emplacement suivant : `drive`:\\Program Files\\Microsoft SDKs\\Windows\\v`n.nn`\\bin. Si vous n’installez pas Visual Studio, vous pouvez également obtenir le fichier SQLMetal en téléchargeant le [SDK Windows](http://go.microsoft.com/fwlink/?LinkId=142225).  
+  
+> [!NOTE]
+>  Les développeurs qui utilisent Visual Studio peuvent également utiliser [!INCLUDE[vs_ordesigner_long](../../../includes/vs-ordesigner-long-md.md)] pour générer des classes d'entité. L'approche de ligne de commande est bien adaptée aux bases de données volumineuses. Puisque SqlMetal est un outil de ligne de commande, vous pouvez l'utiliser dans un processus de génération.  
+  
+ Pour exécuter l'outil, utilisez l'invite de commandes développeur \(ou l'invite de commandes Visual Studio dans Windows 7\). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md). À l’invite de commande, tapez ce qui suit :  
+  
+## Syntaxe  
+  
+```  
+sqlmetal [options] [<input file>]  
+```  
+  
+## Options  
+ Pour afficher la liste des options la plus récente, tapez `sqlmetal /?`à partir d’une invite de commandes depuis l’emplacement d’installation.  
+  
+ **Options de connexion**  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\/server:** *\<nom\>*|Spécifie le nom du serveur de base de données.|  
+|**\/database:** *\<nom\>*|Spécifie le catalogue de base de données sur le serveur.|  
+|**\/user:** *\<nom\>*|Spécifie l'ID de connexion de l'utilisateur. Valeur par défaut : utilisez l'authentification Windows.|  
+|**\/password:** *\<mot de passe\>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : utilisez l'authentification Windows.|  
+|**\/conn:** *\<chaîne de connexion\>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **\/server**, **\/database**, **\/user** ou **\/password**.<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\\northwnd.mdf" comme fichier d’entrée : **sqlmetal \/code:"c:\\northwind.cs" \/language:csharp "c:\\northwnd.mdf"**.|  
+|**\/timeout:** *\<secondes\>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 \(à savoir, aucune limite de temps\).|  
+  
+ **Options d'extraction**  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\/views**|Extrait des vues de base de données.|  
+|**\/functions**|Extrait des fonctions de base de données.|  
+|**\/sprocs**|Extrait des procédures stockées.|  
+  
+ **Options de sortie**  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\/dbml** *\[:file\]*|Envoie la sortie au format .dbml. Ne peut pas être utilisée avec l’option **\/map**.|  
+|**\/code** *\[:file\]*|Envoie la sortie sous la forme de code source. Ne peut pas être utilisée avec l’option **\/dbml**.|  
+|**\/map** *\[:file\]*|Génère un fichier de mappage XML plutôt que des attributs. Ne peut pas être utilisée avec l’option **\/dbml**.|  
+  
+ **Divers**  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\/language:** *\<langage\>*|Spécifie le langage du code source.<br /><br /> *\<langage\>* valide : vb, csharp.<br /><br /> Valeur par défaut : Dérivé de l’extension du nom du fichier de code.|  
+|**\/namespace:** *\<nom\>*|Spécifie l'espace de noms du code généré. Valeur par défaut : Aucun espace de noms.|  
+|**\/context:** *\<type\>*|Spécifie le nom de la classe du contexte de données. Valeur par défaut : Dérivé du nom de la base de données.|  
+|**\/entitybase:** *\<type\>*|Spécifie la classe de base des classes d'entité du code généré. Valeur par défaut : Les entités n'ont pas de classe de base.|  
+|**\/pluralize**|Pluralise ou singularise automatiquement des noms de membre et de classe.<br /><br /> Cette option est disponible uniquement dans la version Anglais américain.|  
+|**\/serialization:** *\<option\>*|Génère des classes sérialisables.<br /><br /> *\<option\>* valide : Aucun, Unidirectionnel. Valeur par défaut : Aucun.<br /><br /> Pour plus d'informations, consultez [Sérialisation](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
+  
+ **Fichier d'entrée**  
+  
+|Option|Description|  
+|------------|-----------------|  
+|**\<fichier\_entrée\>**|Spécifie un fichier SQL Server Express .mdf, un fichier [!INCLUDE[ssEW](../../../includes/ssew-md.md)] .sdf, ou un fichier intermédiaire .dbml.|  
+  
+## Notes  
+ La fonctionnalité SqlMetal implique en fait deux étapes :  
+  
+-   Extraction des métadonnées de la base de données dans un fichier .dbml.  
+  
+-   Génération d'un fichier de sortie de code.  
+  
+     En utilisant les options de ligne de commande appropriées, vous pouvez produire [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] ou du code source C\#, ou encore un fichier de mappage XML.  
+  
+ Pour extraire les métadonnées d'un fichier .mdf, vous devez spécifier le nom du fichier .mdf après toutes les autres options.  
+  
+ Si **\/server** n’est pas spécifié, **localhost\/sqlexpress** est supposé.  
+  
+ [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] lève une exception si une ou plusieurs conditions parmi les suivantes est vraie :  
+  
+-   SqlMetal essaie d'extraire une procédure stockée qui s'appelle elle\-même.  
+  
+-   Le niveau d'imbrication d'une procédure stockée, d'une fonction, ou d'une vue dépasse 32.  
+  
+     SqlMetal intercepte cette exception et la signale comme un avertissement.  
+  
+ Pour spécifier un nom de fichier d'entrée, ajoutez son nom à la ligne de commande comme fichier d'entrée. L’inclusion du nom de fichier dans la chaîne de connexion \(avec l’option **\/conn**\) n’est pas prise en charge.  
+  
+## Exemples  
+ Générez un fichier .dbml qui inclut des métadonnées SQL extraites :  
+  
+ **sqlmetal \/server:myserver \/database:northwind \/dbml:mymeta.dbml**  
+  
+ Générez un fichier .dbml qui inclut des métadonnées SQL extraites d'un fichier .mdf à l'aide de SQL Server Express :  
+  
+ **sqlmetal \/dbml:mymeta.dbml mydbfile.mdf**  
+  
+ Générez un fichier .dbml qui inclut des métadonnées SQL extraites de SQL Server Express :  
+  
+ **sqlmetal \/server:.\\sqlexpress \/dbml:mymeta.dbml \/database:northwind**  
+  
+ Générez du code source à partir d'un fichier de métadonnées .dbml :  
+  
+ **sqlmetal \/namespace:nwind \/code:nwind.cs \/language:csharp mymetal.dbml**  
+  
+ Générez le code source directement à partir de métadonnées SQL :  
+  
+ **sqlmetal \/server:myserver \/database:northwind \/namespace:nwind \/code:nwind.cs \/language:csharp**  
+  
+> [!NOTE]
+>  Quand vous utilisez l’option **\/pluralize** avec l’exemple de base de données Northwind, notez le comportement suivant. Lorsque SqlMetal génère des noms de types de lignes pour des tables, les noms de table sont au singulier. Lorsqu'il génère des propriétés <xref:System.Data.Linq.DataContext> pour des tables, les noms de table sont au pluriel. Par coïncidence, les tables de l'exemple de base de données Northwind sont déjà au pluriel. Par conséquent, vous ne pourrez pas voir cette partie active. Bien qu’il soit courant de nommer des tables de base de données au pluriel, il est également courant dans .NET de nommer des collections au pluriel.  
+  
+## Voir aussi  
+ [Procédure : générer le modèle objet en Visual Basic ou C\#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)   
+ [Génération de code dans LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)   
+ [Mappage externe](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)

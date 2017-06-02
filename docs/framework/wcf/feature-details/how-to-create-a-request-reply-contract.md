@@ -1,0 +1,60 @@
+---
+title: "Comment&#160;: cr&#233;er un contrat demande-r&#233;ponse | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-clr"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: 801d90da-3d45-4284-9c9f-56c8aadb4060
+caps.latest.revision: 19
+author: "Erikre"
+ms.author: "erikre"
+manager: "erikre"
+caps.handback.revision: 19
+---
+# Comment&#160;: cr&#233;er un contrat demande-r&#233;ponse
+Un contrat demande\-réponse spécifie une méthode qui retourne une réponse.La réponse doit être envoyée et corrélée à la demande selon les termes de ce contrat.Même si la méthode ne retourne aucune réponse \(`void` dans C\# ou un `Sub` dans Visual Basic\), l'infrastructure crée et envoie un message vide à l'appelant.Pour empêcher l'envoi d'un message de réponse vide, utilisez un contrat unidirectionnel pour l'opération.  
+  
+### Pour créer un contrat demande\-réponse  
+  
+1.  Créez une interface dans le langage de programmation de votre choix.  
+  
+2.  Appliquez l'attribut <xref:System.ServiceModel.ServiceContractAttribute> à l'interface.  
+  
+3.  Appliquez l'attribut <xref:System.ServiceModel.OperationContractAttribute> à chaque méthode que les clients peuvent appeler.  
+  
+4.  Facultatif.Affectez à la propriété <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> la valeur `true` pour empêcher l'envoi d'un message de réponse vide.Par défaut, toutes les opérations sont des contrats demande\-réponse.  
+  
+## Exemple  
+ L'exemple suivant définit un contrat pour un service de calculatrice qui fournit des méthodes `Add` et `Subtract`.La méthode `Multiply` ne fait pas partie du contrat car elle n'est pas marquée par la classe <xref:System.ServiceModel.OperationContractAttribute> et n'est pas, par conséquent, accessible aux clients.  
+  
+```  
+using System.ServiceModel;   
+  
+[ServiceContract]   
+public interface ICalculator   
+{   
+[OperationContract]   
+// It would be equivalent to write explicitly:  
+// [OperationContract(IsOneWay=false)]   
+int Add(int a, int b);   
+  
+[OperationContract]   
+int Subtract(int a, int b);   
+  
+int Multiply(int a, int b)  
+}  
+```  
+  
+-   [!INCLUDE[crabout](../../../../includes/crabout-md.md)] la procédure de spécification des contrats d'opération, consultez la classe <xref:System.ServiceModel.OperationContractAttribute> et la propriété <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>.  
+  
+-   Appliquer les attributs <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute> entraîne la génération automatique de définitions de contrat de service dans un document WSDL \(Web Services Description Language\) une fois le service déployé.Le document est téléchargé en ajoutant `?wsdl` à l'adresse de base HTTP du service.Par exemple, `http://microsoft/CalculatorService?wsdl`.  
+  
+## Voir aussi  
+ <xref:System.ServiceModel.OperationContractAttribute>   
+ [Conception de contrats de service](../../../../docs/framework/wcf/designing-service-contracts.md)   
+ [Comment : créer un contrat duplex](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
