@@ -26,11 +26,11 @@ ms.lasthandoff: 05/22/2017
 ---
 # <a name="mitigation-cspparametersparentwindowhandle-expects-an-hwnd"></a>Atténuation : CspParameters.ParentWindowHandle attend un HWND
 
-La propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A>, introduite dans .NET Framework 2.0, permet à une application d’enregistrer une valeur de handle de fenêtre parente, pour que toute interface utilisateur requise pour accéder à la clé (par exemple, une invite de code confidentiel ou de consentement) s’ouvre comme un enfant modal de la fenêtre spécifiée. À compter des applications qui ciblent .NET Framework 4.7, un handle de fenêtre (HWND) peut être affecté à cette propriété.
+La propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A>, introduite dans .NET Framework 2.0, permet à une application d’enregistrer une valeur de handle de fenêtre parente, pour que toute interface utilisateur nécessaire pour accéder à la clé (par exemple, une invite de code confidentiel ou de consentement) s’ouvre comme un enfant modal de la fenêtre spécifiée. À compter des applications qui ciblent .NET Framework 4.7, un handle de fenêtre (HWND) peut être affecté à cette propriété.
 
-Dans les versions de .NET Framework allant jusqu’à .NET Framework 4.6.2, la valeur affectée à la propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> devait être un <xref:System.IntPtr> qui représentait l’emplacement de mémoire auquel se trouvait la valeur HWND. Sur Windows 7 et les versions antérieures du système d’exploitation Windows, la définition de la propriété sur `form.Handle` n’avait aucun effet, mais sur Windows 8 et versions ultérieures, cela déclenche un <xref:System.Security.Cryptography> avec le message « Le paramètre est incorrect. »
+Dans les versions du .NET Framework jusqu’au .NET Framework 4.6.2, la valeur affectée à la propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> devait être <xref:System.IntPtr> qui représentait l’emplacement de mémoire auquel se trouvait la valeur HWND. Sur Windows 7 et les versions antérieures du système d’exploitation Windows, la définition de la propriété sur `form.Handle` n’avait aucun effet, mais sur Windows 8 et versions ultérieures, cela déclenche un <xref:System.Security.Cryptography> avec le message « Le paramètre est incorrect. »
 
-Dans les applications qui ciblent .NET Framework 4.7, une application Windows Forms peut définir la propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> avec du code, comme suit :
+Depuis que les applications ciblent le .NET Framework 4.7, une application Windows Forms peut définir la propriété <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle%2A> avec du code, comme suit :
 
 ```csharp
 cspParameters.ParentWindowHandle = form.Handle;
@@ -46,9 +46,9 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 ## <a name="mitigation"></a>Atténuation
 
-Les développeurs qui avaient identifié que la valeur correcte était l’adresse de l’emplacement de mémoire qui détenait la valeur `form.Handle` peuvent désactiver ce changement de comportement en définissant le <xref:System.Security.AppContext> `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` sur `true` :
+Les développeurs qui avaient identifié que la valeur correcte était l’adresse de l’emplacement de mémoire qui détenait la valeur `form.Handle` peuvent désactiver ce changement de comportement en définissant le commutateur <xref:System.Security.AppContext> `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` avec la valeur `true` :
 
-- En définissant par programmation des commutateurs de compatibilité sur l’instance <xref:System.Security.AppContext>.
+- En définissant des commutateurs de compatibilité par programmation dans l’instance <xref:System.Security.AppContext>.
 
 - En ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :
    
@@ -58,7 +58,7 @@ Les développeurs qui avaient identifié que la valeur correcte était l’adres
    </runtime>
    ```
 
-À l’inverse, les utilisateurs qui souhaitent utiliser ce nouveau comportement pour les applications qui s’exécutent sous .NET Framework 4.7 mais ciblent une version antérieure peuvent définir le <xref:System.Security.AppContext> sur `false`.
+À l’inverse, les utilisateurs qui souhaitent utiliser ce nouveau comportement pour les applications qui s’exécutent dans .NET Framework 4.7 mais ciblent une version antérieure peuvent définir le commutateur <xref:System.Security.AppContext> avec la valeur `false`.
  
 ## <a name="see-also"></a>Voir aussi
 
