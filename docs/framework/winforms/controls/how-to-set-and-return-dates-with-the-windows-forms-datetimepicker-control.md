@@ -1,0 +1,86 @@
+---
+title: "Comment&#160;: d&#233;finir et retourner des dates &#224; l&#39;aide du contr&#244;le DateTimePicker Windows Forms | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-winforms"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "jsharp"
+helpviewer_keywords: 
+  - "dates, définir dans DateTimePicker"
+  - "DateTimePicker (contrôle Windows Forms), définir et retourner des dates"
+  - "exemples (Windows Forms), DateTimePicker (contrôle)"
+ms.assetid: a8a48d68-e4b5-426e-9764-51230fc9acd2
+caps.latest.revision: 17
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+caps.handback.revision: 17
+---
+# Comment&#160;: d&#233;finir et retourner des dates &#224; l&#39;aide du contr&#244;le DateTimePicker Windows Forms
+La date ou l'heure actuellement sélectionnée dans le contrôle Windows Forms <xref:System.Windows.Forms.DateTimePicker> est déterminée par la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A>.  Vous pouvez définir la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> avant l'affichage du contrôle \(par exemple au moment du design ou dans l'événement <xref:System.Windows.Forms.Form.Load> du contrôle\) pour déterminer la date qui sera initialement sélectionnée dans le contrôle.  Par défaut, la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> du contrôle a comme valeur la date actuelle.  Si vous modifiez la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> du contrôle dans le code, le contrôle est automatiquement mis à jour sur le formulaire pour refléter le nouveau paramètre.  
+  
+ La propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> retourne une structure <xref:System.DateTime> comme valeur.  Il existe plusieurs propriétés de la structure <xref:System.DateTime> qui retournent des informations spécifiques sur la date affichée.  Ces propriétés peuvent être utilisées uniquement pour retourner une valeur. Vous ne devez pas les utiliser pour définir une valeur.  
+  
+-   Pour les valeurs de date, les propriétés <xref:System.DateTime.Month%2A>, <xref:System.DateTime.Day%2A> et <xref:System.DateTime.Year%2A> retournent des valeurs entières pour ces unités de temps de la date sélectionnée.  La propriété <xref:System.DateTime.DayOfWeek%2A> retourne une valeur qui indique le jour de la semaine sélectionné \(les valeurs possibles sont répertoriées dans l'énumération <xref:System.DayOfWeek>\).  
+  
+-   Pour les valeurs d'heure, les propriétés <xref:System.DateTime.Hour%2A>, <xref:System.DateTime.Minute%2A>, <xref:System.DateTime.Second%2A> et <xref:System.DateTime.Millisecond%2A> retournent des valeurs entières pour ces unités de temps.  Pour configurer le contrôle pour afficher l'heure, consultez [Comment : afficher l'heure avec le contrôle DateTimePicker](../../../../docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md).  
+  
+### Pour définir la valeur de date et d'heure du contrôle  
+  
+-   Affectez à la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> une valeur de date ou d'heure.  
+  
+    ```vb  
+    DateTimePicker1.Value = New DateTime(2001, 10, 20)  
+  
+    ```  
+  
+    ```csharp  
+    dateTimePicker1.Value = new DateTime(2001, 10, 20);  
+  
+    ```  
+  
+    ```cpp  
+    dateTimePicker1->Value = DateTime(2001, 10, 20);  
+    ```  
+  
+### Pour retourner la valeur de date et d'heure  
+  
+-   Appelez la propriété <xref:System.Windows.Forms.DateTimePicker.Text%2A> pour retourner la valeur entière telle que mise en forme dans le contrôle ou appelez la méthode appropriée de la propriété <xref:System.Windows.Forms.DateTimePicker.Value%2A> pour retourner une partie de la valeur.  Utilisez <xref:System.Windows.Forms.DateTimePicker.ToString%2A> pour convertir les informations en une chaîne qui peut être présentée à l'utilisateur.  
+  
+    ```vb  
+    MessageBox.Show("The selected value is ", DateTimePicker1.Text)  
+    MessageBox.Show("The day of the week is ",   
+       DateTimePicker1.Value.DayOfWeek.ToString)  
+    MessageBox.Show("Millisecond is: ",   
+       DateTimePicker1.Value.Millisecond.ToString)  
+  
+    ```  
+  
+    ```csharp  
+    MessageBox.Show ("The selected value is " +   
+       dateTimePicker1.Text);  
+    MessageBox.Show ("The day of the week is " +   
+       dateTimePicker1.Value.DayOfWeek.ToString());  
+    MessageBox.Show("Millisecond is: " +   
+       dateTimePicker1.Value.Millisecond.ToString());  
+  
+    ```  
+  
+    ```cpp  
+    MessageBox::Show (String::Concat("The selected value is ",  
+       dateTimePicker1->Text));  
+    MessageBox::Show (String::Concat("The day of the week is ",  
+       dateTimePicker1->Value.DayOfWeek.ToString()));  
+    MessageBox::Show(String::Concat("Millisecond is: ",  
+       dateTimePicker1->Value.Millisecond.ToString()));  
+    ```  
+  
+## Voir aussi  
+ [DateTimePicker, contrôle](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)   
+ [Comment : afficher une date dans un format personnalisé à l'aide du contrôle DateTimePicker Windows Forms](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)
