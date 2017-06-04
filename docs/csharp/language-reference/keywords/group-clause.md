@@ -84,7 +84,7 @@ group person by new {name = person.surname, city = person.city};
  Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [Guide pratique pour implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Cette dernière rubrique contient un exemple de code qui illustre comment utiliser une clé composite avec un type nommé.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre le modèle standard pour organiser des données sources en groupes quand aucune logique de requête supplémentaire n’est appliquée aux groupes. Il s’agit alors d’un regroupement sans continuation. Les éléments du tableau de chaînes sont regroupés en fonction de leur première lettre. Le résultat de la requête est un type <xref:System.Linq.IGrouping%602> qui contient une propriété `Key` publique de type `char` et une collection <xref:System.Collections.Generic.IEnumerable%601> qui contient chaque élément du regroupement.  
+ L’exemple suivant montre le modèle standard pour organiser des données sources en groupes quand aucune logique de requête supplémentaire n’est appliquée aux groupes. Il s’agit alors d’un regroupement sans continuation. Les éléments du tableau de chaînes sont regroupés en fonction de leur première lettre. Le résultat de la requête est un type <xref:System.Linq.IGrouping%602> contenant une propriété `Key` publique de type `char` et une collection <xref:System.Collections.Generic.IEnumerable%601> qui contient chaque élément du regroupement.  
   
  Le résultat d’une clause `group` est une séquence de séquences. Ainsi, pour accéder aux différents éléments de chaque groupe retourné, vous devez utiliser une boucle `foreach` imbriquée à l’intérieur de la boucle qui itère les clés de groupe, comme illustré dans l’exemple suivant.  
   
@@ -96,16 +96,16 @@ group person by new {name = person.surname, city = person.city};
  [!code-cs[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
   
 ## <a name="remarks"></a>Remarques  
- Au moment de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.  
+ Lors de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Linq.IGrouping%602>   
  <xref:System.Linq.Enumerable.GroupBy%2A>   
  <xref:System.Linq.Enumerable.ThenBy%2A>   
  <xref:System.Linq.Enumerable.ThenByDescending%2A>   
- [Mots clés de requête (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
+ [Mots clés de requête (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
  [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [Guide pratique pour créer un groupe imbriqué](../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)   
  [Guide pratique pour regrouper les résultats d’une requête](../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)   
- [Comment : effectuer une sous-requête sur une opération de regroupement](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
+ [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
 

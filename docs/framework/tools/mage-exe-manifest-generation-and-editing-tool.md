@@ -1,151 +1,159 @@
 ---
-title: "Mage.exe (outil Manifest Generation and Editing) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Manifest Generation and Editing (outil)"
-  - "Mage.exe"
+title: "Mage.exe (outil Manifest Generation and Editing) │ Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Manifest Generation and Editing tool
+- Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
 caps.latest.revision: 68
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 66
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: caa06be840f0612e94742e7ea167f02b8b8d657d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Mage.exe (outil Manifest Generation and Editing)
-L'outil Manifest Generation and Editing \(Mage.exe\) est un outil de ligne de commande qui prend en charge la création et la modification de manifestes de déploiement et d'application. En tant qu'outil en ligne de commande, Mage.exe peut être exécuté à partir de scripts de commandes et d'autres applications Windows, notamment les applications [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].  
+# <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
+L'outil Manifest Generation and Editing (Mage.exe) est un outil de ligne de commande qui prend en charge la création et la modification de manifestes de déploiement et d'application. En tant qu'outil en ligne de commande, Mage.exe peut être exécuté à partir de scripts de commandes et d'autres applications Windows, notamment les applications [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] .  
   
- Vous pouvez également utiliser MageUI.exe, une application graphique, à la place de Mage.exe. Pour plus d'informations, consultez [MageUI.exe \(Manifest Generation and Editing Tool, Graphical Client\)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
+ Vous pouvez également utiliser MageUI.exe, une application graphique, à la place de Mage.exe. Pour plus d'informations, consultez [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur \(ou l'invite de commandes Visual Studio dans Windows 7\). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
- Deux versions ultérieures de Mage.exe et MageUI.exe sont incluses en tant que composant d'installation de [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide \/ ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.  
+ Deux versions ultérieures de Mage.exe et MageUI.exe sont incluses en tant que composant d'installation de [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.  
   
  À l'invite de commandes, tapez le texte suivant :  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 Mage [commands] [commandOptions]  
 ```  
   
-#### Paramètres  
- Le tableau ci\-dessous répertorie les commandes prises en charge par Mage.exe. Pour plus d'informations sur les options prises en charge par ces commandes, consultez [Options des commandes New et Update](#NewUpdate) et [Options de la commande Sign](#Sign).  
+#### <a name="parameters"></a>Paramètres  
+ Le tableau ci-dessous répertorie les commandes prises en charge par Mage.exe. Pour plus d'informations sur les options prises en charge par ces commandes, consultez [Options des commandes New et Update](#NewUpdate) et [Options de la commande Sign](#Sign).  
   
 |Commande|Description|  
-|--------------|-----------------|  
-|**\-cc, ClearApplicationCache**|Efface le cache d'application téléchargé de toutes les applications en ligne uniquement.|  
-|**\-n, \-New** *fileType \[newOptions\]*|Crée un nouveau fichier du type donné. Les types valides sont :<br /><br /> -   `Deployment` : crée un manifeste de déploiement.<br />-   `Application` : crée un manifeste de l'application.<br /><br /> Si vous ne spécifiez pas de paramètres supplémentaires avec cette commande, elle crée un fichier du type approprié, avec les valeurs d’attributs et étiquettes par défaut adéquates.<br /><br /> Utilisez l’option **\-ToFile** \(voir le tableau ci\-dessous\) pour spécifier le nom de fichier et le chemin du nouveau fichier.<br /><br /> Utilisez l’option **\-FromDirectory** \(voir le tableau ci\-dessous\) pour créer un manifeste de l’application avec tous les assemblys d’une application ajoutés à la section \<dependency\> du manifeste.|  
-|**\-u, \-Update** *\[filePath\] \[updateOptions\]*|Apporte une ou plusieurs modifications à un fichier manifeste. Vous n'avez pas à spécifier le type de fichier que vous modifiez. Mage.exe examinera le fichier en utilisant un jeu de paramètres heuristiques et déterminera s'il s'agit d'un manifeste de déploiement ou d'un manifeste d'application.<br /><br /> Si vous avez déjà signé un fichier avec un certificat, **\-Update** supprime le bloc de signature de clé. En effet, la signature de clé contient un hachage du fichier, et la modification du fichier rend le hachage non valide.<br /><br /> Utilisez l’option **\-ToFile** \(voir le tableau ci\-dessous\) pour spécifier un nouveau nom et chemin de fichier au lieu de remplacer le fichier existant.|  
-|**\-s, \-Sign** `[signOptions]`|Utilise une paire de clés ou un certificat X509 pour signer un fichier. Les signatures sont insérées en tant qu'éléments XML dans les fichiers.<br /><br /> Vous devez être connecté à Internet lors de la signature d’un manifeste qui spécifie une valeur **\-TimestampUri**.|  
-|**\-h, \-?, \-Help** *\[verbose\]*|Décrit toutes les commandes disponibles et leurs options. Spécifiez `verbose` pour obtenir une aide détaillée.|  
+|-------------|-----------------|  
+|**-cc, ClearApplicationCache**|Efface le cache d'application téléchargé de toutes les applications en ligne uniquement.|  
+|**-n, -New** *fileType [newOptions]*|Crée un nouveau fichier du type donné. Les types valides sont :<br /><br /> -   `Deployment`: crée un manifeste de déploiement.<br />-   `Application`: crée un manifeste de l'application.<br /><br /> Si vous ne spécifiez pas de paramètres supplémentaires avec cette commande, elle crée un fichier du type approprié, avec les valeurs d’attributs et étiquettes par défaut adéquates.<br /><br /> Utilisez l’option **-ToFile** (voir le tableau ci-dessous) pour spécifier le nom de fichier et le chemin du nouveau fichier.<br /><br /> Utilisez l’option **-FromDirectory** (voir le tableau ci-dessous) pour créer un manifeste d’application avec tous les assemblys d’une application ajoutés à la section \<dependency> du manifeste.|  
+|**-u, -Update** *[filePath] [updateOptions]*|Apporte une ou plusieurs modifications à un fichier manifeste. Vous n'avez pas à spécifier le type de fichier que vous modifiez. Mage.exe examinera le fichier en utilisant un jeu de paramètres heuristiques et déterminera s'il s'agit d'un manifeste de déploiement ou d'un manifeste d'application.<br /><br /> Si vous avez déjà signé un fichier avec un certificat, **-Update** supprime le bloc de signature de clé. En effet, la signature de clé contient un hachage du fichier, et la modification du fichier rend le hachage non valide.<br /><br /> Utilisez l’option **-ToFile** (voir le tableau ci-dessous) pour spécifier un nouveau nom et chemin de fichier au lieu de remplacer le fichier existant.|  
+|**-s, -Sign** `[signOptions]`|Utilise une paire de clés ou un certificat X509 pour signer un fichier. Les signatures sont insérées en tant qu'éléments XML dans les fichiers.<br /><br /> Vous devez être connecté à Internet lors de la signature d’un manifeste qui spécifie une valeur **-TimestampUri** .|  
+|**-h, -?, -Help** *[verbose]*|Décrit toutes les commandes disponibles et leurs options. Spécifiez `verbose` pour obtenir une aide détaillée.|  
   
 <a name="NewUpdate"></a>   
-## Options des commandes New et Update  
- Le tableau suivant affiche les options prises en charge par les commandes `-New` et `-Update`.  
+## <a name="new-and-update-command-options"></a>Options des commandes New et Update  
+ Le tableau suivant affiche les options prises en charge par les commandes `-New` et `-Update` .  
   
 |Options|Valeur par défaut|S'applique à|Description|  
-|-------------|-----------------------|------------------|-----------------|  
-|**\-a, \-Algorithm**|sha1RSA|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Définit l'algorithme avec lequel générer des compactés de dépendance. La valeur doit être "sha256RSA" ou "sha1RSA".<br /><br /> N'utilisez pas avec l'option "\-Update". Cette option est ignorée avec l'utilisation de l'option "\-Sign".|  
-|**\-appc, \-AppCodeBase** `manifestReference`||Manifestes de déploiement.|Insère une référence d'URL ou de chemin d'accès au fichier manifeste d'application. Cette valeur doit représenter le chemin d’accès complet au manifeste d’application.|  
-|**\-appm, \-AppManifest** `manifestPath`||Manifestes de déploiement.|Insère une référence au manifeste d'application d'un déploiement dans son manifeste de déploiement.<br /><br /> Le fichier indiqué par `manifestPath` doit exister, sans quoi Mage.exe génère une erreur. Si le fichier référencé par `manifestPath` n'est pas un manifeste d'application, Mage.exe génère une erreur.|  
-|**\-cf, \-CertFile** `filePath`||Tous les types de fichiers.|Spécifie l'emplacement d'un certificat numérique X509 pour la signature d'un manifeste. Cette option peut être utilisée conjointement avec l’option **\-Password** si le certificat demande un mot de passe.|  
-|**\-ch, \-CertHash** `hashSignature`||Tous les types de fichiers.|Hachage d'un certificat numérique stocké dans le magasin de certificats personnel de l'ordinateur client. Il correspond à la chaîne d'empreinte numérique d'un certificat numérique affiché dans la console Certificats Windows.<br /><br /> `hashSignature` peut être en majuscules ou en minuscules et fourni en tant que chaîne unique ou avec chaque octet de l'empreinte numérique séparé par des espaces et l'empreinte numérique complète entre guillemets.|  
-|**\-fd, \-FromDirectory** `directoryPath`||Manifestes d'application.|Remplit le manifeste d'application avec les descriptions de tous les assemblys et fichiers trouvés dans `directoryPath`, y compris tous les sous\-répertoires, `directoryPath` étant le répertoire qui contient l'application à déployer. Pour chaque fichier du répertoire, Mage.exe détermine s'il s'agit d'un assembly ou d'un fichier statique. Si c'est un assembly, il ajoute une balise `<dependency>` et un attribut `installFrom` à l'application avec le nom de l'assembly, la base de code et la version. S'il s'agit d'un fichier statique, il ajoute une balise `<file>`. Mage.exe utilise également un ensemble de paramètres heuristiques simple pour détecter le fichier exécutable principal de l'application et le marque comme point d'entrée de l'application ClickOnce dans le manifeste.<br /><br /> Mage.exe ne marquera jamais automatiquement un fichier en tant que fichier de « données ». Vous devez faire cela manuellement. Pour plus d'informations, consultez [How to: Include a Data File in a ClickOnce Application](../Topic/How%20to:%20Include%20a%20Data%20File%20in%20a%20ClickOnce%20Application.md).<br /><br /> Mage.exe génère également un hachage pour chaque fichier en fonction de sa taille. ClickOnce utilise ces hachages pour éviter toute falsification des fichiers du déploiement après la création du manifeste. Si un des fichiers de votre déploiement change, vous pouvez exécuter Mage.exe avec la commande **\-Update** et l’option **\-FromDirectory**, qui met à jour les hachages et les versions des assemblys de tous les fichiers référencés.<br /><br /> **\-FromDirectory** inclut tous les fichiers de tous les sous\-répertoires trouvés dans `directoryPath`.<br /><br /> Si vous utilisez **\-FromDirectory** avec la commande **\-Update**, Mage.exe supprime tous les fichiers du manifeste d’application qui n’existent plus dans le répertoire.|  
-|**\-if, \-IconFile**  `filePath`||Manifestes d'application.|Spécifie le chemin d'accès complet à un fichier icône .ICO. Cette icône s'affiche à côté du nom de votre application dans le menu Démarrage et dans son entrée Ajout\/Suppression de programmes. Si aucune icône n'est fournie, une icône par défaut est utilisée.|  
-|**\-ip, \-IncludeProviderURL**  `url`|true|Manifestes de déploiement.|Indique si le manifeste du déploiement inclut la valeur de l’emplacement de la mise à jour définie par **\-ProviderURL**.|  
-|**\-i, \-Install** `willInstall`|true|Manifestes de déploiement.|Indique si l'application ClickOnce doit être installée ou non sur l'ordinateur local ou si elle doit s'exécuter à partir du Web. Lorsqu'une application est installée, elle figure dans le menu **Démarrer** de Windows. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Si vous spécifiez l’option **\-MinVersion** et qu’un utilisateur dispose d’une version antérieure à la version **\-MinVersion** installée, ceci force l’installation de l’application, indépendamment de la valeur passée à **\-Install**.<br /><br /> Cette option ne peut pas être utilisée avec l’option **\-BrowserHosted**. Toute tentative de spécifier ces deux options pour le même manifeste générera une erreur.|  
-|**\-mv, \-MinVersion**  `[version]`|Version répertoriée dans le manifeste de déploiement ClickOnce telle que spécifiée par l’indicateur **\-Version**.|Manifestes de déploiement.|Version minimale de cette application qu'un utilisateur peut exécuter. Cet indicateur rend obligatoire la mise à jour avec la version nommée de votre application. Si vous publiez une version de votre produit avec une mise à jour corrigeant une rupture ou une vulnérabilité de sécurité critique, vous pouvez utiliser cet indicateur pour spécifier que cette mise à jour doit être installée et que l’utilisateur ne peut pas continuer à exécuter des versions antérieures.<br /><br /> `version` a la même sémantique que l’argument pour l’indicateur **\-Version**.|  
-|**\-n, \-Name** `nameString`|Déployer|Tous les types de fichiers.|Nom utilisé pour identifier l'application. ClickOnce utilise ce nom pour identifier l'application dans le menu **Démarrer** \(si l'application est configurée pour s'installer\) et dans les boîtes de dialogue Permission Elevation. **Note:**  Si vous mettez à jour un manifeste existant et que vous ne spécifiez pas de nom de serveur de publication avec cette option, Mage.exe met à jour le manifeste avec le nom de l'organisation défini sur l'ordinateur. Pour utiliser un nom différent, veillez à utiliser cette option et spécifiez le nom voulu pour l'éditeur.|  
-|**\-pwd, \-Password** `passwd`||Tous les types de fichiers.|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **\-CertFile**.|  
-|**\-p, Processor** `processorValue`|Msil|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Architecture de microprocesseur sur laquelle cette distribution s'exécutera. Cette valeur est obligatoire si vous préparez une ou plusieurs installations dont les assemblys ont été précompilés pour un microprocesseur spécifique. Les valeurs valides sont `msil`, `x86`, `ia64` et `amd64`.`msil` est le langage intermédiaire Microsoft, ce qui signifie que tous vos assemblys sont indépendants des plateformes et que le Common Language Runtime \(CLR\) les compile juste\-à\-temps quand votre application est exécutée pour la première fois.|  
-|**\-pu,** **\-ProviderURL** `url`||Manifestes de déploiement.|Spécifie l'URL vérifiée par ClickOnce pour les mises à jour d'application.|  
-|**\-pub, \-Publisher** `publisherName`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Ajoute le nom de l'éditeur à l'élément de description du manifeste de déploiement ou d'application. Quand il est utilisé sur un manifeste d’application, **\-UseManifestForTrust** doit également être spécifié avec la valeur « true » ou « t » ; sinon, ce paramètre génère une erreur.|  
-|**\-s, \-SupportURL**  `url`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Spécifie le lien dans lequel s'affiche Ajout\/Suppression de programmes pour l'application ClickOnce.|  
-|**\-ti, \-TimestampUri** `uri`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|L'URL d'un service d'horodatage numérique. Horodater les manifestes vous évite d'avoir à signer de nouveau les manifestes si votre certificat numérique expire avant le déploiement de la version suivante de votre application. Pour plus d’informations, consultez [Configurer des racines de confiance et des certificats non autorisés](http://go.microsoft.com/fwlink/?LinkId=159000).|  
-|**\-t, \-ToFile** `filePath`|-   Nouveau :<br />-   Déploiement : deploy.application<br />-   Application : application.exe.manifest<br />-   Mise à jour :<br />-   Fichier d'entrée.|Tous les types de fichiers.|Spécifie le chemin de sortie du fichier créé ou modifié.<br /><br /> Si **\-ToFile** n’est pas fourni quand vous utilisez **\-New**, la sortie est écrite dans le répertoire de travail actuel. Si **\-ToFile** n’est pas fourni quand vous utilisez **\-Update**, Mage.exe réécrit le fichier dans le fichier d’entrée.|  
-|**\-tr, \-TrustLevel** `level`|Selon la zone dans laquelle réside l'URL de l'application.|Manifestes d'application.|Niveau de confiance à accorder à l'application sur les ordinateurs clients. Les valeurs possibles sont "Internet", "Intranet" et "FullTrust".|  
-|**\-um, \-UseManifestForTrust** `willUseForTrust`|False|Manifestes d'application.|Spécifie si la signature numérique du manifeste d'application sera utilisée pour prendre des décisions d'approbation lorsque l'application s'exécute sur le client. Spécifier "true" ou "t" indique que le manifeste d'application sera utilisé pour les décisions d'approbation. Spécifier "false" ou "f" indique que la signature du manifeste de déploiement sera utilisée.|  
-|**\-v, \-Version** `versionNumber`|1.0.0.0|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Version du déploiement. L’argument doit être une chaîne de version valide au format « *N.N.N.N* », où « *N* » est un entier 32 bits non signé.|  
-|**\-wpf, \-WPFBrowserApp**  `isWPFApp`|false|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Utilisez cet indicateur uniquement si l'application est une application Windows Presentation Foundation \(WPF\) qui sera hébergée dans Internet Explorer et n'est pas un exécutable autonome. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Pour les manifestes d'application, insère l'attribut `hostInBrowser` sous l'élément `entryPoint` du manifeste d'application.<br /><br /> Pour les manifestes de déploiement, affecte la valeur false à l'attribut `install` sur l'élément `deployment` et enregistre le manifeste de déploiement avec une extension .xbap. La spécification de cet argument avec l’argument **\-Install** génère une erreur car une application hébergée par le navigateur ne peut pas être une application hors ligne installée.|  
+|-------------|-------------------|----------------|-----------------|  
+|**-a, -Algorithm**|sha1RSA|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Définit l'algorithme avec lequel générer des compactés de dépendance. La valeur doit être "sha256RSA" ou "sha1RSA".<br /><br /> N'utilisez pas avec l'option "-Update". Cette option est ignorée avec l'utilisation de l'option "-Sign".|  
+|**-appc, -AppCodeBase** `manifestReference`||Manifestes de déploiement.|Insère une référence d'URL ou de chemin d'accès au fichier manifeste d'application. Cette valeur doit représenter le chemin d’accès complet au manifeste d’application.|  
+|**-appm, -AppManifest** `manifestPath`||Manifestes de déploiement.|Insère une référence au manifeste d'application d'un déploiement dans son manifeste de déploiement.<br /><br /> Le fichier indiqué par `manifestPath` doit exister, sans quoi Mage.exe génère une erreur. Si le fichier référencé par `manifestPath` n'est pas un manifeste d'application, Mage.exe génère une erreur.|  
+|**-cf, -CertFile** `filePath`||Tous les types de fichiers.|Spécifie l'emplacement d'un certificat numérique X509 pour la signature d'un manifeste. Cette option peut être utilisée conjointement avec l’option **-Password** si le certificat demande un mot de passe.|  
+|**-ch, -CertHash** `hashSignature`||Tous les types de fichiers.|Hachage d'un certificat numérique stocké dans le magasin de certificats personnel de l'ordinateur client. Il correspond à la chaîne d'empreinte numérique d'un certificat numérique affiché dans la console Certificats Windows.<br /><br /> `hashSignature` peut être en majuscules ou en minuscules et fourni en tant que chaîne unique ou avec chaque octet de l'empreinte numérique séparé par des espaces et l'empreinte numérique complète entre guillemets.|  
+|**-fd, -FromDirectory** `directoryPath`||Manifestes d'application.|Remplit le manifeste d'application avec les descriptions de tous les assemblys et fichiers trouvés dans `directoryPath`, y compris tous les sous-répertoires, `directoryPath` étant le répertoire qui contient l'application à déployer. Pour chaque fichier du répertoire, Mage.exe détermine s'il s'agit d'un assembly ou d'un fichier statique. Si c'est un assembly, il ajoute une balise `<dependency>` et un attribut `installFrom` à l'application avec le nom de l'assembly, la base de code et la version. S'il s'agit d'un fichier statique, il ajoute une balise `<file>` . Mage.exe utilise également un ensemble de paramètres heuristiques simple pour détecter le fichier exécutable principal de l'application et le marque comme point d'entrée de l'application ClickOnce dans le manifeste.<br /><br /> Mage.exe ne marquera jamais automatiquement un fichier en tant que fichier de « données ». Vous devez faire cela manuellement. Pour plus d'informations, consultez [How to: Include a Data File in a ClickOnce Application](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application).<br /><br /> Mage.exe génère également un hachage pour chaque fichier en fonction de sa taille. ClickOnce utilise ces hachages pour éviter toute falsification des fichiers du déploiement après la création du manifeste. Si un des fichiers de votre déploiement change, vous pouvez exécuter Mage.exe avec la commande **-Update** et l’option **-FromDirectory** , qui met à jour les hachages et les versions des assemblys de tous les fichiers référencés.<br /><br /> **-FromDirectory** inclut tous les fichiers de tous les sous-répertoires trouvés dans `directoryPath`.<br /><br /> Si vous utilisez **-FromDirectory** avec la commande **-Update** , Mage.exe supprime tous les fichiers du manifeste d’application qui n’existent plus dans le répertoire.|  
+|**-if, -IconFile**  `filePath`||Manifestes d'application.|Spécifie le chemin d'accès complet à un fichier icône .ICO. Cette icône s'affiche à côté du nom de votre application dans le menu Démarrage et dans son entrée Ajout/Suppression de programmes. Si aucune icône n'est fournie, une icône par défaut est utilisée.|  
+|**-ip, -IncludeProviderURL**  `url`|true|Manifestes de déploiement.|Indique si le manifeste du déploiement inclut la valeur de l’emplacement de la mise à jour définie par **-ProviderURL**.|  
+|**-i, -Install** `willInstall`|true|Manifestes de déploiement.|Indique si l'application ClickOnce doit être installée ou non sur l'ordinateur local ou si elle doit s'exécuter à partir du Web. Lorsqu'une application est installée, elle figure dans le menu **Démarrer** de Windows. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Si vous spécifiez l’option **-MinVersion** et qu’un utilisateur dispose d’une version antérieure à la version **-MinVersion** installée, ceci force l’installation de l’application, indépendamment de la valeur passée à **-Install**.<br /><br /> Cette option ne peut pas être utilisée avec l’option **-BrowserHosted** . Toute tentative de spécifier ces deux options pour le même manifeste générera une erreur.|  
+|**-mv, -MinVersion**  `[version]`|Version répertoriée dans le manifeste de déploiement ClickOnce telle que spécifiée par l’indicateur **-Version** .|Manifestes de déploiement.|Version minimale de cette application qu'un utilisateur peut exécuter. Cet indicateur rend obligatoire la mise à jour avec la version nommée de votre application. Si vous publiez une version de votre produit avec une mise à jour corrigeant une rupture ou une vulnérabilité de sécurité critique, vous pouvez utiliser cet indicateur pour spécifier que cette mise à jour doit être installée et que l’utilisateur ne peut pas continuer à exécuter des versions antérieures.<br /><br /> `version` a la même sémantique que l’argument pour l’indicateur **-Version** .|  
+|**-n, -Name** `nameString`|Déployer|Tous les types de fichiers.|Nom utilisé pour identifier l'application. ClickOnce utilise ce nom pour identifier l'application dans le menu **Démarrer** (si l'application est configurée pour s'installer elle-même) et dans les boîtes de dialogue Permission Elevation. **Remarque :** Si vous mettez à jour un manifeste existant et que vous ne spécifiez pas de nom d’éditeur avec cette option, Mage.exe met à jour le manifeste avec le nom de l'organisation défini sur l'ordinateur. Pour utiliser un nom différent, veillez à utiliser cette option et spécifiez le nom voulu pour l'éditeur.|  
+|**-pwd, -Password** `passwd`||Tous les types de fichiers.|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|  
+|**-p, Processor** `processorValue`|Msil|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Architecture de microprocesseur sur laquelle cette distribution s'exécutera. Cette valeur est obligatoire si vous préparez une ou plusieurs installations dont les assemblys ont été précompilés pour un microprocesseur spécifique. Les valeurs valides sont `msil`, `x86`, `ia64`et `amd64`. `msil` est le langage intermédiaire Microsoft, ce qui signifie que tous vos assemblys sont indépendants des plateformes et que le Common Language Runtime (CLR) les compile juste-à-temps quand votre application est exécutée pour la première fois.|  
+|**-pu,** **-ProviderURL** `url`||Manifestes de déploiement.|Spécifie l'URL vérifiée par ClickOnce pour les mises à jour d'application.|  
+|**-pub, -Publisher** `publisherName`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Ajoute le nom de l'éditeur à l'élément de description du manifeste de déploiement ou d'application. Quand il est utilisé sur un manifeste d’application, **-UseManifestForTrust** doit également être spécifié avec la valeur « true » ou « t » ; sinon, ce paramètre génère une erreur.|  
+|**-s, -SupportURL**  `url`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|Spécifie le lien dans lequel s'affiche Ajout/Suppression de programmes pour l'application ClickOnce.|  
+|**-ti, -TimestampUri** `uri`||Manifestes d'application.<br /><br /> Manifestes de déploiement.|L'URL d'un service d'horodatage numérique. Horodater les manifestes vous évite d'avoir à signer de nouveau les manifestes si votre certificat numérique expire avant le déploiement de la version suivante de votre application. Pour plus d’informations, consultez [Configurer des racines de confiance et des certificats non autorisés](http://go.microsoft.com/fwlink/?LinkId=159000).|  
+|**-t, -ToFile** `filePath`|-   New :<br />-   Déploiement : deploy.application<br />-   Application : application.exe.manifest<br />-   Update :<br />-   Fichier d'entrée.|Tous les types de fichiers.|Spécifie le chemin de sortie du fichier créé ou modifié.<br /><br /> Si **-ToFile** n’est pas fourni quand vous utilisez **-New**, la sortie est écrite dans le répertoire de travail actuel. Si **-ToFile** n’est pas fourni quand vous utilisez **-Update**, Mage.exe réécrit le fichier dans le fichier d’entrée.|  
+|**-tr, -TrustLevel** `level`|Selon la zone dans laquelle réside l'URL de l'application.|Manifestes d'application.|Niveau de confiance à accorder à l'application sur les ordinateurs clients. Les valeurs possibles sont "Internet", "Intranet" et "FullTrust".|  
+|**-um, -UseManifestForTrust** `willUseForTrust`|False|Manifestes d'application.|Spécifie si la signature numérique du manifeste d'application sera utilisée pour prendre des décisions d'approbation lorsque l'application s'exécute sur le client. Spécifier "true" ou "t" indique que le manifeste d'application sera utilisé pour les décisions d'approbation. Spécifier "false" ou "f" indique que la signature du manifeste de déploiement sera utilisée.|  
+|**-v, -Version** `versionNumber`|1.0.0.0|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Version du déploiement. L’argument doit être une chaîne de version valide au format «*N.N.N.N*», où «*N*» est un entier 32 bits non signé.|  
+|**-wpf, -WPFBrowserApp**  `isWPFApp`|False|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Utilisez cet indicateur uniquement si l'application est une application Windows Presentation Foundation (WPF) qui sera hébergée dans Internet Explorer et n'est pas un exécutable autonome. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Pour les manifestes d'application, insère l'attribut `hostInBrowser` sous l'élément `entryPoint` du manifeste d'application.<br /><br /> Pour les manifestes de déploiement, affecte la valeur false à l'attribut `install` sur l'élément `deployment` et enregistre le manifeste de déploiement avec une extension .xbap. La spécification de cet argument avec l’argument **-Install** génère une erreur car une application hébergée par le navigateur ne peut pas être une application hors ligne installée.|  
   
 <a name="Sign"></a>   
-## Options de la commande Sign  
+## <a name="sign-command-options"></a>Options de la commande Sign  
  Le tableau suivant affiche les options prises en charge par la commande `-Sign` applicables à tous les types de fichiers.  
   
 |Options|Description|  
 |-------------|-----------------|  
-|**\-cf, \-CertFile** `filePath`|Spécifie l'emplacement d'un certificat numérique servant à signer un manifeste. Cette option peut être utilisée en conjonction avec l’option **\-Password**.|  
-|**\-ch, \-CertHash** `hashSignature`|Hachage d'un certificat numérique stocké dans le magasin de certificats personnel de l'ordinateur client. Il correspond à la propriété d'empreinte numérique d'un certificat numérique affiché dans la console Certificats Windows.<br /><br /> `hashSignature` peut être en majuscules ou en minuscules et fourni en tant que chaîne unique ou avec chaque octet de l'empreinte numérique séparé par des espaces et l'empreinte numérique complète entre guillemets.|  
-|**\-pwd, \-Password** `passwd`|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **\-CertFile**.|  
-|**\-t, \-ToFile** `filePath`|Spécifie le chemin de sortie du fichier créé ou modifié.|  
+|**-cf, -CertFile** `filePath`|Spécifie l'emplacement d'un certificat numérique servant à signer un manifeste. Cette option peut être utilisée en conjonction avec l’option **-Password** .|  
+|**-ch, -CertHash** `hashSignature`|Hachage d'un certificat numérique stocké dans le magasin de certificats personnel de l'ordinateur client. Il correspond à la propriété d'empreinte numérique d'un certificat numérique affiché dans la console Certificats Windows.<br /><br /> `hashSignature` peut être en majuscules ou en minuscules et fourni en tant que chaîne unique ou avec chaque octet de l'empreinte numérique séparé par des espaces et l'empreinte numérique complète entre guillemets.|  
+|**-pwd, -Password** `passwd`|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|  
+|**-t, -ToFile** `filePath`|Spécifie le chemin de sortie du fichier créé ou modifié.|  
   
-## Notes  
- Tous les arguments passés à Mage.exe ne respectent pas la casse. Les commandes et options peuvent être précédées d'un tiret \(\-\) ou d'une barre oblique \(\/\).  
+## <a name="remarks"></a>Remarques  
+ Tous les arguments passés à Mage.exe ne respectent pas la casse. Les commandes et options peuvent être précédées d'un tiret (-) ou d'une barre oblique (/).  
   
- Tous les arguments utilisés avec la commande **\-Sign** peuvent être toujours utilisés avec les commandes **\-New** ou **\-Update**. Les commandes suivantes sont équivalentes.  
+ Tous les arguments utilisés avec la commande **-Sign** peuvent être toujours utilisés avec les commandes **-New** ou **-Update** . Les commandes suivantes sont équivalentes.  
   
 ```  
 mage -Sign c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx  
 mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx  
 ```  
   
+> [!NOTE]
+>  À compter de la version 4.6.2 du .NET Framework, les certificats CNG sont également pris en charge.  
+  
  La signature est la dernière tâche à effectuer, car un document signé utilise un hachage du fichier afin de vérifier la validité de la signature pour le document. Si vous modifiez d'une quelconque façon un fichier signé, vous devez le signer de nouveau. Si vous signez un document déjà signé, Mage.exe remplace la signature précédente par la nouvelle.  
   
- Quand vous utilisez l’option **\-AppManifest** pour remplir un manifeste de déploiement, Mage.exe suppose que votre manifeste d’application va se trouver dans le même répertoire que le manifeste de déploiement, dans un sous\-répertoire nommé d’après la version du déploiement actuel et il configure votre manifeste de déploiement de façon appropriée. Si votre manifeste d’application doit se trouver ailleurs, utilisez l’option **\-AppCodeBase** pour définir l’autre emplacement.  
+ Quand vous utilisez l’option **-AppManifest** pour remplir un manifeste de déploiement, Mage.exe suppose que votre manifeste d’application va se trouver dans le même répertoire que le manifeste de déploiement, dans un sous-répertoire nommé d’après la version du déploiement actuel et il configure votre manifeste de déploiement de façon appropriée. Si votre manifeste d’application doit se trouver ailleurs, utilisez l’option **-AppCodeBase** pour définir l’autre emplacement.  
   
- Vos manifestes de déploiement et de l'application doivent être signés avant de déployer votre application. Pour obtenir des instructions sur la signature des manifestes, consultez [Vue d'ensemble du déploiement d'applications approuvées](../Topic/Trusted%20Application%20Deployment%20Overview.md).  
+ Vos manifestes de déploiement et de l'application doivent être signés avant de déployer votre application. Pour obtenir des instructions sur la signature des manifestes, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).  
   
- L’option **\-TrustLevel** pour les manifestes d’application décrit le jeu d’autorisations dont une application a besoin pour s’exécuter sur l’ordinateur client. Par défaut, un niveau de confiance basé sur la *zone* dans laquelle leur URL réside est assigné aux applications. Les applications déployées sur un réseau d'entreprise sont généralement placées dans la zone Intranet tandis que celles déployées sur Internet sont placées dans la zone Internet. Les deux zones de sécurité placent des restrictions sur l'accès de l'application aux ressources locales, la zone Intranet étant un peu moins stricte que la zone Internet. La zone FullTrust donne aux applications l'accès complet aux ressources locales d'un ordinateur. Si vous utilisez l’option **\-TrustLevel** pour placer une application dans cette zone, le composant Gestionnaire de confiance du CLR demande à l’utilisateur s’il veut accorder ce niveau de confiance plus élevé. Si vous déployez votre application sur un réseau d'entreprise, vous pouvez utiliser le déploiement d'applications approuvées pour élever le niveau de confiance de l'application sans affichage d'une invite utilisateur.  
+ L’option **-TrustLevel** pour les manifestes d’application décrit le jeu d’autorisations dont une application a besoin pour s’exécuter sur l’ordinateur client. Par défaut, un niveau de confiance basé sur la *zone* dans laquelle leur URL réside est assigné aux applications. Les applications déployées sur un réseau d'entreprise sont généralement placées dans la zone Intranet tandis que celles déployées sur Internet sont placées dans la zone Internet. Les deux zones de sécurité placent des restrictions sur l'accès de l'application aux ressources locales, la zone Intranet étant un peu moins stricte que la zone Internet. La zone FullTrust donne aux applications l'accès complet aux ressources locales d'un ordinateur. Si vous utilisez l’option **-TrustLevel** pour placer une application dans cette zone, le composant Gestionnaire de confiance du CLR demande à l’utilisateur s’il veut accorder ce niveau de confiance plus élevé. Si vous déployez votre application sur un réseau d'entreprise, vous pouvez utiliser le déploiement d'applications approuvées pour élever le niveau de confiance de l'application sans affichage d'une invite utilisateur.  
   
- Les manifestes d'application prennent également en charge des sections Trust personnalisées. Cela permet à votre application de respecter le principe de sécurité qui consiste à accorder des autorisations minimales. Vous pouvez ainsi configurer le manifeste pour demander uniquement les autorisations nécessaires à l'exécution de l'application. Mage.exe ne prend pas en charge directement l'ajout d'une section Trust personnalisée. Vous pouvez en ajouter une à l'aide d'un éditeur de texte, d'un analyseur XML ou de l'outil graphique MageUI.exe. Pour plus d’informations sur l’utilisation de MageUI.exe pour ajouter des sections Trust personnalisées, consultez [MageUI.exe \(Manifest Generation and Editing Tool, Graphical Client\)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
+ Les manifestes d'application prennent également en charge des sections Trust personnalisées. Cela permet à votre application de respecter le principe de sécurité qui consiste à accorder des autorisations minimales. Vous pouvez ainsi configurer le manifeste pour demander uniquement les autorisations nécessaires à l'exécution de l'application. Mage.exe ne prend pas en charge directement l'ajout d'une section Trust personnalisée. Vous pouvez en ajouter une à l'aide d'un éditeur de texte, d'un analyseur XML ou de l'outil graphique MageUI.exe. Pour plus d’informations sur l’utilisation de MageUI.exe pour ajouter des sections Trust personnalisées, consultez [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
   
- Les nouveaux manifestes créés avec la version 4 de Mage.exe, incluse avec [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)], ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour cibler des versions antérieures du .NET Framework, vous devez utiliser une version antérieure de Mage.exe. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste existant, ou lors de la nouvelle signature d'un manifeste existant, Mage.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les tableaux suivants contiennent ces fonctionnalités et restrictions.  
+ Les nouveaux manifestes créés avec la version 4 de Mage.exe, incluse avec [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)], ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour cibler des versions antérieures du .NET Framework, vous devez utiliser une version antérieure de Mage.exe. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste existant, ou lors de la nouvelle signature d'un manifeste existant, Mage.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les tableaux suivants contiennent ces fonctionnalités et restrictions.  
   
 |Version du manifeste|Opération|Mage v2.0|Mage v4.0|  
-|--------------------------|---------------|---------------|---------------|  
-|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouvrir|OK|OK|  
+|----------------------|---------------|---------------|---------------|  
+|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouvrir|OK|OK|  
 ||Fermer|OK|OK|  
 ||Enregistrer|OK|OK|  
 ||Nouvelle signature|OK|OK|  
 ||Nouveau|OK|Non pris en charge|  
-||Mise à jour \(voir ci\-dessous\)|OK|OK|  
-|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouvrir|OK|OK|  
+||Mise à jour (voir ci-dessous)|OK|OK|  
+|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouvrir|OK|OK|  
 ||Fermer|OK|OK|  
 ||Enregistrer|OK|OK|  
 ||Nouvelle signature|OK|OK|  
 ||Nouveau|Non pris en charge|OK|  
-||Mise à jour \(voir ci\-dessous\)|Non pris en charge|OK|  
+||Mise à jour (voir ci-dessous)|Non pris en charge|OK|  
   
 |Version du manifeste|Détails de l'opération de mise à jour|Mage v2.0|Mage v4.0|  
-|--------------------------|-------------------------------------------|---------------|---------------|  
-|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Modifier un assembly|OK|OK|  
+|----------------------|------------------------------|---------------|---------------|  
+|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Modifier un assembly|OK|OK|  
 ||Ajouter un assembly|OK|OK|  
 ||Supprimer un assembly|OK|OK|  
-|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Modifier un assembly|Non pris en charge|OK|  
+|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Modifier un assembly|Non pris en charge|OK|  
 ||Ajouter un assembly|Non pris en charge|OK|  
 ||Supprimer un assembly|Non pris en charge|OK|  
   
  Mage.exe crée des nouveaux manifestes qui ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les applications ClickOnce qui ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] peuvent s'exécuter à la fois sur le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] et sur la version complète du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Si votre application vise la version complète du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et ne peut pas fonctionner sur le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], supprimez l'élément client `<framework>` à l'aide d'un éditeur de texte et signez de nouveau le manifeste. Voici un exemple d'élément `<framework>` qui cible le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)].  
   
-```  
+```xml  
 <framework targetVersion="4.0" profile="client" supportedRuntime="4.0.20506" />  
 ```  
   
-## Exemples  
- L'exemple suivant ouvre l'interface utilisateur de Mage \(MageUI.exe\).  
+## <a name="examples"></a>Exemples  
+ L'exemple suivant ouvre l'interface utilisateur de Mage (MageUI.exe).  
   
 ```  
 mage  
@@ -158,7 +166,7 @@ mage -New Deployment
 mage -New Application  
 ```  
   
- L’exemple suivant crée un manifeste d’application rempli avec tous les assemblys et fichiers de ressources du répertoire de l’application actuelle .  
+ L’exemple suivant crée un manifeste d’application rempli avec tous les assemblys et fichiers de ressources du répertoire actuel.  
   
 ```  
 mage -New Application -FromDirectory . -Version 1.0.0.0  
@@ -201,9 +209,9 @@ mage -Update HelloWorld.deploy -AppCodeBase http://anotherserver/HelloWorld/1.1.
 mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>  
 ```  
   
-## Voir aussi  
- [ClickOnce Security and Deployment](../Topic/ClickOnce%20Security%20and%20Deployment.md)   
- [Walkthrough: Manually Deploying a ClickOnce Application](../Topic/Walkthrough:%20Manually%20Deploying%20a%20ClickOnce%20Application.md)   
- [Vue d'ensemble du déploiement d'applications approuvées](../Topic/Trusted%20Application%20Deployment%20Overview.md)   
- [MageUI.exe \(Manifest Generation and Editing Tool, Graphical Client\)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)   
+ [Procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)   
+ [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview)   
+ [MageUI.exe (outil Manifest Generation and Editing, client graphique)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)   
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

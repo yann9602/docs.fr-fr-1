@@ -40,7 +40,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Comment : démarrer une application et envoyer des séquences de touches (Visual Basic)
+# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Guide pratique pour démarrer une application et envoyer des séquences de touches (Visual Basic)
 Cet exemple utilise la fonction `Shell` pour démarrer l’application Calculatrice, puis multiplie deux nombres en envoyant des séquences de touches à l’aide de la méthode `My.Computer.Keyboard.SendKeys`.  
   
 ## <a name="example"></a>Exemple  

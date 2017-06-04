@@ -92,7 +92,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Montre comment rechercher les caractéristiques de mot de passe fort et mettre à jour un paramètre de chaîne avec des informations indiquant les vérifications de mot de passe qui ont échoué.  
   
  [Chiffrement et déchiffrement de chaînes en Visual Basic](../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
- Indique comment utiliser la classe <xref:System.Security.Cryptography.DESCryptoServiceProvider> pour chiffrer et déchiffrer des chaînes.  
+ Montre comment utiliser la classe <xref:System.Security.Cryptography.DESCryptoServiceProvider> pour chiffrer et déchiffrer des chaînes.  
   
  [Manipulation de fichiers et de dossiers dans Visual Basic](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Montre comment utiliser les fonctions [!INCLUDE[vbprvb](../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour déterminer les informations relatives à un fichier, rechercher une chaîne dans un fichier et écrire dans un fichier.  

@@ -40,9 +40,9 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-parse-file-paths-in-visual-basic"></a>Guide pratique pour analyser des chemins en Visual Basic
-L’objet < xref:Microsoft.VisualBasic.FileIO.FileSystem > offre plusieurs méthodes utiles lors de l’analyse des chemins de fichiers.  
+L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méthodes utiles pour l’analyse des chemins de fichier.  
   
--   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> prend deux chemins et retourne un chemin combiné correctement mis en forme.  
+-   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> prend deux chemins et retourne un chemin combiné dans un format correct.  
   
 -   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A> retourne le chemin absolu du parent du chemin fourni.  
   

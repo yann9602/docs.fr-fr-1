@@ -45,7 +45,7 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Guide pratique pour supprimer une clé de Registre en Visual Basic
-Les méthodes <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> et <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> peuvent être utilisées pour supprimer des clés de Registre.  
+Vous pouvez utiliser les méthodes<xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> et <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> pour supprimer les clés de Registre.  
   
 ## <a name="procedure"></a>Procédure  
   
@@ -62,14 +62,14 @@ Les méthodes <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29>
   
 -   Le nom de la clé est `Nothing` (<xref:System.ArgumentNullException>).  
   
--   L’utilisateur ne dispose pas des autorisations nécessaires pour supprimer des clés de Registre (<xref:System.Security.SecurityException>).  
+-   L’utilisateur ne dispose pas des autorisations pour supprimer des clés de Registre (<xref:System.Security.SecurityException>).  
   
--   Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
+-   Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
   
 -   La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Les appels au Registre échouent quand l’utilisateur ne dispose pas des autorisations d’exécution nécessaires (<xref:System.Security.Permissions.RegistryPermission>) ou de l’accès correct (tel que déterminé par les listes de contrôle d’accès) pour créer ou modifier des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation.  
+ Les appels au Registre échouent quand l’utilisateur ne dispose pas des autorisations d’exécution nécessaires (<xref:System.Security.Permissions.RegistryPermission>) ou de l’accès correct (tel que déterminé par les listes de contrôle d’accès) pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>   

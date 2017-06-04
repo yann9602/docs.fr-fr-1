@@ -26,11 +26,11 @@ caps.latest.revision: 56
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3dbadeec14ce9c023af39ae4ff95d0183826e7c1
-ms.openlocfilehash: eb0f0636abb39eabb387388fcdd39df8aca88c34
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: 46f524a8c2ee2d65d5c756a101a5c26c5919e165
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 06/02/2017
 
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
@@ -57,13 +57,13 @@ Cet article est conçu pour vous aider à prendre en main le processus de déplo
   
     -   [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
   
-    -   [Résolution des problèmes de blocage des installations et désinstallations du .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+    -   [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
   
 -   Déploiement du .NET Framework avec une application cliente (pour les développeurs) :  
   
-    -   [Utilisation d'InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield) dans un projet d'installation et de déploiement  
+    -   [Utilisation d'InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) dans un projet d'installation et de déploiement  
   
-    -   [Utilisation d'une application ClickOnce de Visual Studio](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce)  
+    -   [Utilisation d'une application ClickOnce de Visual Studio](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)  
   
     -   [Création d'un package d'installation WiX](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)  
   
@@ -171,12 +171,12 @@ Cet article est conçu pour vous aider à prendre en main le processus de déplo
 |Titre|Description|  
 |-----------|-----------------|  
 |[Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Décrit comment le common language runtime détermine quel assembly utiliser pour répondre à une demande de liaison.|  
-|[Meilleures pratiques pour le chargement d'assemblys](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Explique les moyens d’éviter les problèmes d’identités de type pouvant conduire à des erreurs de type <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, etc.|  
+|[Meilleures pratiques pour le chargement d'assemblys](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.|  
 |[Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.|  
 |[Guide de déploiement pour les administrateurs](../../../docs/framework/deployment/guide-for-administrators.md)|Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système dans un réseau en utilisant System Center Configuration Manager (SCCM).|  
 |[Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.|  
 |[Déploiement d’applications, de services et de composants](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components)|Présente les différentes options de déploiement dans Visual Studio, y compris les instructions de publication d'une application à l'aide des fonctionnalités ClickOnce et Windows Installer.| 
-|[Publication d’applications ClickOnce](http://msdn.microsoft.com/library/eb6dfe79-f54c-4331-8e36-073688e70973)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|  
+|[Publication d’applications ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|  
 |[Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Décrit le modèle « Hub and Spoke » utilisé par le .NET Framework pour empaqueter et déployer des ressources. Fournit des informations sur les conventions de dénomination des ressources, le processus de secours et les alternatives à l'empaquetage.|  
 |[Déploiement d'une application d'interopérabilité](../../../docs/framework/interop/deploying-an-interop-application.md)|Explique comment livrer et installer des applications Interop, qui comportent généralement un assembly client .NET Framework, un ou plusieurs assemblys d'interopérabilité représentant des bibliothèques de types COM distinctes et un ou plusieurs composants COM inscrits.|  
 |[Guide pratique : connaître la progression dans le programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Décrit comment lancer et suivre le processus d'installation sans assistance du .NET Framework tout en affichant votre propre vue de la progression de l'installation.|  

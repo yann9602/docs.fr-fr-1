@@ -39,7 +39,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a>Comment : écrire du texte dans des fichiers à l'aide de Streamwriter dans Visual Basic
+# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a>Guide pratique pour écrire du texte dans des fichiers à l'aide de Streamwriter dans Visual Basic
 Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Computer.FileSystem.OpenTextFileWriter` et l’utilise pour écrire une chaîne dans un fichier texte avec la méthode <xref:System.IO.TextWriter.WriteLine%2A> de la classe <xref:System.IO.StreamWriter>.  
   
 ## <a name="example"></a>Exemple  
@@ -52,7 +52,7 @@ Cet exemple ouvre un objet <xref:System.IO.StreamWriter> avec la méthode `My.Co
   
 -   Le disque est plein (<xref:System.IO.IOException>).  
   
--   Le nom de chemin est trop long (<xref:System.IO.PathTooLongException>).  
+-   Le nom du chemin est trop long (<xref:System.IO.PathTooLongException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
  Cet exemple crée un fichier s’il n’existe pas déjà. Si une application doit créer un fichier, elle doit disposer de l’autorisation `Create` pour accéder au dossier. Si le fichier existe déjà, l’application a uniquement besoin de l’autorisation `Write`, qui est une autorisation de niveau inférieur. Quand cela est possible, il est plus sûr de créer le fichier au cours du déploiement et de n’accorder l’autorisation `Read` que sur un seul fichier, plutôt que l’autorisation `Create` sur un dossier.  

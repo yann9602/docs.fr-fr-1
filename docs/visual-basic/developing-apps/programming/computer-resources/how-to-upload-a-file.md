@@ -41,7 +41,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="how-to-upload-a-file-in-visual-basic"></a>Comment : transférer un fichier dans Visual Basic
+# <a name="how-to-upload-a-file-in-visual-basic"></a>Guide pratique pour charger un fichier dans Visual Basic
 Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> pour charger un fichier et le stocker dans un emplacement distant. Si le paramètre `ShowUI` a la valeur `True`, une boîte de dialogue s’affiche pour indiquer la progression du téléchargement et permettre aux utilisateurs d’annuler l’opération.  
   
 ### <a name="to-upload-a-file"></a>Pour charger un fichier  
@@ -65,9 +65,9 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.Upl
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions suivantes peuvent lever une exception :  
   
--   Le chemin du fichier local n’est pas valide (<xref:System.ArgumentException>).  
+-   Le chemin local n’est pas valide (<xref:System.ArgumentException>).  
   
--   Échec de l’authentification (<xref:System.Security.SecurityException>).  
+-   L’authentification a échoué (<xref:System.Security.SecurityException>).  
   
 -   La connexion a expiré (<xref:System.TimeoutException>).  
   
