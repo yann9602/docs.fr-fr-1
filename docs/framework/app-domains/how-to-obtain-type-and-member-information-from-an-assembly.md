@@ -1,36 +1,38 @@
 ---
-title: "Comment&#160;: obtenir des informations relatives au type et aux membres &#224; partir d&#39;un assembly | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "assemblys (.NET Framework), obtenir des informations à partir de"
-  - "obtenir des informations sur les assemblys"
+title: "Guide pratique pour obtenir des informations relatives au type et aux membres à partir d’un assembly | Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- obtaining assembly information
+- assemblies [.NET Framework], obtaining information from
 ms.assetid: 348ae651-ccda-4f13-8eda-19e8337e9438
 caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 42a950493d6042581d98d3be3f4787df9752af16
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Comment&#160;: obtenir des informations relatives au type et aux membres &#224; partir d&#39;un assembly
-L'espace de noms <xref:System.Reflection> contient plusieurs méthodes pour obtenir des informations à partir d'un assembly.  Cette section illustre l'une de ces méthodes.  Pour plus d'informations, consultez [Vue d'ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md).  
+# <a name="how-to-obtain-type-and-member-information-from-an-assembly"></a>Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly
+L’espace de noms <xref:System.Reflection> contient de nombreuses méthodes pour obtenir des informations à partir d’un assembly. Cette section illustre l’une de ces méthodes. Pour plus d’informations, consultez [Vue d’ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md).  
   
- L'exemple suivant obtient des informations relatives au type et aux membres à partir d'un assembly.  
+ L’exemple suivant obtient des informations relatives au type et aux membres d’un assembly.  
   
-## Exemple  
- [!code-cpp[Conceptual.Types.ViewInfo#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source6.cpp#8)]
- [!code-csharp[Conceptual.Types.ViewInfo#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source6.cs#8)]
- [!code-vb[Conceptual.Types.ViewInfo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source6.vb#8)]  
+## <a name="example"></a>Exemple  
+ [!code-cpp[Conceptual.Types.ViewInfo#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.viewinfo/cpp/source6.cpp#8)] [!code-csharp[Conceptual.Types.ViewInfo#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.viewinfo/cs/source6.cs#8)] [!code-vb[Conceptual.Types.ViewInfo#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.viewinfo/vb/source6.vb#8)]  
   
-## Voir aussi  
- [Hosting Overview](http://msdn.microsoft.com/fr-fr/ea527626-99e3-4995-81c4-c8f3e60eb6d5)   
- [Programming with Application Domains](http://msdn.microsoft.com/fr-fr/bd36055b-56bd-43eb-b4d8-820c37172131)   
+## <a name="see-also"></a>Voir aussi  
+ [Programmation avec des domaines d’application](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)   
  [Réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)   
- [Utilisation des domaines d'application](../../../docs/framework/app-domains/use.md)
+ [Utilisation des domaines d’application](../../../docs/framework/app-domains/use.md)

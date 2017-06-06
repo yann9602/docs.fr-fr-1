@@ -1,41 +1,46 @@
 ---
-title: "Emplacement de l&#39;assembly | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "assemblys (.NET Framework), emplacement"
-  - "rechercher des assemblys"
+title: "Emplacement d’un assembly | Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- locating assemblies
+- assemblies [.NET Framework], location
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
 caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 4ee16bb622b03a5c9975a896aab951ae74d184a9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Emplacement de l&#39;assembly
-L'emplacement d'un assembly détermine si le Common Language Runtime peut le trouver lorsqu'il est référencé. Il peut également déterminer si l'assembly peut être partagé avec d'autres assemblys.  Vous pouvez déployer un assembly aux emplacements suivants :  
+# <a name="assembly-location"></a>Emplacement de l'assembly
+L’emplacement d’un assembly détermine si le common language runtime peut le localiser quand il est référencé, et il peut aussi déterminer si l’assembly peut être partagé avec d’autres assemblys. Vous pouvez déployer un assembly dans les emplacements suivants :  
   
--   Répertoire ou sous\-répertoires de l'application.  
+-   Répertoire ou sous-répertoires de l’application.  
   
-     Il s'agit de l'emplacement le plus courant pour déployer un assembly.  Les sous\-répertoires du répertoire racine d'une application peuvent être basés sur la langue ou sur la culture.  Si un assembly possède des informations dans l'attribut de culture, il doit être placé dans un sous\-répertoire du répertoire de l'application avec le nom de cette culture.  
+     Il s’agit de l’emplacement le plus courant pour déployer un assembly. Les sous-répertoires du répertoire racine d’une application peuvent être basés sur la langue ou la culture. Si un assembly a des informations de l’attribut de culture, il doit se trouver dans un sous-répertoire sous le répertoire de l’application avec le nom de cette culture.  
   
--   Global Assembly Cache.  
+-   Le Global Assembly Cache.  
   
-     Il s'agit d'un cache de code à l'échelle de l'ordinateur, installé au même emplacement que le Common Language Runtime.  Dans la plupart des cas, si vous comptez partager un assembly entre plusieurs applications, vous devez le déployer dans le Global Assembly Cache.  
+     Il s’agit d’un cache de code au niveau de la machine, qui est installé partout où le common language runtime est installé. Dans la plupart des cas, si vous prévoyez de partager un assembly entre plusieurs applications, vous devez le déployer dans le Global Assembly Cache.  
   
--   Serveur HTTP.  
+-   Sur un serveur HTTP.  
   
-     Un assembly déployé sur un serveur HTTP doit avoir un nom fort. Pointez sur l'assembly dans la section du code base du fichier de configuration de l'application.  
+     Un assembly déployé sur un serveur HTTP doit avoir un nom fort ; vous pointez vers l’assembly dans la section codebase du fichier de configuration de l’application.  
   
-## Voir aussi  
- [Création d'assemblys](../../../docs/framework/app-domains/create-assemblies.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Création d’assemblys](../../../docs/framework/app-domains/create-assemblies.md)   
  [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)   
  [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [Programmation à l'aide d'assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)
+ [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)

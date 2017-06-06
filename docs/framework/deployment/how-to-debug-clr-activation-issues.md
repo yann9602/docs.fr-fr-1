@@ -1,77 +1,82 @@
 ---
-title: "Comment&#160;: d&#233;boguer les probl&#232;mes d&#39;activation du CLR | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "activation des CLR, problèmes de débogage"
+title: "Guide pratique pour déboguer les problèmes d’activation du CLR | Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 caps.latest.revision: 5
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 5
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 2df9b03603c5df6bd803187bd1299f5d730bc32c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Comment&#160;: d&#233;boguer les probl&#232;mes d&#39;activation du CLR
-Si vous rencontrez des problèmes en éxecutant votre application avec la version correcte du common langage runtime \(CLR\), vous pouvez afficher et déboguer des journaux de lancement du CLR.  Ces journaux peuvent être très utiles pour déterminer la cause première d'un problème de lancement, lorsque votre application charge une version CLR autre que prévue ou ne charge pas le CLR du tout.  [Erreurs d'initialisation de .NET Framework : gérer l'expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) décrit l'expérience lorsque aucun CLR n'est trouvé pour une application.  
+# <a name="how-to-debug-clr-activation-issues"></a>Guide pratique pour déboguer les problèmes d’activation du CLR
+Si vous avez des difficultés à faire en sorte que votre application s’exécute avec la version correcte du Common Language Runtime (CLR), vous pouvez afficher et déboguer les journaux d’activation du CLR. Ces journaux peuvent être très utiles pour déterminer la cause d’un problème d’activation, quand votre application charge une autre version du CLR que celle prévue ou ne charge pas du tout le CLR. L’article [Erreurs d’initialisation de .NET Framework : gérer l’expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) décrit l’expérience quand aucun CLR n’est trouvé pour une application.  
   
- La journalisation du lancement du CLR peut être activé à l'échelle système grâce à une clé de Registre HKEY\_LOCAL\_MACHINE ou d'une variable d'environnement système.  Le journal sera généré jusqu'à ce que l'entrée du registre ou la variable d'environnement est supprimée.  Sinon, vous pouvez utiliser une variable d'environnement d'utilisateur ou de processus local pour activer la journalisation avec une portée et une durée différentes.  
+ Vous pouvez activer la journalisation de l’activation du CLR à l’échelle du système à l’aide d’une clé de Registre HKEY_LOCAL_MACHINE ou d’une variable d’environnement système. Le journal sera généré jusqu’à ce que l’entrée de Registre ou la variable d’environnement soit supprimée. Vous pouvez également utiliser une variable d’environnement utilisateur ou locale au processus pour activer la journalisation avec une portée et une durée différentes.  
   
- Les journaux de lancement du CLR ne doivent pas être confondus avec [journaux de liaison d'assembly](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), qui sont totallement différents.  
+ Il ne faut pas confondre les journaux d’activation du CLR avec les [journaux de liaison d’assembly](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), qui sont totalement différents.  
   
-## Pour activer la journalisation de lancement du CLR  
+## <a name="to-enable-clr-activation-logging"></a>Pour activer la journalisation de l’activation du CLR  
   
-#### Utiliser le Registre  
+#### <a name="using-the-registry"></a>À l’aide du Registre  
   
-1.  Dans l'éditeur du registre, accédez au dossier HKEY\_LOCAL\_MACHINE \_\_ent\_dict\_AnyPathTillLastSlash \(sur un ordinateur 64 bits\).  
+1.  Dans l’Éditeur du Registre, accédez au dossier HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework (sur un ordinateur 32 bits) ou HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework (sur un ordinateur 64 bits).  
   
-2.  Ajoutez une chaîne nommée `CLRLoadLogDir`, et définissez comme valeur le chemin d'accès complet d'un dossier existant dans lequel vous souhaitez stocker les journaux de lancement du CLR.  
+2.  Ajoutez une valeur de chaîne nommée `CLRLoadLogDir` et affectez-lui le chemin complet d’un répertoire existant où vous souhaitez stocker les journaux d’activation du CLR.  
   
- La ournalisation du lancement reste activé jusqu'à ce que vous supprimiez la valeur de la chaîne.  
+ La journalisation de l’activation reste active jusqu’à ce que vous supprimiez la valeur de chaîne.  
   
-#### Utiliser une variable d'environnement  
+#### <a name="using-an-environment-variable"></a>À l’aide d’une variable d’environnement  
   
--   Définissez la variable d'environnement d' `COMPLUS_CLRLoadLogDir` une chaîne qui représente le chemin complet d'un dossier existant dans lequel vous souhaitez stocker des journaux de lancement du CLR.  
+-   Affectez à la variable d’environnement `COMPLUS_CLRLoadLogDir` une chaîne qui représente le chemin complet d’un répertoire existant où vous souhaitez stocker les journaux d’activation du CLR.  
   
-     La définition de la variable d'environnement détermine sa portée :  
+     La façon dont vous définissez la variable d’environnement détermine sa portée :  
   
-    -   Si vous lui définissez au niveau du système, la journalisation du lancement est activé pour toutes les applications Framework .NET sur cet ordinateur jusqu'à ce que la variable d'environnement soit supprimée.  
+    -   Si vous la définissez au niveau du système, la journalisation de l’activation est activée pour toutes les applications .NET Framework sur cet ordinateur jusqu’à ce que la variable d’environnement soit supprimée.  
   
-    -   Si vous le configurez au niveau de l'utilisateur, la journalisation du lancement est activé uniquement pour le compte d'utilisateur actuel.  La journalisation se poursuit jusqu'à ce que la variable d'environnement soit supprimée.  
+    -   Si vous la définissez au niveau de l’utilisateur, la journalisation de l’activation est activée uniquement pour le compte d’utilisateur actuel. La journalisation continue jusqu’à ce que la variable d’environnement soit supprimée.  
   
-    -   Si vous le configurez dans processus avant de charger le CLR, la journalisation du lancement est activé jusqu'à ce que le processus se termine.  
+    -   Si vous la définissez à l’intérieur du processus avant le chargement du CLR, la journalisation de l’activation est activée jusqu’à ce que le processus se termine.  
   
-    -   Si vous le configurez grâce à un invité de commande avant d'exécuter une application, la journalisation est activé pour toute application qui est exécutée dans cette invité de commande.  
+    -   Si vous la définissez à une invite de commandes avant d’exécuter une application, la journalisation de l’activation est activée pour toute application exécutée à partir de cette invite de commandes.  
   
-     Par exemple, pour stocker les journaux d'activation dans le répértoire c:\\clrloadlogs avec une portée de niveau processus, ouvrir un invité de commande et tapez le texte suivant avant d'exécuter l'application :  
+     Par exemple, pour stocker les journaux d’activation dans le répertoire c:\clrloadlogs avec une portée au niveau du processus, ouvrez une fenêtre d’invite de commandes et tapez ce qui suit avant d’exécuter l’application :  
   
     ```  
     set COMPLUS_CLRLoadLogDir=c:\clrloadlogs  
     ```  
   
-## Exemple  
- La journalisation d'activation du CLR proposent de grandes quantités de données sur l'activation du CLR et l'utilisation des API d'hébergement du CLR.  La plupart de ces données est utilisée en interne par Microsoft, mais certaines données peuvent également être utiles pour les développeurs, comme décrit dans cet article.  
+## <a name="example"></a>Exemple  
+ Les journaux d’activation du CLR fournissent une grande quantité de données sur l’activation du CLR et l’utilisation des API d’hébergement du CLR. La plupart de ces données sont utilisées en interne par Microsoft, mais certaines peuvent également être utiles aux développeurs, comme décrit dans cet article.  
   
- Le journal reflète l'ordre dans lequel les API d'hébergement du CLR sont appelées.  Il inclut également des informations utiles sur l'ensemble des runtimes installés détectés sur l'ordinateur.  Le format de journal d'activation du CLR n'est pas encore lui\-même documenté, mais peut être utilisé pour aider les développeurs qui doivent résoudre des problèmes de lancement du CLR.  
-  
-> [!NOTE]
->  Vous ne pouvez pas ouvrir un journal de lancement tant que le processus utilisant le CLR est en cours.  
+ Le journal reflète l’ordre dans lequel les API d’hébergement du CLR ont été appelées. Il inclut également des données utiles relatives à l’ensemble des runtimes installés détectés sur l’ordinateur. Le format du journal d’activation du CLR n’est pas documenté, mais peut être utilisé pour aider les développeurs qui doivent résoudre des problèmes d’activation du CLR.  
   
 > [!NOTE]
->  Les journaux de lancement du CLR ne sont pas localisés ; ils sont toujours générés dans la langue anglaise.  
+>  Vous ne pouvez pas ouvrir un journal d’activation tant que le processus qui utilise le CLR ne s’est pas arrêté.  
   
- Dans l'exemple suivant d'un journal de lancement, la plupart des informations utiles sont mises en surbrillance et décrites après le journal.  
+> [!NOTE]
+>  Les journaux d’activation du CLR ne sont pas localisés ; ils sont toujours générés en langue anglaise.  
+  
+ Dans l’exemple de journal d’activation suivant, les informations les plus utiles sont mises en surbrillance et décrites après le journal.  
   
 ```  
 532,205950.367,CLR Loading log for C:\Tests\myapp.exe   
@@ -100,37 +105,33 @@ Si vous rencontrez des problèmes en éxecutant votre application avec la versio
 532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3   
 532,205950.398,FunctionCall: RealDllMain. Reason: 0   
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0  
-  
 ```  
   
--   **Le journal de chargement du CLR** fournit le chemin d'accès au fichier exécutable qui a démarré le processus qui a chargé le code managé.  Notez que cela peut être un hôte natif.  
+-   **CLR Loading log** fournit le chemin du fichier exécutable qui a démarré le processus ayant chargé du code managé. Notez qu’il peut s’agir d’un hôte natif.  
   
     ```  
     532,205950.367,CLR Loading log for C:\Tests\myapp.exe  
-  
     ```  
   
--   **Le runtime installé** est un ensemble de versions du CLR installées sur l'ordinateur qui sont des candidats pour la demande de lancement.  
+-   **Installed Runtime** est l’ensemble des versions du CLR installées sur l’ordinateur qui sont des candidats pour la demande d’activation.  
   
     ```  
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0  
-  
     ```  
   
--   **généré avec la version** est la version du CLR qui a été utilisé pour générer le fichier binaire qui a été fournie à une méthode telle que [ICLRMetaHostPolicy::GetRequestedRuntime](../Topic/ICLRMetaHostPolicy::GetRequestedRuntime%20Method.md).  
+-   **built with version** est la version du CLR qui a été utilisée pour générer le fichier binaire fourni à une méthode comme [ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).  
   
     ```  
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727  
-  
     ```  
   
--   **installation de fonctionnalité à la demande** fait référence à activer le .NET Framework 3.5 sur windows 8.  Pour plus d'informations sur les scénarios, consultez [Erreurs d'initialisation de .NET Framework : gérer l'expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).  
+-   **feature-on-demand installation** fait référence à l’activation du .NET Framework 3.5 sur Windows 8. Pour plus d’informations sur ce scénario, consultez [Erreurs d’initialisation de .NET Framework : gérer l’expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).  
   
     ```  
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3  
-  
     ```  
   
-## Voir aussi  
- [déploiement](../../../docs/framework/deployment/net-framework-and-applications.md)   
- [Comment : configurer une application pour prendre en charge le .NET Framework 4 ou 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+## <a name="see-also"></a>Voir aussi  
+ [Déploiement](../../../docs/framework/deployment/index.md)   
+ [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+

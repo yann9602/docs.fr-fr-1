@@ -1,62 +1,67 @@
 ---
-title: "Rubriques Comment relatives aux domaines d&#39;application et aux assemblys | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "domaines d'application, articles Comment faire"
-  - "assemblys (.NET Framework), articles Comment faire"
+title: "Rubriques Guide pratique relatives aux domaines d’application et aux assemblys | Microsoft Docs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- assemblies [.NET Framework], how-tos
+- application domains, how-tos
 ms.assetid: 2264054e-712e-47e4-8657-1aa1cfec3e3d
 caps.latest.revision: 6
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 6
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: afbedbf1565f698d0bda2afe6e75d68c610f2aa2
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Rubriques Comment relatives aux domaines d&#39;application et aux assemblys
-Les sections suivantes contiennent des liens vers toutes les rubriques « Comment » de la documentation conceptuelle relative à la programmation à l'aide des domaines d'application et des assemblys.  
+# <a name="application-domains-and-assemblies-how-to-topics"></a>Rubriques Comment relatives aux domaines d'application et aux assemblys
+Les sections suivantes contiennent des liens vers toutes les rubriques Guide pratique de la documentation conceptuelle pour la programmation avec des domaines d’application et des assemblys.  
   
- **Domaines d'application**  
+ **Domaines d’application**  
   
--   [Comment : créer un domaine d'application](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
+-   [Guide pratique pour créer un domaine d’application](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
   
--   [Comment : décharger un domaine d'application](../../../docs/framework/app-domains/how-to-unload-an-application-domain.md)  
+-   [Guide pratique pour décharger un domaine d’application](../../../docs/framework/app-domains/how-to-unload-an-application-domain.md)  
   
--   [Comment : configurer un domaine d'application](../../../docs/framework/app-domains/how-to-configure-an-application-domain.md)  
+-   [Guide pratique pour configurer un domaine d’application](../../../docs/framework/app-domains/how-to-configure-an-application-domain.md)  
   
--   [Comment : charger des assemblys dans un domaine d'application](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
+-   [Guide pratique pour charger des assemblys dans un domaine d’application](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
   
--   [Comment : obtenir des informations relatives au type et aux membres à partir d'un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+-   [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
   
  **Assemblys**  
   
--   [Comment : déterminer le nom qualifié complet d'un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+-   [Guide pratique pour déterminer le nom qualifié complet d'un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
   
--   [Comment : générer un assembly à fichier unique](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
+-   [Guide pratique pour générer un assembly à fichier unique](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
   
--   [Comment : générer un assembly multifichier](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+-   [Guide pratique pour générer un assembly multifichier](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
   
--   [Comment : créer une paire de clés publique\/privée](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
+-   [Guide pratique pour créer une paire de clés publique/privée](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
   
 -   [Comment : signer un assembly avec un nom fort](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
   
--   [Comment : référencer un assembly avec nom fort](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)  
+-   [Guide pratique pour référencer un assembly avec un nom fort](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)  
   
--   [Comment : désactiver la fonctionnalité consistant à ignorer les noms forts](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)  
+-   [Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)  
   
--   [Comment : installer un assembly dans le Global Assembly Cache](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
+-   [Guide pratique pour installer un assembly dans le Global Assembly Cache](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
   
--   [Comment : visualiser le contenu du Global Assembly Cache](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
+-   [Guide pratique pour visualiser le contenu du Global Assembly Cache](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
   
--   [Comment : supprimer un assembly du Global Assembly Cache](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
+-   [Guide pratique pour supprimer un assembly du Global Assembly Cache](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
   
--   [Comment : afficher le contenu d'un assembly](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
+-   [Guide pratique pour afficher le contenu d’un assembly](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Domaines d'application et assemblys](../../../docs/framework/app-domains/index.md)
