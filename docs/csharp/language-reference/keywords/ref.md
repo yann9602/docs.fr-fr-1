@@ -45,17 +45,17 @@ Le mot clé `ref` entraîne le passage d'un argument par référence, et non par
   
  Pour utiliser un paramètre `ref`, la définition de la méthode et la méthode d'appel doivent utiliser explicitement le mot clé `ref`, comme indiqué dans l'exemple suivant.  
   
- [!code-cs[csrefKeywordsMethodParams#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_1.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#6](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-1.cs)]  
   
  Un argument passé à un paramètre `ref` doit être initialisé avant d'être transmis. Cette obligation diffère des paramètres `out`, dont les arguments ne doivent pas être explicitement initialisés avant d'être passés. Pour plus d’informations, consultez [out](../../../csharp/language-reference/keywords/out.md).  
   
  Les membres d'une classe ne peuvent pas avoir de signatures qui diffèrent uniquement par `ref` et `out`. Une erreur de compilation se produit si la seule différence entre deux membres d'un type est que l'un d'eux a un paramètre `ref`et l'autre un paramètre `out`. Le code suivant, par exemple, ne se compile pas.  
   
- [!code-cs[csrefKeywordsMethodParams#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_2.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#2](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-2.cs)]  
   
  Cependant, la surcharge peut avoir lieu quand une méthode a un paramètre `ref` ou `out`, et que l'autre a un paramètre de valeur, comme illustré dans l'exemple suivant.  
   
- [!code-cs[csrefKeywordsMethodParams#7](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_3.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#7](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-3.cs)]  
   
  Dans d'autres situations nécessitant une correspondance de signature, comme le masquage ou la substitution, `ref` et `out` font partie de la signature et ne correspondent pas l'un à l'autre.  
   
@@ -72,7 +72,7 @@ Le mot clé `ref` entraîne le passage d'un argument par référence, et non par
 ## <a name="example"></a>Exemple  
  Les exemples précédents montrent ce qui se produit lors du passage de types valeur par référence. Vous pouvez également utiliser le mot clé `ref` pour passer les types référence. Le passage d'un type référence par référence permet à la méthode appelée de remplacer l'objet dans la méthode appelante à laquelle fait référence le paramètre de référence. L'emplacement de stockage de l'objet est passé à la méthode comme valeur du paramètre de référence. Si vous modifiez la valeur de l'emplacement de stockage du paramètre (pour pointer vers un nouvel objet), vous modifiez également l'emplacement de stockage auquel fait référence l'appelant. L'exemple suivant passe une instance d'un type référence en tant que paramètre `ref`. Pour plus d’informations sur la manière de passer des types référence par valeur et par référence, consultez [Passage de paramètres de type référence ](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md).  
   
- [!code-cs[csrefKeywordsMethodParams#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/ref_4.cs)]  
+ [!code-cs[csrefKeywordsMethodParams#8](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-4.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
