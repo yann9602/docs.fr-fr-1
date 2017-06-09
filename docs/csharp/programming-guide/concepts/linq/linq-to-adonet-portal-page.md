@@ -26,7 +26,7 @@ ms.lasthandoff: 03/13/2017
 
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (page de portail)
-[!INCLUDE[linq_adonet](../../../../csharp/programming-guide/concepts/linq/includes/linq_adonet_md.md)] vous permet d’interroger tout objet énumérable dans [!INCLUDE[vstecado](~/includes/vstecado_md.md)] à l’aide du modèle de programmation [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)].  
+[!INCLUDE[linq_adonet](../../../../csharp/programming-guide/concepts/linq/includes/linq_adonet_md.md)] vous permet d’interroger tout objet énumérable dans [!INCLUDE[vstecado](~/includes/vstecado-md.md)] à l’aide du modèle de programmation [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)].  
   
 > [!NOTE]
 >  La documentation [!INCLUDE[linq_adonet](../../../../csharp/programming-guide/concepts/linq/includes/linq_adonet_md.md)] se trouve dans la section ADO.NET du kit SDK du .NET Framework : [LINQ et ADO.NET](http://msdn.microsoft.com/library/bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec).  
@@ -34,7 +34,7 @@ ms.lasthandoff: 03/13/2017
  Il existe trois technologies ADO.NET [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] différentes : [!INCLUDE[linq_dataset](../../../../csharp/programming-guide/concepts/linq/includes/linq_dataset_md.md)], [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] et [!INCLUDE[linq_entities](../../../../csharp/programming-guide/concepts/linq/includes/linq_entities_md.md)]. [!INCLUDE[linq_dataset](../../../../csharp/programming-guide/concepts/linq/includes/linq_dataset_md.md)] permet des requêtes plus riches et optimisées du <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] vous permet d’interroger directement des schémas de base de données [!INCLUDE[ssNoVersion](../../../../csharp/programming-guide/concepts/linq/includes/ssnoversion_md.md)], et [!INCLUDE[linq_entities](../../../../csharp/programming-guide/concepts/linq/includes/linq_entities_md.md)] d’interroger un [!INCLUDE[adonet_edm](../../../../csharp/programming-guide/concepts/linq/includes/adonet_edm_md.md)].  
   
 ## <a name="linq-to-dataset"></a>LINQ to DataSet  
- Le <xref:System.Data.DataSet> est un des composants plus largement utilisés dans [!INCLUDE[vstecado](~/includes/vstecado_md.md)] et c’est un élément clé du modèle de programmation déconnecté sur lequel [!INCLUDE[vstecado](~/includes/vstecado_md.md)] est fondé. En dépit de cette importance, le <xref:System.Data.DataSet> a cependant des capacités de requête limitées.  
+ Le <xref:System.Data.DataSet> est un des composants plus largement utilisés dans [!INCLUDE[vstecado](~/includes/vstecado-md.md)] et c’est un élément clé du modèle de programmation déconnecté sur lequel [!INCLUDE[vstecado](~/includes/vstecado-md.md)] est fondé. En dépit de cette importance, le <xref:System.Data.DataSet> a cependant des capacités de requête limitées.  
   
  [!INCLUDE[linq_dataset](../../../../csharp/programming-guide/concepts/linq/includes/linq_dataset_md.md)] vous permet de créer des fonctionnalités de requête plus complètes dans <xref:System.Data.DataSet> à l’aide des mêmes fonctionnalités de requête que celles qui sont disponibles pour de nombreuses autres sources de données.  
   
