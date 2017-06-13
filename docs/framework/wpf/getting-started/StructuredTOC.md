@@ -1,6 +1,0 @@
-# [Mise en route](index.md)
-## [Présentation de WPF dans Visual Studio 2015](introduction-to-wpf-in-vs.md)
-## [Nouveautés de WPF version 4.5](whats-new.md)
-## [Procédure pas à pas : mise en route de WPF](walkthrough-my-first-wpf-desktop-application.md)
-## [Procédures pas à pas WPF](wpf-walkthroughs.md)
-## [Commentaires de la communauté WPF](community-feedback.md)

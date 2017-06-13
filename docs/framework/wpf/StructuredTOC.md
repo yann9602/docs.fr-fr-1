@@ -1,7 +1,0 @@
-# [Windows Presentation Foundation](index.md)
-# [Sécurité](security-wpf.md)
-## [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)
-## [Stratégie de sécurité de WPF - ingénierie de la plateforme](wpf-security-strategy-platform-security.md)
-## [Stratégie de sécurité de WPF - ingénierie de sécurité](wpf-security-strategy-security-engineering.md)
-# [Exemples WPF](wpf-samples.md)
-# [Bibliothèque de classes](class-library-wpf.md)
