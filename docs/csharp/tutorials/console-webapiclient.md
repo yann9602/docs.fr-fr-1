@@ -165,16 +165,16 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
 ```
 
-Ensuite, vous utiliserez le sérialiseur pour convertir le JSON en objets C#. Remplacez l’appel à @System.Net.Http.HttpClient.GetStringAsync (System.String) dans votre méthode `ProcessRepositories` avec les deux lignes suivantes :
+Ensuite, vous utiliserez le sérialiseur pour convertir le JSON en objets C#. Remplacez l’appel à @System.Net.Http.HttpClient.GetStringAsync  (System.String) dans votre méthode `ProcessRepositories` avec les deux lignes suivantes :
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
 var repositories = serializer.ReadObject(await streamTask) as List<repo>;
 ```
 
-Notez que vous utilisez maintenant @System.Net.Http.HttpClient.GetStreamAsync (System.String) au lieu de @System.Net.Http.HttpClient.GetStringAsync (System.String). Le sérialiseur utilise un flux plutôt qu’une chaîne comme source. Nous allons expliquer quelques fonctionnalités du langage C# qui sont utilisées dans la deuxième ligne ci-dessus. L’argument @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream) est une expression `await`. Les expressions await peuvent apparaître quasiment n’importe où dans votre code, bien que jusqu'à présent, vous les avez uniquement vues dans le cadre d’une instruction d’assignation.
+Notez que vous utilisez maintenant @System.Net.Http.HttpClient.GetStreamAsync  (System.String) au lieu de @System.Net.Http.HttpClient.GetStringAsync  (System.String). Le sérialiseur utilise un flux plutôt qu’une chaîne comme source. Nous allons expliquer quelques fonctionnalités du langage C# qui sont utilisées dans la deuxième ligne ci-dessus. L’argument  @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream) est une expression `await`. Les expressions await peuvent apparaître quasiment n’importe où dans votre code, bien que jusqu'à présent, vous les avez uniquement vues dans le cadre d’une instruction d’assignation.
 
-Deuxièmement, l’opérateur `as` convertit le type au moment de la compilation `object` en `List<repo>`. La déclaration de @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream) déclare qu’un objet de type <xref:System.Object?displayProperty=fullName> est retourné. @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream) renverra le type que vous avez spécifié lorsque vous l’avez construit (`List<repo>` dans ce didacticiel). Si la conversion échoue, l’opérateur `as` a la valeur `null`, au lieu de lever une exception.
+Deuxièmement, l’opérateur `as` convertit le type au moment de la compilation `object` en `List<repo>`. La déclaration de  @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject  (System.IO.Stream) déclare qu’un objet de type <xref:System.Object?displayProperty=fullName> est retourné. @System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject  (System.IO.Stream) renverra le type que vous avez spécifié lorsque vous l’avez construit (`List<repo>` dans ce didacticiel). Si la conversion échoue, l’opérateur `as` a la valeur `null`, au lieu de lever une exception.
 
 Nous en avons presque terminé avec cette section. Maintenant que vous avez converti le JSON en objets C#, nous allons afficher le nom de chaque dépôt. Remplacez les lignes :
 
@@ -350,7 +350,7 @@ public DateTime LastPush
 }
 ```
 
-Examinons les nouvelles constructions ci-dessus. L’attribut `IgnoreDataMember` indique au sérialiseur que ce type ne doit pas être lu ou écrit à partir de n’importe quel objet JSON. Cette propriété contient uniquement un accesseur `get`. Il n'existe aucun accesseur `set`. C’est la façon dont vous définissez une propriété *en lecture seule* en C#. (Oui, vous pouvez créer des propriétés *en écriture seule* en C#, mais leur intérêt est limité.) La méthode @System.DateTime.ParseExact (System.String,System.String,System.IFormatProvider) analyse une chaîne et crée une @System.DateTime à l’aide d’un format de date fourni et ajoute des métadonnées supplémentaires à la `DateTime` à l’aide d’un objet `CultureInfo`. Si l’opération d’analyse échoue, l’accesseur de propriété lève une exception.
+Examinons les nouvelles constructions ci-dessus. L’attribut `IgnoreDataMember` indique au sérialiseur que ce type ne doit pas être lu ou écrit à partir de n’importe quel objet JSON. Cette propriété contient uniquement un accesseur `get`. Il n'existe aucun accesseur `set`. C’est la façon dont vous définissez une propriété *en lecture seule* en C#. (Oui, vous pouvez créer des propriétés *en écriture seule* en C#, mais leur intérêt est limité.) La méthode @System.DateTime.ParseExact  (System.String,System.String,System.IFormatProvider) analyse une chaîne et crée une @System.DateTime à l’aide d’un format de date fourni et ajoute des métadonnées supplémentaires à la `DateTime` à l’aide d’un objet `CultureInfo`. Si l’opération d’analyse échoue, l’accesseur de propriété lève une exception.
 
 Pour utiliser @System.Globalization.CultureInfo.InvariantCulture, vous devez ajouter l’espace de noms @System.Globalization aux instructions `using` dans `repo.cs` :
 
