@@ -1,5 +1,5 @@
 ---
-title: "Développement de bibliothèques avec des outils multiplateformes"
+title: "Développement de bibliothèques avec des outils multiplateformes| Microsoft Docs"
 description: "Développement de bibliothèques avec des outils multiplateformes"
 keywords: .NET, .NET Core
 author: cartermp
@@ -11,10 +11,10 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 9f6e8679-bd7e-4317-b3f9-7255a260d9cf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e6286e65ac24de3318f9ec7c97ef6ee2c7b192ed
-ms.openlocfilehash: 15528cb0a12da07763613bee79180c4941224ddf
+ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
+ms.openlocfilehash: b56a285d21c9103f76b4e9fb0749a4e36a603074
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 06/15/2017
 
 ---
 
@@ -46,7 +46,7 @@ Si vous n’êtes pas très familiarisé avec .NET Standard, reportez-vous à [l
 
 Voici un tableau qui associe les versions .NET Standard à diverses implémentations :
 
-[!INCLUDE [net-standard-table](../../includes/net-standard-table.md)]
+[!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
 
 Voici ce que signifie ce tableau dans le processus de création d’une bibliothèque :
 
@@ -320,11 +320,12 @@ Les scénarios de consommation tels que celui-ci signifient que les API auxquell
 
 * **AwesomeLibrary.Core** : projet principal qui contient toute la logique de la bibliothèque
 * **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en C#
-* **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en C#
+* **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en F#
 
 Vous pouvez exécuter les commandes suivantes dans votre terminal pour produire la même structure que ce guide :
 
 ```console
+mkdir AwesomeLibrary && cd AwesomeLibrary
 dotnet new sln
 mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib
 cd ..
@@ -332,9 +333,9 @@ mkdir AwesomeLibrary.CSharp && cd AwesomeLibrary.CSharp && dotnet new classlib
 cd ..
 mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang F#
 cd ..
-dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core/csproj
-dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp/csproj
-dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp/csproj
+dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
+dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp.csproj
+dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp.fsproj
 ```
 
 Cette opération ajoute les trois projets ci-dessus et un fichier solution qui les relie.  Le fait de créer le fichier solution et de lier des projets vous permet de restaurer et de générer des projets à partir d’un niveau supérieur.
@@ -344,7 +345,7 @@ Cette opération ajoute les trois projets ci-dessus et un fichier solution qui l
 La meilleure façon de référencer un projet consiste à utiliser l’interface de ligne de commande .NET pour ajouter une référence de projet.  À partir des répertoires de projet **AwesomeLibrary.CSharp** et de **AwesomeLibrary.FSharp**, vous pouvez exécuter la commande suivante :
 
 ```console
-$ dotnet add reference ../AwesomeLibrary.Core.csproj
+$ dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 
 Les fichiers projet pour **AwesomeLibrary.CSharp** et **AwesomeLibrary.FSharp** référencent désormais **AwesomeLibrary.Core** comme cible de `ProjectReference`.  Pour le vérifier, confirmez la présence des éléments suivants dans les fichiers projet :
@@ -360,3 +361,4 @@ Vous pouvez ajouter manuellement cette section à chaque fichier projet si vous 
 ### <a name="structuring-a-solution"></a>Structuration d’une solution
 
 Un autre aspect important des solutions à projets multiples est la mise en place d’une bonne structure de projet globale. Vous pouvez organiser le code comme vous le souhaitez, et tant que vous liez chaque projet à votre fichier solution avec `dotnet sln add`, vous pouvez exécuter `dotnet restore` et `dotnet build` au niveau de la solution.
+
