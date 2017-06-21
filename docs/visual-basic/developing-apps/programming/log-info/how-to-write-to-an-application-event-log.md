@@ -71,7 +71,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour écrire de
   
 3.  Ajoutez cet élément à cette section `<listeners>` :  
   
-    ```xml  
+    ```  
     <add name="EventLog"/>  
     ```  
   
@@ -79,7 +79,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour écrire de
   
 5.  Ajoutez cet élément à cette section `<sharedListeners>` :  
   
-    ```xml  
+    ```  
     <add name="EventLog"  
         type="System.Diagnostics.EventLogTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
          initializeData="APPLICATION_NAME"/>  
