@@ -10,9 +10,10 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
 ms.openlocfilehash: 815d9c24c139ef738b256c7bee791756a2fdb3b3
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -346,7 +347,7 @@ Type non conforme | Description | Alternative conforme à CLS
  
  La bibliothèque de classes du .NET Framework ou toute autre bibliothèque de classes peut inclure d'autres types non conformes à CLS. Par exemple : 
  
- * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int`*nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
+ * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int` *nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
 
   ```csharp
   using System;
