@@ -1,40 +1,45 @@
 ---
-title: "Transfert de type dans le Common Language Runtime | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "assemblys (.NET Framework), transfert de type"
-  - "transfert de type"
+title: Transfert de type dans le Common Language Runtime | Microsoft Docs
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- assemblies [.NET Framework], type forwarding
+- type forwarding
 ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 3515a15432d2b7ff68c19dbd966806d0df3be7a8
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/02/2017
+
 ---
-# Transfert de type dans le Common Language Runtime
-Le transfert de type vous permet de déplacer un type dans un autre assembly sans avoir à recompiler les applications qui utilisent l'assembly d'origine.  
+# <a name="type-forwarding-in-the-common-language-runtime"></a>Transfert de type dans le Common Language Runtime
+Le transfert de type vous permet de déplacer un type vers un autre assembly sans avoir à recompiler les applications utilisant l’assembly d’origine.  
   
- Par exemple, supposons qu'une application utilise la classe `Example` dans un assembly nommé `Utility.dll`.  Les développeurs de `Utility.dll` peuvent décider de refactoriser l'assembly et, dans le cadre du processus, ils peuvent déplacer la classe `Example` dans un autre assembly.  Si l'ancienne version de `Utility.dll` est remplacée par la nouvelle version de `Utility.dll` et son assembly auxiliaire, l'application qui utilise la classe `Example` échoue, car elle ne peut pas localiser la classe `Example` dans la nouvelle version de `Utility.dll`.  
+ Par exemple, supposons qu’une application utilise la classe `Example` dans un assembly appelé `Utility.dll`. Les développeurs de `Utility.dll` peuvent décider de refactoriser l’assembly, et dans le cadre du processus sont susceptibles de déplacer la classe `Example` vers un autre assembly. Si l’ancienne version de `Utility.dll` est remplacée par la nouvelle version de `Utility.dll` et son assembly auxiliaire, l’application utilisant la classe `Example` est mise en échec car elle ne peut pas localiser la classe `Example` dans la nouvelle version de `Utility.dll`.  
   
- Les développeurs de `Utility.dll` peuvent éviter ce problème en transférant les demandes pour la classe `Example` à l'aide de l'attribut <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>.  Si l'attribut a été appliqué à la nouvelle version de `Utility.dll`, les demandes pour la classe `Example` sont transférées à l'assembly qui contient maintenant la classe.  L'application existante continue à fonctionner normalement, sans recompilation.  
+ Les développeurs de `Utility.dll` peuvent éviter ce problème en transférant les demandes pour la classe `Example` à l’aide de l’attribut <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>. Si l’attribut a été appliqué à la nouvelle version de `Utility.dll`, les demandes associées à la classe `Example` sont transmises à l’assembly qui contient la classe. L’application existante continue à fonctionner normalement, sans nouvelle compilation.  
   
 > [!NOTE]
->  Dans le .NET Framework version 2.0, vous ne pouvez pas transférer de types provenant d'assemblys écrits en Visual Basic.  Toutefois, une application écrite en Visual Basic peut utiliser des types transférés.  Autrement dit, si l'application utilise un assembly codé en C\# ou C\+\+ et qu'un type de cet assembly est transféré vers un autre assembly, l'application Visual Basic peut utiliser le type transféré.  
+>  Dans .NET Framework version 2.0, il est impossible de transférer des types provenant d’assemblys écrits en Visual Basic. Toutefois, une application écrite en Visual Basic peut utiliser des types transférés. Autrement dit, si l’application utilise un assembly codé en C# ou C++ et qu’un type de cet assembly est transmis à un autre assembly, l’application Visual Basic peut utiliser le type transféré.  
   
-## Transfert de types  
- Le transfert d'un type s'effectue en quatre étapes :  
+## <a name="forwarding-types"></a>Transfert de types  
+ Le transfert de type se décompose en quatre étapes :  
   
-1.  Déplacez le code source pour le type de l'assembly d'origine vers l'assembly de destination.  
+1.  Déplacez le code source associé au type de l’assembly d’origine à l’assembly de destination.  
   
-2.  Dans l'assembly où était localisé le type, ajoutez un <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> pour le type qui a été déplacé.  Le code suivant montre l'attribut d'un type nommé `Example` qui a été déplacé.  
+2.  Dans l’assembly où se trouvait le type, ajoutez un <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> pour le type qui a été déplacé. Le code suivant représente l’attribut pour un type nommé `Example` qui a été déplacé.  
   
     ```csharp  
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
@@ -44,11 +49,11 @@ Le transfert de type vous permet de déplacer un type dans un autre assembly san
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
     ```  
   
-3.  Compilez l'assembly qui contient maintenant le type.  
+3.  Compilez l’assembly qui contient désormais le type.  
   
-4.  Recompilez l'assembly où était localisé le type, avec une référence à l'assembly qui contient maintenant le type.  Par exemple, si vous compilez un fichier C\# à partir de la ligne de commande, utilisez l'option [\/reference \(Import Metadata\)](../Topic/-reference%20\(C%23%20Compiler%20Options\).md) pour spécifier l'assembly qui contient le type.  En C\+\+, utilisez la directive [\#using](../Topic/%23using%20Directive%20\(C++\).md) dans le fichier source pour spécifier l'assembly qui contient le type.  
+4.  Recompilez l’assembly dans lequel le type se trouvait, avec une référence à l’assembly qui contient désormais le type. Par exemple, si vous compilez un fichier C# de la ligne de commande, utilisez l’option [/reference (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) pour spécifier l’assembly contenant le type. Dans C++, utilisez la directive [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) dans le fichier source pour spécifier l’assembly contenant le type.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>   
- [Type Forwarding \(C\+\+\/CLI\)](../Topic/Type%20Forwarding%20\(C++-CLI\).md)   
- [\#using, directive](../Topic/%23using%20Directive%20\(C++\).md)
+ [Transfert de type (C++-CLI)](/cpp/windows/type-forwarding-cpp-cli)   
+ [Directive #using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)
