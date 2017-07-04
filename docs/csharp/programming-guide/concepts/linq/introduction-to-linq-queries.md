@@ -38,7 +38,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
 ms.openlocfilehash: 317ea9a17a792bcbfd11c5f1085218e2b0f2a312
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/15/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>Introduction aux requêtes LINQ (C#)
@@ -62,13 +62,13 @@ Une *requête* est une expression qui récupère des données d’une source de 
  ![Opération de requête LINQ complète](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")  
   
 ## <a name="the-data-source"></a>Source de données  
- Dans l’exemple précédent, la source de données est un tableau, il prend en charge implicitement générique <xref:System.Collections.Generic.IEnumerable%601> interface. Cela signifie qu’elle peut être interrogée avec [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Une requête est exécutée dans un `foreach` instruction, et `foreach` requiert <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>. Les types qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601> ou une interface dérivée telles que le type générique <xref:System.Linq.IQueryable%601> sont appelés *types requêtables*.  
+ Dans l’exemple précédent, comme la source de données est un tableau, elle prend en charge implicitement l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. Cela signifie qu’elle peut être interrogée avec [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Une requête est exécutée dans une instruction `foreach`, et `foreach` nécessite <xref:System.Collections.IEnumerable> ou <xref:System.Collections.Generic.IEnumerable%601>. Les types qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601> ou une interface dérivée, comme l’interface générique <xref:System.Linq.IQueryable%601>, sont appelés des *types requêtables*.  
   
- Un type requêtable ne nécessite aucune modification ni traitement spécial pour être utilisé comme une source de données [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Si la source de données n’est pas déjà en mémoire comme un type requêtable, le fournisseur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] doit la représenter comme telle. Par exemple, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] charge un document XML dans un requêtable <xref:System.Xml.Linq.XElement> type :  
+ Un type requêtable ne nécessite aucune modification ni traitement spécial pour être utilisé comme une source de données [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Si la source de données n’est pas déjà en mémoire comme un type requêtable, le fournisseur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] doit la représenter comme telle. Par exemple, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] charge un document XML dans un type <xref:System.Xml.Linq.XElement> requêtable :  
   
  [!code-cs[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
   
- Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous commencez par créer un mappage O/R au moment du design, manuellement ou à l’aide des [Outils LINQ to SQL de Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2). Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `Customers` représente une table spécifique dans la base de données et le type du résultat de requête, <xref:System.Linq.IQueryable%601>, dérive <xref:System.Collections.Generic.IEnumerable%601>.  
+ Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous commencez par créer un mappage O/R au moment du design, manuellement ou à l’aide des [Outils LINQ to SQL de Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2). Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `Customers` représente une table spécifique de la base de données et le type du résultat de la requête, <xref:System.Linq.IQueryable%601>, dérive de <xref:System.Collections.Generic.IEnumerable%601>.  
   
 ```csharp  
 Northwnd db = new Northwnd(@"c:\northwnd.mdf");  
@@ -80,10 +80,10 @@ IQueryable<Customer> custQuery =
     select cust;  
 ```  
   
- Pour plus d’informations sur la création de types de sources de données spécifiques, consultez la documentation relative aux différents fournisseurs [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Toutefois, la règle de base est très simple : une [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] source de données est un objet qui prend en charge le type générique <xref:System.Collections.Generic.IEnumerable%601> interface ou une interface qui hérite de celle-ci.  
+ Pour plus d’informations sur la création de types de sources de données spécifiques, consultez la documentation relative aux différents fournisseurs [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. La règle de base est cependant très simple : une source de données [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] peut être n’importe quel objet prenant en charge l’interface générique <xref:System.Collections.Generic.IEnumerable%601> ou une interface qui en hérite.  
   
 > [!NOTE]
->  Types tels que <xref:System.Collections.ArrayList> qui prennent en charge non générique <xref:System.Collections.IEnumerable> interface peut également être utilisée comme un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] source de données. Pour plus d’informations, consultez [Guide pratique pour interroger une liste de tableaux avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).  
+>  Les types tels que <xref:System.Collections.ArrayList> qui prennent en charge l’interface non générique <xref:System.Collections.IEnumerable> peuvent également être utilisés comme source de données [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations, consultez [Guide pratique pour interroger une liste de tableaux avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).  
   
 ##  <a name="query"></a> La requête  
  La requête spécifie les informations à récupérer à partir de la ou des sources de données. Si vous le souhaitez, une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d’être retournées. Une requête est stockée dans une variable de requête et initialisée avec une expression de requête. Pour faciliter l’écriture de requêtes, le langage C# propose désormais une nouvelle syntaxe de requête.  
@@ -109,7 +109,7 @@ IQueryable<Customer> custQuery =
   
  [!code-cs[csLinqGettingStarted#5](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_4.cs)]  
   
- Pour forcer l’exécution immédiate de toute requête et mettre en cache ses résultats, vous pouvez appeler la <xref:System.Linq.Enumerable.ToList%2A> ou <xref:System.Linq.Enumerable.ToArray%2A> méthodes.  
+ Pour forcer l’exécution immédiate de n’importe quelle requête et mettre en cache ses résultats, vous pouvez appeler les méthodes <xref:System.Linq.Enumerable.ToList%2A> ou <xref:System.Linq.Enumerable.ToArray%2A>.  
   
  [!code-cs[csLinqGettingStarted#6](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_5.cs)]  
   

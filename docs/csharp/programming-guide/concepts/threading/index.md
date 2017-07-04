@@ -1,5 +1,5 @@
 ---
-title: Threads (c#) | Documents Microsoft
+title: Threads (C#) | Microsoft Docs
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -23,42 +23,42 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
 ms.openlocfilehash: e3f213b43c2f05a5afef1db7aec8b9c2695df989
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/15/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="threading-c"></a>Threads (C#)
-Threading permet à votre programme c# effectuer un traitement simultané afin que vous pouvez effectuer plusieurs opérations à la fois. Par exemple, vous pouvez utiliser le threading pour surveiller l’entrée de l’utilisateur, effectuer des tâches en arrière-plan et gérer des flux simultanés d’entrée.  
+Les threads donnent la possibilité à votre programme C# d’effectuer des traitements simultanés, ce qui vous permet de faire plusieurs opérations à la fois. Par exemple, vous pouvez utiliser les threads pour surveiller les entrées de l’utilisateur, effectuer des tâches en arrière-plan et gérer des flux d’entrée simultanés.  
   
- Threads ont les propriétés suivantes :  
+ Les threads ont les propriétés suivantes :  
   
--   Les threads permettent à votre programme effectuer un traitement simultané.  
+-   Les threads permettent à votre programme d’effectuer un traitement simultané.  
   
--   Le .NET Framework <xref:System.Threading> rend d’espace de noms l’utilisation de threads.  
+-   L’espace de noms <xref:System.Threading> du .NET Framework facilite l’utilisation des threads.  
   
--   Les threads partagent les ressources de l’application. Pour plus d’informations, consultez [à l’aide de Threads et du Threading](https://msdn.microsoft.com/library/e1dx6b2h).  
+-   Les threads partagent les ressources de l’application. Pour plus d’informations, consultez [Using Threads and Threading](https://msdn.microsoft.com/library/e1dx6b2h).  
   
- Par défaut, un programme c# a un thread. Toutefois, les threads auxiliaires peuvent être créés et utilisés pour exécuter du code en parallèle avec le thread principal. Ces threads sont souvent appelés *de threads de travail*.  
+ Par défaut, un programme C# a un seul thread. Cependant, vous pouvez créer et utiliser des threads auxiliaires pour exécuter du code en parallèle avec le thread principal. Ces threads sont souvent appelés des *threads de travail*.  
   
- Threads de travail peuvent être utilisés pour effectuer des tâches longues ou à durée critique sans bloquer le thread principal. Par exemple, les threads de travail sont souvent utilisés dans les applications serveur pour répondre à des requêtes entrantes sans attendre que la demande précédente doit être terminé. Threads de travail sont également utilisés pour effectuer des tâches de « en arrière-plan » dans les applications de bureau afin que le thread principal--quels lecteurs sont des éléments d’interface utilisateur--reste sensible aux actions de l’utilisateur.  
+ Les threads de travail peuvent être utilisés pour effectuer des tâches longues ou à durée critique sans bloquer le thread principal. Par exemple, les threads de travail sont souvent utilisés dans les applications serveur pour répondre à des demandes entrantes sans attendre que la demande précédente soit terminée. Les threads de travail sont également utilisés pour effectuer des tâches « en arrière-plan » dans les applications de poste de travail pour que le thread principal, qui pilote les éléments de l’interface utilisateur, continue de répondre aux actions de l’utilisateur.  
   
- Threading résout les problèmes de débit et de réactivité, mais peuvent également introduire des problèmes de partage des ressources telles que des blocages et des conditions de concurrence. Plusieurs threads sont le mieux pour les tâches qui nécessitent des ressources différentes telles que les handles de fichiers et des connexions réseau. Assigner plusieurs threads à une seule ressource est susceptible de causer des problèmes de synchronisation et avoir threads fréquemment bloquées pendant l’attente d’autres threads d’annule l’effet de l’utilisation de plusieurs threads.  
+ Les threads résolvent les problèmes de débit et de réactivité, mais ils peuvent aussi introduire des problèmes de partage des ressources, comme des interblocages et des situations de concurrence. Les threads multiples conviennent mieux pour les tâches qui nécessitent des ressources différentes, comme les descripteurs de fichiers et les connexions réseau. L’affectation de plusieurs threads à une même ressource risque de provoquer des problèmes de synchronisation et d’aboutir au blocage fréquent des threads dans l’attente d’autres threads, ce qui est contraire à l’objectif poursuivi par l’utilisation de plusieurs threads.  
   
- Une stratégie commune consiste à utiliser des threads de travail à effectuer du temps ou des tâches en temps critique qui ne nécessitent pas beaucoup les ressources utilisées par les autres threads. Naturellement, certaines ressources dans votre programme doivent être accessible par plusieurs threads. Dans ce cas, le <xref:System.Threading> espace de noms fournit des classes pour la synchronisation de threads. Ces classes incluent <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.Interlocked>, <xref:System.Threading.AutoResetEvent>, et <xref:System.Threading.ManualResetEvent>.  
+ Une stratégie courante consiste à utiliser des threads de travail pour effectuer des tâches longues ou à durée critique qui nécessitent peu les ressources utilisées par d’autres threads. Naturellement, plusieurs threads doivent accéder à certaines ressources de votre programme. Pour ces situations, l’espace de noms <xref:System.Threading> fournit des classes pour la synchronisation des threads. Ces classes sont <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.Interlocked>, <xref:System.Threading.AutoResetEvent> et <xref:System.Threading.ManualResetEvent>.  
   
- Vous pouvez utiliser tout ou partie de ces classes pour synchroniser les activités de plusieurs threads, mais une prise en charge pour le thread est pris en charge par le langage c#. Par exemple, le [instruction Lock](../../../../csharp/language-reference/keywords/lock-statement.md) fournit les fonctionnalités de synchronisation via l’utilisation implicite de <xref:System.Threading.Monitor>.  
+ Vous pouvez utiliser tout ou partie de ces classes pour synchroniser les activités de plusieurs threads, mais le langage C# offre lui-même une certaine prise en charge des threads. Par exemple, l’[instruction Lock](../../../../csharp/language-reference/keywords/lock-statement.md) fournit des fonctionnalités de synchronisation via l’utilisation implicite de <xref:System.Threading.Monitor>.  
   
 > [!NOTE]
->  À partir de la [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], programmation multithread est considérablement simplifiée avec le <xref:System.Threading.Tasks.Parallel?displayProperty=fullName> et <xref:System.Threading.Tasks.Task?displayProperty=fullName> classes, [Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688), classes de collection simultanée nouvelle dans le <xref:System.Collections.Concurrent?displayProperty=fullName> espace de noms et un nouveau modèle de programmation basé sur le concept de tâches plutôt que de threads. Pour plus d’informations, consultez la page [Programmation parallèle](https://msdn.microsoft.com/library/dd460693).  
+>  À compter du [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], la programmation multithread est considérablement simplifiée avec les classes <xref:System.Threading.Tasks.Parallel?displayProperty=fullName> et <xref:System.Threading.Tasks.Task?displayProperty=fullName>, [Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688), de nouvelles classes de collections simultanées dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=fullName>, et un nouveau modèle de programmation basé sur le concept de tâche au lieu de celui de thread. Pour plus d’informations, consultez la page [Programmation parallèle](https://msdn.microsoft.com/library/dd460693).  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)|Décrit comment créer et utiliser des threads.|  
-|[Paramètres et valeurs de retour pour les procédures multithread (c#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)|Décrit comment passer des paramètres et de retour avec des applications multithread.|  
-|[Procédure pas à pas : Multithreading avec le composant BackgroundWorker (c#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)|Montre comment créer une application multithread simple.|  
-|[Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)|Décrit comment contrôler les interactions de threads.|  
-|[Composants Timer thread (c#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md)|Décrit comment exécuter des procédures sur des threads séparés à intervalles fixes.|  
-|[Thread de regroupement (c#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)|Décrit comment utiliser un pool de threads de travail qui sont gérés par le système.|  
-|[Comment : utiliser un Pool de threads (c#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|Illustre l’utilisation synchronisée de plusieurs threads dans le pool de threads.|  
+|[Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)|Explique comment créer et utiliser les threads.|  
+|[Paramètres et valeurs de retour pour les procédures multithreads (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)|Décrit comment passer et retourner des paramètres avec des applications multithreads.|  
+|[Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)|Montre comment créer une application multithread simple.|  
+|[Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)|Décrit comment contrôler les interactions des threads.|  
+|[Minuteurs de thread (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md)|Décrit comment exécuter des procédures sur des threads distincts à intervalles fixes.|  
+|[Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)|Décrit comment utiliser un pool de threads de travail qui sont gérés par le système.|  
+|[Guide pratique pour utiliser un pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|Montre l’utilisation synchronisée de plusieurs threads dans le pool de threads.|  
 |[Thread](https://msdn.microsoft.com/library/3e8s7xdd)|Décrit comment implémenter des threads dans le .NET Framework.|
