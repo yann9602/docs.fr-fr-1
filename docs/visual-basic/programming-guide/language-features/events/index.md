@@ -32,19 +32,19 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 59851175865939243260702470955fe0dea38495
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: e4e92b4e47d7cc743233aff3aaa77232a74e789f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="events-visual-basic"></a>Événements (Visual Basic)
-On peut se représenter un projet [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] comme une série de procédures qui s’exécutent de façon séquentielle, mais, en réalité, la plupart des programmes sont pilotés par des événements, ce qui signifie que le flux d’exécution est déterminé par des occurrences externes nommées *événements*.  
+On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] comme une série de procédures qui s’exécutent de façon séquentielle, mais, en réalité, la plupart des programmes sont pilotés par des événements, ce qui signifie que le flux d’exécution est déterminé par des occurrences externes nommées *événements*.  
   
  Un événement est un signal qui informe l’application que quelque chose d’important s’est produit. Par exemple, lorsqu’un utilisateur clique sur un contrôle sur un formulaire, le formulaire peut déclencher un événement `Click` et appeler une procédure qui gère l’événement. Les événements permettent également à des tâches distinctes de communiquer. Supposons, par exemple, que votre application exécute une tâche de tri de façon distincte de l’application principale. Si un utilisateur annule le tri, votre application peut envoyer un événement d’annulation demandant l’arrêt du processus de tri.  
   
 ## <a name="event-terms-and-concepts"></a>Concepts et termes relatifs aux événements  
- Cette section décrit les termes et les concepts utilisés avec les événements en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+ Cette section décrit les termes et les concepts utilisés avec les événements en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
 ### <a name="declaring-events"></a>Déclaration d'événements  
  On déclare des événements dans des classes, des structures, des modules et des interfaces à l’aide du mot clé `Event`, comme dans l’exemple suivant :  
@@ -52,7 +52,7 @@ On peut se représenter un projet [!INCLUDE[vsprvs](../../../../csharp/includes/
  [!code-vb[VbVbalrEvents#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_1.vb)]  
   
 ### <a name="raising-events"></a>Déclencher des événements  
- Un événement est comme un message qui annonce que quelque chose d’important s’est produit. L’acte de diffusion du message est appelé *déclenchement* de l’événement. En [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], on déclenche des événements avec l’instruction `RaiseEvent`, comme dans l’exemple suivant :  
+ Un événement est comme un message qui annonce que quelque chose d’important s’est produit. L’acte de diffusion du message est appelé *déclenchement* de l’événement. En [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], on déclenche des événements avec l’instruction `RaiseEvent`, comme dans l’exemple suivant :  
   
  [!code-vb[VbVbalrEvents#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_2.vb)]  
   
@@ -64,7 +64,7 @@ On peut se représenter un projet [!INCLUDE[vsprvs](../../../../csharp/includes/
 ### <a name="event-handlers"></a>Gestionnaires d'événements  
  Les *gestionnaires d’événements* sont des procédures qui sont appelées lorsqu’un événement correspondant se produit. Une sous-routine valide avec une signature correspondante peut être utilisée comme gestionnaire d’événements. Il n’est pas possible d’utiliser une fonction comme gestionnaire d’événements, toutefois, car elle ne peut pas retourner de valeur à la source de l’événement.  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] utilise une convention d’affectation de noms standard pour les gestionnaires d’événements, qui associe le nom de l’émetteur de l’événement, un trait de soulignement et le nom de l’événement. Par exemple, l’événement `Click` d’un bouton nommé `button1` serait nommé `Sub button1_Click`.  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] utilise une convention d’affectation de noms standard pour les gestionnaires d’événements, qui associe le nom de l’émetteur de l’événement, un trait de soulignement et le nom de l’événement. Par exemple, l’événement `Click` d’un bouton nommé `button1` serait nommé `Sub button1_Click`.  
   
 > [!NOTE]
 >  Nous recommandons d’utiliser cette convention d’affectation de noms pour définir des gestionnaires d’événements pour vos propres événements, mais ce n’est pas obligatoire ; il est possible d’utiliser n’importe quel nom de sous-routine valide.  
@@ -89,7 +89,7 @@ On peut se représenter un projet [!INCLUDE[vsprvs](../../../../csharp/includes/
   
  Bien que la clause `Handles` représente le moyen standard d’associer un événement à un gestionnaire d’événements, elle est limitée à l’association d’événements avec des gestionnaires d’événements à la compilation.  
   
- Dans certains cas, par exemple des événements associés à des formulaires ou des contrôles, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] écrase automatiquement un gestionnaire d’événements vide et l’associe à un événement. Par exemple, lorsqu’on double-clique sur un bouton de commande sur un formulaire en mode Création, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] crée un gestionnaire d’événements vide et une variable `WithEvents` pour le bouton de commande, comme dans le code suivant :  
+ Dans certains cas, par exemple des événements associés à des formulaires ou des contrôles, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] écrase automatiquement un gestionnaire d’événements vide et l’associe à un événement. Par exemple, lorsqu’on double-clique sur un bouton de commande sur un formulaire en mode Création, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] crée un gestionnaire d’événements vide et une variable `WithEvents` pour le bouton de commande, comme dans le code suivant :  
   
  [!code-vb[VbVbalrEvents#26](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_4.vb)]  
   
@@ -130,6 +130,6 @@ On peut se représenter un projet [!INCLUDE[vsprvs](../../../../csharp/includes/
 |[Guide pratique : déclarer des événements personnalisés pour éviter les blocages](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Montre comment définir un événement personnalisé qui permet d’appeler ses gestionnaires d’événements de façon asynchrone.|  
 |[Guide pratique : déclarer des événements personnalisés pour économiser la mémoire](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Montre comment définir un événement personnalisé qui utilise la mémoire uniquement lorsque l’événement est géré.|  
 |[Dépannage des gestionnaires d’événements hérités en Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Répertorie les problèmes courants qui surviennent avec les gestionnaires d’événements dans les composants hérités.|  
-|[Événements](../../../../standard/events/index.md)|Fournit une vue d’ensemble du modèle d’événement dans [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)].|  
+|[Événements](../../../../standard/events/index.md)|Fournit une vue d’ensemble du modèle d’événement dans [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
 |[Création de gestionnaires d’événements dans Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
 |[Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Fournit une vue d’ensemble des délégués en Visual Basic.|

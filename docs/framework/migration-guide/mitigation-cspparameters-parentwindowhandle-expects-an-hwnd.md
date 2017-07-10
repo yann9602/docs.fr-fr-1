@@ -18,10 +18,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: 31898c86adc687b63a1b7f02eee98aae9b16c5f7
+ms.sourcegitcommit: 84aadd0ccd7b5c786612d06ca0b46fb5aecd3d2b
+ms.openlocfilehash: d068da3253056712f0aab7d536d8faf7c836422b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 # <a name="mitigation-cspparametersparentwindowhandle-expects-an-hwnd"></a>Atténuation : CspParameters.ParentWindowHandle attend un HWND
@@ -46,9 +46,9 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 ## <a name="mitigation"></a>Atténuation
 
-Les développeurs qui avaient identifié que la valeur correcte était l’adresse de l’emplacement de mémoire qui détenait la valeur `form.Handle` peuvent désactiver ce changement de comportement en définissant le commutateur <xref:System.Security.AppContext> `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` avec la valeur `true` :
+Les développeurs qui avaient identifié que la valeur correcte était l’adresse de l’emplacement de mémoire qui détenait la valeur `form.Handle` peuvent désactiver ce changement de comportement en définissant le commutateur <xref:System.AppContext> `Switch.System.Security.Cryptography.DoNotAddrOfCspParentWindowHandle` avec la valeur `true` :
 
-- En définissant des commutateurs de compatibilité par programmation dans l’instance <xref:System.Security.AppContext>.
+- En définissant des commutateurs de compatibilité par programmation dans l’instance <xref:System.AppContext>.
 
 - En ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :
    
@@ -58,7 +58,7 @@ Les développeurs qui avaient identifié que la valeur correcte était l’adres
    </runtime>
    ```
 
-À l’inverse, les utilisateurs qui souhaitent utiliser ce nouveau comportement pour les applications qui s’exécutent dans .NET Framework 4.7 mais ciblent une version antérieure peuvent définir le commutateur <xref:System.Security.AppContext> avec la valeur `false`.
+À l’inverse, les utilisateurs qui souhaitent utiliser ce nouveau comportement pour les applications qui s’exécutent dans .NET Framework 4.7 mais ciblent une version antérieure peuvent définir le commutateur <xref:System.AppContext> avec la valeur `false`.
  
 ## <a name="see-also"></a>Voir aussi
 

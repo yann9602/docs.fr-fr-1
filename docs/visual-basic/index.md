@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: d95795c5900561bdb9d8247f819a51c2086377b7
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 6df68180b0b159009bfd4ccc3ff54db115791d9f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="visual-basic"></a>Visual Basic
@@ -59,7 +60,7 @@ Visual Basic est conçu pour la création productive d’applications de type s�
  Contient des informations sur le compilateur et le langage Visual Basic.  
 
  [Développement d’applications avec Visual Basic](../visual-basic/developing-apps/index.md)  
- Décrit différents aspects du développement en Visual Basic, tels que la sécurité, la gestion des exceptions et l’utilisation de la bibliothèque de classes [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)].
+ Décrit différents aspects du développement en Visual Basic, tels que la sécurité, la gestion des exceptions et l’utilisation de la bibliothèque de classes [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].
 
  [COM Interop](../visual-basic/programming-guide/com-interop/index.md)  
  Explique les problèmes d’interopérabilité associés à la création et à l’utilisation d’objets COM (Component Object Model) avec Visual Basic.  
@@ -75,4 +76,4 @@ Visual Basic est conçu pour la création productive d’applications de type s�
  Fournit des liens vers des rubriques qui vous permettent d’en savoir plus sur les principes fondamentaux de Visual Studio.  
   
  [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195)  
- Fournit l’entrée à la bibliothèque de classes, aux interfaces et aux types valeur inclus dans Microsoft [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)] SDK.
+ Fournit l’entrée à la bibliothèque de classes, aux interfaces et aux types valeur inclus dans Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK.

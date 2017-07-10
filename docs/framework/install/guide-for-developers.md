@@ -20,10 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 348ef65fdb6c1a54abf379278d79ed1a9f626780
+ms.sourcegitcommit: 0248602661b93eb0372e12fbea1055515a9abca3
+ms.openlocfilehash: b7b7cb8d8f10d8d7f437b7bcf91f99237003ca74
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 06/13/2017
 
 ---
 
@@ -151,7 +151,7 @@ Les deux programmes d’installation web et hors connexion sont conçus pour les
 <a name="standalone_language_packs"></a>   
 ## <a name="to-install-language-packs"></a>Pour installer les modules linguistiques
 
- Les modules linguistiques sont des exécutables contenant les ressources localisées (tels que les messages d'erreur et le texte d'interface utilisateur traduits) pour les langues prises en charge. Si vous n'installez pas de module linguistique, les messages d'erreur .NET Framework et tout autre texte s'affichent en anglais.  Notez que le programme d'installation web installera automatiquement le module linguistique qui correspond à votre système d'exploitation, mais vous pouvez télécharger d'autres modules linguistiques sur votre ordinateur. Les programmes d'installation hors connexion n'incluent aucun module linguistique. En outre, les modules linguistiques ne sont pas disponibles pour le .NET Framework 4.7.
+ Les modules linguistiques sont des exécutables contenant les ressources localisées (tels que les messages d'erreur et le texte d'interface utilisateur traduits) pour les langues prises en charge. Si vous n'installez pas de module linguistique, les messages d'erreur .NET Framework et tout autre texte s'affichent en anglais.  Notez que le programme d'installation web installera automatiquement le module linguistique qui correspond à votre système d'exploitation, mais vous pouvez télécharger d'autres modules linguistiques sur votre ordinateur. Les programmes d'installation hors connexion n'incluent aucun module linguistique. 
   
 > [!IMPORTANT]
 > Les modules linguistiques ne contiennent pas les composants .NET Framework requis pour exécuter une application. Par conséquent, vous devez exécuter le programme d'installation web ou hors connexion avant d'installer un module linguistique. Si vous avez déjà installé un module linguistique, désinstallez-le, installez le .NET Framework, puis réinstallez le module linguistique.  
