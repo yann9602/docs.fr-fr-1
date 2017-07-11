@@ -1,5 +1,5 @@
 ---
-title: "Débogage de votre application C# Hello World avec Visual Studio 2017"
+title: "Débogage de votre application C# Hello World avec Visual Studio 2017 | Microsoft Docs"
 description: "Découvrez comment déboguer une application Hello World écrite en C# avec Visual Studio 2017."
 keywords: ".NET Core, application de console .NET Core, débogage de .NET Core"
 author: BillWagner
@@ -11,18 +11,22 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: cb213625-cc60-438b-9b9e-49aed0e4a974
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 39e8e757a446b30ab18914465853138e1c239e40
-ms.openlocfilehash: a3ed6572d0c8f64f89f77527aa21df454b30982c
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 026158029bfc843bd6cd171933091dc9ac6d4dbe
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/03/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="debugging-your-c-hello-world-application-with-visual-studio-2017"></a>Débogage de votre application C# Hello World avec Visual Studio 2017
+<a id="debugging-your-c-hello-world-application-with-visual-studio-2017" class="xliff"></a>
+
+# Débogage de votre application C# Hello World avec Visual Studio 2017
 
 Jusqu’à présent, vous avez suivi la procédure de [Génération d’une application C# Hello World avec .NET Core dans Visual Studio 2017](.\with-visual-studio.md) pour créer et exécuter une application console simple. Une fois que vous avez écrit et compilé votre application, vous pouvez commencer à la tester. Visual Studio inclut un ensemble complet d’outils de débogage qui vous permettent de tester et dépanner votre application.
 
-## <a name="debugging-in-debug-mode"></a>Débogage en mode débogage
+<a id="debugging-in-debug-mode" class="xliff"></a>
+
+## Débogage en mode débogage
 
 *Débogage* et *Mise en production* sont deux des configurations de build par défaut de Visual Studio. La configuration de build actuelle s’affiche sur la barre d’outils. L’image suivante de la barre d’outils montre que Visual Studio est configuré pour compiler votre application en mode **Débogage**.
 
@@ -30,7 +34,9 @@ Jusqu’à présent, vous avez suivi la procédure de [Génération d’une appl
 
 Vous devez toujours commencer par tester votre programme en mode Débogage. Le mode Débogage désactive la plupart des optimisations du compilateur et fournit des informations plus détaillées pendant le processus de génération.
 
-## <a name="setting-a-breakpoint"></a>Définition d'un point d'arrêt
+<a id="setting-a-breakpoint" class="xliff"></a>
+
+## Définition d'un point d'arrêt
 
 Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités de débogage :
 
@@ -62,7 +68,9 @@ Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités
 
 1. Appuyez sur n’importe quelle touche pour quitter l’application et terminer le mode Debug.
 
-## <a name="setting-a-conditional-breakpoint"></a>Définition d’un point d'arrêt conditionnel
+<a id="setting-a-conditional-breakpoint" class="xliff"></a>
+
+## Définition d’un point d'arrêt conditionnel
 
 Votre programme affiche la chaîne entrée par l’utilisateur. Que se passe-t-il si l’utilisateur n’entre rien ? Vous pouvez le tester avec une fonctionnalité de débogage pratique, le *point d’arrêt conditionnel*, qui arrête l’exécution du programme quand une ou plusieurs conditions sont remplies.
 
@@ -104,7 +112,9 @@ Pour définir un point d’arrêt conditionnel et voir ce qu’il se passe lorsq
 
 1. Supprimez le point d’arrêt en cliquant sur le point dans la marge gauche de la fenêtre de code, ou en choisissant l’élément de menu **Débogage > Basculer le point d’arrêt** avec la ligne sélectionnée.
 
-## <a name="stepping-through-a-program"></a>Exécution pas à pas d’un programme
+<a id="stepping-through-a-program" class="xliff"></a>
+
+## Exécution pas à pas d’un programme
 
 Visual Studio vous permet également de parcourir un programme ligne par ligne et de surveiller son exécution. En règle générale, vous définissez un point d’arrêt et utilisez cette fonctionnalité pour suivre le déroulement du programme sur une petite portion de son code. Comme votre programme est petit, nous pouvons exécuter pas à pas la totalité du programme en procédant comme suit :
 
@@ -132,7 +142,9 @@ Visual Studio vous permet également de parcourir un programme ligne par ligne e
 
 1. Appuyez sur une touche pour fermer la fenêtre de console et quitter le mode débogage.
 
-## <a name="building-a-release-version"></a>Génération d’une version Release
+<a id="building-a-release-version" class="xliff"></a>
+
+## Génération d’une version Release
 
 Une fois que vous avez testé la version Debug de votre application, vous devez également compiler et tester la version Release. La version Release intègre des optimisations du compilateur qui peuvent parfois affecter négativement le comportement d’une application. Par exemple, les optimisations du compilateur qui sont conçues pour améliorer les performances peuvent créer des conditions de concurrence critique dans les applications asynchrones ou multithreads.
 

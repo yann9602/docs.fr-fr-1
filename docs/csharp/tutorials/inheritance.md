@@ -1,5 +1,5 @@
 ---
-title: "Héritage dans C#"
+title: "Héritage en C# | Microsoft Docs"
 description: "Apprenez à utiliser l’héritage dans les bibliothèques et applications C#."
 keywords: "Héritage (C#), classes de base, classes dérivées, classes de base abstraites"
 author: rpetrusha
@@ -12,23 +12,31 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 0c76bbcc8e60a2739b8c2735b3576842bd4f0942
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: ebb4c4eb754e456ae8a16226c282dc1698dcdd0d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET #
+<a id="inheritance-in-c-and-net" class="xliff"></a>
 
-## <a name="introduction"></a>Introduction ##
+# Héritage dans C# et .NET #
+
+<a id="introduction" class="xliff"></a>
+
+## Introduction ##
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
-## <a name="prerequisites"></a>Conditions préalables ##
+<a id="prerequisites" class="xliff"></a>
+
+## Conditions préalables ##
 
 Ce didacticiel suppose que vous avez installé .NET Core. Pour des instructions d'installation, consultez le [Guide d’installation de .NET Core](https://www.microsoft.com/net/core). Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
-## <a name="running-the-examples"></a>Exécution des exemples ##
+<a id="running-the-examples" class="xliff"></a>
+
+## Exécution des exemples ##
 
 Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utilitaire [dotnet](../../core/tools/dotnet.md) en ligne de commande. Pour chaque exemple, procédez comme suit :
 
@@ -42,7 +50,9 @@ Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utili
 
 1. Entrez la commande [dotnet run](../../core/tools/dotnet-run.md) pour compiler et exécuter l’exemple.
 
-## <a name="background-what-is-inheritance"></a>Présentation : Qu’est-ce que l’héritage ? ##
+<a id="background-what-is-inheritance" class="xliff"></a>
+
+## Présentation : Qu’est-ce que l’héritage ? ##
 
 *L’héritage* est un des attributs fondamentaux de la programmation orientée objet. Il vous permet de définir une classe enfant qui réutilise (hérite), étend ou modifie le comportement d’une classe parente. La classe dont les membres sont hérités s’appelle la *classe de base*. La classe qui hérite des membres de la classe de base est appelée la *classe dérivée*.
 
@@ -117,7 +127,9 @@ L’héritage s’applique uniquement aux classes et interfaces. Les autres cat�
    }
    ```
 
-## <a name="implicit-inheritance"></a>Héritage implicite ##
+<a id="implicit-inheritance" class="xliff"></a>
+
+## Héritage implicite ##
 
 Outre les types qui peuvent hériter via l’héritage simple, tous les types dans le système de types de .NET héritent implicitement de @System.Object ou d’un type dérivé. Cela garantit que les fonctionnalités communes sont disponibles pour n’importe quel type.
 
@@ -156,7 +168,9 @@ Le tableau suivant répertorie les catégories de types que vous pouvez créer e
 | enum | @System.Enum, System.ValueType, @System.Object |
 | délégué | @System.MulticastDelegate, @System.Delegate, @System.Object |
 
-## <a name="inheritance-and-an-is-a-relationship"></a>L’héritage et une relation « est un » ##
+<a id="inheritance-and-an-is-a-relationship" class="xliff"></a>
+
+## L’héritage et une relation « est un » ##
 
 En règle générale, l’héritage est utilisé pour exprimer une relation « est un » entre une classe de base et une ou plusieurs classes dérivées, où les classes dérivées sont des versions spécialisées de la classe de base ; la classe dérivée est un type de la classe de base. Par exemple, la classe `Publication` représente une publication de tout type et les classes `Book` et `Magazine` représentent les classes des types spécifiques de publications.
 
@@ -172,11 +186,15 @@ Dans ce cas, nous ne devrions pas nous reposer sur l’héritage pour représent
 
 Une relation « est un » basée sur l’héritage est préférablement appliquée à une classe de base et aux classes dérivées qui ajoutent des membres supplémentaires à la classe de base ou qui nécessitent des fonctionnalités supplémentaires non présentes dans la classe de base.
 
-## <a name="designing-the-base-class-and-derived-classes"></a>Conception de la classe de base et des classes dérivées ##
+<a id="designing-the-base-class-and-derived-classes" class="xliff"></a>
+
+## Conception de la classe de base et des classes dérivées ##
 
 Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, nous allons définir une classe de base, `Publication`, qui représente une publication de tout type, comme un livre, un magazine, un journal, une revue, un article, etc. Nous définirons aussi une classe `Book` qui dérive de `Publication`. Nous pourrions facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
 
-### <a name="the-base-publication-class"></a>La classe `Publication` de base ###
+<a id="the-base-publication-class" class="xliff"></a>
+
+### La classe `Publication` de base ###
 
 Lors de la conception de notre classe `Publication`, nous devons prendre plusieurs décisions de conception :
 
@@ -245,7 +263,9 @@ Le schéma suivant illustre la relation entre la base notre classe `Publication`
 
 ![Les classes Object et Publication](media/publication-class.jpg)
 
-### <a name="the-book-class"></a>La classe `Book` ###
+<a id="the-book-class" class="xliff"></a>
+
+### La classe `Book` ###
 
 La classe `Book` représente un livre sous la forme d’un type spécialisé de publication. L’exemple suivant montre le code source pour la classe `Book`.
 
@@ -301,7 +321,9 @@ L'exemple suivant utilise les objets dérivés de `Shape`. Elle instancie un tab
 
 [!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>Voir aussi ##
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi ##
 
 [Classes et objets](../tour-of-csharp/classes-and-objects.md)</br>
 [Héritage (Guide de programmation C#)](../programming-guide/classes-and-structs/inheritance.md)

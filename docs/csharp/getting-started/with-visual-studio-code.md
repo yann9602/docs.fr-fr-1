@@ -1,6 +1,6 @@
 ---
-title: "Bien démarrer avec Visual Studio Code | Guide C#"
-description: "Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code."
+title: "Bien démarrer avec Visual Studio Code - Guide C# | Microsoft Docs"
+description: "Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code."
 keywords: "C#, bien démarrer, acquisition, installer, Visual Studio Code, multiplateforme"
 author: kendrahavens
 ms.author: mairaw
@@ -11,30 +11,36 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 76c23597-4cf9-467e-8a47-0c3703ce37e7
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
-ms.openlocfilehash: a8233995046e6fdf980bf630da18908a02d2bfb0
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: 14b1696c37f40f7ffc6eb295e08ce1ceee061e45
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="get-started-with-visual-studio-code"></a>Bien démarrer avec Visual Studio Code
+<a id="get-started-with-visual-studio-code" class="xliff"></a>
+
+# Bien démarrer avec Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications serveur qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Conditions préalables
+<a id="prerequisites" class="xliff"></a>
+
+## Conditions préalables
 
 1. Installez [Visual Studio Code](https://code.visualstudio.com/).
 2. Installez le [SDK .NET Core](https://www.microsoft.com/net/download/core).
 3. Installez [l’extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) à partir de la Place de marché Visual Studio.
 
-## <a name="hello-world"></a>Hello World
+<a id="hello-world" class="xliff"></a>
+
+## Hello World
 
 Commençons par un programme « Hello World » simple sur .NET Core :
 
 1. Ouvrez un projet :
 
-    * Ouvrez VS Code.
+    * Ouvrez Visual Studio Code.
     * Cliquez sur l’icône Explorer dans le menu de gauche, puis sur **Ouvrir le dossier**.
     * Sélectionnez le dossier dans lequel vous souhaitez que votre projet C# se trouve et cliquez sur **Sélectionner le dossier**. Dans notre exemple, nous allons créer un dossier pour notre projet nommé « HelloWorld ». 
 
@@ -63,12 +69,14 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 Vous pouvez également regarder un court didacticiel vidéo pour plus d’informations sur la configuration sur [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) ou [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Débogage
-1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier C# dans VS Code, [OmniSharp](http://www.omnisharp.net/) se charge dans l’éditeur.
+<a id="debug" class="xliff"></a>
+
+## Débogage
+1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier C# dans Visual Studio Code, [OmniSharp](http://www.omnisharp.net/) se charge dans l’éditeur.
 
   ![Ouvrez le fichier Program.cs](media/with-visual-studio-code/opencs.png)
 
-2. VS Code vous invite à ajouter les actifs manquants pour générer et déboguer votre application. Sélectionnez **Oui**. 
+2. Visual Studio Code vous invite à ajouter les ressources manquantes pour générer et déboguer votre application. Sélectionnez **Oui**. 
 
   ![Invite pour les fichiers manquants](media/with-visual-studio-code/missing-assets.png)
 
@@ -92,9 +100,11 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 7. Cliquez sur la flèche verte en haut pour continuer le débogage, ou appuyez sur le carré rouge pour arrêter.
 
 > [!TIP] 
-> Pour plus d’informations et de conseils sur le débogage de .NET Core avec OmniSharp dans VS Code, consultez les [Instructions de configuration du débogueur .NET Core](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+> Pour obtenir plus d’informations et de conseils de dépannage sur le débogage de .NET Core avec OmniSharp dans Visual Studio Code, consultez [Instructions de configuration du débogueur .NET Core](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-## <a name="see-also"></a>Voir aussi
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi
 [Configuration de Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)   
 [Débogage dans Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)
 

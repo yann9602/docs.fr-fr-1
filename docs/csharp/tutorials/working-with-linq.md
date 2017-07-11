@@ -1,5 +1,5 @@
 ---
-title: Utilisation de LINQ
+title: Utilisation de LINQ | Microsoft Docs
 description: "Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse."
 keywords: .NET, .NET Core
 author: BillWagner
@@ -11,16 +11,20 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
 ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: ec86c558b9aa9c6269fcf9890978f61a934c081f
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 81ae0a1bd54aff6a5be39ef75cf24eb29d3e0671
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="working-with-linq"></a>Utilisation de LINQ
+<a id="working-with-linq" class="xliff"></a>
 
-## <a name="introduction"></a>Introduction
+# Utilisation de LINQ
+
+<a id="introduction" class="xliff"></a>
+
+## Introduction
 
 Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
 
@@ -36,17 +40,23 @@ Dans notre cas, c’est une façon plaisante d’envisager la manipulation de s�
 
 Ce didacticiel comporte plusieurs étapes. Après chaque étape, vous pourrez exécuter l’application et voir la progression. Vous pouvez également voir l’[exemple terminé](https://github.com/dotnet/docs/blob/master/samples/csharp/getting-started/console-linq) dans le dépôt GitHub dotnet/doc. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Prérequis
+<a id="prerequisites" class="xliff"></a>
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page [.NET Core](https://www.microsoft.com/net/core). Vous pouvez exécuter cette application sous Windows, Ubuntu Linux, OS X ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
+## Prérequis
 
-## <a name="create-the-application"></a>Création de l’application
+Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page [.NET Core](https://www.microsoft.com/net/core). Vous pouvez exécuter cette application sous Windows, Ubuntu Linux, OS X ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
+
+<a id="create-the-application" class="xliff"></a>
+
+## Création de l’application
 
 La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Elle crée les fichiers de démarrage d’une application « Hello World » de base.
 
 Si vous n’avez jamais utilisé C#, [ce didacticiel](console-teleprompter.md) explique la structure d’un programme C#. Vous pouvez le lire, puis revenir ici pour en savoir plus sur LINQ. 
 
-## <a name="creating-the-data-set"></a>Création du jeu de données
+<a id="creating-the-data-set" class="xliff"></a>
+
+## Création du jeu de données
 
 Commençons par créer un jeu de cartes. Vous allez pour cela utiliser une requête LINQ qui a deux sources (l’une pour les quatre couleurs, l’autre pour les treize valeurs). Vous combinerez ces sources de façon à produire un jeu de 52 cartes. Une instruction `Console.WriteLine` à l’intérieur d’une boucle `foreach` affiche les cartes.
 
@@ -100,7 +110,9 @@ Ensuite, exécutez l’exemple que vous avez commencé à élaborer. Il affiche 
 
 ![Fenêtre console montrant l’application produisant les 52 cartes](./media/working-with-linq/console.png)
 
-## <a name="manipulating-the-order"></a>Manipulation de l’ordre
+<a id="manipulating-the-order" class="xliff"></a>
+
+## Manipulation de l’ordre
 
 Ensuite, nous allons créer une méthode utilitaire pour effectuer le mélange. La première étape consiste à couper le jeu en deux. Les méthodes `Take()` et `Skip()`, qui font partie de l’API LINQ, nous fournissent cette fonctionnalité :
 
@@ -173,7 +185,9 @@ public static void Main(string[] args)
 }
 ```
 
-## <a name="comparisons"></a>Comparaisons
+<a id="comparisons" class="xliff"></a>
+
+## Comparaisons
 
 Nous allons voir combien de mélanges sont nécessaires pour remettre le jeu dans l’ordre d’origine. Vous devrez écrire une méthode qui détermine si deux séquences sont égales. Ensuite, il vous faudra placer le code qui mélange le jeu dans une boucle et vérifier si le jeu est de nouveau dans l’ordre.
 
@@ -207,7 +221,9 @@ Console.WriteLine(times);
 
 Exécutez l’exemple, et regardez comment le jeu se réorganise à chaque mélange, jusqu’à ce qu’il revienne à sa configuration d’origine après huit itérations.
 
-## <a name="optimizations"></a>Optimisations
+<a id="optimizations" class="xliff"></a>
+
+## Optimisations
 
 L’exemple que vous avez produit jusque-là exécute un *mélange intérieur*, où les cartes du haut et du bas restent les mêmes à chaque exécution. Faisons une modification, et exécutons un *mélange extérieur*, où les 52 cartes changent toutes de position. Dans le cas d’un mélange extérieur, on intercale les deux moitiés du jeu de sorte que la première carte de la moitié du dessous devienne la première carte du jeu. Cela signifie que la dernière carte de la moitié du dessus devient la carte du bas. Il n’y a qu’une ligne à modifier. Mettez à jour l’appel à la fonction de mélange pour modifier l’ordre des moitiés du dessus et du dessous du jeu :
 
@@ -285,7 +301,9 @@ Ne déduisez pas de cet exemple que toutes les requêtes devraient s’exécuter
 
 Dans la pratique, certains algorithmes fonctionnent beaucoup mieux avec l’évaluation stricte, d’autres avec l’évaluation paresseuse. (En général, l’évaluation paresseuse est un bien meilleur choix lorsque la source de données est un processus distinct, comme un moteur de base de données. Dans ce cas, l’évaluation paresseuse permet d’exécuter des requêtes plus complexes avec un seul aller-retour vers le processus de base de données.) LINQ permet à la fois l’évaluation paresseuse et l’évaluation stricte. Évaluez et choisissez la meilleure des deux.
 
-## <a name="preparing-for-new-features"></a>Préparation des nouvelles fonctionnalités
+<a id="preparing-for-new-features" class="xliff"></a>
+
+## Préparation des nouvelles fonctionnalités
 
 Le code que vous avez écrit pour cet exemple est un prototype simple qui remplit sa fonction. C’est un excellent moyen d’explorer un problème d’espace ; pour de nombreuses fonctionnalités, il s’agit peut-être de la meilleure solution permanente. Vous avez tiré profit des *types anonymes* pour les cartes, et chaque carte est représentée par des chaînes.
 
@@ -329,7 +347,9 @@ var startingDeck = (from s in Suits().LogQuery("Suit Generation")
 
 Compilez, puis réexécutez-la. La sortie est un peu plus propre, et le code est un peu plus clair et peut être étendu plus facilement.
 
-## <a name="conclusion"></a>Conclusion
+<a id="conclusion" class="xliff"></a>
+
+## Conclusion
 
 Cet exemple vous a montré quelques-unes des méthodes utilisées dans LINQ, comment créer vos propres méthodes, faciles à utiliser avec du code compatible LINQ. Il vous a également montré les différences entre l’évaluation paresseuse et l’évaluation stricte, ainsi que l’impact de cette décision sur les performances.
 

@@ -1,5 +1,5 @@
 ---
-title: "Délégués C# | Présentation rapide du langage C#"
+title: "Délégués C# - Visite guidée du langage C# | Microsoft Docs"
 description: "Découvrez la liaison tardive avec les délégués C#"
 keywords: ".NET, csharp, délégation, lambda, liaison tardive"
 author: BillWagner
@@ -11,14 +11,16 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 19006cc5f24ffc66b92e53e8174c6bd33c249679
-ms.openlocfilehash: 9cfefa5f781944b41828ebb61004f960e6cf3d59
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 217fd974f547a4a84b328979ee94ee634038b213
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/14/2017
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="delegates"></a>Délégués
+<a id="delegates" class="xliff"></a>
+
+# Délégués
 
 Un ***type délégué*** représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 
