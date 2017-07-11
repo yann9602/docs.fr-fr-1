@@ -19,18 +19,21 @@ caps.latest.revision: 34
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: bed74cee6db01a38bc0bc3c6eeffa33b682bbd80
-ms.lasthandoff: 04/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
+ms.openlocfilehash: f7af2ff5db3d6d06383906fc271ae60d68f43731
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/19/2017
 
 ---
-# <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
+<a id="overview-of-the-net-framework" class="xliff"></a>
+
+# Vue d’ensemble du .NET Framework
 Le .NET Framework est une technologie qui prend en charge la création et l’exécution de la nouvelle génération d’applications et de services web XML. Le .NET Framework est conçu pour remplir les objectifs suivants :  
   
 -   Fournir un environnement cohérent de programmation orientée objet que le code objet soit stocké et exécuté localement, exécuté localement mais distribué sur Internet ou exécuté à distance.  
   
--   Fournir un environnement d'exécution de code qui minimise le déploiement de logiciel et de conflits de versioning.  
+-   Fournir un environnement d'exécution de code qui minimise le déploiement de logiciel et de conflits de versions.  
   
 -   Fournir un environnement d'exécution de code qui promeut l'exécution sécurisée de code y compris le code créé par un tiers d'un niveau de confiance moyen ou un tiers inconnu.  
   
@@ -41,7 +44,7 @@ Le .NET Framework est une technologie qui prend en charge la création et l’ex
 -   Générer toutes les communications à partir des normes d'industries pour s'assurer que le code basé sur le .NET Framework peut s'intégrer à n'importe quel autre code.  
   
 > [!NOTE]
->  Pour une présentation générale du .NET Framework à destination des utilisateurs et des développeurs, consultez [Bien démarrer](../../../docs/framework/get-started/index.md). Pour télécharger .NET Framework, consultez le [Guide d’Installation](../../../docs/framework/install/guide-for-developers.md).  
+>  Pour une présentation générale du .NET Framework à destination des utilisateurs et des développeurs, consultez [Bien démarrer](../../../docs/framework/get-started/index.md).  
   
  Le .NET Framework se compose du Common Language Runtime et de la bibliothèque de classes .NET Framework. Le Common Language Runtime est la base du .Net Framework. Le runtime peut être considéré comme un agent qui manage le code au moment de l'exécution, fournit des services essentiels comme la gestion de la mémoire, la gestion des threads et la communication à distance. Il applique également une stricte sécurité des types et d'autres formes d'exactitude du code qui promeuvent un code sécurisé et robuste. En fait, le concept de gestion de code est un principe fondamental du runtime. Le code qui cible le runtime porte le nom de code managé, tandis que le code qui ne cible pas le runtime porte le nom de code non managé. La bibliothèque de classes est une collection complète orientée objet de types réutilisables que vous pouvez utiliser pour développer des applications allant des traditionnelles applications en ligne de commande ou à interface utilisateur graphique jusqu'à des applications qui exploitent les dernières innovations fournies par ASP.NET, comme les services Web XML et Web Forms.  
   
@@ -58,7 +61,9 @@ Le .NET Framework en contexte
   
  Les sections suivantes décrivent les principales fonctionnalités du .NET Framework.  
   
-## <a name="features-of-the-common-language-runtime"></a>Fonctionnalités du Common Language Runtime  
+<a id="features-of-the-common-language-runtime" class="xliff"></a>
+
+## Fonctionnalités du Common Language Runtime  
  Le Common Language Runtime gère la mémoire, l'exécution des threads, l'exécution du code, la vérification de la sécurité du code, la compilation et d'autres services du système. Ces fonctionnalités font partie intégrante du code managé qui s'exécute sous le Common Language Runtime.  
   
  En ce qui concerne la sécurité, les composants managés se voient attribués divers niveaux de confiance en fonction d'un nombre de facteurs qui comprennent leur origine (comme Internet, un réseau d'entreprise ou un ordinateur local). Cela signifie qu'un composant managé peut ou ne peut pas effectuer des opérations d'accès au fichier, des opérations d'accès au Registre ou d'autres fonctions délicates, même si ce composant est utilisé dans la même application active.  
@@ -77,7 +82,9 @@ Le .NET Framework en contexte
   
  Enfin, le runtime peut être hébergé par des applications côté serveur hautement performantes, comme Microsoft SQL Server et les services IIS (Internet Information Services). Cette infrastructure vous permet d'utiliser du code managé pour écrire votre logique métier tout en profitant des performances supérieures du meilleur des serveurs d'entreprise prenant en charge l'hébergement runtime.  
   
-## <a name="net-framework-class-library"></a>Bibliothèque de classes .NET Framework  
+<a id="net-framework-class-library" class="xliff"></a>
+
+## Bibliothèque de classes .NET Framework  
  La bibliothèque de classes .NET Framework est une collection de types réutilisables qui s'intègrent parfaitement au Common Language Runtime. La bibliothèque de classes est orientée objet et fournit des types à partir desquels votre propre code managé peut dériver des fonctionnalités. Les types .NET Framework n'en sont que plus faciles à utiliser et le temps d'apprentissage des nouvelles fonctionnalités du .NET Framework s'en trouve réduit. De plus, les composants tiers peuvent s'intégrer parfaitement aux classes du .NET Framework.  
   
  Par exemple, les classes de collection du .NET Framework implémentent un jeu d'interfaces que vous pouvez utiliser pour développer vos propres classes de collection. Vos classes de collection s'intégreront parfaitement aux classes dans le .NET Framework.  
@@ -100,9 +107,11 @@ Le .NET Framework en contexte
   
  Par exemple, les classes Windows Forms sont un ensemble complet de types réutilisables qui simplifient grandement le développement GUI Windows. Si vous écrivez une application Web Form ASP.NET, vous pouvez utiliser les classes Web Forms.  
   
-## <a name="see-also"></a>Voir aussi  
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi  
  [Configuration requise](../../../docs/framework/get-started/system-requirements.md)   
- [Guide d’installation](../../../docs/framework/install/guide-for-developers.md)   
+ [Guide d’installation](../../../docs/framework/install/index.md)   
  [Guide de développement](../../../docs/framework/development-guide.md)   
  [Outils](../../../docs/framework/tools/index.md)   
  [Exemples .NET Framework](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)   
