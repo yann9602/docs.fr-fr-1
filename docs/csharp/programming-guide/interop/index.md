@@ -30,18 +30,23 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: c29504e18aa716cbe106dbbe00c608fd465d9ac2
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: be95d675d22dedcbf45c8eb1e8fd8d9f5ce0b56c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="interoperability-c-programming-guide"></a>Interopérabilité (Guide de programmation C#)
+<a id="interoperability-c-programming-guide" class="xliff"></a>
+
+# Interopérabilité (Guide de programmation C#)
 L’interopérabilité vous permet de préserver et de tirer parti d’investissements existants en code non managé. Le code qui s’exécute sous le contrôle du common language runtime (CLR) est appelé *code managé*, et le code qui s’exécute en dehors du CLR est appelé *code non managé*. COM, COM+, les composants C++, les composants ActiveX et l’API Microsoft Win32 sont des exemples de code non managé.  
   
- Le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] permet l’interopérabilité avec du code non managé par des services d’appel de code non managé, l’espace de noms <xref:System.Runtime.InteropServices>, l’interopérabilité C++ et l’interopérabilité COM (COM Interop).  
+ Le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] permet l’interopérabilité avec du code non managé par des services d’appel de code non managé, l’espace de noms <xref:System.Runtime.InteropServices>, l’interopérabilité C++ et l’interopérabilité COM (COM Interop).  
   
-## <a name="in-this-section"></a>Dans cette section  
+<a id="in-this-section" class="xliff"></a>
+
+## Dans cette section  
  [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)  
  Décrit les méthodes qui permettent l’interopérabilité entre le code managé et le code non managé en C#.  
   
@@ -60,10 +65,14 @@ L’interopérabilité vous permet de préserver et de tirer parti d’investiss
  [Exemple de classe COM](../../../csharp/programming-guide/interop/example-com-class.md)  
  Montre comment exposer une classe C# en tant qu’objet COM.  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+<a id="c-language-specification" class="xliff"></a>
+
+## Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi  
  <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=fullName>   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Interopération avec du code non managé](https://msdn.microsoft.com/library/sd10k43k)   

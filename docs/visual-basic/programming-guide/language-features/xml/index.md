@@ -1,42 +1,65 @@
 ---
-title: "XML in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "LINQ to XML [Visual Basic]"
+title: "XML en Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+helpviewer_keywords:
+- LINQ to XML [Visual Basic]
 ms.assetid: 954b6e40-1246-4185-a018-4061724fcae9
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
----
-# XML in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: 5dd44fb1d3efe53ce37d17d91d522aeed7442ef9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/26/2017
 
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] assure la prise en charge linguistique intégrée qui lui permet d'interagir avec [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].  
+---
+<a id="xml-in-visual-basic" class="xliff"></a>
+
+# XML en Visual Basic
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] fournit la prise en charge intégrée du langage qui lui permet d’interagir avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
+<a id="in-this-section" class="xliff"></a>
+
 ## Dans cette section  
- Les rubriques de cette section présentent l'utilisation de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] avec Visual Basic.  
+ Les rubriques de cette section présentent l’utilisation de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] avec Visual Basic.  
   
 |Rubrique|Description|  
-|--------------|-----------------|  
-|[Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Décrit comment [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb-md.md)] prend en charge [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].|  
-|[Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Décrit comment créer des objets littéraux XML en utilisant [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)].|  
-|[Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Décrit comment charger et analyser XML à l'aide de Visual Basic.|  
-|[Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Décrit les propriétés d'axe XML et les méthodes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq-md.md)] permettant d'accéder aux éléments et attributs XML.|  
-|[XML IntelliSense in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)|Décrit les fonctions IntelliSense fournies avec Visual Basic.|  
+|-----------|-----------------|  
+|[Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Explique comment [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] prend en charge [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Création de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Explique comment créer des objets littéraux XML à l’aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Manipulation de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Explique comment charger et analyser du code XML à l’aide de Visual Basic.|  
+|[Accès au code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Décrit les propriétés d’axe XML et les méthodes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permettant d’accéder aux éléments et attributs XML.|  
+|[XML IntelliSense dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)|Décrit les fonctionnalités IntelliSense fournies avec Visual Basic.|  
   
+<a id="see-also" class="xliff"></a>
+
 ## Voir aussi  
  <xref:System.Xml.Linq>   
- [XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md)   
- [XML Axis Properties](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)   
- [LINQ to XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)
+ [Littéraux XML](../../../../visual-basic/language-reference/xml-literals/index.md)   
+ [Propriétés d’axe XML](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)   
+ [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)
