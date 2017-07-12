@@ -10,33 +10,39 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
-ms.openlocfilehash: 6c08f16690a8c081ac17484c6bc7a331d9041356
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: 21e6b786c8a9a00cc1ed09d2c3891c3cfa433ef5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="getting-started-with-net-core-on-macos"></a>Bien démarrer avec .NET Core sur macOS
+<a id="getting-started-with-net-core-on-macos" class="xliff"></a>
+
+# Bien démarrer avec .NET Core sur macOS
 
 Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core pour macOS. Découvrez comment créer des projets et des tests unitaires, utiliser les outils de débogage et incorporer des bibliothèques tierces à l’aide de [NuGet](https://www.nuget.org/).
 
 > [!NOTE]
 > Cet article utilise [Visual Studio Code](http://code.visualstudio.com) sur macOS.
 
-## <a name="prerequisites"></a>Prérequis
+<a id="prerequisites" class="xliff"></a>
+
+## Prérequis
 
 Installez le [SDK .NET Core](https://www.microsoft.com/net/core). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
 
-Installez [Visual Studio Code](http://code.visualstudio.com). Au cours de cet article, vous allez également installer des extensions VS Code pour améliorer l’expérience de développement de .NET Core.
+Installez [Visual Studio Code](http://code.visualstudio.com). Au cours de cet article, vous allez également installer des extensions Visual Studio Code pour améliorer l’expérience de développement de .NET Core.
 
-Installez l’extension C# pour VS Code. Pour cela, ouvrez VS Code et appuyez sur <kbd>F1</kbd> pour ouvrir la palette VS Code. Tapez **ext install** pour afficher la liste des extensions. Sélectionnez l’extension C#. Redémarrez VS Code pour activer l’extension. Pour plus d’informations, consultez la [documentation sur l’extension C# pour Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+Installez l’extension C# de Visual Studio Code en ouvrant Visual Studio Code et en appuyant sur <kbd>F1</kbd> pour ouvrir la palette Visual Studio Code. Tapez **ext install** pour afficher la liste des extensions. Sélectionnez l’extension C#. Redémarrez Visual Studio Code pour activer l’extension. Pour plus d’informations, consultez la [documentation sur l’extension C# pour Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-## <a name="getting-started"></a>Bien démarrer
+<a id="getting-started" class="xliff"></a>
+
+## Bien démarrer
 
 Dans ce didacticiel, vous créez trois projets : un projet de bibliothèque, des tests pour ce projet de bibliothèque et une application console qui utilise la bibliothèque. Vous pouvez [afficher ou télécharger la source](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) pour cette rubrique dans le dépôt dotnet/docs sur GitHub. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd>+<kbd>\`</kbd> (accent grave) ou sélectionnez **Affichage > Terminal intégré** dans le menu pour ouvrir un terminal incorporé dans VS Code. Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de VS Code.
+Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd>+<kbd>\`</kbd> (accent grave) ou sélectionnez **Affichage > Terminal intégré** dans le menu pour ouvrir un terminal incorporé dans Visual Studio Code. Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de Visual Studio Code.
 
 Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core. Dans le terminal, créez un dossier *golden* et ouvrez le dossier. Ce dossier est la racine de votre solution. Exécutez la commande [`dotnet new`](../tools/dotnet-new.md) pour créer une solution, *golden.sln* :
 
@@ -111,7 +117,9 @@ Générez la bibliothèque à l’aide de la commande [ `dotnet build` ](../tool
 dotnet build
 ```
 
-## <a name="create-the-test-project"></a>Créer le projet de test
+<a id="create-the-test-project" class="xliff"></a>
+
+## Créer le projet de test
 
 Créez un projet de test pour la bibliothèque. À partir du dossier *golden*, créez un projet de test :
 
@@ -174,7 +182,9 @@ Modifiez le fichier *UnitTest1.cs* et remplacez l’assertion `Assert.NotEqual` 
 dotnet test test-library/test-library.csproj
 ```
 
-## <a name="create-the-console-app"></a>Créer l’application console
+<a id="create-the-console-app" class="xliff"></a>
+
+## Créer l’application console
 
 L’application console que vous allez créer dans les étapes suivantes est dépendante du projet de bibliothèque créé précédemment et appelle sa méthode de bibliothèque durant l’exécution. Ce modèle de développement vous permet de voir comment créer des bibliothèques réutilisables pour plusieurs projets.
 
@@ -215,13 +225,15 @@ Lancez la commande suivante `dotnet run` pour exécuter l’exécutable, où l�
 dotnet run -p app/app.csproj
 ```
 
-## <a name="debug-the-application"></a>Déboguer l’application
+<a id="debug-the-application" class="xliff"></a>
+
+## Déboguer l’application
 
 Définissez un point d’arrêt au niveau de l’instruction `WriteLine` dans la méthode `Main`. Pour ce faire, appuyez sur la touche <kbd>F9</kbd> quand le curseur se trouve sur la ligne `WriteLine` ou cliquez dans la marge gauche de la ligne où vous souhaitez définir le point d’arrêt. Un cercle rouge apparaît dans la marge à côté de la ligne de code. Quand le point d’arrêt est atteint, l’exécution du code s’arrête *avant* l’exécution de la ligne de point d’arrêt.
 
-Ouvrez l’onglet du débogueur. Pour cela, sélectionnez l’icône de débogage dans la barre d’outils de VS Code, puis **Affichage > Déboguer** à partir de la barre de menus, ou utilisez le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> :
+Ouvrez l’onglet du débogueur. Pour cela, sélectionnez l’icône de débogage dans la barre d’outils de Visual Studio Code, puis **Affichage > Déboguer** à partir de la barre de menus, ou utilisez le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> :
 
-![Débogueur VS Code](./media/using-on-macos/vscodedebugger.png)
+![Débogueur Visual Studio Code](./media/using-on-macos/vscodedebugger.png)
 
 Appuyez sur le bouton de lecture pour démarrer l’application sous le débogueur. L’application s’exécute jusqu’au point d’arrêt. Exécutez pas à pas la méthode `Get`, puis vérifiez que vous avez passé les arguments appropriés. Vérifiez que la réponse est 42.
 

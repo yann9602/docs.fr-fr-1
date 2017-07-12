@@ -1,5 +1,5 @@
 ---
-title: "Migration de DNX vers l’interface CLI .NET Core"
+title: "Migration de DNX vers l’interface CLI .NET Core | Microsoft Docs"
 description: "Migration de DNX vers l’interface CLI .NET Core"
 keywords: .NET, .NET Core
 author: blackdwarf
@@ -10,16 +10,20 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
-ms.openlocfilehash: e30573a60e27314466822935249e2b1b119a9259
+ms.sourcegitcommit: 9cd469dfd4f38605f1455c008388ad04c366e484
+ms.openlocfilehash: 0deb251b672fdc09a9bca09e5ae52c9eaaa9ae8d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/10/2017
+ms.lasthandoff: 06/20/2017
 
 ---
 
-# <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migration de DNX vers l’interface CLI .NET Core (project.json)
+<a id="migrating-from-dnx-to-net-core-cli-projectjson" class="xliff"></a>
 
-## <a name="overview"></a>Vue d'ensemble
+# Migration de DNX vers l’interface CLI .NET Core (project.json)
+
+<a id="overview" class="xliff"></a>
+
+## Vue d'ensemble
 Avec la version RC1 de .NET Core et ASP.NET Core 1.0, nous avons introduit les outils DNX. Avec la version RC2 de .NET Core et ASP.NET Core 1.0, nous sommes passés de DNX à l’interface CLI .NET Core.
 
 Pour rappel, revenons sur ce qu’était DNX. DNX était un runtime et un ensemble d’outils qui servait à générer des applications .NET Core et, plus précisément, des applications ASP.NET Core 1.0. Il était constitué de 3 composants principaux :
@@ -32,10 +36,14 @@ Avec l’introduction de l’interface CLI, tous les éléments ci-dessus sont d
 
 Vous trouverez dans ce guide de migration les points essentiels à connaître pour migrer des projets de DNX vers l’interface CLI .NET Core. Si vous voulez simplement créer un projet sur .NET Core de toutes pièces, vous pouvez sans problème ignorer ce document. 
 
-## <a name="main-changes-in-the-tooling"></a>Principales évolutions des outils
+<a id="main-changes-in-the-tooling" class="xliff"></a>
+
+## Principales évolutions des outils
 Les outils ont fait l’objet de modifications générales dont il convient tout d’abord d’exposer les grandes lignes. 
 
-### <a name="no-more-dnvm"></a>Disparition de DNVM
+<a id="no-more-dnvm" class="xliff"></a>
+
+### Disparition de DNVM
 DNVM (*DotNet Version Manager*) était un script bash/PowerShell qui servait à installer un DNX sur un ordinateur. Il permettait aux utilisateurs d’obtenir les DNX dont ils avaient à partir du flux qu’ils spécifiaient (ou ceux par défaut), mais aussi de marquer un certain DNX comme étant « actif », ce qui le plaçait sur le $PATH pour la session donnée. Les différents outils pouvaient ainsi être utilisés.
 
 DNVM a été abandonné, car son jeu de fonctionnalités était devenu inutile suite aux modifications introduites dans les outils de l’interface CLI .NET Core.
@@ -49,50 +57,64 @@ Compte tenu de cela, les fonctionnalités d’installation de DNVM ne sont pas n
 
 Pour référencer un runtime dans votre fichier `project.json`, vous devez ajouter un package d’une certaine version à vos dépendances. Cette modification permettra à votre application d’utiliser les nouveaux éléments de runtime. Rien ne différencie l’installation de ces éléments sur votre ordinateur de celle de l’interface CLI : vous installez le runtime avec l’un des programmes d’installation natifs pris en charge ou à l’aide de son script d’installation. 
 
-### <a name="different-commands"></a>Des commandes différentes
+<a id="different-commands" class="xliff"></a>
+
+### Des commandes différentes
 Si vous avez utilisé DNX, vous avez utilisé les commandes de l’un de ses trois composants (DNX, DNU ou DNVM). Avec l’interface CLI, certaines de ces commandes ont évolué, d’autres ne sont plus disponibles et d’autres sont identiques mais utilisent une sémantique légèrement différente. 
 
 Le tableau ci-dessous montre la correspondance entre les commandes DNX/DNU et leurs équivalents CLI.
 
 
-| Commande DNX                        | Commande CLI        | Description                                                                                                         |
-|--------------------------------    |----------------    |-----------------------------------------------------------------------------------------------------------------    |
-| dnx run                            | dotnet run         | Exécute du code à partir de la source.                                                                                               |
-| dnu build                          | dotnet build       | Génère un fichier binaire IL de votre code.                                                                                    |
-| dnu pack                           | dotnet pack        | Empaquète votre code dans un package NuGet.                                                                            |
-| DNX \[commande] (par exemple, « dnx web »)     | N/A\*              | Dans le contexte de DNX, exécute une commande telle que définie dans le fichier project.json.                                                         |
-| dnu install                        | N/A\*              | Dans le contexte de DNX, installe un package en tant que dépendance.                                                                |
-| dnu restore                        | dotnet restore     | Restaure les dépendances spécifiées dans votre fichier project.json.                                                                |
-| dnu publish                        | dotnet publish     | Publie votre application pour le déploiement dans l’une des trois formes possibles (portable, portable avec natif et autonome).     |
-| dnu wrap                           | N/A\*              | Dans le contexte de DNX, encapsule un fichier project.json dans un fichier csproj.                                                                        |
-| dnu commands                       | N/A\*              | Dans le contexte de DNX, gère les commandes installées globalement.                                                               |
+| Commande DNX                       | Commande CLI       | Description                                                                                                       |
+|--------------------------------   |----------------   |-----------------------------------------------------------------------------------------------------------------  |
+| dnx run                           | dotnet run        | Exécute du code à partir de la source.                                                                                             |
+| dnu build                         | dotnet build      | Génère un fichier binaire IL de votre code.                                                                                  |
+| dnu pack                          | dotnet pack       | Empaquète votre code dans un package NuGet.                                                                          |
+| DNX \[commande] (par exemple, « dnx web »)   | N/A\*             | Dans le contexte de DNX, exécute une commande telle que définie dans le fichier project.json.                                                       |
+| dnu install                       | N/A\*             | Dans le contexte de DNX, installe un package en tant que dépendance.                                                              |
+| dnu restore                       | dotnet restore    | Restaure les dépendances spécifiées dans votre fichier project.json.                                                              |
+| dnu publish                       | dotnet publish    | Publie votre application pour le déploiement dans l’une des trois formes possibles (portable, portable avec natif et autonome).    |
+| dnu wrap                          | N/A\*             | Dans le contexte de DNX, encapsule un fichier project.json dans un fichier csproj.                                                                      |
+| dnu commands                      | N/A\*             | Dans le contexte de DNX, gère les commandes installées globalement.                                                             |
 
 (\*) - ces fonctionnalités ne sont pas prises en charge dans l’interface CLI de par sa conception. 
 
-## <a name="dnx-features-that-are-not-supported"></a>Fonctionnalités DNX non prises en charge
+<a id="dnx-features-that-are-not-supported" class="xliff"></a>
+
+## Fonctionnalités DNX non prises en charge
 Comme le montre le tableau ci-dessus, certaines fonctionnalités de l’environnement de DNX ne sont pas prises en charge dans l’interface CLI, du moins pour l’instant. Dans cette section, nous allons nous intéresser aux fonctionnalités les plus importantes, nous expliquerons les raisons pour lesquelles nous avons décidé de renoncer à leur prise en charge, puis nous vous indiquerons des solutions de contournement au cas où vous en auriez besoin.
 
-### <a name="global-commands"></a>Commandes globales
+<a id="global-commands" class="xliff"></a>
+
+### Commandes globales
 DNU reposait sur un concept appelé « commandes globales ». Il s’agissait pour l’essentiel d’applications console empaquetées sous forme de packages NuGet avec un script d’interpréteur de commandes qui appelait le DNX spécifié destiné à exécuter l’application. 
 
 L’interface CLI ne prend pas en charge ce concept. En revanche, il prend en charge l’ajout de commandes par projet qui peuvent être appelées à l’aide de la syntaxe `dotnet <command>` bien connue.
 
-### <a name="installing-dependencies"></a>Installation de dépendances
+<a id="installing-dependencies" class="xliff"></a>
+
+### Installation de dépendances
 À compter de la version 1, les outils de l’interface CLI .NET Core proposent une commande `install` pour installer les dépendances. Pour installer un package à partir de NuGet, vous devez l’ajouter en tant que dépendance à votre fichier `project.json`, puis exécuter `dotnet restore`. 
 
-### <a name="running-your-code"></a>Exécution de votre code
+<a id="running-your-code" class="xliff"></a>
+
+### Exécution de votre code
 Il existe deux façons principales d’exécuter du code. La première consiste à partir de la source, avec `dotnet run`. Contrairement à `dnx run`, aucune compilation en mémoire n’est effectuée. En fait, `dotnet build` est appelé pour générer le code, puis le fichier binaire généré est exécuté. 
 
 L’autre méthode consiste à utiliser `dotnet` proprement dit pour exécuter le code. Pour cela, il convient d’indiquer le chemin de votre assembly : `dotnet path/to/an/assembly.dll`. 
 
-## <a name="migrating-your-dnx-project-to-net-core-cli"></a>Migration d’un projet DNX vers l’interface CLI .NET Core
+<a id="migrating-your-dnx-project-to-net-core-cli" class="xliff"></a>
+
+## Migration d’un projet DNX vers l’interface CLI .NET Core
 Outre l’utilisation de nouvelles commandes pendant que vous travaillez sur votre code, vous allez devoir encore migrer trois éléments majeurs de DNX :
 
 1. Migrez le fichier `global.json`, le cas échéant, pour pouvoir utiliser l’interface CLI.
 2. Migrez le fichier projet (`project.json`) proprement dit vers les outils de l’interface CLI.
 3. Migrez les API DNX vers leurs équivalents BCL. 
 
-### <a name="changing-the-globaljson-file"></a>Modification du fichier global.json
+<a id="changing-the-globaljson-file" class="xliff"></a>
+
+### Modification du fichier global.json
 Le fichier `global.json` fait office de fichier de solution pour les projets RC1 et RC2 (ou ultérieurs). Pour permettre aux outils de l’interface CLI (mais aussi à Visual Studio) de faire la différence entre la version RC1 et les versions ultérieures, ils utilisent la propriété `"sdk": { "version" }` pour distinguer un projet RC1 ou de version ultérieure. Si `global.json` ne contient pas ce nœud, il est supposé être de la dernière version. 
 
 Pour mettre à jour le fichier `global.json`, supprimez la propriété ou définissez-la avec la version exacte des outils que vous voulez utiliser, en l’occurrence, **1.0.0-preview2-003121** :
@@ -105,7 +127,9 @@ Pour mettre à jour le fichier `global.json`, supprimez la propriété ou défin
 }
 ```
 
-### <a name="migrating-the-project-file"></a>Migration du fichier projet
+<a id="migrating-the-project-file" class="xliff"></a>
+
+### Migration du fichier projet
 L’interface CLI et DNX utilisent le même système de projet basé sur le fichier `project.json`. La syntaxe et la sémantique du fichier projet sont pratiquement identiques, avec de petites différences en fonction des scénarios. Le schéma a également subi quelques modifications, ce que vous pouvez constater dans le [fichier de schéma](http://json.schemastore.org/project).
 
 Si vous créez une application console, vous devez ajouter l’extrait de code suivant à votre fichier projet :
@@ -122,7 +146,7 @@ Si votre `project.json` contient une section « commands », vous pouvez la su
 
 Une fois ces opérations effectuées, vous devez choisir le type de portabilité que vous voulez pour votre application. Avec .NET Core, nous nous sommes employés à mettre à votre disposition une gamme d’options de portabilité. Par exemple, vous pouvez faire de votre application une application entièrement *portable* ou une application *autonome*. L’option d’application portable se rapproche plus du mode de fonctionnement des applications .NET Framework : elle a besoin d’un composant partagé pour être exécutée sur l’ordinateur cible (.NET Core). L’application autonome n’a pas besoin de .NET Core pour être installée sur la cible, mais vous devez produire une application pour chaque système d’exploitation que vous voulez prendre en charge. Ces différents types de portabilité et d’autres sont décrits dans le document sur les  [types de portabilité d’application](../deploying/index.md). 
 
-Dès lors que vous avez déterminé le type de portabilité que vous voulez utiliser, vous devez modifier le ou les frameworks ciblés. Si vous écriviez des applications pour .NET Core, il est très probable que vous utilisiez `dnxcore50` comme framework ciblé. Avec l’interface CLI et compte tenu des changements apportés par la nouvelle [bibliothèque .NET Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md), vous devez opter pour l’un des frameworks suivants :
+Dès lors que vous avez déterminé le type de portabilité que vous voulez utiliser, vous devez modifier le ou les frameworks ciblés. Si vous écriviez des applications pour .NET Core, il est très probable que vous utilisiez `dnxcore50` comme framework ciblé. Avec l’interface CLI et compte tenu des changements apportés par la nouvelle bibliothèque [.NET Standard](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md), vous devez opter pour l’un des frameworks suivants :
 
 1. `netcoreapp1.0` : si vous écrivez des applications sur .NET Core (y compris des applications ASP.NET Core)
 2. `netstandard1.6` : si vous écrivez des bibliothèques de classes pour .NET Core
@@ -142,3 +166,4 @@ Dès que vous êtes prêt, vous pouvez tenter une restauration avec `dotnet rest
 ```
 
 L’exécution de `dotnet build` risque d’afficher des erreurs de build, même si leur nombre devrait rester limité. Dès lors que votre code se génère et s’exécute correctement, vous pouvez le tester avec le runner. Exécutez `dotnet <path-to-your-assembly>` et regardez-le s’exécuter.
+

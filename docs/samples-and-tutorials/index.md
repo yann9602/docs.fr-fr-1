@@ -1,5 +1,5 @@
 ---
-title: Exemples et didacticiels
+title: Exemples et didacticiels | Microsoft Docs
 description: "Informations sur les exemples et les didacticiels pour .NET Core, ASP.NET Core et le langage C# permettant d’en savoir plus sur .NET."
 keywords: .NET, .NET Core, ASP.NET, C#, exemple, didacticiel
 author: BillWagner
@@ -9,26 +9,35 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-translationtype: Human Translation
-ms.sourcegitcommit: 890c058bd09893c2adb185e1d8107246eef2e20a
-ms.openlocfilehash: 977dd60bb21b466a6bec357a6dec73aa9a931ead
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 65c55837d6ccb93373b84aa4bdef416bdf4fa75a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="samples-and-tutorials"></a>Exemples et didacticiels
+<a id="samples-and-tutorials" class="xliff"></a>
+
+# Exemples et didacticiels
 
 La documentation .NET contient un ensemble d’exemples et de didacticiels qui vous renseignent sur .NET. Cette rubrique explique comment rechercher, afficher et télécharger des didacticiels et des exemples .NET Core, ASP.NET Core et C#. Vous trouverez des ressources utiles pour apprendre le langage de programmation F# sur le [site de F# Foundation](http://fsharp.org/learn.html). Si vous souhaitez explorer C# avec un éditeur de code en ligne, essayez ces [didacticiels interactifs](http://go.microsoft.com/fwlink/p/?LinkId=817234). Vous trouverez des instructions pour afficher et télécharger des exemples de code dans la section [Afficher et télécharger des exemples](#viewing-and-downloading-samples).
 
-## <a name="net-core"></a>.NET Core
+<a id="net-core" class="xliff"></a>
 
-### <a name="samples"></a>Exemples
+## .NET Core
+
+<a id="samples" class="xliff"></a>
+
+### Exemples
 
 **[Tests unitaires dans .NET Core à l’aide de dotnet test](../core/testing/unit-testing-with-dotnet-test.md)**
 
 Ce guide montre comment créer une application web ASP.NET Core et les tests unitaires associés. Il commence par créer une application de service web simple, puis il ajoute des tests. Ensuite, il crée d’autres tests pour guider l’implémentation de nouvelles fonctionnalités. [L’exemple terminé](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test) est disponible dans le référentiel DotNET / docs sur GitHub.
 
-### <a name="tutorials"></a>Didacticiels
+<a id="tutorials" class="xliff"></a>
+
+### Didacticiels
 
 **[Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas](../core/tutorials/using-with-xplat-cli.md)**
 
@@ -38,13 +47,19 @@ Ce guide indique comment utiliser les outils d’interface de ligne de commande 
 
 Cet exemple explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. Ces outils offrent une expérience efficace et concrète qui fonctionne sur tous les systèmes d’exploitation pris en charge. [L’exemple terminé](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library) est disponible dans le référentiel DotNET / docs sur GitHub.
 
-## <a name="aspnet-core"></a>ASP.NET Core
+<a id="aspnet-core" class="xliff"></a>
+
+## ASP.NET Core
 
 Consultez les [didacticiels ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/). De nombreux articles de la documentation ASP.NET Core comportent des liens vers des exemples écrits pour eux.
 
-## <a name="c-language"></a>langage C#
+<a id="c-language" class="xliff"></a>
 
-### <a name="samples"></a>Exemples
+## langage C#
+
+<a id="samples" class="xliff"></a>
+
+### Exemples
 
 **[Itérateurs](../csharp/iterators.md)**
 
@@ -66,7 +81,9 @@ Cet exemple illustre de nombreux problèmes pouvant être résolus à l’aide d
 
 Cette série d’exemples illustre de nombreuses fonctionnalités de Language Integrated Query (LINQ). [L’exemple terminé](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp) est disponible dans le référentiel DotNET / docs sur GitHub.
 
-### <a name="tutorials"></a>Didacticiels
+<a id="tutorials" class="xliff"></a>
+
+### Didacticiels
 
 **[Application console](../csharp/tutorials/console-teleprompter.md)**
 
@@ -92,7 +109,9 @@ Ce didacticiel explique comment créer une application console .NET Core simple 
 
 Ce didacticiel vous montre comment créer une solution complète .NET Core qui inclut une bibliothèque réutilisable et un test unitaire.
 
-## <a name="deploying-to-containers"></a>Déploiement sur des conteneurs
+<a id="deploying-to-containers" class="xliff"></a>
+
+## Déploiement sur des conteneurs
 
 **[Exécution d’applications ASP.NET MVC dans des conteneurs Docker Windows](../framework/docker/aspnetmvc.md)**
 
@@ -102,7 +121,9 @@ Ce didacticiel montre comment déployer une application MVC ASP.NET dans un cont
 
 Ce didacticiel montre comment déployer une application console existante dans un conteneur Windows. [L’exemple terminé](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator) est disponible dans le référentiel DotNET / docs sur GitHub.
 
-## <a name="viewing-and-downloading-samples"></a>Afficher et télécharger les exemples
+<a id="viewing-and-downloading-samples" class="xliff"></a>
+
+## Afficher et télécharger les exemples
 
 De nombreuses rubriques montrent le code source et les exemples qu’il est possible d’afficher ou de télécharger sur GitHub. Pour consulter un exemple, suivez son lien. Pour télécharger le code, suivez ces instructions :
 

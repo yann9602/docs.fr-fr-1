@@ -1,5 +1,5 @@
 ---
-title: "Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé"
+title: "Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé | Microsoft Docs"
 description: "Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé"
 keywords: .NET, .NET Core
 ms.date: 06/20/2016
@@ -9,14 +9,17 @@ ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: dab9e2f9-9088-4089-b990-fbc3d8dcd611
 redirect_url: /dotnet/articles/core/tutorials/index
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: f802ecbc81238197fc759e9e1f1343e4b0e3f2df
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 008a128110c98f8d4262348b343931b510d1aac1
+ms.openlocfilehash: 23d10dd16abda77a1c545acde56ae63930c2b38a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/24/2017
 
 ---
 
-# <a name="-writing-net-core-console-apps-using-the-cli-tools-an-advanced-step-by-step-guide"></a>🔧 Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé
+<a id="-writing-net-core-console-apps-using-the-cli-tools-an-advanced-step-by-step-guide" class="xliff"></a>
+
+# 🔧 Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas avancé
 
 > **Remarque**
 > 

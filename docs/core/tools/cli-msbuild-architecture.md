@@ -9,18 +9,23 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7fff0f61-ac23-42f0-9661-72a7240a4456
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 515c4d4914fd2a967b4bd9d9947d6835e678388a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
+ms.openlocfilehash: 10e565af67056dee1ea51e4949f32e1e1de54600
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/27/2017
 
 ---
 
-# <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Vue d’ensemble générale des modifications des outils .NET Core
+<a id="high-level-overview-of-changes-in-the-net-core-tools" class="xliff"></a>
+
+# Vue d’ensemble générale des modifications des outils .NET Core
 
 Ce document décrit de façon générale les modifications qu’apporte le passage de *project.json* à MSBuild et au système de projet *.csproj*. Il décrit la nouvelle organisation en couches des outils, les nouveaux éléments disponibles et leur place dans la vue d’ensemble. La lecture de cet article doit vous aider à mieux comprendre tous les éléments qui composent les outils .NET Core après le passage à MSBuild et *.csproj*. 
 
-## <a name="moving-away-from-projectjson"></a>Abandon de project.json
+<a id="moving-away-from-projectjson" class="xliff"></a>
+
+## Abandon de project.json
 Le plus grand changement apporté aux outils pour .NET Core est certainement le [passage du système de projet project.json à csproj](https://blogs.msdn.microsoft.com/dotnet/2016/05/23/changes-to-project-json/). Les dernières versions des outils en ligne de commande ne prennent pas en charge les fichiers *project.json*. Cela signifie qu’elle ne peut pas servir à générer, exécuter ou publier des bibliothèques et des applications basées sur project.json. Pour utiliser cette version des outils, vous devez migrer vos projets existants ou en démarrer de nouveaux. 
 
 Dans le cadre de ce passage, le moteur de génération personnalisé qui a été développé pour générer des projets project.json a été remplacé par un moteur de génération mature et entièrement compatible appelé [MSBuild](https://github.com/Microsoft/msbuild). MSBuild est un moteur connu dans la communauté .NET, car c’est une technologie clé depuis la première version Release de la plateforme. Bien sûr, comme il doit générer des applications .NET Core, MSBuild a été porté vers .NET Core et peut être utilisé sur n’importe quelle plateforme sur laquelle s’exécute .NET Core. Une des principales promesses de .NET Core réside dans une pile de développement multiplateforme, et nous avons veillé à ce que cette évolution n’entrave pas cette promesse.
@@ -28,14 +33,16 @@ Dans le cadre de ce passage, le moteur de génération personnalisé qui a été
 > [!NOTE]
 > Si vous débutez avec MSBuild et souhaitez en savoir plus, vous pouvez commencer par lire l’article [Concepts de MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-concepts). 
 
-## <a name="the-tooling-layers"></a>Les couches des outils
+<a id="the-tooling-layers" class="xliff"></a>
+
+## Les couches des outils
 Le fait de quitter le système de projet existant et de changer de moteur de génération suscite naturellement la question de savoir si l’une ou l’autre de ces modifications change l’organisation en couches globale de l’ensemble de l’écosystème des outils .NET Core. Existe-t-il de nouvelles parties et composants ?
 
 Commençons par un rappel rapide de l’organisation en couches de Preview 2, comme l’illustre l’image suivante :
 
 ![Architecture générale des outils Preview 2](media/cli-msbuild-architecture/p2-arch.png)
 
-L’organisation en couches des outils est assez simple. En bas, nous avons les outils en ligne de commande .NET Core qui constituent la base. Tous les autres outils généraux tels que Visual Studio ou VS Code dépendent de l’interface de ligne de commande et s’appuient sur celle-ci pour générer des projets, restaurer des dépendances, etc. Cela signifie que, par exemple, si Visual Studio souhaite effectuer une opération de restauration, il appelle la commande `dotnet restore` dans l’interface de ligne de commande. 
+L’organisation en couches des outils est assez simple. En bas, nous avons les outils en ligne de commande .NET Core qui constituent la base. Tous les autres outils généraux tels que Visual Studio ou Visual Studio Code dépendent de l’interface de ligne de commande et s’appuient sur celle-ci pour générer des projets, restaurer des dépendances, etc. Cela signifie que, par exemple, si Visual Studio souhaite effectuer une opération de restauration, il appelle la commande `dotnet restore` dans l’interface de ligne de commande. 
 
 Avec le passage au nouveau système de projet, le schéma précédent change : 
 
@@ -48,7 +55,9 @@ La principale différence est que l’interface de ligne de commande n’est plu
 
 Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, la prochaine version de Visual Studio n’appellera pas la commande `dotnet restore` pour restaurer les dépendances des projets .NET Core, mais utilisera directement la cible « Restore ». Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md). 
 
-### <a name="cli-commands"></a>Commandes CLI
+<a id="cli-commands" class="xliff"></a>
+
+### Commandes CLI
 Le composant SDK partagé signifie que la plupart des commandes CLI existantes ont été réimplémentées comme cibles et tâches MSBuild. Que cela signifie-t-il pour les commandes CLI et votre utilisation de l’ensemble d’outils ? 
 
 Sur le plan pratique, la manière dont vous utilisez l’interface de ligne de commande ne change pas. L’interface de ligne de commande reprend les commandes de base de la version Release Preview 2 :
