@@ -18,7 +18,8 @@ ms.lasthandoff: 05/22/2017
 
 ---
 
-# <a name="tour-of-net"></a>Présentation de .NET
+# Présentation de .NET
+<a id="tour-of-net" class="xliff"></a>
 
 .NET est une plateforme de développement généraliste.  Elle comporte plusieurs fonctionnalités clés, telles que plusieurs langages de programmation, des modèles de programmation asynchrone et simultanée et une interopérabilité native, qui permettent un large éventail de scénarios sur plusieurs plateformes.
 
@@ -26,14 +27,16 @@ Cet article propose une visite guidée de certaines fonctionnalités principales
 
 Consultez [Composants architecturaux de .NET](components.md) pour en savoir plus sur chacune des « parties » architecturales de .NET et sur leur finalité.
 
-## <a name="how-to-run-the-code-samples"></a>Guide pratique pour exécuter les exemples de code
+## Guide pratique pour exécuter les exemples de code
+<a id="how-to-run-the-code-samples" class="xliff"></a>
 
 Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez [Bien démarrer](get-started.md).  Vous pouvez copier et coller les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
 
 > [!NOTE]
 À l’avenir, ce site de documentation pourra exécuter ces exemples de code dans votre navigateur.
 
-## <a name="programming-languages"></a>Langages de programmation
+## Langages de programmation
+<a id="programming-languages" class="xliff"></a>
 
 .NET prend en charge plusieurs langages de programmation.  Les runtimes .NET implémentent le [Common Language Infrastructure (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages.  Cela signifie que vous pouvez choisir n’importe quel langage .NET pour générer des applications et services sur .NET.
 
@@ -45,7 +48,8 @@ Microsoft développe et prend en charge activement trois langages .NET : C#, F#
 
 * Visual Basic est un langage facile à apprendre que vous pouvez utiliser pour créer une variété d’applications qui s’exécutent sur .NET.
 
-## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
+## Gestion automatique de la mémoire
+<a id="automatic-memory-management" class="xliff"></a>
 
 .NET utilise le [garbage collection](garbagecollection/index.md) pour fournir une gestion automatique de la mémoire pour les programmes.  Le récupérateur de mémoire opère avec une approche différée de la gestion de la mémoire, préférant le débit de l’application à la collecte immédiate de la mémoire.  Pour plus d’informations sur le garbage collector .NET, consultez [Notions de base du garbage collection (GC)](garbagecollection/fundamentals.md).
 
@@ -61,7 +65,8 @@ Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException`
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
-## <a name="working-with-unmanaged-resources"></a>Utilisation des ressources non managées
+## Utilisation des ressources non managées
+<a id="working-with-unmanaged-resources" class="xliff"></a>
 
 Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET.  Par exemple, un handle de fichier est une ressource non managée.  Un objet @System.IO.FileStream est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas.  Quand vous avez fini d’utiliser l’objet FileStream, vous devez libérer le handle de fichier.
 
@@ -77,7 +82,8 @@ Pour plus d’informations, consultez les pages suivantes :
 * Pour F#, [Gestion des ressources : le mot clé `use` ](../fsharp/language-reference/resource-management-the-use-keyword.md)
 * Pour Visual Basic, [Using, instruction](../visual-basic/language-reference/statements/using-statement.md)
 
-## <a name="type-safety"></a>Cohérence des types
+## Cohérence des types
+<a id="type-safety" class="xliff"></a>
 
 Les objets sont alloués en termes de types. Les seules opérations autorisées pour un objet donné et la mémoire qu’il consomme sont celles de son type. Un type `Dog` peut avoir des méthodes `Jump` et `WagTail`, mais probablement pas une méthode `SumTotal`. Un programme peut appeler uniquement les méthodes déclarées d’un type donné. Tous les autres appels entraînent une erreur au moment de la compilation ou une exception au moment de l’exécution (en cas d’utilisation de fonctionnalités dynamiques ou du type `object`).
 
@@ -95,7 +101,8 @@ C#, Visual Basic et F# prennent en charge l’**inférence de type** locale. L�
 
 F# offre des fonctionnalités d’inférence de type qui vont au-delà de l’inférence de type limitée aux méthodes disponible en C# et Visual Basic.  Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
 
-## <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
+## Délégués et expressions lambda
+<a id="delegates-and-lambdas" class="xliff"></a>
 
 Les délégués sont comme des pointeurs de fonction C++, à la grande différence qu’ils sont de type sécurisé. Ils représentent une sorte de méthode déconnectée au sein du système de type CLR. Les méthodes régulières sont attachées à une classe et peuvent être appelées directement uniquement par des conventions d’appel statiques ou d’instance.
 
@@ -103,7 +110,8 @@ Les délégués sont utilisés dans diverses API et emplacements de l’environn
 
 Pour en savoir plus sur ce sujet, lisez le document [Délégués et expressions lambda](delegates-lambdas.md).
 
-## <a name="generics"></a>Génériques
+## Génériques
+<a id="generics" class="xliff"></a>
 
 Les génériques sont une fonctionnalité qui a été ajoutée dans .NET Framework 2.0. En bref, les génériques permettent au programmeur d’introduire un « paramètre de type » quand il désigne leurs classes qui permet au code client (les utilisateurs du type) de spécifier le type exact à utiliser à la place du paramètre de type.
 
@@ -115,19 +123,22 @@ L’exemple suivant montre une exécution de programme de base utilisant une ins
 
 Pour plus d’informations, consultez l’article [Vue d’ensemble des types génériques (Génériques)](generics.md).
 
-## <a name="async-programming"></a>Programmation asynchrone
+## Programmation asynchrone
+<a id="async-programming" class="xliff"></a>
 
 La programmation asynchrone est un concept de première classe dans .NET, avec prise en charge asynchrone dans le runtime, les bibliothèques de framework et les constructions de langage .NET. En interne, ils sont basés sur des objets (comme `Task`) qui tirent parti du système d’exploitation pour effectuer aussi efficacement que possible des tâches utilisant des E/S.
 
 Pour en savoir plus sur la programmation asynchrone dans .NET, commencez par la [Vue d’ensemble d’Async](async.md).
 
-## <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
+## LINQ (Language-Integrated Query)
+<a id="language-integrated-query-linq" class="xliff"></a>
 
 LINQ est un ensemble puissant de fonctionnalités pour C# et VB qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, dans une base de données SQL ou un document XML), mais le code LINQ que vous écrivez généralement n’est pas différent pour chaque source de données !
 
 Pour en savoir plus et obtenir des exemples, consultez [LINQ (Language Integrated Query)](using-linq.md).
 
-## <a name="native-interoperability"></a>Interopérabilité native
+## Interopérabilité native
+<a id="native-interoperability" class="xliff"></a>
 
 Chaque système d’exploitation en cours d’utilisation prend en charge un grand nombre de plateformes pour diverses tâches de programmation. .NET offre plusieurs moyens de tirer parti de ces API. Collectivement, cette prise en charge est appelée « interopérabilité native » et, dans cette section, nous allons voir comment accéder aux API natives à partir du code managé .NET.
 
@@ -137,7 +148,8 @@ Une grande partie de la prise en charge d’interopérabilité dans Mono (et don
 
 Pour en savoir plus, lisez le document [Interopérabilité native](native-interop.md).
 
-## <a name="unsafe-code"></a>Code unsafe
+## Code unsafe
+<a id="unsafe-code" class="xliff"></a>
 
 Le CLR permet d’accéder à la mémoire native et d’effectuer une opération arithmétique de pointeur via du code `unsafe`. Ces opérations sont nécessaires pour certains algorithmes et pour l’interopérabilité du système. L’utilisation de code unsafe, bien que puissante, est déconseillée, sauf si elle est nécessaire pour assurer l’interopérabilité avec les API système ou implémenter l’algorithme le plus efficace. Le code unsafe peut ne pas s’exécuter de la même façon dans différents environnements et perd les avantages d’un récupérateur de mémoire et de la cohérence des types. Il est recommandé de restreindre et centraliser le code unsafe autant que possible, et de tester ce code de manière approfondie.
 
@@ -145,7 +157,8 @@ L’exemple suivant est une version modifiée de la méthode `ToString()` à par
 
 [!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
 
-## <a name="next-steps"></a>Étapes suivantes
+## Étapes suivantes
+<a id="next-steps" class="xliff"></a>
 
 Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Tour of C#](../csharp/tour-of-csharp/index.md) (Présentation de C#).
 
