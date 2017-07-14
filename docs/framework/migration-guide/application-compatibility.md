@@ -27,13 +27,11 @@ ms.lasthandoff: 05/31/2017
 
 ---
 
+# Compatibilité des applications dans le .NET Framework
 <a id="application-compatibility-in-the-net-framework" class="xliff"></a>
 
-# Compatibilité des applications dans le .NET Framework
-
-<a id="introduction" class="xliff"></a>
-
 ## Introduction
+<a id="introduction" class="xliff"></a>
 La compatibilité est un objectif très important de chaque version de .NET. La compatibilité garantit que chaque version est additive et que les versions précédentes fonctionnent donc toujours. En revanche, les modifications apportées aux fonctionnalités précédentes (pour améliorer les performances, résoudre des problèmes de sécurité ou corriger des bogues) peuvent provoquer des problèmes de compatibilité dans le code ou des applications qui s’exécutent sous une version ultérieure. Le .NET Framework reconnaît les modifications de reciblage et du runtime. Les modifications de reciblage concernent les applications qui ciblent une version spécifique du .NET Framework, mais sont exécutées sur une version ultérieure. Les modifications du runtime concernent toutes les applications qui s’exécutent sur une version particulière.
 
 Chaque application cible une version spécifique du .NET Framework, qui peut être indiquée par :
@@ -44,21 +42,18 @@ Chaque application cible une version spécifique du .NET Framework, qui peut êt
 
 Lors de l’exécution sur une version plus récente que celle qui était ciblée, le .NET Framework utilise un subterfuge afin de simuler l’ancienne version ciblée. En d’autres termes, l’application s’exécute sur la version la plus récente du .NET Framework, mais agit comme si elle était exécutée sur la version antérieure. La plupart des problèmes de compatibilité entre les versions du .NET Framework sont atténués via ce modèle de subterfuge.
 
-<a id="runtime-changes" class="xliff"></a>
-
 ## Modifications du runtime
+<a id="runtime-changes" class="xliff"></a>
 
 Les problèmes de runtime sont ceux qui surviennent quand un nouveau runtime est placé sur un ordinateur, que les mêmes fichiers binaires sont exécutés, mais qu’un comportement différent est détecté. Si un fichier binaire a été compilé pour .NET Framework 4.0, il est exécuté en mode de compatibilité .NET Framework 4.0 sur les versions 4.5 ou ultérieures. La plupart des modifications qui affectent 4.5 n’affectent pas un fichier binaire compilé pour la version 4.0. Cela est spécifique au domaine d’application et dépend des paramètres de l’assembly d’entrée.
 
-<a id="retargeting-changes" class="xliff"></a>
-
 ## Modifications de reciblage
+<a id="retargeting-changes" class="xliff"></a>
 
 Les problèmes de reciblage sont ceux qui surviennent quand un assembly qui ciblait 4.0 est maintenant défini pour cibler 4.5. Maintenant, l’assembly accepte les nouvelles fonctionnalités ainsi que les éventuels problèmes de compatibilité des anciennes fonctionnalités. Là encore, cela dépend de l’assembly d’entrée, comme l’application console qui utilise l’assembly ou le site web qui fait référence à l’assembly.
 
-<a id="net-compatibility-diagnostics" class="xliff"></a>
-
 ## Diagnostics de compatibilité .NET
+<a id="net-compatibility-diagnostics" class="xliff"></a>
 
 Les diagnostics de compatibilité .NET sont des analyseurs issus de la technologie Roslyn qui permettent d’identifier les problèmes de compatibilité entre les différentes versions du .NET Framework. Cette liste contient tous les analyseurs disponibles, même si chaque migration ne nécessite qu’une partie de ces analyseurs. Les analyseurs permettent de déterminer les problèmes liés à la migration planifiée et signalent uniquement ce type de problèmes.
 
@@ -90,18 +85,16 @@ Chaque problème comprend les informations suivantes :
 
 -   Les ID des diagnostics disponibles
 
-<a id="usage" class="xliff"></a>
-
 ## Utilisation
+<a id="usage" class="xliff"></a>
 Pour commencer, sélectionnez le type de modification de la compatibilité ci-dessous :
 
 * [Modifications de reciblage](./retargeting/index.md)
 * [Modifications du runtime](./runtime/index.md)
 
 
-<a id="see-also" class="xliff"></a>
-
 ## Voir aussi
+<a id="see-also" class="xliff"></a>
 
 * [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)
 * [Nouveautés](../../../docs/framework/whats-new/index.md)
