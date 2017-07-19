@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ab83f765d6cc66bc0808a316cecabf65af7a3843
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: fe548eb5d520945e3f0d52750bbf89935947116e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
@@ -51,7 +52,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
   
  [!code-cs[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_2.cs)]  
   
- La mémoire pour `p1` et `p2` est allouée sur la pile de threads. Cette mémoire est récupérée avec le type ou la méthode où elle est déclarée. C’est l’une des raisons pour lesquelles les structs sont copiés au moment de l’assignation. En revanche, la mémoire allouée pour une instance de classe est récupérée automatiquement (garbage collection) par le common language runtime quand toutes les références à l’objet sont hors de la portée. Il n’est pas possible de détruire de façon déterministe un objet de classe comme vous pouvez le faire dans C++. Pour plus d’informations sur l’opération de garbage collection dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)], consultez [Garbage collection](../../../standard/garbagecollection/index.md).  
+ La mémoire pour `p1` et `p2` est allouée sur la pile de threads. Cette mémoire est récupérée avec le type ou la méthode où elle est déclarée. C’est l’une des raisons pour lesquelles les structs sont copiés au moment de l’assignation. En revanche, la mémoire allouée pour une instance de classe est récupérée automatiquement (garbage collection) par le common language runtime quand toutes les références à l’objet sont hors de la portée. Il n’est pas possible de détruire de façon déterministe un objet de classe comme vous pouvez le faire dans C++. Pour plus d’informations sur l’opération de garbage collection dans le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)], consultez [Garbage collection](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
 >  L’allocation et la libération de mémoire sur le tas managé sont des opérations très optimisées dans le common language runtime. Dans la plupart des cas, il n’y a pas de différence significative sur le plan des performances entre l’allocation d’une instance de classe sur le tas et l’allocation d’une instance de struct sur la pile.  
@@ -59,15 +60,15 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 ## <a name="object-identity-vs-value-equality"></a>Comparaison de l’égalité de l’identité et des valeurs des objets  
  Quand vous effectuez une comparaison d’égalité entre deux objets, vous devez d’abord décider si vous souhaitez savoir si les deux variables représentent le même objet en mémoire, ou si les valeurs d’un ou de plusieurs de leurs champs sont équivalentes. Si vous projetez de comparer les valeurs, vous devez établir si les objets sont des instances de types valeur (structs) ou de types référence (classes, délégués, tableaux).  
   
--   Pour déterminer si deux instances de classe font référence au même emplacement en mémoire (ce qui signifie qu’elles ont la même *identité*), utilisez la méthode statique <xref:System.Object.Equals%2A>. (<xref:System.Object?displayProperty=fullName> est la classe de base implicite pour tous les types valeur et types référence, y compris les classes et structs définis par l’utilisateur.)  
+-   Pour déterminer si deux instances de classe référencent le même emplacement en mémoire (ce qui signifie qu’elles ont la même *identité*), utilisez la méthode statique <xref:System.Object.Equals%2A>. (<xref:System.Object?displayProperty=fullName> est la classe de base implicite pour tous les types valeur et types référence, y compris les classes et structs définis par l’utilisateur.)  
   
--   Pour déterminer si les champs d’instance dans deux instances de struct ont les mêmes valeurs, utilisez la méthode <xref:System.ValueType.Equals%2A?displayProperty=fullName>. Étant donné que tous les structs héritent implicitement de <xref:System.ValueType?displayProperty=fullName>, vous appelez directement la méthode sur votre objet, comme indiqué dans l’exemple suivant :  
+-   Pour déterminer si les champs d’instance dans deux instances de struct ont les mêmes valeurs, utilisez la méthode <xref:System.ValueType.Equals%2A?displayProperty=fullName>. Comme tous les structs héritent implicitement de <xref:System.ValueType?displayProperty=fullName>, vous appelez directement la méthode sur votre objet, comme indiqué dans l’exemple suivant :  
   
  [!code-cs[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_3.cs)]  
   
- L’implémentation <xref:System.ValueType?displayProperty=fullName> de `Equals` utilise la réflexion parce qu’elle doit être en mesure de déterminer la nature des champs dans chaque struct. Quand vous créez vos propres structs, substituez la méthode `Equals` pour fournir un algorithme d’égalité efficace qui est propre à votre type.  
+ L’implémentation <xref:System.ValueType?displayProperty=fullName> de `Equals` utilise la réflexion, car elle doit être en mesure de déterminer la nature des champs dans chaque struct. Quand vous créez vos propres structs, substituez la méthode `Equals` pour fournir un algorithme d’égalité efficace qui est propre à votre type.  
   
--   Pour déterminer si les valeurs des champs dans deux instances de classe sont égales, vous pouvez utiliser la méthode <xref:System.Object.Equals%2A> ou l’[opérateur ==](../../../csharp/language-reference/operators/equality-comparison-operator.md). Toutefois, utilisez-les uniquement si la classe les a substitués ou surchargés pour fournir une définition personnalisée de ce que signifie « égalité » pour les objets de ce type. La classe peut également implémenter l’interface <xref:System.IEquatable%601> ou <xref:System.Collections.Generic.IEqualityComparer%601>. Les deux interfaces fournissent des méthodes qui peuvent être utilisées pour tester l’égalité des valeurs. Quand vous concevez vos propres classes qui substituent `Equals`, veillez à suivre les instructions indiquées dans [Guide pratique pour définir l’égalité de valeurs pour un type](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md) et <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>.  
+-   Pour déterminer si les valeurs des champs dans deux instances de classe sont égales, vous pouvez utiliser la méthode <xref:System.Object.Equals%2A> ou l’[opérateur ==](../../../csharp/language-reference/operators/equality-comparison-operator.md). Toutefois, utilisez-les uniquement si la classe les a substitués ou surchargés pour fournir une définition personnalisée de ce que signifie « égalité » pour les objets de ce type. La classe peut également implémenter l’interface <xref:System.IEquatable%601> ou <xref:System.Collections.Generic.IEqualityComparer%601>. Les deux interfaces fournissent des méthodes qui peuvent être utilisées pour tester l’égalité des valeurs. Quand vous concevez vos propres classes qui substituent `Equals`, suivez les instructions indiquées dans [Guide pratique pour définir l’égalité de valeurs pour un type](../../../csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md) et <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d'informations :  
@@ -78,7 +79,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
   
 -   [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
   
--   [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+-   [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
   
 -   [Événements](../../../csharp/programming-guide/events/index.md)  
   
@@ -89,4 +90,4 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
  [class](../../../csharp/language-reference/keywords/class.md)   
  [struct](../../../csharp/language-reference/keywords/struct.md)   
  [new, opérateur](../../../csharp/language-reference/keywords/new-operator.md)   
- [Système de type commun](http://msdn.microsoft.com/library/53c57c96-83e1-4ee3-9543-9ac832671a89)
+ [Système de type commun](../../../standard/base-types/common-type-system.md)

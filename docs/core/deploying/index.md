@@ -10,14 +10,16 @@ ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3ffe3909902659a22cb25bac6dc5aaa4f5b9fde2
-ms.openlocfilehash: 31503e39d8a96092dbce03c17397e1adfec6421e
+ms.sourcegitcommit: 83200e452bccc20bfa82d94899514019e9d05a23
+ms.openlocfilehash: 5e2b03d0731e13e1d5261679a65b1e01cd1d3fe4
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/13/2017
+ms.lasthandoff: 07/05/2017
 
 ---
 
-# <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
+<a id="net-core-application-deployment" class="xliff"></a>
+
+# Déploiement d’applications .NET Core
 
 Vous pouvez créer deux types de déploiement pour les applications .NET Core :
 
@@ -25,11 +27,15 @@ Vous pouvez créer deux types de déploiement pour les applications .NET Core :
 
 - Déploiement autonome. Contrairement à un déploiement dépendant du framework, un déploiement autonome ne s’appuie sur la présence d’aucun composant partagé sur le système cible. Tous les composants, notamment les bibliothèques .NET Core et le runtime .NET Core, sont inclus avec l’application et sont isolées des autres applications .NET Core. Les déploiements autonomes incluent un fichier exécutable (comme *app.exe* sur les plateformes Windows pour une application nommée `app`), qui est une version renommée de l’hôte .NET Core spécifique à la plateforme, et un fichier *.dll* (comme *app.dll*), qui est l’application elle-même.
 
-## <a name="framework-dependent-deployments-fdd"></a>Déploiements dépendant du framework
+<a id="framework-dependent-deployments-fdd" class="xliff"></a>
+
+## Déploiements dépendant du framework
 
 Pour un déploiement dépendant du framework, vous déployez seulement votre application et les dépendances tierces. Vous ne devez pas déployer .NET Core car votre application utilise la version de .NET Core qui est présente sur le système cible. Il s’agit du modèle de déploiement par défaut pour les applications .NET Core.
 
-### <a name="why-create-a-framework-dependent-deployment"></a>Pourquoi créer un déploiement dépendant du framework ?
+<a id="why-create-a-framework-dependent-deployment" class="xliff"></a>
+
+### Pourquoi créer un déploiement dépendant du framework ?
 
 Un déploiement dépendant du framework présente plusieurs avantages :
 
@@ -45,11 +51,15 @@ Il existe également quelques inconvénients :
 
 - Il est possible que le runtime et les bibliothèques .NET Core changent sans que vous le sachiez dans les versions futures. Dans de rares cas, ceci peut changer le comportement de votre application.
 
-## <a name="self-contained-deployments-scd"></a>Déploiements autonomes
+<a id="self-contained-deployments-scd" class="xliff"></a>
 
-Pour un déploiement autonome, vous déployez votre application et les dépendances tierces requises, ainsi que la version de .NET Core utilisée pour générer l’application. La création d’un déploiement autonome n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) sur les différentes plateformes (par exemple OpenSSL sur macOS). Ces services doivent donc être présents avant l’exécution de l’application.
+## Déploiements autonomes
 
-### <a name="why-deploy-a-self-contained-deployment"></a>Pourquoi déployer un déploiement autonome ?
+Pour un déploiement autonome, vous déployez votre application et les dépendances tierces requises, ainsi que la version de .NET Core utilisée pour générer l’application. La création d’un déploiement autonome n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) sur les différentes plateformes. Ces services doivent donc être présents avant l’exécution de l’application.
+
+<a id="why-deploy-a-self-contained-deployment" class="xliff"></a>
+
+### Pourquoi déployer un déploiement autonome ?
 
 Le déploiement d’un déploiement autonome a deux avantages majeurs :
 
@@ -65,7 +75,9 @@ Elle a également plusieurs inconvénients :
 
 - Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.
 
-## <a name="step-by-step-examples"></a>Exemples étape par étape
+<a id="step-by-step-examples" class="xliff"></a>
+
+## Exemples étape par étape
 
 Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec les outils de l’interface CLI, consultez [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md). Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec Visual Studio, consultez [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md). Chaque rubrique contient des exemples des déploiements suivants :
 
@@ -74,7 +86,9 @@ Pour obtenir des exemples étape par étape de déploiement d’applications .NE
 - Déploiement autonome
 - Déploiement autonome avec des dépendances tierces
 
-# <a name="see-also"></a>Voir aussi
+<a id="see-also" class="xliff"></a>
+
+# Voir aussi
 
 [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md)   
 [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md)   

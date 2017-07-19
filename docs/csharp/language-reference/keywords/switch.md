@@ -36,10 +36,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b6f8b110e087093bd47573a1a4a05752be91e743
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: b53ab404e7a5ea0dfee7ca64b668a7e6fe026bde
+ms.contentlocale: fr-fr
+ms.lasthandoff: 06/15/2017
 
 ---
 # <a name="switch-c-reference"></a>switch (Référence C#)
@@ -175,7 +176,7 @@ L’expression `case` est `true` si l’une quelconque des affirmations suivante
 
 - *expr* est une instance du même type que *type*.
 
-- *expr* est une instance d’un type qui dérive de *type*. En d’autres termes, le résultat de *expr* peut faire l’objet d’un upcast vers une instance de *type*.
+- *expr* est une instance d’un type qui dérive de *type*. En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.
 
 - *expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*. Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration de type. Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.
 
@@ -208,12 +209,12 @@ Sans critères spéciaux, ce code peut être écrit comme suit. L’utilisation 
 Notez que la clause `when` dans l’exemple qui tente de tester si un objet `Shape` est `null` ne s’exécute pas. Le modèle de type correct à utiliser pour tester un `null` est `case null:`.
 
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
 
  [Informations de référence sur C#](../index.md)   
- [Guide de programmation C#](../../programming-guide/index.md)   
+ [Guide de programmation C#](../../programming-guide/index.md)   
  [Mots clés C#](index.md)   
  [if-else](if-else.md)   
  [Critères spéciaux](../../pattern-matching.md)   

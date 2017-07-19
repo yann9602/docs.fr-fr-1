@@ -1,5 +1,5 @@
 ---
-title: "##pragma checksum (référence C#) | Microsoft Docs"
+title: "#<a name=\"pragma-checksum-c-reference--microsoft-docs\"></a>#pragma checksum (référence C#) | Microsoft Docs"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,18 +29,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5daf71faea5736036e9e3e0178e84ea03c314ff6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7acce171d3867512997d3c6fc3b42c4fc92dda18
+ms.openlocfilehash: f11f6ad4206fc4c83b91da2e6e7ca0be71783134
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/03/2017
 
 ---
-# <a name="pragma-checksum-c-reference"></a>##pragma checksum (référence C#)
-Génère des sommes de contrôle pour les fichiers sources afin de faciliter le débogage des pages [!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)].  
+# <a name="pragma-checksum-c-reference"></a>#pragma checksum (Référence C#)
+Génère des sommes de contrôle pour les fichiers sources afin de faciliter le débogage des pages [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 #pragma checksum "filename" "{guid}" "checksum bytes"  
 ```  
   
@@ -57,15 +58,15 @@ Génère des sommes de contrôle pour les fichiers sources afin de faciliter le 
 ## <a name="remarks"></a>Notes  
  Le débogueur Visual Studio utilise une somme de contrôle pour s’assurer de toujours trouver la bonne source. Le compilateur calcule la somme de contrôle pour un fichier source, puis envoie la sortie vers le fichier de base de données du programme (PDB). Le débogueur utilise ensuite le fichier PDB à comparer avec la somme de contrôle qu’il calcule pour le fichier source.  
   
- Cette solution n’est pas possible pour les projets [!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)], car la somme de contrôle est calculée pour le fichier source généré, au lieu du fichier .aspx. Pour résoudre ce problème, `#pragma checksum` fournit une prise en charge de la somme de contrôle pour les pages [!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)].  
+ Cette solution n’est pas possible pour les projets [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)], car la somme de contrôle est calculée pour le fichier source généré, au lieu du fichier .aspx. Pour résoudre ce problème, `#pragma checksum` fournit une prise en charge de la somme de contrôle pour les pages [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
   
- Quand vous créez un projet [!INCLUDE[vstecasp](../../../csharp/language-reference/preprocessor-directives/includes/vstecasp_md.md)] dans [!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)], le fichier source généré contient une somme de contrôle pour le fichier .aspx, à partir duquel la source est générée. Le compilateur écrit ensuite ces informations dans le fichier PDB.  
+ Quand vous créez un projet [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] dans [!INCLUDE[csprcs](~/includes/csprcs-md.md)], le fichier source généré contient une somme de contrôle pour le fichier .aspx, à partir duquel la source est générée. Le compilateur écrit ensuite ces informations dans le fichier PDB.  
   
  Si le compilateur ne rencontre aucune directive `#pragma checksum` dans le fichier, il calcule la somme de contrôle et écrit la valeur dans le fichier PDB.  
   
 ## <a name="example"></a>Exemple  
   
-```  
+```csharp
 class TestClass  
 {  
     static int Main()  
@@ -79,3 +80,4 @@ class TestClass
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+

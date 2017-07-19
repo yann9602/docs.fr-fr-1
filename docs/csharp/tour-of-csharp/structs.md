@@ -1,6 +1,6 @@
 ---
-title: "Structs C# | Présentation rapide du langage C#"
-description: "Découvrez que les principes fondamentaux des types valeur de C#, appelés structs"
+title: "Structs C# - Visite guidée du langage C# | Microsoft Docs"
+description: "Apprendre les bases des types valeur de C#, appelés structs"
 keywords: .NET, C#, struct, type valeur
 author: BillWagner
 ms.author: wiwagn
@@ -10,16 +10,19 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 321e2456c5f82f80c825f84ef2b7c0754a6a4e1e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 1061144a10a95b254c01db4d12144fdc5619a085
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="structs"></a>Structures
+<a id="structs" class="xliff"></a>
 
-Comme les classes, les ***structs*** sont des structures de données qui peuvent contenir des membres de données et des fonctions membres. Mais contrairement aux classes, les structures sont des types valeur et ne nécessitent pas d’allocation de tas. Une variable de type struct stocke directement les données de la structure, alors qu’une variable de type class stocke une référence à un objet alloué dynamiquement. Les types struct ne prennent pas en charge l’héritage spécifié par l’utilisateur, et tous les types struct héritent implicitement du type `object`.
+# Structs
+
+Comme les classes, les ***structs*** sont des structures de données qui peuvent contenir des membres de données et des fonctions membres. Mais contrairement aux classes, les structures sont des types valeur et ne nécessitent pas d’allocation de tas. Une variable de type struct stocke directement les données de la structure, alors qu’une variable de type class stocke une référence à un objet alloué dynamiquement. Les types struct ne prennent pas en charge l’héritage spécifié par l’utilisateur, et tous les types struct héritent implicitement du type <xref:System.ValueType>, qui à son tour hérite implicitement de `object`.
 
 Les structures sont particulièrement utiles pour les petites structures de données qui ont une sémantique par rapport à leurs valeurs. Les nombres complexes, les points dans un système de coordonnées ou les paires clé-valeur dans un dictionnaire sont de bons exemples de structures. L’utilisation de structures plutôt que de classes pour les petites structures de données peut faire une grande différence dans le nombre d’allocations de mémoire effectuées par une application. Par exemple, le programme suivant crée et initialise un tableau de 100 points. Avec `Point` implémenté en tant que classe, 101 objets séparés sont instanciés : un pour le tableau et un pour chacun des 100 éléments.
 

@@ -1,26 +1,45 @@
 ---
-title: "#if (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "#if"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "#if (directive C#)"
+title: "#<a name=\"if-c-reference--microsoft-docs\"></a>if (référence C#) | Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '#if'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
 caps.latest.revision: 17
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 17
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
+ms.openlocfilehash: 4fc51446d297015d9e492703c9b1868c3b513c53
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
+
 ---
-# #if (r&#233;f&#233;rence C#)
-Lorsque le compilateur C\# rencontre une directive  `#if`, éventuellement suivie d'une directive [\#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), il compilera uniquement le code entre les directives si le symbole spécifié est défini.  Contrairement à C et C\+\+, vous ne pouvez pas assigner de valeur numérique à un symbole ; l'instruction \#if est Boolean en C\# et teste uniquement si le symbole a été défini ou non.  Par exemple :  
+# <a name="if-c-reference"></a>#if (référence C#)
+Quand le compilateur C# rencontre une directive `#if`, suivie éventuellement d’une directive [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), il compile le code entre les directives uniquement si le symbole spécifié est défini.  Contrairement à C et C++, vous ne pouvez pas attribuer une valeur numérique à un symbole ; l’instruction #if en C# est booléenne et vérifie uniquement si le symbole a été défini ou non. Par exemple :  
   
-```  
+```csharp
 #define DEBUG  
 // ...  
 #if DEBUG  
@@ -28,26 +47,26 @@ Lorsque le compilateur C\# rencontre une directive  `#if`, éventuellement suivi
 #endif  
 ```  
   
- Vous pouvez utiliser les opérateurs [\=\=](../../../csharp/language-reference/operators/equality-comparison-operator.md) \(égalité\) [\! \=](../../../csharp/language-reference/operators/not-equal-operator.md) \(inégalité\) pour tester uniquement [true](../../../csharp/language-reference/keywords/true.md) ou [false](../../../csharp/language-reference/keywords/false.md).  True signifie que le symbole est défini.  L'instruction `#if DEBUG` a la même signification que `#if (DEBUG == true)`.  Vous pouvez utiliser les opérateurs &&\(et\), [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) \(ou\), et [\!](../../../csharp/language-reference/operators/logical-negation-operator.md) \(pas\) pour évaluer si plusieurs symboles définis.  Vous pouvez aussi grouper des symboles et des opérateurs à l'aide de parenthèses.  
+ Vous pouvez utiliser les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) (égalité), [!=](../../../csharp/language-reference/operators/not-equal-operator.md) (inégalité) uniquement pour tester la valeur [true](../../../csharp/language-reference/keywords/true.md) ou [false](../../../csharp/language-reference/keywords/false.md). True signifie que le symbole est défini. L’instruction `#if DEBUG` a la même signification que `#if (DEBUG == true)`. Vous pouvez utiliser les opérateurs [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) (et), [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md) (or) et [!](../../../csharp/language-reference/operators/logical-negation-operator.md) (not) pour vérifier si plusieurs symboles ont été définis. Vous pouvez également regrouper des symboles et des opérateurs à l’aide de parenthèses.  
   
-## Notes  
- `#if`, ainsi que les directives[\#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md), [\#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md), [\#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), [\#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) et [\#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md), vous permettent d'inclure ou d'exclure du code, en fonction de l'existence d'un ou plusieurs symboles.  Cela peut s'avérer utile lorsque vous compilez du code pour une version Debug ou pour une configuration spécifique.  
+## <a name="remarks"></a>Remarques  
+ `#if`, ainsi que les directives [#else](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md), [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md), [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) et [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md), vous permettent d’inclure ou d’exclure du code en fonction de l’existence d’un ou plusieurs symboles. Cela peut être utile lors de la compilation du code pour une version Debug ou lors de la compilation d’une configuration spécifique.  
   
  Une directive conditionnelle commençant par une directive `#if` doit se terminer explicitement par une directive `#endif`.  
   
- `#define` vous permet de définir un symbole. Si vous utilisez ce symbole comme expression passée à la directive `#if`, l'expression est évaluée `true`.  
+ `#define` vous permet de définir un symbole de telle sorte que, en utilisant le symbole comme expression passée à la directive `#if`, l’expression corresponde à `true`.  
   
- Vous pouvez également définir un symbole à l'aide de l'option de compilation [\/define](../../../csharp/language-reference/compiler-options/define-compiler-option.md).  Vous pouvez annuler la définition d'un symbole à l'aide de [\#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md).  
+ Vous pouvez également définir un symbole avec l’option du compilateur [/define](../../../csharp/language-reference/compiler-options/define-compiler-option.md). Vous pouvez annuler la définition d’un symbole avec [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md).  
   
- Un symbole que vous définissez à l'aide de `/define` ou de `#define` ne crée pas de conflit avec une variable du même nom.  En conséquence, le nom d'une variable ne doit pas être passé à une directive de préprocesseur et un symbole peut être seulement évalué par une directive de préprocesseur.  
+ Un symbole que vous définissez avec `/define` ou `#define` n’est pas en conflit avec une variable du même nom. Autrement dit, un nom de variable ne doit pas être passé à une directive de préprocesseur et un symbole ne peut être évalué que par une directive de préprocesseur.  
   
- La portée d'un symbole créé à l'aide de `#define` correspond au fichier dans lequel il a été défini.  
+ La portée d’un symbole créé avec `#define` est le fichier dans lequel il a été défini.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-```  
+```csharp
 // preprocessor_if.cs  
-#define DEBUG #define MYTEST  
+#define DEBUG#define MYTEST  
 using System;  
 public class MyClass   
 {  
@@ -66,8 +85,9 @@ public class MyClass
 }  
 ```  
   
-  **Le DÉBOGAGE et les MYTEST sont définis**   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Directives de préprocesseur C\#](../../../csharp/language-reference/preprocessor-directives/index.md)
+ **DEBUG et MYTEST sont définis**   
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+

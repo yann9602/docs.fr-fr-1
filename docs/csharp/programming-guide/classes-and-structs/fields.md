@@ -27,9 +27,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 1e5b1880e6821b2fd4595baad31f7a1bd5599ac4
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -66,7 +67,7 @@ Un *champ* est une variable de tout type qui est déclarée directement dans une
  Un champ peut être déclaré comme [readonly](../../../csharp/language-reference/keywords/readonly.md). Un champ en lecture seule ne peut recevoir de valeur que pendant l’initialisation ou dans un constructeur. Un champ `static``readonly` est très similaire à une constante, à ceci près que le compilateur C# n’a pas accès à la valeur d’un champ statique en lecture seule au moment de la compilation, mais seulement au moment de l’exécution. Pour plus d’informations, consultez [Constantes](../../../csharp/programming-guide/classes-and-structs/constants.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   

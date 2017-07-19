@@ -1,87 +1,104 @@
 ---
-title: "How to: Create a Registry Key and Set Its Value in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "RegistryKey.CreateSubKey"
-  - "RegistryKey.SetValue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "registry keys, creating"
-  - "registry, adding values"
-  - "registry, adding keys"
-  - "registry keys, setting values"
-  - "examples [Visual Basic], registry"
+title: "Guide pratique pour créer une clé de Registre et définir sa valeur en Visual Basic | Microsoft Docs"
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- RegistryKey.CreateSubKey
+- RegistryKey.SetValue
+dev_langs:
+- VB
+helpviewer_keywords:
+- registry keys, creating
+- registry, adding values
+- registry, adding keys
+- registry keys, setting values
+- examples [Visual Basic], registry
 ms.assetid: d3e40f74-c283-480c-ab18-e5e9052cd814
 caps.latest.revision: 30
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 30
----
-# How to: Create a Registry Key and Set Its Value in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 28a01911dc715483aee8191972387781a6f1933e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
-La méthode `CreateSubKey` de l'objet `My.Computer.Registry` peut être utilisée pour créer une clé de Registre.  
+---
+# <a name="how-to-create-a-registry-key-and-set-its-value-in-visual-basic"></a>Guide pratique pour créer une clé de Registre et définir sa valeur en Visual Basic
+Vous pouvez utiliser la méthode `CreateSubKey` de l’objet `My.Computer.Registry` pour créer une clé de Registre.  
   
-## Procédure  
+## <a name="procedure"></a>Procédure  
   
-#### Pour créer une clé de Registre  
+#### <a name="to-create-a-registry-key"></a>Pour créer une clé de Registre  
   
--   Utilisez la méthode `CreateSubKey`, en spécifiant sous quelle ruche placer la clé ainsi que le nom de la clé.  Le paramètre  `Subkey`  ne respecte pas la casse.  Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER.  
-  
-     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
-  
-#### Pour créer une clé de Registre et y définir une valeur  
-  
-1.  Utilisez la méthode `CreateSubkey`, en spécifiant sous quelle ruche placer la clé ainsi que le nom de la clé.  Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER.  
+-   Utilisez la méthode `CreateSubKey`, en spécifiant le nom de la clé et sous quelle ruche la placer. Le paramètre `Subkey` ne respecte pas la casse. Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER.  
   
      [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
   
-2.  Définissez la valeur avec la méthode `SetValue`.  Cet exemple définit la valeur de chaîne "  "MyTestKeyValue" sur "This is a test value".  
+#### <a name="to-create-a-registry-key-and-set-a-value-in-it"></a>Pour créer une clé de Registre et définir sa valeur  
+  
+1.  Utilisez la méthode `CreateSubkey`, en spécifiant le nom de la clé et sous quelle ruche la placer. Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER.  
+  
+     [!code-vb[VbResourceTasks#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_1.vb)]  
+  
+2.  Définissez la valeur avec la méthode `SetValue`. Cet exemple définit « This is a test value » comme valeur de chaîne « MyTestKeyValue ».  
   
      [!code-vb[VbResourceTasks#14](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_2.vb)]  
   
-## Exemple  
- Cet exemple crée la clé de Registre `MyTestKey` sous HKEY\_CURRENT\_USER, puis définit la valeur de chaîne `MyTestKeyValue` à `This is a test value`.  
+## <a name="example"></a>Exemple  
+ Cet exemple crée la clé de Registre `MyTestKey` sous HKEY_CURRENT_USER, puis affecte `This is a test value` comme valeur de chaîne `MyTestKeyValue`.  
   
  [!code-vb[VbResourceTasks#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-create-a-registry-key-and-set-its-value_3.vb)]  
   
-## Programmation fiable  
- Examinez la structure du Registre afin de trouver un emplacement approprié pour votre clé.  Par exemple, vous souhaiterez peut\-être ouvrir la clé HKEY\_CURRENT\_USER\\Software de l'utilisateur actuel et créer une clé avec le nom de votre société.  Vous pouvez ensuite ajouter les valeurs du Registre à la clé de votre société.  
+## <a name="robust-programming"></a>Programmation fiable  
+ Examinez la structure du Registre pour rechercher un emplacement approprié pour votre clé. Par exemple, vous souhaiterez peut-être ouvrir la clé HKEY_CURRENT_USER\Software de l’utilisateur actuel et créer une clé avec le nom de votre société. Ensuite, ajoutez les valeurs de Registre à la clé de votre société.  
   
- Lors de la lecture du Registre à partir d'une application Web, l'utilisateur en cours dépend de l'authentification et de l'emprunt d'identité implémentés dans l'application Web.  
+ Lors de la lecture du Registre à partir d’une application web, l’utilisateur actuel dépend de l’authentification et de l’emprunt d’identité implémenté dans l’application web.  
   
- Pour des raisons de sécurité, il est préférable d'écrire des données dans le dossier utilisateur \(<xref:Microsoft.Win32.Registry.CurrentUser>\) plutôt que sur l'ordinateur local \(<xref:Microsoft.Win32.Registry.LocalMachine>\).  
+ Il est plus sûr d’écrire des données dans le dossier utilisateur (<xref:Microsoft.Win32.Registry.CurrentUser>) que sur l’ordinateur local (<xref:Microsoft.Win32.Registry.LocalMachine>).  
   
- Lorsque vous créez une valeur de Registre, vous devez déterminer la marche à suivre si cette valeur existe déjà.  Il est possible qu'un autre processus, peut\-être nuisible, ait déjà créé la valeur et puisse y accéder.  Lorsque vous placez des données dans la valeur du Registre, elles sont disponibles pour les autres processus.  Pour empêcher cela, utilisez la méthode <xref:Microsoft.Win32.RegistryKey.GetValue%2A>.  Elle retourne `Nothing` si la clé n'existe pas.  
+ Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour l’éviter, utilisez la méthode <xref:Microsoft.Win32.RegistryKey.GetValue%2A>. Elle retourne `Nothing` si la clé n’existe pas encore.  
   
- Pour des raisons de sécurité, il est déconseillé de stocker des données confidentielles, telles que des mots de passe, en texte brut dans le Registre, même si la clé de Registre est protégée par des listes de contrôle d'accès \(ACL, Access Control Lists\).  
+ Il est dangereux de stocker des données confidentielles (telles que des mots de passe) dans le Registre sous forme de texte brut, même si la clé de Registre est protégée par des listes de contrôle d’accès.  
   
- Les conditions ci\-dessous peuvent générer une exception.  
+ Les conditions ci-dessous peuvent générer une exception.  
   
--   Le nom de la clé est `Nothing` \(<xref:System.ArgumentNullException>\).  
+-   Le nom de la clé est `Nothing` (<xref:System.ArgumentNullException>).  
   
--   L'utilisateur n'a pas l'autorisation de créer des clés de Registre \(<xref:System.Security.SecurityException>\).  
+-   L’utilisateur ne dispose pas des autorisations nécessaires pour créer des clés de Registre (<xref:System.Security.SecurityException>).  
   
--   Le nom de la clé dépasse la limite de 255 caractères \(<xref:System.ArgumentException>\).  
+-   Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
   
--   La clé est fermée \(<xref:System.IO.IOException>\).  
+-   La clé est fermée (<xref:System.IO.IOException>).  
   
--   La clé de Registre est en lecture seule \(<xref:System.UnauthorizedAccessException>\).  
+-   La clé de Registre est en lecture seule (<xref:System.UnauthorizedAccessException>).  
   
-## Sécurité .NET Framework  
- Pour exécuter ce processus, votre assembly requiert un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>.  Si vous exécutez le programme dans un contexte partiellement fiable, le processus peut lever une exception en raison de privilèges insuffisants.  De même, l'utilisateur doit posséder les listes de contrôles d'accès appropriées pour pouvoir créer des paramètres ou écrire dans ceux\-ci.  Par exemple, une application locale disposant d'une autorisation de sécurité d'accès du code peut ne pas avoir une autorisation du système d'exploitation.  Pour plus d'informations, consultez [Notions fondamentales de la sécurité d'accès du code](../Topic/Code%20Access%20Security%20Basics.md).  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>   
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy.CurrentUser%2A>   
  <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A>   
- [Reading from and Writing to the Registry](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)   
- [Notions fondamentales de la sécurité d'accès du code](../Topic/Code%20Access%20Security%20Basics.md)
+ [Lecture et écriture dans le Registre](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)   
+ [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8)

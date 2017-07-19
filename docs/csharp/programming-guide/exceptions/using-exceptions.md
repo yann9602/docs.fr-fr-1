@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8a4bbb2f6d8060cd9196dd510cd89c827c9d697d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: a8c29002ae2287df60996ed2b23068eec1e2739b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Utilisation d'exceptions (Guide de programmation C#)
@@ -59,9 +60,9 @@ En C#, les erreurs qui se produisent dans le programme au moment de l’exécut
   
  Si aucun bloc `catch` compatible n’est trouvé sur la pile des appels après la levée d’une exception, l’une des trois situations suivantes se produit :  
   
--   Si l’exception se trouve dans un destructeur, le destructeur est abandonné et le destructeur de base, le cas échéant, est appelé.  
+-   Si l’exception se trouve dans un finaliseur, le finaliseur est abandonné et le finaliseur de base, le cas échéant, est appelé.  
   
--   Si la pile des appels contient un constructeur statique ou un initialiseur de champ statique, un <xref:System.TypeInitializationException> est levé, avec l’exception d’origine assignée à la propriété <xref:System.Exception.InnerException%2A> de la nouvelle exception.  
+-   Si la pile des appels contient un constructeur statique ou un initialiseur de champ statique, une <xref:System.TypeInitializationException> est levée, avec l’exception d’origine assignée à la propriété <xref:System.Exception.InnerException%2A> de la nouvelle exception.  
   
 -   Si le début du thread est atteint, le thread est terminé.  
   

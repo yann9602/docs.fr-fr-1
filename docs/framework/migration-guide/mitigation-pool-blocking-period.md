@@ -19,7 +19,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 2569e6a07ba1456d8bba9b27bf16190e634d6b47
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-pool-blocking-period"></a>Atténuation : Période de blocage du pool
@@ -34,7 +34,7 @@ La période de blocage du pool de connexions a été supprimée pour les connexi
  Ce changement permet aux demandes d’ouverture de connexion d’être retentées immédiatement pour les bases de données SQL Azure, ce qui améliore les performances des applications cloud.  
   
 ## <a name="mitigation"></a>Atténuation  
- Pour les applications qui sont affectées par ce changement, la période de blocage du pool de connexions peut être configurée en définissant la nouvelle propriété <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A>.  La valeur de la propriété est membre de l’énumération <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=fullName> qui peut prendre l’une des trois valeurs suivantes :  
+ Pour les applications qui sont affectées par ce changement, vous pouvez configurer la période de blocage du pool de connexions en définissant la nouvelle propriété <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A>.  La valeur de la propriété est un membre de l’énumération <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=fullName> qui peut prendre l’une des trois valeurs suivantes :  
   
 -   `PoolBlockingPeriod.AlwaysBlock` 
   
@@ -42,7 +42,7 @@ La période de blocage du pool de connexions a été supprimée pour les connexi
   
 -   `PoolBlockingPeriod.NeverBlock` 
   
- Vous pouvez restaurer le comportement précédent en définissant la propriété <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> avec la valeur `PoolBlockingPeriod.AlwaysBlock`.  
+ Vous pouvez restaurer le comportement précédent en affectant la valeur `PoolBlockingPeriod.AlwaysBlock` à la propriété <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications du runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6-2.md)

@@ -29,16 +29,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b12c4b20f65f8cd2b68a55c5d2548b289a560c3c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: d65b4050287289df419685127cdbbb18f52ec719
+ms.openlocfilehash: a214f129424fd458decf473ef94ec3c5ed6eed3c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/16/2017
 
 ---
 # <a name="extension-methods-c-programming-guide"></a>Méthodes d’extension (Guide de programmation C#)
 Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des types existants sans créer un type dérivé, ni recompiler ou modifier le type d'origine. Les méthodes d'extension sont un type particulier de méthode statique appelées comme s'il s'agissait de méthodes d'instance sur le type étendu. Pour le code client écrit en C# et Visual Basic, il n’y a aucune différence apparente entre appeler une méthode d’extension et les méthodes qui sont réellement définies dans un type.  
   
- Les méthodes d’extension les plus courantes sont les opérateurs de requête standard [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] qui ajoutent des fonctionnalités de requête aux types <xref:System.Collections.IEnumerable?displayProperty=fullName> et <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> existants. Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Ensuite, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d’instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, et ainsi de suite. Vous pouvez voir ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.  
+ Les méthodes d’extension les plus courantes sont les opérateurs de requête standard [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] qui ajoutent des fonctionnalités de requête aux types <xref:System.Collections.IEnumerable?displayProperty=fullName> et <xref:System.Collections.Generic.IEnumerable%601?displayProperty=fullName> existants. Pour utiliser les opérateurs de requête standard, introduisez-les d'abord dans la portée avec une directive `using System.Linq`. Puis, tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601> semble avoir des méthodes d'instance telles que <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Vous pouvez consulter ces méthodes supplémentaires dans la saisie semi-automatique des instructions IntelliSense quand vous tapez un « point » après une instance d’un type <xref:System.Collections.Generic.IEnumerable%601> tel que <xref:System.Collections.Generic.List%601> ou <xref:System.Array>.  
   
  L'exemple suivant indique comment appeler la méthode `OrderBy` d'opérateur de requête standard sur un tableau d'entiers. L'expression entre parenthèses est une expression lambda. De nombreux opérateurs de requête standard prennent des expressions lambda comme paramètres, mais ce n’est pas requis pour les méthodes d’extension. Pour plus d’informations, consultez [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
@@ -46,7 +47,7 @@ Les méthodes d'extension vous permettent d'« ajouter » des méthodes à des
   
  Les méthodes d’extension sont définies comme méthodes statiques mais sont appelées en utilisant la syntaxe de méthode d’instance. Leur premier paramètre spécifie les types sur lesquels la méthode s’applique et le paramètre est précédé du modificateur [this](../../../csharp/language-reference/keywords/this.md). Les méthodes d'extension sont uniquement dans la portée lorsque vous importez explicitement l'espace de noms dans votre code source avec une directive `using`.  
   
- L’exemple suivant montre une méthode d’extension définie pour la classe <xref:System.String?displayProperty=fullName>. Notez qu'elle est définie à l'intérieur d'une classe statique, non imbriquée et non générique :  
+ L'exemple suivant présente une méthode d'extension définie pour la classe <xref:System.String?displayProperty=fullName>. Notez qu'elle est définie à l'intérieur d'une classe statique, non imbriquée et non générique :  
   
  [!code-cs[csProgGuideExtensionMethods#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/extension-methods_2.cs)]  
   
@@ -76,9 +77,9 @@ using System.Linq;
  (Il peut également être nécessaire d'ajouter une référence à System.Core.dll.) Vous pouvez remarquer que les opérateurs de requête standard apparaissent dorénavant dans IntelliSense comme des méthodes supplémentaires disponibles pour la plupart des types <xref:System.Collections.Generic.IEnumerable%601>.  
   
 > [!NOTE]
->  Bien que les opérateurs de requête standard n’apparaissent pas dans IntelliSense pour <xref:System.String>, ils sont encore disponibles.  
+>  Bien que les opérateurs de requête standard n'apparaissent pas dans IntelliSense pour <xref:System.String>, ils sont encore disponibles.  
   
-## <a name="binding-extension-methods-at-compile-time"></a>Liaison de méthodes d’extension à la compilation  
+## <a name="binding-extension-methods-at-compile-time"></a>Liaison de méthodes d'extension à la compilation  
  Vous pouvez utiliser des méthodes d'extension pour étendre une classe ou une interface, mais pas pour les remplacer. Une méthode d'extension avec le même nom et la même signature qu'une méthode d'interface ou de classe ne sera jamais appelée. Au moment de la compilation, les méthodes d'extension ont toujours la priorité la plus faible par rapport aux méthodes d'instance définies dans le type lui-même. En d'autres termes, si un type a une méthode nommée `Process(int i)` et que vous avez une méthode d'extension avec la même signature, le compilateur créera toujours une liaison avec la méthode d'instance. Lorsque le compilateur rencontre un appel de méthode, il recherche d'abord une correspondance dans les méthodes d'instance du type. Si aucune correspondance n'est trouvée, il recherche toutes les méthodes d'extension définies pour le type et crée une liaison avec la première méthode d'extension qu'il trouve. L’exemple suivant montre comment le compilateur détermine quelle méthode d’extension ou méthode d’instance est choisie pour créer une liaison.  
   
 ## <a name="example"></a>Exemple  
@@ -95,7 +96,7 @@ using System.Linq;
   
  Lors de l’utilisation d’une méthode d’extension pour étendre un type dont le code source ne peut pas être modifié, vous risquez d’interrompre votre méthode d’extension en cas de modification dans l’implémentation du type.  
   
- Si vous implémentez des méthodes d'extension pour un type donné, prenez en compte les points suivants :  
+ Si vous implémentez des méthodes d’extension pour un type donné, prenez en compte les points suivants :  
   
 -   Une méthode d'extension ne sera jamais appelée si elle a la même signature qu'une méthode définie dans le type.  
   
@@ -112,3 +113,4 @@ using System.Linq;
  [Extension methods Interoperability between languages](http://go.microsoft.com/fwlink/?LinkId=112386)   
  [Extension methods and Curried Delegates](http://go.microsoft.com/fwlink/?LinkId=112387)   
  [Extension method Binding and Error reporting](http://go.microsoft.com/fwlink/?LinkId=112388)
+

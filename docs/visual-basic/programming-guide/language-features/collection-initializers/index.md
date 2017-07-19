@@ -1,99 +1,128 @@
 ---
-title: "Collection Initializers (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.CollectionInitializer"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "collection initializers [Visual Basic]"
+title: Initialiseurs de collections (Visual Basic) | Microsoft Docs
+ms.custom: 
+ms.date: 2015-07-20
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.CollectionInitializer
+dev_langs:
+- VB
+helpviewer_keywords:
+- collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
 caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
----
-# Collection Initializers (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
+ms.openlocfilehash: 4b0abe2c6356370584356dce1c6fc5731d735810
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/03/2017
 
-Les *initialiseurs de collection* fournissent une syntaxe raccourcie qui vous permet de créer une collection et de la remplir avec un ensemble initial de valeurs.  Les initialiseurs de collection sont utiles lorsque vous créez une collection à partir d'un jeu de valeurs connues, par exemple, une liste d'options de menu ou de catégories, un jeu initial de valeurs numériques, une liste statique de chaînes telles que les jours ou les mois, ou des emplacements géographiques tels qu'une liste d'états utilisée pour la validation.  
+---
+<a id="collection-initializers-visual-basic" class="xliff"></a>
+
+# Initialiseurs de collections (Visual Basic)
+Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous permet de créer une collection et de la remplir avec un ensemble initial de valeurs. Les initialiseurs de collections sont utiles lorsque vous créez une collection à partir d’un ensemble de valeurs connues (par exemple, une liste d’options de menu ou de catégories, un ensemble initial de valeurs numériques, une liste statique de chaînes telles que des noms de jours ou de mois, ou des emplacements géographiques tels qu’une liste d’états utilisée pour la validation).  
   
- Pour plus d'informations sur les collections, consultez [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md).  
+ Pour plus d’informations sur les collections, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
   
- Vous identifiez un initialiseur de collection à l'aide du mot clé `From` suivi des accolades \(`{}`\).  Cela s'apparente à la syntaxe de littéral de tableau décrite dans [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  Les exemples suivants montrent les différentes façons d'utiliser les initialiseurs de collection pour la création de collections.  
+ Vous identifiez un initialiseur de collection à l’aide du mot clé `From` suivi d’accolades (`{}`). Cette syntaxe est similaire à la syntaxe des littéraux de tableau décrite dans [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md). Les exemples suivants montrent différentes manières d’utiliser des initialiseurs de collections pour créer des collections.  
   
- [!code-vb[VbVbalrCollectionInitializers#1](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_1.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#1)]  
   
 > [!NOTE]
->  C\# fournit également des initialiseurs de collection.  Les initialiseurs de collection de C\# fournissent les mêmes fonctionnalités que les initialiseurs de collection de Visual Basic.  Pour plus d'informations sur les initialiseurs de collection C\#, consultez [Initialiseurs d'objets et de collections](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
+>  C# fournit également des initialiseurs de collections. Les initialiseurs de collections C# fournissent les mêmes fonctionnalités que les initialiseurs de collections Visual Basic. Pour plus d’informations sur les initialiseurs de collections C#, consultez [Initialiseurs d’objets et de collections](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
   
+<a id="syntax" class="xliff"></a>
+
 ## Syntaxe  
- Un initialiseur de collection se compose d'une liste de valeurs séparées par des virgules placées entre accolades \(`{}`\), précédée par le mot clé `From`, comme indiqué dans le code suivant.  
+ Un initialiseur de collection se compose d’une liste de valeurs séparées par des virgules et placées entre accolades (`{}`), précédées par le mot clé `From`, comme illustré dans le code suivant.  
   
- [!code-vb[VbVbalrCollectionInitializers#2](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_2.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]  
   
- Lorsque vous créez une collection, telle qu'un <xref:System.Collections.Generic.List%601> ou un <xref:System.Collections.Generic.Dictionary%602>, vous devez fournir le type de collection avant l'initialiseur de collection, comme indiqué dans le code suivant.  
+ Lorsque vous créez une collection, comme un <xref:System.Collections.Generic.List%601> ou un <xref:System.Collections.Generic.Dictionary%602>, vous devez fournir le type de collection avant l’initialiseur de collection, comme indiqué dans le code suivant.  
   
- [!code-vb[VbVbalrCollectionInitializers#13](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_3.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#13](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#13)]  
   
 > [!NOTE]
->  Vous ne pouvez pas combiner un initialiseur de collection et un initialiseur d'objet pour initialiser le même objet de collection.  Vous pouvez utiliser des initialiseurs d'objets pour initialiser des objets dans un initialiseur de collection.  
+>  Vous ne pouvez pas combiner un initialiseur de collection et un initialiseur d’objet pour initialiser le même objet de collection. Vous pouvez utiliser des initialiseurs d’objets pour initialiser des objets dans un initialiseur de collection.  
   
-## Création d'une collection à l'aide d'un initialiseur de collection  
- Lorsque vous créez une collection à l'aide d'un initialiseur de collection, chaque valeur fournie dans l'initialiseur de collection est passée à la méthode `Add` appropriée de la collection.  Par exemple, si vous créez un <xref:System.Collections.Generic.List%601> à l'aide d'un initialiseur de collection, chaque valeur de chaîne dans l'initialiseur de collection est passée à la méthode <xref:System.Collections.Generic.List%601.Add%2A>.  Si vous souhaitez créer une collection à l'aide d'un initialiseur de collection, le type spécifié doit être un type de collection valide.  Les types de collection valides incluent notamment les classes qui implémentent l'interface <xref:System.Collections.Generic.IEnumerable%601> ou héritent de la classe <xref:System.Collections.CollectionBase>.  Le type spécifié doit également exposer une méthode `Add` qui répond aux critères suivants.  
+<a id="creating-a-collection-by-using-a-collection-intializer" class="xliff"></a>
+
+## Création d’une collection à l’aide d’un initialiseur de collection  
+ Lorsque vous créez une collection à l’aide d’un initialiseur de collection, chaque valeur fournie dans l’initialiseur de collection est passée à la méthode `Add` appropriée de la collection. Par exemple, si vous créez un <xref:System.Collections.Generic.List%601> en utilisant un initialiseur de collection, chaque valeur de chaîne de l’initialiseur de collection est passée à la méthode <xref:System.Collections.Generic.List%601.Add%2A>. Si vous souhaitez créer une collection à l’aide d’un initialiseur de collection, le type spécifié doit être un type de collection valide. Les types de collections valides sont, par exemple, des classes qui implémentent l’interface <xref:System.Collections.Generic.IEnumerable%601> ou qui héritent de la classe <xref:System.Collections.CollectionBase>. Le type spécifié doit également exposer une méthode `Add` qui répond aux critères suivants.  
   
--   La méthode `Add` doit être disponible à partir de la portée dans laquelle l'initialiseur de collection est appelé.  La méthode `Add` ne doit pas obligatoirement être publique si vous utilisez l'initialiseur de collection dans un scénario où les méthodes non publiques de la collection sont accessibles.  
+-   La méthode `Add` doit être disponible à partir de la portée dans laquelle l’initialiseur de collection est appelé. La méthode `Add` ne doit pas nécessairement être publique si vous utilisez l’initialiseur de collection dans un scénario où les méthodes non publiques de la collection sont accessibles.  
   
--   La méthode `Add` doit être un membre d'instance ou un membre `Shared` de la classe de collection, ou une méthode d'extension.  
+-   La méthode `Add` doit être un membre d’instance ou un membre `Shared` de la classe de collection, ou une méthode d’extension.  
   
--   Il doit exister une méthode `Add` qui peut être mise en correspondance, selon les règles de résolution de surcharge, avec les types fournis dans l'initialiseur de collection.  
+-   Il doit exister une méthode `Add` pouvant être mise en correspondance, selon les règles de résolution de surcharge, avec les types fournis dans l’initialiseur de collection.  
   
- L'exemple de code suivant indique comment créer une collection `List(Of Customer)` à l'aide d'un initialiseur de collection.  Lorsque le code est exécuté, chaque objet `Customer` est passé à la méthode `Add(Customer)` de la liste générique.  
+ Ainsi, l’exemple de code suivant montre comment créer une collection `List(Of Customer)` à l’aide d’un initialiseur de collection. Lorsque le code est exécuté, chaque objet `Customer` est passé à la méthode `Add(Customer)` de la liste générique.  
   
- [!code-vb[VbVbalrCollectionInitializers#9](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_4.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#9](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#9)]  
   
- L'exemple de code suivant illustre un code équivalent qui n'utilise pas d'initialiseur de collection.  
+ L’exemple de code suivant montre le code équivalent qui n’utilise pas d’initialiseur de collection.  
   
- [!code-vb[VbVbalrCollectionInitializers#10](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_5.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#10](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#10)]  
   
- Si la collection inclut une méthode `Add` dont les paramètres correspondent au constructeur pour l'objet `Customer`, vous pouvez imbriquer des valeurs de paramètre pour la méthode `Add` dans des initialiseurs de collection, comme décrit dans la section suivante.  Si la collection n'a pas de méthode `Add`, vous pouvez en créer une comme méthode d'extension.  Pour obtenir un exemple de création de méthode `Add` comme méthode d'extension pour une collection, consultez [How to: Create an Add Extension Method Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md).  Pour obtenir un exemple de création d'une collection personnalisée qui peut être utilisée avec un initialiseur de collection, consultez [How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
+ Si la collection a une méthode `Add` ayant des paramètres qui correspondent au constructeur de l’objet `Customer`, vous pouvez imbriquer des valeurs de paramètre pour la méthode `Add` dans les initialiseurs de collections, comme indiqué dans la section suivante. Si la collection n’a pas une telle méthode `Add`, vous pouvez en créer une comme méthode d’extension. Pour obtenir un exemple montrant comment créer une méthode `Add` comme méthode d’extension pour une collection, consultez [Guide pratique pour créer une méthode d’extension Add utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Pour obtenir un exemple montrant comment créer une collection personnalisée pouvant être utilisée avec un initialiseur de collection, consultez [Guide pratique pour créer une collection utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
   
-## Imbrication d'initialiseurs de collection  
- Vous pouvez imbriquer des valeurs dans un initialiseur de collection pour identifier une surcharge spécifique d'une méthode `Add` pour la collection créée.  Les valeurs passées à la méthode `Add` doivent être séparées par des virgules et placées entre accolades \(`{}`\), comme dans un littéral de tableau ou un initialiseur de collection.  
+<a id="nesting-collection-initializers" class="xliff"></a>
+
+## Imbrication d’initialiseurs de collections  
+ Vous pouvez imbriquer des valeurs dans un initialiseur de collection pour identifier une surcharge spécifique d’une méthode `Add` pour la collection qui est créée. Les valeurs passées à la méthode `Add` doivent être séparées par des virgules et placées entre accolades (`{}`), comme vous le feriez dans un littéral de tableau ou un initialiseur de collection.  
   
- Lorsque vous créez une collection à l'aide de valeurs imbriquées, chaque élément de la liste de valeurs imbriquée est passé comme argument à la méthode `Add` qui correspond aux types d'élément.  L'exemple de code suivant crée un <xref:System.Collections.Generic.Dictionary%602> dans lequel les clés sont de type `Integer` et les valeurs de type `String`.  Chacune des listes de valeurs imbriquées est mise en correspondance avec la méthode <xref:System.Collections.Generic.Dictionary%602.Add%2A> pour le `Dictionary`.  
+ Lorsque vous créez une collection à l’aide de valeurs imbriquées, chaque élément de la liste de valeurs imbriquée est passé comme argument à la méthode `Add` correspondant aux types d’éléments. Ainsi, l’exemple de code suivant crée un <xref:System.Collections.Generic.Dictionary%602> dans lequel les clés sont de type `Integer` et les valeurs sont de type `String`. Chacune des listes de valeurs imbriquées est mise en correspondance avec la méthode <xref:System.Collections.Generic.Dictionary%602.Add%2A> pour `Dictionary`.  
   
- [!code-vb[VbVbalrCollectionInitializers#5](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_6.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#5)]  
   
- L'exemple de code précédent équivaut au code suivant.  
+ L’exemple de code précédent est équivalent au code suivant.  
   
- [!code-vb[VbVbalrCollectionInitializers#6](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/index_7.vb)]  
+ [!code-vb[VbVbalrCollectionInitializers#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#6)]  
   
- Seules les listes de valeurs imbriquées du premier niveau de l'imbrication sont envoyées à la méthode `Add` pour le type de collection.  Les niveaux plus profonds de l'imbrication sont traités comme littéraux de tableaux et les listes de valeurs imbriquées ne sont pas mises en correspondance avec la méthode `Add` des collections.  
+ Seules les listes de valeurs imbriquées du premier niveau d’imbrication sont envoyées à la méthode `Add` pour le type de collection. Les niveaux d’imbrication plus profonds sont traités comme des littéraux de tableau et les listes de valeurs imbriquées ne sont pas mises en correspondance avec la méthode `Add` de toute collection.  
   
+<a id="related-topics" class="xliff"></a>
+
 ## Rubriques connexes  
   
-|||  
-|-|-|  
 |Titre|Description|  
-|[How to: Create an Add Extension Method Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Montre comment créer une méthode d'extension appelée `Add` qui peut être utilisé pour remplir une collection avec les valeurs d'un initialiseur de collection.|  
-|[How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|montre comment activer l'utilisation d'un initialiseur de collection en incluant une méthode d' `Add` dans une classe de collection qui implémente `IEnumerable`.|  
+|---|---|  
+|[Guide pratique : créer une méthode d’extension Add utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Montre comment créer une méthode d’extension appelée `Add` qui peut être utilisée pour renseigner une collection avec des valeurs d’un initialiseur de collection.|  
+|[Guide pratique : créer une collection utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Montre comment activer l’utilisation d’un initialiseur de collection en incluant une méthode `Add` dans une classe de collection qui implémente `IEnumerable`.|  
   
+<a id="see-also" class="xliff"></a>
+
 ## Voir aussi  
- [Collections](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)   
+ [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
  [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
- [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md)   
- [Auto\-Implemented Properties](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   
- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+ [Initialiseurs d’objets : types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
+ [New, opérateur](../../../../visual-basic/language-reference/operators/new-operator.md)   
+ [Propriétés implémentées automatiquement](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   
+ [Guide pratique pour initialiser une variable de tableau en Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)   
+ [Inférence de type local](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
+ [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
+ [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
+ [Guide pratique : créer une liste d’éléments](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+

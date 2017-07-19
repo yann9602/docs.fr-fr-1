@@ -1,0 +1,97 @@
+---
+title: "UI Automation Support for the SplitButton Control Type | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-bcl"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "Split Button control type"
+  - "control types, Split Button"
+  - "UI Automation, Split Button control type"
+ms.assetid: 14b05ccf-bcd8-4045-9bae-f7679cd98711
+caps.latest.revision: 23
+author: "Xansky"
+ms.author: "mhopkins"
+manager: "markl"
+caps.handback.revision: 23
+---
+# UI Automation Support for the SplitButton Control Type
+> [!NOTE]
+>  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
+  
+ Cette rubrique fournit des informations sur la prise en charge d’[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour le type de contrôle SplitButton. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], un type de contrôle est un ensemble de conditions qu’un contrôle doit respecter pour pouvoir utiliser la propriété <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>. Ces conditions incluent des recommandations spécifiques pour l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les valeurs de propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] et les modèles de contrôle.  
+  
+ Le contrôle bouton partagé offre la capacité à réaliser une action sur un contrôle, et à développer ce dernier pour afficher une liste d’autres actions possibles.  
+  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle SplitButton. Les exigences [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles bouton partagé, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+  
+<a name="Required_UI_Automation_Tree_Structure"></a>   
+## Arborescence UI Automation obligatoire  
+ Le tableau suivant représente l’affichage de contrôle et l’affichage du contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] relative aux contrôles bouton partagé. En outre, il décrit ce que peut contenir chaque affichage. Pour plus d’informations sur l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+  
+|Affichage de contrôle|Affichage du contenu|  
+|---------------------------|--------------------------|  
+|SplitButton<br /><br /> <ul><li>Image \(0 ou 1\)</li><li>Text \(0 ou 1\)</li><li>Button \(1 ou 2\)<br /><br /> <ul><li>Menu \(0 ou 1. S’affiche en tant qu’enfant du bouton qui prend en charge le modèle ExpandCollapse\)</li><li>MenuItem \(1 et plus\)</li></ul></li></ul>|SplitButton<br /><br /> -   MenuItem \(1 et plus\)|  
+  
+<a name="Required_UI_Automation_Properties"></a>   
+## Propriétés UI Automation obligatoires  
+ Le tableau suivant répertorie les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dont la valeur ou la définition est particulièrement pertinente pour les contrôles bouton partagé. Pour plus d’informations sur les propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+  
+|Propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Valeur|Notes|  
+|-------------------------------------------------------------------------------------|------------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Consultez les remarques.|La valeur de cette propriété doit être unique dans tous les contrôles d’une application.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Consultez les remarques.|Rectangle externe qui contient l’ensemble du contrôle.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Consultez les remarques.|Pris en charge s’il existe un rectangle englobant. Si les points du rectangle englobant ne sont pas tous interactifs et que vous effectuez un test de positionnement spécialisé, vous devez remplacer et fournir une zone interactive.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Consultez les remarques.|Si le contrôle peut recevoir le focus clavier, il doit prendre en charge cette propriété.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|"Précédent"|Le nom du contrôle bouton partagé est affiché sur le bouton.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Null|Les contrôles bouton partagé n’ont pas d’étiquette de texte statique.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|SplitButton|Cette valeur est identique pour toutes les infrastructures d’interface utilisateur.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"bouton partagé"|Chaîne localisée correspondant au type de contrôle SplitButton.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Consultez les remarques.|Le texte d’aide peut indiquer le résultat de l’activation du bouton partagé, qui contient généralement le même type d’informations que celles présentées via une info\-bulle.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Le contrôle bouton partagé contient des informations pour l’utilisateur final.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Le contrôle bouton partagé est visible par l’utilisateur final.|  
+  
+<a name="Required_UI_Automation_Control_Patterns"></a>   
+## Modèles de contrôle UI Automation obligatoires  
+ Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles bouton partagé. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+  
+|Modèle de contrôle|Prise en charge|Notes|  
+|------------------------|---------------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Obligatoire|Les boutons partagés ont toujours une action par défaut associée à Invoke.|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Obligatoire|Les boutons partagés offrent toujours la possibilité de développer une liste d’options.|  
+  
+<a name="Required_UI_Automation_Events"></a>   
+## Événements UI Automation obligatoires  
+ Le tableau suivant répertorie les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par tous les contrôles bouton partagé. Pour plus d’informations sur les événements, consultez [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+  
+|Événement [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Prise en charge|Notes|  
+|-------------------------------------------------------------------------------------|---------------------|-----------|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>.|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>.|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>.|Obligatoire|None|  
+|Événement de modification de propriété <xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>.|Obligatoire|Aucun|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Obligatoire|Aucun|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Obligatoire|None|  
+  
+<a name="Split_Button_Control_Example"></a>   
+## Exemple de contrôle SplitButton  
+ L’image suivante illustre un contrôle de type SplitButton dans un contrôle de grille de données.  
+  
+ ![Bouton Fractionner](../../../docs/framework/ui-automation/media/uiauto-splitbutton-detailed.png "uiauto\_splitbutton\_detailed")  
+  
+ L’affichage de contrôle et l’affichage du contenu de l’arborescence UI Automation relative au contrôle de grille de données et au contrôle bouton partagé sont indiqués ci\-dessous. Les modèles de contrôle de chaque élément Automation sont indiqués entre parenthèses.  
+  
+|Arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] \- Affichage de contrôle|Arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] \- Affichage du contenu|  
+|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|  
+|<ul><li>SplitButton "Nom" \(Invoke, ExpandCollapse\)</li><li>Button "Autres options" \(Invoke\)<br /><br /> <ul><li>Menu</li><li>MenuItem</li><li>…</li></ul></li></ul>|<ul><li>SplitButton "Nom" \(Invoke, ExpandCollapse\)</li><li>Button "Autres options" \(Invoke\)<br /><br /> <ul><li>Menu</li><li>MenuItem</li><li>…</li></ul></li></ul>|  
+  
+## Voir aussi  
+ <xref:System.Windows.Automation.ControlType.SplitButton>   
+ [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
+ [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)

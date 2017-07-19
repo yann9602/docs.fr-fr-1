@@ -1,5 +1,5 @@
 ---
-title: "Héritage en C#"
+title: "Héritage en C# | Microsoft Docs"
 description: "Apprenez à utiliser l’héritage dans les bibliothèques et applications C#."
 keywords: "Héritage (C#), classes de base, classes dérivées, classes de base abstraites"
 author: rpetrusha
@@ -11,23 +11,32 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c14a2ecfa4b9c9522278098d54aad258b5feb1dc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: ebb4c4eb754e456ae8a16226c282dc1698dcdd0d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
-# <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET #
+<a id="inheritance-in-c-and-net" class="xliff"></a>
 
-## <a name="introduction"></a>Introduction ##
+# Héritage dans C# et .NET #
+
+<a id="introduction" class="xliff"></a>
+
+## Introduction ##
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
-## <a name="prerequisites"></a>Conditions préalables ##
+<a id="prerequisites" class="xliff"></a>
+
+## Conditions préalables ##
 
 Ce didacticiel suppose que vous avez installé .NET Core. Pour des instructions d'installation, consultez le [Guide d’installation de .NET Core](https://www.microsoft.com/net/core). Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
-## <a name="running-the-examples"></a>Exécution des exemples ##
+<a id="running-the-examples" class="xliff"></a>
+
+## Exécution des exemples ##
 
 Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utilitaire [dotnet](../../core/tools/dotnet.md) en ligne de commande. Pour chaque exemple, procédez comme suit :
 
@@ -41,7 +50,9 @@ Pour créer et exécuter les exemples de ce didacticiel, vous utilisez l’utili
 
 1. Entrez la commande [dotnet run](../../core/tools/dotnet-run.md) pour compiler et exécuter l’exemple.
 
-## <a name="background-what-is-inheritance"></a>Présentation : Qu’est-ce que l’héritage ? ##
+<a id="background-what-is-inheritance" class="xliff"></a>
+
+## Présentation : Qu’est-ce que l’héritage ? ##
 
 *L’héritage* est un des attributs fondamentaux de la programmation orientée objet. Il vous permet de définir une classe enfant qui réutilise (hérite), étend ou modifie le comportement d’une classe parente. La classe dont les membres sont hérités s’appelle la *classe de base*. La classe qui hérite des membres de la classe de base est appelée la *classe dérivée*.
 
@@ -53,13 +64,13 @@ Tous les membres d’une classe de base ne sont pas hérités par les classes d�
 
 - Les [Constructeurs d’instance](../programming-guide/classes-and-structs/constructors.md), que vous appelez pour créer une nouvelle instance de la classe. Chaque classe doit définir ses propres constructeurs.
 
-- [Les destructeurs](../programming-guide/classes-and-structs/destructors.md), qui sont appelés par le récupérateur de mémoire du runtime pour détruire les instances d’une classe.
+- Les [finaliseurs](../programming-guide/classes-and-structs/destructors.md), qui sont appelés par le récupérateur de mémoire du runtime pour détruire les instances d’une classe.
 
 Bien que tous les autres membres de classe de base sont hérités par les classes dérivées, leur visibilité dépend de leur accessibilité. L’accessibilité d’un membre affecte sa visibilité pour les classes dérivées de la manière suivante :
 
 - Les membres [Privés](../language-reference/keywords/private.md) sont visibles uniquement dans les classes dérivées qui sont imbriquées dans leur classe de base. Sinon, ils ne sont pas visibles dans les classes dérivées. Dans l’exemple suivant, `A.B` est une classe imbriquée qui dérive de `A`, et `C` dérive de `A`. Le champ privé `A.value` est visible dans A.B. Toutefois, si vous supprimez les commentaires de la méthode `C.GetValue` et essayez de compiler l’exemple, il génère l’erreur de compilateur CS0122 : « 'A.value est inaccessible en raison de son niveau de protection ».
 
-   [!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
+   [!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
 
 - Les membres [protégés](../language-reference/keywords/protected.md) sont visibles uniquement dans les classes dérivées.
 
@@ -67,7 +78,7 @@ Bien que tous les autres membres de classe de base sont hérités par les classe
 
 - Les membres [Public] (.. / language-reference/keywords/protected.md) sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelées comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
 Les classes dérivées peuvent également *substituer* les membres hérités en fournissant une implémentation alternative. Pour être en mesure de substituer un membre, le membre de la classe de base doit être marqué avec le mot-clé [virtual](../language-reference/keywords/virtual.md). Par défaut, les membres de classe de base ne sont pas marqués comme `virtual` et ne peut pas être substitués. Une tentative de substituer un membre non virtuel, comme dans l’exemple suivant, génère l’erreur de compilateur CS0506 : « <member> : impossible de substituer le membre hérité <member>, car il n’est pas marqué comme virtual, abstract ou override.
 
@@ -116,17 +127,19 @@ L’héritage s’applique uniquement aux classes et interfaces. Les autres cat�
    }
    ```
 
-## <a name="implicit-inheritance"></a>Héritage implicite ##
+<a id="implicit-inheritance" class="xliff"></a>
+
+## Héritage implicite ##
 
 Outre les types qui peuvent hériter via l’héritage simple, tous les types dans le système de types de .NET héritent implicitement de @System.Object ou d’un type dérivé. Cela garantit que les fonctionnalités communes sont disponibles pour n’importe quel type.
 
 Pour comprendre ce que l’héritage implicite signifie, nous allons définir une nouvelle classe, `SimpleClass`, qui est simplement une définition de classe vide :
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
 
 Nous pouvons ensuite utiliser la réflexion (qui nous permet d’inspecter les métadonnées d’un type pour obtenir des informations sur ce type) pour obtenir la liste des membres qui appartiennent au type `SimpleClass`. Même si nous n’avons pas défini de membres dans notre classe `SimpleClass`, la sortie de l’exemple indique qu’il a en fait neuf membres. Un d’eux est un constructeur sans paramètre (ou par défaut) qui est fourni automatiquement pour le type `SimpleClass` par le compilateur C#. Les huit restants sont membres de @System.Object, le type à partir duquel toutes les classes et interfaces du système de type .NET héritent implicitement.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
 
 L’héritage implicite à partir de la classe @System.Object rend ces méthodes disponibles pour la classe `SimpleClass` :
 
@@ -144,7 +157,7 @@ L’héritage implicite à partir de la classe @System.Object rend ces méthodes
 
 En raison de l’héritage implicite, nous pouvons appeler n’importe quel membre hérité d’un objet `SimpleClass` exactement comme s’il était en fait un membre défini dans la classe `SimpleClass`. Par exemple, l’exemple suivant appelle la méthode `SimpleClass.ToString`, dont `SimpleClass` hérite de @System.Object.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
 
 Le tableau suivant répertorie les catégories de types que vous pouvez créer en C# et les types à partir desquels ils héritent implicitement. Chaque type de base apporte un autre ensemble de membres disponibles via l’héritage aux types dérivés implicitement.
 
@@ -155,7 +168,9 @@ Le tableau suivant répertorie les catégories de types que vous pouvez créer e
 | enum | @System.Enum, System.ValueType, @System.Object |
 | délégué | @System.MulticastDelegate, @System.Delegate, @System.Object |
 
-## <a name="inheritance-and-an-is-a-relationship"></a>L’héritage et une relation « est un » ##
+<a id="inheritance-and-an-is-a-relationship" class="xliff"></a>
+
+## L’héritage et une relation « est un » ##
 
 En règle générale, l’héritage est utilisé pour exprimer une relation « est un » entre une classe de base et une ou plusieurs classes dérivées, où les classes dérivées sont des versions spécialisées de la classe de base ; la classe dérivée est un type de la classe de base. Par exemple, la classe `Publication` représente une publication de tout type et les classes `Book` et `Magazine` représentent les classes des types spécifiques de publications.
 
@@ -163,19 +178,23 @@ En règle générale, l’héritage est utilisé pour exprimer une relation « 
 
 Notez que « est un » exprime également la relation entre un type et une instanciation spécifique de ce type. Dans l’exemple suivant, `Automobile` est une classe qui possède trois propriétés en lecture seule uniques : `Moke`, le fabricant de l’automobile ; `Model`, le type de voiture et `Year`, son année de fabrication. Notre classe `Automobile` comporte également un constructeur dont les arguments sont assignés aux valeurs de propriété, et elle remplace la méthode @System.Object.ToString pour générer une chaîne qui identifie de façon unique l’instance `Automobile` plutôt que la classe `Automobile`.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 
 Dans ce cas, nous ne devrions pas nous reposer sur l’héritage pour représenter les modèles et constructeurs spécifiques. Par exemple, il est inutile de définir un type `Packard` pour représenter les véhicules automobiles fabriqués par la société Packard Motor Car. Au lieu de cela, nous pouvons les représenter en créant un objet `Automobile` avec les valeurs appropriées passées à son constructeur de classe, comme dans l’exemple suivant.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
 
 Une relation « est un » basée sur l’héritage est préférablement appliquée à une classe de base et aux classes dérivées qui ajoutent des membres supplémentaires à la classe de base ou qui nécessitent des fonctionnalités supplémentaires non présentes dans la classe de base.
 
-## <a name="designing-the-base-class-and-derived-classes"></a>Conception de la classe de base et des classes dérivées ##
+<a id="designing-the-base-class-and-derived-classes" class="xliff"></a>
+
+## Conception de la classe de base et des classes dérivées ##
 
 Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, nous allons définir une classe de base, `Publication`, qui représente une publication de tout type, comme un livre, un magazine, un journal, une revue, un article, etc. Nous définirons aussi une classe `Book` qui dérive de `Publication`. Nous pourrions facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
 
-### <a name="the-base-publication-class"></a>La classe `Publication` de base ###
+<a id="the-base-publication-class" class="xliff"></a>
+
+### La classe `Publication` de base ###
 
 Lors de la conception de notre classe `Publication`, nous devons prendre plusieurs décisions de conception :
 
@@ -205,7 +224,7 @@ Lors de la conception de notre classe `Publication`, nous devons prendre plusieu
 
 L’exemple suivant montre le code source pour la classe `Publication` ainsi qu’une énumération `PublicationType` retournée par la propriété `Publication.PublicationType`. Outre les membres qu’elle hérite de @System.Object, la classe `Publication` définit les membres uniques et substitutions de membres suivants :
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
 
 - Un constructeur
 
@@ -244,11 +263,13 @@ Le schéma suivant illustre la relation entre la base notre classe `Publication`
 
 ![Les classes Object et Publication](media/publication-class.jpg)
 
-### <a name="the-book-class"></a>La classe `Book` ###
+<a id="the-book-class" class="xliff"></a>
+
+### La classe `Book` ###
 
 La classe `Book` représente un livre sous la forme d’un type spécialisé de publication. L’exemple suivant montre le code source pour la classe `Book`.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
 
 Outre les membres qu’elle hérite de `Publication`, la classe `Book` définit les membres uniques et substitutions de membres suivants :
 
@@ -280,7 +301,7 @@ Le schéma suivant illustre la relation entre la base la classe `Book` et `Publi
 
 Nous pouvons maintenant instancier un objet `Book`, appeler ses membres uniques et hérités le passer en tant qu’argument pour une méthode qui attend un paramètre de type `Publication` ou de type `Book`, comme illustré dans l’exemple suivant.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="abstract"></a>Conception de classes de base abstraites et de leurs classes dérivées ##
 
@@ -290,17 +311,19 @@ Par exemple, chaque forme géométrique bidimensionnelle fermée inclut deux pro
 
 L’exemple suivant définit une classe de base abstraite nommée `Shape` qui définit deux propriétés : `Area` et `Perimeter`. Notez que, en plus de marquer la classe avec le mot-clé [abstract](../language-reference/keywords/abstract.md), chaque membre de l’instance est également marqué avec le mot-clé [abstract](../language-reference/keywords/abstract.md). Dans ce cas, `Shape` substitue également la méthode @System.Object.ToString pour renvoyer le nom du type, plutôt que son nom qualifié complet. Elle définit aussi deux membres statiques, `GetArea` et `GetPerimeter`, qui permettent aux appelants de récupérer facilement l’aire et le périmètre d’une instance de toute classe dérivée. Lorsque nous passons une instance d’une classe dérivée à une de ces méthodes, le runtime appelle la substitution de la méthode de la classe dérivée.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
 
 Nous pouvons ensuite dériver des classes qui représentent des formes spécifiques à partir de `Shape`. L’exemple suivant définit trois classes : `Triangle`, `Rectangle` et `Circle`. Chaque forme utilise une formule unique pour calculer l’aire et périmètre. Certaines des classes dérivées définissent également des propriétés, telles que `Rectangle.Diagonal` et `Circle.Diameter`, qui sont propres à la forme qu’ils représentent.
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
 L'exemple suivant utilise les objets dérivés de `Shape`. Elle instancie un tableau d’objets dérivés de `Shape` et appelle les méthodes statiques de la classe `Shape` qui encapsule les valeurs de propriété de retour de `Shape`. Notez que le runtime récupère les valeurs de propriétés substituées des types dérivés. L’exemple convertit également chaque objet `Shape` dans le tableau en son type dérivé et, si la conversion réussit, récupère les propriétés de cette sous-classe particulière de `Shape`. 
 
-[!CODE [Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
+[!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>Voir aussi ##
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi ##
 
 [Classes et objets](../tour-of-csharp/classes-and-objects.md)</br>
 [Héritage (Guide de programmation C#)](../programming-guide/classes-and-structs/inheritance.md)

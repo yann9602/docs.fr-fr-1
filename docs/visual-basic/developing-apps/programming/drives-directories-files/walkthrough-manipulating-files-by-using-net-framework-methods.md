@@ -41,10 +41,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e8bf73f32dba51455542778ed91ef3bfd2898754
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a16d2168548dadf9210b653d90ce229d99469b64
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework (Visual Basic)
@@ -80,7 +81,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
 1.  Dans le menu **Affichage**, choisissez **Code** pour ouvrir l’éditeur de code.  
   
-2.  Étant donné que l’application fait référence à l’espace de noms <xref:System.IO>, ajoutez les instructions ci-après tout au début de votre code, avant la déclaration de classe du formulaire, `Public Class Form1`.  
+2.  Étant donné que l’application référence l’espace de noms <xref:System.IO>, ajoutez les instructions ci-après tout au début de votre code, avant la déclaration de classe du formulaire, `Public Class Form1`.  
   
      [!code-vb[VbVbcnMyFileSystem#35](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_1.vb)]  
   
@@ -105,12 +106,12 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
      [!code-vb[VbVbcnMyFileSystem#39](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_5.vb)]  
   
-4.  Enfin, attachez du code pour effacer l’objet <xref:System.Windows.Forms.TextBox>. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Clear`.  
+4.  Pour finir, attachez le code pour effacer <xref:System.Windows.Forms.TextBox>. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Clear`.  
   
      [!code-vb[VbVbcnMyFileSystem#40](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_6.vb)]  
   
 ## <a name="adding-display-features-to-the-diary"></a>Ajout de fonctionnalités d’affichage à l’agenda  
- Dans cette section, vous ajoutez une fonctionnalité qui affiche la dernière entrée dans le contrôle <xref:System.Windows.Forms.TextBox> `DisplayEntry`. Vous pouvez également ajouter un contrôle <xref:System.Windows.Forms.ComboBox> qui présente les diverses entrées que l’utilisateur peut sélectionner pour les afficher dans le contrôle <xref:System.Windows.Forms.TextBox> `DisplayEntry`. Une instance de la classe <xref:System.IO.StreamReader> lit `MyDiary.txt`. Comme la classe <xref:System.IO.StreamWriter>, la classe <xref:System.IO.StreamReader> est conçue pour être utilisée avec les fichiers texte.  
+ Dans cette section, vous ajoutez une fonctionnalité qui affiche la dernière entrée dans le contrôle `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Vous pouvez également ajouter un <xref:System.Windows.Forms.ComboBox> qui affiche différentes entrées et à partir duquel un utilisateur peut sélectionner une entrée à afficher dans le `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Une instance de la classe <xref:System.IO.StreamReader> lit à partir de `MyDiary.txt`. Comme la classe <xref:System.IO.StreamWriter>, <xref:System.IO.StreamReader> est destiné à être utilisé avec des fichiers texte.  
   
  Pour cette section de la procédure pas à pas, ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.  
   
@@ -123,11 +124,11 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
 #### <a name="to-populate-the-combo-box"></a>Pour remplir la zone de liste déroulante  
   
-1.  Le contrôle <xref:System.Windows.Forms.ComboBox> `PickEntries` permet d’afficher les dates auxquelles un utilisateur soumet une entrée. Par conséquent, celui-ci peut sélectionner une entrée associée à une date déterminée. Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> pour le bouton `GetEntries` et ajoutez le code suivant.  
+1.  Le contrôle `PickEntries`<xref:System.Windows.Forms.ComboBox> permet d’afficher les dates auxquelles un utilisateur soumet une entrée. Ainsi, celui-ci peut sélectionner une entrée associée à une date déterminée. Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> au bouton `GetEntries` et ajoutez le code suivant.  
   
      [!code-vb[VbVbcnMyFileSystem#41](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_7.vb)]  
   
-2.  Pour tester votre code, appuyez sur F5 pour compiler l’application, puis cliquez sur **Obtenir des entrées**. Cliquez sur la flèche de déroulement dans le contrôle <xref:System.Windows.Forms.ComboBox> pour afficher les dates des entrées.  
+2.  Pour tester votre code, appuyez sur F5 pour compiler l’application, puis cliquez sur **Obtenir des entrées**. Cliquez sur la flèche déroulante dans le <xref:System.Windows.Forms.ComboBox> pour afficher les dates d’entrée.  
   
 #### <a name="to-choose-and-display-individual-entries"></a>Pour sélectionner et afficher des entrées individuelles  
   
@@ -135,7 +136,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
      [!code-vb[VbVbcnMyFileSystem#42](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_8.vb)]  
   
-2.  Pour tester votre code, appuyez sur F5 pour compiler l’application, puis soumettez une entrée. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée dans le contrôle <xref:System.Windows.Forms.ComboBox>, puis cliquez sur **Afficher**. Le contenu de l’entrée sélectionnée s’affiche dans le contrôle <xref:System.Windows.Forms.TextBox> `DisplayEntry`.  
+2.  Pour tester votre code, appuyez sur F5 pour compiler l’application, puis soumettez une entrée. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée dans le <xref:System.Windows.Forms.ComboBox>, puis cliquez sur **Afficher**. Le contenu de l’entrée sélectionnée s’affiche dans le `DisplayEntry`<xref:System.Windows.Forms.TextBox>.  
   
 ## <a name="enabling-users-to-delete-or-modify-entries"></a>Autorisation aux utilisateurs de supprimer ou de modifier des entrées  
  Enfin, vous pouvez inclure des fonctionnalités supplémentaires qui permettent aux utilisateurs de supprimer ou de modifier une entrée à l’aide des boutons `DeleteEntry` et `EditEntry`. Ces deux boutons restent désactivés si aucune entrée n’est affichée.  
@@ -158,7 +159,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
      [!code-vb[VbVbcnMyFileSystem#44](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_10.vb)]  
   
-3.  Quand un utilisateur affiche une entrée, le bouton `EditEntry` devient disponible. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Display`, après `DisplayEntry.Text = ReadString`.  
+3.  Quand un utilisateur affiche une entrée, le bouton `EditEntry` devient disponible. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Display` après `DisplayEntry.Text = ReadString`.  
   
      [!code-vb[VbVbcnMyFileSystem#45](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_11.vb)]  
   
@@ -166,11 +167,11 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
      [!code-vb[VbVbcnMyFileSystem#46](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_12.vb)]  
   
-5.  Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> pour le bouton `SubmitEdit` et ajoutez le code suivant  
+5.  Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> pour le bouton `SubmitEdit` et ajoutez le code suivant.  
   
      [!code-vb[VbVbcnMyFileSystem#47](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-by-using-net-framework-methods_13.vb)]  
   
- Pour tester votre code, appuyez sur F5 pour compiler l’application. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée, puis cliquez sur **Afficher**. L’entrée s’affiche dans le contrôle <xref:System.Windows.Forms.TextBox> `DisplayEntry`. Cliquez sur **Modifier l’entrée**. L’entrée s’affiche dans le contrôle <xref:System.Windows.Forms.TextBox> `Entry`. Modifiez l’entrée dans le contrôle <xref:System.Windows.Forms.TextBox> `Entry` et cliquez sur **Envoyer la modification**. Ouvrez le fichier `MyDiary.txt` pour confirmer vos corrections. À présent, sélectionnez une entrée et cliquez sur **Supprimer l’entrée**. Quand le message <xref:System.Windows.Forms.MessageBox> vous demande de confirmer l’opération, cliquez sur **OK**. Fermez l’application et ouvrez `MyDiary.txt` pour confirmer la suppression.  
+ Pour tester votre code, appuyez sur F5 pour compiler l’application. Cliquez sur **Obtenir des entrées**, sélectionnez une entrée, puis cliquez sur **Afficher**. L’entrée s’affiche dans le `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Cliquez sur **Modifier l’entrée**. L’entrée s’affiche dans le `Entry`<xref:System.Windows.Forms.TextBox>. Modifiez l’entrée dans le `Entry`<xref:System.Windows.Forms.TextBox> et cliquez sur **Envoyer la modification**. Ouvrez le fichier `MyDiary.txt` pour confirmer vos corrections. À présent, sélectionnez une entrée et cliquez sur **Supprimer l’entrée**. Quand le <xref:System.Windows.Forms.MessageBox> demande confirmation, cliquez sur **OK**. Fermez l’application et ouvrez `MyDiary.txt` pour confirmer la suppression.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IO.StreamReader>   

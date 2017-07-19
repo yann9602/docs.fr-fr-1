@@ -1,55 +1,74 @@
 ---
-title: "Comment&#160;: utiliser l&#39;appel de code non manag&#233; pour lire un fichier audio (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "fichiers .wav"
-  - "interopérabilité (C#), lire les fichiers .wav à l'aide de pinvoke"
-  - "appel de code non managé, fichiers audio"
-  - "fichiers .wav"
+title: "Guide pratique pour utiliser l&quot;appel de code non managé pour lire un fichier audio (Guide de programmation C#) │ Microsoft Docs"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- platform invoke, sound files
+- interoperability [C#], playing WAV files using pinvoke
+- wav files
+- .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
 caps.latest.revision: 30
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 30
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 67e9876bd232ec55bfb0cf8f6d8b509f8af18822
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
+
 ---
-# Comment&#160;: utiliser l&#39;appel de code non manag&#233; pour lire un fichier audio (Guide de programmation C#)
-L'exemple de code C\# suivant illustre comment utiliser les services d'appel de code managé pour lire un fichier son .wav sur le système d'exploitation Windows.  
+# <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Comment : utiliser l'appel de code non managé pour lire un fichier audio (Guide de programmation C#)
+L’exemple de code C# suivant explique comment utiliser des services d’appel de code non managé pour lire un fichier audio sur le système d’exploitation Windows.  
   
-## Exemple  
- Cet exemple de code utilise `DllImport` pour importer le point d'entrée de la méthode `PlaySound` de `winmm.dll` comme `Form1 PlaySound()`.  L'exemple a un simple Windows Form doté d'un bouton.  Cliquez sur le bouton pour ouvrir une boîte de dialogue <xref:System.Windows.Forms.OpenFileDialog> Windows standard et ouvrir le fichier que vous souhaitez lire.  Lorsqu'un fichier .wav est sélectionné, il est lu à l'aide de la méthode `PlaySound()` de la méthode d'assembly winmm.DLL.  Pour plus d'informations sur la méthode `PlaySound` de winmm.dll, consultez [Utilisation de la fonction PlaySound avec les fichiers audio Waveform \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkId=148553) Parcourez et sélectionnez un fichier doté d'une extension .wav, puis cliquez sur **Ouvrir** pour lire le fichier .wav à l'aide de l'appel de code non managé.  Une zone de texte affiche le chemin d'accès complet du fichier sélectionné.  
+## <a name="example"></a>Exemple  
+ Cet exemple de code utilise `DllImport` pour importer le point d’entrée de la méthode `PlaySound` de `winmm.dll` sous la forme `Form1 PlaySound()`. L’exemple utilise un formulaire Windows Form simple avec un bouton. En cliquant sur le bouton, vous ouvrez une boîte de dialogue <xref:System.Windows.Forms.OpenFileDialog> Windows standard qui permet d’ouvrir un fichier à lire. Quand un fichier audio est sélectionné, il est lu à l’aide de la méthode `PlaySound()` de la méthode d’assembly winmm.DLL. Pour plus d’informations sur la méthode `PlaySound` de winmm.dll, consultez [Using the PlaySound function with Waveform-Audio Files](http://go.microsoft.com/fwlink/?LinkId=148553) (Utilisation de la fonction PlaySound avec les fichiers de formes d’ondes audio). Recherchez et sélectionnez un fichier avec une extension .wav, puis cliquez sur **Ouvrir** pour lire le fichier audio à l’aide de l’appel de code non managé. Une zone de texte affiche le chemin complet du fichier sélectionné.  
   
- La boîte de dialogue **Fichiers ouverts** utilise les paramètres de filtre suivants pour afficher uniquement les fichiers dotés d'une extension .wav :  
+ La boîte de dialogue **Ouvrir les fichiers** est filtrée pour afficher uniquement les fichiers avec une extension .wav au moyen des paramètres de filtre :  
   
  [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_1.cs)]  
   
  [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_2.cs)]  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
   
-### Pour compiler le code  
+### <a name="to-compile-the-code"></a>Pour compiler le code  
   
-1.  Créez un nouveau projet d'application Windows C\# dans Visual Studio et nommez\-le WinSound.  
+1.  Créez un projet d’application Windows C# dans Visual Studio et nommez-le **WinSound**.  
   
-2.  Copiez le code précité et collez\-le sur le contenu du fichier `Form1.cs`.  
+2.  Copiez le code ci-dessus et collez-le sur le contenu du fichier `Form1.cs`.  
   
-3.  Copiez le code suivant et collez\-le dans le fichier `Form1.Designer.cs`, dans la méthode `InitializeComponent()`, après tout code existant.  
+3.  Copiez le code suivant et collez-le dans le fichier `Form1.Designer.cs`, dans la méthode `InitializeComponent()`, après tout le code existant.  
   
      [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_3.cs)]  
   
-4.  Compilez et exécutez le code.  
+4.  Compilez, puis exécutez le code.  
   
-## Sécurité .NET Framework  
- Pour plus d'informations, consultez [.NET Framework Security](http://go.microsoft.com/fwlink/?LinkId=37122).  
+## <a name="net-framework-security"></a>Sécurité .NET Framework  
+ Pour plus d’informations, consultez [Sécurité .NET Framework](http://go.microsoft.com/fwlink/?LinkId=37122).  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Vue d'ensemble de l'interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)   
- [Vue d'ensemble de l'interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)   
- [A Closer Look at Platform Invoke](http://msdn.microsoft.com/fr-fr/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)   
- [Marshaling Data with Platform Invoke](../Topic/Marshaling%20Data%20with%20Platform%20Invoke.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)   
+ [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)   
+ [Présentation détaillée de l'appel de code non managé](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)   
+ [Marshaling de données à l’aide de l’appel de code managé](../../../framework/interop/marshaling-data-with-platform-invoke.md)

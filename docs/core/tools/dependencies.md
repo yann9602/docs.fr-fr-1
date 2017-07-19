@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 74b87cdb-a244-4c13-908c-539118bfeef9
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: f3eaf007593336234c6eff20127e9d02d2d5c9fa
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 25847dd6921e547074f4501d34d865dfb1b98b59
+ms.openlocfilehash: de496d96120df1ec275bb4a69f01b6266b0b5a89
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -23,7 +24,7 @@ Le passage des projets .NET Core de project.json vers csproj et MSBuild s’est 
 
 Ce document décrit le nouveau type de référence. Il montre également comment ajouter à votre projet une dépendance de package à l’aide de ce nouveau type de référence. 
 
-## <a name="the-new-packagereference-element"></a>Nouvel élément <PackageReference>
+## <a name="the-new-packagereference-element"></a>Nouvel élément \<PackageReference>
 `<PackageReference>` présente la structure de base suivante :
 
 ```xml
@@ -72,3 +73,4 @@ Le projet complet ressemble à ceci :
 
 ## <a name="removing-a-dependency-from-the-project"></a>Suppression d’une dépendance du projet
 Pour supprimer une dépendance du fichier projet, il suffit de supprimer `<PackageReference>` de ce fichier.
+

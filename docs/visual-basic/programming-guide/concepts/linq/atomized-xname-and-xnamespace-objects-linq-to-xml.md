@@ -78,7 +78,7 @@ Next
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <C1>1</C1>  
 <C1>1</C1>  
 ```  

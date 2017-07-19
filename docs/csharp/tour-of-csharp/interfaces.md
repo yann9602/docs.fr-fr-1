@@ -1,6 +1,6 @@
 ---
-title: "Interfaces C# | Présentation rapide du langage C#"
-description: "Les interfaces définissent des contrats implémentés par les types en C#"
+title: "Interfaces C# - Visite guidée du langage C# | Microsoft Docs"
+description: "Les interfaces définissent des contrats implémentés par les types en C#"
 keywords: ".NET, csharp, interfaces, héritage multiple, polymorphisme"
 author: BillWagner
 ms.author: wiwagn
@@ -10,14 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 477db71cb3226247c7a13dbd9febd00c87f5c154
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 6c18de7a4aa86a321b65b4ce65e07c48ca1dbc24
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="interfaces"></a>Interfaces
+<a id="interfaces" class="xliff"></a>
+
+# Interfaces
 
 Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas les implémentations des membres qu’elle définit, elle indique simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
 

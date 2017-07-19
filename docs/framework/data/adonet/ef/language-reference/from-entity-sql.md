@@ -1,0 +1,169 @@
+---
+title: "FROM (Entity SQL) | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+dev_langs: 
+  - "VB"
+  - "CSharp"
+  - "C++"
+ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
+caps.latest.revision: 3
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 2
+---
+# FROM (Entity SQL)
+Spécifie la collection utilisée dans les instructions [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md).  
+  
+## Syntaxe  
+  
+```  
+FROM expression [ ,...n ] as C  
+```  
+  
+## Arguments  
+ `expression`  
+ Toute expression de requête valide qui produit une collection à utiliser comme source dans une instruction `SELECT`.  
+  
+## Notes  
+ Une clause `FROM` est une liste séparée par des virgules d'un ou de plusieurs éléments de clause `FROM`.  La clause `FROM` peut être utilisée pour spécifier une ou plusieurs sources pour une instruction `SELECT`.  La forme la plus simple d'une clause `FROM` est une expression de requête unique qui identifie une collection et un alias utilisés comme source dans une instruction `SELECT`, comme illustré dans l'exemple suivant :  
+  
+ `FROM C as c`  
+  
+## Éléments de clause FROM  
+ Chaque élément de clause `FROM` fait référence à une collection source dans la requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge les classes d'éléments de clause `FROM` suivantes : éléments de clause `FROM` simples, éléments de clause `JOIN FROM` et éléments de clause `APPLY FROM`.  Chacun de ces éléments de clause `FROM` est décrite en détail dans les sections suivantes.  
+  
+### Élément de clause FROM simple  
+ L'élément de clause `FROM` le plus simple est une expression unique qui identifie une collection et un alias.  L'expression peut être simplement un jeu d'entités, une sous\-requête ou toute autre expression qui est un type collection.  Voici un exemple :  
+  
+```  
+LOB.Customers as c  
+```  
+  
+ La spécification d'un alias est facultative.  Une autre spécification de l'élément de clause FROM pourrait être la suivante :  
+  
+```  
+LOB.Customers  
+```  
+  
+ Si aucun alias n'est spécifié, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] tente d'en générer un basé sur l'expression de collection.  
+  
+### Élément de clause JOIN FROM  
+ Un élément de clause `JOIN FROM` représente une jointure entre deux éléments de clause `FROM`.  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge les jointures croisées, les jointures internes, les jointures externes gauches et droites, ainsi que les jointures externes entières.  Toutes ces jointures sont prises en charge de la même manière qu'elles le sont dans [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  Comme dans [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], les deux éléments de clause `FROM` impliqués dans la jointure `JOIN` doivent être indépendants.  Autrement dit, ils ne peuvent pas être corrélés.  Un `CROSS APPLY` ou un `OUTER APPLY` peut être utilisé pour ces cas.  
+  
+#### Jointures croisées  
+ Une expression de requête `CROSS JOIN` génère le produit cartésien des deux collections, comme illustré dans l'exemple suivant :  
+  
+ `FROM C AS c CROSS JOIN D as d`  
+  
+#### Jointures internes  
+ Un `INNER JOIN` génère un produit cartésien limité des deux collections, comme illustré dans l'exemple suivant :  
+  
+ `FROM C AS c [INNER] JOIN D AS d ON e`  
+  
+ L'expression de requête précédente traite une combinaison de chaque élément de la collection à gauche associé à chaque élément de la collection à droite, où la condition `ON` est vérifiée \(True\).  Si aucune condition `ON` n'est spécifiée, un `INNER JOIN` dégénère en `CROSS JOIN`.  
+  
+#### Jointures externes gauches et jointures externes droites  
+ Une expression de requête `OUTER JOIN` génère un produit cartésien limité des deux collections, comme illustré dans l'exemple suivant :  
+  
+ `FROM C AS c LEFT OUTER JOIN D AS d ON e`  
+  
+ L'expression de requête précédente traite une combinaison de chaque élément de la collection à gauche associé à chaque élément de la collection à droite, où la condition `ON` est vérifiée \(True\).  Si la condition `ON` n'est pas vérifiée \(False\), l'expression traite tout de même une instance unique de l'élément à gauche associé à l'élément à droite, avec la valeur Null.  
+  
+ Un `RIGHT OUTER JOIN` peut être exprimé de la même manière.  
+  
+#### Jointures externes entières  
+ Un `FULL OUTER JOIN` explicite génère un produit cartésien limité des deux collections, comme illustré dans l'exemple suivant :  
+  
+ `FROM C AS c FULL OUTER JOIN D AS d ON e`  
+  
+ L'expression de requête précédente traite une combinaison de chaque élément de la collection à gauche associé à chaque élément de la collection à droite, où la condition `ON` est vérifiée \(True\).  Si la condition `ON` n'est pas vérifiée \(False\), l'expression traite tout de même une instance de l'élément à gauche associé à l'élément à droite, avec la valeur Null.  Il traite également une instance de l'élément à droite associé à l'élément à gauche, avec la valeur Null.  
+  
+> [!NOTE]
+>  Pour préserver la compatibilité avec SQL\-92, dans [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], le mot clé OUTER est facultatif.  Par conséquent, `LEFT JOIN`, `RIGHT JOIN` et `FULL JOIN` sont synonymes de `LEFT OUTER JOIN`, `RIGHT OUTER JOIN` et `FULL OUTER JOIN`.  
+  
+### Élément de clause APPLY  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge deux sortes de clauses `APPLY` : `CROSS APPLY` et `OUTER APPLY`.  
+  
+ Un `CROSS APPLY` produit un appariement unique de chaque élément de la collection située à gauche avec un élément de la collection produite en évaluant l'expression située à droite.  Avec un `CROSS APPLY`, l'expression à droite dépend fonctionnellement de l'élément à gauche, comme illustré dans l'exemple de collection associé suivant :  
+  
+ `SELECT c, f FROM C AS c CROSS APPLY c.Assoc AS f`  
+  
+ Le comportement de `CROSS APPLY` est semblable à la liste de jointures.  Si l'expression à droite correspond à une collection vide, le `CROSS APPLY` ne produit pas d'appariement pour cette instance de l'élément à gauche.  
+  
+ Un `OUTER APPLY` ressemble à un `CROSS APPLY`, excepté qu'un appariement est toujours produit même quand l'expression à droite correspond à une collection vide.  Voici un exemple de `OUTER APPLY` :  
+  
+ `SELECT c, f FROM C AS c OUTER APPLY c.Assoc AS f`  
+  
+> [!NOTE]
+>  Contrairement à dans [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], aucune étape UNEST explicite n'est nécessaire dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+  
+> [!NOTE]
+>  Les opérateurs `CROSS` et `OUTER APPLY` ont été introduits dans [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)].  Dans certains cas, le pipeline de requête peut produire une instruction Transact\-SQL qui contient des opérateurs `CROSS APPLY` et\/ou `OUTER APPLY`.  Dans la mesure où certains fournisseurs principaux, notamment dans les versions de [!INCLUDE[ssNoVersion](../../../../../../includes/ssnoversion-md.md)] antérieures à [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)], ne prennent pas en charge ces opérateurs, de telles requêtes ne peuvent pas être exécutées sur ces fournisseurs.  
+>   
+>  Voici certains scénarios classiques susceptibles d'aboutir à la présence d'opérateurs `CROSS APPLY` et\/ou `OUTER APPLY` dans la requête de sortie : une sous\-requête corrélée avec la pagination, AnyElement sur une sous\-requête corrélée ou sur une collection produite par navigation, requêtes LINQ qui utilisent des méthodes de regroupement acceptant un sélecteur d'élément, une requête dans laquelle un `CROSS APPLY` ou un `OUTER APPLY` sont spécifiés explicitement, une requête qui a une construction `DEREF` sur une construction `REF`.  
+  
+## Collections multiples dans la clause FROM  
+ La clause `FROM` peut contenir plusieurs collections séparées par des virgules.  Dans ces cas particuliers, les collections sont supposées être jointes.  Considérez ces jointures comme des CROSS JOIN à n directions.  
+  
+ Dans l'exemple suivant, `C` et `D` sont des collections indépendantes, mais `c.Names` dépend de `C`.  
+  
+```  
+FROM C AS c, D AS d, c.Names AS e  
+```  
+  
+ L'exemple précédent équivaut logiquement à l'exemple suivant :  
+  
+ `FROM (C AS c JOIN D AS d) CROSS APPLY c.Names AS e`  
+  
+## Corrélation de gauche  
+ Les éléments dans la clause `FROM` peuvent faire référence à des éléments spécifiés dans des clauses antérieures.  Dans l'exemple suivant, `C` et `D` sont des collections indépendantes, mais `c.Names` dépend de `C` :  
+  
+```  
+from C as c, D as d, c.Names as e  
+```  
+  
+ Cela équivaut logiquement à :  
+  
+```  
+from (C as c join D as d) cross apply c.Names as e  
+```  
+  
+## Sémantique  
+ Logiquement, les collections de la clause `FROM` sont supposées faire partie d'une jointure croisée à `n` directions \(sauf dans le cas d'une jointure croisée unidirectionnelle\).  Les alias de la clause `FROM` sont traités de gauche à droite et sont ajoutés à l'étendue actuelle pour référence ultérieure.  La clause `FROM` est supposée produire un multiensemble de lignes.  Il y aura un champ pour chaque élément dans la clause `FROM` qui représente un élément unique de cet élément de collecte.  
+  
+ La clause `FROM` produit logiquement un multiensemble de lignes de type Row\(c, d, e\) où les champs c, d et e sont supposés être du type d'élément `C`, `D` et `c.Names`.  
+  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] introduit un alias pour chaque élément de clause `FROM` simple de l'étendue.  Par exemple, dans l'extrait de clause FROM suivant, les noms introduits dans l'étendue sont c, d et e.  
+  
+```  
+from (C as c join D as d) cross apply c.Names as e  
+```  
+  
+ Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)] \(contrairement à [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]\), la clause `FROM` introduit uniquement les alias dans l'étendue.  Toutes les références à des colonnes \(propriétés\) de ces collections doivent être qualifiées avec l'alias.  
+  
+## Appel de clés à partir de requêtes imbriquées  
+ Certains types des requêtes qui requièrent l'appel de clés à partir d'une requête imbriquée ne sont pas pris en charge.  Par exemple, la requête suivante est valide :  
+  
+```  
+select c.Orders from Customers as c   
+```  
+  
+ Toutefois, la requête suivante n'est pas valide, car la requête imbriquée n'a pas de clés :  
+  
+```  
+select {1} from {2, 3}  
+```  
+  
+## Voir aussi  
+ [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
+ [Expressions de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)   
+ [Types structurés autorisant la valeur null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)

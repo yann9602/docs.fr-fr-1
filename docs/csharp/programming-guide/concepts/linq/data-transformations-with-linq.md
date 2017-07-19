@@ -38,14 +38,14 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: f8db095447a2360f275215c5190f479d11288d3c
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: b97d55045a999f3714a5af41fc4247e87684b6c3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformations de données avec LINQ (C#)
-[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)] ne gère pas uniquement la récupération des données. C’est également un outil puissant pour la transformation de données. En utilisant une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], vous pouvez utiliser une séquence source en entrée et la modifier de nombreuses façons pour créer une séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais la fonctionnalité la plus puissante des requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] est peut-être la possibilité de créer des types. Cette opération est effectuée dans la clause [select](../../../../csharp/language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  
+[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] ne gère pas uniquement la récupération des données. C’est également un outil puissant pour la transformation de données. En utilisant une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous pouvez utiliser une séquence source en entrée et la modifier de nombreuses façons pour créer une séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais la fonctionnalité la plus puissante des requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] est peut-être la possibilité de créer des types. Cette opération est effectuée dans la clause [select](../../../../csharp/language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  
   
 -   Fusionner plusieurs séquences d’entrée en une séquence de sortie unique ayant un nouveau type.  
   
@@ -58,7 +58,7 @@ ms.lasthandoff: 05/10/2017
  Voici une liste non exhaustive d’exemples. Bien sûr, ces transformations peuvent être combinées de plusieurs façons dans la même requête. Par ailleurs, la séquence de sortie d’une requête peut être utilisée comme séquence d’entrée pour une nouvelle requête.  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>Combinaison de plusieurs entrées en une séquence de sortie  
- Vous pouvez utiliser une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] pour créer une séquence de sortie qui contient des éléments de plusieurs séquences d’entrée. L’exemple suivant montre comment combiner deux structures de données en mémoire, mais les mêmes principes peuvent être appliqués pour combiner des données provenant de sources XML, SQL ou DataSet. Prenons l’exemple des deux types de classe suivants :  
+ Vous pouvez utiliser une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour créer une séquence de sortie qui contient des éléments de plusieurs séquences d’entrée. L’exemple suivant montre comment combiner deux structures de données en mémoire, mais les mêmes principes peuvent être appliqués pour combiner des données provenant de sources XML, SQL ou DataSet. Prenons l’exemple des deux types de classe suivants :  
   
  [!code-cs[CsLINQGettingStarted#7](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_1.cs)]  
   
@@ -88,14 +88,14 @@ ms.lasthandoff: 05/10/2017
  Pour plus d’informations, consultez [Initialiseurs d’objets et de collections](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md) et [Types anonymes](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformation d’objets en mémoire en XML  
- Les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] permettent de transformer facilement des données entre des structures de données en mémoire, des bases de données SQL, des groupes de données [!INCLUDE[vstecado](~/includes/vstecado-md.md)] et des flux de données ou des documents XML. L’exemple suivant transforme des objets d’une structure de données en mémoire en éléments XML.  
+ Les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] permettent de transformer facilement des données entre des structures de données en mémoire, des bases de données SQL, des groupes de données [!INCLUDE[vstecado](~/includes/vstecado-md.md)] et des flux de données ou des documents XML. L’exemple suivant transforme des objets d’une structure de données en mémoire en éléments XML.  
   
  [!code-cs[CsLINQGettingStarted#9](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_3.cs)]  
   
  Le code génère la sortie XML suivante :  
   
-```  
-< Root>  
+```xml  
+<Root>  
   <student>  
     <First>Svetlana</First>  
     <Last>Omelchenko</Last>  
@@ -120,7 +120,7 @@ ms.lasthandoff: 05/10/2017
  Une séquence de sortie ne contient pas toujours des éléments ou des propriétés d’élément de la séquence source. La sortie peut être plutôt une séquence de valeurs calculée en utilisant les éléments sources comme arguments d’entrée. La requête simple suivante, quand elle est exécutée, génère en sortie une séquence de chaînes dont les valeurs représentent un calcul basé sur la séquence source d’éléments de type `double`.  
   
 > [!NOTE]
->  Les méthodes d’appel dans les expressions de requête ne sont pas prises en charge si la requête est traduite dans un autre domaine. Par exemple, vous ne pouvez pas appeler une méthode C# ordinaire dans [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)], car SQL Server n’a pas de contexte pour cette méthode. Toutefois, vous pouvez mapper des procédures stockées à des méthodes et appeler celles-ci. Pour plus d’informations, consultez [Procédures stockées](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
+>  Les méthodes d’appel dans les expressions de requête ne sont pas prises en charge si la requête est traduite dans un autre domaine. Par exemple, vous ne pouvez pas appeler une méthode C# ordinaire dans [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], car SQL Server n’a pas de contexte pour cette méthode. Toutefois, vous pouvez mapper des procédures stockées à des méthodes et appeler celles-ci. Pour plus d’informations, consultez [Procédures stockées](../../../../framework/data/adonet/sql/linq/stored-procedures.md).  
   
  [!code-cs[CsLINQGettingStarted#10](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_4.cs)]  
   
@@ -130,4 +130,5 @@ ms.lasthandoff: 05/10/2017
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)   
  [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)   
  [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
+
  [select, clause](../../../../csharp/language-reference/keywords/select-clause.md)

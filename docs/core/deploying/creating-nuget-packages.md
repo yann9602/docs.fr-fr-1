@@ -1,5 +1,5 @@
 ---
-title: "Création d’un Package NuGet avec les outils multiplateformes"
+title: "Création d’un package NuGet avec des outils multiplateformes | Microsoft Docs"
 description: "Création d’un Package NuGet avec les outils multiplateformes"
 keywords: .NET, .NET Core, NuGet
 author: cartermp
@@ -10,14 +10,17 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 2f0415c1-110b-433d-87c1-ae3d543a8844
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 657981a05e831ffb849d0cd5b3ea25c079cb4fc1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 2b2081bce1725fb4a019881521604e4171b85028
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="how-to-create-a-nuget-package-with-cross-platform-tools"></a>Création d’un Package NuGet avec les outils multiplateformes
+<a id="how-to-create-a-nuget-package-with-cross-platform-tools" class="xliff"></a>
+
+# Création d’un Package NuGet avec les outils multiplateformes
 
 > [!NOTE]
 > Voici des exemples de ligne de commande avec Unix.  La commande `dotnet pack` montrée ici fonctionne de la même façon sur Windows.
@@ -62,7 +65,9 @@ SuperAwesomeLibrary.1.0.0.symbols.nupkg
 
 Vous avez maintenant les fichiers nécessaires pour publier un package NuGet !
 
-## <a name="dont-confuse-dotnet-pack-with-dotnet-publish"></a>Ne confondez pas `dotnet pack` et `dotnet publish`
+<a id="dont-confuse-dotnet-pack-with-dotnet-publish" class="xliff"></a>
+
+## Ne confondez pas `dotnet pack` et `dotnet publish`
 
 Il est important de noter qu’à aucun moment, la commande `dotnet publish` n’est impliquée.  La commande `dotnet publish` est destinée au déploiement des applications avec toutes leurs dépendances dans le même regroupement, et non pas à la génération d’un package NuGet à distribuer et à consommer via NuGet.
 

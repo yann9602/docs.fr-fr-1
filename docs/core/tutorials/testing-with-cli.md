@@ -1,210 +1,178 @@
 ---
 title: "Organiser et tester des projets avec la ligne de commande .NET Core │ Microsoft Docs"
 description: "Ce didacticiel explique comment organiser et tester des projets .NET Core à partir de la ligne de commande."
-keywords: .NET, .NET Core
+keywords: .NET, .NET Core, tests unitaires, .NET CLI, xUnit
 author: cartermp
 ms.author: mairaw
-ms.date: 03/07/2017
+ms.date: 05/16/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 3f401907a59d5427cbcfaa0b785931a7ed82110f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 6edd52bc56a03138fe16048fa06cad00a2af4847
+ms.openlocfilehash: 1e6e987777678ade860f108aed05bba926a6d4fd
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/16/2017
 
 ---
 
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Organiser et tester des projets avec la ligne de commande .NET Core
 
-Ce didacticiel suit la rubrique [Bien démarrer avec .NET Core sur Windows/Linux/Mac OS à l’aide de la ligne de commande](./using-with-xplat-cli.md) pour montrer comment aller au-delà des scénarios « hello world » simples et ouvrir la voie à des applications plus avancées et bien organisées.
+Ce didacticiel, qui fait suite à la rubrique [Bien démarrer avec .NET Core sur Windows/Linux/macOS à l’aide de la ligne de commande](using-with-xplat-cli.md), montre comment aller au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
 
 ## <a name="using-folders-to-organize-code"></a>Utilisation de dossiers pour organiser le code
 
-Supposons que vous souhaitiez introduire de nouveaux types sur lesquels travailler. Pour cela, ajoutez des fichiers supplémentaires et donnez-leur des espaces de noms que vous pouvez inclure dans votre fichier *Program.cs*.
+Si vous souhaitez introduire de nouveaux types dans une application console, ajoutez des fichiers contenant les types à l’application. Par exemple, si vous ajoutez des fichiers contenant les types `AccountInformation` et `MonthlyReportRecords` à votre projet, la structure du fichier projet est plate et facile à parcourir :
 
 ```
 /MyProject
-|__Program.cs
 |__AccountInformation.cs
 |__MonthlyReportRecords.cs
 |__MyProject.csproj
-```
-
-Cela fonctionne très bien quand la taille de votre projet est relativement petite. Toutefois, si vous avez une application plus volumineuse avec de nombreux types de données différents et potentiellement plusieurs couches, vous pouvez organiser les éléments de façon logique. C’est alors que des dossiers entrent en jeu. Vous pouvez soit suivre [l’exemple de projet NewTypes](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild) traité dans ce guide, soit créer vos propres fichiers et dossiers.
-
-Pour commencer, créez un dossier sous la racine de votre projet. `/Model` est choisi ici.
-
-```
-/NewTypes
-|__/Model
 |__Program.cs
-|__NewTypes.csproj
 ```
 
-Ajoutez maintenant de nouveaux types dans le dossier :
+Toutefois, cela ne fonctionne bien que si la taille de votre projet est relativement petite. Imaginez ce qui se passerait si vous ajoutiez 20 types au projet : avec autant de fichiers alourdissant le répertoire racine du projet, la navigation et la maintenance seraient particulièrement difficiles.
+
+Pour organiser le projet, créez un dossier et nommez-le *Models* pour stocker les fichiers de types. Placez les fichiers de types dans le dossier *Models* :
 
 ```
-/NewTypes
-|__/Model
+/MyProject
+|__/Models
    |__AccountInformation.cs
    |__MonthlyReportRecords.cs
+|__MyProject.csproj
 |__Program.cs
-|__NewTypes.csproj
 ```
 
-À présent, exactement comme s’il s’agissait de fichiers du même répertoire, donnez-leur à tous le même espace de noms afin de pouvoir les inclure dans votre `Program.cs`.
+Les projets qui regroupent logiquement les fichiers dans des dossiers simplifient la navigation et la gestion. Dans la section suivante, vous allez créer un exemple plus complexe avec des dossiers et des tests unitaires.
 
-### <a name="example-pet-types"></a>Exemple : Types d’animaux
+## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a>Organisation et test du code à l’aide de l’exemple NewTypes Pets
 
-Cet exemple crée deux types, `Dog` et `Cat`, puis leur fait implémenter une interface commune, `IPet`.
+### <a name="building-the-sample"></a>Génération de l’exemple
 
-Structure du dossier :
+Pour les étapes suivantes, vous pouvez soit suivre [l’exemple NewTypes Pets](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild), soit créer vos propres fichiers et dossiers. Les types et les tests sont logiquement organisés dans une structure de dossiers qui autorise l’ajout d’autres types et tests par la suite.
+
+L’exemple contient deux types, `Dog` et `Cat`, qui implémentent une interface commune `IPet`. Pour le projet `NewTypes`, votre objectif est d’organiser les types liés aux animaux domestiques dans un dossier *Pets*. Si un autre jeu de types est ajouté par la suite, *WildAnimals* par exemple, il est placé dans le dossier *NewTypes* aux côtés du dossier *Pets*. Le dossier *WildAnimals* peut contenir des types pour des animaux non domestiques, par exemple `Squirrel` et `Rabbit`. De cette façon, à mesure que vous ajoutez des types, le projet reste bien organisé. 
+
+Créez la structure de dossiers suivante avec le contenu de fichier indiqué :
 
 ```
 /NewTypes
-|__/Pets
-   |__Dog.cs
-   |__Cat.cs
-   |__IPet.cs
-|__Program.cs
-|__NewTypes.csproj
+|__/src
+   |__/NewTypes
+      |__/Pets
+         |__Dog.cs
+         |__Cat.cs
+         |__IPet.cs
+      |__Program.cs
+      |__NewTypes.csproj
 ```
 
-`IPet.cs`:
-```csharp
-using System;
+*IPet.cs* :
 
-namespace Pets
-{
-    public interface IPet
-    {
-        string TalkToOwner();
-    }
-}
+[!code-csharp[IPet, interface](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/IPet.cs)]
+
+*Dog.cs* :
+
+[!code-csharp[Dog, classe](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Dog.cs)]
+
+*Cat.cs* :
+
+[!code-csharp[Cat, classe](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Cat.cs)]
+
+*Program.cs* :
+
+[!code-csharp[Main](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Program.cs)]
+
+*NewTypes.csproj* :
+
+[!code-xml[NewTypes csproj](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/NewTypes.csproj)]
+
+Exécutez les commandes suivantes :
+
+```console
+dotnet restore
+dotnet run
 ```
 
-`Dog.cs`:
-```csharp
-using System;
+Observez la sortie suivante :
 
-namespace Pets
-{
-    public class Dog : IPet
-    {
-        public string TalkToOwner() => "Woof!";
-    }
-}
-```
-
-`Cat.cs`:
-```csharp
-using System;
-
-namespace Pets
-{
-    public class Cat : IPet
-    {
-        public string TalkToOwner() => "Meow!";
-    }
-}
-```
-
-`Program.cs`:
-```csharp
-using System;
-using Pets;
-using System.Collections.Generic;
-
-namespace ConsoleApplication
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            List<IPet> pets = new List<IPet>
-            {
-                new Dog(),
-                new Cat()  
-            };
-            
-            foreach (var pet in pets)
-            {
-                Console.WriteLine(pet.TalkToOwner());
-            }
-        }
-    }
-}
-```
-
-`NewTypes.csproj`:
-```xml
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-  
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App">
-      <Version>1.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk">
-      <Version>1.0.0-alpha-20161104-2</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
-```
-
-Et si vous exécutez ce code :
-
-```
-$ dotnet restore
-$ dotnet run
+```console
 Woof!
 Meow!
 ```
 
-De nouveaux types d’animaux peuvent être ajoutés (comme `Bird`), ce qui étend ce projet.
+Exercice facultatif : Vous pouvez ajouter un nouveau type d’animal domestique, par exemple `Bird`, en étendant ce projet. Faites en sorte que la méthode `TalkToOwner` du type Bird envoie un `Tweet!` au propriétaire. Réexécutez l’application. La sortie inclut `Tweet!`
 
-## <a name="testing-your-console-app"></a>Test de votre application console
+### <a name="testing-the-sample"></a>Test de l’exemple
 
-Vous voudrez probablement tester vos projets à un moment donné. Voici une bonne façon de procéder :
+Le projet `NewTypes` est en place et vous l’avez organisé en conservant les types liés aux animaux domestiques dans un dossier. Créez à présent votre projet de test et commencez à écrire des tests à l’aide du framework de tests [xUnit](https://xunit.github.io/). Les tests unitaires vous permettent de vérifier automatiquement le comportement de vos types d’animaux domestiques et de confirmer qu’ils fonctionnent correctement.
 
-1. Déplacez n’importe quelle source de votre projet existant dans un nouveau dossier `src`.
+Créez un dossier*test* et un sous-dossier *NewTypesTests*. À une invite de commandes à partir du dossier *NewTypesTests*, exécutez `dotnet new xunit`. Deux fichiers sont générés : *NewTypesTests.csproj* et *UnitTest1.cs*.
 
-   ```
-   /Project
-   |__/src
-   ```
+Le projet de test ne peut pas actuellement tester les types dans `NewTypes` et nécessite une référence de projet au projet `NewTypes`. Pour ajouter une référence de projet, utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
-2. Créez un répertoire `/test`, puis `cd` dans celui-ci.
+```
+dotnet add reference ../../src/NewTypes/NewTypes.csproj
+```
 
-   ```
-   /Project
-   |__/src
-   |__/test
-   ```
+Vous pouvez également ajouter manuellement la référence de projet en ajoutant un nœud `<ItemGroup>` au fichier *NewTypesTests.csproj* :
 
-3. Initialisez le répertoire avec une commande `dotnet new xunit`. Cela suppose d’utiliser xUnit, mais vous pouvez également utiliser MSTest en remplaçant `xunit` par `mstest`.
-   
-### <a name="example-extending-the-newtypes-project"></a>Exemple : Extension du projet NewTypes
+```xml
+<ItemGroup>
+  <ProjectReference Include="../../src/NewTypes/NewTypes.csproj" />
+</ItemGroup>
+```
 
-Maintenant que le système de projet est en place, vous pouvez créer votre projet de test et commencer à écrire des tests ! À partir de maintenant, ce guide va utiliser et étendre [l’exemple de projet de types](https://github.com/dotnet/docs/tree/master/samples/core/console-apps/NewTypesMsBuild). De plus, il utilisera le framework de test [Xunit](https://xunit.github.io/). N’hésitez pas à poursuivre avec des tests sur un système à projets multiples ou à créer votre propre système.
+*NewTypesTests.csproj* :
 
-La structure de projet complète doit ressembler à ceci :
+[!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
+
+Le fichier *NewTypesTests.csproj* contient les éléments suivants :
+
+* Référence de package à `Microsoft.NET.Test.Sdk` (infrastructure de tests .NET)
+* Référence de package à `xunit` (framework de tests xUnit)
+* Référence de package à `xunit.runner.visualstudio` (Test Runner)
+* Référence de projet à `NewTypes` (code à tester)
+
+Renommez *UnitTest1.cs* en *PetTests.cs* et remplacez le code dans le fichier par le suivant :
+
+```csharp
+using System;
+using Xunit;
+using Pets;
+
+public class PetTests
+{
+    [Fact]
+    public void DogTalkToOwnerReturnsWoof()
+    {
+        string expected = "Woof!";
+        string actual = new Dog().TalkToOwner();
+        
+        Assert.NotEqual(expected, actual);
+    }
+    
+    [Fact]
+    public void CatTalkToOwnerReturnsMeow()
+    {
+        string expected = "Meow!";
+        string actual = new Cat().TalkToOwner();
+        
+        Assert.NotEqual(expected, actual);
+    }
+}
+```
+
+Exercice facultatif : Si vous avez précédemment ajouté un type `Bird` qui envoie un `Tweet!` au propriétaire, ajoutez une méthode de test au fichier *PetTests.cs*, `BirdTalkToOwnerReturnsTweet`, pour vérifier que la méthode `TalkToOwner` fonctionne correctement pour le type `Bird`.
+
+> [!NOTE]
+> Bien que l’on s’attende à ce que les valeurs `expected` et `actual` soient identiques, les assertions initiales avec les vérifications `Assert.NotEqual` spécifient qu’elles *ne sont pas égales*. Commencez toujours par créer vos tests en les faisant échouer une fois pour vérifier leur logique. Il s’agit d’une étape importante de la méthodologie de conception conduite par les tests. Après avoir confirmé l’échec des tests, ajustez les assertions pour leur permettre de réussir.
+
+Le code suivant montre la structure complète du projet :
 
 ```
 /NewTypes
@@ -222,102 +190,73 @@ La structure de projet complète doit ressembler à ceci :
       |__NewTypesTests.csproj
 ```
 
-Il existe deux nouvelles façons de vérifier que vous avez, dans votre projet de test :
-
-1. Un fichier *NewTypesTests.csproj* correct avec le code suivant :
-
-   * Une référence à `xunit`
-   * Une référence à `dotnet-test-xunit`
-   * Une référence à l’espace de noms correspondant au code testé
-
-   Il peut être généré en tapant `dotnet new xunit` à partir de la ligne de commande dans le répertoire *NewTypesTests*, puis en ajoutant une référence de projet au projet `NewTypes`.
-
-    `NewTypesTests/NewTypesTests.csproj`:
-    ```xml
-    <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-      <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-
-      <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp1.0</TargetFramework>
-      </PropertyGroup>
-
-      <ItemGroup>
-        <Compile Include="**\*.cs" />
-        <EmbeddedResource Include="**\*.resx" />
-      </ItemGroup>
-
-      <ItemGroup>
-        <PackageReference Include="Microsoft.NETCore.App">
-          <Version>1.0.1</Version>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Sdk">
-          <Version>1.0.0-alpha-20161104-2</Version>
-          <PrivateAssets>All</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.NET.Test.Sdk">
-          <Version>15.0.0-preview-20161024-02</Version>
-        </PackageReference>
-        <PackageReference Include="xunit">
-          <Version>2.2.0-beta3-build3402</Version>
-        </PackageReference>
-        <PackageReference Include="xunit.runner.visualstudio">
-          <Version>2.2.0-beta4-build1188</Version>
-        </PackageReference>
-        <ProjectReference Include="../../src/NewTypes/NewTypes.csproj"/>
-      </ItemGroup>
-
-      <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    </Project>
-    ```
-
-2. Une classe de test xUnit.
-
-    `PetTests.cs`: 
-    ```csharp
-    using System;
-    using Xunit;
-    using Pets;
-    public class PetTests
-    {
-        [Fact]
-        public void DogTalkToOwnerTest()
-        {
-            string expected = "Woof!";
-            string actual = new Dog().TalkToOwner();
-            
-            Assert.Equal(expected, actual);
-        }
-        
-        [Fact]
-        public void CatTalkToOwnerTest()
-        {
-            string expected = "Meow!";
-            string actual = new Cat().TalkToOwner();
-            
-            Assert.Equal(expected, actual);
-        }
-    }
-    ```
-   
-Vous pouvez maintenant exécuter les tests ! La commande [`dotnet test`](../tools/dotnet-test.md) exécute l’exécuteur de tests que vous avez spécifié dans votre projet. Prenez soin de démarrer dans le répertoire de niveau supérieur.
+Démarrez dans le répertoire *test/NewTypesTests*. Restaurez le projet de test avec la commande [`dotnet restore`](../tools/dotnet-restore.md). Exécutez les tests avec la commande [`dotnet test`](../tools/dotnet-test.md). Cette commande démarre le Test Runner spécifié dans le fichier projet.
+ 
+Comme prévu, les tests échouent et la console affiche la sortie suivante :
  
 ```
-$ cd test/NewTypesTests
-$ dotnet restore
-$ dotnet test
-```
- 
-La sortie doit se présenter comme suit :
- 
-```
-xUnit.net .NET CLI test runner (64-bit win10-x64)
-  Discovering: NewTypesTests
-  Discovered:  NewTypesTests
-  Starting:    NewTypesTests
-  Finished:    NewTypesTests
-=== TEST EXECUTION SUMMARY ===
-   NewTypesTests  Total: 2, Errors: 0, Failed: 0, Skipped: 0, Time: 0.144s
-SUMMARY: Total: 1 targets, Passed: 1, Failed: 0.
+Test run for C:\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp1.1\NewTypesTests.dll(.NETCoreApp,Version=v1.1)
+Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+[xUnit.net 00:00:00.7271827]   Discovering: NewTypesTests
+[xUnit.net 00:00:00.8258687]   Discovered:  NewTypesTests
+[xUnit.net 00:00:00.8663545]   Starting:    NewTypesTests
+[xUnit.net 00:00:01.0109236]     PetTests.CatTalkToOwnerReturnsMeow [FAIL]
+[xUnit.net 00:00:01.0119107]       Assert.NotEqual() Failure
+[xUnit.net 00:00:01.0120278]       Expected: Not "Meow!"
+[xUnit.net 00:00:01.0120968]       Actual:   "Meow!"
+[xUnit.net 00:00:01.0130500]       Stack Trace:
+[xUnit.net 00:00:01.0141240]         C:\NewTypesMsBuild\test\NewTypesTests\PetTests.cs(22,0): at PetTests.CatTalkToOwnerReturnsMeow()
+[xUnit.net 00:00:01.0272364]     PetTests.DogTalkToOwnerReturnsWoof [FAIL]
+[xUnit.net 00:00:01.0273649]       Assert.NotEqual() Failure
+[xUnit.net 00:00:01.0274166]       Expected: Not "Woof!"
+[xUnit.net 00:00:01.0274690]       Actual:   "Woof!"
+[xUnit.net 00:00:01.0275264]       Stack Trace:
+[xUnit.net 00:00:01.0275960]         C:\NewTypesMsBuild\test\NewTypesTests\PetTests.cs(13,0): at PetTests.DogTalkToOwnerReturnsWoof()
+[xUnit.net 00:00:01.0294509]   Finished:    NewTypesTests
+Failed   PetTests.CatTalkToOwnerReturnsMeow
+Error Message:
+ Assert.NotEqual() Failure
+Expected: Not "Meow!"
+Actual:   "Meow!"
+Stack Trace:
+   at PetTests.CatTalkToOwnerReturnsMeow() in C:\NewTypesMsBuild\test\NewTypesTests\PetTests.cs:line 22
+Failed   PetTests.DogTalkToOwnerReturnsWoof
+Error Message:
+ Assert.NotEqual() Failure
+Expected: Not "Woof!"
+Actual:   "Woof!"
+Stack Trace:
+   at PetTests.DogTalkToOwnerReturnsWoof() in C:\NewTypesMsBuild\test\NewTypesTests\PetTests.cs:line 13
+
+Total tests: 2. Passed: 0. Failed: 2. Skipped: 0.
+Test Run Failed.
+Test execution time: 2.1371 Seconds
 ```
 
+Remplacez les assertions de vos tests `Assert.NotEqual` par `Assert.Equal` :
+
+[!code-csharp[PetTests, classe](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
+
+Réexécutez les tests avec la commande `dotnet test` et observez la sortie suivante :
+
+```
+Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+[xUnit.net 00:00:01.3882374]   Discovering: NewTypesTests
+[xUnit.net 00:00:01.4767970]   Discovered:  NewTypesTests
+[xUnit.net 00:00:01.5157667]   Starting:    NewTypesTests
+[xUnit.net 00:00:01.6408870]   Finished:    NewTypesTests
+
+Total tests: 2. Passed: 2. Failed: 0. Skipped: 0.
+Test Run Successful.
+Test execution time: 1.6634 Seconds
+```
+
+Les tests réussissent. Les méthodes des types d’animaux domestiques retournent des valeurs correctes quand elles communiquent avec le propriétaire.
+
+Vous avez appris les techniques permettant d’organiser et de tester des projets à l’aide de xUnit. Vous pouvez maintenant les mettre en pratique dans vos propres projets. *Bon développement !*

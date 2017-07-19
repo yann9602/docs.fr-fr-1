@@ -41,16 +41,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 89137b3c927a7ac8ed126f2be3695c4aa72a85fb
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: a5ae7f4a720c04639191edf36425426dfc339a37
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic
 Cette procédure pas à pas présente les notions de base d’E/S de fichier dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]. Elle décrit comment créer une petite application qui répertorie et examine des fichiers texte dans un répertoire. Pour chaque fichier texte sélectionné, l’application fournit des attributs de fichier et la première ligne de contenu. Elle comprend une option pour écrire des informations dans un fichier journal.  
   
- Cette procédure pas à pas utilise des membres de `My.Computer.FileSystem Object`, qui sont disponibles dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.FileIO.FileSystem>. À la fin de la procédure pas à pas, un exemple équivalent est fourni, qui utilise des classes de l’espace de noms <xref:System.IO>.  
+ Cette procédure pas à pas utilise des membres de `My.Computer.FileSystem Object`, qui sont disponibles dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]. Pour plus d'informations, voir <xref:Microsoft.VisualBasic.FileIO.FileSystem>. À la fin de la procédure pas à pas, un exemple équivalent est fourni, qui utilise des classes de l’espace de noms <xref:System.IO>.  
   
 [!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
   
@@ -110,7 +111,7 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
      [!code-vb[VbVbcnMyFileSystem#105](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_3.vb)]  
   
-     Le code vérifie qu’un élément est sélectionné dans le contrôle `ListBox`. Il obtient ensuite l’entrée du chemin du fichier à partir de `ListBox`. La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> est utilisée pour vérifier si le fichier existe encore.  
+     Le code vérifie qu’un élément est sélectionné dans le contrôle `ListBox`. Il obtient ensuite l’entrée du chemin du fichier à partir de `ListBox`. La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> est utilisée pour vérifier si le fichier existe toujours.  
   
      Le chemin du fichier est envoyé en tant qu’argument à la méthode `GetTextForOutput`, qui est ajoutée à l’étape suivante. Cette méthode retourne une chaîne qui contient des informations sur le fichier. Les informations sur le fichier s’affichent dans un élément **MessageBox**.  
   
@@ -118,9 +119,9 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
      [!code-vb[VbVbcnMyFileSystem#107](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_4.vb)]  
   
-     Le code utilise la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> pour obtenir les paramètres du fichier. Ces paramètres sont ajoutés à un élément <xref:System.Text.StringBuilder>.  
+     Le code utilise la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> pour obtenir des paramètres de fichier. Les paramètres de fichier sont ajoutés à un <xref:System.Text.StringBuilder>.  
   
-     La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> lit le contenu du fichier dans un élément <xref:System.IO.StreamReader>. La première ligne du contenu est obtenue à partir du `StreamReader` et est ajoutée au `StringBuilder`.  
+     La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> lit le contenu du fichier dans un <xref:System.IO.StreamReader>. La première ligne du contenu est obtenue à partir du `StreamReader` et est ajoutée au `StringBuilder`.  
   
 4.  Exécutez l'application. Cliquez sur **Parcourir** et recherchez un dossier qui contient des fichiers .txt. Cliquez sur **OK**.  
   
@@ -136,7 +137,7 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
      Le code définit le chemin du fichier journal de sorte que ce dernier soit placé dans le même répertoire que celui du fichier sélectionné. Le texte de l’entrée de journal prend comme valeur la date et l’heure actuelles, suivies des informations sur le fichier.  
   
-     La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>, avec l’argument `append` ayant comme valeur `True`, est utilisée pour créer l’entrée de journal.  
+     La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>, avec l’argument `append` défini sur `True`, est utilisée pour créer l’entrée de journal.  
   
 2.  Exécutez l'application. Accédez à un fichier texte, sélectionnez-le dans le contrôle `ListBox`, cochez la case **Enregistrer les résultats**, puis cliquez sur **Examiner**. Vérifiez que l’entrée de journal est écrite dans le fichier `log.txt`.  
   

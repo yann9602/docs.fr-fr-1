@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9940012829038f585ad78a10b70fe2941753e40e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: c8d870feccd1fe44caf566ce45349818b6ddf6e9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modificateurs d’accès (Guide de programmation C#)
@@ -76,7 +77,7 @@ Tous les types et membres de type ont un niveau d’accessibilité, qui détermi
   
  Les opérateurs définis par l’utilisateur doivent toujours être déclarés comme public. Pour plus d’informations, consultez [operator (référence C#)](../../../csharp/language-reference/keywords/operator.md).  
   
- Les destructeurs ne peuvent pas avoir de modificateurs d’accessibilité.  
+ Les finaliseurs ne peuvent pas avoir de modificateurs d’accessibilité.  
   
  Pour définir le niveau d’accès pour un membre de classe ou de struct, ajoutez le mot clé approprié à la déclaration du membre, comme illustré dans l’exemple suivant.  
   
@@ -93,7 +94,7 @@ Tous les types et membres de type ont un niveau d’accessibilité, qui détermi
  Les délégués se comportent comme des classes et des structs. Par défaut, ils ont un accès internal quand ils sont déclarés directement dans un espace de noms, et un accès private quand ils sont imbriqués.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   

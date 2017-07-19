@@ -43,9 +43,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
+ms.translationtype: Machine Translation
 ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
 ms.openlocfilehash: 8b1b077a8818315e52ada6b08ff1e1ced9bbd17c
+ms.contentlocale: fr-fr
 ms.lasthandoff: 03/13/2017
 
 ---
@@ -85,7 +86,7 @@ Option Compare { Binary | Text }
 ## <a name="when-an-option-compare-statement-is-not-present"></a>En l'absence d'instruction Option Compare  
  Si le code source ne contient pas une `Option Compare` instruction, le **Option Compare** définition sur le [Page Compiler, Concepteur de projets (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/compile-page-project-designer-visual-basic) est utilisé. Si vous utilisez le compilateur de ligne de commande, le paramètre spécifié par le [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) option du compilateur est utilisée.  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 #### <a name="to-set-option-compare-in-the-ide"></a>Pour définir Option Compare dans l'IDE  
   

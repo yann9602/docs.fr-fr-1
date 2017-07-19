@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ed447641-3e85-4e50-b7ed-004630048a3e
-translationtype: Human Translation
-ms.sourcegitcommit: 4a1f0c88fb1ccd6694f8d4f5687431646adbe000
-ms.openlocfilehash: 3611c8d4808c4c8096ee700d68407ed8b9fd2cfc
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 5c6382ee0de3cba950b4585b05f10b4682f9a797
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 
 # <a name="unit-testing-with-mstest-and-net-core"></a>Tests unitaires avec MSTest et .NET Core
 
-Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-mstest/) avant de commencer.
+Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-using-mstest/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ### <a name="creating-the-source-project"></a>Création du projet source
 
@@ -48,7 +49,7 @@ namespace Prime.Services
 
 ### <a name="creating-the-test-project"></a>Création du projet de test
 
-Accédez de nouveau au répertoire *unit-testing-using-mstest* et créez le répertoire *PrimeServices.Tests*. La structure de répertoires est indiquée ci-dessous :
+Revenez au répertoire *unit-testing-using-mstest* et créez le répertoire *PrimeService.Tests*. La structure de répertoires est indiquée ci-dessous :
 
 ```
 /unit-testing-using-mstest

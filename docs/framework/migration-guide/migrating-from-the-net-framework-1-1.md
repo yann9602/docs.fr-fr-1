@@ -32,7 +32,7 @@ ms.lasthandoff: 04/18/2017
   
 -   Vous pouvez recibler l'application pour qu'elle s'exécute sur [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Le reciblage nécessite que vous ajoutiez un élément [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) au fichier de configuration de l'application qui lui permet de s'exécuter sous [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Un tel fichier de configuration prend la forme suivante :  
   
-    ```  
+    ```xml  
     <configuration>   
        <startup>  
           <supportedRuntime version="v4.0"/>  
@@ -53,7 +53,7 @@ ms.lasthandoff: 04/18/2017
 ## <a name="breaking-changes"></a>Modifications avec rupture  
  Lorsqu'une modification avec rupture se produit, selon la modification spécifique, une solution de contournement peut être disponible pour les applications reciblées et recompilées. Dans certains cas, vous pouvez ajouter un élément enfant à l'élément [\<runtime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) du fichier de configuration de votre application pour restaurer le comportement précédent. Par exemple, le fichier de configuration suivant restaure le tri des chaînes et le comportement de comparaison utilisé dans le [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] et peut être utilisé avec une application reciblée ou recompilée.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <CompatSortNLSVersion enabled="4096"/>  

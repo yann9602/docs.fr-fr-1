@@ -1,5 +1,5 @@
 ---
-title: Maintenance .NET Core
+title: Maintenance .NET Core | Microsoft Docs
 description: Maintenance .NET Core
 keywords: .NET, .NET Core
 ms.date: 06/20/2016
@@ -7,11 +7,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 48682290-4fd7-40dc-8a7b-bac528eba361
-redirect_url: /dotnet/articles/core/versions/index
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: c3eb33d28f8bb0296c083705c137702cae2cf8d3
-ms.lasthandoff: 03/13/2017
+redirect_url: /dotnet/core/versions/index
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: b3ec4e85dac45d5f724a3e38de2873358ec2c3ae
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
@@ -28,3 +29,4 @@ ms.lasthandoff: 03/13/2017
 > Découvrez comment vous pouvez apporter votre contribution sur [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).
 >
     
+

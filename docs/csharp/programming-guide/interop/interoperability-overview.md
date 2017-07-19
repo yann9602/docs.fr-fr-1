@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b1b6d5bf9943c5826685b9cc72c79187c7f51364
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 5084c4af3334c39f844fec67a1ab05dd9443bf27
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Vue d'ensemble de l'interopérabilité (Guide de programmation C#)
@@ -43,10 +44,10 @@ Cette rubrique décrit les méthodes qui permettent une interopérabilité entre
 ## <a name="platform-invoke"></a>Appel de plateforme  
  L’*appel de code non managé* est un service qui permet au code managé d’appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l’API Win32 Microsoft. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins.  
   
- Pour plus d’informations, consultez [Consommation de fonctions DLL non managées](http://msdn.microsoft.com/library/eca7606e-ebfb-4f47-b8d9-289903fdc045) et [Guide pratique pour utiliser le code non managé pour lire un fichier audio](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md).  
+ Pour plus d’informations, consultez [Consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md) et [Guide pratique pour utiliser le code non managé pour lire un fichier audio](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md).  
   
 > [!NOTE]
->  Le [common language runtime](http://msdn.microsoft.com/library/059a624e-f7db-4134-ba9f-08b676050482) (CLR) gère l’accès aux ressources système. Le fait d’appeler du code non managé extérieur au CLR contourne ce mécanisme, ce qui présente un risque de sécurité. Par exemple, du code non managé peut appeler directement des ressources dans du code non managé en contournant les mécanismes de sécurité CLR. Pour plus d’informations, consultez [Sécurité .NET Framework](http://go.microsoft.com/fwlink/?LinkId=37122).  
+>  Le [common language runtime](../../../standard/clr.md) (CLR) gère l’accès aux ressources système. Le fait d’appeler du code non managé extérieur au CLR contourne ce mécanisme, ce qui présente un risque de sécurité. Par exemple, du code non managé peut appeler directement des ressources dans du code non managé en contournant les mécanismes de sécurité CLR. Pour plus d’informations, consultez [Sécurité .NET Framework](http://go.microsoft.com/fwlink/?LinkId=37122).  
   
 ## <a name="c-interop"></a>Interopérabilité C++  
  Vous pouvez utiliser l’interopérabilité C++, également appelée It Just Works (IJW), pour encapsuler une classe C++ native de sorte qu’elle puisse être utilisée par du code créé en C# ou un autre langage du .NET Framework. Pour ce faire, écrivez du code C++ pour encapsuler un composant DLL ou COM natif. Contrairement à d’autres langages du .NET Framework, [!INCLUDE[vcprvc](../../../csharp/programming-guide/interop/includes/vcprvc_md.md)] comprend la prise en charge de l’interopérabilité qui permet à du code managé et à du code non managé de se trouver dans la même application et même dans le même fichier. Vous pouvez ensuite générer le code C++ à l’aide du commutateur de compilateur **/clr** pour créer un assembly managé. Enfin, ajoutez une référence à l’assembly dans votre projet C# et utilisez les objets encapsulés comme vous le feriez pour les autres classes managées.  

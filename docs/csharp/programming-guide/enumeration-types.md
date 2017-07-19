@@ -34,7 +34,7 @@ ms.translationtype: Human Translation
 ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
 ms.openlocfilehash: 2014047f17f766023ba4db4981aad6e6d4902381
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Types énumération (Guide de programmation C#)
@@ -103,7 +103,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
   
  [!code-cs[csProgGuideEnums#5](../../csharp/programming-guide/codesnippet/CSharp/enumeration-types_7.cs)]  
   
- Pour plus d’informations, consultez <xref:System.Enum?displayProperty=fullName>.  
+ Pour plus d'informations, consultez <xref:System.Enum?displayProperty=fullName>.  
   
  Vous pouvez également créer une méthode pour un enum à l’aide d’une méthode d’extension. Pour plus d’informations, consultez [Guide pratique pour créer une méthode pour une énumération](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).  
 

@@ -37,10 +37,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ed4ee0a09067900a6bead04abec02f141936ba42
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: c9790c9bcd8731546b5d5e1e4aba7ba6f93fe5b1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="playing-sounds-visual-basic"></a>Lecture de sons (Visual Basic)
@@ -84,7 +85,7 @@ L’objet `My.Computer.Audio` fournit des méthodes permettant de lire des sons.
 ## <a name="playing-system-sounds"></a>Lecture de sons système  
  Utilisez la méthode `My.Computer.Audio.PlaySystemSound` pour lire le son système spécifié.  
   
- La méthode `My.Computer.Audio.PlaySystemSound` prend comme paramètre l’un des membres partagés de la classe <xref:System.Media.SystemSound>. Le son système <xref:System.Media.SystemSounds.Asterisk%2A> signale généralement des erreurs.  
+ La méthode `My.Computer.Audio.PlaySystemSound` prend comme paramètre l’un des membres partagés de la classe <xref:System.Media.SystemSound>. Le son système <xref:System.Media.SystemSounds.Asterisk%2A> indique généralement des erreurs.  
   
  L’exemple suivant utilise la méthode `My.Computer.Audio.PlaySystemSound` pour lire un son système.  
   

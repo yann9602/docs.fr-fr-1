@@ -34,7 +34,7 @@ Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] s'exécutant sur Wi
   
 -   En ajoutant l'élément `<EnableMultiMonitorDisplayClipping>` à la section `<appSettings>` du fichier de configuration de votre application, vous pouvez activer ou désactiver ce comportement sur les applications qui s'exécutent sur Windows 8 ou versions ultérieures. Par exemple, la section de configuration suivante désactive le rendu sans découpage :  
   
-    ```  
+    ```xml  
     <appSettings>  
         <add key="EnableMultiMonitorDisplayClipping" value="true"/>  
       </appSettings>  

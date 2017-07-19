@@ -14,17 +14,18 @@ ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f2e324029a4951f1cb05507d580db73caea2d3f7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
+ms.openlocfilehash: 0b7cc79a10cc2c8288c048fdb98717e61a3f3463
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/30/2017
 
 
 ---
 # <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Préatomisation des objets XName (LINQ to XML) (C#)
-L’un des moyens d’améliorer les performances dans LINQ to XML est de préatomiser les objets <xref:System.Xml.Linq.XName>. La préatomisation consiste à assigner une chaîne à un objet <xref:System.Xml.Linq.XName> avant de créer l’arborescence XML à l’aide des constructeurs des classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute>. Ensuite, au lieu de passer une chaîne au constructeur, ce qui utiliserait la conversion implicite de la chaîne en <xref:System.Xml.Linq.XName>, vous passez l’objet <xref:System.Xml.Linq.XName> initialisé.  
+L'un des moyens d'améliorer les performances dans LINQ to XML est de préatomiser les objets <xref:System.Xml.Linq.XName>. La préatomisation signifie que vous attribuez une chaîne à un objet <xref:System.Xml.Linq.XName> avant de créer l'arborescence XML à l'aide des constructeurs des classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute>. Ensuite, au lieu de passer une chaîne au constructeur, ce qui utiliserait la conversion implicite de la chaîne en <xref:System.Xml.Linq.XName>, vous passez l'objet <xref:System.Xml.Linq.XName> initialisé.  
   
- Ceci améliore la performance lorsque vous créez une grande arborescence XML dans laquelle des noms spécifiques sont répétés. Pour ce faire, vous déclarez et initialisez les objets <xref:System.Xml.Linq.XName> avant de construire l’arborescence XML, puis vous utilisez les objets <xref:System.Xml.Linq.XName> au lieu de spécifier des chaînes pour les noms d’élément et d’attribut. Cette technique peut apporter une amélioration significative de la performance si vous créez un grand nombre d'éléments (ou d'attributs) avec le même nom.  
+ Ceci améliore la performance lorsque vous créez une grande arborescence XML dans laquelle des noms spécifiques sont répétés. Pour ce faire, vous devez déclarer et initialiser les objets <xref:System.Xml.Linq.XName> avant de construire l'arborescence XML, puis vous devez utiliser les objets <xref:System.Xml.Linq.XName> au lieu de spécifier des chaînes pour les noms d'élément et d'attribut. Cette technique peut apporter une amélioration significative de la performance si vous créez un grand nombre d'éléments (ou d'attributs) avec le même nom.  
   
  Vous devez tester la préatomisation avec votre scénario pour décider si vous devez l'utiliser.  
   

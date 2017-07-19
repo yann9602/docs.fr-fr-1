@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cc3a51c6778127c7d2faf9a10b799875308d2850
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 85e113f66998157a69be3f1d9065a5c4c1117773
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
@@ -46,7 +47,7 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
   
 -   Elles facilitent la copie, la modification et la gestion du code.  
   
--   Elles illustrent les meilleures pratiques en C#.  
+-   Elles illustrent les bonnes pratiques en C#.  
   
 ## <a name="naming-conventions"></a>Conventions d'affectation de noms  
   
@@ -96,7 +97,7 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
   
      [!code-cs[csProgGuideCodingConventions#6](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/coding-conventions_4.cs)]  
   
--   Pour ajouter des chaînes dans des boucles, en particulier quand vous travaillez avec une quantité de texte importante, utilisez un objet <xref:System.Text.StringBuilder>.  
+-   Pour ajouter des chaînes dans des boucles, en particulier lorsque vous travaillez avec une quantité de texte importante, utilisez un objet <xref:System.Text.StringBuilder>.  
   
      [!code-cs[csProgGuideCodingConventions#7](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/coding-conventions_5.cs)]  
   
@@ -150,7 +151,7 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
   
      [!code-cs[csProgGuideCodingConventions#16](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/coding-conventions_14.cs)]  
   
--   Simplifiez votre code à l’aide de l’instruction [using](../../../csharp/language-reference/keywords/using-statement.md) C#. Si vous avez une instruction [try-finally](../../../csharp/language-reference/keywords/try-finally.md) dans laquelle le seul code du bloc `finally` est un appel à la méthode <xref:System.IDisposable.Dispose%2A>, utilisez une instruction `using` à la place.  
+-   Simplifiez votre code à l’aide de l’instruction [using](../../../csharp/language-reference/keywords/using-statement.md) C#. Si vous avez une instruction [try-finally](../../../csharp/language-reference/keywords/try-finally.md) dans laquelle le seul code du bloc `finally` est un appel à la méthode <xref:System.IDisposable.Dispose%2A>, utilisez à la place une instruction `using`.  
   
      [!code-cs[csProgGuideCodingConventions#17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/coding-conventions_15.cs)]  
   
@@ -215,8 +216,8 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
      [!code-cs[csProgGuideCodingConventions#30](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/coding-conventions_26.cs)]  
   
 ## <a name="security"></a>Sécurité  
- Suivez les instructions indiquées dans [Instructions de codage sécurisé](http://msdn.microsoft.com/library/4f882d94-262b-4494-b0a6-ba9ba1f5f177).  
+ Suivez les instructions indiquées dans [Instructions de codage sécurisé](../../../standard/security/secure-coding-guidelines.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Conventions de codage Visual Basic](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)   
- [Instructions de codage sécurisé](http://msdn.microsoft.com/library/4f882d94-262b-4494-b0a6-ba9ba1f5f177)
+ [Instructions de codage sécurisé](../../../standard/security/secure-coding-guidelines.md)

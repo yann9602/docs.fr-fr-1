@@ -33,10 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: caa4b8be16e5000d02d82a83199a25d13ad07bba
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: c0b8b0a4174527d1fc512b461355d2508e34e152
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
@@ -75,7 +76,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
      Dans l’exemple ci-dessus, le deuxième appel à la méthode <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> et l’appel à la méthode <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> génèrent la sortie de journal, ce qui n’est pas le cas des premier et dernier appels à la méthode `WriteEntry`. Étant donné que les niveaux de gravité de `WriteEntry` et `WriteException` sont « Information » et « Erreur », ceux-ci sont autorisés par le filtrage de journal par défaut de l’objet `My.Application.Log`. Toutefois, les événements avec les niveaux de gravité « Démarrage » et « Arrêt » ne peuvent pas générer une sortie de journal.  
   
 ## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrage de tous les écouteurs My.Application.Log  
- L’objet `My.Application.Log` utilise un <xref:System.Diagnostics.SourceSwitch> nommé `DefaultSwitch` pour contrôler les messages qu’il passe des méthodes `WriteEntry` et `WriteException` aux écouteurs de journalisation. Vous pouvez configurer `DefaultSwitch` dans le fichier de configuration de l’application en lui affectant l’une des valeurs d’énumération <xref:System.Diagnostics.SourceLevels>. Par défaut, sa valeur est « Information ».  
+ L’objet `My.Application.Log` utilise un <xref:System.Diagnostics.SourceSwitch> nommé `DefaultSwitch` pour gérer les messages qu’il passe des méthodes `WriteEntry` et `WriteException` aux écouteurs de journalisation. Vous pouvez configurer `DefaultSwitch` dans le fichier de configuration de l’application en lui affectant l’une des valeurs d’énumération <xref:System.Diagnostics.SourceLevels>. Par défaut, sa valeur est « Information ».  
   
  Ce tableau affiche le niveau de gravité requis pour le journal afin d’écrire un message pour les écouteurs, avec un paramètre `DefaultSwitch` particulier.  
   
@@ -278,5 +279,5 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
  [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)   
  [Procédure pas à pas : création d’écouteurs de journalisation personnalisés](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)   
  [Guide pratique pour écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
- [Commutateurs de traçage](http://msdn.microsoft.com/library/8ab913aa-f400-4406-9436-f45bc6e54fbe)   
+ [Commutateurs de traçage](../../../../framework/debug-trace-profile/trace-switches.md)   
  [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)

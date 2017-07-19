@@ -4,16 +4,17 @@ description: La commande dotnet-sln offre une option pratique pour ajouter, supp
 keywords: dotnet-sln, CLI, commande CLI, .NET Core
 author: spboyer
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 04/11/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: e5a72d3e-c14b-4b0a-a978-c5e54a0988c6
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 2cdfd02f7735b106fde910b8906ba4dfae860952
-ms.lasthandoff: 03/22/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7d7f0864ee1641627c4a55192d81ed76f2f44450
+ms.openlocfilehash: 0a832765d01609aebd10b13387a4317a6a246c30
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/11/2017
 
 ---
 
@@ -27,9 +28,9 @@ ms.lasthandoff: 03/22/2017
 
 ```
 dotnet sln [<SOLUTION_NAME>] add <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] add **/**
+dotnet sln [<SOLUTION_NAME>] add <GLOBBING_PATTERN>
 dotnet sln [<SOLUTION_NAME>] remove <PROJECT> <PROJECT> ...
-dotnet sln [<SOLUTION_NAME>] remove **/**
+dotnet sln [<SOLUTION_NAME>] remove <GLOBBING_PATTERN>
 dotnet sln [<SOLUTION_NAME>] list
 dotnet sln [-h|--help]
 ```
@@ -42,13 +43,13 @@ La commande `dotnet sln` offre un moyen pratique d’ajouter, de supprimer et de
 
 `add <PROJECT> ...`
 
-`add **/*`
+`add <GLOBBING_PATTERN>`
 
 Ajoute un ou plusieurs projets au fichier solution. Les [modèles Globbing](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.
 
 `remove <PROJECT> ...`
 
-`remove **/*`
+`remove <GLOBBING_PATTERN>`
 
 Supprime un ou plusieurs projets du fichier solution. Les [modèles Globbing](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.
 
@@ -70,19 +71,27 @@ Affiche une aide brève pour la commande.
 
 ## <a name="examples"></a>Exemples
 
-Ajoutez un projet à une solution :
+Ajouter un projet C# à une solution :
 
 `dotnet sln todo.sln add todo-app/todo-app.csproj`
 
-Ajoutez un projet à la solution dans le répertoire actif :
-
-`dotnet sln add todo-app.csproj`
-
-Supprimez un projet d’une solution :
+Supprimer un projet C# d’une solution :
 
 `dotnet sln todo.sln remove todo-app/todo-app.csproj`
 
-Ajouter plusieurs projets à une solution en utilisant un modèle Globbing :
+Ajouter plusieurs projets C# à une solution :
 
-`dotnet sln add **/**/*.fsproj`
+`dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj`
+
+Supprimer plusieurs projets C# d’une solution :
+
+`dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj`
+
+Ajouter plusieurs projets C# à une solution avec un modèle d’utilisation des caractères génériques :
+
+`dotnet sln todo.sln add **/*.csproj`
+
+Supprimer plusieurs projets C# d’une solution avec un modèle d’utilisation des caractères génériques :
+
+`dotnet sln todo.sln remove **/*.csproj`
 

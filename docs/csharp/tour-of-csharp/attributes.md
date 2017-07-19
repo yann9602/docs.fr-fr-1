@@ -1,6 +1,6 @@
 ---
-title: "Attributs C# | Présentation rapide du langage C#"
-description: "Présentation de la programmation déclarative à l’aide des attributs en C#"
+title: "Attributs C# - Visite guidée du langage C# | Microsoft Docs"
+description: "Découvrir la programmation déclarative à l’aide des attributs en C#"
 keywords: .NET, csharp
 author: BillWagner
 ms.author: wiwagn
@@ -10,14 +10,17 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5ef8b93bf0a2cf98c5251b888b61db9ab12d9a71
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: 9e7ad62e85df83f181fa4aa8ea6da56b6f739f14
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="attributes"></a>Attributs
+<a id="attributes" class="xliff"></a>
+
+# Attributs
 
 Les types, membres et autres entités d’un programme C# prennent en charge les modificateurs qui contrôlent certains aspects de leur comportement. Par exemple, l’accessibilité d’une méthode est contrôlée à l’aide des modificateurs `public`, `protected`, `internal` et `private`. C# généralise cette fonctionnalité pour que les types d’informations déclaratives définis par l’utilisateur puissent être associés aux entités de programme et récupérés au moment de l’exécution. Les programmes spécifient ces informations déclaratives supplémentaires en définissant et en utilisant les ***attributs***.
 

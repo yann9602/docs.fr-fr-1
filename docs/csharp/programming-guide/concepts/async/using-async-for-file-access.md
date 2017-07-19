@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 67b30a93fd046a76dca4cc6abe273426d818aaf5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: 9aaf49c685498bce451eb53a35a56d8a8fde928c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="using-async-for-file-access-c"></a>Utilisation d’async pour l’accès aux fichiers (C#)
@@ -55,9 +56,9 @@ using System.Threading.Tasks;
 ```  
   
 ## <a name="use-of-the-filestream-class"></a>Utilisation de la classe FileStream  
- Les exemples de cette rubrique utilisent la classe <xref:System.IO.FileStream>. Cette dernière dispose d’une option qui provoque une E/S asynchrone au niveau du système d’exploitation. En utilisant cette option, vous pouvez éviter de bloquer un thread de ThreadPool dans de nombreux cas. Pour l’activer, spécifiez l’argument `useAsync=true` ou `options=FileOptions.Asynchronous` dans l’appel de constructeur.  
+ Les exemples de cette rubrique utilisent la classe <xref:System.IO.FileStream>, avec une option qui provoque une E/S asynchrone au niveau du système d’exploitation. En utilisant cette option, vous pouvez éviter de bloquer un thread de ThreadPool dans de nombreux cas. Pour l’activer, spécifiez l’argument `useAsync=true` ou `options=FileOptions.Asynchronous` dans l’appel de constructeur.  
   
- Vous ne pouvez pas utiliser cette option avec <xref:System.IO.StreamReader> et <xref:System.IO.StreamWriter> si vous les ouvrez directement en spécifiant un chemin de fichier. Toutefois, vous pouvez utiliser cette option si vous leur fournissez un <xref:System.IO.Stream> que la classe <xref:System.IO.FileStream> a ouvert. Notez que les appels asynchrones sont plus rapides dans des applications d’interface utilisateur même si un thread du ThreadPool est bloqué, car le thread d’interface utilisateur n’est pas bloqué pendant l’attente.  
+ Vous ne pouvez pas utiliser cette option avec <xref:System.IO.StreamReader> et <xref:System.IO.StreamWriter> si vous les ouvrez directement en spécifiant un chemin de fichier. Toutefois, vous pouvez utiliser cette option si vous leur fournissez un <xref:System.IO.Stream> ouvert par la classe <xref:System.IO.FileStream>. Notez que les appels asynchrones sont plus rapides dans des applications d’interface utilisateur même si un thread du ThreadPool est bloqué, car le thread d’interface utilisateur n’est pas bloqué pendant l’attente.  
   
 ## <a name="writing-text"></a>Écriture de texte  
  L’exemple suivant écrit du texte dans un fichier. À chaque instruction await, la méthode s'arrête immédiatement. Quand l’E/S de fichier est terminée, la méthode reprend à l’instruction qui suit l’instruction await. Notez que le modificateur async se trouve dans la définition des méthodes qui utilisent l'instruction await.  
@@ -94,7 +95,7 @@ await theTask;
  La première instruction retourne une tâche et provoque le début du traitement du fichier. La deuxième instruction avec await provoque la fin immédiate de la méthode et retourne une tâche différente. Quand le traitement du fichier se termine plus loin, l’exécution retourne à l’instruction qui suit l’attente. Pour plus d’informations, consultez [Flux de contrôle dans les programmes Async (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Lecture de texte  
- L'exemple suivant lit du texte dans un fichier. Le texte est mis en mémoire tampon et, dans le cas présent, est placé dans un <xref:System.Text.StringBuilder>. Contrairement à l’exemple précédent, l’évaluation de l’instruction await génère une valeur. La méthode <xref:System.IO.Stream.ReadAsync%2A> retourne un <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>. L’évaluation de l’instruction await génère donc une valeur `Int32` (`numRead`) une fois l’opération terminée. Pour plus d’informations, consultez [Types de retour async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ L'exemple suivant lit du texte dans un fichier. Le texte est mis en mémoire tampon et, dans cet exemple, est placé dans un <xref:System.Text.StringBuilder>. Contrairement à l’exemple précédent, l’évaluation de l’instruction await génère une valeur. La méthode <xref:System.IO.Stream.ReadAsync%2A> retourne un <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, de sorte que l’évaluation de l’expression await génère une valeur `Int32` (`numRead`) une fois l’opération effectuée. Pour plus d’informations, consultez [Types de retour async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   
 ```csharp  
 public async void ProcessRead()  
@@ -143,7 +144,7 @@ private async Task<string> ReadTextAsync(string filePath)
 ## <a name="parallel-asynchronous-io"></a>E/S asynchrones en parallèle  
  L’exemple suivant illustre le traitement en parallèle en écrivant 10 fichiers texte. Pour chaque fichier, la méthode <xref:System.IO.Stream.WriteAsync%2A> retourne une tâche qui est ensuite ajoutée à une liste des tâches. L’instruction `await Task.WhenAll(tasks);` quitte la méthode et reprend dans cette dernière quand le traitement du fichier est terminé pour toutes les tâches.  
   
- L’exemple ferme toutes les instances de <xref:System.IO.FileStream> dans un bloc `finally` une fois les tâches terminées. Si chaque `FileStream` était plutôt créé dans une instruction `using`, `FileStream` pourrait être libéré avant que la tâche ne soit terminée.  
+ L’exemple ferme toutes les instances de <xref:System.IO.FileStream> dans un bloc `finally` une fois les tâches effectuées. Si chaque `FileStream` était plutôt créé dans une instruction `using`, `FileStream` pourrait être libéré avant que la tâche ne soit terminée.  
   
  Notez que toutes les améliorations de performances sont presque entièrement dues au traitement parallèle et non au traitement asynchrone. Les avantages du mode asynchrone sont qu'il n'attache pas plusieurs threads et qu'il ne bloque pas le thread d'interface utilisateur.  
   
@@ -188,7 +189,7 @@ public async void ProcessWriteMult()
 }  
 ```  
   
- En utilisant les méthodes <xref:System.IO.Stream.WriteAsync%2A> et <xref:System.IO.Stream.ReadAsync%2A>, vous pouvez spécifier un <xref:System.Threading.CancellationToken>, qui vous permet d’annuler l’opération en cours d’exécution. Pour plus d’informations, consultez [Réglage de votre application Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) et [Annulation dans les threads managés](http://msdn.microsoft.com/library/eea11fe5-d8b0-4314-bb5d-8a58166fb1c3).  
+ Quand vous utilisez les méthodes <xref:System.IO.Stream.WriteAsync%2A> et <xref:System.IO.Stream.ReadAsync%2A>, vous pouvez spécifier un <xref:System.Threading.CancellationToken>, qui vous permet d’annuler l’opération en cours de route. Pour plus d’informations, consultez [Réglage de votre application Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) et [Annulation dans les threads managés](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   

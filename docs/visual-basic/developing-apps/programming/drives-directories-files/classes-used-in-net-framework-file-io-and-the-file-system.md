@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6bf3902995531768b8b065aca70790c16d77b0ce
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: ca1ecff264734c16369c9a7d28fbb388bb2f1ccc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)
@@ -76,7 +77,7 @@ Les tableaux suivants répertorient les classes couramment utilisées pour les E
 |---------------|---------------------|  
 |<xref:System.IO.BinaryReader?displayProperty=fullName>|Lit des chaînes encodées et des types de données primitifs à partir d’un <xref:System.IO.FileStream>.|  
 |<xref:System.IO.BinaryWriter?displayProperty=fullName>|Écrit des chaînes encodées et des types de données primitifs dans un <xref:System.IO.FileStream>.|  
-|<xref:System.IO.StreamReader?displayProperty=fullName>|Lit des caractères dans un <xref:System.IO.FileStream>, en utilisant <xref:System.IO.StreamReader.CurrentEncoding%2A> pour convertir les caractères en octets et vice versa. <xref:System.IO.StreamReader> comprend un constructeur qui tente de déterminer le <xref:System.IO.StreamReader.CurrentEncoding%2A> approprié pour un flux donné, selon la présence d’un préambule spécifique à <xref:System.IO.StreamReader.CurrentEncoding%2A>, tel qu’une marque d’ordre d’octet.|  
+|<xref:System.IO.StreamReader?displayProperty=fullName>|Lit les caractères d’un <xref:System.IO.FileStream>, en utilisant <xref:System.IO.StreamReader.CurrentEncoding%2A> pour convertir des caractères en octets et des octets en caractères. <xref:System.IO.StreamReader> a un constructeur qui tente de déterminer le <xref:System.IO.StreamReader.CurrentEncoding%2A> correct pour un flux donné, en fonction de la présence d’un préambule propre à <xref:System.IO.StreamReader.CurrentEncoding%2A>, tel qu’une marque d’ordre d’octet.|  
 |<xref:System.IO.StreamWriter?displayProperty=fullName>|Écrit des caractères dans un `FileStream`, en utilisant <xref:System.IO.StreamWriter.Encoding%2A> pour convertir des caractères en octets.|  
 |<xref:System.IO.StringReader?displayProperty=fullName>|Lit des caractères dans un `String`. La sortie peut être un flux de n’importe quel encodage ou un `String`.|  
 |<xref:System.IO.StringWriter?displayProperty=fullName>|Écrit des caractères dans un `String`. La sortie peut être un flux de n’importe quel encodage ou un `String`.|  

@@ -46,7 +46,7 @@ foreach (XElement e in names)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <Name>Ellen Adams</Name>  
 <Name>Tai Yee</Name>  
 <Name>Cristian Osorio</Name>  
@@ -95,7 +95,7 @@ foreach (XElement cp in configParameters)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <ConfigParameter>FirstConfigParameter</ConfigParameter>  
 <ConfigParameter>SecondConfigParameter</ConfigParameter>  
 ```  
@@ -120,7 +120,7 @@ foreach (XElement e in names)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Ellen Adams</aw:Name>  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Tai Yee</aw:Name>  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Cristian Osorio</aw:Name>  

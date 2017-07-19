@@ -11,15 +11,16 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 2bf0c397-13fb-4f68-bc2b-531c6c88a167
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: da0ed7ee7f7653e23140732a785ee73b16a150a5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
+ms.openlocfilehash: d13387c4468a5c89cbe838139c767f0f95ab418d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/10/2017
 
 ---
 # <a name="handle-exceptions-in-query-expressions"></a>Gérer des exceptions dans des expressions de requête
 
-Dans le contexte d’une expression de requête, vous pouvez utiliser n’importe quelle méthode. Toutefois, nous vous recommandons d’éviter d’appeler une méthode dans une expression de requête susceptible de créer un effet secondaire, tel que la modification du contenu de la source de données ou la levée d’une exception. Cet exemple montre comment éviter la levée d’exceptions lorsque vous appelez des méthodes dans une expression de requête, en respectant les directives générales du .NET Framework relatives à la gestion des exceptions. Selon ces directives, il est acceptable d’intercepter une exception si vous comprenez pourquoi elle est levée dans un contexte donné. Pour plus d’informations, consultez les [Bonnes pratiques pour les exceptions](http://msdn.microsoft.com/library/f06da765-235b-427a-bfb6-47cd219af539).  
+Dans le contexte d’une expression de requête, vous pouvez utiliser n’importe quelle méthode. Toutefois, nous vous recommandons d’éviter d’appeler une méthode dans une expression de requête susceptible de créer un effet secondaire, tel que la modification du contenu de la source de données ou la levée d’une exception. Cet exemple montre comment éviter la levée d’exceptions lorsque vous appelez des méthodes dans une expression de requête, en respectant les directives générales du .NET Framework relatives à la gestion des exceptions. Selon ces directives, il est acceptable d’intercepter une exception si vous comprenez pourquoi elle est levée dans un contexte donné. Pour plus d’informations, consultez les [Bonnes pratiques pour les exceptions](../../standard/exceptions/best-practices-for-exceptions.md).  
   
  Le dernier exemple montre comment gérer les cas où vous devez lever une exception pendant l’exécution d’une requête.  
   

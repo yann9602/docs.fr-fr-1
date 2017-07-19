@@ -10,15 +10,16 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1733538c605cb06c7da4d91a6780caa3ea3bec23
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: ff7e67add731324e01b8f2cc323a66e3a8683ec9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 
 # <a name="structs"></a>Structures
-Un *struct* est un type valeur. Lorsqu'un struct est créé, la variable à laquelle le struct est assigné contient les données réelles du struct. Lorsque le struct est assigné à une nouvelle variable, il est copié. La nouvelle variable et la variable d’origine contiennent par conséquent deux copies distinctes des mêmes données. Les modifications apportées à une copie n’affectent pas l’autre copie.
+Un *struct* est un type valeur. Lorsqu'un struct est créé, la variable à laquelle le struct est assigné contient les données réelles du struct. Lorsque le struct est affecté à une nouvelle variable, il est copié. La nouvelle variable et la variable d’origine contiennent par conséquent deux copies distinctes des mêmes données. Les modifications apportées à une copie n’affectent pas l’autre copie.
 
 Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
   
@@ -44,7 +45,7 @@ Les structs partagent presque tous la même syntaxe que les classes, bien qu'ils
   
 -   Au sein d’une déclaration de struct, les champs ne peuvent pas être initialisés à moins d’être déclarés `const` ou `static`.  
   
--   Un struct ne peut pas déclarer de constructeur par défaut (un constructeur sans paramètres) ni de destructeur.  
+-   Un struct ne peut pas déclarer de constructeur par défaut (un constructeur sans paramètre) ni de finaliseur.  
   
 -   Les structs sont copiés lors de l'assignation. Lorsqu'un struct est assigné à une nouvelle variable, toutes les données sont copiées et les modifications apportées à la nouvelle copie ne changent pas les données de la copie d'origine. Il est important de s’en souvenir lors de l’utilisation de collections de types valeur telles que Dictionary<string, myStruct>.  
   

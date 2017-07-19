@@ -1,120 +1,59 @@
 ---
-title: "Guide pratique : accéder aux objets UTC et aux objets de fuseau horaire local prédéfinis"
-description: "Guide pratique pour accéder aux objets UTC et aux objets de fuseau horaire local prédéfinis"
-keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
-ms.date: 08/11/2016
-ms.topic: article
-ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 13454d47-d957-421b-9ecd-940058b8835e
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: fcc48e40cdad25c6142dbc3a86513b816378fa4b
-ms.lasthandoff: 03/13/2017
-
+title: "Comment&#160;: acc&#233;der aux objets UTC et aux objets de fuseau horaire local pr&#233;d&#233;finis | Microsoft Docs"
+ms.custom: ""
+ms.date: "04/10/2017"
+ms.prod: ".net"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-standard"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+helpviewer_keywords: 
+  - "accès au fuseau horaire local"
+  - "fuseaux horaires prédéfinis"
+  - "fuseaux horaires (.NET Framework), locaux"
+  - "fuseaux horaires (.NET Framework), récupérer"
+  - "fuseaux horaires (.NET Framework), UTC"
+  - "temps UTC, prédéfinis"
+ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
+caps.latest.revision: 9
+author: "rpetrusha"
+ms.author: "ronpet"
+manager: "wpickett"
+caps.handback.revision: 9
 ---
-
-# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Guide pratique : accéder aux objets UTC et aux objets de fuseau horaire local prédéfinis
-
-La classe [System.TimeZoneInfo](xref:System.TimeZoneInfo) fournit deux propriétés, `Utc` et `Local`, qui permettent à votre code d’accéder à des objets de fuseau horaire prédéfinis. Cette rubrique explique comment accéder aux objets `TimeZoneInfo` retournés par ces propriétés.
-
-## <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>Pour accéder à l’objet TimeZoneInfo de temps universel coordonné (UTC)
-
-1. Utilisez la propriété **static** (**Shared** en Visual Basic) [TimeZoneInfo.Utc](xref:System.TimeZoneInfo.Utc) pour accéder au temps universel coordonné.
-
-2. Au lieu d’affecter l’objet [TimeZoneInfo](xref:System.TimeZoneInfo) retourné par la propriété à une variable d’objet, continuez à accéder au temps universel coordonné via la propriété [TimeZoneInfo.Utc](xref:System.TimeZoneInfo.Utc).
-
-
-## <a name="to-access-the-local-time-zone"></a>Pour accéder au fuseau horaire local
-
-1. Utilisez la propriété **static** (**Shared** en Visual Basic) [TimeZoneInfo.Local](xref:System.TimeZoneInfo.Local) pour accéder au fuseau horaire local du système.
-
-2. Au lieu d’affecter l’objet [TimeZoneInfo](xref:System.TimeZoneInfo) retourné par la propriété à une variable d’objet, continuez à accéder au fuseau horaire local via la propriété [TimeZoneInfo.Local](xref:System.TimeZoneInfo.Local).
-
-## <a name="example"></a>Exemple
-
-Le code suivant utilise les propriétés [TimeZoneInfo.Local](xref:System.TimeZoneInfo.Local) et [TimeZoneInfo.Utc](xref:System.TimeZoneInfo.Utc) pour convertir une heure du fuseau horaire Est (États-Unis et Canada), ainsi que pour afficher le nom du fuseau horaire sur la console.
-
-```csharp
-// Create Eastern Standard Time value and TimeZoneInfo object      
-DateTime estTime = new DateTime(2007, 1, 1, 00, 00, 00);
-string timeZoneName = "Eastern Standard Time";
-try
-{
-   TimeZoneInfo est = TimeZoneInfo.FindSystemTimeZoneById(timeZoneName);
-
-   // Convert EST to local time
-   DateTime localTime = TimeZoneInfo.ConvertTime(estTime, est, TimeZoneInfo.Local);
-   Console.WriteLine("At {0} {1}, the local time is {2} {3}.", 
-           estTime, 
-           est, 
-           localTime, 
-           TimeZoneInfo.Local.IsDaylightSavingTime(localTime) ?
-                     TimeZoneInfo.Local.DaylightName : 
-                     TimeZoneInfo.Local.StandardName);
-
-   // Convert EST to UTC
-   DateTime utcTime = TimeZoneInfo.ConvertTime(estTime, est, TimeZoneInfo.Utc);
-   Console.WriteLine("At {0} {1}, the time is {2} {3}.", 
-           estTime, 
-           est, 
-           utcTime, 
-           TimeZoneInfo.Utc.StandardName);
-}
-catch (TimeZoneNotFoundException)
-{
-   Console.WriteLine("The {0} zone cannot be found in the registry.", 
-                     timeZoneName);
-}
-catch (InvalidTimeZoneException)
-{
-   Console.WriteLine("The registry contains invalid data for the {0} zone.", 
-                     timeZoneName);
-}
-```
-
-```vb
-' Create Eastern Standard Time value and TimeZoneInfo object      
-Dim estTime As Date = #01/01/2007 00:00:00#
-Dim timeZoneName As String = "Eastern Standard Time"
-Try
-   Dim est As TimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZoneName)
-
-   ' Convert EST to local time
-   Dim localTime As Date = TimeZoneInfo.ConvertTime(estTime, est, TimeZoneInfo.Local)
-   Console.WriteLine("At {0} {1}, the local time is {2} {3}.", _
-           estTime, _
-           est, _
-           localTime, _
-           IIf(TimeZoneInfo.Local.IsDaylightSavingTime(localTime), _
-               TimeZoneInfo.Local.DaylightName, _
-               TimeZoneInfo.Local.StandardName))
-
-   ' Convert EST to UTC
-   Dim utcTime As Date = TimeZoneInfo.ConvertTime(estTime, est, TimeZoneInfo.Utc)
-   Console.WriteLine("At {0} {1}, the time is {2} {3}.", _
-           estTime, _
-           est, _
-           utcTime, _
-           TimeZoneInfo.Utc.StandardName)
-Catch e As TimeZoneNotFoundException
-   Console.WriteLine("The {0} zone cannot be found in the registry.", _
-                     timeZoneName)
-Catch e As InvalidTimeZoneException
-   Console.WriteLine("The registry contains invalid data for the {0} zone.", _
-                     timeZoneName)
-End Try
-```
-
-Vous devez toujours accéder au fuseau horaire local via la propriété [TimeZoneInfo.Local](xref:System.TimeZoneInfo.Local) plutôt qu’en affectant le fuseau horaire local à une variable d’objet [TimeZoneInfo](xref:System.TimeZoneInfo). De même, vous devez toujours accéder au temps universel coordonné via la propriété [TimeZoneInfo.Utc](xref:System.TimeZoneInfo.Utc) plutôt qu’en affectant le fuseau horaire UTC à une variable d’objet [TimeZoneInfo](xref:System.TimeZoneInfo). Cela empêche la variable d’objet [TimeZoneInfo](xref:System.TimeZoneInfo) d’être invalidée par une méthode externe.
-
-
-## <a name="see-also"></a>Voir aussi
-
-[Dates, heures et fuseaux horaires](index.md)
-
-[Recherche des fuseaux horaires définis sur un système local](finding-the-time-zones-on-local-system.md)
-
+# Comment&#160;: acc&#233;der aux objets UTC et aux objets de fuseau horaire local pr&#233;d&#233;finis
+La classe <xref:System.TimeZoneInfo> fournit deux propriétés, <xref:System.TimeZoneInfo.Utc%2A> et <xref:System.TimeZoneInfo.Local%2A>, qui permettent à votre code d'accéder à des objets de fuseau horaire prédéfinis.  Cette rubrique explique comment accéder aux objets <xref:System.TimeZoneInfo> retournés par ces propriétés.  
+  
+### Pour accéder à l'objet TimeZoneInfo de temps universel coordonné \(UTC, Coordinated Universal Time\)  
+  
+1.  Utilisez la propriété `static` \(`Shared` dans Visual Basic\) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné.  
+  
+2.  Plutôt que d'assigner l'objet <xref:System.TimeZoneInfo> retourné par la propriété à une variable objet, utilisez la propriété <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné.  
+  
+### Pour accéder au fuseau horaire local  
+  
+1.  Utilisez la propriété `static` \(`Shared` dans Visual Basic\) <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire du système local.  
+  
+2.  Plutôt que d'assigner l'objet <xref:System.TimeZoneInfo> retourné par la propriété à une variable objet, utilisez la propriété <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire local.  
+  
+## Exemple  
+ Le code ci\-dessous utilise les propriétés <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> et <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour convertir un point des États\-Unis et le fuseau horaire standard de l'Est canadien, ainsi que pour afficher le nom du fuseau horaire à la console.  
+  
+ [!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
+ [!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]  
+  
+ Vous devez toujours utiliser la propriété <xref:System.TimeZoneInfo.Local%2A?displayProperty=fullName> pour accéder au fuseau horaire local plutôt que d'assigner le fuseau horaire local à une variable objet <xref:System.TimeZoneInfo>.  De la même façon, vous devez toujours faire appel à la propriété <xref:System.TimeZoneInfo.Utc%2A?displayProperty=fullName> pour accéder au temps universel coordonné plutôt que d'assigner le fuseau horaire UTC à une variable objet <xref:System.TimeZoneInfo>.  Ainsi, la variable objet <xref:System.TimeZoneInfo> ne peut pas être invalidée par un appel à la méthode <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=fullName>.  
+  
+## Compilation du code  
+ Cet exemple nécessite :  
+  
+-   qu'une référence à System.Core.dll soit ajoutée au projet ;  
+  
+-   que l'espace de noms <xref:System> soit importé avec l'instruction `using` \(requise en code C\#\).  
+  
+## Voir aussi  
+ [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)   
+ [Recherche des fuseaux horaires définis sur un système local](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)   
+ [Comment : instancier un objet TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)

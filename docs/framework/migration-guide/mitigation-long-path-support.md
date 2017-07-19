@@ -23,16 +23,16 @@ ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="mitigation-long-path-support"></a>Atténuation : Prise en charge des chemins d’accès longs
-En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], les méthodes d’E/S du système de fichiers ne lèvent plus automatiquement une <xref:System.IO.PathTooLongException> si un chemin d’accès ou nom de fichier complet dépasse 260 (ou `MAX_PATH`) caractères. Au lieu de cela, les chemins d’accès longs de sont pris en charge jusqu'à 32 000 caractères.  
+À partir des applications qui ciblent le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], les méthodes d’E/S du système de fichiers ne lèvent plus automatiquement une <xref:System.IO.PathTooLongException> si un chemin ou nom de fichier complet dépasse 260 (ou `MAX_PATH`) caractères. Au lieu de cela, les chemins d’accès longs de sont pris en charge jusqu'à 32 000 caractères.  
   
 ## <a name="impact"></a>Impact  
- Les applications recompilées pour cibler [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] et qui levaient précédemment une <xref:System.IO.PathTooLongException> automatiquement car un chemin d’accès dépassait 260 caractères lèveront maintenant une <xref:System.IO.PathTooLongException> uniquement dans les conditions suivantes :  
+ Les applications recompilées pour cibler [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] et qui levaient précédemment une <xref:System.IO.PathTooLongException> automatiquement car un chemin dépassait 260 caractères lèvent maintenant une <xref:System.IO.PathTooLongException> uniquement dans les conditions suivantes :  
   
--   La longueur du chemin d’accès est supérieure à <xref:System.Int16.MaxValue?displayProperty=fullName> (32 767) caractères.  
+-   La longueur du chemin est supérieure à <xref:System.Int16.MaxValue?displayProperty=fullName> (32 767) caractères.  
   
 -   Le système d’exploitation renvoie `COR_E_PATHTOOLONG` ou son équivalent.  
   
- L’ancien comportement pour les applications qui ciblent [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] et versions antérieures faisait que le runtime levait automatiquement une <xref:System.IO.PathTooLongException> chaque fois qu’un chemin d’accès dépassait 260 caractères.  
+ L’ancien comportement pour les applications qui ciblent le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] et versions antérieures faisait que le runtime levait automatiquement une <xref:System.IO.PathTooLongException> chaque fois qu’un chemin comportait plus de 260 caractères.  
   
 ## <a name="mitigation"></a>Atténuation  
  Pour les applications qui ciblent [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], vous pouvez annuler la prise en charge des longs chemins d’accès en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier app.config :  

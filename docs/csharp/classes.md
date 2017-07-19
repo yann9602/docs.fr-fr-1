@@ -2,18 +2,19 @@
 title: Classes | Guide C#
 description: "En savoir plus sur les types de classe et découvrir comment les créer"
 keywords: .NET, .NET Core, C#
-author: stevehoag
-ms.author: shoag
+author: BillWagner
+ms.author: wiwagn
 ms.date: 10/10/2016
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4b5614123d38ae00cb471ef85d0eb92c03c68bba
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: f2cfeac321860a609c21046818c36fbc6aa3c636
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 
@@ -25,7 +26,7 @@ Un type défini comme [class](https://msdn.microsoft.com/library/0b0thckt.aspx) 
 
 [!code-csharp[Types référence](../../samples/snippets/csharp/concepts/classes/reference-type.cs)]
   
-Quand l’objet est créé, la mémoire est allouée sur le tas managé et la variable contient uniquement une référence à l’emplacement de l’objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé, et dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../standard/garbagecollection/gc.md).  
+Quand l’objet est créé, la mémoire est allouée sur le tas managé et la variable contient uniquement une référence à l’emplacement de l’objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé, et dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire et garbage collection](../standard/garbage-collection/gc.md).  
   
 Les types référence prennent entièrement en charge l’*héritage*, caractéristique fondamentale de la programmation orientée objet. Quand vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n’est pas définie comme [sealed](https://msdn.microsoft.com/library/88c54tsw.aspx), et d’autres classes peuvent hériter de votre classe et substituer vos méthodes virtuelles. Pour plus d’informations, consultez [Héritage](https://msdn.microsoft.com/library/ms173149.aspx).
 
@@ -81,7 +82,7 @@ Pour plus d’informations, consultez [Spécification du langage C#](https://ms
 [Membres de classe et de struct](https://msdn.microsoft.com/library/ms173113.aspx)   
 [Méthodes de classe et de struct](https://msdn.microsoft.com/library/ms173114.aspx)   
 [Constructeurs](https://msdn.microsoft.com/library/ace5hbzh.aspx)   
-[Destructeurs](https://msdn.microsoft.com/library/66x5fx1b.aspx)   
+[Finaliseurs](https://msdn.microsoft.com/library/66x5fx1b.aspx)   
 [Objets](https://msdn.microsoft.com/library/ms173110.aspx)
 
 

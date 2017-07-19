@@ -35,20 +35,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f6934a09c5f980f845e19b28e462cc601e154512
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: eb1d380ee4dfd64081d8fe36880a06e3a450f639
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() et arguments de ligne de commande (Guide de programmation C#)
+<a id="main-and-command-line-arguments-c-programming-guide" class="xliff"></a>
+
+# Main() et arguments de ligne de commande (Guide de programmation C#)
 La méthode `Main` est le point d’entrée d’une application Windows ou d’une application console C#. (Les bibliothèques et les services ne requièrent pas de méthode `Main` comme point d’entrée.) Lorsque l’application est démarrée, la méthode `Main` est la première méthode appelée.  
   
  Il ne peut y avoir qu’un seul point d’entrée dans un programme C#. Si plusieurs classes ont une méthode `Main`, vous devez compiler votre programme avec l’option de compilateur **/main** pour spécifier quelle méthode `Main` utiliser comme point d’entrée. Pour plus d’informations, consultez l’article [/main (C# Compiler Options) (/main [Options du compilateur C#])](../../../csharp/language-reference/compiler-options/main-compiler-option.md).  
   
  [!code-cs[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]  
   
-## <a name="overview"></a>Vue d'ensemble  
+<a id="overview" class="xliff"></a>
+
+## Vue d'ensemble  
   
 -   La méthode `Main` est le point d’entrée d’un programme .exe ; c’est l’endroit où le contrôle du programme commence et se termine.  
   
@@ -56,9 +61,11 @@ La méthode `Main` est le point d’entrée d’une application Windows ou d’u
   
 -   `Main` peut avoir le type de retour `void` ou `int`.  
   
--   La méthode `Main` peut être déclarée avec ou sans paramètre `string[]`, qui contient des arguments de ligne de commande. Si vous utilisez [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)] pour créer des applications Windows Forms, vous pouvez ajouter le paramètre manuellement ou bien utiliser la classe <xref:System.Environment> pour obtenir les arguments de ligne de commande. Les paramètres sont lus comme des arguments de ligne de commande avec index de base zéro. Contrairement à C et C++, le nom du programme n’est pas traité comme le premier argument de ligne de commande.  
+-   La méthode `Main` peut être déclarée avec ou sans paramètre `string[]`, qui contient des arguments de ligne de commande. Lorsque vous utilisez [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] pour créer des applications Windows Forms, vous pouvez ajouter le paramètre manuellement ou bien utiliser la classe <xref:System.Environment> pour obtenir les arguments de ligne de commande. Les paramètres sont lus comme des arguments de ligne de commande avec index de base zéro. Contrairement à C et C++, le nom du programme n’est pas traité comme le premier argument de ligne de commande.  
   
-## <a name="in-this-section"></a>Dans cette section  
+<a id="in-this-section" class="xliff"></a>
+
+## Dans cette section  
   
 -   [Arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)  
   
@@ -68,10 +75,14 @@ La méthode `Main` est le point d’entrée d’une application Windows ou d’u
   
 -   [Valeurs de retour Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+<a id="c-language-specification" class="xliff"></a>
+
+## Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
+<a id="see-also" class="xliff"></a>
+
+## Voir aussi  
  [Génération en ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   

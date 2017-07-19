@@ -1,43 +1,51 @@
 ---
-title: Visual Studio Tools pour Docker
+title: Visual Studio Tools pour Docker | Microsoft Docs
 description: Utilisation de Visual Studio Tools pour Docker
-keywords: ".NET, .NET Core, Docker, ASP.NET Core, Visual Studio 2015"
+keywords: .NET, .NET Core, Docker, ASP.NET Core, Visual Studio
 author: spboyer
 ms.author: shboyer
-ms.date: 09/16/2016
+ms.date: 04/27/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: d3ea05484650d64284affa70c7377df929e44bfc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
+ms.openlocfilehash: dd1a0dc226d6ac9af5a474da54ac14094855fe31
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/23/2017
 
 ---
 
-# <a name="visual-studio-tools-for-docker"></a>Visual Studio Tools pour Docker 
-Le développement et le débogage de votre application dans un conteneur Docker peuvent être une suite de tâches pour obtenir et installer différents outils. [Visual Studio Tools pour Docker](https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4) vous permet de faire face aux difficultés et de trouver les bogues en utilisant F5 pour déboguer votre application directement dans un conteneur Docker hébergé localement. 
+<a id="visual-studio-tools-for-docker" class="xliff"></a>
 
-> [!NOTE]
->La version actuelle cible les conteneurs Docker Linux, la version pour les conteneurs Windows étant bientôt disponible.
+# Visual Studio Tools pour Docker
 
-## <a name="prerequisites"></a>Prérequis
-- [Microsoft Visual Studio 2015 Update 3](https://www.visualstudio.com/downloads/download-visual-studio-vs)
-- [.NET Core 1.0.1 - VS 2015 Tooling Preview 2](https://go.microsoft.com/fwlink/?LinkID=827546)
-- [Docker For Windows](https://www.docker.com/products/docker#/windows), pour exécuter vos conteneurs Docker localement
+[Microsoft Visual Studio 2017](https://www.visualstudio.com/) avec [Docker pour Windows](https://docs.docker.com/docker-for-windows/install/) prend en charge la création, le débogage et l’exécution d’applications web et console .NET Framework et .NET Core à l’aide de conteneurs Windows et Linux.
 
-## <a name="installation-and-setup"></a>Installation et configuration
-Téléchargez et installez [Visual Studio Tools pour Docker](https://aka.ms/DockerToolsForVS) à partir de la [galerie Visual Studio](http://visualstudiogallery.msdn.microsoft.com/) ; vous pouvez aussi le rechercher dans **Extensions et mises à jour** dans Visual Studio. 
+<a id="prerequisites" class="xliff"></a>
 
-Il est nécessaire de configurer des **[lecteurs partagés](https://docs.docker.com/docker-for-windows/#/shared-drives)** dans Docker pour Windows. Ce paramétrage est nécessaire pour le mappage de volume et la prise en charge du débogage.
+## Prérequis
+
+- [Microsoft Visual Studio 2017](https://www.visualstudio.com/)
+- [Docker pour Windows](https://docs.docker.com/docker-for-windows/install/)
+
+<a id="installation-and-setup" class="xliff"></a>
+
+## Installation et configuration
+
+Installez [Microsoft Visual Studio 2017](https://www.visualstudio.com/) avec la charge de travail .NET Core. Passez en revue les informations contenues dans [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) et installez [Docker pour Windows](https://docs.docker.com/docker-for-windows/install/).
+
+Il est nécessaire de configurer des **[lecteurs partagés](https://docs.docker.com/docker-for-windows/#shared-drives)** dans Docker pour Windows. Ce paramétrage est nécessaire pour le mappage de volume et la prise en charge du débogage.
 
 Cliquez avec le bouton droit sur l’icône Docker dans la barre d’état, cliquez sur Settings et sélectionnez Shared drives.
 
-![Shared Drives](./media/visual-studio-tools-for-docker/settings-shared-drives-win.png) 
+![Shared Drives](./media/visual-studio-tools-for-docker/settings-shared-drives-win.png)
 
-## <a name="create-an-aspnet-web-application-and-add-docker-support"></a>Créer une application web ASP.NET et ajouter la prise en charge de Docker
+<a id="create-an-aspnet-web-application-and-add-docker-support" class="xliff"></a>
+
+## Créer une application web ASP.NET et ajouter la prise en charge de Docker
 
 Avec Visual Studio, créez une application web ASP.NET Core. Quand l’application est chargée, sélectionnez **Ajouter la prise en charge de Docker** dans le **menu Projet**, ou cliquez avec le bouton droit sur le projet dans l’Explorateur de solutions et sélectionnez **Ajouter** > **Prise en charge de Docker**.
 
@@ -51,8 +59,8 @@ Projet – Menu contextuel
 
 Les fichiers suivants sont ajoutés au projet.
 
-- **Dockerfile** : le fichier Docker pour les applications ASP.NET Core est basé sur l’image [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore). Cette image inclut les packages NuGet ASP.NET Core, qui ont été prétraités avec JiT pour améliorer les performances au démarrage. Lors de la génération d’applications de console .NET Core, le fichier Dockerfile FROM fait référence à l’image [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet) la plus récente.
-- **docker-compose.yml** : fichier Compose Docker de base utilisé pour définir la collection d’images à générer et à exécuter avec docker-compose build/run.  
+- **Dockerfile** : le fichier Docker pour les applications ASP.NET Core est basé sur l’image [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore). Cette image inclut les packages NuGet ASP.NET Core, qui ont été prétraités avec JiT pour améliorer les performances au démarrage. Lors de la génération d’applications de console .NET Core, le fichier Dockerfile FROM fait référence à l’image [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet) la plus récente.   
+- **docker-compose.yml** : fichier Compose Docker de base utilisé pour définir la collection d’images à générer et à exécuter avec docker-compose build/run.   
 - **docker-compose.dev.debug.yml** : fichier docker-compose supplémentaire avec des modifications itératives quand votre configuration est définie sur Debug. Visual Studio appelle -f docker-compose.yml -f docker-compose.dev.debug.yml pour fusionner ces éléments. Ce fichier compose est utilisé par les outils de développement de Visual Studio.   
 - **docker-compose.dev.release.yml** : fichier Compose Docker supplémentaire pour déboguer votre définition de version. Il va monter le débogueur sur un volume afin qu’il ne change pas le contenu de l’image de production.  
 
@@ -69,14 +77,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80"
-
 ``` 
 
 Dans cet exemple, `image: user/hellodockertools${TAG}` génère l’image `user/hellodockertools:dev` quand l’application est exécutée en mode **Debug** et `user/hellodockertools:latest` en mode **Release**, respectivement. 
 
 Vous pouvez changer `user` pour votre nom d’utilisateur Docker Hub si vous envisagez de placer l’image dans le Registre, par exemple `spboyer/hellodockertools`, ou vous pouvez changer pour votre URL de Registre privé `privateregistry.domain.com/`, en fonction de votre configuration.
 
-### <a name="debugging"></a>Débogage
+<a id="debugging" class="xliff"></a>
+
+### Débogage
+
 Sélectionnez **Docker** dans la liste déroulante de débogage dans la barre d’outils et utilisez la touche F5 pour démarrer le débogage de l’application. 
 
 - L’image microsoft/aspnetcore est acquise (si elle n’est pas déjà dans le cache)
@@ -101,7 +111,10 @@ CONTAINER ID        IMAGE                          COMMAND               CREATED
 3f240cf686c9        spboyer/hellodockertools:dev   "tail -f /dev/null"   4 minutes ago       Up 4 minutes        0.0.0.0:32769->80/tcp   hellodockertools_hellodockertools_1
 ```
 
-### <a name="edit-and-continue"></a>Modifier & Continuer
+<a id="edit-and-continue" class="xliff"></a>
+
+### Modifier & Continuer
+
 Les modifications apportées à des fichiers statiques et/ou à des fichiers modèles Razor (.cshtml) sont automatiquement mises à jour qu’une étape de compilation soit nécessaire. Apportez les modifications, enregistrez et cliquez sur Actualiser dans le navigateur pour voir la mise à jour.  
 
 Les modifications apportées aux fichiers de code nécessitent une compilation et un redémarrage de Kestrel au sein du conteneur. Après avoir effectué la modification, utilisez Ctrl+F5 pour exécuter le processus et démarrer l’application au sein du conteneur. Le conteneur Docker n’est pas régénéré ni arrêté ; en utilisant `docker ps` sur la ligne de commande, vous pouvez voir que le conteneur d’origine est toujours en cours d’exécution comme 10 minutes auparavant. 
@@ -111,7 +124,10 @@ CONTAINER ID        IMAGE                          COMMAND               CREATED
 3f240cf686c9        spboyer/hellodockertools:dev   "tail -f /dev/null"   10 minutes ago      Up 10 minutes       0.0.0.0:32769->80/tcp   hellodockertools_hellodockertools_1
 ```
 
-### <a name="publishing-docker-images"></a>Publication des images Docker 
+<a id="publishing-docker-images" class="xliff"></a>
+
+### Publication des images Docker
+
 Une fois que vous avez terminé le cycle de développement et de débogage de votre application, Visual Studio Tools pour Docker vous aide à créer l’image de production de votre application. Changez la liste déroulante de Debug en **Release** et générez l’application. Les outils produisent l’image avec l’étiquette `:latest`, que vous pouvez distribuer sur votre Registre privé ou sur Docker Hub. 
 
 Avec `docker images`, vous pouvez voir la liste des images.

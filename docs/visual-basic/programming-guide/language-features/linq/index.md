@@ -31,18 +31,19 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 26d2ceac051905f5ac46b59f6fd2598e924355c7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: cdfd19e9df6ec107c1195e7555ce07aea8967588
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/26/2017
 
 ---
 # <a name="linq-in-visual-basic"></a>LINQ en Visual Basic
-Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser Visual Basic et [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)].  
+Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser Visual Basic et [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- Fournit une introduction aux fournisseurs, aux opérateurs, à la structure des requêtes et aux fonctionnalités du langage [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)].  
+ Fournit une introduction aux fournisseurs, aux opérateurs, à la structure des requêtes et aux fonctionnalités du langage [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
  [Guide pratique : interroger une base de données](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
  Fournit un exemple de connexion à une base de données SQL Server et d’exécution d’une requête avec LINQ.  

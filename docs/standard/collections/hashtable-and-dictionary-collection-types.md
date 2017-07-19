@@ -20,14 +20,15 @@ caps.latest.revision: 16
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
 ms.openlocfilehash: 59aa4bd6160491ac6c6a4f45131531226ec7e58f
-ms.lasthandoff: 04/18/2017
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/22/2017
 
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Types collection Hashtable et Dictionary
-La classe <xref:System.Collections.Hashtable?displayProperty=fullName> et les classes génériques <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> implémentent l’interface <xref:System.Collections.IDictionary?displayProperty=fullName>. La classe générique <xref:System.Collections.Generic.Dictionary%602> implémente également l'interface générique <xref:System.Collections.Generic.IDictionary%602>. Par conséquent, chaque élément de ces collections est une paire clé-valeur.  
+La classe <xref:System.Collections.Hashtable?displayProperty=fullName>, ainsi que les classes génériques <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName>, implémentent l'interface <xref:System.Collections.IDictionary?displayProperty=fullName>. La classe générique <xref:System.Collections.Generic.Dictionary%602> implémente également l'interface générique <xref:System.Collections.Generic.IDictionary%602>. Par conséquent, chaque élément de ces collections est une paire clé-valeur.  
   
  Un objet <xref:System.Collections.Hashtable> est constitué de compartiments contenant les éléments de la collection. Un compartiment est un sous-groupe virtuel d'éléments dans la <xref:System.Collections.Hashtable>, ce qui rend la recherche et la récupération plus facile et plus rapide que dans la plupart des collections. Chaque compartiment est associé à un code de hachage qui est généré à l'aide d'une fonction de hachage et qui est basé sur la clé de l'élément.  
   
@@ -41,7 +42,7 @@ La classe <xref:System.Collections.Hashtable?displayProperty=fullName> et les cl
   
  Par exemple, une fonction de hachage pour une chaîne peut prendre les codes ASCII de chaque caractère de la chaîne et les additionner pour générer un code de hachage. La chaîne "pique-nique" aurait ainsi un code de hachage différent du code de hachage de la chaîne "basket". Les chaînes "pique-nique" et "basket" seraient donc dans des compartiments différents. Par contre, "ail" et "lia" auraient le même code de hachage et seraient dans le même compartiment.  
   
- Les classes <xref:System.Collections.Generic.Dictionary%602> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602> ont les mêmes fonctionnalités que la classe <xref:System.Collections.Hashtable>. Un dictionnaire <xref:System.Collections.Generic.Dictionary%602> d'un type spécifique (autre que <xref:System.Object>) offre de meilleures performances qu'une table <xref:System.Collections.Hashtable> pour les types valeur. La raison en est que les éléments de <xref:System.Collections.Hashtable> sont de type <xref:System.Object>. Par conséquent, le boxing et l’unboxing se produisent généralement quand vous stockez ou que vous récupérez un type valeur. La classe <xref:System.Collections.Concurrent.ConcurrentDictionary%602> doit être utilisée quand plusieurs threads sont susceptibles d’accéder simultanément à la collection.  
+ Les classes <xref:System.Collections.Generic.Dictionary%602> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602> ont les mêmes fonctionnalités que la classe <xref:System.Collections.Hashtable>. Un dictionnaire <xref:System.Collections.Generic.Dictionary%602> d'un type spécifique (autre que <xref:System.Object>) offre de meilleures performances qu'une table <xref:System.Collections.Hashtable> pour les types valeur. La raison en est que les éléments de <xref:System.Collections.Hashtable> sont de type <xref:System.Object>. Par conséquent, le boxing et la conversion unboxing se produisent généralement quand vous stockez ou que vous récupérez un type valeur. La classe <xref:System.Collections.Concurrent.ConcurrentDictionary%602> doit être utilisée quand plusieurs threads sont susceptibles d’accéder simultanément à la collection.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Collections.Hashtable>   

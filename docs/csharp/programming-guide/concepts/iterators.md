@@ -16,10 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fe482e4db15ce621e74bdacf9313a3d31ade51b2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 11a606ef18bc497630c0a417488e533a0880056f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="iterators-c"></a>Itérateurs (C#)
@@ -50,7 +51,7 @@ public static System.Collections.IEnumerable SomeNumbers()
 }  
 ```  
   
- Le type de retour d’une méthode d’itérateur ou d’un accesseur `get` peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.  
+ Le type de retour d’une méthode d’itérateur ou de l’accesseur `get` peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.  
   
  Vous pouvez utiliser une instruction `yield break` pour terminer l’itération.  
   
@@ -102,7 +103,7 @@ public static System.Collections.Generic.IEnumerable<int>
 ```  
   
 ##  <a name="BKMK_CollectionClass"></a> Création d’une classe de collection  
- Dans l’exemple suivant, la classe `DaysOfTheWeek` implémente l’interface <xref:System.Collections.IEnumerable>, qui nécessite une méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A>. Le compilateur appelle implicitement la méthode `GetEnumerator`, qui retourne un <xref:System.Collections.IEnumerator>.  
+ Dans l’exemple suivant, la classe `DaysOfTheWeek` implémente l’interface <xref:System.Collections.IEnumerable>, ce qui nécessite la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A>. Le compilateur appelle implicitement la méthode `GetEnumerator`, qui retourne un <xref:System.Collections.IEnumerator>.  
   
  La méthode `GetEnumerator` retourne chaque chaîne une à la fois en utilisant l’instruction `yield return`.  
   
@@ -231,9 +232,9 @@ public class Zoo : IEnumerable
 ```  
   
 ##  <a name="BKMK_GenericList"></a> Utilisation d’itérateurs avec une liste générique  
- Dans l’exemple suivant, la classe générique `Stack(Of T)` implémente l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. La méthode `Push` affecte des valeurs à un tableau de type `T`. La méthode <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> retourne les valeurs du tableau en utilisant l’instruction `yield return`.  
+ Dans l’exemple suivant, la classe générique `Stack(Of T)` implémente l'interface générique <xref:System.Collections.Generic.IEnumerable%601>. La méthode `Push` affecte des valeurs à un tableau de type `T`. La méthode <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> retourne les valeurs de tableau à l’aide de l’instruction `yield return`.  
   
- En plus de la méthode générique <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>, la méthode non générique <xref:System.Collections.IEnumerable.GetEnumerator%2A> doit également être implémentée. La raison en est que <xref:System.Collections.Generic.IEnumerable%601> hérite de <xref:System.Collections.IEnumerable>. L’implémentation non générique s’en remet à l’implémentation générique.  
+ Outre la méthode <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> générique, la méthode <xref:System.Collections.IEnumerable.GetEnumerator%2A> non générique doit également être implémentée. C’est parce que <xref:System.Collections.Generic.IEnumerable%601> hérite de <xref:System.Collections.IEnumerable>. L’implémentation non générique s’en remet à l’implémentation générique.  
   
  L’exemple utilise des itérateurs nommés pour prendre en charge différentes façons d’itérer au sein de la même collection de données. Ces itérateurs nommés sont les propriétés `TopToBottom` et `BottomToTop`, et la méthode `TopN`.  
   
@@ -348,7 +349,7 @@ public class Stack<T> : IEnumerable<T>
 ```  
   
 ##  <a name="BKMK_SyntaxInformation"></a> Informations sur la syntaxe  
- Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur ne peut pas être présent dans un événement, un constructeur d’instance, un constructeur statique ou un destructeur statique.  
+ Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur ne peut pas être présent dans un événement, un constructeur d’instance, un constructeur statique ou un finaliseur statique.  
   
  Une conversion implicite doit exister depuis le type d’expression dans l’instruction `yield return` vers le type de retour de l’itérateur.  
   
@@ -361,7 +362,7 @@ public class Stack<T> : IEnumerable<T>
   
  Pour voir ce que fait le compilateur, vous pouvez utiliser l’outil Ildasm.exe pour afficher le code du langage intermédiaire Microsoft généré pour une méthode d’itérateur.  
   
- Quand vous créez un itérateur pour une [classe](../../../csharp/language-reference/keywords/class.md) ou une [structure](../../../csharp/language-reference/keywords/struct.md), vous n’avez pas à implémenter l’ensemble de l’interface <xref:System.Collections.IEnumerator>. Quand le compilateur détecte l’itérateur, il génère automatiquement les méthodes `Current`, `MoveNext` et `Dispose` de l’interface <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.  
+ Quand vous créez un itérateur pour une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md), vous n’avez pas besoin d’implémenter l’ensemble de l’interface <xref:System.Collections.IEnumerator>. Quand le compilateur détecte l’itérateur, il génère automatiquement les méthodes `Current`, `MoveNext` et `Dispose` de l’interface <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.  
   
  À chaque itération successive de la boucle `foreach` (ou de l’appel direct à `IEnumerator.MoveNext`), le corps du code de l’itérateur suivant reprend après l’instruction `yield return` précédente. Il continue ensuite jusqu’à l’instruction `yield return` suivante, jusqu’à atteindre la fin du corps de l’itérateur ou jusqu’à rencontrer une instruction `yield break`.  
   
@@ -374,7 +375,7 @@ public class Stack<T> : IEnumerable<T>
   
 -   Modifier la séquence de la liste après la première itération de la boucle `foreach`.  
   
--   Éviter de charger entièrement une grande liste avant la première itération d’une boucle `foreach`. Une extraction paginée pour charger un lot de lignes d’une table est un exemple. Un autre exemple est la méthode <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>, qui implémente des itérateurs dans le .NET Framework.  
+-   Éviter de charger entièrement une grande liste avant la première itération d’une boucle `foreach`. Une extraction paginée pour charger un lot de lignes d’une table est un exemple. Un autre exemple est la méthode <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> , qui implémente les itérateurs dans le .NET Framework.  
   
 -   Encapsuler la création de la liste dans l’itérateur. Dans la méthode d’itérateur, vous pouvez créer la liste et générer ensuite chaque résultat dans une boucle.  
   

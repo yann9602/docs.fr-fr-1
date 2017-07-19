@@ -93,7 +93,7 @@ Si une propriété a les accesseurs `get` et `set`, tous deux doivent être impl
 -   [Propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   

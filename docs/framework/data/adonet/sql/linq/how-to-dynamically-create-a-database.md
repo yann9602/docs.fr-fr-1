@@ -1,0 +1,60 @@
+---
+title: "Proc&#233;dure&#160;: cr&#233;er dynamiquement une base de donn&#233;es | Microsoft Docs"
+ms.custom: ""
+ms.date: "03/30/2017"
+ms.prod: ".net-framework-4.6"
+ms.reviewer: ""
+ms.suite: ""
+ms.technology: 
+  - "dotnet-ado"
+ms.tgt_pltfrm: ""
+ms.topic: "article"
+ms.assetid: fb7f23c4-4572-4c38-9898-a287807d070c
+caps.latest.revision: 2
+author: "JennieHubbard"
+ms.author: "jhubbard"
+manager: "jhubbard"
+caps.handback.revision: 2
+---
+# Proc&#233;dure&#160;: cr&#233;er dynamiquement une base de donn&#233;es
+Dans LINQ to SQL, un modèle objet est mappé à une base de données relationnelle.  Le mappage est activé à l'aide du mappage basé sur les attributs ou d'un fichier de mappage externe pour décrire la structure de la base de données relationnelle.  Dans les deux scénarios, il existe suffisamment d'informations sur la base de données relationnelle pour pouvoir créer une nouvelle instance de la base de données à l'aide de la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName>.  
+  
+ La méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> crée un réplica de la base de données uniquement en fonction de l'étendue des informations encodées dans le modèle objet.  Les fichiers et les attributs de mappage de votre modèle objet ne peuvent pas encoder l'ensemble des éléments de la structure d'une base de données existante.  Les informations de mappage ne représentent pas le contenu de fonctions définies par l'utilisateur, de procédures stockées, de déclencheurs ou de contraintes de validation.  Ce comportement est suffisant pour différentes bases de données.  
+  
+ Vous pouvez utiliser la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> dans le nombre de scénarios souhaité, surtout si un fournisseur de données connu tel que Microsoft SQL Server 2008 est disponible.  Dans les scénarios classiques :  
+  
+-   Vous générez une application qui s'installe automatiquement sur le système d'un client.  
+  
+-   Vous générez une application cliente qui a besoin d'une base de données locale pour enregistrer son état hors connexion.  
+  
+ Vous pouvez également utiliser la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> avec SQL Server en utilisant un fichier .mdf ou un nom de catalogue, en fonction de votre chaîne de connexion.  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise la chaîne de connexion pour définir la base de données à créer et sur quel serveur la base de données sera créée.  
+  
+> [!NOTE]
+>  Si possible, utilisez la sécurité intégrée Windows pour vous connecter à la base de données de façon à ce que les mots de passe ne soient pas requis dans la chaîne de connexion.  
+  
+## Exemple  
+ Le code suivant fournit un exemple de création d'une nouvelle base de données nommée MyDVDs.mdf.  
+  
+ [!code-csharp[DLinqSubmittingChanges#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#5)]
+ [!code-vb[DLinqSubmittingChanges#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#5)]  
+  
+## Exemple  
+ Vous pouvez utiliser le modèle objet pour créer une base de données en procédant comme suit :  
+  
+ [!code-csharp[DLinqSubmittingChanges#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#6)]
+ [!code-vb[DLinqSubmittingChanges#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#6)]  
+  
+## Exemple  
+ Lors de la création d'une application qui s'installe automatiquement sur le système d'un client, vérifiez si la base de données existe déjà et supprimez\-la avant d'un créer une nouvelle.  La classe <xref:System.Data.Linq.DataContext> fournit les méthodes <xref:System.Data.Linq.DataContext.DatabaseExists%2A> et <xref:System.Data.Linq.DataContext.DeleteDatabase%2A> pour vous aider dans cette tâche.  
+  
+ L'exemple suivant illustre une utilisation de ces méthodes pour implémenter cette approche :  
+  
+ [!code-csharp[DLinqSubmittingChanges#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#7)]
+ [!code-vb[DLinqSubmittingChanges#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#7)]  
+  
+## Voir aussi  
+ [Mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)   
+ [Mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)   
+ [Mappage de type SQL\-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)   
+ [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
+ [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)

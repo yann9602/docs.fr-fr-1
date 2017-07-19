@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9d61870e6d2d8f905c56f86bbb6e6d99d5dae80c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
+ms.openlocfilehash: 47103d13a68c5250c33dbca3e89de2f1f3e13449
+ms.contentlocale: fr-fr
+ms.lasthandoff: 05/15/2017
 
 ---
 # <a name="using-constructors-c-programming-guide"></a>Utilisation de constructeurs (Guide de programmation C#)
@@ -110,10 +111,10 @@ Console.WriteLine("{0}, {1}", a, b);
  Un constructeur peut être déclaré statique à l’aide du mot clé [static](../../../csharp/language-reference/keywords/static.md). Les constructeurs statiques sont appelés automatiquement, juste avant que des champs statiques soient accessibles, et ils sont généralement utilisés pour initialiser des membres de classe statique. Pour plus d’informations, consultez [Constructeurs statiques](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [Destructeurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+ [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
