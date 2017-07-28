@@ -1,5 +1,5 @@
 ---
-title: "Comment : combiner des requêtes LINQ avec des Expressions régulières (Visual Basic) | Documents Microsoft"
+title: "Guide pratique pour combiner des requêtes LINQ avec des expressions régulières (Visual Basic) | Microsoft Docs"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,15 +20,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 283b5e844c91da22aadd7bcf88ea327ccc080be7
+ms.translationtype: MT
+ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
+ms.openlocfilehash: d9d63a729a31394b96a78479bc115125a1a7baeb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/26/2017
 
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>Comment : combiner des requêtes LINQ avec des Expressions régulières (Visual Basic)
-Cet exemple montre comment utiliser la <xref:System.Text.RegularExpressions.Regex>classe pour créer une expression régulière pour la correspondance plus complexes dans des chaînes de texte.</xref:System.Text.RegularExpressions.Regex> La requête LINQ facilite le filtrage des fichiers précis que vous voulez effectuer une recherche avec l’expression régulière et de personnaliser les résultats.  
+# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>Guide pratique pour combiner des requêtes LINQ avec des expressions régulières (Visual Basic)
+Cet exemple montre comment utiliser la classe <xref:System.Text.RegularExpressions.Regex> afin de créer une expression régulière pour les correspondances plus complexes des chaînes de texte. La requête LINQ facilite le filtrage des fichiers à parcourir à l’aide de l’expression régulière, et facilite également la personnalisation des résultats.  
   
 ## <a name="example"></a>Exemple  
   
@@ -97,10 +97,10 @@ Class LinqRegExVB
 End Class  
 ```  
   
- Notez que vous pouvez également interroger la <xref:System.Text.RegularExpressions.MatchCollection>objet qui est retourné par une `RegEx` recherche.</xref:System.Text.RegularExpressions.MatchCollection> Dans cet exemple que la valeur de chaque correspondance est générée dans les résultats. Toutefois, il est également possible d’utiliser LINQ pour effectuer toutes sortes de filtrage, de tri et de regroupement sur cette collection. Étant donné que <xref:System.Text.RegularExpressions.MatchCollection>n’est pas générique <xref:System.Collections.IEnumerable>collection, vous devez déclarer explicitement le type de la variable de portée dans la requête.</xref:System.Collections.IEnumerable> </xref:System.Text.RegularExpressions.MatchCollection>  
+ Notez que vous pouvez également interroger l’objet <xref:System.Text.RegularExpressions.MatchCollection> qui est retourné par une recherche `RegEx`. Dans cet exemple, seule la valeur de chaque correspondance est générée dans les résultats. Toutefois, il est également possible d’utiliser LINQ pour effectuer toutes sortes de filtrage, de tri et de regroupement au sein de cette collection. Étant donné que <xref:System.Text.RegularExpressions.MatchCollection> est une collection <xref:System.Collections.IEnumerable> non générique, vous devez déclarer explicitement le type de la variable de portée dans la requête.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   

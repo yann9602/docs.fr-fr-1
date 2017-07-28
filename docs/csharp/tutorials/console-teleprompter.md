@@ -1,6 +1,6 @@
 ---
-title: "Application console | Microsoft Docs"
-description: "Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#."
+title: Application console
+description: "Ce didacticiel vous présente un certain nombre de fonctionnalités dans .NET Core et le langage C#."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -11,37 +11,29 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 7e8cc0ed7093a90a51d1b0c50123adb73ca968aa
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 360e93af03e00547116d1af1816c2b9b29524881
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="console-application" class="xliff"></a>
+# <a name="console-application"></a>Application console
 
-# Application console
-
-<a id="introduction" class="xliff"></a>
-
-## Introduction
+## <a name="introduction"></a>Introduction
 Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
-*    Principes de base de l’interface de ligne de commande (CLI) de .NET Core
-*    La structure d’une application de console C#
-*    E/S console
-*    Les principes fondamentaux de l’API d’E/S de fichier dans .NET Core
-*    Les principes fondamentaux du modèle de programmation asynchrone des tâches dans .NET Core
+*   Principes de base de l’interface de ligne de commande (CLI) de .NET Core
+*   La structure d’une application de console C#
+*   E/S console
+*   Les principes fondamentaux de l’API d’E/S de fichier dans .NET Core
+*   Les principes fondamentaux du modèle de programmation asynchrone des tâches dans .NET Core
 
 Vous allez générer une application qui lit un fichier texte et retourne le contenu du fichier texte dans la console. La sortie sur la console se fera à un rythme permettant de la lire à haute voix. Vous pouvez accélérer ou ralentir la vitesse en appuyant sur les touches '<’ ou ’>'.
 
 Il existe un grand nombre de fonctionnalités dans ce didacticiel. Nous allons les construire une par une. 
-<a id="prerequisites" class="xliff"></a>
-
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page de [.NET Core](https://www.microsoft.com/net/core). Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. 
-<a id="create-the-application" class="xliff"></a>
-
-## Création de l’application
+## <a name="create-the-application"></a>Création de l’application
 La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Elle crée les fichiers de démarrage d’une application « Hello World » de base.
 
 Avant d’apporter des modifications, examinons les étapes nécessaires pour exécuter l’application simple Hello World. Après avoir créé l’application, saisissez `dotnet restore` à l’invite de commandes. Cette commande exécute le processus de restauration de package NuGet. NuGet est un gestionnaire de packages .NET. Cette commande télécharge les dépendances manquantes pour votre projet. Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place, donc la première exécution téléchargera le framework .NET Core. Après cette étape initiale, vous devrez exécuter `dotnet restore` lorsque vous ajoutez de nouveaux packages dépendants ou mettez à jour les versions de vos dépendances. Ce processus crée également le fichier de verrouillage du projet (project.lock.json) dans votre répertoire de projet. Ce fichier permet de gérer les dépendances du projet. Il contient l’emplacement local de toutes les dépendances du projet. Vous n’avez pas besoin de placer le fichier dans le contrôle de code source, car Il est généré lorsque vous exécutez `dotnet restore`. 
@@ -61,9 +53,7 @@ Cette instruction indique au compilateur que tous les types de l’espace de nom
 namespace TeleprompterConsole
 ```
 
-<a id="reading-and-echoing-the-file" class="xliff"></a>
-
-## Lecture et affichage du fichier
+## <a name="reading-and-echoing-the-file"></a>Lecture et affichage du fichier
 La première fonctionnalité à ajouter est la capacité à lire un fichier texte et à afficher tout le texte dans la console. Tout d’abord, nous allons ajouter un fichier texte. Copiez le fichier [sampleQuotes.txt](https://raw.githubusercontent.com/dotnet/docs/master/samples/csharp/getting-started/console-teleprompter/sampleQuotes.txt) à partir du dépôt GitHub pour cet [exemple](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) dans votre répertoire de projet. Il servira de script pour votre application. Si vous voulez des informations sur la façon de télécharger l’exemple d’application de cette rubrique, consultez les instructions de la rubrique [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 Ensuite, ajoutez la méthode suivante dans votre classe Program (juste en dessous de la méthode `Main`) :
@@ -109,9 +99,7 @@ foreach (var line in lines)
 
 Exécutez le programme (à l’aide de `dotnet run`, chaque ligne est imprimée sur la console).  
 
-<a id="adding-delays-and-formatting-output" class="xliff"></a>
-
-## Ajout de délais et de mise en forme à la sortie
+## <a name="adding-delays-and-formatting-output"></a>Ajout de délais et de mise en forme à la sortie
 Ce que vous avez s’affiche beaucoup trop rapidement pour le lire à haute voix. Vous devez maintenant ajouter des délais à la sortie. Lorsque vous commencez, vous créez une partie du code principal qui permet le traitement asynchrone. Toutefois, ces premières étapes suivront quelques anti-modèles. Les anti-modèles sont signalés dans les commentaires lorsque vous ajoutez le code, et le code sera actualisé ultérieurement.
 
 Il existe deux étapes dans cette section. Tout d’abord, vous allez mettre à jour la méthode d’itérateur pour retourner des mots uniques au lieu de lignes entières. Vous le faites avec ces modifications. Remplacez l’instruction `yield return line;` par le code suivant :
@@ -164,9 +152,7 @@ if (lineLength > 70)
  
 Exécutez l’exemple et vous serez en mesure de lire à haute voix au rythme préconfiguré.
 
-<a id="async-tasks" class="xliff"></a>
-
-## Tâches asynchrones
+## <a name="async-tasks"></a>Tâches asynchrones
 Dans cette étape, vous allez ajouter le code pour écrire la sortie de façon asynchrone dans une tâche, lorsque vous exécutez également une autre tâche pour lire d’entrée de l’utilisateur s’il souhaite accélérer ou ralentir l’affichage du texte. Cela représente plusieurs étapes et à la fin, vous aurez toutes les mises à jour dont vous avez besoin.
 La première étape consiste à créer une méthode de retour @System.Threading.Tasks.Task asynchrone qui représente le code que vous avez créé jusqu'à présent pour lire et afficher le fichier.
 
@@ -326,9 +312,7 @@ public void SetDone()
 }
 ```
 
-<a id="conclusion" class="xliff"></a>
-
-## Conclusion
+## <a name="conclusion"></a>Conclusion
 Ce didacticiel vous a montré certaines des fonctionnalités du langage C# et les bibliothèques .NET Core liées au travail dans les applications console.
 Vous pouvez utiliser ces connaissances pour explorer davantage le langage ainsi que les classes présentées ici. Vous avez vu les principes de base des E/S de fichiers et de console, l’utilisation bloquante et non bloquante du modèle de programmation asynchrone basé sur les tâches, une présentation du langage C# et de la façon dont les programmes C# sont organisés, et l’interface de ligne de commande et les outils de programmation .NET Core.
  
