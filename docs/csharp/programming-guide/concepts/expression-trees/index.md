@@ -1,5 +1,5 @@
 ---
-title: "Arborescences d’expressions (C#) | Microsoft Docs"
+title: "Arborescences d’expressions (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 87195c8936aba485919d6c717fcbfaa1b282bddc
-ms.lasthandoff: 03/31/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: be37183163a3747f861cbda7fd7867640ba382a2
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
@@ -32,10 +33,10 @@ Les arborescences d'expressions représentent du code dans une structure de donn
   
  Les arborescences d’expressions sont également utilisées dans l’environnement d’exécution de langage dynamique (DLR, Dynamic Language Runtime) pour fournir une interopérabilité entre les langages dynamiques et .NET Framework, ainsi que pour permettre aux writers de compilateur d’émettre des arborescences d’expressions au lieu d’utiliser le langage intermédiaire MSIL (Microsoft Intermediate Language). Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](https://msdn.microsoft.com/library/dd233052).  
   
- Le compilateur C# ou Visual Basic peut créer pour vous une arborescence d’expressions basée sur une expression lambda anonyme. Vous pouvez aussi créer manuellement des arborescences d’expressions en utilisant l’espace de noms <xref:System.Linq.Expressions>.  
+ Le compilateur C# ou Visual Basic peut créer pour vous une arborescence d'expressions basée sur une expression lambda anonyme. Vous pouvez aussi créer manuellement des arborescences d'expressions en utilisant l'espace de noms <xref:System.Linq.Expressions>.  
   
-## <a name="creating-expression-trees-from-lambda-expressions"></a>Création d’arborescences d’expressions à partir d’expressions lambda  
- Quand une expression lambda est affectée à une variable de type <xref:System.Linq.Expressions.Expression%601>, le compilateur produit du code pour générer une arborescence d’expressions qui représente l’expression lambda.  
+## <a name="creating-expression-trees-from-lambda-expressions"></a>Création d'arborescences d'expressions à partir d'expressions lambda  
+ Quand une expression lambda est affectée à une variable de type <xref:System.Linq.Expressions.Expression%601>, le compilateur produit du code pour générer une arborescence d'expressions qui représente l'expression lambda.  
   
  Le compilateur C# peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en C#, consultez [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
@@ -46,7 +47,7 @@ Expression<Func<int, bool>> lambda = num => num < 5;
 ```  
   
 ## <a name="creating-expression-trees-by-using-the-api"></a>Création d’arborescences d’expressions à l’aide de l’API  
- Pour créer des arborescences d’expressions à l’aide de l’API, utilisez la classe <xref:System.Linq.Expressions.Expression>. Cette classe contient des méthodes de fabrique statiques qui créent des nœuds d’arborescence d’expressions de types spécifiques, par exemple <xref:System.Linq.Expressions.ParameterExpression>, qui représente une variable ou un paramètre, ou <xref:System.Linq.Expressions.MethodCallExpression>, qui représente un appel de méthode. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression> et les autres types spécifiques à l’expression sont également définis dans l’espace de noms <xref:System.Linq.Expressions>. Ces types dérivent du type abstrait <xref:System.Linq.Expressions.Expression>.  
+ Pour créer des arborescences d'expressions à l'aide de l'API, utilisez la classe <xref:System.Linq.Expressions.Expression>. Cette classe contient des méthodes de fabrique statiques qui créent des nœuds d'arborescence d'expressions de types spécifiques, par exemple <xref:System.Linq.Expressions.ParameterExpression>, qui représente une variable ou un paramètre, ou <xref:System.Linq.Expressions.MethodCallExpression>, qui représente un appel de méthode. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression> et les autres types spécifiques à une expression sont également définis dans l'espace de noms <xref:System.Linq.Expressions>. Ces types dérivent du type abstrait <xref:System.Linq.Expressions.Expression>.  
   
  L’exemple de code suivant montre comment créer une arborescence d’expressions qui représente l’expression lambda `num => num < 5` à l’aide de l’API.  
   
@@ -107,7 +108,7 @@ Console.WriteLine(factorial);
 // Prints 120.  
 ```
 
-Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010](http://go.microsoft.com/fwlink/p/?LinkId=169513) (ou ultérieur).
+Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010](http://go.microsoft.com/fwlink/p/?LinkId=169513) (ou version ultérieure).
   
 ## <a name="parsing-expression-trees"></a>Analyse des arborescences d’expressions  
  L’exemple de code suivant montre comment l’arborescence d’expressions qui représente l’expression lambda `num => num < 5` peut être décomposée selon ses différentes parties.  
@@ -137,7 +138,7 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
  Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d’informations, consultez [Guide pratique pour modifier des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
   
 ## <a name="compiling-expression-trees"></a>Compilation des arborescences d’expressions  
- Le type <xref:System.Linq.Expressions.Expression%601> fournit la méthode <xref:System.Linq.Expressions.Expression%601.Compile%2A> qui compile le code représenté par une arborescence d’expressions en un délégué exécutable.  
+ Le type <xref:System.Linq.Expressions.Expression%601> fournit la méthode <xref:System.Linq.Expressions.Expression%601.Compile%2A> qui compile le code représenté par une arborescence d'expressions en un délégué exécutable.  
   
  L’exemple de code suivant montre comment compiler une arborescence d’expressions et exécuter le code résultant.  
   
@@ -170,3 +171,4 @@ Console.WriteLine(expr.Compile()(4));
  [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
  [Vue d’ensemble du Dynamic Language Runtime](https://msdn.microsoft.com/library/dd233052)   
  [Concepts de programmation (C#)](../../../../csharp/programming-guide/concepts/index.md)
+

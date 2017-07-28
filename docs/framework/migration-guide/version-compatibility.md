@@ -1,5 +1,5 @@
 ---
-title: "Compatibilité de versions dans le .NET Framework | Microsoft Docs"
+title: "Compatibilité de versions dans le .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 09f682d9c3a1cf5d42bba878676d84b9328a1a81
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 741c2d1c49f44a6a7b299845cdc37cc8425c326b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
@@ -59,7 +59,7 @@ La compatibilité descendante signifie qu'une application développée pour une 
   
 -   Consultez ces rubriques pour rechercher les modifications qui peuvent affecter votre application et appliquez la solution de contournement décrite :  
   
-    -   [Problèmes de migration de .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=248212)  
+    -   [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)  
   
     -   [Compatibilité des applications dans la version 4.5](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)  
   
@@ -95,5 +95,5 @@ La compatibilité descendante signifie qu'une application développée pour une 
  [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)   
  [Compatibilité des applications](../../../docs/framework/migration-guide/application-compatibility.md)   
  [Politique de support pour Microsoft .NET Framework](http://go.microsoft.com/fwlink/p/?LinkId=248212)   
- [Problèmes de migration de .NET Framework 4](http://go.microsoft.com/fwlink/p/?LinkId=248212)
+ [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)
 

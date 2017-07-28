@@ -1,5 +1,5 @@
 ---
-title: "Atténuation : Disposition WPF | Microsoft Docs"
+title: "Atténuation : disposition WPF"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,11 +14,11 @@ caps.latest.revision: 3
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: bb9208e030de676bf18f405d1f1ca0e78308899d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d3ba5ac792169cc076f9621025f35444281cec6e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-wpf-layout"></a>Atténuation : disposition WPF
@@ -50,3 +50,4 @@ La disposition des contrôles WPF peut varier légèrement.
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+

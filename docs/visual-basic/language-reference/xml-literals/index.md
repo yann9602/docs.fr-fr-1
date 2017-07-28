@@ -1,5 +1,5 @@
 ---
-title: "Littéraux XML (Visual Basic) | Microsoft Docs"
+title: "Littéraux XML (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.reviewer: 
@@ -34,21 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 7398d02ddd73576fb502a10559891127307b96c0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9182402167c64d6683670ae240cd0dd58ee9d1ef
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="xml-literals-visual-basic" class="xliff"></a>
-
-# Littéraux XML (Visual Basic)
+# <a name="xml-literals-visual-basic"></a>Littéraux XML (Visual Basic)
 Les rubriques de cette section documentent la syntaxe des littéraux XML dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. La syntaxe des littéraux XML vous permet d’incorporer du code XML directement dans votre code.  
   
-<a id="in-this-section" class="xliff"></a>
-
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
   
 |Rubrique|Description|  
 |-----------|-----------------|  
@@ -58,7 +54,6 @@ Les rubriques de cette section documentent la syntaxe des littéraux XML dans [!
 |[Littéraux de commentaires XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|Décrit la syntaxe des littéraux qui représentent des objets <xref:System.Xml.Linq.XComment>.|  
 |[Littéral d’instruction de traitement XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|Décrit la syntaxe des littéraux qui représentent des objets <xref:System.Xml.Linq.XProcessingInstruction>.|  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+

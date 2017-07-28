@@ -1,5 +1,5 @@
 ---
-title: "Bien démarrer avec le .NET Framework | Microsoft Docs"
+title: "Bien démarrer avec le .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 35
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 42d0ddd649ffaaaf375c3396e4a82b066c9719e9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f5c2441148ba869629a88ab2fcc83131f5205493
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/19/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="get-started-with-the-net-framework"></a>Bien démarrer avec le .NET Framework
@@ -86,10 +86,11 @@ Le .NET Framework est un environnement d'exécution qui gère les applications c
 |[Versions finales hors plage de .NET Framework](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)|Décrit les versions finales hors plage du .NET Framework et leur utilisation dans votre application.|
 |[Configuration système requise](../../../docs/framework/get-started/system-requirements.md)|Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework.|
 |[.NET Core et Open-Source](../../../docs/framework/get-started/net-core-and-open-source.md)|Décrit les nouveautés du .NET Core par rapport au .NET Framework, et comment accéder aux projets .NET Core open source.|
-|[Documentation .NET Core](https://docs.microsoft.com/dotnet/)|Documentation de référence sur les concepts et les API de .NET Core.|
+|[Documentation .NET Core](/dotnet/)|Documentation de référence sur les concepts et les API de .NET Core.|
 
 ## <a name="see-also"></a>Voir aussi
  [Guide du .NET Framework](../../../docs/framework/index.md)   
  [Nouveautés](../../../docs/framework/whats-new/index.md)   
  [Navigateur d’API .NET](/dotnet/api/)   
  [Guide de développement](../../../docs/framework/development-guide.md)
+

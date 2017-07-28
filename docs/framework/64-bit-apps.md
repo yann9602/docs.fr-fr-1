@@ -1,5 +1,5 @@
 ---
-title: Applications 64 bits | Microsoft Docs
+title: "Applications 64 bits"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 53
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 987c7063c5e6dce10233761b6e37ed102d5878a9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9930b44e8ab711f319140e43ad0a36d5d78a7ffb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="64-bit-applications"></a>Applications 64 bits
@@ -74,3 +74,4 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
  Pour déterminer si un fichier .exe ou .dll est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez [CorFlags.exe (Outil de conversion CorFlags)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) sans options. Vous pouvez également utiliser CorFlags.exe pour modifier l'état de plateforme d'un fichier .exe ou .dll. L'en-tête CLR (ou en-tête COM+ Runtime) d'un assembly Visual Studio possède un numéro de version de runtime majeur ayant 2 pour valeur et un numéro de version de runtime mineur ayant 5 pour valeur. Les applications dont la version de runtime mineure est définie à 0 sont traitées comme des applications héritées et sont toujours exécutées sous WOW64.  
   
  Pour interroger par programme un fichier .exe ou .dll pour voir s'il est destiné à être exécuté uniquement sur une plateforme spécifique ou sous WOW64, utilisez la méthode <xref:System.Reflection.Module.GetPEKind%2A?displayProperty=fullName>.
+

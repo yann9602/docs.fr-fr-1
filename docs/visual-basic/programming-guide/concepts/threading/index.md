@@ -1,5 +1,5 @@
 ---
-title: "Threads (Visual Basic) | Microsoft Docs"
+title: Threads (Visual Basic)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,16 +20,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 0c9cf36aeee43afc710dd3261f5d012ba53c02e5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 840cc7df20250acb67bd09a8d39b353c772e82da
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="threading-visual-basic" class="xliff"></a>
-
-# Threads (Visual Basic)
+# <a name="threading-visual-basic"></a>Threads (Visual Basic)
 Les threads donnent la possibilité à votre programme Visual Basic d’effectuer des traitements simultanés, ce qui vous permet de faire plusieurs opérations à la fois. Par exemple, vous pouvez utiliser les threads pour surveiller les entrées de l’utilisateur, effectuer des tâches en arrière-plan et gérer des flux d’entrée simultanés.  
   
  Les threads ont les propriétés suivantes :  
@@ -53,9 +51,7 @@ Les threads donnent la possibilité à votre programme Visual Basic d’effectue
 > [!NOTE]
 >  À compter du [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], la programmation multithread est considérablement simplifiée avec les classes <xref:System.Threading.Tasks.Parallel?displayProperty=fullName> et <xref:System.Threading.Tasks.Task?displayProperty=fullName>, [Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688), de nouvelles classes de collections simultanées dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=fullName>, et un nouveau modèle de programmation basé sur le concept de tâche au lieu de celui de thread. Pour plus d’informations, consultez la page [Programmation parallèle](https://msdn.microsoft.com/library/dd460693).  
   
-<a id="related-topics" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
@@ -67,3 +63,4 @@ Les threads donnent la possibilité à votre programme Visual Basic d’effectue
 |[Regroupement des threads (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)|Décrit comment utiliser un pool de threads de travail qui sont gérés par le système.|  
 |[Guide pratique pour utiliser un pool de threads (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|Montre l’utilisation synchronisée de plusieurs threads dans le pool de threads.|  
 |[Thread](https://msdn.microsoft.com/library/3e8s7xdd)|Décrit comment implémenter des threads dans le .NET Framework.|
+

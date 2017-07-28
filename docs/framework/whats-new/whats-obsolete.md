@@ -1,5 +1,5 @@
 ---
-title: "Éléments obsolètes dans la bibliothèque de classes .NET Framework | Microsoft Docs"
+title: "Éléments obsolètes dans la bibliothèque de classes .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 68c71e26ac5e5a1872ac006d02adec84c1fb63da
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7afe9496ca116ed0c330c4ff9e7c3a855249cf14
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
@@ -34,11 +34,11 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
 >  Les termes *obsolète* et *déprécié* ont la même signification quand ils sont appliqués aux types et aux membres du .NET Framework.  
   
 ## <a name="the-obsoleteattribute-attribute"></a>Attribut ObsoleteAttribute  
- Le .NET Framework indique qu’un type ou membre de type est obsolète en le marquant avec l’attribut <xref:System.ObsoleteAttribute>. L'application de cet attribut à un type ou membre indique que ce type ou membre sera supprimé dans une version ultérieure du .NET Framework sans casser le code compilé qui utilise ce membre.  
+ Le .NET Framework indique qu'un type ou membre de type est obsolète en le marquant avec l'attribut <xref:System.ObsoleteAttribute>. L'application de cet attribut à un type ou membre indique que ce type ou membre sera supprimé dans une version ultérieure du .NET Framework sans casser le code compilé qui utilise ce membre.  
   
- En plus d’indiquer qu’un type ou un membre de type est obsolète, <xref:System.ObsoleteAttribute> définit comment le compilateur gère le code source qui inclut ce type ou membre. Le compilateur peut compiler le code en émettant un message d'avertissement, ou il peut traiter l'utilisation du type ou du membre comme une erreur. Dans le premier cas, le code peut être compilé avec succès, mais un message d'avertissement indique que le type ou le membre est obsolète. Dans le deuxième cas, la compilation échoue.  
+ En plus d'indiquer qu'un type ou un membre de type est obsolète, <xref:System.ObsoleteAttribute> définit comment le compilateur gère le code source qui inclut ce type ou membre. Le compilateur peut compiler le code en émettant un message d'avertissement, ou il peut traiter l'utilisation du type ou du membre comme une erreur. Dans le premier cas, le code peut être compilé avec succès, mais un message d'avertissement indique que le type ou le membre est obsolète. Dans le deuxième cas, la compilation échoue.  
   
- Même si la compilation produit une erreur au lieu d’un message d’avertissement, <xref:System.ObsoleteAttribute> n’affecte pas le comportement au moment de l’exécution. Autrement dit, les applications qui utilisent le type ou le membre et qui ont été compilées avec succès s'exécuteront toujours correctement. Seule une tentative de recompilation d'une application qui utilise le type ou le membre échoue.  
+ Même si la compilation produit une erreur au lieu d'un message d'avertissement, <xref:System.ObsoleteAttribute> n'affecte pas le comportement au moment de l'exécution. Autrement dit, les applications qui utilisent le type ou le membre et qui ont été compilées avec succès s'exécuteront toujours correctement. Seule une tentative de recompilation d'une application qui utilise le type ou le membre échoue.  
   
 ## <a name="how-to-handle-obsolete-types-and-members"></a>Comment gérer des types et membres obsolètes  
  Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un type ou d'un membre obsolète qui génère un avertissement du compilateur dans votre application est parfaitement acceptable. Toutefois, vous devez examiner le message d'avertissement du compilateur pour déterminer si vous devez modifier le code de votre application. Si le message ne pointe pas vers une alternative appropriée, vous devez faire l'une ou l'autre des opérations suivantes :  
@@ -92,3 +92,4 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
   
 ## <a name="see-also"></a>Voir aussi  
  [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+

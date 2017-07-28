@@ -1,5 +1,5 @@
 ---
-title: "Migration à partir de .NET Framework 1.1 | Microsoft Docs"
+title: "Migration à partir du .NET Framework 1.1"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 6a9df183b13a84f8ded047892c0e4b7f7d5f0d60
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5757894a63ed556413147b8ef8c85c2d31ef11a5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migration à partir du .NET Framework 1.1
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/18/2017
   
 -   Vous pouvez recompiler l'application avec un compilateur qui cible le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] et utiliser la boîte de dialogue de compatibilité des projets **** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild) utilisé par [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
   
- Que vous préfériez recompiler ou recibler votre application, vous devez déterminer si elle est affectée par les modifications introduites dans les versions ultérieures du .NET Framework. Ces modifications sont de deux types :  
+ Que vous préfériez recompiler ou recibler votre application, vous devez déterminer si elle est affectée par les modifications introduites dans les versions ultérieures du .NET Framework. Ces modifications sont de deux types :  
   
 -   Modifications avec rupture qui se sont produites entre le [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)] et les versions ultérieures du .NET Framework.  
   
@@ -63,13 +63,13 @@ ms.lasthandoff: 04/18/2017
   
  Toutefois, dans certains cas, vous devrez peut-être modifier votre code source et recompiler votre application.  
   
- Pour évaluer l’impact de modifications avec rupture possibles sur votre application, vous devez passer en revue les listes suivantes de modifications :  
+ Pour évaluer l'impact de modifications avec rupture possibles sur votre application, vous devez passer en revue les listes suivantes de modifications :  
   
 -   L’article traitant des[modifications avec rupture dans .NET Framework 2.0](http://go.microsoft.com/fwlink/?LinkId=125263) décrit les changements de [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] qui peuvent affecter une application ciblant [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)].  
   
 -   L’article traitant des[modifications apportées à .NET Framework 3.5 SP1](http://go.microsoft.com/fwlink/?LinkID=186989) décrit les modifications intervenues entre [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] et [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].  
   
--   [Problèmes de migration de .NET Framework 4](http://msdn.microsoft.com/library/ee941656\(v=vs.100\).aspx) décrit les changements intervenus entre [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] et [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+-   [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) décrit les changements intervenus entre [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] et [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
 ## <a name="obsolete-types-and-members"></a>Types et membres obsolètes  
  L'impact des types et membres déconseillés est quelque peu différent pour les applications de reciblées et les applications recompilées. L'utilisation de types et membres obsolètes n'affectera pas une application reciblée, sauf si le type ou le membre obsolète a été supprimé physiquement de son assembly. Recompiler une application qui utilise des types ou des membres obsolètes entraîne généralement un avertissement du compilateur plutôt qu'une erreur du compilateur. Toutefois, dans certains cas, cela entraîne une erreur du compilateur, et le code qui utilise le type ou le membre obsolète ne se compile pas correctement. Dans ce cas, vous devez réécrire le code source qui appelle le type ou membre obsolète avant de recompiler votre application. Pour plus d'informations sur les types et membres obsolètes, consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md).  

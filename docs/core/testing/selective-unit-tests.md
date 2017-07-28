@@ -1,5 +1,5 @@
 ---
-title: "Exécution de tests unitaires sélectifs | Microsoft Docs"
+title: "Exécution de tests unitaires sélectifs"
 description: "Vous montre comment utiliser une expression de filtre pour exécuter des tests unitaires sélectifs avec la commande de test dotnet."
 keywords: ".NET, .NET Core, test unitaire, test sélectif"
 author: smadala
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13d01272-bbf8-456c-a97a-560001d1a7f2
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ae036cfcad341ffc859336a7ab2a49feec145715
-ms.openlocfilehash: aceb0dc92b6c355a2b36a541d59cf1cd3cf4d0d4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: af832d04d2cba530a93710a90701ab119a66deef
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

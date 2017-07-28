@@ -1,5 +1,5 @@
 ---
-title: "Atténuation : AuthorizationContext par défaut | Microsoft Docs"
+title: "Atténuation : AuthorizationContext par défaut"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,15 +14,15 @@ caps.latest.revision: 3
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: d2cffc531efc0f0be841956d3a09e1ab253d8fbd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 48363d0f8e515b703e49761a763379566e217844
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-default-authorizationcontext"></a>Atténuation : AuthorizationContext par défaut
-Le <xref:System.IdentityModel.Policy.AuthorizationContext> retourné par un appel à <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext%28System.Collections.Generic.IList%7BSystem.IdentityModel.Policy.IAuthorizationPolicy%7D%29> avec un argument `null``authorizationPolicies` a une nouvelle implémentation dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)].  
+L’implémentation du <xref:System.IdentityModel.Policy.AuthorizationContext> retourné par un appel à la méthode <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext%28System.Collections.Generic.IList%7BSystem.IdentityModel.Policy.IAuthorizationPolicy%7D%29> avec un argument `null``authorizationPolicies` a changé dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)].  
   
 ## <a name="impact"></a>Impact  
  Dans de rares cas, les applications WCF qui utilisent l'authentification personnalisée peuvent voir les différences de comportement.  
@@ -40,3 +40,4 @@ Le <xref:System.IdentityModel.Policy.AuthorizationContext> retourné par un appe
   
 ## <a name="see-also"></a>Voir aussi  
  [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+

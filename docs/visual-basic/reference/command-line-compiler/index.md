@@ -1,5 +1,5 @@
 ---
-title: "Compilateur de ligne de commande de Visual Basic | Microsoft Docs"
+title: Compilateur de ligne de commande de Visual Basic
 ms.date: 2015-07-20
 ms.prod: .net
 ms.reviewer: 
@@ -33,21 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 7c62eb47ba748cb119855e9a3987cab8c6a5b74b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 850aac4098dc22bacd377362f7886fa70219d365
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="visual-basic-command-line-compiler" class="xliff"></a>
-
-# Compilateur de ligne de commande de Visual Basic
+# <a name="visual-basic-command-line-compiler"></a>Compilateur de ligne de commande de Visual Basic
 Le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] constitue une alternative à la compilation de programmes depuis l'environnement de développement intégré (IDE) [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Cette section décrit les options du compilateur [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
-<a id="in-this-section" class="xliff"></a>
-
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Génération à partir de la ligne de commande](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
  Décrit le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], qui est proposé comme alternative à la compilation de programmes depuis l'IDE de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
@@ -57,11 +53,10 @@ Le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 
  [Options du compilateur Visual Basic par catégorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
  Présente les options du compilateur dans des groupes fonctionnels.  
   
-<a id="related-sections" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [NIB : Gestion des propriétés de projet avec le Concepteur de projets](http://msdn.microsoft.com/en-us/983f3c18-832f-4666-afec-74b716ff3e0e)  
  Explique comment utiliser le Concepteur de projets pour spécifier les paramètres globaux de votre projet.  
   
  [Visual Basic](../../../visual-basic/index.md)  
  Point de départ pour l'aide [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].
+

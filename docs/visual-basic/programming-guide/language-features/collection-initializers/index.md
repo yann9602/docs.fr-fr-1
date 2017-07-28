@@ -1,5 +1,5 @@
 ---
-title: Initialiseurs de collections (Visual Basic) | Microsoft Docs
+title: Initialiseurs de collections (Visual Basic)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,16 +32,14 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
-ms.openlocfilehash: 4b0abe2c6356370584356dce1c6fc5731d735810
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 72ca6506d0bd867efa60ba73ecda72c32def129e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="collection-initializers-visual-basic" class="xliff"></a>
-
-# Initialiseurs de collections (Visual Basic)
+# <a name="collection-initializers-visual-basic"></a>Initialiseurs de collections (Visual Basic)
 Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous permet de créer une collection et de la remplir avec un ensemble initial de valeurs. Les initialiseurs de collections sont utiles lorsque vous créez une collection à partir d’un ensemble de valeurs connues (par exemple, une liste d’options de menu ou de catégories, un ensemble initial de valeurs numériques, une liste statique de chaînes telles que des noms de jours ou de mois, ou des emplacements géographiques tels qu’une liste d’états utilisée pour la validation).  
   
  Pour plus d’informations sur les collections, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
@@ -53,9 +51,7 @@ Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous p
 > [!NOTE]
 >  C# fournit également des initialiseurs de collections. Les initialiseurs de collections C# fournissent les mêmes fonctionnalités que les initialiseurs de collections Visual Basic. Pour plus d’informations sur les initialiseurs de collections C#, consultez [Initialiseurs d’objets et de collections](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
   
-<a id="syntax" class="xliff"></a>
-
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
  Un initialiseur de collection se compose d’une liste de valeurs séparées par des virgules et placées entre accolades (`{}`), précédées par le mot clé `From`, comme illustré dans le code suivant.  
   
  [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]  
@@ -67,9 +63,7 @@ Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous p
 > [!NOTE]
 >  Vous ne pouvez pas combiner un initialiseur de collection et un initialiseur d’objet pour initialiser le même objet de collection. Vous pouvez utiliser des initialiseurs d’objets pour initialiser des objets dans un initialiseur de collection.  
   
-<a id="creating-a-collection-by-using-a-collection-intializer" class="xliff"></a>
-
-## Création d’une collection à l’aide d’un initialiseur de collection  
+## <a name="creating-a-collection-by-using-a-collection-intializer"></a>Création d’une collection à l’aide d’un initialiseur de collection  
  Lorsque vous créez une collection à l’aide d’un initialiseur de collection, chaque valeur fournie dans l’initialiseur de collection est passée à la méthode `Add` appropriée de la collection. Par exemple, si vous créez un <xref:System.Collections.Generic.List%601> en utilisant un initialiseur de collection, chaque valeur de chaîne de l’initialiseur de collection est passée à la méthode <xref:System.Collections.Generic.List%601.Add%2A>. Si vous souhaitez créer une collection à l’aide d’un initialiseur de collection, le type spécifié doit être un type de collection valide. Les types de collections valides sont, par exemple, des classes qui implémentent l’interface <xref:System.Collections.Generic.IEnumerable%601> ou qui héritent de la classe <xref:System.Collections.CollectionBase>. Le type spécifié doit également exposer une méthode `Add` qui répond aux critères suivants.  
   
 -   La méthode `Add` doit être disponible à partir de la portée dans laquelle l’initialiseur de collection est appelé. La méthode `Add` ne doit pas nécessairement être publique si vous utilisez l’initialiseur de collection dans un scénario où les méthodes non publiques de la collection sont accessibles.  
@@ -88,9 +82,7 @@ Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous p
   
  Si la collection a une méthode `Add` ayant des paramètres qui correspondent au constructeur de l’objet `Customer`, vous pouvez imbriquer des valeurs de paramètre pour la méthode `Add` dans les initialiseurs de collections, comme indiqué dans la section suivante. Si la collection n’a pas une telle méthode `Add`, vous pouvez en créer une comme méthode d’extension. Pour obtenir un exemple montrant comment créer une méthode `Add` comme méthode d’extension pour une collection, consultez [Guide pratique pour créer une méthode d’extension Add utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Pour obtenir un exemple montrant comment créer une collection personnalisée pouvant être utilisée avec un initialiseur de collection, consultez [Guide pratique pour créer une collection utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
   
-<a id="nesting-collection-initializers" class="xliff"></a>
-
-## Imbrication d’initialiseurs de collections  
+## <a name="nesting-collection-initializers"></a>Imbrication d’initialiseurs de collections  
  Vous pouvez imbriquer des valeurs dans un initialiseur de collection pour identifier une surcharge spécifique d’une méthode `Add` pour la collection qui est créée. Les valeurs passées à la méthode `Add` doivent être séparées par des virgules et placées entre accolades (`{}`), comme vous le feriez dans un littéral de tableau ou un initialiseur de collection.  
   
  Lorsque vous créez une collection à l’aide de valeurs imbriquées, chaque élément de la liste de valeurs imbriquée est passé comme argument à la méthode `Add` correspondant aux types d’éléments. Ainsi, l’exemple de code suivant crée un <xref:System.Collections.Generic.Dictionary%602> dans lequel les clés sont de type `Integer` et les valeurs sont de type `String`. Chacune des listes de valeurs imbriquées est mise en correspondance avec la méthode <xref:System.Collections.Generic.Dictionary%602.Add%2A> pour `Dictionary`.  
@@ -103,18 +95,14 @@ Les *initialiseurs de collections* fournissent une syntaxe raccourcie qui vous p
   
  Seules les listes de valeurs imbriquées du premier niveau d’imbrication sont envoyées à la méthode `Add` pour le type de collection. Les niveaux d’imbrication plus profonds sont traités comme des littéraux de tableau et les listes de valeurs imbriquées ne sont pas mises en correspondance avec la méthode `Add` de toute collection.  
   
-<a id="related-topics" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |---|---|  
 |[Guide pratique : créer une méthode d’extension Add utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Montre comment créer une méthode d’extension appelée `Add` qui peut être utilisée pour renseigner une collection avec des valeurs d’un initialiseur de collection.|  
 |[Guide pratique : créer une collection utilisée par un initialiseur de collection](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Montre comment activer l’utilisation d’un initialiseur de collection en incluant une méthode `Add` dans une classe de collection qui implémente `IEnumerable`.|  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
  [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
  [Initialiseurs d’objets : types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   

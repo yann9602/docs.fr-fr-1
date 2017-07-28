@@ -1,5 +1,5 @@
 ---
-title: Exceptions et gestion des exceptions (Guide de programmation C#) | Microsoft Docs
+title: Exceptions et gestion des exceptions (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: e9faf744717980468afb995eceeb31bda93443b9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e372cfa3239c39af86a29cda06b5817f0aeff0a2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
@@ -66,7 +66,7 @@ Les fonctionnalités de gestion des exceptions du langage C# vous aident à gér
   
 -   Le code qui se trouve dans un bloc `finally` est exécuté même si une exception est levée. Utilisez un bloc `finally` pour libérer des ressources, par exemple pour fermer tous les flux ou fichiers qui ont été ouverts dans le bloc `try`.  
   
--   Les exceptions gérées dans .NET Framework sont implémentées au-dessus du mécanisme de gestion structurée des exceptions de Win32. Pour plus d’informations, consultez les pages [Gestion structurée des exceptions (C/C++)](https://docs.microsoft.com/cpp/cpp/structured-exception-handling-c-cpp) et [Cours intensif sur la gestion structurée des exceptions de Win32](http://go.microsoft.com/fwlink/?LinkId=119654).  
+-   Les exceptions gérées dans .NET Framework sont implémentées au-dessus du mécanisme de gestion structurée des exceptions de Win32. Pour plus d’informations, consultez les pages [Gestion structurée des exceptions (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) et [Cours intensif sur la gestion structurée des exceptions de Win32](http://go.microsoft.com/fwlink/?LinkId=119654).  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  Consultez les rubriques suivantes pour plus d’informations sur les exceptions et la gestion des exceptions :  
@@ -98,3 +98,4 @@ Les fonctionnalités de gestion des exceptions du langage C# vous aident à gér
  [Hiérarchie des exceptions](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [Écrire du code .NET fiable](http://go.microsoft.com/fwlink/?LinkId=112400)   
  [Minidumps pour exceptions spécifiques](http://go.microsoft.com/fwlink/?LinkId=112408)
+

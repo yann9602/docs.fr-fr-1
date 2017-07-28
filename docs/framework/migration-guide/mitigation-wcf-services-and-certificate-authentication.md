@@ -1,5 +1,5 @@
 ---
-title: "Atténuation : Services WCF et authentification par certificat | Microsoft Docs"
+title: "Atténuation : Services WCF et authentification par certificat"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -15,26 +15,20 @@ caps.latest.revision: 3
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 0b32fa96cd002e927fa00e8c2a797d1ff6b17cb8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1d6f78d24fc6411fca81fbbb8eb886d6d0a7fe9c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="mitigation-wcf-services-and-certificate-authentication" class="xliff"></a>
-
-# Atténuation : Services WCF et authentification par certificat
+# <a name="mitigation-wcf-services-and-certificate-authentication"></a>Atténuation : Services WCF et authentification par certificat
 Le .NET Framework 4.6 ajoute TLS 1.1 et TLS 1.2 à la liste des protocoles WCF SSL par défaut. Lorsque le .NET Framework 4.6 ou ultérieur est installé sur les ordinateurs clients et serveurs, TLS 1.2 est utilisé à des fins de négociation.  
   
-<a id="impact" class="xliff"></a>
-
-## Impact  
+## <a name="impact"></a>Impact  
  TLS 1.2 ne prend pas en charge l’authentification par certificat MD5. Par conséquent, si un client utilise un certificat SSL employant MD5 comme algorithme de hachage, le client WCF ne parvient pas à se connecter au service WCF. Pour plus d’informations, consultez [Atténuation : Services WCF et authentification par certificat](../../../docs/framework/migration-guide/mitigation-wcf-services-and-certificate-authentication.md).  
   
-<a id="mitigation" class="xliff"></a>
-
-## Atténuation  
+## <a name="mitigation"></a>Atténuation  
  Vous pouvez contourner ce problème afin qu’un client WCF puisse se connecter à un serveur WCF en effectuant une des opérations suivantes :  
   
 -   Mettez à jour le certificat pour ne pas utiliser l’algorithme MD5. Il s'agit de la solution recommandée.  
@@ -70,8 +64,6 @@ Le .NET Framework 4.6 ajoute TLS 1.1 et TLS 1.2 à la liste des protocoles W
     > [!CAUTION]
     >  Cette solution de contournement n’est pas recommandée, car un certificat avec l’algorithme de hachage MD5 est considéré comme non sécurisé.  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Modifications du runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
 

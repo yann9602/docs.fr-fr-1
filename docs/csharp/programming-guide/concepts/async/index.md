@@ -1,5 +1,5 @@
 ---
-title: Programmation asynchrone avec async et await (C#) | Microsoft Docs
+title: Programmation asynchrone avec Async et Await (C#)
 ms.date: 2017-05-22
 ms.prod: .net
 ms.technology:
@@ -16,16 +16,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d2357336b6ffade3a9767ff13343cdfc2965be
-ms.openlocfilehash: a7c89d56bb3d2c40804ae7a2cc191a0f2f722764
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d087951ce3e3f05c7f1e8f9c99529eab2f76b8d5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="asynchronous-programming-with-async-and-await-c" class="xliff"></a>
-
-# Programmation asynchrone avec async et await (C#)
+# <a name="asynchronous-programming-with-async-and-await-c"></a>Programmation asynchrone avec async et await (C#)
 Vous pouvez éviter des goulots d'étranglement de performance et améliorer la réactivité globale de votre application à l'aide de la programmation asynchrone. Toutefois, les techniques traditionnelles pour écrire des applications asynchrones peuvent être complexes et rendre ces applications difficiles à écrire, déboguer et mettre à jour.  
   
 [C# 5](../../../whats-new/index.md#previous-versions) a introduit une approche simplifiée, la programmation asynchrone, qui tire parti de la prise en charge asynchrone de .NET Framework 4.5 et des versions ultérieures, de .NET Core, ainsi que de Windows Runtime. Le compilateur effectue le travail difficile dont se chargeait le développeur jusqu’à maintenant. En outre, votre application conserve une structure logique qui ressemble à du code synchrone. Par conséquent, vous obtenez tous les avantages de la programmation asynchrone avec peu d'effort.  
@@ -350,9 +348,7 @@ namespace AsyncFirstExample
 // Length of the downloaded string: 41564.  
 ```  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [async](../../../../csharp/language-reference/keywords/async.md)   
  [await](../../../../csharp/language-reference/keywords/await.md)
 

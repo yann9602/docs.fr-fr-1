@@ -1,5 +1,5 @@
 ---
-title: Programmation asynchrone avec Async et Await (Visual Basic) | Microsoft Docs
+title: Programmation asynchrone avec Async et Await (Visual Basic)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,16 +20,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 7efef9e445d542e4575c94af78179316bf628aa1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 87f089a6de77dc5d4085b12f68b0511ec22b3f63
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="asynchronous-programming-with-async-and-await-visual-basic" class="xliff"></a>
-
-# Programmation asynchrone avec Async et Await (Visual Basic)
+# <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Programmation asynchrone avec Async et Await (Visual Basic)
 Vous pouvez éviter des goulots d'étranglement de performance et améliorer la réactivité globale de votre application à l'aide de la programmation asynchrone. Toutefois, les techniques traditionnelles pour écrire des applications asynchrones peuvent être complexes et rendre ces applications difficiles à écrire, déboguer et mettre à jour.  
   
  Visual Studio 2012 a introduit une approche simplifiée, la programmation async, qui tire parti de la prise en charge asynchrone de .NET Framework 4.5 et des versions ultérieures ainsi que de Windows Runtime. Le compilateur effectue le travail difficile dont se chargeait le développeur jusqu’à maintenant. En outre, votre application conserve une structure logique qui ressemble à du code synchrone. Par conséquent, vous obtenez tous les avantages de la programmation asynchrone avec peu d'effort.  
@@ -60,7 +58,7 @@ Vous pouvez éviter des goulots d'étranglement de performance et améliorer la 
   
  L'exemple suivant illustre une méthode async. Presque tous les éléments du code doivent vous sembler familiers. Les commentaires indiquent les fonctionnalités que vous ajoutez pour créer le comportement asynchrone.  
   
- Le fichier d’exemple complet Windows Presentation Foundation (WPF) se trouve à la fin de cette rubrique. Vous pouvez télécharger l’exemple sur [Exemple async : exemple de « programmation asynchrone avec async et await »](http://go.microsoft.com/fwlink/?LinkID=261549).  
+ Le fichier d’exemple complet Windows Presentation Foundation (WPF) se trouve à la fin de cette rubrique. Vous pouvez télécharger l’exemple sur [Exemple async : exemple de « programmation asynchrone avec async et await »](http://go.microsoft.com/fwlink/?LinkID=261549).  
   
 ```vb  
 ' Three things to note in the signature:  
@@ -333,9 +331,7 @@ End Class
 ' Length of the downloaded string: 41763.  
 ```  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Opérateur await](../../../../visual-basic/language-reference/operators/await-operator.md)   
  [Async](../../../../visual-basic/language-reference/modifiers/async.md)
 

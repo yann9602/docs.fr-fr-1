@@ -1,5 +1,5 @@
 ---
-title: Indexeurs (Guide de programmation C#) | Microsoft Docs
+title: Indexeurs (Guide de programmation C#)
 ms.date: 2017-03-10
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0b5ca4707903f03b6ab7138137fb3107cfb0cce2
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 784308f3073114cd0c07cf15edae527a2654edec
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="indexers-c-programming-guide"></a>Indexeurs (Guide de programmation C#)
@@ -92,3 +92,4 @@ Notez que `=>` introduit le corps de l’expression et que le mot clé `get` n�
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)
+

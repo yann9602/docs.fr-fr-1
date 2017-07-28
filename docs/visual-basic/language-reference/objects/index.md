@@ -1,5 +1,5 @@
 ---
-title: Objets (Visual Basic) | Microsoft Docs
+title: Objets (Visual Basic)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -28,21 +28,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 6d4ed7e551c9a0d039f0206a86fa3a748dd728ef
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 98503c5764690d6dea90bf46a229e9ee2fd81df7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="objects-visual-basic" class="xliff"></a>
-
-# Objets (Visual Basic)
+# <a name="objects-visual-basic"></a>Objets (Visual Basic)
 Cette rubrique fournit des liens vers d’autres rubriques qui documentent les objets runtime Visual Basic et contiennent des tables de leurs procédures, propriétés et événements membres.  
   
-<a id="visual-basic-run-time-objects" class="xliff"></a>
-
-## Objets runtime Visual Basic  
+## <a name="visual-basic-run-time-objects"></a>Objets runtime Visual Basic  
   
 |||  
 |---|---|  
@@ -73,8 +69,7 @@ Cette rubrique fournit des liens vers d’autres rubriques qui documentent les o
 |[My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)|Fournit des propriétés permettant de créer une instance unique de chaque service web qui est référencé par le projet actuel et d’y accéder.|  
 |<xref:Microsoft.VisualBasic.FileIO.TextFieldParser>|Fournit des méthodes et des propriétés pour analyser des fichiers texte structurés.|  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)   
  [Visual Basic](../../../visual-basic/index.md)
+

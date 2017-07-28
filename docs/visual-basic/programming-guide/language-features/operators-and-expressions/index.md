@@ -1,5 +1,5 @@
 ---
-title: "Opérateurs et expressions en Visual Basic | Microsoft Docs"
+title: "Opérateurs et expressions en Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -36,23 +36,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 069178fe753c3e09116c8a4845f96faf13eb72ec
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3675af3ac8a0a80b5fb5f208c1679dc28ab77acf
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="operators-and-expressions-in-visual-basic" class="xliff"></a>
-
-# Opérateurs et expressions en Visual Basic
+# <a name="operators-and-expressions-in-visual-basic"></a>Opérateurs et expressions en Visual Basic
 Un *opérateur* est un élément de code qui exécute une opération sur un ou plusieurs éléments de code qui contiennent des valeurs. Les éléments de valeur comprennent des variables, des constantes, des littéraux, des propriétés, des expressions et des retours provenant des procédures `Function` et `Operator`.  
   
  Une *expression* est une série d’éléments de valeur combinés à des opérateurs, ce qui retourne une nouvelle valeur. Les opérateurs agissent sur les éléments de valeur en effectuant des calculs, des comparaisons et d’autres opérations.  
   
-<a id="types-of-operators" class="xliff"></a>
-
-## Types d’opérateurs  
+## <a name="types-of-operators"></a>Types d’opérateurs  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] fournit les types d’opérateurs suivants :  
   
 -   Les [opérateurs arithmétiques](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md) exécutent des calculs familiers sur les valeurs numériques, dont le décalage de leurs modèles binaires.  
@@ -65,9 +61,7 @@ Un *opérateur* est un élément de code qui exécute une opération sur un ou p
   
  Les éléments de valeur associés à un opérateur sont appelés *opérandes* de cet opérateur. Les opérateurs associés aux éléments de valeur forment des expressions, à l’exception de l’opérateur d’assignation qui forme une *instruction*. Pour plus d’informations, consultez [Instructions](../../../../visual-basic/programming-guide/language-features/statements.md).  
   
-<a id="evaluation-of-expressions" class="xliff"></a>
-
-## Évaluation d’expressions  
+## <a name="evaluation-of-expressions"></a>Évaluation d’expressions  
  Le résultat final d’une expression représente une valeur qui correspond généralement à un type de données familier tel que `Boolean`, `String` ou à un type numérique.  
   
  Voici des exemples d’expressions.  
@@ -96,9 +90,8 @@ Un *opérateur* est un élément de code qui exécute une opération sur un ou p
   
  Pour obtenir plus d’informations et des exemples, consultez [Surcharge d’opérateur dans Visual Basic 2005](http://go.microsoft.com/fwlink/?LinkId=101703).  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Opérateurs](../../../../visual-basic/language-reference/operators/index.md)   
  [Association efficace d’opérateurs](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)   
  [Instructions](../../../../visual-basic/language-reference/statements/index.md)
+

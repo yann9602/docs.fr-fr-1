@@ -1,0 +1,1 @@
+bitmap indépendante du périphérique (DIB)
