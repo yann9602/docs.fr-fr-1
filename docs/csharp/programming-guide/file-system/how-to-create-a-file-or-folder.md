@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bba53c8d175d95aa3b89ba458517d439a8d2bb11
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 95b35941e18d22e2d484017262d9adbe8a081a8a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Guide pratique pour créer un fichier ou un dossier (Guide de programmation C#)
@@ -54,7 +55,6 @@ Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un 
   
     // Replace that line with the following assignment.  
     string fileName = "MyNewFile.txt";  
-  
     ```  
   
 -   Remplacez l’instruction `if`-`else` par l’instruction `using` dans le code suivant.  
@@ -67,7 +67,6 @@ Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un 
             fs.WriteByte(i);  
         }  
     }  
-  
     ```  
   
  Exécutez l’exemple plusieurs fois pour vérifier que les données sont ajoutées au fichier à chaque fois.  
@@ -76,22 +75,23 @@ Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un 
   
  Les conditions ci-dessous peuvent générer une exception.  
   
--   Le nom du dossier est mal formé. Par exemple, il contient des caractères non valides ou est constitué uniquement d’espaces blancs (classe <xref:System.ArgumentException>). Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemins valides.  
+-   Le nom du dossier est mal formé. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (classe <xref:System.ArgumentException>). Utilisez la classe <xref:System.IO.Path> pour créer des noms de chemin valides.  
   
--   Le dossier parent du dossier à créer est en lecture seule (<xref:System.IO.IOException> classe).  
+-   Le dossier parent du dossier à créer est en lecture seule (classe <xref:System.IO.IOException>).  
   
 -   Le nom du dossier est `null` (classe <xref:System.ArgumentNullException>).  
   
 -   Le nom du dossier est trop long (classe <xref:System.IO.PathTooLongException>).  
   
--   Le nom du dossier est constitué uniquement d’un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException> classe).  
+-   Le nom du dossier est uniquement un signe deux-points, « : » (classe <xref:System.IO.PathTooLongException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans des situations de confiance partielle.  
+ Une instance de la classe <xref:System.Security.SecurityException> peut être levée dans les situations de confiance partielle.  
   
  Si vous n’êtes pas autorisé à créer le dossier, l’exemple lève une instance de la classe <xref:System.UnauthorizedAccessException>.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
+

@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 51cce0d7ffd4806365600ee93d57806af96f08a8
+ms.translationtype: HT
+ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
+ms.openlocfilehash: 9ba49d25f9e31fc0fcceff5f213a6df703fd41e2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Guide pratique pour combiner des requêtes LINQ avec des expressions régulières (C#)

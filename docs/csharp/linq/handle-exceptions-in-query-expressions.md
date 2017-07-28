@@ -41,3 +41,4 @@ Dans le contexte d’une expression de requête, vous pouvez utiliser n’import
 
 ## <a name="see-also"></a>Voir aussi  
  [Expressions de requête LINQ](index.md)
+
