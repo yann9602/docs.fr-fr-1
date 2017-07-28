@@ -1,5 +1,5 @@
 ---
-title: "Chaînes en Visual Basic | Microsoft Docs"
+title: "Chaînes en Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,21 +31,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 3bfb94cf3b3e40164ccd9ff6021e1b624c963039
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 05cb6db768779895ebf3e57a0feb7bb58c65fc2a
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="strings-in-visual-basic" class="xliff"></a>
-
-# Chaînes en Visual Basic
+# <a name="strings-in-visual-basic"></a>Chaînes en Visual Basic
 Cette section décrit les concepts de base de l’utilisation de chaînes en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
-<a id="in-this-section" class="xliff"></a>
-
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Introduction aux chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
  Liste les rubriques qui décrivent les concepts de base de l’utilisation de chaînes en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
@@ -64,7 +60,6 @@ Cette section décrit les concepts de base de l’utilisation de chaînes en [!I
  [Procédure pas à pas : chiffrement et déchiffrement de chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
  Montre comment chiffrer et déchiffrer des chaînes à l’aide de la version du fournisseur de services de chiffrement de l’algorithme 3DES (Triple Data Encryption Standard).  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Fonctionnalités du langage Visual Basic](../../../../visual-basic/programming-guide/language-features/index.md)
+

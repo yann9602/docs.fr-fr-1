@@ -1,5 +1,5 @@
 ---
-title: "Chaînes (Guide de programmation C#) | Microsoft Docs"
+title: "Chaînes (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,26 +28,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4f1f23bd4d95e617fadc64f4d3a30c5fa1fda85b
-ms.openlocfilehash: 699e9291400797ed1bedcb3686fdfe7848305726
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e41a7b68d890aa7a96aeddd660e0dca90596d998
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="strings-c-programming-guide" class="xliff"></a>
-
-# Chaînes (Guide de programmation C#)
+# <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
   
-<a id="string-vs-systemstring" class="xliff"></a>
-
-## Comparatif entre string et System.String  
+## <a name="string-vs-systemstring"></a>Comparatif entre string et System.String  
  En C#, le mot clé `string` est un alias pour <xref:System.String>. Par conséquent, `String` et `string` sont équivalents et vous pouvez utiliser la convention d’affectation de noms que vous préférez. La classe `String` fournit de nombreuses méthodes pour créer, manipuler et comparer des chaînes en toute sécurité. En outre, le langage C# surcharge certains opérateurs pour simplifier les opérations de chaînes courantes. Pour plus d’informations sur le mot clé, voir [chaîne](../../../csharp/language-reference/keywords/string.md). Pour plus d’informations sur le type et ses méthodes, consultez <xref:System.String>.  
   
-<a id="declaring-and-initializing-strings" class="xliff"></a>
-
-## Déclaration et initialisation de chaînes  
+## <a name="declaring-and-initializing-strings"></a>Déclaration et initialisation de chaînes  
  Vous pouvez déclarer et initialiser des chaînes de différentes manières, comme illustré dans l’exemple suivant :  
   
  [!code-cs[csProgGuideStrings#1](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_1.cs)]  
@@ -56,9 +50,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
   
  Initialisez une chaîne avec la valeur constante <xref:System.String.Empty> pour créer un objet <xref:System.String> dont la chaîne est de longueur nulle. La représentation de littéral de chaîne d’une chaîne de longueur nulle est "". En initialisant les chaînes avec la valeur <xref:System.String.Empty> au lieu de [null](../../../csharp/language-reference/keywords/null.md), vous pouvez réduire les risques de levée de l’exception <xref:System.NullReferenceException>. Utilisez la méthode statique <xref:System.String.IsNullOrEmpty%28System.String%29> pour vérifier la valeur d’une chaîne avant de tenter d’y accéder.  
   
-<a id="immutability-of-string-objects" class="xliff"></a>
-
-## Immuabilité des objets String  
+## <a name="immutability-of-string-objects"></a>Immuabilité des objets String  
  Les objets String sont *immuables* : ils ne peuvent pas être modifiés une fois qu’ils ont été créés. Toutes les méthodes <xref:System.String> et tous les opérateurs C# qui semblent modifier une chaîne retournent en fait les résultats dans un nouvel objet string. Dans l’exemple suivant, lorsque les contenus de `s1` et `s2` sont concaténés pour former une chaîne unique, les deux chaînes d’origine restent inchangées. L’opérateur `+=` crée une nouvelle chaîne qui contient le contenu combiné. Ce nouvel objet est assigné à la variable `s1` et l’objet d’origine qui a été assigné à `s1` est libéré pour la garbage collection, car aucune autre variable ne le référence.  
   
  [!code-cs[csProgGuideStrings#2](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_2.cs)]  
@@ -69,9 +61,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
   
  Pour plus d’informations sur la création de nouvelles chaînes basées sur des modifications telles que les opérations rechercher-remplacer sur la chaîne d’origine, voir [Comment : modifier du contenu de chaîne](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md).  
   
-<a id="regular-and-verbatim-string-literals" class="xliff"></a>
-
-## Littéraux de chaînes normales et textuelles  
+## <a name="regular-and-verbatim-string-literals"></a>Littéraux de chaînes normales et textuelles  
  Utilisez des littéraux de chaînes normales lorsque vous devez incorporer des caractères d’échappement fournis par C#, comme illustré dans l’exemple suivant :  
   
  [!code-cs[csProgGuideStrings#3](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_4.cs)]  
@@ -80,9 +70,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
   
  [!code-cs[csProgGuideStrings#4](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_5.cs)]  
   
-<a id="string-escape-sequences" class="xliff"></a>
-
-## Séquences d’échappement de chaîne  
+## <a name="string-escape-sequences"></a>Séquences d’échappement de chaîne  
   
 |Séquence d'échappement|Nom du caractère|Encodage Unicode|  
 |---------------------|--------------------|----------------------|  
@@ -104,25 +92,19 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
 > [!NOTE]
 >  Au moment de la compilation, les chaînes textuelles sont converties en chaînes normales avec les mêmes séquences d’échappement. Par conséquent, si vous affichez une chaîne textuelle dans la fenêtre Espion du débogueur, vous verrez les caractères d’échappement qui ont été ajoutés par le compilateur et non la version textuelle de votre code source. Par exemple, la chaîne textuelle @"C:\files.txt" s’affiche dans la fenêtre Espion en tant que "C:\\\files.txt".  
   
-<a id="format-strings" class="xliff"></a>
-
-## Chaînes de format  
+## <a name="format-strings"></a>Chaînes de format  
  Une chaîne de format est une chaîne dont le contenu peut être déterminé de façon dynamique lors de l’exécution. Vous créez une chaîne de format en utilisant la méthode statique <xref:System.String.Format%2A> et en incorporant des espaces réservés entre accolades qui seront remplacés par d’autres valeurs au moment de l’exécution. L’exemple suivant utilise une chaîne de format pour générer le résultat de chaque itération d’une boucle :  
   
  [!code-cs[csProgGuideStrings#26](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_6.cs)]  
   
  Une surcharge de la méthode <xref:System.Console.WriteLine%2A> prend comme paramètre une chaîne de format. Par conséquent, vous pouvez simplement incorporer un littéral de chaîne de format sans appel explicite à la méthode. Toutefois, si vous utilisez la méthode <xref:System.Diagnostics.Trace.WriteLine%2A> pour afficher la sortie de débogage dans la fenêtre **Sortie** de Visual Studio, vous devez appeler explicitement la méthode <xref:System.String.Format%2A>, car <xref:System.Diagnostics.Trace.WriteLine%2A> accepte uniquement une chaîne, pas une chaîne de format. Pour plus d’informations sur les chaînes de format, consultez [Mise en forme des types](../../../standard/base-types/formatting-types.md).  
   
-<a id="substrings" class="xliff"></a>
-
-## Sous-chaînes  
+## <a name="substrings"></a>Sous-chaînes  
  Une sous-chaîne est une séquence de caractères qui est contenue dans une chaîne. Utilisez la méthode <xref:System.String.Substring%2A> pour créer une chaîne à partir d’une partie de la chaîne d’origine. Vous pouvez rechercher une ou plusieurs occurrences d’une sous-chaîne en utilisant la méthode <xref:System.String.IndexOf%2A>. Utilisez la méthode <xref:System.String.Replace%2A> pour remplacer toutes les occurrences d’une sous-chaîne spécifiée par une nouvelle chaîne. Comme la méthode <xref:System.String.Substring%2A>, <xref:System.String.Replace%2A> retourne en fait une nouvelle chaîne et ne modifie pas la chaîne d’origine. Pour plus d’informations, consultez [Comment : rechercher des chaînes à l’aide de méthodes String](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md) et [Comment : modifier du contenu de chaîne](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md).  
   
  [!code-cs[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
   
-<a id="accessing-individual-characters" class="xliff"></a>
-
-## Accès aux caractères individuels  
+## <a name="accessing-individual-characters"></a>Accès aux caractères individuels  
  Vous pouvez utiliser la notation de tableau avec une valeur d’index pour obtenir un accès en lecture seule aux caractères individuels, comme dans l’exemple suivant :  
   
  [!code-cs[csProgGuideStrings#9](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_8.cs)]  
@@ -131,9 +113,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
   
  [!code-cs[csProgGuideStrings#8](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_9.cs)]  
   
-<a id="null-strings-and-empty-strings" class="xliff"></a>
-
-## Chaînes Null et chaînes vides  
+## <a name="null-strings-and-empty-strings"></a>Chaînes Null et chaînes vides  
  Une chaîne vide est une instance d’un objet <xref:System.String?displayProperty=fullName> qui contient zéro caractère. Les chaînes vides sont souvent utilisées dans divers scénarios de programmation pour représenter un champ de texte vide. Vous pouvez appeler des méthodes sur des chaînes vides, car ce sont des objets <xref:System.String?displayProperty=fullName>. Les chaînes vides sont initialisées comme suit :  
   
 ```  
@@ -144,9 +124,7 @@ string s = String.Empty;
   
  [!code-cs[csProgGuideStrings#27](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_10.cs)]  
   
-<a id="using-stringbuilder-for-fast-string-creation" class="xliff"></a>
-
-## Utilisation de StringBuilder pour créer rapidement une chaîne  
+## <a name="using-stringbuilder-for-fast-string-creation"></a>Utilisation de StringBuilder pour créer rapidement une chaîne  
  Les opérations Strings dans .NET sont hautement optimisées et, dans la plupart des cas, n’ont pas d’incidence significative sur les performances. Toutefois, dans certains scénarios, notamment dans le cas de boucles serrées qui s’exécutent plusieurs centaines voire milliers de fois, les opérations String peuvent affecter les performances. La classe <xref:System.Text.StringBuilder> crée un tampon de chaîne qui offre de meilleures performances si votre programme exécute de nombreuses manipulations de chaînes. La chaîne <xref:System.Text.StringBuilder> vous permet également de réassigner des caractères individuels, une fonctionnalité non prise en charge par les types de données string intégrés. Ce code, par exemple, modifie le contenu d’une chaîne sans créer de nouvelle chaîne :  
   
  [!code-cs[csProgGuideStrings#20](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_11.cs)]  
@@ -155,14 +133,10 @@ string s = String.Empty;
   
  [!code-cs[csProgGuideStrings#15](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_12.cs)]  
   
-<a id="strings-extension-methods-and-linq" class="xliff"></a>
-
-## Chaînes, méthodes d’extension et LINQ  
+## <a name="strings-extension-methods-and-linq"></a>Chaînes, méthodes d’extension et LINQ  
  Étant donné que le type <xref:System.String> implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser les méthodes d’extension définies dans la classe <xref:System.Linq.Enumerable> sur des chaînes. Pour éviter une surcharge visuelle, ces méthodes sont exclues d’IntelliSense pour le type <xref:System.String>, mais elles restent néanmoins disponibles. Vous pouvez également utiliser des expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur les chaînes. Pour plus d’informations, consultez [LINQ et Strings](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md).  
   
-<a id="related-topics" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
   
 |Rubrique|Description|  
 |-----------|-----------------|  

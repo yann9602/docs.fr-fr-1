@@ -1,5 +1,5 @@
 ---
-title: "Bien démarrer avec Visual Basic | Microsoft Docs"
+title: "Bien démarrer avec Visual Basic"
 ms.date: 2017-05-01
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 3f3d00e8145620520697941c9002ea81f8de9044
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f94aab658175c1a338aff78d2645fd631fd37c8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
@@ -66,17 +66,18 @@ Répertorie les nouvelles fonctionnalités de chacune des versions de Visual Bas
  [Procédures pas à pas](../../visual-basic/walkthroughs.md)  
  Fournit une liste de pages d'aide qui illustrent les aspects du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
- [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)  
+ [Nous contacter](/visualstudio/ide/talk-to-us)  
  Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.  
   
- [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/)  
+ [Visual Studio](/visualstudio/)  
  Fournit des liens vers la documentation de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
  [C#](../../csharp/csharp.md)  
  Fournit des liens vers la documentation sur le développement d'applications à l'aide de [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
- [Visual C++](https://docs.microsoft.com/cpp/)  
+ [Visual C++](/cpp/)  
  Fournit des liens vers la documentation Visual C++.  
   
  [Développement Office et SharePoint](https://msdn.microsoft.com/library/d2tx7z6d)  
  Fournit des informations sur l'utilisation de Microsoft Office et de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] dans le cadre d'une application d'entreprise.
+

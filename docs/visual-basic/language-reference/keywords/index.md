@@ -1,5 +1,5 @@
 ---
-title: "Mots clés (Visual Basic) | Microsoft Docs"
+title: "Mots clés (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -35,21 +35,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 5474dd8cf57253a7783a272638081b0439483306
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6997ab8d05e2061a0f42ab86d6a7d7fb74b634fe
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="keywords-visual-basic" class="xliff"></a>
-
-# Mots clés (Visual Basic)
+# <a name="keywords-visual-basic"></a>Mots clés (Visual Basic)
 Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
-<a id="reserved-keywords" class="xliff"></a>
-
-## Mots clés réservés  
+## <a name="reserved-keywords"></a>Mots clés réservés  
  Les mots clés suivants sont *réservés*, ce qui signifie que vous ne pouvez pas les utiliser comme noms d’éléments de programmation tels que des variables ou des procédures. Vous pouvez contourner cette restriction en plaçant le nom entre crochets (`[``]`). Pour plus d’informations, consultez « Noms échappés » dans [Noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 > [!NOTE]
@@ -108,9 +104,7 @@ Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](
 > [!NOTE]
 >  `EndIf`, `GoSub`, `Variant` et `Wend` sont conservés comme mots clés réservés, bien qu’ils ne soient plus utilisés dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]. La signification du mot clé `Let` a changé. `Let` est maintenant utilisé dans les requêtes LINQ. Pour plus d’informations, consultez [Let, clause](../../../visual-basic/language-reference/queries/let-clause.md).  
   
-<a id="unreserved-keywords" class="xliff"></a>
-
-## Mots clés non réservés  
+## <a name="unreserved-keywords"></a>Mots clés non réservés  
  Les mots clés suivants ne sont pas réservés, ce qui signifie que vous pouvez les utiliser comme noms pour vos éléments de programmation. Toutefois, cette pratique est déconseillée, car cela peut rendre votre code difficile à lire et générer des erreurs subtiles qui peuvent être difficiles à détecter.  
   
 |||||  
@@ -126,9 +120,7 @@ Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](
 |[Until](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Where](../../../visual-basic/language-reference/queries/where-clause.md)|[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)|[#ExternalSource](../../../visual-basic/language-reference/directives/externalsource-directive.md)|  
 |[#Region](../../../visual-basic/language-reference/directives/region-directive.md)||||  
   
-<a id="related-topics" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
@@ -151,8 +143,6 @@ Les tableaux suivants listent tous les mots clés du langage [!INCLUDE[vbprvb](
 |[Liste des registres](../../../visual-basic/language-reference/keywords/registry-summary.md)|Liste les fonctions utilisées pour lire, enregistrer et supprimer des paramètres de programme.|  
 |[Liste des manipulations de chaînes](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|Liste les fonctions utilisées pour manipuler des chaînes.|  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Membres de la bibliothèque runtime Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
 

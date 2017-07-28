@@ -1,5 +1,5 @@
 ---
-title: "Types de données en Visual Basic | Microsoft Docs"
+title: "Types de données en Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -35,11 +35,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c86e1bfacbe06d10915bd476a5c6f528fcebe70d
-ms.openlocfilehash: 2642145e496469eb8bcb382408fda2147f48b0d5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8b90a5e58d135a3769761ca431fd0c05f79e045f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="data-types-in-visual-basic"></a>Types de données en Visual Basic
@@ -73,3 +73,4 @@ Le *type de données* d’un élément de programmation fait référence au type
  [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
  [Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
  [Utilisation efficace des types de données](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+

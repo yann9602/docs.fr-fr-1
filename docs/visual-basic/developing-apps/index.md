@@ -1,5 +1,5 @@
 ---
-title: "Développement d’applications avec Visual Basic | Microsoft Docs"
+title: "Développement d’applications avec Visual Basic"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 2baf921be083da58911c474bf2506f08360f17b7
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b0dee8a19d22eb9b483a2d17fad43830971a8ab0
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="developing-applications-with-visual-basic"></a>Développement d’applications avec Visual Basic
@@ -66,3 +67,4 @@ Cette section décrit la documentation conceptuelle du langage Visual Basic.
   
  [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)  
  Contient la documentation de référence du langage Visual Basic.
+

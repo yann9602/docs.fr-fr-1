@@ -1,5 +1,5 @@
 ---
-title: Options du compilateur C# | Microsoft Docs
+title: Options du compilateur C#
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -33,10 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c355f42106cfb7790591108b9b0f0938c34fdb32
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 12fd3210aeda6c260c91232baf99381a55b00cab
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-compiler-options"></a>Options du compilateur C#
@@ -63,11 +64,12 @@ Le compilateur produit des fichiers exécutables (.exe), des bibliothèques de l
  Liste alphabétique des options du compilateur.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Page Générer, Concepteur de projets](https://docs.microsoft.com/visualstudio/ide/reference/build-page-project-designer-csharp)  
+ [Page Générer, Concepteur de projets](/visualstudio/ide/reference/build-page-project-designer-csharp)  
  Définition des propriétés qui régissent la façon dont votre projet est compilé, généré et débogué. Contient des informations sur les étapes de génération personnalisée dans les projets Visual C#.  
   
- [Générations personnalisées et par défaut](https://docs.microsoft.com/visualstudio/ide/compiling-and-building-in-visual-studio)  
+ [Générations personnalisées et par défaut](/visualstudio/ide/compiling-and-building-in-visual-studio)  
  Informations sur les configurations et les types de génération.  
   
- [Préparation et gestion des générations](https://docs.microsoft.com/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
+ [Préparation et gestion des générations](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio)  
  Procédures de génération dans l’environnement de développement Visual Studio.
+

@@ -1,5 +1,5 @@
 ---
-title: "Instructions, expressions et opérateurs (guide de programmation C#) | Microsoft Docs"
+title: "Instructions, expressions et opérateurs (guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: d7c648786e7f507fe2ca58ffd2480da6b204aafa
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 71988a5b9aa59b2655b4fd7b91522fe69c8064b6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instructions, expressions et opérateurs (guide de programmation C#)
@@ -72,3 +72,4 @@ Le code C# qui comprend une application se compose d’instructions à base de m
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Cast et conversions de types](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+

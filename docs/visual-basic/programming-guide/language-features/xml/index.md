@@ -1,5 +1,5 @@
 ---
-title: "XML en Visual Basic | Microsoft Docs"
+title: XML en Visual Basic
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,21 +31,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 5dd44fb1d3efe53ce37d17d91d522aeed7442ef9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7cfa2abbc5ec68f26561813552d491a4131d54b0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="xml-in-visual-basic" class="xliff"></a>
-
-# XML en Visual Basic
+# <a name="xml-in-visual-basic"></a>XML en Visual Basic
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] fournit la prise en charge intégrée du langage qui lui permet d’interagir avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
-<a id="in-this-section" class="xliff"></a>
-
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  Les rubriques de cette section présentent l’utilisation de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] avec Visual Basic.  
   
 |Rubrique|Description|  
@@ -56,10 +52,9 @@ ms.lasthandoff: 05/26/2017
 |[Accès au code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Décrit les propriétés d’axe XML et les méthodes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permettant d’accéder aux éléments et attributs XML.|  
 |[XML IntelliSense dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)|Décrit les fonctionnalités IntelliSense fournies avec Visual Basic.|  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Xml.Linq>   
  [Littéraux XML](../../../../visual-basic/language-reference/xml-literals/index.md)   
  [Propriétés d’axe XML](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)   
  [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)
+

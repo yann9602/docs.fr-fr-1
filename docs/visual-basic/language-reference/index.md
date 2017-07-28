@@ -1,5 +1,5 @@
 ---
-title: "Informations de référence sur le langage Visual Basic | Microsoft Docs"
+title: "Informations de référence sur le langage Visual Basic"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -33,21 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: ada35fcbbbe84f6339f47af736a8581db85cfb56
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1ac47bde27397e80993a6bb5d2512715f44acfc1
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-<a id="visual-basic-language-reference" class="xliff"></a>
-
-# Informations de référence sur le langage Visual Basic
+# <a name="visual-basic-language-reference"></a>Informations de référence sur le langage Visual Basic
 Cette section fournit des informations de référence sur divers aspects du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
-<a id="in-this-section" class="xliff"></a>
-
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Conventions typographiques](../../visual-basic/language-reference/typographic-and-code-conventions.md)  
  Récapitule la façon dont les mots clés, les espaces réservés et d’autres éléments du langage sont mis en forme dans la documentation [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
@@ -108,11 +104,10 @@ Cette section fournit des informations de référence sur divers aspects du lang
  [Messages d’erreur](../../visual-basic/language-reference/error-messages/index.md)  
  Fournit une liste des messages d’erreur du compilateur et d’exécution [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], et vous aide à les gérer.  
   
-<a id="related-sections" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Visual Basic](../../visual-basic/index.md)  
  Fournit une aide complète sur tous les domaines du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
  [Compilateur de ligne de commande de Visual Basic](../../visual-basic/reference/command-line-compiler/index.md)  
  Explique comment utiliser le compilateur de ligne de commande comme alternative aux programmes de compilation dans l’environnement de développement intégré (IDE, Integrated Development Environment) [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].
+

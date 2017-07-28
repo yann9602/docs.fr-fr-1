@@ -1,5 +1,5 @@
 ---
-title: "Fonctionnalités du langage Visual Basic | Microsoft Docs"
+title: "Fonctionnalités du langage Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 1cc54088723bf8a7ff644cc418dd4f6212fc91f3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3594e6622e8bc76839a15739a31ad27d17de8455
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="visual-basic-language-features"></a>Fonctionnalités du langage Visual Basic
@@ -109,3 +109,4 @@ Les rubriques suivantes présentent et décrivent les composants essentiels de [
   
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
  Fournit des informations de référence sur différents aspects de la programmation [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].
+

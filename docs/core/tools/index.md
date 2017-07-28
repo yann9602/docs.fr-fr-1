@@ -1,5 +1,5 @@
 ---
-title: "Outils de l’interface de ligne de commande (CLI) .NET Core │ Microsoft Docs"
+title: "Outils de l’interface de ligne de commande (CLI) de .NET Core"
 description: "Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI)."
 keywords: "CLI, outils CLI, .NET, .NET Core"
 author: blackdwarf
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
-translationtype: Human Translation
-ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
-ms.openlocfilehash: 978dd62d655d0168b5a9c1c9732bc69ca9b256eb
-ms.lasthandoff: 04/10/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a8c91621095ea187dd4236db7533520556840c59
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
