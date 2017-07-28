@@ -1,5 +1,5 @@
 ---
-title: "Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017 | Microsoft Docs"
+title: "Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017"
 description: "Découvrez comment tester une bibliothèque de classes écrite en C# à l’aide de Visual Studio 2017"
 keywords: ".NET Core, bibliothèque de classes .NET Standard, Visual Studio 2017, test unitaire"
 author: BillWagner
@@ -10,23 +10,19 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 069ad711-3eaa-45c6-94d7-b40249cc8b99
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: f07ba05a617f5e270f0e08f2006b25cecc04f05b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5254000ab95fb2cb877466a9c387d200b1a81cd6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="testing-a-class-library-with-net-core-in-visual-studio-2017" class="xliff"></a>
-
-# Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017
+# <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017
 
 Dans [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](library-with-visual-studio.md), vous avez créé une bibliothèque de classes simple qui ajoute une méthode d’extension à la classe @System.String. À présent, vous allez créer un test unitaire pour vérifier qu’elle fonctionne comme prévu. Vous allez ajouter votre projet de test unitaire à la solution créée dans la rubrique précédente.
 
-<a id="creating-a-unit-test-project" class="xliff"></a>
-
-## Création d'un projet de test unitaire
+## <a name="creating-a-unit-test-project"></a>Création d'un projet de test unitaire
 
 Pour créer le projet de test unitaire, procédez comme suit :
 
@@ -58,9 +54,7 @@ Pour créer le projet de test unitaire, procédez comme suit :
 
    ![Gestionnaire de références](./media/testing-library-with-visual-studio/referencemanager.png)
 
-<a id="adding-and-running-unit-test-methods" class="xliff"></a>
-
-## Ajout et exécution de méthodes de test unitaire
+## <a name="adding-and-running-unit-test-methods"></a>Ajout et exécution de méthodes de test unitaire
 
 Quand Visual Studio exécute un test unitaire, il exécute chaque méthode marquée avec l’attribut [\[TestMethod\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testmethodattribute.aspx) dans une classe de test unitaire, la classe à laquelle l’attribut [\[TestClass\]](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.testclassattribute.aspx) est appliqué. Une méthode de test se termine quand la première défaillance survient, ou quand tous les tests contenus dans la méthode ont réussi.
 
@@ -104,9 +98,7 @@ Pour créer les méthodes de test:
 
    ![Fenêtre Explorateur de tests](./media/testing-library-with-visual-studio/firsttest.png)
 
-<a id="handling-test-failures" class="xliff"></a>
-
-## Gestion des échecs des tests
+## <a name="handling-test-failures"></a>Gestion des échecs des tests
 
 Votre série de tests n’a rencontré aucun échec : changez-la légèrement de façon à faire échouer une des méthodes de test :
 
@@ -127,9 +119,7 @@ Votre série de tests n’a rencontré aucun échec : changez-la légèrement d
 
 1. Supprimez le code que vous avez ajouté (`"Error", `) et réexécutez le test. Les tests réussissent à nouveau.
 
-<a id="testing-the-release-version-of-the-library" class="xliff"></a>
-
-## Test de la version de la version Release de la bibliothèque
+## <a name="testing-the-release-version-of-the-library"></a>Test de la version de la version Release de la bibliothèque
 
 Vous avez exécuté vos tests sur la version Debug de la bibliothèque. Maintenant que vos tests ont tous réussi et que vous avez testé votre bibliothèque de façon adéquate, vous devez exécuter les tests une fois de plus sur la version Release de la bibliothèque. Un certain nombre de facteurs, notamment les optimisations du compilateur, peuvent parfois produire un comportement différent entre les versions Debug et Release.
 

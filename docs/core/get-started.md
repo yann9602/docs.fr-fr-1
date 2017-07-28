@@ -1,5 +1,5 @@
 ---
-title: "Bien démarrer avec .NET Core │ Microsoft Docs"
+title: "Bien démarrer avec .NET Core"
 description: "Découvrez des ressources qui vous apprendront à créer des applications .NET Core sur Windows, Linux et macOS."
 keywords: .NET, .NET Core
 author: mairaw
@@ -9,23 +9,19 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: b187cae8477a0395ca9b7edbbe170ae9e6be4220
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 890e6af3095866608e9c91ea26b4d0edb6d81e29
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="get-started-with-net-core" class="xliff"></a>
-
-# Bien démarrer avec .NET Core
+# <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
 .NET Core s’exécute sur [Windows](#windows), [Linux](#linux) et [macOS / OS X](#os-x--macos).
 
-<a id="windows" class="xliff"></a>
-
-## Windows
+## <a name="windows"></a>Windows
 
 Installez .NET Core sur [Windows](https://www.microsoft.com/net/core#windows). 
 
@@ -39,9 +35,7 @@ Vous pouvez vous lancer dans le développement d’applications .NET Core en sui
 
 Consultez la rubrique [Prérequis pour le développement Windows](windows-prerequisites.md) pour obtenir la liste des versions Windows prises en charge. 
 
-<a id="linux" class="xliff"></a>
-
-## Linux
+## <a name="linux"></a>Linux
 
 Installez .NET Core sur votre distribution/version :
 
@@ -59,9 +53,7 @@ Vous pouvez vous lancer dans le développement d’applications .NET Core en sui
 
 .NET Core est pris en charge par les distributions et les versions de Linux répertoriées ci-dessus dans les liens d’installation.
 
-<a id="os-x--macos" class="xliff"></a>
-
-## OS X / macOS
+## <a name="os-x--macos"></a>OS X / macOS
 
 Installez .NET Core pour [Mac OS](https://www.microsoft.com/net/core#macos). .NET Core est pris en charge sur Mac OS X El Capitan (version 10.11) et Mac OS Sierra (version 10.12).
 

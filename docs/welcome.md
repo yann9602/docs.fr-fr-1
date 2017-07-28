@@ -1,5 +1,5 @@
 ---
-title: Bienvenue dans .NET | Microsoft Docs
+title: Bienvenue dans .NET
 description: "Bien démarrer avec la famille de technologies .NET."
 keywords: ".NET, .NET Core, bien démarrer, actualités"
 author: richlander
@@ -9,25 +9,21 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: cb788dcf-2120-467f-9c34-c02a90e1f68f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c12811f3eb8b0aeeeeab6d41ba2983ee9a0ae0f9
-ms.openlocfilehash: 7055438edf0ce4466f3ae6a5d8eb9216b324d3b7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0c6d4d9efbf51d8ae6308a34cbc4f522cceea001
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="welcome-to-net" class="xliff"></a>
-
-# Bienvenue dans .NET
+# <a name="welcome-to-net"></a>Bienvenue dans .NET
 
 Consultez la page [Bien démarrer avec .NET Core](core/get-started.md) pour apprendre à créer des applications .NET Core.
 
 Créez de nombreux types d’applications avec .NET, notamment des applications cloud et IoT ainsi que des jeux en utilisant des outils multiplateformes gratuits. Vos applications peuvent s’exécuter sur Android, iOS, Linux, Mac OS et Windows. Déployez vos applications sur des serveurs ou des postes de travail et publiez-les sur des magasins d’applications afin de les déployer sur des appareils mobiles. .NET est accessible aux étudiants et aux amateurs qui souhaitent rejoindre une communauté de développeurs internationaux enthousiastes et désireux d’apporter leur contribution aux nombreuses technologies .NET.
 
-<a id="news" class="xliff"></a>
-
-## Informations
+## <a name="news"></a>Informations
 
 - [Présentation de .NET Standard](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
 - [Annonce relative à la préversion 2 de .NET Core 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/06/28/announcing-net-core-2-0-preview-2/)
@@ -44,9 +40,7 @@ Créez de nombreux types d’applications avec .NET, notamment des applications 
 - [La semaine en .NET](https://blogs.msdn.microsoft.com/dotnet/tag/week-in-net/)
 - [Build 2017 sur Channel 9 - vidéo sur les dernières technologies et l’actualité Microsoft](https://channel9.msdn.com/?wt.mc_id=build_hp#programGuide)
 
-<a id="documentation" class="xliff"></a>
-
-## Documentation
+## <a name="documentation"></a>Documentation
 
 Cette documentation couvre les plateformes et les langages compatibles avec .NET.  Pour démarrer avec .NET et ses langages, consultez l’une des sections suivantes :
 
@@ -57,11 +51,9 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 - [Guide F#](fsharp/index.md)
 - [Guide Visual Basic](visual-basic/index.md)
 
-Vous pouvez également parcourir les [informations de référence sur l’API .NET](https://docs.microsoft.com/dotnet/api).
+Vous pouvez également parcourir les [informations de référence sur l’API .NET](/dotnet/api).
 
-<a id="open-source" class="xliff"></a>
-
-## Ouvrir la source
+## <a name="open-source"></a>Ouvrir la source
 
 Cette documentation est entièrement [open source](https://github.com/dotnet/docs).  Vous pouvez y contribuer comme vous le souhaitez, du signalement de problèmes à la création de rubriques de documentation.  Par ailleurs, .NET est en grande partie open source :
 
