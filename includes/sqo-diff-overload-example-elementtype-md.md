@@ -1,0 +1,2 @@
+> [!NOTE]
+>  Cet exemple de code utilise une surcharge de cette méthode surchargée qui est différente de la surcharge spécifique décrite par cette rubrique. Pour étendre l'exemple à cette rubrique, remplacez les éléments de la séquence source par des éléments du type numérique approprié.

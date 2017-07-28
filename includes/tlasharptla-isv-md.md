@@ -1,0 +1,1 @@
+éditeur de logiciels indépendant (ISV)

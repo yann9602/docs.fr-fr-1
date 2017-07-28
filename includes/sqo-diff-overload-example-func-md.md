@@ -1,0 +1,2 @@
+> [!NOTE]
+>  Cet exemple de code utilise une surcharge de cette méthode surchargée qui est différente de la surcharge spécifique décrite par cette rubrique. Pour adapter l'exemple à cette rubrique, modifiez le corps de la fonction `selector`.

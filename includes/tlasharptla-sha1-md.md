@@ -1,0 +1,1 @@
+SHA1 (Secure Hash Algorithm 1)

@@ -1,5 +1,5 @@
 ---
-title: "Développement d&quot;applications clientes avec .NET Framework | Microsoft Docs"
+title: "Développement d'applications clientes avec .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -25,10 +25,11 @@ caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 165b8b24da6991c634bae3683f10dab411ac8801
-ms.lasthandoff: 04/18/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 969e02ea7a560a18f8c0f79ada089fd791362808
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>Développement d'applications clientes avec .NET Framework
@@ -66,3 +67,4 @@ Il existe plusieurs moyens de développer des applications Windows avec le .NET 
  [Guide de développement](../../docs/framework/development-guide.md)   
  [Comment : créer une application de bureau Windows](http://msdn.microsoft.com/library/47021403-eaca-4c34-946a-a26c42a64148)   
  [Applications de service Windows](../../docs/framework/windows-services/index.md)
+
