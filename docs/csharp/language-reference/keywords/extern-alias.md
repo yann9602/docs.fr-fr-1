@@ -1,5 +1,5 @@
 ---
-title: "extern alias (référence C#) | Microsoft Docs"
+title: "extern alias (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2bda6b652b56c50883700fe5a2a81189dbcb0d2d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 66b399aaf6d4b3ba27957f3eadad3c1079ed2e90
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
@@ -64,9 +64,10 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Référence C#](../../../csharp/language-reference/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés d’espaces de noms](../../../csharp/language-reference/keywords/namespace-keywords.md)   
  [::, opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)   
  [/reference (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+

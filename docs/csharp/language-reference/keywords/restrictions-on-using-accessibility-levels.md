@@ -1,5 +1,5 @@
 ---
-title: "Limitations sur l’utilisation des niveaux d’accessibilité (référence C#) | Microsoft Docs"
+title: "Limitations sur l'utilisation des niveaux d'accessibilité (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 51b399993008a1a3ce61679cdccc3e5e7bf25354
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8e49afd38fd776593b87f065a079da0d546df4a6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l'utilisation des niveaux d'accessibilité (référence C#)
@@ -129,8 +129,8 @@ public class A
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [Domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md)   
  [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md)   
@@ -139,3 +139,4 @@ public class A
  [private](../../../csharp/language-reference/keywords/private.md)   
  [protected](../../../csharp/language-reference/keywords/protected.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)
+

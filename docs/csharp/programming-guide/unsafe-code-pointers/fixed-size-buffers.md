@@ -1,5 +1,5 @@
 ---
-title: "Mémoires tampons de taille fixe (Guide de programmation C#) | Microsoft Docs"
+title: "Mémoires tampons de taille fixe (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6c5cacb588dc263e5b72e4b3cd93ad10b4b681f2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e1a3dcf953cb56fc3436fdd5e7ecb60478a12922
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Mémoires tampons de taille fixe (Guide de programmation C#)
@@ -55,7 +56,7 @@ private fixed char name[30];
   
  [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
- La taille du tableau `char` de 128 éléments est de 256 octets. Les mémoires tampons [char](../../../csharp/language-reference/keywords/char.md) de taille fixe acceptent toujours deux octets par caractère, quel que soit l’encodage. Ceci est vrai même lorsque les mémoires tampons char sont marshalées vers des méthodes ou des structs d’API avec `CharSet = CharSet.Auto` ou `CharSet = CharSet.Ansi`. Pour plus d’informations, consultez <xref:System.Runtime.InteropServices.CharSet>.  
+ La taille du tableau `char` de 128 éléments est de 256 octets. Les mémoires tampons [char](../../../csharp/language-reference/keywords/char.md) de taille fixe acceptent toujours deux octets par caractère, quel que soit l’encodage. Ceci est vrai même lorsque les mémoires tampons char sont marshalées vers des méthodes ou des structs d’API avec `CharSet = CharSet.Auto` ou `CharSet = CharSet.Ansi`. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.CharSet>.  
   
  Un autre tableau courant de taille fixe est le tableau [bool](../../../csharp/language-reference/keywords/bool.md). La taille des éléments d’un tableau `bool` est toujours d’un octet. Les tableaux `bool` ne conviennent pas à la création de tableaux d’octets ou de mémoires tampons.  
   
@@ -77,3 +78,4 @@ private fixed char name[30];
  [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
  [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [Interopérabilité](../../../csharp/programming-guide/interop/index.md)
+

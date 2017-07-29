@@ -1,5 +1,5 @@
 ---
-title: "Domaine d’accessibilité (référence C#) | Microsoft Docs"
+title: "Domaine d'accessibilité (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c7f575aa65680ccc886ac0246c589a8cac1302d7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 90faf22d8a7d515ae8bd062f0b95f4be5e051f79
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessibility-domain-c-reference"></a>Domaine d'accessibilité (référence C#)
@@ -49,8 +49,8 @@ Le domaine d’accessibilité d’un membre indique dans quelles sections du pro
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md)   
  [Limitations sur l’utilisation des niveaux d’accessibilité](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)   
@@ -59,3 +59,4 @@ Le domaine d’accessibilité d’un membre indique dans quelles sections du pro
  [private](../../../csharp/language-reference/keywords/private.md)   
  [protected](../../../csharp/language-reference/keywords/protected.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)
+

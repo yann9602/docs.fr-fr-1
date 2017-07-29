@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#) | Microsoft Docs"
+title: "Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,15 +14,15 @@ ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1f8fa5eaa88565d5505ef9310cf4fe40ecab44b2
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2731b773e436114bb2324ba1cea339cf9327adb9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#)
-Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
+Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  L’expression XPath est la suivante :  
   
@@ -58,3 +58,4 @@ PurchaseOrders
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+

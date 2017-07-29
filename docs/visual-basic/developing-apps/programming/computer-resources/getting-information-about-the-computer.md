@@ -1,5 +1,5 @@
 ---
-title: "Obtention d’informations sur l’ordinateur (Visual Basic) | Microsoft Docs"
+title: "Obtention d’informations sur l’ordinateur (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: dae9f1a693d2e1c2f3b858f85fa088ac8ed511f9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8dee43f87a7a09f9b5cd77d5df5c2d0d8c6d4062
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a>Obtention d’informations sur l’ordinateur (Visual Basic)
@@ -53,3 +53,4 @@ L’objet `My.Computer.Info` fournit des propriétés pour obtenir des informati
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:Microsoft.VisualBasic.Devices.ServerComputer.Info%2A>
+

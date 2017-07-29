@@ -1,5 +1,5 @@
 ---
-title: "Différences entre les modèles C++ et les génériques C# (Guide de programmation C#) | Microsoft Docs"
+title: "Différences entre les modèles C++ et les génériques C# (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d3171b1e3f48907778be6e256780e06bad36481f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 483d33531141127e083c5b75789f405427e46890
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Différences entre les modèles C++ et les génériques C# (Guide de programmation C#)
@@ -57,4 +58,5 @@ Les génériques C# et les modèles C++ sont des fonctionnalités linguistiques 
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
- [Modèles](https://docs.microsoft.com/cpp/cpp/templates-cpp)
+ [Modèles](/cpp/cpp/templates-cpp)
+

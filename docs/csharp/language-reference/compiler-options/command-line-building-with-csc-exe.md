@@ -1,5 +1,5 @@
 ---
-title: "Génération à partir de la ligne de commande avec csc.exe | Microsoft Docs"
+title: "Génération à partir de la ligne de commande avec csc.exe"
 ms.date: 2017-04-19
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: d90dc35fd985cbe35cfe86f7c299bd12aed11365
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: dd47544e11222dfb0035f37196abcdf5654d5537
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="command-line-build-with-cscexe"></a>Génération à partir de la ligne de commande avec csc.exe
@@ -42,7 +42,7 @@ Si vous utilisez la fenêtre **Invite de commandes développeur pour Visual Stud
 
 Si vous utilisez une fenêtre d’invite de commandes standard, vous devez ajuster votre chemin avant de pouvoir appeler *csc.exe* à partir de n’importe quel sous-répertoire de votre ordinateur. Vous devez également exécuter *vsvars32.bat* pour définir les variables d’environnement appropriées pour prendre en charge les générations à partir de la ligne de commande. Pour plus d’informations sur *vsvars32.bat*, notamment les instructions pour le rechercher et l’exécuter, consultez [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
 
-Si vous utilisez un ordinateur disposant uniquement du [!INCLUDE[winsdklong](../../../csharp/language-reference/compiler-options/includes/winsdklong_md.md)], vous pouvez utiliser le compilateur C# dans l’**invite de commandes du kit SDK**, disponible à partir de l’option de menu **Microsoft .NET Framework SDK**.
+Si vous utilisez un ordinateur disposant uniquement du [!INCLUDE[winsdklong](~/includes/winsdklong-md.md)], vous pouvez utiliser le compilateur C# dans l’**invite de commandes du kit SDK**, disponible à partir de l’option de menu **Microsoft .NET Framework SDK**.
 
 Vous pouvez également utiliser MSBuild pour générer des programmes en C# par programmation. Pour plus d’informations, consultez [MSBuild](/visualstudio/msbuild/msbuild).
 
@@ -81,37 +81,37 @@ Le compilateur C# utilise les règles suivantes quand il interprète les argume
 
 - Compile *File.cs*, ce qui produit *File.exe* :
 
-```
+```console
 csc File.cs 
 ```
 
 - Compile *File.cs*, ce qui produit *File.dll* :
 
-```
+```console
 csc /target:library File.cs
 ```
 
 - Compile *File.cs* et crée *My.exe* :
 
-```
+```console
 csc /out:My.exe File.cs
 ```
 
 - Compile tous les fichiers C# du répertoire actif avec les optimisations activées et définit le symbole DEBUG. La sortie est *File2.exe* :
 
-```
+```console
 csc /define:DEBUG /optimize /out:File2.exe *.cs
 ```
 
 - Compile tous les fichiers C# du répertoire actif, ce qui produit une version Debug de *File2.dll*. Aucun logo ni aucun avertissement n’est affiché :
 
-```
+```console
 csc /target:library /out:File2.dll /warn:0 /nologo /debug *.cs
 ```
 
 - Compile tous les fichiers C# du répertoire actif vers *Something.xyz* (une DLL) :
 
-```
+```console
 csc /target:library /out:Something.xyz *.cs
 ```
 

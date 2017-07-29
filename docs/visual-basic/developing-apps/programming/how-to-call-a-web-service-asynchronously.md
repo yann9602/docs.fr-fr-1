@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour appeler un service web de manière asynchrone (Visual Basic) | Microsoft Docs"
+title: "Guide pratique pour appeler un service web de manière asynchrone (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -29,16 +29,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a88c7250ba844603bcbc33d0768a45c40f18f53e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f191ccb5f42f9cfc5dc4e44e58d2338422207aa1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Guide pratique pour appeler un service web de manière asynchrone (Visual Basic)
 Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone d'un service web pour qu'il puisse récupérer le résultat d'un appel de méthode asynchrone. Cet exemple utilise le service web DemoTemperatureService disponible à l’adresse http://www.xmethods.net.  
   
- Quand vous faites référence à un service web dans votre projet dans l'IDE (Integrated Development Environment) de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)], il est ajouté à l'objet `My.WebServices` et l'IDE génère une classe proxy cliente pour accéder à un service web spécifié.  
+ Quand vous faites référence à un service web dans votre projet dans l'IDE (Integrated Development Environment) de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], il est ajouté à l'objet `My.WebServices` et l'IDE génère une classe proxy cliente pour accéder à un service web spécifié.  
   
  La classe proxy vous permet d'appeler les méthodes du service web de manière synchrone (votre application attend que la fonction soit terminée). De plus, le proxy crée des membres supplémentaires pour aider à appeler la méthode de manière asynchrone. Pour chaque fonction du service web, *NameOfWebServiceFunction*, le proxy crée une sous-routine *NameOfWebServiceFunction*`Async`, un événement *NameOfWebServiceFunction*`Completed` et une classe *NameOfWebServiceFunction*`CompletedEventArgs`. Cet exemple montre comment utiliser les membres asynchrones pour accéder à la fonction `getTemp` du service web DemoTemperatureService.  
   
@@ -91,3 +92,4 @@ Cet exemple attache un gestionnaire à l'événement de gestionnaire asynchrone 
 ## <a name="see-also"></a>Voir aussi  
  [Accès aux services web d’une application](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)   
  [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+

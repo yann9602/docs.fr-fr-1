@@ -1,5 +1,5 @@
 ---
-title: "Délimiteurs pour les balises de documentation (Guide de programmation C#) | Microsoft Docs"
+title: "Délimiteurs pour les balises de documentation (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ba3b38a8bce9f5b49ef863acfae04bc2a39c052a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3e31f0c3d815c0454a9be6813ff9a04e5fa4c7de
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Délimiteurs pour les balises de documentation (Guide de programmation C#)
@@ -43,7 +43,7 @@ L’utilisation de commentaires de documentation XML exige des délimiteurs, qui
  Délimiteur à une ligne. Il s’agit de la forme illustrée dans les exemples de documentation et utilisée par les modèles de projet Visual C#. Si un caractère espace blanc suit le délimiteur, ce caractère n’est pas inclus dans la sortie XML.  
   
 > [!NOTE]
->  L’IDE Visual Studio offre une fonctionnalité d’édition de commentaire intelligente, qui insère automatiquement les balises \<summary> et \</summary>, et place le curseur dans ces balises quand vous tapez le délimiteur `///` dans l’Éditeur de code. Vous pouvez accéder à cette fonctionnalité à partir d’[Options, Éditeur de texte, C#, Mise en forme](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-csharp-formatting) dans les pages de propriétés de votre projet.  
+>  L’IDE Visual Studio offre une fonctionnalité d’édition de commentaire intelligente, qui insère automatiquement les balises \<summary> et \</summary>, et place le curseur dans ces balises quand vous tapez le délimiteur `///` dans l’Éditeur de code. Vous pouvez accéder à cette fonctionnalité à partir d’[Options, Éditeur de texte, C#, Mise en forme](/visualstudio/ide/reference/options-text-editor-csharp-formatting) dans les pages de propriétés de votre projet.  
   
  `/** */`  
  Séparateurs multilignes.  

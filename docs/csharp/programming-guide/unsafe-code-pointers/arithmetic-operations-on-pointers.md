@@ -1,5 +1,5 @@
 ---
-title: "Opérations arithmétiques sur les pointeurs (Guide de programmation C#) | Microsoft Docs"
+title: "Opérations arithmétiques sur les pointeurs (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fc675600526dcaa6afd488fdee57acdc577cf71f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d40d44f8be590a909ff059b0fa84efb598fcf263
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="arithmetic-operations-on-pointers-c-programming-guide"></a>Opérations arithmétiques sur les pointeurs (Guide de programmation C#)
@@ -69,3 +69,4 @@ Cette rubrique décrit l’utilisation des opérateurs arithmétiques `+` et **-
  [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
  [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)   
  [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
+

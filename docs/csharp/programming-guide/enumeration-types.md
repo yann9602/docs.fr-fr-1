@@ -1,5 +1,5 @@
 ---
-title: "Types énumération (Guide de programmation C#) | Microsoft Docs"
+title: "Types énumération (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: 2014047f17f766023ba4db4981aad6e6d4902381
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 677de7c6e0c0f72b600ce8ee5a8bad265725f6d3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Types énumération (Guide de programmation C#)
@@ -64,7 +64,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
   
 -   Vous spécifiez clairement pour le code client les valeurs qui sont valides pour la variable.  
   
--   Dans [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)], IntelliSense répertorie les valeurs définies.  
+-   Dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], IntelliSense répertorie les valeurs définies.  
   
  Quand vous ne spécifiez pas de valeurs pour les éléments dans la liste d’énumérateurs, les valeurs sont automatiquement incrémentées de 1. Dans l’exemple précédent, `Days.Sunday` a la valeur 0, `Days.Monday` a la valeur 1 et ainsi de suite. Quand vous créez un objet `Days`, il a la valeur par défaut `Days.Sunday` (0) si vous ne lui assignez pas une valeur explicitement. Quand vous créez un enum, sélectionnez la valeur par défaut la plus logique et affectez-lui une valeur égale à zéro. Ainsi, tous les enums auront cette valeur par défaut si aucune valeur ne leur est assignée explicitement lors de leur création.  
   
@@ -111,3 +111,4 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
  <xref:System.Enum?displayProperty=fullName>   
  [Guide de programmation C#](../../csharp/programming-guide/index.md)   
  [enum](../../csharp/language-reference/keywords/enum.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Manipulation de lecteurs, de répertoires et de fichiers (Visual Basic) | Microsoft Docs"
+title: "Manipulation de lecteurs, de répertoires et de fichiers (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -35,15 +35,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 4cbb2ead7075e8cda58ac4ec33d9fb6535d3284a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8cb9735b82d381dfb57211bf37ce29dfbb7374aa
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Manipulation de lecteurs, de répertoires et de fichiers (Visual Basic)
-Vous pouvez utiliser [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] pour manipuler des lecteurs, des dossiers et des fichiers avec l’objet `My.Computer.FileSystem`. Cet objet offre de meilleures performances et est plus facile à utiliser que les méthodes traditionnelles telles que les fonctions `FileOpen` et `Write` (celles-ci restent toutefois disponibles). Ces méthodes sont détaillées dans les sections suivantes.  
+Vous pouvez utiliser [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] pour manipuler des lecteurs, des dossiers et des fichiers avec l’objet `My.Computer.FileSystem`. Cet objet offre de meilleures performances et est plus facile à utiliser que les méthodes traditionnelles telles que les fonctions `FileOpen` et `Write` (celles-ci restent toutefois disponibles). Ces méthodes sont détaillées dans les sections suivantes.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Accès au fichier avec Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)  
@@ -53,7 +53,7 @@ Vous pouvez utiliser [!INCLUDE[vbprvb](../../../../csharp/programming-guide/conc
  Fournit une vue d’ensemble des concepts d’E/S de fichier dans le .NET Framework, à savoir les flux, le stockage isolé, les événements de fichier, les attributs de fichier et l’accès aux fichiers.  
   
  [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Montre comment utiliser le [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] pour manipuler des fichiers et des dossiers.  
+ Montre comment utiliser le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour manipuler des fichiers et des dossiers.  
   
  [Procédure pas à pas : manipulation de fichiers et de répertoires dans Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Montre comment utiliser l’objet `My.Computer.FileSystem` pour manipuler des fichiers et des dossiers.  
@@ -64,3 +64,4 @@ Vous pouvez utiliser [!INCLUDE[vbprvb](../../../../csharp/programming-guide/conc
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Fournit une documentation de référence pour l’objet `My.Computer.FileSystem` et ses membres.
+

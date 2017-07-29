@@ -1,5 +1,5 @@
 ---
-title: "base (référence C#) | Microsoft Docs"
+title: "base (référence C#)"
 description: "base, mot clé (C#)"
 keywords: "base (C#) ; base, mot clé (C#) ; base, mot clé (référence C#) ; base, mot clé (référence du langage C#)"
 ms.custom: 
@@ -34,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: adebe9f77cf1fe40a4aa8b00a2ef65c499d27ad3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c875ca834fc66e0bf6cd596f376773badca757e3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="base-c-reference"></a>base (référence C#)
@@ -74,3 +74,4 @@ Le mot clé `base` sert à accéder aux membres de la classe de base à partir d
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [this](../../../csharp/language-reference/keywords/this.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Déploiement d’applications C# | Microsoft Docs"
+title: "Déploiement d’applications C#"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,18 +31,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cc3aa401ae0f44fe7904f1d426ce0051c452078b
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fe9c4d38836821364bec3fea746676cd1df4ba8e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="deployment-of-c-applications"></a>Déploiement d’applications C#
 Après avoir terminé la build de votre application C#, vous devez la distribuer. C# étant un langage .NET, la distribution d’exécutables C# sur d’autres machines nécessite que le .NET Framework soit installé sur chaque machine d’exécution (avec les autres dépendances éventuelles de votre application). Vous avez plusieurs options possibles pour la distribution du .NET Framework. Pour obtenir une vue d’ensemble, consultez [Guide de déploiement du .NET Framework pour les développeurs](https://msdn.microsoft.com/library/ee942965).  
   
- Le déplacement d’applications complètes vers d’autres ordinateurs est généralement appelé « déploiement ». L’environnement de développement Microsoft fournit des mécanismes de déploiement. Pour plus d’informations, consultez [Déploiement d’applications et de composants](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components).  
+ Le déplacement d’applications complètes vers d’autres ordinateurs est généralement appelé « déploiement ». L’environnement de développement Microsoft fournit des mécanismes de déploiement. Pour plus d’informations, consultez [Déploiement d’applications et de composants](/visualstudio/deployment/deploying-applications-services-and-components).  
   
  Si vous effectuez principalement vos builds et distributions à partir de la ligne de commande, vous devrez peut-être envisager d’autres méthodes de déploiement et de redistribution des dépendances.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Génération à partir de la ligne de commande avec csc.exe](command-line-building-with-csc-exe.md)
+

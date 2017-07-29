@@ -1,5 +1,5 @@
 ---
-title: "+ Opérateur (référence C#) | Microsoft Docs"
+title: "+ , opérateur (Informations de référence sur C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3c6ef1acc69fed1c43f0a249287ca8819c8f091c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5455375148f1924c7fe1cdb10e7924abb83a1565
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="-operator-c-reference"></a>+, opérateur (référence C#)
@@ -61,3 +61,4 @@ L’opérateur `+` peut être utilisé comme opérateur unaire ou opérateur bin
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Opérateurs C#](../../../csharp/language-reference/operators/index.md)   
  [operator (référence C#)](../../../csharp/language-reference/keywords/operator.md)
+

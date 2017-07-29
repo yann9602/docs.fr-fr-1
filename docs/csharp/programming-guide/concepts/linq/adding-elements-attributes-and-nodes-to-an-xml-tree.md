@@ -1,5 +1,5 @@
 ---
-title: "Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (C#) | Microsoft Docs"
+title: "Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,30 +14,30 @@ ms.assetid: db911e4f-40aa-499a-9500-a9763bb6df56
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 858d5b2c5ed680a0e52e374b8ec98762d7fde043
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6894e0685d413297c01118df16d01f7d956ee333
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (C#)
 Vous pouvez ajouter du contenu (éléments, attributs, commentaires, instructions de traitement, texte et CData) à une arborescence XML existante.  
   
 ## <a name="methods-for-adding-content"></a>Méthodes pour ajouter du contenu  
- Les méthodes suivantes ajoutent du contenu enfant à un <xref:System.Xml.Linq.XElement> ou à un <xref:System.Xml.Linq.XDocument> :  
+ Les méthodes suivantes ajoutent du contenu enfant à un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument> :  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|Ajoute du contenu à la fin du contenu enfant de <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Ajoute du contenu au début du contenu enfant de <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|Ajoute du contenu à la fin du contenu enfant de l'objet <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Ajoute du contenu au début du contenu enfant de l'objet <xref:System.Xml.Linq.XContainer>.|  
   
- Les méthodes suivantes ajoutent du contenu en tant que nœuds frères d’un <xref:System.Xml.Linq.XNode>. En règle générale, vous ajoutez du contenu frère à un nœud <xref:System.Xml.Linq.XElement>, mais vous pouvez aussi ajouter du contenu frère valide à d’autres types de nœuds, tels que <xref:System.Xml.Linq.XText> ou <xref:System.Xml.Linq.XComment>.  
+ Les méthodes suivantes ajoutent du contenu en tant que nœuds frères d'un objet <xref:System.Xml.Linq.XNode>. Le nœud le plus courant auquel vous ajoutez du contenu frère est <xref:System.Xml.Linq.XElement>, bien que vous puissiez ajouter du contenu frère valide à d'autres types de nœuds tels que <xref:System.Xml.Linq.XText> ou <xref:System.Xml.Linq.XComment>.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Ajoute du contenu après <xref:System.Xml.Linq.XNode>.|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Ajoute du contenu avant <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Ajoute du contenu après l'objet <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Ajoute du contenu avant l'objet <xref:System.Xml.Linq.XNode>.|  
   
 ## <a name="example"></a>Exemple  
   
@@ -91,3 +91,4 @@ Console.WriteLine(xmlTree);
   
 ## <a name="see-also"></a>Voir aussi  
  [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

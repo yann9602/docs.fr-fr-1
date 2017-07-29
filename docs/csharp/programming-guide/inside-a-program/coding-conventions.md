@@ -1,5 +1,5 @@
 ---
-title: "Conventions de codage C# (Guide de programmation C#) | Microsoft Docs"
+title: Conventions de codage C# (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 85e113f66998157a69be3f1d9065a5c4c1117773
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9f32fdc0eb1954cdac30c39e05c74d43301d850c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
@@ -60,7 +60,7 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
 ## <a name="layout-conventions"></a>Conventions de disposition  
  Une bonne disposition utilise la mise en forme pour souligner la structure de votre code et en faciliter la lecture. Les exemples Microsoft et autres se conforment aux conventions suivantes :  
   
--   Utilisez les paramètres par défaut de l'éditeur de code (retrait intelligent, retrait de quatre caractères, tabulations enregistrées en tant qu'espaces). Pour plus d’informations, consultez [Options, Éditeur de texte, C#, Mise en forme](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-csharp-formatting).  
+-   Utilisez les paramètres par défaut de l'éditeur de code (retrait intelligent, retrait de quatre caractères, tabulations enregistrées en tant qu'espaces). Pour plus d’informations, consultez [Options, Éditeur de texte, C#, Mise en forme](/visualstudio/ide/reference/options-text-editor-csharp-formatting).  
   
 -   Écrivez une seule instruction par ligne.  
   
@@ -221,3 +221,4 @@ La [spécification du langage C#](http://go.microsoft.com/fwlink/?LinkId=199552
 ## <a name="see-also"></a>Voir aussi  
  [Conventions de codage Visual Basic](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)   
  [Instructions de codage sécurisé](../../../standard/security/secure-coding-guidelines.md)
+

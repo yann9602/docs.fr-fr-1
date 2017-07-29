@@ -1,5 +1,5 @@
 ---
-title: "Vue d’ensemble de la classe XAttribute (C#) | Microsoft Docs"
+title: "Vue d’ensemble de la classe XAttribute (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e1b461158fed20ea5824d89ec455abb667d3fef2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fdac066fbd467768cedcf93f6258cbde0b6dd847
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="xattribute-class-overview-c"></a>Vue d’ensemble de la classe XAttribute (C#)
 Les attributs sont des paires nom/valeur associées à un élément. La classe <xref:System.Xml.Linq.XAttribute> représente des attributs XML.  
   
 ## <a name="overview"></a>Vue d'ensemble  
- L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] pour une collection d’attributs a une apparence très semblable à une expression de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] pour une collection d’éléments.  
+ L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’attributs a une apparence très semblable à une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’éléments.  
   
  L'ordre dans lequel les attributs ont été ajoutés à un élément est conservé. Autrement dit, lorsque vous itérez au sein des attributs, vous les voyez dans l'ordre dans lequel ils ont été ajoutés.  
   
@@ -38,7 +39,7 @@ Les attributs sont des paires nom/valeur associées à un élément. La classe <
   
 |Constructeur|Description|  
 |-----------------|-----------------|  
-|`XAttribute(XName name, object content)`|Crée un objet <xref:System.Xml.Linq.XAttribute>. L'argument `name` spécifie le nom de l'attribut ; l'argument `content` spécifie le contenu de l'attribut.|  
+|`XAttribute(XName name, object content)`|Elle crée un objet <xref:System.Xml.Linq.XAttribute>. L'argument `name` spécifie le nom de l'attribut ; l'argument `content` spécifie le contenu de l'attribut.|  
   
 ### <a name="creating-an-element-with-an-attribute"></a>Création d'un élément avec un attribut  
  Le code suivant illustre la tâche courante de création d’un élément qui contient un attribut :  
@@ -57,7 +58,7 @@ Console.WriteLine(phone);
 ```  
   
 ### <a name="functional-construction-of-attributes"></a>Construction fonctionnelle d'attributs  
- Vous pouvez construire des objets <xref:System.Xml.Linq.XAttribute> en ligne avec la construction d’objets <xref:System.Xml.Linq.XElement> de la manière suivante :  
+ Vous pouvez construire des objets <xref:System.Xml.Linq.XAttribute> en ligne avec la construction d'objets <xref:System.Xml.Linq.XElement> de la manière suivante :  
   
 ```csharp  
 XElement c = new XElement("Customers",  
@@ -91,9 +92,10 @@ Console.WriteLine(c);
 ```  
   
 ### <a name="attributes-are-not-nodes"></a>Les attributs ne sont pas des nœuds  
- Il existe certaines différences entre les attributs et les éléments. Les objets <xref:System.Xml.Linq.XAttribute> ne sont pas des nœuds dans l’arborescence XML. Il s'agit de paires nom/valeur associées à un élément XML. Par opposition au modèle DOM (Document Objet Model), cela reflète plus étroitement la structure du langage XML. Bien que les objets <xref:System.Xml.Linq.XAttribute> ne soient pas réellement des nœuds de l’arborescence XML, l’utilisation d’objets <xref:System.Xml.Linq.XAttribute> s’apparente à l’utilisation d’objets <xref:System.Xml.Linq.XElement>.  
+ Il existe certaines différences entre les attributs et les éléments. Les objets <xref:System.Xml.Linq.XAttribute> ne sont pas des nœuds dans l'arborescence XML. Il s'agit de paires nom/valeur associées à un élément XML. Par opposition au modèle DOM (Document Objet Model), cela reflète plus étroitement la structure du langage XML. Bien que les objets <xref:System.Xml.Linq.XAttribute> ne soient pas réellement des nœuds de l'arborescence XML, l'utilisation d'objets <xref:System.Xml.Linq.XAttribute> s'apparente à l'utilisation d'objets <xref:System.Xml.Linq.XElement>.  
   
  Cette distinction ne revêt une importance que pour les développeurs qui écrivent du code qui interagit avec des arborescences XML au niveau nœud. De nombreux développeurs n'auront pas à se sourcier de cette distinction.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Vue d’ensemble de la programmation LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Ressources supplémentaires pour les programmeurs Visual Basic | Microsoft Docs"
+title: "Ressources supplémentaires pour les programmeurs Visual Basic"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -36,11 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 692e0a53391556c6327e493d3d45e811db4cfdb7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1ebc788f629e011dff88c1db119ce25a3829e009
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="additional-resources-for-visual-basic-programmers"></a>Ressources supplémentaires pour les programmeurs Visual Basic
@@ -70,11 +70,11 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
   
 |Terme|Définition|  
 |----------|----------------|  
-|[Langage Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145963)|Traite du compilateur et de la syntaxe du langage [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].|  
-|[Interopérabilité et mise à niveau Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145966)|Traite de la mise à niveau vers [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] et de l'utilisation des fonctionnalités d'interopérabilité.|  
-|[IDE Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145971)|Traite de l'utilisation de l'environnement de développement intégré de [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)].|  
+|[Langage Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145963)|Traite du compilateur et de la syntaxe du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].|  
+|[Interopérabilité et mise à niveau Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145966)|Traite de la mise à niveau vers [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] et de l'utilisation des fonctionnalités d'interopérabilité.|  
+|[IDE Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145971)|Traite de l'utilisation de l'environnement de développement intégré de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].|  
 |[Visual Basic Power Packs](http://social.msdn.microsoft.com/Forums/vbpowerpacks/threads)|Traite des compléments, contrôles, composants, exemples et outils qui font partie des Visual Basic Power Packs.|  
-|[Généralités Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145973)|Traite des aspects en rapport avec [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] qui ne sont pas couverts par les autres forums.|  
+|[Généralités Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145973)|Traite des aspects en rapport avec [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] qui ne sont pas couverts par les autres forums.|  
   
 ### <a name="chats-and-discussion-groups"></a>Conversations et groupes de discussion  
   
@@ -103,8 +103,9 @@ Les sites web suivants fournissent des instructions et peuvent vous aider à tro
 |Terme|Définition|  
 |----------|----------------|  
 |[Zone DevX Visual Basic](http://go.microsoft.com/fwlink/?LinkId=145978)|Fournit des articles techniques détaillés destinés aux développeurs Visual Basic.|  
-|[vb.dotnet.technical](http://go.microsoft.com/fwlink/?LinkId=145986)|Fournit un forum pour la discussion des nouvelles fonctionnalités de [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] sur les forums DevX.|  
+|[vb.dotnet.technical](http://go.microsoft.com/fwlink/?LinkId=145986)|Fournit un forum pour la discussion des nouvelles fonctionnalités de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] sur les forums DevX.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Bien démarrer](../../visual-basic/getting-started/index.md)   
- [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+ [Nous contacter](/visualstudio/ide/talk-to-us)
+

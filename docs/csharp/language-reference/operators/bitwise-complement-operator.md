@@ -1,5 +1,5 @@
 ---
-title: "~, opérateur (référence C#) | Microsoft Docs"
+title: "~, opérateur (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: c7245700f78ff52a98c499d895c7eb2f95efe5b6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ffbfc379b7c021ccd8fbed9b796aa9fda6618b55
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="-operator-c-reference"></a>~, opérateur (référence C#)
@@ -56,3 +56,4 @@ L’opérateur `~` effectue une opération de complément de bits sur son opéra
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Opérateurs C#](../../../csharp/language-reference/operators/index.md)   
  [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+

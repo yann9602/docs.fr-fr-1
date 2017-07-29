@@ -1,5 +1,5 @@
 ---
-title: "Bien démarrer avec LINQ en C# | Microsoft Docs"
+title: "Mise en route de LINQ en C#"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,13 +34,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 88eff7c3909a31939f5789fd19bc4f1d07d013b7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 02a76889912e441cc0d1bcf27cb5e9421ef852ad
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="getting-started-with-linq-in-c"></a>Bien démarrer avec LINQ en C##
+# <a name="getting-started-with-linq-in-c"></a>Mise en route de LINQ en C#
 Cette section contient des informations de base qui vous aideront à comprendre le reste de la documentation LINQ et les exemples fournis.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -83,3 +84,4 @@ Cette section contient des informations de base qui vous aideront à comprendre 
   
  [Bien démarrer avec LINQ en Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
  Fournit des liens vers des rubriques concernant l’utilisation de LINQ avec Visual Basic.
+

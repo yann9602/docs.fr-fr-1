@@ -1,5 +1,5 @@
 ---
-title: "do (référence C#) | Microsoft Docs"
+title: "do (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95655432bde750de54996daaa2e9457a420d7c80
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58a9361c440bc1b17c5ab929ff7b45ba71ce50a4
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="do-c-reference"></a>do (référence C#)
@@ -56,7 +56,8 @@ L’instruction `do` exécute une instruction ou un bloc d’instructions de man
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [do-while, instruction (C++)](https://docs.microsoft.com/cpp/cpp/do-while-statement-cpp)   
+ [do-while, instruction (C++)](/cpp/cpp/do-while-statement-cpp)   
  [Instructions d’itération](../../../csharp/language-reference/keywords/iteration-statements.md)
+
