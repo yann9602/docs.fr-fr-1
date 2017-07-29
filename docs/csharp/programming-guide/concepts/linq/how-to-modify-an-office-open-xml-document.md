@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour modifier un document Office Open XML (C#) | Microsoft Docs
+title: Guide pratique pour modifier un document Office Open XML (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 73cf5130ee4d08398251764bbe4a953f2fde917c
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 21a82e6ff71c9f8c4882eeab266275627e2c2cd0
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-modify-an-office-open-xml-document-c"></a>Guide pratique pour modifier un document Office Open XML (C#)
@@ -29,7 +29,7 @@ Cette rubrique présente un exemple qui ouvre un document Office Open XML, le mo
 ## <a name="example"></a>Exemple  
  Cet exemple recherche le premier élément de paragraphe dans le document. Il récupère le texte du paragraphe, puis supprime toutes les exécutions de texte dans le paragraphe. Il crée une nouvelle exécution de texte composée du texte du premier paragraphe qui a été converti en majuscules. Il sérialise ensuite le code XML modifié dans le package Open XML et le ferme.  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l’espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -161,3 +161,4 @@ New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<
   
 ## <a name="see-also"></a>Voir aussi  
  [Techniques de requêtes avancées (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+

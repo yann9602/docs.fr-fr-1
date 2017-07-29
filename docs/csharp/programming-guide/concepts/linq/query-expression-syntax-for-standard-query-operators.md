@@ -1,5 +1,5 @@
 ---
-title: "Syntaxe des expressions de requête pour les opérateurs de requête standard (C#) | Microsoft Docs"
+title: "Syntaxe des expressions de requête pour les opérateurs de requête standard (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 115f97eec99d5f22a659532ccf4ed7b20a089014
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 30e994329234b8bd455f739694e50121bac63d5d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>Syntaxe des expressions de requête pour les opérateurs de requête standard (C#)
@@ -50,3 +51,4 @@ Certains des opérateurs de requête standard les plus courants ont une syntaxe 
  <xref:System.Linq.Queryable>   
  [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
  [Classification des opérateurs de requête standard en fonction de leur mode d’exécution](../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "new, contrainte (référence C#) | Microsoft Docs"
+title: "new, contrainte (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 10f3693678f5a3eeaa335739bb383e204c80b375
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 762941794184605f90443ed8f36c88ecfa50aa84
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="new-constraint-c-reference"></a>new, contrainte (référence C#)
@@ -55,7 +55,8 @@ La contrainte `new` spécifie que tout argument de type dans une déclaration de
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Collections.Generic>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [Génériques](../../../csharp/programming-guide/generics/index.md)
+

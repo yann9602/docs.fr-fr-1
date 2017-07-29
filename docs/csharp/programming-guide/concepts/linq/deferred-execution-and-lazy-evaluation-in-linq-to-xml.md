@@ -1,5 +1,5 @@
 ---
-title: "Exécution et évaluation différées dans LINQ to XML (C#) | Microsoft Docs"
+title: "Exécution et évaluation différées dans LINQ to XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1f9d60242c75b996d25997b2adc83ccafcc538de
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 10ecebc2563df5a12b71a743727b1be21b19b671
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Exécution et évaluation différées dans LINQ to XML (C#)
@@ -27,16 +27,16 @@ Les opérations de requête et d'axe sont souvent implémentées pour utiliser l
 ## <a name="deferred-execution"></a>Exécution différée  
  Le terme "exécution différée" signifie que l’évaluation d’une expression est retardée jusqu’à ce que sa valeur *réalisée* soit réellement nécessaire. L'exécution différée peut améliorer sensiblement les performances lorsque vous devez manipuler de grandes collectes de données, en particulier dans les programmes qui contiennent une série de manipulations ou de requêtes chaînées. Dans le meilleur cas, l'exécution différée autorise une seule itération dans la collection source.  
   
- Les technologies LINQ utilisent beaucoup l’exécution différée dans les membres des classes <xref:System.Linq?displayProperty=fullName> principales et dans les méthodes d’extension dans les différents espaces de noms LINQ, telles que <xref:System.Xml.Linq.Extensions?displayProperty=fullName>.  
+ Les technologies LINQ utilisent beaucoup l'exécution différée dans les membres des classes <xref:System.Linq?displayProperty=fullName> principales et dans les méthodes d'extension dans les différents espaces de noms LINQ, tels que <xref:System.Xml.Linq.Extensions?displayProperty=fullName>.  
   
- L’exécution différée est prise en charge directement dans le langage C# par le mot clé [yield](../../../../csharp/language-reference/keywords/yield.md) (sous la forme de l’instruction `yield-return`) quand elle est utilisée dans un bloc itérateur. Un tel itérateur doit retourner une collection de type <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601> (ou un type dérivé).  
+ L’exécution différée est prise en charge directement dans le langage C# par le mot clé [yield](../../../../csharp/language-reference/keywords/yield.md) (sous la forme de l’instruction `yield-return`) quand elle est utilisée dans un bloc itérateur. Un tel itérateur doit renvoyer une collection de type <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601> (ou un type dérivé).  
   
 ## <a name="eager-vs-lazy-evaluation"></a>Évaluation stricte et évaluation différée  
  Lorsque vous écrivez une méthode qui implémente l'exécution différée, vous devez également décider s'il faut implémenter la méthode à l'aide de l'évaluation différée ou de l'évaluation stricte.  
   
 -   Avec l’*évaluation différée*, un seul élément de la collection source est traité pendant chaque appel à l’itérateur. Il s'agit du mode d'implémentation par défaut des itérateurs.  
   
--   Avec l’*évaluation stricte*, le premier appel à l’itérateur entraîne le traitement de l’ensemble de la collection. Une copie temporaire de la collection source peut également être nécessaire. Par exemple, la méthode <xref:System.Linq.Enumerable.OrderBy%2A> doit trier l’ensemble de la collection avant de retourner le premier élément.  
+-   Avec l’*évaluation stricte*, le premier appel à l’itérateur entraîne le traitement de l’ensemble de la collection. Une copie temporaire de la collection source peut également être nécessaire. Par exemple, la méthode <xref:System.Linq.Enumerable.OrderBy%2A> doit trier l'ensemble de la collection avant de renvoyer le premier élément.  
   
  L'évaluation différée procure en général de meilleures performances car elle répartit le traitement de surcharge de manière égale durant l'évaluation de la collection et limite l'utilisation des données temporaires. Bien entendu, pour certaines opérations il est impossible d'éviter la matérialisation de résultats intermédiaires.  
   
@@ -50,3 +50,4 @@ Les opérations de requête et d'axe sont souvent implémentées pour utiliser l
  [Concepts et terminologie (transformation fonctionnelle) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)   
  [Opérations d’agrégation (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)   
  [yield](../../../../csharp/language-reference/keywords/yield.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic) | Microsoft Docs"
+title: "Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -30,17 +30,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: ca1ecff264734c16369c9a7d28fbb388bb2f1ccc
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a87d2e6f87b92b5f66706095d3f485c080008e0f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)
 Les tableaux suivants répertorient les classes couramment utilisées pour les E/S de fichier du .NET Framework. Ces classes sont réparties dans les catégories suivantes : classes d’E/S de fichier, classes utilisées pour créer des flux et classes utilisées pour lire et écrire dans les flux.  
   
- Pour accéder à la documentation du [!INCLUDE[dnprdnlong](../../../../csharp/programming-guide/events/includes/dnprdnlong_md.md)] et obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliothèque de classes](https://msdn.microsoft.com/library/hfa3fa08).  
+ Pour accéder à la documentation du [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] et obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliothèque de classes](https://msdn.microsoft.com/library/hfa3fa08).  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>Classes d’E/S de base pour les fichiers, les lecteurs et les répertoires  
  Le tableau suivant répertorie et décrit les principales classes utilisées pour les E/S de fichier.  
@@ -87,3 +87,4 @@ Les tableaux suivants répertorient les classes couramment utilisées pour les E
  [E/S de fichier et de flux](https://msdn.microsoft.com/library/k3352a4t)   
  [E/S sur fichier asynchrones](https://msdn.microsoft.com/library/kztecsys)   
  [Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)
+

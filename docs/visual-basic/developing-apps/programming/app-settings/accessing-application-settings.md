@@ -1,5 +1,5 @@
 ---
-title: "Accès aux paramètres d’application (Visual Basic)| Microsoft Docs"
+title: "Accès aux paramètres d’application (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 3864089caaf24eb61a3db9a97c674dc42e40a3cd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6ac0be10bbae9071a3ac128d1456d560836d0607
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessing-application-settings-visual-basic"></a>Accès aux paramètres d’application (Visual Basic)
@@ -57,5 +57,6 @@ Cette section présente des rubriques qui décrivent l’objet `My.Settings` et 
 |Déterminer les valeurs des paramètres utilisateur|[Guide pratique pour lire des paramètres d’application dans Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Gestion des paramètres d’application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet)   
+ [Gestion des paramètres d’application (.NET)](/visualstudio/ide/managing-application-settings-dotnet)   
  [My.Settings (objet)](../../../../visual-basic/language-reference/objects/my-settings-object.md)
+

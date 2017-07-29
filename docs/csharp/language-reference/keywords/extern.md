@@ -1,5 +1,5 @@
 ---
-title: "extern (référence C#) | Microsoft Docs"
+title: "extern (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 61cde8c8f6b3d255be5f6040141542e3e8d1e8c7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e499ade5ec8a9339b0d425c59809cf7c177466fb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="extern-c-reference"></a>extern (référence C#)
@@ -112,7 +112,8 @@ SampleMethod() returns 50.
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=fullName>   
- [Référence C#](../../../csharp/language-reference/index.md)   
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
+

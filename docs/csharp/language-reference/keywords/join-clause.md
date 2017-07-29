@@ -1,5 +1,5 @@
 ---
-title: "join, clause (référence C#) | Microsoft Docs"
+title: "join, clause (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 26027418b70d211dcadf6ace58b24927d94e427a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3368ba14101eda38ed8e3ee2bdc81bcab74a9b82
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="join-clause-c-reference"></a>join, clause (référence C#)
@@ -74,7 +74,7 @@ La clause `join` est utile pour associer des éléments de différentes séquenc
  Pour plus d’informations, consultez [Guide pratique pour effectuer des jointures groupées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md).  
   
 ## <a name="left-outer-join"></a>Jointure externe gauche  
- Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure externe gauche dans [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)], utilisez la méthode `DefaultIfEmpty` en combinaison avec une jointure groupée pour spécifier un élément du côté droit par défaut à créer si un élément de gauche n’a pas de correspondance. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :  
+ Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure externe gauche dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], utilisez la méthode `DefaultIfEmpty` en combinaison avec une jointure groupée pour spécifier un élément du côté droit par défaut à créer si un élément de gauche n’a pas de correspondance. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :  
   
  [!code-cs[cscsrefQueryKeywords#27](../../../csharp/language-reference/keywords/codesnippet/CSharp/join-clause_4.cs)]  
   
@@ -87,9 +87,9 @@ La clause `join` est utile pour associer des éléments de différentes séquenc
  Vous pouvez effectuer des non-équijointures, des jointures croisées et d’autres opérations de jointure personnalisées en utilisant plusieurs clauses `from` pour introduire indépendamment de nouvelles séquences dans une requête. Pour plus d’informations, consultez [Guide pratique pour effectuer des opérations de jointure personnalisées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md).  
   
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>Jointures sur des collections d’objets et sur des tables relationnelles  
- Dans une expression de requête [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)], les opérations de jointure sont effectuées sur des collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)], les clauses `join` explicites sont nécessaires seulement quand deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.  
+ Dans une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], les opérations de jointure sont effectuées sur des collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], les clauses `join` explicites sont nécessaires seulement quand deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.  
   
- Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)], consultez [Procédure : mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
+ Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], consultez [Procédure : mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
   
 ## <a name="composite-keys"></a>Clés composites  
  Vous pouvez tester l’égalité de plusieurs valeurs en utilisant une clé composite. Pour plus d’informations, consultez [Guide pratique pour effectuer des opérations de jointure à l’aide de clés composites](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md). Vous pouvez aussi utiliser des clés composites dans une clause `group`.  
@@ -113,3 +113,4 @@ La clause `join` est utile pour associer des éléments de différentes séquenc
  [Guide pratique pour classer les résultats d’une clause Join](../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
  [Guide pratique pour effectuer des opérations de jointure à l’aide de clés composites](../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
  [Guide pratique pour installer des exemples de bases de données](http://msdn.microsoft.com/library/ed1291f6-604c-4972-ae22-0345c6dea12e)
+

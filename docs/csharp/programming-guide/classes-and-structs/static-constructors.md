@@ -1,5 +1,5 @@
 ---
-title: "Constructeurs statiques (Guide de programmation C#) | Microsoft Docs"
+title: Constructeurs statiques (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 728c3170cd14db4cbbd747ec8c7bbf5341681ade
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 73df76c61f393bf5fe09af66935acfbac4b5663f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="static-constructors-c-programming-guide"></a>Constructeurs statiques (Guide de programmation C#)
@@ -67,3 +67,4 @@ Un constructeur statique est utilisé pour initialiser des données [statiques](
  [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
  [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
  [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+

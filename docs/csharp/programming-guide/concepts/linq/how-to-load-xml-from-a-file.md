@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour charger du code XML à partir d’un fichier (C#) | Microsoft Docs"
+title: "Guide pratique pour charger du code XML à partir d’un fichier (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3d93bcde05cf69db3786385cb674bfc32a1e8708
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 683c87608ecc9dea71c55a4b3c426ad3fd9f36fe
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-load-xml-from-a-file-c"></a>Guide pratique pour charger du code XML à partir d’un fichier (C#)
-Cette rubrique montre comment charger du code XML à partir d’un URI à l’aide de la méthode <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>.  
+Cette rubrique montre comment charger des données XML à partir d'un URI en utilisant la méthode <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant montre comment charger un document XML à partir d'un fichier. L’exemple suivant charge books.xml et affiche l’arborescence XML sur la console.  
@@ -66,3 +67,4 @@ Console.WriteLine(booksFromFile);
   
 ## <a name="see-also"></a>Voir aussi  
  [Analyse de code XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
+

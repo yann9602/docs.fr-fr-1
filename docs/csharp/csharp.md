@@ -1,5 +1,5 @@
 ---
-title: C# | Microsoft Docs
+title: C#
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d8470043d266275cd70d48299be96f1ee6f50682
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f9a46179f25c166923f702b745e874406adfdeac
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c"></a>C#
@@ -44,10 +45,10 @@ C# est un langage de programmation conçu pour la création d'une large gamme d'
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Bien démarrer avec C#](../csharp/getting-started/getting-started-with-csharp.md)  
- Présente les fonctionnalités de C# aux programmeurs qui ne connaissent pas encore le langage [!INCLUDE[vsprvs](../csharp/includes/vsprvs_md.md)], et indique comment chercher de l’aide sur [!INCLUDE[vsprvs](../csharp/includes/vsprvs_md.md)].  
+ Présente les fonctionnalités de C# aux programmeurs qui ne connaissent pas encore le langage [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], et indique comment chercher de l’aide sur [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
- [Utilisation de l’environnement de développement Visual Studio pour C#](https://docs.microsoft.com/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
- Introduit l'environnement de développement [!INCLUDE[csprcs](../csharp/includes/csprcs_md.md)].  
+ [Utilisation de l’environnement de développement Visual Studio pour C#](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+ Introduit l'environnement de développement [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
  [Guide de programmation C#](../csharp/programming-guide/index.md)  
  Fournit des informations et des exemples pratiques sur l'utilisation des constructions de langage C#.  
@@ -62,9 +63,10 @@ C# est un langage de programmation conçu pour la création d'une large gamme d'
  Fournit des liens vers des procédures de programmation pas-à-pas qui utilisent C# avec une brève description de chaque procédure pas-à-pas.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Spécification du langage C#](../csharp/language-reference/language-specification.md)  
+ [Spécification du langage C#](../csharp/language-reference/language-specification/index.md)  
  Lien avec la dernière version des spécifications C# au format Microsoft Word.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Bien démarrer avec Visual Basic et Visual C#](https://docs.microsoft.com/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
+ [Bien démarrer avec Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)   
  [Développement .NET](https://msdn.microsoft.com/library/ff361664)
+

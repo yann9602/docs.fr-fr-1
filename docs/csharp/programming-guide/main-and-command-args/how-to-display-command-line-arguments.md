@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour afficher les arguments de ligne de commande (Guide de programmation C#) | Microsoft Docs
+title: Guide pratique pour afficher les arguments de ligne de commande (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e46860ecc2f5062abb440a764443ecee19c5153d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cf8a57cce252b3596f0a19c9df643427615467c6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Guide pratique pour afficher les arguments de ligne de commande (Guide de programmation C#)
@@ -43,7 +44,7 @@ Les arguments fournis à un fichier exécutable sur la ligne de commande sont ac
 |**executable.exe "un deux" trois**|"un deux"<br /><br /> "trois"|  
   
 > [!NOTE]
->  Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projets](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer).  
+>  Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projets](/visualstudio/ide/reference/debug-page-project-designer).  
   
 ## <a name="example"></a>Exemple  
  Cet exemple affiche les arguments de ligne de commande passés à une application de ligne de commande. La sortie présentée concerne la première entrée du tableau ci-dessus.  
@@ -56,3 +57,4 @@ Les arguments fournis à un fichier exécutable sur la ligne de commande sont ac
  [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)   
  [Guide pratique pour accéder à des arguments de ligne de commande à l’aide de foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)   
  [Valeurs de retour Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
+

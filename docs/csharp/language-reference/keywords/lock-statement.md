@@ -1,5 +1,5 @@
 ---
-title: "lock, instruction (Informations de référence sur C#) | Microsoft Docs"
+title: "lock, instruction (Informations de référence sur C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,17 +30,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: ae705e7df4515cd0c7481f64fa63b2e844a7d564
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 00dcbb9feec11587265bf61667d91c2c1598065b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="lock-statement-c-reference"></a>lock, instruction (Informations de référence sur C#)
 Le mot clé `lock` marque un bloc d’instructions comme étant une section critique en obtenant le verrou d’exclusion mutuelle pour un objet donné, en exécutant une instruction, puis en libérant le verrou. L’exemple suivant inclut une instruction `lock`.  
   
-```  
+```csharp  
 class Account  
 {  
     decimal balance;  
@@ -92,7 +92,7 @@ class Account
  [!code-cs[csrefKeywordsFixedLock#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/lock-statement_2.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.MethodImplAttributes>   
@@ -103,7 +103,7 @@ class Account
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés d’instructions](../../../csharp/language-reference/keywords/statement-keywords.md)   
  @System.Threading.Monitor   
- [Interlocked Operations](../../../standard/threading/interlocked-operations.md)   
+ [Opérations verrouillées](../../../standard/threading/interlocked-operations.md)   
  [AutoResetEvent](../../../standard/threading/autoresetevent.md)   
  [Synchronisation des threads](http://msdn.microsoft.com/library/413e1f28-a2c5-4eec-8338-aa43e7982ff4)
 

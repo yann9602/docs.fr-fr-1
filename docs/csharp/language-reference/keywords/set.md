@@ -1,5 +1,5 @@
 ---
-title: "set (référence C#) | Microsoft Docs"
+title: "set (référence C#)"
 ms.date: 2017-03-10
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7111483ac2c939830560e8aad61078da5190684a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: de10e3978d768aab34efa675fe00cfd059ff55df
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="set-c-reference"></a>set (référence C#)
@@ -57,6 +57,7 @@ Pour les cas simples dans lesquels les accesseurs `get` et `set` d’une propri�
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)
+

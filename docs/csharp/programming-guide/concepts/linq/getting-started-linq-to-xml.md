@@ -1,5 +1,5 @@
 ---
-title: "Bien démarrer avec LINQ to XML | Microsoft Docs"
+title: Mise en route (LINQ to XML)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,13 +19,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6ecb3ecb8c997390c4098e506a6dcd3d07758aa1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c98f279fe1ef04a70f48e1a6f3dcdb5cb56544ce
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="getting-started-linq-to-xml"></a>Bien démarrer avec LINQ to XML
+# <a name="getting-started-linq-to-xml"></a>Mise en route (LINQ to XML)
 Les rubriques suivantes présentent LINQ to XML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -39,3 +40,4 @@ Les rubriques suivantes présentent LINQ to XML.
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur LINQ to XML](../../../../csharp/programming-guide/concepts/linq/reference-linq-to-xml.md)   
  [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)
+

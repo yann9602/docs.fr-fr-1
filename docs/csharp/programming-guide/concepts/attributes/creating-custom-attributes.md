@@ -1,5 +1,5 @@
 ---
-title: "Création d’attributs personnalisés (C#) | Microsoft Docs"
+title: "Création d’attributs personnalisés (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 346a5311a100e75adacea6100d6e5f1f893812ff
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ae5084501a2dd60ae23c93bbdb52dcd44f3f3f7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-custom-attributes-c"></a>Création d’attributs personnalisés (C#)
@@ -85,9 +85,10 @@ class SampleClass
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
  [Écriture des attributs personnalisés](../../../../standard/attributes/writing-custom-attributes.md)   
  [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
  [Attributs (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)   
  [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)   
  [AttributeUsage (C#)](../../../../csharp/programming-guide/concepts/attributes/attributeusage.md)
+

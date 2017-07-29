@@ -1,5 +1,5 @@
 ---
-title: "Procédures pas à pas C# | Microsoft Docs"
+title: "procédures pas à pas C#"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,11 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0832ee88bba58579eea001335be9cb8c2130834d
-ms.openlocfilehash: 1008d0ff78ee7c2876b49564dd03a767a63e78f3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e49290852ccdc83ab7879366102602f0ca3f99b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/28/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-walkthroughs"></a>procédures pas à pas C#
@@ -47,7 +47,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Explique comment créer une solution asynchrone avec [async](../csharp/language-reference/keywords/async.md) et [await](../csharp/language-reference/keywords/await.md).  
   
  [Création d’un composant Windows Runtime en C# ou Visual Basic et appel du composant depuis JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx)  
- Montre comment créer un type [!INCLUDE[wrt](../csharp/includes/wrt_md.md)], l'empaqueter dans un composant [!INCLUDE[wrt](../csharp/includes/wrt_md.md)] et l'appeler à partir d'une application [!INCLUDE[win8_appname_long](../csharp/includes/win8_appname_long_md.md)] conçue pour Windows en JavaScript.  
+ Montre comment créer un type [!INCLUDE[wrt](~/includes/wrt-md.md)], l'empaqueter dans un composant [!INCLUDE[wrt](~/includes/wrt-md.md)] et l'appeler à partir d'une application [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] conçue pour Windows en JavaScript.  
   
  [Programmation Office (C# et Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
  Montre comment créer un classeur Excel et un document Word à l'aide de C# et de Visual Basic.  
@@ -71,10 +71,10 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Présente quelques tâches couramment exécutées, notamment l'ajout ou la suppression d'un onglet sur un `TabControl`, l'ancrage d'un contrôle à son parent et la modification de l'orientation d'un contrôle `SplitContainer`.  
   
  [Écriture de requêtes en C# (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- Illustre les fonctionnalités du langage C# utilisées pour écrire les expressions de requête [!INCLUDE[vbteclinq](../csharp/includes/vbteclinq_md.md)].  
+ Illustre les fonctionnalités du langage C# utilisées pour écrire les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
  [Manipulation de données (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386927.aspx)  
- Décrit un scénario [!INCLUDE[vbtecdlinq](../csharp/includes/vbtecdlinq_md.md)] pour l'ajout, la modification et la suppression des données dans une base de données.  
+ Décrit un scénario [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour l'ajout, la modification et la suppression des données dans une base de données.  
   
  [Modèle objet et requête simples (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386940.aspx)  
  Montre comment créer une classe d'entité et une requête simple pour filtrer la classe d'entité.  
@@ -83,15 +83,16 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Montre comment utiliser LINQ to SQL pour accéder aux données en exécutant uniquement des procédures stockées.  
   
  [Interrogation sur les relations (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386951.aspx)  
- Montre comment utiliser des associations [!INCLUDE[vbtecdlinq](../csharp/includes/vbtecdlinq_md.md)] pour représenter les relations de clé étrangère dans une base de données.  
+ Montre comment utiliser des associations [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour représenter les relations de clé étrangère dans une base de données.  
 
- [Écriture d’un visualiseur en C#](https://docs.microsoft.com/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
+ [Écriture d’un visualiseur en C#](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
  Montre comment écrire un visualiseur simple à l'aide de C#.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Exemples et procédures pas à pas relatifs au déploiement](https://docs.microsoft.com/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
+ [Exemples et procédures pas à pas relatifs au déploiement](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
  Fournit des exemples pas à pas de scénarios de déploiement courants.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../csharp/programming-guide/index.md)   
- [Exemples Visual Studio](https://docs.microsoft.com/visualstudio/ide/visual-studio-samples)
+ [Exemples Visual Studio](/visualstudio/ide/visual-studio-samples)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour déterminer si un fichier est un assembly (C#) | Microsoft Docs"
+title: "Guide pratique pour déterminer si un fichier est un assembly (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 9565d0af978f1a1bc3744db127ac75911b519ab2
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ee402e28374040ab22173788dce421345b2ef3b5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Guide pratique pour déterminer si un fichier est un assembly (C#)
@@ -85,5 +85,6 @@ class TestAssembly
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.AssemblyName>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
  [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
+

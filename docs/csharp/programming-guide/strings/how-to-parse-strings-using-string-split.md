@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour analyser des chaînes à l’aide de String.Split (Guide de programmation C#) | Microsoft Docs"
+title: "Comment : analyser des chaînes à l’aide de String.Split (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,15 +31,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 1f5f15c305619c538aa276396c31296f42c8f40a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c0ef96f1cb074c32208457c192d53c69d95a102d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-parse-strings-using-stringsplit-c-programming-guide"></a>Guide pratique pour analyser des chaînes à l’aide de String.Split (Guide de programmation C#)
-L’exemple de code suivant montre comment analyser une chaîne à l’aide de la méthode <xref:System.String.Split%2A?displayProperty=fullName>. <xref:System.String.Split%2A> accepte comme entrée un tableau qui indique les caractères séparant les sous-chaînes intéressantes de la chaîne cible.  La fonction retourne un tableau des sous-chaînes.  
+# <a name="how-to-parse-strings-using-stringsplit-c-programming-guide"></a>Comment : analyser des chaînes à l’aide de String.Split (Guide de programmation C#)
+L’exemple de code suivant montre comment analyser une chaîne à l’aide de la méthode <xref:System.String.Split%2A?displayProperty=fullName> . <xref:System.String.Split%2A> accepte comme entrée un tableau qui indique les caractères séparant les sous-chaînes intéressantes de la chaîne cible.  La fonction retourne un tableau des sous-chaînes.  
   
  Cet exemple utilise des caractères de séparation (espaces, virgules, points, deux-points et onglets) qui sont tous passés dans un tableau à <xref:System.String.Split%2A>.  Chaque mot dans la phrase de la chaîne cible est affiché séparément du tableau de chaînes résultant.  
   

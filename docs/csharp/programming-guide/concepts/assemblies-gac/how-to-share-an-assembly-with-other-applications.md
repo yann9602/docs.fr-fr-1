@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour partager un assembly avec d’autres applications (C#) | Microsoft Docs"
+title: "Guide pratique pour partager un assembly avec d’autres applications (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 1e6ddb6fcee23bbabd66d9295c5ff1534140175a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 85117cfdc9b12a93891e89727412a03acc83289b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-c"></a>Guide pratique pour partager un assembly avec d’autres applications (C#)
@@ -46,3 +46,4 @@ Les assemblys peuvent être privés ou partagés. Par défaut, la plupart des pr
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
  [Programmation à l’aide d’assemblys](../../../../framework/app-domains/programming-with-assemblies.md)
+

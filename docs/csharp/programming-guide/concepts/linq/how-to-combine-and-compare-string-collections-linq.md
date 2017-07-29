@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour combiner et comparer des collections de chaînes (LINQ) (C#) | Microsoft Docs"
+title: "Guide pratique pour combiner et comparer des collections de chaînes (LINQ) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 786939163001c6037ea248fe1e143400333e1554
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9738a804ac1bf58aa904b503544419a7eb5b7902
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Guide pratique pour combiner et comparer des collections de chaînes (LINQ) (C#)
@@ -190,3 +191,4 @@ class MergeStrings
 ## <a name="see-also"></a>Voir aussi  
  [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
  [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+

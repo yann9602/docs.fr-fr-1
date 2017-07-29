@@ -1,5 +1,5 @@
 ---
-title: "readonly (référence C#) | Microsoft Docs"
+title: "readonly (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e915ac4621d2514e1efcaa8bdb4df698e6a66a72
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2660aa56721815cbbeb668328863956473cce8f1
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
@@ -80,8 +80,9 @@ public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
  [const](../../../csharp/language-reference/keywords/const.md)   
  [Champs](../../../csharp/programming-guide/classes-and-structs/fields.md)
+

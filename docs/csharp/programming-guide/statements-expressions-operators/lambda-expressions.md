@@ -1,5 +1,5 @@
 ---
-title: "Expressions lambda (Guide de programmation C#) | Microsoft Docs"
+title: Expressions lambda (Guide de programmation C#)
 ms.date: 2017-03-03
 ms.prod: .net
 ms.technology:
@@ -32,14 +32,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 43ba8cdf265efd930199f7c6a8a77e49f491e737
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c952c72d9108775fbd0f824f82cacdab5ba91d09
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
+# <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
 Une expression lambda est une [fonction anonyme](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) que vous pouvez utiliser pour créer des types [délégués](../../../csharp/programming-guide/delegates/using-delegates.md) ou des types d' [arborescence d'expression](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b) . En utilisant des expressions lambda, vous pouvez écrire des fonctions locales qui peuvent être passées comme des arguments ou retournées comme la valeur d'appels de fonction. Les expressions lambda sont particulièrement utiles pour écrire des expressions de requête LINQ.  
   
  Pour créer une expression lambda, vous spécifiez des paramètres d'entrée (le cas échéant) à gauche de l'opérateur lambda [=>](../../../csharp/language-reference/operators/lambda-operator.md), et vous placez l'expression ou le bloc d'instructions de l'autre côté. Par exemple, l'expression lambda `x => x * x` spécifie un paramètre nommé `x` et retourne la valeur `x` élevée au carré. Vous pouvez assigner cette expression à un type délégué, comme dans l'exemple suivant :  
@@ -72,9 +72,9 @@ namespace ConsoleApplication1
   
  L'opérateur `=>` a la même priorité que l'assignation (`=`) et est de type [right associative](../../../csharp/programming-guide/statements-expressions-operators/operators.md) (consultez la section « Associativité » de l'article Opérateurs).  
   
- Les lambdas sont utilisés dans les requêtes [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] fondées sur une méthode en tant qu'arguments pour les méthodes d'opérateur de requête standard telles que <xref:System.Linq.Enumerable.Where%2A>.  
+ Les lambdas sont utilisés dans les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] fondées sur une méthode en tant qu'arguments pour les méthodes d'opérateur de requête standard telles que <xref:System.Linq.Enumerable.Where%2A>.  
   
- Lorsque vous utilisez la syntaxe fondée sur une méthode pour appeler la méthode <xref:System.Linq.Enumerable.Where%2A> dans la classe <xref:System.Linq.Enumerable> (de la même manière que dans [!INCLUDE[vbteclinq](../../../csharp/includes/vbteclinq_md.md)] to Objects et [!INCLUDE[sqltecxlinq](../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]), le paramètre est un type délégué <xref:System.Func%602?displayProperty=fullName>. Une expression lambda est la méthode la plus commode pour créer ce délégué. Quand vous appelez la même méthode dans, par exemple, la classe <xref:System.Linq.Queryable?displayProperty=fullName> (comme vous le faites dans [!INCLUDE[vbtecdlinq](../../../csharp/includes/vbtecdlinq_md.md)]), le type de paramètre est <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\>, où Func correspond à un délégué Func avec seize paramètres d'entrée maximum. Une expression lambda est simplement une méthode très concise pour construire cette arborescence de l'expression. Les lambdas font apparaître les appels `Where` comme semblables bien qu'en fait, le type d'objet créé à partir du lambda soit différent.  
+ Lorsque vous utilisez la syntaxe fondée sur une méthode pour appeler la méthode <xref:System.Linq.Enumerable.Where%2A> dans la classe <xref:System.Linq.Enumerable> (de la même manière que dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to Objects et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]), le paramètre est un type délégué <xref:System.Func%602?displayProperty=fullName>. Une expression lambda est la méthode la plus commode pour créer ce délégué. Quand vous appelez la même méthode dans, par exemple, la classe <xref:System.Linq.Queryable?displayProperty=fullName> (comme vous le faites dans [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]), le type de paramètre est <xref:System.Linq.Expressions.Expression?displayProperty=fullName><Func\>, où Func correspond à un délégué Func avec seize paramètres d'entrée maximum. Une expression lambda est simplement une méthode très concise pour construire cette arborescence de l'expression. Les lambdas font apparaître les appels `Where` comme semblables bien qu'en fait, le type d'objet créé à partir du lambda soit différent.  
   
  Dans l'exemple précédent, vous remarquez que la signature du délégué comporte un paramètre d'entrée implicitement typé `int`et retourne un `int`. L'expression lambda peut être convertie en un délégué de ce type, car elle comporte également un paramètre d'entrée (`x`) et une valeur de retour que le compilateur peut convertir implicitement en type `int`. (L'inférence de type est traitée plus en détail dans les sections suivantes.) Lorsque le délégué est appelé à l'aide d'un paramètre d'entrée de 5, il retourne un résultat de 25.  
   
@@ -188,9 +188,9 @@ Func<int, bool> myFunc = x => x == 5;
 bool result = myFunc(4); // returns false of course  
 ```  
   
- Vous pouvez également fournir une expression lambda lorsque le type d'argument est `Expression<Func>`, par exemple dans les opérateurs de requête standard définis dans System.Linq.Queryable. Lorsque vous spécifiez un argument `Expression<Func>`, le lambda est compilé en une arborescence d'expression.  
+ Vous pouvez également fournir une expression lambda lorsque le type d'argument est `Expression<Func>`, par exemple dans les opérateurs de requête standard définis dans System.Linq.Queryable. Lorsque vous spécifiez un argument `Expression<Func>` , le lambda est compilé en une arborescence d'expression.  
   
- Opérateur de requête standard, la méthode <xref:System.Linq.Enumerable.Count%2A>, est illustré ici :  
+ Opérateur de requête standard, la méthode <xref:System.Linq.Enumerable.Count%2A> , est illustré ici :  
   
 ```csharp  
 int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };  
@@ -226,7 +226,7 @@ customers.Where(c => c.City == "London");
   
 -   La valeur de retour du lambda (le cas échéant) doit être implicitement convertible en type de retour du délégué.  
   
- Notez que les expressions lambda en elles-mêmes n'ont pas de type, car le système de type commun (CTS, Common Type System) ne comporte aucun concept intrinsèque « d'expression lambda ». Toutefois, il est parfois commode de parler de manière informelle du « type » d'une expression lambda. Dans ce cas, le type fait référence au type délégué ou au type <xref:System.Linq.Expressions.Expression> dans lequel est convertie l'expression lambda.  
+ Notez que les expressions lambda en elles-mêmes n'ont pas de type, car le système de type commun (CTS, Common Type System) ne comporte aucun concept intrinsèque « d'expression lambda ». Toutefois, il est parfois commode de parler de manière informelle du « type » d'une expression lambda. Dans ce cas, le type fait référence au type délégué ou au type <xref:System.Linq.Expressions.Expression> dans lequel est convertie l'expression lambda.  
   
 ## <a name="variable-scope-in-lambda-expressions"></a>Portée variable dans les expressions lambda  
  Les expressions lambda peuvent faire référence à des *variables externes* (consultez [Méthodes anonymes](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)) qui se trouvent dans l’étendue de la méthode qui définit la fonction lambda, ou dans l’étendue du type qui contient l’expression lambda. Les variables capturées de cette manière sont stockées pour une utilisation dans l'expression lambda, même si les variables se trouvent en dehors de la portée et sont récupérées par le garbage collector. Une variable externe doit être assignée de manière précise pour pouvoir être utilisée dans une expression lambda. L'exemple suivant illustre ces règles :  
@@ -290,7 +290,7 @@ class Test
 -   Une expression lambda ne peut pas contenir une instruction `goto` , une instruction `break` , ou une instruction `continue` à l'intérieur de la fonction lambda si la cible de l'instruction de saut est hors du bloc. C'est également une erreur d'avoir une instruction de saut en dehors du bloc de la fonction lambda si la cible est à l'intérieur du bloc.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="featured-book-chapter"></a>Chapitre proposé  
  [Delegates, Events, and Lambda Expressions](http://go.microsoft.com/fwlink/?LinkId=195395) (Délégués, événements et expressions lambda) dans [C# 3.0 Cookbook, Third Edition: More than 250 solutions for C# 3.0 programmers](http://go.microsoft.com/fwlink/?LinkId=195369)  

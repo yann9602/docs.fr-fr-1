@@ -1,5 +1,5 @@
 ---
-title: "Exemple de fichier XML : commande fournisseur typique (LINQ to XML) | Microsoft Docs"
+title: "Exemple de fichier XML : commande fournisseur typique (LINQ to XML)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 717c05df498cee3f31916094b9c2bad79f9edf04
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 19168f40729cf5d751c791b1dc98efae1f55fe89
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a>Exemple de fichier XML : commande fournisseur typique (LINQ to XML)
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Il concerne une commande fournisseur typique.  
+Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Il concerne une commande fournisseur typique.  
   
 ## <a name="purchaseorderxml"></a>PurchaseOrder.xml  
   
@@ -69,3 +70,4 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   
 ## <a name="see-also"></a>Voir aussi  
  [Exemples de documents XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+

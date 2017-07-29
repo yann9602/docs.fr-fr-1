@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour supprimer un fichier dans Visual Basic | Microsoft Docs
+title: Guide pratique pour supprimer un fichier dans Visual Basic
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: f6cf3192d6983b6222815c5c77a3dfd0b3845650
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e4b0b87fd403556777e0ab5a1edd517687360374
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-delete-a-file-in-visual-basic"></a>Guide pratique pour supprimer un fichier dans Visual Basic
@@ -90,3 +90,4 @@ La méthode `DeleteFile` de l’objet `My.Computer.FileSystem` vous permet de su
  <xref:Microsoft.VisualBasic.FileIO.UIOption>   
  <xref:Microsoft.VisualBasic.FileIO.RecycleOption>   
  [Guide pratique pour placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+

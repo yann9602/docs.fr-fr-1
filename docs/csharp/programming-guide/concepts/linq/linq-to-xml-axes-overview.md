@@ -1,5 +1,5 @@
 ---
-title: "Vue d’ensemble des axes LINQ to XML (C#) | Microsoft Docs"
+title: "Vue d’ensemble des axes LINQ to XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,22 +14,21 @@ ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
 caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b43d3cb5cc7154c1133c5fa17e5bdacca97a38c9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fdd4e6ffc17bc2c39d0dbeadbba955aacfe02dd9
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Vue d’ensemble des axes LINQ to XML (C#)
 Après avoir créé une arborescence XML ou chargé un document XML dans une arborescence XML, vous pouvez l'interroger pour rechercher des éléments et des attributs et récupérer leurs valeurs. Vous pouvez récupérer des collections via les *méthodes d’axe*, également appelées *axes*. Certains des axes sont des méthodes dans les classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XDocument> qui retournent des collections <xref:System.Collections.Generic.IEnumerable%601>. Certains axes sont des méthodes d'extension dans la classe <xref:System.Xml.Linq.Extensions>. Les axes qui sont implémentés en tant que méthodes d’extension opèrent sur des collections et retournent des collections.  
   
- Comme décrit dans [Vue d’ensemble de la classe XElement](http://msdn.microsoft.com/library/d35180fe-7016-4895-9bfc-ba1e3f7875ec), un objet <xref:System.Xml.Linq.XElement> représente un nœud d’un seul d’élément. Le contenu de l'élément peut être complexe (parfois appelé contenu structuré) ou il peut s'agir d'un simple élément. Un élément simple peut être vide ou peut contenir une valeur. Si le nœud contient du contenu structuré, vous pouvez utiliser les différentes méthodes d'axe pour récupérer des énumérations d'éléments descendants. Les méthodes d'axe les plus couramment utilisées sont <xref:System.Xml.Linq.XContainer.Elements%2A> et <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
+ Comme décrit dans [Vue d’ensemble de la classe XElement](http://msdn.microsoft.com/library/d35180fe-7016-4895-9bfc-ba1e3f7875ec), un objet <xref:System.Xml.Linq.XElement> représente un nœud à un seul d’élément. Le contenu de l'élément peut être complexe (parfois appelé contenu structuré) ou il peut s'agir d'un simple élément. Un élément simple peut être vide ou peut contenir une valeur. Si le nœud contient du contenu structuré, vous pouvez utiliser les différentes méthodes d'axe pour récupérer des énumérations d'éléments descendants. Les méthodes d'axe les plus couramment utilisées sont <xref:System.Xml.Linq.XContainer.Elements%2A> et <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
- Outre les méthodes d’axe, qui retournent des collections, il existe deux autres méthodes que vous utilisez fréquemment dans les requêtes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. La méthode <xref:System.Xml.Linq.XContainer.Element%2A> retourne un seul objet <xref:System.Xml.Linq.XElement>. La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> retourne un seul objet <xref:System.Xml.Linq.XAttribute>.  
+ Outre les méthodes d’axe, qui retournent des collections, il existe deux autres méthodes que vous utilisez fréquemment dans les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. La méthode <xref:System.Xml.Linq.XContainer.Element%2A> retourne un seul objet <xref:System.Xml.Linq.XElement>. La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> retourne un seul objet <xref:System.Xml.Linq.XAttribute>.  
   
- Pour de nombreux scénarios, les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] constituent la manière la plus puissante d'examiner une arborescence, d'en extraire des données et de la transformer. Les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] opèrent sur des objets qui implémentent <xref:System.Collections.Generic.IEnumerable%601>, et les axes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] retournent des collections <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> et <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XAttribute>. Vous avez besoin de ces collections pour effectuer vos requêtes.  
+ Pour de nombreux scénarios, les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] constituent la manière la plus puissante d'examiner une arborescence, d'en extraire des données et de la transformer. Les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] opèrent sur des objets qui implémentent <xref:System.Collections.Generic.IEnumerable%601>, et les axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] retournent des collections <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> et <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XAttribute>. Vous avez besoin de ces collections pour effectuer vos requêtes.  
   
  Outre les méthodes d’axe qui récupèrent des collections d’éléments et d’attributs, il existe des méthodes d’axe qui vous permettent d’itérer au sein de l’arborescence en détail. Par exemple, au lieu de travailler au niveau des éléments et des attributs, vous pouvez travailler avec les nœuds de l'arborescence. Les nœuds représentent un niveau de granularité plus élevé que les éléments et les attributs. Lorsque vous travaillez avec des nœuds, vous pouvez examiner les commentaires XML, les nœuds de texte, les instructions de traitement, et bien plus encore. Cette fonctionnalité est importante, par exemple pour quelqu'un qui écrit un traitement de texte et qui souhaite enregistrer des documents au format XML. Toutefois, la plupart des programmeurs XML sont principalement concernés par les éléments, les attributs et leurs valeurs.  
   
@@ -69,3 +68,4 @@ Après avoir créé une arborescence XML ou chargé un document XML dans une arb
   
 ## <a name="see-also"></a>Voir aussi  
  [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+

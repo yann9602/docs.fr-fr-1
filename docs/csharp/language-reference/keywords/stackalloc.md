@@ -1,5 +1,5 @@
 ---
-title: "stackalloc (référence C#) | Microsoft Docs"
+title: "stackalloc (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 337a06daaf36a1eb265f66cd191fc48b80f0bae1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 53d61cfdcf4d356a28881c57ad923017c2b479ae
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="stackalloc-c-reference"></a>stackalloc (référence C#)
@@ -57,7 +57,7 @@ block = stackalloc int[100];
   
  Des types pointeur étant impliqués, `stackalloc` requiert un contexte [unsafe](../../../csharp/language-reference/keywords/unsafe.md). Pour plus d’informations, consultez [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md).  
   
- `stackalloc` est similaire à [_alloca](https://docs.microsoft.com/cpp/c-runtime-library/reference/alloca) dans la bibliothèque Runtime C.  
+ `stackalloc` est similaire à [_alloca](/cpp/c-runtime-library/reference/alloca) dans la bibliothèque Runtime C.  
   
  L’exemple suivant calcule et affiche les 20 premiers nombres de la suite de Fibonacci. Chaque nombre est la somme des deux nombres précédents. Dans le code, un bloc de mémoire de taille suffisante pour contenir 20 éléments de type `int` est alloué sur la pile, et non sur le tas. L’adresse du bloc est stockée dans le pointeur `fib`. Cette mémoire n’est pas soumise au garbage collection et n’est donc pas tenue d’être épinglée (en utilisant [fixed](../../../csharp/language-reference/keywords/fixed-statement.md)). La durée de vie du bloc de mémoire est limitée à la durée de vie de la méthode qui le définit. Vous ne pouvez pas libérer la mémoire avant le retour de la méthode.  
   
@@ -76,3 +76,4 @@ block = stackalloc int[100];
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)
+

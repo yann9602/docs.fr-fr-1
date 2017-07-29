@@ -1,5 +1,5 @@
 ---
-title: "Création d’interfaces génériques de type variant (C#) | Microsoft Docs"
+title: "Création d’interfaces génériques de type variant (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a3dcc75151a3cff601869b4f8a3a4de698d2dc47
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 122b56e34582fdd84424fd3f5d2fd5904b401775
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Création d’interfaces génériques de type variant (C#)
@@ -35,7 +36,7 @@ Vous pouvez déclarer des paramètres de type générique dans les interfaces co
  Vous pouvez déclarer des interfaces génériques de type variant à l’aide des mots clés `in` et `out` pour les paramètres de type générique.  
   
 > [!IMPORTANT]
-> En C#, les paramètres  `ref` et `out` ne peuvent pas être de type variant. Les types valeur ne prennent pas non plus en charge la variance.  
+>  En C#, les paramètres `ref` et `out` ne peuvent pas être de type variant. Les types valeur ne prennent pas non plus en charge la variance.  
   
  Vous pouvez déclarer un covariant de paramètre de type générique à l’aide du mot clé `out`. Le type covariant doit remplir les conditions suivantes :  
   

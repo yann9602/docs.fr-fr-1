@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour sérialiser à l’aide de DataContractSerializer (C#) | Microsoft Docs"
+title: "Guide pratique pour sérialiser à l’aide de DataContractSerializer (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 76be9d08aea9472d1b7c4b558a168965dea13374
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: da57267bb8fd33263c950db0ca3d0a5b1b5817d4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-serialize-using-datacontractserializer-c"></a>Guide pratique pour sérialiser à l’aide de DataContractSerializer (C#)
-Cette rubrique montre un exemple qui effectue une sérialisation et une désérialisation à l’aide de <xref:System.Runtime.Serialization.DataContractSerializer>.  
+Cette rubrique présente un exemple qui sérialise et désérialise à l'aide de <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant crée plusieurs objets qui contiennent des objets <xref:System.Xml.Linq.XElement>. Il les sérialise ensuite dans des fichiers texte, puis les désérialise à partir des fichiers texte.  
+ L'exemple suivant crée plusieurs objets qui contiennent des objets <xref:System.Xml.Linq.XElement>. Il les sérialise ensuite dans des fichiers texte, puis les désérialise à partir des fichiers texte.  
   
 ```csharp  
 using System;  
@@ -109,3 +110,4 @@ Testing for type: XElementNullContainer
   
 ## <a name="see-also"></a>Voir aussi  
  [Sérialisation de graphiques d’objets qui contiennent des objets XElement (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+

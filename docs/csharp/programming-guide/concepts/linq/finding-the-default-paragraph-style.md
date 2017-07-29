@@ -1,5 +1,5 @@
 ---
-title: "Recherche du style de paragraphe par défaut (C#) | Microsoft Docs"
+title: "Recherche du style de paragraphe par défaut (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 71aa37ffc086298470b713470afb4c28d3c5fcca
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 834654837b5c7fc747b0df1ee9dc645664a77351
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>Recherche du style de paragraphe par défaut (C#)
@@ -29,9 +29,9 @@ La première tâche du didacticiel Manipulation d’informations dans un documen
 ### <a name="description"></a>Description  
  L'exemple suivant ouvre un document WordprocessingML Office Open XML, recherche les parties document et style du package, puis exécute une requête qui recherche le nom du style par défaut. Pour plus d'informations sur les packages de documents Office Open XML et leurs parties constituantes, consultez [Détails des documents WordprocessingML Office Open XML (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
   
- La requête recherche un nœud nommé `w:style` qui possède un attribut nommé `w:type` avec la valeur « paragraph » et un attribut nommé `w:default` avec la valeur « 1 ». Étant donné qu’il n’y aura qu’un seul nœud XML avec ces attributs, la requête utilise l’opérateur <xref:System.Linq.Enumerable.First%2A?displayProperty=fullName> pour convertir une collection en singleton. Elle obtient ensuite la valeur de l'attribut avec le nom `w:styleId`.  
+ La requête recherche un nœud nommé `w:style` qui possède un attribut nommé `w:type` avec la valeur « paragraph » et un attribut nommé `w:default` avec la valeur « 1 ». Étant donné qu'il n'y aura qu'un seul nœud XML avec ces attributs, la requête utilise l'opérateur <xref:System.Linq.Enumerable.First%2A?displayProperty=fullName> pour convertir une collection en singleton. Elle obtient ensuite la valeur de l'attribut avec le nom `w:styleId`.  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l’espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
   
 ### <a name="code"></a>Code  
   
@@ -102,3 +102,4 @@ The default style is: Normal
   
 ## <a name="see-also"></a>Voir aussi  
  [Didacticiel : manipulation de contenu dans un document WordprocessingML](http://msdn.microsoft.com/library/2696355e-4f83-4eaf-91b2-baa721f42fb4)
+

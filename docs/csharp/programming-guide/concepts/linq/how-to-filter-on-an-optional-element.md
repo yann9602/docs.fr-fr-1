@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour filtrer sur un élément facultatif (C#) | Microsoft Docs"
+title: "Guide pratique pour filtrer sur un élément facultatif (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,18 +14,18 @@ ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
 caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bc732e029b1548a551128b7f8daca5f10dc19c03
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d0d849bb8c6174408810f2d2192faea6db6afd5b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-filter-on-an-optional-element-c"></a>Guide pratique pour filtrer sur un élément facultatif (C#)
 Parfois, vous souhaitez appliquer un filtrage sur un élément sans être certain qu'il existe dans votre document XML. La recherche doit être exécutée de telle sorte que, si l'élément particulier ne possède pas l'élément enfant, aucune exception de référence Null ne soit déclenchée suite au filtrage. Dans l'exemple suivant, l'élément `Child5` ne possède pas d'élément enfant `Type`, mais la requête s'exécute tout de même correctement.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la méthode d’extension <xref:System.Xml.Linq.Extensions.Elements%2A>.  
+ Cet exemple utilise la méthode d'extension <xref:System.Xml.Linq.Extensions.Elements%2A>.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  
@@ -114,3 +114,4 @@ Child Four Text
  [Requêtes de base (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)   
  [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
  [Opérations de projection (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)
+

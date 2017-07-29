@@ -1,5 +1,5 @@
 ---
-title: "Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic | Microsoft Docs"
+title: "Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -48,11 +48,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 6484c8233c2834732aefb270323723b6c9757f05
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 00144ca80e267ef2f24df0bdaa1c9f689a43af77
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-deleting-and-moving-files-and-directories-in-visual-basic"></a>Création, suppression et déplacement de fichiers et de répertoires dans Visual Basic
@@ -147,3 +147,4 @@ Cette section liste les tâches associées à la création, la suppression, le d
   
  [Écriture dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
  Liste les tâches relatives à l’écriture dans les fichiers.
+

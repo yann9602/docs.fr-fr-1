@@ -1,5 +1,5 @@
 ---
-title: '&lt;summary&gt; (Guide de programmation C#) | Microsoft Docs'
+title: '&lt;summary&gt; (Guide de programmation C#)'
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,17 +32,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b74e5bf964ff82f88fe2822257a64eccb5697535
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bd96e58494196fcfdeb46e9e59481666ec9466f3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="ltsummarygt-c-programming-guide"></a>&lt;summary&gt; (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <summary>description</summary>  
 ```  
   
@@ -51,18 +51,18 @@ ms.lasthandoff: 03/13/2017
  Résumé de l’objet.  
   
 ## <a name="remarks"></a>Remarques  
- La balise \<summary> doit être utilisée pour décrire un type ou un membre de type. Utilisez [\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) pour ajouter des informations supplémentaires à une description de type. Utilisez l’[attribut cref](../../../csharp/programming-guide/xmldoc/cref-attribute.md) pour activer des outils de documentation tels que [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061) afin de créer des liens hypertexte internes aux pages de documentation pour les éléments de code.  
+ La balise \<summary> doit être utilisée pour décrire un type ou un membre de type. Utilisez [\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md) pour ajouter des informations supplémentaires à une description de type. Utilisez l’[attribut cref](../../../csharp/programming-guide/xmldoc/cref-attribute.md) pour activer des outils de documentation tels que [Sandcastle](https://github.com/EWSoftware/SHFB) afin de créer des liens hypertexte internes aux pages de documentation pour les éléments de code.  
   
  Le texte de la balise \<summary> est la seule source d’informations sur le type dans IntelliSense et il est également affiché dans la fenêtre Explorateur d’objets.  
   
- Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [Sandcastle](http://go.microsoft.com/fwlink/?LinkId=124061).  
+ Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [Sandcastle](https://github.com/EWSoftware/SHFB).  
   
 ## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/summary_1.cs)]  
   
  L’exemple précédent génère le fichier XML suivant.  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <doc>  
     <assembly>  
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/13/2017
   
  L’exemple précédent génère le fichier XML suivant.  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <doc>  
     <assembly>  

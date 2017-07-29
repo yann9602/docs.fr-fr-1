@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour écrire une requête qui recherche des éléments en fonction du contexte (C#) | Microsoft Docs"
+title: "Guide pratique pour écrire une requête qui recherche des éléments en fonction du contexte (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dbb188e8a043671c1a33a90fb95d10d6d86168bb
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3c0592dee4da6d8b8b18ad4c3dc349398bd87a77
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Guide pratique pour écrire une requête qui recherche des éléments en fonction du contexte (C#)
@@ -116,3 +116,4 @@ id = 6
  <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>   
  <xref:System.Linq.Enumerable.FirstOrDefault%2A>   
  [Requêtes de base (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour sérialiser à l’aide de XmlSerializer (C#) | Microsoft Docs"
+title: "Guide pratique pour sérialiser à l’aide de XmlSerializer (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6721edf0a533d89e8987f4bf231142f3a236d0c7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 826c10835da385a0fd7b052db4d6981b706fc6ed
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-serialize-using-xmlserializer-c"></a>Guide pratique pour sérialiser à l’aide de XmlSerializer (C#)
-Cette rubrique montre un exemple qui effectue une sérialisation et une désérialisation à l’aide de <xref:System.Xml.Serialization.XmlSerializer>.  
+Cette rubrique présente un exemple qui sérialise et désérialise à l'aide de <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant crée plusieurs objets qui contiennent des objets <xref:System.Xml.Linq.XElement>. Il les sérialise ensuite dans un flux mémoire, puis les désérialise du flux mémoire.  
+ L'exemple suivant crée plusieurs objets qui contiennent des objets <xref:System.Xml.Linq.XElement>. Il les sérialise ensuite dans un flux mémoire, puis les désérialise du flux mémoire.  
   
 ```csharp  
 using System;  
@@ -107,3 +108,4 @@ Testing for type: XElementContainer
   
 ## <a name="see-also"></a>Voir aussi  
  [Sérialisation de graphiques d’objets qui contiennent des objets XElement (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+
