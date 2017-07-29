@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#) | Microsoft Docs"
+title: "Guide pratique pour écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,16 +19,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 075f0dab486d773cd7dd0616a6432f065b5a5eb5
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 54d8c876ca5f8c6d721eaab13515e70f23a68744
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Guide pratique pour écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)
-Pour écrire une requête à exécuter sur du code XML situé dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui sont associés au bon espace de noms.  
+Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui ont l'espace de noms correct.  
   
- Pour le langage C#, l’approche la plus courante consiste à initialiser un objet <xref:System.Xml.Linq.XNamespace> à l’aide d’une chaîne contenant l’URI, puis à utiliser la surcharge d’opérateur d’addition pour combiner l’espace de noms avec le nom local.  
+ Pour C#, l'approche la plus courante consiste à initialiser un objet <xref:System.Xml.Linq.XNamespace> à l'aide d'une chaîne contenant l'URI, puis à utiliser la surcharge d'opérateur d'addition pour combiner l'espace de noms avec le nom local.  
   
  Le premier ensemble d’exemples de cette rubrique montre comment créer une arborescence XML dans un espace de noms par défaut. Le second ensemble illustre la création d’une arborescence XML dans un espace de noms avec un préfixe.  
   
@@ -94,3 +95,4 @@ foreach (XElement el in c1)
   
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+

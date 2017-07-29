@@ -1,5 +1,5 @@
 ---
-title: "Procédure pas à pas : persistance d’un objet dans Visual Studio (C#) | Microsoft Docs"
+title: "Procédure pas à pas : persistance d’un objet dans Visual Studio (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f76e40e2503bf857922490d728c3a9f3432aa31f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4c8dce64c470f01f540a83f68e3861df56913e4c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-c"></a>Procédure pas à pas : persistance d’un objet dans Visual Studio (C#)
@@ -44,7 +45,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
   
 ### <a name="to-create-the-loan-class"></a>Pour créer la classe Loan  
   
-1.  Créez un projet Bibliothèque de classes et nommez-le « LoanClass ». Pour plus d’informations, consultez [Création de solutions et de projets](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects).  
+1.  Créez un projet Bibliothèque de classes et nommez-le « LoanClass ». Pour plus d’informations, consultez [Création de solutions et de projets](/visualstudio/ide/creating-solutions-and-projects).  
   
 2.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour le fichier Class1, puis choisissez **Renommer**. Renommez le fichier `Loan` et appuyez sur Entrée. Quand vous renommez le fichier, la classe est également renommée `Loan`.  
   
@@ -156,7 +157,7 @@ Bien qu’il soit possible de définir des valeur par défaut pour les propriét
     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;  
     ```  
   
- L’étape suivante consiste à ajouter le code de sérialisation à l’application LoanApp. Afin de sérialiser la classe et de l’écrire dans un fichier, utilisez les espaces de noms <xref:System.IO> et <xref:System.Xml.Serialization>. Pour éviter de taper les noms qualifiés complets, vous pouvez ajouter des références aux bibliothèques de classes requises.  
+ L’étape suivante consiste à ajouter le code de sérialisation à l’application LoanApp. Pour sérialiser la classe et l’écrire dans un fichier, vous utiliserez les espaces de noms <xref:System.IO> et <xref:System.Xml.Serialization>. Pour éviter de taper les noms qualifiés complets, vous pouvez ajouter des références aux bibliothèques de classes requises.  
   
 ### <a name="to-add-references-to-namespaces"></a>Pour ajouter des références aux espaces de noms  
   

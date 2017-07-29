@@ -1,5 +1,5 @@
 ---
-title: "if-else (référence C#) | Microsoft Docs"
+title: "if-else (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e4016ee35ed487fd2ca48074d2e483778719dff3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 694761a9b03fadf2dff97e61e37c0af52658f9e4
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="if-else-c-reference"></a>if-else (référence C#)
@@ -155,9 +155,9 @@ if (!(m >= n || m >= p))
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [?, opérateur](../../../csharp/language-reference/operators/conditional-operator.md)   
- [if-else, instruction (C++)](https://docs.microsoft.com/cpp/cpp/if-else-statement-cpp)   
+ [if-else, instruction (C++)](/cpp/cpp/if-else-statement-cpp)   
  [switch](../../../csharp/language-reference/keywords/switch.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "Programmation orientée objet (C#) | Microsoft Docs"
+title: "Programmation orientée objet (C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -16,11 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 3f3e6aa047e0de279d15298408c4593c5fb17666
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: de06921840f06f36d8600b9567986644f58c6ad5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
@@ -406,7 +406,7 @@ sampleObject.Field = "Sample string";
   
  Pour plus d'informations, voir :  
   
--   [Génériques](https://msdn.microsoft.com/library/ms172192)  
+-   [Génériques](~/docs/standard/generics/index.md)  
   
 -   [Génériques](../../../csharp/programming-guide/generics/index.md)  
   
@@ -449,3 +449,4 @@ class SampleClass
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+

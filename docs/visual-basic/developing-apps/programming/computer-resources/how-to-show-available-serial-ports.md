@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour afficher les ports série disponibles en Visual Basic | Microsoft Docs"
+title: "Guide pratique pour afficher les ports série disponibles en Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,15 +33,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 99231dca529afe13aede6de9c537e160e970a850
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bab6177c788a847b46586db19a525c1a1b36476d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Guide pratique pour afficher les ports série disponibles en Visual Basic
-Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les ports série qui sont disponibles sur l’ordinateur en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les ports série qui sont disponibles sur l’ordinateur en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
  Pour permettre à un utilisateur de sélectionner le port à utiliser, les noms des ports série sont placés dans un contrôle <xref:System.Windows.Forms.ListBox>.  
   
@@ -52,7 +52,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
   
  [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
- Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve sous **Connectivité et réseau**. Pour plus d’informations, consultez [Extraits de code](https://docs.microsoft.com/visualstudio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve sous **Connectivité et réseau**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
  Cet exemple nécessite :  
@@ -74,3 +74,4 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
  [Guide pratique pour passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)   
  [Guide pratique pour envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)   
  [Guide pratique : recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+

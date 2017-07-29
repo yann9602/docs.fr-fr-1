@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour récupérer la valeur d’un élément (LINQ to XML) (C#) | Microsoft Docs"
+title: "Guide pratique pour récupérer la valeur d’un élément (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,20 +14,20 @@ ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a3f844917ff1d9841c1c6f7f727f593868ec43b8
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 70e60c799157c7aa577bb8abd1fa6aaad746d3d1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Guide pratique pour récupérer la valeur d’un élément (LINQ to XML) (C#)
-Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. La première consiste à caster un <xref:System.Xml.Linq.XElement> ou un <xref:System.Xml.Linq.XAttribute> en un type souhaité. L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. La deuxième consiste à utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName> ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName>.  
+Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. L'un des moyens consiste à convertir un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute> vers le type souhaité. L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName> ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName>.  
   
- Avec C#, toutefois, la conversion est généralement la meilleure approche. Si vous convertissez l'élément ou attributs vers un type Nullable, le code est plus simple à écrire lors de la récupération de la valeur d'un élément (attribut) qui peut exister ou ne pas exister. Ceci est illustré dans le dernier exemple de cette rubrique. Toutefois, vous ne pouvez pas définir le contenu d’un élément au moyen d’un cast, comme vous pouvez le faire avec la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>.  
+ Avec C#, toutefois, la conversion est généralement la meilleure approche. Si vous convertissez l'élément ou attributs vers un type Nullable, le code est plus simple à écrire lors de la récupération de la valeur d'un élément (attribut) qui peut exister ou ne pas exister. Ceci est illustré dans le dernier exemple de cette rubrique. Toutefois, vous ne pouvez pas définir le contenu d'un élément par le biais de la conversion, comme vous le pouvez par le biais de la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>.  
   
 ## <a name="example"></a>Exemple  
- Pour récupérer la valeur d’un élément, castez l’objet <xref:System.Xml.Linq.XElement> en un type souhaité. Vous pouvez toujours convertir un élément en chaîne, comme suit :  
+ Pour récupérer la valeur d'un élément, il vous suffit de convertir l'objet <xref:System.Xml.Linq.XElement> vers le type souhaité. Vous pouvez toujours convertir un élément en chaîne, comme suit :  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");  
@@ -58,12 +58,12 @@ Console.WriteLine("Value of e:" + (int)e);
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] fournit des opérateurs de cast explicites pour les types de données suivants : `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID` et `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit des opérateurs de cast explicites pour les types de données suivants : `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID` et `GUID?`.  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] fournit les mêmes opérateurs de cast pour les objets <xref:System.Xml.Linq.XAttribute>.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit les mêmes opérateurs de conversion pour les objets <xref:System.Xml.Linq.XAttribute>.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour récupérer le contenu d’un élément :  
+ Vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour récupérer le contenu d'un élément :  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");   
@@ -79,7 +79,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Exemple  
- Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous assignez l’élément casté à un type Nullable (`string` ou l’un des types Nullable du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]), si l’élément n’existe pas, la variable assignée est définie sur `null`. Le code suivant montre que lorsqu’il n’est pas certain que l’élément existe, il est plus simple d’utiliser le cast que la propriété <xref:System.Xml.Linq.XElement.Value%2A>.  
+ Parfois, vous souhaitez récupérer la valeur d'un élément sans être certain qu'il existe. Dans ce cas, lorsque vous assignez l’élément casté à un type Nullable (`string` ou l’un des types Nullable du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), si l’élément n’existe pas, la variable assignée est définie sur `null`. Le code suivant montre que lorsqu'il n'est pas certain que l'élément existe, il est plus simple d'utiliser la conversion que la propriété <xref:System.Xml.Linq.XElement.Value%2A>.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -159,3 +159,4 @@ v4:element does not exist
   
 ## <a name="see-also"></a>Voir aussi  
  [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+

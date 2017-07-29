@@ -1,5 +1,5 @@
 ---
-title: "operator (référence C#) | Microsoft Docs"
+title: "operator (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2596da6ef7df5a0f051b23645d5b8096e829883f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 76d403493861e9c587672412cd2989c419b8717a
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="operator-c-reference"></a>operator (référence C#)
@@ -50,8 +50,9 @@ Utilisez le mot clé `operator` pour surcharger un opérateur intégré ou pour 
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [implicit](../../../csharp/language-reference/keywords/implicit.md)   
  [explicit](../../../csharp/language-reference/keywords/explicit.md)   
  [Guide pratique pour implémenter des conversions définies par l’utilisateur entre des structs](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+

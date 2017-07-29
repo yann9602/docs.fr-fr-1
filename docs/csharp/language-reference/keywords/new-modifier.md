@@ -1,5 +1,5 @@
 ---
-title: "new, modificateur (référence C#) | Microsoft Docs"
+title: "new, modificateur (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3c636d50e6c871c529104d5f2985e861f9a652b2
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f763b9a1d2f146b8ebb475a01bd12f1a4238050a
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
@@ -76,9 +76,10 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
  [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
  [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)
+

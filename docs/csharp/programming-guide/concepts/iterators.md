@@ -1,5 +1,5 @@
 ---
-title: "Itérateurs (C#) | Microsoft Docs"
+title: "Itérateurs (C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -16,11 +16,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: 11a606ef18bc497630c0a417488e533a0880056f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5d5543a48d0c835f5270067d1e5ad514c28842b2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="iterators-c"></a>Itérateurs (C#)
@@ -53,7 +53,7 @@ public static System.Collections.IEnumerable SomeNumbers()
   
  Le type de retour d’une méthode d’itérateur ou de l’accesseur `get` peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.  
   
- Vous pouvez utiliser une instruction `yield break` pour terminer l’itération.  
+ Utilisez une instruction `yield break` pour terminer l'itération.  
   
  Les itérateurs ont été introduits en C# dans Visual Studio 2005.  
   
@@ -368,7 +368,7 @@ public class Stack<T> : IEnumerable<T>
   
  Les itérateurs ne prennent pas en charge la méthode <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName>. Pour réitérer à partir du début, vous devez obtenir un nouvel itérateur.  
   
- Pour plus d’informations, consultez la [spécification du langage C#](../../../csharp/language-reference/language-specification.md).  
+ Pour plus d’informations, consultez la [spécification du langage C#](../../../csharp/language-reference/language-specification/index.md).  
   
 ##  <a name="BKMK_UseOfIterators"></a> Utilisation d’itérateurs  
  Les itérateurs vous permettent de conserver la simplicité d’une boucle `foreach` quand vous avez besoin d’utiliser un code complexe pour remplir la séquence d’une liste. Ceci peut être utile quand vous voulez faire les opérations suivantes :  
@@ -386,3 +386,4 @@ public class Stack<T> : IEnumerable<T>
  [yield](../../../csharp/language-reference/keywords/yield.md)   
  [Utilisation de foreach avec des tableaux](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)   
  [Génériques](../../../csharp/programming-guide/generics/index.md)
+

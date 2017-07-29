@@ -1,5 +1,5 @@
 ---
-title: "using (référence C#) | Microsoft Docs"
+title: "using (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,10 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 12405bfede8707bfce0711928ddfc879fefe5f36
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b6aaa2837e0c6850956f51b7ded979cc46f9b3a2
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-c-reference"></a>using (référence C#)
@@ -52,3 +53,4 @@ De plus, la directive [using static](using-static.md) vous permet de définir un
  [Mots clés d’espaces de noms](../../../csharp/language-reference/keywords/namespace-keywords.md)   
  [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)   
  [extern](../../../csharp/language-reference/keywords/extern.md)
+

@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0ee055b8e65f8aa48f1211871719b9e638e71ed1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0410c5f673e61f91c00a69cb1659e0d72852f128
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="perform-grouped-joins"></a>Effectuer des jointures groupées
@@ -49,3 +50,4 @@ La jointure groupée est utile pour produire des structures de données hiérarc
  [Effectuer des jointures externes gauches](perform-left-outer-joins.md)   
  [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)   
  
+

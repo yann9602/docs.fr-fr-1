@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour récupérer un seul élément enfant (LINQ to XML) (C#) | Microsoft Docs"
+title: "Guide pratique pour récupérer un seul élément enfant (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,23 +14,22 @@ ms.assetid: ce37db9e-76fa-46eb-b4cc-e8f32d22ad90
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a8cc212a91e4646ef7001d41ba9bb5486cc60052
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 11a53104f73325a905ef5144aabddf8c270fd024
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-retrieve-a-single-child-element-linq-to-xml-c"></a>Guide pratique pour récupérer un seul élément enfant (LINQ to XML) (C#)
-Cette rubrique explique comment récupérer un seul élément enfant, étant donné le nom de l'élément enfant. Lorsque vous connaissez le nom de l’élément enfant et qu’il n’y a qu’un seul élément qui possède ce nom, il peut être plus commode de récupérer un seul élément plutôt qu’une collection.  
+Cette rubrique explique comment récupérer un seul élément enfant, étant donné le nom de l'élément enfant. Lorsque vous connaissez le nom de l'élément enfant et qu'il n'y a qu'un seul élément qui possède ce nom, il peut être plus commode de récupérer un seul élément plutôt qu'une collection.  
   
- La méthode <xref:System.Xml.Linq.XContainer.Element%2A> retourne le premier enfant <xref:System.Xml.Linq.XElement> avec le <xref:System.Xml.Linq.XName> spécifié.  
+ La méthode <xref:System.Xml.Linq.XContainer.Element%2A> retourne le premier objet <xref:System.Xml.Linq.XElement> enfant avec l'objet <xref:System.Xml.Linq.XName> spécifié.  
   
  Si vous souhaitez récupérer un seul élément enfant en Visual Basic, une approche courante consiste à utiliser la propriété XML, puis à récupérer le premier élément à l'aide de la notation d'indexeur de tableau.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant illustre l’utilisation de la méthode <xref:System.Xml.Linq.XContainer.Element%2A>. Cet exemple prend l'arborescence XML nommée `po` et recherche le premier élément nommé `Comment`.  
+ L'exemple suivant illustre l'utilisation de la méthode <xref:System.Xml.Linq.XContainer.Element%2A>. Cet exemple prend l'arborescence XML nommée `po` et recherche le premier élément nommé `Comment`.  
   
  L'exemple Visual Basic illustre l'utilisation de la notation d'indexeur de tableau pour récupérer un seul élément.  
   

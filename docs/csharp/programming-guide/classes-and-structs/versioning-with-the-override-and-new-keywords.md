@@ -1,5 +1,5 @@
 ---
-title: "Gestion de version avec les mots clés override et new (Guide de programmation C#) | Microsoft Docs"
+title: "Versioning avec les mots clés override et new (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,10 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b464b4c395af093bb9124bb671c5c212c750f497
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 167262f7b2423fffec61b1e903f849d2ab387ed2
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Versioning avec les mots clés override et new (Guide de programmation C#)
@@ -77,7 +78,7 @@ Le langage C# est conçu de telle sorte que la gestion de version entre les cla
   
  [!code-cs[csProgGuideInheritance#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_5.cs)]  
   
- Si vous ne souhaitez pas que votre méthode se substitue à la nouvelle méthode de la classe de base, prenez en compte les considérations suivantes. Pour éviter toute confusion entre les deux méthodes, vous pouvez renommer votre méthode. Ceci peut prendre du temps et constituer un risque d’erreur ou bien ne pas être tout simplement pratique dans certains cas. Toutefois, si votre projet est relativement petit, vous pouvez utiliser les options de refactorisation de Visual Studio pour renommer la méthode. Pour plus d’informations, consultez [Refactorisation des classes et des types (Concepteur de classes)](https://docs.microsoft.com/visualstudio/ide/refactoring-classes-and-types-class-designer).  
+ Si vous ne souhaitez pas que votre méthode se substitue à la nouvelle méthode de la classe de base, prenez en compte les considérations suivantes. Pour éviter toute confusion entre les deux méthodes, vous pouvez renommer votre méthode. Ceci peut prendre du temps et constituer un risque d’erreur ou bien ne pas être tout simplement pratique dans certains cas. Toutefois, si votre projet est relativement petit, vous pouvez utiliser les options de refactorisation de Visual Studio pour renommer la méthode. Pour plus d’informations, consultez [Refactorisation des classes et des types (Concepteur de classes)](/visualstudio/ide/refactoring-classes-and-types-class-designer).  
   
  Sinon, vous pouvez éviter de recevoir l’avertissement à l’aide du mot clé `new` dans la définition de votre classe dérivée :  
   
@@ -105,3 +106,4 @@ Le langage C# est conçu de telle sorte que la gestion de version entre les cla
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   
  [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
+

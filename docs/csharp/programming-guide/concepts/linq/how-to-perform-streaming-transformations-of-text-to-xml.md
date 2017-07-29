@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour effectuer des transformations de streaming au format XML (C#) | Microsoft Docs
+title: Guide pratique pour effectuer des transformations de streaming au format XML (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,17 +14,17 @@ ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bba371063439dfe5698ab6c3342500eec9fdc015
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3351f88bb27807714b3566992242e72a5d03ac14
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Guide pratique pour effectuer des transformations de streaming au format XML (C#)
 L'une des façons de traiter un fichier texte consiste à écrire une méthode d'extension qui diffuse en continu le fichier texte une ligne à la fois à l'aide de la construction `yield return`. Vous pouvez alors écrire une requête LINQ qui traite le fichier texte de manière différée. Si vous utilisez ensuite <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu, vous pouvez créer une transformation du fichier texte en XML qui utilise une quantité minimale de mémoire, quelle que soit la taille du fichier texte source.  
   
- Il existe certains points à noter concernant les transformations de streaming. Il est préférable d'appliquer une transformation de streaming dans les situations où vous pouvez traiter l'intégralité du fichier une seule fois et si vous pouvez traiter les lignes dans l'ordre dans lequel elles apparaissent dans le document source. Si vous devez traiter le fichier à plusieurs reprises, ou si vous devez trier les lignes avant de les traiter, vous perdez une grande partie des avantages offerts par l'utilisation d'une technique de streaming.  
+ Il existe certains points à noter concernant les transformations de diffusion en continu. Il est préférable d'appliquer une transformation de streaming dans les situations où vous pouvez traiter l'intégralité du fichier une seule fois et si vous pouvez traiter les lignes dans l'ordre dans lequel elles apparaissent dans le document source. Si vous devez traiter le fichier à plusieurs reprises, ou si vous devez trier les lignes avant de les traiter, vous perdez une grande partie des avantages offerts par l'utilisation d'une technique de streaming.  
   
 ## <a name="example"></a>Exemple  
  Le fichier texte suivant, People.txt, est la source pour cet exemple.  
@@ -101,3 +101,4 @@ class Program
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Xml.Linq.XStreamingElement>   
  [Techniques de requêtes avancées (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+

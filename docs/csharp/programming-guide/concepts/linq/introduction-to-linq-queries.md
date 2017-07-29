@@ -1,5 +1,5 @@
 ---
-title: "Introduction aux requêtes LINQ (C#) | Microsoft Docs"
+title: "Introduction aux requêtes LINQ (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 317ea9a17a792bcbfd11c5f1085218e2b0f2a312
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8427a0f439516cbba0b38db25f48b0083a337b1b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="introduction-to-linq-queries-c"></a>Introduction aux requêtes LINQ (C#)
@@ -68,7 +68,7 @@ Une *requête* est une expression qui récupère des données d’une source de 
   
  [!code-cs[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
   
- Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous commencez par créer un mappage O/R au moment du design, manuellement ou à l’aide des [Outils LINQ to SQL de Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2). Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `Customers` représente une table spécifique de la base de données et le type du résultat de la requête, <xref:System.Linq.IQueryable%601>, dérive de <xref:System.Collections.Generic.IEnumerable%601>.  
+ Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous commencez par créer un mappage O/R au moment du design, manuellement ou à l’aide des [Outils LINQ to SQL de Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2). Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `Customers` représente une table spécifique de la base de données et le type du résultat de la requête, <xref:System.Linq.IQueryable%601>, dérive de <xref:System.Collections.Generic.IEnumerable%601>.  
   
 ```csharp  
 Northwnd db = new Northwnd(@"c:\northwnd.mdf");  
@@ -122,5 +122,4 @@ IQueryable<Customer> custQuery =
  [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
  [foreach, in](../../../../csharp/language-reference/keywords/foreach-in.md)   
  [Mots clés de requête (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)
-
 

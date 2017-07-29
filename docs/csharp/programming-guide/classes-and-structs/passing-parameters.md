@@ -1,5 +1,5 @@
 ---
-title: "Passage de paramètres (Guide de programmation C#) | Microsoft Docs"
+title: "Passage de paramètres (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a4004cb22dfd23d24c6c333a560cb89b8ab08771
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4b8c0c7f7b8c3820edbafbe90fb961c12da8fc84
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="passing-parameters-c-programming-guide"></a>Passage de paramètres (Guide de programmation C#)
@@ -57,3 +57,4 @@ En C#, les arguments peuvent être passés aux paramètres par valeur ou par ré
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)
+

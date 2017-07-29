@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour récupérer des paragraphes à partir d’un document Office Open XML (C#) | Microsoft Docs"
+title: "Guide pratique pour récupérer des paragraphes à partir d’un document Office Open XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: cc2687cf-d648-451e-88ac-3847c6c967c8
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 87932173a74053aec1547ee9ebbe0e5f6187085c
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 945fc1e2cc3d7ae57239fdc5113e87c0a1512ff8
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-c"></a>Guide pratique pour récupérer des paragraphes à partir d’un document Office Open XML (C#)
@@ -27,13 +27,13 @@ Cette rubrique présente un exemple qui ouvre un document Office Open XML et ré
  Pour plus d’informations sur le format Office Open XML, consultez [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
   
 ## <a name="example"></a>Exemple  
- Cet exemple ouvre un package Office Open XML et utilise les relations dans le package Open XML pour rechercher le document et les parties de style. Il interroge ensuite le document et projette une collection d’un type anonyme qui contient le nœud <xref:System.Xml.Linq.XElement> de paragraphe, le nom de style de chaque paragraphe et le texte de chaque paragraphe.  
+ Cet exemple ouvre un package Office Open XML et utilise les relations dans le package Open XML pour rechercher le document et les parties de style. Il interroge ensuite le document et projette une collection d'un type anonyme qui contient le nœud <xref:System.Xml.Linq.XElement> de paragraphe, le nom de style de chaque paragraphe et le texte de chaque paragraphe.  
   
  L'exemple utilise une méthode d'extension nommée `StringConcatenate`, qui est également fournie dans l'exemple.  
   
  Pour afficher un didacticiel détaillé qui explique le fonctionnement de cet exemple, consultez [Transformations fonctionnelles pures de données XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l’espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=fullName>.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -175,7 +175,7 @@ class Program
 }  
 ```  
   
- Lorsqu’il est exécuté avec l’exemple de document Open XML décrit dans [Création du document Office Open XML source (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante :  
+ Quand il est exécuté avec l’exemple de document Open XML décrit dans [Création du document Office Open XML source (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante :  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -197,3 +197,4 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>Voir aussi  
  [Techniques de requêtes avancées (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour lire des paramètres d&quot;application en Visual Basic | Microsoft Docs"
+title: "Guide pratique pour lire des paramètres d'application en Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 39c98f4fa461d037f5a0c551b5c1ea089f25451d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e18c1da475ac7945a8bf080aad3ba2905d5d8658
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-application-settings-in-visual-basic"></a>Guide pratique pour lire des paramètres d'application en Visual Basic
@@ -49,11 +49,12 @@ Vous pouvez lire un paramètre utilisateur en accédant à la propriété du par
   
  [!code-vb[VbVbalrMyResources#14](../../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/how-to-read-application-settings_1.vb)]  
   
- Pour que cet exemple fonctionne, votre application doit avoir un paramètre `Nickname` de type `String`. Pour plus d'informations, consultez [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet).  
+ Pour que cet exemple fonctionne, votre application doit avoir un paramètre `Nickname` de type `String`. Pour plus d'informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="see-also"></a>Voir aussi  
  [My.Settings, objet](../../../../visual-basic/language-reference/objects/my-settings-object.md)   
  [Guide pratique pour modifier les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)   
  [Guide pratique pour rendre persistants les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)   
  [Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur en Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)   
- [Gestion des paramètres d’une application (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-settings-dotnet)
+ [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
+

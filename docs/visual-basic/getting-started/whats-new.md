@@ -1,5 +1,5 @@
 ---
-title: "Nouveautés de Visual Basic | Microsoft Docs"
+title: "Nouveautés de Visual Basic"
 ms.date: 2017-04-27
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d3f21e32c162133e70a124da125c30afc7303738
-ms.openlocfilehash: 18544a0311e24cf427111e364421db6e9fc27326
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0a9379d5dd2d1c6b3ed6820e350c19fb346ac84c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="whats-new-for-visual-basic"></a>Nouveautés de Visual Basic
@@ -105,7 +105,7 @@ Depuis C# 7, C# prend en charge les valeurs de retour de référence. Autremen
 
 Par exemple, la classe `Sentence` suivante écrite en C# inclut une méthode `FindNext` qui recherche le mot suivant dans une phrase qui commence par une sous-chaîne spécifiée. La chaîne est retournée comme valeur de retour de référence et une variable `Boolean` passée par référence à la méthode indique si la recherche a réussi. Cela signifie que l’appelant peut non seulement lire la valeur retournée, mais il peut également la modifier et cette modification est répercutée dans la classe `Sentence`.
 
-[!code-vb[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
+[!code-csharp[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
 Sous sa forme la plus simple, vous pouvez modifier le mot trouvé dans la phrase à l’aide de code semblable au suivant. Notez que vous n’affectez pas de valeur à la méthode, mais plutôt à l’expression retournée par la méthode, qui est la valeur de retour de référence.
 
@@ -191,5 +191,5 @@ End Interface
  À présent, le compilateur utilise les règles de résolution de surcharge normales pour choisir le `GetDetails` à appeler le plus approprié, et vous pouvez déclarer des relations d’interface dans Visual Basic comme indiqué dans l’exemple.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Nouveautés de Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/ide/whats-new-in-visual-studio)
+ [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
 

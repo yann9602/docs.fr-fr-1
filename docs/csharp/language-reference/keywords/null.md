@@ -1,5 +1,5 @@
 ---
-title: "null (référence C#) | Microsoft Docs"
+title: "null (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e7126abc6d3726bf7aa85c3f829316096ed065ba
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fe6740fa68f44506fcfdc72b5b172aff0a8d9609
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="null-c-reference"></a>null (référence C#)
@@ -49,8 +49,9 @@ Le mot clé `null` est un littéral qui représente une référence null, c’es
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Mots clés littéraux](../../../csharp/language-reference/keywords/literal-keywords.md)   
  [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md)   
  [Nothing](../../../visual-basic/language-reference/nothing.md)
+

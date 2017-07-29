@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#) | Microsoft Docs"
+title: "Guide pratique pour utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aabc07212e46b98e86ec0050474a4c2e34449550
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 29cdf1ef54545bdbd96395dd4fe1d7c6b9f375e9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Guide pratique pour utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)
@@ -46,15 +47,15 @@ Les annotations peuvent servir à faciliter les transformations d’une arboresc
   
  En détail, l'approche se compose des étapes suivantes :  
   
--   Exécutez une ou plusieurs requêtes LINQ to XML qui retournent l'ensemble d'éléments que vous souhaitez transformer d'une forme à une autre. Pour chaque élément de la requête, ajoutez un nouvel objet <xref:System.Xml.Linq.XElement> en tant qu’annotation de l’élément. Ce nouvel élément remplacera l’élément annoté dans la nouvelle arborescence transformée. Ce code est simple à écrire, comme illustré dans l'exemple.  
+-   Exécutez une ou plusieurs requêtes LINQ to XML qui retournent l'ensemble d'éléments que vous souhaitez transformer d'une forme à une autre. Pour chaque élément dans la requête, ajoutez un nouvel objet <xref:System.Xml.Linq.XElement> en tant qu'annotation de l'élément. Ce nouvel élément remplacera l'élément annoté dans la nouvelle arborescence transformée. Ce code est simple à écrire, comme illustré dans l'exemple.  
   
 -   Le nouvel élément ajouté en tant qu'annotation peut contenir de nouveaux nœuds enfants ; il peut former une sous-arborescence de toute forme souhaitée.  
   
 -   Il existe une règle spéciale : si un nœud enfant du nouvel élément est dans un espace de noms différent, un espace de noms créé à cet effet (dans cet exemple, l'espace de noms est `http://www.microsoft.com/LinqToXmlTransform/2007`), cet élément enfant n'est pas copié dans la nouvelle arborescence. Au lieu de cela, si l'espace de noms est l'espace de noms spécial mentionné ci-dessus et que le nom local de l'élément est `ApplyTransforms`, les nœuds enfants de l'élément dans l'arborescence source sont itérés et copiés dans la nouvelle arborescence (hormis le fait que les éléments enfants annotés sont eux-mêmes transformés conformément à ces règles).  
   
--   Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l’expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu’annotation est analogue au constructeur de séquence en XSL. En outre, l’élément `ApplyTransforms` a une fonction analogue à celle de l’élément `xsl:apply-templates` en XSL.  
+-   Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l'expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu'annotation est analogue au constructeur de séquence en XSL et l'élément `ApplyTransforms` est analogue en termes de fonction à l'élément `xsl:apply-templates` en XSL.  
   
--   L’un des avantages offerts par cette approche est que lorsque vous formulez des requêtes, vous écrivez toujours des requêtes sur l’arborescence source non modifiée. Vous n'avez pas à vous soucier de l'impact des modifications apportées à l'arborescence sur les requêtes que vous écrivez.  
+-   L'un des avantages offerts par cette approche est que lorsque vous formulez des requêtes, vous écrivez toujours des requêtes sur l'arborescence source non modifiée. Vous n'avez pas à vous soucier de l'impact des modifications apportées à l'arborescence sur les requêtes que vous écrivez.  
   
 ## <a name="transforming-a-tree"></a>Transformation d'une arborescence  
  Ce premier exemple renomme tous les nœuds `Paragraph` à `para`.  
@@ -449,3 +450,4 @@ After Transform
   
 ## <a name="see-also"></a>Voir aussi  
  [Programmation LINQ to XML avancée (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

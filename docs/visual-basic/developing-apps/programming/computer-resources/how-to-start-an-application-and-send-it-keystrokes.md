@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour démarrer une application et envoyer des séquences de touches (Visual Basic) │ Microsoft Docs"
+title: "Guide pratique pour démarrer une application et envoyer des séquences de touches (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 314d62ae0699e63aab2dff25cce2ce37552e2a20
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 142db417b6b61724ad80bd3f8e5083dd420b3aeb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Guide pratique pour démarrer une application et envoyer des séquences de touches (Visual Basic)
@@ -56,3 +56,4 @@ Cet exemple utilise la fonction `Shell` pour démarrer l’application Calculatr
  <xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A>   
  <xref:Microsoft.VisualBasic.Interaction.Shell%2A>   
  <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>
+

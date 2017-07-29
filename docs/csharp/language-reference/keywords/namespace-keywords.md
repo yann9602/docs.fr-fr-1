@@ -1,5 +1,5 @@
 ---
-title: "Mots clés d’espaces de noms (référence C#) | Microsoft Docs"
+title: "Mots clés d’espaces de noms (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 59c384e6a103dfdf1f0fe8b38c601cdad7b0ea12
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0613bb81446e1c6b0cde94b0c0bdd6dd810ce264
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="namespace-keywords-c-reference"></a>Mots clés d’espaces de noms (référence C#)
@@ -42,7 +43,7 @@ Cette section décrit les mots clés et les opérateurs qui sont associés aux e
  
 -   [using static](using-static.md)
   
--   [. (opérateur)](../../../csharp/language-reference/operators/member-access-operator.md)  
+-   [. opérateur](../../../csharp/language-reference/operators/member-access-operator.md)  
   
 -   [:: (opérateur)](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
   
@@ -50,6 +51,7 @@ Cette section décrit les mots clés et les opérateurs qui sont associés aux e
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)
+

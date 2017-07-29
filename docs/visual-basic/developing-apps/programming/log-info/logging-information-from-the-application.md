@@ -1,5 +1,5 @@
 ---
-title: "Enregistrement d&quot;informations provenant de l&quot;application (Visual Basic) │ Microsoft Docs"
+title: Enregistrement d'informations provenant de l'application (Visual Basic)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -35,11 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 25bf4e1d8b9b87c1545272c0d2746dc808d3fa4b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58f21df20425b0164586143ad5af6f363a90c3ef
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Enregistrement d'informations provenant de l'application (Visual Basic)
@@ -47,7 +47,7 @@ Cette section contient des rubriques sur l’enregistrement d’informations pro
   
  L’objet `Log` fournit des méthodes pour écrire des informations dans les écouteurs de journalisation de l’application, et la propriété `TraceSource` avancée de l’objet `Log` fournit des informations de configuration détaillées. L’objet `Log` est configuré par le fichier de configuration de l’application.  
   
- L’objet `My.Log` est disponible uniquement pour les applications ASP.NET. Pour les applications clientes, utilisez `My.Application.Log`. Pour plus d’informations, consultez <xref:Microsoft.VisualBasic.Logging.Log>.  
+ L’objet `My.Log` est disponible uniquement pour les applications ASP.NET. Pour les applications clientes, utilisez `My.Application.Log`. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Logging.Log>.  
   
 ## <a name="tasks"></a>Tâches  
   
@@ -67,3 +67,4 @@ Cette section contient des rubriques sur l’enregistrement d’informations pro
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   
  [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)   
  [Dépannage : écouteurs de journalisation](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+

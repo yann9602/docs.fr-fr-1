@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour analyser des chemins en Visual Basic | Microsoft Docs
+title: "Comment : analyser des chemins d'accès dans Visual Basic"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -32,17 +32,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: a23fb13e99e94d6fa144c82edffca7afaaef96b3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6327d661c6f1fe7647cc64b56d7f72f1f3455467
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-parse-file-paths-in-visual-basic"></a>Guide pratique pour analyser des chemins en Visual Basic
-L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méthodes utiles pour l’analyse des chemins de fichier.  
+# <a name="how-to-parse-file-paths-in-visual-basic"></a>Comment : analyser des chemins d'accès dans Visual Basic
+L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méthodes qui facilitent l’analyse des chemins de fichier.  
   
--   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> prend deux chemins et retourne un chemin combiné dans un format correct.  
+-   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> combine deux chemins et affiche un chemin combiné au format correct.  
   
 -   La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A> retourne le chemin absolu du parent du chemin fourni.  
   
@@ -68,3 +68,4 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méth
  <xref:System.IO.FileInfo>   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A>   
  [Guide pratique pour placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+
