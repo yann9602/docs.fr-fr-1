@@ -1,0 +1,1 @@
+Vous accédez indirectement à chaque propriété et événement public de ce type par la résolution d’une propriété de dépendance correspondante. Cette propriété de dépendance est le champ statique public appelé **XProperty** ou **XEvent**, où X est la propriété correspondante.

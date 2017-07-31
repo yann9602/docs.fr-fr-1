@@ -1,0 +1,2 @@
+> [!NOTE]
+>  Les fonctions et les objets de l’espace de noms N:Microsoft.VisualBasic.Compatibility.VB6?qualifyHint=False&autoUpgrade=True sont fournis pour être utilisés par les outils visant à mettre à niveau Visual Basic 6.0 vers Visual Basic 2008. Dans la plupart des cas, ces fonctions et objets dupliquent les fonctionnalités que vous pouvez trouver dans d'autres espaces de noms du .NET Framework. Ils sont nécessaires uniquement là où le modèle de code Visual Basic 6.0 diffère significativement de l'implémentation du .NET Framework.
