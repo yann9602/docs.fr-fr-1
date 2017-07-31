@@ -1,5 +1,5 @@
 ---
-title: "Utilisation de types Nullable (Guide de programmation C#) | Microsoft Docs"
+title: Utilisation de types Nullable (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a780a11d8dd238187eb82933359bbb151bb3c333
-ms.openlocfilehash: 88397167b12a00bf5e99a0537148a2957b9f0bd8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0721d9f60abc4e158135d6b050953b3e63ab8cb5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-nullable-types-c-programming-guide"></a>Utilisation de types Nullable (Guide de programmation C#)
@@ -137,3 +137,4 @@ Les types Nullable peuvent représenter toutes les valeurs d’un type sous-jace
  [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md)   
  [Boxing des types Nullable](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)   
  [Types valeur Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+
