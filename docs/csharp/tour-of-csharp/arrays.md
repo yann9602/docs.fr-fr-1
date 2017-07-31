@@ -1,5 +1,5 @@
 ---
-title: "Tableaux C# - Visite guidée du langage C# | Microsoft Docs"
+title: "Tableaux C# - Visite guidée du langage C#"
 description: Les tableaux sont le type de collection le plus simple du langage C#
 keywords: .NET, csharp, tableau, collection
 author: BillWagner
@@ -10,17 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 8816ac61cda27a086746fe2734d62f395058acd5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 82362a3675c431423a99d3d728fb8dd1da58c9c7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="arrays" class="xliff"></a>
-
-# Tableaux
+# <a name="arrays"></a>Tableaux
 
 Un ***tableau*** est une structure de données qui contient un certain nombre de variables qui sont accessibles par des indices calculés. Les variables contenues dans un tableau, également appelé ***éléments*** du tableau, sont tous du même type, et ce type est appelé ***type d’élément*** du tableau.
 

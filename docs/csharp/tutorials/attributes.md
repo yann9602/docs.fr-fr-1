@@ -1,5 +1,5 @@
 ---
-title: Attributs, C# | Microsoft Docs
+title: Attributs - C#
 description: "Découvrez comment les attributs fonctionnent en C#."
 keywords: .NET, .NET Core, C#, attribut
 author: mgroves
@@ -10,17 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 512a222a727e3e6a032848b87463dda0ae8f7362
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cc8f38d96f7f1c41f04d64c2acc2f53805b6b012
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="using-attributes-in-c" class="xliff"></a>
-
-# Utilisation d’attributs en C# #
+# <a name="using-attributes-in-c"></a>Utilisation d’attributs en C# #
 
 Les attributs fournissent un moyen permettant d’associer des informations au code de manière déclarative. Ils peuvent également fournir un élément réutilisable qui peut être appliqué à diverses cibles.
 
@@ -28,15 +26,11 @@ Considérez l’attribut `[Obsolete]`. Vous pouvez l’appliquer aux classes, st
 
 Dans ce didacticiel, vous allez voir comment ajouter des attributs à votre code, comment créer et utiliser vos propres attributs et comment utiliser des attributs qui sont intégrés à .NET Core.
 
-<a id="prerequisites" class="xliff"></a>
-
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page de [.NET Core](https://www.microsoft.com/net/core).
 Vous pouvez exécuter cette application sur Windows, Ubuntu Linux, Mac OS ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
-<a id="create-the-application" class="xliff"></a>
-
-## Création de l’application
+## <a name="create-the-application"></a>Création de l’application
 
 Maintenant que vous avez installé tous les outils, créez une nouvelle application .NET Core. Pour utiliser le générateur de ligne de commande, exécutez la commande suivante dans votre interpréteur de commandes préféré :
 
@@ -46,9 +40,7 @@ Cette commande créera des fichiers de projet .NET Core bruts. Vous devez exécu
 
 Pour exécuter le programme, utilisez `dotnet run`. Vous devriez voir le résultat dans la « Hello, World » dans la console.
 
-<a id="how-to-add-attributes-to-code" class="xliff"></a>
-
-## Guide pratique d’ajout d’attributs aux propriétés
+## <a name="how-to-add-attributes-to-code"></a>Guide pratique d’ajout d’attributs aux propriétés
 
 En C#, les attributs sont des classes qui héritent de la classe de base `Attribute`. Toute classe qui hérite de `Attribute` peut être utilisée comme une sorte de « balise » sur les autres éléments de code.
 Par exemple, il existe un attribut appelé `ObsoleteAttribute`. Il sert à signaler que le code est obsolète et ne doit pas être plus utilisé. Vous pouvez placer cet attribut sur une classe, par exemple en utilisant des crochets.
@@ -67,9 +59,7 @@ La chaîne est passée comme argument à un constructeur `ObsoleteAttribute`, co
 Les paramètres à un constructeur d’attribut sont limités aux types simples/littéraux : `bool, int, double, string, Type, enums, etc` et les tableaux de ces types.
 Vous ne pouvez pas utiliser une expression ou une variable. Vous êtes libre d’utiliser des paramètres positionnels ou nommés.
 
-<a id="how-to-create-your-own-attribute" class="xliff"></a>
-
-## Guide pratique de création de votre propre attribut
+## <a name="how-to-create-your-own-attribute"></a>Guide pratique de création de votre propre attribut
 
 La création d’un attribut est aussi simple que l’héritage de la classe de base `Attribute`.
 
@@ -91,9 +81,7 @@ Toutefois, vous ne pourrez pas utiliser ce constructeur avec une syntaxe d’att
 
 L’exemple ci-dessus entraîne une erreur du compilateur, comme `Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
-<a id="how-to-restrict-attribute-usage" class="xliff"></a>
-
-## Comment limiter l’utilisation d’attributs
+## <a name="how-to-restrict-attribute-usage"></a>Comment limiter l’utilisation d’attributs
 
 Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples ci-dessus les illustrent sur des classes, mais ils peuvent également être utilisés sur :
 
@@ -121,9 +109,7 @@ Si vous tentez de placer l’attribut ci-dessus sur quelque chose qui n’est pa
 
 [!code-csharp[Utilisation de votre propre attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
-<a id="how-to-use-attributes-attached-to-a-code-element" class="xliff"></a>
-
-## Guide d’utilisation des attributs associés à un élément de code
+## <a name="how-to-use-attributes-attached-to-a-code-element"></a>Guide d’utilisation des attributs associés à un élément de code
 
 Les attributs agissent comme métadonnées. Sans une certaine force extérieure, vous ne les verrez pas faire grand-chose.
 
@@ -147,9 +133,7 @@ Cela imprimera ceci sur la console : `Attribute on MyClass: ObsoleteAttribute`.
 Il est important de noter que ces objets `Attribute` sont instanciés de manière différée. Autrement dit, ils ne sont pas instanciés jusqu'à ce que vous utilisiez `GetCustomAttribute` ou `GetCustomAttributes`.
 Ils sont également instanciés chaque fois. Appeler `GetCustomAttributes` deux fois à la suite renverra deux instances différentes de `ObsoleteAttribute`.
 
-<a id="common-attributes-in-the-base-class-library-bcl" class="xliff"></a>
-
-## Attributs communs dans la bibliothèque de classes de base (BCL)
+## <a name="common-attributes-in-the-base-class-library-bcl"></a>Attributs communs dans la bibliothèque de classes de base (BCL)
 
 Les attributs sont utilisés par de nombreux outils et frameworks. NUnit utilise des attributs tels que `[Test]` et `[TestFixture]`, qui sont utilisés par le Test Runner de NUnit. ASP.NET MVC utilise des attributs tels que `[Authorize]` et fournit un framework de filtres d’action pour traiter les problèmes transversaux sur les actions MVC. [PostSharp](https://www.postsharp.net) utilise la syntaxe d’attribut pour permettre la programmation orientée aspect en C#.
 
@@ -166,9 +150,7 @@ Si cette chaîne correspond à une directive `#define`, alors tous les appels à
 
 Dans le code ci-dessus, il est inutile d’avoir une chaîne littérale `"Name"`. Cela peut vous aider à éviter les bogues liés aux fautes de frappe et rend également plus simple la refactorisation/les changements de nom.
 
-<a id="summary" class="xliff"></a>
-
-## Résumé
+## <a name="summary"></a>Résumé
 
 Les attributs apportent la puissance déclarative dans C#. Mais ils constituent une forme de code en tant que métadonnées et n’agissent pas par eux-mêmes.
 

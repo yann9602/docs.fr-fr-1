@@ -1,5 +1,5 @@
 ---
-title: "Programmation asynchrone de serveur - Guide C# | Microsoft Docs"
+title: Programmation asynchrone de serveur - Guide C#
 description: "Découvrez les techniques pour décharger les charges de travail serveur à l’aide de techniques de programmation asynchrones"
 keywords: "C#, async, utilisation de l’UC, utilisation du réseau"
 ms.date: 08/24/2016
@@ -9,11 +9,11 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 7402b29b-1093-456d-be4c-f60ecb8926bb
 redirect_url: /dotnet/csharp/tutorials/index
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: daa832604a30ccc24b7ce2d43516de36680797f6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 390d0eb2c8416165984ffe6c80ed6977e61a2845
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

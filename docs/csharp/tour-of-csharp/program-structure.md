@@ -1,6 +1,6 @@
 ---
-title: "Structure des programmes C# - Visite guidée du langage C# | Microsoft Docs"
-description: "Découvrez les blocs de construction de base d’un programme C#"
+title: "Structure des programmes C# - Visite guidée du langage C#"
+description: "Découvrez les composantes élémentaires d’un programme C#"
 keywords: .NET .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,17 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 3642b6525691d6179eca66f11d5002377323cdf3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8d8f443f8458cd392c75e9787e612ca1cc3518c7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="program-structure" class="xliff"></a>
-
-# Structure du programme
+# <a name="program-structure"></a>Structure du programme
 
 Les concepts clés d’organisation en C# sont les ***programmes***, ***espaces de noms***, ***types***, ***membres*** et ***assemblys***. Les programmes C++, comme les programmes C, se composent d'un ou plusieurs fichiers sources. Les programmes déclarent des types qui contiennent des membres et peuvent être organisés en espaces de noms. Les classes et les interfaces sont des exemples de types. Les champs, méthodes, propriétés et événements sont des exemples de membres. Lorsque les programmes C# sont compilés, ils sont physiquement empaquetés dans des assemblys. Les assemblys ont généralement l’extension de fichier `.exe` ou `.dll`, selon qu’elles implémentent des ***applications*** ou des ***bibliothèques***, respectivement.
 
