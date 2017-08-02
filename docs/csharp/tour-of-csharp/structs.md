@@ -1,5 +1,5 @@
 ---
-title: "Structs C# - Visite guidée du langage C# | Microsoft Docs"
+title: "Structs C# - Visite guidée du langage C#"
 description: "Apprendre les bases des types valeur de C#, appelés structs"
 keywords: .NET, C#, struct, type valeur
 author: BillWagner
@@ -10,17 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 1061144a10a95b254c01db4d12144fdc5619a085
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9d435fd87a6103d505c14219499eeea9aee045fb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="structs" class="xliff"></a>
-
-# Structs
+# <a name="structs"></a>Structs
 
 Comme les classes, les ***structs*** sont des structures de données qui peuvent contenir des membres de données et des fonctions membres. Mais contrairement aux classes, les structures sont des types valeur et ne nécessitent pas d’allocation de tas. Une variable de type struct stocke directement les données de la structure, alors qu’une variable de type class stocke une référence à un objet alloué dynamiquement. Les types struct ne prennent pas en charge l’héritage spécifié par l’utilisateur, et tous les types struct héritent implicitement du type <xref:System.ValueType>, qui à son tour hérite implicitement de `object`.
 

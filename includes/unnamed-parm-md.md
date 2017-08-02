@@ -1,0 +1,1 @@
+Certaines méthodes, notamment les opérateurs, déclarent un type pour un paramètre, mais ne spécifient pas un nom de paramètre. Un tel paramètre est qualifié de *paramètre sans nom*. Dans la documentation relative à ces méthodes, l'espace réservé *__unnamed0* représente le paramètre sans nom.

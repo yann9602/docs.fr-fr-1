@@ -1,0 +1,1 @@
+Ce document décrit les types et les espaces de noms qui sont obsolètes. Pour plus d’informations, consultez [Types dépréciés dans Windows Workflow Foundation 4.5](http://aka.ms/wfdeprecatedtypes).

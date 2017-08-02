@@ -1,5 +1,5 @@
 ---
-title: "Programmation simultanée - Guide C# | Microsoft Docs"
+title: "Programmation simultanée - Guide C#"
 description: "Découvrez des techniques pour l’exécution de tâches (probablement liées à l’UC) en parallèle"
 keywords: "C#, async, utilisation de l’UC, utilisation du réseau"
 ms.date: 08/24/2016
@@ -9,11 +9,11 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0f8b42de-858a-44a3-87d9-998211f26377
 redirect_url: /dotnet/csharp/tutorials/index
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: d192086137b4efeaf6cf90af538a620282711bab
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 00cf3b04178ca48c9f8f35eb16bc216389e6b272
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
