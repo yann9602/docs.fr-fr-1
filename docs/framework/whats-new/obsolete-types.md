@@ -1,5 +1,5 @@
 ---
-title: "Types obsolètes dans le .NET Framework | Microsoft Docs"
+title: "Types obsolètes dans le .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,15 +18,14 @@ caps.latest.revision: 41
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 01c66e2c291766ba00376261740906934f065855
-ms.openlocfilehash: b7040d4c82c9434b2d24a579a93602660479ec59
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 15ab48dedaef24ea209c38939ee87a0321da55cf
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# Types obsolètes dans le .NET Framework
-<a id="obsolete-types-in-the-net-framework" class="xliff"></a>
+# <a name="obsolete-types-in-the-net-framework"></a>Types obsolètes dans le .NET Framework
 <a name="introduction"></a> Les tableaux de cet article, organisés par assembly, répertorient les types qui sont obsolètes dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]. Utilisez les liens suivants pour consulter la liste des types obsolètes et des alternatives recommandées dans chaque assembly. Ces types étant obsolètes, tous leurs membres le sont également. Pour obtenir la liste des membres obsolètes supplémentaires dans la bibliothèque de classes .NET Framework, consultez [Membres obsolètes](../../../docs/framework/whats-new/obsolete-members.md).  
   
 -   [Types obsolètes dans les assemblys système](#obsolete_types_in_system_assemblies)  
@@ -82,13 +81,11 @@ ms.lasthandoff: 05/22/2017
     -   [Microsoft.VisualC.dll](#visualc)  
   
 <a name="obsolete_types_in_system_assemblies"></a>   
-## Types obsolètes dans les assemblys système
-<a id="obsolete-types-in-system-assemblies" class="xliff"></a>  
+## <a name="obsolete-types-in-system-assemblies"></a>Types obsolètes dans les assemblys système  
  Les tableaux suivants répertorient les types qui ont été déclarés obsolètes dans les assemblys système. Ces assemblys sont utilisés pour le développement d’applications à usage général qui ciblent le .NET Framework.  
   
 <a name="mscorlib"></a>   
-### Assembly : mscorlib.dll
-<a id="assembly-mscorlibdll" class="xliff"></a>  
+### <a name="assembly-mscorlibdll"></a>Assembly : mscorlib.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -153,8 +150,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="Core"></a>   
-### Assembly : System.Core.dll
-<a id="assembly-systemcoredll" class="xliff"></a>  
+### <a name="assembly-systemcoredll"></a>Assembly : System.Core.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -163,8 +159,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="data"></a>   
-### Assembly : System.Data.dll
-<a id="assembly-systemdatadll" class="xliff"></a>  
+### <a name="assembly-systemdatadll"></a>Assembly : System.Data.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -176,8 +171,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="oracleclient"></a>   
-### Assembly : System.Data.OracleClient.dll
-<a id="assembly-systemdataoracleclientdll" class="xliff"></a>  
+### <a name="assembly-systemdataoracleclientdll"></a>Assembly : System.Data.OracleClient.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -193,8 +187,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="design"></a>   
-### Assembly : System.Design.dll
-<a id="assembly-systemdesigndll" class="xliff"></a>  
+### <a name="assembly-systemdesigndll"></a>Assembly : System.Design.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -216,8 +209,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="system"></a>   
-### Assembly : System.dll
-<a id="assembly-systemdll" class="xliff"></a>  
+### <a name="assembly-systemdll"></a>Assembly : System.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -232,8 +224,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="enterpriseservices"></a>   
-### Assembly : System.EnterpriseServices.dll
-<a id="assembly-systementerpriseservicesdll" class="xliff"></a>  
+### <a name="assembly-systementerpriseservicesdll"></a>Assembly : System.EnterpriseServices.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -242,8 +233,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="net"></a>   
-### Assembly : System.Net.dll
-<a id="assembly-systemnetdll" class="xliff"></a>  
+### <a name="assembly-systemnetdll"></a>Assembly : System.Net.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -260,8 +250,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="servicemodel"></a>   
-### Assembly : System.ServiceModel.dll
-<a id="assembly-systemservicemodeldll" class="xliff"></a>  
+### <a name="assembly-systemservicemodeldll"></a>Assembly : System.ServiceModel.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -277,8 +266,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="web"></a>   
-### Assembly : System.Web.dll
-<a id="assembly-systemwebdll" class="xliff"></a>  
+### <a name="assembly-systemwebdll"></a>Assembly : System.Web.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -299,8 +287,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="mobile"></a>   
-### Assembly : System.Web.Mobile.dll
-<a id="assembly-systemwebmobiledll" class="xliff"></a>  
+### <a name="assembly-systemwebmobiledll"></a>Assembly : System.Web.Mobile.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -500,8 +487,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="workflow_activities"></a>   
-### Assembly : System.Workflow.Activities.dll
-<a id="assembly-systemworkflowactivitiesdll" class="xliff"></a>  
+### <a name="assembly-systemworkflowactivitiesdll"></a>Assembly : System.Workflow.Activities.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -514,8 +500,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="workflow_componentmodel"></a>   
-### Assembly : System.Workflow.ComponentModel.dll
-<a id="assembly-systemworkflowcomponentmodeldll" class="xliff"></a>  
+### <a name="assembly-systemworkflowcomponentmodeldll"></a>Assembly : System.Workflow.ComponentModel.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -533,8 +518,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="workflow_runtime"></a>   
-### Assembly : System.Workflow.Runtime.dll
-<a id="assembly-systemworkflowruntimedll" class="xliff"></a>  
+### <a name="assembly-systemworkflowruntimedll"></a>Assembly : System.Workflow.Runtime.dll  
   
 |Type|Message|  
 |----------|-------------| 
@@ -549,8 +533,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="workflowservices"></a>   
-### Assembly : System.WorkflowServices.dll
-<a id="assembly-systemworkflowservicesdll" class="xliff"></a>  
+### <a name="assembly-systemworkflowservicesdll"></a>Assembly : System.WorkflowServices.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -579,8 +562,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="xaml"></a>   
-### Assembly : System.Xaml.dll
-<a id="assembly-systemxamldll" class="xliff"></a>  
+### <a name="assembly-systemxamldll"></a>Assembly : System.Xaml.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -589,8 +571,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="xml"></a>   
-### Assembly : System.Xml.dll
-<a id="assembly-systemxmldll" class="xliff"></a>  
+### <a name="assembly-systemxmldll"></a>Assembly : System.Xml.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -603,8 +584,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="WindowsBase"></a>   
-### Assembly : WindowsBase.dll
-<a id="assembly-windowsbasedll" class="xliff"></a>  
+### <a name="assembly-windowsbasedll"></a>Assembly : WindowsBase.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -613,20 +593,17 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="obsolete_types_in_microsoft_assemblies"></a>   
-## Types obsolètes dans les assemblys Microsoft
-<a id="obsolete-types-in-microsoft-assemblies" class="xliff"></a>  
+## <a name="obsolete-types-in-microsoft-assemblies"></a>Types obsolètes dans les assemblys Microsoft  
  Les sections suivantes répertorient les types obsolètes dans les assemblys Microsoft. Il s'agit d'assemblys ayant un usage spécial, comme les assemblys qui ciblent un langage individuel (par exemple, Microsoft.JScript.dll ou Microsoft.VisualC.dll).  
   
 <a name="IEHost"></a>   
-### Assembly : IEHost.dll et IEExec.exe
-<a id="assembly-iehostdll-and-ieexecexe" class="xliff"></a>  
+### <a name="assembly-iehostdll-and-ieexecexe"></a>Assembly : IEHost.dll et IEExec.exe  
  Les assemblys IEHost.dll et IEExec.exe ont été supprimés du .NET Framework. Tous leurs types et leurs membres sont obsolètes et ne sont pas pris en charge à partir de [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Ces assemblys ont été utilisés pour héberger des contrôles Windows Forms et exécuter des exécutables dans Internet Explorer. Les alternatives recommandées incluent ClickOnce, des applications du navigateur XAML (XBAP) et Microsoft Silverlight.  
   
  [Retour au début](#introduction)  
   
 <a name="Engine"></a>   
-### Assembly : Microsoft.Build.Engine.dll
-<a id="assembly-microsoftbuildenginedll" class="xliff"></a>  
+### <a name="assembly-microsoftbuildenginedll"></a>Assembly : Microsoft.Build.Engine.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -636,8 +613,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="jscript"></a>   
-### Assembly : Microsoft.JScript.dll
-<a id="assembly-microsoftjscriptdll" class="xliff"></a>  
+### <a name="assembly-microsoftjscriptdll"></a>Assembly : Microsoft.JScript.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -663,8 +639,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="VBCompat"></a>   
-### Assembly : Microsoft.VisualBasic.Compatibility.dll
-<a id="assembly-microsoftvisualbasiccompatibilitydll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>Assembly : Microsoft.VisualBasic.Compatibility.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -739,8 +714,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="VBCompatData"></a>   
-### Assembly : Microsoft.VisualBasic.Compatibility.Data.dll
-<a id="assembly-microsoftvisualbasiccompatibilitydatadll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Assembly : Microsoft.VisualBasic.Compatibility.Data.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -797,8 +771,7 @@ ms.lasthandoff: 05/22/2017
  [Retour au début](#introduction)  
   
 <a name="visualc"></a>   
-### Assembly : Microsoft.VisualC.dll
-<a id="assembly-microsoftvisualcdll" class="xliff"></a>  
+### <a name="assembly-microsoftvisualcdll"></a>Assembly : Microsoft.VisualC.dll  
   
 |Type|Message|  
 |----------|-------------|  
@@ -813,8 +786,7 @@ ms.lasthandoff: 05/22/2017
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=fullName>|Microsoft.VisualC.dll est un assembly obsolète et existe uniquement à des fins de compatibilité descendante.|  
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=fullName>|Microsoft.VisualC.dll est un assembly obsolète et existe uniquement à des fins de compatibilité descendante.|  
   
-## Voir aussi
-<a id="see-also" class="xliff"></a>  
+## <a name="see-also"></a>Voir aussi  
  [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)   
  [Membres obsolètes](../../../docs/framework/whats-new/obsolete-members.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-build - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-build - Interface CLI .NET Core
 description: "La commande dotnet-build permet de générer un projet et l’ensemble de ses dépendances."
 keywords: dotnet-build, CLI, commande CLI, .NET Core
 author: blackdwarf
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 5e1a2bc4-a919-4a86-8f33-a9b218b1fcb3
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: e5deac8a7b8faac97ccf8b801f274a2c03268d64
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d2006b15978f384e53e43a0a2562e81d10582abd
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -35,9 +36,9 @@ Si le projet a des dépendances tierces, comme des bibliothèques NuGet, elles s
 
 La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est créé lorsque vous exécutez [`dotnet restore`](dotnet-restore.md) avant de générer le projet. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs.
 
-La commande `dotnet build` utilise MSBuild pour générer le projet. Elle prend donc en charge les builds parallèles et les builds incrémentielles. Pour plus d’informations, consultez [Builds incrémentielles](https://docs.microsoft.com/visualstudio/msbuild/incremental-builds). 
+La commande `dotnet build` utilise MSBuild pour générer le projet. Elle prend donc en charge les builds parallèles et les builds incrémentielles. Pour plus d’informations, consultez [Builds incrémentielles](/visualstudio/msbuild/incremental-builds). 
 
-En plus de ses options, la commande `dotnet build` accepte des options MSBuild, comme `/p` pour définir des propriétés ou `/l` pour définir un enregistreur d’événements. En savoir plus sur ces options dans les [Informations de référence sur la ligne de commande MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference). 
+En plus de ses options, la commande `dotnet build` accepte des options MSBuild, comme `/p` pour définir des propriétés ou `/l` pour définir un enregistreur d’événements. En savoir plus sur ces options dans les [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). 
 
 La possibilité d’exécuter le projet ou non est déterminée par la propriété `<OutputType>` dans le fichier projet. L’exemple suivant illustre un projet qui génère du code exécutable :
 

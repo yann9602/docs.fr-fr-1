@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-test - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-test - Interface CLI .NET Core
 description: "La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné."
 keywords: "dotnet-test, CLI, commande CLI, .NET Core"
 author: blackdwarf
@@ -10,33 +10,25 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 4bf0aef4-148a-41c6-bb95-0a9e1af8762e
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1cd1761d630f61a58f29d88e9342551d48cbc6a8
-ms.openlocfilehash: 0537dbbdfa61503069f6329c4163278f2c9b0af3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3308488672df2621c04de40f642c732f81284019
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/20/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="dotnet-test" class="xliff"></a>
+#<a name="dotnet-test"></a>dotnet-test
 
-#dotnet-test
-
-<a id="name" class="xliff"></a>
-
-## Nom
+## <a name="name"></a>Nom
 
 `dotnet-test` - Pilote de test .NET utilisée pour exécuter des tests unitaires.
 
-<a id="synopsis" class="xliff"></a>
-
-## Résumé
+## <a name="synopsis"></a>Résumé
 
 `dotnet test [<PROJECT>] [-s|--settings] [-t|--list-tests] [--filter] [-a|--test-adapter-path] [-l|--logger] [-c|--configuration] [-f|--framework] [-o|--output] [-d|--diag] [--no-build] [-v|--verbosity] [-h|--help]`
 
-<a id="description" class="xliff"></a>
-
-## Description
+## <a name="description"></a>Description
 
 La commande `dotnet test` est utilisée pour exécuter des tests unitaires dans un projet donné. Les tests unitaires sont des projets d’application console qui ont des dépendances dans l’infrastructure de tests unitaires (par exemple, MSTest, NUnit ou xUnit) et dans le Test Runner dotnet de l’infrastructure de tests unitaires. Ils sont empaquetés sous forme de packages NuGet et sont restaurés en tant que dépendances ordinaires pour le projet.
 
@@ -44,9 +36,7 @@ Les projets de test doivent également spécifier le lanceur de tests. Pour ce f
 
 [!code-xml[Modèle XUnit de base](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
-<a id="options" class="xliff"></a>
-
-## Options
+## <a name="options"></a>Options
 
 `PROJECT`
     
@@ -100,9 +90,7 @@ Ne génère pas le projet de test avant de l’exécuter.
 
 Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-<a id="examples" class="xliff"></a>
-
-## Exemples
+## <a name="examples"></a>Exemples
 
 Exécutez les tests du projet dans le répertoire actif :
 
@@ -112,9 +100,7 @@ Exécuter les tests dans le projet `test1` :
 
 `dotnet test ~/projects/test1/test1.csproj`
 
-<a id="filter-option-details" class="xliff"></a>
-
-## Détails de l’option de filtre
+## <a name="filter-option-details"></a>Détails de l’option de filtre
 
 `--filter <EXPRESSION>`
 
@@ -150,9 +136,7 @@ Vous pouvez inclure des expressions entre parenthèses lorsque vous utilisez des
 
 Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 [Frameworks et cibles](../../standard/frameworks.md)   
 [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)

@@ -1,5 +1,5 @@
 ---
-title: "Gestion des dépendances dans les outils .NET Core | Microsoft Docs"
+title: "Gérer les dépendances dans les outils .NET Core"
 description: "Explique comment gérer les dépendances avec les outils .NET Core."
 keywords: "CLI, extensibilité, commandes personnalisées, .NET Core"
 author: blackdwarf
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 74b87cdb-a244-4c13-908c-539118bfeef9
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 25847dd6921e547074f4501d34d865dfb1b98b59
-ms.openlocfilehash: de496d96120df1ec275bb4a69f01b6266b0b5a89
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b982d72b92cefb015c584ea6827dc60999ca9a00
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -31,10 +31,10 @@ Ce document décrit le nouveau type de référence. Il montre également comment
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" />
 ```
 
-Si vous êtes familiarisé avec MSBuild, il est similaire aux autres types de référence existants. La partie essentielle est l’instruction `Include` qui spécifie l’ID de package que vous souhaitez ajouter au projet. L’élément enfant `<Version>` spécifie la version à obtenir. Les versions sont spécifiées en fonction des [règles de version de NuGet](https://docs.microsoft.com/nuget/create-packages/dependency-versions#version-ranges).
+Si vous êtes familiarisé avec MSBuild, il est similaire aux autres types de référence existants. La partie essentielle est l’instruction `Include` qui spécifie l’ID de package que vous souhaitez ajouter au projet. L’élément enfant `<Version>` spécifie la version à obtenir. Les versions sont spécifiées en fonction des [règles de version de NuGet](/nuget/create-packages/dependency-versions#version-ranges).
 
 > [!NOTE]
-> Si vous n’êtes pas familiarisé avec la syntaxe `csproj` générale, consultez la documentation de [référence sur les projets MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-project-file-schema-reference) pour plus d’informations.  
+> Si vous n’êtes pas familiarisé avec la syntaxe `csproj` générale, consultez la documentation de [référence sur les projets MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) pour plus d’informations.  
 
 L’ajout d’une dépendance qui n’est disponible que dans une cible spécifique s’effectue à l’aide de conditions décrites dans l’exemple suivant :
 

@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-publish - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-publish - Interface CLI .NET Core
 description: "La commande dotnet-publish publie votre projet .NET Core dans un répertoire."
 keywords: "dotnet-publish, CLI, commande CLI, .NET Core"
 author: blackdwarf
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: 48bfe6c77ee6c5d905069f47da5512ac63a24b2a
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a8a37b1eacab13682d4f4a2bea2f9ea248cdd9eb
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 03/22/2017
 * Le fichier *\*.runtime.config.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
 * Les dépendances de l’application. Ces dernières sont copiées du cache NuGet vers le dossier de sortie.
 
-Le résultat de la commande `dotnet publish` est prêt pour le déploiement sur un système hôte (par exemple, un serveur, un PC, un Mac ou un ordinateur portable) et pour l’exécution ; c’est le seul moyen officiellement pris en charge de préparer l’application en vue de son déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md). Pour connaître la structure des répertoires d’une application publiée, consultez la page [Structure de répertoires](https://docs.microsoft.com/en-us/aspnet/core/hosting/directory-structure).
+Le résultat de la commande `dotnet publish` est prêt pour le déploiement sur un système hôte (par exemple, un serveur, un PC, un Mac ou un ordinateur portable) et pour l’exécution ; c’est le seul moyen officiellement pris en charge de préparer l’application en vue de son déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md). Pour connaître la structure des répertoires d’une application publiée, consultez la page [Structure de répertoires](/aspnet/core/hosting/directory-structure).
 
 ## <a name="arguments"></a>Arguments
 
@@ -96,3 +97,4 @@ Publier l’application actuelle à l’aide du framework `netcoreapp1.1` et du 
 
 * [Frameworks cibles](../../standard/frameworks.md)
 * [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md)
+

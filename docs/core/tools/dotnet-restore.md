@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-restore - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-restore - Interface CLI .NET Core
 description: "Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore."
 keywords: "dotnet-restore, CLI, commande CLI, .NET Core"
 author: blackdwarf
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fd7a5769-afbe-4838-bbaf-3ae0cfcbb914
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 602c173ff8d114a76c5598cd0826485ac32a2e72
-ms.openlocfilehash: fd4fd6ef2e8482a2b961ccbca1f5227d80c8be53
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a9e471bd1d66d68703b025cd3eaa009cb296a9fb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -38,7 +38,7 @@ Pour les dépendances, vous pouvez spécifier l’emplacement des packages resta
 
 Pour les outils spécifiques au projet, `dotnet restore` commence par restaurer le package dans lequel l’outil est empaqueté, puis il restaure les dépendances de l’outil, comme spécifié dans son fichier projet.
 
-Le comportement de la commande `dotnet restore` est affecté par certains paramètres du fichier *Nuget.Config*, le cas échéant. Par exemple, si vous définissez `globalPackagesFolder` dans *NuGet.Config*, les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur NuGet.Config](https://docs.microsoft.com/nuget/schema/nuget-config-file).
+Le comportement de la commande `dotnet restore` est affecté par certains paramètres du fichier *Nuget.Config*, le cas échéant. Par exemple, si vous définissez `globalPackagesFolder` dans *NuGet.Config*, les packages NuGet restaurés sont placés dans le dossier spécifié. Cette méthode permet également de spécifier l’option `--packages` sur la commande `dotnet restore`. Pour plus d’informations, consultez [Informations de référence sur NuGet.Config](/nuget/schema/nuget-config-file).
 
 ## <a name="arguments"></a>Arguments
 

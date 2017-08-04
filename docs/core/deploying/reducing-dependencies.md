@@ -1,6 +1,6 @@
 ---
-title: "Réduction des dépendances de package avec project.json | Microsoft Docs"
-description: "Réduction des dépendances de package avec project.json"
+title: "Réduction des dépendances de package avec project.json"
+description: "Réduisez les dépendances de package dans le cadre de la création de bibliothèques project.json."
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,31 +9,25 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 916251e3-87f9-4eee-81ec-94076215e6fa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 616fb3f4b2ed3fda9a2a49ac3ec83ff466c43968
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 23d83f0402e35bc4bed31ef59a6fff0e28e01d35
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="reducing-package-dependencies-with-projectjson" class="xliff"></a>
-
-# Réduction des dépendances de package avec project.json
+# <a name="reducing-package-dependencies-with-projectjson"></a>Réduction des dépendances de package avec project.json
 
 Cet article décrit ce que vous devez savoir sur la réduction de vos dépendances de package lors de la création de bibliothèques `project.json`. À la fin de cet article, vous saurez comment composer votre bibliothèque de sorte qu’elle utilise seulement les dépendances dont elle a besoin. 
 
-<a id="why-its-important" class="xliff"></a>
+## <a name="why-its-important"></a>Pourquoi c’est important
 
-## Pourquoi c’est important
-
-.NET Core est un produit composé de packages NuGet.  Un package essentiel est le [métapackage de bibliothèque .NET Standard](https://www.nuget.org/packages/NETStandard.Library), qui est un package NuGet composé d’autres packages.  Il vous fournit l’ensemble des packages dont le fonctionnement est garanti sur plusieurs implémentations de .NET, comme le .NET Framework, .NET Core et Xamarin/Mono.
+.NET Core est un produit composé de packages NuGet.  Parmi les packages essentiels figure le [métapackage .NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library), un package NuGet composé d’autres packages.  Il vous fournit l’ensemble des packages dont le fonctionnement est garanti sur plusieurs implémentations de .NET, comme le .NET Framework, .NET Core et Xamarin/Mono.
 
 Cependant, il est probable que votre bibliothèque n’utilise pas chaque package individuel qu’il contient.  Lors de la création d’une bibliothèque et de sa distribution sur NuGet, il est conseillé de « réduire » vos dépendances aux seuls packages que vous utilisez.  Ceci aboutit à un encombrement global inférieur pour les packages NuGet.
 
-<a id="how-to-do-it" class="xliff"></a>
-
-## Comment faire
+## <a name="how-to-do-it"></a>Comment faire
 
 Il n’existe actuellement aucune commande `dotnet` officielle qui réduit les références de package.  Vous devez donc le faire manuellement.  Le processus général se présente comme suit :
 
@@ -49,9 +43,7 @@ Vous pouvez déterminer les packages dont vous n’avez pas besoin de l’une de
 1. Essai et erreur.  Ceci implique de supprimer un package, de le restaurer, de déterminer si votre bibliothèque se compile encore et de répéter ce processus.
 2. L’utilisation d’un outil comme [ILSpy](http://ilspy.net) ou [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) permet d’examiner les références pour voir ce que votre code utilise réellement.  Vous pouvez ensuite supprimer les packages qui ne correspondent pas aux types que vous utilisez.
 
-<a id="example" class="xliff"></a>
-
-## Exemple 
+## <a name="example"></a>Exemple 
 
 Imaginez que vous avez écrit une bibliothèque qui fournit des fonctionnalités supplémentaires pour les types de collections génériques.  Ce type de bibliothèque doit dépendre de packages comme `System.Collections`, mais peut ne pas du tout dépendre de packages comme `System.Net.Http`.  Par conséquent, il serait judicieux de réduire les dépendances des packages aux seuls packages dont cette bibliothèque a besoin !
 

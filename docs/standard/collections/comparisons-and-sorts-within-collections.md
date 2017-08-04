@@ -1,5 +1,5 @@
 ---
-title: Comparaisons et tris dans les collections | Microsoft Docs
+title: Comparaisons et tris dans les collections
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -19,49 +19,49 @@ caps.latest.revision: 11
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 0da0bed43cb7871f522b94b134afb164d8ee3ab5
-ms.lasthandoff: 04/18/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1033d7ec64641dd5904372bc05bd2076efe60d39
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
-Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d’un élément à supprimer ou le renvoi d’une valeur d’une paire clé-valeur.  
+Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d'un élément à supprimer ou le renvoi d'une valeur d'une paire clé-valeur.  
   
- Les collections utilisent généralement un comparateur d’égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons.  
+ Les collections utilisent généralement un comparateur d'égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons.  
   
 <a name="BKMK_Checkingforequality"></a>   
 ## <a name="checking-for-equality"></a>Vérification de l'égalité  
- Les méthodes telles que `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A> et `Remove` utilisent un comparateur d’égalité pour les éléments de collection. Si la collection est générique, les éléments font l’objet d’une comparaison d’égalité, selon les consignes suivantes :  
+ Les méthodes telles que `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>et `Remove` utilisent un comparateur d'égalité pour les éléments de collection. Si la collection est générique, les éléments font l'objet d'une comparaison d'égalité, selon les consignes suivantes :  
   
--   Si le type T implémente l’interface générique <xref:System.IEquatable%601>, le comparateur d’égalité est la méthode <xref:System.IEquatable%601.Equals%2A> de cette interface.  
+-   Si le type T implémente l'interface générique <xref:System.IEquatable%601> , le comparateur d'égalité est la méthode <xref:System.IEquatable%601.Equals%2A> de cette interface.  
   
--   Si le type T n’implémente pas <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=fullName> est utilisé.  
+-   Si le type T n'implémente pas <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=fullName> est utilisé.  
   
- De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation <xref:System.Collections.Generic.IEqualityComparer%601>, qui est utilisée pour comparer l’égalité de clés. Pour obtenir un exemple, consultez le constructeur <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=fullName>.  
+ De plus, certaines surcharges de constructeur pour les collections de dictionnaires acceptent une implémentation <xref:System.Collections.Generic.IEqualityComparer%601> , qui est utilisée pour comparer l'égalité de clés. Pour obtenir un exemple, consultez le constructeur <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=fullName> .  
   
 <a name="BKMK_Determiningsortorder"></a>   
 ## <a name="determining-sort-order"></a>Détermination de l'ordre de tri  
  Les méthodes telles que `BinarySearch` et `Sort` utilisent un comparateur de classement pour les éléments de collection. Les comparaisons peuvent être effectuées entre les éléments d'une collection, ou entre un élément et une valeur spécifiée. Pour comparer des objets, il existe le `default comparer` et le `explicit comparer`.  
   
- Le comparateur par défaut repose sur au moins l'un des objets comparés pour implémenter l'interface **IComparable** . Il est recommandé d'implémenter **IComparable** sur toutes les classes utilisées en tant que valeurs dans une collection de listes ou en tant que clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d’égalité est déterminée selon ce qui suit :  
+ Le comparateur par défaut repose sur au moins l'un des objets comparés pour implémenter l'interface **IComparable** . Il est recommandé d'implémenter **IComparable** sur toutes les classes utilisées en tant que valeurs dans une collection de listes ou en tant que clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d'égalité est déterminée selon ce qui suit :  
   
--   Si le type T implémente l’interface générique <xref:System.IComparable%601?displayProperty=fullName>, le comparateur par défaut est la méthode <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=fullName> de cette interface  
+-   Si le type T implémente l'interface générique <xref:System.IComparable%601?displayProperty=fullName> , le comparateur par défaut est la méthode <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=fullName> de cette interface.  
   
--   Si le type T implémente l’interface non générique <xref:System.IComparable?displayProperty=fullName>, le comparateur par défaut est la méthode <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=fullName> de cette interface.  
+-   Si le type T implémente l'interface non générique <xref:System.IComparable?displayProperty=fullName> , le comparateur par défaut est la méthode <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=fullName> de cette interface.  
   
--   Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.  
+-   Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.  
   
- Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> accepte une implémentation de <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName>.  
+ Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> accepte une implémentation <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> .  
   
- Le paramètre de culture actuel du système peut affecter les comparaisons et les tris d’une collection. Par défaut, les comparaisons et les tris des classes **Collections** sont dépendants de la culture. Pour ignorer le paramètre de culture et donc obtenir des résultats cohérents de comparaison et de tri, utilisez <xref:System.Globalization.CultureInfo.InvariantCulture%2A> avec des surcharges de membre qui acceptent <xref:System.Globalization.CultureInfo>. Pour plus d’informations, consultez [Performing Culture-Insensitive String Operations in Collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) et [Performing Culture-Insensitive String Operations in Arrays](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
+ Le paramètre de culture actuel du système peut affecter les comparaisons et les tris d'une collection. Par défaut, les comparaisons et les tris des classes **Collections** sont dépendants de la culture. Pour ignorer le paramètre de culture et donc obtenir des résultats cohérents de comparaison et de tri, utilisez <xref:System.Globalization.CultureInfo.InvariantCulture%2A> avec des surcharges de membre qui acceptent <xref:System.Globalization.CultureInfo>. Pour plus d’informations, consultez [Performing Culture-Insensitive String Operations in Collections](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) et [Performing Culture-Insensitive String Operations in Arrays](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
   
 <a name="BKMK_Equalityandsortexample"></a>   
 ## <a name="equality-and-sort-example"></a>Exemple d'égalité et de tri  
- Le code suivant illustre une implémentation de <xref:System.IEquatable%601> et <xref:System.IComparable%601> sur un objet métier simple. De plus, quand l'objet est stocké dans une liste, puis trié, vous verrez que l'appel de la méthode <xref:System.Collections.Generic.List%601.Sort> se traduit par l'utilisation du comparateur par défaut pour le type `Part`, et par l'implémentation de la méthode <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> à l'aide d'une méthode anonyme.  
+ Le code suivant illustre une implémentation de <xref:System.IEquatable%601> et de <xref:System.IComparable%601> dans un objet métier simple. De plus, quand l'objet est stocké dans une liste, puis trié, vous verrez que l'appel de la méthode <xref:System.Collections.Generic.List%601.Sort> se traduit par l'utilisation du comparateur par défaut pour le type `Part` , et par l'implémentation de la méthode <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> à l'aide d'une méthode anonyme.  
   
- [!code-csharp[System.Collections.Generic.List.Sort#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.sort/cs/program.cs#1)]
- [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]  
+ [!code-csharp[System.Collections.Generic.List.Sort#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.sort/cs/program.cs#1)] [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Collections.IComparer>   
@@ -69,3 +69,4 @@ Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment
  <xref:System.Collections.Generic.IComparer%601>   
  <xref:System.IComparable>   
  <xref:System.IComparable%601>
+

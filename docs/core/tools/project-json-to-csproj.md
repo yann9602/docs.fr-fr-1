@@ -1,5 +1,5 @@
 ---
-title: Comparaison entre project.json et csproj - .NET Core | Microsoft Docs
+title: Comparaison entre project.json et csproj - .NET Core
 description: "Consultez le mappage entre éléments project.json et csproj."
 keywords: project.json, csproj, .NET Core, MSBuild
 author: natemcmaster
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
-ms.openlocfilehash: 7062102ff17c13b7cf25a1cfbb266c696221151b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f82e82c6a11220e24c85cef19bc131e12c77bf0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -56,7 +56,7 @@ Par défaut, le nom de fichier du projet spécifie également la valeur des prop
 </PropertyGroup>
 ```
 
-La propriété `<AssemblyName>` a une valeur différente de `<PackageId>` si la propriété `buildOptions\outputName` est définie dans project.json. Pour plus d’informations, consultez [Autres options communes de génération](#other-common-build-options).
+`<AssemblyName>` a une valeur différente de `<PackageId>` si la propriété `buildOptions\outputName` est définie dans project.json. Pour plus d’informations, consultez [Autres options communes de génération](#other-common-build-options).
 
 ### <a name="version"></a>version
 
@@ -494,7 +494,7 @@ Il n’existe aucun équivalent de l’élément `owners` dans MSBuild. Pour `su
 }
 ```
 
-Leur équivalent dans MSBuild sont les [cibles](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets) :
+Leur équivalent dans MSBuild sont les [cibles](/visualstudio/msbuild/msbuild-targets) :
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -562,12 +562,12 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 }
 ```
 
-Non pris en charge dans csproj. Vous devez inclure à la place des fichiers de contenu dans votre fichier *.nuspec*. Pour plus d’informations, consultez [Inclusion de fichiers de contenu](https://docs.microsoft.com/nuget/schema/nuspec#including-content-files).
+Non pris en charge dans csproj. Vous devez inclure à la place des fichiers de contenu dans votre fichier *.nuspec*. Pour plus d’informations, consultez [Inclusion de fichiers de contenu](/nuget/schema/nuspec#including-content-files).
 
 ## <a name="files"></a>fichiers 
 
 Dans *project.json*, la build et le pack peuvent être étendus pour effectuer la compilation et l’incorporation à partir de dossiers différents.
-Dans MSBuild, cela s’effectue à l’aide d’[éléments](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items). L’exemple suivant illustre une conversion courante :
+Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbuild/common-msbuild-project-items). L’exemple suivant illustre une conversion courante :
 
 ```json
 {
@@ -620,7 +620,7 @@ Tous les éléments MSBuild `ItemGroup` prennent en charge `Include`, `Exclude` 
 
 La disposition du package à l’intérieur du fichier .nupkg peut être modifiée avec `PackagePath="path"`.
 
-À l’exception de `Content`, la plupart des groupes d’éléments impliquent explicitement l’ajout de `Pack="true"` dans le package. `Content` est placé dans le dossier *content* dans un package, car la propriété MSBuild `<IncludeContentInPack>` est définie sur `true` par défaut. Pour plus d’informations, consultez [Inclusion de contenu dans un package](https://docs.microsoft.com/nuget/schema/msbuild-targets#including-content-in-a-package).
+À l’exception de `Content`, la plupart des groupes d’éléments impliquent explicitement l’ajout de `Pack="true"` dans le package. `Content` est placé dans le dossier *content* dans un package, car la propriété MSBuild `<IncludeContentInPack>` est définie sur `true` par défaut. Pour plus d’informations, consultez [Inclusion de contenu dans un package](/nuget/schema/msbuild-targets#including-content-in-a-package).
 
 `PackagePath="%(Identity)"` est une méthode rapide pour définir un chemin de package sur le chemin du fichier relatif au projet.
 
