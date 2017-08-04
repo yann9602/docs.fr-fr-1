@@ -1,5 +1,5 @@
 ---
-title: "Architecture des outils en ligne de commande .NET Core │ Microsoft Docs"
+title: Architecture des outils en ligne de commande .NET Core
 description: "Découvrez les différentes couches des outils .NET Core et les changements apportés aux versions récentes."
 keywords: .NET Core, MSBuild, architecture
 author: blackdwarf
@@ -9,33 +9,27 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7fff0f61-ac23-42f0-9661-72a7240a4456
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b64eb0d8f1778a4834ecce5d2ced71e0741dbff3
-ms.openlocfilehash: 10e565af67056dee1ea51e4949f32e1e1de54600
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6830cc46994aa44d46a9c862efff525142578003
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/27/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="high-level-overview-of-changes-in-the-net-core-tools" class="xliff"></a>
+# <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Vue d’ensemble générale des modifications des outils .NET Core
 
-# Vue d’ensemble générale des modifications des outils .NET Core
+Ce document décrit les modifications associées de passage de *project.json* à MSBuild et au système de projet *csproj*, avec des informations sur les modifications apportées aux couches d’outils .NET Core et à l’implémentation des commandes de l’interface CLI. Ces modifications ont été apportées lors du lancement du Kit de développement logiciel (SDK) .NET Core 1.0 et de Visual Studio 2017 le 7 mars 2017 (consultez [l’annonce](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-net-core-tools-1-0/)), mais ont été à l’origine implémentées avec le lancement de la préversion 3 du Kit SDK .NET Core.
 
-Ce document décrit de façon générale les modifications qu’apporte le passage de *project.json* à MSBuild et au système de projet *.csproj*. Il décrit la nouvelle organisation en couches des outils, les nouveaux éléments disponibles et leur place dans la vue d’ensemble. La lecture de cet article doit vous aider à mieux comprendre tous les éléments qui composent les outils .NET Core après le passage à MSBuild et *.csproj*. 
-
-<a id="moving-away-from-projectjson" class="xliff"></a>
-
-## Abandon de project.json
+## <a name="moving-away-from-projectjson"></a>Abandon de project.json
 Le plus grand changement apporté aux outils pour .NET Core est certainement le [passage du système de projet project.json à csproj](https://blogs.msdn.microsoft.com/dotnet/2016/05/23/changes-to-project-json/). Les dernières versions des outils en ligne de commande ne prennent pas en charge les fichiers *project.json*. Cela signifie qu’elle ne peut pas servir à générer, exécuter ou publier des bibliothèques et des applications basées sur project.json. Pour utiliser cette version des outils, vous devez migrer vos projets existants ou en démarrer de nouveaux. 
 
 Dans le cadre de ce passage, le moteur de génération personnalisé qui a été développé pour générer des projets project.json a été remplacé par un moteur de génération mature et entièrement compatible appelé [MSBuild](https://github.com/Microsoft/msbuild). MSBuild est un moteur connu dans la communauté .NET, car c’est une technologie clé depuis la première version Release de la plateforme. Bien sûr, comme il doit générer des applications .NET Core, MSBuild a été porté vers .NET Core et peut être utilisé sur n’importe quelle plateforme sur laquelle s’exécute .NET Core. Une des principales promesses de .NET Core réside dans une pile de développement multiplateforme, et nous avons veillé à ce que cette évolution n’entrave pas cette promesse.
 
 > [!NOTE]
-> Si vous débutez avec MSBuild et souhaitez en savoir plus, vous pouvez commencer par lire l’article [Concepts de MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-concepts). 
+> Si vous débutez avec MSBuild et souhaitez en savoir plus, vous pouvez commencer par lire l’article [Concepts de MSBuild](/visualstudio/msbuild/msbuild-concepts). 
 
-<a id="the-tooling-layers" class="xliff"></a>
-
-## Les couches des outils
+## <a name="the-tooling-layers"></a>Les couches des outils
 Le fait de quitter le système de projet existant et de changer de moteur de génération suscite naturellement la question de savoir si l’une ou l’autre de ces modifications change l’organisation en couches globale de l’ensemble de l’écosystème des outils .NET Core. Existe-t-il de nouvelles parties et composants ?
 
 Commençons par un rappel rapide de l’organisation en couches de Preview 2, comme l’illustre l’image suivante :
@@ -51,13 +45,11 @@ Avec le passage au nouveau système de projet, le schéma précédent change :
 La principale différence est que l’interface de ligne de commande n’est plus la couche de base, ce rôle étant rempli par le « composant SDK partagé ». Ce composant SDK partagé est un ensemble de cibles et de tâches associées chargées de la compilation de votre code, de sa publication, de l’empaquetage des packages NuGet, etc. Le SDK lui-même est open source et est disponible sur GitHub dans le [dépôt SDK](https://github.com/dotnet/sdk). 
 
 > [!NOTE]
-> Une « cible » est un terme MSBuild qui indique une opération nommée que MSBuild peut appeler. Elle est généralement associée à une ou plusieurs tâches qui exécutent une logique que la cible est supposée effectuer. MSBuild prend en charge plusieurs cibles prédéfinies telles que `Copy` ou `Execute`, et permet aussi aux utilisateurs d’écrire leurs propres tâches à l’aide de code managé et de définir des cibles pour exécuter ces tâches. Pour plus d’informations, consultez [Tâches MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-tasks). 
+> Une « cible » est un terme MSBuild qui indique une opération nommée que MSBuild peut appeler. Elle est généralement associée à une ou plusieurs tâches qui exécutent une logique que la cible est supposée effectuer. MSBuild prend en charge plusieurs cibles prédéfinies telles que `Copy` ou `Execute`, et permet aussi aux utilisateurs d’écrire leurs propres tâches à l’aide de code managé et de définir des cibles pour exécuter ces tâches. Pour plus d’informations, consultez [Tâches MSBuild](/visualstudio/msbuild/msbuild-tasks). 
 
 Tous les ensembles d’outils utilisent désormais le composant SDK partagé et ses cibles, interface de ligne de commande incluse. Par exemple, la prochaine version de Visual Studio n’appellera pas la commande `dotnet restore` pour restaurer les dépendances des projets .NET Core, mais utilisera directement la cible « Restore ». Comme il s’agit de cibles de MSBuild, vous pouvez également utiliser MSBuild sous forme brute pour les exécuter à l’aide de la commande [dotnet msbuild](dotnet-msbuild.md). 
 
-<a id="cli-commands" class="xliff"></a>
-
-### Commandes CLI
+### <a name="cli-commands"></a>Commandes CLI
 Le composant SDK partagé signifie que la plupart des commandes CLI existantes ont été réimplémentées comme cibles et tâches MSBuild. Que cela signifie-t-il pour les commandes CLI et votre utilisation de l’ensemble d’outils ? 
 
 Sur le plan pratique, la manière dont vous utilisez l’interface de ligne de commande ne change pas. L’interface de ligne de commande reprend les commandes de base de la version Release Preview 2 :
@@ -81,3 +73,4 @@ Cette commande publie une application dans un dossier `pub` à l’aide de la co
    `dotnet msbuild /t:Publish /p:OutputPath=pub /p:Configuration=Release`
 
 La principale exception à cette règle sont les commandes `new` et `run`, car elles n’ont pas été implémentées comme cibles de MSBuild.
+

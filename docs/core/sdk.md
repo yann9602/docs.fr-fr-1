@@ -1,6 +1,6 @@
 ---
-title: "Vue d’ensemble du SDK .NET Core | Documents Microsoft"
-description: "Vue d’ensemble du SDK .NET Core"
+title: "Vue d’ensemble du SDK .NET Core"
+description: "Découvrez le Kit SDK .NET Core, un ensemble de bibliothèques et d’outils permettant de créer des projets .NET Core."
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -10,21 +10,17 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 26bc9822-e42b-48ec-b0d6-499dc604add7
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 1b05b7e1a2d274f02cd1222c0a90a59583d37e92
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8f3d0f5b3bccdd1ca25fa1202c2c727e402fe668
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="net-core-sdk-overview" class="xliff"></a>
+# <a name="net-core-sdk-overview"></a>Vue d’ensemble du SDK .NET Core 
 
-# Vue d’ensemble du SDK .NET Core 
-
-<a id="introduction" class="xliff"></a>
-
-## Introduction
+## <a name="introduction"></a>Introduction
 Le Kit de développement logiciel (SDK) .NET Core est un ensemble de bibliothèques et d’outils qui permettent aux développeurs de créer des applications et des bibliothèques .NET Core. Il s’agit du package que les développeurs voudront très probablement se procurer. 
 
 Il comprend les composants suivants :
@@ -34,9 +30,7 @@ Il comprend les composants suivants :
 3. Pilote `dotnet` permettant d’exécuter les [commandes CLI](tools/index.md), ainsi que les applications en cours d’exécution.
 
 
-<a id="acquiring-the-net-core-sdk" class="xliff"></a>
-
-## Obtention du SDK .NET Core
+## <a name="acquiring-the-net-core-sdk"></a>Obtention du SDK .NET Core
 Comme pour n’importe quel ensemble d’outils, la première étape consiste à se procurer les outils sur l’ordinateur. Selon le cas, vous pouvez utiliser les programmes d’installation natifs pour installer le SDK ou utiliser le script de l’interpréteur de commandes d’installation.
 
 Les programmes d’installation natifs s’adressent principalement aux ordinateurs des développeurs. Le SDK est distribué selon le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensemble MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement comme il se doit pour permettre à l’utilisateur d’exploiter le SDK de suite après l’installation. Cependant, ils nécessitent aussi de disposer de privilèges d’administration sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).

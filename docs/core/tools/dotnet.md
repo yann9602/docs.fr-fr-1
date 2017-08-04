@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet - CLI .NET Core | Microsoft Docs
+title: Commande dotnet - Interface CLI .NET Core
 description: "Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser."
 keywords: dotnet, CLI, commandes CLI, .NET Core
 author: blackdwarf
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 256e468e-eaaa-4715-b5fb-8cbddcf80e69
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d97a1501ad25b683cbb5d7fbd8bd1b137f7f4046
-ms.openlocfilehash: 02779e1ac5db1a7a68ddede6d30063366270dc50
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1f377ea55278ae382f56a0dc0cbcf1bb99f49eca
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 

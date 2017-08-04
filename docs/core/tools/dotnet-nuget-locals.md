@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-nuget-locals - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-nuget-locals - Interface CLI .NET Core
 description: "La commande dotnet-nuget-locals efface ou répertorie les ressources NuGet locales telles que le cache de requête http, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur."
 keywords: dotnet-nuget-locals, CLI, commande CLI, .NET Core
 author: karann-msft
@@ -10,10 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
-translationtype: Human Translation
-ms.sourcegitcommit: dff752a9d31ec92b113dae9eed20cd72faf57c84
-ms.openlocfilehash: d0acfaa6ff1a11f49a0d3751b675ea94bd6ae3a3
-ms.lasthandoff: 03/22/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2c9ea7b3b7c61b347cb7c56254773290f04a0cd6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -95,5 +96,5 @@ Effacer tous les fichiers du répertoire du cache temporaire local :
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-Pour plus d’informations sur les problèmes et erreurs courants liés à l’utilisation de la commande `dotnet nuget locals`, consultez la page [Gestion du cache NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-nuget-cache).
+Pour plus d’informations sur les problèmes et erreurs courants liés à l’utilisation de la commande `dotnet nuget locals`, consultez la page [Gestion du cache NuGet](/nuget/consume-packages/managing-the-nuget-cache).
 

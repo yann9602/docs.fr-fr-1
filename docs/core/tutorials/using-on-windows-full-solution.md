@@ -1,6 +1,6 @@
 ---
-title: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017 │ Microsoft Docs"
-description: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017"
+title: "Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017"
+description: "Découvrez comment générer une solution .NET Core complète dans Visual Studio 2017 sous Windows."
 keywords: .NET, .NET Core
 author: bleroy
 ms.author: mairaw
@@ -9,10 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: b8505f88b324fcdf3a51d75c455ec5869e058774
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6b164198f5fbbae5ebc6164fc281dd7de8172b70
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 

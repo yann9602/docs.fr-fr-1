@@ -1,5 +1,5 @@
 ---
-title: Commande dotnet-msbuild - CLI .NET Core | Microsoft Docs
+title: Commande dotnet-msbuild - Interface CLI .NET Core
 description: "La commande dotnet-msbuild fournit l’accès à la ligne de commande MSbuild."
 keywords: dotnet-msmsbuild, CLI, commande CLI, .NET Core
 author: blackdwarf
@@ -10,41 +10,31 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: ffdc40ba-ef33-463e-aa35-b0af1fe615a2
-ms.translationtype: Human Translation
-ms.sourcegitcommit: df4b2ddd322e4bd2ebaf444439107e88a983f988
-ms.openlocfilehash: 2267ef0b5785959456ea443405b6708a423d00ba
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1f02dcd779b9ed249ebd2fedb973383b1dcd8963
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/30/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-<a id="dotnet-msbuild" class="xliff"></a>
+# <a name="dotnet-msbuild"></a>dotnet-msbuild
 
-# dotnet-msbuild
-
-<a id="name" class="xliff"></a>
-
-## Nom
+## <a name="name"></a>Nom
 
 `dotnet-msbuild` : Génère un projet et l’ensemble de ses dépendances.
 
-<a id="synopsis" class="xliff"></a>
-
-## Résumé
+## <a name="synopsis"></a>Résumé
 
 `dotnet msbuild <msbuild_arguments> [-h]`
 
-<a id="description" class="xliff"></a>
-
-## Description
+## <a name="description"></a>Description
 
 La commande `dotnet msbuild` permet d’accéder à un outil MSBuild entièrement fonctionnel.
 
-La commande a les mêmes fonctionnalités que le client de ligne de commande MSBuild existant. Les options sont identiques. Utilisez les [Informations de référence sur la ligne de commande MSBuild](https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference) pour obtenir des informations sur les options disponibles. 
+La commande a les mêmes fonctionnalités que le client de ligne de commande MSBuild existant. Les options sont identiques. Utilisez les [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) pour obtenir des informations sur les options disponibles. 
 
-<a id="examples" class="xliff"></a>
-
-## Exemples
+## <a name="examples"></a>Exemples
 
 Générer un projet et ses dépendances :
 
@@ -61,3 +51,4 @@ Exécuter la cible de publication et effectuer une publication pour le RID `osx.
 Consultez la totalité du projet avec toutes les cibles incluses par le kit SDK :
 
 `dotnet msbuild /pp`
+

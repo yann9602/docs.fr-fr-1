@@ -1,7 +1,7 @@
 ---
-title: "Organiser et tester des projets avec la ligne de commande .NET Core │ Microsoft Docs"
+title: Organiser et tester des projets avec la ligne de commande .NET Core
 description: "Ce didacticiel explique comment organiser et tester des projets .NET Core à partir de la ligne de commande."
-keywords: .NET, .NET Core, tests unitaires, .NET CLI, xUnit
+keywords: .NET, .NET Core, tests unitaires, interface CLI .NET Core, xUnit
 author: cartermp
 ms.author: mairaw
 ms.date: 05/16/2017
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6edd52bc56a03138fe16048fa06cad00a2af4847
-ms.openlocfilehash: 1e6e987777678ade860f108aed05bba926a6d4fd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1a0a0554b28600821fb15f64d31c6bce74a17136
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/16/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -260,3 +260,4 @@ Test execution time: 1.6634 Seconds
 Les tests réussissent. Les méthodes des types d’animaux domestiques retournent des valeurs correctes quand elles communiquent avec le propriétaire.
 
 Vous avez appris les techniques permettant d’organiser et de tester des projets à l’aide de xUnit. Vous pouvez maintenant les mettre en pratique dans vos propres projets. *Bon développement !*
+
