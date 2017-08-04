@@ -1,5 +1,5 @@
 ---
-title: "Atténuation : paramètre de configuration minFreeMemoryPercentageToActiveService | Microsoft Docs"
+title: "Atténuation : paramètre de configuration minFreeMemoryPercentageToActiveService"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,18 +14,18 @@ caps.latest.revision: 4
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 783dd4fb28f1590722833ce9a456b9c2c76ecd80
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f7f228890476d45517a21bc09806538139c5e389
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-minfreememorypercentagetoactiveservice-configuration-setting"></a>Atténuation : paramètre de configuration minFreeMemoryPercentageToActiveService
 Dans [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], une exception est levée si la mémoire disponible sur le serveur web est inférieure au pourcentage spécifié par le paramètre de configuration [minFreeMemoryPercentageToActivateService](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md). Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], ce paramètre a été ignoré.  
   
 ## <a name="impact"></a>Impact  
- Dans la plupart des cas, l'impact du réglage du paramètre [minFreeMemoryPercentageToActivateService](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) est souhaitable : il améliore la stabilité du système en prévenant les exceptions <xref:System.OutOfMemoryException> qui peuvent se produire lorsqu'un service Windows Communication Foundation (WCF) est démarré sur un système ayant une mémoire contrainte.  
+ Dans la plupart des cas, l’impact du réglage du paramètre [minFreeMemoryPercentageToActivateService](../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) est souhaitable : il améliore la stabilité du système en prévenant les exceptions <xref:System.OutOfMemoryException> qui peuvent se produire quand un service Windows Communication Foundation (WCF) est démarré sur un système ayant une mémoire contrainte.  
   
  Toutefois, dans certains cas, un service qui démarrait correctement peut ne plus démarrer. Dans ce cas, un message d'erreur détaillé s'affiche :  
   

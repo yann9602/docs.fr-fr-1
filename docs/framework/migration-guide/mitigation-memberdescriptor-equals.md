@@ -1,5 +1,5 @@
 ---
-title: "Atténuation : MemberDescriptor.Equals | Microsoft Docs"
+title: "Atténuation : MemberDescriptor.Equals"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -15,23 +15,23 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 409f06f4dfbe7be50dd2c487e49d3d4d8a477539
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4989d3c2611b500063158955f102931902e1ab32
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mitigation-memberdescriptorequals"></a>Atténuation : MemberDescriptor.Equals
-En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], l’implémentation de la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName>. Étant donné que les méthodes `System.ComponentModel.EventDescriptor.Equals` et `System.ComponentModel.PropertyDescriptor.Equals` héritent de l’implémentation de la classe de base, la modification affecte également ces méthodes.  
+À partir des applications qui ciblent le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], l’implémentation de la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> a changé. Étant donné que les méthodes `System.ComponentModel.EventDescriptor.Equals` et `System.ComponentModel.PropertyDescriptor.Equals` héritent de l’implémentation de la classe de base, la modification affecte également ces méthodes.  
   
- Dans les applications qui ciblent des versions du .NET Framework antérieures à [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], une partie du test d’égalité pour la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> comparait incorrectement la propriété <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> d’un objet avec la propriété <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> de l’autre. En commençant par les applications qui ciblent [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> compare la propriété <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> des deux objets.  
+ Dans les applications qui ciblent des versions du .NET Framework antérieures au [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], une partie du test d’égalité pour la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> comparait incorrectement la propriété <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=fullName> d’un objet avec la propriété <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> de l’autre. En commençant par les applications qui ciblent le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> compare la propriété <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=fullName> des deux objets.  
   
 ## <a name="impact"></a>Impact  
  Cette modification implémente correctement le test d’égalité pour les objets <xref:System.ComponentModel.MemberDescriptor?displayProperty=fullName> et doit avoir un impact minimal.  
   
 ## <a name="mitigation"></a>Atténuation  
- Deux solutions sont disponibles si application cible [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ou une version ultérieure de .NET Framework, et dépend du renvoi de `false` par la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> lorsque des descripteurs membres sont équivalents :  
+ Deux solutions sont disponibles si votre application cible le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ou une version ultérieure du .NET Framework, et dépend du renvoi de `false` par la méthode <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=fullName> quand des descripteurs membres sont équivalents :  
   
 -   Vous pouvez refuser cette modification sans modifier votre code source en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section de votre fichier app.config :  
   
