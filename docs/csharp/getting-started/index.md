@@ -1,6 +1,5 @@
 ---
-
-title: "Bien démarrer - Guide C# | Microsoft Docs"
+title: "Bien démarrer - Guide C#"
 description: "Bien démarrer avec C#"
 keywords: "C#, bien démarrer, acquisition, installation"
 author: rpetrusha
@@ -11,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 0878fb6328d406ae3456a740e6e806f3ebbdbbb8
+ms.translationtype: HT
+ms.sourcegitcommit: 3bd8800e7410ae4a3b89f5962af957789edd48b0
+ms.openlocfilehash: 923875aa48fb78c63e8e3e9e17095ff424c8e49d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C# #
@@ -34,7 +33,7 @@ Les rubriques suivantes sont disponibles :
 
    Une bibliothèque de classes permet de définir les types et membres de types qui peuvent être appelés à partir d’une autre application. Cette rubrique vous permet de créer une bibliothèque de classes avec une méthode unique qui détermine si une chaîne commence par une majuscule. Une fois que vous aurez terminé de créer la bibliothèque, vous pourrez développer un [test unitaire](testing-library-with-visual-studio.md) pour vous assurer qu’elle fonctionne comme prévu, puis la rendre accessible aux [applications qui souhaitent l’utiliser](consuming-library-with-visual-studio.md).
 
-- [Prise en main de Visual Studio Code](with-visual-studio-code.md)
+- [Prise en main de C# et Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
 
    Visual Studio Code est un éditeur de code gratuit optimisé pour la création et le débogage d’applications cloud et web modernes. Il prend en charge IntelliSense et est disponible pour Linux, macOS et Windows.
 

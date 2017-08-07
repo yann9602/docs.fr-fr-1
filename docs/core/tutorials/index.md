@@ -1,6 +1,6 @@
 ---
-title: Didacticiels .NET Core | Microsoft Docs
-description: Didacticiels .NET Core
+title: Didacticiels .NET Core
+description: "Suivez les didacticiels pour apprendre .NET Core et générer des applications et des bibliothèques sur Mac, Linux et Windows."
 keywords: .NET, .NET Core
 author: richlander
 ms.author: mairaw
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 86320023259bae3bd262a146681f24a6c6d3f7ea
+ms.translationtype: HT
+ms.sourcegitcommit: 3bd8800e7410ae4a3b89f5962af957789edd48b0
+ms.openlocfilehash: 828a858f1c0679d72d59eb0a1db2d5e26aa7b88e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 
@@ -30,11 +30,11 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 - [Test d’une bibliothèque de classes C#](../../csharp/getting-started/testing-library-with-visual-studio.md)
 - [Utilisation d’une bibliothèque de classes C# avec .NET Core](../../csharp/getting-started/consuming-library-with-visual-studio.md)
 - [Génération d’une solution C# .NET Core complète sur Windows](using-on-windows-full-solution.md)
-- [Didacticiel NoSQL : Création d’une application console DocumentDB C# sur .NET Core](https://docs.microsoft.com/azure/documentdb/documentdb-dotnetcore-get-started)
+- [Didacticiel NoSQL : Création d’une application console DocumentDB C# sur .NET Core](/azure/documentdb/documentdb-dotnetcore-get-started)
 
 ## <a name="building-applications-with-visual-studio-code"></a>Création d’applications avec Visual Studio Code
 
-- [Bien démarrer avec C# à l’aide de Visual Studio Code](../../csharp/getting-started/with-visual-studio-code.md)
+- [Prise en main de C# et Visual Studio Code](with-visual-studio-code.md)
 - [Bien démarrer avec .NET Core sur Mac OS](using-on-macos.md)
 
 ## <a name="building-applications-with-visual-studio-for-mac"></a>Création d’applications avec Visual Studio pour Mac
@@ -55,5 +55,5 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 - [Guide pratique pour gérer les versions de dépendances de package pour .NET Core 1.0](managing-package-dependency-versions.md)
 - [Hébergement .NET Core à partir du code natif](netcore-hosting.md)
 
-Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
+Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).
 

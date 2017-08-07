@@ -1,5 +1,5 @@
 ---
-title: Types (Guide de programmation C#) | Microsoft Docs
+title: Types (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -35,19 +35,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31fb07eba1cb40e36861227e3e692677b02e3dd5
-ms.openlocfilehash: ad61ccff0503617f21780d2af7cd806c47da2500
+ms.translationtype: HT
+ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
+ms.openlocfilehash: 906fa362c249c3e5abbd6f2ed3ba879a81334aeb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/01/2017
+ms.lasthandoff: 08/01/2017
 
 ---
-<a id="types-c-programming-guide" class="xliff"></a>
-
-# Types (Guide de programmation C#)
-<a id="types-variables-and-values" class="xliff"></a>
-
-## Types, variables et valeurs  
+# <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
+## <a name="types-variables-and-values"></a>Types, variables et valeurs  
  C# est un langage fortement typé. Chaque variable et chaque constante ont un type, tout comme chaque expression qui fournit une valeur. Chaque signature de méthode spécifie un type pour chaque paramètre d’entrée et pour la valeur de retour. La bibliothèque de classes .NET Framework définit un ensemble de types numériques intégrés, ainsi que des types plus complexes qui représentent un large éventail de constructions logiques, telles que le système de fichiers, les connexions réseau, les collections et tableaux d’objets, et les dates. Un programme C# classique utilise des types fournis dans la bibliothèque de classes, mais aussi des types définis par l’utilisateur qui modélisent les concepts propres au domaine du problème du programme.  
   
  Un type peut stocker les informations suivantes :  
@@ -73,9 +69,7 @@ ms.lasthandoff: 07/01/2017
   
  Le compilateur incorpore les informations de type dans le fichier exécutable sous forme de métadonnées. Le common language runtime (CLR) utilise ces métadonnées au moment de l’exécution pour garantir que le type est sécurisé lorsqu’il alloue et libère de la mémoire.  
   
-<a id="specifying-types-in-variable-declarations" class="xliff"></a>
-
-### Spécification de types dans les déclarations de variable  
+### <a name="specifying-types-in-variable-declarations"></a>Spécification de types dans les déclarations de variable  
  Lorsque vous déclarez une variable ou une constante dans un programme, vous devez spécifier son type ou utiliser le mot clé [var](../../../csharp/language-reference/keywords/var.md) pour permettre au compilateur de déduire le type. L’exemple suivant montre des déclarations de variable qui utilisent des types numériques intégrés et des types complexes définis par l’utilisateur :  
   
  [!code-cs[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_2.cs)]  
@@ -88,19 +82,13 @@ ms.lasthandoff: 07/01/2017
   
  Pour plus d'informations, consultez [Cast et conversions de types](../../../csharp/programming-guide/types/casting-and-type-conversions.md).  
   
-<a id="built-in-types" class="xliff"></a>
-
-## Types intégrés  
+## <a name="built-in-types"></a>Types intégrés  
  C# fournit un jeu standard de types numériques intégrés pour représenter les nombres entiers, les valeurs à virgule flottante, les expressions booléennes, les caractères de texte, les valeurs décimales et d’autres types de données. Il existe également des types `string` et `object` intégrés. que vous pouvez utiliser dans n’importe quel programme C#. Pour plus d’informations sur les types intégrés, consultez [Tableaux de référence des types](../../../csharp/language-reference/keywords/reference-tables-for-types.md).  
   
-<a id="custom-types" class="xliff"></a>
-
-## Types personnalisés  
+## <a name="custom-types"></a>Types personnalisés  
  Vous utilisez les constructions [struct](../../../csharp/language-reference/keywords/struct.md), [classe](../../../csharp/language-reference/keywords/class.md), [interface](../../../csharp/language-reference/keywords/interface.md) et [enum](../../../csharp/language-reference/keywords/enum.md) pour créer vos propres types personnalisés. La bibliothèque de classes .NET Framework est une collection de types personnalisés fournie par Microsoft que vous pouvez utiliser dans vos propres applications. Par défaut, les types les plus fréquemment utilisés dans la bibliothèque de classes sont disponibles dans tous les programmes C#. Les autres types sont disponibles uniquement si vous ajoutez explicitement une référence de projet à l’assembly dans lequel ils sont définis. Une fois que le compilateur a une référence à l’assembly, vous pouvez déclarer des variables (et des constantes) des types déclarés dans cet assembly dans le code source. Pour plus d’informations, consultez [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=217856).  
   
-<a id="the-common-type-system" class="xliff"></a>
-
-## Système de type commun  
+## <a name="the-common-type-system"></a>Système de type commun  
  Il est important de comprendre deux points fondamentaux à propos du système de type dans le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] :  
   
 -   Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, notamment les types numériques intégrés comme <xref:System.Int32?displayProperty=fullName> (mot clé C# : [int](../../../csharp/language-reference/keywords/int.md)), dérivent au final d’un seul type de base, qui est <xref:System.Object?displayProperty=fullName> (mot clé C# : [object](../../../csharp/language-reference/keywords/object.md)). Cette hiérarchie de types unifiée est appelée [Système de type commun](../../../standard/base-types/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
@@ -115,9 +103,7 @@ Types valeur et types référence dans le CTS
 > [!NOTE]
 >  Vous pouvez voir que les types couramment utilisés sont tous organisés dans l’espace de noms <xref:System>. Toutefois, l’espace de noms qui contient un type n’a aucune incidence sur le fait qu’il s’agisse d’un type valeur ou d’un type référence.  
   
-<a id="value-types" class="xliff"></a>
-
-### Types valeur  
+### <a name="value-types"></a>Types valeur  
  Les types valeur dérivent de <xref:System.ValueType?displayProperty=fullName>, qui dérive de <xref:System.Object?displayProperty=fullName>. Les types qui dérivent de <xref:System.ValueType?displayProperty=fullName> ont un comportement spécial dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
   
  Il existe deux catégories de types valeur : [struct](../../../csharp/language-reference/keywords/struct.md) et [enum](../../../csharp/language-reference/keywords/enum.md).  
@@ -153,10 +139,8 @@ char c = 'Z';
   
  Toutes les énumérations héritent de <xref:System.Enum?displayProperty=fullName>, qui hérite de <xref:System.ValueType?displayProperty=fullName>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../../../csharp/programming-guide/enumeration-types.md).  
   
-<a id="reference-types" class="xliff"></a>
-
-### Types référence  
- Un type qui est défini comme une [classe](../../../csharp/language-reference/keywords/class.md), un [délégué](../../../csharp/language-reference/keywords/delegate.md), un tableau ou une [interface](../../../csharp/language-reference/keywords/interface.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de l’objet à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md) ou que vous ne lui avez pas assigné un objet créé ailleurs à l’aide de `new, as shown in the following example:`  
+### <a name="reference-types"></a>Types référence  
+ Un type qui est défini comme une [classe](../../../csharp/language-reference/keywords/class.md), un [délégué](../../../csharp/language-reference/keywords/delegate.md), un tableau ou une [interface](../../../csharp/language-reference/keywords/interface.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de l’objet à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md) ou que vous ne lui avez pas assigné un objet créé ailleurs à l’aide de `new`, comme indiqué dans l’exemple suivant :
   
 ```csharp  
 MyClass mc = new MyClass();  
@@ -176,18 +160,14 @@ IMyInterface iface = new MyClass();
   
  Les types référence prennent en charge l’héritage. Quand vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n’est pas définie comme [sealed](../../../csharp/language-reference/keywords/sealed.md), et d’autres classes peuvent hériter de votre classe et substituer vos méthodes virtuelles. Pour plus d’informations sur la création de vos propres classes, consultez [Classes et structures](../../../csharp/programming-guide/classes-and-structs/index.md). Pour plus d’informations sur l’héritage et les méthodes virtuelles, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
-<a id="types-of-literal-values" class="xliff"></a>
-
-## Types de valeurs littérales  
+## <a name="types-of-literal-values"></a>Types de valeurs littérales  
  Dans C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit un type pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](../../../csharp/language-reference/keywords/value-types.md).  
   
  Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object?displayProperty=fullName>, vous pouvez écrire et compiler du code, tel que le suivant :  
   
  [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
-<a id="generic-types" class="xliff"></a>
-
-## Types génériques  
+## <a name="generic-types"></a>Types génériques  
  Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type .NET Framework <xref:System.Collections.Generic.List%601?displayProperty=fullName> a un paramètre de type qui, par convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets contenus dans la liste, par exemple, une chaîne :  
  
 ```csharp
@@ -198,18 +178,14 @@ stringList.Add(4);
 ```
  L’utilisation du paramètre de type rend possible la réutilisation de la même classe pour contenir tout type d’élément, sans avoir à convertir chaque élément en [object](../../../csharp/language-reference/keywords/object.md). Les classes de collections génériques sont appelées *collections fortement typées*, car le compilateur connaît le type spécifique des éléments de chaque collection et il peut déclencher une erreur au moment de la compilation. C’est le cas, par exemple, si vous essayez d’ajouter un entier à l’objet `strings` dans l’exemple précédent. Pour plus d’informations, consultez [Génériques](../../../csharp/programming-guide/generics/index.md).  
   
-<a id="implicit-types-anonymous-types-and-nullable-types" class="xliff"></a>
-
-## Types implicites, types anonymes et types Nullable  
+## <a name="implicit-types-anonymous-types-and-nullable-types"></a>Types implicites, types anonymes et types Nullable  
  Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](../../../csharp/language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, consultez [Variables locales implicitement typées](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
  Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez créer des *types anonymes* à cet effet. Pour plus d’informations, consultez [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
  Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../../csharp/language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](../../../csharp/language-reference/keywords/null.md). Dans le CTS, les types Nullable sont des instances du type struct générique <xref:System.Nullable%601?displayProperty=fullName>. Les types Nullable sont particulièrement utiles lorsque vous passez des données vers et à partir de bases de données dans lesquelles les valeurs numériques peuvent être Null. Pour plus d’informations, consultez [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md).  
   
-<a id="related-sections" class="xliff"></a>
-
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d’informations, consultez les rubriques suivantes :  
   
 -   [Cast et conversions de types](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
@@ -228,14 +204,10 @@ stringList.Add(4);
   
 -   [Génériques](../../../csharp/programming-guide/generics/index.md)  
 
-<a id="c-language-specification" class="xliff"></a>
-
-## Spécification du langage C#  
+## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Conversion des types de données XML](../../../standard/data/xml/conversion-of-xml-data-types.md)   
