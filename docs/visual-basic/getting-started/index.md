@@ -1,6 +1,6 @@
 ---
 title: "Bien démarrer avec Visual Basic"
-ms.date: 2017-05-01
+ms.date: 2017-08-07
 ms.prod: .net
 ms.technology:
 - devlang-visual-basic
@@ -30,10 +30,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0f94aab658175c1a338aff78d2645fd631fd37c8
+ms.sourcegitcommit: 168d37a4e4ada31b09ea68b6e0ef5eb41fb1e55f
+ms.openlocfilehash: 5b8a13e850369affe203440c79496047b24053f0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/08/2017
 
 ---
 # <a name="getting-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
@@ -45,18 +45,17 @@ Cette section de la documentation vous aide à commencer à développer des appl
 Répertorie les nouvelles fonctionnalités de chacune des versions de Visual Basic .NET.
 
 [Modifications de dernière minute au niveau de Visual Basic dans Visual Studio 2015](breaking-changes-in-visual-studio.md)  
- Répertorie les modifications de cette version qui peuvent empêcher une application de se compiler ou de modifier son comportement au moment de l’exécution.  
+Répertorie les modifications de cette version qui peuvent empêcher une application de se compiler ou de modifier son comportement au moment de l’exécution.  
   
- [Ressources supplémentaires pour les programmeurs Visual Basic](../../visual-basic/getting-started/additional-resources.md)  
- Fournit une liste de sites web et de newsgroups susceptibles de vous aider à trouver des solutions à des problèmes courants.  
+[Ressources supplémentaires pour les programmeurs Visual Basic](additional-resources.md)  
+Fournit une liste de sites web et de newsgroups susceptibles de vous aider à trouver des solutions à des problèmes courants.  
   
- [Formation Visual Basic](http://msdn.microsoft.com/vstudio/hh388573.aspx)  
- Fournit des liens vers les ressources permettant d’apprendre à programmer en Visual Basic.  
-  
+## <a name="see-also"></a>Voir aussi
  [Obtention de Visual Basic](https://www.visualstudio.com/downloads/)  
  Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, y compris les versions gratuites.  
-  
-## <a name="related-sections"></a>Rubriques connexes  
+
+ [Notions de base de Visual Basic pour les débutants](https://mva.microsoft.com/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507) Cours Microsoft Virtual Academy qui présente les notions de base de la programmation Visual Basic.
+
  [Programmation orientée objet](../programming-guide/concepts/object-oriented-programming.md)  
  Fournit des liens vers les pages qui présentent la programmation orientée objet et décrivent comment créer vos propres objets et comment utiliser des objets pour simplifier votre codage.  
   
