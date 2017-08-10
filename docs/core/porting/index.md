@@ -1,6 +1,6 @@
 ---
-title: "Portage vers .NET Core à partir du .NET Framework | Microsoft Docs"
-description: "Portage vers .NET Core à partir du .NET Framework"
+title: "Portage vers .NET Core à partir du .NET Framework"
+description: "Présentation du processus de portage et d’outils qui peuvent s’avérer utiles lors du portage d’un projet .NET Framework vers .NET Core."
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: mairaw
@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 00d00d38-99af-44f4-a75f-defcd9729dc5
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: f922fd75bf22d3cfb0c54276443820bae175bc79
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: 4fc68a3dbdec634d8e92a066a46939ba19c65db7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -47,7 +47,7 @@ Le processus recommandé pour le portage est constitué de la série d’étapes
 
 Voici une courte liste des outils qui peuvent vous être utiles :
 
-* NuGet - [Client NuGet](https://dist.nuget.org/index.html) ou [Explorateur de package NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), Gestionnaire de package de Microsoft pour la plateforme .NET.
+* NuGet - [Client NuGet](https://dist.nuget.org/index.html) ou [Explorateur de package NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), Gestionnaire de package de Microsoft pour les implémentations .NET.
 * API Portability Analyzer - [Outil de ligne de commande](https://github.com/Microsoft/dotnet-apiport/releases) ou [Extension Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b), une chaîne d’outils qui permet de générer un rapport sur la portabilité de votre code entre le .NET Framework et .NET Core, avec une analyse des problèmes par assembly.  Pour plus d’informations, consultez [Outils pour vous aider dans le processus](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/).
 * Reverse Package Search - A [service web pratique](https://packagesearch.azurewebsites.net) qui vous permet de rechercher un type et de trouver des packages contenant ce type.
 

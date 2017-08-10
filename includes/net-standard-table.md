@@ -3,18 +3,18 @@
 | .NET Core                                 | 1.0   | 1.0    | 1.0   | 1.0   | 1.0   | 1.0    | 1.0    | 2.0   |
 | .NET Framework (avec les outils version 1.0)         | 4.5   | 4.5    | 4.5.1 | 4.6   | 4.6.1 | 4.6.2  |        |       |
 | .NET Framework (avec préversion des outils version 2.0) | 4.5   | 4.5    | 4.5.1 | 4.6   | 4.6.1 | 4.6.1  | 4.6.1  | 4.6.1 |
-| Mono                                      | 4.6   | 4.6    | 4.6   | 4.6   | 4.6   | 4.6    | 4.6    | vNext |
-| Xamarin.iOS                               | 10.0  | 10.0   | 10.0  | 10.0  | 10.0  | 10.0   | 10.0   | vNext |
-| Xamarin.Mac                               | 3.0   | 3.0    | 3.0   | 3.0   | 3.0   | 3.0    | 3.0    | vNext |
-| Xamarin.Android                           | 7.0   | 7.0    | 7.0   | 7.0   | 7.0   | 7.0    | 7.0    | vNext |
+| Mono                                      | 4.6   | 4.6    | 4.6   | 4.6   | 4.6   | 4.6    | 4.6    | 5,4   |
+| Xamarin.iOS                               | 10.0  | 10.0   | 10.0  | 10.0  | 10.0  | 10.0   | 10.0   | 10.14 |
+| Xamarin.Mac                               | 3.0   | 3.0    | 3.0   | 3.0   | 3.0   | 3.0    | 3.0    | 3.8   |
+| Xamarin.Android                           | 7.0   | 7.0    | 7.0   | 7.0   | 7.0   | 7.0    | 7.0    | 7.5   |
 | Plateforme Windows universelle                | 10.0  | 10.0   | 10.0  | 10.0  | 10.0  | vNext  | vNext  | vNext |
 | Windows                                   | 8.0   | 8.0    | 8.1   |       |       |        |        |       |
 | Windows Phone                             | 8.1   | 8.1    | 8.1   |       |       |        |        |       |
 | Windows Phone Silverlight                 | 8.0   |        |       |       |       |        |        |       |
 
 - Les colonnes représentent les versions de .NET Standard. Chaque cellule d’en-tête est un lien vers un document qui indique les API ajoutées à cette version de .NET Standard.
-- Les lignes représentent les différentes plateformes .NET.
-- Le numéro de version dans chaque cellule indique la version *minimale* de la plateforme nécessaire pour cibler cette version de .NET Standard.
+- Les lignes représentent les différentes implémentations .NET.
+- Le numéro de version dans chaque cellule indique la version *minimale* de l’implémentation nécessaire pour cibler cette version de .NET Standard.
 
 [1.0]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.0.md
 [1.1]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md

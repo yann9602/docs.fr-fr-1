@@ -12,16 +12,13 @@ ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c3004d84e9a87fcf86737b18fe58bb200eefd33b
+ms.sourcegitcommit: 7912d46736fd9f9d9d2ee41c416d3dfc157cfe12
+ms.openlocfilehash: 44e77b099b15b5ddccfd6b3826d0225de1b0a74f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/09/2017
 
 ---
-
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
-
-## <a name="introduction"></a>Introduction
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
@@ -63,7 +60,7 @@ Bien que tous les autres membres de classe de base sont hérités par les classe
 
 - Les membres [internes](../language-reference/keywords/protected.md) sont visibles uniquement dans les classes dérivées qui sont trouvent dans le même assembly que la classe de base. Ils ne sont pas visibles dans les classes dérivées situées dans un autre assembly à partir de la classe de base.
 
-- Les membres [Public] (.. / language-reference/keywords/protected.md) sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelées comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
+- Les membres [Public] (../language-reference/keywords/protected.md) sont visibles dans les classes dérivées et font partie de l’interface publique de la classe dérivée. Les membres publics hérités peuvent être appelées comme s’ils étaient définis dans la classe dérivée. Dans l’exemple suivant, la classe `A` définit une méthode nommée `Method1`, et la classe `B` hérite de la classe `A`. L’exemple appelle ensuite `Method1` comme s’il s’agissait d’une méthode d’instance sur `B`.
 
 [!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
@@ -128,7 +125,7 @@ Nous pouvons ensuite utiliser la réflexion (qui nous permet d’inspecter les m
 
 L’héritage implicite à partir de la classe <xref:System.Object> rend ces méthodes disponibles pour la classe `SimpleClass` :
 
-- La méthode public `ToString`, qui convertit un objet `SimpleClass` en sa représentation de chaîne, le nom de type qualifié complet. Dans ce cas, la méthode `ToString` retourne la chaîne « SimpleClass ».
+- La méthode public `ToString`, qui convertit un objet `SimpleClass` en sa représentation de chaîne, retourne le nom de type complet. Dans ce cas, la méthode `ToString` retourne la chaîne « SimpleClass ».
 
 - Voici trois méthodes de test d’égalité de deux objets : la méthode public instance `Equals(Object)`, la méthode public static `Equals(Object, Object)` et la méthode public static `ReferenceEquals(Object, Object)`. Par défaut, ces méthodes testent l’égalité des références. Autrement dit, pour être égales, deux variables d’objet doivent faire référence au même objet.
 
@@ -160,7 +157,7 @@ En règle générale, l’héritage est utilisé pour exprimer une relation « 
 > [!NOTE]
 > Les classes et structs peuvent implémenter plusieurs interfaces. Bien que l’implémentation d’interface est souvent présentée comme une solution de contournement pour l’héritage unique ou comme une façon d’utiliser l’héritage avec les structures, elle est conçue pour exprimer une autre relation (« peut faire ») entre une interface et son type d’implémentation que l’héritage. Une interface définit un sous-ensemble de fonctionnalités (comme la capacité à tester l’égalité, comparer ou trier des objets, ou pour prendre en charge la mise en forme et l’analyse dépendant de la culture) que l’interface met à disposition pour ses types d’implémentation.
 
-Notez que « est un » exprime également la relation entre un type et une instanciation spécifique de ce type. Dans l’exemple suivant, `Automobile` est une classe qui possède trois propriétés en lecture seule uniques : `Moke`, le fabricant de l’automobile ; `Model`, le type de voiture et `Year`, son année de fabrication. Notre classe `Automobile` comporte également un constructeur dont les arguments sont assignés aux valeurs de propriété, et elle remplace la méthode <xref:System.Object.ToString%2A?displayProperty=fullName> pour générer une chaîne qui identifie de façon unique l’instance `Automobile` plutôt que la classe `Automobile`.
+Notez que « est un » exprime également la relation entre un type et une instanciation spécifique de ce type. Dans l’exemple suivant, `Automobile` est une classe qui possède trois propriétés en lecture seule uniques : `Make`, le fabricant de l’automobile ; `Model`, le type de voiture et `Year`, son année de fabrication. Notre classe `Automobile` comporte également un constructeur dont les arguments sont assignés aux valeurs de propriété, et elle remplace la méthode <xref:System.Object.ToString%2A?displayProperty=fullName> pour générer une chaîne qui identifie de façon unique l’instance `Automobile` plutôt que la classe `Automobile`.
 
 [!code-csharp[Héritage](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 

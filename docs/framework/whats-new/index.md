@@ -1,5 +1,5 @@
 ---
-title: "Nouveautés du .NET Framework | Microsoft Docs"
+title: "Nouveautés du .NET Framework"
 ms.custom: 
 ms.date: 05/02/2017
 ms.prod: .net-framework
@@ -16,11 +16,11 @@ caps.latest.revision: 292
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: 0c6ce1020dbd1488f4abd51e13b887eab0068521
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: f922abca6898e91748158ee16f89ca7f57a81bf7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -190,8 +190,7 @@ Pour obtenir la liste des nouvelles API ajoutées au .NET Framework 4.6.2, consu
 ### <a name="aspnet"></a>ASP.NET
  Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], ASP.NET propose les améliorations suivantes :
 
- **Prise en charge améliorée des messages d’erreur localisés dans les validateurs d’annotations de données**
- Les validateurs d’annotations de données vous permettent d’effectuer une validation en ajoutant un ou plusieurs attributs à une propriété de classe. L’élément <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> de l’attribut définit le texte du message d’erreur en cas d’échec de la validation. À compter du [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], ASP.NET facilite la localisation des messages d’erreur. Les messages d’erreur sont localisés si les conditions suivantes sont réunies :
+ **Prise en charge améliorée des messages d’erreur localisés dans les validateurs d’annotations de données** : les validateurs d’annotations de données vous permettent d’effectuer une validation en ajoutant un ou plusieurs attributs à une propriété de classe. L’élément <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> de l’attribut définit le texte du message d’erreur en cas d’échec de la validation. À compter du [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], ASP.NET facilite la localisation des messages d’erreur. Les messages d’erreur sont localisés si les conditions suivantes sont réunies :
 
 1.  L’élément <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=fullName> est fourni dans l’attribut de validation.
 
@@ -230,8 +229,7 @@ End Class
 
  De plus, la localisation des annotations de données est extensible. Les développeurs peuvent incorporer leur propre fournisseur de localisation de chaînes en implémentant l’interface <xref:System.Web.Globalization.IStringLocalizerProvider> pour stocker la chaîne de localisation ailleurs que dans un fichier de ressources.
 
- **Prise en charge asynchrone avec les fournisseurs de magasins d’état de session**
- ASP.NET autorise désormais l’utilisation de méthodes retournant des tâches avec les fournisseurs de magasins d’état de session, ce qui permet ainsi aux applications ASP.NET de profiter de la scalabilité des opérations asynchrones. Pour prendre en charge les opérations asynchrones avec les fournisseurs de magasins d’état de session, ASP.NET propose une nouvelle interface, <xref:System.Web.SessionState.ISessionStateModule?displayProperty=fullName>, qui hérite de <xref:System.Web.IHttpModule> et permet aux développeurs d’implémenter leurs propres fournisseurs de modules d’état de session et de magasins de sessions asynchrones. L’interface se définit comme suit :
+ **Prise en charge asynchrone avec les fournisseurs de magasins d’état de session** : ASP.NET autorise désormais l’utilisation de méthodes retournant des tâches avec les fournisseurs de magasins d’état de session, ce qui permet aux applications ASP.NET de profiter de la scalabilité des opérations asynchrones. Pour prendre en charge les opérations asynchrones avec les fournisseurs de magasins d’état de session, ASP.NET propose une nouvelle interface, <xref:System.Web.SessionState.ISessionStateModule?displayProperty=fullName>, qui hérite de <xref:System.Web.IHttpModule> et permet aux développeurs d’implémenter leurs propres fournisseurs de modules d’état de session et de magasins de sessions asynchrones. L’interface se définit comme suit :
 
 ```csharp
 public interface ISessionStateModule : IHttpModule {
@@ -242,8 +240,7 @@ public interface ISessionStateModule : IHttpModule {
 
  Par ailleurs, la classe <xref:System.Web.SessionState.SessionStateUtility> comporte deux nouvelles méthodes, <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateReadOnly%2A> et <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateRequired%2A>, qui peuvent être utilisées pour prendre en charge les opérations asynchrones.
 
- **Prise en charge asynchrone pour les fournisseurs de cache de sortie**
- À compter du [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], il est possible d’utiliser des méthodes qui retournent des tâches avec les fournisseurs de cache de sortie de façon à profiter de la scalabilité des opérations asynchrones.  Les fournisseurs qui implémentent ces méthodes réduisent le blocage de threads sur un serveur web et améliorent la scalabilité d’un service ASP.NET.
+ **Prise en charge asynchrone pour les fournisseurs de cache de sortie** : à compter du [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], il est possible d’utiliser des méthodes qui retournent des tâches avec les fournisseurs de cache de sortie, de façon à profiter de la scalabilité des opérations asynchrones.  Les fournisseurs qui implémentent ces méthodes réduisent le blocage de threads sur un serveur web et améliorent la scalabilité d’un service ASP.NET.
 
  Les API suivantes ont été ajoutées pour assurer la prise en charge des fournisseurs de cache de sortie asynchrones :
 
@@ -273,8 +270,7 @@ public interface ISessionStateModule : IHttpModule {
 
 <a name="Crypto462"></a> 
 ### <a name="cryptography"></a>Chiffrement
- **Prise en charge des certificats X509 contenant l’algorithme DSA FIPS 186-3**
- Le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ajoute la prise en charge des certificats X509 DSA(Digital Signature Algorithm) dont les clés dépassent la limite de 1 024 bits de la norme FIPS 186-2.
+ **Prise en charge des certificats X509 contenant l’algorithme DSA FIPS 186-3** : le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ajoute la prise en charge des certificats X509 DSA(Digital Signature Algorithm) dont les clés dépassent la limite de 1 024 bits de la norme FIPS 186-2.
 
  En plus de prendre en charge les clés plus volumineuses de FIPS 186-3, le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] autorise le calcul de signatures à l’aide des algorithmes de hachage de la famille SHA-2 (SHA256, SHA384 et SHA512). La prise en charge de FIPS 186-3 est assurée par la nouvelle classe <xref:System.Security.Cryptography.DSACng?displayProperty=fullName>.
 
@@ -318,8 +314,7 @@ public static bool VerifyDataDsaSha384(byte[] data, byte[] signature, X509Certif
 End Function
 ```
 
- **Plus de clarté pour les entrées dans les routines de dérivation de clé ECDiffieHellman**
- La prise en charge de l’accord d’échange de clés Curve Diffie-Hellman basé sur les courbes elliptiques avait été ajoutée au .NET Framework 3.5 avec trois routines de fonction de dérivation de clés (KDF) différentes. Les entrées à destination de ces routines, tout comme les routines proprement dites, étaient configurées via les propriétés de l’objet <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Mais comme les routines ne pouvaient pas toutes lire chaque propriété d’entrée, la confusion était de mise auprès des développeurs.
+ **Plus de clarté pour les entrées dans les routines de dérivation de clé ECDiffieHellman** : la prise en charge de l’accord d’échange de clés Diffie-Hellman basé sur les courbes elliptiques a été ajoutée au .NET Framework 3.5 avec trois routines différentes de fonction de dérivation de clés (KDF). Les entrées à destination de ces routines, tout comme les routines proprement dites, étaient configurées via les propriétés de l’objet <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Mais comme les routines ne pouvaient pas toutes lire chaque propriété d’entrée, la confusion était de mise auprès des développeurs.
 
  Pour résoudre ce problème dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], les trois méthodes suivantes ont été ajoutées à la classe de base <xref:System.Security.Cryptography.ECDiffieHellman> de façon à représenter plus clairement ces routines KDF et leurs entrées :
 
@@ -329,8 +324,7 @@ End Function
 |<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Security.Cryptography.HashAlgorithmName%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Dérive le matériel de clé à l’aide de la formule<br /><br /> HMAC(hmacKey, secretPrepend &#124;&#124; *x* &#124;&#124; secretAppend)<br /><br /> HMAC(hmacKey, secretPrepend OrElse *x* OrElse secretAppend)<br /><br /> où *x* représente le résultat du calcul de l’algorithme EC Diffie-Hellman.|
 |<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyTls%28System.Security.Cryptography.ECDiffieHellmanPublicKey%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29>|Dérive le matériel de clé à l’aide de l’algorithme de dérivation de la fonction pseudo-aléatoire (PRF) TLS.|
 
- **Prise en charge du chiffrement symétrique des clés persistantes**
- La bibliothèque de chiffrement Windows (CNG) avait ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] avait permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
+ **Prise en charge du chiffrement symétrique des clés persistantes** : la bibliothèque de chiffrement Windows (CNG) a ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] a permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
 
  La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Exemple :
 
@@ -371,8 +365,7 @@ Public Shared Function EncryptDataWithPersistedKey(data As Byte(), iv As Byte())
 End Function
 ```
 
- **Prise en charge de SignedXml pour le hachage SHA-2**
- Le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ajoute la prise en charge à la classe <xref:System.Security.Cryptography.Xml.SignedXml> pour les méthodes de signature RSA-SHA256, RSA-SHA384 et RSA-SHA512 PKCS#1, et les algorithmes Digest de référence SHA256, SHA384 et SHA512.
+ **Prise en charge de SignedXml pour le hachage SHA-2** : le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] ajoute à la classe <xref:System.Security.Cryptography.Xml.SignedXml> la prise en charge des méthodes de signature pour RSA-SHA256, RSA-SHA384 et RSA-SHA512 PKCS#1, et des algorithmes Digest de référence SHA256, SHA384 et SHA512.
 
  Les constantes d’URI sont toutes exposées dans <xref:System.Security.Cryptography.Xml.SignedXml> :
 
@@ -391,15 +384,13 @@ End Function
 ### <a name="sqlclient"></a>SqlClient
  Le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient?displayProperty=fullName>) inclut les nouvelles fonctionnalités suivantes dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] :
 
- **Regroupement de connexions et expirations de délai avec les bases de données Azure SQL**
- Quand le regroupement de connexions est activé et qu’une expiration de délai ou toute autre erreur de connexion se produit, une exception est mise en cache ; cette exception mise en cache est levée chaque fois qu’une nouvelle tentative de connexion intervient entre 5 secondes et 1 minute après.  Pour plus d’informations, consultez [Regroupement de connexions (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md).
+ **Regroupement et délais d’expiration des connexions délai avec les bases de données Azure SQL** : quand le regroupement de connexions est activé, et qu’une erreur de dépassement de délai d’expiration ou une autre erreur de connexion se produit, une exception est mise en cache ; cette exception est levée chaque fois qu’une nouvelle tentative de connexion intervient entre 5 secondes et 1 minute après.  Pour plus d’informations, consultez [Regroupement de connexions (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md).
 
  Ce comportement n’est pas souhaitable quand il s’agit d’établir des connexions à des bases de données Azure SQL Database, car les tentatives de connexion peuvent échouer avec des erreurs transitoires qui sont en général récupérées rapidement. Pour des nouvelles tentatives de connexion plus abouties, le comportement de période de blocage de pool de connexions est supprimé quand les connexions aux bases de données Azure SQL Database échouent.
 
  L’ajout du nouveau mot clé `PoolBlockingPeriod` vous permet de sélectionner la période de blocage qui convient le mieux à votre application. Les valeurs incluent :
 
- `Auto`
- La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
+ `Auto` : la période de blocage du pool de connexions pour une application qui se connecte à une base de données Azure SQL Database est désactivée, alors que cette période pour une application qui se connecte à une autre instance SQL Server est activée. Valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
 
 - .database.windows.net
 
@@ -423,8 +414,7 @@ End Function
 ### <a name="windows-communication-foundation"></a>Windows Communication Foundation
  Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], Windows Communication Foundation a été amélioré dans les domaines suivants :
 
- **Prise en charge des certificats stockés à l’aide de CNG par la sécurité du transport WCF**
- La sécurité du transport WCF prend en charge les certificats stockés à l’aide de la bibliothèque de chiffrement Windows (CNG). Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], cette prise en charge se limite à l’utilisation de certificats avec une clé publique dont l’exposant ne dépasse pas 32 bits de longueur. Quand une application cible le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], cette fonctionnalité est activée par défaut.
+ **Prise en charge des certificats stockés à l’aide de CNG par la sécurité du transport WCF**: la sécurité du transport WCF prend en charge les certificats stockés à l’aide de la bibliothèque de chiffrement Windows (CNG). Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], cette prise en charge se limite à l’utilisation de certificats avec une clé publique dont l’exposant ne dépasse pas 32 bits de longueur. Quand une application cible le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], cette fonctionnalité est activée par défaut.
 
  Pour les applications qui ciblent le [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] ou des versions antérieures, mais qui s’exécutent sur le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], cette fonctionnalité peut être activée en ajoutant la ligne suivante à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) du fichier app.config ou web.config.
 
@@ -446,8 +436,7 @@ Const DisableCngCertificates As String = "Switch.System.ServiceModel.DisableCngC
 AppContext.SetSwitch(disableCngCertificates, False)
 ```
 
- **Meilleure prise en charge de plusieurs règles d’ajustement à l’heure d’été par la classe DataContractJsonSerializer**
- Les clients peuvent utiliser un paramètre de configuration d’application pour déterminer si la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> prend en charge plusieurs règles d’ajustement pour un même un fuseau horaire. Il est nécessaire d'accepter cette fonctionnalité. Pour l’activer, ajoutez le paramètre suivant à votre fichier app.config :
+ **Meilleure prise en charge de plusieurs règles d’ajustement à l’heure d’été par la classe DataContractJsonSerializer** : les clients peuvent utiliser un paramètre de configuration d’application pour déterminer si la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> prend en charge plusieurs règles d’ajustement pour un même un fuseau horaire. Il est nécessaire d'accepter cette fonctionnalité. Pour l’activer, ajoutez le paramètre suivant à votre fichier app.config :
 
 ```xml
 <runtime>
@@ -484,8 +473,7 @@ Quand cette fonctionnalité est activée, un objet <xref:System.Runtime.Serializ
 
 Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les ajustements de fuseau horaire, consultez [Vue d’ensemble des fuseaux horaires](../../../docs/standard/datetime/time-zone-overview.md).
 
- **Meilleure correspondance NetNamedPipeBinding**
- WCF propose un nouveau paramètre d’application qui peut être défini sur les applications clientes de telle sorte qu’elles se connectent systématiquement au service écoutant l’URI qui correspond le mieux à celui qu’elles demandent. Dans la mesure où ce paramètre d’application est défini sur `false` (valeur par défaut), les clients utilisant <xref:System.ServiceModel.NetNamedPipeBinding> peuvent tenter de se connecter à un service écoutant un URI qui est une sous-chaîne de l’URI demandé.
+ **Meilleure correspondance de NetNamedPipeBinding**: WCF a un nouveau paramètre d’application qui peut être défini sur les applications clientes de telle sorte qu’elles se connectent toujours au service écoutant l’URI qui correspond le mieux à celui qu’elles demandent. Dans la mesure où ce paramètre d’application est défini sur `false` (valeur par défaut), les clients utilisant <xref:System.ServiceModel.NetNamedPipeBinding> peuvent tenter de se connecter à un service écoutant un URI qui est une sous-chaîne de l’URI demandé.
 
  Par exemple, un client tente de se connecter à un service à l’écoute de `net.pipe://localhost/Service1`, mais un autre service de cet ordinateur s’exécutant avec des privilèges d’administrateur écoute `net.pipe://localhost`. Si ce paramètre d’application est défini sur `false`, le client tente de se connecter au mauvais service. Une fois le paramètre d’application défini sur `true`, le client se connecte systématiquement au service le plus approprié.
 
@@ -502,8 +490,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 </configuration>
 ```
 
- **SSL 3.0 n’est pas un protocole par défaut**
- Quand vous utilisez NetTcp avec la sécurité du transport et un type d’informations d’identification de certificat, SSL 3.0 n’est plus le protocole utilisé par défaut quand il s’agit de négocier une connexion sécurisée. Dans la majorité des cas, cela ne devrait pas avoir de conséquences sur les applications existantes, car TLS 1.0 est inclus dans la liste de protocoles pour NetTcp. Tous les clients existants doivent pouvoir négocier une connexion en utilisant au moins TLS 1.0.      Si Ssl3 est exigé, utilisez l’un des mécanismes de configuration suivants pour l’ajouter à la liste des protocoles négociés.
+ **SSL 3.0 n’est pas un protocole par défaut** : quand vous utilisez NetTcp avec la sécurité du transport et un type de certificat avec des informations d’identification, SSL 3.0 n’est plus le protocole utilisé par défaut quand il s’agit de négocier une connexion sécurisée. Dans la majorité des cas, cela ne devrait pas avoir de conséquences sur les applications existantes, car TLS 1.0 est inclus dans la liste de protocoles pour NetTcp. Tous les clients existants doivent pouvoir négocier une connexion en utilisant au moins TLS 1.0.      Si Ssl3 est exigé, utilisez l’un des mécanismes de configuration suivants pour l’ajouter à la liste des protocoles négociés.
 
 - La propriété <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols%2A?displayProperty=fullName>
 
@@ -517,8 +504,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 ### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
  Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], Windows Presentation Foundation a été amélioré dans les domaines suivants :
 
- **Tri des groupes**
- Une application qui utilise un objet <xref:System.Windows.Data.CollectionView> pour regrouper les données peut désormais déclarer explicitement comment trier les groupes. Le tri explicite résout le problème du classement non intuitif qui se produit quand une application ajoute ou supprime dynamiquement des groupes ou quand elle modifie la valeur de propriétés d’élément impliquées dans le regroupement. Il peut aussi améliorer l’efficacité de la création de groupes en comparant les propriétés de regroupement non pas au niveau du tri de la collection complète mais du tri des groupes.
+ **Tri des groupes** : une application qui utilise un objet <xref:System.Windows.Data.CollectionView> pour regrouper les données peut désormais déclarer explicitement comment trier les groupes. Le tri explicite résout le problème du classement non intuitif qui se produit quand une application ajoute ou supprime dynamiquement des groupes ou quand elle modifie la valeur de propriétés d’élément impliquées dans le regroupement. Il peut aussi améliorer l’efficacité de la création de groupes en comparant les propriétés de regroupement non pas au niveau du tri de la collection complète mais du tri des groupes.
 
  Pour prendre en charge le tri des groupes, les nouvelles propriétés <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=fullName> et <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=fullName> décrivent le mode de tri de la collection de groupes produite par l’objet <xref:System.ComponentModel.GroupDescription>. Ce comportement est analogue à la façon dont les propriétés <xref:System.Windows.Data.ListCollectionView> de même nom décrivent le mode de tri des éléments de données.
 
@@ -540,13 +526,11 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 </SortDescriptions>
 ```
 
- **Prise en charge des claviers logiciels**
- La prise en charge des claviers logiciels permet d’assurer le suivi du focus dans les applications WPF en appelant et en masquant automatiquement le nouveau clavier logiciel dans Windows 10 dès lors que l’entrée tactile est reçue par un contrôle qui peut prendre l’entrée textuelle.
+ **Prise en charge des claviers logiciels**: la prise en charge des claviers logiciels permet d’assurer le suivi du focus dans les applications WPF en appelant et en masquant automatiquement le nouveau clavier logiciel dans Windows 10 dès lors que l’entrée tactile est reçue par un contrôle qui peut prendre une entrée sous forme de texte.
 
  Dans les versions précédentes du .NET Framework, les applications WPF ne peuvent pas opter pour le suivi du focus sans désactiver la prise en charge du stylo et des entrées tactiles WPF.  Par conséquent, les applications WPF doivent soit choisir la prise en charge complète des entrées tactiles WPF, soit privilégier la souris Windows.
 
- **Résolution par moniteur**
- Pour faire face à la prolifération récente des environnements à haute résolution et à résolution hybride pour les applications WPF, WPF dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] autorise une prise en charge par moniteur. Pour savoir comment permettre à votre application WPF de prendre en charge la résolution par moniteur, consultez les [exemples et le guide du développeur](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) sur GitHub.
+ **Résolution par moniteur** : pour faire face à la prolifération récente des environnements à haute résolution et à résolution hybride pour les applications WPF, WPF permet une prise en charge par moniteur dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]. Pour savoir comment permettre à votre application WPF de prendre en charge la résolution par moniteur, consultez les [exemples et le guide du développeur](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) sur GitHub.
 
  Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée. ,
 
@@ -562,14 +546,11 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 ### <a name="windows-workflow-foundation-wf"></a>Windows Workflow Foundation (WF)
  Dans le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], Windows Workflow Foundation a été amélioré dans les domaines suivants :
 
- **Prise en charge des expressions C# et d’IntelliSense dans le Concepteur de flux de travail réhébergé**
- À compter du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], WF prend en charge les expressions C# dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui autorise la présence du Concepteur de flux de travail dans une application extérieure à Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation permet de prendre en charge les expressions C# et IntelliSense dans le Concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](http://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
+ **Prise en charge des expressions C# et d’IntelliSense dans le concepteur WF réhébergé** : à compter du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], WF prend en charge les expressions C# dans le concepteur Visual Studio et dans les flux de travail de code. Le Concepteur de flux de travail réhébergé est une fonctionnalité clé de WF qui autorise la présence du Concepteur de flux de travail dans une application extérieure à Visual Studio (par exemple, dans WPF).  Windows Workflow Foundation permet de prendre en charge les expressions C# et IntelliSense dans le Concepteur de flux de travail réhébergé. Pour plus d’informations, consultez le [blog Windows Workflow Foundation](http://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
 
- `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`
- Dans les versions du .NET Framework antérieures au [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], la fonctionnalité IntelliSense du Concepteur de flux de travail est inopérante quand un client reconstruit un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. Le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] résout ce problème et donne accès à IntelliSense.
+ `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` : dans les versions du .NET Framework antérieures au [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], la fonctionnalité IntelliSense du concepteur WFest inopérante quand un client recrée un projet de flux de travail à partir de Visual Studio. Quand la génération du projet aboutit, les types de flux de travail ne se trouvent pas dans le concepteur, et IntelliSense affiche des avertissements dans la fenêtre **Liste d’erreurs** par rapport aux types de flux de travail manquants. Le [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] résout ce problème et donne accès à IntelliSense.
 
- **Les applications Workflow V1 pour lesquelles le suivi de flux de travail est activé s’exécutent désormais en mode FIPS**
- Les ordinateurs pour lesquels le mode de conformité FIPS est activé peuvent désormais exécuter correctement une application de type Workflow version 1 en ayant le suivi de flux de travail activé. Pour permettre ce cas de figure, vous devez apporter la modification suivante à votre fichier app.config :
+ **Les applications Workflow V1 pour lesquelles le suivi de flux de travail est activé s’exécutent désormais en mode FIPS** : les ordinateurs pour lesquels le mode de conformité FIPS est activé peuvent désormais exécuter correctement une application de type Workflow version 1 avec le suivi de flux de travail activé. Pour permettre ce cas de figure, vous devez apporter la modification suivante à votre fichier app.config :
 
 ```xml
 <add key="microsoft:WorkflowRuntime:FIPSRequired" value="true" />
@@ -577,8 +558,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
  Si ce scénario n’est pas autorisé, l’exécution de l’application continue de générer une exception avec le message « Cette implémentation ne fait pas partie des algorithmes de chiffrement validés FIPS pour les plateformes Windows ».
 
- **Amélioration des flux de travail quand la mise à jour dynamique est utilisée avec le Concepteur de flux de travail Visual Studio**
- Le Concepteur de flux de travail, le Concepteur d’activités d’organigramme et les autres Concepteurs d’activité de flux de travail peuvent désormais charger et afficher les flux de travail qui ont été enregistrés consécutivement à l’appel de la méthode <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName>. Dans les versions du .NET Framework antérieures au [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], le fait de charger un fichier XAML dans Visual Studio pour un flux de travail enregistré après un appel de <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName> peut occasionner les problèmes suivants :
+ **Amélioration des flux de travail quand la mise à jour dynamique est utilisée avec le Concepteur de flux de travail Visual Studio** : le Concepteur de flux de travail, le Concepteur d’activités d’organigramme et les autres Concepteurs d’activité de flux de travail peuvent désormais charger et afficher correctement les flux de travail qui ont été enregistrés après l’appel de la méthode <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName>. Dans les versions du .NET Framework antérieures au [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], le fait de charger un fichier XAML dans Visual Studio pour un flux de travail enregistré après un appel de <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=fullName> peut occasionner les problèmes suivants :
 
 - Le Concepteur de flux de travail ne peut pas charger le fichier XAML correctement (quand <xref:System.Activities.Presentation.ViewState.ViewStateData.Id%2A?displayProperty=fullName> est en fin de ligne).
 
@@ -723,7 +703,7 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
 - **ASP.NET 5**
 
-     .NET 2015 inclut ASP.NET 5, qui est une plateforme .NET pour la création d'applications cloud modernes. La plateforme est modulaire, ce qui vous permet d'inclure uniquement les fonctionnalités nécessaires dans votre application. Elle peut être hébergée sur IIS ou auto-hébergée dans un processus personnalisé. Par ailleurs, vous pouvez exécuter les applications avec différentes versions du .NET Framework sur le même serveur. Elle inclut un nouveau système de configuration d'environnement conçu pour le déploiement cloud.
+     .NET 2015 inclut ASP.NET 5, qui est une implémentation .NET pour la création d’applications cloud modernes. ASP.NET 5 est modulable, ce qui vous permet d’inclure uniquement les fonctionnalités nécessaires dans votre application. Elle peut être hébergée sur IIS ou auto-hébergée dans un processus personnalisé. Par ailleurs, vous pouvez exécuter les applications avec différentes versions du .NET Framework sur le même serveur. Elle inclut un nouveau système de configuration d'environnement conçu pour le déploiement cloud.
 
      MVC, les API web et les pages web sont unifiés dans une infrastructure unique appelée MVC 6. Vous créez des applications ASP.NET 5 via les nouveaux outils de Visual Studio 2015. Vos applications existantes fonctionneront sur le nouveau .NET Framework. Toutefois, pour générer une application qui utilise MVC 6 ou SignalR 3, vous devez utiliser le système de projet de Visual Studio 2015.
 
@@ -1092,23 +1072,13 @@ Pour plus d’informations sur la structure <xref:System.TimeZoneInfo> et les aj
 
 - **Améliorations du profilage.** Les nouvelles API de profilage non managées suivantes proposent un profilage plus robuste :
 
-     [COR_PRF_ASSEMBLY_REFERENCE_INFO, structure](../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md) 
-     [COR_PRF_HIGH_MONITOR, énumération](../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) 
-     [GetAssemblyReferences, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) 
-     [GetEventMask2, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md) 
-     [SetEventMask2, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) 
-     [AddAssemblyReference, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
+     [COR_PRF_ASSEMBLY_REFERENCE_INFO, structure](../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md) [COR_PRF_HIGH_MONITOR, énumération](../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) [GetAssemblyReferences, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) [GetEventMask2, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md) [SetEventMask2, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) [AddAssemblyReference, méthode](../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
 
      Les implémentations précédentes d'`ICorProfiler` prenaient en charge le chargement tardif des assemblys dépendants. Les nouvelles API de profilage ont besoin que les assemblys dépendants soient injectés par le profileur pour qu'ils puissent être chargés immédiatement, plutôt qu'une fois que l'application est entièrement initialisée. Cette modification ne concerne pas les utilisateurs des API `ICorProfiler` existantes.
 
 - **Améliorations du débogage.** Les nouvelles API de débogage non managées suivantes améliorent l'intégration à un profileur. Vous pouvez à présent accéder aux métadonnées insérées par le profileur ainsi qu'aux variables locales et au code produit par les demandes ReJIT du compilateur pendant le débogage de dump.
 
-     [SetWriteableMetadataUpdateMode, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md) 
-     [EnumerateLocalVariablesEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) 
-     [GetLocalVariableEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) 
-     [GetCodeEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md) 
-     [GetActiveReJitRequestILCode, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md) 
-     [GetInstrumentedILMap, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-getinstrumentedilmap-method.md)
+     [SetWriteableMetadataUpdateMode, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md) [EnumerateLocalVariablesEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) [GetLocalVariableEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) [GetCodeEx, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md) [GetActiveReJitRequestILCode, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md) [GetInstrumentedILMap, méthode](../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-getinstrumentedilmap-method.md)
 
 - **Modifications du suivi d’événements.** .NET Framework 4.5.2 permet le traçage des activités de type Suivi d'événements pour Windows (ETW) hors processus pour une surface d'exposition plus importante. Ce dernier permet aux fournisseurs de gestion avancée de l'alimentation (APM) de fournir des outils légers qui suivent avec précision les coûts des demandes et activités individuelles qui traversent les threads.  Ces événements sont déclenchés uniquement quand les contrôleurs ETW les autorisent ; par conséquent, les modifications ne concernent pas le code ETW écrit auparavant ni le code qui s'exécute avec la fonctionnalité ETW désactivée.
 
