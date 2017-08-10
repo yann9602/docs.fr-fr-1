@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: 1f3b9a68-4dea-4b60-8cb3-f46164eedbbf
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 50e128137fde445f64e10cf7c2a1ee5fdecb34e6
-ms.openlocfilehash: 283b9405000cba328c348fada81c70683b700a8b
+ms.translationtype: HT
+ms.sourcegitcommit: 318bf7a77748dfcee5f28243409d31e8d3e5c9ff
+ms.openlocfilehash: 8e0fd8db2810c36358a7bcf94f4bc5e7d2aa399e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/01/2017
+ms.lasthandoff: 08/03/2017
 
 ---
 
@@ -33,7 +33,7 @@ Installez [Microsoft Visual Studio 2017](https://www.visualstudio.com/) avec la
 
 Il est nécessaire de configurer des **[lecteurs partagés](https://docs.docker.com/docker-for-windows/#shared-drives)** dans Docker pour Windows. Ce paramétrage est nécessaire pour le mappage de volume et la prise en charge du débogage.
 
-Cliquez avec le bouton droit sur l’icône Docker dans la barre d’état, cliquez sur Settings et sélectionnez Shared drives.
+Cliquez avec le bouton droit sur l’icône Docker dans la barre d’état, cliquez sur **Settings** et sélectionnez **Shared drives**. Sélectionnez le lecteur où Docker stockera vos fichiers et appliquez les modifications.
 
 ![Shared Drives](./media/visual-studio-tools-for-docker/settings-shared-drives-win.png)
 
@@ -48,6 +48,8 @@ Menu projet
 Projet – Menu contextuel
 
 ![Cliquer avec le bouton droit – Ajouter la prise en charge de Docker](./media/visual-studio-tools-for-docker/right-click-add-docker-support.png)
+
+Lorsque vous ajoutez la prise en charge Docker à votre projet, vous pouvez choisir des conteneurs Windows ou Linux. (L’hôte Docker doit exécuter le même type de conteneur. Si vous avez besoin de modifier le type de conteneur dans l’instance Docker en cours d’exécution, cliquez avec le bouton droit sur l’icône **Docker** dans la barre d’état, puis choisissez **Basculer vers les conteneurs Windows** ou **Basculer vers les conteneurs Linux**.) 
 
 Les fichiers suivants sont ajoutés au projet.
 
