@@ -1,10 +1,7 @@
 ---
 title: Interfaces (Visual Basic)
-ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - devlang-visual-basic
 ms.topic: article
@@ -34,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1da2458f39886a5d5f0bbf17fd9e63550ed80adf
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: 0b3f13cd69564a61da1a961e35c5319e4c2d79aa
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="interfaces-visual-basic"></a>Interfaces (Visual Basic)
@@ -110,5 +107,5 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
 |Titre|Description|  
 |-----------|-----------------|  
 |[Procédure pas à pas : création et implémentation d’interfaces](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|Fournit une procédure détaillée qui vous guide tout au long du processus de définition et d'implémentation de votre propre interface.|  
-|[Variance dans les interfaces génériques](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)|Décrit la covariance et la contravariance dans les interfaces génériques et fournit la liste des interfaces génériques de type variant dans le .NET Framework.|
+|[Variance dans les interfaces génériques](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|Décrit la covariance et la contravariance dans les interfaces génériques et fournit la liste des interfaces génériques de type variant dans le .NET Framework.|
 
