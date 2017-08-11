@@ -62,7 +62,7 @@ L’exemple suivant utilise le mot clé `when` afin d’exécuter conditionnelle
 Depuis la version 7, les étiquettes `case` n’ont plus besoin de s’exclure mutuellement et l’ordre dans lequel les étiquettes `case` s’affichent dans une instruction `switch` peut déterminer le bloc switch exécuté. Le mot clé `when` peut être utilisé pour spécifier une condition de filtre qui fait que son étiquette case associée a la valeur True uniquement si la condition de filtre a également la valeur True. Sa syntaxe est la suivante :
 
 ```csharp
-case (expr) where (when-condition):
+case (expr) when (when-condition):
 ```
 où *expr* est un modèle de constante ou de type qui est comparé à l’expression de correspondance, et *when-condition* représente toute expression booléenne. 
 
