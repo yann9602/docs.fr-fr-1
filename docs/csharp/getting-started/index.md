@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b77c7263-7cbf-4729-9626-8fbc3f5f14d9
 ms.translationtype: HT
-ms.sourcegitcommit: 3bd8800e7410ae4a3b89f5962af957789edd48b0
-ms.openlocfilehash: 923875aa48fb78c63e8e3e9e17095ff424c8e49d
+ms.sourcegitcommit: e0271ba3392ce8861dc916714af8c16d4581ce4f
+ms.openlocfilehash: 81132887a1abdc79b87e7095350f1e66368bce33
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/13/2017
 
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C# #
@@ -23,15 +23,15 @@ Cette section fournit des didacticiels courts et simples qui permettent de crée
 
 Les rubriques suivantes sont disponibles :
 
-* [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](with-visual-studio.md)
+* [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
 
    Visual Studio 2017, la dernière version de Visual Studio, permet de coder, compiler, exécuter, déboguer, profiler et publier des applications à partir d’un environnement de développement intégré pour Windows.
 
-   La rubrique vous permet de créer et d’exécuter une application Hello World simple, puis de la modifier pour exécuter une application Hello World légèrement plus interactive. Une fois que vous aurez terminé la création et l’exécution de votre application, vous pourrez également apprendre à [la déboguer](debugging-with-visual-studio.md) et [la publier](publishing-with-visual-studio.md) afin qu’elle puisse s’exécuter sur n’importe quelle plateforme prise en charge par .NET Core.
+   La rubrique vous permet de créer et d’exécuter une application Hello World simple, puis de la modifier pour exécuter une application Hello World légèrement plus interactive. Une fois que vous aurez terminé la création et l’exécution de votre application, vous pourrez également apprendre à [la déboguer](../../core/tutorials/debugging-with-visual-studio.md) et [la publier](../../core/tutorials/publishing-with-visual-studio.md) afin qu’elle puisse s’exécuter sur n’importe quelle plateforme prise en charge par .NET Core.
 
-* [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](library-with-visual-studio.md)
+* [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
 
-   Une bibliothèque de classes permet de définir les types et membres de types qui peuvent être appelés à partir d’une autre application. Cette rubrique vous permet de créer une bibliothèque de classes avec une méthode unique qui détermine si une chaîne commence par une majuscule. Une fois que vous aurez terminé de créer la bibliothèque, vous pourrez développer un [test unitaire](testing-library-with-visual-studio.md) pour vous assurer qu’elle fonctionne comme prévu, puis la rendre accessible aux [applications qui souhaitent l’utiliser](consuming-library-with-visual-studio.md).
+   Une bibliothèque de classes permet de définir les types et membres de types qui peuvent être appelés à partir d’une autre application. Cette rubrique vous permet de créer une bibliothèque de classes avec une méthode unique qui détermine si une chaîne commence par une majuscule. Une fois que vous aurez terminé de créer la bibliothèque, vous pourrez développer un [test unitaire](../../core/tutorials/testing-library-with-visual-studio.md) pour vous assurer qu’elle fonctionne comme prévu, puis la rendre accessible aux [applications qui souhaitent l’utiliser](../../core/tutorials/consuming-library-with-visual-studio.md).
 
 - [Prise en main de C# et Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
 
