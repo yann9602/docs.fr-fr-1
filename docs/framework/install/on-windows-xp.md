@@ -1,19 +1,18 @@
 ---
 title: "Installer le .NET Framework sur Windows XP"
-description: "Découvrez comment installer le .NET Framework sur Windows XP"
+description: "Découvrez comment installer le .NET Framework sur Windows XP."
 author: rlander
+ms.author: mairaw
 keywords: .NET Framework, installer
-ms.date: 03/28/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: .net-framework
-ms.technology: vs-ide-deployment
 ms.devlang: dotnet
-ms.assetid: 87cda1d5-c8g5-5eb5-93e8-5f478de07ff7
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7a4bf14ad57495c5d6cd2ba40e2bd63b91551e33
+ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
+ms.openlocfilehash: fe9d044efae87f212c620b9fa8c02221ca475d71
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/05/2017
 
 ---
 
@@ -22,13 +21,13 @@ ms.lasthandoff: 07/28/2017
 > [!NOTE]
 > Windows XP n’est plus pris en charge par Microsoft. Nous vous recommandons de passer à Windows 10, qui est pris en charge par et prend en charge la dernière version du .NET Framework. Ce document est fourni uniquement à titre de guide de dépannage pratique.
 
-Le .NET Framework peut être nécessaire pour exécuter une application sur Windows XP. Vous pouvez utiliser les instructions suivantes pour vous aider. Les instructions dépendent de la version du .NET Framework dont vous avez besoin.
+Vous pouvez avoir besoin du .NET Framework pour exécuter une application sur Windows XP. Vous pouvez utiliser les instructions suivantes pour vous aider. Les instructions dépendent de la version du .NET Framework dont vous avez besoin.
 
 ## <a name="net-framework-45-and-later"></a>.NET Framework 4.5 et ultérieur
 
 Vous ne pouvez pas installer le .NET Framework 4.5 ou ultérieur sur Windows XP. Au lieu de cela, vous devez passer à une version ultérieure de Windows pour une version ultérieure du .NET Framework.
 
-Le .NET Framework 4.6.2 est inclus avec la [Mise à jour anniversaire Windows 10](https://www.microsoft.com/software-download/windows10).
+.NET Framework 4.7 est inclus dans [Windows 10 Creators Update](https://www.microsoft.com/software-download/windows10).
 
 ## <a name="net-framework-403"></a>.NET Framework 4.0.3
 
