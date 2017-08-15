@@ -1,6 +1,6 @@
 ---
 title: Valeurs de retour de Main() (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 2017-08-02
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -28,65 +28,98 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a24a0db126945d122db7a0c8d373d0c91e5da8a2
+ms.sourcegitcommit: d019d1c5757a961c03439d756e808ae13fd8a67b
+ms.openlocfilehash: 50943bdd0b7726145797faf82719537a388dad89
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/03/2017
 
 ---
+
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
-La méthode `Main` peut retourner `void` :  
-  
- [!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_1.cs)]  
-  
- Elle peut également retourner un `int` :  
-  
- [!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_2.cs)]  
-  
- Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.  
-  
-## <a name="example"></a>Exemple  
- Dans cet exemple, un fichier de commandes est utilisé pour exécuter un programme et tester la valeur de retour de la fonction `Main`. Quand un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d’environnement appelée `ERRORLEVEL`. Un fichier de commandes peut déterminer le résultat de l’exécution en consultant la variable `ERRORLEVEL`. En règle générale, une valeur de retour de zéro indique la réussite de l’exécution. L’exemple suivant est un programme simple qui retourne zéro depuis la fonction `Main`. La valeur zéro indique que le programme a été exécuté correctement. Enregistrez le programme sous le nom MainReturnValTest.cs.  
-  
- [!code-cs[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_3.cs)]  
-  
-## <a name="example"></a>Exemple  
- Comme cet exemple utilise un fichier de commandes, il est préférable de compiler le code à partir d’une invite de commandes. Suivez les instructions de [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) pour permettre des générations en ligne de commande ou utilisez l’invite de commandes de Visual Studio, disponible à partir du menu **Démarrer** sous **Visual Studio Tools**. À partir de l’invite de commandes, accédez au dossier où vous avez enregistré le programme. La commande suivante compile MainReturnValTest.cs et produit le fichier exécutable MainReturnValTest.exe.  
-  
- `csc MainReturnValTest.cs`  
-  
- Ensuite, créez un fichier de commandes pour exécuter MainReturnValTest.exe et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous le nom `test.bat` dans le dossier qui contient MainReturnValTest.cs et MainReturnValTest.exe. Exécutez le fichier de commandes en tapant `test` à l’invite de commandes.  
-  
- Comme le code retourne zéro, le fichier de commandes indique la réussite. Cependant, si vous modifiez MainReturnValTest.cs pour qu’il retourne une valeur différente de zéro puis que vous recompilez le programme, l’exécution suivante du fichier de commandes indiquera un échec.  
-  
-```  
-rem test.bat  
-@echo off  
-MainReturnValTest  
-@if "%ERRORLEVEL%" == "0" goto good  
-  
-:fail  
-    echo Execution Failed  
-    echo return value = %ERRORLEVEL%  
-    goto end  
-  
-:good  
-    echo Execution succeeded  
-    echo Return value = %ERRORLEVEL%  
-    goto end  
-  
-:end  
-```  
-  
-## <a name="sample-output"></a>Résultat de l'exemple  
- `Execution succeeded`  
-  
- `Return value = 0`  
-  
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)   
- [Guide pratique pour afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)   
- [Guide pratique pour accéder à des arguments de ligne de commande à l’aide de foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
+
+La méthode `Main` peut retourner `void` :
+
+[!code-cs[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_1.cs)]
+
+Elle peut également retourner un `int` :
+
+[!code-cs[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_2.cs)]
+
+Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
+
+## <a name="example"></a>Exemple
+
+Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.md). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/using-with-xplat-cli.md).
+
+Modifiez la méthode `Main` dans *program.cs* comme suit :
+
+[!code-cs[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_3.cs)]
+
+Quand un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d’environnement. Cette variable d’environnement peut être récupérée à l’aide de `ERRORLEVEL` dans un fichier de commandes ou de `$LastExitCode` dans PowerShell.
+
+Vous pouvez générer l’application à l’aide de la commande [dotnet CLI](../../../core/tools/dotnet.md) `dotnet build`.
+
+Ensuite, créez un script PowerShell pour exécuter l’application et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous `test.ps1` dans le dossier qui contient le projet. Exécutez le script PowerShell en tapant `test.ps1` à l’invite de PowerShell.
+
+Comme le code retourne zéro, le fichier de commandes indique la réussite. Toutefois, si vous modifiez MainReturnValTest.cs pour qu’il retourne une valeur différente de zéro, puis que vous recompilez le programme, l’exécution suivante du script PowerShell indique un échec.
+
+```powershell
+dotnet run
+if ($LastExitCode -eq 0) {
+    Write-Host "Execution succeeded"
+} else
+{
+    Write-Host "Execution Failed"
+}
+Write-Host "Return value = " $LastExitCode
+```
+
+## <a name="sample-output"></a>Résultat de l'exemple
+
+```txt
+Execution succeeded
+Return value = 0
+```
+
+## <a name="async-main-return-values"></a>Valeurs de retour d’Async Main
+
+Les valeurs de retour d’Async Main déplacent le code réutilisable nécessaire pour appeler les méthodes asynchrones dans `Main` vers le code généré par le compilateur. Avant, vous auriez dû écrire cette construction pour appeler du code asynchrone et vérifier que votre programme s’est exécuté jusqu’à la fin de l’opération asynchrone :
+
+```csharp
+public static void Main()
+{
+    AsyncConsoleWork().GetAwaiter().GetResult();
+}
+
+private static async Task<int> AsyncConsoleWork()
+{
+    // Main body here
+    return 0;
+}
+```
+
+Maintenant, vous pouvez la remplacer par :
+
+[!code-csharp[AsyncMain](../../../../samples/snippets/csharp/main-arguments/program.cs#AsyncMain)]
+
+L’avantage de la nouvelle syntaxe est que le compilateur génère toujours un code correct.
+
+## <a name="compiler-generated-code"></a>Code généré par le compilateur
+
+Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le compilateur génère un nouveau point d’entrée qui appelle la méthode de point d’entrée déclarée dans le code d’application. En supposant que ce point d’entrée est appelé `$GeneratedMain`, le compilateur génère le code suivant pour ces points d’entrée :
+
+- `static Task Main()` permet au compilateur d’émettre l’équivalent de `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task Main(string[])` permet au compilateur d’émettre l’équivalent de `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+- `static Task<int> Main()` permet au compilateur d’émettre l’équivalent de `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`
+- `static Task<int> Main(string[])` permet au compilateur d’émettre l’équivalent de `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
+
+> [!NOTE]
+>Si les exemples ont utilisé le modificateur `async` sur la méthode `Main`, le compilateur génère le même code.
+
+## <a name="see-also"></a>Voir aussi
+[Guide de programmation C#](../../programming-guide/index.md)
+[Informations de référence sur C#](../index.md)
+[Main() et arguments de ligne de commande](index.md)
+[Guide pratique pour afficher les arguments de ligne de commande](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
+[Guide pratique pour accéder aux arguments de ligne de commande à l’aide de foreach](../../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
 

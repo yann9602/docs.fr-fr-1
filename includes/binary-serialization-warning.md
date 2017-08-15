@@ -1,0 +1,2 @@
+> [!WARNING]
+> La sérialisation binaire peut être dangereuse. Ne désérialisez jamais des données d’une source non fiable et n’effectuez jamais un aller-retour des données sérialisées sur des systèmes qui ne sont pas sous votre contrôle.

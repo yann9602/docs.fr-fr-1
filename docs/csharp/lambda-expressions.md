@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bbb524e50d74207227420d073afd5758d3d5aaa7
+ms.translationtype: HT
+ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
+ms.openlocfilehash: 659a3366b00d6abe6598c31774d008c6b8f400fd
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 
@@ -58,7 +58,7 @@ En règle générale, le compilateur utilise l’inférence de type pour déterm
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/expression3.cs#3)]
 
-Notez dans l'exemple précédent que le corps d'une expression lambda peut se composer d'un appel de méthode. Cependant, si vous créez des arborescences d’expressions qui sont évaluées en dehors du .NET Framework, comme dans SQL Server ou Entity Framework (EF), vous devez éviter d’utiliser des appels de méthode dans les expressions lambda, car les méthodes peuvent n’avoir aucune signification en dehors du contexte du runtime .NET. Si vous choisissez d’utiliser des appels de méthode dans ce cas, veillez à les tester minutieusement pour vérifier que ces appels de méthode peuvent être résolus correctement.
+Notez dans l'exemple précédent que le corps d'une expression lambda peut se composer d'un appel de méthode. Toutefois, si vous créez des arborescences d’expressions qui sont évaluées en dehors du .NET Framework, comme dans SQL Server ou Entity Framework (EF), vous devez éviter d’utiliser les appels de méthode dans les expressions lambda, car les méthodes peuvent n’avoir aucune signification en dehors du contexte de l’implémentation .NET. Si vous choisissez d’utiliser des appels de méthode dans ce cas, veillez à les tester minutieusement pour vérifier que ces appels de méthode peuvent être résolus correctement.
 
 ## <a name="statement-lambdas"></a>Instructions lambda ##
 
@@ -138,7 +138,7 @@ Les règles générales de l’inférence de type pour les lambdas sont :
 
 - La valeur de retour du lambda (le cas échéant) doit être implicitement convertible en type de retour du délégué.
 
-Notez que les expressions lambda en elles-mêmes n'ont pas de type, car le système de type commun (CTS, Common Type System) ne comporte aucun concept intrinsèque « d'expression lambda ». Toutefois, il est parfois commode de parler de manière informelle du « type » d'une expression lambda. Dans ce cas, le type fait référence au type délégué ou au type @System.Linq.Expressions.Expression dans lequel est convertie l'expression lambda.
+Notez que les expressions lambda en elles-mêmes n'ont pas de type, car le système de type commun (CTS, Common Type System) ne comporte aucun concept intrinsèque « d'expression lambda ». Toutefois, il est parfois commode de parler de manière informelle du « type » d'une expression lambda. Dans ce cas, le type fait référence au type délégué ou au type @System.Linq.Expressions.Expression dans lequel est convertie l'expression lambda.
 
 ## <a name="variable-scope-in-lambda-expressions"></a>Portée variable dans les expressions lambda ##
 
