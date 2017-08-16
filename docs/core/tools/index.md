@@ -4,20 +4,19 @@ description: "Présentation des outils et fonctionnalités de l’interface de l
 keywords: "CLI, outils CLI, .NET, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/20/2017
+ms.date: 08/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 7c5eee9f-d873-4224-8f5f-ed83df329a59
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a8c91621095ea187dd4236db7533520556840c59
+ms.sourcegitcommit: 61dedb132a34cf97894e77bb20d47694b2c0c104
+ms.openlocfilehash: adde2922a6e98cc4ced7ea7313fa8eb702932471
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/13/2017
 
 ---
-
 # <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
 
 L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d’outils multiplateforme pour le développement d’applications .NET. CLI est une fondation sur laquelle les autres outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de builds, peuvent se baser.
@@ -48,6 +47,7 @@ Les commandes suivantes sont installées par défaut :
 * [migrate](dotnet-migrate.md)
 * [clean](dotnet-clean.md)
 * [sln](dotnet-sln.md)
+* [store](dotnet-store.md) : disponible avec le SDK .NET Core 2.0 et ultérieur.
 
 ### <a name="project-modification-commands"></a>Commandes de modification de projet
 
@@ -80,9 +80,9 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>Pilote
 
-Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécution d’une [application dépendant de l’infrastructure](../deploying/index.md) ou l’exécution d’une commande. La seule fois où `dotnet` est utilisé sans commande est lorsqu’il est utilisé pour démarrer une application.
+Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécution d’une [application dépendant du framework](../deploying/index.md) ou l’exécution d’une commande. La seule fois où `dotnet` est utilisé sans commande est lorsqu’il est utilisé pour démarrer une application.
 
-Pour exécuter une application dépendant de l’infrastructure, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`.
+Pour exécuter une application dépendant du framework, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`.
 
 Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. D’abord, le pilote détermine la version des outils à utiliser. Si la version n’est pas spécifiée dans les options de la commande, le pilote utilise la dernière version disponible. Pour spécifier une version autre que la dernière version installée, utilisez l’option `--fx-version <VERSION>` (voir la référence de la [commande dotnet](dotnet.md)). Une fois que la version SDK est déterminée, le pilote exécute la commande.
 
