@@ -10,10 +10,10 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.translationtype: HT
-ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
-ms.openlocfilehash: 7d7753a2c15cc20169005ea1c5f64eb74067cb24
+ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
+ms.openlocfilehash: eca5febd448a135eb7ec52e4243ae341563190df
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
@@ -47,7 +47,7 @@ La méthode `Deconstruct` d’une classe, d’un struct ou d’une interface vou
 
 [!code-csharp[Classe et éléments ignorés](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/class-discard1.cs)]
 
-Pour plus d’informations sur la déconstruction de types définis par l’utilisateur avec des éléments ignorés, consultez [Déconstruction de tuples et d’autres types](deconstruct.md#deconstructing-a-user-defined type-with-discards).
+Pour plus d’informations sur la déconstruction de types définis par l’utilisateur avec des éléments ignorés, consultez [Déconstruction de tuples et d’autres types](deconstruct.md#deconstructing-a-user-defined-type-with-discards).
 
 ## <a name="pattern-matching-with-switch-and-is"></a>Critères spéciaux avec `switch` et `is`
 

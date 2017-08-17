@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 8e5ab7bea3ca0f6e067b65c09009c7da36d30938
-ms.openlocfilehash: 84fcd22a502b23ed4a28b8b4419a1269dc7c7ffa
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: a560a0307723d32750a7e26ad4ee1afec360a849
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (modificateur générique) (référence C#)
@@ -71,7 +71,7 @@ Pour les paramètres de type générique, le mot clé `out` spécifie que le par
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Variance dans les interfaces génériques](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)   
+ [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)   
  [in](../../../csharp/language-reference/keywords/in-generic-modifier.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
 
