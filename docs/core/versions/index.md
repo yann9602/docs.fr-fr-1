@@ -3,16 +3,16 @@ title: Gestion des versions de .NET Core
 description: "Découvrez comment fonctionne la gestion des versions de .NET Core."
 author: bleroy
 ms.author: mairaw
-ms.date: 08/10/2017
+ms.date: 08/11/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
 ms.translationtype: HT
-ms.sourcegitcommit: 3a25c1c3b540bac8ef963a8bbf708b0700c3e9e2
-ms.openlocfilehash: 94614e436734389df7bf3a6e2df2abe49593021a
+ms.sourcegitcommit: c5a80e487d4351e0eaf20e510df06999e212e096
+ms.openlocfilehash: d672e93a3e4f70439aa42aef04674500b0b0566d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/12/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="net-core-versioning"></a>Gestion des versions de .NET Core
@@ -155,7 +155,11 @@ Quand il existe plusieurs modifications, l’élément le plus élevé affecté 
 
 Pour les préversions, un `-preview-[number]-([build]|"final")` est ajouté à la version. Par exemple, `2.0.0-preview-1-final`.
 
-### <a name="lts-vs-current"></a>Versions LTS et En cours
+### <a name="servicing-versions"></a>Versions de maintenance
+
+Une fois qu’une version est publiée, les branches de la version arrêtent généralement de produire des builds quotidiens pour commencer à produire des builds de maintenance. Pour les versions de maintenance, un `-servicing-[number]` est ajouté à la version. Par exemple, `2.0.1-servicing-006924`.
+
+### <a name="lts-vs-current"></a>Versions LTS et Current
 
 Il existe deux trains de versions pour .NET Core : LTS (Long Term Support) et Current. Ceci permet aux utilisateurs de choisir le niveau de stabilité et les nouvelles fonctionnalités souhaitées, avec des versions néanmoins toujours prises en charge.
 
