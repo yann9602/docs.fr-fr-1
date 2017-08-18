@@ -1,5 +1,5 @@
 ---
-title: "Programmation à l&quot;aide de domaines d&quot;application et d&quot;assemblys | Microsoft Docs"
+title: "Programmation à l'aide de domaines d'application et d'assemblys"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 6078d7eafaad8f695c3ef5efd4a3cc37da7dee3c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6dcf8e4c9bf2401309b1d80d2306bd619b96460d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/08/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>Programmation à l'aide de domaines d'application et d'assemblys
@@ -53,3 +53,4 @@ Les ordinateurs hôtes tels que Microsoft Internet Explorer, ASP.NET et le shell
   
  [Vue d’ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.
+

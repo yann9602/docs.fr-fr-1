@@ -1,5 +1,5 @@
 ---
-title: "Problèmes de sécurité dans l’émission de réflexion | Microsoft Docs"
+title: "Problèmes de sécurité dans l'émission de réflexion"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,11 +23,11 @@ caps.latest.revision: 18
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 5d2d814989564dfd4c2d49ebb4b44e5964cf031f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d9e8b5858f115e8aaf16861d37a49c18c3bf22b8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
@@ -166,3 +166,4 @@ Le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] offre trois faç
 ## <a name="see-also"></a>Voir aussi  
  [Considérations relatives à la sécurité de la réflexion](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)   
  [Émission d’assemblys et de méthodes dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)
+

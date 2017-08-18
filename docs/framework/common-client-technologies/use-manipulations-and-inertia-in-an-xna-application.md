@@ -1,5 +1,5 @@
 ---
-title: "Utilisation de manipulations et de l’inertie dans une application XNA | Microsoft Docs"
+title: Utilisation de manipulations et de l'inertie dans une application XNA
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -14,11 +14,11 @@ caps.latest.revision: 7
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 6f58c4ff726e297e1ec64ceb74f957496f58f065
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7d623a8c2276811ae443a4d745faffeeb79ffc6f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-manipulations-and-inertia-in-an-xna-application"></a>Utilisation de manipulations et de l'inertie dans une application XNA
@@ -44,3 +44,4 @@ Cet article explique comment utiliser le traitement des manipulations et de l'in
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Windows.Input.Manipulations>   
  [Vue d'ensemble des manipulations et de l'inertie](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md)
+

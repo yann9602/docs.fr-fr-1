@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour visualiser le contenu du Global Assembly Cache | Microsoft Docs
+title: Guide pratique pour visualiser le contenu du Global Assembly Cache
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,11 +23,11 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 9f51fbaddf7de524a0025e87aa598726fc6f1db4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 55ed52873b6fa944c3dd5d95066432f593719c2e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Guide pratique pour visualiser le contenu du Global Assembly Cache
@@ -46,3 +46,4 @@ Utilisez l’[outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation d’assemblys et du Global Assembly Cache](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)   
  [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
+

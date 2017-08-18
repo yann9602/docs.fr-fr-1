@@ -1,5 +1,5 @@
 ---
-title: "Mage.exe (outil Manifest Generation and Editing) │ Microsoft Docs"
+title: Mage.exe (outil Manifest Generation and Editing)
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 68
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: caa06be840f0612e94742e7ea167f02b8b8d657d
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 67551eb207461d5ac68db9f23b48ff7266c39ae9
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
@@ -114,7 +114,7 @@ mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx
   
  Quand vous utilisez l’option **-AppManifest** pour remplir un manifeste de déploiement, Mage.exe suppose que votre manifeste d’application va se trouver dans le même répertoire que le manifeste de déploiement, dans un sous-répertoire nommé d’après la version du déploiement actuel et il configure votre manifeste de déploiement de façon appropriée. Si votre manifeste d’application doit se trouver ailleurs, utilisez l’option **-AppCodeBase** pour définir l’autre emplacement.  
   
- Vos manifestes de déploiement et de l'application doivent être signés avant de déployer votre application. Pour obtenir des instructions sur la signature des manifestes, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).  
+ Vos manifestes de déploiement et de l'application doivent être signés avant de déployer votre application. Pour obtenir des instructions sur la signature des manifestes, consultez [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).  
   
  L’option **-TrustLevel** pour les manifestes d’application décrit le jeu d’autorisations dont une application a besoin pour s’exécuter sur l’ordinateur client. Par défaut, un niveau de confiance basé sur la *zone* dans laquelle leur URL réside est assigné aux applications. Les applications déployées sur un réseau d'entreprise sont généralement placées dans la zone Intranet tandis que celles déployées sur Internet sont placées dans la zone Internet. Les deux zones de sécurité placent des restrictions sur l'accès de l'application aux ressources locales, la zone Intranet étant un peu moins stricte que la zone Internet. La zone FullTrust donne aux applications l'accès complet aux ressources locales d'un ordinateur. Si vous utilisez l’option **-TrustLevel** pour placer une application dans cette zone, le composant Gestionnaire de confiance du CLR demande à l’utilisateur s’il veut accorder ce niveau de confiance plus élevé. Si vous déployez votre application sur un réseau d'entreprise, vous pouvez utiliser le déploiement d'applications approuvées pour élever le niveau de confiance de l'application sans affichage d'une invite utilisateur.  
   
@@ -215,3 +215,4 @@ mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
  [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview)   
  [MageUI.exe (outil Manifest Generation and Editing, client graphique)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)   
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+

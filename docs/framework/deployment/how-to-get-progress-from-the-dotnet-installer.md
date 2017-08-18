@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5 | Microsoft Docs"
+title: "Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 30
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: c13c924bd20efdbfa43ef12c727554dc1af4e590
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 404a092c6c05bcef568b234c9abeaf7969703cce
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5

@@ -1,5 +1,5 @@
 ---
-title: Transfert de type dans le Common Language Runtime | Microsoft Docs
+title: Transfert de type dans le Common Language Runtime
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 3515a15432d2b7ff68c19dbd966806d0df3be7a8
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 113ff6decccc190c6638fa04745af425c55c6c0b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Transfert de type dans le Common Language Runtime
@@ -57,3 +57,4 @@ Le transfert de type vous permet de déplacer un type vers un autre assembly san
  <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>   
  [Transfert de type (C++-CLI)](/cpp/windows/type-forwarding-cpp-cli)   
  [Directive #using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)
+

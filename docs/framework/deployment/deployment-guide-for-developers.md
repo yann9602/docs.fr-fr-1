@@ -1,5 +1,5 @@
 ---
-title: "Guide de déploiement du .NET Framework pour les développeurs | Microsoft Docs"
+title: "Guide de déploiement du .NET Framework pour les développeurs"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 108
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 5ceb8014ce3b6cea08e8e6c8c347ccb1658ee0ea
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 043338d73e67ee36d2888b748402d824ee6d5daf
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
@@ -76,9 +76,9 @@ Pour obtenir des liens de téléchargement, consultez la section [Packages redis
 
 |Stratégie de déploiement de votre application|Méthodes de déploiement disponibles|Redistribuable du .NET Framework à utiliser|
 |--------------------------------------|----------------------------------|-------------------------------------------|
-|Installation à partir du web|- [InstallShield](#installshield-deployment)<br />- [Ensemble d’outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Programme d’installation web](#redistributable-packages)|
-|Installation à partir d'un disque|- [InstallShield](#installshield-deployment)<br />- [Ensemble d’outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Programme d’installation hors connexion](#redistributable-packages)|
-|Installation à partir d'un réseau local (pour applications d'entreprise)|- [ClickOnce](#clickonce-deployment)|[Programme d’installation web](#redistributable-packages) (voir [ClickOnce](#clickonce-deployment) pour connaître les restrictions) ou [Programme d’installation hors connexion](#redistributable-packages)|
+|Installation à partir du web|- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Web installer](#redistributable-packages)|
+|Installation à partir d'un disque|- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Offline installer](#redistributable-packages)|
+|Installation à partir d'un réseau local (pour applications d'entreprise)|- [ClickOnce](#clickonce-deployment)|[Programme d'installation web](#redistributable-packages) (voir [ClickOnce](#clickonce-deployment) pour connaître les restrictions) ou [programme d'installation hors connexion](#redistributable-packages)|
 
 ## <a name="redistributable-packages"></a>Packages redistribuables
  Le .NET Framework est disponible dans deux packages redistribuables : le programme d'installation web (programme d'amorçage) et le programme d'installation hors connexion (redistribuable autonome). Le tableau ci-dessous compare ces deux packages.
@@ -89,10 +89,10 @@ Pour obtenir des liens de téléchargement, consultez la section [Packages redis
 |Connexion Internet requise ?|Oui|Non|
 |Taille du téléchargement|Réduite (inclut le programme d'installation pour la plateforme cible uniquement)*|Étendue*|
 |Modules linguistiques|Inclus**|Doivent être [installés séparément](#chain_langpack), sauf si vous utilisez le package qui cible tous les systèmes d'exploitation|
-|Méthode de déploiement|Prend en charge toutes les méthodes :<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows Installer XML (WiX)](#wix)<br />- [Installation manuelle](#installing_manually)<br />- [Installation personnalisée (chaînage)](#chaining)|Prend en charge toutes les méthodes :<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Windows Installer XML (WiX)](#wix)<br />- [Installation manuelle](#installing_manually)<br />- [Installation personnalisée (chaînage)](#chaining)|
-|Site de téléchargement pour le déploiement ClickOnce|Centre de téléchargement Microsoft :<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|Votre propre serveur ou le Centre de téléchargement Microsoft :<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
+|Méthode de déploiement|Prend en charge toutes les méthodes :<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [XML de Windows Installer (WiX)](#wix)<br />- [Installation manuelle](#installing_manually)<br />- [Installation personnalisée (chaînage)](#chaining)|Prend en charge toutes les méthodes :<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [XML de Windows Installer (WiX)](#wix)<br />- [Installation manuelle](#installing_manually)<br />- [Installation personnalisée (chaînage)](#chaining)|
+|Site de téléchargement pour le déploiement ClickOnce|Centre de téléchargement Microsoft :<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825298) <br/> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780596)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671728)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528222)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=397703)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310158)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|Votre propre serveur ou le Centre de téléchargement Microsoft :<br /><br /> - [.NET Framework 4.7](http://go.microsoft.com/fwlink/?LinkId=825302)<br /> - [.NET Framework 4.6.2](http://go.microsoft.com/fwlink/?LinkId=780600)<br />- [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671743)<br />- [.NET Framework 4.6](http://go.microsoft.com/fwlink/?LinkId=528232)<br />- [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397706)<br />- [.NET Framework 4.5.1](http://go.microsoft.com/fwlink/p/?LinkId=310159)<br />- [.NET Framework 4.5](http://go.microsoft.com/fwlink/p/?LinkId=245484)|
 
- \* Le programme d’installation hors connexion est plus volumineux, car il contient les composants pour toutes les plateformes cibles. Une fois que vous avez terminé l'installation, le système d'exploitation Windows met en cache uniquement le programme d'installation utilisé. Si le programme d'installation hors connexion est supprimé après l'installation, l'espace disque utilisé est identique à celui utilisé par le programme d'installation web. Si l’outil que vous utilisez (par exemple, [InstallShield](#installshield-deployment)) pour créer le programme d’installation de votre application fournit un dossier de fichiers d’installation qui est supprimé après l’installation, vous pouvez supprimer automatiquement le programme d’installation hors connexion en le plaçant dans le dossier d’installation.
+ \* Le programme d’installation hors connexion est plus volumineux, car il contient les composants pour toutes les plateformes cibles. Une fois que vous avez terminé l'installation, le système d'exploitation Windows met en cache uniquement le programme d'installation utilisé. Si le programme d'installation hors connexion est supprimé après l'installation, l'espace disque utilisé est identique à celui utilisé par le programme d'installation web. Si l'outil que vous utilisez (par exemple, [InstallShield](#installshield-deployment)) pour créer le programme d'installation de votre application fournit un dossier de fichiers d'installation qui est supprimé après l'installation, il est possible de supprimer automatiquement le programme d'installation hors connexion en le plaçant dans le dossier d'installation.
 
  ** Si vous utilisez le programme d'installation web avec l'installation personnalisée, vous pouvez utiliser les paramètres de langue par défaut basés sur le paramètre de l'interface utilisateur multilingue de l'utilisateur ou vous pouvez spécifier un autre module linguistique en utilisant l'option `/LCID` sur la ligne de commande. Consultez la section [Chaînage à l'aide de l'interface utilisateur par défaut du .NET Framework](#chaining_default) pour obtenir des exemples.
 
@@ -103,7 +103,7 @@ Pour obtenir des liens de téléchargement, consultez la section [Packages redis
 
     - Utilisation du [déploiement ClickOnce](#clickonce-deployment) (disponible dans Visual Studio)
 
-    - Création d’un [projet InstallShield](#installshield-deployment) (disponible dans Visual Studio)
+    - Création d'un [projet InstallShield](#installshield-deployment) (disponible dans Visual Studio)
 
     - Utilisation de l' [ensemble d'outils XML de Windows Installer (WiX)](#wix)
 
@@ -117,7 +117,7 @@ Pour obtenir des liens de téléchargement, consultez la section [Packages redis
 
  Ces méthodes de déploiement sont discutées en détail dans les sections suivantes.
 
-## <a name="setting-a-dependency-on-the-net-framework"></a>Définition d’une dépendance envers le .NET Framework
+## <a name="setting-a-dependency-on-the-net-framework"></a>Définition d'une dépendance sur le .NET Framework
 Si vous utilisez ClickOnce, InstallShield ou WiX pour déployer votre application, vous pouvez ajouter une dépendance sur le .NET Framework afin de pouvoir l'installer dans le cadre de votre application.
 
 ### <a name="clickonce-deployment"></a>déploiement ClickOnce
@@ -143,8 +143,8 @@ Si vous utilisez ClickOnce, InstallShield ou WiX pour déployer votre applicatio
 
 8.  Dans la boîte de dialogue **Pages de propriétés** , choisissez **OK**.
 
-### <a name="installshield-deployment"></a>Déploiement avec InstallShield
- Dans Visual Studio, choisissez le déploiement avec InstallShield et ajoutez une dépendance envers le .NET Framework :
+### <a name="installshield-deployment"></a>Déploiement d'InstallShield
+ Dans Visual Studio, choisissez le déploiement d'InstallShield et ajoutez une dépendance sur le .NET Framework :
 
 1.  Dans la barre de menus de Visual Studio, choisissez **Fichier**, **Nouveau**, **Projet**.
 
@@ -161,7 +161,7 @@ Si vous utilisez ClickOnce, InstallShield ou WiX pour déployer votre applicatio
 7.  Ouvrez le menu contextuel pour votre projet d'installation et choisissez **Générer**.
 
 <a name="wix"></a> 
-### <a name="windows-installer-xml-wix-deployment"></a>Déploiement avec Windows Installer XML (WiX)
+### <a name="windows-installer-xml-wix-deployment"></a>Déploiement via XML de Windows Installer (WiX)
  L'ensemble d'outils XML de Windows Installer (WiX) génère des packages d'installation Windows à partir de code source XML. WiX prend en charge un environnement en ligne de commande qui peut être intégré dans vos processus de génération pour générer des packages d'installation MSI et MSM. Grâce à WiX, vous pouvez [spécifier le .NET Framework en tant que composant requis](http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html)ou [créer un programme de chaînage](http://wixtoolset.org/documentation/manual/v3/xsd/wix/exepackage.html) pour contrôler entièrement l’expérience de déploiement du .NET Framework. Pour plus d’informations sur WiX, consultez le site web [Ensemble d’outils du programme d’installation XML Windows (WiX)](http://wixtoolset.org/)
 
 <a name="installing_manually"></a> 
@@ -169,7 +169,7 @@ Si vous utilisez ClickOnce, InstallShield ou WiX pour déployer votre applicatio
  Il est parfois peu pratique d'installer automatiquement le .NET Framework avec votre application. Dans ce cas, vous pouvez faire en sorte que les utilisateurs installent le .NET Framework eux-mêmes. Le package redistribuable est disponible dans [deux packages](#redistributable-packages). Dans votre processus d'installation, fournissez des instructions sur la manière dont les utilisateurs doivent chercher et installer le .NET Framework.
 
 <a name="chaining"></a> 
-## <a name="chaining-the-net-framework-installation-to-your-apps-setup"></a>Chaînage de l’installation du .NET Framework au programme d’installation de votre application
+## <a name="chaining-the-net-framework-installation-to-your-apps-setup"></a>Chaînage de l'installation du .NET Framework à l'installation de votre application
  Si vous créez un programme d'installation personnalisée pour votre application, vous pouvez chaîner (inclure) le processus d'installation du .NET Framework dans le processus d'installation de votre application. Le chaînage fournit deux options d'interface utilisateur pour l'installation du .NET Framework :
 
 - Utiliser l'interface utilisateur par défaut fournie par le programme d'installation du .NET Framework.
@@ -183,7 +183,7 @@ Si vous utilisez ClickOnce, InstallShield ou WiX pour déployer votre applicatio
 - Si vous utilisez le programme d'installation hors connexion, vous pouvez inclure l'ensemble complet des packages d'installation du .NET Framework dans votre média de redistribution, afin que vos utilisateurs n'aient pas à télécharger de fichiers supplémentaires à partir d'Internet pendant l'installation.
 
 <a name="chaining_default"></a> 
-### <a name="chaining-by-using-the-default-net-framework-ui"></a>Chaînage à l’aide de l’interface utilisateur par défaut du .NET Framework
+### <a name="chaining-by-using-the-default-net-framework-ui"></a>Chaînage à l'aide de l'interface utilisateur par défaut du .NET Framework
  Pour chaîner en mode silencieux le processus d'installation du .NET Framework et laisser le programme d'installation du .NET Framework fournir l'interface utilisateur, ajoutez la commande suivante à votre programme d'installation :
 
 ```
@@ -217,9 +217,9 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
     > [!NOTE]
     > Des modules linguistiques différents peuvent avoir des dates de publication différentes. Si le module linguistique spécifié n'est pas disponible dans le Centre de téléchargement, le programme d'installation installe le .NET Framework sans le module linguistique. Si le .NET Framework est déjà installé sur l'ordinateur de l'utilisateur, le programme d'installation installe uniquement le module linguistique.
 
- Pour obtenir une liste complète des options, consultez la section [Options de ligne de commande](#command-line-options) .
+ Pour une liste complète des options, consultez la section [Options de ligne de commande](#command-line-options) .
 
- Pour découvrir les codes de retour courants, consultez la section [Codes de retour](#return-codes).
+ Pour les codes de retour courants, consultez la section [Codes de retour](#return-codes) .
 
 <a name="chaining_custom"></a>
 ### <a name="chaining-by-using-a-custom-ui"></a>Chaînage à l'aide d'une interface utilisateur personnalisée
@@ -232,13 +232,13 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
     > [!IMPORTANT]
     > Pour déterminer si la version correcte du .NET Framework est déjà installée, vous devez vérifier si votre version cible *ou* une version ultérieure est installée, pas si votre version cible est installée. En d’autres termes, vous devez évaluer si la clé de version que vous récupérez à partir du Registre est supérieure ou égale à la clé de version de votre version cible, *pas* si elle est égale à la clé de version de votre version cible.
 
-- [Détectez](#detecting-the-language-packs) si les modules linguistiques sont déjà installés sur l’ordinateur de l’utilisateur.
+- [Détectez](#detecting-the-language-packs) si les modules linguistiques sont déjà installés sur l'ordinateur de l'utilisateur.
 
 - Si vous souhaitez contrôler le déploiement, lancez et suivez en mode silencieux le processus d’installation du .NET Framework (consultez [How to: Get Progress from the .NET Framework 4.5 Installer](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)).
 
 - Si vous déployez le programme d'installation hors connexion, [chaînez les modules linguistiques séparément](#chain_langpack).
 
-- Personnalisez le déploiement à l’aide des [options de ligne de commande](#command-line-options). Par exemple, si vous chaînez le programme d'installation web du .NET Framework et que vous souhaitez remplacer le module linguistique par défaut, utilisez l'option `/LCID` , comme décrit dans la section précédente.
+- Personnalisez le déploiement à l'aide des [options de ligne de commande](#command-line-options). Par exemple, si vous chaînez le programme d'installation web du .NET Framework et que vous souhaitez remplacer le module linguistique par défaut, utilisez l'option `/LCID` , comme décrit dans la section précédente.
 
 - [Résolvez les problèmes éventuels](#troubleshooting).
 
@@ -298,7 +298,7 @@ Type: DWORD
 > [!IMPORTANT]
 > Les modules linguistiques ne contiennent pas les composants .NET Framework requis pour exécuter une application. Vous devez installer le .NET Framework à l'aide du programme d'installation web ou hors connexion avant d'installer un module linguistique.
 
- À compter du [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], les noms de packages prennent la forme NDP<`version`>-KB<`number`>-x86-x64-AllOS-<`culture`>.exe, où `version` est le numéro de version du .NET Framework, `number` est un numéro d’article de la Base de connaissances Microsoft, et `culture` spécifie un [pays/région](#supported-languages). Exemple de ce type de package : `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`. Les noms de packages sont répertoriés dans la section [Packages redistribuables](#redistributable-packages) plus haut dans cet article.
+ À compter du [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], les noms de packages prennent la forme NDP<`version`>-KB<`number`>-x86-x64-AllOS-<`culture`>.exe, où `version` est le numéro de version du .NET Framework, `number` est un numéro d’article de la Base de connaissances Microsoft, et `culture` spécifie un [pays/région](#supported-languages). Exemple de ce type de package : `NDP452-KB2901907-x86-x64-AllOS-JPN.exe`. Les noms de packages sont répertoriés dans la section [Redistributable Packages](#redistributable-packages) plus haut dans cet article.
 
  Pour installer un module linguistique à l'aide du programme d'installation hors connexion du .NET Framework, vous devez le chaîner à l'installation de votre application. Par exemple, pour déployer le programme d'installation hors connexion de [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] avec le module linguistique japonais, utilisez la commande suivante :
 
@@ -308,7 +308,7 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 
  Vous n'êtes pas tenu de chaîner les modules linguistiques si vous utilisez le programme d'installation web. Ce dernier installe le module linguistique qui correspond au paramètre MUI de l'utilisateur. Pour installer une autre langue, vous pouvez utiliser l'option `/LCID` pour spécifier un module linguistique.
 
- Pour obtenir une liste complète des options de ligne de commande, consultez la section [Options de ligne de commande](#command-line-options).
+ Pour une liste complète des options de ligne de commande, consultez la section [Options de ligne de commande](#command-line-options) .
 
 ### <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -355,11 +355,11 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |------------|-----------------|
 |**/CEIPConsent**|Remplace le comportement par défaut et envoie des commentaires anonymes à Microsoft pour améliorer les futurs déploiements. Cette option peut être utilisée uniquement si l'utilisateur accepte d'envoyer des commentaires anonymes à Microsoft lorsqu'il y est invité par le programme d'installation.|
 |**/chainingpackage** `packageName`|Spécifie le nom du fichier exécutable qui effectue le chaînage. Ces informations sont envoyées à Microsoft sous forme de commentaires anonymes pour améliorer les futurs déploiements.<br /><br /> Si le nom du package inclut des espaces, utilisez des guillemets doubles comme délimiteurs. Par exemple : **/chainingpackage "Lucerne Publishing"**. Pour obtenir un exemple de package de chaînage, consultez [Obtention d’informations sur la progression d’un package d’installation](http://go.microsoft.com/fwlink/?LinkId=181926) dans MSDN Library.|
-|**/LCID**  `LCID`<br /><br /> où `LCID` spécifie un identificateur de paramètres régionaux (voir la liste des [langues prises en charge](#supported-languages))|Installe le module linguistique spécifié par `LCID` et force l'affichage de l'interface utilisateur dans cette langue à moins que le mode silencieux soit défini.<br /><br /> Pour le programme d'installation web, cette option installe de manière chaînée le module linguistique à partir du web. **Remarque :**  Utilisez cette option uniquement avec le programme d’installation web.|
+|**/LCID**  `LCID`<br /><br /> où `LCID` spécifie un identificateur de paramètres régionaux (consultez la liste des [langues prises en charge](#supported-languages))|Installe le module linguistique spécifié par `LCID` et force l'affichage de l'interface utilisateur dans cette langue à moins que le mode silencieux soit défini.<br /><br /> Pour le programme d'installation web, cette option installe de manière chaînée le module linguistique à partir du web. **Remarque :**  Utilisez cette option uniquement avec le programme d’installation web.|
 |**/log** `file` &#124; `folder`|Spécifie l'emplacement du fichier journal. L'emplacement par défaut est le répertoire temporaire du processus et le nom par défaut du fichier est basé sur le module. Si l'extension de fichier est .txt, un journal textuel est généré. Si vous spécifiez une autre extension ou aucune extension, un journal HTML est créé.|
 |**/msioptions**|Spécifie les options à transmettre pour des éléments .msi et .msp ; par exemple : `/msioptions "PROPERTY1='Value'"`.|
 |**/norestart**|Empêche le programme d'installation de redémarrer automatiquement. Si vous utilisez cette option, l’application de chaînage doit capturer le code de retour et gérer le redémarrage (consultez [Obtention d’informations sur la progression d’un package d’installation](http://go.microsoft.com/fwlink/?LinkId=179606) dans MSDN Library).|
-|**/passive**|Définit le mode passif. Affiche la barre de progression pour indiquer que l'installation est en cours, mais n'affiche aucune invite ni aucun message d'erreur pour l'utilisateur. Dans ce mode, quand il est chaîné par un programme d’installation, le package de chaînage doit gérer les [codes de retour](#return-codes).|
+|**/passive**|Définit le mode passif. Affiche la barre de progression pour indiquer que l'installation est en cours, mais n'affiche aucune invite ni aucun message d'erreur pour l'utilisateur. Dans ce mode, lorsqu'il est chaîné par un programme d'installation, le package de chaînage doit gérer les [codes de retour](#return-codes).|
 |**/pipe**|Crée un canal de communication pour permettre à un package de chaînage d'obtenir les données de progression.|
 |**/promptrestart**|Mode passif uniquement, si le programme d'installation requiert un redémarrage, il invite l'utilisateur à redémarrer l'ordinateur. Cette option requiert une intervention de l'utilisateur si un redémarrage est requis.|
 |**/q**|Définit le mode silencieux.|
@@ -372,7 +372,7 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 ### <a name="supported-languages"></a>Langues prises en charge
 Le tableau ci-dessous répertorie les modules linguistiques du .NET Framework disponibles pour [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et ses versions intermédiaires.
 
-|LCID|Langue – pays/région|Culture|
+|LCID|Langue – pays/région|culture|
 |----------|--------------------------------|-------------|
 |1025|Arabe - Arabie saoudite|ar|
 |1028|Chinois – Traditionnel|zh-Hant|
@@ -405,3 +405,4 @@ Le tableau ci-dessous répertorie les modules linguistiques du .NET Framework di
  [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)   
  [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)   
  [How to: Get Progress from the .NET Framework 4.5 Installer](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+

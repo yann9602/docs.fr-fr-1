@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour générer un assembly multifichier | Microsoft Docs"
+title: "Comment : générer un assembly multifichier"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -25,14 +25,14 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: daca0f9acb9dab393d1b2142f37e288f7f1329f9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5dd9de26f083209a0e8da79562f914023e008251
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-build-a-multifile-assembly"></a>Guide pratique pour générer un assembly multifichier
+# <a name="how-to-build-a-multifile-assembly"></a>Comment : générer un assembly multifichier
 Cet article explique comment créer un assembly multifichier et fournit le code illustrant chaque étape de la procédure.  
   
 > [!NOTE]
@@ -95,3 +95,4 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
  [Guide pratique pour afficher le contenu d’un assembly](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)   
  [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
  [Assemblys multifichiers](../../../docs/framework/app-domains/multifile-assemblies.md)
+

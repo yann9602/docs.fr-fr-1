@@ -1,5 +1,5 @@
 ---
-title: "Indications pour la création de composants pour l’exécution côte à côte | Microsoft Docs"
+title: "Indications pour la création de composants pour l'exécution côte à côte"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 9
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 4e303fb9994b6cc3d53839dbbbe0433abd129eeb
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 246cd565cd9ab981a993fcbee588783ec4e4e8fb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Indications pour la création de composants pour l'exécution côte à côte
@@ -80,3 +80,4 @@ Suivez ces recommandations générales pour créer des applications managées ou
 ## <a name="see-also"></a>Voir aussi  
  [Exécution côte à côte](../../../docs/framework/deployment/side-by-side-execution.md)   
  [Comment : activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+

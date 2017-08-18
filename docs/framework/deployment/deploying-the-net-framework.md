@@ -1,5 +1,5 @@
 ---
-title: "Déploiement du .NET Framework | Microsoft Docs"
+title: "Déployer le .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,14 +22,14 @@ caps.latest.revision: 2
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 36810aa7c94960810bb9c69c1f9af9571c7bf61b
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fd06e38413d7a7fc666743938d0f03067717b6f2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="deploying-the-net-framework"></a>Déploiement du .NET Framework
+# <a name="deploying-the-net-framework"></a>Déployer le .NET Framework
 Cette section de la documentation du .NET Framework fournit des informations pour les développeurs qui souhaitent installer le .NET Framework avec leurs applications, et pour les administrateurs qui souhaitent déployer le .NET Framework sur un réseau. Elle traite également des problèmes d’activation et de redémarrage associés au déploiement, et décrit comment surveiller la progression de l’installation du .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -53,3 +53,4 @@ Cette section de la documentation du .NET Framework fournit des informations pou
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de développement](../../../docs/framework/development-guide.md)
+

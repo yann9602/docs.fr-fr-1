@@ -1,5 +1,5 @@
 ---
-title: "Déployer des applications et le .NET Framework | Microsoft Docs"
+title: "Déploiement d'applications et du .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -26,11 +26,11 @@ caps.latest.revision: 56
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 46f524a8c2ee2d65d5c756a101a5c26c5919e165
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3fc00af210ae777e2749767c6426405c87c9c097
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
@@ -175,7 +175,7 @@ Cet article est conçu pour vous aider à prendre en main le processus de déplo
 |[Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Décrit le Gestionnaire de redémarrage qui empêche les redémarrages si possible, et explique les avantages de son utilisation pour les applications qui installent le .NET Framework.|  
 |[Guide de déploiement pour les administrateurs](../../../docs/framework/deployment/guide-for-administrators.md)|Explique comment un administrateur système peut déployer le .NET Framework et ses dépendances système dans un réseau en utilisant System Center Configuration Manager (SCCM).|  
 |[Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Explique comment les développeurs peuvent installer le .NET Framework sur les ordinateurs des utilisateurs avec leurs applications.|  
-|[Déploiement d’applications, de services et de composants](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components)|Présente les différentes options de déploiement dans Visual Studio, y compris les instructions de publication d'une application à l'aide des fonctionnalités ClickOnce et Windows Installer.| 
+|[Déploiement d’applications, de services et de composants](/visualstudio/deployment/deploying-applications-services-and-components)|Présente les différentes options de déploiement dans Visual Studio, y compris les instructions de publication d'une application à l'aide des fonctionnalités ClickOnce et Windows Installer.| 
 |[Publication d’applications ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Décrit comment empaqueter une application Windows Forms pour la déployer ensuite avec ClickOnce sur des ordinateurs clients d’un réseau.|  
 |[Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Décrit le modèle « Hub and Spoke » utilisé par le .NET Framework pour empaqueter et déployer des ressources. Fournit des informations sur les conventions de dénomination des ressources, le processus de secours et les alternatives à l'empaquetage.|  
 |[Déploiement d'une application d'interopérabilité](../../../docs/framework/interop/deploying-an-interop-application.md)|Explique comment livrer et installer des applications Interop, qui comportent généralement un assembly client .NET Framework, un ou plusieurs assemblys d'interopérabilité représentant des bibliothèques de types COM distinctes et un ou plusieurs composants COM inscrits.|  

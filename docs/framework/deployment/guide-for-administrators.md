@@ -1,5 +1,5 @@
 ---
-title: "Guide de déploiement du .NET Framework pour les administrateurs | Microsoft Docs"
+title: "Guide de déploiement du .NET Framework pour les administrateurs"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 40
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 95f0a049db17d8aa2d55200c184be2b2f2ec45fc
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 07b7381ddc94e3bc40a4eb0ed546f9526b57600a
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>Guide de déploiement du .NET Framework pour les administrateurs
@@ -274,3 +274,4 @@ Cet article explique étape par étape comment un administrateur système peut d
 ## <a name="see-also"></a>Voir aussi  
  [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
  [Configuration système requise](../../../docs/framework/get-started/system-requirements.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Services d’applications clientes | Microsoft Docs"
+title: Services d'application cliente
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -29,11 +29,11 @@ caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3ec7d3a3cf4c43349f0a10cac95cff507b59cfc5
-ms.openlocfilehash: 227c163bcdeb26d7bd4dd005e7e872300d58a2c3
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c776040786a51089c9aa988e9229805c06b28bae
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="client-application-services"></a>Services d'application cliente
@@ -83,3 +83,4 @@ Les services d’application cliente facilitent la création d’applications Wi
  [Authentication ASP.NET](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)   
  [Gestion des autorisations à l’aide des rôles](http://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)    
  [Vue d'ensemble des paramètres d'application](../../../docs/framework/winforms/advanced/application-settings-overview.md)
+
