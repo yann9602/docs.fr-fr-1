@@ -1,5 +1,5 @@
 ---
-title: "Nouveautés de C# - Guide C# | Microsoft Docs"
+title: "Nouveautés de C# | Guide C#"
 description: "Évolution du langage C#"
 keywords: "C#, dernières fonctionnalités, nouveautés, Roslyn"
 author: BillWagner
@@ -10,16 +10,20 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: f337a916f0a15c6e81b228ec378a34e97055f68e
+ms.translationtype: HT
+ms.sourcegitcommit: 195b2206eec0a8f070454aed1ddefe56ee92adc9
+ms.openlocfilehash: 7b7cb235e2ba5bc3c9a21603058eb20475766ea7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 08/15/2017
 
 ---
 
 # <a name="whats-new-in-c"></a>Nouveautés de C# #
 
+Cette page fournit un Guide des nouvelles fonctionnalités de chaque version majeure du langage c#. Les liens suivants fournissent des informations détaillées sur les principales fonctionnalités ajoutées dans chaque version.
+
+> [!IMPORTANT]
+> Le langage c# s’appuie sur des types et des méthodes présents dans une *bibliothèque standard* pour certaines des fonctionnalités. Par exemple, le traitement des exceptions. Chaque instruction ou expression`throw` est vérifiée pour s’assurer de l’objet levé est dérivé de @System.Exception. De même, chaque `catch` est vérifié pour assurer que le type intercepté est dérivé de @System.Exception. Chaque version peut ajouter de nouvelles spécifications. Pour utiliser les dernières fonctionnalités de langage dans les environnements plus anciens, vous devrez peut-être installer des bibliothèques spécifiques. Celles-ci sont décrits dans la page pour chaque version spécifique. Pour en savoir plus, consultez les [relations entre le langage et la bibliothèque](relationships-between-language-and-library.md) pour l’arrière-plan sur cette dépendance. 
 
 * [C# 7](csharp-7.md) :
     - Cette page décrit les dernières fonctionnalités du langage C#. Cela concerne C# 7, actuellement disponible dans [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/).
@@ -31,7 +35,7 @@ ms.lasthandoff: 05/23/2017
     - This page describes C# Interactive, an interactive Read Eval Print Loop (REPL) that you can use to explore the C# language. You can use it to write code interactively and see it execute immediately, without any compile or build step.
 -->
 * [Prise en charge multiplateforme](../../core/index.md) :
-    - Grâce à sa prise en charge de .NET Core, C# s’exécute sur plusieurs plateformes. Si vous souhaitez essayer C# sur Mac OS ou sur une des nombreuses distributions Linux prises en charge, apprenez-en plus sur .NET Core.
+    - Grâce à sa prise en charge de .NET Core, C# s’exécute sur plusieurs plateformes. Si vous voulez essayer C# sur macOS ou sur une des nombreuses distributions Linux prises en charge, découvrez plus d’informations sur .NET Core.
 
 <!--
 - [.NET Compiler Platform SDK](../roslyn/index.md):
