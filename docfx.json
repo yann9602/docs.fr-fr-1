@@ -39,7 +39,7 @@
           "framework/serialization/**",
           "framework/ui-automation/**",
           "framework/unmanaged-api/**",
-          "framework/wcf/diagnostics/**",
+          "framework/wcf/**",
           "framework/windows-services/**",
           "framework/windows-workflow-foundation/**",
           "framework/winforms/**",
