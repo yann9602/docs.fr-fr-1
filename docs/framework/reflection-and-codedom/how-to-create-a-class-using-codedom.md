@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour créer une classe à l’aide de CodeDOM | Microsoft Docs"
+title: "Guide pratique pour créer une classe à l’aide de CodeDOM"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 47d3d8559efa627f1f103b6c1f9f516f567b9dc0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3876ed881d98b4ee0bdb66f43de3de939111d45d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Guide pratique pour créer une classe à l’aide de CodeDOM
@@ -117,3 +117,4 @@ The object:
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation du CodeDOM](../../../docs/framework/reflection-and-codedom/using-the-codedom.md)   
  [Génération et compilation du code source à partir d’un graphique CodeDOM](../../../docs/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph.md)
+

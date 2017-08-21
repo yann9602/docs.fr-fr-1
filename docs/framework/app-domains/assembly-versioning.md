@@ -1,5 +1,5 @@
 ---
-title: Gestion des versions des assemblys | Microsoft Docs
+title: Versioning des assemblys
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 1e6c2e433b5520e0720511c483f1378df8977f13
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 124d53efb8d87a9b002abb4cb8359a1bbf6f479b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assembly-versioning"></a>Versioning des assemblys
@@ -45,7 +45,7 @@ Tout le versioning des assemblys qui utilisent le Common Language Runtime est ef
   
  L'illustration ci-dessous indique ces étapes.  
   
- ![.assembly extern monAssembly](../../../docs/framework/app-domains/media/versioningover.gif "versioningover")  
+ ![.assembly extern myAssembly](../../../docs/framework/app-domains/media/versioningover.gif "versioningover")  
 Résolution d’une demande de liaison d’assembly  
   
  Pour plus d’informations sur la configuration des applications, consultez [Configuration d’applications](../../../docs/framework/configure-apps/index.md). Pour plus d’informations sur la stratégie de liaison, consultez [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
@@ -85,3 +85,4 @@ Résolution d’une demande de liaison d’assembly
  [Configuration d’applications](../../../docs/framework/configure-apps/index.md)   
  [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md)   
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+

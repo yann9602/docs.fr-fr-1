@@ -1,5 +1,5 @@
 ---
-title: "Procédure pas à pas : utilisation des services d’application cliente | Microsoft Docs"
+title: "Procédure pas à pas : utilisation des services d'application cliente"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,14 +17,14 @@ caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: c5c36c371c43e6cba8875c0b6bea98c228438218
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 64a27269ee6f3711f0c51f2c97cd8876c3ea6103
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="walkthrough-using-client-application-services"></a>Procédure pas à pas : utilisation des services d'application cliente
+# <a name="walkthrough-using-client-application-services"></a>Procédure pas à pas : utilisation des services d'application cliente
 Cette rubrique décrit comment créer une application Windows qui utilise des services d'application cliente pour authentifier les utilisateurs et récupérer des rôles d'utilisateur et des paramètres.  
   
  Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :  
@@ -78,7 +78,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
  À ce stade, l'application est configurée pour accéder aux trois services du même hôte. Dans la section suivante, vous allez créer l'hôte comme une application de service web simple, ce qui vous permettra de tester votre configuration client.  
   
 ## <a name="creating-the-application-services-host"></a>Création de l'hôte de services d'application  
- Dans cette section, vous allez créer une application de service web simple qui accède aux données utilisateur à partir d'un fichier de base de données SQL Server Compact local. Vous allez ensuite renseigner la base de données à l’aide de l’ [ASP.NET Web Site Administration Tool](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec). Cette configuration simple vous permet de tester rapidement votre application cliente. Vous pouvez également configurer l'hôte de service web de façon à ce qu'il accède aux données utilisateur d'une base de données SQL Server complète ou via les classes <xref:System.Web.Security.MembershipProvider> et <xref:System.Web.Security.RoleProvider> personnalisées. Pour plus d'informations, consultez [Creating and Configuring the Application Services Database for SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2).  
+ Dans cette section, vous allez créer une application de service web simple qui accède aux données utilisateur à partir d'un fichier de base de données SQL Server Compact local. Vous allez ensuite renseigner la base de données à l’aide de l’ [ASP.NET Web Site Administration Tool](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec). Cette configuration simple vous permet de tester rapidement votre application cliente. Vous pouvez également configurer l'hôte de service web de façon à ce qu'il accède aux données utilisateur d'une base de données SQL Server complète ou via les classes <xref:System.Web.Security.MembershipProvider> et <xref:System.Web.Security.RoleProvider> personnalisées. Pour plus d'informations, consultez [Creating and Configuring the Application Services Database for SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2).  
   
  Dans la procédure suivante, vous créez et configurez le service web AppServices.  
   
@@ -256,7 +256,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 5.  Dans le concepteur, double-cliquez sur la surface de formulaire pour générer un gestionnaire d'événements <xref:System.Windows.Forms.Form.Load?displayProperty=fullName> nommé `Form1_Load`.  
   
-     L'éditeur de code apparaît avec le curseur dans la méthode `Form1_Load`.  
+     L'éditeur de code apparaît avec le curseur dans la méthode `Form1_Load` .  
   
 6.  Ajoutez le code suivant à la méthode `Form1_Load` .  
   
@@ -269,12 +269,12 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
  Vous pouvez maintenant appuyer sur F5 pour exécuter l'application : étant donné que vous fournissez un nom d'utilisateur et un mot de passe corrects, le formulaire s'affiche.  
   
 > [!NOTE]
->  Si vous ne pouvez pas exécuter l'application, essayez d'arrêter le serveur de développement ASP.NET. Lorsque le serveur redémarre, vérifiez que la valeur 55555 est définie pour le port.  
+>  Si vous ne pouvez pas exécuter l'application, essayez d'arrêter le serveur de développement ASP.NET. Lorsque le serveur redémarre, vérifiez que la valeur 55555 est définie pour le port.  
   
- Pour afficher à la place le message d'erreur, modifiez les paramètres <xref:System.Web.Security.Membership.ValidateUser%2A>. Par exemple, remplacez le deuxième paramètre `"manager!"` par un mot de passe incorrect tel que `"MANAGER"`.  
+ Pour afficher à la place le message d'erreur, modifiez les paramètres <xref:System.Web.Security.Membership.ValidateUser%2A> . Par exemple, remplacez le deuxième paramètre `"manager!"` par un mot de passe incorrect tel que `"MANAGER"`.  
   
 ## <a name="adding-a-login-form-as-a-credentials-provider"></a>Ajout d'un formulaire de connexion en tant que fournisseur d'informations d'identification  
- Vous pouvez obtenir les informations d'identification de l'utilisateur dans votre code d'application et les passer à la méthode <xref:System.Web.Security.Membership.ValidateUser%2A>. Toutefois, il est souvent utile de séparer le code d'acquisition des informations d'identification de votre code d'application, si vous souhaitez le modifier ultérieurement.  
+ Vous pouvez obtenir les informations d'identification de l'utilisateur dans votre code d'application et les passer à la méthode <xref:System.Web.Security.Membership.ValidateUser%2A> . Toutefois, il est souvent utile de séparer le code d'acquisition des informations d'identification de votre code d'application, si vous souhaitez le modifier ultérieurement.  
   
  Dans la procédure suivante, vous configurez votre application de sorte qu'elle utilise un fournisseur d'informations d'identification, puis vous modifiez votre appel de méthode <xref:System.Web.Security.Membership.ValidateUser%2A> pour passer <xref:System.String.Empty> pour les deux paramètres. Les chaînes vides envoient un signal à la méthode <xref:System.Web.Security.Membership.ValidateUser%2A> pour appeler la méthode <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> du fournisseur d'informations d'identification configuré.  
   
@@ -298,14 +298,14 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 4.  Ajoutez la méthode suivante après la méthode `Form1_Load` .  
   
-     Cette méthode passe des chaînes vides à la méthode `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=fullName>, ce qui provoque l’affichage de la boîte de dialogue Connexion. Si le service d'authentification n'est pas disponible, la méthode <xref:System.Web.Security.Membership.ValidateUser%2A> lève une <xref:System.Net.WebException>. Dans ce cas, la méthode `ValidateUsingCredentialsProvider` affiche un message d'avertissement et demande si l'utilisateur souhaite refaire une tentative en mode hors connexion. Cette fonctionnalité requiert la fonction **Enregistrer le hachage de mot de passe localement pour activer la connexion hors connexion** décrite dans [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). Cette fonctionnalité est activée par défaut pour les nouveaux projets.  
+     Cette méthode passe des chaînes vides à la méthode `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=fullName> , ce qui provoque l'affichage de la boîte de dialogue Connexion. Si le service d'authentification n'est pas disponible, la méthode <xref:System.Web.Security.Membership.ValidateUser%2A> lève une <xref:System.Net.WebException>. Dans ce cas, la méthode `ValidateUsingCredentialsProvider` affiche un message d'avertissement et demande si l'utilisateur souhaite refaire une tentative en mode hors connexion. Cette fonctionnalité requiert la fonction **Enregistrer le hachage de mot de passe localement pour activer la connexion hors connexion** décrite dans [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). Cette fonctionnalité est activée par défaut pour les nouveaux projets.  
   
      Si l'utilisateur n'est pas validé, la méthode `ValidateUsingCredentialsProvider` affiche un message d'erreur et ferme l'application. Enfin, cette méthode retourne le résultat de la tentative d'authentification.  
   
      [!code-csharp[ClientApplicationServices#020](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#020)]  [!code-vb[ClientApplicationServices#020](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#020)]  
   
 ### <a name="creating-a-login-form"></a>Création d'un formulaire de connexion  
- Un fournisseur d'informations d'identification est une classe qui implémente l'interface <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider>. Cette interface a une méthode unique nommée <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> qui retourne un objet <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials>. Les procédures suivantes décrivent comment créer une boîte de dialogue de connexion qui implémente <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> pour s'afficher et retourner les informations d'identification spécifiées par l'utilisateur.  
+ Un fournisseur d'informations d'identification est une classe qui implémente l'interface <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> . Cette interface a une méthode unique nommée <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> qui retourne un objet <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> . Les procédures suivantes décrivent comment créer une boîte de dialogue de connexion qui implémente <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> pour s'afficher et retourner les informations d'identification spécifiées par l'utilisateur.  
   
  Des procédures distinctes sont fournies pour [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] et C#, car [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] fournit un modèle **Formulaire de connexion** . Cela permet d'économiser du temps et des efforts de codage.  
   
@@ -339,9 +339,9 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
      [!code-vb[ClientApplicationServices#120](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Login.vb#120)]  
   
- La procédure C# suivante fournit la liste de code complète pour une boîte de dialogue de connexion simple. La disposition de cette boîte de dialogue est un peu brute, mais la partie importante est l'implémentation <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A>.  
+ La procédure C# suivante fournit la liste de code complète pour une boîte de dialogue de connexion simple. La disposition de cette boîte de dialogue est un peu brute, mais la partie importante est l'implémentation <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> .  
   
-##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-c"></a>Pour créer une boîte de dialogue de connexion comme fournisseur d'informations d'identification en C#  
+##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-c"></a>Pour créer une boîte de dialogue de connexion comme fournisseur d'informations d'identification en C#  
   
 1.  Dans l' **Explorateur de solutions**, sélectionnez le projet ClientAppServicesDemo, puis dans le menu **Projet** , sélectionnez **Ajouter une classe**.  
   
@@ -383,12 +383,12 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 5.  Ajoutez la méthode suivante à la fin de la classe Form1.  
   
-     Cette méthode appelle la méthode <xref:System.Security.Principal.IPrincipal.IsInRole%2A> du <xref:System.Security.Principal.IPrincipal> retourné par la propriété `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName>. Pour les applications configurées pour utiliser les services d'application cliente, cette propriété retourne un <xref:System.Web.ClientServices.ClientRolePrincipal>. Étant donné que cette classe implémente l'interface <xref:System.Security.Principal.IPrincipal>, vous n'avez pas besoin de la référencer explicitement.  
+     Cette méthode appelle la méthode <xref:System.Security.Principal.IPrincipal.IsInRole%2A> du <xref:System.Security.Principal.IPrincipal> retourné par la propriété `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> . Pour les applications configurées pour utiliser les services d'application cliente, cette propriété retourne un <xref:System.Web.ClientServices.ClientRolePrincipal>. Étant donné que cette classe implémente l'interface <xref:System.Security.Principal.IPrincipal> , vous n'avez pas besoin de la référencer explicitement.  
   
-     Si l'utilisateur est dans le rôle « manager », la méthode `DisplayButtonForManagerRole` affecte à la propriété <xref:System.Windows.Forms.Control.Visible%2A> du `managerOnlyButton` la valeur `true`. Si une <xref:System.Net.WebException> est levée, cette méthode affiche également un message d'erreur indiquant que le service de rôles n'est pas disponible.  
+     Si l'utilisateur est dans le rôle « manager », la méthode `DisplayButtonForManagerRole` affecte à la propriété <xref:System.Windows.Forms.Control.Visible%2A> du `managerOnlyButton` la valeur `true`. Si une <xref:System.Net.WebException> est levée, cette méthode affiche également un message d'erreur indiquant que le service de rôles n'est pas disponible.  
   
     > [!NOTE]
-    >  La méthode <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> retourne toujours la valeur `false` si la connexion de l'utilisateur a expiré. Cela ne se produit pas si votre application appelle une fois la méthode <xref:System.Security.Principal.IPrincipal.IsInRole%2A> peu après l'authentification, comme indiqué dans l'exemple de code de cette procédure pas à pas. Si votre application doit récupérer des rôles d'utilisateur à d'autres moments, vous souhaitez peut-être ajouter du code pour revalider les utilisateurs dont la connexion a expiré. Si des rôles sont attribués à tous les utilisateurs valides, vous pouvez déterminer si la connexion a expiré en appelant la méthode <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=fullName>. Si aucun rôle n'est retourné, la connexion a expiré. Pour obtenir un exemple de cette fonctionnalité, consultez la méthode <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A>. Cette fonctionnalité n'est requise que si vous avez sélectionné l'option **Imposer aux utilisateurs de se reconnecter chaque fois que le cookie du serveur expire** dans la configuration de votre application. Pour plus d'informations, consultez [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
+    >  La méthode <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> retourne toujours la valeur `false` si la connexion de l'utilisateur a expiré. Cela ne se produit pas si votre application appelle une fois la méthode <xref:System.Security.Principal.IPrincipal.IsInRole%2A> peu après l'authentification, comme indiqué dans l'exemple de code de cette procédure pas à pas. Si votre application doit récupérer des rôles d'utilisateur à d'autres moments, vous souhaitez peut-être ajouter du code pour revalider les utilisateurs dont la connexion a expiré. Si des rôles sont attribués à tous les utilisateurs valides, vous pouvez déterminer si la connexion a expiré en appelant la méthode <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=fullName> . Si aucun rôle n'est retourné, la connexion a expiré. Pour obtenir un exemple de cette fonctionnalité, consultez la méthode <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> . Cette fonctionnalité n'est requise que si vous avez sélectionné l'option **Imposer aux utilisateurs de se reconnecter chaque fois que le cookie du serveur expire** dans la configuration de votre application. Pour plus d'informations, consultez [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
      [!code-csharp[ClientApplicationServices#030](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#030)]  [!code-vb[ClientApplicationServices#030](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#030)]  
   
@@ -440,11 +440,11 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 10. Dans le concepteur, sélectionnez le formulaire, puis dans la fenêtre **Propriétés** , cliquez sur le bouton **Événements** .  
   
-11. Sélectionnez l'événement <xref:System.Windows.Forms.Form.FormClosing>, puis appuyez sur Entrée pour générer un gestionnaire d'événements.  
+11. Sélectionnez l'événement <xref:System.Windows.Forms.Form.FormClosing> , puis appuyez sur Entrée pour générer un gestionnaire d'événements.  
   
 12. Remplacez la méthode générée par le code suivant.  
   
-     Le gestionnaire d'événements <xref:System.Windows.Forms.Form.FormClosing> appelle la méthode `SaveSettings`, qui est également utilisée par les fonctionnalités de déconnexion que vous ajouterez dans la section suivante. La méthode `SaveSettings` vérifie tout d'abord que l'utilisateur ne s'est pas déconnecté. Pour ce faire, elle contrôle la propriété <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> du <xref:System.Security.Principal.IIdentity> retourné par l'entité de sécurité actuelle. Le principal actuel est extrait via la propriété `static` <xref:System.Threading.Thread.CurrentPrincipal%2A>. Si l'utilisateur a été authentifié pour les services d'application cliente, le type d'authentification sera « ClientForms ». La méthode `SaveSettings` ne peut pas uniquement vérifier la propriété <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=fullName>, car l'utilisateur peut avoir une identité Windows valide après la déconnexion.  
+     Le gestionnaire d'événements <xref:System.Windows.Forms.Form.FormClosing> appelle la méthode `SaveSettings` , qui est également utilisée par les fonctionnalités de déconnexion que vous ajouterez dans la section suivante. La méthode `SaveSettings` vérifie tout d'abord que l'utilisateur ne s'est pas déconnecté. Pour ce faire, elle contrôle la propriété <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> du <xref:System.Security.Principal.IIdentity> retourné par l'entité de sécurité actuelle. L'entité de sécurité actuelle est extraite via la propriété `static` <xref:System.Threading.Thread.CurrentPrincipal%2A> . Si l'utilisateur a été authentifié pour les services d'application cliente, le type d'authentification sera « ClientForms ». La méthode `SaveSettings` ne peut pas uniquement vérifier la propriété <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=fullName> , car l'utilisateur peut avoir une identité Windows valide après la déconnexion.  
   
      Si l'utilisateur ne s'est pas déconnecté, la méthode `SaveSettings` appelle la méthode <xref:System.Configuration.ApplicationSettingsBase.Save%2A> de la classe `Settings` générée précédemment dans cette procédure. Cette méthode peut lever une <xref:System.Net.WebException> si le cookie d'authentification a expiré. Cela se produit uniquement si vous avez sélectionné l'option **Imposer aux utilisateurs de se reconnecter chaque fois que le cookie du serveur expire** dans la configuration de votre application. Pour plus d'informations, consultez [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). La méthode `SaveSettings` gère l'expiration des cookies en appelant <xref:System.Web.Security.Membership.ValidateUser%2A> pour afficher la boîte de dialogue de connexion. Si l'utilisateur parvient à se connecter, la méthode `SaveSettings` tente d'enregistrer de nouveau les paramètres en s'appelant elle-même.  
   
@@ -454,7 +454,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 13. Ajoutez la méthode suivante à la fin de la classe Form1.  
   
-     Ce code gère l'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=fullName> et affiche un avertissement si l'un des paramètres n'a pas pu être enregistré. L'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> ne se produit pas si le service de paramètres n'est pas disponible ou si le cookie d'authentification a expiré. L'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> se produit par exemple si l'utilisateur s'est déjà déconnecté. Vous pouvez tester ce gestionnaire d'événements en ajoutant directement du code de déconnexion à la méthode `SaveSettings` avant l'appel de la méthode <xref:System.Configuration.ApplicationSettingsBase.Save%2A>. Le code de déconnexion que vous pouvez utiliser est décrit dans la section suivante.  
+     Ce code gère l'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=fullName> et affiche un avertissement si l'un des paramètres n'a pas pu être enregistré. L'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> ne se produit pas si le service de paramètres n'est pas disponible ou si le cookie d'authentification a expiré. L'événement <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> se produit par exemple si l'utilisateur s'est déjà déconnecté. Vous pouvez tester ce gestionnaire d'événements en ajoutant directement du code de déconnexion à la méthode `SaveSettings` avant l'appel de la méthode <xref:System.Configuration.ApplicationSettingsBase.Save%2A> . Le code de déconnexion que vous pouvez utiliser est décrit dans la section suivante.  
   
      [!code-csharp[ClientApplicationServices#090](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#090)]  [!code-vb[ClientApplicationServices#090](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#090)]  
   
@@ -479,7 +479,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 4.  Remplacez la méthode `logoutButton_Click` générée par le code suivant.  
   
-     Ce gestionnaire d'événements appelle d'abord la méthode `SaveSettings` que vous avez ajoutée dans la section précédente. Il appelle ensuite la méthode <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=fullName>. Si le service d'authentification n'est pas disponible, la méthode <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> lève une <xref:System.Net.WebException>. Dans ce cas, la méthode `logoutButton_Click` affiche un message d'avertissement et passe temporairement en mode hors connexion pour déconnecter l'utilisateur. Le mode hors connexion est décrit dans la section suivante.  
+     Ce gestionnaire d'événements appelle d'abord la méthode `SaveSettings` que vous avez ajoutée dans la section précédente. Il appelle ensuite la méthode <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=fullName> . Si le service d'authentification n'est pas disponible, la méthode <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> lève une <xref:System.Net.WebException>. Dans ce cas, la méthode `logoutButton_Click` affiche un message d'avertissement et passe temporairement en mode hors connexion pour déconnecter l'utilisateur. Le mode hors connexion est décrit dans la section suivante.  
   
      La déconnexion supprime le cookie d'authentification local afin que la connexion soit requise lorsque l'application est redémarrée. Après la déconnexion, le gestionnaire d'événements redémarre l'application. Lorsque celle-ci redémarre, elle affiche le message d'accueil, puis la boîte de dialogue de connexion. Le message d'accueil indique que l'application a redémarré. Cela empêche toute confusion potentielle si l'utilisateur doit se connecter pour enregistrer des paramètres, puis se connecter de nouveau car l'application a redémarré.  
   
@@ -488,7 +488,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
  Pour tester la fonctionnalité de déconnexion, exécutez l'application et sélectionnez **Mémoriser mes informations** dans la boîte de dialogue Connexion. Ensuite, fermez et redémarrez l'application pour vérifier que vous n'avez plus à vous connecter. Enfin, redémarrez l'application en cliquant sur Se déconnecter.  
   
 ## <a name="enabling-offline-mode"></a>Activation du mode hors connexion  
- Dans la procédure suivante, vous ajoutez une case à cocher au formulaire pour permettre à l'utilisateur de passer en mode hors connexion. Votre application indique le mode hors connexion en affectant à la propriété `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=fullName> la valeur `true`. L'état hors connexion est stocké sur le disque dur local à l'emplacement indiqué par la propriété <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName>. Cela signifie que l'état hors connexion est stocké par utilisateur, pour chaque application.  
+ Dans la procédure suivante, vous ajoutez une case à cocher au formulaire pour permettre à l'utilisateur de passer en mode hors connexion. Votre application indique le mode hors connexion en affectant à la propriété `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=fullName> la valeur `true`. L'état hors connexion est stocké sur le disque dur local à l'emplacement indiqué par la propriété <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName> . Cela signifie que l'état hors connexion est stocké par utilisateur, pour chaque application.  
   
  En mode hors connexion, toutes les requêtes de service d'application cliente récupèrent des données du cache local au lieu de tenter d'accéder aux services. Dans la configuration par défaut, les données locales incluent une forme chiffrée du mot de passe de l'utilisateur. Cela permet à l'utilisateur de se connecter pendant que l'application est en mode hors connexion. Pour plus d'informations, consultez [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
@@ -502,11 +502,11 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 4.  Dans la fenêtre **Propriétés** , cliquez sur le bouton **Événements** .  
   
-5.  Sélectionnez l'événement <xref:System.Windows.Forms.CheckBox.CheckedChanged>, puis appuyez sur Entrée pour générer un gestionnaire d'événements.  
+5.  Sélectionnez l'événement <xref:System.Windows.Forms.CheckBox.CheckedChanged> , puis appuyez sur Entrée pour générer un gestionnaire d'événements.  
   
 6.  Remplacez la méthode générée par le code suivant.  
   
-     Ce code met à jour la valeur <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> et revalide silencieusement l'utilisateur lors du passage en mode en ligne. La méthode <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=fullName> utilise les informations d'identification mises en cache pour que l'utilisateur n'ait pas explicitement à se connecter. Si le service d'authentification n'est pas disponible, un message d'avertissement s'affiche et l'application reste hors connexion.  
+     Ce code met à jour la valeur <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> et revalide silencieusement l'utilisateur lors du passage en mode en ligne. La méthode <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=fullName> utilise les informations d'identification mises en cache pour que l'utilisateur n'ait pas explicitement à se connecter. Si le service d'authentification n'est pas disponible, un message d'avertissement s'affiche et l'application reste hors connexion.  
   
     > [!NOTE]
     >  La méthode <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> est fournie pour des raisons pratiques uniquement. Étant donné qu'elle n'a pas de valeur de retour, elle ne peut pas indiquer si la revalidation a échoué. La revalidation peut, par exemple, échouer si les informations d'identification de l'utilisateur ont été modifiées sur le serveur. Dans ce cas, vous souhaitez peut-être inclure du code qui valide explicitement les utilisateurs après l'échec d'un appel de service. Pour plus d'informations, consultez la section Accès aux paramètres web, précédemment dans cette procédure pas à pas.  
@@ -533,7 +533,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
  [Services d’application cliente](../../../docs/framework/common-client-technologies/client-application-services.md)   
  [Vue d’ensemble des services d’application cliente](../../../docs/framework/common-client-technologies/client-application-services-overview.md)   
  [Comment : configurer les services d’application cliente](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)   
- [ASP.NET Web Site Administration Tool](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)   
+ [Outil Administration de site web ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)   
  [Création et configuration de la base de données des services d’application pour SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)   
  [Procédure pas à pas : utilisation des services d’application ASP.NET](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)
 

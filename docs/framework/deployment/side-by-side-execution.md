@@ -1,5 +1,5 @@
 ---
-title: "Exécution côte à côte dans le .NET Framework | Microsoft Docs"
+title: "Exécution côte à côte dans .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,11 +21,11 @@ caps.latest.revision: 21
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: 460471cceda60697382d770e1b95be75ff3cfc8a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1628d75ab7f842c6b7486a1d57f490b4d876ee28
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Exécution côte à côte dans .NET Framework
@@ -138,3 +138,4 @@ publicKeyToken=...,
   
 ## <a name="reference"></a>Référence  
  [\<supportedRuntime>, élément](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+

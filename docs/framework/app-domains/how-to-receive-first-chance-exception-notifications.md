@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour recevoir des notifications des exceptions de première chance | Microsoft Docs"
+title: "Guide pratique pour recevoir des notifications des exceptions de première chance"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,11 +17,11 @@ caps.latest.revision: 10
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: d5d3cd1e19d8a8156c4ee7968cb06770dcae58d0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: dd906fa2d45331082b9dc86c972e5630361e2653
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Guide pratique pour recevoir des notifications des exceptions de première chance
@@ -91,7 +91,7 @@ L’événement <xref:System.AppDomain.FirstChanceException> de la classe <xref:
 > [!NOTE]
 >  Le nom du domaine d’application par défaut est identique au nom de l’exécutable.  
   
- Si vous ajoutez un gestionnaire pour l’événement <xref:System.AppDomain.FirstChanceException> au domaine d’application par défaut, l’événement est déclenché et géré avant que le domaine d’application par défaut ne gère l’exception. Pour afficher cela, ajoutez le code C# `AppDomain.CurrentDomain.FirstChanceException += FirstChanceException;` (en Visual Basic, `AddHandler AppDomain.CurrentDomain.FirstChanceException, FirstChanceExceptio`n) au début de `Main()`.  
+ Si vous ajoutez un gestionnaire pour l’événement <xref:System.AppDomain.FirstChanceException> au domaine d’application par défaut, l’événement est déclenché et géré avant que le domaine d’application par défaut ne gère l’exception. Pour afficher cela, ajoutez le code C# `AppDomain.CurrentDomain.FirstChanceException += FirstChanceException;` (en Visual Basic, `AddHandler AppDomain.CurrentDomain.FirstChanceException, FirstChanceException`) au début de `Main()`.  
   
  [!code-csharp[System.AppDomain.FirstChanceException_howto#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#1)] [!code-vb[System.AppDomain.FirstChanceException_howto#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#1)]  
   
@@ -101,3 +101,4 @@ L’événement <xref:System.AppDomain.FirstChanceException> de la classe <xref:
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.AppDomain.FirstChanceException>
+

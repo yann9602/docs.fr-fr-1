@@ -1,5 +1,5 @@
 ---
-title: "Manifeste d’assembly | Microsoft Docs"
+title: Manifeste d'assembly
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 7
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 58098e2107fcab96f82677094e50529fafba98e5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eb20bfac6717779f5394724617d247a6dc980c7e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="assembly-manifest"></a>Manifeste d'assembly
@@ -69,3 +69,4 @@ Types d'assemblys
  [Gestion des versions des assemblys](../../../docs/framework/app-domains/assembly-versioning.md)   
  [Création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)   
  [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)
+
