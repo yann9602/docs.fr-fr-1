@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour raccorder un délégué à l’aide de la réflexion | Microsoft Docs"
+title: "Guide pratique pour raccorder un délégué à l'aide de la réflexion"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 12
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: ca3143752c5a9774b88420a853ebac78d9bc2f43
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0124d3bde63855648183b34a2af3c0817bb71a2b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Guide pratique pour raccorder un délégué à l'aide de la réflexion
@@ -102,3 +102,4 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
  <xref:System.Delegate.CreateDelegate%2A>   
  [Guide pratique pour définir et exécuter des méthodes dynamiques](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md)   
  [Réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)
+

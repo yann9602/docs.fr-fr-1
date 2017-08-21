@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour définir une méthode générique avec l’émission de réflexion | Microsoft Docs"
+title: "Guide pratique pour définir une méthode générique avec l’émission de réflexion"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 13
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: f69e3d0959412ccedd6e1926832533371185acd5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 655ec9d5c53de10e6044cacc0eb8239fefe36489
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Guide pratique pour définir une méthode générique avec l’émission de réflexion
@@ -159,3 +159,4 @@ La première procédure montre comment créer une méthode générique simple av
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.Emit.MethodBuilder>   
  [Guide pratique pour définir un type générique avec l'émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)
+

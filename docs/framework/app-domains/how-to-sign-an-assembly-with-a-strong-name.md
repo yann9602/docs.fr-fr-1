@@ -1,5 +1,5 @@
 ---
-title: "Comment : signer un assembly avec un nom fort | Microsoft Docs"
+title: "Comment : signer un assembly avec un nom fort"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -19,11 +19,11 @@ caps.latest.revision: 23
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 548cc4ffd0f894c4f522552c5f032be4c94d3585
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7758871a22b8b58d7df5cf2df481db185c07a987
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
@@ -33,7 +33,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 -   À l’aide de l’utilitaire [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) pour lier un module de code .NET Framework (un fichier .netmodule) à un fichier de clé.  
   
--   À l'aide d'attributs d'assembly pour insérer les informations de nom fort dans votre code. Vous pouvez utiliser l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute>, selon l'emplacement du fichier de clé à utiliser.  
+-   À l'aide d'attributs d'assembly pour insérer les informations de nom fort dans votre code. Vous pouvez utiliser l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> , selon l'emplacement du fichier de clé à utiliser.  
   
 -   À l'aide des options du compilateur.  
   
@@ -81,7 +81,7 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
 2.  Compilez le fichier de code source normalement.  
   
 > [!NOTE]
->  Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
+>  Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
   
  L'exemple de code suivant utilise l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> avec un fichier de clé nommé `keyfile.snk`, situé dans le répertoire où l'assembly est compilé.  
   
@@ -108,3 +108,4 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
  [Temporisation de signature d’un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md)   
  [Gestion d’assembly et signature de manifeste](/visualstudio/ide/managing-assembly-and-manifest-signing)   
  [Page Signature, Concepteur de projet](https://msdn.microsoft.com/library/0k50fs3b)
+

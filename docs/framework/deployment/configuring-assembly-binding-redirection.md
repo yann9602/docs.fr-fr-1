@@ -1,5 +1,5 @@
 ---
-title: "Configuration de la redirection de liaison d’assembly | Microsoft Docs"
+title: "Configuration de la liaison d’assembly"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 8
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: 0abc314673f995c57cc7d139ebeb0ee0c558f0c0
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6cd1e2d621d133f80a2f6e650ae6aed94e6bbe33
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Configuration de la liaison d’assembly
@@ -74,3 +74,4 @@ Par défaut, les applications utilisent le jeu d'assemblys .NET Framework qui es
   
 ## <a name="see-also"></a>Voir aussi  
  [Comment : activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+

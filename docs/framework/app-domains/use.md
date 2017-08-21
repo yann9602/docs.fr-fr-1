@@ -1,5 +1,5 @@
 ---
-title: "Utilisation des domaines d’application | Microsoft Docs"
+title: Utilisation des domaines d'application
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -18,11 +18,11 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 3aa6a381d7c6017e27deac642f23b68c50af7509
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b2dac2238ae9117d3678335748c680d594a8b5c6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
@@ -77,3 +77,4 @@ Les domaines d’application fournissent une unité d’isolation pour le common
   
  [Vue d’ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.
+

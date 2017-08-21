@@ -1,5 +1,5 @@
 ---
-title: Affichage des informations de type | Microsoft Docs
+title: Affichage des informations de type
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 13
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 5bc5ed1dd10f04a2d5ef5b00127b6d858102e933
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6b7225aeca9bf605f47dcc5a8430cdf1fb12d410
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="viewing-type-information"></a>Affichage des informations de type
@@ -87,3 +87,4 @@ La classe <xref:System.Type?displayProperty=fullName> est un élément central d
  <xref:System.Reflection.EventInfo>   
  <xref:System.Reflection.ParameterInfo>   
  [Réflexion et types génériques](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Caspol.exe (outil de stratégie de sécurité d&quot;accès du code) │ Microsoft Docs"
+title: "Caspol.exe (outil Stratégie de sécurité d'accès du code)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -32,11 +32,11 @@ caps.latest.revision: 44
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: 4217677bc011d4708a7ff5a2d44a7a897bc9057a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 53cb4e7ffbac9a149b9b83b92141b7544734683e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (outil Stratégie de sécurité d'accès du code)

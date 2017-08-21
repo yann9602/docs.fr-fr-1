@@ -1,5 +1,5 @@
 ---
-title: "Ngen.exe (Générateur d’images natives) │ Microsoft Docs"
+title: Ngen.exe (Native Image Generator)
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -31,11 +31,11 @@ caps.latest.revision: 57
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f3dc4235c75d7438f019838cb22192f4dc7c41a
-ms.openlocfilehash: 65ecfdf69d739e76e386ed334c95f31ad266b904
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 75c329c2d57e1731c1f3cd0d34f680c3706763ce
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
@@ -202,7 +202,7 @@ ngen /? | /help
 ## <a name="generating-images-for-----different-scenarios"></a>Génération d'images dans différents scénarios  
  Une fois que vous avez généré une image native pour un assembly, le runtime essaie automatiquement de la localiser et de l'utiliser chaque fois qu'il exécute l'assembly. Plusieurs images peuvent être générées, selon les scénarios d'utilisation.  
   
- Par exemple, si vous exécutez un assembly dans un scénario de débogage ou de profilage, le runtime recherche une image native générée à l'aide des options `/Debug` ou `/Profile`. S'il ne trouve pas d'image native correspondante, le runtime revient à la compilation JIT standard. La seule façon de déboguer des images natives est de créer une image native avec l'option `/Debug`.  
+ Par exemple, si vous exécutez un assembly dans un scénario de débogage ou de profilage, le runtime recherche une image native générée à l'aide des options `/Debug` ou `/Profile`. S'il ne trouve pas d'image native correspondante, le runtime revient à la compilation JIT standard. La seule façon de déboguer des images natives consiste à créer une image native avec l'option `/Debug`.  
   
  L'action `uninstall` reconnaît également les scénarios, vous pouvez ainsi désinstaller tous les scénarios ou uniquement les scénarios sélectionnés.  
   

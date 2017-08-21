@@ -1,5 +1,5 @@
 ---
-title: "Émission d’assemblys et de méthodes dynamiques | Microsoft Docs"
+title: "Émission d'assemblys et de méthodes dynamiques"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -20,11 +20,11 @@ caps.latest.revision: 18
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: d8e4c5bb677be7e20f6571ea6eb53831027ade27
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c28a5b71a93ea5159adc73316771d490dbe0db87
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Émission d'assemblys et de méthodes dynamiques
@@ -71,3 +71,4 @@ Cette section décrit un ensemble de types managés dans l'espace de noms <xref:
   
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  Donne une vue d'ensemble des assemblys dans le .NET Framework.
+

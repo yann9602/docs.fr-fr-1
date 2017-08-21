@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour afficher le contenu d’un assembly | Microsoft Docs"
+title: 'Comment : afficher le contenu d''un assembly'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,14 +22,14 @@ caps.latest.revision: 11
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: 38ed309c8d1ef7467b235eb2e751ffb9016a83ab
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3583e69e90080eb830bb61a5e0c7b6e944f7d654
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-view-assembly-contents"></a>Guide pratique pour afficher le contenu d’un assembly
+# <a name="how-to-view-assembly-contents"></a>Comment : afficher le contenu d'un assembly
 Vous pouvez utiliser [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour visualiser les informations de langage MSIL (Microsoft Intermediate Language) dans un fichier. Si le fichier examiné est un assembly, ces informations peuvent inclure les attributs de l’assembly, ainsi que des références à d’autres modules et assemblys. Ces informations peuvent être utiles pour déterminer si un fichier est un assembly ou fait partie d’un assembly, et s’il a des références à d’autres modules ou assemblys.  
   
 ### <a name="to-display-the-contents-of-an-assembly-using-ildasmexe"></a>Pour afficher le contenu d’un assembly à l’aide d’Ildasm.exe  

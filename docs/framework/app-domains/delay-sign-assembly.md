@@ -1,13 +1,9 @@
 ---
-title: "Temporisation de signature d’un assembly | Microsoft Docs"
-ms.custom: 
-ms.date: 03/30/2017
+title: Temporisation de signature d'un assembly
+ms.date: 07/31/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - dotnet-bcl
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - deferring assembly signing
@@ -20,14 +16,14 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 2fce2174da6b5d954e0197d7c834289070c09a22
+ms.translationtype: HT
+ms.sourcegitcommit: 0ee5fed355e0d8418500f1ecee53019548d9f7f8
+ms.openlocfilehash: 2c50a652c834dba80595f2ea419bc75148e13419
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/02/2017
 
 ---
-# <a name="delay-signing-an-assembly"></a>Temporisation de signature d’un assembly
+# <a name="delay-signing-an-assembly"></a>Temporisation de signature d'un assembly
 Une entreprise peut avoir une paire de clés protégées auxquelles les développeurs n’ont pas accès tous les jours. La clé publique est souvent disponible, mais l’accès à la clé privée est limité à quelques personnes. Lors du développement d’assemblys avec des noms forts, chaque assembly qui référence l’assembly cible avec nom fort contient le jeton de la clé publique utilisée pour affecter un nom fort à l’assembly cible. La clé publique doit donc être disponible pendant le processus de développement.  
   
  Vous pouvez utiliser la signature différée ou partielle au moment de la génération pour réserver de l’espace dans le fichier exécutable portable (PE) pour la signature de nom fort, mais différer la signature à une étape ultérieure (généralement juste avant de livrer l’assembly).  
@@ -62,8 +58,8 @@ Une entreprise peut avoir une paire de clés protégées auxquelles les dévelop
   
      Avec l’option **–Vr** ou **–Vk**, vous pouvez éventuellement inclure un fichier .snk pour la signature de clé test.  
   
-    > [!CAUTION]
-    >  N’utilisez l’option **–Vr** ou **–Vk** que pendant le développement. L'ajout d'un assembly à la liste des omissions de vérification crée une faille de sécurité. Un assembly malveillant peut utiliser le nom complètement spécifié (nom, version, culture et jeton de clé publique) de l'assembly ajouté à la liste des omissions de vérification pour usurper son identité. Cela permet également à l'assembly malveillant d'ignorer la vérification.  
+    > [!WARNING]
+    > Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.
   
     > [!NOTE]
     >  Si vous utilisez la temporisation de signature lors du développement avec Visual Studio sur un ordinateur 64 bits, et que vous compilez un assembly pour **Any CPU**, vous devrez peut-être appliquer deux fois l’option **-Vr**. (Dans Visual Studio, **Any CPU** est une valeur de la propriété de build **Plateforme cible** ; quand vous compilez à partir de la ligne de commande, il s’agit de la valeur par défaut.) Pour exécuter votre application à partir de la ligne de commande ou de l’Explorateur de fichiers, utilisez la version 64 bits de [Sn.exe (Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) pour appliquer l’option **-Vr** à l’assembly. Pour charger l’assembly dans Visual Studio au moment du design (par exemple, si l’assembly contient des composants utilisés par d’autres assemblys dans votre application), utilisez la version 32 bits de l’outil Strong Name. Ceci s’explique par le fait que le compilateur juste-à-temps (JIT) compile l’assembly en code natif 64 bits quand l’assembly est exécuté à partir de la ligne de commande, et en code natif 32 bits quand l’assembly est chargé dans l’environnement au moment du design.  
@@ -81,3 +77,4 @@ Une entreprise peut avoir une paire de clés protégées auxquelles les dévelop
  [Comment : créer une paire de clés publique/privée](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)   
  [Sn.exe (Outil Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
  [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)
+

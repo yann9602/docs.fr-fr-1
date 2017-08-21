@@ -1,5 +1,5 @@
 ---
-title: "Génération et compilation de code source dynamique | Microsoft Docs"
+title: "Génération et compilation de code source dynamique"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -22,11 +22,11 @@ caps.latest.revision: 15
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 86483858b93f58b22d8c8440baa76d68250745dd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f1eb17af8fef96f42973e65859bd17b1e835fa98
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Génération et compilation de code source dynamique
@@ -63,3 +63,4 @@ Le .NET Framework inclut un mécanisme appelé CodeDOM (Code Document Object Mod
 ## <a name="related-sections"></a>Rubriques connexes  
  [Aide-mémoire de CodeDOM](http://msdn.microsoft.com/en-us/c77b8bfd-0a32-4e36-b59a-4f687f32c524)  
  Fournit aux développeurs un moyen de trouver rapidement des éléments CodeDOM qui représentent des éléments du code source.
+

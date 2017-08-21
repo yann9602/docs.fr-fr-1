@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts | Microsoft Docs"
+title: "Comment : désactiver la fonctionnalité consistant à ignorer les noms forts"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,14 +17,14 @@ caps.latest.revision: 30
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
-ms.openlocfilehash: 73e27a6a1cb58a410bf3c1601e5a5412762242c7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0af565c6d27be6a5a22bfb0fd1f90e4e46deec33
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts
+# <a name="how-to-disable-the-strong-name-bypass-feature"></a>Comment : désactiver la fonctionnalité consistant à ignorer les noms forts
 À partir du .NET Framework version 3.5 Service Pack 1 (SP1), les signatures de noms forts ne sont pas validées quand un assembly est chargé dans un objet <xref:System.AppDomain> de confiance totale, tel que le <xref:System.AppDomain> par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d’ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La seule restriction est que l’assembly doit être entièrement fiable, car sa zone est entièrement fiable. Le nom fort n’étant pas un facteur déterminant dans ces conditions, il n’y a aucune raison pour qu’il soit validé. Ignorer la validation des signatures de noms forts fournit une amélioration significative des performances.  
   
  Cette fonctionnalité consistant à ignorer la validation s’applique à tout assembly de confiance totale qui n’est pas à signature différée et qui est chargé dans n’importe quel <xref:System.AppDomain> de confiance totale à partir du répertoire spécifié par sa propriété <xref:System.AppDomainSetup.ApplicationBase%2A>.  
@@ -67,3 +67,4 @@ ms.lasthandoff: 06/02/2017
  [Sn.exe (Outil Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
  [\<bypassTrustedAppStrongNames>, élément](../../../docs/framework/configure-apps/file-schema/runtime/bypasstrustedappstrongnames-element.md)   
  [Création et utilisation d’assemblys avec nom fort](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
+
