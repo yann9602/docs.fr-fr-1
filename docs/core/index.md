@@ -45,7 +45,7 @@ Voici les caractéristiques qui définissent le mieux .NET Core :
 
 Les langages C# et F# (et bientôt Visual Basic) peuvent être utilisés pour écrire des applications et des bibliothèques pour .NET Core. Les compilateurs s’exécutent sur .NET Core, ce qui vous permet de développer pour .NET Core où qu’il s’exécute. En règle générale, les compilateurs s’utilisent non pas directement, mais indirectement via les outils du SDK.
 
-Les compilateurs C# et F# et les outils .NET Core sont ou peuvent être intégrés dans plusieurs éditeurs de texte et environnements IDE, dont Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text et Vim, ce qui fait du développement .NET Core une option dans votre environnement de codage et système d’exploitation préférés. Nous devons en partie cette intégration aux bonnes gens du [projet OmniSharp](http://www.omnisharp.net/).
+Les compilateurs C# et F# et les outils .NET Core sont ou peuvent être intégrés dans plusieurs éditeurs de texte et environnements IDE, dont Visual Studio, [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text et Vim, ce qui fait du développement .NET Core une option dans votre environnement de codage et système d’exploitation préférés. Nous devons en partie cette intégration aux bons gens du [projet OmniSharp](http://www.omnisharp.net/).
 
 ### <a name="net-apis-and-compatibility"></a>API .NET et compatibilité
 
