@@ -1,5 +1,5 @@
 ---
-title: Gestion des exceptions (Guide de programmation C#) | Microsoft Docs
+title: Gestion des exceptions (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 481621ab8c3d6e1c98c9ad38590ac030827c26c5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ab03e00a6b62d0c737c90fdb489be2a78f7ab6af
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="exception-handling-c-programming-guide"></a>Gestion des exceptions (Guide de programmation C#)
@@ -49,7 +49,7 @@ Un bloc [try](../../../csharp/language-reference/keywords/try-catch.md) est util
  Un bloc `try` sans bloc `catch` ou `finally` provoque une erreur du compilateur.  
   
 ## <a name="catch-blocks"></a>Blocs catch  
- Un bloc `catch` peut spécifier le type d’exception à intercepter. La spécification de type est appelée *filtre d’exception*. Le type d’exception doit dériver de <xref:System.Exception>. En général, ne spécifiez pas <xref:System.Exception> comme filtre d’exception, sauf si vous savez comment gérer toutes les exceptions susceptibles d’être levées dans le bloc `try` ou si vous avez inclus une instruction [throw](../../../csharp/language-reference/keywords/throw.md) à la fin de votre bloc `catch`.  
+ Un bloc `catch` peut spécifier le type d’exception à intercepter. La spécification de type est appelée *filtre d’exception*. Le type d’exception doit être dérivé de <xref:System.Exception>. En général, ne spécifiez pas <xref:System.Exception> comme filtre d’exception, sauf si vous savez comment gérer toutes les exceptions susceptibles d’être levées dans le bloc `try` ou si vous avez inclus une instruction [throw](../../../csharp/language-reference/keywords/throw.md) à la fin de votre bloc `catch`.  
   
  Vous pouvez chaîner plusieurs blocs `catch` avec des filtres d’exception différents. Les blocs `catch` sont évalués de haut en bas dans votre code, mais un seul bloc `catch` est exécuté pour chaque exception levée. Le premier bloc `catch` qui spécifie le type exact ou une classe de base de l’exception levée est exécuté. Si aucun bloc `catch` ne spécifie un filtre d’exception correspondant, un bloc `catch` qui n’a pas de filtre est sélectionné, s’il y en a un dans l’instruction. Lors du positionnement des blocs `catch`, il est important de placer en premier les types d’exception les plus spécifiques (c’est-à-dire les plus dérivés).  
   
@@ -85,3 +85,4 @@ Un bloc [try](../../../csharp/language-reference/keywords/try-catch.md) est util
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   
  [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)   
  [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)
+

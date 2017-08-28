@@ -1,5 +1,5 @@
 ---
-title: -doc (Options du compilateur C#) | Microsoft Docs
+title: -doc (Options du compilateur C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -35,11 +35,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8addbbfe1e854feee560192292b713da4fc67e6c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 58608c1301b2df3286c1f8a1de189f6256b19052
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="doc-c-compiler-options"></a>/doc (Options du compilateur C#)
@@ -64,7 +64,7 @@ L’option **/doc** vous permet de placer des commentaires de documentation dans
   
  Le fichier de code source qui contient Main est sorti en premier dans le document XML.  
   
- Pour utiliser le fichier .xml généré avec la fonctionnalité [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense), faites en sorte que le nom du fichier .xml soit identique à l’assembly que vous souhaitez prendre en charge, puis vérifiez que le fichier .xml est dans le même répertoire que l’assembly. Ainsi, quand l’assembly est référencé dans le projet Visual Studio, le fichier .xml est également trouvé. Pour plus d’informations, consultez [Insertion de commentaires dans le code XML](https://docs.microsoft.com/visualstudio/ide/supplying-xml-code-comments).  
+ Pour utiliser le fichier .xml généré avec la fonctionnalité [IntelliSense](/visualstudio/ide/using-intellisense), faites en sorte que le nom du fichier .xml soit identique à l’assembly que vous souhaitez prendre en charge, puis vérifiez que le fichier .xml est dans le même répertoire que l’assembly. Ainsi, quand l’assembly est référencé dans le projet Visual Studio, le fichier .xml est également trouvé. Pour plus d’informations, consultez [Insertion de commentaires dans le code XML](/visualstudio/ide/supplying-xml-code-comments).  
   
  Sauf si vous compilez avec [/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` contiendra des balises \<assembly>\</assembly> spécifiant le nom du fichier qui contient le manifeste d’assembly pour le fichier de sortie de la compilation.  
   
@@ -85,4 +85,5 @@ L’option **/doc** vous permet de placer des commentaires de documentation dans
   
 ## <a name="see-also"></a>Voir aussi  
  [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB Guide pratique pour modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

@@ -1,5 +1,5 @@
 ---
-title: "Manipulation de fichiers à l’aide de méthodes du .NET Framework (Visual Basic) | Microsoft Docs"
+title: "Manipulation de fichiers à l’aide de méthodes du .NET Framework (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -41,20 +41,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: a16d2168548dadf9210b653d90ce229d99469b64
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eab8ebe0f1e6f3e86b9c4aa7c3b24a2763a27ffc
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : manipulation de fichiers à l'aide de méthodes du .NET Framework (Visual Basic)
 Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’aide de la classe <xref:System.IO.StreamReader>, vérifier si une tentative d’accès à un fichier est en cours, rechercher une chaîne dans un fichier lu avec une instance de la classe <xref:System.IO.StreamReader> et écrire dans un fichier à l’aide de la classe <xref:System.IO.StreamWriter>.  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="creating-the-application"></a>Création de l’application  
- Démarrez [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] et commencez le projet par la création d’un formulaire qui permet à l’utilisateur d’écrire dans le fichier désigné.  
+ Démarrez [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] et commencez le projet par la création d’un formulaire qui permet à l’utilisateur d’écrire dans le fichier désigné.  
   
 #### <a name="to-create-the-project"></a>Pour créer le projet  
   
@@ -64,7 +64,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
 3.  Dans la zone **Nom**, tapez `MyDiary` et cliquez sur **OK**.  
   
-     [!INCLUDE[vsprvs](../../../../csharp/includes/vsprvs_md.md)] ajoute le projet à l’**Explorateur de solutions** et le **Concepteur Windows Forms** s’ouvre.  
+     [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] ajoute le projet à l’**Explorateur de solutions** et le **Concepteur Windows Forms** s’ouvre.  
   
 4.  Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.  
   

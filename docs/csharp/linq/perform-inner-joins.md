@@ -11,15 +11,16 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6492e536976b74fa0a0b06cdc94d8aad9584e5be
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2b73b954dbb090484a320302a3af72509fccd9d3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="perform-inner-joins"></a>Effectuer des jointures internes
 
-Dans le domaine des bases de données relationnelles, une *jointure interne* produit un jeu de résultats dans lequel chaque élément de la première collection apparaît une fois pour chaque élément correspondant dans la deuxième collection. Si un élément de la première collection n’a pas d’élément correspondant, il n’apparaît pas dans le jeu de résultats. La méthode <xref:System.Linq.Enumerable.Join%2A>, qui est appelée par la clause `join` dans C#, implémente une jointure interne.  
+Dans le domaine des bases de données relationnelles, une *jointure interne* produit un jeu de résultats dans lequel chaque élément de la première collection apparaît une fois pour chaque élément correspondant dans la deuxième collection. Si un élément de la première collection n’a pas d’élément correspondant, il n’apparaît pas dans le jeu de résultats. La méthode <xref:System.Linq.Enumerable.Join%2A>, qui est appelée par la clause `join` en C#, implémente une jointure interne.  
   
  Cette rubrique explique comment effectuer quatre variations d’une jointure interne :  
   
@@ -27,7 +28,7 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
   
 -   Une jointure interne qui met en corrélation des éléments de deux sources de données sur la base d’une clé *composite*. Une clé composite, qui est une clé composée de plusieurs valeurs, permet de mettre en corrélation des éléments sur la base de plusieurs propriétés.  
   
--   Une *jointure multiple* dans laquelle les opérations de jointure consécutives sont ajoutées les unes aux autres.  
+-   Une  *jointure multiple* dans laquelle les opérations de jointure consécutives sont ajoutées les unes aux autres.  
   
 -   Une jointure interne qui est implémentée à l’aide d’une jointure groupée.  
   
@@ -82,3 +83,4 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
  [Effectuer des jointures externes gauches](perform-left-outer-joins.md)   
  [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)   
  
+

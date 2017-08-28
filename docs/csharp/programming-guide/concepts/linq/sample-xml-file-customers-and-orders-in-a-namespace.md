@@ -1,5 +1,5 @@
 ---
-title: "Exemple de fichier XML : Clients et commandes dans un espace de noms2 | Microsoft Docs"
+title: "Exemple de fichier XML : Clients et commandes dans un espace de noms2"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7dea3d47573cdca0c90914ffd9f29dac9f2885c0
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 840f11debe9f75fad37f39baf05dc126ec2f636d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>Exemple de fichier XML : Clients et commandes dans un espace de noms
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Ce fichier contient des clients et des commandes. Le code XML se trouve dans un espace de noms.  
+Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des clients et des commandes. Le code XML se trouve dans un espace de noms.  
   
 ## <a name="customersordersinnamespacexml"></a>CustomersOrdersInNamespace.xml  
   
@@ -448,3 +449,4 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
   
 ## <a name="see-also"></a>Voir aussi  
  [Exemples de documents XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+

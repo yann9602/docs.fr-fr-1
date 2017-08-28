@@ -1,5 +1,5 @@
 ---
-title: Classes | Guide C#
+title: "Classes - Guide C#"
 description: "En savoir plus sur les types de classe et découvrir comment les créer"
 keywords: .NET, .NET Core, C#
 author: BillWagner
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: f2cfeac321860a609c21046818c36fbc6aa3c636
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cb43cdbc23dc15b45fe117927fb57867af58c306
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -69,7 +69,7 @@ Les définitions de classe peuvent être fractionnées entre différents fichier
   
  
 ## <a name="example"></a>Exemple
-Dans l’exemple suivant, une classe publique qui contient un champ unique, une méthode et une méthode spéciale appelée un constructeur est définie. Pour plus d’informations, consultez [Constructeurs](https://msdn.microsoft.com/library/ace5hbzh.aspx). La classe est ensuite instanciée à l’aide du mot clé **new**.
+Dans l’exemple suivant, une classe publique qui contient un champ unique, une méthode et une méthode spéciale appelée constructeur est définie. Pour plus d’informations, consultez [Constructeurs](https://msdn.microsoft.com/library/ace5hbzh.aspx). La classe est ensuite instanciée à l’aide du mot clé **new**.
 
 [!code-csharp[Exemple de classe](../../samples/snippets/csharp/concepts/classes/class-example.cs)]  
   

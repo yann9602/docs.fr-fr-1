@@ -1,5 +1,5 @@
 ---
-title: "Niveaux d’accessibilité (référence C#) | Microsoft Docs"
+title: "Niveaux d’accessibilité (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 30220e92e55ac6101cf8fedd8920755cd25978bd
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 796802a407c486c1df5332d5b4920467f3a1171b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessibility-levels-c-reference"></a>Niveaux d’accessibilité (référence C#)
@@ -43,10 +43,10 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
 |`public`|L’accès n’est pas limité.|  
 |`protected`|L’accès est limité à la classe conteneur ou aux types dérivés de la classe conteneur.|  
 |`internal`|L’accès est limité à l’assembly actuel.|  
-|`protected` `internal`|L’accès est limité à l’assembly actuel ou aux types dérivés de la classe conteneur.|  
+|`protected internal`|L’accès est limité à l’assembly actuel ou aux types dérivés de la classe conteneur.|  
 |`private`|L’accès est limité au type conteneur.|  
   
- Vous pouvez spécifier un seul modificateur d’accès pour un membre ou un type, sauf si vous utilisez la combinaison `protected` `internal`.  
+ Vous ne pouvez spécifier qu’un seul modificateur d’accès pour un membre ou un type, sauf si vous utilisez la combinaison `protected internal`.  
   
  Les modificateurs d’accès ne sont pas autorisés sur les espaces de noms. Les espaces de noms ne présentent aucune limitation d’accès.  
   
@@ -58,9 +58,9 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
   
 |Membres de|Accessibilité par défaut du membre|Accessibilité déclarée du membre autorisée|  
 |----------------|----------------------------------|--------------------------------------------------|  
-|`enum`|`public`|Aucune.|  
-|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected` `internal`|  
-|`interface`|`public`|Aucune.|  
+|`enum`|`public`|Aucune|  
+|`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal`|  
+|`interface`|`public`|Aucune|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
  L’accessibilité d’un type imbriqué dépend de son [domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md), qui est déterminé à la fois par l’accessibilité déclarée du membre et par le domaine d’accessibilité du type conteneur immédiat. Toutefois, le domaine d'accessibilité d'un type imbriqué ne peut pas dépasser celui du type conteneur.  
@@ -70,8 +70,8 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)   
  [Domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md)   
  [Limitations sur l’utilisation des niveaux d’accessibilité](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)   
@@ -80,3 +80,4 @@ Utilisez les modificateurs d’accès [public](../../../csharp/language-referenc
  [private](../../../csharp/language-reference/keywords/private.md)   
  [protected](../../../csharp/language-reference/keywords/protected.md)   
  [internal](../../../csharp/language-reference/keywords/internal.md)
+

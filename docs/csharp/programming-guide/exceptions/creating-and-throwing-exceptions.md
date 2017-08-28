@@ -1,5 +1,5 @@
 ---
-title: "Création et levée d’exceptions (Guide de programmation C#) | Microsoft Docs"
+title: "Création et levée d'exceptions (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c3eab50a6a785676dd397498fbe95348187e2b7e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5f49b0911aa94480988987f209bc73d187451620
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Création et levée d'exceptions (Guide de programmation C#)
@@ -50,7 +50,7 @@ Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pe
   
 -   Un appel inapproprié à un objet est effectué en fonction de l’état de l’objet.  
   
-     Une tentative d’écriture dans un fichier en lecture seule en est un exemple. Dans les cas où l’état d’un objet n’autorise pas une opération, levez une instance de <xref:System.InvalidOperationException> ou un objet basé sur une dérivation de cette classe. Voici un exemple d’une méthode qui lève un objet <xref:System.InvalidOperationException> :  
+     Une tentative d’écriture dans un fichier en lecture seule en est un exemple. Dans les cas où l’état d’un objet n’autorise pas une opération, levez une instance d’<xref:System.InvalidOperationException> ou un objet basé sur une dérivation de cette classe. Voici un exemple d’une méthode qui lève un objet <xref:System.InvalidOperationException> :  
   
      [!code-cs[csProgGuideExceptions#13](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_2.cs)]  
   
@@ -73,12 +73,12 @@ Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pe
   
 -   Les exceptions ne doivent pas être retournées comme valeur de retour ou paramètre au lieu d’être levées.  
   
--   Ne levez pas intentionnellement <xref:System.Exception?displayProperty=fullName>, <xref:System.SystemException?displayProperty=fullName>, <xref:System.NullReferenceException?displayProperty=fullName> ou <xref:System.IndexOutOfRangeException?displayProperty=fullName> à partir de votre propre code source.  
+-   Ne levez pas intentionnellement <xref:System.Exception?displayProperty=fullName>, <xref:System.SystemException?displayProperty=fullName>, <xref:System.NullReferenceException?displayProperty=fullName> ni <xref:System.IndexOutOfRangeException?displayProperty=fullName> à partir de votre propre code source.  
   
 -   Ne créez pas d’exceptions qui peuvent être levées en mode Debug mais pas en mode Release. Pour identifier des erreurs d’exécution pendant la phase de développement, utilisez plutôt Debug Assert.  
   
 ## <a name="defining-exception-classes"></a>Définition de classes d’exceptions  
- Les programmes peuvent lever une classe d’exception prédéfinie dans l’espace de noms <xref:System> (sauf dans les endroits préalablement signalés) ou créer leurs propres classes d’exception en les dérivant de <xref:System.Exception>. Les classes dérivées doivent définir au moins quatre constructeurs : un constructeur par défaut, un qui définit la propriété message et un qui définit à la fois la propriété <xref:System.Exception.Message%2A> et la propriété <xref:System.Exception.InnerException%2A>. Le quatrième constructeur est utilisé pour sérialiser l’exception. Les nouvelles classes d’exception doivent être sérialisables. Exemple :  
+ Les programmes peuvent lever une classe d’exceptions prédéfinie dans l’espace de noms <xref:System> (sauf dans les endroits préalablement signalés) ou créer leurs propres classes d’exceptions en les dérivant d’<xref:System.Exception>. Les classes dérivées doivent définir au moins trois constructeurs : un constructeur par défaut, un qui définit la propriété du message et un qui définit à la fois la propriété <xref:System.Exception.Message%2A> et la propriété <xref:System.Exception.InnerException%2A>. Le quatrième constructeur est utilisé pour sérialiser l’exception. Les nouvelles classes d’exception doivent être sérialisables. Exemple :  
   
  [!code-cs[csProgGuideExceptions#15](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_4.cs)]  
   
@@ -92,3 +92,4 @@ Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pe
  [Exceptions et gestion des exceptions](../../../csharp/programming-guide/exceptions/index.md)   
  [Hiérarchie des exceptions](http://msdn.microsoft.com/library/f7d68675-be06-40fb-a555-05f0c5a6f66b)   
  [Gestion des exceptions](../../../csharp/programming-guide/exceptions/exception-handling.md)
+

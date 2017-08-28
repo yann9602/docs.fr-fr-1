@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#) | Microsoft Docs"
+title: "Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: eb358daf212b171acd998a1aa74fe2ecd82a239a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bfa7781241b837f353fe34d43b8cc6ab82f15564
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)
@@ -84,7 +84,7 @@ var result = await myTask;
   
 3.  Ajoutez les méthodes de prise en charge suivantes au projet :  
   
-    -   `ProcessURLAsync` utilise une méthode <xref:System.Net.Http.HttpClient> pour télécharger le contenu d’un site web en tant que tableau d’octets. La méthode de prise en charge, `ProcessURLAsync`, affiche et retourne ensuite la longueur du tableau.  
+    -   `ProcessURLAsync` utilise une méthode <xref:System.Net.Http.HttpClient> pour télécharger le contenu d’un site web sous la forme d’un tableau d’octets. La méthode de prise en charge, `ProcessURLAsync`, affiche et retourne ensuite la longueur du tableau.  
   
     -   `DisplayResults` affiche le nombre d’octets dans le tableau d’octets pour chaque URL. Cet affichage indique quand le téléchargement de chaque tâche est terminé.  
   

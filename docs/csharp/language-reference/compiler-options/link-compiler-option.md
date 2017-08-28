@@ -1,5 +1,5 @@
 ---
-title: -link (options du compilateur C#) | Microsoft Docs
+title: -link (Options du compilateur C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,10 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3096dd622a0b7c5fae13412a95322b934bd38b76
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c08f2e7f13a51fb1a350acadff5224cfa8d61aaa
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="link-c-compiler-options"></a>/link (Options du compilateur C#)
@@ -45,7 +46,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /link:fileList  
 // -or-  
 /l:fileList  
@@ -65,7 +66,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
 > [!NOTE]
 >  Quand vous créez une instance d’un type COM incorporé dans votre code, vous devez créer l’instance à l’aide de l’interface appropriée. Une tentative de création d’une instance d’un type COM incorporé à l’aide de la coclasse provoque une erreur.  
   
- Pour définir l’option `/link` dans [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)], ajoutez une référence d’assembly et définissez la propriété `Embed Interop Types` sur **true**. La valeur par défaut pour la propriété `Embed Interop Types` est **false**.  
+ Pour définir l’option `/link` dans [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)], ajoutez une référence d’assembly et définissez la propriété `Embed Interop Types` sur **true**. La valeur par défaut pour la propriété `Embed Interop Types` est **false**.  
   
  Si vous liez à un assembly COM (Assembly A) qui référence lui-même un autre assembly COM (Assembly B), vous devez également lier à l’Assembly B si une des conditions suivantes est vraie :  
   
@@ -73,7 +74,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
   
 -   Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.  
   
- Comme l’option [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `/link` du compilateur utilise le fichier réponse Csc.rsp, qui référence les assemblys [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] fréquemment utilisés. Utilisez l’option [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
+ Comme l’option [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `/link` du compilateur utilise le fichier réponse Csc.rsp, qui référence les assemblys [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] fréquemment utilisés. Utilisez l’option [/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
   
  La forme abrégée de `/link` est `/l`.  
   
@@ -86,7 +87,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
  [!code-cs[VbLinkCompilerCS#1](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_1.cs)]  
   
 ### <a name="types-that-have-generic-parameters"></a>Types ayant des paramètres génériques  
- Vous ne pouvez pas utiliser des types qui ont un paramètre générique dont le type est incorporé depuis un assembly d’interopérabilité si ce type provient d’un assembly externe. Cette restriction ne s’applique pas aux interfaces. Par exemple, considérez l’interface <xref:Microsoft.Office.Interop.Excel.Range> qui est définie dans l’assembly <xref:Microsoft.Office.Interop.Excel>. Si une bibliothèque incorpore des types interop de l’assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique qui a un paramètre dont le type est l’interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme le montre l’exemple de code suivant.  
+ Vous ne pouvez pas utiliser des types qui ont un paramètre générique dont le type est incorporé depuis un assembly d’interopérabilité si ce type provient d’un assembly externe. Cette restriction ne s’applique pas aux interfaces. Prenons l’exemple de l’interface <xref:Microsoft.Office.Interop.Excel.Range> qui est définie dans l’assembly <xref:Microsoft.Office.Interop.Excel>. Si une bibliothèque incorpore les types interop de l’assembly <xref:Microsoft.Office.Interop.Excel> et expose une méthode qui retourne un type générique qui a un paramètre dont le type est l’interface <xref:Microsoft.Office.Interop.Excel.Range>, cette méthode doit retourner une interface générique, comme dans l’exemple de code suivant.  
   
  [!code-cs[VbLinkCompilerCS#2](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_2.cs)]  
 [!code-cs[VbLinkCompilerCS#3](../../../csharp/language-reference/compiler-options/codesnippet/CSharp/link-compiler-option_3.cs)]  
@@ -110,3 +111,4 @@ csc /link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.cs
  [/noconfig (options du compilateur C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)   
  [Génération à partir de la ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)   
  [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)
+

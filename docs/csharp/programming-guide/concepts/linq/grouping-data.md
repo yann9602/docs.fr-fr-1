@@ -1,5 +1,5 @@
 ---
-title: "Regroupement des données (C#) | Microsoft Docs"
+title: "Regroupement des données (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2ef56a843117bb8b7409b10ef33ca83175849b9f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2cf1b228a5ff4120bdf3b97a7ec9308f11d7b8ee
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="grouping-data-c"></a>Regroupement des données (C#)
@@ -39,7 +40,7 @@ Le regroupement consiste à placer des données dans des groupes afin que les é
 |Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
 |GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`group … by`<br /><br /> ou<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=fullName>|  
-|ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clé.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName>|  
+|ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clés.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=fullName>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
  L’exemple de code suivant utilise la clause `group by` pour regrouper des entiers dans une liste selon qu’ils sont pairs ou impairs.  
@@ -84,3 +85,4 @@ foreach (var group in query)
  [Guide pratique pour regrouper les résultats d’une requête](../../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)   
  [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)   
  [Guide pratique pour fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+

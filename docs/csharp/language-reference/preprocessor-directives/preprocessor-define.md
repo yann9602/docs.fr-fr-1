@@ -1,5 +1,5 @@
 ---
-title: "#define (référence C#) | Microsoft Docs"
+title: "#<a name=\"define-c-reference\"></a>define (informations de référence sur C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,14 +29,14 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: 0db5a86fee1ed2139ae5046ada66121ffe8210b1
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ace15f79480c9aeb0fcb4c7d46c207d4904cef0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="define-c-reference"></a>#define (référence C#)
+# <a name="define-c-reference"></a>#define (informations de référence sur C#)
 Vous utilisez `#define` pour définir un symbole. Quand vous utilisez le symbole sous forme d’expression passée à la directive [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md), l’expression donne la valeur `true`, comme illustré dans l’exemple suivant :  
   
  `#`  `define`   `DEBUG`  
@@ -92,3 +92,4 @@ public class TestDefine
  [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)   
  [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)   
  [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
+

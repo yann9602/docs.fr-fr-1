@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour ajouter des méthodes personnalisées aux requêtes LINQ (C#) | Microsoft Docs"
+title: "Guide pratique pour ajouter des méthodes personnalisées aux requêtes LINQ (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,17 +19,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 5f3ac26abe3eccc19b928375059e2562c4aa6a80
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c1a7ec7c5c719839d7a1a63568541a26a8216377
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Guide pratique pour ajouter des méthodes personnalisées aux requêtes LINQ (C#)
-Vous pouvez étendre l’ensemble des méthodes utilisables pour les requêtes LINQ en ajoutant des méthodes d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, en plus des opérations standard d’obtention de valeur moyenne et maximale, vous pouvez créer une méthode d’agrégation personnalisée pour calculer une valeur unique à partir d’une séquence de valeurs. Vous pouvez également créer une méthode qui fonctionne comme un filtre personnalisé ou une transformation de données pour une séquence de valeurs, et qui retourne une nouvelle séquence. Des exemples de ces méthodes sont <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Reverse%2A>.  
+Vous pouvez étendre l’ensemble de méthodes que vous pouvez utiliser pour les requêtes LINQ en ajoutant des méthodes d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, en plus des opérations standard d’obtention de valeur moyenne et maximale, vous pouvez créer une méthode d’agrégation personnalisée pour calculer une valeur unique à partir d’une séquence de valeurs. Vous pouvez également créer une méthode qui fonctionne comme un filtre personnalisé ou une transformation de données pour une séquence de valeurs, et qui retourne une nouvelle séquence. <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Reverse%2A> en sont quelques exemples.  
   
- Lorsque vous étendez l’interface <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez appliquer vos méthodes personnalisées à n’importe quelle collection énumérable. Pour plus d’informations, consultez [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
+ Quand vous étendez l’interface <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez appliquer vos méthodes personnalisées à n’importe quelle collection énumérable. Pour plus d’informations, consultez la page [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
   
 ## <a name="adding-an-aggregate-method"></a>Utilisation d’une méthode d’agrégation  
  Une méthode d’agrégation calcule une valeur à partir d’un ensemble de valeurs. LINQ fournit plusieurs méthodes d’agrégation, notamment <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Min%2A> et <xref:System.Linq.Enumerable.Max%2A>. Vous pouvez créer votre propre méthode d’agrégation en ajoutant une méthode d’extension à l’interface <xref:System.Collections.Generic.IEnumerable%601>.  
@@ -66,7 +66,7 @@ public static class LINQExtension
 }  
 ```  
   
- Vous pouvez appeler cette méthode d’extension pour n’importe quelle collection énumérable, de la même façon que vous appelez les autres méthodes d’agrégation à partir de l’interface <xref:System.Collections.Generic.IEnumerable%601>.  
+ Vous appelez cette méthode d’extension pour toute collection énumérable de la même façon que vous appelez d’autres méthodes d’agrégation depuis l’interface <xref:System.Collections.Generic.IEnumerable%601>.  
   
  L’exemple de code suivant montre comment utiliser la méthode `Median` pour un tableau de type `double`.  
   
@@ -202,7 +202,7 @@ public static IEnumerable<T> AlternateElements<T>(this IEnumerable<T> source)
     return list;  
 }  
 ```  
- Vous pouvez appeler cette méthode d’extension pour n’importe quelle collection énumérable, de la même façon que vous appelez les autres méthodes à partir de l’interface <xref:System.Collections.Generic.IEnumerable%601>, comme le montre l’exemple suivant :  
+ Vous pouvez appeler cette méthode d’extension pour n’importe quelle collection énumérable, de la même façon que vous appelez d’autres méthodes depuis l’interface <xref:System.Collections.Generic.IEnumerable%601>, comme le montre le code suivant :  
   
 ```csharp  
 string[] strings = { "a", "b", "c", "d", "e" };  
@@ -225,3 +225,4 @@ foreach (var element in query)
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Collections.Generic.IEnumerable%601>   
  [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "-delaysign (Options du compilateur C#) | Microsoft Docs"
+title: -delaysign (Options du compilateur C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: f3dc76214acb66f2212a3611c0c419889e58c359
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ce4c9fbb14081764985f3b02988dff9ee272c451
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="delaysign-c-compiler-options"></a>/delaysign (Options du compilateur C#)
@@ -70,4 +70,5 @@ Cette option fait en sorte que le compilateur réserve de l’espace dans le fic
   
 ## <a name="see-also"></a>Voir aussi  
  [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB Guide pratique pour modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

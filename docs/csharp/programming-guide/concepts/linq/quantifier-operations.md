@@ -1,5 +1,5 @@
 ---
-title: "Opérations de quantificateur (C#) | Microsoft Docs"
+title: "Opérations de quantificateur (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0e4265f08f1fbe540885e1c9de28c5054f2f33a7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f82df05693dffec64bcbc66cc2c0b9db2a7deb20
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="quantifier-operations-c"></a>Opérations de quantificateur (C#)
@@ -44,6 +45,7 @@ Les opérations de quantificateur retournent une valeur <xref:System.Boolean> qu
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Linq>   
- [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
+ [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
  [Guide pratique pour spécifier dynamiquement des filtres de prédicat au moment de l’exécution](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)   
  [Guide pratique pour rechercher des phrases qui contiennent un groupe de mots spécifié (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md)
+

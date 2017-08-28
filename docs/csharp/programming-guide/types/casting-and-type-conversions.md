@@ -1,5 +1,5 @@
 ---
-title: Cast et conversions de types (Guide de programmation C#) | Microsoft Docs
+title: Cast et conversions de types (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7e33ed084c560470a486ebbb25035a59ddc18565
-ms.openlocfilehash: d421f0115642efa73dbeb893dba912b96d5f4dc6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 20743c07c8e9c6b7ec24cf52a28bb9f451ba9df5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (Guide de programmation C#)
@@ -116,3 +116,4 @@ Giraffe g2 = (Giraffe) a;
  [Conversion de type généralisée](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)   
  [Conversion d’un type exporté](http://msdn.microsoft.com/en-us/1dfe55f4-07a2-4b61-aabf-a8cf65783a6b)   
  [Guide pratique pour convertir une chaîne en nombre](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)
+

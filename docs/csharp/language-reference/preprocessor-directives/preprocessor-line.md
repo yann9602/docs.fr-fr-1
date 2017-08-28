@@ -1,26 +1,45 @@
 ---
-title: "#line (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "#line"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "#line (directive C#)"
+title: "#<a name=\"line-c-reference\"></a>line (informations de référence sur C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '#line'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
 caps.latest.revision: 13
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 13
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 89eac93497deb2312e9da358a22e37db1e4a2f80
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# #line (r&#233;f&#233;rence C#)
-`#line` vous permet de modifier le numéro de ligne du compilateur et \(de manière facultative\) la sortie du nom du fichier d'erreurs et d'avertissements.  Cet exemple montre comment signaler deux avertissements associés à des numéros de lignes.  La directive `#line 200` force le numéro de ligne sur 200 \(bien que la valeur par défaut soit \#7\) et jusqu'à la prochaine directive \#line, le nom de fichier sera signalé comme "Special".  La directive par défaut \#line retourne la numérotation des lignes à leur numérotation par défaut, qui compte les lignes renumérotées par la directive précédente.  
+# <a name="line-c-reference"></a>#line (informations de référence sur C#)
+`#line` vous permet de modifier le numéro de ligne du compilateur et (éventuellement) la sortie du nom de fichier pour les erreurs et les avertissements. Cet exemple montre comment signaler deux avertissements associés à des numéros de ligne. La directive `#line 200` affecte de force la valeur 200 au numéro de ligne (bien que la valeur par défaut soit #7) et jusqu’à la prochaine directive #line, le nom de fichier indiqué est « Special ». La directive par défaut #line rétablit la numérotation de lignes par défaut, qui compte le nombre de lignes qui ont été renumérotés par la directive précédente.  
   
-```  
+```csharp
 class MainClass  
 {  
     static void Main()  
@@ -38,21 +57,21 @@ class MainClass
 }  
 ```  
   
-## Notes  
- La directive `#line` peut être utilisée dans une étape intermédiaire automatisée dans le processus de génération.  Par exemple, si des lignes sont supprimées du fichier de code source d'origine, mais que vous souhaitez que le compilateur génère des résultats fondés sur la numérotation des lignes d'origine dans le fichier, vous pouvez supprimer des lignes et simuler ensuite la numérotation des lignes d'origine à l'aide de `#line`.  
+## <a name="remarks"></a>Remarques  
+ La directive `#line` peut être utilisée dans une étape intermédiaire automatisée du processus de génération. Par exemple, si des lignes ont été supprimées du fichier de code source d’origine, mais que vous voulez que le compilateur continue de générer une sortie sur la base de la numérotation de lignes d’origine du fichier, vous pouvez supprimer les lignes et simuler ensuite la numérotation de lignes d’origine avec `#line`.  
   
- La directive `#line hidden` masque les lignes suivantes du débogueur, de sorte que lorsque le développeur parcourt le code, toutes les lignes comprises entre `#line hidden` et la directive `#line` suivante \(en considérant qu'il ne s'agit pas d'une autre directive `#line hidden`\) sont ignorées.  Cette option peut aussi être utilisée pour permettre à ASP.NET de différencier du code défini par l'utilisateur de code généré par l'ordinateur.  Même si ASP.NET représente le consommateur principal de cette fonctionnalité, il est probable que d'autres générateurs sources l'utiliseront.  
+ La directive `#line hidden` masque les lignes successives du débogueur, de sorte que quand le développeur parcourt le code, les lignes situées entre une directive `#line hidden` et la directive `#line` suivante (en supposant qu’il ne s’agit pas d’une autre directive `#line hidden`) sont ignorées. Cette option peut aussi être utilisée pour permettre à ASP.NET de différencier le code défini par l’utilisateur du code généré par l’ordinateur. Même si ASP.NET est le principal utilisateur de cette fonctionnalité, il est probable que d’autres générateurs de code source pourront l’utiliser.  
   
- Une directive `#line hidden` n'affecte pas les noms de fichiers ni les numéros de lignes dans les rapports d'erreurs.  Ainsi, si une erreur est rencontrée dans un bloc masqué, le compilateur signale le nom du fichier en cours et le numéro de ligne de l'erreur.  
+ Une directive `#line hidden` n’affecte ni les noms de fichiers ni les numéros de lignes dans les rapports d’erreurs. Autrement dit, si une erreur se produit dans un bloc masqué, le compilateur indique le nom du fichier et le numéro de ligne actuels de l’erreur.  
   
- La directive `#line filename` spécifie le nom de fichier que vous voulez faire apparaître dans le résultat de la compilation.  Par défaut, le nom réel du fichier de code source est utilisé.  Le nom de fichier doit être placé entre guillemets doubles \(""\) et doit être précédé par un numéro de ligne.  
+ La directive `#line filename` spécifie le nom de fichier que vous souhaitez voir apparaître dans la sortie du compilateur. Par défaut, le nom réel du fichier de code source est utilisé. Le nom de fichier doit être entre guillemets doubles (" ") et doit être précédé d’un numéro de ligne.  
   
- Un fichier de code source peut contenir un nombre quelconque de directives `#line`.  
+ Un fichier de code source peut contenir un nombre illimité de directives `#line`.  
   
-## Exemple 1  
- Cet exemple montre comment le débogueur ignore les lignes masquées dans le code.  Lorsque vous exécutez l'exemple, trois lignes de texte sont affichées.  Toutefois, lorsque vous définissez un point de rupture, comme illustré dans cet exemple, et appuyez sur F10 pour progresser dans le code, vous remarquez que le débogueur ignore la ligne masquée.  Notez aussi que même si vous définissez un point de rupture sur la ligne masquée, le débogueur l'ignore.  
+## <a name="example-1"></a>Exemple 1  
+ L’exemple suivant montre comment le débogueur ignore les lignes masquées dans le code. Quand vous exécutez l’exemple, celui-ci affiche trois lignes de texte. Or, quand vous définissez un point d’arrêt, comme dans l’exemple, et que vous appuyez sur F10 pour parcourir le code, vous pouvez remarquer que le débogueur ignore la ligne masquée. Vous remarquerez aussi que même si vous définissez un point d’arrêt au niveau de la ligne masquée, le débogueur continuera de l’ignorer.  
   
-```  
+```csharp
 // preprocessor_linehidden.cs  
 using System;  
 class MainClass   
@@ -68,7 +87,8 @@ class MainClass
 }  
 ```  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Directives de préprocesseur C\#](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Annuler les tâches asynchrones restantes quand l’une d’elles est terminée (C#) | Microsoft Docs"
+title: "Annuler les tâches asynchrones restantes quand l’une d’elles est terminée (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,15 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: fa0a35df3c2038859a8c2861780fd8dfa98d4429
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 23e68327cfc52845b203acdf5f69253de746d566
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>Annuler les tâches asynchrones restantes quand l’une d’elles est terminée (C#)
-Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> et un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.  
+Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName> avec un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.  
   
  Cet exemple montre comment utiliser un jeton d’annulation avec `WhenAny` pour attendre la fin de la première tâche de la collection et annuler les tâches restantes. Chaque tâche télécharge le contenu d’un site web. L’exemple affiche la longueur du contenu du premier téléchargement terminé et annule les autres téléchargements.  
   
@@ -103,7 +103,7 @@ async Task<int> ProcessURLAsync(string url, HttpClient client, CancellationToken
     Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);  
     ```  
   
-5.  Dans cet exemple, vous vous intéressez uniquement à la tâche qui se termine en premier. Vous utilisez donc <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> pour annuler les tâches restantes.  
+5.  Dans cet exemple, vous vous intéressez uniquement à la tâche qui se termine en premier. Par conséquent, utilisez <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> pour annuler les tâches restantes.  
   
     ```csharp  
     // ***Cancel the rest of the downloads. You just want the first one.  
@@ -120,7 +120,7 @@ async Task<int> ProcessURLAsync(string url, HttpClient client, CancellationToken
  Exécutez le programme plusieurs fois pour vérifier que différents téléchargements se terminent en premier.  
   
 ## <a name="complete-example"></a>Exemple complet  
- Le code suivant est le fichier MainWindow.xaml.cs complet de l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.  
+ Le code suivant est le fichier MainWindow.xaml.cs complet de l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.  
   
  Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.  
   
@@ -279,3 +279,4 @@ namespace CancelAfterOneTask
  [Réglage de votre application asynchrone (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [Programmation asynchrone avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046)
+

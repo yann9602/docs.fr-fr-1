@@ -1,6 +1,6 @@
 ---
 title: "Présentation des délégués"
-description: "Présentation des délégués"
+description: "Explorez les délégués dans cette rubrique de vue d’ensemble qui présente les concepts de base et décrit les objectifs de conception de langage pour les délégués."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f68742a02ebf12e222b2fa6827352a3684de5648
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: dd4c68fb4f960d0c2d5cbdc9e699650070cacaf1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 

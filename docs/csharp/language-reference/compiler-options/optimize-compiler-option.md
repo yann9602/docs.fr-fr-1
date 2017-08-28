@@ -1,49 +1,68 @@
 ---
-title: "/optimize (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/optimize"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/optimize compiler option [C#]"
-  - "-o compiler option [C#]"
-  - "optimize compiler option [C#]"
-  - "/o compiler option [C#]"
-  - "-optimize compiler option [C#]"
-  - "compiler optimization [C#]"
-  - "o compiler option [C#]"
+title: -optimize (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /optimize
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /optimize compiler option [C#]
+- -o compiler option [C#]
+- optimize compiler option [C#]
+- /o compiler option [C#]
+- -optimize compiler option [C#]
+- compiler optimization [C#]
+- o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 75a2b65c159e9adb0103765468182919ed6b0a23
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /optimize (C# Compiler Options)
-L'option **\/optimize** active ou désactive les optimisations effectuées par le compilateur pour rendre votre fichier de sortie plus compact, plus rapide et plus efficace.  
+# <a name="optimize-c-compiler-options"></a>/optimize (Options du compilateur C#)
+L’option **/optimize** active ou désactive les optimisations effectuées par le compilateur pour réduire la taille de votre fichier de sortie et le rendre plus rapide et plus efficace.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /optimize[+ | -]  
 ```  
   
-## Notes  
- L'option **\/optimize** indique aussi au Common Language Runtime d'optimiser le code au moment de l'exécution.  
+## <a name="remarks"></a>Remarques  
+ **/optimize** indique aussi au common language runtime d’optimiser le code au moment de l’exécution.  
   
- Par défaut, les optimisations sont désactivées.  Spécifiez **\/optimize\+** pour activer les optimisations.  
+ Par défaut, les optimisations sont désactivées. Pour activer les optimisations, spécifiez **/optimize+**.  
   
- Lorsque vous générez un module destiné à être utilisé par un assembly, utilisez les mêmes paramètres **\/optimize** que ceux de l'assembly.  
+ Quand vous créez un module destiné à être utilisé par un assembly, utilisez les mêmes paramètres **/optimize** que ceux de l’assembly.  
   
- **\/o** est la forme abrégée de **\/optimize**.  
+ **/o** est la forme abrégée de **/optimize**.  
   
- Vous pouvez combiner les options **\/optimize** et [\/debug](../../../csharp/language-reference/compiler-options/debug-compiler-option.md).  
+ Il est possible de combiner les options **/optimize** et [/debug](../../../csharp/language-reference/compiler-options/debug-compiler-option.md).  
   
-### Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
 1.  Ouvrez la page **Propriétés** du projet.  
   
@@ -51,15 +70,16 @@ L'option **\/optimize** active ou désactive les optimisations effectuées par l
   
 3.  Modifiez la propriété **Optimiser le code**.  
   
- Pour plus d'informations sur la définition de cette option du compilateur par programme, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
   
-## Exemple  
- Compilez `t2.cs`et activer les optimisations du compilateur :  
+## <a name="example"></a>Exemple  
+ Compilez `t2.cs` et activez les optimisations du compilateur :  
   
-```  
+```console  
 csc t2.cs /optimize  
 ```  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

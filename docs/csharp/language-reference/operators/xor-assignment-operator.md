@@ -1,26 +1,45 @@
 ---
-title: "^=, op&#233;rateur (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "^=_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "^= (opérateur C#)"
+title: "^=, opérateur (référence C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- ^=_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- ^= operator [C#]
 ms.assetid: 3658ff9a-61cd-467e-ad6b-8fbf1cfbaae4
 caps.latest.revision: 16
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 16
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 33b0dccf5031809bb4fcb73d0f7d6a344accdea3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# ^=, op&#233;rateur (r&#233;f&#233;rence C#)
-Opérateur d'assignation OR exclusif.  
+# <a name="-operator-c-reference"></a>^=, opérateur (référence C#)
+Opérateur d’assignation OR exclusif.  
   
-## Notes  
+## <a name="remarks"></a>Remarques  
  Une expression de la forme  
   
 ```  
@@ -33,14 +52,15 @@ x ^= y
 x = x ^ y  
 ```  
   
- si ce n'est que `x` n'est évalué qu'une seule fois.  L'[opérateur ^](../../../csharp/language-reference/operators/xor-operator.md) effectue une opération de bits OR exclusif sur les opérandes de type intégral et une opération logique OR exclusif sur les opérandes de type [bool](../../../csharp/language-reference/keywords/bool.md).  
+ sauf que `x` n’est évalué qu’une seule fois. L’[opérateur ^](../../../csharp/language-reference/operators/xor-operator.md) effectue une opération de bits OR exclusif sur les opérandes de type intégral et une opération OR exclusif logique sur les opérandes de type [bool](../../../csharp/language-reference/keywords/bool.md).  
   
- L'opérateur ^\= ne peut pas être surchargé directement, mais les types définis par l'utilisateur peuvent surcharger l'opérateur [^ operator](../../../csharp/language-reference/operators/xor-operator.md) \(consultez [operator](../../../csharp/language-reference/keywords/operator.md)\).  
+ L’opérateur ^= ne peut pas être surchargé directement, mais les types définis par l’utilisateur peuvent surcharger l’[opérateur ^](../../../csharp/language-reference/operators/xor-operator.md) (voir [operator](../../../csharp/language-reference/keywords/operator.md)).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csRefOperators#23](../../../csharp/language-reference/operators/codesnippet/CSharp/xor-assignment-operator_1.cs)]  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Opérateurs C\#](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Opérateurs C#](../../../csharp/language-reference/operators/index.md)
+

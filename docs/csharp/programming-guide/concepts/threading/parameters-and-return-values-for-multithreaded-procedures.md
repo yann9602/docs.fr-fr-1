@@ -1,5 +1,5 @@
 ---
-title: "Paramètres et valeurs de retour pour les procédures multithread (C#) | Microsoft Docs"
+title: "Paramètres et valeurs de retour pour les procédures multithread (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 95fdc0f74c1f2c35a4f3b5c0a8f40f5d4fe9457c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5e377a006409dbae49b3c00297f69e8d55a01295
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="parameters-and-return-values-for-multithreaded-procedures-c"></a>Paramètres et valeurs de retour pour les procédures multithread (C#)
@@ -72,7 +73,7 @@ protected void TestArea()
  Notez que la procédure `TestArea` ne vérifie pas la valeur du champ `Area` après avoir appelé la méthode `CalcArea`. Étant donné que `CalcArea` s’exécute sur un thread distinct, le champ `Area` risque de ne pas être défini si vous le vérifiez immédiatement après avoir appelé `Thread.Start`. La section suivante présente une méthode plus appropriée pour retourner des valeurs à partir de procédures multithread.  
   
 ## <a name="returning-values-from-multithreaded-procedures"></a>Retourner des valeurs à partir de procédures multithread  
- Retourner des valeurs à partir de procédures exécutées sur des threads distincts est compliqué du fait que les procédures ne peuvent pas être des fonctions, ni utiliser d’arguments `ByRef`. Le moyen le plus simple pour retourner des valeurs consiste à utiliser le composant <xref:System.ComponentModel.BackgroundWorker> pour gérer vos threads et déclencher un événement à la fin de la tâche, et traiter les résultats à l’aide d’un gestionnaire d’événements.  
+ Retourner des valeurs à partir de procédures exécutées sur des threads distincts est compliqué du fait que les procédures ne peuvent pas être des fonctions, ni utiliser d’arguments `ByRef`. Le moyen le plus simple de retourner des valeurs consiste à utiliser le composant <xref:System.ComponentModel.BackgroundWorker> pour gérer vos threads et déclencher un événement à la fin de la tâche, puis traiter les résultats à l’aide d’un gestionnaire d’événements.  
   
  L’exemple suivant retourne une valeur en déclenchant un événement à partir d’une procédure exécutée sur un thread distinct :  
   
@@ -131,7 +132,7 @@ private void BackgroundWorker1_RunWorkerCompleted(
 }  
 ```  
   
- Vous pouvez fournir des paramètres et retourner des valeurs dans les threads de Thread Pool en utilisant la variable d’objet d’état `ByVal` facultative de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>. Les threads de Timer Thread prennent également en charge un objet d’état à cet effet. Pour plus d’informations sur la mise en pool de threads et les composants Timer Thread, consultez [Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md) et [Composants Timer Thread (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md).  
+ Vous pouvez fournir des paramètres et retourner des valeurs aux threads de Thread Pool en utilisant la variable d’objet d’état `ByVal` facultative de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>. Les threads de Timer Thread prennent également en charge un objet d’état à cet effet. Pour plus d’informations sur la mise en pool de threads et les composants Timer Thread, consultez [Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md) et [Composants Timer Thread (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)   
@@ -141,3 +142,4 @@ private void BackgroundWorker1_RunWorkerCompleted(
  [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
  [Délégués](../../../../csharp/programming-guide/delegates/index.md)   
  [Multithreading dans les composants](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)
+

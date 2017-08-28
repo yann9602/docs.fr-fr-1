@@ -1,5 +1,5 @@
 ---
-title: "try-catch (référence C#) | Microsoft Docs"
+title: "try-catch (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 13684c7e32c52765f4d45d6a5bd2c6f8194efefe
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b7ec6c96ac21ba2115d1e7eead5700b6dbfcc952
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
@@ -47,7 +47,7 @@ L'instruction try-catch consiste en un bloc `try` suivi d'une ou plusieurs claus
 ## <a name="remarks"></a>Notes  
  Quand une exception est levée, le Common Language Runtime (CLR) recherche l'instruction `catch` qui gère cette exception. Si la méthode en cours d'exécution ne contient pas un tel bloc `catch`, le CLR examine la méthode qui a appelé la méthode actuelle, puis remonte la pile des appels. Si aucun bloc `catch` n'est trouvé, alors le CLR affiche un message d'exception non gérée à l'utilisateur et arrête l'exécution du programme.  
   
- Le bloc `try` contient le code protégé susceptible de provoquer l'exception. Le bloc est exécuté jusqu'à ce qu'une exception soit levée ou qu'il se soit correctement terminé. Par exemple, la tentative suivante d’effectuer un cast d’un objet `null` déclenche l’exception <xref:System.NullReferenceException> :  
+ Le bloc `try` contient le code protégé susceptible de provoquer l'exception. Le bloc est exécuté jusqu'à ce qu'une exception soit levée ou qu'il se soit correctement terminé. Par exemple, la tentative suivante d'effectuer un cast d'un objet `null` déclenche l'exception <xref:System.NullReferenceException> :  
   
 ```csharp  
 object o2 = null;  
@@ -57,7 +57,7 @@ try
 }  
 ```  
   
- Bien que la clause `catch` puisse être utilisée sans arguments pour intercepter tout type d'exception, cette utilisation est déconseillée. En général, vous devez intercepter uniquement les exceptions desquelles vous savez comment récupérer. Par conséquent, vous devez toujours spécifier un argument d’objet dérivé de <xref:System.Exception?displayProperty=fullName>. Par exemple :  
+ Bien que la clause `catch` puisse être utilisée sans arguments pour intercepter tout type d'exception, cette utilisation est déconseillée. En général, vous devez intercepter uniquement les exceptions desquelles vous savez comment récupérer. Par conséquent, vous devez toujours spécifier un argument d'objet dérivé de <xref:System.Exception?displayProperty=fullName>, par exemple :  
   
 ```csharp  
 catch (InvalidCastException e)   
@@ -75,9 +75,9 @@ catch (ArgumentException e) when (e.ParamName == "…")
 }  
 ```  
   
- L'utilisation de filtres d'exceptions est préférable à une interception et une nouvelle levée (voir explication ci-dessous), car les filtres laissent la pile intact.  Si un gestionnaire ultérieur vide la pile, vous pouvez déterminer d'où l'exception provient à l'origine, au lieu de déterminer simplement le dernier emplacement auquel elle a été levée.  Une utilisation courante des expressions de filtre d'exception est liée à la journalisation.  Vous pouvez créer une fonction de prédicat qui retourne toujours false et dont la sortie est journalisée ; vous pouvez journaliser des exceptions au fur et à mesure sans avoir à les gérer ni à les lever de nouveau.  
+ L'utilisation de filtres d'exceptions est préférable à une interception et une nouvelle levée (voir explication ci-dessous), car les filtres laissent la pile intacte.  Si un gestionnaire ultérieur vide la pile, vous pouvez déterminer d'où l'exception provient à l'origine, au lieu de déterminer simplement le dernier emplacement auquel elle a été levée.  Une utilisation courante des expressions de filtre d'exception est liée à la journalisation.  Vous pouvez créer une fonction de prédicat qui retourne toujours false et dont la sortie est journalisée ; vous pouvez journaliser des exceptions au fur et à mesure sans avoir à les gérer ni à les lever de nouveau.  
   
- Une instruction [throw](../../../csharp/language-reference/keywords/throw.md) peut être utilisée dans un bloc `catch` pour lever une nouvelle fois l’exception interceptée par l’instruction `catch`. L’exemple suivant extrait des informations sources d’une exception <xref:System.IO.IOException>, puis lève l’exception à la méthode parente.  
+ Une instruction [throw](../../../csharp/language-reference/keywords/throw.md) peut être utilisée dans un bloc `catch` pour lever une nouvelle fois l’exception interceptée par l’instruction `catch`. L'exemple suivant extrait des informations sources d'une exception <xref:System.IO.IOException>, puis lève l'exception à la méthode parente.  
   
 ```csharp  
 catch (FileNotFoundException e)  
@@ -150,7 +150,7 @@ static void Main()
   
  Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interceptez l'exception dans le bloc `catch` associé. Pour obtenir un exemple, consultez la section « Exemple ».  
   
- Une tâche peut être dans un état d’erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d’un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section « Exemple ».  
+ Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section « Exemple ».  
   
 ## <a name="example"></a>Exemple  
  Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.  
@@ -178,7 +178,7 @@ static void Main()
 ## <a name="example"></a>Exemple  
  L’exemple suivant illustre la gestion des exceptions quand plusieurs tâches peuvent entraîner plusieurs exceptions. Le bloc `try` attend la tâche retournée par un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. La tâche est terminée quand les trois tâches auxquelles WhenAll est appliqué sont terminées.  
   
- Chacune de ces trois tâches provoque une exception. Le bloc `catch` effectue une itération sur les exceptions détectées dans la propriété `Exception.InnerExceptions` de la tâche retournée par <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>.  
+ Chacune de ces trois tâches provoque une exception. Le bloc `catch` itère au sein des exceptions, qui sont trouvent dans la propriété `Exception.InnerExceptions` de la tâche retournée par <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>.  
   
  [!code-cs[csAsyncExceptions#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/try-catch_4.cs)]  
   
@@ -189,7 +189,7 @@ static void Main()
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Instructions try, throw et catch (C++)](https://docs.microsoft.com/cpp/cpp/try-throw-and-catch-statements-cpp)   
+ [Instructions try, throw et catch (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)   
  [Instructions de gestion des exceptions](../../../csharp/language-reference/keywords/exception-handling-statements.md)   
  [throw](../../../csharp/language-reference/keywords/throw.md)   
  [try-finally](../../../csharp/language-reference/keywords/try-finally.md)   

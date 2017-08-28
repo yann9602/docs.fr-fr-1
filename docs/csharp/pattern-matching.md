@@ -1,5 +1,5 @@
 ---
-title: "Critères spéciaux | Guide C#"
+title: "Critères spéciaux - Guide C#"
 description: "En savoir plus sur les expressions de critères spéciaux en langage C#"
 keywords: .NET, .NET Core, C#
 ms.date: 01/24/2017
@@ -9,10 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5b1ef4b6de108e2ea3967630e9e37e52a97245c
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cf17b68514ff263b784bcb42d2015d27015328d9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -50,7 +51,7 @@ Vous pouvez simplifier ce code en ajoutant des extensions à l’expression `is`
 
 Dans cette version mise à jour, l’expression `is` teste la variable et l’assigne à une nouvelle variable du type approprié. Remarquez également que cette version inclut le type `Rectangle`, qui est un `struct`. La nouvelle expression `is` peut être utilisée avec des types valeur et des types référence.
 
-Les règles de langage des expressions de critères spéciaux vous aident à éviter une utilisation incorrecte des résultats d’une expression de correspondance. Dans l’exemple ci-dessus, les variables `s`,  `c` et `r` sont uniquement dans la portée et assignées de manière définitive quand les expressions de critères spéciaux respectives retournent le résultat `true`. Si vous essayez d’utiliser l’une de ces variables à un autre emplacement, votre code génère des erreurs de compilateur.
+Les règles de langage des expressions de critères spéciaux vous aident à éviter une utilisation incorrecte des résultats d’une expression de correspondance. Dans l’exemple ci-dessus, les variables `s`, `c` et `r` sont uniquement dans la portée et assignées de manière définitive quand les expressions de critères spéciaux respectives retournent le résultat `true`. Si vous essayez d’utiliser l’une de ces variables à un autre emplacement, votre code génère des erreurs de compilateur.
 
 Examinons ces deux règles en détail, en commençant par la portée. La variable `c` est dans la portée uniquement dans la branche `else` de la première instruction `if`. La variable `s` est dans la portée dans la méthode `ComputeArea`. Cela est dû au fait que chaque branche d’une instruction `if` établit une portée distincte pour les variables, ce que ne fait pas l’instruction `if` proprement dite. Cela signifie que les variables déclarées dans l’instruction `if` sont dans la même portée que l’instruction `if` (la méthode, dans le cas présent). Ce comportement n’est pas propre aux critères spéciaux. C’est le comportement défini pour les portées de variables et pour les instructions `if` et `else`.
 
@@ -111,11 +112,11 @@ Enfin, vous pouvez ajouter une expression case `null` pour garantir que l’argu
 
 [!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Ajouter une expression case null")]
 
-L’expression case spéciale pour le modèle `null` est intéressante, car la constante `null` n’a pas de type, mais elle peut être convertie en un type référence ou un type Nullable. 
+Le comportement spécial pour le modèle `null` est intéressant, car la constante `null` du modèle n’a pas de type, mais elle peut être convertie en un type référence ou un type Nullable. Plutôt que de convertir une valeur `null` en un type quelconque, le langage définit qu’une valeur `null` ne correspond à aucun modèle de type, quel que soit le type de la variable au moment de la compilation. En raison de ce comportement, le nouveau modèle de type basé sur `switch` est cohérent par rapport à l’instruction `is` : les instructions `is` retournent toujours `false` quand la valeur vérifiée est `null`. Il s’avère aussi plus simple : une fois que vous avez vérifié le type, vous n’avez pas besoin d’effectuer de contrôle de valeur null supplémentaire. Vous pouvez le constater par le fait qu’aucun contrôle de valeur null ne figure dans les blocs d’expression case des exemples ci-dessus : ces contrôles ne sont pas nécessaires dans la mesure où la correspondance du modèle de type est l’assurance d’une valeur non null.
 
 ## <a name="conclusions"></a>Conclusions
 
-Les *constructions de critères spéciaux* vous permettent de gérer facilement le flux de contrôle entre différents types et variables qui ne sont pas liés par une hiérarchie d’héritage. Vous pouvez également contrôler la logique pour utiliser n’importe quelle condition testée sur la variable. Ces constructions permettent d’utiliser les modèles et les idiomes dont vous aurez davantage besoin à mesure que vous créez d’autres applications distribuées, où les données et les méthodes qui les manipulent sont séparées. Vous remarquerez que les structures de formes utilisées dans cet exemple ne contiennent pas de méthodes, mais uniquement des propriétés en lecture seule.
+Les *constructions de critères spéciaux* vous permettent de gérer facilement le flux de contrôle entre différents types et variables qui ne sont pas liés par une hiérarchie d’héritage. Vous pouvez également contrôler la logique pour utiliser n’importe quelle condition testée sur la variable. Ces constructions permettent d’utiliser les modèles et les idiomes dont vous aurez davantage besoin à mesure que vous créez d’autres applications distribuées, où les données et les méthodes qui les manipulent sont séparées. Vous remarquerez que les structs de formes utilisées dans cet exemple ne contiennent pas de méthodes, mais uniquement des propriétés en lecture seule.
 Les critères spéciaux peuvent être utilisés avec tous les types de données. Vous écrivez des expressions qui examinent l’objet et vous prenez des décisions de flux de contrôle en fonction de ces conditions.
 
 Comparez le code de cet exemple avec la conception qui résulterait de la création d’une hiérarchie de classes pour une `Shape` abstraite et des formes dérivées spécifiques, chacune avec sa propre implémentation d’une méthode virtuelle pour calculer la surface. Les expressions de critères spéciaux vous seront souvent d’une grande utilité quand vous manipulerez des données et souhaiterez gérer les questions de stockage de données de façon distincte des questions de comportement.

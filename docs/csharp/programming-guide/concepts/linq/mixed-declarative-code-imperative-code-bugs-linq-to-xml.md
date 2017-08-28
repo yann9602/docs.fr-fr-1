@@ -1,5 +1,5 @@
 ---
-title: "Bogues mixtes code déclaratif/code impératif (LINQ to XML) (C#) | Microsoft Docs"
+title: "Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 747b3462dd6e463a565b27553f241b1ee5171de7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2fb679ee2593520e633daba969ccaa4db4d30509
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Bogues mixtes code déclaratif/code impératif (LINQ to XML) (C#)
-[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Si vous bouclez dans un des axes, comme <xref:System.Xml.Linq.XContainer.Elements%2A>, et que vous modifiez l’arborescence XML à mesure que vous bouclez dans l’axe, vous pouvez constater des bogues étranges.  
+# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Si vous itérez au sein de l'un des axes, tels que <xref:System.Xml.Linq.XContainer.Elements%2A>, et que vous modifiez l'arborescence XML à mesure que vous parcourez l'axe, vous pouvez constater des bogues étranges.  
   
  Ce problème porte parfois le nom de « problème Halloween ».  
   
@@ -62,7 +63,7 @@ foreach (XElement e in root.Elements())
   
  Ce code entre dans une boucle infinie. L'instruction `foreach` itère au sein de l'axe `Elements()` et ajoute de nouveaux éléments à l'élément `doc`. Elle finit par itérer également au sein des éléments qu'elle vient d'ajouter. Et puisqu'elle alloue de nouveaux objets à chaque itération de la boucle, elle finira par consommer toute la mémoire disponible.  
   
- Vous pouvez résoudre ce problème en plaçant la collection en mémoire à l’aide de l’opérateur de requête standard <xref:System.Linq.Enumerable.ToList%2A>, comme suit :  
+ Vous pouvez résoudre ce problème en extrayant la collection en mémoire à l'aide de l'opérateur de requête standard <xref:System.Linq.Enumerable.ToList%2A>, comme suit :  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -113,7 +114,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
- La solution consiste à nouveau à appeler <xref:System.Linq.Enumerable.ToList%2A> pour matérialiser la collection, comme suit :  
+ La solution consiste à nouveau à appeler <xref:System.Linq.Enumerable.ToList%2A> afin de matérialiser la collection, comme suit :  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -132,7 +133,7 @@ Console.WriteLine(root);
 <Root />  
 ```  
   
- En guise d’alternative, vous pouvez éliminer l’itération en appelant <xref:System.Xml.Linq.XElement.RemoveAll%2A> sur l’élément parent :  
+ En guise d'alternative, vous pouvez éliminer l'itération en appelant <xref:System.Xml.Linq.XElement.RemoveAll%2A> sur l'élément parent :  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -186,3 +187,4 @@ Console.WriteLine(newRoot);
   
 ## <a name="see-also"></a>Voir aussi  
  [Programmation LINQ to XML avancée (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

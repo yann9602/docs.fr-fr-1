@@ -1,5 +1,5 @@
 ---
-title: -filealign (Options du compilateur C#) | Microsoft Docs
+title: -filealign (Options du compilateur C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -39,11 +39,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 83569fa264ba3ed6e271281885940a70a5354840
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1b13dee0a221bc0b97349be5897a04188304ff16
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="filealign-c-compiler-options"></a>/filealign (Options du compilateur C#)
@@ -64,7 +64,7 @@ L’option **/filealign** permet de spécifier la taille des sections de votre f
   
  En spécifiant la taille de la section, vous affectez la taille du fichier de sortie. Il peut être utile de modifier la taille de la section pour les programmes qui sont exécutés sur des appareils de petite taille.  
   
- Utilisez [DUMPBIN](https://docs.microsoft.com/cpp/build/reference/dumpbin-options) pour afficher des informations sur les sections de votre fichier de sortie.  
+ Utilisez [DUMPBIN](/cpp/build/reference/dumpbin-options) pour afficher des informations sur les sections de votre fichier de sortie.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -80,4 +80,5 @@ L’option **/filealign** permet de spécifier la taille des sections de votre f
   
 ## <a name="see-also"></a>Voir aussi  
  [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [NIB Guide pratique pour modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

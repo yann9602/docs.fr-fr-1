@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9fd0ef3c71d66ceca28d3ae7025058df469655c2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: be8e2374f89366c6a98df900674a957bd2f531cc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="query-expression-basics"></a>Concepts de base des expressions de requête
@@ -25,7 +26,7 @@ ms.lasthandoff: 03/13/2017
   
  De manière générale, les données sources sont organisées logiquement comme une séquence d’éléments du même type. Par exemple, une table de base de données SQL contient une séquence de lignes. Un fichier XML contient une « séquence » d’éléments XML (bien que ceux-ci soient organisés hiérarchiquement dans une arborescence). Une collection en mémoire contient une séquence d’objets. 
   
- Du point de vue d’une application, le type et la structure spécifiques des données sources d’origine ne sont pas importants. L’application affiche toujours les données sources comme une collection <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IQueryable%601>. Par exemple, dans LINQ to XML, les données sources sont rendues visibles comme un `IEnumerable`\<<xref:System.Xml.Linq.XElement>>.  
+ Du point de vue d’une application, le type et la structure spécifiques des données sources d’origine ne sont pas importants. L’application voit toujours les données sources comme une collection <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IQueryable%601>. Par exemple, dans LINQ to XML, les données sources sont rendues visibles sous la forme d’un `IEnumerable`\<<xref:System.Xml.Linq.XElement>.  
   
  Compte tenu de cette séquence source, une requête peut effectuer l’une des trois actions suivantes :  
   

@@ -1,5 +1,5 @@
 ---
-title: "Arguments de ligne de commande (Guide de programmation C#) | Microsoft Docs"
+title: Arguments de ligne de commande (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4034f1575321c94f003a12a83df617d4a0d50702
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f0d404ae0384ec97b0eb78c6284e07cac8065548
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
@@ -91,15 +92,16 @@ long num = Convert.ToInt64(s);
 5.  Cette commande génère la sortie suivante : `The factorial of 3 is 6.`  
   
 > [!NOTE]
->  Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projet](https://docs.microsoft.com/visualstudio/ide/reference/debug-page-project-designer).  
+>  Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projet](/visualstudio/ide/reference/debug-page-project-designer).  
   
  Pour obtenir d’autres exemples d’utilisation des arguments de ligne de commande, consultez [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Environment?displayProperty=fullName>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)   
  [Guide pratique pour afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)   
  [Guide pratique pour accéder à des arguments de ligne de commande à l’aide de foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)   
  [Valeurs de retour Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)   
  [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)
+

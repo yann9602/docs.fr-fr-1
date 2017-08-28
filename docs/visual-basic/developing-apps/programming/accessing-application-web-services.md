@@ -1,5 +1,5 @@
 ---
-title: "Accès aux services web d’une application (Visual Basic) | Microsoft Docs"
+title: "Accès aux services web d’une application (Visual Basic)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.suite: 
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: b9e7bb7884da98f419d6de4a7463216a32bb0a5c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1933167db4e42ae1a2d1634573bc824750a792da
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Accès aux services web d’une application (Visual Basic)
@@ -50,3 +50,4 @@ L’objet `My.WebServices` fournit une instance de chaque service web référenc
   
 ## <a name="see-also"></a>Voir aussi  
  [My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+

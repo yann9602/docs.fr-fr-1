@@ -1,5 +1,5 @@
 ---
-title: "Opérations de requête LINQ de base (C#) | Microsoft Docs"
+title: "Opérations de requête LINQ de base (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -44,14 +44,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 48624d608c3eb8d1118a2492454595d46025cb3e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e5dbebb7950678a0f40ec774d23b42dfe89cff49
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="basic-linq-query-operations-c"></a>Opérations de requête LINQ de base (C#)
-Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] et quelques-uns des types d’opérations classiques que vous effectuez dans une requête. Vous trouverez des informations plus détaillées dans les rubriques suivantes :  
+Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] et quelques-uns des types d’opérations classiques que vous effectuez dans une requête. Vous trouverez des informations plus détaillées dans les rubriques suivantes :  
   
  [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
   
@@ -60,10 +61,10 @@ Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbtec
  [Procédure pas à pas : écriture de requêtes en C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
->  Si vous êtes déjà familiarisé avec un langage de requête tel que SQL ou XQuery, vous pouvez ignorer la plupart des informations de cette rubrique. Consultez le paragraphe « Clause `from` » de la section suivante pour en savoir plus sur l’ordre des clauses dans les expressions de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)].  
+>  Si vous êtes déjà familiarisé avec un langage de requête tel que SQL ou XQuery, vous pouvez ignorer la plupart des informations de cette rubrique. Consultez le paragraphe « Clause `from` » de la section suivante pour en savoir plus sur l’ordre des clauses dans les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
 ## <a name="obtaining-a-data-source"></a>Obtention d’une source de données  
- Dans une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], la première étape consiste à spécifier la source de données. Dans C#, comme dans la plupart des langages de programmation, une variable doit être déclarée avant de pouvoir être utilisée. Dans une requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], la clause `from` apparaît en premier pour introduire la source de données (`customers`) et la *variable de portée* (`cust`).  
+ Dans une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], la première étape consiste à spécifier la source de données. Dans C#, comme dans la plupart des langages de programmation, une variable doit être déclarée avant de pouvoir être utilisée. Dans une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], la clause `from` apparaît en premier pour introduire la source de données (`customers`) et la *variable de portée* (`cust`).  
   
  [!code-cs[csLINQGettingStarted#23](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_1.cs)]  
   
@@ -110,11 +111,11 @@ Cette rubrique présente brièvement les expressions de requête [!INCLUDE[vbtec
  Pour plus d’informations, consultez [group, clause](../../../../csharp/language-reference/keywords/group-clause.md).  
   
 ## <a name="joining"></a>Jointure  
- Les opérations de jointure créent des associations entre les séquences qui ne sont pas explicitement modélisées dans les sources de données. Par exemple, effectuez une jointure pour rechercher tous les clients et distributeurs qui se trouvent au même endroit. Dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], la clause `join` fonctionne toujours par rapport à des collections d’objets plutôt que directement par rapport à des tables de base de données.  
+ Les opérations de jointure créent des associations entre les séquences qui ne sont pas explicitement modélisées dans les sources de données. Par exemple, effectuez une jointure pour rechercher tous les clients et distributeurs qui se trouvent au même endroit. Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], la clause `join` fonctionne toujours par rapport à des collections d’objets plutôt que directement par rapport à des tables de base de données.  
   
  [!code-cs[csLINQGettingStarted#36](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/basic-linq-query-operations_8.cs)]  
   
- Dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], vous n’avez pas à utiliser `join` aussi souvent que vous le faites dans SQL, car les clés étrangères dans [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] sont représentées dans le modèle objet comme des propriétés qui contiennent une collection d’éléments. Par exemple, un objet `Customer` contient une collection d’objets `Order`. Au lieu d’effectuer une jointure, accédez aux commandes en utilisant la notation par points :  
+ Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous n’avez pas à utiliser `join` aussi souvent que vous le faites dans SQL, car les clés étrangères dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sont représentées dans le modèle objet comme des propriétés qui contiennent une collection d’éléments. Par exemple, un objet `Customer` contient une collection d’objets `Order`. Au lieu d’effectuer une jointure, accédez aux commandes en utilisant la notation par points :  
   
 ```  
 from order in Customer.Orders...  
@@ -123,7 +124,7 @@ from order in Customer.Orders...
  Pour plus d’informations, consultez [join, clause](../../../../csharp/language-reference/keywords/join-clause.md).  
   
 ## <a name="selecting-projections"></a>Sélection (projections)  
- La clause `select` produit les résultats de la requête et spécifie la « forme » ou le type de chaque élément retourné. Par exemple, spécifiez si les résultats doivent contenir des objets `Customer` complets, un seul membre, un sous-ensemble de membres ou un type de résultat complètement différent basé sur un calcul ou une création d’objet. Quand la clause `select` produit autre chose qu’une copie de l’élément source, l’opération est appelée *projection*. L’utilisation de projections pour transformer des données est une fonctionnalité puissante des expressions de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. Pour plus d’informations, consultez [Transformations de données avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md) et [select, clause](../../../../csharp/language-reference/keywords/select-clause.md).  
+ La clause `select` produit les résultats de la requête et spécifie la « forme » ou le type de chaque élément retourné. Par exemple, spécifiez si les résultats doivent contenir des objets `Customer` complets, un seul membre, un sous-ensemble de membres ou un type de résultat complètement différent basé sur un calcul ou une création d’objet. Quand la clause `select` produit autre chose qu’une copie de l’élément source, l’opération est appelée *projection*. L’utilisation de projections pour transformer des données est une fonctionnalité puissante des expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations, consultez [Transformations de données avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md) et [select, clause](../../../../csharp/language-reference/keywords/select-clause.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Bien démarrer avec LINQ en C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
@@ -131,3 +132,4 @@ from order in Customer.Orders...
  [Procédure pas à pas : écriture de requêtes en C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
  [Mots clés de requête (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)   
  [Types anonymes](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+

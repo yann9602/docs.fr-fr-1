@@ -1,6 +1,6 @@
 ---
 title: Programmation asynchrone
-description: Programmation asynchrone
+description: "Découvrez le modèle de programmation asynchrone au niveau du langage C# fourni par .NET Core."
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.translationtype: Human Translation
-ms.sourcegitcommit: be7974018ce3195dc7344192d647fe64fb2ebcc4
-ms.openlocfilehash: 2983dccc63c38884a24f4183d41b406797d5d10f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2ddaa82e6f8492142523e9d240b0d337cfccffd8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/14/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -32,7 +32,7 @@ Pour du code utilisant les E/S de manière intensive, vous spécifiez une opéra
 
 Pour du code utilisant le processeur de manière intensive, vous spécifiez une opération `await` qui est démarrée sur un thread d’arrière-plan avec la méthode `Task.Run`.
 
-Le mot clé `await` trouve ici toute son utilité, car il cède le contrôle à l’appelant de la méthode qui a effectué l’opération `await`.  Au final, c’est ce qui rend une interface utilisateur réactive ou un service élastique.
+Le mot clé `await` trouve ici toute son utilité. Il cède le contrôle à l’appelant de la méthode qui a effectué l’opération `await`. Au final, c’est ce qui rend une interface utilisateur réactive ou un service élastique.
 
 Il y a d’autres approches du code asynchrone que les approches `async` et `await` décrites dans l’article sur le modèle TAP mentionné ci-dessus, mais la suite de ce document traite en particulier des constructions de niveau de langage.
 
@@ -74,7 +74,7 @@ private DamageResult CalculateDamageDone()
 
 calculateButton.Clicked += async (o, e) =>
 {
-    // This line will yield control to the UI CalculateDamageDone()
+    // This line will yield control to the UI while CalculateDamageDone()
     // performs its work.  The UI thread is free to perform other work.
     var damageResult = await Task.Run(() => CalculateDamageDone());
     DisplayDamage(damageResult);
@@ -105,7 +105,7 @@ Les deux premiers exemples de ce guide vous ont montré comment utiliser `async`
 
 Voici deux questions à vous poser avant d’écrire du code :
 
-1. Le code doit-il « attendre » quelque chose, par exemple, des données d’une base de données ?
+1. Votre code doit-il « attendre » quelque chose, par exemple des données d’une base de données ?
 
     Si la réponse est « oui », le travail **utilise les E/S de manière intensive**.
 
@@ -180,7 +180,6 @@ Vous pouvez avoir un scénario qui nécessite de récupérer plusieurs élément
 Cet exemple vous montre comment récupérer des données `User` pour plusieurs `userId`.
 
 ```csharp
-
 public async Task<User> GetUser(int userId)
 {
     // Code omitted:
@@ -205,7 +204,6 @@ public static Task<IEnumerable<User>> GetUsers(IEnumerable<int> userIds)
 Voici une façon plus succincte d’écrire ce code, en utilisant LINQ :
 
 ```csharp
-
 public async Task<User> GetUser(int userId)
 {
     // Code omitted:

@@ -1,5 +1,5 @@
 ---
-title: LINQ to XML (C#) | Microsoft Docs
+title: LINQ to XML (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9772ea7fb9671bef481f0b9011ddc83d0a1b7342
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ccfecd45f68d60d2bbb58d51aa516a20c567a853
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-to-xml-c"></a>LINQ to XML (C#)
@@ -32,7 +33,7 @@ LINQ to XML fournit une interface de programmation XML en mémoire qui exploite 
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Bien démarrer (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
- Fournit des informations de présentation de LINQ to XML, notamment une vue d’ensemble des concepts et une vue d’ensemble des classes <xref:System.Xml.Linq?displayProperty=fullName>.  
+ Fournit des informations de base sur LINQ to XML, notamment une vue d’ensemble conceptuelle et une vue d’ensemble des classes <xref:System.Xml.Linq?displayProperty=fullName>.  
   
  [Guide de programmation (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)  
  Fournit des informations sur les concepts et des guides pratiques concernant la programmation avec LINQ to XML.  
@@ -42,3 +43,4 @@ LINQ to XML fournit une interface de programmation XML en mémoire qui exploite 
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ (Language-Integrated Query) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+

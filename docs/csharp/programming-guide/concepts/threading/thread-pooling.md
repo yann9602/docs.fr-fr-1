@@ -1,5 +1,5 @@
 ---
-title: Regroupement des threads (C#) | Microsoft Docs
+title: Regroupement des threads (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: da18d75f5d80cd7ad8a9a974bf0ffda196e7ea86
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d2f8e5a2d7a83dc6fef72ef87b4003ae49656d8f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="thread-pooling-c"></a>Regroupement des threads (C#)
@@ -34,7 +35,7 @@ Un *pool de threads* est une collection de threads qui peut être utilisée pour
   
  Les pools de threads ont généralement un nombre maximal de threads. Si tous les threads sont occupés, les tâches supplémentaires sont mises en file d’attente jusqu’à ce qu’elles puissent être traitées quand des threads deviennent disponibles.  
   
- Vous pouvez implémenter votre propre pool de threads, mais il est plus facile d’utiliser le pool de threads fourni par le .NET Framework via la classe <xref:System.Threading.ThreadPool>.  
+ Vous pouvez implémenter votre propre pool de threads, mais il est plus facile d’utiliser le pool de threads fourni par le .NET Framework via la classe <xref:System.Threading.ThreadPool>.  
   
  Avec le regroupement de threads, vous appelez la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=fullName> avec un délégué pour la procédure que vous voulez exécuter, et C# crée le thread et exécute votre procédure.  
   
@@ -82,3 +83,4 @@ private void AnotherLongTask(Object state)
  [Threads (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
  [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
  [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Démarrer plusieurs tâches Async et les traiter une fois terminées (C#) | Microsoft Docs"
+title: "Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,15 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 0ab1c8d117327c9f5805d184b263a0932ab0bc3f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 770655005a3cf9cd13eb13cff1ca1d7e291e54e8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)
-En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>, vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une, une fois terminées, au lieu de les traiter dans l’ordre dans lequel elles ont démarré.  
+En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullName>, vous pouvez démarrer plusieurs tâches en même temps et les traiter une par une, une fois qu’elles sont terminées, au lieu de les traiter dans l’ordre dans lequel elles ont démarré.  
   
  L’exemple suivant utilise une requête pour créer une collection de tâches. Chaque tâche télécharge le contenu d’un site web spécifié. À chaque itération d’une boucle while, un appel attendu à `WhenAny` retourne la tâche de la collection de tâches dont le téléchargement se termine en premier. Cette tâche est supprimée de la collection et traitée. La boucle se répète jusqu’à ce que la collection ne contienne plus aucune tâche.  
   
@@ -41,7 +41,7 @@ En utilisant <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=fullNa
   
 2.  Dans la barre de menus, choisissez **Fichier**, **Ouvrir**, **Projet/Solution**.  
   
-3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier de solution (.sln) pour AsyncFineTuningCS.  
+3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.  
   
 4.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel pour le projet **ProcessTasksAsTheyFinish**, puis choisissez **Définir comme projet de démarrage**.  
   
@@ -67,7 +67,7 @@ IEnumerable<Task<int>> downloadTasksQuery =
   
  Dans le fichier MainWindow.xaml.cs du projet, apportez les modifications suivantes à la méthode `AccessTheWebAsync`.  
   
--   Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> à la place de <xref:System.Linq.Enumerable.ToArray%2A>.  
+-   Exécutez la requête en appliquant <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName> au lieu de <xref:System.Linq.Enumerable.ToArray%2A>.  
   
     ```csharp  
     List<Task<int>> downloadTasks = downloadTasksQuery.ToList();  
@@ -247,3 +247,4 @@ namespace ProcessTasksAsTheyFinish
  [Réglage de votre application asynchrone (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [Programmation asynchrone avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046)
+

@@ -1,64 +1,86 @@
 ---
-title: "Mots cl&#233;s des op&#233;rateurs (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "mots clés (C#), opérateurs"
-  - "opérateurs (C#), mots clés"
+title: "Mots clés des opérateurs (informations de référence sur C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- keywords [C#], operators
+- operators [C#], keywords
 ms.assetid: f745c81f-f8d8-4673-86a1-0f3a85cc63c3
 caps.latest.revision: 10
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 10
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0f1109fb343ebed3dc66e14664ed5ba470750f59
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# Mots cl&#233;s des op&#233;rateurs (r&#233;f&#233;rence C#)
-Utilisé pour exécuter diverses actions telles que la création d'objets, activant le type d'exécution d'un objet, l'obtention de la taille d'un type, et d'autres actions.  Cette section présente les mots clés suivants :  
+# <a name="operator-keywords-c-reference"></a>Mots clés des opérateurs (informations de référence sur C#)
+Permettent d’effectuer diverses actions comme créer des objets, vérifier le type d’un objet au moment de l’exécution, obtenir la taille d’un type, etc. Cette section présente les mots clés suivants :  
   
--   [as](../../../csharp/language-reference/keywords/as.md) Convertit un objet vers un type compatible.  
+-   [as](../../../csharp/language-reference/keywords/as.md) : convertit un objet en type compatible.  
   
--   [attendez](../../../csharp/language-reference/keywords/await.md) interrompt une méthode async jusqu'à ce qu'une tâche attendue terminée.  
+-   [await](../../../csharp/language-reference/keywords/await.md) : suspend une méthode async jusqu’à ce qu’une tâche attendue soit terminée.  
   
--   [is](../../../csharp/language-reference/keywords/is.md) Vérifie le type d'exécution d'un objet.  
+-   [is](../../../csharp/language-reference/keywords/is.md) : vérifie le type d’un objet au moment de l’exécution.  
   
 -   [new](../../../csharp/language-reference/keywords/new.md)  
   
-    -   [new, opérateur](../../../csharp/language-reference/keywords/new-operator.md) Crée des objets.  
+    -   [Opérateur new](../../../csharp/language-reference/keywords/new-operator.md) : crée des objets.  
   
-    -   [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md) Masque un membre hérité.  
+    -   [Modificateur new](../../../csharp/language-reference/keywords/new-modifier.md) : masque un membre hérité.  
   
-    -   [new, contrainte](../../../csharp/language-reference/keywords/new-constraint.md) Qualifie un paramètre de type.  
+    -   [Contrainte new](../../../csharp/language-reference/keywords/new-constraint.md) : qualifie un paramètre de type.  
   
--   [sizeof](../../../csharp/language-reference/keywords/sizeof.md) Fournit la taille d'un type.  
+-   [nameof](nameof.md) : obtient le nom de chaîne simple (non qualifié) d’une variable, d’un type ou d’un membre.
+ 
+-   [sizeof](../../../csharp/language-reference/keywords/sizeof.md) : obtient la taille d’un type.  
   
--   [typeof](../../../csharp/language-reference/keywords/typeof.md) Fournit l'objet **System.Type** d'un type.  
+-   [typeof](../../../csharp/language-reference/keywords/typeof.md) : obtient l’objet **System.Type** pour un type.  
   
 -   [true](../../../csharp/language-reference/keywords/true.md)  
   
-    -   [true, opérateur](../../../csharp/language-reference/keywords/true-operator.md) Retourne la valeur booléenne true pour indiquer vrai et, sinon, retourne false.  
+    -   [Opérateur true](../../../csharp/language-reference/keywords/true-operator.md) : retourne la valeur booléenne true pour indiquer qu’une condition est vérifiée et retourne false dans l’autre cas.  
   
-    -   [true, littéral](../../../csharp/language-reference/keywords/true-literal.md) Retourne la valeur booléenne true.  
+    -   [Littéral true](../../../csharp/language-reference/keywords/true-literal.md) : représente la valeur booléenne true.  
   
 -   [false](../../../csharp/language-reference/keywords/false.md)  
   
-    -   [false, opérateur](../../../csharp/language-reference/keywords/false-operator.md) Retourne la valeur booléenne true pour indiquer faux, sinon, retourne false.  
+    -   [Opérateur false](../../../csharp/language-reference/keywords/false-operator.md) : retourne la valeur booléenne true pour indiquer qu’une condition n’est pas vérifiée et retourne false dans l’autre cas.  
   
-    -   [false, littéral](../../../csharp/language-reference/keywords/false-literal.md) Retourne la valeur booléenne false.  
+    -   [Littéral false](../../../csharp/language-reference/keywords/false-literal.md) : représente la valeur booléenne false.  
   
--   [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md) Alloue un bloc de mémoire sur la pile.  
+-   [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md) : alloue un bloc de mémoire dans la pile.  
   
- Les mots clés ci\-dessous, qui peuvent être utilisés comme opérateurs et instructions, sont traités dans la section [Instructions](../../../csharp/language-reference/keywords/statement-keywords.md) :  
+ Les mots clés suivants, qui peuvent être utilisés comme opérateurs et instructions, sont décrits dans la section [Instructions](../../../csharp/language-reference/keywords/statement-keywords.md) :  
   
--   [checked](../../../csharp/language-reference/keywords/checked.md) Spécifie un contexte vérifié \(checked\).  
+-   [checked](../../../csharp/language-reference/keywords/checked.md) : indique un contexte vérifié.  
   
--   [unchecked](../../../csharp/language-reference/keywords/unchecked.md) Spécifie que le contexte est non vérifié \(unchecked\).  
+-   [unchecked](../../../csharp/language-reference/keywords/unchecked.md) : indique un contexte non vérifié.  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Mots clés C\#](../../../csharp/language-reference/keywords/index.md)   
- [Opérateurs C\#](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Opérateurs C#](../../../csharp/language-reference/operators/index.md)
+

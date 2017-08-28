@@ -1,5 +1,5 @@
 ---
-title: "Annuler une tâche asynchrone ou une liste de tâches (C#) | Microsoft Docs"
+title: "Annuler une tâche asynchrone ou une liste de tâches (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 9fbfa3602766b51c4be5078b793139501802a90c
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2e34344c9cdf0717291c4c7375bab703679515a7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Annuler une tâche asynchrone ou une liste de tâches (C#)
@@ -44,7 +44,7 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
   
 2.  Dans la barre de menus, choisissez **Fichier**, **Ouvrir**, **Projet/Solution**.  
   
-3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier de solution (.sln) pour AsyncFineTuningCS.  
+3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.  
   
 4.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel du projet **CancelATask**, puis choisissez **Définir comme projet de démarrage**.  
   
@@ -165,7 +165,7 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
   
 2.  Dans la barre de menus, choisissez **Fichier**, **Ouvrir**, **Projet/Solution**.  
   
-3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier de solution (.sln) pour AsyncFineTuningCS.  
+3.  Dans la boîte de dialogue **Ouvrir le projet**, ouvrez le dossier contenant l’exemple de code que vous avez décompressé, puis ouvrez le fichier solution (.sln) pour AsyncFineTuningCS.  
   
 4.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel du projet **CancelAListOfTasks**, puis choisissez **Définir comme projet de démarrage**.  
   
@@ -224,7 +224,7 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
     }  
     ```  
   
-4.  Comme `AccessTheWebAsync` affiche les longueurs, la méthode n’a pas besoin de retourner une valeur. Supprimez l’instruction return et changez le type de retour de la méthode de <xref:System.Threading.Tasks.Task%601> en <xref:System.Threading.Tasks.Task>.  
+4.  Comme `AccessTheWebAsync` affiche les longueurs, la méthode n’a pas besoin de retourner une valeur. Supprimez l’instruction return et changez le type de retour de la méthode de <xref:System.Threading.Tasks.Task> en <xref:System.Threading.Tasks.Task%601>.  
   
     ```csharp  
     async Task AccessTheWebAsync(CancellationToken ct)  
@@ -239,7 +239,6 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
 5.  Si vous n’annulez pas le programme, il génère le résultat suivant.  
   
     ```  
-  
     Length of the downloaded string: 35939.  
   
     Length of the downloaded string: 237682.  
@@ -255,7 +254,6 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
     Length of the downloaded string: 145790.  
   
     Downloads complete.  
-  
     ```  
   
      Si vous choisissez le bouton **Annuler** avant la fin des téléchargements, la sortie contient les longueurs des chaînes ayant été téléchargées avant l’annulation.  
@@ -268,7 +266,6 @@ Vous pouvez créer un bouton permettant d’annuler une application asynchrone q
     Length of the downloaded string: 128607.  
   
     Downloads canceled.  
-  
     ```  
   
 ##  <a name="BKMK_CompleteExamples"></a> Exemples complets  
@@ -535,6 +532,7 @@ namespace CancelAListOfTasks
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Threading.CancellationTokenSource>   
  <xref:System.Threading.CancellationToken>   
- [Programmation asynchrone avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
+ [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
  [Réglage de votre application Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046)
+

@@ -1,5 +1,5 @@
 ---
-title: "Événements LINQ to XML (C#) | Microsoft Docs"
+title: "Événements LINQ to XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,33 +19,34 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f19439004a9551f5e13588201ca3aaf201620681
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5ccc3928795f188b7cf7b23d88a1f35ff043b889
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="linq-to-xml-events-c"></a>Événements LINQ to XML (C#)
-Les événements [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
+Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
   
- Vous pouvez ajouter des événements à une instance de n’importe quel <xref:System.Xml.Linq.XObject>. Le gestionnaire d’événements reçoit alors des événements en cas de modification apportée à ce <xref:System.Xml.Linq.XObject> et à un de ses descendants. Par exemple, vous pouvez ajouter un gestionnaire d'événements à la racine de l'arborescence et gérer toutes les modifications apportées à l'arborescence à partir de ce gestionnaire d'événements.  
+ Vous pouvez ajouter des événements à une instance de n'importe quel objet <xref:System.Xml.Linq.XObject>. Le gestionnaire d'événements recevra alors des événements en cas de modification apportée à cet objet <xref:System.Xml.Linq.XObject> et à l'un de ses descendants. Par exemple, vous pouvez ajouter un gestionnaire d'événements à la racine de l'arborescence et gérer toutes les modifications apportées à l'arborescence à partir de ce gestionnaire d'événements.  
   
- Pour obtenir des exemples d’événements [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], consultez <xref:System.Xml.Linq.XObject.Changing> et <xref:System.Xml.Linq.XObject.Changed>.  
+ Pour obtenir des exemples d’événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], consultez <xref:System.Xml.Linq.XObject.Changing> et <xref:System.Xml.Linq.XObject.Changed>.  
   
 ## <a name="types-and-events"></a>Types et événements  
  Vous utilisez les types suivants lorsque vous travaillez avec des événements :  
   
 |Type|Description|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|Spécifie le type d’événement quand un événement est déclenché pour un objet <xref:System.Xml.Linq.XObject>.|  
+|<xref:System.Xml.Linq.XObjectChange>|Spécifie le type d'événement lorsqu'un événement est déclenché pour un objet <xref:System.Xml.Linq.XObject>.|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|Fournit des données pour les événements <xref:System.Xml.Linq.XObject.Changing> et <xref:System.Xml.Linq.XObject.Changed>.|  
   
  Les événements suivants sont déclenchés lorsque vous modifiez une arborescence XML :  
   
 |Événement|Description|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Se produit juste avant que ce <xref:System.Xml.Linq.XObject> ou un de ses descendants ne change.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Se produit quand un <xref:System.Xml.Linq.XObject> ou un de ses descendants a changé.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Se produit juste avant que cet objet <xref:System.Xml.Linq.XObject> ou l'un de ses descendants ne change.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Se produit lorsqu'un objet <xref:System.Xml.Linq.XObject> ou l'un des ses descendants a changé.|  
   
 ## <a name="example"></a>Exemple  
   
@@ -115,3 +116,4 @@ Total:308
   
 ## <a name="see-also"></a>Voir aussi  
  [Programmation LINQ to XML avancée (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+

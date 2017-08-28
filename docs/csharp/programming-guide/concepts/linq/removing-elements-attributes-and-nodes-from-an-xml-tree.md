@@ -1,5 +1,5 @@
 ---
-title: "Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (C#) | Microsoft Docs"
+title: "Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,37 +14,37 @@ ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
 caps.latest.revision: 4
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 23091224f314582908438f29340b811498d4c90e
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6cbf2b0e05307cd8d70603d5fa3ad1cc55123503
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Suppression d’éléments, d’attributs et de nœuds d’une arborescence XML (C#)
 Vous pouvez modifier une arborescence XML en supprimant des éléments, des attributs et d’autres types de nœuds.  
   
- La suppression d'un seul élément ou attribut d'un document XML est simple. Toutefois, lors de la suppression de collections d’éléments ou d’attributs, vous devez tout d’abord matérialiser une collection dans une liste, puis supprimer les éléments ou attributs de la liste. La meilleure approche consiste à utiliser la méthode d’extension <xref:System.Xml.Linq.Extensions.Remove%2A>, qui effectuera cette tâche pour vous.  
+ La suppression d'un seul élément ou attribut d'un document XML est simple. Toutefois, lors de la suppression de collections d'éléments ou d'attributs, vous devez tout d'abord matérialiser une collection dans une liste, puis supprimer les éléments ou attributs de la liste. La meilleure approche consiste à utiliser la méthode d'extension <xref:System.Xml.Linq.Extensions.Remove%2A>, qui effectuera cette tâche pour vous.  
   
- Cette opération est nécessaire car la plupart des collections que vous récupérez à partir d’une arborescence XML sont produites à l’aide de l’exécution différée. Si vous ne les matérialisez pas tout d’abord dans une liste, ou si vous n’utilisez pas les méthodes d’extension, vous risquez de rencontrer une certaine classe de bogues. Pour plus d’informations, consultez [Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
+ Cette opération est nécessaire car la plupart des collections que vous récupérez à partir d'une arborescence XML sont produites à l'aide de l'exécution différée. Si vous ne les matérialisez pas tout d’abord dans une liste, ou si vous n’utilisez pas les méthodes d’extension, vous risquez de rencontrer une certaine classe de bogues. Pour plus d’informations, consultez [Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
   
  Les méthodes suivantes suppriment des nœuds et des attributs d’une arborescence XML.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[XAttribute.Remove](https://msdn.microsoft.com/library/system.xml.linq.xattribute.remove\(v=vs.110\).aspx)|Supprime un <xref:System.Xml.Linq.XAttribute> de son parent.|  
-|[XContainer.RemoveNodes](https://msdn.microsoft.com/library/system.xml.linq.xcontainer.removenodes\(v=vs.110\).aspx)|Supprime les nœuds enfants d’un <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=fullName>|Supprime le contenu et les attributs d’un <xref:System.Xml.Linq.XElement>.|  
-|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=fullName>|Supprime les attributs d’un <xref:System.Xml.Linq.XElement>.|  
+|[XAttribute.Remove](https://msdn.microsoft.com/library/system.xml.linq.xattribute.remove\(v=vs.110\).aspx)|Supprime un objet <xref:System.Xml.Linq.XAttribute> de son parent.|  
+|[XContainer.RemoveNodes](https://msdn.microsoft.com/library/system.xml.linq.xcontainer.removenodes\(v=vs.110\).aspx)|Supprime les nœuds enfants d'un objet <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=fullName>|Supprime le contenu et les attributs d'un objet <xref:System.Xml.Linq.XElement>.|  
+|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=fullName>|Supprime les attributs d'un objet <xref:System.Xml.Linq.XElement>.|  
 |<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=fullName>|Supprime l'attribut si vous passez `null` comme valeur.|  
 |<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=fullName>|Supprime l'élément enfant si vous passez `null` comme valeur.|  
-|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=fullName>|Supprime un <xref:System.Xml.Linq.XNode> de son parent.|  
+|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=fullName>|Supprime un objet <xref:System.Xml.Linq.XNode> de son parent.|  
 |<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=fullName>|Supprime chaque attribut ou élément dans la collection source de son élément parent.|  
   
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- Cet exemple illustre trois approches de la suppression d'éléments. Tout d'abord, il supprime un seul élément. Ensuite, il récupère une collection d’éléments, les matérialise à l’aide de l’opérateur <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName>, puis supprime la collection. Enfin, il récupère une collection d’éléments et les supprime à l’aide de la méthode d’extension <xref:System.Xml.Linq.Extensions.Remove%2A>.  
+ Cet exemple illustre trois approches de la suppression d'éléments. Tout d'abord, il supprime un seul élément. Ensuite, il récupère une collection d'éléments, les matérialise à l'aide de l'opérateur <xref:System.Linq.Enumerable.ToList%2A?displayProperty=fullName>, puis supprime la collection. Pour finir, il récupère une collection d'éléments et les supprime à l'aide de la méthode d'extension <xref:System.Xml.Linq.Extensions.Remove%2A>.  
   
  Pour plus d’informations sur l’opérateur <xref:System.Linq.Enumerable.ToList%2A>, consultez [Conversion des types de données (C#)](../../../../csharp/programming-guide/concepts/linq/converting-data-types.md).  
   
@@ -92,3 +92,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>Voir aussi  
  [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

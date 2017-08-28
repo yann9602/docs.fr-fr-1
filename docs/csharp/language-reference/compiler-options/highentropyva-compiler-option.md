@@ -1,5 +1,5 @@
 ---
-title: -highentropyva (Options du compilateur C#) | Microsoft Docs
+title: -highentropyva (Options du compilateur C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,11 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c1b49faa2fb388b330c24bdff28d00872828b110
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4cb21c109fc33a30da016fd6a42285a3a3da02e2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="highentropyva-c-compiler-options"></a>/highentropyva (Options du compilateur C#)
@@ -55,3 +55,4 @@ L’option du compilateur **/highentropyva** indique au noyau Windows si un fich
  L’option **/highentropyva** permet à des versions compatibles du noyau Windows d’utiliser un degré d’entropie plus élevé lors de la randomisation du format de l’espace d’adresse d’un processus. En utilisant un degré d’entropie plus élevé, vous pouvez allouer un plus grand nombre d’adresses aux zones de mémoire, telles que les piles et les tas. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  
   
  Lorsque l’option du compilateur **/highentropyva** est spécifiée, l’exécutable cible et tous les modules dont il dépend doivent être capables de gérer les valeurs de pointeur supérieures à 4 Go lorsqu’ils sont exécutés comme un processus 64 bits.
+

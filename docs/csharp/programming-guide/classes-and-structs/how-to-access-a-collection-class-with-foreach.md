@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour accéder à une classe de collection à l’aide de foreach (Guide de programmation C#) | Microsoft Doc"
+title: "Guide pratique pour accéder à une classe de collection à l’aide de foreach (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 841132b5181c5e17d1eabae11d3550811aa959ec
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2ad81ab699b079f4aabb04a886211e94a937335d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-access-a-collection-class-with-foreach-c-programming-guide"></a>Guide pratique pour accéder à une classe de collection à l’aide de foreach (Guide de programmation C#)
@@ -49,12 +49,11 @@ L’exemple de code suivant montre comment écrire une classe de collection non 
   
  [!code-cs[csProgGuideCollections#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-access-a-collection-class-with-foreach_2.cs)]  
   
- En C#, une classe de collection n’est pas obligée d’implémenter <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> pour être compatible avec `foreach`. Si la classe a les membres <xref:System.Collections.IEnumerable.GetEnumerator%2A>, <xref:System.Collections.IEnumerator.MoveNext%2A>, <xref:System.Collections.IEnumerator.Reset%2A> et <xref:System.Collections.IEnumerator.Current%2A> nécessaires, elle fonctionnera avec `foreach`. Omettre les interfaces vous permet de définir un type de retour pour `Current` qui est plus spécifique que <xref:System.Object>. Cela garantit la sécurité de type.  
+ En C#, une classe de collection n’est pas obligée d’implémenter <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> pour être compatible avec `foreach`. Si la classe a les membres <xref:System.Collections.IEnumerable.GetEnumerator%2A>, <xref:System.Collections.IEnumerator.MoveNext%2A>, <xref:System.Collections.IEnumerator.Reset%2A> et <xref:System.Collections.IEnumerator.Current%2A> nécessaires, elle fonctionnera avec `foreach`. L’omission des interfaces vous permet de définir un type de retour pour `Current` qui est plus spécifique qu’<xref:System.Object>. Cela garantit la sécurité de type.  
   
  Par exemple, changez les lignes suivantes dans l’exemple précédent.  
   
 ```csharp  
-  
 // Change the Tokens class so that it no longer implements IEnumerable.  
 public class Tokens  
 {  
@@ -74,18 +73,16 @@ public class Tokens
         {   }  
     }  
  }  
-  
 ```  
   
  Étant donné que `Current` retourne une chaîne, le compilateur peut détecter quand un type incompatible est utilisé dans une instruction `foreach`, comme illustré dans le code suivant.  
   
 ```csharp  
-  
 // Error: Cannot convert type string to int.  
 foreach (int item in f)    
 ```  
   
- Omettre <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> a toutefois un inconvénient : la classe de collection n’est plus interopérable avec les instructions `foreach` (ou instructions équivalentes) d’autres langages Common Language Runtime.  
+ L’omission d’<xref:System.Collections.IEnumerable> et d’<xref:System.Collections.IEnumerator> a toutefois un inconvénient : la classe de collection n’est plus interopérable avec les instructions `foreach` (ou instructions équivalentes) d’autres langages du common language runtime.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Collections.Generic>   
@@ -93,3 +90,4 @@ foreach (int item in f)
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Tableaux](../../../csharp/programming-guide/arrays/index.md)   
  [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)
+

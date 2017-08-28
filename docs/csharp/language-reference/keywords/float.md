@@ -1,5 +1,5 @@
 ---
-title: "float (référence C#) | Microsoft Docs"
+title: "float (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1c3a66e4f9c690effb35e280e00e29930ec64d75
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2f1fb02f84de504112eee826dbee1275fa3ccb7a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="float-c-reference"></a>float (référence C#)
@@ -73,12 +74,12 @@ float x = 3.5F;
  Pour plus d’informations sur ces valeurs, consultez IEEE Standard for Binary Floating-Point Arithmetic, disponible sur le site web de l’[IEEE](http://go.microsoft.com/fwlink/?LinkId=26269).  
   
 ## <a name="example"></a>Exemple  
- Dans l’exemple suivant, un [int](int.md), un [short](short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`. N’oubliez pas que `float` est un alias du type <xref:System.Single?displayProperty=fullName>. Notez qu’il n’y a aucune valeur [double](double.md) dans l’expression.  
+ Dans l’exemple suivant, un [int](int.md), un [short](short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`. (N’oubliez pas que `float` est un alias du type <xref:System.Single?displayProperty=fullName>.) Notez qu’il n’y a aucune valeur [double](double.md) dans l’expression.  
   
  [!code-cs[csrefKeywordsTypes#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/float_1.cs)]  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Single>   
@@ -90,3 +91,4 @@ float x = 3.5F;
  [Tableau des types intégrés](built-in-types-table.md)   
  [Tableau des conversions numériques implicites](implicit-numeric-conversions-table.md)   
  [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)
+

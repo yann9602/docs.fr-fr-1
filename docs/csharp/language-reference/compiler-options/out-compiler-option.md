@@ -1,74 +1,94 @@
 ---
-title: "/out (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/out"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/out compiler option [C#]"
-  - "out compiler option [C#]"
-  - "-out compiler option [C#]"
+title: -out (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /out
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /out compiler option [C#]
+- out compiler option [C#]
+- -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a6db728bc98f5223fc35268a1cce41021ff530cc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /out (C# Compiler Options)
-L'option **\/out** spécifie le nom du fichier de sortie.  
+# <a name="out-c-compiler-options"></a>/out (Options du compilateur C#)
+L’option **/out** spécifie le nom du fichier de sortie.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /out:filename  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
  `filename`  
- Le nom du fichier de sortie créé par le compilateur.  
+ Nom du fichier de sortie créé par le compilateur.  
   
-## Notes  
- Sur la ligne de commande, vous pouvez spécifier plusieurs fichiers de sortie pour la compilation.  Le compilateur s'attend à trouver un ou plusieurs noms de fichiers de code source à la suite de l'option **\/out**.  Tous les fichiers de code source seront alors compilés dans le fichier de sortie spécifié par cette option **\/out**.  
+## <a name="remarks"></a>Remarques  
+ Sur la ligne de commande, il est possible de spécifier plusieurs fichiers de sortie pour une même compilation. Le compilateur s’attend à trouver un ou plusieurs fichiers de code source à la suite de l’option **/out**. Ensuite, tous les fichiers de code source sont compilés dans le fichier de sortie spécifié par cette option **/out**.  
   
- Spécifiez le nom complet et l'extension du fichier que vous voulez créer.  
+ Spécifiez le nom complet et l’extension du fichier que vous voulez créer.  
   
  Si vous ne spécifiez pas le nom du fichier de sortie :  
   
--   Un fichier .exe prendra comme nom le nom du fichier de code source contenant la méthode **Main**.  
+-   Un fichier .exe prend le nom du fichier de code source qui contient la méthode **Main**.  
   
--   Un .dll ou un .netmodule prendra comme nom celui du premier fichier de code source.  
+-   Un fichier .dll ou .netmodule prend le nom du premier fichier de code source.  
   
- Un fichier de code source utilisé pour compiler un fichier de sortie ne peut pas être utilisé au cours de la même compilation pour la compilation d'un autre fichier de sortie.  
+ Un fichier de code source ayant servi à compiler un fichier de sortie ne peut pas être utilisé dans une même compilation pour compiler un autre fichier de sortie.  
   
- Lorsque vous générez plusieurs fichiers de sortie dans une compilation de ligne de commande, gardez à l'esprit qu'un seul de ces fichiers peut être un assembly et que seul le premier fichier de sortie spécifié \(implicitement ou explicitement à l'aide de **\/out**\) peut être l'assembly.  
+ Au moment de générer plusieurs fichiers de sortie lors d’une compilation en ligne de commande, gardez à l’esprit que seul un fichier de sortie peut faire office d’assembly et que seul le premier fichier de sortie spécifié (implicitement ou explicitement avec **/out**) peut être l’assembly.  
   
- Tous les modules obtenus dans le cadre d'une compilation deviennent des fichiers associés à un assembly quelconque également obtenu dans la compilation.  Utilisez [ildasm.exe](../Topic/Ildasm.exe%20\(IL%20Disassembler\).md) pour afficher le manifeste d'assembly et voir les fichiers associés.  
+ Les modules générés dans le cadre d’une compilation deviennent des fichiers associés à un assembly également généré pendant la compilation. Utilisez [ildasm.exe](https://msdn.microsoft.com/library/f7dy01k1) pour afficher le manifeste d’assembly et identifier les fichiers associés.  
   
- L'option de compilateur \/out est requise pour qu'un exe puisse être la cible d'un assembly ami.  Pour plus d'informations, consultez [Assemblys friend](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md).  
+ L’option de compilateur /out est nécessaire pour faire d’un fichier exe la cible d’un assembly friend. Pour plus d’informations, consultez [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).  
   
-### Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
 1.  Ouvrez la page **Propriétés** du projet.  
   
 2.  Cliquez sur la page de propriétés **Application**.  
   
-3.  Modifiez la propriété **Nom de l'assembly**.  
+3.  Modifiez la propriété **Nom de l’assembly**.  
   
-     Pour définir cette option du compilateur par programme : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule qui est déterminée par une combinaison du type de projet \(exe, bibliothèque, etc.\) et du nom de l'assembly.  Vous devrez modifier l'une de ces propriétés \(ou les deux\) pour définir le nom du fichier de sortie.  
+     Pour définir cette option de compilateur par programmation : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule, qui est déterminée par une combinaison du type de projet (exe, bibliothèque, etc.) et le nom de l’assembly. Il est nécessaire de modifier l’une de ces propriétés (ou les deux) pour définir le nom du fichier de sortie.  
   
-## Exemple  
- Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
+## <a name="example"></a>Exemple  
+ Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
   
-```  
+```console  
 csc t.cs /out:mymodule.netmodule /target:module t2.cs  
 ```  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Assemblys friend](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

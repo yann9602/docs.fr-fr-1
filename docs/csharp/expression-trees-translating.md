@@ -1,6 +1,6 @@
 ---
 title: "Traduction d’arborescences d’expressions"
-description: "Traduction d’arborescences d’expressions"
+description: "Découvrez comment visiter chaque nœud dans une arborescence d’expressions lors de la génération d’une copie modifiée de cette arborescence d’expressions."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 01cc83bc46d2cbe6beaaa5c3212b18bb8608ec82
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 602a17591d27ebfd098516453b9028bca37ad5e3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 03/13/2017
 
 [Précédent -- Génération d’expressions](expression-trees-building.md)
 
-Dans cette dernière section, vous allez découvrir comment visiter chaque nœud dans une arborescence d’expressions et générer une copie modifiée de cette arborescence d’expressions. Voici les techniques que vous utiliserez dans deux scénarios importants. La première consiste à comprendre les algorithmes exprimés par une arborescence d’expressions pour qu’elle puisse être traduite dans un autre environnement. La deuxième s’applique quand vous souhaitez modifier l’algorithme qui a été créé, par exemple pour ajouter la journalisation, intercepter des appels de méthode et les suivre, ou dans d’autres buts.
+Dans cette dernière section, vous allez découvrir comment visiter chaque nœud dans une arborescence d’expressions lors de la génération d’une copie modifiée de cette arborescence d’expressions. Voici les techniques que vous utiliserez dans deux scénarios importants. La première consiste à comprendre les algorithmes exprimés par une arborescence d’expressions pour qu’elle puisse être traduite dans un autre environnement. La deuxième s’applique quand vous souhaitez modifier l’algorithme qui a été créé, par exemple pour ajouter la journalisation, intercepter des appels de méthode et les suivre, ou dans d’autres buts.
 
 ## <a name="translating-is-visiting"></a>Traduire signifie visiter
 

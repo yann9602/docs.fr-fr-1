@@ -1,5 +1,5 @@
 ---
-title: "using, directive (référence C#) | Microsoft Docs"
+title: "using, directive (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,11 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e91cc4fea9fbe57b257e17915cd28b3b82f12f6e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1129efd8a1c4058a9648eab61f98cdcef7e9f2f7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
@@ -57,7 +57,7 @@ La directive `using` a trois utilisations :
     using Project = PC.MyCompany.Project;  
     ```  
   
- Le mot clé `using` est également utilisé pour créer des *instructions using*, qui garantissent que les objets <xref:System.IDisposable> tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [using, instruction](../../../csharp/language-reference/keywords/using-statement.md).  
+ Le mot clé `using` est également utilisé pour créer des *instructions using<xref:System.IDisposable>, qui garantissent que les objets*  tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [Instruction using](../../../csharp/language-reference/keywords/using-statement.md).  
   
 ## <a name="using-static-type"></a>Utilisation du type static  
  Vous pouvez accéder aux membres statiques d'un type sans devoir qualifier l'accès avec le nom du type :  

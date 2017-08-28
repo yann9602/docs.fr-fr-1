@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#) | Microsoft Docs"
+title: "Guide pratique pour obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -27,10 +27,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 16950f835938846804ade1a8ad23d907aa69b9c3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6067ea9d51c31c9398c7b1fcd83ca8fa3a4fec76
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Guide pratique pour obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#)
@@ -54,7 +55,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  Vous pouvez aussi obtenir les noms des fichiers, dossiers ou lecteurs en appelant <xref:System.IO.DirectoryInfo.GetDirectories%2A?displayProperty=fullName>, <xref:System.IO.DirectoryInfo.GetFiles%2A?displayProperty=fullName> et <xref:System.IO.DriveInfo.RootDirectory%2A?displayProperty=fullName>.  
   
- Les classes <xref:System.IO.Directory?displayProperty=fullName> et <xref:System.IO.File?displayProperty=fullName> fournissent des méthodes statiques pour récupérer des informations sur les fichiers et répertoires.  
+ Les classes <xref:System.IO.Directory?displayProperty=fullName> et <xref:System.IO.File?displayProperty=fullName> fournissent des méthodes statiques pour récupérer des informations sur les répertoires et les fichiers.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant illustre différentes manières d’accéder aux informations sur les fichiers et dossiers.  
@@ -77,4 +78,5 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IO?displayProperty=fullName>   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
+ [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
+

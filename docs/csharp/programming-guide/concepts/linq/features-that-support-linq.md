@@ -1,5 +1,5 @@
 ---
-title: "Fonctionnalités C# qui prennent en charge LINQ | Microsoft Docs"
+title: "Fonctionnalités C# qui prennent en charge LINQ"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -31,17 +31,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f844e967e2abb7ea23e04a797017261e33bb4d75
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 01db44482ee3230d15af5ce8e0373fb15a769609
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="c-features-that-support-linq"></a>Fonctionnalités C# qui prennent en charge LINQ
-La section suivante présente de nouvelles constructions de langage qui sont apparues avec C# 3.0. Même si ces nouvelles fonctionnalités sont toutes plus ou moins utilisées avec les requêtes [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], elles ne sont pas limitées à [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] et peuvent être utilisées dans n’importe quel contexte.  
+La section suivante présente de nouvelles constructions de langage qui sont apparues avec C# 3.0. Même si ces nouvelles fonctionnalités sont toutes plus ou moins utilisées avec les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], elles ne sont pas limitées à [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] et peuvent être utilisées dans n’importe quel contexte.  
   
 ## <a name="query-expressions"></a>Expressions de requête  
- Les expressions de requête utilisent une syntaxe déclarative similaire à SQL ou XQuery pour interroger les collections IEnumerable. Au moment de la compilation, la syntaxe de requête est convertie en appels de méthode à l’implémentation de méthodes d’extension d’opérateur de requête standard d’un fournisseur [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]. Les applications contrôlent les opérateurs de requête standard qui se trouvent dans la portée en spécifiant l’espace de noms approprié avec une directive `using`. L’expression de requête suivante accepte un tableau de chaînes, regroupe les chaînes qui commencent par le même caractère, puis trie ces groupes de chaînes.  
+ Les expressions de requête utilisent une syntaxe déclarative similaire à SQL ou XQuery pour interroger les collections IEnumerable. Au moment de la compilation, la syntaxe de requête est convertie en appels de méthode à l’implémentation de méthodes d’extension d’opérateur de requête standard d’un fournisseur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Les applications contrôlent les opérateurs de requête standard qui se trouvent dans la portée en spécifiant l’espace de noms approprié avec une directive `using`. L’expression de requête suivante accepte un tableau de chaînes, regroupe les chaînes qui commencent par le même caractère, puis trie ces groupes de chaînes.  
   
 ```  
 var query = from str in stringArray  
@@ -86,12 +87,12 @@ select new {name = cust.Name, phone = cust.Phone};
  Pour plus d’informations, consultez [Types anonymes](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ## <a name="extension-methods"></a>méthodes d’extension.  
- Une méthode d’extension est une méthode statique qui peut être associée à un type, de manière à être appelée comme une méthode d’instance de ce type. Cette fonctionnalité permet d’ajouter de nouvelles méthodes aux types existants sans les modifier. Les opérateurs de requête standard sont un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601>.  
+ Une méthode d’extension est une méthode statique qui peut être associée à un type, de manière à être appelée comme une méthode d’instance de ce type. Cette fonctionnalité permet d’ajouter de nouvelles méthodes aux types existants sans les modifier. Les opérateurs de requête standard sont un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601>.  
   
- Pour plus d’informations, consultez [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
+ Pour plus d’informations, consultez la page [Méthodes d’extension](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
   
 ## <a name="lambda-expressions"></a>Expressions lambda  
- Une expression lambda est une fonction inline qui utilise l’opérateur => pour séparer les paramètres d’entrée du corps de la fonction, et qui peut être convertie au moment de la compilation en un délégué ou une arborescence d’expressions. En programmation [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)], vous rencontrerez des expressions lambda quand vous effectuerez des appels de méthode directs aux opérateurs de requête standard.  
+ Une expression lambda est une fonction inline qui utilise l’opérateur => pour séparer les paramètres d’entrée du corps de la fonction, et qui peut être convertie au moment de la compilation en un délégué ou une arborescence d’expressions. En programmation [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous rencontrerez des expressions lambda quand vous effectuerez des appels de méthode directs aux opérateurs de requête standard.  
   
  Pour plus d'informations, voir :  
   
@@ -112,3 +113,4 @@ public string Name {get; set;}
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ (Language-Integrated Query) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+

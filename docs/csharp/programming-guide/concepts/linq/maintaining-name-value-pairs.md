@@ -1,5 +1,5 @@
 ---
-title: Gestion des paires nom/valeur (C#) | Microsoft Docs
+title: Gestion des paires nom/valeur (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,39 +14,39 @@ ms.assetid: 7b04b0f1-af64-42eb-8737-83f8861b5915
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fda5e083584a57245a83bdf8c09d31e7ffdb2d5a
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9515411123ad800df4e800d698921b76f6590286
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="maintaining-namevalue-pairs-c"></a>Gestion des paires nom/valeur (C#)
-De nombreuses applications doivent maintenir des informations qu'il est préférable de conserver sous forme de paires nom/valeur. Il peut s'agir d'informations de configuration ou de paramètres globaux. [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] contient des méthodes qui facilitent la maintenance d'un ensemble de paires nom/valeur. Vous pouvez conserver les informations en tant qu'attributs ou en tant qu'ensemble d'éléments enfants.  
+De nombreuses applications doivent maintenir des informations qu'il est préférable de conserver sous forme de paires nom/valeur. Il peut s'agir d'informations de configuration ou de paramètres globaux. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient des méthodes qui facilitent la maintenance d'un ensemble de paires nom/valeur. Vous pouvez conserver les informations en tant qu'attributs ou en tant qu'ensemble d'éléments enfants.  
   
  L'une des différences est qu'il ne peut y avoir qu'un seul attribut avec un nom donné pour un élément. Cette limitation ne s'applique pas aux éléments enfants.  
   
 ## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue et SetElementValue  
- Les deux méthodes qui facilitent la conservation des paires nom/valeur sont <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> et <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Ces deux méthodes ont une sémantique similaire.  
+ Les deux méthodes qui facilitent la conservation de paires nom/valeur sont <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> et <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Ces deux méthodes ont une sémantique similaire.  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> peut ajouter, modifier ou supprimer des attributs d’un élément.  
+ <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> peut ajouter, modifier ou supprimer des attributs d'un élément.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec le nom d’un attribut qui n’existe pas, la méthode crée un attribut et l’ajoute à l’élément spécifié.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec un nom d'un attribut qui n'existe pas, la méthode crée un nouvel attribut et l'ajoute à l'élément spécifié.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec le nom d’un attribut existant et avec du contenu spécifié, le contenu de l’attribut est remplacé par le contenu spécifié.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec un nom d'un attribut existant et avec du contenu spécifié, le contenu de l'attribut est remplacé par le contenu spécifié.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec le nom d’un attribut existant et que vous spécifiez Null pour le contenu, l’attribut est supprimé de son parent.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec un nom d'un attribut existant et que vous spécifiez une valeur Null pour le contenu, l'attribut est supprimé de son parent.  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A> peut ajouter, modifier ou supprimer des éléments enfants d’un élément.  
+ <xref:System.Xml.Linq.XElement.SetElementValue%2A> peut ajouter, modifier ou supprimer des éléments enfants d'un élément.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec le nom d’un élément enfant qui n’existe pas, la méthode crée un élément et l’ajoute à l’élément spécifié.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec un nom d'un élément enfant qui n'existe pas, la méthode crée un nouvel élément et l'ajoute à l'élément spécifié.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec le nom d’un élément existant et avec du contenu spécifié, le contenu de l’élément est remplacé par le contenu spécifié.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec un nom d'un élément existant et avec du contenu spécifié, le contenu de l'élément est remplacé par le contenu spécifié.  
   
--   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec le nom d’un élément existant et que vous spécifiez Null pour le contenu, l’élément est supprimé de son parent.  
+-   Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec un nom d'un élément existant et que vous spécifiez une valeur Null pour le contenu, l'élément est supprimé de son parent.  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant crée un élément sans attribut. Il utilise ensuite la méthode <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> pour créer et gérer une liste de paires nom/valeur.  
+ L'exemple suivant crée un élément sans attribut. Il utilise ensuite la méthode <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> pour créer et maintenir une liste de paires nom/valeur.  
   
 ```csharp  
 // Create an element with no content.  
@@ -71,14 +71,14 @@ Console.WriteLine(root);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <Root Top="22" Left="20" Bottom="122" Right="300" DefaultColor="Color.Red" />  
 <Root Top="10" Left="20" Bottom="122" Right="300" DefaultColor="Color.Red" />  
 <Root Top="10" Left="20" Bottom="122" Right="300" />  
 ```  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant crée un élément sans élément enfant. Il utilise ensuite la méthode <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> pour créer et gérer une liste de paires nom/valeur.  
+ L'exemple suivant crée un élément sans élément enfant. Il utilise ensuite la méthode <xref:System.Xml.Linq.XElement.SetElementValue%2A> pour créer et maintenir une liste de paires nom/valeur.  
   
 ```csharp  
 // Create an element with no content.  
@@ -105,7 +105,7 @@ Console.WriteLine(root);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <Root>  
   <Top>22</Top>  
   <Left>20</Left>  
@@ -134,3 +134,4 @@ Console.WriteLine(root);
  <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>   
  <xref:System.Xml.Linq.XElement.SetElementValue%2A>   
  [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+

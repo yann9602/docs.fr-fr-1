@@ -1,5 +1,5 @@
 ---
-title: "Annuler des tâches asynchrones après une période spécifique (C#) | Microsoft Docs"
+title: "Annuler des tâches asynchrones après une période spécifique (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aebb133062c5b552f65279d06c950f36ad453615
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 450749c67854dbc0020094fe587c34e50d82b8b8
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Annuler des tâches asynchrones après une période spécifique (C#)
@@ -102,7 +103,7 @@ Downloads canceled.
 ```  
   
 ## <a name="complete-example"></a>Exemple complet  
- Le code suivant est le texte complet du fichier MainWindow.xaml.cs de l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.  
+ Le code suivant est le texte complet du fichier MainWindow.xaml.cs de l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.  
   
  Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.  
   
@@ -235,3 +236,4 @@ namespace CancelAfterTime
  [Annuler une tâche asynchrone ou une liste de tâches (C#)](../../../../csharp/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)   
  [Réglage de votre application asynchrone (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
  [Exemple Async : réglage de votre application](http://go.microsoft.com/fwlink/?LinkId=255046)
+

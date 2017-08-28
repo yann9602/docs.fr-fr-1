@@ -1,5 +1,5 @@
 ---
-title: "Débogage d’arborescences d’expression dans Visual Studio (C#) | Microsoft Docs"
+title: "Débogage d’arborescences d’expression dans Visual Studio (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,16 +19,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 14ab67e78a3b4c4819ddca36a406526e78f5485e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0cf40b38ca9a6f743aca2894506e1d0ea80c9d57
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>Débogage d’arborescences d’expression dans Visual Studio (C#)
-Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir une vue d’ensemble rapide de la structure de l’arborescence d’expressions, vous pouvez utiliser la propriété `DebugView`, qui est disponible uniquement en mode débogage. Pour plus d’informations sur le débogage, consultez [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio).  
+Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir une vue d’ensemble rapide de la structure de l’arborescence d’expressions, vous pouvez utiliser la propriété `DebugView`, qui est disponible uniquement en mode débogage. Pour plus d’informations sur le débogage, consultez [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
   
- Afin de mieux représenter le contenu des arborescences d’expressions, la propriété `DebugView` utilise des visualiseurs Visual Studio. Pour plus d’informations, consultez [Créer des visualiseurs de données personnalisés](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data).  
+ Afin de mieux représenter le contenu des arborescences d’expressions, la propriété `DebugView` utilise des visualiseurs Visual Studio. Pour plus d’informations, consultez [Créer des visualiseurs de données personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data).  
   
 ### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Pour ouvrir un visualiseur pour une arborescence d’expressions  
   
@@ -41,7 +42,7 @@ Vous pouvez analyser la structure et le contenu d’arborescences d’expression
  Chaque type d’expression s’affiche dans le visualiseur, comme décrit dans les sections suivantes.  
   
 ## <a name="parameterexpressions"></a>ParameterExpressions  
- Les noms de variables <xref:System.Linq.Expressions.ParameterExpression> s’affichent avec le symbole "$" en préfixe.  
+ Les noms de variables <xref:System.Linq.Expressions.ParameterExpression> s’affichent avec le symbole "$" en préfixe.  
   
  Si un paramètre n’a pas de nom, un nom généré automatiquement lui est assigné, tel que `$var1` ou `$var2`.  
   
@@ -74,7 +75,7 @@ Vous pouvez analyser la structure et le contenu d’arborescences d’expression
 |`double num = 10; ConstantExpression expr = Expression.Constant(num);`|10D|  
   
 ## <a name="blockexpression"></a>BlockExpression  
- Si le type d’un objet <xref:System.Linq.Expressions.BlockExpression> diffère du type de la dernière expression du bloc, le type est affiché dans la propriété `DebugInfo` entre crochets pointus (\<et >). Sinon, le type de l’objet <xref:System.Linq.Expressions.BlockExpression> n’est pas affiché.  
+ Si le type d’un objet <xref:System.Linq.Expressions.BlockExpression> diffère du type de la dernière expression du bloc, le type est affiché dans la propriété `DebugInfo` entre crochets pointus (\< et >). Sinon, le type de l’objet <xref:System.Linq.Expressions.BlockExpression> n’est pas affiché.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -121,5 +122,6 @@ Vous pouvez analyser la structure et le contenu d’arborescences d’expression
   
 ## <a name="see-also"></a>Voir aussi  
  [Arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)   
- [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)   
- [Créer des visualiseurs personnalisés](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)
+ [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)   
+ [Créer des visualiseurs personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data)
+

@@ -1,52 +1,72 @@
 ---
-title: "Comment&#160;: d&#233;clarer et utiliser des propri&#233;t&#233;s en lecture-&#233;criture (Guide de programmation&#160;C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "get (accesseur C#), déclarer des propriétés"
-  - "set (accesseur C#)"
-  - "propriétés (C#), déclarer"
-  - "lecture/écriture (propriétés C#)"
-  - "accesseurs (C#), déclarer des propriétés avec"
+title: "Guide pratique pour déclarer et utiliser des propriétés en lecture-écriture (Guide de programmation C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- get accessor [C#], declaring properties
+- set accessor [C#]
+- properties [C#], declaring
+- read/write properties [C#]
+- accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
 caps.latest.revision: 19
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 19
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e5e4ca1feff203dc2ab88c0d1dfae8098508fec7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# Comment&#160;: d&#233;clarer et utiliser des propri&#233;t&#233;s en lecture-&#233;criture (Guide de programmation&#160;C#)
-Les propriétés offrent la commodité des données membres publiques sans les risques liés à un accès non protégé, non contrôlé et non vérifié aux données d'un objet.  Cela se fait au moyen des *accesseurs* : méthodes spéciales qui assignent et récupèrent des valeurs de la donnée membre sous\-jacente.  L'accesseur [set](../../../csharp/language-reference/keywords/set.md) permet aux données membre d'être assignées, et l'accesseur [get](../../../csharp/language-reference/keywords/get.md) récupère des valeurs de donnée membre.  
+# <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Guide pratique pour déclarer et utiliser des propriétés en lecture-écriture (Guide de programmation C#)
+Les propriétés offrent la commodité des membres de données publics sans les risques liés à un accès non protégé, non contrôlé et non vérifié aux données d’un objet. Cela se fait au moyen d’*accesseurs*, lesquels sont des méthodes spéciales qui affectent et récupèrent des valeurs du membre de données sous-jacent. L’accesseur [set](../../../csharp/language-reference/keywords/set.md) permet aux membres de données d’être affectés, et l’accesseur [get](../../../csharp/language-reference/keywords/get.md) récupère des valeurs de membres de données.  
   
- Cet exemple présente une classe `Person` qui possède deux propriétés : `Name` \(chaîne\) et `Age` \(entier\).  Les deux propriétés fournissant des accesseurs `get` et `set`, elles sont considérées comme des propriétés en lecture\/écriture.  
+ L’exemple suivant montre une classe `Person` qui possède deux propriétés : `Name` (string) et `Age` (int). Étant donné que les deux propriétés fournissent des accesseurs `get` et `set`, elles sont considérées comme des propriétés en lecture/écriture.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideObjects#33](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_1.cs)]  
   
-## Programmation fiable  
- Dans l'exemple précédent, les propriétés `Name` et `Age` sont [publiques](../../../csharp/language-reference/keywords/public.md) et incluent un accesseur  `get` et un accesseur `set`.  Cela permet à n'importe quel objet de lire et d'écrire ces propriétés.  Toutefois, il est quelquefois souhaitable d'exclure l'un des accesseurs.  L'omission de l'accesseur `set`, par exemple, rend la propriété en lecture seule :  
+## <a name="robust-programming"></a>Programmation fiable  
+ Dans l’exemple précédent, les propriétés `Name` et `Age` sont [publiques](../../../csharp/language-reference/keywords/public.md), et incluent un accesseur `get` et un accesseur `set`. Cela permet à n’importe quel objet de lire et d’écrire ces propriétés. Toutefois, il est parfois souhaitable d’exclure l’un des accesseurs. L’omission de l’accesseur `set`, par exemple, met la propriété en lecture seule :  
   
  [!code-cs[csProgGuideObjects#87](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_2.cs)]  
   
- Vous pouvez également exposer publiquement un accesseur mais rendre l'autre privé ou protégé.  Pour plus d'informations, consultez [Accessibilité de l'accesseur asymétrique](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
+ Vous pouvez également exposer publiquement un accesseur mais rendre l’autre private ou protected. Pour plus d’informations, consultez [Accessibilité de l’accesseur asymétrique](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
   
- Une fois les propriétés déclarées, vous pouvez les utiliser comme s'il s'agissait de champs de la classe.  Il est ainsi possible d'employer une syntaxe très naturelle pour obtenir ou définir la valeur d'une propriété, comme dans les instructions suivantes :  
+ Une fois les propriétés déclarées, vous pouvez les utiliser comme s’il s’agissait de champs de la classe. Cela permet une syntaxe très naturelle pour obtenir ou définir la valeur d’une propriété, comme dans les instructions suivantes :  
   
  [!code-cs[csProgGuideObjects#35](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_3.cs)]  
   
- Notez qu'une variable `value` spéciale est disponible dans la méthode `set` d'une propriété.  Cette variable contient la valeur que l'utilisateur a spécifiée, par exemple :  
+ Notez qu’une variable `value` spéciale est disponible dans la méthode `set` d’une propriété. Cette variable contient la valeur que l’utilisateur a spécifiée, par exemple :  
   
  [!code-cs[csProgGuideObjects#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_4.cs)]  
   
- Notez la syntaxe correcte pour incrémenter la propriété `Age` sur un objet `Person` :  
+ Notez la syntaxe correcte pour incrémenter la propriété `Age` sur un objet `Person` :  
   
  [!code-cs[csProgGuideObjects#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_5.cs)]  
   
- Si des méthodes `set` et `get` distinctes ont été employées pour modeler les propriétés, le code équivalent peut avoir la forme suivante :  
+ Si des méthodes `set` et `get` distinctes ont été utilisées pour modeler des propriétés, le code équivalent peut avoir la forme suivante :  
   
 ```  
 person.SetAge(person.GetAge() + 1);   
@@ -56,9 +76,10 @@ person.SetAge(person.GetAge() + 1);
   
  [!code-cs[csProgGuideObjects#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_6.cs)]  
   
- Vous pouvez remarquer que `ToString` n'est pas utilisée de façon explicite dans le programme.  Elle est appelée par défaut par les appels `WriteLine`.  
+ Vous pouvez remarquer que `ToString` n’est pas utilisée de façon explicite dans le programme. Elle est appelée par défaut par les appels `WriteLine`.  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)
+

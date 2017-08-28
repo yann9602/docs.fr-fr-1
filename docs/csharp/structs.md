@@ -1,5 +1,5 @@
 ---
-title: Structs | Guide C#
+title: "Structs - Guide C#"
 description: "En savoir plus sur le type struct et la manière de le créer"
 keywords: .NET, .NET Core, C#
 author: BillWagner
@@ -10,15 +10,15 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a5ed524a1b17f7be8903f998cbd732594faab831
-ms.openlocfilehash: ff7e67add731324e01b8f2cc323a66e3a8683ec9
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e2a4bfdb46a69113d5eb8949df4ccf902acf9dee
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/15/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="structs"></a>Structures
+# <a name="structs"></a>Structs
 Un *struct* est un type valeur. Lorsqu'un struct est créé, la variable à laquelle le struct est assigné contient les données réelles du struct. Lorsque le struct est affecté à une nouvelle variable, il est copié. La nouvelle variable et la variable d’origine contiennent par conséquent deux copies distinctes des mêmes données. Les modifications apportées à une copie n’affectent pas l’autre copie.
 
 Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
@@ -77,3 +77,4 @@ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](./language-ref
 [Classes](classes.md)
 
 [Types de base](basic-types.md)
+

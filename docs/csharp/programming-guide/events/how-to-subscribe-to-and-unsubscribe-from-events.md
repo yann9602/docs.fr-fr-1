@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour s’abonner et se désabonner d’événements (guide de programmation C#) | Microsoft Docs"
+title: "Guide pratique pour s'abonner et se désabonner d’événements (guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 583168bc8cce2f4bee9a2dd35d1e59c7a0f380a6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d444a2efe03ec127ff88236deadab719d0d64259
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Guide pratique pour s'abonner et se désabonner d’événements (guide de programmation C#)
@@ -46,7 +47,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
 3.  Double-cliquez sur l’événement que vous voulez créer, par exemple l’événement `Load`.  
   
-     [!INCLUDE[csprcs](../../../csharp/includes/csprcs_md.md)] crée une méthode de gestionnaire d’événements vide et l’ajoute à votre code. Vous pouvez également ajouter le code manuellement en mode **Code**. Par exemple, les lignes de code suivantes déclarent une méthode de gestionnaire d’événements qui est appelée lorsque la classe `Form` déclenche l’événement `Load`.  
+     [!INCLUDE[csprcs](~/includes/csprcs-md.md)] crée une méthode de gestionnaire d’événements vide et l’ajoute à votre code. Vous pouvez également ajouter le code manuellement en mode **Code**. Par exemple, les lignes de code suivantes déclarent une méthode de gestionnaire d’événements qui est appelée lorsque la classe `Form` déclenche l’événement `Load`.  
   
      [!code-cs[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   

@@ -1,6 +1,6 @@
 ---
-title: Tuples | Guide C#
-description: "En savoir plus sur les types tuple nommés et sans nom en C#"
+title: "Tuples - Guide C#"
+description: "En savoir plus sur les types tuple nommés et sans nom en C#"
 keywords: .NET, .NET Core, C#
 author: BillWagner
 ms-author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6b30f41e3fb07a962542a09a41c698efee7ebb5a
-ms.openlocfilehash: 0ea7299d87dc69784e3bed93e48d83e4a0076a20
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0efb478491ab4c226ec56519c9a957b19ce0478f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/26/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -25,8 +25,10 @@ Les tuples C# sont des types que vous définissez à l’aide d’une syntaxe s
 Dans cette rubrique, vous allez apprendre les règles de langage régissant les tuples dans C# 7, voir différentes façons de les utiliser et bénéficier de conseils de base sur l’utilisation des tuples.
 
 > [!NOTE]
-> Les nouvelles fonctionnalités des tuples requièrent le type `System.ValueTuple`. Pour Visual Studio 2017, vous devez ajouter le package NuGet [System.ValueTuple](https://www.nuget.org/packages/System.ValueTuple/), disponible dans la galerie NuGet.
-> Sans ce package, vous pouvez obtenir une erreur de compilation semblable à `error CS8179: Predefined type 'System.ValueTuple``2' is not defined or imported` ou `error CS8137: Cannot define a class or member that utilizes tuples because the compiler required type 'System.Runtime.CompilerServices.TupleElementNamesAttribute' cannot be found.`
+> Les nouvelles fonctionnalités des tuples exigent les types @System.ValueTuple.
+> Vous devez ajouter le package NuGet [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) pour pouvoir l’utiliser sur les plateformes qui n’incluent pas les types.
+>
+> Ces fonctionnalités sont semblables à celles d’autres langages qui reposent sur les types fournis dans le framework. `async` et `await` qui reposent sur l’interface `INotifyCompletion`, et LINQ qui repose sur `IEnumerable<T>` en sont des exemples. Toutefois, le mécanisme de remise change à mesure que le .NET dépend de moins en moins de la plateforme. Le .NET Framework n’est pas toujours émis à la même cadence que le compilateur de langage. Quand les nouvelles fonctionnalités de langage reposent sur de nouveaux types, ces types sont disponibles sous la forme de packages NuGet au moment de l’émission des fonctionnalités de langage. À mesure que ces nouveaux types sont ajoutés à l’API .NET Standard et remis dans le cadre du framework, les packages NuGet ne sont plus obligatoires.
 
 Commençons par passer en revue les raisons d’ajouter la nouvelle prise en charge des tuples. Les méthodes retournent un objet unique. Les tuples vous permettent d’empaqueter plus aisément plusieurs valeurs dans cet objet unique. 
 
@@ -107,7 +109,7 @@ Il existe une formule alternative qui calcule l’écart-type à l’aide d’un
 
 [!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/tuples/statistics.cs#06_SumOfSquaresFormula "Calculer l’écart-type au moyen de la somme des carrés")]
 
-Cette version énumère une seule fois la suite. Toutefois, ce code n’est pas facilement réutilisable. En poursuivant votre travail, vous trouverez que de nombreux calculs statistiques différents utilisent le nombre d’éléments dans la suite, la somme de la suite et la somme des carrés de la suite. Refactorisons cette méthode et écrivons une méthode utilitaire qui génère ces trois valeurs.
+Cette version énumère une seule fois la séquence. Toutefois, ce code n’est pas facilement réutilisable. En poursuivant votre travail, vous trouverez que de nombreux calculs statistiques différents utilisent le nombre d’éléments dans la suite, la somme de la suite et la somme des carrés de la suite. Refactorisons cette méthode et écrivons une méthode utilitaire qui génère ces trois valeurs.
 
 C’est là que les tuples s’avèrent très utiles. 
 
@@ -200,13 +202,13 @@ La méthode `Deconstruct` peut être une méthode d’extension qui désassemble
 [!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#13_ExtensionDeconstructMethod "Type avec une méthode d’extension deconstruct")]
 
 Un objet `Student` a désormais deux méthodes `Deconstruct` accessibles : la méthode d’extension déclarée pour les types `Student` et le membre du type `Person`. Les deux sont dans la portée et cela permet à un objet `Student` d’être déconstruit en deux ou trois variables.
-Si vous affectez un étudiant à trois variables, le prénom, le nom de famille et la moyenne pondérée cumulative (GPA) sont retournés. Si vous affectez un étudiant à deux variables, seuls le prénom et le nom de famille sont retournés.
+Si vous affectez un étudiant à trois variables, le prénom, le nom de famille et la moyenne pondérée cumulative (GPA) sont tous retournés. Si vous affectez un étudiant à deux variables, seuls le prénom et le nom de famille sont retournés.
 
 [!code-csharp[Méthode d’extension deconstruct](../../samples/snippets/csharp/tuples/tuples/program.cs#13A_DeconstructExtension "Déconstruire un type de classe à l’aide d’une méthode d’extension")]
 
 Vous devez être très prudent en définissant plusieurs méthodes `Deconstruct` dans une classe ou une hiérarchie de classes. Plusieurs méthodes `Deconstruct` ayant le même nombre de paramètres `out` peuvent rapidement entraîner des ambiguïtés. Les appelants peuvent ne pas être en mesure d’appeler facilement la méthode `Deconstruct` souhaitée.
 
-Cet exemple présente un risque minimal d’appel ambigu, car la méthode `Deconstruct` pour `Person` a deux paramètres de sortie et la méthode `Deconstruct` pour `Student` en a trois.
+Cet exemple présente un risque minimal d’appel ambigu, car la méthode `Deconstruct` pour `Person` a deux paramètres de sortie, et la méthode `Deconstruct` pour `Student` en a trois.
 
 ## <a name="conclusion"></a>Conclusion 
 
