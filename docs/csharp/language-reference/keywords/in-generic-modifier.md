@@ -29,10 +29,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a2c20a74b48fad8eb7021e23002d06e78a1fd624
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: 663fa75a7e214ed97efb45dda2c9ac298559653d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (modificateur générique) (Référence C#)
@@ -46,7 +46,7 @@ Pour les paramètres de type générique, le mot clé `in` spécifie que le para
   
  Un délégué contravariant peut être assigné à un autre délégué du même type, mais avec un paramètre de type générique moins dérivé.  
   
- Pour plus d’informations, consultez [Covariance et contravariance](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8).  
+ Pour plus d’informations, consultez [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment déclarer, étendre et implémenter une interface générique contravariante. Il montre également comment utiliser la conversion implicite pour les classes qui implémentent cette interface.  
@@ -63,6 +63,6 @@ Pour les paramètres de type générique, le mot clé `in` spécifie que le para
   
 ## <a name="see-also"></a>Voir aussi  
  [out](../../../csharp/language-reference/keywords/out-generic-modifier.md)   
- [Covariance et contravariance](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8)   
+ [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
 
