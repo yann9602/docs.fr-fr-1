@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2722ddad74023cb8c1be86d3a628313a45d35d8a
+ms.sourcegitcommit: 935428cc9442a3e1d15eeb8942176c237bff4e22
+ms.openlocfilehash: 6e87893bcd9800b61297e71b782028fec5116479
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/22/2017
 
 ---
 # <a name="int-c-reference"></a>int (référence C#)
@@ -49,7 +49,7 @@ ms.lasthandoff: 07/28/2017
  
 Vous pouvez déclarer et initialiser une variable `int` en lui assignant un littéral décimal, un littéral hexadécimal ou un littéral binaire (à compter de C# 7).  Si le littéral entier est en dehors de la plage autorisée pour le type `int` (autrement dit, s’il est inférieur à <xref:System.Int32.MinValue?displayProperty=fullName> ou supérieur à <xref:System.Int32.MaxValue?displayProperty=fullName>), une erreur de compilation se produit. 
 
-Dans l’exemple suivant, les entiers égaux à 16 342 représentés comme des littéraux décimaux, hexadécimaux et binaires sont assignés aux valeurs `int`.  
+Dans l’exemple suivant, les entiers égaux à 90 946 représentés comme des littéraux décimaux, hexadécimaux et binaires sont assignés aux valeurs `int`.  
   
 [!code-cs[int](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Int)]  
 
