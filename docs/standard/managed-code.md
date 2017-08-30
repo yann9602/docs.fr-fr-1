@@ -1,6 +1,6 @@
 ---
-title: "Qu’est-ce que le « code managé » ?"
-description: "Qu’est-ce que le « code managé » ?"
+title: "Qu’est-ce que le code managé ?"
+description: "Découvrez dans quelle mesure le code managé est du code dont l’exécution est gérée par un runtime, le Common Language Runtime (CLR)."
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: mairaw
@@ -10,22 +10,23 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 7f761c4fc24b8d22d8d1f8116745ebb3f6583378
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: 263662c1c7f22c84e0de14c6480fa9807b46b2f2
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
 
 ---
 
-# <a name="what-is-managed-code"></a>Qu’est-ce que le « code managé » ?
+# <a name="what-is-managed-code"></a>Qu’est-ce que le code managé ?
 
-Quand vous utilisez le .NET Framework, vous rencontrez souvent le terme « code managé ». Ce document explique ce que signifie ce terme et fournit des informations supplémentaires sur le sujet.
+Quand vous utilisez .NET Framework, vous rencontrez souvent le terme « code managé ». Ce document explique ce que signifie ce terme et fournit des informations supplémentaires sur le sujet.
 
 Pour faire simple, le code managé est du code dont l’exécution est gérée par un runtime. Dans ce cas, le runtime en question est appelé le **Common Language Runtime** ou CLR, indépendamment de l’implémentation ([Mono](http://www.mono-project.com/) ou .NET Framework, ou .NET Core). CLR est chargé de prendre le code managé, de le compiler en code machine, puis de l’exécuter. Par ailleurs, le runtime fournit plusieurs services importants comme la gestion automatique de la mémoire, les limites de sécurité, la cohérence des types, etc.
 
 Par opposition, le « code non managé » est la façon dont vous pouvez exécuter un programme C/C++. Dans un environnement non managé, le programmeur est responsable de presque tout. Le programme réel est, essentiellement, un fichier binaire que le système d’exploitation charge en mémoire et démarre. Tout le reste, depuis la gestion de la mémoire aux considérations de sécurité, est à la charge du programmeur.
 
-Le code managé est écrit dans un des langages de haut niveau qui peuvent être exécutés sur la plateforme .NET, comme C#, Visual Basic, F# et d’autres. Quand vous compilez le code écrit dans ces langages avec leur compilateur respectif, vous n’obtenez pas de code machine. Vous obtenez un code en **langage intermédiaire** que le runtime compile ensuite et exécute. C++ est la seule exception à cette règle, car il peut également produire des fichiers binaires natifs, non managés qui s’exécutent sur Windows.
+Le code managé est écrit dans un des langages de haut niveau qui peuvent être exécutés sur .NET, tels que C#, Visual Basic ou F#. Quand vous compilez le code écrit dans ces langages avec leur compilateur respectif, vous n’obtenez pas de code machine. Vous obtenez un code en **langage intermédiaire** que le runtime compile ensuite et exécute. C++ est la seule exception à cette règle, car il peut également produire des fichiers binaires natifs, non managés qui s’exécutent sur Windows.
 
 ## <a name="intermediate-language--execution"></a>Langage intermédiaire et exécution
 

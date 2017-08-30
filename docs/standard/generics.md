@@ -1,6 +1,6 @@
 ---
 title: "Vue d’ensemble des types génériques (Génériques)"
-description: "Vue d’ensemble des types génériques (Génériques)"
+description: "Découvrez dans quelle mesure les génériques peuvent faire office de modèles de code qui vous permettent de définir des structures de données de type sécurisé sans vous limiter à un type de données réel."
 keywords: .NET, .NET Core
 author: kuhlenh
 ms.author: wiwagn
@@ -10,20 +10,21 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 9827f9f37ce198b23bfd4e5fbca41cd86d5885a4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
+ms.openlocfilehash: 08b8de2fe17a0032a1c1180667f39b1d6ce0feb6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
 
 ---
 
 # <a name="generic-types-generics-overview"></a>Vue d’ensemble des types génériques (Génériques)
 
-Nous utilisons les génériques tout le temps en C#, implicitement ou explicitement. Quand vous utilisez LINQ dans C#, avez-vous déjà remarqué que vous utilisez IEnumerable<T> ? Sinon, si vous avez déjà vu un exemple en ligne d’un « référentiel générique » pour communiquer avec les bases de données à l’aide d’Entity Framework, avez-vous remarqué que la plupart des méthodes retournent IQueryable<T> ? Vous vous êtes peut-être demandé ce que signifie le **T** dans ces exemples et pourquoi il s’y trouve ?
+Nous utilisons les génériques tout le temps en C#, implicitement ou explicitement. Quand vous utilisez LINQ dans C#, avez-vous déjà remarqué que vous utilisez IEnumerable<T> ? Sinon, si vous avez déjà vu un exemple en ligne d’un « dépôt générique » pour communiquer avec les bases de données à l’aide d’Entity Framework, avez-vous remarqué que la plupart des méthodes retournent IQueryable<T> ? Vous vous êtes peut-être demandé ce que signifie le **T** dans ces exemples et pourquoi il s’y trouve ?
 
-Présentés pour la première fois dans le .NET Framework 2.0, les génériques impliquaient des modifications du langage C# et du Common Language Runtime (CLR). Les **génériques** sont essentiellement un « modèle de code » qui permet aux développeurs de définir des structures de données de [type sécurisé](https://msdn.microsoft.com/library/hbzz1a9a.aspx) sans se limiter à un type de données réel. Par exemple, `List<T>` est une [collection générique](https://msdn.microsoft.com/library/System.Collections.Generic.aspx) qui peut être déclarée et utilisée avec n’importe quel type : `List<int>`, `List<string>`, `List<Person>`, etc.
+Présentés pour la première fois dans le .NET Framework 2.0, les génériques impliquaient des modifications du langage C# et du Common Language Runtime (CLR). Les **génériques** sont essentiellement un « modèle de code » qui permet aux développeurs de définir des structures de données de [type sécurisé](https://msdn.microsoft.com/library/hbzz1a9a.aspx) sans se limiter à un type de données réel. Par exemple, `List<T>` est une [collection générique](xref:System.Collections.Generic) qui peut être déclarée et utilisée avec n’importe quel type : `List<int>`, `List<string>`, `List<Person>`, etc.
 
-Donc, quelle est l’idée ? Pourquoi les génériques sont-ils utiles ? Pour le comprendre, nous devons jeter un œil à une classe spécifique avant et après l’ajout des génériques. Observons `ArrayList`. Dans C# 1.0, les éléments `ArrayList` étaient de type `object`. C’est-à-dire que n’importe quel élément ajouté était converti en `object` en mode silencieux. La même chose se produit quand on lit des éléments de la liste (ce processus est appelé [boxing](https://msdn.microsoft.com/library/yz2be5wk.aspx) et unboxing, respectivement). Le boxing et l’unboxing ont un impact sur les performances. Par ailleurs, il est impossible de déterminer au moment de la compilation le type réel des données de la liste. Cela fragilise parfois le code. Les génériques résolvent ce problème en fournissant des informations supplémentaires sur le type de données que contient chaque instance de liste. Pour faire simple, vous pouvez ajouter uniquement des entiers dans `List<int>` et uniquement des personnes dans `List<Person>`, etc..
+Donc, quelle est l’idée ? Pourquoi les génériques sont-ils utiles ? Pour le comprendre, nous devons jeter un œil à une classe spécifique avant et après l’ajout des génériques. Observons `ArrayList`. Dans C# 1.0, les éléments `ArrayList` étaient de type `object`. C’est-à-dire que n’importe quel élément ajouté était converti en `object` en mode silencieux. La même chose se produit quand on lit des éléments de la liste (ce processus est appelé [boxing](https://msdn.microsoft.com/library/yz2be5wk.aspx) et unboxing, respectivement). Le boxing et l’unboxing ont un impact sur les performances. Par ailleurs, il est impossible de déterminer au moment de la compilation le type réel des données de la liste. Cela fragilise parfois le code. Les génériques résolvent ce problème en fournissant des informations supplémentaires sur le type de données que contient chaque instance de liste. Pour faire simple, vous pouvez ajouter uniquement des entiers dans `List<int>` et uniquement des personnes dans `List<Person>`, etc.
 
 Les génériques sont également disponibles au moment de l’exécution, ou **réifiés**. Cela signifie que le runtime sait quel type de structure de données vous utilisez et peut le stocker dans la mémoire plus efficacement.
 
@@ -57,7 +58,6 @@ Voici un petit programme qui illustre à quel point il est efficace de connaîtr
       }
     }
   }
-
 ```
 
 Ce programme produit la sortie suivante :
@@ -65,7 +65,6 @@ Ce programme produit la sortie suivante :
 ```console
 Generic Sort: System.Collections.Generic.List\`1[System.Int32] Time taken: 0.0789ms
 Non-Generic Sort: System.Collections.ArrayList Time taken: 2.4324ms
-
 ```
 
 La première chose que vous remarquez ici est que le tri de la liste générique est beaucoup plus rapide que celui de la liste non générique. Vous pouvez également noter que le type de la liste générique est différent ([System.Int32]) alors que le type de la liste non générique est généralisé. Comme le runtime sait que le générique `List<int>` est de type int, il peut stocker les éléments de liste dans un tableau d’entiers sous-jacent dans la mémoire, alors que le non générique `ArrayList` doit effectuer un cast de chaque élément de liste en objet stocké dans un tableau d’objets dans la mémoire. Comme le montre cet exemple, les casts supplémentaires prennent du temps et ralentissent le tri de la liste.

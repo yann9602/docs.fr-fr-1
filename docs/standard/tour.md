@@ -1,57 +1,48 @@
 ---
-title: "Présentation de .NET"
-description: "Visite guidée de certaines fonctionnalités principales de la plateforme .NET."
+title: "Visite guidée de .NET | Microsoft Docs"
+description: "Visite guidée de certaines fonctionnalités principales de .NET."
 keywords: ".NET, .NET Core, Présentation, Langages de programmation, Non sécurisé, Gestion de la mémoire, Cohérence des types, Asynchrone"
 author: cartermp
 ms.author: wiwagn
-ms.date: 02/09/2016
+ms.date: 05/22/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d00f2096e0799107a8a2ff1d12274c6026d4c27a
-ms.openlocfilehash: 50e5b333f892cf469e9f3fe57a0325ac6d8e641f
+ms.translationtype: HT
+ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
+ms.openlocfilehash: c64a3113cf4e9e9ff203ed2cf449359f67ee9d10
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 
-# Présentation de .NET
-<a id="tour-of-net" class="xliff"></a>
+# <a name="tour-of-net"></a>Présentation de .NET
 
-.NET est une plateforme de développement généraliste.  Elle comporte plusieurs fonctionnalités clés, telles que plusieurs langages de programmation, des modèles de programmation asynchrone et simultanée et une interopérabilité native, qui permettent un large éventail de scénarios sur plusieurs plateformes.
+.NET est une plateforme de développement généraliste. Elle comporte plusieurs fonctionnalités clés, telles que la prise en charge de plusieurs langages de programmation, des modèles de programmation asynchrone et simultanée et une interopérabilité native, qui permettent un large éventail de scénarios sur plusieurs plateformes.
 
-Cet article propose une visite guidée de certaines fonctionnalités principales de la plateforme .NET.
+Cet article propose une visite guidée de certaines fonctionnalités principales de .NET. Consultez la rubrique [Composants architecturaux de .NET](components.md) pour en savoir plus sur les parties architecturales de .NET et sur leur finalité.
 
-Consultez [Composants architecturaux de .NET](components.md) pour en savoir plus sur chacune des « parties » architecturales de .NET et sur leur finalité.
+## <a name="how-to-run-the-code-samples"></a>Comment exécuter les exemples de code
 
-## Guide pratique pour exécuter les exemples de code
-<a id="how-to-run-the-code-samples" class="xliff"></a>
+Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez la rubrique [Bien démarrer](get-started.md). Copiez et collez les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
 
-Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez [Bien démarrer](get-started.md).  Vous pouvez copier et coller les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
+## <a name="programming-languages"></a>Langages de programmation
 
-> [!NOTE]
-À l’avenir, ce site de documentation pourra exécuter ces exemples de code dans votre navigateur.
+.NET prend en charge plusieurs langages de programmation. Les implémentations de .NET implémentent le [Common Language Infrastructure (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages. Cela signifie que vous choisissez n’importe quel langage .NET pour générer des applications et services sur .NET.
 
-## Langages de programmation
-<a id="programming-languages" class="xliff"></a>
+Microsoft développe et prend en charge activement trois langages .NET : C#, F# et Visual Basic (VB). 
 
-.NET prend en charge plusieurs langages de programmation.  Les runtimes .NET implémentent le [Common Language Infrastructure (CLI)](https://www.visualstudio.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages.  Cela signifie que vous pouvez choisir n’importe quel langage .NET pour générer des applications et services sur .NET.
+* C# est simple, puissant, de type sécurisé et orienté objet, tout en conservant l’expressivité et l’élégance des langages de style C. Les utilisateurs familiarisés avec le langage C et les langages similaires ont peu de difficultés à s’adapter à C#. Consultez le [Guide C#](../csharp/index.md) pour en savoir plus sur C#.
 
-Microsoft développe et prend en charge activement trois langages .NET : C#, F# et Visual Basic .NET. 
+* F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.md) pour en savoir plus sur F#.
 
-* C# est simple, puissant, de type sécurisé et orienté objet, tout en conservant l’expressivité et l’élégance des langages de style C. Les utilisateurs familiarisés avec le langage C et les langages similaires auront peu de difficultés à s’adapter à C#.  Consultez le [Guide C#](../csharp/index.md) pour en savoir plus sur C#.
+* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Parmi les langages .NET, la syntaxe de VB est la plus proche du langage humain ordinaire, ce qui rend VB souvent accessible aux personnes qui débutent dans le développement de logiciels.
 
-* F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle.  Consultez le [Guide F#](../fsharp/index.md) pour en savoir plus sur F#.
+## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
 
-* Visual Basic est un langage facile à apprendre que vous pouvez utiliser pour créer une variété d’applications qui s’exécutent sur .NET.
-
-## Gestion automatique de la mémoire
-<a id="automatic-memory-management" class="xliff"></a>
-
-.NET utilise le [garbage collection](garbagecollection/index.md) pour fournir une gestion automatique de la mémoire pour les programmes.  Le récupérateur de mémoire opère avec une approche différée de la gestion de la mémoire, préférant le débit de l’application à la collecte immédiate de la mémoire.  Pour plus d’informations sur le garbage collector .NET, consultez [Notions de base du garbage collection (GC)](garbagecollection/fundamentals.md).
+.NET utilise le [garbage collection (GC)](garbagecollection/index.md) pour fournir une gestion automatique de la mémoire pour les programmes. Le récupérateur de mémoire opère avec une approche différée de la gestion de la mémoire, préférant le débit de l’application à la collecte immédiate de la mémoire. Pour plus d’informations sur le garbage collector .NET, consultez [Notions de base du garbage collection (GC)](garbagecollection/fundamentals.md).
 
 Les deux lignes suivantes allouent de la mémoire :
 
@@ -59,112 +50,103 @@ Les deux lignes suivantes allouent de la mémoire :
 
 Il n’existe aucun mot clé analogue pour libérer de la mémoire, car la libération de mémoire se produit automatiquement quand le récupérateur de mémoire réclame la mémoire dans son exécution planifiée.
 
-Le garbage collector est juste un des services qui garantissent la *sûreté de la mémoire*.  L’invariant de la sûreté de la mémoire est très simple : un programme a une mémoire sécurisée s’il accède uniquement à la mémoire qui a été allouée (et non libérée).  Par exemple, le runtime garantit que les programmes n’indexent pas à la fin d’un tableau ou accèdent à un champ fantôme à la fin d’un objet.
+Le garbage collector est un des services qui garantissent la *sûreté de la mémoire*. Un programme est sûr du point de vue de la mémoire s’il accède uniquement à la mémoire allouée. Par exemple, le runtime garantit qu’une application n’accède pas à la mémoire non allouée au-delà des limites d’un tableau.
 
-Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException` pour appliquer la sûreté de la mémoire.
+Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException` pour appliquer la sûreté de la mémoire :
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
-## Utilisation des ressources non managées
-<a id="working-with-unmanaged-resources" class="xliff"></a>
+## <a name="working-with-unmanaged-resources"></a>Utilisation des ressources non managées
 
-Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET.  Par exemple, un handle de fichier est une ressource non managée.  Un objet @System.IO.FileStream est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas.  Quand vous avez fini d’utiliser l’objet FileStream, vous devez libérer le handle de fichier.
+Certains objets font référence à des *ressources non managées*. Les ressources non managées sont des ressources qui ne sont pas automatiquement gérées par le runtime .NET. Par exemple, un handle de fichier est une ressource non managée. Un objet <xref:System.IO.FileStream> est un objet managé, mais il fait référence à un handle de fichier qui ne l’est pas. Quand vous avez fini d’utiliser l’objet <xref:System.IO.FileStream>, vous devez libérer le handle de fichier.
 
-Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface @System.IDisposable.  Quand vous avez fini d’utiliser l’objet, vous appelez la méthode @System.IDisposable.Dispose de l’objet qui est chargée de libérer les ressources non managées.  Les langages .NET fournissent une syntaxe `using` pratique pour ces objets, comme dans l’exemple suivant :
+Dans .NET, les objets qui font référence à des ressources non managées implémentent l’interface <xref:System.IDisposable>. Quand vous avez fini d’utiliser l’objet, vous appelez la méthode <xref:System.IDisposable.Dispose> de l’objet qui est chargée de libérer les ressources non managées. Les langages .NET fournissent une syntaxe `using` pratique pour ces objets, comme le montre l’exemple suivant :
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode @System.IDisposable.Dispose de l’objet `stream` qui libère le handle de fichier.  Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
+Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode <xref:System.IDisposable.Dispose> de l’objet `stream` qui libère le handle de fichier. Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
 
-Pour plus d’informations, consultez les pages suivantes :
+Pour plus de détails, consultez les rubriques suivantes :
 
-* Pour C#, [using, instruction](../csharp/language-reference/keywords/using-statement.md)
-* Pour F#, [Gestion des ressources : le mot clé `use` ](../fsharp/language-reference/resource-management-the-use-keyword.md)
-* Pour Visual Basic, [Using, instruction](../visual-basic/language-reference/statements/using-statement.md)
+* Pour C#, consultez la rubrique [using, instruction (référence C#)](../csharp/language-reference/keywords/using-statement.md).
+* Pour F#, consultez [Gestion des ressources : mot clé use](../fsharp/language-reference/resource-management-the-use-keyword.md).
+* Pour VB, consultez la rubrique [using, instruction (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md).
 
-## Cohérence des types
-<a id="type-safety" class="xliff"></a>
+## <a name="type-safety"></a>Cohérence des types
 
-Les objets sont alloués en termes de types. Les seules opérations autorisées pour un objet donné et la mémoire qu’il consomme sont celles de son type. Un type `Dog` peut avoir des méthodes `Jump` et `WagTail`, mais probablement pas une méthode `SumTotal`. Un programme peut appeler uniquement les méthodes déclarées d’un type donné. Tous les autres appels entraînent une erreur au moment de la compilation ou une exception au moment de l’exécution (en cas d’utilisation de fonctionnalités dynamiques ou du type `object`).
+Un objet est une instance d’un type spécifique. Les seules opérations autorisées pour un objet donné sont celles de son type. Un type `Dog` peut avoir des méthodes `Jump` et `WagTail`, mais pas une méthode `SumTotal`. Un programme appelle uniquement les méthodes appartenant à un type donné. Tous les autres appels entraînent une erreur au moment de la compilation ou une exception au moment de l’exécution (en cas d’utilisation de fonctionnalités dynamiques ou du type `object`).
 
-Les langages .NET sont orientés objet, avec des hiérarchies de classes de base et dérivées. Le runtime .NET autorise uniquement les casts et les appels d’objet qui s’alignent sur la hiérarchie d’objets. N’oubliez pas que chaque type défini dans un langage .NET dérive du type `object` de base.
+Les langages .NET sont orientés objet avec des hiérarchies de classes de base et dérivées. Le runtime .NET autorise uniquement les casts et les appels d’objet qui s’alignent sur la hiérarchie d’objets. N’oubliez pas que chaque type défini dans un langage .NET dérive du type <xref:System.Object> de base.
 
-[!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L18-L23)]
+[!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L19-L23)]
 
 La cohérence des types est également utilisée pour aider à appliquer l’encapsulation en garantissant la fidélité des mots clés d’accesseur. Les mots clés d’accesseur sont des artefacts qui contrôlent l’accès aux membres d’un type donné par un autre code. Ils servent généralement à différentes sortes de données dans un type utilisées pour gérer son comportement.
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, Visual Basic et F# prennent en charge l’**inférence de type** locale. L’inférence de type signifie que le compilateur déduit le type de l’expression à gauche à partir de l’expression à droite. Cela ne signifie pas que la cohérence des types est interrompue ou évitée. Le type résultant **a** un type fort avec tout ce que cela implique. Réécrivons les deux premières lignes de l’exemple précédent pour introduire l’inférence de type. Notez que le reste de l’exemple est complètement identique.
+C#, VB et F# prennent en charge l’*inférence de type* locale. L’inférence de type signifie que le compilateur déduit le type de l’expression à gauche à partir de l’expression à droite. Cela ne signifie pas que la cohérence des types est interrompue ou évitée. Le type résultant a un type fort avec tout ce que cela implique. À partir de l’exemple précédent, `dog` et `cat` sont réécrits pour présenter l’inférence de type, et le reste de l’exemple reste inchangé :
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F# offre des fonctionnalités d’inférence de type qui vont au-delà de l’inférence de type limitée aux méthodes disponible en C# et Visual Basic.  Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
+F# offre des fonctionnalités d’inférence de type qui vont au-delà de l’inférence de type limitée aux méthodes disponible en C# et VB. Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
 
-## Délégués et expressions lambda
-<a id="delegates-and-lambdas" class="xliff"></a>
+## <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
-Les délégués sont comme des pointeurs de fonction C++, à la grande différence qu’ils sont de type sécurisé. Ils représentent une sorte de méthode déconnectée au sein du système de type CLR. Les méthodes régulières sont attachées à une classe et peuvent être appelées directement uniquement par des conventions d’appel statiques ou d’instance.
+Un délégué est représenté par une signature de méthode. Toute méthode avec cette signature peut être assignée au délégué et est exécutée quand celui-ci est appelé.
 
-Les délégués sont utilisés dans diverses API et emplacements de l’environnement .NET, en particulier dans les expressions lambda, qui sont la pierre angulaire de LINQ.
+Les délégués sont semblables aux pointeurs de fonction C++, à la différence qu’ils sont de type sécurisé. Ils représentent une sorte de méthode déconnectée au sein du système de type CLR. Les méthodes classiques sont attachées à une classe et peuvent être appelées directement uniquement par des conventions d’appel statiques ou d’instance.
 
-Pour en savoir plus sur ce sujet, lisez le document [Délégués et expressions lambda](delegates-lambdas.md).
+Dans .NET, les délégués sont souvent utilisés dans les gestionnaires d’événements, dans la définition des opérations asynchrones et dans les expressions lambda, qui sont la pierre angulaire de LINQ. Pour en savoir plus, consultez la rubrique [Délégués et expressions lambda](delegates-lambdas.md).
 
-## Génériques
-<a id="generics" class="xliff"></a>
+## <a name="generics"></a>Génériques
 
-Les génériques sont une fonctionnalité qui a été ajoutée dans .NET Framework 2.0. En bref, les génériques permettent au programmeur d’introduire un « paramètre de type » quand il désigne leurs classes qui permet au code client (les utilisateurs du type) de spécifier le type exact à utiliser à la place du paramètre de type.
+Les génériques permettent au programmeur d’introduire un *paramètre de type* quand il désigne leurs classes qui permet au code client (les utilisateurs du type) de spécifier le type exact à utiliser à la place du paramètre de type.
 
-Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type `List`, par exemple, soit générique, il fallait utiliser des éléments qui étaient de type `object`. Cela entraînait des variations de performances ainsi que des problèmes sémantiques, sans oublier les possibles erreurs d’exécution subtiles. Les erreurs les plus connues dans cette dernière catégorie interviennent quand une structure de données contient, par exemple, des entiers et des chaînes et qu’une exception `InvalidCastException` est levée pendant l’utilisation des membres de la liste.
+Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type comme `List` soit générique, il fallait utiliser des éléments qui étaient de type `object`. Cela entraînait différents problèmes liés aux performances et à la sémantique, ainsi que des erreurs d’exécution subtiles éventuelles. Les erreurs les plus connues dans cette dernière catégorie interviennent quand une structure de données contient, par exemple, des entiers et des chaînes et qu’une exception `InvalidCastException` est levée pendant l’utilisation des membres de la liste.
 
-L’exemple suivant montre une exécution de programme de base utilisant une instance des types @System.Collections.Generic.List%601 types.
+L’exemple suivant montre une exécution de programme de base utilisant une instance des types <xref:System.Collections.Generic.List%601> :
 
 [!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
 
-Pour plus d’informations, consultez l’article [Vue d’ensemble des types génériques (Génériques)](generics.md).
+Pour plus d’informations, consultez la rubrique [Vue d’ensemble des types génériques (Génériques)](generics.md).
 
-## Programmation asynchrone
-<a id="async-programming" class="xliff"></a>
+## <a name="async-programming"></a>Programmation asynchrone
 
-La programmation asynchrone est un concept de première classe dans .NET, avec prise en charge asynchrone dans le runtime, les bibliothèques de framework et les constructions de langage .NET. En interne, ils sont basés sur des objets (comme `Task`) qui tirent parti du système d’exploitation pour effectuer aussi efficacement que possible des tâches utilisant des E/S.
+La programmation asynchrone est un concept de première classe dans .NET avec prise en charge asynchrone dans le runtime, des bibliothèques de framework et des constructions de langage .NET. En interne, ils sont basés sur des objets (comme `Task`), qui tirent parti du système d’exploitation pour effectuer aussi efficacement que possible des tâches utilisant des E/S.
 
-Pour en savoir plus sur la programmation asynchrone dans .NET, commencez par la [Vue d’ensemble d’Async](async.md).
+Pour en savoir plus sur la programmation asynchrone dans .NET, commencez par la rubrique [Vue d’ensemble d’Async](async.md).
 
-## LINQ (Language-Integrated Query)
-<a id="language-integrated-query-linq" class="xliff"></a>
+## <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
-LINQ est un ensemble puissant de fonctionnalités pour C# et VB qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, dans une base de données SQL ou un document XML), mais le code LINQ que vous écrivez généralement n’est pas différent pour chaque source de données !
+LINQ est un ensemble puissant de fonctionnalités pour C# et VB qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, une base de données SQL ou un document XML), mais le code LINQ que vous écrivez ne diffère généralement pas d’une source de données à l’autre.
 
-Pour en savoir plus et obtenir des exemples, consultez [LINQ (Language Integrated Query)](using-linq.md).
+Pour en savoir plus et obtenir des exemples, consultez la rubrique [LINQ (Language Integrated Query)](using-linq.md).
 
-## Interopérabilité native
-<a id="native-interoperability" class="xliff"></a>
+## <a name="native-interoperability"></a>Interopérabilité native
 
-Chaque système d’exploitation en cours d’utilisation prend en charge un grand nombre de plateformes pour diverses tâches de programmation. .NET offre plusieurs moyens de tirer parti de ces API. Collectivement, cette prise en charge est appelée « interopérabilité native » et, dans cette section, nous allons voir comment accéder aux API natives à partir du code managé .NET.
+Chaque système d’exploitation inclut une interface de programmation d’application (API) qui fournit des services système. .NET offre plusieurs moyens d’appeler ces API.
 
-Le principal moyen d’effectuer une interopérabilité native est via l’« appel de code non managé » ou P/Invoke, en forme abrégée. Cette prise en charge dans .NET Core est disponible sur les plateformes Linux et Windows. Un autre moyen de faire une interopérabilité native sur Windows uniquement est connu sous le nom de « COM Interop », utilisé pour travailler avec des [composants COM](https://msdn.microsoft.com/library/bwa2bx93.aspx) dans du code managé. Il est basé sur l’infrastructure de P/Invoke, mais fonctionne légèrement différemment.
+Le principal moyen d’effectuer une interopérabilité native est via l’« appel de code non managé » ou P/Invoke, en forme abrégée, fonctionnalité prise en charge sur les plateformes Linux et Windows. Un moyen de faire une interopérabilité native sur Windows uniquement est connu sous le nom de « COM Interop », utilisé pour travailler avec des [composants COM](https://msdn.microsoft.com/library/bwa2bx93.aspx) dans du code managé. Il est basé sur l’infrastructure de P/Invoke, mais fonctionne légèrement différemment.
 
 Une grande partie de la prise en charge d’interopérabilité dans Mono (et donc dans Xamarin) pour Java et Objective-C est générée de la même façon, autrement dit, ils utilisent les mêmes principes.
 
-Pour en savoir plus, lisez le document [Interopérabilité native](native-interop.md).
+Pour en savoir plus sur l’interopérabilité native, lisez la rubrique [Interopérabilité native](native-interop.md).
 
-## Code unsafe
-<a id="unsafe-code" class="xliff"></a>
+## <a name="unsafe-code"></a>Code unsafe
 
-Le CLR permet d’accéder à la mémoire native et d’effectuer une opération arithmétique de pointeur via du code `unsafe`. Ces opérations sont nécessaires pour certains algorithmes et pour l’interopérabilité du système. L’utilisation de code unsafe, bien que puissante, est déconseillée, sauf si elle est nécessaire pour assurer l’interopérabilité avec les API système ou implémenter l’algorithme le plus efficace. Le code unsafe peut ne pas s’exécuter de la même façon dans différents environnements et perd les avantages d’un récupérateur de mémoire et de la cohérence des types. Il est recommandé de restreindre et centraliser le code unsafe autant que possible, et de tester ce code de manière approfondie.
+En fonction de la prise en charge du langage, le CLR vous permet d’accéder à la mémoire native et d’effectuer une opération arithmétique de pointeur par le biais de code `unsafe`. Ces opérations sont nécessaires pour certains algorithmes et pour l’interopérabilité du système. L’utilisation de code unsafe, bien que puissante, est déconseillée, sauf si elle est nécessaire pour assurer l’interopérabilité avec les API système ou implémenter l’algorithme le plus efficace. Le code unsafe peut ne pas s’exécuter de la même façon dans différents environnements et perd les avantages d’un récupérateur de mémoire et de la cohérence des types. Nous vous recommandons de restreindre et centraliser le code unsafe autant que possible et de tester ce code de manière approfondie.
 
-L’exemple suivant est une version modifiée de la méthode `ToString()` à partir de la classe `StringBuilder`.  Il illustre comment l’utilisation de code `unsafe` peut implémenter efficacement un algorithme en déplaçant directement des segments de mémoire :
+L’exemple suivant est une version modifiée de la méthode `ToString()` à partir de la classe `StringBuilder`. Il illustre comment l’utilisation de code `unsafe` peut implémenter efficacement un algorithme en déplaçant directement des segments de mémoire :
 
 [!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
 
-## Étapes suivantes
-<a id="next-steps" class="xliff"></a>
+## <a name="next-steps"></a>Étapes suivantes
 
-Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Tour of C#](../csharp/tour-of-csharp/index.md) (Présentation de C#).
+Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Visite guidée de C#](../csharp/tour-of-csharp/index.md).
 
-Si vous êtes intéressé par une présentation des fonctionnalités de F#, consultez [Tour of F#](../fsharp/tour.md) (Présentation de F#).
+Si vous êtes intéressé par une présentation des fonctionnalités de F#, consultez [Visite guidée de F#](../fsharp/tour.md).
 
-Si vous voulez vous familiariser avec l’écriture de votre propre code, consultez [Getting Started](get-started.md) (Bien démarrer).
+Si vous voulez vous familiariser avec l’écriture de votre propre code, visitez la page [Bien démarrer](get-started.md).
 
 Pour obtenir des informations sur les composants importants de .NET, consultez [Composants architecturaux de .NET](components.md).
 

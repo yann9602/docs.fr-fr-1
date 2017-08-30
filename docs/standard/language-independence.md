@@ -1,26 +1,26 @@
 ---
 title: "Indépendance du langage et composants indépendants du langage"
-description: "Indépendance du langage et composants indépendants du langage"
+description: "Découvrez comment développer dans un des nombreux langages pris en charge dans .NET, tels que C#, C++/CLI, F#, IronPython, VB, Visual COBOL et PowerShell."
 keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
+author: dotnet-bot
+ms.author: dotnetcontent
 ms.date: 07/22/2016
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 815d9c24c139ef738b256c7bee791756a2fdb3b3
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: 3da0bc3c9abf28aeb588ec9277c4e0b503df4d8b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 08/21/2017
 
 ---
 
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
-La plateforme .NET est indépendante du langage. Cela signifie qu’en tant que développeur, vous pouvez développer dans un des nombreux langages qui ciblent la plateforme .NET, comme C#, F# et Visual Basic. Vous pouvez accéder aux types et aux membres des bibliothèques de classes développées pour la plateforme .NET sans avoir à connaître le langage dans lequel ils ont été initialement écrits ni à suivre les conventions du langage d’origine. Si vous développez des composants, votre composant est accessible par toute application .NET, indépendamment de son langage.
+.NET est indépendant du langage. Cela signifie qu’en tant que développeur, vous pouvez développer dans un des nombreux langages qui ciblent des implémentations de .NET, comme C#, F# et Visual Basic. Vous pouvez accéder aux types et aux membres des bibliothèques de classes développées pour des implémentations de .NET sans avoir à connaître le langage dans lequel ils ont été initialement écrits ni à suivre les conventions du langage d’origine. Si vous développez des composants, votre composant est accessible par toute application .NET, indépendamment de son langage.
 
 > [!NOTE]
 > La première partie de cet article décrit la création de composants indépendants du langage, c’est-à-dire de composants qui peuvent être utilisés par des applications écrites dans n’importe quel langage. Vous pouvez également créer un composant ou une application unique à partir de code source écrit dans plusieurs langages. Consultez [Interopérabilité multilingue](#cross-language-interoperability) dans la deuxième partie de cet article. 
@@ -347,7 +347,7 @@ Type non conforme | Description | Alternative conforme à CLS
  
  La bibliothèque de classes du .NET Framework ou toute autre bibliothèque de classes peut inclure d'autres types non conformes à CLS. Par exemple : 
  
- * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int` *nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
+ * Types de valeurs encadrés. L’exemple C# suivant crée une classe qui a une propriété publique de type `int`*nommée `Value`. Comme `int`* est un type de valeur encadré, le compilateur le signale comme non conforme CLS.
 
   ```csharp
   using System;
@@ -1110,7 +1110,7 @@ Les tableaux conformes à CLS respectent les règles suivantes :
          Return numbersOut
      End Function
   End Module
-```
+  ```
 
 ### <a name="interfaces"></a>Interfaces
 
@@ -1628,7 +1628,7 @@ End Module
 
 Les noms des types génériques sont encodés sous la forme *nom*'*n*, où *nom* est le nom du type, *`* est un caractère littéral et *n* est le nombre de paramètres déclarés sur le type ou, pour les types génériques imbriqués, le nombre de paramètres de type récemment introduits. Cet encodage de noms de types génériques intéresse principalement les développeurs qui utilisent la réflexion pour accéder aux types génériques conformes à CLS dans une bibliothèque. 
 
-Si les contraintes sont appliquées à un type générique, tous les types utilisés en tant que contraintes doivent également être conformes à CLS. L'exemple suivant définit une classe nommée `BaseClass` qui n'est pas conforme à CLS et une classe générique nommée `BaseCollection` dont le paramètre de type doit dériver de `BaseClass`. Toutefois, comme `BaseClass` n’est pas conforme CLS, le compilateur émet un avertissement. 
+Si les contraintes sont appliquées à un type générique, tous les types utilisés en tant que contraintes doivent également être conformes à CLS. L'exemple suivant définit une classe nommée `BaseClass` qui n'est pas conforme à CLS et une classe générique nommée `BaseCollection` dont le paramètre de type doit dériver de `BaseClass`. Toutefois, comme `BaseClass` n'est pas conforme à CLS, le compilateur émet un avertissement. 
 
 ```csharp
 using System;
@@ -1660,7 +1660,6 @@ End Class
 '    
 '    Public Class BaseCollection(Of T As BaseClass)
 '                                        ~~~~~~~~~
-
 ```
 
 Si un type générique est dérivé d'un type de base générique, il doit redéclarer toutes les contraintes pour s'assurer que les contraintes du type de base sont également satisfaites. L'exemple suivant définit un `Number<T>` qui peut représenter un type numérique. Il définit également une classe `FloatingPoint<T>` qui représente une valeur à virgule flottante. Toutefois, le code source ne se compile pas, car il n'applique pas la contrainte `Number<T>` (ce T doit être un type de valeur) à `FloatingPoint<T>`.
@@ -1938,7 +1937,7 @@ Les constructeurs des classes et structures conformes à CLS doivent suivre ces 
 
 * Un constructeur d'une classe dérivée doit appeler le constructeur d'instance de sa classe de base avant d'accéder aux données d'instance héritées. Cette spécification est due au fait que les constructeurs de classes de base ne sont pas hérités par leurs classes dérivées. Cette règle ne s'applique pas aux structures, qui ne prennent pas en charge l'héritage direct. 
 
-  En général, les compilateurs appliquent cette règle indépendamment de la conformité CLS, comme indiqué dans l'exemple suivant. Il crée une classe `Doctor` dérivée d’une classe `Person`, mais la classe `Doctor` ne parvient pas à appeler le constructeur de classe `Person` pour initialiser les champs d’instance hérités. 
+  En général, les compilateurs appliquent cette règle indépendamment de la conformité CLS, comme indiqué dans l'exemple suivant. Il crée une classe `Doctor` dérivée d'une classe `Person`, mais la classe `Doctor` ne parvient pas à appeler le constructeur de classe `Person` pour initialiser les champs d'instance hérités. 
 
     ```csharp
     using System;

@@ -1,76 +1,74 @@
 ---
-title: Choix entre .NET Core et .NET Framework pour les applications serveur
-description: "Guide sur la version de .NET à envisager pour générer une application serveur dans .NET."
-keywords: .NET, .NET Core, .NET Framework
+title: Choisir entre .NET Core et .NET Framework pour les applications serveur
+description: "Guide sur l’implémentation de .NET à envisager pour générer une application serveur dans .NET."
 author: cartermp
 ms.author: mairaw
-ms.date: 11/16/2016
+ms.date: 08/15/2016
 ms.topic: article
 ms.prod: .net
-ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 155553e4-89a2-418d-be88-4e75f6c3cc69
-translationtype: Human Translation
-ms.sourcegitcommit: 405bac1faa446687a4acdcf2d5536ee31f31f246
-ms.openlocfilehash: 7151c87d373afce88c83239499ba33980383ab98
-ms.lasthandoff: 03/15/2017
+ms.translationtype: HT
+ms.sourcegitcommit: fe2c7ff4055779a000b68a68333f3e4d06381410
+ms.openlocfilehash: aa06ff8253f22c5c867d4ba12c0a132269e04a97
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
 
 ---
-
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
-Il existe deux options de runtime pour générer des applications serveur avec .NET : .NET Framework et .NET Core. Toutes deux partagent un grand nombre de composants de plateforme .NET et vous permettent de partager du code entre les deux. Toutefois, il existe des différences fondamentales entre les deux et votre choix dépend de ce que vous souhaitez accomplir.  Cet article fournit des conseils sur l’utilisation de chacune.
+Il existe deux implémentations pour générer des applications serveur avec .NET : .NET Framework et .NET Core. Toutes deux partagent de nombreux composants et vous permettent de partager du code entre les deux. Toutefois, il existe des différences fondamentales entre les deux et votre choix dépend de ce que vous souhaitez accomplir.  Cet article fournit des conseils sur l’utilisation de chacune.
 
-Vous devez utiliser .NET Core pour votre application serveur quand :
+Utilisez .NET Core pour votre application serveur quand :
 
-* vous avez des besoins multiplateformes ;
-* vous ciblez des microservices ;
-* vous utilisez des conteneurs Docker ;
-* vous avez besoin de systèmes scalables et hautes performances ;
-* vous avez besoin d’une installation côte à côte de versions .NET par application.
+* Vous avez des besoins multiplateformes.
+* Vous ciblez des microservices.
+* Vous utilisez des conteneurs Docker.
+* Vous avez besoin de systèmes scalables et hautes performances.
+* Vous avez besoin de versions .NET côte à côte par application.
 
-Vous devez utiliser .NET Framework pour votre application serveur quand :
+Utilisez .NET Framework pour votre application serveur quand :
 
-* votre application utilise .NET Framework (nous vous recommandons de privilégier l’extension à la migration) ;
-* vous devez utiliser des packages NuGet ou des bibliothèques .NET tiers non disponibles pour .NET Core ;
-* vous devez utiliser des technologies .NET non disponibles pour .NET Core ;
-* vous devez utiliser une plateforme qui ne prend pas en charge .NET Core.
+* Votre application utilise le .NET Framework (nous vous recommandons de privilégier l’extension à la migration).
+* Votre application utilise des packages NuGet ou des bibliothèques .NET tiers non disponibles pour .NET Core.
+* Votre application utilise des technologies .NET non disponibles pour .NET Core.
+* Votre application utilise une plateforme qui ne prend pas en charge .NET Core.
 
 ## <a name="when-to-choose-net-core"></a>Quand choisir .NET Core
 
-Voici une explication plus détaillée des raisons indiquées précédemment justifiant le choix de .NET Core.
+Les sections suivantes donnent une explication plus détaillée des raisons indiquées précédemment justifiant le choix de .NET Core.
 
 ### <a name="cross-platform-needs"></a>Besoins multiplateformes
 
-De toute évidence, si votre objectif est d’avoir une application (web/service) qui peut s’exécuter sur plusieurs plateformes (Windows, Linux et macOS), le meilleur choix est d’utiliser .NET Core.
+Si votre application (web/service) doit s’exécuter sur plusieurs plateformes (Windows, Linux et macOS), utilisez .NET Core.
 
-En outre, .NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows.  Vous pouvez également utiliser Visual Studio Code sur macOS, Linux et Windows, qui prennent entièrement en charge .NET Core, y compris IntelliSense et le débogage. Vous pouvez cibler .NET Core avec la plupart des éditeurs tiers comme Sublime, Emacs, VI, et profiter de la fonctionnalité d’édition IntelliSense à l’aide du projet [Omnisharp](http://www.omnisharp.net/) open source. Vous pouvez aussi vous affranchir des éditeurs de code et utiliser directement les outils en ligne de commande .NET Core, disponibles pour toutes les plateformes prises en charge.
+.NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et Mac. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](http://www.omnisharp.net/). Vous pouvez aussi vous affranchir des éditeurs de code et utiliser directement les [outils CLI .NET Core](../core/tools/index.md), disponibles pour toutes les plateformes prises en charge.
 
 ### <a name="microservices-architecture"></a>Architecture en microservices
 
-.NET Core est la meilleure solution dans le cadre d’un système orienté microservices composé de plusieurs microservices indépendants, dynamiquement scalables, avec ou sans état. .NET Core est léger et la surface de son API peut être réduite à l’étendue du microservice. Grâce à une architecture en microservices, vous pouvez combiner des technologies au-delà de la limite d’un service, permettant ainsi une prise en charge progressive de .NET Core pour de nouveaux microservices qui côtoient d’autres microservices ou services développés avec .NET Framework, Java, Ruby ou d’autres technologies monolithiques.
+Une architecture en microservices permet une combinaison de technologies au-delà des limites d’un service. Cette combinaison de technologies favorise l’adoption progressive de .NET Core pour les nouveaux microservices qui utilisent d’autres microservices ou services. Par exemple, vous pouvez combiner des microservices ou services développés avec .NET Framework, Java, Ruby ou d’autres technologies monolithiques.
 
-Vous pouvez utiliser de nombreuses plateformes d’infrastructure. Pour les systèmes de microservice volumineux et complexes, vous pouvez utiliser [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/). Pour les microservices sans état, vous pouvez également utiliser d’autres produits tels qu’[Azure App Service](https://azure.microsoft.com/services/app-service/). Les alternatives aux microservices basées sur Docker s’intègrent aussi à tout type d’approche des microservices, comme expliqué ci-après. Toutes ces plateformes prennent en charge .NET Core et s’avèrent idéales pour l’hébergement de vos microservices.
+Il existe de nombreuses plateformes d’infrastructure. [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) est conçu pour les systèmes de microservice volumineux et complexes. [Azure App Service](https://azure.microsoft.com/services/app-service/) est un bon choix pour les microservices sans état. Les alternatives aux microservices basées sur Docker s’intègrent à tout type d’approche des microservices, comme expliqué dans la section [Conteneurs](#containers). Toutes ces plateformes prennent en charge .NET Core et s’avèrent idéales pour l’hébergement de vos microservices.
+
+Pour plus d’informations sur l’architecture en microservices, consultez [Microservices .NET. Architecture pour les applications .NET en conteneurs](microservices-architecture/index.md).
 
 ### <a name="containers"></a>Conteneurs
 
-Les conteneurs sont couramment utilisés avec une architecture en microservices, même s’ils peuvent également servir à organiser en conteneurs les services ou applications web qui suivent un modèle architectural. Vous pouvez utiliser .NET Framework pour les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est parfait pour les conteneurs. Quand vous créez et déployez un conteneur, la taille de son image est beaucoup plus petite avec .NET Core qu’avec .NET Framework. Grâce à sa nature multiplateforme, vous pouvez déployer des applications serveur sur des conteneurs Docker Linux, par exemple.
+Les conteneurs sont couramment utilisés conjointement avec une architecture en microservices. Les conteneurs peuvent également servir à mettre en conteneur des applications ou services web qui suivent un modèle d’architecture. Le .NET Framework peut être utilisé pour les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est un meilleur choix pour les conteneurs. Quand vous créez et déployez un conteneur, la taille de son image est beaucoup plus petite avec .NET Core qu’avec le .NET Framework. Grâce à sa nature multiplateforme, vous pouvez déployer des applications serveur sur des conteneurs Docker Linux, par exemple.
 
-Vous pouvez ensuite héberger vos conteneurs Docker dans votre propre infrastructure Linux ou Windows, ou utiliser un service cloud tel qu’[Azure Container Service](https://azure.microsoft.com/services/container-service/) qui peut gérer, orchestrer et mettre à l’échelle votre application conteneur dans le cloud.
+Les conteneurs Docker peuvent être hébergés dans votre propre infrastructure Windows ou Linux, ou dans un service cloud comme [Azure Container Service](https://azure.microsoft.com/services/container-service/). Azure Container Service peut gérer, orchestrer et mettre à l’échelle des applications basées sur le conteneur dans le cloud.
 
 ### <a name="a-need-for-high-performance-and-scalable-systems"></a>Besoin de systèmes scalables et hautes performances
 
-Quand votre système a besoin de performances et d’une scalabilité optimales, .NET Core et ASP.NET Core sont vos meilleures options. ASP.NET Core surpasse ASP.NET d’un facteur de 10 et devance les autres technologies courantes pour les microservices telles que les servlets Java, Go et node.js.
+Quand votre système a besoin de performances et d’une scalabilité optimales, .NET Core et ASP.NET Core sont vos meilleures options. Un runtime serveur hautes performances pour Windows Server et Linux fait de .NET un framework web particulièrement attractif d’après les [bancs d’essai TechEmpower](https://www.techempower.com/benchmarks/#hw=ph&test=plaintext).
 
-Cela est particulièrement vrai pour les architectures en microservices qui peuvent compter des centaines de microservices en cours d’exécution. Avec ASP.NET Core, vous pouvez exécuter votre système avec un nombre de serveurs/machines virtuelles largement inférieur, économisant ainsi des coûts en infrastructure et hébergement.
+Niveau de performance et scalabilité sont particulièrement pertinents pour les architectures en microservices, où des centaines de microservices peuvent être en cours d’exécution. Avec ASP.NET Core, les systèmes sont exécutés avec un nombre bien inférieur de serveurs/machines virtuelles. Cette réduction engendre une baisse des coûts d’infrastructure et d’hébergement.
 
 ### <a name="a-need-for-side-by-side-of-net-versions-per-application-level"></a>Besoin d’une installation côte à côte de versions .NET par niveau d’application
 
-Pour installer des applications avec des dépendances sur différentes versions de frameworks dans .NET, vous devez utiliser .NET Core, qui permet une installation 100 % côte à côte. Grâce à une installation côte à côte facile de différentes versions de .NET Core sur le même ordinateur, vous disposez de plusieurs services sur le même serveur, chacun d’eux sur sa propre version de .NET Core, éliminant ainsi les risques et réduisant les coûts des opérations informatiques et des mises à niveau des applications.
+Pour installer des applications avec des dépendances sur différentes versions de .NET, nous vous recommandons .NET Core. .NET Core permet d’installer côte à côte différentes versions du runtime .NET Core sur le même ordinateur. Ainsi, plusieurs services peuvent cohabiter sur le même serveur, chacun d’eux sur sa propre version de .NET Core. De plus, les risques et les coûts liés aux opérations informatiques et aux mises à niveau des applications s’en trouvent réduits.
 
-## <a name="when-to-choose-net-framework"></a>Quand choisir .NET Framework
+## <a name="when-to-choose-net-framework"></a>Quand choisir le .NET Framework
 
-Si .NET Core offre des avantages significatifs pour les nouvelles applications et les modèles d’application, .NET Framework demeure le choix naturel pour de nombreux scénarios existants et n’est donc pas remplacé par .NET Core pour toutes les applications serveur.
+.NET Core offre des avantages significatifs pour les nouvelles applications et les nouveaux modèles d’application. Toutefois, le .NET Framework continue d’être le choix naturel pour de nombreux scénarios existants et en tant que tel. Le .NET Framework n’est pas remplacé par .NET Core pour toutes les applications serveur.
 
 ### <a name="current-net-framework-applications"></a>Applications .NET Framework actuelles
 
@@ -78,36 +76,41 @@ Dans la plupart des cas, vous ne devez pas migrer vos applications existantes ve
 
 ### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Besoin d’utiliser des packages NuGet ou des bibliothèques .NET tiers non disponibles pour .NET Core
 
-Les bibliothèques adoptent rapidement .NET Standard qui permet le partage du code entre toutes les versions de .NET, notamment .NET Core. Avec .NET 2.0 Standard, c’est encore plus facile car la surface de l’API de .NET Core s’étend considérablement et les applications .NET Core peuvent utiliser directement les bibliothèques .NET Framework existantes. Toutefois, cette transition ne sera pas immédiate. Nous vous recommandons donc de vérifier les bibliothèques dont a besoin votre application avant de prendre une décision.
+Les bibliothèques adoptent rapidement .NET Standard. .NET standard permet de partager du code sur toutes les implémentations de .NET, y compris .NET Core. Avec .NET 2.0 Standard, cela est encore plus simple :
+- La surface de l’API est désormais beaucoup plus grande. 
+- Un mode de compatibilité du .NET Framework a été introduit. Ce mode de compatibilité permet aux projets .NET Standard/.NET Core de référencer des bibliothèques .NET Framework. Pour en savoir plus sur le mode de compatibilité, consultez [Annonce de .NET 2.0 Standard](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/).
+
+Ainsi, seulement dans les cas où les bibliothèques ou les packages NuGet utilisent des technologies qui ne sont pas disponibles dans .NET Standard/.NET Core, vous devez utiliser le .NET Framework.
 
 ### <a name="a-need-to-use-net-technologies-not-available-for-net-core"></a>Besoin d’utiliser des technologies .NET non disponibles pour .NET Core
 
-Certaines technologies .NET Framework ne sont pas disponibles dans .NET Core. Certaines d’entre elles seront disponibles dans les prochaines versions Release de .NET Core, tandis que d’autres, qui ne s’appliquent pas aux nouveaux modèles d’application ciblés par .NET Core, risquent de ne jamais l’être. La liste suivante présente les technologies les plus courantes absentes dans .NET Core 1.0 :
+Certaines technologies du .NET Framework ne sont pas disponibles dans .NET Core. Il se peut que certaines d’entre elles soient disponibles dans les prochaines versions release de .NET Core. D’autres, qui ne s’appliquent pas aux nouveaux modèles d’application ciblés par .NET Core, risquent de ne jamais être disponibles. La liste suivante présente les technologies les plus courantes absentes dans .NET Core :
 
-* Applications Web Forms ASP.NET : Web Forms ASP.NET n’étant disponible que sur .NET Framework, vous ne pouvez pas utiliser ASP.NET Core/.NET Core pour ce scénario. Il n’est pas prévu d’intégrer Web Forms ASP.NET à .NET Core.
+* Applications Web Forms ASP.NET : Web Forms ASP.NET n’est disponible que dans le .NET Framework. ASP.NET Core ne peut pas être utilisé pour Web Forms ASP.NET. Il n’est pas prévu d’intégrer Web Forms ASP.NET à .NET Core.
 
-* Applications ASP.NET Web Pages : la technologie ASP.NET Web Pages n’est pas incluse dans ASP.NET Core 1.0. Il est cependant prévu de l’inclure dans une prochaine version Release, comme expliqué dans la [feuille de route de .NET Core](https://github.com/aspnet/Home/wiki/Roadmap).
+* Applications Pages Web ASP.NET : le framework Pages Web ASP.NET n’est pas inclus dans ASP.NET Core. ASP.NET Core [Pages Razor](/aspnet/core/mvc/razor-pages/) a beaucoup de similitudes avec Pages Web.
 
-* Implémentation client/serveur SignalR ASP.NET. Le calendrier de la version Release de .NET Core 1.0 (juin 2016) ne prévoit pas la disponibilité de SignalR ASP.NET pour ASP.NET Core (client ou serveur), mais il est prévu de l’inclure dans une prochaine version, comme expliqué dans la [feuille de route .NET Core](https://github.com/aspnet/Home/wiki/Roadmap). L’état en préversion est disponible dans les dépôts GitHub [côté serveur](https://github.com/aspnet/SignalR-Server) et de la [bibliothèque cliente](https://github.com/aspnet/SignalR-Client-Net).
+* Implémentation client/serveur SignalR ASP.NET. ASP.NET SignalR n’est pas disponible pour ASP.NET Core (ni client, ni serveur). ASP.NET Core SignalR est prévu dans ASP.NET Core 2.1. Consultez [la planification et la feuille de route d’ASP.NET Core](https://github.com/aspnet/Home/wiki/Roadmap). L’état en préversion est disponible dans les dépôts GitHub [côté serveur](https://github.com/aspnet/SignalR-Server) et de la [bibliothèque cliente](https://github.com/aspnet/SignalR-Client-Net).
 
-* Implémentation des services WCF. Même s’il existe une [bibliothèque cliente WCF](https://github.com/dotnet/wcf) pour utiliser des services WCF à partir de .NET Core, à compter de juin 2016, l’implémentation serveur WCF est disponible uniquement sur .NET Framework. Ce scénario ne fait pas partie du plan actuel pour .NET Core, mais il est envisagé pour l’avenir.
+* Implémentation des services WCF. Même s’il existe une [bibliothèque cliente WCF](https://github.com/dotnet/wcf) pour utiliser des services WCF à partir de .NET Core, l’implémentation serveur WCF est disponible uniquement sur le .NET Framework. Ce scénario ne fait pas partie du plan actuel pour .NET Core, mais il est envisagé pour l’avenir.
 
-* Services liés aux flux de travail : Windows Workflow Foundation (WF), les services de flux de travail (WCF + WF dans un seul service) et les services de données WCF (anciennement « ADO.NET Data Services ») sont disponibles uniquement sur .NET Framework et il n’est pas prévu de les intégrer à .NET Core.
+* Services liés aux flux de travail : Windows Workflow Foundation (WF), les services de flux de travail (WCF + WF dans un seul service) et les Services de données WCF (anciennement « ADO.NET Data Services ») sont disponibles uniquement dans le .NET Framework.  Il n’est pas prévu d’intégrer WF/WCF+WF/WCF Data Services à .NET Core.
 
-* Windows Presentation Foundation (WPF) et Windows Forms : les applications WPF et Windows Forms ne sont disponibles que sur .NET Framework. Il n’est pas prévu de les déplacer vers .NET Core. 
+* Windows Presentation Foundation (WPF) et Windows Forms : les applications WPF et Windows Forms ne sont disponibles que dans le .NET Framework. Il n’est pas prévu de les déplacer vers .NET Core.
 
-* Prise en charge linguistique : Visual Basic et F# ne bénéficient pas des outils dans .NET Core, mais seront pris en charge dans Visual Studio versions 2017 et ultérieures.
+* Prise en charge des langages : Visual Basic et F# sont pris en charge dans .NET Core, mais pas pour tous les types de projet. Pour obtenir la liste des modèles de projet pris en charge, consultez [Options de modèle pour dotnet new](../core/tools/dotnet-new.md#arguments).
 
-En plus de la feuille de route officielle, d’autres frameworks doivent être portés vers .NET Core. Pour obtenir une liste complète, consultez les problèmes CoreFX portant l’étiquette [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Veuillez noter que cette liste ne constitue pas un engagement de Microsoft à intégrer ces composants à .NET Core, elle reflète simplement la volonté de la communauté en ce sens. Cela étant dit, si vous vous intéressez à l’un des composants indiqués ci-dessus, pensez à participer aux discussions sur GitHub pour faire entendre votre voix. Et si vous pensez que quelque chose fait défaut, veuillez [enregistrer un nouveau problème dans le dépôt CoreFX](https://github.com/dotnet/corefx/issues/new).
+En plus de la feuille de route officielle, il existe d’autres frameworks à porter vers .NET Core. Pour obtenir la liste complète, consultez les problèmes CoreFX portant l’étiquette [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Cette liste ne représente pas un engagement de Microsoft à intégrer les composants concernés à .NET Core. Elle reflète simplement le souhait de la communauté de les intégrer. Si un des composants portant l’étiquette `port-to-core` vous intéresse, participez aux discussions sur GitHub. Et si vous pensez que quelque chose fait défaut, [enregistrez un nouveau problème dans le dépôt CoreFX](https://github.com/dotnet/corefx/issues/new).
 
 ### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>Besoin d’utiliser une plateforme qui ne prend pas en charge .NET Core
 
 Certaines plateformes Microsoft ou tierces ne prennent pas en charge .NET Core. Par exemple, certains services Azure, tels que Service Fabric Stateful Reliable Services et Service Fabric Reliable Actors, exigent .NET Framework. D’autres services fournissent un SDK qui n’est pas encore utilisable sur .NET Core. Il s’agit d’une circonstance transitoire, car tous les services Azure utilisent .NET Core. En attendant, vous pouvez toujours utiliser l’API REST équivalente au lieu du SDK client.
 
-## <a name="further-resources"></a>Ressources supplémentaires
-
-* [Guide .NET Core](../core/index.md)
-* [Portage depuis .NET Framework vers .NET Core](../core/porting/index.md)
-* [Guide de .NET Framework sur Docker](../framework/index.md)
-* [Vue d’ensemble des composants .NET](components.md)
+## <a name="see-also"></a>Voir aussi
+ [Choisir entre ASP.NET et ASP.NET Core](/aspnet/core/choose-aspnet-framework)   
+ [Guide .NET Core](../core/index.md)   
+ [Portage depuis .NET Framework vers .NET Core](../core/porting/index.md)   
+ [Guide de .NET Framework sur Docker](../framework/docker/index.md)   
+ [Vue d’ensemble des composants .NET](components.md)   
+ [Microservices .NET. Architecture pour les applications .NET en conteneurs](microservices-architecture/index.md)
 
