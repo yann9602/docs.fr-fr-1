@@ -45,7 +45,7 @@ Le transfert de type vous permet de déplacer un type vers un autre assembly san
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
     ```  
   
-    ```cpp#  
+    ```cpp  
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
     ```  
   
