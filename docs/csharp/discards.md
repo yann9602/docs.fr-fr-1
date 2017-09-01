@@ -10,10 +10,10 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.translationtype: HT
-ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
-ms.openlocfilehash: eca5febd448a135eb7ec52e4243ae341563190df
+ms.sourcegitcommit: 6170e096e36f8d054fdfe9cbd8311e6492e32a04
+ms.openlocfilehash: 3f8804f9b7522e385b145a9643dec942cc1aab9f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="discards---c-guide"></a>Éléments ignorés - Guide C#
@@ -33,7 +33,7 @@ Dans C# 7, les éléments ignorés sont pris en charge dans les affectations da
 - Appels à des méthodes avec des paramètres `out`.
 - Un `_` autonome quand aucun `_` n’est dans l’étendue.
 
-Quand `_` est un élément ignoré valide, une tentative de récupérer sa valeur ou de l’utiliser dans une opération d’affectation génère l’erreur de compilateur CS0301, « Le nom « _ » n’existe pas dans le contexte actuel ». La raison en est qu’aucune valeur n’est affectée à `_` et qu’il n’est même pas possible de lui affecter un emplacement de stockage. S’il s’agissait d’une variable réelle, vous ne pourriez pas ignorer plus d’une valeur, comme l’a fait l’exemple précédent.
+Quand `_` est un élément ignoré valide, une tentative de récupérer sa valeur ou de l’utiliser dans une opération d’affectation génère l’erreur de compilateur CS0301, « Le nom '\_' n’existe pas dans le contexte actuel ». La raison en est qu’aucune valeur n’est affectée à `_` et qu’il n’est même pas possible de lui affecter un emplacement de stockage. S’il s’agissait d’une variable réelle, vous ne pourriez pas ignorer plus d’une valeur, comme l’a fait l’exemple précédent.
 
 ## <a name="tuple-and-object-deconstruction"></a>Déconstruction de tuple et d’objet
 
