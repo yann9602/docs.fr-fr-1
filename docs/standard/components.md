@@ -1,23 +1,19 @@
 ---
 title: Composants architecturaux de .NET
 description: "Décrit les composants architecturaux de .NET tels que .NET Standard, les implémentations de .NET, les runtimes .NET et les outils."
-keywords: .NET, .NET Standard, .NET Core, .NET Framework, Mono, Xamarin, MSBuild, C#, F#, VB, compilateurs
 author: cartermp
 ms.author: mairaw
-ms.date: 08/10/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
 ms.translationtype: HT
-ms.sourcegitcommit: 14522f165b22a7b1bb2a717a7c9f293a265f4eb0
-ms.openlocfilehash: 8934febe77b30fb318b06e4d8d297282368438a5
+ms.sourcegitcommit: 1b028e5880f9e57e87c16eabeb442e0a46a369da
+ms.openlocfilehash: ce3368f4c34a8e4b20a7deb2a6c6e4d163927cd4
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/23/2017
 
 ---
-
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
 Une application .NET est développée pour une ou plusieurs *implémentations de .NET* et s’exécute dans ces dernières.  Les implémentations de .NET incluent .NET Framework, .NET Core et Mono. Il existe une spécification d’API commune à toutes les implémentations de .NET, appelée .NET Standard. Cet article présente brièvement chacun de ces concepts.
@@ -43,9 +39,9 @@ Il existe quatre implémentations de .NET principales que Microsoft développe e
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core est une implémentation multiplateforme de .NET optimisée pour les charges de travail serveur. Il est moderne, efficace, et est conçu pour gérer les charges de travail serveur et cloud à grande échelle. Comme il implémente .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur .NET Core. ASP.NET Core s’exécute sur .NET Core.
+.NET Core est une implémentation multiplateforme de .NET conçue pour gérer les charges de travail serveur et cloud à l’échelle. Il s’exécute sur Windows, macOS et Linux. Comme il implémente .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur .NET Core. ASP.NET Core s’exécute sur .NET Core. 
 
-Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md).
+Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md) et [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md).
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -91,7 +87,7 @@ Vous avez accès à un ensemble complet d’outils et de composants d’infrastr
 - Outils d’orchestration de génération open source, tels que [CAKE](http://cakebuild.net/) et [FAKE](https://fake.build/)
 
 ## <a name="see-also"></a>Voir aussi
-
+[Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md)   
 [.NET Standard](net-standard.md)  
 [Guide .NET Core](../core/index.md)  
 [.NET Framework Guide](../framework/index.md) (Guide du .NET Framework)  
