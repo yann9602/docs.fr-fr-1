@@ -30,10 +30,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bf0b4a4130fe69a15e6db438ac1d58b676c9ee8b
+ms.sourcegitcommit: 8e8d01587ccde967b8484b3b61916f8cf437f6c0
+ms.openlocfilehash: 584d0cb249644e6b4ffe15e115c49256f5fa2716
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
@@ -55,6 +55,8 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[/pdb](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)|Spécifie le nom et l'emplacement du fichier .pdb.|  
 |[/platform](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)|Spécifie la plateforme de sortie.|  
 |[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|Spécifiez un langage pour les résultats de la compilation.|  
+|[/refout](refout-compiler-option.md)|Génère un assembly de référence en plus de l’assembly principal.|  
+|[/refonly](refonly-compiler-option.md)|Génère un assembly de référence au lieu d’un assembly principal.|  
 |[/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md)|Spécifie le format du fichier de sortie en utilisant l’une des cinq options suivantes : [/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md), [/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md), [/target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md), [/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), [/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md) ou [/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md).|  
 |/modulename:\<string>|Spécifiez le nom du module source.|  
   
@@ -132,5 +134,5 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 ## <a name="see-also"></a>Voir aussi  
  [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
  [Options du compilateur C# par ordre alphabétique](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)   
- [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+ [Comment : définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 

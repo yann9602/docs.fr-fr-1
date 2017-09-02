@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 291c35f73b47167289a88f0b7655c26699fdc009
+ms.sourcegitcommit: 8e8d01587ccde967b8484b3b61916f8cf437f6c0
+ms.openlocfilehash: 8a32dcab0a64fdb715871806088825e227f08abb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Options du compilateur C# par ordre alphabétique
@@ -85,6 +85,8 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|Spécifie la langue à utiliser pour la sortie du compilateur.|  
 |[/recurse](../../../csharp/language-reference/compiler-options/recurse-compiler-option.md)|Inclut tous les fichiers dans le répertoire et les sous-répertoires actuels en fonction des spécifications de caractères génériques.|  
 |[/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)|Référence les métadonnées à partir des fichiers d'assembly spécifiés.|  
+|[/refout](refout-compiler-option.md)|Génère un assembly de référence en plus de l’assembly principal.|  
+|[/refonly](refonly-compiler-option.md)|Génère un assembly de référence au lieu d’un assembly principal.|  
 |[/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md)|Incorpore la ressource spécifiée.|  
 |/ruleset:\<file>|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|  
 |[/subsystemversion](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)|Spécifie la version minimale du sous-système utilisable par le fichier exécutable.|  

@@ -10,10 +10,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 18cf7a4b-29f0-4b14-85b8-80af754aabd8
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 753c620e1352dfc5fc57c380c66479c8e2d9b0ee
+ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
+ms.openlocfilehash: 3f2ee35db5b77efcce629b6315060a723429b19c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/16/2017
 
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
@@ -32,7 +32,7 @@ La plupart des développeurs sont familiarisés avec le passage d’un argument 
 
 Les valeurs de retour de référence peuvent produire du code plus compact, et permettre également à un objet d’exposer uniquement les éléments de données individuels, tels que d’un élément de tableau, qui sont dignes d’intérêt pour l’appelant. Cela réduit la probabilité que l’appelant modifie par inadvertance l’état de l’objet.
 
-Certaines restrictions s’appliquent à la valeur qu’une méthode peut retourner comme valeur de retour de référence. Elles incluent notamment les suivantes :
+Certaines restrictions s’appliquent à la valeur qu’une méthode peut retourner comme valeur de retour de référence. Elles incluent notamment :
 
 - La valeur de retour ne peut pas être `void`. Une tentative de définition d’une méthode avec une valeur de retour de référence `void` génère l’erreur du compilateur CS1547, « Le mot clé 'void' ne peut pas être utilisé dans ce contexte ».
  
@@ -44,7 +44,7 @@ Certaines restrictions s’appliquent à la valeur qu’une méthode peut retour
  
 - La valeur de retour ne peut pas être une constante, un membre d’énumération ou une propriété d’un `class` ou d’un `struct`. Une tentative de retour de ces éléments génère l’erreur du compilateur CS8156, « Impossible d’utiliser une expression dans ce contexte, car elle ne peut pas être retournée par référence ».
 
-De plus, étant donné qu’une méthode asynchrone peut retourner une valeur avant que son exécution soit terminée et que sa valeur de retour soit connue, les valeurs de retour de référence ne sont pas autorisées sur les méthodes `async`.
+De plus, étant donné qu’une méthode asynchrone peut retourner une valeur avant que son exécution soit terminée, alors que sa valeur de retour est toujours inconnue, les valeurs de retour de référence ne sont pas autorisées sur les méthodes async.
  
 ## <a name="defining-a-ref-return-value"></a>Définition d’une valeur de retour de référence
 
