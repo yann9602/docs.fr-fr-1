@@ -96,7 +96,7 @@ public class MainClass
  3. Ouvrez une fenêtre d'invite de commandes d'outils natifs Visual Studio x64 (ou x32) à partir du répertoire d'installation de Visual Studio et compilez le fichier `cm.cs` en tapant :  
   
 > **csc cm.cs** (pour l’invite de commandes x64)   
->  - ou -  
+>  -ou-  
 > **csc /platform:x 86 cm.cs** (pour l’invite de commandes x32)  
   
  Cette opération crée le fichier exécutable `cm.exe`.  
