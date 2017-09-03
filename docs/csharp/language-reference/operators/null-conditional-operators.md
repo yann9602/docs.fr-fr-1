@@ -26,10 +26,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3a396280e1095497b86e4792f4debb9cf0435f50
+ms.sourcegitcommit: 6118956a5681ddbeb110f6e01f090b85cdd65089
+ms.openlocfilehash: 465a395a33c027132b7890e02d540438096e2073
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/23/2017
 
 ---
 # <a name="null-conditional-operators-c-and-visual-basic"></a>Opérateurs conditionnels Null (C# et Visual Basic)
@@ -47,7 +47,7 @@ Dim first as Customer = customers?(0)  ' null if customers is null
 Dim count as Integer? = customers?(0)?.Orders?.Count()  ' null if customers, the first customer, or Orders is null  
 ```  
   
- Le dernier exemple montre que les opérateurs conditionnels Null ont un effet de court-circuit.  Si une opération dans une chaîne d'opérations d'accès au membre et d'indexation conditionnelles retourne une valeur Null, l'exécution du reste de la chaîne s'arrête.  Les autres opérations ayant une priorité moins élevée dans l'expression continuent.  Dans l'exemple ci-dessous, `E` s'exécute toujours, et les opérations `??` et `==` sont exécutées.  
+ Le dernier exemple montre que les opérateurs conditionnels Null ont un effet de court-circuit.  Si une opération dans une chaîne d'opérations d'accès au membre et d'indexation conditionnelles retourne une valeur Null, l'exécution du reste de la chaîne s'arrête.  Les autres opérations ayant une priorité moins élevée dans l'expression continuent.  Dans l’exemple ci-dessous, `E` s’exécute à la seconde ligne, et les opérations `??` et `==` sont exécutées.  Dans la première ligne, `??` court-circuite et `E` ne s’exécute pas quand la partie gauche à une valeur non null.
   
 ```csharp
 A?.B?.C?[0] ?? E  
