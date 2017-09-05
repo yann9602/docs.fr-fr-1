@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2ddaa82e6f8492142523e9d240b0d337cfccffd8
+ms.sourcegitcommit: 019461964ba63d874ce86511474aa37b4342bbc4
+ms.openlocfilehash: b4a95438fe8b7490337de10299b824c5796bb4d1
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/29/2017
 
 ---
 
@@ -128,7 +128,7 @@ Les exemples suivants montrent diverses façons d’écrire du code asynchrone d
 Cet extrait de code télécharge le code HTML à partir du site www.dotnetfoundation.org et compte le nombre d’occurrences de la chaîne « .NET » dans le code HTML.  Il utilise ASP.NET MVC pour définir une méthode de contrôleur web qui exécute cette tâche et retourne le nombre.
 
 > [!NOTE]
-> Vous ne devez pas utiliser d’expressions régulières si vous prévoyez d’effectuer des analyses HTML réelles.  Si cela est votre intention, utilisez une bibliothèque d’analyse dans votre code de production.
+> Si vous prévoyez d’effectuer une analyse HTML dans le code de production, n’utilisez pas d’expressions régulières. Utilisez plutôt une bibliothèque d’analyse.
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();

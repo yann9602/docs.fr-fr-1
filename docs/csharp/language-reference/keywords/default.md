@@ -1,6 +1,6 @@
 ---
 title: "default (référence C#)"
-ms.date: 2015-07-20
+ms.date: 2017-08-04
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -31,23 +31,26 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4b4167f53d64f80fc4665a9f1171c050bf0fa433
+ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
+ms.openlocfilehash: 60607855e4a947af694c8ad8a9a3f0515ebb1700
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/28/2017
 
 ---
+
 # <a name="default-c-reference"></a>default (référence C#)
-Mot clé `default`.  
-  
- Le mot clé `default` peut être utilisé dans l’instruction `switch` ou dans du code générique :  
-  
--   [Instruction switch](../../../csharp/language-reference/keywords/switch.md) : spécifie l’étiquette par défaut.  
-  
--   [Code générique](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md) : spécifie la valeur par défaut du paramètre de type. Il s’agit de la valeur null pour les types référence et de zéro pour les types valeur.  
-  
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+
+Mot clé `default`.
+
+Le mot clé `default` peut être utilisé dans l’instruction `switch` ou dans une expression de valeur par défaut :
+
+- [Instruction switch](switch.md) : spécifie l’étiquette par défaut.
+
+- [Expressions de valeur par défaut](../../programming-guide/statements-expressions-operators/default-value-expressions.md) : produisent la valeur par défaut du type. Il s’agit de la valeur null pour les types référence, de zéro pour les types valeur et du modèle de bit 0 pour les structs.
+
+## <a name="see-also"></a>Voir aussi
+
+ [Informations de référence sur C#](../index.md)   
+ [Guide de programmation C#](../../programming-guide/index.md)   
+ [Mots clés C#](index.md)   
 
