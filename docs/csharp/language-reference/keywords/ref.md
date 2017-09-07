@@ -143,4 +143,3 @@ Quand l’appelant stocke la valeur retournée par la méthode `GetBookByTitle` 
  [Passage de paramètres](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)   
  [Paramètres de méthodes](../../../csharp/language-reference/keywords/method-parameters.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-
