@@ -10,10 +10,10 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.translationtype: HT
-ms.sourcegitcommit: f8cf12317f1f0163028db003ff31604480da5d1c
-ms.openlocfilehash: d9a1b1aa2b19e80b885a2da87746667bff04e234
+ms.sourcegitcommit: 33b22ab80f9b4d42975f2c41c880543c615a3e01
+ms.openlocfilehash: c66f1b2b85d377c84712c0ad73682cdeeb7249fd
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/31/2017
 
 ---
 
@@ -141,13 +141,15 @@ Consultez [Packages, métapackages et frameworks](../core/packages.md).
 
 ## <a name="mono"></a>Mono
 
-Alternative open source à .NET Framework.
+Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis. Ce runtime, qui alimente les applications Xamarin sur Android, Mac, iOS, tvOS et watchOS, est avant tout axé sur les applications qui requièrent un faible encombrement.
 
-Mono a démarré en même temps que la première version de .NET Framework. Étant donné que .NET Framework n’était pas open source, Mono est parti de zéro et est donc une nouvelle implémentation complète de .NET Framework sans code partagé.
+Il prend en charge toutes les versions de .NET Standard publiées.
 
-Quand .NET Core a été publié sous licence MIT, Microsoft a également publié des [blocs importants de .NET Framework sous licence MIT](https://github.com/microsoft/referencesource). Ainsi, la communauté Mono a pu utiliser le même code que .NET Framework pour combler l’écart et éviter les différences de comportement.
+Historiquement, Mono implémentait l’API plus volumineuse de .NET Framework et émulait certaines des fonctionnalités les plus populaires sur Unix. Il est parfois utilisé pour exécuter des applications .NET qui s’appuient sur ces fonctionnalités sous Unix.
 
-Mono sert principalement à exécuter des applications .NET sur Linux et macOS. Il existe des portages de Mono vers d’autres plateformes ; consultez[Mono's Supported Platforms](http://www.mono-project.com/docs/about-mono/supported-platforms/) (Plateformes prises en charge par Mono). Mono a des implémentations (éventuellement inachevées) de Windows Forms, ASP.NET et `System.Drawing`.
+Mono est généralement utilisé avec un compilateur juste-à-temps, mais il comporte également un compilateur statique complet (compilation Ahead Of Time) qui est utilisé sur des plateformes comme iOS.
+
+Pour en savoir plus sur Mono, consultez la [documentation Mono](http://www.mono-project.com/docs/).
 
 ## <a name="net"></a>.NET
 
