@@ -1,5 +1,5 @@
 ---
-title: "Programmation parallèle dans le .NET Framework | Microsoft Docs"
+title: "Programmation parallèle dans le .NET Framework"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -15,10 +15,11 @@ caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 6a163776f358691c0f61c90dce98c15bebe4052a
-ms.lasthandoff: 04/08/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a3509229efc57b1f6b1244671df65b2f21964e65
+ms.contentlocale: fr-fr
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="parallel-programming-in-the-net-framework"></a>Programmation parallèle dans le .NET Framework
@@ -33,7 +34,7 @@ De nombreux ordinateurs personnels et stations de travail ont deux ou quatre cœ
 |[La bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Fournit la documentation pour la classe <xref:System.Threading.Tasks.Parallel?displayProperty=fullName>, qui inclut des versions parallèles de `For` et des boucles `ForEach`, et également pour la classe <xref:System.Threading.Tasks.Task?displayProperty=fullName>, qui représente la meilleure façon d'exprimer des opérations asynchrones.|  
 |[Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|Implémentation parallèle de LINQ to Objects qui améliore de manière significative la performance dans de nombreux scénarios.|  
 |[Structures de données pour la programmation parallèle](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)|Fournit des liens vers la documentation pour les classes de collection thread-safe, les types de synchronisation légers et les types pour l’initialisation tardive.|  
-|[Outils de diagnostic parallèle](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|Fournit des liens vers la documentation relative aux fenêtres du débogueur Visual Studio pour les tâches et les piles parallèles, et le [visualiseur concurrentiel](http://msdn.microsoft.com/library/ae5879a0-1e1a-455a-ba72-148e57f59289), qui se compose d’un jeu de vues dans le profileur [!INCLUDE[vsprvsts](../../../includes/vsprvsts-md.md)] que vous pouvez utiliser pour déboguer et régler la performance du code parallèle.|  
+|[Outils de diagnostic parallèle](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|Fournit des liens vers la documentation relative aux fenêtres du débogueur Visual Studio pour les tâches et les piles parallèles, et le [visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer), qui se compose d’un jeu de vues dans le profileur [!INCLUDE[vsprvsts](../../../includes/vsprvsts-md.md)] que vous pouvez utiliser pour déboguer et régler la performance du code parallèle.|  
 |[Partitionneurs personnalisés pour PLINQ et la bibliothèque parallèle de tâches (TPL)](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|Décrit le fonctionnement des partitionneurs et comment configurer les partitionneurs par défaut ou en créer.|  
 |[Planificateurs de tâches](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)|Décrit le fonctionnement des planificateurs et comment les planificateurs par défaut peuvent être configurés.|  
 |[Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|Fournit une vue d’ensemble d’expressions lambda en C#  et Visual Basic, et affiche comment elles sont utilisées dans PLINQ et la bibliothèque parallèle de tâches.|  
@@ -42,3 +43,4 @@ De nombreux ordinateurs personnels et stations de travail ont deux ou quatre cœ
 ## <a name="see-also"></a>Voir aussi  
  [Modèles de programmation parallèle : présentation et application des modèles parallèles avec le .NET Framework 4 (page éventuellement en anglais)](http://go.microsoft.com/fwlink/?LinkID=185142)   
  [Exemples de programmation parallèle avec .NET Framework](http://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+
