@@ -1,6 +1,6 @@
 ---
-title: "System.Delegate et le mot clé `delegate`"
-description: "System.Delegate et le mot clé `delegate`"
+title: "System.Delegate et le mot clé 'delegate'"
+description: "En savoir plus sur les classes du .NET Framework qui prennent en charge les délégués et sur le mode de mappage de ces délégués au mot clé 'delegate'."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b20c4816582ef3e4d36512c38947f64e86d26541
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 465326fe520d6a062609e0c4c471135ef88b0dd6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -142,3 +143,4 @@ Les méthodes que vous utiliserez le plus avec les délégués sont `Invoke()` e
 Maintenant que vous avez vu la syntaxe du langage et les classes qui prennent en charge les délégués, examinons la façon dont les délégués fortement typés sont utilisés, créés et appelés.
 
 [Suivant](delegates-strongly-typed.md)
+

@@ -1,43 +1,62 @@
 ---
-title: "/warnaserror (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/warnaserror"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/warnaserror compiler option [C#]"
-  - "-warnaserror compiler option [C#]"
-  - "warnaserror compiler option [C#]"
+title: -warnaserror (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /warnaserror
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /warnaserror compiler option [C#]
+- -warnaserror compiler option [C#]
+- warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: df29fd760e0e4a002f1b5078d85370a74f322e23
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /warnaserror (C# Compiler Options)
-Avec l'option **\/warnaserror\+**, tous les avertissements sont considérés comme des erreurs.  
+# <a name="warnaserror-c-compiler-options"></a>/warnaserror (Options du compilateur C#)
+L’option **/warnaserror+** considère tous les avertissements comme des erreurs.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /warnaserror[<U>+</U> | -][:warning-list]  
 ```  
   
-## Notes  
- Les messages affichés habituellement comme des avertissements sont indiqués en tant qu'erreurs, et le processus de génération est arrêté \(aucun fichier de sortie n'est généré\).  
+## <a name="remarks"></a>Remarques  
+ Les messages qui d’ordinaire auraient été signalés comme des avertissements s’affichent en tant qu’erreurs, et le processus de génération est arrêté (aucun fichier de sortie n’est généré).  
   
- L'option **\/warnaserror\-** est activée par défaut et, dès lors, les avertissements n'empêchent pas la génération d'un fichier de sortie.  Si vous utilisez **\/warnaserror**, qui est identique à **\/warnaserror\+**, les avertissements sont considérés comme des erreurs.  
+ Comme **/warnaserror** est activé par défaut, les avertissements n’empêchent pas la génération d’un fichier de sortie. Du fait de **/warnaserror**, qui est identique à **/warnaserror+**, les avertissements sont considérés comme des erreurs.  
   
- Si vous souhaitez que seuls certains avertissements spécifiques soient considérés comme des erreurs, vous pouvez spécifier une liste séparée par des virgules répertoriant les numéros d'avertissement à traiter comme des erreurs.  
+ Le cas échéant, si vous voulez que seuls certains avertissements spécifiques soient considérés comme des erreurs, vous pouvez spécifier une liste séparée par des virgules qui liste les numéros d’avertissement à considérer comme des erreurs.  
   
- Utilisez l'option [\/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) pour spécifier le niveau des avertissements affichés par le compilateur.  Utilisez l'option [\/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) pour désactiver certains avertissements.  
+ Utilisez [/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md) pour spécifier le niveau des avertissements que le compilateur doit afficher. Utilisez [/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) pour désactiver certains avertissements.  
   
-### Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
 1.  Ouvrez la page **Propriétés** du projet.  
   
@@ -45,16 +64,17 @@ Avec l'option **\/warnaserror\+**, tous les avertissements sont considérés com
   
 3.  Modifiez la propriété **Considérer les avertissements comme des erreurs**.  
   
-     Pour définir cette option du compilateur par programme, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>  
+     Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>.  
   
-## Exemple  
- Compilez `in.cs` et indiquez au compilateur de ne pas afficher les avertissements :  
+## <a name="example"></a>Exemple  
+ Compilez `in.cs` et faites en sorte que le compilateur n’affiche aucun avertissement :  
   
-```  
+```console  
 csc /warnaserror in.cs  
 csc /warnaserror:642,649,652 in.cs  
 ```  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

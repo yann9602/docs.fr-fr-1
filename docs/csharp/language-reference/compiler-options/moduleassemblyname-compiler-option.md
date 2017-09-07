@@ -1,58 +1,77 @@
 ---
-title: "/moduleassemblyname (C# Compiler Option) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/moduleassemblyname"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "moduleassemblyname compiler option [C#]"
-  - "/moduleassemblyname compiler option [C#]"
-  - ".moduleassemblyname compiler option [C#]"
+title: -moduleassemblyname (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /moduleassemblyname
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- moduleassemblyname compiler option [C#]
+- /moduleassemblyname compiler option [C#]
+- .moduleassemblyname compiler option [C#]
 ms.assetid: d464d9b9-f18d-423b-95e9-66c7878fd53a
 caps.latest.revision: 10
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 10
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2522609aa41ad944b37a8882c1cc56cd5967b330
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /moduleassemblyname (C# Compiler Option)
-Spécifie un assembly dont les types non publics peuvent être accédés par un .netmodule.  
+# <a name="moduleassemblyname-c-compiler-option"></a>/moduleassemblyname (Options du compilateur C#)
+Spécifie un assembly dont les types non publics sont accessibles par un .netmodule.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /moduleassemblyname:assembly_name  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
  `assembly_name`  
- Le nom de l'assembly dont les types publics le .netmodule peut accéder.  
+ Nom de l’assembly dont les types non publics sont accessibles au fichier .netmodule.  
   
-## Notes  
- **\/moduleassemblyname** doit être utilisé lors de la création d'un .netmodule, ainsi que les conditions suivantes sont remplies :  
+## <a name="remarks"></a>Remarques  
+ **/moduleassemblyname** doit être utilisée au moment de créer un fichier .netmodule et quand les conditions suivantes sont réunies :  
   
--   Le .netmodule doit accéder aux types non publics d'un assembly existant.  
+-   Le fichier .netmodule doit accéder à des types non publics dans un assembly existant.  
   
--   Vous connaissez le nom de l'assembly sur lequel le .netmodule est généré.  
+-   Vous connaissez le nom de l’assembly dans lequel le fichier .netmodule sera généré.  
   
--   L'assembly référencé existante a accordé l'accès d'assembly ami à l'assembly dans lequel le .netmodule sera généré.  
+-   L’assembly existant a accordé un accès d’assembly friend à l’assembly dans lequel le fichier .netmodule sera généré.  
   
- Pour plus d'informations sur la construction d'un .netmodule, consultez [\/target:module \(Create Module to Add to Assembly\)](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md).  
+ Pour plus d’informations sur la création d’un fichier .netmodule, consultez [/target:module (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md).  
   
- Pour plus d'informations sur les assemblys friend, consultez [Assemblys friend](../Topic/Friend%20Assemblies%20\(C%23%20and%20Visual%20Basic\).md).  
+ Pour plus d’informations sur les assemblys friend, consultez [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).  
   
- Cette option n'est pas accessible à partir de l'environnement de développement Visual Studio. Elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+ Cette option n’est pas disponible dans l’environnement de développement ; elle l’est uniquement au moment de compiler à partir de la ligne de commande.  
   
- Cette option du compilateur n'est pas disponible dans Visual Studio et ne peut pas être modifiée par programme.  
+ Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
-## Exemple  
- Cet exemple génère un assembly avec un type privé, et cela donne l'accès d'assembly friend à un assembly appelé csman\_an\_assembly.  
+## <a name="example"></a>Exemple  
+ Cet exemple génère un assembly avec un type privé, ce qui octroie un accès d’assembly friend à un assembly appelé csman_an_assembly.  
   
-```  
+```csharp  
 // moduleassemblyname_1.cs  
 // compile with: /target:library  
 using System;  
@@ -69,10 +88,10 @@ class An_Internal_Class
 }  
 ```  
   
-## Exemple  
- Cet echantillon construit un .netmodule qui accède à un type non public dans l'assembly moduleassemblyname\_1.dll.  En sachant que ce .netmodule est généré dans un assembly nommé csman\_an\_assembly, on peut spécifier **\/moduleassemblyname**, ce qui permet au .netmodule l'accès public dans un assembly qui a accordé l'accès amical à l'assembly csman\_an\_assembly.  
+## <a name="example"></a>Exemple  
+ Cet exemple génère un fichier .netmodule qui accède à un type non public dans l’assembly moduleassemblyname_1.dll. En sachant que ce fichier .netmodule sera généré dans un assembly appelé csman_an_assembly, nous pouvons spécifier **/moduleassemblyname**, ce qui permet au fichier .netmodule d’accéder aux types non publics d’un assembly qui a accordé un accès d’assembly friend à csman_an_assembly.  
   
-```  
+```csharp  
 // moduleassemblyname_2.cs  
 // compile with: /moduleassemblyname:csman_an_assembly /target:module /reference:moduleassemblyname_1.dll  
 class B {  
@@ -83,10 +102,10 @@ class B {
 }  
 ```  
   
-## Exemple  
- Cet exemple de code génère le csman\_an\_assembly d'assembly, en référençant l'assembly généré précédemment et .netmodule.  
+## <a name="example"></a>Exemple  
+ Cet exemple de code génère l’assembly csman_an_assembly en faisant référence à l’assembly et au fichier .netmodule générés précédemment.  
   
-```  
+```csharp  
 // csman_an_assembly.cs  
 // compile with: /addmodule:moduleassemblyname_2.netmodule /reference:moduleassemblyname_1.dll  
 class A {  
@@ -97,7 +116,8 @@ class A {
 }  
 ```  
   
-  **An\_Internal\_Class.Test appelé**   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+ **An_Internal_Class.Test called**   
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

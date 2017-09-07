@@ -1,27 +1,23 @@
 ---
 title: Refactorisation dans des fonctions pures (C#)
-ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9e3bb704cab77d4ad9895624bf7f721920000378
+ms.sourcegitcommit: 9bb17207ba72bb22f5d6db55e9d1bd77e3013445
+ms.openlocfilehash: 2bce781df80a777203ed8e713bedf83f1c7779a8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/25/2017
 
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refactorisation dans des fonctions pures (C#)
+
 L'un des aspects importants des transformations fonctionnelles pures consiste à apprendre à refactoriser le code à l'aide de fonctions pures.  
   
 > [!NOTE]
@@ -95,7 +91,7 @@ public class Program
 >  Pour les types de référence, si vous passez un paramètre par valeur, une copie de la référence à un objet est passée. Cette copie est toujours associée aux mêmes données d'instance que la référence d'origine (jusqu'à ce que la variable de référence soit assignée à un nouvel objet). L'appel par référence n'est pas forcément nécessaire pour qu'une fonction modifie un paramètre.  
   
 ### <a name="pure-function"></a>Fonction pure  
- Cette autre version du programme montre comment implémenter la fonction `HypenatedConcat` en tant que fonction pure.  
+Cette autre version du programme montre comment implémenter la fonction `HypenatedConcat` en tant que fonction pure.  
   
 ```csharp  
 class Program  

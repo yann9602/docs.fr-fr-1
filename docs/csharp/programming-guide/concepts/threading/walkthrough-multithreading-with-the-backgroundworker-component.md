@@ -1,5 +1,5 @@
 ---
-title: "Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#) | Microsoft Docs"
+title: "Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,20 +19,21 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1a27591c62e55295b3cf2b9716776b25d984865a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 541a1ec788c337eea9965b8a46155e5c6606ea2f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-c"></a>Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)
 Cette procédure pas à pas montre comment créer une application Windows Forms multithread qui recherche les occurrences d’un mot dans un fichier texte. Elle présente les points suivants :  
   
--   Définition d’une classe à l’aide d’une méthode qui peut être appelée par le composant <xref:System.ComponentModel.BackgroundWorker>.  
+-   Définition d’une classe avec une méthode qui peut être appelée par le composant <xref:System.ComponentModel.BackgroundWorker>.  
   
 -   Gestion des événements déclenchés par le composant <xref:System.ComponentModel.BackgroundWorker>.  
   
--   Démarrage d’un composant <xref:System.ComponentModel.BackgroundWorker> pour l’exécution d’une méthode.  
+-   Démarrage d’un composant <xref:System.ComponentModel.BackgroundWorker> pour exécuter une méthode.  
   
 -   Implémentation d’un bouton `Cancel` qui arrête le composant <xref:System.ComponentModel.BackgroundWorker>.  
   
@@ -64,7 +65,7 @@ Cette procédure pas à pas montre comment créer une application Windows Forms 
   
 ### <a name="to-create-a-backgroundworker-component-and-subscribe-to-its-events"></a>Pour créer un composant BackgroundWorker et s’abonner à ses événements  
   
-1.  Ajoutez au formulaire un composant <xref:System.ComponentModel.BackgroundWorker> à partir de la section **Composants** de la **Boîte à outils**. Il apparaît dans la barre d’état des composants du formulaire.  
+1.  Ajoutez au formulaire un composant <xref:System.ComponentModel.BackgroundWorker> de la section **Composants** de la **boîte à outils**. Il apparaît dans la barre d’état des composants du formulaire.  
   
 2.  Définissez les propriétés suivantes de l’objet backgroundWorker1.  
   
@@ -293,3 +294,4 @@ Cette procédure pas à pas montre comment créer une application Windows Forms 
 ## <a name="see-also"></a>Voir aussi  
  [Threads (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
  [Guide pratique pour s’abonner et se désabonner d’événements](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)
+

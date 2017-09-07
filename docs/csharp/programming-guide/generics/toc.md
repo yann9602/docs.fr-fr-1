@@ -8,7 +8,6 @@
 ## [Méthodes génériques](generic-methods.md)
 ## [Génériques et tableaux](generics-and-arrays.md)
 ## [Délégués génériques](generic-delegates.md)
-## [Mot clé default dans le code générique](default-keyword-in-generic-code.md)
 ## [Différences entre les modèles C++ et les génériques C#](differences-between-cpp-templates-and-csharp-generics.md)
 ## [Génériques dans le runtime](generics-in-the-run-time.md)
 ## [Génériques dans la bibliothèque de classes .NET Framework](generics-in-the-net-framework-class-library.md)

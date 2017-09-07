@@ -1,5 +1,5 @@
 ---
-title: "Portée des espaces de noms par défaut en C#1 | Microsoft Docs"
+title: "Portée des espaces de noms par défaut en C#1"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 760716dc81f5cd946ae014ed22b6c5a7df64a5dd
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f1c8d8106f7e3e01bb546ce24dd4153b90a0142d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="scope-of-default-namespaces-in-c"></a>Portée des espaces de noms par défaut en C#
@@ -69,7 +70,7 @@ End of result set
 ## <a name="example"></a>Exemple  
  Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.  
   
- Contrairement à l’exemple de code incorrect ci-dessus, l’approche appropriée, lors de l’utilisation du langage C#, consiste à déclarer et à initialiser un objet <xref:System.Xml.Linq.XNamespace> et à l’utiliser lors de la spécification d’objets <xref:System.Xml.Linq.XName>. Dans ce cas, l’argument de la méthode <xref:System.Xml.Linq.XElement.Elements%2A> est un objet <xref:System.Xml.Linq.XName>.  
+ Par rapport à l'exemple de code incorrect illustré ci-dessus, l'approche appropriée, lors de l'utilisation du langage C#, consiste à déclarer et à initialiser un objet <xref:System.Xml.Linq.XNamespace> et à l'utiliser lors de la spécification d'objets <xref:System.Xml.Linq.XName>. Dans ce cas, l'argument de la méthode <xref:System.Xml.Linq.XElement.Elements%2A> est un objet <xref:System.Xml.Linq.XName>.  
   
 ### <a name="code"></a>Code  
   
@@ -106,3 +107,4 @@ End of result set
   
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+

@@ -1,48 +1,68 @@
 ---
-title: "Comment&#160;: utiliser l&#39;espace de noms My (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "langage C#, accès à l'espace de noms My"
+title: "Guide pratique pour utiliser l’espace de noms My (Guide de programmation C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- C# language, My namespace access
 ms.assetid: e7152414-0ea5-4c8e-bf02-c8d5bbe45ff4
 caps.latest.revision: 12
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 12
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 56577ff61c3f637c8e5a0969ae75d65d24ddaef7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# Comment&#160;: utiliser l&#39;espace de noms My (Guide de programmation C#)
-L'espace de noms <xref:Microsoft.VisualBasic.MyServices> \(`My` en Visual Basic\) fournit un accès facile et intuitif à plusieurs classes .NET Framework, ce qui vous permet d'écrire un code qui interagit avec l'ordinateur, l'application, les paramètres, les ressources, etc.  Bien que conçu à l'origine pour être utilisé avec Visual Basic, l'espace de noms `MyServices` peut être utilisé dans les applications C\#.  
+# <a name="how-to-use-the-my-namespace-c-programming-guide"></a>Guide pratique pour utiliser l’espace de noms My (Guide de programmation C#)
+L’espace de noms <xref:Microsoft.VisualBasic.MyServices> (`My` en Visual Basic) permet d’accéder de manière simple et intuitive à un certain nombre de classes .NET Framework, ce qui vous permet d’écrire du code qui interagit avec l’ordinateur, l’application, les paramètres, les ressources, etc. Bien que conçu à l’origine pour une utilisation avec Visual Basic, l’espace de noms `MyServices` peut être utilisé dans les applications C#.  
   
- Pour plus d'informations sur l'utilisation de l'espace de noms `MyServices` de Visual Basic, consultez [Development with My](../../../visual-basic/developing-apps/development-with-my/index.md).  
+ Pour plus d’informations sur l’utilisation de l’espace de noms `MyServices` de Visual Basic, consultez [Développement avec My](../../../visual-basic/developing-apps/development-with-my/index.md).  
   
-## Ajout d'une référence  
- Avant de pouvoir utiliser les classes `MyServices` dans votre solution, vous devez ajouter une référence à la bibliothèque Visual Basic.  
+## <a name="adding-a-reference"></a>Ajout d’une référence  
+ Pour pouvoir utiliser les classes `MyServices` dans votre solution, vous devez d’abord ajouter une référence à la bibliothèque Visual Basic.  
   
-#### Pour ajouter une référence dans la bibliothèque Visual Basic  
+#### <a name="to-add-a-reference-to-the-visual-basic-library"></a>Pour ajouter une référence à la bibliothèque Visual Basic  
   
-1.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **Références**, puis cliquez sur **Ajouter une référence**.  
+1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nœud **Références**, puis sélectionnez **Ajouter une référence**.  
   
-2.  Lorsque la boîte de dialogue **Références** apparaît, faites défiler la liste, puis sélectionnez Microsoft.VisualBasic.dll.  
+2.  Une fois la boîte de dialogue **Références** affichée, faites défiler la liste et sélectionnez Microsoft.VisualBasic.dll.  
   
-     Vous pouvez également souhaiter inclure la ligne suivante dans la section `using` au démarrage de votre programme.  
+     Vous pouvez aussi inclure la ligne suivante de la section `using` au début de votre programme.  
   
      [!code-cs[csProgGuideNamespaces#18](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_1.cs)]  
   
-## Exemple  
- Cet exemple appelle plusieurs méthodes statiques contenues dans l'espace de noms `MyServices`.  Pour que ce code se compile, une référence à Microsoft.VisualBasic.DLL doit être ajoutée au projet.  
+## <a name="example"></a>Exemple  
+ Cet exemple appelle plusieurs méthodes statiques contenues dans l’espace de noms `MyServices`. Pour compiler ce code, une référence à Microsoft.VisualBasic.DLL doit être ajoutée au projet.  
   
  [!code-cs[csProgGuideNamespaces#19](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_2.cs)]  
   
- Toutes les classes de l'espace de noms `MyServices` ne peuvent pas être appelées à partir d'une application C\# : par exemple, la classe <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> n'est pas compatible.  Dans ce cas particulier, les méthodes statiques qui font partie de <xref:Microsoft.VisualBasic.FileIO.FileSystem>, également contenues dans VisualBasic.dll, peuvent être utilisées à la place.  Par exemple, voici comment utiliser une de ces méthodes pour dupliquer un répertoire :  
+ Certaines classes de l’espace de noms `MyServices` ne peuvent pas être appelées à partir d’une application C# : par exemple, la classe <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> n’est pas compatible. Dans ce cas particulier, les méthodes statiques, qui font partie intégrante de <xref:Microsoft.VisualBasic.FileIO.FileSystem> et qui sont aussi contenues dans VisualBasic.dll, peuvent être utilisées à la place. Par exemple, voici comment utiliser une méthode de ce type pour dupliquer un répertoire :  
   
  [!code-cs[csProgGuideNamespaces#20](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-my-namespace_3.cs)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)   
- [Utilisation d'espaces de noms](../../../csharp/programming-guide/namespaces/using-namespaces.md)
+ [Utilisation d’espaces de noms](../../../csharp/programming-guide/namespaces/using-namespaces.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "typeof (référence C#) | Microsoft Docs"
+title: "typeof (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -30,11 +30,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0590aa8a339dc58b7215722a530a71f8973864d4
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fdb335e44a5a3634520d3a86495a4508597b4f70
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="typeof-c-reference"></a>typeof (référence C#)
@@ -45,7 +45,7 @@ System.Type type = typeof(int);
 ```  
   
 ## <a name="remarks"></a>Remarques  
- Pour obtenir le type au moment de l’exécution d’une expression, vous pouvez utiliser la méthode <xref:System.Object.GetType%2A> du .NET Framework, comme dans l’exemple suivant :  
+ Pour obtenir le type au moment de l’exécution d’une expression, vous pouvez utiliser la méthode <xref:System.Object.GetType%2A> du .NET Framework, comme dans l’exemple suivant :  
   
 ```  
 int i = 0;  
@@ -75,7 +75,8 @@ string s = method.ReturnType.GetInterface
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Type?displayProperty=fullName>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [is](../../../csharp/language-reference/keywords/is.md)   
  [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)
+

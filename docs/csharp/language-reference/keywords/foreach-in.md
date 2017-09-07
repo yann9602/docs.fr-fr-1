@@ -1,5 +1,5 @@
 ---
-title: "foreach, in (référence C#) | Microsoft Docs"
+title: "foreach, in (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aa5408dbe214af2c21edd394f74fb8b675f2a099
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: aed1d4f086f0b1334df750fd912d20d66326a043
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="foreach-in-c-reference"></a>foreach, in (référence C#)
@@ -70,7 +70,8 @@ L’instruction `foreach` répète un groupe d’instructions incorporées pour 
   
 ## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Instructions d’itération](../../../csharp/language-reference/keywords/iteration-statements.md)   
  [for](../../../csharp/language-reference/keywords/for.md)
+

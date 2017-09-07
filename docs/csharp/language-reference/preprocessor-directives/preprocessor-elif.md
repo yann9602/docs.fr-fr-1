@@ -1,26 +1,45 @@
 ---
-title: "#elif (r&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "#elif"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "#elif (directive C#)"
+title: "#<a name=\"elif-c-reference\"></a>elif (informations de référence sur C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- '#elif'
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
 caps.latest.revision: 14
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 14
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7635365222621101253ecb2a3676701c2e6a2b88
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# #elif (r&#233;f&#233;rence C#)
-`#elif` vous permet de créer une directive conditionnelle composée.  L'expression `#elif` est évaluée si aucune des expressions précédentes [\#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md), ni aucune des directives précédentes `#elif` facultatives ne correspond à `true`.  Si une expression `#elif` correspond à `true`, le compilateur évalue l'ensemble du code compris entre `#elif` et la directive conditionnelle suivante.  Par exemple :  
+# <a name="elif-c-reference"></a>#elif (informations de référence sur C#)
+`#elif` vous permet de créer une directive conditionnelle composée. L’expression `#elif` est évaluée si ni l’expression [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) précédente ni une expression de directive `#elif` facultative précédente n’est évaluée à `true`. Si une expression `#elif` est évaluée à `true`, le compilateur évalue l’ensemble du code situé entre `#elif` et la directive conditionnelle suivante. Exemple :  
   
-```  
+```csharp
 #define VC7  
 //...  
 #if debug  
@@ -30,21 +49,22 @@ caps.handback.revision: 14
 #endif  
 ```  
   
- Vous pouvez utiliser les opérateurs `==` \(égalité\), `!=` \(inégalité\), `&&` \(et\) et `||` \(ou\) pour évaluer plusieurs symboles.  Vous pouvez aussi grouper des symboles et des opérateurs à l'aide de parenthèses.  
+ Vous pouvez utiliser les opérateurs `==` (égalité), `!=` (inégalité) `&&` (et) et `||` (ou) pour évaluer plusieurs symboles. Vous pouvez également regrouper des symboles et des opérateurs à l’aide de parenthèses.  
   
-## Notes  
- `#elif` équivaut à utiliser :  
+## <a name="remarks"></a>Remarques  
+ `#elif` revient à utiliser :  
   
-```  
+```csharp
 #else  
 #if  
 ```  
   
- `#elif` est plus simple à utiliser, car chaque directive `#if` requiert une directive [\#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), tandis que `#elif` peut être utilisé sans `#endif`.  
+ `#elif` est plus simple à utiliser, car chaque expression `#if` a besoin d’une expression [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md), alors qu’une expression `#elif` peut être utilisée sans expression `#endif` correspondante.  
   
- Pour obtenir un exemple d'utilisation de `#elif`, consultez [\#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md).  
+ Pour obtenir un exemple sur la façon d’utiliser `#elif`, consultez [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md).  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Directives de préprocesseur C\#](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+

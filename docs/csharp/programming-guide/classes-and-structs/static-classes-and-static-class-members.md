@@ -1,5 +1,5 @@
 ---
-title: Classes statiques et membres de classe statique (Guide de programmation C#) | Microsoft Docs
+title: Classes statiques et membres de classe statique (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f93706bb5df41e46c860ca70d131d94015a6348f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 63f46f9ae35b3c699744f7bf61cad3b08b796509
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
@@ -44,7 +45,7 @@ Une classe [statique](../../../csharp/language-reference/keywords/static.md) est
 UtilityClass.MethodA();  
 ```  
   
- Une classe statique peut servir de conteneur pratique pour des ensembles de méthodes qui opèrent simplement sur des paramètres d’entrée et n’ont pas à obtenir ou définir de champs d’instance internes. Par exemple, dans la bibliothèque de classes .NET Framework, la classe <xref:System.Math?displayProperty=fullName> statique contient des méthodes qui exécutent des opérations mathématiques, sans qu’il soit nécessaire de stocker ou de récupérer des données uniques à une instance particulière de la classe <xref:System.Math>. Autrement dit, vous appliquez les membres de la classe en spécifiant le nom de la classe et le nom de la méthode, comme illustré dans l’exemple suivant.  
+ Une classe statique peut servir de conteneur pratique pour des ensembles de méthodes qui opèrent simplement sur des paramètres d’entrée et n’ont pas à obtenir ou définir de champs d’instance internes. Par exemple, dans la bibliothèque de classes .NET Framework, la classe <xref:System.Math?displayProperty=fullName> statique contient des méthodes qui effectuent des opérations mathématiques, sans qu’il soit nécessaire de stocker ou de récupérer des données spécifiques à une instance particulière de la classe <xref:System.Math>. Autrement dit, vous appliquez les membres de la classe en spécifiant le nom de la classe et le nom de la méthode, comme illustré dans l’exemple suivant.  
   
 ```csharp  
 double dub = -3.14;  
@@ -58,7 +59,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 // 3  
 ```  
   
- Comme c’est le cas avec tous les types de classe, les informations de type pour une classe statique sont chargées par le Common Language Runtime (CLR) [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] lorsque le programme qui fait référence à la classe est chargé. Le programme ne peut pas spécifier exactement quand la classe est chargée. Toutefois, il est garanti qu’elle sera chargée, que ses champs seront initialisés et que son constructeur statique sera appelé avant que la classe soit référencée pour la première fois dans votre programme. Un constructeur statique est appelé une seule fois et une classe statique reste en mémoire pendant la durée de vie du domaine d’application dans lequel votre programme réside.  
+ Comme c’est le cas avec tous les types de classe, les informations de type pour une classe statique sont chargées par le Common Language Runtime (CLR) [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] lorsque le programme qui fait référence à la classe est chargé. Le programme ne peut pas spécifier exactement quand la classe est chargée. Toutefois, il est garanti qu’elle sera chargée, que ses champs seront initialisés et que son constructeur statique sera appelé avant que la classe soit référencée pour la première fois dans votre programme. Un constructeur statique est appelé une seule fois et une classe statique reste en mémoire pendant la durée de vie du domaine d’application dans lequel votre programme réside.  
   
 > [!NOTE]
 >  Pour créer une classe non statique permettant la création d’une seule instance d’elle-même, consultez [Implémentation d’un singleton en C#](http://go.microsoft.com/fwlink/?LinkID=100567).  
@@ -106,7 +107,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Un appel à une méthode statique génère une instruction d’appel en langage MSIL (Microsoft Intermediate Language), alors qu’un appel à une méthode d’instance génère une instruction `callvirt`, qui vérifie également l’existence de références d’objet Null. Toutefois, la plupart du temps, l’écart de performances entre les deux n’est pas significatif.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
@@ -115,3 +116,4 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  [class](../../../csharp/language-reference/keywords/class.md)   
  [Constructeurs statiques](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)   
  [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour lire des données d’objet à partir d’un fichier XML (C#) | Microsoft Docs"
+title: "Guide pratique pour lire des données d’objet à partir d’un fichier XML (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5f8c23a86c7a09d6f8d0b8c6f1684a38d0336a3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 02ff7a209cd78c70c6e3c443105d27b33c6f0af4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-c"></a>Guide pratique pour lire des données d’objet à partir d’un fichier XML (C#)
-Cet exemple lit les données d’objet écrites précédemment dans un fichier XML à l’aide de la classe <xref:System.Xml.Serialization.XmlSerializer>.  
+Cet exemple lit des données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Exemple  
   
@@ -72,7 +73,7 @@ public void ReadXML()
   
 -   Les données du fichier ne représentent pas les données de la classe à désérialiser.  
   
--   Le fichier n’existe pas (<xref:System.IO.IOException>).  
+-   Le fichier n'existe pas (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
  Vérifiez toujours les entrées et ne désérialisez jamais les données provenant d’une source non fiable. L’objet recréé s’exécute sur un ordinateur local avec les autorisations du code qui l’a désérialisé. Vérifiez toutes les entrées avant d'utiliser les données dans votre application.  
@@ -82,3 +83,4 @@ public void ReadXML()
  [Guide pratique pour écrire des données d’objet dans un fichier XML (C#)](../../../../csharp/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)   
  [Sérialisation (C#)](../../../../csharp/programming-guide/concepts/serialization/index.md)   
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
+

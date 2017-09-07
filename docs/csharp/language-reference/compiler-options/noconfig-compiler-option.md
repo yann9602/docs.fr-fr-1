@@ -1,45 +1,65 @@
 ---
-title: "/noconfig (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/noconfig"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "/noconfig compiler option [C#]"
-  - "csc.rsp"
-  - "-noconfig compiler option [C#]"
-  - "noconfig compiler option [C#]"
+title: -noconfig (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /noconfig
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- /noconfig compiler option [C#]
+- csc.rsp
+- -noconfig compiler option [C#]
+- noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
 caps.latest.revision: 11
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 11
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 594e972dc834ab74412e30a48428f850ae02b5ac
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /noconfig (C# Compiler Options)
-L'option **\/noconfig** indique au compilateur de ne pas compiler à l'aide du fichier csc.rsp, qui se trouve dans le même répertoire que le fichier csc.exe et est chargé à partir de celui\-ci.  
+# <a name="noconfig-c-compiler-options"></a>/noconfig (Options du compilateur C#)
+L’option **/noconfig** indique au compilateur de ne pas compiler avec le fichier csc.rsp, qui se trouve dans le même répertoire que le fichier csc.exe d’où il est chargé.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /noconfig  
 ```  
   
-## Notes  
- Le fichier csc.rsp référence tous les assemblys qui accompagnent le .NET Framework.  Les références réelles que l'environnement de développement Visual Studio .NET inclut dépendent du type de projet.  
+## <a name="remarks"></a>Remarques  
+ Le fichier csc.rsp fait référence à tous les assemblys fournis avec le .NET Framework. Les références réelles qui sont incluses dans l’environnement de développement Visual Studio .NET varient en fonction du type de projet.  
   
- Vous pouvez modifier le fichier csc.rsp et spécifier des options de compilation supplémentaires à inclure dans chaque compilation exécutée à partir de la ligne de commande à l'aide de csc.exe \(à l'exception de l'option **\/noconfig**\).  
+ Vous pouvez modifier le fichier csc.rsp et spécifier les options de compilateur supplémentaires qui doivent être incluses dans chaque compilation avec csc.exe via la ligne de commande (à l’exception de l’option **/noconfig**).  
   
- Le compilateur traite les dernières options passées à la commande **csc**.  En conséquence, toute option incluse sur la ligne de commande substitue le paramétrage de la même option dans le fichier csc.rsp.  
+ Le compilateur traite les options passées à la commande **csc** en dernier. De ce fait, toute option sur la ligne de commande se substitue au paramètre de la même option dans le fichier csc.rsp.  
   
- Si vous voulez éviter que le compilateur recherche et utilise les paramètres répertoriés dans le fichier csc.rsp, spécifiez l'option **\/noconfig**.  
+ Si vous ne voulez pas que le compilateur recherche et utilise les paramètres du fichier csc.rsp, spécifiez **/noconfig**.  
   
- Cette option du compilateur n'est pas disponible dans Visual Studio et ne peut pas être modifiée par programme.  
+ Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

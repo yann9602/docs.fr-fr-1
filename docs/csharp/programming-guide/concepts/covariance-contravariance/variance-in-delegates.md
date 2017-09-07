@@ -1,5 +1,5 @@
 ---
-title: "Variance dans les délégués (C#) | Microsoft Docs"
+title: "Variance dans les délégués (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: cd1b765faa734973bf5e184cee2ac934ebdf9241
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 79de8218f3fcdf52dad84bb0bacffde01a222066
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="variance-in-delegates-c"></a>Variance dans les délégués (C#)
@@ -129,15 +129,15 @@ public static void Test()
 ### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Délégués génériques ayant des paramètres de type variant dans le .NET Framework  
  .NET Framework 4 a introduit la prise en charge de la variance pour les paramètres de type générique dans plusieurs délégués génériques existants :  
   
--   Délégués `Action` de l’espace de noms <xref:System>, par exemple <xref:System.Action%601> et <xref:System.Action%602>  
+-   Les délégués `Action` de l’espace de noms <xref:System>, par exemple, <xref:System.Action%601> et <xref:System.Action%602>  
   
--   Délégués `Func` de l’espace de noms <xref:System>, par exemple <xref:System.Func%601> et <xref:System.Func%602>  
+-   Les délégués `Func` de l’espace de noms <xref:System>, par exemple, <xref:System.Func%601> et <xref:System.Func%602>  
   
--   Délégué <xref:System.Predicate%601>  
+-   Le délégué <xref:System.Predicate%601>  
   
--   Délégué <xref:System.Comparison%601>  
+-   Le délégué <xref:System.Comparison%601>  
   
--   Délégué <xref:System.Converter%602>  
+-   Le délégué <xref:System.Converter%602>  
   
  Pour obtenir plus d’informations et d’exemples, consultez [Utilisation de la variance pour les délégués génériques Func et Action (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
@@ -157,7 +157,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
-> Les paramètres  `ref` et `out` en C# ne peuvent pas être marqués comme variants.  
+>  Les paramètres `ref` et `out` en C# ne peuvent pas être marqués comme variants.  
   
  Il est également possible de prendre en charge à la fois la variance et la covariance dans le même délégué, mais pour des paramètres de type différents. L'exemple suivant le démontre.  
   
@@ -174,7 +174,7 @@ dvariant("test");
 ```  
   
 ### <a name="combining-variant-generic-delegates"></a>Combinaison des délégués génériques variants  
- Vous ne devez pas combiner les délégués variants. La méthode <xref:System.Delegate.Combine%2A> ne prend pas en charge la conversion des délégués variants et nécessite le même type pour tous les délégués. Cela peut provoquer une exception runtime quand vous combinez les délégués à l’aide de la méthode <xref:System.Delegate.Combine%2A> ou de l’opérateur `+`, comme illustré dans l’exemple de code suivant.  
+ Vous ne devez pas combiner les délégués variants. La méthode <xref:System.Delegate.Combine%2A> ne prend pas en charge la conversion des délégués variants et nécessite le même type pour tous les délégués. Il peut s’ensuivre une exception runtime quand vous combinez les délégués à l’aide de la méthode <xref:System.Delegate.Combine%2A> ou de l’opérateur `+`, comme dans l’exemple de code suivant.  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  
@@ -214,6 +214,7 @@ public static void Test()
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Génériques](https://msdn.microsoft.com/library/ms172192)   
+ [Génériques](~/docs/standard/generics/index.md)   
  [Utilisation de la variance pour les délégués génériques Func et Action (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)   
  [Guide pratique pour combiner des délégués (délégués multicast)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+

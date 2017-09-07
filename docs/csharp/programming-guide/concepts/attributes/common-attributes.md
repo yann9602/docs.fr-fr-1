@@ -1,5 +1,5 @@
 ---
-title: Attributs courants (C#) | Microsoft Docs
+title: Attributs courants (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bafcb0a9a81d97e060acca38b7c0bfca23efdaad
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 98bb21ef0b5582202578b72fd6eaf459801747cc
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="common-attributes-c"></a>Attributs courants (C#)
@@ -54,7 +55,7 @@ Cette rubrique décrit les attributs le plus couramment utilisés dans les progr
 -   Attributs de manifeste de l’assembly  
   
 ### <a name="assembly-identity-attributes"></a>Attributs d’identité de l’assembly  
- Trois attributs (avec un nom fort, le cas échéant), déterminent l’identité d’un assembly : nom, version et culture. Ces attributs constituent le nom complet de l’assembly et sont obligatoires quand vous le référencez le code. Vous pouvez définir la version et la culture d’un assembly en utilisant des attributs. Toutefois, la valeur de nom est définie par le compilateur, l’IDE de Visual Studio dans la [boîte de dialogue Informations sur l’assembly](https://docs.microsoft.com/visualstudio/ide/reference/assembly-information-dialog-box) ou l’utilitaire Assembly Linker (Al.exe) lors de la création de l’assembly, en fonction du fichier qui contient le manifeste de l’assembly. L’attribut <xref:System.Reflection.AssemblyFlagsAttribute> détermine si plusieurs copies de l’assembly peuvent coexister.  
+ Trois attributs (avec un nom fort, le cas échéant), déterminent l’identité d’un assembly : nom, version et culture. Ces attributs constituent le nom complet de l’assembly et sont obligatoires quand vous le référencez le code. Vous pouvez définir la version et la culture d’un assembly en utilisant des attributs. Toutefois, la valeur de nom est définie par le compilateur, l’IDE de Visual Studio dans la [boîte de dialogue Informations sur l’assembly](/visualstudio/ide/reference/assembly-information-dialog-box) ou l’utilitaire Assembly Linker (Al.exe) lors de la création de l’assembly, en fonction du fichier qui contient le manifeste de l’assembly. L’attribut <xref:System.Reflection.AssemblyFlagsAttribute> spécifie si plusieurs copies de l’assembly peuvent coexister.  
   
  Le tableau suivant présente les attributs d’identité.  
   
@@ -66,7 +67,7 @@ Cette rubrique décrit les attributs le plus couramment utilisés dans les progr
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Spécifie si un assembly prend en charge l’exécution côte à côte sur le même ordinateur, dans le même processus ou dans le même domaine d’application.|  
   
 ### <a name="informational-attributes"></a>Attributs d’informations  
- Vous pouvez utiliser les attributs d’informations pour fournir des informations supplémentaires sur le produit ou la société de l’assembly. Le tableau suivant répertorie les attributs d’informations définis dans l’espace de noms <xref:System.Reflection?displayProperty=fullName>.  
+ Vous pouvez utiliser les attributs d’informations pour fournir des informations supplémentaires sur le produit ou la société de l’assembly. Le tableau suivant présente les attributs d’informations définis dans l’espace de noms <xref:System.Reflection?displayProperty=fullName>.  
   
 |Attribut|Objectif|  
 |---------------|-------------|  
@@ -192,16 +193,18 @@ static void DoIfAorB()
   
  Pour lier logiquement les symboles au moyen de l’opérateur AND, vous pouvez définir des méthodes conditionnelles en série. Par exemple, la deuxième méthode ci-dessous ne s’exécute que si `A` et `B` sont définis :  
   
-```csharp  
-<Conditional("A")>   
-Shared Sub DoIfA()  
-    DoIfAandB()  
-End Sub  
+```csharp
+[Conditional("A")]  
+static void DoIfA()  
+{  
+    DoIfAandB();  
+}  
   
-<Conditional("B")>   
-Shared Sub DoIfAandB()  
-    ' Code to execute when both A and B are defined...  
-End Sub  
+[Conditional("B")]  
+static void DoIfAandB()  
+{  
+    // Code to execute when both A and B are defined...  
+}  
 ```  
   
 ### <a name="using-conditional-with-attribute-classes"></a>Utilisation de Conditional avec des classes d’attributs  
@@ -233,11 +236,11 @@ class SampleClass
 ##  <a name="CallerInfo"></a> Attributs d’informations de l’appelant  
  À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin du fichier de code source, le numéro de ligne dans le code source, ainsi que le nom de membre de l’appelant.  
   
- Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d’informations de l’appelant qui sont définies dans l’espace de noms <xref:System.Runtime.CompilerServices?displayProperty=fullName> :  
+ Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=fullName> :  
   
 |Attribut|Description|Type|  
 |---|---|---|  
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|  
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source à partir duquel la méthode est appelée.|`Integer`|  
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [Informations relatives à l’appelant (C#)](../../../../csharp/programming-guide/concepts/caller-information.md).|`String`|  
   
@@ -246,7 +249,8 @@ class SampleClass
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection>   
  <xref:System.Attribute>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
  [Attributs](https://msdn.microsoft.com/library/5x6cd29c)   
  [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
  [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+

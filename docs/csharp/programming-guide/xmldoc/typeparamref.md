@@ -1,44 +1,64 @@
 ---
-title: "&lt;typeparamref&gt; (guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "typeparamref"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "<typeparamref> (balise XML C#)"
-  - "typeparamref (balise XML C#)"
+title: "&lt;typeparamref&gt; (Guide de programmation C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- typeparamref
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- typeparamref C# XML tag
+- <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ce2aba7a14047066decf85675233a48a08bfd605
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# &lt;typeparamref&gt; (guide de programmation C#)
-## Syntaxe  
+# <a name="lttypeparamrefgt-c-programming-guide"></a>&lt;typeparamref&gt; (Guide de programmation C#)
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <typeparamref name="name"/>  
 ```  
   
-#### Paramètres  
+#### <a name="parameters"></a>Paramètres  
  `name`  
- Nom du paramètre de type.  Mettez le nom entre guillemets doubles \(" "\).  
+ Nom du paramètre de type. Mettez le nom entre guillemets doubles (" ").  
   
-## Notes  
- Pour plus d'informations sur les paramètres de type dans les types et méthodes génériques, consultez [Génériques](../../../csharp/programming-guide/generics/index.md).  
+## <a name="remarks"></a>Remarques  
+ Pour plus d’informations sur les paramètres de type dans les types et méthodes génériques, consultez [Génériques](../../../csharp/programming-guide/generics/index.md).  
   
- Employez cette balise pour permettre aux utilisateurs du fichier de documentation de mettre en forme le mot de façon distincte, par exemple en italiques.  
+ Utilisez cette balise pour permettre aux consommateurs du fichier de documentation d’appliquer une mise en forme particulière au mot, par exemple l’italique.  
   
- Compilez avec [\/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation et les placer dans un fichier.  
+ Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation dans un fichier.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  [!code-cs[csProgGuideDocComments#13](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/typeparamref_1.cs)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Balises recommandées pour les commentaires de documentation](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+

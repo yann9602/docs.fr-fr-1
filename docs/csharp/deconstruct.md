@@ -1,7 +1,7 @@
 ---
-title: "Déconstruction de tuples et d’autres types | Microsoft Docs"
-description: "Découvrez comment déconstruire des tuples et d’autres types"
-keywords: .NET, .NET Core, C#0
+title: "Déconstruction de tuples et d’autres types"
+description: "Découvrez comment déconstruire des tuples et d’autres types."
+keywords: .NET,.NET Core,C#
 author: rpetrusha
 ms-author: ronpet
 ms.date: 07/18/2016
@@ -11,13 +11,12 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
 ms.translationtype: HT
-ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
-ms.openlocfilehash: f0946db700301a63109f23be5536f3a0505f4d60
+ms.sourcegitcommit: 863940512f33568ee10569da4712e7e646bc3ba7
+ms.openlocfilehash: ad0ed6568da073683545727ef47f6a223942c8d6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 08/12/2017
 
 ---
-
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types #
 
 Un tuple offre un moyen léger de récupérer plusieurs valeurs à partir d’un appel de méthode. Cependant, une fois que vous récupérez le tuple, vous devez gérer ses éléments individuels. Cette gestion élément par élément est assez fastidieuse, comme le montre l’exemple suivant. La méthode `QueryCityData` retourne un tuple de 3 éléments, et chacun de ses éléments est affecté à une variable dans une opération distincte.
@@ -44,21 +43,21 @@ Il existe deux façons de déconstruire un tuple :
 
 - Vous pouvez utiliser le mot clé `var` pour que C# infère le type de chaque variable. Vous placez le mot clé `var` en dehors des parenthèses. L’exemple suivant utilise l’inférence de type lors de la déconstruction du tuple de 3 éléments retourné par la méthode `QueryCityData`.
  
-      [!code-csharp[Deconstruction-Infer](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple3.cs#1)]
+    [!code-csharp[Deconstruction-Infer](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple3.cs#1)]
 
     Vous pouvez aussi utiliser le mot clé `var` individuellement avec tout ou partie des déclarations de variables à l’intérieur des parenthèses. 
 
-      [!code-csharp[Deconstruction-Infer-Some](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple4.cs#1)]
+    [!code-csharp[Deconstruction-Infer-Some](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple4.cs#1)]
 
     Ceci est assez fastidieux et n’est pas recommandé.
 
-Notez que vous ne pouvez pas spécifier un type spécifique en dehors des parenthèses, même si tous les champs du tuple ont le même type. Cela génère l’erreur du compilateur CS8136, « La déconstruction de `var (...)` form interdit un type spécifique pour `var` ».
+Notez que vous ne pouvez pas spécifier un type spécifique en dehors des parenthèses, même si tous les champs du tuple ont le même type. Cela génère l’erreur du compilateur CS8136, « La déconstruction de 'var (...)' form interdit un type spécifique pour 'var'.».
 
 Notez que vous devez également affecter chaque élément du tuple à une variable. Si vous omettez des éléments, le compilateur génère l’erreur CS8132, « Impossible de déconstruire un tuple de « x » éléments en « y » variables ».
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>Déconstruction d’éléments d’un tuple en ignorant des éléments
 
-Souvent, lors de la déconstruction d’un tuple, vous êtes intéressé seulement par les valeurs de certains éléments. À compter de C# 7, vous pouvez tirer parti de la prise en charge des *éléments ignorés*, qui sont des variables en écriture seule dont vous avez choisi d’ignorer les valeurs. Un élément ignoré est désigné par un caractère de soulignement (« _ ») dans une affectation. Vous pouvez ignorer autant de valeurs que vous le souhaitez ; pour représenter toutes les valeurs, utilisez l’élément ignoré unique, `_`.
+Souvent, lors de la déconstruction d’un tuple, vous êtes intéressé seulement par les valeurs de certains éléments. À compter de C# 7, vous pouvez tirer parti de la prise en charge des *éléments ignorés*, qui sont des variables en écriture seule dont vous avez choisi d’ignorer les valeurs. Un élément ignoré est désigné par un caractère de soulignement (« \_ ») dans une affectation. Vous pouvez ignorer autant de valeurs que vous le souhaitez ; pour représenter toutes les valeurs, utilisez l’élément ignoré unique, `_`.
 
 L’exemple suivant illustre l’utilisation de tuples avec des éléments ignorés. La méthode `QueryCityDataForYears` retourne un tuple de 6 éléments avec le nom d’une ville, sa région, une année, la population de la ville pour cette année, une seconde année et la population de la ville pour cette seconde année. L’exemple montre la différence de population entre ces deux années. Parmi les données disponibles dans le tuple, nous ne sommes pas intéressés par la région de la ville, et nous connaissons le nom de la ville et les deux dates au moment du design. Par conséquent, nous sommes intéressés seulement par les deux valeurs de la population stockées dans le tuple et nous pouvons gérer ses valeurs restantes comme éléments ignorés.  
 
@@ -90,7 +89,7 @@ La méthode `Deconstruct` surchargée dans l’exemple suivant montre une source
 
 ## <a name="deconstructing-a-user-defined-type-with-discards"></a>Déconstruction d’un type défini par l’utilisateur avec des éléments ignorés
 
-Tout comme vous le faites avec des [tuples](#deconstructing-tuple-elements-with-discards), vous pouvez utiliser des éléments ignorés pour ignorer des éléments sélectionnés retournés par une méthode `Deconstruct`. Chaque élément ignoré est défini par une variable nommée « _ », et une même opération de déconstruction peut inclure plusieurs éléments ignorés.
+Tout comme vous le faites avec des [tuples](#deconstructing-tuple-elements-with-discards), vous pouvez utiliser des éléments ignorés pour ignorer des éléments sélectionnés retournés par une méthode `Deconstruct`. Chaque élément ignoré est défini par une variable nommée « \_ », et une même opération de déconstruction peut inclure plusieurs éléments ignorés.
 
 L’exemple suivant déconstruit un objet `Person` en quatre chaînes (le prénom et le nom, la ville et l’état), mais ignore le nom et l’état.
 

@@ -5,17 +5,17 @@ keywords: "Héritage (C#), classes de base, classes dérivées, classes de base 
 author: rpetrusha
 manager: wpickett
 ms.author: ronpet
-ms.date: 03/06/2017
+ms.date: 08/16/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.translationtype: HT
-ms.sourcegitcommit: 7912d46736fd9f9d9d2ee41c416d3dfc157cfe12
-ms.openlocfilehash: 44e77b099b15b5ddccfd6b3826d0225de1b0a74f
+ms.sourcegitcommit: 3e1ec8b24c4debf24a0d52ad2a23897975c41550
+ms.openlocfilehash: 78aff41ae597a3dbe9a57e2342b52b399ea96d66
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 08/17/2017
 
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
@@ -216,13 +216,13 @@ L’exemple suivant montre le code source pour la classe `Publication` ainsi qu�
 
 - Deux propriétés liées à la publication
 
-  `Title` est une propriété <xref:System.String> en lecture seule dont la valeur est fournie en appelant le constructeur `Publication`, qui stocke la valeur dans un champ privé nommé `pubTitle`.
+  `Title` est une propriété <xref:System.String> en lecture seule dont la valeur est fournie en appelant le constructeur `Publication`.
 
   `Pages` est une propriété <xref:System.Int32> en lecture seule qui indique le nombre total de pages de la publication. La valeur est stockée dans un champ privé nommé `totalPages`. Elle doit être positive, sans quoi une exception <xref:System.ArgumentOutOfRangeException> est levée.
 
 - Membres liés à l’éditeur
 
-  Deux propriétés en lecture seule, `Publisher` et `Type`, retournent la valeur des champs privés `pubName` et `pubType`. Les valeurs sont à l’origine fournies par l’appel au constructeur de la classe `Publication`.
+  Deux propriétés en lecture seule, `Publisher` et `Type`. Les valeurs sont à l’origine fournies par l’appel au constructeur de la classe `Publication`.
 
 - Membres liés à la publication
 
@@ -230,7 +230,7 @@ L’exemple suivant montre le code source pour la classe `Publication` ainsi qu�
 
 - Membres liés aux droits d’auteur
 
-  La méthode `Copyright` prend comme arguments le nom du titulaire des droits d’auteur et l’année des droits d’auteur et les affecte à aux champs privés `copyrName` et `copyrDate`. Les valeurs peuvent être récupérées des propriétés `CopyrightName` et `CopyrightDate`.
+  La méthode `Copyright` prend comme arguments le nom du titulaire des droits d’auteur et l’année des droits d’auteur et les attribue aux propriétés `CopyrightName` et `CopyrightDate`.
 
 - Une substitution de la méthode `ToString`
 
@@ -250,13 +250,13 @@ Outre les membres qu’elle hérite de `Publication`, la classe `Book` définit 
 
 - Deux constructeurs
 
-  Les deux constructeurs `Book` partagent trois paramètres communs. Deux d’entre eux, *title* et *publisher*, correspondent aux paramètres du constructeur `Publication`. Le troisième est *author*, qui est stocké dans un champ privé `authorName`. Un constructeur inclut un paramètre *isbn*, qui est stocké dans le champ privé `id`.
+  Les deux constructeurs `Book` partagent trois paramètres communs. Deux d’entre eux, *title* et *publisher*, correspondent aux paramètres du constructeur `Publication`. Le troisième est *author*, qui est stocké dans un champ privé `authorName`. Un constructeur inclut un paramètre *isbn*, qui est stocké dans l’auto-propriété `ISBN`.
 
-  Le premier constructeur utilise le mot-clé [this](../language-reference/keywords/this.md) pour appeler l’autre constructeur. Il s’agit d’un modèle courant dans la définition des constructeurs : les constructeurs avec le moins de paramètres fournissent les valeurs par défaut lors de l’appel du constructeur avec le plus grand nombre de paramètres.
+  Le premier constructeur utilise le mot-clé [this](../language-reference/keywords/this.md) pour appeler l’autre constructeur. Il s’agit d’un modèle courant dans la définition des constructeurs. Les constructeurs avec le moins de paramètres fournissent les valeurs par défaut au moment de l’appel du constructeur avec le plus grand nombre de paramètres.
 
   Le deuxième constructeur utilise le mot-clé [base](../language-reference/keywords/base.md) pour transmettre le titre et le nom de l’éditeur au constructeur de classe de base. Si vous n’effectuez pas un appel explicite à un constructeur de classe de base dans votre code source, le compilateur C# fournit automatiquement un appel au constructeur par défaut ou sans paramètres de la classe de base.
 
-- Une propriété `ISBN` en lecture seule qui retourne le numéro ISBN de l’objet `Book`, un numéro unique à 10 ou 13 chiffres. Le numéro ISBN est fourni en tant qu’argument à un des constructeurs `Book` et est stocké dans le champ `id` privé.
+- Une propriété `ISBN` en lecture seule qui retourne le numéro ISBN de l’objet `Book`, un numéro unique à 10 ou 13 chiffres. Le numéro ISBN est fourni en tant qu’argument à un des constructeurs `Book`. Le numéro ISBN est stocké dans un champ de stockage privé qui est généré automatiquement par le compilateur.
 
 - Une propriété `Author` en lecture seule. Le nom de l’auteur est fourni en tant qu’argument aux deux constructeurs `Book` et est stocké dans le champ `authorName` privé.
 

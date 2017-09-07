@@ -1,5 +1,5 @@
 ---
-title: "Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur | Microsoft Docs"
+title: "Erreurs d'initialisation du .NET Framework : gestion de l’expérience utilisateur"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,11 +23,11 @@ caps.latest.revision: 5
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fe9ab371ab8d3eee3778412e446b7aa30b42476b
-ms.openlocfilehash: 70f0515b2b4219dcb7e143b0c81f91d3855fd433
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ad1a40319a1571643d022536bba93686d82a3d9f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Erreurs d'initialisation du .NET Framework : gestion de l’expérience utilisateur
@@ -91,7 +91,7 @@ Message d’erreur standard pour les erreurs d’initialisation
 ## <a name="includewin8includeswin8-mdmd-behavior-and-ui"></a>Comportement et interface utilisateur de [!INCLUDE[win8](../../../includes/win8-md.md)]  
  Le système d’activation du CLR fournit les mêmes comportement et interface utilisateur sur [!INCLUDE[win8](../../../includes/win8-md.md)] que sur d’autres versions du système d’exploitation Windows, sauf quand il rencontre des problèmes pour charger CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] inclut [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], qui utilise CLR 4.5. Toutefois, [!INCLUDE[win8](../../../includes/win8-md.md)] n’inclut pas .NET Framework 2.0, 3.0 ni 3.5, qui utilisent tous CLR 2.0. Par conséquent, les applications qui dépendent de CLR 2.0 ne fonctionnent pas sur [!INCLUDE[win8](../../../includes/win8-md.md)] par défaut. À la place, elles affichent la boîte de dialogue suivante pour permettre aux utilisateurs d’installer .NET Framework 3.5. Les utilisateurs peuvent également activer .NET Framework 3.5 dans le Panneau de configuration. Les deux options sont décrites dans l’article [Installer .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).  
   
- ![Boîte de dialogue pour l’installation 3.5 sur Windows 8](../../../docs/framework/deployment/media/installdialog.png "installdialog")  
+ ![Boîte de dialogue pour l’installation 3.5 sur Windows 8](../../../docs/framework/deployment/media/installdialog.png "installdialog")  
 Invite à installer le .NET Framework 3.5 à la demande  
   
 > [!NOTE]
@@ -106,3 +106,4 @@ Invite à installer le .NET Framework 3.5 à la demande
  [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)   
  [Guide pratique pour déboguer les problèmes d’activation du CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)   
  [Installation du .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour créer une clé dans le Registre (Visual C#) | Microsoft Docs"
+title: "Guide pratique pour créer une clé dans le Registre (Visual C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,10 +29,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3a377a85acdc31b426171ab6583bff92b24889b3
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 96d34df3314494fc96ad8b55d7462b67dcc7bd72
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-a-key-in-the-registry-visual-c"></a>Guide pratique pour créer une clé dans le Registre (Visual C#)
@@ -53,7 +54,7 @@ key.Close();
   
 -   Remplacez le paramètre `Names` par le nom d’une clé qui existe directement sous le nœud HKEY_CURRENT_USER du Registre.  
   
--   Remplacez le paramètre `Nam`e par le nom d’une valeur qui existe directement sous le nœud Names.  
+-   Remplacez le paramètre `Name` par le nom d’une valeur qui existe directement sous le nœud Names.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
  Examinez la structure du Registre pour rechercher un emplacement approprié pour votre clé. Par exemple, vous souhaiterez peut-être ouvrir la clé Software de l’utilisateur actuel et créer une clé avec le nom de votre société. Ensuite, ajoutez les valeurs de Registre à la clé de votre société.  
@@ -82,3 +83,4 @@ key.Close();
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)   
  [Read, write and delete from the registry with C# (Lire, écrire et supprimer du Registre avec C#)](http://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)
+

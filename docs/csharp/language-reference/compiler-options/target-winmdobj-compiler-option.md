@@ -1,5 +1,5 @@
 ---
-title: -target:winmdobj (Options du compilateur C#) | Microsoft Docs
+title: "-target:winmdobj (Options du compilateur C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -26,23 +26,24 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7581ec18db0d2741452b47ad6200482b63c102be
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3967f7f9326652271ce55aa286e9f42f94dee775
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="targetwinmdobj-c-compiler-options"></a>/target:winmdobj (Options du compilateur C#)
+# <a name="targetwinmdobj-c-compiler-options"></a>/target:winmdobj (Options du compilateur C#)
 Si vous utilisez l’option du compilateur **/target:winmdobj**, le compilateur crée un fichier .winmdobj intermédiaire que vous pouvez convertir en fichier binaire (.winmd) Windows Runtime. Le fichier .winmd peut ensuite être consommé par des programmes JavaScript et C++, en plus des programmes en langage managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /target:winmdobj  
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le paramètre **winmdobj** signale au compilateur qu’un module intermédiaire est requis. En réponse, Visual Studio compile la bibliothèque de classes C# comme fichier .winmdobj. Le fichier .winmdobj peut ensuite être acheminé via l’outil d’exportation <xref:Microsoft.Build.Tasks.WinMDExp> pour produire un fichier de métadonnées Windows (.winmd). Le fichier .winmd contient à la fois le code de la bibliothèque d'origine et les métadonnées WinMD utilisées par JavaScript ou C++ et par le Windows Runtime.  
+ Le paramètre **winmdobj** signale au compilateur qu’un module intermédiaire est requis. En réponse, Visual Studio compile la bibliothèque de classes C# comme fichier .winmdobj. Le fichier .winmdobj peut ensuite être acheminé via l'outil d'exportation <xref:Microsoft.Build.Tasks.WinMDExp> pour produire un fichier de métadonnées Windows (.winmd). Le fichier .winmd contient à la fois le code de la bibliothèque d'origine et les métadonnées WinMD utilisées par JavaScript ou C++ et par le Windows Runtime.  
   
  La sortie d’un fichier qui est compilé à l’aide de l’option du compilateur **/target:winmdobj** est conçue pour être utilisée uniquement comme entrée pour l’outil d’exportation WimMDExp ; le fichier .winmdobj proprement dit n’est pas référencé directement.  
   
@@ -58,17 +59,18 @@ Si vous utilisez l’option du compilateur **/target:winmdobj**, le compilateur 
   
 3.  Dans la liste **Type de sortie**, choisissez **Fichier WinMD**.  
   
-     L’option **Fichier WinMD** est disponible uniquement pour les modèles d’application [!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)].  
+     L’option **Fichier WinMD** est disponible uniquement pour les modèles d’application [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)].  
   
- Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
 ## <a name="example"></a>Exemple  
  La commande suivante compile `filename.cs` dans un fichier .winmdobj intermédiaire.  
   
-```  
+```console  
 csc /target:winmdobj filename.cs  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
  [/target (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
  [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+

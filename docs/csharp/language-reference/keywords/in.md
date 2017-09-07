@@ -1,31 +1,51 @@
 ---
-title: "in (R&#233;f&#233;rence C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "in"
-  - "in_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "in (mot clé C#)"
+title: "in (Référence C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- in
+- in_CSharpKeyword
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- in keyword [C#]
 ms.assetid: 52032838-0a38-476e-b4d5-94b59141952f
 caps.latest.revision: 9
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 9
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7e9ef207b2363f57cf7d92f743ec9213da937b7f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# in (R&#233;f&#233;rence C#)
+# <a name="in-c-reference"></a>in (Référence C#)
 Le mot clé contextuel `in` est utilisé dans trois contextes :  
   
--   Instructions [foreach](../../../csharp/language-reference/keywords/foreach-in.md)  
+-   instructions [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ;  
   
--   [Clauses de jointure](../../../csharp/language-reference/keywords/join-clause.md) dans les expressions de requête  
+-   [clauses join](../../../csharp/language-reference/keywords/join-clause.md) dans les expressions de requête ;  
   
--   [paramètres de type générique](../../../csharp/language-reference/keywords/in-generic-modifier.md) dans les interfaces génériques et les délégués.  
+-   [paramètre de type générique](../../../csharp/language-reference/keywords/in-generic-modifier.md) dans les interfaces et les délégués génériques.  
   
-## Voir aussi  
- [Référence C\#](../../../csharp/language-reference/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Informations de référence sur C#](../../../csharp/language-reference/index.md)
+

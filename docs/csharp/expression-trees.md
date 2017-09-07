@@ -1,6 +1,6 @@
 ---
 title: Expression Trees
-description: Expression Trees
+description: "En savoir plus sur les arborescences d’expressions dans .NET Core et comment les utiliser pour représenter le code en tant que structures que vous pouvez examiner, modifier et exécuter."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e6ec60b6cdbe29def719f7970dad15fad65902e7
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3935906d9fca81a094999eefdd49ae4ed56990bf
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -31,12 +31,12 @@ Vous avez probablement déjà écrit du code qui utilise des arborescences d’e
 Cela permet à [Entity Framework](http://docs.efproject.net/en/latest/) de traduire la requête que vous avez écrite en C# en code SQL qui s’exécute dans le moteur de base de données. [Moq](https://github.com/Moq/moq), framework de simulation populaire pour .NET, constitue un autre exemple.
 
 Les sections suivantes de ce didacticiel expliquent en détail ce que sont les arborescences d’expressions, examinent les classes de framework qui prennent en charge les arborescences d’expressions et montrent comment utiliser des arborescences d’expressions. Vous découvrirez comment lire des arborescences d’expressions, créer des arborescences d’expressions, créer des arborescences d’expressions modifiées et exécuter le code représenté par des arborescences d’expressions. Une fois ce didacticiel terminé, vous serez prêt à utiliser ces structures pour créer des algorithmes adaptatifs enrichis.
-<style type="text/css"> ol { list-style-type: upper-roman; } </style>
-1. [Explication des arborescences d’expressions](expression-trees-explained.md)
 
-    Understand the structure and concepts behind *Expression Trees*.
+1. [Explication des arborescences de l’expression](expression-trees-explained.md)
+
+    Comprenez la structure et les concepts derrière les *arborescences d’expressions*.
     
-2. [Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)
+2. [Types de frameworks prenant en charge les arborescences de l’expression](expression-classes.md)
     
     Découvrez les structures et les classes qui définissent et manipulent des arborescences d’expressions.
     

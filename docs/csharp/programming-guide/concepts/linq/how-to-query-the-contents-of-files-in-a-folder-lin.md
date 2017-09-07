@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour interroger le contenu de fichiers dans un dossier (LINQ) (C#) | Microsoft Docs
+title: Guide pratique pour interroger le contenu de fichiers texte dans un dossier (LINQ) (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,13 +19,14 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9e5d5af4e8f0d9fb19e854c62799e67aedc6ff0e
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 1aa2ef581dcba5814657681daebd07be70e498b1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-c"></a>Guide pratique pour interroger le contenu de fichiers dans un dossier (LINQ) (C#)
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Guide pratique pour interroger le contenu de fichiers texte dans un dossier (LINQ) (C#)
 Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. Pour plus d’informations, consultez [Guide pratique pour combiner des requêtes LINQ avec des expressions régulières (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Exemple  
@@ -92,3 +93,4 @@ class QueryContents
 ## <a name="see-also"></a>Voir aussi  
  [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)   
  [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+

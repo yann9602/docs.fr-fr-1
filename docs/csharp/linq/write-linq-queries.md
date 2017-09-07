@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2e08c8e3594bedeab763895c8b6f7d78a2bbf56d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7051e33a185b0ab898c4b9d7368f8f0e6883c119
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -49,7 +50,7 @@ Cette rubrique présente les trois façons d’écrire une requête LINQ en C# 
 ## <a name="example"></a>Exemple  
   
 ## <a name="method-syntax"></a>Syntaxe de méthode  
- Certaines opérations de requête doivent être exprimées comme un appel de méthode. Les plus répandues de ces méthodes retournent des valeurs numériques uniques, telles que <xref:System.Linq.Enumerable.Sum%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, <xref:System.Linq.Enumerable.Average%2A>, etc. Ces méthodes doivent toujours être appelées en dernier dans toutes les requêtes, car elles ne représentent qu’une valeur unique et ne peuvent pas servir de source pour une opération de requête supplémentaire. L’exemple suivant présente un appel de méthode dans une expression de requête :  
+ Certaines opérations de requête doivent être exprimées comme un appel de méthode. Les plus répandues de ces méthodes retournent des valeurs numériques uniques, telles que <xref:System.Linq.Enumerable.Sum%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, <xref:System.Linq.Enumerable.Average%2A>, et ainsi de suite. Ces méthodes doivent toujours être appelées en dernier dans toutes les requêtes, car elles ne représentent qu’une valeur unique et ne peuvent pas servir de source pour une opération de requête supplémentaire. L’exemple suivant présente un appel de méthode dans une expression de requête :  
   
  [!code-cs[csProgGuideLINQ#6](../../../samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_2.cs)]  
   
@@ -95,3 +96,4 @@ int numCount = numbers.Where(n => n < 3 || n > 7).Count();
   [Procédure pas à pas : écriture de requêtes en C#](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
  [Expressions de requête LINQ](index.md)   
  [where, clause](../language-reference/keywords/where-clause.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Boxing des types Nullable (Guide de programmation C#) | Microsoft Docs"
+title: Boxing des types Nullable (Guide de programmation C#)
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,15 +29,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: e4ff2e8a31ca5a59494f80597460e90107e78c8a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 5ce063a70ced98fd8b99b4b46d704e08ddc96e10
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="boxing-nullable-types-c-programming-guide"></a>Boxing des types Nullable (Guide de programmation C#)
-Les objets basés sur des types Nullable sont boxed uniquement si l’objet n’est pas Null. Si <xref:System.Nullable%601.HasValue%2A> a la valeur `false`, la référence d’objet est assignée à `null` au lieu de boxing. Exemple :  
+Les objets basés sur des types Nullable sont boxed uniquement si l’objet n’est pas Null. Si <xref:System.Nullable%601.HasValue%2A> a la valeur `false`, la référence d’objet est affectée à `null` au lieu du boxing. Exemple :  
   
 ```csharp  
 bool? b = null;  
@@ -45,7 +45,7 @@ object o = b;
 // Now o is null.  
 ```  
   
- Si l’objet n’est pas Null (si <xref:System.Nullable%601.HasValue%2A> a la valeur `true`), le boxing s’applique au type sous-jacent sur lequel repose l’objet Nullable. Le boxing d’un type de valeur Nullable non Null convertit le type de valeur lui-même, pas le <xref:System.Nullable%601?displayProperty=fullName> qui encapsule le type de valeur. Exemple :  
+ Si l’objet n’est pas null (si <xref:System.Nullable%601.HasValue%2A> a la valeur `true`), le boxing s’applique uniquement au type sous-jacent sur lequel repose l’objet Nullable. Le boxing d’un type de valeur Nullable non null convertit le type de valeur lui-même, et non pas le <xref:System.Nullable%601?displayProperty=fullName> qui encapsule le type de valeur. Exemple :  
   
 ```csharp  
 bool? b = false;  
@@ -93,4 +93,5 @@ int? i2 = (int?)iBoxed;
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md)   
- [Comment : identifier un type Nullable](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)
+ [Guide pratique pour identifier un type Nullable](../../../csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type.md)
+

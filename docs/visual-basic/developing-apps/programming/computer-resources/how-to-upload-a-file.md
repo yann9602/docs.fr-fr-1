@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour charger un fichier en Visual Basic | Microsoft Docs
+title: Guide pratique pour charger un fichier dans Visual Basic
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,15 +34,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 1663cc6ad0a6e5f2a940c050c75d403cffd1f53f
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 29baf1f420cece6e0b05f9638b30a326178a013d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>Guide pratique pour charger un fichier dans Visual Basic
-Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> pour charger un fichier et le stocker dans un emplacement distant. Si le paramètre `ShowUI` a la valeur `True`, une boîte de dialogue s’affiche pour indiquer la progression du téléchargement et permettre aux utilisateurs d’annuler l’opération.  
+Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> pour charger un fichier et le stocker dans un emplacement distant. Si le paramètre `ShowUI` a la valeur `True`, une boîte de dialogue s’affiche pour indiquer la progression du chargement et permettre aux utilisateurs d’annuler l’opération.  
   
 ### <a name="to-upload-a-file"></a>Pour charger un fichier  
   
@@ -76,3 +76,4 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.Upl
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>   
  [Guide pratique pour télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)   
  [Guide pratique pour analyser des chemins](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+

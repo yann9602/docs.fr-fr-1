@@ -1,85 +1,104 @@
 ---
-title: "/platform (C# Compiler Options) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-f1_keywords: 
-  - "/platform"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "platform compiler option [C#]"
-  - "-platform compiler option [C#]"
-  - "/platform compiler option [C#]"
+title: -platform (Options du compilateur C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+f1_keywords:
+- /platform
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- platform compiler option [C#]
+- -platform compiler option [C#]
+- /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: 46
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 46
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 44d4cadbc45eb141ecb7a83345d2a7a834ce5299
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# /platform (C# Compiler Options)
-Spécifie quelle version du common language runtime \(CLR\) peut exécuter l'assembly.  
+# <a name="platform-c-compiler-options"></a>/platform (Options du compilateur C#)
+Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’assembly.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 /platform:string  
 ```  
   
-#### Paramètres  
+#### <a name="parameters"></a>Paramètres  
  `string`  
- anycpu, anycpu32bitpreferred, ARM, x64, x86, or Itanium \(valeur par défaut\).  
+ anycpu (valeur par défaut), anycpu32bitpreferred, ARM, x64, x86 ou Itanium.  
   
-## Notes  
+## <a name="remarks"></a>Remarques  
   
--   **anycpu** \(valeur par défaut\) compile votre assembly pour qu'il soit exécuté sur n'importe quelle plateforme.  Votre application s'exécute en tant que processus 64 bits autant que possible et revient à 32 bits uniquement lorsque ce mode est disponible.  
+-   **anycpu** (valeur par défaut) compile votre assembly pour qu’il s’exécute sur n’importe quelle plateforme. Votre application s’exécute en tant que processus 64 bits dans la mesure du possible et repasse en 32 bits quand seul ce mode est disponible.  
   
--   **anycpu32bitpreferred** compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme.  Votre application s'exécute en mode 32 bits sur les systèmes qui prennent en charge 64 bits et aux applications 32 bits.  Vous pouvez spécifier cette option uniquement pour les projets qui ciblent .NET Framework 4,5.  
+-   **anycpu32bitpreferred** compile votre assembly pour qu’il s’exécute sur n’importe quelle plateforme. Votre application s’exécute en mode 32 bits sur les systèmes qui prennent en charge les applications 64 bits et 32 bits. Vous pouvez spécifier cette option uniquement pour les projets qui ciblent le .NET Framework 4.5.  
   
--   **ARM** compile l'assembly pour s'exécuter sur un ordinateur qui possède un processeur gigaoctets \(ARM\) d'ordinateur Advanced RISC.  
+-   **ARM** compile votre assembly pour qu’il s’exécute sur un ordinateur doté d’un processeur ARM (Advanced RISC Machine).  
   
--   **x64** compile votre assembly pour qu'il soit exécuté par le Common Language Runtime 64 bits sur un ordinateur qui prend en charge le jeu d'instructions AMD64 ou EM64T.  
+-   **x64** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d’instructions AMD64 ou EM64T.  
   
--   **x86** compile votre assembly en vue d'une exécution par le common language runtime 32 bits compatible x86.  
+-   **x86** compile votre assembly pour qu’il soit exécuté par le CLR 32 bits x86.  
   
--   **Itanium** compile votre assembly en vue d'une exécution par le common language runtime 64 bits sur un ordinateur à processeur Itanium.  
+-   **Itanium** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.  
   
  Sur un système d'exploitation Windows 64 bits :  
   
--   Les assemblys compilés avec **\/platform:x86** s'exécutent sur le CLR 32\-bits qui s'exécute sous WOW64.  
+-   Les assemblys compilés avec **/platform:x86** s’exécutent sur le CLR 32 bits fonctionnant sous WOW64.  
   
--   Une DLL compilée avec **\/platform:anycpu** s'exécute sur le même CLR que le processus dans lequel elle est chargée.  
+-   Une DLL compilée avec **/platform:anycpu** s’exécute sur le même CLR que le processus dans lequel elle est chargée.  
   
--   Les fichiers exécutables qui sont compilés avec **\/platform:anycpu** s'exécutent sur le CLR 64\-bits.  
+-   Les fichiers exécutables compilés avec **/platform:anycpu** s’exécutent sur le CLR 64 bits.  
   
--   les fichiers exécutables compilés avec **\/platform:anycpu32bitpreferred** exécutent sur le CLR 32 bits ;  
+-   Les fichiers exécutables compilés avec **/platform:anycpu32bitpreferred** s’exécutent sur le CLR 32 bits.  
   
- La définition de **anycpu32bitpreferred** est valide uniquement pour les fichiers \(.EXE\) exécutables, et il requiert .NET Framework 4,5.  
+ Le paramètre **anycpu32bitpreferred** ne vaut que pour les fichiers exécutables (.EXE) et nécessite le .NET Framework 4.5.  
   
- Pour plus d'informations sur le développement d'une application à exécuter sur un système d'exploitation 64 bits Windows, consultez [Applications 64 bits](../Topic/64-bit%20Applications.md).  
+ Pour plus d’informations sur le développement d’une application s’exécutant sur un système d’exploitation Windows 64 bits, consultez [Applications 64 bits](https://msdn.microsoft.com/library/ms241064).  
   
-### Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
 1.  Ouvrez la page **Propriétés** du projet.  
   
 2.  Cliquez sur la page de propriétés **Générer**.  
   
-3.  Remplacez la propriété **Plateforme cible** et, pour les projets qui cible le .NET Framework 4,5, activez ou désactivez la case à cocher **Préférer 32 bits**.  
+3.  Modifiez la propriété **Plateforme cible** puis, pour les projets qui ciblent le .NET Framework 4.5, cochez ou décochez la case **Préférer 32 bits**.  
   
- **Remarque**  
- **\/platform** n'est pas disponible dans l'environnement de développement en Visual C\# Express.  
+ **Notez que /platform** n’est pas disponible dans l’environnement de développement de Visual C# Express.  
   
- Pour plus d'informations sur la définition de cette option du compilateur par programme, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.  
   
-## Exemple  
- L'exemple suivant indique comment utiliser l'option **\/platform** pour spécifier que l'application ne doit être exécutée que par le CLR 64 bits sur un système d'exploitation Windows 64 bits pour Itanium.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser l’option **/platform** pour préciser que l’application doit être exécutée par le CLR 64 bits sur un système d’exploitation Windows 64 bits.  
   
-```  
+```console  
 csc /platform:anycpu filename.cs  
 ```  
   
-## Voir aussi  
- [C\# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)   
- [Comment : modifier des propriétés de projet et des paramètres de configuration](http://msdn.microsoft.com/fr-fr/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>Voir aussi  
+ [Options du compilateur C#](index.md)   
+ [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+

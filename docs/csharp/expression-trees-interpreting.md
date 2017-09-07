@@ -1,6 +1,6 @@
 ---
 title: "Interprétation des expressions"
-description: "Interprétation des expressions"
+description: "Découvrez comment écrire du code pour analyser la structure d’une arborescence d’expressions."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 07352a2807c08ad19b8d5a47c5a42a0e1c455ab6
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e7c5f7404546c6f3812fc5cc3d0320c77816634d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -522,7 +522,7 @@ Tout d’abord, les visiteurs gèrent uniquement les constantes qui sont des ent
 
 Même le dernier exemple reconnaît un sous-ensemble des types de nœuds possibles.
 Vous pouvez toujours lui fournir de nombreuses expressions qui entraîneront son échec.
-Une implémentation complète est fournie dans la bibliothèque standard .NET sous le nom [ExpressionVisitor](https://docs.microsoft.com/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor). Elle peut gérer tous les types de nœuds possibles.
+Une implémentation complète est fournie dans .NET Standard sous le nom [ExpressionVisitor](/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor). Elle peut gérer tous les types de nœuds possibles.
 
 Pour finir, la bibliothèque que j’ai utilisée dans cet article a été créée à des fins de démonstration et de formation. Elle n’est pas optimisée. Je l’ai écrite pour rendre très claires les structures utilisées, et pour mettre en évidence les techniques employées pour visiter les nœuds et analyser ce qu’ils contiennent. Une implémentation de production accorderait davantage d’attention aux performances.
 

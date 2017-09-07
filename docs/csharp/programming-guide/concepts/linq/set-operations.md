@@ -1,5 +1,5 @@
 ---
-title: "Opérations ensemblistes (C#) | Microsoft Docs"
+title: "Opérations ensemblistes (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 37841cde3aa5e4aaa6545b3a160422d024be5842
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 121dcd4d41dcfea332c45031a5fbed594e2f1e3e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="set-operations-c"></a>Opérations ensemblistes (C#)
@@ -47,7 +48,7 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
  ![Graphique illustrant le comportement de Distinct&#40;&#41;.](../../../../csharp/programming-guide/concepts/linq/media/distinct.png "Distinct")  
   
 ### <a name="except"></a>À l'exception  
- L’illustration suivante représente le comportement de <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=fullName>. La séquence retournée contient uniquement les éléments de la première séquence d’entrée qui ne figurent pas dans la seconde séquence d’entrée.  
+ L’illustration suivante représente le comportement de <xref:System.Linq.Enumerable.Except%2A?displayProperty=fullName>. La séquence retournée contient uniquement les éléments de la première séquence d’entrée qui ne figurent pas dans la seconde séquence d’entrée.  
   
  ![Graphique montrant l’action de Except&#40;&#41;.](../../../../csharp/programming-guide/concepts/linq/media/except.png "Except")  
   
@@ -66,3 +67,4 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
  [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
  [Guide pratique pour combiner et comparer des collections de chaînes (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)   
  [Guide pratique pour rechercher la différence ensembliste entre deux listes (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)
+

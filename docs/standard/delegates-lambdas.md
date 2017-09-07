@@ -1,6 +1,6 @@
 ---
 title: "Délégués et expressions lambda"
-description: "Délégués et expressions lambda"
+description: "Découvrez comment les délégués définissent un type, qui spécifie une signature de méthode particulière, qui peut être appelée directement ou passée à une autre méthode et appelée."
 keywords: .NET, .NET Core
 author: richlander
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 1dbe9c72999c14e45910310eb0bbc91ebe9f1e4a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: ef6d1bf9a7153f7adf635d13b4dcfb7647ed2e33
+ms.openlocfilehash: d04a158db4f97a0e37f8a92149a3f237ee2e5434
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
 
 ---
 
@@ -39,7 +40,6 @@ public class Program
       Console.WriteLine(rev("a string"));
   }
 }
-
 ```
 
 *   Sur la ligne 4, nous créons un type délégué d’une certaine signature, dans notre exemple, une méthode qui accepte un paramètre de chaîne, puis renvoie un paramètre de chaîne.
@@ -71,7 +71,6 @@ public class Program
       Console.WriteLine(rev("a string"));
   }
 }
-
 ```
 
 Dans cet exemple simple, il peut sembler un peu superflu de définir une méthode en dehors de la méthode Main(). C’est pourquoi .NET Framework 2.0 a introduit le concept des **délégués anonymes**. Grâce à eux, vous pouvez créer des délégués « inline », sans avoir à spécifier un autre type ou méthode. Vous insérez simplement la définition du délégué là où vous en avez besoin.
@@ -104,7 +103,6 @@ public class Program
     }
   }
 }
-
 ```
 
 Notez les lignes en surbrillance. Comme vous pouvez le voir, le corps du délégué n’est qu’un ensemble d’expressions, comme tout autre délégué. Mais au lieu d’être une définition séparée, nous l’avons introduit _ad hoc_ dans notre appel à la méthode `FindAll()` du type `List<T>`.
@@ -136,7 +134,6 @@ public class Program
     }
   }
 }
-
 ```
 
 Si vous jetez un œil aux lignes en surbrillance, vous pouvez voir à quoi ressemble une expression lambda. Là encore, il s’agit simplement d’une syntaxe **très** pratique pour l’utilisation des délégués. Par conséquent, ce qui se passe en coulisses est très proche de ce qui se passe avec le délégué anonyme.
@@ -153,7 +150,6 @@ public MainWindow()
         this.Title = "Loaded";
     };
 }
-
 ```
 
 ## <a name="further-reading-and-resources"></a>Ressources et informations supplémentaires

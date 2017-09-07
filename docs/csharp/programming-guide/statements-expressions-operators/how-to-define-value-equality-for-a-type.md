@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#) | Microsoft Docs"
+title: "Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,10 +31,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 33b2ab2252fac8442caa7b2f3e9b5b311cc0f9b6
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e008be022765ff7d2bb440f0a37193b882038b76
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)
@@ -50,19 +51,19 @@ Quand vous définissez une classe ou un struct, vous décidez s’il est judicie
   
 5.  x.`Equals`(null) retourne `false`. Toutefois, null.Equals(null) lève une exception. Elle ne respecte pas la règle n°2 ci-dessus.  
   
- Tout struct que vous définissez a déjà une implémentation par défaut de l’égalité des valeurs qu’il hérite de la substitution <xref:System.ValueType?displayProperty=fullName> de la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Cette implémentation utilise la réflexion pour examiner tous les champs et propriétés du type. Bien que cette implémentation produise des résultats corrects, elle est relativement lente par rapport à une implémentation personnalisée que vous écrivez spécifiquement pour le type.  
+ Tout struct que vous définissez a déjà une implémentation par défaut de l’égalité des valeurs dont il hérite de la substitution <xref:System.ValueType?displayProperty=fullName> de la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Cette implémentation utilise la réflexion pour examiner tous les champs et propriétés du type. Bien que cette implémentation produise des résultats corrects, elle est relativement lente par rapport à une implémentation personnalisée que vous écrivez spécifiquement pour le type.  
   
  Les détails d’implémentation pour l’égalité des valeurs sont différents pour les classes et les structs. Toutefois, les classes et les structs nécessitent tous deux les mêmes étapes de base pour l’implémentation de l’égalité :  
   
-1.  Substituez la méthode [virtuelle](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=fullName>. (Voir l’étape 2.)  
+1.  Substituez la méthode [virtual](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=fullName>. (Voir l’étape 2.)  
   
-2.  Implémentez l’interface <xref:System.IEquatable%601?displayProperty=fullName> en fournissant une méthode `Equals` propre au type. C’est ici qu’est effectuée la comparaison d’équivalence. Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type. Ne levez pas d'exceptions à partir de la méthode `Equals`. Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe. Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base. (Ne faites pas cela si le type hérite directement de <xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> effectue une vérification de l’égalité de référence.)  
+2.  Implémentez l’interface <xref:System.IEquatable%601?displayProperty=fullName> en fournissant une méthode `Equals` propre au type. C’est ici qu’est effectuée la comparaison d’équivalence. Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type. Ne levez pas d'exceptions à partir de la méthode `Equals`. Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe. Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base. (Ne faites pas cela si le type hérite directement d’<xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> effectue une vérification de l’égalité de référence.)  
   
 3.  Facultatif, mais recommandé : Surchargez les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) et [! =](../../../csharp/language-reference/operators/not-equal-operator.md).  
   
 4.  Substituez <xref:System.Object.GetHashCode%2A?displayProperty=fullName> pour que deux objets ayant une égalité des valeurs produisent le même code de hachage.  
   
-5.  Facultatif : Pour prendre en charge les définitions pour « supérieur à » ou « inférieur à », implémentez l’interface <xref:System.IComparable%601> pour votre type, et surchargez aussi les opérateurs [<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) et [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md).  
+5.  Facultatif : Pour prendre en charge les définitions pour « supérieur à » ou « inférieur à », implémentez l’interface <xref:System.IComparable%601> pour votre type, et surchargez également les opérateurs [<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) et [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md).  
   
  Le premier exemple qui suit illustre une implémentation de classe. Le deuxième exemple illustre une implémentation de struct.  
   

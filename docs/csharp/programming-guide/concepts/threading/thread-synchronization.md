@@ -1,5 +1,5 @@
 ---
-title: Synchronisation des threads (C#) | Microsoft Docs
+title: Synchronisation des threads (C#)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,11 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: f8d51aa1c50c097577a575be9b5da4b9e0effc55
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: df4093d4bf777f904aa8ce376cd164ed822350a0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="thread-synchronization-c"></a>Synchronisation des threads (C#)
@@ -67,7 +67,7 @@ public class TestThreading
   
  L’argument fourni au mot clé `lock` doit être un objet basé sur un type référence servant à définir la portée du verrou. Dans l’exemple ci-dessus, la portée du verrou est limitée à cette fonction car aucune référence à l’objet `lockThis` n’existe en dehors de la fonction. Si une telle référence existait, la portée du verrou s’étendrait à cet objet. À proprement parler, l’objet fourni est utilisé seulement pour identifier de manière unique la ressource qui est partagée entre plusieurs threads, si bien qu’il peut s’agir d’une instance de classe arbitraire. Dans la pratique, toutefois, cet objet représente généralement la ressource pour laquelle la synchronisation des threads est nécessaire. Par exemple, si un objet conteneur doit être utilisé par plusieurs threads, le conteneur peut être passé au verrou, et le bloc de code synchronisé suivant le verrou accéderait au conteneur. L’accès à l’objet est bien synchronisé du moment que les autres threads appliquent un verrou sur le même conteneur avant d’y accéder.  
   
- En général, il est préférable d’éviter d’appliquer un verrou sur un type `public` ou sur des instances d’objet non contrôlées par votre application. Par exemple, `lock(this)` peut être problématique si l’instance est accessible publiquement, car du code en dehors de votre contrôle risque d’appliquer également un verrou sur l’objet. Cela pourrait créer des situations de blocage où deux threads ou plus attendent la libération du même objet. L’application d’un verrou sur un type de données public, par opposition à un objet, peut entraîner des problèmes pour la même raison. L’application d’un verrou sur des chaînes littérales est particulièrement risqué, car les chaînes littérales sont *intégrées* par le CLR (Common Language Runtime). Cela signifie qu’il existe une seule instance d’une chaîne littérale donnée pour l’ensemble du programme. Un seul et même objet représente le littéral dans tous les domaines d’application en cours d’exécution, sur tous les threads. Par conséquent, un verrou placé sur une chaîne avec le même contenu n’importe où dans le processus d’application verrouille toutes les instances de cette chaîne dans l’application. Par conséquent, il est préférable de verrouiller un membre privé ou protégé qui n’est pas intégré. Certaines classes fournissent des membres spécifiquement pour le verrouillage. Le type <xref:System.Array>, par exemple, fournit <xref:System.Array.SyncRoot%2A>. De nombreux types de collection fournissent également un membre `SyncRoot`.  
+ En général, il est préférable d’éviter d’appliquer un verrou sur un type `public` ou sur des instances d’objet non contrôlées par votre application. Par exemple, `lock(this)` peut être problématique si l’instance est accessible publiquement, car du code en dehors de votre contrôle risque d’appliquer également un verrou sur l’objet. Cela pourrait créer des situations de blocage où deux threads ou plus attendent la libération du même objet. L’application d’un verrou sur un type de données public, par opposition à un objet, peut entraîner des problèmes pour la même raison. L’application d’un verrou sur des chaînes littérales est particulièrement risquée, car les chaînes littérales sont *intégrées* par le CLR (Common Language Runtime). Cela signifie qu’il existe une seule instance d’une chaîne littérale donnée pour l’ensemble du programme. Un seul et même objet représente le littéral dans tous les domaines d’application en cours d’exécution, sur tous les threads. Par conséquent, un verrou placé sur une chaîne avec le même contenu n’importe où dans le processus d’application verrouille toutes les instances de cette chaîne dans l’application. Par conséquent, il est préférable de verrouiller un membre privé ou protégé qui n’est pas intégré. Certaines classes fournissent des membres spécifiquement pour le verrouillage. Le type <xref:System.Array>, par exemple, fournit <xref:System.Array.SyncRoot%2A>. De nombreux types de collection fournissent également un membre `SyncRoot`.  
   
  Pour plus d’informations sur l’instruction `lock`, consultez les rubriques suivantes :  
   
@@ -100,7 +100,7 @@ finally
 }  
 ```  
   
- L’utilisation du mot clé `lock` est généralement préférée à l’utilisation directe de la classe <xref:System.Threading.Monitor>. En effet, `lock` est plus concis et `lock` garantit la libération du moniteur sous-jacent, même si le code protégé lève une exception. Le mot clé `finally` permet cela ; il exécute son bloc de code associé qu’une exception soit levée ou non.  
+ L’utilisation du mot clé `lock` est généralement préférée à l’utilisation directe de la classe <xref:System.Threading.Monitor>. En effet, `lock` est plus concis et `lock` garantit la libération du moniteur sous-jacent, même si le code protégé lève une exception. Le mot clé `finally` permet cela ; il exécute son bloc de code associé qu’une exception soit levée ou non.  
   
 ## <a name="synchronization-events-and-wait-handles"></a>Événements de synchronisation et handles d’attente  
  L’utilisation d’un verrou ou d’un moniteur est utile pour empêcher l’exécution simultanée de blocs de code sensibles aux threads, mais ces constructions ne permettent pas à un thread de communiquer un événement à un autre. Cela nécessite des *événements de synchronisation* Ce sont des objets qui possèdent l’un des deux états suivants : signalé ou non signalé, et qui peuvent être utilisés pour activer et suspendre des threads. Il est possible de suspendre des threads en les obligeant à attendre un événement de synchronisation non signalé, et de les activer en changeant l’état de l’événement sur signalé. Si un thread tente d’attendre un événement qui est déjà signalé, le thread continue de s’exécuter sans délai.  
@@ -183,3 +183,4 @@ class ThreadingExample
  [Opérations verrouillées](../../../../standard/threading/interlocked-operations.md)   
  [AutoResetEvent](../../../../standard/threading/autoresetevent.md)   
  [Synchronisation des données pour le multithreading](../../../../standard/threading/synchronizing-data-for-multithreading.md)
+

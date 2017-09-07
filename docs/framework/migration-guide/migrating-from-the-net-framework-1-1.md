@@ -40,7 +40,7 @@ ms.lasthandoff: 07/28/2017
     </configuration>  
     ```  
   
--   Vous pouvez recompiler l'application avec un compilateur qui cible le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] et utiliser la boîte de dialogue de compatibilité des projets **** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild) utilisé par [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
+-   Vous pouvez recompiler l'application avec un compilateur qui cible le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Si vous avez utilisé initialement Visual Studio 2003 pour développer et compiler votre solution, vous pouvez ouvrir cette dernière dans [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)] et utiliser la boîte de dialogue de **compatibilité des projets** pour convertir les fichiers solution et projet des formats utilisés par Visual Studio 2003 au format Microsoft Build Engine (MSBuild) utilisé par [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)].  
   
  Que vous préfériez recompiler ou recibler votre application, vous devez déterminer si elle est affectée par les modifications introduites dans les versions ultérieures du .NET Framework. Ces modifications sont de deux types :  
   

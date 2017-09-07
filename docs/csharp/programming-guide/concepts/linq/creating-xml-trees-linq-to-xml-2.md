@@ -1,5 +1,5 @@
 ---
-title: "Création d’arborescences XML en C# (LINQ to XML) | Microsoft Docs"
+title: "Création d’arborescences XML en C# (LINQ to XML)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 92ba0d345183ec503d61254355f948f82a18f053
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ac95fcf49736b554c8a3d4d0061f63b3ac4d3f65
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>Création d’arborescences XML en C# (LINQ to XML)
@@ -31,11 +32,11 @@ Cette section fournit des informations sur la création d’arborescences XML en
  Pour plus d’informations sur l’utilisation des résultats de requêtes LINQ comme contenu d’un <xref:System.Xml.Linq.XElement>, consultez [Construction fonctionnelle (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
 ## <a name="constructing-elements"></a>Construction d'éléments  
- Les signatures des constructeurs <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute> vous permettent de passer le contenu de l’élément ou de l’attribut comme arguments du constructeur. Étant donné que l’un des constructeurs prend une quantité variable d’arguments, vous pouvez passer une quantité quelconque d’éléments enfants. Bien entendu, chacun de ces éléments enfants peut contenir ses propres éléments enfants. Pour tout élément, vous pouvez ajouter une quantité quelconque d'attributs.  
+ Les signatures des constructeurs <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute> vous permettent de passer le contenu de l'élément ou attribut en tant qu'arguments du constructeur. Étant donné que l'un des constructeurs prend une quantité variable d'arguments, vous pouvez passer une quantité quelconque d'éléments enfants. Bien entendu, chacun de ces éléments enfants peut contenir ses propres éléments enfants. Pour tout élément, vous pouvez ajouter une quantité quelconque d'attributs.  
   
- Quand vous ajoutez des objets <xref:System.Xml.Linq.XNode> (notamment <xref:System.Xml.Linq.XElement>) ou <xref:System.Xml.Linq.XAttribute>, si le nouveau contenu n’a pas de parent, les objets sont simplement attachés à l’arborescence XML. Si le nouveau contenu a déjà un parent et fait partie d’une autre arborescence XML, il est cloné et le nouveau contenu cloné est attaché à l’arborescence XML. Ceci est illustré dans le dernier exemple de cette rubrique.  
+ Lors de l'ajout d'objets <xref:System.Xml.Linq.XNode> (y compris <xref:System.Xml.Linq.XElement>) ou <xref:System.Xml.Linq.XAttribute>, si le contenu n'a pas de parent, les objets sont simplement attachés à l'arborescence XML. Si le nouveau contenu a déjà un parent et fait partie d'une autre arborescence XML, il est cloné et le nouveau contenu cloné est attaché à l'arborescence XML. Ceci est illustré dans le dernier exemple de cette rubrique.  
   
- Pour créer un `contacts`<xref:System.Xml.Linq.XElement>, vous pouvez utiliser le code suivant :  
+ Pour créer un objet `contacts`<xref:System.Xml.Linq.XElement>, vous pouvez utiliser le code suivant :  
   
 ```csharp  
 XElement contacts =  
@@ -53,33 +54,33 @@ XElement contacts =
     );  
 ```  
   
- S’il est mis en retrait correctement, le code permettant de construire des objets <xref:System.Xml.Linq.XElement> ressemble étroitement à la structure du code XML sous-jacent.  
+ S'il est mis en retrait correctement, le code pour construire des objets <xref:System.Xml.Linq.XElement> ressemble étroitement à la structure du code XML sous-jacent.  
   
 ## <a name="xelement-constructors"></a>Constructeurs XElement  
- La classe <xref:System.Xml.Linq.XElement> utilise les constructeurs suivants pour la construction fonctionnelle. Notez qu’il existe d’autres constructeurs pour <xref:System.Xml.Linq.XElement>, mais ils ne sont pas répertoriés ici car ils ne sont pas utilisés pour la construction fonctionnelle.  
+ La classe <xref:System.Xml.Linq.XElement> utilise les constructeurs suivants pour la construction fonctionnelle. Notez qu'il existe d'autres constructeurs pour <xref:System.Xml.Linq.XElement>, mais ils ne sont pas répertoriés ici car ils ne sont pas utilisés pour la construction fonctionnelle.  
   
 |Constructeur|Description|  
 |-----------------|-----------------|  
-|`XElement(XName name, object content)`|Crée un <xref:System.Xml.Linq.XElement>. Le paramètre `name` spécifie le nom de l'élément ; `content` spécifie le contenu de l'élément.|  
-|`XElement(XName name)`|Crée un <xref:System.Xml.Linq.XElement> avec son <xref:System.Xml.Linq.XName> initialisé au nom spécifié.|  
-|`XElement(XName name, params object[] content)`|Crée un <xref:System.Xml.Linq.XElement> avec son <xref:System.Xml.Linq.XName> initialisé au nom spécifié. Les attributs et/ou éléments enfants sont créés à partir du contenu de la liste de paramètres.|  
+|`XElement(XName name, object content)`|Crée un objet <xref:System.Xml.Linq.XElement>. Le paramètre `name` spécifie le nom de l'élément ; `content` spécifie le contenu de l'élément.|  
+|`XElement(XName name)`|Crée un objet <xref:System.Xml.Linq.XElement> avec son objet <xref:System.Xml.Linq.XName> initialisé au nom spécifié.|  
+|`XElement(XName name, params object[] content)`|Crée un objet <xref:System.Xml.Linq.XElement> avec son objet <xref:System.Xml.Linq.XName> initialisé au nom spécifié. Les attributs et/ou éléments enfants sont créés à partir du contenu de la liste de paramètres.|  
   
- Le paramètre `content` est extrêmement souple. Il prend en charge tout type d’objet qui est un enfant valide d’un <xref:System.Xml.Linq.XElement>. Les règles suivantes s'appliquent à différents types d'objets passés dans ce paramètre :  
+ Le paramètre `content` est extrêmement souple. Il prend en charge tout type d'objet qui est un enfant valide d'un objet <xref:System.Xml.Linq.XElement>. Les règles suivantes s'appliquent à différents types d'objets passés dans ce paramètre :  
   
 -   Une chaîne est ajoutée en tant que contenu de texte.  
   
--   Un <xref:System.Xml.Linq.XElement> est ajouté comme élément enfant.  
+-   Un objet <xref:System.Xml.Linq.XElement> est ajouté en tant qu'élément enfant.  
   
--   Un <xref:System.Xml.Linq.XAttribute> est ajouté comme attribut.  
+-   Un objet <xref:System.Xml.Linq.XAttribute> est ajouté en tant qu'attribut.  
   
--   Un <xref:System.Xml.Linq.XProcessingInstruction>, un <xref:System.Xml.Linq.XComment> ou un <xref:System.Xml.Linq.XText> est ajouté en comme contenu enfant.  
+-   Un objet <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment> ou <xref:System.Xml.Linq.XText> est ajouté en tant que contenu enfant.  
   
--   Un <xref:System.Collections.IEnumerable> est énuméré, et ces règles sont appliquées de manière récursive aux résultats.  
+-   Un objet <xref:System.Collections.IEnumerable> est énuméré et ces règles sont appliquées de manière récursive aux résultats.  
   
 -   Pour tout autre type, sa méthode `ToString` est appelée et le résultat est ajouté en tant que contenu texte.  
   
 ### <a name="creating-an-xelement-with-content"></a>Création d'un XElement avec du contenu  
- Vous pouvez créer un <xref:System.Xml.Linq.XElement> qui contient du contenu simple avec un appel de méthode unique. Pour cela, spécifiez le contenu comme second paramètre, comme suit :  
+ Vous pouvez créer un objet <xref:System.Xml.Linq.XElement> qui contient du contenu simple avec un appel de méthode unique. Pour cela, spécifiez le contenu comme second paramètre, comme suit :  
   
 ```csharp  
 XElement n = new XElement("Customer", "Adventure Works");  
@@ -126,7 +127,7 @@ Console.WriteLine(shippingUnit);
 ```  
   
 ### <a name="creating-an-xelement-with-multiple-child-elements"></a>Création d'un XElement avec plusieurs éléments enfants  
- Vous pouvez passer plusieurs objets <xref:System.Xml.Linq.XElement> comme contenu. Chacun des objets <xref:System.Xml.Linq.XElement> est inclus comme élément enfant.  
+ Vous pouvez passer une quantité quelconque d'objets <xref:System.Xml.Linq.XElement> comme contenu. Chacun des objets <xref:System.Xml.Linq.XElement> est inclus en tant qu'élément enfant.  
   
 ```csharp  
 XElement address = new XElement("Address",  
@@ -200,7 +201,7 @@ Console.WriteLine(n);
 ```  
   
 ### <a name="attaching-vs-cloning"></a>attachement et clonage  
- Comme mentionné précédemment, quand vous ajoutez des objets <xref:System.Xml.Linq.XNode> (notamment <xref:System.Xml.Linq.XElement>) ou <xref:System.Xml.Linq.XAttribute>, si le nouveau contenu n’a pas de parent, les objets sont simplement attachés à l’arborescence XML. Si le nouveau contenu a déjà un parent et fait partie d’une autre arborescence XML, il est cloné et le nouveau contenu cloné est attaché à l’arborescence XML.  
+ Comme mentionné précédemment, lors de l'ajout d'objets <xref:System.Xml.Linq.XNode> (y compris <xref:System.Xml.Linq.XElement>) ou <xref:System.Xml.Linq.XAttribute>, si le contenu n'a pas de parent, les objets sont simplement attachés à l'arborescence XML. Si le nouveau contenu a déjà un parent et fait partie d'une autre arborescence XML, il est cloné et le nouveau contenu cloné est attaché à l'arborescence XML.  
   
 ```csharp  
 // Create a tree with a child element.  
@@ -237,3 +238,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>Voir aussi  
  [Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+

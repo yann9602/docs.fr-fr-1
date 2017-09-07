@@ -1,5 +1,5 @@
 ---
-title: "in (modificateur générique) (Référence C#) | Microsoft Docs"
+title: "in (modificateur générique) (Référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,11 +28,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b6c490d14b47aaa527fe2ddb3627ea0a84bfe604
+ms.translationtype: HT
+ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
+ms.openlocfilehash: 663fa75a7e214ed97efb45dda2c9ac298559653d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 08/11/2017
 
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (modificateur générique) (Référence C#)
@@ -42,11 +42,11 @@ Pour les paramètres de type générique, le mot clé `in` spécifie que le para
   
  Un type peut être déclaré comme étant contravariant dans une interface ou un délégué générique s’il est utilisé uniquement comme un type d’argument de méthode et non comme un type de retour de méthode. Les paramètres `Ref` et `out` ne peuvent pas être variants.  
   
- Une interface qui possède un paramètre de type contravariant permet à ses méthodes d’accepter des arguments de types moins dérivés que ceux spécifiés par le paramètre de type d’interface. Par exemple, étant donné que dans le .NET Framework 4, dans l’interface <xref:System.Collections.Generic.IComparer%601>, le type T est contravariant, vous pouvez assigner un objet du type `IComparer(Of Person)` à un objet du type `IComparer(Of Employee)` sans utiliser de méthode de conversion spéciale, si `Employee` hérite de `Person`.  
+ Une interface qui possède un paramètre de type contravariant permet à ses méthodes d’accepter des arguments de types moins dérivés que ceux spécifiés par le paramètre de type d’interface. Par exemple, comme dans le .NET Framework 4, dans l’interface <xref:System.Collections.Generic.IComparer%601>, le type T est contravariant, vous pouvez assigner un objet du type `IComparer(Of Person)` à un objet du type `IComparer(Of Employee)` sans utiliser de méthode de conversion spéciale si `Employee` hérite de `Person`.  
   
  Un délégué contravariant peut être assigné à un autre délégué du même type, mais avec un paramètre de type générique moins dérivé.  
   
- Pour plus d’informations, consultez [Covariance et contravariance](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8).  
+ Pour plus d’informations, consultez [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment déclarer, étendre et implémenter une interface générique contravariante. Il montre également comment utiliser la conversion implicite pour les classes qui implémentent cette interface.  
@@ -63,5 +63,6 @@ Pour les paramètres de type générique, le mot clé `in` spécifie que le para
   
 ## <a name="see-also"></a>Voir aussi  
  [out](../../../csharp/language-reference/keywords/out-generic-modifier.md)   
- [Covariance et contravariance](http://msdn.microsoft.com/library/a58cc086-276f-4f91-a366-85b7f95f38b8)   
+ [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md)   
  [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour déboguer des ensembles de résultats de requête vides (C#) | Microsoft Docs"
+title: "Guide pratique pour déboguer des ensembles de résultats de requête vides (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -14,11 +14,11 @@ ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
 caps.latest.revision: 3
 author: BillWagner
 ms.author: wiwagn
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: afa7e63f4224a91c072c99d04a4851d2548166e5
-ms.lasthandoff: 03/13/2017
-
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 78c6d612e11f50bedf8f1c2e9826775494faa465
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-debug-empty-query-results-sets-c"></a>Guide pratique pour déboguer des ensembles de résultats de requête vides (C#)
@@ -62,7 +62,7 @@ End of result set
 ## <a name="example"></a>Exemple  
  Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.  
   
- La solution consiste à déclarer et à initialiser un objet <xref:System.Xml.Linq.XNamespace>, et à l’utiliser lors de la spécification d’objets <xref:System.Xml.Linq.XName>. Dans ce cas, l’argument de la méthode <xref:System.Xml.Linq.XElement.Elements%2A> est un objet <xref:System.Xml.Linq.XName>.  
+ La solution consiste à déclarer et à initialiser un objet <xref:System.Xml.Linq.XNamespace> et à l’utiliser lors de la spécification d’objets <xref:System.Xml.Linq.XName>. Dans ce cas, l'argument de la méthode <xref:System.Xml.Linq.XElement.Elements%2A> est un objet <xref:System.Xml.Linq.XName>.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -96,3 +96,4 @@ End of result set
   
 ## <a name="see-also"></a>Voir aussi  
  [Requêtes de base (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+

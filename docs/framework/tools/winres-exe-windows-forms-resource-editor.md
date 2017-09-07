@@ -1,5 +1,5 @@
 ---
-title: "Winres.exe (Éditeur de ressources Windows Forms) | Microsoft Docs"
+title: "Winres.exe (Éditeur de ressources Windows Forms)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -27,11 +27,11 @@ caps.latest.revision: 23
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 2149e21f82b224e40cc4b2dd80a7decd9988385d
+ms.translationtype: HT
+ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
+ms.openlocfilehash: e2a2121d97cd1f7de211a72ed95e2fdf24bfac60
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 08/10/2017
 
 ---
 # <a name="winresexe-windows-forms-resource-editor"></a>Winres.exe (Éditeur de ressources Windows Forms)
@@ -146,7 +146,7 @@ winres /?
   
 4.  Pour enregistrer la version localisée du fichier .resx ou .resources, cliquez sur l’icône **Enregistrer** ou sur la même commande dans le menu **Fichier**. L’outil affiche la fenêtre **Choisir la culture**.  
   
-5.  Sélectionnez la culture appropriée et le mode de fichier, puis cliquez sur **OK**. L'outil enregistre le fichier à l'aide de la convention de nommage que l'exécution attend pour les fichiers de ressources localisés. Par exemple, si vous localisez `TestApp.resources` en allemand, l'outil enregistre le fichier sous `TestApp.de-DE.resources`. Si vous localisez `TestApp.resx` en allemand, l'outil enregistre le fichier sous `TestApp.de-DE.resx`. Pour plus d’informations sur les conventions de nommage des ressources, consultez [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Pour obtenir la liste des noms de cultures prédéfinis utilisés au moment de l’exécution, consultez [CultureInfo Class](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx).  
+5.  Sélectionnez la culture appropriée et le mode de fichier, puis cliquez sur **OK**. L'outil enregistre le fichier à l'aide de la convention de nommage que l'exécution attend pour les fichiers de ressources localisés. Par exemple, si vous localisez `TestApp.resources` en allemand, l'outil enregistre le fichier sous `TestApp.de-DE.resources`. Si vous localisez `TestApp.resx` en allemand, l'outil enregistre le fichier sous `TestApp.de-DE.resx`. Pour plus d’informations sur les conventions de nommage des ressources, consultez [Empaquetage et déploiement de ressources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Pour obtenir la liste des noms de cultures prédéfinis utilisés au moment de l’exécution, consultez la classe <xref:System.Globalization.CultureInfo>.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ComponentModel.LocalizableAttribute>   
@@ -157,3 +157,4 @@ winres /?
  [Outils](../../../docs/framework/tools/index.md)   
  [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)   
  [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
+

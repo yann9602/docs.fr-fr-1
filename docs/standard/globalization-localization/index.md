@@ -1,5 +1,5 @@
 ---
-title: Globalisation et localisation d&quot;applications .NET Framework | Microsoft Docs
+title: Globalisation et localisation d'applications .NET Framework
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -21,11 +21,11 @@ caps.latest.revision: 42
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 46a0ccb9db4d468e68b1e8d1d278308e6e87e85e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 63832eb1b7c750bb4ef86660304ab883a7c3695f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="globalizing-and-localizing-net-framework-applications"></a>Globalisation et localisation d'applications .NET Framework
@@ -81,3 +81,4 @@ Le développement d'une [application mondialisable](http://msdn.microsoft.com/go
   
  [Winres.exe (éditeur de ressources Windows Forms)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)  
  Explique comment utiliser Winres.exe pour localiser des formulaires Windows Forms.
+

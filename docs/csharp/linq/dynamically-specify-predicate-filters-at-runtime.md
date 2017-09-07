@@ -11,10 +11,11 @@ ms.prod: .net-core
 ms.technology: .net-core-technologies
 ms.devlang: dotnet
 ms.assetid: 90238470-0767-497c-916c-52d0d16845e0
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8b9ad2603a9c57855f9a8ebd7ff3f5261aa44157
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9e724428bce09e2b2fa20b9391ad131424e16413
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="dynamically-specify-predicate-filters-at-runtime"></a>Spécifier dynamiquement des filtres de prédicat au moment de l’exécution
@@ -79,3 +80,4 @@ Dans certains cas, ce n’est qu’au moment de l’exécution que vous savez co
 ## <a name="see-also"></a>Voir aussi  
  [Expressions de requête LINQ](index.md)   
  [where, clause](../language-reference/keywords/where-clause.md)
+

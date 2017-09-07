@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour substituer la méthode ToString (Guide de programmation C#) | Microsoft Docs"
+title: "Guide pratique pour substituer la méthode ToString (Guide de programmation C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -28,15 +28,15 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 400dfda51d978f35c3995f90840643aaff1b9c13
-ms.openlocfilehash: 2dde281d439a07d7736949294772a57e926eb587
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 60cec855286a3bb572a0bacd08c0f7920a1fc912
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/24/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Guide pratique pour substituer la méthode ToString (Guide de programmation C#)
-Chaque classe ou struct en C# hérite implicitement de la classe <xref:System.Object>. Ainsi, chaque objet en C# obtient la méthode <xref:System.Object.ToString%2A>, qui retourne une représentation sous forme de chaîne de cet objet. Par exemple, toutes les variables de type `int` ont une méthode `ToString`, ce qui leur permet de retourner leur contenu sous forme de chaîne :  
+En C#, chaque classe ou struct hérite implicitement de la classe <xref:System.Object>. Ainsi, chaque objet en C# obtient la méthode <xref:System.Object.ToString%2A>, qui retourne une représentation sous forme de chaîne de cet objet. Par exemple, toutes les variables de type `int` ont une méthode `ToString`, ce qui leur permet de retourner leur contenu sous forme de chaîne :  
   
  [!code-cs[csProgGuideInheritance#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-override-the-tostring-method_1.cs)]  
   
@@ -67,7 +67,7 @@ Chaque classe ou struct en C# hérite implicitement de la classe <xref:System.Ob
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IFormattable>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
  [Chaînes](../../../csharp/programming-guide/strings/index.md)   
  [string](../../../csharp/language-reference/keywords/string.md)   
@@ -75,3 +75,4 @@ Chaque classe ou struct en C# hérite implicitement de la classe <xref:System.Ob
  [override](../../../csharp/language-reference/keywords/override.md)   
  [virtual](../../../csharp/language-reference/keywords/virtual.md)   
  [Mise en forme des types](../../../standard/base-types/formatting-types.md)
+

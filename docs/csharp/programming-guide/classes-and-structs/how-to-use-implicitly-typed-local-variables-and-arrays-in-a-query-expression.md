@@ -1,38 +1,58 @@
 ---
-title: "Comment&#160;: utiliser des tableaux et des variables locales implicitement typ&#233;s dans une expression de requ&#234;te (Guide de programmation&#160;C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "variables locales implicitement typées (C#), comment utiliser"
+title: "Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête (Guide de programmation C#)"
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
 caps.latest.revision: 15
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 15
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 60e22aacef05ae2fe1b5e7127396cc66f24661d3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# Comment&#160;: utiliser des tableaux et des variables locales implicitement typ&#233;s dans une expression de requ&#234;te (Guide de programmation&#160;C#)
-Vous pouvez utiliser des variables locales implicitement typées à chaque fois que vous souhaitez que le compilateur détermine le type d'une variable locale.  Vous devez utiliser des variables locales implicitement typées pour stocker des types anonymes, qui sont souvent utilisés dans les expressions de requête.  Les exemples suivants illustrent les utilisations facultative et requise des variables locales implicitement typées dans des requêtes.  
+# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête (Guide de programmation C#)
+Vous pouvez utiliser des variables locales implicitement typées chaque fois que vous voulez que le compilateur détermine le type d’une variable locale. Vous devez utiliser des variables locales implicitement typées pour stocker des types anonymes, qui sont souvent utilisés dans les expressions de requête. Les exemples suivants illustrent des utilisations facultatives et obligatoires de variables locales implicitement typées dans des requêtes.  
   
- Les variables locales implicitement typées sont déclarées en utilisant le mot clé contextuel [var](../../../csharp/language-reference/keywords/var.md).  Pour plus d'informations, consultez [Variables locales implicitement typées](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) et [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
+ Les variables locales implicitement typées sont déclarées à l’aide du mot clé contextuel [var](../../../csharp/language-reference/keywords/var.md). Pour plus d’informations, consultez [Variables locales implicitement typées](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) et [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
   
-## Exemple  
- L'exemple suivant présente un scénario courant dans lequel le mot clé `var` est requis : une expression de requête qui produit une séquence de types anonymes.  Dans ce scénario, la variable de requête et la variable d'itération dans l'instruction `foreach` doivent être implicitement typées en utilisant `var` parce que vous n'avez pas accès à un nom de type du type anonyme.  Pour plus d'informations sur les types anonymes, consultez [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+## <a name="example"></a>Exemple  
+ L’exemple suivant illustre un scénario courant dans lequel le mot clé `var` est obligatoire : une expression de requête qui produit une séquence de types anonymes. Dans ce scénario, la variable de requête et la variable d’itération figurant dans l’instruction `foreach` doivent être implicitement typées avec `var`, car vous n’avez pas accès à un nom de type pour le type anonyme. Pour plus d’informations sur les types anonymes, consultez [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
  [!code-cs[csProgGuideLINQ#32](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression_1.cs)]  
   
-## Exemple  
- L'exemple suivant utilise le mot clé `var` dans une situation de similaire, mais dans laquelle l'utilisation de `var` est facultative.  Dans la mesure où `student.LastName` est une chaîne, l'exécution de la requête retourne une séquence de chaînes.  Par conséquent, le type de `queryID` peut être déclaré comme `System.Collections.Generic.IEnumerable<string>` au lieu de `var`.  Le mot clé `var` est utilisé pour des raisons de commodité.  Dans l'exemple, la variable d'itération dans l'instruction `foreach` est explicitement typée comme chaîne, mais elle peut à la place être déclarée à l'aide de `var`.  Étant donné que le type de la variable d'itération n'est pas un type anonyme, l'utilisation de `var` est une option, pas une obligation.  N'oubliez pas que `var` lui\-même n'est pas un type, mais une instruction demandant au compilateur de déduire et d'assigner le type.  
+## <a name="example"></a>Exemple  
+ Dans l’exemple suivant, le mot clé `var` est utilisé dans un cas similaire, à la différence que l’utilisation de `var` est facultative. Comme `student.LastName` est une chaîne, l’exécution de la requête retourne une séquence de chaînes. De ce fait, le type de `queryID` pourrait être déclaré en tant que `System.Collections.Generic.IEnumerable<string>` au lieu de `var`. Le mot clé `var` est utilisé pour des raisons pratiques. Dans l’exemple, la variable d’itération figurant dans l’instruction `foreach` est explicitement typée en tant que chaîne, mais elle aurait pu être déclarée à l’aide de `var`. Comme le type de la variable d’itération n’est pas un type anonyme, l’utilisation de `var` est facultative et non obligatoire. Pour rappel, `var` n’est pas en soi un type, mais une instruction indiquant au compilateur de déduire et d’assigner le type.  
   
  [!code-cs[csProgGuideLINQ#33](../../../csharp/programming-guide/arrays/codesnippet/CSharp/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression_2.cs)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)   
- [Méthodes d'extension](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)   
- [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Méthodes d’extension](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)   
+ [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)   
  [var](../../../csharp/language-reference/keywords/var.md)   
- [Expressions de requête \(LINQ\)](../../../csharp/programming-guide/linq-query-expressions/index.md)
+ [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)
+

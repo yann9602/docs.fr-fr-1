@@ -1,5 +1,5 @@
 ---
-title: "Mpgo.exe (outil d’optimisation guidée par profil managé) | Microsoft Docs"
+title: "Mpgo.exe (Outil d'optimisation guidée par profil managé)"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -25,11 +25,11 @@ caps.latest.revision: 31
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
-ms.openlocfilehash: 94dde0a1ae6d149a4161b90c19b329233c690ec5
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 81c68f718b0395b70f604ed9157daeaa84e9eefc
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Outil d'optimisation guidée par profil managé)
@@ -143,6 +143,6 @@ mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyT
 ## <a name="see-also"></a>Voir aussi  
  [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)   
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)   
- [Improving Launch Performance for your Desktop Applications](http://go.microsoft.com/fwlink/p/?LinkId=248943)   
+ [Amélioration des performances de lancement pour vos applications de bureau](http://go.microsoft.com/fwlink/p/?LinkId=248943)   
  [Présentation des améliorations des performances de .NET 4.5](http://go.microsoft.com/fwlink/p/?LinkId=249131)
 

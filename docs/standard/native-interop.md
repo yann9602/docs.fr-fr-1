@@ -1,6 +1,6 @@
 ---
 title: "Interopérabilité native"
-description: "Interopérabilité native"
+description: "Découvrez comment interagir avec les composants natifs dans .NET."
 keywords: .NET, .NET Core
 author: blackdwarf
 ms.author: ronpet
@@ -10,16 +10,17 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: 13a4e4e7a588d55e82c5c4cde8f825c3b4502bb4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
+ms.openlocfilehash: 9652986491f087b8fa175e2b4041063c71211178
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
 
 ---
 
 # <a name="native-interoperability"></a>Interopérabilité native
 
-Dans ce document, nous allons approfondir un peu les trois façons disponibles de faire de l’« interopérabilité native » sur la plateforme .NET.
+Dans ce document, nous allons approfondir un peu les trois façons disponibles de faire de l’« interopérabilité native » à l’aide de .NET.
 
 Voici quelques-unes des raisons qui peuvent vous inciter à appeler du code natif :
 
@@ -53,7 +54,6 @@ public class Program {
         MessageBox(IntPtr.Zero, "Command-line message box", "Attention!", 0);
     }
 }
-
 ```
 
 L’exemple ci-dessus est relativement simple, mais il ne montre pas ce dont vous avez besoin pour appeler des fonctions non managées à partir de code managé. Examinons l’exemple :
@@ -84,7 +84,6 @@ namespace PInvokeSamples {
         }
     }
 }
-
 ```
 
 Il est similaire sur Linux, bien sûr. Le nom de fonction est le même, car `getpid(2)` est un appel du système [POSIX](https://en.wikipedia.org/wiki/POSIX).
@@ -107,7 +106,6 @@ namespace PInvokeSamples {
         }
     }
 }
-
 ```
 
 ### <a name="invoking-managed-code-from-unmanaged-code"></a>Appel de code managé à partir de code non managé
@@ -130,7 +128,7 @@ namespace ConsoleApplication1 {
         // Import user32.dll (containing the function we need) and define
         // the method corresponding to the native function.
         [DllImport("user32.dll")]
-        static extern int EnumWindows(EnumWC hWnd, IntPtr lParam);
+        static extern int EnumWindows(EnumWC lpEnumFunc, IntPtr lParam);
 
         // Define the implementation of the delegate; here, we simply output the window handle.
         static bool OutputWindow(IntPtr hwnd, IntPtr lParam) {
@@ -144,7 +142,6 @@ namespace ConsoleApplication1 {
         }
     }
 }
-
 ```
 
 Avant de parcourir notre exemple, passons en revue les signatures des fonctions non managées dont nous avons besoin. La fonction que nous voulons appeler pour énumérer toutes les fenêtres a la signature suivante : `BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
@@ -208,7 +205,6 @@ namespace PInvokeSamples {
             public long TimeLastStatusChange;
     }
 }
-
 ```
 
 Un exemple Mac OS utilise la même fonction et la seule différence réside dans l’argument de l’attribut `DllImport`, car Mac OS conserve `libc` dans un emplacement différent.
@@ -261,7 +257,6 @@ namespace PInvokeSamples {
                 public long TimeLastStatusChange;
         }
 }
-
 ```
 
 Les deux exemples ci-dessus dépendent de paramètres et dans les deux cas, les paramètres sont fournis comme des types managés. Le runtime prend « la bonne décision » et les traite dans leurs équivalents de l’autre côté. Étant donné que ce processus est très important pour écrire du code interop natif de qualité, jetons un œil à ce qui se produit quand le runtime _marshale_ les types.
@@ -270,12 +265,11 @@ Les deux exemples ci-dessus dépendent de paramètres et dans les deux cas, les 
 
 Le **marshaling** est le processus de transformation des types quand ils doivent franchir la limite entre code managé et code natif.
 
-La raison pour laquelle le marshaling est nécessaire est que les types des codes managé et non managé sont différents. Dans le code managé, par exemple, vous avez un élément `String`, tandis que dans le monde non managé, les chaînes peuvent être Unicode (« larges »), non Unicode, terminées par Null, ASCII, etc. Par défaut, le sous-système P/Invoke tente de prendre la bonne décision en fonction du comportement par défaut que vous pouvez constater sur [MSDN](https://msdn.microsoft.com/library/zah6xy75.aspx). Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut `MarshalAs` pour spécifier le type attendu du côté du code non managé. Par exemple, si nous voulons que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, nous pouvons procéder comme suit :
+La raison pour laquelle le marshaling est nécessaire est que les types des codes managé et non managé sont différents. Dans le code managé, par exemple, vous avez un élément `String`, tandis que dans le monde non managé, les chaînes peuvent être Unicode (« larges »), non-Unicode, terminées par Null, ASCII, etc. Par défaut, le sous-système P/Invoke tente de prendre la bonne décision en fonction du comportement par défaut que vous pouvez constater sur [MSDN](https://msdn.microsoft.com/library/zah6xy75.aspx). Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut `MarshalAs` pour spécifier le type attendu du côté du code non managé. Par exemple, si nous voulons que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, nous pouvons procéder comme suit :
 
 ```csharp
-[DllImport("somenativelibrary.dll"]
+[DllImport("somenativelibrary.dll")]
 static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
-
 ```
 
 ### <a name="marshalling-classes-and-structs"></a>Marshaling de classes et de structures
@@ -303,10 +297,9 @@ public static void Main(string[] args) {
     GetSystemTime(st);
     Console.WriteLine(st.Year);
 }
-
 ```
 
-L’exemple ci-dessus illustre de manière simple les appels dans la fonction `GetSystemTime()`. L’élément digne d’intérêt se trouve sur la ligne 4\. L’attribut spécifie que les champs de la classe doivent être mappés séquentiellement à la structure de l’autre côté (non managé). Cela signifie que le nom des champs n’a pas d’importance, seul leur ordre compte, car il doit correspondre à la structure non managée, comme illustré ci-dessous :
+L’exemple ci-dessus illustre de manière simple les appels dans la fonction `GetSystemTime()`. L’élément digne d’intérêt se trouve sur la ligne 4. L’attribut spécifie que les champs de la classe doivent être mappés séquentiellement à la structure de l’autre côté (non managé). Cela signifie que le nom des champs n’a pas d’importance, seul leur ordre compte, car il doit correspondre à la structure non managée, comme illustré ci-dessous :
 
 ```c
 typedef struct _SYSTEMTIME {
@@ -319,7 +312,6 @@ typedef struct _SYSTEMTIME {
   WORD wSecond;
   WORD wMilliseconds;
 } SYSTEMTIME, *PSYSTEMTIME*;
-
 ```
 
 Nous avons déjà vu l’exemple correspondant sur Linux et Mac OS dans l’exemple précédent. Il est représenté ci-dessous.
@@ -341,7 +333,6 @@ public class StatClass {
         public long TimeLastModification;
         public long TimeLastStatusChange;
 }
-
 ```
 
 La classe `StatClass` représente une structure qui est retournée par l’appel du système `stat` sur les systèmes UNIX. Elle représente les informations d’un fichier donné. La classe ci-dessus est la représentation sous forme de structure stat dans du code managé. Là encore, les champs de la classe doivent être dans le même ordre que la structure native (vous pouvez les trouver en parcourant les pages man de votre implémentation UNIX préférée) et ils doivent avoir le même type sous-jacent.

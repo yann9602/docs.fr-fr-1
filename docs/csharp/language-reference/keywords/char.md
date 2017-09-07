@@ -1,5 +1,5 @@
 ---
-title: "char (référence C#) | Microsoft Docs"
+title: "char (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -31,14 +31,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bf4c71d6f33d66e5ca917f2cfeb6c882b19b9d22
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c6601a58804d6ecfcbedbc19da09560884e54e7f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="char-c-reference"></a>char (référence C#)
-Le mot clé `char` permet de déclarer une instance de la structure <xref:System.Char?displayProperty=fullName> utilisée par le .NET Framework pour représenter un caractère Unicode. La valeur d’un objet `Char` est une valeur numérique 16 bits (ordinale).  
+Le mot clé `char` permet de déclarer une instance de la structure <xref:System.Char?displayProperty=fullName> utilisée par le .NET Framework pour représenter un caractère Unicode. La valeur d’un objet `Char` est une valeur numérique 16 bits (ordinale).  
   
  Les caractères Unicode sont utilisés pour représenter la plupart des langues écrites dans le monde.  
   
@@ -57,16 +58,17 @@ Le mot clé `char` permet de déclarer une instance de la structure <xref:System
  Le type <xref:System.Char?displayProperty=fullName> fournit plusieurs méthodes statiques à utiliser avec des valeurs `char`.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Char>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
+ [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [Tableau des types prédéfinis](../../../csharp/language-reference/keywords/built-in-types-table.md)   
+ [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)   
  [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
  [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)   
  [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md)   
  [Chaînes](../../../csharp/programming-guide/strings/index.md)
+

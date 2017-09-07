@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour créer des assemblys friend signés (C#) | Microsoft Docs"
+title: "Guide pratique pour créer des assemblys friend signés (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,10 +19,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 890cead4b28b8532dd7bd7f571defe7e280e4cdc
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e9d56602eaffe73ff301ade95aaebeabab663be6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Guide pratique pour créer des assemblys friend signés (C#)
@@ -102,7 +103,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
      Le programme imprime la chaîne « Class1.Test ».  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section particulière de code, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.  
+ Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>. La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
@@ -113,3 +114,4 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys ayan
  [Sn.exe (Outil Strong Name Tool)](https://msdn.microsoft.com/library/k5b5tt23)   
  [Création et utilisation d’assemblys avec nom fort](https://msdn.microsoft.com/library/xwb8f617)   
  [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
+

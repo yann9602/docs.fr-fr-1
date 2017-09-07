@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#) | Microsoft Docs"
+title: "Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -19,14 +19,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cf538f555c9b1636980fb68ca1c132504112d9fb
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 132332f4fd274126bb8bc270cd762e1bdc97106f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Guide pratique pour étendre la procédure pas à pas Async à l’aide de Task.WhenAll (C#)
-Vous pouvez améliorer les performances de la solution async fournie dans [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) à l’aide de la méthode <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. Cette méthode attend de manière asynchrone plusieurs opérations, qui sont représentées sous la forme d’une collection de tâches.  
+Vous pouvez améliorer les performances de la solution async fournie dans [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) à l’aide de la méthode <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. Cette méthode attend de manière asynchrone plusieurs opérations, qui sont représentées sous la forme d’une collection de tâches.  
   
  Vous aurez peut-être remarqué dans la procédure pas à pas que les sites web se téléchargent à différentes vitesses. L’un des sites web est parfois très lent, ce qui retarde tous les autres téléchargements. Quand vous exécutez les solutions asynchrones que vous générez dans la procédure pas à pas, vous pouvez quitter le programme facilement si vous ne souhaitez pas attendre, mais une meilleure option consiste à démarrer tous les téléchargements en même temps et à laisser les plus rapides se poursuivre sans attendre celui qui est retardé.  
   
@@ -103,7 +104,7 @@ Vous pouvez améliorer les performances de la solution async fournie dans [Proc�
     //int[] lengths = await whenAllTask;  
     ```  
   
-5.  Pour finir, utilisez la méthode <xref:System.Linq.Enumerable.Sum%2A> pour calculer la somme des longueurs de tous les sites web. Ajoutez la ligne suivante à `SumPageSizesAsync`.  
+5.  Enfin, utilisez la méthode <xref:System.Linq.Enumerable.Sum%2A> pour calculer la somme des longueurs de tous les sites web. Ajoutez la ligne suivante à `SumPageSizesAsync`.  
   
     ```csharp  
     int total = lengths.Sum();  
@@ -178,7 +179,7 @@ Vous pouvez améliorer les performances de la solution async fournie dans [Proc�
     //int[] lengths = await whenAllTask;  
     ```  
   
-5.  Pour finir, utilisez la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir la somme des longueurs de tous les sites web. Ajoutez la ligne suivante à `SumPageSizesAsync`.  
+5.  Enfin, utilisez la méthode <xref:System.Linq.Enumerable.Sum%2A> pour obtenir la somme des longueurs de tous les sites web. Ajoutez la ligne suivante à `SumPageSizesAsync`.  
   
     ```csharp  
     int total = lengths.Sum();
@@ -453,5 +454,5 @@ namespace AsyncExampleWPF_HttpClient_WhenAll
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>   
- [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+ [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 

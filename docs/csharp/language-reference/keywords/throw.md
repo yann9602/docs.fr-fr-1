@@ -1,5 +1,5 @@
 ---
-title: "throw (référence C#) | Microsoft Docs"
+title: "throw (référence C#)"
 ms.date: 2015-03-02
 ms.prod: .net
 ms.technology:
@@ -32,11 +32,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 095a86f5ab2ce50f5931643161a44b5759583e4e
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 955f6d87614e0b452ace162e79e34aec9decad54
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="throw-c-reference"></a>throw (référence C#)
@@ -68,7 +68,7 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
  
 ## <a name="the-throw-expression"></a>Expression `throw`
 
-À compter de C# 7, `throw` peut être utilisé en tant qu’expression et en tant qu’instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge. à savoir :
+À compter de C# 7, `throw` peut être utilisé en tant qu’expression et en tant qu’instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge, à savoir :
 
 - [l’opérateur conditionnel](../operators/conditional-operator.md) : l’exemple suivant utilise une expression `throw` pour lever une exception @System.ArgumentException si une méthode reçoit un tableau de chaînes vide. Avant C# 7, cette logique devait figurer dans une instruction `if`/`else`.
 
@@ -94,3 +94,4 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
  [Instructions de gestion des exceptions](../../../csharp/language-reference/keywords/exception-handling-statements.md)   
  [Guide pratique pour lever explicitement des exceptions](https://msdn.microsoft.com/library/xhcbs8fz)
+

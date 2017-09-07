@@ -42,10 +42,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ee13c7dec733dcc8e3067ea2bf9421177a284d54
+ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
+ms.openlocfilehash: 2ec2f07dda8979ca6def0648aae1ef23a8df6369
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/28/2017
 
 ---
 # <a name="c-operators"></a>Opérateurs C#
@@ -80,7 +80,7 @@ C# fournit de nombreux opérateurs, qui sont des symboles spécifiant quelles op
   
  [unchecked](../../../csharp/language-reference/keywords/unchecked.md) : désactive le contrôle de dépassement de capacité pour les opérations sur les entiers.  Il s'agit du comportement de compilateur par défaut.  
   
- [default(T)](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md) : retourne la valeur initialisée par défaut de type T, la valeur `null` pour les types de référence, zéro pour les types numériques et zéro/`null` renseigné dans les membres pour les types struct.  
+ [default(T)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md) : retourne la valeur par défaut de type T, la valeur `null` pour les types de référence, zéro pour les types numériques et zéro/`null` renseigné dans les membres pour les types struct.  
   
  [delegate](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) : déclare et retourne une instance de délégué.  
   

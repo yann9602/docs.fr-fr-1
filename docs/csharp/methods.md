@@ -1,5 +1,5 @@
 ---
-title: "Méthodes | Guide du C#"
+title: "Méthodes - Guide du C#"
 description: "Vue d’ensemble des méthodes, des paramètres de méthode et des valeurs de retour des méthodes"
 keywords: .NET, .NET Core, C#
 author: rpetrusha
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 81f31f1abc9db14b6b899564d67ca6e90d269ad7
-ms.openlocfilehash: 42ded63bacfb6ff2ceadde6fa37c7bddb413a933
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6b5e01f7244b8b7b83fbc76a80eae0c1432c936a
 ms.contentlocale: fr-fr
-ms.lasthandoff: 04/11/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="methods"></a>Méthodes #
@@ -280,14 +280,12 @@ Une méthode async ne peut pas déclarer de paramètres [ref](https://msdn.micro
 Il est courant d'avoir des définitions de méthode qui retournent tout simplement le résultat d'une expression immédiatement, ou qui ont une seule instruction en tant que corps de la méthode.  Il existe un raccourci de syntaxe pour définir de telles méthodes en utilisant `=>`:
 
 ```csharp
-
 public Point Move(int dx, int dy) => new Point(x + dx, y + dy);
 public void Print() => Console.WriteLine(First + " " + Last);
 // Works with operators, properties, and indexers too.
 public static Complex operator +(Complex a, Complex b) => a.Add(b);
 public string Name => First + " " + Last;
 public Customer this[long id] => store.LookupCustomer(id);
-
 ```
 
 Si la méthode retourne `void` ou est une méthode async, alors le corps de la méthode doit être une expression d’instruction (comme avec les expressions lambda).  Les propriétés et les indexeurs doivent être en lecture seule, et vous n’y utilisez pas le mot clé d’accesseur `get`.
@@ -303,12 +301,12 @@ Pour plus d’informations, consultez [Itérateurs](https://msdn.microsoft.com/l
 
 ## <a name="see-also"></a>Voir aussi ##
 
-[Modificateurs d’accès](https://msdn.microsoft.com/library/wxh6fsc7.aspx)
-[Classes statiques et membres de classe statique](https://msdn.microsoft.com/library/79b3xss3.aspx)
-[Héritage](https://msdn.microsoft.com/library/ms173149.aspx)
-[Classes abstract et sealed et membres de classe](https://msdn.microsoft.com/library/ms173150.aspx)
-[params](https://msdn.microsoft.com/library/w5zay9db.aspx)
-[out](https://msdn.microsoft.com/library/t3c3bfhx.aspx)
-[ref](https://msdn.microsoft.com/library/14akc2c7.aspx)
+[Modificateurs d’accès](https://msdn.microsoft.com/library/wxh6fsc7.aspx)   
+[Classes statiques et membres de classe statique](https://msdn.microsoft.com/library/79b3xss3.aspx)   
+[Héritage](https://msdn.microsoft.com/library/ms173149.aspx)   
+[Classes abstract et sealed et membres de classe](https://msdn.microsoft.com/library/ms173150.aspx)   
+[params](https://msdn.microsoft.com/library/w5zay9db.aspx)   
+[out](https://msdn.microsoft.com/library/t3c3bfhx.aspx)   
+[ref](https://msdn.microsoft.com/library/14akc2c7.aspx)   
 [Passage de paramètres](https://msdn.microsoft.com/library/0f66670z.aspx)
 

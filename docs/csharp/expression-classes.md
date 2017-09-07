@@ -1,6 +1,6 @@
 ---
 title: "Types de frameworks prenant en charge les arborescences d’expressions"
-description: "Types de frameworks prenant en charge les arborescences d’expressions"
+description: "En savoir plus sur les types de frameworks prenant en charge les arborescences d’expressions, la création d’arborescences d’expressions et les techniques d’utilisation des API d’arborescences d’expressions."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -10,10 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 64b3b7999b6ff01bdf28cb7902ba50087d191cb4
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ed89b286eee9b4c2e11bb27d18e50f777f94f33e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 03/13/2017
 [Précédent -- Explication des arborescences d’expressions](expression-trees-explained.md)
 
 Il existe une longue liste de classes dans le framework .NET Core qui fonctionnent avec des arborescences d’expressions.
-Vous pouvez voir la liste complète [ici](https://docs.microsoft.com/dotnet/core/api/System.Linq.Expressions).
+Vous pouvez voir la liste complète [ici](/dotnet/core/api/System.Linq.Expressions).
 Au lieu de parcourir la liste complète, essayons de comprendre comment les classes du framework ont été conçues.
 
 Dans la conception du langage, une expression est un corps de code qui évalue et retourne une valeur. Les expressions peuvent être très simples : l’expression constante `1` retourne la valeur constante 1. Elles peuvent être plus compliquées : l’expression `(-B + Math.Sqrt(B*B + 4 * A * C)) / (2 * A)` retourne une racine pour une équation quadratique (dans le cas où l’équation a une solution).  

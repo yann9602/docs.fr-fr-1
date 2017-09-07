@@ -1,86 +1,98 @@
 ---
 title: Composants architecturaux de .NET
-description: "Décrit les principaux composants architecturaux de .NET tels que la bibliothèque .NET Standard, les runtimes .NET et les outils."
-keywords: ".NET, bibliothèque .NET Standard, .NET Standard, .NET Core, .NET Framework, Xamarin, MSBuild, C#, F#, VB, compilateurs"
+description: "Décrit les composants architecturaux de .NET tels que .NET Standard, les implémentations de .NET, les runtimes .NET et les outils."
 author: cartermp
 ms.author: mairaw
-ms.date: 11/16/2016
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 2e38e9d9-8284-46ee-a15f-199adc4f26f4
-translationtype: Human Translation
-ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
-ms.openlocfilehash: e93764ff4d3391110c79f73a34512bd073ce0499
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 1b028e5880f9e57e87c16eabeb442e0a46a369da
+ms.openlocfilehash: ce3368f4c34a8e4b20a7deb2a6c6e4d163927cd4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/23/2017
 
 ---
-
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
-.NET est constitué de plusieurs composants clés.  Il possède une bibliothèque standard, appelée bibliothèque .NET Standard, qui est un grand ensemble d’API s’exécutant partout.  Cette bibliothèque standard est implémentée par trois runtimes .NET : .NET Framework, .NET Core et Mono pour Xamarin.  Les langages .NET s’exécutent aussi sur n’importe quel runtime .NET.  En outre, il existe sur chaque plateforme des outils qui vous permettent de générer des projets.  Ces outils sont les mêmes, quel que soit le runtime que vous choisissez.
+Une application .NET est développée pour une ou plusieurs *implémentations de .NET* et s’exécute dans ces dernières.  Les implémentations de .NET incluent .NET Framework, .NET Core et Mono. Il existe une spécification d’API commune à toutes les implémentations de .NET, appelée .NET Standard. Cet article présente brièvement chacun de ces concepts.
 
-Voici une présentation graphique de chacun des composants de .NET mentionnés précédemment et de son positionnement.
+## <a name="net-standard"></a>.NET Standard
 
-![Tous les composants architecturaux de .NET réunis](media/components.png)
+.NET Standard est un ensemble d’API qui sont implémentées par la bibliothèque de classes de base d’une implémentation de .NET. Plus formellement, il s’agit d’une spécification d’API .NET qui constituent un ensemble cohérent de contrats par rapport auxquels vous compilez votre code. Ces contrats sont implémentés dans chaque implémentation de .NET. Cela permet la portabilité entre les différentes implémentations de .NET ; votre code peut dès lors « s’exécuter partout ».
 
-Voici une brève explication de chacun des composants clés illustrés ci-dessus.  
+.NET Standard est également un [framework cible](glossary.md#target-framework). Si votre code cible une version de .NET Standard, il peut s’exécuter sur n’importe quelle implémentation de .NET qui prend en charge cette version de .NET Standard.
 
-## <a name="net-standard-library"></a>Bibliothèque .NET Standard
+Pour plus d’informations sur .NET Standard et la façon de le cibler, consultez la rubrique [.NET Standard](net-standard.md).
 
-La bibliothèque .NET Standard est un ensemble d’API implémentées par un runtime .NET.
+## <a name="net-implementations"></a>Implémentations de .NET
 
-Plus formellement, il s’agit d’une spécification d’API .NET qui constituent un ensemble cohérent de contrats par rapport auxquels vous compilez votre code.  Ces contrats ont des implémentations sous-jacentes pour chaque runtime .NET.  Cela permet la portabilité entre les différents runtimes .NET ; votre code peut dès lors « s’exécuter partout ».
+Chaque implémentation de .NET inclut les composants suivants :
 
-La bibliothèque .NET Standard est également une cible de génération, et est appelée le .NET Standard.  Actuellement, vous pouvez cibler .NET Standard 1.0-1.6.  Si votre code cible une version du .NET Standard, il peut s’exécuter sur n’importe quel runtime .NET qui implémente cette version.
+- Un ou plusieurs runtimes. Exemples : CLR pour .NET Framework, CoreCLR et CoreRT pour .NET Core.
+- Une bibliothèque de classes qui implémente .NET Standard et qui peut implémenter des API supplémentaires. Exemples : bibliothèque de classes de base .NET Framework, bibliothèque de classes de base .NET Core.
+- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md) et [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) sont inclus dans .NET Framework.
+- Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
 
-Pour plus d’informations sur la bibliothèque .NET Standard et sur le ciblage du .NET Standard, consultez [Bibliothèque .NET Standard](library.md).
-
-## <a name="net-runtimes"></a>Runtimes .NET
-
-Il existe 3 runtimes .NET principaux que Microsoft développe et gère activement : .NET Core, .NET Framework et Mono pour Xamarin.
+Il existe quatre implémentations de .NET principales que Microsoft développe et gère activement : .NET Core, .NET Framework, Mono et UWP.
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core est un runtime multiplateforme optimisé pour les charges de travail serveur.  Il implémente la bibliothèque .NET Standard, ce qui signifie que tout code qui cible le .NET Standard peut s’exécuter sur .NET Core.  Il s’agit du runtime utilisé par ASP.NET Core et la plateforme Windows universelle (UWP).  Il est moderne, efficace, et est conçu pour gérer les charges de travail serveur et cloud à grande échelle.
+.NET Core est une implémentation multiplateforme de .NET conçue pour gérer les charges de travail serveur et cloud à l’échelle. Il s’exécute sur Windows, macOS et Linux. Comme il implémente .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur .NET Core. ASP.NET Core s’exécute sur .NET Core. 
 
-Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md).
+Pour en savoir plus sur .NET Core, consultez le [Guide .NET Core](../core/index.md) et [Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md).
 
 ### <a name="net-framework"></a>.NET Framework
 
-.NET Framework est le runtime .NET historique qui existe depuis 2002.  Les développeurs .NET actuels l’ont toujours utilisé dans sa forme d’origine.  Il implémente la bibliothèque .NET Standard, ce qui signifie que tout code qui cible .NET Standard peut s’exécuter sur le .NET Framework.  Il contient des API supplémentaires spécifiques à Windows, notamment des API pour le développement bureautique Windows avec Windows Forms et WPF.  .NET Framework est optimisé pour la génération d’applications de bureau Windows.
+.NET Framework est l’implémentation de .NET d’origine qui existe depuis 2002. Les développeurs .NET actuels l’ont toujours utilisé dans sa forme d’origine. Comme les versions 4.5 et ultérieures implémentent .NET Standard, tout code qui cible .NET Standard peut s’exécuter sur ces versions de .NET Framework. Il contient des API supplémentaires spécifiques à Windows, notamment des API pour le développement bureautique Windows avec Windows Forms et WPF. .NET Framework est optimisé pour la génération d’applications de bureau Windows.
 
 Pour en savoir plus sur le .NET Framework, consultez [.NET Framework Guide](../framework/index.md) (Guide du .NET Framework).
 
-### <a name="mono-for-xamarin"></a>Mono pour Xamarin
+### <a name="mono"></a>Mono
 
-Mono est le runtime utilisé par les applications Xamarin.  Il implémente la bibliothèque .NET Standard, ce qui signifie que tout code qui cible .NET Standard peut s’exécuter sur les applications Xamarin.  Il contient des API supplémentaires pour iOS, Android, Xamarin.Forms et Xamarin.Mac.  Il est optimisé pour la génération d’applications mobiles sur iOS et Android.
+Mono est une implémentation de .NET qui est principalement utilisée quand un runtime réduit est requis. Ce runtime alimente les applications Xamarin sur Android, Mac, iOS, tvOS et watchOS, et est avant tout axé sur une faible consommation des ressources.
+
+Il prend en charge toutes les versions de .NET Standard publiées.
+
+Historiquement, Mono implémentait l’API plus volumineuse de .NET Framework et émulait certaines des fonctionnalités les plus populaires sur Unix. Il est parfois utilisé pour exécuter des applications .NET qui s’appuient sur ces fonctionnalités sous Unix.
+
+Mono est généralement utilisé avec un compilateur juste-à-temps, mais il comporte également un compilateur statique complet (compilation Ahead Of Time) qui est utilisé sur des plateformes comme iOS.
 
 Pour en savoir plus sur Mono, consultez la [documentation Mono](http://www.mono-project.com/docs/).
 
+### <a name="universal-windows-platform-uwp"></a>Plateforme Windows universelle (UWP)
+
+UWP est une implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, VB.NET et JavaScript. Quand vous utilisez C# et VB.NET, les API .NET sont fournies par .NET Core.
+
+Pour en savoir plus sur UWP, consultez [Introduction à la plateforme Windows universelle](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+
+## <a name="net-runtimes"></a>Runtimes .NET
+
+Un runtime est l’environnement d’exécution d’un programme managé. Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
+ 
+ - CLR (Common Language Runtime) pour .NET Framework
+ - CoreCLR (Core Common Language Runtime) pour .NET Core
+ - .NET Native pour la plateforme Windows universelle 
+ - Le runtime Mono pour Xamarin.iOS, Xamarin.Android, Xamarin.Mac et le framework de bureau Mono
+
 ## <a name="net-tooling-and-common-infrastructure"></a>Outils .NET et infrastructure commune
 
-Les différentes implémentations de .NET bénéficient des outils pour .NET.  Elles incluent entre autres :
+Vous avez accès à un ensemble complet d’outils et de composants d’infrastructure qui fonctionnent avec toutes les implémentations de .NET. Ce sont, entre autres :
 
-* Les langages .NET et leurs compilateurs
-* Les composants d’exécution, tels que le JIT et le Garbage Collector
-* Système de projet .NET (parfois appelé « csproj », « vbproj » ou « fsproj »)
-* MSBuild, moteur de génération utilisé pour générer les projets
-* NuGet, gestionnaire de package de Microsoft pour .NET
-* L’interface CLI .NET, interface de ligne de commande permettant de générer des projets .NET multiplateformes
-* Outils d’orchestration de génération open source, tels que CAKE et FAKE
+- Les langages .NET et leurs compilateurs
+- Le système de projet .NET (basé sur les fichiers *.csproj*, *.vbproj* et *.fsproj*)
+- [MSBuild](/visualstudio/msbuild/msbuild), moteur de génération utilisé pour générer les projets
+- [NuGet](/nuget/), gestionnaire de package de Microsoft pour .NET
+- Outils d’orchestration de génération open source, tels que [CAKE](http://cakebuild.net/) et [FAKE](https://fake.build/)
 
-Le principal avantage est que vous disposez d’une grande quantité d’outils et d’une infrastructure commune pour toute « version » de .NET avec laquelle vous choisissez de générer vos applications.
+## <a name="see-also"></a>Voir aussi
+[Choix entre .NET Core et .NET Framework pour les applications serveur](choosing-core-framework-server.md)   
+[.NET Standard](net-standard.md)  
+[Guide .NET Core](../core/index.md)  
+[.NET Framework Guide](../framework/index.md) (Guide du .NET Framework)  
+[Guide C#](../csharp/index.md)  
+[Guide F#](../fsharp/index.md)  
+[VB.NET Guide](../visual-basic/index.md) (Guide VB.NET)  
 
-## <a name="next-steps"></a>Étapes suivantes
-
-Pour en savoir plus, consultez les rubriques suivantes :
-
-* [Bibliothèque .NET Standard](library.md)
-* [Guide .NET Core](../core/index.md)
-* [.NET Framework Guide](../framework/index.md) (Guide du .NET Framework)
-* [Guide C#](../csharp/index.md)
-* [Guide F#](../fsharp/index.md)
-* [VB.NET Guide](../visual-basic/index.md) (Guide VB.NET)
 

@@ -1,5 +1,5 @@
 ---
-title: "Réduction des redémarrages système lors des installations du .NET Framework 4.5 | Microsoft Docs"
+title: "Réduction des redémarrages système lors des installations de .NET Framework 4.5"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,11 +23,11 @@ caps.latest.revision: 18
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 0b39f793d2bc3b3fb73594320d533ebb411fa128
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d3f54e3794d1595ed120685a452478791e0ad37c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/02/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Réduction des redémarrages système lors des installations de .NET Framework 4.5
@@ -53,3 +53,4 @@ Invite pour fermer les applications .NET Framework en cours d'utilisation
  [Déploiement](../../../docs/framework/deployment/index.md)   
  [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
  [How to: Get Progress from the .NET Framework 4.5 Installer](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+

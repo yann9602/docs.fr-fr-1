@@ -1,5 +1,5 @@
 ---
-title: Filtrage de la sortie de My.Application.Log (Visual Basic) | Microsoft Docs
+title: Filtrage de la sortie de My.Application.Log (Visual Basic)
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -33,11 +33,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fe32676f0e39ed109a68f39584cf41aec5f5ce90
-ms.openlocfilehash: c0b8b0a4174527d1fc512b461355d2508e34e152
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a19bd71f1346be292dcc7b143a0080ac1cf11ec0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Procédure pas à pas : filtrage de la sortie de My.Application.Log (Visual Basic)
@@ -48,7 +48,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 #### <a name="to-build-the-sample-application"></a>Pour générer l’exemple d’application  
   
-1.  Ouvrez un nouveau projet d’application Windows [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+1.  Ouvrez un nouveau projet d’application Windows [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
 2.  Ajoutez un bouton nommé Button1 à Form1.  
   
@@ -68,7 +68,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
   
 6.  Fermez l'application.  
   
-     Pour plus d’informations sur la consultation de la fenêtre de sortie de débogage de l’application, consultez [Fenêtre Sortie](https://docs.microsoft.com/visualstudio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+     Pour plus d’informations sur la consultation de la fenêtre de sortie de débogage de l’application, consultez [Fenêtre Sortie](/visualstudio/ide/reference/output-window). Pour plus d’informations sur l’emplacement du fichier journal de l’application, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
   
     > [!NOTE]
     >  Par défaut, l’application vide la sortie du fichier journal quand elle se ferme.  
@@ -162,7 +162,7 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
 9. Rétablissez la valeur « Information » de l’attribut `value`.  
   
     > [!NOTE]
-    >  Le paramètre de commutateur `DefaultSwitch` contrôle uniquement `My.Application.Log`. Il ne modifie pas le comportement des classes <xref:System.Diagnostics.Trace?displayProperty=fullName> et <xref:System.Diagnostics.Debug?displayProperty=fullName> du [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)].  
+    >  Le paramètre de commutateur `DefaultSwitch` contrôle uniquement `My.Application.Log`. Il ne modifie pas le comportement des classes <xref:System.Diagnostics.Trace?displayProperty=fullName> et <xref:System.Diagnostics.Debug?displayProperty=fullName> du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
   
 ## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Filtrage individuel des écouteurs My.Application.Log  
  L’exemple précédent indique comment modifier le filtrage de toute la sortie `My.Application.Log`. Cet exemple montre comment filtrer un écouteur de journalisation. Par défaut, une application a deux écouteurs qui écrivent dans le fichier journal et la sortie de débogage de l’application.  
@@ -281,3 +281,4 @@ Cette procédure pas à pas montre comment modifier le filtrage de journal par d
  [Guide pratique pour écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)   
  [Commutateurs de traçage](../../../../framework/debug-trace-profile/trace-switches.md)   
  [Enregistrement d’informations provenant de l’application](../../../../visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+
