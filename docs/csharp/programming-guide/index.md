@@ -1,5 +1,5 @@
 ---
-title: Guide de programmation C# | Microsoft Docs
+title: "Guide de programmation C#"
 ms.date: 2017-05-02
 ms.prod: .net
 ms.technology:
@@ -32,33 +32,27 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fd5f6cccdc5c91eb435ba024c9c37351febc952a
-ms.openlocfilehash: a7c73e7b17275de0c9f305653005b84d2d1e8030
+ms.translationtype: HT
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 0c95459f21aebf1d5efe1482e74ca2724d283821
 ms.contentlocale: fr-fr
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 09/02/2017
 
 ---
-<a id="c-programming-guide" class="xliff"></a>
-
-# Guide de programmation C#
+# <a name="c-programming-guide"></a>Guide de programmation C#
 Cette section fournit des informations détaillées sur les fonctionnalités et fonctions clés du langage C# accessibles par .NET Framework.  
   
- La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous êtes entièrement novice en programmation ou en C#, vous pouvez consulter le [Centre de développement C#](http://go.microsoft.com/fwlink/?linkid=95125), où vous trouverez de nombreux didacticiels, exemples et vidéos pour vous aider à démarrer.  
+ La majeure partie de cette section suppose que vous connaissez déjà en partie C# et les concepts de programmation généraux. Si vous débutez en programmation ou avec C#, vous pouvez consulter le didacticiel interactif [Bien démarrer avec C#](https://www.microsoft.com/net/tutorials/csharp/getting-started), où aucune connaissance préalable de la programmation n’est nécessaire.  
   
- Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../../csharp/language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](../../csharp/language-reference/language-specification.md).  
+ Pour plus d’informations sur des mots clés, opérateurs et directives de préprocesseur en particulier, consultez la page [Informations de référence sur C#](../../csharp/language-reference/index.md). Pour plus d’informations sur la spécification du langage C#, consultez la page [Spécification du langage C#](../../csharp/language-reference/language-specification/index.md).  
   
-<a id="program-sections" class="xliff"></a>
-
-## Sections du programme
+## <a name="program-sections"></a>Sections du programme
 
 [À l’intérieur d’un programme C#](../../csharp/programming-guide/inside-a-program/index.md)  
   
 [Main() et arguments de ligne de commande](../../csharp/programming-guide/main-and-command-args/index.md)  
  
-<a id="language-sections" class="xliff"></a>
-
-## Sections du langage  
+## <a name="language-sections"></a>Sections du langage  
 [Instructions, expressions et opérateurs](../../csharp/programming-guide/statements-expressions-operators/index.md)  
 
  [Types](../../csharp/programming-guide/types/index.md)  
@@ -97,9 +91,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Commentaires sur la documentation XML](../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
   
-<a id="platform-sections" class="xliff"></a>
-
-## Sections de la plateforme  
+## <a name="platform-sections"></a>Sections de la plateforme  
  [Domaines d’application (C# et Visual Basic)](http://msdn.microsoft.com/en-us/1bc2939a-79db-4a4a-a677-4a2ce6de2b1e)  
   
  [Assemblys et le Global Assembly Cache](../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
@@ -116,8 +108,7 @@ Cette section fournit des informations détaillées sur les fonctionnalités et 
   
  [Réflexion](../../csharp/programming-guide/concepts/reflection.md)  
   
-<a id="see-also" class="xliff"></a>
-
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Informations de référence sur C#](../../csharp/language-reference/index.md)   
- [C#](../../csharp/csharp.md)
+ [C#](../../csharp/index.md)
+
