@@ -38,17 +38,17 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="-operator-c-reference"></a>|, opérateur (référence C#)
-Les opérateurs `|` binaires sont prédéfinis pour les types intégraux et `bool`. Pour les types intégraux, `|` calcule l’opération OR au niveau du bit de ses opérandes. Pour les opérandes `bool`, `|` calcule l’opération OR logique de ses opérandes ; autrement dit, le résultat est `false` si et seulement si ses deux opérandes ont la valeur `false`.  
+# <a name="-operator-c-reference"></a><span data-ttu-id="d1e04-102">|, opérateur (référence C#)</span><span class="sxs-lookup"><span data-stu-id="d1e04-102">| Operator (C# Reference)</span></span>
+<span data-ttu-id="d1e04-103">Les opérateurs `|` binaires sont prédéfinis pour les types intégraux et `bool`.</span><span class="sxs-lookup"><span data-stu-id="d1e04-103">Binary `|` operators are predefined for the integral types and `bool`.</span></span> <span data-ttu-id="d1e04-104">Pour les types intégraux, `|` calcule l’opération OR au niveau du bit de ses opérandes.</span><span class="sxs-lookup"><span data-stu-id="d1e04-104">For integral types, `|` computes the bitwise OR of its operands.</span></span> <span data-ttu-id="d1e04-105">Pour les opérandes `bool`, `|` calcule l’opération OR logique de ses opérandes ; autrement dit, le résultat est `false` si et seulement si ses deux opérandes ont la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="d1e04-105">For `bool` operands, `|` computes the logical OR of its operands; that is, the result is `false` if and only if both its operands are `false`.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- Les types définis par l’utilisateur peuvent surcharger l’opérateur `|` (voir [operator](../../../csharp/language-reference/keywords/operator.md)).  
+## <a name="remarks"></a><span data-ttu-id="d1e04-106">Remarques</span><span class="sxs-lookup"><span data-stu-id="d1e04-106">Remarks</span></span>  
+ <span data-ttu-id="d1e04-107">Les types définis par l’utilisateur peuvent surcharger l’opérateur `|` (voir [operator](../../../csharp/language-reference/keywords/operator.md)).</span><span class="sxs-lookup"><span data-stu-id="d1e04-107">User-defined types can overload the `|` operator (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csRefOperators#31](../../../csharp/language-reference/operators/codesnippet/CSharp/or-operator_1.cs)]  
+## <a name="example"></a><span data-ttu-id="d1e04-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="d1e04-108">Example</span></span>  
+ <span data-ttu-id="d1e04-109">[!code-cs[csRefOperators#31](../../../csharp/language-reference/operators/codesnippet/CSharp/or-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="d1e04-109">[!code-cs[csRefOperators#31](../../../csharp/language-reference/operators/codesnippet/CSharp/or-operator_1.cs)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Opérateurs C#](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a><span data-ttu-id="d1e04-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d1e04-110">See Also</span></span>  
+ <span data-ttu-id="d1e04-111">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="d1e04-111">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="d1e04-112">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="d1e04-112">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="d1e04-113">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="d1e04-113">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
 

@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f3ea94c23ae1c8a565c8d457791ae0ed0d52f61d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 96039a8f425d5af1b5875557c16f8decab6cc7a6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Exemple de fichier XML : Données numériques dans un espace de noms
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements. Le code XML se trouve dans un espace de noms.  
+# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="fdcd8-102">Exemple de fichier XML : Données numériques dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="fdcd8-102">Sample XML File: Numerical Data in a Namespace</span></span>
+<span data-ttu-id="fdcd8-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].</span><span class="sxs-lookup"><span data-stu-id="fdcd8-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="fdcd8-104">Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.</span><span class="sxs-lookup"><span data-stu-id="fdcd8-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="fdcd8-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="fdcd8-105">The XML is in a namespace.</span></span>  
   
-## <a name="data"></a>Données  
+## <a name="data"></a><span data-ttu-id="fdcd8-106">Données</span><span class="sxs-lookup"><span data-stu-id="fdcd8-106">Data</span></span>  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  
@@ -72,5 +73,5 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="fdcd8-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fdcd8-107">See Also</span></span>  
+ [<span data-ttu-id="fdcd8-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="fdcd8-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

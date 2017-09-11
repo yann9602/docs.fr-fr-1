@@ -1,1 +1,1 @@
-Explorateur Microsoft Windows
+<span data-ttu-id="4fb1a-101">Explorateur Microsoft Windows</span><span class="sxs-lookup"><span data-stu-id="4fb1a-101">Microsoft Windows Explorer</span></span>

@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: addb3f40b0d995d320171cdcd5d2dd58ff5cfe0d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 192f6ca5796bb21c96b0d2f968793706749c7236
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-test-configuration-linq-to-xml"></a>Exemple de fichier XML : Configuration test (LINQ to XML)
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Il s'agit d'un fichier de configuration test.  
+# <a name="sample-xml-file-test-configuration-linq-to-xml"></a><span data-ttu-id="ee1fa-102">Exemple de fichier XML : Configuration test (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ee1fa-102">Sample XML File: Test Configuration (LINQ to XML)</span></span>
+<span data-ttu-id="ee1fa-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].</span><span class="sxs-lookup"><span data-stu-id="ee1fa-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="ee1fa-104">Il s'agit d'un fichier de configuration test.</span><span class="sxs-lookup"><span data-stu-id="ee1fa-104">This is a test configuration file.</span></span>  
   
-## <a name="testconfigxml"></a>TestConfig.xml  
+## <a name="testconfigxml"></a><span data-ttu-id="ee1fa-105">TestConfig.xml</span><span class="sxs-lookup"><span data-stu-id="ee1fa-105">TestConfig.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -73,5 +74,5 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
 </Tests>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="ee1fa-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ee1fa-106">See Also</span></span>  
+ [<span data-ttu-id="ee1fa-107">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="ee1fa-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

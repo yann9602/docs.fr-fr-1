@@ -1,1 +1,1 @@
-RVB
+<span data-ttu-id="97237-101">RVB</span><span class="sxs-lookup"><span data-stu-id="97237-101">RGB</span></span>

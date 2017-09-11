@@ -28,20 +28,20 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 05/22/2017
 
 ---
-# <a name="advanced-windows-presentation-foundation"></a>Aspects avancés (Windows Presentation Foundation)
-Cette section décrit certains domaines avancés dans WPF.  
+# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="4af7d-102">Aspects avancés (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="4af7d-102">Advanced (Windows Presentation Foundation)</span></span>
+<span data-ttu-id="4af7d-103">Cette section décrit certains domaines avancés dans WPF.</span><span class="sxs-lookup"><span data-stu-id="4af7d-103">This section describes some of the advanced areas in WPF.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Architecture de WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
- [Éléments de base](../../../../docs/framework/wpf/advanced/base-elements.md)  
- [Sérialisation et arborescence d’éléments](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
- [Glisser-déposer](../../../../docs/framework/wpf/advanced/drag-and-drop.md)  
- [Documents](../../../../docs/framework/wpf/advanced/documents.md)  
- [Globalisation et localisation](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)  
- [Migration et interopérabilité](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
- [Performances](../../../../docs/framework/wpf/advanced/performance.md)  
- [Modèle de thread](../../../../docs/framework/wpf/advanced/threading-model.md)  
- [Vue d’ensemble des compléments WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)  
- [Informations de référence sur les API non managées WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)  
+## <a name="in-this-section"></a><span data-ttu-id="4af7d-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="4af7d-104">In This Section</span></span>  
+ [<span data-ttu-id="4af7d-105">Architecture de WPF</span><span class="sxs-lookup"><span data-stu-id="4af7d-105">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
+<span data-ttu-id="4af7d-106"> [Éléments de base](../../../../docs/framework/wpf/advanced/base-elements.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-106"> [Base Elements](../../../../docs/framework/wpf/advanced/base-elements.md)</span></span>  
+<span data-ttu-id="4af7d-107"> [Sérialisation et arborescence d’éléments](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-107"> [Element Tree and Serialization](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)</span></span>  
+<span data-ttu-id="4af7d-108"> [Glisser-déposer](../../../../docs/framework/wpf/advanced/drag-and-drop.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-108"> [Drag and Drop](../../../../docs/framework/wpf/advanced/drag-and-drop.md)</span></span>  
+<span data-ttu-id="4af7d-109"> [Documents](../../../../docs/framework/wpf/advanced/documents.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-109"> [Documents](../../../../docs/framework/wpf/advanced/documents.md)</span></span>  
+<span data-ttu-id="4af7d-110"> [Globalisation et localisation](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-110"> [Globalization and Localization](../../../../docs/framework/wpf/advanced/globalization-and-localization.md)</span></span>  
+<span data-ttu-id="4af7d-111"> [Migration et interopérabilité](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-111"> [Migration and Interoperability](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)</span></span>  
+<span data-ttu-id="4af7d-112"> [Performances](../../../../docs/framework/wpf/advanced/performance.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-112"> [Performance](../../../../docs/framework/wpf/advanced/performance.md)</span></span>  
+<span data-ttu-id="4af7d-113"> [Modèle de thread](../../../../docs/framework/wpf/advanced/threading-model.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-113"> [Threading Model](../../../../docs/framework/wpf/advanced/threading-model.md)</span></span>  
+<span data-ttu-id="4af7d-114"> [Vue d’ensemble des compléments WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-114"> [WPF Add-Ins Overview](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)</span></span>  
+<span data-ttu-id="4af7d-115"> [Informations de référence sur les API non managées WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)</span><span class="sxs-lookup"><span data-stu-id="4af7d-115"> [Unmanaged WPF API Reference](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a><span data-ttu-id="4af7d-116">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="4af7d-116">Related Sections</span></span>

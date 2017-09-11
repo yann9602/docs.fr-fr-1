@@ -1,1 +1,1 @@
-MMC (Microsoft Management Console)
+<span data-ttu-id="b214f-101">MMC (Microsoft Management Console)</span><span class="sxs-lookup"><span data-stu-id="b214f-101">Microsoft Management Console (MMC)</span></span>

@@ -20,17 +20,18 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9ea657482d4e8e1465d9bc6ae3f94915badee512
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: af184f6f061cfd95b767a95a6b34f18bd6ba4f2b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="thread-timers-visual-basic"></a>Minuteries de threads (Visual Basic)
-La <xref:System.Threading.Timer?displayProperty=fullName>classe est utile pour exécuter périodiquement une tâche sur un thread séparé.</xref:System.Threading.Timer?displayProperty=fullName> Par exemple, vous pouvez utiliser un composant timer thread pour vérifier l’état et l’intégrité d’une base de données ou pour sauvegarder les fichiers importants.  
+# <a name="thread-timers-visual-basic"></a><span data-ttu-id="9ea89-102">Minuteries de threads (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9ea89-102">Thread Timers (Visual Basic)</span></span>
+<span data-ttu-id="9ea89-103">La <xref:System.Threading.Timer?displayProperty=fullName>classe est utile pour exécuter périodiquement une tâche sur un thread séparé.</xref:System.Threading.Timer?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="9ea89-103">The <xref:System.Threading.Timer?displayProperty=fullName> class is useful for periodically running a task on a separate thread.</span></span> <span data-ttu-id="9ea89-104">Par exemple, vous pouvez utiliser un composant timer thread pour vérifier l’état et l’intégrité d’une base de données ou pour sauvegarder les fichiers importants.</span><span class="sxs-lookup"><span data-stu-id="9ea89-104">For example, you could use a thread timer to check the status and integrity of a database or to back up critical files.</span></span>  
   
-## <a name="thread-timer-example"></a>Exemple Timer thread  
- L’exemple suivant démarre une tâche toutes les deux secondes et utilise un indicateur pour activer la <xref:System.IDisposable.Dispose%2A>méthode qui arrête la minuterie.</xref:System.IDisposable.Dispose%2A> Cet exemple publie l’état dans la fenêtre Sortie.  
+## <a name="thread-timer-example"></a><span data-ttu-id="9ea89-105">Exemple Timer thread</span><span class="sxs-lookup"><span data-stu-id="9ea89-105">Thread Timer Example</span></span>  
+ <span data-ttu-id="9ea89-106">L’exemple suivant démarre une tâche toutes les deux secondes et utilise un indicateur pour activer la <xref:System.IDisposable.Dispose%2A>méthode qui arrête la minuterie.</xref:System.IDisposable.Dispose%2A></span><span class="sxs-lookup"><span data-stu-id="9ea89-106">The following example starts a task every two seconds and uses a flag to initiate the <xref:System.IDisposable.Dispose%2A> method that stops the timer.</span></span> <span data-ttu-id="9ea89-107">Cet exemple publie l’état dans la fenêtre Sortie.</span><span class="sxs-lookup"><span data-stu-id="9ea89-107">This example posts status to the output window.</span></span>  
   
 ```vb  
 Private Class StateObjClass  
@@ -76,8 +77,8 @@ Private Sub TimerTask(ByVal StateObj As Object)
 End Sub  
 ```  
   
- Composants Timer thread est particulièrement utiles lorsque la <xref:System.Windows.Forms.Timer?displayProperty=fullName>objet n’est pas disponible, par exemple lorsque vous développez des applications console.</xref:System.Windows.Forms.Timer?displayProperty=fullName>  
+ <span data-ttu-id="9ea89-108">Composants Timer thread est particulièrement utiles lorsque la <xref:System.Windows.Forms.Timer?displayProperty=fullName>objet n’est pas disponible, par exemple lorsque vous développez des applications console.</xref:System.Windows.Forms.Timer?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="9ea89-108">Thread timers are particularly useful when the <xref:System.Windows.Forms.Timer?displayProperty=fullName> object is unavailable, such as when you are developing console applications.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Threading></xref:System.Threading>   
- [Applications multithread (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)
+## <a name="see-also"></a><span data-ttu-id="9ea89-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9ea89-109">See Also</span></span>  
+ <span data-ttu-id="9ea89-110"><xref:System.Threading></xref:System.Threading></span><span class="sxs-lookup"><span data-stu-id="9ea89-110"><xref:System.Threading></span></span>   
+<span data-ttu-id="9ea89-111"> [Applications multithread (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)</span><span class="sxs-lookup"><span data-stu-id="9ea89-111"> [Multithreaded Applications (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)</span></span>

@@ -26,11 +26,11 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="thread-timers-c"></a>Minuteurs de thread (C#)
-La classe <xref:System.Threading.Timer?displayProperty=fullName> est utile pour exécuter périodiquement une tâche sur un thread séparé. Par exemple, vous pouvez utiliser un minuteur de thread pour vérifier l’état et l’intégrité d’une base de données ou pour sauvegarder des fichiers essentiels.  
+# <a name="thread-timers-c"></a><span data-ttu-id="47366-102">Minuteurs de thread (C#)</span><span class="sxs-lookup"><span data-stu-id="47366-102">Thread Timers (C#)</span></span>
+<span data-ttu-id="47366-103">La classe <xref:System.Threading.Timer?displayProperty=fullName> est utile pour exécuter périodiquement une tâche sur un thread séparé.</span><span class="sxs-lookup"><span data-stu-id="47366-103">The <xref:System.Threading.Timer?displayProperty=fullName> class is useful for periodically running a task on a separate thread.</span></span> <span data-ttu-id="47366-104">Par exemple, vous pouvez utiliser un minuteur de thread pour vérifier l’état et l’intégrité d’une base de données ou pour sauvegarder des fichiers essentiels.</span><span class="sxs-lookup"><span data-stu-id="47366-104">For example, you could use a thread timer to check the status and integrity of a database or to back up critical files.</span></span>  
   
-## <a name="thread-timer-example"></a>Exemple de minuteur de thread  
- L’exemple suivant démarre une tâche toutes les deux secondes et utilise un indicateur pour lancer la méthode <xref:System.IDisposable.Dispose%2A> qui arrête le minuteur. Cet exemple publie l’état dans la fenêtre de sortie.  
+## <a name="thread-timer-example"></a><span data-ttu-id="47366-105">Exemple de minuteur de thread</span><span class="sxs-lookup"><span data-stu-id="47366-105">Thread Timer Example</span></span>  
+ <span data-ttu-id="47366-106">L’exemple suivant démarre une tâche toutes les deux secondes et utilise un indicateur pour lancer la méthode <xref:System.IDisposable.Dispose%2A> qui arrête le minuteur.</span><span class="sxs-lookup"><span data-stu-id="47366-106">The following example starts a task every two seconds and uses a flag to initiate the <xref:System.IDisposable.Dispose%2A> method that stops the timer.</span></span> <span data-ttu-id="47366-107">Cet exemple publie l’état dans la fenêtre de sortie.</span><span class="sxs-lookup"><span data-stu-id="47366-107">This example posts status to the output window.</span></span>  
   
 ```csharp  
 private class StateObjClass  
@@ -84,9 +84,9 @@ private void TimerTask(object StateObj)
 }  
 ```  
   
- Les minuteurs de thread sont particulièrement utiles quand l’objet <xref:System.Windows.Forms.Timer?displayProperty=fullName> n’est pas disponible, par exemple quand vous développez des applications console.  
+ <span data-ttu-id="47366-108">Les minuteurs de thread sont particulièrement utiles quand l’objet <xref:System.Windows.Forms.Timer?displayProperty=fullName> n’est pas disponible, par exemple quand vous développez des applications console.</span><span class="sxs-lookup"><span data-stu-id="47366-108">Thread timers are particularly useful when the <xref:System.Windows.Forms.Timer?displayProperty=fullName> object is unavailable, such as when you are developing console applications.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Threading>   
- [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)
+## <a name="see-also"></a><span data-ttu-id="47366-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="47366-109">See Also</span></span>  
+ <span data-ttu-id="47366-110"><xref:System.Threading></span><span class="sxs-lookup"><span data-stu-id="47366-110"><xref:System.Threading></span></span>   
+ [<span data-ttu-id="47366-111">Applications multithread (C#)</span><span class="sxs-lookup"><span data-stu-id="47366-111">Multithreaded Applications (C#)</span></span>](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)
 

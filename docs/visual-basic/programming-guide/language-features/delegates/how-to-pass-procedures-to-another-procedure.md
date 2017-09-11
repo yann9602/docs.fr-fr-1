@@ -31,47 +31,48 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9865e2d7d3786d289add3fa63b3db777317facdf
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 95cbcf836b0dad875851052a367666c00cd54e37
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Comment : passer des procédures à une autre procédure en Visual Basic
-Cet exemple montre comment utiliser des délégués pour passer d’une procédure à une autre procédure.  
+# <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a><span data-ttu-id="e58c6-102">Comment : passer des procédures à une autre procédure en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e58c6-102">How to: Pass Procedures to Another Procedure in Visual Basic</span></span>
+<span data-ttu-id="e58c6-103">Cet exemple montre comment utiliser des délégués pour passer d’une procédure à une autre procédure.</span><span class="sxs-lookup"><span data-stu-id="e58c6-103">This example shows how to use delegates to pass a procedure to another procedure.</span></span>  
   
- Un délégué est un type que vous pouvez utiliser comme tout autre type dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]. Le `AddressOf` opérateur retourne un objet délégué lorsqu’il est appliqué à un nom de procédure.  
+ <span data-ttu-id="e58c6-104">Un délégué est un type que vous pouvez utiliser comme tout autre type dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span><span class="sxs-lookup"><span data-stu-id="e58c6-104">A delegate is a type that you can use like any other type in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span> <span data-ttu-id="e58c6-105">Le `AddressOf` opérateur retourne un objet délégué lorsqu’il est appliqué à un nom de procédure.</span><span class="sxs-lookup"><span data-stu-id="e58c6-105">The `AddressOf` operator returns a delegate object when applied to a procedure name.</span></span>  
   
- Cet exemple comporte une procédure avec un paramètre de délégué qui peut prendre une référence à une autre procédure, obtenue avec la `AddressOf` opérateur.  
+ <span data-ttu-id="e58c6-106">Cet exemple comporte une procédure avec un paramètre de délégué qui peut prendre une référence à une autre procédure, obtenue avec la `AddressOf` opérateur.</span><span class="sxs-lookup"><span data-stu-id="e58c6-106">This example has a procedure with a delegate parameter that can take a reference to another procedure, obtained with the `AddressOf` operator.</span></span>  
   
-### <a name="create-the-delegate-and-matching-procedures"></a>Création du délégué et les procédures correspondantes  
+### <a name="create-the-delegate-and-matching-procedures"></a><span data-ttu-id="e58c6-107">Création du délégué et les procédures correspondantes</span><span class="sxs-lookup"><span data-stu-id="e58c6-107">Create the delegate and matching procedures</span></span>  
   
-1.  Créez un délégué nommé `MathOperator`.  
+1.  <span data-ttu-id="e58c6-108">Créez un délégué nommé `MathOperator`.</span><span class="sxs-lookup"><span data-stu-id="e58c6-108">Create a delegate named `MathOperator`.</span></span>  
   
-     [!code-vb[VbVbalrDelegates n °&1;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_1.vb)]  
+     <span data-ttu-id="e58c6-109">[!code-vb[VbVbalrDelegates n °&1;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="e58c6-109">[!code-vb[VbVbalrDelegates#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_1.vb)]</span></span>  
   
-2.  Créez une procédure nommée `AddNumbers` avec des paramètres et la valeur de retour qui correspondent à celles de `MathOperator`, de sorte que les signatures correspondent.  
+2.  <span data-ttu-id="e58c6-110">Créez une procédure nommée `AddNumbers` avec des paramètres et la valeur de retour qui correspondent à celles de `MathOperator`, de sorte que les signatures correspondent.</span><span class="sxs-lookup"><span data-stu-id="e58c6-110">Create a procedure named `AddNumbers` with parameters and return value that match those of `MathOperator`, so that the signatures match.</span></span>  
   
-     [!code-vb[VbVbalrDelegates n °&2;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_2.vb)]  
+     <span data-ttu-id="e58c6-111">[!code-vb[VbVbalrDelegates n °&2;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_2.vb)]</span><span class="sxs-lookup"><span data-stu-id="e58c6-111">[!code-vb[VbVbalrDelegates#2](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_2.vb)]</span></span>  
   
-3.  Créez une procédure nommée `SubtractNumbers` avec une signature qui correspond à `MathOperator`.  
+3.  <span data-ttu-id="e58c6-112">Créez une procédure nommée `SubtractNumbers` avec une signature qui correspond à `MathOperator`.</span><span class="sxs-lookup"><span data-stu-id="e58c6-112">Create a procedure named `SubtractNumbers` with a signature that matches `MathOperator`.</span></span>  
   
-     [!code-vb[VbVbalrDelegates n °&3;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_3.vb)]  
+     <span data-ttu-id="e58c6-113">[!code-vb[VbVbalrDelegates n °&3;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_3.vb)]</span><span class="sxs-lookup"><span data-stu-id="e58c6-113">[!code-vb[VbVbalrDelegates#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_3.vb)]</span></span>  
   
-4.  Créez une procédure nommée `DelegateTest` qui prend un délégué comme paramètre.  
+4.  <span data-ttu-id="e58c6-114">Créez une procédure nommée `DelegateTest` qui prend un délégué comme paramètre.</span><span class="sxs-lookup"><span data-stu-id="e58c6-114">Create a procedure named `DelegateTest` that takes a delegate as a parameter.</span></span>  
   
-     Cette procédure peut accepter une référence à `AddNumbers` ou `SubtractNumbers`, car leurs signatures correspondent à la `MathOperator` signature.  
+     <span data-ttu-id="e58c6-115">Cette procédure peut accepter une référence à `AddNumbers` ou `SubtractNumbers`, car leurs signatures correspondent à la `MathOperator` signature.</span><span class="sxs-lookup"><span data-stu-id="e58c6-115">This procedure can accept a reference to `AddNumbers` or `SubtractNumbers`, because their signatures match the `MathOperator` signature.</span></span>  
   
-     [!code-vb[VbVbalrDelegates n °&4;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_4.vb)]  
+     <span data-ttu-id="e58c6-116">[!code-vb[VbVbalrDelegates n °&4;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_4.vb)]</span><span class="sxs-lookup"><span data-stu-id="e58c6-116">[!code-vb[VbVbalrDelegates#4](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_4.vb)]</span></span>  
   
-5.  Créez une procédure nommée `Test` qui appelle `DelegateTest` une fois avec le délégué de `AddNumbers` comme paramètre et à nouveau avec le délégué de `SubtractNumbers` en tant que paramètre.  
+5.  <span data-ttu-id="e58c6-117">Créez une procédure nommée `Test` qui appelle `DelegateTest` une fois avec le délégué de `AddNumbers` comme paramètre et à nouveau avec le délégué de `SubtractNumbers` en tant que paramètre.</span><span class="sxs-lookup"><span data-stu-id="e58c6-117">Create a procedure named `Test` that calls `DelegateTest` once with the delegate for `AddNumbers` as a parameter, and again with the delegate for `SubtractNumbers` as a parameter.</span></span>  
   
-     [!code-vb[VbVbalrDelegates n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_5.vb)]  
+     <span data-ttu-id="e58c6-118">[!code-vb[VbVbalrDelegates n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_5.vb)]</span><span class="sxs-lookup"><span data-stu-id="e58c6-118">[!code-vb[VbVbalrDelegates#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-pass-procedures-to-another-procedure_5.vb)]</span></span>  
   
-     Lors de la `Test` est appelée, elle affiche d’abord le résultat de `AddNumbers` sur `5` et `3`, qui est de 8. Le résultat de `SubtractNumbers` sur `9` et `3` s’affiche, qui est de 6.  
+     <span data-ttu-id="e58c6-119">Lors de la `Test` est appelée, elle affiche d’abord le résultat de `AddNumbers` sur `5` et `3`, qui est de 8.</span><span class="sxs-lookup"><span data-stu-id="e58c6-119">When `Test` is called, it first displays the result of `AddNumbers` acting on `5` and `3`, which is 8.</span></span> <span data-ttu-id="e58c6-120">Le résultat de `SubtractNumbers` sur `9` et `3` s’affiche, qui est de 6.</span><span class="sxs-lookup"><span data-stu-id="e58c6-120">Then the result of `SubtractNumbers` acting on `9` and `3` is displayed, which is 6.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md)   
- [AddressOf (opérateur)](../../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Delegate, instruction](../../../../visual-basic/language-reference/statements/delegate-statement.md)   
- [Guide pratique : appeler une méthode déléguée](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+## <a name="see-also"></a><span data-ttu-id="e58c6-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e58c6-121">See Also</span></span>  
+ <span data-ttu-id="e58c6-122">[Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md) </span><span class="sxs-lookup"><span data-stu-id="e58c6-122">[Delegates](../../../../visual-basic/programming-guide/language-features/delegates/index.md) </span></span>  
+<span data-ttu-id="e58c6-123"> [AddressOf (opérateur)](../../../../visual-basic/language-reference/operators/addressof-operator.md) </span><span class="sxs-lookup"><span data-stu-id="e58c6-123"> [AddressOf Operator](../../../../visual-basic/language-reference/operators/addressof-operator.md) </span></span>  
+<span data-ttu-id="e58c6-124"> [Delegate, instruction](../../../../visual-basic/language-reference/statements/delegate-statement.md) </span><span class="sxs-lookup"><span data-stu-id="e58c6-124"> [Delegate Statement](../../../../visual-basic/language-reference/statements/delegate-statement.md) </span></span>  
+<span data-ttu-id="e58c6-125"> [Guide pratique : appeler une méthode déléguée](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)</span><span class="sxs-lookup"><span data-stu-id="e58c6-125"> [How to: Invoke a Delegate Method](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)</span></span>

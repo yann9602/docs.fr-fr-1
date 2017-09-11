@@ -1,50 +1,56 @@
 ---
-title: Guide C# | Microsoft Docs
-description: Guide C#
+title: Guide C#
+description: "Découvrez comment le guide C# peut vous aider à approfondir vos connaissances en C#, que vous soyez développeur débutant ou expert chevronné."
 keywords: .NET, .NET Core
 author: BillWagner
-ms.date: 08/03/2016
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 52db8280-0e53-40cf-858b-e8eef3997dea
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: b87601e339a73b7d9f3132d80496742317439ffa
+helpviewer_keywords:
+- documentation [C#]
+- Help, Visual C# documentation
+- C# language
+- Visual C#
+ms.author: wiwagn
+ms.translationtype: HT
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 5cb79aa1fd89e080e8dc67c379a0a927102a6419
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 
-# <a name="c-guide"></a>Guide C#
+# <a name="c-guide"></a><span data-ttu-id="7df36-104">Guide C#</span><span class="sxs-lookup"><span data-stu-id="7df36-104">C# Guide</span></span>
 
-Le guide C# représente une mine d’informations sur le langage C#. Ce site s’adresse à des publics très différents. En fonction de votre expérience en programmation, ou avec le langage C# et .NET, vous pouvez explorer les différentes sections de ce guide.
+<span data-ttu-id="7df36-105">Le guide C# représente une mine d’informations sur le langage C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-105">The C# guide provides a wealth of information about the C# language.</span></span> <span data-ttu-id="7df36-106">Ce site s’adresse à des publics très différents.</span><span class="sxs-lookup"><span data-stu-id="7df36-106">This site has many different audiences.</span></span> <span data-ttu-id="7df36-107">En fonction de votre expérience en programmation, ou avec le langage C# et .NET, vous pouvez explorer les différentes sections de ce guide.</span><span class="sxs-lookup"><span data-stu-id="7df36-107">Depending on your experience with programming, or with the C# language and .NET, you may wish to explore different sections of this guide.</span></span>
 
-* Pour les développeurs débutants :
-    - Commencez par notre section [didacticiels](tutorials/index.md). Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro. Les didacticiels fournissent une procédure pas à pas pour créer des programmes. Vous apprendrez les concepts du langage et découvrirez comment générer vos propres programmes C#. Si vous préférez commencer par lire des informations d’ensemble, essayez notre [présentation du langage C#](tour-of-csharp/index.md). Elle explique les concepts du langage C#. Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.
+* <span data-ttu-id="7df36-108">Pour les développeurs débutants :</span><span class="sxs-lookup"><span data-stu-id="7df36-108">For brand-new developers:</span></span>
+    - <span data-ttu-id="7df36-109">Commencez par notre section [didacticiels](tutorials/index.md).</span><span class="sxs-lookup"><span data-stu-id="7df36-109">Start with our [tutorials](tutorials/index.md) section.</span></span> <span data-ttu-id="7df36-110">Ces didacticiels vous montrent comment créer des programmes C# à partir de zéro.</span><span class="sxs-lookup"><span data-stu-id="7df36-110">These tutorials show you how to create C# programs from scratch.</span></span> <span data-ttu-id="7df36-111">Les didacticiels fournissent une procédure pas à pas pour créer des programmes.</span><span class="sxs-lookup"><span data-stu-id="7df36-111">The tutorials provide a step-by-step process to create programs.</span></span> <span data-ttu-id="7df36-112">Vous apprendrez les concepts du langage et découvrirez comment générer vos propres programmes C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-112">You'll learn the language concepts, and how to build C# programs on your own.</span></span> <span data-ttu-id="7df36-113">Si vous préférez commencer par lire des informations d’ensemble, essayez notre [présentation du langage C#](tour-of-csharp/index.md).</span><span class="sxs-lookup"><span data-stu-id="7df36-113">If you prefer reading overview information first, try our [tour of the C# language](tour-of-csharp/index.md).</span></span> <span data-ttu-id="7df36-114">Elle explique les concepts du langage C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-114">It explains the concepts of the C# language.</span></span> <span data-ttu-id="7df36-115">Après avoir lu cette section, vous aurez une connaissance élémentaire du langage et serez prêt à suivre les didacticiels ou à créer votre propre programme.</span><span class="sxs-lookup"><span data-stu-id="7df36-115">After reading this, you'll have a basic understanding of the language, and be ready to try the tutorials, or build something on your own.</span></span>
 
-* Pour les développeurs qui découvrent C# : 
-    - Si vous avez déjà développé, mais pas en C#, lisez la [présentation du langage C#](tour-of-csharp/index.md). Vous apprendrez la syntaxe de base et la structure du langage, et vous pourrez utiliser la présentation du langage pour comparer C# à d’autres langages que vous avez déjà utilisés. Vous pouvez également parcourir les [didacticiels](tutorials/index.md) pour essayer des programmes C# de base.
+* <span data-ttu-id="7df36-116">Pour les développeurs qui découvrent C# :</span><span class="sxs-lookup"><span data-stu-id="7df36-116">For developers new to C#:</span></span> 
+    - <span data-ttu-id="7df36-117">Si vous avez déjà développé, mais pas en C#, lisez la [présentation du langage C#](tour-of-csharp/index.md).</span><span class="sxs-lookup"><span data-stu-id="7df36-117">If you've done development before, but are new to C#, read the [tour of the C# language](tour-of-csharp/index.md).</span></span> <span data-ttu-id="7df36-118">Vous apprendrez la syntaxe de base et la structure du langage, et vous pourrez utiliser la présentation du langage pour comparer C# à d’autres langages que vous avez déjà utilisés.</span><span class="sxs-lookup"><span data-stu-id="7df36-118">You will learn the basic syntax and structure for the language, and you can use the language tour to contrast C# with other languages you've used.</span></span> <span data-ttu-id="7df36-119">Vous pouvez également parcourir les [didacticiels](tutorials/index.md) pour essayer des programmes C# de base.</span><span class="sxs-lookup"><span data-stu-id="7df36-119">You can also browse the [tutorials](tutorials/index.md) to try basic C# programs.</span></span>
 
-* Développeurs expérimentés en C# :
-    - Si vous avez déjà utilisé C#, commencez par lire le contenu de la dernière version du langage. Consultez [Nouveautés de C#](whats-new/index.md) pour connaître les nouvelles fonctionnalités de la version actuelle.
+* <span data-ttu-id="7df36-120">Développeurs expérimentés en C# :</span><span class="sxs-lookup"><span data-stu-id="7df36-120">Experienced C# developers:</span></span>
+    - <span data-ttu-id="7df36-121">Si vous avez déjà utilisé C#, commencez par lire le contenu de la dernière version du langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-121">If you've used C# before, you should start by reading what's in the latest version of the language.</span></span> <span data-ttu-id="7df36-122">Consultez [Nouveautés de C#](whats-new/index.md) pour connaître les nouvelles fonctionnalités de la version actuelle.</span><span class="sxs-lookup"><span data-stu-id="7df36-122">Check out [What's new in C#](whats-new/index.md) for the new features in the current version.</span></span>
  
-## <a name="how-the-c-guide-is-organized"></a>Organisation du guide du langage C#
+## <a name="how-the-c-guide-is-organized"></a><span data-ttu-id="7df36-123">Organisation du guide du langage C#</span><span class="sxs-lookup"><span data-stu-id="7df36-123">How the C# guide is organized</span></span>
 
-Il existe sept sections dans le Guide du langage C#. Vous pouvez les lire dans l’ordre, ou accéder directement à ce qui vous intéresse le plus. Certaines sections sont fortement centrées sur le langage. D’autres fournissent des scénarios de bout en bout qui illustrent quelques-uns des types de programmes que vous pouvez créer avec C# et .NET Framework.
+<span data-ttu-id="7df36-124">Il y a plusieurs sections dans le Guide de C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-124">There are several sections in the C# Guide.</span></span> <span data-ttu-id="7df36-125">Vous pouvez les lire dans l’ordre, ou accéder directement à ce qui vous intéresse le plus.</span><span class="sxs-lookup"><span data-stu-id="7df36-125">You can read them in order, or jump directly to what interests you the most.</span></span> <span data-ttu-id="7df36-126">Certaines sections sont fortement centrées sur le langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-126">Some of the sections are heavily focused on the language.</span></span> <span data-ttu-id="7df36-127">D’autres fournissent des scénarios de bout en bout qui illustrent quelques-uns des types de programmes que vous pouvez créer avec C# et .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7df36-127">Others provide end-to-end scenarios that demonstrate a few of the types of programs you can create using C# and the .NET Framework.</span></span>
 
-* [Prise en main](getting-started/index.md) :
-    - Cette section décrit ce que vous devez installer pour élaborer un environnement de développement C# sur votre plateforme privilégiée. Les différentes rubriques de cette section expliquent comment créer votre premier programme C# dans différents environnements pris en charge.
+* <span data-ttu-id="7df36-128">[Prise en main](getting-started/index.md) :</span><span class="sxs-lookup"><span data-stu-id="7df36-128">[Getting Started](getting-started/index.md):</span></span>
+    - <span data-ttu-id="7df36-129">Cette section décrit ce que vous devez installer pour élaborer un environnement de développement C# sur votre plateforme privilégiée.</span><span class="sxs-lookup"><span data-stu-id="7df36-129">This section covers what you need to install for a C# development environment on your preferred platform.</span></span> <span data-ttu-id="7df36-130">Les différentes rubriques de cette section expliquent comment créer votre premier programme C# dans différents environnements pris en charge.</span><span class="sxs-lookup"><span data-stu-id="7df36-130">The different topics under this section explain how to create your first C# program in different supported environments.</span></span>
 
-* [Didacticiels](tutorials/index.md) :
-    - Cette section fournit une variété de scénarios de bout en bout, avec descriptions et code. Vous découvrirez pourquoi certains idiomes sont privilégiés, quelles fonctionnalités C# fonctionnent le mieux selon les situations et vous accéderez à des implémentations de référence des tâches courantes. Si vous apprenez mieux en visualisant le code, commencez par cette section. Vous pouvez également télécharger tout le code et expérimenter dans votre propre environnement.
+* <span data-ttu-id="7df36-131">[Didacticiels](tutorials/index.md) :</span><span class="sxs-lookup"><span data-stu-id="7df36-131">[Tutorials](tutorials/index.md):</span></span>
+    - <span data-ttu-id="7df36-132">Cette section fournit une variété de scénarios de bout en bout, avec descriptions et code.</span><span class="sxs-lookup"><span data-stu-id="7df36-132">This section provides a variety of end to end scenarios, including descriptions and code.</span></span> <span data-ttu-id="7df36-133">Vous découvrirez pourquoi certains idiomes sont privilégiés, quelles fonctionnalités C# fonctionnent le mieux selon les situations et vous accéderez à des implémentations de référence des tâches courantes.</span><span class="sxs-lookup"><span data-stu-id="7df36-133">You'll learn why certain idioms are preferred, what C# features work best in different situations, and see reference implemetntaions for common tasks.</span></span> <span data-ttu-id="7df36-134">Si vous apprenez mieux en visualisant le code, commencez par cette section.</span><span class="sxs-lookup"><span data-stu-id="7df36-134">If you learn best by seeing code, start in this section.</span></span> <span data-ttu-id="7df36-135">Vous pouvez également télécharger tout le code et expérimenter dans votre propre environnement.</span><span class="sxs-lookup"><span data-stu-id="7df36-135">You can also download all the code and experiment in your own environment.</span></span>
 
-* [Présentation de C#](tour-of-csharp/index.md) : 
-    - Cette section présente une vue d’ensemble du langage. Vous découvrirez les éléments qui composent les programmes C# et les fonctionnalités du langage. Vous verrez de petits exemples de tous les éléments de syntaxe du langage C# et des discussions sur ses principaux sujets. 
+* <span data-ttu-id="7df36-136">[Présentation de C#](tour-of-csharp/index.md) :</span><span class="sxs-lookup"><span data-stu-id="7df36-136">[A Tour of C#](tour-of-csharp/index.md):</span></span> 
+    - <span data-ttu-id="7df36-137">Cette section présente une vue d’ensemble du langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-137">This section provides an overview of the language.</span></span> <span data-ttu-id="7df36-138">Vous découvrirez les éléments qui composent les programmes C# et les fonctionnalités du langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-138">You'll learn the elements that make up C# programs and the capabilities of the language.</span></span> <span data-ttu-id="7df36-139">Vous verrez de petits exemples de tous les éléments de syntaxe du langage C# et des discussions sur ses principaux sujets.</span><span class="sxs-lookup"><span data-stu-id="7df36-139">You'll see small samples of all the syntax elements of C# and discussions of the major C# language topics.</span></span> 
 
-* [Dernières fonctionnalités](whats-new/index.md) :
-    - Découvrez les nouvelles fonctionnalités du langage. Découvrez les nouveaux outils tels que C# Interactive (REPL de C#) et le kit SDK .NET Compiler Platform. Vous découvrirez comment évolue le langage. Vous verrez en quoi les nouveaux outils peuvent vous rendre plus productif dans l’exploration du langage et l’automatisation des tâches. 
+* <span data-ttu-id="7df36-140">[Dernières fonctionnalités](whats-new/index.md) :</span><span class="sxs-lookup"><span data-stu-id="7df36-140">[Latest Features](whats-new/index.md):</span></span>
+    - <span data-ttu-id="7df36-141">Découvrez les nouvelles fonctionnalités du langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-141">Learn about new features in the language.</span></span> <span data-ttu-id="7df36-142">Découvrez les nouveaux outils tels que C# Interactive (REPL de C#) et le kit SDK .NET Compiler Platform.</span><span class="sxs-lookup"><span data-stu-id="7df36-142">Learn about new tools like C# Interactive (C#'s REPL), and the .NET Compiler Platform SDK.</span></span> <span data-ttu-id="7df36-143">Vous découvrirez comment évolue le langage.</span><span class="sxs-lookup"><span data-stu-id="7df36-143">You'll learn how the language is evolving.</span></span> <span data-ttu-id="7df36-144">Vous verrez en quoi les nouveaux outils peuvent vous rendre plus productif dans l’exploration du langage et l’automatisation des tâches.</span><span class="sxs-lookup"><span data-stu-id="7df36-144">You'll see how the new tools can make you more productive in exploring the language, and automating tasks.</span></span> 
 
 <!--* [C# Interactive](interactive/index.md):
     - C# Interactive is a Read-Eval-Print Loop (REPL) that you can use to interactively explore the language. It can also be used to explore different libraries and frameworks by trying different actions using an interactive approach. In this section you'll learn how to install and start C# interactive, and how to explore APIs with it. You'll also learn how to use C# interactive to export tested classes for later use.  
@@ -52,6 +58,25 @@ Il existe sept sections dans le Guide du langage C#. Vous pouvez les lire dans l
 <!--* [.NET Compiler Platform SDK](roslyn/index.md):
     - The .NET Compiler Platform SDK enables you to write components that analyze code, and suggest or make improvements to that code. In this section, you'll learn how the APIs are organized, and how you can create code that enables rules and practices for your team. You'll also see samples, end to end scenarios, and links to other libraries with more examples using these APIs.
 -->
-* [Référence du langage](language-reference/index.md) :
-    - Cette section contient la documentation de référence sur le langage C#. Ce document vous aidera à comprendre la syntaxe et la sémantique du langage C#. 
+* [<span data-ttu-id="7df36-145">Utilisation de l’environnement de développement Visual Studio pour C#</span><span class="sxs-lookup"><span data-stu-id="7df36-145">Using the Visual Studio Development Environment for C#</span></span>](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+    - <span data-ttu-id="7df36-146">Introduit l'environnement de développement [!INCLUDE[csprcs](~/includes/csprcs-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7df36-146">Introduces the [!INCLUDE[csprcs](~/includes/csprcs-md.md)] development environment.</span></span>  
+
+* [<span data-ttu-id="7df36-147">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="7df36-147">C# Programming Guide</span></span>](../csharp/programming-guide/index.md)  
+    - <span data-ttu-id="7df36-148">Fournit des informations et des exemples pratiques sur l'utilisation des constructions de langage C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-148">Provides information and practical examples about how to use C# language constructs.</span></span>  
+
+* [<span data-ttu-id="7df36-149">Exemples C#</span><span class="sxs-lookup"><span data-stu-id="7df36-149">C# Samples</span></span>](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)  
+    - <span data-ttu-id="7df36-150">Galerie de Code MSDN filtrée pour C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-150">MSDN Code Gallery filtered for C#.</span></span>  
+  
+* [<span data-ttu-id="7df36-151">Procédures pas à pas</span><span class="sxs-lookup"><span data-stu-id="7df36-151">Walkthroughs</span></span>](../csharp/walkthroughs.md)  
+    - <span data-ttu-id="7df36-152">Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.</span><span class="sxs-lookup"><span data-stu-id="7df36-152">Provides links to programming walkthroughs that use C# and a brief description of each walkthrough.</span></span>  
+
+* <span data-ttu-id="7df36-153">[Référence du langage](language-reference/index.md) :</span><span class="sxs-lookup"><span data-stu-id="7df36-153">[Language Reference](language-reference/index.md):</span></span>
+    - <span data-ttu-id="7df36-154">Cette section contient la documentation de référence sur le langage C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-154">This section contains the reference material on the C# language.</span></span> <span data-ttu-id="7df36-155">Ce document vous aidera à comprendre la syntaxe et la sémantique du langage C#.</span><span class="sxs-lookup"><span data-stu-id="7df36-155">This material will help you understand the syntax and semantics of C#.</span></span> <span data-ttu-id="7df36-156">Il comprend également des informations de référence sur les types, les opérateurs, les attributs, les directives de préprocesseur, les commutateurs de compilation ainsi que les erreurs et avertissements du compilateur.</span><span class="sxs-lookup"><span data-stu-id="7df36-156">It also includes reference material on types, operators, attributes, preprocessor directives, compiler switches, compiler errors, and compiler warnings.</span></span>
+  
+* [<span data-ttu-id="7df36-157">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="7df36-157">C# Language Specification</span></span>](../csharp/language-reference/language-specification/index.md)  
+    - <span data-ttu-id="7df36-158">Lien avec la dernière version des spécifications C# au format Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="7df36-158">Links to the latest version of the C# Specifications in Microsoft Word format.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="7df36-159">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7df36-159">See Also</span></span>  
+ <span data-ttu-id="7df36-160">[Bien démarrer avec Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic) </span><span class="sxs-lookup"><span data-stu-id="7df36-160">[Getting Started with Visual C# and Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic) </span></span>  
+ [<span data-ttu-id="7df36-161">Développement .NET</span><span class="sxs-lookup"><span data-stu-id="7df36-161">.NET Development</span></span>](https://msdn.microsoft.com/library/ff361664)
 

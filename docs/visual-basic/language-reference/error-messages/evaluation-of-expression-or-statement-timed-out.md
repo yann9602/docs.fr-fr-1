@@ -32,22 +32,23 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bf087a85710cbf19e490b3c8f335ea40dbc0d4f7
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3ca2da6140dff3b1ef82c9546f4f1401ac1f1699
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="evaluation-of-expression-or-statement-timed-out"></a>Délai d'attente dépassé pour l'évaluation de l'expression ou de l'instruction
-Impossible d’effectuer l’évaluation d’une expression en temps voulu.  
+# <a name="evaluation-of-expression-or-statement-timed-out"></a><span data-ttu-id="6e22e-102">Délai d'attente dépassé pour l'évaluation de l'expression ou de l'instruction</span><span class="sxs-lookup"><span data-stu-id="6e22e-102">Evaluation of expression or statement timed out</span></span>
+<span data-ttu-id="6e22e-103">Impossible d’effectuer l’évaluation d’une expression en temps voulu.</span><span class="sxs-lookup"><span data-stu-id="6e22e-103">The evaluation of an expression did not complete in a timely manner.</span></span>  
   
- **ID d’erreur :** BC30722  
+ <span data-ttu-id="6e22e-104">**ID d’erreur :** BC30722</span><span class="sxs-lookup"><span data-stu-id="6e22e-104">**Error ID:** BC30722</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="6e22e-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="6e22e-105">To correct this error</span></span>  
   
-1.  Vérifiez que le code entré est correct.  
+1.  <span data-ttu-id="6e22e-106">Vérifiez que le code entré est correct.</span><span class="sxs-lookup"><span data-stu-id="6e22e-106">Verify that the entered code is correct.</span></span>  
   
-2.  Simplifiez votre expression afin qu’il prenne moins de temps à exécuter.  
+2.  <span data-ttu-id="6e22e-107">Simplifiez votre expression afin qu’il prenne moins de temps à exécuter.</span><span class="sxs-lookup"><span data-stu-id="6e22e-107">Simplify your expression so that it takes less time to execute.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)
+## <a name="see-also"></a><span data-ttu-id="6e22e-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6e22e-108">See Also</span></span>  
+ [<span data-ttu-id="6e22e-109">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="6e22e-109">Debugging in Visual Studio</span></span>](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)

@@ -31,29 +31,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fb179ae938d4c132f61e2076248729f7ea15a13f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: bed9beb0c34c1a918029cc7fac4f8c97950eee23
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="39as-any39-is-not-supported-in-39declare39-statements"></a>'As Any' n'est pas pris en charge dans les instructions 'Declare'
-Le `Any` type de données a été utilisé avec `Declare` instructions dans Visual Basic 6.0 et les versions antérieures pour permettre d’utiliser des arguments pouvant contenir tout type de données. [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]prend en charge la surcharge, toutefois et rend ainsi le `Any` du type de données obsolète.  
+# <a name="39as-any39-is-not-supported-in-39declare39-statements"></a><span data-ttu-id="b02a9-102">'As Any' n'est pas pris en charge dans les instructions 'Declare'</span><span class="sxs-lookup"><span data-stu-id="b02a9-102">&#39;As Any&#39; is not supported in &#39;Declare&#39; statements</span></span>
+<span data-ttu-id="b02a9-103">Le `Any` type de données a été utilisé avec `Declare` instructions dans Visual Basic 6.0 et les versions antérieures pour permettre d’utiliser des arguments pouvant contenir tout type de données.</span><span class="sxs-lookup"><span data-stu-id="b02a9-103">The `Any` data type was used with `Declare` statements in Visual Basic 6.0 and earlier versions to permit the use of arguments that could contain any type of data.</span></span> [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]<span data-ttu-id="b02a9-104">prend en charge la surcharge, toutefois et rend ainsi le `Any` du type de données obsolète.</span><span class="sxs-lookup"><span data-stu-id="b02a9-104"> supports overloading, however, and so makes the `Any` data type obsolete.</span></span>  
   
- **ID d’erreur :** BC30828  
+ <span data-ttu-id="b02a9-105">**ID d’erreur :** BC30828</span><span class="sxs-lookup"><span data-stu-id="b02a9-105">**Error ID:** BC30828</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="b02a9-106">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="b02a9-106">To correct this error</span></span>  
   
-1.  Déclarer des paramètres du type spécifique que vous souhaitez utiliser. par exemple.  
+1.  <span data-ttu-id="b02a9-107">Déclarer des paramètres du type spécifique que vous souhaitez utiliser. par exemple.</span><span class="sxs-lookup"><span data-stu-id="b02a9-107">Declare parameters of the specific type you want to use; for example.</span></span>  
   
-     [!code-vb[VbVbalrStatements&#95;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]  
+     <span data-ttu-id="b02a9-108">[!code-vb[VbVbalrStatements&#95;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="b02a9-108">[!code-vb[VbVbalrStatements#95](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_1.vb)]</span></span>  
   
-2.  Utilisez le <xref:System.Runtime.InteropServices.MarshalAsAttribute>attribut pour spécifier `As Any` lorsque `Void*` est attendu par la procédure appelée.</xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+2.  <span data-ttu-id="b02a9-109">Utilisez le <xref:System.Runtime.InteropServices.MarshalAsAttribute>attribut pour spécifier `As Any` lorsque `Void*` est attendu par la procédure appelée.</xref:System.Runtime.InteropServices.MarshalAsAttribute></span><span class="sxs-lookup"><span data-stu-id="b02a9-109">Use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to specify `As Any` when `Void*` is expected by the procedure being called.</span></span>  
   
-     [!code-vb[VbVbalrStatements&#96;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]  
+     <span data-ttu-id="b02a9-110">[!code-vb[VbVbalrStatements&#96;](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]</span><span class="sxs-lookup"><span data-stu-id="b02a9-110">[!code-vb[VbVbalrStatements#96](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/as-any-is-not-supported-in-declare-statements_2.vb)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute></xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Procédure pas à pas : Appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)   
- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)   
- [Création de Prototypes dans du Code managé](http://msdn.microsoft.com/library/ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d)
+## <a name="see-also"></a><span data-ttu-id="b02a9-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b02a9-111">See Also</span></span>  
+ <span data-ttu-id="b02a9-112"><xref:System.Runtime.InteropServices.MarshalAsAttribute></xref:System.Runtime.InteropServices.MarshalAsAttribute></span><span class="sxs-lookup"><span data-stu-id="b02a9-112"><xref:System.Runtime.InteropServices.MarshalAsAttribute></span></span>   
+<span data-ttu-id="b02a9-113"> [Procédure pas à pas : Appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md) </span><span class="sxs-lookup"><span data-stu-id="b02a9-113"> [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md) </span></span>  
+<span data-ttu-id="b02a9-114"> [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md) </span><span class="sxs-lookup"><span data-stu-id="b02a9-114"> [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) </span></span>  
+<span data-ttu-id="b02a9-115"> [Création de Prototypes dans du Code managé](http://msdn.microsoft.com/library/ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d)</span><span class="sxs-lookup"><span data-stu-id="b02a9-115"> [Creating Prototypes in Managed Code](http://msdn.microsoft.com/library/ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d)</span></span>

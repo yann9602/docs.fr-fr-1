@@ -16,20 +16,20 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6749c2eee72cdc24c5dc3957e00a8bab54ce226b
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 2b503ad98b51bd3fb158968d2001d6279558eedb
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Comment : écrire un LINQ vers la méthode d’axe XML (Visual Basic)
-Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
+# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a><span data-ttu-id="fa53f-102">Comment : écrire un LINQ vers la méthode d’axe XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fa53f-102">How to: Write a LINQ to XML Axis Method (Visual Basic)</span></span>
+<span data-ttu-id="fa53f-103">Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML.</span><span class="sxs-lookup"><span data-stu-id="fa53f-103">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="fa53f-104">Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs.</span><span class="sxs-lookup"><span data-stu-id="fa53f-104">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="fa53f-105">Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.</span><span class="sxs-lookup"><span data-stu-id="fa53f-105">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant utilise deux méthodes d’extension. La première méthode d’extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject>et retourne une expression XPath qui, lors de l’évaluation renvoie le nœud ou l’attribut.</xref:System.Xml.Linq.XObject> La deuxième méthode d’extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement> Elle retourne une collection de <xref:System.Xml.Linq.XAttribute>objets et <xref:System.Xml.Linq.XElement>qui contiennent du texte spécifié.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XAttribute>  
+## <a name="example"></a><span data-ttu-id="fa53f-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="fa53f-106">Example</span></span>  
+ <span data-ttu-id="fa53f-107">L’exemple suivant utilise deux méthodes d’extension.</span><span class="sxs-lookup"><span data-stu-id="fa53f-107">The following example uses two extension methods.</span></span> <span data-ttu-id="fa53f-108">La première méthode d’extension, `GetXPath`, opère sur <xref:System.Xml.Linq.XObject>et retourne une expression XPath qui, lors de l’évaluation renvoie le nœud ou l’attribut.</xref:System.Xml.Linq.XObject></span><span class="sxs-lookup"><span data-stu-id="fa53f-108">The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute.</span></span> <span data-ttu-id="fa53f-109">La deuxième méthode d’extension, `Find`, opère sur <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="fa53f-109">The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="fa53f-110">Elle retourne une collection de <xref:System.Xml.Linq.XAttribute>objets et <xref:System.Xml.Linq.XElement>qui contiennent du texte spécifié.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XAttribute></span><span class="sxs-lookup"><span data-stu-id="fa53f-110">It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="fa53f-111">Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="fa53f-111">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -216,7 +216,7 @@ Public Module MyExtensions
 End Module  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="fa53f-112">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="fa53f-112">This code produces the following output:</span></span>  
   
 ```  
 /PurchaseOrders/PurchaseOrder[1]/@OrderDate  
@@ -229,6 +229,6 @@ End Module
 1999-10-22  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Techniques de requêtes (LINQ to XML) avancées (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="fa53f-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fa53f-113">See Also</span></span>  
+ [<span data-ttu-id="fa53f-114">Techniques de requêtes (LINQ to XML) avancées (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fa53f-114">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
 

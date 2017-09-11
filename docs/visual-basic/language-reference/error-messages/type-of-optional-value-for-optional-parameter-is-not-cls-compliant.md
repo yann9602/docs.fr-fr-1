@@ -32,42 +32,43 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3dbcab01022d1604e79c6bfc3e04a14ef60bc219
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 4954c241b7cb704ebb9373d837bb1e51c1b44115
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="type-of-optional-value-for-optional-parameter-ltparameternamegt-is-not-cls-compliant"></a>Type de valeur facultative pour le paramètre facultatif &lt;parametername&gt; n’est pas conforme CLS
-Une procédure est marquée comme `<CLSCompliant(True)>` mais déclare un paramètre [facultatif](../../../visual-basic/language-reference/modifiers/optional.md) avec la valeur par défaut d’un type non conforme.  
+# <a name="type-of-optional-value-for-optional-parameter-ltparameternamegt-is-not-cls-compliant"></a><span data-ttu-id="b939c-102">Type de valeur facultative pour le paramètre facultatif &lt;parametername&gt; n’est pas conforme CLS</span><span class="sxs-lookup"><span data-stu-id="b939c-102">Type of optional value for optional parameter &lt;parametername&gt; is not CLS-compliant</span></span>
+<span data-ttu-id="b939c-103">Une procédure est marquée comme `<CLSCompliant(True)>` mais déclare un paramètre [facultatif](../../../visual-basic/language-reference/modifiers/optional.md) avec la valeur par défaut d’un type non conforme.</span><span class="sxs-lookup"><span data-stu-id="b939c-103">A procedure is marked as `<CLSCompliant(True)>` but declares an [Optional](../../../visual-basic/language-reference/modifiers/optional.md) parameter with default value of a noncompliant type.</span></span>  
   
- Pour qu’une procédure soit conforme à CLS ([Indépendance du langage et composants indépendants du langage](https://msdn.microsoft.com/library/12a7a7h3)), elle doit utiliser uniquement des types conformes à CLS. Cette règle s’applique aux types des paramètres, au type de retour et aux types de toutes ses variables locales. Elle s’applique également aux valeurs par défaut des paramètres facultatifs.  
+ <span data-ttu-id="b939c-104">Pour qu’une procédure soit conforme à CLS ([Indépendance du langage et composants indépendants du langage](https://msdn.microsoft.com/library/12a7a7h3)), elle doit utiliser uniquement des types conformes à CLS.</span><span class="sxs-lookup"><span data-stu-id="b939c-104">For a procedure to be compliant with the [Language Independence and Language-Independent Components](https://msdn.microsoft.com/library/12a7a7h3) (CLS), it must use only CLS-compliant types.</span></span> <span data-ttu-id="b939c-105">Cette règle s’applique aux types des paramètres, au type de retour et aux types de toutes ses variables locales.</span><span class="sxs-lookup"><span data-stu-id="b939c-105">This applies to the types of the parameters, the return type, and the types of all its local variables.</span></span> <span data-ttu-id="b939c-106">Elle s’applique également aux valeurs par défaut des paramètres facultatifs.</span><span class="sxs-lookup"><span data-stu-id="b939c-106">It also applies to the default values of optional parameters.</span></span>  
   
- Les types de données [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] suivants ne sont pas conformes CLS :  
+ <span data-ttu-id="b939c-107">Les types de données [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] suivants ne sont pas conformes CLS :</span><span class="sxs-lookup"><span data-stu-id="b939c-107">The following [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] data types are not CLS-compliant:</span></span>  
   
--   [SByte (type de données)](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+-   [<span data-ttu-id="b939c-108">SByte (type de données)</span><span class="sxs-lookup"><span data-stu-id="b939c-108">SByte Data Type</span></span>](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+-   [<span data-ttu-id="b939c-109">UInteger (type de données)</span><span class="sxs-lookup"><span data-stu-id="b939c-109">UInteger Data Type</span></span>](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [ULong (type de données)](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+-   [<span data-ttu-id="b939c-110">ULong (type de données)</span><span class="sxs-lookup"><span data-stu-id="b939c-110">ULong Data Type</span></span>](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [UShort (type de données)](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+-   [<span data-ttu-id="b939c-111">UShort (type de données)</span><span class="sxs-lookup"><span data-stu-id="b939c-111">UShort Data Type</span></span>](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
- Lorsque vous appliquez le <xref:System.CLSCompliantAttribute>attribut à un élément de programmation, vous définissez l’attribut `isCompliant` paramètre soit `True` ou `False` pour indiquer la conformité ou non-conformité.</xref:System.CLSCompliantAttribute> Il n’existe pas de valeur par défaut pour ce paramètre et vous devez fournir une valeur.  
+ <span data-ttu-id="b939c-112">Lorsque vous appliquez le <xref:System.CLSCompliantAttribute>attribut à un élément de programmation, vous définissez l’attribut `isCompliant` paramètre soit `True` ou `False` pour indiquer la conformité ou non-conformité.</xref:System.CLSCompliantAttribute></span><span class="sxs-lookup"><span data-stu-id="b939c-112">When you apply the <xref:System.CLSCompliantAttribute> attribute to a programming element, you set the attribute's `isCompliant` parameter to either `True` or `False` to indicate compliance or noncompliance.</span></span> <span data-ttu-id="b939c-113">Il n’existe pas de valeur par défaut pour ce paramètre et vous devez fournir une valeur.</span><span class="sxs-lookup"><span data-stu-id="b939c-113">There is no default for this parameter, and you must supply a value.</span></span>  
   
- Si vous n’appliquez pas <xref:System.CLSCompliantAttribute>à un élément, il est considéré comme non conforme.</xref:System.CLSCompliantAttribute>  
+ <span data-ttu-id="b939c-114">Si vous n’appliquez pas <xref:System.CLSCompliantAttribute>à un élément, il est considéré comme non conforme.</xref:System.CLSCompliantAttribute></span><span class="sxs-lookup"><span data-stu-id="b939c-114">If you do not apply <xref:System.CLSCompliantAttribute> to an element, it is considered to be noncompliant.</span></span>  
   
- Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou leur traitement en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ <span data-ttu-id="b939c-115">Par défaut, ce message est un avertissement.</span><span class="sxs-lookup"><span data-stu-id="b939c-115">By default, this message is a warning.</span></span> <span data-ttu-id="b939c-116">Pour plus d’informations sur le masquage des avertissements ou leur traitement en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="b939c-116">For information on hiding warnings or treating warnings as errors, see [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
- **ID d’erreur :** BC40042  
+ <span data-ttu-id="b939c-117">**ID d’erreur :** BC40042</span><span class="sxs-lookup"><span data-stu-id="b939c-117">**Error ID:** BC40042</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="b939c-118">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="b939c-118">To correct this error</span></span>  
   
--   Si le paramètre facultatif doit avoir une valeur par défaut de ce type particulier, supprimez <xref:System.CLSCompliantAttribute>.</xref:System.CLSCompliantAttribute> La procédure ne peut pas être conforme à CLS.  
+-   <span data-ttu-id="b939c-119">Si le paramètre facultatif doit avoir une valeur par défaut de ce type particulier, supprimez <xref:System.CLSCompliantAttribute>.</xref:System.CLSCompliantAttribute></span><span class="sxs-lookup"><span data-stu-id="b939c-119">If the optional parameter must have a default value of this particular type, remove <xref:System.CLSCompliantAttribute>.</span></span> <span data-ttu-id="b939c-120">La procédure ne peut pas être conforme à CLS.</span><span class="sxs-lookup"><span data-stu-id="b939c-120">The procedure cannot be CLS-compliant.</span></span>  
   
--   Si la procédure doit être conforme à CLS, remplacez le type de cette valeur par défaut par le type conforme à CLS le plus proche. Par exemple, vous pouvez utiliser `UInteger` au lieu de `Integer` si vous n’avez pas besoin de la plage de valeurs située au-dessus de 2 147 483 647. Si vous avez besoin de la plage étendue, vous pouvez remplacer `UInteger` par `Long`.  
+-   <span data-ttu-id="b939c-121">Si la procédure doit être conforme à CLS, remplacez le type de cette valeur par défaut par le type conforme à CLS le plus proche.</span><span class="sxs-lookup"><span data-stu-id="b939c-121">If the procedure must be CLS-compliant, change the type of this default value to the closest CLS-compliant type.</span></span> <span data-ttu-id="b939c-122">Par exemple, vous pouvez utiliser `UInteger` au lieu de `Integer` si vous n’avez pas besoin de la plage de valeurs située au-dessus de 2 147 483 647.</span><span class="sxs-lookup"><span data-stu-id="b939c-122">For example, in place of `UInteger` you might be able to use `Integer` if you do not need the value range above 2,147,483,647.</span></span> <span data-ttu-id="b939c-123">Si vous avez besoin de la plage étendue, vous pouvez remplacer `UInteger` par `Long`.</span><span class="sxs-lookup"><span data-stu-id="b939c-123">If you do need the extended range, you can replace `UInteger` with `Long`.</span></span>  
   
--   Si vous interfacez avec des objets Automation ou COM, n’oubliez pas que certains types ont des largeurs de données différentes de celles du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]. Par exemple, `int` correspond souvent à 16 bits dans d’autres environnements. Si vous passez un entier sur 16 bits à un tel composant, déclarez-le comme `Short` au lieu de `Integer` dans votre code [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] managé.  
+-   <span data-ttu-id="b939c-124">Si vous interfacez avec des objets Automation ou COM, n’oubliez pas que certains types ont des largeurs de données différentes de celles du [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)].</span><span class="sxs-lookup"><span data-stu-id="b939c-124">If you are interfacing with Automation or COM objects, keep in mind that some types have different data widths than in the [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)].</span></span> <span data-ttu-id="b939c-125">Par exemple, `int` correspond souvent à 16 bits dans d’autres environnements.</span><span class="sxs-lookup"><span data-stu-id="b939c-125">For example, `int` is often 16 bits in other environments.</span></span> <span data-ttu-id="b939c-126">Si vous passez un entier sur 16 bits à un tel composant, déclarez-le comme `Short` au lieu de `Integer` dans votre code [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] managé.</span><span class="sxs-lookup"><span data-stu-id="b939c-126">If you are accepting a 16-bit integer from such a component, declare it as `Short` instead of `Integer` in your managed [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] code.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [\<PAVE sur > écrire du Code conforme CLS](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)
+## <a name="see-also"></a><span data-ttu-id="b939c-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b939c-127">See Also</span></span>  
+ [<span data-ttu-id="b939c-128">\<PAVE sur > écrire du Code conforme CLS</span><span class="sxs-lookup"><span data-stu-id="b939c-128">\<PAVE OVER> Writing CLS-Compliant Code</span></span>](http://msdn.microsoft.com/en-us/4c705105-69a2-4e5e-b24e-0633bc32c7f3)

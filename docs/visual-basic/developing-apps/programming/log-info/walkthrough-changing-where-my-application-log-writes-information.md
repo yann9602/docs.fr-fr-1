@@ -39,31 +39,31 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : modification de l'emplacement des informations My.Application.Log (Visual Basic)
-Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur les événements qui se produisent dans votre application. Cette procédure pas à pas montre comment remplacer les paramètres par défaut et faire en sorte que l’objet `Log` écrive dans d’autres écouteurs de journalisation.  
+# <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a><span data-ttu-id="bb0bf-102">Procédure pas à pas : modification de l'emplacement des informations My.Application.Log (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bb0bf-102">Walkthrough: Changing Where My.Application.Log Writes Information (Visual Basic)</span></span>
+<span data-ttu-id="bb0bf-103">Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur les événements qui se produisent dans votre application.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-103">You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application.</span></span> <span data-ttu-id="bb0bf-104">Cette procédure pas à pas montre comment remplacer les paramètres par défaut et faire en sorte que l’objet `Log` écrive dans d’autres écouteurs de journalisation.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-104">This walkthrough shows how to override the default settings and cause the `Log` object to write to other log listeners.</span></span>  
   
-## <a name="prerequisites"></a>Conditions préalables  
- L’objet `Log` peut écrire des informations dans plusieurs écouteurs de journalisation. Vous devez déterminer la configuration actuelle des écouteurs de journalisation avant de modifier les configurations. Pour plus d’informations, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+## <a name="prerequisites"></a><span data-ttu-id="bb0bf-105">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="bb0bf-105">Prerequisites</span></span>  
+ <span data-ttu-id="bb0bf-106">L’objet `Log` peut écrire des informations dans plusieurs écouteurs de journalisation.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-106">The `Log` object can write information to several log listeners.</span></span> <span data-ttu-id="bb0bf-107">Vous devez déterminer la configuration actuelle des écouteurs de journalisation avant de modifier les configurations.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-107">You need to determine the current configuration of the log listeners before changing the configurations.</span></span> <span data-ttu-id="bb0bf-108">Pour plus d’informations, consultez [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).</span><span class="sxs-lookup"><span data-stu-id="bb0bf-108">For more information, see [Walkthrough: Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).</span></span>  
   
- Vous pouvez passer en revue [Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) ou [Guide pratique pour écrire dans le journal des événements d’une application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).  
+ <span data-ttu-id="bb0bf-109">Vous pouvez passer en revue [Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) ou [Guide pratique pour écrire dans le journal des événements d’une application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).</span><span class="sxs-lookup"><span data-stu-id="bb0bf-109">You may want to review [How to: Write Event Information to a Text File](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) or [How to: Write to an Application Event Log](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).</span></span>  
   
-### <a name="to-add-listeners"></a>Pour ajouter des écouteurs  
+### <a name="to-add-listeners"></a><span data-ttu-id="bb0bf-110">Pour ajouter des écouteurs</span><span class="sxs-lookup"><span data-stu-id="bb0bf-110">To add listeners</span></span>  
   
-1.  Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions** et choisissez **Ouvrir**.  
+1.  <span data-ttu-id="bb0bf-111">Cliquez avec le bouton droit sur app.config dans l’ **Explorateur de solutions** et choisissez **Ouvrir**.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-111">Right-click app.config in **Solution Explorer** and choose **Open**.</span></span>  
   
-     \- ou -  
+     <span data-ttu-id="bb0bf-112">\- ou -</span><span class="sxs-lookup"><span data-stu-id="bb0bf-112">\- or -</span></span>  
   
-     S’il n’existe pas de fichier app.config :  
+     <span data-ttu-id="bb0bf-113">S’il n’existe pas de fichier app.config :</span><span class="sxs-lookup"><span data-stu-id="bb0bf-113">If there is no app.config file:</span></span>  
   
-    1.  Dans le menu **Projet** , choisissez **Ajouter un nouvel élément**.  
+    1.  <span data-ttu-id="bb0bf-114">Dans le menu **Projet** , choisissez **Ajouter un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-114">On the **Project** menu, choose **Add New Item**.</span></span>  
   
-    2.  Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **Fichier de configuration de l’application**.  
+    2.  <span data-ttu-id="bb0bf-115">Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **Fichier de configuration de l’application**.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-115">From the **Add New Item** dialog box, select **Application Configuration File**.</span></span>  
   
-    3.  Cliquez sur **Ajouter**.  
+    3.  <span data-ttu-id="bb0bf-116">Cliquez sur **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-116">Click **Add**.</span></span>  
   
-2.  Recherchez la section `<listeners>` , sous la section `<source>` avec l’attribut `name` « DefaultSource » dans la section `<sources>` . La section `<sources>` se trouve dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.  
+2.  <span data-ttu-id="bb0bf-117">Recherchez la section `<listeners>` , sous la section `<source>` avec l’attribut `name` « DefaultSource » dans la section `<sources>` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-117">Locate the `<listeners>` section, under the `<source>` section with the `name` attribute "DefaultSource", in the `<sources>` section.</span></span> <span data-ttu-id="bb0bf-118">La section `<sources>` se trouve dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-118">The `<sources>` section is in the `<system.diagnostics>` section, in the top-level `<configuration>` section.</span></span>  
   
-3.  Ajoutez ces éléments à cette section `<listeners>` .  
+3.  <span data-ttu-id="bb0bf-119">Ajoutez ces éléments à cette section `<listeners>` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-119">Add these elements to that `<listeners>` section.</span></span>  
   
     ```xml  
     <!-- Uncomment to connect the application file log. -->  
@@ -78,11 +78,11 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
     <!-- <add name="Console" /> -->  
     ```  
   
-4.  Supprimez les marques de commentaire pour les écouteurs de journalisation qui doivent recevoir les messages `Log` .  
+4.  <span data-ttu-id="bb0bf-120">Supprimez les marques de commentaire pour les écouteurs de journalisation qui doivent recevoir les messages `Log` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-120">Uncomment the log listeners that you want to receive `Log` messages.</span></span>  
   
-5.  Recherchez la section `<sharedListeners>` dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.  
+5.  <span data-ttu-id="bb0bf-121">Recherchez la section `<sharedListeners>` dans la section `<system.diagnostics>` , dans la section `<configuration>` de plus haut niveau.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-121">Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.</span></span>  
   
-6.  Ajoutez ces éléments à cette section `<sharedListeners>` .  
+6.  <span data-ttu-id="bb0bf-122">Ajoutez ces éléments à cette section `<sharedListeners>` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-122">Add these elements to that `<sharedListeners>` section.</span></span>  
   
     ```xml  
     <add name="FileLog"  
@@ -113,7 +113,7 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
          initializeData="true" />  
     ```  
   
-7.  Le contenu du fichier app.config doit être similaire au code XML suivant :  
+7.  <span data-ttu-id="bb0bf-123">Le contenu du fichier app.config doit être similaire au code XML suivant :</span><span class="sxs-lookup"><span data-stu-id="bb0bf-123">The content of the app.config file should be similar to the following XML:</span></span>  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -172,47 +172,47 @@ Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistre
     </configuration>  
     ```  
   
-### <a name="to-reconfigure-a-listener"></a>Pour reconfigurer un écouteur  
+### <a name="to-reconfigure-a-listener"></a><span data-ttu-id="bb0bf-124">Pour reconfigurer un écouteur</span><span class="sxs-lookup"><span data-stu-id="bb0bf-124">To reconfigure a listener</span></span>  
   
-1.  Recherchez l’élément `<add>` de l’écouteur dans la section `<sharedListeners>` .  
+1.  <span data-ttu-id="bb0bf-125">Recherchez l’élément `<add>` de l’écouteur dans la section `<sharedListeners>` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-125">Locate the listener's `<add>` element from the `<sharedListeners>` section.</span></span>  
   
-2.  L’attribut `type` donne le nom du type d’écouteur. Ce type doit être hérité de la classe <xref:System.Diagnostics.TraceListener> . Utilisez le nom de type avec un nom fort pour être sûr que le type correct est utilisé. Pour plus d’informations, consultez la section « Pour référencer un type avec un nom fort » ci-dessous.  
+2.  <span data-ttu-id="bb0bf-126">L’attribut `type` donne le nom du type d’écouteur.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-126">The `type` attribute gives the name of the listener type.</span></span> <span data-ttu-id="bb0bf-127">Ce type doit être hérité de la classe <xref:System.Diagnostics.TraceListener> .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-127">This type must inherit from the <xref:System.Diagnostics.TraceListener> class.</span></span> <span data-ttu-id="bb0bf-128">Utilisez le nom de type avec un nom fort pour être sûr que le type correct est utilisé.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-128">Use the strongly named type name to ensure that the right type is used.</span></span> <span data-ttu-id="bb0bf-129">Pour plus d’informations, consultez la section « Pour référencer un type avec un nom fort » ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-129">For more information, see the "To reference a strongly named type" section below.</span></span>  
   
-     Voici quelques-uns des types que vous pouvez utiliser :  
+     <span data-ttu-id="bb0bf-130">Voici quelques-uns des types que vous pouvez utiliser :</span><span class="sxs-lookup"><span data-stu-id="bb0bf-130">Some types that you can use are:</span></span>  
   
-    -   Un écouteur <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName> , qui écrit dans un fichier journal.  
+    -   <span data-ttu-id="bb0bf-131">Un écouteur <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName> , qui écrit dans un fichier journal.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-131">A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName> listener, which writes to a file log.</span></span>  
   
-    -   Un écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> , qui écrit les informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData` .  
+    -   <span data-ttu-id="bb0bf-132">Un écouteur <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> , qui écrit les informations dans le journal des événements de l’ordinateur spécifié par le paramètre `initializeData` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-132">A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName> listener, which writes information to the computer event log specified by the `initializeData` parameter.</span></span>  
   
-    -   Les écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> , qui écrivent dans le fichier spécifié par le paramètre `initializeData` .  
+    -   <span data-ttu-id="bb0bf-133">Les écouteurs <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> et <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> , qui écrivent dans le fichier spécifié par le paramètre `initializeData` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-133">The <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=fullName> and <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=fullName> listeners, which write to the file specified in the `initializeData` parameter.</span></span>  
   
-    -   Un écouteur <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName> , qui écrit dans la console de ligne de commande.  
+    -   <span data-ttu-id="bb0bf-134">Un écouteur <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName> , qui écrit dans la console de ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-134">A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=fullName> listener, which writes to the command-line console.</span></span>  
   
-     Pour plus d’informations sur les emplacements où d’autres types d’écouteurs de journalisation écrivent les informations, consultez la documentation de ce type.  
+     <span data-ttu-id="bb0bf-135">Pour plus d’informations sur les emplacements où d’autres types d’écouteurs de journalisation écrivent les informations, consultez la documentation de ce type.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-135">For information about where other types of log listeners write information, consult that type's documentation.</span></span>  
   
-3.  Quand l’application crée l’objet d’écouteur de journalisation, il passe l’attribut `initializeData` comme paramètre de constructeur. La signification de l’attribut `initializeData` dépend de l’écouteur de suivi.  
+3.  <span data-ttu-id="bb0bf-136">Quand l’application crée l’objet d’écouteur de journalisation, il passe l’attribut `initializeData` comme paramètre de constructeur.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-136">When the application creates the log-listener object, it passes the `initializeData` attribute as the constructor parameter.</span></span> <span data-ttu-id="bb0bf-137">La signification de l’attribut `initializeData` dépend de l’écouteur de suivi.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-137">The meaning of the `initializeData` attribute depends on the trace listener.</span></span>  
   
-4.  Après avoir créé l’écouteur de journalisation, l’application définit les propriétés de l’écouteur. Ces propriétés sont définies par les autres attributs dans l’élément `<add>` . Pour plus d’informations sur les propriétés d’un écouteur particulier, consultez la documentation de ce type d’écouteur.  
+4.  <span data-ttu-id="bb0bf-138">Après avoir créé l’écouteur de journalisation, l’application définit les propriétés de l’écouteur.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-138">After creating the log listener, the application sets the listener's properties.</span></span> <span data-ttu-id="bb0bf-139">Ces propriétés sont définies par les autres attributs dans l’élément `<add>` .</span><span class="sxs-lookup"><span data-stu-id="bb0bf-139">These properties are defined by the other attributes in the `<add>` element.</span></span> <span data-ttu-id="bb0bf-140">Pour plus d’informations sur les propriétés d’un écouteur particulier, consultez la documentation de ce type d’écouteur.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-140">For more information on the properties for a particular listener, see the documentation for that listener's type.</span></span>  
   
-### <a name="to-reference-a-strongly-named-type"></a>Pour référencer un type avec un nom fort  
+### <a name="to-reference-a-strongly-named-type"></a><span data-ttu-id="bb0bf-141">Pour référencer un type avec un nom fort</span><span class="sxs-lookup"><span data-stu-id="bb0bf-141">To reference a strongly named type</span></span>  
   
-1.  Pour être sûr que type correct est utilisé pour votre écouteur de journalisation, vérifiez que vous utilisez le nom de type qualifié complet et le nom d’assembly avec nom fort. La syntaxe d’un type avec nom fort est la suivante :  
+1.  <span data-ttu-id="bb0bf-142">Pour être sûr que type correct est utilisé pour votre écouteur de journalisation, vérifiez que vous utilisez le nom de type qualifié complet et le nom d’assembly avec nom fort.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-142">To ensure that the right type is used for your log listener, make sure to use the fully qualified type name and the strongly named assembly name.</span></span> <span data-ttu-id="bb0bf-143">La syntaxe d’un type avec nom fort est la suivante :</span><span class="sxs-lookup"><span data-stu-id="bb0bf-143">The syntax of a strongly named type is as follows:</span></span>  
   
-     \<*nom de type*>, \<*nom d’assembly*>, \<*numéro de version*>, \<*culture*>, \<*nom fort*>  
+     <span data-ttu-id="bb0bf-144">\<*nom de type*>, \<*nom d’assembly*>, \<*numéro de version*>, \<*culture*>, \<*nom fort*></span><span class="sxs-lookup"><span data-stu-id="bb0bf-144">\<*type name*>, \<*assembly name*>, \<*version number*>, \<*culture*>, \<*strong name*></span></span>  
   
-2.  Cet exemple de code montre comment déterminer le nom de type avec nom fort pour un type qualifié complet, dans ce cas « System.Diagnostics.FileLogTraceListener ».  
+2.  <span data-ttu-id="bb0bf-145">Cet exemple de code montre comment déterminer le nom de type avec nom fort pour un type qualifié complet, dans ce cas « System.Diagnostics.FileLogTraceListener ».</span><span class="sxs-lookup"><span data-stu-id="bb0bf-145">This code example shows how to determine the strongly named type name for a fully qualified type—"System.Diagnostics.FileLogTraceListener" in this case.</span></span>  
   
-     [!code-vb[VbVbalrMyApplicationLog#15](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-changing-where-my-application-log-writes-information_1.vb)]  
+     <span data-ttu-id="bb0bf-146">[!code-vb[VbVbalrMyApplicationLog#15](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-changing-where-my-application-log-writes-information_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="bb0bf-146">[!code-vb[VbVbalrMyApplicationLog#15](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-changing-where-my-application-log-writes-information_1.vb)]</span></span>  
   
-     Voici la sortie. Il peut être utilisé pour faire référence de façon univoque à un type avec nom fort, comme dans la procédure « Pour ajouter des écouteurs » ci-dessus.  
+     <span data-ttu-id="bb0bf-147">Voici la sortie. Il peut être utilisé pour faire référence de façon univoque à un type avec nom fort, comme dans la procédure « Pour ajouter des écouteurs » ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="bb0bf-147">This is the output, and it can be used to uniquely reference a strongly named type, as in the "To add listeners" procedure above.</span></span>  
   
      `Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a`  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName>   
- <xref:System.Diagnostics.TraceListener>   
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName>   
- <xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName>   
- [Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)   
- [Guide pratique : écrire dans le journal des événements de l’application](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
+## <a name="see-also"></a><span data-ttu-id="bb0bf-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bb0bf-148">See Also</span></span>  
+ <span data-ttu-id="bb0bf-149"><xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="bb0bf-149"><xref:Microsoft.VisualBasic.Logging.Log?displayProperty=fullName></span></span>   
+ <span data-ttu-id="bb0bf-150"><xref:System.Diagnostics.TraceListener></span><span class="sxs-lookup"><span data-stu-id="bb0bf-150"><xref:System.Diagnostics.TraceListener></span></span>   
+ <span data-ttu-id="bb0bf-151"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="bb0bf-151"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=fullName></span></span>   
+ <span data-ttu-id="bb0bf-152"><xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="bb0bf-152"><xref:System.Diagnostics.EventLogTraceListener?displayProperty=fullName></span></span>   
+ <span data-ttu-id="bb0bf-153">[Guide pratique pour écrire des informations sur les événements dans un fichier texte](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) </span><span class="sxs-lookup"><span data-stu-id="bb0bf-153">[How to: Write Event Information to a Text File](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) </span></span>  
+ [<span data-ttu-id="bb0bf-154">Guide pratique : écrire dans le journal des événements de l’application</span><span class="sxs-lookup"><span data-stu-id="bb0bf-154">How to: Write to an Application Event Log</span></span>](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)
 

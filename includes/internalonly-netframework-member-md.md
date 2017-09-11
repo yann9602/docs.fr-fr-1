@@ -1,1 +1,1 @@
-Ce membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être utilisé directement à partir de votre code.
+<span data-ttu-id="b39c1-101">Ce membre prend en charge l'infrastructure .NET Framework et n'est pas destiné à être utilisé directement à partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="b39c1-101">This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>

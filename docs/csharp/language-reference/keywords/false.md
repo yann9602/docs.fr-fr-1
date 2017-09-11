@@ -37,15 +37,15 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="false-c-reference"></a>false (Référence C#)
-Utilisé comme opérateur surchargé ou comme littéral :  
+# <a name="false-c-reference"></a><span data-ttu-id="7adef-102">false (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="7adef-102">false (C# Reference)</span></span>
+<span data-ttu-id="7adef-103">Utilisé comme opérateur surchargé ou comme littéral :</span><span class="sxs-lookup"><span data-stu-id="7adef-103">Used as an overloaded operator or as a literal:</span></span>  
   
--   [false, opérateur](../../../csharp/language-reference/keywords/false-operator.md)  
+-   [<span data-ttu-id="7adef-104">false, opérateur</span><span class="sxs-lookup"><span data-stu-id="7adef-104">false Operator</span></span>](../../../csharp/language-reference/keywords/false-operator.md)  
   
--   [false, littéral](../../../csharp/language-reference/keywords/false-literal.md)  
+-   [<span data-ttu-id="7adef-105">false, littéral</span><span class="sxs-lookup"><span data-stu-id="7adef-105">false Literal</span></span>](../../../csharp/language-reference/keywords/false-literal.md)  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="7adef-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7adef-106">See Also</span></span>  
+ <span data-ttu-id="7adef-107">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="7adef-107">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="7adef-108">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="7adef-108">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="7adef-109">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="7adef-109">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

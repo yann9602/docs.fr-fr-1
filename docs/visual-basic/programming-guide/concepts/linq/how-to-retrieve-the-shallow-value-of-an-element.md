@@ -16,22 +16,22 @@ caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 39a0648bb3fd09b9e323560b447be3cc445d5b7f
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: c313f1f13e2dc3cc42d182b3c9542a46f2f4d831
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Comment : récupérer la valeur superficielle d’un élément (Visual Basic)
-Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l’élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a><span data-ttu-id="8ddc4-102">Comment : récupérer la valeur superficielle d’un élément (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8ddc4-102">How to: Retrieve the Shallow Value of an Element (Visual Basic)</span></span>
+<span data-ttu-id="8ddc4-103">Cette rubrique montre comment obtenir la valeur superficielle d'un élément.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-103">This topic shows how to get the shallow value of an element.</span></span> <span data-ttu-id="8ddc4-104">La valeur superficielle est la valeur de l’élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span></span>  
   
- Lorsque vous récupérez la valeur d’un élément à l’aide d’une conversion ou <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>propriété, vous extrayez une valeur profonde.</xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName> Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant. L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.  
+ <span data-ttu-id="8ddc4-105">Lorsque vous récupérez la valeur d’un élément à l’aide d’une conversion ou <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>propriété, vous extrayez une valeur profonde.</xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="8ddc4-105">When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName> property, you retrieve the deep value.</span></span> <span data-ttu-id="8ddc4-106">Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-106">To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the follwing example.</span></span> <span data-ttu-id="8ddc4-107">L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-107">Retrieving the shallow value is useful when you want to select elements based on their content.</span></span>  
   
- L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément. Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.  
+ <span data-ttu-id="8ddc4-108">L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-108">The following example declares an extension method that retrieves the shallow value of an element.</span></span> <span data-ttu-id="8ddc4-109">Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-109">It then uses the extension method in a query to list all elements that contain a calculated value.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le fichier texte suivant, Report.xml, est la source pour cet exemple.  
+## <a name="example"></a><span data-ttu-id="8ddc4-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="8ddc4-110">Example</span></span>  
+ <span data-ttu-id="8ddc4-111">Le fichier texte suivant, Report.xml, est la source pour cet exemple.</span><span class="sxs-lookup"><span data-stu-id="8ddc4-111">The following text file, Report.xml, is the source for this example.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -79,7 +79,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="8ddc4-112">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="8ddc4-112">This example produces the following output:</span></span>  
   
 ```  
 Column  Name="CustomerId"   =Customer.CustomerId.Heading  
@@ -88,5 +88,5 @@ Column  Name="CustomerId"   =Customer.CustomerId
 Column  Name="Name"         =Customer.Name  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Axes LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a><span data-ttu-id="8ddc4-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ddc4-113">See Also</span></span>  
+ [<span data-ttu-id="8ddc4-114">Axes LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8ddc4-114">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

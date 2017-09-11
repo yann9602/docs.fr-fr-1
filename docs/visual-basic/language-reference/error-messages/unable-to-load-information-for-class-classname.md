@@ -32,22 +32,23 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4472ceee783c2373de8cc4a0950363ed317d56ce
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 0e95ba21e7ec751fe0276244dd1ce49552b178ab
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="unable-to-load-information-for-class-39ltclassnamegt39"></a>Impossible de charger les informations pour la classe&lt;classname&gt;»
-Une référence a été faite à une classe qui n’est pas disponible.  
+# <a name="unable-to-load-information-for-class-39ltclassnamegt39"></a><span data-ttu-id="d0b77-102">Impossible de charger les informations pour la classe&lt;classname&gt;»</span><span class="sxs-lookup"><span data-stu-id="d0b77-102">Unable to load information for class &#39;&lt;classname&gt;&#39;</span></span>
+<span data-ttu-id="d0b77-103">Une référence a été faite à une classe qui n’est pas disponible.</span><span class="sxs-lookup"><span data-stu-id="d0b77-103">A reference was made to a class that is not available.</span></span>  
   
- **ID d’erreur :** BC30712  
+ <span data-ttu-id="d0b77-104">**ID d’erreur :** BC30712</span><span class="sxs-lookup"><span data-stu-id="d0b77-104">**Error ID:** BC30712</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="d0b77-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="d0b77-105">To correct this error</span></span>  
   
-1.  Vérifiez que la classe est définie et que vous correctement orthographié le nom.  
+1.  <span data-ttu-id="d0b77-106">Vérifiez que la classe est définie et que vous correctement orthographié le nom.</span><span class="sxs-lookup"><span data-stu-id="d0b77-106">Verify that the class is defined and that you spelled the name correctly.</span></span>  
   
-2.  Essayez d’accéder à l’un des membres déclarés dans le module. Dans certains cas, l’environnement de débogage ne peut pas localiser les membres, car les modules dans lesquels ils sont déclarés n’ont pas encore été chargés.  
+2.  <span data-ttu-id="d0b77-107">Essayez d’accéder à l’un des membres déclarés dans le module.</span><span class="sxs-lookup"><span data-stu-id="d0b77-107">Try accessing one of the members declared in the module.</span></span> <span data-ttu-id="d0b77-108">Dans certains cas, l’environnement de débogage ne peut pas localiser les membres, car les modules dans lesquels ils sont déclarés n’ont pas encore été chargés.</span><span class="sxs-lookup"><span data-stu-id="d0b77-108">In some cases, the debugging environment cannot locate members because the modules where they are declared have not been loaded yet.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)
+## <a name="see-also"></a><span data-ttu-id="d0b77-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d0b77-109">See Also</span></span>  
+ [<span data-ttu-id="d0b77-110">Débogage dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d0b77-110">Debugging in Visual Studio</span></span>](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)

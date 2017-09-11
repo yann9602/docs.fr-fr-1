@@ -1,1 +1,1 @@
-PNG (Portable Network Graphics)
+<span data-ttu-id="84b9b-101">PNG (Portable Network Graphics)</span><span class="sxs-lookup"><span data-stu-id="84b9b-101">Portable Network Graphics (PNG)</span></span>

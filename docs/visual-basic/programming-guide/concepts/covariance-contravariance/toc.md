@@ -1,4 +1,4 @@
-# [Covariance et contravariance](covariance-and-contravariance.md)
+# [Covariance et contravariance](index.md)
 ## [Variance dans les interfaces génériques](variance-in-generic-interfaces.md)
 ### [Création d’interfaces génériques de type variant](creating-variant-generic-interfaces.md)
 ### [Utilisation de la variance dans les interfaces pour les collections génériques](using-variance-in-interfaces-for-generic-collections.md)

@@ -1,1 +1,1 @@
-fonctionnalités d'hébergement de Windows Server AppFabric
+<span data-ttu-id="b7319-101">fonctionnalités d'hébergement de Windows Server AppFabric</span><span class="sxs-lookup"><span data-stu-id="b7319-101">hosting features of Windows Server AppFabric</span></span>

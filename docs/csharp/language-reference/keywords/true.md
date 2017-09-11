@@ -37,15 +37,15 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="true-c-reference"></a>true (référence C#)
-Utilisé comme opérateur surchargé ou comme littéral :  
+# <a name="true-c-reference"></a><span data-ttu-id="dc9fb-102">true (référence C#)</span><span class="sxs-lookup"><span data-stu-id="dc9fb-102">true (C# Reference)</span></span>
+<span data-ttu-id="dc9fb-103">Utilisé comme opérateur surchargé ou comme littéral :</span><span class="sxs-lookup"><span data-stu-id="dc9fb-103">Used as an overloaded operator or as a literal:</span></span>  
   
- [true, opérateur](../../../csharp/language-reference/keywords/true-operator.md)  
+ [<span data-ttu-id="dc9fb-104">true, opérateur</span><span class="sxs-lookup"><span data-stu-id="dc9fb-104">true Operator</span></span>](../../../csharp/language-reference/keywords/true-operator.md)  
   
- [true, littéral](../../../csharp/language-reference/keywords/true-literal.md)  
+ [<span data-ttu-id="dc9fb-105">true, littéral</span><span class="sxs-lookup"><span data-stu-id="dc9fb-105">true Literal</span></span>](../../../csharp/language-reference/keywords/true-literal.md)  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="dc9fb-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dc9fb-106">See Also</span></span>  
+ <span data-ttu-id="dc9fb-107">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="dc9fb-107">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="dc9fb-108">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="dc9fb-108">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="dc9fb-109">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="dc9fb-109">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

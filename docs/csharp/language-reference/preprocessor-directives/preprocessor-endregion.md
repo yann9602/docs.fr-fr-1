@@ -36,8 +36,8 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="endregion-c-reference"></a>#endregion (informations de référence sur C#)
-`#endregion` marque la fin d’un bloc [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md). Exemple :  
+# <a name="endregion-c-reference"></a><span data-ttu-id="0dfc6-102">#endregion (informations de référence sur C#)</span><span class="sxs-lookup"><span data-stu-id="0dfc6-102">#endregion (C# Reference)</span></span>
+<span data-ttu-id="0dfc6-103">`#endregion` marque la fin d’un bloc [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md).</span><span class="sxs-lookup"><span data-stu-id="0dfc6-103">`#endregion` marks the end of a [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md) block.</span></span> <span data-ttu-id="0dfc6-104">Exemple :</span><span class="sxs-lookup"><span data-stu-id="0dfc6-104">For example:</span></span>  
   
 ```csharp
 #region MyClass definition  
@@ -50,8 +50,8 @@ class MyClass
 #endregion  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a><span data-ttu-id="0dfc6-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0dfc6-105">See Also</span></span>  
+ <span data-ttu-id="0dfc6-106">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="0dfc6-106">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="0dfc6-107">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="0dfc6-107">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="0dfc6-108">Directives de préprocesseur C#</span><span class="sxs-lookup"><span data-stu-id="0dfc6-108">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
 

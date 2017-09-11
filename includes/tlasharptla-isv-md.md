@@ -1,1 +1,1 @@
-éditeur de logiciels indépendant (ISV)
+<span data-ttu-id="4d632-101">éditeur de logiciels indépendant (ISV)</span><span class="sxs-lookup"><span data-stu-id="4d632-101">independent software vendor (ISV)</span></span>

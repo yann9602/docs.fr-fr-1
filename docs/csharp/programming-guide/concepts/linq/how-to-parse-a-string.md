@@ -26,11 +26,11 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-parse-a-string-c"></a>Guide pratique pour analyser une chaîne (C#)
-Cette rubrique montre comment analyser une chaîne pour créer une arborescence XML en C#.  
+# <a name="how-to-parse-a-string-c"></a><span data-ttu-id="40301-102">Guide pratique pour analyser une chaîne (C#)</span><span class="sxs-lookup"><span data-stu-id="40301-102">How to: Parse a String (C#)</span></span>
+<span data-ttu-id="40301-103">Cette rubrique montre comment analyser une chaîne pour créer une arborescence XML en C#.</span><span class="sxs-lookup"><span data-stu-id="40301-103">This topic shows how to parse a string to create an XML tree in C#.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le code C# suivant montre comment analyser une chaîne.  
+## <a name="example"></a><span data-ttu-id="40301-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="40301-104">Example</span></span>  
+ <span data-ttu-id="40301-105">Le code C# suivant montre comment analyser une chaîne.</span><span class="sxs-lookup"><span data-stu-id="40301-105">The following C# code shows how to parse a string.</span></span>  
   
 ```csharp  
 XElement contacts = XElement.Parse(  
@@ -62,6 +62,6 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Analyse de code XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="40301-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="40301-106">See Also</span></span>  
+ [<span data-ttu-id="40301-107">Analyse de code XML (C#)</span><span class="sxs-lookup"><span data-stu-id="40301-107">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
 

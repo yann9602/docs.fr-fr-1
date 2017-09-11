@@ -1,1 +1,1 @@
-Microsoft Word
+<span data-ttu-id="e9ab3-101">Microsoft Word</span><span class="sxs-lookup"><span data-stu-id="e9ab3-101">Microsoft Word</span></span>

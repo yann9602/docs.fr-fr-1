@@ -31,24 +31,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 72d96f36fc17f32ac3ee3ea97175f112fcd21681
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3a7b5dc692317067290b48222ba056d765a449f3
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-create-xml-literals-visual-basic"></a>Comment : créer des littéraux XML (Visual Basic)
-Vous pouvez créer un document, fragment ou élément XML directement dans le code à l’aide d’un littéral XML. Les exemples de cette rubrique montrent comment créer un élément XML qui comporte trois éléments enfants et comment créer un document XML.  
+# <a name="how-to-create-xml-literals-visual-basic"></a><span data-ttu-id="cc109-102">Comment : créer des littéraux XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cc109-102">How to: Create XML Literals (Visual Basic)</span></span>
+<span data-ttu-id="cc109-103">Vous pouvez créer un document, fragment ou élément XML directement dans le code à l’aide d’un littéral XML.</span><span class="sxs-lookup"><span data-stu-id="cc109-103">You can create an XML document, fragment, or element directly in code by using an XML literal.</span></span> <span data-ttu-id="cc109-104">Les exemples de cette rubrique montrent comment créer un élément XML qui comporte trois éléments enfants et comment créer un document XML.</span><span class="sxs-lookup"><span data-stu-id="cc109-104">The examples in this topic demonstrate how to create an XML element that has three child elements, and how to create an XML document.</span></span>  
   
- Vous pouvez également utiliser le [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] API pour créer des [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objets. Pour plus d’informations, consultez <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement>  
+ <span data-ttu-id="cc109-105">Vous pouvez également utiliser le [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] API pour créer des [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objets.</span><span class="sxs-lookup"><span data-stu-id="cc109-105">You can also use the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] APIs to create [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] objects.</span></span> <span data-ttu-id="cc109-106">Pour plus d’informations, consultez <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement></span><span class="sxs-lookup"><span data-stu-id="cc109-106">For more information, see <xref:System.Xml.Linq.XElement>.</span></span>  
   
-### <a name="to-create-an-xml-element"></a>Pour créer un élément XML  
+### <a name="to-create-an-xml-element"></a><span data-ttu-id="cc109-107">Pour créer un élément XML</span><span class="sxs-lookup"><span data-stu-id="cc109-107">To create an XML element</span></span>  
   
--   Créer le code XML inline en utilisant la syntaxe de littéral XML, qui est identique à la syntaxe XML.  
+-   <span data-ttu-id="cc109-108">Créer le code XML inline en utilisant la syntaxe de littéral XML, qui est identique à la syntaxe XML.</span><span class="sxs-lookup"><span data-stu-id="cc109-108">Create the XML inline by using the XML literal syntax, which is the same as the actual XML syntax.</span></span>  
   
-     [!code-vb[VbXMLSamples n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]  
+     <span data-ttu-id="cc109-109">[!code-vb[VbXMLSamples n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="cc109-109">[!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_1.vb)]</span></span>  
   
-     Exécutez le code. La sortie de ce code est :  
+     <span data-ttu-id="cc109-110">Exécutez le code.</span><span class="sxs-lookup"><span data-stu-id="cc109-110">Run the code.</span></span> <span data-ttu-id="cc109-111">La sortie de ce code est :</span><span class="sxs-lookup"><span data-stu-id="cc109-111">The output of this code is:</span></span>  
   
      `<contact>`  
   
@@ -60,13 +61,13 @@ Vous pouvez créer un document, fragment ou élément XML directement dans le co
   
      `</contact>`  
   
-### <a name="to-create-an-xml-document"></a>Pour créer un document XML  
+### <a name="to-create-an-xml-document"></a><span data-ttu-id="cc109-112">Pour créer un document XML</span><span class="sxs-lookup"><span data-stu-id="cc109-112">To create an XML document</span></span>  
   
--   Créer le document XML inline. Le code suivant crée un document XML qui possède la syntaxe littérale, une déclaration XML, une instruction de traitement, un commentaire et un élément contenant un autre élément.  
+-   <span data-ttu-id="cc109-113">Créer le document XML inline.</span><span class="sxs-lookup"><span data-stu-id="cc109-113">Create the XML document inline.</span></span> <span data-ttu-id="cc109-114">Le code suivant crée un document XML qui possède la syntaxe littérale, une déclaration XML, une instruction de traitement, un commentaire et un élément contenant un autre élément.</span><span class="sxs-lookup"><span data-stu-id="cc109-114">The following code creates an XML document that has literal syntax, an XML declaration, a processing instruction, a comment, and an element that contains another element.</span></span>  
   
-     [!code-vb[30 VbXMLSamples](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]  
+     <span data-ttu-id="cc109-115">[!code-vb[30 VbXMLSamples](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]</span><span class="sxs-lookup"><span data-stu-id="cc109-115">[!code-vb[VbXMLSamples#30](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-xml-literals_2.vb)]</span></span>  
   
-     Exécutez le code. La sortie de ce code est :  
+     <span data-ttu-id="cc109-116">Exécutez le code.</span><span class="sxs-lookup"><span data-stu-id="cc109-116">Run the code.</span></span> <span data-ttu-id="cc109-117">La sortie de ce code est :</span><span class="sxs-lookup"><span data-stu-id="cc109-117">The output of this code is:</span></span>  
   
      `<?xml-stylesheet type="text/xsl" href="show_book.xsl"?>`  
   
@@ -78,8 +79,8 @@ Vous pouvez créer un document, fragment ou élément XML directement dans le co
   
      `</books>`  
   
-## <a name="see-also"></a>Voir aussi  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)   
- [Création de code XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
- [Littéral d’élément XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
- [Littéral de document XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
+## <a name="see-also"></a><span data-ttu-id="cc109-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cc109-118">See Also</span></span>  
+ <span data-ttu-id="cc109-119">[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md) </span><span class="sxs-lookup"><span data-stu-id="cc109-119">[XML](../../../../visual-basic/programming-guide/language-features/xml/index.md) </span></span>  
+<span data-ttu-id="cc109-120"> [Création de code XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md) </span><span class="sxs-lookup"><span data-stu-id="cc109-120"> [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md) </span></span>  
+<span data-ttu-id="cc109-121"> [Littéral d’élément XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) </span><span class="sxs-lookup"><span data-stu-id="cc109-121"> [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) </span></span>  
+<span data-ttu-id="cc109-122"> [Littéral de document XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)</span><span class="sxs-lookup"><span data-stu-id="cc109-122"> [XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)</span></span>

@@ -21,15 +21,15 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher une liste d’éléments enfants (XPath-LINQ to XML) (C#)
-Cette rubrique compare l’axe des éléments enfants XPath à l’axe <xref:System.Xml.Linq.XContainer.Elements%2A> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-c"></a><span data-ttu-id="aa1f4-102">Guide pratique pour rechercher une liste d’éléments enfants (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="aa1f4-102">How to: Find a List of Child Elements (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="aa1f4-103">Cette rubrique compare l’axe des éléments enfants XPath à l’axe <xref:System.Xml.Linq.XContainer.Elements%2A> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="aa1f4-103">This topic compares the XPath child elements axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> axis.</span></span>  
   
- L'expression XPath est la suivante : `./*`  
+ <span data-ttu-id="aa1f4-104">L'expression XPath est la suivante : `./*`</span><span class="sxs-lookup"><span data-stu-id="aa1f4-104">The XPath expression is: `./*`</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche tous les éléments enfants de l'élément `Address`.  
+## <a name="example"></a><span data-ttu-id="aa1f4-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="aa1f4-105">Example</span></span>  
+ <span data-ttu-id="aa1f4-106">Cet exemple recherche tous les éléments enfants de l'élément `Address`.</span><span class="sxs-lookup"><span data-stu-id="aa1f4-106">This example finds all of the child elements of the `Address` element.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="aa1f4-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="aa1f4-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument cpo = XDocument.Load("PurchaseOrders.xml");  
@@ -50,7 +50,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="aa1f4-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="aa1f4-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -62,6 +62,6 @@ Results are identical
 <Country>USA</Country>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="aa1f4-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aa1f4-109">See Also</span></span>  
+ [<span data-ttu-id="aa1f4-110">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="aa1f4-110">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

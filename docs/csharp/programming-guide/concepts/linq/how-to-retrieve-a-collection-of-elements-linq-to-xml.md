@@ -21,13 +21,13 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-c"></a>Guide pratique pour récupérer une collection d’éléments (LINQ to XML) (C#)
-Cette rubrique illustre la méthode <xref:System.Xml.Linq.XContainer.Elements%2A>. Cette méthode récupère une collection d’éléments enfants d’un élément.  
+# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-c"></a><span data-ttu-id="e6e5f-102">Guide pratique pour récupérer une collection d’éléments (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="e6e5f-102">How to: Retrieve a Collection of Elements (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="e6e5f-103">Cette rubrique illustre la méthode <xref:System.Xml.Linq.XContainer.Elements%2A>.</span><span class="sxs-lookup"><span data-stu-id="e6e5f-103">This topic demonstrates the <xref:System.Xml.Linq.XContainer.Elements%2A> method.</span></span> <span data-ttu-id="e6e5f-104">Cette méthode récupère une collection d’éléments enfants d’un élément.</span><span class="sxs-lookup"><span data-stu-id="e6e5f-104">This method retrieves a collection of the child elements of an element.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple itère au sein des éléments enfants de l'élément `purchaseOrder`.  
+## <a name="example"></a><span data-ttu-id="e6e5f-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6e5f-105">Example</span></span>  
+ <span data-ttu-id="e6e5f-106">Cet exemple itère au sein des éléments enfants de l'élément `purchaseOrder`.</span><span class="sxs-lookup"><span data-stu-id="e6e5f-106">This example iterates through the child elements of the `purchaseOrder` element.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ <span data-ttu-id="e6e5f-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="e6e5f-107">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
   
 ```csharp  
 XElement po = XElement.Load("PurchaseOrder.xml");  
@@ -38,7 +38,7 @@ foreach (XElement el in childElements)
     Console.WriteLine("Name: " + el.Name);  
 ```  
   
- Cet exemple produit la sortie suivante.  
+ <span data-ttu-id="e6e5f-108">Cet exemple produit la sortie suivante.</span><span class="sxs-lookup"><span data-stu-id="e6e5f-108">This example produces the following output.</span></span>  
   
 ```  
 Name: Address  
@@ -47,6 +47,6 @@ Name: DeliveryNotes
 Name: Items  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a><span data-ttu-id="e6e5f-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e6e5f-109">See Also</span></span>  
+ [<span data-ttu-id="e6e5f-110">Axes LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="e6e5f-110">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
 

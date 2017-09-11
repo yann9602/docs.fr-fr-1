@@ -36,10 +36,10 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Savoir quand utiliser les mots clés override et new (Guide de programmation C#)
-En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../../csharp/language-reference/keywords/new.md) et [override](../../../csharp/language-reference/keywords/override.md). Le modificateur `override` *étend* la méthode de classe de base et le modificateur `new` la *masque*. La différence est illustrée dans les exemples de cette rubrique.  
+# <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a><span data-ttu-id="e7923-102">Savoir quand utiliser les mots clés override et new (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="e7923-102">Knowing When to Use Override and New Keywords (C# Programming Guide)</span></span>
+<span data-ttu-id="e7923-103">En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base.</span><span class="sxs-lookup"><span data-stu-id="e7923-103">In C#, a method in a derived class can have the same name as a method in the base class.</span></span> <span data-ttu-id="e7923-104">Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../../csharp/language-reference/keywords/new.md) et [override](../../../csharp/language-reference/keywords/override.md).</span><span class="sxs-lookup"><span data-stu-id="e7923-104">You can specify how the methods interact by using the [new](../../../csharp/language-reference/keywords/new.md) and [override](../../../csharp/language-reference/keywords/override.md) keywords.</span></span> <span data-ttu-id="e7923-105">Le modificateur `override` *étend* la méthode de classe de base et le modificateur `new` la *masque*.</span><span class="sxs-lookup"><span data-stu-id="e7923-105">The `override` modifier *extends* the base class method, and the `new` modifier *hides* it.</span></span> <span data-ttu-id="e7923-106">La différence est illustrée dans les exemples de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="e7923-106">The difference is illustrated in the examples in this topic.</span></span>  
   
- Dans une application console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`. `DerivedClass` hérite de `BaseClass`.  
+ <span data-ttu-id="e7923-107">Dans une application console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-107">In a console application, declare the following two classes, `BaseClass` and `DerivedClass`.</span></span> <span data-ttu-id="e7923-108">`DerivedClass` hérite de `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-108">`DerivedClass` inherits from `BaseClass`.</span></span>  
   
 ```csharp  
 class BaseClass  
@@ -59,15 +59,15 @@ class DerivedClass : BaseClass
 }  
 ```  
   
- Dans la méthode `Main`, déclarez les variables `bc`, `dc` et `bcdc`.  
+ <span data-ttu-id="e7923-109">Dans la méthode `Main`, déclarez les variables `bc`, `dc` et `bcdc`.</span><span class="sxs-lookup"><span data-stu-id="e7923-109">In the `Main` method, declare variables `bc`, `dc`, and `bcdc`.</span></span>  
   
--   `bc` est de type `BaseClass` et sa valeur est de type `BaseClass`.  
+-   <span data-ttu-id="e7923-110">`bc` est de type `BaseClass` et sa valeur est de type `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-110">`bc` is of type `BaseClass`, and its value is of type `BaseClass`.</span></span>  
   
--   `dc` est de type `DerivedClass` et sa valeur est de type `DerivedClass`.  
+-   <span data-ttu-id="e7923-111">`dc` est de type `DerivedClass` et sa valeur est de type `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-111">`dc` is of type `DerivedClass`, and its value is of type `DerivedClass`.</span></span>  
   
--   `bcdc` est de type `BaseClass` et sa valeur est de type `DerivedClass`. Il s’agit de la variable à surveiller.  
+-   <span data-ttu-id="e7923-112">`bcdc` est de type `BaseClass` et sa valeur est de type `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-112">`bcdc` is of type `BaseClass`, and its value is of type `DerivedClass`.</span></span> <span data-ttu-id="e7923-113">Il s’agit de la variable à surveiller.</span><span class="sxs-lookup"><span data-stu-id="e7923-113">This is the variable to pay attention to.</span></span>  
   
- Comme `bc` et `bcdc` ont le type `BaseClass`, ils ne peuvent accéder directement qu’à `Method1`, sauf si vous effectuez un cast. La variable `dc` peut accéder à `Method1` et `Method2`. Ces relations sont illustrées dans le code suivant.  
+ <span data-ttu-id="e7923-114">Comme `bc` et `bcdc` ont le type `BaseClass`, ils ne peuvent accéder directement qu’à `Method1`, sauf si vous effectuez un cast.</span><span class="sxs-lookup"><span data-stu-id="e7923-114">Because `bc` and `bcdc` have type `BaseClass`, they can only directly access `Method1`, unless you use casting.</span></span> <span data-ttu-id="e7923-115">La variable `dc` peut accéder à `Method1` et `Method2`.</span><span class="sxs-lookup"><span data-stu-id="e7923-115">Variable `dc` can access both `Method1` and `Method2`.</span></span> <span data-ttu-id="e7923-116">Ces relations sont illustrées dans le code suivant.</span><span class="sxs-lookup"><span data-stu-id="e7923-116">These relationships are shown in the following code.</span></span>  
   
 ```csharp  
 class Program  
@@ -91,7 +91,7 @@ class Program
 }  
 ```  
   
- Ensuite, ajoutez la méthode `Method2` suivante à `BaseClass`. La signature de cette méthode correspond à celle de la méthode `Method2` dans `DerivedClass`.  
+ <span data-ttu-id="e7923-117">Ensuite, ajoutez la méthode `Method2` suivante à `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-117">Next, add the following `Method2` method to `BaseClass`.</span></span> <span data-ttu-id="e7923-118">La signature de cette méthode correspond à celle de la méthode `Method2` dans `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-118">The signature of this method matches the signature of the `Method2` method in `DerivedClass`.</span></span>  
   
 ```csharp  
 public void Method2()  
@@ -100,7 +100,7 @@ public void Method2()
 }  
 ```  
   
- Comme `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d’appel peut être ajoutée pour les variables `BaseClass` `bc` et `bcdc`, comme illustré dans le code suivant.  
+ <span data-ttu-id="e7923-119">Comme `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d’appel peut être ajoutée pour les variables `BaseClass` `bc` et `bcdc`, comme illustré dans le code suivant.</span><span class="sxs-lookup"><span data-stu-id="e7923-119">Because `BaseClass` now has a `Method2` method, a second calling statement can be added for `BaseClass` variables `bc` and `bcdc`, as shown in the following code.</span></span>  
   
 ```csharp  
 bc.Method1();  
@@ -111,9 +111,9 @@ bcdc.Method1();
 bcdc.Method2();  
 ```  
   
- Quand vous générez le projet, vous constatez que l’ajout de la méthode `Method2` dans `BaseClass` génère un avertissement. L’avertissement indique que la méthode `Method2` dans `DerivedClass` masque la méthode `Method2` dans `BaseClass`. Il est recommandé d’utiliser le mot clé `new` dans la définition de `Method2` si vous avez l’intention de provoquer ce résultat. Sinon, vous pouvez renommer l’une des méthodes `Method2` pour résoudre l’avertissement, mais ce n’est pas toujours pratique.  
+ <span data-ttu-id="e7923-120">Quand vous générez le projet, vous constatez que l’ajout de la méthode `Method2` dans `BaseClass` génère un avertissement.</span><span class="sxs-lookup"><span data-stu-id="e7923-120">When you build the project, you see that the addition of the `Method2` method in `BaseClass` causes a warning.</span></span> <span data-ttu-id="e7923-121">L’avertissement indique que la méthode `Method2` dans `DerivedClass` masque la méthode `Method2` dans `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-121">The warning says that the `Method2` method in `DerivedClass` hides the `Method2` method in `BaseClass`.</span></span> <span data-ttu-id="e7923-122">Il est recommandé d’utiliser le mot clé `new` dans la définition de `Method2` si vous avez l’intention de provoquer ce résultat.</span><span class="sxs-lookup"><span data-stu-id="e7923-122">You are advised to use the `new` keyword in the `Method2` definition if you intend to cause that result.</span></span> <span data-ttu-id="e7923-123">Sinon, vous pouvez renommer l’une des méthodes `Method2` pour résoudre l’avertissement, mais ce n’est pas toujours pratique.</span><span class="sxs-lookup"><span data-stu-id="e7923-123">Alternatively, you could rename one of the `Method2` methods to resolve the warning, but that is not always practical.</span></span>  
   
- Avant d’ajouter `new`, exécutez le programme pour afficher la sortie produite par les instructions d’appel supplémentaires. Les résultats suivants s'affichent.  
+ <span data-ttu-id="e7923-124">Avant d’ajouter `new`, exécutez le programme pour afficher la sortie produite par les instructions d’appel supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="e7923-124">Before adding `new`, run the program to see the output produced by the additional calling statements.</span></span> <span data-ttu-id="e7923-125">Les résultats suivants s'affichent.</span><span class="sxs-lookup"><span data-stu-id="e7923-125">The following results are displayed.</span></span>  
   
 ```csharp  
 // Output:  
@@ -125,9 +125,9 @@ bcdc.Method2();
 // Base - Method2  
 ```  
   
- Le mot clé `new` conserve les relations qui génèrent cette sortie, mais supprime l’avertissement. Les variables de type `BaseClass` continuent d’accéder aux membres de `BaseClass` et la variable de type `DerivedClass` continue d’accéder aux membres dans `DerivedClass` avant de prendre en compte les membres hérités de `BaseClass`.  
+ <span data-ttu-id="e7923-126">Le mot clé `new` conserve les relations qui génèrent cette sortie, mais supprime l’avertissement.</span><span class="sxs-lookup"><span data-stu-id="e7923-126">The `new` keyword preserves the relationships that produce that output, but it suppresses the warning.</span></span> <span data-ttu-id="e7923-127">Les variables de type `BaseClass` continuent d’accéder aux membres de `BaseClass` et la variable de type `DerivedClass` continue d’accéder aux membres dans `DerivedClass` avant de prendre en compte les membres hérités de `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-127">The variables that have type `BaseClass` continue to access the members of `BaseClass`, and the variable that has type `DerivedClass` continues to access members in `DerivedClass` first, and then to consider members inherited from `BaseClass`.</span></span>  
   
- Pour supprimer l’avertissement, ajoutez le modificateur `new` à la définition de `Method2` dans `DerivedClass`, comme illustré dans le code suivant. Le modificateur peut être ajouté avant ou après `public`.  
+ <span data-ttu-id="e7923-128">Pour supprimer l’avertissement, ajoutez le modificateur `new` à la définition de `Method2` dans `DerivedClass`, comme illustré dans le code suivant.</span><span class="sxs-lookup"><span data-stu-id="e7923-128">To suppress the warning, add the `new` modifier to the definition of `Method2` in `DerivedClass`, as shown in the following code.</span></span> <span data-ttu-id="e7923-129">Le modificateur peut être ajouté avant ou après `public`.</span><span class="sxs-lookup"><span data-stu-id="e7923-129">The modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public new void Method2()  
@@ -136,9 +136,9 @@ public new void Method2()
 }  
 ```  
   
- Réexécutez le programme pour vérifier que la sortie n’a pas changé. Vérifiez aussi que l’avertissement ne s’affiche plus. À l’aide de `new`, vous déclarez que vous êtes conscient que le membre qu’il modifie masque un membre hérité de la classe de base. Pour plus d’informations sur le masquage de nom par héritage, consultez [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md).  
+ <span data-ttu-id="e7923-130">Réexécutez le programme pour vérifier que la sortie n’a pas changé.</span><span class="sxs-lookup"><span data-stu-id="e7923-130">Run the program again to verify that the output has not changed.</span></span> <span data-ttu-id="e7923-131">Vérifiez aussi que l’avertissement ne s’affiche plus.</span><span class="sxs-lookup"><span data-stu-id="e7923-131">Also verify that the warning no longer appears.</span></span> <span data-ttu-id="e7923-132">À l’aide de `new`, vous déclarez que vous êtes conscient que le membre qu’il modifie masque un membre hérité de la classe de base.</span><span class="sxs-lookup"><span data-stu-id="e7923-132">By using `new`, you are asserting that you are aware that the member that it modifies hides a member that is inherited from the base class.</span></span> <span data-ttu-id="e7923-133">Pour plus d’informations sur le masquage de nom par héritage, consultez [new, modificateur](../../../csharp/language-reference/keywords/new-modifier.md).</span><span class="sxs-lookup"><span data-stu-id="e7923-133">For more information about name hiding through inheritance, see [new Modifier](../../../csharp/language-reference/keywords/new-modifier.md).</span></span>  
   
- Pour comparer ce comportement aux effets de l’utilisation de `override`, ajoutez la méthode suivante à `DerivedClass`. Le modificateur `override` peut être ajouté avant ou après `public`.  
+ <span data-ttu-id="e7923-134">Pour comparer ce comportement aux effets de l’utilisation de `override`, ajoutez la méthode suivante à `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-134">To contrast this behavior to the effects of using `override`, add the following method to `DerivedClass`.</span></span> <span data-ttu-id="e7923-135">Le modificateur `override` peut être ajouté avant ou après `public`.</span><span class="sxs-lookup"><span data-stu-id="e7923-135">The `override` modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public override void Method1()  
@@ -147,7 +147,7 @@ public override void Method1()
 }  
 ```  
   
- Ajoutez le modificateur `virtual` à la définition de `Method1` dans `BaseClass`. Le modificateur `virtual` peut être ajouté avant ou après `public`.  
+ <span data-ttu-id="e7923-136">Ajoutez le modificateur `virtual` à la définition de `Method1` dans `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-136">Add the `virtual` modifier to the definition of `Method1` in `BaseClass`.</span></span> <span data-ttu-id="e7923-137">Le modificateur `virtual` peut être ajouté avant ou après `public`.</span><span class="sxs-lookup"><span data-stu-id="e7923-137">The `virtual` modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public virtual void Method1()  
@@ -156,7 +156,7 @@ public virtual void Method1()
 }  
 ```  
   
- Réexécutez le projet. Notez en particulier les deux dernières lignes de la sortie suivante.  
+ <span data-ttu-id="e7923-138">Réexécutez le projet.</span><span class="sxs-lookup"><span data-stu-id="e7923-138">Run the project again.</span></span> <span data-ttu-id="e7923-139">Notez en particulier les deux dernières lignes de la sortie suivante.</span><span class="sxs-lookup"><span data-stu-id="e7923-139">Notice especially the last two lines of the following output.</span></span>  
   
 ```csharp  
 // Output:  
@@ -168,9 +168,9 @@ public virtual void Method1()
 // Base - Method2  
 ```  
   
- L’utilisation du modificateur `override` permet à `bcdc` d’accéder à la méthode `Method1` définie dans `DerivedClass`. En règle générale, il s’agit du comportement souhaité dans les hiérarchies d’héritage. Vous voulez que les objets dont les valeurs sont créées à partir de la classe dérivée utilisent les méthodes définies dans la classe dérivée. Vous obtenez ce comportement en utilisant `override` pour étendre la méthode de classe de base.  
+ <span data-ttu-id="e7923-140">L’utilisation du modificateur `override` permet à `bcdc` d’accéder à la méthode `Method1` définie dans `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="e7923-140">The use of the `override` modifier enables `bcdc` to access the `Method1` method that is defined in `DerivedClass`.</span></span> <span data-ttu-id="e7923-141">En règle générale, il s’agit du comportement souhaité dans les hiérarchies d’héritage.</span><span class="sxs-lookup"><span data-stu-id="e7923-141">Typically, that is the desired behavior in inheritance hierarchies.</span></span> <span data-ttu-id="e7923-142">Vous voulez que les objets dont les valeurs sont créées à partir de la classe dérivée utilisent les méthodes définies dans la classe dérivée.</span><span class="sxs-lookup"><span data-stu-id="e7923-142">You want objects that have values that are created from the derived class to use the methods that are defined in the derived class.</span></span> <span data-ttu-id="e7923-143">Vous obtenez ce comportement en utilisant `override` pour étendre la méthode de classe de base.</span><span class="sxs-lookup"><span data-stu-id="e7923-143">You achieve that behavior by using `override` to extend the base class method.</span></span>  
   
- Le code suivant contient l’exemple complet.  
+ <span data-ttu-id="e7923-144">Le code suivant contient l’exemple complet.</span><span class="sxs-lookup"><span data-stu-id="e7923-144">The following code contains the full example.</span></span>  
   
 ```csharp  
 using System;  
@@ -240,7 +240,7 @@ namespace OverrideAndNew
 }  
 ```  
   
- L’exemple suivant illustre un comportement similaire dans un autre contexte. L’exemple définit trois classes : une classe de base nommée `Car` et deux de ses classes dérivées, `ConvertibleCar` et `Minivan`. La classe de base contient une méthode `DescribeCar`. La méthode affiche une description de base d’une voiture et appelle ensuite `ShowDetails` pour fournir des informations supplémentaires. Chacune des trois classes définit une méthode `ShowDetails`. Le modificateur `new` est utilisé pour définir `ShowDetails` dans la classe `ConvertibleCar`. Le modificateur `override` est utilisé pour définir `ShowDetails` dans la classe `Minivan`.  
+ <span data-ttu-id="e7923-145">L’exemple suivant illustre un comportement similaire dans un autre contexte.</span><span class="sxs-lookup"><span data-stu-id="e7923-145">The following example illustrates similar behavior in a different context.</span></span> <span data-ttu-id="e7923-146">L’exemple définit trois classes : une classe de base nommée `Car` et deux de ses classes dérivées, `ConvertibleCar` et `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="e7923-146">The example defines three classes: a base class named `Car` and two classes that are derived from it, `ConvertibleCar` and `Minivan`.</span></span> <span data-ttu-id="e7923-147">La classe de base contient une méthode `DescribeCar`.</span><span class="sxs-lookup"><span data-stu-id="e7923-147">The base class contains a `DescribeCar` method.</span></span> <span data-ttu-id="e7923-148">La méthode affiche une description de base d’une voiture et appelle ensuite `ShowDetails` pour fournir des informations supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="e7923-148">The method displays a basic description of a car, and then calls `ShowDetails` to provide additional information.</span></span> <span data-ttu-id="e7923-149">Chacune des trois classes définit une méthode `ShowDetails`.</span><span class="sxs-lookup"><span data-stu-id="e7923-149">Each of the three classes defines a `ShowDetails` method.</span></span> <span data-ttu-id="e7923-150">Le modificateur `new` est utilisé pour définir `ShowDetails` dans la classe `ConvertibleCar`.</span><span class="sxs-lookup"><span data-stu-id="e7923-150">The `new` modifier is used to define `ShowDetails` in the `ConvertibleCar` class.</span></span> <span data-ttu-id="e7923-151">Le modificateur `override` est utilisé pour définir `ShowDetails` dans la classe `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="e7923-151">The `override` modifier is used to define `ShowDetails` in the `Minivan` class.</span></span>  
   
 ```csharp  
 // Define the base class, Car. The class defines two methods,  
@@ -284,7 +284,7 @@ class Minivan : Car
 }  
 ```  
   
- L’exemple vérifie la version de `ShowDetails` qui est appelée. La méthode suivante, `TestCars1`, déclare une instance de chaque classe, puis appelle `DescribeCar` sur chaque instance.  
+ <span data-ttu-id="e7923-152">L’exemple vérifie la version de `ShowDetails` qui est appelée.</span><span class="sxs-lookup"><span data-stu-id="e7923-152">The example tests which version of `ShowDetails` is called.</span></span> <span data-ttu-id="e7923-153">La méthode suivante, `TestCars1`, déclare une instance de chaque classe, puis appelle `DescribeCar` sur chaque instance.</span><span class="sxs-lookup"><span data-stu-id="e7923-153">The following method, `TestCars1`, declares an instance of each class, and then calls `DescribeCar` on each instance.</span></span>  
   
 ```csharp  
 public static void TestCars1()  
@@ -310,7 +310,7 @@ public static void TestCars1()
 }  
 ```  
   
- `TestCars1` génère la sortie suivante. Notez en particulier les résultats de `car2`, qui ne correspondent probablement pas à ce que vous attendiez. Le type de l’objet est `ConvertibleCar`, mais `DescribeCar` n’accède pas à la version de `ShowDetails` qui est défini dans la classe `ConvertibleCar`, car cette méthode est déclarée avec le modificateur `new`, et non `override`. Par conséquent, un objet `ConvertibleCar` affiche la même description qu’un objet `Car`. Comparez les résultats pour `car3`, qui est un objet `Minivan`. Dans ce cas, la méthode `ShowDetails` déclarée dans la classe `Minivan` substitue la méthode `ShowDetails` déclarée dans la classe `Car` et la description affichée décrit un minivan.  
+ <span data-ttu-id="e7923-154">`TestCars1` génère la sortie suivante.</span><span class="sxs-lookup"><span data-stu-id="e7923-154">`TestCars1` produces the following output.</span></span> <span data-ttu-id="e7923-155">Notez en particulier les résultats de `car2`, qui ne correspondent probablement pas à ce que vous attendiez.</span><span class="sxs-lookup"><span data-stu-id="e7923-155">Notice especially the results for `car2`, which probably are not what you expected.</span></span> <span data-ttu-id="e7923-156">Le type de l’objet est `ConvertibleCar`, mais `DescribeCar` n’accède pas à la version de `ShowDetails` qui est défini dans la classe `ConvertibleCar`, car cette méthode est déclarée avec le modificateur `new`, et non `override`.</span><span class="sxs-lookup"><span data-stu-id="e7923-156">The type of the object is `ConvertibleCar`, but `DescribeCar` does not access the version of `ShowDetails` that is defined in the `ConvertibleCar` class because that method is declared with the `new` modifier, not the `override` modifier.</span></span> <span data-ttu-id="e7923-157">Par conséquent, un objet `ConvertibleCar` affiche la même description qu’un objet `Car`.</span><span class="sxs-lookup"><span data-stu-id="e7923-157">As a result, a `ConvertibleCar` object displays the same description as a `Car` object.</span></span> <span data-ttu-id="e7923-158">Comparez les résultats pour `car3`, qui est un objet `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="e7923-158">Contrast the results for `car3`, which is a `Minivan` object.</span></span> <span data-ttu-id="e7923-159">Dans ce cas, la méthode `ShowDetails` déclarée dans la classe `Minivan` substitue la méthode `ShowDetails` déclarée dans la classe `Car` et la description affichée décrit un minivan.</span><span class="sxs-lookup"><span data-stu-id="e7923-159">In this case, the `ShowDetails` method that is declared in the `Minivan` class overrides the `ShowDetails` method that is declared in the `Car` class, and the description that is displayed describes a minivan.</span></span>  
   
 ```csharp  
 // TestCars1  
@@ -326,7 +326,7 @@ public static void TestCars1()
 // ----------  
 ```  
   
- `TestCars2` crée une liste d’objets de type `Car`. Les valeurs des objets sont instanciées à partir des classes `Car`, `ConvertibleCar` et `Minivan`. `DescribeCar` est appelé sur chaque élément de la liste. Le code suivant illustre la définition de `TestCars2`.  
+ <span data-ttu-id="e7923-160">`TestCars2` crée une liste d’objets de type `Car`.</span><span class="sxs-lookup"><span data-stu-id="e7923-160">`TestCars2` creates a list of objects that have type `Car`.</span></span> <span data-ttu-id="e7923-161">Les valeurs des objets sont instanciées à partir des classes `Car`, `ConvertibleCar` et `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="e7923-161">The values of the objects are instantiated from the `Car`, `ConvertibleCar`, and `Minivan` classes.</span></span> <span data-ttu-id="e7923-162">`DescribeCar` est appelé sur chaque élément de la liste.</span><span class="sxs-lookup"><span data-stu-id="e7923-162">`DescribeCar` is called on each element of the list.</span></span> <span data-ttu-id="e7923-163">Le code suivant illustre la définition de `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="e7923-163">The following code shows the definition of `TestCars2`.</span></span>  
   
 ```csharp  
 public static void TestCars2()  
@@ -345,7 +345,7 @@ public static void TestCars2()
 }  
 ```  
   
- La sortie suivante s’affiche. Notez qu’elle est identique à la sortie affichée par `TestCars1`. La méthode `ShowDetails` de la classe `ConvertibleCar` n’est pas appelée, que le type de l’objet soit `ConvertibleCar`, comme dans `TestCars1`, ou `Car`, comme dans `TestCars2`. À l’inverse, `car3` appelle la méthode `ShowDetails` à partir de la classe `Minivan` dans les deux cas, que son type soit `Minivan` ou `Car`.  
+ <span data-ttu-id="e7923-164">La sortie suivante s’affiche.</span><span class="sxs-lookup"><span data-stu-id="e7923-164">The following output is displayed.</span></span> <span data-ttu-id="e7923-165">Notez qu’elle est identique à la sortie affichée par `TestCars1`.</span><span class="sxs-lookup"><span data-stu-id="e7923-165">Notice that it is the same as the output that is displayed by `TestCars1`.</span></span> <span data-ttu-id="e7923-166">La méthode `ShowDetails` de la classe `ConvertibleCar` n’est pas appelée, que le type de l’objet soit `ConvertibleCar`, comme dans `TestCars1`, ou `Car`, comme dans `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="e7923-166">The `ShowDetails` method of the `ConvertibleCar` class is not called, regardless of whether the type of the object is `ConvertibleCar`, as in `TestCars1`, or `Car`, as in `TestCars2`.</span></span> <span data-ttu-id="e7923-167">À l’inverse, `car3` appelle la méthode `ShowDetails` à partir de la classe `Minivan` dans les deux cas, que son type soit `Minivan` ou `Car`.</span><span class="sxs-lookup"><span data-stu-id="e7923-167">Conversely, `car3` calls the `ShowDetails` method from the `Minivan` class in both cases, whether it has type `Minivan` or type `Car`.</span></span>  
   
 ```csharp  
 // TestCars2  
@@ -361,7 +361,7 @@ public static void TestCars2()
 // ----------  
 ```  
   
- Les méthodes `TestCars3` et `TestCars4` terminent l’exemple. Ces méthodes appellent `ShowDetails` directement, d’abord à partir des objets déclarés avec le type `ConvertibleCar` et `Minivan` (`TestCars3`), puis à partir des objets déclarés avec le type `Car` (`TestCars4`). Le code suivant définit ces deux méthodes.  
+ <span data-ttu-id="e7923-168">Les méthodes `TestCars3` et `TestCars4` terminent l’exemple.</span><span class="sxs-lookup"><span data-stu-id="e7923-168">Methods `TestCars3` and `TestCars4` complete the example.</span></span> <span data-ttu-id="e7923-169">Ces méthodes appellent `ShowDetails` directement, d’abord à partir des objets déclarés avec le type `ConvertibleCar` et `Minivan` (`TestCars3`), puis à partir des objets déclarés avec le type `Car` (`TestCars4`).</span><span class="sxs-lookup"><span data-stu-id="e7923-169">These methods call `ShowDetails` directly, first from objects declared to have type `ConvertibleCar` and `Minivan` (`TestCars3`), then from objects declared to have type `Car` (`TestCars4`).</span></span> <span data-ttu-id="e7923-170">Le code suivant définit ces deux méthodes.</span><span class="sxs-lookup"><span data-stu-id="e7923-170">The following code defines these two methods.</span></span>  
   
 ```csharp  
 public static void TestCars3()  
@@ -385,7 +385,7 @@ public static void TestCars4()
 }  
 ```  
   
- Les méthodes produisent la sortie suivante, qui correspond aux résultats du premier exemple de cette rubrique.  
+ <span data-ttu-id="e7923-171">Les méthodes produisent la sortie suivante, qui correspond aux résultats du premier exemple de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="e7923-171">The methods produce the following output, which corresponds to the results from the first example in this topic.</span></span>  
   
 ```csharp  
 // TestCars3  
@@ -399,7 +399,7 @@ public static void TestCars4()
 // Carries seven people.  
 ```  
   
- Le code suivant illustre le projet complet et sa sortie.  
+ <span data-ttu-id="e7923-172">Le code suivant illustre le projet complet et sa sortie.</span><span class="sxs-lookup"><span data-stu-id="e7923-172">The following code shows the complete project and its output.</span></span>  
   
 ```csharp  
 using System;  
@@ -564,10 +564,10 @@ namespace OverrideAndNew2
 }  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)   
- [base](../../../csharp/language-reference/keywords/base.md)   
- [abstract](../../../csharp/language-reference/keywords/abstract.md)
+## <a name="see-also"></a><span data-ttu-id="e7923-173">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e7923-173">See Also</span></span>  
+ <span data-ttu-id="e7923-174">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="e7923-174">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="e7923-175">[Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md) </span><span class="sxs-lookup"><span data-stu-id="e7923-175">[Classes and Structs](../../../csharp/programming-guide/classes-and-structs/index.md) </span></span>  
+ <span data-ttu-id="e7923-176">[Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) </span><span class="sxs-lookup"><span data-stu-id="e7923-176">[Versioning with the Override and New Keywords](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) </span></span>  
+ <span data-ttu-id="e7923-177">[base](../../../csharp/language-reference/keywords/base.md) </span><span class="sxs-lookup"><span data-stu-id="e7923-177">[base](../../../csharp/language-reference/keywords/base.md) </span></span>  
+ [<span data-ttu-id="e7923-178">abstract</span><span class="sxs-lookup"><span data-stu-id="e7923-178">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)
 

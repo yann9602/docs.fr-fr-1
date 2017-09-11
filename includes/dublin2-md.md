@@ -1,1 +1,1 @@
-fonctionnalités d'hébergement
+<span data-ttu-id="ec4ac-101">fonctionnalités d'hébergement</span><span class="sxs-lookup"><span data-stu-id="ec4ac-101">hosting features</span></span>

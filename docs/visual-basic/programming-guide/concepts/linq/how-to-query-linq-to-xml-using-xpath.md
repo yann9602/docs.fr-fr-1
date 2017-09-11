@@ -16,20 +16,20 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0356a7210fbc1b1e0c15adc9d37b6099877fa655
+ms.sourcegitcommit: 14abadaf548e228244a1ff7ca72fa3896ef4eb5d
+ms.openlocfilehash: 586182367ea26539384ea630dde301fe447915b8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/23/2017
 
 
 ---
-# <a name="how-to-query-linq-to-xml-using-xpath-visual-basic"></a>Comment : interroger LINQ to XML à l’aide de XPath (Visual Basic)
-Cette rubrique présente les méthodes d’extension qui vous permettent d’interroger une arborescence XML à l’aide de XPath. Pour plus d’informations sur l’utilisation de ces méthodes d’extension, consultez <xref:System.Xml.XPath.Extensions?displayProperty=fullName>.</xref:System.Xml.XPath.Extensions?displayProperty=fullName>  
+# <a name="how-to-query-linq-to-xml-using-xpath-visual-basic"></a><span data-ttu-id="c05b2-102">Comment : interroger LINQ to XML à l’aide de XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c05b2-102">How to: Query LINQ to XML Using XPath (Visual Basic)</span></span>
+<span data-ttu-id="c05b2-103">Cette rubrique présente les méthodes d’extension qui vous permettent d’interroger une arborescence XML à l’aide de XPath.</span><span class="sxs-lookup"><span data-stu-id="c05b2-103">This topic introduces the extension methods that enable you to query an XML tree by using XPath.</span></span> <span data-ttu-id="c05b2-104">Pour plus d’informations sur l’utilisation de ces méthodes d’extension, consultez <xref:System.Xml.XPath.Extensions?displayProperty=fullName>.</xref:System.Xml.XPath.Extensions?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="c05b2-104">For detailed information about using these extension methods, see <xref:System.Xml.XPath.Extensions?displayProperty=fullName>.</span></span>  
   
- À moins que vous n’ayez une raison spécifique pour interroger à l’aide de XPath, par exemple en cas d’utilisation intensive de code hérité, l’utilisation de XPath avec LINQ to XML n’est pas recommandée. Requêtes XPath n’effectuera pas ainsi que [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] requêtes.  
+ <span data-ttu-id="c05b2-105">À moins que vous n’ayez une raison spécifique pour interroger à l’aide de XPath, par exemple en cas d’utilisation intensive de code hérité, l’utilisation de XPath avec LINQ to XML n’est pas recommandée.</span><span class="sxs-lookup"><span data-stu-id="c05b2-105">Unless you have a very specific reason for querying using XPath, such as extensive use of legacy code, using XPath with LINQ to XML is not recommended.</span></span> <span data-ttu-id="c05b2-106">Requêtes XPath n’effectuera pas ainsi que [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] requêtes.</span><span class="sxs-lookup"><span data-stu-id="c05b2-106">XPath queries will not perform as well as [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] queries.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant crée une petite arborescence XML et utilise <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A>pour sélectionner un ensemble d’éléments.</xref:System.Xml.XPath.Extensions.XPathSelectElements%2A>  
+## <a name="example"></a><span data-ttu-id="c05b2-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="c05b2-107">Example</span></span>  
+ <span data-ttu-id="c05b2-108">L’exemple suivant crée une petite arborescence XML et utilise <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A>pour sélectionner un ensemble d’éléments.</xref:System.Xml.XPath.Extensions.XPathSelectElements%2A></span><span class="sxs-lookup"><span data-stu-id="c05b2-108">The following example creates a small XML tree and uses <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> to select a set of elements.</span></span>  
   
 ```vb  
 Dim root As XElement = _  
@@ -48,7 +48,7 @@ For Each el As XElement In list
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="c05b2-109">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="c05b2-109">This example produces the following output:</span></span>  
   
 ```  
 <Child2>4</Child2>  
@@ -56,6 +56,6 @@ Next
 <Child2>6</Child2>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Techniques de requêtes (LINQ to XML) avancées (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="c05b2-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c05b2-110">See Also</span></span>  
+ [<span data-ttu-id="c05b2-111">Techniques de requêtes (LINQ to XML) avancées (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c05b2-111">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
 

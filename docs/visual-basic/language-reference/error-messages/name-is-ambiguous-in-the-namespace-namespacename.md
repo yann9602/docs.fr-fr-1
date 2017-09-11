@@ -32,21 +32,22 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9a0995925847368a875f185ce761d626674a5d8a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 3e48522da908990b9b7230aedc3ab91c205509f9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="39ltnamegt39-is-ambiguous-in-the-namespace-39ltnamespacenamegt39"></a>«&lt;nom&gt;'est ambigu dans l’espace de noms'&lt;namespacename&gt;»
-Vous avez fourni un nom qui est ambigu et donc en conflit avec un autre nom. Le [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur n’a pas les règles de résolution de conflit, vous devez distinguer des noms vous-même.  
+# <a name="39ltnamegt39-is-ambiguous-in-the-namespace-39ltnamespacenamegt39"></a><span data-ttu-id="da9c4-102">«&lt;nom&gt;'est ambigu dans l’espace de noms'&lt;namespacename&gt;»</span><span class="sxs-lookup"><span data-stu-id="da9c4-102">&#39;&lt;name&gt;&#39; is ambiguous in the namespace &#39;&lt;namespacename&gt;&#39;</span></span>
+<span data-ttu-id="da9c4-103">Vous avez fourni un nom qui est ambigu et donc en conflit avec un autre nom.</span><span class="sxs-lookup"><span data-stu-id="da9c4-103">You have provided a name that is ambiguous and therefore conflicts with another name.</span></span> <span data-ttu-id="da9c4-104">Le [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur n’a pas les règles de résolution de conflit, vous devez distinguer des noms vous-même.</span><span class="sxs-lookup"><span data-stu-id="da9c4-104">The [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler does not have any conflict resolution rules; you must disambiguate names yourself.</span></span>  
   
- **ID d’erreur :** BC30560  
+ <span data-ttu-id="da9c4-105">**ID d’erreur :** BC30560</span><span class="sxs-lookup"><span data-stu-id="da9c4-105">**Error ID:** BC30560</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="da9c4-106">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="da9c4-106">To correct this error</span></span>  
   
--   Utilisez un nom qualifié complet.  
+-   <span data-ttu-id="da9c4-107">Utilisez un nom qualifié complet.</span><span class="sxs-lookup"><span data-stu-id="da9c4-107">Fully qualify the name.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)   
- [Namespace (instruction)](../../../visual-basic/language-reference/statements/namespace-statement.md)
+## <a name="see-also"></a><span data-ttu-id="da9c4-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="da9c4-108">See Also</span></span>  
+ <span data-ttu-id="da9c4-109">[Espaces de noms dans Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md) </span><span class="sxs-lookup"><span data-stu-id="da9c4-109">[Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md) </span></span>  
+<span data-ttu-id="da9c4-110"> [Namespace (instruction)](../../../visual-basic/language-reference/statements/namespace-statement.md)</span><span class="sxs-lookup"><span data-stu-id="da9c4-110"> [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md)</span></span>

@@ -26,12 +26,12 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)
-Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.  
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a><span data-ttu-id="d46e9-102">Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="d46e9-102">How to: Join Content from Dissimilar Files (LINQ) (C#)</span></span>
+<span data-ttu-id="d46e9-103">Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante.</span><span class="sxs-lookup"><span data-stu-id="d46e9-103">This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key.</span></span> <span data-ttu-id="d46e9-104">Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier.</span><span class="sxs-lookup"><span data-stu-id="d46e9-104">This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file.</span></span> <span data-ttu-id="d46e9-105">Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.</span><span class="sxs-lookup"><span data-stu-id="d46e9-105">You can modify the example to work with any kind of structured text.</span></span>  
   
-### <a name="to-create-the-data-files"></a>Pour créer le fichier de données  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="d46e9-106">Pour créer le fichier de données</span><span class="sxs-lookup"><span data-stu-id="d46e9-106">To create the data files</span></span>  
   
-1.  Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.  
+1.  <span data-ttu-id="d46e9-107">Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet.</span><span class="sxs-lookup"><span data-stu-id="d46e9-107">Copy the following lines into a file that is named scores.csv and save it to your project folder.</span></span> <span data-ttu-id="d46e9-108">Le fichier représente les données de feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="d46e9-108">The file represents spreadsheet data.</span></span> <span data-ttu-id="d46e9-109">La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.</span><span class="sxs-lookup"><span data-stu-id="d46e9-109">Column 1 is the student's ID, and columns 2 through 5 are test scores.</span></span>  
   
     ```  
     111, 97, 92, 81, 60  
@@ -48,7 +48,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
     122, 94, 92, 91, 91  
     ```  
   
-2.  Copiez les lignes suivantes dans un fichier nommé names.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente une feuille de calcul qui contient le nom, le prénom et l’ID de l’étudiant.  
+2.  <span data-ttu-id="d46e9-110">Copiez les lignes suivantes dans un fichier nommé names.csv, puis enregistrez-le dans votre dossier de projet.</span><span class="sxs-lookup"><span data-stu-id="d46e9-110">Copy the following lines into a file that is named names.csv and save it to your project folder.</span></span> <span data-ttu-id="d46e9-111">Le fichier représente une feuille de calcul qui contient le nom, le prénom et l’ID de l’étudiant.</span><span class="sxs-lookup"><span data-stu-id="d46e9-111">The file represents a spreadsheet that contains the student's last name, first name, and student ID.</span></span>  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -65,7 +65,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="d46e9-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="d46e9-112">Example</span></span>  
   
 ```csharp  
 class JoinStrings  
@@ -136,10 +136,10 @@ Zabokritski, 96, 85, 91, 60
  */  
 ```  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.  
+## <a name="compiling-the-code"></a><span data-ttu-id="d46e9-113">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="d46e9-113">Compiling the Code</span></span>  
+ <span data-ttu-id="d46e9-114">Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.</span><span class="sxs-lookup"><span data-stu-id="d46e9-114">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
- [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="d46e9-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d46e9-115">See Also</span></span>  
+ <span data-ttu-id="d46e9-116">[LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md) </span><span class="sxs-lookup"><span data-stu-id="d46e9-116">[LINQ and Strings (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md) </span></span>  
+ [<span data-ttu-id="d46e9-117">LINQ et répertoires de fichiers (C#)</span><span class="sxs-lookup"><span data-stu-id="d46e9-117">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
 

@@ -20,20 +20,21 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 541da47893217e2915a6b001d1141eaadfa9e9e8
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: e13cdc32b40f1c16d4c8fa27f3c3af15a80c33d7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)
-L’exemple suivant montre comment trier les lignes de texte structuré, telles que les valeurs séparées par des virgules, par n’importe quel champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs de scores.csv représentent le numéro d’identification d’un étudiant, suivi d’une série de quatre examens.  
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a><span data-ttu-id="f366a-102">Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f366a-102">How to: Sort or Filter Text Data by Any Word or Field (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="f366a-103">L’exemple suivant montre comment trier les lignes de texte structuré, telles que les valeurs séparées par des virgules, par n’importe quel champ de la ligne.</span><span class="sxs-lookup"><span data-stu-id="f366a-103">The following example shows how to sort lines of structured text, such as comma-separated values, by any field in the line.</span></span> <span data-ttu-id="f366a-104">Le champ peut être spécifié de manière dynamique lors de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="f366a-104">The field may be dynamically specified at runtime.</span></span> <span data-ttu-id="f366a-105">Supposons que les champs de scores.csv représentent le numéro d’identification d’un étudiant, suivi d’une série de quatre examens.</span><span class="sxs-lookup"><span data-stu-id="f366a-105">Assume that the fields in scores.csv represent a student's ID number, followed by a series of four test scores.</span></span>  
   
-### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier qui contient des données  
+### <a name="to-create-a-file-that-contains-data"></a><span data-ttu-id="f366a-106">Pour créer un fichier qui contient des données</span><span class="sxs-lookup"><span data-stu-id="f366a-106">To create a file that contains data</span></span>  
   
-1.  Copier les données de scores.csv de la rubrique [Comment : joindre contenu à partir de différents fichiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) et l’enregistrer dans votre dossier de solution.  
+1.  <span data-ttu-id="f366a-107">Copier les données de scores.csv de la rubrique [Comment : joindre contenu à partir de différents fichiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) et l’enregistrer dans votre dossier de solution.</span><span class="sxs-lookup"><span data-stu-id="f366a-107">Copy the scores.csv data from the topic [How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) and save it to your solution folder.</span></span>  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="f366a-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="f366a-108">Example</span></span>  
   
 ```vb  
 Class SortLines  
@@ -86,10 +87,10 @@ End Class
 ' 115, 35, 72, 91, 70  
 ```  
   
- Cet exemple montre également comment retourner une variable de requête d’une fonction.  
+ <span data-ttu-id="f366a-109">Cet exemple montre également comment retourner une variable de requête d’une fonction.</span><span class="sxs-lookup"><span data-stu-id="f366a-109">This example also demonstrates how to return a query variable from a Function.</span></span>  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+## <a name="compiling-the-code"></a><span data-ttu-id="f366a-110">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="f366a-110">Compiling the Code</span></span>  
+ <span data-ttu-id="f366a-111">Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.</span><span class="sxs-lookup"><span data-stu-id="f366a-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+## <a name="see-also"></a><span data-ttu-id="f366a-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f366a-112">See Also</span></span>  
+ [<span data-ttu-id="f366a-113">LINQ et chaînes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f366a-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

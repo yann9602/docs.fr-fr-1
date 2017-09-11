@@ -15,24 +15,25 @@ ms.assetid: 72c3aed5-9522-4454-a876-2070aad13f2e
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4763181b56037f3efe7e3a2e4e31651b515e1424
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: e2851bd0fac8132966ea64694d07207e4c9e4f46
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Comment : rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)
-Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="9fadf-102">Comment : rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9fadf-102">How to: Find the Root Element (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="9fadf-103">Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].</span><span class="sxs-lookup"><span data-stu-id="9fadf-103">This topic shows how to get the root element with XPath and [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="9fadf-104">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="9fadf-104">The XPath expression is:</span></span>  
   
  `/PurchaseOrders`  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche l'élément racine.  
+## <a name="example"></a><span data-ttu-id="9fadf-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="9fadf-105">Example</span></span>  
+ <span data-ttu-id="9fadf-106">Cet exemple recherche l'élément racine.</span><span class="sxs-lookup"><span data-stu-id="9fadf-106">This example finds the root element.</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="9fadf-107">Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="9fadf-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -51,12 +52,12 @@ End If
 Console.WriteLine(el1.Name)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="9fadf-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="9fadf-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 PurchaseOrders  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="9fadf-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9fadf-109">See Also</span></span>  
+ [<span data-ttu-id="9fadf-110">LINQ to XML pour les utilisateurs XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9fadf-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

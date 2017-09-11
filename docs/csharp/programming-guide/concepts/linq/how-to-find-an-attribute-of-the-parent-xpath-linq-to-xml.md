@@ -21,17 +21,17 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher un attribut du parent (XPath-LINQ to XML) (C#)
-Cette rubrique montre comment naviguer jusqu'à l'élément parent et rechercher un attribut de celui-ci.  
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a><span data-ttu-id="f0db3-102">Guide pratique pour rechercher un attribut du parent (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="f0db3-102">How to: Find an Attribute of the Parent (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="f0db3-103">Cette rubrique montre comment naviguer jusqu'à l'élément parent et rechercher un attribut de celui-ci.</span><span class="sxs-lookup"><span data-stu-id="f0db3-103">This topic shows how to navigate to the parent element and find an attribute of it.</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="f0db3-104">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="f0db3-104">The XPath expression is:</span></span>  
   
  `../@id`  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche d'abord un élément `Author`. Il recherche ensuite l'attribut `id` de l'élément parent.  
+## <a name="example"></a><span data-ttu-id="f0db3-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="f0db3-105">Example</span></span>  
+ <span data-ttu-id="f0db3-106">Cet exemple recherche d'abord un élément `Author`.</span><span class="sxs-lookup"><span data-stu-id="f0db3-106">This example first finds an `Author` element.</span></span> <span data-ttu-id="f0db3-107">Il recherche ensuite l'attribut `id` de l'élément parent.</span><span class="sxs-lookup"><span data-stu-id="f0db3-107">It then finds the `id` attribute of the parent element.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ <span data-ttu-id="f0db3-108">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="f0db3-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -58,13 +58,13 @@ else
 Console.WriteLine(att1);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="f0db3-109">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="f0db3-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="f0db3-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f0db3-110">See Also</span></span>  
+ [<span data-ttu-id="f0db3-111">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="f0db3-111">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

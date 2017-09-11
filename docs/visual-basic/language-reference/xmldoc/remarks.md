@@ -32,36 +32,36 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 89f8d321505b528d07fd04780cec06fb65b0e05e
+ms.sourcegitcommit: a32f50ce8a92fa22d9627a1510a4b3ec1087364e
+ms.openlocfilehash: c1b2c48dc3247935f703ff4107f29829c494a305
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 06/01/2017
 
 ---
-# <a name="ltremarksgt-visual-basic"></a>&lt;Remarques&gt; (Visual Basic)
-Spécifie une section Notes pour le membre.  
+# <a name="ltremarksgt-visual-basic"></a><span data-ttu-id="baabd-102">&lt;Remarques&gt; (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="baabd-102">&lt;remarks&gt; (Visual Basic)</span></span>
+<span data-ttu-id="baabd-103">Spécifie une section Notes pour le membre.</span><span class="sxs-lookup"><span data-stu-id="baabd-103">Specifies a remarks section for the member.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="baabd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="baabd-104">Syntax</span></span>  
   
 ```xml  
 <remarks>description</remarks>  
 ```  
   
-#### <a name="parameters"></a>Paramètres  
+#### <a name="parameters"></a><span data-ttu-id="baabd-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="baabd-105">Parameters</span></span>  
  `description`  
- Description du membre.  
+ <span data-ttu-id="baabd-106">Description du membre.</span><span class="sxs-lookup"><span data-stu-id="baabd-106">A description of the member.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- Utilisez le `<remarks>` balise pour ajouter des informations sur un type et de compléter les informations spécifiées par [ \<Résumé >](../../../visual-basic/language-reference/xmldoc/summary.md).  
+## <a name="remarks"></a><span data-ttu-id="baabd-107">Remarques</span><span class="sxs-lookup"><span data-stu-id="baabd-107">Remarks</span></span>  
+ <span data-ttu-id="baabd-108">Utilisez le `<remarks>` balise pour ajouter des informations sur un type et de compléter les informations spécifiées par [ \<Résumé >](../../../visual-basic/language-reference/xmldoc/summary.md).</span><span class="sxs-lookup"><span data-stu-id="baabd-108">Use the `<remarks>` tag to add information about a type, supplementing the information specified with [\<summary>](../../../visual-basic/language-reference/xmldoc/summary.md).</span></span>  
   
- Cette information s’affiche dans l’Explorateur d’objets. Pour plus d’informations sur l’Explorateur d’objets, consultez [affichage de la Structure de Code](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code).  
+ <span data-ttu-id="baabd-109">Cette information s’affiche dans l’Explorateur d’objets.</span><span class="sxs-lookup"><span data-stu-id="baabd-109">This information appears in the Object Browser.</span></span> <span data-ttu-id="baabd-110">Pour plus d’informations sur l’Explorateur d’objets, consultez [affichage de la Structure de Code](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code).</span><span class="sxs-lookup"><span data-stu-id="baabd-110">For information about the Object Browser, see [Viewing the Structure of Code](https://docs.microsoft.com/visualstudio/ide/viewing-the-structure-of-code).</span></span>  
   
- Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour traiter les commentaires de documentation dans un fichier.  
+ <span data-ttu-id="baabd-111">Compilez avec [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour traiter les commentaires de documentation dans un fichier.</span><span class="sxs-lookup"><span data-stu-id="baabd-111">Compile with [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple utilise le `<remarks>` balise pour expliquer la `UpdateRecord` méthode.  
+## <a name="example"></a><span data-ttu-id="baabd-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="baabd-112">Example</span></span>  
+ <span data-ttu-id="baabd-113">Cet exemple utilise le `<remarks>` balise pour expliquer la `UpdateRecord` méthode.</span><span class="sxs-lookup"><span data-stu-id="baabd-113">This example uses the `<remarks>` tag to explain what the `UpdateRecord` method does.</span></span>  
   
- [!code-vb[VbVbcnXmlDocComments n °&6;](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/remarks_1.vb)]  
+ <span data-ttu-id="baabd-114">[!code-vb[VbVbcnXmlDocComments n °&6;](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/remarks_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="baabd-114">[!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/remarks_1.vb)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Étiquettes XML pour les commentaires](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="baabd-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="baabd-115">See Also</span></span>  
+ [<span data-ttu-id="baabd-116">Étiquettes XML pour les commentaires</span><span class="sxs-lookup"><span data-stu-id="baabd-116">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)

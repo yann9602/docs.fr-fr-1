@@ -1,1 +1,1 @@
-Microsoft ClearType
+<span data-ttu-id="264aa-101">Microsoft ClearType</span><span class="sxs-lookup"><span data-stu-id="264aa-101">Microsoft ClearType</span></span>

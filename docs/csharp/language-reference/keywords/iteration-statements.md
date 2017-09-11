@@ -35,24 +35,24 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="iteration-statements-c-reference"></a>Instructions d'itération (référence C#)
-Vous pouvez créer des boucles avec les instructions d’itération. Les instructions d’itération entraînent une exécution des instructions incorporées un certain nombre de fois, selon les critères de terminaison des boucles. Ces instructions sont exécutées dans l’ordre, sauf quand une [instruction de saut](../../../csharp/language-reference/keywords/jump-statements.md) est rencontrée.  
+# <a name="iteration-statements-c-reference"></a><span data-ttu-id="eab08-102">Instructions d'itération (référence C#)</span><span class="sxs-lookup"><span data-stu-id="eab08-102">Iteration Statements (C# Reference)</span></span>
+<span data-ttu-id="eab08-103">Vous pouvez créer des boucles avec les instructions d’itération.</span><span class="sxs-lookup"><span data-stu-id="eab08-103">You can create loops by using the iteration statements.</span></span> <span data-ttu-id="eab08-104">Les instructions d’itération entraînent une exécution des instructions incorporées un certain nombre de fois, selon les critères de terminaison des boucles.</span><span class="sxs-lookup"><span data-stu-id="eab08-104">Iteration statements cause embedded statements to be executed a number of times, subject to the loop-termination criteria.</span></span> <span data-ttu-id="eab08-105">Ces instructions sont exécutées dans l’ordre, sauf quand une [instruction de saut](../../../csharp/language-reference/keywords/jump-statements.md) est rencontrée.</span><span class="sxs-lookup"><span data-stu-id="eab08-105">These statements are executed in order, except when a [jump statement](../../../csharp/language-reference/keywords/jump-statements.md) is encountered.</span></span>  
   
- Les mots clés suivants sont utilisés dans des instructions d’itération :  
+ <span data-ttu-id="eab08-106">Les mots clés suivants sont utilisés dans des instructions d’itération :</span><span class="sxs-lookup"><span data-stu-id="eab08-106">The following keywords are used in iteration statements:</span></span>  
   
--   [do](../../../csharp/language-reference/keywords/do.md)  
+-   [<span data-ttu-id="eab08-107">do</span><span class="sxs-lookup"><span data-stu-id="eab08-107">do</span></span>](../../../csharp/language-reference/keywords/do.md)  
   
--   [for](../../../csharp/language-reference/keywords/for.md)  
+-   [<span data-ttu-id="eab08-108">for</span><span class="sxs-lookup"><span data-stu-id="eab08-108">for</span></span>](../../../csharp/language-reference/keywords/for.md)  
   
--   [foreach](../../../csharp/language-reference/keywords/foreach-in.md)  
+-   [<span data-ttu-id="eab08-109">foreach</span><span class="sxs-lookup"><span data-stu-id="eab08-109">foreach</span></span>](../../../csharp/language-reference/keywords/foreach-in.md)  
   
--   [in](../../../csharp/language-reference/keywords/foreach-in.md)  
+-   [<span data-ttu-id="eab08-110">in</span><span class="sxs-lookup"><span data-stu-id="eab08-110">in</span></span>](../../../csharp/language-reference/keywords/foreach-in.md)  
   
--   [while](../../../csharp/language-reference/keywords/while.md)  
+-   [<span data-ttu-id="eab08-111">while</span><span class="sxs-lookup"><span data-stu-id="eab08-111">while</span></span>](../../../csharp/language-reference/keywords/while.md)  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [Mots clés d’instructions](../../../csharp/language-reference/keywords/statement-keywords.md)
+## <a name="see-also"></a><span data-ttu-id="eab08-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="eab08-112">See Also</span></span>  
+ <span data-ttu-id="eab08-113">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="eab08-113">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="eab08-114">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="eab08-114">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="eab08-115">[Mots clés C#](../../../csharp/language-reference/keywords/index.md) </span><span class="sxs-lookup"><span data-stu-id="eab08-115">[C# Keywords](../../../csharp/language-reference/keywords/index.md) </span></span>  
+ [<span data-ttu-id="eab08-116">Mots clés d’instructions</span><span class="sxs-lookup"><span data-stu-id="eab08-116">Statement Keywords</span></span>](../../../csharp/language-reference/keywords/statement-keywords.md)
 

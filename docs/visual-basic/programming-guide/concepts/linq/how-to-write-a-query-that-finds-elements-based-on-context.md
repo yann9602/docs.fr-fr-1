@@ -15,20 +15,21 @@ ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c26a6f0debd165a925bf45e2ac5063e1afff693f
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: fd497c4d63c59eed1873f77f474bfb76eb0194c4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Comment : écrire une requête qui recherche des éléments selon le contexte (Visual Basic)
-Parfois, vous devez écrire une requête qui sélectionne des éléments en fonction de leur contexte. Vous souhaiterez peut-être filtrer en fonction des éléments frères qui précèdent ou qui suivent. Vous souhaiterez peut-être filtrer en fonction des éléments enfants ou ancêtres.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a><span data-ttu-id="880b0-102">Comment : écrire une requête qui recherche des éléments selon le contexte (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="880b0-102">How to: Write a Query that Finds Elements Based on Context (Visual Basic)</span></span>
+<span data-ttu-id="880b0-103">Parfois, vous devez écrire une requête qui sélectionne des éléments en fonction de leur contexte.</span><span class="sxs-lookup"><span data-stu-id="880b0-103">Sometimes you might have to write a query that selects elements based on their context.</span></span> <span data-ttu-id="880b0-104">Vous souhaiterez peut-être filtrer en fonction des éléments frères qui précèdent ou qui suivent.</span><span class="sxs-lookup"><span data-stu-id="880b0-104">You might want to filter based on preceding or following sibling elements.</span></span> <span data-ttu-id="880b0-105">Vous souhaiterez peut-être filtrer en fonction des éléments enfants ou ancêtres.</span><span class="sxs-lookup"><span data-stu-id="880b0-105">You might want to filter based on child or ancestor elements.</span></span>  
   
- Vous pouvez pour cela écrire une requête et utiliser ses résultats dans la clause `where`. Si vous devez tout d'abord tester par rapport à la valeur Null, puis tester la valeur, il est plus pratique de créer la requête dans une clause `let`, puis d'utiliser les résultats dans la clause `where`.  
+ <span data-ttu-id="880b0-106">Vous pouvez pour cela écrire une requête et utiliser ses résultats dans la clause `where`.</span><span class="sxs-lookup"><span data-stu-id="880b0-106">You can do this by writing a query and using the results of the query in the `where` clause.</span></span> <span data-ttu-id="880b0-107">Si vous devez tout d'abord tester par rapport à la valeur Null, puis tester la valeur, il est plus pratique de créer la requête dans une clause `let`, puis d'utiliser les résultats dans la clause `where`.</span><span class="sxs-lookup"><span data-stu-id="880b0-107">If you have to first test against null, and then test the value, it is more convenient to do the query in a `let` clause, and then use the results in the `where` clause.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant sélectionne tous les éléments `p` qui sont suivis immédiatement d'un élément `ul`.  
+## <a name="example"></a><span data-ttu-id="880b0-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="880b0-108">Example</span></span>  
+ <span data-ttu-id="880b0-109">L'exemple suivant sélectionne tous les éléments `p` qui sont suivis immédiatement d'un élément `ul`.</span><span class="sxs-lookup"><span data-stu-id="880b0-109">The following example selects all `p` elements that are immediately followed by a `ul` element.</span></span>  
   
 ```vb  
 Dim doc As XElement = _  
@@ -63,7 +64,7 @@ Next
   
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="880b0-110">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="880b0-110">This code produces the following output:</span></span>  
   
 ```  
 id = 1  
@@ -71,8 +72,8 @@ id = 3
 id = 6  
 ```  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+## <a name="example"></a><span data-ttu-id="880b0-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="880b0-111">Example</span></span>  
+ <span data-ttu-id="880b0-112">L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="880b0-112">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="880b0-113">Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="880b0-113">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -112,7 +113,7 @@ Module Module1
 End Module  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="880b0-114">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="880b0-114">This code produces the following output:</span></span>  
   
 ```  
 id = 1  
@@ -120,9 +121,9 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq.XElement.Parse%2A></xref:System.Xml.Linq.XElement.Parse%2A>   
- <xref:System.Xml.Linq.XContainer.Descendants%2A></xref:System.Xml.Linq.XContainer.Descendants%2A>   
- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A></xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>   
- <xref:System.Linq.Enumerable.FirstOrDefault%2A></xref:System.Linq.Enumerable.FirstOrDefault%2A>   
- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="880b0-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="880b0-115">See Also</span></span>  
+ <span data-ttu-id="880b0-116"><xref:System.Xml.Linq.XElement.Parse%2A></xref:System.Xml.Linq.XElement.Parse%2A></span><span class="sxs-lookup"><span data-stu-id="880b0-116"><xref:System.Xml.Linq.XElement.Parse%2A></span></span>   
+ <span data-ttu-id="880b0-117"><xref:System.Xml.Linq.XContainer.Descendants%2A></xref:System.Xml.Linq.XContainer.Descendants%2A></span><span class="sxs-lookup"><span data-stu-id="880b0-117"><xref:System.Xml.Linq.XContainer.Descendants%2A></span></span>   
+ <span data-ttu-id="880b0-118"><xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A></xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A></span><span class="sxs-lookup"><span data-stu-id="880b0-118"><xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A></span></span>   
+ <span data-ttu-id="880b0-119"><xref:System.Linq.Enumerable.FirstOrDefault%2A></xref:System.Linq.Enumerable.FirstOrDefault%2A></span><span class="sxs-lookup"><span data-stu-id="880b0-119"><xref:System.Linq.Enumerable.FirstOrDefault%2A></span></span>   
+<span data-ttu-id="880b0-120"> [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)</span><span class="sxs-lookup"><span data-stu-id="880b0-120"> [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)</span></span>

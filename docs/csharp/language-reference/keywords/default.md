@@ -1,6 +1,6 @@
 ---
 title: "default (référence C#)"
-ms.date: 2015-07-20
+ms.date: 2017-08-04
 ms.prod: .net
 ms.technology:
 - devlang-csharp
@@ -31,23 +31,26 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4b4167f53d64f80fc4665a9f1171c050bf0fa433
+ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
+ms.openlocfilehash: 60607855e4a947af694c8ad8a9a3f0515ebb1700
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/28/2017
 
 ---
-# <a name="default-c-reference"></a>default (référence C#)
-Mot clé `default`.  
-  
- Le mot clé `default` peut être utilisé dans l’instruction `switch` ou dans du code générique :  
-  
--   [Instruction switch](../../../csharp/language-reference/keywords/switch.md) : spécifie l’étiquette par défaut.  
-  
--   [Code générique](../../../csharp/programming-guide/generics/default-keyword-in-generic-code.md) : spécifie la valeur par défaut du paramètre de type. Il s’agit de la valeur null pour les types référence et de zéro pour les types valeur.  
-  
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+
+# <a name="default-c-reference"></a><span data-ttu-id="da914-102">default (référence C#)</span><span class="sxs-lookup"><span data-stu-id="da914-102">default (C# Reference)</span></span>
+
+<span data-ttu-id="da914-103">Mot clé `default`.</span><span class="sxs-lookup"><span data-stu-id="da914-103">The `default` keyword.</span></span>
+
+<span data-ttu-id="da914-104">Le mot clé `default` peut être utilisé dans l’instruction `switch` ou dans une expression de valeur par défaut :</span><span class="sxs-lookup"><span data-stu-id="da914-104">The `default` keyword can be used in the `switch` statement or in a default value expression:</span></span>
+
+- <span data-ttu-id="da914-105">[Instruction switch](switch.md) : spécifie l’étiquette par défaut.</span><span class="sxs-lookup"><span data-stu-id="da914-105">[The switch statement](switch.md): Specifies the default label.</span></span>
+
+- <span data-ttu-id="da914-106">[Expressions de valeur par défaut](../../programming-guide/statements-expressions-operators/default-value-expressions.md) : produisent la valeur par défaut du type.</span><span class="sxs-lookup"><span data-stu-id="da914-106">[Default value expressions](../../programming-guide/statements-expressions-operators/default-value-expressions.md): Produces the default value of the type.</span></span> <span data-ttu-id="da914-107">Il s’agit de la valeur null pour les types référence, de zéro pour les types valeur et du modèle de bit 0 pour les structs.</span><span class="sxs-lookup"><span data-stu-id="da914-107">This will be null for reference types and zero for value types, and the 0 bit pattern for structs.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="da914-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="da914-108">See Also</span></span>
+
+ <span data-ttu-id="da914-109">[Informations de référence sur C#](../index.md) </span><span class="sxs-lookup"><span data-stu-id="da914-109">[C# Reference](../index.md) </span></span>  
+ <span data-ttu-id="da914-110">[Guide de programmation C#](../../programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="da914-110">[C# Programming Guide](../../programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="da914-111">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="da914-111">C# Keywords</span></span>](index.md)   
 

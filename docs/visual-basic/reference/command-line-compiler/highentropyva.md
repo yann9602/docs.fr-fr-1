@@ -28,30 +28,31 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 34987930b3afd6d95d12190172a5a5e512106f8a
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: ef482f142e07e96eabf93bd2223b0d24f351553b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="highentropyva-visual-basic"></a>/highentropyva (Visual Basic)
-Indique si un exécutable 64 bits ou qui est marquée par le [/Platform : anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) option du compilateur prend en charge l’entropie élevée adresse espace Layout Randomization (ASLR).  
+# <a name="highentropyva-visual-basic"></a><span data-ttu-id="336e1-102">/highentropyva (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="336e1-102">/highentropyva (Visual Basic)</span></span>
+<span data-ttu-id="336e1-103">Indique si un exécutable 64 bits ou qui est marquée par le [/Platform : anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) option du compilateur prend en charge l’entropie élevée adresse espace Layout Randomization (ASLR).</span><span class="sxs-lookup"><span data-stu-id="336e1-103">Indicates whether a 64-bit executable or an executable that's marked by the [/platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) compiler option supports high entropy Address Space Layout Randomization (ASLR).</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="336e1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="336e1-104">Syntax</span></span>  
   
 ```  
 /highentropyva[+ | -]  
 ```  
   
-## <a name="arguments"></a>Arguments  
- `+` &#124; `-`  
- Facultatif. L’option est désactivée par défaut ou si vous spécifiez `/highentropyva-`. L’option est activée si vous spécifiez `/highentropyva` ou `/highentropyva+`.  
+## <a name="arguments"></a><span data-ttu-id="336e1-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="336e1-105">Arguments</span></span>  
+ <span data-ttu-id="336e1-106">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="336e1-106">`+` &#124; `-`</span></span>  
+ <span data-ttu-id="336e1-107">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="336e1-107">Optional.</span></span> <span data-ttu-id="336e1-108">L’option est désactivée par défaut ou si vous spécifiez `/highentropyva-`.</span><span class="sxs-lookup"><span data-stu-id="336e1-108">The option is off by default or if you specify `/highentropyva-`.</span></span> <span data-ttu-id="336e1-109">L’option est activée si vous spécifiez `/highentropyva` ou `/highentropyva+`.</span><span class="sxs-lookup"><span data-stu-id="336e1-109">The option is on if you specify `/highentropyva` or `/highentropyva+`.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- Si vous spécifiez cette option, les versions compatibles du noyau Windows peuvent utiliser un degré d’entropie lorsque le noyau rend aléatoire la disposition de l’espace adresse d’un processus dans le cadre de l’ASLR. Si le noyau utilise un degré d’entropie, un plus grand nombre d’adresses peut être alloué à des régions de mémoire telles que les piles et les segments. Par conséquent, il est plus difficile de deviner l’emplacement d’une région de mémoire particulière.  
+## <a name="remarks"></a><span data-ttu-id="336e1-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="336e1-110">Remarks</span></span>  
+ <span data-ttu-id="336e1-111">Si vous spécifiez cette option, les versions compatibles du noyau Windows peuvent utiliser un degré d’entropie lorsque le noyau rend aléatoire la disposition de l’espace adresse d’un processus dans le cadre de l’ASLR.</span><span class="sxs-lookup"><span data-stu-id="336e1-111">If you specify this option, compatible versions of the Windows kernel can use higher degrees of entropy when the kernel randomizes the address space layout of a process as part of ASLR.</span></span> <span data-ttu-id="336e1-112">Si le noyau utilise un degré d’entropie, un plus grand nombre d’adresses peut être alloué à des régions de mémoire telles que les piles et les segments.</span><span class="sxs-lookup"><span data-stu-id="336e1-112">If the kernel uses higher degrees of entropy, a larger number of addresses can be allocated to memory regions such as stacks and heaps.</span></span> <span data-ttu-id="336e1-113">Par conséquent, il est plus difficile de deviner l’emplacement d’une région de mémoire particulière.</span><span class="sxs-lookup"><span data-stu-id="336e1-113">As a result, it is more difficult to guess the location of a particular memory region.</span></span>  
   
- Lorsque l’option est activée, l’exécutable cible et tous les modules sur dont il dépend doit être en mesure de traiter les valeurs de pointeur sont supérieures à 4 gigaoctets (Go) lorsque ces modules sont exécutent en tant que processus 64 bits.  
+ <span data-ttu-id="336e1-114">Lorsque l’option est activée, l’exécutable cible et tous les modules sur dont il dépend doit être en mesure de traiter les valeurs de pointeur sont supérieures à 4 gigaoctets (Go) lorsque ces modules sont exécutent en tant que processus 64 bits.</span><span class="sxs-lookup"><span data-stu-id="336e1-114">When the option is on, the target executable and any modules on which it depends must be able to handle pointer values that are larger than 4 gigabytes (GB) when those modules are running as 64-bit processes.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)   
- [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a><span data-ttu-id="336e1-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="336e1-115">See Also</span></span>  
+ <span data-ttu-id="336e1-116">[Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md) </span><span class="sxs-lookup"><span data-stu-id="336e1-116">[Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md) </span></span>  
+<span data-ttu-id="336e1-117"> [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)</span><span class="sxs-lookup"><span data-stu-id="336e1-117"> [Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)</span></span>

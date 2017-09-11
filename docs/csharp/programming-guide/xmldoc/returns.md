@@ -38,26 +38,26 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ltreturnsgt-c-programming-guide"></a>&lt;returns&gt; (Guide de programmation C#)
-## <a name="syntax"></a>Syntaxe  
+# <a name="ltreturnsgt-c-programming-guide"></a><span data-ttu-id="26b18-102">&lt;returns&gt; (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="26b18-102">&lt;returns&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="26b18-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="26b18-103">Syntax</span></span>  
   
 ```xml  
 <returns>description</returns>  
 ```  
   
-#### <a name="parameters"></a>Paramètres  
+#### <a name="parameters"></a><span data-ttu-id="26b18-104">Paramètres</span><span class="sxs-lookup"><span data-stu-id="26b18-104">Parameters</span></span>  
  `description`  
- Description de la valeur de retour.  
+ <span data-ttu-id="26b18-105">Description de la valeur de retour.</span><span class="sxs-lookup"><span data-stu-id="26b18-105">A description of the return value.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- La balise \<returns> doit être utilisée dans le commentaire relatif à une déclaration de méthode pour décrire la valeur de retour.  
+## <a name="remarks"></a><span data-ttu-id="26b18-106">Remarques</span><span class="sxs-lookup"><span data-stu-id="26b18-106">Remarks</span></span>  
+ <span data-ttu-id="26b18-107">La balise \<returns> doit être utilisée dans le commentaire relatif à une déclaration de méthode pour décrire la valeur de retour.</span><span class="sxs-lookup"><span data-stu-id="26b18-107">The \<returns> tag should be used in the comment for a method declaration to describe the return value.</span></span>  
   
- Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation dans un fichier.  
+ <span data-ttu-id="26b18-108">Compilez avec [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pour traiter les commentaires de documentation dans un fichier.</span><span class="sxs-lookup"><span data-stu-id="26b18-108">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]  
+## <a name="example"></a><span data-ttu-id="26b18-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="26b18-109">Example</span></span>  
+ <span data-ttu-id="26b18-110">[!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="26b18-110">[!code-cs[csProgGuideDocComments#10](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/returns_1.cs)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Balises recommandées pour les commentaires de documentation](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a><span data-ttu-id="26b18-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26b18-111">See Also</span></span>  
+ <span data-ttu-id="26b18-112">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="26b18-112">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="26b18-113">Balises recommandées pour les commentaires de documentation</span><span class="sxs-lookup"><span data-stu-id="26b18-113">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
 

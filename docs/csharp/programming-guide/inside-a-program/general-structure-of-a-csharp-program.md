@@ -34,30 +34,30 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="general-structure-of-a-c-program-c-programming-guide"></a>Structure générale d'un programme C# (guide de programmation C#)
-Les programmes C# se composent d’un ou plusieurs fichiers. Chaque fichier peut contenir zéro ou plusieurs espaces de noms. Un espace de noms peut contenir des types tels que des classes, des structs, des interfaces, des énumérations et des délégués, en plus d’autres espaces de noms. Voici la structure d’un programme C# qui contient tous ces éléments.  
+# <a name="general-structure-of-a-c-program-c-programming-guide"></a><span data-ttu-id="602c2-102">Structure générale d'un programme C# (guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="602c2-102">General Structure of a C# Program (C# Programming Guide)</span></span>
+<span data-ttu-id="602c2-103">Les programmes C# se composent d’un ou plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="602c2-103">C# programs can consist of one or more files.</span></span> <span data-ttu-id="602c2-104">Chaque fichier peut contenir zéro ou plusieurs espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="602c2-104">Each file can contain zero or more namespaces.</span></span> <span data-ttu-id="602c2-105">Un espace de noms peut contenir des types tels que des classes, des structs, des interfaces, des énumérations et des délégués, en plus d’autres espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="602c2-105">A namespace can contain types such as classes, structs, interfaces, enumerations, and delegates, in addition to other namespaces.</span></span> <span data-ttu-id="602c2-106">Voici la structure d’un programme C# qui contient tous ces éléments.</span><span class="sxs-lookup"><span data-stu-id="602c2-106">The following is the skeleton of a C# program that contains all of these elements.</span></span>  
   
- [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
+ <span data-ttu-id="602c2-107">[!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="602c2-107">[!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- Pour plus d'informations :  
+## <a name="related-sections"></a><span data-ttu-id="602c2-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="602c2-108">Related Sections</span></span>  
+ <span data-ttu-id="602c2-109">Pour plus d'informations :</span><span class="sxs-lookup"><span data-stu-id="602c2-109">For more information:</span></span>  
   
--   [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+-   [<span data-ttu-id="602c2-110">Classes</span><span class="sxs-lookup"><span data-stu-id="602c2-110">Classes</span></span>](../../../csharp/programming-guide/classes-and-structs/classes.md)  
   
--   [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+-   [<span data-ttu-id="602c2-111">Structures</span><span class="sxs-lookup"><span data-stu-id="602c2-111">Structs</span></span>](../../../csharp/programming-guide/classes-and-structs/structs.md)  
   
--   [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)  
+-   [<span data-ttu-id="602c2-112">Espaces de noms</span><span class="sxs-lookup"><span data-stu-id="602c2-112">Namespaces</span></span>](../../../csharp/programming-guide/namespaces/index.md)  
   
--   [Interfaces](../../../csharp/programming-guide/interfaces/index.md)  
+-   [<span data-ttu-id="602c2-113">Interfaces</span><span class="sxs-lookup"><span data-stu-id="602c2-113">Interfaces</span></span>](../../../csharp/programming-guide/interfaces/index.md)  
   
--   [Délégués](../../../csharp/programming-guide/delegates/index.md)  
+-   [<span data-ttu-id="602c2-114">Délégués</span><span class="sxs-lookup"><span data-stu-id="602c2-114">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="602c2-115">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="602c2-115">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [À l’intérieur d’un programme C#](../../../csharp/programming-guide/inside-a-program/index.md)   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [\<paveover>Exemples d’applications Visual C#](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
+## <a name="see-also"></a><span data-ttu-id="602c2-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="602c2-116">See Also</span></span>  
+ <span data-ttu-id="602c2-117">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="602c2-117">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="602c2-118">[À l’intérieur d’un programme C#](../../../csharp/programming-guide/inside-a-program/index.md) </span><span class="sxs-lookup"><span data-stu-id="602c2-118">[Inside a C# Program](../../../csharp/programming-guide/inside-a-program/index.md) </span></span>  
+ <span data-ttu-id="602c2-119">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="602c2-119">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ [<span data-ttu-id="602c2-120">\<paveover>Exemples d’applications Visual C#</span><span class="sxs-lookup"><span data-stu-id="602c2-120">\<paveover>C# Sample Applications</span></span>](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
 

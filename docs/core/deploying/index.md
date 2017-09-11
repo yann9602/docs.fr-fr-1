@@ -17,81 +17,67 @@ ms.lasthandoff: 07/05/2017
 
 ---
 
-<a id="net-core-application-deployment" class="xliff"></a>
+# <a name="net-core-application-deployment"></a><span data-ttu-id="2ff0d-104">Déploiement d’applications .NET Core</span><span class="sxs-lookup"><span data-stu-id="2ff0d-104">.NET Core application deployment</span></span>
 
-# Déploiement d’applications .NET Core
+<span data-ttu-id="2ff0d-105">Vous pouvez créer deux types de déploiement pour les applications .NET Core :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-105">You can create two types of deployments for .NET Core applications:</span></span>
 
-Vous pouvez créer deux types de déploiement pour les applications .NET Core :
+- <span data-ttu-id="2ff0d-106">Déploiement dépendant du framework.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-106">Framework-dependent deployment.</span></span> <span data-ttu-id="2ff0d-107">Comme son nom l’indique, un déploiement dépendant du framework s’appuie sur la présence d’une version partagée à l’échelle du système de .NET Core sur le système cible.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-107">As the name implies, framework-dependent deployment (FDD) relies on the presence of a shared system-wide version of .NET Core on the target system.</span></span> <span data-ttu-id="2ff0d-108">Comme .NET Core est déjà présent, votre application est également portable entre des installations de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-108">Because .NET Core is already present, your app is also portable between installations of .NET Core.</span></span> <span data-ttu-id="2ff0d-109">Votre application contient seulement son propre code et les dépendances tierces qui sont en dehors des bibliothèques .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-109">Your app contains only its own code and any third-party dependencies that are outside of the .NET Core libraries.</span></span> <span data-ttu-id="2ff0d-110">Les déploiements dépendant du framework contiennent des fichiers *.dll* qui peuvent être lancés avec [l’utilitaire dotnet](../tools/dotnet.md) à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-110">FDDs contain *.dll* files that can be launched by using the [dotnet utility](../tools/dotnet.md) from the command line.</span></span> <span data-ttu-id="2ff0d-111">Par exemple, `dotnet app.dll` exécute une application nommée `app`.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-111">For example, `dotnet app.dll` runs an application named `app`.</span></span>
 
-- Déploiement dépendant du framework. Comme son nom l’indique, un déploiement dépendant du framework s’appuie sur la présence d’une version partagée à l’échelle du système de .NET Core sur le système cible. Comme .NET Core est déjà présent, votre application est également portable entre des installations de .NET Core. Votre application contient seulement son propre code et les dépendances tierces qui sont en dehors des bibliothèques .NET Core. Les déploiements dépendant du framework contiennent des fichiers *.dll* qui peuvent être lancés avec [l’utilitaire dotnet](../tools/dotnet.md) à partir de la ligne de commande. Par exemple, `dotnet app.dll` exécute une application nommée `app`.
+- <span data-ttu-id="2ff0d-112">Déploiement autonome.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-112">Self-contained deployment.</span></span> <span data-ttu-id="2ff0d-113">Contrairement à un déploiement dépendant du framework, un déploiement autonome ne s’appuie sur la présence d’aucun composant partagé sur le système cible.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-113">Unlike FDD, a self-contained deployment (SCD) doesn't rely on the presence of shared components on the target system.</span></span> <span data-ttu-id="2ff0d-114">Tous les composants, notamment les bibliothèques .NET Core et le runtime .NET Core, sont inclus avec l’application et sont isolées des autres applications .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-114">All components, including both the .NET Core libraries and the .NET Core runtime, are included with the application and are isolated from other .NET Core applications.</span></span> <span data-ttu-id="2ff0d-115">Les déploiements autonomes incluent un fichier exécutable (comme *app.exe* sur les plateformes Windows pour une application nommée `app`), qui est une version renommée de l’hôte .NET Core spécifique à la plateforme, et un fichier *.dll* (comme *app.dll*), qui est l’application elle-même.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-115">SCDs include an executable (such as *app.exe* on Windows platforms for an application named `app`), which is  a renamed version of the platform-specific .NET Core host, and a *.dll* file (such as *app.dll*), which is the actual application.</span></span>
 
-- Déploiement autonome. Contrairement à un déploiement dépendant du framework, un déploiement autonome ne s’appuie sur la présence d’aucun composant partagé sur le système cible. Tous les composants, notamment les bibliothèques .NET Core et le runtime .NET Core, sont inclus avec l’application et sont isolées des autres applications .NET Core. Les déploiements autonomes incluent un fichier exécutable (comme *app.exe* sur les plateformes Windows pour une application nommée `app`), qui est une version renommée de l’hôte .NET Core spécifique à la plateforme, et un fichier *.dll* (comme *app.dll*), qui est l’application elle-même.
+## <a name="framework-dependent-deployments-fdd"></a><span data-ttu-id="2ff0d-116">Déploiements dépendant du framework</span><span class="sxs-lookup"><span data-stu-id="2ff0d-116">Framework-dependent deployments (FDD)</span></span>
 
-<a id="framework-dependent-deployments-fdd" class="xliff"></a>
+<span data-ttu-id="2ff0d-117">Pour un déploiement dépendant du framework, vous déployez seulement votre application et les dépendances tierces.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-117">For an FDD, you deploy only your app and any third-party dependencies.</span></span> <span data-ttu-id="2ff0d-118">Vous ne devez pas déployer .NET Core car votre application utilise la version de .NET Core qui est présente sur le système cible.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-118">You don't have to deploy .NET Core, since your app will use the version of .NET Core that's present on the target system.</span></span> <span data-ttu-id="2ff0d-119">Il s’agit du modèle de déploiement par défaut pour les applications .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-119">This is the default deployment model for .NET Core apps.</span></span>
 
-## Déploiements dépendant du framework
+### <a name="why-create-a-framework-dependent-deployment"></a><span data-ttu-id="2ff0d-120">Pourquoi créer un déploiement dépendant du framework ?</span><span class="sxs-lookup"><span data-stu-id="2ff0d-120">Why create a framework-dependent deployment?</span></span>
 
-Pour un déploiement dépendant du framework, vous déployez seulement votre application et les dépendances tierces. Vous ne devez pas déployer .NET Core car votre application utilise la version de .NET Core qui est présente sur le système cible. Il s’agit du modèle de déploiement par défaut pour les applications .NET Core.
+<span data-ttu-id="2ff0d-121">Un déploiement dépendant du framework présente plusieurs avantages :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-121">Deploying an FDD has a number of advantages:</span></span>
 
-<a id="why-create-a-framework-dependent-deployment" class="xliff"></a>
+- <span data-ttu-id="2ff0d-122">Vous n’avez pas à définir à l’avance les systèmes d’exploitation cible sur lesquels votre application .NET Core s’exécutera.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-122">You don't have to define the target operating systems that your .NET Core app will run on in advance.</span></span> <span data-ttu-id="2ff0d-123">Comme .NET Core utilise un format de fichier PE commun pour les fichiers exécutables et les bibliothèques quel que soit le système d’exploitation, .NET Core peuvent exécuter votre application quel que soit le système d’exploitation sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-123">Because .NET Core uses a common PE file format for executables and libraries regardless of operating system, .NET Core can execute your app regardless of the underlying operating system.</span></span> <span data-ttu-id="2ff0d-124">Pour plus d’informations sur le format de fichier PE, consultez [Format de fichier d’assembly .NET](../../standard/assembly-format.md).</span><span class="sxs-lookup"><span data-stu-id="2ff0d-124">For more information on the PE file format, see [.NET Assembly File Format](../../standard/assembly-format.md).</span></span>
 
-### Pourquoi créer un déploiement dépendant du framework ?
+- <span data-ttu-id="2ff0d-125">Votre package de déploiement est de petite taille.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-125">The size of your deployment package is small.</span></span> <span data-ttu-id="2ff0d-126">Vous déployez seulement votre application et ses dépendances, et non pas .NET Core lui-même.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-126">You only deploy your app and its dependencies, not .NET Core itself.</span></span>
 
-Un déploiement dépendant du framework présente plusieurs avantages :
+- <span data-ttu-id="2ff0d-127">Plusieurs applications utilisent la même installation de .NET Core, ce qui réduit l’utilisation de l’espace disque et de la mémoire sur les systèmes hôtes.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-127">Multiple apps use the same .NET Core installation, which reduces both disk space and memory usage on host systems.</span></span>
 
-- Vous n’avez pas à définir à l’avance les systèmes d’exploitation cible sur lesquels votre application .NET Core s’exécutera. Comme .NET Core utilise un format de fichier PE commun pour les fichiers exécutables et les bibliothèques quel que soit le système d’exploitation, .NET Core peuvent exécuter votre application quel que soit le système d’exploitation sous-jacent. Pour plus d’informations sur le format de fichier PE, consultez [Format de fichier d’assembly .NET](../../standard/assembly-format.md).
+<span data-ttu-id="2ff0d-128">Il existe également quelques inconvénients :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-128">There are also a few disadvantages:</span></span>
 
-- Votre package de déploiement est de petite taille. Vous déployez seulement votre application et ses dépendances, et non pas .NET Core lui-même.
+- <span data-ttu-id="2ff0d-129">Votre application peut s’exécuter seulement si la version de .NET Core que vous ciblez, ou une version ultérieure, est déjà installée sur le système hôte.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-129">Your app can run only if the version of .NET Core that you target, or a later version, is already installed on the host system.</span></span>
 
-- Plusieurs applications utilisent la même installation de .NET Core, ce qui réduit l’utilisation de l’espace disque et de la mémoire sur les systèmes hôtes.
+- <span data-ttu-id="2ff0d-130">Il est possible que le runtime et les bibliothèques .NET Core changent sans que vous le sachiez dans les versions futures.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-130">It's possible for the .NET Core runtime and libraries to change without your knowledge in future releases.</span></span> <span data-ttu-id="2ff0d-131">Dans de rares cas, ceci peut changer le comportement de votre application.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-131">In rare cases, this may change the behavior of your app.</span></span>
 
-Il existe également quelques inconvénients :
+## <a name="self-contained-deployments-scd"></a><span data-ttu-id="2ff0d-132">Déploiements autonomes</span><span class="sxs-lookup"><span data-stu-id="2ff0d-132">Self-contained deployments (SCD)</span></span>
 
-- Votre application peut s’exécuter seulement si la version de .NET Core que vous ciblez, ou une version ultérieure, est déjà installée sur le système hôte.
+<span data-ttu-id="2ff0d-133">Pour un déploiement autonome, vous déployez votre application et les dépendances tierces requises, ainsi que la version de .NET Core utilisée pour générer l’application.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-133">For a self-contained deployment, you deploy your app and any required third-party dependencies along with the version of .NET Core that you used to build the app.</span></span> <span data-ttu-id="2ff0d-134">La création d’un déploiement autonome n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) sur les différentes plateformes. Ces services doivent donc être présents avant l’exécution de l’application.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-134">Creating an SCD doesn't include the [native dependencies of .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) on various platforms, so these must be present before the app runs.</span></span>
 
-- Il est possible que le runtime et les bibliothèques .NET Core changent sans que vous le sachiez dans les versions futures. Dans de rares cas, ceci peut changer le comportement de votre application.
+### <a name="why-deploy-a-self-contained-deployment"></a><span data-ttu-id="2ff0d-135">Pourquoi déployer un déploiement autonome ?</span><span class="sxs-lookup"><span data-stu-id="2ff0d-135">Why deploy a self-contained deployment?</span></span>
 
-<a id="self-contained-deployments-scd" class="xliff"></a>
+<span data-ttu-id="2ff0d-136">Le déploiement d’un déploiement autonome a deux avantages majeurs :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-136">Deploying a Self-contained deployment has two major advantages:</span></span>
 
-## Déploiements autonomes
+- <span data-ttu-id="2ff0d-137">Vous avez le contrôle exclusif de la version de .NET Core qui est déployée avec votre application.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-137">You have sole control of the version of .NET Core that is deployed with your app.</span></span> <span data-ttu-id="2ff0d-138">Vous pouvez vous-même assurer toute la maintenance de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-138">.NET Core can be serviced only by you.</span></span>
 
-Pour un déploiement autonome, vous déployez votre application et les dépendances tierces requises, ainsi que la version de .NET Core utilisée pour générer l’application. La création d’un déploiement autonome n’inclut pas les [dépendances natives de .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) sur les différentes plateformes. Ces services doivent donc être présents avant l’exécution de l’application.
+- <span data-ttu-id="2ff0d-139">Vous avez la garantie que le système cible peut exécuter votre application .NET Core puisque vous fournissez la version du .NET Core sur laquelle elle est exécutée.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-139">You can be assured that the target system can run your .NET Core app, since you're providing the version of .NET Core that it will run on.</span></span>
 
-<a id="why-deploy-a-self-contained-deployment" class="xliff"></a>
+<span data-ttu-id="2ff0d-140">Elle a également plusieurs inconvénients :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-140">It also has a number of disadvantages:</span></span>
 
-### Pourquoi déployer un déploiement autonome ?
+- <span data-ttu-id="2ff0d-141">Comme .NET Core est inclus dans votre package de déploiement, vous devez choisir à l’avance les plateformes cibles pour lesquels vous générez des packages de déploiement.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-141">Because .NET Core is included in your deployment package, you must select the target platforms for which you build deployment packages in advance.</span></span>
 
-Le déploiement d’un déploiement autonome a deux avantages majeurs :
+- <span data-ttu-id="2ff0d-142">La taille de votre package de déploiement est relativement importante car vous devez inclure .NET Core ainsi que votre application et ses dépendances tierces.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-142">The size of your deployment package is relatively large, since you have to include .NET Core as well as your app and its third-party dependencies.</span></span>
 
-- Vous avez le contrôle exclusif de la version de .NET Core qui est déployée avec votre application. Vous pouvez vous-même assurer toute la maintenance de .NET Core.
+- <span data-ttu-id="2ff0d-143">Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="2ff0d-143">Deploying numerous self-contained .NET Core apps to a system can consume significant amounts of disk space, since each app duplicates .NET Core files.</span></span>
 
-- Vous avez la garantie que le système cible peut exécuter votre application .NET Core puisque vous fournissez la version du .NET Core sur laquelle elle est exécutée.
+## <a name="step-by-step-examples"></a><span data-ttu-id="2ff0d-144">Exemples étape par étape</span><span class="sxs-lookup"><span data-stu-id="2ff0d-144">Step-by-step examples</span></span>
 
-Elle a également plusieurs inconvénients :
+<span data-ttu-id="2ff0d-145">Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec les outils de l’interface CLI, consultez [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md).</span><span class="sxs-lookup"><span data-stu-id="2ff0d-145">For step-by-step examples of deploying .NET Core apps with CLI tools, see [Deploying .NET Core Apps with CLI Tools](deploy-with-cli.md).</span></span> <span data-ttu-id="2ff0d-146">Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec Visual Studio, consultez [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md).</span><span class="sxs-lookup"><span data-stu-id="2ff0d-146">For step-by-step examples of deploying .NET Core apps with Visual Studio, see [Deploying .NET Core Apps with Visual Studio](deploy-with-vs.md).</span></span> <span data-ttu-id="2ff0d-147">Chaque rubrique contient des exemples des déploiements suivants :</span><span class="sxs-lookup"><span data-stu-id="2ff0d-147">Each topic includes examples of the following deployments:</span></span>
 
-- Comme .NET Core est inclus dans votre package de déploiement, vous devez choisir à l’avance les plateformes cibles pour lesquels vous générez des packages de déploiement.
+- <span data-ttu-id="2ff0d-148">Déploiement dépendant du framework</span><span class="sxs-lookup"><span data-stu-id="2ff0d-148">Framework-dependent deployment</span></span>
+- <span data-ttu-id="2ff0d-149">Déploiement dépendant du framework avec des dépendances tierces</span><span class="sxs-lookup"><span data-stu-id="2ff0d-149">Framework-dependent deployment with third-party dependencies</span></span>
+- <span data-ttu-id="2ff0d-150">Déploiement autonome</span><span class="sxs-lookup"><span data-stu-id="2ff0d-150">Self-contained deployment</span></span>
+- <span data-ttu-id="2ff0d-151">Déploiement autonome avec des dépendances tierces</span><span class="sxs-lookup"><span data-stu-id="2ff0d-151">Self-contained deployment with third-party dependencies</span></span>
 
-- La taille de votre package de déploiement est relativement importante car vous devez inclure .NET Core ainsi que votre application et ses dépendances tierces.
+# <a name="see-also"></a><span data-ttu-id="2ff0d-152">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2ff0d-152">See also</span></span>
 
-- Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.
-
-<a id="step-by-step-examples" class="xliff"></a>
-
-## Exemples étape par étape
-
-Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec les outils de l’interface CLI, consultez [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md). Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec Visual Studio, consultez [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md). Chaque rubrique contient des exemples des déploiements suivants :
-
-- Déploiement dépendant du framework
-- Déploiement dépendant du framework avec des dépendances tierces
-- Déploiement autonome
-- Déploiement autonome avec des dépendances tierces
-
-<a id="see-also" class="xliff"></a>
-
-# Voir aussi
-
-[Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md)   
-[Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md)   
-[Packages, métapackages et frameworks](../packages.md)   
-[Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
+<span data-ttu-id="2ff0d-153">[Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md) </span><span class="sxs-lookup"><span data-stu-id="2ff0d-153">[Deploying .NET Core Apps with CLI Tools](deploy-with-cli.md) </span></span>  
+<span data-ttu-id="2ff0d-154">[Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md) </span><span class="sxs-lookup"><span data-stu-id="2ff0d-154">[Deploying .NET Core Apps with Visual Studio](deploy-with-vs.md) </span></span>  
+<span data-ttu-id="2ff0d-155">[Packages, métapackages et frameworks](../packages.md) </span><span class="sxs-lookup"><span data-stu-id="2ff0d-155">[Packages, Metapackages and Frameworks](../packages.md) </span></span>  
+[<span data-ttu-id="2ff0d-156">Catalogue d’identificateurs de runtime (RID) .NET Core</span><span class="sxs-lookup"><span data-stu-id="2ff0d-156">.NET Core Runtime IDentifier (RID) catalog</span></span>](../rid-catalog.md)
 

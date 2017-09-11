@@ -36,75 +36,75 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a88a7172f48012d12bf0bb3089bffb510e786c3b
+ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
+ms.openlocfilehash: a645a71dd0489d6bf2cc0cd4fe5898eb7293f13c
 ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="how-to-query-a-database-by-using-linq-visual-basic"></a>Comment : interroger une base de données à l'aide de LINQ (Visual Basic)
-Language-Integrated Query (LINQ) facilite l’accès aux informations de base de données et exécuter des requêtes.  
+# <a name="how-to-query-a-database-by-using-linq-visual-basic"></a><span data-ttu-id="871d7-102">Comment : interroger une base de données à l'aide de LINQ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="871d7-102">How to: Query a Database by Using LINQ (Visual Basic)</span></span>
+<span data-ttu-id="871d7-103">Language-Integrated Query (LINQ) facilite l’accès aux informations de base de données et exécuter des requêtes.</span><span class="sxs-lookup"><span data-stu-id="871d7-103">Language-Integrated Query (LINQ) makes it easy to access database information and execute queries.</span></span>  
   
- L’exemple suivant montre comment créer une nouvelle application qui effectue des requêtes sur une base de données SQL Server.  
+ <span data-ttu-id="871d7-104">L’exemple suivant montre comment créer une nouvelle application qui effectue des requêtes sur une base de données SQL Server.</span><span class="sxs-lookup"><span data-stu-id="871d7-104">The following example shows how to create a new application that performs queries against a SQL Server database.</span></span>  
   
- Les exemples de cette rubrique utilisent la base de données Northwind. Si vous n’avez pas la base de données Northwind sur votre ordinateur de développement, vous pouvez le télécharger à partir de la [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=98088) site Web. Pour obtenir des instructions, consultez la page [téléchargement d’exemples de bases de données](https://msdn.microsoft.com/library/bb399411).  
+ <span data-ttu-id="871d7-105">Les exemples de cette rubrique utilisent la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="871d7-105">The examples in this topic use the Northwind sample database.</span></span> <span data-ttu-id="871d7-106">Si vous n’avez pas la base de données Northwind sur votre ordinateur de développement, vous pouvez le télécharger à partir de la [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=98088) site Web.</span><span class="sxs-lookup"><span data-stu-id="871d7-106">If you do not have the Northwind sample database on your development computer, you can download it from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=98088) Web site.</span></span> <span data-ttu-id="871d7-107">Pour obtenir des instructions, consultez la page [téléchargement d’exemples de bases de données](https://msdn.microsoft.com/library/bb399411).</span><span class="sxs-lookup"><span data-stu-id="871d7-107">For instructions, see [Downloading Sample Databases](https://msdn.microsoft.com/library/bb399411).</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="to-create-a-connection-to-a-database"></a>Pour créer une connexion à une base de données  
+## <a name="to-create-a-connection-to-a-database"></a><span data-ttu-id="871d7-108">Pour créer une connexion à une base de données</span><span class="sxs-lookup"><span data-stu-id="871d7-108">To create a connection to a database</span></span>  
   
-1.  Dans Visual Studio, ouvrez **Explorateur de serveurs**/**Database Explorer** en cliquant sur **Explorateur de serveurs**/**Explorateur de base de données** sur la **affichage** menu.  
+1.  <span data-ttu-id="871d7-109">Dans Visual Studio, ouvrez **Explorateur de serveurs**/**Database Explorer** en cliquant sur **Explorateur de serveurs**/**Explorateur de base de données** sur la **affichage** menu.</span><span class="sxs-lookup"><span data-stu-id="871d7-109">In Visual Studio, open **Server Explorer**/**Database Explorer** by clicking **Server Explorer**/**Database Explorer** on the **View** menu.</span></span>  
   
-2.  Avec le bouton droit **des connexions de données** dans **Explorateur de serveurs**/**Database Explorer** , puis **ajouter une connexion**.  
+2.  <span data-ttu-id="871d7-110">Avec le bouton droit **des connexions de données** dans **Explorateur de serveurs**/**Database Explorer** , puis **ajouter une connexion**.</span><span class="sxs-lookup"><span data-stu-id="871d7-110">Right-click **Data Connections** in **Server Explorer**/**Database Explorer** and then click **Add Connection**.</span></span>  
   
-3.  Spécifiez une connexion valide à la base de données Northwind.  
+3.  <span data-ttu-id="871d7-111">Spécifiez une connexion valide à la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="871d7-111">Specify a valid connection to the Northwind sample database.</span></span>  
   
-## <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Pour ajouter un projet contenant un fichier LINQ to SQL  
+## <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a><span data-ttu-id="871d7-112">Pour ajouter un projet contenant un fichier LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="871d7-112">To add a project that contains a LINQ to SQL file</span></span>  
   
-1.  Dans Visual Studio, sur le **fichier** menu, pointez sur **nouveau** , puis **projet**. Sélectionnez Visual Basic **Application Windows Forms** comme type de projet.  
+1.  <span data-ttu-id="871d7-113">Dans Visual Studio, sur le **fichier** menu, pointez sur **nouveau** , puis **projet**.</span><span class="sxs-lookup"><span data-stu-id="871d7-113">In Visual Studio, on the **File** menu, point to **New** and then click **Project**.</span></span> <span data-ttu-id="871d7-114">Sélectionnez Visual Basic **Application Windows Forms** comme type de projet.</span><span class="sxs-lookup"><span data-stu-id="871d7-114">Select Visual Basic **Windows Forms Application** as the project type.</span></span>  
   
-2.  Dans le menu **Projet** , cliquez sur **Ajouter un nouvel élément**. Sélectionnez le **Classes LINQ to SQL** modèle d’élément.  
+2.  <span data-ttu-id="871d7-115">Dans le menu **Projet** , cliquez sur **Ajouter un nouvel élément**.</span><span class="sxs-lookup"><span data-stu-id="871d7-115">On the **Project** menu, click **Add New Item**.</span></span> <span data-ttu-id="871d7-116">Sélectionnez le **Classes LINQ to SQL** modèle d’élément.</span><span class="sxs-lookup"><span data-stu-id="871d7-116">Select the **LINQ to SQL Classes** item template.</span></span>  
   
-3.  Nommez le fichier `northwind.dbml`. Cliquez sur **Ajouter**. Le Concepteur Objet/Relationnel (Concepteur O/R) est ouverte pour le fichier northwind.dbml.  
+3.  <span data-ttu-id="871d7-117">Nommez le fichier `northwind.dbml`.</span><span class="sxs-lookup"><span data-stu-id="871d7-117">Name the file `northwind.dbml`.</span></span> <span data-ttu-id="871d7-118">Cliquez sur **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="871d7-118">Click **Add**.</span></span> <span data-ttu-id="871d7-119">Le Concepteur Objet/Relationnel (Concepteur O/R) est ouverte pour le fichier northwind.dbml.</span><span class="sxs-lookup"><span data-stu-id="871d7-119">The Object Relational Designer (O/R Designer) is opened for the northwind.dbml file.</span></span>  
   
-## <a name="to-add-tables-to-query-to-the-or-designer"></a>Pour ajouter des tables à interroger au Concepteur O/R  
+## <a name="to-add-tables-to-query-to-the-or-designer"></a><span data-ttu-id="871d7-120">Pour ajouter des tables à interroger au Concepteur O/R</span><span class="sxs-lookup"><span data-stu-id="871d7-120">To add tables to query to the O/R Designer</span></span>  
   
-1.  Dans **Explorateur de serveurs**/**Database Explorer**, développez la connexion à la base de données Northwind. Développez le **Tables** dossier.  
+1.  <span data-ttu-id="871d7-121">Dans **Explorateur de serveurs**/**Database Explorer**, développez la connexion à la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="871d7-121">In **Server Explorer**/**Database Explorer**, expand the connection to the Northwind database.</span></span> <span data-ttu-id="871d7-122">Développez le **Tables** dossier.</span><span class="sxs-lookup"><span data-stu-id="871d7-122">Expand the **Tables** folder.</span></span>  
   
-     Si vous avez fermé le Concepteur O/R, vous pouvez le rouvrir en double-cliquant sur le fichier northwind.dbml que vous avez ajouté précédemment.  
+     <span data-ttu-id="871d7-123">Si vous avez fermé le Concepteur O/R, vous pouvez le rouvrir en double-cliquant sur le fichier northwind.dbml que vous avez ajouté précédemment.</span><span class="sxs-lookup"><span data-stu-id="871d7-123">If you have closed the O/R Designer, you can reopen it by double-clicking the northwind.dbml file that you added earlier.</span></span>  
   
-2.  Cliquez sur la table Customers et faites-la glisser vers le volet gauche du concepteur. Cliquez sur la table Orders et faites-le glisser vers le volet gauche du concepteur.  
+2.  <span data-ttu-id="871d7-124">Cliquez sur la table Customers et faites-la glisser vers le volet gauche du concepteur.</span><span class="sxs-lookup"><span data-stu-id="871d7-124">Click the Customers table and drag it to the left pane of the designer.</span></span> <span data-ttu-id="871d7-125">Cliquez sur la table Orders et faites-le glisser vers le volet gauche du concepteur.</span><span class="sxs-lookup"><span data-stu-id="871d7-125">Click the Orders table and drag it to the left pane of the designer.</span></span>  
   
-     Le concepteur crée de nouveaux `Customer` et `Order` objets de votre projet. Notez que le concepteur détecte les relations entre les tables automatiquement et crée des propriétés pour les objets enfants. Par exemple, IntelliSense indiquera que la `Customer` objet a un `Orders` propriété pour toutes les commandes associées à ce client.  
+     <span data-ttu-id="871d7-126">Le concepteur crée de nouveaux `Customer` et `Order` objets de votre projet.</span><span class="sxs-lookup"><span data-stu-id="871d7-126">The designer creates new `Customer` and `Order` objects for your project.</span></span> <span data-ttu-id="871d7-127">Notez que le concepteur détecte les relations entre les tables automatiquement et crée des propriétés pour les objets enfants.</span><span class="sxs-lookup"><span data-stu-id="871d7-127">Notice that the designer automatically detects relationships between the tables and creates child properties for related objects.</span></span> <span data-ttu-id="871d7-128">Par exemple, IntelliSense indiquera que la `Customer` objet a un `Orders` propriété pour toutes les commandes associées à ce client.</span><span class="sxs-lookup"><span data-stu-id="871d7-128">For example, IntelliSense will show that the `Customer` object has an `Orders` property for all orders related to that customer.</span></span>  
   
-3.  Enregistrez vos modifications et fermez le concepteur.  
+3.  <span data-ttu-id="871d7-129">Enregistrez vos modifications et fermez le concepteur.</span><span class="sxs-lookup"><span data-stu-id="871d7-129">Save your changes and close the designer.</span></span>  
   
-4.  Enregistrez votre projet.  
+4.  <span data-ttu-id="871d7-130">Enregistrez votre projet.</span><span class="sxs-lookup"><span data-stu-id="871d7-130">Save your project.</span></span>  
   
-## <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Pour ajouter du code pour interroger la base de données et afficher les résultats  
+## <a name="to-add-code-to-query-the-database-and-display-the-results"></a><span data-ttu-id="871d7-131">Pour ajouter du code pour interroger la base de données et afficher les résultats</span><span class="sxs-lookup"><span data-stu-id="871d7-131">To add code to query the database and display the results</span></span>  
   
-1.  À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.DataGridView>contrôle sur le formulaire Windows par défaut pour votre projet, Form1.</xref:System.Windows.Forms.DataGridView>  
+1.  <span data-ttu-id="871d7-132">À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.DataGridView>contrôle sur le formulaire Windows par défaut pour votre projet, Form1.</xref:System.Windows.Forms.DataGridView></span><span class="sxs-lookup"><span data-stu-id="871d7-132">From the **Toolbox**, drag a <xref:System.Windows.Forms.DataGridView> control onto the default Windows Form for your project, Form1.</span></span>  
   
-2.  Double-cliquez sur Form1 pour ajouter du code pour le `Load` événement du formulaire.  
+2.  <span data-ttu-id="871d7-133">Double-cliquez sur Form1 pour ajouter du code pour le `Load` événement du formulaire.</span><span class="sxs-lookup"><span data-stu-id="871d7-133">Double-click Form1 to add code to the `Load` event of the form.</span></span>  
   
-3.  Lorsque vous avez ajouté des tables au Concepteur O/R, le concepteur a ajouté un <xref:System.Data.Linq.DataContext>objet pour votre projet.</xref:System.Data.Linq.DataContext> Cet objet contient le code dont vous devez disposer pour accéder à ces tables, en plus des collections et objets individuels de chaque table. Le <xref:System.Data.Linq.DataContext>objet pour votre projet est nommé d’après le nom de votre fichier .dbml.</xref:System.Data.Linq.DataContext> Pour ce projet, le <xref:System.Data.Linq.DataContext>est nommé `northwindDataContext`.</xref:System.Data.Linq.DataContext>  
+3.  <span data-ttu-id="871d7-134">Lorsque vous avez ajouté des tables au Concepteur O/R, le concepteur a ajouté un <xref:System.Data.Linq.DataContext>objet pour votre projet.</xref:System.Data.Linq.DataContext></span><span class="sxs-lookup"><span data-stu-id="871d7-134">When you added tables to the O/R Designer, the designer added a <xref:System.Data.Linq.DataContext> object for your project.</span></span> <span data-ttu-id="871d7-135">Cet objet contient le code dont vous devez disposer pour accéder à ces tables, en plus des collections et objets individuels de chaque table.</span><span class="sxs-lookup"><span data-stu-id="871d7-135">This object contains the code that you must have to access those tables, in addition to individual objects and collections for each table.</span></span> <span data-ttu-id="871d7-136">Le <xref:System.Data.Linq.DataContext>objet pour votre projet est nommé d’après le nom de votre fichier .dbml.</xref:System.Data.Linq.DataContext></span><span class="sxs-lookup"><span data-stu-id="871d7-136">The <xref:System.Data.Linq.DataContext> object for your project is named based on the name of your .dbml file.</span></span> <span data-ttu-id="871d7-137">Pour ce projet, le <xref:System.Data.Linq.DataContext>est nommé `northwindDataContext`.</xref:System.Data.Linq.DataContext></span><span class="sxs-lookup"><span data-stu-id="871d7-137">For this project, the <xref:System.Data.Linq.DataContext> object is named `northwindDataContext`.</span></span>  
   
-     Vous pouvez créer une instance de la <xref:System.Data.Linq.DataContext>dans votre code et interroger les tables spécifiées par le Concepteur O/R.</xref:System.Data.Linq.DataContext>  
+     <span data-ttu-id="871d7-138">Vous pouvez créer une instance de la <xref:System.Data.Linq.DataContext>dans votre code et interroger les tables spécifiées par le Concepteur O/R.</xref:System.Data.Linq.DataContext></span><span class="sxs-lookup"><span data-stu-id="871d7-138">You can create an instance of the <xref:System.Data.Linq.DataContext> in your code and query the tables specified by the O/R Designer.</span></span>  
   
-     Ajoutez le code suivant à la `Load` événement pour interroger les tables qui sont exposées comme propriétés de votre contexte de données.  
+     <span data-ttu-id="871d7-139">Ajoutez le code suivant à la `Load` événement pour interroger les tables qui sont exposées comme propriétés de votre contexte de données.</span><span class="sxs-lookup"><span data-stu-id="871d7-139">Add the following code to the `Load` event to query the tables that are exposed as properties of your data context.</span></span>  
   
-     [!code-vb[VbLINQToSQLHowTos n °&3;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_1.vb)]  
+     <span data-ttu-id="871d7-140">[!code-vb[VbLINQToSQLHowTos n °&3;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_1.vb)]</span><span class="sxs-lookup"><span data-stu-id="871d7-140">[!code-vb[VbLINQToSQLHowTos#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_1.vb)]</span></span>  
   
-4.  Appuyez sur F5 pour exécuter votre projet et afficher les résultats.  
+4.  <span data-ttu-id="871d7-141">Appuyez sur F5 pour exécuter votre projet et afficher les résultats.</span><span class="sxs-lookup"><span data-stu-id="871d7-141">Press F5 to run your project and view the results.</span></span>  
   
-5.  Voici quelques requêtes supplémentaires que vous pouvez essayer :  
+5.  <span data-ttu-id="871d7-142">Voici quelques requêtes supplémentaires que vous pouvez essayer :</span><span class="sxs-lookup"><span data-stu-id="871d7-142">Following are some additional queries that you can try:</span></span>  
   
-     [!code-vb[VbLINQToSQLHowTos n °&4;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_2.vb)]  
-    [!code-vb[VbLINQToSQLHowTos n °&5;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_3.vb)]  
+     <span data-ttu-id="871d7-143">[!code-vb[VbLINQToSQLHowTos n °&4;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_2.vb)]</span><span class="sxs-lookup"><span data-stu-id="871d7-143">[!code-vb[VbLINQToSQLHowTos#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_2.vb)]</span></span>  
+    <span data-ttu-id="871d7-144">[!code-vb[VbLINQToSQLHowTos n °&5;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_3.vb)]</span><span class="sxs-lookup"><span data-stu-id="871d7-144">[!code-vb[VbLINQToSQLHowTos#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-query-a-database-by-using-linq_3.vb)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Requêtes](../../../../visual-basic/language-reference/queries/queries.md)   
- [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)   
- [Méthodes DataContext (Concepteur O/R)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)
+## <a name="see-also"></a><span data-ttu-id="871d7-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="871d7-145">See Also</span></span>  
+ <span data-ttu-id="871d7-146">[LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md) </span><span class="sxs-lookup"><span data-stu-id="871d7-146">[LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md) </span></span>  
+<span data-ttu-id="871d7-147"> [Requêtes](../../../../visual-basic/language-reference/queries/queries.md) </span><span class="sxs-lookup"><span data-stu-id="871d7-147"> [Queries](../../../../visual-basic/language-reference/queries/queries.md) </span></span>  
+<span data-ttu-id="871d7-148"> [LINQ to SQL](https://msdn.microsoft.com/library/bb386976) </span><span class="sxs-lookup"><span data-stu-id="871d7-148"> [LINQ to SQL](https://msdn.microsoft.com/library/bb386976) </span></span>  
+<span data-ttu-id="871d7-149"> [Méthodes DataContext (Concepteur O/R)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)</span><span class="sxs-lookup"><span data-stu-id="871d7-149"> [DataContext Methods (O/R Designer)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)</span></span>
 

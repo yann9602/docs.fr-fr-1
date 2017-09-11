@@ -21,13 +21,13 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a>Guide pratique pour générer du code XML à partir de fichiers CSV (C#)
-Cet exemple montre comment utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d'un fichier de valeurs séparées par des virgules (CSV).  
+# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="b0008-102">Guide pratique pour générer du code XML à partir de fichiers CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="b0008-102">How to: Generate XML from CSV Files (C#)</span></span>
+<span data-ttu-id="b0008-103">Cet exemple montre comment utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d'un fichier de valeurs séparées par des virgules (CSV).</span><span class="sxs-lookup"><span data-stu-id="b0008-103">This example shows how to use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le code suivant exécute une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur un tableau de chaînes.  
+## <a name="example"></a><span data-ttu-id="b0008-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="b0008-104">Example</span></span>  
+ <span data-ttu-id="b0008-105">Le code suivant exécute une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur un tableau de chaînes.</span><span class="sxs-lookup"><span data-stu-id="b0008-105">The following code performs a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query on an array of strings.</span></span>  
   
- La requête utilise la clause `let` pour fractionner chaque chaîne en un tableau de champs.  
+ <span data-ttu-id="b0008-106">La requête utilise la clause `let` pour fractionner chaque chaîne en un tableau de champs.</span><span class="sxs-lookup"><span data-stu-id="b0008-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
   
 ```csharp  
 // Create the text file.  
@@ -60,7 +60,7 @@ XElement cust = new XElement("Root",
 Console.WriteLine(cust);  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="b0008-107">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="b0008-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -119,6 +119,6 @@ Console.WriteLine(cust);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Projections et transformations (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="b0008-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b0008-108">See Also</span></span>  
+ [<span data-ttu-id="b0008-109">Projections et transformations (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="b0008-109">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
 

@@ -1,1 +1,1 @@
-ICM (Image Color Management)
+<span data-ttu-id="d43c1-101">ICM (Image Color Management)</span><span class="sxs-lookup"><span data-stu-id="d43c1-101">Image Color Management (ICM)</span></span>

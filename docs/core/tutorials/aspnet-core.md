@@ -17,7 +17,7 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="getting-started-with-aspnet-core"></a>Bien démarrer avec ASP.NET Core    
+# <a name="getting-started-with-aspnet-core"></a><span data-ttu-id="c45a7-104">Bien démarrer avec ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="c45a7-104">Getting started with ASP.NET Core</span></span>    
     
-Pour consulter des didacticiels sur le développement d’applications web ASP.NET Core, accédez à la [documentation ASP.NET Core](/aspnet/core/).
+<span data-ttu-id="c45a7-105">Pour consulter des didacticiels sur le développement d’applications web ASP.NET Core, accédez à la [documentation ASP.NET Core](/aspnet/core/).</span><span class="sxs-lookup"><span data-stu-id="c45a7-105">For tutorials about developing ASP.NET Core web applications, we suggest you head over to [ASP.NET Core documentation](/aspnet/core/).</span></span>
 

@@ -1,1 +1,1 @@
-SDL
+<span data-ttu-id="0b580-101">SDL</span><span class="sxs-lookup"><span data-stu-id="0b580-101">SDL</span></span>

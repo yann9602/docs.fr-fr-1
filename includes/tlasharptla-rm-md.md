@@ -1,1 +1,1 @@
-Gestion des droits (RM, Rights Management) Microsoft Windows
+<span data-ttu-id="3566f-101">Gestion des droits (RM, Rights Management) Microsoft Windows</span><span class="sxs-lookup"><span data-stu-id="3566f-101">Microsoft Windows Rights Management (RM)</span></span>

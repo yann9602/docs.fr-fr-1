@@ -15,24 +15,25 @@ ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5564e88d1a861f2ce3760e9450d68aee5b57a64
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 85a0d070c415924ef116367b0202c01bef6d8ace
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Comment : déboguer des ensembles de résultats de requête vides (Visual Basic)
-L'un des problèmes les plus courants lors de l'interrogation d'une arborescence XML est que si celle-ci possède un espace de noms par défaut, le développeur écrit parfois la requête comme si le code XML n'était dans aucun espace de noms.  
+# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a><span data-ttu-id="b8680-102">Comment : déboguer des ensembles de résultats de requête vides (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b8680-102">How to: Debug Empty Query Results Sets (Visual Basic)</span></span>
+<span data-ttu-id="b8680-103">L'un des problèmes les plus courants lors de l'interrogation d'une arborescence XML est que si celle-ci possède un espace de noms par défaut, le développeur écrit parfois la requête comme si le code XML n'était dans aucun espace de noms.</span><span class="sxs-lookup"><span data-stu-id="b8680-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
   
- Le premier ensemble d'exemples dans cette rubrique illustre le chargement de code XML dans un espace de noms par défaut et son interrogation incorrecte.  
+ <span data-ttu-id="b8680-104">Le premier ensemble d'exemples dans cette rubrique illustre le chargement de code XML dans un espace de noms par défaut et son interrogation incorrecte.</span><span class="sxs-lookup"><span data-stu-id="b8680-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
   
- Le deuxième ensemble d'exemples illustre les corrections que vous devez apporter pour pouvoir interroger du code XML dans un espace de noms.  
+ <span data-ttu-id="b8680-105">Le deuxième ensemble d'exemples illustre les corrections que vous devez apporter pour pouvoir interroger du code XML dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="b8680-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
   
- Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ <span data-ttu-id="b8680-106">Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="b8680-106">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple illustre la création de code XML dans un espace de noms et une requête qui retourne un jeu de résultats vide.  
+## <a name="example"></a><span data-ttu-id="b8680-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="b8680-107">Example</span></span>  
+ <span data-ttu-id="b8680-108">Cet exemple illustre la création de code XML dans un espace de noms et une requête qui retourne un jeu de résultats vide.</span><span class="sxs-lookup"><span data-stu-id="b8680-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
   
 ```vb  
 Dim root As XElement = _  
@@ -54,17 +55,17 @@ Next
 Console.WriteLine("End of result set")  
 ```  
   
- Cet exemple génère le résultat suivant :  
+ <span data-ttu-id="b8680-109">Cet exemple génère le résultat suivant :</span><span class="sxs-lookup"><span data-stu-id="b8680-109">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
 End of result set  
 ```  
   
-## <a name="example"></a>Exemple  
- Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.  
+## <a name="example"></a><span data-ttu-id="b8680-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="b8680-110">Example</span></span>  
+ <span data-ttu-id="b8680-111">Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.</span><span class="sxs-lookup"><span data-stu-id="b8680-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
   
- La solution consiste à déclarer et initialiser un espace de noms global par défaut. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.  
+ <span data-ttu-id="b8680-112">La solution consiste à déclarer et initialiser un espace de noms global par défaut.</span><span class="sxs-lookup"><span data-stu-id="b8680-112">The solution is to declare and initialize a global default namespace.</span></span> <span data-ttu-id="b8680-113">Cela place toutes les propriétés XML dans l'espace de noms par défaut.</span><span class="sxs-lookup"><span data-stu-id="b8680-113">This places all XML properties in the default namespace.</span></span> <span data-ttu-id="b8680-114">Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.</span><span class="sxs-lookup"><span data-stu-id="b8680-114">No other modifications are required to the example to make it work properly.</span></span>  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -92,7 +93,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère le résultat suivant :  
+ <span data-ttu-id="b8680-115">Cet exemple génère le résultat suivant :</span><span class="sxs-lookup"><span data-stu-id="b8680-115">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
@@ -102,5 +103,5 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="b8680-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b8680-116">See Also</span></span>  
+ [<span data-ttu-id="b8680-117">Requêtes de base (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b8680-117">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

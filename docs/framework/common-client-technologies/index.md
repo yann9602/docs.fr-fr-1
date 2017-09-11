@@ -18,16 +18,16 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 8c36d3577d46136d98b3cbcc9aefd19b30960a0b
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/05/2017
 
 ---
-# <a name="common-client-technologies-in-the-net-framework"></a>Technologies clientes communes dans .NET Framework
-Cette section décrit les différentes technologies que vous pouvez utiliser dans vos applications clientes.  
+# <a name="common-client-technologies-in-the-net-framework"></a><span data-ttu-id="1d334-102">Technologies clientes communes dans .NET Framework</span><span class="sxs-lookup"><span data-stu-id="1d334-102">Common Client Technologies in the .NET Framework</span></span>
+<span data-ttu-id="1d334-103">Cette section décrit les différentes technologies que vous pouvez utiliser dans vos applications clientes.</span><span class="sxs-lookup"><span data-stu-id="1d334-103">This section describes different technologies that you can use in your client applications.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Manipulations et inertie](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
- Explique comment utiliser les classes de processeur de manipulation et d'inertie dans diverses infrastructures d'interface utilisateur, telles que Microsoft Windows Presentation Foundation (WPF) ou Microsoft XNA.  
+## <a name="in-this-section"></a><span data-ttu-id="1d334-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1d334-104">In This Section</span></span>  
+ [<span data-ttu-id="1d334-105">Manipulations et inertie</span><span class="sxs-lookup"><span data-stu-id="1d334-105">Manipulations and Inertia</span></span>](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
+ <span data-ttu-id="1d334-106">Explique comment utiliser les classes de processeur de manipulation et d'inertie dans diverses infrastructures d'interface utilisateur, telles que Microsoft Windows Presentation Foundation (WPF) ou Microsoft XNA.</span><span class="sxs-lookup"><span data-stu-id="1d334-106">Describes how to use manipulations and inertia processor classes in different UI frameworks, such as Microsoft Windows Presentation Foundation (WPF) or Microsoft XNA.</span></span>  
   
- [Services d’application cliente](../../../docs/framework/common-client-technologies/client-application-services.md)  
- Explique comment utiliser la connexion, les rôles et les services d’application de profil de [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] inclus dans les extensions AJAX Microsoft ASP.NET 2.0 dans vos applications Windows.
+ [<span data-ttu-id="1d334-107">Services d’application cliente</span><span class="sxs-lookup"><span data-stu-id="1d334-107">Client Application Services</span></span>](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ <span data-ttu-id="1d334-108">Explique comment utiliser la connexion, les rôles et les services d’application de profil de [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] inclus dans les extensions AJAX Microsoft ASP.NET 2.0 dans vos applications Windows.</span><span class="sxs-lookup"><span data-stu-id="1d334-108">Describes how to use use the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] login, roles, and profile application services included in the Microsoft ASP.NET 2.0 AJAX Extensions in your Windows-based applications.</span></span>
 

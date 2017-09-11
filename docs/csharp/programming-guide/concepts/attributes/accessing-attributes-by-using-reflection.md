@@ -26,27 +26,27 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="accessing-attributes-by-using-reflection-c"></a>Accès à des attributs à l’aide de la réflexion (C#)
-La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d'informations, consultez <xref:System.Attribute>.  
+# <a name="accessing-attributes-by-using-reflection-c"></a><span data-ttu-id="cb669-102">Accès à des attributs à l’aide de la réflexion (C#)</span><span class="sxs-lookup"><span data-stu-id="cb669-102">Accessing Attributes by Using Reflection (C#)</span></span>
+<span data-ttu-id="cb669-103">La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations.</span><span class="sxs-lookup"><span data-stu-id="cb669-103">The fact that you can define custom attributes and place them in your source code would be of little value without some way of retrieving that information and acting on it.</span></span> <span data-ttu-id="cb669-104">La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés.</span><span class="sxs-lookup"><span data-stu-id="cb669-104">By using reflection, you can retrieve the information that was defined with custom attributes.</span></span> <span data-ttu-id="cb669-105">La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="cb669-105">The key method is `GetCustomAttributes`, which returns an array of objects that are the run-time equivalents of the source code attributes.</span></span> <span data-ttu-id="cb669-106">Cette méthode a plusieurs versions surchargées.</span><span class="sxs-lookup"><span data-stu-id="cb669-106">This method has several overloaded versions.</span></span> <span data-ttu-id="cb669-107">Pour plus d'informations, consultez <xref:System.Attribute>.</span><span class="sxs-lookup"><span data-stu-id="cb669-107">For more information, see <xref:System.Attribute>.</span></span>  
   
- Par exemple, cette spécification d’attribut :  
+ <span data-ttu-id="cb669-108">Par exemple, cette spécification d’attribut :</span><span class="sxs-lookup"><span data-stu-id="cb669-108">An attribute specification such as:</span></span>  
   
 ```csharp  
 [Author("P. Ackerman", version = 1.1)]  
 class SampleClass  
 ```  
   
- est semblable à celle-ci d’un point de vue conceptuel :  
+ <span data-ttu-id="cb669-109">est semblable à celle-ci d’un point de vue conceptuel :</span><span class="sxs-lookup"><span data-stu-id="cb669-109">is conceptually equivalent to this:</span></span>  
   
 ```csharp  
 Author anonymousAuthorObject = new Author("P. Ackerman");  
 anonymousAuthorObject.version = 1.1;  
 ```  
   
- Toutefois, le code n’est pas exécuté tant qu’une requête n’est pas effectuée sur `SampleClass` pour obtenir les attributs. L’appel de `GetCustomAttributes` sur `SampleClass` entraîne la construction et l’initialisation d’un objet `Author` comme illustré ci-dessus. Si la classe a d’autres attributs, les autres objets attribut sont construits de la même façon. `GetCustomAttributes` retourne ensuite l’objet `Author` et les autres objets attribut dans un tableau. Vous pouvez ensuite itérer sur ce tableau, déterminer quels attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations des objets attribut.  
+ <span data-ttu-id="cb669-110">Toutefois, le code n’est pas exécuté tant qu’une requête n’est pas effectuée sur `SampleClass` pour obtenir les attributs.</span><span class="sxs-lookup"><span data-stu-id="cb669-110">However, the code is not executed until `SampleClass` is queried for attributes.</span></span> <span data-ttu-id="cb669-111">L’appel de `GetCustomAttributes` sur `SampleClass` entraîne la construction et l’initialisation d’un objet `Author` comme illustré ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="cb669-111">Calling `GetCustomAttributes` on `SampleClass` causes an `Author` object to be constructed and initialized as above.</span></span> <span data-ttu-id="cb669-112">Si la classe a d’autres attributs, les autres objets attribut sont construits de la même façon.</span><span class="sxs-lookup"><span data-stu-id="cb669-112">If the class has other attributes, other attribute objects are constructed similarly.</span></span> <span data-ttu-id="cb669-113">`GetCustomAttributes` retourne ensuite l’objet `Author` et les autres objets attribut dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="cb669-113">`GetCustomAttributes` then returns the `Author` object and any other attribute objects in an array.</span></span> <span data-ttu-id="cb669-114">Vous pouvez ensuite itérer sur ce tableau, déterminer quels attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations des objets attribut.</span><span class="sxs-lookup"><span data-stu-id="cb669-114">You can then iterate over this array, determine what attributes were applied based on the type of each array element, and extract information from the attribute objects.</span></span>  
   
-## <a name="example"></a>Exemple  
- Voici un exemple complet. Un attribut personnalisé est défini, appliqué à plusieurs entités, puis récupéré par réflexion.  
+## <a name="example"></a><span data-ttu-id="cb669-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="cb669-115">Example</span></span>  
+ <span data-ttu-id="cb669-116">Voici un exemple complet.</span><span class="sxs-lookup"><span data-stu-id="cb669-116">Here is a complete example.</span></span> <span data-ttu-id="cb669-117">Un attribut personnalisé est défini, appliqué à plusieurs entités, puis récupéré par réflexion.</span><span class="sxs-lookup"><span data-stu-id="cb669-117">A custom attribute is defined, applied to several entities, and retrieved via reflection.</span></span>  
   
 ```csharp  
 // Multiuse attribute.  
@@ -130,12 +130,12 @@ class TestAuthorAttribute
 */  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Reflection>   
- <xref:System.Attribute>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Récupération des informations stockées dans les attributs](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)   
- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
- [Attributs (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)   
- [Création d’attributs personnalisés (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)
+## <a name="see-also"></a><span data-ttu-id="cb669-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cb669-118">See Also</span></span>  
+ <span data-ttu-id="cb669-119"><xref:System.Reflection></span><span class="sxs-lookup"><span data-stu-id="cb669-119"><xref:System.Reflection></span></span>   
+ <span data-ttu-id="cb669-120"><xref:System.Attribute></span><span class="sxs-lookup"><span data-stu-id="cb669-120"><xref:System.Attribute></span></span>   
+ <span data-ttu-id="cb669-121">[Guide de programmation C#](../../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="cb669-121">[C# Programming Guide](../../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="cb669-122">[Récupération des informations stockées dans les attributs](../../../../standard/attributes/retrieving-information-stored-in-attributes.md) </span><span class="sxs-lookup"><span data-stu-id="cb669-122">[Retrieving Information Stored in Attributes](../../../../standard/attributes/retrieving-information-stored-in-attributes.md) </span></span>  
+ <span data-ttu-id="cb669-123">[Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md) </span><span class="sxs-lookup"><span data-stu-id="cb669-123">[Reflection (C#)](../../../../csharp/programming-guide/concepts/reflection.md) </span></span>  
+ <span data-ttu-id="cb669-124">[Attributs (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md) </span><span class="sxs-lookup"><span data-stu-id="cb669-124">[Attributes (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md) </span></span>  
+ [<span data-ttu-id="cb669-125">Création d’attributs personnalisés (C#)</span><span class="sxs-lookup"><span data-stu-id="cb669-125">Creating Custom Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)
 

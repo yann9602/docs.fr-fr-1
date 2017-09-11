@@ -32,24 +32,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 795b1d47c2fef7246d23260b5a866ede8f4cadb8
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 01152cdbce5db3379f25b58cb39e6c9c8446562b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="identifier-expected"></a>Identificateur attendu
-Un élément de programmation qui n’est pas un nom d’élément déclaré reconnaissable apparaît lorsque le contexte requiert un nom d’élément. Il se peut qu’un attribut a été spécifié un endroit autre que le début de l’instruction.  
+# <a name="identifier-expected"></a><span data-ttu-id="9c3d9-102">Identificateur attendu</span><span class="sxs-lookup"><span data-stu-id="9c3d9-102">Identifier expected</span></span>
+<span data-ttu-id="9c3d9-103">Un élément de programmation qui n’est pas un nom d’élément déclaré reconnaissable apparaît lorsque le contexte requiert un nom d’élément.</span><span class="sxs-lookup"><span data-stu-id="9c3d9-103">A programming element that is not a recognizable declared element name occurs where the context requires an element name.</span></span> <span data-ttu-id="9c3d9-104">Il se peut qu’un attribut a été spécifié un endroit autre que le début de l’instruction.</span><span class="sxs-lookup"><span data-stu-id="9c3d9-104">One possible cause is that an attribute has been specified somewhere other than at the beginning of the statement.</span></span>  
   
- **ID d’erreur :** BC30203  
+ <span data-ttu-id="9c3d9-105">**ID d’erreur :** BC30203</span><span class="sxs-lookup"><span data-stu-id="9c3d9-105">**Error ID:** BC30203</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="9c3d9-106">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="9c3d9-106">To correct this error</span></span>  
   
--   Vérifiez que tous les attributs de l’instruction sont placés au début.  
+-   <span data-ttu-id="9c3d9-107">Vérifiez que tous les attributs de l’instruction sont placés au début.</span><span class="sxs-lookup"><span data-stu-id="9c3d9-107">Verify that any attributes in the statement are all placed at the beginning.</span></span>  
   
--   Vérifiez que tous les noms d’éléments dans l’instruction sont correctement orthographiés.  
+-   <span data-ttu-id="9c3d9-108">Vérifiez que tous les noms d’éléments dans l’instruction sont correctement orthographiés.</span><span class="sxs-lookup"><span data-stu-id="9c3d9-108">Verify that all element names in the statement are spelled correctly.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+## <a name="see-also"></a><span data-ttu-id="9c3d9-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c3d9-109">See Also</span></span>  
+ <span data-ttu-id="9c3d9-110">[Noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md) </span><span class="sxs-lookup"><span data-stu-id="9c3d9-110">[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md) </span></span>  
+<span data-ttu-id="9c3d9-111"> [Vue d’ensemble des attributs](../../../visual-basic/programming-guide/concepts/attributes/index.md)</span><span class="sxs-lookup"><span data-stu-id="9c3d9-111"> [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md)</span></span>
  

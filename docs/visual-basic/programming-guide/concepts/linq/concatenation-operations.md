@@ -20,28 +20,29 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aba6caf36fc12e8744d5dda6c0ace4c084173d37
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: c2f32ddca5060e2ed04b7e1a2dfe3fdc6e453370
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="concatenation-operations-visual-basic"></a>Opérations de concaténation (Visual Basic)
-Concaténation fait référence à l’opération d’ajout d’une séquence à l’autre.  
+# <a name="concatenation-operations-visual-basic"></a><span data-ttu-id="e2679-102">Opérations de concaténation (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e2679-102">Concatenation Operations (Visual Basic)</span></span>
+<span data-ttu-id="e2679-103">Concaténation fait référence à l’opération d’ajout d’une séquence à l’autre.</span><span class="sxs-lookup"><span data-stu-id="e2679-103">Concatenation refers to the operation of appending one sequence to another.</span></span>  
   
- L’illustration suivante représente une opération de concaténation de deux séquences de caractères.  
+ <span data-ttu-id="e2679-104">L’illustration suivante représente une opération de concaténation de deux séquences de caractères.</span><span class="sxs-lookup"><span data-stu-id="e2679-104">The following illustration depicts a concatenation operation on two sequences of characters.</span></span>  
   
- ![Graphique illustrant la concaténation de deux séquences. ](../../../../csharp/programming-guide/concepts/linq/media/concat.png "Concat")  
+ <span data-ttu-id="e2679-105">![Graphique illustrant la concaténation de deux séquences. ](../../../../csharp/programming-guide/concepts/linq/media/concat.png "Concat")</span><span class="sxs-lookup"><span data-stu-id="e2679-105">![Graphic showing concatenation of two sequences.](../../../../csharp/programming-guide/concepts/linq/media/concat.png "Concat")</span></span>  
   
- Les méthodes d’opérateur de requête standard qui effectuent la concaténation sont répertoriées dans la section suivante.  
+ <span data-ttu-id="e2679-106">Les méthodes d’opérateur de requête standard qui effectuent la concaténation sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="e2679-106">The standard query operator methods that perform concatenation are listed in the following section.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="e2679-107">Méthodes</span><span class="sxs-lookup"><span data-stu-id="e2679-107">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d’Expression de requête Visual Basic|Informations complémentaires|  
+|<span data-ttu-id="e2679-108">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="e2679-108">Method Name</span></span>|<span data-ttu-id="e2679-109">Description</span><span class="sxs-lookup"><span data-stu-id="e2679-109">Description</span></span>|<span data-ttu-id="e2679-110">Syntaxe d’Expression de requête Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e2679-110">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="e2679-111">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="e2679-111">More Information</span></span>|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|Concat|Concatène deux séquences pour former une séquence.|Non applicable.|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName></xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName>|  
+|<span data-ttu-id="e2679-112">Concat</span><span class="sxs-lookup"><span data-stu-id="e2679-112">Concat</span></span>|<span data-ttu-id="e2679-113">Concatène deux séquences pour former une séquence.</span><span class="sxs-lookup"><span data-stu-id="e2679-113">Concatenates two sequences to form one sequence.</span></span>|<span data-ttu-id="e2679-114">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="e2679-114">Not applicable.</span></span>|<span data-ttu-id="e2679-115"><xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="e2679-115"><xref:System.Linq.Enumerable.Concat%2A?displayProperty=fullName></span></span><br /><br /> <span data-ttu-id="e2679-116"><xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName></xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="e2679-116"><xref:System.Linq.Queryable.Concat%2A?displayProperty=fullName></span></span>|  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq></xref:System.Linq>   
- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Comment : combiner et comparer des Collections de chaînes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)
+## <a name="see-also"></a><span data-ttu-id="e2679-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e2679-117">See Also</span></span>  
+ <span data-ttu-id="e2679-118"><xref:System.Linq></xref:System.Linq></span><span class="sxs-lookup"><span data-stu-id="e2679-118"><xref:System.Linq></span></span>   
+<span data-ttu-id="e2679-119"> [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md) </span><span class="sxs-lookup"><span data-stu-id="e2679-119"> [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md) </span></span>  
+<span data-ttu-id="e2679-120"> [Comment : combiner et comparer des Collections de chaînes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)</span><span class="sxs-lookup"><span data-stu-id="e2679-120"> [How to: Combine and Compare String Collections (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)</span></span>

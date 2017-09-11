@@ -26,19 +26,20 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9ce206b3d2f56a4ef4d4de66a8dc34b289c927f2
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 1aa65a4fe67f1b159e288b1d988ace763853b1f1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="internal-error-in-the-microsoft-visual-basic-runtime"></a>Erreur interne dans le runtime Microsoft Visual Basic
-Une erreur interne s’est produite dans Microsoft [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] runtime.  
+# <a name="internal-error-in-the-microsoft-visual-basic-runtime"></a><span data-ttu-id="e857a-102">Erreur interne dans le runtime Microsoft Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e857a-102">Internal error in the Microsoft Visual Basic runtime</span></span>
+<span data-ttu-id="e857a-103">Une erreur interne s’est produite dans Microsoft [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] runtime.</span><span class="sxs-lookup"><span data-stu-id="e857a-103">An internal error has occurred in the Microsoft [!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] runtime.</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="e857a-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="e857a-104">To correct this error</span></span>  
   
--   Notez les circonstances dans lesquelles l'erreur s'est produite, puis contactez les services de support technique Microsoft.  
+-   <span data-ttu-id="e857a-105">Notez les circonstances dans lesquelles l'erreur s'est produite, puis contactez les services de support technique Microsoft.</span><span class="sxs-lookup"><span data-stu-id="e857a-105">Note the circumstances under which the error occurred, and call Microsoft Product Support Services.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Types d’erreurs](../../visual-basic/programming-guide/language-features/error-types.md)   
- [PAVEOVER du support technique et accessibilité](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)
+## <a name="see-also"></a><span data-ttu-id="e857a-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e857a-106">See Also</span></span>  
+ <span data-ttu-id="e857a-107">[Types d’erreurs](../../visual-basic/programming-guide/language-features/error-types.md) </span><span class="sxs-lookup"><span data-stu-id="e857a-107">[Error Types](../../visual-basic/programming-guide/language-features/error-types.md) </span></span>  
+<span data-ttu-id="e857a-108"> [PAVEOVER du support technique et accessibilité](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)</span><span class="sxs-lookup"><span data-stu-id="e857a-108"> [PAVEOVER Product Support and Accessibility](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)</span></span>

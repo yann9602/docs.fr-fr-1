@@ -37,36 +37,36 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="ampamp-operator-c-reference"></a>&amp;&amp;, opérateur (Informations de référence sur C#)
-L’opérateur AND conditionnel (`&&`) effectue une opération AND logique sur ses opérandes de type `bool`, mais évalue uniquement le second opérande, si nécessaire.  
+# <a name="ampamp-operator-c-reference"></a><span data-ttu-id="7633c-102">&amp;&amp;, opérateur (Informations de référence sur C#)</span><span class="sxs-lookup"><span data-stu-id="7633c-102">&amp;&amp; Operator (C# Reference)</span></span>
+<span data-ttu-id="7633c-103">L’opérateur AND conditionnel (`&&`) effectue une opération AND logique sur ses opérandes de type `bool`, mais évalue uniquement le second opérande, si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="7633c-103">The conditional-AND operator (`&&`) performs a logical-AND of its `bool` operands, but only evaluates its second operand if necessary.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- L’opération  
+## <a name="remarks"></a><span data-ttu-id="7633c-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="7633c-104">Remarks</span></span>  
+ <span data-ttu-id="7633c-105">L’opération</span><span class="sxs-lookup"><span data-stu-id="7633c-105">The operation</span></span>  
   
 ```  
 x && y  
 ```  
   
- correspond à l’opération  
+ <span data-ttu-id="7633c-106">correspond à l’opération</span><span class="sxs-lookup"><span data-stu-id="7633c-106">corresponds to the operation</span></span>  
   
 ```  
 x & y  
 ```  
   
- sauf si `x` a la valeur `false`, auquel cas `y` n’est pas évalué, car le résultat de l’opération AND est `false` quelle que soit la valeur de `y`. Ce procédé est connu sous le nom d’évaluation "de court-circuit".  
+ <span data-ttu-id="7633c-107">sauf si `x` a la valeur `false`, auquel cas `y` n’est pas évalué, car le résultat de l’opération AND est `false` quelle que soit la valeur de `y`.</span><span class="sxs-lookup"><span data-stu-id="7633c-107">except that if `x` is `false`, `y` is not evaluated, because the result of the AND operation is `false` no matter what the value of `y`  is.</span></span> <span data-ttu-id="7633c-108">Ce procédé est connu sous le nom d’évaluation "de court-circuit".</span><span class="sxs-lookup"><span data-stu-id="7633c-108">This is known as "short-circuit" evaluation.</span></span>  
   
- L’opérateur AND conditionnel ne peut pas être surchargé, mais les surcharges des opérateurs logiques normaux et des opérateurs [true](../../../csharp/language-reference/keywords/true.md) et [false](../../../csharp/language-reference/keywords/false.md) sont, avec certaines restrictions, également considérées comme des surcharges des opérateurs logiques conditionnels.  
+ <span data-ttu-id="7633c-109">L’opérateur AND conditionnel ne peut pas être surchargé, mais les surcharges des opérateurs logiques normaux et des opérateurs [true](../../../csharp/language-reference/keywords/true.md) et [false](../../../csharp/language-reference/keywords/false.md) sont, avec certaines restrictions, également considérées comme des surcharges des opérateurs logiques conditionnels.</span><span class="sxs-lookup"><span data-stu-id="7633c-109">The conditional-AND operator cannot be overloaded, but overloads of the regular logical operators and operators [true](../../../csharp/language-reference/keywords/true.md) and [false](../../../csharp/language-reference/keywords/false.md) are, with certain restrictions, also considered overloads of the conditional logical operators.</span></span>  
   
-## <a name="example"></a>Exemple  
- Dans l’exemple suivant, l’expression conditionnelle dans la deuxième instruction `if` évalue seulement le premier opérande, car ce dernier retourne `false`.  
+## <a name="example"></a><span data-ttu-id="7633c-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="7633c-110">Example</span></span>  
+ <span data-ttu-id="7633c-111">Dans l’exemple suivant, l’expression conditionnelle dans la deuxième instruction `if` évalue seulement le premier opérande, car ce dernier retourne `false`.</span><span class="sxs-lookup"><span data-stu-id="7633c-111">In the following example, the conditional expression in the second `if` statement evaluates only the first operand because the operand returns `false`.</span></span>  
   
- [!code-cs[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-and-operator_1.cs)]  
+ <span data-ttu-id="7633c-112">[!code-cs[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-and-operator_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="7633c-112">[!code-cs[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-and-operator_1.cs)]</span></span>  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="7633c-113">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="7633c-113">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Opérateurs C#](../../../csharp/language-reference/operators/index.md)
+## <a name="see-also"></a><span data-ttu-id="7633c-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7633c-114">See Also</span></span>  
+ <span data-ttu-id="7633c-115">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="7633c-115">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="7633c-116">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="7633c-116">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="7633c-117">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="7633c-117">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
 

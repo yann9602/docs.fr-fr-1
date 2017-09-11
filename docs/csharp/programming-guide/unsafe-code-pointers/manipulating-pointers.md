@@ -35,19 +35,19 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="manipulating-pointers-c-programming-guide"></a>Manipulation de pointeurs (Guide de programmation C#)
-Cette section comprend les opérations de pointeur suivantes :  
+# <a name="manipulating-pointers-c-programming-guide"></a><span data-ttu-id="afdc9-102">Manipulation de pointeurs (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="afdc9-102">Manipulating Pointers (C# Programming Guide)</span></span>
+<span data-ttu-id="afdc9-103">Cette section comprend les opérations de pointeur suivantes :</span><span class="sxs-lookup"><span data-stu-id="afdc9-103">This section includes the following pointer operations:</span></span>  
   
- [Incrémenter et décrémenter](../../../csharp/programming-guide/unsafe-code-pointers/how-to-increment-and-decrement-pointers.md)  
+ [<span data-ttu-id="afdc9-104">Incrémenter et décrémenter</span><span class="sxs-lookup"><span data-stu-id="afdc9-104">Increment and Decrement</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/how-to-increment-and-decrement-pointers.md)  
   
- [Opérations arithmétiques](../../../csharp/programming-guide/unsafe-code-pointers/arithmetic-operations-on-pointers.md)  
+ [<span data-ttu-id="afdc9-105">Opérations arithmétiques</span><span class="sxs-lookup"><span data-stu-id="afdc9-105">Arithmetic Operations</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/arithmetic-operations-on-pointers.md)  
   
- [Comparaison](../../../csharp/programming-guide/unsafe-code-pointers/pointer-comparison.md)  
+ [<span data-ttu-id="afdc9-106">Comparaison</span><span class="sxs-lookup"><span data-stu-id="afdc9-106">Comparison</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/pointer-comparison.md)  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Expressions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)   
- [Opérateurs C#](../../../csharp/language-reference/operators/index.md)   
- [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)   
- [/unsafe (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)
+## <a name="see-also"></a><span data-ttu-id="afdc9-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="afdc9-107">See Also</span></span>  
+ <span data-ttu-id="afdc9-108">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="afdc9-108">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="afdc9-109">[Expressions de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md) </span><span class="sxs-lookup"><span data-stu-id="afdc9-109">[Pointer Expressions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md) </span></span>  
+ <span data-ttu-id="afdc9-110">[Opérateurs C#](../../../csharp/language-reference/operators/index.md) </span><span class="sxs-lookup"><span data-stu-id="afdc9-110">[C# Operators](../../../csharp/language-reference/operators/index.md) </span></span>  
+ <span data-ttu-id="afdc9-111">[Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md) </span><span class="sxs-lookup"><span data-stu-id="afdc9-111">[Pointer types](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md) </span></span>  
+ [<span data-ttu-id="afdc9-112">/unsafe (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="afdc9-112">/unsafe (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)
 

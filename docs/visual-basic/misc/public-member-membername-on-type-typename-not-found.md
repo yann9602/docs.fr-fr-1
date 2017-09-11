@@ -26,19 +26,20 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aef57e597233e6179bc1a00b28182b46bb53cc59
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 57de9f91b695dfd63bb3e69204272e657e887345
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a>Membre public '&lt;membername&gt;'sur le type'&lt;typename&gt;' introuvable
-Le membre auquel vous essayez d’accéder est introuvable. Cette erreur peut se produire lors de l’accès à des membres non publics d’objets à liaison tardive.  
+# <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a><span data-ttu-id="2aebd-102">Membre public '&lt;membername&gt;'sur le type'&lt;typename&gt;' introuvable</span><span class="sxs-lookup"><span data-stu-id="2aebd-102">Public member &#39;&lt;membername&gt;&#39; on type &#39;&lt;typename&gt;&#39; not found</span></span>
+<span data-ttu-id="2aebd-103">Le membre auquel vous essayez d’accéder est introuvable.</span><span class="sxs-lookup"><span data-stu-id="2aebd-103">The member you are trying to access cannot be found.</span></span> <span data-ttu-id="2aebd-104">Cette erreur peut se produire lors de l’accès à des membres non publics d’objets à liaison tardive.</span><span class="sxs-lookup"><span data-stu-id="2aebd-104">This error can occur when accessing non-public members of late-bound objects.</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="2aebd-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="2aebd-105">To correct this error</span></span>  
   
-1.  Si le membre existe, vérifiez qu’il est déclaré comme `Public`.  
+1.  <span data-ttu-id="2aebd-106">Si le membre existe, vérifiez qu’il est déclaré comme `Public`.</span><span class="sxs-lookup"><span data-stu-id="2aebd-106">If the member exists, ensure that it is declared as `Public`.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Public](../../visual-basic/language-reference/modifiers/public.md)   
- [Liaison anticipée et liaison tardive](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+## <a name="see-also"></a><span data-ttu-id="2aebd-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2aebd-107">See Also</span></span>  
+ <span data-ttu-id="2aebd-108">[Public](../../visual-basic/language-reference/modifiers/public.md) </span><span class="sxs-lookup"><span data-stu-id="2aebd-108">[Public](../../visual-basic/language-reference/modifiers/public.md) </span></span>  
+<span data-ttu-id="2aebd-109"> [Liaison anticipée et liaison tardive](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)</span><span class="sxs-lookup"><span data-stu-id="2aebd-109"> [Early and Late Binding](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)</span></span>

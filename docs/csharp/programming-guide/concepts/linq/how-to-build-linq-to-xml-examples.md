@@ -26,11 +26,11 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-build-linq-to-xml-examples-c"></a>Guide pratique pour générer des exemples LINQ to XML (C#)
-Les différents extraits et exemples présentés dans cette documentation utilisent des classes et des types de différents espaces de noms. Lors de la compilation de code Visual C#, vous devez fournir des directives `using` appropriées.  
+# <a name="how-to-build-linq-to-xml-examples-c"></a><span data-ttu-id="3f443-102">Guide pratique pour générer des exemples LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="3f443-102">How to: Build LINQ to XML Examples (C#)</span></span>
+<span data-ttu-id="3f443-103">Les différents extraits et exemples présentés dans cette documentation utilisent des classes et des types de différents espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="3f443-103">The various snippets and examples in this documentation use classes and types from a variety of namespaces.</span></span> <span data-ttu-id="3f443-104">Lors de la compilation de code Visual C#, vous devez fournir des directives `using` appropriées.</span><span class="sxs-lookup"><span data-stu-id="3f443-104">When compiling C# code, you need to supply appropriate `using` directives.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le code suivant contient les directives `using` requises pour la génération et l'exécution des exemples C#. Toutes les directives `using` ne sont pas requises pour tous les exemples.  
+## <a name="example"></a><span data-ttu-id="3f443-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="3f443-105">Example</span></span>  
+ <span data-ttu-id="3f443-106">Le code suivant contient les directives `using` requises pour la génération et l'exécution des exemples C#.</span><span class="sxs-lookup"><span data-stu-id="3f443-106">The following code contains the `using` directives that the C# examples require to build and run.</span></span> <span data-ttu-id="3f443-107">Toutes les directives `using` ne sont pas requises pour tous les exemples.</span><span class="sxs-lookup"><span data-stu-id="3f443-107">Not all `using` directives are required for every example.</span></span>  
   
 ```csharp  
 using System;  
@@ -51,6 +51,6 @@ using System.Reflection;
 using System.IO.Packaging;  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble de la programmation LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+## <a name="see-also"></a><span data-ttu-id="3f443-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3f443-108">See Also</span></span>  
+ [<span data-ttu-id="3f443-109">Vue d’ensemble de la programmation LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="3f443-109">LINQ to XML Programming Overview (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
 

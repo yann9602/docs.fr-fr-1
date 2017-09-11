@@ -20,26 +20,27 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 54755384eaf74fa008f93198f3de5e44fb095bda
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 0b336816a7a557a4cd820b31f64ee42a791f3649
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="how-to-load-xml-from-a-file-visual-basic"></a>Comment : charger du code XML à partir d’un fichier (Visual Basic)
-Cette rubrique montre comment charger du code XML à partir d’un URI à l’aide de la <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>méthode.</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>  
+# <a name="how-to-load-xml-from-a-file-visual-basic"></a><span data-ttu-id="9ec3f-102">Comment : charger du code XML à partir d’un fichier (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9ec3f-102">How to: Load XML from a File (Visual Basic)</span></span>
+<span data-ttu-id="9ec3f-103">Cette rubrique montre comment charger du code XML à partir d’un URI à l’aide de la <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>méthode.</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName></span><span class="sxs-lookup"><span data-stu-id="9ec3f-103">This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> method.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant montre comment charger un document XML à partir d'un fichier. L’exemple suivant charge books.xml et affiche l’arborescence XML sur la console.  
+## <a name="example"></a><span data-ttu-id="9ec3f-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="9ec3f-104">Example</span></span>  
+ <span data-ttu-id="9ec3f-105">L'exemple suivant montre comment charger un document XML à partir d'un fichier.</span><span class="sxs-lookup"><span data-stu-id="9ec3f-105">The following example shows how to load an XML document from a file.</span></span> <span data-ttu-id="9ec3f-106">L’exemple suivant charge books.xml et affiche l’arborescence XML sur la console.</span><span class="sxs-lookup"><span data-stu-id="9ec3f-106">The following example loads books.xml and outputs the XML tree to the console.</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : livres (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ <span data-ttu-id="9ec3f-107">Cet exemple utilise le document XML suivant : [exemple de fichier XML : livres (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="9ec3f-107">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim booksFromFile As XElement = XElement.Load("books.xml")  
 Console.WriteLine(booksFromFile)  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="9ec3f-108">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="9ec3f-108">This code produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -65,5 +66,5 @@ Console.WriteLine(booksFromFile)
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="9ec3f-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9ec3f-109">See Also</span></span>  
+ [<span data-ttu-id="9ec3f-110">L’analyse XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9ec3f-110">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

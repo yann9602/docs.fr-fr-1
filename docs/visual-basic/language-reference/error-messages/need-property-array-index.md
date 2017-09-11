@@ -29,19 +29,20 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 51c762184ad52c76e36f6368c8e2320f4c8475ad
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 4c3de353c65b7ffa6077d07e888bc2d477cb1a5e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="need-property-array-index"></a>Index de tableau de propriétés requis
-Cette valeur de propriété se compose d'un tableau plutôt que d'une simple valeur. Vous n'avez pas spécifié l'index de tableau de propriétés auquel vous avez essayé d'accéder.  
+# <a name="need-property-array-index"></a><span data-ttu-id="42723-102">Index de tableau de propriétés requis</span><span class="sxs-lookup"><span data-stu-id="42723-102">Need property array index</span></span>
+<span data-ttu-id="42723-103">Cette valeur de propriété se compose d'un tableau plutôt que d'une simple valeur.</span><span class="sxs-lookup"><span data-stu-id="42723-103">This property value consists of an array rather than a single value.</span></span> <span data-ttu-id="42723-104">Vous n'avez pas spécifié l'index de tableau de propriétés auquel vous avez essayé d'accéder.</span><span class="sxs-lookup"><span data-stu-id="42723-104">You did not specify the index for the property array you tried to access.</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="42723-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="42723-105">To correct this error</span></span>  
   
--   Vérifiez la documentation du composant pour trouver la plage des index appropriée pour le tableau. Spécifiez un index adéquat dans votre instruction d'accès aux propriétés.  
+-   <span data-ttu-id="42723-106">Vérifiez la documentation du composant pour trouver la plage des index appropriée pour le tableau.</span><span class="sxs-lookup"><span data-stu-id="42723-106">Check the component's documentation to find the range for the indexes appropriate for the array.</span></span> <span data-ttu-id="42723-107">Spécifiez un index adéquat dans votre instruction d'accès aux propriétés.</span><span class="sxs-lookup"><span data-stu-id="42723-107">Specify an appropriate index in your property access statement.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)   
- [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+## <a name="see-also"></a><span data-ttu-id="42723-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="42723-108">See Also</span></span>  
+ <span data-ttu-id="42723-109">[Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md) </span><span class="sxs-lookup"><span data-stu-id="42723-109">[Error Types](../../../visual-basic/programming-guide/language-features/error-types.md) </span></span>  
+<span data-ttu-id="42723-110"> [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)</span><span class="sxs-lookup"><span data-stu-id="42723-110"> [Talk to Us](https://docs.microsoft.com/visualstudio/ide/talk-to-us)</span></span>

@@ -26,10 +26,10 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a>Exemple de fichier XML : Configuration de test dans un espace de noms
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Il s'agit d'un fichier de configuration test. Le code XML se trouve dans un espace de noms.  
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a><span data-ttu-id="26c75-102">Exemple de fichier XML : Configuration de test dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="26c75-102">Sample XML File: Test Configuration in a Namespace</span></span>
+<span data-ttu-id="26c75-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="26c75-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="26c75-104">Il s'agit d'un fichier de configuration test.</span><span class="sxs-lookup"><span data-stu-id="26c75-104">This is a test configuration file.</span></span> <span data-ttu-id="26c75-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="26c75-105">The XML is in a namespace.</span></span>  
   
-## <a name="testconfiginnamespacexml"></a>TestConfigInNamespace.xml  
+## <a name="testconfiginnamespacexml"></a><span data-ttu-id="26c75-106">TestConfigInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="26c75-106">TestConfigInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -73,6 +73,6 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
 </Tests>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="26c75-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26c75-107">See Also</span></span>  
+ [<span data-ttu-id="26c75-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="26c75-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

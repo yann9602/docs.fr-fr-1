@@ -15,18 +15,19 @@ ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ff3d6988ce826fea0aee1987a7c546f5c863e71d
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 04839f4f729158406c3107f2dcdfbff74753c29c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="deferred-execution-example-visual-basic"></a>Exemple d’exécution différée (Visual Basic)
-Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.  
+# <a name="deferred-execution-example-visual-basic"></a><span data-ttu-id="5a2d4-102">Exemple d’exécution différée (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5a2d4-102">Deferred Execution Example (Visual Basic)</span></span>
+<span data-ttu-id="5a2d4-103">Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-103">This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant illustre l'ordre d'exécution lors de l'utilisation d'une méthode d'extension qui utilise l'exécution différée. L'exemple déclare un tableau de trois chaînes. Il itère ensuite au sein de la collection retournée par `ConvertCollectionToUpperCase`.  
+## <a name="example"></a><span data-ttu-id="5a2d4-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="5a2d4-104">Example</span></span>  
+ <span data-ttu-id="5a2d4-105">L'exemple suivant illustre l'ordre d'exécution lors de l'utilisation d'une méthode d'extension qui utilise l'exécution différée.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-105">The following example shows the order of execution when using an extension method that uses deferred execution.</span></span> <span data-ttu-id="5a2d4-106">L'exemple déclare un tableau de trois chaînes.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-106">The example declares an array of three strings.</span></span> <span data-ttu-id="5a2d4-107">Il itère ensuite au sein de la collection retournée par `ConvertCollectionToUpperCase`.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-107">It then iterates through the collection returned by `ConvertCollectionToUpperCase`.</span></span>  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -57,7 +58,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="5a2d4-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="5a2d4-108">This example produces the following output:</span></span>  
   
 ```  
 ToUpper: source abc  
@@ -68,9 +69,9 @@ ToUpper: source ghi
 Main: str GHI  
 ```  
   
- Notez que lors de l'itération de la collection retournée par `ConvertCollectionToUpperCase`, chaque élément est récupéré du tableau de chaînes source et converti en majuscules avant que l'élément suivant ne soit récupéré du tableau de chaînes source.  
+ <span data-ttu-id="5a2d4-109">Notez que lors de l'itération de la collection retournée par `ConvertCollectionToUpperCase`, chaque élément est récupéré du tableau de chaînes source et converti en majuscules avant que l'élément suivant ne soit récupéré du tableau de chaînes source.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-109">Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.</span></span>  
   
- Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas convertie en majuscules avant que chaque élément de la collection retournée n'ait été traité dans la boucle `foreach` dans `Main`.  
+ <span data-ttu-id="5a2d4-110">Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas convertie en majuscules avant que chaque élément de la collection retournée n'ait été traité dans la boucle `foreach` dans `Main`.</span><span class="sxs-lookup"><span data-stu-id="5a2d4-110">You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Didacticiel : Différée de l’exécution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+## <a name="see-also"></a><span data-ttu-id="5a2d4-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5a2d4-111">See Also</span></span>  
+ [<span data-ttu-id="5a2d4-112">Didacticiel : Différée de l’exécution (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5a2d4-112">Tutorial: Deferred Execution (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

@@ -15,18 +15,19 @@ ms.assetid: 34eec79e-7945-4ba8-9f74-d05bb8ec67f6
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c55210365651c468b75b943dc46e08726e1ec939
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: b8119c134612aaf03e22644d34d758933a902339
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>Comment : remplir une arborescence XML à partir du système de fichiers (Visual Basic)
-Une application courante et utile des arborescences XML consiste à les utiliser en tant que banque de données nom/valeur hiérarchique. Vous pouvez remplir une arborescence XML avec des données hiérarchiques, puis les interroger, les transformer et, si nécessaire, les sérialiser. Dans ce scénario, une grande partie de la sémantique spécifique au langage XML, telle que les espaces de noms et le comportement d'espace blanc, n'est pas importante. Au lieu de cela, vous utilisez l’arborescence XML en tant que petite base de données hiérarchique en mémoire et à utilisateur unique.  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a><span data-ttu-id="5ae0d-102">Comment : remplir une arborescence XML à partir du système de fichiers (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5ae0d-102">How to: Populate an XML Tree from the File System (Visual Basic)</span></span>
+<span data-ttu-id="5ae0d-103">Une application courante et utile des arborescences XML consiste à les utiliser en tant que banque de données nom/valeur hiérarchique.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-103">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="5ae0d-104">Vous pouvez remplir une arborescence XML avec des données hiérarchiques, puis les interroger, les transformer et, si nécessaire, les sérialiser.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-104">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="5ae0d-105">Dans ce scénario, une grande partie de la sémantique spécifique au langage XML, telle que les espaces de noms et le comportement d'espace blanc, n'est pas importante.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-105">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="5ae0d-106">Au lieu de cela, vous utilisez l’arborescence XML en tant que petite base de données hiérarchique en mémoire et à utilisateur unique.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-106">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant remplit une arborescence XML à partir du système de fichiers à l’aide de la récursivité. Il interroge ensuite l'arborescence XML et calcule le total de tous les fichiers dans l'arborescence.  
+## <a name="example"></a><span data-ttu-id="5ae0d-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="5ae0d-107">Example</span></span>  
+ <span data-ttu-id="5ae0d-108">L’exemple suivant remplit une arborescence XML à partir du système de fichiers à l’aide de la récursivité.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-108">The following example populates an XML tree from the local file system using recursion.</span></span> <span data-ttu-id="5ae0d-109">Il interroge ensuite l'arborescence XML et calcule le total de tous les fichiers dans l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="5ae0d-109">It then queries the tree, calculating the total of the sizes of all files in the tree.</span></span>  
   
 ```vb  
 Module Module1  
@@ -57,7 +58,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple produit une sortie semblable à la suivante :  
+ <span data-ttu-id="5ae0d-110">Cet exemple produit une sortie semblable à la suivante :</span><span class="sxs-lookup"><span data-stu-id="5ae0d-110">This example produces output similar to the following:</span></span>  
   
 ```xml  
 <Dir Name="Tmp">  
@@ -127,5 +128,5 @@ End Module
 Total File Size:59089  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Techniques de requêtes (LINQ to XML) avancées (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="5ae0d-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5ae0d-111">See Also</span></span>  
+ [<span data-ttu-id="5ae0d-112">Techniques de requêtes (LINQ to XML) avancées (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5ae0d-112">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

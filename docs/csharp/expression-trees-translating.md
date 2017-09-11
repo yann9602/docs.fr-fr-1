@@ -18,20 +18,20 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="translating-expression-trees"></a>Traduction d’arborescences d’expressions
+# <a name="translating-expression-trees"></a><span data-ttu-id="5c535-104">Traduction d’arborescences d’expressions</span><span class="sxs-lookup"><span data-stu-id="5c535-104">Translating Expression Trees</span></span>
 
-[Précédent -- Génération d’expressions](expression-trees-building.md)
+[<span data-ttu-id="5c535-105">Précédent -- Génération d’expressions</span><span class="sxs-lookup"><span data-stu-id="5c535-105">Previous -- Building Expressions</span></span>](expression-trees-building.md)
 
-Dans cette dernière section, vous allez découvrir comment visiter chaque nœud dans une arborescence d’expressions lors de la génération d’une copie modifiée de cette arborescence d’expressions. Voici les techniques que vous utiliserez dans deux scénarios importants. La première consiste à comprendre les algorithmes exprimés par une arborescence d’expressions pour qu’elle puisse être traduite dans un autre environnement. La deuxième s’applique quand vous souhaitez modifier l’algorithme qui a été créé, par exemple pour ajouter la journalisation, intercepter des appels de méthode et les suivre, ou dans d’autres buts.
+<span data-ttu-id="5c535-106">Dans cette dernière section, vous allez découvrir comment visiter chaque nœud dans une arborescence d’expressions lors de la génération d’une copie modifiée de cette arborescence d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-106">In this final section, you'll learn how to visit each node in an expression tree while building a modified copy of that expression tree.</span></span> <span data-ttu-id="5c535-107">Voici les techniques que vous utiliserez dans deux scénarios importants.</span><span class="sxs-lookup"><span data-stu-id="5c535-107">These are the techniques that you will use in two important scenarios.</span></span> <span data-ttu-id="5c535-108">La première consiste à comprendre les algorithmes exprimés par une arborescence d’expressions pour qu’elle puisse être traduite dans un autre environnement.</span><span class="sxs-lookup"><span data-stu-id="5c535-108">The first is to understand the algorithms expressed by an expression tree so that it can be translated into another environment.</span></span> <span data-ttu-id="5c535-109">La deuxième s’applique quand vous souhaitez modifier l’algorithme qui a été créé,</span><span class="sxs-lookup"><span data-stu-id="5c535-109">The second is when you want to change the algorithm that has been created.</span></span> <span data-ttu-id="5c535-110">par exemple pour ajouter la journalisation, intercepter des appels de méthode et les suivre, ou dans d’autres buts.</span><span class="sxs-lookup"><span data-stu-id="5c535-110">This might be to add logging, intercept method calls and track them, or other purposes.</span></span>
 
-## <a name="translating-is-visiting"></a>Traduire signifie visiter
+## <a name="translating-is-visiting"></a><span data-ttu-id="5c535-111">Traduire signifie visiter</span><span class="sxs-lookup"><span data-stu-id="5c535-111">Translating is Visiting</span></span>
 
-Le code que vous générez pour traduire une arborescence d’expressions est une extension de ce que vous avez déjà vu pour visiter tous les nœuds dans une arborescence. Quand vous traduisez une arborescence d’expressions, vous visitez tous les nœuds et, ce faisant, vous générez la nouvelle arborescence. Celle-ci peut contenir des références aux nœuds d’origine ou de nouveaux nœuds que vous avez placés dans l’arborescence.
+<span data-ttu-id="5c535-112">Le code que vous générez pour traduire une arborescence d’expressions est une extension de ce que vous avez déjà vu pour visiter tous les nœuds dans une arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-112">The code you build to translate an expression tree is an extension of what you've already seen to visit all the nodes in a tree.</span></span> <span data-ttu-id="5c535-113">Quand vous traduisez une arborescence d’expressions, vous visitez tous les nœuds et, ce faisant, vous générez la nouvelle arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-113">When you translate an expression tree, you visit all the nodes, and while visiting them, build the new tree.</span></span> <span data-ttu-id="5c535-114">Celle-ci peut contenir des références aux nœuds d’origine ou de nouveaux nœuds que vous avez placés dans l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-114">The new tree may contain references to the original nodes, or new nodes that you have placed in the tree.</span></span>
 
-Nous allons voir cela en action en visitant une arborescence d’expressions et en créant une nouvelle arborescence avec certains nœuds de substitution. Dans cet exemple, nous allons remplacer une constante par une autre dix fois plus grande.
-Pour le reste, nous laisserons l’arborescence d’expressions intacte. Au lieu de lire la valeur de la constante et de la remplacer par une nouvelle constante, nous allons remplacer le nœud de constante par un nouveau nœud qui effectue la multiplication.
+<span data-ttu-id="5c535-115">Nous allons voir cela en action en visitant une arborescence d’expressions et en créant une nouvelle arborescence avec certains nœuds de substitution.</span><span class="sxs-lookup"><span data-stu-id="5c535-115">Let's see this in action by visiting an expression tree, and creating a new tree with some replacement nodes.</span></span> <span data-ttu-id="5c535-116">Dans cet exemple, nous allons remplacer une constante par une autre dix fois plus grande.</span><span class="sxs-lookup"><span data-stu-id="5c535-116">In this example, let's replace any constant with a constant that is ten times larger.</span></span>
+<span data-ttu-id="5c535-117">Pour le reste, nous laisserons l’arborescence d’expressions intacte.</span><span class="sxs-lookup"><span data-stu-id="5c535-117">Otherwise, we'll leave the expression tree intact.</span></span> <span data-ttu-id="5c535-118">Au lieu de lire la valeur de la constante et de la remplacer par une nouvelle constante, nous allons remplacer le nœud de constante par un nouveau nœud qui effectue la multiplication.</span><span class="sxs-lookup"><span data-stu-id="5c535-118">Rather than reading the value of the constant, and replacing it with a new constant, we'll make this replacement by replacing the constant node with a new node that performs the multiplication.</span></span>
 
-Ici, une fois que vous avez trouvé un nœud de constante, vous créez un nœud de multiplication dont les enfants sont la constante d’origine, et la constante `10` :
+<span data-ttu-id="5c535-119">Ici, une fois que vous avez trouvé un nœud de constante, vous créez un nœud de multiplication dont les enfants sont la constante d’origine, et la constante `10` :</span><span class="sxs-lookup"><span data-stu-id="5c535-119">Here, once you find a constant node, you create a new multiplication node whose children are the original constant, and the constant `10`:</span></span>
 
 ```csharp
 private static Expression ReplaceNodes(Expression original)
@@ -51,7 +51,7 @@ private static Expression ReplaceNodes(Expression original)
 }
 ```
 
-Quand nous remplaçons le nœud d’origine par le substitut, une nouvelle arborescence contenant nos modifications est formée. Nous pouvons vérifier cela en compilant et en exécutant l’arborescence remplacée.
+<span data-ttu-id="5c535-120">Quand nous remplaçons le nœud d’origine par le substitut, une nouvelle arborescence contenant nos modifications est formée.</span><span class="sxs-lookup"><span data-stu-id="5c535-120">By replacing the original node with the substitute, a new tree is formed that contains our modifications.</span></span> <span data-ttu-id="5c535-121">Nous pouvons vérifier cela en compilant et en exécutant l’arborescence remplacée.</span><span class="sxs-lookup"><span data-stu-id="5c535-121">We can verify that by compiling and executing the replaced tree.</span></span>
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
@@ -65,14 +65,14 @@ var answer = func();
 Console.WriteLine(answer);
 ```
 
-Pour générer une nouvelle arborescence, il faut visiter les nœuds dans l’arborescence existante, créer de nouveaux nœuds et les insérer dans l’arborescence.
+<span data-ttu-id="5c535-122">Pour générer une nouvelle arborescence, il faut visiter les nœuds dans l’arborescence existante, créer de nouveaux nœuds et les insérer dans l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-122">Building a new tree is a combination of visiting the nodes in the existing tree, and creating new nodes and inserting them into the tree.</span></span>
 
-Cet exemple montre l’importance du caractère immuable des arborescences d’expressions. Notez que la nouvelle arborescence créée ci-dessus contient une combinaison de nœuds nouvellement créés et de nœuds de l’arborescence existante. Cela ne présente aucun risque, car les nœuds de l’arborescence existante ne peuvent pas être modifiés. Ceci est susceptible d’accroître l’efficacité de la mémoire.
-Les mêmes nœuds sont utilisables dans toute une arborescence, ou dans plusieurs arborescences d’expressions. Les nœuds ne pouvant pas être modifiés, le même nœud peut être réutilisé chaque fois qu’il est nécessaire.
+<span data-ttu-id="5c535-123">Cet exemple montre l’importance du caractère immuable des arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-123">This example shows the importance of expression trees being immutable.</span></span> <span data-ttu-id="5c535-124">Notez que la nouvelle arborescence créée ci-dessus contient une combinaison de nœuds nouvellement créés et de nœuds de l’arborescence existante.</span><span class="sxs-lookup"><span data-stu-id="5c535-124">Notice that the new tree created above contains a mixture of newly created nodes, and nodes from the existing tree.</span></span> <span data-ttu-id="5c535-125">Cela ne présente aucun risque, car les nœuds de l’arborescence existante ne peuvent pas être modifiés.</span><span class="sxs-lookup"><span data-stu-id="5c535-125">That's safe, because the nodes in the existing tree cannot be modified.</span></span> <span data-ttu-id="5c535-126">Ceci est susceptible d’accroître l’efficacité de la mémoire.</span><span class="sxs-lookup"><span data-stu-id="5c535-126">This can result in significant memory efficiencies.</span></span>
+<span data-ttu-id="5c535-127">Les mêmes nœuds sont utilisables dans toute une arborescence, ou dans plusieurs arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-127">The same nodes can be used throughout a tree, or in multiple expression trees.</span></span> <span data-ttu-id="5c535-128">Les nœuds ne pouvant pas être modifiés, le même nœud peut être réutilisé chaque fois qu’il est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="5c535-128">Since nodes can't be modified, the same node can be reused whenever its needed.</span></span>
 
-## <a name="traversing-and-executing-an-addition"></a>Parcours et exécution d’une addition
+## <a name="traversing-and-executing-an-addition"></a><span data-ttu-id="5c535-129">Parcours et exécution d’une addition</span><span class="sxs-lookup"><span data-stu-id="5c535-129">Traversing and Executing an Addition</span></span>
 
-Nous allons vérifier cela en générant un deuxième visiteur qui parcourt l’arborescence de nœuds d’addition et calcule le résultat. Pour cela, nous allons apporter quelques modifications au visiteur que nous avons vu jusqu’ici. Dans cette nouvelle version, le visiteur va retourner la somme partielle de l’opération d’addition jusqu’à ce point. Pour une expression constante, il s’agit simplement de la valeur de l’expression constante. Pour une expression d’addition, le résultat est la somme des opérandes gauche et droit, une fois ces arborescences parcourues.
+<span data-ttu-id="5c535-130">Nous allons vérifier cela en générant un deuxième visiteur qui parcourt l’arborescence de nœuds d’addition et calcule le résultat.</span><span class="sxs-lookup"><span data-stu-id="5c535-130">Let's verify this by building a second visitor that walks the tree of addition nodes and computes the result.</span></span> <span data-ttu-id="5c535-131">Pour cela, nous allons apporter quelques modifications au visiteur que nous avons vu jusqu’ici.</span><span class="sxs-lookup"><span data-stu-id="5c535-131">You can do this by making a couple modifications to the vistor that you've seen so far.</span></span> <span data-ttu-id="5c535-132">Dans cette nouvelle version, le visiteur va retourner la somme partielle de l’opération d’addition jusqu’à ce point.</span><span class="sxs-lookup"><span data-stu-id="5c535-132">In this new version, the visitor will return the partial sum of the addition operation up to this point.</span></span> <span data-ttu-id="5c535-133">Pour une expression constante, il s’agit simplement de la valeur de l’expression constante.</span><span class="sxs-lookup"><span data-stu-id="5c535-133">For a constant expression, that is simply the value of the constant expression.</span></span> <span data-ttu-id="5c535-134">Pour une expression d’addition, le résultat est la somme des opérandes gauche et droit, une fois ces arborescences parcourues.</span><span class="sxs-lookup"><span data-stu-id="5c535-134">For an addition expression, the result is the sum of the left and right operands, once those trees have been traversed.</span></span>
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
@@ -97,11 +97,11 @@ var theSum = aggregate(sum);
 Console.WriteLine(theSum);
 ```
 
-Il y a pas mal de code ici, mais les concepts sont très abordables.
-Ce code visite les enfants avec une recherche en profondeur. Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante. Une fois que le visiteur a visité les deux enfants, ceux-ci ont calculé la somme calculée pour cette sous-arborescence. Le nœud d’addition peut maintenant calculer sa somme.
-Une fois que tous les nœuds dans l’arborescence d’expressions ont été visités, la somme a été calculée. Vous pouvez suivre l’exécution en exécutant l’exemple dans le débogueur.
+<span data-ttu-id="5c535-135">Il y a pas mal de code ici, mais les concepts sont très abordables.</span><span class="sxs-lookup"><span data-stu-id="5c535-135">There's quite a bit of code here, but the concepts are very approachable.</span></span>
+<span data-ttu-id="5c535-136">Ce code visite les enfants avec une recherche en profondeur.</span><span class="sxs-lookup"><span data-stu-id="5c535-136">This code visits children in a depth first search.</span></span> <span data-ttu-id="5c535-137">Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante.</span><span class="sxs-lookup"><span data-stu-id="5c535-137">When it encounters a constant node, the visitor returns the value of the constant.</span></span> <span data-ttu-id="5c535-138">Une fois que le visiteur a visité les deux enfants, ceux-ci ont calculé la somme calculée pour cette sous-arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-138">After the visitor has visited both children, those children will have computed the sum computed for that sub-tree.</span></span> <span data-ttu-id="5c535-139">Le nœud d’addition peut maintenant calculer sa somme.</span><span class="sxs-lookup"><span data-stu-id="5c535-139">The addition node can now compute its sum.</span></span>
+<span data-ttu-id="5c535-140">Une fois que tous les nœuds dans l’arborescence d’expressions ont été visités, la somme a été calculée.</span><span class="sxs-lookup"><span data-stu-id="5c535-140">Once all the nodes in the expression tree have been visited, the sum will have been computed.</span></span> <span data-ttu-id="5c535-141">Vous pouvez suivre l’exécution en exécutant l’exemple dans le débogueur.</span><span class="sxs-lookup"><span data-stu-id="5c535-141">You can trace the execution by running the sample in the debugger and tracing the execution.</span></span>
 
-Nous allons simplifier le suivi de la façon dont les nœuds sont analysés et de la façon dont la somme est calculée en parcourant l’arborescence. Voici une version mise à jour de la méthode Aggregate qui comprend des informations de suivi :
+<span data-ttu-id="5c535-142">Nous allons simplifier le suivi de la façon dont les nœuds sont analysés et de la façon dont la somme est calculée en parcourant l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="5c535-142">Let's make it easier to trace how the nodes are analyzed and how the sum is computed by travsersing the tree.</span></span> <span data-ttu-id="5c535-143">Voici une version mise à jour de la méthode Aggregate qui comprend des informations de suivi :</span><span class="sxs-lookup"><span data-stu-id="5c535-143">Here's an updated version of the Aggregate method that includes quite a bit of tracing information:</span></span>
 
 ```csharp
 private static int Aggregate(Expression exp)
@@ -130,7 +130,7 @@ private static int Aggregate(Expression exp)
 }
 ```
 
-Son exécution sur la même expression génère la sortie suivante :
+<span data-ttu-id="5c535-144">Son exécution sur la même expression génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="5c535-144">Running it on the same expression yields the following output:</span></span>
 
 ```
 10
@@ -159,15 +159,15 @@ Computed sum: 10
 10
 ```
 
-Suivez la sortie et suivez le code ci-dessus. Vous devriez pouvoir déterminer comment le code visite chaque nœud et calcule la somme à mesure qu’il parcourt l’arborescence et trouve la somme.
+<span data-ttu-id="5c535-145">Suivez la sortie et suivez le code ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="5c535-145">Trace the output and follow along in the code above.</span></span> <span data-ttu-id="5c535-146">Vous devriez pouvoir déterminer comment le code visite chaque nœud et calcule la somme à mesure qu’il parcourt l’arborescence et trouve la somme.</span><span class="sxs-lookup"><span data-stu-id="5c535-146">You should be able to work out how the code visits each node and computes the sum as it goes through the tree and finds the sum.</span></span>
 
-À présent, jetons un œil à une autre exécution, avec l’expression donnée par `sum1` :
+<span data-ttu-id="5c535-147">À présent, jetons un œil à une autre exécution, avec l’expression donnée par `sum1` :</span><span class="sxs-lookup"><span data-stu-id="5c535-147">Now, let's look at a different run, with the expression given by `sum1`:</span></span>
 
 ```csharp
 Expression<Func<int> sum1 = () => 1 + (2 + (3 + 4));
 ```
 
-Voici la sortie de l’examen de cette expression :
+<span data-ttu-id="5c535-148">Voici la sortie de l’examen de cette expression :</span><span class="sxs-lookup"><span data-stu-id="5c535-148">Here's the output from examining this expression:</span></span>
 
 ```
 Found Addition Expression
@@ -195,14 +195,14 @@ Computed sum: 10
 10
 ```
 
-Bien que la réponse finale soit la même, le parcours d’arborescence est complètement différent. Les nœuds sont parcourus dans un ordre différent, car l’arborescence a été construite avec différentes opérations survenant en premier.
+<span data-ttu-id="5c535-149">Bien que la réponse finale soit la même, le parcours d’arborescence est complètement différent.</span><span class="sxs-lookup"><span data-stu-id="5c535-149">While the final answer is the same, the tree traversal is completely different.</span></span> <span data-ttu-id="5c535-150">Les nœuds sont parcourus dans un ordre différent, car l’arborescence a été construite avec différentes opérations survenant en premier.</span><span class="sxs-lookup"><span data-stu-id="5c535-150">The nodes are traveled in a different order, because the tree was constructed with different operations occurring first.</span></span>
 
-## <a name="learning-more"></a>En savoir plus
+## <a name="learning-more"></a><span data-ttu-id="5c535-151">En savoir plus</span><span class="sxs-lookup"><span data-stu-id="5c535-151">Learning More</span></span>
 
-Cet exemple montre un petit sous-ensemble du code que vous créeriez pour parcourir et interpréter les algorithmes représentés par une arborescence d’expressions. Pour obtenir une description complète de tout le travail nécessaire pour générer une bibliothèque à usage général qui traduit des arborescences d’expressions dans un autre langage, consultez [cette série](http://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) de Matt Warren. Elle décrit en détail comment traduire le code que vous pourriez rencontrer dans une arborescence d’expressions.
+<span data-ttu-id="5c535-152">Cet exemple montre un petit sous-ensemble du code que vous créeriez pour parcourir et interpréter les algorithmes représentés par une arborescence d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-152">This sample shows a small subset of the code you would build to traverse and interpret the algorithms represented by an expression tree.</span></span> <span data-ttu-id="5c535-153">Pour obtenir une description complète de tout le travail nécessaire pour générer une bibliothèque à usage général qui traduit des arborescences d’expressions dans un autre langage, consultez [cette série](http://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) de Matt Warren.</span><span class="sxs-lookup"><span data-stu-id="5c535-153">For a complete discussion of all the work necessary to build a general purpose library that translates expression trees into another language, please read [this series](http://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) by Matt Warren.</span></span> <span data-ttu-id="5c535-154">Elle décrit en détail comment traduire le code que vous pourriez rencontrer dans une arborescence d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-154">It goes into great detail on how to translate any of the code you might find in an expression tree.</span></span>
 
-J’espère que cet article aura mis en évidence toute la puissance des arborescences d’expressions.
-Vous pouvez examiner un ensemble de code, y apporter les modifications souhaitées et exécuter la version modifiée. Les arborescences d’expressions étant immuables, vous pouvez créer des arborescences à l’aide de composants d’arborescences existantes. Cela réduit la quantité de mémoire nécessaire pour créer des arborescences d’expressions.
+<span data-ttu-id="5c535-155">J’espère que cet article aura mis en évidence toute la puissance des arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-155">I hope you've now seen the true power of expression trees.</span></span>
+<span data-ttu-id="5c535-156">Vous pouvez examiner un ensemble de code, y apporter les modifications souhaitées et exécuter la version modifiée.</span><span class="sxs-lookup"><span data-stu-id="5c535-156">You can examine a set of code, make any changes you'd like to that code, and execute the changed version.</span></span> <span data-ttu-id="5c535-157">Les arborescences d’expressions étant immuables, vous pouvez créer des arborescences à l’aide de composants d’arborescences existantes.</span><span class="sxs-lookup"><span data-stu-id="5c535-157">Because the expression trees are immutable, you can create new trees by using the components of existing trees.</span></span> <span data-ttu-id="5c535-158">Cela réduit la quantité de mémoire nécessaire pour créer des arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="5c535-158">This minimizes the amount of memory needed to create modified expression trees.</span></span>
 
-[Suivant -- Récapitulatif](expression-trees-summary.md)
+[<span data-ttu-id="5c535-159">Suivant -- Récapitulatif</span><span class="sxs-lookup"><span data-stu-id="5c535-159">Next -- Summing up</span></span>](expression-trees-summary.md)
 

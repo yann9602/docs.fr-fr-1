@@ -26,20 +26,20 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-load-xml-from-a-file-c"></a>Guide pratique pour charger du code XML à partir d’un fichier (C#)
-Cette rubrique montre comment charger des données XML à partir d'un URI en utilisant la méthode <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>.  
+# <a name="how-to-load-xml-from-a-file-c"></a><span data-ttu-id="2f776-102">Guide pratique pour charger du code XML à partir d’un fichier (C#)</span><span class="sxs-lookup"><span data-stu-id="2f776-102">How to: Load XML from a File (C#)</span></span>
+<span data-ttu-id="2f776-103">Cette rubrique montre comment charger des données XML à partir d'un URI en utilisant la méthode <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>.</span><span class="sxs-lookup"><span data-stu-id="2f776-103">This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> method.</span></span>  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant montre comment charger un document XML à partir d'un fichier. L’exemple suivant charge books.xml et affiche l’arborescence XML sur la console.  
+## <a name="example"></a><span data-ttu-id="2f776-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="2f776-104">Example</span></span>  
+ <span data-ttu-id="2f776-105">L'exemple suivant montre comment charger un document XML à partir d'un fichier.</span><span class="sxs-lookup"><span data-stu-id="2f776-105">The following example shows how to load an XML document from a file.</span></span> <span data-ttu-id="2f776-106">L’exemple suivant charge books.xml et affiche l’arborescence XML sur la console.</span><span class="sxs-lookup"><span data-stu-id="2f776-106">The following example loads books.xml and outputs the XML tree to the console.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ <span data-ttu-id="2f776-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="2f776-107">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement booksFromFile = XElement.Load(@"books.xml");  
 Console.WriteLine(booksFromFile);  
 ```  
   
- Ce code génère la sortie suivante :  
+ <span data-ttu-id="2f776-108">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="2f776-108">This code produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -65,6 +65,6 @@ Console.WriteLine(booksFromFile);
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Analyse de code XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="2f776-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2f776-109">See Also</span></span>  
+ [<span data-ttu-id="2f776-110">Analyse de code XML (C#)</span><span class="sxs-lookup"><span data-stu-id="2f776-110">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
 

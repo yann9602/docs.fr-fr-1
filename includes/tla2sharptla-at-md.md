@@ -1,1 +1,1 @@
-technologie d'assistance
+<span data-ttu-id="05f8c-101">technologie d'assistance</span><span class="sxs-lookup"><span data-stu-id="05f8c-101">assistive technology</span></span>

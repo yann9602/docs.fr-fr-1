@@ -16,17 +16,17 @@ ms.lasthandoff: 08/11/2017
 
 ---
 
-# <a name="-net-core-servicing"></a>🔧 Maintenance .NET Core
+# <a name="-net-core-servicing"></a><span data-ttu-id="ca7de-104">🔧 Maintenance .NET Core</span><span class="sxs-lookup"><span data-stu-id="ca7de-104">🔧 .NET Core Servicing</span></span>
 
-> **Remarque**
+> <span data-ttu-id="ca7de-105">**Remarque**</span><span class="sxs-lookup"><span data-stu-id="ca7de-105">**Note**</span></span>
 > 
-> Cette rubrique n’a pas encore été rédigée ! 
+> <span data-ttu-id="ca7de-106">Cette rubrique n’a pas encore été rédigée !</span><span class="sxs-lookup"><span data-stu-id="ca7de-106">This topic hasn’t been written yet!</span></span> 
 >
-> Votre aide pour en définir le cadre et l’approche est la bienvenue. Vous pouvez suivre la progression de ce [problème](https://github.com/dotnet/docs/issues/469) et y apporter vos commentaires dans GitHub.
+> <span data-ttu-id="ca7de-107">Votre aide pour en définir le cadre et l’approche est la bienvenue.</span><span class="sxs-lookup"><span data-stu-id="ca7de-107">We welcome your input to help shape the scope and approach.</span></span> <span data-ttu-id="ca7de-108">Vous pouvez suivre la progression de ce [problème](https://github.com/dotnet/docs/issues/469) et y apporter vos commentaires dans GitHub.</span><span class="sxs-lookup"><span data-stu-id="ca7de-108">You can track the status and provide input on this [issue](https://github.com/dotnet/docs/issues/469) at GitHub.</span></span>
 > 
-> Si vous voulez consulter les premières ébauches et le plan de cette rubrique, laissez une note avec vos coordonnées.
+> <span data-ttu-id="ca7de-109">Si vous voulez consulter les premières ébauches et le plan de cette rubrique, laissez une note avec vos coordonnées.</span><span class="sxs-lookup"><span data-stu-id="ca7de-109">If you would like to review early drafts and outlines of this topic, please leave a note with your contact information in the issue.</span></span>
 >
-> Découvrez comment vous pouvez apporter votre contribution sur [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).
+> <span data-ttu-id="ca7de-110">Découvrez comment vous pouvez apporter votre contribution sur [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span><span class="sxs-lookup"><span data-stu-id="ca7de-110">Learn more about how you can contribute on [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span></span>
 >
     
 

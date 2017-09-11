@@ -1,1 +1,1 @@
-unités indépendantes des appareils (1/96e de pouce par unité)
+<span data-ttu-id="fd9c2-101">unités indépendantes des appareils (1/96e de pouce par unité)</span><span class="sxs-lookup"><span data-stu-id="fd9c2-101">device-independent units (1/96th inch per unit)</span></span>

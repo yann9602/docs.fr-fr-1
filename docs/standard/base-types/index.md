@@ -1,5 +1,5 @@
 ---
-title: Utilisation des types de base dans .NET | Microsoft Docs
+title: Utilisation des types de base dans .NET
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -17,32 +17,33 @@ caps.latest.revision: 14
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: e1451f41b463e28a5fa305f23f3790bcfc066c30
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d6b1c760fb8667850d4f4e88ca8fe5bcf0b0a662
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
+ms.lasthandoff: 09/05/2017
 
 ---
-# <a name="working-with-base-types-in-net"></a>Utilisation des types de base dans .NET
-Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.  
+# <a name="working-with-base-types-in-net"></a><span data-ttu-id="7e621-102">Utilisation des types de base dans .NET</span><span class="sxs-lookup"><span data-stu-id="7e621-102">Working with Base Types in .NET</span></span>
+<span data-ttu-id="7e621-103">Cette section décrit les opérations de type de base .NET, y compris la mise en forme, la conversion et les opérations courantes.</span><span class="sxs-lookup"><span data-stu-id="7e621-103">This section describes .NET base type operations, including formatting, conversion, and common operations.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Conversion de type dans le .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
- Explique comment convertir un type en un autre.  
+## <a name="in-this-section"></a><span data-ttu-id="7e621-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="7e621-104">In This Section</span></span>  
+ [<span data-ttu-id="7e621-105">Conversion de type dans le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7e621-105">Type Conversion in the .NET Framework</span></span>](../../../docs/standard/base-types/type-conversion.md)  
+ <span data-ttu-id="7e621-106">Explique comment convertir un type en un autre.</span><span class="sxs-lookup"><span data-stu-id="7e621-106">Describes how to convert from one type to another.</span></span>  
   
- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)  
- Explique comment mettre en forme des chaînes à l’aide de spécificateurs de format de chaîne.  
+ [<span data-ttu-id="7e621-107">Mise en forme des types</span><span class="sxs-lookup"><span data-stu-id="7e621-107">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)  
+ <span data-ttu-id="7e621-108">Explique comment mettre en forme des chaînes à l’aide de spécificateurs de format de chaîne.</span><span class="sxs-lookup"><span data-stu-id="7e621-108">Describes how to format strings using the string format specifiers.</span></span>  
   
- [Manipulation de chaînes](../../../docs/standard/base-types/manipulating-strings.md)  
- Explique comment manipuler et mettre en forme des chaînes.  
+ [<span data-ttu-id="7e621-109">Manipulation de chaînes</span><span class="sxs-lookup"><span data-stu-id="7e621-109">Manipulating Strings</span></span>](../../../docs/standard/base-types/manipulating-strings.md)  
+ <span data-ttu-id="7e621-110">Explique comment manipuler et mettre en forme des chaînes.</span><span class="sxs-lookup"><span data-stu-id="7e621-110">Describes how to manipulate and format strings.</span></span>  
   
- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)  
- Explique comment convertir des chaînes en types .NET Framework.  
+ [<span data-ttu-id="7e621-111">Analyse de chaînes</span><span class="sxs-lookup"><span data-stu-id="7e621-111">Parsing Strings</span></span>](../../../docs/standard/base-types/parsing-strings.md)  
+ <span data-ttu-id="7e621-112">Explique comment convertir des chaînes en types .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7e621-112">Describes how to convert strings into .NET Framework types.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Système de type commun](../../../docs/standard/base-types/common-type-system.md)  
- Décrit les types utilisés par le .NET Framework.  
+## <a name="related-sections"></a><span data-ttu-id="7e621-113">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="7e621-113">Related Sections</span></span>  
+ [<span data-ttu-id="7e621-114">Système de type commun</span><span class="sxs-lookup"><span data-stu-id="7e621-114">Common Type System</span></span>](../../../docs/standard/base-types/common-type-system.md)  
+ <span data-ttu-id="7e621-115">Décrit les types utilisés par le .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7e621-115">Describes types used by the .NET Framework.</span></span>  
   
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)  
- Explique comment utiliser les fuseaux horaires et les conversions de fuseau horaire dans les applications prenant en charge les fuseaux horaires.
+ [<span data-ttu-id="7e621-116">Dates, heures et fuseaux horaires</span><span class="sxs-lookup"><span data-stu-id="7e621-116">Dates, Times, and Time Zones</span></span>](../../../docs/standard/datetime/index.md)  
+ <span data-ttu-id="7e621-117">Explique comment utiliser les fuseaux horaires et les conversions de fuseau horaire dans les applications prenant en charge les fuseaux horaires.</span><span class="sxs-lookup"><span data-stu-id="7e621-117">Describes how to work with time zones and time zone conversions in time zone-aware applications.</span></span>
+

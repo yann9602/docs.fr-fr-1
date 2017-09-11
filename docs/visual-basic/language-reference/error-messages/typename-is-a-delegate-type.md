@@ -32,29 +32,30 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3d6cc283f7e9815eb9b723a450731998f14b3424
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 55532e269a7d6756157d324a2db14320df5d3f55
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="39lttypenamegt39-is-a-delegate-type"></a>«&lt;typename&gt;' est un type délégué
-«\<typename >' est un type délégué. Une construction déléguée accepte une seule expression AddressOf en tant que liste d’arguments. Une expression AddressOf peut souvent être utilisée au lieu d’une construction déléguée.  
+# <a name="39lttypenamegt39-is-a-delegate-type"></a><span data-ttu-id="41541-102">«&lt;typename&gt;' est un type délégué</span><span class="sxs-lookup"><span data-stu-id="41541-102">&#39;&lt;typename&gt;&#39; is a delegate type</span></span>
+<span data-ttu-id="41541-103">«\<typename >' est un type délégué.</span><span class="sxs-lookup"><span data-stu-id="41541-103">'\<typename>' is a delegate type.</span></span> <span data-ttu-id="41541-104">Une construction déléguée accepte une seule expression AddressOf en tant que liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="41541-104">Delegate construction permits only a single AddressOf expression as an argument list.</span></span> <span data-ttu-id="41541-105">Une expression AddressOf peut souvent être utilisée au lieu d’une construction déléguée.</span><span class="sxs-lookup"><span data-stu-id="41541-105">Often an AddressOf expression can be used instead of a delegate construction.</span></span>  
   
- Un `New` clause crée une instance d’une classe déléguée fournit une liste d’arguments non valide au constructeur délégué.  
+ <span data-ttu-id="41541-106">Un `New` clause crée une instance d’une classe déléguée fournit une liste d’arguments non valide au constructeur délégué.</span><span class="sxs-lookup"><span data-stu-id="41541-106">A `New` clause creating an instance of a delegate class supplies an invalid argument list to the delegate constructor.</span></span>  
   
- Vous pouvez fournir une seule `AddressOf` expression lors de la création d’une nouvelle instance de délégué.  
+ <span data-ttu-id="41541-107">Vous pouvez fournir une seule `AddressOf` expression lors de la création d’une nouvelle instance de délégué.</span><span class="sxs-lookup"><span data-stu-id="41541-107">You can supply only a single `AddressOf` expression when creating a new delegate instance.</span></span>  
   
- Cette erreur peut se produire si vous ne passez pas d’arguments au constructeur délégué, si vous passez plusieurs arguments, ou si vous passez un argument unique qui n’est pas valide `AddressOf` expression.  
+ <span data-ttu-id="41541-108">Cette erreur peut se produire si vous ne passez pas d’arguments au constructeur délégué, si vous passez plusieurs arguments, ou si vous passez un argument unique qui n’est pas valide `AddressOf` expression.</span><span class="sxs-lookup"><span data-stu-id="41541-108">This error can result if you do not pass any arguments to the delegate constructor, if you pass more than one argument, or if you pass a single argument that is not a valid `AddressOf` expression.</span></span>  
   
- **ID d’erreur :** BC32008  
+ <span data-ttu-id="41541-109">**ID d’erreur :** BC32008</span><span class="sxs-lookup"><span data-stu-id="41541-109">**Error ID:** BC32008</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="41541-110">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="41541-110">To correct this error</span></span>  
   
--   Utiliser un seul `AddressOf` expression dans la liste d’arguments pour la classe déléguée dans la `New` clause.  
+-   <span data-ttu-id="41541-111">Utiliser un seul `AddressOf` expression dans la liste d’arguments pour la classe déléguée dans la `New` clause.</span><span class="sxs-lookup"><span data-stu-id="41541-111">Use a single `AddressOf` expression in the argument list for the delegate class in the `New` clause.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [New, opérateur](../../../visual-basic/language-reference/operators/new-operator.md)   
- [AddressOf (opérateur)](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Délégués](../../../visual-basic/programming-guide/language-features/delegates/index.md)   
- [Guide pratique : appeler une méthode déléguée](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)
+## <a name="see-also"></a><span data-ttu-id="41541-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="41541-112">See Also</span></span>  
+ <span data-ttu-id="41541-113">[New, opérateur](../../../visual-basic/language-reference/operators/new-operator.md) </span><span class="sxs-lookup"><span data-stu-id="41541-113">[New Operator](../../../visual-basic/language-reference/operators/new-operator.md) </span></span>  
+<span data-ttu-id="41541-114"> [AddressOf (opérateur)](../../../visual-basic/language-reference/operators/addressof-operator.md) </span><span class="sxs-lookup"><span data-stu-id="41541-114"> [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md) </span></span>  
+<span data-ttu-id="41541-115"> [Délégués](../../../visual-basic/programming-guide/language-features/delegates/index.md) </span><span class="sxs-lookup"><span data-stu-id="41541-115"> [Delegates](../../../visual-basic/programming-guide/language-features/delegates/index.md) </span></span>  
+<span data-ttu-id="41541-116"> [Guide pratique : appeler une méthode déléguée](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)</span><span class="sxs-lookup"><span data-stu-id="41541-116"> [How to: Invoke a Delegate Method](../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)</span></span>

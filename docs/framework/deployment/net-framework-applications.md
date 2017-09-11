@@ -29,16 +29,16 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="deploying-net-framework-applications"></a>Déploiement d'applications .NET Framework
-Cette section de la documentation .NET Framework fournit des informations essentielles pour le déploiement d'applications .NET Framework, notamment des instructions relatives au chargement des assemblys, à la résolution des références d'assembly et à l'amélioration des performances de votre application grâce à la génération d'images natives.  
+# <a name="deploying-net-framework-applications"></a><span data-ttu-id="33895-102">Déploiement d'applications .NET Framework</span><span class="sxs-lookup"><span data-stu-id="33895-102">Deploying .NET Framework Applications</span></span>
+<span data-ttu-id="33895-103">Cette section de la documentation .NET Framework fournit des informations essentielles pour le déploiement d'applications .NET Framework, notamment des instructions relatives au chargement des assemblys, à la résolution des références d'assembly et à l'amélioration des performances de votre application grâce à la génération d'images natives.</span><span class="sxs-lookup"><span data-stu-id="33895-103">This section of the .NET Framework documentation provides essential information for deploying .NET Framework applications, including guidelines for loading assemblies, resolving assembly references, and improving the performance of your application through native image generation.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- Décrit comment le Common Language Runtime localise et établit une liaison aux assemblys qui composent votre application.  
+## <a name="in-this-section"></a><span data-ttu-id="33895-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="33895-104">In This Section</span></span>  
+ [<span data-ttu-id="33895-105">Méthode de localisation des assemblys par le runtime</span><span class="sxs-lookup"><span data-stu-id="33895-105">How the Runtime Locates Assemblies</span></span>](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ <span data-ttu-id="33895-106">Décrit comment le Common Language Runtime localise et établit une liaison aux assemblys qui composent votre application.</span><span class="sxs-lookup"><span data-stu-id="33895-106">Describes how the common language runtime locates and binds to the assemblies that make up your application.</span></span>  
   
- [Bonnes pratiques pour le chargement d'assemblys](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
- Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.  
+ [<span data-ttu-id="33895-107">Bonnes pratiques pour le chargement d'assemblys</span><span class="sxs-lookup"><span data-stu-id="33895-107">Best Practices for Assembly Loading</span></span>](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
+ <span data-ttu-id="33895-108">Explique les moyens d'éviter les problèmes d'identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d'autres erreurs.</span><span class="sxs-lookup"><span data-stu-id="33895-108">Discusses ways to avoid problems of type identity that can lead to <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, and other errors.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de développement](../../../docs/framework/development-guide.md)
+## <a name="see-also"></a><span data-ttu-id="33895-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="33895-109">See Also</span></span>  
+ [<span data-ttu-id="33895-110">Guide de développement</span><span class="sxs-lookup"><span data-stu-id="33895-110">Development Guide</span></span>](../../../docs/framework/development-guide.md)
 

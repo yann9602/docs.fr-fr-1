@@ -1,1 +1,1 @@
-WYSIWYG (tel écrit, tel écran)
+<span data-ttu-id="43c05-101">WYSIWYG (tel écrit, tel écran)</span><span class="sxs-lookup"><span data-stu-id="43c05-101">"what you see is what you get" (WYSIWYG)</span></span>

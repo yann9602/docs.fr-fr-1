@@ -30,24 +30,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 604aa2f91bb2a25ba59dc75d5d73314bc7bf2343
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 49f8be86d7ec86152b0d4cfc74dd9e13e6814d32
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="introduction-to-strings-in-visual-basic"></a>Introduction aux chaînes en Visual Basic
-Cette section décrit les concepts de base de l’utilisation de chaînes dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+# <a name="introduction-to-strings-in-visual-basic"></a><span data-ttu-id="b350f-102">Introduction aux chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="b350f-102">Introduction to Strings in Visual Basic</span></span>
+<span data-ttu-id="b350f-103">Cette section décrit les concepts de base de l’utilisation de chaînes dans [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span><span class="sxs-lookup"><span data-stu-id="b350f-103">This section describes the basic concepts behind using strings in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Concepts de base des chaînes](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- Présente les concepts de base qui sous-tendent l’utilisation des chaînes et variables de chaîne.  
+## <a name="in-this-section"></a><span data-ttu-id="b350f-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="b350f-104">In This Section</span></span>  
+ [<span data-ttu-id="b350f-105">Concepts de base des chaînes</span><span class="sxs-lookup"><span data-stu-id="b350f-105">String Basics</span></span>](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
+ <span data-ttu-id="b350f-106">Présente les concepts de base qui sous-tendent l’utilisation des chaînes et variables de chaîne.</span><span class="sxs-lookup"><span data-stu-id="b350f-106">Introduces the basic concepts behind using strings and string variables.</span></span>  
   
- [Types de méthodes de Manipulation de chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
- Présente les différentes méthodes pour analyser et manipuler des chaînes.  
+ [<span data-ttu-id="b350f-107">Types de méthodes de Manipulation de chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="b350f-107">Types of String Manipulation Methods in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
+ <span data-ttu-id="b350f-108">Présente les différentes méthodes pour analyser et manipuler des chaînes.</span><span class="sxs-lookup"><span data-stu-id="b350f-108">Introduces several different ways to analyze and manipulate strings.</span></span>  
   
- [La Culture affectent les chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
- Explique comment [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] utilise les informations pour effectuer des conversions de chaînes et des comparaisons de culture.  
+ [<span data-ttu-id="b350f-109">La Culture affectent les chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="b350f-109">How Culture Affects Strings in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
+ <span data-ttu-id="b350f-110">Explique comment [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] utilise les informations pour effectuer des conversions de chaînes et des comparaisons de culture.</span><span class="sxs-lookup"><span data-stu-id="b350f-110">Discusses how [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] uses culture information to perform string conversions and comparisons.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Chaînes](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+## <a name="see-also"></a><span data-ttu-id="b350f-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b350f-111">See Also</span></span>  
+ [<span data-ttu-id="b350f-112">Chaînes</span><span class="sxs-lookup"><span data-stu-id="b350f-112">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)

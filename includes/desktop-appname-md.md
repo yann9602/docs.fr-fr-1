@@ -1,1 +1,1 @@
-Bureau
+<span data-ttu-id="b9b8a-101">Bureau</span><span class="sxs-lookup"><span data-stu-id="b9b8a-101">desktop</span></span>

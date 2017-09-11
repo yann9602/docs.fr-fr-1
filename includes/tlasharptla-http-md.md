@@ -1,1 +1,1 @@
-HTTP
+<span data-ttu-id="dfb36-101">HTTP</span><span class="sxs-lookup"><span data-stu-id="dfb36-101">HTTP</span></span>

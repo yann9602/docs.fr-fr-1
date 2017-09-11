@@ -21,15 +21,15 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des éléments descendants (XPath-LINQ to XML) (C#)
-Cette rubrique montre comment obtenir les éléments descendants avec un nom particulier.  
+# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-c"></a><span data-ttu-id="8c29f-102">Guide pratique pour rechercher des éléments descendants (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="8c29f-102">How to: Find Descendant Elements (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="8c29f-103">Cette rubrique montre comment obtenir les éléments descendants avec un nom particulier.</span><span class="sxs-lookup"><span data-stu-id="8c29f-103">This topic shows how to get the descendant elements with a particular name.</span></span>  
   
- L'expression XPath est `//Name`.  
+ <span data-ttu-id="8c29f-104">L'expression XPath est `//Name`.</span><span class="sxs-lookup"><span data-stu-id="8c29f-104">The XPath expression is `//Name`.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche tous les descendants nommés `Name`.  
+## <a name="example"></a><span data-ttu-id="8c29f-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="8c29f-105">Example</span></span>  
+ <span data-ttu-id="8c29f-106">Cet exemple recherche tous les descendants nommés `Name`.</span><span class="sxs-lookup"><span data-stu-id="8c29f-106">This example finds all descendants named `Name`.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="8c29f-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8c29f-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -49,7 +49,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="8c29f-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="8c29f-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -61,6 +61,6 @@ Results are identical
 <Name>Jessica Arnold</Name>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="8c29f-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c29f-109">See Also</span></span>  
+ [<span data-ttu-id="8c29f-110">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="8c29f-110">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

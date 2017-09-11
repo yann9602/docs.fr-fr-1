@@ -1,1 +1,1 @@
-langage de définition de schéma XML (XSD)
+<span data-ttu-id="3495e-101">langage de définition de schéma XML (XSD)</span><span class="sxs-lookup"><span data-stu-id="3495e-101">XML Schema Definition (XSD)</span></span>

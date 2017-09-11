@@ -21,17 +21,17 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des nœuds frères (XPath-LINQ to XML) (C#)
-Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique. La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="c0bdf-102">Guide pratique pour rechercher des nœuds frères (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="c0bdf-102">How to: Find Sibling Nodes (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="c0bdf-103">Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="c0bdf-103">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="c0bdf-104">La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.</span><span class="sxs-lookup"><span data-stu-id="c0bdf-104">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="c0bdf-105">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="c0bdf-105">The XPath expression is:</span></span>  
   
  `../Book`  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`. La collection résultante inclut le nœud de contexte.  
+## <a name="example"></a><span data-ttu-id="c0bdf-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="c0bdf-106">Example</span></span>  
+ <span data-ttu-id="c0bdf-107">Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`.</span><span class="sxs-lookup"><span data-stu-id="c0bdf-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="c0bdf-108">La collection résultante inclut le nœud de contexte.</span><span class="sxs-lookup"><span data-stu-id="c0bdf-108">The resulting collection includes the context node.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ <span data-ttu-id="c0bdf-109">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="c0bdf-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -61,7 +61,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="c0bdf-110">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="c0bdf-110">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -86,6 +86,6 @@ Results are identical
 </Book>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="c0bdf-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c0bdf-111">See Also</span></span>  
+ [<span data-ttu-id="c0bdf-112">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="c0bdf-112">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
 

@@ -24,29 +24,29 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-determine-which-net-framework-updates-are-installed"></a>Comment : déterminer les mises à jour .NET Framework installées
-Les mises à jour installées pour chaque version du .NET Framework installée sur un ordinateur sont répertoriées dans le Registre Windows. Vous pouvez utiliser l'Éditeur du Registre (regedit.exe) pour afficher ces informations.  
+# <a name="how-to-determine-which-net-framework-updates-are-installed"></a><span data-ttu-id="8ec0d-102">Comment : déterminer les mises à jour .NET Framework installées</span><span class="sxs-lookup"><span data-stu-id="8ec0d-102">How to: Determine Which .NET Framework Updates Are Installed</span></span>
+<span data-ttu-id="8ec0d-103">Les mises à jour installées pour chaque version du .NET Framework installée sur un ordinateur sont répertoriées dans le Registre Windows.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-103">The installed updates for each version of the .NET Framework installed on a computer are listed in the Windows registry.</span></span> <span data-ttu-id="8ec0d-104">Vous pouvez utiliser l'Éditeur du Registre (regedit.exe) pour afficher ces informations.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-104">You can use the Registry Editor (regedit.exe) to view this information.</span></span>  
   
- Dans l'Éditeur du Registre, les versions du .NET Framework et les mises à jour installées pour chaque version sont stockées dans des sous-clés distinctes. Pour plus d'informations sur la détection des numéros des versions installées, voir [Comment : déterminer les versions .NET Framework installées](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md). Pour plus d’informations sur l’installation du .NET Framework, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).  
+ <span data-ttu-id="8ec0d-105">Dans l'Éditeur du Registre, les versions du .NET Framework et les mises à jour installées pour chaque version sont stockées dans des sous-clés distinctes.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-105">In the Registry Editor, the .NET Framework versions and installed updates for each version are stored in different subkeys.</span></span> <span data-ttu-id="8ec0d-106">Pour plus d'informations sur la détection des numéros des versions installées, voir [Comment : déterminer les versions .NET Framework installées](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).</span><span class="sxs-lookup"><span data-stu-id="8ec0d-106">For information about detecting the installed version numbers, see [How to: Determine Which .NET Framework Versions Are Installed](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).</span></span> <span data-ttu-id="8ec0d-107">Pour plus d’informations sur l’installation du .NET Framework, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).</span><span class="sxs-lookup"><span data-stu-id="8ec0d-107">For information about installing the .NET Framework, see [Install the .NET Framework for developers](../../../docs/framework/install/guide-for-developers.md).</span></span>  
   
-### <a name="to-find-installed-updates"></a>Pour trouver les mises à jour installées  
+### <a name="to-find-installed-updates"></a><span data-ttu-id="8ec0d-108">Pour trouver les mises à jour installées</span><span class="sxs-lookup"><span data-stu-id="8ec0d-108">To find installed updates</span></span>  
   
-1.  Ouvrez le programme **regedit.exe**. Dans Windows 8 et les versions ultérieures, ouvrez l'écran d'accueil et tapez le nom. Dans les versions antérieures de Windows, dans le menu **Démarrer**, choisissez **Exécuter** puis, dans la zone **Ouvrir**, entrez **regedit.exe**.  
+1.  <span data-ttu-id="8ec0d-109">Ouvrez le programme **regedit.exe**.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-109">Open the program **regedit.exe**.</span></span> <span data-ttu-id="8ec0d-110">Dans Windows 8 et les versions ultérieures, ouvrez l'écran d'accueil et tapez le nom.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-110">In Windows 8 and higher open the Start screen and type the name.</span></span> <span data-ttu-id="8ec0d-111">Dans les versions antérieures de Windows, dans le menu **Démarrer**, choisissez **Exécuter** puis, dans la zone **Ouvrir**, entrez **regedit.exe**.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-111">In earlier versions of Windows, on the **Start** menu, choose **Run** and then, in the **Open** box, enter **regedit.exe**.</span></span>  
   
-     Vous devez disposer d'informations d'identification d'administration pour exécuter regedit.exe.  
+     <span data-ttu-id="8ec0d-112">Vous devez disposer d'informations d'identification d'administration pour exécuter regedit.exe.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-112">You must have administrative credentials to run regedit.exe.</span></span>  
   
-2.  Dans l'Éditeur du Registre, ouvrez la sous-clé suivante :  
+2.  <span data-ttu-id="8ec0d-113">Dans l'Éditeur du Registre, ouvrez la sous-clé suivante :</span><span class="sxs-lookup"><span data-stu-id="8ec0d-113">In the Registry Editor, open the following subkey:</span></span>  
   
-     HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates  
+     <span data-ttu-id="8ec0d-114">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates</span><span class="sxs-lookup"><span data-stu-id="8ec0d-114">HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates</span></span>  
   
-     Les mises à jour installées sont répertoriées sous les sous-clés qui identifient la version du .NET Framework auquel elles s'appliquent. Chaque mise à jour est identifiée par un numéro de Base de connaissances (KB).  
+     <span data-ttu-id="8ec0d-115">Les mises à jour installées sont répertoriées sous les sous-clés qui identifient la version du .NET Framework auquel elles s'appliquent.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-115">The installed updates are listed under subkeys that identify the .NET Framework version they apply to.</span></span> <span data-ttu-id="8ec0d-116">Chaque mise à jour est identifiée par un numéro de Base de connaissances (KB).</span><span class="sxs-lookup"><span data-stu-id="8ec0d-116">Each update is identified by a Knowledge Base (KB) number.</span></span>  
   
-## <a name="example"></a>Exemple  
- Le code suivant détermine par programmation les mises à jour du .NET Framework installées sur un ordinateur. Vous devez disposer d'informations d'identification d'administration pour exécuter cet exemple.  
+## <a name="example"></a><span data-ttu-id="8ec0d-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="8ec0d-117">Example</span></span>  
+ <span data-ttu-id="8ec0d-118">Le code suivant détermine par programmation les mises à jour du .NET Framework installées sur un ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-118">The following code programmatically determines the .NET Framework updates that are installed on a computer.</span></span> <span data-ttu-id="8ec0d-119">Vous devez disposer d'informations d'identification d'administration pour exécuter cet exemple.</span><span class="sxs-lookup"><span data-stu-id="8ec0d-119">You must have administrative credentials to run this example.</span></span>  
   
- [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
+ <span data-ttu-id="8ec0d-120">[!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]</span><span class="sxs-lookup"><span data-stu-id="8ec0d-120">[!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]</span></span>  
   
- Cet exemple produit un résultat semblable au suivant :  
+ <span data-ttu-id="8ec0d-121">Cet exemple produit un résultat semblable au suivant :</span><span class="sxs-lookup"><span data-stu-id="8ec0d-121">The example produces output that's similar to the following:</span></span>  
   
 ```  
 Microsoft .NET Framework 3.5 SP1  
@@ -74,9 +74,9 @@ Microsoft .NET Framework 4 Extended
   KB2656351  Security Update for Microsoft .NET Framework 4 Extended (KB2656351)  
 ```  
   
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a><span data-ttu-id="8ec0d-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ec0d-122">See also</span></span>
 
-[Guide pratique pour déterminer les versions .NET Framework installées](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
-[Installation du .NET Framework](../../../docs/framework/install/guide-for-developers.md)   
-[Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+<span data-ttu-id="8ec0d-123">[Guide pratique pour déterminer les versions .NET Framework installées](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md) </span><span class="sxs-lookup"><span data-stu-id="8ec0d-123">[How to: Determine Which .NET Framework Versions Are Installed](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md) </span></span>  
+<span data-ttu-id="8ec0d-124">[Installation du .NET Framework](../../../docs/framework/install/guide-for-developers.md) </span><span class="sxs-lookup"><span data-stu-id="8ec0d-124">[Installing the .NET Framework](../../../docs/framework/install/guide-for-developers.md) </span></span>  
+[<span data-ttu-id="8ec0d-125">Versions et dépendances</span><span class="sxs-lookup"><span data-stu-id="8ec0d-125">Versions and Dependencies</span></span>](../../../docs/framework/migration-guide/versions-and-dependencies.md)
 

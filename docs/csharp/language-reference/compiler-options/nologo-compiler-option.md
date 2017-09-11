@@ -39,21 +39,21 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="nologo-c-compiler-options"></a>/nologo (Options du compilateur C#)
-L’option **/nologo** supprime l’affichage de la bannière de démarrage pendant le démarrage du compilateur et l’affichage des messages d’informations pendant la compilation.  
+# <a name="nologo-c-compiler-options"></a><span data-ttu-id="7fdb7-102">/nologo (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="7fdb7-102">/nologo (C# Compiler Options)</span></span>
+<span data-ttu-id="7fdb7-103">L’option **/nologo** supprime l’affichage de la bannière de démarrage pendant le démarrage du compilateur et l’affichage des messages d’informations pendant la compilation.</span><span class="sxs-lookup"><span data-stu-id="7fdb7-103">The **/nologo** option suppresses display of the sign-on banner when the compiler starts up and display of informational messages during compiling.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="7fdb7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7fdb7-104">Syntax</span></span>  
   
 ```console  
 /nologo  
 ```  
   
-## <a name="remarks"></a>Remarques  
- Cette option n’est pas disponible dans l’environnement de développement ; elle l’est uniquement au moment de la compilation à partir de la ligne de commande.  
+## <a name="remarks"></a><span data-ttu-id="7fdb7-105">Remarques</span><span class="sxs-lookup"><span data-stu-id="7fdb7-105">Remarks</span></span>  
+ <span data-ttu-id="7fdb7-106">Cette option n’est pas disponible dans l’environnement de développement ; elle l’est uniquement au moment de la compilation à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="7fdb7-106">This option is not available from within the development environment; it is only available when compiling from the command line.</span></span>  
   
- Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
+ <span data-ttu-id="7fdb7-107">Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.</span><span class="sxs-lookup"><span data-stu-id="7fdb7-107">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a><span data-ttu-id="7fdb7-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7fdb7-108">See Also</span></span>  
+ <span data-ttu-id="7fdb7-109">[Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md) </span><span class="sxs-lookup"><span data-stu-id="7fdb7-109">[C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md) </span></span>  
+ [<span data-ttu-id="7fdb7-110">Gestion des propriétés des projets et des solutions</span><span class="sxs-lookup"><span data-stu-id="7fdb7-110">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
 

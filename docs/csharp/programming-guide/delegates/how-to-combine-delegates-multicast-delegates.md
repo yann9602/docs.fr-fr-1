@@ -35,16 +35,16 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a>Guide pratique pour combiner des délégués (délégués multicast) (Guide de programmation C#)
-Cet exemple explique comment créer des délégués multicast. Une propriété utile des objets [délégués](../../../csharp/language-reference/keywords/delegate.md) est que plusieurs objets peuvent être assignés à une instance de délégué à l’aide de l’opérateur `+`. Le délégué multicast contient une liste des délégués assignés. Quand le délégué multicast est appelé, il appelle les délégués dans la liste, dans l’ordre. Seuls des délégués de même type peuvent être combinés.  
+# <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a><span data-ttu-id="84dbf-102">Guide pratique pour combiner des délégués (délégués multicast) (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="84dbf-102">How to: Combine Delegates (Multicast Delegates)(C# Programming Guide)</span></span>
+<span data-ttu-id="84dbf-103">Cet exemple explique comment créer des délégués multicast.</span><span class="sxs-lookup"><span data-stu-id="84dbf-103">This example demonstrates how to create multicast delegates.</span></span> <span data-ttu-id="84dbf-104">Une propriété utile des objets [délégués](../../../csharp/language-reference/keywords/delegate.md) est que plusieurs objets peuvent être assignés à une instance de délégué à l’aide de l’opérateur `+`.</span><span class="sxs-lookup"><span data-stu-id="84dbf-104">A useful property of [delegate](../../../csharp/language-reference/keywords/delegate.md) objects is that multiple objects can be assigned to one delegate instance by using the `+` operator.</span></span> <span data-ttu-id="84dbf-105">Le délégué multicast contient une liste des délégués assignés.</span><span class="sxs-lookup"><span data-stu-id="84dbf-105">The multicast delegate contains a list of the assigned delegates.</span></span> <span data-ttu-id="84dbf-106">Quand le délégué multicast est appelé, il appelle les délégués dans la liste, dans l’ordre.</span><span class="sxs-lookup"><span data-stu-id="84dbf-106">When the multicast delegate is called, it invokes the delegates in the list, in order.</span></span> <span data-ttu-id="84dbf-107">Seuls des délégués de même type peuvent être combinés.</span><span class="sxs-lookup"><span data-stu-id="84dbf-107">Only delegates of the same type can be combined.</span></span>  
   
- Vous pouvez utiliser l’opérateur `-` pour supprimer un délégué de composant d’un délégué multicast.  
+ <span data-ttu-id="84dbf-108">Vous pouvez utiliser l’opérateur `-` pour supprimer un délégué de composant d’un délégué multicast.</span><span class="sxs-lookup"><span data-stu-id="84dbf-108">The `-` operator can be used to remove a component delegate from a multicast delegate.</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]  
+## <a name="example"></a><span data-ttu-id="84dbf-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="84dbf-109">Example</span></span>  
+ <span data-ttu-id="84dbf-110">[!code-cs[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="84dbf-110">[!code-cs[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.MulticastDelegate>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Événements](../../../csharp/programming-guide/events/index.md)
+## <a name="see-also"></a><span data-ttu-id="84dbf-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="84dbf-111">See Also</span></span>  
+ <span data-ttu-id="84dbf-112"><xref:System.MulticastDelegate></span><span class="sxs-lookup"><span data-stu-id="84dbf-112"><xref:System.MulticastDelegate></span></span>   
+ <span data-ttu-id="84dbf-113">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="84dbf-113">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="84dbf-114">Événements</span><span class="sxs-lookup"><span data-stu-id="84dbf-114">Events</span></span>](../../../csharp/programming-guide/events/index.md)
 

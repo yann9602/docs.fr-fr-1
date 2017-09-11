@@ -37,26 +37,26 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="partial-type-c-reference"></a>partial, type (référence C#)
-Les définitions de type partiel permettent le fractionnement de la définition d’une classe, d’un struct ou d’une interface entre plusieurs fichiers.  
+# <a name="partial-type-c-reference"></a><span data-ttu-id="56723-102">partial, type (référence C#)</span><span class="sxs-lookup"><span data-stu-id="56723-102">partial (Type) (C# Reference)</span></span>
+<span data-ttu-id="56723-103">Les définitions de type partiel permettent le fractionnement de la définition d’une classe, d’un struct ou d’une interface entre plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="56723-103">Partial type definitions allow for the definition of a class, struct, or interface to be split into multiple files.</span></span>  
   
- Dans File1.cs :  
+ <span data-ttu-id="56723-104">Dans File1.cs :</span><span class="sxs-lookup"><span data-stu-id="56723-104">In File1.cs:</span></span>  
   
- [!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_1.cs)]  
+ <span data-ttu-id="56723-105">[!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="56723-105">[!code-cs[csrefKeywordsContextual#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_1.cs)]</span></span>  
   
- Déclaration dans File2.cs :  
+ <span data-ttu-id="56723-106">Déclaration dans File2.cs :</span><span class="sxs-lookup"><span data-stu-id="56723-106">In File2.cs the declaration:</span></span>  
   
- [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]  
+ <span data-ttu-id="56723-107">[!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]</span><span class="sxs-lookup"><span data-stu-id="56723-107">[!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]</span></span>  
   
-## <a name="remarks"></a>Notes  
- Fractionner un type de classe, de struct ou d’interface entre plusieurs fichiers peut être utile si vous travaillez sur des projets volumineux ou des projets contenant du code généré automatiquement, comme celui fourni par le [Concepteur Windows Forms](http://msdn.microsoft.com/en-us/3c3d61f8-f36c-4d41-b9c3-398376fabb15). Un type partiel peut contenir une [méthode partielle](../../../csharp/language-reference/keywords/partial-method.md). Pour plus d’informations, consultez [Classes et méthodes partielles](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
+## <a name="remarks"></a><span data-ttu-id="56723-108">Notes</span><span class="sxs-lookup"><span data-stu-id="56723-108">Remarks</span></span>  
+ <span data-ttu-id="56723-109">Fractionner un type de classe, de struct ou d’interface entre plusieurs fichiers peut être utile si vous travaillez sur des projets volumineux ou des projets contenant du code généré automatiquement, comme celui fourni par le [Concepteur Windows Forms](http://msdn.microsoft.com/en-us/3c3d61f8-f36c-4d41-b9c3-398376fabb15).</span><span class="sxs-lookup"><span data-stu-id="56723-109">Splitting a class, struct or interface type over several files can be useful when you are working with large projects, or with automatically generated code such as that provided by the [Windows Forms Designer](http://msdn.microsoft.com/en-us/3c3d61f8-f36c-4d41-b9c3-398376fabb15).</span></span> <span data-ttu-id="56723-110">Un type partiel peut contenir une [méthode partielle](../../../csharp/language-reference/keywords/partial-method.md).</span><span class="sxs-lookup"><span data-stu-id="56723-110">A partial type may contain a [partial method](../../../csharp/language-reference/keywords/partial-method.md).</span></span> <span data-ttu-id="56723-111">Pour plus d’informations, consultez [Classes et méthodes partielles](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).</span><span class="sxs-lookup"><span data-stu-id="56723-111">For more information, see [Partial Classes and Methods](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).</span></span>  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="56723-112">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="56723-112">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)   
- [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+## <a name="see-also"></a><span data-ttu-id="56723-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="56723-113">See Also</span></span>  
+ <span data-ttu-id="56723-114">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="56723-114">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="56723-115">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="56723-115">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="56723-116">[Modificateurs](../../../csharp/language-reference/keywords/modifiers.md) </span><span class="sxs-lookup"><span data-stu-id="56723-116">[Modifiers](../../../csharp/language-reference/keywords/modifiers.md) </span></span>  
+ [<span data-ttu-id="56723-117">Introduction aux génériques</span><span class="sxs-lookup"><span data-stu-id="56723-117">Introduction to Generics</span></span>](../../../csharp/programming-guide/generics/introduction-to-generics.md)
 

@@ -1,1 +1,1 @@
-Kit de développement logiciel (SDK)
+<span data-ttu-id="9ec46-101">Kit de développement logiciel (SDK)</span><span class="sxs-lookup"><span data-stu-id="9ec46-101">software development kit (SDK)</span></span>

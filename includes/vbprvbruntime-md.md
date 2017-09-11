@@ -1,1 +1,1 @@
-bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)
+<span data-ttu-id="ae5f0-101">bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="ae5f0-101">Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>

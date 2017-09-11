@@ -1,2 +1,2 @@
 > [!WARNING]
-> Cette rubrique s'applique au kit .NET Core SDK 2.0 Preview 2.
+> <span data-ttu-id="fa177-101">Cette rubrique s'applique au kit .NET Core SDK 2.0 Preview 2.</span><span class="sxs-lookup"><span data-stu-id="fa177-101">This topic applies to .NET Core SDK 2.0 Preview 2.</span></span>

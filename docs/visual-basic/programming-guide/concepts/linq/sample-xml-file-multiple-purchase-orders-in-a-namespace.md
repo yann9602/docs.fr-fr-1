@@ -20,16 +20,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81e6e6319fd8d5f1bcb7065cda6b8eb652a99b55
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 02ea88ee2b2d088cd1f0c5e896210619f8bf8144
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms
-Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Ce fichier contient plusieurs commandes fournisseur. Le code XML se trouve dans un espace de noms.  
+# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a><span data-ttu-id="0c1c5-102">Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="0c1c5-102">Sample XML File: Multiple Purchase Orders in a Namespace</span></span>
+<span data-ttu-id="0c1c5-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].</span><span class="sxs-lookup"><span data-stu-id="0c1c5-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] documentation.</span></span> <span data-ttu-id="0c1c5-104">Ce fichier contient plusieurs commandes fournisseur.</span><span class="sxs-lookup"><span data-stu-id="0c1c5-104">This file contains several purchase orders.</span></span> <span data-ttu-id="0c1c5-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="0c1c5-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseordersinnamespacexml"></a>PurchaseOrdersInNamespace.xml  
+## <a name="purchaseordersinnamespacexml"></a><span data-ttu-id="0c1c5-106">PurchaseOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="0c1c5-106">PurchaseOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -126,5 +127,5 @@ Le fichier XML suivant est utilisé dans différents exemples dans la documentat
 </aw:PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="0c1c5-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0c1c5-107">See Also</span></span>  
+ [<span data-ttu-id="0c1c5-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0c1c5-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

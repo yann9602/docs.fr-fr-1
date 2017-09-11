@@ -26,10 +26,10 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a>Exemple de fichier XML : Livres (LINQ to XML)
-Le fichier XML suivant est utilisé dans différents exemples de la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Le fichier contient des informations sur des livres.  
+# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="0ac0f-102">Exemple de fichier XML : Livres (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0ac0f-102">Sample XML File: Books (LINQ to XML)</span></span>
+<span data-ttu-id="0ac0f-103">Le fichier XML suivant est utilisé dans différents exemples de la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="0ac0f-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0ac0f-104">Le fichier contient des informations sur des livres.</span><span class="sxs-lookup"><span data-stu-id="0ac0f-104">The file contains information about books.</span></span>  
   
-## <a name="booksxml"></a>books.xml  
+## <a name="booksxml"></a><span data-ttu-id="0ac0f-105">books.xml</span><span class="sxs-lookup"><span data-stu-id="0ac0f-105">books.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -56,6 +56,6 @@ Le fichier XML suivant est utilisé dans différents exemples de la documentatio
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples de documents XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="0ac0f-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0ac0f-106">See Also</span></span>  
+ [<span data-ttu-id="0ac0f-107">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="0ac0f-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
 

@@ -26,31 +26,31 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="sorting-data-c"></a>Tri des données (C#)
-Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs. Le premier critère de tri effectue un tri principal sur les éléments. En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.  
+# <a name="sorting-data-c"></a><span data-ttu-id="2d2b3-102">Tri des données (C#)</span><span class="sxs-lookup"><span data-stu-id="2d2b3-102">Sorting Data (C#)</span></span>
+<span data-ttu-id="2d2b3-103">Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-103">A sorting operation orders the elements of a sequence based on one or more attributes.</span></span> <span data-ttu-id="2d2b3-104">Le premier critère de tri effectue un tri principal sur les éléments.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-104">The first sort criterion performs a primary sort on the elements.</span></span> <span data-ttu-id="2d2b3-105">En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-105">By specifying a second sort criterion, you can sort the elements within each primary sort group.</span></span>  
   
- L’illustration suivante montre les résultats d’une opération de tri alphabétique sur une séquence de caractères.  
+ <span data-ttu-id="2d2b3-106">L’illustration suivante montre les résultats d’une opération de tri alphabétique sur une séquence de caractères.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-106">The following illustration shows the results of an alphabetical sort operation on a sequence of characters.</span></span>  
   
- ![Opération de tri LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_ordering.png "LINQ_Ordering")  
+ <span data-ttu-id="2d2b3-107">![Opération de tri LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_ordering.png "LINQ_Ordering")</span><span class="sxs-lookup"><span data-stu-id="2d2b3-107">![LINQ Sorting Operation](../../../../csharp/programming-guide/concepts/linq/media/linq_ordering.png "LINQ_Ordering")</span></span>  
   
- Les méthodes d’opérateurs de requête standard qui trient les données sont répertoriées dans la section suivante.  
+ <span data-ttu-id="2d2b3-108">Les méthodes d’opérateurs de requête standard qui trient les données sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-108">The standard query operator methods that sort data are listed in the following section.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="2d2b3-109">Méthodes</span><span class="sxs-lookup"><span data-stu-id="2d2b3-109">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
+|<span data-ttu-id="2d2b3-110">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="2d2b3-110">Method Name</span></span>|<span data-ttu-id="2d2b3-111">Description</span><span class="sxs-lookup"><span data-stu-id="2d2b3-111">Description</span></span>|<span data-ttu-id="2d2b3-112">Syntaxe d'expression de requête C#</span><span class="sxs-lookup"><span data-stu-id="2d2b3-112">C# Query Expression Syntax</span></span>|<span data-ttu-id="2d2b3-113">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="2d2b3-113">More Information</span></span>|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|OrderBy|Trie les valeurs dans l’ordre croissant.|`orderby`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=fullName>|  
-|OrderByDescending|Trie les valeurs dans l’ordre décroissant.|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=fullName>|  
-|ThenBy|Effectue un tri secondaire dans l’ordre croissant.|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=fullName>|  
-|ThenByDescending|Effectue un tri secondaire dans l’ordre décroissant.|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=fullName>|  
-|Reverse|Inverse l’ordre des éléments dans une collection.|Non applicable.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=fullName>|  
+|<span data-ttu-id="2d2b3-114">OrderBy</span><span class="sxs-lookup"><span data-stu-id="2d2b3-114">OrderBy</span></span>|<span data-ttu-id="2d2b3-115">Trie les valeurs dans l’ordre croissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-115">Sorts values in ascending order.</span></span>|`orderby`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=fullName>|  
+|<span data-ttu-id="2d2b3-116">OrderByDescending</span><span class="sxs-lookup"><span data-stu-id="2d2b3-116">OrderByDescending</span></span>|<span data-ttu-id="2d2b3-117">Trie les valeurs dans l’ordre décroissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-117">Sorts values in descending order.</span></span>|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=fullName>|  
+|<span data-ttu-id="2d2b3-118">ThenBy</span><span class="sxs-lookup"><span data-stu-id="2d2b3-118">ThenBy</span></span>|<span data-ttu-id="2d2b3-119">Effectue un tri secondaire dans l’ordre croissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-119">Performs a secondary sort in ascending order.</span></span>|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=fullName>|  
+|<span data-ttu-id="2d2b3-120">ThenByDescending</span><span class="sxs-lookup"><span data-stu-id="2d2b3-120">ThenByDescending</span></span>|<span data-ttu-id="2d2b3-121">Effectue un tri secondaire dans l’ordre décroissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-121">Performs a secondary sort in descending order.</span></span>|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=fullName>|  
+|<span data-ttu-id="2d2b3-122">Reverse</span><span class="sxs-lookup"><span data-stu-id="2d2b3-122">Reverse</span></span>|<span data-ttu-id="2d2b3-123">Inverse l’ordre des éléments dans une collection.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-123">Reverses the order of the elements in a collection.</span></span>|<span data-ttu-id="2d2b3-124">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-124">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=fullName>|  
   
-## <a name="query-expression-syntax-examples"></a>Exemples de syntaxe d'expression de requête  
+## <a name="query-expression-syntax-examples"></a><span data-ttu-id="2d2b3-125">Exemples de syntaxe d'expression de requête</span><span class="sxs-lookup"><span data-stu-id="2d2b3-125">Query Expression Syntax Examples</span></span>  
   
-### <a name="primary-sort-examples"></a>Exemples de tri principal  
+### <a name="primary-sort-examples"></a><span data-ttu-id="2d2b3-126">Exemples de tri principal</span><span class="sxs-lookup"><span data-stu-id="2d2b3-126">Primary Sort Examples</span></span>  
   
-#### <a name="primary-ascending-sort"></a>Tri principal croissant  
- L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour trier les chaînes dans un tableau par longueur de chaîne, dans l’ordre croissant.  
+#### <a name="primary-ascending-sort"></a><span data-ttu-id="2d2b3-127">Tri principal croissant</span><span class="sxs-lookup"><span data-stu-id="2d2b3-127">Primary Ascending Sort</span></span>  
+ <span data-ttu-id="2d2b3-128">L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour trier les chaînes dans un tableau par longueur de chaîne, dans l’ordre croissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-128">The following example demonstrates how to use the `orderby` clause in a LINQ query to sort the strings in an array by string length, in ascending order.</span></span>  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -72,8 +72,8 @@ foreach (string str in query)
 */  
 ```  
   
-#### <a name="primary-descending-sort"></a>Tri principal décroissant  
- L’exemple suivant montre comment utiliser la clause `orderby``descending` dans une requête LINQ pour trier les chaînes selon leur première lettre, dans l’ordre décroissant.  
+#### <a name="primary-descending-sort"></a><span data-ttu-id="2d2b3-129">Tri principal décroissant</span><span class="sxs-lookup"><span data-stu-id="2d2b3-129">Primary Descending Sort</span></span>  
+ <span data-ttu-id="2d2b3-130">L’exemple suivant montre comment utiliser la clause `orderby``descending` dans une requête LINQ pour trier les chaînes selon leur première lettre, dans l’ordre décroissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-130">The next example demonstrates how to use the `orderby``descending` clause in a LINQ query to sort the strings by their first letter, in descending order.</span></span>  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -95,10 +95,10 @@ foreach (string str in query)
 */  
 ```  
   
-### <a name="secondary-sort-examples"></a>Exemples de tri secondaire  
+### <a name="secondary-sort-examples"></a><span data-ttu-id="2d2b3-131">Exemples de tri secondaire</span><span class="sxs-lookup"><span data-stu-id="2d2b3-131">Secondary Sort Examples</span></span>  
   
-#### <a name="secondary-ascending-sort"></a>Tri secondaire croissant  
- L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour effectuer un tri principal et un tri secondaire des chaînes dans un tableau. Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne, chaque fois dans l’ordre croissant.  
+#### <a name="secondary-ascending-sort"></a><span data-ttu-id="2d2b3-132">Tri secondaire croissant</span><span class="sxs-lookup"><span data-stu-id="2d2b3-132">Secondary Ascending Sort</span></span>  
+ <span data-ttu-id="2d2b3-133">L’exemple suivant montre comment utiliser la clause `orderby` dans une requête LINQ pour effectuer un tri principal et un tri secondaire des chaînes dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-133">The following example demonstrates how to use the `orderby` clause in a LINQ query to perform a primary and secondary sort of the strings in an array.</span></span> <span data-ttu-id="2d2b3-134">Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne, chaque fois dans l’ordre croissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-134">The strings are sorted primarily by length and secondarily by the first letter of the string, both in ascending order.</span></span>  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -120,8 +120,8 @@ foreach (string str in query)
 */  
 ```  
   
-#### <a name="secondary-descending-sort"></a>Tri secondaire décroissant  
- L’exemple suivant montre comment utiliser la clause `orderby``descending` dans une requête LINQ pour effectuer un tri principal dans l’ordre croissant et un tri secondaire dans l’ordre décroissant. Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne.  
+#### <a name="secondary-descending-sort"></a><span data-ttu-id="2d2b3-135">Tri secondaire décroissant</span><span class="sxs-lookup"><span data-stu-id="2d2b3-135">Secondary Descending Sort</span></span>  
+ <span data-ttu-id="2d2b3-136">L’exemple suivant montre comment utiliser la clause `orderby``descending` dans une requête LINQ pour effectuer un tri principal dans l’ordre croissant et un tri secondaire dans l’ordre décroissant.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-136">The next example demonstrates how to use the `orderby``descending` clause in a LINQ query to perform a primary sort, in ascending order, and a secondary sort, in descending order.</span></span> <span data-ttu-id="2d2b3-137">Les chaînes sont triées en premier lieu selon leur longueur, puis secondairement en fonction de la première lettre de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="2d2b3-137">The strings are sorted primarily by length and secondarily by the first letter of the string.</span></span>  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -143,10 +143,10 @@ foreach (string str in query)
 */  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq>   
- [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [orderby, clause](../../../../csharp/language-reference/keywords/orderby-clause.md)   
- [Guide pratique pour classer les résultats d’une clause join](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
- [Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+## <a name="see-also"></a><span data-ttu-id="2d2b3-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2d2b3-138">See Also</span></span>  
+ <span data-ttu-id="2d2b3-139"><xref:System.Linq></span><span class="sxs-lookup"><span data-stu-id="2d2b3-139"><xref:System.Linq></span></span>   
+ <span data-ttu-id="2d2b3-140">[Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) </span><span class="sxs-lookup"><span data-stu-id="2d2b3-140">[Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) </span></span>  
+ <span data-ttu-id="2d2b3-141">[orderby, clause](../../../../csharp/language-reference/keywords/orderby-clause.md) </span><span class="sxs-lookup"><span data-stu-id="2d2b3-141">[orderby clause](../../../../csharp/language-reference/keywords/orderby-clause.md) </span></span>  
+ <span data-ttu-id="2d2b3-142">[Guide pratique pour classer les résultats d’une clause join](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md) </span><span class="sxs-lookup"><span data-stu-id="2d2b3-142">[How to: Order the Results of a Join Clause](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md) </span></span>  
+ [<span data-ttu-id="2d2b3-143">Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="2d2b3-143">How to: Sort or Filter Text Data by Any Word or Field (LINQ) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
 

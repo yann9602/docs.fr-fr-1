@@ -35,13 +35,13 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="visual-basic-sample-applications"></a>Exemples d'applications Visual Basic
-Vous pouvez utiliser Visual Studio pour télécharger et installer des exemples d'applications Visual Basic complètes et empaquetées à partir de [MSDN Code Gallery](http://go.microsoft.com/fwlink/?LinkId=254185)  
+# <a name="visual-basic-sample-applications"></a><span data-ttu-id="f34a3-102">Exemples d'applications Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f34a3-102">Visual Basic Sample Applications</span></span>
+<span data-ttu-id="f34a3-103">Vous pouvez utiliser Visual Studio pour télécharger et installer des exemples d'applications Visual Basic complètes et empaquetées à partir de [MSDN Code Gallery](http://go.microsoft.com/fwlink/?LinkId=254185)</span><span class="sxs-lookup"><span data-stu-id="f34a3-103">You can use Visual Studio to download and install samples of full, packaged Visual Basic applications from the [MSDN Code Gallery](http://go.microsoft.com/fwlink/?LinkId=254185)</span></span>  
   
- Vous pouvez télécharger chaque exemple individuellement ou télécharger un pack d'exemples qui contient des exemples associés partageant une technologie ou une rubrique. Vous recevez une notification quand des modifications du code source sont publiées pour chaque exemple que vous téléchargez.  
+ <span data-ttu-id="f34a3-104">Vous pouvez télécharger chaque exemple individuellement ou télécharger un pack d'exemples qui contient des exemples associés partageant une technologie ou une rubrique.</span><span class="sxs-lookup"><span data-stu-id="f34a3-104">You can download each sample individually, or you can download a Sample Pack, which contains related samples that share a technology or topic.</span></span> <span data-ttu-id="f34a3-105">Vous recevez une notification quand des modifications du code source sont publiées pour chaque exemple que vous téléchargez.</span><span class="sxs-lookup"><span data-stu-id="f34a3-105">You’ll receive a notification when source code changes are published for any sample that you download.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Exemples Visual Studio](http://go.microsoft.com/fwlink/?LinkId=150928)   
- [Guide de programmation Visual Basic](../visual-basic/programming-guide/index.md)   
- [Visual Basic](../visual-basic/index.md)
+## <a name="see-also"></a><span data-ttu-id="f34a3-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f34a3-106">See Also</span></span>  
+ <span data-ttu-id="f34a3-107">[Exemples Visual Studio](http://go.microsoft.com/fwlink/?LinkId=150928) </span><span class="sxs-lookup"><span data-stu-id="f34a3-107">[Visual Studio Samples](http://go.microsoft.com/fwlink/?LinkId=150928) </span></span>  
+ <span data-ttu-id="f34a3-108">[Guide de programmation Visual Basic](../visual-basic/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="f34a3-108">[Visual Basic Programming Guide](../visual-basic/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="f34a3-109">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f34a3-109">Visual Basic</span></span>](../visual-basic/index.md)
 

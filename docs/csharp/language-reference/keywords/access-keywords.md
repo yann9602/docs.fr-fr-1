@@ -34,20 +34,20 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="access-keywords-c-reference"></a>Mots clés d'accès (référence C#)
-Cette section présente les mots clés d’accès suivants :  
+# <a name="access-keywords-c-reference"></a><span data-ttu-id="5b8f2-102">Mots clés d'accès (référence C#)</span><span class="sxs-lookup"><span data-stu-id="5b8f2-102">Access Keywords (C# Reference)</span></span>
+<span data-ttu-id="5b8f2-103">Cette section présente les mots clés d’accès suivants :</span><span class="sxs-lookup"><span data-stu-id="5b8f2-103">This section introduces the following access keywords:</span></span>  
   
--   [base](../../../csharp/language-reference/keywords/base.md)  
+-   [<span data-ttu-id="5b8f2-104">base</span><span class="sxs-lookup"><span data-stu-id="5b8f2-104">base</span></span>](../../../csharp/language-reference/keywords/base.md)  
   
-     Accède aux membres de la classe de base.  
+     <span data-ttu-id="5b8f2-105">Accède aux membres de la classe de base.</span><span class="sxs-lookup"><span data-stu-id="5b8f2-105">Accesses the members of the base class.</span></span>  
   
--   [this](../../../csharp/language-reference/keywords/this.md)  
+-   [<span data-ttu-id="5b8f2-106">this</span><span class="sxs-lookup"><span data-stu-id="5b8f2-106">this</span></span>](../../../csharp/language-reference/keywords/this.md)  
   
-     Fait référence à l’instance actuelle de la classe.  
+     <span data-ttu-id="5b8f2-107">Fait référence à l’instance actuelle de la classe.</span><span class="sxs-lookup"><span data-stu-id="5b8f2-107">Refers to the current instance of the class.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="5b8f2-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5b8f2-108">See Also</span></span>  
+ <span data-ttu-id="5b8f2-109">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="5b8f2-109">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="5b8f2-110">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="5b8f2-110">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="5b8f2-111">[Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md) </span><span class="sxs-lookup"><span data-stu-id="5b8f2-111">[Access Modifiers](../../../csharp/language-reference/keywords/access-modifiers.md) </span></span>  
+ [<span data-ttu-id="5b8f2-112">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="5b8f2-112">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)
 

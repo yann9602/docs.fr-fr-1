@@ -1,1 +1,1 @@
-SQL
+<span data-ttu-id="a9213-101">SQL</span><span class="sxs-lookup"><span data-stu-id="a9213-101">SQL</span></span>

@@ -34,68 +34,68 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Guide pratique pour déclarer, instancier et utiliser un délégué (Guide de programmation C#)
-Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués comme illustré dans l’exemple suivant.  
+# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a><span data-ttu-id="afbbc-102">Guide pratique pour déclarer, instancier et utiliser un délégué (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="afbbc-102">How to: Declare, Instantiate, and Use a Delegate (C# Programming Guide)</span></span>
+<span data-ttu-id="afbbc-103">Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="afbbc-103">In C# 1.0 and later, delegates can be declared as shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideDelegates#13](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_1.cs)]  
+ <span data-ttu-id="afbbc-104">[!code-cs[csProgGuideDelegates#13](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-104">[!code-cs[csProgGuideDelegates#13](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_1.cs)]</span></span>  
   
- [!code-cs[csProgGuideDelegates#14](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_2.cs)]  
+ <span data-ttu-id="afbbc-105">[!code-cs[csProgGuideDelegates#14](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_2.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-105">[!code-cs[csProgGuideDelegates#14](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_2.cs)]</span></span>  
   
- C# 2.0 offre un moyen plus simple d’écrire la déclaration précédente, comme illustré dans l’exemple suivant.  
+ <span data-ttu-id="afbbc-106">C# 2.0 offre un moyen plus simple d’écrire la déclaration précédente, comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="afbbc-106">C# 2.0 provides a simpler way to write the previous declaration, as shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideDelegates#32](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_3.cs)]  
+ <span data-ttu-id="afbbc-107">[!code-cs[csProgGuideDelegates#32](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_3.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-107">[!code-cs[csProgGuideDelegates#32](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_3.cs)]</span></span>  
   
- Dans C# 2.0 et versions ultérieures, vous pouvez aussi utiliser une méthode anonyme pour déclarer et initialiser un [délégué](../../../csharp/language-reference/keywords/delegate.md), comme illustré dans l’exemple suivant.  
+ <span data-ttu-id="afbbc-108">Dans C# 2.0 et versions ultérieures, vous pouvez aussi utiliser une méthode anonyme pour déclarer et initialiser un [délégué](../../../csharp/language-reference/keywords/delegate.md), comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="afbbc-108">In C# 2.0 and later, it is also possible to use an anonymous method to declare and initialize a [delegate](../../../csharp/language-reference/keywords/delegate.md), as shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideDelegates#15](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_4.cs)]  
+ <span data-ttu-id="afbbc-109">[!code-cs[csProgGuideDelegates#15](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_4.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-109">[!code-cs[csProgGuideDelegates#15](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_4.cs)]</span></span>  
   
- Dans C# 3.0 et versions ultérieures, vous pouvez aussi déclarer et instancier des délégués à l’aide d’une expression lambda, comme illustré dans l’exemple suivant.  
+ <span data-ttu-id="afbbc-110">Dans C# 3.0 et versions ultérieures, vous pouvez aussi déclarer et instancier des délégués à l’aide d’une expression lambda, comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="afbbc-110">In C# 3.0 and later, delegates can also be declared and instantiated by using a lambda expression, as shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideDelegates#31](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_5.cs)]  
+ <span data-ttu-id="afbbc-111">[!code-cs[csProgGuideDelegates#31](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_5.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-111">[!code-cs[csProgGuideDelegates#31](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_5.cs)]</span></span>  
   
- Pour plus d’informations, consultez [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ <span data-ttu-id="afbbc-112">Pour plus d’informations, consultez [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="afbbc-112">For more information, see [Lambda Expressions](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>  
   
- L’exemple suivant illustre la déclaration, l’instanciation et l’utilisation d’un délégué. La classe `BookDB` encapsule une base de données de librairie qui tient à jour un inventaire des livres. Elle expose une méthode, `ProcessPaperbackBooks`, qui recherche tous les livres de poche dans la base de données et appelle un délégué pour chacun d’entre eux. Le type `delegate` qui est utilisé se nomme `ProcessBookDelegate`. La classe `Test` utilise cette classe pour imprimer les titres et le prix moyen des livres de poche.  
+ <span data-ttu-id="afbbc-113">L’exemple suivant illustre la déclaration, l’instanciation et l’utilisation d’un délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-113">The following example illustrates declaring, instantiating, and using a delegate.</span></span> <span data-ttu-id="afbbc-114">La classe `BookDB` encapsule une base de données de librairie qui tient à jour un inventaire des livres.</span><span class="sxs-lookup"><span data-stu-id="afbbc-114">The `BookDB` class encapsulates a bookstore database that maintains a database of books.</span></span> <span data-ttu-id="afbbc-115">Elle expose une méthode, `ProcessPaperbackBooks`, qui recherche tous les livres de poche dans la base de données et appelle un délégué pour chacun d’entre eux.</span><span class="sxs-lookup"><span data-stu-id="afbbc-115">It exposes a method, `ProcessPaperbackBooks`, which finds all paperback books in the database and calls a delegate for each one.</span></span> <span data-ttu-id="afbbc-116">Le type `delegate` qui est utilisé se nomme `ProcessBookDelegate`.</span><span class="sxs-lookup"><span data-stu-id="afbbc-116">The `delegate` type that is used is named `ProcessBookDelegate`.</span></span> <span data-ttu-id="afbbc-117">La classe `Test` utilise cette classe pour imprimer les titres et le prix moyen des livres de poche.</span><span class="sxs-lookup"><span data-stu-id="afbbc-117">The `Test` class uses this class to print the titles and average price of the paperback books.</span></span>  
   
- L’utilisation des délégués favorise une bonne séparation des fonctionnalités entre la base de données de librairie et le code client. Le code client n’a aucune connaissance de la façon dont les livres sont stockés, ni de la façon dont le code librairie trouve les livres de poche. Le code librairie n’a aucune connaissance du traitement effectué sur les livres de poche une fois qu’il les a trouvés.  
+ <span data-ttu-id="afbbc-118">L’utilisation des délégués favorise une bonne séparation des fonctionnalités entre la base de données de librairie et le code client.</span><span class="sxs-lookup"><span data-stu-id="afbbc-118">The use of delegates promotes good separation of functionality between the bookstore database and the client code.</span></span> <span data-ttu-id="afbbc-119">Le code client n’a aucune connaissance de la façon dont les livres sont stockés, ni de la façon dont le code librairie trouve les livres de poche.</span><span class="sxs-lookup"><span data-stu-id="afbbc-119">The client code has no knowledge of how the books are stored or how the bookstore code finds paperback books.</span></span> <span data-ttu-id="afbbc-120">Le code librairie n’a aucune connaissance du traitement effectué sur les livres de poche une fois qu’il les a trouvés.</span><span class="sxs-lookup"><span data-stu-id="afbbc-120">The bookstore code has no knowledge of what processing is performed on the paperback books after it finds them.</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideDelegates#12](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_6.cs)]  
+## <a name="example"></a><span data-ttu-id="afbbc-121">Exemple</span><span class="sxs-lookup"><span data-stu-id="afbbc-121">Example</span></span>  
+ <span data-ttu-id="afbbc-122">[!code-cs[csProgGuideDelegates#12](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_6.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-122">[!code-cs[csProgGuideDelegates#12](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_6.cs)]</span></span>  
   
-## <a name="robust-programming"></a>Programmation fiable  
+## <a name="robust-programming"></a><span data-ttu-id="afbbc-123">Programmation fiable</span><span class="sxs-lookup"><span data-stu-id="afbbc-123">Robust Programming</span></span>  
   
--   Déclaration d’un délégué.  
+-   <span data-ttu-id="afbbc-124">Déclaration d’un délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-124">Declaring a delegate.</span></span>  
   
-     L’instruction suivante déclare un nouveau type délégué.  
+     <span data-ttu-id="afbbc-125">L’instruction suivante déclare un nouveau type délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-125">The following statement declares a new delegate type.</span></span>  
   
-     [!code-cs[csProgGuideDelegates#16](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_7.cs)]  
+     <span data-ttu-id="afbbc-126">[!code-cs[csProgGuideDelegates#16](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_7.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-126">[!code-cs[csProgGuideDelegates#16](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_7.cs)]</span></span>  
   
-     Chaque type délégué décrit le nombre et les types des arguments, ainsi que le type de la valeur de retour des méthodes qu’il peut encapsuler. Chaque fois qu’un nouvel ensemble de types d’arguments ou de types de valeur de retour est nécessaire, un nouveau type délégué doit être déclaré.  
+     <span data-ttu-id="afbbc-127">Chaque type délégué décrit le nombre et les types des arguments, ainsi que le type de la valeur de retour des méthodes qu’il peut encapsuler.</span><span class="sxs-lookup"><span data-stu-id="afbbc-127">Each delegate type describes the number and types of the arguments, and the type of the return value of methods that it can encapsulate.</span></span> <span data-ttu-id="afbbc-128">Chaque fois qu’un nouvel ensemble de types d’arguments ou de types de valeur de retour est nécessaire, un nouveau type délégué doit être déclaré.</span><span class="sxs-lookup"><span data-stu-id="afbbc-128">Whenever a new set of argument types or return value type is needed, a new delegate type must be declared.</span></span>  
   
--   Instanciation d’un délégué.  
+-   <span data-ttu-id="afbbc-129">Instanciation d’un délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-129">Instantiating a delegate.</span></span>  
   
-     Une fois que vous avez déclaré un type délégué, vous devez créer un objet délégué et l’associer à une méthode particulière. Pour cela, dans l’exemple précédent vous passez la méthode `PrintTitle` à la méthode `ProcessPaperbackBooks`, comme illustré dans l’exemple suivant :  
+     <span data-ttu-id="afbbc-130">Une fois que vous avez déclaré un type délégué, vous devez créer un objet délégué et l’associer à une méthode particulière.</span><span class="sxs-lookup"><span data-stu-id="afbbc-130">After a delegate type has been declared, a delegate object must be created and associated with a particular method.</span></span> <span data-ttu-id="afbbc-131">Pour cela, dans l’exemple précédent vous passez la méthode `PrintTitle` à la méthode `ProcessPaperbackBooks`, comme illustré dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="afbbc-131">In the previous example, you do this by passing the `PrintTitle` method to the `ProcessPaperbackBooks` method as in the following example:</span></span>  
   
-     [!code-cs[csProgGuideDelegates#17](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_8.cs)]  
+     <span data-ttu-id="afbbc-132">[!code-cs[csProgGuideDelegates#17](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_8.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-132">[!code-cs[csProgGuideDelegates#17](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_8.cs)]</span></span>  
   
-     Cela crée un nouvel objet délégué associé à la méthode [statique](../../../csharp/language-reference/keywords/static.md) `Test.PrintTitle`. De même, la méthode non statique `AddBookToTotal` sur l’objet `totaller` est passée comme dans l’exemple suivant :  
+     <span data-ttu-id="afbbc-133">Cela crée un nouvel objet délégué associé à la méthode [statique](../../../csharp/language-reference/keywords/static.md) `Test.PrintTitle`.</span><span class="sxs-lookup"><span data-stu-id="afbbc-133">This creates a new delegate object associated with the [static](../../../csharp/language-reference/keywords/static.md) method `Test.PrintTitle`.</span></span> <span data-ttu-id="afbbc-134">De même, la méthode non statique `AddBookToTotal` sur l’objet `totaller` est passée comme dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="afbbc-134">Similarly, the non-static method `AddBookToTotal` on the object `totaller` is passed as in the following example:</span></span>  
   
-     [!code-cs[csProgGuideDelegates#18](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_9.cs)]  
+     <span data-ttu-id="afbbc-135">[!code-cs[csProgGuideDelegates#18](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_9.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-135">[!code-cs[csProgGuideDelegates#18](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_9.cs)]</span></span>  
   
-     Dans les deux cas, un nouvel objet délégué est passé à la méthode `ProcessPaperbackBooks`.  
+     <span data-ttu-id="afbbc-136">Dans les deux cas, un nouvel objet délégué est passé à la méthode `ProcessPaperbackBooks`.</span><span class="sxs-lookup"><span data-stu-id="afbbc-136">In both cases a new delegate object is passed to the `ProcessPaperbackBooks` method.</span></span>  
   
-     Une fois un délégué créé, la méthode à laquelle il est associé ne change jamais. Les objets délégué sont immuables.  
+     <span data-ttu-id="afbbc-137">Une fois un délégué créé, la méthode à laquelle il est associé ne change jamais. Les objets délégué sont immuables.</span><span class="sxs-lookup"><span data-stu-id="afbbc-137">After a delegate is created, the method it is associated with never changes; delegate objects are immutable.</span></span>  
   
--   Appel d’un délégué.  
+-   <span data-ttu-id="afbbc-138">Appel d’un délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-138">Calling a delegate.</span></span>  
   
-     Une fois créé, un objet délégué est généralement passé à un autre code qui appellera le délégué. Pour appeler un objet délégué, vous devez utiliser le nom de l’objet délégué, suivi des arguments entre parenthèses à passer au délégué. Voici un exemple d’appel de délégué :  
+     <span data-ttu-id="afbbc-139">Une fois créé, un objet délégué est généralement passé à un autre code qui appellera le délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-139">After a delegate object is created, the delegate object is typically passed to other code that will call the delegate.</span></span> <span data-ttu-id="afbbc-140">Pour appeler un objet délégué, vous devez utiliser le nom de l’objet délégué, suivi des arguments entre parenthèses à passer au délégué.</span><span class="sxs-lookup"><span data-stu-id="afbbc-140">A delegate object is called by using the name of the delegate object, followed by the parenthesized arguments to be passed to the delegate.</span></span> <span data-ttu-id="afbbc-141">Voici un exemple d’appel de délégué :</span><span class="sxs-lookup"><span data-stu-id="afbbc-141">Following is an example of a delegate call:</span></span>  
   
-     [!code-cs[csProgGuideDelegates#19](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_10.cs)]  
+     <span data-ttu-id="afbbc-142">[!code-cs[csProgGuideDelegates#19](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_10.cs)]</span><span class="sxs-lookup"><span data-stu-id="afbbc-142">[!code-cs[csProgGuideDelegates#19](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-declare-instantiate-and-use-a-delegate_10.cs)]</span></span>  
   
-     Vous pouvez appeler un délégué de manière synchrone, comme dans cet exemple, ou de manière asynchrone à l’aide des méthodes `BeginInvoke` et `EndInvoke`.  
+     <span data-ttu-id="afbbc-143">Vous pouvez appeler un délégué de manière synchrone, comme dans cet exemple, ou de manière asynchrone à l’aide des méthodes `BeginInvoke` et `EndInvoke`.</span><span class="sxs-lookup"><span data-stu-id="afbbc-143">A delegate can be either called synchronously, as in this example, or asynchronously by using `BeginInvoke` and `EndInvoke` methods.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Événements](../../../csharp/programming-guide/events/index.md)   
- [Délégués](../../../csharp/programming-guide/delegates/index.md)
+## <a name="see-also"></a><span data-ttu-id="afbbc-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="afbbc-144">See Also</span></span>  
+ <span data-ttu-id="afbbc-145">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="afbbc-145">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="afbbc-146">[Événements](../../../csharp/programming-guide/events/index.md) </span><span class="sxs-lookup"><span data-stu-id="afbbc-146">[Events](../../../csharp/programming-guide/events/index.md) </span></span>  
+ [<span data-ttu-id="afbbc-147">Délégués</span><span class="sxs-lookup"><span data-stu-id="afbbc-147">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)
 

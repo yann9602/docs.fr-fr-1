@@ -38,37 +38,37 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="delaysign-c-compiler-options"></a>/delaysign (Options du compilateur C#)
-Cette option fait en sorte que le compilateur réserve de l’espace dans le fichier de sortie afin qu’une signature numérique puisse être ajoutée ultérieurement.  
+# <a name="delaysign-c-compiler-options"></a><span data-ttu-id="a27c3-102">/delaysign (Options du compilateur C#)</span><span class="sxs-lookup"><span data-stu-id="a27c3-102">/delaysign (C# Compiler Options)</span></span>
+<span data-ttu-id="a27c3-103">Cette option fait en sorte que le compilateur réserve de l’espace dans le fichier de sortie afin qu’une signature numérique puisse être ajoutée ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="a27c3-103">This option causes the compiler to reserve space in the output file so that a digital signature can be added later.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="a27c3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a27c3-104">Syntax</span></span>  
   
 ```console  
 /delaysign[ + | - ]  
 ```  
   
-## <a name="arguments"></a>Arguments  
- `+` &#124; `-`  
- Utilisez **/delaysign-** si vous souhaitez obtenir un assembly complètement signé. Utilisez **/delaysign+** si vous souhaitez uniquement placer la clé publique dans l’assembly. **/delaysign-** est l’option par défaut.  
+## <a name="arguments"></a><span data-ttu-id="a27c3-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="a27c3-105">Arguments</span></span>  
+ <span data-ttu-id="a27c3-106">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="a27c3-106">`+` &#124; `-`</span></span>  
+ <span data-ttu-id="a27c3-107">Utilisez **/delaysign-** si vous souhaitez obtenir un assembly complètement signé.</span><span class="sxs-lookup"><span data-stu-id="a27c3-107">Use **/delaysign-** if you want a fully signed assembly.</span></span> <span data-ttu-id="a27c3-108">Utilisez **/delaysign+** si vous souhaitez uniquement placer la clé publique dans l’assembly.</span><span class="sxs-lookup"><span data-stu-id="a27c3-108">Use **/delaysign+** if you only want to place the public key in the assembly.</span></span> <span data-ttu-id="a27c3-109">**/delaysign-** est l’option par défaut.</span><span class="sxs-lookup"><span data-stu-id="a27c3-109">The default is **/delaysign-**.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- L’option **/delaysign** est sans effet sauf si elle est utilisée avec [/keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md) ou [/keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md).  
+## <a name="remarks"></a><span data-ttu-id="a27c3-110">Remarques</span><span class="sxs-lookup"><span data-stu-id="a27c3-110">Remarks</span></span>  
+ <span data-ttu-id="a27c3-111">L’option **/delaysign** est sans effet sauf si elle est utilisée avec [/keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md) ou [/keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="a27c3-111">The **/delaysign** option has no effect unless used with [/keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md) or [/keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md).</span></span>  
   
- Quand vous demandez un assembly totalement signé, le compilateur hache le fichier qui contient le manifeste (métadonnées de l’assembly) et signe ce hachage avec la clé privée. La signature numérique obtenue est stockée dans le fichier qui contient le manifeste. Pour un assembly avec signature différée, le compilateur ne calcule pas, ni ne stocke la signature, mais réserve de l'espace dans le fichier pour que la signature puisse être ajoutée par la suite.  
+ <span data-ttu-id="a27c3-112">Quand vous demandez un assembly totalement signé, le compilateur hache le fichier qui contient le manifeste (métadonnées de l’assembly) et signe ce hachage avec la clé privée.</span><span class="sxs-lookup"><span data-stu-id="a27c3-112">When you request a fully signed assembly, the compiler hashes the file that contains the manifest (assembly metadata) and signs that hash with the private key.</span></span> <span data-ttu-id="a27c3-113">La signature numérique obtenue est stockée dans le fichier qui contient le manifeste.</span><span class="sxs-lookup"><span data-stu-id="a27c3-113">The resulting digital signature is stored in the file that contains the manifest.</span></span> <span data-ttu-id="a27c3-114">Pour un assembly avec signature différée, le compilateur ne calcule pas, ni ne stocke la signature, mais réserve de l'espace dans le fichier pour que la signature puisse être ajoutée par la suite.</span><span class="sxs-lookup"><span data-stu-id="a27c3-114">When an assembly is delay signed, the compiler does not compute and store the signature, but reserves space in the file so the signature can be added later.</span></span>  
   
- Par exemple, l’utilisation de **/delaysign+** permet à un testeur de placer l’assembly dans le cache global. Après un test, vous pouvez signer complètement l’assembly en plaçant la clé privée dans l’assembly à l’aide de l’utilitaire [Assembly Linker](https://msdn.microsoft.com/library/c405shex).  
+ <span data-ttu-id="a27c3-115">Par exemple, l’utilisation de **/delaysign+** permet à un testeur de placer l’assembly dans le cache global.</span><span class="sxs-lookup"><span data-stu-id="a27c3-115">For example, using **/delaysign+** allows a tester to put the assembly in the global cache.</span></span> <span data-ttu-id="a27c3-116">Après un test, vous pouvez signer complètement l’assembly en plaçant la clé privée dans l’assembly à l’aide de l’utilitaire [Assembly Linker](https://msdn.microsoft.com/library/c405shex).</span><span class="sxs-lookup"><span data-stu-id="a27c3-116">After testing, you can fully sign the assembly by placing the private key in the assembly using the [Assembly Linker](https://msdn.microsoft.com/library/c405shex) utility.</span></span>  
   
- Pour plus d’informations, consultez [Création et utilisation d’assemblys avec nom fort](https://msdn.microsoft.com/library/xwb8f617) et [Différer la signature d’un assembly](../../../framework/app-domains/delay-sign-assembly.md).  
+ <span data-ttu-id="a27c3-117">Pour plus d’informations, consultez [Création et utilisation d’assemblys avec nom fort](https://msdn.microsoft.com/library/xwb8f617) et [Différer la signature d’un assembly](../../../framework/app-domains/delay-sign-assembly.md).</span><span class="sxs-lookup"><span data-stu-id="a27c3-117">For more information, see [Creating and Using Strong-Named Assemblies](https://msdn.microsoft.com/library/xwb8f617) and [Delay Signing an Assembly](../../../framework/app-domains/delay-sign-assembly.md).</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="a27c3-118">Pour définir cette option du compilateur dans l'environnement de développement Visual Studio</span><span class="sxs-lookup"><span data-stu-id="a27c3-118">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  Ouvrez la page **Propriétés** du projet.  
+1.  <span data-ttu-id="a27c3-119">Ouvrez la page **Propriétés** du projet.</span><span class="sxs-lookup"><span data-stu-id="a27c3-119">Open the **Properties** page for the project.</span></span>  
   
-2.  Modifiez la propriété **Différer la signature uniquement**.  
+2.  <span data-ttu-id="a27c3-120">Modifiez la propriété **Différer la signature uniquement**.</span><span class="sxs-lookup"><span data-stu-id="a27c3-120">Modify the **Delay sign only** property.</span></span>  
   
- Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.  
+ <span data-ttu-id="a27c3-121">Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.</span><span class="sxs-lookup"><span data-stu-id="a27c3-121">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
+## <a name="see-also"></a><span data-ttu-id="a27c3-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a27c3-122">See Also</span></span>  
+ <span data-ttu-id="a27c3-123">[Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md) </span><span class="sxs-lookup"><span data-stu-id="a27c3-123">[C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md) </span></span>  
+ [<span data-ttu-id="a27c3-124">Gestion des propriétés des projets et des solutions</span><span class="sxs-lookup"><span data-stu-id="a27c3-124">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
 

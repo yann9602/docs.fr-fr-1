@@ -18,19 +18,19 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="create-a-nested-group"></a>Créer un groupe imbriqué
+# <a name="create-a-nested-group"></a><span data-ttu-id="fd11e-104">Créer un groupe imbriqué</span><span class="sxs-lookup"><span data-stu-id="fd11e-104">Create a nested group</span></span>
 
-L’exemple suivant montre comment créer des groupes imbriqués dans une expression de requête LINQ. Chaque groupe créé en fonction de l’année/du niveau d’étude est ensuite encore subdivisé en groupes en fonction des noms des individus.  
+<span data-ttu-id="fd11e-105">L’exemple suivant montre comment créer des groupes imbriqués dans une expression de requête LINQ.</span><span class="sxs-lookup"><span data-stu-id="fd11e-105">The following example shows how to create nested groups in a LINQ query expression.</span></span> <span data-ttu-id="fd11e-106">Chaque groupe créé en fonction de l’année/du niveau d’étude est ensuite encore subdivisé en groupes en fonction des noms des individus.</span><span class="sxs-lookup"><span data-stu-id="fd11e-106">Each group that is created according to student year or grade level is then further subdivided into groups based on the individuals' names.</span></span>  
   
-## <a name="example"></a>Exemple
+## <a name="example"></a><span data-ttu-id="fd11e-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="fd11e-107">Example</span></span>
 
  > [!NOTE]
- > Cet exemple contient des références aux objets définis dans l’exemple de code présenté dans [Interroger une collection d’objets](query-a-collection-of-objects.md). 
+ > <span data-ttu-id="fd11e-108">Cet exemple contient des références aux objets définis dans l’exemple de code présenté dans [Interroger une collection d’objets](query-a-collection-of-objects.md).</span><span class="sxs-lookup"><span data-stu-id="fd11e-108">This example contains references to objects that are defined in the sample code in [Query a collection of objects](query-a-collection-of-objects.md).</span></span> 
 
- [!code-cs[csProgGuideLINQ#24](../../../samples/snippets/csharp/concepts/linq/how-to-create-a-nested-group_1.cs)]  
+ <span data-ttu-id="fd11e-109">[!code-cs[csProgGuideLINQ#24](../../../samples/snippets/csharp/concepts/linq/how-to-create-a-nested-group_1.cs)]</span><span class="sxs-lookup"><span data-stu-id="fd11e-109">[!code-cs[csProgGuideLINQ#24](../../../samples/snippets/csharp/concepts/linq/how-to-create-a-nested-group_1.cs)]</span></span>  
   
- Notez que trois boucles `foreach` imbriquées sont nécessaires pour effectuer une itération sur les éléments internes d’un groupe imbriqué.  
+ <span data-ttu-id="fd11e-110">Notez que trois boucles `foreach` imbriquées sont nécessaires pour effectuer une itération sur les éléments internes d’un groupe imbriqué.</span><span class="sxs-lookup"><span data-stu-id="fd11e-110">Note that three nested `foreach` loops are required to iterate over the inner elements of a nested group.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Expressions de requête LINQ](index.md)
+## <a name="see-also"></a><span data-ttu-id="fd11e-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fd11e-111">See also</span></span>  
+ [<span data-ttu-id="fd11e-112">Expressions de requête LINQ</span><span class="sxs-lookup"><span data-stu-id="fd11e-112">LINQ Query Expressions</span></span>](index.md)
 

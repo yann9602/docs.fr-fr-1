@@ -38,28 +38,28 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="reference-tables-for-types-c-reference"></a>Tableaux de référence des types (référence C#)
-Les tableaux de référence suivants présentent un récapitulatif des types C# :  
+# <a name="reference-tables-for-types-c-reference"></a><span data-ttu-id="c8122-102">Tableaux de référence des types (référence C#)</span><span class="sxs-lookup"><span data-stu-id="c8122-102">Reference Tables for Types (C# Reference)</span></span>
+<span data-ttu-id="c8122-103">Les tableaux de référence suivants présentent un récapitulatif des types C# :</span><span class="sxs-lookup"><span data-stu-id="c8122-103">The following reference tables summarize the C# types:</span></span>  
   
- [Tableaux des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [<span data-ttu-id="c8122-104">Tableaux des types intégrés</span><span class="sxs-lookup"><span data-stu-id="c8122-104">Built-in Types Table</span></span>](../../../csharp/language-reference/keywords/built-in-types-table.md)  
   
- [Types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [<span data-ttu-id="c8122-105">Types intégraux</span><span class="sxs-lookup"><span data-stu-id="c8122-105">Integral types</span></span>](../../../csharp/language-reference/keywords/integral-types-table.md)  
   
- [Types virgule flottante](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
+ [<span data-ttu-id="c8122-106">Types virgule flottante</span><span class="sxs-lookup"><span data-stu-id="c8122-106">Floating-point types</span></span>](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
   
- [Valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md)  
+ [<span data-ttu-id="c8122-107">Valeurs par défaut</span><span class="sxs-lookup"><span data-stu-id="c8122-107">Default values</span></span>](../../../csharp/language-reference/keywords/default-values-table.md)  
   
- [Types valeur](../../../csharp/language-reference/keywords/value-types-table.md)  
+ [<span data-ttu-id="c8122-108">Types valeur</span><span class="sxs-lookup"><span data-stu-id="c8122-108">Value types</span></span>](../../../csharp/language-reference/keywords/value-types-table.md)  
   
- [Conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
+ [<span data-ttu-id="c8122-109">Conversions numériques implicites</span><span class="sxs-lookup"><span data-stu-id="c8122-109">Implicit numeric conversions</span></span>](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
   
- [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
+ [<span data-ttu-id="c8122-110">Tableau des conversions numériques explicites</span><span class="sxs-lookup"><span data-stu-id="c8122-110">Explicit Numeric Conversions Table</span></span>](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
   
- Pour plus d’informations sur la mise en forme de la sortie des types numériques, consultez [Tableau des formats des résultats numériques](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).  
+ <span data-ttu-id="c8122-111">Pour plus d’informations sur la mise en forme de la sortie des types numériques, consultez [Tableau des formats des résultats numériques](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).</span><span class="sxs-lookup"><span data-stu-id="c8122-111">For information on formatting the output of numeric types, see [Formatting Numeric Results Table](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Types référence](../../../csharp/language-reference/keywords/reference-types.md)   
- [Types valeur](../../../csharp/language-reference/keywords/value-types.md)
+## <a name="see-also"></a><span data-ttu-id="c8122-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c8122-112">See Also</span></span>  
+ <span data-ttu-id="c8122-113">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="c8122-113">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="c8122-114">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="c8122-114">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ <span data-ttu-id="c8122-115">[Types référence](../../../csharp/language-reference/keywords/reference-types.md) </span><span class="sxs-lookup"><span data-stu-id="c8122-115">[Reference Types](../../../csharp/language-reference/keywords/reference-types.md) </span></span>  
+ [<span data-ttu-id="c8122-116">Types valeur</span><span class="sxs-lookup"><span data-stu-id="c8122-116">Value Types</span></span>](../../../csharp/language-reference/keywords/value-types.md)
 

@@ -1,1 +1,1 @@
-UNC (Universal Naming Convention)
+<span data-ttu-id="ec01b-101">UNC (Universal Naming Convention)</span><span class="sxs-lookup"><span data-stu-id="ec01b-101">Universal Naming Convention (UNC)</span></span>

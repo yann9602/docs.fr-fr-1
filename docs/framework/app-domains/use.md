@@ -25,56 +25,56 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="using-application-domains"></a>Utilisation des domaines d'application
-Les domaines d’application fournissent une unité d’isolation pour le common language runtime. Ils sont créés et exécutés dans un processus. Les domaines d’application sont généralement créés par un hôte de runtime, qui est une application responsable du chargement du runtime dans un processus et de l’exécution du code utilisateur dans un domaine d’application. L’hôte de runtime crée un processus et un domaine d’application par défaut et exécute le code managé dans ce domaine d’application. Les hôtes de runtime comprennent ASP.NET, Microsoft Internet Explorer et le shell Windows.  
+# <a name="using-application-domains"></a><span data-ttu-id="18353-102">Utilisation des domaines d'application</span><span class="sxs-lookup"><span data-stu-id="18353-102">Using Application Domains</span></span>
+<span data-ttu-id="18353-103">Les domaines d’application fournissent une unité d’isolation pour le common language runtime.</span><span class="sxs-lookup"><span data-stu-id="18353-103">Application domains provide a unit of isolation for the common language runtime.</span></span> <span data-ttu-id="18353-104">Ils sont créés et exécutés dans un processus.</span><span class="sxs-lookup"><span data-stu-id="18353-104">They are created and run inside a process.</span></span> <span data-ttu-id="18353-105">Les domaines d’application sont généralement créés par un hôte de runtime, qui est une application responsable du chargement du runtime dans un processus et de l’exécution du code utilisateur dans un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-105">Application domains are usually created by a runtime host, which is an application responsible for loading the runtime into a process and executing user code within an application domain.</span></span> <span data-ttu-id="18353-106">L’hôte de runtime crée un processus et un domaine d’application par défaut et exécute le code managé dans ce domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-106">The runtime host creates a process and a default application domain, and runs managed code inside it.</span></span> <span data-ttu-id="18353-107">Les hôtes de runtime comprennent ASP.NET, Microsoft Internet Explorer et le shell Windows.</span><span class="sxs-lookup"><span data-stu-id="18353-107">Runtime hosts include ASP.NET, Microsoft Internet Explorer, and the Windows shell.</span></span>  
   
- Pour la plupart des applications, vous n’êtes pas obligé de créer votre propre domaine d’application ; l’hôte du runtime se charge de créer le domaine d’application dont vous avez besoin. Toutefois, vous pouvez créer et configurer des domaines d’application supplémentaires si votre application doit isoler du code ou utiliser et décharger des DLL.  
+ <span data-ttu-id="18353-108">Pour la plupart des applications, vous n’êtes pas obligé de créer votre propre domaine d’application ; l’hôte du runtime se charge de créer le domaine d’application dont vous avez besoin.</span><span class="sxs-lookup"><span data-stu-id="18353-108">For most applications, you do not need to create your own application domain; the runtime host creates any necessary application domains for you.</span></span> <span data-ttu-id="18353-109">Toutefois, vous pouvez créer et configurer des domaines d’application supplémentaires si votre application doit isoler du code ou utiliser et décharger des DLL.</span><span class="sxs-lookup"><span data-stu-id="18353-109">However, you can create and configure additional application domains if your application needs to isolate code or to use and unload DLLs.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour créer un domaine d’application](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
- Décrit comment créer un domaine d’application par programmation.  
+## <a name="in-this-section"></a><span data-ttu-id="18353-110">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="18353-110">In This Section</span></span>  
+ [<span data-ttu-id="18353-111">Guide pratique pour créer un domaine d’application</span><span class="sxs-lookup"><span data-stu-id="18353-111">How to: Create an Application Domain</span></span>](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
+ <span data-ttu-id="18353-112">Décrit comment créer un domaine d’application par programmation.</span><span class="sxs-lookup"><span data-stu-id="18353-112">Describes how to programmatically create an application domain.</span></span>  
   
- [Guide pratique pour décharger un domaine d’application](../../../docs/framework/app-domains/how-to-unload-an-application-domain.md)  
- Décrit comment décharger un domaine d’application par programmation.  
+ [<span data-ttu-id="18353-113">Guide pratique pour décharger un domaine d’application</span><span class="sxs-lookup"><span data-stu-id="18353-113">How to: Unload an Application Domain</span></span>](../../../docs/framework/app-domains/how-to-unload-an-application-domain.md)  
+ <span data-ttu-id="18353-114">Décrit comment décharger un domaine d’application par programmation.</span><span class="sxs-lookup"><span data-stu-id="18353-114">Describes how to programmatically unload an application domain.</span></span>  
   
- [Guide pratique pour configurer un domaine d’application](../../../docs/framework/app-domains/how-to-configure-an-application-domain.md)  
- Propose une introduction à la configuration d’un domaine d’application.  
+ [<span data-ttu-id="18353-115">Guide pratique pour configurer un domaine d’application</span><span class="sxs-lookup"><span data-stu-id="18353-115">How to: Configure an Application Domain</span></span>](../../../docs/framework/app-domains/how-to-configure-an-application-domain.md)  
+ <span data-ttu-id="18353-116">Propose une introduction à la configuration d’un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-116">Provides an introduction to configuring an application domain.</span></span>  
   
- [Récupération d'informations d'installation à partir d'un domaine d'application](../../../docs/framework/app-domains/retrieve-setup-information.md)  
- Décrit comment récupérer les informations de configuration d’un domaine d’application.  
+ [<span data-ttu-id="18353-117">Récupération d'informations d'installation à partir d'un domaine d'application</span><span class="sxs-lookup"><span data-stu-id="18353-117">Retrieving Setup Information from an Application Domain</span></span>](../../../docs/framework/app-domains/retrieve-setup-information.md)  
+ <span data-ttu-id="18353-118">Décrit comment récupérer les informations de configuration d’un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-118">Describes how to retrieve setup information from an application domain.</span></span>  
   
- [Guide pratique pour charger des assemblys dans un domaine d’application](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
- Décrit comment charger un assembly dans un domaine d’application.  
+ [<span data-ttu-id="18353-119">Guide pratique pour charger des assemblys dans un domaine d’application</span><span class="sxs-lookup"><span data-stu-id="18353-119">How to: Load Assemblies into an Application Domain</span></span>](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
+ <span data-ttu-id="18353-120">Décrit comment charger un assembly dans un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-120">Describes how to load an assembly into an application domain.</span></span>  
   
- [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
- Décrit comment récupérer des informations sur un assembly.  
+ [<span data-ttu-id="18353-121">Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly</span><span class="sxs-lookup"><span data-stu-id="18353-121">How to: Obtain Type and Member Information from an Assembly</span></span>](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+ <span data-ttu-id="18353-122">Décrit comment récupérer des informations sur un assembly.</span><span class="sxs-lookup"><span data-stu-id="18353-122">Describes how to retrieve information about an assembly.</span></span>  
   
- [Clichés instantanés d'assemblys](../../../docs/framework/app-domains/shadow-copy-assemblies.md)  
- Décrit comment utiliser des clichés instantanés pour mettre à jour des assemblys pendant leur utilisation, et comment configurer des clichés instantanés.  
+ [<span data-ttu-id="18353-123">Clichés instantanés d'assemblys</span><span class="sxs-lookup"><span data-stu-id="18353-123">Shadow Copying Assemblies</span></span>](../../../docs/framework/app-domains/shadow-copy-assemblies.md)  
+ <span data-ttu-id="18353-124">Décrit comment utiliser des clichés instantanés pour mettre à jour des assemblys pendant leur utilisation, et comment configurer des clichés instantanés.</span><span class="sxs-lookup"><span data-stu-id="18353-124">Describes how shadow copying allows updates to assemblies while they are in use, and how to configure shadow copying.</span></span>  
   
- [Guide pratique pour recevoir des notifications des exceptions de première chance](../../../docs/framework/app-domains/how-to-receive-first-chance-exception-notifications.md)  
- Explique comment recevoir une notification indiquant qu’une exception a été levée, avant que le common language runtime ne commence à rechercher des gestionnaires d’exceptions.  
+ [<span data-ttu-id="18353-125">Guide pratique pour recevoir des notifications des exceptions de première chance</span><span class="sxs-lookup"><span data-stu-id="18353-125">How to: Receive First-Chance Exception Notifications</span></span>](../../../docs/framework/app-domains/how-to-receive-first-chance-exception-notifications.md)  
+ <span data-ttu-id="18353-126">Explique comment recevoir une notification indiquant qu’une exception a été levée, avant que le common language runtime ne commence à rechercher des gestionnaires d’exceptions.</span><span class="sxs-lookup"><span data-stu-id="18353-126">Explains how you can receive a notification that an exception has been thrown, before the common language runtime has begun searching for exception handlers.</span></span>  
   
- [Résoudre les chargements d'assemblys](../../../docs/framework/app-domains/resolve-assembly-loads.md)  
- Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> pour résoudre les échecs de chargement de l’assembly.  
+ [<span data-ttu-id="18353-127">Résoudre les chargements d'assemblys</span><span class="sxs-lookup"><span data-stu-id="18353-127">Resolving Assembly Loads</span></span>](../../../docs/framework/app-domains/resolve-assembly-loads.md)  
+ <span data-ttu-id="18353-128">Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> pour résoudre les échecs de chargement de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="18353-128">Provides guidance on using the <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> event to resolve assembly load failures.</span></span>  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a><span data-ttu-id="18353-129">Référence</span><span class="sxs-lookup"><span data-stu-id="18353-129">Reference</span></span>  
  <xref:System.AppDomain>  
- Représente un domaine d’application. Fournit des méthodes pour la création et le contrôle des domaines d’application.  
+ <span data-ttu-id="18353-130">Représente un domaine d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-130">Represents an application domain.</span></span> <span data-ttu-id="18353-131">Fournit des méthodes pour la création et le contrôle des domaines d’application.</span><span class="sxs-lookup"><span data-stu-id="18353-131">Provides methods for creating and controlling application domains.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- Fournit une vue d’ensemble des fonctions exécutées par les assemblys.  
+## <a name="related-sections"></a><span data-ttu-id="18353-132">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="18353-132">Related Sections</span></span>  
+ [<span data-ttu-id="18353-133">Assemblys dans le Common Language Runtime</span><span class="sxs-lookup"><span data-stu-id="18353-133">Assemblies in the Common Language Runtime</span></span>](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ <span data-ttu-id="18353-134">Fournit une vue d’ensemble des fonctions exécutées par les assemblys.</span><span class="sxs-lookup"><span data-stu-id="18353-134">Provides an overview of the functions performed by assemblies.</span></span>  
   
- [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)  
- Décrit comment créer, signer et définir des attributs sur des assemblys.  
+ [<span data-ttu-id="18353-135">Programmation à l’aide d’assemblys</span><span class="sxs-lookup"><span data-stu-id="18353-135">Programming with Assemblies</span></span>](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ <span data-ttu-id="18353-136">Décrit comment créer, signer et définir des attributs sur des assemblys.</span><span class="sxs-lookup"><span data-stu-id="18353-136">Describes how to create, sign, and set attributes on assemblies.</span></span>  
   
- [Émission d’assemblys et de méthodes dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
- Décrit comment créer des assemblys dynamiques.  
+ [<span data-ttu-id="18353-137">Émission d’assemblys et de méthodes dynamiques</span><span class="sxs-lookup"><span data-stu-id="18353-137">Emitting Dynamic Methods and Assemblies</span></span>](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
+ <span data-ttu-id="18353-138">Décrit comment créer des assemblys dynamiques.</span><span class="sxs-lookup"><span data-stu-id="18353-138">Describes how to create dynamic assemblies.</span></span>  
   
- [Domaines d’application](../../../docs/framework/app-domains/application-domains.md)  
- Fournit une vue d'ensemble conceptuelle des domaines d'application.  
+ [<span data-ttu-id="18353-139">Domaines d’application</span><span class="sxs-lookup"><span data-stu-id="18353-139">Application Domains</span></span>](../../../docs/framework/app-domains/application-domains.md)  
+ <span data-ttu-id="18353-140">Fournit une vue d'ensemble conceptuelle des domaines d'application.</span><span class="sxs-lookup"><span data-stu-id="18353-140">Provides a conceptual overview of application domains.</span></span>  
   
- [Vue d’ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)  
- Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.
+ [<span data-ttu-id="18353-141">Vue d’ensemble de la réflexion</span><span class="sxs-lookup"><span data-stu-id="18353-141">Reflection Overview</span></span>](../../../docs/framework/reflection-and-codedom/reflection.md)  
+ <span data-ttu-id="18353-142">Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.</span><span class="sxs-lookup"><span data-stu-id="18353-142">Describes how to use the **Reflection** class to obtain information about an assembly.</span></span>
 

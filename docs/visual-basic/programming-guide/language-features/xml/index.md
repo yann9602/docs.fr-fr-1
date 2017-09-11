@@ -38,23 +38,23 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="xml-in-visual-basic"></a>XML en Visual Basic
-[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] fournit la prise en charge intégrée du langage qui lui permet d’interagir avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+# <a name="xml-in-visual-basic"></a><span data-ttu-id="915c5-102">XML en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-102">XML in Visual Basic</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="915c5-103"> fournit la prise en charge intégrée du langage qui lui permet d’interagir avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="915c5-103"> provides integrated language support that enables it to interact with [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- Les rubriques de cette section présentent l’utilisation de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] avec Visual Basic.  
+## <a name="in-this-section"></a><span data-ttu-id="915c5-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="915c5-104">In This Section</span></span>  
+ <span data-ttu-id="915c5-105">Les rubriques de cette section présentent l’utilisation de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] avec Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="915c5-105">The topics in this section introduce using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] with Visual Basic.</span></span>  
   
-|Rubrique|Description|  
+|<span data-ttu-id="915c5-106">Rubrique</span><span class="sxs-lookup"><span data-stu-id="915c5-106">Topic</span></span>|<span data-ttu-id="915c5-107">Description</span><span class="sxs-lookup"><span data-stu-id="915c5-107">Description</span></span>|  
 |-----------|-----------------|  
-|[Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Explique comment [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] prend en charge [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Création de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Explique comment créer des objets littéraux XML à l’aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Manipulation de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Explique comment charger et analyser du code XML à l’aide de Visual Basic.|  
-|[Accès au code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Décrit les propriétés d’axe XML et les méthodes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permettant d’accéder aux éléments et attributs XML.|  
-|[XML IntelliSense dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)|Décrit les fonctionnalités IntelliSense fournies avec Visual Basic.|  
+|[<span data-ttu-id="915c5-108">Vue d’ensemble de LINQ to XML en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-108">Overview of LINQ to XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|<span data-ttu-id="915c5-109">Explique comment [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] prend en charge [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="915c5-109">Describes how [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] supports [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>|  
+|[<span data-ttu-id="915c5-110">Création de code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-110">Creating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|<span data-ttu-id="915c5-111">Explique comment créer des objets littéraux XML à l’aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="915c5-111">Describes how to create XML literal objects by using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>|  
+|[<span data-ttu-id="915c5-112">Manipulation de code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-112">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|<span data-ttu-id="915c5-113">Explique comment charger et analyser du code XML à l’aide de Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="915c5-113">Describes how to load and parse XML by using Visual Basic.</span></span>|  
+|[<span data-ttu-id="915c5-114">Accès au code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-114">Accessing XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|<span data-ttu-id="915c5-115">Décrit les propriétés d’axe XML et les méthodes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permettant d’accéder aux éléments et attributs XML.</span><span class="sxs-lookup"><span data-stu-id="915c5-115">Describes the XML axis properties and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] methods for accessing XML elements and attributes.</span></span>|  
+|[<span data-ttu-id="915c5-116">XML IntelliSense dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="915c5-116">XML IntelliSense in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/xml-intellisense.md)|<span data-ttu-id="915c5-117">Décrit les fonctionnalités IntelliSense fournies avec Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="915c5-117">Describes the IntelliSense capabilities provided with Visual Basic.</span></span>|  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Xml.Linq>   
- [Littéraux XML](../../../../visual-basic/language-reference/xml-literals/index.md)   
- [Propriétés d’axe XML](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)   
- [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)
+## <a name="see-also"></a><span data-ttu-id="915c5-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="915c5-118">See Also</span></span>  
+ <span data-ttu-id="915c5-119"><xref:System.Xml.Linq></span><span class="sxs-lookup"><span data-stu-id="915c5-119"><xref:System.Xml.Linq></span></span>   
+ <span data-ttu-id="915c5-120">[Littéraux XML](../../../../visual-basic/language-reference/xml-literals/index.md) </span><span class="sxs-lookup"><span data-stu-id="915c5-120">[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) </span></span>  
+ <span data-ttu-id="915c5-121">[Propriétés d’axe XML](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md) </span><span class="sxs-lookup"><span data-stu-id="915c5-121">[XML Axis Properties](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md) </span></span>  
+ [<span data-ttu-id="915c5-122">LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="915c5-122">LINQ to XML</span></span>](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13)
 

@@ -32,28 +32,29 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ff3a664022248737045832b8500ed04ca4abe9b1
-ms.lasthandoff: 03/13/2017
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
+ms.openlocfilehash: 39b78ce423a9c7910b70b745b46f9a6ead7579ad
+ms.contentlocale: fr-fr
+ms.lasthandoff: 04/12/2017
 
 ---
-# <a name="class-39ltclassnamegt39-cannot-be-found"></a>La classe&lt;classname&gt;' est introuvable
-La classe\<classname >' est introuvable. Cette condition est généralement le résultat d'un 'Microsoft.VisualBasic.dll' incompatible.  
+# <a name="class-39ltclassnamegt39-cannot-be-found"></a><span data-ttu-id="8460d-102">La classe&lt;classname&gt;' est introuvable</span><span class="sxs-lookup"><span data-stu-id="8460d-102">Class &#39;&lt;classname&gt;&#39; cannot be found</span></span>
+<span data-ttu-id="8460d-103">La classe\<classname >' est introuvable.</span><span class="sxs-lookup"><span data-stu-id="8460d-103">Class '\<classname>' cannot be found.</span></span> <span data-ttu-id="8460d-104">Cette condition est généralement le résultat d'un 'Microsoft.VisualBasic.dll' incompatible.</span><span class="sxs-lookup"><span data-stu-id="8460d-104">This condition is usually the result of a mismatched 'Microsoft.VisualBasic.dll'.</span></span>  
   
- Un membre défini est introuvable.  
+ <span data-ttu-id="8460d-105">Un membre défini est introuvable.</span><span class="sxs-lookup"><span data-stu-id="8460d-105">A defined member could not be located.</span></span>  
   
- **ID d’erreur :** BC31098  
+ <span data-ttu-id="8460d-106">**ID d’erreur :** BC31098</span><span class="sxs-lookup"><span data-stu-id="8460d-106">**Error ID:** BC31098</span></span>  
   
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="8460d-107">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="8460d-107">To correct this error</span></span>  
   
-1.  Recompilez le programme pour voir si l'erreur se produit à nouveau.  
+1.  <span data-ttu-id="8460d-108">Recompilez le programme pour voir si l'erreur se produit à nouveau.</span><span class="sxs-lookup"><span data-stu-id="8460d-108">Compile the program again to see if the error recurs.</span></span>  
   
-2.  Le cas échéant, enregistrez votre travail et redémarrez [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)].  
+2.  <span data-ttu-id="8460d-109">Le cas échéant, enregistrez votre travail et redémarrez [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)].</span><span class="sxs-lookup"><span data-stu-id="8460d-109">If the error recurs, save your work and restart [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)].</span></span>  
   
-3.  Si l'erreur se produit à nouveau, réinstallez [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+3.  <span data-ttu-id="8460d-110">Si l'erreur se produit à nouveau, réinstallez [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span><span class="sxs-lookup"><span data-stu-id="8460d-110">If the error persists, reinstall [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].</span></span>  
   
-4.  Si l'erreur persiste après la réinstallation, avertissez les services de support technique Microsoft.  
+4.  <span data-ttu-id="8460d-111">Si l'erreur persiste après la réinstallation, avertissez les services de support technique Microsoft.</span><span class="sxs-lookup"><span data-stu-id="8460d-111">If the error persists after reinstallation, notify Microsoft Product Support Services.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+## <a name="see-also"></a><span data-ttu-id="8460d-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8460d-112">See Also</span></span>  
+ [<span data-ttu-id="8460d-113">Nous contacter</span><span class="sxs-lookup"><span data-stu-id="8460d-113">Talk to Us</span></span>](https://docs.microsoft.com/visualstudio/ide/talk-to-us)

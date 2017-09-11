@@ -1,46 +1,40 @@
 ---
-title: "Ex&#233;cution d&#39;op&#233;rations de mise en forme | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "mise en forme des dates (.NET Framework)"
-  - "mise en forme (.NET Framework), types de base"
-  - "mise en forme (.NET Framework), rubriques "Comment""
-  - "mise en forme des chaînes (.NET Framework), rubriques "Comment""
-  - "chaînes (.NET Framework), mettre en forme"
-  - "mise en forme des heures (.NET Framework)"
-ms.assetid: 36e7e096-4e6c-4cf2-9ab6-68073026ea0e
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+title: "Exécution d’opérations de mise en forme"
+description: "Exécution d’opérations de mise en forme"
+keywords: .NET, .NET Core
+author: stevehoag
+ms.author: shoag
+ms.date: 07/25/2016
+ms.topic: article
+ms.prod: .net
+ms.technology: dotnet-standard
+ms.devlang: dotnet
+ms.assetid: 982f0b64-7e69-4bbe-a688-0117f86a603c
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 3845ec46cbd1f65abd9b78f7b81487efed9de2f2
+ms.openlocfilehash: e464c4014ce315c88d5c281f6fd0d0299b640716
+ms.contentlocale: fr-fr
+ms.lasthandoff: 03/13/2017
+
 ---
-# Ex&#233;cution d&#39;op&#233;rations de mise en forme
-Les rubriques suivantes fournissent des instructions pas à pas pour effectuer des opérations de mise en forme spécifiques.  
-  
--   [Comment : remplir un nombre avec des zéros non significatifs](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
-  
--   [Comment : définir et utiliser des fournisseurs de format numérique personnalisés](../../../docs/standard/base-types/how-to-define-and-use-custom-numeric-format-providers.md)  
-  
--   [Comment : convertir des entrées d'utilisateur numériques figurant dans des contrôles Web en nombres](../../../docs/standard/base-types/how-to-convert-numeric-user-input-in-web-controls-to-numbers.md)  
-  
--   [Comment : extraire le jour de la semaine à partir d'une date spécifique](../../../docs/standard/base-types/how-to-extract-the-day-of-the-week-from-a-specific-date.md).  
-  
--   [Comment : effectuer un aller\-retour de valeurs de date et d'heure](../../../docs/standard/base-types/how-to-round-trip-date-and-time-values.md)  
-  
--   [Comment : afficher des informations de date et d'heure localisées pour les utilisateurs du Web](../../../docs/standard/base-types/how-to-display-localized-date-and-time-information-to-web-users.md)  
-  
--   [Comment : afficher les millisecondes dans les valeurs de date et d'heure](../../../docs/standard/base-types/how-to-display-milliseconds-in-date-and-time-values.md)  
-  
--   [Comment : afficher des dates dans des calendriers non grégoriens](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)  
-  
-## Voir aussi  
- [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
+
+# <a name="performing-formatting-operations"></a><span data-ttu-id="7fe67-104">Exécution d’opérations de mise en forme</span><span class="sxs-lookup"><span data-stu-id="7fe67-104">Performing formatting operations</span></span>
+
+<span data-ttu-id="7fe67-105">Les rubriques suivantes fournissent des instructions pas à pas pour effectuer des opérations de mise en forme spécifiques.</span><span class="sxs-lookup"><span data-stu-id="7fe67-105">The following topics provide step-by-step instructions for performing specific formatting operations.</span></span>
+
+* [<span data-ttu-id="7fe67-106">Guide pratique pour remplir un nombre avec des zéros non significatifs</span><span class="sxs-lookup"><span data-stu-id="7fe67-106">How to: pad a number with leading zeros</span></span>](pad-number.md)
+
+* [<span data-ttu-id="7fe67-107">Guide pratique pour définir et utiliser des fournisseurs de format numérique personnalisés</span><span class="sxs-lookup"><span data-stu-id="7fe67-107">How to: define and use custom numeric format providers</span></span>](define-custom.md)
+
+* [<span data-ttu-id="7fe67-108">Guide pratique pour extraire le jour de la semaine d’une date spécifique</span><span class="sxs-lookup"><span data-stu-id="7fe67-108">How to: extract the day of the week from a specific date</span></span>](extract-day.md)
+
+* [<span data-ttu-id="7fe67-109">Guide pratique pour effectuer un aller-retour de valeurs de date et d’heure</span><span class="sxs-lookup"><span data-stu-id="7fe67-109">How to: round-trip date and time values</span></span>](roundtrip.md)
+
+* [<span data-ttu-id="7fe67-110">Guide pratique pour afficher les millisecondes dans les valeurs de date et d’heure</span><span class="sxs-lookup"><span data-stu-id="7fe67-110">How to: display milliseconds in date and time values</span></span>](display-milliseconds.md)
+
+* [<span data-ttu-id="7fe67-111">Guide pratique pour afficher des dates dans des calendriers non grégoriens</span><span class="sxs-lookup"><span data-stu-id="7fe67-111">How to: display dates in non-gregorian calendars</span></span>](display-dates.md)
+
+## <a name="see-also"></a><span data-ttu-id="7fe67-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7fe67-112">See Also</span></span>
+
+[<span data-ttu-id="7fe67-113">Mise en forme des types</span><span class="sxs-lookup"><span data-stu-id="7fe67-113">Formatting types</span></span>](formatting-types.md)
+

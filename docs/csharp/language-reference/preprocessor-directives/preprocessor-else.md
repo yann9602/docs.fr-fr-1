@@ -36,14 +36,14 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="else-c-reference"></a>#else (informations de référence sur C#)
-`#else` vous permet de créer une directive conditionnelle composée de sorte que si aucune des expressions contenues dans les précédentes directives [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ou [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md) (facultatif) n’a la valeur `true`, le compilateur évalue l’ensemble du code entre `#else` et la directive `#endif` suivante.  
+# <a name="else-c-reference"></a><span data-ttu-id="87868-102">#else (informations de référence sur C#)</span><span class="sxs-lookup"><span data-stu-id="87868-102">#else (C# Reference)</span></span>
+<span data-ttu-id="87868-103">`#else` vous permet de créer une directive conditionnelle composée de sorte que si aucune des expressions contenues dans les précédentes directives [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ou [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md) (facultatif) n’a la valeur `true`, le compilateur évalue l’ensemble du code entre `#else` et la directive `#endif` suivante.</span><span class="sxs-lookup"><span data-stu-id="87868-103">`#else` lets you create a compound conditional directive, so that, if none of the expressions in the preceding [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) or (optional) [#elif](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md) directives to `true`, the compiler will evaluate all code between `#else` and the subsequent `#endif`.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- [#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) doit être la directive de préprocesseur suivante après `#else`. Pour obtenir un exemple sur la façon d’utiliser `#else`, consultez [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md).  
+## <a name="remarks"></a><span data-ttu-id="87868-104">Remarques</span><span class="sxs-lookup"><span data-stu-id="87868-104">Remarks</span></span>  
+ <span data-ttu-id="87868-105">[#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) doit être la directive de préprocesseur suivante après `#else`.</span><span class="sxs-lookup"><span data-stu-id="87868-105">[#endif](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md) must be the next preprocessor directive after `#else`.</span></span> <span data-ttu-id="87868-106">Pour obtenir un exemple sur la façon d’utiliser `#else`, consultez [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md).</span><span class="sxs-lookup"><span data-stu-id="87868-106">See [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) for an example of how to use `#else`.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+## <a name="see-also"></a><span data-ttu-id="87868-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="87868-107">See Also</span></span>  
+ <span data-ttu-id="87868-108">[Informations de référence sur C#](../../../csharp/language-reference/index.md) </span><span class="sxs-lookup"><span data-stu-id="87868-108">[C# Reference](../../../csharp/language-reference/index.md) </span></span>  
+ <span data-ttu-id="87868-109">[Guide de programmation C#](../../../csharp/programming-guide/index.md) </span><span class="sxs-lookup"><span data-stu-id="87868-109">[C# Programming Guide](../../../csharp/programming-guide/index.md) </span></span>  
+ [<span data-ttu-id="87868-110">Directives de préprocesseur C#</span><span class="sxs-lookup"><span data-stu-id="87868-110">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
 

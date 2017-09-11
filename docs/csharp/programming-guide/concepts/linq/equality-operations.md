@@ -26,17 +26,17 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 07/28/2017
 
 ---
-# <a name="equality-operations-c"></a>Opérations d’égalité (C#)
-Deux séquences dont les éléments correspondants sont égaux et qui ont le même nombre d’éléments sont considérées comme égales.  
+# <a name="equality-operations-c"></a><span data-ttu-id="20bb2-102">Opérations d’égalité (C#)</span><span class="sxs-lookup"><span data-stu-id="20bb2-102">Equality Operations (C#)</span></span>
+<span data-ttu-id="20bb2-103">Deux séquences dont les éléments correspondants sont égaux et qui ont le même nombre d’éléments sont considérées comme égales.</span><span class="sxs-lookup"><span data-stu-id="20bb2-103">Two sequences whose corresponding elements are equal and which have the same number of elements are considered equal.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="20bb2-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="20bb2-104">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
+|<span data-ttu-id="20bb2-105">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="20bb2-105">Method Name</span></span>|<span data-ttu-id="20bb2-106">Description</span><span class="sxs-lookup"><span data-stu-id="20bb2-106">Description</span></span>|<span data-ttu-id="20bb2-107">Syntaxe d'expression de requête C#</span><span class="sxs-lookup"><span data-stu-id="20bb2-107">C# Query Expression Syntax</span></span>|<span data-ttu-id="20bb2-108">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="20bb2-108">More Information</span></span>|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|SequenceEqual|Détermine si deux séquences sont égales en comparant les éléments par paires.|Non applicable.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=fullName>|  
+|<span data-ttu-id="20bb2-109">SequenceEqual</span><span class="sxs-lookup"><span data-stu-id="20bb2-109">SequenceEqual</span></span>|<span data-ttu-id="20bb2-110">Détermine si deux séquences sont égales en comparant les éléments par paires.</span><span class="sxs-lookup"><span data-stu-id="20bb2-110">Determines whether two sequences are equal by comparing elements in a pair-wise manner.</span></span>|<span data-ttu-id="20bb2-111">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="20bb2-111">Not applicable.</span></span>|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=fullName>|  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq>   
- [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Guide pratique pour comparer le contenu de deux dossiers (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)
+## <a name="see-also"></a><span data-ttu-id="20bb2-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="20bb2-112">See Also</span></span>  
+ <span data-ttu-id="20bb2-113"><xref:System.Linq></span><span class="sxs-lookup"><span data-stu-id="20bb2-113"><xref:System.Linq></span></span>   
+ <span data-ttu-id="20bb2-114">[Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) </span><span class="sxs-lookup"><span data-stu-id="20bb2-114">[Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) </span></span>  
+ [<span data-ttu-id="20bb2-115">Guide pratique pour comparer le contenu de deux dossiers (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="20bb2-115">How to: Compare the Contents of Two Folders (LINQ) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)
 

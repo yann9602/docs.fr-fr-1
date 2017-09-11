@@ -17,16 +17,16 @@ ms.lasthandoff: 07/28/2017
 
 ---
 
-# <a name="creating-portable-libraries"></a>Création de bibliothèques portables
+# <a name="creating-portable-libraries"></a><span data-ttu-id="4c7b0-104">Création de bibliothèques portables</span><span class="sxs-lookup"><span data-stu-id="4c7b0-104">Creating Portable Libraries</span></span>
 
-> **Remarque**
+> <span data-ttu-id="4c7b0-105">**Remarque**</span><span class="sxs-lookup"><span data-stu-id="4c7b0-105">**Note**</span></span>
 > 
-> Cette rubrique n’a pas encore été rédigée ! 
+> <span data-ttu-id="4c7b0-106">Cette rubrique n’a pas encore été rédigée !</span><span class="sxs-lookup"><span data-stu-id="4c7b0-106">This topic hasn't been written yet!</span></span> 
 >
-> Votre aide pour en définir le cadre et l’approche est la bienvenue. Vous pouvez suivre la progression de ce [problème](https://github.com/dotnet/docs/issues/950) et y apporter vos commentaires dans GitHub.
+> <span data-ttu-id="4c7b0-107">Votre aide pour en définir le cadre et l’approche est la bienvenue.</span><span class="sxs-lookup"><span data-stu-id="4c7b0-107">We welcome your input to help shape the scope and approach.</span></span> <span data-ttu-id="4c7b0-108">Vous pouvez suivre la progression de ce [problème](https://github.com/dotnet/docs/issues/950) et y apporter vos commentaires dans GitHub.</span><span class="sxs-lookup"><span data-stu-id="4c7b0-108">You can track the status and provide input on this [issue](https://github.com/dotnet/docs/issues/950) at GitHub.</span></span>
 > 
-> Si vous voulez consulter les premières ébauches et le plan de cette rubrique, laissez une note avec vos coordonnées.
+> <span data-ttu-id="4c7b0-109">Si vous voulez consulter les premières ébauches et le plan de cette rubrique, laissez une note avec vos coordonnées.</span><span class="sxs-lookup"><span data-stu-id="4c7b0-109">If you would like to review early drafts and outlines of this topic, please leave a note with your contact information in the issue.</span></span>
 >
-> Découvrez comment vous pouvez apporter votre contribution sur [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).
+> <span data-ttu-id="4c7b0-110">Découvrez comment vous pouvez apporter votre contribution sur [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span><span class="sxs-lookup"><span data-stu-id="4c7b0-110">Learn more about how you can contribute on [GitHub](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span></span>
 >
 

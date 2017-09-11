@@ -1,1 +1,1 @@
-Environnement de développement intégré (IDE)
+<span data-ttu-id="f4fbc-101">Environnement de développement intégré (IDE)</span><span class="sxs-lookup"><span data-stu-id="f4fbc-101">Integrated Development Environment (IDE)</span></span>
