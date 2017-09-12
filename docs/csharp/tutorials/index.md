@@ -1,20 +1,20 @@
 ---
-title: Didacticiels C# | Microsoft Docs
-description: Didacticiels C#
+title: Didacticiels C#
+description: "Explorez ces didacticiels C# pour savoir comment générer des programmes C# et découvrez les fonctionnalités du langage C#."
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
-ms.date: 06/20/2016
+ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fcc83b5b-fb68-4e48-9132-0882677d8056
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: bda4350a2a39676f39b5d5660fcde7ab3bee9377
+ms.translationtype: HT
+ms.sourcegitcommit: 680f9f83e07d6b5e3ee1031fb1a2f6d04765e18d
+ms.openlocfilehash: 52f6b8a1000a8b8623c36cc1f76671f0a7a764b7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 09/07/2017
 
 ---
 
@@ -30,8 +30,6 @@ Les didacticiels suivants vous permettent de générer des programmes C# à l’
 * [Utilisation de LINQ](working-with-linq.md) : ce didacticiel illustre plusieurs fonctionnalités de LINQ et les éléments de langage qui le prennent en charge.
 
 * [Microservices hébergés dans Docker](microservices.md) : ce didacticiel montre comment créer un microservice ASP.NET Core et l’héberger dans Docker.
-
-* [Héritage](inheritance.md) : ce didacticiel illustre comment l’héritage de classe et d’interface fournissent la réutilisation de code en C#.
 
 * [Interpolation de chaîne](string-interpolation.md) : ce didacticiel illustre la plupart des utilisations de l’interpolation de chaîne `$` dans C#.
 
