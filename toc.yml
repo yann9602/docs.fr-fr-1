@@ -22,7 +22,7 @@
             - name: Extension des métadonnées à l'aide des attributs
               tocHref: /dotnet/standard/attributes/
               topicHref: /dotnet/standard/attributes/index
-            - name: Utilisation des types de base dans .NET Framework
+            - name: Utilisation des types de base dans .NET
               tocHref: /dotnet/standard/base-types/
               topicHref: /dotnet/standard/base-types/index
             - name: Collections et structures de données
@@ -32,7 +32,7 @@
                 - name: Collections thread-safe
                   tocHref: /dotnet/standard/collections/thread-safe/
                   topicHref: /dotnet/standard/collections/thread-safe/index
-            - name: Développement pour plusieurs plateformes avec le .NET Framework
+            - name: Développement pour plusieurs plateformes avec .NET
               tocHref: /dotnet/standard/cross-platform/
               topicHref: /dotnet/standard/cross-platform/index
             - name: Documents et données XML
@@ -53,16 +53,16 @@
             - name: Garbage Collection
               tocHref: /dotnet/standard/garbage-collection/
               topicHref: /dotnet/standard/garbage-collection/index
-            - name: Génériques dans le .NET Framework
+            - name: Génériques en .NET
               tocHref: /dotnet/standard/generics/
               topicHref: /dotnet/standard/generics/index
-            - name: "Internationalisation et localisation -- Internationalisation et localisation d’applications\_.NET Framework"
+            - name: Globalisation et localisation
               tocHref: /dotnet/standard/globalization-localization/
               topicHref: /dotnet/standard/globalization-localization/index
             - name: Fichier et flux de données E/S
               tocHref: /dotnet/standard/io/
               topicHref: /dotnet/standard/io/index
-            - name: Programmation parallèle dans le .NET Framework
+            - name: Programmation parallèle en .NET
               tocHref: /dotnet/standard/parallel-programming/
               topicHref: /dotnet/standard/parallel-programming/index
             - name: Sécurité dans .NET
@@ -91,10 +91,10 @@
             - name: API et bibliothèques de classes supplémentaires
               tocHref: /dotnet/framework/additional-steps/
               topicHref: /dotnet/framework/additional-steps/index
-            - name: Programmation à l'aide de domaines d'application et d'assemblys
+            - name: Domaines d'application et assemblys
               tocHref: /dotnet/framework/app-domains/
               topicHref: /dotnet/framework/app-domains/index
-            - name: Technologies clientes communes dans .NET Framework
+            - name: Technologies clientes communes
               tocHref: /dotnet/framework/common-client-technologies/
               topicHref: /dotnet/framework/common-client-technologies/index
             - name: Configuration des applications à l'aide de fichiers de configuration
@@ -114,7 +114,7 @@
                     - name: Schéma des paramètres réseau
                       tocHref: /dotnet/framework/configure-apps/file-schema/network/
                       topicHref: /dotnet/framework/configure-apps/file-schema/network/index
-                    - name: Schéma des paramètres d'exécution
+                    - name: Schéma des paramètres d’exécution
                       tocHref: /dotnet/framework/configure-apps/file-schema/runtime/
                       topicHref: /dotnet/framework/configure-apps/file-schema/runtime/index
                     - name: Schéma des paramètres de démarrage
@@ -169,7 +169,7 @@
                 - name: Traitement transactionnel
                   tocHref: /dotnet/framework/data/transactions/
                   topicHref: /dotnet/framework/data/transactions/index
-                - name: "WCF Data Services\_4.5"
+                - name: Services de données WCF
                   tocHref: /dotnet/framework/data/wcf/
                   topicHref: /dotnet/framework/data/wcf/index
             - name: 'Débogage, traçage et profilage'
@@ -193,7 +193,7 @@
             - name: Managed Extensibility Framework (MEF)
               tocHref: /dotnet/framework/mef/
               topicHref: /dotnet/framework/mef/index
-            - name: "Guide de migration vers .NET Framework\_4.6 et\_4.5"
+            - name: Guide de migration
               tocHref: /dotnet/framework/migration-guide/
               topicHref: /dotnet/framework/migration-guide/index
             - name: Compilation d'applications avec .NET Native
