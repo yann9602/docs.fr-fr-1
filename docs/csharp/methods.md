@@ -11,10 +11,10 @@ ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b5e01f7244b8b7b83fbc76a80eae0c1432c936a
+ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
+ms.openlocfilehash: df8733c5c4532dc188ceb95d7bf236bcd2182b9f
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/14/2017
 
 ---
 # <a name="methods"></a>Méthodes #
@@ -22,7 +22,7 @@ ms.lasthandoff: 07/28/2017
 Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La méthode `Main` est le point d’entrée de chaque application C# et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.
 
 > [!NOTE]
-> Cette rubrique décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](https://msdn.microsoft.com/library/bb882516.aspx).
+> Cette rubrique décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](programming-guide/statements-expressions-operators/anonymous-functions.md).
 
 Cette rubrique contient les sections suivantes :
 
@@ -252,14 +252,14 @@ En règle générale, il existe deux façons d’ajouter une méthode à un type
 
 Les méthodes d’extension vous permettent d’« ajouter » une méthode à un type existant sans modifier le type lui-même, ou en implémentant la nouvelle méthode dans un type hérité. La méthode d’extension ne doit pas non plus nécessairement se trouver dans le même assembly que le type qu’elle étend. Vous appelez une méthode d’extension comme si elle était un membre défini d’un type.
 
-Pour plus d’informations, consultez [Méthodes d’extension](https://msdn.microsoft.com/library/bb383977.aspx).
+Pour plus d’informations, consultez [Méthodes d’extension](programming-guide/classes-and-structs/extension-methods.md).
 
 <a name="async"></a>
 ## <a name="async-methods"></a>Méthodes async ##
 
 La fonctionnalité async vous permet d'appeler des méthodes asynchrones sans utiliser de rappels explicites ni fractionner manuellement votre code entre plusieurs méthodes ou expressions lambda.
 
-Si vous marquez une méthode avec le modificateur [async](https://msdn.microsoft.com/library/hh156513.aspx), vous pouvez utiliser l’opérateur [await](https://msdn.microsoft.com/library/hh156528.aspx) dans la méthode. Quand le contrôle atteint une expression `await` dans la méthode async, il retourne à l’appelant si la tâche attendue n’est pas terminée, et la progression dans la méthode avec le mot clé `await` est interrompue jusqu’à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
+Si vous marquez une méthode avec le modificateur [async](language-reference/keywords/async.md), vous pouvez utiliser l’opérateur [await](language-reference/keywords/await.md) dans la méthode. Quand le contrôle atteint une expression `await` dans la méthode async, il retourne à l’appelant si la tâche attendue n’est pas terminée, et la progression dans la méthode avec le mot clé `await` est interrompue jusqu’à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
 
 > [!NOTE]
 > Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.
@@ -270,9 +270,9 @@ Dans l’exemple suivant, `DelayAsync` est une méthode async contenant une inst
 
 [!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
 
-Une méthode async ne peut pas déclarer de paramètres [ref](https://msdn.microsoft.com/library/14akc2c7.aspx) ou [out](https://msdn.microsoft.com/library/t3c3bfhx.aspx), mais elle peut appeler des méthodes qui ont ces paramètres.
+Une méthode async ne peut déclarer aucun paramètre [ref](language-reference/keywords/ref.md) ou [out](language-reference/keywords/out.md), mais elle peut appeler des méthodes qui ont de tels paramètres.
 
- Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec Async et Await](https://msdn.microsoft.com/library/mt674882.aspx), [Flux de contrôle dans les programmes Async](https://msdn.microsoft.com/library/mt674892.aspx) et [Types de retour Async](https://msdn.microsoft.com/library/mt674893.aspx).
+ Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec Async et Await](async.md), [Flux de contrôle dans les programmes Async](programming-guide/concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](programming-guide/concepts/async/async-return-types.md).
 
 <a name="expr"></a>
 ## <a name="expression-bodied-members"></a>Membres expression-bodied ##
@@ -293,20 +293,20 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 <a name="iterators"></a>
 ## <a name="iterators"></a>Itérateurs ##
 
-Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](https://msdn.microsoft.com/library/9k7k7cf0.aspx) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
+Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif est mémorisé pour que l’appelant puisse demander l’élément suivant dans la séquence.
 
 Le type de retour d’un itérateur peut être @System.Collections.IEnumerable, @System.Collections.Generic.IEnumerable%601, @System.Collections.IEnumerator ou @System.Collections.Generic.IEnumerator%601.
 
-Pour plus d’informations, consultez [Itérateurs](https://msdn.microsoft.com/library/mt639331.aspx).
+Pour plus d’informations, consultez [Itérateurs](programming-guide/concepts/iterators.md).
 
 ## <a name="see-also"></a>Voir aussi ##
 
-[Modificateurs d’accès](https://msdn.microsoft.com/library/wxh6fsc7.aspx)   
-[Classes statiques et membres de classe statique](https://msdn.microsoft.com/library/79b3xss3.aspx)   
-[Héritage](https://msdn.microsoft.com/library/ms173149.aspx)   
-[Classes abstract et sealed et membres de classe](https://msdn.microsoft.com/library/ms173150.aspx)   
-[params](https://msdn.microsoft.com/library/w5zay9db.aspx)   
-[out](https://msdn.microsoft.com/library/t3c3bfhx.aspx)   
-[ref](https://msdn.microsoft.com/library/14akc2c7.aspx)   
-[Passage de paramètres](https://msdn.microsoft.com/library/0f66670z.aspx)
+[Modificateurs d’accès](language-reference/keywords/access-modifiers.md)   
+[Classes statiques et membres de classe statique](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
+[Héritage](programming-guide/classes-and-structs/inheritance.md)   
+[Classes abstract et sealed et membres de classe](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
+[params](language-reference/keywords/params.md)   
+[out](language-reference/keywords/out.md)   
+[ref](language-reference/keywords/ref.md)   
+[Passage de paramètres](programming-guide/classes-and-structs/passing-parameters.md)
 
