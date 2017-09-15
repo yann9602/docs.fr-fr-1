@@ -1,58 +1,63 @@
 ---
-title: "Sch&#233;ma des param&#232;tres du fournisseur de langage et du compilateur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "éléments de configuration du compilateur"
-  - "éléments de configuration du compilateur, schéma"
-  - "paramètres de configuration du compilateur"
-  - "paramètres de configuration du compilateur, schéma"
-  - "schéma de configuration (.NET Framework), paramètres du compilateur"
-  - "paramètres de configuration (.NET Framework), compilateurs"
-  - "fournisseurs de langages"
-  - "fournisseurs de langages, schéma des paramètres"
+title: "Schéma des paramètres du fournisseur de langage et du compilateur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- configuration settings [.NET Framework], compilers
+- compiler configuration elements, schema
+- compiler configuration elements
+- language providers
+- compiler configuration settings, schema
+- configuration schema [.NET Framework], compiler settings
+- language providers, settings schema
+- compiler configuration settings
 ms.assetid: c020b139-8699-4f0d-9ac9-70d0c5b2a8c8
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cb1eb3078714e0de5416fc4c7f9695f52bab3a96
+ms.contentlocale: fr-fr
+ms.lasthandoff: 09/05/2017
+
 ---
-# Sch&#233;ma des param&#232;tres du fournisseur de langage et du compilateur
-Les paramètres du compilateur et du fournisseur de langage spécifient des éléments de configuration du compilateur pour les fournisseurs de langage disponibles.  Chaque élément de configuration de compilateur spécifie le nom du type de fournisseur de code, les paramètres du compilateur, les noms des langages pris en charge et les extensions de fichier prises en charge.  
+# <a name="compiler-and-language-provider-settings-schema"></a>Schéma des paramètres du fournisseur de langage et du compilateur
+Les paramètres du compilateur et du fournisseur de langage spécifient les éléments de configuration du compilateur pour les fournisseurs de langages disponibles. Chaque élément de configuration du compilateur spécifie le nom du type de fournisseur de code, les paramètres du compilateur, les noms des langages pris en charge et les extensions de fichier prises en charge.  
   
- Le .NET Framework définit les paramètres de compilateur initiaux dans le fichier de configuration de l'ordinateur \(Machine.config\).  Les développeurs et fournisseurs de compilateurs peuvent ajouter des paramètres de configuration pour une nouvelle implémentation de <xref:System.CodeDom.Compiler.CodeDomProvider>.  Utilisez la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> pour énumérer par programme le fournisseur de langages et les paramètres de configuration du compilateur sur un ordinateur.  
+ Le .NET Framework définit les paramètres de compilateur initiaux dans le fichier de configuration de l’ordinateur (Machine.config). Les développeurs et les éditeurs de compilateurs peuvent ajouter des paramètres de configuration pour une nouvelle implémentation <xref:System.CodeDom.Compiler.CodeDomProvider>. Utilisez la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> pour énumérer par programmation les paramètres de configuration du compilateur et du fournisseur de langage sur un ordinateur.  
   
- [\<configuration\>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<system.codedom\>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
+ [\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)  
   
- [\<compilateurs\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
   
- [\<compiler\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
+ [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<system.codedom\>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie des paramètres de configuration du compilateur pour les fournisseurs de langage disponibles.|  
-|[\<compilateurs\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Conteneur d'éléments de configuration de compilateur ; contient zéro, un ou plusieurs éléments [\<compiler\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) .|  
-|[\<compiler\>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Spécifie les attributs de configuration du compilateur pour un fournisseur de langages.|  
+|[\<system.codedom>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
+|[\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Conteneur des éléments de configuration du compilateur ; contient zéro ou plusieurs éléments [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md).|  
+|[\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.|  
   
-## Exemple  
- L'exemple suivant illustre un élément de configuration de compilateur classique :  
+## <a name="example"></a>Exemple  
+ L’exemple suivant illustre un élément de configuration du compilateur classique.  
   
-```  
+```xml  
 <configuration>  
    <system.codedom>  
      <compilers>  
@@ -68,8 +73,9 @@ Les paramètres du compilateur et du fournisseur de langage spécifient des él�
 </configuration>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.CodeDom.Compiler.CompilerInfo>   
  <xref:System.CodeDom.Compiler.CodeDomProvider>   
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compiler\>, élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+ [\<compiler> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+
