@@ -1,79 +1,86 @@
 ---
-title: "&lt;Library&gt;, &#233;l&#233;ment (.NET Native) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;Library&gt;, élément (.NET Native)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4006b18e91b79d5f31649a0a15a18b9f7f28c38e
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# &lt;Library&gt;, &#233;l&#233;ment (.NET Native)
+# <a name="ltlibrarygt-element-net-native"></a>&lt;Library&gt;, élément (.NET Native)
 Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.  
   
-## Syntaxe  
+ \<Directives>, élément  
+\<Library>, élément  
+  
+## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <Library Name="assembly_name" />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`Name`|Attribut requis.  Spécifie le nom d'un assembly.  Les éléments enfants de cet élément `<Library>` définissent la stratégie de réflexion runtime pour les types et membres de type se trouvant dans cet assembly.|  
+|---------------|-----------------|  
+|`Name`|Attribut requis. Spécifie le nom d'un assembly. Les éléments enfants de cet élément `<Library>` définissent la stratégie de réflexion runtime pour les types et membres de type se trouvant dans cet assembly.|  
   
-## Name \(attribut\)  
+## <a name="name-attribute"></a>Name (attribut)  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|*assembly\_name*|Nom simple de l'assembly, sans son extension de fichier.  Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName>.  Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ».  Consultez la section Notes pour une forme particulière d'*assembly\_name* qui prend en charge l'inclusion conditionnelle de métadonnées à partir de l'assembly.|  
+|-----------|-----------------|  
+|*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName>. Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ». Consultez la section Notes pour connaître une forme particulière de *nom_assembly* qui prend en charge l’inclusion conditionnelle de métadonnées à partir de l’assembly.|  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<Assembly\>](../../../docs/framework/net-native/assembly-element-net-native.md)|Applique la stratégie à tous les types d'un assembly particulier.|  
-|[\<Namespace\>](../../../docs/framework/net-native/namespace-element-net-native.md)|Applique la stratégie à tous les types d'un espace de noms particulier.|  
-|[\<Type\>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie à un type particulier, tel qu'une classe ou une structure.|  
-|[\<TypeInstantiation\>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie à un type générique construit.  Par exemple, vous pouvez utiliser un élément [\<TypeInstantiation\>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)pour définir une stratégie pour un type `List<String>`.|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<Directives\>](../../../docs/framework/net-native/directives-element-net-native.md)|Élément racine d'un fichier de directives de runtime.|  
+|[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|Applique la stratégie à tous les types d'un assembly particulier.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Applique la stratégie à tous les types d'un espace de noms particulier.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie à un type particulier, tel qu'une classe ou une structure.|  
+|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie à un type générique construit. Par exemple, vous pouvez utiliser un élément [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) afin de définir une stratégie pour un type `List<String>`.|  
   
-## Notes  
- L'élément [\<Directives\>](../../../docs/framework/net-native/directives-element-net-native.md) peut contenir zéro, un ou plusieurs éléments `<Library>`.  
+### <a name="parent-elements"></a>Éléments parents  
   
- L'élément `<Library>` sert de conteneur pour la définition des éléments de programme dont les métadonnées sont nécessaires au moment de l'exécution ; cet élément n'exprime pas la stratégie.  Au moment de la compilation, les outils du compilateur recherchent uniquement dans la bibliothèque désignée par l'élément `<Library>` les éléments de programme identifiés par ses éléments enfants.  En revanche, les outils du compilateur recherchent dans toutes les bibliothèques, y compris les bibliothèques principales du Framework .NET, les éléments de programme identifiés par les éléments enfants de l'élément [\<Application\>](../../../docs/framework/net-native/application-element-net-native.md).  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md)|Élément racine d'un fichier de directives de runtime.|  
   
- Les directives `<Library>` peuvent être utilisées de manière conditionnelle.  Si le nom de l'élément `<Library>` commence et se termine par un astérisque \(\*\), la directive `<Library>` n'a d'effet que si l'assembly spécifié entre les astérisques est référencé par l'application.  Par exemple, la directive runtime suivante ne s'applique que si l'assembly Utillities.dll est référencé par l'application.  
+## <a name="remarks"></a>Remarques  
+ L’élément [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) peut contenir zéro, un ou plusieurs éléments `<Library>`.  
+  
+ L'élément `<Library>` sert de conteneur pour la définition des éléments de programme dont les métadonnées sont nécessaires au moment de l'exécution ; cet élément n'exprime pas la stratégie. Au moment de la compilation, les outils du compilateur recherchent uniquement dans la bibliothèque désignée par l'élément `<Library>` les éléments de programme identifiés par ses éléments enfants. En revanche, les outils du compilateur recherchent dans toutes les bibliothèques, y compris les bibliothèques principales du Framework .NET, les éléments de programme identifiés par les éléments enfants de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).  
+  
+ Les directives `<Library>` peuvent être utilisées de manière conditionnelle. Si le nom de l'élément `<Library>` commence et se termine par un astérisque (*), la directive `<Library>` n'a d'effet que si l'assembly spécifié entre les astérisques est référencé par l'application. Par exemple, la directive runtime suivante ne s'applique que si l'assembly Utillities.dll est référencé par l'application.  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
-  <Library Name=”*Utilities*”>  
-   ...  
-  </Library>  
+  <Library Name="*Utilities*">  
+   ...  
+  </Library>  
 </Directives>  
-  
 ```  
   
-## Voir aussi  
- [\<Application\>, élément](../../../docs/framework/net-native/application-element-net-native.md)   
- [\<Directives\>, élément](../../../docs/framework/net-native/directives-element-net-native.md)   
- [Guide de référence du fichier de configuration des directives runtime \(rd.xml\)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
+## <a name="see-also"></a>Voir aussi  
+ [\<Application>, élémentt](../../../docs/framework/net-native/application-element-net-native.md)   
+ [\<Directives>, élément](../../../docs/framework/net-native/directives-element-net-native.md)   
+ [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
  [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+

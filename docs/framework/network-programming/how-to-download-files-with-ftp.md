@@ -1,28 +1,33 @@
 ---
-title: "Comment&#160;: t&#233;l&#233;charger des fichiers avec FTP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Guide pratique pour télécharger des fichiers avec FTP"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cd72ac27b2aaaf2afe7e2c307fcc1b40cde841da
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: t&#233;l&#233;charger des fichiers avec FTP
-Cet exemple montre comment télécharger un fichier d'un serveur FTP.  
+# <a name="how-to-download-files-with-ftp"></a>Guide pratique pour télécharger des fichiers avec FTP
+Cet exemple montre comment télécharger un fichier à partir d’un serveur FTP.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 using System;  
@@ -58,11 +63,12 @@ namespace Examples.System.Net
 }  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Références à l'espace de noms de **System.Net** .  
+-   Références à l’espace de noms **System.Net**.  
   
-## Programmation fiable  
+## <a name="robust-programming"></a>Programmation fiable  
   
-## Sécurité .NET Framework
+## <a name="net-framework-security"></a>Sécurité .NET Framework
+

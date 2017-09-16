@@ -1,31 +1,37 @@
 ---
-title: "Comment&#160;: transformer les revendications entrantes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Guide pratique pour transformer les revendications entrantes
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
 caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bcf0e640e6b6b45ddb87070c7d6df2fa6dadc834
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: transformer les revendications entrantes
-## S'applique à  
+# <a name="how-to-transform-incoming-claims"></a>Guide pratique pour transformer les revendications entrantes
+## <a name="applies-to"></a>S'applique à  
   
--   Foundation \(WIF\) d'identité Microsoft® Windows®  
+-   Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® Web Forms  
+-   Web Forms ASP.NET®  
   
-## Résumé  
- Cet " Comment " fournit des procédures pas \- à \- pas détaillées pour créer une application prenant en charge les revendications simple Web Forms ASP.NET et transformer des revendications entrantes.  Il fournit également des instructions sur la façon de teste l'application pour vérifier que les revendications transformées sont présentées lorsque l'application est exécutée.  
+## <a name="summary"></a>Résumé  
+ Cette procédure fournit des procédures pas à pas détaillées pour créer une application Web Forms ASP.NET simple prenant en charge les revendications et pour transformer les revendications entrantes. Elle fournit également des instructions pour tester l’application afin de vérifier que les revendications transformées sont présentées au moment de l’exécution de l’application.  
   
-## Sommaire  
+## <a name="contents"></a>Sommaire  
   
 -   Objectifs  
   
@@ -33,49 +39,49 @@ caps.handback.revision: 4
   
 -   Résumé des étapes  
   
--   Étape 1 \- créez une simple application Web Forms ASP.NET  
+-   Étape 1 : Créer une application Web Forms ASP.NET simple  
   
--   Étape 2 \- l'implémentation réclame la transformation à l'aide d'un ClaimsAuthenticationManager personnalisé  
+-   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
   
--   Étape 3 \(testez votre solution  
+-   Étape 3 : Tester votre solution  
   
-## Objectifs  
+## <a name="objectives"></a>Objectifs  
   
--   Configurez une application Web Forms ASP.NET d'authentification basée revendication\-  
+-   Configurer une application Web Forms ASP.NET pour l’authentification basée sur les revendications  
   
--   Transformez les revendications entrantes en ajoutant un rôle Administrateur de revendication  
+-   Transformer les revendications entrantes en ajoutant une revendication de rôle d’administrateur (Administrator)  
   
--   Testez l'application Web Forms ASP.NET de vérifier si elle fonctionne correctement  
+-   Tester l’application Web Forms ASP.NET pour vérifier si elle fonctionne correctement  
   
-## Vue d'ensemble  
- WIF expose une classe nommée <xref:System.Security.Claims.ClaimsAuthenticationManager> qui permet aux utilisateurs de modifier des revendications avant d'être présentées à une application de définition de données \(RP\) partie de confiance.  <xref:System.Security.Claims.ClaimsAuthenticationManager> est utile pour la séparation des aspects d'un problème entre l'authentification et le code d'application sous\-jacent.  L'exemple suivant montre comment ajouter un rôle des revendications dans <xref:System.Security.Claims.ClaimsPrincipal> entrant qui peut être requis par le RP.  
+## <a name="overview"></a>Vue d'ensemble  
+ WIF expose une classe nommée <xref:System.Security.Claims.ClaimsAuthenticationManager> qui permet aux utilisateurs de modifier les revendications avant leur présentation à une application par partie de confiance. La classe <xref:System.Security.Claims.ClaimsAuthenticationManager> est utile pour la séparation des responsabilités entre l’authentification et le code d’application sous-jacent. L’exemple ci-dessous montre comment ajouter un rôle aux revendications dans le principal <xref:System.Security.Claims.ClaimsPrincipal> entrant quand il est requis par l’application par partie de confiance.  
   
-## Résumé des étapes  
+## <a name="summary-of-steps"></a>Résumé des étapes  
   
--   Étape 1 \- créez une simple application Web Forms ASP.NET  
+-   Étape 1 : Créer une application Web Forms ASP.NET simple  
   
--   Étape 2 \- l'implémentation réclame la transformation à l'aide d'un ClaimsAuthenticationManager personnalisé  
+-   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
   
--   Étape 3 \(testez votre solution  
+-   Étape 3 : Tester votre solution  
   
-## Étape 1 \- créez une simple application Web Forms ASP.NET  
- Dans cette étape, vous allez créer une application Web Forms ASP.NET.  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
+ Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
   
-#### Pour créer une simple application ASP.NET  
+#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
   
-1.  Démarrez Visual Studio en mode élevé en tant qu'administrateur.  
+1.  Démarrez Visual Studio en mode élevé en tant qu’administrateur.  
   
-2.  Dans Visual Studio, cliquez sur **Fichier**, cliquez sur **Nouveau**, puis cliquez sur **Projet**.  
+2.  Dans Visual Studio, cliquez sur **Fichier**, sur **Nouveau**, puis sur **Projet**.  
   
-3.  Dans la fenêtre de **Nouveau projet** , cliquez sur **Application Web Forms ASP.NET**.  
+3.  Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web Forms ASP.NET**.  
   
-4.  Dans **Nom**, entrez `TestApp` et appuyez **OK**.  
+4.  Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.  
   
-5.  Cliquez avec le bouton droit sur le projet de **TestApp** sous **Explorateur de solutions**, puis sélectionnez **identité et Access**.  
+5.  Cliquez avec le bouton droit sur le projet **TestApp** sous l’**Explorateur de solutions**, puis sélectionnez **Identity and Access** (Identity and Access Tool).  
   
-6.  La fenêtre d' **identité et Access** s'affiche.  Sous **Fournisseurs**, **testez votre application avec le développement local STS**sélectionnez, puis cliquez sur **Appliquer**.  
+6.  La fenêtre **Identity and Access** (Identity and Access Tool) s’affiche. Sous **Fournisseurs**, sélectionnez **Test your application with the Local Development STS** (Tester votre application avec le service STS de développement local), puis cliquez sur **Appliquer**.  
   
-7.  Dans *le fichier Default.aspx* , remplacez le balisage existant par le suivant, puis enregistrez le fichier :  
+7.  Dans le fichier *Default.aspx*, remplacez le balisage existant par le code suivant, puis enregistrez le fichier :  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -90,10 +96,9 @@ caps.handback.revision: 4
             </asp:GridView>  
         </p>  
     </asp:Content>  
-  
     ```  
   
-8.  Ouvrez le fichier code\-behind nommé *Default.aspx.cs.* Remplacez le code existant par le code suivant, puis enregistrez le fichier :  
+8.  Ouvrez le fichier code-behind nommé *Default.aspx.cs*. Remplacez le code existant par celui qui suit, puis enregistrez le fichier :  
   
     ```csharp  
     using System;  
@@ -114,22 +119,22 @@ caps.handback.revision: 4
     }  
     ```  
   
-## Étape 2 \- l'implémentation réclame la transformation à l'aide d'un ClaimsAuthenticationManager personnalisé  
- Dans cette étape vous substituerez la fonctionnalité par défaut dans la classe d' <xref:System.Security.Claims.ClaimsAuthenticationManager> pour ajouter un rôle Administrateur à l'entité entrante.  
+## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
+ Dans cette étape, vous allez substituer les fonctionnalités par défaut dans la classe <xref:System.Security.Claims.ClaimsAuthenticationManager> pour ajouter un rôle d’administrateur (Administrator) au principal entrant.  
   
-#### Pour implémenter la transformation de revendications à l'aide d'un ClaimsAuthenticationManager personnalisé  
+#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Pour implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
   
 1.  Dans Visual Studio, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis cliquez sur **Nouveau projet**.  
   
-2.  Dans la fenêtre de **Ajouter un nouveau projet** , **Bibliothèque de classes** sélectionnez les modèles de **Visual C\#** la liste, entrez `ClaimsTransformation`, puis appuyez **OK**.  Le projet est créé dans votre dossier de solution.  
+2.  Dans la fenêtre **Ajouter un nouveau projet**, sélectionnez **Bibliothèque de classes** dans la liste de modèles **Visual C#**, entrez `ClaimsTransformation`, puis appuyez sur **OK**. Le nouveau projet est créé dans votre dossier de solutions.  
   
-3.  Cliquez avec le bouton droit sur **Références** sous le projet de **ClaimsTransformation** , puis cliquez sur **Ajouter une référence**.  
+3.  Cliquez avec le bouton droit sur **Références** sous le projet **ClaimsTransformation**, puis cliquez sur **Ajouter une référence**.  
   
-4.  Dans la fenêtre de **référencez le gestionnaire** , **System.IdentityModel**sélectionnez, puis cliquez sur **OK**.  
+4.  Dans la fenêtre **Gestionnaire de références**, sélectionnez **System.IdentityModel**, puis cliquez sur **OK**.  
   
-5.  **Class1.cs**ouvert, ou s'il n'existe pas, cliquez avec le bouton droit sur **ClaimsTransformation**, cliquez sur **Ajouter**, puis cliquez sur **classez…**  
+5.  Ouvrez **Class1.cs**. Si cette classe n’existe pas, cliquez avec le bouton droit sur **ClaimsTransformation**, cliquez sur **Ajouter** et cliquez sur **Classe...**  
   
-6.  Ajoutez les directives using suivantes au fichier de code :  
+6.  Ajoutez le code suivant à l’aide de directives dans le fichier de code :  
   
     ```csharp  
     using System.Security.Claims;  
@@ -139,7 +144,7 @@ caps.handback.revision: 4
 7.  Ajoutez la classe et la méthode suivantes dans le fichier de code.  
   
     > [!WARNING]
-    >  Le code suivant est à des fins de démonstration uniquement ; assurez \-vous que vous vérifiez vos autorisations prévues dans le code de production.  
+    >  Le code suivant est fourni à titre de démonstration uniquement. Vérifiez les autorisations prévues dans votre code de production.  
   
     ```csharp  
     public class ClaimsTransformationModule : ClaimsAuthenticationManager  
@@ -156,27 +161,28 @@ caps.handback.revision: 4
     }  
     ```  
   
-8.  Enregistrez le fichier et régénérez le projet de **ClaimsTransformation** .  
+8.  Enregistrez le fichier et générez le projet **ClaimsTransformation**.  
   
-9. Dans votre projet de **TestApp** ASP.NET, cliquez avec le bouton droit sur les références, puis cliquez sur **Ajouter une référence**.  
+9. Dans votre projet **TestApp** ASP.NET, cliquez avec le bouton droit sur Références, puis cliquez sur **Ajouter une référence**.  
   
-10. Dans la fenêtre de **référencez le gestionnaire** , **Solution** sélectionnez dans le menu gauche, **ClaimsTransformation** sélectionnez les options remplies, puis cliquez sur **OK**.  
+10. Dans la fenêtre **Gestionnaire de références**, sélectionnez **Solution** dans le menu de gauche, sélectionnez **ClaimsTransformation** dans les options remplies, puis cliquez sur **OK**.  
   
-11. Dans le fichier de **Web.config** racine, accédez à l'entrée de **\<system.identityModel\>** .  Dans les éléments de **\<identityConfiguration\>** , ajoutez la ligne suivante et enregistrez le fichier :  
+11. Dans le fichier racine **Web.config**, accédez à l’entrée **\<system.identityModel>**. Dans les éléments **\<identityConfiguration>**, ajoutez la ligne suivante, puis enregistrez le fichier :  
   
-    ```  
+    ```xml  
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
-## Étape 3 \(testez votre solution  
- Dans cette étape vous allez tester votre application Web Forms ASP.NET, et vérifiez que les revendications sont présentées lorsqu'un utilisateur archive dans avec l'authentification par formulaire.  
+## <a name="step-3--test-your-solution"></a>Étape 3 : Tester votre solution  
+ Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications sont présentées à l’utilisateur qui se connecte à l’aide de l’authentification par formulaire.  
   
-#### Pour tester votre application Web Forms ASP.NET de revendications à l'aide de l'authentification par formulaire  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  
   
-1.  Appuyez sur **F5** pour générer et exécuter l'application.  Vous devez être présenté avec *Default.aspx.*  
+1.  Appuyez sur **F5** pour générer et exécuter l’application. La page *Default.aspx* doit s’afficher.  
   
-2.  Sur *la page Default.aspx* , vous devez constater un tableau sous titre de **Les revendications** qui inclut des informations **Émetteur**, **OriginalIssuer**, **Type**, **Valeur**, et de **ValueType** revendications sur votre compte.  La dernière ligne doit être présentée de la manière suivante :  
+2.  Dans la page *Default.aspx*, sous l’en-tête **Your Claims** (Vos revendications), vous voyez normalement un tableau qui affiche ces informations sur les revendications associées à votre compte : **Issuer**, **OriginalIssuer**, **Type**, **Value** et **ValueType**. La dernière ligne doit se présenter de cette façon :  
   
     ||||||  
     |-|-|-|-|-|  
-    |AUTORITE LOCALE|AUTORITE LOCALE|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/identity\/claims\/role|Admin|http:\/\/www.w3.org\/2001\/XMLSchema\#string|
+    |LOCAL AUTHORITY|LOCAL AUTHORITY|http://schemas.microsoft.com/ws/2008/06/identity/claims/role|Administrateur|http://www.w3.org/2001/XMLSchema#string|
+

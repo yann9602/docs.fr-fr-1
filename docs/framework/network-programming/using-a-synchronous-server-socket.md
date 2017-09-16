@@ -1,42 +1,47 @@
 ---
-title: "Utilisation d’un socket serveur synchrone | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "protocoles d’application, sockets"
-  - "sockets serveur synchrones"
-  - "envoyer des données, sockets"
-  - "demandes de données, sockets"
-  - "demander des données à partir d’Internet, sockets"
-  - "sockets serveur"
-  - "recevoir des données, sockets"
-  - "classe Socket, sockets serveur synchrones"
-  - "protocoles, sockets"
-  - "sockets, sockets serveur synchrones"
-  - "Internet, sockets"
+title: "Utilisation d’un socket serveur synchrone"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- synchronous server sockets
+- sending data, sockets
+- data requests, sockets
+- requesting data from Internet, sockets
+- server sockets
+- receiving data, sockets
+- Socket class, synchronous server sockets
+- protocols, sockets
+- sockets, synchronous server sockets
+- Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c4ecba2d6c5026a3b2f7d65540fcf40dd71ba3d7
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Utilisation d’un socket serveur synchrone
-Sockets synchrones de serveur interrompent l'exécution de l'application jusqu'à ce qu'une demande de connexion réception du socket.  Sockets synchrones de serveur ne sont pas appropriés pour les applications qui utilisent intensive réseau dans leur exécution, mais ils peuvent convenir pour les applications réseau simples.  
+# <a name="using-a-synchronous-server-socket"></a>Utilisation d’un socket serveur synchrone
+Les sockets serveur synchrones interrompent l’exécution de l’application jusqu’à la réception d’une demande de connexion sur le socket. Les sockets serveur synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils peuvent être utiles pour les applications réseau simples.  
   
- Après <xref:System.Net.Sockets.Socket> est défini pour écouter sur le point de terminaison à l'aide de les méthodes d' <xref:System.Net.Sockets.Socket.Bind%2A> et d' <xref:System.Net.Sockets.Socket.Listen%2A> , il est prêt de recevoir des invites de connexion entrante à l'aide de la méthode d' <xref:System.Net.Sockets.Socket.Accept%2A> .  L'application est interrompue jusqu'à ce qu'une demande de connexion réception lorsque la méthode de **Accepter** est appelée.  
+ Après qu’un <xref:System.Net.Sockets.Socket> a été défini pour écouter un point de terminaison à l’aide des méthodes <xref:System.Net.Sockets.Socket.Bind%2A> et <xref:System.Net.Sockets.Socket.Listen%2A>, il est prêt à accepter les demandes de connexion entrantes à l’aide de la méthode <xref:System.Net.Sockets.Socket.Accept%2A>. L’exécution de l’application est interrompue jusqu’à la réception d’une demande de connexion après l’appel de la méthode **Accept**.  
   
- Lorsqu'une demande de connexion est reçue, **Accepter** retourne une nouvelle instance de **Socket** associée au client se connecte.  L'exemple suivant lit les données du client, les affiche dans la console, et répercute les données au client.  **Socket** Ne spécifie aucun protocole de messagerie, les jetons « \<EOF\> » de chaîne des données du message.  Il suppose que **Socket** nommé `listener`a été initialisé et lié à un point de terminaison.  
+ Après la réception d’une demande de connexion, **Accept** retourne une nouvelle instance **Socket** qui est associée au client qui se connecte. L’exemple suivant lit les données reçues du client, les affiche sur la console et les renvoie au client. Le **Socket** ne spécifie pas de protocole de messagerie. La chaîne « \<EOF> » marque donc la fin des données du message. L’exemple suppose qu’un **Socket** nommé `listener` a été initialisé et associé à un point de terminaison.  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  
@@ -58,7 +63,6 @@ Dim msg As Byte() = Encoding.ASCII.GetBytes(data)
 handler.Send(msg)  
 handler.Shutdown(SocketShutdown.Both)  
 handler.Close()  
-  
 ```  
   
 ```csharp  
@@ -83,7 +87,8 @@ handler.Shutdown(SocketShutdown.Both);
 handler.Close();  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
- [Exemple de socket serveur synchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
+ [Exemple de socket serveur asynchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
  [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)
+

@@ -1,53 +1,58 @@
 ---
-title: "Configuration des applications Internet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "téléchargement de ressources Internet, proxy par défaut"
-  - "envoi de données, proxy par défaut"
-  - "réception de données, proxy par défaut"
-  - "téléchargement de ressources Internet, configuration des applications Internet"
-  - "modules propres au protocole"
-  - "modules d’authentification personnalisée"
-  - "réception de données, configuration des applications Internet"
-  - "paramètres de configuration (.NET Framework), applications Internet"
-  - "demande de données en provenance d’Internet, configuration des applications Internet"
-  - "demande de données en provenance d’Internet, proxy par défaut"
-  - "réponse à une demande Internet, proxy par défaut"
-  - "Internet, configuration des applications Internet"
-  - "réponse à une demande Internet, configuration des applications Internet"
-  - "proxy par défaut"
-  - "ressources réseau, proxy par défaut"
-  - "envoi de données, configuration des applications Internet"
-  - "ressources réseau, configuration des applications Internet"
-  - "Internet, proxy par défaut"
+title: Configuration des applications Internet
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- downloading Internet resources, default proxy
+- sending data, default proxy
+- receiving data, default proxy
+- downloading Internet resources, configuring Internet applications
+- protocol-specific modules
+- custom authentication modules
+- receiving data, configuring Internet applications
+- configuration settings [.NET Framework], Internet applications
+- requesting data from Internet, configuring Internet applications
+- requesting data from Internet, default proxy
+- response to Internet request, default proxy
+- Internet, configuring Internet applications
+- response to Internet request, configuring Internet applications
+- default proxy
+- network resources, default proxy
+- sending data, configuring Internet applications
+- network resources, configuring Internet applications
+- Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
 caps.latest.revision: 15
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 15
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a4a013b8a4ff60222bb88c6e9c4f14badd689b5d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Configuration des applications Internet
-L'élément de configuration de [\<system.Net\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) contient les informations de configuration réseau pour les applications.  Utilisation de l'élément [\<system.Net\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) , vous pouvez définir des serveurs proxy, définissez les paramètres de gestion de connexion, puis incorporer les modules personnalisés d'identification et de demande dans votre application.  
+# <a name="configuring-internet-applications"></a>Configuration des applications Internet
+L’[élément de configuration \<system.Net> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) contient des informations de configuration réseau pour les applications. Avec l’[élément \<system.Net> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md), vous pouvez définir des serveurs proxy, définir des paramètres de gestion de connexion, et inclure des modules de requête et d’authentification personnalisés dans votre application.  
   
- l'élément de [\<defaultProxy\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) définit le serveur proxy retourné par la classe d' `GlobalProxySelection` .  Tout <xref:System.Net.HttpWebRequest> qui n'a pas son propre jeu de propriétés d' <xref:System.Net.HttpWebRequest.Proxy%2A> sur une valeur spécifique utilise le proxy par défaut.  En plus de définir l'adresse de proxy, vous pouvez créer une liste d'adresses du serveur qui n'utilisent pas le proxy, et vous pouvez indiquer que le proxy ne doit pas être utilisé pour les adresses locales.  
+ L’[élément \<defaultProxy> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) définit le serveur proxy retourné par la classe `GlobalProxySelection`. Tout <xref:System.Net.HttpWebRequest> dont la propre propriété <xref:System.Net.HttpWebRequest.Proxy%2A> n’a pas une valeur spécifique utilise le proxy par défaut. En plus de définir l’adresse du proxy, vous pouvez créer une liste d’adresses de serveurs qui n’utiliseront pas le serveur proxy, et vous pouvez indiquer que le proxy ne doit pas être utilisé pour les adresses locales.  
   
- Il est important de noter que les paramètres de Microsoft Internet Explorer sont combinées avec les paramètres de configuration, la dernière priorité prenant.  
+ Il est important de noter que les paramètres de Microsoft Internet Explorer sont combinés avec les paramètres de configuration, ces derniers étant prioritaires.  
   
- L'exemple suivant définit l'adresse par défaut du serveur proxy à http:\/\/proxyserver, indique que le proxy ne doit pas être utilisé pour les adresses locales, et spécifie que toutes les demandes des serveurs trouvent dans le domaine de contoso.com doivent ignorer le proxy.  
+ L’exemple suivant définit http://proxyserver comme adresse du serveur proxy par défaut, indique que le proxy ne doit pas être utilisé pour les adresses locales, et spécifie que toutes les requêtes aux serveurs situés dans le domaine contoso.com doivent ignorer le proxy.  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <defaultProxy>  
@@ -64,9 +69,9 @@ L'élément de configuration de [\<system.Net\>, élément \(paramètres réseau
 </configuration>  
 ```  
   
- Utilisez l'élément de [\<connectionManagement\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) pour configurer le nombre de rapports persistants qui peuvent être générés à un serveur spécifique ou à tous les autres serveurs.  L'exemple suivant configure l'application d'utiliser deux connexions persistantes au serveur www.contoso.com, quatre connexions persistantes au serveur avec l'adresse IP 192.168.1.2, et une connexion persistante à tous les autres serveurs.  
+ Utilisez l’élément [\<connectionManagement> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) pour configurer le nombre de connexions persistantes pouvant être établies avec un serveur spécifique ou avec tous les autres serveurs. L’exemple suivant configure l’application pour qu’elle utilise deux connexions persistantes au serveur www.contoso.com, quatre connexions persistantes au serveur avec l’adresse IP 192.168.1.2, et une connexion persistante à tous les autres serveurs.  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <connectionManagement>  
@@ -78,11 +83,11 @@ L'élément de configuration de [\<system.Net\>, élément \(paramètres réseau
 </configuration>  
 ```  
   
- Les modules personnalisés d'identification sont configurés avec l'élément d' [\<authenticationModules\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) .  Les modules personnalisés d'identification doit implémenter l'interface d' <xref:System.Net.IAuthenticationModule> .  
+ Les modules d’authentification personnalisés sont configurés avec l’élément [\<authenticationModules> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md). Ils doivent implémenter l’interface <xref:System.Net.IAuthenticationModule>.  
   
- l'exemple suivant configure un module personnalisé d'authentification.  
+ L’exemple suivant configure un module d’authentification personnalisé.  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <authenticationModules>  
@@ -92,9 +97,9 @@ L'élément de configuration de [\<system.Net\>, élément \(paramètres réseau
 </configuration>  
 ```  
   
- Vous pouvez utiliser l'élément de [\<webRequestModules\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) pour configurer votre application pour utiliser des modules spécifiques au protocole personnalisés pour demander des informations des ressources Internet.  Les modules spécifiés doivent implémenter l'interface d' <xref:System.Net.IWebRequestCreate> .  Vous pouvez substituer HTTP par défaut, S\-HTTP, et les modules de demande de fichier en spécifiant votre module personnalisé dans le fichier de configuration, comme dans l'exemple suivant.  
+ Vous pouvez utiliser l’élément [\<webRequestModules> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) pour configurer votre application afin qu’elle utilise des modules propres au protocole personnalisés pour demander des informations à partir des ressources Internet. Les modules spécifiés doivent implémenter l’interface <xref:System.Net.IWebRequestCreate>. Vous pouvez substituer les modules HTTP, HTTPS et de requête de fichier par défaut en spécifiant votre module personnalisé dans le fichier de configuration, comme dans l’exemple suivant.  
   
-```  
+```xml  
 <configuration>  
     <system.net>  
         <webRequestModules>  
@@ -107,7 +112,8 @@ L'élément de configuration de [\<system.Net\>, élément \(paramètres réseau
 </configuration>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)   
  [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)   
- [\<system.Net\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+ [\<system.Net>, élément (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+

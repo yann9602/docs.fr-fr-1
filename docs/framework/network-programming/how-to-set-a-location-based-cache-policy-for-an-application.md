@@ -1,42 +1,47 @@
 ---
-title: "Comment&#160;: d&#233;finir une strat&#233;gie de cache bas&#233;e sur l’emplacement pour une application | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "définition explicite du comportement du cache"
-  - "stratégies de cache basées sur l’emplacement"
-  - "cache local"
-  - "stratégies de cache de demande"
-  - "cache (.NET Framework), stratégies basées sur l’emplacement"
+title: "Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- expliciting defining cache behavior
+- location-based cache policies
+- local cache
+- request cache policies
+- cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: bcfd166b108dc0cf99381869e39952b09fcfca6b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: d&#233;finir une strat&#233;gie de cache bas&#233;e sur l’emplacement pour une application
-Les stratégies de cache géolocalisées permettent à une application de définir explicitement le comportement de mise en cache selon l'emplacement de la ressource demandée.  Cette rubrique montre comment définir la stratégie de cache par programme.  Pour plus d'informations sur la définition de la stratégie pour une application à l'aide de les fichiers de configuration, consultez [\<requestCaching\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application
+Avec une stratégie de cache basée sur l’emplacement, une application peut définir explicitement le comportement de cache en fonction de l’emplacement de la ressource demandée. Cette rubrique explique comment définir la stratégie de cache par programmation. Pour plus d’informations sur la définition de la stratégie pour une application en utilisant les fichiers de configuration, consultez [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
-### Pour définir une stratégie de cache géolocalisée pour une application  
+### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Pour définir une stratégie de cache basée sur l’emplacement pour une application  
   
-1.  Créez un objet d' <xref:System.Net.Cache.RequestCachePolicy> ou d' <xref:System.Net.Cache.HttpRequestCachePolicy> .  
+1.  Créez un objet <xref:System.Net.Cache.RequestCachePolicy> ou <xref:System.Net.Cache.HttpRequestCachePolicy>.  
   
-2.  Définissez l'objet de stratégie par défaut pour le domaine d'application.  
+2.  Définissez l’objet de stratégie par défaut pour le domaine d’application.  
   
-### Pour définir une stratégie qui prend les ressources demandées d'un cache  
+### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Pour définir une stratégie qui obtient les ressources demandées à partir d’un cache  
   
--   Créez une stratégie qui prend les ressources demandées d'un cache si disponible, et sinon, envoie des demandes au serveur, en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  Une requête peut être accomplie par tout cache entre le client et serveur, notamment les caches distants.  
+-   Créez une stratégie qui obtient les ressources demandées à partir d’un cache disponible ou, sinon, qui envoie les demandes au serveur (pour cela, définissez le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable>). Une demande peut être traitée par n’importe quel cache entre le client et le serveur, y compris les caches distants.  
   
     ```csharp  
     public static void UseCacheIfAvailable()  
@@ -45,7 +50,6 @@ Les stratégies de cache géolocalisées permettent à une application de défin
             (HttpRequestCacheLevel.CacheIfAvailable);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
-  
     ```  
   
     ```vb  
@@ -56,9 +60,9 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-### Pour définir une stratégie qui empêché tout cache de fournir des ressources  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>Pour définir une stratégie qui empêche tous les caches de fournir des ressources  
   
--   Créez une stratégie qui empêché tout cache de fournir les ressources demandées en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  Ce niveau de stratégie supprime la ressource du cache local s'il est présent et l'indique à les caches distants qu'elles doivent également supprimer la ressource.  
+-   Créez une stratégie qui empêche tous les caches de fournir les ressources demandées en définissant le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore>. Ce niveau de stratégie supprime la ressource qui se trouve éventuellement dans le cache local et spécifie que les caches distants doivent également supprimer cette ressource.  
   
     ```csharp  
     public static void DoNotUseCache()  
@@ -77,9 +81,9 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-### Pour définir une stratégie qui retourne a demandé des ressources uniquement si elles sont dans le cache local  
+### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>Pour définir une stratégie qui retourne les ressources demandées uniquement si elles sont dans le cache local  
   
--   Créez une stratégie qui retourne les ressources demandées uniquement si elles sont dans le cache local en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  Si la ressource demandée n'est pas dans le cache, une exception d' <xref:System.Net.WebException> est levée.  
+-   Créez une stratégie qui retourne les ressources demandées uniquement si elles sont dans le cache local en définissant le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly>. Si la ressource demandée n’est pas dans le cache, une exception <xref:System.Net.WebException> est levée.  
   
     ```csharp  
     public static void OnlyUseCache()  
@@ -98,9 +102,9 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-### Pour définir une stratégie qui empêché le cache local de fournir des ressources  
+### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>Pour définir une stratégie qui empêche le cache local de fournir des ressources  
   
--   Créez une stratégie qui empêché le cache local de fournir les ressources demandées en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  Si la ressource demandée se trouve dans un cache intermédiaire et est correctement revalidée, le cache MSIL peut fournir la ressource demandée.  
+-   Créez une stratégie qui empêche le cache local de fournir les ressources demandées en définissant le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh>. Si la ressource demandée se trouve dans un cache intermédiaire et qu’elle a été revalidée, le cache intermédiaire est autorisé à fournir cette ressource.  
   
     ```csharp  
     public static void DoNotUseLocalCache()  
@@ -119,9 +123,9 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-### Pour définir une stratégie qui empêché tout cache de fournir les ressources demandées  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>Pour définir une stratégie qui empêche tous les caches de fournir les ressources demandées  
   
--   Créez une stratégie qui empêché tout cache de fournir les ressources demandées en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  La ressource retournée par le serveur peut être stockée dans le cache.  
+-   Créez une stratégie qui empêche tous les caches de fournir les ressources demandées en définissant le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.Reload>. La ressource retournée par le serveur peut être stockée dans le cache.  
   
     ```csharp  
     public static void SendToServer()  
@@ -140,9 +144,9 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-### Pour définir une stratégie qui autorise tout cache d'approvisionnement a demandé des ressources si la ressource sur le serveur n'est pas plus récente que la copie mise en cache  
+### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>Pour définir une stratégie qui autorise tous les caches à fournir les ressources demandées si la ressource sur le serveur n’est pas plus récente que la copie en cache  
   
--   Créez une stratégie qui autorise tout cache les ressources demandées par approvisionnement si la ressource sur le serveur n'est pas plus récente que la copie mise en cache en définissant le cache au niveau à <xref:System.Net.Cache.HttpRequestCacheLevel>.  
+-   Créez une stratégie qui autorise tous les caches à fournir les ressources demandées si la ressource sur le serveur n’est pas plus récente que la copie en cache, en définissant le niveau de cache à <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate>.  
   
     ```csharp  
     public static void CheckServer()  
@@ -161,9 +165,10 @@ Les stratégies de cache géolocalisées permettent à une application de défin
     End Sub  
     ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
  [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)   
  [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)   
  [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [\<requestCaching\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+

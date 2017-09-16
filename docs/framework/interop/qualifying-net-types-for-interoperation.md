@@ -1,65 +1,71 @@
 ---
-title: "Qualifying .NET Types for Interoperation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "exposing .NET Framework components to COM"
-  - "COM interop, qualifying .NET types"
-  - "qualifying .NET types for interoperation"
-  - "interoperation with unmanaged code, qualifying .NET types"
-  - "interoperation with unmanaged code, exposing .NET Framework components"
-  - "COM interop, exposing COM components"
+title: "Qualification des types .NET en vue d'une interopérabilité"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- exposing .NET Framework components to COM
+- COM interop, qualifying .NET types
+- qualifying .NET types for interoperation
+- interoperation with unmanaged code, qualifying .NET types
+- interoperation with unmanaged code, exposing .NET Framework components
+- COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 68ecd5e4c562f1eecb31ee539adb70d67455a584
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Qualifying .NET Types for Interoperation
-Si vous avez l'intention d'exposer des types figurant dans un assembly à des applications COM, prenez en compte les conditions requises par COM Interop au moment du design.  Les types managés \(classe, interface, structure et énumération\) s'intègrent de façon transparente aux types COM lorsque vous respectez les indications suivantes :  
+# <a name="qualifying-net-types-for-interoperation"></a>Qualification des types .NET en vue d'une interopérabilité
+Si vous envisagez d’exposer les types d’un assembly à des applications COM, prenez en compte les exigences COM Interop au moment de la conception. Les types managés (classe, interface, structure et énumération) s’intègrent parfaitement aux types COM lorsque vous respectez les consignes suivantes :  
   
--   Les classes doivent implémenter explicitement des interfaces.  
+-   Les classes doivent implémenter les interfaces de manière explicite.  
   
-     Même si COM Interop propose un mécanisme permettant de générer automatiquement une interface contenant tous les membres de la classe et les membres de sa classe de base, il est de loin préférable de fournir des interfaces explicites.  L'interface générée de manière automatique est appelée interface de classe.  Pour obtenir des indications, consultez [Présentation de l'interface de classe](http://msdn.microsoft.com/fr-fr/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+     Même si COM Interop fournit un mécanisme permettant de générer automatiquement une interface contenant tous les membres de la classe et de sa classe de base, il est fortement recommandé de fournir des interfaces explicites. L’interface générée automatiquement est appelée « interface de classe ». Pour obtenir des instructions, consultez [Présentation de l’interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
   
-     Vous pouvez utiliser [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C\# et C\+\+ pour incorporer des définitions d'interface dans votre code, plutôt que de devoir utiliser le langage IDL \(Interface Definition Language\) ou son équivalent.  Pour plus d'informations sur la syntaxe, consultez la documentation sur votre langage.  
+     Vous pouvez utiliser [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C# et C++ pour incorporer des définitions d’interface dans votre code, au lieu du langage IDL (ou équivalent). Pour plus d’informations sur la syntaxe, consultez la documentation relative à votre langage.  
   
 -   Les types managés doivent être publics.  
   
-     Seuls les types publics figurant dans un assembly sont inscrits et exportés vers la bibliothèque de types.  Seuls les types publics sont par conséquent rendus visibles à COM.  
+     Seuls les types publics d’un assembly sont inscrits et exportés vers la bibliothèque de types. Par conséquent, seuls les types publics sont visibles par COM.  
   
-     Les types managés exposent des fonctionnalités à un autre code managé pouvant ne pas être exposé à COM.  Par exemple, les constructeurs paramétrés, les méthodes statiques et les champs constants ne sont pas exposés aux clients COM.  De plus, comme le runtime marshale des données à l'intérieur et à l'extérieur d'un type, les données peuvent être copiées ou transformées.  
+     Les types managés exposent des fonctionnalités à un autre code managé qui peut ne pas être exposé à COM. Par exemple, les constructeurs paramétrables, les méthodes statiques et les champs constants ne sont pas exposés aux clients COM. De plus, comme le runtime marshale les données d’un type à un autre, les données peuvent être copiées ou transformées.  
   
 -   Les méthodes, les propriétés, les champs et les événements doivent être publics.  
   
-     Les membres des types publics doivent également être publics s'ils doivent être rendus visibles à COM.  Vous pouvez restreindre la visibilité d'un assembly, d'un type public ou des membres publics d'un type public en appliquant <xref:System.Runtime.InteropServices.ComVisibleAttribute>.  Par défaut, tous les membres et les types publics sont visibles.  
+     Les membres des types publics doivent également être publics pour être visibles par COM. Vous pouvez restreindre la visibilité d’un assembly, d’un type public ou de membres publics d’un type public en appliquant <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Par défaut, tous les membres et types publics sont visibles.  
   
--   Les types doivent avoir un constructeur public par défaut qui doit être activé à partir de COM.  
+-   Les types doivent avoir un constructeur public par défaut pour être activés dans COM.  
   
-     Les types publics managés sont rendus visibles à COM.  Sans constructeur par défaut public \(constructeur sans argument\), les clients COM ne peuvent toutefois pas créer le type.  Les clients COM peuvent quand même utiliser le type s'il est activé par d'autres moyens.  
+     Les types publics managés sont visibles par COM. Toutefois, sans constructeur public par défaut (constructeur sans arguments), les clients COM ne peuvent pas créer le type. Les clients COM peuvent toujours utiliser le type s’il est activé par d’autres moyens.  
   
 -   Les types ne peuvent pas être abstraits.  
   
-     Ni les clients COM ni les clients .NET ne peuvent créer des types abstraits.  
+     Ni les clients COM ni les clients .NET ne peuvent créer de types abstraits.  
   
- Une fois exportée vers COM, la hiérarchie d'héritage d'un type managé est vide.  Le versioning varie également selon les environnements managés et non managés.  Les types exposés à COM ne possèdent pas les mêmes caractéristiques de versioning que les autres types managés.  
+ Lors de l’exportation vers COM, la hiérarchie d’héritage d’un type managé est aplatie. Le contrôle de version est également différent dans les environnements managés et non managés. Les types exposés à COM n’ont pas les mêmes caractéristiques de contrôle de version que les autres types managés.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.InteropServices.ComVisibleAttribute>   
- [Exposing .NET Framework Components to COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [Introducing the Class Interface](http://msdn.microsoft.com/fr-fr/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
- [Applying Interop Attributes](../../../docs/framework/interop/applying-interop-attributes.md)   
- [Packaging an Assembly for COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+ [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
+ [Présentation de l’interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
+ [Application d’attributs d’interopérabilité](../../../docs/framework/interop/applying-interop-attributes.md)   
+ [Empaquetage d’un assembly pour COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+

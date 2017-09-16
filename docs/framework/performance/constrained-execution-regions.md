@@ -1,123 +1,129 @@
 ---
-title: "Constrained Execution Regions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "constrained execution regions"
-  - "CERs"
+title: "Régions d’exécution limitée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- constrained execution regions
+- CERs
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
 caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 9
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 81de172df01879af97aa66b0892a97505178c93c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Constrained Execution Regions
-Une région d'exécution limitée fait partie d'un mécanisme visant à créer du code managé fiable.  Elle définit une zone dans laquelle le Common Language Runtime \(CLR\) est limité dans la levée d'exceptions hors plage qui empêcheraient le code dans la zone de s'exécuter dans son intégralité.  Dans cette région, le code utilisateur est limité dans l'exécution de code qui entraînerait la levée d'exceptions hors plage.  La méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> doit précéder immédiatement un bloc `try` et marquer les blocs `catch`, `finally` et `fault` comme des régions d'exécution limitée.  Une fois marqué comme une région d'exécution limitée, le code doit appeler uniquement un autre code possédant des contrats de fiabilité élevée et il ne doit pas allouer ou effectuer des appels virtuels à des méthodes non préparées ou peu fiables, sauf si le code est préparé à gérer des échecs.  Le Common Language Runtime \(CLR\) retarde les abandons de thread pour le code qui s'exécute dans une région d'exécution limitée.  
+# <a name="constrained-execution-regions"></a>Régions d’exécution limitée
+Une région d’exécution limitée (CER, Constrained Execution Region) fait partie d’un mécanisme pour la création de code managé fiable. Elle définit une zone dans laquelle le Common Language Runtime (CLR) ne peut pas lever d’exceptions hors-bande qui empêcheraient le code dans la zone de s’exécuter dans son intégralité. Dans cette région, le code utilisateur ne peut pas exécuter de code qui entraînerait la levée d’exceptions hors-bande. La méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> doit précéder immédiatement un bloc `try`, et marque les blocs `catch`, `finally` et `fault` en tant que régions d’exécution limitée. Une fois marqué comme région limitée, le code doit appeler uniquement du code avec des contrats de fiabilité forts, et il ne doit pas allouer ou effectuer des appels virtuels à des méthodes non préparées ou non fiables, sauf s’il est prêt à gérer les échecs. Le CLR retarde les abandons de thread pour le code qui s’exécute dans une région CER.  
   
- Les régions d'exécution limitée sont utilisées dans le CLR sous différentes formes en plus d'un bloc `try` annoté, en particulier dans les finaliseurs critiques qui s'exécutent dans les classes dérivées de la classe <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> et dans du code exécuté à l'aide de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>.  
+ Les régions d’exécution limitée sont utilisées sous des formes différentes dans le CLR en plus d’un bloc `try` annoté, notamment sous forme de finaliseurs critiques exécutés dans des classes dérivées de la classe <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> et de code exécuté à l’aide de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>.  
   
-## Préparation préliminaire de la région d'exécution limitée  
- Le Common Language Runtime \(CLR\) prépare les régions d'exécution limitée à l'avance pour éviter des conditions de mémoire insuffisante.  La préparation préliminaire est nécessaire afin que le Common Language Runtime ne provoque pas de condition de mémoire insuffisante pendant la compilation juste\-à\-temps ou le chargement de types.  
+## <a name="cer-advance-preparation"></a>Préparation avancée de région CER  
+ Le CLR prépare les régions CER à l’avance pour éviter toute condition de mémoire insuffisante. Une préparation est nécessaire pour que le CLR ne provoque pas d’insuffisance de mémoire pendant le chargement de type ou la compilation juste-à-temps.  
   
- Le développeur est tenu d'indiquer qu'une région de code est une région d'exécution limitée :  
+ Le développeur doit obligatoirement indiquer qu’une région de code est une région CER :  
   
--   La région d'exécution limitée de niveau supérieur et les méthodes dans le graphique des appels complet possédant l'attribut <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> sont préparées à l'avance.  <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> peut déclarer uniquement des garanties de <xref:System.Runtime.ConstrainedExecution.Cer> ou <xref:System.Runtime.ConstrainedExecution.Cer>.  
+-   La région CER et les méthodes de niveau supérieur dans le graphique des appels complet auxquels l’attribut <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> est appliqué sont préparées à l’avance. Le <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> peut déclarer uniquement des garanties <xref:System.Runtime.ConstrainedExecution.Cer.Success> ou <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>.  
   
--   Il n'est pas possible d'effectuer une préparation préliminaire pour les appels qui ne peuvent pas être déterminés de façon statique, tels que la distribution \(dispatch\) virtuelle.  Utilisez, dans ce cas, la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>.  Lors de l'utilisation de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>, l'attribut <xref:System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute> doit être appliqué au code de nettoyage.  
+-   La préparation ne peut pas être effectuée pour les appels qui ne peuvent pas être déterminés statiquement, comme par exemple en cas de dispatch virtuel. Dans ces cas-là, utilisez la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>. Quand vous utilisez la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>, l’attribut <xref:System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute> doit être appliqué au code de nettoyage.  
   
-## Contraintes  
- Les utilisateurs sont limités dans le type de code qu'ils peuvent écrire dans une région d'exécution limitée.  Le code ne peut pas provoquer d'exception hors plage, comme c'est parfois le cas lors des opérations suivantes :  
+## <a name="constraints"></a>Contraintes  
+ Les utilisateurs sont limités quant au type de code qu’ils peuvent écrire dans une région CER. Le code ne peut pas provoquer d’exceptions hors-bande, telles que celles dues aux opérations suivantes :  
   
 -   Allocation explicite  
   
 -   Boxing  
   
--   Acquisition d'un verrou  
+-   Acquisition d’un verrou  
   
--   Appel virtuel de méthodes non préparées  
+-   Appel de méthodes non préparées de manière virtuelle  
   
--   Appel à des méthodes présentant un contrat de fiabilité faible ou inexistant  
+-   Appel de méthodes avec un contrat de fiabilité faible ou inexistant  
   
- Dans le .NET Framework version 2.0, ces contraintes sont des indications.  Les diagnostics sont fournis par l'intermédiaire d'outils d'analyse de code.  
+ Dans le .NET Framework version 2.0, ces contraintes sont des recommandations. Des diagnostics sont fournis par les outils d’analyse du code.  
   
-## Contrats de fiabilité  
- <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> est un attribut personnalisé qui documente les garanties de fiabilité et l'état d'altération d'une méthode donnée.  
+## <a name="reliability-contracts"></a>Contrats de fiabilité  
+ <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> est un attribut personnalisé qui documente les garanties de fiabilité et l’état d’altération d’une méthode donnée.  
   
-### Garanties de fiabilité  
- Les garanties de fiabilité, représentées par les valeurs de l'énumération <xref:System.Runtime.ConstrainedExecution.Cer>, indiquent le degré de fiabilité d'une méthode donnée :  
+### <a name="reliability-guarantees"></a>Garanties de fiabilité  
+ Les garanties de fiabilité, représentées par des valeurs d’énumération <xref:System.Runtime.ConstrainedExecution.Cer>, indiquent le degré de fiabilité d’une méthode donnée :  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer>.  En présence de conditions exceptionnelles, la méthode peut échouer.  Dans ce cas, elle indique à la méthode appelante si elle a réussi ou échoué.  La méthode doit être contenue dans une région d'exécution limitée pour garantir qu'elle peut signaler la valeur de retour.  
+-   <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>. Dans des conditions exceptionnelles, la méthode peut échouer. Dans ce cas, elle indique à la méthode appelante si elle a réussi ou échoué. La méthode doit être contenue dans une région CER pour que vous soyez sûr qu’elle puisse signaler la valeur de retour.  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer>.  La méthode, le type ou l'assembly sont dépourvus du concept de région d'exécution limitée et il est peu sûr de les appeler dans une région d'exécution limitée sans limitation substantielle des risques d'altération d'état.  Ils ne tirent pas parti des garanties qu'offrent une région d'exécution limitée.  Cela implique ce qui suit :  
+-   <xref:System.Runtime.ConstrainedExecution.Cer.None>. La méthode, le type et l’assembly n’ont aucun concept de région CER. Il est probablement risqué de les appeler dans une région CER sans atténuation substantielle contre les risques d’altération de l’état. Ils ne tirent pas parti des garanties offertes par les régions CER. Cela implique ce qui suit :  
   
-    1.  En présence de conditions exceptionnelles, la méthode peut échouer.  
+    1.  Dans des conditions exceptionnelles, la méthode peut échouer.  
   
-    2.  La méthode peut signaler ou non qu'elle a échoué.  
+    2.  La méthode ne signale pas nécessairement qu’elle a échoué.  
   
-    3.  La méthode n'est pas écrite pour utiliser une région d'exécution limitée, ce qui constitue le scénario le plus probable.  
+    3.  La méthode n’est pas écrite pour utiliser une région CER, le scénario le plus probable.  
   
-    4.  Si une méthode, un type ou un assembly n'est pas marqué de manière explicite pour réussir, il est implicitement identifié comme <xref:System.Runtime.ConstrainedExecution.Cer>.  
+    4.  Si une méthode, un type ou un assembly n’est pas identifié de manière explicite pour réussir, il est implicitement identifié comme <xref:System.Runtime.ConstrainedExecution.Cer.None>.  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer>.  En présence de conditions exceptionnelles, la réussite de la méthode est garantie.  Pour atteindre ce niveau de fiabilité, vous devez toujours construire une région d'exécution limitée autour de la méthode qui est appelée, même lorsqu'elle est appelée dans une région qui n'est pas une région d'exécution limitée.  Une méthode réussit si elle accomplit ce qui est prévu, bien que la réussite reste une notion subjective.  Par exemple, si vous marquez Count avec `ReliabilityContractAttribute(Cer.Success)`, cela implique que lorsqu'elle est exécutée dans une région d'exécution limitée, elle retourne toujours le nombre d'éléments contenus dans <xref:System.Collections.ArrayList> et ne peut jamais laisser les champs internes dans un état indéterminé.  Toutefois, la méthode <xref:System.Threading.Interlocked.CompareExchange%2A> est également marquée comme réussie, étant entendu que la réussite peut signifier l'impossibilité de remplacer la valeur par une nouvelle valeur en raison d'une condition de concurrence critique.  L'essentiel est que la méthode se comporte de la façon prévue et documentée et le code d'une région d'exécution limitée ne doit pas être écrit pour attendre un comportement inhabituel autre que celui d'un code correct mais peu fiable.  
+-   <xref:System.Runtime.ConstrainedExecution.Cer.Success>. Dans des conditions exceptionnelles, la réussite de la méthode est garantie. Pour atteindre ce niveau de fiabilité, vous devez toujours construire une région CER autour de la méthode appelée, même quand elle est appelée dans une région non-CER. Une méthode réussit si elle accomplit ce qui est prévu, bien que la réussite puisse être considérée comme subjective. Par exemple, le fait de marquer Count avec `ReliabilityContractAttribute(Cer.Success)` implique qu’en cas d’exécution dans une région CER, elle retourne toujours le nombre d’éléments dans le <xref:System.Collections.ArrayList> et ne peut jamais laisser les champs internes dans un état indéterminé.  Toutefois, la méthode <xref:System.Threading.Interlocked.CompareExchange%2A> est aussi marquée comme ayant réussi, étant entendu que la réussite peut signifier que la valeur n’a pas pu être remplacée par une nouvelle valeur à cause d’une condition de concurrence.  Le point essentiel est que la méthode se comporte de la manière documentée, et que le code de région CER n’a pas besoin d’être écrit pour s’attendre à un comportement inhabituel au-delà de ce à quoi peut ressembler du code correct mais non fiable.  
   
-### Niveaux d'altération  
- Les niveaux d'altération, représentés par les valeurs de l'énumération <xref:System.Runtime.ConstrainedExecution.Consistency>, indiquent l'étendue de l'état d'altération dans un environnement donné :  
+### <a name="corruption-levels"></a>Niveaux d’altération  
+ Les niveaux d’altération, représentés par des valeurs d’énumération <xref:System.Runtime.ConstrainedExecution.Consistency>, indiquent dans quelle mesure l’état peut être altéré dans un environnement donné :  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency>.  Face à des conditions exceptionnelles, le CLR \(Common Language Runtime\) n'offre aucune garantie quant à la cohérence de l'état dans le domaine d'application actuel.  
+-   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>. Dans des conditions exceptionnelles, le CLR n’offre aucune garantie quant à la cohérence de l’état dans le domaine d’application actuel.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency>.  Face à des conditions exceptionnelles, il est garanti que la méthode limitera l'altération de l'état à l'instance actuelle.  
+-   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptInstance>. Dans des conditions exceptionnelles, il est garanti que la méthode limite l’altération de l’état à l’instance actuelle.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency>. Face à des conditions exceptionnelles, le CLR n'offre aucune garantie quant à la cohérence de l'état ; cela signifie que ces conditions peuvent altérer le processus.  
+-   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>. Dans des conditions exceptionnelles, le CLR n’offre aucune garantie quant à la cohérence de l’état. Autrement dit, la condition peut endommager le processus.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency>.  En présence de conditions exceptionnelles, il est garanti que la méthode n'altérera pas l'état.  
+-   <xref:System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState>. Dans des conditions exceptionnelles, il est garanti que la méthode n’altère pas l’état.  
   
-## Bloc try\/catch\/finally de fiabilité  
- `try/catch/finally` est un mécanisme de gestion des exceptions avec le même niveau de garanties de prévisibilité que la version non managée.  Le bloc `catch/finally` est la région d'exécution limitée.  Les méthodes figurant dans le bloc exigent une préparation préliminaire et ne doivent pas être interruptibles.  
+## <a name="reliability-trycatchfinally"></a>Bloc try/catch/finally de fiabilité  
+ Le bloc `try/catch/finally` de fiabilité est un mécanisme de gestion des exceptions offrant les mêmes garanties de prévisibilité que la version non managée. Le bloc `catch/finally` est la région CER. Les méthodes dans le bloc exigent une préparation et doivent être non interruptibles.  
   
- Dans le .NET Framework version 2.0, le code informe le runtime qu'une tentative est fiable en appelant <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> qui précède immédiatement un bloc try.  <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> est membre de <xref:System.Runtime.CompilerServices.RuntimeHelpers>, une classe de prise en charge de compilateur.  Appelez <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> dès qu'elle est disponible via les compilateurs.  
+ Dans le .NET Framework version 2.0, le code informe le runtime qu’une tentative est fiable en appelant <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> juste avant un bloc try. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> est un membre de <xref:System.Runtime.CompilerServices.RuntimeHelpers>, une classe de prise en charge du compilateur. Appelez <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> directement en attendant sa disponibilité par le biais des compilateurs.  
   
-## Régions non interruptibles  
- Une région non interruptible regroupe un jeu d'instructions dans une région d'exécution limitée.  
+## <a name="noninterruptible-regions"></a>Régions non interruptibles  
+ Une région non interruptible regroupe un ensemble d’instructions dans une région CER.  
   
- Dans le .NET Framework version 2.0, dans l'attente d'une disponibilité via la prise en charge de compilateur, le code utilisateur crée des régions non interruptibles avec un bloc try\/catch\/finally fiable qui contient un bloc try\/catch vide précédé d'un appel de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>.  
+ Dans le .NET Framework version 2.0, dans l’attente de la disponibilité par le biais de la prise en charge du compilateur, le code utilisateur crée des régions non interruptibles avec un bloc try/catch/finally fiable qui contient un bloc try/catch vide précédé d’un appel de méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>.  
   
-## Objet finaliseur critique  
- Un objet <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> garantit que le garbage collection exécutera le finaliseur.  Dès son allocation, le finaliseur et son graphique des appels sont préparés à l'avance.  La méthode du finaliseur s'exécute dans une région d'exécution limitée et doit respecter toutes les contraintes sur les régions d'exécution limitée et les finaliseurs.  
+## <a name="critical-finalizer-object"></a>Objet finaliseur critique  
+ Un <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> garantit que le garbage collection exécutera le finaliseur. Lors de l’allocation, le finaliseur et son graphique des appels sont préparés à l’avance. La méthode de finaliseur s’exécute dans une région CER et doit respecter toutes les contraintes sur les régions CER et les finaliseurs.  
   
- Tout type héritant de <xref:System.Runtime.InteropServices.SafeHandle> et de <xref:System.Runtime.InteropServices.CriticalHandle> a la garantie que son finaliseur s'exécute dans une région d'exécution limitée.  Implémentez <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> dans les classes dérivées de <xref:System.Runtime.InteropServices.SafeHandle> pour exécuter du code tenu de libérer le handle.  
+ Pour tout type héritant de <xref:System.Runtime.InteropServices.SafeHandle> et <xref:System.Runtime.InteropServices.CriticalHandle>, il est garanti que son finaliseur s’exécute dans une région CER. Implémentez <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> dans les classes dérivées <xref:System.Runtime.InteropServices.SafeHandle> pour exécuter tout code devant libérer le handle.  
   
-## Code non autorisé dans les régions d'exécution limitée  
- Les opérations suivantes ne sont pas autorisées dans les régions d'exécution limitée :  
+## <a name="code-not-permitted-in-cers"></a>Code non autorisé dans les régions CER  
+ Les opérations suivantes ne sont pas autorisées dans les régions CER :  
   
 -   Allocations explicites  
   
--   Acquisition d'un verrou  
+-   Acquisition d’un verrou  
   
 -   Boxing  
   
--   Accès de tableau multidimensionnel  
+-   Accès à un tableau multidimensionnel  
   
 -   Appels de méthode par réflexion  
   
--   <xref:System.Threading.Monitor.Enter%2A> ou <xref:System.IO.FileStream.Lock%2A>.  
+-   <xref:System.Threading.Monitor.Enter%2A> ou <xref:System.IO.FileStream.Lock%2A>  
   
--   Vérifications de la sécurité.  N'exécutez pas de demandes, liez uniquement les demandes  
+-   Vérifications de sécurité N’effectuez pas de demande, mais uniquement des demandes de liaison.  
   
--   <xref:System.Reflection.Emit.OpCodes.Isinst> et <xref:System.Reflection.Emit.OpCodes.Castclass> pour les objets COM et les proxies  
+-   <xref:System.Reflection.Emit.OpCodes.Isinst> et <xref:System.Reflection.Emit.OpCodes.Castclass> pour les proxys et les objets COM  
   
--   Obtention ou définition de champs sur un proxy transparent  
+-   Obtention ou définition de champs sur un proxy transparent.  
   
 -   Sérialisation.  
   
--   Délégués et pointeurs fonction  
+-   Pointeurs de fonction et délégués.  
   
-## Voir aussi  
- [Reliability Best Practices](../../../docs/framework/performance/reliability-best-practices.md)
+## <a name="see-also"></a>Voir aussi  
+ [Bonnes pratiques pour la fiabilité](../../../docs/framework/performance/reliability-best-practices.md)
+

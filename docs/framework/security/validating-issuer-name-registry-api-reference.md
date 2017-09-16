@@ -1,19 +1,26 @@
 ---
-title: "R&#233;f&#233;rence des API de validation du registre des noms d&#39;&#233;metteurs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Référence des API de validation du registre des noms d'émetteurs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1ecb66f6-af65-47e9-93bc-afd1c1575a9a
 caps.latest.revision: 2
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 2
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7afec493cc62f84da6458127478e88999f6aed8c
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# R&#233;f&#233;rence des API de validation du registre des noms d&#39;&#233;metteurs
-Cette section contient la référence de l'API de l'extension WIF du Registre de validation de nom d'émetteur.
+# <a name="validating-issuer-name-registry-api-reference"></a>Référence des API de validation du registre des noms d'émetteurs
+Cette section contient les informations de référence des API de l’extension WIF pour la validation du registre des noms d’émetteurs.
+

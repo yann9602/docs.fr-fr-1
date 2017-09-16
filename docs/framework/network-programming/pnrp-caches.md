@@ -1,49 +1,55 @@
 ---
-title: "Caches PNRP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Caches PNRP
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
 caps.latest.revision: 4
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 4
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b468a8cfd050943513cbe858c3ba985ee922b23f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Caches PNRP
-Les caches équivalents de \(PNRP\) de fournisseur de résolution de noms sont des collections locales de points de terminaison homologues algorithmiquement sélectionnés mis à jour sur l'homologue.  
+# <a name="pnrp-caches"></a>Caches PNRP
+Les caches PNRP sont des collections locales de points de terminaison sélectionnés par algorithme et conservés dans un pair.  
   
-## Initialisation du cache de PNRP  
- Pour initialiser le cache de PNRP, ou la collection d'enregistrement de nom homologue, lorsqu'un nœud homologue démarre, un nœud peut utiliser les méthodes suivantes :  
+## <a name="pnrp-cache-initialization"></a>Initialisation du cache PNRP  
+ Pour initialiser le cache PNRP ou la collection d’enregistrements de noms de pairs, au démarrage d’un nœud pair, utilisez l’une des méthodes suivantes :  
   
--   Les entrées de cache persistantes qui était présent lorsque le nœud a été arrêté sont chargées de la mémoire de disque dur.  
+-   Les entrées du cache permanent qui étaient présentes lorsque le nœud a été arrêté sont chargées à partir du disque dur de stockage.  
   
--   Si une application utilise l'infrastructure de collaboration P2P, les informations de collaboration sont disponibles dans le gestionnaire de contacts pour ce nœud.  
+-   Si une application utilise l’infrastructure de collaboration P2P, les informations de collaboration sont disponibles dans le gestionnaire de contacts de ce nœud.  
   
-## Mise à l'échelle la résolution de noms homologue avec un cache multiniveau  
- Pour que les tailles en cache de PNRP les petits, équivalents nœuds utilisent un cache multiniveau, dans lequel chaque niveau contient un nombre maximal d'entrée.  Chaque niveau dans le cache représente une partie un dixième plus petit de l'espace de numéro d'ID de PNRP \(2<sup>256</sup>\).  Le plus bas dans le cache contient un ID de PNRP localement stocké et d'autres ID de PNRP qui sont numériquement près de lui.  Comme un niveau du cache est rempli avec un maximum de 20 entrées, un nouveau niveau inférieur est créé.  Le nombre maximal de niveaux dans le cache est sur l'ordre du10journal \(nombre total d'ID de PNRP en nuage\).  Par exemple, pour un nuage global avec 100 millions d'ID de PNRP, il y a plus de 8 \(\=log10\(100.000.000\)\) niveaux dans le cache et un numéro de tronçons similaire pour résoudre un ID de PNRP pendant la résolution de noms.  Ce mécanisme permet d'une table de hachage distribuée pour laquelle un ID de PNRP arbitraire peut être résolu en effectuant le suivi des messages de demande de PNRP à l'homologue prochain\- proche jusqu'à ce que l'homologue à CPA correspondant soit trouvé.  
+## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a>Mise à l’échelle de la résolution de noms de pairs avec un cache à plusieurs niveaux  
+ Pour minimiser la taille des caches PNRP, les nœuds pairs utilisent un cache à plusieurs niveaux, dans lequel chaque niveau contient un nombre maximal d’entrées. Chaque niveau du cache représente un dixième de l’espace de nombre des ID PNRP (2<sup>256</sup>). Le niveau le plus bas du cache contient un ID PNRP inscrit localement et d’autres ID PNRP qui sont numériquement proches de lui. Étant donné qu’un niveau de cache comprend un maximum de 20 entrées, un niveau inférieur est créé. Le nombre maximal de niveaux du cache est en base 10 (nombre total d’ID PNRP dans le cloud). Par exemple, pour un cloud global comprenant 100 millions d’ID PNRP, le cache comprend seulement 8 niveaux (=log10(100 000 000)) et un nombre similaire de tronçons pour résoudre un ID PNRP lors de la résolution de noms. Ce mécanisme permet l’utilisation d’une table de hachage distribuée pour laquelle un ID PNRP arbitraire peut être résolu en transférant des requêtes PNRP au pair le plus proche, jusqu’à ce que le pair avec l’adresse pair certifiée correspondante soit trouvé.  
   
- Pour garantir que la résolution peut s'exécuter, chaque fois qu'un nœud ajoute une entrée au niveau le plus bas de son cache, il inonde une copie de l'entrée à tous les nœuds dans le dernier niveau du cache.  
+ Pour vérifier que la résolution peut s’effectuer, chaque fois qu’un nœud ajoute une entrée au niveau le plus bas de son cache, il transmet une copie de l’entrée à tous les nœuds du dernier niveau du cache.  
   
- Les entrées de cache sont actualisées dans le temps.  Les entrées de cache qui sont périmées sont supprimées du cache.  Le résultat est que la table de hachage distribuée des ID de PNRP est basée sur les points de terminaison actifs, contrairement à DNS dans lequel les répondent à des enregistrements et le protocole DNS ne fournit aucune garantie que le nœud connexe avec l'adresse est active sur le réseau.  
+ Les entrées du cache sont actualisées au fur et à mesure. Les entrées du cache qui sont périmées sont supprimées du cache. De cette façon, la table de hachage distribuée comprenant les ID PNRP est basée sur des points de terminaison actifs, contrairement au DNS dont les enregistrements d’adresses et le protocole ne fournissent aucune garantie que le nœud associé à l’adresse est actif sur le réseau.  
   
-## D'autres cache de PNRP  
- Un autre magasin de données persistant est le cache local.  En plus de les autres objets nécessaires pour l'activité de PNRP, il peut inclure des enregistrements associés à une session nuage ou de collaboration de PNRP qui est sécurisé publiée et synchronisée entre tous les membres du nuage.  Cette mémoire reproduite représente la vue des données du groupe, qui doivent être identiques pour tous les membres du groupe.  Techniquement, ces objets ne sont pas des enregistrements en tant que tel, mais plutôt la demande, la présence, et les données d'objets destinés au cache local.  L'utilisation du nuage de PNRP garantit que les objets sont propagées à tous les nœuds de la session de collaboration ou le nuage de PNRP.  La réplication d'enregistrement entre les membres nuage utilise le protocole SSL pour fournir le chiffrement et l'intégrité des données.  
+## <a name="other-pnrp-caches"></a>Autres caches PNRP  
+ Le cache local est un autre exemple de magasin de données persistantes.  Outre les objets nécessaires à l’activité PNRP, il peut inclure des enregistrements associés à un cloud PNRP ou à une session de collaboration publiés de manière sécurisée et synchronisés entre tous les membres du cloud. Ce magasin répliqué représente la vue des données du groupe, qui doit être la même pour tous les membres du groupe. Techniquement, ces objets ne sont pas vraiment des enregistrements, mais plutôt des données d’application, de présence et d’objets destinées à un cache local. L’utilisation du cloud PNRP permet de garantir que les objets seront propagés vers tous les nœuds de la session de collaboration ou du cloud PNRP.  La réplication des enregistrements entre les membres du cloud utilise le protocole SSL pour le chiffrement et l’intégrité des données.  
   
- Lorsqu'un homologue joint un nuage, ils ne reçoivent pas automatiquement les données locales de cache de hébergent l'homologue auquel ils s'attachent ; ils doivent s'abonner à l'homologue hôte des mises à jour de l'application, la présence, et les données d'objet.  Après la synchronisation initiale, les homologues resynchronisent périodiquement leurs mémoires répliquées pour garantir que tous les membres du groupe ont régulièrement le même point de vue.  La session ou les applications de collaboration dans la session de collaboration peut également remplir la même fonction.  
+ Lorsqu’un pair rejoint un cloud, il ne reçoit pas automatiquement les données du cache local de l’hôte pair auquel il est attaché. Il doit s’abonner à l’hôte pair pour recevoir les mises à jour des données d’application, de présence et d’objet. Après la première synchronisation, les pairs resynchronisent régulièrement leurs magasins répliqués pour garantir que tous les membres du groupe disposent de la même vue.  La session de collaboration ou les applications qu’elle contient peuvent servir la même fonction.  
   
- Une fois la session de collaboration démarrage d'un nuage, les applications peuvent stocker des homologues et démarrer de publication leurs informations à l'aide de la sécurité définie par la portée nuage.  Lorsqu'un homologue joint un nuage, les mécanismes de sécurité pour le nuage sont appliqués à l'homologue, en lui donnant une portée dans laquelle pour participer.  Les enregistrements peuvent ensuite être publiés sécurisé dans la portée du nuage.  Notez que la portée nuage peut ne pas être identique à l'étendue d'application de collaboration.  
+ Après le démarrage d’une session de collaboration dans le cloud, les applications peuvent inscrire des pairs et commencer à publier leurs informations à l’aide de la stratégie de sécurité définie par l’étendue du cloud. Lorsqu’un pair rejoint un cloud, les mécanismes de sécurité du cloud sont appliqués au pair, et celui-ci se voit attribuer une étendue dans laquelle participer.  Ses enregistrements peuvent ensuite être publiés en toute sécurité dans l’étendue du cloud. Notez que l’étendue du cloud peut ne pas être la même que celle de l’application de collaboration.  
   
- Les homologues peuvent stocker l'intérêt en recevant des objets d'autres équivalents.  Lorsqu'un objet est mis à jour, est averti l'application de collaboration et le nouvel objet est passé à tous les abonnés de l'application.  Par exemple, un homologue dans une application de groupe de conversation peut stocker l'intérêt en recevant des informations d'application, l'qui enverront tous les enregistrements de conversation comme données d'application.  Cela permet à la l'activité de conversation du moniteur dans le nuage.  
+ Les pairs peuvent s’inscrire pour recevoir des objets provenant d’autres pairs. Lorsqu’un objet est mis à jour, l’application de collaboration en est informée et le nouvel objet est passé à tous les abonnés de l’application. Par exemple, un pair d’une application de discussion de groupe peut s’inscrire pour recevoir les informations de l’application. Il va alors recevoir tous les enregistrements de discussions sous forme de données d’application,  ce qui lui permettra de surveiller l’activité de discussion dans le cloud.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Net.PeerToPeer>
+

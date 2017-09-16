@@ -1,51 +1,56 @@
 ---
-title: "Activation du suivi r&#233;seau | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "destinations de suivi"
-  - "envoi de suivis à un fichier journal"
-  - "écouteurs de suivi, suivi réseau"
-  - "suivi réseau, activation"
-  - "Débogueur CLR"
-  - "écouteurs par défaut"
-  - "journaux, suivi"
-  - "destination de sortie de suivi"
+title: "Activation du traçage réseau"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- trace destinations
+- sending traces to log file
+- trace listeners, network tracing
+- network tracing, enabling
+- CLR Debugger
+- default listeners
+- logs, trace
+- destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 15cee0244dc06f6eea03b333e01380953a616947
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Activation du suivi r&#233;seau
-Le traçage réseau fournit l'accès aux données sur les appels de méthode et le trafic réseau généré par une application managée.  Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
+# <a name="enabling-network-tracing"></a>Activation du traçage réseau
+Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
   
--   Compilez votre code avec le traçage est activé.  Consultez [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pour plus d'informations sur les commutateurs de compilation requis pour activer le traçage.  
+-   Compiler votre code avec le traçage activé. Pour plus d’informations sur les commutateurs du compilateur nécessaires pour activer le traçage, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  
   
--   Spécifiez une destination pour la sortie de traçage.  
+-   Spécifier une destination de sortie de traçage.  
   
--   Configurez le comportement du traçage réseau.  Consultez [Comment : Configurez le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) pour des informations détaillées.  
+-   Configurer le comportement du traçage réseau. Pour obtenir des informations détaillées, consultez [Guide pratique pour configurer le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md).  
   
- Des destinations de traçage les plus courantes, également appelées écouteurs de la trace, sont l'écouteur par défaut et le fichier journal.  
+ Les destinations de trace les plus courantes, également appelées écouteurs de suivi, sont l’écouteur par défaut et le fichier journal.  
   
- Le utilise l'écouteur par défaut si vous ne spécifiez pas un écouteur de la trace.  Vous pouvez afficher les messages envoyés à l'écouteur par défaut en exécutant le code dans un débogueur de code managé activé tel que le débogueur CLR fourni avec le kit de développement. NET Framework SDK, ou DBwin32.exe fourni avec le Kit de développement logiciel.  Avec le débogueur CLR, les messages de trace apparaissent dans la fenêtre de **Sortie** .  
+ Le traçage utilise l’écouteur par défaut si vous ne spécifiez pas d’écouteur de suivi. Vous pouvez afficher les messages envoyés à l’écouteur par défaut en exécutant votre code dans un débogueur compatible avec le code managé tel que le débogueur CLR fourni avec le SDK .NET Framework ou DBwin32.exe fourni avec le SDK Windows. Avec le débogueur CLR, les messages de trace s’affichent dans la fenêtre **Sortie**.  
   
- Si vous préférez utiliser un fichier pour recevoir des traces, vous pouvez spécifier un fichier journal à l'aide de les paramètres de configuration, comme indiqué dans l'exemple suivant.  \(Pour une discussion généralement des fichiers de configuration, consultez [fichiers de configuration](../../../docs/framework/configure-apps/index.md).\)  
+ Si vous préférez utiliser un fichier pour recevoir des traces, vous pouvez spécifier un fichier journal à l’aide des paramètres de configuration, comme indiqué dans l’exemple suivant. (Pour obtenir une présentation générale des fichiers de configuration, consultez [Fichiers de configuration](../../../docs/framework/configure-apps/index.md).)  
   
- Pour envoyer des traces à un fichier journal, ajoutez le nœud suivant au nœud d' `<system.diagnostics>` du fichier de configuration approprié \(application ou l'ordinateur\).  Vous pouvez modifier le nom du fichier \(trace.log\) selon vos besoins.  
+ Pour envoyer des traces vers un fichier journal, ajoutez le nœud suivant au nœud `<system.diagnostics>` du fichier de configuration approprié (application ou ordinateur). Vous pouvez modifier le nom du fichier (trace.log) en fonction de vos besoins.  
   
-```  
+```xml  
 <system.diagnostics>  
   <trace autoflush="true" indentsize="4">  
     <listeners>  
@@ -55,7 +60,8 @@ Le traçage réseau fournit l'accès aux données sur les appels de méthode et 
 </system.diagnostics>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Interprétation du traçage réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)   
  [Traçage réseau dans le .NET Framework](../../../docs/framework/network-programming/network-tracing.md)   
- [Introduction to Instrumentation and Tracing](http://msdn.microsoft.com/fr-fr/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)
+ [Introduction à l’instrumentation et au traçage](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)
+

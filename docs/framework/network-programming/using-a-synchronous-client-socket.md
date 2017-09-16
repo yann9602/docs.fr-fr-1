@@ -1,46 +1,50 @@
 ---
-title: "Utilisation d’un socket client synchrone | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "protocoles d’application, sockets"
-  - "envoi de données, sockets"
-  - "requêtes de données, sockets"
-  - "demande de données en provenance d’Internet, sockets"
-  - "sockets clients synchrones"
-  - "Socket (classe), sockets clients synchrones"
-  - "réception de données, sockets"
-  - "sockets, sockets clients synchrones"
-  - "protocoles, sockets"
-  - "Internet, sockets"
-  - "sockets clients"
+title: "Utilisation d’un socket client synchrone"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- sending data, sockets
+- data requests, sockets
+- requesting data from Internet, sockets
+- synchronous client sockets
+- Socket class, synchronous client sockets
+- receiving data, sockets
+- sockets, synchronous client sockets
+- protocols, sockets
+- Internet, sockets
+- client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8562670aad8a20a28eddcd2ebbe434a0402aff59
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Utilisation d’un socket client synchrone
-Un socket client synchrone interrompt l'application pendant l'exécution de réseau se termine.  Sockets synchrones ne sont pas appropriés pour les applications qui utilisent intensive réseau pour leur exécution, mais ils peuvent permettre l'accès simple aux services réseau pour d'autres applications.  
+# <a name="using-a-synchronous-client-socket"></a>Utilisation d’un socket client synchrone
+Un socket client synchrone interrompt l’exécution de l’application durant l’opération réseau. Les sockets synchrones ne sont pas appropriés pour les applications dont l’exécution nécessite une utilisation intensive du réseau, mais ils facilitent l’accès aux services réseau pour les autres applications.  
   
- Pour envoyer des données, passez un tableau d'octets en une des méthodes de envoyer\- données de la classe d' <xref:System.Net.Sockets.Socket> \(<xref:System.Net.Sockets.Socket.Send%2A> et <xref:System.Net.Sockets.Socket.SendTo%2A>\).  L'exemple suivant encode une chaîne dans une mémoire tampon de tableau d'octets à l'aide de la propriété d' <xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName> puis transmet la mémoire tampon à l'appareil réseau à l'aide de la méthode de **Envoyer** .  La méthode de **Envoyer** retourne le nombre d'octets envoyés à l'appareil réseau.  
+ Pour envoyer les données, passez un tableau d’octets à l’une des méthodes d’envoi de données de la classe <xref:System.Net.Sockets.Socket> (<xref:System.Net.Sockets.Socket.Send%2A> et <xref:System.Net.Sockets.Socket.SendTo%2A>). L’exemple suivant encode une chaîne dans une mémoire tampon de tableau d’octets à l’aide de la propriété <xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName>, puis transmet la mémoire tampon à l’appareil réseau avec la méthode **Send**. La méthode **Send** retourne le nombre d’octets envoyés à l’appareil réseau.  
   
 ```vb  
 Dim msg As Byte() = _  
     System.Text.Encoding.ASCII.GetBytes("This is a test.")  
 Dim bytesSent As Integer = s.Send(msg)  
-  
 ```  
   
 ```csharp  
@@ -48,16 +52,15 @@ byte[] msg = System.Text.Encoding.ASCII.GetBytes("This is a test");
 int bytesSent = s.Send(msg);  
 ```  
   
- La méthode de **Envoyer** supprime les octets de la mémoire tampon et les met en file d'attente avec l'interface réseau à envoyer au périphérique réseau.  L'interface réseau ne peut pas envoyer des données immédiatement, mais elle envoie par la suite, tant que la connexion est fermée normalement avec la méthode d' <xref:System.Net.Sockets.Socket.Shutdown%2A> .  
+ La méthode **Send** supprime les octets dans la mémoire tampon et les met en file d’attente dans l’interface réseau pour l’envoi à l’appareil réseau. L’interface réseau peut ne pas envoyer les données immédiatement, mais les envoyer plus tard, dès que la connexion sera fermée normalement avec la méthode <xref:System.Net.Sockets.Socket.Shutdown%2A>.  
   
- Pour recevoir les données d'un périphérique réseau, passez une mémoire tampon avec une des méthodes de recevoir\- données de la classe de **Socket** \(<xref:System.Net.Sockets.Socket.Receive%2A> et <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>\).  Sockets synchrones interrompront l'application jusqu'à ce que les octets sont acceptés réseau ou jusqu'à ce que le socket est fermé.  L'exemple suivant accepte des données du réseau puis l'affiche dans la console.  Cet exemple suppose que les données provenant du réseau sont ASCII\- texte encodé.  La méthode de **Recevoir** retourne le nombre d'octets envoyés du réseau.  
+ Pour recevoir les données d’un appareil réseau, passez une mémoire tampon à l’une des méthodes de réception de données de la classe **Socket** (<xref:System.Net.Sockets.Socket.Receive%2A> et <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>). Les sockets synchrones interrompent l’exécution de l’application jusqu’à la réception des octets du réseau ou la fermeture du socket. L’exemple suivant reçoit les données du réseau, puis les affiche sur la console. L’exemple suppose que les données provenant du réseau sont encodées en texte ASCII. La méthode **Receive** retourne le nombre d’octets reçus du réseau.  
   
 ```vb  
 Dim bytes(1024) As Byte  
 Dim bytesRec = s.Receive(bytes)  
 Console.WriteLine("Echoed text = {0}", _  
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec))  
-  
 ```  
   
 ```csharp  
@@ -67,7 +70,7 @@ Console.WriteLine("Echoed text = {0}",
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec));  
 ```  
   
- Lorsque le socket n'est plus nécessaire, vous devez le libérer en appelant la méthode d' <xref:System.Net.Sockets.Socket.Shutdown%2A> puis en appelant la méthode de **Fermer** .  L'exemple suivant récupère **Socket**.  L'énumération d' <xref:System.Net.Sockets.SocketShutdown> définit des constantes qui indiquent si le socket doit être fermé pour envoyer, pour accepter, ou pour les deux.  
+ Quand le socket n’est plus nécessaire, vous devez le libérer en appelant la méthode <xref:System.Net.Sockets.Socket.Shutdown%2A>, puis la méthode **Close**. L’exemple suivant libère un **Socket**. L’énumération <xref:System.Net.Sockets.SocketShutdown> définit les constantes qui indiquent si le socket doit être fermé pour l’envoi et/ou la réception des données.  
   
 ```vb  
 s.Shutdown(SocketShutdown.Both)  
@@ -79,7 +82,8 @@ s.Shutdown(SocketShutdown.Both);
 s.Close();  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Utilisation d’un socket client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
  [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)   
  [Exemple de socket client synchrone](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
+

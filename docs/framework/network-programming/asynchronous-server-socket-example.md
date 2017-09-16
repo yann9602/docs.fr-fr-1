@@ -1,30 +1,35 @@
 ---
-title: "Exemple de sockets serveur asynchrones | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sockets, sockets serveur asynchrones"
-  - "sockets, exemples de code"
-  - "sockets serveur asynchrones"
+title: Exemple de sockets serveur asynchrones
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- sockets, asynchronous server sockets
+- sockets, code examples
+- asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 9cf150a1ac5465a898ca9e330b186659ec6423f0
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Exemple de sockets serveur asynchrones
-Le programme d'exemple suivant crée un serveur qui accepte les demandes de connexion du client.  Le serveur est généré avec un socket asynchrone, l'exécution de l'application serveur n'est pas interrompue pendant qu'elle attend une connexion d'un client.  L'application reçoit une chaîne du client, affiche la chaîne sur la console, puis répercute la chaîne au client.  La chaîne du client doit contenir la chaîne « \<EOF\> » pour signaler la fin de le message.  
+# <a name="asynchronous-server-socket-example"></a>Exemple de sockets serveur asynchrones
+L’exemple de programme suivant crée un serveur qui reçoit des demandes de connexion de clients. Le serveur est créé avec un socket asynchrone. L’exécution de l’application serveur n’est pas suspendue pendant l’attente d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
   
 ```vb  
 Imports System  
@@ -302,7 +307,8 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Exemple de socket client asynchrone](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)   
  [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
  [Exemples de code de socket](../../../docs/framework/network-programming/socket-code-examples.md)
+

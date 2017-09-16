@@ -1,81 +1,86 @@
 ---
-title: "Gestion des erreurs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Internet, WebRequest et WebResponse (exceptions des classes)"
-  - "Status (propriété)"
-  - "WebExceptions (classe), à propos de la classe WebExceptions"
-  - "Timeout (membre d’énumération)"
-  - "ConnectFailure (membre d’énumération)"
-  - "TrustFailure (membre d’énumération)"
-  - "WebRequest (classe), exceptions"
-  - "demande de données à partir d’Internet, gestion des erreurs"
-  - "Success (membre d’énumération)"
-  - "réception de données, erreurs"
-  - "ProtocolError (membre d’énumération)"
-  - "téléchargement de ressources Internet, gestion des erreurs"
-  - "WebResponse (classe), exceptions"
-  - "SendFailure (membre d’énumération)"
-  - "erreurs (.NET Framework), exceptions des classes WebRequest et WebResponse"
-  - "envoi de données, erreurs"
-  - "réponse à une requête Internet, gestion des erreurs"
-  - "NameResolutionFailure (membre d’énumération)"
-  - "KeepAliveFailure (membre d’énumération)"
-  - "ressources réseau , WebRequest et WebResponse (exceptions des classes)"
-  - "RequestCanceled (membre d’énumération)"
-  - "ReceiveFailure (membre d’énumération)"
-  - "ServerProtocolViolation (membre d’énumération)"
-  - "ConnectionClosed (membre d’énumération)"
-  - "SecureChannelFailure (membre d’énumération)"
+title: Gestion des erreurs
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, WebRequest and WebResponse classes exceptions
+- Status property
+- WebExceptions class, about WebExceptions class
+- Timeout enumeration member
+- ConnectFailure enumeration member
+- TrustFailure enumeration member
+- WebRequest class, exceptions
+- requesting data from Internet, error handling
+- Success enumeration member
+- receiving data, errors
+- ProtocolError enumeration member
+- downloading Internet resources, error handling
+- WebResponse class, exceptions
+- SendFailure enumeration member
+- errors [.NET Framework], WebRequest and WebResponse classes exceptions
+- sending data, errors
+- response to Internet request, error handling
+- NameResolutionFailure enumeration member
+- KeepAliveFailure enumeration member
+- network resources, WebRequest and WebResponse classes exceptions
+- RequestCanceled enumeration member
+- ReceiveFailure enumeration member
+- ServerProtocolViolation enumeration member
+- ConnectionClosed enumeration member
+- SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ca755d123589f4ee07ea9caadf8bd420c94adae4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Gestion des erreurs
-Les classes d' <xref:System.Net.WebRequest> et d' <xref:System.Net.WebResponse> lèvent les exceptions de système \(comme <xref:System.ArgumentException>\) et les exceptions de web particulier \(qui sont [WebExceptions](frlrfsystemnetwebexceptionclasstopic) levée par la méthode d' <xref:System.Net.WebRequest.GetResponse%2A> \).  
+# <a name="handling-errors"></a>Gestion des erreurs
+Les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> lèvent à la fois les exceptions système (comme <xref:System.ArgumentException>) et les exceptions spécifiques au web (qui sont des <xref:System.Net.WebException> levées par la méthode <xref:System.Net.WebRequest.GetResponse%2A>).  
   
- Chaque **WebException** inclut une propriété d' <xref:System.Net.WebException.Status%2A> qui contient une valeur de l'énumération d' <xref:System.Net.WebExceptionStatus> .  Vous pouvez examiner la propriété de **État** pour déterminer l'erreur qui s'est produite et prenez les mesures appropriées pour corriger l'erreur.  
+ Chaque **WebException** comprend une propriété <xref:System.Net.WebException.Status%2A> qui contient une valeur de l’énumération <xref:System.Net.WebExceptionStatus>. Vous pouvez examiner la propriété **Status** afin d’identifier l’erreur qui s’est produite et de prendre les mesures appropriées pour la résoudre.  
   
- Le tableau suivant décrit les valeurs possibles pour la propriété de **État** .  
+ Le tableau suivant décrit les valeurs possibles pour la propriété **Status**.  
   
-|État|Description|  
-|----------|-----------------|  
-|ConnectFailure|Le service distant n'a pas pu être contacté au niveau de transport.|  
-|ConnectionClosed|La connexion a été fermée. prématurément|  
-|KeepAliveFailure|Le serveur a fermé une connexion établie avec le jeu Conserver\- actif d'en\-tête.|  
-|NameResolutionFailure|Le service de nom ne peut pas résoudre le nom d'hôte.|  
-|ProtocolError|La réponse reçue du serveur était complète mais a indiqué une erreur au niveau de le protocole.|  
-|ReceiveFailure|Une réponse complète n'a pas été reçue du serveur distant.|  
-|RequestCanceled|La requête a été annulée.|  
-|SecureChannelFailure|Une erreur s'est produite dans un lien de canal sécurisé.|  
-|SendFailure|Une demande complète n'a pas pu être envoyée au serveur distant.|  
-|ServerProtocolViolation|La réponse du serveur n'était pas une réponse HTTP valide.|  
-|Succès|Aucune erreur n'a été rencontrée.|  
-|Dépassement de délai|La réponse négative a été reçue dans le jeu de minuterie pour la demande.|  
-|TrustFailure|Un certificat de serveur n'a pas pu être validé.|  
-|MessageLengthLimitExceeded|Le message reçu dépassait la limite spécifiée lors de l'envoi d'une demande ou de la réception d'une réponse du serveur.|  
+|Status|Description|  
+|------------|-----------------|  
+|ConnectFailure|Le service distant n’a pas pu être contacté au niveau du transport.|  
+|ConnectionClosed|La connexion a été interrompue prématurément.|  
+|KeepAliveFailure|Le serveur a fermé une connexion établie avec l’en-tête Keep-alive défini.|  
+|NameResolutionFailure|Le service de noms n’a pas pu résoudre le nom d’hôte.|  
+|ProtocolError|La réponse reçue du serveur était complète, mais indiquait une erreur au niveau du protocole.|  
+|ReceiveFailure|Aucune réponse complète n’a été reçue du serveur distant.|  
+|RequestCanceled|La demande a été annulée.|  
+|SecureChannelFailure|Une erreur s’est produite dans un lien de canal sécurisé.|  
+|SendFailure|Une demande complète n’a pas pu être envoyée au serveur distant.|  
+|ServerProtocolViolation|La réponse du serveur n’était pas une réponse HTTP valide.|  
+|Opération réussie|Aucune erreur n’a été rencontrée.|  
+|Délai d'expiration|Aucune réponse n’a été reçue pendant le délai défini pour la demande.|  
+|TrustFailure|Un certificat de serveur n’a pas pu être validé.|  
+|MessageLengthLimitExceeded|Un message a été reçu qui dépassait la limite spécifiée lors de l’envoi d’une demande ou de la réception d’une réponse du serveur.|  
 |En attente|Une demande asynchrone interne est en attente.|  
-|PipelineFailure|Cette valeur en charge l'infrastructure. NET Framework et n'est pas destinée à être utilisée directement dans votre code.|  
-|ProxyNameResolutionFailure|Le service de résolution des noms n'a pas pu résoudre le nom d'hôte du proxy.|  
-|UnknownError|Une exception d'un type inconnu s'est produite.|  
+|PipelineFailure|Cette valeur prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement dans votre code.|  
+|ProxyNameResolutionFailure|Le service de résolution de nom n’a pas pu résoudre le nom d’hôte proxy.|  
+|UnknownError|Une exception de type inconnu s’est produite.|  
   
- Lorsque la propriété de **État** est **WebExceptionStatus.ProtocolError**, **WebResponse** qui contient la réponse du serveur est disponible.  Vous pouvez examiner la réponse pour déterminer la source réel d'erreur du protocole.  
+ Quand la propriété **Status** a la valeur **WebExceptionStatus.ProtocolError**, une **WebResponse** qui contient la réponse du serveur est disponible. Vous pouvez examiner cette réponse afin de déterminer la source réelle de l’erreur de protocole.  
   
- l'exemple suivant montre comment intercepter **WebException**.  
+ L’exemple suivant indique comment intercepter une **WebException**.  
   
 ```csharp  
 try   
@@ -170,10 +175,11 @@ Catch e As Exception
 End Try  
 ```  
   
- Applications qui utilisent le jet [SocketExceptions](frlrfsystemnetsocketssocketexceptionclasstopic) de classe d' <xref:System.Net.Sockets.Socket> lorsque des erreurs se produisent sur le Winsock.  Les classes de [TCPClient](frlrfsystemnetsocketstcpclientclasstopic), de [TCPListener](frlrfsystemnetsocketstcplistenerclasstopic), et d' [UDPClient](frlrfsystemnetsocketsudpclientclasstopic) reposent sur la classe de **Socket** et lèvent **SocketExceptions** également.  
+ Les applications qui utilisent la classe <xref:System.Net.Sockets.Socket> lèvent des <xref:System.Net.Sockets.SocketException> quand des erreurs se produisent sur le socket Windows. Les classes <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener> et <xref:System.Net.Sockets.UdpClient> sont générées sur la classe **Socket** et lèvent également des **SocketExceptions**.  
   
- Lorsque **SocketException** est levée, la classe de **SocketException** définit la propriété d' <xref:System.Net.Sockets.SocketException.ErrorCode%2A> à la dernière erreur du système d'exploitation de socket qui s'est produite.  Pour plus d'informations sur les codes d'erreur de socket, consultez la documentation de code d'erreur API du Winsock 2,0 dans MSDN.  
+ Quand une **SocketException** est levée, la classe **SocketException** affecte à la propriété <xref:System.Net.Sockets.SocketException.ErrorCode%2A> la dernière erreur de socket du système d’exploitation s’étant produite. Pour plus d’informations sur les codes d’erreur de socket, consultez la documentation relative aux codes d’erreur des API Winsock 2.0 dans MSDN.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Notions de base de la gestion des exceptions](../../../docs/standard/exceptions/exception-handling-fundamentals.md)   
  [Demande de données](../../../docs/framework/network-programming/requesting-data.md)
+

@@ -1,55 +1,61 @@
 ---
-title: "Exemples de code de socket | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "protocoles d’application, sockets"
-  - "envoi de données, sockets"
-  - "Socket (classe), sockets serveur asynchrones"
-  - "requêtes de données, sockets"
-  - "demander des données à partir d’Internet, sockets"
-  - "sockets serveur"
-  - "sockets, exemples de code"
-  - "réception de données, sockets"
-  - "protocoles, sockets"
-  - "Internet, sockets"
-  - "sockets clients"
+title: Exemples de code de socket
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- application protocols, sockets
+- sending data, sockets
+- Socket class, asynchronous server sockets
+- data requests, sockets
+- requesting data from Internet, sockets
+- server sockets
+- sockets, code examples
+- receiving data, sockets
+- protocols, sockets
+- Internet, sockets
+- client sockets
 ms.assetid: f3fc7533-6956-42c6-bbc3-73e5a221027d
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c3f84310486e61cf294539955600c3b399d3fff9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Exemples de code de socket
-Les exemples de code suivants montrent comment utiliser la classe d' <xref:System.Net.Sockets.Socket> comme client pour se connecter aux services de réseau distant et en tant que serveur pour écouter les connexions des clients distants.  
+# <a name="socket-code-examples"></a>Exemples de code de socket
+Les exemples de code suivants montrent comment utiliser la classe <xref:System.Net.Sockets.Socket> comme client pour établir une connexion à des services réseau distants et comment l’utiliser comme serveur pour écouter les connexions effectuées à partir de clients distants.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Exemple de socket client synchrone](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
- Montre comment implémenter un client synchrone d' <xref:System.Net.Sockets.Socket> qui se connecte à un serveur et affiche les données retournées par le serveur.  
+ Montre comment implémenter un client <xref:System.Net.Sockets.Socket> synchrone qui se connecte à un serveur et affiche les données retournées par le serveur.  
   
  [Exemple de socket serveur synchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)  
- Montre comment implémenter un serveur synchrone d' <xref:System.Net.Sockets.Socket> qui accepte des connexions d'un client et arrière d'échos les données les ont reçu du client.  
+ Montre comment implémenter un serveur <xref:System.Net.Sockets.Socket> synchrone qui accepte les connexions effectuées à partir d’un client et renvoie les données reçues du client.  
   
  [Exemple de socket client asynchrone](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)  
- Montre comment implémenter un client asynchrone d' <xref:System.Net.Sockets.Socket> qui se connecte à un serveur et affiche les données retournées par le serveur.  
+ Montre comment implémenter un client <xref:System.Net.Sockets.Socket> asynchrone qui se connecte à un serveur et affiche les données retournées par le serveur.  
   
- [Exemple de sockets serveur asynchrones](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
- Montre comment implémenter un serveur asynchrone d' <xref:System.Net.Sockets.Socket> qui accepte des connexions d'un client et arrière d'échos les données les ont reçu du client.  
+ [Exemple de socket serveur asynchrone](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ Montre comment implémenter un serveur <xref:System.Net.Sockets.Socket> asynchrone qui accepte les connexions effectuées à partir d’un client et renvoie les données reçues du client.  
   
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Sockets](../../../docs/framework/network-programming/sockets.md)  
- Fournit des informations de base sur l'espace de noms d' <xref:System.Net.Sockets> et de la classe d' <xref:System.Net.Sockets.Socket> .  
+ Fournit des informations générales sur l’espace de noms <xref:System.Net.Sockets> et la classe <xref:System.Net.Sockets.Socket>.  
   
  [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)  
- Décrit comment utiliser des techniques standard de sécurité internet et d'authentification.
+ Explique comment utiliser des techniques standard de sécurité Internet et d'authentification.
+

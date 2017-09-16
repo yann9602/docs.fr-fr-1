@@ -1,33 +1,38 @@
 ---
-title: "Modifications apport&#233;es &#224; l’espace de noms System.Uri dans la Version&#160;2.0 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Modifications apportées à l’espace de noms System.Uri dans la Version 2.0"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7ce81e348b3e5de285a3517d70b8bc477198d3e4
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Modifications apport&#233;es &#224; l’espace de noms System.Uri dans la Version&#160;2.0
-Plusieurs modifications ont été apportées à la classe d' <xref:System.Uri?displayProperty=fullName> .  Ces modifications ont résolu le comportement incorrect, la facilité d'utilisation améliorée, et la sécurité renforcée.  
+# <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Modifications apportées à l’espace de noms System.Uri dans la Version 2.0
+Plusieurs modifications ont été apportées à la classe <xref:System.Uri?displayProperty=fullName>. Ces modifications éliminent un comportement incorrect, améliorent la convivialité et renforcent la sécurité.  
   
-## Membres obsolètes et déconseillés  
- Constructeurs :  
+## <a name="obsolete-and-deprecated-members"></a>Membres obsolètes et dépréciés  
+ Constructeurs :  
   
--   Tous les constructeurs qui ont un paramètre d' `dontEscape`.  
+-   Tous les constructeurs qui ont un paramètre `dontEscape`.  
   
- Méthodes :  
+ Méthodes :  
   
 -   <xref:System.Uri.CheckSecurity%2A>  
   
@@ -45,39 +50,40 @@ Plusieurs modifications ont été apportées à la classe d' <xref:System.Uri?di
   
 -   <xref:System.Uri.EscapeString%2A>  
   
-## Modifications  
+## <a name="changes"></a>Modifications  
   
--   Pour les modèles URI connus pour ne pas avoir une partie de requête \(fichier, FTP, etc.\), « ? » le caractère d'échappement est toujours et n'est pas considéré comme le début d'une partie d' <xref:System.Uri.Query%2A> .  
+-   Pour les schémas d’URI qui sont connus comme n’ayant aucune partie de requête (file, ftp, etc.), le caractère « ? » est toujours placé dans une séquence d’échappement et n’est pas considéré comme le début d’une partie <xref:System.Uri.Query%2A>.  
   
--   Pour le fichier implicite URI \(sous la forme « c:\\directory\\file @name.txt »\), le \(" \# "\) de caractère de fragment est toujours d'échappement à moins qu'unescaping complet est demandé ou <xref:System.Uri.LocalPath%2A> est `true`.  
+-   Pour les URI de fichiers implicites (au format « c:\directory\file@name.txt »), le caractère de fragment (« # ») est toujours placé dans une séquence d’échappement, sauf si l’absence totale de séquence d’échappement est demandée ou si <xref:System.Uri.LocalPath%2A> est `true`.  
   
--   La prise en charge de hostname UNC a été supprimé ; la spécification IDN pour représenter les hostnames internationales a été adopté.  
+-   La prise en charge des noms d’hôtes UNC a été supprimée ; la spécification IDN pour la représentation des noms d’hôtes internationaux a été adoptée.  
   
--   <xref:System.Uri.LocalPath%2A> retourne toujours une chaîne complètement sans séquence d'échappement.  
+-   <xref:System.Uri.LocalPath%2A> retourne toujours une chaîne sans séquence d’échappement.  
   
--   <xref:System.Uri.ToString%2A> n'est pas unescape un échappement « % », « ?  », ou « &#124; ».  
+-   <xref:System.Uri.ToString%2A> ne supprime pas la séquence d’échappement d’un caractère « % », « ? » ou « # » placé dans une séquence d’échappement.  
   
--   <xref:System.Uri.Equals%2A> inclut désormais la partie d' <xref:System.Uri.Query%2A> dans le contrôle d'égalité.  
+-   <xref:System.Uri.Equals%2A> inclut désormais la partie <xref:System.Uri.Query%2A> dans la vérification de l’égalité.  
   
--   « \=\= » D'opérateurs et « \! \= » sont remplacés et liés à <xref:System.Uri.Equals%2A> la méthode.  
+-   Les opérateurs « = » et « != » sont substitués et liés à la méthode <xref:System.Uri.Equals%2A>.  
   
--   <xref:System.Uri.IsLoopback%2A> produit désormais des résultats cohérents.  
+-   <xref:System.Uri.IsLoopback%2A> produit maintenant des résultats cohérents.  
   
--   L'URI « `file:///path` » n'est plus traduit en « file:\/\/path ».  
+-   L’URI « `file:///path` » n’est plus traduite en « file://path ».  
   
--   « &#124; » est maintenant reconnu comme une Terminator de nom d'hôte.  Autrement dit, « http:\/\/consoto.com\#fragment » est maintenant converti en « http:\/\/contoso.com\/\#fragment ».  
+-   « # » est maintenant reconnu comme un terminateur de nom d’hôte. Autrement dit, « http://consoto.com#fragment » est désormais converti en « http://contoso.com/#fragment ».  
   
--   Un bogue une combinaison URI de base avec un fragment a été résolu.  
+-   Un bogue présent lors de la combinaison d’un URI de base avec un fragment a été résolu.  
   
--   Un bogue dans <xref:System.Uri.HostNameType%2A> est résolu.  
+-   Un bogue dans <xref:System.Uri.HostNameType%2A> a été résolu.  
   
--   Un bogue dans l'analyse de NNTP est résolu.  
+-   Un bogue dans l’analyse NNTP a été résolu.  
   
--   URI de la forme HTTP:contoso.com lève maintenant une exception d'analyse.  
+-   Un URI au format HTTP:contoso.com lève désormais une exception d’analyse.  
   
--   L'infrastructure gère correctement l'userinfo dans un URI.  
+-   Le Framework gère correctement userinfo dans un URI.  
   
--   La compression de chemin d'URI est résolu afin que l'URI rompu ne puisse pas parcourir le système de fichiers au\-dessus de la racine.  
+-   La compression de chemin d’URI a été résolue afin qu’un URI rompu ne puisse pas parcourir le système de fichiers au-dessus de la racine.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Uri?displayProperty=fullName>
+

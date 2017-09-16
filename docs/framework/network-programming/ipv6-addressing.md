@@ -1,87 +1,93 @@
 ---
-title: "Adressage IPv6 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "protocole Internet version 6, adresses dans"
-  - "Découverte de voisin"
-  - "IPv6, activer"
-  - "IPv6, mobilité et"
-  - "protocole Internet version 6, adresses anycast"
-  - "IPv6, découverte de voisin"
-  - "protocole Internet version 6, configurer automatiquement"
-  - "protocole Internet version 6, activer"
-  - "IPv6, adresses de monodiffusion"
-  - "IPv6, configurer automatiquement"
-  - "protocole Internet version 6, router"
-  - "IPv6, documents RFC"
-  - "IPv6, router"
-  - "protocole Internet version 6, désactiver"
-  - "protocole Internet version 6, adresses de monodiffusion"
-  - "IPv6, adresses de multidiffusion"
-  - "protocole Internet version 6, mobilité et"
-  - "protocole Internet version 6, documents RFC"
-  - "protocole Internet version 6, découverte de voisin"
-  - "IPv6, adresses anycast"
-  - "protocole Internet version 6, adresses de multidiffusion"
-  - "IPv6, adresses dans"
-  - "IPv6, désactiver"
+title: Adressage IPv6
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet Protocol version 6, addresses in
+- Neighbor Discovery
+- IPv6, enabling
+- IPv6, mobility and
+- Internet Protocol version 6, anycast addresses
+- IPv6, Neighbor Discovery
+- Internet Protocol version 6, auto-configuring
+- Internet Protocol version 6, enabling
+- IPv6, unicast addresses
+- IPv6, auto-configuring
+- Internet Protocol version 6, routing
+- IPv6, RFC documents
+- IPv6, routing
+- Internet Protocol version 6, disabling
+- Internet Protocol version 6, unicast addresses
+- IPv6, multicast addresses
+- Internet Protocol version 6, mobility and
+- Internet Protocol version 6, RFC documents
+- Internet Protocol version 6, Neighbor Discovery
+- IPv6, anycast addresses
+- Internet Protocol version 6, multicast addresses
+- IPv6, addresses in
+- IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
 caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6d810d9fdf6f0e464147e639d9a3acf2ebc148d9
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Adressage IPv6
-Dans le protocole \(IPv6 IPv6\), les adresses sont 128 bits de temps.  Une raison pour l'échec d'un si grand espace d'adressage est de subdiviser les adresses disponibles dans la hiérarchie des domaines de routage qui reflètent la topologie d'Internet.  Une autre raison consiste à mapper les adresses des cartes réseau \(ou des interfaces\) qui connectent des périphériques réseau.  IPv6 comporte une fonction inhérente pour résoudre les adresses à leur plus bas, qui est le niveau d'interface réseau, et présente également des fonctions de configuration automatique.  
+# <a name="ipv6-addressing"></a>Adressage IPv6
+Dans le protocole IPv6, les adresses ont une longueur de 128 bits. Une telle taille d’espace d’adressage permet de subdiviser les adresses disponibles en une hiérarchie de domaines de routage qui reflète la topologie d’Internet. Elle permet également de mapper les adresses des cartes réseau (ou des interfaces) qui connectent les appareils au réseau. IPv6 contient une fonctionnalité inhérente permettant de résoudre les adresses au niveau le plus bas, c’est-à-dire au niveau de l’interface réseau, et contient également des fonctionnalités de configuration automatique.  
   
-## Représentation textuelle  
- Voici les trois classiques formes utilisées pour représenter des adresses de IPv6 en tant que chaînes de texte :  
+## <a name="text-representation"></a>Représentation textuelle  
+ Les trois formats conventionnels utilisés pour représenter les adresses IPv6 sous forme de chaînes textuelles sont les suivants :  
   
--   **Colon\-hexadecimal form**.  c'est la forme par défaut n:n:n:n:n:n:n:n.  Chaque n représente la valeur hexadécimale d'une des huit éléments 16 bits de l'adresse.  Par exemple : `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.  
+-   **Format hexadécimal/deux-points**. Il s’agit du format recommandé : n:n:n:n:n:n:n:n. Chaque n représente la valeur hexadécimale de l’un des huit éléments 16 bits de l’adresse. Par exemple : `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.  
   
--   **Compressed form**.  En raison de la longueur d'adresse, il est courant d'avoir des adresses qui contient une longue chaîne des zéros.  Pour simplifier en écrivant les adresses, utilisez la forme compressée, dans laquelle une séquence contiguë unique de 0 blocs sont représentées par un symbole à double deux\-points \(::\).  Ce symbole ne peut apparaître qu'une seule fois dans une adresse.  Par exemple, l'adresse multicast `FFED:0:0:0:0:BA98:3210:4562` dans le formulaire est compressé `FFED::BA98:3210:4562`.  L'adresse unicast `3FFE:FFFF:0:0:8:800:20C4:0` dans le formulaire est compressé `3FFE:FFFF::8:800:20C4:0`.  L'adresse `0:0:0:0:0:0:0:1` de réalimentation dans le formulaire est compressé `::`1.  L'adresse non spécifiée `0:0:0:0:0:0:0:0` dans le formulaire est compressé `::`.  
+-   **Format compressé**. En raison de la longueur des adresses, il est courant d’avoir des adresses comprenant une longue chaîne de zéros. Pour simplifier l’écriture de ces adresses, utilisez le format compressé, dans lequel une séquence ininterrompue de blocs de 0 est représentée par un double deux-points (::). Ce symbole peut n’apparaître qu’une seule fois dans une adresse. Par exemple, l’adresse de multidiffusion `FFED:0:0:0:0:BA98:3210:4562` s’affiche ainsi au format compressé : `FFED::BA98:3210:4562`. L’adresse de monodiffusion `3FFE:FFFF:0:0:8:800:20C4:0` s’affiche ainsi au format compressé : `3FFE:FFFF::8:800:20C4:0`. L’adresse de bouclage `0:0:0:0:0:0:0:1` s’affiche ainsi au format compressé : `::`. L’adresse non spécifiée `0:0:0:0:0:0:0:0` s’affiche ainsi au format compressé : `::`.  
   
--   **Mixed form**.  Ce formulaire combine des adresses d'IPv4 et de IPv6.  Dans ce cas, la structure d'adresse est n:n:n:n:n:n:d.d.d.d, où chaque n représente les valeurs hexadécimales des six éléments 16 bits de poids fort d'adresse de IPv6, et chaque d représente la valeur décimale d'une adresse IPv4.  
+-   **Format mixte**. Ce format associe les adresses IPv4 et IPv6. Dans ce cas, le format d’adresse est n:n:n:n:n:n:d.d.d.d, où chaque n représente les valeurs hexadécimales des six éléments d’adresse 16 bits d’ordre haut IPv6, et où chaque d représente la valeur décimale d’une adresse IPv4.  
   
-## Types d'adresse  
- Les principaux bits dans l'adresse définissent le type spécifique de IPv6 adresse.  Le champ de longueur variable contenant ces clés bits est appelé un préfixe \(FP\) de format.  
+## <a name="address-types"></a>Types d’adresses  
+ Les bits de début de l’adresse déterminent le type de l’adresse IPv6. Le champ de longueur variable qui contient ces bits de début est appelé « préfixe de format ».  
   
- Une adresse unicast de IPv6 est divisée en deux parties.  La première partie contient le préfixe d'adresse, et la deuxième partie contient l'identificateur d'interface.  Une méthode concise pour exprimer une adresse IPv6\/combinaison de préfixe est la suivante : ipv6\-address\/longueur de préfixe.  
+ Une adresse de monodiffusion IPv6 est constituée de deux parties. La première partie contient le préfixe de l’adresse et la seconde contient l’identificateur d’interface. Voici comment écrire de manière concise la combinaison préfixe-adresse IPv6 : ipv6-address/prefix-length.  
   
- Voici un exemple d'une adresse avec un préfixe 64 bits.  
+ Voici un exemple d’adresse avec un préfixe 64 bits.  
   
  `3FFE:FFFF:0:CD30:0:0:0:0/64`.  
   
- Le préfixe dans cet exemple est `3FFE:FFFF:0:CD30`.  L'adresse peut également être écrite dans un formulaire compressée, comme `3FFE:FFFF:0:CD30::/64`.  
+ Dans cet exemple, le préfixe est `3FFE:FFFF:0:CD30`. L’adresse peut également être écrite au format compressé, de la manière suivante : `3FFE:FFFF:0:CD30::/64`.  
   
- IPv6 définit les types suivants d'adresse :  
+ IPv6 définit les types d’adresses suivants :  
   
--   **Unicast address**.  Un identificateur pour une interface unique.  Un à en\-tête pack envoyé à cette adresse est envoyé à l'interface reconnue.  Les adresses unicasts se distinguent des adresses multicasts par la valeur de l'octet de poids fort.  l'octet de poids fort des adresses multicasts a la valeur hexadécimale du FF.  Toute autre valeur pour l'octet identifie une adresse unicast.  Voici les différents types d'adresses unicasts :  
+-   **Adresses de monodiffusion**. Identificateur d’une interface unique. Un paquet envoyé à cette adresse est remis à l’interface identifiée. Les adresses de monodiffusion se distinguent des adresses de multidiffusion par la valeur de l’octet d’ordre haut. L’octet d’ordre haut des adresses de multidiffusion a une valeur hexadécimale de FF. Pour cet octet, toute autre valeur correspond à une adresse de monodiffusion. Voici les différents types d’adresses de monodiffusion :  
   
-    -   **Link\-local addresses**.  Les adresses sont utilisées sur un lien unique et ont le format suivant : FE80::*InterfaceID*.  Les adresses de lien local sont utilisées entre les nœuds sur un lien pour la configuration automatique d'adresse, découverte de voisins, ou lorsque aucun routeur n'est présent.  Une adresse de lien local est utilisée essentiellement au démarrage et lorsque le système n'a pas encore acquis des adresses d'une plus grande portée.  
+    -   **Adresses link-local**. Ces adresses sont utilisées sur une même liaison et sont au format suivant : FE80::*ID_interface*. Les adresses link-local sont utilisées entre les nœuds d’une liaison pour la configuration automatique d’adresse, la découverte de voisin, ou en l’absence d’un routeur. Une adresse link-local est utilisée principalement au démarrage et lorsque le système n’a pas encore acquis les adresses d’une plus grande étendue.  
   
-    -   **Site\-local addresses**.  Les adresses sont utilisées sur un site unique et ont le format suivant : FEC0::*SubnetID*:*InterfaceID*.  Les adresses de site local sont utilisées pour répondre à l'intérieur d'un site sans nécessiter de préfixe global.  
+    -   **Adresses site-local**. Ces adresses sont utilisées sur un même site et sont au format suivant : FEC0::*ID_sous_réseau*:*ID_interface*. Les adresses site-local sont utilisées pour l’adressage à l’intérieur d’un site sans recourir à un préfixe global.  
   
-    -   **Global IPv6 unicast addresses**.  Les adresses peuvent être utilisés à l'échelle Internet et avoir le format suivant : \(point gel, 3 bits\) l'ID de TLA 010 \(13 bits\) a réservé \(8 bits\) l'ID de SLA d'ID de NLA \(24 bits\) \(16 bits\) *InterfaceID* \(64 bits\).  
+    -   **Adresses de monodiffusion IPv6 globales**. Ces adresses peuvent être utilisées sur Internet et sont au format suivant : 010(FP, 3 bits) TLA ID (13 bits) Reserved (8 bits) NLA ID (24 bits) SLA ID (16 bits) *ID_interface* (64 bits).  
   
--   **Multicast address**.  Un identificateur pour un jeu d'interfaces appartenant \(en général à chaque nœud\).  Un à en\-tête pack envoyé à cette adresse est remis à toutes les interfaces identifiées par l'adresse.  Les types d'adresse multicast remplacent les adresses de distribution IPv4.  
+-   **Adresses de multidiffusion.**. Identificateur d’un ensemble d’interfaces (appartenant généralement à des nœuds différents). Un paquet envoyé à cette adresse est remis à toutes les interfaces identifiées par cette adresse. Les types d’adresses de multidiffusion remplacent les adresses de diffusion IPv4.  
   
--   **Anycast address**.  Un identificateur pour un jeu d'interfaces appartenant \(en général à chaque nœud\).  Un à en\-tête pack envoyé à cette adresse est remis à une seule interface identifiée par l'adresse.  Il s'agit de l'interface la plus proche identifiée comme lorsque le routage des métriques.  Les adresses anycasts sont prises de l'espace adresse d'adresse unicast et ne sont syntaxiquement pas perceptibles.  L'interface traité exécute la distinction entre la monodiffusion et les adresses anycasts en fonction de sa configuration.  
+-   **Adresses anycast**. Identificateur d’un ensemble d’interfaces (appartenant généralement à des nœuds différents). Un paquet envoyé à cette adresse est remis à seulement une interface identifiée par cette adresse. Il s’agit de l’interface la plus proche, d’après les métriques de routage. Les adresses anycast proviennent de l’espace d’adressage de monodiffusion et ne peuvent pas être distinguées par leur syntaxe. L’interface adressée effectue la distinction entre les adresses de monodiffusion et les adresses anycast, dans le cadre de sa configuration.  
   
- En général un nœud a toujours une adresse de lien local.  Il peut avoir une adresse de site local et un ou plusieurs adresses globales.  
+ En général, un nœud a toujours une adresse link-local. Il peut avoir une adresse site-local, et une ou plusieurs adresses globales.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Protocole Internet version 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
  [Sockets](../../../docs/framework/network-programming/sockets.md)
+
