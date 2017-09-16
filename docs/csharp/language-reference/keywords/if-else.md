@@ -42,11 +42,12 @@ ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="if-else-c-reference"></a>if-else (référence C#)
-Une instruction `if` identifie l’instruction à exécuter en fonction de la valeur d’une expression `Boolean` . Dans l’exemple suivant, la variable `Boolean` `result` est définie sur `true` puis archivé dans l’instruction `if` . Le résultat est `The condition is true`.  
+Une instruction `if` identifie l’instruction à exécuter en fonction de la valeur d’une expression booléenne. Dans l’exemple suivant, la variable `bool` `condition` est définie sur `true` puis évaluée par l’instruction `if` . Le résultat est `The variable is set to true`.  
   
  [!code-cs[csrefKeywordsSelection#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_1.cs)]  
   
- Vous pouvez exécuter les exemples de cette rubrique en les plaçant dans la méthode `Main` d’une application console.  
+ Vous pouvez exécuter les exemples de cette rubrique en les plaçant dans la méthode `main` d’une application console.
+ Pensez à ajouter une instruction `Console.ReadLine();` à la fin de la méthode.
   
  En C#, une instruction `if` peut prendre deux formes, comme le montre l’exemple suivant.  
   
@@ -54,18 +55,18 @@ Une instruction `if` identifie l’instruction à exécuter en fonction de la va
 // if-else statement  
 if (condition)  
 {  
-    then-statement;  
+    // then-statement;  
 }  
 else  
 {  
-    else-statement;  
+    // else-statement;  
 }  
 // Next statement in the program.  
   
 // if statement without an else  
 if (condition)  
 {  
-    then-statement;  
+    // then-statement;  
 }  
 // Next statement in the program.  
 ```  
