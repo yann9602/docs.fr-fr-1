@@ -1,5 +1,5 @@
 ---
-title: E/S de fichiers et de flux | Microsoft Docs
+title: "Fichier et flux de données E/S"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -20,11 +20,11 @@ caps.latest.revision: 33
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1fabc43044b6e0fa765a7c2f225add8b7eb923f5
-ms.openlocfilehash: 1d0c203313b33aeba26aded268467b1a1b181118
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: fbd31e6bff5502291fd24b57b55c81046da330d3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 09/05/2017
 
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
@@ -39,11 +39,11 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
 -   <xref:System.IO.File> fournit des méthodes statiques pour la création, la copie, la suppression, le déplacement et l'ouverture de fichiers et permet de créer un objet <xref:System.IO.FileStream>.  
   
--   <xref:System.IO.FileInfo> fournit des méthodes d’instance pour la création, la copie, la suppression, le déplacement et l'ouverture de fichiers et permet de créer un objet <xref:System.IO.FileStream>.  
+-   <xref:System.IO.FileInfo> fournit des méthodes d'instance pour la création, la copie, la suppression, le déplacement et l'ouverture de fichiers et permet de créer un objet <xref:System.IO.FileStream>.  
   
--   <xref:System.IO.Directory> fournit des méthodes statiques pour la création, le déplacement et l’énumération dans les répertoires et les sous-répertoires.  
+-   <xref:System.IO.Directory> fournit des méthodes statiques pour la création, le déplacement et l'énumération dans les répertoires et les sous-répertoires.  
   
--   <xref:System.IO.DirectoryInfo> fournit des méthodes d’instance pour la création, le déplacement et l’énumération dans les répertoires et les sous-répertoires.  
+-   <xref:System.IO.DirectoryInfo> fournit des méthodes d'instance pour la création, le déplacement et l'énumération dans les répertoires et les sous-répertoires.  
   
 -   <xref:System.IO.Path> fournit des méthodes et des propriétés pour le traitement des chaînes de répertoire entre plateformes.  
   
@@ -100,7 +100,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
 ## <a name="asynchronous-io-operations"></a>Opérations d'E/S asynchrones  
  La lecture ou l'écriture de grandes quantités de données peut consommer beaucoup de ressources. Vous devez effectuer ces tâches de façon asynchrone si votre application doit rester réactive aux actions de l'utilisateur. Avec les opérations d'E/S synchrones, le thread d'interface utilisateur est bloqué jusqu'à ce que l'opération consommatrice de ressources soit terminée.  Utilisez des opérations d'E/S asynchrones lors du développement d'applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pour empêcher de donner l'impression que votre application a cessé de fonctionner.  
   
- Les membres asynchrones incluent un élément `Async` dans leurs noms, comme les méthodes <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>,  <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A>. Utilisez ces méthodes avec `async` et les mots clés `await`.  
+ Les membres asynchrones contiennent `Async` dans leurs noms, comme les méthodes <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A>. Utilisez ces méthodes avec `async` et les mots clés `await`.  
   
  Pour plus d'informations, consultez [E/S de fichier asynchrone](../../../docs/standard/io/asynchronous-file-i-o.md).  
   
@@ -115,9 +115,9 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
 -   <xref:System.IO.Compression.ZipFile> pour la création, l'extraction et l'ouverture d'un package compressé.  
   
--   <xref:System.IO.Compression.ZipFileExtensions> pour la création et l'extraction dans un package compressé.  
+-   <xref:System.IO.Compression.ZipFileExtensions> pour la création et l'extraction des entrées dans un package compressé.  
   
--   <xref:System.IO.Compression.DeflateStream> fournit des méthodes et des propriétés pour compresser et décompresser des flux à l'aide de l'algorithme Deflate.  
+-   <xref:System.IO.Compression.DeflateStream> pour la compression et la décompression des flux en utilisant l'algorithme Deflate.  
   
 -   <xref:System.IO.Compression.GZipStream> pour la compression et la décompression des flux au format de données gzip.  
   
@@ -143,20 +143,20 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
  Quelques différences importantes sont notables pour les opérations d'E/S dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] :  
   
--   Les types associés spécifiquement à des opérations sur les fichiers, notamment <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo>, ne sont pas inclus dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. À la place, utilisez les types de l'espace de noms [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) de [!INCLUDE[wrt](../../../includes/wrt-md.md)], comme [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) et [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
+-   Les types spécifiquement liés aux opérations sur les fichiers, tels que <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo> ne sont pas inclus dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. À la place, utilisez les types de l'espace de noms [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) de [!INCLUDE[wrt](../../../includes/wrt-md.md)], comme [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) et [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
   
 -   Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](http://go.microsoft.com/fwlink/?LinkId=229175).  
   
--   Utilisez des méthodes asynchrones, par exemple <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A>, pour empêcher le blocage du thread d’interface utilisateur.  
+-   Utilisez les méthodes asynchrones, telles que <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A> pour empêcher le blocage du thread d'interface utilisateur.  
   
--   Les types de compression basés sur le chemin <xref:System.IO.Compression.ZipFile> et <xref:System.IO.Compression.ZipFileExtensions> ne sont pas disponibles. À la place, utilisez les types de l'espace de noms [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx).  
+-   Les types de compression <xref:System.IO.Compression.ZipFile> et <xref:System.IO.Compression.ZipFileExtensions> basés sur le chemin d'accès ne sont pas disponibles. À la place, utilisez les types de l'espace de noms [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx).  
   
  Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d'informations, consultez la page [Guide pratique : effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
  Pour plus d'informations sur les opérations d'E/S dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], consultez [Démarrage rapide : lecture et écriture dans un fichier](http://go.microsoft.com/fwlink/p/?LinkId=243072) sur le centre de développement Windows.  
   
 ## <a name="io-and-security"></a>E/S et sécurité  
- Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=fullName>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Cette exigence s’ajoute à toute autre exigence <xref:System.Security.Permissions.FileIOPermission>. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
+ Lorsque vous utilisez les classes de l'espace de noms <xref:System.IO?displayProperty=fullName>, vous devez suivre les spécifications de sécurité du système d'exploitation telles que les listes de contrôle d'accès (ACL) pour contrôler l'accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
   
  Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. À la place, utilisez le [stockage isolé](../../../docs/standard/io/isolated-storage.md) pour les applications .NET Framework traditionnelles ou les [données d'application](http://go.microsoft.com/fwlink/?LinkId=229175) pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
   

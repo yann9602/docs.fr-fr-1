@@ -1,5 +1,5 @@
 ---
-title: Visual Basic | Microsoft Docs
+title: Visual Basic
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -29,14 +29,15 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31905a37f09db5f5192123f0118252fbe8b02eff
-ms.openlocfilehash: 6df68180b0b159009bfd4ccc3ff54db115791d9f
+ms.translationtype: HT
+ms.sourcegitcommit: 64a6edc4c58e96132f20848a066542be57e8667f
+ms.openlocfilehash: cae4d2571bc9bde6239e1324dbe4e725ef5e12c7
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/26/2017
+ms.lasthandoff: 08/30/2017
 
 ---
-# <a name="visual-basic"></a>Visual Basic
+# <a name="visual-basic-guide"></a>Guide Visual Basic
+
 Visual Basic est conçu pour la création productive d’applications de type sécurisé et orientées objet. Visual Basic permet aux développeurs de cibler Windows, le web et les appareils mobiles. Comme avec tous les langages ciblant Microsoft .NET Framework, les programmes écrits en Visual Basic bénéficient de l’interopérabilité en matière de sécurité et de langage.  
   
  Cette génération de Visual Basic perpétue la tradition en permettant de créer des applications .NET Framework rapidement et facilement.  
@@ -47,8 +48,7 @@ Visual Basic est conçu pour la création productive d’applications de type s�
  [Bien démarrer](../visual-basic/getting-started/index.md)   
  Facilite la prise en main en répertoriant les nouveautés et ce qui est disponible dans les différentes éditions du produit.  
    
- [Concepts de programmation](../visual-basic/programming-guide/concepts/index.md) 
- présente les concepts du langage les plus utiles aux programmeurs Visual Basic.
+ [Concepts de programmation](../visual-basic/programming-guide/concepts/index.md) : présente les concepts du langage les plus utiles aux programmeurs Visual Basic.
 
  [Structure de programme et conventions de codage](../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Contient une documentation sur les conventions relatives à la structure et au code Visual Basic de base, telles que les conventions d’affectation de noms, les commentaires dans le code et les limitations au sein de Visual Basic.  
@@ -72,8 +72,9 @@ Visual Basic est conçu pour la création productive d’applications de type s�
  Fournit des liens vers des instructions pas-à-pas pour les scénarios courants.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Bien démarrer avec le développement dans Visual Studio](https://docs.microsoft.com/visualstudio/ide/get-started-developing-with-visual-studio)  
+ [Bien démarrer avec le développement dans Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)  
  Fournit des liens vers des rubriques qui vous permettent d’en savoir plus sur les principes fondamentaux de Visual Studio.  
   
  [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195)  
  Fournit l’entrée à la bibliothèque de classes, aux interfaces et aux types valeur inclus dans Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK.
+

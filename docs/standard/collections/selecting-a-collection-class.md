@@ -21,10 +21,10 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 26467141e5f7537efddd79e0b04af6203e4a6994
+ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
+ms.openlocfilehash: 01abb535567429780a8a0776aebecaf64307950d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/06/2017
 
 ---
 # <a name="selecting-a-collection-class"></a>Sélection d’une classe de collection
@@ -68,7 +68,7 @@ Veillez à choisir votre classe de collection avec soin. L'utilisation d'un type
   
     -   La classe <xref:System.Collections.Hashtable> trie ses éléments selon leur code de hachage.  
   
-    -   La classe <xref:System.Collections.SortedList>, ainsi que les classes génériques <xref:System.Collections.Generic.SortedDictionary%602> et <xref:System.Collections.Generic.SortedList%602>, trient leurs éléments par clé, en fonction des implémentations de l’interface <xref:System.Collections.IComparer> et de l’interface générique <xref:System.Collections.Generic.IComparer%601>.  
+    -   La classe <xref:System.Collections.SortedList>, ainsi que les classes génériques <xref:System.Collections.Generic.SortedDictionary%602> et <xref:System.Collections.Generic.SortedList%602>, trient leurs éléments par clé, selon les implémentations de l'interface <xref:System.Collections.IComparer> et de l'interface générique <xref:System.Collections.Generic.IComparer%601>.  
   
     -   <xref:System.Collections.ArrayList> fournit une méthode <xref:System.Collections.ArrayList.Sort%2A> qui prend une implémentation de <xref:System.Collections.IComparer> comme paramètre. Sa contrepartie générique, la classe générique <xref:System.Collections.Generic.List%601>, fournit une méthode <xref:System.Collections.Generic.List%601.Sort%2A> qui prend une implémentation de l'interface générique <xref:System.Collections.Generic.IComparer%601> comme paramètre.  
   

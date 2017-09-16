@@ -30,16 +30,22 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: d69fc927565c3bb1c365850875c3c6a1787a1fe7
-ms.openlocfilehash: 3dfa38a495d12bc1e3f301009f4a90d42cbe4754
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: 4e3c1a1e6728d4a5e256b81b0f8a8b29851dc625
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="get-started-with-visual-basic"></a>Bien démarrer avec Visual Basic
 Cette section de la documentation vous aide à commencer à développer des applications Visual Basic.  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="get-started-with-visual-basic-and-net-core"></a>Bien démarrer avec Visual Basic et .NET Core
+
+[Générer une application Visual Basic Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
+
+[Génération d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md)  
+
+## <a name="additional-information"></a>Informations supplémentaires
 
 [Nouveautés de Visual Basic](whats-new.md)   
 Répertorie les nouvelles fonctionnalités de chacune des versions de Visual Basic .NET.
@@ -49,7 +55,13 @@ Répertorie les modifications de cette version qui peuvent empêcher une applica
   
 [Ressources supplémentaires pour les programmeurs Visual Basic](additional-resources.md)  
 Fournit une liste de sites web et de newsgroups susceptibles de vous aider à trouver des solutions à des problèmes courants.  
-  
+
+## <a name="develop-net-core-applications-with-visual-basic"></a>Développer des applications .NET Core avec Visual Basic
+
+[Générer une application Hello World Visual Basic avec .NET Core dans Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md) 
+
+[Génération d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md) 
+
 ## <a name="see-also"></a>Voir aussi
  [Obtention de Visual Basic](https://www.visualstudio.com/downloads/)  
  Fournit des liens de téléchargement pour les versions de Visual Studio qui prennent en charge Visual Basic, y compris les versions gratuites.  
@@ -72,8 +84,7 @@ Fournit une liste de sites web et de newsgroups susceptibles de vous aider à tr
  [Visual Studio](/visualstudio/)  
  Fournit des liens vers la documentation de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
- [C#](../../csharp/csharp.md)  
- Fournit des liens vers la documentation sur le développement d'applications à l'aide de [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
+ [C#](../../csharp/index.md) Fournit des liens vers la documentation sur le développement d'applications avec [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
  [Visual C++](/cpp/)  
  Fournit des liens vers la documentation Visual C++.  

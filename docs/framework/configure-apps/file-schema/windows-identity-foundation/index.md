@@ -1,24 +1,30 @@
 ---
-title: "Sch&#233;ma de configuration de Windows Identity Foundation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Schéma de configuration de Windows Identity Foundation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4d4f6d76-49a5-4bad-b345-097b2e2844e9
 caps.latest.revision: 6
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 6
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b2ac7e97627eba85013e1effdc4f856f3df79089
+ms.contentlocale: fr-fr
+ms.lasthandoff: 09/05/2017
+
 ---
-# Sch&#233;ma de configuration de Windows Identity Foundation
-Les rubriques de cette section fournissent des informations sur le schéma de configuration Windows Identity Foundation \(WIF\).  Vous pouvez également configurer une application d'utiliser WIF via les classes exposées par le framework.  Ces classes sont indiquées dans les sections qui traitent des éléments pertinents dans le schéma.  Le suivant le XML de base de la balise structure exposée par le schéma de configuration WIF.  Les attributs sont omis.  Commentaires en surbrillance indiquent les principaux composants du schéma.  
+# <a name="windows-identity-foundation-configuration-schema"></a>Schéma de configuration de Windows Identity Foundation
+Les rubriques de cette section fournissent des informations sur le schéma de configuration de Windows Identity Foundation (WIF). Vous pouvez également configurer une application pour utiliser WIF via les classes exposées par le framework. Ces classes sont indiquées dans les sections qui traitent les éléments correspondants dans le schéma. L’exemple suivant montre la structure de la balise XML de base exposée par le schéma de configuration WIF. Les attributs sont omis. Les commentaires surlignés indiquent les principaux composants du schéma.  
   
-```  
+```xml  
 <system.identityModel>  
     <!-- Service Configuration -->  
     <identityConfiguration>  
@@ -111,10 +117,11 @@ Les rubriques de cette section fournissent des informations sur le schéma de co
 </system.identityModel.services>  
 ```  
   
-## Dans cette section  
- [\<system.identityModel\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)Fournit la configuration pour l'activation des options de WIF dans les applications.  
+## <a name="in-this-section"></a>Dans cette section  
+ [\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) Fournit la configuration permettant d’activer des options WIF dans les applications.  
   
- [\<system.identityModel.services\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)Fournit la configuration pour la fédération passive à l'aide de WIF.  Configure le Module d'authentification de Session \(SAM\) et le Module d'authentification fédérée \(WSFAM\).  
+ [\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) Fournit la configuration de la fédération passive à l’aide de WIF. Configure le module d’authentification de session (SAM) et le module d’authentification fédérée (WSFAM).  
   
-## Rubriques connexes  
- [Configuration, Administration, And Management](http://msdn.microsoft.com/fr-fr/1e03c389-de2c-4096-aaff-86b087e1bea0)Décrit comment configurer et gérer les services et applications WIF.
+## <a name="related-sections"></a>Rubriques connexes  
+ [Configuration, administration et gestion](http://msdn.microsoft.com/en-us/1e03c389-de2c-4096-aaff-86b087e1bea0) Décrit comment configurer et gérer des services et applications WIF.
+

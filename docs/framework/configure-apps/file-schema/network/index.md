@@ -1,57 +1,63 @@
 ---
-title: "Sch&#233;ma des param&#232;tres r&#233;seau | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "paramètres de configuration (.NET Framework), réseaux"
-  - "connexions (.NET Framework), éléments de configuration réseau"
-  - "éléments (.NET Framework), éléments de configuration réseau"
-  - "Internet, éléments de configuration réseau"
-  - "éléments de configuration réseau"
-  - "ressources réseau, éléments de configuration réseau"
-  - "paramètres réseau"
-  - "recevoir des données, éléments de configuration réseau"
-  - "envoyer des données, éléments de configuration réseau"
+title: "Schéma des paramètres réseau"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- elements [.NET Framework], network configuration elements
+- sending data, network configuration elements
+- receiving data, network configuration elements
+- configuration settings [.NET Framework], networks
+- Internet, network configuration elements
+- network configuration elements
+- network settings
+- connections [.NET Framework], network configuration elements
+- network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
 caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a101b3d6ebf1c884bce08077a1138a4ab6376d1f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 09/05/2017
+
 ---
-# Sch&#233;ma des param&#232;tres r&#233;seau
-Les Paramètres de Réseaux spécifient la manière dont le .NET Framework se connecte au réseau.  Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous le [\<system.Net\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md).  
+# <a name="network-settings-schema"></a>Schéma des paramètres réseau
+Les paramètres réseau spécifient la façon dont le .NET Framework se connecte à Internet. Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<system.Net>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<authenticationModules\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Spécifie les modules qui servent à authentifier les demandes Internet.|  
-|[\<connectionManagement\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à des hôtes Internet.|  
-|[\<defaultProxy\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Spécifie le serveur proxy utilisé pour les requêtes HTTP envoyées vers Internet.|  
-|[\<mailSettings\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Contient des paramètres pour les options d'envoi de courrier électronique.|  
-|[\<requestCaching\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Spécifie les modules qui servent à demander des informations à des hôtes Internet.|  
-|[\<requestCaching\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Configure les options réseau de base pour l'espace de noms <xref:System.Net?displayProperty=fullName>.|  
-|[\<webRequestModules\>, élément \(paramètres réseau\)](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Spécifie les modules qui servent à demander des informations à des hôtes Internet.|  
+|[\<authenticationModules, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les requêtes Internet.|  
+|[\<connectionManagement>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à destination des hôtes Internet.|  
+|[\<defaultProxy>, élément(paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Spécifie le serveur proxy utilisé pour les requêtes HTTP à destination d’Internet.|  
+|[\<mailSettings>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Contient les paramètres des options d’envoi de courrier.|  
+|[\<requestCaching>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Spécifie les modules utilisés pour demander des informations à partir des hôtes Internet.|  
+|[\<requestCaching>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net?displayProperty=fullName>.|  
+|[\<webRequestModules>, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Spécifie les modules utilisés pour demander des informations à partir des hôtes Internet.|  
   
- Les Paramètres Uri spécifient la manière dont le .NET Framework gère des adresses Web exprimées à l'aide d'identificateurs URI \(Uniform Resource Identifiers\).  Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous le [\<Uri\>, élément \(paramètres d'URI\)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md).  
+ Les paramètres d’URI spécifient la façon dont le .NET Framework gère les adresses web exprimées à l’aide d’URI (Uniform Resource Identifier). Le tableau suivant décrit la fonction de chaque élément de configuration enfant sous [\<Uri>, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md).  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<idn\>, élément \(paramètres d'URI\)](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Spécifie si l'analyse de l'IDN \(Internationalized Domain Name\) est appliquée aux noms de domaines.|  
-|[\<iriParsing\>, élément \(paramètres d'URI\)](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Spécifie si l'analyse IRI \(International Resource Identifier\) est appliquée à un <xref:System.Uri> et si les règles d'analyse de l'identificateur IRI doivent être appliquées.|  
-|[\<schemeSettings\>, élément \(paramètres d'URI\)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie comment un <xref:System.Uri> sera analysé pour des schémas spécifiques.|  
+|[\<idn>, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Spécifie si l’analyse de nom de domaine international (IDN) s’applique aux noms de domaine.|  
+|[\<iriParsing>, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s’applique à un <xref:System.Uri> et si les règles d’analyse IRI doivent s’appliquer.|  
+|[\<schemeSettings, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Configuration des applications Internet](../../../../../docs/framework/network-programming/configuring-internet-applications.md)   
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+

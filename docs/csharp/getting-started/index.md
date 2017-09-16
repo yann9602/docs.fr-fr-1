@@ -2,18 +2,21 @@
 title: "Bien démarrer - Guide C#"
 description: "Vous trouverez ici de petits didacticiels simples qui vous permettront d’apprendre les concepts de base de C# et d’écrire des applications .NET Core."
 keywords: "C#, bien démarrer, acquisition, installation"
+helpviewer_keywords:
+- Visual C#, getting started
+- getting started, Visual C#
 author: rpetrusha
 ms.author: ronpet
-ms.date: 05/02/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.translationtype: HT
-ms.sourcegitcommit: 867f9eb286fa7ff5ef3e9167c1ab944c81161216
-ms.openlocfilehash: 347c88a66363ab04d519d10fdf7973692fcadde9
+ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
+ms.openlocfilehash: c2e2408b2d7a02a1a75965f32888d240bafae0f0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 09/02/2017
 
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C# #
@@ -21,6 +24,10 @@ ms.lasthandoff: 08/17/2017
 Cette section fournit des didacticiels courts et simples qui permettent de créer rapidement une application avec C# et .NET Core. Ces rubriques de prise en main concernent Visual Studio 2017 et Visual Studio Code. Vous pouvez créer une application Hello World simple ou, si vous avez Visual Studio 2017, une bibliothèque de classes simple et utilisable par d’autres applications.
 
 Les rubriques suivantes sont disponibles :
+
+* [Introduction au langage C# et au .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
+
+     Fournit une vue d’ensemble du langage C# et de .NET.
 
 * [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
 
@@ -37,4 +44,33 @@ Les rubriques suivantes sont disponibles :
    Visual Studio Code est un éditeur de code gratuit optimisé pour la création et le débogage d’applications cloud et web modernes. Il prend en charge IntelliSense et est disponible pour Linux, macOS et Windows.
 
    Cette rubrique vous montre comment créer et exécuter une application Hello World simple avec Visual Studio Code et .NET Core.
+
+* [Ressources supplémentaires pour les programmeurs Visual C#](additional-resources.md)
+
+   Fournit des liens vers les sites web et les groupes de discussion susceptibles de vous aider à trouver les réponses aux problèmes courants.
+
+## <a name="related-sections"></a>Rubriques connexes
+
+* [Utilisation de l’environnement de développement Visual Studio pour C#](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
+
+    Fournit un guide d'utilisation de l'environnement de développement intégré [!INCLUDE[csprcs](~/includes/csprcs-md.md)].
+
+* [Guide de programmation C#](../../csharp/programming-guide/index.md)
+
+    Fournit des informations sur les concepts de la programmation C# et explique comment effectuer différentes tâches en C#.
+
+* [Référence C#](../../csharp/language-reference/index.md)
+
+    Fournit des informations de référence détaillées sur les mots clés C#, les opérateurs, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur.
+
+* [Exemples Visual Studio](/visualstudio/ide/visual-studio-samples)
+
+    Fournit des informations sur la façon dont vous pouvez accéder aux exemples en ligne.
+
+* [Procédures pas à pas](../../csharp/walkthroughs.md)
+
+    Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.
+
+## <a name="see-also"></a>Voir aussi
+ [Bien démarrer avec Visual C# et Visual Basic à l’aide de Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic) [Espace de formation des développeurs débutants](http://go.microsoft.com/fwlink/?LinkId=123826)
 
