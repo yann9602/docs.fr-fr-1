@@ -1,24 +1,22 @@
 ---
-title: Commande dotnet-sln - Interface CLI .NET Core
+title: Commande dotnet sln - Interface CLI .NET Core
 description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
-keywords: dotnet-sln, CLI, commande CLI, .NET Core
-author: spboyer
+author: mairaw
 ms.author: mairaw
-ms.date: 04/11/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: e5a72d3e-c14b-4b0a-a978-c5e54a0988c6
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 606929fbcafddf47abf5da6d3c8ce97d5af06909
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 5071cb80be0fb14829a0fdffd0f5a2d2371b6ba8
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-sln"></a>dotnet sln
 
-# <a name="dotnet-sln"></a>dotnet-sln
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
@@ -67,7 +65,7 @@ Fichier solution à utiliser. Si aucun fichier n’est spécifié, la commande e
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.
+Affiche une aide élémentaire de la commande.
 
 ## <a name="examples"></a>Exemples
 
@@ -94,4 +92,3 @@ Ajouter plusieurs projets C# à une solution avec un modèle d’utilisation des
 Supprimer plusieurs projets C# d’une solution avec un modèle d’utilisation des caractères génériques :
 
 `dotnet sln todo.sln remove **/*.csproj`
-

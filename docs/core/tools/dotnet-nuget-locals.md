@@ -1,28 +1,26 @@
 ---
-title: Commande dotnet-nuget-locals - Interface CLI .NET Core
-description: "La commande dotnet-nuget-locals efface ou répertorie les ressources NuGet locales telles que le cache de requête http, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur."
-keywords: dotnet-nuget-locals, CLI, commande CLI, .NET Core
+title: Commande dotnet nuget locals - Interface CLI .NET Core
+description: "La commande dotnet nuget locals efface ou répertorie les ressources NuGet locales telles que le cache de requête http, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur."
 author: karann-msft
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 8440229e-317e-4dc1-9463-cba5fdb12c3b
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2c9ea7b3b7c61b347cb7c56254773290f04a0cd6
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 2b66198ac3e33c640abda0c96fb05944f5ea91df
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
-# <a name="dotnet-nuget-locals"></a>dotnet-nuget locals
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
-`dotnet-nuget locals` - Efface ou liste les ressources NuGet locales. 
+`dotnet nuget locals` - Efface ou liste les ressources NuGet locales.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -38,27 +36,16 @@ La commande `dotnet nuget locals` efface ou liste les ressources NuGet locales d
 
 Une des valeurs suivantes :
 
-`all`
-
-Indique que l’opération spécifiée est appliquée à tous les types de cache : le cache de requête HTTP, le cache des packages globaux et le cache temporaire.
-
-`http-cache`
-
-Indique que l’opération spécifiée est appliquée uniquement au cache de requête HTTP. Les autres emplacements de cache ne sont pas affectés.
-
-`global-packages`
-
-Indique que l’opération spécifiée est appliquée uniquement au cache des packages globaux. Les autres emplacements de cache ne sont pas affectés.
-
-`temp`
-
-Indique que l’opération spécifiée est appliquée uniquement au cache temporaire. Les autres emplacements de cache ne sont pas affectés.
+* `all` : indique que l’opération spécifiée est appliquée à tous les types de cache : le cache de requête HTTP, le cache des packages globaux et le cache temporaire.
+* `http-cache` : indique que l’opération spécifiée est appliquée uniquement au cache de requête HTTP. Les autres emplacements de cache ne sont pas affectés.
+* `global-packages` : indique que l’opération spécifiée est appliquée uniquement au cache des packages globaux. Les autres emplacements de cache ne sont pas affectés.
+* `temp` : indique que l’opération spécifiée est appliquée uniquement au cache temporaire. Les autres emplacements de cache ne sont pas affectés.
 
 ## <a name="options"></a>Options
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.  
+Affiche une aide élémentaire de la commande.
 
 `-c|--clear`
 
@@ -74,7 +61,7 @@ Oblige la sortie de la ligne de commande à être en anglais.
 
 ## <a name="examples"></a>Exemples
 
-Afficher les chemins d’accès de tous les répertoires de cache local (le répertoire du cache HTTP, le répertoire du cache des packages globaux et le répertoire du cache temporaire) :
+Afficher les chemins de tous les répertoires de cache local (le répertoire du cache HTTP, le répertoire du cache des packages globaux et le répertoire du cache temporaire) :
 
 `dotnet nuget locals –l all`
 
@@ -97,4 +84,3 @@ Effacer tous les fichiers du répertoire du cache temporaire local :
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
 Pour plus d’informations sur les problèmes et erreurs courants liés à l’utilisation de la commande `dotnet nuget locals`, consultez la page [Gestion du cache NuGet](/nuget/consume-packages/managing-the-nuget-cache).
-

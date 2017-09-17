@@ -1,52 +1,45 @@
 ---
-title: Commande dotnet-add package - Interface CLI .NET Core
-description: "La commande dotnet-add package est une option pratique pour ajouter une référence de package NuGet à un projet."
-keywords: dotnet-add, CLI, commande CLI, .NET Core
-author: spboyer
+title: Commande dotnet add package - Interface CLI .NET Core
+description: "La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet."
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/11/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 88e0da69-a5ea-46cc-8b46-5493242b7af9
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 40ee7cac969d4752ede66ba8df6ff6cb3f439aec
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 54fe434c44c9354ae16ae096fe3496ee0134f6e0
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-add-package"></a>dotnet add package
 
-# <a name="dotnet-add-package"></a>dotnet-add package
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
-`dotnet-add package` : Ajoute une référence de package à un fichier projet.
+`dotnet add package` : Ajoute une référence de package à un fichier projet.
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-v|--version] [-f|--framework] [-n|--no-restore] [-s|--source] [--package-directory] [-h|--help]`
+`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-v|--version] [-f|--framework] [-n|--no-restore] [-s|--source] [--package-directory]`
 
 ## <a name="description"></a>Description
 
 La commande `dotnet add package` est une option pratique pour ajouter une référence de package à un fichier projet. Une fois que vous avez exécuté la commande, il existe un contrôle de compatibilité qui vérifie que le package est compatible avec les frameworks du projet. Si le résultat du contrôle est positif, un élément `<PackageReference>` est ajouté au fichier projet et la commande [dotnet restore](dotnet-restore.md) est exécutée.
 
-Par exemple, l’ajout de `Newtonsoft.Json` à *ToDo.csproj* produit une sortie similaire à ce qui suit :
+Par exemple, l’ajout de `Newtonsoft.Json` à *ToDo.csproj* produit une sortie similaire à l’exemple suivant :
 
 ```
-Microsoft (R) Build Engine version 15.1.545.13942
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Writing /var/folders/gj/1mgg_4jx7mbdqbhw1kgcpcjr0000gn/T/tmpm0kTMD.tmp
-info : Adding PackageReference for package 'Newtonsoft.Json' into project 'ToDo.csproj'.
-log  : Restoring packages for ToDo.csproj...
+  Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
+info : Adding PackageReference for package 'Newtonsoft.Json' into project 'C:\projects\ToDo\ToDo.csproj'.
+log  : Restoring packages for C:\projects\ToDo\ToDo.csproj...
 info :   GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/index.json
-info :   OK https://api.nuget.org/v3-flatcontainer/newtonsoft.json/index.json 119ms
-info :   GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-info :   OK https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg 27ms
-info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks in project 'ToDo.csproj'.
-info : PackageReference for package 'Newtonsoft.Json' version '9.0.1' added to file 'ToDo.csproj'.
+info :   OK https://api.nuget.org/v3-flatcontainer/newtonsoft.json/index.json 235ms
+info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks in project 'C:\projects\ToDo\ToDo.csproj'.
+info : PackageReference for package 'Newtonsoft.Json' version '10.0.3' added to file 'C:\projects\ToDo\ToDo.csproj'.
 ```
 
 Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) pour le package référencé.
@@ -69,7 +62,7 @@ Référence de package à ajouter.
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.
+Affiche une aide élémentaire de la commande.
 
 `-v|--version <VERSION>`
 
