@@ -81,7 +81,7 @@ Dans le protocole IPv6, les adresses ont une longueur de 128 bits. Une telle t
   
     -   **Adresses de monodiffusion IPv6 globales**. Ces adresses peuvent être utilisées sur Internet et sont au format suivant : 010(FP, 3 bits) TLA ID (13 bits) Reserved (8 bits) NLA ID (24 bits) SLA ID (16 bits) *ID_interface* (64 bits).  
   
--   **Adresses de multidiffusion.**. Identificateur d’un ensemble d’interfaces (appartenant généralement à des nœuds différents). Un paquet envoyé à cette adresse est remis à toutes les interfaces identifiées par cette adresse. Les types d’adresses de multidiffusion remplacent les adresses de diffusion IPv4.  
+-   **Adresses de multidiffusion**. Identificateur d’un ensemble d’interfaces (appartenant généralement à des nœuds différents). Un paquet envoyé à cette adresse est remis à toutes les interfaces identifiées par cette adresse. Les types d’adresses de multidiffusion remplacent les adresses de diffusion IPv4.  
   
 -   **Adresses anycast**. Identificateur d’un ensemble d’interfaces (appartenant généralement à des nœuds différents). Un paquet envoyé à cette adresse est remis à seulement une interface identifiée par cette adresse. Il s’agit de l’interface la plus proche, d’après les métriques de routage. Les adresses anycast proviennent de l’espace d’adressage de monodiffusion et ne peuvent pas être distinguées par leur syntaxe. L’interface adressée effectue la distinction entre les adresses de monodiffusion et les adresses anycast, dans le cadre de sa configuration.  
   
