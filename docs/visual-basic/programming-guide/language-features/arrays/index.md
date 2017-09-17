@@ -1,5 +1,5 @@
 ---
-title: Tableaux dans Visual Basic | Microsoft Docs
+title: Tableaux dans Visual Basic
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -34,11 +34,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e0a5ab6a7b3ee752af6b58a35a11e4fc0fb2b08a
-ms.openlocfilehash: cc7f5e28831cfe6ec12526d7dac5b12c208fb05a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 8ebad59a07d07d61ea77e41e4044b3febc0ef250
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="arrays-in-visual-basic"></a>Tableaux dans Visual Basic
@@ -112,7 +112,7 @@ Dim sales()() As Double = New Double(11)() {}
   
 -   La valeur contenue dans l’élément représente le nombre d’élèves de cette catégorie.  
   
- ![Image d’un tableau montrant le nombre d’étudiants](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexampleschool.gif "ArrayExampleSchool")  
+ ![Image d’un tableau montrant des nombres d’étudiants](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexampleschool.gif "ArrayExampleSchool")  
 Éléments du tableau « students » (élèves)  
   
  L’exemple suivant montre comment faire référence aux premier, deuxième et dernier éléments du tableau `students`.  
@@ -224,7 +224,7 @@ Dim sales()() As Double = New Double(11)() {}
   
  Vous pouvez être amené à créer un tableau de longueur zéro dans les cas suivants :  
   
--   Sans risquer une exception <xref:System.NullReferenceException>, votre code doit accéder aux membres de la classe <xref:System.Array>, tels que <xref:System.Array.Length%2A> ou <xref:System.Array.Rank%2A> ou appeler une fonction [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], telle que <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
+-   Sans risquer une exception <xref:System.NullReferenceException> , votre code doit accéder aux membres de la classe <xref:System.Array> , tels que <xref:System.Array.Length%2A> ou <xref:System.Array.Rank%2A>ou appeler une fonction [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] , telle que <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
   
 -   Vous tenez à ce que le code de consommation reste simple en n’ayant pas à vérifier la présence de `Nothing` comme un cas particulier.  
   
@@ -235,13 +235,13 @@ Dim sales()() As Double = New Double(11)() {}
   
  L’exemple suivant déclare un tableau à trois dimensions.  
   
-```  
+```vb
 Dim prices(3, 4, 5) As Long  
 ```  
   
  La taille globale du tableau dans la variable `prices` est (3 + 1) x (4 + 1) x (5 + 1) = 120.  
   
- Vous pouvez trouver la taille d’un tableau en utilisant la propriété <xref:System.Array.Length%2A>. Vous pouvez trouver la longueur de chaque dimension d’un tableau multidimensionnel en utilisant la méthode <xref:System.Array.GetLength%2A>.  
+ Vous pouvez trouver la taille d’un tableau en utilisant la propriété <xref:System.Array.Length%2A>. Vous pouvez trouver la longueur de chaque dimension d’un tableau multidimensionnel en utilisant la méthode <xref:System.Array.GetLength%2A> .  
   
  Vous pouvez redimensionner une variable tableau en lui assignant un nouvel objet tableau ou en utilisant l’instruction `ReDim` .  
   
@@ -250,7 +250,7 @@ Dim prices(3, 4, 5) As Long
 |||  
 |---|---|  
 |Longueur de dimension|L’index de chaque dimension est basé sur 0, ce qui signifie qu’il varie de 0 à sa limite supérieure. Par conséquent, la longueur d’une dimension donnée est supérieure de 1 à la limite supérieure déclarée pour cette dimension.|  
-|Limites de longueur|La longueur de chaque dimension d’un tableau est limitée à la valeur maximale du type de données `Integer`, à savoir, (2 ^ 31) - 1. Cependant, la taille totale d’un tableau est aussi limitée par la mémoire disponible sur votre système. Si vous essayez d’initialiser un tableau qui dépasse la quantité de RAM disponible, le Common Language Runtime lève une exception <xref:System.OutOfMemoryException>.|  
+|Limites de longueur|La longueur de chaque dimension d’un tableau est limitée à la valeur maximale du type de données `Integer`, à savoir, (2 ^ 31) - 1. Cependant, la taille totale d’un tableau est aussi limitée par la mémoire disponible sur votre système. Si vous essayez d’initialiser un tableau qui dépasse la quantité de RAM disponible, le Common Language Runtime lève une exception <xref:System.OutOfMemoryException> .|  
 |Taille et taille d’élément|La taille d’un tableau est indépendante du type de données de ses éléments. La taille représente toujours le nombre total d’éléments, et non le nombre d’octets qu’ils occupent dans le stockage.|  
 |Consommation de mémoire|Il est déconseillé de faire des hypothèses sur la façon dont un tableau est stocké en mémoire. Le stockage varie selon la largeur de données de la plateforme. Par exemple, un même tableau utilise plus de mémoire sur un système 64 bits que sur un système 32 bits. Selon la configuration du système au moment de l’initialisation d’un tableau, le Common Language Runtime (CLR) peut assigner du stockage de façon à regrouper les éléments aussi près que possible les uns des autres ou pour tous les adapter aux limites matérielles naturelles. De même, un tableau nécessite un supplément de stockage pour ses informations de contrôle, un supplément qui augmente d’autant à chaque dimension ajoutée.|  
   
@@ -278,7 +278,7 @@ Dim prices(3, 4, 5) As Long
   
  Pour certaines collections, vous pouvez assigner une clé à un objet que vous placez dans la collection pour vous permettre de récupérer rapidement l’objet à l’aide de la clé.  
   
- Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Une collection générique applique la sécurité du type afin qu’aucun autre type de données ne puisse être ajouté à celle-ci. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
+ Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> . Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
   
  Pour plus d’informations sur les collections, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
   

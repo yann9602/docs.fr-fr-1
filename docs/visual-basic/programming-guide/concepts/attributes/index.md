@@ -1,5 +1,5 @@
 ---
-title: "Vue d’ensemble des attributs (Visual Basic) | Microsoft Docs"
+title: "Vue d’ensemble des attributs (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 81f6275334a0ba1507dcff2bcd85e0b1aa276067
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0464de06390a9899cbe312b16cbad41d0b6639eb
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="attributes-overview-visual-basic"></a>Vue d’ensemble des attributs (Visual Basic)
@@ -50,7 +51,7 @@ Les attributs fournissent une méthode puissante permettant d’associer des mé
 End Class  
 ```  
   
- Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> est déclarée ainsi :  
+ Une méthode avec l’attribut <xref:System.Runtime.InteropServices.DllImportAttribute> est déclaré comme suit :  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -75,7 +76,7 @@ Sub MethodB(<Out(), [In]()> ByVal x As Double)
 End Sub  
 ```  
   
- Certains attributs peuvent être spécifiés plusieurs fois pour une entité donnée. <xref:System.Diagnostics.ConditionalAttribute> est un exemple d’attribut multiusage :  
+ Certains attributs peuvent être spécifiés plusieurs fois pour une entité donnée. <xref:System.Diagnostics.ConditionalAttribute> est un exemple d’attribut à utilisation multiple :  
   
 ```vb  
 <Conditional("DEBUG"), Conditional("TEST1")>   
@@ -124,13 +125,13 @@ Module: CLSCompliant(True)>
 ## <a name="common-uses-for-attributes"></a>Utilisations courantes des attributs  
  La liste suivante comprend certaines des utilisations courantes des attributs dans le code :  
   
--   Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d’informations, consultez la page <xref:System.Web.Services.WebMethodAttribute>.  
+-   Marquer des méthodes avec l’attribut `WebMethod` dans les services web pour indiquer que la méthode doit pouvoir être appelée via le protocole SOAP. Pour plus d'informations, consultez <xref:System.Web.Services.WebMethodAttribute>.  
   
--   Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d’informations, consultez la page <xref:System.Runtime.InteropServices.MarshalAsAttribute>.  
+-   Décrire comment marshaler les paramètres de méthode en cas d’interaction avec du code natif. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.MarshalAsAttribute>.  
   
 -   Décrire les propriétés COM des classes, méthodes et interfaces.  
   
--   Appeler du code non managé avec la classe <xref:System.Runtime.InteropServices.DllImportAttribute>.  
+-   Appeler du code non managé à l’aide de la classe <xref:System.Runtime.InteropServices.DllImportAttribute>.  
   
 -   Décrire un assembly : titre, version, description ou marque.  
   
@@ -163,3 +164,4 @@ Module: CLSCompliant(True)>
  [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)   
  [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
  [Attributs](https://msdn.microsoft.com/library/5x6cd29c)
+

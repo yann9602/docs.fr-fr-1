@@ -1,58 +1,79 @@
 ---
-title: "Pointeurs et code unsafe (Guide de programmation C#) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-csharp"
-ms.topic: "article"
-dev_langs: 
-  - "CSharp"
-helpviewer_keywords: 
-  - "sécurité [C#], sécurité de type"
-  - "langage C#, code unsafe"
-  - "sécurité de type [C#]"
-  - "unsafe, mot clé [C#]"
-  - "code unsafe [C#]"
-  - "langage C#, pointeurs"
-  - "pointeurs [C#], à propos des pointeurs"
+title: Pointeurs et code unsafe (Guide de programmation C#)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.technology:
+- devlang-csharp
+ms.topic: article
+dev_langs:
+- CSharp
+helpviewer_keywords:
+- security [C#], type safety
+- C# language, unsafe code
+- type safety [C#]
+- unsafe keyword [C#]
+- unsafe code [C#]
+- C# language, pointers
+- pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
 caps.latest.revision: 24
-author: "BillWagner"
-ms.author: "wiwagn"
-caps.handback.revision: 24
+author: BillWagner
+ms.author: wiwagn
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 75e11b34f0749270650e0e5b5a2a191a1b9e9f9a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
+
 ---
-# Pointeurs et code unsafe (Guide de programmation C#)
-Pour maintenir la sécurité et la fiabilité des types, par défaut, C\# ne prend pas en charge d'opérations arithmétiques sur les pointeurs.  Toutefois, à l'aide du mot clé [unsafe](../../../csharp/language-reference/keywords/unsafe.md), vous pouvez définir un contexte unsafe dans lequel des pointeurs peuvent être utilisés.  Pour plus d'informations sur les pointeurs, consultez la rubrique [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
+# <a name="unsafe-code-and-pointers-c-programming-guide"></a>Pointeurs et code unsafe (Guide de programmation C#)
+Pour conserver la sécurité des types, par défaut, C# ne prend pas en charge les opérations arithmétiques sur les pointeurs. Cependant, en utilisant le mot clé [unsafe](../../../csharp/language-reference/keywords/unsafe.md), vous pouvez définir un contexte non sécurisé dans lequel des pointeurs peuvent être utilisés. Pour plus d’informations sur les pointeurs, consultez la rubrique [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
   
 > [!NOTE]
->  Dans le Common Language Runtime \(CLR\), le code unsafe est connu sous le nom de code non vérifiable.  Le code unsafe en C\# n'est pas toujours dangereux ; c'est simplement du code dont le CLR ne peut pas vérifier la sécurité.  Par conséquent, le CLR n'exécute du code unsafe que s'il se trouve dans un assembly d'un niveau de confiance suffisant.  Si vous utilisez du code unsafe, il est de votre responsabilité de garantir qu'il n'entraîne pas de problèmes de sécurité ou d'erreurs de pointeur.  
+>  Dans le common language runtime (CLR), le code non sécurisé est appelé « code non vérifiable ». Le code non sécurisé en C# n’est pas nécessairement dangereux : il s’agit simplement de code dont la sécurité ne peut pas être vérifiée par le CLR. Le CLR exécute du code non sécurisé seulement s’il se trouve dans un assembly entièrement fiable. Si vous utilisez du code non sécurisé, il vous incombe de vérifier que votre code n’introduit pas de risques de sécurité ni d’erreurs de pointeur.  
   
-## Vue d'ensemble du code unsafe  
- Le code unsafe a les propriétés suivantes :  
+## <a name="unsafe-code-overview"></a>Vue d’ensemble du code non sécurisé  
+ Le code non sécurisé a les propriétés suivantes :  
   
--   Les méthodes, types et blocs de code peuvent être définis comme unsafe.  
+-   Les méthodes, les types et les blocs de code peuvent être définis comme non sécurisés.  
   
--   Dans certains cas, le code unsafe augmente les performances d'une application lorsqu'il supprime les contrôles de limites d'index de tableau.  
+-   Dans certains cas, le code non sécurisé peut augmenter les performances d’une application en supprimant les vérifications des limites des tableaux.  
   
--   Le code unsafe est requis lorsque vous appelez des fonctions natives nécessitant des pointeurs.  
+-   Du code non sécurisé est obligatoire quand vous appelez des fonctions natives nécessitant des pointeurs.  
   
--   L'utilisation d'un code unsafe introduit des risques de sécurité et de stabilité.  
+-   L’utilisation de code non sécurisé introduit des risques pour la sécurité et la stabilité.  
   
--   Pour que le code unsafe en C\#  puisse être compilé, l'application doit être compilée avec [\/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
+-   Pour que C# compile du code non sécurisé, l’application doit être compilée avec [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
   
-## Rubriques connexes  
- Pour plus d'informations, consultez :  
+## <a name="related-sections"></a>Rubriques connexes  
+ Pour plus d'informations, voir :  
   
--   [Types pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
+-   [Types de pointeur](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
   
 -   [Mémoires tampons de taille fixe](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)  
   
--   [Comment : utiliser des pointeurs pour copier un tableau d'octets](../../../csharp/programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md)  
+-   [Comment : utiliser des pointeurs pour copier un tableau d’octets](../../../csharp/programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md)  
   
 -   [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
   
-## Spécification du langage C\#  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>Spécification du langage C#  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## Voir aussi  
- [Guide de programmation C\#](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+

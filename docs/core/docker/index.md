@@ -1,6 +1,6 @@
 ---
-title: Docker et .NET Core | Microsoft Docs
-description: Docker et .NET Core
+title: Docker et .NET Core
+description: "Découvrez plus d’informations sur l’utilisation de Docker avec .NET Core grâce à ces didacticiels amusants."
 keywords: Docker, .NET, .NET Core
 author: spboyer
 ms.author: shboyer
@@ -10,11 +10,11 @@ ms.prod: .net-core
 ms.technology: dotnet-docker
 ms.devlang: dotnet
 ms.assetid: cae32148-aef4-4e64-a7f0-88072bad4400
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: 70e854fbeb9d9da64815e2a67f7a0fe36695a17a
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0e74a939cbab13705e8a1bd8fe86e292dc97b9ae
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -25,5 +25,5 @@ Les didacticiels suivants sont disponibles pour en savoir plus sur l’utilisati
 - [Création d’images Docker pour les applications .NET Core](building-net-docker-images.md)
 - [Visual Studio Tools pour Docker](visual-studio-tools-for-docker.md)
 
-Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
+Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).
 
