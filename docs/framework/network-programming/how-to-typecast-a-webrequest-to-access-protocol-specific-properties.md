@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour convertir une classe WebRequest pour accéder à des propriétés spécifiques au protocole"
+title: "Comment : convertir une classe WebRequest pour accéder à des propriétés spécifiques au protocole"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# Guide pratique pour convertir une classe WebRequest pour accéder à des propriétés spécifiques au protocole
+# Comment : convertir une classe WebRequest pour accéder à des propriétés spécifiques au protocole
 Cet exemple montre comment effectuer un cast du type d’une classe WebRequest pour accéder à des propriétés spécifiques au protocole.  
   
 ## Exemple  

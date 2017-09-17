@@ -1,5 +1,5 @@
 ---
-title: Extensions WIF
+title: extensions WIF
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="wif-extensions"></a>Extensions WIF
+# <a name="wif-extensions"></a>extensions WIF
 Cette section décrit les extensions pour WIF (Windows Identity Foundation).  
   
 -   [Gestionnaire de jetons Web JSON](../../../docs/framework/security/json-web-token-handler.md)  

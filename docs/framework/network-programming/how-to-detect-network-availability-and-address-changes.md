@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour détecter la disponibilité réseau et les changements d’adresse"
+title: "Comment : détecter la disponibilité réseau et les changements d’adresse"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -26,7 +26,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-detect-network-availability-and-address-changes"></a>Guide pratique pour détecter la disponibilité réseau et les changements d’adresse
+# <a name="how-to-detect-network-availability-and-address-changes"></a>Comment : détecter la disponibilité réseau et les changements d’adresse
 Cet exemple montre comment détecter les modifications de l’adresse réseau d’une interface.  
   
 ## <a name="example"></a>Exemple  

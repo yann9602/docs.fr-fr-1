@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour assigner des informations utilisateur aux connexions de groupe
+title: 'Comment : assigner des informations utilisateur aux connexions de groupe'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-assign-user-information-to-group-connections"></a>Guide pratique pour assigner des informations utilisateur aux connexions de groupe
+# <a name="how-to-assign-user-information-to-group-connections"></a>Comment : assigner des informations utilisateur aux connexions de groupe
 
   
  L’exemple suivant montre comment assigner des informations utilisateur aux connexions de groupe, en supposant que l’application définit les variables *UserName*, *SecurelyStoredPassword* et *Domain* avant que cette section de code ne soit appelée et que la variable *UserName* est unique.  

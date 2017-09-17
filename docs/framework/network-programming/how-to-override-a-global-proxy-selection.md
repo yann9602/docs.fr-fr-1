@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour remplacer une sélection de proxy global"
+title: "Comment : remplacer une sélection de proxy global"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-override-a-global-proxy-selection"></a>Guide pratique pour remplacer une sélection de proxy global
+# <a name="how-to-override-a-global-proxy-selection"></a>Comment : remplacer une sélection de proxy global
 Cet exemple envoie une **WebRequest** à www.contoso.com qui substitue la sélection de proxy global avec un serveur proxy nommé `alternateproxy` sur le port 80.  
   
 ## <a name="example"></a>Exemple  

@@ -32,7 +32,7 @@ Des changements de sécurité apportés au .NET Framework version 3.5 SP1 et ul
   
  Plusieurs composants des espaces de noms <xref:System.Net> et <xref:System.Net.Security> effectuent l’authentification Windows intégrée pour le compte d’une application appelante. Cette section décrit les modifications apportées aux composants System.Net pour ajouter une protection étendue lors de l’utilisation de l’authentification Windows intégrée.  
   
-## <a name="changes"></a>Changements  
+## <a name="changes"></a>Modifications  
  Le processus d’authentification NTLM utilisé avec l’authentification Windows intégrée inclut une stimulation émise par l’ordinateur de destination et renvoyée à l’ordinateur client. Quand un ordinateur reçoit une stimulation qu’il a lui-même généré, l’authentification échoue, sauf si la connexion est une connexion de retour de boucle (adresse IPv4 127.0.0.1, par exemple).  
   
  Quand vous accédez à un service en cours d’exécution sur un serveur web interne, il est courant d’accéder au service à l’aide d’une URL semblable à http://contoso/service ou https://contoso/service. Le nom « contoso » est rarement le nom de l’ordinateur sur lequel le service est déployé. <xref:System.Net> et les espaces de noms associés prennent en charge l’utilisation d’Active Directory, de DNS, de NetBIOS, du fichier hosts de l’ordinateur local (généralement WINDOWS\system32\drivers\etc\hosts) ou du fichier lmhosts de l’ordinateur local (généralement WINDOWS\system32\drivers\etc\lmhosts) pour résoudre les noms en adresses. Le nom « contoso » est résolu pour que les demandes envoyées à « contoso » soient envoyées à l’ordinateur serveur approprié.  

@@ -1,62 +1,67 @@
 ---
-title: "reentrancy MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "unmanaged code, debugging"
-  - "transitioning threads unmanaged to managed code"
-  - "reentrancy MDA"
-  - "reentrancy without an orderly transition"
-  - "managed debugging assistants (MDAs), reentrancy"
-  - "illegal reentrancy"
-  - "MDAs (managed debugging assistants), reentrancy"
-  - "threading [.NET Framework], managed debugging assistants"
-  - "managed code, debugging"
-  - "native debugging, MDAs"
+title: "réentrance (MDA)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- unmanaged code, debugging
+- transitioning threads unmanaged to managed code
+- reentrancy MDA
+- reentrancy without an orderly transition
+- managed debugging assistants (MDAs), reentrancy
+- illegal reentrancy
+- MDAs (managed debugging assistants), reentrancy
+- threading [.NET Framework], managed debugging assistants
+- managed code, debugging
+- native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: beefdb130c953c30d50d948ef9add7ad9d867e45
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# reentrancy MDA
-L'Assistant Débogage managé \(MDA, Managed Debugging Assistant\) `reentrancy` est activé lors d'une tentative de transition du code natif au code managé dans les cas où une commutation antérieure de code managé en code natif n'a pas fait l'objet d'une transition correcte.  
+# <a name="reentrancy-mda"></a>réentrance (MDA)
+L’Assistant Débogage managé (MDA) `reentrancy` est activé en cas de tentative de transition du code natif au code managé dans les cas où un basculement antérieur du code managé au mode natif n’a pas été effectué par le biais d’une transition ordonnée.  
   
-## Symptômes  
- Le tas d'objets est endommagé ou d'autres erreurs sérieuses se produisent lors de la transition du code natif au code managé.  
+## <a name="symptoms"></a>Symptômes  
+ Le tas d’objets est endommagé ou d’autres erreurs graves se produisent lors de la transition du code natif au code managé.  
   
- Les threads qui commutent entre du code natif et du code managé dans un sens ou l'autre doivent exécuter une transition correcte.  Toutefois, certains points d'extensibilité de niveau inférieur dans le système d'exploitation, tels que le gestionnaire d'exceptions vectorisé, permettent de commuter entre du code managé et du code natif sans exécuter une transition méthodique.  Ces commutateurs sont sous le contrôle du système d'exploitation, plutôt que sous celui du Common Language Runtime \(CLR\).  Tout code natif qui s'exécute à l'intérieur de ces points d'extensibilité doit éviter d'exécuter des rappels dans le code managé.  
+ Les threads qui basculent entre le code managé et le code natif dans les deux sens doivent effectuer une transition de façon ordonnée. Toutefois, certains points d’extensibilité de bas niveau dans le système d’exploitation, tels que le gestionnaire d’exceptions vectorisées, permettent de basculer entre le code managé et le code natif sans exécuter de transition ordonnée.  Ces basculement sont sous le contrôle du système d’exploitation, et non sous le contrôle du Commun Language Runtime (CLR).  Tout code natif qui s’exécute à l’intérieur de ces points d’extensibilité doit éviter de rappeler le code managé.  
   
-## Cause  
- Un point d'extensibilité du système d'exploitation de niveau inférieur, tel que le gestionnaire d'exceptions vectorisé, a été activé pendant l'exécution de code managé.  Le code d'application qui est appelé via ce point d'extensibilité tente d'effectuer un rappel dans le code managé.  
+## <a name="cause"></a>Cause  
+ Un point d’extensibilité de bas niveau du système d’exploitation, tel que le gestionnaire d’exceptions vectorisées, a été activé pendant l’exécution du code managé.  Le code d’application appelé par le biais de ce point d’extensibilité tente d’effectuer un rappel dans le code managé.  
   
- Ce problème est toujours provoqué par le code d'application.  
+ Ce problème est toujours dû au code d’application.  
   
-## Résolution  
- Examinez la trace de la pile pour le thread qui a activé cet Assistant Débogage managé.  Le thread tente d'exécuter un appel illégal dans le code managé.  La trace de la pile doit révéler le code d'application utilisant ce point d'extensibilité, le code du système d'exploitation qui fournit ce point d'extensibilité et le code managé interrompu par le point d'extensibilité.  
+## <a name="resolution"></a>Résolution  
+ Recherchez dans l’arborescence des appels de procédure le thread qui a activé cet Assistant Débogage managé.  Le thread tente d’appeler illégalement du code managé.  La trace de pile doit révéler le code d’application qui utilise ce point d’extensibilité, le code du système d’exploitation qui fournit ce point d’extensibilité et le code managé qui a été interrompu par le point d’extensibilité.  
   
- Par exemple, vous pourrez constater l'activation de l'Assistant Débogage managé activé lors d'une tentative d'appel au code managé à partir d'un gestionnaire d'exceptions vectorisé.  Sur la pile, vous verrez le code de gestion des exceptions du système d'exploitation et le code managé qui déclenche une exception telle que <xref:System.DivideByZeroException> ou <xref:System.AccessViolationException>.  
+ Vous constaterez par exemple que l’Assistant Débogage managé a été activé lors d’une tentative d’appel de code managé à l’intérieur d’un gestionnaire d’exceptions vectorisées.  Sur la pile, vous verrez le code de gestion des exceptions du système d’exploitation et le code managé qui déclenche une exception comme <xref:System.DivideByZeroException> ou <xref:System.AccessViolationException>.  
   
- Dans cet exemple, la méthode de résolution correcte consiste à implémenter complètement le gestionnaire d'exceptions vectorisé dans du code non managé.  
+ Dans cet exemple, la solution consiste à implémenter le gestionnaire d’exceptions vectorisées entièrement dans le code non managé.  
   
-## Effet sur le runtime  
- Ce MDA n'a aucun effet sur le CLR.  
+## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+ Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## Sortie  
- L'Assistant Débogage managé signale une tentative de réentrance illégale.  Examinez la pile du thread pour en déterminer la raison et pouvoir résoudre le problème.  La sortie peut se présenter comme suit.  
+## <a name="output"></a>Sortie  
+ L’Assistant Débogage managé signale les tentatives de réentrance non conformes.  Examinez la pile du thread pour déterminer pourquoi cela se produit et comment résoudre le problème. Voici un exemple de sortie.  
   
 ```  
 Additional Information: Attempting to call into managed code without   
@@ -66,9 +71,9 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## Configuration  
+## <a name="configuration"></a>Configuration  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <reentrancy />  
@@ -76,8 +81,8 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 </mdaConfig>  
 ```  
   
-## Exemple  
- L'exemple de code suivant provoque la levée de <xref:System.AccessViolationException>.  Sur les versions de Windows qui prennent en charge la gestion des exceptions vectorisée, cela se traduit par l'appel au gestionnaire d'exceptions vectorisé managé.  Si l'Assistant Débogage managé `reentrancy` est activé, il s'activera pendant la tentative d'appel à `MyHandler` à partir du code de prise en charge de la gestion des exceptions vectorisée du système d'exploitation.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant provoque la levée de <xref:System.AccessViolationException>.  Dans les versions de Windows qui prennent en charge la gestion des exceptions vectorisées, cela entraîne l’appel du gestionnaire d’exceptions vectorisées managé.  Si l’Assistant Débogage managé `reentrancy` est activé, il sera déclenché pendant la tentative d’appel à `MyHandler` à partir du code de prise en charge de gestion des exceptions vectorisées du système d’exploitation.  
   
 ```  
 using System;  
@@ -114,5 +119,6 @@ public class Reenter
 }  
 ```  
   
-## Voir aussi  
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Voir aussi  
+ [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

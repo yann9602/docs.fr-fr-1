@@ -775,7 +775,7 @@ public class Test
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
+ [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
  [Contrôle de la sérialisation XML à l’aide d’attributs](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)   
  [Attributs qui contrôlent la sérialisation XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)   
  [XmlSerializer, classe](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)   

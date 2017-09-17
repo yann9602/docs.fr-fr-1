@@ -112,7 +112,7 @@ Le fichier de configuration de l'application ou de l'ordinateur contient les par
 |`Tracemode`|Attribut <xref:System.String> facultatif. Définissez la valeur `includehex` pour afficher les traces de protocole au format hexadécimal et texte. Définissez la valeur `protocolonly` pour afficher uniquement du texte. La valeur par défaut est `includehex`.<br /><br /> Cet attribut doit être défini sur l’élément \<switches> comme illustré dans l’exemple. Une exception est levée si cet attribut est défini sur un élément sous l’élément \<source>.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Interprétation du suivi réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)   
+ [Interprétation du traçage réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)   
  [Suivi réseau dans le .NET Framework](../../../docs/framework/network-programming/network-tracing.md)   
  [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)   
  [Introduction à l’instrumentation et au suivi](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)

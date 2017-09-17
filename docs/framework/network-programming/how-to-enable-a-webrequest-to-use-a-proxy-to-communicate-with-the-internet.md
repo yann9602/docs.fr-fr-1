@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour activer un WebRequest pour utiliser un proxy pour communiquer avec Internet
+title: 'Comment : activer un WebRequest pour utiliser un proxy pour communiquer avec Internet'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Guide pratique pour activer un WebRequest pour utiliser un proxy pour communiquer avec Internet
+# <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Comment : activer un WebRequest pour utiliser un proxy pour communiquer avec Internet
 Cet exemple crée une instance proxy globale qui permet à tout <xref:System.Net.WebRequest> d’utiliser un proxy pour communiquer avec Internet. L’exemple suppose que le serveur proxy est nommé `webproxy` et qu’il communique sur le port 80, le port HTTP standard.  
   
 ## <a name="example"></a>Exemple  

@@ -37,7 +37,7 @@ Windows Identity Foundation 4.5 est un ensemble de classes .NET Framework permet
   
 -   Création de STS personnalisés.  WIF simplifie énormément la génération d'un STS personnalisé qui prend en charge le protocole WS-Trust. Ce type de STS porte également le nom de STS actif.  
   
-     De plus, le framework fournit également la prise en charge de la création d'un STS qui prend en charge WS-Federation pour activer les clients de navigateur web. Ce STS porte également le nom de STS passif.  
+     En outre, l'infrastructure fournit également la prise en charge de la création d'un STS qui prend en charge WS-Federation pour activer les client de navigateur Web. Ce STS porte également le nom de STS passif.  
   
 -   Nouvel outil Identité et accès pour Visual Studio 11 qui vous permet de protéger votre application avec l'identité basée sur les revendications et d'accepter des utilisateurs de plusieurs fournisseurs d'identité. Vous pouvez télécharger cet outil WIF à partir de l’URL [http://go.microsoft.com/fwlink/?LinkID=245849](http://go.microsoft.com/fwlink/?LinkID=245849), ou directement à partir de Visual Studio 11 en recherchant « identity » dans le gestionnaire d’extensions. Pour plus d’informations, consultez [Identity and Access Tool pour Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
   

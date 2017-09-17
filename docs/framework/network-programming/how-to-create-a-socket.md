@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour créer un socket"
+title: "Comment : créer un socket"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -36,7 +36,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-create-a-socket"></a>Guide pratique pour créer un socket
+# <a name="how-to-create-a-socket"></a>Comment : créer un socket
 Avant de pouvoir utiliser un socket pour communiquer avec des appareils distants, le socket doit être initialisé avec des informations de protocole et d’adresse réseau. Le constructeur de la classe <xref:System.Net.Sockets.Socket> a des paramètres qui spécifient la famille d’adresses, le type de socket et le type de protocole que le socket utilise pour établir des connexions.  
   
 ## <a name="example"></a>Exemple  

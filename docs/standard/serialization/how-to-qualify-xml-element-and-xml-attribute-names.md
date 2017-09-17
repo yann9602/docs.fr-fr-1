@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour qualifier des noms d'éléments XML et des noms d'attributs XML"
+title: "Comment : qualifier des noms d'éléments XML et des noms d'attributs XML"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -28,7 +28,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Guide pratique pour qualifier des noms d'éléments XML et des noms d'attributs XML
+# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Comment : qualifier des noms d'éléments XML et des noms d'attributs XML
 [Exemple de code](#cpconworkingwithxmlnamespacesanchor1)  
   
  Les espaces de noms XML contenus par les instances de la classe <xref:System.Xml.Serialization.XmlSerializerNamespaces> doivent se conformer à la spécification du World Wide Web Consortium (www.w3.org) intitulée « Namespaces in XML ».  

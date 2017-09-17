@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour substituer la sérialisation XML encodée selon le protocole SOAP"
+title: "Comment : substituer la sérialisation XML encodée selon le protocole SOAP"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -27,7 +27,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-override-encoded-soap-xml-serialization"></a>Guide pratique pour substituer la sérialisation XML encodée selon le protocole SOAP
+# <a name="how-to-override-encoded-soap-xml-serialization"></a>Comment : substituer la sérialisation XML encodée selon le protocole SOAP
 [Exemple de code](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
   
  Le processus permettant de substituer la sérialisation XML d'objets en tant que messages SOAP est identique au processus permettant de substituer la sérialisation XML standard. Pour plus d’informations sur la substitution de la sérialisation XML standard, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).  

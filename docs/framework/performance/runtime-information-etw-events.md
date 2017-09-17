@@ -34,7 +34,7 @@ Ces événements ETW journalise des informations sur l’exécution, notamment 
 |`RuntimeInformationEvent`|187|CLRRuntime|Déclenché lorsqu’un runtime est chargé.|  
 |`RuntimeInformationDCStart`|187|CLRRundown|Énumère les runtimes chargés.|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ Le tableau suivant affiche des données liées aux événements.  
   
 |Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  

@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour activer WIF pour une application de service web WCF
+title: 'Comment : activer WIF pour une application de service web WCF'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Guide pratique pour activer WIF pour une application de service web WCF
+# <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Comment : activer WIF pour une application de service web WCF
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  

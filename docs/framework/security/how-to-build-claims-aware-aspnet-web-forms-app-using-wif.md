@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF"
+title: "Comment : générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Guide pratique pour générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF
+# <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Comment : générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -37,7 +37,7 @@ ms.lasthandoff: 08/21/2017
   
 -   Résumé des étapes  
   
--   Étape 1 : créer une simple application Web Forms ASP.NET  
+-   Étape 1 : Créer une application Web Forms ASP.NET simple  
   
 -   Étape 2 : configurer l’application Web Forms ASP.NET pour l’authentification basée sur les revendications  
   
@@ -57,8 +57,8 @@ ms.lasthandoff: 08/21/2017
   
 -   Étape 3 : tester votre solution  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : créer une simple application Web Forms ASP.NET  
- Dans cette étape, vous allez créer une application Web Forms ASP.NET.  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
+ Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
   

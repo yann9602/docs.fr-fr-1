@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest"
+title: "Comment : récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# Guide pratique pour récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest
+# Comment : récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest
 Cet exemple montre comment récupérer une classe WebResponse spécifique au protocole qui correspond à une classe WebRequest.  
   
 ## Exemple  

@@ -41,7 +41,7 @@ La sérialisation correspond au processus de conversion de l'état d'un objet en
   
 ## <a name="in-this-section"></a>Dans cette section  
 [Rubriques de guides pratiques pour la sérialisation](../../../docs/standard/serialization/serialization-how-to-topics.md)  
-Liste les liens vers les rubriques de guide pratique contenues dans cette section.
+Répertorie les liens vers les rubriques Comment contenues dans cette section.
   
 [Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)  
 Décrit le mécanisme de sérialisation binaire inclus avec le Common Language Runtime.

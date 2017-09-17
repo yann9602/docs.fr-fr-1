@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour activer le suivi WIF
+title: 'Comment : activer le suivi WIF'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-enable-wif-tracing"></a>Guide pratique pour activer le suivi WIF
+# <a name="how-to-enable-wif-tracing"></a>Comment : activer le suivi WIF
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  

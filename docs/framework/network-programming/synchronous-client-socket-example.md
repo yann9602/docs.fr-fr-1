@@ -148,7 +148,7 @@ public class SynchronousSocketClient {
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Exemple de socket serveur synchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
+ [Exemple de socket serveur asynchrone](../../../docs/framework/network-programming/synchronous-server-socket-example.md)   
  [Utilisation d’un socket client synchrone](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
  [Exemples de code de socket](../../../docs/framework/network-programming/socket-code-examples.md)
 

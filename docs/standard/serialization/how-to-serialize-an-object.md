@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour sérialiser un objet"
+title: "Comment : sérialiser un objet"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -27,7 +27,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-serialize-an-object"></a>Guide pratique pour sérialiser un objet
+# <a name="how-to-serialize-an-object"></a>Comment : sérialiser un objet
 Pour sérialiser un objet, créez tout d'abord l'objet à sérialiser et définissez ses propriétés et champs publics. Pour ce faire, vous devez déterminer le format de transport dans lequel le flux de données XML sera stocké, sous forme de flux de données ou de fichier. Par exemple, si le flux de données XML doit être enregistré dans un formulaire permanent, créez un objet <xref:System.IO.FileStream>.  
   
 > [!NOTE]

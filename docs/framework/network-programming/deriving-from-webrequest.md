@@ -1,5 +1,5 @@
 ---
-title: "Dérivation de WebRequest"
+title: "dérivation de WebRequest"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -32,7 +32,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="deriving-from-webrequest"></a>Dérivation de WebRequest
+# <a name="deriving-from-webrequest"></a>dérivation de WebRequest
 La classe <xref:System.Net.WebRequest> est une classe de base abstraite qui fournit les méthodes et les propriétés de base pour la création d’un gestionnaire de demande propre au protocole qui correspond au modèle de protocole enfichable .NET Framework. Les applications qui utilisent la classe **WebRequest** peuvent demander des données à l’aide de n’importe quel protocole pris en charge, sans avoir besoin de spécifier le protocole utilisé.  
   
  Deux critères doivent être remplis pour qu’une classe propre au protocole soit utilisée comme protocole enfichable : la classe doit implémenter l’interface <xref:System.Net.IWebRequestCreate> et elle doit s’inscrire auprès de la méthode <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName>. La classe doit remplacer toutes les propriétés et les méthodes abstraites de **WebRequest** pour fournir l’interface enfichable.  
@@ -77,12 +77,12 @@ La classe <xref:System.Net.WebRequest> est une classe de base abstraite qui four
 ## <a name="requesturi-property"></a>Propriété RequestUri  
  La propriété <xref:System.Net.WebRequest.RequestUri%2A> contient l’URI qui a été passée à la méthode **WebRequest.Create**. Elle est en lecture seule et ne peut pas être modifiée une fois le **WebRequest** créé. Si votre protocole prend en charge la redirection, la réponse peut provenir d’une ressource identifiée par un autre URI. Si vous avez besoin de fournir l’accès à l’URI qui a répondu, vous devez fournir une propriété supplémentaire contenant cet URI.  
   
-## <a name="timeout-property"></a>Propriété Timeout  
+## <a name="timeout-property"></a>Propriété du délai d'attente  
  La propriété <xref:System.Net.WebRequest.Timeout%2A> contient la durée, en millisecondes, à attendre avant l’expiration de la requête et la levée d’une exception. **Timeout** s’applique uniquement aux requêtes synchrones effectuées avec la méthode <xref:System.Net.WebRequest.GetResponse%2A> ; les requêtes asynchrones doivent utiliser la méthode <xref:System.Net.WebRequest.Abort%2A> pour annuler une requête en attente.  
   
  La définition de la propriété **Timeout** n’est significative que si la classe propre au protocole implémente un processus de délai d’attente.  
   
-## <a name="abort-method"></a>Méthode Abort  
+## <a name="abort-method"></a>Abort, méthode  
  La méthode <xref:System.Net.WebRequest.Abort%2A> annule une requête asynchrone à un serveur en attente. Une fois la requête annulée, l’appel à **GetResponse**, **BeginGetResponse**, **EndGetResponse**, **GetRequestStream**, **BeginGetRequestStream** ou **EndGetRequestStream** lève une <xref:System.Net.WebException> avec la propriété <xref:System.Net.WebException.Status%2A> définie sur <xref:System.Net.WebExceptionStatus>.  
   
 ## <a name="begingetrequeststream-and-endgetrequeststream-methods"></a>Méthodes BeginGetRequestStream et EndGetRequestStream  

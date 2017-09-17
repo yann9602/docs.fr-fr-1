@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification basée sur les formulaires"
+title: "Comment : générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification basée sur les formulaires"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-build-claims-aware-aspnet-application-using-forms-based-authentication"></a>Guide pratique pour générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification basée sur les formulaires
+# <a name="how-to-build-claims-aware-aspnet-application-using-forms-based-authentication"></a>Comment : générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification basée sur les formulaires
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -39,11 +39,11 @@ ms.lasthandoff: 08/21/2017
   
 -   Résumé des étapes  
   
--   Étape 1 : Créer une simple application Web Forms ASP.NET  
+-   Étape 1 : Créer une application Web Forms ASP.NET simple  
   
 -   Étape 2 : Configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  
   
--   Étape 3 : Tester votre solution  
+-   Étape 3 : tester votre solution  
   
 ## <a name="objectives"></a>Objectifs  
   
@@ -58,13 +58,13 @@ ms.lasthandoff: 08/21/2017
   
 ## <a name="summary-of-steps"></a>Résumé des étapes  
   
--   Étape 1 : Créer une simple application Web Forms ASP.NET  
+-   Étape 1 : Créer une application Web Forms ASP.NET simple  
   
 -   Étape 2 : Configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  
   
--   Étape 3 : Tester votre solution  
+-   Étape 3 : tester votre solution  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une simple application Web Forms ASP.NET  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
  Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
@@ -128,8 +128,8 @@ ms.lasthandoff: 08/21/2017
   
      Le code ci-dessus affiche les revendications relatives à un utilisateur authentifié, y compris les utilisateurs identifiés par l’authentification par formulaire.  
   
-## <a name="step-3--test-your-solution"></a>Étape 3 : Tester votre solution  
- Lors de cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications s’affichent quand un utilisateur se connecte à l’aide de l’authentification par formulaire.  
+## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
+ Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications sont présentées à l’utilisateur qui se connecte à l’aide de l’authentification par formulaire.  
   
 #### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  
   

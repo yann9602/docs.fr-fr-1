@@ -1,5 +1,5 @@
 ---
-title: "Régions d’exécution limitée"
+title: "régions d'exécution limitée"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="constrained-execution-regions"></a>Régions d’exécution limitée
+# <a name="constrained-execution-regions"></a>régions d'exécution limitée
 Une région d’exécution limitée (CER, Constrained Execution Region) fait partie d’un mécanisme pour la création de code managé fiable. Elle définit une zone dans laquelle le Common Language Runtime (CLR) ne peut pas lever d’exceptions hors-bande qui empêcheraient le code dans la zone de s’exécuter dans son intégralité. Dans cette région, le code utilisateur ne peut pas exécuter de code qui entraînerait la levée d’exceptions hors-bande. La méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> doit précéder immédiatement un bloc `try`, et marque les blocs `catch`, `finally` et `fault` en tant que régions d’exécution limitée. Une fois marqué comme région limitée, le code doit appeler uniquement du code avec des contrats de fiabilité forts, et il ne doit pas allouer ou effectuer des appels virtuels à des méthodes non préparées ou non fiables, sauf s’il est prêt à gérer les échecs. Le CLR retarde les abandons de thread pour le code qui s’exécute dans une région CER.  
   
  Les régions d’exécution limitée sont utilisées sous des formes différentes dans le CLR en plus d’un bloc `try` annoté, notamment sous forme de finaliseurs critiques exécutés dans des classes dérivées de la classe <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> et de code exécuté à l’aide de la méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A>.  
@@ -112,7 +112,7 @@ Une région d’exécution limitée (CER, Constrained Execution Region) fait par
   
 -   Appels de méthode par réflexion  
   
--   <xref:System.Threading.Monitor.Enter%2A> ou <xref:System.IO.FileStream.Lock%2A>  
+-   <xref:System.Threading.Monitor.Enter%2A> ou <xref:System.IO.FileStream.Lock%2A>.  
   
 -   Vérifications de sécurité N’effectuez pas de demande, mais uniquement des demandes de liaison.  
   
@@ -125,5 +125,5 @@ Une région d’exécution limitée (CER, Constrained Execution Region) fait par
 -   Pointeurs de fonction et délégués.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Bonnes pratiques pour la fiabilité](../../../docs/framework/performance/reliability-best-practices.md)
+ [Bonnes pratiques relatives à la fiabilité](../../../docs/framework/performance/reliability-best-practices.md)
 

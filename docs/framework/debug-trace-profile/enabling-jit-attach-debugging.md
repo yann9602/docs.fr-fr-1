@@ -42,9 +42,9 @@ Débogage JIT-attach est l’expression utilisée pour décrire l’attachement 
   
  Le débogage JIT-attach est également déclenché par des appels aux fonctions et méthodes suivantes :  
   
--   Méthode <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=fullName>  
+-   Méthode <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=fullName>.  
   
--   Méthode <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=fullName>  
+-   Méthode <xref:System.Diagnostics.Debugger.Break%2A?displayProperty=fullName>.  
   
 -   Fonction [DebugBreak](http://go.microsoft.com/fwlink/?LinkId=182106) (Win32)  
   

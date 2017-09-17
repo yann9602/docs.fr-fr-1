@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour effectuer une initialisation tardive d'objets
+title: "Comment : effectuer une initialisation tardive d'objets"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -23,7 +23,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-perform-lazy-initialization-of-objects"></a>Guide pratique pour effectuer une initialisation tardive d'objets
+# <a name="how-to-perform-lazy-initialization-of-objects"></a>Comment : effectuer une initialisation tardive d'objets
 La classe <xref:System.Lazy%601?displayProperty=fullName> simplifie les opérations d’initialisation tardive et d’instanciation des objets. L’initialisation des objets de manière tardive vous évite d’avoir à créer inutilement des objets non nécessaires, ou vous permet de différer l’initialisation des objets jusqu’à ce qu’ils commencent à être utilisés. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
   
 ## <a name="example"></a>Exemple  

@@ -49,7 +49,7 @@ La sérialisation correspond au processus de conversion d'un objet en un formula
   
  De plus, la classe **XmlSerializer** peut sérialiser un objet et générer un flux de données XML encodé selon le protocole SOAP. Le XML généré est conforme à la section 5 du document World Wide Web Consortium intitulé « Protocole SOAP (Simple Object Access Protocol) 1.1 ». Pour plus d’informations sur ce processus, consultez [Guide pratique pour sérialiser un objet en tant que flux XML encodé selon le protocole SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md). Pour obtenir une liste des attributs utilisés pour contrôler le code XML généré, consultez [Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
- La classe **XmlSerializer** génère les messages SOAP créés par les services web XML et passés à ces derniers. Pour contrôler les messages SOAP, vous pouvez appliquer des attributs aux classes, valeurs de retour, paramètres et champs trouvés dans un fichier de services web XML (.asmx). Vous pouvez utiliser les attributs répertoriés dans « Attributs qui contrôlent la sérialisation XML » et « Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP » car un service web XML peut utiliser le style SOAP littéral ou encodé. Pour plus d’informations sur l’utilisation d’attributs pour contrôler le code XML généré par un service web XML, consultez [Sérialisation XML avec les services web XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md). Pour plus d’informations sur les services web SOAP et XML, consultez [Personnalisation des messages SOAP](https://msdn.microsoft.com/en-us/subscriptions/index/dkwy2d72\(v=vs.71\).aspx).  
+ La classe **XmlSerializer** génère les messages SOAP créés par les services web XML et passés à ces derniers. Pour contrôler les messages SOAP, vous pouvez appliquer des attributs aux classes, valeurs de retour, paramètres et champs trouvés dans un fichier de services Web XML (.asmx). Vous pouvez utiliser les attributs répertoriés dans « Attributs qui contrôlent la sérialisation XML » et « Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP » car un service Web XML peut utiliser le style SOAP littéral ou encodé. Pour plus d’informations sur l’utilisation d’attributs pour contrôler le code XML généré par un service web XML, consultez [Sérialisation XML avec les services web XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md). Pour plus d’informations sur les services web SOAP et XML, consultez [Personnalisation des messages SOAP](https://msdn.microsoft.com/en-us/subscriptions/index/dkwy2d72\(v=vs.71\).aspx).  
   
 ## <a name="security-considerations-for-xmlserializer-applications"></a>Considérations relatives à la sécurité des applications XmlSerializer  
  Quand vous créez une application qui utilise la classe **XmlSerializer**, tenez compte des points suivants et de leurs implications :  
@@ -118,7 +118,7 @@ public class OrderForm
  Pour plus d’informations sur la sérialisation et la désérialisation d’objets, consultez [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md) et [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md).  
   
 ## <a name="advantages-of-using-xml-serialization"></a>Avantages de l'utilisation de la sérialisation XML  
- La classe **XmlSerializer** offre un moyen de contrôle complet et souple quand vous sérialisez un objet en tant que code XML. Si vous créez un service web XML, vous pouvez appliquer des attributs qui contrôlent la sérialisation des classes et des membres pour garantir que le résultat XML se conforme à un schéma spécifique.  
+ La classe **XmlSerializer** offre un moyen de contrôle complet et souple quand vous sérialisez un objet en tant que code XML. Si vous créez un service Web XML, vous pouvez appliquer des attributs qui contrôlent la sérialisation des classes et des membres pour garantir que le résultat XML se conforme à un schéma spécifique.  
   
  Par exemple, **XmlSerializer** vous permet d’effectuer les opérations suivantes :  
   
@@ -184,7 +184,7 @@ public string MyToken;
  <xref:System.Xml.Serialization.XmlSerializer>   
  <xref:System.Runtime.Serialization.DataContractSerializer>   
  <xref:System.IO.FileStream>   
- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
+ [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
  [Sérialisation binaire](../../../docs/standard/serialization/binary-serialization.md)   
  [Sérialisation](../../../docs/standard/serialization/index.md)   
  <xref:System.Xml.Serialization.XmlSerializer>   

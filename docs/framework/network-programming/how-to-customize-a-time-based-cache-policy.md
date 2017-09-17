@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour personnaliser une stratégie de cache basée sur la durée"
+title: "Comment : personnaliser une stratégie de cache basée sur la durée"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -28,7 +28,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-customize-a-time-based-cache-policy"></a>Guide pratique pour personnaliser une stratégie de cache basée sur la durée
+# <a name="how-to-customize-a-time-based-cache-policy"></a>Comment : personnaliser une stratégie de cache basée sur la durée
 Lors de la création d’une stratégie de cache basée sur la durée, vous pouvez personnaliser le comportement de la mise en cache en spécifiant des valeurs pour l’ancienneté maximale, l’actualisation minimale, l’obsolescence maximale ou la date de synchronisation du cache. L’objet <xref:System.Net.Cache.HttpRequestCachePolicy> fournit plusieurs constructeurs qui vous permettent de spécifier des combinaisons valides de ces valeurs.  
   
 ### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a>Pour créer une stratégie de cache basée sur la durée qui utilise une date de synchronisation du cache  

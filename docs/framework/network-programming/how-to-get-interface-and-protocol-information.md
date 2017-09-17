@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour obtenir des informations d’interface et de protocole"
+title: "Comment : obtenir des informations d’interface et de protocole"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -26,7 +26,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# Guide pratique pour obtenir des informations d’interface et de protocole
+# Comment : obtenir des informations d’interface et de protocole
 Cet exemple montre comment lire les statistiques TCP d’une interface réseau.  
   
 ## Exemple  

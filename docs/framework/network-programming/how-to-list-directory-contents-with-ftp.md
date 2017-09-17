@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour répertorier le contenu d’un répertoire avec FTP"
+title: "Comment : répertorier le contenu d’un répertoire avec FTP"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-list-directory-contents-with-ftp"></a>Guide pratique pour répertorier le contenu d’un répertoire avec FTP
+# <a name="how-to-list-directory-contents-with-ftp"></a>Comment : répertorier le contenu d’un répertoire avec FTP
 Cet exemple montre comment afficher le contenu d’un répertoire d’un serveur FTP.  
   
 ## <a name="example"></a>Exemple  

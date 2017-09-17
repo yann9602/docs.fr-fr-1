@@ -1,5 +1,5 @@
 ---
-title: "Téléchargement du package de Registre des noms d'émetteurs de validation"
+title: "Téléchargement du package de validation du registre des noms d'émetteurs"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="downloading-the-validating-issuer-name-registry-package"></a>Téléchargement du package de Registre des noms d'émetteurs de validation
+# <a name="downloading-the-validating-issuer-name-registry-package"></a>Téléchargement du package de validation du registre des noms d'émetteurs
 Cette rubrique explique comment télécharger et utiliser le Registre des noms d’émetteurs de validation (VINR, Validating Issuer Name Registry) dans votre projet.  
   
 ## <a name="downloading-the-validating-issuer-name-registry"></a>Téléchargement du Registre des noms d’émetteurs de validation  

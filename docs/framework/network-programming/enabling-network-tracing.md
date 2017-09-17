@@ -1,5 +1,5 @@
 ---
-title: "Activation du traçage réseau"
+title: "Activation du suivi réseau"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -33,7 +33,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="enabling-network-tracing"></a>Activation du traçage réseau
+# <a name="enabling-network-tracing"></a>Activation du suivi réseau
 Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
   
 -   Compiler votre code avec le traçage activé. Pour plus d’informations sur les commutateurs du compilateur nécessaires pour activer le traçage, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  

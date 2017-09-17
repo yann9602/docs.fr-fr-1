@@ -41,7 +41,7 @@ L’outil de définition de schéma XML, [XML Schema Definition Tool (Xsd.exe)](
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Data.DataSet>   
  [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
- [Outil XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)   
+ [XML Schema Definition Tool (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)   
  <xref:System.Xml.Serialization.XmlSerializer>   
  [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
  [Guide pratique pour désérialiser un objet](../../../docs/standard/serialization/how-to-deserialize-an-object.md)   

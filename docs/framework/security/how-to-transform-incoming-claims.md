@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour transformer les revendications entrantes
+title: 'Comment : transformer les revendications entrantes'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-transform-incoming-claims"></a>Guide pratique pour transformer les revendications entrantes
+# <a name="how-to-transform-incoming-claims"></a>Comment : transformer les revendications entrantes
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -43,7 +43,7 @@ ms.lasthandoff: 08/21/2017
   
 -   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
   
--   Étape 3 : Tester votre solution  
+-   Étape 3 : tester votre solution  
   
 ## <a name="objectives"></a>Objectifs  
   
@@ -62,7 +62,7 @@ ms.lasthandoff: 08/21/2017
   
 -   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
   
--   Étape 3 : Tester votre solution  
+-   Étape 3 : tester votre solution  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
  Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
@@ -173,7 +173,7 @@ ms.lasthandoff: 08/21/2017
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
-## <a name="step-3--test-your-solution"></a>Étape 3 : Tester votre solution  
+## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
  Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications sont présentées à l’utilisateur qui se connecte à l’aide de l’authentification par formulaire.  
   
 #### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  

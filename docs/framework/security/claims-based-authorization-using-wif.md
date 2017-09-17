@@ -30,7 +30,7 @@ Dans une application de partie de confiance, une autorisation détermine les res
  Les revendications peuvent également être utilisées pour activer des décisions d'autorisation plus compliquées au-delà des rôles. Les revendications peuvent être basées sur quasiment n’importe quelle information relative à l’utilisateur : âge, code postal, pointure, etc. Un mécanisme de contrôle d’accès basé sur des revendications arbitraires est appelé « autorisation basée sur les revendications ». Pour plus d’informations, consultez [Autorisation basée sur les revendications](../../../docs/framework/security/claims-based-authorization-using-wif.md#BKMK_2).  
   
 <a name="BKMK_1"></a>   
-## <a name="role-based-access-control"></a>Contrôle d'accès en fonction du rôle (RBAC)  
+## <a name="role-based-access-control"></a>Contrôle d'accès basé sur des rôles  
  RBAC est une méthode d'autorisation dans laquelle les autorisations utilisateur sont gérées et appliquées par une application basée sur les rôles d'utilisateurs. Si un utilisateur a un rôle requis pour exécuter une action, l'accès est autorisé ; sinon, il est refusé.  
   
 ### <a name="iprincipalisinrole-method"></a>Méthode IPrincipal.IsInRole  

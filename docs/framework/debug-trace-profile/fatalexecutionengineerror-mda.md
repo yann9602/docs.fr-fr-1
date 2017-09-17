@@ -1,47 +1,52 @@
 ---
-title: "fatalExecutionEngineError MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "corrupted CLR"
-  - "fatal execution error"
-  - "terminated processes"
-  - "unexpected terminations"
-  - "fatal errors"
-  - "MDAs (managed debugging assistants), fatal errors"
-  - "process termination"
-  - "FatalExecutionEngineError MDA"
-  - "managed debugging assistants (MDAs), fatal errors"
+title: "Assistant Débogage managé fatalExecutionEngineError"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- corrupted CLR
+- fatal execution error
+- terminated processes
+- unexpected terminations
+- fatal errors
+- MDAs (managed debugging assistants), fatal errors
+- process termination
+- FatalExecutionEngineError MDA
+- managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
 caps.latest.revision: 11
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 11
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e437f45e6d6ef6d7397c507667426e4dd9860620
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# fatalExecutionEngineError MDA
-L'Assistant Débogage managé \(MDA, Managed Debugging Assistant\) `fatalExecutionEngine``Error` est activé lorsqu'une erreur irrécupérable a été détectée dans le Common Language Runtime \(CLR\).  Le processus s'arrête.  
+# <a name="fatalexecutionengineerror-mda"></a>Assistant Débogage managé fatalExecutionEngineError
+L’Assistant Débogage managé `fatalExecutionEngine``Error` est activé quand une erreur irrécupérable dans le common language runtime a été détectée. Le processus se termine.  
   
-## Symptômes  
- Arrêt inattendu du processus.  Il existe d'autres symptômes qui ne peuvent pas être déterminés car une défaillance du CLR peut se produire pour diverses raisons.  
+## <a name="symptoms"></a>Symptômes  
+ Arrêt inattendu du processus. D’autres symptômes ne peuvent pas être déterminés, car une défaillance du common language runtime peut se produire pour différentes raisons.  
   
-## Cause  
- Le CLR a été endommagé de manière irréversible.  La plupart du temps, cela est dû à l'altération des données qui peut être provoquée par de nombreux problèmes, tels que les appels à des fonctions d'appel de code non managé mal formées et la passation de données non valides au CLR.  
+## <a name="cause"></a>Cause  
+ Le common language runtime a été endommagé de façon irréversible. Ceci est dû le plus souvent à une altération des données, qui peut être provoquée par un certain nombre de problèmes, comme des fonctions d’appel de code non managé incorrectement formées et au passage de données non valides au CLR.  
   
-## Résolution  
- L'activation de MDA supplémentaires peut aider à identifier le problème.  Les MDA suivants peuvent être particulièrement utiles pour diagnostiquer le problème :  
+## <a name="resolution"></a>Résolution  
+ L’activation d’Assistants Débogage managé supplémentaires peut aider à identifier le problème. Les Assistants Débogage managé suivants peuvent être particulièrement utiles pour diagnostiquer le problème :  
   
 -   [invalidOverlappedToPinvoke](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)  
   
@@ -67,15 +72,15 @@ L'Assistant Débogage managé \(MDA, Managed Debugging Assistant\) `fatalExecuti
   
 -   [invalidGCHandleCookie](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)  
   
-## Effet sur le runtime  
- Ce MDA n'a aucun effet sur le comportement du runtime.  
+## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+ Cet Assistant Débogage managé n’a aucun effet sur le comportement du runtime.  
   
-## Sortie  
- L'adresse de la fonction CLR qui a provoqué l'erreur irrécupérable, l'ID du thread où l'erreur s'est produite et le code d'erreur.  
+## <a name="output"></a>Sortie  
+ L’adresse de la fonction CLR qui a provoqué l’erreur irrécupérable, l’ID du thread où l’erreur s’est produite et le code d’erreur.  
   
-## Configuration  
+## <a name="configuration"></a>Configuration  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <fatalExecutionEngineError />  
@@ -83,7 +88,8 @@ L'Assistant Débogage managé \(MDA, Managed Debugging Assistant\) `fatalExecuti
 </mdaConfig>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>   
  <xref:System.Runtime.ConstrainedExecution.Cer>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+ [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+

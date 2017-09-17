@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour désérialiser un objet"
+title: "Comment : désérialiser un objet"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -27,7 +27,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-deserialize-an-object"></a>Guide pratique pour désérialiser un objet
+# <a name="how-to-deserialize-an-object"></a>Comment : désérialiser un objet
 Lorsque vous désérialisez un objet, le format de transport vous permet de déterminer si vous créez un flux de données ou un objet de fichier. Après avoir déterminé le format de transport, vous pouvez appeler la méthode <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> ou <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>, si nécessaire.  
   
 ### <a name="to-deserialize-an-object"></a>Pour désérialiser un objet  
@@ -64,6 +64,6 @@ Lorsque vous désérialisez un objet, le format de transport vous permet de dét
     ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
+ [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md)   
  [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 

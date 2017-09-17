@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour accéder aux propriétés spécifiques à HTTP"
+title: "Comment : accéder aux propriétés spécifiques à HTTP"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-access-http-specific-properties"></a>Guide pratique pour accéder aux propriétés spécifiques à HTTP
+# <a name="how-to-access-http-specific-properties"></a>Comment : accéder aux propriétés spécifiques à HTTP
 Cet exemple montre comment désactiver le comportement HTTP **Keep-alive** et obtenir le numéro de version du protocole du serveur web.  
   
 ## <a name="example"></a>Exemple  

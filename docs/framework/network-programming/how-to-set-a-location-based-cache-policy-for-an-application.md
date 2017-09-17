@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application"
+title: "Comment : définir une stratégie de cache basée sur l’emplacement pour une application"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -30,7 +30,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Guide pratique pour définir une stratégie de cache basée sur l’emplacement pour une application
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Comment : définir une stratégie de cache basée sur l’emplacement pour une application
 Avec une stratégie de cache basée sur l’emplacement, une application peut définir explicitement le comportement de cache en fonction de l’emplacement de la ressource demandée. Cette rubrique explique comment définir la stratégie de cache par programmation. Pour plus d’informations sur la définition de la stratégie pour une application en utilisant les fichiers de configuration, consultez [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Pour définir une stratégie de cache basée sur l’emplacement pour une application  

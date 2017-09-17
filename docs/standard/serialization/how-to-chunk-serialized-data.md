@@ -30,7 +30,7 @@ ms.lasthandoff: 08/21/2017
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
-Les deux problèmes qui se produisent lors de l'envoi de grands ensembles de données dans des messages de services web sont les suivants :  
+Les deux problèmes qui se produisent lors de l'envoi de grands ensembles de données dans des messages de services Web sont les suivants :  
   
 1.  Un grand jeu de travail (mémoire) en raison d'une mise en mémoire tampon effectuée par le moteur de sérialisation.  
   

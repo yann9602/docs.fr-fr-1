@@ -1,5 +1,5 @@
 ---
-title: "Rubriques de guide pratique sur la programmation réseau"
+title: "Rubriques \"Comment\" relatives à la programmation réseau"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -29,7 +29,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="network-programming-how-to-topics"></a>Rubriques de guide pratique sur la programmation réseau
+# <a name="network-programming-how-to-topics"></a>Rubriques "Comment" relatives à la programmation réseau
 La liste suivante comprend des liens vers les guides pratiques de la documentation conceptuelle relative à la programmation réseau.  
   
  **Demande de données :**  
@@ -93,7 +93,7 @@ La liste suivante comprend des liens vers les guides pratiques de la documentati
 -   [Guide pratique pour effectuer un test ping](../../../docs/framework/network-programming/how-to-ping-a-host.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)   
+ [Programmation réseau dans .NET Framework](../../../docs/framework/network-programming/index.md)   
  [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)   
  [Exemples de mise en réseau pour .NET dans MSDN Code Gallery](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
 

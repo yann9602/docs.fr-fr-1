@@ -1,81 +1,87 @@
 ---
-title: "Comment&#160;: g&#233;n&#233;rer une application web ASP.NET MVC prenant en charge les revendications &#224; l’aide de WIF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Guide pratique pour générer une application web ASP.NET MVC prenant en charge les revendications à l’aide de WIF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0efb76bc-9f7b-4afe-be1c-2a57c917010b
 caps.latest.revision: 6
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 6
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7065455e3459ad37a8e296107ca8c6991334b328
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: g&#233;n&#233;rer une application web ASP.NET MVC prenant en charge les revendications &#224; l’aide de WIF
-## S'applique à  
+# <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Guide pratique pour générer une application web ASP.NET MVC prenant en charge les revendications à l’aide de WIF
+## <a name="applies-to"></a>S'applique à  
   
--   Foundation \(WIF\) d'identité Microsoft® Windows®  
+-   Microsoft® Windows® Identity Foundation (WIF)  
   
 -   ASP.NET® MVC  
   
-## Résumé  
- Cet " Comment " fournit des procédures pas \- à \- pas détaillées pour créer l'application Web prenant en charge les revendications simple ASP.NET MVC.  Il fournit également des instructions comment tester l'application Web prenant en charge les revendications simple ASP.NET MVC pour l'implémentation réussie de l'authentification basée revendication\-.  Cet " Comment " n'a pas le obtenir des instructions détaillées pour créer un service d'émission de jeton de sécurité \(STS\), et le suppose que vous avez déjà configuré STS.  
+## <a name="summary"></a>Résumé  
+ Cette procédure fournit des procédures pas à pas détaillées pour la création d’une simple application web ASP.NET MVC prenant en charge les revendications. Elle fournit également des instructions afin de tester cette simple application web ASP.NET MVC prenant en charge les revendications pour une implémentation réussie de l’authentification basée sur les revendications. Cette procédure ne comprend pas d’instructions détaillées pour créer un service d’émission de jeton de sécurité (STS) et suppose que vous en avez déjà configuré un.  
   
-## Sommaire  
+## <a name="contents"></a>Sommaire  
   
 -   Objectifs  
   
 -   Résumé des étapes  
   
--   Étape 1 \- créez l'application ASP.NET MVC simple  
+-   Étape 1 : créer une simple application ASP.NET MVC  
   
--   Étape 2 \(configurez l'application ASP.NET MVC pour l'authentification Basée Revendication\-  
+-   Étape 2 : configurer l’application ASP.NET MVC pour l’authentification basée sur les revendications  
   
--   Étape 3 \(testez votre solution  
+-   Étape 3 : tester votre solution  
   
--   Élément connexe  
+-   Éléments associés  
   
-## Objectifs  
+## <a name="objectives"></a>Objectifs  
   
--   Configurez l'application Web ASP.NET MVC pour l'authentification basée revendication\-  
+-   Configurer l’application web ASP.NET MVC pour l’authentification basée sur les revendications  
   
--   Testez l'application Web prenant en charge les revendications réussie ASP.NET MVC  
+-   Tester le bon fonctionnement de l’application web ASP.NET MVC prenant en charge les revendications  
   
-## Résumé des étapes  
+## <a name="summary-of-steps"></a>Résumé des étapes  
   
--   Étape 1 \- créez l'application ASP.NET MVC simple  
+-   Étape 1 : créer une simple application ASP.NET MVC  
   
--   Étape 2 \(configurez l'application ASP.NET MVC pour l'authentification Basée Revendication\-  
+-   Étape 2 : configurer l’application ASP.NET MVC pour l’authentification basée sur les revendications  
   
--   Étape 3 \(testez votre solution  
+-   Étape 3 : tester votre solution  
   
-## Étape 1 \- créez l'application ASP.NET MVC simple  
+## <a name="step-1--create-simple-aspnet-mvc-application"></a>Étape 1 : créer une simple application ASP.NET MVC  
  Dans cette étape, vous allez créer une application ASP.NET MVC.  
   
-#### Pour créer l'application ASP.NET MVC simple  
+#### <a name="to-create-simple-aspnet-mvc-application"></a>Pour créer une simple application ASP.NET MVC  
   
 1.  Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
   
-2.  Dans la fenêtre de **Nouveau projet** , cliquez sur **Application Web ASP.NET MVC 3**.  
+2.  Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web ASP.NET MVC 3**.  
   
-3.  Dans **Nom**, entrez `TestApp` et appuyez **OK**.  
+3.  Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.  
   
-4.  Dans la boîte de dialogue **Nouveau projet ASP.NET MVC 3** , sélectionnez **application Web** des modèles disponibles, vérifiez **moteur d'affichage** a la valeur **Razor**, puis cliquez sur **OK**.  
+4.  Dans la boîte de dialogue **Nouveau projet ASP.NET MVC 3**, sélectionnez **Application Internet** dans les modèles disponibles, vérifiez que **Moteur de vue** a la valeur **Razor**, puis cliquez sur **OK**.  
   
-5.  Lorsque le nouveau projet s'ouvre, cliquez avec le bouton droit sur le projet **TestApp** dans **Explorateur de solutions** et sélectionnez l'option **Propriétés** .  
+5.  Quand le nouveau projet s’ouvre, cliquez avec le bouton droit sur le projet **TestApp** dans l’**Explorateur de solutions** et sélectionnez l’option **Propriétés**.  
   
-6.  Dans la page de propriétés du projet, cliquez sur l'onglet **Web** sur la gauche et assurez \-vous que l'option **Serveur Web IIS local d'utilisation** est sélectionnée.  
+6.  Dans la page de propriétés du projet, cliquez sur l’onglet **Web** sur la gauche et vérifiez que l’option **Utiliser le serveur Web IIS local** est sélectionnée.  
   
-## Étape 2 \(configurez l'application ASP.NET MVC pour l'authentification Basée Revendication\-  
- Dans cette étape vous ajouterez des entrées de configuration *dans le fichier de configuration Web.config* de votre application Web ASP.NET MVC de le informer.  
+## <a name="step-2--configure-aspnet-mvc-application-for-claims-based-authentication"></a>Étape 2 : configurer l’application ASP.NET MVC pour l’authentification basée sur les revendications  
+ Dans cette étape, vous allez ajouter des entrées de configuration au fichier de configuration *Web.config* de votre application web ASP.NET MVC pour qu’elle prenne en charge les revendications.  
   
-#### Pour configurer l'application ASP.NET MVC pour l'authentification basée revendication\-  
+#### <a name="to-configure-aspnet-mvc-application-for-claims-based-authentication"></a>Pour configurer une application ASP.NET MVC pour l’authentification basée sur les revendications  
   
-1.  Ajoutez les définitions de section de configuration suivantes *au fichier de configuration Web.config* .  Elles définissent des sections de configuration requises par IDENTITY Windows Foundation.  Ajoutez les définitions immédiatement **\<configuration\>** après l'élément d'ouverture :  
+1.  Ajoutez les définitions des sections de configuration suivantes au fichier de configuration *Web.config*. Elles définissent les sections de configuration requises par Windows Identity Foundation. Ajoutez les définitions immédiatement après l’élément d’ouverture **\<configuration>** :  
   
     ```xml  
     <configSections>  
@@ -84,7 +90,7 @@ caps.handback.revision: 6
     </configSections>  
     ```  
   
-2.  Ajoutez un élément de **\<location\>** qui permet d'accéder aux métadonnées de fédération de l'application :  
+2.  Ajoutez un élément **\<location>** qui permet d’accéder aux métadonnées de fédération de l’application :  
   
     ```xml  
     <location path="FederationMetadata">  
@@ -96,7 +102,7 @@ caps.handback.revision: 6
     </location>  
     ```  
   
-3.  Ajoutez les entrées de configuration suivantes dans les éléments de **\<system.web\>** pour refuser des utilisateurs, désactivez l'authentification native, et permettent à WIF de gérer l'authentification.  
+3.  Ajoutez les entrées de configuration suivantes dans les éléments **\<system.web>** pour refuser des utilisateurs, désactiver l’authentification native et activer WIF afin de gérer l’authentification.  
   
     ```xml  
     <authorization>  
@@ -105,7 +111,7 @@ caps.handback.revision: 6
     <authentication mode="None" />  
     ```  
   
-4.  Ajoutez les entrées de configuration connexes par Windows Foundation IDENTITY suivantes et vérifiez l'URL de cette votre application ASP.NET et la correspondance de numéro de port les valeurs dans l'entrée de **\<audienceUris\>** , l'attribut de **domaine** de l'élément de **\<wsFederation\>** , et l'attribut de **réponse** de l'élément de **\<wsFederation\>** .  Assurez\-vous également que la valeur **expéditeur** ajuste votre URL de \(STS\) de service d'émission de jeton de sécurité.  
+4.  Ajoutez les entrées de configuration liées à Windows Identity Foundation suivantes et vérifiez que l’URL et le numéro de port de votre application ASP.NET correspondent aux valeurs dans l’entrée **\<audienceUris>**, l’attribut **realm** de l’élément **\<wsFederation>** et l’attribut **reply** de l’élément **\<wsFederation>**. Vérifiez également que la valeur **issuer** correspond à l’URL de votre service d’émission de jeton de sécurité (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -129,16 +135,16 @@ caps.handback.revision: 6
     </system.identityModel.services>  
     ```  
   
-5.  Ajoutez la référence à l'assembly d' [System.IdentityModel](assetId:///System.IdentityModel?qualifyHint=False&amp;autoUpgrade=True) .  
+5.  Ajoutez une référence à l’assembly <xref:System.IdentityModel>.  
   
-6.  Compilez la solution pour vous assurer qu'il existe des erreurs.  
+6.  Compilez la solution pour vérifier la présence d’erreurs.  
   
-## Étape 3 \(testez votre solution  
- Dans cette étape vous allez tester votre application Web ASP.NET MVC configurée pour l'authentification basée revendication\-.  Pour exécuter le test de base vous ajouterez du code simple qui affiche des revendications dans le jeton émise par le service d'émission de jeton de sécurité \(STS\).  
+## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
+ Dans cette étape, vous allez tester votre application web ASP.NET MVC configurée pour l’authentification basée sur les revendications. Pour effectuer un test de base, vous allez ajouter un code simple qui affiche les revendications dans le jeton émis par le service d’émission de jeton de sécurité (STS).  
   
-#### Pour tester votre application ASP.NET MVC pour l'authentification basée revendication\-  
+#### <a name="to-test-your-aspnet-mvc-application-for-claims-based-authentication"></a>Pour tester votre application ASP.NET MVC pour l’authentification basée sur les revendications  
   
-1.  Dans **Explorateur de solutions**, développez le dossier de **Contrôleurs** et ouvrez *le fichier de HomeController.cs* dans l'éditeur.  Ajoutez le code suivant à la méthode **Index** :  
+1.  Dans l’**Explorateur de solutions**, développez le dossier **Contrôleurs** et ouvrez le fichier *HomeController.cs* dans l’éditeur. Ajoutez le code suivant à la méthode **Index** :  
   
     ```csharp  
     public ActionResult Index()  
@@ -147,13 +153,11 @@ caps.handback.revision: 6
   
         return View();  
     }  
-  
     ```  
   
-2.  Dans **Explorateur de solutions** développez **Affichages** puis les dossiers **Accueil** et ouvrez *le fichier d'Index.cshtml* dans l'éditeur.  Supprimez son contenu et ajoutez le balisage suivant :  
+2.  Dans l’**Explorateur de solutions**, développez les dossiers **Vues**, puis **Accueil**, et ouvrez le fichier *Index.cshtml* dans l’éditeur. Supprimez son contenu et ajoutez le balisage suivant :  
   
     ```html  
-  
     @{  
         ViewBag.Title = "Home Page";  
     }  
@@ -217,13 +221,13 @@ caps.handback.revision: 6
         </tr>  
     }  
     </table>  
-  
     ```  
   
-3.  Exécutez la solution en appuyant sur la touche de **F5** .  
+3.  Exécutez la solution en appuyant sur la touche **F5**.  
   
-4.  Vous devez être présenté avec la page qui affiche les revendications dans le jeton qui a été fournie à vous de service d'émission de jeton de sécurité.  
+4.  La page qui affiche les revendications dans le jeton émis par le service d’émission de jeton de sécurité doit s’afficher.  
   
-## Élément connexe  
+## <a name="related-items"></a>Éléments associés  
   
--   [Comment : générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+-   [Guide pratique pour générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour afficher l’état Connecté à l’aide de WIF"
+title: "Comment : afficher l’état Connecté à l’aide de WIF"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -21,7 +21,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-display-signed-in-status-using-wif"></a>Guide pratique pour afficher l’état Connecté à l’aide de WIF
+# <a name="how-to-display-signed-in-status-using-wif"></a>Comment : afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
   
 -   Microsoft® Windows® Identity Foundation (WIF) 4.5  

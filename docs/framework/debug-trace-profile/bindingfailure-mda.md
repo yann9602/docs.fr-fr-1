@@ -90,7 +90,7 @@ L’Assistant débogage managé (MDA) `bindingFailure` est activé quand le char
 ```  
   
 ## <a name="example"></a>Exemple  
- L’exemple de code suivant illustre une situation qui peut activer cet Assistant Débogage managé :  
+ L’exemple de code suivant montre une situation qui peut activer cet Assistant Débogage managé :  
   
 ```  
 using System;  

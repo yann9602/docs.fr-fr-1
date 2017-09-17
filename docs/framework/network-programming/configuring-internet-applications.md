@@ -113,7 +113,7 @@ L’[élément de configuration \<system.Net> (Paramètres réseau)](../../../do
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)   
+ [Programmation réseau dans .NET Framework](../../../docs/framework/network-programming/index.md)   
  [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)   
  [\<system.Net>, élément (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
 

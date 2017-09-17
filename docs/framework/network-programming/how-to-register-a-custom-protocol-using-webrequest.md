@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour inscrire un protocole personnalisé à l’aide de WebRequest"
+title: "Comment : inscrire un protocole personnalisé à l’aide de WebRequest"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# Guide pratique pour inscrire un protocole personnalisé à l’aide de WebRequest
+# Comment : inscrire un protocole personnalisé à l’aide de WebRequest
 Cet exemple montre comment inscrire une classe spécifique à un protocole qui est définie ailleurs dans du code. Dans cet exemple, `CustomWebRequestCreator` est l’objet implémenté par l’utilisateur qui implémente la méthode **Create** utilisée pour retourner l’objet `CustomWebRequest`. L’exemple de code suppose que vous avez écrit le code `CustomWebRequest` qui implémente le protocole personnalisé.  
   
 ## Exemple  

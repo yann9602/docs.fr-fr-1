@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour demander une page web et récupérer les résultats sous forme de flux"
+title: "Comment : demander une page web et récupérer les résultats sous forme de flux"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Guide pratique pour demander une page web et récupérer les résultats sous forme de flux
+# <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Comment : demander une page web et récupérer les résultats sous forme de flux
 Cet exemple montre comment demander une page web et récupérer les résultats sous forme de flux.  
   
 ## <a name="example"></a>Exemple  

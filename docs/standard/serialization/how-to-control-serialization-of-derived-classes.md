@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour contrôler la sérialisation de classes dérivées"
+title: "Comment : contrôler la sérialisation de classes dérivées"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a>Guide pratique pour contrôler la sérialisation de classes dérivées
+# <a name="how-to-control-serialization-of-derived-classes"></a>Comment : contrôler la sérialisation de classes dérivées
 L’utilisation de l’attribut **XmlElementAttribute** pour modifier le nom d’un élément XML ne constitue pas l’unique moyen de personnaliser la sérialisation d’un objet. Vous pouvez également personnaliser le flux de données XML en effectuant une dérivation à partir d'une classe existante et en indiquant à l'instance <xref:System.Xml.Serialization.XmlSerializer> comment sérialiser la nouvelle classe.  
   
  Par exemple, d'après une classe `Book`, vous pouvez effectuer une dérivation et créer une classe `ExpandedBook` qui dispose de quelques propriétés supplémentaires. Toutefois, vous devez demander à **XmlSerializer** d’accepter le type dérivé lors de la sérialisation ou de la désérialisation. Pour ce faire, créez une instance <xref:System.Xml.Serialization.XmlElementAttribute> et affectez à sa propriété **Type** le type de la classe dérivée. Ajoutez **XmlElementAttribute** à une instance <xref:System.Xml.Serialization.XmlAttributes>. Ajoutez ensuite **XmlAttributes** à une instance <xref:System.Xml.Serialization.XmlAttributeOverrides>, en spécifiant le type qui est substitué et le nom du membre qui accepte la classe dérivée. L'exemple suivant le démontre.  
@@ -249,7 +249,7 @@ public class Run
  <xref:System.Xml.Serialization.XmlElementAttribute>   
  <xref:System.Xml.Serialization.XmlAttributes>   
  <xref:System.Xml.Serialization.XmlAttributeOverrides>   
- [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
+ [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
  [Guide pratique pour sérialiser un objet](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
  [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 

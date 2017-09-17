@@ -56,7 +56,7 @@ Pour utiliser le protocole IPv6, vérifiez que vous exécutez une version du sys
  Pour le .NET Framework version 2.0 et ultérieures, si Windows prend en charge le protocole IPv6, les membres de la classe <xref:System.Net.Dns?displayProperty=fullName>, (par exemple la méthode <xref:System.Net.Dns.GetHostEntry%2A?displayProperty=fullName>), retournent des adresses IPv6 avec une limitation. Les membres obsolètes du <xref:System.Net.Dns?displayProperty=fullName> DNS (par exemple la méthode <xref:System.Net.Dns.Resolve%2A?displayProperty=fullName>) lisent et reconnaissent la valeur dans le fichier de configuration pour le paramètre ipv6 enabled.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Protocole Internet version 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
+ [Protocole Internet version 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
  [Sockets](../../../docs/framework/network-programming/sockets.md)   
  [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)   
  [\<ipv6>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)

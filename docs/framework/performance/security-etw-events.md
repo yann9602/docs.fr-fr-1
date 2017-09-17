@@ -1,52 +1,57 @@
 ---
-title: "Security ETW Events | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "security events [.NET Framework]"
-  - "ETW, security events (CLR)"
+title: "Événements de sécurité ETW"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security events [.NET Framework]
+- ETW, security events (CLR)
 ms.assetid: 0ed69f73-5c01-4514-bd63-979c6e38d41d
 caps.latest.revision: 8
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: a7e28eeabecfe0f1043328618f6e1be143f198a6
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Security ETW Events
+# <a name="security-etw-events"></a>Événements de sécurité ETW
 <a name="top"></a> Les événements de sécurité sont déclenchés pendant la vérification de nom fort et la vérification Authenticode.  
   
- Cette catégorie comprend les événements suivants :  
+ Cette catégorie comprend les événements suivants :  
   
--   [Événements StrongNameVerificationStart\_V1 et StrongNameVerificationStop\_V1](#strongnameverificationstart_v1_and_strongnameverificationstop_v1_events)  
+-   [Événements StrongNameVerificationStart_V1 et StrongNameVerificationStop_V1](#strongnameverificationstart_v1_and_strongnameverificationstop_v1_events)  
   
--   [Événements AuthenticodeVerificationStart\_V1 et AuthenticodeVerificationStop\_V1](#authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events)  
+-   [Événements AuthenticodeVerificationStart_V1 et AuthenticodeVerificationStop_V1](#authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events)  
   
 <a name="strongnameverificationstart_v1_and_strongnameverificationstop_v1_events"></a>   
-## Événements StrongNameVerificationStart\_V1 et StrongNameVerificationStop\_V1  
- Le tableau suivant montre les mots clés et les niveaux. \(Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).\)  
+## <a name="strongnameverificationstartv1-and-strongnameverificationstopv1-events"></a>Événements StrongNameVerificationStart_V1 et StrongNameVerificationStop_V1  
+ Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
 |Mot clé pour déclencher l'événement|Niveau|  
-|-----------------------------------------|------------|  
-|`SecurityKeyword` \(0x400\)|Informatif\(4\)|  
+|-----------------------------------|-----------|  
+|`SecurityKeyword` (0x400)|Informatif(4)|  
   
- Le tableau ci\-dessous montre les informations liées aux événements.  
+ Le tableau ci-dessous montre les informations liées aux événements.  
   
 |Événement|ID d'événement|Moment du déclenchement|  
-|---------------|--------------------|-----------------------------|  
+|-----------|--------------|-----------------|  
 |`StrongNameVerificationStart_V1`|181|Début de la vérification de nom fort.|  
 |`StrongNameVerificationStop_V1`|182|Fin de la vérification de nom fort.|  
   
- Le tableau ci\-dessous montre les données liées aux événements.  
+ Le tableau ci-dessous montre les données liées aux événements.  
   
 |Nom du champ|Type de données|Description|  
-|------------------|---------------------|-----------------|  
+|----------------|---------------|-----------------|  
 |VerificationFlags|win:UInt32|Indicateurs de vérification.|  
 |ErrorCode|win:UInt32|Code d'erreur HResult.|  
 |FullyQualifiedAssemblyName|win:UnicodeString|Nom d'assembly qualifié complet.|  
@@ -55,28 +60,29 @@ caps.handback.revision: 8
  [Retour au début](#top)  
   
 <a name="authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events"></a>   
-## Événements AuthenticodeVerificationStart\_V1 et AuthenticodeVerificationStop\_V1  
+## <a name="authenticodeverificationstartv1-and-authenticodeverificationstopv1-events"></a>Événements AuthenticodeVerificationStart_V1 et AuthenticodeVerificationStop_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
 |Mot clé pour déclencher l'événement|Niveau|  
-|-----------------------------------------|------------|  
-|`SecurityKeyword` \(0x400\)|Informatif\(4\)|  
+|-----------------------------------|-----------|  
+|`SecurityKeyword` (0x400)|Informatif(4)|  
   
- Le tableau ci\-dessous montre les informations liées aux événements.  
+ Le tableau ci-dessous montre les informations liées aux événements.  
   
 |Événement|ID d'événement|Moment du déclenchement|  
-|---------------|--------------------|-----------------------------|  
+|-----------|--------------|-----------------|  
 |`AuthenticodeVerificationStart_V1`|183|Début de la vérification Authenticode.|  
 |`AuthenticodeVerificationStop_V1`|184|Fin de la vérification Authenticode.|  
   
- Le tableau ci\-dessous montre les données liées aux événements.  
+ Le tableau ci-dessous montre les données liées aux événements.  
   
 |Nom du champ|Type de données|Description|  
-|------------------|---------------------|-----------------|  
+|----------------|---------------|-----------------|  
 |VerificationFlags|win:UInt32|Indicateurs de vérification.|  
 |ErrorCode|win:UInt32|Code d'erreur HResult.|  
 |ModulePath|win:UnicodeString|Chemin d’accès du module.|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
-## Voir aussi  
- [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Voir aussi  
+ [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)
+

@@ -45,7 +45,7 @@ La classe <xref:System.Net.WebResponse> est une classe de base abstraite qui fou
 ## <a name="responseuri-property"></a>Propriété ResponseUri  
  La propriété <xref:System.Net.WebResponse.ResponseUri%2A> contient l’URI de la ressource qui a réellement fourni la réponse. Pour les protocoles qui ne prennent pas en charge la redirection, **ResponseUri** est identique à la propriété <xref:System.Net.WebRequest.RequestUri%2A> de la **WebRequest** qui a créé la réponse. Si le protocole prend en charge la redirection de la requête, **ResponseUri** contient l’URI de la réponse.  
   
-## <a name="close-method"></a>Méthode Close  
+## <a name="close-method"></a>Close, méthode  
  La méthode <xref:System.Net.WebResponse.Close%2A> ferme toutes les connexions établies par la requête et la réponse, et nettoie les ressources utilisées par la réponse. La méthode **Close** ferme toutes les instances de flux utilisées par la réponse, mais elle ne lève pas d’exception si le flux de réponse a été fermé précédemment par un appel à la méthode <xref:System.IO.Stream.Close%2A?displayProperty=fullName>.  
   
 ## <a name="getresponsestream-method"></a>Méthode GetResponseStream  

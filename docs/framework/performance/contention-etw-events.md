@@ -33,14 +33,14 @@ Les événements de conflit sont déclenchés chaque fois qu’il existe un conf
 |-----------------------------------|-----------|  
 |`ContentionKeyword` (0x4000)|Informatif (4)|  
   
- Le tableau ci-dessous montre les informations liées aux événements.  
+ Le tableau suivant affiche des informations sur les événements.  
   
 |Événement|ID d'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ContentionStart_V1`|81|Le conflit démarre. Cet événement n’inclut pas le temps qui s’écoule avant qu’un thread ne commence à attendre l’acquisition d’un verrou. Il est déclenché uniquement quand l’attente commence.|  
 |`ContentionStop`|81|Le conflit se termine.|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ Le tableau suivant affiche des données liées aux événements.  
   
 |Nom du champ|Type de données|Description|  
 |----------------|---------------|-----------------|  

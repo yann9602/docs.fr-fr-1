@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML"
+title: "Comment : utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -29,7 +29,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Guide pratique pour utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML
+# <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Comment : utiliser l'outil XML Schema Definition pour générer des classes et des documents de schéma XML
 L'outil XML Schema Definition (Xsd.exe) vous permet de générer un schéma XML qui décrit une classe ou de générer la classe définie par un schéma XML. Les procédures suivantes indiquent comment exécuter ces opérations.  
   
 ### <a name="to-generate-classes-that-conform-to-a-specific-schema"></a>Pour générer des classes qui se conforment à un schéma spécifique  

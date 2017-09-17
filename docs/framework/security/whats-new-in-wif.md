@@ -71,5 +71,5 @@ La première version de Windows Identity Foundation (WIF) était fournie sous fo
  [Instructions pour migrer une application WIF 3.5 en application WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)   
  [Mappage des espaces de noms entre WIF 3.5 et WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)   
  [Informations de référence sur l’API WIF](../../../docs/framework/security/wif-api-reference.md)   
- [Informations de référence sur la configuration de WIF](../../../docs/framework/security/wif-configuration-reference.md)
+ [Référence de configuration de WIF](../../../docs/framework/security/wif-configuration-reference.md)
 

@@ -39,7 +39,7 @@ ms.lasthandoff: 08/21/2017
 .NET Framework prend en charge les protocoles d’application Internet couramment utilisés. Cette section contient des informations sur l’utilisation des protocoles [HTTP](../../../docs/framework/network-programming/http.md), TCP et UDP, ainsi que sur l’utilisation de l’interface [Windows Sockets](../../../docs/framework/network-programming/sockets.md) pour implémenter des protocoles personnalisés.  
   
 ## Voir aussi  
- [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)   
+ [Programmation réseau dans .NET Framework](../../../docs/framework/network-programming/index.md)   
  [Exemples de programmation réseau](../../../docs/framework/network-programming/network-programming-samples.md)   
- [Exemples de mise en réseau pour .NET sur MSDN Code Gallery](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+ [Exemples de mise en réseau pour .NET dans MSDN Code Gallery](http://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
 

@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour charger des fichiers avec FTP
+title: 'Comment : charger des fichiers avec FTP'
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -24,7 +24,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-upload-files-with-ftp"></a>Guide pratique pour charger des fichiers avec FTP
+# <a name="how-to-upload-files-with-ftp"></a>Comment : charger des fichiers avec FTP
 Cet exemple montre comment charger un fichier sur un serveur FTP.  
   
 ## <a name="example"></a>Exemple  
