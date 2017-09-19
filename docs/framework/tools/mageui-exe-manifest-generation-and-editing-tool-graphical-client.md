@@ -26,7 +26,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: f6daa65c15a35bc84d8d7c07a86f42ffd251274d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/19/2017
 
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (outil Manifest Generation and Editing, client graphique)
@@ -195,7 +195,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |----------------|-----------------|  
 |**Cette application doit vérifier les mises à jour**|Indique si [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour de l'application. Si cette case n'est pas cochée, l'application ne vérifie pas les mises à jour, sauf si vous la mettez à jour par programme à l'aide des API de l'espace de noms <xref:System.Deployment.Application>.|  
 |**Choisir le moment auquel l’application doit rechercher les mises à jour**|Fournit deux options pour les vérifications des mises à jour :<br /><br /> -   **Avant le démarrage de l’application**. La vérification des mises à jour est effectuée avant l'exécution de l'application.<br />-   **Après le démarrage de l’application**. La vérification des mises à jour commence une fois que le formulaire principal de l'application s'est initialisé et s'exécutera au prochain démarrage de l'application.|  
-|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] exécute une vérification des mises à jour chaque fois que l'utilisateur ouvre l'application.<br />-   **Vérifier tou(te)s les** : sélectionnez un délai et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
+|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] exécute une vérification des mises à jour chaque fois que l'utilisateur ouvre l'application.<br />-   **Vérifier tou(te)s les **: sélectionnez un délai et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
 |**Spécifier une version minimale requise pour cette application**|Facultatif. Spécifie qu'une version spécifique de votre application est une installation obligatoire, pour empêcher les utilisateurs d'utiliser une version antérieure.|  
 |**Version**|Obligatoire si la case **Spécifier une version minimale requise pour cette application** est cochée. Le numéro de version fourni doit être au format *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
   
