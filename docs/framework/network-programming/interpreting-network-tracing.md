@@ -1,42 +1,47 @@
 ---
-title: "Interpr&#233;tation du tra&#231;age r&#233;seau | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "TraceMode (attribut)"
-  - "données hexadécimales, sortie du traçage réseau"
-  - "traçage réseau, analyse"
-  - "protocolonly"
-  - "texte, sortie du traçage réseau"
-  - "includehex"
+title: "Interprétation du traçage réseau"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- TraceMode attribute
+- hexidecimal data, network tracing output
+- network tracing, analyzing
+- protocolonly
+- text, network tracing output
+- includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: e8c451a84117208457942d1c3794628963a49e93
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Interpr&#233;tation du tra&#231;age r&#233;seau
-Lorsque le traçage réseau est activé, vous pouvez utiliser le traçage pour capturer des appels que votre application effectue à différent <xref:System.Net> des membres de classe.  La sortie de ces appels peut être semblable aux exemples suivants.  
+# <a name="interpreting-network-tracing"></a>Interprétation du traçage réseau
+Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalité pour capturer les appels effectués par votre application aux différents membres de la classe <xref:System.Net>. La sortie de ces appels peut ressembler aux exemples suivants.  
   
 ```  
 [588]   (4357)   Entering Socket#33574638::Send()  
 [588]   (4387)   Exiting Socket#33574638::Send()-> 61#61  
 ```  
   
- Dans l'exemple précédent, \[588\] est l'identificateur unique du thread actuel.  \(4357\) et \(4387\) sont les horodatages qui désigne le nombre de millisecondes qui se sont écoulées depuis que l'application a démarré.  Les données qui suit l'horodatage indiquent l'application écriture et quittant la méthode **Socket.Send**.  L'objet exécute la méthode de **Envoyer** a 33574638 comme identificateur unique.  La trace de sortie de méthode inclut la valeur de retour \(61 dans l'exemple précédent\).  
+ Dans l’exemple précédent, [588] est l’identificateur unique du thread actuel. (4357) et (4387) sont des timestamps qui indiquent le nombre de millisecondes écoulées depuis le démarrage de l’application. Les données après les timestamps montrent l’entrée et la sortie de la méthode **Socket.Send** dans l’application. L’objet qui exécute la méthode **Send** a la valeur 33574638 comme identificateur unique. La trace de sortie de la méthode inclut la valeur de retour (61 dans l’exemple précédent).  
   
- Les traces réseau peuvent capturer le trafic réseau qui est envoyé ou accepté par votre application à l'aide de protocoles au niveau de l'application tels que le protocole HTTP \(HTTP\).  Ces données peuvent être capturées en tant que texte et, éventuellement, hexadécimales données.  Les données hexadécimales sont disponibles lorsque vous spécifiez **includehex** comme valeur de l'attribut de **tracemode** .  \(Pour plus d'informations sur cet attribut, consultez [Comment : Configurez le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md).\) La trace de l'exemple suivant a été générée à l'aide de **includehex**.  
+ Les traces réseau peuvent capturer le trafic réseau qui transite par votre application à l’aide de protocoles de niveau application comme le protocole HTTP. Ces données sont capturées au format texte et, éventuellement, au format hexadécimal. Les données hexadécimales sont disponibles si vous spécifiez la valeur **includehex** pour l’attribut **tracemode**. (Pour plus d’informations sur cet attribut, consultez [Guide pratique pour configurer le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md).) L’exemple de trace suivant a été généré avec la valeur **includehex**.  
   
  `[1692]   (1142)   00000000 : 47 45 54 20 2F 77 70 61-64 2E 64 61 74 20 48 54 : GET /wpad.dat HT`  
   
@@ -46,7 +51,7 @@ Lorsque le traçage réseau est activé, vous pouvez utiliser le traçage pour c
   
  `[1692]   (1142)   00000030 : 6F 6E 3A 20 43 6C 6F 73-65 0D 0A 0D 0A     : on: Close....`  
   
- Pour omettre des données hexadécimales, spécifiez **protocolonly** comme valeur de l'attribut de **tracemode** .  L'exemple suivant illustre la trace lorsque **protocolonly** est spécifié.  
+ Pour omettre les données hexadécimales, spécifiez la valeur **protocolonly** pour l’attribut **tracemode**. L’exemple de trace suivant a été généré avec la valeur **protocolonly**.  
   
  `[2444]   (594)   Data from ConnectStream#33574638::WriteHeaders<<GET /wpad.dat HTTP/1.1`  
   
@@ -54,7 +59,8 @@ Lorsque le traçage réseau est activé, vous pouvez utiliser le traçage pour c
   
  `Connection: Close`  
   
-## Voir aussi  
- [Activation du suivi réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)   
- [Comment : Configurez le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)   
- [Traçage réseau dans le .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
+## <a name="see-also"></a>Voir aussi  
+ [Activation du traçage réseau](../../../docs/framework/network-programming/enabling-network-tracing.md)   
+ [Guide pratique pour configurer le traçage réseau](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)   
+ [Traçage réseau dans .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
+

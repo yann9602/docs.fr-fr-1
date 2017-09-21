@@ -4,16 +4,16 @@ description: "Versions Linux et dépendances .NET Core prises en charge pour dé
 keywords: .NET, .NET Core, Linux, debian, ubuntu, RHEL, centOS,
 author: jralexander
 ms.author: johalex
-ms.date: 09/01/2017
+ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.translationtype: HT
-ms.sourcegitcommit: 7bbb8405f39a52d2798fd1dbc78f3116cb3bedbb
-ms.openlocfilehash: 9864ffa31caa007cb649a9e6e8913863d9cb2c35
+ms.sourcegitcommit: 1b0379156f44b0a3e765f8d832c7a1ca74ee3598
+ms.openlocfilehash: d9da6ea27293e95e36ff8edc42ef8bafbc86c8ec
 ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/08/2017
 
 ---
 
@@ -30,7 +30,7 @@ Cet article montre les dépendances nécessaires pour développer des applicatio
 
 .NET Core 2.0 traite Linux comme un seul système d’exploitation. Il existe une seule version Linux (par architecture de puce) pour les distributions Linux prises en charge.
 
-.NET Core 2.x est pris en charge sur les distributions/versions Linux x64 suivantes :
+NET Core 2.x est pris en charge sur les distributions/versions Linux 64 bits suivantes (`x86_64` ou `amd64`) :
 
  * Red Hat Enterprise Linux 7
  * CentOS 7
@@ -46,7 +46,7 @@ Consultez [.NET Core 2.x - Versions des systèmes d’exploitation prises en cha
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-.NET Core 1.x est pris en charge sur les distributions/versions Linux x64 suivantes :
+.NET Core 1.x est pris en charge sur les distributions/versions Linux 64 bits suivantes (`x86_64` ou `amd64`) :
 
 * Red Hat Enterprise Linux 7
 * CentOS 7
@@ -325,7 +325,7 @@ Pour installer .NET Core sur Debian 8 ou Debian 9 (64 bits) :
    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-jessie-prod jessie main" > /etc/apt/sources.list.d/dotnetdev.list'
    ```
    
-5. Extrayez les fichiers binaires du SDK .NET Core.
+5. Installez le SDK .NET Core.
 
    ```bash
    sudo apt-get update
@@ -337,6 +337,13 @@ Pour installer .NET Core sur Debian 8 ou Debian 9 (64 bits) :
    ```bash
    export PATH=$PATH:$HOME/dotnet
    ```
+   
+7. Exécutez la commande `dotnet --version` pour vérifier que l’installation a réussi.
+
+   ```bash
+   dotnet --version
+   ```   
+  
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
@@ -364,17 +371,17 @@ Pour installer .NET Core sur Debian 8 ou Debian 9 (64 bits) :
    sudo ln -s /opt/dotnet/dotnet /usr/local/bin
    ```
 
----
-
 6. Exécutez la commande `dotnet --version` pour vérifier que l’installation a réussi.
 
    ```bash
    dotnet --version
    ```
 
+---
+
 ## <a name="install-net-core-for-fedora-24-fedora-25-or-fedora-26-64-bit"></a>Installer .NET Core pour Fedora 24, Fedora 25 ou Fedora 26 (64 bits)
 
-Pour installer .NET Core pour Fedora 26, Fedora 25 (.NET Core 2.x) ou Fedora 24 (.NET Core 1.x) :
+Pour installer .NET Core 2.x sur Fedora 26 ou Fedora 25, ou .NET Core 1.x sur Fedora 24 :
 
 1. Supprimez du système toute **version antérieure** de .NET Core.
 

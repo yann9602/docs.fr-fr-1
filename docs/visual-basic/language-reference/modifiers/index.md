@@ -1,25 +1,42 @@
 ---
-title: "Modifiers (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: Modificateurs (Visual Basic)
+ms.date: 2015-07-20
+ms.prod: .net
+ms.suite: 
+ms.technology:
+- devlang-visual-basic
+ms.topic: article
+dev_langs:
+- VB
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
 caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
----
-# Modifiers (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+author: dotnet-bot
+ms.author: dotnetcontent
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 99618381c1267647e07d9acc64693dcc5def6f3a
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
-Les rubriques de cette section documentent les modificateurs à l'exécution de Visual Basic.  
+---
+# <a name="modifiers-visual-basic"></a>Modificateurs (Visual Basic)
+Les rubriques de cette section documentent les modificateurs du runtime Visual Basic.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)  
   
  [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  
@@ -42,7 +59,7 @@ Les rubriques de cette section documentent les modificateurs à l'exécution de 
   
  [Key](../../../visual-basic/language-reference/modifiers/key.md)  
   
- [Module \<keyword\>](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
+ [\<mot clé> du module](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
   
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
   
@@ -90,7 +107,8 @@ Les rubriques de cette section documentent les modificateurs à l'exécution de 
   
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
-## Rubriques connexes  
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)
+

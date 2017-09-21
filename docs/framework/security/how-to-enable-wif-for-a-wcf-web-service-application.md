@@ -1,31 +1,37 @@
 ---
-title: "Comment&#160;: activer WIF pour une application de service web WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'Comment : activer WIF pour une application de service web WCF'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 caps.latest.revision: 6
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 6
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 7db69de994770e122dd4a4233b9a44d572c32344
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: activer WIF pour une application de service web WCF
-## S'applique à  
+# <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Comment : activer WIF pour une application de service web WCF
+## <a name="applies-to"></a>S'applique à  
   
--   Microsoft® Windows® Identity Foundation \(WIF\)  
+-   Microsoft® Windows® Identity Foundation (WIF)  
   
--   Microsoft® Windows® Communication Foundation \(WCF\)  
+-   Microsoft® Windows® Communication Foundation (WCF)  
   
-## Résumé  
- Cette procédure fournit des informations détaillées pour activer WIF dans un service Web WCF.  Elle fournit également des instructions décrivant comment tester l'application pour vérifier que le service Web répertorie correctement les revendications lorsque l'application est exécutée.  Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité \(STS, Security Token Service\), et utilise à la place le développement STS fourni avec l'outil Identité et accès.  Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement.  Vous devez installer l'outil Identité et accès pour exécuter cette procédure.  Il peut être téléchargé à partir de l'emplacement suivant : [Outil Identité et accès](http://go.microsoft.com/fwlink/?LinkID=245849)  
+## <a name="summary"></a>Résumé  
+ Cette procédure fournit des informations détaillées pour activer WIF dans un service Web WCF. Elle fournit également des instructions décrivant comment tester l'application pour vérifier que le service Web répertorie correctement les revendications lorsque l'application est exécutée. Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité (STS, Security Token Service), et utilise à la place le développement STS fourni avec l'outil Identité et accès. Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement. Vous devez installer l'outil Identité et accès pour exécuter cette procédure. Il peut être téléchargé à partir de l’emplacement suivant : [Identity and Access Tool](http://go.microsoft.com/fwlink/?LinkID=245849)  
   
-## Sommaire  
+## <a name="contents"></a>Sommaire  
   
 -   Objectifs  
   
@@ -39,14 +45,14 @@ caps.handback.revision: 6
   
 -   Étape 3 : tester votre solution  
   
-## Objectifs  
+## <a name="objectives"></a>Objectifs  
   
 -   Créer un service WCF qui requiert des jetons émis  
   
 -   Créer un client WCF qui demande un jeton à partir de STS et le transmet au service WCF  
   
-## Vue d'ensemble  
- Cette procédure est destinée à montrer comment un développeur peut utiliser l'authentification fédérée lors du développement des services WCF.  Parmi les avantages de l'utilisation de la fédération dans des services WCF, on trouve :  
+## <a name="overview"></a>Vue d'ensemble  
+ Cette procédure est destinée à montrer comment un développeur peut utiliser l'authentification fédérée lors du développement des services WCF. Parmi les avantages de l'utilisation de la fédération dans des services WCF, on trouve :  
   
 1.  Factoriser la logique d'identification hors du code de service WCF  
   
@@ -58,7 +64,7 @@ caps.handback.revision: 6
   
  WIF associé à l'outil Identité et accès facilite le développement et le test d'un service WCF à l'aide de l'authentification fédérée, comme illustré dans les étapes suivantes.  
   
-## Résumé des étapes  
+## <a name="summary-of-steps"></a>Résumé des étapes  
   
 -   Étape 1 : créer un service WCF simple  
   
@@ -66,24 +72,24 @@ caps.handback.revision: 6
   
 -   Étape 3 : tester votre solution  
   
-## Étape 1 : créer un service WCF simple  
+## <a name="step-1--create-a-simple-wcf-service"></a>Étape 1 : créer un service WCF simple  
  Dans cette étape, vous allez créer un service WCF qui utilise le développement STS inclus avec l'outil Identité et accès.  
   
-#### Pour créer un service WCF simple  
+#### <a name="to-create-a-simple-wcf-service"></a>Pour créer un service WCF simple  
   
 1.  Démarrez Visual Studio en mode élevé en tant qu’administrateur.  
   
-2.  Dans le menu **Fichier** de Visual Studio, cliquez sur **Nouveau**, puis sur **Projet**.  
+2.  Dans Visual Studio, cliquez sur **Fichier**, sur **Nouveau**, puis sur **Projet**.  
   
-3.  Dans le volet **Nouveau projet**, cliquez sur **Application de service WCF**.  
+3.  Dans la fenêtre **Nouveau projet**, cliquez sur **Application de service WCF**.  
   
 4.  Dans **Nom**, entrez `TestService` et appuyez sur **OK**.  
   
-5.  Cliquez avec le bouton droit sur le projet **TestService** sous **Explorateur de solutions**, puis sélectionnez **Identité et accès**.  
+5.  Cliquez avec le bouton droit sur le projet **TestService** sous l’**Explorateur de solutions**, puis sélectionnez **Identity and Access** (Identity and Access Tool).  
   
-6.  La fenêtre **Identité et accès** s'affiche.  Sous **Fournisseurs**, sélectionnez **Testez votre application avec le développement STS local**, puis cliquez sur **Appliquer**.  L'outil Identité et accès configure le service pour utiliser WIF et pour externaliser l'authentification vers le développement STS local \(**LocalSTS**\) en ajoutant des éléments de configuration *dans le fichier Web.config*.  
+6.  La fenêtre **Identity and Access** (Identity and Access Tool) s’affiche. Sous **Fournisseurs**, sélectionnez **Test your application with the Local Development STS** (Tester votre application avec le service STS de développement local), puis cliquez sur **Appliquer**. L’outil Identity and Access Tool configure le service pour utiliser WIF et pour externaliser l’authentification vers le service STS de développement local (**LocalSTS**) en ajoutant des éléments de configuration au fichier *Web.config*.  
   
-7.  Dans le fichier *Service1.svc.cs*, ajoutez une directive `using` pour l'espace de noms **System.Security.Claims** et remplacez le code existant par le texte suivant, puis enregistrez le fichier :  
+7.  Dans le fichier *Service1.svc.cs*, ajoutez une directive `using` pour l’espace de noms **System.Security.Claims** et remplacez le code existant par le texte suivant, puis enregistrez le fichier :  
   
     ```csharp  
     public class Service1 : IService1  
@@ -118,7 +124,7 @@ caps.handback.revision: 6
     }  
     ```  
   
-     La méthode `ComputeResponse` affiche les propriétés des revendications publiées par **LocalSTS**.  
+     La méthode `ComputeResponse` affiche les propriétés des revendications émises par **LocalSTS**.  
   
 8.  Dans le fichier *IService1.cs*, remplacez le code existant par celui qui suit, puis enregistrez le fichier :  
   
@@ -133,28 +139,28 @@ caps.handback.revision: 6
   
 9. Générez le projet.  
   
-10. Appuyez sur **Ctrl\-F5** pour exécuter le service sans démarrer le débogueur.  Une page Web doit s'ouvrir pour le service et vous pouvez vérifier que **LocalSTS** s'exécute en regardant dans la zone de notification \(barre d'état système\).  
+10. Appuyez sur **Ctrl+F5** pour exécuter le service sans démarrer le débogueur. Une page web doit s’ouvrir pour le service et vous pouvez vérifier que **LocalSTS** s’exécute en regardant dans la zone de notification (barre d’état système).  
   
     > [!IMPORTANT]
-    >  **TestService** et **LocalSTS** doivent s'exécuter lorsque vous ajoutez la référence de service à l'application cliente à l'étape suivante.  
+    >  **TestService** et **LocalSTS** doivent s’exécuter quand vous ajoutez la référence de service à l’application cliente à l’étape suivante.  
   
-## Étape 2 : créer une application cliente pour le service WCF  
+## <a name="step-2--create-a-client-application-for-the-wcf-service"></a>Étape 2 : créer une application cliente pour le service WCF  
  Dans cette étape, vous allez créer une application console qui utilise le développement STS pour s'authentifier auprès du service WCF créé à l'étape précédente.  
   
-#### Pour créer une application cliente  
+#### <a name="to-create-a-client-application"></a>Pour créer une application cliente  
   
 1.  Dans Visual Studio, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis sur **Nouveau projet**.  
   
-2.  Dans la fenêtre **Ajouter un nouveau projet**, sélectionnez **Application console** dans la liste de modèles **Visual C\#**, entrez `Client`, puis appuyez sur **OK**.  Le nouveau projet est créé dans votre dossier de solutions.  
+2.  Dans la fenêtre **Ajouter un nouveau projet**, sélectionnez **Application console** dans la liste de modèles **Visual C#**, entrez `Client`, puis appuyez sur **OK**. Le nouveau projet est créé dans votre dossier de solutions.  
   
 3.  Cliquez avec le bouton droit sur **Références** sous le projet **Client**, puis cliquez sur **Ajouter une référence de service**.  
   
-4.  Dans la fenêtre **Ajouter une référence de service**, cliquez sur la flèche déroulante du bouton **Découvrir**, puis cliquez sur **Services dans la solution**.  Le champ **Adresse** est automatiquement rempli avec le service WCF que vous avez créé précédemment, et le champ **Espace de noms** est défini sur **ServiceReference1**.  Cliquez sur **OK**.  
+4.  Dans la fenêtre **Ajouter une référence de service**, cliquez sur la flèche déroulante du bouton **Découvrir**, puis cliquez sur **Services dans la solution**. Le champ **Adresse** est automatiquement rempli avec le service WCF que vous avez créé précédemment, et le champ **Espace de noms** a la valeur **ServiceReference1**. Cliquez sur **OK**.  
   
     > [!IMPORTANT]
-    >  **TestService** et **LocalSTS** doivent s'exécuter lorsque vous ajoutez la référence de service au client.  
+    >  **TestService** et **LocalSTS** doivent s’exécuter quand vous ajoutez la référence de service au client.  
   
-5.  Visual Studio génère des classes proxy pour le service WCF, et ajoute toutes les informations de référence nécessaires.  Il ajoute également des éléments dans le fichier *App.config* pour configurer le client afin d'obtenir un jeton de STS pour s'authentifier auprès du service.  Lorsque ce processus est terminé, le fichier **Program.cs** s'ouvre.  Ajoutez une directive `using` pour **System.ServiceModel** et une autre pour **Client.ServiceReference1**, remplacez la méthode **Principale** par le code suivant, puis enregistrez le fichier :  
+5.  Visual Studio génère des classes proxy pour le service WCF, et ajoute toutes les informations de référence nécessaires. Il ajoute également des éléments au fichier *App.config* pour configurer le client afin d’obtenir un jeton du service STS pour s’authentifier auprès du service. Quand ce processus est terminé, le fichier **Program.cs** s’ouvre. Ajoutez une directive `using` pour **System.ServiceModel** et une autre pour **Client.ServiceReference1**, remplacez la méthode **Main** par le code suivant, puis enregistrez le fichier :  
   
     ```csharp  
     static void Main(string[] args)  
@@ -214,9 +220,9 @@ caps.handback.revision: 6
     }  
     ```  
   
-6.  Ouvrez le fichier *App.config* et ajoutez le code XML suivant comme premier élément enfant sous l'élément `<system.serviceModel>`, puis enregistrez le fichier :  
+6.  Ouvrez le fichier *App.config* et ajoutez le code XML suivant comme premier élément enfant sous l’élément `<system.serviceModel>`, puis enregistrez le fichier :  
   
-    ```  
+    ```xml  
     <behaviors>  
        <endpointBehaviors>  
          <behavior>  
@@ -228,23 +234,22 @@ caps.handback.revision: 6
          </behavior>  
        </endpointBehaviors>  
      </behaviors>  
-  
     ```  
   
      Cela désactive la validation de certificat.  
   
-7.  Cliquez avec le bouton droit sur la solution **TestService** et cliquez sur **Définir les projets de démarrage**.  La page de propriétés de **Projet de démarrage** s'ouvre.  Dans la page de propriétés de **Projet de démarrage**, sélectionnez **Plusieurs projets de démarrage**, cliquez sur le champ **Action** pour chaque projet et sélectionnez **Démarrer** dans le menu déroulant.  Cliquez sur **OK** pour enregistrer les paramètres.  
+7.  Cliquez avec le bouton droit sur la solution **TestService** et cliquez sur **Définir les projets de démarrage**. La page de propriétés de **Projet de démarrage** s’ouvre. Dans la page de propriétés de **Projet de démarrage**, sélectionnez **Plusieurs projets de démarrage**, cliquez dans le champ **Action** pour chaque projet et sélectionnez **Démarrer** dans le menu déroulant. Cliquez sur **OK** pour enregistrer les paramètres.  
   
 8.  Générez la solution.  
   
-## Étape 3 : tester votre solution  
+## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
  Dans cette étape, vous allez tester votre application WCF activée pour WIF et vérifier que les revendications sont présentées.  
   
-#### Pour tester votre application WCF activée pour WIF pour les revendications  
+#### <a name="to-test-your-wif-enabled-wcf-application-for-claims"></a>Pour tester votre application WCF activée pour WIF pour les revendications  
   
-1.  Appuyez sur **F5** pour générer et exécuter l'application.  Vous devez voir apparaître une fenêtre de console, et le texte suivant : **Appuyez sur la touche Entrée pour activer le service, une autre touche pour quitter l'application :**  
+1.  Appuyez sur **F5** pour générer et exécuter l’application. Vous devez voir apparaître une fenêtre de console ainsi que le texte suivant : **Appuyez sur la touche Entrée pour activer le service, une autre touche pour quitter l’application :**  
   
-2.  Appuyez sur **Entrée**, et les informations de revendications suivantes doivent apparaître dans la console :  
+2.  Appuyez sur **Entrée** et les informations sur les revendications suivantes doivent apparaître dans la console :  
   
     ```  
     Computed by Service1  
@@ -259,6 +264,7 @@ caps.handback.revision: 6
     ```  
   
     > [!IMPORTANT]
-    >  **TestService** et **LocalSTS** doivent s'exécuter avant que vous appuyiez sur **Entrée**.  Une page Web doit s'ouvrir pour le service et vous pouvez vérifier que **LocalSTS** s'exécute en regardant dans la zone de notification \(barre d'état système\).  
+    >  **TestService** et **LocalSTS** doivent s’exécuter avant que vous n’appuyiez sur **Entrée**. Une page web doit s’ouvrir pour le service et vous pouvez vérifier que **LocalSTS** s’exécute en regardant dans la zone de notification (barre d’état système).  
   
 3.  Si les revendications apparaissent dans la console, vous vous êtes correctement authentifié avec STS pour afficher les revendications du service WCF.
+

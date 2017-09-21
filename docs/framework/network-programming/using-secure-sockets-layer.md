@@ -1,46 +1,51 @@
 ---
-title: "Utilisation du protocole Secure Sockets Layer | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Réseau"
-  - "SSL"
-  - "Secure Sockets Layer"
-  - "requête de données sur Internet, Secure Sockets Layer"
-  - "envoi de données, Secure Sockets Layer"
-  - "Ressources réseau"
-  - "requêtes de données, Secure Sockets Layer"
-  - "réception de données, Secure Sockets Layer"
-  - "Internet, Secure Sockets Layer"
+title: Utilisation du protocole Secure Sockets Layer
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Networking
+- SSL
+- Secure Sockets Layer
+- requesting data from Internet, Secure Sockets Layer
+- sending data, Secure Sockets Layer
+- Network Resources
+- data requests, Secure Sockets Layer
+- receiving data, Secure Sockets Layer
+- Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
 caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: cb625971f0c0b52bcdcfc9b41d4c0f88814aef08
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Utilisation du protocole Secure Sockets Layer
-Les classes d' <xref:System.Net> utilisent le protocole SSL \(SSL\) pour chiffrer la connexion pour plusieurs protocoles réseau.  
+# <a name="using-secure-sockets-layer"></a>Utilisation du protocole Secure Sockets Layer
+Les classes <xref:System.Net> utilisent le protocole SSL (Secure Sockets Layer) pour chiffrer les connexions avec différents protocoles réseau.  
   
- Pour les connexions HTTP, les classes d' <xref:System.Net.WebRequest> et d' <xref:System.Net.WebResponse> utilisez SSL pour communiquer avec le serveur web qui prennent en charge SSL.  La décision d'utiliser SSL est occupée par la classe d' <xref:System.Net.WebRequest> , selon l'URI qu'elle est spécifiée.  Si l'URI commence par « https :  », SSL est utilisé ; si l'URI commence par « http :  », une connexion décryptée est utilisée.  
+ Pour les connexions HTTP, les classes <xref:System.Net.WebRequest> et <xref:System.Net.WebResponse> utilisent SSL pour communiquer avec les hôtes web qui prennent en charge SSL. L’utilisation du protocole SSL est déterminée par la classe <xref:System.Net.WebRequest> en fonction de l’URI fourni. Si l’URI commence par « https: », SSL est utilisé ; si l’URI commence par « http: », une connexion non chiffrée est utilisée.  
   
- Pour utiliser SSL avec le protocole FTP \(FTP\), affectez à la propriété d' <xref:System.Net.FtpWebRequest.EnableSsl> true avant d'appeler <xref:System.Net.FtpWebRequest.GetResponse>.  De même, pour utiliser SSL avec le protocole SMTP \(SMTP\), affectez à la propriété d' <xref:System.Net.Mail.SmtpClient.EnableSsl> true avant d'envoyer des messages électroniques.  
+ Pour utiliser SSL avec le protocole FTP (File Transfer Protocol), définissez la propriété <xref:System.Net.FtpWebRequest.EnableSsl> sur true avant d’appeler <xref:System.Net.FtpWebRequest.GetResponse>. De la même façon, pour utiliser SSL avec le protocole SMTP (Simple Mail Transport Protocol), définissez la propriété <xref:System.Net.Mail.SmtpClient.EnableSsl> sur true avant d’envoyer l’e-mail.  
   
- La classe d' <xref:System.Net.Security.SslStream> fournit une abstraction flot\- basée sur SSL, et offre de nombreuses façons de configurer la négociation SSL.  
+ La classe <xref:System.Net.Security.SslStream> fournit une abstraction de flux de données pour le protocole SSL et offre de nombreuses façons de configurer la connexion SSL.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Code  
+### <a name="code"></a>Code  
   
 ```vb  
 Dim MyURI As String = "https://www.contoso.com/"  
@@ -64,12 +69,13 @@ request.Method = WebRequestMethods.Ftp.DeleteFile;
 FtpWebResponse response = (FtpWebResponse)request.GetResponse();  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Références à l'espace de noms de **System.Net** .  
+-   Références à l’espace de noms **System.Net**.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)   
  [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)   
  [Sélection et validation de certificats](../../../docs/framework/network-programming/certificate-selection-and-validation.md)
+

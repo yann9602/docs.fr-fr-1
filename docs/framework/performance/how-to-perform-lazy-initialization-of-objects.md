@@ -1,28 +1,33 @@
 ---
-title: "How to: Perform Lazy Initialization of Objects | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lazy initialization in .NET, how to perform"
+title: "Comment : effectuer une initialisation tardive d'objets"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- lazy initialization in .NET, how to perform
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
 caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ab1ae0eae8d78d4b7f14444e78ff5a741fe02d95
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# How to: Perform Lazy Initialization of Objects
-La classe <xref:System.Lazy%601?displayProperty=fullName> simplifie l'exécution de l'initialisation tardive et de l'instanciation d'objets.  En initialisant des objets de façon tardive, vous n'avez pas à les créer s'ils ne sont pas nécessaires et vous pouvez différer leur initialisation à leur première utilisation.  Pour plus d'informations, consultez [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md).  
+# <a name="how-to-perform-lazy-initialization-of-objects"></a>Comment : effectuer une initialisation tardive d'objets
+La classe <xref:System.Lazy%601?displayProperty=fullName> simplifie les opérations d’initialisation tardive et d’instanciation des objets. L’initialisation des objets de manière tardive vous évite d’avoir à créer inutilement des objets non nécessaires, ou vous permet de différer l’initialisation des objets jusqu’à ce qu’ils commencent à être utilisés. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
   
-## Exemple  
- L'exemple suivant indique comment initialiser une valeur avec <xref:System.Lazy%601>.  Supposez que la variable tardive ne soit pas exigée, en fonction d'un autre code qui définit la variable `someCondition` sur true ou false.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment initialiser une valeur avec <xref:System.Lazy%601>. Il suppose que la variable tardive peut ne pas être nécessaire, selon que la variable `someCondition` est définie sur true ou false dans un autre code.  
   
 ```vb  
 Dim someCondition As Boolean = False  
@@ -72,12 +77,12 @@ End Sub
 }  
 ```  
   
-## Exemple  
- L'exemple suivant indique comment utiliser la classe <xref:System.Threading.ThreadLocal%601?displayProperty=fullName> pour initialiser un type uniquement visible par l'instance d'objet active sur le thread actuel.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser la classe <xref:System.Threading.ThreadLocal%601?displayProperty=fullName> pour initialiser un type qui est visible uniquement pour l’instance d’objet qui est exécutée sur le thread actuel.  
   
- [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]
- [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
+ [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)] [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Threading.LazyInitializer?displayProperty=fullName>   
- [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md)
+ [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md)
+

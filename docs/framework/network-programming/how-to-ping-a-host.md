@@ -1,30 +1,35 @@
 ---
-title: "Proc&#233;dure&#160;: ex&#233;cution d’une requ&#234;te ping | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Ping"
+title: "Procédure : exécution d’une requête ping"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
 caps.latest.revision: 4
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 4
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 96ce0167b1e382759c2bef89bc5677df51c1271d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Proc&#233;dure&#160;: ex&#233;cution d’une requ&#234;te ping
-Cet exemple indique comment exécuter la commande PING sur un hôte distant.  
+# <a name="how-to-ping-a-host"></a>Procédure : exécution d’une requête ping
+Cet exemple montre comment exécuter une requête ping sur un hôte distant.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```  
 using System;  
@@ -130,7 +135,8 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 }  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Références à l'espace de noms de **System.Net** .
+-   Références à l’espace de noms **System.Net**.
+

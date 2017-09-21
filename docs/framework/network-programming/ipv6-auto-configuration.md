@@ -1,39 +1,45 @@
 ---
-title: "IPv6, configuration automatique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: IPv6, configuration automatique
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: c46d4b8f6b9e3620c313e9737b556a6050da0126
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# IPv6, configuration automatique
-Un rôle important de IPv6 est de prendre en charge la technologie Plug AND Play de nœud.  Autrement dit, il doit être possible de passer un nœud à un réseau IPv6 et de le faire configurer automatiquement sans aucune interaction humaine.  
+# <a name="ipv6-auto-configuration"></a>IPv6, configuration automatique
+Un objectif important du protocole IPv6 est de prendre en charge le Plug-and-Play des nœuds. Autrement dit, vous devez pouvoir connecter un nœud à un réseau IPv6 et obtenir sa configuration automatique sans intervention humaine.  
   
-## Type de configuration automatique  
- IPv6 prend en charge les types suivants de configuration automatique :  
+## <a name="type-of-auto-configuration"></a>Type de configuration automatique  
+ Le protocole IPv6 prend en charge les types de configuration automatique suivants :  
   
--   **Stateful auto\-configuration**.  Ce type de configuration requiert un certain niveau de l'interaction humaine car il a besoin d'un protocole DHCP du serveur de  IPv6 \(DHCPv6\) pour l'installation et la gestion des nœuds.  Le serveur DHCPv6 conserve une liste de nœuds auxquels il fournit des informations de configuration.  Il met également à jour les informations d'état ainsi le serveur sait le temps chaque adresse est en cours de utilisation, et lorsqu'elle peut être disponible pour la réassignation.  
+-   **Configuration automatique avec état**. Ce type de configuration nécessite un certain degré d’intervention humaine, car le protocole DHCP pour serveur IPv6 (DHCPv6) est nécessaire à l’installation et à l’administration des nœuds. Le serveur DHCPv6 conserve une liste des nœuds auxquels il fournit des informations de configuration. Elle gère également les informations d’état pour que le serveur connaisse la durée d’utilisation de chaque adresse et le moment auquel elles sont susceptibles d’être de nouveau disponibles en vue de leur réaffectation.  
   
--   **Stateless auto\-configuration**.  Ce type de configuration est appropriée pour les petites entreprise et des personnes.  Dans ce cas, chaque hôte détermine les adresses à partir de le contenu des annonces de routeur reçues.  À l'aide de la norme IEEE EUI\-64 pour définir la partie d'ID de réseau de l'adresse, il est judicieux d'en supposant que l'unicité de l'adresse de l'hôte sur le lien.  
+-   **Configuration automatique sans état**. Ce type de configuration convient aux particuliers et aux petites entreprises. Dans ce cas, chaque hôte détermine ses adresses à partir du contenu des annonces de routeur reçues. Si vous utilisez la norme IEEE EUI-64 pour définir la partie de l’adresse correspondant à l’ID réseau, il est très probable que l’adresse d’hôte de la liaison soit unique.  
   
- Indépendamment de la façon dont l'adresse est déterminée, le nœud doit vérifier que son adresse potentielle est unique au lien local.  Cela est fait en envoyant un message voisin de sollicitation à l'adresse potentielle.  Si le nœud reçoit une réponse, il sait que l'adresse est déjà utilisé et doit déterminer une autre adresse.  
+ Quelle que soit la manière dont l’adresse est déterminée, le nœud doit vérifier que son adresse potentielle est unique sur la liaison locale. Pour cela, un message de sollicitation de voisin est envoyé à l’adresse potentielle. Si le nœud reçoit une réponse, il sait que l’adresse est déjà utilisée et doit donc trouver une autre adresse.  
   
-## Mobilité de IPv6  
- La prolifération des appareils mobiles a introduit une nouvelle spécification : Un périphérique doit pouvoir modifier arbitrairement des emplacements sur Internet IPv6 et mettre à jour toujours les connexions existantes.  Pour fournir cette fonctionnalité, un nœud mobile est assigné une adresse personnelle à laquelle il peut toujours être atteint.  Lorsque le nœud est mobile d'accueil, il se connecte au lien d'accueil et utilise son adresse personnelle.  Lorsque le nœud mobile n'est pas domestique, un agent d'accueil, qui est généralement un routeur, des messages de entre suivre le nœud mobile et des nœuds avec lesquels il communique.  
+## <a name="ipv6-mobility"></a>Mobilité IPv6  
+ La prolifération des appareils mobiles a créé un nouveau besoin, qui est celui de pouvoir changer d’emplacement de manière arbitraire sur un réseau Internet IPv6 tout en maintenant les connexions existantes. Pour fournir cette fonctionnalité, un nœud mobile reçoit une adresse racine à laquelle il est toujours joignable. Lorsque le nœud mobile se trouve à la racine, il se connecte à la liaison racine et utilise son adresse racine. Lorsque le nœud mobile ne se trouve pas à la racine, un agent interne (généralement, un routeur) relaie les messages entre le nœud mobile et les nœuds avec lesquels il communique.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Protocole Internet version 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
  [Sockets](../../../docs/framework/network-programming/sockets.md)
+

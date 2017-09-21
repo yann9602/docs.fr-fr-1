@@ -1,31 +1,36 @@
 ---
-title: "Proc&#233;dure&#160;: d&#233;finition d’une strat&#233;gie de cache pour une demande | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "stratégies de cache de demande"
+title: "Procédure : définition d’une stratégie de cache pour une demande"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 4acef4b118422a8276260d083a5c31c41472eb68
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Proc&#233;dure&#160;: d&#233;finition d’une strat&#233;gie de cache pour une demande
-L'exemple suivant montre comment définir une stratégie de cache pour une requête.  L'entrée d'exemple est un URI par exemple http:\/\/www.contoso.com\/.  
+# <a name="how-to-set-cache-policy-for-a-request"></a>Procédure : définition d’une stratégie de cache pour une demande
+L’exemple suivant montre comment définir une stratégie de cache pour une demande. L’exemple d’entrée est un URI tel que http://www.contoso.com/.  
   
-## Exemple  
- L'exemple de code suivant crée une stratégie de cache qui permet la ressource demandée à l'utilisation du cache s'il n'était pas dans le cache pour plus de temps qu'un jour.  L'exemple affiche un message indiquant si la ressource a été utilisée de cache\- pour l'exemple, `"The response was retrieved from the cache : False."`— puis affiche la ressource.  Une requête peut être accomplie par tout cache entre le client et le serveur.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant crée une stratégie de cache qui autorise l’utilisation de la ressource demandée présente dans le cache si cette ressource ne se trouve pas dans le cache depuis plus d’un jour. L’exemple affiche un message qui indique si la ressource du cache a ou non été récupérée (par exemple, `"The response was retrieved from the cache : False."`), puis affiche la ressource. Une demande peut être traitée par n’importe quel cache entre le client et le serveur.  
   
 ```csharp  
 using System;  
@@ -110,12 +115,12 @@ Namespace Examples.System.Net.Cache
         End Sub  
     End Class  
 End Namespace  
-  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
  [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)   
  [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)   
  [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)   
- [\<requestCaching\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+

@@ -1,47 +1,52 @@
 ---
-title: "Specifying an Entry Point | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "EntryPoint field"
-  - "platform invoke, attribute fields"
-  - "attribute fields in platform invoke, EntryPoint"
+title: "Spécification d'un point d'entrée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- EntryPoint field
+- platform invoke, attribute fields
+- attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: f8d8f4a561248b7022b08ee15c9a726a58b80318
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Specifying an Entry Point
-Un point d'entrée identifie l'emplacement d'une fonction dans une DLL.  Dans un projet managé, le point d'entrée ordinal ou nominal d'origine d'une fonction cible identifie cette fonction sur les limites d'interopérabilité.  De plus, vous pouvez mapper le point d'entrée à un nom différent, en attribuant effectivement un nouveau nom à la fonction.  
+# <a name="specifying-an-entry-point"></a>Spécification d'un point d'entrée
+Un point d’entrée identifie l’emplacement d’une fonction dans une DLL. Dans un projet managé, le nom d’origine ou le point d’entrée ordinal d’une fonction cible identifie cette fonction dans les limites d’interopérabilité. De plus, vous pouvez mapper le point d’entrée à un autre nom pour renommer la fonction de façon plus appropriée.  
   
- La liste suivante récapitule les raisons pouvant être à l'origine de l'attribution d'un nouveau nom à une fonction DLL :  
+ Voici une liste de raisons possibles pour renommer une fonction DLL :  
   
--   pour éviter d'utiliser des noms de fonction API respectant la casse ;  
+-   Éviter d’utiliser des noms de fonction API respectant la casse.  
   
--   pour respecter des normes d'attribution de noms existantes ;  
+-   Utiliser un nom respectant les conventions de nommage actuelles.  
   
--   pour prendre en charge des fonctions acceptant des types de données différents \(en déclarant plusieurs versions de la même fonction DLL\) ;  
+-   Prendre en charge les fonctions qui acceptent différents types de données (en déclarant plusieurs versions de la même fonction DLL).  
   
--   pour simplifier l'utilisation d'interfaces API contenant des versions ANSI et Unicode.  
+-   Simplifier l’utilisation des API qui contiennent des versions ANSI et Unicode.  
   
- Cette rubrique indique comment renommer une fonction DLL dans du code managé.  
+ Cette rubrique montre comment renommer une fonction DLL dans du code managé.  
   
-## Attribution d'un nouveau nom à une fonction dans Visual Basic  
- Visual Basic utilise le mot clé **Function** dans l'instruction **Declare** pour définir le champ <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName>.  L'exemple suivant illustre une déclaration de base.  
+## <a name="renaming-a-function-in-visual-basic"></a>Renommer une fonction dans Visual Basic  
+ Visual Basic utilise le mot clé **Function** dans l’instruction **Declare** pour définir le champ <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName>. L’exemple suivant illustre une déclaration simple.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -53,7 +58,7 @@ Public Class Win32
 End Class  
 ```  
   
- Vous pouvez remplacer le point d'entrée **MessageBox** par **MsgBox** en incluant le mot clé **Alias** dans votre définition, comme le montre l'exemple suivant.  Dans les deux exemples, le mot clé **Auto** rend inutile la spécification de la version du jeu de caractères du point d'entrée.  Pour plus d'informations sur la sélection d'un jeu de caractères, consultez [Spécification d'un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md).  
+ Vous pouvez remplacer le point d’entrée **MessageBox** par **MsgBox** en incluant le mot clé **Alias** dans votre définition, comme dans l’exemple suivant. Dans les deux exemples, le mot clé **Auto** vous évite de devoir spécifier la version du jeu de caractères pour le point d’entrée. Pour plus d’informations sur la sélection d’un jeu de caractères, consultez [Spécification d’un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md).  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -65,17 +70,17 @@ Public Class Win32
 End Class  
 ```  
   
-## Attribution d'un nouveau nom à une fonction dans C\# et C\+\+  
- Vous pouvez utiliser le champ <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName> pour spécifier une fonction DLL par son nom ou son ordinal.  Si le nom de la fonction figurant dans la définition de votre méthode est le même que celui du point d'entrée dans la DLL, vous n'avez alors pas à identifier explicitement la fonction avec le champ **EntryPoint**.  Sinon, utilisez l'une des formes d'attribut suivantes pour indiquer un nom ou un ordinal :  
+## <a name="renaming-a-function-in-c-and-c"></a>Renommer une fonction dans C# et C++  
+ Vous pouvez utiliser le champ <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName> pour spécifier une fonction DLL à l’aide d’un nom ou d’un ordinal. Si le nom de la fonction dans votre définition de méthode est le même que le point d’entrée dans la DLL, vous n’avez pas besoin d’identifier explicitement la fonction à l’aide du champ **EntryPoint**. Sinon, utilisez l’une des formes d’attribut suivantes pour spécifier un nom ou un ordinal :  
   
 ```  
 [DllImport("dllname", EntryPoint="Functionname")]  
 [DllImport("dllname", EntryPoint="#123")]  
 ```  
   
- Notez que vous devez préfixer un ordinal avec le signe dièse \(\#\).  
+ Notez que vous devez ajouter le préfixe # (signe dièse) à un ordinal.  
   
- L'exemple suivant montre comment remplacer **MessageBoxA** par **MsgBox** dans votre code à l'aide du champ **EntryPoint**.  
+ L’exemple suivant montre comment remplacer **MessageBoxA** par **MsgBox** dans votre code à l’aide du champ **EntryPoint**.  
   
 ```csharp  
 using System.Runtime.InteropServices;  
@@ -85,7 +90,6 @@ public class Win32 {
     public static extern int MsgBox(int hWnd, String text, String caption,  
                                     uint type);  
 }  
-  
 ```  
   
 ```cpp  
@@ -99,8 +103,9 @@ extern "C" int MsgBox(HWND hWnd,
                       unsigned int uType);  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.InteropServices.DllImportAttribute>   
- [Creating Prototypes in Managed Code](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
- [Platform Invoke Examples](../../../docs/framework/interop/platform-invoke-examples.md)   
- [Marshaling Data with Platform Invoke](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+ [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
+ [Exemples d’appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)   
+ [Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+

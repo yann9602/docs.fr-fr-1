@@ -1,79 +1,85 @@
 ---
-title: "Strat&#233;gies de cache bas&#233;es sur la dur&#233;e | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "stratégies de cache basées sur la durée"
-  - "stratégie de date de synchronisation du cache"
-  - "cache (.NET Framework), stratégies à durée définie"
-  - "actualisation des ressources mises en cache"
-  - "temps, ressources mises en cache"
-  - "stratégie d’ancienneté maximale"
-  - "synchronisation, cache"
-  - "péremption des ressources mises en cache"
-  - "stratégie de cache basée sur la durée par défaut"
-  - "stratégie de péremption maximale"
-  - "stratégies de cache de contenu"
-  - "contenu obsolète"
-  - "stratégie d’actualisation minimale"
-  - "ancienneté des ressources mises en cache"
+title: "stratégies de cache basées sur la durée"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- time-based cache policies
+- cache synchronization date policy
+- cache [.NET Framework], time-based policies
+- freshness of cached resources
+- time, cached resources
+- maximum age policy
+- synchronization, cache
+- staleness of cached resources
+- default time-based cache policy
+- maximum staleness policy
+- content cache policies
+- expired content
+- minimum freshness policy
+- age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
 caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 2915139d6a3c46de06bd2bdb0cb12f95f611af3b
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Strat&#233;gies de cache bas&#233;es sur la dur&#233;e
-Une stratégie de cache basée sur l'heure définit l'actualisation des entrées mises en cache à l'aide de le moment où la ressource a été récupérée, les en\-têtes se sont retournés à la ressource, et l'heure actuelle.  En définissant une stratégie de cache basée sur l'heure, vous pouvez utiliser la stratégie basée sur l'heure d' <xref:System.Net.Cache.HttpRequestCacheLevel> ou créer une stratégie basée sur l'heure personnalisée.  Lors de l'utilisation de la stratégie basée sur l'heure par défaut pour les ressources obtenues à l'aide de le protocole HTTP \(HTTP\), le comportement exact du cache est déterminé par les en\-têtes inclus dans la réponse mise en cache et par les comportements spécifiés dans les sections 13 et 14 de la norme RFC 2616, disponible dans [http:\/\/www.ietf.org](http://www.ietf.org/).  Pour obtenir un exemple de code qui montre comment définir la stratégie basée sur l'heure par défaut pour les ressources HTTP, consultez [Comment : Définissez la stratégie de cache basée sur l'heure par défaut d'une application](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md).  Pour obtenir des exemples de code qui montrent comment créer et utiliser des stratégies de cache, consultez [configurer la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
+# <a name="time-based-cache-policies"></a>stratégies de cache basées sur la durée
+Une stratégie de cache basée sur la durée définit l’actualisation des entrées en cache en fonction de l’heure de récupération de la ressource, des en-têtes retournés avec la ressource et de l’heure actuelle. Quand vous définissez une stratégie de cache basée sur la durée, vous pouvez utiliser la stratégie basée sur la durée <xref:System.Net.Cache.HttpRequestCacheLevel.Default> ou créer une stratégie basée sur la durée personnalisée. Si vous utilisez la stratégie basée sur la durée par défaut pour les ressources obtenues à l’aide du protocole HTTP (Hypertext Transfer Protocol), le comportement du cache est précisé par les en-têtes inclus dans la réponse en cache et par les comportements spécifiés dans les sections 13 et 14 de la norme RFC 2616, disponible à l’adresse [http://www.ietf.org](http://www.ietf.org/). Pour obtenir un exemple de code qui montre comment définir la stratégie basée sur la durée par défaut pour les ressources HTTP, consultez [Guide pratique pour définir la stratégie de cache basée sur la durée par défaut pour une application](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Pour obtenir des exemples de code qui montrent comment créer et utiliser des stratégies de cache, consultez [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
   
-## Critères pour déterminer l'actualisation des entrées mises en cache  
- Pour personnaliser une stratégie de cache basée sur l'heure, vous pouvez spécifier qu'un ou plusieurs des critères suivants sont utilisés pour déterminer l'actualisation des entrées mises en cache :  
+## <a name="criteria-to-determine-freshness-of-cached-entries"></a>Critères déterminant l’actualisation des entrées en cache  
+ Pour personnaliser une stratégie de cache basée sur la durée, vous pouvez spécifier un ou plusieurs des critères suivants qui déterminent l’actualisation des entrées en cache :  
   
--   Âge maximal  
+-   Ancienneté maximale  
   
--   Péremption maximale  
+-   Obsolescence maximale  
   
--   Nouveauté minimale  
+-   Actualisation minimale  
   
--   Date de synchronisation de cache  
+-   Date de synchronisation du cache  
   
 > [!NOTE]
->  Utilisation de la stratégie de cache basée sur l'heure par défaut ne doit pas être confondu avec définir une stratégie de cache par défaut pour votre application.  La stratégie basée sur l'heure par défaut est une stratégie spécifique qui peut être utilisée sur la requête ou de niveau application.  La stratégie de cache par défaut de votre application est une stratégie \(géolocalisée ou basée sur l'heure\) qui entre en vigueur lorsque aucune stratégie n'est définie sur une requête.  Pour plus d'informations sur définir une stratégie de cache par défaut pour votre application, consultez l' <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
+>  Utiliser la stratégie de cache basée sur la durée par défaut n’équivaut pas à définir une stratégie de cache par défaut pour votre application. La stratégie basée sur la durée par défaut est une stratégie spécifique qui peut être utilisée au niveau de la requête ou de l’application. La stratégie de cache par défaut pour votre application est une stratégie (basée sur l’emplacement ou sur la durée) qui est appliquée quand aucune stratégie n’est définie au niveau d’une requête. Pour plus d’informations sur la définition d’une stratégie de cache par défaut pour votre application, consultez <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
   
-### Âge maximal  
- Le critère maximale de stratégie d'âge spécifie la durée qu'une copie mise en cache d'une ressource peut être utilisée.  Si la copie mise en cache de la ressource est antérieure à la durée spécifiée, la ressource doit être revalidée en vérifiant par rapport à le contenu sur le serveur.  Si l'âge maximal permet la ressource à utiliser une fois qu'elle expire, ce des critères n'est pas honorées à moins qu'une valeur maximale de péremption soit également spécifiée.  
+### <a name="maximum-age"></a>Ancienneté maximale  
+ Le critère de stratégie d’ancienneté maximale spécifie la durée pendant laquelle une copie en cache d’une ressource peut être utilisée. Si la copie en cache de la ressource est plus ancienne que la durée spécifiée, la ressource doit être revalidée en la vérifiant par rapport au contenu sur le serveur. Si l’ancienneté maximale permet l’utilisation de la ressource après son expiration, ce critère n’est pas appliqué, sauf si une valeur d’obsolescence maximale est également spécifiée.  
   
-### Péremption maximale  
- Le critère maximale de stratégie de péremption spécifie la durée après expiration de contenu que la copie mise en cache de la ressource peut être utilisée.  C'est le seul critère de stratégie de cache qui permet aux ressources d'être utilisées après leur expiré.  
+### <a name="maximum-staleness"></a>Obsolescence maximale  
+ Le critère de stratégie d’obsolescence maximale spécifie la durée pendant laquelle la copie en cache de la ressource peut continuer à être utilisée après l’expiration du contenu. C’est le seul critère de stratégie de cache qui autorise l’utilisation d’une ressource après son expiration.  
   
-### Nouveauté minimale  
- Le critère minimum de stratégie de développement spécifie la durée avant l'expiration de contenu que la copie mise en cache de la ressource peut être utilisée.  Cette stratégie a pour effet de ce expirer une entrée de cache avant sa date d'expiration ; par conséquent, la modification avec rupture et les paramètres minimum de péremption de maximum s'excluent mutuellement.  
+### <a name="minimum-freshness"></a>Actualisation minimale  
+ Le critère de stratégie d’actualisation minimale spécifie la durée pendant laquelle la copie en cache de la ressource peut être utilisée avant l’expiration du contenu. Avec cette stratégie, une entrée en cache devient obsolète avant même sa date d’expiration. Les paramètres d’actualisation minimale et d’obsolescence maximale s’excluent donc mutuellement.  
   
-## Date de synchronisation de cache  
- Le critère de stratégie de synchronisation de cache détermine si une copie mise en cache d'une ressource doit être revalidée en vérifiant par rapport à le contenu sur le serveur.  Si le contenu a été modifié depuis que l'élément a été mis en cache, il est récupéré du serveur, stocké dans le cache, et retourné à l'application.  Si le contenu n'a pas changé, l'horodatage est mis à jour et l'application obtient le contenu mis en cache.  
+## <a name="cache-synchronization-date"></a>Date de synchronisation du cache  
+ Le critère de stratégie de date de synchronisation du cache détermine à quel moment une copie en cache d’une ressource doit être revalidée en la vérifiant par rapport au contenu sur le serveur. Si le contenu a été modifié depuis la mise en cache de l’élément, le nouveau contenu est récupéré du serveur, stocké dans le cache et retourné à l’application. Si le contenu n’a pas été modifié, son timestamp est mis à jour et l’application récupère le contenu en cache.  
   
- La date de synchronisation du cache vous permet de spécifier une date absolue lorsque le contenu mis en cache doit être revalidé.  Si une nouvelle entrée de cache était en dernier revalidée avant la date de synchronisation de cache, la revalidation avec le serveur se produit toujours.  Si l'entrée de cache était revalidée après la date de synchronisation de cache et il ne soient pas de spécification supplémentaire de la revalidation de développement ou serveur qui invalident l'entrée mise en cache, l'entrée de cache est utilisée.  Si la date de synchronisation du cache a pour valeur une date future, l'entrée est revalidée chaque fois qu'elle est demandée, jusqu'à ce que la date de synchronisation du cache soit passée.  
+ La date de synchronisation du cache vous permet de spécifier une date fixe à laquelle le contenu en cache doit être revalidé. Si une entrée en cache actualisée a été revalidée avant la date de synchronisation du cache, une nouvelle revalidation auprès du serveur est effectuée. Si l’entrée en cache a été revalidée après la date de synchronisation du cache et qu’aucune autre exigence d’actualisation ou de revalidation auprès du serveur n’invalide l’entrée en cache, l’entrée en cache actuelle est utilisée. Si la date de synchronisation du cache est définie à une date ultérieure, l’entrée est revalidée à chaque nouvelle requête jusqu’à ce que la date de synchronisation du cache soit atteinte.  
   
- Les rubriques suivantes fournissent des informations sur les effets de combiner des critères temporels de stratégie de cache :  
+ Les rubriques suivantes fournissent des informations sur les effets de la combinaison de plusieurs critères d’une stratégie de cache basée sur la durée :  
   
--   [Interaction de la stratégie de cache : ancienneté maximale et péremption maximale](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-maximum-staleness.md)  
+-   [Interaction de la stratégie de cache : ancienneté maximale et obsolescence maximale](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-maximum-staleness.md)  
   
 -   [Interaction de la stratégie de cache : ancienneté maximale et actualisation minimale](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
  [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)   
  [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)   
  [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)   
- [\<requestCaching\>, élément \(paramètres réseau\)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+

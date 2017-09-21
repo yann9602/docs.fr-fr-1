@@ -1,32 +1,40 @@
 ---
-title: Commande dotnet-clean - Interface CLI .NET Core
-description: "La commande dotnet-clean nettoie le répertoire actif."
-keywords: "dotnet-clean, CLI, commande CLI, .NET Core"
-author: blackdwarf
+title: Commande dotnet clean - Interface CLI .NET Core
+description: "La commande dotnet clean nettoie le répertoire actif."
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: eff65fa1-bab4-4421-8260-d0a284b690b2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 10222781d5bff596d1b7883bc73097758e878235
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 4836f07ec1a8b59c343b4d0181587e602f61d45e
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
-
 # <a name="dotnet-clean"></a>dotnet-clean
+
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
-`dotnet-clean` : Nettoie la sortie d’un projet. 
+`dotnet clean` : Nettoie la sortie d’un projet.
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet clean [<PROJECT>] [-o|--output] [-f|--framework] [-c|--configuration] [-v|--verbosity] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+```
+dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
+dotnet clean [-h|--help]
+```
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+```
+dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-v|--verbosity]
+dotnet clean [-h|--help]
+```
+---
 
 ## <a name="description"></a>Description
 
@@ -40,25 +48,55 @@ Le projet MSBuild à nettoyer. Si vous ne spécifiez pas de fichier projet, MSBu
 
 ## <a name="options"></a>Options
 
-`-h|--help`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-Affiche une aide brève pour la commande.
+`-c|--configuration {Debug|Release}`
 
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Répertoire dans lequel les sorties générées sont placées. Spécifiez le commutateur `-f|--framework <FRAMEWORK>` avec le commutateur de répertoire de sortie si vous avez spécifié le framework lorsque le projet a été généré.
+Définit la configuration de build. La valeur par défaut est `Debug`. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
 
 `-f|--framework <FRAMEWORK>`
 
 Le [framework](../../standard/frameworks.md) spécifié au moment de la génération. Le framework doit être défini dans le [fichier projet](csproj.md). Si vous avez spécifié le framework au moment de la génération, vous devez spécifier le framework lors du nettoyage.
 
-`-c|--configuration <CONFIGURATION>`
+`-h|--help`
 
-Définit la configuration. Si aucune valeur n’est spécifiée, la valeur utilisée par défaut est `Debug`. Cette propriété est uniquement requise lors du nettoyage si vous l’avez spécifiée lors de la génération.
+Affiche une aide élémentaire de la commande.
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+Répertoire dans lequel les sorties générées sont placées. Spécifiez le commutateur `-f|--framework <FRAMEWORK>` avec le commutateur de répertoire de sortie si vous avez spécifié le framework lorsque le projet a été généré.
+
+`-r|--runtime <RUNTIME_IDENTIFIER>`
+
+Nettoie le dossier de sortie du runtime spécifié. Cette option est utilisée à la création d’un [déploiement autonome](../deploying/index.md#self-contained-deployments-scd).
 
 `-v|--verbosity <LEVEL>`
 
 Définit le niveau de détail de la commande. Niveaux autorisés : q[uiet], m[inimal], n[ormal], d[etailed] et diag[nostic].
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`-c|--configuration {Debug|Release}`
+
+Définit la configuration de build. La valeur par défaut est `Debug`. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
+
+`-f|--framework <FRAMEWORK>`
+
+Le [framework](../../standard/frameworks.md) spécifié au moment de la génération. Le framework doit être défini dans le [fichier projet](csproj.md). Si vous avez spécifié le framework au moment de la génération, vous devez spécifier le framework lors du nettoyage.
+
+`-h|--help`
+
+Affiche une aide élémentaire de la commande.
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+Répertoire dans lequel les sorties générées sont placées. Spécifiez le commutateur `-f|--framework <FRAMEWORK>` avec le commutateur de répertoire de sortie si vous avez spécifié le framework lorsque le projet a été généré.
+
+`-v|--verbosity <LEVEL>`
+
+Définit le niveau de détail de la commande. Niveaux autorisés : q[uiet], m[inimal], n[ormal], d[etailed] et diag[nostic].
+
+---
 
 ## <a name="examples"></a>Exemples
 

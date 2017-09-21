@@ -1,30 +1,35 @@
 ---
-title: "Exemple de socket serveur synchrone | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sockets serveur synchrones"
-  - "sockets, exemples de code"
-  - "sockets, sockets serveur synchrones"
+title: Exemple de socket serveur synchrone
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- synchronous server sockets
+- sockets, code examples
+- sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
 caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6918042ac04a24f646ce8fd10a86d64c2aa4fd39
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Exemple de socket serveur synchrone
-Le programme d'exemple suivant crée un serveur qui accepte les demandes de connexion du client.  Le serveur est généré avec un socket synchrone, l'exécution de l'application serveur est interrompue pendant qu'elle attend une connexion d'un client.  L'application reçoit une chaîne du client, affiche la chaîne sur la console, puis répercute la chaîne au client.  La chaîne du client doit contenir la chaîne « \<EOF\> » pour signaler la fin de le message.  
+# <a name="synchronous-server-socket-example"></a>Exemple de socket serveur synchrone
+L’exemple de programme suivant crée un serveur qui reçoit des demandes de connexion de clients. Le serveur est créé avec un socket synchrone. L’exécution de l’application serveur est donc suspendue jusqu’à la réception d’une connexion à partir d’un client. L’application reçoit une chaîne du client, affiche la chaîne sur la console, puis renvoie la chaîne de réponse au client. La chaîne reçue du client doit contenir la chaîne « \<EOF> » qui indique la fin du message.  
   
 ```vb  
 Imports System  
@@ -86,7 +91,6 @@ Public Class SynchronousSocketListener
     End Sub  
   
 End Class 'SynchronousSocketListener  
-  
 ```  
   
 ```csharp  
@@ -165,7 +169,8 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Exemple de socket client synchrone](../../../docs/framework/network-programming/synchronous-client-socket-example.md)   
  [Utilisation d’un socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
  [Exemples de code de socket](../../../docs/framework/network-programming/socket-code-examples.md)
+

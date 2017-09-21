@@ -1,50 +1,55 @@
 ---
-title: "SQL Server Programming and Host Protection Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "SQL Server [.NET Framework]"
-  - "permission sets, SQL Server"
-  - "SQL Server Programming and Host Protection Attributes"
-  - "managed code, SQL Server"
-  - "reliability [.NET Framework]"
-  - "writing reliable code"
-  - "hosts, reliability"
-  - "host protection attributes"
-  - "HostProtectionAttribute class, reliability"
+title: "Attributs de programmation et de protection des hôtes SQL Server"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- SQL Server [.NET Framework]
+- permission sets, SQL Server
+- SQL Server Programming and Host Protection Attributes
+- managed code, SQL Server
+- reliability [.NET Framework]
+- writing reliable code
+- hosts, reliability
+- host protection attributes
+- HostProtectionAttribute class, reliability
 ms.assetid: 7dfa36b4-e773-4c75-a3ff-ff1af3ce4c4f
 caps.latest.revision: 13
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 13
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 3181237540bd7379fd25c8b58c0f2c6f188148ea
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# SQL Server Programming and Host Protection Attributes
-Pour charger et exécuter du code managé dans un hôte SQL Server, les exigences de l'hôte en termes de sécurité d'accès du code et de protection de ses ressources doivent être satisfaites.  Les exigences en matière de sécurité d'accès du code sont spécifiées par l'un de trois jeux d'autorisations SQL Server : SAFE, EXTERNAL\-ACCESS ou UNSAFE.  Le code exécuté dans les jeux d'autorisations SAFE ou EXTERNAL\-ACCESS doit éviter certains types ou membres dont l'attribut <xref:System.Security.Permissions.HostProtectionAttribute> est appliqué.  <xref:System.Security.Permissions.HostProtectionAttribute> n'est pas tant une autorisation de sécurité qu'une garantie de fiabilité en cela qu'il identifie des constructions de code spécifiques, à savoir des types ou des méthodes, que l'hôte peut rejeter.  L'utilisation de <xref:System.Security.Permissions.HostProtectionAttribute> applique un modèle de programmation qui contribue à protéger la stabilité de l'hôte.  
+# <a name="sql-server-programming-and-host-protection-attributes"></a>Attributs de programmation et de protection des hôtes SQL Server
+Pouvoir charger et exécuter du code managé sur un hôte SQL Server nécessite de remplir les exigences de l’hôte en matière de sécurité d’accès du code et de protection des ressources de l’hôte.  Les exigences pour la sécurité d’accès du code sont spécifiées par l’un des trois jeux d’autorisations SQL Server : SAFE, EXTERNAL-ACCESS ou UNSAFE. Le code exécuté dans les jeux d’autorisations SAFE ou EXTERNAL-ACCESS doit éviter certains types ou membres dont l’attribut <xref:System.Security.Permissions.HostProtectionAttribute> est appliqué. <xref:System.Security.Permissions.HostProtectionAttribute> n’est pas tant une autorisation de sécurité qu’une garantie de fiabilité, car il identifie des constructions de code spécifiques, à savoir des types ou des méthodes, que l’hôte peut interdire.  L’utilisation de l’attribut <xref:System.Security.Permissions.HostProtectionAttribute> permet d’appliquer un modèle de programmation qui contribue à améliorer la stabilité de l’hôte.  
   
-## Attributs de protection de l'hôte  
- Les attributs de protection de l'hôte identifient des types ou des membres qui ne sont pas adaptés au modèle de programmation hôte et représentent les niveaux croissants suivants de menace en termes de fiabilité :  
+## <a name="host-protection-attributes"></a>Attributs de protection de l’hôte  
+ Les attributs de protection de l’hôte identifient les types ou les membres qui ne sont pas adaptés au modèle de programmation de l’hôte et représentent les niveaux croissants suivants de menace pour la fiabilité :  
   
 -   Sans gravité par ailleurs.  
   
--   Susceptible de déstabiliser le code utilisateur géré par le serveur.  
+-   Risque d’instabilité du code utilisateur managé par le serveur.  
   
--   Susceptible de déstabiliser le processus serveur lui\-même.  
+-   Risque d’instabilité du processus serveur lui-même.  
   
- SQL Server rejette l'utilisation d'un type ou d'un membre qui a un <xref:System.Security.Permissions.HostProtectionAttribute> qui spécifie une valeur <xref:System.Security.Permissions.HostProtectionResource> de <xref:System.Security.Permissions.HostProtectionResource>, <xref:System.Security.Permissions.HostProtectionResource>, <xref:System.Security.Permissions.HostProtectionResource> ou <xref:System.Security.Permissions.HostProtectionResource>.  Cela empêche les assemblys d'appeler des membres qui activent l'état de partage, exécutent la synchronisation, peuvent entraîner une fuite de ressources ou affectent l'intégrité du processus SQL Server.  
+ SQL Server n’autorise pas l’utilisation d’un type ou d’un membre dont l’attribut <xref:System.Security.Permissions.HostProtectionAttribute> spécifie une valeur <xref:System.Security.Permissions.HostProtectionResource> égale à <xref:System.Security.Permissions.HostProtectionResource.SharedState>, <xref:System.Security.Permissions.HostProtectionResource.Synchronization>, <xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort> ou <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt>. Cela empêche les assemblys d’appeler des membres qui activent l’état de partage, effectuent la synchronisation, peuvent entraîner une fuite de ressource à l’arrêt ou affectent l’intégrité du processus SQL Server.  
   
-### Types et membres rejetés  
- Le tableau suivant identifie les types et les membres dont les valeurs <xref:System.Security.Permissions.HostProtectionResource> sont rejetées par SQL Server.  
+### <a name="disallowed-types-and-members"></a>Types et membres non autorisés  
+ Le tableau suivant identifie les types et les membres dont les valeurs <xref:System.Security.Permissions.HostProtectionResource> ne sont pas autorisées par SQL Server.  
   
 |Espace de noms|Type ou membre|  
-|--------------------|--------------------|  
+|---------------|--------------------|  
 |`Microsoft.Win32`|Classe <xref:Microsoft.Win32.PowerModeChangedEventArgs><br /><br /> Délégué <xref:Microsoft.Win32.PowerModeChangedEventHandler><br /><br /> Classe <xref:Microsoft.Win32.SessionEndedEventArgs><br /><br /> Délégué <xref:Microsoft.Win32.SessionEndedEventHandler><br /><br /> Classe <xref:Microsoft.Win32.SessionEndingEventArgs><br /><br /> Délégué <xref:Microsoft.Win32.SessionEndingEventHandler><br /><br /> Classe <xref:Microsoft.Win32.SessionSwitchEventArgs><br /><br /> Délégué <xref:Microsoft.Win32.SessionSwitchEventHandler><br /><br /> Classe <xref:Microsoft.Win32.SystemEvents><br /><br /> Classe <xref:Microsoft.Win32.TimerElapsedEventArgs><br /><br /> Délégué <xref:Microsoft.Win32.TimerElapsedEventHandler><br /><br /> Classe <xref:Microsoft.Win32.UserPreferenceChangedEventArgs><br /><br /> Classe <xref:Microsoft.Win32.UserPreferenceChangingEventArgs>|  
 |`System.Collections`|Méthode <xref:System.Collections.ArrayList.Synchronized%2A?displayProperty=fullName><br /><br /> Méthode <xref:System.Collections.Hashtable.Synchronized%2A?displayProperty=fullName><br /><br /> Méthode <xref:System.Collections.Queue.Synchronized%2A?displayProperty=fullName><br /><br /> Méthode <xref:System.Collections.SortedList.Synchronized%2A?displayProperty=fullName><br /><br /> Méthode <xref:System.Collections.Stack.Synchronized%2A?displayProperty=fullName>|  
 |`System.ComponentModel`|Classe <xref:System.ComponentModel.AddingNewEventArgs><br /><br /> Délégué <xref:System.ComponentModel.AddingNewEventHandler><br /><br /> Classe <xref:System.ComponentModel.ArrayConverter><br /><br /> Classe <xref:System.ComponentModel.AsyncCompletedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.AsyncCompletedEventHandler><br /><br /> Classe <xref:System.ComponentModel.AsyncOperation><br /><br /> Classe <xref:System.ComponentModel.AsyncOperationManager><br /><br /> Classe <xref:System.ComponentModel.AttributeCollection><br /><br /> Classe <xref:System.ComponentModel.BackgroundWorker><br /><br /> Classe <xref:System.ComponentModel.BaseNumberConverter><br /><br /> Classe <xref:System.ComponentModel.BindingList%601><br /><br /> Classe <xref:System.ComponentModel.BooleanConverter><br /><br /> Classe <xref:System.ComponentModel.ByteConverter><br /><br /> Classe <xref:System.ComponentModel.CancelEventArgs><br /><br /> Délégué <xref:System.ComponentModel.CancelEventHandler><br /><br /> Classe <xref:System.ComponentModel.CharConverter><br /><br /> Classe <xref:System.ComponentModel.CollectionChangeEventArgs><br /><br /> Délégué <xref:System.ComponentModel.CollectionChangeEventHandler><br /><br /> Classe <xref:System.ComponentModel.CollectionConverter><br /><br /> Classe <xref:System.ComponentModel.ComponentCollection><br /><br /> Classe <xref:System.ComponentModel.ComponentConverter><br /><br /> Classe <xref:System.ComponentModel.ComponentEditor><br /><br /> Classe <xref:System.ComponentModel.ComponentResourceManager><br /><br /> Classe <xref:System.ComponentModel.Container><br /><br /> Classe <xref:System.ComponentModel.ContainerFilterService><br /><br /> Classe <xref:System.ComponentModel.CultureInfoConverter><br /><br /> Classe <xref:System.ComponentModel.CustomTypeDescriptor><br /><br /> Classe <xref:System.ComponentModel.DateTimeConverter><br /><br /> Classe <xref:System.ComponentModel.DecimalConverter><br /><br /> Classe <xref:System.ComponentModel.Design.ActiveDesignerEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.ActiveDesignerEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.CheckoutException><br /><br /> Classe <xref:System.ComponentModel.Design.CommandID><br /><br /> Classe <xref:System.ComponentModel.Design.ComponentChangedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.ComponentChangedEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.ComponentChangingEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.ComponentChangingEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.ComponentEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.ComponentEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.ComponentRenameEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.ComponentRenameEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerCollection><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.DesignerEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerOptionService><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerTransaction><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerTransactionCloseEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.DesignerTransactionCloseEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerVerb><br /><br /> Classe <xref:System.ComponentModel.Design.DesignerVerbCollection><br /><br /> Classe <xref:System.ComponentModel.Design.DesigntimeLicenseContext><br /><br /> Classe <xref:System.ComponentModel.Design.DesigntimeLicenseContextSerializer><br /><br /> Classe <xref:System.ComponentModel.Design.MenuCommand><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.ContextStack><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.DesignerLoader><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.InstanceDescriptor><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.MemberRelationshipService><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.ResolveNameEventArgs><br /><br /> Délégué <xref:System.ComponentModel.Design.Serialization.ResolveNameEventHandler><br /><br /> Classe <xref:System.ComponentModel.Design.Serialization.SerializationStore><br /><br /> Classe <xref:System.ComponentModel.Design.ServiceContainer><br /><br /> Délégué <xref:System.ComponentModel.Design.ServiceCreatorCallback><br /><br /> Classe <xref:System.ComponentModel.Design.StandardCommands><br /><br /> Classe <xref:System.ComponentModel.Design.StandardToolWindows><br /><br /> Classe <xref:System.ComponentModel.DoubleConverter><br /><br /> Classe <xref:System.ComponentModel.DoWorkEventArgs><br /><br /> Délégué <xref:System.ComponentModel.DoWorkEventHandler><br /><br /> Classe <xref:System.ComponentModel.EnumConverter><br /><br /> Classe <xref:System.ComponentModel.EventDescriptor><br /><br /> Classe <xref:System.ComponentModel.EventDescriptorCollection><br /><br /> Classe <xref:System.ComponentModel.EventHandlerList><br /><br /> Classe <xref:System.ComponentModel.ExpandableObjectConverter><br /><br /> Classe <xref:System.ComponentModel.HandledEventArgs><br /><br /> Délégué <xref:System.ComponentModel.HandledEventHandler><br /><br /> Classe <xref:System.ComponentModel.InstanceCreationEditor><br /><br /> Classe <xref:System.ComponentModel.Int16Converter><br /><br /> Classe <xref:System.ComponentModel.Int32Converter><br /><br /> Classe <xref:System.ComponentModel.Int64Converter><br /><br /> Classe <xref:System.ComponentModel.InvalidAsynchronousStateException><br /><br /> Classe <xref:System.ComponentModel.InvalidEnumArgumentException><br /><br /> Méthode <xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A><br /><br /> Classe <xref:System.ComponentModel.License><br /><br /> Classe <xref:System.ComponentModel.LicenseContext><br /><br /> Classe <xref:System.ComponentModel.LicenseException><br /><br /> Classe <xref:System.ComponentModel.LicenseManager><br /><br /> Classe <xref:System.ComponentModel.LicenseProvider><br /><br /> Classe <xref:System.ComponentModel.LicFileLicenseProvider><br /><br /> Classe <xref:System.ComponentModel.ListChangedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.ListChangedEventHandler><br /><br /> Classe <xref:System.ComponentModel.ListSortDescription><br /><br /> Classe <xref:System.ComponentModel.ListSortDescriptionCollection><br /><br /> Classe <xref:System.ComponentModel.MaskedTextProvider><br /><br /> Classe <xref:System.ComponentModel.MemberDescriptor><br /><br /> Classe <xref:System.ComponentModel.MultilineStringConverter><br /><br /> Classe <xref:System.ComponentModel.NestedContainer><br /><br /> Classe <xref:System.ComponentModel.NullableConverter><br /><br /> Classe <xref:System.ComponentModel.ProgressChangedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.ProgressChangedEventHandler><br /><br /> Classe <xref:System.ComponentModel.PropertyChangedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.PropertyChangedEventHandler><br /><br /> Classe <xref:System.ComponentModel.PropertyDescriptor><br /><br /> Classe <xref:System.ComponentModel.PropertyDescriptorCollection><br /><br /> Classe <xref:System.ComponentModel.ReferenceConverter><br /><br /> Classe <xref:System.ComponentModel.RefreshEventArgs><br /><br /> Délégué <xref:System.ComponentModel.RefreshEventHandler><br /><br /> Classe <xref:System.ComponentModel.RunWorkerCompletedEventArgs><br /><br /> Délégué <xref:System.ComponentModel.RunWorkerCompletedEventHandler><br /><br /> Classe <xref:System.ComponentModel.SByteConverter><br /><br /> Classe <xref:System.ComponentModel.SingleConverter><br /><br /> Classe <xref:System.ComponentModel.StringConverter><br /><br /> Classe <xref:System.ComponentModel.SyntaxCheck><br /><br /> Classe <xref:System.ComponentModel.TimeSpanConverter><br /><br /> Classe <xref:System.ComponentModel.TypeConverter><br /><br /> Classe <xref:System.ComponentModel.TypeDescriptionProvider><br /><br /> Classe <xref:System.ComponentModel.TypeDescriptor><br /><br /> Classe <xref:System.ComponentModel.TypeListConverter><br /><br /> Classe <xref:System.ComponentModel.UInt16Converter><br /><br /> Classe <xref:System.ComponentModel.UInt32Converter><br /><br /> Classe <xref:System.ComponentModel.UInt64Converter><br /><br /> Classe <xref:System.ComponentModel.WarningException><br /><br /> Classe <xref:System.ComponentModel.Win32Exception>|  
@@ -57,29 +62,30 @@ Pour charger et exécuter du code managé dans un hôte SQL Server, les exigence
 |`System.Web.Configuration`|Classe <xref:System.Web.Configuration.MachineKeyValidationConverter>|  
 |`System.Windows.Forms`|Propriété <xref:System.Windows.Forms.AutoCompleteStringCollection.SyncRoot%2A?displayProperty=fullName>|  
   
-## Jeux d'autorisations SQL Server  
- SQL Server permet aux utilisateurs de spécifier les exigences de fiabilité du code déployé dans une base de données.  Lorsque les assemblys sont téléchargés dans la base de données, l'auteur de l'assembly peut spécifier l'un de trois jeux d'autorisations suivants pour cet assembly : SAFE, EXTERNAL\-ACCESS ou UNSAFE.  
+## <a name="sql-server-permission-sets"></a>Jeux d’autorisations SQL Server  
+ SQL Server permet aux utilisateurs de spécifier les exigences de fiabilité du code déployé dans une base de données. Quand des assemblys sont chargés dans la base de données, l’auteur de l’assembly peut spécifier l’un des trois jeux d’autorisations pour cet assembly : SAFE, EXTERNAL-ACCESS ou UNSAFE.  
   
-|Jeu d'autorisations|SAFE|EXTERNAL\-ACCESS|UNSAFE|  
-|-------------------------|----------|----------------------|------------|  
-|Sécurité d'accès du code|Exécution uniquement|Exécution \+ accès à des ressources externes|Non restreint|  
+|Jeu d’autorisations|SAFE|EXTERNAL-ACCESS|UNSAFE|  
+|--------------------|----------|----------------------|------------|  
+|Sécurité d'accès du code|Exécution uniquement|Exécution + accès aux ressources externes|Non restreint|  
 |Restrictions du modèle de programmation|Oui|Oui|Aucune restriction|  
-|Configuration requise pour la vérification|Oui|Oui|Non|  
-|Possibilité d'appeler du code natif|Non|Non|Oui|  
+|Vérifiabilité requise|Oui|Oui|Non|  
+|Possibilité d’appeler du code natif|Non|Non|Oui|  
   
- SAFE est le mode le plus fiable et sécurisé avec des restrictions associées quant au modèle de programmation autorisé.  Le code SAFE possède des fonctionnalités de fiabilité et de sécurité élevées.  Les assemblys SAFE bénéficient d'autorisations suffisantes pour s'exécuter, effectuer des calculs et avoir accès à la base de données locale.  Les assemblys SAFE doivent être de type sécurisé vérifié et ne sont pas autorisés à appeler du code non managé.  
+ SAFE est le mode le plus fiable et le plus sécurisé avec des restrictions associées quant au modèle de programmation autorisé. Le code SAFE présente des fonctionnalités de sécurité et de fiabilité élevées. Les assemblys SAFE ont des autorisations suffisantes pour s’exécuter, effectuer des calculs et accéder à la base de données locale. Les assemblys SAFE doivent être de type sécurisé vérifié et ne sont pas autorisés à appeler du code non managé.  
   
- EXTERNAL\-ACCESS fournit une option de sécurité intermédiaire. Il permet au code d'accéder à des ressources externes à la base de données, mais possède néanmoins la fiabilité et la sécurité de SAFE.  
+ EXTERNAL-ACCESS fournit une option de sécurité intermédiaire. Il permet au code d’accéder à des ressources externes à la base de données, tout en offrant la fiabilité et la sécurité de SAFE.  
   
- UNSAFE est réservé à du code de confiance élevée qui peut être créé uniquement par les administrateurs de base de données.  Ce code de confiance n'a pas de restrictions d'accès du code et peut appeler du code non managé \(natif\).  
+ UNSAFE est réservé au code entièrement fiable qui peut être créé uniquement par les administrateurs de base de données. Ce code entièrement fiable n’a pas de restrictions d’accès du code et peut appeler du code non managé (natif).  
   
- SQL Server utilise la couche de stratégie de sécurité d'accès du code de niveau hôte pour définir une stratégie hôte qui accorde l'un des trois jeux d'autorisations en fonction du jeu d'autorisations stocké dans les catalogues SQL Server.  Le code managé exécuté à l'intérieur de la base de données obtient toujours l'un de ces jeux d'autorisations d'accès du code.  
+ SQL Server utilise la couche de stratégie de sécurité d’accès du code au niveau de l’hôte pour définir une stratégie d’hébergement qui accorde l’un des trois jeux d’autorisations en fonction du jeu d’autorisations stocké dans les catalogues SQL Server. Le code managé exécuté dans la base de données obtient toujours l’un de ces jeux d’autorisations d’accès du code.  
   
-## Restrictions du modèle de programmation  
- Le modèle de programmation du code managé dans SQL Server exige des fonctions, des procédures et des types qui ne nécessitent pas l'utilisation d'un état maintenu d'un appel à un autre ou le partage de l'état sur plusieurs sessions utilisateur.  Par ailleurs, comme décrit précédemment, la présence d'un état partagé peut provoquer des exceptions critiques qui affectent l'extensibilité et la fiabilité de l'application.  
+## <a name="programming-model-restrictions"></a>Restrictions du modèle de programmation  
+ Le modèle de programmation du code managé dans SQL Server nécessite des fonctions, des procédures et des types qui n’ont pas besoin d’utiliser un état maintenu entre les appels ou de partager l’état entre plusieurs sessions utilisateur. Par ailleurs, comme décrit précédemment, la présence d’un état partagé peut provoquer des exceptions critiques qui affectent l’extensibilité et la fiabilité de l’application.  
   
- Compte tenu de ces considérations, SQL Server rejette l'utilisation de variables statiques et de membres de données statiques.  Pour les assemblys SAFE et EXTERNAL\-ACCESS, SQL Server examine les métadonnées de l'assembly au moment de la création de l'assembly et échoue dans la création de tels assemblys s'il détecte l'utilisation de membres de données et des variables statiques.  
+ Pour ces raisons, SQL Server n’autorise pas l’utilisation de variables statiques ni de membres de données statiques. Pour les assemblys SAFE et EXTERNAL-ACCESS, SQL Server examine les métadonnées des assemblys au moment de leur création et ne crée pas ces assemblys s’il détecte la présence de membres de données ou variables statiques.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Security.Permissions.HostProtectionAttribute>   
  <xref:System.Security.Permissions.HostProtectionResource>
+

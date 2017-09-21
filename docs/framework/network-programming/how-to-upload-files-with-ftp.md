@@ -1,28 +1,33 @@
 ---
-title: "Comment&#160;: charger des fichiers avec FTP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: 'Comment : charger des fichiers avec FTP'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: e40f17c5-dd12-4c62-9dbf-00ab491382dc
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b90049c11e8eb1113155a400b7af159f2b6938ca
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: charger des fichiers avec FTP
-Cet exemple montre comment télécharger un fichier à un serveur FTP.  
+# <a name="how-to-upload-files-with-ftp"></a>Comment : charger des fichiers avec FTP
+Cet exemple montre comment charger un fichier sur un serveur FTP.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 using System;  
@@ -64,11 +69,12 @@ namespace Examples.System.Net
 }  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Références à l'espace de noms de **System.Net** .  
+-   Références à l’espace de noms **System.Net**.  
   
-## Programmation fiable  
+## <a name="robust-programming"></a>Programmation fiable  
   
-## Sécurité .NET Framework
+## <a name="net-framework-security"></a>Sécurité .NET Framework
+

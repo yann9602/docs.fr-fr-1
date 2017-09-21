@@ -1,45 +1,51 @@
 ---
-title: "Noms d’homologues et ID PNRP | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Noms d’homologues et ID PNRP"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
 caps.latest.revision: 5
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 5
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 11d20e346bba9ae6300f88c5d5bf48f99ec27904
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Noms d’homologues et ID PNRP
-Un nom homologue représente un point de terminaison de communication, qui peut être un ordinateur, un utilisateur, un groupe, un service, ou un élément associé à un homologue qui peut être résolu à une adresse IPv6.  Le protocole homologue \(PNRP\) de résolution de noms prend le nom homologue statistiquement uniques pour la création d'un ID de PNRP, qui est utilisé pour identifier des membres nuage.  
+# <a name="peer-names-and-pnrp-ids"></a>Noms d’homologues et ID PNRP
+Un nom de pair représente un point de terminaison pour la communication. Il peut s’agir d’un ordinateur, d’un utilisateur, d’un groupe, d’un service ou de tout autre élément associé à un pair pouvant être résolu en une adresse IPv6. Le protocole PNRP utilise le nom de pair statistiquement unique pour la création d’un ID PNRP, qui est utilisé pour identifier les membres du cloud.  
   
-## Noms homologues  
- Les noms équivalents peuvent être stockés comme non protégée ou être sécurisés.  Les noms non protégée sont simplement des chaînes de texte auxquelles sont soumises à l'usurpation, comme n'importe qui peut enregistrer un nom non protégée en double.  Les noms non protégée mieux sont utilisés dans les réseaux privés ou sinon protégés.  Les noms sécurisés sont protégés avec un certificat et une signature numérique.  Uniquement l'éditeur d'origine pourra afficher la propriété d'un nom sécurisé.  
+## <a name="peer-names"></a>Noms de pairs  
+ Les noms de pairs peuvent être inscrits comme étant sécurisés ou non sécurisés. Les noms non sécurisés sont de simples chaînes de texte qui peuvent faire l’objet d’une usurpation d’identité, puisque n’importe qui peut inscrire une duplication d’un nom non sécurisé. Il est préférable d’utiliser les noms non sécurisés au sein de réseaux privés ou protégés. Les noms sécurisés sont protégés par un certificat et une signature numérique. Seul l’éditeur d’origine est en mesure de prouver sa propriété d’un nom sécurisé.  
   
- La combinaison de nuage et la portée raisonnablement fournit un environnement sécurisé pour les homologues qui participent à l'activité de PNRP.  Toutefois, l'utilisation d'un nom homologue sécurisé ne garantit pas la sécurité globale de l'application de mise en réseau.  La sécurité de l'application est dépendante de l'implémentation.  
+ La combinaison d’un cloud et d’une étendue fournit un environnement relativement sécurisé pour les pairs qui participent à des activités PNRP. Toutefois, l’utilisation d’un nom de pair sécurisé ne garantit pas la sécurité de l’ensemble de l’application réseau. La sécurité d’une application dépend de son implémentation.  
   
- Les noms équivalents sécurisés sont stockés uniquement par leur propriétaire et sont protégés avec le chiffrement à clé publique.  Un nom homologue sécurisé est considéré comme appartenant à l'entité homologue ayant la clé privée correspondante.  La propriété peut être prouvée via l'adresse homologue certifiée \(CPA\), qui est signé à l'aide de la clé privée.  Un utilisateur malveillant ne peut pas modifier la propriété d'un nom homologue sans clé privée correspondante.  
+ Les noms de pairs sécurisés sont inscrits uniquement par leur propriétaire et sont protégés par un chiffrement à clé publique. Un nom de pair sécurisé est considéré comme appartenant à l’entité pair qui contient la clé privée correspondante. La propriété peut être prouvée via l’adresse pair certifiée, qui est signée à l’aide de la clé privée. Un utilisateur malveillant ne peut pas feindre la propriété d’un nom de pair sans disposer de la clé privée correspondante.  
   
-## ID de PNRP  
- ![ID PNRP](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.png "fdc9e8a0\-4a1c\-488d\-a019\-bc3a1973220c")  
+## <a name="pnrp-ids"></a>ID PNRP  
+ ![ID PNRP](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
   
- Les ID de PNRP sont composés des éléments suivants :  
+ Les ID PNRP sont formés des composants suivants :  
   
--   Les 128 bits de poids fort, appelée l'ID \(P2P égal\), sont hachage d'un homologue nom assigné au point de terminaison.  Le nom homologue a le format suivant : *Authority.Classifier*.  Pour les noms sécurisés, *l'autorité* est le hachage de l'algorithme de hachage sécurisé 1 \(SHA1\) de la clé publique du nom homologue caractères hexadécimaux.  Pour les noms non protégée, *l'autorité* est le seul caractère « 0 ".  *Le classifieur* est une chaîne qui identifie l'application.  Un classifieur homologue de nom ne peut être supérieur à 149 caractères, y compris le Terminator d' `null` .  
+-   Les 128 bits d’ordre haut (appelés ID pair à pair (P2P)) correspondent au hachage d’un nom de pair attribué au point de terminaison. Le nom de pair est au format suivant : *Autorité.Classifieur*. Pour les noms sécurisés, *l’autorité* correspond au hachage SHA1 de la clé publique du nom de pair en caractères hexadécimaux. Pour les noms non sécurisés, *l’autorité* correspond au caractère « 0 ». Le *classifieur* est une chaîne qui identifie l’application. Aucun classifieur de nom de pair ne peut dépasser les 149 caractères, terminateur `null` compris.  
   
--   Les 128 bits de poids faible sont utilisés pour l'emplacement de service, qui est un nombre généré qui identifie plusieurs instances du même ID P2P dans le même nuage.  
+-   Les 128 bits d’ordre bas sont utilisés pour l’emplacement du service, qui est un nombre généré qui identifie les différentes instances du même ID P2P dans un même cloud.  
   
- Cette combinaison d'emplacement et d'ID de service P2P permet de plusieurs identificateurs de PNRP à stocker d'un ordinateur unique.  
+ Cette combinaison d’ID P2P et de l’emplacement du service permet à plusieurs ID PNRP d’être inscrits à partir d’un même ordinateur.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Net.PeerToPeer.PeerName>   
  <xref:System.Net.PeerToPeer>
+

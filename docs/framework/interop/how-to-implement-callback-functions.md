@@ -1,52 +1,57 @@
 ---
-title: "How to: Implement Callback Functions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "callback function, implementing"
+title: "Guide pratique pour implémenter des fonctions de rappel"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: d4382c956bf3d56426be485897cdda75453b4910
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# How to: Implement Callback Functions
-La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local.  En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée \(nommée CallBack\) pour imprimer la valeur de handle des fenêtres.  
+# <a name="how-to-implement-callback-functions"></a>Guide pratique pour implémenter des fonctions de rappel
+La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
   
-### Pour implémenter une fonction de rappel  
+### <a name="to-implement-a-callback-function"></a>Pour implémenter une fonction de rappel  
   
-1.  Examinez la signature de la fonction **EnumWindows** avant d'aller plus loin avec l'implémentation.  **EnumWindows** possède la signature suivante :  
+1.  Examinez la signature de la fonction **EnumWindows** avant d’aller plus loin dans l’implémentation. **EnumWindows** possède la signature suivante :  
   
     ```  
     BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)  
     ```  
   
-     La présence de l’argument **lpEnumFunc** indique que cette fonction nécessite un rappel.  Le préfixe **lp** \(pointeur long\) est couramment associé au suffixe **Func** dans le nom des arguments qui acceptent un pointeur vers une fonction de rappel.  Pour obtenir de la documentation sur les fonctions Win32, consultez le Kit de développement Microsoft Platform SDK.  
+     La présence de l’argument **lpEnumFunc** indique que cette fonction nécessite un rappel. Le préfixe **lp** (pointeur long) est couramment associé au suffixe **Func** dans le nom des arguments qui acceptent un pointeur vers une fonction de rappel. Pour obtenir de la documentation sur les fonctions Win32, consultez le Kit de développement Microsoft Platform SDK.  
   
-2.  Créez la fonction de rappel managée.  L'exemple déclare un type délégué, appelé `CallBack`, qui accepte deux arguments \(**hwnd** et **lparam**\).  Le premier argument est un handle de la fenêtre, alors que le second est défini par l'application.  Dans cette version, les deux arguments doivent être des entiers.  
+2.  Créez la fonction de rappel managée. L’exemple déclare un type délégué, appelé `CallBack`, qui accepte deux arguments (**hwnd** et **lparam**). Le premier argument est un handle de la fenêtre, alors que le second est défini par l’application. Dans cette version, les deux arguments doivent être des entiers.  
   
-     Les fonctions de rappel retournent généralement des valeurs différentes de zéro pour indiquer la réussite et zéro pour indiquer l'échec.  Dans cet exemple, **true** est explicitement défini comme valeur de retour pour poursuivre l'énumération.  
+     Les fonctions de rappel retournent généralement des valeurs différentes de zéro pour indiquer la réussite et zéro pour indiquer l'échec. Dans cet exemple, **true** est explicitement défini comme valeur de retour pour poursuivre l’énumération.  
   
-3.  Créez un délégué et passez\-le en tant qu'argument à la fonction **EnumWindows**.  L'appel de code non managé convertit automatiquement le délégué au format de rappel habituel.  
+3.  Créez un délégué et passez-le en tant qu’argument à la fonction **EnumWindows**. L'appel de code non managé convertit automatiquement le délégué au format de rappel habituel.  
   
-4.  Assurez\-vous que le garbage collector ne récupère pas le délégué avant que la fonction de rappel n’ait effectué sa tâche.  Quand vous transmettez un délégué en tant que paramètre ou un délégué contenu en tant que champ dans une structure, il n'est pas collecté pendant toute la durée de l'appel.  Par conséquent, comme dans le cas de l'exemple d'énumération suivant, la fonction de rappel effectue sa tâche avant le retour d'appel et ne nécessite aucune action supplémentaire de la part de l'appelant managé.  
+4.  Assurez-vous que le garbage collector ne récupère pas le délégué avant que la fonction de rappel n’ait effectué sa tâche. Quand vous transmettez un délégué en tant que paramètre ou un délégué contenu en tant que champ dans une structure, il n'est pas collecté pendant toute la durée de l'appel. Par conséquent, comme dans le cas de l'exemple d'énumération suivant, la fonction de rappel effectue sa tâche avant le retour d'appel et ne nécessite aucune action supplémentaire de la part de l'appelant managé.  
   
-     Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche.  Pour plus d'informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md) avec l’appel de code non managé.  
+     Si, toutefois, la fonction de rappel peut être appelée après le retour d'appel, l'appelant managé doit prendre des mesures pour s’assurer que le délégué n'est pas collecté jusqu’à ce que la fonction de rappel termine sa tâche. Pour plus d’informations sur la façon d’empêcher l’opération de garbage collection, consultez [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md) avec l’appel de code non managé.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```vb  
 Imports System  
@@ -71,7 +76,6 @@ Public Class EnumReportApp
         Return True  
     End Function 'Report  
 End Class 'EnumReportApp  
-  
 ```  
   
 ```csharp  
@@ -98,7 +102,6 @@ public class EnumReportApp
         return true;  
     }  
 }  
-  
 ```  
   
 ```cpp  
@@ -137,6 +140,7 @@ int main()
 }  
 ```  
   
-## Voir aussi  
- [Callback Functions](../../../docs/framework/interop/callback-functions.md)   
- [Calling a DLL Function](../../../docs/framework/interop/calling-a-dll-function.md)
+## <a name="see-also"></a>Voir aussi  
+ [Fonctions de rappel](../../../docs/framework/interop/callback-functions.md)   
+ [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+

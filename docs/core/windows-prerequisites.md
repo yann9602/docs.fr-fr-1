@@ -1,43 +1,50 @@
 ---
 title: Configuration requise pour .NET Core sur Windows
 description: "Découvrez les dépendances nécessaires sur votre machine Windows pour développer et exécuter des applications .NET Core."
-keywords: ".NET core, Windows, configuration requise, dépendances, Visual Studio"
-author: mairaw
-ms.author: mairaw
-ms.date: 06/26/2017
+author: JRAlexander
+ms.author: johalex
+ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.devlang: dotnet
-ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0e414af0edbafed5b7f540eda6de2e5078eac789
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 84f1eaf5fbfcdf8d1dd1b90545f9236e2daedd15
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
-
 # <a name="prerequisites-for-net-core-on-windows"></a>Configuration requise pour .NET Core sur Windows
 
-Cet article détaille les dépendances nécessaires pour déployer et exécuter des applications .NET Core sur des machines Windows, et développer avec Visual Studio.
+Cet article montre les dépendances nécessaires pour développer des applications .NET Core sur Windows. Les versions de système d’exploitation et les dépendances prises en charge ci-après s’appliquent aux trois façons de développer des applications .NET Core sur Windows :
 
-## <a name="supported-windows-versions"></a>Versions prises en charge de Windows
+* [Ligne de commande](tutorials/using-with-xplat-cli.md)
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-.NET Core est pris en charge par les versions suivantes de Windows :
+## <a name="net-core-supported-windows-versions"></a>Versions Windows prises en charge par .NET Core
+
+.NET Core est pris en charge par les versions suivantes de :
 
 * Windows 7 SP1
 * Windows 8.1
-* Windows 10
+* Windows 10, Mise à jour anniversaire Windows 10 (version 1607) ou versions ultérieures
 * Windows Server 2008 R2 SP1 (version complète ou Server Core)
 * Windows Server 2012 SP1 (version complète ou Server Core)
 * Windows Server 2012 R2 (version complète ou Server Core)
 * Windows Server 2016 (version complète, Server Core ou Nano Server)
 
-Consultez les [ notes de publication .NET Core](https://github.com/dotnet/core/blob/master/release-notes/1.1/1.1.md) pour plus d’informations sur tous les systèmes d’exploitation pris en charge.
+Consultez [.NET Core 2.x - Versions des systèmes d’exploitation prises en charge](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pour obtenir la liste complète des systèmes d’exploitation pris en charge par .NET Core 2.x.
+
+Consultez [.NET Core 1.x - Versions des systèmes d’exploitation prises en charge](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pour obtenir la liste complète des systèmes d’exploitation pris en charge par .NET Core 1.x.
 
 ## <a name="net-core-dependencies"></a>Dépendances .NET Core
 
-.NET Core nécessite le package redistribuable Visual C++ lors de l’exécution sur des versions de Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement pour vous si vous utilisez le programme d’installation de .NET Core. Toutefois, vous devez installer manuellement [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=52685) si vous installez .NET Core par le biais du [script d’installation](./tools/dotnet-install-script.md) ou si vous déployez une application .NET Core autonome.
+.NET Core nécessite le package redistribuable Visual C++ lors de l’exécution sur des versions de Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement par le programme d’installation de .NET Core.
+
+Vous devez installer [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/en-us/download/details.aspx?id=52685) manuellement quand :
+
+   * vous installez .NET Core avec le [script du programme d’installation](./tools/dotnet-install-script.md) ;
+   * vous déployez une application .NET Core autonome.
 
 > [!NOTE]
 > <em>Pour les machines Windows 7 et Windows Server 2008 uniquement :</em><br>
@@ -45,20 +52,47 @@ Consultez les [ notes de publication .NET Core](https://github.com/dotnet/core/b
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Prérequis pour Visual Studio 2017
 
-Vous pouvez utiliser l’éditeur de votre choix pour développer des applications .NET Core à l’aide du kit de développement logiciel (SDK) .NET Core. Toutefois, si vous voulez développer des applications .NET Core sur Windows dans un environnement de développement intégré, vous pouvez utiliser [Visual Studio 2017](#visual-studio-2017).
-
-> [!IMPORTANT]
-> Même s’il est possible d’utiliser Visual Studio 2015 avec une version préliminaire des outils .NET Core, ces projets s’appuieront sur le fichier *project.json*, ce qui est maintenant déconseillé. Visual Studio 2017 utilise des fichiers de projet basés sur MSBuild. Pour plus d’informations sur les changements de format, consultez la page [Vue d’ensemble de haut niveau des modifications](./tools/cli-msbuild-architecture.md).
-
-Pour utiliser Visual Studio 2017 afin de développer des applications .NET Core, vous devez installer la dernière version de Visual Studio en sélectionnant l’ensemble d’outils **Développement multiplateforme .NET Core** (dans la section **Autres ensembles d’outils**).
-![Capture d’écran de l’installation de Visual Studio 2017 avec la charge de travail « Développement multiplateforme .NET Core » sélectionnée](./media/windows-prerequisites/vs_workloads.jpg)
-
-Il existe différentes éditions de Visual Studio 2017. Vous pouvez télécharger [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) gratuitement pour commencer.  Pour en savoir plus sur le processus d'installation de Visual Studio, consultez [Installation de Visual Studio 2017](/visualstudio/install/install-visual-studio).
-
-Pour vérifier que vous exécutez la dernière version de Visual Studio 2017, effectuez les étapes suivantes :
-
- * Dans le menu **Aide**, choisissez **À propos de Microsoft Visual Studio**.
- * La boîte de dialogue **À propos de Microsoft Visual Studio** doit indiquer le numéro de version 15.0.26228.4 ou ultérieur.
+Vous pouvez utiliser l’éditeur de votre choix pour développer des applications .NET Core à l’aide du Kit SDK .NET Core.  [Visual Studio 2017](#visual-studio-2017) fournit un environnement de développement intégré pour les applications .NET Core sur Windows.
 
 Vous trouverez plus d’informations sur les modifications apportées à Visual Studio 2017 dans les [notes de publication](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes).
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+Pour développer des applications .NET Core 2.x dans Visual Studio 2017 :
+
+ 1. [Téléchargez et installez Visual Studio 2017 version 15.3.0 ou version ultérieure](/visualstudio/install/install-visual-studio) en sélectionnant la charge de travail **Développement multiplateforme .NET Core** (dans la section **Autres ensembles d’outils**).
+![Capture d’écran de l’installation de Visual Studio 2017 avec la charge de travail « Développement multiplateforme .NET Core » sélectionnée](./media/windows-prerequisites/vs-15-3-workloads.jpg)
+
+Une fois installé l’ensemble d’outils **Développement multiplateforme .NET Core**, Visual Studio 2017 utilise .NET Core 1.x par défaut. Installez le SDK .NET Core 2.x pour obtenir la prise en charge de .NET Core 2.x dans Visual Studio 2017.
+
+ 2. Installez le [SDK .NET Core 2.x](https://www.microsoft.com/net/download/core).
+ 3. Reciblez les projets .NET Core 1.x existants ou nouveaux sur .NET Core 2.x en suivant les instructions suivantes :
+    * Dans le menu **Projet**, choisissez **Propriétés**. 
+    * Dans le menu de sélection **framework cible**, choisissez **.NET Core 2.0**.
+
+![Capture d’écran de la propriété de projet Application Visual Studio 2017 avec définition de l’élément de menu framework cible sur « .NET Core 2.0 »](./media/windows-prerequisites/Targeting-dotnetCore2.png)
+
+Une fois installé le SDK .NET Core 2.x, Visual Studio 2017 l’utilise par défaut et prend en charge les actions suivantes :
+
+  * Ouvrir, générer et exécuter les projets .NET Core 1.x existants.
+  * Recibler les projets .NET Core 1.x vers .NET Core 2.x, les générer et les exécuter.
+  * Créer des projets .NET Core 2.x.
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+Pur développer des applications .NET Core 1.x dans Visual Studio, [téléchargez et installez Visual Studio 2017 RTM (version 15.0.26228.4) ou version ultérieure](/visualstudio/install/install-visual-studio) en sélectionnant la charge de travail **Développement multiplateforme .NET Core** (dans la section **Autres ensembles d’outils**).
+![Capture d’écran de l’installation de Visual Studio 2017 avec la charge de travail « Développement multiplateforme .NET Core » sélectionnée](./media/windows-prerequisites/vs_workloads.jpg)
+> [!IMPORTANT]
+> Bien que vous puissiez utiliser Visual Studio 2015 pour le développement .NET Core 1.x, nous vous le déconseillons pour les raisons suivantes :
+  > * Les outils .NET Core sont une préversion, qui n’est pas prise en charge.
+  > * Les projets sont basés sur project.json, configuration qui est dépréciée.
+>
+> Pour plus d’informations sur les changements de format de projet, consultez la page [Vue d’ensemble des modifications](./tools/cli-msbuild-architecture.md).
+---
+
+>[!TIP]
+  > Pour vérifier votre version de Visual Studio 2017 :
+>
+     > * Dans le menu **Aide**, choisissez **À propos de Microsoft Visual Studio**.
+     > * Dans la boîte de dialogue **À propos de Microsoft Visual Studio**, vérifiez le numéro de version.
+>     * Pour les applications .NET Core 2.x, Visual Studio 2017 version 15.3 (26730.01) ou une version ultérieure.
+>     * Pour les applications .NET Core 1.x, Visual Studio 2017 version 15.0 (26228.04) ou une version ultérieure.
 

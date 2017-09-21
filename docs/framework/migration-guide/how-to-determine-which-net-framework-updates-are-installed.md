@@ -21,7 +21,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: b29b402e859688dcced6bd4429b18298070fb5e4
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/19/2017
 
 ---
 # <a name="how-to-determine-which-net-framework-updates-are-installed"></a>Comment : déterminer les mises à jour .NET Framework installées
@@ -44,7 +44,8 @@ Les mises à jour installées pour chaque version du .NET Framework installée s
 ## <a name="example"></a>Exemple  
  Le code suivant détermine par programmation les mises à jour du .NET Framework installées sur un ordinateur. Vous devez disposer d'informations d'identification d'administration pour exécuter cet exemple.  
   
- [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)] [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
+ [!code-csharp[ListUpdates#1](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs#1)]
+ [!code-vb[ListUpdates#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb#1)]  
   
  Cet exemple produit un résultat semblable au suivant :  
   

@@ -1,28 +1,33 @@
 ---
-title: "Comment&#160;: demander une page web et r&#233;cup&#233;rer les r&#233;sultats sous forme de flux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Comment : demander une page web et récupérer les résultats sous forme de flux"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: d32b7f35-29d8-4fb7-ad71-d219edc5e359
 caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: ec19e46289131ec137081c610c1a8194ad22611f
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Comment&#160;: demander une page web et r&#233;cup&#233;rer les r&#233;sultats sous forme de flux
-Cet exemple montre comment demander une page Web et récupérer les résultats dans un flux.  
+# <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Comment : demander une page web et récupérer les résultats sous forme de flux
+Cet exemple montre comment demander une page web et récupérer les résultats sous forme de flux.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 WebClient myClient = new WebClient();  
@@ -38,10 +43,11 @@ Dim response As Stream = myClient.OpenRead("http://www.contoso.com/index.htm")
 response.Close()  
 ```  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   des références aux espaces de noms <xref:System.IO> et <xref:System.Net>.  
+-   Références aux espaces de noms <xref:System.IO> et <xref:System.Net>.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Demande de données](../../../docs/framework/network-programming/requesting-data.md)
+

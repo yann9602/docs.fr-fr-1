@@ -1,42 +1,48 @@
 ---
-title: "WIF et batteries de serveurs web | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: WIF et batteries de serveurs web
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 caps.latest.revision: 9
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 9
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0bb682c6eaebf7e1a0c2c2de5b584c28e4c192c5
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# WIF et batteries de serveurs web
-Lorsque vous utilisez Windows Identity Foundation \(WIF\) pour sécuriser les ressources d'une application \(RP\) partie utilisatrice qui est déployé dans une batterie de serveurs web, vous devez prendre des mesures spécifiques afin de garantir que les WIF peut traiter des jetons à partir des instances de l'application de RP en cours d'exécution sur des ordinateurs différents de la batterie.  Ce traitement comprend la validation des signatures de jeton de session, le cryptage et décryptage des jetons de session, la mise en cache des jetons de session et détection de relecture de jetons de sécurité.  
+# <a name="wif-and-web-farms"></a>WIF et batteries de serveurs web
+Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressources d’une application par partie de confiance déployée dans une batterie de serveurs web, vous devez définir des paramètres spécifiques pour vous assurer que WIF peut traiter les jetons provenant d’instances de l’application par partie de confiance qui sont exécutées sur les différents ordinateurs de la batterie de serveurs. Ces paramètres incluent la validation des signatures de jetons de session, le chiffrement et le déchiffrement des jetons de session, la mise en cache des jetons de session et la détection des jetons de sécurité relus.  
   
- Dans la plupart des cas, lorsque WIF est utilisé pour sécuriser les ressources d'une application RP – si le RP est en cours d'exécution sur un ordinateur unique ou dans une batterie de serveurs web\-\-une session est établie avec le client basé sur le jeton de sécurité qui ont été obtenu auprès du service de jeton de sécurité \(STS\).  Il s'agit de ne pas forcer le client à s'authentifier à la STS pour chaque ressource d'application est sécurisée à l'aide de WIF.  Pour plus d'informations sur la façon dont WIF gère les sessions, consultez [Gestion de session WIF](../../../docs/framework/security/wif-session-management.md).  
+ En règle générale, quand WIF est utilisé pour sécuriser les ressources d’une application par partie de confiance (que cette application soit exécutée sur un seul ordinateur ou sur plusieurs ordinateurs dans une batterie de serveurs web), une session est établie avec le client sur la base du jeton de sécurité qui a été obtenu auprès du service d’émission de jeton de sécurité (STS). De cette manière, le client n’a pas à s’authentifier auprès du service STS pour chaque ressource d’application sécurisée à l’aide de WIF. Pour plus d’informations sur la façon dont WIF gère les sessions, consultez [Gestion des sessions par WIF](../../../docs/framework/security/wif-session-management.md).  
   
- Lorsque les paramètres par défaut sont utilisés, WIF effectue les opérations suivantes :  
+ Quand les paramètres par défaut sont utilisés, WIF procède comme suit :  
   
--   Il utilise une instance de la <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> classe pour lire et écrire un jeton de session \(une instance de la <xref:System.IdentityModel.Tokens.SessionSecurityToken> classe\) qui transporte les revendications et autres informations sur le jeton de sécurité qui a été utilisé pour l'authentification ainsi que des informations sur la session elle\-même.  Le jeton de session est emballé et entreposée dans un cookie de session.  Par défaut, <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> utilise le <xref:System.IdentityModel.ProtectedDataCookieTransform> \(classe\), qui utilise l'API de Protection des données \(DPAPI\) pour protéger le jeton de session.  Le DPAPI offre une protection en utilisant les informations d'identification utilisateur ou ordinateur et stocke les données de clés dans le profil utilisateur.  
+-   Il utilise une instance de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> pour lire et écrire un jeton de session (une instance de la classe <xref:System.IdentityModel.Tokens.SessionSecurityToken>) qui contient les revendications et d’autres informations sur le jeton de sécurité ayant servi pour l’authentification, ainsi que des informations sur la session elle-même. Le jeton de session est empaqueté et stocké dans un cookie de session. Par défaut, <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> utilise la classe <xref:System.IdentityModel.ProtectedDataCookieTransform>, qui utilise l’API de protection des données (DPAPI), pour protéger le jeton de session. L’interface DPAPI assure cette protection par le biais des informations d’identification de l’utilisateur ou de la machine, et stocke les données de clés dans le profil utilisateur.  
   
--   Il utilise un par défaut, la mise en oeuvre en mémoire de le <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe pour stocker et traiter le jeton de session.  
+-   Il utilise une implémentation en mémoire par défaut de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> pour stocker et traiter le jeton de session.  
   
- Ces paramètres par défaut fonctionnent dans les scénarios dans lesquels l'application RP est déployée sur un seul ordinateur ; Toutefois, lorsqu'il est déployé dans une batterie de serveurs web, chaque requête HTTP peut envoyé à et traité par une autre instance de l'application de RP en cours d'exécution sur un autre ordinateur.  Dans ce scénario, les paramètres de WIF par défaut décrits ci\-dessus ne fonctionnera pas car le jeton protection et la mise en cache des jetons sont dépendantes sur un ordinateur spécifique.  
+ Ces paramètres par défaut sont appropriés pour les scénarios où l’application par partie de confiance est déployée sur un seul ordinateur. Toutefois, si l’application par partie de confiance est déployée dans une batterie de serveurs web, chaque demande HTTP peut être envoyée pour traitement à une autre instance de l’application exécutée sur un autre ordinateur. Dans ce scénario, les paramètres WIF par défaut décrits ci-dessus ne sont pas adaptés, car la protection des jetons et la mise en cache des jetons sont des processus dépendants de l’ordinateur.  
   
- Pour déployer une application RP dans une batterie de serveurs web, vous devez vous assurer que le traitement des jetons de session \(ainsi que des jetons relus\) n'est pas dépendant de l'application s'exécutant sur un ordinateur spécifique.  Pour ce faire consiste à implémenter votre application RP afin qu'il utilise la fonctionnalité fournie par le runtime ASP..NET `<machineKey>` élément de configuration et fournit une mise en cache distribuée pour le traitement des jetons de session et relus jetons.  Le `<machineKey>` élément vous permet de spécifier les clés nécessaires pour valider, crypter et décrypter les jetons dans un fichier de configuration qui permet de spécifier les mêmes clés sur des ordinateurs différents dans la batterie de serveurs web.  WIF fournit un gestionnaire de jetons de session spécialisé, le <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>, qui protège les jetons en utilisant les touches spécifiées dans la `<machineKey>` élément.  Pour mettre en œuvre cette stratégie, vous pouvez suivre ces instructions :  
+ Si vous déployez une application par partie de confiance dans une batterie de serveurs web, vous devez vous assurer que le traitement des jetons de session (et des jetons relus) n’est pas dépendant de l’application exécutée sur un ordinateur spécifique. Pour garantir cela, une technique possible est d’implémenter votre application par partie de confiance pour qu’elle utilise les fonctionnalités fournies par l’élément de configuration `<machineKey>` ASP.NET et qu’elle autorise la mise en cache distribuée pour le traitement des jetons de session et des jetons relus. Avec l’élément `<machineKey>`, vous pouvez spécifier les clés nécessaires pour valider, chiffrer et déchiffrer les jetons dans un fichier de configuration, ce qui vous permet de spécifier les mêmes clés sur différents ordinateurs dans la batterie de serveurs web. WIF fournit un gestionnaire de jetons de session spécifique, <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>, qui protège les jetons à l’aide des clés spécifiées dans l’élément `<machineKey>`. Pour implémenter cette stratégie, suivez les conseils ci-dessous :  
   
--   Utiliser l'application ASP.NET `<machineKey>` élément de configuration pour spécifier explicitement les clés de signature et de cryptage peuvent être utilisés sur plusieurs ordinateurs de la batterie.  Le code XML suivant illustre la spécification de la `<machineKey>` élément sous la `<system.web>` élément dans un fichier de configuration.  
+-   Utilisez l’élément de configuration `<machineKey>` ASP.NET pour spécifier explicitement les clés de chiffrement et de signature qui peuvent être utilisées sur les différents ordinateurs de la batterie de serveurs. L’exemple de code XML suivant montre comment spécifier l’élément `<machineKey>` sous l’élément `<system.web>` dans un fichier de configuration.  
   
     ```xml  
     <machineKey compatibilityMode="Framework45" decryptionKey="CC510D … 8925E6" validationKey="BEAC8 … 6A4B1DE" />  
     ```  
   
--   Configurer l'application pour utiliser le <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> en l'ajoutant à la collection de gestionnaires de jeton.  Vous devez d'abord supprimer la <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> \(ou dérivé de n'importe quel gestionnaire la <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> classe\) à partir de la collection de gestionnaires de jeton si un tel gestionnaire est présent.  Le <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> utilise le <xref:System.IdentityModel.Services.MachineKeyTransform> \(classe\), qui protège les données de cookie de session en utilisant le matériau de chiffrement spécifié dans le `<machineKey>` élément.  Le code XML suivant montre comment ajouter le <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> à une collection de gestionnaires de jeton.  
+-   Configurez l’application pour qu’elle utilise le gestionnaire <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> en l’ajoutant à la collection de gestionnaires de jetons. Si la collection contient le gestionnaire <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> (ou un gestionnaire dérivé de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>), vous devez d’abord supprimer ce gestionnaire. <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> utilise la classe <xref:System.IdentityModel.Services.MachineKeyTransform>, qui protège les données de cookie de session à l’aide des informations de chiffrement spécifiées dans l’élément `<machineKey>`. Le code XML suivant montre comment ajouter <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> à une collection de gestionnaires de jetons.  
   
     ```xml  
     <securityTokenHandlers>  
@@ -45,7 +51,7 @@ Lorsque vous utilisez Windows Identity Foundation \(WIF\) pour sécuriser les re
     </securityTokenHandlers>  
     ```  
   
--   Dériver de <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> et mettre en œuvre distribués la mise en cache, en d'autres termes, un cache qui est accessible à partir de tous les ordinateurs de la batterie de serveurs sur lesquels le RP peut s'exécuter.  Configurer le RP puisse utiliser votre cache distribué en spécifiant la [\<sessionSecurityTokenCache\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) élément dans le fichier de configuration.  Vous pouvez substituer la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=fullName> méthode dans votre classe dérivée pour implémenter les éléments enfants de le `<sessionSecurityTokenCache>` élément s'ils sont requis.  
+-   Implémentez une mise en cache distribuée dérivée de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>, autrement dit, un cache qui est accessible à partir de tous les ordinateurs de la batterie de serveurs sur lesquels l’application par partie de confiance est susceptible d’être exécutée. Configurez l’application par partie de confiance pour qu’elle utilise votre cache distribué en spécifiant l’élément [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) dans le fichier de configuration. Vous pouvez substituer la méthode <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=fullName> dans votre classe dérivée pour implémenter les éléments enfants de l’élément `<sessionSecurityTokenCache>` qui sont nécessaires.  
   
     ```xml  
     <caches>  
@@ -55,19 +61,19 @@ Lorsque vous utilisez Windows Identity Foundation \(WIF\) pour sécuriser les re
     </caches>  
     ```  
   
-     Une façon de mettre en œuvre la mise en cache distribuée est de fournir un front\-end WCF pour votre cache personnalisé.  Pour plus d'informations sur l'implémentation d'un service de mise en cache de WCF, consultez [Le Service de mise en cache de WCF](#BKMK_TheWCFCachingService).  Pour plus d'informations sur l'implémentation d'un client WCF que l'application RP peut utiliser pour appeler le service de mise en cache, voir [Le Client de mise en cache de WCF](#BKMK_TheWCFClient).  
+     Un moyen d’implémenter la mise en cache distribuée est de spécifier un serveur frontal WCF pour votre cache personnalisé. Pour plus d’informations sur l’implémentation d’un service caching WCF, consultez [Service caching WCF](#BKMK_TheWCFCachingService). Pour plus d’informations sur l’implémentation d’un client WCF que l’application par partie de confiance peut utiliser pour appeler le service caching, consultez [Client caching WCF](#BKMK_TheWCFClient).  
   
--   Si votre application détecte les jetons relus vous devez suivre une procédure similaire distribué à la mise en cache de stratégie pour le cache de relecture du jeton en dérivant de <xref:System.IdentityModel.Tokens.TokenReplayCache> et pointant vers votre jeton de relire le service de mise en cache dans le [\<tokenReplayCache\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) élément de configuration.  
-  
-> [!IMPORTANT]
->  Tous l'exemple de code XML et le code dans cette rubrique provient de la [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) \(http:\/\/go.Microsoft.com\/fwlink\/?LinkID\=248408\) échantillon.  
+-   Si votre application détecte la présence de jetons relus, vous devez appliquer une stratégie de mise en cache distribuée similaire pour le cache de relecture de jetons. Pour cela, le cache doit être dérivé de <xref:System.IdentityModel.Tokens.TokenReplayCache> et pointer vers votre service caching de relecture de jetons dans l’élément de configuration [\<tokenReplayCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md).  
   
 > [!IMPORTANT]
->  Les exemples de cette rubrique sont fournis en tant que\-est et ne sont pas destinés à être utilisés dans le code de production sans modification.  
+>  Tous les exemples de code XML fournis dans cette rubrique sont extraits de l’exemple complet [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) (http://go.microsoft.com/fwlink/?LinkID=248408).  
+  
+> [!IMPORTANT]
+>  Les exemples de cette rubrique sont fournis en l’état et ne sont pas destinés à être utilisés tels quels dans du code de production.  
   
 <a name="BKMK_TheWCFCachingService"></a>   
-## Le Service de mise en cache de WCF  
- L'interface suivante définit le contrat entre le service de mise en cache de WCF et le client WCF utilisé par l'application de partie utilisatrice de communiquer avec lui.  Elle expose essentiellement les méthodes de la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe en tant qu'opérations de service.  
+## <a name="the-wcf-caching-service"></a>Service caching WCF  
+ L’interface suivante définit le contrat entre le service caching WCF et le client WCF utilisé par l’application par partie de confiance pour communiquer avec lui. Elle expose essentiellement les méthodes de la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> comme des opérations de service.  
   
 ```  
 [ServiceContract()]  
@@ -93,7 +99,7 @@ public interface ISessionSecurityTokenCacheService
 }  
 ```  
   
- Le code suivant illustre l'implémentation de WCF service de mise en cache.  Dans cet exemple, la valeur par défaut, le cache de jetons de session en mémoire implémentée par WIF est utilisé.  Également, vous pourriez implémenter un cache durable soutenu par une base de données.  `ISessionSecurityTokenCacheService`Définit l'interface présentée ci\-dessus.  Dans cet exemple, toutes les méthodes requises pour implémenter l'interface sont affichés par souci de concision.  
+ Le code suivant illustre l’implémentation du service caching WCF. Cet exemple utilise le cache de jetons de session en mémoire par défaut qui est implémenté par WIF. Vous pouvez également implémenter un cache durable associé à une base de données. `ISessionSecurityTokenCacheService` définit l’interface présentée ci-dessus. Par souci de concision, cet exemple ne montre pas toutes les méthodes devant être utilisées pour implémenter l’interface.  
   
 ```  
 using System;  
@@ -141,10 +147,10 @@ namespace WcfSessionSecurityTokenCacheService
 ```  
   
 <a name="BKMK_TheWCFClient"></a>   
-## Le Client de mise en cache de WCF  
- Cette section présente l'implémentation d'une classe qui dérive de <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> et que les délégués appelle le service de mise en cache.  Vous configurez l'application RP pour utiliser cette classe par le biais de la [\<sessionSecurityTokenCache\>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) élément comme dans le code XML suivant  
+## <a name="the-wcf-caching-client"></a>Client caching WCF  
+ Cette section montre l’implémentation d’une classe dérivée de <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> qui délègue les appels au service caching. Vous devez configurer l’application par partie de confiance pour qu’elle utilise cette classe à l’aide de l’élément [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md), comme dans le code XML suivant :  
   
-```  
+```xml  
 <caches>  
   <sessionSecurityTokenCache type="CacheLibrary.SharedSessionSecurityTokenCache, CacheLibrary">  
     <!--cacheServiceAddress points to the centralized session security token cache service running in the web farm.-->  
@@ -153,7 +159,7 @@ namespace WcfSessionSecurityTokenCacheService
 </caches>  
 ```  
   
- La substitution de la classe le <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A> méthode pour obtenir le point de terminaison de service à partir de la custom `<cacheServiceAddress>` élément enfant de le `<sessionSecurityTokenCache>` élément.  Il utilise ce point de terminaison pour initialiser un `ISessionSecurityTokenCacheService` canal sur lequel il peut communiquer avec le service.  Dans cet exemple, toutes les méthodes requises pour implémenter la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe sont affichés par souci de concision.  
+ La classe substitue la méthode <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A> pour obtenir le point de terminaison du service à partir de l’élément enfant `<cacheServiceAddress>` personnalisé de l’élément `<sessionSecurityTokenCache>`. Elle utilise ensuite ce point de terminaison pour initialiser un canal `ISessionSecurityTokenCacheService` via lequel elle peut communiquer avec le service.  Par souci de concision, cet exemple ne montre pas toutes les méthodes devant être utilisées pour implémenter la classe <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>.  
   
 ```  
 using System;  
@@ -255,8 +261,9 @@ namespace CacheLibrary
 }  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>   
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>   
  <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>   
  [Gestion de session WIF](../../../docs/framework/security/wif-session-management.md)
+

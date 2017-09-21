@@ -1,51 +1,61 @@
 ---
-title: "Collaboration pair &#224; pair | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "Collaboration pair à pair"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
 caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b17fc74b2143f7307316a167330d06c87b9d4c3d
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Collaboration pair &#224; pair
-Le réseau égal est l'utilisation d'ordinateurs relativement puissants \(ordinateurs personnels\) qui existent au bord de Internet pour plus que les tâches de calcul clientes.  \(PC\) De l'ordinateur personnel moderne est très un processeur rapide, une vaste mémoire, et un grand disque dur, aucun qui sont entièrement utilisés en exécutant des tâches de calcul courantes telles que la messagerie électronique et la navigation web.  PC moderne peut facilement jouer le rôle de client et serveur \(un homologue\) pour de nombreux types d'applications.  
+# <a name="peer-to-peer-collaboration"></a>Collaboration pair à pair
+Les réseaux pair à pair utilisent des ordinateurs relativement puissants (des ordinateurs personnels) situés à la périphérie d’Internet et qui permettent davantage que de simples tâches de calcul basées sur le client. L’ordinateur personnel moderne dispose d’un processeur très rapide, d’une très grande mémoire et d’un disque dur volumineux. Cependant, aucun d’eux n’est entièrement utilisé lors de l’exécution des tâches informatiques courantes, comme l’envoi et la réception d’e-mails ou la navigation web. Les PC modernes peuvent facilement jouer le rôle de client et de serveur (pair) pour de nombreux types d’applications.  
   
--   L'infrastructure égal de collaboration est une implémentation simplifiée de l'infrastructure égal de Microsoft Windows qui tire parti du service du Voisinage immédiat dans Windows Vista et les plateformes ultérieures.  Elle est mieux utilisée pour les applications homologue\- activées dans un recommandé pour lequel le service du Voisinage immédiat s'exécute, bien qu'il puisse traiter les points de terminaison ou des contacts internet.  Elle incorpore le gestionnaire de contacts commun utilisé par Live Messenger et d'autres applications prenant Live\- de déterminer les points de terminaison, la disponibilité, et la présence de contact.  
+-   L’infrastructure de collaboration pair à pair est une version simplifiée de l’infrastructure pair à pair de Microsoft Windows qui s’appuie sur le service Voisinage immédiat de Windows Vista et des plateformes ultérieures. Elle est particulièrement adaptée pour les applications pair à pair situées dans un sous-réseau pour lequel est exécuté le service Voisinage immédiat. Toutefois, elle peut également être utilisée pour les points de terminaison ou les contacts Internet. Elle comprend le Gestionnaire de contacts commun qui est utilisé par Live Messenger et les autres applications Live pour déterminer la présence, la disponibilité et les points de terminaison des contacts.  
   
-## Applications de collaboration  
- Une application classique égal de collaboration est composée des étapes suivantes :  
+-  
   
--   L'homologue détermine l'identité d'un homologue qui s'intéresse héberger dans une session de collaboration  
+## <a name="collaboration-applications"></a>Applications de collaboration  
+ Une application de collaboration pair à pair classique effectue les étapes suivantes :  
   
--   Une demande d'héberger une session est envoyée, d'une certaine manière, et l'homologue hôte accepte de gérer l'activité de collaboration.  
+-   Le pair détermine l’identité d’un pair qui souhaite héberger une session de collaboration.  
   
--   L'hôte invite des contacts dans le sous\-réseau \(demandeur\) à une session.  
+-   Une demande d’hébergement de session est envoyée, et le pair hôte accepte de gérer les activités de collaboration.  
   
--   Tous les homologues qui souhaitent collaborer peuvent ajouter l'hôte à leurs gestionnaires de contacts.  
+-   L’hôte invite les contacts du sous-réseau (y compris le demandeur) à une session.  
   
--   La plupart des homologues enverront des réponses en appelant sur, si accepté ou décliné, au hébergez l'homologue en temps voulu.  
+-   Tous les pairs qui souhaitent collaborer peuvent ajouter l’hôte dans leur gestionnaire de contacts.  
   
--   Tous les homologues qui souhaitent collaborer les abonneront au hébergent l'homologue.  
+-   La plupart des pairs envoient une réponse à l’invitation du pair hôte (accepter/décliner) en temps voulu.  
   
--   Alors que les homologues effectuent leur activité initiale de collaboration, hébergez l'homologue peut ajouter les homologues distants à son gestionnaire de contacts.  Il gère également toutes les réponses en appelant sur pour déterminer qui a reçu, qui a refusé, et qui n'a pas répondu.  Elle peut annuler des invitations à ceux qui n'ont pas répondu, ou effectuer une autre activité.  
+-   Tous les pairs qui souhaitent collaborer s’inscrivent au pair hôte.  
   
--   À ce stade, l'homologue hôte peut démarrer une session de collaboration avec tous les homologues invités, ou enregistrez une application avec l'infrastructure de collaboration.  Les applications utilisent l'infrastructure P2P égal de collaboration et l'espace de noms d' <xref:System.Net.PeerToPeer.Collaboration> pour coordonner les communications pour les jeux, les forums électroniques, la conférence, et d'autres applications serverless présence de.  
+-   Lorsque les pairs réalisent leur première activité de collaboration, le pair hôte peut ajouter des pairs distants dans son gestionnaire de contacts. Il traite également toutes les réponses à l’invitation pour déterminer qui a accepté, qui a décliné, et qui n’a pas répondu.  Il peut annuler l’invitation pour ceux qui n’ont pas répondu, ou effectuer une autre activité.  
   
-## Sécurité de réseau égal  
- Dans un domaine Active Directory, les contrôleurs de domaine fournissent des services d'authentification Kerberos à l'aide de.  Dans un environnement homologue serverless, les homologues doivent fournir leur propre authentification.  Pour le réseau égal, tout nœud peut agir comme une autorité de certification, supprimez la spécification d'un certificat racine dans la mémoire de la racine approuvée de chaque homologue.  L'authentification est fournie avec des certificats auto\-signés, mis en forme comme certificats X.509.  Ce sont des certificats créés par chaque homologue, qui génère des paires de clés publique\/clé privée et le certificat signé à l'aide de la clé privée.  Le certificat auto\-signé est utilisé pour l'authentification et pour fournir des informations sur l'entité homologue.  Comme l'authentification X.509, l'authentification homologue de mise en réseau compte lors d'une chaîne des certificats suivant à une clé publique qui est approuvée.  
+-   À ce stade, le pair hôte peut démarrer une session de collaboration avec tous les pairs invités, ou inscrire une application dans l’infrastructure de collaboration.  Les applications P2P utilisent l’infrastructure de collaboration pair à pair et l’espace de noms <xref:System.Net.PeerToPeer.Collaboration> afin de coordonner les communications des jeux, des forums, des téléconférences et d’autres applications de présence sans serveur.  
   
-## Voir aussi  
+-  
+  
+## <a name="peer-to-peer-networking-security"></a>Sécurité des réseaux pair à pair  
+ Dans un domaine Active Directory, les contrôleurs de domaine fournissent des services d’authentification à l’aide de Kerberos. Dans un environnement pair à pair sans serveur, les pairs doivent fournir leur propre authentification. Pour les réseaux pair à pair, n’importe quel nœud peut servir d’autorité de certification. De cette façon, il n’est plus nécessaire qu’un certificat racine se trouve dans le magasin racine approuvé de chaque pair. L’authentification est assurée à l’aide de certificats auto-signés, au format X.509. Il s’agit des certificats qui sont créés par chaque pair, qui génère la paire clé publique/clé privée, et le certificat qui est signé à l’aide de la clé privée. Le certificat auto-signé est utilisé pour l’authentification et pour fournir des informations sur l’entité pair. Comme l’authentification X.509, l’authentification de réseau pair à pair s’appuie sur une chaîne de certificats liés à une même clé publique approuvée.  
+  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Net.PeerToPeer.Collaboration>   
  [À propos de l’espace de noms System.Net.PeerToPeer.Collaboration](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)
+

@@ -1,57 +1,62 @@
 ---
-title: "jitCompilationStart MDA | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "JIT compilation"
-  - "MDAs (managed debugging assistants), JIT compilation"
-  - "JitCompilationStart MDA"
-  - "managed debugging assistants (MDAs), JIT compilation"
+title: "Assistant Débogage managé jitCompilationStart"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- JIT compilation
+- MDAs (managed debugging assistants), JIT compilation
+- JitCompilationStart MDA
+- managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 caps.latest.revision: 11
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 11
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: eb6a36b9427c7d55aceba226a865cd51d076f448
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# jitCompilationStart MDA
-L'Assistant Débogage managé \(MDA, Managed Debugging Assistant\) `jitCompilationStart` est activé pour signaler le moment où le compilateur juste\-à\-temps \(JIT, Just\-In\-Time\) commence à compiler une fonction.  
+# <a name="jitcompilationstart-mda"></a>Assistant Débogage managé jitCompilationStart
+L’Assistant Débogage managé `jitCompilationStart` est activé pour signaler le moment où le compilateur juste-à-temps (JIT, Just-In-Time) commence à compiler une fonction.  
   
-## Symptômes  
- La taille du jeu de travail augmente pour un programme qui est déjà au format d'image natif car mscorjit.dll est chargé dans le processus.  
+## <a name="symptoms"></a>Symptômes  
+ La taille du jeu de travail augmente pour un programme qui est déjà au format d’image natif, car mscorjit.dll est chargé dans le processus.  
   
-## Cause  
- Les assemblys dont dépend le programme n'ont pas tous été générés au format natif, ou ceux qui l'ont été ne sont pas correctement inscrits.  
+## <a name="cause"></a>Cause  
+ Les assemblys dont dépend le programme n’ont pas tous été générés au format natif, ou ceux qui l’ont été ne sont pas correctement inscrits.  
   
-## Résolution  
- L'activation de ce MDA vous permet de déterminer la fonction qui est compilée juste\-à\-temps \(JIT\).  Déterminez si l'assembly qui contient la fonction est généré au format natif et s'il est correctement inscrit.  
+## <a name="resolution"></a>Résolution  
+ L’activation de cet Assistant Débogage managé vous permet de déterminer la fonction qui est compilée juste-à-temps. Déterminez si l’assembly qui contient la fonction est généré au format natif et s’il est correctement inscrit.  
   
-## Effet sur le runtime  
- Ce MDA enregistre un message juste avant qu'une méthode soit compilée juste\-à\-temps, de sorte que l'activation de ce MDA a un impact significatif sur les performances.  Notez que si une méthode est inline, ce MDA ne générera pas de message séparé.  
+## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
+ Cet Assistant Débogage managé enregistre un message juste avant qu’une méthode ne soit compilée juste-à-temps, de sorte que son activation a un impact significatif sur les performances. Notez que, si une méthode est inline, cet Assistant Débogage managé ne générera pas de message séparé.  
   
-## Sortie  
- L'exemple de code suivant affiche la sortie de l'exemple.  Dans ce cas, la sortie montre que, dans l'assembly Test, la méthode "m" sur la classe "ns2.CO" a été compilée juste\-à\-temps \(JIT\).  
+## <a name="output"></a>Sortie  
+ L’exemple de code suivant illustre une sortie. Dans ce cas, la sortie montre que, dans l’assembly Test, la méthode m sur la classe ns2.CO a été compilée juste-à-temps.  
   
 ```  
 method name="Test!ns2.C0::m"  
 ```  
   
-## Configuration  
- Le fichier de configuration suivant présente divers filtres qui peuvent être utilisés pour filtrer les méthodes signalées lorsqu'elles sont d'abord compilées juste\-à\-temps \(JIT\).  Vous pouvez spécifier que toutes les méthodes soient signalées en affectant \* à la valeur de l'attribut name.  
+## <a name="configuration"></a>Configuration  
+ Le fichier de configuration suivant présente divers filtres qui peuvent être utilisés pour filtrer les méthodes signalées quand elles sont d’abord compilées juste-à-temps. Vous pouvez spécifier que toutes les méthodes doivent être signalées en affectant * à la valeur de l’attribut name.  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <jitCompilationStart>  
@@ -69,8 +74,8 @@ method name="Test!ns2.C0::m"
 </mdaConfig>  
 ```  
   
-## Exemple  
- L'exemple de code suivant doit normalement être utilisé avec le fichier de configuration précédent.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant doit normalement être utilisé avec le fichier de configuration précédent.  
   
 ```  
 using System;  
@@ -167,7 +172,8 @@ namespace ns2
 }  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Interop Marshaling](../../../docs/framework/interop/interop-marshaling.md)
+ [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
+ [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
+

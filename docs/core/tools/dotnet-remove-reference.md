@@ -1,28 +1,27 @@
 ---
-title: Commande dotnet-remove reference - Interface CLI .NET Core
-description: "La commande dotnet-remove reference est une option pratique pour supprimer des références entre projets."
+title: Commande dotnet remove reference - Interface CLI .NET Core
+description: "La commande dotnet remove reference est une option pratique pour supprimer des références entre projets."
 keywords: dotnet-remove, CLI, commande CLI, .NET Core
-author: spboyer
+author: mairaw
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.devlang: dotnet
-ms.assetid: 889c6b7e-a313-40b1-9fd3-6a6f4c52f1d0
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e22f64370be4b56597a303d79d3aabe1ff22a78a
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: 7cb84c2dc7fc4d16b00bd6459132390ab80131f3
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-remove-reference"></a>dotnet remove reference
 
-# <a name="dotnet-remove-reference"></a>dotnet-remove reference
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
-`dotnet-remove reference` - Supprime des références entre projets.
+`dotnet remove reference` - Supprime des références entre projets.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -46,7 +45,7 @@ Références entre projets (P2P) à supprimer. Vous pouvez spécifier un ou plus
 
 `-h|--help`
 
-Affiche une aide brève pour la commande.
+Affiche une aide élémentaire de la commande.
 
 `-f|--framework <FRAMEWORK>`
 

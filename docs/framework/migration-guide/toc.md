@@ -8,3 +8,4 @@
 ### [Comment : déterminer les mises à jour .NET Framework installées](how-to-determine-which-net-framework-updates-are-installed.md)
 ## [Guide pratique pour configurer une application en vue de prendre en charge le .NET Framework 4 ou 4.5](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
 ## [Migration à partir du .NET Framework 1.1](migrating-from-the-net-framework-1-1.md)
+## [Problèmes de migration de .NET Framework 4](net-framework-4-migration-issues.md)

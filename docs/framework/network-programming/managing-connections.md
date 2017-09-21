@@ -1,51 +1,56 @@
 ---
-title: "Gestion des connexions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Internet, connexions"
-  - "HTTP, classes pour la connexion"
-  - "requête de données sur Internet, connexions"
-  - "envoi de données, connexions"
-  - "réception de données, connexions"
-  - "ServicePoint (classe), à propos de la classe ServicePoint"
-  - "réponse à une requête Internet, connexions"
-  - "connexions (.NET Framework), classes"
-  - "ressources réseau, connexions"
-  - "téléchargement de ressources Internet, connexions"
-  - "ServicePointManager (classe), à propos de la classe ServicePointManager"
+title: Gestion des connexions
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Internet, connections
+- HTTP, classes for connecting
+- requesting data from Internet, connections
+- sending data, connections
+- receiving data, connections
+- ServicePoint class, about ServicePoint class
+- response to Internet request, connections
+- connections [.NET Framework], classes
+- network resources, connections
+- downloading Internet resources, connections
+- ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 53170432e108a6d866bc2b96ef1ebf8b5bee6f28
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Gestion des connexions
-Les applications qui utilisent HTTP pour se connecter aux ressources de données peuvent utiliser les classes d' <xref:System.Net.ServicePoint> et d' <xref:System.Net.ServicePointManager> du.NET framework pour gérer des connexions à Internet et pour les aider à accomplir l'échelle et optimiser les performances.  
+# <a name="managing-connections"></a>Gestion des connexions
+Les applications qui utilisent HTTP pour se connecter aux ressources de données peuvent utiliser les classes <xref:System.Net.ServicePoint> et <xref:System.Net.ServicePointManager> du .NET Framework pour gérer les connexions à Internet et les aider à atteindre des performances et une évolutivité optimales.  
   
- La classe de **ServicePoint** propose une application un point de terminaison auquel l'application à se connecter aux ressources Internet en accès.  Chaque **ServicePoint** contient des informations qui permet d'optimiser les connexions à un serveur Web en partageant les informations d'optimisation entre les plug\-ins pour améliorer les performances.  
+ La classe **ServicePoint** fournit une application avec un point de terminaison auquel l’application peut se connecter pour accéder aux ressources Internet. Chaque **ServicePoint** contient des informations qui vous aident à optimiser les connexions à un serveur Internet en partageant les informations d’optimisation entre les connexions pour améliorer les performances.  
   
- Chaque **ServicePoint** est identifié par un URI \(URI\) et est catégorisée en fonction de les fragments d'identificateur et d'hôte de modèle de l'URI.  Par exemple, la même instance de **ServicePoint** fournirait des requêtes aux URI http:\/\/www.contoso.com\/index.htm et http:\/\/www.contoso.com\/news.htm?date\=today parce qu'elles ont le même identificateur de modèle \(HTTP\) et les fragments hôte \(www.contoso.com\).  Si l'application a déjà une connexion persistante au serveur www.contoso.com, il utilise cette connexion pour récupérer les deux applications, évitant de créer deux connexions.  
+ Chaque **ServicePoint** est identifié par un URI et est classé selon l’identificateur du schéma et les fragments d’hôte de l’URI. Par exemple, une même instance **ServicePoint** peut envoyer des requêtes aux URI http://www.contoso.com/index.htm et http://www.contoso.com/news.htm?date=today, car elles ont le même identificateur de schéma (http) et les mêmes fragments d’hôte (www.contoso.com). Si l’application a déjà une connexion permanente au serveur www.contoso.com, elle utilise cette connexion pour récupérer les deux requêtes, ce qui lui évite de créer deux connexions.  
   
- **ServicePointManager** est une classe statique qui gère la création et la destruction des instances de **ServicePoint** .  **ServicePointManager** crée **ServicePoint** lorsque l'application demande une ressource Internet qui n'est pas dans la collection d'exister des instances de **ServicePoint** .  Les instances de**ServicePoint** sont perdues lorsqu'il a dépassé sa durée d'inactivité maximum ou lorsque le nombre d'exister des instances de **ServicePoint** dépasse le nombre maximal d'instances de **ServicePoint** pour l'application.  Vous pouvez contrôler la durée d'inactivité maximum par défaut et le nombre maximal d'instances de **ServicePoint** en définissant les propriétés d' <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> et d' <xref:System.Net.ServicePointManager.MaxServicePoints%2A> sur **ServicePointManager**.  
+ **ServicePointManager** est une classe statique qui gère la création et la destruction des instances **ServicePoint**. **ServicePointManager** crée un **ServicePoint** lorsque l’application demande une ressource Internet qui ne figure pas dans la collection existante d’instances **ServicePoint**. Les instances **ServicePoint** sont détruites lorsqu’elles ont dépassé leur durée d’inactivité maximale ou lorsque le nombre d’instances **ServicePoint** existantes dépasse le nombre maximal d’instances **ServicePoint** de l’application. Vous pouvez contrôler la durée d’inactivité maximale par défaut et le nombre maximal d’instances **ServicePoint** en définissant les propriétés <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> et <xref:System.Net.ServicePointManager.MaxServicePoints%2A> du **ServicePointManager**.  
   
- Le nombre de connexions entre un client et serveur peut avoir un impact excessive sur le débit d'application.  Par défaut, une application à l'aide de la classe d' <xref:System.Net.HttpWebRequest> utilise un maximum de deux connexions persistantes à un serveur donné, mais vous pouvez définir le nombre maximal de connexions pour chaque application.  
+ Le nombre de connexions entre un client et un serveur peut avoir un impact considérable sur le débit de l’application. Par défaut, une application qui utilise la classe <xref:System.Net.HttpWebRequest> utilise au maximum deux connexions persistantes à un serveur donné. Toutefois, vous pouvez définir le nombre maximal de connexions sur chaque application.  
   
 > [!NOTE]
->  Les limites de la spécification HTTP\/1.1 le nombre de connexions d'une application à deux connexions par serveur.  
+>  La spécification HTTP/1.1 limite le nombre de connexions d’une application à deux connexions par serveur.  
   
- Le nombre optimal de connexions dépend des conditions réelles dans lesquelles l'application s'exécute.  Augmenter le nombre de connexions disponibles pour l'application peut ne pas affecter les performances de l'application.  Pour déterminer l'impact de plus de connexions, les tests de performance exécutés en faisant varier le nombre de connexions.  Vous pouvez modifier le nombre de connexions qu'une application utilise en modifiant la propriété statique d' <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> sur la classe de **ServicePointManager** à l'initialisation de l'application, comme indiqué dans l'exemple de code suivant.  
+ Le nombre optimal de connexions dépend des conditions réelles dans lesquelles l’application s’exécute. L’augmentation du nombre de connexions disponibles pour l’application n’affecte pas nécessairement les performances de l’application. Pour déterminer l’impact d’un plus grand nombre de connexions, exécutez des tests de performances avec différents nombres de connexions. Vous pouvez modifier le nombre de connexions qu’utilise une application en modifiant la propriété statique <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> dans la classe **ServicePointManager** lors de l’initialisation de l’application, comme indiqué dans l’exemple de code suivant.  
   
 ```csharp  
 // Set the maximum number of connections per server to 4.  
@@ -57,7 +62,7 @@ ServicePointManager.DefaultConnectionLimit = 4;
 ServicePointManager.DefaultConnectionLimit = 4  
 ```  
   
- Modifier la propriété de **ServicePointManager.DefaultConnectionLimit** n'affecte pas les instances précédemment initialisées de **ServicePoint** .  Le code suivant montre comment modifier la limite de connexion sur **ServicePoint** existant pour le serveur http:\/\/www.contoso.com à la valeur stockée dans `newLimit`.  
+ La modification de la propriété **ServicePointManager.DefaultConnectionLimit** n’affecte pas les instances de **ServicePoint** précédemment initialisées. Le code suivant montre le remplacement du nombre limite de connexions d’un **ServicePoint** existant pour le serveur http://www.contoso.com par la valeur stockée dans `newLimit`.  
   
 ```csharp  
 Uri uri = new Uri("http://www.contoso.com/");  
@@ -71,6 +76,7 @@ Dim sp As ServicePoint = ServicePointManager.FindServicePoint(uri)
 sp.ConnectionLimit = newLimit  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Regroupement de connexions](../../../docs/framework/network-programming/connection-grouping.md)   
  [Utilisation de protocoles d’application](../../../docs/framework/network-programming/using-application-protocols.md)
+

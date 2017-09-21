@@ -1,79 +1,152 @@
 ---
-title: Commande dotnet-publish - Interface CLI .NET Core
-description: "La commande dotnet-publish publie votre projet .NET Core dans un répertoire."
+title: Commande dotnet publish - Interface CLI .NET Core
+description: "La commande dotnet publish publie votre projet .NET Core dans un répertoire."
 keywords: "dotnet-publish, CLI, commande CLI, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/15/2017
+ms.date: 08/12/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: f2ef275a-7c5e-430a-8c30-65f52af62771
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a8a37b1eacab13682d4f4a2bea2f9ea248cdd9eb
+ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
+ms.openlocfilehash: db6e527a6132be0b6362c68945bb68884f5ad619
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/14/2017
 
 ---
+# <a name="dotnet-publish"></a>dotnet publish
 
-# <a name="dotnet-publish"></a>dotnet-publish
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Nom
 
-`dotnet-publish` - Empaquette l’application et ses dépendances dans un dossier en vue d’un déploiement sur un système d’hébergement.
+`dotnet publish` - Empaquette l’application et ses dépendances dans un dossier en vue d’un déploiement sur un système d’hébergement.
 
 ## <a name="synopsis"></a>Résumé
 
-`dotnet publish [<PROJECT>] [-f|--framework] [-r|--runtime] [-o|--output] [-c|--configuration] [--version-suffix] [-v|--verbosity] [-h|--help]`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
+```
+dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
+dotnet publish [-h|--help]
+```
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+```
+dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+dotnet publish [-h|--help]
+```
+
+---
 
 ## <a name="description"></a>Description
 
 `dotnet publish` compile l’application, parcourt ses dépendances spécifiées dans le fichier projet et publie l’ensemble de fichiers obtenus dans un répertoire. La sortie contient les éléments suivants :
 
-* Le code de langage intermédiaire (IL) dans un assembly avec l’extension `*.dll`.
-* Le fichier *\*.deps.json* qui contient toutes les dépendances du projet.
-* Le fichier *\*.runtime.config.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
+* Le code de langage intermédiaire (IL) dans un assembly avec l’extension *dll*.
+* Le fichier *.deps.json* qui contient toutes les dépendances du projet.
+* Le fichier *.runtime.config.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
 * Les dépendances de l’application. Ces dernières sont copiées du cache NuGet vers le dossier de sortie.
 
 Le résultat de la commande `dotnet publish` est prêt pour le déploiement sur un système hôte (par exemple, un serveur, un PC, un Mac ou un ordinateur portable) et pour l’exécution ; c’est le seul moyen officiellement pris en charge de préparer l’application en vue de son déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md). Pour connaître la structure des répertoires d’une application publiée, consultez la page [Structure de répertoires](/aspnet/core/hosting/directory-structure).
 
 ## <a name="arguments"></a>Arguments
 
-`PROJECT` 
+`PROJECT`
 
-Projet à publier. S’il n’est pas spécifié, la valeur utilisée par défaut est le répertoire actif. 
+Projet à publier. S’il n’est pas spécifié, la valeur utilisée par défaut est le répertoire actif.
 
 ## <a name="options"></a>Options
 
-`-h|--help`
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-Affiche une aide brève pour la commande.  
+`-c|--configuration {Debug|Release}`
+
+Définit la configuration de build. La valeur par défaut est `Debug`.
 
 `-f|--framework <FRAMEWORK>`
 
 Publie l’application pour le [framework cible](../../standard/frameworks.md) spécifié. Le framework cible doit être spécifié dans le fichier projet.
 
+`--force`
+
+Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Cette opération équivaut à supprimer le fichier *project.assets.json*.
+
+`-h|--help`
+
+Affiche une aide élémentaire de la commande.
+
+`--manifest <PATH_TO_MANIFEST_FILE>`
+
+Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à utiliser pour épurer l’ensemble des packages publiés avec l’application. Le fichier manifeste fait partie de la sortie de la [commande `dotnet store`](dotnet-store.md). Pour spécifier plusieurs manifestes, ajoutez une option `--manifest` pour chaque manifeste. Cette option est disponible à partir du SDK .NET Core 2.0.
+
+`--no-dependencies`
+
+Ignore les références entre projets et restaure uniquement le projet racine.
+
+`--no-restore`
+
+N’effectue pas de restauration implicite à l’exécution de la commande.
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+Spécifie le chemin du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+
+`--self-contained`
+
+Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Si un identificateur de runtime est spécifié, sa valeur par défaut est `true`. Pour plus d’informations sur les différents types de déploiement, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
 Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
 
-`-o|--output <OUTPUT_DIRECTORY>`
+`-v|--verbosity <LEVEL>`
 
-Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
-
-`-c|--configuration <CONFIGURATION>`
-
-Configuration à utiliser lors de la génération du projet. La valeur par défaut est `Debug`.
+Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
 `--version-suffix <VERSION_SUFFIX>`
 
 Définit le suffixe de version qui remplace l’astérisque (`*`) dans le champ de version du fichier projet.
 
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
+`-c|--configuration {Debug|Release}`
+
+Définit la configuration de build. La valeur par défaut est `Debug`.
+
+`-f|--framework <FRAMEWORK>`
+
+Publie l’application pour le [framework cible](../../standard/frameworks.md) spécifié. Le framework cible doit être spécifié dans le fichier projet.
+
+`-h|--help`
+
+Affiche une aide élémentaire de la commande.
+
+`--manifest <PATH_TO_MANIFEST_FILE>`
+
+Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à utiliser pour épurer l’ensemble des packages publiés avec l’application. Le fichier manifeste fait partie de la sortie de la [commande `dotnet store`](dotnet-store.md). Pour spécifier plusieurs manifestes, ajoutez une option `--manifest` pour chaque manifeste. Cette option est disponible à partir du SDK .NET Core 2.0.
+
+`-o|--output <OUTPUT_DIRECTORY>`
+
+Spécifie le chemin du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
+
+`-r|--runtime <RUNTIME_IDENTIFIER>`
+
+Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+
 `-v|--verbosity <LEVEL>`
 
 Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+
+`--version-suffix <VERSION_SUFFIX>`
+
+Définit le suffixe de version qui remplace l’astérisque (`*`) dans le champ de version du fichier projet.
+
+---
 
 ## <a name="examples"></a>Exemples
 

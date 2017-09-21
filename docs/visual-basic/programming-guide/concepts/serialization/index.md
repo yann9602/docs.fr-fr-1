@@ -1,5 +1,5 @@
 ---
-title: "Sérialisation (Visual Basic) | Microsoft Docs"
+title: "Sérialisation (Visual Basic)"
 ms.custom: 
 ms.date: 2015-07-20
 ms.prod: .net
@@ -20,10 +20,11 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9fb4404bf648f108a3b98952234d29e2bc1d4189
-ms.lasthandoff: 03/13/2017
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: b88f78b86e79802238b78cfe097a0ccc73bfe778
+ms.contentlocale: fr-fr
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="serialization-visual-basic"></a>Sérialisation (Visual Basic)
@@ -40,13 +41,13 @@ La sérialisation est le processus de conversion d'un objet en un flux d'octets 
  La sérialisation permet au développeur d’enregistrer l’état d’un objet et de le recréer si nécessaire, en fournissant le stockage d’objets, ainsi que l’échange de données. Avec la sérialisation, un développeur peut effectuer des actions comme envoyer l’objet à une application distante au moyen d’un service web, le transmettre d’un domaine à un autre, le transmettre à travers un pare-feu sous forme de chaîne XML ou maintenir la sécurité ou des informations propres à l’utilisateur entre les applications.  
   
 ### <a name="making-an-object-serializable"></a>Rendre un objet sérialisable  
- Pour sérialiser un objet, il vous faut l’objet à sérialiser, un flux qui contiendra l’objet sérialisé et un <xref:System.Runtime.Serialization.Formatter>. L’attribut <xref:System.Runtime.Serialization> contient les classes nécessaires pour sérialiser et désérialiser des objets.  
+ Pour sérialiser un objet, il vous faut l’objet à sérialiser, un flux qui contiendra l’objet sérialisé et <xref:System.Runtime.Serialization.Formatter>. <xref:System.Runtime.Serialization> contient les classes nécessaires pour sérialiser et désérialiser des objets.  
   
- Appliquez l’attribut <xref:System.SerializableAttribute> à un type pour indiquer que les instances de ce type peuvent être sérialisées. Une exception <xref:System.Runtime.Serialization.SerializationException> est levée si vous essayez de sérialiser, mais que le type n’a pas l’attribut <xref:System.SerializableAttribute>.  
+ Appliquez l’attribut <xref:System.SerializableAttribute> à un type pour indiquer que les instances de ce type peuvent être sérialisées. Une exception <xref:System.Runtime.Serialization.SerializationException> est levée si vous tentez de sérialiser alors que le type n’a pas l’attribut <xref:System.SerializableAttribute>.  
   
- Si vous souhaitez qu’un champ de votre classe ne soit pas sérialisable, appliquez l’attribut <xref:System.NonSerializedAttribute>. Si un champ d’un type sérialisable contient un pointeur, un handle ou une autre structure de données propre à un environnement particulier et qu’il n’est pas possible de le reconstituer de manière significative dans un autre environnement, vous pouvez le rendre non sérialisable.  
+ Si vous ne voulez pas qu’un champ de votre classe soit sérialisable, appliquez l’attribut <xref:System.NonSerializedAttribute>. Si un champ d’un type sérialisable contient un pointeur, un handle ou une autre structure de données propre à un environnement particulier et qu’il n’est pas possible de le reconstituer de manière significative dans un autre environnement, vous pouvez le rendre non sérialisable.  
   
- Si une classe sérialisée contient des références à des objets d’autres classes qui sont marqués comme étant <xref:System.SerializableAttribute>, ces objets seront également sérialisés.  
+ Si une classe sérialisée contient des références à des objets d’autres classes marqués par <xref:System.SerializableAttribute>, ces objets seront également sérialisés.  
   
 ## <a name="binary-and-xml-serialization"></a>Sérialisation binaire et XML  
  Il est possible d’utiliser soit la sérialisation binaire soit la sérialisation XML. Dans la sérialisation binaire, tous les membres, y compris en lecture seule, sont sérialisés et les performances sont améliorées. La sérialisation XML fournit un code plus lisible, ainsi qu’une plus grande souplesse de partage et d’utilisation de l’objet à des fins d’interopérabilité.  
@@ -55,15 +56,15 @@ La sérialisation est le processus de conversion d'un objet en un flux d'octets 
  La sérialisation binaire utilise l’encodage binaire pour produire une sérialisation compacte qui peut servir notamment aux flux réseau par socket ou stockage.  
   
 ### <a name="xml-serialization"></a>Sérialisation XML  
- La sérialisation XML sérialise les champs et les propriétés publics d’un objet ou les paramètres et valeurs renvoyés de méthodes, en un flux XML conforme à un document XSD (langage de définition de schéma XML) spécifique. La sérialisation XML permet d’obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format XML. <xref:System.Xml.Serialization> contient les classes nécessaires pour sérialiser et désérialiser du XML.  
+ La sérialisation XML sérialise les champs et les propriétés publics d’un objet ou les paramètres et valeurs renvoyés de méthodes, en un flux XML conforme à un document XSD (langage de définition de schéma XML) spécifique. La sérialisation XML permet d’obtenir des classes fortement typées avec des propriétés et des champs publics convertis au format XML. <xref:System.Xml.Serialization> contient les classes nécessaires pour sérialiser et désérialiser du code XML.  
   
- Vous pouvez appliquer les attributs à des classes et des membres de classes afin de contrôler la manière dont <xref:System.Xml.Serialization.XmlSerializer> sérialise ou désérialise une instance de la classe.  
+ Vous pouvez appliquer des attributs à des classes et des membres de classes afin de contrôler la manière dont <xref:System.Xml.Serialization.XmlSerializer> sérialise ou désérialise une instance de la classe.  
   
 ## <a name="basic-and-custom-serialization"></a>Sérialisation de base et sérialisation personnalisée  
  La sérialisation peut s’effectuer de deux manières : de base et personnalisée. La sérialisation de base utilise .NET Framework pour sérialiser automatiquement l’objet.  
   
 ### <a name="basic-serialization"></a>Sérialisation de base  
- La seule condition de la sérialisation de base est que l’attribut <xref:System.SerializableAttribute> soit appliqué à l’objet. <xref:System.NonSerializedAttribute> peut être utilisé pour empêcher que certains champs ne soient sérialisés.  
+ La seule condition pour la sérialisation de base est que l’attribut <xref:System.SerializableAttribute> soit appliqué à l’objet. <xref:System.NonSerializedAttribute> peut être utilisé pour empêcher que certains champs ne soient sérialisés.  
   
  Lorsque vous utilisez la sérialisation de base, la gestion des versions des objets peut poser problème, auquel cas la sérialisation personnalisée peut être préférable. La sérialisation de base est le moyen le plus simple d’effectuer la sérialisation, mais elle ne fournit pas beaucoup de contrôle sur le processus.  
   
@@ -80,7 +81,8 @@ La sérialisation est le processus de conversion d'un objet en un flux d'octets 
  Montre comment utiliser la sérialisation pour rendre les données d’un objet persistantes entre les instances, afin de stocker des valeurs et de les récupérer lors de la prochaine instanciation de l’objet.  
   
  [Guide pratique : lire des données d’objet à partir d’un fichier XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
- Montre comment lire les données d’objet écrites précédemment dans un fichier XML à l’aide de la classe <xref:System.Xml.Serialization.XmlSerializer>.  
+ Montre comment lire les données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
  [Guide pratique : écrire des données d’objet dans un fichier XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
- Montre comment écrire l’objet d’une classe dans un fichier XML à l’aide d’une classe <xref:System.Xml.Serialization.XmlSerializer>.
+ Montre comment écrire l’objet depuis une classe vers un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.
+

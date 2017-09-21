@@ -1,6 +1,6 @@
 ---
-title: "Visite guidée de C# - Guide C# | Microsoft Docs"
-description: "Vous débutez en C# ? Découvrez les principes de base du langage."
+title: "Visite guidée du langage C# - Guide du langage C#"
+description: "Novice en matière de langage C# ? Découvrez les principes de base du langage."
 keywords: ".NET, .NET Core, C#, Abécédaire du langage C#, Guide du langage C#"
 author: BillWagner
 ms.author: wiwagn
@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4437ce5d344cf06d30e31911def6287999fc6ffc
-ms.openlocfilehash: f122f59dd6f194facd98f4c6fa7f84c658c02a90
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 0fa7f9f906ba72b114fc59c8026b4b6c79586dd2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 05/23/2017
+ms.lasthandoff: 07/28/2017
 
 ---
 
@@ -81,7 +81,7 @@ Il y a beaucoup d’autres choses à apprendre sur C#.  Les rubriques suivantes 
 * [Délégués](delegates.md)
     - Un ***type délégué*** représente des références à des méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais, contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 * [Attributs](attributes.md)
-     * Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
+    * Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
 
 >[!div class="step-by-step"]
 [Suivant](program-structure.md)

@@ -1,48 +1,54 @@
 ---
-title: "Autorisations web et socket | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Réseau"
-  - "positions (.NET Framework), accepter"
-  - "sockets, autorisations"
-  - "réseau, autorisations"
-  - "Internet, autorisations"
-  - "Ressources réseau"
-  - "classe SocketPermission, à propos de la classe SocketPermission"
-  - "positions (.NET Framework), connexion"
-  - "classe WebPermission, à propos de la classe WebPermission"
-  - "autorisations (.NET Framework), sockets"
-  - "sécurité (.NET Framework), Internet"
-  - "positions (.NET Framework), octroyer"
+title: Autorisations web et socket
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- Networking
+- positions [.NET Framework], accepting
+- sockets, permissions
+- network, permissions
+- Internet, permissions
+- Network Resources
+- SocketPermission class, about SocketPermission class
+- positions [.NET Framework], connecting
+- WebPermission class, about WebPermission class
+- permissions [.NET Framework], sockets
+- security [.NET Framework], Internet
+- positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
 caps.latest.revision: 9
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 9
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.translationtype: HT
+ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
+ms.openlocfilehash: 6071c69799cf289ad0ecf163dc2de038efefecc1
+ms.contentlocale: fr-fr
+ms.lasthandoff: 08/21/2017
+
 ---
-# Autorisations web et socket
-La sécurité internet pour les applications utilisant l'espace de noms d' <xref:System.Net> est fournie par les classes d' <xref:System.Net.WebPermission> et d' <xref:System.Net.SocketPermission> .  La classe de **WebPermission** contrôle le droit d'une application pour demander des données d'un URI ou pour servir l'URI à Internet.  La classe de **SocketPermission** contrôle le droit d'une application d'utiliser <xref:System.Net.Sockets.Socket> pour recevoir des données sur un port local ou pour contacter des appareils distants à l'aide d'un protocole de transport à une autre adresse, en fonction de l'hôte, le numéro de port, et le protocole de transport de socket.  
+# <a name="web-and-socket-permissions"></a>Autorisations web et socket
+La sécurité Internet pour les applications utilisant l’espace de noms <xref:System.Net> est apportée par les classes <xref:System.Net.WebPermission> et <xref:System.Net.SocketPermission>. La classe **WebPermission** détermine si une application est autorisée à demander des données à partir d’un URI ou d’utiliser un URI sur Internet. La classe **SocketPermission** détermine si une application est autorisée à utiliser un <xref:System.Net.Sockets.Socket> pour accepter des données sur un port local ou pour communiquer avec des appareils distants utilisant un protocole de transport à une autre adresse, en fonction de l’hôte, du numéro de port et du protocole de transport du socket.  
   
- La classe d'autorisation à utiliser dépend de votre type d'application.  Les applications qui utilisent <xref:System.Net.WebRequest> et ses descendants doivent utiliser la classe de **WebPermission** pour gérer des autorisations.  Les applications qui utilisent l'accès de socket\- niveau doivent utiliser la classe de **SocketPermission** pour gérer des autorisations.  
+ La classe d’autorisation à utiliser dépend du type de votre application. Les applications qui utilisent <xref:System.Net.WebRequest> et ses descendants doivent utiliser la classe **WebPermission** pour gérer les autorisations. Les applications qui utilisent un accès de niveau socket doivent utiliser la classe **SocketPermission** pour gérer les autorisations.  
   
- **WebPermission** et **SocketPermission** définissent deux autorisations : acceptez et connectez.  Acceptez les l'application accorde la droite de répondre à une connexion entrante d'une autre partie.  Connectez les l'application accorde l'autorisation d'initialiser une connexion à une autre partie.  
+ **WebPermission** et **SocketPermission** définissent deux autorisations : Accept et Connect. Accept autorise l’application à répondre à une connexion entrante à partir d’une autre partie. Connect l’autorise à démarrer une connexion à une autre partie.  
   
- Pour les instances de **SocketPermission** , acceptez signifie qu'une application peut recevoir les connexions entrantes sur une adresse de transport locale ; connectez signifie qu'une application peut se connecter à une adresse de transport distante \(ou des local\).  
+ Pour les instances **SocketPermission**, Accept signifie qu’une application peut accepter des connexions entrantes sur une adresse de transport locale et Connect signifie qu’une application peut se connecter à une adresse de transport distante (ou locale).  
   
- Pour les instances de **WebPermission** , acceptez signifie qu'une application peut exporter un URI contrôlé par **WebPermission** au monde ; connectez signifie qu'une application peut accéder qu'un URI \(si elle est distante ou locale\).  
+ Pour les instances **WebPermission**, Accept signifie qu’une application peut exporter l’URI contrôlé par **WebPermission** sur Internet et Connect signifie qu’une application peut accéder à cet URI (distant ou local).  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Sécurité](../../../docs/standard/security/index.md)   
  [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)
+
