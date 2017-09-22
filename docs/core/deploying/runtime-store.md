@@ -82,7 +82,7 @@ dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> -
 **Exemple**
 
 ```console
-dotnet store --manifest packages.csproj --runtime win10-x64 --framework netstandard2.0 --framework-version 2.0.0
+dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
 ```
 
 Vous pouvez passer plusieurs chemins de manifeste de magasin de packages cible à une seule commande [`dotnet store`](../tools/dotnet-store.md) en répétant l’option et le chemin dans la commande.
