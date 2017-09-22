@@ -37,34 +37,34 @@ Après avoir créé une arborescence XML ou chargé un document XML dans une arb
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des ancêtres de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des ancêtres qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des descendants de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des descendants qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants placés après cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments après cet élément qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants placés avant cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments avant cet élément qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> de cet élément et de ces ancêtres. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
-|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> de cet élément et de ces descendants. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des ancêtres de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des ancêtres qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des descendants de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des descendants qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants de cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants placés après cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments après cet élément qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments enfants placés avant cet élément. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments avant cet élément qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> de cet élément et de ces ancêtres. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> de cet élément et de ces descendants. Une surcharge retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XElement> des éléments qui ont l'objet <xref:System.Xml.Linq.XName> spécifié.|  
   
 ## <a name="method-for-retrieving-a-single-element"></a>Méthode pour récupérer un seul élément  
  La méthode suivante récupère un seul enfant à partir d'un objet <xref:System.Xml.Linq.XElement>.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=fullName>|Retourne le premier objet <xref:System.Xml.Linq.XElement> enfant qui a l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=nameWithType>|Retourne le premier objet <xref:System.Xml.Linq.XElement> enfant qui a l'objet <xref:System.Xml.Linq.XName> spécifié.|  
   
 ## <a name="method-for-retrieving-a-collection-of-attributes"></a>Méthode pour récupérer une collection d'attributs  
  La méthode suivante récupère des attributs à partir d'un objet <xref:System.Xml.Linq.XElement>.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=fullName>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XAttribute> de tous les attributs.|  
+|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|Retourne un objet <xref:System.Collections.Generic.IEnumerable%601> de <xref:System.Xml.Linq.XAttribute> de tous les attributs.|  
   
 ## <a name="method-for-retrieving-a-single-attribute"></a>Méthode pour récupérer un seul attribut  
  La méthode suivante récupère un seul attribut à partir d'un objet <xref:System.Xml.Linq.XElement>.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=fullName>|Retourne l'objet <xref:System.Xml.Linq.XAttribute> qui a l'objet <xref:System.Xml.Linq.XName> spécifié.|  
+|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>|Retourne l'objet <xref:System.Xml.Linq.XAttribute> qui a l'objet <xref:System.Xml.Linq.XName> spécifié.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

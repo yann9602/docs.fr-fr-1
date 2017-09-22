@@ -52,10 +52,10 @@ Cette section propose des liens vers des informations de référence sur différ
  Propose des liens vers la spécification complète du langage [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], qui contient des informations détaillées sur tous les aspects du langage.  
   
 ## <a name="reference"></a>Référence  
- <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=fullName>  
+ <xref:Microsoft.VisualBasic.PowerPacks?displayProperty=nameWithType>  
  Cet espace de noms contient des classes pour les contrôles Visual Basic Power Packs. Les contrôles Visual Basic Power Packs sont des contrôles Windows Forms supplémentaires.  
   
- <xref:Microsoft.VisualBasic.PowerPacks.Printing?displayProperty=fullName>  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing?displayProperty=nameWithType>  
  Cet espace de noms fournit un composant qui vous permet d'imprimer une télécopie du formulaire tel qu'il apparaît à l'écran.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

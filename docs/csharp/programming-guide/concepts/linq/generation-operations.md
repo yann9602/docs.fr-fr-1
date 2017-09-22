@@ -35,10 +35,10 @@ La génération fait référence à la création d’une nouvelle séquence de v
   
 |Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|DefaultIfEmpty|Remplace une collection vide par une collection de singletons par défaut.|Non applicable.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=fullName>|  
-|Empty|Retourne une collection vide.|Non applicable.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=fullName>|  
-|Plage|Génère une collection qui contient une séquence de nombres.|Non applicable.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=fullName>|  
-|Répéter|Génère une collection qui contient une valeur répétée.|Non applicable.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=fullName>|  
+|DefaultIfEmpty|Remplace une collection vide par une collection de singletons par défaut.|Non applicable.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|Empty|Retourne une collection vide.|Non applicable.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|Plage|Génère une collection qui contient une séquence de nombres.|Non applicable.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Répéter|Génère une collection qui contient une valeur répétée.|Non applicable.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Linq>   

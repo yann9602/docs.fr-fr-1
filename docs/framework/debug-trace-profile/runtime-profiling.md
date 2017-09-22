@@ -76,10 +76,10 @@ Le profilage est une méthode de collecte de données de performance dans le cad
   
 |Classe|Description|  
 |-----------|-----------------|  
-|<xref:System.Diagnostics.PerformanceCounter?displayProperty=fullName>|Représente un composant de compteur de performances Windows NT. Cette classe permet de lire les compteurs prédéfinis ou personnalisés existants et de publier (écrire) des données de performance dans des compteurs personnalisés.|  
-|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=fullName>|Propose plusieurs méthodes permettant d’interagir avec les compteurs et les catégories de compteurs de l’ordinateur.|  
-|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=fullName>|Spécifie un programme d’installation pour le composant `PerformanceCounter` .|  
-|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=fullName>|Spécifie la formule de calcul de la méthode `NextValue` pour un `PerformanceCounter`.|  
+|<xref:System.Diagnostics.PerformanceCounter?displayProperty=nameWithType>|Représente un composant de compteur de performances Windows NT. Cette classe permet de lire les compteurs prédéfinis ou personnalisés existants et de publier (écrire) des données de performance dans des compteurs personnalisés.|  
+|<xref:System.Diagnostics.PerformanceCounterCategory?displayProperty=nameWithType>|Propose plusieurs méthodes permettant d’interagir avec les compteurs et les catégories de compteurs de l’ordinateur.|  
+|<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|Spécifie un programme d’installation pour le composant `PerformanceCounter` .|  
+|<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|Spécifie la formule de calcul de la méthode `NextValue` pour un `PerformanceCounter`.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md)

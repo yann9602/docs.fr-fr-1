@@ -62,5 +62,5 @@ Les rubriques suivantes montrent comment utiliser C# et .NET Framework pour effe
   
  [Fichiers, dossiers et lecteurs](../../../csharp/programming-guide/file-system/index.md)  
   
- <xref:System.IO?displayProperty=fullName>
+ <xref:System.IO?displayProperty=nameWithType>
 
