@@ -33,7 +33,7 @@ Deux séquences dont les éléments correspondants sont égaux et qui ont le mê
   
 |Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|SequenceEqual|Détermine si deux séquences sont égales en comparant les éléments par paires.|Non applicable.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=fullName>|  
+|SequenceEqual|Détermine si deux séquences sont égales en comparant les éléments par paires.|Non applicable.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Linq>   

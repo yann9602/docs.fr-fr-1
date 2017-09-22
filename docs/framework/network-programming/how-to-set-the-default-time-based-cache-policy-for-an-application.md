@@ -1,5 +1,5 @@
 ---
-title: "Guide pratique pour définir la stratégie de cache à durée définie par défaut pour une application"
+title: "Comment : définir la stratégie de cache à durée définie par défaut pour une application"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -28,7 +28,7 @@ ms.contentlocale: fr-fr
 ms.lasthandoff: 08/21/2017
 
 ---
-# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Guide pratique pour définir la stratégie de cache à durée définie par défaut pour une application
+# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Comment : définir la stratégie de cache à durée définie par défaut pour une application
 Avec la stratégie de cache basée sur la durée par défaut, le comportement de cache d’une application est déterminé par les en-têtes envoyés avec la ressource en cache et par les sections 13 et 14 du document RFC 2616, disponible à l’adresse [http://www.ietf.org](http://www.ietf.org/). Ce comportement de cache convient à la plupart des applications.  
   
 ### <a name="to-set-the-default-automatic-policy-for-an-application"></a>Pour utiliser automatiquement la stratégie par défaut pour une application  

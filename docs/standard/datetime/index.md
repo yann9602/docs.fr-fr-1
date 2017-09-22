@@ -85,5 +85,5 @@ Cette section de la documentation fournit les informations dont vous avez besoin
 
 ## <a name="reference"></a>Référence
 
-<xref:System.TimeZoneInfo?displayProperty=fullName>
+<xref:System.TimeZoneInfo?displayProperty=nameWithType>
 

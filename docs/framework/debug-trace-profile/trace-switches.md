@@ -45,13 +45,13 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
 ## <a name="trace-levels"></a>Niveaux de trace  
  Quand vous utilisez **TraceSwitch**, d'autres aspects sont à prendre en compte. Un objet **TraceSwitch** possède quatre propriétés qui retournent des valeurs de type **Boolean** indiquant si au moins un niveau de trace est défini pour le commutateur :  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=fullName>  
+-   <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A?displayProperty=fullName>  
+-   <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A?displayProperty=fullName>  
+-   <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A?displayProperty=fullName>  
+-   <xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A?displayProperty=nameWithType>  
   
  Les niveaux vous permettent de limiter la quantité d'informations de traçage reçues à celles qui sont nécessaires pour résoudre un problème. Vous spécifiez le niveau de détail souhaité dans la sortie de traçage en définissant et en configurant les commutateurs de trace avec le niveau de trace approprié. Vous pouvez choisir de recevoir les messages d'erreur, les messages d'avertissement, les messages d'information, les messages de trace détaillés ou, au contraire, de ne recevoir aucun message.  
   

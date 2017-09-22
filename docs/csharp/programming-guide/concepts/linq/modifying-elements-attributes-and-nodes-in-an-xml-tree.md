@@ -28,34 +28,34 @@ Le tableau suivant résume les méthodes et propriétés que vous pouvez utilise
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName>|Remplace un élément par du code XML analysé.|  
-|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=fullName>|Supprime tout le contenu (nœuds enfants et attributs) d'un élément.|  
-|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=fullName>|Supprime les attributs d'un élément.|  
-|<xref:System.Xml.Linq.XElement.ReplaceAll%2A?displayProperty=fullName>|Remplace tout le contenu (nœuds enfants et attributs) d'un élément.|  
-|<xref:System.Xml.Linq.XElement.ReplaceAttributes%2A?displayProperty=fullName>|Remplace les attributs d'un élément.|  
-|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=fullName>|Définit la valeur d'un attribut. Crée l'attribut s'il n'existe pas. Si la valeur est définie à `null`, supprime l'attribut.|  
-|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=fullName>|Définit la valeur d'un élément enfant. Crée l'élément s'il n'existe pas. Si la valeur est définie à `null`, supprime l'élément.|  
-|<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>|Remplace le contenu (nœuds enfants) d'un élément par le texte spécifié.|  
-|<xref:System.Xml.Linq.XElement.SetValue%2A?displayProperty=fullName>|Définit la valeur d'un élément.|  
+|<xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>|Remplace un élément par du code XML analysé.|  
+|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=nameWithType>|Supprime tout le contenu (nœuds enfants et attributs) d'un élément.|  
+|<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=nameWithType>|Supprime les attributs d'un élément.|  
+|<xref:System.Xml.Linq.XElement.ReplaceAll%2A?displayProperty=nameWithType>|Remplace tout le contenu (nœuds enfants et attributs) d'un élément.|  
+|<xref:System.Xml.Linq.XElement.ReplaceAttributes%2A?displayProperty=nameWithType>|Remplace les attributs d'un élément.|  
+|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=nameWithType>|Définit la valeur d'un attribut. Crée l'attribut s'il n'existe pas. Si la valeur est définie à `null`, supprime l'attribut.|  
+|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=nameWithType>|Définit la valeur d'un élément enfant. Crée l'élément s'il n'existe pas. Si la valeur est définie à `null`, supprime l'élément.|  
+|<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>|Remplace le contenu (nœuds enfants) d'un élément par le texte spécifié.|  
+|<xref:System.Xml.Linq.XElement.SetValue%2A?displayProperty=nameWithType>|Définit la valeur d'un élément.|  
   
  Les méthodes suivantes modifient un objet <xref:System.Xml.Linq.XAttribute>.  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName>|Définit la valeur d'un attribut.|  
-|<xref:System.Xml.Linq.XAttribute.SetValue%2A?displayProperty=fullName>|Définit la valeur d'un attribut.|  
+|<xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType>|Définit la valeur d'un attribut.|  
+|<xref:System.Xml.Linq.XAttribute.SetValue%2A?displayProperty=nameWithType>|Définit la valeur d'un attribut.|  
   
  Les méthodes suivantes modifient un objet <xref:System.Xml.Linq.XNode> (y compris un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>).  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.ReplaceWith%2A?displayProperty=fullName>|Remplace un nœud par du nouveau contenu.|  
+|<xref:System.Xml.Linq.XNode.ReplaceWith%2A?displayProperty=nameWithType>|Remplace un nœud par du nouveau contenu.|  
   
  Les méthodes suivantes modifient un objet <xref:System.Xml.Linq.XContainer> (un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>).  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A?displayProperty=fullName>|Remplace les nœuds enfants par du nouveau contenu.|  
+|<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A?displayProperty=nameWithType>|Remplace les nœuds enfants par du nouveau contenu.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Modification d’arborescences XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
