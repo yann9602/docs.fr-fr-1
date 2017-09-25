@@ -35,7 +35,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 97b9fa706669244ac579602a107c092e8593567d
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="-operator-c-reference"></a>::, opérateur (référence C#)
@@ -43,7 +43,7 @@ Le qualificateur d’alias d’espace de noms (`::`) s’utilise pour rechercher
   
  [!code-cs[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/CSharp/namespace-alias-qualifer_1.cs)]  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Le qualificateur d’alias d’espace de noms peut être `global`. Il appelle alors une recherche dans l’espace de noms global, plutôt que dans un espace de noms avec alias.  
   
 ## <a name="for-more-information"></a>Pour plus d'informations  

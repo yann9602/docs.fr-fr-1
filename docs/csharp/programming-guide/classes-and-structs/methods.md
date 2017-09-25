@@ -33,7 +33,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: cf320a26e697943416cd8f1065f1b4ca4afeac07
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
@@ -149,7 +149,7 @@ static void Main(string[] args)
   
  [!code-cs[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_9.cs)]  
   
- Une méthode async ne peut pas déclarer de paramètres [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out.md), mais elle peut appeler des méthodes qui ont ces paramètres.  
+ Une méthode async ne peut pas déclarer de paramètres [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out.md) , mais elle peut appeler des méthodes qui comportent ces paramètres.  
   
  Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec async et await](../../../csharp/programming-guide/concepts/async/index.md), [Flux de contrôle dans les programmes Async](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   

@@ -34,7 +34,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 88603864ae0a31a193cab211b8ce8061ec63c169
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="get-c-reference"></a>get (référence C#)
@@ -49,7 +49,7 @@ Souvent, l’accesseur `get` se compose d’une seule instruction qui retourne u
 
  [!code-cs[get#3](../../../../samples/snippets/csharp/language-reference/keywords/get/get-3.cs)]   
  
-Pour les cas simples dans lesquels les accesseurs `get` et `set` de la propriété n’effectuent aucune autre opération que la définition ou la récupération d’une valeur dans un champ de stockage privé, vous pouvez tirer parti de la prise en charge des propriétés implémentées automatiquement fournies par le compilateur C#. L’exemple suivant implémente `Hours` en tant que propriété implémentée automatiquement. 
+Pour les cas simples dans lesquels les accesseurs `get` et `set` d’une propriété n’effectuent aucune autre opération que la définition ou la récupération d’une valeur dans un champ de stockage privé, vous pouvez tirer parti de la prise en charge par le compilateur C# des propriétés implémentées automatiquement. L’exemple suivant implémente `Hours` en tant que propriété implémentée automatiquement. 
   
  [!code-cs[get#2](../../../../samples/snippets/csharp/language-reference/keywords/get/get-2.cs)]  
   

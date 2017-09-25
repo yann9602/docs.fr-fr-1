@@ -33,10 +33,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 20743c07c8e9c6b7ec24cf52a28bb9f451ba9df5
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: f5844cab81f194b9301a394117e92305eaa45e62
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (Guide de programmation C#)
@@ -55,7 +55,7 @@ i = "Hello"; // Error: "Cannot implicitly convert type 'string' to 'int'"
   
 -   **Conversions définies par l’utilisateur** : les conversions définies par l’utilisateur sont effectuées par des méthodes spéciales que vous pouvez définir pour permettre des conversions explicites ou implicites entre des types personnalisés qui n’ont pas de relation classe de base/classe dérivée. Pour plus d’informations, consultez [Conversion, opérateurs](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md).  
   
--   **Conversions avec les classes d’assistance** : pour effectuer une conversion entre des types non compatibles, tels que des entiers et des objets <xref:System.DateTime?displayProperty=fullName> ou des chaînes hexadécimales et des tableaux d’octets, vous pouvez utiliser la classe <xref:System.BitConverter?displayProperty=fullName>, la classe <xref:System.Convert?displayProperty=fullName> et les méthodes `Parse` des types numériques intégrés, comme <xref:System.Int32.Parse%2A?displayProperty=fullName>. Pour plus d’informations, consultez [Guide pratique pour convertir un tableau d’octets en int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md), [Guide pratique pour convertir une chaîne en nombre](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md) et [Guide pratique pour effectuer une conversion entre des chaînes hexadécimales et des types numériques](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md).  
+-   **Conversions avec les classes d’assistance** : pour effectuer une conversion entre des types non compatibles, tels que des entiers et des objets <xref:System.DateTime?displayProperty=nameWithType> ou des chaînes hexadécimales et des tableaux d’octets, vous pouvez utiliser la classe <xref:System.BitConverter?displayProperty=nameWithType>, la classe <xref:System.Convert?displayProperty=nameWithType> et les méthodes `Parse` des types numériques intégrés, comme <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Guide pratique pour convertir un tableau d’octets en int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md), [Guide pratique pour convertir une chaîne en nombre](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md) et [Guide pratique pour effectuer une conversion entre des chaînes hexadécimales et des types numériques](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md).  
   
 ## <a name="implicit-conversions"></a>Conversions implicites  
  Pour les types numériques intégrés, une conversion implicite peut être effectuée quand la valeur à stocker peut tenir dans la variable sans être tronquée ni arrondie. Par exemple, une variable de type [long](../../../csharp/language-reference/keywords/long.md) (entier sur 8 octets) peut stocker n’importe quelle valeur stockée par un [int](../../../csharp/language-reference/keywords/int.md) (4 octets sur un ordinateur 32 bits). Dans l’exemple suivant, le compilateur convertit implicitement la valeur à droite en type `long` avant de l’assigner à `bigNum`.  

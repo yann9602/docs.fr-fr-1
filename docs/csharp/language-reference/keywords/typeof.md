@@ -31,10 +31,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fdb335e44a5a3634520d3a86495a4508597b4f70
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: 9d56ab9afcac6a27a382f27d853dda58c50f8f01
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="typeof-c-reference"></a>typeof (référence C#)
@@ -73,7 +73,7 @@ string s = method.ReturnType.GetInterface
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Type?displayProperty=fullName>   
+ <xref:System.Type?displayProperty=nameWithType>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   

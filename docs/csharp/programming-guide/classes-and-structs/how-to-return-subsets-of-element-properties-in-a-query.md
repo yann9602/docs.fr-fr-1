@@ -31,7 +31,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: de6f4f1aeb07d7878d02b4f51e6f42b69d0bdcf5
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Guide pratique pour retourner des sous-ensembles de propriétés d'éléments dans une requête (Guide de programmation C#)

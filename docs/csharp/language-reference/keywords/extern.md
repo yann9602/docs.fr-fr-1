@@ -32,10 +32,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e499ade5ec8a9339b0d425c59809cf7c177466fb
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: 796a904ec40dd8cdf59f093a4b89d7a2e1f99005
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="extern-c-reference"></a>extern (référence C#)
@@ -96,7 +96,7 @@ public class MainClass
  3. Ouvrez une fenêtre d'invite de commandes d'outils natifs Visual Studio x64 (ou x32) à partir du répertoire d'installation de Visual Studio et compilez le fichier `cm.cs` en tapant :  
   
 > **csc cm.cs** (pour l’invite de commandes x64)   
->  -ou-  
+>  - ou -  
 > **csc /platform:x 86 cm.cs** (pour l’invite de commandes x32)  
   
  Cette opération crée le fichier exécutable `cm.exe`.  
@@ -111,7 +111,7 @@ SampleMethod() returns 50.
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=fullName>   
+ <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=nameWithType>   
  [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
  [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   

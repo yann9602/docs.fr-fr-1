@@ -36,10 +36,10 @@ translation.priority.mt:
 - pt-br
 - tr-tr
 ms.translationtype: HT
-ms.sourcegitcommit: 9fc16c63a6e0e0dd31ee4a68fca8b945b8281e04
-ms.openlocfilehash: 906fa362c249c3e5abbd6f2ed3ba879a81334aeb
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: d5dfee413f459c5b38b30ac9116d73e828f3aa17
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
@@ -91,7 +91,7 @@ ms.lasthandoff: 08/01/2017
 ## <a name="the-common-type-system"></a>Système de type commun  
  Il est important de comprendre deux points fondamentaux à propos du système de type dans le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] :  
   
--   Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, notamment les types numériques intégrés comme <xref:System.Int32?displayProperty=fullName> (mot clé C# : [int](../../../csharp/language-reference/keywords/int.md)), dérivent au final d’un seul type de base, qui est <xref:System.Object?displayProperty=fullName> (mot clé C# : [object](../../../csharp/language-reference/keywords/object.md)). Cette hiérarchie de types unifiée est appelée [Système de type commun](../../../standard/base-types/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+-   Il prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut à son tour dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, notamment les types numériques intégrés comme <xref:System.Int32?displayProperty=nameWithType> (mot clé C# : [int](../../../csharp/language-reference/keywords/int.md)), dérivent au final d’un seul type de base, qui est <xref:System.Object?displayProperty=nameWithType> (mot clé C# : [object](../../../csharp/language-reference/keywords/object.md)). Cette hiérarchie de types unifiée est appelée [Système de type commun](../../../standard/base-types/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
 -   Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET Framework, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé [struct](../../../csharp/language-reference/keywords/struct.md) sont des types valeur ; tous les types numériques intégrés sont `structs`. Les types que vous définissez à l’aide du mot clé [class](../../../csharp/language-reference/keywords/class.md) sont des types référence. Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.  
   
@@ -104,7 +104,7 @@ Types valeur et types référence dans le CTS
 >  Vous pouvez voir que les types couramment utilisés sont tous organisés dans l’espace de noms <xref:System>. Toutefois, l’espace de noms qui contient un type n’a aucune incidence sur le fait qu’il s’agisse d’un type valeur ou d’un type référence.  
   
 ### <a name="value-types"></a>Types valeur  
- Les types valeur dérivent de <xref:System.ValueType?displayProperty=fullName>, qui dérive de <xref:System.Object?displayProperty=fullName>. Les types qui dérivent de <xref:System.ValueType?displayProperty=fullName> ont un comportement spécial dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
+ Les types valeur dérivent de <xref:System.ValueType?displayProperty=nameWithType>, qui dérive de <xref:System.Object?displayProperty=nameWithType>. Les types qui dérivent de <xref:System.ValueType?displayProperty=nameWithType> ont un comportement spécial dans le CLR. Les variables de type valeur contiennent directement leurs valeurs, ce qui signifie que la mémoire est allouée inline dans le contexte où la variable est déclarée. Aucune allocation des tas ni surcharge de garbage collection distincte n’a lieu pour les variables de type valeur.  
   
  Il existe deux catégories de types valeur : [struct](../../../csharp/language-reference/keywords/struct.md) et [enum](../../../csharp/language-reference/keywords/enum.md).  
   
@@ -123,7 +123,7 @@ int i = 5;
 char c = 'Z';  
 ```  
   
- Les types valeur sont scellés (*sealed*), ce qui signifie que par exemple que vous ne pouvez pas dériver un type de <xref:System.Int32?displayProperty=fullName>. Vous ne pouvez pas non plus définir un struct pour qu’il hérite d’une classe ou d’un struct défini par l’utilisateur car un struct peut uniquement hériter de <xref:System.ValueType?displayProperty=fullName>. Toutefois, un struct peut implémenter une ou plusieurs interfaces. Vous pouvez effectuer un cast d’un type struct en un type interface. En conséquence, une opération de *boxing* encapsule le struct dans un objet de type référence sur le tas managé. Les opérations de boxing se produisent quand vous passez un type valeur à une méthode qui prend un <xref:System.Object?displayProperty=fullName> comme paramètre d’entrée. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Les types valeur sont scellés (*sealed*), ce qui signifie que par exemple que vous ne pouvez pas dériver un type de <xref:System.Int32?displayProperty=nameWithType>. Vous ne pouvez pas non plus définir un struct pour qu’il hérite d’une classe ou d’un struct défini par l’utilisateur car un struct peut uniquement hériter de <xref:System.ValueType?displayProperty=nameWithType>. Toutefois, un struct peut implémenter une ou plusieurs interfaces. Vous pouvez effectuer un cast d’un type struct en un type interface. En conséquence, une opération de *boxing* encapsule le struct dans un objet de type référence sur le tas managé. Les opérations de boxing se produisent quand vous passez un type valeur à une méthode qui prend un <xref:System.Object?displayProperty=nameWithType> comme paramètre d’entrée. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
  Vous utilisez le mot clé [struct](../../../csharp/language-reference/keywords/struct.md) pour créer vos propres types valeur personnalisés. En règle générale, un struct est utilisé comme conteneur pour un petit jeu de variables connexes, comme le montre l'exemple suivant :  
   
@@ -131,13 +131,13 @@ char c = 'Z';
   
  Pour plus d’informations sur les structs, consultez [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md). Pour plus d’informations sur les types valeur dans le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], consultez [Système de type commun](../../../standard/base-types/common-type-system.md).  
   
- L’autre catégorie de types valeur est [enum](../../../csharp/language-reference/keywords/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=fullName> dans la bibliothèque de classes du .NET Framework contient un ensemble d’entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :  
+ L’autre catégorie de types valeur est [enum](../../../csharp/language-reference/keywords/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=nameWithType> dans la bibliothèque de classes du .NET Framework contient un ensemble d’entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :  
  
  [!code-cs[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
   
- La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=fullName>.  
+ La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est beaucoup plus explicite pour les êtres humains qui lisent le code source et c’est pourquoi il est préférable d’utiliser des énumérations au lieu de chiffres littéraux constants. Pour plus d'informations, consultez <xref:System.IO.FileMode?displayProperty=nameWithType>.  
   
- Toutes les énumérations héritent de <xref:System.Enum?displayProperty=fullName>, qui hérite de <xref:System.ValueType?displayProperty=fullName>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../../../csharp/programming-guide/enumeration-types.md).  
+ Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [Types énumération](../../../csharp/programming-guide/enumeration-types.md).  
   
 ### <a name="reference-types"></a>Types référence  
  Un type qui est défini comme une [classe](../../../csharp/language-reference/keywords/class.md), un [délégué](../../../csharp/language-reference/keywords/delegate.md), un tableau ou une [interface](../../../csharp/language-reference/keywords/interface.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de l’objet à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md) ou que vous ne lui avez pas assigné un objet créé ailleurs à l’aide de `new`, comme indiqué dans l’exemple suivant :
@@ -154,7 +154,7 @@ IMyInterface iface = new MyClass();
   
  Quand l’objet est créé, la mémoire est allouée sur le tas managé et la variable contient uniquement une référence à l’emplacement de l’objet. Les types sur le tas managé entraînent une surcharge quand ils sont alloués et récupérés par la fonctionnalité de gestion automatique de la mémoire du CLR (appelée *garbage collection*). Toutefois, le garbage collection est également optimisé, et dans la plupart des cas, ne nuit pas aux performances. Pour plus d’informations sur le garbage collection, consultez [Gestion automatique de la mémoire](../../../standard/automatic-memory-management.md).  
   
- Tous les tableaux sont des types référence, même si leurs éléments sont des types valeur. Les tableaux dérivent implicitement de la classe <xref:System.Array?displayProperty=fullName>, mais vous les déclarez et vous les utilisez avec la syntaxe simplifiée fournie par C#, comme illustré dans l’exemple suivant :  
+ Tous les tableaux sont des types référence, même si leurs éléments sont des types valeur. Les tableaux dérivent implicitement de la classe <xref:System.Array?displayProperty=nameWithType>, mais vous les déclarez et vous les utilisez avec la syntaxe simplifiée fournie par C#, comme illustré dans l’exemple suivant :  
   
  [!code-cs[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
   
@@ -163,12 +163,12 @@ IMyInterface iface = new MyClass();
 ## <a name="types-of-literal-values"></a>Types de valeurs littérales  
  Dans C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit un type pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](../../../csharp/language-reference/keywords/value-types.md).  
   
- Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object?displayProperty=fullName>, vous pouvez écrire et compiler du code, tel que le suivant :  
+ Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object?displayProperty=nameWithType>, vous pouvez écrire et compiler du code, tel que le suivant :  
   
  [!code-cs[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
   
 ## <a name="generic-types"></a>Types génériques  
- Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type .NET Framework <xref:System.Collections.Generic.List%601?displayProperty=fullName> a un paramètre de type qui, par convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets contenus dans la liste, par exemple, une chaîne :  
+ Un type peut être déclaré avec un ou plusieurs *paramètres de type* qui servent d’espace réservé pour le type réel (le *type concret*) que le code client fournit lorsqu’il crée une instance du type. Ces types sont appelés *types génériques*. Par exemple, le type .NET Framework <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a un paramètre de type qui, par convention, porte le nom *T*. Lorsque vous créez une instance du type, vous spécifiez le type des objets contenus dans la liste, par exemple, une chaîne :  
  
 ```csharp
 List<string> stringList = new List<string>();
@@ -183,7 +183,7 @@ stringList.Add(4);
   
  Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez créer des *types anonymes* à cet effet. Pour plus d’informations, consultez [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
- Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../../csharp/language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](../../../csharp/language-reference/keywords/null.md). Dans le CTS, les types Nullable sont des instances du type struct générique <xref:System.Nullable%601?displayProperty=fullName>. Les types Nullable sont particulièrement utiles lorsque vous passez des données vers et à partir de bases de données dans lesquelles les valeurs numériques peuvent être Null. Pour plus d’informations, consultez [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md).  
+ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../../csharp/language-reference/keywords/null.md). Toutefois, vous pouvez créer des types valeur Nullable en apposant un `?` après le type. Par exemple, `int?` est un type `int` qui peut également avoir la valeur [null](../../../csharp/language-reference/keywords/null.md). Dans le CTS, les types Nullable sont des instances du type struct générique <xref:System.Nullable%601?displayProperty=nameWithType>. Les types Nullable sont particulièrement utiles lorsque vous passez des données vers et à partir de bases de données dans lesquelles les valeurs numériques peuvent être Null. Pour plus d’informations, consultez [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md).  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d’informations, consultez les rubriques suivantes :  

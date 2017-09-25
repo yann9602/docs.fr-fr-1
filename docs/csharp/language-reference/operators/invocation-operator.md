@@ -35,7 +35,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 1b0a683880f0791ee69ea5971756d104323b4303
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="-operator-c-reference"></a>(), opérateur (référence C#)
@@ -49,7 +49,7 @@ En plus d’être utilisées pour spécifier l’ordre des opérations dans une 
   
      [!code-cs[csRefOperators#2](../../../csharp/language-reference/operators/codesnippet/CSharp/invocation-operator_2.cs)]  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Un cast appelle explicitement l’opérateur de conversion d’un type à l’autre. Le cast échoue si aucun opérateur de conversion n’est défini. Pour définir un opérateur de conversion, consultez [explicit](../../../csharp/language-reference/keywords/explicit.md) et [implicit](../../../csharp/language-reference/keywords/implicit.md).  
   
  L’opérateur `()` ne peut pas être surchargé.  

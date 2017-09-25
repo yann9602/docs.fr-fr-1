@@ -32,7 +32,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 1d3dc2252b086f9df9e64a059a53ec8792e11b45
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="delegates-c-programming-guide"></a>Délégués (Guide de programmation C#)

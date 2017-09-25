@@ -33,7 +33,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 41b07af83faa6af23695f3719aae29183c35a417
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)

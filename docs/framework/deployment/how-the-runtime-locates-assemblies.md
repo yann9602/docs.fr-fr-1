@@ -27,10 +27,10 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: 6ab1d59ec9ce4f77b3ded2951d01f675f096069f
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: 75353ad43d76ceecd60bb9edd207c56c759e52c2
 ms.contentlocale: fr-fr
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
@@ -42,13 +42,13 @@ Pour déployer correctement votre application .NET Framework, il est important d
 >  Vous pouvez afficher les informations de liaison du fichier journal en utilisant la [visionneuse du journal de liaison d'assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), fournie dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
   
 ## <a name="initiating-the-bind"></a>Initiation de la liaison  
- Le processus de localisation et de liaison d'un assembly débute quand le runtime tente de résoudre une référence à un autre assembly. Cette référence peut être statique ou dynamique. Le compilateur enregistre les références statiques dans les métadonnées du manifeste d'assembly au moment de la build. Les références dynamiques sont créées instantanément après l’appel à différentes méthodes, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>.  
+ Le processus de localisation et de liaison d'un assembly débute quand le runtime tente de résoudre une référence à un autre assembly. Cette référence peut être statique ou dynamique. Le compilateur enregistre les références statiques dans les métadonnées du manifeste d'assembly au moment de la build. Les références dynamiques sont créées instantanément après l’appel à différentes méthodes, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.  
   
  La meilleure façon de référencer un assembly est d'utiliser une référence complète, comprenant le nom de l'assembly, sa version, sa culture et son jeton de clé publique (le cas échéant). Le runtime se sert de ces informations pour localiser l'assembly, en suivant les étapes décrites plus loin dans cette section. Il utilise le même processus de résolution pour les références d'assemblys statiques et dynamiques.  
   
- Vous pouvez aussi créer une référence dynamique à un assembly en fournissant à la méthode d'appel seulement une partie des informations relatives à l'assembly, par exemple en spécifiant le nom de l'assembly uniquement. Dans ce cas, l'assembly n'est recherché que dans le répertoire de l'application et aucune autre vérification n'est effectuée. Il est possible de créer une référence partielle à l’aide d’une des méthodes de chargement des assemblys, telle que <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> ou <xref:System.AppDomain.Load%2A?displayProperty=fullName>.  
+ Vous pouvez aussi créer une référence dynamique à un assembly en fournissant à la méthode d'appel seulement une partie des informations relatives à l'assembly, par exemple en spécifiant le nom de l'assembly uniquement. Dans ce cas, l'assembly n'est recherché que dans le répertoire de l'application et aucune autre vérification n'est effectuée. Il est possible de créer une référence partielle à l’aide d’une des méthodes de chargement des assemblys, telle que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>.  
   
- Pour finir, vous pouvez créer une référence dynamique en utilisant une méthode comme <xref:System.Reflection.Assembly.Load*?displayProperty=fullName> à laquelle vous fournissez seulement des informations partielles. Vous qualifiez ensuite la référence en définissant l’élément [\<qualifyAssembly>](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) dans le fichier de configuration de l’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.  
+ Pour finir, vous pouvez créer une référence dynamique en utilisant une méthode comme <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> à laquelle vous fournissez seulement des informations partielles. Vous qualifiez ensuite la référence en définissant l’élément [\<qualifyAssembly>](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) dans le fichier de configuration de l’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.  
   
 > [!NOTE]
 >  Ce type de référence partielle ne doit pas être utilisé avec des assemblys partagés par plusieurs applications. Les paramètres de configuration sont appliqués au niveau de l'application, et non de chaque assembly. Par conséquent, un assembly partagé utilisant ce type de référence partielle nécessite que chaque application liée à l'assembly partagé possède les informations de qualification dans son fichier de configuration.  
@@ -66,7 +66,7 @@ Pour déployer correctement votre application .NET Framework, il est important d
   
 4.  Il[détecte l'assembly](#step4) en procédant comme suit :  
   
-    1.  Si la configuration et la stratégie d'éditeur n'affectent pas la référence d'origine et que la demande de liaison a été faite avec la méthode <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> , le runtime vérifie la présence d'indications relatives à l'emplacement.  
+    1.  Si la configuration et la stratégie d'éditeur n'affectent pas la référence d'origine et que la demande de liaison a été faite avec la méthode <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> , le runtime vérifie la présence d'indications relatives à l'emplacement.  
   
     2.  Si une base de code est trouvée dans les fichiers de configuration, le runtime vérifie uniquement cet emplacement. Si cette détection ne donne aucun résultat, le runtime détermine que la demande de liaison a échoué et ne tente pas d'autre détection.  
   
@@ -258,7 +258,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 ```  
   
 #### <a name="other-locations-probed"></a>Autres emplacements détectés  
- L'emplacement de l'assembly peut aussi être déterminé d'après le contexte de liaison actuel. Cela se produit le plus souvent quand la méthode <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> est utilisée dans des scénarios COM Interop. Si un assembly utilise la méthode <xref:System.Reflection.Assembly.LoadFrom%2A> pour référencer un autre assembly, l'emplacement de l'assembly appelant est considéré comme étant une indication de l'emplacement de l'assembly référencé. Si une correspondance est trouvée, cet assembly est chargé. Si aucune correspondance n'est trouvée, le runtime continue ses recherches sémantiques, puis demande à Windows Installer de lui fournir l'assembly. Si aucun assembly correspondant à la demande de liaison n'est fourni, une exception est levée. Il s'agit d'une exception <xref:System.TypeLoadException> dans le code managé si un type a été référencé ou d'une exception <xref:System.IO.FileNotFoundException> si un assembly à charger n'a pas été trouvé.  
+ L'emplacement de l'assembly peut aussi être déterminé d'après le contexte de liaison actuel. Cela se produit le plus souvent quand la méthode <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> est utilisée dans des scénarios COM Interop. Si un assembly utilise la méthode <xref:System.Reflection.Assembly.LoadFrom%2A> pour référencer un autre assembly, l'emplacement de l'assembly appelant est considéré comme étant une indication de l'emplacement de l'assembly référencé. Si une correspondance est trouvée, cet assembly est chargé. Si aucune correspondance n'est trouvée, le runtime continue ses recherches sémantiques, puis demande à Windows Installer de lui fournir l'assembly. Si aucun assembly correspondant à la demande de liaison n'est fourni, une exception est levée. Il s'agit d'une exception <xref:System.TypeLoadException> dans le code managé si un type a été référencé ou d'une exception <xref:System.IO.FileNotFoundException> si un assembly à charger n'a pas été trouvé.  
   
  Par exemple, si Assembly1 référence Assembly2 et qu'Assembly1 a été chargé à partir de http://www.code.microsoft.com/utils, cet emplacement est considéré comme étant une indication de l'emplacement d'Assembly2.dll. Le runtime tente ensuite de détecter l'assembly dans http://www.code.microsoft.com/utils/Assembly2.dll et http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll. Si Assembly2 n'est pas trouvé dans ces emplacements, le runtime demande à Windows Installer de lui fournir l'assembly.  
   
