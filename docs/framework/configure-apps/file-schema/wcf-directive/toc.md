@@ -1,2 +1,2 @@
-# [Syntaxe de directive WCF](index.md)
-# [@ServiceHost](servicehost.md)
+# [Syntaxe des directives WCF](index.md)
+## [@ServiceHost](servicehost.md)
