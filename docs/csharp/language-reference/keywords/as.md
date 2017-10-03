@@ -35,7 +35,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 7a55c696ac295eee8d5d35ed56038f3c4a90b215
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="as-c-reference"></a>as (référence C#)
@@ -43,7 +43,7 @@ Vous pouvez utiliser l’opérateur `as` pour effectuer certains types de conver
   
  [!code-cs[csrefKeywordsOperator#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/as_1.cs)]  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’opérateur `as` est semblable à une opération de cast. Toutefois, si la conversion n’est pas possible, `as` retourne `null` au lieu de lever une exception. Prenons l'exemple suivant :  
   
 ```  

@@ -1,5 +1,5 @@
 ---
-title: "object (informations de référence sur C#)"
+title: "object (référence C#)"
 ms.date: 2015-07-20
 ms.prod: .net
 ms.technology:
@@ -34,10 +34,10 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 744debc51f68cc52f03bce09c9f276a66ae085e1
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
-# <a name="object-c-reference"></a>object (informations de référence sur C#)
+# <a name="object-c-reference"></a>object (référence C#)
 Le type `object` est un alias du type <xref:System.Object> du .NET Framework. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type objet est convertie en type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Boxing et unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
 ## <a name="example"></a>Exemple  

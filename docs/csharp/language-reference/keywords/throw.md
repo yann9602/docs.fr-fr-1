@@ -33,10 +33,10 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 955f6d87614e0b452ace162e79e34aec9decad54
+ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
+ms.openlocfilehash: 77f44a43b80c4cf1f12baadaaf6861b3b53244d9
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="throw-c-reference"></a>throw (référence C#)
@@ -49,7 +49,7 @@ La syntaxe de `throw` est :
 ```csharp
 throw [e]
 ```
-où `e` est une instance d’une classe dérivée de <xref:System.Exception?displayProperty=fullName>. L’exemple suivant utilise l’instruction `throw` pour lever une exception @System.IndexOutOfRangeException si l’argument passé à une méthode nommée `GetNumber` ne correspond pas à un index valide d’un tableau interne.
+où `e` est une instance d’une classe dérivée de <xref:System.Exception?displayProperty=nameWithType>. L’exemple suivant utilise l’instruction `throw` pour lever une exception @System.IndexOutOfRangeException si l’argument passé à une méthode nommée `GetNumber` ne correspond pas à un index valide d’un tableau interne.
 
 [!code-cs[csrefKeyword#1](../../../../samples/snippets/csharp/language-reference/keywords/throw/throw-1.cs#1)]  
 
@@ -68,7 +68,7 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
  
 ## <a name="the-throw-expression"></a>Expression `throw`
 
-À compter de C# 7, `throw` peut être utilisé en tant qu’expression et en tant qu’instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge, à savoir :
+À compter de C# 7, `throw` peut être utilisé en tant qu’expression et en tant qu’instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge. à savoir :
 
 - [l’opérateur conditionnel](../operators/conditional-operator.md) : l’exemple suivant utilise une expression `throw` pour lever une exception @System.ArgumentException si une méthode reçoit un tableau de chaînes vide. Avant C# 7, cette logique devait figurer dans une instruction `if`/`else`.
 

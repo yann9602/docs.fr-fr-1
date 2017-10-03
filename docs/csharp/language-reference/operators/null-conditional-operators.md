@@ -29,7 +29,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 6118956a5681ddbeb110f6e01f090b85cdd65089
 ms.openlocfilehash: 465a395a33c027132b7890e02d540438096e2073
 ms.contentlocale: fr-fr
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="null-conditional-operators-c-and-visual-basic"></a>Opérateurs conditionnels Null (C# et Visual Basic)

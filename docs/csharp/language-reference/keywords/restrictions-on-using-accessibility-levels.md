@@ -31,7 +31,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 8e49afd38fd776593b87f065a079da0d546df4a6
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l'utilisation des niveaux d'accessibilité (référence C#)

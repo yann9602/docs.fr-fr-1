@@ -34,7 +34,7 @@ ms.translationtype: HT
 ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5405455d933f6512cfa3a18e1a545556c5715151
 ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 09/25/2017
 
 ---
 # <a name="partial-type-c-reference"></a>partial, type (référence C#)
@@ -48,7 +48,7 @@ Les définitions de type partiel permettent le fractionnement de la définition 
   
  [!code-cs[csrefKeywordsContextual#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/partial-type_2.cs)]  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Fractionner un type de classe, de struct ou d’interface entre plusieurs fichiers peut être utile si vous travaillez sur des projets volumineux ou des projets contenant du code généré automatiquement, comme celui fourni par le [Concepteur Windows Forms](http://msdn.microsoft.com/en-us/3c3d61f8-f36c-4d41-b9c3-398376fabb15). Un type partiel peut contenir une [méthode partielle](../../../csharp/language-reference/keywords/partial-method.md). Pour plus d’informations, consultez [Classes et méthodes partielles](../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
