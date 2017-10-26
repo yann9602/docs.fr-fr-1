@@ -1,0 +1,213 @@
+### YamlMime:YamlDocument
+documentType: Tutorial
+title: Branches et boucles
+metadata:
+  title: Branches et boucles
+  description: 'Dans ce didacticiel sur les branches et les boucles, vous allez utiliser votre navigateur pour découvrir C# de manière interactive. Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur.'
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: csharp
+  nextTutorialHref: arrays-and-collections
+  nextTutorialTitle: 'Arrays and colletions in C#'
+items:
+  - durationInMinutes: 1
+    content: "Ce didacticiel vous explique comment écrire un code qui examine des variables et modifie un chemin d’exécution en fonction de ces variables. Vous allez écrire en C# de manière interactive à l’aide de votre navigateur et afficher les résultats de la compilation et de l’exécution de votre code. Il contient une série de leçons pour explorer la création de branches et de boucles en C#. Ces leçons présentent les concepts de base du langage\_C#.\n"
+  - title: Prendre des décisions à l’aide de l’instruction if
+    durationInMinutes: 4
+    content: |
+      Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :
+
+      ```csharp
+      int a = 5;
+      int b = 6;
+      if (a + b > 10)
+          Console.WriteLine("The answer is greater than 10.");
+      ```
+
+      Modifiez la déclaration de `b` pour que la somme soit inférieure à 10 : 
+
+      ```csharp
+      int b = 3;
+      ```
+
+      Cliquez de nouveau sur le bouton **Exécuter**. La réponse étant inférieure à 10, rien ne s’affiche. La **condition** que vous testez a une valeur false. Vous n’avez pas de code à exécuter, car vous avez uniquement écrit l’une des branches possibles pour une instruction `if` : la branche true.
+
+      > [!TIP]
+      > Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.
+      > Cet exercice vous aidera à mieux comprendre la structure du code C#.     
+
+      Le premier exemple montre la puissance de l’instruction `if` et des types booléens. Un *booléen* est une variable qui peut avoir l’une des deux valeurs suivantes : `true` ou `false`. C# définit un type spécial, `bool`, pour les variables booléennes. L’instruction `if` vérifie la valeur d’un `bool`. Quand la valeur est `true`, l’instruction qui suit `if` s’exécute. Dans le cas contraire, elle est ignorée. 
+
+      Ce processus de vérification des conditions et d’exécution des instructions en fonction de ces conditions est très performant. Poursuivons notre exploration.
+
+      > [!NOTE]
+      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+  - title: Utiliser if et else ensemble
+    durationInMinutes: 10
+    content: |
+
+      Pour exécuter un code différent dans les branches true et false, vous créez une branche `else` qui s’exécute quand la condition a une valeur false. Écrivez ce code :
+
+      ```csharp
+      int a = 5;
+      int b = 3;
+      if (a + b > 10)
+          Console.WriteLine("The answer is greater than 10");
+      else
+          Console.WriteLine("The answer is not greater than 10");
+      ```
+
+      L’instruction qui suit le mot clé `else` s’exécute uniquement quand la condition testée a une valeur `false`. La combinaison de `if` et `else` avec des conditions booléennes offre les hautes performances dont vous avez besoin.
+
+      > [!IMPORTANT]
+      > La mise en retrait sous les instructions `if` et `else` a simplement pour but de faciliter la lecture.
+      > Le langage C# ne considère pas la mise en retrait ou les espaces blancs comme des éléments significatifs. L’instruction qui suit le mot clé `if` ou `else` sera exécutée en fonction de la condition. Tous les exemples de ce didacticiel suivent une pratique courante pour mettre en retrait les lignes en fonction de l’exécution.
+
+      Étant donné que la mise en retrait n’est pas significative, vous devez utiliser `{` et `}` pour indiquer quand vous souhaitez inclure plus d’une instruction dans le bloc qui s’exécute de manière conditionnelle. Les programmeurs C# utilisent généralement les accolades pour toutes les clauses `if` et `else`. L’exemple suivant est identique à ce que vous venez de créer. Testez le code.
+
+      ```csharp
+      int a = 5;
+      int b = 3;
+      if (a + b > 10)
+      {
+          Console.WriteLine("The answer is greater than 10");
+      }
+      else
+      {
+          Console.WriteLine("The answer is not greater than 10");
+      }
+      ```
+
+      > [!TIP]
+      > Dans le reste de ce didacticiel, tous les exemples de code incluent les accolades, conformément aux pratiques acceptées.
+
+      Vous pouvez tester des conditions plus complexes :
+
+      ```csharp
+      int a = 5;
+      int b = 3;
+      int c = 4;
+      if ((a + b + c > 10) && (a > b))
+      {
+          Console.WriteLine("The answer is greater than 10");
+          Console.WriteLine("And the first number is greater than the second");
+      }
+      else
+      {
+          Console.WriteLine("The answer is not greater than 10");
+          Console.WriteLine("Or the first number is not greater than the second");
+      }
+      ```
+
+      `&&` représente « et ». Cela signifie que les deux conditions doivent être true pour que l’instruction s’exécute dans la branche true.  Ces exemples montrent également que vous pouvez avoir plusieurs instructions dans chaque branche conditionnelle, à condition de les mettre entre `{` et `}`.
+
+      Vous pouvez également utiliser `||` pour représenter « ou » :
+
+      ```csharp
+      int a = 5;
+      int b = 3;
+      int c = 4;
+      if ((a + b + c > 10) || (a > b))
+      {
+          Console.WriteLine("The answer is greater than 10");
+          Console.WriteLine("Or the first number is greater than the second");
+      }
+      else
+      {
+          Console.WriteLine("The answer is not greater than 10");
+          Console.WriteLine("And the first number is not greater than the second");
+      }
+      ```
+
+      > [!NOTE]
+      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+  - title: Utiliser des boucles pour répéter des opérations
+    durationInMinutes: 6
+    content: |
+      Un autre concept important pour créer des programmes plus volumineux est celui des **boucles**. Vous allez utiliser des boucles pour répéter des instructions que vous souhaitez exécuter plusieurs fois. Exécutez le code suivant dans la fenêtre interactive :
+
+      ```csharp
+      int counter = 0;
+      while (counter < 10)
+      {
+        Console.WriteLine("Hello World! The counter is " + counter);
+        counter++;
+      }
+      ```
+
+      L’instruction `while` vérifie une condition et exécute l’instruction qui suit `while`. Elle répète la vérification de la condition et l’exécution de ces instructions jusqu'à ce que la condition soit false.
+
+      Cet exemple contient un nouvel opérateur. `++` après la variable `counter` est l’opérateur d’**incrémentation**. Il ajoute 1 à la valeur de compteur et stocke cette valeur dans la variable de compteur.
+
+      > [!IMPORTANT]
+      > Assurez-vous que la condition de boucle `while` ne devienne pas false quand vous exécutez le code. Dans le cas contraire, vous allez créer une **boucle infinie** dans laquelle votre programme ne se terminera jamais. Nous n’allons pas le démontrer ici, car le moteur qui exécute votre code expirerait et votre programme n’afficherait aucune sortie.
+
+      La boucle `while` teste la condition avant d’exécuter le code qui suit `while`. La boucle `do` ... `while` exécute d’abord le code, puis vérifie la condition. Elle ressemble à ce qui suit :
+
+      ```csharp
+      int counter = 0;
+      do
+      {
+        Console.WriteLine("Hello World! The counter is " + counter);
+        counter++;
+      } while (counter < 10);
+      ```
+
+      Cette boucle `do` et la boucle antérieure `while` fonctionnent de manière identique. 
+
+      Passons maintenant à une dernière instruction de boucle.
+
+      > [!NOTE]
+      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+  - title: Utiliser la boucle for
+    durationInMinutes: 5
+    content: |
+      Une autre instruction de boucle commune présente dans le code C# est la boucle `for`. Exécutez le code suivant dans la fenêtre interactive :
+
+      ```csharp
+      for(int counter = 0; counter < 10; counter++)
+      {
+        Console.WriteLine("Hello World! The counter is " + counter);
+      } 
+      ```
+
+      Cette boucle fonctionne de manière identique à la boucle `while` et la boucle `do` que vous avez déjà utilisées. L’instruction `for` comprend trois parties qui contrôlent son fonctionnement. 
+
+      La première partie est l’**initialiseur for** : `for counter = 0;` déclare que `counter` est la variable de boucle et définit sa valeur initiale sur `0`.
+
+      La partie centrale est la **condition for** : `counter < 10` déclare que cette boucle `for` continue à s’exécuter tant que la valeur de compteur est inférieure à 10.
+
+      La dernière partie est l’**itérateur for** : `counter++` indique comment modifier la variable de boucle après l’exécution du bloc qui suit l’instruction `for`. Il spécifie ici que `counter` doit être incrémenté de 1 chaque fois que le bloc s’exécute.
+
+      Vérifiez-le par vous-même. Réalisez les essais suivants :
+
+      - Modifiez l’initialiseur pour définir le démarrage à une valeur différente.
+      - Modifiez la condition pour définir l’arrêt à une valeur différente.
+
+      Une fois terminé, vous allez vous-même écrire des codes pour mettre en pratique ce que vous avez appris.
+
+      > [!NOTE]
+      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+  - title: Combinaison de branches et de boucles
+    durationInMinutes: 12
+    content: |
+      Maintenant que vous avez vu l’instruction `if` et la création de boucles en langage C#, vérifiez si vous pouvez écrire un code C# pour obtenir la somme de tous les entiers de 1 à 20 divisibles par 3.  Voici quelques conseils :
+
+      - L’opérateur `%` vous donne le reste d’une opération de division.
+      - L’instruction `if` vous donne la condition pour vérifier si un nombre doit être inclus dans la somme.
+      - La boucle `for` peut vous aider à répéter une série d’étapes pour tous les nombres de 1 à 20.
+
+      Essayez par vous-même et vérifiez le résultat.
+
+      > [!NOTE]
+      > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
+  - title: Terminer le test
+    durationInMinutes: 1
+    content: |
+      Vous avez terminé le didacticiel « Branches et boucles ». Pour en savoir plus sur ces concepts, consultez les rubriques suivantes :
+
+      [Instruction if et else](../language-reference/keywords/if-else.md)   
+      [Instruction while](../language-reference/keywords/while.md)   
+      [Instruction do](../language-reference/keywords/do.md)   
+      [Instruction for](../language-reference/keywords/for.md)
