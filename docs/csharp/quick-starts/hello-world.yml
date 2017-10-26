@@ -1,0 +1,165 @@
+### YamlMime:YamlDocument
+documentType: Tutorial
+title: 'Hello C#'
+metadata:
+  title: "<span data-ttu-id=\"08c4e-102\">Hello C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-102\">Hello C#.</span></span> <span data-ttu-id=\"08c4e-103\">Votre première introduction au langage\_C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-103\">Your first introduction to the C# language.</span></span>"
+  description: '<span data-ttu-id="08c4e-104">Dans ce didacticiel, vous allez utiliser votre navigateur pour découvrir C# de manière interactive.</span><span class="sxs-lookup"><span data-stu-id="08c4e-104">In this tutorial, you''ll use your browser to learn C# interactively.</span></span> <span data-ttu-id="08c4e-105">Vous allez écrire un code C# et afficher les résultats de la compilation et de l’exécution du code directement dans le navigateur.</span><span class="sxs-lookup"><span data-stu-id="08c4e-105">You write C# code and see the results of compiling and running your code directly in the browser.</span></span>'
+  audience: Developer
+  level: Beginner
+  nextTutorialHref: numbers-in-csharp
+  nextTutorialTitle: 'Numbers in C#'
+  displayType: two-column
+  interactive: csharp
+items:
+  - durationInMinutes: 1
+    content: "<span data-ttu-id=\"08c4e-106\">Ce didacticiel vous explique comment utiliser C# de manière interactive à l’aide de votre navigateur et afficher les résultats de la compilation et de l’exécution de votre code.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-106\">This tutorial teaches you C# interactively, using your browser to write C# and see the results of compiling and running your code.</span></span> <span data-ttu-id=\"08c4e-107\">Il contient une série de leçons qui commencent par un programme « Hello World ».</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-107\">It contains a series of lessons that begin with a \"Hello World\" program.</span></span> <span data-ttu-id=\"08c4e-108\">Ces leçons présentent les concepts de base du langage\_C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-108\">These lessons teach you the fundamentals of the C# language.</span></span>\n"
+  - title: '<span data-ttu-id="08c4e-109">Exécuter votre premier programme C#</span><span class="sxs-lookup"><span data-stu-id="08c4e-109">Run your first C# program</span></span>'
+    durationInMinutes: 2
+    content: "<span data-ttu-id=\"08c4e-110\">Exécutez le code suivant dans la fenêtre interactive.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-110\">Run the following code in the interactive window.</span></span> <span data-ttu-id=\"08c4e-111\">Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-111\">To do that, type the following code block in the interactive window and click the **Run** button:</span></span>\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\n<span data-ttu-id=\"08c4e-112\">Félicitations\_!</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-112\">Congratulations!</span></span> <span data-ttu-id=\"08c4e-113\">Vous avez exécuté votre premier programme C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-113\">You've run your first C# program.</span></span> <span data-ttu-id=\"08c4e-114\">Il s’agit d’un programme simple qui affiche le message « Hello World! ».</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-114\">It's a simple program that prints the message \"Hello World!\".</span></span> <span data-ttu-id=\"08c4e-115\">Il a utilisé la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> pour afficher ce message.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-115\">It used the <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> method to print that message.</span></span> <span data-ttu-id=\"08c4e-116\">`Console` est un type qui représente la fenêtre de console.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-116\">`Console` is a type that represents the console window.</span></span> <span data-ttu-id=\"08c4e-117\">`WriteLine` est une méthode du type `Console` qui affiche une ligne de texte sur cette console de texte.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-117\">`WriteLine` is a method of the `Console` type that prints a line of text to that text console.</span></span>\n\n<span data-ttu-id=\"08c4e-118\">Poursuivons notre exploration.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-118\">Let's move on and explore more.</span></span> <span data-ttu-id=\"08c4e-119\">Le reste de cette leçon explore l’utilisation du type `string`, qui représente du texte en C#.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-119\">The rest of this lesson explores working with the `string` type, which represents text in C#.</span></span> <span data-ttu-id=\"08c4e-120\">À l’instar du type `Console`, le type `string` propose différentes méthodes.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-120\">Like the `Console` type, the `string` type has methods.</span></span> <span data-ttu-id=\"08c4e-121\">La méthode `string` fonctionne avec du texte.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-121\">The `string` methods work with text.</span></span> \n\n> [!NOTE]\n> <span data-ttu-id=\"08c4e-122\">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-122\">This online coding experience is in preview mode.</span></span> <span data-ttu-id=\"08c4e-123\">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class=\"sxs-lookup\"><span data-stu-id=\"08c4e-123\">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>\n"
+  - title: <span data-ttu-id="08c4e-124">Déclarer et utiliser des variables</span><span class="sxs-lookup"><span data-stu-id="08c4e-124">Declare and use variables</span></span>
+    durationInMinutes: 3
+    content: |
+      <span data-ttu-id="08c4e-125">Votre premier programme a affiché la `string` « Hello World! »</span><span class="sxs-lookup"><span data-stu-id="08c4e-125">Your first program printed the `string` "Hello World!"</span></span> <span data-ttu-id="08c4e-126">à l’écran.</span><span class="sxs-lookup"><span data-stu-id="08c4e-126">on the screen.</span></span> 
+
+      > [!TIP]
+      > <span data-ttu-id="08c4e-127">Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code.</span><span class="sxs-lookup"><span data-stu-id="08c4e-127">As you explore C# (or any programming language), you'll make mistakes when you write code.</span></span> <span data-ttu-id="08c4e-128">Le **compilateur** détectera ces erreurs et vous les signalera.</span><span class="sxs-lookup"><span data-stu-id="08c4e-128">The **compiler** will find those errors and report them to you.</span></span> <span data-ttu-id="08c4e-129">Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans la fenêtre interactive pour identifier les corrections à apporter.</span><span class="sxs-lookup"><span data-stu-id="08c4e-129">When the output contains error messages, look closely at the example code, and the code in the interactive window to see what to fix.</span></span>
+      > <span data-ttu-id="08c4e-130">Cet exercice vous aidera à mieux comprendre la structure du code C#.</span><span class="sxs-lookup"><span data-stu-id="08c4e-130">That exercise will help you learn the structure of C# code.</span></span> 
+
+      <span data-ttu-id="08c4e-131">Votre premier programme est limité à l’affichage d’un seul message.</span><span class="sxs-lookup"><span data-stu-id="08c4e-131">Your first program is limited to printing one message.</span></span> <span data-ttu-id="08c4e-132">Vous pouvez écrire d’autres programmes plus utiles à l’aide de **variables**.</span><span class="sxs-lookup"><span data-stu-id="08c4e-132">You can write more useful programs by using **variables**.</span></span> <span data-ttu-id="08c4e-133">Une **variable** est un symbole que vous pouvez utiliser pour exécuter le même code avec des valeurs différentes.</span><span class="sxs-lookup"><span data-stu-id="08c4e-133">A **variable** is a symbol you can use to run the same code with different values.</span></span> <span data-ttu-id="08c4e-134">Pratiquons ensemble !</span><span class="sxs-lookup"><span data-stu-id="08c4e-134">Let's try it!</span></span> <span data-ttu-id="08c4e-135">Remplacez le code que vous avez écrit dans la fenêtre interactive par le code suivant :</span><span class="sxs-lookup"><span data-stu-id="08c4e-135">Replace the code you've written in the interactive window with the following code:</span></span>
+
+      ```csharp
+      string aFriend = "Bill";
+      Console.WriteLine(aFriend);
+      ```
+
+      <span data-ttu-id="08c4e-136">La première ligne déclare une variable, `aFriend`, et lui assigne une valeur, « Bill ».</span><span class="sxs-lookup"><span data-stu-id="08c4e-136">The first line declares a variable, `aFriend` and assigns it a value, "Bill".</span></span> <span data-ttu-id="08c4e-137">La deuxième ligne affiche le nom.</span><span class="sxs-lookup"><span data-stu-id="08c4e-137">The second line prints out the name.</span></span>
+
+      <span data-ttu-id="08c4e-138">Vous pouvez assigner des valeurs différentes à toute variable que vous déclarez.</span><span class="sxs-lookup"><span data-stu-id="08c4e-138">You can assign different values to any variable you declare.</span></span> <span data-ttu-id="08c4e-139">Vous pouvez remplacer le nom par celui d’un de vos amis.</span><span class="sxs-lookup"><span data-stu-id="08c4e-139">You can change the name to one of your friends.</span></span> <span data-ttu-id="08c4e-140">Dans la fenêtre interactive, ajoutez ces deux lignes après le code que vous avez déjà ajouté :</span><span class="sxs-lookup"><span data-stu-id="08c4e-140">Add these two lines in the interactive window following the code you've already added:</span></span>
+
+      ```csharp
+      aFriend = "Maria";
+      Console.WriteLine(aFriend);
+      ```
+
+      <span data-ttu-id="08c4e-141">Notez que la même ligne de code affiche deux messages différents, selon la valeur stockée dans la variable `aFriend`.</span><span class="sxs-lookup"><span data-stu-id="08c4e-141">Notice that the same line of code prints two different messages, based on the value stored in the `aFriend` variable.</span></span>
+
+      <span data-ttu-id="08c4e-142">Vous avez peut-être également remarqué que le mot « Hello » manque dans les deux derniers messages.</span><span class="sxs-lookup"><span data-stu-id="08c4e-142">You may have also noticed that the word "Hello" was missing in the last two messages.</span></span> <span data-ttu-id="08c4e-143">Nous allons résoudre ce problème maintenant.</span><span class="sxs-lookup"><span data-stu-id="08c4e-143">Let's fix that now.</span></span>  <span data-ttu-id="08c4e-144">Modifiez les lignes qui affichent le message comme suit :</span><span class="sxs-lookup"><span data-stu-id="08c4e-144">Modify the lines that print the message to the following:</span></span>
+
+      ```csharp
+      Console.WriteLine("Hello " + aFriend);
+      ```
+
+      <span data-ttu-id="08c4e-145">Cliquez de nouveau sur **Exécuter** pour afficher les résultats.</span><span class="sxs-lookup"><span data-stu-id="08c4e-145">Click **Run** again to see the results.</span></span>
+
+      > [!NOTE]
+      > <span data-ttu-id="08c4e-146">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class="sxs-lookup"><span data-stu-id="08c4e-146">This online coding experience is in preview mode.</span></span> <span data-ttu-id="08c4e-147">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="08c4e-147">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+  - title: <span data-ttu-id="08c4e-148">Utiliser des chaînes</span><span class="sxs-lookup"><span data-stu-id="08c4e-148">Work with strings</span></span>
+    durationInMinutes: 5
+    content: |
+      <span data-ttu-id="08c4e-149">Votre dernière modification a été notre introduction à ce que vous pouvez faire avec des chaînes.</span><span class="sxs-lookup"><span data-stu-id="08c4e-149">Your last edit was our first look at what you can do with strings.</span></span> <span data-ttu-id="08c4e-150">Poursuivons notre exploration.</span><span class="sxs-lookup"><span data-stu-id="08c4e-150">Let's explore more.</span></span>
+
+      <span data-ttu-id="08c4e-151">Le signe `+` fait référence à un opérateur en C#.</span><span class="sxs-lookup"><span data-stu-id="08c4e-151">The `+` is called an operator in C#.</span></span> <span data-ttu-id="08c4e-152">Quand il est appliqué à des chaînes comme `firstString + secondString`, une nouvelle chaîne incluant le texte de la première chaîne suivi du texte de la deuxième chaîne est créée.</span><span class="sxs-lookup"><span data-stu-id="08c4e-152">When applied to strings like `firstString + secondString`, a new string is created with the text from the first followed by the text from the second.</span></span> <span data-ttu-id="08c4e-153">C’est ce que l’on appelle une *concaténation de chaîne*.</span><span class="sxs-lookup"><span data-stu-id="08c4e-153">This is referred to as *string concatenation*.</span></span> <span data-ttu-id="08c4e-154">Vous pouvez combiner un nombre quelconque de chaînes, y compris des variables de chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-154">You can combine any number of strings, including string variables.</span></span>  <span data-ttu-id="08c4e-155">Écrivez ce code :</span><span class="sxs-lookup"><span data-stu-id="08c4e-155">Try this:</span></span>
+
+      ```csharp
+      string firstFriend = "Maria";
+      string secondFriend = "Sage";
+      Console.WriteLine("My friends are " + firstFriend + " and " + secondFriend);
+      ```
+
+      <span data-ttu-id="08c4e-156">À mesure que vous vous familiarisez avec les chaînes, vous pouvez rechercher la longueur d’une chaîne à l’aide de `Length`.</span><span class="sxs-lookup"><span data-stu-id="08c4e-156">As you explore more with strings, you can find the length of a string using `Length`.</span></span> <span data-ttu-id="08c4e-157">`Length` est une **propriété** de chaîne qui retourne le nombre de caractères de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-157">`Length` is a **property** of a string and it returns the number of characters in that string.</span></span> <span data-ttu-id="08c4e-158">Ajoutez le code suivant en bas de la fenêtre interactive :</span><span class="sxs-lookup"><span data-stu-id="08c4e-158">Add the following code at the bottom of the interactive window:</span></span>
+
+      ```csharp
+      Console.WriteLine("The name " + firstFriend + " has " + firstFriend.Length + " letters.");
+      Console.WriteLine("The name " + secondFriend + " has " + secondFriend.Length + " letters.");
+      ```
+
+      > [!TIP]
+      > <span data-ttu-id="08c4e-159">L’heure est venue d’explorer par vous-même.</span><span class="sxs-lookup"><span data-stu-id="08c4e-159">This is a good time to explore on your own.</span></span> <span data-ttu-id="08c4e-160">Vous avez appris que `Console.WriteLine()` écrit du texte dans l’écran.</span><span class="sxs-lookup"><span data-stu-id="08c4e-160">You've learned that `Console.WriteLine()` writes text to the screen.</span></span> <span data-ttu-id="08c4e-161">Vous avez également appris à déclarer des variables et à concaténer des chaînes.</span><span class="sxs-lookup"><span data-stu-id="08c4e-161">You've learned how to declare variables and concatenate strings together.</span></span> <span data-ttu-id="08c4e-162">Pratiquez à votre gré dans la fenêtre interactive.</span><span class="sxs-lookup"><span data-stu-id="08c4e-162">Experiment in the interactive window.</span></span> <span data-ttu-id="08c4e-163">Écrivez d’autres messages.</span><span class="sxs-lookup"><span data-stu-id="08c4e-163">Write some more messages yourself.</span></span> <span data-ttu-id="08c4e-164">Créez des chaînes à l’aide de l’opérateur `+`.</span><span class="sxs-lookup"><span data-stu-id="08c4e-164">Build strings using the `+` operator.</span></span>
+
+      > [!NOTE]
+      > <span data-ttu-id="08c4e-165">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class="sxs-lookup"><span data-stu-id="08c4e-165">This online coding experience is in preview mode.</span></span> <span data-ttu-id="08c4e-166">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="08c4e-166">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+  - title: <span data-ttu-id="08c4e-167">Autres méthodes de chaînes</span><span class="sxs-lookup"><span data-stu-id="08c4e-167">Do more with strings</span></span>
+    durationInMinutes: 5
+    content: |
+      <span data-ttu-id="08c4e-168">Vous utilisez une **méthode**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, pour afficher les messages.</span><span class="sxs-lookup"><span data-stu-id="08c4e-168">You've been using a **method**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, to print messages.</span></span> <span data-ttu-id="08c4e-169">Une **méthode** est un bloc de code qui implémente une action.</span><span class="sxs-lookup"><span data-stu-id="08c4e-169">A **method** is a block of code that implements some action.</span></span> <span data-ttu-id="08c4e-170">Elle porte un nom pour vous permettre d’y accéder facilement.</span><span class="sxs-lookup"><span data-stu-id="08c4e-170">It has a name, so you can access it.</span></span> 
+
+      <span data-ttu-id="08c4e-171">Le type `string` propose de nombreuses méthodes utiles.</span><span class="sxs-lookup"><span data-stu-id="08c4e-171">The `string` type has many useful methods.</span></span> <span data-ttu-id="08c4e-172">Examinons la méthode <xref:System.String.Trim%2A> ainsi que les méthodes associées <xref:System.String.TrimStart%2A> et <xref:System.String.TrimEnd%2A>.</span><span class="sxs-lookup"><span data-stu-id="08c4e-172">Let's explore the <xref:System.String.Trim%2A> method, and related methods <xref:System.String.TrimStart%2A> and <xref:System.String.TrimEnd%2A>.</span></span> <span data-ttu-id="08c4e-173">Ces méthodes suppriment les espaces de début et de fin :</span><span class="sxs-lookup"><span data-stu-id="08c4e-173">These methods remove leading and trailing spaces:</span></span>
+
+      ```csharp
+      string message = "      Hello World!       ";
+      Console.WriteLine("[" + message + "]");
+
+      string trimmedMessage = message.TrimStart();
+      Console.WriteLine("[" + trimmedMessage + "]");
+
+      trimmedMessage = message.TrimEnd();
+      Console.WriteLine("[" + trimmedMessage + "]");
+
+      trimmedMessage = message.Trim();
+      Console.WriteLine("[" + trimmedMessage + "]");
+      ```
+
+      <span data-ttu-id="08c4e-174">Cet exemple met en avant quelques concepts importants concernant l’utilisation de chaînes.</span><span class="sxs-lookup"><span data-stu-id="08c4e-174">This sample reinforces a couple of important concepts for working with strings.</span></span> <span data-ttu-id="08c4e-175">Les méthodes utilisant des chaînes retournent des objets de chaîne au lieu d’apporter des modifications.</span><span class="sxs-lookup"><span data-stu-id="08c4e-175">The methods that manipulate strings return new string objects rather than making modifications in place.</span></span> <span data-ttu-id="08c4e-176">Vous pouvez observer que chaque appel à une méthode `Trim` retourne une nouvelle chaîne, mais que le message d’origine n’est pas modifié.</span><span class="sxs-lookup"><span data-stu-id="08c4e-176">You can see that each call to any of the `Trim` methods returns a new string, but does not change the original message.</span></span>
+
+      <span data-ttu-id="08c4e-177">Il existe d’autres méthodes disponibles pour utiliser des chaînes.</span><span class="sxs-lookup"><span data-stu-id="08c4e-177">There are other methods available to work with a string.</span></span> <span data-ttu-id="08c4e-178">Par exemple, vous avez probablement déjà utilisé une commande de recherche et remplacement dans un éditeur ou un traitement de texte.</span><span class="sxs-lookup"><span data-stu-id="08c4e-178">For example, you've probably used a search and replace command in an editor or word processor.</span></span> <span data-ttu-id="08c4e-179">La méthode <xref:System.String.Replace%2A> fonctionne de manière similaire dans une `string`.</span><span class="sxs-lookup"><span data-stu-id="08c4e-179">The <xref:System.String.Replace%2A> method does something similar in a `string`.</span></span> <span data-ttu-id="08c4e-180">Elle recherche une sous-chaîne et la remplace par un autre texte.</span><span class="sxs-lookup"><span data-stu-id="08c4e-180">It searches for a substring, and replaces it with different text.</span></span> <span data-ttu-id="08c4e-181">La méthode <xref:System.String.Replace%2A> accepte deux **paramètres**.</span><span class="sxs-lookup"><span data-stu-id="08c4e-181">The <xref:System.String.Replace%2A> method takes two **parameters**.</span></span> <span data-ttu-id="08c4e-182">Il s’agit des chaînes entre parenthèses.</span><span class="sxs-lookup"><span data-stu-id="08c4e-182">These are the strings between the parentheses.</span></span> <span data-ttu-id="08c4e-183">La première chaîne correspond au texte à rechercher.</span><span class="sxs-lookup"><span data-stu-id="08c4e-183">The first string is the text to search for.</span></span> <span data-ttu-id="08c4e-184">La deuxième chaîne correspond au texte qui le remplacera.</span><span class="sxs-lookup"><span data-stu-id="08c4e-184">The second string is the text to replace it with.</span></span> <span data-ttu-id="08c4e-185">Essayez par vous-même.</span><span class="sxs-lookup"><span data-stu-id="08c4e-185">Try it for yourself.</span></span> <span data-ttu-id="08c4e-186">Ajoutez le code suivant :</span><span class="sxs-lookup"><span data-stu-id="08c4e-186">Add this code:</span></span>
+
+      ```csharp
+      string message = "Hello World!";
+      Console.WriteLine(message);
+      message = message.Replace("Hello", "Greetings");
+      Console.WriteLine(message);
+      ```
+
+      <span data-ttu-id="08c4e-187">Deux autres méthodes utiles permettent de mettre une chaîne tout en majuscules ou en minuscules.</span><span class="sxs-lookup"><span data-stu-id="08c4e-187">Two other useful methods make a string ALL CAPS or all lower case.</span></span> <span data-ttu-id="08c4e-188">Exécutez le code suivant :</span><span class="sxs-lookup"><span data-stu-id="08c4e-188">Try the following code:</span></span>
+
+      ```csharp
+      string message = "Hello World!";
+      Console.WriteLine(message);
+      Console.WriteLine(message.ToUpper());
+      Console.WriteLine(message.ToLower());
+      ```
+
+      > [!NOTE]
+      > <span data-ttu-id="08c4e-189">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class="sxs-lookup"><span data-stu-id="08c4e-189">This online coding experience is in preview mode.</span></span> <span data-ttu-id="08c4e-190">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="08c4e-190">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+  - title: <span data-ttu-id="08c4e-191">Rechercher des chaînes</span><span class="sxs-lookup"><span data-stu-id="08c4e-191">Search strings</span></span>
+    durationInMinutes: 10
+    content: |
+      <span data-ttu-id="08c4e-192">L’autre partie d’une opération de *recherche et remplacement* consiste à rechercher du texte dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-192">The other part of a *search and replace* operation is to find text in a string.</span></span> <span data-ttu-id="08c4e-193">Vous pouvez utiliser la méthode <xref:System.String.Contains%2A> pour effectuer des recherches.</span><span class="sxs-lookup"><span data-stu-id="08c4e-193">You can use the  <xref:System.String.Contains%2A> method for searching.</span></span> <span data-ttu-id="08c4e-194">Elle vous indique si une chaîne contient une sous-chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-194">It tells you if a string contains a substring inside it.</span></span> <span data-ttu-id="08c4e-195">Exécutez le code suivant pour explorer <xref:System.String.Contains%2A> :</span><span class="sxs-lookup"><span data-stu-id="08c4e-195">Try the following code to explore <xref:System.String.Contains%2A>:</span></span>
+
+      ```csharp
+      string message = "You say goodbye, and I say hello";
+      Console.WriteLine(message.Contains("goodbye"));
+      Console.WriteLine(message.Contains("greetings"));
+      ```
+
+      <span data-ttu-id="08c4e-196">La méthode <xref:System.String.Contains%2A> retourne une valeur **booléenne** qui indique si la chaîne recherchée a été trouvée.</span><span class="sxs-lookup"><span data-stu-id="08c4e-196">The <xref:System.String.Contains%2A> method returns a **boolean** value which tells you if the string you were searching for was found.</span></span> <span data-ttu-id="08c4e-197">Un **booléen** stocke une valeur `true` ou `false`.</span><span class="sxs-lookup"><span data-stu-id="08c4e-197">A **boolean** stores either a `true` or a `false` value.</span></span> <span data-ttu-id="08c4e-198">Vous en saurez plus sur les valeurs **booléennes** dans une leçon ultérieure.</span><span class="sxs-lookup"><span data-stu-id="08c4e-198">You'll learn more about **boolean** values in a later lesson.</span></span>
+
+      <span data-ttu-id="08c4e-199">***Test***</span><span class="sxs-lookup"><span data-stu-id="08c4e-199">***Challenge***</span></span>
+
+      <span data-ttu-id="08c4e-200">Il existe deux méthodes similaires, <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A>, qui permettent également de rechercher des sous-chaînes dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-200">There are two similar methods, <xref:System.String.StartsWith%2A> and <xref:System.String.EndsWith%2A> that also search for sub-strings in a string.</span></span> <span data-ttu-id="08c4e-201">Elles recherchent une sous-chaîne au début ou à la fin de la chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-201">These find a substring at the beginning or the end of the string.</span></span> <span data-ttu-id="08c4e-202">Essayez de modifier l’exemple précédent pour utiliser <xref:System.String.StartsWith%2A> et <xref:System.String.EndsWith%2A> au lieu de <xref:System.String.Contains%2A>.</span><span class="sxs-lookup"><span data-stu-id="08c4e-202">Try to modify the previous sample to use <xref:System.String.StartsWith%2A> and <xref:System.String.EndsWith%2A> instead of <xref:System.String.Contains%2A>.</span></span> <span data-ttu-id="08c4e-203">Recherchez « You » ou « goodbye » au début d’une chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-203">Search for "You" or "goodbye" at the beginning of a string.</span></span> <span data-ttu-id="08c4e-204">Recherchez « hello » ou « goodbye » à la fin d’une chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-204">Search for "hello" or "goodbye" at the end of a string.</span></span>
+
+      > [!Note]
+      > <span data-ttu-id="08c4e-205">Faites attention à la ponctuation quand vous recherchez du texte à la fin d’une chaîne.</span><span class="sxs-lookup"><span data-stu-id="08c4e-205">Watch your punctuation when you test for the text at the end of the string.</span></span> <span data-ttu-id="08c4e-206">Si la chaîne se termine par un point, vous devez rechercher une chaîne qui se termine par un point.</span><span class="sxs-lookup"><span data-stu-id="08c4e-206">If the string ends with a period, you must check for a string that ends with a period.</span></span>
+
+      > [!NOTE]
+      > <span data-ttu-id="08c4e-207">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class="sxs-lookup"><span data-stu-id="08c4e-207">This online coding experience is in preview mode.</span></span> <span data-ttu-id="08c4e-208">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="08c4e-208">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+  - title: <span data-ttu-id="08c4e-209">Terminer le test</span><span class="sxs-lookup"><span data-stu-id="08c4e-209">Complete challenge</span></span>
+    durationInMinutes: 3
+    content: |
+      <span data-ttu-id="08c4e-210">Avez-vous obtenu un résultat similaire à celui-ci ?</span><span class="sxs-lookup"><span data-stu-id="08c4e-210">Did you come up with something like this?</span></span>
+
+      ```csharp
+      string message = "You say goodbye, and I say hello";
+      Console.WriteLine(message.StartsWith("You"));
+      Console.WriteLine(message.StartsWith("goodbye"));
+
+      Console.WriteLine(message.EndsWith("hello"));
+      Console.WriteLine(message.EndsWith("goodbye"));
+      ```
+
+      > [!NOTE]
+      > <span data-ttu-id="08c4e-211">Cette expérience de codage en ligne est en mode d’aperçu.</span><span class="sxs-lookup"><span data-stu-id="08c4e-211">This online coding experience is in preview mode.</span></span> <span data-ttu-id="08c4e-212">Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="08c4e-212">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+  - content: |
+      <span data-ttu-id="08c4e-213">Vous avez terminé le didacticiel « Hello C# ».</span><span class="sxs-lookup"><span data-stu-id="08c4e-213">You've completed the "Hello C#" tutorial.</span></span>
+
+      <span data-ttu-id="08c4e-214">Pour plus d’informations sur l’utilisation du type `string`, consultez la rubrique du [Guide de programmation C#](../programming-guide/index.md) sur les [chaînes](../programming-guide/strings/index.md).</span><span class="sxs-lookup"><span data-stu-id="08c4e-214">You can learn more about working with the `string` type in the [C# Programming Guide](../programming-guide/index.md) topic on [strings](../programming-guide/strings/index.md).</span></span>
