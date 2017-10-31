@@ -51,7 +51,7 @@ Configure le format de la livraison, la méthode de livraison et l'adresse d'ori
 |Attribut|Description|  
 |--------------|-----------------|  
 |`deliveryFormat`|Spécifie le format de remise des courriers électroniques sortants.  Les valeurs acceptables sont SevenBit et International.|  
-|`deliveryMethod`|Spécifie la méthode d'acheminement des messages électroniques.  Les valeurs acceptables sont network, pickupDirectoryFromIis et specifiedPickupDirectory.|  
+|`deliveryMethod`|Spécifie la méthode d'acheminement des messages électroniques.  Les valeurs acceptables sont network, pickupDirectoryFromIis et SpecifiedPickupDirectory.|  
 |`from`|Spécifie l'adresse d'origine des messages électroniques sortants.|  
   
 ### Éléments enfants  
