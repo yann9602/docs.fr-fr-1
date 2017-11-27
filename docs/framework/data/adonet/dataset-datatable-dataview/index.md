@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-ado
+ms.technology: dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b4ad3bae4c949f0b893b76164a671a3f44fa30a8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 642a81b926262fb8ea95234d90e4c1a0c49ea96c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="datasets-datatables-and-dataviews"></a>DataSets, DataTables et DataViews
 L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient. Un objet <xref:System.Data.DataSet> représente un jeu de données complet, y compris les tables qui contiennent et organisent les données et y appliquent des contraintes, ainsi que les relations entre les tables.  
@@ -75,7 +73,7 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
  Explique comment créer un service Web XML qui utilise un <xref:System.Data.DataSet> pour le transport des données.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Nouveautés dans ADO.NET](../../../../../docs/framework/data/adonet/whats-new.md)  
+ [Nouveautés d’ADO.NET](../../../../../docs/framework/data/adonet/whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
  [Vue d’ensemble d’ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
@@ -91,6 +89,5 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
  Explique comment remplir un **DataSet** avec les informations de clé primaire d’une source de données.  
   
 ## <a name="see-also"></a>Voir aussi  
- [ADO.NET](../../../../../docs/framework/data/adonet/index.md)   
+ [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
-

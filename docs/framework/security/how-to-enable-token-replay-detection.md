@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: cde32407f072f3d29af4a8d1aae559e46057ae3a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Guide pratique pour activer la détection de relecture de jetons
 ## <a name="applies-to"></a>S'applique à  
@@ -93,4 +91,3 @@ ms.lasthandoff: 08/21/2017
 2.  Appuyez sur le bouton **Précédent** du navigateur. Une page **Erreur du serveur dans l’application ‘/’** doit s’afficher avec la description suivante : *ID1062 : relecture détectée pour : Jeton : 'System.IdentityModel.Tokens.SamlSecurityToken'*, suivie des éléments *AssertionId* et *Émetteur*.  
   
      Vous voyez cette page d’erreur, car une exception de type <xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException> a été levée lors de la détection de la relecture de jetons. Cette erreur se produit parce que vous essayez d’envoyer à nouveau la requête POST initiale où le jeton est apparu la première fois. Le bouton **Précédent** n’entraîne pas ce comportement pour les demandes suivantes au serveur.
-

@@ -1,35 +1,28 @@
 ---
-title: "Guide pratique pour créer des wrappers COM"
+title: "Comment : créer des wrappers COM"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - COM,wrappers creating
 - COM,wrappers Visual Studio
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e99b084ddb565a8ae00ee917eaf7fca2c659ab64
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b8f8e5ef6aa90b1d31c589a82891f0ca1bfa5469
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-create-com-wrappers"></a>Guide pratique pour créer des wrappers COM
+# <a name="how-to-create-com-wrappers"></a>Comment : créer des wrappers COM
 Vous pouvez créer des wrappers COM (Component Object Model) à l’aide des fonctionnalités [!INCLUDE[vsprvsext](../../../includes/vsprvsext-md.md)] ou des outils .NET Framework Tlbimp.exe et Regasm.exe. Ces deux méthodes génèrent deux types de wrappers COM :  
   
 -   un [wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md) d’une bibliothèque de types pour exécuter un objet COM en code managé ;  
@@ -88,6 +81,5 @@ Vous pouvez créer des wrappers COM (Component Object Model) à l’aide des fon
  Vous pouvez exécuter Regasm.exe sur un assembly situé dans n’importe quel répertoire, puis [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pour le déplacer dans le Global Assembly Cache. Le déplacement de l’assembly n’invalide pas les entrées du Registre d’emplacement, car le Global Assembly Cache est toujours examiné si l’assembly est introuvable ailleurs.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md)   
+ [Wrapper pouvant être appelé par le runtime](../../../docs/framework/interop/runtime-callable-wrapper.md)  
  [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md)
-

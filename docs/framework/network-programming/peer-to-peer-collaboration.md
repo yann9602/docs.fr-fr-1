@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b17fc74b2143f7307316a167330d06c87b9d4c3d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3928c6b3690bd03a4365d21d5fbf2f4bd2a4f457
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-to-peer-collaboration"></a>Collaboration pair à pair
 Les réseaux pair à pair utilisent des ordinateurs relativement puissants (des ordinateurs personnels) situés à la périphérie d’Internet et qui permettent davantage que de simples tâches de calcul basées sur le client. L’ordinateur personnel moderne dispose d’un processeur très rapide, d’une très grande mémoire et d’un disque dur volumineux. Cependant, aucun d’eux n’est entièrement utilisé lors de l’exécution des tâches informatiques courantes, comme l’envoi et la réception d’e-mails ou la navigation web. Les PC modernes peuvent facilement jouer le rôle de client et de serveur (pair) pour de nombreux types d’applications.  
@@ -56,6 +50,5 @@ Les réseaux pair à pair utilisent des ordinateurs relativement puissants (des 
  Dans un domaine Active Directory, les contrôleurs de domaine fournissent des services d’authentification à l’aide de Kerberos. Dans un environnement pair à pair sans serveur, les pairs doivent fournir leur propre authentification. Pour les réseaux pair à pair, n’importe quel nœud peut servir d’autorité de certification. De cette façon, il n’est plus nécessaire qu’un certificat racine se trouve dans le magasin racine approuvé de chaque pair. L’authentification est assurée à l’aide de certificats auto-signés, au format X.509. Il s’agit des certificats qui sont créés par chaque pair, qui génère la paire clé publique/clé privée, et le certificat qui est signé à l’aide de la clé privée. Le certificat auto-signé est utilisé pour l’authentification et pour fournir des informations sur l’entité pair. Comme l’authentification X.509, l’authentification de réseau pair à pair s’appuie sur une chaîne de certificats liés à une même clé publique approuvée.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.PeerToPeer.Collaboration>   
+ <xref:System.Net.PeerToPeer.Collaboration>  
  [À propos de l’espace de noms System.Net.PeerToPeer.Collaboration](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)
-

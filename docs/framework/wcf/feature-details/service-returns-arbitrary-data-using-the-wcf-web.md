@@ -1,27 +1,30 @@
 ---
-title: "Proc&#233;dure&#160;: cr&#233;er un service qui retourne des donn&#233;es arbitraires &#224; l&#39;aide du mod&#232;le de programmation Web HTTP WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 64179a559986f11fa263fac7fe680ddd9bea809c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: cr&#233;er un service qui retourne des donn&#233;es arbitraires &#224; l&#39;aide du mod&#232;le de programmation Web HTTP WCF
-Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service.C'est le cas lorsqu'une opération de service doit retourner des données dans un format non pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Cette rubrique décrit l'utilisation du modèle de programmation Web HTTP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour créer un tel service.Ce service a une opération qui retourne un flux de données.  
+# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Procédure : créer un service qui retourne des données arbitraires à l'aide du modèle de programmation Web HTTP WCF
+Les développeurs doivent parfois avoir le contrôle total de la manière dont les données sont retournées à partir d'une opération de service. C’est le cas lorsqu’une opération de service doit retourner des données dans un format non pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Cette rubrique décrit l'utilisation du modèle de programmation Web HTTP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour créer un tel service. Ce service a une opération qui retourne un flux de données.  
   
-### Pour implémenter le contrat de service  
+### <a name="to-implement-the-service-contract"></a>Pour implémenter le contrat de service  
   
-1.  Définition du contrat de service.Le contrat est appelé `IImageServer` et a une méthode appelée `GetImage` qui retourne un <xref:System.IO.Stream>.  
+1.  Définition du contrat de service. Le contrat est appelé `IImageServer` et a une méthode appelée `GetImage` qui retourne un <xref:System.IO.Stream>.  
   
     ```  
     [ServiceContract]  
@@ -34,7 +37,7 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
   
      La méthode retournant un <xref:System.IO.Stream>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] suppose que l'opération a un contrôle complet sur les octets retournés à partir de l'opération de service et elle n'applique aucune mise en forme aux données retournées.  
   
-2.  Implémentez le contrat de service.Le contrat a une seule opération \(`GetImage`\).Cette méthode génère une image bitmap, puis l'enregistre dans un <xref:System.IO.MemoryStream> au format .jpg.L'opération retourne ensuite ce flux de données à l'appelant.  
+2.  Implémentez le contrat de service. Le contrat a une seule opération (`GetImage`). Cette méthode génère une image bitmap, puis l'enregistre dans un <xref:System.IO.MemoryStream> au format .jpg. L'opération retourne ensuite ce flux de données à l'appelant.  
   
     ```  
     public class Service : IImageServer  
@@ -58,11 +61,11 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
        }  
     ```  
   
-     Observez l'avant\-dernière ligne de code : `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
+     Observez l'avant-dernière ligne de code : `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
-     Elle affecte à l'en\-tête de type de contenu la valeur `“image/jpeg”`.Bien que cet exemple indique comment retourner un fichier .jpg, il peut être modifié pour retourner tout type de données requis, dans n'importe quel format.L'opération doit extraire ou générer les données, puis les écrire dans un flux de données.  
+     Cela définit l’en-tête de type de contenu sur `"image/jpeg"`. Bien que cet exemple indique comment retourner un fichier .jpg, il peut être modifié pour retourner tout type de données requis, dans n'importe quel format. L'opération doit extraire ou générer les données, puis les écrire dans un flux de données.  
   
-### Pour héberger le service  
+### <a name="to-host-the-service"></a>Pour héberger le service  
   
 1.  Créez une application console pour héberger le service.  
   
@@ -85,14 +88,12 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
   
     ```  
     ServiceHost host = new ServiceHost(typeof(Service), new Uri(baseAddress));  
-  
     ```  
   
 4.  Ajoutez un point de terminaison à l'aide de <xref:System.ServiceModel.WebHttpBinding> et <xref:System.ServiceModel.Description.WebHttpBehavior>.  
   
     ```  
     host.AddServiceEndpoint(typeof(IImageServer), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
-  
     ```  
   
 5.  Ouvrir l'hôte de service.  
@@ -108,17 +109,16 @@ Les développeurs doivent parfois avoir le contrôle total de la manière dont l
     Console.Write("Press ENTER to close the host");  
     Console.ReadLine();  
     host.Close();  
-  
     ```  
   
-### Pour appeler le service brut à l'aide d'Internet Explorer  
+### <a name="to-call-the-raw-service-using-internet-explorer"></a>Pour appeler le service brut à l'aide d'Internet Explorer  
   
-1.  Exécutez le service. La sortie suivante devrait apparaître.`Service is running Press ENTER to close the host`  
+1.  Exécutez le service. La sortie suivante devrait apparaître. `Service is running Press ENTER to close the host`  
   
 2.  Ouvrez Internet Explorer et tapez `http://localhost:8000/Service/GetImage?width=50&height=40`. Un rectangle jaune traversé en son centre par une ligne diagonale bleue devrait apparaître.  
   
-## Exemple  
- L'intégralité du code utilisé dans cette rubrique est présentée ci\-dessous.  
+## <a name="example"></a>Exemple  
+ L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```  
 using System;  
@@ -179,12 +179,11 @@ namespace RawImageService
         }  
     }  
 }  
-  
 ```  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
   
 -   Lors de la compilation de l'exemple de code, faites référence à System.ServiceModel.dll et System.ServiceModel.Web.dll.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

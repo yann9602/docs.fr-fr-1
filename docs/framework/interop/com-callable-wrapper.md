@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - CCW
 - COM interop, COM wrappers
@@ -22,16 +19,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cbf466fb52af94d51babb30fdee85f4a056298c6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 874550511ed04427003f6fd54fdd97b3001356fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="com-callable-wrapper"></a>Wrapper pouvant être appelé par COM
 Quand un client COM appelle un objet .NET, le common language runtime crée l'objet managé et un wrapper CCW pour cet objet. Parce qu'ils ne peuvent pas référencer directement un objet .NET, les clients COM utilisent le wrapper CCW en tant que proxy pour l'objet managé.  
@@ -189,11 +185,10 @@ public class LoanApp : IAnother {
  Une interface double générée automatiquement peut être appropriée dans de rares cas. Toutefois, cela rend souvent le contrôle de version plus complexe. Par exemple, les clients COM qui utilisent l'interface de classe d'une classe dérivée peuvent facilement s'arrêter en raison des modifications apportées à la classe de base. Quand une tierce partie fournit la classe de base, la disposition de l'interface de classe est hors de votre contrôle. De plus, contrairement à une interface IDispatch uniquement, une interface Dual (**ClassInterface.AutoDual**) fournit une description de l’interface de classe dans la bibliothèque de types exportée. Une telle description encourage les clients à liaison tardive à mettre en cache les DISPID au moment de l'exécution.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>   
- [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md)   
- [Wrappers COM](../../../docs/framework/interop/com-wrappers.md)   
- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [Simulation d’interfaces COM](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)   
- [Qualification des types .NET pour l’interopérabilité](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)   
- [Wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md)
-
+ <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
+ [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md)  
+ [Wrappers COM](../../../docs/framework/interop/com-wrappers.md)  
+ [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [Simulation d’Interfaces COM](http://msdn.microsoft.com/en-us/ad2ab959-e2be-411b-aaff-275c3fba606c)  
+ [Qualifier des types .NET pour l'interopérabilité](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
+ [Wrapper pouvant être appelé par le runtime](../../../docs/framework/interop/runtime-callable-wrapper.md)

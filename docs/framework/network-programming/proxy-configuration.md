@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Networking
 - adaptive proxies
@@ -22,16 +17,15 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d2576050310c9b1926ee413e4fb1bbcf0c4bf4be
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b543097d0fc85c502bd36f22225958f9239ccd71
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="proxy-configuration"></a>Configuration du proxy
 Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut retourner une ressource demandée à partir de son cache ou transférer la demande au serveur sur lequel réside la ressource. Les proxies peuvent améliorer les performances réseau en réduisant le nombre de demandes envoyées aux serveurs distants. Les proxies peuvent également être utilisés pour restreindre l'accès aux ressources.  
@@ -113,7 +107,6 @@ Un serveur proxy gère les demandes du client pour les ressources. Un proxy peut
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.WebProxy>   
- <xref:System.Net.GlobalProxySelection>   
+ <xref:System.Net.WebProxy>  
+ <xref:System.Net.GlobalProxySelection>  
  [Détection automatique de proxy](../../../docs/framework/network-programming/automatic-proxy-detection.md)
-

@@ -1,19 +1,16 @@
 ---
-title: "Guide pratique pour ajouter des instructions de traçage dans le code d'une application"
+title: "Comment : ajouter des instructions de traçage dans le code d'une application"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - tracing [.NET Framework], conditional writes based on switches
 - trace statements
@@ -23,18 +20,17 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: adb4290b517230f26330cf3b4d94a7b3bc7fbf88
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 5dd46da24c379a7900dff0dc482577195f5f4c23
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-add-trace-statements-to-application-code"></a>Guide pratique pour ajouter des instructions de traçage dans le code d'une application
+# <a name="how-to-add-trace-statements-to-application-code"></a>Comment : ajouter des instructions de traçage dans le code d'une application
 Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert** et **Fail**. Ces méthodes peuvent être réparties en deux catégories : **Write**, **WriteLine** et **Fail** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf** et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
   
  Quand vous concevez votre stratégie de débogage et de traçage, vous devez tenir compte de l'apparence souhaitée de la sortie. Si plusieurs instructions **Write** sont remplies avec des informations sans rapport, le journal créé est difficile à lire. D’un autre côté, si vous utilisez **WriteLine** pour placer des instructions connexes sur des lignes distinctes, il peut être difficile de déterminer les informations associées. En règle générale, utilisez plusieurs instructions **Write** si vous voulez combiner des informations provenant de plusieurs sources pour créer un message informatif unique et utilisez l’instruction **WriteLine** quand vous voulez créer un message unique et complet.  
@@ -84,25 +80,24 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
 1.  Appelez la méthode <xref:System.Diagnostics.Trace.Assert%2A>.  
   
     ```vb  
-    Dim I As Integer = 4  
-    Trace.Assert(I = 5, "I is not equal to 5.")  
+    Dim i As Integer = 4  
+    Trace.Assert(i = 5, "i is not equal to 5.")  
     ```  
   
     ```csharp  
-    int I = 4;  
-    System.Diagnostics.Trace.Assert(I == 5, "I is not equal to 5.");  
+    int i = 4;  
+    System.Diagnostics.Trace.Assert(i == 5, "i is not equal to 5.");  
     ```  
   
     > [!NOTE]
-    >  Vous pouvez utiliser **Assert** à la fois avec le suivi et le débogage. Cet exemple génère la pile des appels dans n’importe quel écouteur de la collection **Listeners**. Pour plus d’informations, consultez [Assertions dans du code managé](/visualstudio/debugger/assertions-in-managed-code) et <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName>.  
+    >  Vous pouvez utiliser **Assert** à la fois avec le suivi et le débogage. Cet exemple génère la pile des appels dans n’importe quel écouteur de la collection **Listeners**. Pour plus d’informations, consultez [Assertions dans du code managé](/visualstudio/debugger/assertions-in-managed-code) et <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=fullName>   
- <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=fullName>   
- <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=fullName>   
- <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=fullName>   
- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)   
- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)   
- [Commutateurs de traçage](../../../docs/framework/debug-trace-profile/trace-switches.md)   
+ <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>  
+ <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>  
+ <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>  
+ <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>  
+ [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
+ [Comment : créer, initialiser et configurer des commutateurs de traçage](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-

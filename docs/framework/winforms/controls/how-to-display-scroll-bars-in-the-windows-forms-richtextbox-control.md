@@ -1,55 +1,56 @@
 ---
-title: "Comment&#160;: afficher les barres de d&#233;filement dans le contr&#244;le RichTextBox Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "RichTextBox (contrôle Windows Forms), afficher les barres de défilement"
-  - "barres de défilement, afficher dans les contrôles"
-  - "zones de texte, afficher les barres de défilement"
+title: "Comment : afficher les barres de défilement dans le contrôle RichTextBox Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- text boxes [Windows Forms], displaying scroll bars
+- scroll bars [Windows Forms], displaying in controls
+- RichTextBox control [Windows Forms], displaying scroll bars
 ms.assetid: cdeb42e1-86e8-410c-ba46-18aec264ef5f
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3b20c526b27eb185bf79eaf0ace47e5a9fded42a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: afficher les barres de d&#233;filement dans le contr&#244;le RichTextBox Windows Forms
-Par défaut, le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms affiche les barres de défilement horizontale et verticale si nécessaire.  La propriété <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> du contrôle <xref:System.Windows.Forms.RichTextBox> peut prendre sept valeurs différentes, décrites dans le tableau ci\-dessous.  
+# <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>Comment : afficher les barres de défilement dans le contrôle RichTextBox Windows Forms
+Par défaut, Windows Forms <xref:System.Windows.Forms.RichTextBox> contrôle affiche des barres de défilement horizontale et verticale si nécessaire. Il existe sept valeurs possibles pour le <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> propriété de la <xref:System.Windows.Forms.RichTextBox> contrôle, qui sont décrites dans le tableau ci-dessous.  
   
-### Pour afficher les barres de défilement dans un contrôle RichTextBox  
+### <a name="to-display-scroll-bars-in-a-richtextbox-control"></a>Pour afficher les barres de défilement dans un contrôle RichTextBox  
   
-1.  Affectez à la propriété <xref:System.Windows.Forms.RichTextBox.Multiline%2A> la valeur `true`.  Aucun type de barre de défilement, horizontal y compris, ne sera affiché si la propriété <xref:System.Windows.Forms.RichTextBox.Multiline%2A> a la valeur `false`.  
+1.  Affectez à la propriété <xref:System.Windows.Forms.RichTextBox.Multiline%2A> la valeur `true`. Aucun type de barre de défilement, y compris horizontal, n’affiche si le <xref:System.Windows.Forms.RichTextBox.Multiline%2A> est définie sur `false`.  
   
-2.  Affectez à la propriété <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> une valeur appropriée de l'énumération <xref:System.Windows.Forms.RichTextBoxScrollBars>.  
+2.  Définir le <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> propriété une valeur appropriée de la <xref:System.Windows.Forms.RichTextBoxScrollBars> énumération.  
   
     |Valeur|Description|  
-    |------------|-----------------|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars> \(par défaut\)|Affiche les barres de défilement horizontal ou vertical, ou les deux, uniquement lorsque le texte dépasse la largeur et la longueur du contrôle.|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|N'affiche jamais l'un ou l'autre type de barre de défilement.|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|Affiche une barre de défilement horizontal uniquement lorsque le texte dépasse la largeur du contrôle.  \(Pour que cela se produise, la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> doit avoir la valeur `false`.\)|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|Affiche une barre de défilement vertical uniquement lorsque le texte dépasse la hauteur du contrôle.|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|Affiche une barre de défilement horizontal lorsque la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> a la valeur `false`.  La barre de défilement est estompée lorsque le texte ne dépasse pas la largeur du contrôle.|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|Affiche toujours une barre de défilement vertical.  La barre de défilement est estompée lorsque le texte ne dépasse pas la longueur du contrôle.|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars>|Affiche toujours une barre de défilement vertical.  Affiche une barre de défilement horizontal lorsque la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> a la valeur `false`.  Les barres de défilement sont estompées lorsque le texte ne dépasse pas la largeur et la longueur du contrôle.|  
+    |-----------|-----------------|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.Both> (par défaut)|Affiche des barres de défilement horizontal ou vertical, ou les deux, uniquement lorsque le texte dépasse la largeur ou la longueur du contrôle.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.None>|N’affiche jamais de n’importe quel type de barre de défilement.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.Horizontal>|Affiche une uniquement lorsque le texte dépasse la largeur du contrôle de barre de défilement horizontal. (Pour ce faire, le <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> propriété doit être définie sur `false`.)|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.Vertical>|Affiche une uniquement lorsque le texte dépasse la hauteur du contrôle de barre de défilement verticale.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal>|Lorsque la barre de défilement horizontale d’affiche le <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> est définie sur `false`. La barre de défilement apparaît grisée lorsque le texte ne dépasse pas la largeur du contrôle.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical>|Affiche toujours une barre de défilement verticale. La barre de défilement apparaît grisée lorsque le texte ne dépasse pas la longueur du contrôle.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth>|Affiche toujours une barre de défilement verticale. Lorsque la barre de défilement horizontale d’affiche le <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> est définie sur `false`. Les barres de défilement sont estompées lorsque le texte ne dépasse pas la largeur ou la longueur du contrôle.|  
   
 3.  Affectez à la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> une valeur appropriée.  
   
     |Valeur|Description|  
-    |------------|-----------------|  
-    |`false`|Le texte dans le contrôle n'est pas automatiquement ajusté à la largeur du contrôle et défilera vers la droite jusqu'au prochain saut de ligne.  Utilisez cette valeur si vous avez choisi Horizontal ou Both, ci\-dessus.|  
-    |`true` \(par défaut\)|Le texte dans le contrôle est automatiquement ajusté à la largeur du contrôle.  La barre de défilement horizontal n'apparaîtra pas.  Utilisez cette valeur si vous avez choisi Vertical ou None ci\-dessus afin d'afficher un ou plusieurs paragraphes.|  
+    |-----------|-----------------|  
+    |`false`|Texte dans le contrôle n’est pas ajustée automatiquement pour s’ajuster à la largeur du contrôle, donc il défilera vers la droite jusqu'à ce qu’un saut de ligne est atteinte. Utilisez cette valeur si vous avez choisi les barres de défilement horizontale ou les deux, ci-dessus.|  
+    |`true` (par défaut)|Texte dans le contrôle est automatiquement ajustée pour s’ajuster à la largeur du contrôle. La barre de défilement horizontal n’apparaître pas. Utilisez cette valeur si vous avez choisi les barres de défilement vertical ou none, ci-dessus, pour afficher un ou plusieurs paragraphes.|  
   
-## Voir aussi  
- <xref:System.Windows.Forms.RichTextBoxScrollBars>   
- <xref:System.Windows.Forms.RichTextBox>   
- [RichTextBox, contrôle](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.RichTextBoxScrollBars>  
+ <xref:System.Windows.Forms.RichTextBox>  
+ [RichTextBox, contrôle](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

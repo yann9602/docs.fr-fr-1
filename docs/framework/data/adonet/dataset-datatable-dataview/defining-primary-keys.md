@@ -1,27 +1,33 @@
 ---
-title: "D&#233;finition des cl&#233;s primaires | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Définition des clés primaires"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a2ba353353b52e5a866887e7f0dc4b743e336bd0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# D&#233;finition des cl&#233;s primaires
-Une table de base de données a généralement une colonne ou un groupe de colonnes identifiant de façon unique chaque ligne de la table.  Cette colonne ou ce groupe de colonnes d'identification s'appelle la clé primaire.  
+# <a name="defining-primary-keys"></a>Définition des clés primaires
+Une table de base de données a généralement une colonne ou un groupe de colonnes identifiant de façon unique chaque ligne de la table. Cette colonne ou ce groupe de colonnes d'identification s'appelle la clé primaire.  
   
- Lorsque vous identifiez un seul objet <xref:System.Data.DataColumn> comme la propriété <xref:System.Data.DataTable.PrimaryKey%2A> d'un objet <xref:System.Data.DataTable>, la table attribue automatiquement la valeur **false** à la propriété <xref:System.Data.DataColumn.AllowDBNull%2A> de la colonne et la valeur **true** à la propriété <xref:System.Data.DataColumn.Unique%2A>.  Pour les clés primaires à plusieurs colonnes, la valeur **false** n'est automatiquement attribuée qu'à la propriété **AllowDBNull**.  
+ Lorsque vous identifiez un seul <xref:System.Data.DataColumn> en tant que le <xref:System.Data.DataTable.PrimaryKey%2A> pour un <xref:System.Data.DataTable>, la table attribue automatiquement la <xref:System.Data.DataColumn.AllowDBNull%2A> propriété de la colonne à **false** et le <xref:System.Data.DataColumn.Unique%2A> propriété  **true**. Pour plusieurs colonnes les clés primaires, uniquement le **AllowDBNull** est automatiquement définie sur **false**.  
   
- La propriété **PrimaryKey** d'un objet <xref:System.Data.DataTable> reçoit comme valeur un tableau d'un ou plusieurs objets **DataColumn**, comme le montrent les exemples suivants.  Le premier exemple définit une colonne unique comme clé primaire.  
+ Le **PrimaryKey** propriété d’un <xref:System.Data.DataTable> reçoit comme valeur un tableau d’un ou plusieurs **DataColumn** des objets, comme indiqué dans les exemples suivants. Le premier exemple définit une colonne unique comme clé primaire.  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}  
@@ -31,7 +37,6 @@ workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}
 Dim columns(1) As DataColumn  
 columns(0) = workTable.Columns("CustID")  
 workTable.PrimaryKey = columns  
-  
 ```  
   
 ```csharp  
@@ -56,7 +61,6 @@ Dim keyColumn(2) As DataColumn
 keyColumn(0) = workTable.Columns("CustLName")  
 keyColumn(1) = workTable.Columns("CustFName")  
 workTable.PrimaryKey = keyColumn  
-  
 ```  
   
 ```csharp  
@@ -71,8 +75,8 @@ keyColumn[1] = workTable.Columns["CustFName"];
 workTable.PrimaryKey = keyColumn;  
 ```  
   
-## Voir aussi  
- <xref:System.Data.DataTable>   
- [Définition du schéma d'un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)   
- [DataTable, objets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Data.DataTable>  
+ [Définition de schéma d’un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
+ [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

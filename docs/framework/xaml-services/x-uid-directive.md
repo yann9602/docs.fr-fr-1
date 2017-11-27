@@ -1,54 +1,57 @@
 ---
-title: "x:Uid Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "XAML [XAML Services], localizable content attribute"
-  - "XAML [XAML Services], x:Uid attribute"
-  - "x:Uid attribute [XAML Services]"
-  - "Uid attribute [XAML Services]"
+title: x:Uid, directive
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XAML [XAML Services], localizable content attribute
+- XAML [XAML Services], x:Uid attribute
+- x:Uid attribute [XAML Services]
+- Uid attribute [XAML Services]
 ms.assetid: 81defade-483b-4a89-b76d-9b25bba34010
-caps.latest.revision: 12
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 4d49e9630b481b2daf103feabd225dd5ef0c8ca2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# x:Uid Directive
-Fournit un identificateur unique pour les éléments de balisage.  Dans de nombreux scénarios, cet identificateur unique est utilisé par les outils et les processus de localisation XAML.  
+# <a name="xuid-directive"></a>x:Uid, directive
+Fournit un identificateur unique pour les éléments de balisage. Dans de nombreux scénarios, cet identificateur unique est utilisé par des outils et processus de localisation XAML.  
   
-## Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
+```xaml  
+<object x:Uid="identifier"... />  
 ```  
-<object x:Uid="identifier"... />  
-```  
   
-## Valeurs XAML  
+## <a name="xaml-values"></a>Valeurs XAML  
   
 |||  
 |-|-|  
-|`identifier`|Une chaîne créée manuellement ou automatiquement qui doit être unique dans un fichier lorsqu'il est interprété par un consommateur de `x:Uid`.|  
+|`identifier`|Créée manuellement ou chaîne générée automatiquement qui doit être unique dans un fichier lorsqu’il est interprété par un `x:Uid` consommateur.|  
   
-## Notes  
- Dans \[MS\-XAML\], `x:Uid` est défini comme une directive.  Pour plus d'informations, consultez [\[MS\-XAML\] Section 5.3.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
+## <a name="remarks"></a>Remarques  
+ Dans [MS-XAML] `x:Uid` est défini comme une directive. Pour plus d’informations, consultez [ \[MS-XAML\] Section 5.3.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
- `x:Uid` est différent de `x:Name` à cause du scénario de localisation XAML déclaré et parce que les identificateurs utilisés pour la localisation n'aient pas de dépendances sur les conséquences de modèle de programmation de `x:Name`.  Également, `x:Name` est régi par la portée de noms XAML ; cependant, `x:Uid` n'est pas gouverné par un concept défini de langage XAML de mise en conformité d'unicité.  Les processeurs XAML au sens générique du terme \(processeurs qui ne font pas partie du processus de localisation\), ne sont pas supposés appliquer l'unicité des valeurs `x:Uid`.  Cette responsabilité revient conceptuellement à l'initiateur des valeurs.  L'attente d'unicité de valeurs `x:Uid` dans une source XAML unique est justifiée pour les consommateurs des valeurs, par exemple des processus ou des outils de globalisation dédiés.  Le modèle d'unicité typique signifie que les valeurs `x:Uid` d'un fichier encodé XML représentant du XAML seront uniques.  
+ `x:Uid`est différent de `x:Name` à la fois en raison du scénario de localisation XAML déclaré et afin que les identificateurs qui sont utilisés pour la localisation n’ont aucune dépendance sur les conséquences de modèle de programmation de `x:Name`. En outre, `x:Name` est régie par la portée de nom XAML ; Toutefois, `x:Uid` n’est pas régi par un concept de langage défini XAML de mise en œuvre de l’unicité. Les processeurs XAML au sens large (processeurs qui ne font pas partie du processus de localisation) ne sont pas prévus pour garantir l’unicité de `x:Uid` valeurs. Cette responsabilité revient conceptuellement à l’initiateur des valeurs. L’attente d’unicité de `x:Uid` des valeurs dans une source XAML unique est justifiée pour les consommateurs des valeurs, telles que le processus d’internationalisation dédié ou d’outils. Le modèle d’unicité typique est que `x:Uid` sont uniques au sein d’un fichier XML qui représente le XAML.  
   
- Les outils possédant une connaissance significative d'un schéma XAML particulier peuvent choisir d'appliquer uniquement `x:Uid` pour les chaînes localisables true, plutôt que pour tous les cas dans lesquels une valeur de chaîne de texte est rencontrée dans la balise.  
+ Les outils qui ont une connaissance significative d’un schéma XAML particulier peuvent choisir d’appliquer `x:Uid` uniquement pour les chaînes localisables true, au lieu de tous les cas où une valeur de chaîne de texte est rencontrée dans la balise.  
   
- Les Frameworks peuvent spécifier une propriété particulière dans leur modèle objet pour en faire un alias pour `x:Uid` en appliquant l'attribut <xref:System.Windows.Markup.UidPropertyAttribute> au type défini.  Si une infrastructure spécifie une propriété particulière, elle est valide pour spécifier `x:Uid` et le membre ajouté en alias sur le même objet.  Si `x:Uid` et le membre ajouté en alias sont spécifiés, l'API des services XAML .NET Framework lève généralement <xref:System.Xaml.XamlDuplicateMemberException> pour ce cas.  
+ Frameworks peuvent spécifier une propriété particulière dans leur modèle d’objet comme étant un alias pour `x:Uid` en appliquant l’attribut <xref:System.Windows.Markup.UidPropertyAttribute> pour le type de définition. Si une infrastructure spécifie une propriété particulière, il n’est pas possible de spécifier à la fois `x:Uid` et le membre d’un alias sur le même objet. Si les deux `x:Uid` et le membre d’un alias sont spécifiés, l’API des Services XAML .NET Framework lève généralement <xref:System.Xaml.XamlDuplicateMemberException> pour ce cas.  
   
-## Remarques sur l'utilisation de WPF  
- Pour plus d'informations sur le rôle de `x:Uid` dans le processus de localisation WPF et dans le formulaire BAML de XAML, consultez [Globalisation pour WPF](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md) ou <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
+## <a name="wpf-usage-notes"></a>Notes d’utilisation WPF  
+ Pour plus d’informations sur le rôle de `x:Uid` dans le processus de localisation WPF et dans la forme BAML du XAML, consultez [globalisation pour WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) ou<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
   
-## Voir aussi  
- <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>   
- <xref:Microsoft.Build.Tasks.Windows.UidManager>   
- [Globalisation pour WPF](../../../ocs/framework/wpf/advanced/globalization-for-wpf.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
+ <xref:Microsoft.Build.Tasks.Windows.UidManager>  
+ [Globalisation pour WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)

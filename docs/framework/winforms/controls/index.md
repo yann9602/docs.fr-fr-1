@@ -1,31 +1,27 @@
 ---
-title: Windows Forms Controls | Microsoft Docs
+title: "contrôles Windows Forms"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-winforms
+ms.technology: dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- jsharp
 helpviewer_keywords:
 - Windows Forms controls
 - controls [Windows Forms]
 - Windows Forms controls, about Windows Forms controls
 ms.assetid: f050de8f-4ebd-4042-94b8-edf9a1dbd52a
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: deb760878391856cf07bab04563d0ec19a1511e7
-ms.openlocfilehash: e92fd440f0afd265a65395a715b08df44cf37f9e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 05/22/2017
-
+ms.openlocfilehash: 1078488ca1443b4e2336386eff1ac3a117a71501
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-forms-controls"></a>contrôles Windows Forms
 À mesure que vous concevez et modifiez l’interface utilisateur de vos applications Windows Forms, vous devrez ajouter, aligner et positionner des contrôles. Les contrôles sont des objets contenus dans des objets de formulaire. Chaque type de contrôle possède son propre ensemble de propriétés, méthodes et événements qui le rendent adapté à un usage particulier. Vous pouvez manipuler les contrôles dans le concepteur et écrire du code pour ajouter dynamiquement des contrôles au moment de l’exécution.  

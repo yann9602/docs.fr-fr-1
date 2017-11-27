@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bbadd8dd-60a2-4007-b959-89373a8a7d60
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c0eaafec80dbd7aa9b32c89a2d73a0fc444fb0bf
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 1788300407ad84a5ff7e3929eaa728f5399961ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltbytestreammessageencodinggt"></a>&lt;byteStreamMessageEncoding&gt;
 Spécifie l'encodage de message sous forme de flux d'octets, avec l'option permettant de spécifier l'encodage de caractères.  
@@ -58,14 +56,13 @@ Spécifie l'encodage de message sous forme de flux d'octets, avec l'option perme
 |[\<liaison >](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>   
- [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [Choix d’un encodeur de Message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement>  
+ [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [Choix d’un encodeur de Message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
+ [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-

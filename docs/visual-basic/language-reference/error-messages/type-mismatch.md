@@ -1,34 +1,32 @@
 ---
-title: "Type mismatch (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID13"
-dev_langs: 
-  - "VB"
+title: "Incompatibilité de type (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID13
 ms.assetid: f72e9e21-f475-43f2-9464-29c8ad27b6c2
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e94e8bd5958e555b970e5ce8cd57f48637dd39b2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Type mismatch (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Vous avez tenté de convertir une valeur en un autre type d'une façon non valide.  
+# <a name="type-mismatch-visual-basic"></a>Incompatibilité de type (Visual Basic)
+Vous avez tenté de convertir une valeur en un autre type d’une manière qui n’est pas valide.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Vérifiez que l'assignation est valide.  
+1.  Vérifiez que l’assignation pour vous assurer qu’il n’est valide.  
   
-2.  Vérifiez que vous n'avez pas passé un objet à une procédure qui attend une seule propriété ou valeur.  
+2.  Assurez-vous que vous ne correspondait pas un objet à une procédure qui attend une valeur ou une propriété unique.  
   
-3.  Vérifiez que vous n'avez pas utilisé un nom de module ou de projet lorsqu'une expression était attendue.  
+3.  Assurez-vous que vous n’utilisez pas un nom de module ou du projet où une expression était attendue.  
   
-## Voir aussi  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Voir aussi  
+ [Types d’erreurs](../../../visual-basic/programming-guide/language-features/error-types.md)

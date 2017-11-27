@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b064497c-d956-46b8-838d-7a0223c7e200
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6a8a01e89977ea4fb9487520f2baa35028720e9d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b6c0665a379f02a74bd0f3631aa26b41dd6ece5a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Isolement réseau pour les applications du Windows Store
 Les classes des espaces de noms <xref:System.Net>, <xref:System.Net.Http> et <xref:System.Net.Http.Headers> peuvent être utilisées pour développer des applications Windows Store et des applications de bureau. Lorsqu’elles sont utilisées dans une application du Windows Store, les classes de ces espaces de noms sont affectées par l’isolement réseau, qui fait partie du modèle de sécurité des applications utilisé par [!INCLUDE[win8](../../../includes/win8-md.md)]. Les fonctionnalités réseau appropriées doivent être activées dans le manifeste d’une application du Windows Store pour que le système autorise l’accès réseau.  
@@ -41,10 +35,9 @@ Les classes des espaces de noms <xref:System.Net>, <xref:System.Net.Http> et <xr
  Pour plus d’informations sur la configuration des fonctionnalités réseau et des outils utilisés pour le dépannage de l’isolement réseau, consultez [Comment définir les fonctionnalités réseau (HTML)](http://go.microsoft.com/fwlink/?LinkID=228265) dans la documentation du développeur de [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
   
 ## <a name="see-also"></a>Voir aussi  
- [Connexion aux services web](http://go.microsoft.com/fwlink/?LinkID=245696)   
- [Consignes et liste de vérification pour l’isolement réseau](http://go.microsoft.com/fwlink/?LinkID=228265)   
- [Démarrage rapide : connexion à l’aide de HttpClient](http://go.microsoft.com/fwlink/?LinkId=245697)   
- [Comment utiliser les gestionnaires HttpClient](http://go.microsoft.com/fwlink/?LinkId=245699)   
- [Comment sécuriser les connexions HttpClient](http://go.microsoft.com/fwlink/?LinkId=245698)   
+ [Connexion à un service web](http://go.microsoft.com/fwlink/?LinkID=245696)  
+ [Instructions et liste de vérification pour l’isolement réseau](http://go.microsoft.com/fwlink/?LinkID=228265)  
+ [Démarrage rapide : Connexion à l’aide de HttpClient](http://go.microsoft.com/fwlink/?LinkId=245697)  
+ [L’utilisation des gestionnaires de HttpClient](http://go.microsoft.com/fwlink/?LinkId=245699)  
+ [Comment sécuriser les connexions client HTTP](http://go.microsoft.com/fwlink/?LinkId=245698)  
  [Exemple HttpClient](http://go.microsoft.com/fwlink/?LinkId=242550)
-

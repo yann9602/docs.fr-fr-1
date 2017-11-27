@@ -1,37 +1,30 @@
 ---
-title: "Guide pratique pour ajouter des références aux bibliothèques de types"
+title: "Comment : ajouter des références aux bibliothèques de types"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - importing type library
 - interop assemblies, generating
 - type libraries
 - COM interop, importing type library
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a0c4fc9b96ec310e20839be851cfddbb34e09201
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e5bbc99c3c40b0864a7c1c25cb79a3d7c26e3a86
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-add-references-to-type-libraries"></a>Guide pratique pour ajouter des références aux bibliothèques de types
+# <a name="how-to-add-references-to-type-libraries"></a>Comment : ajouter des références aux bibliothèques de types
 Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio génère un assembly d'interopérabilité contenant des métadonnées. Si un assembly PIA (Primary Interop Assembly) est disponible, Visual Studio utilise l'assembly existant avant de générer un nouvel assembly d'interopérabilité.  
   
 ### <a name="to-add-a-reference-to-a-type-library-in-visual-studio"></a>Pour ajouter une référence dans une bibliothèque de types Visual Studio  
@@ -60,10 +53,9 @@ Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio 
 2.  Utilisez l’option du compilateur [/link (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/link-compiler-option.md) ou [/link (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/link.md) avec le nom de l’assembly d’interopérabilité afin d’incorporer les informations de type pour les types COM dans vos fichiers exécutables.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Importation d’une bibliothèque de types sous la forme d’un assembly](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)   
- [Exposition de composants COM au .NET Framework](../../../docs/framework/interop/exposing-com-components.md)   
- [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)   
- [Procédure pas à pas : incorporation de types provenant d’assemblys managés](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)   
- [/link (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/link-compiler-option.md)   
+ [Importation d'une bibliothèque de types sous la forme d'un assembly](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)  
+ [Exposition de composants COM au .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
+ [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)  
+ [Procédure pas à pas : incorporation de types provenant d’assemblys managés](http://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
+ [/link (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/link-compiler-option.md)  
  [/link (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/link.md)
-

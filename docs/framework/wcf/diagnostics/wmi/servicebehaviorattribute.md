@@ -1,25 +1,28 @@
 ---
-title: "ServiceBehaviorAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceBehaviorAttribute
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5faa266f-587f-4e03-828d-1c7dd5acfe65
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f7401acd5aefcb7a8c02ea6c05a94374e41d9b9d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceBehaviorAttribute
+# <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
 ServiceBehaviorAttribute  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class ServiceBehaviorAttribute : Behavior  
@@ -42,121 +45,121 @@ class ServiceBehaviorAttribute : Behavior
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe ServiceBehaviorAttribute ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe ServiceBehaviorAttribute a les propriétés suivantes :  
   
-### AutomaticSessionShutdown  
+### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Indique s'il faut fermer automatiquement une session lorsqu'un client ferme une session de sortie.  
   
-### ConcurrencyMode  
+### <a name="concurrencymode"></a>ConcurrencyMode  
  Type de données : chaîne  
 Type d'accès : lecture seule  
   
  Indique si un service prend en charge un thread, plusieurs threads ou des appels réentrants.  
   
-### ConfigurationName  
+### <a name="configurationname"></a>ConfigurationName  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Nom de la configuration du service.  
   
-### IgnoreExtensionDataObject  
+### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie s'il faut envoyer des données de sérialisation inconnues sur le câble.  
   
-### IncludeExceptionDetailInFaults  
+### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie s'il convient d'inclure des informations d'exception gérées dans les détails des fautes SOAP renvoyées aux clients à des fins de débogage.  
   
-### InstanceContextMode  
+### <a name="instancecontextmode"></a>InstanceContextMode  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Spécifie quand un nouvel objet de service est créé.  
   
-### MaxItemsInObjectGraph  
+### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  Nombre maximal d'éléments autorisés dans un objet sérialisé.  
   
-### Nom  
+### <a name="name"></a>Nom  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Attribut de nom du service dans WSDL.  
   
-### Espace de noms  
+### <a name="namespace"></a>Espace de noms  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Espace de noms cible du service dans WSDL.  
   
-### ReleaseServiceInstanceOnTransactionComplete  
+### <a name="releaseserviceinstanceontransactioncomplete"></a>ReleaseServiceInstanceOnTransactionComplete  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie si l'objet de service est recyclé lorsque la transaction actuelle se termine.  
   
-### TransactionAutoCompleteOnSessionClose  
+### <a name="transactionautocompleteonsessionclose"></a>TransactionAutoCompleteOnSessionClose  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie si les transactions en attente sont complétées lorsque la session actuelle se ferme.  
   
-### TransactionIsolationLevel  
+### <a name="transactionisolationlevel"></a>TransactionIsolationLevel  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Spécifie le niveau d'isolation de la transaction.  
   
-### TransactionTimeout  
+### <a name="transactiontimeout"></a>TransactionTimeout  
  Type de données : datetime  
   
  Type d'accès : lecture seule  
   
  Période pendant laquelle une transaction doit s'effectuer.  
   
-### UseSynchronizationContext  
+### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie s'il faut utiliser le contexte de synchronisation actuel pour choisir l'exécution d'un thread.  
   
-### ValidateMustUnderstand  
+### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
- Spécifie si le système ou l'application applique le traitement d'en\-tête SOAP MustUnderstand.  
+ Spécifie si le système ou l'application applique le traitement d'en-tête SOAP MustUnderstand.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Namespace|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.ServiceBehaviorAttribute>

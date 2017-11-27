@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - exposing .NET Framework components to COM
 - COM interop, packaging assemblies
@@ -29,16 +23,15 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 73866ddc1e8199dfad188179dc668bc31ab3c93d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 149d0c2595844c5b71767e2ea3ee5b0c6002c080
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="packaging-an-assembly-for-com"></a>Empaquetage d'un assembly pour COM
 Les développeurs COM peuvent tirer parti des informations suivantes sur les types managés qu’ils prévoient d’incorporer dans leur application :  
@@ -96,13 +89,12 @@ Les développeurs COM peuvent tirer parti des informations suivantes sur les typ
  L’[Outil .NET Services Installation (Regsvcs.exe)](../../../docs/framework/tools/regsvcs-exe-net-services-installation-tool.md) ajoute des classes managées aux Services de composants Windows 2000 et combine plusieurs tâches dans un seul outil. En plus de charger et d’inscrire un assembly, Regsvcs.exe peut générer, inscrire et installer la bibliothèque de types dans une application COM+ 1.0 existante.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.TypeLibConverter>   
- <xref:System.Runtime.InteropServices.ITypeLibConverter>   
- [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [Qualification des types .NET pour l’interopérabilité](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)   
- [Présentation de l’interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
- [Aspects de la sécurité des assemblys](../../../docs/framework/app-domains/assembly-security-considerations.md)   
- [Tlbexp.exe (exportateur de bibliothèques de types)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)   
- [Inscription d’assemblys dans COM](../../../docs/framework/interop/registering-assemblies-with-com.md)   
+ <xref:System.Runtime.InteropServices.TypeLibConverter>  
+ <xref:System.Runtime.InteropServices.ITypeLibConverter>  
+ [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [Qualifier des types .NET pour l'interopérabilité](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md)  
+ [Présentation de l’Interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)  
+ [Aspects de la sécurité des assemblys](../../../docs/framework/app-domains/assembly-security-considerations.md)  
+ [Tlbexp.exe (exportateur de bibliothèques de types)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
+ [Inscription d’assemblys dans COM](../../../docs/framework/interop/registering-assemblies-with-com.md)  
  [Guide pratique pour incorporer des bibliothèques de types comme des ressources Win32 dans les applications](http://msdn.microsoft.com/en-us/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44)
-

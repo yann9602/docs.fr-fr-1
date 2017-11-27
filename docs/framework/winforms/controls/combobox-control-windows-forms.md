@@ -1,48 +1,49 @@
 ---
-title: "ComboBox, contr&#244;le (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "zones de liste déroulante"
-  - "zones de liste déroulante, contrôles Windows Forms"
-  - "ComboBox (contrôle Windows Forms)"
-  - "listes déroulantes, ComboBox (contrôle)"
-  - "listes déroulantes, Windows Forms"
-  - "contrôles de liste, Windows Forms"
-  - "éléments de liste, contrôles Windows Forms qui s'affichent"
+title: "ComboBox, contrôle (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- drop-down lists [Windows Forms], Windows Forms
+- list controls [Windows Forms], Windows Forms
+- combo boxes [Windows Forms], Windows Forms controls
+- combo boxes
+- list items [Windows Forms], Windows Forms controls that display
+- drop-down lists [Windows Forms], ComboBox control
+- ComboBox control [Windows Forms]
 ms.assetid: 86a1bbc3-0469-4290-91c5-99ff61b739ff
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 52863e8551f798a2a4c50c3856bdb4673dd9fd4f
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# ComboBox, contr&#244;le (Windows Forms)
-Le contrôle `ComboBox` Windows Forms permet d'afficher des données dans une zone de liste déroulante fixe.  Par défaut, le contrôle `ComboBox` comporte deux parties. Dans la partie supérieure figure une zone de texte dans laquelle l'utilisateur peut taper le nom d'un élément de la liste.  La seconde partie comprend une zone de liste dans laquelle l'utilisateur peut sélectionner un élément.  
+# <a name="combobox-control-windows-forms"></a>ComboBox, contrôle (Windows Forms)
+Windows Forms `ComboBox` contrôle est utilisé pour afficher des données dans une zone de liste déroulante modifiable. Par défaut, le `ComboBox` contrôle s’affiche en deux parties : la partie supérieure est une zone de texte qui permet à l’utilisateur à taper un élément de liste. La deuxième partie est une zone de liste qui affiche une liste d’éléments à partir de laquelle l’utilisateur peut sélectionner un.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble du contrôle ComboBox](../../../../docs/framework/winforms/controls/combobox-control-overview-windows-forms.md)  
- Décrit ce contrôle ainsi que ses principales fonctionnalités et propriétés.  
+ Décrit ce contrôle et ses principales fonctionnalités et propriétés.  
   
- [Comment : créer du texte de taille variable dans un contrôle ComboBox](../../../../docs/framework/winforms/controls/how-to-create-variable-sized-text-in-a-combobox-control.md)  
- Montre le dessin personnalisé d'un texte dans un contrôle `ComboBox`.  
+ [Guide pratique pour créer du texte de taille variable dans un contrôle ComboBox](../../../../docs/framework/winforms/controls/how-to-create-variable-sized-text-in-a-combobox-control.md)  
+ Montre un dessin personnalisé de texte dans un `ComboBox` contrôle.  
   
-## Référence  
- <xref:System.Windows.Forms.ComboBox>, classe  
+## <a name="reference"></a>Référence  
+ Classe <xref:System.Windows.Forms.ComboBox>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
-## Rubriques connexes  
- [Contrôles Windows Forms utilisés pour l'affichage de listes d'options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
- Décrit les opérations pouvant être exécutées à l'aide des zones de liste, des zones de liste déroulante et des zones de liste de cases à cocher.  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
+ Fournit une liste d’éléments que vous pouvez faire avec les zones de liste, zones de liste déroulante et des zones de liste de cases.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

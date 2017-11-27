@@ -1,47 +1,50 @@
 ---
-title: "Net.TCP Port Sharing, exemple | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Net.TCP Port Sharing, exemple
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1d3ee04dfd400e09e6392e78498d80a59bb88b11
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Net.TCP Port Sharing, exemple
-Le protocole TCP\/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur.Si une application écoute un port, tout le trafic TCP de ce port va à cette application.Les autres applications ne peuvent pas écouter en même temps ce port.  
+# <a name="nettcp-port-sharing-sample"></a>Net.TCP Port Sharing, exemple
+Le protocole TCP/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur. Si une application écoute un port, tout le trafic TCP de ce port va à cette application. Les autres applications ne peuvent pas écouter en même temps ce port.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
   
- De nombreux protocoles utilisent un numéro de port standard ou par défaut.Par exemple, le protocole HTTP utilise en général le port TCP 80.Internet Information Services \(IIS\) a un écouteur qui partage un port entre plusieurs applications HTTP.IIS écoute directement le port et envoie les messages à l'application appropriée en fonction des informations du flux de messages.Cela permet à plusieurs applications HTTP d'utiliser le même numéro de port sans devoir rivaliser pour réserver le port pour recevoir des messages.  
+ De nombreux protocoles utilisent un numéro de port standard ou par défaut. Par exemple, le protocole HTTP utilise en général le port TCP 80. Internet Information Services (IIS) a un écouteur qui partage un port entre plusieurs applications HTTP. IIS écoute directement le port et envoie les messages à l'application appropriée en fonction des informations du flux de messages. Cela permet à plusieurs applications HTTP d'utiliser le même numéro de port sans devoir rivaliser pour réserver le port pour recevoir des messages.  
   
- Le partage de ports NetTcp est une fonctionnalité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]qui permet de la même façon à plusieurs applications réseau de partager un port unique.Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.  
+ Partage de ports NetTcp est un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]fonctionnalité qui permet de la même façon à plusieurs applications de réseau partager un port unique. Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.  
   
- Le service de partage de ports NetTcp n'est pas activé par défaut.Avant d'exécuter cet exemple, vous devez activer le service manuellement.Pour plus d'informations, consultez [Comment : activer le service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.  
+ Le service de partage de ports NetTcp n'est pas activé par défaut. Avant d'exécuter cet exemple, vous devez activer le service manuellement. Pour plus d’informations, consultez [Comment : activer le Service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md). Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.  
   
 ```  
 Unhandled Exception: System.ServiceModel.CommunicationException: The TransportManager failed to listen on the supplied URI using the NetTcpPortSharing service: failed to start the service because it is disabled. An administrator can enable it by running 'sc.exe config NetTcpPortSharing start= demand'.. ---> System.InvalidOperationException: Cannot start service NetTcpPortSharing on computer '.'. ---> System.ComponentModel.Win32Exception: The service cannot be started, either because it is disabled or because it has no enabled devices associated with it  
 ```  
   
- Le partage de ports est activé sur le serveur en définissant la propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> de la liaison <xref:System.ServiceModel.NetTcpBinding> ou de l'élément de liaison <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.Le client n'a pas besoin de savoir comment le partage de ports a été configuré pour l'utiliser sur le serveur.  
+ Le partage de ports est activé sur le serveur en définissant la propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> de la liaison <xref:System.ServiceModel.NetTcpBinding> ou de l'élément de liaison <xref:System.ServiceModel.Channels.TcpTransportBindingElement>. Le client n'a pas besoin de savoir comment le partage de ports a été configuré pour l'utiliser sur le serveur.  
   
-## Activation du partage de ports  
- Le code suivant illustre l'activation du partage de ports sur le serveur.Il démarre une instance du service `ICalculator` sur un port fixe avec un chemin d'accès URI aléatoire.Bien que deux services puissent partager le même port, leurs adresses de point de terminaison globales doivent demeurer uniques afin que le service de partage de ports NetTcp puisse router les messages vers l'application qui convient.  
+## <a name="enabling-port-sharing"></a>Activation du partage de ports  
+ Le code suivant illustre l'activation du partage de ports sur le serveur. Il démarre une instance du service `ICalculator` sur un port fixe avec un chemin d'accès URI aléatoire. Bien que deux services puissent partager le même port, leurs adresses de point de terminaison globales doivent demeurer uniques afin que le service de partage de ports NetTcp puisse router les messages vers l'application qui convient.  
   
 ```  
 // Configure a binding with TCP port sharing enabled  
@@ -57,13 +60,13 @@ host.AddServiceEndpoint(typeof(ICalculator), binding, address);
 host.Open();  
 ```  
   
- Avec le partage de ports activé, vous pouvez exécuter plusieurs fois le service sans conflit de numéro de port.Si vous modifiez le code pour désactiver le partage de ports, le fait de démarrer deux copies des résultats du service fait échouer la seconde avec une <xref:System.ServiceModel.AddressAlreadyInUseException>.  
+ Avec le partage de ports activé, vous pouvez exécuter plusieurs fois le service sans conflit de numéro de port. Si vous modifiez le code pour désactiver le partage de ports, le fait de démarrer deux copies des résultats du service fait échouer la seconde avec une <xref:System.ServiceModel.AddressAlreadyInUseException>.  
   
 ```  
 Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is already a listener on IP endpoint 0.0.0.0:9000.  Make sure that you are not trying to use this endpoint multiple times in your application and that there are no other applications listening on this endpoint. ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted  
 ```  
   
-## Exécution de l'exemple  
+## <a name="running-the-sample"></a>Exécution de l'exemple  
  Vous pouvez utiliser le client test pour vérifier que les messages sont correctement routés aux services qui partagent le port.  
   
 ```  
@@ -110,7 +113,7 @@ class client
 }  
 ```  
   
- Chaque instance du service imprime son nombre et adresse uniques.Par exemple, vous pouvez voir le texte suivant lorsque vous exécutez service.exe.  
+ Chaque instance du service imprime son nombre et adresse uniques. Par exemple, vous pouvez voir le texte suivant lorsque vous exécutez service.exe.  
   
 ```  
 Service #4381 listening on net.tcp://localhost:9000/calculator/4381.  
@@ -129,23 +132,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Cet exemple peut être exécuté dans une configuration à plusieurs ordinateurs en modifiant l'adresse générée que le client utilise.Dans Client.cs, modifiez la chaîne de mise en forme de l'adresse du point de terminaison pour la faire correspondre à la nouvelle adresse de votre service.Remplacez toute référence au « localhost » par l'adresse IP de l'ordinateur serveur.Vous devez recompiler l'exemple après avoir apporté cette modification.  
+ Cet exemple peut être exécuté dans une configuration à plusieurs ordinateurs en modifiant l'adresse générée que le client utilise. Dans Client.cs, modifiez la chaîne de mise en forme de l'adresse du point de terminaison pour la faire correspondre à la nouvelle adresse de votre service. Remplacez toute référence au « localhost » par l'adresse IP de l'ordinateur serveur. Vous devez recompiler l'exemple après avoir apporté cette modification.  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.  
+1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
-2.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 3.  Activez le service de partage de ports NetTcp comme décrit précédemment dans la section d'introduction.  
   
-4.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci\-dessus.  
+5.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci-dessus.  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

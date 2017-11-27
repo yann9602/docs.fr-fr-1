@@ -4,16 +4,15 @@ ms.date: 08/07/2017
 ms.prod: .net
 ms.topic: article
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
 ms.openlocfilehash: 82349611fe127da46bed8998ac883c10c5164cd3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="serialization-concepts"></a>Concepts de la sérialisation
 Pourquoi utiliser la sérialisation ? L'une des deux raisons majeures est que vous pouvez, d'une part, rendre persistant l'état d'un objet sur un support de stockage afin qu'une copie exacte puisse être recréée ultérieurement. D'autre part, vous pouvez envoyer cet objet par valeur d'un domaine d'application à l'autre. Par exemple, la sérialisation est utilisée pour enregistrer l'état de session dans ASP.NET et copier des objets vers le Presse-papiers dans les Windows Forms. Elle est également utilisée par la communication à distance pour passer des objets par valeur d'un domaine d'application à un autre.
@@ -41,4 +40,3 @@ Quand un objet dérive de `MarshalByRefObject`, une référence de l’objet (et
   
  [Sérialisation XML et SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
  Décrit le mécanisme de sérialisation XML et SOAP inclus avec le Common Language Runtime.
-

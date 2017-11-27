@@ -1,31 +1,34 @@
 ---
-title: "Stream | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Flux
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8c20f53692bb54b802ce5be555b3832352c09ec0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Stream
-Cet exemple de flux montre l'utilisation de la communication en mode de transfert par diffusion en continu.Le service expose plusieurs opérations qui envoient et reçoivent des flux.Cet exemple est auto\-hébergé.Le client et le service sont tous deux des programmes de console.  
+# <a name="stream"></a>Flux
+Cet exemple de flux montre l'utilisation de la communication en mode de transfert par diffusion en continu. Le service expose plusieurs opérations qui envoient et reçoivent des flux. Cet exemple est auto-hébergé. Le client et le service sont tous deux des programmes de console.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut communiquer en deux modes de transfert : mise en mémoire tampon ou diffusion en continu.En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire.En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis.Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série.Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut communiquer en deux modes de transfert : mise en mémoire tampon ou diffusion en continu. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
   
-## Diffusion en continu et contrats de service  
- La diffusion en continu est un élément à prendre en compte lors de la conception d'un contrat de service.Si une opération reçoit ou retourne des données volumineuses, diffusez\-les en continu afin d'éviter d'utiliser une grande quantité de mémoire en raison de la mise en mémoire tampon des messages d'entrée ou de sortie.Pour diffuser des données en continu, le paramètre qui gère ces données doit être le seul de ce type dans le message.Par exemple, si le message d'entrée est celui à diffuser en continu, l'opération ne doit avoir qu'un seul paramètre d'entrée.De la même façon, si le message de sortie doit être diffusé en continu, l'opération ne doit avoir qu'un seul paramètre de sortie ou qu'une seule valeur de retour.Dans les deux cas, le type de paramètre ou de valeur de retour doit être `Stream`, `Message` ou `IXmlSerializable`.Le contrat de service utilisé dans cet exemple de diffusion en continu est le suivant :  
+## <a name="streaming-and-service-contracts"></a>Diffusion en continu et contrats de service  
+ La diffusion en continu est un élément à prendre en compte lors de la conception d'un contrat de service. Si une opération reçoit ou retourne des données volumineuses, diffusez-les en continu afin d'éviter d'utiliser une grande quantité de mémoire en raison de la mise en mémoire tampon des messages d'entrée ou de sortie. Pour diffuser des données en continu, le paramètre qui gère ces données doit être le seul de ce type dans le message. Par exemple, si le message d'entrée est celui à diffuser en continu, l'opération ne doit avoir qu'un seul paramètre d'entrée. De la même façon, si le message de sortie doit être diffusé en continu, l'opération ne doit avoir qu'un seul paramètre de sortie ou qu'une seule valeur de retour. Dans les deux cas, le type de paramètre ou de valeur de retour doit être `Stream`, `Message` ou `IXmlSerializable`. Le contrat de service utilisé dans cet exemple de diffusion en continu est le suivant :  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -43,16 +46,16 @@ public interface IStreamingSample
 }  
 ```  
   
- L'opération `GetStream` reçoit des données d'entrée sous forme d'une chaîne, qui est mise en mémoire tampon, et retourne `Stream` qui est diffusé en continu.Inversement, `UploadStream` utilise `Stream` \(transmis en continu\) et retourne `bool` \(mis en mémoire tampon\).`EchoStream` prend et retourne `Stream` et constitue un exemple d'opération dont les messages d'entrée et de sortie sont tous deux diffusés en continu.Enfin, `GetReversedStream` ne prend pas d'entrée et retourne `Stream` \(diffusé en continu\).  
+ L'opération `GetStream` reçoit des données d'entrée sous forme d'une chaîne, qui est mise en mémoire tampon, et retourne `Stream` qui est diffusé en continu. Inversement, `UploadStream` utilise `Stream` (transmis en continu) et retourne `bool` (mis en mémoire tampon). `EchoStream` prend et retourne `Stream` et constitue un exemple d'opération dont les messages d'entrée et de sortie sont tous deux diffusés en continu. Enfin, `GetReversedStream` ne prend pas d'entrée et retourne `Stream` (diffusion en continu).  
   
-## Activation des transferts avec diffusion en continu  
- La définition de contrats d'opération telle qu'elle est décrite précédemment fournit la diffusion en continu au niveau du modèle de programmation.Si vous vous arrêtez là, le transport met toujours en mémoire tampon l'ensemble du contenu du message.Pour activer la diffusion en continu du transport, sélectionnez un mode de transfert sur l'élément de liaison du transport.La propriété `TransferMode` de l'élément de liaison peut avoir la valeur `Buffered`, `Streamed`, `StreamedRequest` ou `StreamedResponse`.L'affectation de `Streamed` au mode de transfert permet d'assurer la communication en mode de diffusion en continu dans les deux sens.Si vous affectez `StreamedRequest` ou `StreamedResponse` au mode de transfert, la communication en mode de diffusion en continu s'active uniquement dans la demande ou la réponse, respectivement.  
+## <a name="enabling-streamed-transfers"></a>Activation des transferts avec diffusion en continu  
+ La définition de contrats d'opération telle qu'elle est décrite précédemment fournit la diffusion en continu au niveau du modèle de programmation. Si vous vous arrêtez là, le transport met toujours en mémoire tampon l'ensemble du contenu du message. Pour activer la diffusion en continu du transport, sélectionnez un mode de transfert sur l'élément de liaison du transport. La propriété `TransferMode` de l'élément de liaison peut avoir la valeur `Buffered`, `Streamed`, `StreamedRequest` ou `StreamedResponse`. L'affectation de `Streamed` au mode de transfert permet d'assurer la communication en mode de diffusion en continu dans les deux sens. Si vous affectez `StreamedRequest` ou `StreamedResponse` au mode de transfert, la communication en mode de diffusion en continu s'active uniquement dans la demande ou la réponse, respectivement.  
   
- À l'instar de `NetTcpBinding` et `NetNamedPipeBinding`, `basicHttpBinding` expose la propriété `TransferMode` sur la liaison.Pour les autres transports, vous devez créer une liaison personnalisée pour pouvoir définir le mode de transfert.  
+ À l'instar de `basicHttpBinding` et `TransferMode`, `NetTcpBinding` expose la propriété `NetNamedPipeBinding` sur la liaison. Pour les autres transports, vous devez créer une liaison personnalisée pour pouvoir définir le mode de transfert.  
   
  Le code de configuration suivant de l'exemple présente l'affectation du mode de diffusion en continu à la propriété `TransferMode` sur `basicHttpBinding` et une liaison HTTP personnalisée :  
   
-```  
+```xml  
 <!-- An example basicHttpBinding using streaming. -->  
 <basicHttpBinding>  
   <binding name="HttpStreaming" maxReceivedMessageSize="67108864"  
@@ -66,15 +69,14 @@ public interface IStreamingSample
                    maxReceivedMessageSize="67108864"/>  
   </binding>  
 </customBinding>  
-  
 ```  
   
- En plus d'affecter au `transferMode` la valeur `Streamed`, le code de configuration précédent définit `maxReceivedMessageSize` à 64 Mo.En tant que mécanisme de défense, `maxReceivedMessageSize` place une limite concernant la taille maximale autorisée des messages en réception.La valeur par défaut de `maxReceivedMessageSize` est 64 Ko, ce qui est habituellement trop bas pour les scénarios de diffusion en continu.  
+ En plus d'affecter au `transferMode` la valeur `Streamed`, le code de configuration précédent définit `maxReceivedMessageSize` à 64 Mo. En tant que mécanisme de défense, `maxReceivedMessageSize` place une limite concernant la taille maximale autorisée des messages en réception. La valeur par défaut de `maxReceivedMessageSize` est 64 Ko, ce qui est habituellement trop bas pour les scénarios de diffusion en continu.  
   
-## Traitement des données lorsqu'elles sont diffusées en continu  
- Les opérations `GetStream`, `UploadStream` et `EchoStream` concernent toutes l'envoi de données directement à partir d'un fichier ou l'enregistrement des données reçues directement dans un fichier.Dans certains cas cependant, il peut s'avérer nécessaire d'envoyer ou de recevoir de grandes quantités de données et d'effectuer des traitements sur des segments de celles\-ci lors de leur envoi ou de leur réception.L'une des méthodes utilisées résoudre les scénarios de ce type consiste à écrire un flux personnalisé \(une classe dérivant de <xref:System.IO.Stream>\) qui traite les données lors de leur lecture ou de leur écriture.L'opération `GetReversedStream` et la classe `ReverseStream` en sont un exemple.  
+## <a name="processing-data-as-it-is-streamed"></a>Traitement des données lorsqu'elles sont diffusées en continu  
+ Les opérations `GetStream`, `UploadStream` et `EchoStream` concernent toutes l'envoi de données directement à partir d'un fichier ou l'enregistrement des données reçues directement dans un fichier. Dans certains cas cependant, il peut s'avérer nécessaire d'envoyer ou de recevoir de grandes quantités de données et d'effectuer des traitements sur des segments de celles-ci lors de leur envoi ou de leur réception. L'une des méthodes utilisées résoudre les scénarios de ce type consiste à écrire un flux personnalisé (une classe dérivant de <xref:System.IO.Stream>) qui traite les données lors de leur lecture ou de leur écriture. L'opération `GetReversedStream` et la classe `ReverseStream` en sont un exemple.  
   
- `GetReversedStream` crée et retourne une nouvelle instance de `ReverseStream`.Le traitement se produit lorsque le système lit l'objet `ReverseStream`.L'implémentation `ReverseStream.Read` lit un segment d'octets du fichier sous\-jacent, les inverse, puis retourne les octets inversés.Cette opération n'inverse pas l'ensemble du contenu du fichier, mais uniquement un segment d'octets à la fois.Cet exemple vous montre comment procéder au traitement du flux lors sa lecture ou de son écriture.  
+ `GetReversedStream` crée et retourne une nouvelle instance de `ReverseStream`. Le traitement se produit lorsque le système lit l'objet `ReverseStream`. L'implémentation `ReverseStream.Read` lit un segment d'octets du fichier sous-jacent, les inverse, puis retourne les octets inversés. Cette opération n'inverse pas l'ensemble du contenu du fichier, mais uniquement un segment d'octets à la fois. Cet exemple vous montre comment procéder au traitement du flux lors sa lecture ou de son écriture.  
   
 ```  
 class ReverseStream : Stream  
@@ -120,8 +122,8 @@ class ReverseStream : Stream
 }  
 ```  
   
-## Exécution de l'exemple  
- Pour exécuter l'exemple, générez d'abord le service et le client en suivant les instructions indiquées à la fin de ce document.Puis démarrez le service et le client dans deux fenêtres de console différentes.Lorsque le client démarre, il attend que vous appuyiez sur ENTER lorsque le service est prêt.Le client appelle ensuite les méthodes `GetStream()`, `UploadStream()` et `GetReversedStream()` sur HTTP dans un premier temps, puis sur TCP.Voici un exemple de sortie du service suivi d'un exemple de sortie du client:  
+## <a name="running-the-sample"></a>Exécution de l'exemple  
+ Pour exécuter l'exemple, générez d'abord le service et le client en suivant les instructions indiquées à la fin de ce document. Puis démarrez le service et le client dans deux fenêtres de console différentes. Lorsque le client démarre, il attend que vous appuyiez sur ENTER lorsque le service est prêt. Le client appelle ensuite les méthodes `GetStream()`, `UploadStream()` et `GetReversedStream()` sur HTTP dans un premier temps, puis sur TCP. Voici un exemple de sortie du service suivi d'un exemple de sortie du client:  
   
  Sortie du service :  
   
@@ -173,24 +175,24 @@ File D:\...\clientfile saved
 Press <ENTER> to terminate client.  
 ```  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez\-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
+>  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

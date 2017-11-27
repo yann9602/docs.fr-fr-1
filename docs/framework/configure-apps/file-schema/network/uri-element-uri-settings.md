@@ -1,72 +1,70 @@
 ---
-title: "&lt;Uri&gt;, &#233;l&#233;ment (param&#232;tres d&#39;URI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;URI&gt; élément (paramètres d’Uri)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c22bab8b-477c-4ae4-8498-65ad409e0847
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 44ef28ca2188973ccd353f4e8615c7c95f5674a2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;Uri&gt;, &#233;l&#233;ment (param&#232;tres d&#39;URI)
-Contient des paramètres qui spécifient la manière dont le .NET Framework gère des adresses Web exprimées à l'aide d'identificateurs URI \(Uniform Resource Identifiers\).  
+# <a name="lturigt-element-uri-settings"></a>&lt;URI&gt; élément (paramètres d’Uri)
+Contient des paramètres qui spécifient la façon dont le .NET Framework gère les adresses web exprimées à l’aide d’identificateurs de ressource uniforme (URI).  
   
-## Hiérarchie de schéma  
- [\<configuration\>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+## <a name="schema-hierarchy"></a>Hiérarchie de schéma  
+ [\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<uri\>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [\<URI >](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
+```xml  
 <uri>  
 </uri>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
  Aucun  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[idn](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Spécifie si l'analyse de l'IDN \(Internationalized Domain Name\) est appliquée aux noms de domaines.|  
-|[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Spécifie si l'analyse IRI \(International Resource Identifier\) est appliquée à un <xref:System.Uri> et si les règles d'analyse de l'identificateur IRI doivent être appliquées.|  
-|[schemeSettings](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie comment un <xref:System.Uri> sera analysé pour des schémas spécifiques.|  
+|[IDN](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)|Spécifie si l’analyse de nom de domaine international (IDN) s’applique aux noms de domaine.|  
+|[iriParsing](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)|Spécifie si l’analyse de l’identificateur de ressource (Internationalisée) est appliqué à <xref:System.Uri> et si les règles d’analyse ini doit être appliquée.|  
+|[schemeSettings](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Spécifie la façon dont un <xref:System.Uri> est analysé pour les schémas spécifiques.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[configuration](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Contient les paramètres de tous les espaces de noms.|  
+|[configuration](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Contient des paramètres pour tous les espaces de noms.|  
   
-## Remarques  
- L'élément `uri` contient des paramètres pour les membres de la classe <xref:System.Uri> utilisés par des classes de l'espace de noms <xref:System.Net>.  Les paramètres configurent la prise en charge des IRI et des IDN.  
+## <a name="remarks"></a>Notes  
+ Le `uri` élément contient des paramètres pour les membres de la <xref:System.Uri> classe utilisée par les classes dans le <xref:System.Net> espace de noms. Les paramètres configurent la prise en charge des IRI et IDN.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- L'exemple de code suivant illustre une configuration utilisée par la classe <xref:System.Uri> pour prendre en charge l'analyse de l'IRI et les noms IDN.  L'exemple efface également tous les paramètres de schémas, puis ajoute une prise en charge visant à ne pas échapper de délimiteurs de chemin d'accès encodés de pourcentage pour le schéma http.  
+### <a name="description"></a>Description  
+ L’exemple suivant montre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge l’analyse IRI et les noms IDN. L’exemple efface également tous les paramètres de modèle, puis ajoute la prise en charge pour l’échappement ne pas les séparateurs de chemin d’accès encodés en pourcentage pour le schéma http.  
   
-### Code  
+### <a name="code"></a>Code  
   
-```  
+```xml  
 <configuration>  
   <uri>  
     <idn enabled="All" />  
@@ -79,5 +77,5 @@ Contient des paramètres qui spécifient la manière dont le .NET Framework gèr
 </configuration>  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

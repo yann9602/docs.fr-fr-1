@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,16 +14,15 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 62f39bb54fab247e7a9291026d3dcebd6e390ab5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 7f5dcdd969619526c52a9ae44014030a9f0c6dc5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
 <a name="top"></a> Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#levels) sont identifiés par des indicateurs.  
@@ -133,7 +131,6 @@ ms.lasthandoff: 08/21/2017
  0x0 - Toujours journaliser  
   
 ## <a name="see-also"></a>Voir aussi  
- [Fournisseurs ETW du CLR](../../../docs/framework/performance/clr-etw-providers.md)   
- [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)   
+ [Fournisseurs ETW du CLR](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Événements ETW du CLR](../../../docs/framework/performance/clr-etw-events.md)  
  [Événements ETW dans le Common Language Runtime](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-

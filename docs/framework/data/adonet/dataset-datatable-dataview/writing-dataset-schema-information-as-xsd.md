@@ -1,27 +1,33 @@
 ---
-title: "&#201;criture des informations de sch&#233;ma d&#39;un DataSet sous la forme de donn&#233;es XSD | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Écriture des informations de schéma de DataSet comme XSD"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 4e530831-695e-49ff-8f0b-e5b0c526b8eb
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: dde8a16ee0fbd86dacf6125c9a02209a794a5b74
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &#201;criture des informations de sch&#233;ma d&#39;un DataSet sous la forme de donn&#233;es XSD
-Vous pouvez écrire le schéma d'un objet <xref:System.Data.DataSet> sous la forme d'un schéma en langage XSD \(XML Schema Definition\), de façon à pouvoir le transporter, avec ou sans les données connexes, dans un document XML.  Le schéma XML peut être écrit dans un fichier, un flux, un objet <xref:System.Xml.XmlWriter> ou une chaîne ; il est utile pour la génération d'un **DataSet** fortement typé.  Pour plus d'informations sur les objets **DataSet** fortement typés, voir [DataSets typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
+# <a name="writing-dataset-schema-information-as-xsd"></a>Écriture des informations de schéma de DataSet comme XSD
+Vous pouvez écrire le schéma d'un objet <xref:System.Data.DataSet> sous la forme d'un schéma en langage XSD (XML Schema Definition), de façon à pouvoir le transporter, avec ou sans les données connexes, dans un document XML. Schéma XML peuvent être écrites dans un fichier, un flux, un <xref:System.Xml.XmlWriter>, ou une chaîne ; il est utile pour générer un fortement typé **DataSet**. Pour plus d’informations sur fortement typées **DataSet** , consultez [typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
   
- Vous pouvez spécifier la façon dont la colonne d'une table est représentée dans un schéma XML à l'aide de la propriété **ColumnMapping** de l'objet <xref:System.Data.DataColumn>.  Pour plus d'informations, voir « Mappage de colonnes à des éléments, des attributs et du texte XML » dans [Écriture du contenu d'un DataSet sous forme de données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Vous pouvez spécifier la façon dont une colonne d’une table est représentée dans le schéma XML à l’aide de la **ColumnMapping** propriété de la <xref:System.Data.DataColumn> objet. Pour plus d’informations, consultez « Mappage des colonnes de texte, des attributs et des éléments XML » dans [contenu l’écriture d’un DataSet en tant que données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Pour écrire le schéma d'un **DataSet** sous la forme d'un schéma XML, dans un fichier, un flux ou un **XmlWriter**, utilisez la méthode **WriteXmlSchema** du **DataSet**.  **WriteXmlSchema** accepte un paramètre, qui spécifie la destination du schéma XML obtenu.  Les exemples de code suivants montrent comment écrire le schéma XML d'un **DataSet** dans un fichier en passant une chaîne contenant un nom de fichier et un objet <xref:System.IO.StreamWriter>.  
+ Pour écrire le schéma d’un **DataSet** comme un schéma XML, dans un fichier, flux, ou **XmlWriter**, utiliser le **WriteXmlSchema** méthode de la **DataSet**. **WriteXmlSchema** prend un paramètre qui spécifie la destination du schéma XML obtenu. Les exemples de code suivants montrent comment écrire le schéma XML d’un **DataSet** dans un fichier en passant une chaîne contenant un nom de fichier et un <xref:System.IO.StreamWriter> objet.  
   
 ```vb  
 dataSet.WriteXmlSchema("Customers.xsd")  
@@ -43,7 +49,7 @@ dataSet.WriteXmlSchema(writer);
 writer.Close();  
 ```  
   
- Pour obtenir le schéma d'un **DataSet** et l'écrire en tant que chaîne de schéma XML, utilisez la méthode **GetXmlSchema** comme le montre l'exemple suivant.  
+ Pour obtenir le schéma d’un **DataSet** et les écrire en tant que chaîne de schéma XML, utilisez la **GetXmlSchema** méthode, comme indiqué dans l’exemple suivant.  
   
 ```vb  
 Dim schemaString As String = dataSet.GetXmlSchema()  
@@ -53,9 +59,9 @@ Dim schemaString As String = dataSet.GetXmlSchema()
 string schemaString = dataSet.GetXmlSchema();  
 ```  
   
-## Voir aussi  
- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [Écriture du contenu d'un DataSet sous forme de données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)   
- [DataSets typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)   
- [Objets DataSet, DataTable et DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [L’écriture du contenu d’un DataSet en tant que données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
+ [Datasets typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
+ [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

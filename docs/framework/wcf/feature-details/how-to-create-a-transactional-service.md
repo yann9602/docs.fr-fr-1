@@ -1,27 +1,30 @@
 ---
-title: "Comment&#160;: cr&#233;er un service transactionnel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : créer un service transactionnel"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a7ef8d4778b21d33501e3f3d4478b722bf1e1cc3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: cr&#233;er un service transactionnel
-Cet exemple présente les divers aspects de la création d'un service transactionnel et l'utilisation d'une transaction initialisée par le client pour coordonner des opérations de service.  
+# <a name="how-to-create-a-transactional-service"></a>Comment : créer un service transactionnel
+Cet exemple présente les divers aspects de la création d’un service transactionnel et l’utilisation d’une transaction initialisée par le client pour coordonner des opérations de service.  
   
-### Création d'un service transactionnel  
+### <a name="creating-a-transactional-service"></a>Création d'un service transactionnel  
   
-1.  Créez un contrat de service et annotez les opérations avec le paramètre souhaité de l'énumération <xref:System.ServiceModel.TransactionFlowOption> afin d'indiquer les spécifications des transactions entrantes.Notez que vous pouvez également placer <xref:System.ServiceModel.TransactionFlowAttribute> sur la classe de service implémentée.Cela permet à une seule implémentation d'une interface d'utiliser ces paramètres de transaction, au lieu d'être le cas pour chaque implémentation.  
+1.  Créez un contrat de service et annotez les opérations avec le paramètre souhaité de l'énumération <xref:System.ServiceModel.TransactionFlowOption> afin d'indiquer les spécifications des transactions entrantes. Notez que vous pouvez également placer <xref:System.ServiceModel.TransactionFlowAttribute> sur la classe de service implémentée. Cela permet à une seule implémentation d'une interface d'utiliser ces paramètres de transaction, au lieu d'être le cas pour chaque implémentation.  
   
     ```  
     [ServiceContract]  
@@ -38,7 +41,7 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     }  
     ```  
   
-2.  Créez une classe d'implémentation et utilisez <xref:System.ServiceModel.ServiceBehaviorAttribute> pour spécifier éventuellement <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>.Notez que dans de nombreux cas, le <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> par défaut de 60 secondes et le <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> par défaut de `Unspecified` sont appropriés.Pour chaque opération, vous pouvez utiliser l'attribut <xref:System.ServiceModel.OperationBehaviorAttribute> pour spécifier si le travail exécuté dans la méthode doit s'effectuer dans l'étendue d'une étendue de transaction en fonction de la valeur de l'attribut <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A>.Dans ce cas, la transaction utilisée pour la méthode `Add` est identique à la transaction entrante obligatoire qui est transmise à partir du client, et la transaction utilisée pour la méthode `Subtract` est soit identique à la transaction entrante si une transaction a été transmise à partir du client, soit une nouvelle transaction créée implicitement et localement.  
+2.  Créez une classe d'implémentation et utilisez <xref:System.ServiceModel.ServiceBehaviorAttribute> pour spécifier éventuellement <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>. Notez que dans de nombreux cas, le <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> par défaut de 60 secondes et le <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> par défaut de `Unspecified` sont appropriés. Pour chaque opération, vous pouvez utiliser l'attribut <xref:System.ServiceModel.OperationBehaviorAttribute> pour spécifier si le travail exécuté dans la méthode doit s'effectuer dans l'étendue d'une étendue de transaction en fonction de la valeur de l'attribut <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A>. Dans ce cas, la transaction utilisée pour la méthode `Add` est identique à la transaction entrante obligatoire qui est transmise à partir du client, et la transaction utilisée pour la méthode `Subtract` est soit identique à la transaction entrante si une transaction a été transmise à partir du client, soit une nouvelle transaction créée implicitement et localement.  
   
     ```  
     [ServiceBehavior(  
@@ -72,9 +75,9 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     }  
     ```  
   
-3.  Configurez les liaisons dans le fichier de configuration, en spécifiant que le contexte de transaction doit être transmis, et les protocoles à utiliser pour ce faire.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Configuration des transactions ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md).Plus précisément, le type de liaison est spécifié dans l'attribut `binding` de l'élément de point de terminaison.L'élément [\<endpoint\>](http://msdn.microsoft.com/fr-fr/13aa23b7-2f08-4add-8dbf-a99f8127c017) contient un attribut `bindingConfiguration` qui référence une configuration de liaison nommée `transactionalOleTransactionsTcpBinding`, tel qu'indiqué dans l'exemple de configuration suivant.  
+3.  Configurez les liaisons dans le fichier de configuration, en spécifiant que le contexte de transaction doit être transmis, et les protocoles à utiliser pour ce faire. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Configuration des transactions ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Plus précisément, le type de liaison est spécifié dans l'attribut `binding` de l'élément de point de terminaison. Le [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément contient un `bindingConfiguration` attribut qui fait référence à une configuration de liaison nommée `transactionalOleTransactionsTcpBinding`, comme illustré dans l’exemple de configuration suivantes.  
   
-    ```  
+    ```xml  
     <service name="CalculatorService">  
       <endpoint address="net.tcp://localhost:8008/CalcService"  
         binding="netTcpBinding"  
@@ -86,7 +89,7 @@ Cet exemple présente les divers aspects de la création d'un service transactio
   
      Le flux de transaction est activé au niveau de la configuration en utilisant l'attribut `transactionFlow`, et le protocole de transaction est spécifié à l'aide de l'attribut `transactionProtocol`, tel qu'indiqué dans la configuration suivante.  
   
-    ```  
+    ```xml  
     <bindings>  
       <netTcpBinding>  
         <binding name="transactionalOleTransactionsTcpBinding"  
@@ -96,11 +99,11 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     </bindings>  
     ```  
   
-### Prise en charge de plusieurs protocoles de transaction  
+### <a name="supporting-multiple-transaction-protocols"></a>Prise en charge de plusieurs protocoles de transaction  
   
-1.  Pour obtenir des performances optimales, vous devez utiliser le protocole OleTransactions pour les scénarios impliquant un client et un service écrits à l'aide de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].Cependant, le protocole WS\-AT \(WS\-AtomicTransaction\) est utile pour les scénarios où l'interopérabilité avec des piles de protocoles tierces est requise.Vous pouvez configurer des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour accepter ces deux protocoles en fournissant plusieurs points de terminaison avec des liaisons spécifiques au protocole approprié, tel qu'indiqué dans l'exemple de configuration suivant.  
+1.  Pour obtenir des performances optimales, vous devez utiliser le protocole OleTransactions pour les scénarios impliquant un client et un service écrits à l'aide de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Cependant, le protocole WS-AT (WS-AtomicTransaction) est utile pour les scénarios où l'interopérabilité avec des piles de protocoles tierces est requise. Vous pouvez configurer des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour accepter ces deux protocoles en fournissant plusieurs points de terminaison avec des liaisons spécifiques au protocole approprié, tel qu'indiqué dans l'exemple de configuration suivant.  
   
-    ```  
+    ```xml  
     <service name="CalculatorService">  
       <endpoint address="http://localhost:8000/CalcService"  
         binding="wsHttpBinding"  
@@ -115,9 +118,9 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     </service>  
     ```  
   
-     Le protocole de transaction est spécifié à l'aide de l'attribut `transactionProtocol`.Cependant, cet attribut est absent du `wsHttpBinding` fourni par le système, car cette liaison peut uniquement utiliser le protocole WS\-AT.  
+     Le protocole de transaction est spécifié à l'aide de l'attribut `transactionProtocol`. Cependant, cet attribut est absent du `wsHttpBinding` fourni par le système, car cette liaison peut uniquement utiliser le protocole WS-AT.  
   
-    ```  
+    ```xml  
     <bindings>  
       <wsHttpBinding>  
         <binding name="transactionalWsatHttpBinding"  
@@ -131,9 +134,9 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     </bindings>  
     ```  
   
-### Contrôle de l'exécution d'une transaction  
+### <a name="controlling-the-completion-of-a-transaction"></a>Contrôle de l'exécution d'une transaction  
   
-1.  Par défaut, les opérations [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] exécutent automatiquement des transactions si aucune exception non prise en charge n'est levée.Vous pouvez modifier ce comportement à l'aide de la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> et de la méthode <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A>.Lorsqu'une opération doit s'exécuter dans la même transaction qu'une autre \(par exemple, une opération de débit et de crédit\), vous pouvez désactiver le comportement de saisie semi\-automatique en affectant `false` à la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A>, tel qu'indiqué dans l'exemple d'opération `Debit` suivant.La transaction utilisée par l'opération `Debit` ne s'exécute pas tant qu'une méthode avec la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> à la valeur `true` n'est pas appelée, tel qu'indiqué dans l'opération `Credit1`, ou lorsque la méthode <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> est appelée pour marquer explicitement la transaction comme étant exécutée, tel qu'indiqué dans l'opération `Credit2`.Notez que les deux opérations de crédit sont indiquées à titre d'exemple, et qu'une opération de crédit unique serait plus courante.  
+1.  Par défaut, les opérations [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] exécutent automatiquement des transactions si aucune exception non prise en charge n'est levée. Vous pouvez modifier ce comportement à l'aide de la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> et de la méthode <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A>. Lorsqu'une opération doit s'exécuter dans la même transaction qu'une autre (par exemple, une opération de débit et de crédit), vous pouvez désactiver le comportement de saisie semi-automatique en affectant <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> à la propriété `false`, tel qu'indiqué dans l'exemple d'opération `Debit` suivant. La transaction utilisée par l'opération `Debit` ne s'exécute pas tant qu'une méthode avec la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> à la valeur `true` n'est pas appelée, tel qu'indiqué dans l'opération `Credit1`, ou lorsque la méthode <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> est appelée pour marquer explicitement la transaction comme étant exécutée, tel qu'indiqué dans l'opération `Credit2`. Notez que les deux opérations de crédit sont indiquées à titre d'exemple, et qu'une opération de crédit unique serait plus courante.  
   
     ```  
     [ServiceBehavior]  
@@ -169,7 +172,7 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     }  
     ```  
   
-2.  Dans le cadre de la corrélation de transactions, l'affectation de `false` à la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> requiert l'utilisation d'une liaison de session.Cette spécification est spécifiée avec la propriété `SessionMode` sur <xref:System.ServiceModel.ServiceContractAttribute>.  
+2.  Dans le cadre de la corrélation de transactions, l'affectation de <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> à la propriété `false` requiert l'utilisation d'une liaison de session. Cette spécification est spécifiée avec la propriété `SessionMode` sur <xref:System.ServiceModel.ServiceContractAttribute>.  
   
     ```  
     [ServiceContract(SessionMode = SessionMode.Required)]  
@@ -187,9 +190,9 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     }  
     ```  
   
-### Contrôle de la durée de vie d'une instance de service transactionnelle  
+### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Contrôle de la durée de vie d'une instance de service transactionnelle  
   
-1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> pour spécifier si l'instance de service sous\-jacente est diffusée lorsqu'une transaction s'exécute.La valeur par défaut étant `true`, sauf configuration autre, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose un comportement d'activation « juste\-à\-temps » efficace et prédictible.Les appels à un service sur une transaction suivante sont assurés de disposer d'une nouvelle instance de service sans restes de l'état de la transaction précédente.Bien que cela s'avère souvent utile, vous pouvez souhaiter conserver l'état dans l'instance de service après l'exécution de la transaction.Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer.Pour ce faire, vous pouvez affecter `false` à la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A>.Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants.Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l'état seront effacés et exécutés.L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
+1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> pour spécifier si l'instance de service sous-jacente est diffusée lorsqu'une transaction s'exécute. La valeur par défaut étant `true`, sauf configuration autre, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose un comportement d'activation « juste-à-temps » efficace et prédictible. Les appels à un service sur une transaction suivante sont assurés de disposer d'une nouvelle instance de service sans restes de l'état de la transaction précédente. Bien que cela s'avère souvent utile, vous pouvez souhaiter conserver l'état dans l'instance de service après l'exécution de la transaction. Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer. Pour ce faire, vous pouvez affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> à la propriété `false`. Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants. Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l'état seront effacés et exécutés. L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
   
     ```  
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  
@@ -224,4 +227,4 @@ Cet exemple présente les divers aspects de la création d'un service transactio
     ```  
   
     > [!NOTE]
-    >  La durée de vie d'instance étant un comportement interne au service et contrôlée via la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute>, aucune modification de la configuration de service ou du contrat de service n'est nécessaire pour définir le comportement d'instance.Par ailleurs, le câble ne contiendra pas de représentation de celui\-ci.
+    >  La durée de vie d'instance étant un comportement interne au service et contrôlée via la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute>, aucune modification de la configuration de service ou du contrat de service n'est nécessaire pour définir le comportement d'instance. Par ailleurs, le câble ne contiendra pas de représentation de celui-ci.

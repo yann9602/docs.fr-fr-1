@@ -5,15 +5,9 @@ ms.date: 05/01/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - .NET Framework application configuration, configuration schema
 - machine configuration files
@@ -34,18 +28,16 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c4c681f4798b36ce0d92b2101ab2d36988a0d19e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 7f2dec0d71c1a0822bf39ae420d4e56bdaf99e0d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma des fichiers de configuration pour le .NET Framework
 
 Les fichiers de configuration sont des fichiers XML standard que vous pouvez utiliser pour modifier les paramètres et définir des stratégies pour vos applications. Le schéma de configuration .NET Framework se compose d'éléments que vous pouvez utiliser dans les fichiers de configuration pour contrôler le comportement de vos applications. La table des matières de cette section reflète la hiérarchie du schéma pour les paramètres de démarrage, de runtime et de réseau, ainsi que pour d'autres types de paramètres de configuration.
@@ -100,4 +92,3 @@ Pour plus d’informations sur les types, le format et l’emplacement des fichi
 [Schéma des paramètres des services Web](http://msdn.microsoft.com/en-us/f84d6d55-1add-4eb7-ae46-33df5833ea2e) Décrit les éléments qui contrôlent le comportement des services web ASP.NET et de leurs clients.
 
 [Configuration d’applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42) Décrit comment configurer la sécurité, les liaisons d’assembly et la communication à distance dans le .NET Framework.
-

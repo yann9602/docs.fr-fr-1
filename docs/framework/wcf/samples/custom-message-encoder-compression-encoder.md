@@ -1,40 +1,43 @@
 ---
-title: "Custom Message Encoder: Compression Encoder | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'Custom Message Encoder: Compression Encoder'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-caps.latest.revision: 37
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 37
+caps.latest.revision: "37"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 09566625b6159fb8ce6da6ef347e2d1ddecce1db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Custom Message Encoder: Compression Encoder
+# <a name="custom-message-encoder-compression-encoder"></a>Custom Message Encoder: Compression Encoder
 Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de la plateforme [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
   
-## Détails de l'exemple  
- Cet exemple se compose d'un programme de console de client \(.exe\), d'un programme de console de service auto\-hébergé \(.exe\) et d'une bibliothèque d'encodeurs de message de compression \(.dll\).Le service implémente un contrat qui définit un modèle de communication demande\-réponse.Le contrat est défini par l'interface `ISampleServer`, laquelle expose la chaîne de base qui reproduit en écho les opérations \(`Echo` et `BigEcho`\).Le client adresse des demandes synchrones à une opération donnée et le service répond en répétant de nouveau le message au client.L'activité du client et du service est visible dans les fenêtres de console.Cet exemple montre comment écrire un encodeur personnalisé et présente l'impact de la compression d'un message sur le câble.Vous pouvez ajouter l'instrumentation à l'encodeur de message de compression afin de calculer la taille de message, le temps de traitement ou les deux.  
+## <a name="sample-details"></a>Détails de l'exemple  
+ Cet exemple se compose d'un programme de console cliente (.exe), d'un programme de console de service auto-hébergé (.exe) et d'une bibliothèque d'encodeurs de message de compression (.dll). Le service implémente un contrat qui définit un modèle de communication demande-réponse. Le contrat est défini par l'interface `ISampleServer`, laquelle expose la chaîne de base qui reproduit en écho les opérations (`Echo` et `BigEcho`). Le client adresse des demandes synchrones à une opération donnée et le service répond en répétant de nouveau le message au client. L'activité du client et du service est visible dans les fenêtres de console. Cet exemple montre comment écrire un encodeur personnalisé et présente l'impact de la compression d'un message sur le câble. Vous pouvez ajouter l'instrumentation à l'encodeur de message de compression afin de calculer la taille de message, le temps de traitement ou les deux.  
   
 > [!NOTE]
->  Dans .NET Framework 4, la décompression automatique a été activée sur un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] si le serveur envoie une réponse compressée \(créée avec un algorithme tel que GZip ou Deflate\).Si le service est hébergé sur le Web dans Internet Information Server \(IIS\), IIS peut être configuré de sorte que le service envoie une réponse compressée.Cet exemple peut être utilisé si la compression et la décompression doivent s'effectuer sur le client et dans le service, ou si le service est auto\-hébergé.  
+>  Dans .NET Framework 4, la décompression automatique a été activée sur un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] si le serveur envoie une réponse compressée (créée avec un algorithme tel que GZip ou Deflate). Si le service est hébergé sur le Web dans Internet Information Server (IIS), IIS peut être configuré de sorte que le service envoie une réponse compressée. Cet exemple peut être utilisé si la compression et la décompression doivent s'effectuer sur le client et dans le service, ou si le service est auto-hébergé.  
   
- L'exemple montre comment créer et intégrer un encodeur de message personnalisé dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].La bibliothèque GZipEncoder.dll est déployée avec le client et le service.Cet exemple montre également l'impact de la compression des messages.Le code dans GZipEncoder.dll présente les procédures suivantes :  
+ L'exemple montre comment créer et intégrer un encodeur de message personnalisé dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. La bibliothèque GZipEncoder.dll est déployée avec le client et le service. Cet exemple montre également l'impact de la compression des messages. Le code dans GZipEncoder.dll présente les procédures suivantes :  
   
 -   Création d'un encodeur personnalisé et d'une fabrique d'encodeur.  
   
@@ -44,7 +47,7 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de l
   
 -   Développement d'un gestionnaire de configuration personnalisé afin de permettre la configuration de fichier d'un élément de liaison personnalisé.  
   
- Comme indiqué précédemment, plusieurs couches sont implémentées dans un encodeur personnalisé.Pour mieux illustrer la relation entre chacune d'elles, la liste suivante présente un ordre simplifié des événements de démarrage du service :  
+ Comme indiqué précédemment, plusieurs couches sont implémentées dans un encodeur personnalisé. Pour mieux illustrer la relation entre chacune d'elles, la liste suivante présente un ordre simplifié des événements de démarrage du service :  
   
 1.  Le serveur démarre.  
   
@@ -62,17 +65,17 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de l
   
 4.  La fabrique retourne un encodeur de message permettant de lire dans le message et d'écrire la réponse.  
   
-5.  La couche d'encodeur est implémentée sous forme de fabrique de classe.Seule la fabrique de classe d'encodeur doit être exposée publiquement pour l'encodeur personnalisé.L'objet de fabrique est retourné par l'élément de liaison lorsque l'objet <xref:System.ServiceModel.ServiceHost> ou <xref:System.ServiceModel.ChannelFactory%601> est créé.Les encodeurs de message peuvent fonctionner en mode de mise en mémoire tampon ou en mode de diffusion en continu.Cet exemple présente ces deux modes.  
+5.  La couche d'encodeur est implémentée sous forme de fabrique de classe. Seule la fabrique de classe d'encodeur doit être exposée publiquement pour l'encodeur personnalisé. L'objet de fabrique est retourné par l'élément de liaison lorsque l'objet <xref:System.ServiceModel.ServiceHost> ou <xref:System.ServiceModel.ChannelFactory%601> est créé. Les encodeurs de message peuvent fonctionner en mode de mise en mémoire tampon ou en mode de diffusion en continu. Cet exemple présente ces deux modes.  
   
- Chaque mode est associée à une méthode `ReadMessage` et `WriteMessage` sur la classe abstraite `MessageEncoder`.La majeure partie de l'encodage a lieu dans ces méthodes.L'exemple encapsule les encodeurs de message texte et binaire existants.Cela permet à l'exemple de déléguer la lecture et l'écriture de la représentation de câble des messages à l'encodeur interne, et à l'encodeur de compression de compresser ou décompresser les résultats.Comme il n'existe aucun pipeline pour l'encodage de message, c'est le seul modèle permettant d'utiliser plusieurs encodeurs dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Une fois que le message a été décompressé, le message résultant est passé en haut de la pile pour être géré par la pile de canaux.Pendant la compression, le message compressé résultant est écrit directement dans le flux fourni.  
+ Chaque mode est associée à une méthode `ReadMessage` et `WriteMessage` sur la classe abstraite `MessageEncoder`. La majeure partie de l'encodage a lieu dans ces méthodes. L'exemple encapsule les encodeurs de message texte et binaire existants. Cela permet à l'exemple de déléguer la lecture et l'écriture de la représentation de câble des messages à l'encodeur interne, et à l'encodeur de compression de compresser ou décompresser les résultats. Comme il n'existe aucun pipeline pour l'encodage de message, c'est le seul modèle permettant d'utiliser plusieurs encodeurs dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Une fois que le message a été décompressé, le message résultant est passé en haut de la pile pour être géré par la pile de canaux. Pendant la compression, le message compressé résultant est écrit directement dans le flux fourni.  
   
- Cet exemple utilise des méthodes d'assistance \(`CompressBuffer` et `DecompressBuffer`\) permettant d'effectuer la conversion des mémoires tampon en flux afin d'utiliser la classe `GZipStream`.  
+ Cet exemple utilise des méthodes d'assistance (`CompressBuffer` et `DecompressBuffer`) permettant d'effectuer la conversion des mémoires tampon en flux afin d'utiliser la classe `GZipStream`.  
   
- Les classes `ReadMessage` et `WriteMessage` mises en mémoire tampon utilisent la classe `BufferManager`.L'encodeur est uniquement accessible via la fabrique d'encodeur.La classe abstraite `MessageEncoderFactory` fournit la propriété `Encoder` permettant d'accéder à l'encodeur actuel et la méthode `CreateSessionEncoder` permettant de créer un encodeur qui prend en charge les sessions.Un encodeur de ce type peut être utilisé dans le scénario où le canal prend en charge des sessions, est ordonné et est fiable.Ce scénario permet d'optimiser dans chaque session les données écrites sur le câble.Si cet objectif n'est pas souhaité, la méthode de base ne doit pas être surchargée.La propriété `Encoder` fournit un mécanisme permettant d'accéder à l'encodeur sans session, et l'implémentation par défaut de la méthode `CreateSessionEncoder` retourne la valeur de la propriété.Cet exemple encapsulant un encodeur existant pour fournir la compression, l'implémentation `MessageEncoderFactory` accepte un `MessageEncoderFactory` qui représente la fabrique d'encodeur interne.  
+ Les classes `ReadMessage` et `WriteMessage` mises en mémoire tampon utilisent la classe `BufferManager`. L'encodeur est uniquement accessible via la fabrique d'encodeur. La classe abstraite `MessageEncoderFactory` fournit la propriété `Encoder` permettant d'accéder à l'encodeur actuel et la méthode `CreateSessionEncoder` permettant de créer un encodeur qui prend en charge les sessions. Un encodeur de ce type peut être utilisé dans le scénario où le canal prend en charge des sessions, est ordonné et est fiable. Ce scénario permet d'optimiser dans chaque session les données écrites sur le câble. Si cet objectif n'est pas souhaité, la méthode de base ne doit pas être surchargée. La propriété `Encoder` fournit un mécanisme permettant d'accéder à l'encodeur sans session, et l'implémentation par défaut de la méthode `CreateSessionEncoder` retourne la valeur de la propriété. Cet exemple encapsulant un encodeur existant pour fournir la compression, l'implémentation `MessageEncoderFactory` accepte un `MessageEncoderFactory` qui représente la fabrique d'encodeur interne.  
   
- L'encodeur et la fabrique d'encodeur étant maintenant définis, ils peuvent être utilisés avec un client et un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Toutefois, ces encodeurs doivent être ajoutés à la pile de canaux.Vous pouvez dériver des classes des classes <xref:System.ServiceModel.ServiceHost> et <xref:System.ServiceModel.ChannelFactory%601>, et substituer les méthodes `OnInitialize` pour ajouter cette fabrique d'encodeur manuellement.Vous pouvez également exposer la fabrique d'encodeur via un élément de liaison personnalisé.  
+ L'encodeur et la fabrique d'encodeur étant maintenant définis, ils peuvent être utilisés avec un client et un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Toutefois, ces encodeurs doivent être ajoutés à la pile de canaux. Vous pouvez dériver des classes des classes <xref:System.ServiceModel.ServiceHost> et <xref:System.ServiceModel.ChannelFactory%601>, et substituer les méthodes `OnInitialize` pour ajouter cette fabrique d'encodeur manuellement. Vous pouvez également exposer la fabrique d'encodeur via un élément de liaison personnalisé.  
   
- Pour créer un élément de liaison personnalisé, dérivez une classe de la classe <xref:System.ServiceModel.Channels.BindingElement>.Cependant, il existe plusieurs types d'éléments de liaison.Pour s'assurer que l'élément de liaison personnalisé est reconnu en tant qu'élément de liaison d'encodage de message, vous devez également implémenter <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.<xref:System.ServiceModel.Channels.MessageEncodingBindingElement> expose une méthode permettant de créer une nouvelle fabrique d'encodeur de message \(`CreateMessageEncoderFactory`\), laquelle est implémentée pour retourner une instance de la fabrique d'encodeur de message correspondante.En outre, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> possède une propriété permettant d'indiquer la version d'adressage.Cet exemple encapsulant les encodeurs existants, l'implémentation encapsule également les éléments de liaison d'encodeur existants et fournit un élément de liaison d'encodeur interne comme paramètre au constructeur, puis l'expose via une propriété.L'exemple de code suivant présente l'implémentation de la classe `GZipMessageEncodingBindingElement`.  
+ Pour créer un élément de liaison personnalisé, dérivez une classe de la classe <xref:System.ServiceModel.Channels.BindingElement>. Cependant, il existe plusieurs types d'éléments de liaison. Pour s'assurer que l'élément de liaison personnalisé est reconnu en tant qu'élément de liaison d'encodage de message, vous devez également implémenter <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> expose une méthode permettant de créer une nouvelle fabrique d'encodeur de message (`CreateMessageEncoderFactory`), laquelle est implémentée pour retourner une instance de la fabrique d'encodeur de message correspondante. En outre, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> possède une propriété permettant d'indiquer la version d'adressage. Cet exemple encapsulant les encodeurs existants, l'implémentation encapsule également les éléments de liaison d'encodeur existants et fournit un élément de liaison d'encodeur interne comme paramètre au constructeur, puis l'expose via une propriété. L'exemple de code suivant présente l'implémentation de la classe `GZipMessageEncodingBindingElement`.  
   
 ```  
 public sealed class GZipMessageEncodingBindingElement   
@@ -176,7 +179,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
   
  Notez que la classe `GZipMessageEncodingBindingElement` implémente l'interface `IPolicyExportExtension`, afin que cet élément de liaison puisse être exporté en tant que stratégie dans les métadonnées, tel qu'indiqué dans l'exemple suivant.  
   
-```  
+```xml  
 <wsp:Policy wsu:Id="BufferedHttpSampleServer_ISampleServer_policy">  
     <wsp:ExactlyOne>  
       <wsp:All>  
@@ -186,13 +189,11 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
      </wsp:All>  
    </wsp:ExactlyOne>  
 </wsp:Policy>  
-  
 ```  
   
- La classe `GZipMessageEncodingBindingElementImporter` implémente l'interface `IPolicyImportExtension` et importe la stratégie pour `GZipMessageEncodingBindingElement`.L'outil Svcutil.exe permet d'importer des stratégies dans le fichier de configuration et de gérer `GZipMessageEncodingBindingElement` ; les éléments suivants doivent être ajoutés à Svcutil.exe.config.  
+ La classe `GZipMessageEncodingBindingElementImporter` implémente l'interface `IPolicyImportExtension` et importe la stratégie pour `GZipMessageEncodingBindingElement`. L'outil Svcutil.exe permet d'importer des stratégies dans le fichier de configuration et de gérer `GZipMessageEncodingBindingElement` ; les éléments suivants doivent être ajoutés à Svcutil.exe.config.  
   
-```  
-  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <extensions>  
@@ -214,7 +215,6 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
     </client>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  Maintenant qu'un élément de liaison correspondant existe pour l'encodeur de compression, il peut être raccordé par programme au service ou au client en construisant un nouvel objet de liaison personnalisé et en lui ajoutant l'élément de liaison personnalisé, tel qu'indiqué dans l'exemple de code suivant.  
@@ -228,12 +228,11 @@ bindingElements.Add(httpBindingElement);
 CustomBinding binding = new CustomBinding(bindingElements);  
 binding.Name = "SampleBinding";  
 binding.Namespace = "http://tempuri.org/bindings";  
-  
 ```  
   
- Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web.Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d'un élément de liaison personnalisé dans un fichier.  
+ Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web. Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d'un élément de liaison personnalisé dans un fichier.  
   
- Vous pouvez créer un gestionnaire de configuration pour l'élément de liaison en plus du système de configuration fourni par [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>.La propriété `BindingElementType` permet d'indiquer au système de configuration le type d'élément de liaison à créer pour cette section.Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>.<xref:System.Configuration.ConfigurationPropertyAttribute> permet de mapper les attributs d'élément de configuration aux propriétés et d'affecter des valeurs par défaut si les attributs ne sont pas définis.Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> est appelée et convertit les propriétés en instance concrète d'un élément de liaison.La méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> permet de convertir les propriétés sur la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> en valeurs à définir sur l'élément de liaison récemment créé.  
+ Vous pouvez créer un gestionnaire de configuration pour l'élément de liaison en plus du système de configuration fourni par [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. La propriété `BindingElementType` permet d'indiquer au système de configuration le type d'élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. <xref:System.Configuration.ConfigurationPropertyAttribute> permet de mapper les attributs d'élément de configuration aux propriétés et d'affecter des valeurs par défaut si les attributs ne sont pas définis. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. La méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> permet de convertir les propriétés sur la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> en valeurs à définir sur l'élément de liaison récemment créé.  
   
  L'exemple de code suivant présente l'implémentation de `GZipMessageEncodingElement`.  
   
@@ -300,14 +299,13 @@ public class GZipMessageEncodingElement : BindingElementExtensionElement
   
  Ce gestionnaire de configuration mappe à la représentation suivante dans le fichier App.config ou Web.config du service ou du client.  
   
-```  
+```xml  
 <gzipMessageEncoding innerMessageEncoding="textMessageEncoding" />  
-  
 ```  
   
- Pour utiliser ce gestionnaire de configuration, il doit être enregistré dans l'élément [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md), tel qu'indiqué dans l'exemple de configuration suivant.  
+ Pour utiliser ce gestionnaire de configuration, elle doit être inscrite dans le [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) élément, comme indiqué dans l’exemple de configuration suivantes.  
   
-```  
+```xml  
 <extensions>  
     <bindingElementExtensions>  
        <add   
@@ -318,13 +316,11 @@ public class GZipMessageEncodingElement : BindingElementExtensionElement
            PublicKeyToken=null" />  
       </bindingElementExtensions>  
 </extensions>  
-  
 ```  
   
- Lorsque vous exécutez le serveur, les demandes et réponses d'opération s'affichent dans la fenêtre de console.Appuyez sur ENTER dans la fenêtre pour arrêter le serveur.  
+ Lorsque vous exécutez le serveur, les demandes et réponses d'opération s'affichent dans la fenêtre de console. Appuyez sur ENTER dans la fenêtre pour arrêter le serveur.  
   
 ```  
-  
 Press Enter key to Exit.  
   
         Server Echo(string input) called:  
@@ -332,13 +328,11 @@ Press Enter key to Exit.
   
         Server BigEcho(string[] input) called:  
         64 client messages  
-  
 ```  
   
- Lorsque vous exécutez le client, les demandes et réponses d'opération s'affichent dans la fenêtre de console.Appuyez sur ENTRÉE dans la fenêtre du client pour l'arrêter.  
+ Lorsque vous exécutez le client, les demandes et réponses d'opération s'affichent dans la fenêtre de console. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
 ```  
-  
 Calling Echo(string):  
 Server responds: Simple hello Simple hello  
   
@@ -346,31 +340,29 @@ Calling BigEcho(string[]):
 Server responds: Hello 0  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante :  
+1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante :  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
-2.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Pour générer la solution, suivez les instructions indiquées dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

@@ -1,69 +1,73 @@
 ---
-title: "&lt;clear&gt;, &#233;l&#233;ment de &lt;listeners&gt; pour &lt;source&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<clear> (élément de <listeners> pour <source>)"
-  - "<clear> (élément de <listeners> pour <source>)"
+title: "&lt;Désactivez&gt; élément &lt;écouteurs&gt; pour &lt;source&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
+helpviewer_keywords:
+- <clear> element for <listeners> for <source>
+- clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-caps.latest.revision: 7
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: d5e8518f2ca8a04d91f5bfdd9f6389c741d0278e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;clear&gt;, &#233;l&#233;ment de &lt;listeners&gt; pour &lt;source&gt;
-Efface le contenu de la collection `Listeners` pour une source de trace.  
+# <a name="ltcleargt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Désactivez&gt; élément &lt;écouteurs&gt; pour &lt;source&gt;
+Efface la collection `Listeners` pour une source de trace.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.Diagnostics >  
+\<sources >  
+\<source >  
+\<écouteurs >  
+\<Désactivez >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <clear/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
  Aucun  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`system.diagnostics`|Spécifie les écouteurs de traçage qui collectent, stockent et routent des messages, ainsi que le niveau auquel un commutateur de traçage est défini.|  
-|`sources`|Contient des sources de trace qui initient des messages de traçage.|  
-|`source`|Spécifie une source de trace qui initie le traçage des messages.|  
-|`listeners`|Spécifie des écouteurs qui collectent, stockent et routent des messages.|  
+|`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
+|`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
+|`source`|Spécifie une source de trace qui lance des messages de traçage.|  
+|`listeners`|Spécifie les écouteurs de collectent, stocker et acheminer les messages.|  
   
-## Notes  
- L'élément `<clear>` supprime tous les écouteurs de la collection `Listeners` pour une source de trace, y compris <xref:System.Diagnostics.DefaultTraceListener>.  Vous pouvez utiliser l'élément `<clear>` avant d'utiliser l'élément `<add>` pour garantir l'absence de tout autre écouteur actif dans la collection.  
+## <a name="remarks"></a>Remarques  
+ Le `<clear>` élément supprime tous les écouteurs de la `Listeners` collection pour une source de trace, y compris le <xref:System.Diagnostics.DefaultTraceListener>. Vous pouvez utiliser la `<clear>` élément avant d’utiliser le `<add>` pour garantir l’aucun autre écouteur actif dans la collection.  
   
-## Fichier de configuration  
- Cet élément peut être utilisé dans le fichier de configuration machine \(Machine.config\) et dans le fichier de configuration de l'application.  
+## <a name="configuration-file"></a>Fichier de configuration  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et le fichier de configuration d’application.  
   
-## Exemple  
- L'exemple suivant montre comment utiliser l'élément `<clear>` avant d'utiliser l'élément `<add>` pour ajouter les écouteurs `console` et `textListener` à la collection `Listeners` pour la source de trace `TraceSourceApp`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser le `<clear>` élément avant d’utiliser le `<add>` éléments pour ajouter les écouteurs `console` et `textListener` à la `Listeners` collection pour la source de suivi `TraceSourceApp`.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -89,8 +93,8 @@ Efface le contenu de la collection `Listeners` pour une source de trace.
 </configuration>   
 ```  
   
-## Voir aussi  
- <xref:System.Diagnostics.TraceSource>   
- <xref:System.Diagnostics.TraceListener>   
- [Schéma des paramètres de traçage et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [Trace Listeners](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.TraceListener>  
+ [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [Écouteurs de suivi](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

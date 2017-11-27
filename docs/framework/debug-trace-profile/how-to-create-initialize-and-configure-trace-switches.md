@@ -1,19 +1,16 @@
 ---
-title: "Guide pratique pour créer, initialiser et configurer les commutateurs de traçage"
+title: "Comment : créer, initialiser et configurer les commutateurs de traçage"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - trace switches, configuring
 - tracing [.NET Framework], trace switches
@@ -21,29 +18,28 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b5ba232e3c84f7bfa089822d4a4f792b179bf32
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f5fa8a0fbe6dc08811162ba9b1d4198af9256fc4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-create-initialize-and-configure-trace-switches"></a>Guide pratique pour créer, initialiser et configurer les commutateurs de traçage
+# <a name="how-to-create-initialize-and-configure-trace-switches"></a>Comment : créer, initialiser et configurer les commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer.  
   
 <a name="create"></a>   
 ## <a name="creating-and-initializing-a-trace-switch"></a>Création et initialisation d’un commutateur de suivi  
- Pour pouvoir utiliser des commutateurs de trace, vous devez tout d'abord les créer et les placer dans votre code. Il existe deux classes prédéfinies à partir desquelles vous pouvez créer des objets commutateur : la classe <xref:System.Diagnostics.BooleanSwitch?displayProperty=fullName> et la classe <xref:System.Diagnostics.TraceSwitch?displayProperty=fullName>. Utilisez <xref:System.Diagnostics.BooleanSwitch> si vous souhaitez uniquement contrôler l'affichage des messages de trace. Utilisez <xref:System.Diagnostics.TraceSwitch> si vous avez besoin de faire la distinction entre plusieurs niveaux de trace. Si vous utilisez un commutateur <xref:System.Diagnostics.TraceSwitch>, vous pouvez définir vos propres messages de débogage et les associer à différents niveaux de trace. Vous pouvez utiliser les deux types de commutateurs pour le traçage ou le débogage. Par défaut, <xref:System.Diagnostics.BooleanSwitch> est désactivé et <xref:System.Diagnostics.TraceSwitch> est associé au niveau <xref:System.Diagnostics.TraceLevel.Off?displayProperty=fullName>. Vous pouvez placer les commutateurs de trace que vous créez dans toute partie de votre code susceptible de les utiliser.  
+ Pour pouvoir utiliser des commutateurs de trace, vous devez tout d'abord les créer et les placer dans votre code. Il existe deux classes prédéfinies à partir desquelles vous pouvez créer des objets commutateur : la classe <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> et la classe <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>. Utilisez <xref:System.Diagnostics.BooleanSwitch> si vous souhaitez uniquement contrôler l'affichage des messages de trace. Utilisez <xref:System.Diagnostics.TraceSwitch> si vous avez besoin de faire la distinction entre plusieurs niveaux de trace. Si vous utilisez un commutateur <xref:System.Diagnostics.TraceSwitch>, vous pouvez définir vos propres messages de débogage et les associer à différents niveaux de trace. Vous pouvez utiliser les deux types de commutateurs pour le traçage ou le débogage. Par défaut, <xref:System.Diagnostics.BooleanSwitch> est désactivé et <xref:System.Diagnostics.TraceSwitch> est associé au niveau <xref:System.Diagnostics.TraceLevel.Off?displayProperty=nameWithType>. Vous pouvez placer les commutateurs de trace que vous créez dans toute partie de votre code susceptible de les utiliser.  
   
  Vous avez la possibilité de définir les niveaux de trace et d'autres options de configuration directement dans le code, mais il est recommandé d'utiliser le fichier de configuration pour gérer l'état de vos commutateurs. La gestion de la configuration de vos commutateurs dans le système de configuration vous donne en effet plus de souplesse : vous pouvez activer ou désactiver plusieurs commutateurs et changer de niveau sans avoir à recompiler votre application.  
   
 #### <a name="to-create-and-initialize-a-trace-switch"></a>Pour créer et initialiser un commutateur de trace  
   
-1.  Définissez un commutateur de type <xref:System.Diagnostics.BooleanSwitch?displayProperty=fullName> ou de type <xref:System.Diagnostics.TraceSwitch?displayProperty=fullName>, puis indiquez le nom et la description du commutateur.  
+1.  Définissez un commutateur de type <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> ou de type <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>, puis indiquez le nom et la description du commutateur.  
   
 2.  Configurez votre commutateur de trace. Pour plus d’informations, consultez [Configuration des commutateurs de suivi](#configure).  
   
@@ -72,7 +68,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
  Dans une application déployée, vous activez le code de trace en reconfigurant les objets commutateur quand votre application n'est pas en cours d'exécution. Généralement, cela implique l'activation et la désactivation des objets commutateur ou le changement des niveaux de trace, puis le redémarrage de votre application.  
   
- Quand vous créez une instance d’un commutateur, vous l’initialisez également en spécifiant deux arguments : l’argument *displayName* et l’argument *description*. L’argument *displayName* du constructeur définit la propriété <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=fullName> de l’instance de classe <xref:System.Diagnostics.Switch>. L’argument *displayName* correspond au nom utilisé pour configurer le commutateur dans le fichier .config. L’argument *description* doit normalement retourner une brève description du commutateur, ainsi que les messages qu’il contrôle.  
+ Quand vous créez une instance d’un commutateur, vous l’initialisez également en spécifiant deux arguments : l’argument *displayName* et l’argument *description*. L’argument *displayName* du constructeur définit la propriété <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=nameWithType> de l’instance de classe <xref:System.Diagnostics.Switch>. L’argument *displayName* correspond au nom utilisé pour configurer le commutateur dans le fichier .config. L’argument *description* doit normalement retourner une brève description du commutateur, ainsi que les messages qu’il contrôle.  
   
  En plus de spécifier le nom du commutateur que vous configurez, vous devez lui attribuer une valeur. Cette valeur est un nombre entier. Pour <xref:System.Diagnostics.BooleanSwitch>, la valeur zéro (0) correspond à **Off** (Désactivé), et toute autre valeur correspond à **On** (Activé). Pour <xref:System.Diagnostics.TraceSwitch>, les valeurs 0, 1, 2, 3 et 4 correspondent respectivement à **Off** (Désactivé), **Error** (Erreur), **Warning** (Avertissement), **Info** (Information) et **Verbose** (Commentaires). Toute valeur supérieure à 4 est traitée comme **Verbose**, et toute valeur inférieure à 0 est traitée comme **Off**.  
   
@@ -138,8 +134,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
     ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)   
- [Guide pratique pour ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)   
- [Commutateurs de traçage](../../../docs/framework/debug-trace-profile/trace-switches.md)   
+ [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
+ [Comment : ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)  
  [Schéma des paramètres de trace et de débogage](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-

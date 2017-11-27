@@ -1,31 +1,34 @@
 ---
-title: "&lt;endpoint&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "&lt;endpoint&gt;, élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 937819fabc50d4a0a43c6a3168e6d8a77bf4ceca
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;endpoint&gt;, &#233;l&#233;ment
-Spécifie la liaison, le contrat et les propriétés d'adresse d'un point de terminaison de service, utilisé pour exposer des services.  
+# <a name="ltendpointgt-element"></a>&lt;endpoint&gt;, élément
+Spécifie la liaison, le contrat et les propriétés d’adresse d’un point de terminaison de service, utilisé pour exposer des services.  
   
-## Syntaxe  
+ \<système. ServiceModel >  
+\<service >  
+\<point de terminaison >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <endpoint address="String"  
    behaviorConfiguration="String"  
    binding="String"  
@@ -33,52 +36,49 @@ Spécifie la liaison, le contrat et les propriétés d'adresse d'un point de ter
    bindingName="String"  
    bindingNamespace="String"  
    contract="String"  
-   endpointConfiguration=”String”  
-   isSystemEndpoint=”Boolean”  
-   kind=”String”  
-   listenUriMode="Explicit/Unique"  
+   endpointConfiguration="String"   isSystemEndpoint="Boolean"   kind="String"   listenUriMode="Explicit/Unique"  
    listenUri="Uri"  
 </endpoint>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|address|Chaîne qui contient l'adresse du point de terminaison.  L'adresse peut être spécifiée comme une adresse absolue ou relative.  Si une adresse relative est fournie, l'hôte doit fournir une adresse de base appropriée au schéma de transport utilisé dans la liaison.  Si une adresse n'est pas configurée, l'adresse de base est l'adresse pour ce point de terminaison.<br /><br /> La valeur par défaut est une chaîne vide.|  
+|---------------|-----------------|  
+|address|Chaîne qui contient l'adresse du point de terminaison. L'adresse peut être spécifiée comme une adresse absolue ou relative. Si une adresse relative est fournie, l'hôte doit fournir une adresse de base appropriée au schéma de transport utilisé dans la liaison. Si une adresse n'est pas configurée, l'adresse de base est l'adresse pour ce point de terminaison.<br /><br /> La valeur par défaut est une chaîne vide.|  
 |behaviorConfiguration|Chaîne qui contient le nom du comportement à utiliser au point de terminaison.|  
-|liaison|Attribut de chaîne requis indiquant le type de liaison à utiliser.  Ce type doit posséder une section de configuration inscrite pour pouvoir être référencé.  Il est inscrit en fonction du nom de la section et non en fonction du nom du type de la liaison.|  
-|bindingConfiguration|Chaîne qui spécifie le nom de la liaison à utiliser lorsque le point de terminaison est instancié.  Le nom de liaison doit être dans la portée, au niveau où le point de terminaison est défini.  La valeur par défaut est une chaîne vide.<br /><br /> Cet attribut est utilisé conjointement à `binding` pour référencer une configuration de liaison spécifique dans le fichier de configuration.  Définissez cet attribut si vous essayez d'utiliser une liaison personnalisée.  Sinon, une exception peut être levée.|  
-|bindingName|Chaîne qui spécifie le nom qualifié unique de la liaison pour l'exportation de définition à travers WSDL.  La valeur par défaut est une chaîne vide.|  
-|bindingNamespace|Chaîne qui spécifie le nom qualifié de l'espace de noms de la liaison pour l'exportation de définition à travers WSDL.  La valeur par défaut est une chaîne vide.|  
-|contrat|Chaîne qui indique le contrat exposé par ce point de terminaison.  L'assembly doit implémenter le type de contrat.  Si une implémentation de service implémente un seul type de contrat, cette propriété peut alors être omise.  La valeur par défaut est une chaîne vide.|  
-|endpointConfiguration|Chaîne qui spécifie le nom du point de terminaison standard défini par l'attribut `kind`, qui fait référence aux informations de configuration supplémentaires de ce point de terminaison standard.  Le même nom doit être défini dans la section `<standardEndpoints>`.|  
+|liaison|Attribut de chaîne requis indiquant le type de liaison à utiliser. Ce type doit posséder une section de configuration inscrite pour pouvoir être référencé. Il est inscrit en fonction du nom de la section et non en fonction du nom du type de la liaison.|  
+|bindingConfiguration|Chaîne qui spécifie le nom de la liaison à utiliser lorsque le point de terminaison est instancié. Le nom de liaison doit être dans la portée, au niveau où le point de terminaison est défini. La valeur par défaut est une chaîne vide.<br /><br /> Cet attribut est utilisé conjointement à `binding` pour référencer une configuration de liaison spécifique dans le fichier de configuration. Définissez cet attribut si vous essayez d'utiliser une liaison personnalisée. Sinon, une exception peut être levée.|  
+|bindingName|Chaîne qui spécifie le nom qualifié unique de la liaison pour l'exportation de définition à travers WSDL. La valeur par défaut est une chaîne vide.|  
+|bindingNamespace|Chaîne qui spécifie le nom qualifié de l'espace de noms de la liaison pour l'exportation de définition à travers WSDL. La valeur par défaut est une chaîne vide.|  
+|contrat|Chaîne qui indique le contrat exposé par ce point de terminaison. L'assembly doit implémenter le type de contrat. Si une implémentation de service implémente un seul type de contrat, cette propriété peut alors être omise. La valeur par défaut est une chaîne vide.|  
+|endpointConfiguration|Chaîne qui spécifie le nom du point de terminaison standard défini par l'attribut `kind`, qui fait référence aux informations de configuration supplémentaires de ce point de terminaison standard. Le même nom doit être défini dans la section `<standardEndpoints>`.|  
 |isSystemEndpoint|Valeur booléenne qui spécifie si un point de terminaison est un point de terminaison d'infrastructure.|  
-|kind|Chaîne qui spécifie le type de point de terminaison standard appliqué.  Le type doit être inscrit dans la section `<extensions>` ou dans machine.config.  Si rien n'est spécifié, un point de terminaison de service commun est créé.|  
-|listenUriMode|Spécifie la manière dont le transport traite le `ListenUri` fourni sur lequel le service effectue son écoute.  Les valeurs valides sont les suivantes :<br /><br /> -   Explicit<br />-   Unique<br /><br /> La valeur par défaut est Explicit.|  
-|listenUri|Chaîne qui spécifie l'URI au niveau duquel le point de terminaison de service effectue son écoute.  La valeur par défaut est une chaîne vide.|  
-|name|Attribut facultatif.  Chaîne qui spécifie le nom du point de terminaison du service.  La valeur par défaut correspond à la concaténation du nom de la liaison et de celui de la description du contrat.  Les services peuvent disposer de plusieurs points de terminaison, l'attribut `name` du point de terminaison est donc différent du nom du service.|  
+|kind|Chaîne qui spécifie le type de point de terminaison standard appliqué. Le type doit être inscrit dans la section `<extensions>` ou dans machine.config. Si rien n'est spécifié, un point de terminaison de service commun est créé.|  
+|listenUriMode|Spécifie la manière dont le transport traite le `ListenUri` fourni sur lequel le service effectue son écoute. Les valeurs valides sont les suivantes :<br /><br /> -Explicite<br />-Unique<br /><br /> La valeur par défaut est Explicit.|  
+|listenUri|Chaîne qui spécifie l'URI au niveau duquel le point de terminaison de service effectue son écoute. La valeur par défaut est une chaîne vide.|  
+|name|Attribut facultatif. Chaîne qui spécifie le nom du point de terminaison du service. La valeur par défaut correspond à la concaténation du nom de la liaison et de celui de la description du contrat. Les services peuvent disposer de plusieurs points de terminaison, l'attribut `name` du point de terminaison est donc différent du nom du service.|  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<en\-têtes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Collection d'en\-têtes d'adresses.|  
-|[\<identité\>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<service\>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
+|[\<en-têtes >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Collection d'en-têtes d'adresses.|  
+|[\<identité >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
   
-## Exemple  
+### <a name="parent-elements"></a>Éléments parents  
+  
+|Élément|Description|  
+|-------------|-----------------|  
+|[\<service >](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
+  
+## <a name="example"></a>Exemple  
  Il s'agit d'un exemple de configuration de point de terminaison de service.  
   
-```  
+```xml  
 <endpoint   
     address="/HelloWorld/"  
     bindingConfiguration="usingDefaults"  
@@ -92,9 +92,9 @@ Spécifie la liaison, le contrat et les propriétés d'adresse d'un point de ter
 </endpoint>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.ServiceEndpointElement>   
- <xref:System.ServiceModel.EndpointAddress>   
- <xref:System.ServiceModel.Description.ServiceEndpoint>   
- [Points de terminaison : adresses, liaisons et contrats](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)   
- [Comment : créer un point de terminaison de service dans la configuration.](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Configuration.ServiceEndpointElement>  
+ <xref:System.ServiceModel.EndpointAddress>  
+ <xref:System.ServiceModel.Description.ServiceEndpoint>  
+ [Points de terminaison : Adresses, liaisons et contrats](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [Comment : créer un point de terminaison de Service dans la Configuration](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

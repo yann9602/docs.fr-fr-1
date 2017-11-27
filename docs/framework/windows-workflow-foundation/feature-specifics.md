@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
 ms.openlocfilehash: 1e7a223248b574e30c266c3c9ac66bf317f1d19f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] ajoute un certain nombre de fonctionnalités à Windows Workflow Foundation. Ce document décrit quelques-unes de ces nouvelles fonctionnalités et donne des détails relatifs à certains scénarios dans lesquels elles peuvent être utiles.  
@@ -353,7 +352,7 @@ ms.lasthandoff: 09/25/2017
   
     1.  Le profil par défaut est utilisé.  
   
-    2.  Ouvrez l’Observateur d’événements et activer le canal analytique dans le nœud suivant : **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows **, **Serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **activer le journal**.  
+    2.  Ouvrez l’Observateur d’événements et activer le canal analytique dans le nœud suivant : **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows** , **Serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **activer le journal**.  
   
     3.  Exécutez le service de flux de travail.  
   
@@ -373,4 +372,3 @@ ms.lasthandoff: 09/25/2017
 2.  Exemples : [persistance](../../../docs/framework/windows-workflow-foundation/samples/persistence.md)  
   
 3.  Documentation conceptuelle : [magasin d’instances de flux de travail de SQL](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).
-

@@ -1,30 +1,28 @@
 ---
-title: "Expression too complex | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID16"
-dev_langs: 
-  - "VB"
+title: Expression trop complexe
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID16
 ms.assetid: 736847d1-5e03-44c8-95e4-3ed2cef2746b
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b6ee2d6376c382e1567cf3fa1e72483712f23567
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Expression too complex
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Une expression à virgule flottante contient un trop grand nombre de sous\-expressions imbriquées.  
+# <a name="expression-too-complex"></a>Expression trop complexe
+Une expression à virgule flottante contient trop de sous-expressions imbriquées.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Morcelez l'expression en plusieurs expressions séparées afin d'empêcher l'apparition de l'erreur.  
+-   Fractionnez l’expression en plusieurs expressions distinctes que nécessaire pour éviter l’erreur.  
   
-## Voir aussi  
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

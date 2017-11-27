@@ -1,19 +1,13 @@
 ---
-title: "Guide pratique pour utiliser des TraceSource et des filtres avec des écouteurs de la trace"
+title: "Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - initializing trace listeners
 - configuration files [.NET Framework], trace listeners
@@ -27,18 +21,17 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 73a91d081a1e59995d52f3ef6927db12dd7e4599
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 4b557a9f9f462df2d1afe6d6b61871e0e9f40174
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Guide pratique pour utiliser des TraceSource et des filtres avec des écouteurs de la trace
+# <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace
 L’une des nouveautés du .NET Framework version 2.0 est un système de suivi amélioré. Le principe de base reste inchangé : les messages de suivi sont envoyés par l’intermédiaire de commutateurs aux écouteurs qui transmettent les données à un support de sortie associé. Une différence majeure de la version 2.0 est que les suivis peuvent être lancés via des instances de la classe <xref:System.Diagnostics.TraceSource>. La classe <xref:System.Diagnostics.TraceSource> est conçue pour fonctionner comme système de suivi amélioré et peut être utilisée à la place des méthodes statiques des anciennes classes de suivi <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug>. Les classes <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug> existent encore, mais l’utilisation de la classe <xref:System.Diagnostics.TraceSource> est désormais la méthode recommandée pour le suivi.  
   
  Cette rubrique décrit l’utilisation de la classe <xref:System.Diagnostics.TraceSource> associée à un fichier de configuration de l’application.  Il est déconseillé, mais néanmoins possible, d’effectuer le suivi à l’aide de <xref:System.Diagnostics.TraceSource> sans utiliser de fichier de configuration. Pour plus d’informations sur le suivi sans fichier de configuration, consultez [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).  
@@ -114,7 +107,7 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
   
 ### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a>Pour modifier le niveau auquel un écouteur écrit un message de suivi  
   
-1.  Le fichier de configuration initialise les paramètres de la source de trace lors de l'initialisation de l'application. Pour changer ces paramètres, vous devez modifier le fichier de configuration et redémarrer l’application ou actualiser l’application par programmation à l’aide de la méthode <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=fullName>. L'application peut modifier dynamiquement les propriétés définies par le fichier de configuration pour substituer des paramètres spécifiés par l'utilisateur.  Vous pouvez, par exemple, décider que les messages critiques sont toujours envoyés vers un fichier texte, quels que soient les paramètres de la configuration actuelle.  
+1.  Le fichier de configuration initialise les paramètres de la source de trace lors de l'initialisation de l'application. Pour changer ces paramètres, vous devez modifier le fichier de configuration et redémarrer l’application ou actualiser l’application par programmation à l’aide de la méthode <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType>. L'application peut modifier dynamiquement les propriétés définies par le fichier de configuration pour substituer des paramètres spécifiés par l'utilisateur.  Vous pouvez, par exemple, décider que les messages critiques sont toujours envoyés vers un fichier texte, quels que soient les paramètres de la configuration actuelle.  
   
     ```  
     using System;  
@@ -179,10 +172,9 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Diagnostics.TraceSource>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.ConsoleTraceListener>   
- <xref:System.Diagnostics.EventTypeFilter>   
- [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)   
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.ConsoleTraceListener>  
+ <xref:System.Diagnostics.EventTypeFilter>  
+ [Comment : créer et initialiser les Sources de Trace](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
  [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-
