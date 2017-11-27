@@ -1,50 +1,33 @@
 ---
-title: Instructions Q-Z | Documents Microsoft
-ms.date: 2015-07-20
+title: Instructions Q-Z
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 32a9e547-c1b7-40f2-8118-7eef1d19649e
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 046b438abc13a4072fb084c9101d4039274da4f5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f520cb24f1ebc960407c7a978f6cb79212a3aedf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="q-z-statements"></a>Instructions Q-Z
-Le tableau suivant contient une liste de [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] instructions de langage.  
+# <a name="q-z-statements"></a><span data-ttu-id="a0ef6-102">Instructions Q-Z</span><span class="sxs-lookup"><span data-stu-id="a0ef6-102">Q-Z Statements</span></span>
+<span data-ttu-id="a0ef6-103">Le tableau suivant contient une liste de [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] instructions de langage.</span><span class="sxs-lookup"><span data-stu-id="a0ef6-103">The following table contains a listing of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] language statements.</span></span>  
   
 |||||  
 |---|---|---|---|  
-|[RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)|[ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|[REM](../../../visual-basic/language-reference/statements/rem-statement.md)|[RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)|  
-|[Reprise](../../../visual-basic/language-reference/statements/resume-statement.md)|[De retour](../../../visual-basic/language-reference/statements/return-statement.md)|[Sélectionnez... Cas](../../../visual-basic/language-reference/statements/select-case-statement.md)|[Ensemble](../../../visual-basic/language-reference/statements/set-statement.md)|  
-|[Arrêter](../../../visual-basic/language-reference/statements/stop-statement.md)|[Structure](../../../visual-basic/language-reference/statements/structure-statement.md)|[Sub](../../../visual-basic/language-reference/statements/sub-statement.md)|[SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md)|  
-|[Puis](../../../visual-basic/language-reference/statements/then-statement.md)|[Throw](../../../visual-basic/language-reference/statements/throw-statement.md)|[Try... Catch... Enfin](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[À l’aide de](../../../visual-basic/language-reference/statements/using-statement.md)|  
-|[While... End](../../../visual-basic/language-reference/statements/while-end-while-statement.md)|[Avec... Se termine par](../../../visual-basic/language-reference/statements/with-end-with-statement.md)|[Rendement](../../../visual-basic/language-reference/statements/yield-statement.md)||  
+|[<span data-ttu-id="a0ef6-104">RaiseEvent</span><span class="sxs-lookup"><span data-stu-id="a0ef6-104">RaiseEvent</span></span>](../../../visual-basic/language-reference/statements/raiseevent-statement.md)|[<span data-ttu-id="a0ef6-105">ReDim</span><span class="sxs-lookup"><span data-stu-id="a0ef6-105">ReDim</span></span>](../../../visual-basic/language-reference/statements/redim-statement.md)|[<span data-ttu-id="a0ef6-106">REM</span><span class="sxs-lookup"><span data-stu-id="a0ef6-106">REM</span></span>](../../../visual-basic/language-reference/statements/rem-statement.md)|[<span data-ttu-id="a0ef6-107">RemoveHandler</span><span class="sxs-lookup"><span data-stu-id="a0ef6-107">RemoveHandler</span></span>](../../../visual-basic/language-reference/statements/removehandler-statement.md)|  
+|[<span data-ttu-id="a0ef6-108">Resume</span><span class="sxs-lookup"><span data-stu-id="a0ef6-108">Resume</span></span>](../../../visual-basic/language-reference/statements/resume-statement.md)|[<span data-ttu-id="a0ef6-109">Return</span><span class="sxs-lookup"><span data-stu-id="a0ef6-109">Return</span></span>](../../../visual-basic/language-reference/statements/return-statement.md)|[<span data-ttu-id="a0ef6-110">Sélectionnez... Cas</span><span class="sxs-lookup"><span data-stu-id="a0ef6-110">Select...Case</span></span>](../../../visual-basic/language-reference/statements/select-case-statement.md)|[<span data-ttu-id="a0ef6-111">Set</span><span class="sxs-lookup"><span data-stu-id="a0ef6-111">Set</span></span>](../../../visual-basic/language-reference/statements/set-statement.md)|  
+|[<span data-ttu-id="a0ef6-112">Stop</span><span class="sxs-lookup"><span data-stu-id="a0ef6-112">Stop</span></span>](../../../visual-basic/language-reference/statements/stop-statement.md)|[<span data-ttu-id="a0ef6-113">Structure</span><span class="sxs-lookup"><span data-stu-id="a0ef6-113">Structure</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)|[<span data-ttu-id="a0ef6-114">Sub</span><span class="sxs-lookup"><span data-stu-id="a0ef6-114">Sub</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)|[<span data-ttu-id="a0ef6-115">SyncLock</span><span class="sxs-lookup"><span data-stu-id="a0ef6-115">SyncLock</span></span>](../../../visual-basic/language-reference/statements/synclock-statement.md)|  
+|[<span data-ttu-id="a0ef6-116">Then</span><span class="sxs-lookup"><span data-stu-id="a0ef6-116">Then</span></span>](../../../visual-basic/language-reference/statements/then-statement.md)|[<span data-ttu-id="a0ef6-117">Throw</span><span class="sxs-lookup"><span data-stu-id="a0ef6-117">Throw</span></span>](../../../visual-basic/language-reference/statements/throw-statement.md)|[<span data-ttu-id="a0ef6-118">Try... Catch... Enfin</span><span class="sxs-lookup"><span data-stu-id="a0ef6-118">Try...Catch...Finally</span></span>](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|[<span data-ttu-id="a0ef6-119">Using</span><span class="sxs-lookup"><span data-stu-id="a0ef6-119">Using</span></span>](../../../visual-basic/language-reference/statements/using-statement.md)|  
+|[<span data-ttu-id="a0ef6-120">While... End</span><span class="sxs-lookup"><span data-stu-id="a0ef6-120">While...End While</span></span>](../../../visual-basic/language-reference/statements/while-end-while-statement.md)|[<span data-ttu-id="a0ef6-121">Avec... Se termine par</span><span class="sxs-lookup"><span data-stu-id="a0ef6-121">With...End With</span></span>](../../../visual-basic/language-reference/statements/with-end-with-statement.md)|[<span data-ttu-id="a0ef6-122">Yield</span><span class="sxs-lookup"><span data-stu-id="a0ef6-122">Yield</span></span>](../../../visual-basic/language-reference/statements/yield-statement.md)||  
   
-## <a name="see-also"></a>Voir aussi  
- [Instructions A-E](../../../visual-basic/language-reference/statements/a-e-statements.md)   
- [Instructions F-P](../../../visual-basic/language-reference/statements/f-p-statements.md)   
- [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="a0ef6-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0ef6-123">See Also</span></span>  
+ [<span data-ttu-id="a0ef6-124">Instructions A-E</span><span class="sxs-lookup"><span data-stu-id="a0ef6-124">A-E Statements</span></span>](../../../visual-basic/language-reference/statements/a-e-statements.md)  
+ [<span data-ttu-id="a0ef6-125">Instructions F-P</span><span class="sxs-lookup"><span data-stu-id="a0ef6-125">F-P Statements</span></span>](../../../visual-basic/language-reference/statements/f-p-statements.md)  
+ [<span data-ttu-id="a0ef6-126">Informations de référence sur le langage Visual Basic</span><span class="sxs-lookup"><span data-stu-id="a0ef6-126">Visual Basic Language Reference</span></span>](../../../visual-basic/language-reference/index.md)

@@ -1,61 +1,65 @@
 ---
-title: "Comment&#160;: personnaliser la mise en forme des donn&#233;es dans le contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "cellules, afficher les couleurs dans le contrôle DataGridView (Windows Forms)"
-  - "couleurs, afficher dans le contrôle DataGridView (Windows Forms)"
-  - "données (Windows Forms), mettre en forme dans le contrôle DataGridView"
-  - "grilles de données, mettre en forme des données"
-  - "DataGridView (contrôle Windows Forms), personnalisation des cellules"
-  - "DataGridView (contrôle Windows Forms), styles de cellules"
-  - "DataGridView (contrôle Windows Forms), modifier les couleurs des cellules"
-  - "DataGridView (contrôle Windows Forms), mettre en forme des données"
-  - "DataGridView (contrôle Windows Forms), substituer les valeurs des cellules pour l'affichage"
-  - "Windows Forms, modifier les couleurs des cellules DataGridView"
+title: "Comment : personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGridView control [Windows Forms], formatting data
+- DataGridView control [Windows Forms], cell styles
+- cells [Windows Forms], changing colors in DataGridView control [Windows Forms]
+- colors [Windows Forms], changing in DataGridView control [Windows Forms]
+- data [Windows Forms], formatting in DataGridView control
+- DataGridView control [Windows Forms], cell customization
+- DataGridView control [Windows Forms], changing cell colors
+- Windows Forms, changing colors of DataGridView cells
+- DataGridView control [Windows Forms], substituting cell values for display
+- data grids [Windows Forms], formatting data
 ms.assetid: a6e72c70-ce18-425f-828d-d57be6f96ab6
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 506b719a24d06ac7b5313039a38ed2ebe61ea62c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: personnaliser la mise en forme des donn&#233;es dans le contr&#244;le DataGridView Windows Forms
-L'exemple de code suivant montre comment implémenter un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=fullName> qui modifie le mode d'affichage des cellules en fonction de leurs colonnes et de leurs valeurs.  
+# <a name="how-to-customize-data-formatting-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="4c4b4-102">Comment : personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c4b4-102">How to: Customize Data Formatting in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="4c4b4-103">L'exemple de code suivant montre comment implémenter un gestionnaire pour l'événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> qui modifie le mode d'affichage des cellules en fonction de leurs colonnes et de leurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-103">The following code example demonstrates how to implement a handler for the <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> event that changes how cells are displayed depending on their columns and values.</span></span>  
   
- Les cellules de la colonne `Balance` qui contiennent des nombres négatifs ont un arrière\-plan rouge.  Vous pouvez également appliquer la mise en forme « Monnaie » à ces cellules pour afficher les valeurs négatives entre parenthèses.  Pour plus d'informations, consultez [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).  
+ <span data-ttu-id="4c4b4-104">Les cellules de la colonne `Balance` qui contiennent des nombres négatifs ont un arrière-plan rouge.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-104">Cells in the `Balance` column that contain negative numbers are given a red background.</span></span> <span data-ttu-id="4c4b4-105">Vous pouvez également appliquer la mise en forme « Monnaie » à ces cellules pour afficher les valeurs négatives entre parenthèses.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-105">You can also format these cells as currency to display parentheses around negative values.</span></span> <span data-ttu-id="4c4b4-106">Pour plus d’informations, consultez [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).</span><span class="sxs-lookup"><span data-stu-id="4c4b4-106">For more information, see [How to: Format Data in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).</span></span>  
   
- Les cellules de la colonne `Priority` affichent des images au lieu des valeurs de cellules textuelles correspondantes.  La propriété <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> de <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> sert à obtenir la valeur de la cellule textuelle et à définir la valeur d'affichage d'image correspondante.  
+ <span data-ttu-id="4c4b4-107">Les cellules de la colonne `Priority` affichent des images au lieu des valeurs de cellules textuelles correspondantes.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-107">Cells in the `Priority` column display images in place of corresponding textual cell values.</span></span> <span data-ttu-id="4c4b4-108">La propriété <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> de <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> sert à obtenir la valeur de la cellule textuelle et à définir la valeur d'affichage d'image correspondante.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-108">The <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> property of the <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> is used both to get the textual cell value and to set the corresponding image display value.</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="4c4b4-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="4c4b4-109">Example</span></span>  
  [!code-csharp[System.Windows.Forms.DataGridViewCustomizeDataFormatting#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCustomizeDataFormatting/cs/customFormatting.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewCustomizeDataFormatting#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCustomizeDataFormatting/vb/customFormatting.vb#00)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="4c4b4-110">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="4c4b4-110">Compiling the Code</span></span>  
+ <span data-ttu-id="4c4b4-111">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="4c4b4-111">This example requires:</span></span>  
   
--   des références aux assemblys System, System.Drawing et System.Windows.Forms ;  
+-   <span data-ttu-id="4c4b4-112">des références aux assemblys System, System.Drawing et System.Windows.Forms ;</span><span class="sxs-lookup"><span data-stu-id="4c4b4-112">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
   
--   des images <xref:System.Drawing.Bitmap> nommées `highPri.bmp`, `mediumPri.bmp` et `lowPri.bmp` résidant dans le même répertoire que le fichier exécutable.  
+-   <span data-ttu-id="4c4b4-113">des images <xref:System.Drawing.Bitmap> nommées `highPri.bmp`, `mediumPri.bmp` et `lowPri.bmp` résidant dans le même répertoire que le fichier exécutable.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-113"><xref:System.Drawing.Bitmap> images named `highPri.bmp`, `mediumPri.bmp`, and `lowPri.bmp` residing in the same directory as the executable file.</span></span>  
   
- Pour plus d'informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md) ou [Génération à partir de la ligne de commande avec csc.exe](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.  Consultez également [Comment : compiler et exécuter un exemple complet de code Windows Forms à l'aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228%20\(v=vs.110\)).  
+ <span data-ttu-id="4c4b4-114">Pour plus d’informations sur la création de cet exemple à partir de la ligne de commande pour [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] ou [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], consultez [Génération à partir de la ligne de commande](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) ou [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="4c4b4-114">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="4c4b4-115">Vous pouvez également générer cet exemple dans [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] en collant le code dans un nouveau projet.</span><span class="sxs-lookup"><span data-stu-id="4c4b4-115">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="4c4b4-116">Consultez également [Guide pratique pour compiler et exécuter un exemple complet de code Windows Forms à l’aide de Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="4c4b4-116">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewBand.DefaultCellStyle%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridViewCellStyle>   
- <xref:System.Drawing.Bitmap>   
- [Affichage des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)   
- [Comment : mettre en forme des données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)   
- [Styles de cellules dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)   
- [Mise en forme de données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/data-formatting-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="4c4b4-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4c4b4-117">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewBand.DefaultCellStyle%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridViewCellStyle>  
+ <xref:System.Drawing.Bitmap>  
+ [<span data-ttu-id="4c4b4-118">Affichage des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c4b4-118">Displaying Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="4c4b4-119">Guide pratique pour mettre en forme des données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c4b4-119">How to: Format Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="4c4b4-120">Styles de cellules dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c4b4-120">Cell Styles in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="4c4b4-121">Mise en forme de données dans le contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c4b4-121">Data Formatting in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-formatting-in-the-windows-forms-datagridview-control.md)

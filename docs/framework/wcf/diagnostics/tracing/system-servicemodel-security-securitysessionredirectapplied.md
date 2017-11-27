@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Security.SecuritySessionRedirectApplied | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Security.SecuritySessionRedirectApplied
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b22736bc-61a3-47c7-8c13-e02e9f6848ef
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 8e16107cd2a342b10684d09edfa85ef561d200ca
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Security.SecuritySessionRedirectApplied
-System.ServiceModel.Security.SecuritySessionRedirectApplied  
+# <a name="systemservicemodelsecuritysecuritysessionredirectapplied"></a><span data-ttu-id="0d693-102">System.ServiceModel.Security.SecuritySessionRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="0d693-102">System.ServiceModel.Security.SecuritySessionRedirectApplied</span></span>
+<span data-ttu-id="0d693-103">System.ServiceModel.Security.SecuritySessionRedirectApplied</span><span class="sxs-lookup"><span data-stu-id="0d693-103">System.ServiceModel.Security.SecuritySessionRedirectApplied</span></span>  
   
-## Description  
- La session de sécurité du client a été redirigée.  
+## <a name="description"></a><span data-ttu-id="0d693-104">Description</span><span class="sxs-lookup"><span data-stu-id="0d693-104">Description</span></span>  
+ <span data-ttu-id="0d693-105">La session de sécurité du client a été redirigée.</span><span class="sxs-lookup"><span data-stu-id="0d693-105">The client security session was redirected.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="0d693-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0d693-106">See Also</span></span>  
+ [<span data-ttu-id="0d693-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="0d693-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="0d693-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="0d693-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="0d693-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="0d693-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

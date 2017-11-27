@@ -1,56 +1,62 @@
 ---
-title: "Comment&#160;: emprunter l&#39;identit&#233; d&#39;un client sur un service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF, emprunt d’identité"
-  - "emprunt d'identité"
-  - "WCF, sécurité"
+title: "Comment : emprunter l'identité d'un client sur un service"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF, impersonation
+- impersonation
+- WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
-caps.latest.revision: 33
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 33
+caps.latest.revision: "33"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7e6140e7d66ecdd905c0595cb813752d4e0a870d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: emprunter l&#39;identit&#233; d&#39;un client sur un service
-Emprunter l'identité d'un client sur un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] permet au service d'exécuter des actions au nom du client. Pour les actions soumises à la vérification de la liste de contrôle d'accès \(ACL\), telles que l'accès aux répertoires et aux fichiers sur un ordinateur ou l'accès à une base de données SQL Server, la vérification de la liste ACL est effectuée en fonction du compte d'utilisateur client. Cette rubrique décrit les étapes de base requises pour permettre à un client dans un domaine Windows de définir un niveau d'emprunt de l'identité du client. Pour obtenir un exemple fonctionnel, consultez [Emprunt de l'identité du client](../../../docs/framework/wcf/samples/impersonating-the-client.md).[!INCLUDE[crabout](../../../includes/crabout-md.md)] l’emprunt d’identité du client, consultez [Délégation et emprunt d'identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+# <a name="how-to-impersonate-a-client-on-a-service"></a><span data-ttu-id="2ee9d-102">Comment : emprunter l'identité d'un client sur un service</span><span class="sxs-lookup"><span data-stu-id="2ee9d-102">How to: Impersonate a Client on a Service</span></span>
+<span data-ttu-id="2ee9d-103">Emprunter l'identité d'un client sur un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] permet au service d'exécuter des actions au nom du client.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-103">Impersonating a client on a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service enables the service to perform actions on behalf of the client.</span></span> <span data-ttu-id="2ee9d-104">Pour les actions soumises à la vérification de la liste de contrôle d'accès (ACL), telles que l'accès aux répertoires et aux fichiers sur un ordinateur ou l'accès à une base de données SQL Server, la vérification de la liste ACL est effectuée en fonction du compte d'utilisateur client.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-104">For actions subject to access control list (ACL) checks, such as access to directories and files on a machine or access to a SQL Server database, the ACL check is against the client user account.</span></span> <span data-ttu-id="2ee9d-105">Cette rubrique décrit les étapes de base requises pour permettre à un client dans un domaine Windows de définir un niveau d'emprunt de l'identité du client.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-105">This topic shows the basic steps required to enable a client in a Windows domain to set a client impersonation level.</span></span> <span data-ttu-id="2ee9d-106">Pour obtenir un exemple fonctionnel, consultez [Impersonating the Client](../../../docs/framework/wcf/samples/impersonating-the-client.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-106">For a working example of this, see [Impersonating the Client](../../../docs/framework/wcf/samples/impersonating-the-client.md).</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="2ee9d-107">emprunt d’identité du client, consultez [délégation et emprunt d’identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-107"> client impersonation, see [Delegation and Impersonation](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).</span></span>  
   
 > [!NOTE]
->  Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système \(c'est\-à\-dire `Local System` ou `Network Service`\), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état. Une application WinForms ou console s'exécute en général sous le compte actuellement connecté, afin que le l'emprunt d'identité du compte puisse être effectué par défaut. Toutefois, lorsque le client est une page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] et que celle\-ci est hébergée dans [!INCLUDE[iis601](../../../includes/iis601-md.md)] ou IIS 7.0, le client ne s'exécute pas par défaut sous le compte `Network Service`. Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état. Toutefois, si le client est une page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], et que des sessions sécurisées avec jetons de contexte de sécurité avec état sont utilisées, l'emprunt de l'identité du client est impossible.[!INCLUDE[crabout](../../../includes/crabout-md.md)] l’utilisation de jetons de contexte de sécurité avec état dans une session sécurisée, consultez [Procédure : créer un jeton de contexte de sécurité pour une session sécurisée](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  <span data-ttu-id="2ee9d-108">Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système (c'est-à-dire `Local System` ou `Network Service`), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-108">When the client and service are running on the same computer and the client is running under a system account (that is, `Local System` or `Network Service`), the client cannot be impersonated when a secure session is established with stateful Security Context tokens.</span></span> <span data-ttu-id="2ee9d-109">Une application WinForms ou console s'exécute en général sous le compte actuellement connecté, afin que le l'emprunt d'identité du compte puisse être effectué par défaut.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-109">A WinForms or console application typically is run under the currently logged in account, so that account can be impersonated by default.</span></span> <span data-ttu-id="2ee9d-110">Toutefois, lorsque le client est une page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] et que celle-ci est hébergée dans [!INCLUDE[iis601](../../../includes/iis601-md.md)] ou IIS 7.0, le client ne s'exécute pas par défaut sous le compte `Network Service` .</span><span class="sxs-lookup"><span data-stu-id="2ee9d-110">However, when the client is an [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] page and that page is hosted in [!INCLUDE[iis601](../../../includes/iis601-md.md)] or IIS 7.0, then the client does run under the `Network Service` account by default.</span></span> <span data-ttu-id="2ee9d-111">Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-111">All of the system-provided bindings that support secure sessions use a stateless Security Context token by default.</span></span> <span data-ttu-id="2ee9d-112">Toutefois, si le client est une page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] , et que des sessions sécurisées avec jetons de contexte de sécurité avec état sont utilisées, l'emprunt de l'identité du client est impossible.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-112">However, if the client is an [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] page and secure sessions with stateful Security Context tokens are used, the client cannot be impersonated.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="2ee9d-113">l’utilisation de jetons de contexte de sécurité avec état dans une session sécurisée, consultez [Comment : créer un jeton de contexte de sécurité pour une Session sécurisée](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-113"> using stateful Security Context tokens in a secure session, see [How to: Create a Security Context Token for a Secure Session](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).</span></span>  
   
-### Pour activer l'emprunt de l'identité d'un client depuis un jeton Windows mis en cache sur un service  
+### <a name="to-enable-impersonation-of-a-client-from-a-cached-windows-token-on-a-service"></a><span data-ttu-id="2ee9d-114">Pour activer l'emprunt de l'identité d'un client depuis un jeton Windows mis en cache sur un service</span><span class="sxs-lookup"><span data-stu-id="2ee9d-114">To enable impersonation of a client from a cached Windows token on a service</span></span>  
   
-1.  Créez le service. Pour obtenir un didacticiel sur cette procédure de base, consultez [Didacticiel de mise en route](../../../docs/framework/wcf/getting-started-tutorial.md).  
+1.  <span data-ttu-id="2ee9d-115">Créez le service.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-115">Create the service.</span></span> <span data-ttu-id="2ee9d-116">Pour obtenir un didacticiel sur cette procédure de base, consultez [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-116">For a tutorial of this basic procedure, see [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md).</span></span>  
   
-2.  Utilisez une liaison qui fait appel à l'authentification Windows et crée une session, telle que <xref:System.ServiceModel.NetTcpBinding> ou <xref:System.ServiceModel.WSHttpBinding>.  
+2.  <span data-ttu-id="2ee9d-117">Utilisez une liaison qui fait appel à l'authentification Windows et crée une session, telle que <xref:System.ServiceModel.NetTcpBinding> ou <xref:System.ServiceModel.WSHttpBinding>.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-117">Use a binding that uses Windows authentication and creates a session, such as <xref:System.ServiceModel.NetTcpBinding> or <xref:System.ServiceModel.WSHttpBinding>.</span></span>  
   
-3.  Lorsque vous créez l'implémentation de l'interface du service, appliquez la classe <xref:System.ServiceModel.OperationBehaviorAttribute> à la méthode qui requiert l'emprunt de l'identité du client. Affectez à la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> la valeur <xref:System.ServiceModel.ImpersonationOption>.  
+3.  <span data-ttu-id="2ee9d-118">Lorsque vous créez l'implémentation de l'interface du service, appliquez la classe <xref:System.ServiceModel.OperationBehaviorAttribute> à la méthode qui requiert l'emprunt de l'identité du client.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-118">When creating the implementation of the service's interface, apply the <xref:System.ServiceModel.OperationBehaviorAttribute> class to the method that requires client impersonation.</span></span> <span data-ttu-id="2ee9d-119">Affectez à la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> la valeur <xref:System.ServiceModel.ImpersonationOption.Required>.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-119">Set the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> property to <xref:System.ServiceModel.ImpersonationOption.Required>.</span></span>  
   
      [!code-csharp[c_SimpleImpersonation#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_simpleimpersonation/cs/source.cs#2)]
      [!code-vb[c_SimpleImpersonation#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#2)]  
   
-### Pour définir le niveau d'emprunt d'identité autorisé sur le client  
+### <a name="to-set-the-allowed-impersonation-level-on-the-client"></a><span data-ttu-id="2ee9d-120">Pour définir le niveau d'emprunt d'identité autorisé sur le client</span><span class="sxs-lookup"><span data-stu-id="2ee9d-120">To set the allowed impersonation level on the client</span></span>  
   
-1.  Créez le code client du service à l’aide de [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Accès aux services à l'aide d'un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).  
+1.  <span data-ttu-id="2ee9d-121">Créez le code client du service à l’aide de [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-121">Create service client code by using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="2ee9d-122">[L’accès aux Services à l’aide d’un Client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-122"> [Accessing Services Using a WCF Client](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).</span></span>  
   
-2.  Après avoir créé le client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> de la classe <xref:System.ServiceModel.Security.WindowsClientCredential> l'une des valeurs d'énumération <xref:System.Security.Principal.TokenImpersonationLevel>.  
+2.  <span data-ttu-id="2ee9d-123">Après avoir créé le client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] , affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> de la classe <xref:System.ServiceModel.Security.WindowsClientCredential> l'une des valeurs d'énumération <xref:System.Security.Principal.TokenImpersonationLevel> .</span><span class="sxs-lookup"><span data-stu-id="2ee9d-123">After creating the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] client, set the <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> property of the <xref:System.ServiceModel.Security.WindowsClientCredential> class to one of the <xref:System.Security.Principal.TokenImpersonationLevel> enumeration values.</span></span>  
   
     > [!NOTE]
-    >  Pour utiliser <xref:System.Security.Principal.TokenImpersonationLevel>, l'authentification Kerberos négociée \(parfois appelée Kerberos *multi\-leg* ou *multi\-step*\) doit être utilisée. Pour savoir comment procéder, consultez [Meilleures pratiques pour la sécurité](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
+    >  <span data-ttu-id="2ee9d-124">Pour utiliser <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, l'authentification Kerberos négociée (parfois appelée Kerberos *multi-leg* ou *multi-step* ) doit être utilisée.</span><span class="sxs-lookup"><span data-stu-id="2ee9d-124">To use <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, negotiated Kerberos authentication (sometimes called *multi-leg* or *multi-step* Kerberos) must be used.</span></span> <span data-ttu-id="2ee9d-125">Pour obtenir une description de cette implémentation, consultez [meilleures pratiques pour la sécurité](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).</span><span class="sxs-lookup"><span data-stu-id="2ee9d-125">For a description of how to implement this, see [Best Practices for Security](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).</span></span>  
   
      [!code-csharp[c_SimpleImpersonation#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_simpleimpersonation/cs/source.cs#1)]
      [!code-vb[c_SimpleImpersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#1)]  
   
-## Voir aussi  
- <xref:System.ServiceModel.OperationBehaviorAttribute>   
- <xref:System.Security.Principal.TokenImpersonationLevel>   
- [Emprunt de l'identité du client](../../../docs/framework/wcf/samples/impersonating-the-client.md)   
- [Délégation et emprunt d'identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
+## <a name="see-also"></a><span data-ttu-id="2ee9d-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2ee9d-126">See Also</span></span>  
+ <xref:System.ServiceModel.OperationBehaviorAttribute>  
+ <xref:System.Security.Principal.TokenImpersonationLevel>  
+ [<span data-ttu-id="2ee9d-127">L’emprunt d’identité du Client</span><span class="sxs-lookup"><span data-stu-id="2ee9d-127">Impersonating the Client</span></span>](../../../docs/framework/wcf/samples/impersonating-the-client.md)  
+ [<span data-ttu-id="2ee9d-128">Délégation et emprunt d’identité</span><span class="sxs-lookup"><span data-stu-id="2ee9d-128">Delegation and Impersonation</span></span>](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

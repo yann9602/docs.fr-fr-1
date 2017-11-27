@@ -1,144 +1,146 @@
 ---
-title: "Mod&#232;les d&#39;&#233;v&#233;nement faible | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "gestionnaires d'événements, modèle d'événement faible"
-  - "IWeakEventListener (interface)"
-  - "implémentation de modèle d'événement faible"
-  - "WeakEventManager (classe)"
+title: "Modèles d'événement faible"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- weak event pattern implementation [WPF]
+- event handlers [WPF], weak event pattern
+- IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a27e17e4940ff68f34d1e7e4accfb9e112bc412b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mod&#232;les d&#39;&#233;v&#233;nement faible
-Il est possible que les gestionnaires attachés à des sources d'événement dans les applications ne soient pas détruits en coordination avec l'objet écouteur qui a attaché le gestionnaire à la source.  Cette situation peut entraîner des fuites de mémoire.  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] introduit un modèle de conception qui permet de traiter ce problème en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de ces événements.  Ce modèle de conception est appelé *modèle d'événement faible*.  
+# <a name="weak-event-patterns"></a><span data-ttu-id="38102-102">Modèles d'événement faible</span><span class="sxs-lookup"><span data-stu-id="38102-102">Weak Event Patterns</span></span>
+<span data-ttu-id="38102-103">Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne sont pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source.</span><span class="sxs-lookup"><span data-stu-id="38102-103">In applications, it is possible that handlers that are attached to event sources will not be destroyed in coordination with the listener object that attached the handler to the source.</span></span> <span data-ttu-id="38102-104">Cette situation peut conduire à des fuites de mémoire.</span><span class="sxs-lookup"><span data-stu-id="38102-104">This situation can lead to memory leaks.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="38102-105">introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement.</span><span class="sxs-lookup"><span data-stu-id="38102-105"> introduces a design pattern that can be used to address this issue, by providing a dedicated manager class for particular events and implementing an interface on listeners for that event.</span></span> <span data-ttu-id="38102-106">Ce modèle de conception est appelé le *du modèle d’événement faible*.</span><span class="sxs-lookup"><span data-stu-id="38102-106">This design pattern is known as the *weak event pattern*.</span></span>  
   
-## Pourquoi implémenter le modèle d'événement faible ?  
- L'écoute des événements peut générer des fuites de mémoire.  La technique standard pour écouter un événement consiste à utiliser la syntaxe du langage qui attache un gestionnaire à un événement d'une source.  Par exemple, en [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)], cette syntaxe est `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
+## <a name="why-implement-the-weak-event-pattern"></a><span data-ttu-id="38102-107">Pourquoi implémenter le modèle d’événement faible ?</span><span class="sxs-lookup"><span data-stu-id="38102-107">Why Implement the Weak Event Pattern?</span></span>  
+ <span data-ttu-id="38102-108">L’écoute des événements peut provoquer des fuites de mémoire.</span><span class="sxs-lookup"><span data-stu-id="38102-108">Listening for events can lead to memory leaks.</span></span> <span data-ttu-id="38102-109">La technique standard pour écouter un événement est d’utiliser la syntaxe spécifique au langage qui attache un gestionnaire à un événement sur une source.</span><span class="sxs-lookup"><span data-stu-id="38102-109">The typical technique for listening to an event is to use the language-specific syntax that attaches a handler to an event on a source.</span></span> <span data-ttu-id="38102-110">Par exemple, dans [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)], que la syntaxe est : `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.</span><span class="sxs-lookup"><span data-stu-id="38102-110">For example, in [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)], that syntax is: `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.</span></span>  
   
- Cette technique crée une référence forte entre la source d'événement et l'écouteur d'événement.  En général, lorsque vous attachez un gestionnaire d'événements pour un écouteur, la durée de vie d'objet de l'écouteur est influencée par celle de la source \(à moins que le gestionnaire d'événement ne soit explicitement supprimé\).  Toutefois, dans certains cas, il peut s'avérer utile de contrôler la durée de vie d'objet de l'écouteur par des facteurs tels que son appartenance actuelle à l'arborescence d'éléments visuels de l'application, et non pas par la durée de vie de la source.  Chaque fois que la durée de vie d'objet de la source est plus longue que celle de l'écouteur, le modèle d'événement normal génère une fuite de mémoire ; l'écouteur reste actif plus longtemps que prévu.  
+ <span data-ttu-id="38102-111">Cette technique crée une référence forte à partir de la source d’événements à l’écouteur d’événements.</span><span class="sxs-lookup"><span data-stu-id="38102-111">This technique creates a strong reference from the event source to the event listener.</span></span> <span data-ttu-id="38102-112">En règle générale, attachement d’un gestionnaire d’événements pour un écouteur de provoque l’écouteur ont une durée de vie est influencée par la durée de vie de la source (sauf si le Gestionnaire d’événements est supprimé explicitement).</span><span class="sxs-lookup"><span data-stu-id="38102-112">Ordinarily, attaching an event handler for a listener causes the listener to have an object lifetime that is influenced by the object lifetime of the source (unless the event handler is explicitly removed).</span></span> <span data-ttu-id="38102-113">Toutefois, dans certaines circonstances, vous pouvez la durée de vie de l’écouteur à être contrôlés par d’autres facteurs, tels que si elle appartient actuellement à l’arborescence d’éléments visuels de l’application et non par la durée de vie de la source.</span><span class="sxs-lookup"><span data-stu-id="38102-113">But in certain circumstances, you might want the object lifetime of the listener to be controlled by other factors, such as whether it currently belongs to the visual tree of the application, and not by the lifetime of the source.</span></span> <span data-ttu-id="38102-114">Chaque fois que la durée de vie source s’étend au-delà de la durée de vie de l’écouteur, le modèle d’événement normal entraîne une fuite de mémoire : l’écouteur est maintenue actif plus longtemps que prévu.</span><span class="sxs-lookup"><span data-stu-id="38102-114">Whenever the source object lifetime extends beyond the object lifetime of the listener, the normal event pattern leads to a memory leak: the listener is kept alive longer than intended.</span></span>  
   
- Le modèle d'événement faible est conçu pour résoudre ce problème de fuite de mémoire.  Il peut être utilisé chaque fois qu'un écouteur doit s'inscrire pour un événement et qu'il ne sait pas explicitement quand l'inscription doit être annulée.  Il peut également être employé chaque fois que la durée de vie d'objet de la source dépasse la durée de vie d'objet utile de l'écouteur.  \(Dans ce cas, c'est vous qui déterminez la notion d'*utilité*.\) Le modèle d'événement faible permet à l'écouteur de s'inscrire pour l'événement et de le recevoir sans affecter, de quelque manière que ce soit, les caractéristiques de durée de vie d'objet de l'écouteur.  En fait, la référence implicite de la source ne détermine pas si l'écouteur est disponible pour le garbage collection.  La référence est une référence faible, d'où le nom donné au modèle et aux [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] associées.  L'écouteur peut être récupéré par le garbage collector ou détruit, et la source peut continuer sans conserver des références de gestionnaire non\-collectable à un objet détruit.  
+ <span data-ttu-id="38102-115">Le modèle d’événement faible est conçu pour résoudre ce problème de fuite de mémoire.</span><span class="sxs-lookup"><span data-stu-id="38102-115">The weak event pattern is designed to solve this memory leak problem.</span></span> <span data-ttu-id="38102-116">Le modèle d’événement faible peut être utilisé chaque fois qu’un écouteur doit s’inscrire pour un événement, mais l’écouteur ne sait pas explicitement quand annuler l’inscription.</span><span class="sxs-lookup"><span data-stu-id="38102-116">The weak event pattern can be used whenever a listener needs to register for an event, but the listener does not explicitly know when to unregister.</span></span> <span data-ttu-id="38102-117">Le modèle d’événement faible peut également servir à chaque fois que la durée de vie de la source dépasse la durée de vie utile de l’écouteur.</span><span class="sxs-lookup"><span data-stu-id="38102-117">The weak event pattern can also be used whenever the object lifetime of the source exceeds the useful object lifetime of the listener.</span></span> <span data-ttu-id="38102-118">(Dans ce cas, *utile* est déterminée par vous.) Le modèle d’événement faible permet à l’écouteur à inscrire et recevoir l’événement sans affecter les caractéristiques de durée de vie d’objet de l’écouteur en aucune façon.</span><span class="sxs-lookup"><span data-stu-id="38102-118">(In this case, *useful* is determined by you.) The weak event pattern allows the listener to register for and receive the event without affecting the object lifetime characteristics of the listener in any way.</span></span> <span data-ttu-id="38102-119">En effet, la référence implicite à partir de la source ne détermine pas si l’écouteur est éligible pour le garbage collection.</span><span class="sxs-lookup"><span data-stu-id="38102-119">In effect, the implied reference from the source does not determine whether the listener is eligible for garbage collection.</span></span> <span data-ttu-id="38102-120">La référence est une référence faible, d'où le nom de modèle d’événement faible et le [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="38102-120">The reference is a weak reference, thus the naming of the weak event pattern and the related [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)].</span></span> <span data-ttu-id="38102-121">L’écouteur peut être le garbage collector ou détruit, et la source peut continuer sans conservation des références de gestionnaire non-collectable à un objet détruit.</span><span class="sxs-lookup"><span data-stu-id="38102-121">The listener can be garbage collected or otherwise destroyed, and the source can continue without retaining noncollectible handler references to a now destroyed object.</span></span>  
   
-## Qui doit implémenter le modèle d'événement faible ?  
- L'implémentation du modèle d'événement faible concerne principalement les auteurs de contrôle.  En tant qu'auteur de contrôle, vous êtes principalement responsable du comportement et de la relation contenant\-contenu de votre contrôle, ainsi que de son impact sur les applications dans lesquelles il est inséré.  Cela inclut le comportement de durée de vie d'objet du contrôle, et notamment la gestion du problème de fuite de mémoire décrit.  
+## <a name="who-should-implement-the-weak-event-pattern"></a><span data-ttu-id="38102-122">Qui doit implémenter le modèle d’événement faible ?</span><span class="sxs-lookup"><span data-stu-id="38102-122">Who Should Implement the Weak Event Pattern?</span></span>  
+ <span data-ttu-id="38102-123">Il est intéressant principalement pour les auteurs de contrôle de l’implémentation du modèle d’événement faible.</span><span class="sxs-lookup"><span data-stu-id="38102-123">Implementing the weak event pattern is interesting primarily for control authors.</span></span> <span data-ttu-id="38102-124">En tant qu’auteur de contrôle, vous devez en grande partie le comportement et la relation contenant-contenu de votre contrôle et l’impact sur les applications dans lequel elle est insérée.</span><span class="sxs-lookup"><span data-stu-id="38102-124">As a control author, you are largely responsible for the behavior and containment of your control and the impact it has on applications in which it is inserted.</span></span> <span data-ttu-id="38102-125">Cela inclut le comportement de durée de vie l’objet contrôle, notamment la gestion du problème de fuite de mémoire décrit.</span><span class="sxs-lookup"><span data-stu-id="38102-125">This includes the control object lifetime behavior, in particular the handling of the described memory leak problem.</span></span>  
   
- Certains scénarios se prêtent par nature à l'application du modèle d'événement faible.  La liaison de données fait partie de ces scénarios.  Dans une liaison de données, l'objet source est en général complètement indépendant de l'objet écouteur, qui est une cible de la liaison.  Le modèle d'événement faible s'applique déjà à nombreux aspects de la liaison de données [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] quant la façon dont les événements sont implémentés.  
+ <span data-ttu-id="38102-126">Certains scénarios, par nature, se prêtent à l’application du modèle d’événement faible.</span><span class="sxs-lookup"><span data-stu-id="38102-126">Certain scenarios inherently lend themselves to the application of the weak event pattern.</span></span> <span data-ttu-id="38102-127">Un tel scénario est la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="38102-127">One such scenario is data binding.</span></span> <span data-ttu-id="38102-128">Dans la liaison de données, il est courant de l’objet source soit complètement indépendante de l’objet de l’écouteur, qui est une cible d’une liaison.</span><span class="sxs-lookup"><span data-stu-id="38102-128">In data binding, it is common for the source object to be completely independent of the listener object, which is a target of a binding.</span></span> <span data-ttu-id="38102-129">Nombreux aspects de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] déjà une liaison de données ont le modèle d’événement faible appliqué dans la façon dont les événements sont implémentés.</span><span class="sxs-lookup"><span data-stu-id="38102-129">Many aspects of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] data binding already have the weak event pattern applied in how the events are implemented.</span></span>  
   
-## Comment implémenter le modèle d'événement faible ?  
- Il existe trois façons d'implémenter le modèle d'événement faible.  Le tableau suivant répertorie les trois méthodes et fournit de l'aide lorsque vous devez utiliser chacun.  
+## <a name="how-to-implement-the-weak-event-pattern"></a><span data-ttu-id="38102-130">Comment implémenter le modèle d’événement faible</span><span class="sxs-lookup"><span data-stu-id="38102-130">How to Implement the Weak Event Pattern</span></span>  
+ <span data-ttu-id="38102-131">Il existe trois façons d’implémenter le modèle d’événement faible.</span><span class="sxs-lookup"><span data-stu-id="38102-131">There are three ways to implement weak event pattern.</span></span> <span data-ttu-id="38102-132">Le tableau suivant répertorie les trois approches et fournit quelques conseils pour l’utilisation de chacune.</span><span class="sxs-lookup"><span data-stu-id="38102-132">The following table lists the three approaches and provides some guidance for when you should use each.</span></span>  
   
-|Approche|Lors de l'implémentation|  
-|--------------|------------------------------|  
-|utilisez une classe faible existante de gestionnaire d'événement|si l'événement que vous souhaitez abonner a <xref:System.Windows.WeakEventManager>correspondant, utilisent le gestionnaire faible existant d'événement.  Pour une liste des gestionnaires faibles d'événement qui sont inclus avec WPF, consultez la hiérarchie d'héritage dans la classe d' <xref:System.Windows.WeakEventManager> .  Notez, cependant, qu'il existe très peu de gestionnaires faibles d'événement qui sont inclus avec WPF, vous devrez probablement choisir une des autres approches.|  
-|utilisez une classe faible générique de gestionnaire d'événement|Utilisez <xref:System.Windows.WeakEventManager%602> générique lorsque <xref:System.Windows.WeakEventManager> existant est pas disponible, vous voulez un moyen simple d'implémenter, et vous ne souhaitez pas transmettre l'efficacité.  <xref:System.Windows.WeakEventManager%602> générique est moins efficace que existant ou un gestionnaire faible personnalisé d'événement.  Par exemple, la classe générique envoie plus de réflexion pour découvrir l'événement donné au nom de l'événement.  En outre, le code pour stocker l'événement à l'aide de <xref:System.Windows.WeakEventManager%602> générique est plus documentée que d'utiliser ou existantes <xref:System.Windows.WeakEventManager>personnalisé.|  
-|Créez une classe faible personnalisée du gestionnaire d'événement|Créez <xref:System.Windows.WeakEventManager> personnalisé lorsque vous <xref:System.Windows.WeakEventManager> existant est pas disponible et que vous souhaitez que la meilleure efficacité.  À l'aide d'un personnalisé <xref:System.Windows.WeakEventManager> abonner à un événement sera plus efficace, mais vous entraînez le coût d'écrire du code supplémentaire au début.|  
+|<span data-ttu-id="38102-133">Approche</span><span class="sxs-lookup"><span data-stu-id="38102-133">Approach</span></span>|<span data-ttu-id="38102-134">Quand mettre en œuvre</span><span class="sxs-lookup"><span data-stu-id="38102-134">When to Implement</span></span>|  
+|--------------|-----------------------|  
+|<span data-ttu-id="38102-135">Utiliser une classe de gestionnaire d’événement faible existante</span><span class="sxs-lookup"><span data-stu-id="38102-135">Use an existing weak event manager class</span></span>|<span data-ttu-id="38102-136">Si l’événement que vous voulez vous abonner a correspondante <xref:System.Windows.WeakEventManager>, utilisez le Gestionnaire d’événement faible existant.</span><span class="sxs-lookup"><span data-stu-id="38102-136">If the event you want to subscribe to has a corresponding <xref:System.Windows.WeakEventManager>, use the existing weak event manager.</span></span> <span data-ttu-id="38102-137">Pour obtenir la liste des gestionnaires d’événement faible qui sont inclus dans WPF, consultez la hiérarchie d’héritage dans le <xref:System.Windows.WeakEventManager> classe.</span><span class="sxs-lookup"><span data-stu-id="38102-137">For a list of weak event managers that are included with WPF, see the inheritance hierarchy in the <xref:System.Windows.WeakEventManager> class.</span></span> <span data-ttu-id="38102-138">Toutefois, notez qu’il n’y a relativement peu gestionnaires d’événement faible qui sont inclus dans WPF, vous devrez probablement choisir l’une des autres approches.</span><span class="sxs-lookup"><span data-stu-id="38102-138">Note, however, that there are relatively few weak event managers that are included with WPF, so you will probably need to choose one of the other approaches.</span></span>|  
+|<span data-ttu-id="38102-139">Utiliser une classe de gestionnaire d’événement faible générique</span><span class="sxs-lookup"><span data-stu-id="38102-139">Use a generic weak event manager class</span></span>|<span data-ttu-id="38102-140">Utilisez un type générique <xref:System.Windows.WeakEventManager%602> lorsque existant <xref:System.Windows.WeakEventManager> est non disponible, vous souhaitez un moyen simple d’implémenter, et vous ne sont pas concernées par l’efficacité.</span><span class="sxs-lookup"><span data-stu-id="38102-140">Use a generic <xref:System.Windows.WeakEventManager%602> when an existing <xref:System.Windows.WeakEventManager> is not available, you want an easy way to implement, and you are not concerned about efficiency.</span></span> <span data-ttu-id="38102-141">Le type générique <xref:System.Windows.WeakEventManager%602> est moins efficace que d’un gestionnaire d’événements faibles existantes ou personnalisées.</span><span class="sxs-lookup"><span data-stu-id="38102-141">The generic <xref:System.Windows.WeakEventManager%602> is less efficient than an existing or custom weak event manager.</span></span> <span data-ttu-id="38102-142">Par exemple, la classe générique fait plus de réflexion pour découvrir l’événement étant donné le nom de l’événement.</span><span class="sxs-lookup"><span data-stu-id="38102-142">For example, the generic class does more reflection to discover the event given the event's name.</span></span> <span data-ttu-id="38102-143">En outre, le code pour inscrire l’événement à l’aide de l’objet générique <xref:System.Windows.WeakEventManager%602> est plus détaillé qu’utilisant un existant ou personnalisé <xref:System.Windows.WeakEventManager>.</span><span class="sxs-lookup"><span data-stu-id="38102-143">Also, the code to register the event by using the generic <xref:System.Windows.WeakEventManager%602> is more verbose than using an existing or custom <xref:System.Windows.WeakEventManager>.</span></span>|  
+|<span data-ttu-id="38102-144">Créer une classe de gestionnaire d’événement faible personnalisé</span><span class="sxs-lookup"><span data-stu-id="38102-144">Create a custom weak event manager class</span></span>|<span data-ttu-id="38102-145">Créer un personnalisé <xref:System.Windows.WeakEventManager> lorsque vous existant <xref:System.Windows.WeakEventManager> n’est pas disponible et que vous souhaitez la meilleure efficacité.</span><span class="sxs-lookup"><span data-stu-id="38102-145">Create a custom <xref:System.Windows.WeakEventManager> when you an existing <xref:System.Windows.WeakEventManager> is not available and you want the best efficiency.</span></span> <span data-ttu-id="38102-146">L’aide d’un <xref:System.Windows.WeakEventManager> pour vous abonner à un événement est plus efficace, mais vous n’entraînent pas le coût de l’écriture de code plus au début.</span><span class="sxs-lookup"><span data-stu-id="38102-146">Using a custom <xref:System.Windows.WeakEventManager> to subscribe to an event will be more efficient, but you do incur the cost of writing more code at the beginning.</span></span>|  
   
- les sections suivantes décrivent comment implémenter le modèle d'événement faible.  Pour les besoins de cette discussion, l'événement à l'abonner possède les caractéristiques suivantes.  
+ <span data-ttu-id="38102-147">Les sections suivantes décrivent comment implémenter le modèle d’événement faible.</span><span class="sxs-lookup"><span data-stu-id="38102-147">The following sections describe how to implement the weak event pattern.</span></span>  <span data-ttu-id="38102-148">Pour des raisons de cette discussion, de s’abonner à l’événement présente les caractéristiques suivantes.</span><span class="sxs-lookup"><span data-stu-id="38102-148">For purposes of this discussion, the event to subscribe to has the following characteristics.</span></span>  
   
--   le nom de l'évènement est `SomeEvent`.  
+-   <span data-ttu-id="38102-149">Le nom de l’événement est `SomeEvent`.</span><span class="sxs-lookup"><span data-stu-id="38102-149">The event name is `SomeEvent`.</span></span>  
   
--   l'événement est déclenché par la classe d' `EventSource` .  
+-   <span data-ttu-id="38102-150">L’événement est déclenché par la `EventSource` classe.</span><span class="sxs-lookup"><span data-stu-id="38102-150">The event is raised by the `EventSource` class.</span></span>  
   
--   le gestionnaire d'événements a le type : `SomeEventEventHandler` \(ou `EventHandler<SomeEventEventArgs>`\).  
+-   <span data-ttu-id="38102-151">Le Gestionnaire d’événements a type : `SomeEventEventHandler` (ou `EventHandler<SomeEventEventArgs>`).</span><span class="sxs-lookup"><span data-stu-id="38102-151">The event handler has type: `SomeEventEventHandler` (or `EventHandler<SomeEventEventArgs>`).</span></span>  
   
--   l'événement passe un paramètre de type `SomeEventEventArgs` aux gestionnaires d'événements.  
+-   <span data-ttu-id="38102-152">L’événement passe un paramètre de type `SomeEventEventArgs` aux gestionnaires d’événements.</span><span class="sxs-lookup"><span data-stu-id="38102-152">The event passes a parameter of type `SomeEventEventArgs` to the event handlers.</span></span>  
   
-### À l'aide d'une classe faible existante de gestionnaire d'événement  
+### <a name="using-an-existing-weak-event-manager-class"></a><span data-ttu-id="38102-153">À l’aide d’une classe de gestionnaire d’événements existante faible</span><span class="sxs-lookup"><span data-stu-id="38102-153">Using an Existing Weak Event Manager Class</span></span>  
   
-1.  recherchez un gestionnaire faible existant d'événement.  
+1.  <span data-ttu-id="38102-154">Gestionnaire de trouver un événement faible existant.</span><span class="sxs-lookup"><span data-stu-id="38102-154">Find an existing weak event manager.</span></span>  
   
-     Pour une liste des gestionnaires faibles d'événement qui sont inclus avec WPF, consultez la hiérarchie d'héritage dans la classe d' <xref:System.Windows.WeakEventManager> .  
+     <span data-ttu-id="38102-155">Pour obtenir la liste des gestionnaires d’événement faible qui sont inclus dans WPF, consultez la hiérarchie d’héritage dans le <xref:System.Windows.WeakEventManager> classe.</span><span class="sxs-lookup"><span data-stu-id="38102-155">For a list of weak event managers that are included with WPF, see the inheritance hierarchy in the <xref:System.Windows.WeakEventManager> class.</span></span>  
   
-2.  Utilisez le nouveau gestionnaire d'événement faible au lieu de la liaison normale d'événement.  
+2.  <span data-ttu-id="38102-156">Utilisez le nouveau gestionnaire d’événement faible au lieu de la connexion d’événements normaux.</span><span class="sxs-lookup"><span data-stu-id="38102-156">Use the new weak event manager instead of the normal event hookup.</span></span>  
   
-     Par exemple, si votre code utilise le modèle suivant pour s'abonner à un événement :  
+     <span data-ttu-id="38102-157">Par exemple, si votre code utilise le modèle suivant pour vous abonner à un événement :</span><span class="sxs-lookup"><span data-stu-id="38102-157">For example, if your code uses the following pattern to subscribe to an event:</span></span>  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     modifiez\-la au modèle suivant :  
+     <span data-ttu-id="38102-158">Modifier le modèle suivant :</span><span class="sxs-lookup"><span data-stu-id="38102-158">Change it to the following pattern:</span></span>  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     De même, si votre code utilise le modèle suivant pour annuler un abonnement à un événement :  
+     <span data-ttu-id="38102-159">De même, si votre code utilise le modèle suivant pour annuler l’abonnement à un événement :</span><span class="sxs-lookup"><span data-stu-id="38102-159">Similarly, if your code uses the following pattern to unsubscribe to an event:</span></span>  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     modifiez\-la au modèle suivant :  
+     <span data-ttu-id="38102-160">Modifier le modèle suivant :</span><span class="sxs-lookup"><span data-stu-id="38102-160">Change it to the following pattern:</span></span>  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-### À l'aide de la classe faible générique de gestionnaire d'événement  
+### <a name="using-the-generic-weak-event-manager-class"></a><span data-ttu-id="38102-161">À l’aide de la classe de gestionnaire d’événements générique faible</span><span class="sxs-lookup"><span data-stu-id="38102-161">Using the Generic Weak Event Manager Class</span></span>  
   
-1.  utilisez la classe générique d' <xref:System.Windows.WeakEventManager%602> au lieu de la liaison normale d'événement.  
+1.  <span data-ttu-id="38102-162">Utilisez le type générique <xref:System.Windows.WeakEventManager%602> classe au lieu de la connexion d’événements normaux.</span><span class="sxs-lookup"><span data-stu-id="38102-162">Use the generic <xref:System.Windows.WeakEventManager%602> class instead of the normal event hookup.</span></span>  
   
-     Lorsque vous utilisez <xref:System.Windows.WeakEventManager%602> pour stocker des écouteurs d'événements, vous fournissez une source d'événements et le type d' <xref:System.EventArgs> comme paramètres de type à la classe et appelez <xref:System.Windows.WeakEventManager%602.AddHandler%2A> comme indiqué dans le code suivant :  
+     <span data-ttu-id="38102-163">Lorsque vous utilisez <xref:System.Windows.WeakEventManager%602> pour inscrire les écouteurs d’événements, vous fournissez la source d’événements et <xref:System.EventArgs> type que les paramètres de type de la classe et l’appel <xref:System.Windows.WeakEventManager%602.AddHandler%2A> comme indiqué dans le code suivant :</span><span class="sxs-lookup"><span data-stu-id="38102-163">When you use <xref:System.Windows.WeakEventManager%602> to register event listeners, you supply the event source and <xref:System.EventArgs> type as the type parameters to the class and call <xref:System.Windows.WeakEventManager%602.AddHandler%2A> as shown in the following code:</span></span>  
   
     ```  
     WeakEventManager<EventSource, SomeEventEventArgs>.AddHandler(source, "SomeEvent", source_SomeEvent);  
     ```  
   
-### Créer une classe faible personnalisée du gestionnaire d'événement  
+### <a name="creating-a-custom-weak-event-manager-class"></a><span data-ttu-id="38102-164">Création d’une classe de gestionnaire d’événements personnalisé faible</span><span class="sxs-lookup"><span data-stu-id="38102-164">Creating a Custom Weak Event Manager Class</span></span>  
   
-1.  copiez le modèle de classe suivant à votre projet.  
+1.  <span data-ttu-id="38102-165">Copiez le modèle de classe suivant à votre projet.</span><span class="sxs-lookup"><span data-stu-id="38102-165">Copy the following class template to your project.</span></span>  
   
-     Cette classe hérite de la classe <xref:System.Windows.WeakEventManager>.  
+     <span data-ttu-id="38102-166">Cette classe hérite de la <xref:System.Windows.WeakEventManager> classe.</span><span class="sxs-lookup"><span data-stu-id="38102-166">This class inherits from the <xref:System.Windows.WeakEventManager> class.</span></span>  
   
      [!code-csharp[WeakEvents#WeakEventManagerTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WeakEvents/CSharp/WeakEventManagerTemplate.cs#weakeventmanagertemplate)]  
   
-2.  remplacez le nom d' `SomeEventWeakEventManager` par votre propre nom.  
+2.  <span data-ttu-id="38102-167">Remplacez le `SomeEventWeakEventManager` avec votre propre nom.</span><span class="sxs-lookup"><span data-stu-id="38102-167">Replace the `SomeEventWeakEventManager` name with your own name.</span></span>  
   
-3.  Remplacez les trois étiquettes décrits précédemment par les noms correspondants pour votre événement.  \(`SomeEvent`, `EventSource`, et `SomeEventEventArgs`\)  
+3.  <span data-ttu-id="38102-168">Remplacez les noms de trois décrits précédemment, avec les noms correspondants pour votre événement.</span><span class="sxs-lookup"><span data-stu-id="38102-168">Replace the three names described previously with the corresponding names for your event.</span></span> <span data-ttu-id="38102-169">(`SomeEvent`, `EventSource`, et `SomeEventEventArgs`)</span><span class="sxs-lookup"><span data-stu-id="38102-169">(`SomeEvent`, `EventSource`, and `SomeEventEventArgs`)</span></span>  
   
-4.  Définissez la visibilité \(publique\/interne\/privée\) de la classe faible de gestionnaire d'événements à la même visibilité que l'événement il gère.  
+4.  <span data-ttu-id="38102-170">Définir la visibilité (publique, interne, privée) de la classe de gestionnaire d’événement faible pour la même visibilité que les événements qu’il gère.</span><span class="sxs-lookup"><span data-stu-id="38102-170">Set the visibility (public / internal / private) of the weak event manager class to the same visibility as event it manages.</span></span>  
   
-5.  Utilisez le nouveau gestionnaire d'événement faible au lieu de la liaison normale d'événement.  
+5.  <span data-ttu-id="38102-171">Utilisez le nouveau gestionnaire d’événement faible au lieu de la connexion d’événements normaux.</span><span class="sxs-lookup"><span data-stu-id="38102-171">Use the new weak event manager instead of the normal event hookup.</span></span>  
   
-     Par exemple, si votre code utilise le modèle suivant pour s'abonner à un événement :  
+     <span data-ttu-id="38102-172">Par exemple, si votre code utilise le modèle suivant pour vous abonner à un événement :</span><span class="sxs-lookup"><span data-stu-id="38102-172">For example, if your code uses the following pattern to subscribe to an event:</span></span>  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     modifiez\-le au modèle suivant :  
+     <span data-ttu-id="38102-173">Modifier le modèle suivant :</span><span class="sxs-lookup"><span data-stu-id="38102-173">Change it to the following pattern:</span></span>  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     De même, si votre code utilise le modèle suivant pour annuler un abonnement à un événement :  
+     <span data-ttu-id="38102-174">De même, si votre code utilise le modèle suivant pour annuler l’abonnement à un événement :</span><span class="sxs-lookup"><span data-stu-id="38102-174">Similarly, if your code uses the following pattern to unsubscribe to an event:</span></span>  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     modifiez\-la au modèle suivant :  
+     <span data-ttu-id="38102-175">Modifier le modèle suivant :</span><span class="sxs-lookup"><span data-stu-id="38102-175">Change it to the following pattern:</span></span>  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.WeakEventManager>   
- <xref:System.Windows.IWeakEventListener>   
- [Vue d'ensemble des événements routés](../../../../docs/framework/wpf/advanced/routed-events-overview.md)   
- [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)
+## <a name="see-also"></a><span data-ttu-id="38102-176">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="38102-176">See Also</span></span>  
+ <xref:System.Windows.WeakEventManager>  
+ <xref:System.Windows.IWeakEventListener>  
+ [<span data-ttu-id="38102-177">Vue d’ensemble des événements routés</span><span class="sxs-lookup"><span data-stu-id="38102-177">Routed Events Overview</span></span>](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [<span data-ttu-id="38102-178">Vue d’ensemble de la liaison de données</span><span class="sxs-lookup"><span data-stu-id="38102-178">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)

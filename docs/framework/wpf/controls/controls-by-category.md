@@ -1,28 +1,30 @@
 ---
-title: "Contr&#244;les par cat&#233;gorie | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles, répertoriés par catégorie"
+title: "Contrôles par catégorie"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6616ba0cc6a1c584834b9bef56da05c4461876b6
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Contr&#244;les par cat&#233;gorie
-Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] peuvent être regroupés logiquement dans plusieurs catégories.  Ces catégories peuvent être utilisées pour sélectionner le contrôle adapté à votre scénario pour identifier les contrôles ayant des modèles d'utilisation ou une fonctionnalité similaires.  
+# <a name="controls-by-category"></a><span data-ttu-id="de41c-102">Contrôles par catégorie</span><span class="sxs-lookup"><span data-stu-id="de41c-102">Controls by Category</span></span>
+<span data-ttu-id="de41c-103">Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] peuvent être répartis logiquement en plusieurs catégories.</span><span class="sxs-lookup"><span data-stu-id="de41c-103">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] controls can be logically grouped into several categories.</span></span> <span data-ttu-id="de41c-104">Ces catégories peuvent vous aider à identifier les contrôles ayant des modèles d’utilisation ou une fonctionnalité similaires pour sélectionner le contrôle adapté à votre scénario.</span><span class="sxs-lookup"><span data-stu-id="de41c-104">These categories can be used to select the appropriate control for your scenario by helping you see which controls have similar usage patterns or functionality.</span></span>  
   
-## Disposition  
- Les contrôles de disposition sont utilisés pour gérer la taille, les dimensions, la position et la disposition des éléments enfants.  
+## <a name="layout"></a><span data-ttu-id="de41c-105">Disposition</span><span class="sxs-lookup"><span data-stu-id="de41c-105">Layout</span></span>  
+ <span data-ttu-id="de41c-106">Les contrôles de disposition permettent de gérer la taille, les dimensions, la position et la disposition des éléments enfants.</span><span class="sxs-lookup"><span data-stu-id="de41c-106">Layout controls are used to manage the size, dimensions, position, and arrangement of child elements.</span></span>  
   
 -   <xref:System.Windows.Controls.Border>  
   
@@ -62,15 +64,15 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.WrapPanel>  
   
-## Boutons  
- Les boutons représentent l'un des contrôles d'interface utilisateur les plus élémentaires.  En général, les applications exécutent une tâche dans l'événement <xref:System.Windows.Controls.Primitives.ButtonBase.Click> lorsque l'utilisateur clique dessus.  
+## <a name="buttons"></a><span data-ttu-id="de41c-107">Boutons</span><span class="sxs-lookup"><span data-stu-id="de41c-107">Buttons</span></span>  
+ <span data-ttu-id="de41c-108">Les boutons constituent l’un des contrôles d’interface utilisateur les plus élémentaires.</span><span class="sxs-lookup"><span data-stu-id="de41c-108">Buttons are one of the most basic user interface controls.</span></span> <span data-ttu-id="de41c-109">Applications généralement effectuent certaines tâches dans le <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement lorsqu’un utilisateur clique dessus.</span><span class="sxs-lookup"><span data-stu-id="de41c-109">Applications typically perform some task in the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event when a user clicks on them.</span></span>  
   
 -   <xref:System.Windows.Controls.Button>  
   
 -   <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
-## Affichage des données  
- Les contrôles d'affichage de données sont utilisés pour afficher les données à partir d'une source de données.  
+## <a name="data-display"></a><span data-ttu-id="de41c-110">Affichage des données</span><span class="sxs-lookup"><span data-stu-id="de41c-110">Data Display</span></span>  
+ <span data-ttu-id="de41c-111">Les contrôles d’affichage de données permettent d’afficher des informations à partir d’une source de données.</span><span class="sxs-lookup"><span data-stu-id="de41c-111">Data display controls are used to show information from a data source.</span></span>  
   
 -   <xref:System.Windows.Controls.DataGrid>  
   
@@ -78,15 +80,15 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.TreeView>  
   
-## Affichage et sélection de date  
- Les contrôles de date sont utilisés pour afficher et sélectionner les informations du calendrier.  
+## <a name="date-display-and-selection"></a><span data-ttu-id="de41c-112">Affichage et sélection de la date</span><span class="sxs-lookup"><span data-stu-id="de41c-112">Date Display and Selection</span></span>  
+ <span data-ttu-id="de41c-113">Les contrôles de date permettent d’afficher et de sélectionner les informations du calendrier.</span><span class="sxs-lookup"><span data-stu-id="de41c-113">Date controls are used to display and select calendar information.</span></span>  
   
 -   <xref:System.Windows.Controls.Calendar>  
   
 -   <xref:System.Windows.Controls.DatePicker>  
   
-## Menus  
- Les menus sont utilisés pour regrouper des actions connexes ou fournir une assistance contextuelle.  
+## <a name="menus"></a><span data-ttu-id="de41c-114">Menus</span><span class="sxs-lookup"><span data-stu-id="de41c-114">Menus</span></span>  
+ <span data-ttu-id="de41c-115">Les menus permettent de regrouper des actions connexes ou de fournir une assistance contextuelle.</span><span class="sxs-lookup"><span data-stu-id="de41c-115">Menus are used to group related actions or to provide contextual assistance.</span></span>  
   
 -   <xref:System.Windows.Controls.ContextMenu>  
   
@@ -94,8 +96,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.ToolBar>  
   
-## Selection  
- Les contrôles de sélection permettent à l'utilisateur de sélectionner une ou plusieurs options.  
+## <a name="selection"></a><span data-ttu-id="de41c-116">Sélection</span><span class="sxs-lookup"><span data-stu-id="de41c-116">Selection</span></span>  
+ <span data-ttu-id="de41c-117">Les contrôles de sélection permettent à un utilisateur de sélectionner une ou plusieurs options.</span><span class="sxs-lookup"><span data-stu-id="de41c-117">Selection controls are used to enable a user to select one or more options.</span></span>  
   
 -   <xref:System.Windows.Controls.CheckBox>  
   
@@ -107,8 +109,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.Slider>  
   
-## Navigation  
- Les contrôles de navigation améliorent ou étendent l'environnement de navigation de l'application en créant des cadres de ciblage ou une apparence d'application à onglets.  
+## <a name="navigation"></a><span data-ttu-id="de41c-118">Navigation</span><span class="sxs-lookup"><span data-stu-id="de41c-118">Navigation</span></span>  
+ <span data-ttu-id="de41c-119">Les contrôles de navigation améliorent ou étendent l’environnement de navigation de l’application en créant des frames de ciblage ou une apparence d’application à onglets.</span><span class="sxs-lookup"><span data-stu-id="de41c-119">Navigation controls enhance or extend the application navigation experience by creating targeting frames or tabbed application appearance.</span></span>  
   
 -   <xref:System.Windows.Controls.Frame>  
   
@@ -120,8 +122,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.TabControl>  
   
-## Boîtes de dialogue  
- Les boîtes de dialogue fournissent un support ciblé pour les scénarios d'interaction utilisateur communs, tels que l'impression.  
+## <a name="dialog-boxes"></a><span data-ttu-id="de41c-120">Boîtes de dialogue</span><span class="sxs-lookup"><span data-stu-id="de41c-120">Dialog Boxes</span></span>  
+ <span data-ttu-id="de41c-121">Les boîtes de dialogue fournissent un support ciblé pour les scénarios courants d’interaction avec l’utilisateur, comme l’impression.</span><span class="sxs-lookup"><span data-stu-id="de41c-121">Dialog boxes provide targeted support for common user-interaction scenarios such as printing.</span></span>  
   
 -   <xref:Microsoft.Win32.OpenFileDialog>  
   
@@ -129,8 +131,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:Microsoft.Win32.SaveFileDialog>  
   
-## Informations utilisateur  
- Les contrôles d'informations utilisateur fournissent des commentaires contextuels ou clarifient l'interface utilisateur d'une application.  L'utilisateur ne peut généralement pas interagir avec ces contrôles.  
+## <a name="user-information"></a><span data-ttu-id="de41c-122">Informations d'utilisateur</span><span class="sxs-lookup"><span data-stu-id="de41c-122">User Information</span></span>  
+ <span data-ttu-id="de41c-123">Les contrôles d’informations utilisateur fournissent des commentaires contextuels ou clarifient l’interface utilisateur d’une application.</span><span class="sxs-lookup"><span data-stu-id="de41c-123">User information controls provide contextual feedback or clarify an application's user interface.</span></span> <span data-ttu-id="de41c-124">L’utilisateur ne peut généralement pas interagir avec ces contrôles.</span><span class="sxs-lookup"><span data-stu-id="de41c-124">The user typically cannot interact with these controls.</span></span>  
   
 -   <xref:System.Windows.Controls.AccessText>  
   
@@ -146,8 +148,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.ToolTip>  
   
-## Documents  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] inclut des contrôles spécialisés pour consulter des documents.  Ces contrôles optimisent l'environnement de lecture selon le scénario utilisateur ciblé.  
+## <a name="documents"></a><span data-ttu-id="de41c-125">Documents</span><span class="sxs-lookup"><span data-stu-id="de41c-125">Documents</span></span>  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="de41c-126"> inclut des contrôles spécialisés pour consulter des documents.</span><span class="sxs-lookup"><span data-stu-id="de41c-126"> includes several specialized controls for viewing documents.</span></span> <span data-ttu-id="de41c-127">Ces contrôles optimisent l’environnement de lecture selon le scénario utilisateur ciblé.</span><span class="sxs-lookup"><span data-stu-id="de41c-127">These controls optimize the reading experience, based on the targeted user scenario.</span></span>  
   
 -   <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -159,8 +161,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.StickyNoteControl>  
   
-## Entrée  
- Les contrôles d'entrée permettent à l'utilisateur d'entrer du texte et un autre contenu.  
+## <a name="input"></a><span data-ttu-id="de41c-128">Entrée</span><span class="sxs-lookup"><span data-stu-id="de41c-128">Input</span></span>  
+ <span data-ttu-id="de41c-129">Les contrôles d’entrée permettent à l’utilisateur d’entrer du texte et d’autres contenus.</span><span class="sxs-lookup"><span data-stu-id="de41c-129">Input controls enable the user to input text and other content.</span></span>  
   
 -   <xref:System.Windows.Controls.TextBox>  
   
@@ -168,8 +170,8 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.PasswordBox>  
   
-## Multimédia  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] inclut le support intégré pour héberger du contenu audio et vidéo, ainsi que des [codecs](GTMT) pour la plupart des formats d'image courants.  
+## <a name="media"></a><span data-ttu-id="de41c-130">Médias</span><span class="sxs-lookup"><span data-stu-id="de41c-130">Media</span></span>  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="de41c-131"> intègre la prise en charge de l’hébergement du contenu audio et vidéo, ainsi que des codecs pour la plupart des formats d’image courants.</span><span class="sxs-lookup"><span data-stu-id="de41c-131"> includes integrated support for hosting both audio and video content, as well as [codecs] for most popular image formats.</span></span>  
   
 -   <xref:System.Windows.Controls.Image>  
   
@@ -177,12 +179,12 @@ Les contrôles [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md
   
 -   <xref:System.Windows.Controls.SoundPlayerAction>  
   
-## Encre numérique  
- Les contrôles d'entrée manuscrite fournissent le support intégré pour les fonctionnalités [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)], telles que l'examen d'encre et l'entrée d'encre.  
+## <a name="digital-ink"></a><span data-ttu-id="de41c-132">Encre numérique</span><span class="sxs-lookup"><span data-stu-id="de41c-132">Digital Ink</span></span>  
+ <span data-ttu-id="de41c-133">Les contrôles d’encre numérique fournissent un support intégré pour les fonctionnalités [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)], notamment l’examen d’encre et l’entrée d’encre.</span><span class="sxs-lookup"><span data-stu-id="de41c-133">Digital ink controls provide integrated support for [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] features, such as ink viewing and ink input.</span></span>  
   
 -   <xref:System.Windows.Controls.InkCanvas>  
   
 -   <xref:System.Windows.Controls.InkPresenter>  
   
-## Voir aussi  
- [Bibliothèque de contrôles](../../../../docs/framework/wpf/controls/control-library.md)
+## <a name="see-also"></a><span data-ttu-id="de41c-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="de41c-134">See Also</span></span>  
+ [<span data-ttu-id="de41c-135">Bibliothèque de contrôles</span><span class="sxs-lookup"><span data-stu-id="de41c-135">Control Library</span></span>](../../../../docs/framework/wpf/controls/control-library.md)

@@ -1,52 +1,55 @@
 ---
-title: "Comment&#160;: sp&#233;cifier l&#39;origine d&#39;une transformation &#224; l&#39;aide de valeurs relatives | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "graphiques, origines d'objets Transform"
-  - "origines d'objets Transform"
-  - "Transformations, origines de"
+title: "Comment : spécifier l'origine d'une transformation à l'aide de valeurs relatives"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- origins of Transforms [WPF]
+- Transforms [WPF], origins of
+- graphics [WPF], origins of Transforms
 ms.assetid: f4dbc29d-93c7-41cd-96d8-5cfd8624b470
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ec61fdedc78b785dccf2c235cd17fd20b6d5abc4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: sp&#233;cifier l&#39;origine d&#39;une transformation &#224; l&#39;aide de valeurs relatives
-Cet exemple montre comment utiliser des valeurs relatives pour spécifier l'origine d'un <xref:System.Windows.UIElement.RenderTransform%2A> appliqué à un <xref:System.Windows.FrameworkElement>.  
+# <a name="how-to-specify-the-origin-of-a-transform-by-using-relative-values"></a><span data-ttu-id="4e9c2-102">Comment : spécifier l'origine d'une transformation à l'aide de valeurs relatives</span><span class="sxs-lookup"><span data-stu-id="4e9c2-102">How to: Specify the Origin of a Transform by Using Relative Values</span></span>
+<span data-ttu-id="4e9c2-103">Cet exemple montre comment utiliser des valeurs relatives pour spécifier l’origine d’un <xref:System.Windows.UIElement.RenderTransform%2A> qui est appliqué à un <xref:System.Windows.FrameworkElement>.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-103">This example shows how to use relative values to specify the origin of a <xref:System.Windows.UIElement.RenderTransform%2A> that is applied to a <xref:System.Windows.FrameworkElement>.</span></span>  
   
- Lorsque vous faites pivoter, mettez à l'échelle ou [inclinez](GTMT) un <xref:System.Windows.FrameworkElement> en utilisant la propriété <xref:System.Windows.UIElement.RenderTransform%2A>, le paramètre par défaut applique la transformation à l'angle supérieur gauche de l'élément.  Si vous souhaitez faire pivoter, mettre à l'échelle ou appliquer une inclinaison à partir du centre de l'élément, vous pouvez compenser en affectant au centre de la transformation le centre de l'élément.  Toutefois, cette solution requiert que vous connaissiez la taille de l'élément.  Une façon plus simple d'appliquer une transformation au centre d'un élément consiste à affecter à sa propriété <xref:System.Windows.UIElement.RenderTransformOrigin%2A> les valeurs \(0.5, 0.5\), au lieu de définir une valeur de centre sur la transformation elle\-même.  
+ <span data-ttu-id="4e9c2-104">Lorsque vous faites pivoter, mettre à l’échelle ou incliner un <xref:System.Windows.FrameworkElement> à l’aide de la <xref:System.Windows.UIElement.RenderTransform%2A> propriété, le paramètre par défaut applique la transformation à l’angle supérieur gauche de l’élément.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-104">When you rotate, scale, or skew a <xref:System.Windows.FrameworkElement> by using the <xref:System.Windows.UIElement.RenderTransform%2A> property, the default setting applies the transform to the upper-left corner of the element.</span></span> <span data-ttu-id="4e9c2-105">Si vous souhaitez effectuer un pivotement, une mise à l’échelle ou une inclinaison à partir du centre de l’élément, vous pouvez compenser en définissant le centre de la transformation sur le centre de l’élément.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-105">If you want to rotate, scale, or skew from the center of the element, you can compensate by setting the center of the transform to the center of the element.</span></span> <span data-ttu-id="4e9c2-106">Cette solution suppose toutefois de connaître la taille de l’élément.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-106">However, that solution requires that you know the size of the element.</span></span> <span data-ttu-id="4e9c2-107">Un moyen plus simple d’appliquer une transformation au centre d’un élément consiste à définir ses <xref:System.Windows.UIElement.RenderTransformOrigin%2A> propriété (0,5, 0,5), au lieu de définir une valeur de centre sur la transformation elle-même.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-107">An easier way of applying a transform to the center of an element is to set its <xref:System.Windows.UIElement.RenderTransformOrigin%2A> property to (0.5, 0.5), instead of setting a center value on the transform itself.</span></span>  
   
-## Exemple  
- L'exemple suivant utilise un <xref:System.Windows.Media.RotateTransform> pour faire pivoter un <xref:System.Windows.Controls.Button> à 45 degrés dans le sens des aiguilles d'une montre.  Étant donné que l'exemple ne spécifie pas de centre, le bouton pivote par rapport au point \(0, 0\), qui est son angle supérieur gauche.  Le <xref:System.Windows.Media.RotateTransform> est appliqué à la propriété <xref:System.Windows.UIElement.RenderTransform%2A>.  
+## <a name="example"></a><span data-ttu-id="4e9c2-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="4e9c2-108">Example</span></span>  
+ <span data-ttu-id="4e9c2-109">L’exemple suivant utilise un <xref:System.Windows.Media.RotateTransform> pour faire pivoter un <xref:System.Windows.Controls.Button> 45 degrés dans le sens horaire.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-109">The following example uses a <xref:System.Windows.Media.RotateTransform> to rotate a <xref:System.Windows.Controls.Button> 45 degrees clockwise.</span></span> <span data-ttu-id="4e9c2-110">L’exemple ne spécifie pas de centre, donc le bouton pivote autour du point (0, 0), qui se trouve dans le coin supérieur gauche.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-110">Because the example does not specify a center, the button rotates about the point (0, 0), which is its upper-left corner.</span></span> <span data-ttu-id="4e9c2-111">Le <xref:System.Windows.Media.RotateTransform> est appliqué à la <xref:System.Windows.UIElement.RenderTransform%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-111">The <xref:System.Windows.Media.RotateTransform> is applied to the <xref:System.Windows.UIElement.RenderTransform%2A> property.</span></span>  
   
- L'illustration suivante montre le résultat de la transformation pour l'exemple qui suit.  
+ <span data-ttu-id="4e9c2-112">L’illustration suivante montre le résultat de la transformation pour l’exemple qui suit.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-112">The following illustration shows the transformation result for the example that follows.</span></span>  
   
- ![Bouton transformé à l'aide de RenderTransform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm\_RenderTransformWithDefaultCenter")  
-Rotation de 45 degrés dans le sens des aiguilles d'une montre à l'aide de la propriété RenderTransform  
+ <span data-ttu-id="4e9c2-113">![Bouton transformé à l’aide de RenderTransform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm_RenderTransformWithDefaultCenter")</span><span class="sxs-lookup"><span data-stu-id="4e9c2-113">![A button transformed using RenderTransform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm_RenderTransformWithDefaultCenter")</span></span>  
+<span data-ttu-id="4e9c2-114">Rotation de 45 degrés dans le sens des aiguilles d’une montre à l’aide de la propriété RenderTransform</span><span class="sxs-lookup"><span data-stu-id="4e9c2-114">A 45 degree clockwise rotation by using the RenderTransform property</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMRotateButtonExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample1)]  
+ [!code-xaml[Transforms_snip#GraphicsMMRotateButtonExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample1)]  
   
- L'exemple suivant utilise également un <xref:System.Windows.Media.RotateTransform> pour faire pivoter un <xref:System.Windows.Controls.Button> de 45 degrés dans le sens des aiguilles d'une montre. Toutefois, cet exemple affecte au <xref:System.Windows.UIElement.RenderTransformOrigin%2A> du bouton les valeurs \(0.5, 0.5\).  Par conséquent, la rotation est appliquée au centre du bouton, plutôt qu'à l'angle supérieur gauche.  
+ <span data-ttu-id="4e9c2-115">L’exemple suivant utilise également un <xref:System.Windows.Media.RotateTransform> pour faire pivoter un <xref:System.Windows.Controls.Button> de 45 degrés dans le sens horaire ; Toutefois, cet exemple définit le <xref:System.Windows.UIElement.RenderTransformOrigin%2A> du bouton (0,5, 0,5).</span><span class="sxs-lookup"><span data-stu-id="4e9c2-115">The following example also uses a <xref:System.Windows.Media.RotateTransform> to rotate a <xref:System.Windows.Controls.Button> 45 degrees clockwise; however, this example sets the <xref:System.Windows.UIElement.RenderTransformOrigin%2A> of the button to (0.5, 0.5).</span></span> <span data-ttu-id="4e9c2-116">Par conséquent, la rotation est appliquée au centre du bouton et non sur son coin supérieur gauche.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-116">As a result, the rotation is applied to the center of the button instead of to the upper-left corner.</span></span>  
   
- L'illustration suivante montre le résultat de la transformation pour l'exemple qui suit.  
+ <span data-ttu-id="4e9c2-117">L’illustration suivante montre le résultat de la transformation pour l’exemple qui suit.</span><span class="sxs-lookup"><span data-stu-id="4e9c2-117">The following illustration shows the transformation result for the example that follows.</span></span>  
   
- ![Bouton transformé autour de son centre](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm\_RenderTransformRelativeCenter")  
-Rotation de 45 degrés à l'aide de la propriété RenderTransform avec un RenderTransformOrigin de \(0.5, 0.5\)  
+ <span data-ttu-id="4e9c2-118">![Bouton transformé autour de son centre](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm_RenderTransformRelativeCenter")</span><span class="sxs-lookup"><span data-stu-id="4e9c2-118">![A button transformed about its center](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm_RenderTransformRelativeCenter")</span></span>  
+<span data-ttu-id="4e9c2-119">Rotation de 45 degrés à l’aide de la propriété RenderTransform avec un RenderTransformOrigin de (0,5, 0,5)</span><span class="sxs-lookup"><span data-stu-id="4e9c2-119">A 45 degree rotation by using the RenderTransform property with a RenderTransformOrigin of (0.5, 0.5)</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMRotateButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample2)]  
+ [!code-xaml[Transforms_snip#GraphicsMMRotateButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample2)]  
   
- Pour plus d'informations sur la transformation d'objets <xref:System.Windows.FrameworkElement>, consultez [Vue d'ensemble des transformations](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).  
+ <span data-ttu-id="4e9c2-120">Pour plus d’informations sur la transformation <xref:System.Windows.FrameworkElement> , consultez la [transforme une vue d’ensemble](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).</span><span class="sxs-lookup"><span data-stu-id="4e9c2-120">For more information about transforming <xref:System.Windows.FrameworkElement> objects, see the [Transforms Overview](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Media.Transform>   
- [Vue d'ensemble des transformations](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="4e9c2-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4e9c2-121">See Also</span></span>  
+ <xref:System.Windows.Media.Transform>  
+ [<span data-ttu-id="4e9c2-122">Vue d’ensemble des transformations</span><span class="sxs-lookup"><span data-stu-id="4e9c2-122">Transforms Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
+ [<span data-ttu-id="4e9c2-123">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="4e9c2-123">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)

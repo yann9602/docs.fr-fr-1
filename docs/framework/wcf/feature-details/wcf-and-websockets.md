@@ -1,31 +1,34 @@
 ---
-title: "WCF et WebSockets | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: WCF et WebSockets
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1e53b49e-022c-49c7-8984-4b21b53c05b3
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 726b23f0dc3f5953611010dca5260cc19c7adaaf
+ms.sourcegitcommit: 8d14e8c1b15009330c9880f8523686158924e1a4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/14/2017
 ---
-# WCF et WebSockets
-.NET Framework 4.5 introduit la prise en charge de WebSockets dans Windows Communication Foundation.WebSockets est une technologie efficace basée sur des normes qui permet la communication bidirectionnelle sur les ports HTTP standard 80 et 443.L'utilisation des ports HTTP standard permet à WebSockets de communiquer sur le Web via des intermédiaires.Deux nouvelles liaisons standard ont été ajoutées pour prendre en charge les communications via un transport WebSocket.<xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>.Les paramètres spécifiques à WebSockets peuvent être configurés dans l'élément <xref:> System.ServiceModel.Channels.HttpTransportBinding?qualifyHint=False&autoUpgrade=True en accédant à la propriété <xref:System.ServiceModel.Channels.HttpTransportBindingElement.WebSocketSettings%2A>.  
+# <a name="wcf-and-websockets"></a><span data-ttu-id="54a38-102">WCF et WebSockets</span><span class="sxs-lookup"><span data-stu-id="54a38-102">WCF and WebSockets</span></span>
+<span data-ttu-id="54a38-103">.NET Framework 4.5 introduit la prise en charge de WebSockets dans Windows Communication Foundation.</span><span class="sxs-lookup"><span data-stu-id="54a38-103">The .NET Framework 4.5 introduces support for WebSockets in Windows Communication Foundation.</span></span>  <span data-ttu-id="54a38-104">WebSockets est une technologie efficace basée sur des normes qui permet la communication bidirectionnelle sur les ports HTTP standard 80 et 443.</span><span class="sxs-lookup"><span data-stu-id="54a38-104">WebSockets is an efficient, standards-based technology that enables bidirectional communication over the standard HTTP ports 80 and 443.</span></span> <span data-ttu-id="54a38-105">L'utilisation des ports HTTP standard permet à WebSockets de communiquer sur le Web via des intermédiaires.</span><span class="sxs-lookup"><span data-stu-id="54a38-105">The use of the standard HTTP ports allow WebSockets to communicate across the web through intermediaries.</span></span>  <span data-ttu-id="54a38-106">Deux nouvelles liaisons standard ont été ajoutées pour prendre en charge les communications via un transport WebSocket.</span><span class="sxs-lookup"><span data-stu-id="54a38-106">Two new standard bindings have been added to support communication over a WebSocket transport.</span></span> <span data-ttu-id="54a38-107">Voir <xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>.</span><span class="sxs-lookup"><span data-stu-id="54a38-107"><xref:System.ServiceModel.NetHttpBinding> and <xref:System.ServiceModel.NetHttpsBinding>.</span></span> <span data-ttu-id="54a38-108">Paramètres spécifiques à WebSockets peuvent être configurés sur le <xref:System.ServiceModel.Channels.HttpTransportBindingElement> en accédant à la <xref:System.ServiceModel.Channels.HttpTransportBindingElement.WebSocketSettings%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="54a38-108">WebSockets-specific settings can be configured on the <xref:System.ServiceModel.Channels.HttpTransportBindingElement> by accessing the <xref:System.ServiceModel.Channels.HttpTransportBindingElement.WebSocketSettings%2A> property.</span></span>
   
-## Dans cette section  
- [Utilisation de NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)  
- Décrit <xref:System.ServiceModel.NetHttpBinding> et la façon de le configurer.  
+## <a name="in-this-section"></a><span data-ttu-id="54a38-109">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="54a38-109">In This Section</span></span>  
+ [<span data-ttu-id="54a38-110">Utilisation de NetHttpBinding</span><span class="sxs-lookup"><span data-stu-id="54a38-110">Using the NetHttpBinding</span></span>](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)  
+ <span data-ttu-id="54a38-111">Décrit <xref:System.ServiceModel.NetHttpBinding> et la façon de le configurer.</span><span class="sxs-lookup"><span data-stu-id="54a38-111">Discusses the <xref:System.ServiceModel.NetHttpBinding> and how to configure it.</span></span>  
   
- [Procédure pour créer un service WCF qui communique sur WebSockets](../../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-service-that-communicates-over-websockets.md)  
- Décrit comment créer un service WCF qui communique sur WebSockets  
+ [<span data-ttu-id="54a38-112">Comment : créer un Service WCF qui communique sur WebSockets</span><span class="sxs-lookup"><span data-stu-id="54a38-112">How to: Create a WCF Service that Communicates over WebSockets</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-wcf-service-that-communicates-over-websockets.md)  
+ <span data-ttu-id="54a38-113">Décrit comment créer un service WCF qui communique sur WebSockets</span><span class="sxs-lookup"><span data-stu-id="54a38-113">Describes how to create a WCF service that communicates over Websockets.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="54a38-114">Référence</span><span class="sxs-lookup"><span data-stu-id="54a38-114">Reference</span></span>  
   
-## Rubriques connexes
+## <a name="related-sections"></a><span data-ttu-id="54a38-115">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="54a38-115">Related Sections</span></span>

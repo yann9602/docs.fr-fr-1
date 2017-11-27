@@ -1,31 +1,34 @@
 ---
-title: "Microsoft.Transactions.TransactionBridge.CreateTransactionFailure | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Microsoft.Transactions.TransactionBridge.CreateTransactionFailure
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c3468e23-49a9-4a84-972d-a79a658851b3
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 19312862a9ae801ae0909c390b0c86ee989f7f94
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Microsoft.Transactions.TransactionBridge.CreateTransactionFailure
-Une transaction n'a pas pu être créée.  
+# <a name="microsofttransactionstransactionbridgecreatetransactionfailure"></a><span data-ttu-id="1cc58-102">Microsoft.Transactions.TransactionBridge.CreateTransactionFailure</span><span class="sxs-lookup"><span data-stu-id="1cc58-102">Microsoft.Transactions.TransactionBridge.CreateTransactionFailure</span></span>
+<span data-ttu-id="1cc58-103">Une transaction n’a pas pu être créée.</span><span class="sxs-lookup"><span data-stu-id="1cc58-103">A transaction could not be created.</span></span>  
   
-## Description  
- Ce suivi est généré lorsque MSDTC ne peut pas créer de transaction.  Cela peut être dû à des ressources faibles, un espace de journal insuffisant ou d'autres erreurs.  
+## <a name="description"></a><span data-ttu-id="1cc58-104">Description</span><span class="sxs-lookup"><span data-stu-id="1cc58-104">Description</span></span>  
+ <span data-ttu-id="1cc58-105">Ce suivi est généré lorsque MSDTC ne peut pas créer de transaction.</span><span class="sxs-lookup"><span data-stu-id="1cc58-105">This trace is generated when MSDTC is unable to create a transaction.</span></span> <span data-ttu-id="1cc58-106">Cela peut être dû à des ressources faibles, un espace de journal insuffisant ou d'autres erreurs.</span><span class="sxs-lookup"><span data-stu-id="1cc58-106">This can be due to low resources, insufficient log space, or other errors.</span></span>  
   
-## Résolution des problèmes  
- Inspectez la chaîne d'état dans le message de suivi pour déterminer la présence éventuelle d'éléments actionnables.  
+## <a name="troubleshooting"></a><span data-ttu-id="1cc58-107">Résolution des problèmes</span><span class="sxs-lookup"><span data-stu-id="1cc58-107">Troubleshooting</span></span>  
+ <span data-ttu-id="1cc58-108">Inspectez la chaîne d'état dans le message de suivi pour déterminer la présence éventuelle d'éléments actionnables.</span><span class="sxs-lookup"><span data-stu-id="1cc58-108">Inspect the status string within the trace message to determine if any actionable item exists.</span></span>  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="1cc58-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1cc58-109">See Also</span></span>  
+ [<span data-ttu-id="1cc58-110">Le suivi</span><span class="sxs-lookup"><span data-stu-id="1cc58-110">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="1cc58-111">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="1cc58-111">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="1cc58-112">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="1cc58-112">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

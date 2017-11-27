@@ -1,41 +1,36 @@
 ---
-title: "Comment : rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c82c09b4-cb0a-47ec-8cc3-a124144c2788
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 90fe1bd9a7992c5e3f4c57f5596a88e5be506917
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: c15ef409500a07d922563309301ea8f1442feee6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Comment : rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic)
-XPath vous permet de rechercher l’union des résultats de deux chemins d’emplacements XPath.  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="5f1ba-102">Comment : rechercher une Union de deux chemins d’emplacements (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5f1ba-102">How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="5f1ba-103">XPath vous permet de rechercher l’union des résultats de deux chemins d’emplacements XPath.</span><span class="sxs-lookup"><span data-stu-id="5f1ba-103">XPath allows you to find the union of the results of two XPath location paths.</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="5f1ba-104">L'expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="5f1ba-104">The XPath expression is:</span></span>  
   
  `//Category|//Price`  
   
- Vous pouvez obtenir les mêmes résultats à l’aide de la <xref:System.Linq.Enumerable.Concat%2A>opérateur de requête standard.</xref:System.Linq.Enumerable.Concat%2A>  
+ <span data-ttu-id="5f1ba-105">Vous pouvez obtenir les mêmes résultats à l'aide de l'opérateur de requête standard <xref:System.Linq.Enumerable.Concat%2A>.</span><span class="sxs-lookup"><span data-stu-id="5f1ba-105">You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche tous les éléments `Category` et tous les éléments `Price` et il les concatène en une collection unique. Notez que la [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] requête appelle <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A>pour classer les résultats.</xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> Les résultats de l’évaluation d’expression XPath sont également dans l’ordre du document.  
+## <a name="example"></a><span data-ttu-id="5f1ba-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="5f1ba-106">Example</span></span>  
+ <span data-ttu-id="5f1ba-107">Cet exemple recherche tous les éléments `Category` et tous les éléments `Price` et il les concatène en une collection unique.</span><span class="sxs-lookup"><span data-stu-id="5f1ba-107">This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection.</span></span> <span data-ttu-id="5f1ba-108">Notez que la requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] appelle <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> afin d'ordonner les résultats.</span><span class="sxs-lookup"><span data-stu-id="5f1ba-108">Note that the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results.</span></span> <span data-ttu-id="5f1ba-109">Les résultats de l’évaluation d’expression XPath sont également dans l’ordre du document.</span><span class="sxs-lookup"><span data-stu-id="5f1ba-109">The results of the XPath expression evaluation are also in document order.</span></span>  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : données numériques (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ <span data-ttu-id="5f1ba-110">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="5f1ba-110">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim data As XDocument = XDocument.Load("Data.xml")  
@@ -59,7 +54,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="5f1ba-111">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="5f1ba-111">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -79,6 +74,5 @@ Results are identical
 <Price>6.99</Price>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
-
+## <a name="see-also"></a><span data-ttu-id="5f1ba-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5f1ba-112">See Also</span></span>  
+ [<span data-ttu-id="5f1ba-113">LINQ to XML pour les utilisateurs de XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5f1ba-113">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

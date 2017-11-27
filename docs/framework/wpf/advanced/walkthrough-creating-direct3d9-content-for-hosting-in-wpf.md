@@ -1,130 +1,133 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: cr&#233;ation de contenu Direct3D9 &#224; h&#233;berger dans WPF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Direct3D9 (interopérabilité WPF), créer du contenu Direct3D9"
-  - "WPF, créer du contenu Direct3D9"
+title: "Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: cpp
+helpviewer_keywords:
+- WPF [WPF], creating Direct3D9 content
+- Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 750e5c42158a87c04a7fb0f2a83f126a698bb93f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: cr&#233;ation de contenu Direct3D9 &#224; h&#233;berger dans WPF
-Cette procédure pas à pas indique comment créer du contenu Direct3D9 à héberger dans une application Windows Presentation Foundation \(WPF\).  Pour plus d'informations sur l'hébergement de contenu Direct3D9 dans les applications WPF, consultez [Interopérabilité WPF et Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).  
+# <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a><span data-ttu-id="f2d7f-102">Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF</span><span class="sxs-lookup"><span data-stu-id="f2d7f-102">Walkthrough: Creating Direct3D9 Content for Hosting in WPF</span></span>
+<span data-ttu-id="f2d7f-103">Cette procédure pas à pas montre comment créer un contenu Direct3D9 à héberger dans une application Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="f2d7f-103">This walkthrough shows how to create Direct3D9 content that is suitable for hosting in a Windows Presentation Foundation (WPF) application.</span></span> <span data-ttu-id="f2d7f-104">Pour plus d’informations sur l’hébergement de contenu Direct3D9 dans les applications WPF, consultez [WPF et Direct3D9 interopérabilité](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).</span><span class="sxs-lookup"><span data-stu-id="f2d7f-104">For more information on hosting Direct3D9 content in WPF applications, see [WPF and Direct3D9 Interoperation](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).</span></span>  
   
- Dans cette procédure pas à pas, vous allez effectuer les tâches suivantes :  
+ <span data-ttu-id="f2d7f-105">Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :</span><span class="sxs-lookup"><span data-stu-id="f2d7f-105">In this walkthrough, you perform the following tasks:</span></span>  
   
--   Créer un projet Direct3D9.  
+-   <span data-ttu-id="f2d7f-106">Créez un projet Direct3D9.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-106">Create a Direct3D9 project.</span></span>  
   
--   Configurer le projet Direct3D9 à héberger dans une application WPF.  
+-   <span data-ttu-id="f2d7f-107">Configurer le projet Direct3D9 à héberger dans une application WPF.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-107">Configure the Direct3D9 project for hosting in a WPF application.</span></span>  
   
- Lorsque vous aurez terminé, vous obtiendrez une DLL qui comporte le contenu Direct3D9 à utiliser dans une application WPF.  
+ <span data-ttu-id="f2d7f-108">Lorsque vous avez terminé, vous aurez une DLL qui contient le contenu Direct3D9 pour une utilisation dans une application WPF.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-108">When you are finished, you will have a DLL that contains Direct3D9 content for use in a WPF application.</span></span>  
   
-## Composants requis  
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
+## <a name="prerequisites"></a><span data-ttu-id="f2d7f-109">Conditions préalables</span><span class="sxs-lookup"><span data-stu-id="f2d7f-109">Prerequisites</span></span>  
+ <span data-ttu-id="f2d7f-110">Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :</span><span class="sxs-lookup"><span data-stu-id="f2d7f-110">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]<span data-ttu-id="f2d7f-111">.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-111">.</span></span>  
   
--   Kit de développement DirectX \(SDK\) 9 ou version ultérieure.  
+-   <span data-ttu-id="f2d7f-112">SDK DirectX 9or plus tard.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-112">DirectX SDK 9or later.</span></span>  
   
-## Création du projet Direct3D9  
- La première étape consiste à créer et à configurer le projet Direct3D9.  
+## <a name="creating-the-direct3d9-project"></a><span data-ttu-id="f2d7f-113">Création du projet Direct3D9</span><span class="sxs-lookup"><span data-stu-id="f2d7f-113">Creating the Direct3D9 Project</span></span>  
+ <span data-ttu-id="f2d7f-114">La première étape consiste à créer et configurer le projet Direct3D9.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-114">The first step is to create and configure the Direct3D9 project.</span></span>  
   
-#### Pour créer le projet Direct3D9  
+#### <a name="to-create-the-direct3d9-project"></a><span data-ttu-id="f2d7f-115">Pour créer le projet Direct3D9</span><span class="sxs-lookup"><span data-stu-id="f2d7f-115">To create the Direct3D9 project</span></span>  
   
-1.  Créez un projet Win32 dans C\+\+ et nommez\-le `D3DContent`.  
+1.  <span data-ttu-id="f2d7f-116">Créez un projet Win32 en C++ nommé `D3DContent`.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-116">Create a new Win32 Project in C++ named `D3DContent`.</span></span>  
   
-     L'Assistant Application Win32 s'ouvre et affiche son écran de bienvenue.  
+     <span data-ttu-id="f2d7f-117">L’Assistant Application Win32 s’ouvre et affiche l’écran d’accueil.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-117">The Win32 Application Wizard opens and displays the Welcome screen.</span></span>  
   
-2.  Cliquez sur **Suivant**.  
+2.  <span data-ttu-id="f2d7f-118">Cliquez sur **Suivant**.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-118">Click **Next**.</span></span>  
   
-     L'écran Paramètres de l'application s'affiche.  
+     <span data-ttu-id="f2d7f-119">L’écran des paramètres de l’Application s’affiche.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-119">The Application Settings screen appears.</span></span>  
   
-3.  Dans la section **Type d'application :**, sélectionnez l'option **DLL**.  
+3.  <span data-ttu-id="f2d7f-120">Dans le **type d’Application :** section, sélectionnez le **DLL** option.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-120">In the **Application type:** section, select the **DLL** option.</span></span>  
   
-4.  Cliquez sur **Terminer**.  
+4.  <span data-ttu-id="f2d7f-121">Cliquez sur **Terminer**.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-121">Click **Finish**.</span></span>  
   
-     Le projet D3DContent est généré.  
+     <span data-ttu-id="f2d7f-122">Le projet D3DContent est généré.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-122">The D3DContent project is generated.</span></span>  
   
-5.  Dans l'Explorateur de solutions, cliquez avec le bouton droit sur le projet D3DContent, puis sélectionnez **Propriétés**.  
+5.  <span data-ttu-id="f2d7f-123">Dans l’Explorateur de solutions, cliquez sur le projet D3DContent, puis sélectionnez **propriétés**.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-123">In Solution Explorer, right-click the D3DContent project and select **Properties**.</span></span>  
   
-     La boîte de dialogue **Pages de propriétés de D3DContent** s'affiche.  
+     <span data-ttu-id="f2d7f-124">Le **les Pages de propriétés de D3DContent** boîte de dialogue s’ouvre.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-124">The **D3DContent Property Pages** dialog box opens.</span></span>  
   
-6.  Sélectionnez le nœud **C\/C\+\+**.  
+6.  <span data-ttu-id="f2d7f-125">Sélectionnez le **C/C++** nœud.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-125">Select the **C/C++** node.</span></span>  
   
-7.  Dans le champ **Autres répertoires Include**, spécifiez l'emplacement du dossier Include DirectX.  L'emplacement par défaut de ce dossier est le suivant : %ProgramFiles%\\Microsoft DirectX SDK \(*version*\)\\Include.  
+7.  <span data-ttu-id="f2d7f-126">Dans le **autres répertoires Include** Indiquez l’emplacement de DirectX inclure le dossier.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-126">In the **Additional Include Directories** field, specify the location of the DirectX include folder.</span></span> <span data-ttu-id="f2d7f-127">L’emplacement par défaut de ce dossier est %ProgramFiles%\Microsoft DirectX SDK (*version*) \Include.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-127">The default location for this folder is %ProgramFiles%\Microsoft DirectX SDK (*version*)\Include.</span></span>  
   
-8.  Double\-cliquez sur le nœud **Éditeur de liens** pour le développer.  
+8.  <span data-ttu-id="f2d7f-128">Double-cliquez sur le **l’éditeur de liens** nœud pour le développer.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-128">Double-click the **Linker** node to expand it.</span></span>  
   
-9. Dans le champ **Répertoires de bibliothèques supplémentaires**, spécifiez l'emplacement du dossier de bibliothèques DirectX.  L'emplacement par défaut de ce dossier est le suivant : %ProgramFiles%\\Microsoft DirectX SDK \(*version*\)\\Lib\\x86.  
+9. <span data-ttu-id="f2d7f-129">Dans le **répertoires de bibliothèques supplémentaires** champ, spécifiez l’emplacement du dossier de bibliothèques DirectX.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-129">In the **Additional Library Directories** field, specify the location of the DirectX libraries folder.</span></span> <span data-ttu-id="f2d7f-130">L’emplacement par défaut de ce dossier est %ProgramFiles%\Microsoft DirectX SDK (*version*) \Lib\x86.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-130">The default location for this folder is %ProgramFiles%\Microsoft DirectX SDK (*version*)\Lib\x86.</span></span>  
   
-10. Sélectionnez le nœud **Entrée**.  
+10. <span data-ttu-id="f2d7f-131">Sélectionnez le **entrée** nœud.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-131">Select the **Input** node.</span></span>  
   
-11. Dans le champ **Dépendances supplémentaires**, ajoutez les fichiers `d3d9.lib` et `d3dx9.lib`.  
+11. <span data-ttu-id="f2d7f-132">Dans le **dépendances supplémentaires** champ, ajoutez le `d3d9.lib` et `d3dx9.lib` fichiers.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-132">In the **Additional Dependencies** field, add the `d3d9.lib` and `d3dx9.lib` files.</span></span>  
   
-12. Dans l'Explorateur de solutions, ajoutez un nouveau fichier de définition de module \(.def\) au projet et nommez\-le `D3DContent.def`.  
+12. <span data-ttu-id="f2d7f-133">Dans l’Explorateur de solutions, ajoutez un nouveau fichier de définition de module (.def) nommé `D3DContent.def` au projet.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-133">In Solution Explorer, add a new module definition file (.def) named `D3DContent.def` to the project.</span></span>  
   
-## Création du contenu Direct3D9  
- Pour optimiser les performances, votre contenu Direct3D9 doit utiliser des paramètres particuliers.  Le code suivant indique comment créer une surface Direct3D9 qui possède les meilleures caractéristiques de performances.  Pour plus d'informations, consultez [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+## <a name="creating-the-direct3d9-content"></a><span data-ttu-id="f2d7f-134">Création du contenu Direct3D9</span><span class="sxs-lookup"><span data-stu-id="f2d7f-134">Creating the Direct3D9 Content</span></span>  
+ <span data-ttu-id="f2d7f-135">Pour obtenir des performances optimales, votre contenu Direct3D9 doit utiliser des paramètres particuliers.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-135">To get the best performance, your Direct3D9 content must use particular settings.</span></span> <span data-ttu-id="f2d7f-136">Le code suivant montre comment créer une surface Direct3D9 qui possède les meilleures caractéristiques de performances.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-136">The following code shows how to create a Direct3D9 surface that has the best performance characteristics.</span></span> <span data-ttu-id="f2d7f-137">Pour plus d’informations, consultez [considérations sur les performances de Direct3D9 et interopérabilité WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).</span><span class="sxs-lookup"><span data-stu-id="f2d7f-137">For more information, see [Performance Considerations for Direct3D9 and WPF Interoperability](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).</span></span>  
   
-#### Pour créer le contenu Direct3D9  
+#### <a name="to-create-the-direct3d9-content"></a><span data-ttu-id="f2d7f-138">Pour créer le Direct3D9 contenu</span><span class="sxs-lookup"><span data-stu-id="f2d7f-138">To create the Direct3D9 content</span></span>  
   
-1.  À l'aide de l'Explorateur de solutions, ajoutez au projet trois classes C\+\+ portant le nom suivant.  
+1.  <span data-ttu-id="f2d7f-139">À l’aide de l’Explorateur de solutions, ajoutez les trois classes C++ au projet portant le nom suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-139">Using Solution Explorer, add three C++ classes to the project named the following.</span></span>  
   
-     `CRenderer` \(avec destructeur virtuel\)  
+     <span data-ttu-id="f2d7f-140">`CRenderer`(avec destructeur virtuel)</span><span class="sxs-lookup"><span data-stu-id="f2d7f-140">`CRenderer` (with virtual destructor)</span></span>  
   
      `CRendererManager`  
   
      `CTriangleRenderer`  
   
-2.  Ouvrez Renderer.h dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+2.  <span data-ttu-id="f2d7f-141">Ouvrez Renderer.h dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-141">Open Renderer.h in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.h#rendererh)]  
   
-3.  Ouvrez Renderer.cpp dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+3.  <span data-ttu-id="f2d7f-142">Ouvrez Renderer.cpp dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-142">Open Renderer.cpp in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderercpp)]  
   
-4.  Ouvrez RendererManager.h dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+4.  <span data-ttu-id="f2d7f-143">Ouvrez RendererManager.h dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-143">Open RendererManager.h in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.h#renderermanagerh)]  
   
-5.  Ouvrez RendererManager.cpp dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+5.  <span data-ttu-id="f2d7f-144">Ouvrez RendererManager.cpp dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-144">Open RendererManager.cpp in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanagercpp)]  
   
-6.  Ouvrez TriangleRenderer.h dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+6.  <span data-ttu-id="f2d7f-145">Ouvrez TriangleRenderer.h dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-145">Open TriangleRenderer.h in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.h#trianglerendererh)]  
   
-7.  Ouvrez TriangleRenderer.cpp dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+7.  <span data-ttu-id="f2d7f-146">Ouvrez TriangleRenderer.cpp dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-146">Open TriangleRenderer.cpp in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.cpp#trianglerenderercpp)]  
   
-8.  Ouvrez stdafx.h dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+8.  <span data-ttu-id="f2d7f-147">Ouvrez stdafx.h dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-147">Open stdafx.h in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#StdafxH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/stdafx.h#stdafxh)]  
   
-9. Ouvrez dllmain.cpp dans l'éditeur de code et remplacez le code généré automatiquement par le code suivant.  
+9. <span data-ttu-id="f2d7f-148">Ouvrez dllmain.cpp dans l’éditeur de Code et remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-148">Open dllmain.cpp in the Code Editor and replace the automatically generated code with the following code.</span></span>  
   
      [!code-cpp[System.Windows.Interop.D3DImage#DllMain](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/dllmain.cpp#dllmain)]  
   
-10. Ouvrez D3DContent.def dans l'éditeur de code.  
+10. <span data-ttu-id="f2d7f-149">Ouvrez D3DContent.def dans l’éditeur de code.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-149">Open D3DContent.def in the code editor.</span></span>  
   
-11. Remplacez le code généré automatiquement par le code suivant.  
+11. <span data-ttu-id="f2d7f-150">Remplacez le code généré automatiquement par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-150">Replace the automatically generated code with the following code.</span></span>  
   
     ```  
-  
     LIBRARY "D3DContent"  
   
     EXPORTS  
@@ -137,16 +140,15 @@ Cette procédure pas à pas indique comment créer du contenu Direct3D9 à hébe
     GetBackBufferNoRef  
     Render  
     Destroy  
-  
     ```  
   
-12. Générez le projet.  
+12. <span data-ttu-id="f2d7f-151">Générez le projet.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-151">Build the project.</span></span>  
   
-## Étapes suivantes  
+## <a name="next-steps"></a><span data-ttu-id="f2d7f-152">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="f2d7f-152">Next Steps</span></span>  
   
--   Hébergez le contenu Direct3D9 dans une application WPF.  Pour plus d'informations, consultez [Procédure pas à pas : hébergement de contenu Direct3D9 dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md).  
+-   <span data-ttu-id="f2d7f-153">Héberger le contenu Direct3D9 dans une application WPF.</span><span class="sxs-lookup"><span data-stu-id="f2d7f-153">Host the Direct3D9 content in a WPF application.</span></span> <span data-ttu-id="f2d7f-154">Pour plus d’informations, consultez [procédure pas à pas : hébergement de contenu Direct3D9 dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md).</span><span class="sxs-lookup"><span data-stu-id="f2d7f-154">For more information, see [Walkthrough: Hosting Direct3D9 Content in WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Interop.D3DImage>   
- [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)   
- [Procédure pas à pas : hébergement de contenu Direct3D9 dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="f2d7f-155">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f2d7f-155">See Also</span></span>  
+ <xref:System.Windows.Interop.D3DImage>  
+ [<span data-ttu-id="f2d7f-156">Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF</span><span class="sxs-lookup"><span data-stu-id="f2d7f-156">Performance Considerations for Direct3D9 and WPF Interoperability</span></span>](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
+ [<span data-ttu-id="f2d7f-157">Procédure pas à pas : hébergement de contenu Direct3D9 dans WPF</span><span class="sxs-lookup"><span data-stu-id="f2d7f-157">Walkthrough: Hosting Direct3D9 Content in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

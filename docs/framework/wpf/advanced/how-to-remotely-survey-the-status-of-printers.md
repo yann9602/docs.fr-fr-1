@@ -1,92 +1,99 @@
 ---
-title: "Comment&#160;: observer &#224; distance l&#39;&#233;tat d&#39;imprimantes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "état de l'imprimante, observer à distance"
-  - "observer à distance l'état de l'imprimante"
-  - "statut, imprimantes, observer à distance"
-  - "observer à distance l'état de l'imprimante"
+title: "Comment : observer à distance l'état d'imprimantes"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- surveying printer status remotely [WPF]
+- printer status [WPF], surveying remotely
+- remotely surveying printer status [WPF]
+- status [WPF], printers [WPF], surveying remotely
 ms.assetid: d6324759-8292-4c23-9584-9c708887dc94
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ad824a1cef637edc99e6aaafc99d557167ea1f1f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: observer &#224; distance l&#39;&#233;tat d&#39;imprimantes
-Dans les petites et grandes entreprises, il peut arriver que plusieurs imprimantes ne fonctionnent pas en raison d'un problème \(bourrage papier, plus de papier ou autre\).  Les nombreuses propriétés d'imprimante proposées dans les [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] de [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] permettent d'observer rapidement l'état des imprimantes.  
+# <a name="how-to-remotely-survey-the-status-of-printers"></a><span data-ttu-id="48213-102">Comment : observer à distance l'état d'imprimantes</span><span class="sxs-lookup"><span data-stu-id="48213-102">How to: Remotely Survey the Status of Printers</span></span>
+<span data-ttu-id="48213-103">Dans les moyennes et grandes entreprises, il peut arriver à tout moment que plusieurs imprimantes ne fonctionnent pas en raison d’un bourrage papier, d’un manque de papier ou d’un autre problème.</span><span class="sxs-lookup"><span data-stu-id="48213-103">At any given time at medium and large companies there may be multiple printers that are not working due to a paper jam or being out of paper or some other problematic situation.</span></span> <span data-ttu-id="48213-104">L’ensemble complet de propriétés d’imprimante exposé dans les [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] de [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] permet de connaître rapidement l’état des imprimantes.</span><span class="sxs-lookup"><span data-stu-id="48213-104">The rich set of printer properties exposed in the [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] of [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] provide a means for performing a rapid survey of the states of printers.</span></span>  
   
-## Exemple  
- Les étapes principales pour créer ce type d'utilitaire sont les suivantes :  
+## <a name="example"></a><span data-ttu-id="48213-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="48213-105">Example</span></span>  
+ <span data-ttu-id="48213-106">Voici les principales étapes à suivre pour créer ce type d’utilitaire.</span><span class="sxs-lookup"><span data-stu-id="48213-106">The major steps for creating this kind of utility are as follows.</span></span>  
   
-1.  Obtenir une liste de tous les serveurs d'impression.  
+1.  <span data-ttu-id="48213-107">Répertoriez l’ensemble des serveurs d’impression.</span><span class="sxs-lookup"><span data-stu-id="48213-107">Obtain a list of all print servers.</span></span>  
   
-2.  Parcourir les serveurs pour interroger leurs files d'attente à l'impression.  
+2.  <span data-ttu-id="48213-108">Parcourez les serveurs en boucle pour interroger leurs files d’attente à l’impression.</span><span class="sxs-lookup"><span data-stu-id="48213-108">Loop through the servers to query their print queues.</span></span>  
   
-3.  À chaque exploration du serveur, parcourir toutes les files d'attente et lire chaque propriété qui pourrait indiquer que la file d'attente ne fonctionne pas actuellement.  
+3.  <span data-ttu-id="48213-109">À chaque étape de la boucle de serveur, parcourez en boucle toutes les files d’attente du serveur et lisez chaque propriété pouvant indiquer que la file d’attente ne fonctionne pas actuellement.</span><span class="sxs-lookup"><span data-stu-id="48213-109">Within each pass of the server loop, loop through all the server's queues and read each property that might indicate that the queue is not currently working.</span></span>  
   
- Une série d'extraits de code est présentée ci\-dessous.  Pour des raisons de simplicité, cet exemple suppose qu'il existe une liste de serveurs d'impression délimitée par CRLF.  La variable `fileOfPrintServers` est un objet <xref:System.IO.StreamReader> pour ce fichier.  Étant donné que chaque nom de serveur figure sur sa propre ligne, tout appel de <xref:System.IO.StreamReader.ReadLine%2A> obtient le nom du serveur suivant et déplace le curseur du <xref:System.IO.StreamReader> au début de la ligne suivante.  
+ <span data-ttu-id="48213-110">Le code ci-dessous est une série d’extraits de code.</span><span class="sxs-lookup"><span data-stu-id="48213-110">The code below is a series of snippets.</span></span> <span data-ttu-id="48213-111">Pour plus de simplicité, cet exemple suppose qu’il existe une liste de serveurs d’impression délimitée par des caractères CRLF (retour chariot-saut de ligne).</span><span class="sxs-lookup"><span data-stu-id="48213-111">For simplicity, this example assumes that there is a CRLF-delimited list of print servers.</span></span> <span data-ttu-id="48213-112">La variable `fileOfPrintServers` est un <xref:System.IO.StreamReader> objet pour ce fichier.</span><span class="sxs-lookup"><span data-stu-id="48213-112">The variable `fileOfPrintServers` is a <xref:System.IO.StreamReader> object for this file.</span></span> <span data-ttu-id="48213-113">Étant donné que chaque nom de serveur se trouve sur sa propre ligne, tout appel de <xref:System.IO.StreamReader.ReadLine%2A> Obtient le nom du serveur suivant et déplace le <xref:System.IO.StreamReader>du curseur au début de la ligne suivante.</span><span class="sxs-lookup"><span data-stu-id="48213-113">Since each server name is on its own line, any call of <xref:System.IO.StreamReader.ReadLine%2A> gets the name of the next server and moves the <xref:System.IO.StreamReader>'s cursor to the beginning of the next line.</span></span>  
   
- Dans la boucle externe, le code crée un objet <xref:System.Printing.PrintServer> pour le tout dernier serveur d'impression et spécifie que l'application doit disposer de droits d'administration sur le serveur.  
+ <span data-ttu-id="48213-114">Dans la boucle externe, le code crée un <xref:System.Printing.PrintServer> de l’objet pour le dernier serveur d’impression et spécifie que l’application doit disposer des droits d’administration sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="48213-114">Within the outer loop, the code creates a <xref:System.Printing.PrintServer> object for the latest print server and specifies that the application is to have administrative rights to the server.</span></span>  
   
 > [!NOTE]
->  S'il existe un grand nombre de serveurs, vous pouvez améliorer les performances en utilisant les constructeurs [PrintServer\(String, String\<xref:System.Printing.PrintServer.%23ctor%28System.String%2CSystem.String%5B%5D%2CSystem.Printing.PrintSystemDesiredAccess%29> qui initialisent uniquement les propriétés dont vous avez besoin.  
+>  <span data-ttu-id="48213-115">S’il existe un grand nombre de serveurs, vous pouvez améliorer les performances à l’aide de la <xref:System.Printing.PrintServer.%23ctor%28System.String%2CSystem.String%5B%5D%2CSystem.Printing.PrintSystemDesiredAccess%29> constructeurs qui initialisent uniquement les propriétés que vous vous apprêtez à besoin.</span><span class="sxs-lookup"><span data-stu-id="48213-115">If there are a lot of servers, you can improve performance by using the <xref:System.Printing.PrintServer.%23ctor%28System.String%2CSystem.String%5B%5D%2CSystem.Printing.PrintSystemDesiredAccess%29> constructors that only initialize the properties you are going to need.</span></span>  
   
- L'exemple utilise ensuite <xref:System.Printing.PrintServer.GetPrintQueues%2A> pour créer une collection de toutes les files d'attente du serveur et commence à les parcourir en boucle.  La boucle interne contient une structure de branches qui correspond aux deux façons de vérifier l'état d'une imprimante :  
+ <span data-ttu-id="48213-116">L’exemple utilise ensuite <xref:System.Printing.PrintServer.GetPrintQueues%2A> créer une collection de tous les du serveur de files d’attente et commence à parcourir en boucle.</span><span class="sxs-lookup"><span data-stu-id="48213-116">The example then uses <xref:System.Printing.PrintServer.GetPrintQueues%2A> to create a collection of all of the server's queues and begins to loop through them.</span></span> <span data-ttu-id="48213-117">La boucle interne contient une structure en branches correspondant aux deux méthodes de vérification de l’état de l’imprimante :</span><span class="sxs-lookup"><span data-stu-id="48213-117">This inner loop contains a branching structure corresponding to the two ways of checking a printer's status:</span></span>  
   
--   Vous pouvez lire les indicateurs de la propriété <xref:System.Printing.PrintQueue.QueueStatus%2A> qui est du type <xref:System.Printing.PrintQueueStatus>.  
+-   <span data-ttu-id="48213-118">Vous pouvez lire les indicateurs de le <xref:System.Printing.PrintQueue.QueueStatus%2A> propriété qui est de type <xref:System.Printing.PrintQueueStatus>.</span><span class="sxs-lookup"><span data-stu-id="48213-118">You can read the flags of the <xref:System.Printing.PrintQueue.QueueStatus%2A> property which is of type <xref:System.Printing.PrintQueueStatus>.</span></span>  
   
--   Vous pouvez lire chaque propriété appropriée telle que <xref:System.Printing.PrintQueue.IsOutOfPaper%2A> et <xref:System.Printing.PrintQueue.IsPaperJammed%2A>.  
+-   <span data-ttu-id="48213-119">Vous pouvez lire chaque propriété appropriée tel que <xref:System.Printing.PrintQueue.IsOutOfPaper%2A>, et <xref:System.Printing.PrintQueue.IsPaperJammed%2A>.</span><span class="sxs-lookup"><span data-stu-id="48213-119">You can read each relevant property such as <xref:System.Printing.PrintQueue.IsOutOfPaper%2A>, and <xref:System.Printing.PrintQueue.IsPaperJammed%2A>.</span></span>  
   
- Cet exemple illustrant les deux méthodes, l'utilisateur a été auparavant invité à choisir une méthode et a indiqué qu'il souhaitait utiliser les indicateurs de la propriété <xref:System.Printing.PrintQueue.QueueStatus%2A>.  Voir ci\-dessous pour des informations détaillées sur les deux méthodes.  
+ <span data-ttu-id="48213-120">Cet exemple illustre les deux méthodes, l’utilisateur a été précédemment vous y êtes invité à choisir une méthode à utiliser et a répondu par « y », qu’il souhaitait utiliser les indicateurs de le <xref:System.Printing.PrintQueue.QueueStatus%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="48213-120">This example demonstrates both methods, so the user was previously prompted as to which method to use and responded with "y" if he or she wanted to use the flags of the <xref:System.Printing.PrintQueue.QueueStatus%2A> property.</span></span> <span data-ttu-id="48213-121">Voir ci-dessous pour obtenir des informations détaillées sur les deux méthodes.</span><span class="sxs-lookup"><span data-stu-id="48213-121">See below for the details of the two methods.</span></span>  
   
- Enfin, les résultats sont présentés à l'utilisateur.  
+ <span data-ttu-id="48213-122">Enfin, les résultats sont présentés à l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="48213-122">Finally, the results are presented to the user.</span></span>  
   
  [!code-cpp[PrinterStatusSurvey#SurveyQueues](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PrinterStatusSurvey/CPP/Program.cpp#surveyqueues)]
  [!code-csharp[PrinterStatusSurvey#SurveyQueues](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#surveyqueues)]
  [!code-vb[PrinterStatusSurvey#SurveyQueues](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#surveyqueues)]  
   
- Pour vérifier l'état de l'imprimante au moyen des indicateurs de la propriété <xref:System.Printing.PrintQueue.QueueStatus%2A>, vous contrôlez si chaque indicateur correspondant est défini.  La procédure standard pour vérifier si l'un des bits d'un ensemble de bits indicateurs est défini consiste à effectuer une opération AND logique en spécifiant l'ensemble d'indicateurs comme premier opérande et l'indicateur lui\-même comme deuxième opérande.  Comme l'indicateur lui\-même n'a qu'un seul bit défini, le résultat du AND logique est que, au plus, ce même bit est défini.  Pour déterminer si c'est le cas ou non, il suffit de comparer le résultat du AND logique à l'indicateur lui\-même.  Pour plus d'informations, consultez <xref:System.Printing.PrintQueueStatus>, [&, opérateur \(référence C\#\)](../Topic/&%20Operator%20\(C%23%20Reference\).md) et <xref:System.FlagsAttribute>.  
+ <span data-ttu-id="48213-123">Pour vérifier l’état de l’imprimante à l’aide des indicateurs de le <xref:System.Printing.PrintQueue.QueueStatus%2A> propriété, vous vérifiez chaque indicateur correspondant est défini.</span><span class="sxs-lookup"><span data-stu-id="48213-123">To check printer status using the flags of the <xref:System.Printing.PrintQueue.QueueStatus%2A> property, you check each relevant flag to see if it is set.</span></span> <span data-ttu-id="48213-124">La méthode standard pour voir si un bit est défini dans un ensemble d’indicateurs binaires consiste à effectuer une opération AND logique en utilisant comme opérandes l’ensemble d’indicateurs et l’indicateur lui-même.</span><span class="sxs-lookup"><span data-stu-id="48213-124">The standard way to see if one bit is set in a set of bit flags is to perform a logical AND operation with the set of flags as one operand and the flag itself as the other.</span></span> <span data-ttu-id="48213-125">Étant donné que l’indicateur lui-même n’a qu’un seul bit de défini, l’opération AND logique ne peut pas trouver plus d’un même bit défini.</span><span class="sxs-lookup"><span data-stu-id="48213-125">Since the flag itself has only one bit set, the result of the logical AND is that, at most, that same bit is set.</span></span> <span data-ttu-id="48213-126">Pour savoir si c’est bien le cas, il suffit de comparer le résultat de l’opération AND logique avec l’indicateur lui-même.</span><span class="sxs-lookup"><span data-stu-id="48213-126">To find out whether it is or not, just compare the result of the logical AND with the flag itself.</span></span> <span data-ttu-id="48213-127">Pour plus d’informations, consultez <xref:System.Printing.PrintQueueStatus>, le [&, opérateur (référence c#)](~/docs/csharp/language-reference/operators/and-operator.md), et <xref:System.FlagsAttribute>.</span><span class="sxs-lookup"><span data-stu-id="48213-127">For more information, see <xref:System.Printing.PrintQueueStatus>, the [& Operator (C# Reference)](~/docs/csharp/language-reference/operators/and-operator.md), and <xref:System.FlagsAttribute>.</span></span>  
   
- Pour chaque attribut dont le bit est défini, le code ajoute une information préalable au rapport final qui sera présenté à l'utilisateur.  \(La méthode **ReportAvailabilityAtThisTime** qui est appelée à la fin du code est présentée ci\-après.\)  
+ <span data-ttu-id="48213-128">Pour chaque attribut dont le bit est défini, le code ajoute une note au rapport final qui sera présenté à l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="48213-128">For each attribute whose bit is set, the code adds a notice to the final report that will be presented to the user.</span></span> <span data-ttu-id="48213-129">(La méthode **ReportAvailabilityAtThisTime** qui est appelée à la fin du code est présentée ci-après.)</span><span class="sxs-lookup"><span data-stu-id="48213-129">(The **ReportAvailabilityAtThisTime** method that is called at the end of the code is discussed below.)</span></span>  
   
  [!code-cpp[PrinterStatusSurvey#SpotTroubleUsingQueueAttributes](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PrinterStatusSurvey/CPP/Program.cpp#spottroubleusingqueueattributes)]
  [!code-csharp[PrinterStatusSurvey#SpotTroubleUsingQueueAttributes](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#spottroubleusingqueueattributes)]
  [!code-vb[PrinterStatusSurvey#SpotTroubleUsingQueueAttributes](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#spottroubleusingqueueattributes)]  
   
- Pour vérifier l'état de l'imprimante à l'aide de chaque propriété, il vous suffit de lire chaque propriété et d'ajouter une note au rapport final qui sera présenté à l'utilisateur si cette propriété a la valeur `true`.  \(La méthode **ReportAvailabilityAtThisTime** qui est appelée à la fin du code est présentée ci\-après.\)  
+ <span data-ttu-id="48213-130">Pour vérifier l’état de l’imprimante à l’aide de chaque propriété, il vous suffit de lire chaque propriété et d’ajouter une note au rapport final qui sera présenté à l’utilisateur si la propriété est `true`.</span><span class="sxs-lookup"><span data-stu-id="48213-130">To check printer status using each property, you simply read each property and add a note to the final report that will be presented to the user if the property is `true`.</span></span> <span data-ttu-id="48213-131">(La méthode **ReportAvailabilityAtThisTime** qui est appelée à la fin du code est présentée ci-après.)</span><span class="sxs-lookup"><span data-stu-id="48213-131">(The **ReportAvailabilityAtThisTime** method that is called at the end of the code is discussed below.)</span></span>  
   
  [!code-cpp[PrinterStatusSurvey#SpotTroubleUsingQueueProperties](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PrinterStatusSurvey/CPP/Program.cpp#spottroubleusingqueueproperties)]
  [!code-csharp[PrinterStatusSurvey#SpotTroubleUsingQueueProperties](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#spottroubleusingqueueproperties)]
  [!code-vb[PrinterStatusSurvey#SpotTroubleUsingQueueProperties](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#spottroubleusingqueueproperties)]  
   
- La méthode **ReportAvailabilityAtThisTime** a été créée pour le cas où vous auriez besoin de déterminer si la file d'attente est disponible actuellement.  
+ <span data-ttu-id="48213-132">La méthode **ReportAvailabilityAtThisTime** a été créée au cas où vous devriez déterminer si la file d’attente est disponible à l’heure actuelle.</span><span class="sxs-lookup"><span data-stu-id="48213-132">The **ReportAvailabilityAtThisTime** method was created in case you need to determine if the queue is available at the current time of day.</span></span>  
   
- La méthode n'effectuera aucune action si les propriétés <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> sont égales. En effet, dans ce cas, l'imprimante est constamment disponible.  Si elles diffèrent, la méthode obtient l'heure actuelle qui doit alors être convertie en nombre total de minutes après minuit, car les propriétés <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> sont des <xref:System.Int32> représentant les minutes après minuit et non des objets <xref:System.DateTime>.  Enfin, la méthode vérifie si l'heure actuelle est située entre les heures de début et de fin.  
+ <span data-ttu-id="48213-133">La méthode ne fonctionnera pas si le <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> les propriétés sont égales ; car dans ce cas l’imprimante est disponible en permanence.</span><span class="sxs-lookup"><span data-stu-id="48213-133">The method will do nothing if the <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> and <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> properties are equal; because in that case the printer is available at all times.</span></span> <span data-ttu-id="48213-134">Si elles sont différentes, la méthode obtient l’heure actuelle qui doit ensuite être convertie en nombre total de minutes après minuit, car le <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> propriétés sont <xref:System.Int32>représentant les minutes après minuit, ne pas <xref:System.DateTime> objets.</span><span class="sxs-lookup"><span data-stu-id="48213-134">If they are different, the method gets the current time which then has to be converted into total minutes past midnight because the <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> and <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> properties are <xref:System.Int32>s representing minutes-after-midnight, not <xref:System.DateTime> objects.</span></span> <span data-ttu-id="48213-135">Enfin, la méthode vérifie si l’heure actuelle se situe entre les heures de début et de fin.</span><span class="sxs-lookup"><span data-stu-id="48213-135">Finally, the method checks to see if the current time is between the start and "until" times.</span></span>  
   
  [!code-cpp[PrinterStatusSurvey#UsingStartAndUntilTimes](../../../../samples/snippets/cpp/VS_Snippets_Wpf/PrinterStatusSurvey/CPP/Program.cpp#usingstartanduntiltimes)]
  [!code-csharp[PrinterStatusSurvey#UsingStartAndUntilTimes](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#usingstartanduntiltimes)]
  [!code-vb[PrinterStatusSurvey#UsingStartAndUntilTimes](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#usingstartanduntiltimes)]  
   
-## Voir aussi  
- <xref:System.Printing.PrintQueue.StartTimeOfDay%2A>   
- <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A>   
- <xref:System.DateTime>   
- <xref:System.Printing.PrintQueueStatus>   
- <xref:System.FlagsAttribute>   
- <xref:System.Printing.PrintServer.GetPrintQueues%2A>   
- <xref:System.Printing.PrintServer>   
- <xref:System.Printing.LocalPrintServer>   
- <xref:System.Printing.EnumeratedPrintQueueTypes>   
- <xref:System.Printing.PrintQueue>   
- [&, opérateur \(référence C\#\)](../Topic/&%20Operator%20\(C%23%20Reference\).md)   
- [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [Vue d'ensemble de l'impression](../../../../docs/framework/wpf/advanced/printing-overview.md)
+## <a name="see-also"></a><span data-ttu-id="48213-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="48213-136">See Also</span></span>  
+ <xref:System.Printing.PrintQueue.StartTimeOfDay%2A>  
+ <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A>  
+ <xref:System.DateTime>  
+ <xref:System.Printing.PrintQueueStatus>  
+ <xref:System.FlagsAttribute>  
+ <xref:System.Printing.PrintServer.GetPrintQueues%2A>  
+ <xref:System.Printing.PrintServer>  
+ <xref:System.Printing.LocalPrintServer>  
+ <xref:System.Printing.EnumeratedPrintQueueTypes>  
+ <xref:System.Printing.PrintQueue>  
+ [<span data-ttu-id="48213-137">&, Opérateur (référence c#)</span><span class="sxs-lookup"><span data-stu-id="48213-137">& Operator (C# Reference)</span></span>](~/docs/csharp/language-reference/operators/and-operator.md)  
+ [<span data-ttu-id="48213-138">Documents dans WPF</span><span class="sxs-lookup"><span data-stu-id="48213-138">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="48213-139">Vue d’ensemble de l’impression</span><span class="sxs-lookup"><span data-stu-id="48213-139">Printing Overview</span></span>](../../../../docs/framework/wpf/advanced/printing-overview.md)

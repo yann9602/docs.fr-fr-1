@@ -1,50 +1,42 @@
 ---
-title: "Opérations d’élément (Visual Basic) | Documents Microsoft"
+title: "Opérations d’élément (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5fcb0631-dce5-45ff-8abb-353cae21e14f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 70a66b1cdbcc03a743fb43d497e40c8ae032c0aa
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0b476907182573d62ba76e8e9f7b02417805dc10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="element-operations-visual-basic"></a>Opérations d’élément (Visual Basic)
-Opérations d’élément retournent un élément unique et spécifique à partir d’une séquence.  
+# <a name="element-operations-visual-basic"></a><span data-ttu-id="91fc2-102">Opérations d’élément (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91fc2-102">Element Operations (Visual Basic)</span></span>
+<span data-ttu-id="91fc2-103">Les opérations d’éléments retournent un élément unique et spécifique à partir d’une séquence.</span><span class="sxs-lookup"><span data-stu-id="91fc2-103">Element operations return a single, specific element from a sequence.</span></span>  
   
- Les méthodes d’opérateur de requête standard qui effectuent des opérations d’élément sont répertoriées dans la section suivante.  
+ <span data-ttu-id="91fc2-104">Les méthodes d’opérateurs de requête standard qui effectuent des opérations d’éléments sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="91fc2-104">The standard query operator methods that perform element operations are listed in the following section.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="91fc2-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="91fc2-105">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d’Expression de requête Visual Basic|Informations complémentaires|  
+|<span data-ttu-id="91fc2-106">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="91fc2-106">Method Name</span></span>|<span data-ttu-id="91fc2-107">Description</span><span class="sxs-lookup"><span data-stu-id="91fc2-107">Description</span></span>|<span data-ttu-id="91fc2-108">Syntaxe d’Expression de requête Visual Basic</span><span class="sxs-lookup"><span data-stu-id="91fc2-108">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="91fc2-109">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="91fc2-109">More Information</span></span>|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|ElementAt|Retourne l’élément à l’index spécifié dans une collection.|Non applicable.|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=fullName></xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=fullName></xref:System.Linq.Queryable.ElementAt%2A?displayProperty=fullName>|  
-|ElementAtOrDefault|Retourne l’élément à l’index spécifié dans une collection ou une valeur par défaut si l’index est hors limites.|Non applicable.|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=fullName>|  
-|First|Retourne le premier élément d’une collection ou le premier élément qui satisfait à une condition.|Non applicable.|<xref:System.Linq.Enumerable.First%2A?displayProperty=fullName></xref:System.Linq.Enumerable.First%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=fullName></xref:System.Linq.Queryable.First%2A?displayProperty=fullName>|  
-|FirstOrDefault|Retourne le premier élément d’une collection ou le premier élément qui satisfait à une condition. Retourne une valeur par défaut si aucun élément n’existe.|Non applicable.|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=fullName></xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=fullName>|  
-|Dernier|Retourne le dernier élément d’une collection ou le dernier élément qui remplit une condition.|Non applicable.|<xref:System.Linq.Enumerable.Last%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Last%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=fullName></xref:System.Linq.Queryable.Last%2A?displayProperty=fullName>|  
-|LastOrDefault|Retourne le dernier élément d’une collection ou le dernier élément qui remplit une condition. Retourne une valeur par défaut si aucun élément n’existe.|Non applicable.|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=fullName>|  
-|Single|Retourne le seul élément d’une collection ou le seul élément qui satisfait à une condition.|Non applicable.|<xref:System.Linq.Enumerable.Single%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Single%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=fullName></xref:System.Linq.Queryable.Single%2A?displayProperty=fullName>|  
-|SingleOrDefault|Retourne le seul élément d’une collection ou le seul élément qui satisfait à une condition. Retourne une valeur par défaut si aucun élément n’existe ou si la collection ne contient pas exactement un élément.|Non applicable.|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=fullName>|  
+|<span data-ttu-id="91fc2-110">ElementAt</span><span class="sxs-lookup"><span data-stu-id="91fc2-110">ElementAt</span></span>|<span data-ttu-id="91fc2-111">Retourne l’élément situé à un index spécifié dans une collection.</span><span class="sxs-lookup"><span data-stu-id="91fc2-111">Returns the element at a specified index in a collection.</span></span>|<span data-ttu-id="91fc2-112">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-112">Not applicable.</span></span>|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-113">ElementAtOrDefault</span><span class="sxs-lookup"><span data-stu-id="91fc2-113">ElementAtOrDefault</span></span>|<span data-ttu-id="91fc2-114">Retourne l’élément situé à un index spécifié dans une collection ou une valeur par défaut si l’index est hors limites.</span><span class="sxs-lookup"><span data-stu-id="91fc2-114">Returns the element at a specified index in a collection or a default value if the index is out of range.</span></span>|<span data-ttu-id="91fc2-115">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-115">Not applicable.</span></span>|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-116">First</span><span class="sxs-lookup"><span data-stu-id="91fc2-116">First</span></span>|<span data-ttu-id="91fc2-117">Retourne le premier élément d’une collection ou le premier élément qui satisfait à une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-117">Returns the first element of a collection, or the first element that satisfies a condition.</span></span>|<span data-ttu-id="91fc2-118">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-118">Not applicable.</span></span>|<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-119">FirstOrDefault</span><span class="sxs-lookup"><span data-stu-id="91fc2-119">FirstOrDefault</span></span>|<span data-ttu-id="91fc2-120">Retourne le premier élément d’une collection ou le premier élément qui remplit une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-120">Returns the first element of a collection, or the first element that satisfies a condition.</span></span> <span data-ttu-id="91fc2-121">Retourne une valeur par défaut s’il n’existe aucun élément répondant aux critères.</span><span class="sxs-lookup"><span data-stu-id="91fc2-121">Returns a default value if no such element exists.</span></span>|<span data-ttu-id="91fc2-122">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-122">Not applicable.</span></span>|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-123">Dernier</span><span class="sxs-lookup"><span data-stu-id="91fc2-123">Last</span></span>|<span data-ttu-id="91fc2-124">Retourne le dernier élément d’une collection ou le dernier élément qui remplit une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-124">Returns the last element of a collection, or the last element that satisfies a condition.</span></span>|<span data-ttu-id="91fc2-125">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-125">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-126">LastOrDefault</span><span class="sxs-lookup"><span data-stu-id="91fc2-126">LastOrDefault</span></span>|<span data-ttu-id="91fc2-127">Retourne le dernier élément d’une collection ou le dernier élément qui remplit une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-127">Returns the last element of a collection, or the last element that satisfies a condition.</span></span> <span data-ttu-id="91fc2-128">Retourne une valeur par défaut s’il n’existe aucun élément répondant aux critères.</span><span class="sxs-lookup"><span data-stu-id="91fc2-128">Returns a default value if no such element exists.</span></span>|<span data-ttu-id="91fc2-129">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-129">Not applicable.</span></span>|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-130">Single</span><span class="sxs-lookup"><span data-stu-id="91fc2-130">Single</span></span>|<span data-ttu-id="91fc2-131">Retourne le seul élément d’une collection ou le seul élément qui remplit une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-131">Returns the only element of a collection, or the only element that satisfies a condition.</span></span>|<span data-ttu-id="91fc2-132">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-132">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="91fc2-133">SingleOrDefault</span><span class="sxs-lookup"><span data-stu-id="91fc2-133">SingleOrDefault</span></span>|<span data-ttu-id="91fc2-134">Retourne le seul élément d’une collection ou le seul élément qui remplit une condition.</span><span class="sxs-lookup"><span data-stu-id="91fc2-134">Returns the only element of a collection, or the only element that satisfies a condition.</span></span> <span data-ttu-id="91fc2-135">Retourne une valeur par défaut s’il n’existe aucun élément remplissant les critères ou si la collection ne contient pas exactement un élément.</span><span class="sxs-lookup"><span data-stu-id="91fc2-135">Returns a default value if no such element exists or the collection does not contain exactly one element.</span></span>|<span data-ttu-id="91fc2-136">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="91fc2-136">Not applicable.</span></span>|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq></xref:System.Linq>   
- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Comment : interroger le plus grand nombre ou les fichiers dans une arborescence de répertoires (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)
+## <a name="see-also"></a><span data-ttu-id="91fc2-137">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="91fc2-137">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="91fc2-138">Vue d’ensemble des opérateurs de requête standard (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91fc2-138">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="91fc2-139">Comment : interroger le plus grand nombre ou les fichiers dans une arborescence de répertoires (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91fc2-139">How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)

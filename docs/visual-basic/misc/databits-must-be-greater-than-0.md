@@ -1,22 +1,25 @@
 ---
-title: "DataBits doit &#234;tre sup&#233;rieur &#224;&#160;0 | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
+title: "DataBits doit être supérieur à 0"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: b0e1d53f-ed19-47bf-b7ef-06479aa76338
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1de9f9fc11a2b17d84da9c04133f9a3c610ddf3f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# DataBits doit &#234;tre sup&#233;rieur &#224;&#160;0
-L’argument `DataBits` spécifié pour la méthode `My.Computer.Ports.OpenSerialPort` doit être supérieur à zéro.  
+# <a name="databits-must-be-greater-than-0"></a><span data-ttu-id="9dc7e-102">DataBits doit être supérieur à 0</span><span class="sxs-lookup"><span data-stu-id="9dc7e-102">DataBits must be greater than 0</span></span>
+<span data-ttu-id="9dc7e-103">L’argument `DataBits` spécifié pour la méthode `My.Computer.Ports.OpenSerialPort` doit être supérieur à zéro.</span><span class="sxs-lookup"><span data-stu-id="9dc7e-103">The `DataBits` argument specified for the `My.Computer.Ports.OpenSerialPort` method must be greater than zero.</span></span>  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a><span data-ttu-id="9dc7e-104">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="9dc7e-104">To correct this error</span></span>  
   
--   Remplacez la valeur de l’argument `DataBits` par une valeur positive.  
+-   <span data-ttu-id="9dc7e-105">Remplacez la valeur de l’argument `DataBits` par une valeur positive.</span><span class="sxs-lookup"><span data-stu-id="9dc7e-105">Change the value of the `DataBits` argument to a positive number.</span></span>  
   
-## Voir aussi  
- [My.Computer.Ports.OpenSerialPort, méthode](http://msdn.microsoft.com/fr-fr/ed1e75f0-635a-4229-8fe6-becea5d036c3)
+## <a name="see-also"></a><span data-ttu-id="9dc7e-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9dc7e-106">See Also</span></span>  
+ [<span data-ttu-id="9dc7e-107">My.Computer.Ports.OpenSerialPort, méthode</span><span class="sxs-lookup"><span data-stu-id="9dc7e-107">My.Computer.Ports.OpenSerialPort Method</span></span>](http://msdn.microsoft.com/en-us/ed1e75f0-635a-4229-8fe6-becea5d036c3)

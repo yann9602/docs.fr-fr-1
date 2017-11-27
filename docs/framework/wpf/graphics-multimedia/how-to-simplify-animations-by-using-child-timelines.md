@@ -1,37 +1,40 @@
 ---
-title: "Comment&#160;: simplifier des animations &#224; l&#39;aide de chronologies enfants | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, simplifier par des chronologies enfants"
-  - "chronologies enfants"
-  - "simplifier des animations à l'aide de chronologies enfants"
+title: "Comment : simplifier des animations à l'aide de chronologies enfants"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- simplifying animations by child timelines [WPF]
+- animation [WPF], simplifying by child timelines
+- child timelines [WPF]
 ms.assetid: 8335d770-d13d-42bd-8dfa-63f92c0327e2
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: daa4caac0046293e8b86a773bfffd46cf30e835b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: simplifier des animations &#224; l&#39;aide de chronologies enfants
-Cet exemple montre comment simplifier des animations à l'aide d'objets <xref:System.Windows.Media.Animation.ParallelTimeline> enfants.  Un <xref:System.Windows.Media.Animation.Storyboard> est un type de <xref:System.Windows.Media.Animation.Timeline> qui fournit des informations de ciblage pour les chronologies qu'il contient.  Utilisez un <xref:System.Windows.Media.Animation.Storyboard> pour fournir des informations de ciblage sur la chronologie, y compris des informations sur l'objet et la propriété.  
+# <a name="how-to-simplify-animations-by-using-child-timelines"></a><span data-ttu-id="18e7d-102">Comment : simplifier des animations à l'aide de chronologies enfants</span><span class="sxs-lookup"><span data-stu-id="18e7d-102">How to: Simplify Animations by Using Child Timelines</span></span>
+<span data-ttu-id="18e7d-103">Cet exemple montre comment simplifier des animations à l’aide des enfants <xref:System.Windows.Media.Animation.ParallelTimeline> objets.</span><span class="sxs-lookup"><span data-stu-id="18e7d-103">This example shows how to simplify animations by using child <xref:System.Windows.Media.Animation.ParallelTimeline> objects.</span></span> <span data-ttu-id="18e7d-104">A <xref:System.Windows.Media.Animation.Storyboard> est un type de <xref:System.Windows.Media.Animation.Timeline> qui fournit des informations de ciblage pour les chronologies qu’il contient.</span><span class="sxs-lookup"><span data-stu-id="18e7d-104">A <xref:System.Windows.Media.Animation.Storyboard> is a type of <xref:System.Windows.Media.Animation.Timeline> that provides targeting information for the timelines it contains.</span></span> <span data-ttu-id="18e7d-105">Utilisez un <xref:System.Windows.Media.Animation.Storyboard> pour fournir des informations, y compris les informations d’objet et la propriété de ciblage de chronologie.</span><span class="sxs-lookup"><span data-stu-id="18e7d-105">Use a <xref:System.Windows.Media.Animation.Storyboard> to provide timeline targeting information, including object and property information.</span></span>  
   
- Pour débuter une animation, utilisez un ou plusieurs objets <xref:System.Windows.Media.Animation.ParallelTimeline> comme éléments enfants imbriqués d'un <xref:System.Windows.Media.Animation.Storyboard>.  Ces objets <xref:System.Windows.Media.Animation.ParallelTimeline> peuvent contenir d'autres animations et peuvent, par conséquent, mieux encapsuler les séquences temporelles dans des animations complexes.  Par exemple, si vous animez un <xref:System.Windows.Controls.TextBlock> et plusieurs formes dans le même <xref:System.Windows.Media.Animation.Storyboard>, vous pouvez séparer les animations pour le <xref:System.Windows.Controls.TextBlock> et les formes, en les mettant chacune dans un <xref:System.Windows.Media.Animation.ParallelTimeline> séparé.  Étant donné que chaque <xref:System.Windows.Media.Animation.ParallelTimeline> possède son propre <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> et que tous les éléments enfants du <xref:System.Windows.Media.Animation.ParallelTimeline> commencent par rapport à ce <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>, la séquence temporelle est mieux encapsulée.  
+ <span data-ttu-id="18e7d-106">Pour commencer une animation, utilisez une ou plusieurs <xref:System.Windows.Media.Animation.ParallelTimeline> objets en tant qu’éléments enfants imbriqués d’un <xref:System.Windows.Media.Animation.Storyboard>.</span><span class="sxs-lookup"><span data-stu-id="18e7d-106">To begin an animation, use one or more <xref:System.Windows.Media.Animation.ParallelTimeline> objects as nested child elements of a <xref:System.Windows.Media.Animation.Storyboard>.</span></span> <span data-ttu-id="18e7d-107">Ces <xref:System.Windows.Media.Animation.ParallelTimeline> objets peuvent contenir d’autres animations et par conséquent, mieux encapsuler les séquences temporelles dans des animations complexes.</span><span class="sxs-lookup"><span data-stu-id="18e7d-107">These <xref:System.Windows.Media.Animation.ParallelTimeline> objects can contain other animations and therefore, can better encapsulate the timing sequences in complex animations.</span></span> <span data-ttu-id="18e7d-108">Par exemple, si vous animez un <xref:System.Windows.Controls.TextBlock> et plusieurs formes dans le même <xref:System.Windows.Media.Animation.Storyboard>, vous pouvez séparer les animations de la <xref:System.Windows.Controls.TextBlock> et les formes, en les mettant chacune dans un distinct <xref:System.Windows.Media.Animation.ParallelTimeline>.</span><span class="sxs-lookup"><span data-stu-id="18e7d-108">For example, if you are animating a <xref:System.Windows.Controls.TextBlock> and several shapes in the same <xref:System.Windows.Media.Animation.Storyboard>, you can separate the animations for the <xref:System.Windows.Controls.TextBlock> and the shapes, putting each into a separate <xref:System.Windows.Media.Animation.ParallelTimeline>.</span></span> <span data-ttu-id="18e7d-109">Étant donné que chaque <xref:System.Windows.Media.Animation.ParallelTimeline> possède son propre <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> et tous les éléments enfants de la <xref:System.Windows.Media.Animation.ParallelTimeline> commencer par rapport à cette <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>, minutage est mieux encapsulé.</span><span class="sxs-lookup"><span data-stu-id="18e7d-109">Because each <xref:System.Windows.Media.Animation.ParallelTimeline> has its own <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> and all child elements of the <xref:System.Windows.Media.Animation.ParallelTimeline> begin relative to this <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>, timing is better encapsulated.</span></span>  
   
- L'exemple suivant anime deux parties de texte \(objets <xref:System.Windows.Controls.TextBlock>\) à partir du même <xref:System.Windows.Media.Animation.Storyboard>.  Un <xref:System.Windows.Media.Animation.ParallelTimeline> encapsule les animations de l'un des objets <xref:System.Windows.Controls.TextBlock>.  
+ <span data-ttu-id="18e7d-110">L’exemple suivant anime deux parties de texte (<xref:System.Windows.Controls.TextBlock> objets) à partir d’au sein du même <xref:System.Windows.Media.Animation.Storyboard>.</span><span class="sxs-lookup"><span data-stu-id="18e7d-110">The following example animates two pieces of text (<xref:System.Windows.Controls.TextBlock> objects) from within the same <xref:System.Windows.Media.Animation.Storyboard>.</span></span> <span data-ttu-id="18e7d-111">A <xref:System.Windows.Media.Animation.ParallelTimeline> encapsule les animations de l’un de le <xref:System.Windows.Controls.TextBlock> objets.</span><span class="sxs-lookup"><span data-stu-id="18e7d-111">A <xref:System.Windows.Media.Animation.ParallelTimeline> encapsulates the animations of one of the <xref:System.Windows.Controls.TextBlock> objects.</span></span>  
   
- **Remarque sur les performances :** bien que vous puissiez imbriquer des chronologies <xref:System.Windows.Media.Animation.Storyboard> les unes dans les autres, les <xref:System.Windows.Media.Animation.ParallelTimeline>s sont plus appropriés pour l'imbrication car ils requièrent moins de charge mémoire.  \(La classe <xref:System.Windows.Media.Animation.Storyboard> hérite de la classe <xref:System.Windows.Media.Animation.ParallelTimeline>.\)  
+ <span data-ttu-id="18e7d-112">**Remarque de performances :** bien que vous pouvez imbriquer des <xref:System.Windows.Media.Animation.Storyboard> chronologies à l’intérieur de l’autre, <xref:System.Windows.Media.Animation.ParallelTimeline>s sont plus adaptés à l’imbrication, car elles nécessitent moins de surcharge.</span><span class="sxs-lookup"><span data-stu-id="18e7d-112">**Performance Note:** Although you can nest <xref:System.Windows.Media.Animation.Storyboard> timelines inside each other, <xref:System.Windows.Media.Animation.ParallelTimeline>s are more suitable for nesting because they require less overhead.</span></span> <span data-ttu-id="18e7d-113">(Le <xref:System.Windows.Media.Animation.Storyboard> classe hérite de la <xref:System.Windows.Media.Animation.ParallelTimeline> classe.)</span><span class="sxs-lookup"><span data-stu-id="18e7d-113">(The <xref:System.Windows.Media.Animation.Storyboard> class inherits from the <xref:System.Windows.Media.Animation.ParallelTimeline> class.)</span></span>  
   
-## Exemple  
- [!code-xml[Timelines_snip#ParallelTimelineWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Timelines_snip/CS/ParallelTimelineExample.xaml#paralleltimelinewholepage)]  
+## <a name="example"></a><span data-ttu-id="18e7d-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="18e7d-114">Example</span></span>  
+ [!code-xaml[Timelines_snip#ParallelTimelineWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Timelines_snip/CS/ParallelTimelineExample.xaml#paralleltimelinewholepage)]  
   
-## Voir aussi  
- [Vue d'ensemble de l'animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [Spécifier HandoffBehavior entre des animations de storyboard](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-handoffbehavior-between-storyboard-animations.md)
+## <a name="see-also"></a><span data-ttu-id="18e7d-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18e7d-115">See Also</span></span>  
+ [<span data-ttu-id="18e7d-116">Vue d’ensemble de l’animation</span><span class="sxs-lookup"><span data-stu-id="18e7d-116">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="18e7d-117">Spécifier HandoffBehavior entre des animations de storyboard</span><span class="sxs-lookup"><span data-stu-id="18e7d-117">Specify HandoffBehavior Between Storyboard Animations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-handoffbehavior-between-storyboard-animations.md)

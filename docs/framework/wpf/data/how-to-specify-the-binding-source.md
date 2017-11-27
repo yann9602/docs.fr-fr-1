@@ -1,56 +1,62 @@
 ---
-title: "Comment&#160;: sp&#233;cifier la source de liaison | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lier des données, sources de liaison"
-  - "sources de liaison"
-  - "liaison de données, source de liaison"
+title: "Comment : spécifier la source de liaison"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- binding data [WPF], binding sources
+- data binding [WPF], binding source
+- binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 05f77e8939b9b81a9e3861df6a44bc3585a0a504
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: sp&#233;cifier la source de liaison
-Dans la liaison de données, l'objet [de source de liaison](GTMT) fait référence à l'objet dont vous obtenez vos données.  Cette rubrique décrit les différentes manières de spécifier la [source de liaison](GTMT).  
+# <a name="how-to-specify-the-binding-source"></a><span data-ttu-id="74a6f-102">Comment : spécifier la source de liaison</span><span class="sxs-lookup"><span data-stu-id="74a6f-102">How to: Specify the Binding Source</span></span>
+<span data-ttu-id="74a6f-103">Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez vos données.</span><span class="sxs-lookup"><span data-stu-id="74a6f-103">In data binding, the binding source object refers to the object you obtain your data from.</span></span> <span data-ttu-id="74a6f-104">Cette rubrique décrit les différentes façons de spécifier la source de liaison.</span><span class="sxs-lookup"><span data-stu-id="74a6f-104">This topic describes the different ways of specifying the binding source.</span></span>  
   
-## Exemple  
- Si vous liez plusieurs propriétés à une source commune, vous souhaitez utiliser la propriété `DataContext`, qui offre un moyen pratique d'établir une portée dans laquelle toutes les propriétés liées aux données héritent d'une source commune.  
+## <a name="example"></a><span data-ttu-id="74a6f-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="74a6f-105">Example</span></span>  
+ <span data-ttu-id="74a6f-106">Si vous liez plusieurs propriétés à une source commune, vous allez devoir utiliser la propriété `DataContext`, qui offre un moyen pratique d’établir une portée dans laquelle toutes les propriétés liées aux données héritent d’une source commune.</span><span class="sxs-lookup"><span data-stu-id="74a6f-106">If you are binding several properties to a common source, you want to use the `DataContext` property, which provides a convenient way to establish a scope within which all data-bound properties inherit a common source.</span></span>  
   
- Dans l'exemple suivant, le contexte de données est établi à l'élément racine de l'application.  Cela permet à tous les éléments enfants d'hériter de ce contexte de données.  Les données pour la liaison viennent d'une classe de données personnalisée, `NetIncome`, référencée directement à travers un mappage et attribuée de la clé de ressource `incomeDataSource`.  
+ <span data-ttu-id="74a6f-107">Dans l’exemple suivant, le contexte de données est établi sur l’élément racine de l’application.</span><span class="sxs-lookup"><span data-stu-id="74a6f-107">In the following example, the data context is established on the root element of the application.</span></span> <span data-ttu-id="74a6f-108">Ainsi, tous les éléments enfants vont hériter de ce contexte de données.</span><span class="sxs-lookup"><span data-stu-id="74a6f-108">This allows all child elements to inherit that data context.</span></span> <span data-ttu-id="74a6f-109">Les données de la liaison proviennent d’une classe de données personnalisée, `NetIncome`, qui est référencée directement via un mappage et qui est affectée à la clé de ressource de `incomeDataSource`.</span><span class="sxs-lookup"><span data-stu-id="74a6f-109">Data for the binding comes from a custom data class, `NetIncome`, referenced directly through a mapping and given the resource key of `incomeDataSource`.</span></span>  
   
- [!code-xml[DirectionalBinding#DataContext1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext1)]  
-[!code-xml[DirectionalBinding#DataContext2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext2)]  
+ [!code-xaml[DirectionalBinding#DataContext1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext1)]  
+[!code-xaml[DirectionalBinding#DataContext2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext2)]  
   
- L'exemple suivant illustre la définition de la classe `NetIncome`.  
+ <span data-ttu-id="74a6f-110">L’exemple suivant montre la définition de la classe `NetIncome`.</span><span class="sxs-lookup"><span data-stu-id="74a6f-110">The following example shows the definition of the `NetIncome` class.</span></span>  
   
  [!code-csharp[DirectionalBinding#DataObject](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/billsdata.cs#dataobject)]
  [!code-vb[DirectionalBinding#DataObject](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DirectionalBinding/VisualBasic/NetIncome.vb#dataobject)]  
   
 > [!NOTE]
->  L'exemple précité instancie l'objet dans la balise et l'utilise comme une ressource.  Si vous souhaitez créer une liaison avec un objet qui a déjà été instancié dans le code, vous devez définir la propriété `DataContext` par programme.  Pour obtenir un exemple, consultez [Rendre des données disponibles pour la liaison en XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md).  
+>  <span data-ttu-id="74a6f-111">L’exemple ci-dessus instancie l’objet dans le balisage et l’utilise en tant que ressource.</span><span class="sxs-lookup"><span data-stu-id="74a6f-111">The above example instantiates the object in markup and uses it as a resource.</span></span> <span data-ttu-id="74a6f-112">Si vous souhaitez effectuer une liaison à un objet qui a déjà été instancié dans le code, vous devez définir la propriété `DataContext` par programmation.</span><span class="sxs-lookup"><span data-stu-id="74a6f-112">If you want to bind to an object that has already been instantiated in code, you need to set the `DataContext` property programmatically.</span></span> <span data-ttu-id="74a6f-113">Pour obtenir un exemple, consultez la page [Rendre des données disponibles pour la liaison en XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md).</span><span class="sxs-lookup"><span data-stu-id="74a6f-113">For an example, see [Make Data Available for Binding in XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md).</span></span>  
   
- Ou bien, si vous souhaitez spécifier explicitement la source sur vos liaisons individuelles, vous disposez des options suivantes.  Celles\-ci ont priorité sur le contexte de données hérité.  
+ <span data-ttu-id="74a6f-114">Sinon, si vous souhaitez spécifier explicitement la source sur vos liaisons individuelles, vous disposez des options suivantes.</span><span class="sxs-lookup"><span data-stu-id="74a6f-114">Alternatively, if you want to specify the source on your individual bindings explicitly, you have the following options.</span></span> <span data-ttu-id="74a6f-115">Celles-ci ont priorité sur le contexte de données hérité.</span><span class="sxs-lookup"><span data-stu-id="74a6f-115">These take precedence over the inherited data context.</span></span>  
   
-|Propriété|Description|  
-|---------------|-----------------|  
-|<xref:System.Windows.Data.Binding.Source%2A>|Vous utilisez cette propriété pour définir la source sur l'instance d'un objet.  Si vous n'avez pas besoin des fonctionnalités d'établissement d'une portée dans laquelle plusieurs propriétés héritent du même contexte de données, vous pouvez utiliser la propriété <xref:System.Windows.Data.Binding.Source%2A> au lieu de la propriété `DataContext`.  Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.Source%2A>.|  
-|<xref:System.Windows.Data.Binding.RelativeSource%2A>|C'est utile lorsque vous souhaitez spécifier la source relative à l'emplacement où se trouve votre [cible de liaison](GTMT).  Quelques scénarios courants où vous pouvez utiliser cette propriété : lorsque vous souhaitez lier une propriété de votre élément à une autre propriété du même élément ou si vous définissez une liaison dans un style ou un modèle.  Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.RelativeSource%2A>.|  
-|<xref:System.Windows.Data.Binding.ElementName%2A>|Vous spécifiez une chaîne qui représente l'élément sur lequel vous souhaitez effectuer la liaison.  C'est utile lorsque vous souhaitez créer une liaison avec la propriété d'un autre élément sur votre application.  Par exemple, si vous souhaitez utiliser un <xref:System.Windows.Controls.Slider> pour contrôler la hauteur d'un autre contrôle dans votre application, ou si vous voulez lier le <xref:System.Windows.Controls.ContentControl.Content%2A> de votre contrôle à la propriété <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> de votre contrôle <xref:System.Windows.Controls.ListBox>.  Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.ElementName%2A>.|  
+|<span data-ttu-id="74a6f-116">Propriété</span><span class="sxs-lookup"><span data-stu-id="74a6f-116">Property</span></span>|<span data-ttu-id="74a6f-117">Description</span><span class="sxs-lookup"><span data-stu-id="74a6f-117">Description</span></span>|  
+|--------------|-----------------|  
+|<xref:System.Windows.Data.Binding.Source%2A>|<span data-ttu-id="74a6f-118">Cette propriété vous permet de définir la source à une instance d’un objet.</span><span class="sxs-lookup"><span data-stu-id="74a6f-118">You use this property to set the source to an instance of an object.</span></span> <span data-ttu-id="74a6f-119">Si vous n’avez pas besoin de la fonctionnalité de l’établissement d’une étendue dans laquelle plusieurs propriétés héritent du même contexte de données, vous pouvez utiliser la <xref:System.Windows.Data.Binding.Source%2A> propriété au lieu du `DataContext` propriété.</span><span class="sxs-lookup"><span data-stu-id="74a6f-119">If you do not need the functionality of establishing a scope in which several properties inherit the same data context, you can use the <xref:System.Windows.Data.Binding.Source%2A> property instead of the `DataContext` property.</span></span> <span data-ttu-id="74a6f-120">Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.Source%2A>.</span><span class="sxs-lookup"><span data-stu-id="74a6f-120">For more information, see <xref:System.Windows.Data.Binding.Source%2A>.</span></span>|  
+|<xref:System.Windows.Data.Binding.RelativeSource%2A>|<span data-ttu-id="74a6f-121">Cela est utile lorsque vous souhaitez spécifier la source par rapport à l’emplacement de votre cible de liaison.</span><span class="sxs-lookup"><span data-stu-id="74a6f-121">This is useful when you want to specify the source relative to where your binding target is.</span></span> <span data-ttu-id="74a6f-122">Vous pouvez utiliser cette propriété lorsque vous souhaitez lier une propriété de votre élément à une autre propriété du même élément ou si vous définissez une liaison dans un style ou un modèle.</span><span class="sxs-lookup"><span data-stu-id="74a6f-122">Some common scenarios where you may use this property is when you want to bind one property of your element to another property of the same element or if you are defining a binding in a style or a template.</span></span> <span data-ttu-id="74a6f-123">Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.RelativeSource%2A>.</span><span class="sxs-lookup"><span data-stu-id="74a6f-123">For more information, see <xref:System.Windows.Data.Binding.RelativeSource%2A>.</span></span>|  
+|<xref:System.Windows.Data.Binding.ElementName%2A>|<span data-ttu-id="74a6f-124">Vous spécifiez une chaîne qui représente l’élément que vous voulez lier.</span><span class="sxs-lookup"><span data-stu-id="74a6f-124">You specify a string that represents the element you want to bind to.</span></span> <span data-ttu-id="74a6f-125">Cela est utile lorsque vous souhaitez effectuer une liaison à la propriété d’un autre élément sur votre application.</span><span class="sxs-lookup"><span data-stu-id="74a6f-125">This is useful when you want to bind to the property of another element on your application.</span></span> <span data-ttu-id="74a6f-126">Par exemple, si vous souhaitez utiliser un <xref:System.Windows.Controls.Slider> pour contrôler la hauteur d’un autre contrôle dans votre application, ou si vous souhaitez lier le <xref:System.Windows.Controls.ContentControl.Content%2A> de votre contrôle à la <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> propriété de votre <xref:System.Windows.Controls.ListBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="74a6f-126">For example, if you want to use a <xref:System.Windows.Controls.Slider> to control the height of another control in your application, or if you want to bind the <xref:System.Windows.Controls.ContentControl.Content%2A> of your control to the <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> property of your <xref:System.Windows.Controls.ListBox> control.</span></span> <span data-ttu-id="74a6f-127">Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.ElementName%2A>.</span><span class="sxs-lookup"><span data-stu-id="74a6f-127">For more information, see <xref:System.Windows.Data.Binding.ElementName%2A>.</span></span>|  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.DataContext%2A?displayProperty=fullName>   
- <xref:System.Windows.FrameworkContentElement.DataContext%2A?displayProperty=fullName>   
- [Héritage de la valeur de propriété](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)   
- [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Vue d'ensemble des déclarations de liaison](../../../../docs/framework/wpf/data/binding-declarations-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="74a6f-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="74a6f-128">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.DataContext%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.FrameworkContentElement.DataContext%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="74a6f-129">Héritage de la valeur de propriété</span><span class="sxs-lookup"><span data-stu-id="74a6f-129">Property Value Inheritance</span></span>](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)  
+ [<span data-ttu-id="74a6f-130">Vue d’ensemble de la liaison de données</span><span class="sxs-lookup"><span data-stu-id="74a6f-130">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="74a6f-131">Vue d'ensemble des déclarations de liaison</span><span class="sxs-lookup"><span data-stu-id="74a6f-131">Binding Declarations Overview</span></span>](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
+ [<span data-ttu-id="74a6f-132">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="74a6f-132">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

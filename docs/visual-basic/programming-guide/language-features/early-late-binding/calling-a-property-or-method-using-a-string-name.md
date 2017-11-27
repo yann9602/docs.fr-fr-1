@@ -1,76 +1,59 @@
 ---
-title: "Appel d’une propriété ou une méthode à l’aide d’un nom de chaîne (Visual Basic) | Documents Microsoft"
+title: "Appel d'une propriété ou méthode à l'aide d'un nom de chaîne (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- passing operators
+- passing operators [Visual Basic]
 - strings [Visual Basic], passing new operators as
 - objects [Visual Basic], setting properties
 - setting properties, object properties at run time
-- method calls, strings
+- method calls [Visual Basic], strings
 - methods [Visual Basic], calling with string names
-- calling methods, string names
+- calling methods [Visual Basic], string names
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 87af2816ba42e2901c53bec5e9c19f34c676ed5c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: c5974257fb82fe83c66a480225da200c14338898
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Appel d'une propriété ou méthode à l'aide d'un nom de chaîne (Visual Basic)
-Dans la plupart des cas, vous pouvez découvrir les propriétés et méthodes d’un objet au moment du design et écrire du code pour les gérer. Toutefois, dans certains cas vous ne pouvez pas savoir sur les propriétés et les méthodes d’un objet à l’avance ou vous voudrez tout simplement la flexibilité de l’activation d’un utilisateur final de spécifier les propriétés et méthodes d’exécution au moment de l’exécution.  
+# <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a><span data-ttu-id="2df89-102">Appel d'une propriété ou méthode à l'aide d'un nom de chaîne (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2df89-102">Calling a Property or Method Using a String Name (Visual Basic)</span></span>
+<span data-ttu-id="2df89-103">Dans la plupart des cas, vous pouvez découvrir les propriétés et méthodes d’un objet au moment du design et écrire du code pour les gérer.</span><span class="sxs-lookup"><span data-stu-id="2df89-103">In most cases, you can discover the properties and methods of an object at design time, and write code to handle them.</span></span> <span data-ttu-id="2df89-104">Toutefois, dans certains cas vous ne pouvez pas savoir sur les propriétés et les méthodes d’un objet à l’avance, ou vous devez la flexibilité de l’utilisateur spécifier des propriétés ou méthodes d’exécution au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="2df89-104">However, in some cases you may not know about an object's properties and methods in advance, or you may just want the flexibility of enabling an end user to specify properties or execute methods at run time.</span></span>  
   
-## <a name="callbyname-function"></a>CallByName (fonction)  
- Considérons, par exemple, une application cliente qui évalue des expressions entrées par l’utilisateur en passant un opérateur à un composant COM. Supposons que vous voulez constamment ajouter de nouvelles fonctions au composant requérant de nouveaux opérateurs. Lorsque vous utilisez des techniques d’accès standard, vous devez recompiler et redistribuer l’application cliente avant qu’il puisse utiliser les nouveaux opérateurs. Pour éviter ce problème, vous pouvez utiliser la `CallByName` (fonction) pour passer les nouveaux opérateurs en tant que chaînes, sans modifier l’application.  
+## <a name="callbyname-function"></a><span data-ttu-id="2df89-105">Fonction CallByName</span><span class="sxs-lookup"><span data-stu-id="2df89-105">CallByName Function</span></span>  
+ <span data-ttu-id="2df89-106">Considérons, par exemple, une application cliente qui évalue des expressions entrées par l’utilisateur en passant un opérateur pour un composant COM.</span><span class="sxs-lookup"><span data-stu-id="2df89-106">Consider, for example, a client application that evaluates expressions entered by the user by passing an operator to a COM component.</span></span> <span data-ttu-id="2df89-107">Supposons que vous ajoutez en permanence nouvelles fonctions pour le composant qui nécessitent de nouveaux opérateurs.</span><span class="sxs-lookup"><span data-stu-id="2df89-107">Suppose you are constantly adding new functions to the component that require new operators.</span></span> <span data-ttu-id="2df89-108">Lorsque vous utilisez des techniques d’accès standard, vous devez recompiler et redistribuer l’application cliente avant qu’il puisse utiliser les nouveaux opérateurs.</span><span class="sxs-lookup"><span data-stu-id="2df89-108">When you use standard object access techniques, you must recompile and redistribute the client application before it could use the new operators.</span></span> <span data-ttu-id="2df89-109">Pour éviter ce problème, vous pouvez utiliser la `CallByName` (fonction) pour passer les nouveaux opérateurs en tant que chaînes, sans modifier l’application.</span><span class="sxs-lookup"><span data-stu-id="2df89-109">To avoid this, you can use the `CallByName` function to pass the new operators as strings, without changing the application.</span></span>  
   
- Le `CallByName` fonction vous permet d’utiliser une chaîne pour spécifier une propriété ou une méthode au moment de l’exécution. La signature pour le `CallByName` fonction ressemble à ceci :  
+ <span data-ttu-id="2df89-110">Le `CallByName` fonction vous permet d’utiliser une chaîne pour spécifier une propriété ou méthode en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="2df89-110">The `CallByName` function lets you use a string to specify a property or method at run time.</span></span> <span data-ttu-id="2df89-111">La signature pour le `CallByName` fonction ressemble à ceci :</span><span class="sxs-lookup"><span data-stu-id="2df89-111">The signature for the `CallByName` function looks like this:</span></span>  
   
- *Result* = `CallByName`(*Object*, *ProcedureName*, *CallType*, *Arguments*())  
+ <span data-ttu-id="2df89-112">*Résultat* = `CallByName`(*objet*, *Nom_procédure*, *CallType*, *Arguments*())</span><span class="sxs-lookup"><span data-stu-id="2df89-112">*Result* = `CallByName`(*Object*, *ProcedureName*, *CallType*, *Arguments*())</span></span>  
   
- Le premier argument, *objet*, prend le nom de l’objet que vous voulez agir. Le *NomProcédure* argument accepte une chaîne qui contient le nom de la procédure de propriété ou méthode à appeler. Le *CallType* argument accepte une constante qui représente le type de procédure à appeler : une méthode (`Microsoft.VisualBasic.CallType.Method`), une lecture de propriété (`Microsoft.VisualBasic.CallType.Get`), ou un jeu de propriétés (`Microsoft.VisualBasic.CallType.Set`). Le *Arguments* argument, qui est facultatif, accepte un tableau de type `Object` qui contient les arguments à la procédure.  
+ <span data-ttu-id="2df89-113">Le premier argument, *objet*, prend le nom de l’objet que vous voulez agir.</span><span class="sxs-lookup"><span data-stu-id="2df89-113">The first argument, *Object*, takes the name of the object you want to act upon.</span></span> <span data-ttu-id="2df89-114">Le *Nom_procédure* argument accepte une chaîne qui contient le nom de la procédure de propriété ou méthode à appeler.</span><span class="sxs-lookup"><span data-stu-id="2df89-114">The *ProcedureName* argument takes a string that contains the name of the method or property procedure to be invoked.</span></span> <span data-ttu-id="2df89-115">Le *CallType* argument accepte une constante qui représente le type de procédure à appeler : une méthode (`Microsoft.VisualBasic.CallType.Method`), une propriété de lecture (`Microsoft.VisualBasic.CallType.Get`), ou un jeu de propriétés (`Microsoft.VisualBasic.CallType.Set`).</span><span class="sxs-lookup"><span data-stu-id="2df89-115">The *CallType* argument takes a constant that represents the type of procedure to invoke: a method (`Microsoft.VisualBasic.CallType.Method`), a property read (`Microsoft.VisualBasic.CallType.Get`), or a property set (`Microsoft.VisualBasic.CallType.Set`).</span></span> <span data-ttu-id="2df89-116">Le *Arguments* argument, qui est facultatif, accepte un tableau de type `Object` qui contient les arguments à la procédure.</span><span class="sxs-lookup"><span data-stu-id="2df89-116">The *Arguments* argument, which is optional, takes an array of type `Object` that contains any arguments to the procedure.</span></span>  
   
- Vous pouvez utiliser `CallByName` avec les classes de votre solution actuelle, mais elle est généralement utilisée pour accéder aux objets COM ou des objets de [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] assemblys.  
+ <span data-ttu-id="2df89-117">Vous pouvez utiliser `CallByName` avec les classes dans votre solution actuelle, mais il est souvent utilisé pour accéder aux objets COM ou des objets à partir de [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblys.</span><span class="sxs-lookup"><span data-stu-id="2df89-117">You can use `CallByName` with classes in your current solution, but it is most often used to access COM objects or objects from [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies.</span></span>  
   
- Supposons que vous ajoutez une référence à un assembly qui contient une classe nommée `MathClass`, qui a une nouvelle fonction nommée `SquareRoot`, comme illustré dans le code suivant :  
+ <span data-ttu-id="2df89-118">Supposons que vous ajoutez une référence à un assembly qui contient une classe nommée `MathClass`, qui a une fonction nommée `SquareRoot`, comme illustré dans le code suivant :</span><span class="sxs-lookup"><span data-stu-id="2df89-118">Suppose you add a reference to an assembly that contains a class named `MathClass`, which has a new function named `SquareRoot`, as shown in the following code:</span></span>  
   
- [!code-vb[VbVbalrOOP&#53;](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_1.vb)]  
+ [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_1.vb)]  
   
- Votre application peut utiliser des contrôles de zone de texte pour contrôler quelle méthode sera appelée et ses arguments. Par exemple, si `TextBox1` contient l’expression à évaluer, et `TextBox2` est utilisée pour entrer le nom de la fonction, vous pouvez utiliser le code suivant pour appeler le `SquareRoot` fonction à l’expression de `TextBox1`:  
+ <span data-ttu-id="2df89-119">Votre application peut utiliser des contrôles de zone de texte pour le contrôle sur lequel la méthode sera appelée et de ses arguments.</span><span class="sxs-lookup"><span data-stu-id="2df89-119">Your application could use text box controls to control which method will be called and its arguments.</span></span> <span data-ttu-id="2df89-120">Par exemple, si `TextBox1` contient l’expression à évaluer, et `TextBox2` est utilisé pour entrer le nom de la fonction, vous pouvez utiliser le code suivant pour appeler le `SquareRoot` fonction à l’expression de `TextBox1`:</span><span class="sxs-lookup"><span data-stu-id="2df89-120">For example, if `TextBox1` contains the expression to be evaluated, and `TextBox2` is used to enter the name of the function, you can use the following code to invoke the `SquareRoot` function on the expression in `TextBox1`:</span></span>  
   
- [!code-vb[VbVbalrOOP&#54;](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_2.vb)]  
+ [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_2.vb)]  
   
- Si vous entrez « 64 » dans `TextBox1`, « SquareRoot » dans `TextBox2`, puis appelez le `CallMath` procédure, la racine carrée du nombre contenu dans `TextBox1` est évaluée. Le code dans l’exemple appelle la `SquareRoot` la fonction (qui accepte une chaîne qui contient l’expression à évaluer comme un argument obligatoire) et retourne « 8 » dans `TextBox1` (la racine carrée de 64). Bien entendu, si l’utilisateur entre une chaîne non valide dans `TextBox2`, si la chaîne contient le nom d’une propriété plutôt qu’une méthode ou si la méthode possède un argument obligatoire supplémentaire, une erreur d’exécution se produit. Vous devez ajouter le code robuste de gestion des erreurs lorsque vous utilisez `CallByName` afin d’anticiper les autres erreurs.  
+ <span data-ttu-id="2df89-121">Si vous entrez « 64 » dans `TextBox1`, « SquareRoot » dans `TextBox2`, puis appelez le `CallMath` procédure, la racine carrée du nombre figurant dans `TextBox1` est évaluée.</span><span class="sxs-lookup"><span data-stu-id="2df89-121">If you enter "64" in `TextBox1`, "SquareRoot" in `TextBox2`, and then call the `CallMath` procedure, the square root of the number in `TextBox1` is evaluated.</span></span> <span data-ttu-id="2df89-122">Le code dans l’exemple appelle la `SquareRoot` la fonction (qui prend une chaîne qui contient l’expression à évaluer comme un argument obligatoire) et retourne « 8 » dans `TextBox1` (la racine carrée de 64).</span><span class="sxs-lookup"><span data-stu-id="2df89-122">The code in the example invokes the `SquareRoot` function (which takes a string that contains the expression to be evaluated as a required argument) and returns "8" in `TextBox1` (the square root of 64).</span></span> <span data-ttu-id="2df89-123">Bien entendu, si l’utilisateur entre une chaîne non valide dans `TextBox2`si la chaîne contient le nom d’une propriété au lieu d’une méthode, ou si la méthode possède un argument obligatoire supplémentaire, une erreur d’exécution se produit.</span><span class="sxs-lookup"><span data-stu-id="2df89-123">Of course, if the user enters an invalid string in `TextBox2`, if the string contains the name of a property instead of a method, or if the method had an additional required argument, a run-time error occurs.</span></span> <span data-ttu-id="2df89-124">Vous devez ajouter le code fiable de gestion des erreurs lorsque vous utilisez `CallByName` afin d’anticiper les autres erreurs.</span><span class="sxs-lookup"><span data-stu-id="2df89-124">You have to add robust error-handling code when you use `CallByName` to anticipate these or any other errors.</span></span>  
   
 > [!NOTE]
->  Bien que le `CallByName` fonction peut être utile dans certains cas, vous devez également considérer son utilité contre les implications en matière de performances, à l’aide de `CallByName` pour appeler une procédure est légèrement plus lent qu’un appel à liaison tardive. Si vous appelez une fonction qui est appelée à plusieurs reprises, par exemple comme dans une boucle, `CallByName` peut avoir un impact négatif sur les performances.  
+>  <span data-ttu-id="2df89-125">Alors que le `CallByName` fonction peut être utile dans certains cas, vous devez peser son utilité par rapport à l’impact sur les performances, à l’aide de `CallByName` pour appeler une procédure est légèrement plus lente qu’un appel à liaison tardive.</span><span class="sxs-lookup"><span data-stu-id="2df89-125">While the `CallByName` function may be useful in some cases, you must weigh its usefulness against the performance implications — using `CallByName` to invoke a procedure is slightly slower than a late-bound call.</span></span> <span data-ttu-id="2df89-126">Si vous appelez une fonction qui est appelée à plusieurs reprises, tel que dans une boucle, `CallByName` peut avoir un impact négatif sur les performances.</span><span class="sxs-lookup"><span data-stu-id="2df89-126">If you are invoking a function that is called repeatedly, such as inside a loop, `CallByName` can have a severe effect on performance.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:Microsoft.VisualBasic.Interaction.CallByName%2A></xref:Microsoft.VisualBasic.Interaction.CallByName%2A>   
- [Détermination du type Object](../../../../visual-basic/programming-guide/language-features/early-late-binding/determining-object-type.md)
+## <a name="see-also"></a><span data-ttu-id="2df89-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2df89-127">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>  
+ [<span data-ttu-id="2df89-128">Détermination du type Object</span><span class="sxs-lookup"><span data-stu-id="2df89-128">Determining Object Type</span></span>](../../../../visual-basic/programming-guide/language-features/early-late-binding/determining-object-type.md)

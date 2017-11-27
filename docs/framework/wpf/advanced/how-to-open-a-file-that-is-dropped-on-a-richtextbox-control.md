@@ -1,39 +1,45 @@
 ---
-title: "Comment&#160;: ouvrir un fichier qui est d&#233;plac&#233; dans un contr&#244;le RichTextBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "glisser-déplacer (WPF), ouvrir un fichier déplacé"
-  - "glisser-déplacer (WPF), RichTextBox"
-  - "RichTextBox (WPF), glisser et déposer"
+title: "Comment : ouvrir un fichier qui est déplacé dans un contrôle RichTextBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- drag-and-drop [WPF], RichTextBox
+- RichTextBox [WPF], drag-and-drop
+- drag-and-drop [WPF], open a dropped file
 ms.assetid: 6bb8bb54-f576-41db-a9a7-24102ddeb490
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f65ecaf9c6ef34176967e1ebf9134ceee195036b
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: ouvrir un fichier qui est d&#233;plac&#233; dans un contr&#244;le RichTextBox
-Dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], les contrôles <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox> et <xref:System.Windows.Documents.FlowDocument> possèdent tous la fonctionnalité glisser\-déplacer intégrée.  La fonctionnalité intégrée active le glisser\-déplacer de texte à l'intérieur et entre les contrôles.  Toutefois, elle n'active pas l'ouverture d'un fichier en déplaçant le fichier sur le contrôle.  Ces contrôles marquent également les événements de glisser\-déplacer comme exécutés.  En conséquence, vous ne pouvez pas ajouter par défaut vos propres gestionnaires d'événements pour fournir des fonctionnalités d'ouverture des fichiers déplacés.  
+# <a name="how-to-open-a-file-that-is-dropped-on-a-richtextbox-control"></a><span data-ttu-id="ee310-102">Comment : ouvrir un fichier qui est déplacé dans un contrôle RichTextBox</span><span class="sxs-lookup"><span data-stu-id="ee310-102">How to: Open a File That is Dropped on a RichTextBox Control</span></span>
+<span data-ttu-id="ee310-103">Dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], le <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>, et <xref:System.Windows.Documents.FlowDocument> tous les contrôles ont des fonctionnalités intégrées de glisser-déplacer.</span><span class="sxs-lookup"><span data-stu-id="ee310-103">In [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], the <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>, and <xref:System.Windows.Documents.FlowDocument> controls all have built-in drag-and-drop functionality.</span></span> <span data-ttu-id="ee310-104">La fonctionnalité intégrée permet de glisser-déplacer du texte au sein et entre les contrôles.</span><span class="sxs-lookup"><span data-stu-id="ee310-104">The built-in functionality enables drag-and-drop of text within and between the controls.</span></span> <span data-ttu-id="ee310-105">Toutefois, elle ne permet pas l’ouverture d’un fichier en supprimant le fichier sur le contrôle.</span><span class="sxs-lookup"><span data-stu-id="ee310-105">However, it does not enable opening a file by dropping the file on the control.</span></span> <span data-ttu-id="ee310-106">Ces contrôles marquent également les événements de glisser-déplacer comme géré.</span><span class="sxs-lookup"><span data-stu-id="ee310-106">These controls also mark the drag-and-drop events as handled.</span></span> <span data-ttu-id="ee310-107">Par conséquent, par défaut, vous ne pouvez pas ajouter vos propres gestionnaires d’événements pour fournir une fonctionnalité pour ouvrir des fichiers déposés.</span><span class="sxs-lookup"><span data-stu-id="ee310-107">As a result, by default, you cannot add your own event handlers to provide functionality to open dropped files.</span></span>  
   
- Pour ajouter une gestion supplémentaire des événements glisser\-déplacer dans ces contrôles, utilisez la méthode <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> pour ajouter vos gestionnaires d'événements pour les événements glisser\-déplacer.  Affectez la valeur `true` au paramètre `handledEventsToo` pour que le gestionnaire spécifié soit appelé pour un événement routé déjà marqué comme géré par un autre élément sur l'itinéraire d'événement.  
+ <span data-ttu-id="ee310-108">Pour ajouter une gestion supplémentaire pour les événements de glisser-déplacer dans ces contrôles, utilisez le <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> pour ajouter vos gestionnaires d’événements pour les événements de glisser-déplacer.</span><span class="sxs-lookup"><span data-stu-id="ee310-108">To add additional handling for drag-and-drop events in these controls, use the <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> method to add your event handlers for the drag-and-drop events.</span></span> <span data-ttu-id="ee310-109">Définir le `handledEventsToo` paramètre `true` pour que le gestionnaire spécifié soit appelé pour un événement routé qui a déjà été marqué comme géré par un autre élément le long de l’itinéraire d’événement.</span><span class="sxs-lookup"><span data-stu-id="ee310-109">Set the `handledEventsToo` parameter to `true` to have the specified handler be invoked for a routed event that has already been marked as handled by another element along the event route.</span></span>  
   
 > [!TIP]
->  Vous pouvez remplacer la fonctionnalité de glisser\-déplacer intégrée de <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox> et <xref:System.Windows.Documents.FlowDocument> en gérant les versions d'aperçu des événements glisser\-déplacer et en marquant les événements d'aperçu comme exécutés.  Toutefois, cela désactive la fonctionnalité de glisser\-déplacer intégrée, ce qui n'est pas recommandé.  
+>  <span data-ttu-id="ee310-110">Vous pouvez remplacer la fonctionnalité de glisser-déplacer intégrée de <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>, et <xref:System.Windows.Documents.FlowDocument> en gérant les versions préliminaires des événements de glisser-déplacer et de marquer les événements d’aperçu comme géré.</span><span class="sxs-lookup"><span data-stu-id="ee310-110">You can replace the built-in drag-and-drop functionality of <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>, and <xref:System.Windows.Documents.FlowDocument> by handling the preview versions of the drag-and-drop events and marking the preview events as handled.</span></span> <span data-ttu-id="ee310-111">Toutefois, cela désactive la fonctionnalité de glisser-déposer intégrée et n’est pas recommandée.</span><span class="sxs-lookup"><span data-stu-id="ee310-111">However, this will disable the built-in drag-and-drop functionality, and is not recommended.</span></span>  
   
-## Exemple  
- L'exemple suivant montre comment ajouter des gestionnaires pour les événements <xref:System.Windows.DragDrop.DragOver> et <xref:System.Windows.DragDrop.Drop> sur une <xref:System.Windows.Controls.RichTextBox>.  Cet exemple utilise la méthode <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> et affecte la valeur `true` au paramètre `handledEventsToo` de manière à ce que afin que les gestionnaires d'événements soient appelés même si la <xref:System.Windows.Controls.RichTextBox> marque ces événements comme exécutés.  Le code des gestionnaires d'événement ajoute une fonctionnalité d'ouverture d'un fichier qui est déplacé sur la <xref:System.Windows.Controls.RichTextBox>.  
+## <a name="example"></a><span data-ttu-id="ee310-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="ee310-112">Example</span></span>  
+ <span data-ttu-id="ee310-113">L’exemple suivant montre comment ajouter des gestionnaires pour les <xref:System.Windows.DragDrop.DragOver> et <xref:System.Windows.DragDrop.Drop> événements sur un <xref:System.Windows.Controls.RichTextBox>.</span><span class="sxs-lookup"><span data-stu-id="ee310-113">The following example demonstrates how to add handlers for the <xref:System.Windows.DragDrop.DragOver> and <xref:System.Windows.DragDrop.Drop> events on a <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="ee310-114">Cet exemple utilise le <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> méthode et définit le `handledEventsToo` paramètre `true` afin que les gestionnaires d’événements seront appelés même si le <xref:System.Windows.Controls.RichTextBox> marque ces événements comme étant géré.</span><span class="sxs-lookup"><span data-stu-id="ee310-114">This example uses the <xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29> method and sets the `handledEventsToo` parameter to `true` so that the events handlers will be invoked even though the <xref:System.Windows.Controls.RichTextBox> marks these events as handled.</span></span> <span data-ttu-id="ee310-115">Le code dans les gestionnaires d’événements ajoute des fonctionnalités pour ouvrir un fichier texte qui est déplacé dans le <xref:System.Windows.Controls.RichTextBox>.</span><span class="sxs-lookup"><span data-stu-id="ee310-115">The code in the event handlers adds functionality to open a text file that is dropped on the <xref:System.Windows.Controls.RichTextBox>.</span></span>  
   
- Pour tester cet exemple, faites glisser un fichier texte ou un fichier au format RTF \(Rich Text Format\) depuis l'Explorateur Windows vers la <xref:System.Windows.Controls.RichTextBox>.  Le fichier doit être ouvert dans la <xref:System.Windows.Controls.RichTextBox>.  Si vous appuyez sur la touche MAJ avant de déplacer le fichier, le fichier sera ouvert en texte brut.  
+ <span data-ttu-id="ee310-116">Pour tester cet exemple, faites glisser un fichier texte ou un fichier de format RTF du texte enrichi à partir de l’Explorateur Windows pour le <xref:System.Windows.Controls.RichTextBox>.</span><span class="sxs-lookup"><span data-stu-id="ee310-116">To test this example, drag a text file or a rich text format (RTF) file from Windows Explorer to the <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="ee310-117">Le fichier va être ouvert dans le <xref:System.Windows.Controls.RichTextBox>.</span><span class="sxs-lookup"><span data-stu-id="ee310-117">The file will be opened in the <xref:System.Windows.Controls.RichTextBox>.</span></span> <span data-ttu-id="ee310-118">Si vous appuyez sur la touche MAJ avant de supprimer le fichier, le fichier s’ouvre sous forme de texte brut.</span><span class="sxs-lookup"><span data-stu-id="ee310-118">If you press the SHIFT key before the dropping the file, the file will be opened as plain text.</span></span>  
   
- [!code-xml[DragDropSnippets#RtbXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml#rtbxaml)]  
+ [!code-xaml[DragDropSnippets#RtbXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml#rtbxaml)]  
   
  [!code-csharp[DragDropSnippets#RtbHandlers](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#rtbhandlers)]
  [!code-vb[DragDropSnippets#RtbHandlers](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#rtbhandlers)]

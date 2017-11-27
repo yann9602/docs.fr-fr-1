@@ -1,61 +1,62 @@
 ---
-title: "Comment&#160;: G&#233;rer le d&#233;passement de capacit&#233; de contr&#244;les ToolStrip dans les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "CanOverflow (propriété)"
-  - "exemples (Windows Forms), barres d'outils"
-  - "Overflow (propriété)"
-  - "barres d'outils (Windows Forms), gérer le dépassement"
-  - "ToolStrip (contrôle Windows Forms), gérer le dépassement"
+title: "Comment : Gérer le dépassement de capacité de contrôles ToolStrip dans les Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolStrip control [Windows Forms], managing overflow
+- toolbars [Windows Forms], managing overflow
+- examples [Windows Forms], toolbars
+- CanOverflow property
 ms.assetid: fa10e0ad-4cbf-4c0d-9082-359c2f855d4e
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b1ae4172dbdf82b4bd5bdd9a7f8afc1901fcfa3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: G&#233;rer le d&#233;passement de capacit&#233; de contr&#244;les ToolStrip dans les Windows Forms
-Lorsque tous les éléments d'un contrôle <xref:System.Windows.Forms.ToolStrip> ne peuvent pas être contenus dans l'espace alloué, vous pouvez activer la fonctionnalité de dépassement de capacité sur le contrôle <xref:System.Windows.Forms.ToolStrip> et déterminer le comportement de dépassement de capacité de contrôles <xref:System.Windows.Forms.ToolStripItem> spécifiques.  
+# <a name="how-to-manage-toolstrip-overflow-in-windows-forms"></a><span data-ttu-id="6d88d-102">Comment : Gérer le dépassement de capacité de contrôles ToolStrip dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="6d88d-102">How to: Manage ToolStrip Overflow in Windows Forms</span></span>
+<span data-ttu-id="6d88d-103">Lorsque tous les éléments sur un <xref:System.Windows.Forms.ToolStrip> contrôle ne tiennent pas dans l’espace alloué, vous pouvez activer la fonctionnalité de dépassement sur les <xref:System.Windows.Forms.ToolStrip> et déterminent le comportement de dépassement de capacité de spécifiques <xref:System.Windows.Forms.ToolStripItem>s.</span><span class="sxs-lookup"><span data-stu-id="6d88d-103">When all the items on a <xref:System.Windows.Forms.ToolStrip> control do not fit in the allotted space, you can enable overflow functionality on the <xref:System.Windows.Forms.ToolStrip> and determine the overflow behavior of specific <xref:System.Windows.Forms.ToolStripItem>s.</span></span>  
   
- Lorsque vous ajoutez des <xref:System.Windows.Forms.ToolStripItem> qui nécessitent davantage d'espace que l'espace alloué au contrôle <xref:System.Windows.Forms.ToolStrip> en raison de la taille actuelle du formulaire, <xref:System.Windows.Forms.ToolStripOverflowButton> apparaît automatiquement sur le contrôle <xref:System.Windows.Forms.ToolStrip>.  <xref:System.Windows.Forms.ToolStripOverflowButton> apparaît et les éléments pour lesquels le dépassement de capacité est activé sont déplacés dans le menu déroulant de dépassement de capacité.  Cela permet de personnaliser et d'affecter des priorités à la façon dont les éléments <xref:System.Windows.Forms.ToolStrip> s'ajustent aux différentes tailles de formulaire.  Vous pouvez également modifier l'aspect de vos éléments lorsqu'ils présentent un dépassement de capacité en utilisant les propriétés <xref:System.Windows.Forms.ToolStripItem.Placement%2A> et <xref:System.Windows.Forms.ToolStripOverflow.DisplayedItems%2A?displayProperty=fullName> ainsi que l'événement <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>.  Si vous agrandissez le formulaire au moment du design ou de l'exécution, des éléments <xref:System.Windows.Forms.ToolStripItem> supplémentaires peuvent être affichés sur le contrôle <xref:System.Windows.Forms.ToolStrip> principal et le <xref:System.Windows.Forms.ToolStripOverflowButton> peut même disparaître jusqu'à ce que vous réduisiez la taille du formulaire.  
+ <span data-ttu-id="6d88d-104">Lorsque vous ajoutez <xref:System.Windows.Forms.ToolStripItem>qui requièrent davantage d’espace est alloué à la <xref:System.Windows.Forms.ToolStrip> étant donné la taille du formulaire en cours, une <xref:System.Windows.Forms.ToolStripOverflowButton> apparaît automatiquement dans le <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="6d88d-104">When you add <xref:System.Windows.Forms.ToolStripItem>s that require more space than is allotted to the <xref:System.Windows.Forms.ToolStrip> given the form's current size, a <xref:System.Windows.Forms.ToolStripOverflowButton> automatically appears on the <xref:System.Windows.Forms.ToolStrip>.</span></span> <span data-ttu-id="6d88d-105">Le <xref:System.Windows.Forms.ToolStripOverflowButton> s’affiche, et activé de dépassement de capacité des éléments sont déplacés dans le menu de dépassement de capacité de liste déroulante.</span><span class="sxs-lookup"><span data-stu-id="6d88d-105">The <xref:System.Windows.Forms.ToolStripOverflowButton> appears, and overflow-enabled items are moved into the drop-down overflow menu.</span></span> <span data-ttu-id="6d88d-106">Cela vous permet de personnaliser et de hiérarchiser comment votre <xref:System.Windows.Forms.ToolStrip> éléments s’ajustent aux différentes tailles de formulaire.</span><span class="sxs-lookup"><span data-stu-id="6d88d-106">This allows you to customize and prioritize how your <xref:System.Windows.Forms.ToolStrip> items properly adjust to different form sizes.</span></span> <span data-ttu-id="6d88d-107">Vous pouvez également modifier l’apparence de vos éléments lorsqu’elles se trouvent dans le dépassement de capacité à l’aide de la <xref:System.Windows.Forms.ToolStripItem.Placement%2A> et <xref:System.Windows.Forms.ToolStripOverflow.DisplayedItems%2A?displayProperty=nameWithType> propriétés et le <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> événement.</span><span class="sxs-lookup"><span data-stu-id="6d88d-107">You can also change the appearance of your items when they fall into the overflow by using the <xref:System.Windows.Forms.ToolStripItem.Placement%2A> and <xref:System.Windows.Forms.ToolStripOverflow.DisplayedItems%2A?displayProperty=nameWithType> properties and the <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> event.</span></span> <span data-ttu-id="6d88d-108">Si vous agrandissez le formulaire au moment du design ou au moment de l’exécution, plus <xref:System.Windows.Forms.ToolStripItem>peuvent être affichés sur le principal <xref:System.Windows.Forms.ToolStrip> et <xref:System.Windows.Forms.ToolStripOverflowButton> peut même disparaître jusqu'à ce que vous réduisez la taille du formulaire.</span><span class="sxs-lookup"><span data-stu-id="6d88d-108">If you enlarge the form at either design time or run time, more <xref:System.Windows.Forms.ToolStripItem>s can be displayed on the main <xref:System.Windows.Forms.ToolStrip> and the <xref:System.Windows.Forms.ToolStripOverflowButton> might even disappear until you decrease the size of the form.</span></span>  
   
-### Pour activer le dépassement de capacité sur un contrôle ToolStrip  
+### <a name="to-enable-overflow-on-a-toolstrip-control"></a><span data-ttu-id="6d88d-109">Pour activer le dépassement de capacité sur un contrôle ToolStrip</span><span class="sxs-lookup"><span data-stu-id="6d88d-109">To enable overflow on a ToolStrip control</span></span>  
   
--   Vérifiez que la propriété <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> n'a pas la valeur `false` pour le contrôle <xref:System.Windows.Forms.ToolStrip>.  La valeur par défaut est `True`.  
+-   <span data-ttu-id="6d88d-110">Vérifiez que le <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> propriété n’est pas définie sur `false` pour le <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="6d88d-110">Ensure that the <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> property is not set to `false` for the <xref:System.Windows.Forms.ToolStrip>.</span></span> <span data-ttu-id="6d88d-111">La valeur par défaut est `True`.</span><span class="sxs-lookup"><span data-stu-id="6d88d-111">The default is `True`.</span></span>  
   
-     Lorsque <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> a la valeur `True` \(valeur par défaut\), un élément <xref:System.Windows.Forms.ToolStripItem> est envoyé au menu déroulant de dépassement de capacité lorsque le contenu de l'élément <xref:System.Windows.Forms.ToolStripItem> dépasse la largeur d'un <xref:System.Windows.Forms.ToolStrip> horizontal ou la hauteur d'un <xref:System.Windows.Forms.ToolStrip> vertical.  
+     <span data-ttu-id="6d88d-112">Lorsque <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> est `True` (la valeur par défaut), un <xref:System.Windows.Forms.ToolStripItem> est envoyé dans le menu de dépassement de capacité de liste déroulante lorsque le contenu de la <xref:System.Windows.Forms.ToolStripItem> dépasse la largeur d’un bouton horizontal <xref:System.Windows.Forms.ToolStrip> ou la hauteur d’un vertical <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="6d88d-112">When <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> is `True` (the default), a <xref:System.Windows.Forms.ToolStripItem> is sent to the drop-down overflow menu when the content of the <xref:System.Windows.Forms.ToolStripItem> exceeds the width of a horizontal <xref:System.Windows.Forms.ToolStrip> or the height of a vertical <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
-### Pour spécifier le comportement de dépassement de capacité d'un ToolStripItem spécifique  
+### <a name="to-specify-overflow-behavior-of-a-specific-toolstripitem"></a><span data-ttu-id="6d88d-113">Pour spécifier le comportement de dépassement de capacité d’un ToolStripItem spécifique</span><span class="sxs-lookup"><span data-stu-id="6d88d-113">To specify overflow behavior of a specific ToolStripItem</span></span>  
   
--   Affectez la valeur souhaitée à la propriété <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> de l'élément <xref:System.Windows.Forms.ToolStripItem>.  Les possibilités sont `Always`, `Never` et `AsNeeded`.  par défaut est `AsNeeded`.  
+-   <span data-ttu-id="6d88d-114">Définir le <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> propriété de la <xref:System.Windows.Forms.ToolStripItem> la valeur souhaitée.</span><span class="sxs-lookup"><span data-stu-id="6d88d-114">Set the <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> property of the <xref:System.Windows.Forms.ToolStripItem> to the desired value.</span></span> <span data-ttu-id="6d88d-115">Les possibilités sont `Always`, `Never`, et `AsNeeded`.</span><span class="sxs-lookup"><span data-stu-id="6d88d-115">The possibilities are `Always`, `Never`, and `AsNeeded`.</span></span> <span data-ttu-id="6d88d-116">Le defaultis `AsNeeded`.</span><span class="sxs-lookup"><span data-stu-id="6d88d-116">The defaultis `AsNeeded`.</span></span>  
   
     ```vb  
     toolStripTextBox1.Overflow = _  
     System.Windows.Forms.ToolStripItemOverflow.Never  
-  
     ```  
   
     ```csharp  
     toolStripTextBox1.Overflow = _  
     System.Windows.Forms.ToolStripItemOverflow.Never;  
-  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.ToolStripOverflowButton>   
- <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>   
- <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>   
- [Vue d'ensemble du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [Architecture du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)   
- [Résumé de la technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a><span data-ttu-id="6d88d-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6d88d-117">See Also</span></span>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.ToolStripOverflowButton>  
+ <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>  
+ <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>  
+ [<span data-ttu-id="6d88d-118">Vue d’ensemble du contrôle ToolStrip</span><span class="sxs-lookup"><span data-stu-id="6d88d-118">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [<span data-ttu-id="6d88d-119">Architecture du contrôle ToolStrip</span><span class="sxs-lookup"><span data-stu-id="6d88d-119">ToolStrip Control Architecture</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
+ [<span data-ttu-id="6d88d-120">Résumé de la technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="6d88d-120">ToolStrip Technology Summary</span></span>](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

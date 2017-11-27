@@ -1,69 +1,70 @@
 ---
-title: "Styles et mod&#232;les PasswordBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), PasswordBox"
-  - "éléments (WPF), PasswordBox"
-  - "PasswordBox (WPF), styles et modèles"
-  - "états (WPF), PasswordBox"
-  - "styles (WPF), PasswordBox"
-  - "modèles (WPF), PasswordBox"
+title: "Styles et modèles PasswordBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- styles [WPF], PasswordBox
+- templates [WPF], PasswordBox
+- ControlTemplate [WPF], PasswordBox
+- states [WPF], PasswordBox
+- PasswordBox [WPF], styles and templates
+- parts [WPF], PasswordBox
 ms.assetid: deb52107-959f-4a60-b303-d21a0a933060
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 17a9292ef6aeba157780be5ec87d67725eb833a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les PasswordBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.PasswordBox>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="passwordbox-syles-and-templates"></a><span data-ttu-id="2782f-102">Styles et modèles PasswordBox</span><span class="sxs-lookup"><span data-stu-id="2782f-102">PasswordBox Syles and Templates</span></span>
+<span data-ttu-id="2782f-103">Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.PasswordBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.PasswordBox> control.</span></span> <span data-ttu-id="2782f-104">Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="2782f-105">Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span><span class="sxs-lookup"><span data-stu-id="2782f-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## Composants de PasswordBox  
- Le tableau ci\-dessous répertorie les composants nommés du contrôle <xref:System.Windows.Controls.PasswordBox>.  
+## <a name="passwordbox-parts"></a><span data-ttu-id="2782f-106">Composants de PasswordBox</span><span class="sxs-lookup"><span data-stu-id="2782f-106">PasswordBox Parts</span></span>  
+ <span data-ttu-id="2782f-107">Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.PasswordBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-107">The following table lists the named parts for the <xref:System.Windows.Controls.PasswordBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="2782f-108">Élément</span><span class="sxs-lookup"><span data-stu-id="2782f-108">Part</span></span>|<span data-ttu-id="2782f-109">Type</span><span class="sxs-lookup"><span data-stu-id="2782f-109">Type</span></span>|<span data-ttu-id="2782f-110">Description</span><span class="sxs-lookup"><span data-stu-id="2782f-110">Description</span></span>|  
 |-|-|-|  
-|Élément|Type|Description|  
-|PART\_ContentHost|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>.  Le texte du <xref:System.Windows.Controls.PasswordBox> s'affiche dans cet élément.|  
+|<span data-ttu-id="2782f-111">PART_ContentHost</span><span class="sxs-lookup"><span data-stu-id="2782f-111">PART_ContentHost</span></span>|<xref:System.Windows.FrameworkElement>|<span data-ttu-id="2782f-112">Un élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>.</span><span class="sxs-lookup"><span data-stu-id="2782f-112">A visual element that can contain a <xref:System.Windows.FrameworkElement>.</span></span> <span data-ttu-id="2782f-113">Le texte de la <xref:System.Windows.Controls.PasswordBox> s’affiche dans cet élément.</span><span class="sxs-lookup"><span data-stu-id="2782f-113">The text of the <xref:System.Windows.Controls.PasswordBox> is displayed in this element.</span></span>|  
   
-## États de PasswordBox  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.PasswordBox>.  
+## <a name="passwordbox-states"></a><span data-ttu-id="2782f-114">États de PasswordBox</span><span class="sxs-lookup"><span data-stu-id="2782f-114">PasswordBox States</span></span>  
+ <span data-ttu-id="2782f-115">Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.PasswordBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-115">The following table lists the visual states for the <xref:System.Windows.Controls.PasswordBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="2782f-116">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="2782f-116">VisualState Name</span></span>|<span data-ttu-id="2782f-117">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="2782f-117">VisualStateGroup Name</span></span>|<span data-ttu-id="2782f-118">Description</span><span class="sxs-lookup"><span data-stu-id="2782f-118">Description</span></span>|  
 |-|-|-|  
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|Normal|CommonStates|État par défaut.|  
-|MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|Focused|FocusStates|Le contrôle a le focus.|  
-|Unfocused|FocusStates|Le contrôle n'a pas le focus.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|<span data-ttu-id="2782f-119">Normale</span><span class="sxs-lookup"><span data-stu-id="2782f-119">Normal</span></span>|<span data-ttu-id="2782f-120">CommonStates</span><span class="sxs-lookup"><span data-stu-id="2782f-120">CommonStates</span></span>|<span data-ttu-id="2782f-121">État par défaut.</span><span class="sxs-lookup"><span data-stu-id="2782f-121">The default state.</span></span>|  
+|<span data-ttu-id="2782f-122">MouseOver</span><span class="sxs-lookup"><span data-stu-id="2782f-122">MouseOver</span></span>|<span data-ttu-id="2782f-123">CommonStates</span><span class="sxs-lookup"><span data-stu-id="2782f-123">CommonStates</span></span>|<span data-ttu-id="2782f-124">Le pointeur de souris est positionné sur le contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-124">The mouse pointer is positioned over the control.</span></span>|  
+|<span data-ttu-id="2782f-125">Désactivé</span><span class="sxs-lookup"><span data-stu-id="2782f-125">Disabled</span></span>|<span data-ttu-id="2782f-126">CommonStates</span><span class="sxs-lookup"><span data-stu-id="2782f-126">CommonStates</span></span>|<span data-ttu-id="2782f-127">Le contrôle est désactivé.</span><span class="sxs-lookup"><span data-stu-id="2782f-127">The control is disabled.</span></span>|  
+|<span data-ttu-id="2782f-128">Avec focus</span><span class="sxs-lookup"><span data-stu-id="2782f-128">Focused</span></span>|<span data-ttu-id="2782f-129">FocusStates</span><span class="sxs-lookup"><span data-stu-id="2782f-129">FocusStates</span></span>|<span data-ttu-id="2782f-130">Le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="2782f-130">The control has focus.</span></span>|  
+|<span data-ttu-id="2782f-131">Sans focus</span><span class="sxs-lookup"><span data-stu-id="2782f-131">Unfocused</span></span>|<span data-ttu-id="2782f-132">FocusStates</span><span class="sxs-lookup"><span data-stu-id="2782f-132">FocusStates</span></span>|<span data-ttu-id="2782f-133">Le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="2782f-133">The control does not have focus.</span></span>|  
+|<span data-ttu-id="2782f-134">Valide</span><span class="sxs-lookup"><span data-stu-id="2782f-134">Valid</span></span>|<span data-ttu-id="2782f-135">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="2782f-135">ValidationStates</span></span>|<span data-ttu-id="2782f-136">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="2782f-136">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="2782f-137">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="2782f-137">InvalidFocused</span></span>|<span data-ttu-id="2782f-138">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="2782f-138">ValidationStates</span></span>|<span data-ttu-id="2782f-139">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="2782f-139">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="2782f-140">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="2782f-140">InvalidUnfocused</span></span>|<span data-ttu-id="2782f-141">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="2782f-141">ValidationStates</span></span>|<span data-ttu-id="2782f-142">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="2782f-142">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## PasswordBox ControlTemplate, exemple  
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.PasswordBox>.  
+## <a name="passwordbox-controltemplate-example"></a><span data-ttu-id="2782f-143">PasswordBox ControlTemplate, exemple</span><span class="sxs-lookup"><span data-stu-id="2782f-143">PasswordBox ControlTemplate Example</span></span>  
+ <span data-ttu-id="2782f-144">L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.PasswordBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="2782f-144">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.PasswordBox> control.</span></span>  
   
- [!code-xml[ControlTemplateExamples#PasswordBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#passwordbox)]  
+ [!code-xaml[ControlTemplateExamples#PasswordBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#passwordbox)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ <span data-ttu-id="2782f-145">L’exemple précédent utilise une ou plusieurs des ressources suivantes.</span><span class="sxs-lookup"><span data-stu-id="2782f-145">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ <span data-ttu-id="2782f-146">Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).</span><span class="sxs-lookup"><span data-stu-id="2782f-146">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="2782f-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2782f-147">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="2782f-148">Styles et modèles Control</span><span class="sxs-lookup"><span data-stu-id="2782f-148">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="2782f-149">Personnalisation des contrôles</span><span class="sxs-lookup"><span data-stu-id="2782f-149">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="2782f-150">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="2782f-150">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="2782f-151">Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="2782f-151">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

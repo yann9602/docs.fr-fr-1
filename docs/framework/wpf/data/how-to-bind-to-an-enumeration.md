@@ -1,34 +1,37 @@
 ---
-title: "Comment&#160;: effectuer une liaison &#224; une &#233;num&#233;ration | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "lier des données, énumération"
-  - "liaison de données, énumération"
-  - "énumération"
+title: "Comment : effectuer une liaison à une énumération"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- binding data [WPF], enumeration
+- data binding [WPF], enumeration
+- enumeration [WPF]
 ms.assetid: b9091eba-1119-424e-868b-d1a4168b3732
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31fb9adbda47514e5405d465c0b5e2493b966d8c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: effectuer une liaison &#224; une &#233;num&#233;ration
-Cet exemple montre comment effectuer une liaison à une énumération en utilisant la méthode GetValues de l'énumération.  
+# <a name="how-to-bind-to-an-enumeration"></a><span data-ttu-id="b6dca-102">Comment : effectuer une liaison à une énumération</span><span class="sxs-lookup"><span data-stu-id="b6dca-102">How to: Bind to an Enumeration</span></span>
+<span data-ttu-id="b6dca-103">Cet exemple montre comment créer une liaison à une énumération en le liant à la méthode de GetValues de l’énumération.</span><span class="sxs-lookup"><span data-stu-id="b6dca-103">This example shows how to bind to an enumeration by binding to the enumeration's GetValues method.</span></span>  
   
-## Exemple  
- Dans l'exemple suivant, <xref:System.Windows.Controls.ListBox> affiche la liste des valeurs de l'énumération <xref:System.Windows.HorizontalAlignment> obtenues via la liaison de données.  Les contrôles <xref:System.Windows.Controls.ListBox> et <xref:System.Windows.Controls.Button> sont liés de telle sorte que vous pouvez modifier la valeur de la propriété <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> de <xref:System.Windows.Controls.Button> en sélectionnant une valeur dans <xref:System.Windows.Controls.ListBox>.  
+## <a name="example"></a><span data-ttu-id="b6dca-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="b6dca-104">Example</span></span>  
+ <span data-ttu-id="b6dca-105">Dans l’exemple suivant, la <xref:System.Windows.Controls.ListBox> affiche la liste des <xref:System.Windows.HorizontalAlignment> des valeurs d’énumération via la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="b6dca-105">In the following example, the <xref:System.Windows.Controls.ListBox> displays the list of <xref:System.Windows.HorizontalAlignment> enumeration values through data binding.</span></span> <span data-ttu-id="b6dca-106">Le <xref:System.Windows.Controls.ListBox> et le <xref:System.Windows.Controls.Button> sont liés par exemple que vous pouvez modifier le <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> valeur de propriété de la <xref:System.Windows.Controls.Button> en sélectionnant une valeur dans la <xref:System.Windows.Controls.ListBox>.</span><span class="sxs-lookup"><span data-stu-id="b6dca-106">The <xref:System.Windows.Controls.ListBox> and the <xref:System.Windows.Controls.Button> are bound such that you can change the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property value of the <xref:System.Windows.Controls.Button> by selecting a value in the <xref:System.Windows.Controls.ListBox>.</span></span>  
   
- [!code-xml[BindToEnum#BindToEnum](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindToEnum/CS/Window1.xaml#bindtoenum)]  
+ [!code-xaml[BindToEnum#BindToEnum](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindToEnum/CS/Window1.xaml#bindtoenum)]  
   
-## Voir aussi  
- [Effectuer une liaison à une méthode](../../../../docs/framework/wpf/data/how-to-bind-to-a-method.md)   
- [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="b6dca-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b6dca-107">See Also</span></span>  
+ [<span data-ttu-id="b6dca-108">Effectuer une liaison à une méthode</span><span class="sxs-lookup"><span data-stu-id="b6dca-108">Bind to a Method</span></span>](../../../../docs/framework/wpf/data/how-to-bind-to-a-method.md)  
+ [<span data-ttu-id="b6dca-109">Vue d’ensemble de la liaison de données</span><span class="sxs-lookup"><span data-stu-id="b6dca-109">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="b6dca-110">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="b6dca-110">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

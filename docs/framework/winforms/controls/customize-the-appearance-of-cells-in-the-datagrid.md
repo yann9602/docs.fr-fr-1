@@ -1,44 +1,48 @@
 ---
-title: "Comment&#160;: personnaliser l&#39;apparence des cellules du contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "cellules, personnaliser dans le contrôle DataGridView"
-  - "grilles de données, personnaliser des cellules"
-  - "DataGridView (contrôle Windows Forms), personnaliser des cellules"
+title: "Comment : personnaliser l'apparence des cellules du contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data grids [Windows Forms], customizing cells
+- DataGridView control [Windows Forms], customizing cells
+- cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 478b20c9-625c-4116-9c5c-5a16e6f4ec67
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 545a3bff5e810f9c0a995366e7f6460930f9e936
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: personnaliser l&#39;apparence des cellules du contr&#244;le DataGridView Windows Forms
-Vous pouvez personnaliser l'apparence de toute cellule en gérant l'événement <xref:System.Windows.Forms.DataGridView.CellPainting> du contrôle <xref:System.Windows.Forms.DataGridView>.  Vous pouvez extraire <xref:System.Drawing.Graphics> du contrôle <xref:System.Windows.Forms.DataGridView> de la propriété <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> du <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>.  Avec ce <xref:System.Drawing.Graphics>, vous pouvez affecter l'apparence du contrôle <xref:System.Windows.Forms.DataGridView> tout entier, mais vous souhaiterez habituellement affecter uniquement l'apparence de la cellule qui est peinte actuellement.  La propriété <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> du <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> vous permet de restreindre vos opérations de peinture à la cellule qui est peinte actuellement.  
+# <a name="how-to-customize-the-appearance-of-cells-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="95c1e-102">Comment : personnaliser l'apparence des cellules du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="95c1e-102">How to: Customize the Appearance of Cells in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="95c1e-103">Vous pouvez personnaliser l’apparence de toute cellule en gérant le <xref:System.Windows.Forms.DataGridView> du contrôle <xref:System.Windows.Forms.DataGridView.CellPainting> événement.</span><span class="sxs-lookup"><span data-stu-id="95c1e-103">You can customize the appearance of any cell by handling the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Windows.Forms.DataGridView.CellPainting> event.</span></span> <span data-ttu-id="95c1e-104">Vous pouvez extraire le <xref:System.Windows.Forms.DataGridView> du contrôle <xref:System.Drawing.Graphics> à partir de la <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> propriété de la <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>.</span><span class="sxs-lookup"><span data-stu-id="95c1e-104">You can extract the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Drawing.Graphics> from the <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> property of the <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>.</span></span> <span data-ttu-id="95c1e-105">Avec cette <xref:System.Drawing.Graphics>, vous pouvez affecter l’apparence de l’ensemble du <xref:System.Windows.Forms.DataGridView> contrôle, mais vous souhaiterez habituellement affectent uniquement l’apparence de la cellule qui est actuellement peint.</span><span class="sxs-lookup"><span data-stu-id="95c1e-105">With this <xref:System.Drawing.Graphics>, you can affect the appearance of the entire <xref:System.Windows.Forms.DataGridView> control, but you will usually want to affect only the appearance of the cell that is currently being painted.</span></span> <span data-ttu-id="95c1e-106">Le <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> propriété de la <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> vous permet de restreindre vos opérations de peinture à la cellule qui est actuellement peint.</span><span class="sxs-lookup"><span data-stu-id="95c1e-106">The <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> property of the <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> enables you to restrict your painting operations to the cell that is currently being painted.</span></span>  
   
- Dans l'exemple de code suivant, vous peindrez toutes les cellules dans une colonne `ContactName` à l'aide du modèle de couleurs du contrôle <xref:System.Windows.Forms.DataGridView>.  Le contenu de texte de chaque cellule est peint dans <xref:System.Drawing.Color.Crimson%2A>, et un rectangle intercalaire est dessiné dans la même couleur que la propriété <xref:System.Windows.Forms.DataGridView.GridColor%2A> du contrôle <xref:System.Windows.Forms.DataGridView>.  
+ <span data-ttu-id="95c1e-107">Dans l’exemple de code suivant, vous sera chargée de peindre toutes les cellules dans un `ContactName` à l’aide de la colonne la <xref:System.Windows.Forms.DataGridView> jeu de couleurs du contrôle.</span><span class="sxs-lookup"><span data-stu-id="95c1e-107">In the following code example, you will paint all the cells in a `ContactName` column using the <xref:System.Windows.Forms.DataGridView> control's color scheme.</span></span> <span data-ttu-id="95c1e-108">Contenu de texte de chaque cellule est peint dans <xref:System.Drawing.Color.Crimson%2A>, et un rectangle d’incrustation est dessiné dans la même couleur que le <xref:System.Windows.Forms.DataGridView> du contrôle <xref:System.Windows.Forms.DataGridView.GridColor%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="95c1e-108">Each cell's text content is painted in <xref:System.Drawing.Color.Crimson%2A>, and an inset rectangle is drawn in the same color as the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Windows.Forms.DataGridView.GridColor%2A> property.</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="95c1e-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="95c1e-109">Example</span></span>  
  [!code-csharp[System.Windows.Forms.DataGridViewCellPainting#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCellPainting/CS/form1.cs#10)]
  [!code-vb[System.Windows.Forms.DataGridViewCellPainting#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCellPainting/VB/form1.vb#10)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a><span data-ttu-id="95c1e-110">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="95c1e-110">Compiling the Code</span></span>  
+ <span data-ttu-id="95c1e-111">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="95c1e-111">This example requires:</span></span>  
   
--   Un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` avec une colonne `ContactName` telle que celle qui figure dans la table Customers de l'exemple de base de données Northwind.  
+-   <span data-ttu-id="95c1e-112">A <xref:System.Windows.Forms.DataGridView> contrôle nommé `dataGridView1` avec un `ContactName` colonne tel que celui de la table Customers dans la base de données Northwind.</span><span class="sxs-lookup"><span data-stu-id="95c1e-112">A <xref:System.Windows.Forms.DataGridView> control named `dataGridView1` with a `ContactName` column such as the one in the Customers table in the Northwind sample database.</span></span>  
   
--   Références aux assemblys System, System.Windows.Forms et System.Drawing.  
+-   <span data-ttu-id="95c1e-113">Références aux assemblys System, System.Windows.Form et System.Drawing.</span><span class="sxs-lookup"><span data-stu-id="95c1e-113">References to the System, System.Windows.Forms, and System.Drawing assemblies.</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.CellPainting>   
- [Personnalisation du contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="95c1e-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="95c1e-114">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.CellPainting>  
+ [<span data-ttu-id="95c1e-115">Personnalisation du contrôle DataGridView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="95c1e-115">Customizing the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)

@@ -1,34 +1,30 @@
 ---
-title: "Comment : modifier le Namespace pour toute une arborescence XML (Visual Basic) | Documents Microsoft"
+title: "Comment : modifier le Namespace pour toute une arborescence XML (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 1837324b-5cb5-4fa8-95b9-3071efa0f913
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: af216e734c85806056e37d92733a3e4d49f8b73c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 1c5ee83840f9d8b4105e7af53008a329dfde37d3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a>Comment : modifier le Namespace pour toute une arborescence XML (Visual Basic)
-Vous devez parfois modifier par programme l'espace de noms pour un élément ou un attribut. LINQ to XML rend cette tâche très simple. Le <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName>propriété peut être définie.</xref:System.Xml.Linq.XElement.Name%2A?displayProperty=fullName> Le <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName>propriété ne peut pas être définie, mais vous pouvez facilement copier les attributs dans un <xref:System.Collections.Generic.List%601?displayProperty=fullName>, supprimer les attributs existants, puis ajouter de nouveaux attributs qui se trouvent dans l’espace de noms souhaité.</xref:System.Collections.Generic.List%601?displayProperty=fullName> </xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=fullName>  
+# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-visual-basic"></a><span data-ttu-id="7ec69-102">Comment : modifier le Namespace pour toute une arborescence XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ec69-102">How to: Change the Namespace for an Entire XML Tree (Visual Basic)</span></span>
+<span data-ttu-id="7ec69-103">Vous devez parfois modifier par programmation l’espace de noms pour un élément ou un attribut.</span><span class="sxs-lookup"><span data-stu-id="7ec69-103">You sometimes have to programmatically change the namespace for an element or an attribute.</span></span> <span data-ttu-id="7ec69-104">LINQ to XML rend cette tâche très simple.</span><span class="sxs-lookup"><span data-stu-id="7ec69-104">LINQ to XML makes this easy.</span></span> <span data-ttu-id="7ec69-105">La propriété <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> peut être définie.</span><span class="sxs-lookup"><span data-stu-id="7ec69-105">The <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> property can be set.</span></span> <span data-ttu-id="7ec69-106">La propriété <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> ne peut pas être définie, mais vous pouvez facilement copier les attributs dans un objet <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, supprimer les attributs existants, puis ajouter de nouveaux attributs qui sont dans le nouvel espace de noms souhaité.</span><span class="sxs-lookup"><span data-stu-id="7ec69-106">The <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> property cannot be set, but you can easily copy the attributes into a <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, remove the existing attributes, and then add new attributes that are in the new desired namespace.</span></span>  
   
- Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ <span data-ttu-id="7ec69-107">Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="7ec69-107">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
-## <a name="example"></a>Exemple  
- Le code suivant crée deux arborescences XML qui ne sont dans aucun espace de noms. Il modifie ensuite l'espace de noms des deux arborescences et les combine en une seule arborescence.  
+## <a name="example"></a><span data-ttu-id="7ec69-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="7ec69-108">Example</span></span>  
+ <span data-ttu-id="7ec69-109">Le code suivant crée deux arborescences XML qui ne sont dans aucun espace de noms.</span><span class="sxs-lookup"><span data-stu-id="7ec69-109">The following code creates two XML trees in no namespace.</span></span> <span data-ttu-id="7ec69-110">Il modifie ensuite l'espace de noms des deux arborescences et les combine en une seule arborescence.</span><span class="sxs-lookup"><span data-stu-id="7ec69-110">It then changes the namespace of each of the trees, and combines them into a single tree.</span></span>  
   
 ```vb  
 Dim tree1 As XElement = _  
@@ -76,7 +72,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="7ec69-111">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="7ec69-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -89,5 +85,5 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="7ec69-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7ec69-112">See Also</span></span>  
+ [<span data-ttu-id="7ec69-113">Modification d’arborescences XML (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ec69-113">Modifying XML Trees (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

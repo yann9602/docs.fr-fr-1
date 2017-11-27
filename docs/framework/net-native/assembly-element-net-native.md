@@ -5,26 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: df74599b5f68324540703bce6c5ca8e8805df3e7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 073a526e72f46864b2e08d33ec14a53034c144b4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltassemblygt-element-net-native"></a>&lt;Assembly&gt;, élément (.NET Native)
-Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
+# <a name="ltassemblygt-element-net-native"></a><span data-ttu-id="1fc9d-102">&lt;Assembly&gt;, élément (.NET Native)</span><span class="sxs-lookup"><span data-stu-id="1fc9d-102">&lt;Assembly&gt; Element (.NET Native)</span></span>
+<span data-ttu-id="1fc9d-103">Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-103">Applies runtime reflection policy to all the types in a specified assembly.</span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="1fc9d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1fc9d-104">Syntax</span></span>  
   
 ```xml  
 <Assembly Name="assembly_name"   
@@ -40,56 +38,56 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
           MarshalStructure="policy_setting" />  
 ```  
   
-## <a name="attributes-and-elements"></a>Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="1fc9d-105">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="1fc9d-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="1fc9d-106">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a><span data-ttu-id="1fc9d-107">Attributs</span><span class="sxs-lookup"><span data-stu-id="1fc9d-107">Attributes</span></span>  
   
-|Attribut|Type d'attribut|Description|  
+|<span data-ttu-id="1fc9d-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="1fc9d-108">Attribute</span></span>|<span data-ttu-id="1fc9d-109">Type d'attribut</span><span class="sxs-lookup"><span data-stu-id="1fc9d-109">Attribute type</span></span>|<span data-ttu-id="1fc9d-110">Description</span><span class="sxs-lookup"><span data-stu-id="1fc9d-110">Description</span></span>|  
 |---------------|--------------------|-----------------|  
-|`Name`|Général|Attribut requis. Spécifie le nom simple d'un assembly.|  
-|`Activate`|Réflexion|Attribut facultatif. Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.|  
-|`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les types dans l'assembly ou l'énumération de ceux-ci, mais ne permet pas d'effectuer un accès dynamique au moment de l'exécution.|  
-|`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
-|`Serialize`|Sérialisation|Attribut facultatif. Contrôle l'accès au moment de l'exécution aux constructeurs, champs et propriétés, pour permettre la sérialisation et la désérialisation des instances de types par des bibliothèques comme le sérialiseur JSON Newtonsoft.|  
-|`DataContractSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation qui utilise la classe <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName>.|  
-|`DataContractJsonSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation JSON qui utilise la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName>.|  
-|`XmlSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation XML qui utilise la classe <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName>.|  
-|`MarshalObject`|Interop|Attribut facultatif. Contrôle la stratégie pour le marshaling des types de références vers Windows Runtime et COM.|  
-|`MarshalDelegate`|Interop|Attribut facultatif. Contrôle la stratégie pour le marshaling des types de délégués comme pointeurs de fonction vers du code natif.|  
-|`MarshalStructure`|Interop|Attribut facultatif. Stratégie de contrôles pour le marshaling de structures en code natif.|  
+|`Name`|<span data-ttu-id="1fc9d-111">Général</span><span class="sxs-lookup"><span data-stu-id="1fc9d-111">General</span></span>|<span data-ttu-id="1fc9d-112">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-112">Required attribute.</span></span> <span data-ttu-id="1fc9d-113">Spécifie le nom simple d'un assembly.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-113">Specifies the simple name of an assembly.</span></span>|  
+|`Activate`|<span data-ttu-id="1fc9d-114">Réflexion</span><span class="sxs-lookup"><span data-stu-id="1fc9d-114">Reflection</span></span>|<span data-ttu-id="1fc9d-115">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-115">Optional attribute.</span></span> <span data-ttu-id="1fc9d-116">Contrôle l'accès aux constructeurs pour permettre l'activation d'instances au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-116">Controls runtime access to constructors to enable activation of instances.</span></span>|  
+|`Browse`|<span data-ttu-id="1fc9d-117">Réflexion</span><span class="sxs-lookup"><span data-stu-id="1fc9d-117">Reflection</span></span>|<span data-ttu-id="1fc9d-118">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-118">Optional attribute.</span></span> <span data-ttu-id="1fc9d-119">Contrôle la demande d'informations sur les types dans l'assembly ou l'énumération de ceux-ci, mais ne permet pas d'effectuer un accès dynamique au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-119">Controls querying for information about or enumerating the types in the assembly, but does not enable any dynamic access at run time.</span></span>|  
+|`Dynamic`|<span data-ttu-id="1fc9d-120">Réflexion</span><span class="sxs-lookup"><span data-stu-id="1fc9d-120">Reflection</span></span>|<span data-ttu-id="1fc9d-121">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-121">Optional attribute.</span></span> <span data-ttu-id="1fc9d-122">Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-122">Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.</span></span>|  
+|`Serialize`|<span data-ttu-id="1fc9d-123">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="1fc9d-123">Serialization</span></span>|<span data-ttu-id="1fc9d-124">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-124">Optional attribute.</span></span> <span data-ttu-id="1fc9d-125">Contrôle l'accès au moment de l'exécution aux constructeurs, champs et propriétés, pour permettre la sérialisation et la désérialisation des instances de types par des bibliothèques comme le sérialiseur JSON Newtonsoft.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-125">Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer.</span></span>|  
+|`DataContractSerializer`|<span data-ttu-id="1fc9d-126">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="1fc9d-126">Serialization</span></span>|<span data-ttu-id="1fc9d-127">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-127">Optional attribute.</span></span> <span data-ttu-id="1fc9d-128">Contrôle la stratégie pour la sérialisation qui utilise la classe <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-128">Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`DataContractJsonSerializer`|<span data-ttu-id="1fc9d-129">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="1fc9d-129">Serialization</span></span>|<span data-ttu-id="1fc9d-130">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-130">Optional attribute.</span></span> <span data-ttu-id="1fc9d-131">Contrôle la stratégie pour la sérialisation JSON qui utilise la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-131">Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`XmlSerializer`|<span data-ttu-id="1fc9d-132">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="1fc9d-132">Serialization</span></span>|<span data-ttu-id="1fc9d-133">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-133">Optional attribute.</span></span> <span data-ttu-id="1fc9d-134">Contrôle la stratégie pour la sérialisation XML qui utilise la classe <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-134">Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`MarshalObject`|<span data-ttu-id="1fc9d-135">Interop</span><span class="sxs-lookup"><span data-stu-id="1fc9d-135">Interop</span></span>|<span data-ttu-id="1fc9d-136">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-136">Optional attribute.</span></span> <span data-ttu-id="1fc9d-137">Contrôle la stratégie pour le marshaling des types de références vers Windows Runtime et COM.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-137">Controls policy for marshaling reference types to Windows Runtime and COM.</span></span>|  
+|`MarshalDelegate`|<span data-ttu-id="1fc9d-138">Interop</span><span class="sxs-lookup"><span data-stu-id="1fc9d-138">Interop</span></span>|<span data-ttu-id="1fc9d-139">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-139">Optional attribute.</span></span> <span data-ttu-id="1fc9d-140">Contrôle la stratégie pour le marshaling des types de délégués comme pointeurs de fonction vers du code natif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-140">Controls policy for marshaling delegate types as function pointers to native code.</span></span>|  
+|`MarshalStructure`|<span data-ttu-id="1fc9d-141">Interop</span><span class="sxs-lookup"><span data-stu-id="1fc9d-141">Interop</span></span>|<span data-ttu-id="1fc9d-142">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-142">Optional attribute.</span></span> <span data-ttu-id="1fc9d-143">Stratégie de contrôles pour le marshaling de structures en code natif.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-143">Controls policy for marshaling structures to native code.</span></span>|  
   
-## <a name="name-attribute"></a>Name (attribut)  
+## <a name="name-attribute"></a><span data-ttu-id="1fc9d-144">Name (attribut)</span><span class="sxs-lookup"><span data-stu-id="1fc9d-144">Name attribute</span></span>  
   
-|Valeur|Description|  
+|<span data-ttu-id="1fc9d-145">Valeur</span><span class="sxs-lookup"><span data-stu-id="1fc9d-145">Value</span></span>|<span data-ttu-id="1fc9d-146">Description</span><span class="sxs-lookup"><span data-stu-id="1fc9d-146">Description</span></span>|  
 |-----------|-----------------|  
-|*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName>. Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
+|<span data-ttu-id="1fc9d-147">*nom_assembly*</span><span class="sxs-lookup"><span data-stu-id="1fc9d-147">*assembly_name*</span></span>|<span data-ttu-id="1fc9d-148">Nom simple de l’assembly, sans son extension de fichier.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-148">The simple name of the assembly, without its file extension.</span></span> <span data-ttu-id="1fc9d-149">Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-149">This attribute corresponds to the <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="1fc9d-150">Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ».</span><span class="sxs-lookup"><span data-stu-id="1fc9d-150">For example, the name of an assembly named Extensions.dll is "Extensions".</span></span><br /><br /> <span data-ttu-id="1fc9d-151">Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-151">You can also specify the literal string `*Application*` to apply policy to all assemblies in your app package, whether those assemblies are loaded or not.</span></span> <span data-ttu-id="1fc9d-152">`*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-152">`*Application*` never applies policy to .NET Framework assemblies.</span></span>|  
   
-## <a name="all-other-attributes"></a>Tous les autres attributs  
+## <a name="all-other-attributes"></a><span data-ttu-id="1fc9d-153">Tous les autres attributs</span><span class="sxs-lookup"><span data-stu-id="1fc9d-153">All other attributes</span></span>  
   
-|Valeur|Description|  
+|<span data-ttu-id="1fc9d-154">Valeur</span><span class="sxs-lookup"><span data-stu-id="1fc9d-154">Value</span></span>|<span data-ttu-id="1fc9d-155">Description</span><span class="sxs-lookup"><span data-stu-id="1fc9d-155">Description</span></span>|  
 |-----------|-----------------|  
-|*paramètre_stratégie*|Le paramètre s'applique à ce type de stratégie pour tous les types dans l'assembly. Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`. Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|<span data-ttu-id="1fc9d-156">*paramètre_stratégie*</span><span class="sxs-lookup"><span data-stu-id="1fc9d-156">*policy_setting*</span></span>|<span data-ttu-id="1fc9d-157">Le paramètre s'applique à ce type de stratégie pour tous les types dans l'assembly.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-157">The setting to apply to this policy type for all types in the assembly.</span></span> <span data-ttu-id="1fc9d-158">Les valeurs possibles sont `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal` et `Required All`.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-158">Possible values are `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`.</span></span> <span data-ttu-id="1fc9d-159">Pour plus d’informations, consultez [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span><span class="sxs-lookup"><span data-stu-id="1fc9d-159">For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span></span>|  
   
-### <a name="child-elements"></a>Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="1fc9d-160">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="1fc9d-160">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="1fc9d-161">Élément</span><span class="sxs-lookup"><span data-stu-id="1fc9d-161">Element</span></span>|<span data-ttu-id="1fc9d-162">Description</span><span class="sxs-lookup"><span data-stu-id="1fc9d-162">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Applique la stratégie de réflexion à tous les types dans un espace de noms enfant.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applique la stratégie de réflexion à un type.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Applique la stratégie de réflexion à un type générique construit.|  
+|[<span data-ttu-id="1fc9d-163">\<Namespace></span><span class="sxs-lookup"><span data-stu-id="1fc9d-163">\<Namespace></span></span>](../../../docs/framework/net-native/namespace-element-net-native.md)|<span data-ttu-id="1fc9d-164">Applique la stratégie de réflexion à tous les types dans un espace de noms enfant.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-164">Applies reflection policy to all types in a child namespace.</span></span>|  
+|[<span data-ttu-id="1fc9d-165">\<Type></span><span class="sxs-lookup"><span data-stu-id="1fc9d-165">\<Type></span></span>](../../../docs/framework/net-native/type-element-net-native.md)|<span data-ttu-id="1fc9d-166">Applique la stratégie de réflexion à un type.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-166">Applies reflection policy to a type.</span></span>|  
+|[<span data-ttu-id="1fc9d-167">\<TypeInstantiation></span><span class="sxs-lookup"><span data-stu-id="1fc9d-167">\<TypeInstantiation></span></span>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|<span data-ttu-id="1fc9d-168">Applique la stratégie de réflexion à un type générique construit.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-168">Applies reflection policy to a constructed generic type.</span></span>|  
   
-### <a name="parent-elements"></a>Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="1fc9d-169">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="1fc9d-169">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="1fc9d-170">Élément</span><span class="sxs-lookup"><span data-stu-id="1fc9d-170">Element</span></span>|<span data-ttu-id="1fc9d-171">Description</span><span class="sxs-lookup"><span data-stu-id="1fc9d-171">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.|  
-|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution. L’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.|  
+|[<span data-ttu-id="1fc9d-172">\<Application></span><span class="sxs-lookup"><span data-stu-id="1fc9d-172">\<Application></span></span>](../../../docs/framework/net-native/application-element-net-native.md)|<span data-ttu-id="1fc9d-173">Sert de conteneur pour des types à l'échelle de l'application et pour des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-173">Serves as a container for application-wide types and type members whose metadata is available for reflection at run time.</span></span> <span data-ttu-id="1fc9d-174">L’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) peut avoir zéro, un ou plusieurs éléments `<Assembly>`.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-174">The [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) element can have zero, one, or more `<Assembly>` elements.</span></span>|  
+|[<span data-ttu-id="1fc9d-175">\<Library></span><span class="sxs-lookup"><span data-stu-id="1fc9d-175">\<Library></span></span>](../../../docs/framework/net-native/library-element-net-native.md)|<span data-ttu-id="1fc9d-176">Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-176">Defines the assembly that contains types and type members whose metadata is available for reflection at run time.</span></span> <span data-ttu-id="1fc9d-177">L’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) peut avoir zéro ou un élément `<Assembly>`.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-177">The [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element can have zero or one `<Assembly>` element.</span></span>|  
   
-## <a name="remarks"></a>Remarques  
- L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly. Il diffère de l’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants. L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.  
+## <a name="remarks"></a><span data-ttu-id="1fc9d-178">Remarques</span><span class="sxs-lookup"><span data-stu-id="1fc9d-178">Remarks</span></span>  
+ <span data-ttu-id="1fc9d-179">L'élément `<Assembly>` définit la stratégie runtime pour tous les types dans un assembly.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-179">The `<Assembly>` element defines runtime policy for all the types in an assembly.</span></span> <span data-ttu-id="1fc9d-180">Il diffère de l’élément [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) qui spécifie une bibliothèque, mais définit la stratégie de réflexion runtime en fonction de ses éléments enfants.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-180">It differs from the [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element, which specifies a library but depends on its child elements to define runtime reflection policy.</span></span> <span data-ttu-id="1fc9d-181">L'élément `<Assembly>` s'applique à tous les types dans un assembly, sauf si elles sont remplacées par un élément enfant.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-181">The `<Assembly>` element applies to all the types in an assembly unless they are overridden by a child element.</span></span>  
   
- L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`. L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).  
+ <span data-ttu-id="1fc9d-182">L’exemple suivant montre comment vous pouvez appliquer une stratégie runtime à tous les types dans les assemblys au sein de votre package d’application en affectant la valeur « *Application\* » à l’attribut `Name`.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-182">The following example shows how you can apply runtime policy to all the types in assemblies within your app package by assigning the `Name` attribute a value of "*Application\*".</span></span> <span data-ttu-id="1fc9d-183">L’élément `<Assembly>` doit être un enfant de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).</span><span class="sxs-lookup"><span data-stu-id="1fc9d-183">The `<Assembly>` element must be a child of the [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) element.</span></span>  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">   
@@ -99,10 +97,9 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
 </Directives>  
 ```  
   
- Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs. Toutefois, l'élément `<Assembly>` doit contenir au moins un de ces attributs.  
+ <span data-ttu-id="1fc9d-184">Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-184">The `Activate`, `Browse`, `Dynamic`, and `Serialize` attributes are all optional.</span></span> <span data-ttu-id="1fc9d-185">Toutefois, l'élément `<Assembly>` doit contenir au moins un de ces attributs.</span><span class="sxs-lookup"><span data-stu-id="1fc9d-185">However, the `<Assembly>` element must contain at least one of these attributes.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-
+## <a name="see-also"></a><span data-ttu-id="1fc9d-186">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1fc9d-186">See Also</span></span>  
+ [<span data-ttu-id="1fc9d-187">Paramètres de stratégie de directive runtime</span><span class="sxs-lookup"><span data-stu-id="1fc9d-187">Runtime Directive Policy Settings</span></span>](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
+ [<span data-ttu-id="1fc9d-188">Guide de référence du fichier de configuration des directives runtime (rd.xml)</span><span class="sxs-lookup"><span data-stu-id="1fc9d-188">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [<span data-ttu-id="1fc9d-189">Éléments de directive runtime</span><span class="sxs-lookup"><span data-stu-id="1fc9d-189">Runtime Directive Elements</span></span>](../../../docs/framework/net-native/runtime-directive-elements.md)

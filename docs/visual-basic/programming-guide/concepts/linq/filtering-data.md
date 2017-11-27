@@ -1,49 +1,41 @@
 ---
-title: "Filtrage des données (Visual Basic) | Documents Microsoft"
+title: "Le filtrage des données (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 7749519a-7edc-49fe-aef9-6a353864af6c
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3751164b7697b63937611c77d9fda0e2873625d8
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 31e3a4729a98e1f4b588cd415a15fff270587234
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="filtering-data-visual-basic"></a>Filtrage des données (Visual Basic)
-Le filtrage fait référence à l’opération de restriction du jeu de résultats à contenir uniquement les éléments qui satisfont une condition spécifiée. Il est également appelé.  
+# <a name="filtering-data-visual-basic"></a><span data-ttu-id="1cbcc-102">Le filtrage des données (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-102">Filtering Data (Visual Basic)</span></span>
+<span data-ttu-id="1cbcc-103">Le filtrage fait référence à l’opération de restriction du jeu de résultats pour que celui-ci contienne uniquement les éléments qui répondent à une condition spécifiée.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-103">Filtering refers to the operation of restricting the result set to contain only those elements that satisfy a specified condition.</span></span> <span data-ttu-id="1cbcc-104">Cette opération est également appelée « sélection ».</span><span class="sxs-lookup"><span data-stu-id="1cbcc-104">It is also known as selection.</span></span>  
   
- L’illustration suivante montre les résultats du filtrage d’une séquence de caractères. Le prédicat de l’opération de filtrage Spécifie que le caractère doit être « A ».  
+ <span data-ttu-id="1cbcc-105">L’illustration suivante montre les résultats du filtrage d’une séquence de caractères.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-105">The following illustration shows the results of filtering a sequence of characters.</span></span> <span data-ttu-id="1cbcc-106">Le prédicat de l’opération de filtrage spécifie que le caractère doit être « A ».</span><span class="sxs-lookup"><span data-stu-id="1cbcc-106">The predicate for the filtering operation specifies that the character must be 'A'.</span></span>  
   
- ![Opération de filtrage de LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")  
+ <span data-ttu-id="1cbcc-107">![Opération de filtrage LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")</span><span class="sxs-lookup"><span data-stu-id="1cbcc-107">![LINQ Filtering Operation](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")</span></span>  
   
- Les méthodes d’opérateur de requête standard qui effectuent une sélection sont répertoriées dans la section suivante.  
+ <span data-ttu-id="1cbcc-108">Les méthodes d’opérateurs de requête standard qui effectuent des opérations de sélection sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-108">The standard query operator methods that perform selection are listed in the following section.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="1cbcc-109">Méthodes</span><span class="sxs-lookup"><span data-stu-id="1cbcc-109">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d’Expression de requête Visual Basic|Informations complémentaires|  
+|<span data-ttu-id="1cbcc-110">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="1cbcc-110">Method Name</span></span>|<span data-ttu-id="1cbcc-111">Description</span><span class="sxs-lookup"><span data-stu-id="1cbcc-111">Description</span></span>|<span data-ttu-id="1cbcc-112">Syntaxe d’Expression de requête Visual Basic</span><span class="sxs-lookup"><span data-stu-id="1cbcc-112">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="1cbcc-113">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="1cbcc-113">More Information</span></span>|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|OfType|Sélectionne des valeurs, en fonction de leur capacité à être casté en un type spécifié.|Non applicable.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=fullName></xref:System.Linq.Enumerable.OfType%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=fullName></xref:System.Linq.Queryable.OfType%2A?displayProperty=fullName>|  
-|Où|Sélectionne les valeurs qui sont basées sur une fonction de prédicat.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Where%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=fullName></xref:System.Linq.Queryable.Where%2A?displayProperty=fullName>|  
+|<span data-ttu-id="1cbcc-114">OfType</span><span class="sxs-lookup"><span data-stu-id="1cbcc-114">OfType</span></span>|<span data-ttu-id="1cbcc-115">Sélectionne des valeurs, en fonction de leur capacité à être castées en un type spécifié.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-115">Selects values, depending on their ability to be cast to a specified type.</span></span>|<span data-ttu-id="1cbcc-116">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-116">Not applicable.</span></span>|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="1cbcc-117">Où</span><span class="sxs-lookup"><span data-stu-id="1cbcc-117">Where</span></span>|<span data-ttu-id="1cbcc-118">Sélectionne les valeurs qui sont basées sur une fonction de prédicat.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-118">Selects values that are based on a predicate function.</span></span>|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
-## <a name="query-expression-syntax-example"></a>Exemple de syntaxe de requête Expression  
- L’exemple suivant utilise le `Where` à filtrer dans un tableau les chaînes qui ont une longueur spécifique.  
+## <a name="query-expression-syntax-example"></a><span data-ttu-id="1cbcc-119">Exemple de syntaxe d’expression de requête</span><span class="sxs-lookup"><span data-stu-id="1cbcc-119">Query Expression Syntax Example</span></span>  
+ <span data-ttu-id="1cbcc-120">L’exemple suivant utilise le `Where` à filtrer dans un tableau les chaînes qui ont une longueur spécifique.</span><span class="sxs-lookup"><span data-stu-id="1cbcc-120">The following example uses the `Where` to filter from an array those strings that have a specific length.</span></span>  
   
 ```vb  
 Dim words() As String = {"the", "quick", "brown", "fox", "jumps"}  
@@ -66,11 +58,11 @@ MsgBox(sb.ToString())
 ' fox  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq></xref:System.Linq>   
- [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Où Clause](../../../../visual-basic/language-reference/queries/where-clause.md)   
- [Comment : filtrer les résultats de la requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)   
- [Comment : interroger les métadonnées d’un Assembly avec réflexion (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)   
- [Comment : interroger des fichiers possédant un attribut spécifié ou un nom (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)   
- [Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+## <a name="see-also"></a><span data-ttu-id="1cbcc-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1cbcc-121">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="1cbcc-122">Vue d’ensemble des opérateurs de requête standard (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-122">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="1cbcc-123">Where (clause)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-123">Where Clause</span></span>](../../../../visual-basic/language-reference/queries/where-clause.md)  
+ [<span data-ttu-id="1cbcc-124">Guide pratique : filtrer les résultats d’une requête</span><span class="sxs-lookup"><span data-stu-id="1cbcc-124">How to: Filter Query Results</span></span>](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)  
+ [<span data-ttu-id="1cbcc-125">Comment : interroger les métadonnées d’un Assembly avec réflexion (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-125">How to: Query An Assembly's Metadata with Reflection (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)  
+ [<span data-ttu-id="1cbcc-126">Comment : interroger des fichiers avec un attribut spécifié ou le nom (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-126">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ [<span data-ttu-id="1cbcc-127">Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1cbcc-127">How to: Sort or Filter Text Data by Any Word or Field (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

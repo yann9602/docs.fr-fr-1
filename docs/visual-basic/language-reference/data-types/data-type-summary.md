@@ -1,107 +1,106 @@
 ---
-title: "Data Type Summary (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Boolean data type, supported types in Visual Basic"
-  - "storage, order of storage"
-  - "data types [Visual Basic], Visual Basic"
-  - "Single data type, supported types in Visual Basic"
-  - "notation, scientific"
-  - "memory requirements, data types"
-  - "user-defined data types, Visual Basic"
-  - "Date data type, Visual Basic"
-  - "Visual Basic, data types"
-  - "storage, allocation"
-  - "Integer data type, Visual Basic data types"
-  - "storage, space"
-  - "Variant data types, supported types in Visual Basic"
-  - "Char data type, Visual Basic data types"
-  - "intrinsic data types"
-  - "memory consumption, data types"
-  - "single-precision numbers"
-  - "data types [Visual Basic], order of storage"
-  - "Long data type, supported types in Visual Basic"
-  - "String data type, Visual Basic data types"
-  - "storage order, data types"
-  - "StructLayoutAttribute class, Visual Basic data type storage"
-  - "scientific notation"
-  - "Double data type, Visual Basic data types"
-  - "Byte data type, Visual Basic data types"
-  - "Object data type, supported types in Visual Basic"
-  - "data types [Visual Basic], storage allocation"
-  - "double-precision numbers"
-  - "data types [Visual Basic], summary"
-  - "dates [Visual Basic], data types"
-  - "strings [Visual Basic], data types"
-  - "memory consumption"
-  - "storage order, controlling in Visual Basic"
-  - "data types [Visual Basic], memory requirements"
+title: "Liste des types de données (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- Boolean data type [Visual Basic], supported types in Visual Basic
+- storage [Visual Basic], order of storage
+- data types [Visual Basic], Visual Basic
+- Single data type [Visual Basic], supported types in Visual Basic
+- notation [Visual Basic], scientific
+- memory requirements, data types
+- user-defined data types [Visual Basic], Visual Basic
+- Date data type [Visual Basic], Visual Basic
+- Visual Basic, data types
+- storage [Visual Basic], allocation
+- Integer data type [Visual Basic], Visual Basic data types
+- storage [Visual Basic], space
+- Variant data types [Visual Basic], supported types in Visual Basic
+- Char data type [Visual Basic], Visual Basic data types
+- intrinsic data types [Visual Basic]
+- memory consumption [Visual Basic], data types
+- single-precision numbers
+- data types [Visual Basic], order of storage
+- Long data type [Visual Basic], supported types in Visual Basic
+- String data type [Visual Basic], Visual Basic data types
+- storage order, data types
+- StructLayoutAttribute class, Visual Basic data type storage
+- scientific notation
+- Double data type [Visual Basic], Visual Basic data types
+- Byte data type [Visual Basic], Visual Basic data types
+- Object data type [Visual Basic], supported types in Visual Basic
+- data types [Visual Basic], storage allocation
+- double-precision numbers
+- data types [Visual Basic], summary
+- dates [Visual Basic], data types
+- strings [Visual Basic], data types
+- memory consumption
+- storage order, controlling in Visual Basic
+- data types [Visual Basic], memory requirements
 ms.assetid: e975cdb6-64d8-4a4a-ae27-f3b3ed198ae0
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f69a112718eed7bb7baaff9bdffd110865c21081
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Data Type Summary (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Le tableau suivant illustre les types de données Visual Basic, leurs types Common Language Runtime pris en charge, leur allocation de stockage nominal et leur plage de valeurs.  
+# <a name="data-type-summary-visual-basic"></a><span data-ttu-id="a18e7-102">Liste des types de données (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a18e7-102">Data Type Summary (Visual Basic)</span></span>
+<span data-ttu-id="a18e7-103">Le tableau suivant montre les types de données Visual Basic, leurs types du common language runtime prise en charge, leur allocation de stockage nominal et leur plage de valeurs.</span><span class="sxs-lookup"><span data-stu-id="a18e7-103">The following table shows the Visual Basic data types, their supporting common language runtime types, their nominal storage allocation, and their value ranges.</span></span>  
   
-|Type Visual Basic|Structure de type Common Language Runtime|Allocation de stockage nominal|Plage de valeurs|  
-|-----------------------|-----------------------------------------------|------------------------------------|----------------------|  
-|[Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|Dépend de la plateforme d'implémentation|`True` ou `False`|  
-|[Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|1 octet|0 à 255 \(non signé\)|  
-|[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) \(caractère unique\)|<xref:System.Char>|2 octets|0 à 65 535 \(non signé\)|  
-|[Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|8 octets|Du 1er janvier 0001 0:00:00 \(minuit\) au 31 décembre 9999 23:59:59|  
-|[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|16 octets|0 à \+\/\-79 228 162 514 264 337 593 543 950 335 \(\+\/\-7,9...E\+28\) <sup>†</sup> sans virgule décimale ; 0 à \+\/\-7,9228162514264337593543950335 avec 28 décimales après la virgule ;<br /><br /> la plus petite valeur différente de zéro est \+\/\-0,0000000000000000000000000001 \(\+\/\-1E\-28\) <sup>†</sup>|  
-|[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) \(nombre à virgule flottante double précision\)|<xref:System.Double>|8 octets|\-1,79769313486231570E\+308 à \-4,94065645841246544E\-324 <sup>†</sup> pour les valeurs négatives ;<br /><br /> 4,94065645841246544E\-324 à 1,79769313486231570E\+308 <sup>†</sup> pour les valeurs positives|  
-|[Entier](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 octets|\-2 147 483 648 à 2 147 483 647 \(signé\)|  
-|[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) \(entier long\)|<xref:System.Int64>|8 octets|\-9 223 372 036 854 775 808 à 9 223 372 036 854 775 807 \(9,2...E\+18 <sup>†</sup>\) \(signé\)|  
-|[Objet](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> \(classe\)|4 octets sur une plateforme 32 bits<br /><br /> 8 octets sur une plateforme 64 bits|N'importe quel type peut être stocké dans une variable de type `Object`|  
-|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 octet|\-128 à 127 \(signé\)|  
-|[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) \(entier court\)|<xref:System.Int16>|2 octets|\-32 768 à 32 767 \(signé\)|  
-|[Single](../../../visual-basic/language-reference/data-types/single-data-type.md) \(nombre à virgule flottante simple précision\)|<xref:System.Single>|4 octets|\-3,4028235E\+38 à \-1,401298E\-45 <sup>†</sup> pour les valeurs négatives ;<br /><br /> 1,401298E\-45 à 3,4028235E\+38 <sup>†</sup> pour les valeurs positives|  
-|[String](../../../visual-basic/language-reference/data-types/string-data-type.md) \(longueur variable\)|<xref:System.String> \(classe\)|Dépend de la plateforme d'implémentation|0 à environ 2 milliards de caractères Unicode|  
-|[UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|4 octets|0 à 4 294 967 295 \(non signé\)|  
-|[ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|8 octets|0 à 18 446 744 073 709 551 615 \(1,8...E\+19 <sup>†</sup>\) \(non signé\)|  
-|[User\-Defined](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) \(structure\)|\(hérite de <xref:System.ValueType>\)|Dépend de la plateforme d'implémentation|Chaque membre de la structure présente une plage déterminée par son type de données et qui est indépendante des plages des autres membres|  
-|[UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|2 octets|0 à 65 535 \(non signé\)|  
+|<span data-ttu-id="a18e7-104">Type Visual Basic</span><span class="sxs-lookup"><span data-stu-id="a18e7-104">Visual Basic type</span></span>|<span data-ttu-id="a18e7-105">Structure de type Common language runtime</span><span class="sxs-lookup"><span data-stu-id="a18e7-105">Common language runtime type structure</span></span>|<span data-ttu-id="a18e7-106">Allocation de stockage nominal</span><span class="sxs-lookup"><span data-stu-id="a18e7-106">Nominal storage allocation</span></span>|<span data-ttu-id="a18e7-107">Plage de valeurs</span><span class="sxs-lookup"><span data-stu-id="a18e7-107">Value range</span></span>|  
+|-----------------------|--------------------------------------------|--------------------------------|-----------------|  
+|[<span data-ttu-id="a18e7-108">Boolean</span><span class="sxs-lookup"><span data-stu-id="a18e7-108">Boolean</span></span>](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|<xref:System.Boolean>|<span data-ttu-id="a18e7-109">Dépend de la mise en œuvre de la plateforme</span><span class="sxs-lookup"><span data-stu-id="a18e7-109">Depends on implementing platform</span></span>|<span data-ttu-id="a18e7-110">`True` ou `False`</span><span class="sxs-lookup"><span data-stu-id="a18e7-110">`True` or `False`</span></span>|  
+|[<span data-ttu-id="a18e7-111">Byte</span><span class="sxs-lookup"><span data-stu-id="a18e7-111">Byte</span></span>](../../../visual-basic/language-reference/data-types/byte-data-type.md)|<xref:System.Byte>|<span data-ttu-id="a18e7-112">1 octet</span><span class="sxs-lookup"><span data-stu-id="a18e7-112">1 byte</span></span>|<span data-ttu-id="a18e7-113">0 à 255 (non signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-113">0 through 255 (unsigned)</span></span>|  
+|<span data-ttu-id="a18e7-114">[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (caractère unique)</span><span class="sxs-lookup"><span data-stu-id="a18e7-114">[Char](../../../visual-basic/language-reference/data-types/char-data-type.md) (single character)</span></span>|<xref:System.Char>|<span data-ttu-id="a18e7-115">2 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-115">2 bytes</span></span>|<span data-ttu-id="a18e7-116">0 à 65 535 (non signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-116">0 through 65535 (unsigned)</span></span>|  
+|[<span data-ttu-id="a18e7-117">Date</span><span class="sxs-lookup"><span data-stu-id="a18e7-117">Date</span></span>](../../../visual-basic/language-reference/data-types/date-data-type.md)|<xref:System.DateTime>|<span data-ttu-id="a18e7-118">8 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-118">8 bytes</span></span>|<span data-ttu-id="a18e7-119">0:00:00 (minuit) le 1er janvier 0001 à 23:59:59 le 31 décembre 9999</span><span class="sxs-lookup"><span data-stu-id="a18e7-119">0:00:00 (midnight) on January 1, 0001 through 11:59:59 PM on December 31, 9999</span></span>|  
+|[<span data-ttu-id="a18e7-120">Decimal</span><span class="sxs-lookup"><span data-stu-id="a18e7-120">Decimal</span></span>](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|<xref:System.Decimal>|<span data-ttu-id="a18e7-121">16 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-121">16 bytes</span></span>|<span data-ttu-id="a18e7-122">0 à +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9... E + 28) <sup>†</sup> sans aucune virgule décimale ; 0 à +/-7,9228162514264337593543950335 avec 28 chiffres à droite du séparateur décimal ;</span><span class="sxs-lookup"><span data-stu-id="a18e7-122">0 through +/-79,228,162,514,264,337,593,543,950,335 (+/-7.9...E+28) <sup>†</sup> with no decimal point; 0 through +/-7.9228162514264337593543950335 with 28 places to the right of the decimal;</span></span><br /><br /> <span data-ttu-id="a18e7-123">plus petit un nombre différent de zéro est +/-0,0000000000000000000000000001 (+/-1E-28) <sup>†</sup></span><span class="sxs-lookup"><span data-stu-id="a18e7-123">smallest nonzero number is +/-0.0000000000000000000000000001 (+/-1E-28) <sup>†</sup></span></span>|  
+|<span data-ttu-id="a18e7-124">[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (à virgule flottante double précision)</span><span class="sxs-lookup"><span data-stu-id="a18e7-124">[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (double-precision floating-point)</span></span>|<xref:System.Double>|<span data-ttu-id="a18e7-125">8 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-125">8 bytes</span></span>|<span data-ttu-id="a18e7-126">-1, 79769313486231570E + 308 à - 4, 94065645841246544E-324 <sup>†</sup> pour les valeurs négatives ;</span><span class="sxs-lookup"><span data-stu-id="a18e7-126">-1.79769313486231570E+308 through -4.94065645841246544E-324 <sup>†</sup> for negative values;</span></span><br /><br /> <span data-ttu-id="a18e7-127">4, 94065645841246544E-324 à 1, 79769313486231570E + 308 <sup>†</sup> pour les valeurs positives</span><span class="sxs-lookup"><span data-stu-id="a18e7-127">4.94065645841246544E-324 through 1.79769313486231570E+308 <sup>†</sup> for positive values</span></span>|  
+|[<span data-ttu-id="a18e7-128">Integer</span><span class="sxs-lookup"><span data-stu-id="a18e7-128">Integer</span></span>](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|<span data-ttu-id="a18e7-129">4 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-129">4 bytes</span></span>|<span data-ttu-id="a18e7-130">2,147,483,648 et 2 147 483 647 (signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-130">-2,147,483,648 through 2,147,483,647 (signed)</span></span>|  
+|<span data-ttu-id="a18e7-131">[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (entier long)</span><span class="sxs-lookup"><span data-stu-id="a18e7-131">[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (long integer)</span></span>|<xref:System.Int64>|<span data-ttu-id="a18e7-132">8 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-132">8 bytes</span></span>|<span data-ttu-id="a18e7-133">-9,223,372,036,854,775,808 à 9,223,372,036,854,775,807 (9.2... E + 18 <sup>†</sup>) (signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-133">-9,223,372,036,854,775,808 through 9,223,372,036,854,775,807 (9.2...E+18 <sup>†</sup>) (signed)</span></span>|  
+|[<span data-ttu-id="a18e7-134">Objet</span><span class="sxs-lookup"><span data-stu-id="a18e7-134">Object</span></span>](../../../visual-basic/language-reference/data-types/object-data-type.md)|<span data-ttu-id="a18e7-135"><xref:System.Object>(classe)</span><span class="sxs-lookup"><span data-stu-id="a18e7-135"><xref:System.Object> (class)</span></span>|<span data-ttu-id="a18e7-136">4 octets sur une plateforme 32 bits</span><span class="sxs-lookup"><span data-stu-id="a18e7-136">4 bytes on 32-bit platform</span></span><br /><br /> <span data-ttu-id="a18e7-137">8 octets sur une plateforme 64 bits</span><span class="sxs-lookup"><span data-stu-id="a18e7-137">8 bytes on 64-bit platform</span></span>|<span data-ttu-id="a18e7-138">N’importe quel type peut être stocké dans une variable de type`Object`</span><span class="sxs-lookup"><span data-stu-id="a18e7-138">Any type can be stored in a variable of type `Object`</span></span>|  
+|[<span data-ttu-id="a18e7-139">SByte</span><span class="sxs-lookup"><span data-stu-id="a18e7-139">SByte</span></span>](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|<span data-ttu-id="a18e7-140">1 octet</span><span class="sxs-lookup"><span data-stu-id="a18e7-140">1 byte</span></span>|<span data-ttu-id="a18e7-141">-128 à 127 (signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-141">-128 through 127 (signed)</span></span>|  
+|<span data-ttu-id="a18e7-142">[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) (entier court)</span><span class="sxs-lookup"><span data-stu-id="a18e7-142">[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) (short integer)</span></span>|<xref:System.Int16>|<span data-ttu-id="a18e7-143">2 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-143">2 bytes</span></span>|<span data-ttu-id="a18e7-144">-32 768 à 32 767 (signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-144">-32,768 through 32,767 (signed)</span></span>|  
+|<span data-ttu-id="a18e7-145">[Seul](../../../visual-basic/language-reference/data-types/single-data-type.md) (à virgule flottante simple précision)</span><span class="sxs-lookup"><span data-stu-id="a18e7-145">[Single](../../../visual-basic/language-reference/data-types/single-data-type.md) (single-precision floating-point)</span></span>|<xref:System.Single>|<span data-ttu-id="a18e7-146">4 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-146">4 bytes</span></span>|<span data-ttu-id="a18e7-147">-3,4028235E + 38 à - 1, 401298E-45 <sup>†</sup> pour les valeurs négatives ;</span><span class="sxs-lookup"><span data-stu-id="a18e7-147">-3.4028235E+38 through -1.401298E-45 <sup>†</sup> for negative values;</span></span><br /><br /> <span data-ttu-id="a18e7-148">1, 401298E-45 et 3,4028235E + 38 <sup>†</sup> pour les valeurs positives</span><span class="sxs-lookup"><span data-stu-id="a18e7-148">1.401298E-45 through 3.4028235E+38 <sup>†</sup> for positive values</span></span>|  
+|<span data-ttu-id="a18e7-149">[Chaîne](../../../visual-basic/language-reference/data-types/string-data-type.md) (de longueur variable)</span><span class="sxs-lookup"><span data-stu-id="a18e7-149">[String](../../../visual-basic/language-reference/data-types/string-data-type.md) (variable-length)</span></span>|<span data-ttu-id="a18e7-150"><xref:System.String>(classe)</span><span class="sxs-lookup"><span data-stu-id="a18e7-150"><xref:System.String> (class)</span></span>|<span data-ttu-id="a18e7-151">Dépend de la mise en œuvre de la plateforme</span><span class="sxs-lookup"><span data-stu-id="a18e7-151">Depends on implementing platform</span></span>|<span data-ttu-id="a18e7-152">0 à environ 2 milliards de caractères Unicode</span><span class="sxs-lookup"><span data-stu-id="a18e7-152">0 to approximately 2 billion Unicode characters</span></span>|  
+|[<span data-ttu-id="a18e7-153">UInteger</span><span class="sxs-lookup"><span data-stu-id="a18e7-153">UInteger</span></span>](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|<xref:System.UInt32>|<span data-ttu-id="a18e7-154">4 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-154">4 bytes</span></span>|<span data-ttu-id="a18e7-155">0 à 4 294 967 295 (non signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-155">0 through 4,294,967,295 (unsigned)</span></span>|  
+|[<span data-ttu-id="a18e7-156">ULong</span><span class="sxs-lookup"><span data-stu-id="a18e7-156">ULong</span></span>](../../../visual-basic/language-reference/data-types/ulong-data-type.md)|<xref:System.UInt64>|<span data-ttu-id="a18e7-157">8 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-157">8 bytes</span></span>|<span data-ttu-id="a18e7-158">0 et 18,446,744,073,709,551,615 (1.8... E + 19 <sup>†</sup>) (non signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-158">0 through 18,446,744,073,709,551,615 (1.8...E+19 <sup>†</sup>) (unsigned)</span></span>|  
+|<span data-ttu-id="a18e7-159">[Défini par l’utilisateur](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) (structure)</span><span class="sxs-lookup"><span data-stu-id="a18e7-159">[User-Defined](../../../visual-basic/language-reference/data-types/user-defined-data-type.md) (structure)</span></span>|<span data-ttu-id="a18e7-160">(hérite de <xref:System.ValueType>)</span><span class="sxs-lookup"><span data-stu-id="a18e7-160">(inherits from <xref:System.ValueType>)</span></span>|<span data-ttu-id="a18e7-161">Dépend de la mise en œuvre de la plateforme</span><span class="sxs-lookup"><span data-stu-id="a18e7-161">Depends on implementing platform</span></span>|<span data-ttu-id="a18e7-162">Chaque membre de la structure a une plage déterminée par son type de données et indépendante des plages des autres membres</span><span class="sxs-lookup"><span data-stu-id="a18e7-162">Each member of the structure has a range determined by its data type and independent of the ranges of the other members</span></span>|  
+|[<span data-ttu-id="a18e7-163">UShort</span><span class="sxs-lookup"><span data-stu-id="a18e7-163">UShort</span></span>](../../../visual-basic/language-reference/data-types/ushort-data-type.md)|<xref:System.UInt16>|<span data-ttu-id="a18e7-164">2 octets</span><span class="sxs-lookup"><span data-stu-id="a18e7-164">2 bytes</span></span>|<span data-ttu-id="a18e7-165">0 à 65 535 (non signé)</span><span class="sxs-lookup"><span data-stu-id="a18e7-165">0 through 65,535 (unsigned)</span></span>|  
   
- <sup>.</sup> Dans *la notation scientifique*, « E » fait référence à une alimentation de 10.  Par conséquent, 3,56E\+2 équivaut à 3.56 x 10<sup>2</sup> ou 356, et 3,56E\-2 équivaut à 3.56 \/ 10<sup>2</sup> ou 0,0356.  
+ <span data-ttu-id="a18e7-166"><sup>†</sup> Dans *la notation scientifique*, « E » fait référence à une puissance de 10.</span><span class="sxs-lookup"><span data-stu-id="a18e7-166"><sup>†</sup> In *scientific notation*, "E" refers to a power of 10.</span></span> <span data-ttu-id="a18e7-167">Par 3.56E + 2 3.56 x 10<sup>2</sup> ou 356 et 3.56E-2 signifie 3.56 / 10<sup>2</sup> ou 0.0356.</span><span class="sxs-lookup"><span data-stu-id="a18e7-167">So 3.56E+2 signifies 3.56 x 10<sup>2</sup> or 356, and 3.56E-2 signifies 3.56 / 10<sup>2</sup> or 0.0356.</span></span>  
   
 > [!NOTE]
->  Pour les chaînes contenant du texte, utilisez la fonction <xref:Microsoft.VisualBasic.Strings.StrConv%2A> pour effectuer une conversion d'un format de texte à un autre.  
+>  <span data-ttu-id="a18e7-168">Pour les chaînes contenant du texte, utilisez la <xref:Microsoft.VisualBasic.Strings.StrConv%2A> fonction convertir à partir d’un format de texte à un autre.</span><span class="sxs-lookup"><span data-stu-id="a18e7-168">For strings containing text, use the <xref:Microsoft.VisualBasic.Strings.StrConv%2A> function to convert from one text format to another.</span></span>  
   
- En plus de spécifier un type de données dans une instruction de déclaration, vous pouvez forcer le type de données de certains éléments de programmation à l'aide d'un caractère de type.  Consultez [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+ <span data-ttu-id="a18e7-169">Outre la spécification d’un type de données dans une instruction de déclaration, vous pouvez forcer le type de données de certains éléments de programmation à l’aide d’un caractère de type.</span><span class="sxs-lookup"><span data-stu-id="a18e7-169">In addition to specifying a data type in a declaration statement, you can force the data type of some programming elements by using a type character.</span></span> <span data-ttu-id="a18e7-170">Consultez [caractères de Type](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).</span><span class="sxs-lookup"><span data-stu-id="a18e7-170">See [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).</span></span>  
   
-## Consommation de mémoire  
- Lorsque vous déclarez un type de données élémentaire, il est risqué de supposer que sa consommation de mémoire est identique à son allocation de stockage nominal.  Cela est dû aux considérations suivantes :  
+## <a name="memory-consumption"></a><span data-ttu-id="a18e7-171">Consommation de mémoire</span><span class="sxs-lookup"><span data-stu-id="a18e7-171">Memory Consumption</span></span>  
+ <span data-ttu-id="a18e7-172">Lorsque vous déclarez un type de données élémentaire, il n’est pas possible de supposer que sa consommation de mémoire est identique à son allocation de stockage nominal.</span><span class="sxs-lookup"><span data-stu-id="a18e7-172">When you declare an elementary data type, it is not safe to assume that its memory consumption is the same as its nominal storage allocation.</span></span> <span data-ttu-id="a18e7-173">Il s’agit en raison de considérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="a18e7-173">This is due to the following considerations:</span></span>  
   
--   **Assignation de stockage.** Le Common Language Runtime peut assigner le stockage en fonction des caractéristiques actuelles de la plateforme sur laquelle s'exécute votre application.  Si la mémoire est presque pleine, il se peut qu'il compresse vos éléments déclarés aussi étroitement que possible.  Dans d'autres cas, il se peut qu'il aligne leurs adresses mémoire sur les limites matérielles naturelles pour optimiser les performances.  
+-   <span data-ttu-id="a18e7-174">**Affectation de stockage.**</span><span class="sxs-lookup"><span data-stu-id="a18e7-174">**Storage Assignment.**</span></span> <span data-ttu-id="a18e7-175">Le common language runtime peut assigner le stockage basé sur les caractéristiques actuelles de la plateforme sur laquelle votre application s’exécute.</span><span class="sxs-lookup"><span data-stu-id="a18e7-175">The common language runtime can assign storage based on the current characteristics of the platform on which your application is executing.</span></span> <span data-ttu-id="a18e7-176">Si la mémoire est presque plein, il peut pack vos éléments déclarés aussi près que possible.</span><span class="sxs-lookup"><span data-stu-id="a18e7-176">If memory is nearly full, it might pack your declared elements as closely together as possible.</span></span> <span data-ttu-id="a18e7-177">Dans d’autres cas, il peut s’aligner leurs adresses mémoire sur les limites matérielles naturelles pour optimiser les performances.</span><span class="sxs-lookup"><span data-stu-id="a18e7-177">In other cases it might align their memory addresses to natural hardware boundaries to optimize performance.</span></span>  
   
--   **Largeur de plateforme.** L'assignation de stockage est différente sur une plateforme 64 bits et sur une plateforme 32 bits.  
+-   <span data-ttu-id="a18e7-178">**Largeur de la plateforme.**</span><span class="sxs-lookup"><span data-stu-id="a18e7-178">**Platform Width.**</span></span> <span data-ttu-id="a18e7-179">Affectation de stockage sur une plateforme 64 bits est différente de l’affectation sur une plateforme 32 bits.</span><span class="sxs-lookup"><span data-stu-id="a18e7-179">Storage assignment on a 64-bit platform is different from assignment on a 32-bit platform.</span></span>  
   
-### Types de données composites  
- Les mêmes considérations s'appliquent à chaque membre d'un type de données composite \(par exemple, une structure ou un tableau\).  Il ne suffit pas d'additionner les allocations de stockage nominal des membres du type.  D'autre part, il existe d'autres considérations, telles que les suivantes :  
+### <a name="composite-data-types"></a><span data-ttu-id="a18e7-180">Types de données composites</span><span class="sxs-lookup"><span data-stu-id="a18e7-180">Composite Data Types</span></span>  
+ <span data-ttu-id="a18e7-181">Les mêmes considérations s’appliquent à chaque membre d’un type de données composite, comme une structure ou un tableau.</span><span class="sxs-lookup"><span data-stu-id="a18e7-181">The same considerations apply to each member of a composite data type, such as a structure or an array.</span></span> <span data-ttu-id="a18e7-182">Vous ne pouvez pas compter simplement additionner les allocations de stockage nominal des membres du type.</span><span class="sxs-lookup"><span data-stu-id="a18e7-182">You cannot rely on simply adding together the nominal storage allocations of the type's members.</span></span> <span data-ttu-id="a18e7-183">En outre, il existe d’autres considérations, telles que les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="a18e7-183">Furthermore, there are other considerations, such as the following:</span></span>  
   
--   **Charge mémoire.** La configuration requise pour la mémoire est plus importante pour certains types composites.  Par exemple, un tableau utilise davantage de mémoire pour le tableau lui\-même, mais également pour chaque dimension.  Sur une plateforme 32 bits, cette charge mémoire est actuellement de 12 octets, auxquels il convient d'ajouter 8 octets pour chaque dimension.  Sur une plateforme 64 bits, cette configuration requise est doublée.  
+-   <span data-ttu-id="a18e7-184">**Coûts.**</span><span class="sxs-lookup"><span data-stu-id="a18e7-184">**Overhead.**</span></span> <span data-ttu-id="a18e7-185">Certains types composites ont des besoins en mémoire supplémentaires.</span><span class="sxs-lookup"><span data-stu-id="a18e7-185">Some composite types have additional memory requirements.</span></span> <span data-ttu-id="a18e7-186">Par exemple, un tableau utilise davantage de mémoire pour le tableau lui-même, mais également pour chaque dimension.</span><span class="sxs-lookup"><span data-stu-id="a18e7-186">For example, an array uses extra memory for the array itself and also for each dimension.</span></span> <span data-ttu-id="a18e7-187">Sur une plateforme 32 bits, cette surcharge est actuellement de 12 octets plus de 8 octets pour chaque dimension.</span><span class="sxs-lookup"><span data-stu-id="a18e7-187">On a 32-bit platform, this overhead is currently 12 bytes plus 8 bytes for each dimension.</span></span> <span data-ttu-id="a18e7-188">Sur une plateforme 64 bits, cette exigence est doublée.</span><span class="sxs-lookup"><span data-stu-id="a18e7-188">On a 64-bit platform this requirement is doubled.</span></span>  
   
--   **Disposition de stockage.** Il est risqué de supposer que l'ordre de stockage dans la mémoire est le même que l'ordre de vos déclarations.  Vous ne pouvez même pas faire de suppositions au sujet de l'alignement des octets, tels qu'une limite de 2 octets ou de 4 octets.  Si vous définissez une classe ou une structure et que vous devez contrôler la disposition de stockage de ses membres, vous pouvez appliquer l'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> à la classe ou à la structure.  
+-   <span data-ttu-id="a18e7-189">**Disposition de stockage.**</span><span class="sxs-lookup"><span data-stu-id="a18e7-189">**Storage Layout.**</span></span> <span data-ttu-id="a18e7-190">Vous ne pouvez pas sans risque supposer que l’ordre de stockage en mémoire est le même que l’ordre de déclaration.</span><span class="sxs-lookup"><span data-stu-id="a18e7-190">You cannot safely assume that the order of storage in memory is the same as your order of declaration.</span></span> <span data-ttu-id="a18e7-191">Vous ne pouvez pas même hypothèses sur Alignement des octets, par exemple une limite de 2 octets ou 4 octets.</span><span class="sxs-lookup"><span data-stu-id="a18e7-191">You cannot even make assumptions about byte alignment, such as a 2-byte or 4-byte boundary.</span></span> <span data-ttu-id="a18e7-192">Si vous définissez une classe ou une structure et que vous avez besoin de contrôler la disposition de stockage de ses membres, vous pouvez appliquer la <xref:System.Runtime.InteropServices.StructLayoutAttribute> d’attribut à la classe ou structure.</span><span class="sxs-lookup"><span data-stu-id="a18e7-192">If you are defining a class or structure and you need to control the storage layout of its members, you can apply the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute to the class or structure.</span></span>  
   
-### Charge mémoire d'un objet  
- Un `Object` faisant référence à un type de données élémentaire ou composite utilise 4 octets en plus des données contenues dans le type de données.  
+### <a name="object-overhead"></a><span data-ttu-id="a18e7-193">Surcharge de l’objet</span><span class="sxs-lookup"><span data-stu-id="a18e7-193">Object Overhead</span></span>  
+ <span data-ttu-id="a18e7-194">Un `Object` qui fait référence à des données élémentaires ou composites de type utilise 4 octets en plus des données contenues dans le type de données.</span><span class="sxs-lookup"><span data-stu-id="a18e7-194">An `Object` referring to any elementary or composite data type uses 4 bytes in addition to the data contained in the data type.</span></span>  
   
-## Voir aussi  
- <xref:Microsoft.VisualBasic.Strings.StrConv%2A>   
- <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Résumé de la conversion](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a><span data-ttu-id="a18e7-195">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a18e7-195">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Strings.StrConv%2A>  
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
+ [<span data-ttu-id="a18e7-196">Fonctions de conversion de types</span><span class="sxs-lookup"><span data-stu-id="a18e7-196">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="a18e7-197">Liste des conversions</span><span class="sxs-lookup"><span data-stu-id="a18e7-197">Conversion Summary</span></span>](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [<span data-ttu-id="a18e7-198">Caractères de type</span><span class="sxs-lookup"><span data-stu-id="a18e7-198">Type Characters</span></span>](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [<span data-ttu-id="a18e7-199">Utilisation efficace des types de données</span><span class="sxs-lookup"><span data-stu-id="a18e7-199">Efficient Use of Data Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

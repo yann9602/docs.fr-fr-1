@@ -1,36 +1,40 @@
 ---
-title: "Propri&#233;t&#233;s du magasin d&#39;instances de workflow SQL | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Propriétés du magasin d'instances de workflow SQL"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 91a2711fae91c09df0a62759edaa41483eb4ea28
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Propri&#233;t&#233;s du magasin d&#39;instances de workflow SQL
-Les rubriques de cette section fournissent des détails à propos des propriétés du magasin d'instances de workflow SQL.  
+# <a name="properties-of-sql-workflow-instance-store"></a><span data-ttu-id="2920c-102">Propriétés du magasin d'instances de workflow SQL</span><span class="sxs-lookup"><span data-stu-id="2920c-102">Properties of SQL Workflow Instance Store</span></span>
+<span data-ttu-id="2920c-103">Les rubriques de cette section fournissent des détails à propos des propriétés du magasin d'instances de workflow SQL.</span><span class="sxs-lookup"><span data-stu-id="2920c-103">The topics in this section provide details about properties of the SQL Workflow Instance Store.</span></span>  
   
-## Dans cette section  
+## <a name="in-this-section"></a><span data-ttu-id="2920c-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="2920c-104">In This Section</span></span>  
   
--   [Option d'encodage d'instance](../../../docs/framework/windows-workflow-foundation//instance-encoding-option.md)  
+-   [<span data-ttu-id="2920c-105">Option d’encodage d’instance</span><span class="sxs-lookup"><span data-stu-id="2920c-105">Instance Encoding Option</span></span>](../../../docs/framework/windows-workflow-foundation/instance-encoding-option.md)  
   
--   [Action d'achèvement de l'instance](../../../docs/framework/windows-workflow-foundation//instance-completion-action.md)  
+-   [<span data-ttu-id="2920c-106">Action de complétion de l’instance</span><span class="sxs-lookup"><span data-stu-id="2920c-106">Instance Completion Action</span></span>](../../../docs/framework/windows-workflow-foundation/instance-completion-action.md)  
   
--   [Action d'exception verrouillée d'instance](../../../docs/framework/windows-workflow-foundation//instance-locked-exception-action.md)  
+-   [<span data-ttu-id="2920c-107">Action d’exception verrouillée d’instance</span><span class="sxs-lookup"><span data-stu-id="2920c-107">Instance Locked Exception Action</span></span>](../../../docs/framework/windows-workflow-foundation/instance-locked-exception-action.md)  
   
--   [Période de renouvellement du verrou de l'hôte](../../../docs/framework/windows-workflow-foundation//host-lock-renewal-period.md)  
+-   [<span data-ttu-id="2920c-108">Période de renouvellement du verrou de l’hôte</span><span class="sxs-lookup"><span data-stu-id="2920c-108">Host Lock Renewal Period</span></span>](../../../docs/framework/windows-workflow-foundation/host-lock-renewal-period.md)  
   
--   [Période de détection des instances activables](../../../docs/framework/windows-workflow-foundation//runnable-instances-detection-period.md)  
+-   [<span data-ttu-id="2920c-109">Période de détection des instances exécutables</span><span class="sxs-lookup"><span data-stu-id="2920c-109">Runnable Instances Detection Period</span></span>](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md)  
   
--   [Chaîne de connexion et nom de la chaîne de connexion](../../../docs/framework/windows-workflow-foundation//connection-string-and-connection-string-name.md)  
+-   [<span data-ttu-id="2920c-110">Chaîne de connexion et nom de la chaîne de connexion</span><span class="sxs-lookup"><span data-stu-id="2920c-110">Connection String and Connection String Name</span></span>](../../../docs/framework/windows-workflow-foundation/connection-string-and-connection-string-name.md)  
   
-## Voir aussi  
- [Magasin d'instances Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201201)   
- [Base de données de persistance SQL Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=201202)
+## <a name="see-also"></a><span data-ttu-id="2920c-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2920c-111">See Also</span></span>  
+ [<span data-ttu-id="2920c-112">Magasin d’instances Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="2920c-112">Windows Server App Fabric Instance Store</span></span>](http://go.microsoft.com/fwlink/?LinkId=201201)  
+ [<span data-ttu-id="2920c-113">L’infrastructure d’application de base de données SQL Server persistance</span><span class="sxs-lookup"><span data-stu-id="2920c-113">App Fabric SQL Server Persistence Database</span></span>](http://go.microsoft.com/fwlink/?LinkId=201202)

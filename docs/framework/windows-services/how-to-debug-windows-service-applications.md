@@ -1,89 +1,92 @@
 ---
-title: "How to: Debug Windows Service Applications | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "debugging Windows Service applications"
-  - "debugging [Visual Studio], Windows services"
-  - "Windows NT services, debugging"
-  - "Windows Service applications, debugging"
-  - "services, debugging"
+title: "Comment : déboguer les applications de service Windows"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- debugging Windows Service applications
+- debugging [Visual Studio], Windows services
+- Windows NT services, debugging
+- Windows Service applications, debugging
+- services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
-caps.latest.revision: 16
-author: "ghogen"
-ms.author: "ghogen"
-manager: "douge"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: ghogen
+ms.author: ghogen
+manager: douge
+ms.openlocfilehash: c49d05a9ca09a12044c0846db381368166e105bd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Debug Windows Service Applications
-Un service doit être exécuté à partir du Gestionnaire de contrôle des services plutôt qu'à partir de Visual Studio.  C'est pourquoi le débogage d'un service n'est pas aussi simple que le débogage d'autres types d'applications Visual Studio.  Pour déboguer un service, vous devez le démarrer et attacher un débogueur au processus dans lequel il s'exécute.  Vous pouvez alors déboguer votre application à l'aide de toutes les fonctionnalités de débogage standard de Visual Studio.  
+# <a name="how-to-debug-windows-service-applications"></a><span data-ttu-id="4fe9b-102">Comment : déboguer les applications de service Windows</span><span class="sxs-lookup"><span data-stu-id="4fe9b-102">How to: Debug Windows Service Applications</span></span>
+<span data-ttu-id="4fe9b-103">Un service doit être exécuté à partir du Gestionnaire de contrôle des services plutôt qu'à partir de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-103">A service must be run from within the context of the Services Control Manager rather than from within Visual Studio.</span></span> <span data-ttu-id="4fe9b-104">C'est pourquoi le débogage d'un service n'est pas aussi simple que le débogage d'autres types d'applications Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-104">For this reason, debugging a service is not as straightforward as debugging other Visual Studio application types.</span></span> <span data-ttu-id="4fe9b-105">Pour déboguer un service, vous devez le démarrer et attacher un débogueur au processus dans lequel il s'exécute.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-105">To debug a service, you must start the service and then attach a debugger to the process in which it is running.</span></span> <span data-ttu-id="4fe9b-106">Vous pouvez alors déboguer votre application à l'aide de toutes les fonctionnalités de débogage standard de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-106">You can then debug your application by using all of the standard debugging functionality of Visual Studio.</span></span>  
   
 > [!CAUTION]
->  Avant de procéder à cet attachement, vérifiez en quoi consiste le processus concerné et pesez bien les conséquences de cette opération qui risque de supprimer le processus.  Par exemple, si vous effectuez un attachement au processus WinLogon et que vous interrompez ensuite le débogage, le système s'arrête, car il ne peut pas fonctionner sans WinLogon.  
+>  <span data-ttu-id="4fe9b-107">Avant de procéder à cet attachement, vérifiez en quoi consiste le processus concerné et pesez bien les conséquences de cette opération qui risque de supprimer le processus.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-107">You should not attach to a process unless you know what the process is and understand the consequences of attaching to and possibly killing that process.</span></span> <span data-ttu-id="4fe9b-108">Par exemple, si vous effectuez un attachement au processus WinLogon et que vous interrompez ensuite le débogage, le système s'arrête, car il ne peut pas fonctionner sans WinLogon.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-108">For example, if you attach to the WinLogon process and then stop debugging, the system will halt because it can’t operate without WinLogon.</span></span>  
   
- Vous ne pouvez attacher le débogueur qu'à un service en cours d'exécution.  Le processus d'attachement interrompt le fonctionnement actuel de votre service ; il n'a pas pour effet de l'arrêter ni d'en suspendre le traitement.  Autrement dit, si votre service est en cours d'exécution lorsque vous commencez le débogage, il se trouve toujours techniquement à l'état Démarré pendant que vous le déboguez, mais son traitement est suspendu.  
+ <span data-ttu-id="4fe9b-109">Vous ne pouvez attacher le débogueur qu'à un service en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-109">You can attach the debugger only to a running service.</span></span> <span data-ttu-id="4fe9b-110">Le processus d'attachement interrompt le fonctionnement actuel de votre service ; il n'a pas pour effet de l'arrêter ni d'en suspendre le traitement.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-110">The attachment process interrupts the current functioning of your service; it doesn’t actually stop or pause the service's processing.</span></span> <span data-ttu-id="4fe9b-111">Autrement dit, si votre service est en cours d'exécution lorsque vous commencez le débogage, il se trouve toujours techniquement à l'état Démarré pendant que vous le déboguez, mais son traitement est suspendu.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-111">That is, if your service is running when you begin debugging, it is still technically in the Started state as you debug it, but its processing has been suspended.</span></span>  
   
- Après avoir effectué l'attachement au processus, vous pouvez définir des points d'arrêt et les utiliser pour déboguer votre code.  Une fois que vous quittez la boîte de dialogue utilisée pour faire l'attachement au processus, vous êtes en mode débogage.  Vous pouvez utiliser le Gestionnaire de contrôle des services pour démarrer, arrêter, interrompre et continuer votre service, en accédant aux points d'arrêt que vous avez définis.  Quand le débogage est terminé, vous pouvez supprimer le service factice.  
+ <span data-ttu-id="4fe9b-112">Après avoir effectué l'attachement au processus, vous pouvez définir des points d'arrêt et les utiliser pour déboguer votre code.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-112">After attaching to the process, you can set breakpoints and use these to debug your code.</span></span> <span data-ttu-id="4fe9b-113">Une fois que vous quittez la boîte de dialogue utilisée pour faire l'attachement au processus, vous êtes en mode débogage.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-113">Once you exit the dialog box you use to attach to the process, you are effectively in debug mode.</span></span> <span data-ttu-id="4fe9b-114">Vous pouvez utiliser le Gestionnaire de contrôle des services pour démarrer, arrêter, interrompre et continuer votre service, en accédant aux points d'arrêt que vous avez définis.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-114">You can use the Services Control Manager to start, stop, pause and continue your service, thus hitting the breakpoints you've set.</span></span> <span data-ttu-id="4fe9b-115">Quand le débogage est terminé, vous pouvez supprimer le service factice.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-115">You can later remove this dummy service after debugging is successful.</span></span>  
   
- Cet article décrit le débogage d'un service qui est en cours d'exécution sur l'ordinateur local, mais vous pouvez également déboguer des services Windows qui s'exécutent sur un ordinateur distant.  Consultez [Débogage distant](../Topic/Remote%20Debugging.md).  
+ <span data-ttu-id="4fe9b-116">Cet article décrit le débogage d'un service qui est en cours d'exécution sur l'ordinateur local, mais vous pouvez également déboguer des services Windows qui s'exécutent sur un ordinateur distant.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-116">This article covers debugging a service that's running on the local computer, but you can also debug Windows Services that are running on a remote computer.</span></span> <span data-ttu-id="4fe9b-117">Consultez [débogage distant](/visualstudio/debugger/debug-installed-app-package).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-117">See [Remote Debugging](/visualstudio/debugger/debug-installed-app-package).</span></span>  
   
 > [!NOTE]
->  Le débogage de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> peut s'avérer difficile, car le Gestionnaire de contrôle des services impose un délai de 30 secondes pour toute tentative de démarrage d'un service.  Pour plus d'informations, consultez [Troubleshooting: Debugging Windows Services](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+>  <span data-ttu-id="4fe9b-118">Le débogage de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> peut s'avérer difficile, car le Gestionnaire de contrôle des services impose un délai de 30 secondes pour toute tentative de démarrage d'un service.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-118">Debugging the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method can be difficult because the Services Control Manager imposes a 30-second limit on all attempts to start a service.</span></span> <span data-ttu-id="4fe9b-119">Pour plus d’informations, consultez [résolution des problèmes : débogage des Services Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-119">For more information, see [Troubleshooting: Debugging Windows Services](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).</span></span>  
   
 > [!WARNING]
->  Pour obtenir des informations significatives pour le débogage, le débogueur Visual Studio doit rechercher les fichiers de symboles pour les fichiers binaires qui sont en cours de débogage.  Si vous déboguez un service que vous avez généré dans Visual Studio, les fichiers de symboles \(fichiers .pdb\) se trouvent dans le même dossier que l'exécutable ou la bibliothèque, et le débogueur les charge automatiquement.  Si vous déboguez un service que vous n'avez pas généré, vous devez d'abord rechercher des symboles pour le service, puis vous assurer qu'ils sont accessibles par le débogueur.  Consultez [Spécifier les fichiers de symbole \(.pdb\) et les fichiers sources](../Topic/Specify%20Symbol%20\(.pdb\)%20and%20Source%20Files%20in%20the%20Visual%20Studio%20Debugger.md).  Si vous déboguez un processus système ou que vous voulez disposer de symboles pour les appels système dans vos services, vous devez ajouter des serveurs de symboles Microsoft.  Voir [Symboles de débogage](http://msdn.microsoft.com/windows/desktop/ee416588.aspx).  
+>  <span data-ttu-id="4fe9b-120">Pour obtenir des informations significatives pour le débogage, le débogueur Visual Studio doit rechercher les fichiers de symboles pour les fichiers binaires qui sont en cours de débogage.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-120">To get meaningful information for debugging, the Visual Studio debugger needs to find symbol files for the binaries that are being debugged.</span></span> <span data-ttu-id="4fe9b-121">Si vous déboguez un service que vous avez généré dans Visual Studio, les fichiers de symboles (fichiers .pdb) se trouvent dans le même dossier que l'exécutable ou la bibliothèque, et le débogueur les charge automatiquement.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-121">If you are debugging a service that you built in Visual Studio, the symbol files (.pdb files) are in the same folder as the executable or library, and the debugger loads them automatically.</span></span> <span data-ttu-id="4fe9b-122">Si vous déboguez un service que vous n'avez pas généré, vous devez d'abord rechercher des symboles pour le service, puis vous assurer qu'ils sont accessibles par le débogueur.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-122">If you are debugging a service that you didn't build, you should first find symbols for the service and make sure they can be found by the debugger.</span></span> <span data-ttu-id="4fe9b-123">Consultez [spécifier les symboles (.pdb) et les fichiers sources](http://msdn.microsoft.com/library/1105e169-5272-4e7c-b3e7-cda1b7798a6b).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-123">See [Specify Symbol (.pdb) and Source Files](http://msdn.microsoft.com/library/1105e169-5272-4e7c-b3e7-cda1b7798a6b).</span></span> <span data-ttu-id="4fe9b-124">Si vous déboguez un processus système ou que vous voulez disposer de symboles pour les appels système dans vos services, vous devez ajouter des serveurs de symboles Microsoft.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-124">If you're debugging a system process or want to have symbols for system calls in your services, you should add the Microsoft Symbol Servers.</span></span> <span data-ttu-id="4fe9b-125">Consultez [symboles de débogage](http://msdn.microsoft.com/windows/desktop/ee416588.aspx).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-125">See [Debugging Symbols](http://msdn.microsoft.com/windows/desktop/ee416588.aspx).</span></span>  
   
-### Pour déboguer un service  
+### <a name="to-debug-a-service"></a><span data-ttu-id="4fe9b-126">Pour déboguer un service</span><span class="sxs-lookup"><span data-stu-id="4fe9b-126">To debug a service</span></span>  
   
-1.  Générez votre service dans la configuration Debug.  
+1.  <span data-ttu-id="4fe9b-127">Générez votre service dans la configuration Debug.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-127">Build your service in the Debug configuration.</span></span>  
   
-2.  Installez votre service.  Pour plus d'informations, consultez [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+2.  <span data-ttu-id="4fe9b-128">Installez votre service.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-128">Install your service.</span></span> <span data-ttu-id="4fe9b-129">Pour plus d'informations, consultez [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-129">For more information, see [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).</span></span>  
   
-3.  Démarrez le service à partir du **Gestionnaire de contrôle des services**, de l'**Explorateur de serveurs** ou du code.  Pour plus d'informations, consultez [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).  
+3.  <span data-ttu-id="4fe9b-130">Démarrez le service à partir de **Gestionnaire de contrôle des Services**, **l’Explorateur de serveurs**, ou à partir du code.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-130">Start your service, either from **Services Control Manager**, **Server Explorer**, or from code.</span></span> <span data-ttu-id="4fe9b-131">Pour plus d’informations, consultez [Comment : démarrer des Services](../../../docs/framework/windows-services/how-to-start-services.md).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-131">For more information, see [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).</span></span>  
   
-4.  Démarrez Visual Studio avec des informations d'identification administratives pour pouvoir effectuer un attachement à un processus système.  
+4.  <span data-ttu-id="4fe9b-132">Démarrez Visual Studio avec des informations d'identification administratives pour pouvoir effectuer un attachement à un processus système.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-132">Start Visual Studio with administrative credentials so you can attach to system processes.</span></span>  
   
-5.  \(Facultatif\) Dans la barre de menus de Visual Studio, choisissez **Outils**, **Options**.  Dans la boîte de dialogue **Options**, choisissez **Débogage**, **Symboles**, cochez la case **Serveurs de symboles Microsoft**, puis choisissez le bouton **OK**.  
+5.  <span data-ttu-id="4fe9b-133">(Facultatif) Dans la barre de menus de Visual Studio, choisissez **outils**, **Options**.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-133">(Optional) On the Visual Studio menu bar, choose **Tools**, **Options**.</span></span> <span data-ttu-id="4fe9b-134">Dans le **Options** boîte de dialogue, choisissez **débogage**, **symboles**, sélectionnez le **serveurs de symboles Microsoft** case à cocher, puis choisissez le **OK** bouton.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-134">In the **Options** dialog box, choose **Debugging**, **Symbols**, select the **Microsoft Symbol Servers** check box, and then choose the **OK** button.</span></span>  
   
-6.  Dans la barre de menus, choisissez **Attacher au processus** dans le menu **Débogage** ou **Outils**.  \(clavier : Ctrl\+Alt\+H\)  
+6.  <span data-ttu-id="4fe9b-135">Dans la barre de menus, choisissez **attacher au processus** à partir de la **déboguer** ou **outils** menu.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-135">On the menu bar, choose **Attach to Process** from the **Debug** or **Tools** menu.</span></span> <span data-ttu-id="4fe9b-136">(clavier : Ctrl+Alt+H)</span><span class="sxs-lookup"><span data-stu-id="4fe9b-136">(Keyboard: Ctrl+Alt+P)</span></span>  
   
-     La boîte de dialogue **Processus** s'affiche.  
+     <span data-ttu-id="4fe9b-137">Le **processus** boîte de dialogue s’affiche.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-137">The **Processes** dialog box appears.</span></span>  
   
-7.  Activez la case à cocher **Afficher les processus de tous les utilisateurs**.  
+7.  <span data-ttu-id="4fe9b-138">Sélectionnez le **afficher les processus de tous les utilisateurs** case à cocher.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-138">Select the **Show processes from all users** check box.</span></span>  
   
-8.  Dans la section **Processus disponibles**, choisissez le processus de votre service, puis **Attacher**.  
+8.  <span data-ttu-id="4fe9b-139">Dans le **processus disponibles** section, choisissez le processus de votre service, puis **attacher**.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-139">In the **Available Processes** section, choose the process for your service, and then choose **Attach**.</span></span>  
   
     > [!TIP]
-    >  Le processus porte le même nom que le fichier exécutable de votre service.  
+    >  <span data-ttu-id="4fe9b-140">Le processus porte le même nom que le fichier exécutable de votre service.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-140">The process will have the same name as the executable file for your service.</span></span>  
   
-     La boîte de dialogue **Attacher au processus** s'affiche.  
+     <span data-ttu-id="4fe9b-141">La boîte de dialogue **Attacher au processus** s'affiche.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-141">The **Attach to Process** dialog box appears.</span></span>  
   
-9. Choisissez les options appropriées, puis cliquez sur **OK** pour fermer la boîte de dialogue.  
+9. <span data-ttu-id="4fe9b-142">Choisissez les options appropriées, puis **OK** pour fermer la boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-142">Choose the appropriate options, and then choose **OK** to close the dialog box.</span></span>  
   
     > [!NOTE]
-    >  Vous êtes maintenant en mode débogage.  
+    >  <span data-ttu-id="4fe9b-143">Vous êtes maintenant en mode débogage.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-143">You are now in debug mode.</span></span>  
   
-10. Définissez les points d'arrêt que vous souhaitez utiliser dans votre code.  
+10. <span data-ttu-id="4fe9b-144">Définissez les points d'arrêt que vous souhaitez utiliser dans votre code.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-144">Set any breakpoints you want to use in your code.</span></span>  
   
-11. Accédez au Gestionnaire de contrôle des services et manipulez votre service, en envoyant des commandes d'arrêt, d'interruption et de poursuite pour atteindre vos points d'arrêt.  Pour plus d'informations sur l'exécution du Gestionnaire de contrôle des services, consultez [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).  Consultez aussi [Troubleshooting: Debugging Windows Services](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
+11. <span data-ttu-id="4fe9b-145">Accédez au Gestionnaire de contrôle des services et manipulez votre service, en envoyant des commandes d'arrêt, d'interruption et de poursuite pour atteindre vos points d'arrêt.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-145">Access the Services Control Manager and manipulate your service, sending stop, pause, and continue commands to hit your breakpoints.</span></span> <span data-ttu-id="4fe9b-146">Pour plus d’informations sur l’exécution du Gestionnaire de contrôle des Services, consultez [Comment : démarrer des Services](../../../docs/framework/windows-services/how-to-start-services.md).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-146">For more information about running the Services Control Manager, see [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).</span></span> <span data-ttu-id="4fe9b-147">Consultez également [résolution des problèmes : débogage des Services Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-147">Also, see [Troubleshooting: Debugging Windows Services](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).</span></span>  
   
-## Conseils relatifs au débogage des services Windows  
- L'attachement au processus du service vous permet de déboguer le code de ce service dans sa majeure partie mais pas dans sa totalité.  Par exemple, comme le service a déjà été démarré, vous ne pouvez pas déboguer de cette façon le code de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> du service ni celui de la méthode `Main` qui sert à le charger.  Pour remédier à cela, vous pouvez créer, dans votre application de service, un deuxième service temporaire servant uniquement à faciliter le débogage.  Vous pouvez installer les deux services, puis démarrer ce service factice pour charger le processus du service.  Une fois que le service temporaire a démarré le processus, vous pouvez effectuer l'attachement au processus du service à l'aide du menu **Débogage** de Visual Studio.  
+## <a name="debugging-tips-for-windows-services"></a><span data-ttu-id="4fe9b-148">Conseils relatifs au débogage des services Windows</span><span class="sxs-lookup"><span data-stu-id="4fe9b-148">Debugging Tips for Windows Services</span></span>  
+ <span data-ttu-id="4fe9b-149">L'attachement au processus du service vous permet de déboguer le code de ce service dans sa majeure partie mais pas dans sa totalité.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-149">Attaching to the service's process allows you to debug most, but not all, the code for that service.</span></span> <span data-ttu-id="4fe9b-150">Par exemple, comme le service a déjà été démarré, vous ne pouvez pas déboguer de cette façon le code de la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> du service ni celui de la méthode `Main` qui sert à le charger.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-150">For example, because the service has already been started, you cannot debug the code in the service's <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method or the code in the `Main` method that is used to load the service this way.</span></span> <span data-ttu-id="4fe9b-151">Pour remédier à cela, vous pouvez créer, dans votre application de service, un deuxième service temporaire servant uniquement à faciliter le débogage.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-151">One way to work around this limitation is to create a temporary second service in your service application that exists only to aid in debugging.</span></span> <span data-ttu-id="4fe9b-152">Vous pouvez installer les deux services, puis démarrer ce service factice pour charger le processus du service.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-152">You can install both services, and then start this dummy service to load the service process.</span></span> <span data-ttu-id="4fe9b-153">Une fois que le service temporaire a démarré le processus, vous pouvez utiliser la **déboguer** menu dans Visual Studio pour attacher au processus de service.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-153">Once the temporary service has started the process, you can use the **Debug** menu in Visual Studio to attach to the service process.</span></span>  
   
- Essayez d'ajouter des appels à la méthode <xref:System.Threading.Thread.Sleep%2A> pour retarder l'action jusqu'à ce que vous soyez en mesure d'effectuer l'attachement au processus.  
+ <span data-ttu-id="4fe9b-154">Essayez d'ajouter des appels à la méthode <xref:System.Threading.Thread.Sleep%2A> pour retarder l'action jusqu'à ce que vous soyez en mesure d'effectuer l'attachement au processus.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-154">Try adding calls to the <xref:System.Threading.Thread.Sleep%2A> method to delay action until you’re able to attach to the process.</span></span>  
   
- Essayez de remplacer le programme par une application de console standard.  Pour ce faire, réécrivez la méthode `Main` comme suit afin qu'elle puisse s'exécuter à la fois en tant que service Windows et en tant qu'application console, en fonction de la façon dont elle est démarrée.  
+ <span data-ttu-id="4fe9b-155">Essayez de remplacer le programme par une application de console standard.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-155">Try changing the program to a regular console application.</span></span> <span data-ttu-id="4fe9b-156">Pour ce faire, réécrivez la méthode `Main` comme suit afin qu'elle puisse s'exécuter à la fois en tant que service Windows et en tant qu'application console, en fonction de la façon dont elle est démarrée.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-156">To do this, rewrite the `Main` method as follows so it can run both as a Windows Service and as a console application, depending on how it's started.</span></span>  
   
-#### Procédure : exécution d'un service Windows en tant qu'application console  
+#### <a name="how-to-run-a-windows-service-as-a-console-application"></a><span data-ttu-id="4fe9b-157">Procédure : exécution d'un service Windows en tant qu'application console</span><span class="sxs-lookup"><span data-stu-id="4fe9b-157">How to: Run a Windows Service as a console application</span></span>  
   
-1.  Ajoutez une méthode à votre service qui exécute les méthodes <xref:System.ServiceProcess.ServiceBase.OnStart%2A> et <xref:System.ServiceProcess.ServiceBase.OnStop%2A> :  
+1.  <span data-ttu-id="4fe9b-158">Ajoutez une méthode à votre service qui exécute les méthodes <xref:System.ServiceProcess.ServiceBase.OnStart%2A> et <xref:System.ServiceProcess.ServiceBase.OnStop%2A> :</span><span class="sxs-lookup"><span data-stu-id="4fe9b-158">Add a method to your service that runs the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> and <xref:System.ServiceProcess.ServiceBase.OnStop%2A> methods:</span></span>  
   
     ```  
     internal void TestStartupAndStop(string[] args)  
@@ -94,7 +97,7 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
     }  
     ```  
   
-2.  Réécrivez la méthode `Main` suit :  
+2.  <span data-ttu-id="4fe9b-159">Réécrivez la méthode `Main` suit :</span><span class="sxs-lookup"><span data-stu-id="4fe9b-159">Rewrite the `Main` method as follows:</span></span>  
   
     ```  
     static void Main(string[] args)  
@@ -110,16 +113,16 @@ Un service doit être exécuté à partir du Gestionnaire de contrôle des servi
                 }  
     ```  
   
-3.  Sous l'onglet **Application** des propriétés du projet, affectez à **Type de sortie** la valeur **Application console**.  
+3.  <span data-ttu-id="4fe9b-160">Dans le **Application** onglet de propriétés du projet, définissez le **type de sortie** à **Application Console**.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-160">In the **Application** tab of the project's properties, set the **Output type** to **Console Application**.</span></span>  
   
-4.  Choisissez **Démarrer le débogage** \(F5\).  
+4.  <span data-ttu-id="4fe9b-161">Choisissez **démarrer le débogage** (F5).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-161">Choose **Start Debugging** (F5).</span></span>  
   
-5.  Pour exécuter à nouveau le programme en tant que service Windows, installez\-le et démarrez\-le comme vous le faites habituellement pour un service Windows.  Il n'est pas nécessaire d'annuler les modifications apportées.  
+5.  <span data-ttu-id="4fe9b-162">Pour exécuter à nouveau le programme en tant que service Windows, installez-le et démarrez-le comme vous le faites habituellement pour un service Windows.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-162">To run the program as a Windows Service again, install it and start it as usual for a Windows Service.</span></span> <span data-ttu-id="4fe9b-163">Il n'est pas nécessaire d'annuler les modifications apportées.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-163">It's not necessary to reverse these changes.</span></span>  
   
- Dans certains cas, notamment lorsque vous souhaitez déboguer un problème qui se produit uniquement au démarrage du système, vous devez utiliser le débogueur Windows.  Installez les [outils de débogage pour Windows](http://msdn.microsoft.com/windows/hardware/hh852365) et consultez la rubrique [Comment déboguer les services Windows](http://support.microsoft.com/kb/824344).  
+ <span data-ttu-id="4fe9b-164">Dans certains cas, notamment lorsque vous souhaitez déboguer un problème qui se produit uniquement au démarrage du système, vous devez utiliser le débogueur Windows.</span><span class="sxs-lookup"><span data-stu-id="4fe9b-164">In some cases, such as when you want to debug an issue that occurs only on system startup, you have to use the Windows debugger.</span></span> <span data-ttu-id="4fe9b-165">Installer [outils de débogage pour Windows](http://msdn.microsoft.com/windows/hardware/hh852365) et [comment déboguer des Services Windows](http://support.microsoft.com/kb/824344).</span><span class="sxs-lookup"><span data-stu-id="4fe9b-165">Install [Debugging Tools for Windows](http://msdn.microsoft.com/windows/hardware/hh852365) and see [How to debug Windows Services](http://support.microsoft.com/kb/824344).</span></span>  
   
-## Voir aussi  
- [Introduction to Windows Service Applications](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)   
- [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)   
- [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md)   
- [Débogage d'un service](http://msdn.microsoft.com/library/windows/desktop/ms682546.aspx)
+## <a name="see-also"></a><span data-ttu-id="4fe9b-166">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4fe9b-166">See Also</span></span>  
+ [<span data-ttu-id="4fe9b-167">Introduction aux Applications de Service Windows</span><span class="sxs-lookup"><span data-stu-id="4fe9b-167">Introduction to Windows Service Applications</span></span>](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [<span data-ttu-id="4fe9b-168">Comment : installer et désinstaller des Services</span><span class="sxs-lookup"><span data-stu-id="4fe9b-168">How to: Install and Uninstall Services</span></span>](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [<span data-ttu-id="4fe9b-169">Comment : démarrer des Services</span><span class="sxs-lookup"><span data-stu-id="4fe9b-169">How to: Start Services</span></span>](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [<span data-ttu-id="4fe9b-170">Débogage d’un Service</span><span class="sxs-lookup"><span data-stu-id="4fe9b-170">Debugging a Service</span></span>](http://msdn.microsoft.com/library/windows/desktop/ms682546.aspx)

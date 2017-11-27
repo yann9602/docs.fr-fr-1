@@ -1,0 +1,50 @@
+---
+title: Valeurs Null (F#)
+description: "Découvrez comment la valeur null est utilisée dans le langage de programmation F #."
+keywords: visual f#, f#, programmation fonctionnelle
+author: cartermp
+ms.author: phcart
+ms.date: 05/16/2016
+ms.topic: language-reference
+ms.prod: .net
+ms.technology: devlang-fsharp
+ms.devlang: fsharp
+ms.assetid: 68ebd261-51cf-4582-b2dc-44c84d1c2500
+ms.openlocfilehash: 01c14de00eb5efd0952145ffc8aabe69d65a3a48
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
+---
+# <a name="null-values"></a><span data-ttu-id="8111b-104">Valeurs Null</span><span class="sxs-lookup"><span data-stu-id="8111b-104">Null Values</span></span>
+
+<span data-ttu-id="8111b-105">Cette rubrique décrit l’utilisation de la valeur null en F #.</span><span class="sxs-lookup"><span data-stu-id="8111b-105">This topic describes how the null value is used in F#.</span></span>
+
+
+## <a name="null-value"></a><span data-ttu-id="8111b-106">Valeur null</span><span class="sxs-lookup"><span data-stu-id="8111b-106">Null Value</span></span>
+<span data-ttu-id="8111b-107">La valeur null n’est pas normalement utilisée en F # pour des valeurs ou des variables.</span><span class="sxs-lookup"><span data-stu-id="8111b-107">The null value is not normally used in F# for values or variables.</span></span> <span data-ttu-id="8111b-108">Toutefois, null apparaît comme une valeur anormale dans certaines situations.</span><span class="sxs-lookup"><span data-stu-id="8111b-108">However, null appears as an abnormal value in certain situations.</span></span> <span data-ttu-id="8111b-109">Si un type est défini en F #, valeur null n’est pas autorisée comme valeur normale, sauf si le [AllowNullLiteral](https://msdn.microsoft.com/library/4f315196-f444-4cca-ba07-1176ff71eb0f) attribut est appliqué au type.</span><span class="sxs-lookup"><span data-stu-id="8111b-109">If a type is defined in F#, null is not permitted as a regular value unless the [AllowNullLiteral](https://msdn.microsoft.com/library/4f315196-f444-4cca-ba07-1176ff71eb0f) attribute is applied to the type.</span></span> <span data-ttu-id="8111b-110">Si un type est défini dans un autre langage .NET, null est une valeur possible, et lorsque vous interagissez avec de tels types, votre code F # peut rencontrer des valeurs null.</span><span class="sxs-lookup"><span data-stu-id="8111b-110">If a type is defined in some other .NET language, null is a possible value, and when you are interoperating with such types, your F# code might encounter null values.</span></span>
+
+<span data-ttu-id="8111b-111">Pour un type défini en F # et utilisé strictement à partir de F #, la seule façon de créer une valeur null à l’aide de la bibliothèque F # directement consiste à utiliser [Unchecked.defaultof](https://msdn.microsoft.com/library/9ff97f2a-1bd4-4f4c-afbe-5886a74ab977) ou [Array.zeroCreate](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2).</span><span class="sxs-lookup"><span data-stu-id="8111b-111">For a type defined in F# and used strictly from F#, the only way to create a null value using the F# library directly is to use [Unchecked.defaultof](https://msdn.microsoft.com/library/9ff97f2a-1bd4-4f4c-afbe-5886a74ab977) or [Array.zeroCreate](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2).</span></span> <span data-ttu-id="8111b-112">Toutefois, pour un type F #, qui est utilisé à partir d’autres langages .NET, ou si vous utilisez ce type avec une API qui n’est pas écrite en F #, telles que le .NET Framework, les valeurs null peuvent se produire.</span><span class="sxs-lookup"><span data-stu-id="8111b-112">However, for an F# type that is used from other .NET languages, or if you are using that type with an API that is not written in F#, such as the .NET Framework, null values can occur.</span></span>
+
+<span data-ttu-id="8111b-113">Vous pouvez utiliser la `option` type en F # lorsque vous utilisez une variable de référence avec une valeur null possible dans un autre langage .NET.</span><span class="sxs-lookup"><span data-stu-id="8111b-113">You can use the `option` type in F# when you might use a reference variable with a possible null value in another .NET language.</span></span> <span data-ttu-id="8111b-114">Au lieu de null, avec F # `option` type, vous utilisez la valeur de l’option `None` si aucun objet.</span><span class="sxs-lookup"><span data-stu-id="8111b-114">Instead of null, with an F# `option` type, you use the option value `None` if there is no object.</span></span> <span data-ttu-id="8111b-115">Vous utilisez la valeur de l’option `Some(obj)` avec un objet `obj` lorsqu’il existe un objet.</span><span class="sxs-lookup"><span data-stu-id="8111b-115">You use the option value `Some(obj)` with an object `obj` when there is an object.</span></span> <span data-ttu-id="8111b-116">Pour plus d’informations, consultez [Options](../options.md).</span><span class="sxs-lookup"><span data-stu-id="8111b-116">For more information, see [Options](../options.md).</span></span>
+
+<span data-ttu-id="8111b-117">Le `null` le mot clé est un mot clé valide dans le langage F #, et vous devez l’utiliser lorsque vous travaillez avec des API .NET Framework ou d’autres API qui est écrites dans un autre langage .NET.</span><span class="sxs-lookup"><span data-stu-id="8111b-117">The `null` keyword is a valid keyword in the F# language, and you have to use it when you are working with .NET Framework APIs or other APIs that are written in another .NET language.</span></span> <span data-ttu-id="8111b-118">Les deux situations dans lesquelles vous devrez peut-être une valeur null sont lorsque vous appelez une API .NET et passez une valeur null en tant qu’argument, et lorsque vous interprétez la valeur de retour ou paramètre de sortie d’un appel de méthode .NET.</span><span class="sxs-lookup"><span data-stu-id="8111b-118">The two situations in which you might need a null value are when you call a .NET API and pass a null value as an argument, and when you interpret the return value or an output parameter from a .NET method call.</span></span>
+
+<span data-ttu-id="8111b-119">Pour passer une valeur null à une méthode .NET, utilisez simplement le `null` mot clé dans le code appelant.</span><span class="sxs-lookup"><span data-stu-id="8111b-119">To pass a null value to a .NET method, just use the `null` keyword in the calling code.</span></span> <span data-ttu-id="8111b-120">L'exemple de code suivant illustre ceci.</span><span class="sxs-lookup"><span data-stu-id="8111b-120">The following code example illustrates this.</span></span>
+
+[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet701.fs)]
+
+<span data-ttu-id="8111b-121">Pour interpréter une valeur null est obtenue à partir d’une méthode .NET, utiliser les critères spéciaux si vous le pouvez.</span><span class="sxs-lookup"><span data-stu-id="8111b-121">To interpret a null value that is obtained from a .NET method, use pattern matching if you can.</span></span> <span data-ttu-id="8111b-122">L’exemple de code suivant montre comment utiliser les critères spéciaux pour interpréter la valeur null est retournée à partir de `ReadLine` quand il tente de lire au-delà de la fin d’un flux d’entrée.</span><span class="sxs-lookup"><span data-stu-id="8111b-122">The following code example shows how to use pattern matching to interpret the null value that is returned from `ReadLine` when it tries to read past the end of an input stream.</span></span>
+
+[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet702.fs)]
+
+<span data-ttu-id="8111b-123">Valeurs NULL pour des types F # peuvent également être générées d’autres manières, par exemple, lorsque vous utilisez `Array.zeroCreate`, qui appelle `Unchecked.defaultof`.</span><span class="sxs-lookup"><span data-stu-id="8111b-123">Null values for F# types can also be generated in other ways, such as when you use `Array.zeroCreate`, which calls `Unchecked.defaultof`.</span></span> <span data-ttu-id="8111b-124">Vous devez être prudent avec ce code pour conserver les valeurs null encapsulées.</span><span class="sxs-lookup"><span data-stu-id="8111b-124">You must be careful with such code to keep the null values encapsulated.</span></span> <span data-ttu-id="8111b-125">Dans une bibliothèque prévue uniquement pour F #, vous n’avez pas à vérifier les valeurs null dans chaque fonction.</span><span class="sxs-lookup"><span data-stu-id="8111b-125">In a library intended only for F#, you do not have to check for null values in every function.</span></span> <span data-ttu-id="8111b-126">Si vous écrivez une bibliothèque pour l’interopérabilité avec d’autres langages .NET, vous devrez peut-être ajouter des vérifications pour la valeur null de paramètres d’entrée et lever une `ArgumentNullException`, tout comme vous le feriez dans le code c# ou Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="8111b-126">If you are writing a library for interoperation with other .NET languages, you might have to add checks for null input parameters and throw an `ArgumentNullException`, just as you do in C# or Visual Basic code.</span></span>
+
+<span data-ttu-id="8111b-127">Vous pouvez utiliser le code suivant pour vérifier si une valeur arbitraire est null.</span><span class="sxs-lookup"><span data-stu-id="8111b-127">You can use the following code to check if an arbitrary value is null.</span></span>
+
+[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet703.fs)]
+
+## <a name="see-also"></a><span data-ttu-id="8111b-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8111b-128">See Also</span></span>
+[<span data-ttu-id="8111b-129">Valeurs</span><span class="sxs-lookup"><span data-stu-id="8111b-129">Values</span></span>](index.md)
+
+[<span data-ttu-id="8111b-130">Expressions match</span><span class="sxs-lookup"><span data-stu-id="8111b-130">Match Expressions</span></span>](../match-expressions.md)

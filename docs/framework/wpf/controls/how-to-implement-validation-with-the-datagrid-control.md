@@ -1,102 +1,108 @@
 ---
-title: "Comment&#160;: impl&#233;menter la validation avec le contr&#244;le DataGrid | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid (WPF), validation"
-  - "validation (WPF), DataGrid"
+title: "Comment : implémenter la validation avec le contrôle DataGrid"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid [WPF], validation
+- validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c611919b5702877db34e9a02e367312678a1b27
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter la validation avec le contr&#244;le DataGrid
-Le contrôle <xref:System.Windows.Controls.DataGrid> vous permet d'exécuter à la fois la validation au niveau de la cellule et au niveau de la ligne.  La validation au niveau de la cellule vous permet de valider les propriétés d'un objet de données lié lorsqu'un utilisateur met à jour une valeur.  La validation au niveau de la ligne vous permet de valider des objets de données entiers lorsqu'un utilisateur valide des modifications apportées à une ligne.  Vous pouvez également fournir une rétroaction visuelle personnalisée pour les erreurs de validation ou utiliser la rétroaction visuelle par défaut fournie par le contrôle <xref:System.Windows.Controls.DataGrid>.  
+# <a name="how-to-implement-validation-with-the-datagrid-control"></a><span data-ttu-id="eb5a0-102">Comment : implémenter la validation avec le contrôle DataGrid</span><span class="sxs-lookup"><span data-stu-id="eb5a0-102">How to: Implement Validation with the DataGrid Control</span></span>
+<span data-ttu-id="eb5a0-103">Le <xref:System.Windows.Controls.DataGrid> contrôle vous permet d’effectuer la validation au niveau de la cellule et la ligne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-103">The <xref:System.Windows.Controls.DataGrid> control enables you to perform validation at both the cell and row level.</span></span> <span data-ttu-id="eb5a0-104">Validation au niveau de la cellule vous valider les propriétés individuelles d’un objet de données lié lorsqu’un utilisateur met à jour une valeur.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-104">With cell-level validation, you validate individual properties of a bound data object when a user updates a value.</span></span> <span data-ttu-id="eb5a0-105">La validation au niveau des lignes vous validez les objets de données lorsqu’un utilisateur valide des modifications apportées à une ligne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-105">With row-level validation, you validate entire data objects when a user commits changes to a row.</span></span> <span data-ttu-id="eb5a0-106">Vous pouvez également fournir une rétroaction visuelle personnalisée pour les erreurs de validation, ou utiliser la rétroaction visuelle par défaut qui le <xref:System.Windows.Controls.DataGrid> fournit du contrôle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-106">You can also provide customized visual feedback for validation errors, or use the default visual feedback that the <xref:System.Windows.Controls.DataGrid> control provides.</span></span>  
   
- Les procédures suivantes expliquent comment appliquer des règles de validation aux liaisons <xref:System.Windows.Controls.DataGrid> et personnaliser la rétroaction visuelle.  
+ <span data-ttu-id="eb5a0-107">Les procédures suivantes décrivent comment appliquer des règles de validation à <xref:System.Windows.Controls.DataGrid> liaisons et personnaliser la rétroaction visuelle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-107">The following procedures describe how to apply validation rules to <xref:System.Windows.Controls.DataGrid> bindings and customize the visual feedback.</span></span>  
   
-### Pour valider des valeurs de cellules  
+### <a name="to-validate-individual-cell-values"></a><span data-ttu-id="eb5a0-108">Pour valider des valeurs de cellules</span><span class="sxs-lookup"><span data-stu-id="eb5a0-108">To validate individual cell values</span></span>  
   
--   Spécifiez une ou plusieurs règles de validation sur la liaison utilisée avec une colonne.  Cette opération est semblable à la validation de données dans des contrôles simples, comme décrit dans [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+-   <span data-ttu-id="eb5a0-109">Spécifiez une ou plusieurs règles de validation sur la liaison utilisée avec une colonne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-109">Specify one or more validation rules on the binding used with a column.</span></span> <span data-ttu-id="eb5a0-110">Cela est semblable à la validation des données dans des contrôles simples, comme décrit dans [vue d’ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).</span><span class="sxs-lookup"><span data-stu-id="eb5a0-110">This is similar to validating data in simple controls, as described in [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).</span></span>  
   
-     L'exemple suivant montre un contrôle <xref:System.Windows.Controls.DataGrid> avec quatre colonnes liées à différentes propriétés d'un objet métier.  Trois de ces colonnes spécifient le <xref:System.Windows.Controls.ExceptionValidationRule> en affectant à la propriété <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> la valeur `true`.  
+     <span data-ttu-id="eb5a0-111">L’exemple suivant montre un <xref:System.Windows.Controls.DataGrid> contrôle avec quatre colonnes liées à différentes propriétés d’un objet métier.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-111">The following example shows a <xref:System.Windows.Controls.DataGrid> control with four columns bound to different properties of a business object.</span></span> <span data-ttu-id="eb5a0-112">Trois colonnes spécifient la <xref:System.Windows.Controls.ExceptionValidationRule> en définissant le <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> propriété `true`.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-112">Three of the columns specify the <xref:System.Windows.Controls.ExceptionValidationRule> by setting the <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> property to `true`.</span></span>  
   
-     [!code-xml[DataGrid_Validation#BasicXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/window1.xaml#basicxaml)]  
+     [!code-xaml[DataGrid_Validation#BasicXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/window1.xaml#basicxaml)]  
   
-     Lorsqu'un utilisateur entre une valeur non valide \(telle qu'un non entier dans la colonne ID cours\), la cellule est bordée de rouge.  Vous pouvez modifier ces commentaires de validation par défaut comme décrit dans la procédure suivante.  
+     <span data-ttu-id="eb5a0-113">Lorsqu’un utilisateur entre une valeur non valide (par exemple, un non entier dans la colonne ID cours), une bordure rouge apparaît autour de la cellule.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-113">When a user enters an invalid value (such as a non-integer in the Course ID column), a red border appears around the cell.</span></span> <span data-ttu-id="eb5a0-114">Vous pouvez modifier ces commentaires de validation par défaut, comme décrit dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-114">You can change this default validation feedback as described in the following procedure.</span></span>  
   
-### Pour personnaliser les commentaires de validation de la cellule  
+### <a name="to-customize-cell-validation-feedback"></a><span data-ttu-id="eb5a0-115">Pour personnaliser les commentaires de validation de cellule</span><span class="sxs-lookup"><span data-stu-id="eb5a0-115">To customize cell validation feedback</span></span>  
   
--   Affectez à la propriété <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> de la colonne un style approprié pour le contrôle d'édition de la colonne.  Étant donné que les contrôles d'édition sont créés au moment de l'exécution, vous ne pouvez pas utiliser la propriété jointe <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=fullName> comme vous le feriez avec les contrôles simples.  
+-   <span data-ttu-id="eb5a0-116">Valeur de la colonne <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> approprié à la propriété à un style pour la colonne d’édition du contrôle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-116">Set the column's <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> property to a style appropriate for the column's editing control.</span></span> <span data-ttu-id="eb5a0-117">Les contrôles d’édition sont créés au moment de l’exécution, vous ne pouvez pas utiliser le <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType> comme vous le feriez avec les contrôles simples de propriété jointe.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-117">Because the editing controls are created at run time, you cannot use the <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType> attached property like you would with simple controls.</span></span>  
   
-     L'exemple suivant met à jour l'exemple précédent en ajoutant un style d'erreur partagé par les trois colonnes avec les règles de validation.  Lorsqu'un utilisateur entre une valeur non valide, le style modifie la couleur d'arrière\-plan de cellule et ajoute une info\-bulle.  Notez l'utilisation d'un déclencheur pour déterminer s'il y a une erreur de validation.  Ceci est obligatoire car il n'existe actuellement aucun modèle d'erreur dédié pour les cellules.  
+     <span data-ttu-id="eb5a0-118">L’exemple suivant met à jour l’exemple précédent en ajoutant un style d’erreur partagé par les trois colonnes avec des règles de validation.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-118">The following example updates the previous example by adding an error style shared by the three columns with validation rules.</span></span> <span data-ttu-id="eb5a0-119">Lorsqu’un utilisateur entre une valeur non valide, le style modifie la couleur d’arrière-plan de cellule et ajoute une info-bulle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-119">When a user enters an invalid value, the style changes the cell background color and adds a ToolTip.</span></span> <span data-ttu-id="eb5a0-120">Notez l’utilisation d’un déclencheur pour déterminer s’il existe une erreur de validation.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-120">Note the use of a trigger to determine whether there is a validation error.</span></span> <span data-ttu-id="eb5a0-121">Cela est nécessaire, car il n’existe actuellement aucun modèle d’erreur dédié pour les cellules.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-121">This is required because there is currently no dedicated error template for cells.</span></span>  
   
-     [!code-xml[DataGrid_Validation#CellValidationXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#cellvalidationxaml)]  
+     [!code-xaml[DataGrid_Validation#CellValidationXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#cellvalidationxaml)]  
   
-     Vous pouvez implémenter une personnalisation plus étendue en remplaçant le <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> utilisé par la colonne.  
+     <span data-ttu-id="eb5a0-122">Vous pouvez implémenter une personnalisation plus étendue en remplaçant le <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> utilisé par la colonne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-122">You can implement more extensive customization by replacing the <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> used by the column.</span></span>  
   
-### Pour valider plusieurs valeurs d'une ligne unique  
+### <a name="to-validate-multiple-values-in-a-single-row"></a><span data-ttu-id="eb5a0-123">Pour valider les valeurs multiples dans une seule ligne</span><span class="sxs-lookup"><span data-stu-id="eb5a0-123">To validate multiple values in a single row</span></span>  
   
-1.  Implémentez une sous\-classe <xref:System.Windows.Controls.ValidationRule> qui vérifie plusieurs propriétés de l'objet de données lié.  Dans l'implémentation de la méthode <xref:System.Windows.Controls.ValidationRule.Validate%2A>, effectuez un cast de la valeur du paramètre `value` en une instance <xref:System.Windows.Data.BindingGroup>.  Vous pouvez alors accéder à l'objet de données via la propriété <xref:System.Windows.Data.BindingGroup.Items%2A>.  
+1.  <span data-ttu-id="eb5a0-124">Implémentez un <xref:System.Windows.Controls.ValidationRule> sous-classe qui vérifie plusieurs propriétés de l’objet de données liée.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-124">Implement a <xref:System.Windows.Controls.ValidationRule> subclass that checks multiple properties of the bound data object.</span></span> <span data-ttu-id="eb5a0-125">Dans votre <xref:System.Windows.Controls.ValidationRule.Validate%2A> effectuer un cast de l’implémentation de méthode, le `value` valeur de paramètre à un <xref:System.Windows.Data.BindingGroup> instance.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-125">In your <xref:System.Windows.Controls.ValidationRule.Validate%2A> method implementation, cast the `value` parameter value to a <xref:System.Windows.Data.BindingGroup> instance.</span></span> <span data-ttu-id="eb5a0-126">Vous pouvez accéder à l’objet de données via le <xref:System.Windows.Data.BindingGroup.Items%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-126">You can then access the data object through the <xref:System.Windows.Data.BindingGroup.Items%2A> property.</span></span>  
   
-     L'exemple suivant montre le processus permettant de valider si la valeur de la propriété `StartDate` d'un objet `Course` est antérieure à sa valeur de propriété `EndDate`.  
+     <span data-ttu-id="eb5a0-127">L’exemple suivant illustre ce processus pour valider si la `StartDate` valeur de propriété pour un `Course` objet est antérieur à son `EndDate` valeur de propriété.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-127">The following example demonstrates this process to validate whether the `StartDate` property value for a `Course` object is earlier than its `EndDate` property value.</span></span>  
   
      [!code-csharp[DataGrid_Validation#CourseValidationRule](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#coursevalidationrule)]
      [!code-vb[DataGrid_Validation#CourseValidationRule](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#coursevalidationrule)]  
   
-2.  Ajoutez une règle de validation à la collection <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=fullName>.  La propriété <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> fournit un accès direct à la propriété <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> d'une instance <xref:System.Windows.Data.BindingGroup> qui groupe toutes les liaisons utilisée par le contrôle.  
+2.  <span data-ttu-id="eb5a0-128">Ajouter la règle de validation pour le <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType> collection.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-128">Add the validation rule to the <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType> collection.</span></span> <span data-ttu-id="eb5a0-129">Le <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> propriété fournit un accès direct à la <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> propriété d’un <xref:System.Windows.Data.BindingGroup> instance qui regroupe toutes les liaisons utilisées par le contrôle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-129">The <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> property provides direct access to the <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> property of a <xref:System.Windows.Data.BindingGroup> instance that groups all the bindings used by the control.</span></span>  
   
-     L'exemple de code suivant définit la propriété <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> en XAML.  La propriété <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> a la valeur <xref:System.Windows.Controls.ValidationStep> afin que la validation se produise uniquement après la mise à jour de l'objet de données lié.  
+     <span data-ttu-id="eb5a0-130">L’exemple suivant définit le <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> propriété en XAML.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-130">The following example sets the <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> property in XAML.</span></span> <span data-ttu-id="eb5a0-131">Le <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> est définie sur <xref:System.Windows.Controls.ValidationStep.UpdatedValue> afin que la validation se produit uniquement après que l’objet de données liées est mis à jour.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-131">The <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> property is set to <xref:System.Windows.Controls.ValidationStep.UpdatedValue> so that the validation occurs only after the bound data object is updated.</span></span>  
   
-     [!code-xml[DataGrid_Validation#RowValidationRulesXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationrulesxaml)]  
+     [!code-xaml[DataGrid_Validation#RowValidationRulesXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationrulesxaml)]  
   
-     Lorsqu'un utilisateur spécifie une date de fin antérieure à la date de début, un point d'exclamation rouge \(\!\) apparaît dans l'en\-tête de la ligne.  Vous pouvez modifier ces commentaires de validation par défaut comme décrit dans la procédure suivante.  
+     <span data-ttu-id="eb5a0-132">Lorsqu’un utilisateur spécifie une date de fin est antérieure à la date de début, un point d’exclamation rouge ( !) s’affiche dans l’en-tête de ligne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-132">When a user specifies an end date that is earlier than the start date, a red exclamation mark (!) appears in the row header.</span></span> <span data-ttu-id="eb5a0-133">Vous pouvez modifier ces commentaires de validation par défaut, comme décrit dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-133">You can change this default validation feedback as described in the following procedure.</span></span>  
   
-### Pour personnaliser les commentaires de validation de ligne  
+### <a name="to-customize-row-validation-feedback"></a><span data-ttu-id="eb5a0-134">Pour personnaliser les commentaires de validation de ligne</span><span class="sxs-lookup"><span data-stu-id="eb5a0-134">To customize row validation feedback</span></span>  
   
--   Définissez la propriété <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=fullName>.  Cette propriété vous permet de personnaliser les commentaires de validation de ligne pour les contrôles <xref:System.Windows.Controls.DataGrid>.  Vous pouvez également affecter plusieurs contrôles en utilisant un style de ligne implicite pour définir la propriété <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=fullName>.  
+-   <span data-ttu-id="eb5a0-135">définir la propriété <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType> ;</span><span class="sxs-lookup"><span data-stu-id="eb5a0-135">Set the <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="eb5a0-136">Cette propriété vous permet de personnaliser les commentaires de validation de ligne de chaque <xref:System.Windows.Controls.DataGrid> contrôles.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-136">This property enables you to customize row validation feedback for individual <xref:System.Windows.Controls.DataGrid> controls.</span></span> <span data-ttu-id="eb5a0-137">Vous pouvez également affecter plusieurs contrôles en utilisant un style de ligne implicite pour définir la <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType> propriété.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-137">You can also affect multiple controls by using an implicit row style to set the <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType> property.</span></span>  
   
-     L'exemple suivant remplace les commentaires de validation de ligne par défaut par un indicateur plus visible.  Lorsqu'un utilisateur entre une valeur non valide, un cercle rouge avec un point d'exclamation blanc s'affiche dans l'en\-tête de la ligne.  Cela se produit pour les erreurs de validation de ligne et de cellule.  Le message d'erreur associé s'affiche dans une info\-bulle.  
+     <span data-ttu-id="eb5a0-138">L’exemple suivant remplace les commentaires de validation de ligne par défaut par un indicateur plus visible.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-138">The following example replaces the default row validation feedback with a more visible indicator.</span></span> <span data-ttu-id="eb5a0-139">Lorsqu’un utilisateur entre une valeur non valide, un cercle rouge avec un point d’exclamation blanc s’affiche dans l’en-tête de ligne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-139">When a user enters an invalid value, a red circle with a white exclamation mark appears in the row header.</span></span> <span data-ttu-id="eb5a0-140">Cela se produit pour les erreurs de validation de ligne et de cellule.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-140">This occurs for both row and cell validation errors.</span></span> <span data-ttu-id="eb5a0-141">Le message d’erreur associé s’affiche dans une info-bulle.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-141">The associated error message is displayed in a ToolTip.</span></span>  
   
-     [!code-xml[DataGrid_Validation#RowValidationFeedbackXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationfeedbackxaml)]  
+     [!code-xaml[DataGrid_Validation#RowValidationFeedbackXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationfeedbackxaml)]  
   
-## Exemple  
- L'exemple suivant fournit une démonstration complète de la validation de cellule et de ligne.  La classe `Course` fournit un exemple d'objet de données qui implémente <xref:System.ComponentModel.IEditableObject> pour prendre en charge les transactions.  Le contrôle <xref:System.Windows.Controls.DataGrid> interagit avec <xref:System.ComponentModel.IEditableObject> pour permettre aux utilisateurs de rétablir des modifications en appuyant sur Échap.  
+## <a name="example"></a><span data-ttu-id="eb5a0-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="eb5a0-142">Example</span></span>  
+ <span data-ttu-id="eb5a0-143">L’exemple suivant fournit une démonstration complète pour la validation de cellule et de ligne.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-143">The following example provides a complete demonstration for cell and row validation.</span></span> <span data-ttu-id="eb5a0-144">Le `Course` classe fournit un exemple d’objet de données qui implémente <xref:System.ComponentModel.IEditableObject> pour prendre en charge des transactions.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-144">The `Course` class provides a sample data object that implements <xref:System.ComponentModel.IEditableObject> to support transactions.</span></span> <span data-ttu-id="eb5a0-145">Le <xref:System.Windows.Controls.DataGrid> contrôle interagit avec <xref:System.ComponentModel.IEditableObject> pour permettre aux utilisateurs d’annuler les modifications en appuyant sur ÉCHAP.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-145">The <xref:System.Windows.Controls.DataGrid> control interacts with <xref:System.ComponentModel.IEditableObject> to enable users to revert changes by pressing ESC.</span></span>  
   
 > [!NOTE]
->  Si vous utilisez Visual Basic, dans la première ligne de MainWindow.xaml, remplacez `x:Class="DataGridValidation.MainWindow"` par `x:Class="MainWindow"`.  
+>  <span data-ttu-id="eb5a0-146">Si vous utilisez Visual Basic, dans la première ligne de MainWindow.xaml, remplacez `x:Class="DataGridValidation.MainWindow"` avec `x:Class="MainWindow"`.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-146">If you are using Visual Basic, in the first line of MainWindow.xaml, replace `x:Class="DataGridValidation.MainWindow"` with `x:Class="MainWindow"`.</span></span>  
   
- Pour tester la validation, essayez ce qui suit :  
+ <span data-ttu-id="eb5a0-147">Pour tester la validation, essayez ce qui suit :</span><span class="sxs-lookup"><span data-stu-id="eb5a0-147">To test the validation, try the following:</span></span>  
   
--   Dans la colonne ID cours, entrez une valeur non entière.  
+-   <span data-ttu-id="eb5a0-148">Dans la colonne ID cours, entrez une valeur non entière.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-148">In the Course ID column, enter a non-integer value.</span></span>  
   
--   Dans la colonne Date de fin, entrez une date antérieure à la date de début.  
+-   <span data-ttu-id="eb5a0-149">Dans la colonne de Date de fin, entrez une date antérieure à la Date de début.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-149">In the End Date column, enter a date that is earlier than the Start Date.</span></span>  
   
--   Supprimez la valeur dans ID cours, Date de début ou Date de fin.  
+-   <span data-ttu-id="eb5a0-150">Supprimez la valeur dans ID cours, Date de début ou Date de fin.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-150">Delete the value in Course ID, Start Date, or End Date.</span></span>  
   
--   Pour annuler une valeur de cellule non valide, remettez le curseur dans la cellule et appuyez sur la touche Échap.  
+-   <span data-ttu-id="eb5a0-151">Pour annuler une valeur de cellule non valide, placez le curseur dans la cellule, appuyez sur la touche ÉCHAP.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-151">To undo an invalid cell value, put the cursor back in the cell and press the ESC key.</span></span>  
   
--   Pour annuler les modifications d'une ligne entière lorsque la cellule active est en mode Édition, appuyez sur la touche Échap deux fois.  
+-   <span data-ttu-id="eb5a0-152">Pour annuler les modifications pour une ligne entière lorsque la cellule active est en mode édition, appuyez deux fois sur la touche ÉCHAP.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-152">To undo changes for an entire row when the current cell is in edit mode, press the ESC key twice.</span></span>  
   
--   Lorsqu'une erreur de validation se produit, déplacez le pointeur de votre souris sur l'indicateur dans l'en\-tête de ligne pour lire le message d'erreur associé.  
+-   <span data-ttu-id="eb5a0-153">Lorsqu’une erreur de validation se produit, placez le pointeur de la souris sur l’indicateur dans l’en-tête de ligne pour afficher le message d’erreur associé.</span><span class="sxs-lookup"><span data-stu-id="eb5a0-153">When a validation error occurs, move your mouse pointer over the indicator in the row header to see the associated error message.</span></span>  
   
  [!code-csharp[DataGrid_Validation#FullCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#fullcode)]
  [!code-vb[DataGrid_Validation#FullCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#fullcode)]  
   
- [!code-xml[DataGrid_Validation#FullXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
+ [!code-xaml[DataGrid_Validation#FullXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
   
-## Voir aussi  
- <xref:System.Windows.Controls.DataGrid>   
- [DataGrid](../../../../docs/framework/wpf/controls/datagrid.md)   
- [Liaison de données](../../../../docs/framework/wpf/data/data-binding-wpf.md)   
- [Implémenter la validation de la liaison](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)   
- [Implémenter une logique de validation sur des objets personnalisés](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)
+## <a name="see-also"></a><span data-ttu-id="eb5a0-154">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="eb5a0-154">See Also</span></span>  
+ <xref:System.Windows.Controls.DataGrid>  
+ [<span data-ttu-id="eb5a0-155">DataGrid</span><span class="sxs-lookup"><span data-stu-id="eb5a0-155">DataGrid</span></span>](../../../../docs/framework/wpf/controls/datagrid.md)  
+ [<span data-ttu-id="eb5a0-156">Liaison de données</span><span class="sxs-lookup"><span data-stu-id="eb5a0-156">Data Binding</span></span>](../../../../docs/framework/wpf/data/data-binding-wpf.md)  
+ [<span data-ttu-id="eb5a0-157">Implémenter la validation de la liaison</span><span class="sxs-lookup"><span data-stu-id="eb5a0-157">Implement Binding Validation</span></span>](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)  
+ [<span data-ttu-id="eb5a0-158">Implémenter une logique de validation sur des objets personnalisés</span><span class="sxs-lookup"><span data-stu-id="eb5a0-158">Implement Validation Logic on Custom Objects</span></span>](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)

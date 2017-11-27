@@ -1,88 +1,71 @@
 ---
-title: "Introduction à COM Interop (Visual Basic) | Documents Microsoft"
+title: "Introduction à COM Interop (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - interop assemblies
-- COM interop, about COM interop
+- COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8866dbadca040c57ed2b59540dd2c341eb81758c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 81a9d0fc7036ff1b821c46687541311f26113212
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="introduction-to-com-interop-visual-basic"></a>Introduction à COM Interop (Visual Basic)
-Le modèle COM (Component Object) permet un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. Bien que les objets COM ont été essentiels à de nombreuses années de programmation Windows, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.  
+# <a name="introduction-to-com-interop-visual-basic"></a><span data-ttu-id="a0e87-102">Introduction à COM Interop (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a0e87-102">Introduction to COM Interop (Visual Basic)</span></span>
+<span data-ttu-id="a0e87-103">Le modèle COM (Component Object) permet à un objet exposer ses fonctionnalités à d’autres composants et d’héberger des applications.</span><span class="sxs-lookup"><span data-stu-id="a0e87-103">The Component Object Model (COM) lets an object expose its functionality to other components and to host applications.</span></span> <span data-ttu-id="a0e87-104">Alors que les objets COM ont été essentiels à la programmation de nombreuses années Windows, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.</span><span class="sxs-lookup"><span data-stu-id="a0e87-104">While COM objects have been fundamental to Windows programming for many years, applications designed for the common language runtime (CLR) offer many advantages.</span></span>  
   
- [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]applications va remplacer celles développées avec COM. Jusqu'à cette date, vous devrez peut-être utiliser ou créer des objets COM à l’aide de [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]. L’interopérabilité avec COM, ou *COM interop*, vous permet d’utiliser des objets COM existants lors de la transition vers le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] à votre propre rythme.  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]<span data-ttu-id="a0e87-105">applications va remplacer celles développées avec COM.</span><span class="sxs-lookup"><span data-stu-id="a0e87-105"> applications will eventually replace those developed with COM.</span></span> <span data-ttu-id="a0e87-106">Jusqu'à cette date, vous devrez peut-être utiliser ou créer des objets COM à l’aide de [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span><span class="sxs-lookup"><span data-stu-id="a0e87-106">Until then, you may have to use or create COM objects by using [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span></span> <span data-ttu-id="a0e87-107">L’interopérabilité avec COM, ou *COM interop*, permet d’utiliser des objets COM existants lors de la transition vers le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] à votre propre rythme.</span><span class="sxs-lookup"><span data-stu-id="a0e87-107">Interoperability with COM, or *COM interop*, enables you to use existing COM objects while transitioning to the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] at your own pace.</span></span>  
   
- À l’aide de la [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] pour créer des composants COM, vous pouvez utiliser COM interop sans inscription. Cela vous permet de contrôler quelle version de DLL est activée lorsque plusieurs versions sont installée sur un ordinateur et permet aux utilisateurs finals d’utiliser XCOPY ou FTP pour copier votre application vers un répertoire approprié sur leur ordinateur où elle peut être exécutée. Pour plus d’informations, consultez [Registration-Free COM Interop](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).  
+ <span data-ttu-id="a0e87-108">À l’aide de la [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour créer des composants COM, vous pouvez utiliser COM interop sans inscription.</span><span class="sxs-lookup"><span data-stu-id="a0e87-108">By using the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] to create COM components, you can use registration-free COM interop.</span></span> <span data-ttu-id="a0e87-109">Cela vous permet de contrôler quelle version de DLL est activée lorsque plusieurs versions sont installée sur un ordinateur et permet aux utilisateurs finaux d’utiliser XCOPY ou FTP pour copier votre application vers un répertoire approprié sur leur ordinateur où il peut être exécuté.</span><span class="sxs-lookup"><span data-stu-id="a0e87-109">This lets you control which DLL version is enabled when more than one version is installed on a computer, and lets end users use XCOPY or FTP to copy your application to an appropriate directory on their computer where it can be run.</span></span> <span data-ttu-id="a0e87-110">Pour plus d’informations, consultez [COM Interop sans inscription](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).</span><span class="sxs-lookup"><span data-stu-id="a0e87-110">For more information, see [Registration-Free COM Interop](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).</span></span>  
   
-## <a name="managed-code-and-data"></a>Le Code managé et des données  
- Le code développé pour le [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] est appelé *du code managé*et contient des métadonnées utilisées par le CLR. Données utilisées par [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] applications est appelée *données managées* , car le runtime gère les tâches liées aux données telles que la vérification de type allocation et libération de la mémoire et d’exécution. Par défaut, [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)] utilise le code géré et données, mais vous pouvez accéder à du code non managé et les données d’objets COM à l’aide des assemblys d’interopérabilité (décrits plus loin sur cette page).  
+## <a name="managed-code-and-data"></a><span data-ttu-id="a0e87-111">Le Code managé et des données</span><span class="sxs-lookup"><span data-stu-id="a0e87-111">Managed Code and Data</span></span>  
+ <span data-ttu-id="a0e87-112">Le code développé pour le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] est appelé *du code managé*et contient des métadonnées qui sont utilisée par le CLR.</span><span class="sxs-lookup"><span data-stu-id="a0e87-112">Code developed for the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] is referred to as *managed code*, and contains metadata that is used by the CLR.</span></span> <span data-ttu-id="a0e87-113">Données utilisées par [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications est appelée *les données gérées* , car le runtime gère les tâches liées aux données telles que l’allocation et de libération de la mémoire et d’exécuter la vérification de type.</span><span class="sxs-lookup"><span data-stu-id="a0e87-113">Data used by [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications is called *managed data* because the runtime manages data-related tasks such as allocating and reclaiming memory and performing type checking.</span></span> <span data-ttu-id="a0e87-114">Par défaut, Visual Basic .NET utilise du code managé et les données, mais vous pouvez accéder à du code non managé et les données d’objets COM à l’aide des assemblys d’interopérabilité (décrites plus loin dans cette page).</span><span class="sxs-lookup"><span data-stu-id="a0e87-114">By default, Visual Basic .NET uses managed code and data, but you can access the unmanaged code and data of COM objects using interop assemblies (described later on this page).</span></span>  
   
-## <a name="assemblies"></a>Assemblys  
- Un assembly est le bloc de construction principal d’une [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] application. Il est un ensemble de fonctionnalités qui sont générées, version et déployées comme une seule unité d’implémentation contenant un ou plusieurs fichiers. Chaque assembly contient un manifeste d’assembly.  
+## <a name="assemblies"></a><span data-ttu-id="a0e87-115">Assemblys</span><span class="sxs-lookup"><span data-stu-id="a0e87-115">Assemblies</span></span>  
+ <span data-ttu-id="a0e87-116">Un assembly est le principal bloc de construction d’un [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span><span class="sxs-lookup"><span data-stu-id="a0e87-116">An assembly is the primary building block of a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="a0e87-117">Il est un ensemble de fonctionnalités qui sont générées, créée et déployée comme une seule unité d’implémentation contenant un ou plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="a0e87-117">It is a collection of functionality that is built, versioned, and deployed as a single implementation unit containing one or more files.</span></span> <span data-ttu-id="a0e87-118">Chaque assembly contient un manifeste d’assembly.</span><span class="sxs-lookup"><span data-stu-id="a0e87-118">Each assembly contains an assembly manifest.</span></span>  
   
-## <a name="type-libraries-and-assembly-manifests"></a>Bibliothèques de types et manifestes d’Assembly  
- Bibliothèques de types décrivent les caractéristiques des objets COM, tels que les noms des membres et types de données. Manifestes d’assembly exécutent la même fonction pour [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] les applications. Elles comprennent les informations suivantes :  
+## <a name="type-libraries-and-assembly-manifests"></a><span data-ttu-id="a0e87-119">Bibliothèques de types et des manifestes d’Assembly</span><span class="sxs-lookup"><span data-stu-id="a0e87-119">Type Libraries and Assembly Manifests</span></span>  
+ <span data-ttu-id="a0e87-120">Bibliothèques de types décrivent les caractéristiques des objets COM, tels que les noms de membres et types de données.</span><span class="sxs-lookup"><span data-stu-id="a0e87-120">Type libraries describe characteristics of COM objects, such as member names and data types.</span></span> <span data-ttu-id="a0e87-121">Manifestes d’assembly exécutent la même fonction pour [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications.</span><span class="sxs-lookup"><span data-stu-id="a0e87-121">Assembly manifests perform the same function for [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications.</span></span> <span data-ttu-id="a0e87-122">Elles comprennent des informations sur les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="a0e87-122">They include information about the following:</span></span>  
   
--   Identité de l’assembly, version, culture et signature numérique.  
+-   <span data-ttu-id="a0e87-123">Identité de l’assembly, version, culture et signature numérique.</span><span class="sxs-lookup"><span data-stu-id="a0e87-123">Assembly identity, version, culture, and digital signature.</span></span>  
   
--   Fichiers constituant l’implémentation de l’assembly.  
+-   <span data-ttu-id="a0e87-124">Fichiers qui composent l’implémentation de l’assembly.</span><span class="sxs-lookup"><span data-stu-id="a0e87-124">Files that make up the assembly implementation.</span></span>  
   
--   Types et ressources qui composent l’assembly. Comprennent celles qui sont exportés à partir de celui-ci.  
+-   <span data-ttu-id="a0e87-125">Types et ressources qui composent l’assembly.</span><span class="sxs-lookup"><span data-stu-id="a0e87-125">Types and resources that make up the assembly.</span></span> <span data-ttu-id="a0e87-126">Comprennent celles qui sont exportés à partir de celui-ci.</span><span class="sxs-lookup"><span data-stu-id="a0e87-126">This includes those that are exported from it.</span></span>  
   
--   Dépendances de compilation des autres assemblys.  
+-   <span data-ttu-id="a0e87-127">Dépendances de compilation des autres assemblys.</span><span class="sxs-lookup"><span data-stu-id="a0e87-127">Compile-time dependencies on other assemblies.</span></span>  
   
--   Autorisations requises pour l’assembly fonctionne correctement.  
+-   <span data-ttu-id="a0e87-128">Autorisations requises pour l’assembly pour s’exécuter correctement.</span><span class="sxs-lookup"><span data-stu-id="a0e87-128">Permissions required for the assembly to run correctly.</span></span>  
   
- Pour plus d’informations sur les assemblys et les manifestes d’assembly, consultez [assemblys et le Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).  
+ <span data-ttu-id="a0e87-129">Pour plus d’informations sur les assemblys et les manifestes d’assembly, consultez [assemblys et le Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).</span><span class="sxs-lookup"><span data-stu-id="a0e87-129">For more information about assemblies and assembly manifests, see [Assemblies and the Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).</span></span>  
   
-### <a name="importing-and-exporting-type-libraries"></a>Importation et exportation de bibliothèques de types  
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]contient un utilitaire, Tlbimp, qui vous permet d’importer des informations à partir d’une bibliothèque de types dans un [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] application. Vous pouvez générer des bibliothèques de types provenant d’assemblys à l’aide de l’utilitaire Tlbexp.  
+### <a name="importing-and-exporting-type-libraries"></a><span data-ttu-id="a0e87-130">Importation et exportation de bibliothèques de types</span><span class="sxs-lookup"><span data-stu-id="a0e87-130">Importing and Exporting Type Libraries</span></span>  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]<span data-ttu-id="a0e87-131">contient un utilitaire, Tlbimp, qui vous permet d’importer des informations à partir d’une bibliothèque de types dans un [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span><span class="sxs-lookup"><span data-stu-id="a0e87-131"> contains a utility, Tlbimp, that lets you import information from a type library into a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="a0e87-132">Vous pouvez générer des bibliothèques de types provenant d’assemblys à l’aide de l’utilitaire Tlbexp.</span><span class="sxs-lookup"><span data-stu-id="a0e87-132">You can generate type libraries from assemblies by using the Tlbexp utility.</span></span>  
   
- Pour plus d’informations sur Tlbimp et Tlbexp, consultez [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) et [Tlbexp.exe (exportateur de bibliothèques)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).  
+ <span data-ttu-id="a0e87-133">Pour plus d’informations sur Tlbimp et Tlbexp, consultez [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) et [Tlbexp.exe (exportateur)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).</span><span class="sxs-lookup"><span data-stu-id="a0e87-133">For information about Tlbimp and Tlbexp, see [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) and [Tlbexp.exe (Type Library Exporter)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).</span></span>  
   
-## <a name="interop-assemblies"></a>Assemblys d’interopérabilité  
- Les assemblys PIA sont [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] les assemblys qui pont entre managé et code, membres de l’objet COM mappage équivalent [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] membres managés. Assemblys d’interopérabilité créés par [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)] gèrent de nombreux détails de l’utilisation des objets COM, tels que le marshaling d’interopérabilité.  
+## <a name="interop-assemblies"></a><span data-ttu-id="a0e87-134">Assemblys d’interopérabilité</span><span class="sxs-lookup"><span data-stu-id="a0e87-134">Interop Assemblies</span></span>  
+ <span data-ttu-id="a0e87-135">Assemblys PIA sont [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] le code d’assemblys qui pont entre managées et non managées, membres de l’objet COM mappage en équivalent [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] membres managés.</span><span class="sxs-lookup"><span data-stu-id="a0e87-135">Interop assemblies are [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies that bridge between managed and unmanaged code, mapping COM object members to equivalent [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] managed members.</span></span> <span data-ttu-id="a0e87-136">Assemblys d’interopérabilité créés par Visual Basic .NET gèrent de nombreux détails de l’utilisation des objets COM, tels que le marshaling d’interopérabilité.</span><span class="sxs-lookup"><span data-stu-id="a0e87-136">Interop assemblies created by Visual Basic .NET handle many of the details of working with COM objects, such as interoperability marshaling.</span></span>  
   
-## <a name="interoperability-marshaling"></a>Marshaling d’interopérabilité  
- Tous les [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] applications partagent un ensemble de types courants qui permettent l’interopérabilité des objets, quel que soit le langage de programmation qui est utilisé. Les paramètres et les valeurs de retour des objets COM utilisent parfois des types de données qui diffèrent de ceux utilisés dans du code managé. *Marshaling d’interopérabilité* est le processus empaqueter des paramètres et valeurs de retour dans des types de données équivalents lors de leurs déplacements vers et depuis des objets COM. Pour plus d’informations, consultez [Marshaling d’interopérabilité](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a).  
+## <a name="interoperability-marshaling"></a><span data-ttu-id="a0e87-137">Marshaling d’interopérabilité</span><span class="sxs-lookup"><span data-stu-id="a0e87-137">Interoperability Marshaling</span></span>  
+ <span data-ttu-id="a0e87-138">Tous les [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications partagent un ensemble de types courants qui permettent l’interopérabilité des objets, quel que soit le langage de programmation qui est utilisé.</span><span class="sxs-lookup"><span data-stu-id="a0e87-138">All [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications share a set of common types that enable interoperability of objects, regardless of the programming language that is used.</span></span> <span data-ttu-id="a0e87-139">Les paramètres et les valeurs de retour des objets COM utilisent parfois des types de données qui diffèrent de celles utilisées dans le code managé.</span><span class="sxs-lookup"><span data-stu-id="a0e87-139">The parameters and return values of COM objects sometimes use data types that differ from those used in managed code.</span></span> <span data-ttu-id="a0e87-140">*Marshaling d’interopérabilité* consiste à empaqueter des paramètres et valeurs de retour dans les types de données équivalents lors de leur déplacement vers et depuis des objets COM.</span><span class="sxs-lookup"><span data-stu-id="a0e87-140">*Interoperability marshaling* is the process of packaging parameters and return values into equivalent data types as they move to and from COM objects.</span></span> <span data-ttu-id="a0e87-141">Pour plus d’informations, consultez [Marshaling d’interopérabilité](../../../framework/interop/interop-marshaling.md).</span><span class="sxs-lookup"><span data-stu-id="a0e87-141">For more information, see [Interop Marshaling](../../../framework/interop/interop-marshaling.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)   
- [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)   
- [Interopération avec du Code non managé](https://msdn.microsoft.com/library/sd10k43k)   
- [Résolution des problèmes d’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)   
- [Assemblys et le Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)   
- [Tlbexp.exe (exportateur de bibliothèques)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)   
- [Marshaling d’interopérabilité](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)   
- [COM Interop sans inscription](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)
+## <a name="see-also"></a><span data-ttu-id="a0e87-142">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a0e87-142">See Also</span></span>  
+ [<span data-ttu-id="a0e87-143">COM Interop</span><span class="sxs-lookup"><span data-stu-id="a0e87-143">COM Interop</span></span>](../../../visual-basic/programming-guide/com-interop/index.md)  
+ [<span data-ttu-id="a0e87-144">Procédure pas à pas : implémentation de l’héritage avec les objets COM</span><span class="sxs-lookup"><span data-stu-id="a0e87-144">Walkthrough: Implementing Inheritance with COM Objects</span></span>](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
+ [<span data-ttu-id="a0e87-145">Interopération avec du code non managé</span><span class="sxs-lookup"><span data-stu-id="a0e87-145">Interoperating with Unmanaged Code</span></span>](https://msdn.microsoft.com/library/sd10k43k)  
+ [<span data-ttu-id="a0e87-146">Dépannage des problèmes liés à l’interopérabilité</span><span class="sxs-lookup"><span data-stu-id="a0e87-146">Troubleshooting Interoperability</span></span>](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
+ [<span data-ttu-id="a0e87-147">Assemblys et le Global Assembly Cache</span><span class="sxs-lookup"><span data-stu-id="a0e87-147">Assemblies and the Global Assembly Cache</span></span>](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="a0e87-148">Tlbimp.exe (importateur de bibliothèques de types)</span><span class="sxs-lookup"><span data-stu-id="a0e87-148">Tlbimp.exe (Type Library Importer)</span></span>](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [<span data-ttu-id="a0e87-149">Tlbexp.exe (exportateur de bibliothèques de types)</span><span class="sxs-lookup"><span data-stu-id="a0e87-149">Tlbexp.exe (Type Library Exporter)</span></span>](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
+ [<span data-ttu-id="a0e87-150">Marshaling d'interopérabilité</span><span class="sxs-lookup"><span data-stu-id="a0e87-150">Interop Marshaling</span></span>](../../../framework/interop/interop-marshaling.md)  
+ [<span data-ttu-id="a0e87-151">COM Interop sans inscription</span><span class="sxs-lookup"><span data-stu-id="a0e87-151">Registration-Free COM Interop</span></span>](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)
