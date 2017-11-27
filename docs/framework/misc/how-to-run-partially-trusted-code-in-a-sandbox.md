@@ -1,76 +1,69 @@
 ---
-title: "Comment&#160;: ex&#233;cuter du code d&#39;un niveau de confiance partiel dans un bac &#224; sable (sandbox) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "sécurité du code, sandboxing"
-  - "confiance partielle"
-  - "code d'un niveau de confiance partiel"
-  - "environnement de sécurité restreint"
-  - "sandboxing"
+title: "Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- partially trusted code
+- sandboxing
+- partial trust
+- restricted security environment
+- code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-caps.latest.revision: 27
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "27"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 5dab15c2c43c17b5f83954719ba99a0e5fb73527
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: ex&#233;cuter du code d&#39;un niveau de confiance partiel dans un bac &#224; sable (sandbox)
-L'utilisation de bac à sable \(sandbox\) consiste à exécuter du code dans un environnement de sécurité restreint qui limite les autorisations d'accès accordées au code.  Par exemple, si une bibliothèque managée provient d'une source qui n'est pas totalement fiable, vous ne devez pas l'exécuter comme ayant un niveau de confiance totale.  Au lieu de cela, placez le code dans un bac à sable \(sandbox\) qui limite ses autorisations à ceux qui en ont besoin \(par exemple, l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag>\).  
+# <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a><span data-ttu-id="f7737-102">Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)</span><span class="sxs-lookup"><span data-stu-id="f7737-102">How to: Run Partially Trusted Code in a Sandbox</span></span>
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Vous pouvez également utiliser un bac à sable \(sandbox\) pour tester le code pour tester du code à distribuer qui s'exécute dans des environnements partiellement fiables.  
+ <span data-ttu-id="f7737-103">L'utilisation de bac à sable (sandbox) consiste à exécuter du code dans un environnement de sécurité restreint qui limite les autorisations d'accès accordées au code.</span><span class="sxs-lookup"><span data-stu-id="f7737-103">Sandboxing is the practice of running code in a restricted security environment, which limits the access permissions granted to the code.</span></span> <span data-ttu-id="f7737-104">Par exemple, si une bibliothèque managée provient d'une source qui n'est pas totalement fiable, vous ne devez pas l'exécuter comme ayant un niveau de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-104">For example, if you have a managed library from a source you do not completely trust, you should not run it as fully trusted.</span></span> <span data-ttu-id="f7737-105">Au lieu de cela, placez le code dans un bac à sable (sandbox) qui limite ses autorisations à ceux qui en ont besoin (par exemple, l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.Execution>).</span><span class="sxs-lookup"><span data-stu-id="f7737-105">Instead, you should place the code in a sandbox that limits its permissions to those that you expect it to need (for example, <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission).</span></span>  
   
-> [!CAUTION]
->  Sécurité d'accès du code et code d'un niveau de confiance partiel  
->   
->  Le .NET Framework fournit un mécanisme, appelé « sécurité d'accès du code \(CAS\) », qui permet de mettre en œuvre différents niveaux de confiance sur différents codes exécutés dans la même application.  La sécurité d'accès du code dans .NET Framework ne doit pas être utilisée comme limite de sécurité avec du code d'un niveau de confiance partiel, notamment du code d'origine inconnue.  Nous vous déconseillons de charger et d'exécuter du code d'origine inconnue sans mettre en place d'autres mesures de sécurité.  
->   
->  Cette stratégie s'applique à toutes les versions du .NET Framework, mais ne concerne pas le .NET Framework inclus dans Silverlight.  
+ <span data-ttu-id="f7737-106">Vous pouvez également utiliser un bac à sable (sandbox) pour tester le code pour tester du code à distribuer qui s'exécute dans des environnements partiellement fiables.</span><span class="sxs-lookup"><span data-stu-id="f7737-106">You can also use sandboxing to test code you will be distributing that will run in partially trusted environments.</span></span>  
   
- Un <xref:System.AppDomain> est un moyen efficace de fournir un bac à sable \(sandbox\) pour les applications managées.  Les domaines d'application utilisés pour l'exécution du code de niveau de confiance partiel disposent d'autorisations qui définissent les ressources protégées disponibles au moment de l'exécution dans ce <xref:System.AppDomain>.  Le code qui s'exécute à l'intérieur du <xref:System.AppDomain> est lié au <xref:System.AppDomain> par les autorisations qui lui sont associées et est autorisé à accéder uniquement aux ressources spécifiées.  Le <xref:System.AppDomain> inclut également un tableau <xref:System.Security.Policy.StrongName> utilisé pour identifier les assemblys qui seront chargés avec un niveau de confiance totale.  Cela permet au concepteur d'un <xref:System.AppDomain> de démarrer un nouveau domaine bac à sable \(sandbox\) qui permet aux assemblys d'assistance spécifiques d'avoir un niveau de confiance totale.  Une autre option pour le chargement d'assemblys avec un niveau de confiance totale est de les placer dans le Global Assembly Cache ; toutefois, cela les charge avec un niveau de confiance totale dans tous les domaines d'application créés sur l'ordinateur.  La liste des noms forts prend en charge une décision pour chaque <xref:System.AppDomain> qui fournit une détermination plus restrictive.  
+ <span data-ttu-id="f7737-107">Un <xref:System.AppDomain> est un moyen efficace de fournir un bac à sable (sandbox) pour les applications managées.</span><span class="sxs-lookup"><span data-stu-id="f7737-107">An <xref:System.AppDomain> is an effective way of providing a sandbox for managed applications.</span></span> <span data-ttu-id="f7737-108">Les domaines d'application utilisés pour l'exécution du code de niveau de confiance partiel disposent d'autorisations qui définissent les ressources protégées disponibles au moment de l'exécution dans ce <xref:System.AppDomain>.</span><span class="sxs-lookup"><span data-stu-id="f7737-108">Application domains that are used for running partially trusted code have permissions that define the protected resources that are available when running within that <xref:System.AppDomain>.</span></span> <span data-ttu-id="f7737-109">Le code qui s'exécute à l'intérieur du <xref:System.AppDomain> est lié au <xref:System.AppDomain> par les autorisations qui lui sont associées et est autorisé à accéder uniquement aux ressources spécifiées.</span><span class="sxs-lookup"><span data-stu-id="f7737-109">Code that runs inside the <xref:System.AppDomain> is bound by the permissions associated with the <xref:System.AppDomain> and is allowed to access only the specified resources.</span></span> <span data-ttu-id="f7737-110">Le <xref:System.AppDomain> inclut également un tableau <xref:System.Security.Policy.StrongName> utilisé pour identifier les assemblys qui seront chargés avec un niveau de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-110">The <xref:System.AppDomain> also includes a <xref:System.Security.Policy.StrongName> array that is used to identify assemblies that are to be loaded as fully trusted.</span></span> <span data-ttu-id="f7737-111">Cela permet au concepteur d'un <xref:System.AppDomain> de démarrer un nouveau domaine bac à sable (sandbox) qui permet aux assemblys d'assistance spécifiques d'avoir un niveau de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-111">This enables the creator of an <xref:System.AppDomain> to start a new sandboxed domain that allows specific helper assemblies to be fully trusted.</span></span> <span data-ttu-id="f7737-112">Une autre option pour le chargement d'assemblys avec un niveau de confiance totale est de les placer dans le Global Assembly Cache ; toutefois, cela les charge avec un niveau de confiance totale dans tous les domaines d'application créés sur l'ordinateur.</span><span class="sxs-lookup"><span data-stu-id="f7737-112">Another option for loading assemblies as fully trusted is to place them in the global assembly cache; however, that will load assemblies as fully trusted in all application domains created on that computer.</span></span> <span data-ttu-id="f7737-113">La liste des noms forts prend en charge une décision pour chaque <xref:System.AppDomain> qui fournit une détermination plus restrictive.</span><span class="sxs-lookup"><span data-stu-id="f7737-113">The list of strong names supports a per-<xref:System.AppDomain> decision that provides more restrictive determination.</span></span>  
   
- Vous pouvez utiliser la surcharge de la méthode [AppDomain.CreateDomain\(String, Evidence, AppDomainSetup, PermissionSet, StrongName\<xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=fullName> pour définir le jeu d'autorisations des applications qui s'exécutent dans un bac à sable \(sandbox\).  Cette surcharge vous permet de spécifier le niveau de sécurité d'accès du code exact que vous souhaitez.  Les assemblys chargés dans un <xref:System.AppDomain> à l'aide de cette surcharge peuvent disposer soit uniquement du jeu d'autorisations spécifié, soit de la confiance totale.  La confiance totale est accordée à l'assembly s'il se trouve dans le Global Assembly Cache ou est répertorié dans le paramètre de tableau `fullTrustAssemblies` \(<xref:System.Security.Policy.StrongName>\).  Seuls les assemblys réputés être entièrement fiables doivent être ajoutés à la liste `fullTrustAssemblies`.  
+ <span data-ttu-id="f7737-114">Vous pouvez utiliser la surcharge de la méthode <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> pour définir le jeu d'autorisations des applications qui s'exécutent dans un bac à sable (sandbox).</span><span class="sxs-lookup"><span data-stu-id="f7737-114">You can use the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> method overload to specify the permission set for applications that run in a sandbox.</span></span> <span data-ttu-id="f7737-115">Cette surcharge vous permet de spécifier le niveau de sécurité d'accès du code exact que vous souhaitez.</span><span class="sxs-lookup"><span data-stu-id="f7737-115">This overload enables you to specify the exact level of code access security you want.</span></span> <span data-ttu-id="f7737-116">Les assemblys chargés dans un <xref:System.AppDomain> à l'aide de cette surcharge peuvent disposer soit uniquement du jeu d'autorisations spécifié, soit de la confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-116">Assemblies that are loaded into an <xref:System.AppDomain> by using this overload can either have the specified grant set only, or can be fully trusted.</span></span> <span data-ttu-id="f7737-117">La confiance totale est accordée à l'assembly s'il se trouve dans le Global Assembly Cache ou est répertorié dans le paramètre de tableau `fullTrustAssemblies` (<xref:System.Security.Policy.StrongName>).</span><span class="sxs-lookup"><span data-stu-id="f7737-117">The assembly is granted full trust if it is in the global assembly cache or listed in the `fullTrustAssemblies` (the <xref:System.Security.Policy.StrongName>) array parameter.</span></span> <span data-ttu-id="f7737-118">Seuls les assemblys réputés être entièrement fiables doivent être ajoutés à la liste `fullTrustAssemblies`.</span><span class="sxs-lookup"><span data-stu-id="f7737-118">Only assemblies known to be fully trusted should be added to the `fullTrustAssemblies` list.</span></span>  
   
- La surcharge possède la signature suivante :  
+ <span data-ttu-id="f7737-119">La surcharge possède la signature suivante :</span><span class="sxs-lookup"><span data-stu-id="f7737-119">The overload has the following signature:</span></span>  
   
 ```  
-AppDomain.CreateDomain( string friendlyName,  
-                        Evidence securityInfo,  
-                        AppDomainSetup info,  
-                        PermissionSet grantSet,  
-                        params StrongName[] fullTrustAssemblies);  
+AppDomain.CreateDomain( string friendlyName,  
+                        Evidence securityInfo,  
+                        AppDomainSetup info,  
+                        PermissionSet grantSet,  
+                        params StrongName[] fullTrustAssemblies);  
 ```  
   
- Les paramètres de la surcharge de méthode [CreateDomain\(String, Evidence, AppDomainSetup, PermissionSet, StrongName\<xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> spécifient le nom du <xref:System.AppDomain>, la preuve du <xref:System.AppDomain>, l'objet <xref:System.AppDomainSetup> qui identifie la base de l'application pour le bac à sable \(sandbox\), le jeu d'autorisations à utiliser et les noms forts des assemblys entièrement fiables.  
+ <span data-ttu-id="f7737-120">Les paramètres de la surcharge de méthode <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> spécifient le nom du <xref:System.AppDomain>, la preuve du <xref:System.AppDomain>, l'objet <xref:System.AppDomainSetup> qui identifie la base de l'application pour le bac à sable (sandbox), le jeu d'autorisations à utiliser et les noms forts des assemblys entièrement fiables.</span><span class="sxs-lookup"><span data-stu-id="f7737-120">The parameters for the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> method overload specify the name of the <xref:System.AppDomain>, the evidence for the <xref:System.AppDomain>, the <xref:System.AppDomainSetup> object that identifies the application base for the sandbox, the permission set to use, and the strong names for fully trusted assemblies.</span></span>  
   
- Pour des raisons de sécurité, la base de l'application définie dans le paramètre `info` ne doit pas être la base de l'application pour l'application d'hébergement.  
+ <span data-ttu-id="f7737-121">Pour des raisons de sécurité, la base de l'application définie dans le paramètre `info` ne doit pas être la base de l'application pour l'application d'hébergement.</span><span class="sxs-lookup"><span data-stu-id="f7737-121">For security reasons, the application base specified in the `info` parameter should not be the application base for the hosting application.</span></span>  
   
- Pour le paramètre `grantSet`, vous pouvez spécifier un jeu d'autorisations que vous avez explicitement créé ou un jeu d'autorisations standard créé par la méthode <xref:System.Security.SecurityManager.GetStandardSandbox%2A>.  
+ <span data-ttu-id="f7737-122">Pour le paramètre `grantSet`, vous pouvez spécifier un jeu d'autorisations que vous avez explicitement créé ou un jeu d'autorisations standard créé par la méthode <xref:System.Security.SecurityManager.GetStandardSandbox%2A>.</span><span class="sxs-lookup"><span data-stu-id="f7737-122">For the `grantSet` parameter, you can specify either a permission set you have explicitly created, or a standard permission set created by the <xref:System.Security.SecurityManager.GetStandardSandbox%2A> method.</span></span>  
   
- Contrairement à la plupart des surcharges <xref:System.AppDomain>, la preuve pour le <xref:System.AppDomain> \(fournie par le paramètre `securityInfo`\) n'est pas utilisée pour déterminer le jeu d'autorisations pour les assemblys partiellement fiables.  Elle est en fait spécifiée indépendamment par le paramètre `grantSet`.  Toutefois, la preuve peut être utilisée à d'autres fins, par exemple, pour déterminer la portée de stockage isolé.  
+ <span data-ttu-id="f7737-123">Contrairement à la plupart des surcharges <xref:System.AppDomain>, la preuve pour le <xref:System.AppDomain> (fournie par le paramètre `securityInfo`) n'est pas utilisée pour déterminer le jeu d'autorisations pour les assemblys partiellement fiables.</span><span class="sxs-lookup"><span data-stu-id="f7737-123">Unlike most <xref:System.AppDomain> loads, the evidence for the <xref:System.AppDomain> (which is provided by the `securityInfo` parameter) is not used to determine the grant set for the partially trusted assemblies.</span></span> <span data-ttu-id="f7737-124">Elle est en fait spécifiée indépendamment par le paramètre `grantSet`.</span><span class="sxs-lookup"><span data-stu-id="f7737-124">Instead, it is independently specified by the `grantSet` parameter.</span></span> <span data-ttu-id="f7737-125">Toutefois, la preuve peut être utilisée à d'autres fins, par exemple, pour déterminer la portée de stockage isolé.</span><span class="sxs-lookup"><span data-stu-id="f7737-125">However, the evidence can be used for other purposes such as determining the isolated storage scope.</span></span>  
   
-### Pour exécuter une application dans un bac à sable \(sandbox\)  
+### <a name="to-run-an-application-in-a-sandbox"></a><span data-ttu-id="f7737-126">Pour exécuter une application dans un bac à sable (sandbox)</span><span class="sxs-lookup"><span data-stu-id="f7737-126">To run an application in a sandbox</span></span>  
   
-1.  Créez le jeu d'autorisations à accorder à l'application non fiable.  L'autorisation minimale que vous pouvez accorder est l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag>.  Vous pouvez également accorder des autorisations supplémentaires que vous pensez sécurisées pour du code non fiable ; par exemple, <xref:System.Security.Permissions.IsolatedStorageFilePermission>.  Le code suivant crée un jeu d'autorisations uniquement avec l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag>.  
+1.  <span data-ttu-id="f7737-127">Créez le jeu d'autorisations à accorder à l'application non fiable.</span><span class="sxs-lookup"><span data-stu-id="f7737-127">Create the permission set to be granted to the untrusted application.</span></span> <span data-ttu-id="f7737-128">L'autorisation minimale que vous pouvez accorder est l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.Execution>.</span><span class="sxs-lookup"><span data-stu-id="f7737-128">The minimum permission you can grant is <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission.</span></span> <span data-ttu-id="f7737-129">Vous pouvez également accorder des autorisations supplémentaires que vous pensez sécurisées pour du code non fiable ; par exemple, <xref:System.Security.Permissions.IsolatedStorageFilePermission>.</span><span class="sxs-lookup"><span data-stu-id="f7737-129">You can also grant additional permissions you think might be safe for untrusted code; for example, <xref:System.Security.Permissions.IsolatedStorageFilePermission>.</span></span> <span data-ttu-id="f7737-130">Le code suivant crée un jeu d'autorisations uniquement avec l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.Execution>.</span><span class="sxs-lookup"><span data-stu-id="f7737-130">The following code creates a new permission set with only <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission.</span></span>  
   
     ```  
     PermissionSet permSet = new PermissionSet(PermissionState.None);  
     permSet.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));  
     ```  
   
-     Vous pouvez également utiliser un jeu d'autorisations nommé existant, tel qu'Internet.  
+     <span data-ttu-id="f7737-131">Vous pouvez également utiliser un jeu d'autorisations nommé existant, tel qu'Internet.</span><span class="sxs-lookup"><span data-stu-id="f7737-131">Alternatively, you can use an existing named permission set, such as Internet.</span></span>  
   
     ```  
     Evidence ev = new Evidence();  
@@ -78,26 +71,26 @@ AppDomain.CreateDomain( string friendlyName,
     PermissionSet internetPS = SecurityManager.GetStandardSandbox(ev);  
     ```  
   
-     En fonction de la zone dans la preuve, la méthode <xref:System.Security.SecurityManager.GetStandardSandbox%2A> retourne un jeu d'autorisations `Internet` ou un jeu d'autorisations `LocalIntranet`.  <xref:System.Security.SecurityManager.GetStandardSandbox%2A> construit également des autorisations d'identité pour certains objets de preuve passés comme références.  
+     <span data-ttu-id="f7737-132">En fonction de la zone dans la preuve, la méthode <xref:System.Security.SecurityManager.GetStandardSandbox%2A> retourne un jeu d'autorisations `Internet` ou un jeu d'autorisations `LocalIntranet`.</span><span class="sxs-lookup"><span data-stu-id="f7737-132">The <xref:System.Security.SecurityManager.GetStandardSandbox%2A> method returns either an `Internet` permission set or a `LocalIntranet` permission set depending on the zone in the evidence.</span></span> <span data-ttu-id="f7737-133"><xref:System.Security.SecurityManager.GetStandardSandbox%2A> construit également des autorisations d'identité pour certains objets de preuve passés comme références.</span><span class="sxs-lookup"><span data-stu-id="f7737-133"><xref:System.Security.SecurityManager.GetStandardSandbox%2A> also constructs identity permissions for some of the evidence objects passed as references.</span></span>  
   
-2.  Signez l'assembly qui contient la classe d'hébergement \(appelée `Sandboxer` dans cet exemple\) qui appelle le code non fiable.  Ajouter le <xref:System.Security.Policy.StrongName> utilisé pour signer l'assembly au tableau <xref:System.Security.Policy.StrongName> du paramètre `fullTrustAssemblies` paramètre de l'appel <xref:System.AppDomain.CreateDomain%2A>.  La classe d'hébergement doit être exécutée avec un niveau de confiance totale pour permettre l'exécution du code de confiance partielle ou offrir des services à l'application de confiance partielle.  Voici comment lire le <xref:System.Security.Policy.StrongName> d'un assembly :  
+2.  <span data-ttu-id="f7737-134">Signez l'assembly qui contient la classe d'hébergement (appelée `Sandboxer` dans cet exemple) qui appelle le code non fiable.</span><span class="sxs-lookup"><span data-stu-id="f7737-134">Sign the assembly that contains the hosting class (named `Sandboxer` in this example) that calls the untrusted code.</span></span> <span data-ttu-id="f7737-135">Ajouter le <xref:System.Security.Policy.StrongName> utilisé pour signer l'assembly au tableau <xref:System.Security.Policy.StrongName> du paramètre `fullTrustAssemblies` paramètre de l'appel <xref:System.AppDomain.CreateDomain%2A>.</span><span class="sxs-lookup"><span data-stu-id="f7737-135">Add the <xref:System.Security.Policy.StrongName> used to sign the assembly to the <xref:System.Security.Policy.StrongName> array of the `fullTrustAssemblies` parameter of the <xref:System.AppDomain.CreateDomain%2A> call.</span></span> <span data-ttu-id="f7737-136">La classe d'hébergement doit être exécutée avec un niveau de confiance totale pour permettre l'exécution du code de confiance partielle ou offrir des services à l'application de confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="f7737-136">The hosting class must run as fully trusted to enable the execution of the partial-trust code or to offer services to the partial-trust application.</span></span> <span data-ttu-id="f7737-137">Voici comment lire le <xref:System.Security.Policy.StrongName> d'un assembly :</span><span class="sxs-lookup"><span data-stu-id="f7737-137">This is how you read the <xref:System.Security.Policy.StrongName> of an assembly:</span></span>  
   
     ```  
     StrongName fullTrustAssembly = typeof(Sandboxer).Assembly.Evidence.GetHostEvidence<StrongName>();  
     ```  
   
-     Les assemblys .NET Framework tels que mscorlib et System.dll n'ont pas à être ajoutés à la liste de confiance totale, car ils sont chargés avec un niveau de confiance totale à partir du Global Assembly Cache.  
+     <span data-ttu-id="f7737-138">Les assemblys .NET Framework tels que mscorlib et System.dll n'ont pas à être ajoutés à la liste de confiance totale, car ils sont chargés avec un niveau de confiance totale à partir du Global Assembly Cache.</span><span class="sxs-lookup"><span data-stu-id="f7737-138">.NET Framework assemblies such as mscorlib and System.dll do not have to be added to the full-trust list because they are loaded as fully trusted from the global assembly cache.</span></span>  
   
-3.  Initialisez le paramètre <xref:System.AppDomainSetup> de la méthode <xref:System.AppDomain.CreateDomain%2A>.  Ce paramètre vous permet de contrôler la plupart des paramètres du nouveau <xref:System.AppDomain>.  La propriété <xref:System.AppDomainSetup.ApplicationBase%2A> est un paramètre important qui doit être différent de la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> pour le <xref:System.AppDomain> de l'application d'hébergement.  Si les paramètres <xref:System.AppDomainSetup.ApplicationBase%2A> sont les mêmes, l'application de confiance partielle peut amener l'application d'hébergement à charger \(avec un niveau de confiance totale\) une exception définie par ses soins, et donc l'exploiter.  Cela fait partie des raisons pour lesquelles un Catch \(exception\) n'est pas recommandé.  En configurant la base d'application de l'hôte différemment de la base d'application de l'application bac à sable \(sandbox\), vous réduisez les risques d'attaques.  
+3.  <span data-ttu-id="f7737-139">Initialisez le paramètre <xref:System.AppDomainSetup> de la méthode <xref:System.AppDomain.CreateDomain%2A>.</span><span class="sxs-lookup"><span data-stu-id="f7737-139">Initialize the <xref:System.AppDomainSetup> parameter of the <xref:System.AppDomain.CreateDomain%2A> method.</span></span> <span data-ttu-id="f7737-140">Ce paramètre vous permet de contrôler la plupart des paramètres du nouveau <xref:System.AppDomain>.</span><span class="sxs-lookup"><span data-stu-id="f7737-140">With this parameter, you can control many of the settings of the new <xref:System.AppDomain>.</span></span> <span data-ttu-id="f7737-141">La propriété <xref:System.AppDomainSetup.ApplicationBase%2A> est un paramètre important qui doit être différent de la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> pour le <xref:System.AppDomain> de l'application d'hébergement.</span><span class="sxs-lookup"><span data-stu-id="f7737-141">The <xref:System.AppDomainSetup.ApplicationBase%2A> property is an important setting, and should be different from the <xref:System.AppDomainSetup.ApplicationBase%2A> property for the <xref:System.AppDomain> of the hosting application.</span></span> <span data-ttu-id="f7737-142">Si les paramètres <xref:System.AppDomainSetup.ApplicationBase%2A> sont les mêmes, l'application de confiance partielle peut amener l'application d'hébergement à charger (avec un niveau de confiance totale) une exception définie par ses soins, et donc l'exploiter.</span><span class="sxs-lookup"><span data-stu-id="f7737-142">If the <xref:System.AppDomainSetup.ApplicationBase%2A> settings are the same, the partial-trust application can get the hosting application to load (as fully trusted) an exception it defines, thus exploiting it.</span></span> <span data-ttu-id="f7737-143">Cela fait partie des raisons pour lesquelles un Catch (exception) n'est pas recommandé.</span><span class="sxs-lookup"><span data-stu-id="f7737-143">This is another reason why a catch (exception) is not recommended.</span></span> <span data-ttu-id="f7737-144">En configurant la base d'application de l'hôte différemment de la base d'application de l'application bac à sable (sandbox), vous réduisez les risques d'attaques.</span><span class="sxs-lookup"><span data-stu-id="f7737-144">Setting the application base of the host differently from the application base of the sandboxed application mitigates the risk of exploits.</span></span>  
   
     ```  
     AppDomainSetup adSetup = new AppDomainSetup();  
     adSetup.ApplicationBase = Path.GetFullPath(pathToUntrusted);  
     ```  
   
-4.  Appelez la surcharge de méthode [CreateDomain\(String, Evidence, AppDomainSetup, PermissionSet, StrongName\<xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> pour créer le domaine d'application à l'aide des paramètres spécifiés.  
+4.  <span data-ttu-id="f7737-145">Appelez la surcharge de méthode <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> pour créer le domaine d'application à l'aide des paramètres spécifiés.</span><span class="sxs-lookup"><span data-stu-id="f7737-145">Call the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> method overload to create the application domain using the parameters we have specified.</span></span>  
   
-     La signature de cette méthode est :  
+     <span data-ttu-id="f7737-146">La signature de cette méthode est :</span><span class="sxs-lookup"><span data-stu-id="f7737-146">The signature for this method is:</span></span>  
   
     ```  
     public static AppDomain CreateDomain(string friendlyName,   
@@ -105,33 +98,33 @@ AppDomain.CreateDomain( string friendlyName,
         params StrongName[] fullTrustAssemblies)  
     ```  
   
-     Informations supplémentaires :  
+     <span data-ttu-id="f7737-147">Informations supplémentaires :</span><span class="sxs-lookup"><span data-stu-id="f7737-147">Additional information:</span></span>  
   
-    -   Il s'agit de la seule surcharge de la méthode <xref:System.AppDomain.CreateDomain%2A> prenant un <xref:System.Security.PermissionSet> comme paramètre, et donc la seule surcharge qui vous permet de charger une application dans un paramètre de confiance partielle.  
+    -   <span data-ttu-id="f7737-148">Il s'agit de la seule surcharge de la méthode <xref:System.AppDomain.CreateDomain%2A> prenant un <xref:System.Security.PermissionSet> comme paramètre, et donc la seule surcharge qui vous permet de charger une application dans un paramètre de confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="f7737-148">This is the only overload of the <xref:System.AppDomain.CreateDomain%2A> method that takes a <xref:System.Security.PermissionSet> as a parameter, and thus the only overload that lets you load an application in a partial-trust setting.</span></span>  
   
-    -   Le paramètre `evidence` n'est pas utilisé pour calculer un jeu d'autorisations, mais pour être identifié par les autres fonctionnalités du .NET Framework.  
+    -   <span data-ttu-id="f7737-149">Le paramètre `evidence` n'est pas utilisé pour calculer un jeu d'autorisations, mais pour être identifié par les autres fonctionnalités du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f7737-149">The `evidence` parameter is not used to calculate a permission set; it is used for identification by other features of the .NET Framework.</span></span>  
   
-    -   La définition de la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> du paramètre `info` est obligatoire pour cette surcharge.  
+    -   <span data-ttu-id="f7737-150">La définition de la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> du paramètre `info` est obligatoire pour cette surcharge.</span><span class="sxs-lookup"><span data-stu-id="f7737-150">Setting the <xref:System.AppDomainSetup.ApplicationBase%2A> property of the `info` parameter is mandatory for this overload.</span></span>  
   
-    -   Le paramètre `fullTrustAssemblies` possède le mot clé `params`, ce qui signifie qu'il n'est pas nécessaire de créer un tableau <xref:System.Security.Policy.StrongName>.  Passer 0, 1 ou plusieurs noms forts comme paramètres est autorisé.  
+    -   <span data-ttu-id="f7737-151">Le paramètre `fullTrustAssemblies` possède le mot clé `params`, ce qui signifie qu'il n'est pas nécessaire de créer un tableau <xref:System.Security.Policy.StrongName>.</span><span class="sxs-lookup"><span data-stu-id="f7737-151">The `fullTrustAssemblies` parameter has the `params` keyword, which means that it is not necessary to create a <xref:System.Security.Policy.StrongName> array.</span></span> <span data-ttu-id="f7737-152">Passer 0, 1 ou plusieurs noms forts comme paramètres est autorisé.</span><span class="sxs-lookup"><span data-stu-id="f7737-152">Passing 0, 1, or more strong names as parameters is allowed.</span></span>  
   
-    -   Le code servant à créer le domaine d'application est le suivant :  
+    -   <span data-ttu-id="f7737-153">Le code servant à créer le domaine d'application est le suivant :</span><span class="sxs-lookup"><span data-stu-id="f7737-153">The code to create the application domain is:</span></span>  
   
     ```  
     AppDomain newDomain = AppDomain.CreateDomain("Sandbox", null, adSetup, permSet, fullTrustAssembly);  
     ```  
   
-5.  Chargez le code dans le <xref:System.AppDomain> bac à sable \(sandbox\) que vous avez créé.  Vous pouvez le faire de deux façons :  
+5.  <span data-ttu-id="f7737-154">Chargez le code dans le <xref:System.AppDomain> bac à sable (sandbox) que vous avez créé.</span><span class="sxs-lookup"><span data-stu-id="f7737-154">Load the code into the sandboxing <xref:System.AppDomain> that you created.</span></span> <span data-ttu-id="f7737-155">Vous pouvez le faire de deux façons :</span><span class="sxs-lookup"><span data-stu-id="f7737-155">This can be done in two ways:</span></span>  
   
-    -   Appelez la méthode <xref:System.AppDomain.ExecuteAssembly%2A> pour l'assembly.  
+    -   <span data-ttu-id="f7737-156">Appelez la méthode <xref:System.AppDomain.ExecuteAssembly%2A> pour l'assembly.</span><span class="sxs-lookup"><span data-stu-id="f7737-156">Call the <xref:System.AppDomain.ExecuteAssembly%2A> method for the assembly.</span></span>  
   
-    -   Utilisez la méthode <xref:System.Activator.CreateInstanceFrom%2A> pour créer une instance d'une classe dérivée de <xref:System.MarshalByRefObject> dans le nouveau <xref:System.AppDomain>.  
+    -   <span data-ttu-id="f7737-157">Utilisez la méthode <xref:System.Activator.CreateInstanceFrom%2A> pour créer une instance d'une classe dérivée de <xref:System.MarshalByRefObject> dans le nouveau <xref:System.AppDomain>.</span><span class="sxs-lookup"><span data-stu-id="f7737-157">Use the <xref:System.Activator.CreateInstanceFrom%2A> method to create an instance of a class derived from <xref:System.MarshalByRefObject> in the new <xref:System.AppDomain>.</span></span>  
   
-     La seconde méthode est préférable, car elle simplifie le passage des paramètres à la nouvelle instance <xref:System.AppDomain>.  La méthode <xref:System.Activator.CreateInstanceFrom%2A> fournit deux fonctionnalités importantes :  
+     <span data-ttu-id="f7737-158">La seconde méthode est préférable, car elle simplifie le passage des paramètres à la nouvelle instance <xref:System.AppDomain>.</span><span class="sxs-lookup"><span data-stu-id="f7737-158">The second method is preferable, because it makes it easier to pass parameters to the new <xref:System.AppDomain> instance.</span></span> <span data-ttu-id="f7737-159">La méthode <xref:System.Activator.CreateInstanceFrom%2A> fournit deux fonctionnalités importantes :</span><span class="sxs-lookup"><span data-stu-id="f7737-159">The <xref:System.Activator.CreateInstanceFrom%2A> method provides two important features:</span></span>  
   
-    -   Vous pouvez utiliser une base de code qui pointe vers un emplacement qui ne contient pas votre assembly.  
+    -   <span data-ttu-id="f7737-160">Vous pouvez utiliser une base de code qui pointe vers un emplacement qui ne contient pas votre assembly.</span><span class="sxs-lookup"><span data-stu-id="f7737-160">You can use a code base that points to a location that does not contain your assembly.</span></span>  
   
-    -   Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale \(<xref:System.Security.Permissions.PermissionState?displayProperty=fullName>\), ce qui vous permet de créer une instance d'une classe critique.  \(Cela se produit chaque fois que votre assembly n'a pas de marquages de transparence et est chargé avec un niveau de confiance totale.\) Vous devez donc vous assurer de ne créer que du code fiable avec cette fonction. Nous vous recommandons de créer uniquement des instances de classes d'un niveau de confiance totale dans le nouveau domaine d'application.  
+    -   <span data-ttu-id="f7737-161">Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), ce qui vous permet de créer une instance d'une classe critique.</span><span class="sxs-lookup"><span data-stu-id="f7737-161">You can do the creation under an <xref:System.Security.CodeAccessPermission.Assert%2A> for full-trust (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), which enables you to create an instance of a critical class.</span></span> <span data-ttu-id="f7737-162">(Cela se produit chaque fois que votre assembly n'a pas de marquages de transparence et est chargé avec un niveau de confiance totale.) Vous devez donc vous assurer de ne créer que du code fiable avec cette fonction. Nous vous recommandons de créer uniquement des instances de classes d'un niveau de confiance totale dans le nouveau domaine d'application.</span><span class="sxs-lookup"><span data-stu-id="f7737-162">(This happens whenever your assembly has no transparency markings and is loaded as fully trusted.) Therefore, you have to be careful to create only code that you trust with this function, and we recommend that you create only instances of fully trusted classes in the new application domain.</span></span>  
   
     ```  
     ObjectHandle handle = Activator.CreateInstanceFrom(  
@@ -139,25 +132,25 @@ AppDomain.CreateDomain( string friendlyName,
            typeof(Sandboxer).FullName );  
     ```  
   
-     Notez que pour créer une instance d'une classe dans un nouveau domaine, cette classe doit étendre la classe <xref:System.MarshalByRefObject>.  
+     <span data-ttu-id="f7737-163">Notez que pour créer une instance d'une classe dans un nouveau domaine, cette classe doit étendre la classe <xref:System.MarshalByRefObject>.</span><span class="sxs-lookup"><span data-stu-id="f7737-163">Note that in order to create an instance of a class in a new domain, the class has to extend the <xref:System.MarshalByRefObject> class</span></span>  
   
     ```  
     class Sandboxer:MarshalByRefObject  
     ```  
   
-6.  Désencapsulez la nouvelle instance de domaine dans une référence de ce domaine.  Cette référence est utilisée pour exécuter le code non fiable.  
+6.  <span data-ttu-id="f7737-164">Désencapsulez la nouvelle instance de domaine dans une référence de ce domaine.</span><span class="sxs-lookup"><span data-stu-id="f7737-164">Unwrap the new domain instance into a reference in this domain.</span></span> <span data-ttu-id="f7737-165">Cette référence est utilisée pour exécuter le code non fiable.</span><span class="sxs-lookup"><span data-stu-id="f7737-165">This reference is used to execute the untrusted code.</span></span>  
   
     ```  
     Sandboxer newDomainInstance = (Sandboxer) handle.Unwrap();  
     ```  
   
-7.  Appelez la méthode `ExecuteUntrustedCode` dans l'instance de la classe `Sandboxer` que vous venez de créer.  
+7.  <span data-ttu-id="f7737-166">Appelez la méthode `ExecuteUntrustedCode` dans l'instance de la classe `Sandboxer` que vous venez de créer.</span><span class="sxs-lookup"><span data-stu-id="f7737-166">Call the `ExecuteUntrustedCode` method in the instance of the `Sandboxer` class you just created.</span></span>  
   
     ```  
     newDomainInstance.ExecuteUntrustedCode(untrustedAssembly, untrustedClass, entryPoint, parameters);  
     ```  
   
-     Cet appel est exécuté dans le domaine d'application bac à sable \(sandbox\), qui possède des autorisations restreintes.  
+     <span data-ttu-id="f7737-167">Cet appel est exécuté dans le domaine d'application bac à sable (sandbox), qui possède des autorisations restreintes.</span><span class="sxs-lookup"><span data-stu-id="f7737-167">This call is executed in the sandboxed application domain, which has restricted permissions.</span></span>  
   
     ```  
     public void ExecuteUntrustedCode(string assemblyName, string typeName, string entryPoint, Object[] parameters)  
@@ -182,18 +175,18 @@ AppDomain.CreateDomain( string friendlyName,
         }  
     ```  
   
-     <xref:System.Reflection> est utilisé pour obtenir le handle d'une méthode dans l'assembly de niveau de confiance partielle.  Le handle permet d'exécuter du code d'une façon sécurisée avec les autorisations minimales.  
+     <span data-ttu-id="f7737-168"><xref:System.Reflection> est utilisé pour obtenir le handle d'une méthode dans l'assembly de niveau de confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="f7737-168"><xref:System.Reflection> is used to get a handle of a method in the partially trusted assembly.</span></span> <span data-ttu-id="f7737-169">Le handle permet d'exécuter du code d'une façon sécurisée avec les autorisations minimales.</span><span class="sxs-lookup"><span data-stu-id="f7737-169">The handle can be used to execute code in a safe way with minimum permissions.</span></span>  
   
-     Dans le code précédent, notez <xref:System.Security.PermissionSet.Assert%2A> pour l'autorisation de confiance totale avant l'affichage de <xref:System.Security.SecurityException>.  
+     <span data-ttu-id="f7737-170">Dans le code précédent, notez <xref:System.Security.PermissionSet.Assert%2A> pour l'autorisation de confiance totale avant l'affichage de <xref:System.Security.SecurityException>.</span><span class="sxs-lookup"><span data-stu-id="f7737-170">In the previous code, note the <xref:System.Security.PermissionSet.Assert%2A> for the full-trust permission before printing the <xref:System.Security.SecurityException>.</span></span>  
   
     ```  
     new PermissionSet(PermissionState.Unrestricted)).Assert()  
     ```  
   
-     L'assertion de confiance totale permet d'obtenir les informations détaillées de <xref:System.Security.SecurityException>.  Sans <xref:System.Security.PermissionSet.Assert%2A>, la méthode <xref:System.Security.SecurityException.ToString%2A> de <xref:System.Security.SecurityException> détecte que du code de niveau de confiance partielle se trouve sur la pile et restreint les informations retournées.  Cela peut provoquer des problèmes de sécurité si le code de confiance partielle peut lire ces informations. Cependant, le risque est atténué par le fait de ne pas accorder <xref:System.Security.Permissions.UIPermission>.  L'assertion de confiance totale doit être utilisée avec modération et uniquement quand vous êtes sûr de ne pas autoriser du code à passer du niveau de confiance partielle au niveau de confiance totale.  En règle générale, n'appelez pas de code non fiable dans la même fonction et après avoir appelé une assertion de confiance totale.  Nous vous conseillons de toujours rétablir l'assertion quand vous avez terminé de l'utiliser.  
+     <span data-ttu-id="f7737-171">L'assertion de confiance totale permet d'obtenir les informations détaillées de <xref:System.Security.SecurityException>.</span><span class="sxs-lookup"><span data-stu-id="f7737-171">The full-trust assert is used to obtain extended information from the <xref:System.Security.SecurityException>.</span></span> <span data-ttu-id="f7737-172">Sans <xref:System.Security.PermissionSet.Assert%2A>, la méthode <xref:System.Security.SecurityException.ToString%2A> de <xref:System.Security.SecurityException> détecte que du code de niveau de confiance partielle se trouve sur la pile et restreint les informations retournées.</span><span class="sxs-lookup"><span data-stu-id="f7737-172">Without the <xref:System.Security.PermissionSet.Assert%2A>, the <xref:System.Security.SecurityException.ToString%2A> method of <xref:System.Security.SecurityException> will discover that there is partially trusted code on the stack and will restrict the information returned.</span></span> <span data-ttu-id="f7737-173">Cela peut provoquer des problèmes de sécurité si le code de confiance partielle peut lire ces informations. Cependant, le risque est atténué par le fait de ne pas accorder <xref:System.Security.Permissions.UIPermission>.</span><span class="sxs-lookup"><span data-stu-id="f7737-173">This could cause security issues if the partial-trust code could read that information, but the risk is mitigated by not granting <xref:System.Security.Permissions.UIPermission>.</span></span> <span data-ttu-id="f7737-174">L'assertion de confiance totale doit être utilisée avec modération et uniquement quand vous êtes sûr de ne pas autoriser du code à passer du niveau de confiance partielle au niveau de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-174">The full-trust assert should be used sparingly and only when you are sure that you are not allowing partial-trust code to elevate to full trust.</span></span> <span data-ttu-id="f7737-175">En règle générale, n'appelez pas de code non fiable dans la même fonction et après avoir appelé une assertion de confiance totale.</span><span class="sxs-lookup"><span data-stu-id="f7737-175">As a rule, do not call code you do not trust in the same function and after you called an assert for full trust.</span></span> <span data-ttu-id="f7737-176">Nous vous conseillons de toujours rétablir l'assertion quand vous avez terminé de l'utiliser.</span><span class="sxs-lookup"><span data-stu-id="f7737-176">It is good practice to always revert the assert when you have finished using it.</span></span>  
   
-## Exemple  
- L'exemple suivant implémente la procédure de la section précédente.  Dans l'exemple, un projet nommé `Sandboxer` dans une solution Visual Studio contient également un projet nommé `UntrustedCode`, qui implémente la classe `UntrustedClass`.  Ce scénario suppose que vous avez téléchargé un assembly de bibliothèque qui contient une méthode censée retourner la valeur `true` ou `false` pour indiquer si le nombre que vous avez fourni est un nombre de Fibonacci.  À la place, la méthode essaie de lire un fichier de votre ordinateur.  L'exemple suivant illustre le code non fiable.  
+## <a name="example"></a><span data-ttu-id="f7737-177">Exemple</span><span class="sxs-lookup"><span data-stu-id="f7737-177">Example</span></span>  
+ <span data-ttu-id="f7737-178">L'exemple suivant implémente la procédure de la section précédente.</span><span class="sxs-lookup"><span data-stu-id="f7737-178">The following example implements the procedure in the previous section.</span></span> <span data-ttu-id="f7737-179">Dans l'exemple, un projet nommé `Sandboxer` dans une solution Visual Studio contient également un projet nommé `UntrustedCode`, qui implémente la classe `UntrustedClass`.</span><span class="sxs-lookup"><span data-stu-id="f7737-179">In the example, a project named `Sandboxer` in a Visual Studio solution also contains a project named `UntrustedCode`, which implements the class `UntrustedClass`.</span></span> <span data-ttu-id="f7737-180">Ce scénario suppose que vous avez téléchargé un assembly de bibliothèque qui contient une méthode censée retourner la valeur `true` ou `false` pour indiquer si le nombre que vous avez fourni est un nombre de Fibonacci.</span><span class="sxs-lookup"><span data-stu-id="f7737-180">This scenario assumes that you have downloaded a library assembly containing a method that is expected to return `true` or `false` to indicate whether the number you provided is a Fibonacci number.</span></span> <span data-ttu-id="f7737-181">À la place, la méthode essaie de lire un fichier de votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="f7737-181">Instead, the method attempts to read a file from your computer.</span></span> <span data-ttu-id="f7737-182">L'exemple suivant illustre le code non fiable.</span><span class="sxs-lookup"><span data-stu-id="f7737-182">The following example shows the untrusted code.</span></span>  
   
 ```  
 using System;  
@@ -213,7 +206,7 @@ namespace UntrustedCode
 }  
 ```  
   
- L'exemple suivant montre le code de l'application `Sandboxer` qui exécute le code non fiable.  
+ <span data-ttu-id="f7737-183">L'exemple suivant montre le code de l'application `Sandboxer` qui exécute le code non fiable.</span><span class="sxs-lookup"><span data-stu-id="f7737-183">The following example shows the `Sandboxer` application code that executes the untrusted code.</span></span>  
   
 ```  
 using System;  
@@ -286,8 +279,7 @@ class Sandboxer : MarshalByRefObject
         }  
     }  
 }  
-  
 ```  
   
-## Voir aussi  
- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="f7737-184">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f7737-184">See Also</span></span>  
+ [<span data-ttu-id="f7737-185">Instructions de codage sécurisé</span><span class="sxs-lookup"><span data-stu-id="f7737-185">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

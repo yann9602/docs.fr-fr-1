@@ -7,55 +7,48 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b17fc74b2143f7307316a167330d06c87b9d4c3d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3928c6b3690bd03a4365d21d5fbf2f4bd2a4f457
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="peer-to-peer-collaboration"></a>Collaboration pair à pair
-Les réseaux pair à pair utilisent des ordinateurs relativement puissants (des ordinateurs personnels) situés à la périphérie d’Internet et qui permettent davantage que de simples tâches de calcul basées sur le client. L’ordinateur personnel moderne dispose d’un processeur très rapide, d’une très grande mémoire et d’un disque dur volumineux. Cependant, aucun d’eux n’est entièrement utilisé lors de l’exécution des tâches informatiques courantes, comme l’envoi et la réception d’e-mails ou la navigation web. Les PC modernes peuvent facilement jouer le rôle de client et de serveur (pair) pour de nombreux types d’applications.  
+# <a name="peer-to-peer-collaboration"></a><span data-ttu-id="a6e7f-102">Collaboration pair à pair</span><span class="sxs-lookup"><span data-stu-id="a6e7f-102">Peer-to-Peer Collaboration</span></span>
+<span data-ttu-id="a6e7f-103">Les réseaux pair à pair utilisent des ordinateurs relativement puissants (des ordinateurs personnels) situés à la périphérie d’Internet et qui permettent davantage que de simples tâches de calcul basées sur le client.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-103">Peer-to-peer networking is the utilization of the relatively powerful computers (personal computers) that exist at the edge of the Internet for more than just client-based computing tasks.</span></span> <span data-ttu-id="a6e7f-104">L’ordinateur personnel moderne dispose d’un processeur très rapide, d’une très grande mémoire et d’un disque dur volumineux. Cependant, aucun d’eux n’est entièrement utilisé lors de l’exécution des tâches informatiques courantes, comme l’envoi et la réception d’e-mails ou la navigation web.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-104">The modern personal computer (PC) has a very fast processor, vast memory, and a large hard disk, none of which are being fully utilized when performing common computing tasks such as e-mail and Web browsing.</span></span> <span data-ttu-id="a6e7f-105">Les PC modernes peuvent facilement jouer le rôle de client et de serveur (pair) pour de nombreux types d’applications.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-105">The modern PC can easily act as both a client and server (a peer) for many types of applications.</span></span>  
   
--   L’infrastructure de collaboration pair à pair est une version simplifiée de l’infrastructure pair à pair de Microsoft Windows qui s’appuie sur le service Voisinage immédiat de Windows Vista et des plateformes ultérieures. Elle est particulièrement adaptée pour les applications pair à pair situées dans un sous-réseau pour lequel est exécuté le service Voisinage immédiat. Toutefois, elle peut également être utilisée pour les points de terminaison ou les contacts Internet. Elle comprend le Gestionnaire de contacts commun qui est utilisé par Live Messenger et les autres applications Live pour déterminer la présence, la disponibilité et les points de terminaison des contacts.  
-  
--  
-  
-## <a name="collaboration-applications"></a>Applications de collaboration  
- Une application de collaboration pair à pair classique effectue les étapes suivantes :  
-  
--   Le pair détermine l’identité d’un pair qui souhaite héberger une session de collaboration.  
-  
--   Une demande d’hébergement de session est envoyée, et le pair hôte accepte de gérer les activités de collaboration.  
-  
--   L’hôte invite les contacts du sous-réseau (y compris le demandeur) à une session.  
-  
--   Tous les pairs qui souhaitent collaborer peuvent ajouter l’hôte dans leur gestionnaire de contacts.  
-  
--   La plupart des pairs envoient une réponse à l’invitation du pair hôte (accepter/décliner) en temps voulu.  
-  
--   Tous les pairs qui souhaitent collaborer s’inscrivent au pair hôte.  
-  
--   Lorsque les pairs réalisent leur première activité de collaboration, le pair hôte peut ajouter des pairs distants dans son gestionnaire de contacts. Il traite également toutes les réponses à l’invitation pour déterminer qui a accepté, qui a décliné, et qui n’a pas répondu.  Il peut annuler l’invitation pour ceux qui n’ont pas répondu, ou effectuer une autre activité.  
-  
--   À ce stade, le pair hôte peut démarrer une session de collaboration avec tous les pairs invités, ou inscrire une application dans l’infrastructure de collaboration.  Les applications P2P utilisent l’infrastructure de collaboration pair à pair et l’espace de noms <xref:System.Net.PeerToPeer.Collaboration> afin de coordonner les communications des jeux, des forums, des téléconférences et d’autres applications de présence sans serveur.  
+-   <span data-ttu-id="a6e7f-106">L’infrastructure de collaboration pair à pair est une version simplifiée de l’infrastructure pair à pair de Microsoft Windows qui s’appuie sur le service Voisinage immédiat de Windows Vista et des plateformes ultérieures.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-106">The Peer-to-Peer Collaboration Infrastructure is a simplified implementation of the Microsoft Windows Peer-to-Peer Infrastructure that leverages the People Near Me service in Windows Vista and later platforms.</span></span> <span data-ttu-id="a6e7f-107">Elle est particulièrement adaptée pour les applications pair à pair situées dans un sous-réseau pour lequel est exécuté le service Voisinage immédiat. Toutefois, elle peut également être utilisée pour les points de terminaison ou les contacts Internet.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-107">It is best used for peer-enabled applications within a subnet for which the People Near Me service operates, although it can service internet endpoints or contacts as well.</span></span> <span data-ttu-id="a6e7f-108">Elle comprend le Gestionnaire de contacts commun qui est utilisé par Live Messenger et les autres applications Live pour déterminer la présence, la disponibilité et les points de terminaison des contacts.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-108">It incorporates the common Contact Manager that is used by Live Messenger and other Live-aware applications to determine contact endpoints, availability, and presence.</span></span>  
   
 -  
   
-## <a name="peer-to-peer-networking-security"></a>Sécurité des réseaux pair à pair  
- Dans un domaine Active Directory, les contrôleurs de domaine fournissent des services d’authentification à l’aide de Kerberos. Dans un environnement pair à pair sans serveur, les pairs doivent fournir leur propre authentification. Pour les réseaux pair à pair, n’importe quel nœud peut servir d’autorité de certification. De cette façon, il n’est plus nécessaire qu’un certificat racine se trouve dans le magasin racine approuvé de chaque pair. L’authentification est assurée à l’aide de certificats auto-signés, au format X.509. Il s’agit des certificats qui sont créés par chaque pair, qui génère la paire clé publique/clé privée, et le certificat qui est signé à l’aide de la clé privée. Le certificat auto-signé est utilisé pour l’authentification et pour fournir des informations sur l’entité pair. Comme l’authentification X.509, l’authentification de réseau pair à pair s’appuie sur une chaîne de certificats liés à une même clé publique approuvée.  
+## <a name="collaboration-applications"></a><span data-ttu-id="a6e7f-109">Applications de collaboration</span><span class="sxs-lookup"><span data-stu-id="a6e7f-109">Collaboration Applications</span></span>  
+ <span data-ttu-id="a6e7f-110">Une application de collaboration pair à pair classique effectue les étapes suivantes :</span><span class="sxs-lookup"><span data-stu-id="a6e7f-110">A typical peer-to-peer collaboration application is comprised of the following steps:</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.PeerToPeer.Collaboration>   
- [À propos de l’espace de noms System.Net.PeerToPeer.Collaboration](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)
-
+-   <span data-ttu-id="a6e7f-111">Le pair détermine l’identité d’un pair qui souhaite héberger une session de collaboration.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-111">Peer determines the identity of a peer who is interested in hosting a collaboration session</span></span>  
+  
+-   <span data-ttu-id="a6e7f-112">Une demande d’hébergement de session est envoyée, et le pair hôte accepte de gérer les activités de collaboration.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-112">A request to host a session is sent, somehow, and the host peer agrees to manage collaboration activity.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-113">L’hôte invite les contacts du sous-réseau (y compris le demandeur) à une session.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-113">The host invites contacts on the subnet (including the requestor) to a session.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-114">Tous les pairs qui souhaitent collaborer peuvent ajouter l’hôte dans leur gestionnaire de contacts.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-114">All peers who want to collaborate may add the host to their contact managers.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-115">La plupart des pairs envoient une réponse à l’invitation du pair hôte (accepter/décliner) en temps voulu.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-115">Most peers will send invitation responses, whether accepted or declined, back to the host peer in a timely fashion.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-116">Tous les pairs qui souhaitent collaborer s’inscrivent au pair hôte.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-116">All peers who want to collaborate will subscribe to the host peer.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-117">Lorsque les pairs réalisent leur première activité de collaboration, le pair hôte peut ajouter des pairs distants dans son gestionnaire de contacts.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-117">While the peers are performing their initial collaboration activity, the host peer may add remote peers to its contact manager.</span></span> <span data-ttu-id="a6e7f-118">Il traite également toutes les réponses à l’invitation pour déterminer qui a accepté, qui a décliné, et qui n’a pas répondu.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-118">It also processes all invitation responses to determine who has accepted, who has declined, and who has not answered.</span></span>  <span data-ttu-id="a6e7f-119">Il peut annuler l’invitation pour ceux qui n’ont pas répondu, ou effectuer une autre activité.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-119">It may cancel invitations to those who have not answered, or perform some other activity.</span></span>  
+  
+-   <span data-ttu-id="a6e7f-120">À ce stade, le pair hôte peut démarrer une session de collaboration avec tous les pairs invités, ou inscrire une application dans l’infrastructure de collaboration.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-120">At this point, the host peer can start a collaboration session with all invited peers, or register an application with the collaboration infrastructure.</span></span>  <span data-ttu-id="a6e7f-121">Les applications P2P utilisent l’infrastructure de collaboration pair à pair et l’espace de noms <xref:System.Net.PeerToPeer.Collaboration> afin de coordonner les communications des jeux, des forums, des téléconférences et d’autres applications de présence sans serveur.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-121">P2P applications use the Peer-to-Peer Collaboration Infrastructure and the <xref:System.Net.PeerToPeer.Collaboration> namespace to coordinate communications for games, bulletin boards, conferencing, and other serverless presence applications.</span></span>  
+  
+-  
+  
+## <a name="peer-to-peer-networking-security"></a><span data-ttu-id="a6e7f-122">Sécurité des réseaux pair à pair</span><span class="sxs-lookup"><span data-stu-id="a6e7f-122">Peer-to-Peer Networking Security</span></span>  
+ <span data-ttu-id="a6e7f-123">Dans un domaine Active Directory, les contrôleurs de domaine fournissent des services d’authentification à l’aide de Kerberos.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-123">In an Active Directory domain, domain controllers provide authentication services using Kerberos.</span></span> <span data-ttu-id="a6e7f-124">Dans un environnement pair à pair sans serveur, les pairs doivent fournir leur propre authentification.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-124">In a serverless peer environment, the peers must provide their own authentication.</span></span> <span data-ttu-id="a6e7f-125">Pour les réseaux pair à pair, n’importe quel nœud peut servir d’autorité de certification. De cette façon, il n’est plus nécessaire qu’un certificat racine se trouve dans le magasin racine approuvé de chaque pair.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-125">For Peer-to-Peer Networking, any node can act as a CA, removing the requirement of a root certificate in each peer's trusted root store.</span></span> <span data-ttu-id="a6e7f-126">L’authentification est assurée à l’aide de certificats auto-signés, au format X.509.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-126">Authentication is provided using self-signed certificates, formatted as X.509 certificates.</span></span> <span data-ttu-id="a6e7f-127">Il s’agit des certificats qui sont créés par chaque pair, qui génère la paire clé publique/clé privée, et le certificat qui est signé à l’aide de la clé privée.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-127">These are certificates that are created by each peer, which generates the public key/private key pair and the certificate that is signed using the private key.</span></span> <span data-ttu-id="a6e7f-128">Le certificat auto-signé est utilisé pour l’authentification et pour fournir des informations sur l’entité pair.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-128">The self-signed certificate is used for authentication and to provide information about the peer entity.</span></span> <span data-ttu-id="a6e7f-129">Comme l’authentification X.509, l’authentification de réseau pair à pair s’appuie sur une chaîne de certificats liés à une même clé publique approuvée.</span><span class="sxs-lookup"><span data-stu-id="a6e7f-129">Like X.509 authentication, peer networking authentication relies upon a chain of certificates tracing back to a public key that is trusted.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="a6e7f-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a6e7f-130">See Also</span></span>  
+ <xref:System.Net.PeerToPeer.Collaboration>  
+ [<span data-ttu-id="a6e7f-131">À propos de l’espace de noms System.Net.PeerToPeer.Collaboration</span><span class="sxs-lookup"><span data-stu-id="a6e7f-131">About the System.Net.PeerToPeer.Collaboration Namespace</span></span>](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)

@@ -1,71 +1,77 @@
 ---
-title: "Comment&#160;: appeler des op&#233;rations de service WCF de fa&#231;on asynchrone | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : appeler des opérations de service WCF de façon asynchrone"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f8f1419deb60b1f68e47c26c0edd5523a9d23768
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: appeler des op&#233;rations de service WCF de fa&#231;on asynchrone
-Cette rubrique présente comment un client peut accéder de façon asynchrone à une opération de service.Le service dans cette rubrique implémente l'interface `ICalculator`.Le client peut appeler les opérations sur cette interface de manière asynchrone à l'aide du modèle d'appel asynchrone commandé par événement.\(Pour plus d'informations sur le modèle d'appel asynchrone basé sur des événements, consultez [Programmation multithread avec le modèle asynchrone basé sur des événements](http://go.microsoft.com/fwlink/?LinkId=248184)\).Pour obtenir un exemple illustrant comment implémenter une opération de façon asynchrone dans un service, consultez [Comment : implémenter une opération de service asynchrone](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md).Pour plus d'informations sur les opérations synchrones et asynchrones, consultez [Opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+# <a name="how-to-call-wcf-service-operations-asynchronously"></a><span data-ttu-id="30cc8-102">Comment : appeler des opérations de service WCF de façon asynchrone</span><span class="sxs-lookup"><span data-stu-id="30cc8-102">How to: Call WCF Service Operations Asynchronously</span></span>
+<span data-ttu-id="30cc8-103">Cette rubrique présente comment un client peut accéder de façon asynchrone à une opération de service.</span><span class="sxs-lookup"><span data-stu-id="30cc8-103">This topic covers how a client can access a service operation asynchronously.</span></span> <span data-ttu-id="30cc8-104">Le service dans cette rubrique implémente l'interface `ICalculator`.</span><span class="sxs-lookup"><span data-stu-id="30cc8-104">The service in this topic implements the `ICalculator` interface.</span></span> <span data-ttu-id="30cc8-105">Le client peut appeler les opérations sur cette interface de manière asynchrone à l'aide du modèle d'appel asynchrone commandé par événement.</span><span class="sxs-lookup"><span data-stu-id="30cc8-105">The client can call the operations on this interface asynchronously by using the event-driven asynchronous calling model.</span></span> <span data-ttu-id="30cc8-106">(Pour plus d’informations sur le modèle d’appel asynchrone basé sur des événements, consultez [programmation multithread avec le modèle asynchrone basé sur événement](http://go.microsoft.com/fwlink/?LinkId=248184)).</span><span class="sxs-lookup"><span data-stu-id="30cc8-106">(For more information about the event-based asynchronous calling model, see [Multithreaded Programming with the Event-based Asynchronous Pattern](http://go.microsoft.com/fwlink/?LinkId=248184)).</span></span> <span data-ttu-id="30cc8-107">Pour obtenir un exemple qui montre comment implémenter une opération de façon asynchrone dans un service, consultez [Comment : implémenter une opération de Service asynchrone](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md).</span><span class="sxs-lookup"><span data-stu-id="30cc8-107">For an example that shows how to implement an operation asynchronously in a service, see [How to: Implement an Asynchronous Service Operation](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md).</span></span> <span data-ttu-id="30cc8-108">Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [synchrone et asynchrone des opérations](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).</span><span class="sxs-lookup"><span data-stu-id="30cc8-108">For more information about synchronous and asynchronous operations, see [Synchronous and Asynchronous Operations](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).</span></span>  
   
 > [!NOTE]
->  Le modèle d'appel asynchrone commandé par événement n'est pas pris en charge lorsqu'il utilise un <xref:System.ServiceModel.ChannelFactory%601>.Pour plus d'informations sur les appels asynchrones à l'aide de <xref:System.ServiceModel.ChannelFactory%601>, consultez [Comment : appeler des opérations de façon asynchrone à l'aide d'une fabrication de canal](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md).  
+>  <span data-ttu-id="30cc8-109">Le modèle d'appel asynchrone commandé par événement n'est pas pris en charge lorsqu'il utilise un <xref:System.ServiceModel.ChannelFactory%601>.</span><span class="sxs-lookup"><span data-stu-id="30cc8-109">The event-driven asynchronous calling model is not supported when using a <xref:System.ServiceModel.ChannelFactory%601>.</span></span> <span data-ttu-id="30cc8-110">Pour plus d’informations sur les appels asynchrones à l’aide de la <xref:System.ServiceModel.ChannelFactory%601>, consultez [Comment : appeler opérations de façon asynchrone en utilisant une fabrique de canaux](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md).</span><span class="sxs-lookup"><span data-stu-id="30cc8-110">For information about making asynchronous calls using the <xref:System.ServiceModel.ChannelFactory%601>, see [How to: Call Operations Asynchronously Using a Channel Factory](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md).</span></span>  
   
-## Procédure  
+## <a name="procedure"></a><span data-ttu-id="30cc8-111">Procédure</span><span class="sxs-lookup"><span data-stu-id="30cc8-111">Procedure</span></span>  
   
-#### Pour appeler des opérations de service WCF de façon asynchrone  
+#### <a name="to-call-wcf-service-operations-asynchronously"></a><span data-ttu-id="30cc8-112">Pour appeler des opérations de service WCF de façon asynchrone</span><span class="sxs-lookup"><span data-stu-id="30cc8-112">To call WCF service operations asynchronously</span></span>  
   
-1.  Exécutez l'outil [Outil Service Model Metadata Tool \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) en définissant les deux options `/async` et `/tcv:Version35` comme illustré dans la commande suivante.  
+1.  <span data-ttu-id="30cc8-113">Exécuter la [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) outil à la fois avec la `/async` et le `/tcv:Version35` commande options ensemble, comme indiqué dans la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="30cc8-113">Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool with both the `/async` and the `/tcv:Version35` command options together as shown in the following command.</span></span>  
   
     ```  
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   
-     Cette opération génère en plus des opérations asynchrones basées sur les délégués standard et des opérations synchrones, un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui contient :  
+     <span data-ttu-id="30cc8-114">Cette opération génère en plus des opérations asynchrones basées sur les délégués standard et des opérations synchrones, un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui contient :</span><span class="sxs-lookup"><span data-stu-id="30cc8-114">This generates, in addition to the synchronous and standard delegate-based asynchronous operations, a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client class that contains:</span></span>  
   
-    -   Deux opérations \<`operationName`\>`Async` destinées à l'approche de l'appel asynchrone basé sur les événements.Par exemple :  
+    -   <span data-ttu-id="30cc8-115">Deux <`operationName` > `Async` operations pour une utilisation avec l’approche appel asynchrone basé sur des événements.</span><span class="sxs-lookup"><span data-stu-id="30cc8-115">Two <`operationName`>`Async` operations for use with the event-based asynchronous calling approach.</span></span> <span data-ttu-id="30cc8-116">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30cc8-116">For example:</span></span>  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    -   Les événements terminés d'opérations de la forme \<`operationName`\>`Completed` destinés à l'approche de l'appel asynchrone basé sur les événements.Par exemple :  
+    -   <span data-ttu-id="30cc8-117">Événements d’opération s’est terminée sous la forme <`operationName` > `Completed` pour une utilisation avec l’approche appel asynchrone basé sur des événements.</span><span class="sxs-lookup"><span data-stu-id="30cc8-117">Operation completed events of the form <`operationName`>`Completed` for use with the event-based asynchronous calling approach.</span></span> <span data-ttu-id="30cc8-118">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30cc8-118">For example:</span></span>  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    -   Les types <xref:System.EventArgs?displayProperty=fullName> pour chaque opération \(de la forme \<`operationName`\>`CompletedEventArgs`\) destinés à l'approche de l'appel asynchrone basé sur les événements.Par exemple :  
+    -   <span data-ttu-id="30cc8-119"><xref:System.EventArgs?displayProperty=nameWithType>types pour chaque opération (sous la forme <`operationName`>`CompletedEventArgs`) pour une utilisation avec l’approche appel asynchrone basé sur des événements.</span><span class="sxs-lookup"><span data-stu-id="30cc8-119"><xref:System.EventArgs?displayProperty=nameWithType> types for each operation (of the form <`operationName`>`CompletedEventArgs`) for use with the event-based asynchronous calling approach.</span></span> <span data-ttu-id="30cc8-120">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30cc8-120">For example:</span></span>  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
   
-2.  Dans l'application d'appel, créez une méthode de rappel à appeler au terme de l'opération asynchrone en vous conformant à l'exemple de code suivant.  
+2.  <span data-ttu-id="30cc8-121">Dans l'application d'appel, créez une méthode de rappel à appeler au terme de l'opération asynchrone en vous conformant à l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="30cc8-121">In the calling application, create a callback method to be called when the asynchronous operation is complete, as shown in the following sample code.</span></span>  
   
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3.  Avant d'appeler l'opération, utilisez un nouveau <xref:System.EventHandler%601?displayProperty=fullName> générique de type \<`operationName`\>`EventArgs` pour ajouter la méthode de gestionnaire d'événements \(créée à l'étape précédente\) à l'événement \<`operationName`\>`Completed`.Ensuite, appelez la méthode \<`operationName`\>`Async`.Par exemple :  
+3.  <span data-ttu-id="30cc8-122">Avant d’appeler l’opération, utilisez un nouveau générique <xref:System.EventHandler%601?displayProperty=nameWithType> de type <`operationName` > `EventArgs` pour ajouter la méthode de gestionnaire (créée à l’étape précédente) à la <`operationName` > `Completed` événement.</span><span class="sxs-lookup"><span data-stu-id="30cc8-122">Prior to calling the operation, use a new generic <xref:System.EventHandler%601?displayProperty=nameWithType> of type <`operationName`>`EventArgs` to add the handler method (created in the preceding step) to the <`operationName`>`Completed` event.</span></span> <span data-ttu-id="30cc8-123">Appelez ensuite la <`operationName` > `Async` (méthode).</span><span class="sxs-lookup"><span data-stu-id="30cc8-123">Then call the <`operationName`>`Async` method.</span></span> <span data-ttu-id="30cc8-124">Exemple :</span><span class="sxs-lookup"><span data-stu-id="30cc8-124">For example:</span></span>  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="30cc8-125">Exemple</span><span class="sxs-lookup"><span data-stu-id="30cc8-125">Example</span></span>  
   
 > [!NOTE]
->  Les règles de conception pour le modèle asynchrone basé sur les événements stipulent que si plusieurs valeurs sont retournées, une valeur est retournée comme la propriété `Result` et les autres sont retournées comme les propriétés sur l'objet <xref:System.EventArgs>.Il en découle que si un client importe des métadonnées à l'aide des options de commande asynchrone basées sur les événements et que l'opération retourne plusieurs valeurs, l'objet <xref:System.EventArgs> par défaut retourne une valeur comme la propriété `Result` et le reste sont des propriétés de l'objet <xref:System.EventArgs>. Pour recevoir l'objet message comme la propriété `Result` et que les valeurs retournées sur cet objet soient des propriétés, utilisez l'option de commande `/messageContract`.Cette opération génère une signature qui retourne le message de réponse comme la propriété `Result` sur l'objet <xref:System.EventArgs>.Toutes les valeurs de retour internes sont ensuite des propriétés de l'objet de message de réponse.  
+>  <span data-ttu-id="30cc8-126">Les règles de conception pour le modèle asynchrone basé sur les événements stipulent que si plusieurs valeurs sont retournées, une valeur est retournée comme la propriété `Result` et les autres sont retournées comme les propriétés sur l'objet <xref:System.EventArgs>.</span><span class="sxs-lookup"><span data-stu-id="30cc8-126">The design guidelines for the event-based asynchronous model state that if more than one value is returned, one value is returned as the `Result` property and the others are returned as properties on the <xref:System.EventArgs> object.</span></span> <span data-ttu-id="30cc8-127">Il en découle que si un client importe des métadonnées à l'aide des options de commande asynchrone basées sur les événements et que l'opération retourne plusieurs valeurs, l'objet <xref:System.EventArgs> par défaut retourne une valeur comme la propriété `Result` et le reste sont des propriétés de l'objet <xref:System.EventArgs>. Pour recevoir l'objet message comme la propriété `Result` et que les valeurs retournées sur cet objet soient des propriétés, utilisez l'option de commande `/messageContract`.</span><span class="sxs-lookup"><span data-stu-id="30cc8-127">One result of this is that if a client imports metadata using the event-based asynchronous command options and the operation returns more than one value, the default <xref:System.EventArgs> object returns one value as the `Result` property and the remainder are properties of the <xref:System.EventArgs> object.If you want to receive the message object as the `Result` property and have the returned values as properties on that object, use the `/messageContract` command option.</span></span> <span data-ttu-id="30cc8-128">Cette opération génère une signature qui retourne le message de réponse comme la propriété `Result` sur l'objet <xref:System.EventArgs>.</span><span class="sxs-lookup"><span data-stu-id="30cc8-128">This generates a signature that returns the response message as the `Result` property on the <xref:System.EventArgs> object.</span></span> <span data-ttu-id="30cc8-129">Toutes les valeurs de retour internes sont ensuite des propriétés de l'objet de message de réponse.</span><span class="sxs-lookup"><span data-stu-id="30cc8-129">All internal return values are then properties of the response message object.</span></span>  
   
  [!code-csharp[EventAsync#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#6)]
  [!code-vb[EventAsync#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#6)]  
   
-## Voir aussi  
- [Comment : implémenter une opération de service asynchrone](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)
+## <a name="see-also"></a><span data-ttu-id="30cc8-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="30cc8-130">See Also</span></span>  
+ [<span data-ttu-id="30cc8-131">Guide pratique pour implémenter une opération de service asynchrone</span><span class="sxs-lookup"><span data-stu-id="30cc8-131">How to: Implement an Asynchronous Service Operation</span></span>](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)

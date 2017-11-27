@@ -1,59 +1,60 @@
 ---
-title: "TreeView, contr&#244;le (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "éléments de liste de cases à cocher, contrôles Windows Forms"
-  - "contrôles de liste, Windows Forms"
-  - "éléments de liste, contrôles Windows Forms qui s'affichent"
-  - "TreeView (contrôle Windows Forms)"
+title: "TreeView, contrôle (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- checked list items [Windows Forms], Windows Forms controls
+- list controls [Windows Forms], Windows Forms
+- list items [Windows Forms], Windows Forms controls that display
+- TreeView control [Windows Forms]
 ms.assetid: 879438b4-4eac-45c6-b345-0229c9b21ab0
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6660cf0c7de11058aeb70c7f61cd3239dd7f0f04
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# TreeView, contr&#244;le (Windows Forms)
-Le contrôle Windows Forms `TreeView` affiche une hiérarchie de nœuds, un peu comme les fichiers et dossiers sont affichés dans le volet gauche de l'Explorateur Windows du système d'exploitation Windows.  
+# <a name="treeview-control-windows-forms"></a><span data-ttu-id="62c96-102">TreeView, contrôle (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="62c96-102">TreeView Control (Windows Forms)</span></span>
+<span data-ttu-id="62c96-103">Le contrôle Windows Forms `TreeView` affiche une hiérarchie de nœuds, un peu comme les fichiers et dossiers sont affichés dans le volet gauche de l'Explorateur Windows du système d'exploitation Windows.</span><span class="sxs-lookup"><span data-stu-id="62c96-103">The Windows Forms `TreeView` control displays a hierarchy of nodes, like the way files and folders are displayed in the left pane of the Windows Explorer feature in Windows operating systems.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble du contrôle TreeView](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  
- Décrit ce contrôle et ses principales fonctionnalités et propriétés.  
+## <a name="in-this-section"></a><span data-ttu-id="62c96-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="62c96-104">In This Section</span></span>  
+ [<span data-ttu-id="62c96-105">Vue d’ensemble du contrôle TreeView</span><span class="sxs-lookup"><span data-stu-id="62c96-105">TreeView Control Overview</span></span>](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  
+ <span data-ttu-id="62c96-106">Décrit ce contrôle et ses principales fonctionnalités et propriétés.</span><span class="sxs-lookup"><span data-stu-id="62c96-106">Explains what the control is and its key features and properties.</span></span>  
   
- [Comment : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)  
- Fournit des instructions pour ajouter et supprimer des nœuds dans une arborescence.  
+ [<span data-ttu-id="62c96-107">Guide pratique pour ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="62c96-107">How to: Add and Remove Nodes with the Windows Forms TreeView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)  
+ <span data-ttu-id="62c96-108">Fournit des instructions pour ajouter et supprimer des nœuds dans une arborescence.</span><span class="sxs-lookup"><span data-stu-id="62c96-108">Gives instructions for adding and remove nodes from a tree view.</span></span>  
   
- [Comment : ajouter des informations personnalisées à un contrôle TreeView ou ListView \(Windows Forms\)](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)  
- Explique comment dériver un élément dans un affichage de liste ou un nœud dans une arborescence pour ajouter les champs, les méthodes ou les constructeurs dont vous avez besoin.  
+ [<span data-ttu-id="62c96-109">Guide pratique pour ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="62c96-109">How to: Add Custom Information to a TreeView or ListView Control (Windows Forms)</span></span>](../../../../docs/framework/winforms/controls/add-custom-information-to-a-treeview-or-listview-control-wf.md)  
+ <span data-ttu-id="62c96-110">Explique comment dériver un élément dans un affichage de liste ou un nœud dans une arborescence pour ajouter les champs, les méthodes ou les constructeurs dont vous avez besoin.</span><span class="sxs-lookup"><span data-stu-id="62c96-110">Gives instructions for deriving an item in a list view or a node in a tree view to add any fields, methods, or constructors you need.</span></span>  
   
- [Comment : identifier le nœud de TreeView sur lequel un clic est effectué](../../../../docs/framework/winforms/controls/how-to-determine-which-treeview-node-was-clicked-windows-forms.md)  
- Explique comment déterminer sur quel nœud l'utilisateur a cliqué dans une arborescence, pour que l'application puisse réagir de façon appropriée.  
+ [<span data-ttu-id="62c96-111">Guide pratique pour identifier le nœud de TreeView sur lequel un clic est effectué</span><span class="sxs-lookup"><span data-stu-id="62c96-111">How to: Determine Which TreeView Node Was Clicked</span></span>](../../../../docs/framework/winforms/controls/how-to-determine-which-treeview-node-was-clicked-windows-forms.md)  
+ <span data-ttu-id="62c96-112">Explique comment déterminer sur quel nœud l’utilisateur a cliqué dans une arborescence, pour que l’application puisse réagir de façon appropriée.</span><span class="sxs-lookup"><span data-stu-id="62c96-112">Gives instructions for determining which node in a tree view was clicked, so the application can respond appropriately.</span></span>  
   
- [Comment : itérer au sein de tous les nœuds d'un contrôle TreeView Windows Forms](http://msdn.microsoft.com/fr-fr/427f8928-ebcf-4beb-887f-695b905d5134)  
- Explique comment examiner chaque nœud dans une arborescence.  
+ [<span data-ttu-id="62c96-113">Guide pratique pour itérer au sein de tous les nœuds d’un contrôle TreeView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="62c96-113">How to: Iterate Through All Nodes of a Windows Forms TreeView Control</span></span>](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)  
+ <span data-ttu-id="62c96-114">Explique comment examiner chaque nœud dans une arborescence.</span><span class="sxs-lookup"><span data-stu-id="62c96-114">Gives instructions for examining every node in a tree view.</span></span>  
   
- [Comment : définir des icônes pour le contrôle TreeView Windows Forms](http://msdn.microsoft.com/fr-fr/c14ddcc0-e5a6-4c21-a2d5-6799fd491781)  
- Explique comment afficher des icônes pour les nœuds d'une arborescence.  
+ [<span data-ttu-id="62c96-115">Guide pratique pour définir des icônes pour le contrôle TreeView Windows Forms</span><span class="sxs-lookup"><span data-stu-id="62c96-115">How to: Set Icons for the Windows Forms TreeView Control</span></span>](how-to-set-icons-for-the-windows-forms-treeview-control.md)  
+ <span data-ttu-id="62c96-116">Explique comment afficher des icônes pour les nœuds d’une arborescence.</span><span class="sxs-lookup"><span data-stu-id="62c96-116">Gives instructions for displaying icons for the nodes of a tree view.</span></span>  
   
- [Comment : attacher un menu contextuel à un nœud TreeView](../../../../docs/framework/winforms/controls/how-to-attach-a-shortcut-menu-to-a-treeview-node.md)  
- Montre comment ajouter un menu contextuel à un nœud d'arborescence.  
+ [<span data-ttu-id="62c96-117">Guide pratique pour attacher un menu contextuel à un nœud TreeView</span><span class="sxs-lookup"><span data-stu-id="62c96-117">How to: Attach a ShortCut Menu to a TreeView Node</span></span>](../../../../docs/framework/winforms/controls/how-to-attach-a-shortcut-menu-to-a-treeview-node.md)  
+ <span data-ttu-id="62c96-118">Montre comment ajouter un menu contextuel à un nœud d’arborescence.</span><span class="sxs-lookup"><span data-stu-id="62c96-118">Demonstrates how to add a shortcut menu to a tree view node.</span></span>  
   
- Consultez également [Comment : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms à l'aide du concepteur](http://msdn.microsoft.com/library/ms233651\(v=vs.110\)), [Comment : attacher un menu contextuel à un TreeNode à l'aide du concepteur](http://msdn.microsoft.com/library/ms171708\(v=vs.110\)).  
+ <span data-ttu-id="62c96-119">Consultez également [Comment : ajouter et supprimer des nœuds avec les Windows Forms TreeView contrôle à l’aide du concepteur](http://msdn.microsoft.com/library/ms233651\(v=vs.110\)), [Comment : attacher un Menu contextuel à un TreeNode à l’aide du concepteur](http://msdn.microsoft.com/library/ms171708\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="62c96-119">Also see [How to: Add and Remove Nodes with the Windows Forms TreeView Control Using the Designer](http://msdn.microsoft.com/library/ms233651\(v=vs.110\)), [How to: Attach a Shortcut Menu to a TreeNode Using the Designer](http://msdn.microsoft.com/library/ms171708\(v=vs.110\)).</span></span>  
   
-## Référence  
- Classe <xref:System.Windows.Forms.TreeView>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+## <a name="reference"></a><span data-ttu-id="62c96-120">Référence</span><span class="sxs-lookup"><span data-stu-id="62c96-120">Reference</span></span>  
+ <span data-ttu-id="62c96-121">Classe <xref:System.Windows.Forms.TreeView></span><span class="sxs-lookup"><span data-stu-id="62c96-121"><xref:System.Windows.Forms.TreeView> class</span></span>  
+ <span data-ttu-id="62c96-122">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="62c96-122">Describes this class and has links to all its members.</span></span>  
   
-## Rubriques connexes  
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.
+## <a name="related-sections"></a><span data-ttu-id="62c96-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="62c96-123">Related Sections</span></span>  
+ [<span data-ttu-id="62c96-124">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="62c96-124">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="62c96-125">Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.</span><span class="sxs-lookup"><span data-stu-id="62c96-125">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>

@@ -5,83 +5,81 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: bcf0e640e6b6b45ddb87070c7d6df2fa6dadc834
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-transform-incoming-claims"></a>Comment : transformer les revendications entrantes
-## <a name="applies-to"></a>S'applique à  
+# <a name="how-to-transform-incoming-claims"></a><span data-ttu-id="0cb21-102">Comment : transformer les revendications entrantes</span><span class="sxs-lookup"><span data-stu-id="0cb21-102">How To: Transform Incoming Claims</span></span>
+## <a name="applies-to"></a><span data-ttu-id="0cb21-103">S'applique à</span><span class="sxs-lookup"><span data-stu-id="0cb21-103">Applies To</span></span>  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+-   <span data-ttu-id="0cb21-104">Microsoft® Windows® Identity Foundation (WIF)</span><span class="sxs-lookup"><span data-stu-id="0cb21-104">Microsoft® Windows® Identity Foundation (WIF)</span></span>  
   
--   Web Forms ASP.NET®  
+-   <span data-ttu-id="0cb21-105">Web Forms ASP.NET®</span><span class="sxs-lookup"><span data-stu-id="0cb21-105">ASP.NET® Web Forms</span></span>  
   
-## <a name="summary"></a>Résumé  
- Cette procédure fournit des procédures pas à pas détaillées pour créer une application Web Forms ASP.NET simple prenant en charge les revendications et pour transformer les revendications entrantes. Elle fournit également des instructions pour tester l’application afin de vérifier que les revendications transformées sont présentées au moment de l’exécution de l’application.  
+## <a name="summary"></a><span data-ttu-id="0cb21-106">Résumé</span><span class="sxs-lookup"><span data-stu-id="0cb21-106">Summary</span></span>  
+ <span data-ttu-id="0cb21-107">Cette procédure fournit des procédures pas à pas détaillées pour créer une application Web Forms ASP.NET simple prenant en charge les revendications et pour transformer les revendications entrantes.</span><span class="sxs-lookup"><span data-stu-id="0cb21-107">This How-To provides detailed step-by-step procedures for creating a simple claims-aware ASP.NET Web Forms application and transforming incoming claims.</span></span> <span data-ttu-id="0cb21-108">Elle fournit également des instructions pour tester l’application afin de vérifier que les revendications transformées sont présentées au moment de l’exécution de l’application.</span><span class="sxs-lookup"><span data-stu-id="0cb21-108">It also provides instructions for how to test the application to verify that transformed claims are presented when the application is run.</span></span>  
   
-## <a name="contents"></a>Sommaire  
+## <a name="contents"></a><span data-ttu-id="0cb21-109">Sommaire</span><span class="sxs-lookup"><span data-stu-id="0cb21-109">Contents</span></span>  
   
--   Objectifs  
+-   <span data-ttu-id="0cb21-110">Objectifs</span><span class="sxs-lookup"><span data-stu-id="0cb21-110">Objectives</span></span>  
   
--   Vue d'ensemble  
+-   <span data-ttu-id="0cb21-111">Vue d'ensemble</span><span class="sxs-lookup"><span data-stu-id="0cb21-111">Overview</span></span>  
   
--   Résumé des étapes  
+-   <span data-ttu-id="0cb21-112">Résumé des étapes</span><span class="sxs-lookup"><span data-stu-id="0cb21-112">Summary of Steps</span></span>  
   
--   Étape 1 : Créer une application Web Forms ASP.NET simple  
+-   <span data-ttu-id="0cb21-113">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="0cb21-113">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
+-   <span data-ttu-id="0cb21-114">Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé</span><span class="sxs-lookup"><span data-stu-id="0cb21-114">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
   
--   Étape 3 : tester votre solution  
+-   <span data-ttu-id="0cb21-115">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="0cb21-115">Step 3 – Test Your Solution</span></span>  
   
-## <a name="objectives"></a>Objectifs  
+## <a name="objectives"></a><span data-ttu-id="0cb21-116">Objectifs</span><span class="sxs-lookup"><span data-stu-id="0cb21-116">Objectives</span></span>  
   
--   Configurer une application Web Forms ASP.NET pour l’authentification basée sur les revendications  
+-   <span data-ttu-id="0cb21-117">Configurer une application Web Forms ASP.NET pour l’authentification basée sur les revendications</span><span class="sxs-lookup"><span data-stu-id="0cb21-117">Configure an ASP.NET Web Forms application for claims-based authentication</span></span>  
   
--   Transformer les revendications entrantes en ajoutant une revendication de rôle d’administrateur (Administrator)  
+-   <span data-ttu-id="0cb21-118">Transformer les revendications entrantes en ajoutant une revendication de rôle d’administrateur (Administrator)</span><span class="sxs-lookup"><span data-stu-id="0cb21-118">Transform incoming claims by adding an Administrator role claim</span></span>  
   
--   Tester l’application Web Forms ASP.NET pour vérifier si elle fonctionne correctement  
+-   <span data-ttu-id="0cb21-119">Tester l’application Web Forms ASP.NET pour vérifier si elle fonctionne correctement</span><span class="sxs-lookup"><span data-stu-id="0cb21-119">Test the ASP.NET Web Forms application to see if it is working properly</span></span>  
   
-## <a name="overview"></a>Vue d'ensemble  
- WIF expose une classe nommée <xref:System.Security.Claims.ClaimsAuthenticationManager> qui permet aux utilisateurs de modifier les revendications avant leur présentation à une application par partie de confiance. La classe <xref:System.Security.Claims.ClaimsAuthenticationManager> est utile pour la séparation des responsabilités entre l’authentification et le code d’application sous-jacent. L’exemple ci-dessous montre comment ajouter un rôle aux revendications dans le principal <xref:System.Security.Claims.ClaimsPrincipal> entrant quand il est requis par l’application par partie de confiance.  
+## <a name="overview"></a><span data-ttu-id="0cb21-120">Vue d'ensemble</span><span class="sxs-lookup"><span data-stu-id="0cb21-120">Overview</span></span>  
+ <span data-ttu-id="0cb21-121">WIF expose une classe nommée <xref:System.Security.Claims.ClaimsAuthenticationManager> qui permet aux utilisateurs de modifier les revendications avant leur présentation à une application par partie de confiance.</span><span class="sxs-lookup"><span data-stu-id="0cb21-121">WIF exposes a class named <xref:System.Security.Claims.ClaimsAuthenticationManager> that enables users to modify claims before they are presented to a relying party (RP) application.</span></span> <span data-ttu-id="0cb21-122">La classe <xref:System.Security.Claims.ClaimsAuthenticationManager> est utile pour la séparation des responsabilités entre l’authentification et le code d’application sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="0cb21-122">The <xref:System.Security.Claims.ClaimsAuthenticationManager> is useful for separation of concerns between authentication and the underlying application code.</span></span> <span data-ttu-id="0cb21-123">L’exemple ci-dessous montre comment ajouter un rôle aux revendications dans le principal <xref:System.Security.Claims.ClaimsPrincipal> entrant quand il est requis par l’application par partie de confiance.</span><span class="sxs-lookup"><span data-stu-id="0cb21-123">The example below demonstrates how to add a role to the claims in the incoming <xref:System.Security.Claims.ClaimsPrincipal> that may be required by the RP.</span></span>  
   
-## <a name="summary-of-steps"></a>Résumé des étapes  
+## <a name="summary-of-steps"></a><span data-ttu-id="0cb21-124">Résumé des étapes</span><span class="sxs-lookup"><span data-stu-id="0cb21-124">Summary of Steps</span></span>  
   
--   Étape 1 : Créer une application Web Forms ASP.NET simple  
+-   <span data-ttu-id="0cb21-125">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="0cb21-125">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
+-   <span data-ttu-id="0cb21-126">Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé</span><span class="sxs-lookup"><span data-stu-id="0cb21-126">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
   
--   Étape 3 : tester votre solution  
+-   <span data-ttu-id="0cb21-127">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="0cb21-127">Step 3 – Test Your Solution</span></span>  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
- Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a><span data-ttu-id="0cb21-128">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="0cb21-128">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
+ <span data-ttu-id="0cb21-129">Lors de cette étape, vous allez créer une application Web Forms ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="0cb21-129">In this step, you will create a new ASP.NET Web Forms application.</span></span>  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
+#### <a name="to-create-a-simple-aspnet-application"></a><span data-ttu-id="0cb21-130">Pour créer une application ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="0cb21-130">To create a simple ASP.NET application</span></span>  
   
-1.  Démarrez Visual Studio en mode élevé en tant qu’administrateur.  
+1.  <span data-ttu-id="0cb21-131">Démarrez Visual Studio en mode élevé en tant qu’administrateur.</span><span class="sxs-lookup"><span data-stu-id="0cb21-131">Start Visual Studio in elevated mode as administrator.</span></span>  
   
-2.  Dans Visual Studio, cliquez sur **Fichier**, sur **Nouveau**, puis sur **Projet**.  
+2.  <span data-ttu-id="0cb21-132">Dans Visual Studio, cliquez sur **Fichier**, sur **Nouveau**, puis sur **Projet**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-132">In Visual Studio, click **File**, click **New**, and then click **Project**.</span></span>  
   
-3.  Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web Forms ASP.NET**.  
+3.  <span data-ttu-id="0cb21-133">Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web Forms ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-133">In the **New Project** window, click **ASP.NET Web Forms Application**.</span></span>  
   
-4.  Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.  
+4.  <span data-ttu-id="0cb21-134">Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-134">In **Name**, enter `TestApp` and press **OK**.</span></span>  
   
-5.  Cliquez avec le bouton droit sur le projet **TestApp** sous l’**Explorateur de solutions**, puis sélectionnez **Identity and Access** (Identity and Access Tool).  
+5.  <span data-ttu-id="0cb21-135">Cliquez avec le bouton droit sur le projet **TestApp** sous l’**Explorateur de solutions**, puis sélectionnez **Identity and Access** (Identity and Access Tool).</span><span class="sxs-lookup"><span data-stu-id="0cb21-135">Right-click the **TestApp** project under **Solution Explorer**, then select **Identity and Access**.</span></span>  
   
-6.  La fenêtre **Identity and Access** (Identity and Access Tool) s’affiche. Sous **Fournisseurs**, sélectionnez **Test your application with the Local Development STS** (Tester votre application avec le service STS de développement local), puis cliquez sur **Appliquer**.  
+6.  <span data-ttu-id="0cb21-136">La fenêtre **Identity and Access** (Identity and Access Tool) s’affiche.</span><span class="sxs-lookup"><span data-stu-id="0cb21-136">The **Identity and Access** window appears.</span></span> <span data-ttu-id="0cb21-137">Sous **Fournisseurs**, sélectionnez **Test your application with the Local Development STS** (Tester votre application avec le service STS de développement local), puis cliquez sur **Appliquer**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-137">Under **Providers**, select **Test your application with the Local Development STS**, then click **Apply**.</span></span>  
   
-7.  Dans le fichier *Default.aspx*, remplacez le balisage existant par le code suivant, puis enregistrez le fichier :  
+7.  <span data-ttu-id="0cb21-138">Dans le fichier *Default.aspx*, remplacez le balisage existant par le code suivant, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="0cb21-138">In the *Default.aspx* file, replace the existing markup with the following, then save the file:</span></span>  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -98,7 +96,7 @@ ms.lasthandoff: 08/21/2017
     </asp:Content>  
     ```  
   
-8.  Ouvrez le fichier code-behind nommé *Default.aspx.cs*. Remplacez le code existant par celui qui suit, puis enregistrez le fichier :  
+8.  <span data-ttu-id="0cb21-139">Ouvrez le fichier code-behind nommé *Default.aspx.cs*.</span><span class="sxs-lookup"><span data-stu-id="0cb21-139">Open the code-behind file named *Default.aspx.cs*.</span></span> <span data-ttu-id="0cb21-140">Remplacez le code existant par celui qui suit, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="0cb21-140">Replace the existing code with the following, then save the file:</span></span>  
   
     ```csharp  
     using System;  
@@ -119,32 +117,32 @@ ms.lasthandoff: 08/21/2017
     }  
     ```  
   
-## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
- Dans cette étape, vous allez substituer les fonctionnalités par défaut dans la classe <xref:System.Security.Claims.ClaimsAuthenticationManager> pour ajouter un rôle d’administrateur (Administrator) au principal entrant.  
+## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="0cb21-141">Étape 2 : Implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé</span><span class="sxs-lookup"><span data-stu-id="0cb21-141">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
+ <span data-ttu-id="0cb21-142">Dans cette étape, vous allez substituer les fonctionnalités par défaut dans la classe <xref:System.Security.Claims.ClaimsAuthenticationManager> pour ajouter un rôle d’administrateur (Administrator) au principal entrant.</span><span class="sxs-lookup"><span data-stu-id="0cb21-142">In this step you will override default functionality in the <xref:System.Security.Claims.ClaimsAuthenticationManager> class to add an Administrator role to the incoming Principal.</span></span>  
   
-#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Pour implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé  
+#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="0cb21-143">Pour implémenter la transformation des revendications à l’aide d’un ClaimsAuthenticationManager personnalisé</span><span class="sxs-lookup"><span data-stu-id="0cb21-143">To implement claims transformation using a custom ClaimsAuthenticationManager</span></span>  
   
-1.  Dans Visual Studio, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis cliquez sur **Nouveau projet**.  
+1.  <span data-ttu-id="0cb21-144">Dans Visual Studio, cliquez avec le bouton droit sur la solution, cliquez sur **Ajouter**, puis cliquez sur **Nouveau projet**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-144">In Visual Studio, right-click the on the solution, click **Add**, and then click **New Project**.</span></span>  
   
-2.  Dans la fenêtre **Ajouter un nouveau projet**, sélectionnez **Bibliothèque de classes** dans la liste de modèles **Visual C#**, entrez `ClaimsTransformation`, puis appuyez sur **OK**. Le nouveau projet est créé dans votre dossier de solutions.  
+2.  <span data-ttu-id="0cb21-145">Dans la fenêtre **Ajouter un nouveau projet**, sélectionnez **Bibliothèque de classes** dans la liste de modèles **Visual C#**, entrez `ClaimsTransformation`, puis appuyez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-145">In the **Add New Project** window, select **Class Library** from the **Visual C#** templates list, enter `ClaimsTransformation`, and then press **OK**.</span></span> <span data-ttu-id="0cb21-146">Le nouveau projet est créé dans votre dossier de solutions.</span><span class="sxs-lookup"><span data-stu-id="0cb21-146">The new project will be created in your solution folder.</span></span>  
   
-3.  Cliquez avec le bouton droit sur **Références** sous le projet **ClaimsTransformation**, puis cliquez sur **Ajouter une référence**.  
+3.  <span data-ttu-id="0cb21-147">Cliquez avec le bouton droit sur **Références** sous le projet **ClaimsTransformation**, puis cliquez sur **Ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-147">Right-click on **References** under the **ClaimsTransformation** project, and then click **Add Reference**.</span></span>  
   
-4.  Dans la fenêtre **Gestionnaire de références**, sélectionnez **System.IdentityModel**, puis cliquez sur **OK**.  
+4.  <span data-ttu-id="0cb21-148">Dans la fenêtre **Gestionnaire de références**, sélectionnez **System.IdentityModel**, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-148">In the **Reference Manager** window, select **System.IdentityModel**, and then click **OK**.</span></span>  
   
-5.  Ouvrez **Class1.cs**. Si cette classe n’existe pas, cliquez avec le bouton droit sur **ClaimsTransformation**, cliquez sur **Ajouter** et cliquez sur **Classe...**  
+5.  <span data-ttu-id="0cb21-149">Ouvrez **Class1.cs**. Si cette classe n’existe pas, cliquez avec le bouton droit sur **ClaimsTransformation**, cliquez sur **Ajouter** et cliquez sur **Classe...**</span><span class="sxs-lookup"><span data-stu-id="0cb21-149">Open **Class1.cs**, or if it doesn’t exist, right-click **ClaimsTransformation**, click **Add**, then click **Class…**</span></span>  
   
-6.  Ajoutez le code suivant à l’aide de directives dans le fichier de code :  
+6.  <span data-ttu-id="0cb21-150">Ajoutez le code suivant à l’aide de directives dans le fichier de code :</span><span class="sxs-lookup"><span data-stu-id="0cb21-150">Add the following using directives to the code file:</span></span>  
   
     ```csharp  
     using System.Security.Claims;  
     using System.Security.Principal;  
     ```  
   
-7.  Ajoutez la classe et la méthode suivantes dans le fichier de code.  
+7.  <span data-ttu-id="0cb21-151">Ajoutez la classe et la méthode suivantes dans le fichier de code.</span><span class="sxs-lookup"><span data-stu-id="0cb21-151">Add the following class and method in the code file.</span></span>  
   
     > [!WARNING]
-    >  Le code suivant est fourni à titre de démonstration uniquement. Vérifiez les autorisations prévues dans votre code de production.  
+    >  <span data-ttu-id="0cb21-152">Le code suivant est fourni à titre de démonstration uniquement. Vérifiez les autorisations prévues dans votre code de production.</span><span class="sxs-lookup"><span data-stu-id="0cb21-152">The following code is for demonstration purposes only; make sure that you verify your intended permissions in production code.</span></span>  
   
     ```csharp  
     public class ClaimsTransformationModule : ClaimsAuthenticationManager  
@@ -161,28 +159,27 @@ ms.lasthandoff: 08/21/2017
     }  
     ```  
   
-8.  Enregistrez le fichier et générez le projet **ClaimsTransformation**.  
+8.  <span data-ttu-id="0cb21-153">Enregistrez le fichier et générez le projet **ClaimsTransformation**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-153">Save the file and build the **ClaimsTransformation** project.</span></span>  
   
-9. Dans votre projet **TestApp** ASP.NET, cliquez avec le bouton droit sur Références, puis cliquez sur **Ajouter une référence**.  
+9. <span data-ttu-id="0cb21-154">Dans votre projet **TestApp** ASP.NET, cliquez avec le bouton droit sur Références, puis cliquez sur **Ajouter une référence**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-154">In your **TestApp** ASP.NET project, right-click on References, and then click **Add Reference**.</span></span>  
   
-10. Dans la fenêtre **Gestionnaire de références**, sélectionnez **Solution** dans le menu de gauche, sélectionnez **ClaimsTransformation** dans les options remplies, puis cliquez sur **OK**.  
+10. <span data-ttu-id="0cb21-155">Dans la fenêtre **Gestionnaire de références**, sélectionnez **Solution** dans le menu de gauche, sélectionnez **ClaimsTransformation** dans les options remplies, puis cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-155">In the **Reference Manager** window, select **Solution** from the left menu, select **ClaimsTransformation** from the populated options, and then click **OK**.</span></span>  
   
-11. Dans le fichier racine **Web.config**, accédez à l’entrée **\<system.identityModel>**. Dans les éléments **\<identityConfiguration>**, ajoutez la ligne suivante, puis enregistrez le fichier :  
+11. <span data-ttu-id="0cb21-156">Dans le fichier racine **Web.config**, accédez à l’entrée **\<system.identityModel>**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-156">In the root **Web.config** file, navigate to the **\<system.identityModel>** entry.</span></span> <span data-ttu-id="0cb21-157">Dans les éléments **\<identityConfiguration>**, ajoutez la ligne suivante, puis enregistrez le fichier :</span><span class="sxs-lookup"><span data-stu-id="0cb21-157">Within the **\<identityConfiguration>** elements, add the following line and save the file:</span></span>  
   
     ```xml  
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
-## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
- Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications sont présentées à l’utilisateur qui se connecte à l’aide de l’authentification par formulaire.  
+## <a name="step-3--test-your-solution"></a><span data-ttu-id="0cb21-158">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="0cb21-158">Step 3 – Test Your Solution</span></span>  
+ <span data-ttu-id="0cb21-159">Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications sont présentées à l’utilisateur qui se connecte à l’aide de l’authentification par formulaire.</span><span class="sxs-lookup"><span data-stu-id="0cb21-159">In this step you will test your ASP.NET Web Forms application, and verify that claims are presented when a user signs in with Forms authentication.</span></span>  
   
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a><span data-ttu-id="0cb21-160">Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification par formulaire</span><span class="sxs-lookup"><span data-stu-id="0cb21-160">To test your ASP.NET Web Forms application for claims using Forms authentication</span></span>  
   
-1.  Appuyez sur **F5** pour générer et exécuter l’application. La page *Default.aspx* doit s’afficher.  
+1.  <span data-ttu-id="0cb21-161">Appuyez sur **F5** pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="0cb21-161">Press **F5** to build and run the application.</span></span> <span data-ttu-id="0cb21-162">La page *Default.aspx* doit s’afficher.</span><span class="sxs-lookup"><span data-stu-id="0cb21-162">You should be presented with *Default.aspx*.</span></span>  
   
-2.  Dans la page *Default.aspx*, sous l’en-tête **Your Claims** (Vos revendications), vous voyez normalement un tableau qui affiche ces informations sur les revendications associées à votre compte : **Issuer**, **OriginalIssuer**, **Type**, **Value** et **ValueType**. La dernière ligne doit se présenter de cette façon :  
+2.  <span data-ttu-id="0cb21-163">Dans la page *Default.aspx*, sous l’en-tête **Your Claims** (Vos revendications), vous voyez normalement un tableau qui affiche ces informations sur les revendications associées à votre compte : **Issuer**, **OriginalIssuer**, **Type**, **Value** et **ValueType**.</span><span class="sxs-lookup"><span data-stu-id="0cb21-163">On the *Default.aspx* page, you should see a table beneath the **Your Claims** heading that includes the **Issuer**, **OriginalIssuer**, **Type**, **Value**, and **ValueType** claims information about your account.</span></span> <span data-ttu-id="0cb21-164">La dernière ligne doit se présenter de cette façon :</span><span class="sxs-lookup"><span data-stu-id="0cb21-164">The last row should be presented in the following way:</span></span>  
   
     ||||||  
     |-|-|-|-|-|  
-    |LOCAL AUTHORITY|LOCAL AUTHORITY|http://schemas.microsoft.com/ws/2008/06/identity/claims/role|Administrateur|http://www.w3.org/2001/XMLSchema#string|
-
+    |<span data-ttu-id="0cb21-165">LOCAL AUTHORITY</span><span class="sxs-lookup"><span data-stu-id="0cb21-165">LOCAL AUTHORITY</span></span>|<span data-ttu-id="0cb21-166">LOCAL AUTHORITY</span><span class="sxs-lookup"><span data-stu-id="0cb21-166">LOCAL AUTHORITY</span></span>|<span data-ttu-id="0cb21-167">http://schemas.microsoft.com/ws/2008/06/identity/claims/role</span><span class="sxs-lookup"><span data-stu-id="0cb21-167">http://schemas.microsoft.com/ws/2008/06/identity/claims/role</span></span>|<span data-ttu-id="0cb21-168">Administrateur</span><span class="sxs-lookup"><span data-stu-id="0cb21-168">Admin</span></span>|<span data-ttu-id="0cb21-169">http://www.w3.org/2001/XMLSchema#string</span><span class="sxs-lookup"><span data-stu-id="0cb21-169">http://www.w3.org/2001/XMLSchema#string</span></span>|

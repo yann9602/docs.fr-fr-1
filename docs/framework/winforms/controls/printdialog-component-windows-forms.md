@@ -1,43 +1,44 @@
 ---
-title: "PrintDialog, composant (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Imprimer (boîte de dialogue) (à l'aide du concepteur)"
-  - "options d'impression, PrintDialog (composant du concepteur)"
-  - "PrintDialog (composant Windows Forms)"
-  - "imprimer (Windows Forms), options d'impression"
-  - "imprimer (Windows Forms), PrintDialog (composant du concepteur)"
+title: PrintDialog, composant (Windows Forms)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- print options [Windows Forms], PrintDialog component (using designer)
+- PrintDialog component [Windows Forms]
+- Print dialog box (using designer)
+- printing [Windows Forms], PrintDialog component (using designer)
+- printing [Windows Forms], print options
 ms.assetid: 09b54db1-d7c7-42fa-b98a-840e6b80a9ad
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c64715fbc976af5c765da2efe563acdc3d2ae13c
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# PrintDialog, composant (Windows Forms)
-Le composant `PrintDialog` Windows Forms est une boîte de dialogue préconfigurée qui sert à sélectionner une imprimante, à choisir les pages à imprimer et à déterminer d'autres paramètres liés à l'impression dans les applications Windows.  Utilisez\-le comme un moyen simple de sélectionner une imprimante ou des paramètres d'impression au lieu de configurer votre propre boîte de dialogue.  Vous pouvez permettre aux utilisateurs d'imprimer de nombreuses parties de leurs documents : imprimer tout, imprimer une plage de pages spécifiée ou imprimer une sélection.  En vous appuyant sur des boîtes de dialogue Windows standard, vous pouvez créer des applications dont la fonction de base est immédiatement familière aux utilisateurs.  
+# <a name="printdialog-component-windows-forms"></a><span data-ttu-id="69baa-102">PrintDialog, composant (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="69baa-102">PrintDialog Component (Windows Forms)</span></span>
+<span data-ttu-id="69baa-103">Le composant `PrintDialog` Windows Forms est une boîte de dialogue préconfigurée qui sert à sélectionner une imprimante, à choisir les pages à imprimer et à déterminer d'autres paramètres liés à l'impression dans les applications Windows.</span><span class="sxs-lookup"><span data-stu-id="69baa-103">The Windows Forms `PrintDialog` component is a pre-configured dialog box used to select a printer, choose the pages to print, and determine other print-related settings in Windows-based applications.</span></span> <span data-ttu-id="69baa-104">Utilisez-le comme un moyen simple de sélectionner une imprimante ou des paramètres d'impression au lieu de configurer votre propre boîte de dialogue.</span><span class="sxs-lookup"><span data-stu-id="69baa-104">Use it as a simple solution for printer and print-related settings selection in lieu of configuring your own dialog box.</span></span> <span data-ttu-id="69baa-105">Vous pouvez permettre aux utilisateurs d'imprimer de nombreuses parties de leurs documents : imprimer tout, imprimer une plage de pages spécifiée ou imprimer une sélection.</span><span class="sxs-lookup"><span data-stu-id="69baa-105">You can enable users to print many parts of their documents: print all, print a specified page range, or print a selection.</span></span> <span data-ttu-id="69baa-106">En vous appuyant sur des boîtes de dialogue Windows standard, vous pouvez créer des applications dont la fonction de base est immédiatement familière aux utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="69baa-106">By relying on standard Windows dialog boxes, you create applications whose basic functionality is immediately familiar to users.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble du composant PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
- Présente les concepts généraux du composant `PrintDialog`, qui vous permet d'afficher une boîte de dialogue préconfigurée permettant aux utilisateurs de sélectionner une imprimante, de choisir les pages à imprimer et de déterminer les paramètres d'impression.  
+## <a name="in-this-section"></a><span data-ttu-id="69baa-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="69baa-107">In This Section</span></span>  
+ [<span data-ttu-id="69baa-108">Vue d’ensemble du composant PrintDialog</span><span class="sxs-lookup"><span data-stu-id="69baa-108">PrintDialog Component Overview</span></span>](../../../../docs/framework/winforms/controls/printdialog-component-overview-windows-forms.md)  
+ <span data-ttu-id="69baa-109">Présente les concepts généraux du composant `PrintDialog`, qui vous permet d'afficher une boîte de dialogue préconfigurée permettant aux utilisateurs de sélectionner une imprimante, de choisir les pages à imprimer et de déterminer les paramètres d'impression.</span><span class="sxs-lookup"><span data-stu-id="69baa-109">Introduces the general concepts of the `PrintDialog` component, which allows you to display a pre-configured dialog box that users can use to select a printer, choose pages to print, and determine print-related settings.</span></span>  
   
- [Comment : afficher le composant PrintDialog](../../../../docs/framework/winforms/controls/how-to-display-the-printdialog-component.md)  
- Explique comment afficher la boîte de dialogue et où elle enregistre les propriétés.  
+ [<span data-ttu-id="69baa-110">Guide pratique pour afficher le composant PrintDialog</span><span class="sxs-lookup"><span data-stu-id="69baa-110">How to: Display the PrintDialog Component</span></span>](../../../../docs/framework/winforms/controls/how-to-display-the-printdialog-component.md)  
+ <span data-ttu-id="69baa-111">Explique comment afficher la boîte de dialogue et où elle enregistre les propriétés.</span><span class="sxs-lookup"><span data-stu-id="69baa-111">Explains how to display the dialog and where it saves properties.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="69baa-112">Référence</span><span class="sxs-lookup"><span data-stu-id="69baa-112">Reference</span></span>  
  <xref:System.Windows.Forms.PrintDialog>  
- Fournit des informations de référence sur la classe et ses membres.  
+ <span data-ttu-id="69baa-113">Fournit des informations de référence sur la classe et ses membres.</span><span class="sxs-lookup"><span data-stu-id="69baa-113">Provides reference information on the class and its members.</span></span>  
   
-## Rubriques connexes  
- [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.
+## <a name="related-sections"></a><span data-ttu-id="69baa-114">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="69baa-114">Related Sections</span></span>  
+ [<span data-ttu-id="69baa-115">Contrôles à utiliser dans les Windows Forms</span><span class="sxs-lookup"><span data-stu-id="69baa-115">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="69baa-116">Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.</span><span class="sxs-lookup"><span data-stu-id="69baa-116">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>

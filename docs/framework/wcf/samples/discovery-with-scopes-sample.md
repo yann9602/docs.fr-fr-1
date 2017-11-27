@@ -1,47 +1,50 @@
 ---
-title: "Exemple Discovery with Scopes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Exemple Discovery with Scopes
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 97bf047f26b95cdd4ac4a40e6b2284ec170442bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Exemple Discovery with Scopes
-Cet exemple montre comment utiliser des portées pour catégoriser des points de terminaison détectables et comment utiliser <xref:System.ServiceModel.Discovery.DiscoveryClient> pour rechercher des points de terminaison de façon asynchrone.Sur le service, cet exemple montre comment personnaliser la découverte pour chaque point de terminaison en ajoutant un comportement de découverte du point de terminaison, et en l'utilisant pour ajouter une portée au point de terminaison et contrôler la fonctionnalité de découverte du point de terminaison.Sur le client, l'exemple passe en revue la façon dont les clients peuvent créer un <xref:System.ServiceModel.Discovery.DiscoveryClient> et ajuster les paramètres de recherche de manière à inclure des portées en les ajoutant à <xref:System.ServiceModel.Discovery.FindCriteria>.Cet exemple montre comment les clients peuvent limiter les réponses en ajoutant un critère d'arrêt.  
+# <a name="discovery-with-scopes-sample"></a><span data-ttu-id="ee977-102">Exemple Discovery with Scopes</span><span class="sxs-lookup"><span data-stu-id="ee977-102">Discovery with Scopes Sample</span></span>
+<span data-ttu-id="ee977-103">Cet exemple montre comment utiliser des portées pour catégoriser des points de terminaison détectables et comment utiliser <xref:System.ServiceModel.Discovery.DiscoveryClient> pour rechercher des points de terminaison de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="ee977-103">This sample shows how to use scopes to categorize discoverable endpoints as well how to use <xref:System.ServiceModel.Discovery.DiscoveryClient> to perform an asynchronous search for endpoints.</span></span> <span data-ttu-id="ee977-104">Sur le service, cet exemple montre comment personnaliser la découverte pour chaque point de terminaison en ajoutant un comportement de découverte du point de terminaison, et en l'utilisant pour ajouter une portée au point de terminaison et contrôler la fonctionnalité de découverte du point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="ee977-104">On the service, this sample shows how to customize discovery for each endpoint by adding an endpoint discovery behavior and using it to add a scope to the endpoint as well as controlling the endpoint’s discoverability.</span></span> <span data-ttu-id="ee977-105">Sur le client, l'exemple passe en revue la façon dont les clients peuvent créer un <xref:System.ServiceModel.Discovery.DiscoveryClient> et ajuster les paramètres de recherche de manière à inclure des portées en les ajoutant à <xref:System.ServiceModel.Discovery.FindCriteria>.</span><span class="sxs-lookup"><span data-stu-id="ee977-105">On the client, the sample goes over how clients can create a <xref:System.ServiceModel.Discovery.DiscoveryClient> and fine tune search parameters to include scopes by adding scopes to the <xref:System.ServiceModel.Discovery.FindCriteria>.</span></span> <span data-ttu-id="ee977-106">Cet exemple montre comment les clients peuvent limiter les réponses en ajoutant un critère d'arrêt.</span><span class="sxs-lookup"><span data-stu-id="ee977-106">This sample also shows how clients can restrict responses by adding a termination criterion.</span></span>  
   
-## Fonctionnalités du service  
- Ce projet présente deux points de terminaison de service qui sont ajoutés à un <xref:System.ServiceModel.ServiceHost>.Un <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> est associé à chaque point de terminaison.Ce comportement est utilisé pour ajouter des portées d'URI pour les deux points de terminaison.Les portées permettent de distinguer chacun de ces points de terminaison afin que les clients puissent affiner la recherche.Pour le deuxième point de terminaison, la fonctionnalité de découverte peut être désactivée en affectant à la propriété <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Enabled%2A> la valeur `false`.De cette façon, les métadonnées de découverte associées à ce point de terminaison ne seront pas envoyées dans le cadre d'un message de découverte.  
+## <a name="service-features"></a><span data-ttu-id="ee977-107">Fonctionnalités du service</span><span class="sxs-lookup"><span data-stu-id="ee977-107">Service Features</span></span>  
+ <span data-ttu-id="ee977-108">Ce projet présente deux points de terminaison de service qui sont ajoutés à un <xref:System.ServiceModel.ServiceHost>.</span><span class="sxs-lookup"><span data-stu-id="ee977-108">This project shows two service endpoints being added to a <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="ee977-109">Un <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> est associé à chaque point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="ee977-109">Each endpoint has a <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> associated with it.</span></span> <span data-ttu-id="ee977-110">Ce comportement est utilisé pour ajouter des portées d'URI pour les deux points de terminaison.</span><span class="sxs-lookup"><span data-stu-id="ee977-110">This behavior is used to add URI scopes for both endpoints.</span></span> <span data-ttu-id="ee977-111">Les portées permettent de distinguer chacun de ces points de terminaison afin que les clients puissent affiner la recherche.</span><span class="sxs-lookup"><span data-stu-id="ee977-111">Scopes are used to distinguish each of these endpoints so that the clients can fine tune the search.</span></span> <span data-ttu-id="ee977-112">Pour le deuxième point de terminaison, la fonctionnalité de découverte peut être désactivée en affectant à la propriété <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Enabled%2A> la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="ee977-112">For the second endpoint, the discoverability can be disabled by setting the <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Enabled%2A> property to `false`.</span></span> <span data-ttu-id="ee977-113">De cette façon, les métadonnées de découverte associées à ce point de terminaison ne seront pas envoyées dans le cadre d'un message de découverte.</span><span class="sxs-lookup"><span data-stu-id="ee977-113">This ensures that the discovery metadata associated with this endpoint is not sent as part of any discovery messages.</span></span>  
   
-## Fonctionnalités du client  
- La méthode `FindCalculatorServiceAddress()` montre comment utiliser un <xref:System.ServiceModel.Discovery.DiscoveryClient> et lui passer un <xref:System.ServiceModel.Discovery.FindCriteria> avec deux restrictions.Une portée est ajoutée aux critères et la propriété <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> prend la valeur 1.La portée limite les résultats aux seuls services qui publient la même portée.Affecter 1 à <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> limite les réponses que le <xref:System.ServiceModel.Discovery.DiscoveryClient> attend à un point de terminaison au maximum.L'appel à <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> est une opération synchrone qui bloque le thread jusqu'à ce qu'un délai d'attente soit atteint ou qu'un point de terminaison soit trouvé.  
+## <a name="client-features"></a><span data-ttu-id="ee977-114">Fonctionnalités du client</span><span class="sxs-lookup"><span data-stu-id="ee977-114">Client Features</span></span>  
+ <span data-ttu-id="ee977-115">La méthode `FindCalculatorServiceAddress()` montre comment utiliser un <xref:System.ServiceModel.Discovery.DiscoveryClient> et lui passer un <xref:System.ServiceModel.Discovery.FindCriteria> avec deux restrictions.</span><span class="sxs-lookup"><span data-stu-id="ee977-115">The `FindCalculatorServiceAddress()` method shows how to use a <xref:System.ServiceModel.Discovery.DiscoveryClient> and pass in a <xref:System.ServiceModel.Discovery.FindCriteria> with two restrictions.</span></span> <span data-ttu-id="ee977-116">Une portée est ajoutée aux critères et la propriété <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> prend la valeur 1.</span><span class="sxs-lookup"><span data-stu-id="ee977-116">A scope is added to the criteria and the <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> property is set to 1.</span></span> <span data-ttu-id="ee977-117">La portée limite les résultats aux seuls services qui publient la même portée.</span><span class="sxs-lookup"><span data-stu-id="ee977-117">The scope limits the results to only the services that publish the same scope.</span></span> <span data-ttu-id="ee977-118">Affecter 1 à <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> limite les réponses que le <xref:System.ServiceModel.Discovery.DiscoveryClient> attend à un point de terminaison au maximum.</span><span class="sxs-lookup"><span data-stu-id="ee977-118">Setting <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> to 1 limits the responses the <xref:System.ServiceModel.Discovery.DiscoveryClient> waits for to, at most, 1 endpoint.</span></span> <span data-ttu-id="ee977-119">L'appel à <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> est une opération synchrone qui bloque le thread jusqu'à ce qu'un délai d'attente soit atteint ou qu'un point de terminaison soit trouvé.</span><span class="sxs-lookup"><span data-stu-id="ee977-119">The <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> call is a synchronous operation that blocks the thread until a timeout is reached or one endpoint is found.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="ee977-120">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="ee977-120">To use this sample</span></span>  
   
-1.  Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d'accès \(ACL\) d'URL appropriées doivent être ajoutées.Pour plus d'informations, consultez [Configuration de HTTP et HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353).L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées.Vous pouvez substituer vos domaine et nom d'utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle : `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1.  <span data-ttu-id="ee977-121">Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d'accès (ACL) d'URL appropriées doivent être ajoutées.</span><span class="sxs-lookup"><span data-stu-id="ee977-121">This sample uses HTTP endpoints and to run this sample, proper URL ACLs must be added.</span></span> <span data-ttu-id="ee977-122">Consultez [configuration de HTTP et HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353) pour plus d’informations.</span><span class="sxs-lookup"><span data-stu-id="ee977-122">See [Configuring HTTP and HTTPS](http://go.microsoft.com/fwlink/?LinkId=70353) for details.</span></span> <span data-ttu-id="ee977-123">L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées.</span><span class="sxs-lookup"><span data-stu-id="ee977-123">Executing the following command at an elevated privilege should add the appropriate ACLs.</span></span> <span data-ttu-id="ee977-124">Vous pouvez substituer vos domaine et nom d'utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle : `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`</span><span class="sxs-lookup"><span data-stu-id="ee977-124">You may want to substitute your Domain and Username for the following arguments if the command does not work as is: `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`</span></span>  
   
-2.  Générez la solution.  
+2.  <span data-ttu-id="ee977-125">Générez la solution.</span><span class="sxs-lookup"><span data-stu-id="ee977-125">Build the solution.</span></span>  
   
-3.  Exécutez le fichier exécutable du service à partir du répertoire de build.  
+3.  <span data-ttu-id="ee977-126">Exécutez le fichier exécutable du service à partir du répertoire de build.</span><span class="sxs-lookup"><span data-stu-id="ee977-126">Run the service executable from the build directory.</span></span>  
   
-4.  Exécutez le fichier exécutable du client.Notez que le client est en mesure de trouver le service.  
+4.  <span data-ttu-id="ee977-127">Exécutez le fichier exécutable du client.</span><span class="sxs-lookup"><span data-stu-id="ee977-127">Run the client executable.</span></span> <span data-ttu-id="ee977-128">Notez que le client est en mesure de trouver le service.</span><span class="sxs-lookup"><span data-stu-id="ee977-128">Note that the client is able to locate the service.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="ee977-129">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="ee977-129">The samples may already be installed on your machine.</span></span> <span data-ttu-id="ee977-130">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="ee977-130">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="ee977-131">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="ee977-131">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ee977-132">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="ee977-132">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="ee977-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ee977-133">See Also</span></span>

@@ -1,22 +1,26 @@
 ---
-title: "P&#233;riode de d&#233;tection des instances activables | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Période de détection des instances activables"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4ea5c787-b638-47fd-bfc8-ede8c2898ce6
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2a78f8404d5e6b9d63c9455d059dcbb9a76f8c18
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# P&#233;riode de d&#233;tection des instances activables
-Le magasin d'instances de workflow SQL exécute une tâche interne qui se réveille régulièrement et détecte les instances exécutables ou activables dans la base de données de persistance.La propriété **Période de détection des instances exécutables** du magasin d'instances de workflow SQL spécifie la période après laquelle ce dernier exécute une tâche de détection pour détecter toutes les instances de workflow exécutables ou activables dans la base de données de persistance, à l'issue du cycle de détection précédent.  
+# <a name="runnable-instances-detection-period"></a><span data-ttu-id="8f119-102">Période de détection des instances activables</span><span class="sxs-lookup"><span data-stu-id="8f119-102">Runnable Instances Detection Period</span></span>
+<span data-ttu-id="8f119-103">Le magasin d’instances de workflow SQL exécute une tâche interne qui se réveille régulièrement et détecte les instances exécutables ou activables dans la base de données de persistance.</span><span class="sxs-lookup"><span data-stu-id="8f119-103">The SQL Workflow Instance Store runs an internal task that periodically wakes up and detects runnable or activatable instances in the persistence database.</span></span> <span data-ttu-id="8f119-104">Le **période de détection des Instances exécutables** propriété du magasin d’instances de Workflow SQL spécifie la période de temps au-delà de laquelle le magasin d’instances de Workflow SQL exécute une tâche de détection pour détecter les flux de travail exécutable ou activable instances dans la base de données de persistance issue du cycle de détection précédent.</span><span class="sxs-lookup"><span data-stu-id="8f119-104">The **Runnable Instances Detection Period** property of the SQL Workflow Instance Store specifies the time period after which the SQL Workflow Instance Store runs a detection task to detect any runnable or activatable workflow instances in the persistence database after the previous detection cycle.</span></span>  
   
- La définition d'un intervalle plus court pour cette propriété réduit le délai entre l'expiration d'un minuteur associé à une instance de workflow et la signalisation de l'événement, ainsi que le chargement subséquent de l'instance.Toutefois, cela augmente également la charge de traitement sur un hôte et peut ne pas être souhaitable dans les scénarios où les minuteurs durables et\/ou les échecs d'hôte sont rares.La propriété possède le type TimeSpan et sa valeur suit le format : hh:mm:ss.La valeur minimale de cette propriété est 00:00:01et sa valeur par défaut 00:00:05.  
+ <span data-ttu-id="8f119-105">La définition d'un intervalle plus court pour cette propriété réduit le délai entre l'expiration d'un minuteur associé à une instance de workflow et la signalisation de l'événement, ainsi que le chargement subséquent de l'instance.</span><span class="sxs-lookup"><span data-stu-id="8f119-105">Setting a shorter interval for this property reduces the time between the expiration of a timer associated with a workflow instance and the signaling of the event and subsequent loading of the instance.</span></span> <span data-ttu-id="8f119-106">Toutefois, cela augmente également la charge de traitement sur un hôte et peut ne pas être souhaitable dans les scénarios où les minuteurs durables et/ou les échecs d'hôte sont rares.</span><span class="sxs-lookup"><span data-stu-id="8f119-106">However, it also increases the processing load on a host and may not be desirable in scenarios where durable timers and/or host failures are rare.</span></span> <span data-ttu-id="8f119-107">La propriété possède le type TimeSpan et sa valeur suit le format : hh:mm:ss.</span><span class="sxs-lookup"><span data-stu-id="8f119-107">The type of the property is TimeSpan and the value of the property follows the format: hh:mm:ss.</span></span> <span data-ttu-id="8f119-108">La valeur minimale de cette propriété est 00:00:01</span><span class="sxs-lookup"><span data-stu-id="8f119-108">The minimum value for this property is 00:00:01.</span></span> <span data-ttu-id="8f119-109">et sa valeur par défaut 00:00:05.</span><span class="sxs-lookup"><span data-stu-id="8f119-109">The default value for the property is 00:00:05.</span></span>  
   
- Pour plus d'informations sur la détection et l'activation d'instances de workflow exécutables et activables, consultez [Activation d'instance](../../../docs/framework/windows-workflow-foundation//instance-activation.md).
+ <span data-ttu-id="8f119-110">Pour plus d’informations, détection et activation d’instances de workflow exécutables et avec activation, consultez [activation d’Instance](../../../docs/framework/windows-workflow-foundation/instance-activation.md).</span><span class="sxs-lookup"><span data-stu-id="8f119-110">For more information detecting and activating runnable and activatable workflow instances, see [Instance Activation](../../../docs/framework/windows-workflow-foundation/instance-activation.md).</span></span>

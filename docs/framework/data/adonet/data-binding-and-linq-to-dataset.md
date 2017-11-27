@@ -1,46 +1,49 @@
 ---
-title: "Liaison de donn&#233;es et LINQ to DataSet | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Liaison de données et LINQ to DataSet"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 310bff4a-32dd-4f20-a271-6dbd82912631
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: b3b097f9bca790d1f19da9d75f834c6277507d8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Liaison de donn&#233;es et LINQ to DataSet
-La *liaison de données* est le processus qui établit une connexion entre l'interface utilisateur de l'application et la logique métier.  Si la liaison est correctement paramétrée et si les données fournissent les notifications appropriées, lorsque les données changent de valeur, les éléments qui sont liés aux données reflètent automatiquement ces changements.  Le <xref:System.Data.DataSet> est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient.  Le <xref:System.Data.DataView> ADO.NET 2.0 vous permet de trier et de filtrer les données stockées dans un <xref:System.Data.DataTable>.  Cette fonctionnalité est souvent utilisée dans les applications de liaison de données.  En utilisant un <xref:System.Data.DataView>, vous pouvez présenter les données d'une table en appliquant différents ordres de tri et filtrer les données en fonction d'un état de ligne ou d'une expression de filtre.  Pour plus d'informations sur l'objet <xref:System.Data.DataView>, consultez [DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  
+# <a name="data-binding-and-linq-to-dataset"></a><span data-ttu-id="cbf4c-102">Liaison de données et LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="cbf4c-102">Data Binding and LINQ to DataSet</span></span>
+<span data-ttu-id="cbf4c-103">*Liaison de données* est le processus qui établit une connexion entre l’interface utilisateur d’application et la logique métier.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-103">*Data binding* is the process that establishes a connection between the application UI and business logic.</span></span> <span data-ttu-id="cbf4c-104">Si la liaison est correctement paramétrée et si les données fournissent les notifications appropriées, lorsque les données changent de valeur, les éléments qui sont liés aux données reflètent automatiquement ces changements.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-104">If the binding has the correct settings and the data provides the proper notifications, when the data changes its value, the elements that are bound to the data reflect changes automatically.</span></span> <span data-ttu-id="cbf4c-105">Le <xref:System.Data.DataSet> est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-105">The <xref:System.Data.DataSet> is an in- memory representation of data that provides a consistent relational programming model, regardless of the source of the data it contains.</span></span> <span data-ttu-id="cbf4c-106">Le <xref:System.Data.DataView> ADO.NET 2.0 vous permet de trier et de filtrer les données stockées dans un <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-106">The ADO.NET 2.0 <xref:System.Data.DataView> enables you to sort and filter the data stored in a <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="cbf4c-107">Cette fonctionnalité est souvent utilisée dans les applications de liaison de données.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-107">This functionality is often used in data-binding applications.</span></span> <span data-ttu-id="cbf4c-108">En utilisant un <xref:System.Data.DataView>, vous pouvez présenter les données d'une table en appliquant différents ordres de tri et filtrer les données en fonction d'un état de ligne ou d'une expression de filtre.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-108">By using a <xref:System.Data.DataView>, you can expose the data in a table with different sort orders, and you can filter the data by row state or based on a filter expression.</span></span> <span data-ttu-id="cbf4c-109">Pour plus d’informations sur la <xref:System.Data.DataView> d’objets, consultez [DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).</span><span class="sxs-lookup"><span data-stu-id="cbf4c-109">For more information about the <xref:System.Data.DataView> object, see [DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).</span></span>  
   
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] permet aux développeurs de créer des requêtes complexes et puissantes sur un objet <xref:System.Data.DataSet> en utilisant [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)].  Toutefois, une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] retourne une énumération d'objets <xref:System.Data.DataRow>, qui n'est pas facile à utiliser dans un scénario de liaison. Pour simplifier la liaison, vous pouvez créer un objet <xref:System.Data.DataView> à partir d'une requête [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  Cet objet <xref:System.Data.DataView> adopte les caractéristiques de filtrage et de tri spécifiées dans la requête, mais il est mieux adapté pour la liaison de données.  [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] étend les fonctionnalités du <xref:System.Data.DataView> en fournissant un filtrage et un tri basés sur une expression [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] expression\-based filtering and sorting, ce qui permet des opérations de filtrage et de tri beaucoup plus complexes et puissantes que le filtrage et le tri basés sur une chaîne.  
+ [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]<span data-ttu-id="cbf4c-110">permet aux développeurs de créer des requêtes complexes et puissantes sur un <xref:System.Data.DataSet> à l’aide de [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cbf4c-110"> allows developers to create complex, powerful queries over a <xref:System.Data.DataSet> by using [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)].</span></span> <span data-ttu-id="cbf4c-111">Toutefois, un [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] requête retourne une énumération de <xref:System.Data.DataRow> objets, qui n’est pas facilement utilisé dans un scénario de liaison.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-111">However, a [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] query returns an enumeration of <xref:System.Data.DataRow> objects, which is not easily used in a binding scenario.</span></span> <span data-ttu-id="cbf4c-112">Pour simplifier la liaison, vous pouvez créer un <xref:System.Data.DataView> d’un [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] requête.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-112">To make binding easier, you can create a <xref:System.Data.DataView> from a [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] query.</span></span> <span data-ttu-id="cbf4c-113">Cela <xref:System.Data.DataView> utilise le filtrage et tri spécifiées dans la requête, mais est mieux adapté pour la liaison de données.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-113">This <xref:System.Data.DataView> uses the filtering and sorting specified in the query, but is better suited for data binding.</span></span> [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]<span data-ttu-id="cbf4c-114">étend les fonctionnalités de la <xref:System.Data.DataView> en fournissant [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] basé sur une expression de filtrage et de tri, ce qui permet de beaucoup plus complexes et puissantes que le filtrage et tri des opérations que le filtrage et le tri basé sur chaîne.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-114"> extends the functionality of the <xref:System.Data.DataView> by providing [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] expression-based filtering and sorting, which allows for much more complex and powerful filtering and sorting operations than string-based filtering and sorting.</span></span>  
   
- Notez que le <xref:System.Data.DataView> représente la requête elle\-même et n'est pas une vue au\-dessus de la requête.  Le <xref:System.Data.DataView> est lié à un contrôle d'interface utilisateur, tel qu'un <xref:System.Windows.Forms.DataGrid> ou un <xref:System.Windows.Forms.DataGridView>, fournissant ainsi un modèle de liaison de données simple.  Un <xref:System.Data.DataView> peut également être créé à partir d'un <xref:System.Data.DataTable>, fournissant ainsi une vue par défaut de cette table.  
+ <span data-ttu-id="cbf4c-115">Notez que le <xref:System.Data.DataView> représente la requête elle-même et n'est pas une vue au-dessus de la requête.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-115">Note that the <xref:System.Data.DataView> represents the query itself and is not a view on top of the query.</span></span> <span data-ttu-id="cbf4c-116">Le <xref:System.Data.DataView> est lié à un contrôle d'interface utilisateur, tel qu'un <xref:System.Windows.Forms.DataGrid> ou un <xref:System.Windows.Forms.DataGridView>, fournissant ainsi un modèle de liaison de données simple.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-116">The <xref:System.Data.DataView> is bound to a UI control, such as a <xref:System.Windows.Forms.DataGrid> or a <xref:System.Windows.Forms.DataGridView>, providing a simple data binding model.</span></span> <span data-ttu-id="cbf4c-117">Un <xref:System.Data.DataView> peut également être créé à partir d'un <xref:System.Data.DataTable>, fournissant ainsi une vue par défaut de cette table.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-117">A <xref:System.Data.DataView> can also be created from a <xref:System.Data.DataTable>, providing a default view of that table.</span></span>  
   
-## Dans cette section  
- [Création d'un objet DataView](../../../../docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)  
- Fournit des informations sur la création d'un <xref:System.Data.DataView>.  
+## <a name="in-this-section"></a><span data-ttu-id="cbf4c-118">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="cbf4c-118">In This Section</span></span>  
+ [<span data-ttu-id="cbf4c-119">Création d’un objet DataView</span><span class="sxs-lookup"><span data-stu-id="cbf4c-119">Creating a DataView Object</span></span>](../../../../docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)  
+ <span data-ttu-id="cbf4c-120">Fournit des informations sur la création d'un <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-120">Provides information about creating a <xref:System.Data.DataView>.</span></span>  
   
- [Filtrage avec DataView](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
- Explique comment filtrer avec le <xref:System.Data.DataView>.  
+ [<span data-ttu-id="cbf4c-121">Filtrage avec DataView</span><span class="sxs-lookup"><span data-stu-id="cbf4c-121">Filtering with DataView</span></span>](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
+ <span data-ttu-id="cbf4c-122">Explique comment filtrer avec le <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-122">Describes how to filter with the <xref:System.Data.DataView>.</span></span>  
   
- [Tri avec DataView](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)  
- Explique comment trier avec le <xref:System.Data.DataView>.  
+ [<span data-ttu-id="cbf4c-123">Tri avec DataView</span><span class="sxs-lookup"><span data-stu-id="cbf4c-123">Sorting with DataView</span></span>](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)  
+ <span data-ttu-id="cbf4c-124">Explique comment trier avec le <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-124">Describes how to sort with the <xref:System.Data.DataView>.</span></span>  
   
- [Interrogation de la collection DataRowView dans un DataView](../../../../docs/framework/data/adonet/querying-the-datarowview-collection-in-a-dataview.md)  
- Fournit des informations sur l'interrogation d'une collection <xref:System.Data.DataRowView> exposée par l'objet <xref:System.Data.DataView>.  
+ [<span data-ttu-id="cbf4c-125">Interrogation de la Collection DataRowView dans un DataView</span><span class="sxs-lookup"><span data-stu-id="cbf4c-125">Querying the DataRowView Collection in a DataView</span></span>](../../../../docs/framework/data/adonet/querying-the-datarowview-collection-in-a-dataview.md)  
+ <span data-ttu-id="cbf4c-126">Fournit des informations sur l'interrogation d'une collection <xref:System.Data.DataRowView> exposée par l'objet <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-126">Provides information about querying the <xref:System.Data.DataRowView> collection exposed by <xref:System.Data.DataView>.</span></span>  
   
- [Performances des DataView](../../../../docs/framework/data/adonet/dataview-performance.md)  
- Fournit des informations sur le <xref:System.Data.DataView> et les performances.  
+ [<span data-ttu-id="cbf4c-127">Performances des DataViews</span><span class="sxs-lookup"><span data-stu-id="cbf4c-127">DataView Performance</span></span>](../../../../docs/framework/data/adonet/dataview-performance.md)  
+ <span data-ttu-id="cbf4c-128">Fournit des informations sur le <xref:System.Data.DataView> et les performances.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-128">Provides information about <xref:System.Data.DataView> and performance.</span></span>  
   
- [Procédure : lier un objet DataView à un contrôle DataGridView Windows Forms](../../../../docs/framework/data/adonet/how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
- Explique comment lier un objet <xref:System.Data.DataView> à un <xref:System.Windows.Forms.DataGridView>.  
+ [<span data-ttu-id="cbf4c-129">Comment : lier un objet DataView à un contrôle Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="cbf4c-129">How to: Bind a DataView Object to a Windows Forms DataGridView Control</span></span>](../../../../docs/framework/data/adonet/how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
+ <span data-ttu-id="cbf4c-130">Explique comment lier un objet <xref:System.Data.DataView> à un <xref:System.Windows.Forms.DataGridView>.</span><span class="sxs-lookup"><span data-stu-id="cbf4c-130">Describes how to bind a <xref:System.Data.DataView> object to a <xref:System.Windows.Forms.DataGridView>.</span></span>  
   
-## Voir aussi  
- [Guide de programmation](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
+## <a name="see-also"></a><span data-ttu-id="cbf4c-131">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cbf4c-131">See Also</span></span>  
+ [<span data-ttu-id="cbf4c-132">Guide de programmation</span><span class="sxs-lookup"><span data-stu-id="cbf4c-132">Programming Guide</span></span>](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

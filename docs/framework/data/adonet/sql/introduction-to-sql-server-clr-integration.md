@@ -1,36 +1,39 @@
 ---
-title: "Pr&#233;sentation de l&#39;int&#233;gration de CLR dans SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Introduction à l'intégration CLR SQL Server"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 551d2290-ed80-49be-b377-44b32444da1c
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: ab9dad1031979169aee99a7bb6bc5fe409954e9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Pr&#233;sentation de l&#39;int&#233;gration de CLR dans SQL Server
-Le Common Language Runtime \(CLR\) est au cœur de Microsoft .NET Framework et fournit l'environnement d'exécution pour tout le code .NET Framework.  Le code qui s'exécute dans le CLR est appelé code managé.  Le CLR fournit divers services et fonctions requis pour l'exécution du programme, notamment la compilation juste\-à\-temps \(JIT\), l'allocation et la gestion de mémoire, l'application de sécurité de type, la gestion des exceptions, la gestion des threads et la sécurité.  
+# <a name="introduction-to-sql-server-clr-integration"></a><span data-ttu-id="63c32-102">Introduction à l'intégration CLR SQL Server</span><span class="sxs-lookup"><span data-stu-id="63c32-102">Introduction to SQL Server CLR Integration</span></span>
+<span data-ttu-id="63c32-103">Le Common Language Runtime (CLR) est au cœur de Microsoft .NET Framework et fournit l'environnement d'exécution pour tout le code .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="63c32-103">The common language runtime (CLR) is the heart of the Microsoft .NET Framework and provides the execution environment for all .NET Framework code.</span></span> <span data-ttu-id="63c32-104">Le code qui s'exécute dans le CLR est appelé code managé.</span><span class="sxs-lookup"><span data-stu-id="63c32-104">Code that runs within the CLR is referred to as managed code.</span></span> <span data-ttu-id="63c32-105">Le CLR fournit divers services et fonctions requis pour l'exécution du programme, notamment la compilation juste-à-temps (JIT), l'allocation et la gestion de mémoire, l'application de sécurité de type, la gestion des exceptions, la gestion des threads et la sécurité.</span><span class="sxs-lookup"><span data-stu-id="63c32-105">The CLR provides various functions and services required for program execution, including just-in-time (JIT) compilation, allocating and managing memory, enforcing type safety, exception handling, thread management, and security.</span></span>  
   
- Avec le CLR hébergé dans Microsoft SQL Server \(intégration de CLR\), vous pouvez créer des procédures stockées, des déclencheurs, des fonctions définies par l'utilisateur, des types définis par l'utilisateur et des agrégats définis par l'utilisateur dans un code managé.  Comme le code managé est compilé en code natif avant exécution, vous pouvez obtenir des améliorations significatives des performances dans certains scénarios.  
+ <span data-ttu-id="63c32-106">Avec le CLR hébergé dans Microsoft SQL Server (intégration de CLR), vous pouvez créer des procédures stockées, des déclencheurs, des fonctions définies par l'utilisateur, des types définis par l'utilisateur et des agrégats définis par l'utilisateur dans un code managé.</span><span class="sxs-lookup"><span data-stu-id="63c32-106">With the CLR hosted in Microsoft SQL Server (called CLR integration), you can author stored procedures, triggers, user-defined functions, user-defined types, and user-defined aggregates in managed code.</span></span> <span data-ttu-id="63c32-107">Comme le code managé est compilé en code natif avant exécution, vous pouvez obtenir des améliorations significatives des performances dans certains scénarios.</span><span class="sxs-lookup"><span data-stu-id="63c32-107">Because managed code compiles to native code prior to execution, you can achieve significant performance increases in some scenarios.</span></span>  
   
- Le code managé utilise la sécurité d'accès du code CAS \(Code Access Security\), des liaisons de code et des domaines d'application pour empêcher les assemblys d'effectuer certaines opérations.  SQL Server utilise CAS pour vous aider à sécuriser le code managé et empêcher toute compromission du système d'exploitation ou du serveur de base de données.  
+ <span data-ttu-id="63c32-108">Le code managé utilise la sécurité d'accès du code CAS (Code Access Security), des liaisons de code et des domaines d'application pour empêcher les assemblys d'effectuer certaines opérations.</span><span class="sxs-lookup"><span data-stu-id="63c32-108">Managed code uses Code Access Security (CAS), code links, and application domains to prevent assemblies from performing certain operations.</span></span> <span data-ttu-id="63c32-109">SQL Server utilise CAS pour vous aider à sécuriser le code managé et empêcher toute compromission du système d'exploitation ou du serveur de base de données.</span><span class="sxs-lookup"><span data-stu-id="63c32-109">SQL Server uses CAS to help secure the managed code and prevent compromise of the operating system or database server.</span></span>  
   
- Cette section a uniquement pour but de fournir les informations indispensables pour commencer à programmer avec l'intégration de CLR dans SQL Server et n'est nullement exhaustive.  Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
+ <span data-ttu-id="63c32-110">Cette section a uniquement pour but de fournir les informations indispensables pour commencer à programmer avec l'intégration de CLR dans SQL Server et n'est nullement exhaustive.</span><span class="sxs-lookup"><span data-stu-id="63c32-110">This section is meant to provide only enough information to get started programming with SQL Server CLR integration, and is not meant to be comprehensive.</span></span> <span data-ttu-id="63c32-111">Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="63c32-111">For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="63c32-112">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="63c32-112">**SQL Server Books Online**</span></span>  
   
--   [Présentation de l'intégration du CLR \(Common Language Runtime\)](http://go.microsoft.com/fwlink/?LinkId=115242)  
+-   [<span data-ttu-id="63c32-113">Vue d’ensemble de Common Language Runtime (CLR) intégration</span><span class="sxs-lookup"><span data-stu-id="63c32-113">Common Language Runtime (CLR) Integration Overview</span></span>](http://go.microsoft.com/fwlink/?LinkId=115242)  
   
-## Activation de l'intégration de CLR  
- La fonction d'intégration de Common Language Runtime \(CLR\) est désactivée par défaut dans Microsoft SQL Server et doit être activée afin d'utiliser des objets implémentés à l'aide de l'intégration de CLR.  Pour activer l'intégration de CLR à l'aide de Transact\-SQL, utilisez l'option `clr enabled` de la procédure stockée `sp_configure` comme indiqué :  
+## <a name="enabling-clr-integration"></a><span data-ttu-id="63c32-114">Activation de l'intégration de CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-114">Enabling CLR Integration</span></span>  
+ <span data-ttu-id="63c32-115">La fonction d'intégration de Common Language Runtime (CLR) est désactivée par défaut dans Microsoft SQL Server et doit être activée afin d'utiliser des objets implémentés à l'aide de l'intégration de CLR.</span><span class="sxs-lookup"><span data-stu-id="63c32-115">The common language runtime (CLR) integration feature is off by default in Microsoft SQL Server, and must be enabled in order to use objects that are implemented using CLR integration.</span></span> <span data-ttu-id="63c32-116">Pour activer l'intégration de CLR à l'aide de Transact-SQL, utilisez l'option `clr enabled` de la procédure stockée `sp_configure` comme indiqué :</span><span class="sxs-lookup"><span data-stu-id="63c32-116">To enable CLR integration using Transact-SQL, use the `clr enabled` option of the `sp_configure` stored procedure as shown:</span></span>  
   
 ```  
 sp_configure 'clr enabled', 1  
@@ -39,40 +42,40 @@ RECONFIGURE
 GO  
 ```  
   
- Vous pouvez désactiver l'intégration de CLR en attribuant à l'option `clr enabled` la valeur 0.  Lorsque vous désactivez l'intégration de CLR, SQL Server arrête d'exécuter toutes les routines CLR et décharge tous les domaines d'application.  
+ <span data-ttu-id="63c32-117">Vous pouvez désactiver l'intégration de CLR en attribuant à l'option `clr enabled` la valeur 0.</span><span class="sxs-lookup"><span data-stu-id="63c32-117">You can disable CLR integration by setting the `clr enabled` option to 0.</span></span> <span data-ttu-id="63c32-118">Lorsque vous désactivez l'intégration de CLR, SQL Server arrête d'exécuter toutes les routines CLR et décharge tous les domaines d'application.</span><span class="sxs-lookup"><span data-stu-id="63c32-118">When you disable CLR integration, SQL Server stops executing all CLR routines and unloads all application domains.</span></span>  
   
- Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
+ <span data-ttu-id="63c32-119">Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="63c32-119">For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="63c32-120">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="63c32-120">**SQL Server Books Online**</span></span>  
   
--   [Activation de l'intégration du CLR](http://go.microsoft.com/fwlink/?LinkId=115230)  
+-   [<span data-ttu-id="63c32-121">Activation de l’intégration du CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-121">Enabling CLR Integration</span></span>](http://go.microsoft.com/fwlink/?LinkId=115230)  
   
-## Déploiement d'un assembly CLR  
- Une fois que les méthodes CLR ont été testées et vérifiées sur le serveur de test, elles peuvent être distribuées aux serveurs de production à l'aide d'un script de déploiement.  Le script de déploiement peut être généré manuellement ou à l'aide de SQL Server Management Studio.  Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
+## <a name="deploying-a-clr-assembly"></a><span data-ttu-id="63c32-122">Déploiement d'un assembly CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-122">Deploying a CLR Assembly</span></span>  
+ <span data-ttu-id="63c32-123">Une fois que les méthodes CLR ont été testées et vérifiées sur le serveur de test, elles peuvent être distribuées aux serveurs de production à l'aide d'un script de déploiement.</span><span class="sxs-lookup"><span data-stu-id="63c32-123">Once the CLR methods have been tested and verified on the test server, they can be distributed to production servers using a deployment script.</span></span> <span data-ttu-id="63c32-124">Le script de déploiement peut être généré manuellement ou à l'aide de SQL Server Management Studio.</span><span class="sxs-lookup"><span data-stu-id="63c32-124">The deployment script can be generated manually, or by using SQL Server Management Studio.</span></span> <span data-ttu-id="63c32-125">Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="63c32-125">For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="63c32-126">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="63c32-126">**SQL Server Books Online**</span></span>  
   
-1.  [Déploiement d'objets de base de données CLR](http://go.microsoft.com/fwlink/?LinkId=115232)  
+1.  [<span data-ttu-id="63c32-127">Déploiement d’objets de base de données CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-127">Deploying CLR Database Objects</span></span>](http://go.microsoft.com/fwlink/?LinkId=115232)  
   
-## Sécurité d'intégration de CLR  
- Le modèle de sécurité de l'intégration de Microsoft SQL Server avec le CLR Microsoft .NET Framework gère et sécurise l'accès entre différents types d'objets CLR et non CLR s'exécutant avec SQL Server.  Ces objets peuvent être appelés par une instruction Transact\-SQL ou un autre objet CLR en cours d'exécution sur le serveur.  
+## <a name="clr-integration-security"></a><span data-ttu-id="63c32-128">Sécurité d'intégration de CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-128">CLR Integration Security</span></span>  
+ <span data-ttu-id="63c32-129">Le modèle de sécurité de l'intégration de Microsoft SQL Server avec le CLR Microsoft .NET Framework gère et sécurise l'accès entre différents types d'objets CLR et non CLR s'exécutant avec SQL Server.</span><span class="sxs-lookup"><span data-stu-id="63c32-129">The security model of the Microsoft SQL Server integration with the Microsoft .NET Framework common language runtime (CLR) manages and secures access between different types of CLR and non-CLR objects running within SQL Server.</span></span> <span data-ttu-id="63c32-130">Ces objets peuvent être appelés par une instruction Transact-SQL ou un autre objet CLR en cours d'exécution sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="63c32-130">These objects may be called by a Transact-SQL statement or another CLR object running in the server.</span></span>  
   
- Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
+ <span data-ttu-id="63c32-131">Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="63c32-131">For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="63c32-132">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="63c32-132">**SQL Server Books Online**</span></span>  
   
--   [Sécurité de l'intégration du CLR](http://go.microsoft.com/fwlink/?LinkId=115234)  
+-   [<span data-ttu-id="63c32-133">Sécurité d’intégration du CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-133">CLR Integration Security</span></span>](http://go.microsoft.com/fwlink/?LinkId=115234)  
   
-## Débogage d'un assembly CLR  
- Microsoft SQL Server prend en charge le débogage d'objets Transact\-SQL et Common Language Runtime \(CLR\) dans la base de données.  Le débogage fonctionne avec tous les langages : les utilisateurs peuvent accéder sans difficulté à des objets CLR à partir de Transact\-SQL et inversement.  
+## <a name="debugging-a-clr-assembly"></a><span data-ttu-id="63c32-134">Débogage d'un assembly CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-134">Debugging a CLR Assembly</span></span>  
+ <span data-ttu-id="63c32-135">Microsoft SQL Server prend en charge le débogage d'objets Transact-SQL et Common Language Runtime (CLR) dans la base de données.</span><span class="sxs-lookup"><span data-stu-id="63c32-135">Microsoft SQL Server provides support for debugging Transact-SQL and common language runtime (CLR) objects in the database.</span></span> <span data-ttu-id="63c32-136">Le débogage fonctionne avec tous les langages : les utilisateurs peuvent accéder sans difficulté à des objets CLR à partir de Transact-SQL et inversement.</span><span class="sxs-lookup"><span data-stu-id="63c32-136">Debugging works across languages: users can step seamlessly into CLR objects from Transact-SQL, and vice versa.</span></span>  
   
- Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
+ <span data-ttu-id="63c32-137">Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.</span><span class="sxs-lookup"><span data-stu-id="63c32-137">For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.</span></span>  
   
- **Documentation en ligne de SQL Server**  
+ <span data-ttu-id="63c32-138">**Documentation en ligne de SQL Server**</span><span class="sxs-lookup"><span data-stu-id="63c32-138">**SQL Server Books Online**</span></span>  
   
--   [Débogage d'objets de base de données CLR](http://go.microsoft.com/fwlink/?LinkId=115236)  
+-   [<span data-ttu-id="63c32-139">Débogage d’objets de base de données CLR</span><span class="sxs-lookup"><span data-stu-id="63c32-139">Debugging CLR Database Objects</span></span>](http://go.microsoft.com/fwlink/?LinkId=115236)  
   
-## Voir aussi  
- [Creating SQL Server 2005 Objects In Managed Code](http://msdn.microsoft.com/fr-fr/5358a825-e19b-49aa-8214-674ce5fed1da)   
- [Sécurité d'accès du code et ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="63c32-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="63c32-140">See Also</span></span>  
+ [<span data-ttu-id="63c32-141">Création d’objets SQL Server 2005 dans le Code managé</span><span class="sxs-lookup"><span data-stu-id="63c32-141">Creating SQL Server 2005 Objects In Managed Code</span></span>](http://msdn.microsoft.com/en-us/5358a825-e19b-49aa-8214-674ce5fed1da)  
+ [<span data-ttu-id="63c32-142">Sécurité d’accès du code et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="63c32-142">Code Access Security and ADO.NET</span></span>](../../../../../docs/framework/data/adonet/code-access-security.md)  
+ [<span data-ttu-id="63c32-143">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="63c32-143">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

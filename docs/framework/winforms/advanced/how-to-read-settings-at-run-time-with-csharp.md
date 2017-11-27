@@ -1,40 +1,41 @@
 ---
-title: "Comment&#160;: lire des param&#232;tres au moment de l&#39;ex&#233;cution avec C# | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "paramètres d'application (Windows Forms), C#"
-  - "paramètres d'application (Windows Forms), lire"
-  - "paramètres d'application (Windows Forms), au moment de l'exécution"
+title: "Comment : lire des paramètres au moment de l'exécution avec C#"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- application settings [Windows Forms], reading
+- application settings [Windows Forms], run time
+- application settings [Windows Forms], C#
 ms.assetid: dbe8bf09-5e1c-49da-9192-154033d7240b
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c23fd88d33ff4ca480c435f2058f4c568320578
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: lire des param&#232;tres au moment de l&#39;ex&#233;cution avec C# #
-Vous pouvez lire les paramètres de portée application et de portée utilisateur au moment de l'exécution via l'objet Propriétés.  L'objet Propriétés expose tous les paramètres par défaut du projet via le membre Properties.Settings.Default.  
+# <a name="how-to-read-settings-at-run-time-with-c"></a><span data-ttu-id="22fc0-102">Comment : lire des paramètres au moment de l'exécution avec C#</span><span class="sxs-lookup"><span data-stu-id="22fc0-102">How To: Read Settings at Run Time With C#</span></span> #
+<span data-ttu-id="22fc0-103">Vous pouvez lire les paramètres de portée application et de portée utilisateur au moment de l'exécution via l'objet Propriétés.</span><span class="sxs-lookup"><span data-stu-id="22fc0-103">You can read both Application-scoped and User-scoped settings at run time via the Properties object.</span></span> <span data-ttu-id="22fc0-104">L'objet Propriétés expose tous les paramètres par défaut du projet via le membre Properties.Settings.Default.</span><span class="sxs-lookup"><span data-stu-id="22fc0-104">The Properties object exposes all of the default settings for the project via the Properties.Settings.Default member.</span></span>  
   
-### Pour lire des paramètres au moment de l'exécution avec C\#  
+### <a name="to-read-settings-at-run-time-with-c"></a><span data-ttu-id="22fc0-105">Pour lire des paramètres au moment de l'exécution avec C#</span><span class="sxs-lookup"><span data-stu-id="22fc0-105">To Read Settings at Run Time with C#</span></span>  
   
--   Accédez au paramètre approprié via le membre Properties.Settings.Default.  L'exemple suivant montre comment affecter un paramètre nommé `myColor` à une propriété BackColor.  Au préalable, vous devez avoir créé un fichier de paramètres contenant un paramètre nommé `myColor` de type `System.Drawing.Color`.  Pour plus d'informations sur la création d'un fichier de paramètres, consultez [Comment : créer un nouveau paramètre au moment du design](../../../../docs/framework/winforms/advanced/how-to-create-a-new-setting-at-design-time.md).  
+-   <span data-ttu-id="22fc0-106">Accédez au paramètre approprié via le membre Properties.Settings.Default.</span><span class="sxs-lookup"><span data-stu-id="22fc0-106">Access the appropriate setting via the Properties.Settings.Default member.</span></span> <span data-ttu-id="22fc0-107">L'exemple suivant montre comment affecter un paramètre nommé `myColor` à une propriété BackColor.</span><span class="sxs-lookup"><span data-stu-id="22fc0-107">The following example shows how to assign a setting named `myColor` to a BackColor property.</span></span> <span data-ttu-id="22fc0-108">Au préalable, vous devez avoir créé un fichier de paramètres contenant un paramètre nommé `myColor` de type `System.Drawing.Color`.</span><span class="sxs-lookup"><span data-stu-id="22fc0-108">It requires you to have previously created a Settings file containing a setting named `myColor` of type `System.Drawing.Color`.</span></span> <span data-ttu-id="22fc0-109">Pour plus d’informations sur la création d’un fichier de paramètres, consultez [comment faire : créer un nouveau paramètre au moment du Design](../../../../docs/framework/winforms/advanced/how-to-create-a-new-setting-at-design-time.md).</span><span class="sxs-lookup"><span data-stu-id="22fc0-109">For information about creating a Settings file, see [How To: Create a New Setting at Design Time](../../../../docs/framework/winforms/advanced/how-to-create-a-new-setting-at-design-time.md).</span></span>  
   
     ```  
     // C#  
     this.BackColor = Properties.Settings.Default.myColor;  
     ```  
   
-## Voir aussi  
- [Utilisation de paramètres d'application et de paramètres utilisateur](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)   
- [Comment : écrire des paramètres utilisateur au moment de l'exécution avec C\#](../../../../docs/framework/winforms/advanced/how-to-write-user-settings-at-run-time-with-csharp.md)   
- [Vue d'ensemble des paramètres d'application](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+## <a name="see-also"></a><span data-ttu-id="22fc0-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="22fc0-110">See Also</span></span>  
+ [<span data-ttu-id="22fc0-111">Utilisation de paramètres d'application et de paramètres utilisateur</span><span class="sxs-lookup"><span data-stu-id="22fc0-111">Using Application Settings and User Settings</span></span>](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
+ [<span data-ttu-id="22fc0-112">Guide pratique pour écrire des paramètres utilisateur au moment de l'exécution avec C#</span><span class="sxs-lookup"><span data-stu-id="22fc0-112">How To: Write User Settings at Run Time with C#</span></span>](../../../../docs/framework/winforms/advanced/how-to-write-user-settings-at-run-time-with-csharp.md)  
+ [<span data-ttu-id="22fc0-113">Vue d'ensemble des paramètres d'application</span><span class="sxs-lookup"><span data-stu-id="22fc0-113">Application Settings Overview</span></span>](../../../../docs/framework/winforms/advanced/application-settings-overview.md)

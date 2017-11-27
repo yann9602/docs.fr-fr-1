@@ -1,0 +1,74 @@
+---
+title: "ICorProfilerCallback6::GetAssemblyReferences, méthode"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: cpp
+api_name: ICorProfilerCallback6.GetAssemblyReferences
+api_location:
+- mscorwks.dll
+- corprof.idl
+api_type: COM
+ms.assetid: 8b391afb-d79f-41bd-94ce-43ce62c6b5fc
+topic_type: apiref
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 3682f40c9c49ea15ac9f084b6d5db274bfcaa8d6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
+---
+# <a name="icorprofilercallback6getassemblyreferences-method"></a><span data-ttu-id="2f534-102">ICorProfilerCallback6::GetAssemblyReferences, méthode</span><span class="sxs-lookup"><span data-stu-id="2f534-102">ICorProfilerCallback6::GetAssemblyReferences Method</span></span>
+<span data-ttu-id="2f534-103">[Pris en charge dans .NET Framework 4.5.2 et ultérieur]</span><span class="sxs-lookup"><span data-stu-id="2f534-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  
+  
+ <span data-ttu-id="2f534-104">Notifie le profileur qu'un assembly en est au tout début du chargement, quand le CLR effectue un parcours de fermeture de références d'assembly.</span><span class="sxs-lookup"><span data-stu-id="2f534-104">Notifies the profiler that an assembly is in a very early loading stage, when the common language runtime performs an assembly reference closure walk.</span></span>  
+  
+## <a name="syntax"></a><span data-ttu-id="2f534-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2f534-105">Syntax</span></span>  
+  
+```cpp
+HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,  
+        [in] ICorProfilerAssemblyReferenceProvider* pAsmRefProvider  
+);  
+```  
+  
+#### <a name="parameters"></a><span data-ttu-id="2f534-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="2f534-106">Parameters</span></span>  
+ `wszAssemblyPath`  
+ <span data-ttu-id="2f534-107">[en entrée] Le chemin d’accès et le nom de l’assembly dont les métadonnées seront modifiées.</span><span class="sxs-lookup"><span data-stu-id="2f534-107">[in] The path and name of the assembly whose metadata will be modified.</span></span>  
+  
+ `pAsmRefProvider`  
+ <span data-ttu-id="2f534-108">[in] Un pointeur vers l’adresse d’un [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) interface qui spécifie l’assembly fait référence à ajouter.</span><span class="sxs-lookup"><span data-stu-id="2f534-108">[in] A pointer to the address of an [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) interface that specifies the assembly references to add.</span></span>  
+  
+## <a name="return-value"></a><span data-ttu-id="2f534-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="2f534-109">Return Value</span></span>  
+ <span data-ttu-id="2f534-110">Les valeurs retournées depuis ce rappel sont ignorées.</span><span class="sxs-lookup"><span data-stu-id="2f534-110">Return values from this callback are ignored.</span></span>  
+  
+## <a name="remarks"></a><span data-ttu-id="2f534-111">Remarques</span><span class="sxs-lookup"><span data-stu-id="2f534-111">Remarks</span></span>  
+ <span data-ttu-id="2f534-112">Ce rappel est contrôlé en définissant le [COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) indicateur de masque d’événement lors de l’appel du [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) (méthode).</span><span class="sxs-lookup"><span data-stu-id="2f534-112">This callback is controlled by setting the [COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) event mask flag when calling the [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) method.</span></span> <span data-ttu-id="2f534-113">Si le profileur s’inscrit pour la [ICorProfilerCallback6::GetAssemblyReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) méthode de rappel, le runtime passe le chemin d’accès et le nom de l’assembly à charger, ainsi qu’un pointeur vers un [ ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objet d’interface pour cette méthode.</span><span class="sxs-lookup"><span data-stu-id="2f534-113">If the profiler registers for the [ICorProfilerCallback6::GetAssemblyReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) callback method, the runtime passes the path and name of the assembly to be loaded, along with a pointer to an [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) interface object to that method.</span></span> <span data-ttu-id="2f534-114">Le profileur peut ensuite appeler la [ICorProfilerAssemblyReferenceProvider::AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) méthode avec un `COR_PRF_ASSEMBLY_REFERENCE_INFO` objet pour chaque assembly cible qu’il prévoit de référencer à partir de l’assembly spécifié dans le `GetAssemblyReferences` rappel.</span><span class="sxs-lookup"><span data-stu-id="2f534-114">The profiler can then call the [ICorProfilerAssemblyReferenceProvider::AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) method with a `COR_PRF_ASSEMBLY_REFERENCE_INFO` object for each target assembly it plans to reference from the assembly specified in the `GetAssemblyReferences` callback.</span></span>  
+  
+ <span data-ttu-id="2f534-115">Utilisez le rappel de `GetAssemblyReferences` seulement si le profileur doit modifier les métadonnées d'un assembly pour y ajouter des références d'assembly.</span><span class="sxs-lookup"><span data-stu-id="2f534-115">Use the `GetAssemblyReferences` callback only if the profiler has to modify an assembly's metadata to add assembly references.</span></span> <span data-ttu-id="2f534-116">(Toutefois, notez que la modification réelle des métadonnées d’un assembly est effectuée dans le [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)méthode de rappel.) Le profileur doit implémenter la méthode de rappel de `GetAssemblyReferences` pour informer le CLR que des références d'assembly seront ajoutées quand le module aura été chargé.</span><span class="sxs-lookup"><span data-stu-id="2f534-116">(But note that the actual modification of an assembly's metadata is done in the [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)callback method.) The profiler should implement the `GetAssemblyReferences` callback method to inform the common language runtime (CLR) that assembly references will be added when the module has been loaded.</span></span>  <span data-ttu-id="2f534-117">Ceci permet de s'assurer que les décisions de partage des assemblys prises par le CLR au cours de cette phase restent valides même si le profileur prévoit de modifier ultérieurement les références d'assembly des métadonnées.</span><span class="sxs-lookup"><span data-stu-id="2f534-117">This helps ensure that assembly sharing decisions made by the CLR during this early stage remain valid although the profiler plans to modify the metadata assembly references later.</span></span>  <span data-ttu-id="2f534-118">Cela permet d'éviter certaines instances où les modifications des métadonnées du profileur provoquent une erreur `SECURITY_E_INCOMPATIBLE_SHARE`.</span><span class="sxs-lookup"><span data-stu-id="2f534-118">This can avoid some instances in which profiler metadata modifications cause an `SECURITY_E_INCOMPATIBLE_SHARE` error.</span></span>  
+  
+ <span data-ttu-id="2f534-119">Le profileur utilise le [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objet fourni par cette méthode pour ajouter des références d’assembly à l’Analyseur de fermeture de référence assembly CLR.</span><span class="sxs-lookup"><span data-stu-id="2f534-119">The profiler uses the [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) object provided by this method to add assembly references to the CLR assembly reference closure walker.</span></span>  <span data-ttu-id="2f534-120">Le [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objet doit être utilisé uniquement à partir de ce rappel.</span><span class="sxs-lookup"><span data-stu-id="2f534-120">The [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) object should be used only from within this callback.</span></span> <span data-ttu-id="2f534-121">Les appels à la [ICorProfilerAssemblyReferenceProvider::AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) méthode à partir de ce rappel ne provoquent pas la modification des métadonnées, mais uniquement dans un parcours de fermeture de référence assembly modifié.</span><span class="sxs-lookup"><span data-stu-id="2f534-121">Calls to the [ICorProfilerAssemblyReferenceProvider::AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) method from this callback don't result in modified metadata, but only in a modified assembly reference closure walk.</span></span> <span data-ttu-id="2f534-122">Le profileur doit donc utiliser un [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) objet à ajouter explicitement les références d’assembly à partir du [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) rappel pour le référencement assembly, même s’il implémente la `GetAssemblyReferences` rappel.</span><span class="sxs-lookup"><span data-stu-id="2f534-122">The profiler will still have to use an [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) object to explicitly add assembly references from within the [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) callback for the referencing assembly, even if it implements the `GetAssemblyReferences` callback.</span></span>  
+  
+ <span data-ttu-id="2f534-123">Le profileur doit être prêt à recevoir des appels en doublon à ce rappel pour le même assembly et doit répondre de manière identique pour chaque appel en double (en effectuant le même ensemble de [ICorProfilerAssemblyReferenceProvider :: AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) appels).</span><span class="sxs-lookup"><span data-stu-id="2f534-123">The profiler should be prepared to receive duplicate calls to this callback for the same assembly, and should respond identically for each such duplicate call (by making the same set of [ICorProfilerAssemblyReferenceProvider::AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) calls).</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="2f534-124">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2f534-124">Requirements</span></span>  
+ <span data-ttu-id="2f534-125">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2f534-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="2f534-126">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="2f534-126">**Header:** CorProf.idl, CorProf.h</span></span>  
+  
+ <span data-ttu-id="2f534-127">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2f534-127">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="2f534-128">**Versions du .NET framework :**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2f534-128">**.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="2f534-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2f534-129">See Also</span></span>  
+ [<span data-ttu-id="2f534-130">Icorprofilercallback6, Interface</span><span class="sxs-lookup"><span data-stu-id="2f534-130">ICorProfilerCallback6 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-interface.md)  
+ [<span data-ttu-id="2f534-131">ModuleLoadFinished (méthode)</span><span class="sxs-lookup"><span data-stu-id="2f534-131">ModuleLoadFinished Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)  
+ [<span data-ttu-id="2f534-132">Cor_prf_assembly_reference_info, Structure</span><span class="sxs-lookup"><span data-stu-id="2f534-132">COR_PRF_ASSEMBLY_REFERENCE_INFO Structure</span></span>](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
+ [<span data-ttu-id="2f534-133">Icorprofilerassemblyreferenceprovider, Interface</span><span class="sxs-lookup"><span data-stu-id="2f534-133">ICorProfilerAssemblyReferenceProvider Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md)

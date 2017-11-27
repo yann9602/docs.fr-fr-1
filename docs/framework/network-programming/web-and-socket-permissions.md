@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Networking
 - positions [.NET Framework], accepting
@@ -26,29 +21,27 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6071c69799cf289ad0ecf163dc2de038efefecc1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 102d7d92384d77b5fbb56cd8c3eb859ec64bcca0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="web-and-socket-permissions"></a>Autorisations web et socket
-La sécurité Internet pour les applications utilisant l’espace de noms <xref:System.Net> est apportée par les classes <xref:System.Net.WebPermission> et <xref:System.Net.SocketPermission>. La classe **WebPermission** détermine si une application est autorisée à demander des données à partir d’un URI ou d’utiliser un URI sur Internet. La classe **SocketPermission** détermine si une application est autorisée à utiliser un <xref:System.Net.Sockets.Socket> pour accepter des données sur un port local ou pour communiquer avec des appareils distants utilisant un protocole de transport à une autre adresse, en fonction de l’hôte, du numéro de port et du protocole de transport du socket.  
+# <a name="web-and-socket-permissions"></a><span data-ttu-id="afa17-102">Autorisations web et socket</span><span class="sxs-lookup"><span data-stu-id="afa17-102">Web and Socket Permissions</span></span>
+<span data-ttu-id="afa17-103">La sécurité Internet pour les applications utilisant l’espace de noms <xref:System.Net> est apportée par les classes <xref:System.Net.WebPermission> et <xref:System.Net.SocketPermission>.</span><span class="sxs-lookup"><span data-stu-id="afa17-103">Internet security for applications using the <xref:System.Net> namespace is provided by the <xref:System.Net.WebPermission> and <xref:System.Net.SocketPermission> classes.</span></span> <span data-ttu-id="afa17-104">La classe **WebPermission** détermine si une application est autorisée à demander des données à partir d’un URI ou d’utiliser un URI sur Internet.</span><span class="sxs-lookup"><span data-stu-id="afa17-104">The **WebPermission** class controls an application's right to request data from a URI or to serve a URI to the Internet.</span></span> <span data-ttu-id="afa17-105">La classe **SocketPermission** détermine si une application est autorisée à utiliser un <xref:System.Net.Sockets.Socket> pour accepter des données sur un port local ou pour communiquer avec des appareils distants utilisant un protocole de transport à une autre adresse, en fonction de l’hôte, du numéro de port et du protocole de transport du socket.</span><span class="sxs-lookup"><span data-stu-id="afa17-105">The **SocketPermission** class controls an application's right to use a <xref:System.Net.Sockets.Socket> to accept data on a local port or to contact remote devices using a transport protocol at another address, based on the host, port number, and transport protocol of the socket.</span></span>  
   
- La classe d’autorisation à utiliser dépend du type de votre application. Les applications qui utilisent <xref:System.Net.WebRequest> et ses descendants doivent utiliser la classe **WebPermission** pour gérer les autorisations. Les applications qui utilisent un accès de niveau socket doivent utiliser la classe **SocketPermission** pour gérer les autorisations.  
+ <span data-ttu-id="afa17-106">La classe d’autorisation à utiliser dépend du type de votre application.</span><span class="sxs-lookup"><span data-stu-id="afa17-106">Which permission class you use depends on your application type.</span></span> <span data-ttu-id="afa17-107">Les applications qui utilisent <xref:System.Net.WebRequest> et ses descendants doivent utiliser la classe **WebPermission** pour gérer les autorisations.</span><span class="sxs-lookup"><span data-stu-id="afa17-107">Applications that use <xref:System.Net.WebRequest> and its descendants should use the **WebPermission** class to manage permissions.</span></span> <span data-ttu-id="afa17-108">Les applications qui utilisent un accès de niveau socket doivent utiliser la classe **SocketPermission** pour gérer les autorisations.</span><span class="sxs-lookup"><span data-stu-id="afa17-108">Applications that use socket-level access should use the **SocketPermission** class to manage permissions.</span></span>  
   
- **WebPermission** et **SocketPermission** définissent deux autorisations : Accept et Connect. Accept autorise l’application à répondre à une connexion entrante à partir d’une autre partie. Connect l’autorise à démarrer une connexion à une autre partie.  
+ <span data-ttu-id="afa17-109">**WebPermission** et **SocketPermission** définissent deux autorisations : Accept et Connect.</span><span class="sxs-lookup"><span data-stu-id="afa17-109">**WebPermission** and **SocketPermission** define two permissions: accept and connect.</span></span> <span data-ttu-id="afa17-110">Accept autorise l’application à répondre à une connexion entrante à partir d’une autre partie.</span><span class="sxs-lookup"><span data-stu-id="afa17-110">Accept grants the application the right to answer an incoming connection from another party.</span></span> <span data-ttu-id="afa17-111">Connect l’autorise à démarrer une connexion à une autre partie.</span><span class="sxs-lookup"><span data-stu-id="afa17-111">Connect grants the application the right to initiate a connection to another party.</span></span>  
   
- Pour les instances **SocketPermission**, Accept signifie qu’une application peut accepter des connexions entrantes sur une adresse de transport locale et Connect signifie qu’une application peut se connecter à une adresse de transport distante (ou locale).  
+ <span data-ttu-id="afa17-112">Pour les instances **SocketPermission**, Accept signifie qu’une application peut accepter des connexions entrantes sur une adresse de transport locale et Connect signifie qu’une application peut se connecter à une adresse de transport distante (ou locale).</span><span class="sxs-lookup"><span data-stu-id="afa17-112">For **SocketPermission** instances, accept means that an application can accept incoming connections on a local transport address; connect means that an application can connect to some remote (or local) transport address.</span></span>  
   
- Pour les instances **WebPermission**, Accept signifie qu’une application peut exporter l’URI contrôlé par **WebPermission** sur Internet et Connect signifie qu’une application peut accéder à cet URI (distant ou local).  
+ <span data-ttu-id="afa17-113">Pour les instances **WebPermission**, Accept signifie qu’une application peut exporter l’URI contrôlé par **WebPermission** sur Internet et Connect signifie qu’une application peut accéder à cet URI (distant ou local).</span><span class="sxs-lookup"><span data-stu-id="afa17-113">For **WebPermission** instances, accept means that an application can export the URI controlled by the **WebPermission** to the world; connect means that an application can access that URI (whether it is remote or local).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Sécurité](../../../docs/standard/security/index.md)   
- [Sécurité dans la programmation réseau](../../../docs/framework/network-programming/security-in-network-programming.md)
-
+## <a name="see-also"></a><span data-ttu-id="afa17-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="afa17-114">See Also</span></span>  
+ [<span data-ttu-id="afa17-115">Sécurité</span><span class="sxs-lookup"><span data-stu-id="afa17-115">Security</span></span>](../../../docs/standard/security/index.md)  
+ [<span data-ttu-id="afa17-116">Sécurité dans la programmation réseau</span><span class="sxs-lookup"><span data-stu-id="afa17-116">Security in Network Programming</span></span>](../../../docs/framework/network-programming/security-in-network-programming.md)

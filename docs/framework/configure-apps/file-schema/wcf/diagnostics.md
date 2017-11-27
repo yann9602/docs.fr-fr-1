@@ -1,33 +1,35 @@
 ---
-title: "&lt;diagnostics&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;tests de diagnostic&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: df86d364d75f62cbe8be5f72e0b3b120784c35a4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;diagnostics&gt;
-L'élément `diagnostics` définit des paramètres qui peuvent être utilisés par un administrateur à des fins d'inspection et de contrôle au moment de l'exécution.  
+# <a name="ltdiagnosticsgt"></a><span data-ttu-id="b78f6-102">&lt;tests de diagnostic&gt;</span><span class="sxs-lookup"><span data-stu-id="b78f6-102">&lt;diagnostics&gt;</span></span>
+<span data-ttu-id="b78f6-103">L'élément `diagnostics` définit des paramètres qui peuvent être utilisés par un administrateur à des fins d'inspection et de contrôle au moment de l'exécution.</span><span class="sxs-lookup"><span data-stu-id="b78f6-103">The `diagnostics` element defines settings that can be used by an administrator for run-time inspection and control.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="b78f6-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="b78f6-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="b78f6-105">\<Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="b78f6-105">\<diagnostics></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="b78f6-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b78f6-106">Syntax</span></span>  
   
+```xml  
 <system.serviceModel>  
-   <diagnostics etwProviderId=”String”  
-       performanceCounters="Off/ServiceOnly/All/Default"         
-       wmiProviderEnabled="Boolean" >  
-       <endToEndTracing activityTracing="Boolean"  
+   <diagnostics etwProviderId="String"       performanceCounters="Off/ServiceOnly/All/Default"              wmiProviderEnabled="Boolean" >       <endToEndTracing activityTracing="Boolean"  
           messageFlowTracing="Boolean"  
           propagateActivity="Boolean" />  
        <messageLogging logEntireMessage="Boolean"  
@@ -44,36 +46,36 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 </system.serviceModel>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b78f6-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="b78f6-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="b78f6-108">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="b78f6-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="b78f6-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="b78f6-109">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|etwProviderId|Chaîne qui spécifie l'identificateur du fournisseur de suivi d'événements, qui écrit des événements dans les sessions ETW.|  
-|performanceCounters|Spécifie si les compteurs de performance de l'assembly sont activés.  Les valeurs valides sont les suivantes :<br /><br /> -   Off : les compteurs de performance sont désactivés.<br />-   ServiceOnly : seuls les compteurs de performance pertinents pour ce service sont activés.<br />-   All : les compteurs de performance peuvent être affichés pendant l'exécution.<br />-   Default : un compteur de performance unique de l'instance \_WCF\_Admin est créé.  Cette instance est employée pour activer la collection de données SQM utilisée par l'infrastructure.  Aucune des valeurs du compteur de cette instance n'est mise à jour et par conséquent toutes resteront à zéro.  Il s'agit de la valeur par défaut si aucune configuration n'est présente pour WCF.|  
-|wmiProviderEnabled|Valeur booléenne qui spécifie si le fournisseur WMI de l'assembly est activé.  Le fournisseur WMI est requis pour que l'utilisateur puisse obtenir l'accès au moment de l'exécution aux fonctionnalités d'inspection et de contrôle de Windows Communication Foundation \(WCF\).  La valeur par défaut est `false`.|  
+|<span data-ttu-id="b78f6-110">Attribut</span><span class="sxs-lookup"><span data-stu-id="b78f6-110">Attribute</span></span>|<span data-ttu-id="b78f6-111">Description</span><span class="sxs-lookup"><span data-stu-id="b78f6-111">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="b78f6-112">etwProviderId</span><span class="sxs-lookup"><span data-stu-id="b78f6-112">etwProviderId</span></span>|<span data-ttu-id="b78f6-113">Chaîne qui spécifie l'identificateur du fournisseur de suivi d'événements, qui écrit des événements dans les sessions ETW.</span><span class="sxs-lookup"><span data-stu-id="b78f6-113">A string that specifies the identifier for the Event-Tracing provider, which writes events to ETW sessions.</span></span>|  
+|<span data-ttu-id="b78f6-114">performanceCounters</span><span class="sxs-lookup"><span data-stu-id="b78f6-114">performanceCounters</span></span>|<span data-ttu-id="b78f6-115">Spécifie si les compteurs de performance de l'assembly sont activés.</span><span class="sxs-lookup"><span data-stu-id="b78f6-115">Specifies whether performance counters for the assembly are enabled.</span></span> <span data-ttu-id="b78f6-116">Les valeurs valides sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="b78f6-116">Valid values are</span></span><br /><br /> <span data-ttu-id="b78f6-117">-Off : Les compteurs de Performance sont désactivés.</span><span class="sxs-lookup"><span data-stu-id="b78f6-117">-   Off: Performance counters are disabled.</span></span><br /><span data-ttu-id="b78f6-118">-ServiceOnly : Seuls les compteurs de performance pertinents pour ce service est activé.</span><span class="sxs-lookup"><span data-stu-id="b78f6-118">-   ServiceOnly: Only performance counters relevant to this service is enabled.</span></span><br /><span data-ttu-id="b78f6-119">-Tout : Performances les compteurs peuvent être affichés pendant l’exécution.</span><span class="sxs-lookup"><span data-stu-id="b78f6-119">-   All: Performance counters can be viewed at runtime.</span></span><br /><span data-ttu-id="b78f6-120">-Valeur par défaut : Une instance de compteur de performance unique le _WCF_Admin est créé.</span><span class="sxs-lookup"><span data-stu-id="b78f6-120">-   Default: A single performance counter instance _WCF_Admin is created.</span></span> <span data-ttu-id="b78f6-121">Cette instance est employée pour activer la collection de données SQM utilisée par l’infrastructure.</span><span class="sxs-lookup"><span data-stu-id="b78f6-121">This instance is used to enable the collection of SQM data for used by the infrastructure.</span></span> <span data-ttu-id="b78f6-122">Aucune des valeurs du compteur de cette instance n'est mise à jour et par conséquent toutes resteront à zéro.</span><span class="sxs-lookup"><span data-stu-id="b78f6-122">None of the counter values for this instance are updated and therefore will remain at zero.</span></span> <span data-ttu-id="b78f6-123">Il s'agit de la valeur par défaut si aucune configuration n'est présente pour WCF.</span><span class="sxs-lookup"><span data-stu-id="b78f6-123">This is the default value if no configuration is present for WCF.</span></span>|  
+|<span data-ttu-id="b78f6-124">wmiProviderEnabled</span><span class="sxs-lookup"><span data-stu-id="b78f6-124">wmiProviderEnabled</span></span>|<span data-ttu-id="b78f6-125">Valeur booléenne qui spécifie si le fournisseur WMI de l'assembly est activé.</span><span class="sxs-lookup"><span data-stu-id="b78f6-125">A Boolean value that specifies whether the WMI provider for the assembly is enabled.</span></span> <span data-ttu-id="b78f6-126">Le fournisseur WMI est requis pour que l'utilisateur puisse obtenir l'accès au moment de l'exécution aux fonctionnalités d'inspection et de contrôle de Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="b78f6-126">The WMI provider is required for user to gain run-time access to the inspection and control features of Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="b78f6-127">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="b78f6-127">The default is `false`.</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="b78f6-128">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="b78f6-128">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="b78f6-129">Élément</span><span class="sxs-lookup"><span data-stu-id="b78f6-129">Element</span></span>|<span data-ttu-id="b78f6-130">Description</span><span class="sxs-lookup"><span data-stu-id="b78f6-130">Description</span></span>|  
 |-------------|-----------------|  
-|[\<endToEndTracing\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endtoendtracing.md)|Élément de configuration qui vous permet d'activer et désactiver différents aspects du suivi de bout en bout pendant l'exécution d'une application de service.|  
-|[\<messageLogging\>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)|Décrit les paramètres d'enregistrement des messages WCF.|  
+|[<span data-ttu-id="b78f6-131">\<endToEndTracing ></span><span class="sxs-lookup"><span data-stu-id="b78f6-131">\<endToEndTracing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endtoendtracing.md)|<span data-ttu-id="b78f6-132">Élément de configuration qui vous permet d'activer et désactiver différents aspects du suivi de bout en bout pendant l'exécution d'une application de service.</span><span class="sxs-lookup"><span data-stu-id="b78f6-132">A configuration element that allows you to enable and disable different aspects of end-to-end tracing during the running of a service application.</span></span>|  
+|[<span data-ttu-id="b78f6-133">\<enregistrement des messages ></span><span class="sxs-lookup"><span data-stu-id="b78f6-133">\<messageLogging></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)|<span data-ttu-id="b78f6-134">Décrit les paramètres d'enregistrement des messages WCF.</span><span class="sxs-lookup"><span data-stu-id="b78f6-134">Describes the settings for WCF message logging.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="b78f6-135">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="b78f6-135">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="b78f6-136">Élément</span><span class="sxs-lookup"><span data-stu-id="b78f6-136">Element</span></span>|<span data-ttu-id="b78f6-137">Description</span><span class="sxs-lookup"><span data-stu-id="b78f6-137">Description</span></span>|  
 |-------------|-----------------|  
-|serviceModel|Élément racine de tous les éléments de configuration WCF.|  
+|<span data-ttu-id="b78f6-138">serviceModel</span><span class="sxs-lookup"><span data-stu-id="b78f6-138">serviceModel</span></span>|<span data-ttu-id="b78f6-139">Élément racine de tous les éléments de configuration WCF.</span><span class="sxs-lookup"><span data-stu-id="b78f6-139">The root element of all WCF configuration elements.</span></span>|  
   
-## Notes  
- La section `diagnostics` définit les paramètres de diagnostic pour tous les services situés dans un assembly.  Il est impossible de définir des paramètres de diagnostic distincts au niveau du service à moins qu'il n'y ait qu'un seul service dans l'assembly.  Les attributs sont définis d'après les spécifications de la section.  
+## <a name="remarks"></a><span data-ttu-id="b78f6-140">Remarques</span><span class="sxs-lookup"><span data-stu-id="b78f6-140">Remarks</span></span>  
+ <span data-ttu-id="b78f6-141">La section `diagnostics` définit les paramètres de diagnostic pour tous les services situés dans un assembly.</span><span class="sxs-lookup"><span data-stu-id="b78f6-141">The `diagnostics` section defines the diagnostics settings for all services located in an assembly.</span></span> <span data-ttu-id="b78f6-142">Il est impossible de définir des paramètres de diagnostic distincts au niveau du service à moins qu'il n'y ait qu'un seul service dans l'assembly.</span><span class="sxs-lookup"><span data-stu-id="b78f6-142">It is not possible to define separate diagnostics settings at the service level unless there is only one service in the assembly.</span></span> <span data-ttu-id="b78f6-143">Les attributs sont définis d’après les exigences de la section.</span><span class="sxs-lookup"><span data-stu-id="b78f6-143">Attributes are set according to the requirements of the section.</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="b78f6-144">Exemple</span><span class="sxs-lookup"><span data-stu-id="b78f6-144">Example</span></span>  
   
-```  
+```xml  
 <diagnostics wmiProviderEnabled="false"  
        performanceCounters="all">  
        <messageLogging logEntireMessage="true"  
@@ -89,6 +91,6 @@ L'élément `diagnostics` définit des paramètres qui peuvent être utilisés p
 </diagnostics>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
+## <a name="see-also"></a><span data-ttu-id="b78f6-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b78f6-145">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
  <xref:System.ServiceModel.Diagnostics>

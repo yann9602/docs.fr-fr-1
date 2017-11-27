@@ -1,55 +1,58 @@
 ---
-title: "&lt;liaisons&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;liaisons&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b62cd369-5409-4030-8490-9759a462dd3a
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ed672ee918ad969feb8be6d20c9206e6b5d12278
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;liaisons&gt;
-Cette section contient une collection de liaisons standard et personnalisées.  Chaque entrée est un élément de `binding` qui peut être identifié par son `name` unique.  Les services utilisent les liaisons en les liant à l'aide de `name`.  Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d'avoir un nom.  Pour plus d'informations sur la configuration par défaut, ainsi que sur les comportements et les liaisons sans nom, consultez [Configuration simplifiée](../../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+# <a name="ltbindingsgt"></a><span data-ttu-id="f265b-102">&lt;liaisons&gt;</span><span class="sxs-lookup"><span data-stu-id="f265b-102">&lt;bindings&gt;</span></span>
+<span data-ttu-id="f265b-103">Cette section contient une collection de liaisons standard et personnalisées.</span><span class="sxs-lookup"><span data-stu-id="f265b-103">This section holds a collection of standard and custom bindings.</span></span> <span data-ttu-id="f265b-104">Chaque entrée est un élément de `binding` qui peut être identifié par son `name` unique.</span><span class="sxs-lookup"><span data-stu-id="f265b-104">Each entry is a `binding` element that can be identified by its unique `name`.</span></span> <span data-ttu-id="f265b-105">Les services utilisent les liaisons en les liant à l'aide de `name`.</span><span class="sxs-lookup"><span data-stu-id="f265b-105">Services use bindings by linking them using the `name`.</span></span> <span data-ttu-id="f265b-106">Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d'avoir un nom.</span><span class="sxs-lookup"><span data-stu-id="f265b-106">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="f265b-107">Pour plus d’informations sur la configuration par défaut et nommées liaisons et comportements, consultez [Configuration simplifiée](../../../../../docs/framework/wcf/simplified-configuration.md) et [simplifié la Configuration des Services WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="f265b-107">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
-## Liaison fournie par le système  
- Les liaisons fournies par le système masquent la complexité de la pile de la messagerie du WCF.  Les applications qui utilisent des liaisons fournies par le système ne requièrent pas de contrôle total sur la pile.  Les attributs exposés sur chaque liaison fournie par le système sont les plus appropriés pour le scénario d'utilisation des adresses de liaison.  
+## <a name="system-provided-binding"></a><span data-ttu-id="f265b-108">Liaison fournie par le système</span><span class="sxs-lookup"><span data-stu-id="f265b-108">System-Provided Binding</span></span>  
+ <span data-ttu-id="f265b-109">Les liaisons fournies par le système masquent la complexité de la pile de la messagerie du WCF.</span><span class="sxs-lookup"><span data-stu-id="f265b-109">System-provided bindings hide the complexity of the WCF messaging stack.</span></span> <span data-ttu-id="f265b-110">Les applications qui utilisent des liaisons fournies par le système ne requièrent pas de contrôle total sur la pile.</span><span class="sxs-lookup"><span data-stu-id="f265b-110">Applications using system-provided bindings do not require full control over the stack.</span></span> <span data-ttu-id="f265b-111">Les attributs exposés sur chaque liaison fournie par le système sont les plus appropriés pour le scénario d'utilisation des adresses de liaison.</span><span class="sxs-lookup"><span data-stu-id="f265b-111">The attributes exposed on each system-provided binding are the ones most appropriate for the usage scenario the binding addresses.</span></span>  
   
- La section de configuration de chaque liaison fournie par le système peut définir plusieurs configurations utilisées en vue de configurer la liaison.  Chaque configuration est identifiée par un nom unique.  
+ <span data-ttu-id="f265b-112">La section de configuration de chaque liaison fournie par le système peut définir plusieurs configurations utilisées en vue de configurer la liaison.</span><span class="sxs-lookup"><span data-stu-id="f265b-112">The configuration section for each system-provided binding can define several configurations used to configure the binding.</span></span> <span data-ttu-id="f265b-113">Chaque configuration est identifiée par un nom unique.</span><span class="sxs-lookup"><span data-stu-id="f265b-113">Each configuration is identified by a unique name.</span></span>  
   
- Il n'est pas possible d'ajouter des éléments ou des attributs à une liaison fournie par le système.  Pour cela, vous devez implémenter une liaison personnalisée, telle que décrite dans la section « Liaison personnalisée » de cette rubrique.  Il est possible de définir une liaison personnalisée qui imite parfaitement une liaison fournie par le système et ajoute quelques paramètres sur lesquels l'utilisateur de l'application souhaite avoir le contrôle.  
+ <span data-ttu-id="f265b-114">Il n'est pas possible d'ajouter des éléments ou des attributs à une liaison fournie par le système.</span><span class="sxs-lookup"><span data-stu-id="f265b-114">It is not possible to add elements or attributes to a system-provided binding.</span></span> <span data-ttu-id="f265b-115">Pour cela, vous devez implémenter une liaison personnalisée, telle que décrite dans la section « Liaison personnalisée » de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="f265b-115">To do so, you should implement a custom binding as described in the "Custom Binding" section of this topic.</span></span> <span data-ttu-id="f265b-116">Il est possible de définir une liaison personnalisée qui imite parfaitement une liaison fournie par le système et ajoute quelques paramètres sur lesquels l’utilisateur de l’application souhaite avoir le contrôle.</span><span class="sxs-lookup"><span data-stu-id="f265b-116">It is possible to define a custom binding that mimics a system-provided binding perfectly and adds a few settings the user application wants to have control over.</span></span>  
   
- Pour obtenir une liste des liaisons fournies par le système, consultez [Liaisons fournies par le système](../../../../../docs/framework/wcf/system-provided-bindings.md).  
+ <span data-ttu-id="f265b-117">Pour obtenir la liste des liaisons fournies par le système, consultez [les liaisons fournies](../../../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="f265b-117">For a list of system-provided bindings, see [System-Provided Bindings](../../../../../docs/framework/wcf/system-provided-bindings.md).</span></span>  
   
-## Liaison personnalisée  
- Les liaisons personnalisées permettent d'exercer un contrôle total sur la pile de messagerie WCF.  Une liaison individuelle définit la pile de messages en spécifiant les éléments de configuration des éléments de la pile suivant leur l'ordre d'apparition dans cette pile.  Chaque élément définit et configure l'élément de la pile.  Il doit y avoir un seul élément de `transport` dans chaque liaison personnalisée.  Sans cet élément, la pile de messagerie est incomplète.  
+## <a name="custom-binding"></a><span data-ttu-id="f265b-118">Liaison personnalisée</span><span class="sxs-lookup"><span data-stu-id="f265b-118">Custom Binding</span></span>  
+ <span data-ttu-id="f265b-119">Les liaisons personnalisées permettent d'exercer un contrôle total sur la pile de messagerie WCF.</span><span class="sxs-lookup"><span data-stu-id="f265b-119">Custom bindings provide full control over the WCF messaging stack.</span></span> <span data-ttu-id="f265b-120">Une liaison individuelle définit la pile de messages en spécifiant les éléments de configuration des éléments de la pile suivant leur l'ordre d'apparition dans cette pile.</span><span class="sxs-lookup"><span data-stu-id="f265b-120">An individual binding defines the message stack by specifying the configuration elements for the stack elements in the order they appear on the stack.</span></span> <span data-ttu-id="f265b-121">Chaque élément définit et configure l'élément de la pile.</span><span class="sxs-lookup"><span data-stu-id="f265b-121">Each element defines and configures the one element of the stack.</span></span> <span data-ttu-id="f265b-122">Il doit y avoir un seul élément de `transport` dans chaque liaison personnalisée.</span><span class="sxs-lookup"><span data-stu-id="f265b-122">There must be one and only one `transport` element in each custom binding.</span></span> <span data-ttu-id="f265b-123">Sans cet élément, la pile de messagerie est incomplète.</span><span class="sxs-lookup"><span data-stu-id="f265b-123">Without this element, the messaging stack is incomplete.</span></span>  
   
- L'ordre dans lequel les éléments apparaissent dans la pile est important car il s'agit de l'ordre dans lequel les opérations sont appliquées au message.  Voici l'ordre requis des éléments de la pile :  
+ <span data-ttu-id="f265b-124">L'ordre dans lequel les éléments apparaissent dans la pile est important car il s'agit de l'ordre dans lequel les opérations sont appliquées au message.</span><span class="sxs-lookup"><span data-stu-id="f265b-124">The order in which elements appear in the stack matters, because it is the order in which operations are applied to the message.</span></span> <span data-ttu-id="f265b-125">Voici l'ordre requis des éléments de la pile :</span><span class="sxs-lookup"><span data-stu-id="f265b-125">The required order of stack elements is the following:</span></span>  
   
-1.  Transactions \(facultatif\)  
+1.  <span data-ttu-id="f265b-126">Transactions (facultatif)</span><span class="sxs-lookup"><span data-stu-id="f265b-126">Transactions (optional)</span></span>  
   
-2.  Messagerie fiable \(facultatif\)  
+2.  <span data-ttu-id="f265b-127">Messagerie fiable (facultatif)</span><span class="sxs-lookup"><span data-stu-id="f265b-127">Reliable Messaging (optional)</span></span>  
   
-3.  Sécurité \(facultatif\)  
+3.  <span data-ttu-id="f265b-128">Sécurité (facultatif)</span><span class="sxs-lookup"><span data-stu-id="f265b-128">Security (optional)</span></span>  
   
-4.  Encodeur  
+4.  <span data-ttu-id="f265b-129">Encodeur</span><span class="sxs-lookup"><span data-stu-id="f265b-129">Encoder</span></span>  
   
-5.  Transport  
+5.  <span data-ttu-id="f265b-130">Transport</span><span class="sxs-lookup"><span data-stu-id="f265b-130">Transport</span></span>  
   
- Les liaisons personnalisées sont identifiées par leur attribut `name`.  Pour plus d'informations sur les liaisons personnalisées, consultez [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ <span data-ttu-id="f265b-131">Les liaisons personnalisées sont identifiées par leur attribut `name`.</span><span class="sxs-lookup"><span data-stu-id="f265b-131">Custom bindings are identified by their `name` attribute.</span></span> <span data-ttu-id="f265b-132">Pour plus d’informations sur les liaisons personnalisées, consultez [des liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="f265b-132">For more information on custom bindings, see [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md).</span></span>  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.BindingsSection>   
- <xref:System.ServiceModel.Channels.Binding>   
- <xref:System.ServiceModel.Channels.BindingElement>   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [\<liaison\>](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a><span data-ttu-id="f265b-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f265b-133">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.BindingsSection>  
+ <xref:System.ServiceModel.Channels.Binding>  
+ <xref:System.ServiceModel.Channels.BindingElement>  
+ [<span data-ttu-id="f265b-134">Liaisons</span><span class="sxs-lookup"><span data-stu-id="f265b-134">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="f265b-135">Liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="f265b-135">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="f265b-136">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="f265b-136">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [<span data-ttu-id="f265b-137">\<liaison ></span><span class="sxs-lookup"><span data-stu-id="f265b-137">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

@@ -1,50 +1,56 @@
 ---
-title: "Ex&#233;cution d&#39;une commande | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Exécution d'une commande"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 40494916-c25a-4cb8-8f7c-fcb8d378464e
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e09685c92652e1fcac2486031ecb49bf8399be59
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Ex&#233;cution d&#39;une commande
-Chaque fournisseur de données .NET Framework inclus avec le .NET Framework possède son propre objet de commande qui hérite de <xref:System.Data.Common.DbCommand>.  Le fournisseur de données .NET Framework pour OLE DB inclut un objet <xref:System.Data.OleDb.OleDbCommand>, le fournisseur de données .NET Framework pour SQL Server inclut un objet <xref:System.Data.SqlClient.SqlCommand>, le fournisseur de données .NET Framework pour ODBC inclut un objet <xref:System.Data.Odbc.OdbcCommand> et le fournisseur de données .NET Framework pour Oracle inclut un objet <xref:System.Data.OracleClient.OracleCommand>.  Chacun de ces objets expose des méthodes pour exécuter les commandes en fonction du type de commande et de la valeur de retour souhaitée, comme cela est décrit dans le tableau ci\-dessous.  
+# <a name="executing-a-command"></a><span data-ttu-id="6ae34-102">Exécution d'une commande</span><span class="sxs-lookup"><span data-stu-id="6ae34-102">Executing a Command</span></span>
+<span data-ttu-id="6ae34-103">Chaque fournisseur de données .NET Framework inclus avec le .NET Framework possède son propre objet de commande qui hérite de <xref:System.Data.Common.DbCommand>.</span><span class="sxs-lookup"><span data-stu-id="6ae34-103">Each .NET Framework data provider included with the .NET Framework has its own command object that inherits from <xref:System.Data.Common.DbCommand>.</span></span> <span data-ttu-id="6ae34-104">Le fournisseur de données .NET Framework pour OLE DB inclut un objet <xref:System.Data.OleDb.OleDbCommand>, le fournisseur de données .NET Framework pour SQL Server inclut un objet <xref:System.Data.SqlClient.SqlCommand>, le fournisseur de données .NET Framework pour ODBC inclut un objet <xref:System.Data.Odbc.OdbcCommand> et le fournisseur de données .NET Framework pour Oracle inclut un objet <xref:System.Data.OracleClient.OracleCommand>.</span><span class="sxs-lookup"><span data-stu-id="6ae34-104">The .NET Framework Data Provider for OLE DB includes an <xref:System.Data.OleDb.OleDbCommand> object, the .NET Framework Data Provider for SQL Server includes a <xref:System.Data.SqlClient.SqlCommand> object, the .NET Framework Data Provider for ODBC includes an <xref:System.Data.Odbc.OdbcCommand> object, and the .NET Framework Data Provider for Oracle includes an <xref:System.Data.OracleClient.OracleCommand> object.</span></span> <span data-ttu-id="6ae34-105">Chacun de ces objets expose des méthodes pour exécuter les commandes en fonction du type de commande et de la valeur de retour souhaitée, comme cela est décrit dans le tableau ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="6ae34-105">Each of these objects exposes methods for executing commands based on the type of command and desired return value, as described in the following table.</span></span>  
   
-|Commande|Valeur de retour|  
-|--------------|----------------------|  
-|`ExecuteReader`|Retourne un objet `DataReader`.|  
-|`ExecuteScalar`|Retourne une valeur scalaire unique.|  
-|`ExecuteNonQuery`|Exécute une commande qui ne retourne aucune ligne.|  
-|`ExecuteXMLReader`|Retourne un <xref:System.Xml.XmlReader>.  Disponible pour un objet `SqlCommand` uniquement.|  
+|<span data-ttu-id="6ae34-106">Commande</span><span class="sxs-lookup"><span data-stu-id="6ae34-106">Command</span></span>|<span data-ttu-id="6ae34-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="6ae34-107">Return Value</span></span>|  
+|-------------|------------------|  
+|`ExecuteReader`|<span data-ttu-id="6ae34-108">Retourne un objet `DataReader`.</span><span class="sxs-lookup"><span data-stu-id="6ae34-108">Returns a `DataReader` object.</span></span>|  
+|`ExecuteScalar`|<span data-ttu-id="6ae34-109">Retourne une valeur scalaire unique.</span><span class="sxs-lookup"><span data-stu-id="6ae34-109">Returns a single scalar value.</span></span>|  
+|`ExecuteNonQuery`|<span data-ttu-id="6ae34-110">Exécute une commande qui ne retourne aucune ligne.</span><span class="sxs-lookup"><span data-stu-id="6ae34-110">Executes a command that does not return any rows.</span></span>|  
+|`ExecuteXMLReader`|<span data-ttu-id="6ae34-111">Retourne un <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="6ae34-111">Returns an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="6ae34-112">Disponible pour un objet `SqlCommand` uniquement.</span><span class="sxs-lookup"><span data-stu-id="6ae34-112">Available for a `SqlCommand` object only.</span></span>|  
   
- Chaque objet de commande fortement typé prend également en charge une énumération <xref:System.Data.CommandType> qui spécifie la manière dont une chaîne de commande est interprétée, comme cela est décrit dans le tableau ci\-dessous.  
+ <span data-ttu-id="6ae34-113">Chaque objet de commande fortement typé prend également en charge une énumération <xref:System.Data.CommandType> qui spécifie la manière dont une chaîne de commande est interprétée, comme cela est décrit dans le tableau ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="6ae34-113">Each strongly typed command object also supports a <xref:System.Data.CommandType> enumeration that specifies how a command string is interpreted, as described in the following table.</span></span>  
   
-|CommandType|Description|  
+|<span data-ttu-id="6ae34-114">CommandType</span><span class="sxs-lookup"><span data-stu-id="6ae34-114">CommandType</span></span>|<span data-ttu-id="6ae34-115">Description</span><span class="sxs-lookup"><span data-stu-id="6ae34-115">Description</span></span>|  
 |-----------------|-----------------|  
-|`Text`|Commande SQL qui définit les instructions à exécuter au niveau de la source de données.|  
-|`StoredProcedure`|Nom de la procédure stockée.  Vous pouvez utiliser la propriété `Parameters` d'une commande pour accéder aux paramètres d'entrée et de sortie et aux valeurs de retour, quelle que soit la méthode `Execute` appelée.  Lorsque vous utilisez `ExecuteReader`, les valeurs de retour et les paramètres de sortie ne seront pas accessibles tant que `DataReader` ne sera pas fermé.|  
-|`TableDirect`|Nom d'une table.|  
+|`Text`|<span data-ttu-id="6ae34-116">Commande SQL qui définit les instructions à exécuter au niveau de la source de données.</span><span class="sxs-lookup"><span data-stu-id="6ae34-116">An SQL command defining the statements to be executed at the data source.</span></span>|  
+|`StoredProcedure`|<span data-ttu-id="6ae34-117">Nom de la procédure stockée.</span><span class="sxs-lookup"><span data-stu-id="6ae34-117">The name of the stored procedure.</span></span> <span data-ttu-id="6ae34-118">Vous pouvez utiliser la propriété `Parameters` d'une commande pour accéder aux paramètres d'entrée et de sortie et aux valeurs de retour, quelle que soit la méthode `Execute` appelée.</span><span class="sxs-lookup"><span data-stu-id="6ae34-118">You can use the `Parameters` property of a command to access input and output parameters and return values, regardless of which `Execute` method is called.</span></span> <span data-ttu-id="6ae34-119">Lorsque vous utilisez `ExecuteReader`, les valeurs de retour et les paramètres de sortie ne seront pas accessibles tant que `DataReader` ne sera pas fermé.</span><span class="sxs-lookup"><span data-stu-id="6ae34-119">When using `ExecuteReader`, return values and output parameters will not be accessible until the `DataReader` is closed.</span></span>|  
+|`TableDirect`|<span data-ttu-id="6ae34-120">Nom d'une table.</span><span class="sxs-lookup"><span data-stu-id="6ae34-120">The name of a table.</span></span>|  
   
-## Exemple  
- L'exemple de code ci\-dessous montre comment créer un objet <xref:System.Data.SqlClient.SqlCommand> pour exécuter une procédure stockée en définissant ses propriétés.  Un objet <xref:System.Data.SqlClient.SqlParameter> permet de spécifier le paramètre d'entrée de la procédure stockée.  La commande est exécutée à l'aide de la méthode <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> et la sortie de <xref:System.Data.SqlClient.SqlDataReader> est affichée dans la fenêtre de console.  
+## <a name="example"></a><span data-ttu-id="6ae34-121">Exemple</span><span class="sxs-lookup"><span data-stu-id="6ae34-121">Example</span></span>  
+ <span data-ttu-id="6ae34-122">L'exemple de code ci-dessous montre comment créer un objet <xref:System.Data.SqlClient.SqlCommand> pour exécuter une procédure stockée en définissant ses propriétés.</span><span class="sxs-lookup"><span data-stu-id="6ae34-122">The following code example demonstrates how to create a <xref:System.Data.SqlClient.SqlCommand> object to execute a stored procedure by setting its properties.</span></span> <span data-ttu-id="6ae34-123">Un objet <xref:System.Data.SqlClient.SqlParameter> permet de spécifier le paramètre d'entrée de la procédure stockée.</span><span class="sxs-lookup"><span data-stu-id="6ae34-123">A <xref:System.Data.SqlClient.SqlParameter> object is used to specify the input parameter to the stored procedure.</span></span> <span data-ttu-id="6ae34-124">La commande est exécutée à l'aide de la méthode <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> et la sortie de <xref:System.Data.SqlClient.SqlDataReader> est affichée dans la fenêtre de console.</span><span class="sxs-lookup"><span data-stu-id="6ae34-124">The command is executed using the <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> method, and the output from the <xref:System.Data.SqlClient.SqlDataReader> is displayed in the console window.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/VB/source.vb#1)]  
   
-### Dépannage des commandes  
- Le fournisseur de données .NET Framework pour SQL Server ajoute des compteurs de performance pour vous permettre de détecter des problèmes intermittents liés à des échecs lors de l'exécution des commandes.  Pour plus d'informations, consultez [Compteurs de performance](../../../../docs/framework/data/adonet/performance-counters.md).  
+### <a name="troubleshooting-commands"></a><span data-ttu-id="6ae34-125">Dépannage des commandes</span><span class="sxs-lookup"><span data-stu-id="6ae34-125">Troubleshooting Commands</span></span>  
+ <span data-ttu-id="6ae34-126">Le fournisseur de données .NET Framework pour SQL Server ajoute des compteurs de performance pour vous permettre de détecter des problèmes intermittents liés à des échecs lors de l'exécution des commandes.</span><span class="sxs-lookup"><span data-stu-id="6ae34-126">The .NET Framework Data Provider for SQL Server adds performance counters to enable you to detect intermittent problems related to failed command executions.</span></span> <span data-ttu-id="6ae34-127">Pour plus d’informations, consultez [les compteurs de Performance](../../../../docs/framework/data/adonet/performance-counters.md).</span><span class="sxs-lookup"><span data-stu-id="6ae34-127">For more information see [Performance Counters](../../../../docs/framework/data/adonet/performance-counters.md).</span></span>  
   
-## Voir aussi  
- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [Working with DataReaders](http://msdn.microsoft.com/fr-fr/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="6ae34-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ae34-128">See Also</span></span>  
+ [<span data-ttu-id="6ae34-129">Commandes et paramètres</span><span class="sxs-lookup"><span data-stu-id="6ae34-129">Commands and Parameters</span></span>](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [<span data-ttu-id="6ae34-130">DataAdapters et DataReaders</span><span class="sxs-lookup"><span data-stu-id="6ae34-130">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="6ae34-131">Utilisation de DataReaders</span><span class="sxs-lookup"><span data-stu-id="6ae34-131">Working with DataReaders</span></span>](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [<span data-ttu-id="6ae34-132">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="6ae34-132">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

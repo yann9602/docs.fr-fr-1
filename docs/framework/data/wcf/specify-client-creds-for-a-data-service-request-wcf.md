@@ -1,59 +1,66 @@
 ---
-title: "Proc&#233;dure&#160;: sp&#233;cifier les informations d&#39;identification du client pour une demande de service de donn&#233;es (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Services de données WCF, personnalisation des demandes"
+title: "Procédure : spécifier les informations d'identification du client pour une demande de service de données (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 88e41101ab9a963ac09610b04afee745aa61c8e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: sp&#233;cifier les informations d&#39;identification du client pour une demande de service de donn&#233;es (WCF Data Services)
-Par défaut, la bibliothèque cliente ne fournit aucune information d'identification lors de l'envoi d'une demande à un service [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].  Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>.  Pour plus d'informations, consultez [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  L'exemple de cette rubrique décrit comment fournir explicitement des informations d'identification utilisées par le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] lors d'une demande de données au service de données.  
+# <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a><span data-ttu-id="2a7f7-102">Procédure : spécifier les informations d'identification du client pour une demande de service de données (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="2a7f7-102">How to: Specify Client Credentials for a Data Service Request (WCF Data Services)</span></span>
+<span data-ttu-id="2a7f7-103">Par défaut, la bibliothèque cliente ne fournit aucune information d'identification lors de l'envoi d'une demande à un service [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="2a7f7-103">By default, the client library does not supply credentials when sending a request to an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] service.</span></span> <span data-ttu-id="2a7f7-104">Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-104">However, you can specify that credentials be sent to authenticate requests to the data service by supplying a <xref:System.Net.NetworkCredential> for the <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> property of the <xref:System.Data.Services.Client.DataServiceContext>.</span></span> <span data-ttu-id="2a7f7-105">Pour plus d'informations, consultez [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="2a7f7-105">For more information, see [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span></span> <span data-ttu-id="2a7f7-106">L'exemple de cette rubrique décrit comment fournir explicitement des informations d'identification utilisées par le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] lors d'une demande de données au service de données.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-106">The example in this topic shows how to explicitly provide credentials that are used by the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client when requesting data from the data service.</span></span>  
   
- L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement.  Ce service et les classes de données clientes sont créés lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  Vous pouvez aussi utiliser l'[exemple de service de données Northwind](http://go.microsoft.com/fwlink/?LinkId=187426) qui est publié sur le site web [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Cet exemple de service de données est en lecture seule et les tentatives d'y enregistrer des modifications retournent une erreur.  Les exemples de services de données sur le site Web [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] autorisent l'authentification anonyme.  
+ <span data-ttu-id="2a7f7-107">L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-107">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="2a7f7-108">Ce service et les classes de données clientes sont créés lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="2a7f7-108">This service and the client data classes are created when you complete the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).</span></span> <span data-ttu-id="2a7f7-109">Vous pouvez également utiliser le [service de données exemple Northwind](http://go.microsoft.com/fwlink/?LinkId=187426) qui est publié sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web ; ces exemples de données service est en lecture seule et essayez d’enregistrer les modifications retourne une erreur.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-109">You can also use the [Northwind sample data service](http://go.microsoft.com/fwlink/?LinkId=187426) that is published on the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Web site; this sample data service is read-only and attempting to save changes returns an error.</span></span> <span data-ttu-id="2a7f7-110">Les exemples de données des services sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web autorisent l’authentification anonyme.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-110">The sample data services on the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Web site allow anonymous authentication.</span></span>  
   
-## Exemple  
- L'exemple suivant provient de la page code\-behind d'un fichier XAML \(Extensible Application Markup Language\) qui est la page principale de l'application Windows Presentation Framework.  Cet exemple affiche une instance `LoginWindow` pour collecter les informations d'authentification de l'utilisateur, puis les utilise pour la création d'une demande au service de données.  
+## <a name="example"></a><span data-ttu-id="2a7f7-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="2a7f7-111">Example</span></span>  
+ <span data-ttu-id="2a7f7-112">L’exemple suivant provient de la page code-behind pour un fichier XAML Extensible Application Markup Language () qui est la page principale de l’application Windows Presentation Framework.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-112">The following example is from the code-behind page for an Extensible Application Markup Language (XAML) file that is the main page of the Windows Presentation Framework application.</span></span> <span data-ttu-id="2a7f7-113">Cet exemple affiche une instance `LoginWindow` pour collecter les informations d'authentification de l'utilisateur, puis les utilise pour la création d'une demande au service de données.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-113">This example displays a `LoginWindow` instance to collect authentication credentials from the user, and then uses these credentials when making a request to the data service.</span></span>  
   
+ [!code-csharp[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentials.xaml.cs#clientcredentials)]  
+ [!code-vb[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/clientcredentials.xaml.vb#clientcredentials)]
   
+## <a name="example"></a><span data-ttu-id="2a7f7-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="2a7f7-114">Example</span></span>  
+ <span data-ttu-id="2a7f7-115">Vous trouverez ci-après le code XAML qui définit la page principale de l'application WPF.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-115">The following XAML defines the main page of the WPF application.</span></span>  
   
-## Exemple  
- Vous trouverez ci\-après le code XAML qui définit la page principale de l'application WPF.  
+ [!code-xaml[Astoria Northwind Client#ClientCredentialsXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentials.xaml#clientcredentialsxaml)]  
   
+## <a name="example"></a><span data-ttu-id="2a7f7-116">Exemple</span><span class="sxs-lookup"><span data-stu-id="2a7f7-116">Example</span></span>  
+ <span data-ttu-id="2a7f7-117">L'exemple suivant provient de la page code-behind de la fenêtre utilisée pour collecter les informations d'authentification de l'utilisateur avant une demande au service de données.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-117">The following example is from the code-behind page for the window that is used to collect the authentication credentials from the user before making a request to the data service.</span></span>  
   
+ [!code-csharp[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentialslogin.xaml.cs#clientcredentialslogin)]  
+ [!code-vb[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/clientcredentialslogin.xaml.vb#clientcredentialslogin)]
   
-## Exemple  
- L'exemple suivant provient de la page code\-behind de la fenêtre utilisée pour collecter les informations d'authentification de l'utilisateur avant une demande au service de données.  
+## <a name="example"></a><span data-ttu-id="2a7f7-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="2a7f7-118">Example</span></span>  
+ <span data-ttu-id="2a7f7-119">Vous trouverez ci-après le code XAML qui définit la connexion de l'application WPF.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-119">The following XAML defines the login of the WPF application.</span></span>  
   
+ [!code-xaml[Astoria Northwind Client#ClientCredentialsLoginXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentialslogin.xaml#clientcredentialsloginxaml)]  
   
+## <a name="net-framework-security"></a><span data-ttu-id="2a7f7-120">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="2a7f7-120">.NET Framework Security</span></span>  
+ <span data-ttu-id="2a7f7-121">Les considérations sur la sécurité suivantes s'appliquent à l'exemple de cette rubrique :</span><span class="sxs-lookup"><span data-stu-id="2a7f7-121">The following security considerations apply to the example in this topic:</span></span>  
   
-## Exemple  
- Vous trouverez ci\-après le code XAML qui définit la connexion de l'application WPF.  
+-   <span data-ttu-id="2a7f7-122">Pour vérifier que les informations d'identification fournies dans cet exemple fonctionnent, le service de données Northwind doit utiliser un schéma d'authentification autre que l'accès anonyme.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-122">To verify that the credentials supplied in this sample work, the Northwind data service must use an authentication scheme other than anonymous access.</span></span> <span data-ttu-id="2a7f7-123">Autrement, le site Web qui héberge le service de données ne demandera aucune information d'identification.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-123">Otherwise, the Web site hosting the data service will not request credentials.</span></span>  
   
+-   <span data-ttu-id="2a7f7-124">Les informations d'identification de l'utilisateur ne doivent être demandées que pendant l'exécution et ne doivent pas être mises en cache.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-124">User credentials should only be requested during execution and should not be cached.</span></span> <span data-ttu-id="2a7f7-125">Les informations d'identification doivent toujours être stockées de manière sécurisée.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-125">Credentials must always be stored securely.</span></span>  
   
+-   <span data-ttu-id="2a7f7-126">Les données transmises avec une authentification de base et Digest ne sont pas chiffrées, par conséquent les données sont visibles par tous.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-126">Data sent with Basic and Digest Authentication is not encrypted, so the data can be seen by an adversary.</span></span> <span data-ttu-id="2a7f7-127">De plus, les informations d'authentification de base (nom d'utilisateur et mot de passe) sont envoyées en texte clair et peuvent être interceptées.</span><span class="sxs-lookup"><span data-stu-id="2a7f7-127">Additionally, basic authentication credentials (user name and password) are sent in cleartext and can be intercepted.</span></span>  
   
-## Sécurité .NET Framework  
- Les considérations sur la sécurité suivantes s'appliquent à l'exemple de cette rubrique :  
+ <span data-ttu-id="2a7f7-128">Pour plus d'informations, consultez [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="2a7f7-128">For more information, see [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span></span>  
   
--   Pour vérifier que les informations d'identification fournies dans cet exemple fonctionnent, le service de données Northwind doit utiliser un schéma d'authentification autre que l'accès anonyme.  Autrement, le site Web qui héberge le service de données ne demandera aucune information d'identification.  
-  
--   Les informations d'identification de l'utilisateur ne doivent être demandées que pendant l'exécution et ne doivent pas être mises en cache.  Les informations d'identification doivent toujours être stockées de manière sécurisée.  
-  
--   Les données transmises avec une authentification de base et Digest ne sont pas chiffrées, par conséquent les données sont visibles par tous.  De plus, les informations d'authentification de base \(nom d'utilisateur et mot de passe\) sont envoyées en texte clair et peuvent être interceptées.  
-  
- Pour plus d'informations, consultez [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
-  
-## Voir aussi  
- [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)   
- [Bibliothèque cliente de WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="2a7f7-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2a7f7-129">See Also</span></span>  
+ [<span data-ttu-id="2a7f7-130">Sécurisation de WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="2a7f7-130">Securing WCF Data Services</span></span>](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)  
+ [<span data-ttu-id="2a7f7-131">Bibliothèque cliente WCF Data Services</span><span class="sxs-lookup"><span data-stu-id="2a7f7-131">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

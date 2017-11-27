@@ -1,77 +1,80 @@
 ---
-title: "S&#233;curisation des messages &#224; l&#39;aide de la s&#233;curit&#233; de message | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Sécurisation des messages à l'aide de la sécurité de message"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-caps.latest.revision: 16
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 5106e066de71c8cf5be472ae831adf3cd29e300d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# S&#233;curisation des messages &#224; l&#39;aide de la s&#233;curit&#233; de message
-Cette section présente la sécurité de message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lors de l'utilisation de <xref:System.ServiceModel.NetMsmqBinding>.  
+# <a name="securing-messages-using-message-security"></a><span data-ttu-id="b9f74-102">Sécurisation des messages à l'aide de la sécurité de message</span><span class="sxs-lookup"><span data-stu-id="b9f74-102">Securing Messages Using Message Security</span></span>
+<span data-ttu-id="b9f74-103">Cette section présente la sécurité de message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lors de l'utilisation de <xref:System.ServiceModel.NetMsmqBinding>.</span><span class="sxs-lookup"><span data-stu-id="b9f74-103">This section discusses [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message security when using <xref:System.ServiceModel.NetMsmqBinding>.</span></span>  
   
 > [!NOTE]
->  Avant de lire cette rubrique, il est recommandé de lire [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+>  <span data-ttu-id="b9f74-104">Avant de lire cette rubrique, il est recommandé de lire [Concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).</span><span class="sxs-lookup"><span data-stu-id="b9f74-104">Before reading through this topic, it is recommended that you read [Security Concepts](../../../../docs/framework/wcf/feature-details/security-concepts.md).</span></span>  
   
- L'illustration suivante fournit un modèle conceptuel de la communication mise en file d'attente à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].Cette illustration et la terminologie permettent d'expliquer  
+ <span data-ttu-id="b9f74-105">L'illustration suivante fournit un modèle conceptuel de la communication mise en file d'attente à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b9f74-105">The following illustration provides a conceptual model of queued communication using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="b9f74-106">Cette illustration et la terminologie permettent d'expliquer</span><span class="sxs-lookup"><span data-stu-id="b9f74-106">This illustration and terminology are used to explain</span></span>  
   
- les concepts de sécurité de transport.  
+ <span data-ttu-id="b9f74-107">les concepts de sécurité de transport.</span><span class="sxs-lookup"><span data-stu-id="b9f74-107">transport security concepts.</span></span>  
   
- ![Diagramme des applications en file d'attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distributed\-Queue\-Figure")  
+ <span data-ttu-id="b9f74-108">![Diagramme d’Application de la file d’attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Figure de file d’attente distribuée")</span><span class="sxs-lookup"><span data-stu-id="b9f74-108">![Queued Application Diagram](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distributed-Queue-Figure")</span></span>  
   
- Lors de l'envoi de messages mis en file d'attente à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est joint en tant que corps du message Message Queuing \(MSMQ\).Alors que la sécurité de transport sécurise le message MSMQ entier, la sécurité de message \(ou SOAP\) sécurise uniquement le corps du message MSMQ.  
+ <span data-ttu-id="b9f74-109">Lors de l'envoi de messages mis en file d'attente à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est joint en tant que corps du message Message Queuing (MSMQ).</span><span class="sxs-lookup"><span data-stu-id="b9f74-109">When sending queued messages using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message is attached as a body of the Message Queuing (MSMQ) message.</span></span> <span data-ttu-id="b9f74-110">Alors que la sécurité de transport sécurise le message MSMQ entier, la sécurité de message (ou SOAP) sécurise uniquement le corps du message MSMQ.</span><span class="sxs-lookup"><span data-stu-id="b9f74-110">While transport security secures the entire MSMQ message, message (or SOAP) security only secures the body of the MSMQ message.</span></span>  
   
- Le concept clé de la sécurité de message est que le client sécurise le message pour l'application réceptrice \(service\), contrairement à la sécurité de transport où le client sécurise le message pour la file d'attente cible.Ainsi, MSMQ ne joue aucun rôle lors de la sécurisation du message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide de la sécurité de message.  
+ <span data-ttu-id="b9f74-111">Le concept clé de la sécurité de message est que le client sécurise le message pour l'application réceptrice (service), contrairement à la sécurité de transport où le client sécurise le message pour la file d'attente cible.</span><span class="sxs-lookup"><span data-stu-id="b9f74-111">The key concept of message security is that the client secures the message for the receiving application (service), unlike transport security where the client secures the message for the Target Queue.</span></span> <span data-ttu-id="b9f74-112">Ainsi, MSMQ ne joue aucun rôle lors de la sécurisation du message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide de la sécurité de message.</span><span class="sxs-lookup"><span data-stu-id="b9f74-112">As such, MSMQ plays no part when securing the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message using message security.</span></span>  
   
- La sécurité de message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ajoute des en\-têtes de sécurité au message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'intègrent avec les infrastructures de sécurité existantes, telles qu'un certificat ou le protocole Kerberos.  
+ <span data-ttu-id="b9f74-113">La sécurité de message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ajoute des en-têtes de sécurité au message [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'intègrent avec les infrastructures de sécurité existantes, telles qu'un certificat ou le protocole Kerberos.</span><span class="sxs-lookup"><span data-stu-id="b9f74-113">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message security adds security headers to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message that integrate with existing security infrastructures, such as a certificate or the Kerberos protocol.</span></span>  
   
-## Type d'informations d'identification de message  
- Grâce à la sécurité de message, le service et le client peuvent présenter des informations d'identification pour s'authentifier mutuellement.Vous pouvez sélectionner la sécurité de message en définissant le mode <xref:System.ServiceModel.NetMsmqBinding.Security%2A> sur `Message` ou sur `Both` \(c'est\-à\-dire en utilisant la sécurité de transport et la sécurité de message\).  
+## <a name="message-credential-type"></a><span data-ttu-id="b9f74-114">Type d'informations d'identification de message</span><span class="sxs-lookup"><span data-stu-id="b9f74-114">Message Credential Type</span></span>  
+ <span data-ttu-id="b9f74-115">Grâce à la sécurité de message, le service et le client peuvent présenter des informations d'identification pour s'authentifier mutuellement.</span><span class="sxs-lookup"><span data-stu-id="b9f74-115">Using message security, the service and client can present credentials to authenticate each another.</span></span> <span data-ttu-id="b9f74-116">Vous pouvez sélectionner la sécurité de message en définissant le mode <xref:System.ServiceModel.NetMsmqBinding.Security%2A> sur `Message` ou sur `Both` (c'est-à-dire en utilisant la sécurité de transport et la sécurité de message).</span><span class="sxs-lookup"><span data-stu-id="b9f74-116">You can select message security by setting the <xref:System.ServiceModel.NetMsmqBinding.Security%2A> mode to `Message` or `Both` (that is, use both transport security and message security).</span></span>  
   
- Le service peut utiliser la propriété <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> pour inspecter les informations d'identification permettant d'authentifier le client.Elle peut également être utilisée pour des vérifications d'autorisation supplémentaires que le service choisit d'implémenter.  
+ <span data-ttu-id="b9f74-117">Le service peut utiliser la propriété <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> pour inspecter les informations d'identification permettant d'authentifier le client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-117">The service can use the <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> property to inspect the credential used to authenticate the client.</span></span> <span data-ttu-id="b9f74-118">Elle peut également être utilisée pour des vérifications d'autorisation supplémentaires que le service choisit d'implémenter.</span><span class="sxs-lookup"><span data-stu-id="b9f74-118">This can also be used for further authorization checks that the service chooses to implement.</span></span>  
   
- Cette section présente les différents types d'informations d'identification et explique comment les utiliser avec les files d'attente.  
+ <span data-ttu-id="b9f74-119">Cette section présente les différents types d'informations d'identification et explique comment les utiliser avec les files d'attente.</span><span class="sxs-lookup"><span data-stu-id="b9f74-119">This section explains the different credential types and how to use them with queues.</span></span>  
   
-### Certificat  
- Le type d'informations d'identification de certificat utilise un certificat X.509 pour identifier le service et le client.  
+### <a name="certificate"></a><span data-ttu-id="b9f74-120">Certificat</span><span class="sxs-lookup"><span data-stu-id="b9f74-120">Certificate</span></span>  
+ <span data-ttu-id="b9f74-121">Le type d'informations d'identification de certificat utilise un certificat X.509 pour identifier le service et le client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-121">The certificate credential type uses an X.509 certificate to identify the service and the client.</span></span>  
   
- Dans un scénario classique, un certificat valide est émis pour le client et le service par une autorité de certification de confiance.Lorsque la connexion est établie, le client authentifie la validité du service à l'aide du certificat du service pour décider s'il peut faire confiance au service.De la même façon, le service utilise le certificat du client pour valider l'approbation du client.  
+ <span data-ttu-id="b9f74-122">Dans un scénario classique, un certificat valide est émis pour le client et le service par une autorité de certification de confiance.</span><span class="sxs-lookup"><span data-stu-id="b9f74-122">In a typical scenario, the client and the service are issued a valid certificate by a trusted certification authority.</span></span> <span data-ttu-id="b9f74-123">Lorsque la connexion est établie, le client authentifie la validité du service à l'aide du certificat du service pour décider s'il peut faire confiance au service.</span><span class="sxs-lookup"><span data-stu-id="b9f74-123">Then the connection is established, the client authenticates the validity of the service using the service's certificate to decide whether it can trust the service.</span></span> <span data-ttu-id="b9f74-124">De la même façon, le service utilise le certificat du client pour valider l'approbation du client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-124">Similarly, the service uses the client's certificate to validate the client trust.</span></span>  
   
- Étant donné la nature déconnectée des files d'attente, le client et le service peuvent ne pas être en ligne au même moment.Par conséquent, le client et le service doivent échanger des certificats hors bande.En particulier, le client, du fait qu'il détient le certificat du service \(lequel peut être chaîné à une autorité de certification\) dans son magasin approuvé, doit croire qu'il communique avec le service correct.Pour authentifier le client, le service utilise le certificat X.509 joint au message pour le mettre en correspondance avec le certificat dans son magasin afin de vérifier l'authenticité du client.De nouveau, le certificat doit être chaîné à une autorité de certification.  
+ <span data-ttu-id="b9f74-125">Étant donné la nature déconnectée des files d'attente, le client et le service peuvent ne pas être en ligne au même moment.</span><span class="sxs-lookup"><span data-stu-id="b9f74-125">Given the disconnected nature of queues, the client and the service may not be online at the same time.</span></span> <span data-ttu-id="b9f74-126">Par conséquent, le client et le service doivent échanger des certificats hors bande.</span><span class="sxs-lookup"><span data-stu-id="b9f74-126">As such, the client and service have to exchange certificates out-of-band.</span></span> <span data-ttu-id="b9f74-127">En particulier, le client, du fait qu'il détient le certificat du service (lequel peut être chaîné à une autorité de certification) dans son magasin approuvé, doit croire qu'il communique avec le service correct.</span><span class="sxs-lookup"><span data-stu-id="b9f74-127">In particular, the client, by virtue of holding the service's certificate (which can be chained to a certification authority) in its trusted store, must trust that it is communicating with the correct service.</span></span> <span data-ttu-id="b9f74-128">Pour authentifier le client, le service utilise le certificat X.509 joint au message pour le mettre en correspondance avec le certificat dans son magasin afin de vérifier l'authenticité du client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-128">For authenticating the client, the service uses the X.509 certificate attached with the message to matches it with the certificate in its store to verify the authenticity of the client.</span></span> <span data-ttu-id="b9f74-129">De nouveau, le certificat doit être chaîné à une autorité de certification.</span><span class="sxs-lookup"><span data-stu-id="b9f74-129">Again, the certificate must be chained to a certification authority.</span></span>  
   
- Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les différents magasins, consultez [Magasins de certificats](http://go.microsoft.com/fwlink/?LinkId=87787).  
+ <span data-ttu-id="b9f74-130">Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins.</span><span class="sxs-lookup"><span data-stu-id="b9f74-130">On a computer running Windows, certificates are held in several kinds of stores.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="b9f74-131">les magasins différents, consultez [des magasins de certificats](http://go.microsoft.com/fwlink/?LinkId=87787).</span><span class="sxs-lookup"><span data-stu-id="b9f74-131"> the different stores, see [Certificate stores](http://go.microsoft.com/fwlink/?LinkId=87787).</span></span>  
   
-### Windows  
- Le type d'informations d'identification de message Windows utilise le protocole Kerberos.  
+### <a name="windows"></a><span data-ttu-id="b9f74-132">Windows</span><span class="sxs-lookup"><span data-stu-id="b9f74-132">Windows</span></span>  
+ <span data-ttu-id="b9f74-133">Le type d'informations d'identification de message Windows utilise le protocole Kerberos.</span><span class="sxs-lookup"><span data-stu-id="b9f74-133">Windows message credential type uses the Kerberos protocol.</span></span>  
   
- Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.  
+ <span data-ttu-id="b9f74-134">Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.</span><span class="sxs-lookup"><span data-stu-id="b9f74-134">The Kerberos protocol is a security mechanism that authenticates users on a domain and allows the authenticated users to establish secure contexts with other entities on a domain.</span></span>  
   
- Le problème lié à l'utilisation du protocole Kerberos pour la communication mise en file d'attente est que les tickets qui contiennent l'identité du client que le centre de distribution de clés distribue sont relativement éphémères.Une *durée de vie* est associée au ticket Kerberos qui indique la validité du ticket.Ainsi, étant donné la latence élevée, vous ne pouvez pas être sûr que le jeton est encore valide pour le service qui authentifie le client.  
+ <span data-ttu-id="b9f74-135">Le problème lié à l'utilisation du protocole Kerberos pour la communication mise en file d'attente est que les tickets qui contiennent l'identité du client que le centre de distribution de clés distribue sont relativement éphémères.</span><span class="sxs-lookup"><span data-stu-id="b9f74-135">The problem with using the Kerberos protocol for queued communication is that the tickets that contain client identity that the Key Distribution Center (KDC) distributes are relatively short-lived.</span></span> <span data-ttu-id="b9f74-136">A *durée de vie* est associé avec le ticket Kerberos qui indique la validité du ticket.</span><span class="sxs-lookup"><span data-stu-id="b9f74-136">A *lifetime* is associated with the Kerberos ticket that indicates the validity of the ticket.</span></span> <span data-ttu-id="b9f74-137">Ainsi, étant donné la latence élevée, vous ne pouvez pas être sûr que le jeton est encore valide pour le service qui authentifie le client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-137">As such, given high latency, you cannot be sure that the token is still valid for the service that authenticates the client.</span></span>  
   
- Notez que lors de l'utilisation de ce type d'informations d'identification, le service doit s'exécuter sous le compte SERVICE.  
+ <span data-ttu-id="b9f74-138">Notez que lors de l'utilisation de ce type d'informations d'identification, le service doit s'exécuter sous le compte SERVICE.</span><span class="sxs-lookup"><span data-stu-id="b9f74-138">Note that when using this credential type, the service must be running under the SERVICE account.</span></span>  
   
- Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message.[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Étude de Kerberos, le protocole de sécurité distribuée dans Windows 2000](http://go.microsoft.com/fwlink/?LinkId=87790) \(page pouvant être en anglais\).  
+ <span data-ttu-id="b9f74-139">Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message.</span><span class="sxs-lookup"><span data-stu-id="b9f74-139">The Kerberos protocol is used by default when choosing message credential.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="b9f74-140">[Explorant Kerberos, le protocole de sécurité distribuée dans Windows 2000](http://go.microsoft.com/fwlink/?LinkId=87790).</span><span class="sxs-lookup"><span data-stu-id="b9f74-140"> [Exploring Kerberos, the Protocol for Distributed Security in Windows 2000](http://go.microsoft.com/fwlink/?LinkId=87790).</span></span>  
   
-### Username Password  
- À l'aide de cette propriété, le client peut s'authentifier auprès du serveur en utilisant un mot de passe de nom d'utilisateur dans l'en\-tête de sécurité du message.  
+### <a name="username-password"></a><span data-ttu-id="b9f74-141">Username Password</span><span class="sxs-lookup"><span data-stu-id="b9f74-141">Username Password</span></span>  
+ <span data-ttu-id="b9f74-142">À l'aide de cette propriété, le client peut s'authentifier auprès du serveur en utilisant un mot de passe de nom d'utilisateur dans l'en-tête de sécurité du message.</span><span class="sxs-lookup"><span data-stu-id="b9f74-142">Using this property, the client can authenticate to the server using a username password in the security header of the message.</span></span>  
   
-### IssuedToken  
- Le client peut utiliser le service de jeton de sécurité pour émettre un jeton qui peut ensuite être joint au message pour que le service authentifie le client.  
+### <a name="issuedtoken"></a><span data-ttu-id="b9f74-143">IssuedToken</span><span class="sxs-lookup"><span data-stu-id="b9f74-143">IssuedToken</span></span>  
+ <span data-ttu-id="b9f74-144">Le client peut utiliser le service de jeton de sécurité pour émettre un jeton qui peut ensuite être joint au message pour que le service authentifie le client.</span><span class="sxs-lookup"><span data-stu-id="b9f74-144">The client can use the security token service to issue a token that can then be attached to the message for the service to authenticate the client.</span></span>  
   
-## Utilisation de la sécurité de transport et de message  
- Lorsque vous utilisez à la fois la sécurité de transport et la sécurité de message, le certificat utilisé pour sécuriser le message au niveau du transport et du message SOAP doit être le même.  
+## <a name="using-transport-and-message-security"></a><span data-ttu-id="b9f74-145">Utilisation de la sécurité de transport et de message</span><span class="sxs-lookup"><span data-stu-id="b9f74-145">Using Transport and Message Security</span></span>  
+ <span data-ttu-id="b9f74-146">Lorsque vous utilisez à la fois la sécurité de transport et la sécurité de message, le certificat utilisé pour sécuriser le message au niveau du transport et du message SOAP doit être le même.</span><span class="sxs-lookup"><span data-stu-id="b9f74-146">When using both transport security and message security, the certificate used to secure the message both at the transport and the SOAP message level must be the same.</span></span>  
   
-## Voir aussi  
- [Sécurisation des messages à l'aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)   
- [Message Security over Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)   
- [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)   
- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a><span data-ttu-id="b9f74-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b9f74-147">See Also</span></span>  
+ [<span data-ttu-id="b9f74-148">Sécurisation des Messages à l’aide de la sécurité de Transport</span><span class="sxs-lookup"><span data-stu-id="b9f74-148">Securing Messages Using Transport Security</span></span>](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
+ [<span data-ttu-id="b9f74-149">Sécurité de message sur Message Queuing</span><span class="sxs-lookup"><span data-stu-id="b9f74-149">Message Security over Message Queuing</span></span>](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
+ [<span data-ttu-id="b9f74-150">Concepts de sécurité</span><span class="sxs-lookup"><span data-stu-id="b9f74-150">Security Concepts</span></span>](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [<span data-ttu-id="b9f74-151">Sécurisation des Services et Clients</span><span class="sxs-lookup"><span data-stu-id="b9f74-151">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

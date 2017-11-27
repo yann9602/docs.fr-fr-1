@@ -1,34 +1,37 @@
 ---
-title: "Emprunt de l&#39;identit&#233; du client | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Emprunt de l'identité du client (exemple) (Windows Communication Foundation)"
-  - "emprunt d'identité, exemple Windows Communication Foundation"
-  - "comportements de service, emprunt d'identité (exemple)"
+title: "Emprunt de l'identité du client"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- service behaviors, impersonation sample
+- Impersonating the Client Sample [Windows Communication Foundation]
+- impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f4cf1c05c1cbb75796f73f944340e36dbda0d1af
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Emprunt de l&#39;identit&#233; du client
-Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.  
+# <a name="impersonating-the-client"></a><span data-ttu-id="a736a-102">Emprunt de l'identité du client</span><span class="sxs-lookup"><span data-stu-id="a736a-102">Impersonating the Client</span></span>
+<span data-ttu-id="a736a-103">Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.</span><span class="sxs-lookup"><span data-stu-id="a736a-103">The Impersonation sample demonstrates how to impersonate the caller application at the service so that the service can access system resources on behalf of the caller.</span></span>  
   
- Il est basé sur l'exemple [Self\-Host](../../../../docs/framework/wcf/samples/self-host.md).Les fichiers de configuration du service et du client sont le mêmes que ceux de l'exemple [Self\-Host](../../../../docs/framework/wcf/samples/self-host.md).  
+ <span data-ttu-id="a736a-104">Cet exemple est basé sur le [auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="a736a-104">This sample is based on the [Self-Host](../../../../docs/framework/wcf/samples/self-host.md) sample.</span></span> <span data-ttu-id="a736a-105">Les fichiers de configuration de service et le client sont les mêmes que celui de la [auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="a736a-105">The service and client configuration files are the same as that of the [Self-Host](../../../../docs/framework/wcf/samples/self-host.md) sample.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+>  <span data-ttu-id="a736a-106">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="a736a-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Le code de service a été modifié afin que la méthode `Add` sur le service emprunte l'identité de l'appelant à l'aide de <xref:System.ServiceModel.OperationBehaviorAttribute>, tel qu'indiqué dans l'exemple de code suivant.  
+ <span data-ttu-id="a736a-107">Le code de service a été modifié afin que la méthode `Add` sur le service emprunte l'identité de l'appelant à l'aide de <xref:System.ServiceModel.OperationBehaviorAttribute>, tel qu'indiqué dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="a736a-107">The service code has been modified such that the `Add` method on the service impersonates the caller using the <xref:System.ServiceModel.OperationBehaviorAttribute> as shown in the following sample code.</span></span>  
   
 ```  
 [OperationBehavior(Impersonation = ImpersonationOption.Required)]  
@@ -40,12 +43,11 @@ public double Add(double n1, double n2)
     DisplayIdentityInformation();  
     return result;  
 }  
-  
 ```  
   
- En conséquence, le contexte de sécurité du thread en cours d'exécution est basculé pour emprunter l'identité de l'appelant avant d'entrer dans la méthode `Add` et est rétabli lorsqu'il quitte la méthode.  
+ <span data-ttu-id="a736a-108">En conséquence, le contexte de sécurité du thread en cours d'exécution est basculé pour emprunter l'identité de l'appelant avant d'entrer dans la méthode `Add` et est rétabli lorsqu'il quitte la méthode.</span><span class="sxs-lookup"><span data-stu-id="a736a-108">As a result, the security context of the executing thread is switched to impersonate the caller before entering the `Add` method and reverted on exiting the method.</span></span>  
   
- La méthode `DisplayIdentityInformation` indiquée dans l'exemple de code suivant est une fonction utilitaire qui affiche l'identité de l'appelant.  
+ <span data-ttu-id="a736a-109">La méthode `DisplayIdentityInformation` indiquée dans l'exemple de code suivant est une fonction utilitaire qui affiche l'identité de l'appelant.</span><span class="sxs-lookup"><span data-stu-id="a736a-109">The `DisplayIdentityInformation` method shown in the following sample code is a utility function that displays the caller's identity.</span></span>  
   
 ```  
 static void DisplayIdentityInformation()  
@@ -58,10 +60,9 @@ static void DisplayIdentityInformation()
          WindowsIdentity.GetCurrent().Token.ToString());  
     return;  
 }  
-  
 ```  
   
- La méthode `Subtract` sur le service emprunte l'identité de l'appelant à l'aide d'appels impératifs, tel qu'indiqué dans l'exemple de code suivant.  
+ <span data-ttu-id="a736a-110">La méthode `Subtract` sur le service emprunte l'identité de l'appelant à l'aide d'appels impératifs, tel qu'indiqué dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="a736a-110">The `Subtract` method on the service impersonates the caller using imperative calls as shown in the following sample code.</span></span>  
   
 ```  
 public double Subtract(double n1, double n2)  
@@ -95,11 +96,11 @@ DisplayIdentityInformation();
 }  
 ```  
   
- Notez que dans ce cas, l'identité de l'appelant n'est pas empruntée pour l'ensemble de l'appel, mais uniquement pour une partie de celui\-ci.En général, l'emprunt d'identité pour la plus petite étendue est préférable à l'emprunt d'identité pour l'ensemble de l'opération.  
+ <span data-ttu-id="a736a-111">Notez que dans ce cas, l'identité de l'appelant n'est pas empruntée pour l'ensemble de l'appel, mais uniquement pour une partie de celui-ci.</span><span class="sxs-lookup"><span data-stu-id="a736a-111">Note that in this case the caller is not impersonated for the entire call but is only impersonated for a portion of the call.</span></span> <span data-ttu-id="a736a-112">En général, l'emprunt d'identité pour la plus petite étendue est préférable à l'emprunt d'identité pour l'ensemble de l'opération.</span><span class="sxs-lookup"><span data-stu-id="a736a-112">In general, impersonating for the smallest scope is preferable to impersonating for the entire operation.</span></span>  
   
- Les autres méthodes n'empruntent pas l'identité de l'appelant.  
+ <span data-ttu-id="a736a-113">Les autres méthodes n'empruntent pas l'identité de l'appelant.</span><span class="sxs-lookup"><span data-stu-id="a736a-113">The other methods do not impersonate the caller.</span></span>  
   
- Le code client a été modifié pour affecter <xref:System.Security.Principal.TokenImpersonationLevel> au niveau d'emprunt d'identité.Le client spécifie le niveau d'emprunt d'identité à utiliser par le service, en utilisant l'énumération <xref:System.Security.Principal.TokenImpersonationLevel>.L'énumération prend en charge les valeurs suivantes : <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel> et <xref:System.Security.Principal.TokenImpersonationLevel>.Pour effectuer un contrôle lors de l'accès à une ressource système sur l'ordinateur local protégé à l'aide des listes de contrôle d'accès Windows, le niveau d'emprunt d'identité doit avoir la valeur <xref:System.Security.Principal.TokenImpersonationLevel>, tel qu'indiqué dans l'exemple de code suivant.  
+ <span data-ttu-id="a736a-114">Le code client a été modifié pour affecter <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> au niveau d'emprunt d'identité.</span><span class="sxs-lookup"><span data-stu-id="a736a-114">The client code has been modified to set the impersonation level to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>.</span></span> <span data-ttu-id="a736a-115">Le client spécifie le niveau d'emprunt d'identité à utiliser par le service, en utilisant l'énumération <xref:System.Security.Principal.TokenImpersonationLevel>.</span><span class="sxs-lookup"><span data-stu-id="a736a-115">The client specifies the impersonation level to be used by the service, by using the <xref:System.Security.Principal.TokenImpersonationLevel> enumeration.</span></span> <span data-ttu-id="a736a-116">L'énumération prend en charge les valeurs suivantes : <xref:System.Security.Principal.TokenImpersonationLevel.None>, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> et <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.</span><span class="sxs-lookup"><span data-stu-id="a736a-116">The enumeration supports the following values: <xref:System.Security.Principal.TokenImpersonationLevel.None>, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> and <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.</span></span> <span data-ttu-id="a736a-117">Pour effectuer un contrôle lors de l'accès à une ressource système sur l'ordinateur local protégé à l'aide des listes de contrôle d'accès Windows, le niveau d'emprunt d'identité doit avoir la valeur <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, tel qu'indiqué dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="a736a-117">To perform an access check when accessing a system resource on the local machine that is protected using Windows ACLs, the impersonation level must be set to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, as shown in the following sample code.</span></span>  
   
 ```  
 // Create a client with given client endpoint configuration  
@@ -108,30 +109,30 @@ CalculatorClient client = new CalculatorClient();
 client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationLevel.Impersonation;  
 ```  
   
- Lorsque vous exécutez l'exemple, les demandes et réponses de l'opération s'affichent dans les fenêtres de console du service et du client.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
+ <span data-ttu-id="a736a-118">Lorsque vous exécutez l'exemple, les requêtes et réponses de l'opération s'affichent dans les fenêtres de console du service et du client.</span><span class="sxs-lookup"><span data-stu-id="a736a-118">When you run the sample, the operation requests and responses are displayed in both the service and client console windows.</span></span> <span data-ttu-id="a736a-119">Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.</span><span class="sxs-lookup"><span data-stu-id="a736a-119">Press ENTER in each console window to shut down the service and client.</span></span>  
   
 > [!NOTE]
->  Le service doit s'exécuter sous un compte d'administrateur ou le compte sous lequel il s'exécute doit disposer des droits pour enregistrer l'URI http:\/\/localhost:8000\/ServiceModelSamples avec la couche HTTP.Des droits de ce type peuvent être accordés en définissant une [Réservation d'espace de noms](http://go.microsoft.com/fwlink/?LinkId=95012) \(page pouvant être en anglais\) à l'aide de l'[Outil Httpcfg.exe](http://go.microsoft.com/fwlink/?LinkId=95010) \(page pouvant être en anglais\).  
+>  <span data-ttu-id="a736a-120">Le service doit s'exécuter sous un compte d'administrateur ou le compte sous lequel il s'exécute doit disposer des droits pour enregistrer l'URI http://localhost:8000/ServiceModelSamples avec la couche HTTP.</span><span class="sxs-lookup"><span data-stu-id="a736a-120">The service must either run under an administrative account or the account it runs under must be granted rights to register the http://localhost:8000/ServiceModelSamples URI with the HTTP layer.</span></span> <span data-ttu-id="a736a-121">Ces droits peuvent être accordés en configurant un [Namespace réservation](http://go.microsoft.com/fwlink/?LinkId=95012) à l’aide de la [outil Httpcfg.exe](http://go.microsoft.com/fwlink/?LinkId=95010).</span><span class="sxs-lookup"><span data-stu-id="a736a-121">Such rights can be granted by setting up a [Namespace Reservation](http://go.microsoft.com/fwlink/?LinkId=95012) using the [Httpcfg.exe tool](http://go.microsoft.com/fwlink/?LinkId=95010).</span></span>  
   
 > [!NOTE]
->  Sur les ordinateurs qui exécutent [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], l'emprunt d'identité est uniquement pris en charge si l'application Host.exe dispose du privilège d'emprunt d'identité.\(Par défaut, seuls les administrateurs disposent de cette autorisation.\) Pour ajouter ce privilège à un compte sous lequel le service s'exécute, accédez à **Administrative Tools**, puis ouvrez **Local Security Policy**, **Local Policies**, cliquez sur **User Rights Assignment**, sélectionnez **Impersonate a Client after Authentication** et double\-cliquez sur **Properties** pour ajouter un utilisateur ou un groupe.  
+>  <span data-ttu-id="a736a-122">Sur les ordinateurs qui exécutent [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], l'emprunt d'identité est uniquement pris en charge si l'application Host.exe dispose du privilège d'emprunt d'identité.</span><span class="sxs-lookup"><span data-stu-id="a736a-122">On computers running [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], impersonation is supported only if the Host.exe application has the Impersonation privilege.</span></span> <span data-ttu-id="a736a-123">(Par défaut, seuls les administrateurs disposent de cette autorisation.) Pour ajouter ce privilège à un compte que le service s’exécute en tant que, accédez à **outils d’administration**, ouvrez **stratégie de sécurité locale**, ouvrez **stratégies locales**, cliquez sur **Attribution des droits utilisateur**, puis sélectionnez **emprunter l’identité d’un Client après authentification** et double-cliquez sur **propriétés** pour ajouter un utilisateur ou un groupe.</span><span class="sxs-lookup"><span data-stu-id="a736a-123">(By default, only administrators have this permission.) To add this privilege to an account the service is running as, go to **Administrative Tools**, open **Local Security Policy**, open **Local Policies**, click **User Rights Assignment**, and select **Impersonate a Client after Authentication** and double-click **Properties** to add a user or group.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="a736a-124">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="a736a-124">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée dans la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="a736a-125">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a736a-125">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="a736a-126">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a736a-126">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="a736a-127">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a736a-127">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-4.  Pour montrer que le service emprunte l'identité de l'appelant, exécutez le client sous un autre compte que celui sous lequel le service s'exécute.Pour ce faire, à l'invite de commandes tapez :  
+4.  <span data-ttu-id="a736a-128">Pour montrer que le service emprunte l'identité de l'appelant, exécutez le client sous un autre compte que celui sous lequel le service s'exécute.</span><span class="sxs-lookup"><span data-stu-id="a736a-128">To demonstrate that the service impersonates the caller, run the client under a different account than the one the service is running under.</span></span> <span data-ttu-id="a736a-129">Pour ce faire, à l'invite de commandes tapez :</span><span class="sxs-lookup"><span data-stu-id="a736a-129">To do so, at the command prompt, type:</span></span>  
   
     ```  
     runas /user:<machine-name>\<user-name> client.exe  
     ```  
   
-     Vous êtes ensuite invité à entrer un mot de passe.Entrez le mot de passe du compte précédemment spécifié.  
+     <span data-ttu-id="a736a-130">Vous êtes ensuite invité à entrer un mot de passe.</span><span class="sxs-lookup"><span data-stu-id="a736a-130">You are then prompted for a password.</span></span> <span data-ttu-id="a736a-131">Entrez le mot de passe du compte précédemment spécifié.</span><span class="sxs-lookup"><span data-stu-id="a736a-131">Enter the password for the account you previously specified.</span></span>  
   
-5.  Lorsque vous exécutez le client, notez l'identité avant et après l'avoir exécuté avec des informations d'identification différentes.  
+5.  <span data-ttu-id="a736a-132">Lorsque vous exécutez le client, notez l'identité avant et après l'avoir exécuté avec des informations d'identification différentes.</span><span class="sxs-lookup"><span data-stu-id="a736a-132">When you run the client, note the identity before and after running it with different credentials.</span></span>  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="a736a-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a736a-133">See Also</span></span>

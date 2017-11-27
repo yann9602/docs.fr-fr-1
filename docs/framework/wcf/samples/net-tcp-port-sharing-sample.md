@@ -1,47 +1,50 @@
 ---
-title: "Net.TCP Port Sharing, exemple | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Net.TCP Port Sharing, exemple
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1d3ee04dfd400e09e6392e78498d80a59bb88b11
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Net.TCP Port Sharing, exemple
-Le protocole TCP\/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur.Si une application écoute un port, tout le trafic TCP de ce port va à cette application.Les autres applications ne peuvent pas écouter en même temps ce port.  
+# <a name="nettcp-port-sharing-sample"></a><span data-ttu-id="357be-102">Net.TCP Port Sharing, exemple</span><span class="sxs-lookup"><span data-stu-id="357be-102">Net.TCP Port Sharing Sample</span></span>
+<span data-ttu-id="357be-103">Le protocole TCP/IP utilise un numéro à 16 bits, appelé un port, pour différencier des connexions vers des applications réseau multiples qui s'exécutent sur le même ordinateur.</span><span class="sxs-lookup"><span data-stu-id="357be-103">The TCP/IP protocol uses a 16-bit number, called a port, to differentiate connections to multiple network applications running on the same machine.</span></span> <span data-ttu-id="357be-104">Si une application écoute un port, tout le trafic TCP de ce port va à cette application.</span><span class="sxs-lookup"><span data-stu-id="357be-104">If an application is listening on a port, then all TCP traffic for that port goes to that application.</span></span> <span data-ttu-id="357be-105">Les autres applications ne peuvent pas écouter en même temps ce port.</span><span class="sxs-lookup"><span data-stu-id="357be-105">Other applications cannot listen on that port at the same time.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="357be-106">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="357be-106">The samples may already be installed on your machine.</span></span> <span data-ttu-id="357be-107">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="357be-107">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="357be-108">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="357be-108">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="357be-109">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="357be-109">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\PortSharing`  
   
- De nombreux protocoles utilisent un numéro de port standard ou par défaut.Par exemple, le protocole HTTP utilise en général le port TCP 80.Internet Information Services \(IIS\) a un écouteur qui partage un port entre plusieurs applications HTTP.IIS écoute directement le port et envoie les messages à l'application appropriée en fonction des informations du flux de messages.Cela permet à plusieurs applications HTTP d'utiliser le même numéro de port sans devoir rivaliser pour réserver le port pour recevoir des messages.  
+ <span data-ttu-id="357be-110">De nombreux protocoles utilisent un numéro de port standard ou par défaut.</span><span class="sxs-lookup"><span data-stu-id="357be-110">Many protocols have a standard or default port number that they use.</span></span> <span data-ttu-id="357be-111">Par exemple, le protocole HTTP utilise en général le port TCP 80.</span><span class="sxs-lookup"><span data-stu-id="357be-111">For example, the HTTP protocol typically uses TCP port 80.</span></span> <span data-ttu-id="357be-112">Internet Information Services (IIS) a un écouteur qui partage un port entre plusieurs applications HTTP.</span><span class="sxs-lookup"><span data-stu-id="357be-112">Internet Information Services (IIS) has a listener to share a port between multiple HTTP applications.</span></span> <span data-ttu-id="357be-113">IIS écoute directement le port et envoie les messages à l'application appropriée en fonction des informations du flux de messages.</span><span class="sxs-lookup"><span data-stu-id="357be-113">IIS listens on the port directly and forwards messages to the appropriate application based on information inside the message stream.</span></span> <span data-ttu-id="357be-114">Cela permet à plusieurs applications HTTP d'utiliser le même numéro de port sans devoir rivaliser pour réserver le port pour recevoir des messages.</span><span class="sxs-lookup"><span data-stu-id="357be-114">This allows multiple HTTP applications to use the same port number without having to compete to reserve the port for receiving messages.</span></span>  
   
- Le partage de ports NetTcp est une fonctionnalité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]qui permet de la même façon à plusieurs applications réseau de partager un port unique.Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.  
+ <span data-ttu-id="357be-115">Partage de ports NetTcp est un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]fonctionnalité qui permet de la même façon à plusieurs applications de réseau partager un port unique.</span><span class="sxs-lookup"><span data-stu-id="357be-115">NetTcp Port Sharing is a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]feature that similarly allows multiple network applications to share a single port.</span></span> <span data-ttu-id="357be-116">Le service de partage de ports NetTcp accepte les connexions utilisant le protocole net.tcp et transfère les messages en fonction de leur adresse de destination.</span><span class="sxs-lookup"><span data-stu-id="357be-116">The NetTcp Port Sharing Service accepts connections using the net.tcp protocol and forwards messages based on their destination address.</span></span>  
   
- Le service de partage de ports NetTcp n'est pas activé par défaut.Avant d'exécuter cet exemple, vous devez activer le service manuellement.Pour plus d'informations, consultez [Comment : activer le service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.  
+ <span data-ttu-id="357be-117">Le service de partage de ports NetTcp n'est pas activé par défaut.</span><span class="sxs-lookup"><span data-stu-id="357be-117">The NetTcp Port Sharing Service is not enabled by default.</span></span> <span data-ttu-id="357be-118">Avant d'exécuter cet exemple, vous devez activer le service manuellement.</span><span class="sxs-lookup"><span data-stu-id="357be-118">Before running this sample, you must manually enable the service.</span></span> <span data-ttu-id="357be-119">Pour plus d’informations, consultez [Comment : activer le Service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).</span><span class="sxs-lookup"><span data-stu-id="357be-119">For more information, see [How to: Enable the Net.TCP Port Sharing Service](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md).</span></span> <span data-ttu-id="357be-120">Si le service est désactivé, une exception est levée lorsque l'application serveur est démarrée.</span><span class="sxs-lookup"><span data-stu-id="357be-120">If the service is disabled, an exception is thrown when the server application is started.</span></span>  
   
 ```  
 Unhandled Exception: System.ServiceModel.CommunicationException: The TransportManager failed to listen on the supplied URI using the NetTcpPortSharing service: failed to start the service because it is disabled. An administrator can enable it by running 'sc.exe config NetTcpPortSharing start= demand'.. ---> System.InvalidOperationException: Cannot start service NetTcpPortSharing on computer '.'. ---> System.ComponentModel.Win32Exception: The service cannot be started, either because it is disabled or because it has no enabled devices associated with it  
 ```  
   
- Le partage de ports est activé sur le serveur en définissant la propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> de la liaison <xref:System.ServiceModel.NetTcpBinding> ou de l'élément de liaison <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.Le client n'a pas besoin de savoir comment le partage de ports a été configuré pour l'utiliser sur le serveur.  
+ <span data-ttu-id="357be-121">Le partage de ports est activé sur le serveur en définissant la propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> de la liaison <xref:System.ServiceModel.NetTcpBinding> ou de l'élément de liaison <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.</span><span class="sxs-lookup"><span data-stu-id="357be-121">Port sharing is enabled on the server by setting the <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> property of the <xref:System.ServiceModel.NetTcpBinding> binding or the <xref:System.ServiceModel.Channels.TcpTransportBindingElement> binding element.</span></span> <span data-ttu-id="357be-122">Le client n'a pas besoin de savoir comment le partage de ports a été configuré pour l'utiliser sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="357be-122">The client does not have to know how port sharing has been configured to use it on the server.</span></span>  
   
-## Activation du partage de ports  
- Le code suivant illustre l'activation du partage de ports sur le serveur.Il démarre une instance du service `ICalculator` sur un port fixe avec un chemin d'accès URI aléatoire.Bien que deux services puissent partager le même port, leurs adresses de point de terminaison globales doivent demeurer uniques afin que le service de partage de ports NetTcp puisse router les messages vers l'application qui convient.  
+## <a name="enabling-port-sharing"></a><span data-ttu-id="357be-123">Activation du partage de ports</span><span class="sxs-lookup"><span data-stu-id="357be-123">Enabling Port Sharing</span></span>  
+ <span data-ttu-id="357be-124">Le code suivant illustre l'activation du partage de ports sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="357be-124">The following code demonstrates enabling port sharing on the server.</span></span> <span data-ttu-id="357be-125">Il démarre une instance du service `ICalculator` sur un port fixe avec un chemin d'accès URI aléatoire.</span><span class="sxs-lookup"><span data-stu-id="357be-125">It starts an instance of the `ICalculator` service on a fixed port with a random URI path.</span></span> <span data-ttu-id="357be-126">Bien que deux services puissent partager le même port, leurs adresses de point de terminaison globales doivent demeurer uniques afin que le service de partage de ports NetTcp puisse router les messages vers l'application qui convient.</span><span class="sxs-lookup"><span data-stu-id="357be-126">Even though two services can share the same port, their overall endpoint addresses still must be unique so that the NetTcp Port Sharing Service can route messages to the correct application.</span></span>  
   
 ```  
 // Configure a binding with TCP port sharing enabled  
@@ -57,14 +60,14 @@ host.AddServiceEndpoint(typeof(ICalculator), binding, address);
 host.Open();  
 ```  
   
- Avec le partage de ports activé, vous pouvez exécuter plusieurs fois le service sans conflit de numéro de port.Si vous modifiez le code pour désactiver le partage de ports, le fait de démarrer deux copies des résultats du service fait échouer la seconde avec une <xref:System.ServiceModel.AddressAlreadyInUseException>.  
+ <span data-ttu-id="357be-127">Avec le partage de ports activé, vous pouvez exécuter plusieurs fois le service sans conflit de numéro de port.</span><span class="sxs-lookup"><span data-stu-id="357be-127">With port sharing enabled, you can run the service multiple times without having a conflict over the port number.</span></span> <span data-ttu-id="357be-128">Si vous modifiez le code pour désactiver le partage de ports, le fait de démarrer deux copies des résultats du service fait échouer la seconde avec une <xref:System.ServiceModel.AddressAlreadyInUseException>.</span><span class="sxs-lookup"><span data-stu-id="357be-128">If you change the code to disable port sharing, starting up two copies of the service results in the second failing with an <xref:System.ServiceModel.AddressAlreadyInUseException>.</span></span>  
   
 ```  
 Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is already a listener on IP endpoint 0.0.0.0:9000.  Make sure that you are not trying to use this endpoint multiple times in your application and that there are no other applications listening on this endpoint. ---> System.Net.Sockets.SocketException: Only one usage of each socket address (protocol/network address/port) is normally permitted  
 ```  
   
-## Exécution de l'exemple  
- Vous pouvez utiliser le client test pour vérifier que les messages sont correctement routés aux services qui partagent le port.  
+## <a name="running-the-sample"></a><span data-ttu-id="357be-129">Exécution de l'exemple</span><span class="sxs-lookup"><span data-stu-id="357be-129">Running the Sample</span></span>  
+ <span data-ttu-id="357be-130">Vous pouvez utiliser le client test pour vérifier que les messages sont correctement routés aux services qui partagent le port.</span><span class="sxs-lookup"><span data-stu-id="357be-130">You can use the test client to check that messages are correctly routed to services sharing the port.</span></span>  
   
 ```  
 class client  
@@ -110,14 +113,14 @@ class client
 }  
 ```  
   
- Chaque instance du service imprime son nombre et adresse uniques.Par exemple, vous pouvez voir le texte suivant lorsque vous exécutez service.exe.  
+ <span data-ttu-id="357be-131">Chaque instance du service imprime son nombre et adresse uniques.</span><span class="sxs-lookup"><span data-stu-id="357be-131">Each instance of the service prints out its unique number and address.</span></span> <span data-ttu-id="357be-132">Par exemple, vous pouvez voir le texte suivant lorsque vous exécutez service.exe.</span><span class="sxs-lookup"><span data-stu-id="357be-132">For instance, you may see the following text when you run service.exe.</span></span>  
   
 ```  
 Service #4381 listening on net.tcp://localhost:9000/calculator/4381.  
 Press <ENTER> to terminate service.  
 ```  
   
- Entrez le numéro de service que vous voyez lorsque vous exécutez client.exe.  
+ <span data-ttu-id="357be-133">Entrez le numéro de service que vous voyez lorsque vous exécutez client.exe.</span><span class="sxs-lookup"><span data-stu-id="357be-133">Enter the service number you see here when you run client.exe.</span></span>  
   
 ```  
 Enter the service number to test: 4381  
@@ -129,23 +132,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- Cet exemple peut être exécuté dans une configuration à plusieurs ordinateurs en modifiant l'adresse générée que le client utilise.Dans Client.cs, modifiez la chaîne de mise en forme de l'adresse du point de terminaison pour la faire correspondre à la nouvelle adresse de votre service.Remplacez toute référence au « localhost » par l'adresse IP de l'ordinateur serveur.Vous devez recompiler l'exemple après avoir apporté cette modification.  
+ <span data-ttu-id="357be-134">Cet exemple peut être exécuté dans une configuration à plusieurs ordinateurs en modifiant l'adresse générée que le client utilise.</span><span class="sxs-lookup"><span data-stu-id="357be-134">This sample can be run in a cross-machine configuration by changing the generated address that the client uses.</span></span> <span data-ttu-id="357be-135">Dans Client.cs, modifiez la chaîne de mise en forme de l'adresse du point de terminaison pour la faire correspondre à la nouvelle adresse de votre service.</span><span class="sxs-lookup"><span data-stu-id="357be-135">In the Client.cs, change the endpoint address format string to match the new address of your service.</span></span> <span data-ttu-id="357be-136">Remplacez toute référence au « localhost » par l'adresse IP de l'ordinateur serveur.</span><span class="sxs-lookup"><span data-stu-id="357be-136">Replace any references to "localhost" with the IP address of the server machine.</span></span> <span data-ttu-id="357be-137">Vous devez recompiler l'exemple après avoir apporté cette modification.</span><span class="sxs-lookup"><span data-stu-id="357be-137">You must recompile the sample after making this change.</span></span>  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="357be-138">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="357be-138">To set up, build, and run the sample</span></span>  
   
-1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.  
+1.  <span data-ttu-id="357be-139">Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="357be-139">Install [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 using the following command.</span></span>  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
-2.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2.  <span data-ttu-id="357be-140">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="357be-140">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-3.  Activez le service de partage de ports NetTcp comme décrit précédemment dans la section d'introduction.  
+3.  <span data-ttu-id="357be-141">Activez le service de partage de ports NetTcp comme décrit précédemment dans la section d'introduction.</span><span class="sxs-lookup"><span data-stu-id="357be-141">Enable the NetTcp Port Sharing Service as previously described in the introduction section.</span></span>  
   
-4.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4.  <span data-ttu-id="357be-142">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="357be-142">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-5.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions indiquées dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci\-dessus.  
+5.  <span data-ttu-id="357be-143">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="357be-143">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span> <span data-ttu-id="357be-144">Les détails d'exécution spécifiques de cet exemple sont inclus dans la section Exécution de l'exemple ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="357be-144">Specific details for running this sample are included previously in the Running the Sample section.</span></span>  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="357be-145">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="357be-145">See Also</span></span>

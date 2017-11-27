@@ -1,55 +1,58 @@
 ---
-title: "HTTP Acknowledgement Channel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: HTTP Acknowledgement Channel
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 469f3056-5ef2-4753-8acf-b574d23d83cf
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bf8e62d99ffc0a7296d83685dfeb15993afff934
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# HTTP Acknowledgement Channel
-HTTP Acknowledgement Channel est un exemple d'un canal superposé qui modifie le modèle de messagerie unidirectionnel pour permettre à un service d'accepter ou de refuser des messages entrants plutôt que d'envoyer automatiquement un accusé de réception.HTTP Acknowledgement Channel permet également au service de différer l'accusé de réception jusqu'à ce qu'il puisse garantir au niveau de l'entreprise que le message sera traité.  
+# <a name="http-acknowledgement-channel"></a><span data-ttu-id="cfcb5-102">HTTP Acknowledgement Channel</span><span class="sxs-lookup"><span data-stu-id="cfcb5-102">HTTP Acknowledgement Channel</span></span>
+<span data-ttu-id="cfcb5-103">HTTP Acknowledgement Channel est un exemple d’un canal superposé qui modifie le modèle de messagerie unidirectionnel pour permettre à un service d’accepter ou de refuser des messages entrants plutôt que d’envoyer automatiquement un accusé de réception.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-103">The HTTP Acknowledgement Channel is an example of a layered channel that changes the one-way messaging pattern, allowing a service to acknowledge or refuse incoming messages rather than automatically sending an acknowledgement on receipt.</span></span> <span data-ttu-id="cfcb5-104">HTTP Acknowledgement Channel permet également au service de différer l'accusé de réception jusqu'à ce qu'il puisse garantir au niveau de l'entreprise que le message sera traité.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-104">The HTTP Acknowledgement Channel also allows the service to delay acknowledgement until it can make a business-level guarantee that the message will be processed.</span></span>  
   
-## Démonstrations  
- <xref:System.ServiceModel.Channels.ReceiveContext>, exemple de canal superposé \(HTTP Acknowledgement Channel\).  
+## <a name="demonstrates"></a><span data-ttu-id="cfcb5-105">Démonstrations</span><span class="sxs-lookup"><span data-stu-id="cfcb5-105">Demonstrates</span></span>  
+ <span data-ttu-id="cfcb5-106"><xref:System.ServiceModel.Channels.ReceiveContext>, exemple de canal superposé (HTTP Acknowledgement Channel).</span><span class="sxs-lookup"><span data-stu-id="cfcb5-106"><xref:System.ServiceModel.Channels.ReceiveContext>, Layered channel example (HTTP Acknowledgement channel).</span></span>  
   
-## Discussion  
- HTTP Acknowledgement Channel implémente <xref:System.ServiceModel.Channels.ReceiveContext> pour restructurer le modèle de messagerie requête\-réponse HTTP en modèle unidirectionnel avec accusé de réception différé.À l'aide de ce nouveau modèle, un service peut vérifier le traitement du message en envoyant un accusé de réception sous forme de code d'état HTTP OK \(200\) sans bloquer le client jusqu'à ce que le traitement du message soit terminé ou peut envoyer un message d'échec au client sous forme de code d'état HTTP Erreur interne du serveur \(500\).Par exemple, un service peut envoyer un accusé de réception après avoir écrit un message dans une file d'attente, puis continuer le traitement du message de façon asynchrone.Dans ce scénario, un client peut être assuré que ses messages ont été traités au moins une fois par le service, s'il a renvoyé chaque message jusqu'à obtention d'un accusé de réception en provenance du service.Notez que, si un service requiert un traitement asynchrone rapide des messages sur HTTP, sans garantie de leur traitement, <xref:System.ServiceModel.Channels.OneWayBindingElement> est un choix plus approprié.  
+## <a name="discussion"></a><span data-ttu-id="cfcb5-107">Discussion</span><span class="sxs-lookup"><span data-stu-id="cfcb5-107">Discussion</span></span>  
+ <span data-ttu-id="cfcb5-108">HTTP Acknowledgement Channel implémente <xref:System.ServiceModel.Channels.ReceiveContext> pour restructurer le modèle de messagerie requête-réponse HTTP en modèle unidirectionnel avec accusé de réception différé.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-108">The HTTP Acknowledgement Channel implements <xref:System.ServiceModel.Channels.ReceiveContext> to reshape the HTTP request-reply messaging pattern to a one-way pattern with delayed acknowledgement.</span></span> <span data-ttu-id="cfcb5-109">À l'aide de ce nouveau modèle, un service peut vérifier le traitement du message en envoyant un accusé de réception sous forme de code d'état HTTP OK (200) sans bloquer le client jusqu'à ce que le traitement du message soit terminé ou peut envoyer un message d'échec au client sous forme de code d'état HTTP Erreur interne du serveur (500).</span><span class="sxs-lookup"><span data-stu-id="cfcb5-109">Using this new pattern, a service can ensure message processing by sending an acknowledgement in the form of an HTTP OK status code of 200 without blocking the client until message processing completes or can send a failure message to the client in the form of an HTTP Internal Server error status code of 500.</span></span> <span data-ttu-id="cfcb5-110">Par exemple, un service peut envoyer un accusé de réception après avoir écrit un message dans une file d'attente, puis continuer le traitement du message de façon asynchrone.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-110">For example, a service could send an acknowledgement after writing a message to a queue, and then continue processing the message asynchronously.</span></span> <span data-ttu-id="cfcb5-111">Dans ce scénario, un client peut être assuré que ses messages ont été traités au moins une fois par le service, s'il a renvoyé chaque message jusqu'à obtention d'un accusé de réception en provenance du service.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-111">In this scenario, a client could be assured its messages were processed at least once by the service, if it re-sent each message until it received an acknowledgement from the service.</span></span> <span data-ttu-id="cfcb5-112">Notez que, si un service requiert un traitement asynchrone rapide des messages sur HTTP, sans garantie de leur traitement, <xref:System.ServiceModel.Channels.OneWayBindingElement> est un choix plus approprié.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-112">Note that, if a service requires fast asynchronous message processing over HTTP without any message processing guarantees, then the <xref:System.ServiceModel.Channels.OneWayBindingElement> is a more appropriate choice.</span></span>  
   
- <xref:System.ServiceModel.Channels.ReceiveContext> est utilisé pour maintenir le message en place pendant le temps nécessaire à déterminer s'il peut être traité au niveau du service.La capacité d'un service à traiter le message avec succès est indiquée en appelant Complete sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext> qui envoie le code d'état HTTP OK et la capacité du service à traiter le message est indiquée en appelant la méthode `Abandon` de <xref:System.ServiceModel.Channels.ReceiveContext> sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext>, qui envoie le code d'état HTTP Erreur interne du serveur.  
+ <span data-ttu-id="cfcb5-113"><xref:System.ServiceModel.Channels.ReceiveContext> est utilisé pour maintenir le message en place pendant le temps nécessaire à déterminer s'il peut être traité au niveau du service.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-113"><xref:System.ServiceModel.Channels.ReceiveContext> is used to hold the message in place while it is determined whether the message can be processed at the service.</span></span> <span data-ttu-id="cfcb5-114">La capacité d'un service à traiter le message avec succès est indiquée en appelant Complete sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext> qui envoie le code d'état HTTP OK et la capacité du service à traiter le message est indiquée en appelant la méthode <xref:System.ServiceModel.Channels.ReceiveContext> de `Abandon` sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext>, qui envoie le code d'état HTTP Erreur interne du serveur.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-114">The ability of a service to successfully process the message is indicated by calling Complete on the <xref:System.ServiceModel.Channels.ReceiveContext> object that sends an HTTP OK status code and whether the service can process the message is indicated by calling <xref:System.ServiceModel.Channels.ReceiveContext>’s `Abandon` method on the <xref:System.ServiceModel.Channels.ReceiveContext> object, which sends an HTTP Internal Server error status code.</span></span>  
   
- Dans cet exemple, le client demande les informations de traitement en envoyant un ID d'employé.Du côté du service, si l'ID d'employé reçu est supérieur à 50, le service renvoie le code d'état HTTP 500 \(Erreur interne du serveur\) au client ; sinon il est supposé que le traitement peut être effectué avec succès et le code d'état HTTP 200 \(réussite\) est renvoyé au client.  
+ <span data-ttu-id="cfcb5-115">Dans cet exemple, le client demande les informations de traitement en envoyant un ID d'employé.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-115">In this example, the client requests processing information by sending an employee ID.</span></span> <span data-ttu-id="cfcb5-116">Du côté du service, si l'ID d'employé reçu est supérieur à 50, le service renvoie le code d'état HTTP 500 (Erreur interne du serveur) au client ; sinon il est supposé que le traitement peut être effectué avec succès et le code d'état HTTP 200 (réussite) est renvoyé au client.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-116">On the service end, if the employee ID received is greater than 50, the service sends an HTTP Status code of 500 (Internal Server Error) back to the client, otherwise it is assumed that the processing can be successfully done and sends an HTTP Status code of 200 (Successful) to the client.</span></span>  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="cfcb5-117">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="cfcb5-117">To set up, build, and run the sample</span></span>  
   
-1.  Ouvrez [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec les privilèges d'administrateur.  
+1.  <span data-ttu-id="cfcb5-118">Ouvrez [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec les privilèges d'administrateur.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-118">Open [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] with Administrator privileges.</span></span>  
   
-2.  Ouvrez la solution **HttpAckChannel**.  
+2.  <span data-ttu-id="cfcb5-119">Ouvrez le **HttpAckChannel** solution.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-119">Open the **HttpAckChannel** solution.</span></span>  
   
-3.  Démarrez une nouvelle instance du projet **Service** en cliquant avec le bouton droit sur le projet dans l'**Explorateur de solutions** et en sélectionnant **Débogage** et **Démarrer une nouvelle instance** dans le menu contextuel.  
+3.  <span data-ttu-id="cfcb5-120">Démarrer une nouvelle instance de la **Service** projet en cliquant avec le bouton droit sur le projet dans **l’Explorateur de solutions**et en sélectionnant **déboguer**, **démarrer une nouvelle instance** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-120">Start a new instance of the **Service** project by right clicking the project in **Solution Explorer**, and selecting **Debug**, **Start new instance** from the context menu.</span></span>  
   
-4.  Démarrez une nouvelle instance du projet **Client** en cliquant avec le bouton droit sur le projet dans l'**Explorateur de solutions** et en sélectionnant **Débogage** et **Démarrer une nouvelle instance** dans le menu contextuel.  
+4.  <span data-ttu-id="cfcb5-121">Démarrer une nouvelle instance de la **Client** projet en cliquant avec le bouton droit sur le projet dans **l’Explorateur de solutions**et en sélectionnant **déboguer**, et **démarrer une nouvelle instance** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-121">Start a new instance of the **Client** project by right clicking the project in **Solution Explorer**, and selecting **Debug**, and **Start new instance** from the context menu.</span></span>  
   
-5.  Une fois que le service a démarré, appuyez sur ENTRÉE dans la fenêtre du client pour que celui\-ci puisse envoyer un message au service.  
+5.  <span data-ttu-id="cfcb5-122">Une fois que le service a démarré, appuyez sur ENTRÉE dans la fenêtre du client pour que celui-ci puisse envoyer un message au service.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-122">Once the service has started, press ENTER in the client window to let the client send a message to the service.</span></span>  
   
-6.  Le premier message est traité au niveau du service et le code d'état HTTP OK est renvoyé au client.  
+6.  <span data-ttu-id="cfcb5-123">Le premier message est traité au niveau du service et le code d'état HTTP OK est renvoyé au client.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-123">The first message is processed on the service, and it sends an HTTP OK status code back to the client.</span></span>  
   
-7.  Le deuxième message échoue et le code d'état HTTP Erreur interne du serveur est renvoyé au client, ce qui lève une exception <xref:System.ServiceModel.CommunicationException> sur le client.  
+7.  <span data-ttu-id="cfcb5-124">Le deuxième message échoue et le code d'état HTTP Erreur interne du serveur est renvoyé au client, ce qui lève une exception <xref:System.ServiceModel.CommunicationException> sur le client.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-124">The second message is unsuccessful, and it sends an HTTP Internal Server error status code back to the client, which raises a <xref:System.ServiceModel.CommunicationException> on the client.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="cfcb5-125">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-125">The samples may already be installed on your machine.</span></span> <span data-ttu-id="cfcb5-126">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-126">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="cfcb5-127">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="cfcb5-127">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="cfcb5-128">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="cfcb5-128">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\Channels\HttpAckChannel`
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\HttpAckChannel`

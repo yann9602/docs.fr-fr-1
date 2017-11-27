@@ -1,42 +1,45 @@
 ---
-title: "Configuration de votre application | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Configuration de votre application
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a2f995b0-669d-4721-b00f-4561ec7eb6a4
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7f22fac02616070ecd6498ad0e158782001681ab
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Configuration de votre application
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise le système de configuration .NET et vous permet de configurer des services à la fois au niveau de l'ordinateur et au niveau de l'application.  
+# <a name="configuring-your-application"></a><span data-ttu-id="e585a-102">Configuration de votre application</span><span class="sxs-lookup"><span data-stu-id="e585a-102">Configuring Your Application</span></span>
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="e585a-103"> utilise le système de configuration .NET et vous permet de configurer des services à la fois au niveau de l'ordinateur et au niveau de l'application.</span><span class="sxs-lookup"><span data-stu-id="e585a-103"> uses the .NET configuration system and allows you to configure services at both the machine and application scope.</span></span>  
   
- Les paramètres de configuration définis par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se trouvent dans le groupe de sections `<system.serviceModel>` .[!INCLUDE[crabout](../../../../includes/crabout-md.md)] la configuration d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez les rubriques suivantes :  
+ <span data-ttu-id="e585a-104">Les paramètres de configuration définis par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] se trouvent dans le groupe de sections `<system.serviceModel>`.</span><span class="sxs-lookup"><span data-stu-id="e585a-104">Configuration settings defined by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] are located in the `<system.serviceModel>` section group.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e585a-105"> la configuration d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="e585a-105"> how to configure a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, see the following topics:</span></span>  
   
--   [Configuration des services](../../../../docs/framework/wcf/configuring-services.md)  
+-   [<span data-ttu-id="e585a-106">Configuration des services</span><span class="sxs-lookup"><span data-stu-id="e585a-106">Configuring Services</span></span>](../../../../docs/framework/wcf/configuring-services.md)  
   
--   [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
+-   [<span data-ttu-id="e585a-107">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="e585a-107">\<system.serviceModel></span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
   
- Les paramètres de configuration définis par l'application sont définis dans le groupe de sections `<appSettings>`.[!INCLUDE[crabout](../../../../includes/crabout-md.md)] les paramètres d'application dans les fichiers de configuration .NET, consultez [\<appSettings\>](http://go.microsoft.com/fwlink/?LinkId=95159).  
+ <span data-ttu-id="e585a-108">Les paramètres de configuration définis par l'application sont définis dans le groupe de sections `<appSettings>`.</span><span class="sxs-lookup"><span data-stu-id="e585a-108">Application-defined configurations settings are defined in the `<appSettings>` section group.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e585a-109">paramètres de l’application dans les fichiers de configuration .NET, consultez [ \<appSettings >](http://go.microsoft.com/fwlink/?LinkId=95159).</span><span class="sxs-lookup"><span data-stu-id="e585a-109"> application settings in .NET configuration files, see [\<appSettings>](http://go.microsoft.com/fwlink/?LinkId=95159).</span></span>  
   
-## Utilisation de l'Éditeur de configuration  
- L'[Outil Éditeur de configuration \(SvcConfigEditor.exe\)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet aux administrateurs et aux développeurs de créer et de modifier des paramètres de configuration pour les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide d'une interface utilisateur graphique.Cet outil vous permet de gérer les paramètres de liaison, comportement, service et diagnostic [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sans modifier directement les fichiers de configuration XML.  
+## <a name="using-the-configuration-editor"></a><span data-ttu-id="e585a-110">Utilisation de l'Éditeur de configuration</span><span class="sxs-lookup"><span data-stu-id="e585a-110">Using the Configuration Editor</span></span>  
+ <span data-ttu-id="e585a-111">Le [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] [l’outil Éditeur de Configuration (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) permet aux administrateurs et aux développeurs créer et modifier les paramètres de configuration pour [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services à l’aide d’une interface utilisateur graphique.</span><span class="sxs-lookup"><span data-stu-id="e585a-111">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)][Configuration Editor Tool (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) allows administrators and developers to create and modify configuration settings for [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services using a graphical user interface.</span></span> <span data-ttu-id="e585a-112">Cet outil vous permet de gérer les paramètres de liaison, comportement, service et diagnostic [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sans modifier directement les fichiers de configuration XML.</span><span class="sxs-lookup"><span data-stu-id="e585a-112">With this tool, you can manage settings for [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] bindings, behaviors, services, and diagnostics without directly editing XML configuration files.</span></span>  
   
-## Modification des fichiers de configuration dans Visual Studio  
- Pour modifier le fichier de configuration d'un projet de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], cliquez dessus avec le bouton droit dans l'**Explorateur de solutions** et choisissez l'élément de menu contextuel **Modifier la configuration WCF**.[Outil Éditeur de configuration \(SvcConfigEditor.exe\)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) démarre.  
+## <a name="editing-configuration-files-in-visual-studio"></a><span data-ttu-id="e585a-113">Modification des fichiers de configuration dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e585a-113">Editing Configuration Files in Visual Studio</span></span>  
+ <span data-ttu-id="e585a-114">Pour modifier le fichier de configuration d’un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] projet de service dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], avec le bouton droit dessus dans **l’Explorateur de solutions** et choisissez la **modifier la configuration WCF** élément de menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="e585a-114">To edit the configuration file of a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service project in [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], right click it in **Solution Explorer** and choose the **Edit WCF Config** context menu item.</span></span> <span data-ttu-id="e585a-115">Cette opération lance le [l’outil Éditeur de Configuration (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).</span><span class="sxs-lookup"><span data-stu-id="e585a-115">This launches the [Configuration Editor Tool (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).</span></span>  
   
 > [!NOTE]
->  Si vous modifiez le fichier de configuration d'un projet de service Web [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] en cliquant avec le bouton droit sur l'**Explorateur de solutions**, remarquez que l'élément de menu contextuel **Modifier la configuration WCF** est manquant.Pour résoudre ce problème, cliquez sur le menu **Outils** et sélectionnez **Éditeur de configuration de service WCF**.Ensuite, vous pouvez cliquer avec le bouton droit sur un fichier de configuration et utiliser l'élément de menu contextuel **Modifier la configuration WCF**.  
+>  <span data-ttu-id="e585a-116">Si vous modifiez le fichier de configuration d’un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] projet de Service Web dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] par dessus dans **l’Explorateur de solutions**, notez que le **modifier la configuration WCF** élément de menu contextuel est manquant .</span><span class="sxs-lookup"><span data-stu-id="e585a-116">If you edit the configuration file of a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web Service project in [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] by right-clicking it in **Solution Explorer**, notice that the **Edit WCF Config** context menu item is missing.</span></span> <span data-ttu-id="e585a-117">Pour résoudre ce problème, cliquez sur le **outils** menu, puis choisissez **éditeur de configuration de Service WCF**.</span><span class="sxs-lookup"><span data-stu-id="e585a-117">To workaround this issue, click the **Tools** menu, and choose **WCF Service Config Editor**.</span></span> <span data-ttu-id="e585a-118">Après cela, vous pouvez cliquez sur un fichier de configuration et utiliser le **modifier la configuration WCF** élément de menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="e585a-118">After that, you can right-click a configuration file and use the **Edit WCF Config** context menu item.</span></span>  
   
-## Voir aussi  
- [Outil Éditeur de configuration \(SvcConfigEditor.exe\)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)   
- [Configuration des services](../../../../docs/framework/wcf/configuring-services.md)   
- [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)
+## <a name="see-also"></a><span data-ttu-id="e585a-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e585a-119">See Also</span></span>  
+ [<span data-ttu-id="e585a-120">Outil Éditeur de configuration (SvcConfigEditor.exe)</span><span class="sxs-lookup"><span data-stu-id="e585a-120">Configuration Editor Tool (SvcConfigEditor.exe)</span></span>](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
+ [<span data-ttu-id="e585a-121">Configuration des services</span><span class="sxs-lookup"><span data-stu-id="e585a-121">Configuring Services</span></span>](../../../../docs/framework/wcf/configuring-services.md)  
+ [<span data-ttu-id="e585a-122">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="e585a-122">\<system.serviceModel></span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)

@@ -1,47 +1,50 @@
 ---
-title: "propri&#233;t&#233; de navigation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "propriété de navigation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d0bf1a6a-1d84-484c-b7c3-b410fd8dc0b1
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 1677ab1be071eeabd72b29c7ce61d01aaf6164a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# propri&#233;t&#233; de navigation
-Une *propriété de navigation* est une propriété facultative sur un [type d'entité](../../../../docs/framework/data/adonet/entity-type.md), qui permet de naviguer d'une [terminaison](../../../../docs/framework/data/adonet/association-end.md) d'une [association](../../../../docs/framework/data/adonet/association-type.md) à l'autre terminaison.  Contrairement à d'autres [propriétés](../../../../docs/framework/data/adonet/property.md), les propriétés de navigation n'acheminent pas de données.  
+# <a name="navigation-property"></a><span data-ttu-id="3c901-102">propriété de navigation</span><span class="sxs-lookup"><span data-stu-id="3c901-102">navigation property</span></span>
+<span data-ttu-id="3c901-103">A *propriété de navigation* est une propriété facultative sur un [type d’entité](../../../../docs/framework/data/adonet/entity-type.md) qui permet de naviguer d’une [fin](../../../../docs/framework/data/adonet/association-end.md) d’un [association](../../../../docs/framework/data/adonet/association-type.md) à l’autre extrémité.</span><span class="sxs-lookup"><span data-stu-id="3c901-103">A *navigation property* is an optional property on an [entity type](../../../../docs/framework/data/adonet/entity-type.md) that allows for navigation from one [end](../../../../docs/framework/data/adonet/association-end.md) of an [association](../../../../docs/framework/data/adonet/association-type.md) to the other end.</span></span> <span data-ttu-id="3c901-104">Contrairement à d’autres [propriétés](../../../../docs/framework/data/adonet/property.md), les propriétés de navigation n’acheminent pas de données.</span><span class="sxs-lookup"><span data-stu-id="3c901-104">Unlike other [properties](../../../../docs/framework/data/adonet/property.md), navigation properties do not carry data.</span></span>  
   
- Une définition de propriété de navigation comprend les éléments suivants :  
+ <span data-ttu-id="3c901-105">Une définition de propriété de navigation comprend les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="3c901-105">A navigation property definition includes the following:</span></span>  
   
--   Nom.  \(Requis\)  
+-   <span data-ttu-id="3c901-106">Nom.</span><span class="sxs-lookup"><span data-stu-id="3c901-106">A name.</span></span> <span data-ttu-id="3c901-107">(Requis)</span><span class="sxs-lookup"><span data-stu-id="3c901-107">(Required)</span></span>  
   
--   Association faisant l'objet de la navigation.  \(Requis\)  
+-   <span data-ttu-id="3c901-108">Association faisant l'objet de la navigation.</span><span class="sxs-lookup"><span data-stu-id="3c901-108">The association that it navigates.</span></span> <span data-ttu-id="3c901-109">(Requis)</span><span class="sxs-lookup"><span data-stu-id="3c901-109">(Required)</span></span>  
   
--   Terminaisons de l'association faisant l'objet de la navigation.  \(Requis\)  
+-   <span data-ttu-id="3c901-110">Terminaisons de l'association faisant l'objet de la navigation.</span><span class="sxs-lookup"><span data-stu-id="3c901-110">The ends of the association that it navigates.</span></span> <span data-ttu-id="3c901-111">(Requis)</span><span class="sxs-lookup"><span data-stu-id="3c901-111">(Required)</span></span>  
   
- Notez que les propriétés de navigation sont facultatives sur les deux types d'entités au niveau des terminaisons d'une association.  Si vous définissez une propriété de navigation sur un type d'entité au niveau de la terminaison d'une association, il n'est pas nécessaire de définir une propriété de navigation sur le type d'entité à l'autre terminaison de l'association.  
+ <span data-ttu-id="3c901-112">Notez que les propriétés de navigation sont facultatives sur les deux types d'entités au niveau des terminaisons d'une association.</span><span class="sxs-lookup"><span data-stu-id="3c901-112">Note that navigation properties are optional on both entity types at the ends of an association.</span></span> <span data-ttu-id="3c901-113">Si vous définissez une propriété de navigation sur un type d'entité au niveau de la terminaison d'une association, il n'est pas nécessaire de définir une propriété de navigation sur le type d'entité à l'autre terminaison de l'association.</span><span class="sxs-lookup"><span data-stu-id="3c901-113">If you define a navigation property on one entity type at the end of an association, you do not have to define a navigation property on the entity type at the other end of the association.</span></span>  
   
- Le type de données d'une propriété de navigation est déterminé par la [multiplicité](../../../../docs/framework/data/adonet/association-end-multiplicity.md) de sa [terminaison d'association](../../../../docs/framework/data/adonet/association-end.md) distante.  Par exemple, considérez une propriété de navigation, `OrdersNavProp`, qui existe sur un type d'entité `Customer` et qui navigue dans une association un\-à\-plusieurs entre `Customer` et `Order`.  Étant donné que la terminaison d'association distante pour la propriété de navigation a une multiplicité égale à plusieurs \(\*\), son type de données est une collection \(d'`Order`\).  De même, si une propriété de navigation, `CustomerNavProp`, existe sur le type d'entité `Order`, son type de données est `Customer`, car la multiplicité de la terminaison distante est un \(1\).  
+ <span data-ttu-id="3c901-114">Le type de données d’une propriété de navigation est déterminé par le [multiplicité](../../../../docs/framework/data/adonet/association-end-multiplicity.md) de sa distance [end d’association](../../../../docs/framework/data/adonet/association-end.md).</span><span class="sxs-lookup"><span data-stu-id="3c901-114">The data type of a navigation property is determined by the [multiplicity](../../../../docs/framework/data/adonet/association-end-multiplicity.md) of its remote [association end](../../../../docs/framework/data/adonet/association-end.md).</span></span> <span data-ttu-id="3c901-115">Par exemple, considérez une propriété de navigation, `OrdersNavProp`, qui existe sur un type d'entité `Customer` et qui navigue dans une association un-à-plusieurs entre `Customer` et `Order`.</span><span class="sxs-lookup"><span data-stu-id="3c901-115">For example, suppose a navigation property, `OrdersNavProp`, exists on a `Customer` entity type and navigates a one-to-many association between `Customer` and `Order`.</span></span> <span data-ttu-id="3c901-116">Étant donné que la terminaison d'association distante pour la propriété de navigation a une multiplicité égale à plusieurs (*), son type de données est une collection (d'`Order`).</span><span class="sxs-lookup"><span data-stu-id="3c901-116">Because the remote association end for the navigation property has multiplicity of many (*), its data type is a collection (of `Order`).</span></span> <span data-ttu-id="3c901-117">De même, si une propriété de navigation, `CustomerNavProp`, existe sur le type d'entité `Order`, son type de données est `Customer`, car la multiplicité de la terminaison distante est un (1).</span><span class="sxs-lookup"><span data-stu-id="3c901-117">Similarly, if a navigation property, `CustomerNavProp`, exists on the `Order` entity type, its data type would be `Customer`, because the multiplicity of the remote end is one (1).</span></span>  
   
-## Exemple  
- Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`.  Les propriétés de navigation, `Publisher` et `Authors`, sont définies sur le type d'entité Book.  La propriété de navigation `Books` est définie sur le type d'entité Publisher et le type d'entité `Author`.  
+## <a name="example"></a><span data-ttu-id="3c901-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="3c901-118">Example</span></span>  
+ <span data-ttu-id="3c901-119">Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`.</span><span class="sxs-lookup"><span data-stu-id="3c901-119">The diagram below shows a conceptual model with three entity types: `Book`, `Publisher`, and `Author`.</span></span> <span data-ttu-id="3c901-120">Les propriétés de navigation, `Publisher` et `Authors`, sont définies sur le type d'entité Book.</span><span class="sxs-lookup"><span data-stu-id="3c901-120">Navigation properties, `Publisher` and `Authors`, are defined on the Book entity type.</span></span> <span data-ttu-id="3c901-121">La propriété de navigation `Books` est définie sur le type d'entité Publisher et le type d'entité `Author`.</span><span class="sxs-lookup"><span data-stu-id="3c901-121">Navigation property `Books` is defined on both the Publisher entity type and the `Author` entity type.</span></span>  
   
- ![Modèle avec propriétés de navigation](../../../../docs/framework/data/adonet/media/modelwithnavprops.gif "ModelWithNavProps")  
+ <span data-ttu-id="3c901-122">![Modèle avec propriétés de Navigation](../../../../docs/framework/data/adonet/media/modelwithnavprops.gif "ModelWithNavProps")</span><span class="sxs-lookup"><span data-stu-id="3c901-122">![Model with Navigation Properties](../../../../docs/framework/data/adonet/media/modelwithnavprops.gif "ModelWithNavProps")</span></span>  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine \(DSL\), appelé [CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) \(Conceptual Schema Definition Language\), pour définir des modèles conceptuels.  Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci\-dessus :  
+ <span data-ttu-id="3c901-123">Le [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels.</span><span class="sxs-lookup"><span data-stu-id="3c901-123">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="3c901-124">Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus :</span><span class="sxs-lookup"><span data-stu-id="3c901-124">The following CSDL defines the `Book` entity type shown in the diagram above:</span></span>  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
- Notez que des attributs XML sont utilisés pour communiquer les informations nécessaires pour définir une propriété de navigation. L'attribut `Name` contient le nom de la propriété, `Relationship` contient le nom de l'association faisant l'objet de la navigation, et `FromRole` et `ToRole` contiennent les terminaisons de l'association.  
+ <span data-ttu-id="3c901-125">Notez que des attributs XML sont utilisés pour communiquer les informations nécessaires pour définir une propriété de navigation. L'attribut `Name` contient le nom de la propriété, `Relationship` contient le nom de l'association faisant l'objet de la navigation, et `FromRole` et `ToRole` contiennent les terminaisons de l'association.</span><span class="sxs-lookup"><span data-stu-id="3c901-125">Note that XML attributes are used to communicate the information necessary to define a navigation property: The attribute `Name` contains the name of the property, `Relationship` contains the name of the association it navigates, and `FromRole` and `ToRole` contain the ends of the association.</span></span>  
   
-## Voir aussi  
- [Concepts clés d'Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="3c901-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3c901-126">See Also</span></span>  
+ [<span data-ttu-id="3c901-127">Concepts clés du modèle de données Entity</span><span class="sxs-lookup"><span data-stu-id="3c901-127">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="3c901-128">Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="3c901-128">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

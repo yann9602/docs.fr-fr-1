@@ -1,49 +1,56 @@
 ---
-title: "Comment&#160;: &#233;num&#233;rer un sous-ensemble de files d&#39;attente &#224; l&#39;impression | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "énumérer, sous-ensemble de files d'attente à l'impression"
-  - "files d'attente à l'impression, énumérer un sous-ensemble de"
+title: "Comment : énumérer un sous-ensemble de files d'attente à l'impression"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- enumerating [WPF], subset of print queues
+- print queues [WPF], enumerating subset of
 ms.assetid: cc4a1b5b-d46f-4c5e-bc26-22c226e4bee0
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 393d1692526551b1eb9aa16f48d3c78c3cd6692f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: &#233;num&#233;rer un sous-ensemble de files d&#39;attente &#224; l&#39;impression
-Les professionnels de l'informatique qui gèrent des parcs d'imprimantes à l'échelle de l'entreprise sont souvent amenés à générer une liste des imprimantes dotées de certaines caractéristiques.  Cette fonctionnalité est fournie par la méthode <xref:System.Printing.PrintServer.GetPrintQueues%2A> d'un objet <xref:System.Printing.PrintServer> et l'énumération <xref:System.Printing.EnumeratedPrintQueueTypes>.  
+# <a name="how-to-enumerate-a-subset-of-print-queues"></a><span data-ttu-id="99f4f-102">Comment : énumérer un sous-ensemble de files d'attente à l'impression</span><span class="sxs-lookup"><span data-stu-id="99f4f-102">How to: Enumerate a Subset of Print Queues</span></span>
+<span data-ttu-id="99f4f-103">Une situation courante rencontrée par les professionnels informatiques (IT) de la gestion d’un ensemble d’échelle de la société d’imprimantes est pour générer une liste des imprimantes présentant certaines caractéristiques.</span><span class="sxs-lookup"><span data-stu-id="99f4f-103">A common situation faced by information technology (IT) professionals managing a company-wide set of printers is to generate a list of printers having certain characteristics.</span></span> <span data-ttu-id="99f4f-104">Cette fonctionnalité est fournie par le <xref:System.Printing.PrintServer.GetPrintQueues%2A> méthode d’un <xref:System.Printing.PrintServer> objet et le <xref:System.Printing.EnumeratedPrintQueueTypes> énumération.</span><span class="sxs-lookup"><span data-stu-id="99f4f-104">This functionality is provided by the <xref:System.Printing.PrintServer.GetPrintQueues%2A> method of a <xref:System.Printing.PrintServer> object and the <xref:System.Printing.EnumeratedPrintQueueTypes> enumeration.</span></span>  
   
-## Exemple  
- Dans l'exemple suivant, le code commence par créer un tableau d'indicateurs qui spécifient les caractéristiques des files d'attente à l'impression à répertorier.  Dans cet exemple, nous recherchons les files d'attente à l'impression qui sont installées localement sur le serveur d'impression et partagées.  L'énumération <xref:System.Printing.EnumeratedPrintQueueTypes> offre de nombreuses autres possibilités.  
+## <a name="example"></a><span data-ttu-id="99f4f-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="99f4f-105">Example</span></span>  
+ <span data-ttu-id="99f4f-106">Dans l’exemple ci-dessous, le code commence par créer un tableau d’indicateurs qui spécifient les caractéristiques des files d’attente, que nous souhaitons liste.</span><span class="sxs-lookup"><span data-stu-id="99f4f-106">In the example below, the code begins by creating an array of flags that specify the characteristics of the print queues we want to list.</span></span> <span data-ttu-id="99f4f-107">Dans cet exemple, nous recherchons les files d’attente qui sont installées localement sur le serveur d’impression et sont partagés.</span><span class="sxs-lookup"><span data-stu-id="99f4f-107">In this example, we are looking for print queues that are installed locally on the print server and are shared.</span></span> <span data-ttu-id="99f4f-108">Le <xref:System.Printing.EnumeratedPrintQueueTypes> énumération offre de nombreuses autres possibilités.</span><span class="sxs-lookup"><span data-stu-id="99f4f-108">The <xref:System.Printing.EnumeratedPrintQueueTypes> enumeration provides many other possibilities.</span></span>  
   
- Le code crée ensuite un objet <xref:System.Printing.LocalPrintServer>, une classe dérivée de <xref:System.Printing.PrintServer>.  Le serveur d'impression local est l'ordinateur sur lequel s'exécute l'application.  
+ <span data-ttu-id="99f4f-109">Le code crée ensuite un <xref:System.Printing.LocalPrintServer> de l’objet, une classe dérivée de <xref:System.Printing.PrintServer>.</span><span class="sxs-lookup"><span data-stu-id="99f4f-109">The code then creates a <xref:System.Printing.LocalPrintServer> object, a class derived from <xref:System.Printing.PrintServer>.</span></span> <span data-ttu-id="99f4f-110">Le serveur d’impression local est l’ordinateur sur lequel l’application est en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="99f4f-110">The local print server is the computer on which the application is running.</span></span>  
   
- La dernière étape importante consiste à passer le tableau à la méthode <xref:System.Printing.PrintServer.GetPrintQueues%2A>.  
+ <span data-ttu-id="99f4f-111">La dernière étape importante consiste à passer le tableau à la <xref:System.Printing.PrintServer.GetPrintQueues%2A> (méthode).</span><span class="sxs-lookup"><span data-stu-id="99f4f-111">The last significant step is to pass the array to the <xref:System.Printing.PrintServer.GetPrintQueues%2A> method.</span></span>  
   
- Enfin, les résultats sont présentés à l'utilisateur.  
+ <span data-ttu-id="99f4f-112">Enfin, les résultats sont présentés à l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="99f4f-112">Finally, the results are presented to the user.</span></span>  
   
  [!code-cpp[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](../../../../samples/snippets/cpp/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/CPP/Program.cpp#listsubsetofprintqueues)]
  [!code-csharp[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/CSharp/Program.cs#listsubsetofprintqueues)]
  [!code-vb[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/visualbasic/program.vb#listsubsetofprintqueues)]  
   
- Vous pouvez étendre cet exemple en faisant en sorte que la boucle `foreach` qui parcourt chaque file d'attente à l'impression effectue un filtrage supplémentaire.  Par exemple, vous pourriez filtrer les imprimantes qui ne prennent pas en charge l'impression recto\-verso en demandant à la boucle d'appeler la méthode <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> de chaque file d'attente à l'impression et de vérifier si la valeur retournée indique la présence de l'impression recto\-verso.  
+ <span data-ttu-id="99f4f-113">Vous pouvez étendre cet exemple en ayant la `foreach` boucle parcourt chaque file d’attente d’impression faire davantage de filtrage.</span><span class="sxs-lookup"><span data-stu-id="99f4f-113">You could extend this example by having the `foreach` loop that steps through each print queue do further screening.</span></span> <span data-ttu-id="99f4f-114">Par exemple, vous pourriez filtrer les imprimantes qui ne gèrent pas l’impression recto-verso en demandant à l’appel de la boucle chaque file d’attente à l’impression <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> (méthode) et test, la valeur retournée pour la présence de duplex.</span><span class="sxs-lookup"><span data-stu-id="99f4f-114">For example, you could screen out printers that do not support two-sided printing by having the loop call each print queue's <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A> method and test the returned value for the presence of duplexing.</span></span>  
   
-## Voir aussi  
- <xref:System.Printing.PrintServer.GetPrintQueues%2A>   
- <xref:System.Printing.PrintServer>   
- <xref:System.Printing.LocalPrintServer>   
- <xref:System.Printing.EnumeratedPrintQueueTypes>   
- <xref:System.Printing.PrintQueue>   
- <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>   
- [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [Vue d'ensemble de l'impression](../../../../docs/framework/wpf/advanced/printing-overview.md)   
- [Microsoft XPS Document Writer \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkId=147319)
+## <a name="see-also"></a><span data-ttu-id="99f4f-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="99f4f-115">See Also</span></span>  
+ <xref:System.Printing.PrintServer.GetPrintQueues%2A>  
+ <xref:System.Printing.PrintServer>  
+ <xref:System.Printing.LocalPrintServer>  
+ <xref:System.Printing.EnumeratedPrintQueueTypes>  
+ <xref:System.Printing.PrintQueue>  
+ <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>  
+ [<span data-ttu-id="99f4f-116">Documents dans WPF</span><span class="sxs-lookup"><span data-stu-id="99f4f-116">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="99f4f-117">Vue d’ensemble de l’impression</span><span class="sxs-lookup"><span data-stu-id="99f4f-117">Printing Overview</span></span>](../../../../docs/framework/wpf/advanced/printing-overview.md)  
+ [<span data-ttu-id="99f4f-118">Microsoft XPS Document Writer</span><span class="sxs-lookup"><span data-stu-id="99f4f-118">Microsoft XPS Document Writer</span></span>](http://go.microsoft.com/fwlink/?LinkId=147319)

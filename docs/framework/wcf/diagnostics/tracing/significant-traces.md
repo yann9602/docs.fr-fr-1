@@ -1,31 +1,34 @@
 ---
-title: "Suivis principaux | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Suivis principaux
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 40a1770e-3b09-4142-b0dd-f9ef73642074
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 58322a472a59ee9d3ac9451ff1f20ed95405ac54
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Suivis principaux
-Cette rubrique répertorie quelques\-uns des suivis principaux émis par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
+# <a name="significant-traces"></a><span data-ttu-id="c6caf-102">Suivis principaux</span><span class="sxs-lookup"><span data-stu-id="c6caf-102">Significant Traces</span></span>
+<span data-ttu-id="c6caf-103">Cette rubrique répertorie quelques-uns des suivis principaux émis par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c6caf-103">This topic lists some of the major traces emitted by [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].</span></span>  
   
-## Suivis principaux  
+## <a name="significant-traces"></a><span data-ttu-id="c6caf-104">Suivis principaux</span><span class="sxs-lookup"><span data-stu-id="c6caf-104">Significant Traces</span></span>  
   
-|Suivi|Description|  
+|<span data-ttu-id="c6caf-105">Suivi</span><span class="sxs-lookup"><span data-stu-id="c6caf-105">Trace</span></span>|<span data-ttu-id="c6caf-106">Description</span><span class="sxs-lookup"><span data-stu-id="c6caf-106">Description</span></span>|  
 |-----------|-----------------|  
-|Suivi du journal des messages|Le suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est enregistré par la fonctionnalité de journalisation des messages lorsque la source du suivi `System.ServiceModel.MessageLogging` est activée.Un clic sur ce suivi permet d'afficher le message.Il existe quatre points d'enregistrement configurables pour un message : `ServiceLevelSendRequest`, `TransportSend`, `TransportReceive`, `ServiceLevelReceiveRequest`, également indiqués par l'attribut Message Source dans le suivi du journal des messages.|  
-|Suivi de message reçu|Ce suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est reçu si la source du suivi `System.ServiceModel` est activée au niveau des informations ou des commentaires.Ce suivi est nécessaire pour consulter la flèche de la corrélation du message dans la vue du graphique d'activité.|  
-|Suivi de message envoyé|Ce suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est envoyé si la source du suivi `System.ServiceModel` est activée au niveau des informations ou des commentaires.Ce suivi est nécessaire pour consulter la flèche de la corrélation du message dans la vue du graphique d'activité.|  
-|Obtenir ChannelEndpointElement|Ce suivi est émis dans la fabrication de canal Construct, au niveau des informations.Il fournit une description du point de terminaison auquel le client parle \(adresse distante, liaison, nom de contrat\).|  
-|Obtenir ServiceElement|Ce suivi est émis dans l'hôte du service Construct, au niveau des informations.Il fournit une description du contrat de service et de la liaison.|  
-|Créer SocketConnection|Ce suivi est émis dans la première action Process exécutée par le client et dans l'activité Receive bytes du service.Il fournit les adresses IP locale et distante.Il est émis au niveau Informations.|
+|<span data-ttu-id="c6caf-107">Suivi du journal des messages</span><span class="sxs-lookup"><span data-stu-id="c6caf-107">Message log trace</span></span>|<span data-ttu-id="c6caf-108">Le suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est enregistré par la fonctionnalité de journalisation des messages lorsque la source du suivi `System.ServiceModel.MessageLogging` est activée.</span><span class="sxs-lookup"><span data-stu-id="c6caf-108">The trace is emitted when a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] message is logged by the message logging feature when the `System.ServiceModel.MessageLogging` trace source is enabled.</span></span> <span data-ttu-id="c6caf-109">Un clic sur ce suivi permet d'afficher le message.</span><span class="sxs-lookup"><span data-stu-id="c6caf-109">Clicking this trace displays the message.</span></span> <span data-ttu-id="c6caf-110">Il existe quatre points d'enregistrement configurables pour un message : `ServiceLevelSendRequest`, `TransportSend`, `TransportReceive`, `ServiceLevelReceiveRequest`, également indiqués par l'attribut Message Source dans le suivi du journal des messages.</span><span class="sxs-lookup"><span data-stu-id="c6caf-110">There are four configurable logging points for a message: `ServiceLevelSendRequest`, `TransportSend`, `TransportReceive`, `ServiceLevelReceiveRequest`, also indicated by the Message Source attribute in the message log trace.</span></span>|  
+|<span data-ttu-id="c6caf-111">Suivi de message reçu</span><span class="sxs-lookup"><span data-stu-id="c6caf-111">Message received trace</span></span>|<span data-ttu-id="c6caf-112">Ce suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est reçu si la source de suivi `System.ServiceModel` est activée au niveau des informations ou des détails d'informations.</span><span class="sxs-lookup"><span data-stu-id="c6caf-112">This trace is emitted when a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] message is received if the `System.ServiceModel` trace source is enabled at information or verbose level.</span></span> <span data-ttu-id="c6caf-113">Ce suivi est nécessaire pour consulter la flèche de corrélation du message dans la vue du graphique d'activité.</span><span class="sxs-lookup"><span data-stu-id="c6caf-113">This trace is necessary to see the message correlation arrow in the activity graph view.</span></span>|  
+|<span data-ttu-id="c6caf-114">Suivi de message envoyé</span><span class="sxs-lookup"><span data-stu-id="c6caf-114">Message sent trace</span></span>|<span data-ttu-id="c6caf-115">Ce suivi est émis lorsqu'un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] est envoyé si la source du suivi `System.ServiceModel` est activée au niveau des informations ou des commentaires.</span><span class="sxs-lookup"><span data-stu-id="c6caf-115">This trace is emitted when a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] message is sent if the `System.ServiceModel` trace source is enabled at information or verbose level.</span></span> <span data-ttu-id="c6caf-116">Ce suivi est nécessaire pour consulter la flèche de corrélation du message dans la vue du graphique d'activité.</span><span class="sxs-lookup"><span data-stu-id="c6caf-116">This trace is necessary to see the message correlation arrow in the activity graph view.</span></span>|  
+|<span data-ttu-id="c6caf-117">Obtenir ChannelEndpointElement</span><span class="sxs-lookup"><span data-stu-id="c6caf-117">Get ChannelEndpointElement</span></span>|<span data-ttu-id="c6caf-118">Ce suivi est émis dans la fabrication de canal Construct, au niveau des informations.</span><span class="sxs-lookup"><span data-stu-id="c6caf-118">This trace is emitted in Construct channel factory, at information level.</span></span> <span data-ttu-id="c6caf-119">Il fournit une description du point de terminaison auquel le client parle (adresse distante, liaison, nom de contrat).</span><span class="sxs-lookup"><span data-stu-id="c6caf-119">It provides a description of the endpoint the client is talking to (remote address, binding, contract name).</span></span>|  
+|<span data-ttu-id="c6caf-120">Obtenir ServiceElement</span><span class="sxs-lookup"><span data-stu-id="c6caf-120">Get ServiceElement</span></span>|<span data-ttu-id="c6caf-121">Ce suivi est émis dans l'hôte du service Construct, au niveau des informations.</span><span class="sxs-lookup"><span data-stu-id="c6caf-121">This trace is emitted in Construct service host, at Information level.</span></span> <span data-ttu-id="c6caf-122">Elle fournit une description du contrat de service et de la liaison.</span><span class="sxs-lookup"><span data-stu-id="c6caf-122">It provides a description of the service contract and binding.</span></span>|  
+|<span data-ttu-id="c6caf-123">Créer SocketConnection</span><span class="sxs-lookup"><span data-stu-id="c6caf-123">SocketConnection create</span></span>|<span data-ttu-id="c6caf-124">Ce suivi est émis dans la première action Process exécutée par le client et dans l'activité Receive bytes du service.</span><span class="sxs-lookup"><span data-stu-id="c6caf-124">This trace is emitted in the first Process action performed by the client and in the Receive bytes activity on the service.</span></span> <span data-ttu-id="c6caf-125">Il fournit les adresses IP locales et distantes.</span><span class="sxs-lookup"><span data-stu-id="c6caf-125">It provides the local and remote IP addresses.</span></span> <span data-ttu-id="c6caf-126">Il est émis au niveau Informations.</span><span class="sxs-lookup"><span data-stu-id="c6caf-126">It is emitted at Information level.</span></span>|

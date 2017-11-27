@@ -1,89 +1,91 @@
 ---
-title: "Styles et mod&#232;les TreeView | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), TreeView"
-  - "éléments (WPF), TreeView"
-  - "états (WPF), TreeView"
-  - "styles (WPF), TreeView"
-  - "modèles (WPF), TreeView"
-  - "TreeView (WPF), styles et modèles"
+title: "Styles et modèles TreeView"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ControlTemplate [WPF], TreeView
+- templates [WPF], TreeView
+- parts [WPF], TreeView
+- states [WPF], TreeView
+- styles [WPF], TreeView
+- TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 78e5faf7aab684f2a8760204079a26a61b9c3fda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les TreeView
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TreeView>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="treeview-styles-and-templates"></a><span data-ttu-id="3ac6a-102">Styles et modèles TreeView</span><span class="sxs-lookup"><span data-stu-id="3ac6a-102">TreeView Styles and Templates</span></span>
+<span data-ttu-id="3ac6a-103">Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.TreeView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.TreeView> control.</span></span> <span data-ttu-id="3ac6a-104">Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="3ac6a-105">Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span><span class="sxs-lookup"><span data-stu-id="3ac6a-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## Composants de TreeView  
- Le contrôle <xref:System.Windows.Controls.TreeView> ne comporte pas de composants nommés.  
+## <a name="treeview-parts"></a><span data-ttu-id="3ac6a-106">Composants de TreeView</span><span class="sxs-lookup"><span data-stu-id="3ac6a-106">TreeView Parts</span></span>  
+ <span data-ttu-id="3ac6a-107">Le <xref:System.Windows.Controls.TreeView> contrôle n’a pas de composants nommés.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-107">The <xref:System.Windows.Controls.TreeView> control does not have any named parts.</span></span>  
   
- Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour <xref:System.Windows.Controls.TreeView>, votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> dans un <xref:System.Windows.Controls.ScrollViewer>.  \(Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément de <xref:System.Windows.Controls.TreeView> ; <xref:System.Windows.Controls.ScrollViewer> active le défilement dans le contrôle.\)  Si <xref:System.Windows.Controls.ItemsPresenter> n'est pas l'enfant direct du <xref:System.Windows.Controls.ScrollViewer>, vous devez attribuer à <xref:System.Windows.Controls.ItemsPresenter> le nom `ItemsPresenter`.  
+ <span data-ttu-id="3ac6a-108">Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate> pour un <xref:System.Windows.Controls.TreeView>, votre modèle peut contenir un <xref:System.Windows.Controls.ItemsPresenter> au sein d’un <xref:System.Windows.Controls.ScrollViewer>.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-108">When you create a <xref:System.Windows.Controls.ControlTemplate> for an <xref:System.Windows.Controls.TreeView>, your template might contain a <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="3ac6a-109">(Le <xref:System.Windows.Controls.ItemsPresenter> affiche chaque élément dans le <xref:System.Windows.Controls.TreeView>; le <xref:System.Windows.Controls.ScrollViewer> permet le défilement dans le contrôle).</span><span class="sxs-lookup"><span data-stu-id="3ac6a-109">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.TreeView>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="3ac6a-110">Si le <xref:System.Windows.Controls.ItemsPresenter> n’est pas l’enfant direct de la <xref:System.Windows.Controls.ScrollViewer>, vous devez donner le <xref:System.Windows.Controls.ItemsPresenter> le nom, `ItemsPresenter`.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-110">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
-## États de TreeView  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.TreeView>.  
+## <a name="treeview-states"></a><span data-ttu-id="3ac6a-111">États de TreeView</span><span class="sxs-lookup"><span data-stu-id="3ac6a-111">TreeView States</span></span>  
+ <span data-ttu-id="3ac6a-112">Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.TreeView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-112">The following table lists the visual states for the <xref:System.Windows.Controls.TreeView> control.</span></span>  
   
-||||  
+|<span data-ttu-id="3ac6a-113">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="3ac6a-113">VisualState Name</span></span>|<span data-ttu-id="3ac6a-114">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="3ac6a-114">VisualStateGroup Name</span></span>|<span data-ttu-id="3ac6a-115">Description</span><span class="sxs-lookup"><span data-stu-id="3ac6a-115">Description</span></span>|  
 |-|-|-|  
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|<span data-ttu-id="3ac6a-116">Valide</span><span class="sxs-lookup"><span data-stu-id="3ac6a-116">Valid</span></span>|<span data-ttu-id="3ac6a-117">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-117">ValidationStates</span></span>|<span data-ttu-id="3ac6a-118">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-118">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="3ac6a-119">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="3ac6a-119">InvalidFocused</span></span>|<span data-ttu-id="3ac6a-120">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-120">ValidationStates</span></span>|<span data-ttu-id="3ac6a-121">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-121">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="3ac6a-122">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="3ac6a-122">InvalidUnfocused</span></span>|<span data-ttu-id="3ac6a-123">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-123">ValidationStates</span></span>|<span data-ttu-id="3ac6a-124">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-124">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## Composants de TreeViewItem  
- Le tableau ci\-dessous répertorie les composants nommés du contrôle <xref:System.Windows.Controls.TreeViewItem>.  
+## <a name="treeviewitem-parts"></a><span data-ttu-id="3ac6a-125">Composants de TreeViewItem</span><span class="sxs-lookup"><span data-stu-id="3ac6a-125">TreeViewItem Parts</span></span>  
+ <span data-ttu-id="3ac6a-126">Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.TreeViewItem> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-126">The following table lists the named parts for the <xref:System.Windows.Controls.TreeViewItem> control.</span></span>  
   
-|Élément|Type|Description|  
-|-------------|----------|-----------------|  
-|PART\_Header|<xref:System.Windows.FrameworkElement>|Élément visuel qui contient le contenu de l'en\-tête du contrôle <xref:System.Windows.Controls.TreeView>.|  
+|<span data-ttu-id="3ac6a-127">Élément</span><span class="sxs-lookup"><span data-stu-id="3ac6a-127">Part</span></span>|<span data-ttu-id="3ac6a-128">Type</span><span class="sxs-lookup"><span data-stu-id="3ac6a-128">Type</span></span>|<span data-ttu-id="3ac6a-129">Description</span><span class="sxs-lookup"><span data-stu-id="3ac6a-129">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="3ac6a-130">PART_Header</span><span class="sxs-lookup"><span data-stu-id="3ac6a-130">PART_Header</span></span>|<xref:System.Windows.FrameworkElement>|<span data-ttu-id="3ac6a-131">Un élément visuel qui contient cet en-tête de contenu de la <xref:System.Windows.Controls.TreeView> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-131">A visual element that contains that header content of the <xref:System.Windows.Controls.TreeView> control.</span></span>|  
   
-## États de TreeViewItem  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.TreeViewItem>.  
+## <a name="treeviewitem-states"></a><span data-ttu-id="3ac6a-132">États de TreeViewItem</span><span class="sxs-lookup"><span data-stu-id="3ac6a-132">TreeViewItem States</span></span>  
+ <span data-ttu-id="3ac6a-133">Le tableau suivant répertorie les états visuels <xref:System.Windows.Controls.TreeViewItem> contrôle.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-133">The following table lists the visual states for <xref:System.Windows.Controls.TreeViewItem> control.</span></span>  
   
-|Nom VisualState|Nom VisualStateGroup|Description|  
-|---------------------|--------------------------|-----------------|  
-|Normal|CommonStates|État par défaut.|  
-|MouseOver|CommonStates|Le pointeur de souris est positionné sur <xref:System.Windows.Controls.TreeViewItem>.|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.TreeViewItem> est désactivé.|  
-|Focused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> a le focus.|  
-|Unfocused|FocusStates|<xref:System.Windows.Controls.TreeViewItem> n'a pas le focus.|  
-|Étendu|ExpansionStates|Le contrôle <xref:System.Windows.Controls.TreeViewItem> est développé.|  
-|Collapsed|ExpansionStates|Le contrôle <xref:System.Windows.Controls.TreeViewItem> est réduit.|  
-|HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> a des éléments.|  
-|NoItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> n'a pas d'éléments.|  
-|Sélectionné|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> est sélectionné.|  
-|SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> est sélectionné mais n'est pas actif.|  
-|Non sélectionné|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> n'est pas sélectionné.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|<span data-ttu-id="3ac6a-134">Nom VisualState</span><span class="sxs-lookup"><span data-stu-id="3ac6a-134">VisualState Name</span></span>|<span data-ttu-id="3ac6a-135">Nom VisualStateGroup</span><span class="sxs-lookup"><span data-stu-id="3ac6a-135">VisualStateGroup Name</span></span>|<span data-ttu-id="3ac6a-136">Description</span><span class="sxs-lookup"><span data-stu-id="3ac6a-136">Description</span></span>|  
+|----------------------|---------------------------|-----------------|  
+|<span data-ttu-id="3ac6a-137">Normale</span><span class="sxs-lookup"><span data-stu-id="3ac6a-137">Normal</span></span>|<span data-ttu-id="3ac6a-138">CommonStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-138">CommonStates</span></span>|<span data-ttu-id="3ac6a-139">État par défaut.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-139">The default state.</span></span>|  
+|<span data-ttu-id="3ac6a-140">MouseOver</span><span class="sxs-lookup"><span data-stu-id="3ac6a-140">MouseOver</span></span>|<span data-ttu-id="3ac6a-141">CommonStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-141">CommonStates</span></span>|<span data-ttu-id="3ac6a-142">Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.TreeViewItem>.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-142">The mouse pointer is positioned over the <xref:System.Windows.Controls.TreeViewItem>.</span></span>|  
+|<span data-ttu-id="3ac6a-143">Désactivé</span><span class="sxs-lookup"><span data-stu-id="3ac6a-143">Disabled</span></span>|<span data-ttu-id="3ac6a-144">CommonStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-144">CommonStates</span></span>|<span data-ttu-id="3ac6a-145">Le <xref:System.Windows.Controls.TreeViewItem> est désactivé.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-145">The <xref:System.Windows.Controls.TreeViewItem> is disabled.</span></span>|  
+|<span data-ttu-id="3ac6a-146">Avec focus</span><span class="sxs-lookup"><span data-stu-id="3ac6a-146">Focused</span></span>|<span data-ttu-id="3ac6a-147">FocusStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-147">FocusStates</span></span>|<span data-ttu-id="3ac6a-148">Le <xref:System.Windows.Controls.TreeViewItem> a le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-148">The <xref:System.Windows.Controls.TreeViewItem> has focus.</span></span>|  
+|<span data-ttu-id="3ac6a-149">Sans focus</span><span class="sxs-lookup"><span data-stu-id="3ac6a-149">Unfocused</span></span>|<span data-ttu-id="3ac6a-150">FocusStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-150">FocusStates</span></span>|<span data-ttu-id="3ac6a-151">Le <xref:System.Windows.Controls.TreeViewItem> n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-151">The <xref:System.Windows.Controls.TreeViewItem> does not have focus.</span></span>|  
+|<span data-ttu-id="3ac6a-152">Développé</span><span class="sxs-lookup"><span data-stu-id="3ac6a-152">Expanded</span></span>|<span data-ttu-id="3ac6a-153">ExpansionStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-153">ExpansionStates</span></span>|<span data-ttu-id="3ac6a-154">Le <xref:System.Windows.Controls.TreeViewItem> contrôle est développé.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-154">The <xref:System.Windows.Controls.TreeViewItem> control is expanded.</span></span>|  
+|<span data-ttu-id="3ac6a-155">Réduit</span><span class="sxs-lookup"><span data-stu-id="3ac6a-155">Collapsed</span></span>|<span data-ttu-id="3ac6a-156">ExpansionStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-156">ExpansionStates</span></span>|<span data-ttu-id="3ac6a-157">Le <xref:System.Windows.Controls.TreeViewItem> contrôle est réduit.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-157">The <xref:System.Windows.Controls.TreeViewItem> control is collapsed.</span></span>|  
+|<span data-ttu-id="3ac6a-158">HasItems</span><span class="sxs-lookup"><span data-stu-id="3ac6a-158">HasItems</span></span>|<span data-ttu-id="3ac6a-159">HasItemsStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-159">HasItemsStates</span></span>|<span data-ttu-id="3ac6a-160">Le <xref:System.Windows.Controls.TreeViewItem> a des éléments.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-160">The <xref:System.Windows.Controls.TreeViewItem> has items.</span></span>|  
+|<span data-ttu-id="3ac6a-161">NoItems</span><span class="sxs-lookup"><span data-stu-id="3ac6a-161">NoItems</span></span>|<span data-ttu-id="3ac6a-162">HasItemsStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-162">HasItemsStates</span></span>|<span data-ttu-id="3ac6a-163">Le <xref:System.Windows.Controls.TreeViewItem> n’a pas d’éléments.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-163">The <xref:System.Windows.Controls.TreeViewItem> does not have items.</span></span>|  
+|<span data-ttu-id="3ac6a-164">Selected</span><span class="sxs-lookup"><span data-stu-id="3ac6a-164">Selected</span></span>|<span data-ttu-id="3ac6a-165">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-165">SelectionStates</span></span>|<span data-ttu-id="3ac6a-166">Le <xref:System.Windows.Controls.TreeViewItem> est sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-166">The <xref:System.Windows.Controls.TreeViewItem> is selected.</span></span>|  
+|<span data-ttu-id="3ac6a-167">SelectedInactive</span><span class="sxs-lookup"><span data-stu-id="3ac6a-167">SelectedInactive</span></span>|<span data-ttu-id="3ac6a-168">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-168">SelectionStates</span></span>|<span data-ttu-id="3ac6a-169">Le <xref:System.Windows.Controls.TreeViewItem> est sélectionné mais pas actif.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-169">The <xref:System.Windows.Controls.TreeViewItem> is selected but not active.</span></span>|  
+|<span data-ttu-id="3ac6a-170">Non sélectionné</span><span class="sxs-lookup"><span data-stu-id="3ac6a-170">Unselected</span></span>|<span data-ttu-id="3ac6a-171">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-171">SelectionStates</span></span>|<span data-ttu-id="3ac6a-172">Le <xref:System.Windows.Controls.TreeViewItem> n’est pas sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-172">The <xref:System.Windows.Controls.TreeViewItem> is not selected.</span></span>|  
+|<span data-ttu-id="3ac6a-173">Valide</span><span class="sxs-lookup"><span data-stu-id="3ac6a-173">Valid</span></span>|<span data-ttu-id="3ac6a-174">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-174">ValidationStates</span></span>|<span data-ttu-id="3ac6a-175">Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-175">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="3ac6a-176">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="3ac6a-176">InvalidFocused</span></span>|<span data-ttu-id="3ac6a-177">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-177">ValidationStates</span></span>|<span data-ttu-id="3ac6a-178">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-178">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="3ac6a-179">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="3ac6a-179">InvalidUnfocused</span></span>|<span data-ttu-id="3ac6a-180">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="3ac6a-180">ValidationStates</span></span>|<span data-ttu-id="3ac6a-181">Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-181">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## TreeView ControlTemplate, exemple  
- L'exemple suivant indique comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.TreeView> et ses types associés.  
+## <a name="treeview-controltemplate-example"></a><span data-ttu-id="3ac6a-182">TreeView ControlTemplate, exemple</span><span class="sxs-lookup"><span data-stu-id="3ac6a-182">TreeView ControlTemplate Example</span></span>  
+ <span data-ttu-id="3ac6a-183">L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.TreeView> contrôle et ses types associés.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-183">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.TreeView> control and its associated types.</span></span>  
   
- [!code-xml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
+ [!code-xaml[ControlTemplateExamples#TreeView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/treeview.xaml#treeview)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ <span data-ttu-id="3ac6a-184">L’exemple précédent utilise une ou plusieurs des ressources suivantes.</span><span class="sxs-lookup"><span data-stu-id="3ac6a-184">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ <span data-ttu-id="3ac6a-185">Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).</span><span class="sxs-lookup"><span data-stu-id="3ac6a-185">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="3ac6a-186">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3ac6a-186">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="3ac6a-187">Styles et modèles Control</span><span class="sxs-lookup"><span data-stu-id="3ac6a-187">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="3ac6a-188">Personnalisation des contrôles</span><span class="sxs-lookup"><span data-stu-id="3ac6a-188">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="3ac6a-189">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="3ac6a-189">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="3ac6a-190">Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="3ac6a-190">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

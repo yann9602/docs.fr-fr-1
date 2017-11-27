@@ -1,19 +1,13 @@
 ---
-title: "Guide pratique pour utiliser des TraceSource et des filtres avec des écouteurs de la trace"
+title: "Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - initializing trace listeners
 - configuration files [.NET Framework], trace listeners
@@ -27,25 +21,24 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 73a91d081a1e59995d52f3ef6927db12dd7e4599
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 4b557a9f9f462df2d1afe6d6b61871e0e9f40174
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Guide pratique pour utiliser des TraceSource et des filtres avec des écouteurs de la trace
-L’une des nouveautés du .NET Framework version 2.0 est un système de suivi amélioré. Le principe de base reste inchangé : les messages de suivi sont envoyés par l’intermédiaire de commutateurs aux écouteurs qui transmettent les données à un support de sortie associé. Une différence majeure de la version 2.0 est que les suivis peuvent être lancés via des instances de la classe <xref:System.Diagnostics.TraceSource>. La classe <xref:System.Diagnostics.TraceSource> est conçue pour fonctionner comme système de suivi amélioré et peut être utilisée à la place des méthodes statiques des anciennes classes de suivi <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug>. Les classes <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug> existent encore, mais l’utilisation de la classe <xref:System.Diagnostics.TraceSource> est désormais la méthode recommandée pour le suivi.  
+# <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a><span data-ttu-id="e345d-102">Comment : utiliser des TraceSource et des filtres avec des écouteurs de la trace</span><span class="sxs-lookup"><span data-stu-id="e345d-102">How to: Use TraceSource and Filters with Trace Listeners</span></span>
+<span data-ttu-id="e345d-103">L’une des nouveautés du .NET Framework version 2.0 est un système de suivi amélioré.</span><span class="sxs-lookup"><span data-stu-id="e345d-103">One of the new features in the .NET Framework version 2.0 is an enhanced tracing system.</span></span> <span data-ttu-id="e345d-104">Le principe de base reste inchangé : les messages de suivi sont envoyés par l’intermédiaire de commutateurs aux écouteurs qui transmettent les données à un support de sortie associé.</span><span class="sxs-lookup"><span data-stu-id="e345d-104">The basic premise is unchanged: tracing messages are sent through switches to listeners, which report the data to an associated output medium.</span></span> <span data-ttu-id="e345d-105">Une différence majeure de la version 2.0 est que les suivis peuvent être lancés via des instances de la classe <xref:System.Diagnostics.TraceSource>.</span><span class="sxs-lookup"><span data-stu-id="e345d-105">A primary difference for version 2.0 is that traces can be initiated through instances of the <xref:System.Diagnostics.TraceSource> class.</span></span> <span data-ttu-id="e345d-106">La classe <xref:System.Diagnostics.TraceSource> est conçue pour fonctionner comme système de suivi amélioré et peut être utilisée à la place des méthodes statiques des anciennes classes de suivi <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug>.</span><span class="sxs-lookup"><span data-stu-id="e345d-106"><xref:System.Diagnostics.TraceSource> is intended to function as an enhanced tracing system and can be used in place of the static methods of the older <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> tracing classes.</span></span> <span data-ttu-id="e345d-107">Les classes <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug> existent encore, mais l’utilisation de la classe <xref:System.Diagnostics.TraceSource> est désormais la méthode recommandée pour le suivi.</span><span class="sxs-lookup"><span data-stu-id="e345d-107">The familiar <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> classes still exist, but the recommended practice is to use the <xref:System.Diagnostics.TraceSource> class for tracing.</span></span>  
   
- Cette rubrique décrit l’utilisation de la classe <xref:System.Diagnostics.TraceSource> associée à un fichier de configuration de l’application.  Il est déconseillé, mais néanmoins possible, d’effectuer le suivi à l’aide de <xref:System.Diagnostics.TraceSource> sans utiliser de fichier de configuration. Pour plus d’informations sur le suivi sans fichier de configuration, consultez [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).  
+ <span data-ttu-id="e345d-108">Cette rubrique décrit l’utilisation de la classe <xref:System.Diagnostics.TraceSource> associée à un fichier de configuration de l’application.</span><span class="sxs-lookup"><span data-stu-id="e345d-108">This topic describes the use of a <xref:System.Diagnostics.TraceSource> coupled with an application configuration file.</span></span>  <span data-ttu-id="e345d-109">Il est déconseillé, mais néanmoins possible, d’effectuer le suivi à l’aide de <xref:System.Diagnostics.TraceSource> sans utiliser de fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="e345d-109">It is possible, although not recommended, to trace using a <xref:System.Diagnostics.TraceSource> without the use of a configuration file.</span></span> <span data-ttu-id="e345d-110">Pour plus d’informations sur le suivi sans fichier de configuration, consultez [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).</span><span class="sxs-lookup"><span data-stu-id="e345d-110">For information on tracing without a configuration file, see [How to: Create and Initialize Trace Sources](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).</span></span>  
   
-### <a name="to-create-and-initialize-your-trace-source"></a>Pour créer et initialiser votre source de suivi  
+### <a name="to-create-and-initialize-your-trace-source"></a><span data-ttu-id="e345d-111">Pour créer et initialiser votre source de suivi</span><span class="sxs-lookup"><span data-stu-id="e345d-111">To create and initialize your trace source</span></span>  
   
-1.  Pour instrumenter une application avec le suivi, la première étape consiste à créer une source de suivi. Dans les projets importants intégrant divers composants, vous pouvez créer une source de suivi séparée pour chaque composant. La méthode conseillée consiste à utiliser le nom de l’application comme nom de la source de suivi. Cela permet de distinguer plus facilement les différents suivis. Le code suivant crée une source de suivi (`mySource)`) et appelle une méthode (`Activity1`) qui effectue le suivi des événements.  Les messages de suivi sont écrits par l’écouteur de suivi par défaut.  
+1.  <span data-ttu-id="e345d-112">Pour instrumenter une application avec le suivi, la première étape consiste à créer une source de suivi.</span><span class="sxs-lookup"><span data-stu-id="e345d-112">The first step to instrumenting an application with tracing is to create a trace source.</span></span> <span data-ttu-id="e345d-113">Dans les projets importants intégrant divers composants, vous pouvez créer une source de suivi séparée pour chaque composant.</span><span class="sxs-lookup"><span data-stu-id="e345d-113">In large projects with various components, you can create a separate trace source for each component.</span></span> <span data-ttu-id="e345d-114">La méthode conseillée consiste à utiliser le nom de l’application comme nom de la source de suivi.</span><span class="sxs-lookup"><span data-stu-id="e345d-114">The recommended practice is to use the application name for the trace source name.</span></span> <span data-ttu-id="e345d-115">Cela permet de distinguer plus facilement les différents suivis.</span><span class="sxs-lookup"><span data-stu-id="e345d-115">This will make it easier to keep the different traces separate.</span></span> <span data-ttu-id="e345d-116">Le code suivant crée une source de suivi (`mySource)`) et appelle une méthode (`Activity1`) qui effectue le suivi des événements.</span><span class="sxs-lookup"><span data-stu-id="e345d-116">The following code creates a new trace source (`mySource)` and calls a method (`Activity1`) that traces events.</span></span>  <span data-ttu-id="e345d-117">Les messages de suivi sont écrits par l’écouteur de suivi par défaut.</span><span class="sxs-lookup"><span data-stu-id="e345d-117">The trace messages are written by the default trace listener.</span></span>  
   
     ```  
     using System;  
@@ -75,9 +68,9 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     }  
     ```  
   
-### <a name="to-create-and-initialize-trace-listeners-and-filters"></a>Pour créer et initialiser des filtres et des écouteurs de suivi  
+### <a name="to-create-and-initialize-trace-listeners-and-filters"></a><span data-ttu-id="e345d-118">Pour créer et initialiser des filtres et des écouteurs de suivi</span><span class="sxs-lookup"><span data-stu-id="e345d-118">To create and initialize trace listeners and filters</span></span>  
   
-1.  Le code de la première procédure n’identifie aucun filtre ni écouteur de suivi par programmation. Le code permet uniquement d’écrire les messages de suivi dans l’écouteur de suivi par défaut. Pour configurer des écouteurs de suivi spécifiques et leurs filtres associés, modifiez le fichier de configuration correspondant au nom de votre application. Dans ce fichier, vous pouvez ajouter ou supprimer un écouteur, définir les propriétés et un filtre pour un écouteur ou supprimer des écouteurs. L’exemple de fichier de configuration suivant montre comment initialiser un écouteur de suivi de console et un écouteur de suivi TextWriter pour la source de suivi créée dans la procédure précédente. En plus de configurer les écouteurs de suivi, le fichier de configuration crée des filtres pour les deux écouteurs ainsi qu’un commutateur source pour la source de suivi. L'exemple illustre deux techniques pour ajouter des écouteurs de la trace : l'ajout direct de l'écouteur à la source de trace et l'ajout d'un écouteur à la collection d'écouteurs partagés suivi de l'ajout de son nom à la source de trace. Les filtres identifiés pour les deux écouteurs sont initialisés avec des niveaux de source différents. Par conséquent, certains messages ne sont écrits que par un seul des deux écouteurs.  
+1.  <span data-ttu-id="e345d-119">Le code de la première procédure n’identifie aucun filtre ni écouteur de suivi par programmation.</span><span class="sxs-lookup"><span data-stu-id="e345d-119">The code in the first procedure does not programmatically identify any trace listeners or filters.</span></span> <span data-ttu-id="e345d-120">Le code permet uniquement d’écrire les messages de suivi dans l’écouteur de suivi par défaut.</span><span class="sxs-lookup"><span data-stu-id="e345d-120">The code alone results in the trace messages being written to the default trace listener.</span></span> <span data-ttu-id="e345d-121">Pour configurer des écouteurs de suivi spécifiques et leurs filtres associés, modifiez le fichier de configuration correspondant au nom de votre application.</span><span class="sxs-lookup"><span data-stu-id="e345d-121">To configure specific trace listeners and their associated filters, edit the configuration file that corresponds to the name of your application.</span></span> <span data-ttu-id="e345d-122">Dans ce fichier, vous pouvez ajouter ou supprimer un écouteur, définir les propriétés et un filtre pour un écouteur ou supprimer des écouteurs.</span><span class="sxs-lookup"><span data-stu-id="e345d-122">In this file, you can add or remove a listener, set the properties and filter for a listener, or remove listeners.</span></span> <span data-ttu-id="e345d-123">L’exemple de fichier de configuration suivant montre comment initialiser un écouteur de suivi de console et un écouteur de suivi TextWriter pour la source de suivi créée dans la procédure précédente.</span><span class="sxs-lookup"><span data-stu-id="e345d-123">The following configuration file example shows how to initialize a console trace listener and a text writer trace listener for the trace source that is created in the preceding procedure.</span></span> <span data-ttu-id="e345d-124">En plus de configurer les écouteurs de suivi, le fichier de configuration crée des filtres pour les deux écouteurs ainsi qu’un commutateur source pour la source de suivi.</span><span class="sxs-lookup"><span data-stu-id="e345d-124">In addition to configuring the trace listeners, the configuration file creates filters for both of the listeners and creates a source switch for the trace source.</span></span> <span data-ttu-id="e345d-125">L'exemple illustre deux techniques pour ajouter des écouteurs de la trace : l'ajout direct de l'écouteur à la source de trace et l'ajout d'un écouteur à la collection d'écouteurs partagés suivi de l'ajout de son nom à la source de trace.</span><span class="sxs-lookup"><span data-stu-id="e345d-125">Two techniques are shown for adding trace listeners: adding the listener directly to the trace source and adding a listener to the shared listeners collection and then adding it by name to the trace source.</span></span> <span data-ttu-id="e345d-126">Les filtres identifiés pour les deux écouteurs sont initialisés avec des niveaux de source différents.</span><span class="sxs-lookup"><span data-stu-id="e345d-126">The filters identified for the two listeners are initialized with different source levels.</span></span> <span data-ttu-id="e345d-127">Par conséquent, certains messages ne sont écrits que par un seul des deux écouteurs.</span><span class="sxs-lookup"><span data-stu-id="e345d-127">This results in some messages being written by only one of the two listeners.</span></span>  
   
     ```xml  
     <configuration>  
@@ -112,9 +105,9 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     </configuration>  
     ```  
   
-### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a>Pour modifier le niveau auquel un écouteur écrit un message de suivi  
+### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a><span data-ttu-id="e345d-128">Pour modifier le niveau auquel un écouteur écrit un message de suivi</span><span class="sxs-lookup"><span data-stu-id="e345d-128">To change the level at which a listener writes a trace message</span></span>  
   
-1.  Le fichier de configuration initialise les paramètres de la source de trace lors de l'initialisation de l'application. Pour changer ces paramètres, vous devez modifier le fichier de configuration et redémarrer l’application ou actualiser l’application par programmation à l’aide de la méthode <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=fullName>. L'application peut modifier dynamiquement les propriétés définies par le fichier de configuration pour substituer des paramètres spécifiés par l'utilisateur.  Vous pouvez, par exemple, décider que les messages critiques sont toujours envoyés vers un fichier texte, quels que soient les paramètres de la configuration actuelle.  
+1.  <span data-ttu-id="e345d-129">Le fichier de configuration initialise les paramètres de la source de trace lors de l'initialisation de l'application.</span><span class="sxs-lookup"><span data-stu-id="e345d-129">The configuration file initializes the settings for the trace source at the time the application is initialized.</span></span> <span data-ttu-id="e345d-130">Pour changer ces paramètres, vous devez modifier le fichier de configuration et redémarrer l’application ou actualiser l’application par programmation à l’aide de la méthode <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="e345d-130">To change those settings you must change the configuration file and restart the application or programmatically refresh the application using the <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="e345d-131">L'application peut modifier dynamiquement les propriétés définies par le fichier de configuration pour substituer des paramètres spécifiés par l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="e345d-131">The application can dynamically change the properties set by the configuration file to override any settings specified by the user.</span></span>  <span data-ttu-id="e345d-132">Vous pouvez, par exemple, décider que les messages critiques sont toujours envoyés vers un fichier texte, quels que soient les paramètres de la configuration actuelle.</span><span class="sxs-lookup"><span data-stu-id="e345d-132">For example, you might want to assure that critical messages are always sent to a text file, regardless of the current configuration settings.</span></span>  
   
     ```  
     using System;  
@@ -178,11 +171,10 @@ L’une des nouveautés du .NET Framework version 2.0 est un système de suivi 
     }  
     ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Diagnostics.TraceSource>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.ConsoleTraceListener>   
- <xref:System.Diagnostics.EventTypeFilter>   
- [Guide pratique pour créer et initialiser des sources de suivi](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)   
- [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-
+## <a name="see-also"></a><span data-ttu-id="e345d-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e345d-133">See Also</span></span>  
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.ConsoleTraceListener>  
+ <xref:System.Diagnostics.EventTypeFilter>  
+ [<span data-ttu-id="e345d-134">Comment : créer et initialiser les Sources de Trace</span><span class="sxs-lookup"><span data-stu-id="e345d-134">How to: Create and Initialize Trace Sources</span></span>](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
+ [<span data-ttu-id="e345d-135">Écouteurs de suivi</span><span class="sxs-lookup"><span data-stu-id="e345d-135">Trace Listeners</span></span>](../../../docs/framework/debug-trace-profile/trace-listeners.md)

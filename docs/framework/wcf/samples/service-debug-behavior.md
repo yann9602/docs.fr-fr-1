@@ -1,33 +1,35 @@
 ---
-title: "Service Debug Behavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Service Debug Behavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9d8fd3fb-dc39-427a-8235-336a7e7162ba
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 04520eda9fe7ce2cd461e094fe2cec76d52ccc7d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Service Debug Behavior
-Cet exemple montre comment configurer les paramètres de comportement de débogage de service.Il est basé sur [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente le contrat de service `ICalculator`.Cet exemple définit explicitement le comportement de débogage de service dans le fichier de configuration.Cela peut également être fait de façon impérative dans le code.  
+# <a name="service-debug-behavior"></a><span data-ttu-id="4a3b2-102">Service Debug Behavior</span><span class="sxs-lookup"><span data-stu-id="4a3b2-102">Service Debug Behavior</span></span>
+<span data-ttu-id="4a3b2-103">Cet exemple montre comment configurer les paramètres de comportement de débogage de service.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-103">This sample demonstrates how service debug behavior settings can be configured.</span></span> <span data-ttu-id="4a3b2-104">L’exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le `ICalculator` contrat de service.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-104">The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), which implements the `ICalculator` service contract.</span></span> <span data-ttu-id="4a3b2-105">Cet exemple définit explicitement le comportement de débogage de service dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-105">This sample explicitly defines service debug behavior in the configuration file.</span></span> <span data-ttu-id="4a3b2-106">Cela peut également être fait de façon impérative dans le code.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-106">It can also be done imperatively in code.</span></span>  
   
- Dans cet exemple, le client est une application console \(.exe\) et le service est hébergé par les services IIS \(Internet Information Services\).  
+ <span data-ttu-id="4a3b2-107">Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).</span><span class="sxs-lookup"><span data-stu-id="4a3b2-107">In this sample, the client is a console application (.exe) and the service is hosted by Internet Information Services (IIS).</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+>  <span data-ttu-id="4a3b2-108">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-108">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- Le fichier Web.config du serveur définit le comportement de débogage de service permettant d'activer la page d'aide et la gestion des exceptions, tel qu'indiqué dans l'exemple suivant.  
+ <span data-ttu-id="4a3b2-109">Le fichier Web.config du serveur définit le comportement de débogage de service permettant d'activer la page d'aide et la gestion des exceptions, tel qu'indiqué dans l'exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-109">The Web.config file for the server defines the service debug behavior to enable the help page and exception handling as shown in the following sample.</span></span>  
   
-```  
-  
+```xml  
 <behaviors>  
      <serviceBehaviors>  
          <behavior name="CalculatorServiceBehavior">  
@@ -37,35 +39,34 @@ Cet exemple montre comment configurer les paramètres de comportement de déboga
          </behavior>  
      </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
- [\<serviceDebug\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) est l'élément de configuration qui permet de modifier les propriétés de comportement de débogage de service.L'utilisateur peut modifier ce comportement aux fins suivantes :  
+ <span data-ttu-id="4a3b2-110">[\<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) est l’élément de configuration qui permet de modifier les propriétés de comportement de débogage de service.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-110">[\<serviceDebug>](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) is the configuration element that allows changing the service debug behavior properties.</span></span> <span data-ttu-id="4a3b2-111">L'utilisateur peut modifier ce comportement aux fins suivantes :</span><span class="sxs-lookup"><span data-stu-id="4a3b2-111">The user can modify this behavior to achieve the following:</span></span>  
   
--   Cela permet au service de retourner une exceptions levée par le code d'application même si celle\-ci n'est pas déclarée à l'aide de <xref:System.ServiceModel.FaultContractAttribute>.Pour ce faire, affectez `true` à `includeExceptionDetailInFaults`.Ce paramètre est utile lors du débogage de cas où le serveur lève une exception inattendue.  
+-   <span data-ttu-id="4a3b2-112">Cela permet au service de retourner une exceptions levée par le code d'application même si celle-ci n'est pas déclarée à l'aide de <xref:System.ServiceModel.FaultContractAttribute>.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-112">This allows the service to return any exception that is thrown by the application code even if the exception is not declared using the <xref:System.ServiceModel.FaultContractAttribute>.</span></span> <span data-ttu-id="4a3b2-113">Pour ce faire, affectez `includeExceptionDetailInFaults` à `true`.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-113">It is done by setting `includeExceptionDetailInFaults` to `true`.</span></span> <span data-ttu-id="4a3b2-114">Ce paramètre est utile lors du débogage de cas où le serveur lève une exception inattendue.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-114">This setting is useful when debugging cases where the server is throwing an unexpected exception.</span></span>  
   
     > [!IMPORTANT]
-    >  Pour des raisons de sécurité, il est déconseillé d'activer ce paramètre dans un environnement de production.Une exception de serveur inattendue peut contenir des informations qui ne sont pas destinées au client et l'affectation de `true` à `includeExceptionDetailsInFaults` peut entraîner une fuite des informations.  
+    >  <span data-ttu-id="4a3b2-115">Pour des raisons de sécurité, il est déconseillé d'activer ce paramètre dans un environnement de production.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-115">It is not secure to turn this setting on in a production environment.</span></span> <span data-ttu-id="4a3b2-116">Une exception de serveur inattendue peut contenir des informations qui ne sont pas destinées au client et l'affectation de `includeExceptionDetailsInFaults` à `true` peut entraîner une fuite des informations.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-116">An unexpected server exception may have some information that is not intended for the client and so setting `includeExceptionDetailsInFaults` to `true` might result in an information leak.</span></span>  
   
--   [\<serviceDebug\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) permet également à un utilisateur d'activer ou de désactiver la page d'aide.Chaque service peut éventuellement exposer une page d'aide qui contient des informations sur le service, et notamment le point de terminaison permettant d'obtenir le WSDL pour le service.Pour ce faire, affectez `true` à `httpHelpPageEnabled`.Cela permet de retourner la page d'aide dans une demande GET à l'adresse de base du service.Pour modifier cette adresse, définissez un autre attribut `httpHelpPageUrl`.Pour sécuriser cette procédure, utilisez HTTPS au lieu de HTTP.Pour ce faire, définissez `httpsHelpPageEnabled` et `httpsHelpPageUrl`  
+-   <span data-ttu-id="4a3b2-117">Le [ \<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) permet également à un utilisateur Activer ou désactiver la page d’aide.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-117">The [\<serviceDebug>](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) also allows a user to enable or disable the help page.</span></span> <span data-ttu-id="4a3b2-118">Chaque service peut éventuellement exposer une page d'aide qui contient des informations sur le service, et notamment le point de terminaison permettant d'obtenir le WSDL pour le service.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-118">Each service can optionally expose a help page that contains information about the service including the endpoint to get WSDL for the service.</span></span> <span data-ttu-id="4a3b2-119">Pour ce faire, affectez `httpHelpPageEnabled` à `true`.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-119">This can be enabled by setting `httpHelpPageEnabled` to `true`.</span></span> <span data-ttu-id="4a3b2-120">Cela permet de retourner la page d'aide dans une demande GET à l'adresse de base du service.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-120">This enables the help page to be returned to a GET request to the base address of the service.</span></span> <span data-ttu-id="4a3b2-121">Pour modifier cette adresse, définissez un autre attribut `httpHelpPageUrl`.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-121">You can change this address by setting another attribute `httpHelpPageUrl`.</span></span> <span data-ttu-id="4a3b2-122">Pour sécuriser cette procédure, utilisez HTTPS au lieu de HTTP.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-122">You can make this secure by using HTTPS instead of HTTP.</span></span> <span data-ttu-id="4a3b2-123">Pour ce faire, définissez `httpsHelpPageEnabled` et `httpsHelpPageUrl`</span><span class="sxs-lookup"><span data-stu-id="4a3b2-123">This can be done by setting `httpsHelpPageEnabled` and `httpsHelpPageUrl`.</span></span>  
   
- Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console cliente.Les trois premières opérations \(ajout, soustraction et multiplication\) doivent réussir.La dernière \(division\) échoue avec une exception de division par zéro.  
+ <span data-ttu-id="4a3b2-124">Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-124">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="4a3b2-125">Les trois premières opérations (ajout, soustraction et multiplication) doivent réussir.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-125">The first three operations (Add, Subtract and Multiply) must succeed.</span></span> <span data-ttu-id="4a3b2-126">La dernière (division) échoue avec une exception de division par zéro.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-126">The last operation ("divide") fails with a division by zero exception.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="4a3b2-127">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="4a3b2-127">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée dans la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="4a3b2-128">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4a3b2-128">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="4a3b2-129">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4a3b2-129">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="4a3b2-130">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="4a3b2-130">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="4a3b2-131">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-131">The samples may already be installed on your machine.</span></span> <span data-ttu-id="4a3b2-132">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-132">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="4a3b2-133">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="4a3b2-133">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="4a3b2-134">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="4a3b2-134">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\ServiceDebug`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\ServiceDebug`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="4a3b2-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4a3b2-135">See Also</span></span>
