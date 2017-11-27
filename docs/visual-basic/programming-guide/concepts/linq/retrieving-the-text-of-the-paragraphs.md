@@ -1,44 +1,40 @@
 ---
-title: "Récupération du texte des paragraphes (Visual Basic) | Documents Microsoft"
+title: "Récupère le texte des paragraphes (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 095fa0d9-7b1b-4cbb-9c13-e2c9d8923d31
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 147c8e60e44fd71869df84cbee9836213d96c0fd
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 492fc0dffd007f0ccdb7454c62e86cac753ca06b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>Récupération du texte des paragraphes (Visual Basic)
-Cet exemple s’appuie sur l’exemple précédent, [récupérer les paragraphes et les Styles leurs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Ce nouvel exemple récupère le texte de chaque paragraphe en tant que chaîne.  
+# <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>Récupère le texte des paragraphes (Visual Basic)
+Cet exemple s’appuie sur l’exemple précédent, [la récupération des paragraphes et leurs Styles (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Ce nouvel exemple récupère le texte de chaque paragraphe en tant que chaîne.  
   
- Pour récupérer le texte, cet exemple ajoute une requête supplémentaire qui itère au sein de la collection de types anonymes et projette une nouvelle collection d'un type anonyme avec l'ajout d'un nouveau membre, `Text`. Il utilise le <xref:System.Linq.Enumerable.Aggregate%2A>opérateur de requête standard pour concaténer plusieurs chaînes en une seule chaîne.</xref:System.Linq.Enumerable.Aggregate%2A>  
+ Pour récupérer le texte, cet exemple ajoute une requête supplémentaire qui itère au sein de la collection de types anonymes et projette une nouvelle collection d'un type anonyme avec l'ajout d'un nouveau membre, `Text`. Il utilise l'opérateur de requête standard <xref:System.Linq.Enumerable.Aggregate%2A> pour concaténer plusieurs chaînes dans une chaîne.  
   
- Cette technique (qui consiste à projeter vers une collection d’un type anonyme, puis à utiliser cette collection pour projeter vers une nouvelle collection d’un type anonyme) est un idiome commun et utile. Cette requête pourrait avoir été écrite sans projeter vers le premier type anonyme. Toutefois, en raison de l'évaluation différée, procéder ainsi n'utilise pas beaucoup de puissance de traitement supplémentaire. L'idiome crée davantage d'objets à courte durée de vie sur la pile, mais cela ne nuit pas énormément aux performances.  
+ Cette technique (qui consiste à projeter vers une collection d'un type anonyme, puis à utiliser cette collection pour projeter vers une nouvelle collection d'un type anonyme) est un idiome commun et utile. Cette requête pourrait avoir été écrite sans projeter vers le premier type anonyme. Toutefois, en raison de l'évaluation différée, procéder ainsi n'utilise pas beaucoup de puissance de traitement supplémentaire. L'idiome crée davantage d'objets à courte durée de vie sur la pile, mais cela ne nuit pas énormément aux performances.  
   
  Bien entendu, il serait possible d'écrire une requête unique contenant la fonctionnalité de récupération des paragraphes, du style de chaque paragraphe et du texte de chaque paragraphe. Toutefois, il est souvent utile de découper une requête compliquée en plusieurs requêtes car le code obtenu sera plus modulable et plus facile à maintenir. En outre, si vous avez besoin de réutiliser une partie de la requête, il est plus facile de refactoriser si les requêtes sont écrites de cette manière.  
   
- Ces requêtes, qui sont chaînées ensemble, utilisent le modèle de traitement examiné en détail dans la rubrique [didacticiel : exécution différée (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md).  
+ Ces requêtes, qui sont chaînées ensemble, utilisent le modèle de traitement est examiné en détail dans la rubrique [didacticiel : l’exécution différée (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md).  
   
 ## <a name="example"></a>Exemple  
  Cet exemple traite un document WordprocessingML et détermine le nœud d'élément, le nom de style et le texte de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
   
- Pour obtenir des instructions pour la création du document source pour cet exemple, consultez la page [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pour obtenir des instructions pour la création du document source pour cet exemple, consultez [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -129,7 +125,7 @@ Module Module1
 End Module  
 ```  
   
- Cet exemple génère la sortie suivante lorsqu’appliqué au document décrit dans [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Cet exemple génère la sortie suivante en appliquée au document décrit dans [création de la Source de Document Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -150,10 +146,10 @@ StyleName:Code >Hello World<
 ```  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- L’exemple suivant montre comment utiliser une méthode d’extension, au lieu de <xref:System.Linq.Enumerable.Aggregate%2A>, pour concaténer plusieurs chaînes en une seule chaîne.</xref:System.Linq.Enumerable.Aggregate%2A>  
+ L'exemple suivant montre comment utiliser une méthode d'extension, au lieu de <xref:System.Linq.Enumerable.Aggregate%2A>, pour concaténer plusieurs chaînes en une seule chaîne.  
   
 -   [Refactorisation à l’aide d’une méthode d’Extension (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Didacticiel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)   
+ [Didacticiel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
  [L’exécution différée et évaluation différées dans LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

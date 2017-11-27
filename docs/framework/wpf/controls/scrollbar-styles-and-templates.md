@@ -1,66 +1,68 @@
 ---
-title: "Styles et mod&#232;les ScrollBar | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), ScrollBar"
-  - "éléments (WPF), ScrollBar"
-  - "ScrollBar (WPF), styles et modèles"
-  - "états (WPF), ScrollBar"
-  - "styles (WPF), ScrollBar"
-  - "modèles (WPF), ScrollBar"
+title: "Styles et modèles ScrollBar"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- styles [WPF], ScrollBar
+- ControlTemplate [WPF], ScrollBar
+- states [WPF], ScrollBar
+- ScrollBar [WPF], styles and templates
+- templates [WPF], ScrollBar
+- parts [WPF], ScrollBar
 ms.assetid: 066ea45a-e27d-43b0-adfe-cce6934c22f5
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 726e6af63d9bd8b0dedfed55af5096bc08f93e34
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les ScrollBar
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Primitives.ScrollBar>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="scrollbar-styles-and-templates"></a>Styles et modèles ScrollBar
+Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.Primitives.ScrollBar> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## Composants de ScrollBar  
- Le tableau suivant répertorie les composants nommés du contrôle <xref:System.Windows.Controls.Primitives.ScrollBar>.  
+## <a name="scrollbar-parts"></a>Parties de la barre de défilement  
+ Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.Primitives.ScrollBar> contrôle.  
   
-||||  
-|-|-|-|  
 |Élément|Type|Description|  
-|PART\_Track|<xref:System.Windows.Controls.Primitives.Track>|Conteneur de cet élément indiquant la position de <xref:System.Windows.Controls.Primitives.ScrollBar>.|  
+|-|-|-|  
+|PART_Track|<xref:System.Windows.Controls.Primitives.Track>|Le conteneur de l’élément qui indique la position de la <xref:System.Windows.Controls.Primitives.ScrollBar>.|  
   
-## États de ScrollBar  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.Primitives.ScrollBar>.  
+## <a name="scrollbar-states"></a>États de la barre de défilement  
+ Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.Primitives.ScrollBar> contrôle.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
-|---------------------|--------------------------|-----------------|  
-|Normal|CommonStates|État par défaut.|  
+|----------------------|---------------------------|-----------------|  
+|Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
+|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
   
-## ScrollBar ControlTemplate, exemple  
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.Primitives.ScrollBar>.  
+## <a name="scrollbar-controltemplate-example"></a>Exemple de ControlTemplate de barre de défilement  
+ L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.Primitives.ScrollBar> contrôle.  
   
- [!code-xml[ControlTemplateExamples#ScrollBar](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/scrollbar.xaml#scrollbar)]  
+ [!code-xaml[ControlTemplateExamples#ScrollBar](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/scrollbar.xaml#scrollbar)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ L’exemple précédent utilise une ou plusieurs des ressources suivantes.  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

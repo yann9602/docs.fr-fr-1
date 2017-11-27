@@ -1,37 +1,29 @@
 ---
-title: "Comment : joindre du contenu issu de différents fichiers (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : joindre du contenu à partir de différents fichiers (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 040290eb7ba768585254f92e17360c6f5d273311
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 00a3e776afbed3fd87a1f91eb83ada5d505aadfe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Comment : joindre du contenu issu de différents fichiers (LINQ) (Visual Basic)
-Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul ou une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour utiliser tout type de texte structuré.  
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Comment : joindre du contenu à partir de différents fichiers (LINQ) (Visual Basic)
+Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.  
   
-### <a name="to-create-the-data-files"></a>Pour créer les fichiers de données  
+### <a name="to-create-the-data-files"></a>Pour créer le fichier de données  
   
-1.  Copiez les lignes suivantes dans un fichier nommé scores.csv et enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 des résultats de test.  
+1.  Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.  
   
     ```  
     111, 97, 92, 81, 60  
@@ -48,7 +40,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
     122, 94, 92, 91, 91  
     ```  
   
-2.  Copiez les lignes suivantes dans un fichier nommé names.csv et enregistrez-le dans votre dossier de projet. Le fichier représente une feuille de calcul qui contient le nom de l’étudiant, prénom et ID étudiant.  
+2.  Copiez les lignes suivantes dans un fichier nommé names.csv, puis enregistrez-le dans votre dossier de projet. Le fichier représente une feuille de calcul qui contient le nom, le prénom et l’ID de l’étudiant.  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -135,8 +127,8 @@ End Class
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   
+ [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
  [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

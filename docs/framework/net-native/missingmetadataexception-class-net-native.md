@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 42f47b1cc184dcd789dbf38b1e5d9f03608daa04
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 607204081c71a4489a1a67ced24af12b150632e9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="missingmetadataexception-class-net-native"></a>MissingMetadataException, classe (.NET Native)
 **.NET pour applications Windows pour Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] uniquement**  
@@ -49,34 +47,34 @@ ms.lasthandoff: 08/21/2017
   
 |Propriété|Description|  
 |--------------|-----------------|  
-|`public IDictionary Data { get; }`|Obtient une collection de paires clé/valeur qui fournissent des informations supplémentaires définies par l'utilisateur sur l'exception. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
-|`public string HelpLink { get; set; }`|Obtient ou définit un lien vers le fichier d'aide associé à cette exception. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
-|`public int HResult { get; protected set; }`|Obtient ou définit la valeur `HRESULT`, valeur numérique codée qui est assignée à une exception spécifique. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
-|`public Exception InnerException { get; }`|Obtient l'exception à l'origine de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public IDictionary Data { get; }`|Obtient une collection de paires clé/valeur qui fournissent des informations supplémentaires définies par l'utilisateur sur l'exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public string HelpLink { get; set; }`|Obtient ou définit un lien vers le fichier d'aide associé à cette exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public int HResult { get; protected set; }`|Obtient ou définit la valeur `HRESULT`, valeur numérique codée qui est assignée à une exception spécifique. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public Exception InnerException { get; }`|Obtient l'exception à l'origine de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
 |`public string Message { get; }`|Obtient un message qui décrit l'exception actuelle. (Hérité de <xref:System.TypeLoadException>.)|  
-|`public string Source { get; set; }`|Obtient ou définit le nom de l'application ou de l'objet à l'origine de l'erreur. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
-|`public string StackTrace { get; }`|Obtient une représentation sous forme de chaîne des frames immédiats sur la pile des appels. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
-|`public MethodBase TargetSite { get; }`|Obtient la méthode qui a levé l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public string Source { get; set; }`|Obtient ou définit le nom de l'application ou de l'objet à l'origine de l'erreur. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public string StackTrace { get; }`|Obtient une représentation sous forme de chaîne des frames immédiats sur la pile des appels. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
+|`public MethodBase TargetSite { get; }`|Obtient la méthode qui a levé l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
 |`public string TypeName { get; ]`|Obtient le nom qualifié complet du type dont les métadonnées sont manquantes. (Hérité de <xref:System.TypeLoadException>.)|  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`public bool Equals(Object obj)`|Détermine si l'objet spécifié est identique à l'objet actuel.  (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public bool Equals(Object obj)`|Détermine si l'objet spécifié est identique à l'objet actuel.  (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
 |`protected void Finalize()`|Autorise un objet à tenter de libérer des ressources et à exécuter d'autres opérations de nettoyage avant qu'il ne soit récupéré par une opération garbage collection. (Hérité de <xref:System.Object>.)|  
-|`public Exception GetBaseException()`|Retourne l'exception qui est la cause première d'une ou plusieurs exceptions ultérieures. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public Exception GetBaseException()`|Retourne l'exception qui est la cause première d'une ou plusieurs exceptions ultérieures. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
 |`public int GetHashCode()`|Retourne un code de hachage pour une instance `MissingMetadataException`.   (Hérité de <xref:System.Object>.)|  
 |`public void GetObjectData(SerializationInfo info, StreamingContext context)`|Définit un objet <xref:System.Runtime.Serialization.SerializationInfo> avec des informations relatives à l'exception.  (Hérité de <xref:System.TypeLoadException>.)|  
-|`public Type GetType()`|Obtient le type au moment de l'exécution de l'instance actuelle. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public Type GetType()`|Obtient le type au moment de l'exécution de l'instance actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
 |`protected Object MemberwiseClone()`|Crée une copie superficielle de l'objet actuel. (Hérité de <xref:System.Object>.)|  
-|`public string ToString()`|Retourne la représentation sous forme de chaîne de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`public string ToString()`|Retourne la représentation sous forme de chaîne de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
   
 ## <a name="events"></a>Événements  
   
 |Événement|Description|  
 |-----------|-----------------|  
-|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Se produit quand une exception est sérialisée pour créer un objet d'état d'exception qui contient des données sérialisées concernant l'exception. (Hérité de <xref:System.Exception?displayProperty=fullName>.)|  
+|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Se produit quand une exception est sérialisée pour créer un objet d'état d'exception qui contient des données sérialisées concernant l'exception. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
   
 ## <a name="usage-details"></a>Détails de l'utilisation  
  L'exception `MissingMetadataException` est levée quand la réflexion est utilisée pour accéder à des métadonnées qui ne sont pas disponibles dans un assembly.  
@@ -92,9 +90,8 @@ ms.lasthandoff: 08/21/2017
  La classe `MissingMetadataException` ne contient pas de membres uniques ; tous ses membres sont hérités de sa classe de base, <xref:System.TypeAccessException>.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Exception?displayProperty=fullName>   
- <xref:System.TypeAccessException>   
- [MissingInteropDataException, classe](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)   
- [MissingRuntimeArtifactException, classe](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)   
+ <xref:System.Exception?displayProperty=nameWithType>  
+ <xref:System.TypeAccessException>  
+ [Missinginteropdataexception, classe](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)  
+ [Missingruntimeartifactexception, classe](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)  
  [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-

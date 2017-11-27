@@ -5,24 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c69b7647fa03cf8a6f83a7e3869da4c7a09161ba
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: b5ce6d658822a8c4600a3cde09bfb9cb57886ee6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="lttextmessageencodinggt"></a>&lt;textMessageEncoding&gt;
 Spécifie l'encodage de caractères et le suivi des versions de message utilisés pour les messages XML textuels.  
@@ -81,14 +76,13 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>   
- [Choix d’un encodeur de Message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+ [Choix d’un encodeur de Message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
+ [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-

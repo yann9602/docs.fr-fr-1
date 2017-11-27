@@ -1,39 +1,31 @@
 ---
-title: "Débogage d’arborescences d’Expression dans Visual Studio (Visual Basic) | Documents Microsoft"
+title: "Débogage d’arborescences d’Expression dans Visual Studio (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: efbd8c19947c45b3ba15ce7b574000d56526ef45
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: ff1bee9c3c3fdeafab24368d2c7e8376d4ff7b97
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Débogage d’arborescences d’Expression dans Visual Studio (Visual Basic)
-Vous pouvez analyser la structure et le contenu des arborescences d’expressions lorsque vous déboguez vos applications. Pour obtenir un aperçu rapide de l’arborescence d’expression, vous pouvez utiliser le `DebugView` propriété, qui est disponible uniquement en mode débogage. Pour plus d’informations sur le débogage, consultez [débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio).  
+Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir une vue d’ensemble rapide de la structure de l’arborescence d’expressions, vous pouvez utiliser la propriété `DebugView`, qui est disponible uniquement en mode débogage. Pour plus d’informations sur le débogage, consultez [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
   
- Afin de mieux représenter le contenu des arborescences d’expression, le `DebugView` propriété utilise des visualiseurs Visual Studio. Pour plus d’informations, consultez [créer des visualiseurs personnalisés](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data).  
+ Afin de mieux représenter le contenu des arborescences d’expressions, la propriété `DebugView` utilise des visualiseurs Visual Studio. Pour plus d’informations, consultez [Créer des visualiseurs de données personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data).  
   
-### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Pour ouvrir un visualiseur pour une arborescence d’expression  
+### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Pour ouvrir un visualiseur pour une arborescence d’expressions  
   
-1.  Cliquez sur l’icône de loupe qui apparaît en regard du `DebugView` propriété d’une arborescence d’expression dans **DataTips**, un **espion** fenêtre, le **automatique** fenêtre, ou la **variables locales** fenêtre.  
+1.  Cliquez sur l’icône représentant une loupe qui est située en regard de la propriété `DebugView` d’une arborescence d’expressions dans **DataTips**, dans une fenêtre **Espion**, dans la fenêtre **Automatique** ou dans la fenêtre **Variables locales**.  
   
      Une liste de visualiseurs s'affiche.  
   
@@ -42,9 +34,9 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
  Chaque type d’expression s’affiche dans le visualiseur, comme décrit dans les sections suivantes.  
   
 ## <a name="parameterexpressions"></a>ParameterExpressions  
- <xref:System.Linq.Expressions.ParameterExpression>les noms de variables sont affichés avec le symbole « $» au début.</xref:System.Linq.Expressions.ParameterExpression>  
+ Les noms de variables <xref:System.Linq.Expressions.ParameterExpression> s’affichent avec le symbole "$" en préfixe.  
   
- Si un paramètre n’a pas un nom, il est attribué un nom généré automatiquement, tel que `$var1` ou `$var2`.  
+ Si un paramètre n’a pas de nom, un nom généré automatiquement lui est assigné, tel que `$var1` ou `$var2`.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -71,7 +63,7 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
      `$var1`  
   
 ## <a name="constantexpressions"></a>ConstantExpressions  
- Pour <xref:System.Linq.Expressions.ConstantExpression>les objets qui représentent des entiers, chaînes, et `null`, la valeur de la constante est affichée.</xref:System.Linq.Expressions.ConstantExpression>  
+ Pour les objets <xref:System.Linq.Expressions.ConstantExpression> qui représentent des valeurs entières, des chaînes et des valeurs `null`, la valeur de la constante est affichée.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -95,10 +87,10 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
   
      Propriété `DebugView`  
   
-     D&10;  
+     10D  
   
 ## <a name="blockexpression"></a>BlockExpression  
- Si le type d’un <xref:System.Linq.Expressions.BlockExpression>objet est différent du type de la dernière expression dans le bloc, le type est affiché dans le `DebugInfo` propriété crochets pointus (\< et >).</xref:System.Linq.Expressions.BlockExpression> Dans le cas contraire, le type de la <xref:System.Linq.Expressions.BlockExpression>objet n’est pas affiché.</xref:System.Linq.Expressions.BlockExpression>  
+ Si le type d’un objet <xref:System.Linq.Expressions.BlockExpression> diffère du type de la dernière expression du bloc, le type est affiché dans la propriété `DebugInfo` entre crochets pointus (\< et >). Sinon, le type de l’objet <xref:System.Linq.Expressions.BlockExpression> n’est pas affiché.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -131,10 +123,10 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
   
      `}`  
   
-## <a name="lambdaexpression"></a>LambdaExpression.  
- <xref:System.Linq.Expressions.LambdaExpression>les objets sont affichés avec leurs types délégués.</xref:System.Linq.Expressions.LambdaExpression>  
+## <a name="lambdaexpression"></a>LambdaExpression  
+ Les objets <xref:System.Linq.Expressions.LambdaExpression> sont affichés avec leurs types délégués.  
   
- Si une expression lambda n’a pas un nom, il est attribué un nom généré automatiquement, tel que `#Lambda1` ou `#Lambda2`.  
+ Si une expression lambda n’a pas de nom, un nom généré automatiquement lui est assigné, tel que `#Lambda1` ou `#Lambda2`.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -169,11 +161,11 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
      `}`  
   
 ## <a name="labelexpression"></a>LabelExpression  
- Si vous spécifiez une valeur par défaut pour le <xref:System.Linq.Expressions.LabelExpression>de l’objet, cette valeur est affichée avant le <xref:System.Linq.Expressions.LabelTarget>objet.</xref:System.Linq.Expressions.LabelTarget> </xref:System.Linq.Expressions.LabelExpression>  
+ Si vous spécifiez une valeur par défaut pour l’objet <xref:System.Linq.Expressions.LabelExpression>, cette valeur est affichée avant l’objet <xref:System.Linq.Expressions.LabelTarget>.  
   
- Le `.Label` jeton indique le début de l’étiquette. Le `.LabelTarget` jeton indique la destination de la cible à atteindre.  
+ Le jeton `.Label` indique le début de l’étiquette. Le jeton `.LabelTarget` indique la destination de la cible à laquelle accéder.  
   
- Si une étiquette est un nom, il est attribué un nom généré automatiquement, tel que `#Label1` ou `#Label2`.  
+ Si une étiquette n’a pas de nom, un nom généré automatiquement lui est assigné, tel que `#Label1` ou `#Label2`.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -220,8 +212,8 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
   
      `}`  
   
-## <a name="checked-operators"></a>Opérateurs checked  
- Opérateurs checked sont affichés avec le symbole « # » devant l’opérateur. Par exemple, l’opérateur d’addition checked est affiché en tant que `#+`.  
+## <a name="checked-operators"></a>Opérateurs Checked  
+ Les opérateurs Checked sont affichés précédés du symbole "#". Par exemple, l’opérateur d’addition checked est affiché sous la forme `#+`.  
   
 ### <a name="examples"></a>Exemples  
   
@@ -248,6 +240,6 @@ Vous pouvez analyser la structure et le contenu des arborescences d’expression
      `#(System.Int32)10D`  
   
 ## <a name="see-also"></a>Voir aussi  
- [Arborescences d’expression (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
- [Débogage dans Visual Studio](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio)   
- [Créer des visualiseurs personnalisés](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data)
+ [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
+ [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)  
+ [Créer des visualiseurs personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data)

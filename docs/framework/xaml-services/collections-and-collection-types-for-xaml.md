@@ -1,52 +1,55 @@
 ---
-title: "Collections and Collection Types for XAML | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Collections et types de collections pour XAML
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 58f8e7c6-9a41-4f25-8551-c042f1315baa
-caps.latest.revision: 2
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 991360433b5fb09c13e59f63be94e0fa0ec94b61
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Collections and Collection Types for XAML
-Cette rubrique explique comment modifier les propriétés des types conçus pour prendre en charge une collection, et prendre en charge la syntaxe XAML pour instancier des éléments de collection en tant qu'enfants d'élément d'un élément objet parent ou d'élément de propriété.  
+# <a name="collections-and-collection-types-for-xaml"></a>Collections et types de collections pour XAML
+Cette rubrique décrit comment définir les propriétés des types qui sont destinés à prendre en charge une collection et pour prendre en charge la syntaxe XAML pour l’instanciation des éléments de collection en tant qu’éléments enfants d’un élément de propriété ou un élément d’objet parent.  
   
-## Concepts de collection XAML  
- Conceptuellement, toute relation en XAML où il y a plusieurs éléments enfants dans la portée d'un élément d'élément objet XAML ou de propriété XAML doit être implémentée en tant que collection.  Cette collection doit être associée à une propriété XAML particulière du type XAML qui est le parent de cette relation.  La propriété doit être une collection parce qu'un processeur XAML compte assigner chaque élément dans le balisage pour être un élément récemment ajouté de la propriété de collection de stockage.  
+## <a name="xaml-collection-concepts"></a>Concepts de Collection XAML  
+ Point de vue conceptuel, une relation en XAML dans lequel il existe plusieurs des éléments enfants de l’étendue d’un élément d’objet XAML ou élément de propriété XAML doit être implémentée comme une collection. Cette collection doit être associée à une propriété XAML particulière du type XAML qui est le parent de cette relation. La propriété doit être une collection, car un processeur XAML attend assigner chaque élément dans le balisage pour un élément qui vient d’être ajouté de la propriété de collection de stockage.  
   
- Au niveau de langage XAML, les spécifications précises de la prise en charge des collections ne sont pas complètement définies.  Le concept d'une collection peut être ou une liste ou un dictionnaire \(mais pas les deux\) est défini au niveau de langage XAML, mais que les types de stockage représentent des listes ou des dictionnaires n'est pas défini par le langage XAML.  
+ Au niveau du langage XAML, spécifications exactes de prise en charge de la collection n’ont pas été complètement définies. Le concept qu’une collection peut être une liste ou un dictionnaire (mais pas les deux) est défini au niveau du langage XAML, mais les types de stockage représentent deux listes ou des dictionnaires n’est pas définie par le langage XAML.  
   
- Dans les services XAML.NET Framework, le concept de la prise en charge des collections XAML est plus précis en termes de types de stockage du .NET Framework.  Spécifiquement, la prise en charge XAML des collections est basé sur plusieurs concepts et API.NET Framework utilisés pour la programmation.NET Framework de listes et de dictionnaires en général.  
+ Dans les Services XAML .NET Framework, le concept de prise en charge de la collection XAML est plus clairement défini en termes de types de stockage de .NET Framework. Plus précisément, la prise en charge XAML pour les collections est basée sur plusieurs concepts du .NET Framework et des API qui est utilisés pour les listes et les dictionnaires de programmation générale de .NET Framework.  
   
-1.  l'interface d' <xref:System.Collections.IList> indique une collection de listes.  
+1.  Le <xref:System.Collections.IList> interface indique une collection de listes.  
   
-2.  l'interface d' <xref:System.Collections.IDictionary> indique une collection dicionary.  
+2.  Le <xref:System.Collections.IDictionary> interface indique une collection dicionary.  
   
-3.  <xref:System.Array> représente des méthodes d' <xref:System.Collections.IList> d'un tableau, et prend en charge d'un tableau.  
+3.  <xref:System.Array>représente un tableau et un tableau prend en charge <xref:System.Collections.IList> méthodes.  
   
- Dans chacun de ces concepts de collection, un processeur XAML des services XAML.NET Framework compte appeler la méthode d' `Add` sur une instance spécifique du type de propriété de collection.  Ou, dans un scénario de sérialisation, un processeur XAML produit des instances distinctes de type XAML pour chaque élément trouvé dans la liste, le dictionnaire ou tableau basé sur le concept spécifique de chaque collection des « éléments ».  Ces options sont les suivantes : <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; <xref:System.Array.System%23Collections%23IList%23Item%2A> explicite pour <xref:System.Array>.  
+ Dans chacun de ces concepts de la collection, un processeur XAML des Services XAML .NET Framework s’attend à appeler le `Add` méthode sur une instance spécifique de la collection du type de propriété. Ou bien, dans un scénario de sérialisation, un processeur XAML produit des instances de type XAML distinctes pour chaque élément trouvé dans la liste, un dictionnaire ou un tableau basé sur un concept spécifique de chaque collection de « Éléments ». Il s’agit : <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; explicites <xref:System.Array.System%23Collections%23IList%23Item%2A> pour <xref:System.Array>.  
   
-## collections génériques  
- Les collections génériques peuvent être utiles pour général programmation .NET Framework, et peuvent également être utilisées pour les propriétés de collection XAML.  Toutefois, les interfaces <xref:System.Collections.Generic.IList%601> et <xref:System.Collections.Generic.IDictionary%602> génériques ne sont pas reconnues par les processeurs XAML des services XAML.NET Framework comme étant équivalentes pour <xref:System.Collections.IList> non générique ou à <xref:System.Collections.IDictionary>.  Plutôt qu'implémenter les interfaces, une approche recommandée pour les types de propriété de collections génériques consiste à dériver des classes <xref:System.Collections.Generic.List%601> ou <xref:System.Collections.Generic.Dictionary%602>.  Ces classes implémentent les interfaces non génériques et sont donc la prise en charge prévu des collections de XAML dans l'implémentation de base.  
+## <a name="generic-collections"></a>Collections génériques  
+ Collections génériques peuvent être utiles pour la programmation .NET Framework généraux et peuvent également être utilisées pour les propriétés de collection XAML. Toutefois, le type générique des interfaces <xref:System.Collections.Generic.IList%601> et <xref:System.Collections.Generic.IDictionary%602> ne sont pas identifiées par les processeurs XAML des Services XAML .NET Framework comme étant équivalent à non générique <xref:System.Collections.IList> ou <xref:System.Collections.IDictionary>. Au lieu de l’implémentation des interfaces, une approche recommandée pour les types de propriété de collection générique est dériver les classes <xref:System.Collections.Generic.List%601> ou <xref:System.Collections.Generic.Dictionary%602>. Ces classes implémentent les interfaces non génériques et donc incluent la prise en charge attendue pour les collections XAML dans l’implémentation de base.  
   
-## Collection en lecture seule et logique d'initialisation  
- Dans la programmation.NET Framework, il s'agit d'un modèle de design courant pour effectuer une propriété qui contient une valeur d'une collection en tant que collection en lecture seule.  Ce modèle permet l'instance qui possède la propriété de collection pour mieux contrôler ce qui arrive à la collection.  Spécifiquement, le modèle empêché le remplacement accidentel de la collection préexistante entière en définissant la propriété.  Dans ce modèle, tout accès à la collection par les appelants doit plutôt être effectuée en appelant les méthodes ou les propriétés comme pris en charge par le type de collection et\/ou les interfaces appropriées de collection telles qu' <xref:System.Collections.IList>.  
+## <a name="read-only-collections-and-initialization-logic"></a>Collections en lecture seule et la logique d’initialisation  
+ Dans la programmation .NET Framework, il est courant de conception pour effectuer n’importe quelle propriété qui conserve une valeur d’une collection sous la forme d’une collection en lecture seule. Ce modèle permet à l’instance qui possède la propriété de collection afin de mieux contrôler ce qui se passe à la collection... Plus précisément, le modèle empêche le remplacement accidentel de l’ensemble existant en définissant la propriété. Dans ce modèle, l’accès à la collection par les appelants doivent plutôt être effectuées en appelant des méthodes ou propriétés prises en charge par le type de collection et/ou les interfaces de collection pertinentes telles que <xref:System.Collections.IList>.  
   
- À l'aide de ce modèle implique que toute classe qui expose une propriété en lecture seule de collection doit d'abord initialiser cette propriété pour gérer une collection vide.  En général l'initialisation est exécutée dans le cadre de le comportement de construction pour la classe.  Pour être utile pour XAML, il est important d'un tel logique est toujours référencée par le constructeur par défaut, car XAML appelle généralement le constructeur par défaut avant de traiter les propriétés \(des propriétés de collection ou autre\).  
+ À l’aide de ce modèle implique que n’importe quelle classe qui expose une propriété de collection en lecture seule doit d’abord initialiser cette propriété pour stocker une collection vide. En règle générale, l’initialisation est exécutée en tant que partie du comportement de construction de la classe. Pour être utile pour XAML, il est important que cette logique est toujours référencée par le constructeur par défaut, car XAML appelle généralement le constructeur par défaut avant le traitement des propriétés (propriétés de la collection ou autre).  
   
-## prise en charge et collections de système de type XAML  
- En plus de les mécanismes de base d'analyser le code XAML et remplir ou de sérialiser propriétés de collection, le système de type XAML tel qu'il est implémenté dans les services XAML.NET Framework inclut plusieurs fonctionnalités de conception qui se rapportent à des collections en XAML.  
+## <a name="xaml-type-system-support-and-collections"></a>Collections et la prise en charge de système de Type XAML  
+ Au-delà des mécanismes de base de l’analyse XAML et de remplissage ou de sérialisation des propriétés de la collection, le système de type XAML tel qu’implémenté dans les Services XAML .NET Framework inclut plusieurs fonctionnalités de conception qui se rapportent à des collections dans XAML.  
   
-1.  <xref:System.Xaml.XamlType.IsCollection%2A> retourne la valeur true si le type XAML est stocké par un type qui fournit la prise en charge des collections XAML.  
+1.  <xref:System.Xaml.XamlType.IsCollection%2A>Retourne la valeur true si le type XAML est sauvegardé par un type qui fournit la prise en charge de la collection XAML.  
   
-2.  <xref:System.Xaml.XamlType.IsDictionary%2A> et <xref:System.Xaml.XamlType.IsArray%2A> peuvent plus efficacement les identifier le mode de collecte le type XAML prend en charge.  Pour les processeurs XAML personnalisés basés sur les services XAML.NET Framework et le système de type XAML mais pas sur des implémentations existantes d' <xref:System.Xaml.XamlWriter> , savoir à quel mode de collection est utilisé peut être nécessaire afin de savoir que méthode pour appeler pour le traitement de collection.  
+2.  <xref:System.Xaml.XamlType.IsDictionary%2A>et <xref:System.Xaml.XamlType.IsArray%2A> peut identifier plus précisément quel mode de collecte prend en charge de type XAML. Pour XAML personnalisé processeurs qui sont basées sur les Services XAML .NET Framework et le code XAML système de type, mais pas basé sur <xref:System.Xaml.XamlWriter> implémentations, le fait de savoir quel mode de collecte est utilisé peut être nécessaire afin de déterminer la méthode à appeler pour traitement de la collection.  
   
-3.  Toutes les valeurs de propriété précédentes est potentiellement influencée par les substitutions d' <xref:System.Xaml.XamlType.LookupCollectionKind%2A> sur un type XAML.
+3.  Chacune des valeurs de propriété précédentes sont potentiellement plus influencées par les substitutions de <xref:System.Xaml.XamlType.LookupCollectionKind%2A> sur un type XAML.

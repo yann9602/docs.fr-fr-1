@@ -1,29 +1,25 @@
 ---
-title: "Portée des espaces de noms par défaut dans Visual Basic | Documents Microsoft"
+title: "Portée des espaces de noms par défaut en Visual Basic"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: d4cce80c-342f-4097-be8b-40ab0bfa90ba
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c0152250cf7cfb4b6cadbcaab60eaad8ec2fb5ee
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3aaf5395f1216b0cb56f2d1f003e42ed30790012
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="scope-of-default-namespaces-in-visual-basic"></a>Portée des espaces de noms par défaut dans Visual Basic
-Les espaces de noms tels que représentés dans l'arborescence XML par défaut ne sont pas dans la portée pour les requêtes. Si vous avez le code XML qui est dans un espace de noms par défaut, vous devez déclarer une <xref:System.Xml.Linq.XNamespace>variable et de les combiner avec le nom local pour créer un nom complet à utiliser dans la requête.</xref:System.Xml.Linq.XNamespace>  
+# <a name="scope-of-default-namespaces-in-visual-basic"></a>Portée des espaces de noms par défaut en Visual Basic
+Les espaces de noms tels que représentés dans l'arborescence XML par défaut ne sont pas dans la portée pour les requêtes. Si vous avez du code XML qui est dans un espace de noms par défaut, vous devez déclarer une variable <xref:System.Xml.Linq.XNamespace> et la combiner avec le nom local afin de créer un nom complet utilisable dans la requête.  
   
  L'un des problèmes les plus courants lors de l'interrogation d'une arborescence XML est que si celle-ci possède un espace de noms par défaut, le développeur écrit parfois la requête comme si le code XML n'était dans aucun espace de noms.  
   
@@ -71,7 +67,7 @@ End of result set
 ## <a name="example"></a>Exemple  
  Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.  
   
- Contrairement à l’exemple de code incorrect ci-dessus, l’approche correcte lors de l’utilisation de Visual Basic consiste à déclarer et initialiser un espace de noms global par défaut. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.  
+ Contrairement à l’exemple de code incorrect ci-dessus, la correct lorsque vous utilisez Visual Basic consiste à déclarer et initialiser un espace de noms global par défaut. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.  
   
 ### <a name="code"></a>Code  
   

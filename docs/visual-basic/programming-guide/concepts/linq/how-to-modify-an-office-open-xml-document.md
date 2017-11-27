@@ -1,36 +1,32 @@
 ---
-title: "Comment : modifier un Document Office Open XML (Visual Basic) | Documents Microsoft"
+title: "Comment : modifier un Document Office Open XML (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 04de8ce23af62d7abb6bc5274e96868f830c4320
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 0d2f6b9bc7acf7c9108112b61fe8edf70c549cac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Comment : modifier un Document Office Open XML (Visual Basic)
 Cette rubrique présente un exemple qui ouvre un document Office Open XML, le modifie et l'enregistre.  
   
- Pour plus d’informations sur Office Open XML, consultez [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
+ Pour plus d’informations sur le format Office Open XML, consultez [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
   
 ## <a name="example"></a>Exemple  
  Cet exemple recherche le premier élément de paragraphe dans le document. Il récupère le texte du paragraphe, puis supprime toutes les exécutions de texte dans le paragraphe. Il crée une nouvelle exécution de texte composée du texte du premier paragraphe qui a été converti en majuscules. Il sérialise ensuite le code XML modifié dans le package Open XML et le ferme.  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  

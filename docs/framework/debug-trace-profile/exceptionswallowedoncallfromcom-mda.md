@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - messages, informational
 - informational messages
@@ -22,16 +16,15 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), exceptions
 - ExceptionSwallowedOnCallFromCOM MDA
 ms.assetid: 55d6ab12-f251-4aab-aa64-aacbe9d9f974
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 386ee77bd701f8737f496e867ffd26a07b9cd303
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d68e3f8659b0d5fe212c58443fe9a8b42f9cef89
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="exceptionswallowedoncallfromcom-mda"></a>Assistant Débogage managé exceptionSwallowedOnCallFromCom
 L'Assistant Débogage managé `exceptionSwallowedOnCallFromCOM` est activé quand une exception est levée à partir d'un code CLR (Common Language Runtime) appelé depuis COM via une méthode dépourvue de type de retour HRESULT non managé.  
@@ -62,7 +55,6 @@ L'Assistant Débogage managé `exceptionSwallowedOnCallFromCOM` est activé quan
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)
-
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)

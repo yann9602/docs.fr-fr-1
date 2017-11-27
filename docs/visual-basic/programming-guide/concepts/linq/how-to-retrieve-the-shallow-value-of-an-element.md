@@ -1,32 +1,27 @@
 ---
-title: "Comment : récupérer la valeur superficielle d’un élément (Visual Basic) | Documents Microsoft"
+title: "Comment : récupérer la valeur superficielle d’un élément (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 730a6670-fb8c-41fc-8a1b-eb97a837e432
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 39a0648bb3fd09b9e323560b447be3cc445d5b7f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 673b890ab842d1c18c8020eefe03d90086d1bf4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Comment : récupérer la valeur superficielle d’un élément (Visual Basic)
-Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l’élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
+Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
   
- Lorsque vous récupérez la valeur d’un élément à l’aide d’une conversion ou <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>propriété, vous extrayez une valeur profonde.</xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName> Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant. L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.  
+ Lorsque vous extrayez la valeur d'un élément par le biais d'une conversion ou en utilisant la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>, vous extrayez une valeur profonde. Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme illustré dans l'exemple suivant. L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.  
   
  L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément. Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.  
   

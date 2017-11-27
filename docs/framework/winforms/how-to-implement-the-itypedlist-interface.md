@@ -1,33 +1,37 @@
 ---
-title: "Comment&#160;: impl&#233;menter l&#39;interface ITypedList | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "BindingList(Of T) (classe)"
-  - "liaison de données, implémenter"
-  - "IBindingList (interface)"
-  - "ITypedList (interface)"
+title: "Comment : implémenter l'interface ITypedList"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ITypedList interface
+- BindingList(Of T) class
+- data binding [Windows Forms], implementing
+- IBindingList interface
 ms.assetid: 834cc15c-50bc-4a8b-a610-313d6a217357
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 95888fc5c0df31529db429ead0e7d3e342f9a6e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: impl&#233;menter l&#39;interface ITypedList
-Implémentez l'interface <xref:System.ComponentModel.ITypedList> pour activer la découverte du schéma pour une liste pouvant être liée.  
+# <a name="how-to-implement-the-itypedlist-interface"></a>Comment : implémenter l'interface ITypedList
+Implémentez la <xref:System.ComponentModel.ITypedList> interface pour activer la découverte du schéma pour une liste pouvant être liée.  
   
-## Exemple  
- L'exemple de code suivant illustre l'implémentation de l'interface <xref:System.ComponentModel.ITypedList>.  Un type générique nommé `SortableBindingList` dérive de la classe <xref:System.ComponentModel.BindingList%601> et implémente l'interface <xref:System.ComponentModel.ITypedList>.  Une classe simple nommée `Customer` fournit des données, qui sont liées à l'en\-tête d'un contrôle <xref:System.Windows.Forms.DataGridView>.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant montre comment implémenter la <xref:System.ComponentModel.ITypedList> interface. Un type générique nommé `SortableBindingList` dérive le <xref:System.ComponentModel.BindingList%601> classe et implémente la <xref:System.ComponentModel.ITypedList> interface. Une classe simple nommée `Customer` fournit des données, qui sont liées à l’en-tête d’un <xref:System.Windows.Forms.DataGridView> contrôle.  
   
  [!code-csharp[System.ComponentModel.ITypedList#1](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ITypedList/CS/SortableBindingList.cs#1)]
  [!code-vb[System.ComponentModel.ITypedList#1](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ITypedList/VB/SortableBindingList.vb#1)]  
@@ -38,13 +42,13 @@ Implémentez l'interface <xref:System.ComponentModel.ITypedList> pour activer la
  [!code-csharp[System.ComponentModel.ITypedList#100](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ITypedList/CS/Form1.cs#100)]
  [!code-vb[System.ComponentModel.ITypedList#100](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ITypedList/VB/Form1.vb#100)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
 -   Références aux assemblys System.Drawing et System.Windows.Forms.  
   
-## Voir aussi  
- <xref:System.ComponentModel.ITypedList>   
- <xref:System.ComponentModel.BindingList%601>   
- <xref:System.ComponentModel.IBindingList>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ComponentModel.ITypedList>  
+ <xref:System.ComponentModel.BindingList%601>  
+ <xref:System.ComponentModel.IBindingList>  
  [Liaison de données et Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

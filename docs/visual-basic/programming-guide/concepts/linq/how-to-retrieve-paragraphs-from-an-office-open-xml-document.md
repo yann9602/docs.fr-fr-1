@@ -1,40 +1,36 @@
 ---
-title: "Comment : récupérer des paragraphes à partir d’un Document Office Open XML (Visual Basic) | Documents Microsoft"
+title: "Comment : récupérer des paragraphes à partir d’un Document Office Open XML (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 303fffb8a548805f4ae7c1e66d683b35b9faf2b0
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: ecce435601092e0025a977c797100e0b5ff74b86
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>Comment : récupérer des paragraphes à partir d’un Document Office Open XML (Visual Basic)
 Cette rubrique présente un exemple qui ouvre un document Office Open XML et récupère une collection de tous les paragraphes du document.  
   
- Pour plus d’informations sur Office Open XML, consultez [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
+ Pour plus d’informations sur le format Office Open XML, consultez [www.openxmldeveloper.org](http://go.microsoft.com/fwlink/?LinkID=95573).  
   
 ## <a name="example"></a>Exemple  
- Cet exemple ouvre un package Office Open XML et utilise les relations dans le package Open XML pour rechercher le document et les parties de style. Il interroge ensuite le document et projette une collection d’un type anonyme qui contient le paragraphe <xref:System.Xml.Linq.XElement>nœud, le nom de style de chaque paragraphe et le texte de chaque paragraphe.</xref:System.Xml.Linq.XElement>  
+ Cet exemple ouvre un package Office Open XML et utilise les relations dans le package Open XML pour rechercher le document et les parties de style. Il interroge ensuite le document et projette une collection d'un type anonyme qui contient le nœud <xref:System.Xml.Linq.XElement> de paragraphe, le nom de style de chaque paragraphe et le texte de chaque paragraphe.  
   
  L'exemple utilise une méthode d'extension nommée `StringConcatenate`, qui est également fournie dans l'exemple.  
   
- Pour obtenir un didacticiel détaillé qui explique le fonctionne de cet exemple, consultez la page [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
+ Pour obtenir un didacticiel détaillé qui explique le fonctionnement de cet exemple, consultez [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  

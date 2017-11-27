@@ -1,45 +1,25 @@
 ---
 title: Tableaux dans Visual Basic
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb.Array
-dev_langs:
-- VB
+f1_keywords: vb.Array
 helpviewer_keywords:
 - arrays [Visual Basic]
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
-caps.latest.revision: 47
+caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8ebad59a07d07d61ea77e41e4044b3febc0ef250
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 04deeccd19fd4edb3f2c88310d660eedf5c707d5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="arrays-in-visual-basic"></a>Tableaux dans Visual Basic
 Un tableau est un ensemble de valeurs logiquement liées entre elles, comme le nombre d’élèves de chaque niveau scolaire dans une école primaire.  Si vous avez besoin d’aide sur les tableaux dans Visual Basic pour Applications (VBA), consultez les [informations de référence sur le langage](https://msdn.microsoft.com/library/office/gg264383\(v=office.14\).aspx).  
@@ -257,11 +237,11 @@ Dim prices(3, 4, 5) As Long
 ##  <a name="BKMK_ArrayTypes"></a> Types de tableau et autres types  
  À chaque tableau correspond un type de données, mais celui-ci se distingue du type de données de ses éléments. Le type de données varie d’un tableau à un autre. En effet, le type de données d’un tableau est déterminé par le nombre de dimensions (ou *rang*) qu’il possède et par le type de données de ses éléments. Deux variables tableau ne sont considérées appartenir au même type de données que si elles ont le même rang et si leurs éléments ont le même type de données. Les longueurs des dimensions d’un tableau n’influent pas sur le type de données du tableau.  
   
- Chaque tableau hérite de la classe <xref:System.Array?displayProperty=fullName> et vous pouvez déclarer une variable de type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. De même, [l’instruction ReDim](../../../../visual-basic/language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. Pour ces raisons et au titre de la cohérence des types, il est recommandé de déclarer chaque tableau en tant que type spécifique ( `Integer` dans l’exemple précédent).  
+ Chaque tableau hérite de la classe <xref:System.Array?displayProperty=nameWithType> et vous pouvez déclarer une variable de type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. De même, [l’instruction ReDim](../../../../visual-basic/language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. Pour ces raisons et au titre de la cohérence des types, il est recommandé de déclarer chaque tableau en tant que type spécifique ( `Integer` dans l’exemple précédent).  
   
  Vous pouvez déterminer le type de données d’un tableau ou de ses éléments de plusieurs façons.  
   
--   Vous pouvez appeler la méthode <xref:System.Object.GetType%2A?displayProperty=fullName> sur la variable pour recevoir un objet <xref:System.Type> correspondant au type au moment de l’exécution de la variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.  
+-   Vous pouvez appeler la méthode <xref:System.Object.GetType%2A?displayProperty=nameWithType> sur la variable pour recevoir un objet <xref:System.Type> correspondant au type au moment de l’exécution de la variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.  
   
 -   Vous pouvez passer la variable à la fonction <xref:Microsoft.VisualBasic.Information.TypeName%2A> pour recevoir un `String` contenant le nom du type au moment de l’exécution.  
   
@@ -278,12 +258,12 @@ Dim prices(3, 4, 5) As Long
   
  Pour certaines collections, vous pouvez assigner une clé à un objet que vous placez dans la collection pour vous permettre de récupérer rapidement l’objet à l’aide de la clé.  
   
- Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName> . Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
+ Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> . Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté. Quand vous récupérez un élément d’une collection générique, il n’est pas utile de déterminer son type de données ou de le convertir.  
   
  Pour plus d’informations sur les collections, consultez [Collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
   
 ### <a name="example"></a>Exemple  
- L’exemple suivant utilise la classe générique <xref:System.Collections.Generic.List%601?displayProperty=fullName> du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour créer une collection de listes d’objets `Customer`.  
+ L’exemple suivant utilise la classe générique <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour créer une collection de listes d’objets `Customer`.  
   
  [!code-vb[VbVbalrArrays#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#1)]  
   
@@ -300,7 +280,6 @@ Dim prices(3, 4, 5) As Long
 |[Dépannage des tableaux](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)|Décrit des problèmes courants qui surviennent dans le cadre de l’utilisation de tableaux.|  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Array>   
- [Instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)   
+ <xref:System.Array>  
+ [Dim (instruction)](../../../../visual-basic/language-reference/statements/dim-statement.md)  
  [ReDim (instruction)](../../../../visual-basic/language-reference/statements/redim-statement.md)
-

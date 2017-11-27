@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: df74599b5f68324540703bce6c5ca8e8805df3e7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 073a526e72f46864b2e08d33ec14a53034c144b4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltassemblygt-element-net-native"></a>&lt;Assembly&gt;, élément (.NET Native)
 Applique la stratégie de réflexion runtime à tous les types dans un assembly spécifié.  
@@ -52,9 +50,9 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
 |`Browse`|Réflexion|Attribut facultatif. Contrôle la demande d'informations sur les types dans l'assembly ou l'énumération de ceux-ci, mais ne permet pas d'effectuer un accès dynamique au moment de l'exécution.|  
 |`Dynamic`|Réflexion|Attribut facultatif. Contrôle l'accès à l'exécution à tous les membres de types, y compris les constructeurs, les méthodes, les champs, les propriétés et les événements, pour permettre la programmation dynamique.|  
 |`Serialize`|Sérialisation|Attribut facultatif. Contrôle l'accès au moment de l'exécution aux constructeurs, champs et propriétés, pour permettre la sérialisation et la désérialisation des instances de types par des bibliothèques comme le sérialiseur JSON Newtonsoft.|  
-|`DataContractSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation qui utilise la classe <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName>.|  
-|`DataContractJsonSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation JSON qui utilise la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName>.|  
-|`XmlSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation XML qui utilise la classe <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName>.|  
+|`DataContractSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation qui utilise la classe <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.|  
+|`DataContractJsonSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation JSON qui utilise la classe <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType>.|  
+|`XmlSerializer`|Sérialisation|Attribut facultatif. Contrôle la stratégie pour la sérialisation XML qui utilise la classe <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>.|  
 |`MarshalObject`|Interop|Attribut facultatif. Contrôle la stratégie pour le marshaling des types de références vers Windows Runtime et COM.|  
 |`MarshalDelegate`|Interop|Attribut facultatif. Contrôle la stratégie pour le marshaling des types de délégués comme pointeurs de fonction vers du code natif.|  
 |`MarshalStructure`|Interop|Attribut facultatif. Stratégie de contrôles pour le marshaling de structures en code natif.|  
@@ -63,7 +61,7 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
   
 |Valeur|Description|  
 |-----------|-----------------|  
-|*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName>. Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
+|*nom_assembly*|Nom simple de l’assembly, sans son extension de fichier. Cet attribut correspond à la propriété <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>. Par exemple, le nom d'un assembly nommé Extensions.dll est « Extensions ».<br /><br /> Vous pouvez également spécifier la chaîne littérale `*Application*` pour appliquer la stratégie à tous les assemblys dans votre package d'application, que ces assemblys soient chargés ou non. `*Application*` n'applique jamais la stratégie aux assemblys .NET Framework.|  
   
 ## <a name="all-other-attributes"></a>Tous les autres attributs  
   
@@ -102,7 +100,6 @@ Applique la stratégie de réflexion runtime à tous les types dans un assembly 
  Les attributs `Activate`, `Browse`, `Dynamic` et `Serialize` sont tous facultatifs. Toutefois, l'élément `<Assembly>` doit contenir au moins un de ces attributs.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
- [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
+ [Paramètres de stratégie de directive runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
+ [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-

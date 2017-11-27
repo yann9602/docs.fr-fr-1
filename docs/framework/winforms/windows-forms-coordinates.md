@@ -1,42 +1,43 @@
 ---
-title: "Coordonn&#233;es Windows&#160;Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "coordonnées du client"
-  - "coordonnées, Windows Forms"
-  - "coordonnées de l'écran"
-  - "coordonnées des Windows Forms"
+title: "Coordonnées Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms coordinates
+- screen coordinates
+- client coordinates
+- coordinates [Windows Forms], Windows Forms
 ms.assetid: cc06e61f-43b6-4408-a676-2542dcfcd96e
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5ecb47efdd69730350cf98e1c7b1e49150ad324d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Coordonn&#233;es Windows&#160;Forms
-Le système de coordonnées pour un Windows Form est basé sur les coordonnées de périphérique, et l'unité de mesure de base lorsque vous dessinez dans Windows Forms est l'unité de périphérique \(en général, le pixel\).  Les points sur l'écran sont décrits comme des paires de coordonnées x et y, avec les coordonnées x qui augmentent vers la droite et les coordonnées y qui augmentent de bas en haut.  L'emplacement de l'origine, relatif à l'écran, variera selon que vous spécifiez des coordonnées d'écran ou des coordonnées clientes.  
+# <a name="windows-forms-coordinates"></a>Coordonnées Windows Forms
+Le système de coordonnées pour un Windows Form est basé sur les coordonnées de périphérique, et l’unité de mesure lors du dessin dans les Windows Forms de base est l’unité de périphérique (en général, le pixel). Points à l’écran sont décrits par des paires de coordonnées x et y, avec les coordonnées x qui augmentent vers la droite et les coordonnées y augmentant de haut en bas. L’emplacement de l’origine, par rapport à l’écran, varient selon que vous spécifiez les coordonnées d’écran ou un client.  
   
-## Coordonnées d'écran  
- Une application Windows Forms spécifie la position d'une fenêtre sur l'écran en coordonnées d'écran.  Pour les coordonnées d'écran, l'origine est l'angle supérieur gauche de l'écran.  La position complète d'une fenêtre est souvent décrite par une structure <xref:System.Drawing.Rectangle> qui contient les coordonnées d'écran de deux points qui définissent les coins supérieur gauche et inférieur droit de la fenêtre.  
+## <a name="screen-coordinates"></a>Coordonnées d’écran  
+ Une application Windows Forms spécifie la position d’une fenêtre à l’écran en coordonnées d’écran. Pour les coordonnées d’écran, l’origine sont l’angle supérieur gauche de l’écran. La position complète d’une fenêtre est souvent décrite par un <xref:System.Drawing.Rectangle> structure qui contient les coordonnées d’écran de deux points qui définissent les angles supérieur gauche et à droite de la fenêtre.  
   
-## Coordonnées clientes  
- Une application Windows Forms spécifie la position de points dans un formulaire ou contrôle à l'aide de coordonnées clientes.  L'origine pour les coordonnées clientes est l'angle supérieur gauche de la zone cliente du contrôle ou formulaire.  Les coordonnées clientes garantissent qu'une application peut utiliser des valeurs de coordonnée cohérentes en dessinant dans un formulaire ou contrôle, indépendamment de la position du formulaire ou contrôle sur l'écran.  
+## <a name="client-coordinates"></a>Coordonnées clientes  
+ Une application Windows Forms spécifie la position des points dans un formulaire ou un contrôle à l’aide de coordonnées clientes. L’origine pour les coordonnées clientes est l’angle supérieur gauche de la zone cliente du contrôle ou du formulaire. Les coordonnées clientes garantissent qu’une application peut utiliser des valeurs de coordonnée cohérentes en dessinant dans un formulaire ou un contrôle, indépendamment de la position du formulaire ou contrôle sur l’écran.  
   
- Les dimensions de la zone cliente sont également décrites par une structure <xref:System.Drawing.Rectangle> qui contient des coordonnées clientes pour la zone.  Dans tous les cas, la coordonnée supérieure gauche du rectangle est incluse dans la zone cliente, alors que la coordonnée de l'angle inférieur droit est exclue.  Les opérations graphiques n'incluent pas les bords droit et inférieur d'une zone cliente.  Par exemple, la méthode <xref:System.Drawing.Graphics.FillRectangle%2A> remplira jusqu'au bord droit et inférieur du rectangle spécifié, mais n'inclura pas ces bords.  
+ Les dimensions de la zone cliente sont également décrites par un <xref:System.Drawing.Rectangle> structure qui contient les coordonnées clientes pour la zone. Dans tous les cas, les coordonnées du coin supérieur gauche du rectangle sont incluses dans la zone cliente, alors que la coordonnée inférieur droit est exclue. Opérations graphiques n’incluent pas les bords droit et inférieurs d’une zone cliente. Par exemple le <xref:System.Drawing.Graphics.FillRectangle%2A> méthode arrive à saturation et le bord droit et inférieur du rectangle spécifié, mais n’inclura pas ces bords.  
   
-## Mappage d'un type de coordonnée à un autre  
- Parfois, vous pouvez devoir mapper des coordonnées d'écran aux coordonnées clientes.  Vous pouvez le faire facilement en utilisant les méthodes <xref:System.Windows.Forms.Control.PointToClient%2A> et <xref:System.Windows.Forms.Control.PointToScreen%2A> disponibles dans la classe <xref:System.Windows.Forms.Control>.  Par exemple, la propriété <xref:System.Windows.Forms.Control.MousePosition%2A> de <xref:System.Windows.Forms.Control> est rapportée dans les coordonnées d'écran, mais vous pouvez convertir celles\-ci en coordonnées clientes.  
+## <a name="mapping-from-one-type-of-coordinate-to-another"></a>Mappage d’un Type de coordonnées à un autre  
+ Parfois, vous devrez peut-être mapper des coordonnées d’écran en coordonnées clientes. Vous pouvez le faire facilement à l’aide de la <xref:System.Windows.Forms.Control.PointToClient%2A> et <xref:System.Windows.Forms.Control.PointToScreen%2A> méthodes disponibles dans la <xref:System.Windows.Forms.Control> classe. Par exemple, le <xref:System.Windows.Forms.Control.MousePosition%2A> propriété du <xref:System.Windows.Forms.Control> est signalée en coordonnées d’écran, mais vous pouvez convertir celles-ci en coordonnées clientes.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.Control.PointToClient%2A>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.Control.PointToClient%2A>  
  <xref:System.Windows.Forms.Control.PointToScreen%2A>

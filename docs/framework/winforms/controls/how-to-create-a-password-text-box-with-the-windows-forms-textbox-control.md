@@ -1,44 +1,49 @@
 ---
-title: "Comment&#160;: cr&#233;er une zone de texte pour mot de passe avec le contr&#244;le TextBox Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "zones de mot de passe, créer"
-  - "PasswordChar (propriété dans les zones de texte)"
-  - "mots de passe, masque de saisie"
-  - "mots de passe, zone de texte pour mot de passe"
-  - "TextBox (contrôle Windows Forms), saisir des mots de passe"
+title: "Comment : créer une zone de texte pour mot de passe avec le contrôle TextBox Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- TextBox control [Windows Forms], entering passwords
+- password boxes [Windows Forms], creating
+- PasswordChar property in text boxes
+- passwords [Windows Forms], input mask
+- passwords [Windows Forms], password text box
 ms.assetid: d105d6b9-3d50-44cd-80d8-2c0e2f486727
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: caf5cef9e23134715101545902e32e72d63c0aac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une zone de texte pour mot de passe avec le contr&#244;le TextBox Windows Forms
-Une zone de mot de passe est une zone de texte Windows Forms qui affiche des caractères d'espace réservé lorsqu'un utilisateur tape une chaîne.  
+# <a name="how-to-create-a-password-text-box-with-the-windows-forms-textbox-control"></a>Comment : créer une zone de texte pour mot de passe avec le contrôle TextBox Windows Forms
+Une zone de mot de passe est une zone de texte Windows Forms qui affiche les caractères d’espace réservé lorsqu’un utilisateur tape une chaîne.  
   
-### Pour créer une zone de texte pour mot de passe  
+### <a name="to-create-a-password-text-box"></a>Pour créer une zone de texte mot de passe  
   
-1.  Définissez la propriété <xref:System.Windows.Forms.TextBox.PasswordChar%2A> du contrôle <xref:System.Windows.Forms.TextBox> à un caractère spécifique.  
+1.  Définir le <xref:System.Windows.Forms.TextBox.PasswordChar%2A> propriété de la <xref:System.Windows.Forms.TextBox> contrôle à un caractère spécifique.  
   
-     La propriété <xref:System.Windows.Forms.TextBox.PasswordChar%2A> spécifie le caractère affiché dans la zone de texte.  Par exemple, si vous souhaitez que des astérisques s'affichent dans la zone de mot de passe, spécifiez \* pour la propriété <xref:System.Windows.Forms.TextBox.PasswordChar%2A> dans la fenêtre Propriétés.  Puis, indépendamment du caractère qu'un utilisateur tape au clavier, un astérisque apparaît dans la zone de texte.  
+     Le <xref:System.Windows.Forms.TextBox.PasswordChar%2A> propriété spécifie le caractère affiché dans la zone de texte. Par exemple, si vous souhaitez que des astérisques s’affichent dans la zone de mot de passe, spécifiez * pour la <xref:System.Windows.Forms.TextBox.PasswordChar%2A> propriété dans la fenêtre Propriétés. Ensuite, indépendamment du caractère qu’un utilisateur tape dans la zone de texte, un astérisque s’affiche.  
   
-2.  \(Facultatif\) Définissez la propriété <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>.  La propriété détermine le nombre de caractères qui peuvent être tapés dans la zone de texte.  Si la longueur maximale est dépassée, le système émet un signal sonore et la zone de texte n'accepte plus de caractères.  Peut\-être ne souhaiterez\-vous pas effectuer cette opération, étant donné que la longueur maximale du mot de passe peut être utile au pirate tentant de deviner un mot de passe.  
+2.  (Facultatif) Définir le <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> propriété. La propriété détermine le nombre de caractères peut être tapé dans la zone de texte. Si la longueur maximale est dépassée, le système émet un signal sonore et la zone de texte n’accepte pas plus de caractères. Notez que vous pouvez souhaiter pas cela en tant que la longueur maximale d’un mot de passe peut être utilisé à des pirates cherchant à deviner le mot de passe.  
   
-     'exemple de code suivant montre comment initialiser une zone de texte qui acceptera une chaîne de 14 caractères au maximum et affichera des astérisques à la place de la chaîne.  La procédure `InitializeMyControl`  ne s'exécutera pas automatiquement ; elle doit être appelée.  
+     L’exemple de code suivant montre comment initialiser une zone de texte qui accepte une chaîne de 14 caractères au maximum et affichera des astérisques à la place de la chaîne. Le `InitializeMyControl` procédure s’exécutera pas automatiquement ; il doit être appelé.  
   
     > [!IMPORTANT]
-    >  L'utilisation de la propriété <xref:System.Windows.Forms.TextBox.PasswordChar%2A> dans une zone de texte permet de garantir que personne d'autre ne pourra lire le mot de passe d'un utilisateur en observant la saisie de celui\-ci.  Cette mesure de sécurité ne concerne aucunement le stockage ou la transmission du mot de passe par votre application.  Dans la mesure où le texte saisi n'est pas chiffré, vous devez le considérer comme n'importe quelle donnée confidentielle.  Mais s'il n'apparaît pas comme tel, le mot de passe est traité comme une chaîne de texte brut \(sauf si vous avez implémenté d'autres mesures de sécurité\).  
+    >  À l’aide de la <xref:System.Windows.Forms.TextBox.PasswordChar%2A> propriété sur une zone de texte permet de garantir que les autres personnes ne seront pas en mesure de déterminer un mot de passe utilisateur observant la saisie de celui-ci. Cette mesure de sécurité ne couvre pas toute sorte de stockage ou la transmission du mot de passe qui peut se produire en raison de votre logique d’application. Étant donné que le texte entré n’est pas chiffré en aucune façon, vous devez le considérer comme vous le feriez pour d’autres données confidentielles. Même si elle n’apparaît pas en tant que tel, le mot de passe est toujours traité comme une chaîne de texte brut (sauf si vous avez implémenté une mesure de sécurité supplémentaire).  
   
     ```vb  
     Private Sub InitializeMyControl()  
@@ -49,7 +54,6 @@ Une zone de mot de passe est une zone de texte Windows Forms qui affiche des car
        ' The control will allow no more than 14 characters.  
        TextBox1.MaxLength = 14  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -62,7 +66,6 @@ Une zone de mot de passe est une zone de texte Windows Forms qui affiche des car
        // The control will allow no more than 14 characters.  
        textBox1.MaxLength = 14;  
     }  
-  
     ```  
   
     ```cpp  
@@ -78,12 +81,12 @@ Une zone de mot de passe est une zone de texte Windows Forms qui affiche des car
        }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.TextBox>   
- [Vue d'ensemble du contrôle TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)   
- [Comment : contrôler le point d'insertion dans un contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)   
- [Comment : créer une zone de texte en lecture seule](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)   
- [Comment : insérer des guillemets dans une chaîne](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)   
- [Comment : sélectionner du texte dans le contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)   
- [Comment : afficher des lignes multiples dans le contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.TextBox>  
+ [Vue d’ensemble du contrôle TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
+ [Guide pratique pour contrôler le point d’insertion dans un contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
+ [Guide pratique pour créer une zone de texte en lecture seule](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
+ [Guide pratique pour insérer des guillemets dans une chaîne](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
+ [Guide pratique pour sélectionner du texte dans le contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
+ [Guide pratique pour afficher des lignes multiples dans le contrôle TextBox Windows Forms](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  [TextBox, contrôle](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

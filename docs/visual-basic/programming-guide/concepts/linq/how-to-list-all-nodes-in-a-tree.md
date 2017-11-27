@@ -1,31 +1,27 @@
 ---
-title: "Comment : répertorier tous les nœuds dans une arborescence (Visual Basic) | Documents Microsoft"
+title: "Comment : répertorier tous les nœuds dans une arborescence (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e19289c4-26d1-435b-b0db-fb8bc856b753
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6e3aa8df843b8b601b2724f6de48d66d1a806db4
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 988c531451162560cac99d8b8e1c25861ef82ae5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Comment : répertorier tous les nœuds dans une arborescence (Visual Basic)
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.  
   
- Il n'est pas particulièrement utile d'exécuter des expressions XPath à l'aide de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]. Les expressions XPath procurent des performances inférieures aux requêtes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], et les requêtes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] sont beaucoup plus puissantes. Toutefois, XPath fonctionne bien comme méthode d’identification des nœuds de l’arborescence XML.  
+ Il n'est pas particulièrement utile d'exécuter des expressions XPath à l'aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Les expressions XPath procurent des performances inférieures aux requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], et les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont beaucoup plus puissantes. Toutefois, XPath fonctionne bien comme méthode d’identification des nœuds de l’arborescence XML.  
   
 ## <a name="example"></a>Exemple  
  Cet exemple illustre une fonction nommée `GetXPath` qui génère une expression XPath spécifique pour tout nœud de l'arborescence XML. Il génère des expressions XPath appropriées même lorsque des nœuds se trouvent dans un espace de noms. Les expressions XPath sont générées à l'aide de préfixes d'espaces de noms.  
@@ -245,7 +241,7 @@ End Module
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <?target data?>  
 <Root AttName="An Attribute" xmlns:aw="http://www.adventure-works.com">  

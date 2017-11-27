@@ -1,36 +1,34 @@
 ---
-title: "Derived classes cannot raise base class events | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30029"
-  - "bc30029"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30029"
+title: "Les classes dérivées ne peuvent pas déclencher les événements de la classe de base"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30029
+- bc30029
+helpviewer_keywords: BC30029
 ms.assetid: 63afa1c6-2f93-4512-a2f0-372455979771
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 70dde8b96980adfd618e38b9ce142cdec56a6b13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Derived classes cannot raise base class events
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Un événement peut être déclenché uniquement à partir de l'espace de déclaration dans lequel il est déclaré.  En conséquence, une classe ne peut pas déclencher d'événements à partir d'une autre classe, même d'une classe dont elle est dérivée.  
+# <a name="derived-classes-cannot-raise-base-class-events"></a>Les classes dérivées ne peuvent pas déclencher les événements de la classe de base
+Un événement peut être déclenché uniquement à partir de l’espace de déclaration dans lequel elle est déclarée. Par conséquent, une classe ne peut pas déclencher d’événements à partir de toute autre classe, même si celle-ci à partir de laquelle elle est dérivée.  
   
- **ID d'erreur :** BC30029  
+ **ID d’erreur :** BC30029  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Déplacez l'instruction `Event` ou l'instruction `RaiseEvent` de manière à ce qu'elles soient dans la même classe.  
+-   Déplacer le `Event` instruction ou la `RaiseEvent` instruction afin qu’ils soient dans la même classe.  
   
-## Voir aussi  
- [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)   
- [RaiseEvent Statement](../../../visual-basic/language-reference/statements/raiseevent-statement.md)
+## <a name="see-also"></a>Voir aussi  
+ [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [RaiseEvent (instruction)](../../../visual-basic/language-reference/statements/raiseevent-statement.md)

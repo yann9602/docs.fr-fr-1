@@ -8,23 +8,19 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- request cache policies
+- csharp
+- vb
+helpviewer_keywords: request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4acef4b118422a8276260d083a5c31c41472eb68
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 2cd278f307784cd994f733c029e606f507c523f4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Procédure : définition d’une stratégie de cache pour une demande
 L’exemple suivant montre comment définir une stratégie de cache pour une demande. L’exemple d’entrée est un URI tel que http://www.contoso.com/.  
@@ -118,9 +114,8 @@ End Namespace
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
- [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)   
- [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)   
- [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)   
+ [Gestion du cache pour les applications réseau](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Stratégie de cache](../../../docs/framework/network-programming/cache-policy.md)  
+ [Stratégies de cache basées sur l’emplacement](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [Stratégies de cache basées sur la durée](../../../docs/framework/network-programming/time-based-cache-policies.md)  
  [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
-

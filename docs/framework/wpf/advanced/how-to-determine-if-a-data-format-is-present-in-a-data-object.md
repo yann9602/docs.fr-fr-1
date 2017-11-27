@@ -1,54 +1,60 @@
 ---
-title: "Comment&#160;: d&#233;terminer si un format de donn&#233;es est pr&#233;sent dans un objet de donn&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "formats de données (WPF), déterminer s'ils sont présents"
-  - "classe DataFormats (WPF)"
-  - "glisser-déplacer (WPF), formats de données présents"
+title: "Comment : déterminer si un format de données est présent dans un objet de données"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataFormats class [WPF]
+- drag-and-drop [WPF], data formats present
+- data formats [WPF], determining if present
 ms.assetid: e487a454-c9fc-4e53-aeaa-c458d059ad4c
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9e5eaad64e18ff955340a8e91bfe8bd0e09dd8d7
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: d&#233;terminer si un format de donn&#233;es est pr&#233;sent dans un objet de donn&#233;es
-Les exemples suivants indiquent comment utiliser les différentes surcharges de méthode <xref:System.Windows.DataObject.GetDataPresent%2A> pour vérifier si un format de données particulier est présent dans un objet de données.  
+# <a name="how-to-determine-if-a-data-format-is-present-in-a-data-object"></a>Comment : déterminer si un format de données est présent dans un objet de données
+Les exemples suivants montrent comment utiliser les différentes <xref:System.Windows.DataObject.GetDataPresent%2A> surcharges de méthode pour la requête si un format de données particulier est présent dans un objet de données.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- L'exemple de code suivant utilise la surcharge <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> pour chercher la présence d'un format de données particulier par chaîne de descripteur.  
+### <a name="description"></a>Description  
+ L’exemple de code suivant utilise la <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> surcharge pour rechercher la présence d’un format de données particulier par chaîne de descripteur.  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_String](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_string)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_String](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_string)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- L'exemple de code suivant utilise la surcharge <xref:System.Windows.DataObject.GetDataPresent%28System.Type%29> pour chercher la présence d'un format de données particulier par type.  
+### <a name="description"></a>Description  
+ L’exemple de code suivant utilise la <xref:System.Windows.DataObject.GetDataPresent%28System.Type%29> surcharge pour rechercher la présence d’un format de données particulier par type.  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Type](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_type)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Type](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_type)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-### Description  
- Le code d'exemple suivant utilise la surcharge <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> pour chercher des données par chaîne de descripteur, en spécifiant comment traiter des formats de données convertibles automatiquement.  
+### <a name="description"></a>Description  
+ L’exemple de code suivant utilise la <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> par chaîne de descripteur de surcharge pour rechercher les données et en spécifiant comment traiter des formats de données convertibles automatiquement.  
   
-### Code  
+### <a name="code"></a>Code  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Autoconvert](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_querydataformats_autoconvert)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_QueryDataFormats_Autoconvert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_querydataformats_autoconvert)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.Windows.IDataObject>

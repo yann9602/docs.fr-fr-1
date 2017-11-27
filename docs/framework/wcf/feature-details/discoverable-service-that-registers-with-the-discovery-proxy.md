@@ -1,22 +1,25 @@
 ---
-title: "Proc&#233;dure&#160;: impl&#233;menter un service d&#233;tectable qui s&#39;enregistre avec le proxy de d&#233;couverte. | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte."
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e6633491ec3b01a4ca3494639e9537c9f6441da5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: impl&#233;menter un service d&#233;tectable qui s&#39;enregistre avec le proxy de d&#233;couverte.
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.
 Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), vous avez implémenté un proxy de découverte. Dans cette rubrique, vous créez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui envoie au proxy de découverte des messages d'annonce (`Hello` et `Bye`) qui permettent au service de s'inscrire et de se désinscrire du proxy de découverte.  
   
 ### <a name="to-define-the-service-contract"></a>Pour définir le contrat de service  
@@ -33,14 +36,14 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
   
 4.  Ajoutez les instructions using suivantes.  
   
-    ```  
+    ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
 5.  Dans CalculatorService.cs, définissez le contrat de service.  
   
-    ```  
+    ```csharp  
     // Define a service contract.  
         [ServiceContract(Namespace = "http://Microsoft.Samples.Discovery")]  
         public interface ICalculatorService  
@@ -54,12 +57,11 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
             [OperationContract]  
             double Divide(double n1, double n2);  
         }  
-  
     ```  
   
 6.  Également dans CalculatorService.cs, implémentez le contrat de service.  
   
-    ```  
+    ```csharp  
     // Service class which implements the service contract.      
         public class CalculatorService : ICalculatorService  
         {  
@@ -95,7 +97,6 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
                 return result;  
             }  
         }  
-  
     ```  
   
 ### <a name="to-host-the-service"></a>Pour héberger le service  
@@ -104,18 +105,16 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
   
 2.  Ajoutez les instructions using suivantes.  
   
-    ```  
+    ```csharp 
     using System;  
     using System.ServiceModel;  
     using System.ServiceModel.Description;  
     using System.ServiceModel.Discovery;  
-  
     ```  
   
 3.  Ajoutez le code suivant dans la méthode `Main()` :  
   
-    ```  
-  
+    ```csharp  
     // Define the base address of the service  
     Uri baseAddress = new Uri("net.tcp://localhost:9002/CalculatorService/" + Guid.NewGuid().ToString());  
     // Define the endpoint address where announcement messages will be sent  
@@ -165,12 +164,12 @@ Cette rubrique est la deuxième d'une série de quatre rubriques qui expliquent 
     }  
     ```  
   
- Vous avez terminé l'implémentation d'un service détectable. Passez au [Comment : implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).  
+ Vous avez terminé l'implémentation d'un service détectable. Continuer à [Comment : implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).  
   
 ## <a name="example"></a>Exemple  
  Les éléments suivants représentent l'intégralité du code utilisé dans cette rubrique.  
   
-```  
+```csharp  
 // CalculatorService.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -231,10 +230,9 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
-```  
+```csharp  
 // Program.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -295,10 +293,8 @@ namespace Microsoft.Samples.Discovery
     }  
 }  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
+
 ## <a name="see-also"></a>Voir aussi  
- [Découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)   
- [Comment : implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)   
+ [Découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
+ [Comment : implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
  [Comment : implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

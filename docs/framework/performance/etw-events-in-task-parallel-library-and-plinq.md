@@ -5,29 +5,26 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- tasks, ETW events
+helpviewer_keywords: tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9de80f9f2319caefbb7b716e17c43fddf9db67e4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 9e3ff6c4ec8febda93136c5ac88223b5baf80124
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
 La bibliothèque parallèle de tâches et PLINQ génèrent les événements de suivi d’événements pour Windows (ETW) que vous pouvez utiliser pour profiler et dépanner des applications à l’aide d’outils tels que Windows Performance Analyzer. Toutefois, dans la plupart des scénarios, la meilleure façon de profiler du code d’application parallèle est d’utiliser le [visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer) dans [!INCLUDE[vsUltShort](../../../includes/vsultshort-md.md)].  
   
 ## <a name="task-parallel-library-etw-events"></a>Événements ETW de la bibliothèque parallèle de tâches  
- Dans la structure EVENT_HEADER, le GUID ProviderId pour les événements générés par <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> et <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=fullName> est :  
+ Dans la structure EVENT_HEADER, le GUID ProviderId pour les événements générés par <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> est :  
   
 ```  
 0x2e5dba47, 0xa3d2, 0x4d16, 0x8e, 0xe0, 0x66, 0x71, 0xff, 0xdc, 0xd7, 0xb5  
@@ -42,12 +39,12 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
-|OperationType|<xref:System.Int32?displayProperty=fullName>|Indique le type de boucle :<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
-|InclusiveFrom|<xref:System.Int64?displayProperty=fullName>|Valeur de départ du compteur de boucles|  
-|ExclusiveTo|<xref:System.Int64?displayProperty=fullName>|Valeur de fin du compteur de boucles|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
+|OperationType|<xref:System.Int32?displayProperty=nameWithType>|Indique le type de boucle :<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
+|InclusiveFrom|<xref:System.Int64?displayProperty=nameWithType>|Valeur de départ du compteur de boucles|  
+|ExclusiveTo|<xref:System.Int64?displayProperty=nameWithType>|Valeur de fin du compteur de boucles|  
   
 ### <a name="parallel-loop-end"></a>Fin de la boucle parallèle  
  EVENT_DESCRIPTOR.Task = 2  
@@ -58,10 +55,10 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
-|totalIterations|<xref:System.Int64?displayProperty=fullName>|Nombre total d’itérations|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
+|totalIterations|<xref:System.Int64?displayProperty=nameWithType>|Nombre total d’itérations|  
   
 ### <a name="parallel-invoke-begin"></a>Début de l’appel parallèle  
  EVENT_DESCRIPTOR.Task = 3  
@@ -72,12 +69,12 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
-|totalIterations|<xref:System.Int64?displayProperty=fullName>|Nombre total d’itérations|  
-|operationType|<xref:System.Int32?displayProperty=fullName>|Indique le type de boucle :<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
-|ActionCount|<xref:System.Int32?displayProperty=fullName>|Nombre d’actions qui seront exécutées dans l’appel parallèle.|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
+|totalIterations|<xref:System.Int64?displayProperty=nameWithType>|Nombre total d’itérations|  
+|operationType|<xref:System.Int32?displayProperty=nameWithType>|Indique le type de boucle :<br /><br /> 1 = ParallelInvoke<br /><br /> 2 = ParallelFor<br /><br /> 3 = ParallelForEach|  
+|ActionCount|<xref:System.Int32?displayProperty=nameWithType>|Nombre d’actions qui seront exécutées dans l’appel parallèle.|  
   
 ### <a name="parallel-invoke-end"></a>Fin de l’appel parallèle  
  EVENT_DESCRIPTOR.Task = 4  
@@ -88,9 +85,9 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|ForkJoinContextID|<xref:System.Int32?displayProperty=fullName>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|ForkJoinContextID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur unique utilisé pour indiquer l’imbrication et les paires pour les événements comportant des sémantiques de bifurcation/jonction.|  
   
 ## <a name="plinq-etw-events"></a>Événements ETW de PLINQ  
  Le GUID EVENT_HEADER.ProviderId pour PLINQ est :  
@@ -108,9 +105,9 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|QueryID|<xref:System.Int32?displayProperty=fullName>|Identificateur de requête unique.|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|QueryID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur de requête unique.|  
   
 ### <a name="parallel-query-end"></a>Fin de requête parallèle  
  EVENT_DESCRIPTOR.Task = 2  
@@ -121,12 +118,11 @@ La bibliothèque parallèle de tâches et PLINQ génèrent les événements de s
   
 |**Nom**|**Type**|**Description**|  
 |--------------|--------------|---------------------|  
-|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=fullName>|ID du TaskScheduler qui a démarré la boucle.|  
-|OriginatingTaskID|<xref:System.Int32?displayProperty=fullName>|ID de la tâche qui a démarré la boucle.|  
-|QueryID|<xref:System.Int32?displayProperty=fullName>|Identificateur de requête unique.|  
+|OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|ID du TaskScheduler qui a démarré la boucle.|  
+|OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|ID de la tâche qui a démarré la boucle.|  
+|QueryID|<xref:System.Int32?displayProperty=nameWithType>|Identificateur de requête unique.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Événements ETW dans le .NET Framework](../../../docs/framework/performance/etw-events.md)   
- [Bibliothèque parallèle de tâches (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
+ [Événements ETW dans le .NET Framework](../../../docs/framework/performance/etw-events.md)  
+ [La bibliothèque parallèle de tâches](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
-

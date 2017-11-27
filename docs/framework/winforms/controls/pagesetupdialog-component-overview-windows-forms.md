@@ -1,36 +1,36 @@
 ---
-title: "Vue d&#39;ensemble du composant PageSetupDialog (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PageSetupDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Mise en page (boîte de dialogue), afficher"
-  - "PageSetupDialog (composant)"
+title: Vue d'ensemble du composant PageSetupDialog (Windows Forms)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PageSetupDialog
+helpviewer_keywords:
+- Page Setup dialog box [Windows Forms], displaying
+- PageSetupDialog component
 ms.assetid: 791caacb-a5ca-4fca-bad9-1a5721ad697c
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 082dbff66c8a0f06635936011f802c99b88e41df
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble du composant PageSetupDialog (Windows Forms)
-Le composant <xref:System.Windows.Forms.PageSetupDialog> Windows Forms est une boîte de dialogue préconfigurée utilisée pour définir la configuration d'impression d'une page dans des applications Windows.  En employant ce contrôle dans votre application Windows plutôt que de configurer votre propre boîte de dialogue, vous offrirez aux utilisateurs un moyen simple de définir les préférences de page.  De cette façon, vous permettez aux utilisateurs de définir la taille des bordures et des marges, les en\-têtes et pieds de page, ainsi que l'orientation portrait ou paysage.  En ayant recours aux boîtes de dialogue Windows standard, vous créez des applications dont les fonctionnalités de base sont d'emblée familières aux utilisateurs.  
+# <a name="pagesetupdialog-component-overview-windows-forms"></a>Vue d'ensemble du composant PageSetupDialog (Windows Forms)
+Windows Forms <xref:System.Windows.Forms.PageSetupDialog> composant est une boîte de dialogue préconfigurée utilisée pour définir des informations sur la page pour l’impression dans les applications Windows. Utilisez-la dans votre application Windows comme une solution simple pour les utilisateurs pour définir les préférences de la page que de configurer votre propre boîte de dialogue. Vous pouvez activer les utilisateurs définir la bordure et des marges, en-têtes et pieds de page et l’orientation portrait ou paysage. En vous appuyant sur des boîtes de dialogue Windows standard, vous pouvez créer des applications dont la fonction de base est immédiatement familière aux utilisateurs.  
   
-## Propriétés et méthodes principales  
- Utilisez la méthode <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> pour afficher la boîte de dialogue au moment de l'exécution.  Ce composant possède des propriétés que vous pouvez définir pour une page unique \(classe <xref:System.Drawing.Printing.PrintDocument>\) ou pour tout document \(classe <xref:System.Drawing.Printing.PageSettings>\).  En outre, le composant <xref:System.Windows.Forms.PageSetupDialog> peut être utilisé pour déterminer des paramètres d'impression spécifiques stockés dans la classe <xref:System.Drawing.Printing.PrinterSettings>.  
+## <a name="key-properties-and-methods"></a>Méthodes et propriétés de clé  
+ Utilisez la <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> méthode pour afficher la boîte de dialogue au moment de l’exécution. Ce composant possède des propriétés relatives à une seule page (<xref:System.Drawing.Printing.PrintDocument> classe) ou n’importe quel document (<xref:System.Drawing.Printing.PageSettings> classe). En outre, le <xref:System.Windows.Forms.PageSetupDialog> composant peut être utilisé pour déterminer les paramètres d’impression spécifiques qui sont stockées dans la <xref:System.Drawing.Printing.PrinterSettings> classe.  
   
- Lorsque le composant <xref:System.Windows.Forms.PageSetupDialog> est ajouté à un formulaire, il apparaît dans la barre d'état située au bas du Concepteur Windows Forms.  
+ Lorsqu’il est ajouté à un formulaire, le <xref:System.Windows.Forms.PageSetupDialog> composant apparaît dans la barre d’état en bas du Concepteur Windows Forms.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.PageSetupDialog>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.PageSetupDialog>  
  [PageSetupDialog, composant](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

@@ -1,37 +1,41 @@
 ---
-title: "Comment&#160;: d&#233;terminer le moment o&#249; les attributs de mise en forme changent dans le contr&#244;le RichTextBox Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "exemples (Windows Forms), zones de texte"
-  - "RichTextBox (contrôle Windows Forms), déterminer les modifications de police"
-  - "SelBold (propriété)"
-  - "SelChange (événement)"
-  - "zones de texte, déterminer les modifications de police"
+title: "Comment : déterminer le moment où les attributs de mise en forme changent dans le contrôle RichTextBox Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- examples [Windows Forms], text boxes
+- RichTextBox control [Windows Forms], determining font changes
+- text boxes [Windows Forms], determining font changes
+- SelChange event
 ms.assetid: bdfed015-f77a-41e5-b38f-f8629b2fa166
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0dc272e26124acf5c6bd5cf3030941c26c021c49
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;terminer le moment o&#249; les attributs de mise en forme changent dans le contr&#244;le RichTextBox Windows Forms
-Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms est souvent utilisé pour mettre en forme du texte avec des attributs, tels que des options de police ou des styles de paragraphe.  Votre application peut avoir besoin de conserver une trace de tous les changements de mise en forme du texte pour l'affichage d'une barre d'outils, comme c'est le cas dans de nombreuses applications de traitement de texte.  
+# <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a>Comment : déterminer le moment où les attributs de mise en forme changent dans le contrôle RichTextBox Windows Forms
+Une utilisation courante de Windows Forms <xref:System.Windows.Forms.RichTextBox> est mise en forme du texte avec des attributs, tels que les options de police ou des styles de paragraphe. Votre application peut besoin suivre les modifications apportées à la mise en forme en vue d’afficher une barre d’outils, comme dans nombreuses applications de traitement de texte.  
   
-### Pour répondre aux changements des attributs de mise en forme  
+### <a name="to-respond-to-changes-in-formatting-attributes"></a>Pour répondre aux modifications apportées aux attributs de mise en forme  
   
-1.  Écrivez du code dans le gestionnaire d'événements <xref:System.Windows.Forms.RichTextBox.SelectionChanged> de manière à réaliser une action appropriée en fonction de la valeur de l'attribut.  L'exemple suivant change l'apparence d'un bouton de barre d'outils en fonction de la valeur de la propriété <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>.  Le bouton de barre d'outils ne sera mis à jour que lorsque le point d'insertion sera déplacé dans le contrôle.  
+1.  Écrire du code dans le <xref:System.Windows.Forms.RichTextBox.SelectionChanged> Gestionnaire d’événements pour effectuer une action appropriée en fonction de la valeur de l’attribut. L’exemple suivant modifie l’apparence d’un bouton de barre d’outils en fonction de la valeur de la <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> propriété. Le bouton de barre d’outils est actualisé seulement lorsque le point d’insertion est placé dans le contrôle.  
   
-     L'exemple ci\-dessous illustre un formulaire avec un contrôle <xref:System.Windows.Forms.RichTextBox> et un contrôle <xref:System.Windows.Forms.ToolBar> contenant un bouton de barre d'outils.  Pour plus d'informations sur les barres d'outils et les boutons de barre d'outils, consultez [Comment : ajouter des boutons à un contrôle ToolBar](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).  
+     L’exemple ci-dessous illustre un formulaire avec un <xref:System.Windows.Forms.RichTextBox> contrôle et un <xref:System.Windows.Forms.ToolBar> contrôle qui contient un bouton de barre d’outils. Pour plus d’informations sur les barres d’outils et des boutons de barre d’outils, consultez [Comment : ajouter des boutons à un contrôle de barre d’outils](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).  
   
     ```vb  
     ' The following code assumes the existence of a toolbar control  
@@ -45,7 +49,6 @@ Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms est souvent u
            ToolBarButton1.Pushed = False  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -65,7 +68,6 @@ Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms est souvent u
           toolBarButton1.Pushed = false;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -88,8 +90,8 @@ Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms est souvent u
        }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.RichTextBox.SelectionChanged>   
- <xref:System.Windows.Forms.RichTextBox>   
- [RichTextBox, contrôle](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.RichTextBox.SelectionChanged>  
+ <xref:System.Windows.Forms.RichTextBox>  
+ [RichTextBox, contrôle](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

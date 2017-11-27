@@ -1,202 +1,203 @@
 ---
-title: "Proc&#233;dure pas &#224; pas&#160;: organisation des contr&#244;les dans les Windows Forms &#224; l&#39;aide d&#39;un TableLayoutPanel | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), disposer avec TableLayoutPanel"
-  - "TableLayoutPanel (contrôle Windows Forms), procédures pas à pas"
-  - "contrôles Windows Forms, réorganiser"
+title: "Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], arranging with TableLayoutPanel
+- TableLayoutPanel control [Windows Forms], walkthroughs
+- Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-caps.latest.revision: 28
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b2d5c07be4ddebc3bfaa8c1979b39e3ef172a428
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure pas &#224; pas&#160;: organisation des contr&#244;les dans les Windows Forms &#224; l&#39;aide d&#39;un TableLayoutPanel
-Certaines applications exigent un formulaire dont la disposition se réorganise de manière appropriée lorsque le formulaire est redimensionné ou lorsque la taille de son contenu change.  Lorsque vous avez besoin d'une disposition dynamique et que vous ne souhaitez pas gérer explicitement des événements <xref:System.Windows.Forms.Control.Layout> dans votre code, pensez à utiliser un panneau de disposition.  
+# <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel
+Certaines applications exigent un formulaire dont la disposition s’organise de manière appropriée à mesure que le formulaire est redimensionné ou que le contenu change de taille. Si vous avez besoin d’une disposition dynamique et que vous ne souhaitez pas gérer les événements <xref:System.Windows.Forms.Control.Layout> explicitement dans votre code, envisagez d’utiliser un panneau de disposition.  
   
- Le contrôle <xref:System.Windows.Forms.FlowLayoutPanel> et le contrôle <xref:System.Windows.Forms.TableLayoutPanel> offrent des moyens intuitifs de réorganisation des contrôles sur votre formulaire.  Les deux fournissent la capacité automatique et configurable de contrôler les positions relatives des contrôles enfants qu'ils contiennent, et les deux offrent des fonctions de disposition dynamique au moment de l'exécution ; ils peuvent donc redimensionner et repositionner les contrôles enfants lorsque les dimensions du formulaire parent changent.  Les panneaux de disposition peuvent être imbriqués dans des panneaux de disposition pour permettre la réalisation d'interfaces utilisateur sophistiquées.  
+ Les contrôles <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> vous permettent d’organiser de manière intuitive les contrôles sur votre formulaire. Tous deux vous permettent de contrôler automatiquement et de configurer la position relative des contrôles enfants qu’ils contiennent, et l’un et l’autre proposent des fonctionnalités de disposition dynamique au moment de l’exécution qui leur permettent de redimensionner et repositionner les contrôles enfants à mesure que les dimensions du formulaire parent changent. Les panneaux de disposition peuvent être imbriqués dans d’autres panneaux de disposition, ce qui permet de créer des interfaces utilisateur sophistiquées.  
   
- Le <xref:System.Windows.Forms.FlowLayoutPanel> réorganise son contenu dans un sens spécifique du flux : horizontal ou vertical.  Son contenu peut être encapsulé d'une ligne à la suivante, ou d'une colonne à la suivante.  Alternativement, son contenu peut être découpé au lieu d'être encapsulé.  Pour plus d'informations, consultez [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
+ <xref:System.Windows.Forms.FlowLayoutPanel> organise son contenu dans un sens de flux spécifique : horizontal ou vertical. Vous pouvez encapsuler son contenu d'une ligne à la suivante ou d'une colonne à la suivante. Vous pouvez également découper son contenu au lieu de l'encapsuler. Pour plus d’informations, consultez [procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide un FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
   
- Le <xref:System.Windows.Forms.TableLayoutPanel> réorganise son contenu dans une grille, en fournissant ainsi des fonctionnalités semblables à l'élément HTML \<table\>.  Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> vous permet de placer des contrôles dans une présentation grille sans requérir que vous spécifiiez précisément la position de chaque contrôle individuel.  Ses cellules sont disposées en lignes et colonnes, et ceux\-ci peuvent avoir des tailles différentes.  Les cellules peuvent être fusionnées à travers les lignes et colonnes.  Les cellules peuvent contenir tout ce qu'un formulaire peut contenir et se comportent dans la plupart des cas comme des conteneurs.  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> réorganise son contenu dans une grille, en fournissant des fonctionnalités similaires à l’élément HTML \<table > élément. Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle vous permet de placer des contrôles dans une disposition en grille sans avoir à spécifier précisément la position de chaque contrôle. Ses cellules sont organisées dans des lignes et des colonnes dont la taille peut varier. Les cellules peuvent être fusionnés dans les lignes et colonnes. Cellules peuvent contenir tout élément à un formulaire peut contenir et se comportent dans la plupart des autres égards comme des conteneurs.  
   
- Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> fournit également une fonction de redimensionnant proportionnel au moment de l'exécution ; votre disposition peut donc changer doucement lorsque votre formulaire est redimensionné.  Cela rend le contrôle <xref:System.Windows.Forms.TableLayoutPanel> parfaitement adapté aux objectifs tels que les formulaires de saisie de données et les applications localisées.  Pour plus d'informations, consultez [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/fr-fr/e193b4fc-912a-4917-b036-b76c7a6f58ab) et [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/fr-fr/c5240b6e-aaca-4286-9bae-778a416edb9c).  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle fournit également une fonction de redimensionnement proportionnel au moment de l’exécution pour permettre à votre disposition de modifier facilement lorsque votre formulaire est redimensionné. Cela rend la <xref:System.Windows.Forms.TableLayoutPanel> contrôle convient particulièrement pour des opérations telles que les formulaires de saisie de données et les applications localisées. Pour plus d’informations, consultez [procédure pas à pas : création d’un Windows Form redimensionnable pour l’entrée de données](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab) et [procédure pas à pas : création d’un formulaire Windows localisable](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c).  
   
- En général, vous ne devez pas utiliser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> comme conteneur pour la disposition entière.  Utilisez des contrôles <xref:System.Windows.Forms.TableLayoutPanel> pour fournir des fonctions de redimensionnant proportionnel aux parties de la disposition.  
+ En règle générale, vous ne devez pas utiliser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle comme conteneur pour la disposition entière. Utilisez <xref:System.Windows.Forms.TableLayoutPanel> pour fournir des fonctions de redimensionnement proportionnel aux parties de la disposition des contrôles.  
   
- Cette procédure pas à pas illustre les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
--   Création d'un projet Windows Forms  
+-   Création d’un projet Windows Forms  
   
--   Réorganisation des contrôles dans les lignes et les colonnes  
+-   Organisation des contrôles dans des lignes et colonnes  
   
--   Définition des propriétés des lignes et des colonnes  
+-   Ligne de paramètre et les propriétés de colonne  
   
--   Étendue de lignes et de colonnes avec un contrôle  
+-   Étendue de lignes et colonnes avec un contrôle  
   
 -   Gestion automatique des dépassements de capacité  
   
--   Insertion de contrôles par un double\-clic dans la boîte à outils  
+-   Insertion de contrôles en double-cliquant dessus dans la boîte à outils  
   
--   Insertion d'un contrôle en dessinant son plan  
+-   Insertion d’un contrôle en dessinant son contour  
   
 -   Réassignation de contrôles existants à un parent différent  
   
- Lorsque vous aurez terminé, vous aurez assimilé le fonctionnement du rôle joué par ces importantes fonctionnalités de disposition.  
+ À l’issue de cette procédure, vous comprendrez le rôle joué par ces fonctionnalités de disposition importantes.  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.  Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils**.  Pour plus d'informations, consultez [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/fr-fr/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
-## Création du projet  
- La première étape consiste à créer le projet et configurer le formulaire.  
+## <a name="creating-the-project"></a>Création du projet  
+ La première étape consiste à créer le projet et à configurer le formulaire.  
   
-#### Pour créer le projet  
+#### <a name="to-create-the-project"></a>Pour créer le projet  
   
-1.  Créez un projet d'application Windows appelé « TableLayoutPanelExample ».  Pour plus d'informations, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/fr-fr/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1.  Créez un projet d’Application Windows appelé « TableLayoutPanelExample ». Pour plus d’informations, consultez [Comment : créer un projet d’Application Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) .  
   
-2.  Sélectionnez le formulaire dans le **Concepteur Windows** **Forms**.  
+2.  Sélectionnez le formulaire dans le **Windows** **Concepteur Forms**.  
   
-## Réorganisation des contrôles dans les lignes et les colonnes  
- Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> vous permet de réorganiser facilement des contrôles dans les lignes et colonnes.  
+## <a name="arranging-controls-in-rows-and-columns"></a>Organisation des contrôles dans des lignes et colonnes  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle vous permet de réorganiser facilement des contrôles en lignes et colonnes.  
   
-#### Pour réorganiser des contrôles dans les lignes et les colonnes à l'aide d'un TableLayoutPanel  
+#### <a name="to-arrange-controls-in-rows-and-columns-using-a-tablelayoutpanel"></a>Pour disposer les contrôles dans des lignes et colonnes à l’aide d’un TableLayoutPanel  
   
-1.  Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **Boîte à outils** vers votre formulaire.  Notez que, par défaut, le contrôle <xref:System.Windows.Forms.TableLayoutPanel> a quatre cellules.  
+1.  Faites glisser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle depuis la **boîte à outils** vers votre formulaire. Notez que, par défaut, le <xref:System.Windows.Forms.TableLayoutPanel> contrôle comporte quatre cellules.  
   
-2.  Faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **Boîte à outils** dans le contrôle <xref:System.Windows.Forms.TableLayoutPanel> et déposez\-le dans l'une des cellules.  Notez que le contrôle <xref:System.Windows.Forms.Button> est créé dans la cellule que vous avez sélectionnée.  
+2.  Faites glisser un <xref:System.Windows.Forms.Button> contrôler à partir de la **boîte à outils** dans le <xref:System.Windows.Forms.TableLayoutPanel> contrôler et déposez-le dans une des cellules. Notez que le <xref:System.Windows.Forms.Button> contrôle est créé dans la cellule sélectionnée.  
   
-3.  Faites glisser trois autres contrôles <xref:System.Windows.Forms.Button> de la **Boîte à outils** vers le contrôle <xref:System.Windows.Forms.TableLayoutPanel>, afin que chaque cellule contienne un bouton.  
+3.  Faites glisser trois autres <xref:System.Windows.Forms.Button> des contrôles de la **boîte à outils** dans le <xref:System.Windows.Forms.TableLayoutPanel> contrôler, afin que chaque cellule contienne un bouton.  
   
-4.  Attrapez la poignée de redimensionnement verticale entre les deux colonnes et déplacez\-la à gauche.  Notez que les contrôles <xref:System.Windows.Forms.Button> dans la première colonne sont redimensionnés selon une plus petite largeur, alors que la taille des contrôles <xref:System.Windows.Forms.Button> dans la deuxième colonne est inchangée.  
+4.  Saisissez la poignée de redimensionnement verticale entre les deux colonnes et déplacez-le vers la gauche. Notez que la <xref:System.Windows.Forms.Button> contrôles dans la première colonne sont redimensionnés à une plus petite largeur, lors de la taille de la <xref:System.Windows.Forms.Button> des contrôles dans la deuxième colonne est inchangée.  
   
-5.  Attrapez la poignée de redimensionnement verticale entre les deux colonnes et déplacez\-la à droite.  Notez que les contrôles <xref:System.Windows.Forms.Button> dans la première colonne retournent à leur taille d'origine, alors que les contrôles <xref:System.Windows.Forms.Button> dans la deuxième colonne sont déplacés à droite.  
+5.  Saisissez la poignée de redimensionnement verticale entre les deux colonnes et déplacez-le vers la droite. Notez que la <xref:System.Windows.Forms.Button> contrôles dans la première colonne retournent à leur taille d’origine, tandis que le <xref:System.Windows.Forms.Button> contrôles dans la deuxième colonne sont déplacés vers la droite.  
   
-6.  Déplacez la poignée de redimensionnement horizontale vers le haut et le bas pour constater l'effet sur les contrôles dans le panneau.  
+6.  Déplacer la poignée de redimensionnement horizontal pour voir les effets sur les contrôles dans le panneau de configuration.  
   
-## Positionnement des contrôles dans les cellules à l'aide de l'amarrage et de l'ancrage  
- Le comportement d'ancrage des contrôles enfants dans un <xref:System.Windows.Forms.TableLayoutPanel> diffère du comportement dans d'autres contrôles conteneur.  Le comportement d'amarrage des contrôles enfants est le même que d'autres contrôles conteneur.  
+## <a name="positioning-controls-within-cells-using-docking-and-anchoring"></a>Positionnement des contrôles dans les cellules à l’aide d’ancrage  
+ Le comportement d’ancrage des contrôles enfants dans un <xref:System.Windows.Forms.TableLayoutPanel> diffère du comportement des autres contrôles conteneurs. Le comportement d’ancrage des contrôles enfants est le même que d’autres contrôles conteneur.  
   
-#### Positionnement des contrôles dans les cellules  
+#### <a name="positioning-controls-within-cells"></a>Positionnement des contrôles dans les cellules  
   
-1.  Sélectionnez le premier contrôle <xref:System.Windows.Forms.Button>.  Affectez à sa propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle>.  Notez que le contrôle <xref:System.Windows.Forms.Button> se développe pour remplir sa cellule.  
+1.  Sélectionnez le premier <xref:System.Windows.Forms.Button> contrôle. Remplacez la valeur de sa propriété <xref:System.Windows.Forms.Control.Dock%2A> par <xref:System.Windows.Forms.DockStyle.Fill>. Notez que le <xref:System.Windows.Forms.Button> contrôle se développe pour remplir sa cellule.  
   
-2.  Sélectionnez l'un des autres contrôles <xref:System.Windows.Forms.Button>.  Affectez à sa propriété <xref:System.Windows.Forms.Control.Anchor%2A> la valeur <xref:System.Windows.Forms.AnchorStyles>.  Notez qu'il est déplacé afin que sa bordure droite soit près de la bordure droite de la cellule.  La distance entre les bordures est la somme de la propriété <xref:System.Windows.Forms.Control.Margin%2A> du contrôle <xref:System.Windows.Forms.Button> et de la propriété <xref:System.Windows.Forms.Control.Padding%2A> du panneau.  
+2.  Sélectionnez une des autres <xref:System.Windows.Forms.Button> contrôles. Remplacez la valeur de sa propriété <xref:System.Windows.Forms.Control.Anchor%2A> par <xref:System.Windows.Forms.AnchorStyles.Right>. Notez qu’il est déplacé afin que sa bordure droite soit près de la bordure droite de la cellule. La distance entre les bordures est la somme de la <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Margin%2A> propriété et du panneau <xref:System.Windows.Forms.Control.Padding%2A> propriété.  
   
-3.  Attribuez à la propriété <xref:System.Windows.Forms.Control.Anchor%2A> du contrôle <xref:System.Windows.Forms.Button> les valeurs <xref:System.Windows.Forms.AnchorStyles> et <xref:System.Windows.Forms.AnchorStyles>.  Notez que le contrôle est dimensionné selon la largeur de la cellule, avec les valeurs <xref:System.Windows.Forms.Control.Margin%2A> et <xref:System.Windows.Forms.Control.Padding%2A> prises en considération.  
+3.  Modifiez la valeur de la <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Anchor%2A> propriété <xref:System.Windows.Forms.AnchorStyles.Right> et <xref:System.Windows.Forms.AnchorStyles.Left>. Notez que le contrôle est dimensionné à la largeur de la cellule, avec les <xref:System.Windows.Forms.Control.Margin%2A> et <xref:System.Windows.Forms.Control.Padding%2A> valeurs prises en compte.  
   
-4.  Répétez les étapes 2 et 3 avec les styles <xref:System.Windows.Forms.AnchorStyles> et <xref:System.Windows.Forms.AnchorStyles>.  
+4.  Répétez les étapes 2 et 3 avec le <xref:System.Windows.Forms.AnchorStyles.Top> et <xref:System.Windows.Forms.AnchorStyles.Bottom> styles.  
   
-## Définition des propriétés des lignes et des colonnes  
- Vous pouvez définir des propriétés individuelles de lignes et colonnes en utilisant les collections <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> et <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>.  
+## <a name="setting-row-and-column-properties"></a>Ligne de paramètre et les propriétés de colonne  
+ Vous pouvez définir des propriétés individuelles de lignes et colonnes à l’aide de la <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> et <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collections.  
   
-#### Pour définir des propriétés de lignes et de colonnes  
+#### <a name="to-set-row-and-column-properties"></a>Pour définir les propriétés de ligne et de colonne  
   
-1.  Sélectionnez le contrôle <xref:System.Windows.Forms.TableLayoutPanel> dans le **Concepteur Windows Forms**.  
+1.  Sélectionnez le <xref:System.Windows.Forms.TableLayoutPanel> contrôler dans le **Concepteur Windows Forms**.  
   
-2.  Dans les fenêtres **Propriétés**, ouvrez la collection <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> en cliquant sur le bouton de sélection \(![Capture d'écran VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) à côté de l'entrée **Colonnes**.  
+2.  Dans le **propriétés** windows, ouvrez le <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection en cliquant sur le bouton de sélection (![capture d’écran de VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) bouton à côté du **colonnes** entrée.  
   
-3.  Sélectionnez la première colonne et modifiez la valeur de sa propriété <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> en <xref:System.Windows.Forms.SizeType>.  Cliquez sur **OK** pour accepter les modifications.  Notez que la largeur de la première colonne est réduite pour contenir le contrôle <xref:System.Windows.Forms.Button>.  Notez également que la largeur de la colonne n'est pas redimensionnable.  
+3.  Sélectionnez la première colonne et modifiez la valeur de sa <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> propriété <xref:System.Windows.Forms.SizeType.AutoSize>. Cliquez sur **OK** pour accepter la modification. Notez que la largeur de la première colonne est réduite pour s’ajuster à la <xref:System.Windows.Forms.Button> contrôle. Notez également que la largeur de la colonne n’est pas redimensionnable.  
   
-4.  Dans la fenêtre **Propriétés**, ouvrez la collection <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> et sélectionnez la première colonne.  Affectez à sa propriété <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> la valeur <xref:System.Windows.Forms.SizeType>.  Cliquez sur **OK** pour accepter les modifications.  Redimensionnez le contrôle <xref:System.Windows.Forms.TableLayoutPanel> à une plus grande largeur et remarquez que la largeur de la première colonne se développe.  Redimensionnez le contrôle <xref:System.Windows.Forms.TableLayoutPanel> à une plus petite largeur et remarquez que les boutons dans la première colonne sont dimensionnés de façon à tenir dans la cellule.  Notez également que la largeur de la colonne est redimensionnable.  
+4.  Dans le **propriétés** fenêtre, ouvrez le <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection et sélectionnez la première colonne. Modifiez la valeur de sa <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> propriété <xref:System.Windows.Forms.SizeType.Percent>. Cliquez sur **OK** pour accepter la modification. Redimensionner le <xref:System.Windows.Forms.TableLayoutPanel> le contrôle à une plus grande largeur et remarquez que la largeur de la première colonne se développe. Redimensionner le <xref:System.Windows.Forms.TableLayoutPanel> le contrôle à une plus petite largeur et remarquez que les boutons de la première colonne sont dimensionnés pour s’ajuster à la cellule. Notez également que la largeur de la colonne est redimensionnable.  
   
-5.  Dans la fenêtre **Propriétés**, ouvrez la collection <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> et sélectionnez toutes les colonnes répertoriées.  Affectez à chaque propriété <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> la valeur <xref:System.Windows.Forms.SizeType>.  Cliquez sur **OK** pour accepter les modifications.  Répétez avec la collection <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A>.  
+5.  Dans le **propriétés** fenêtre, ouvrez le <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection et sélectionnez toutes les colonnes répertoriées. Définir la valeur de chaque <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> propriété <xref:System.Windows.Forms.SizeType.Percent>. Cliquez sur **OK** pour accepter la modification. Répétez l’opération avec le <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> collection.  
   
-6.  Saisissez l'une des poignées de redimensionnement et redimensionnez à la fois la largeur et la hauteur du contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  Notez que les lignes et les colonnes sont redimensionnées lorsque la taille de contrôle <xref:System.Windows.Forms.TableLayoutPanel> change.  Notez également que les lignes et les colonnes sont redimensionnables avec les poignées de dimensionnement horizontale et verticale.  
+6.  Saisissez une des poignées de redimensionnement et de redimensionner la largeur et la hauteur de la <xref:System.Windows.Forms.TableLayoutPanel> contrôle. Notez que les lignes et colonnes sont redimensionnés en tant que le <xref:System.Windows.Forms.TableLayoutPanel> modifications de la taille du contrôle. Notez également que les lignes et colonnes sont redimensionnables avec horizontal et vertical de poignées de redimensionnement.  
   
-## Étendue de lignes et de colonnes avec un contrôle  
- Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> ajoute plusieurs nouvelles propriétés aux contrôles au moment du design.  `RowSpan` et `ColumnSpan` sont deux de ces propriétés.  Vous pouvez utiliser ces propriétés pour étendre un contrôle sur plusieurs lignes ou colonnes.  
+## <a name="spanning-rows-and-columns-with-a-control"></a>Étendue de lignes et colonnes avec un contrôle  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle ajoute plusieurs nouvelles propriétés aux contrôles au moment du design. Deux de ces propriétés sont `RowSpan` et `ColumnSpan`. Vous pouvez utiliser ces propriétés pour définir un intervalle de contrôle plus d’une ligne ou une colonne.  
   
-#### Pour couvrir plusieurs lignes et des colonnes avec un contrôle  
+#### <a name="to-span-rows-and-columns-with-a-control"></a>Pour étendre des lignes et colonnes avec un contrôle  
   
-1.  Sélectionnez le contrôle <xref:System.Windows.Forms.Button> dans la première ligne et la première colonne.  
+1.  Sélectionnez le <xref:System.Windows.Forms.Button> contrôle dans la première ligne et la première colonne.  
   
-2.  Dans la fenêtre **Propriétés**, remplacez la valeur de la propriété `ColumnSpan` par 2.  Notez que le contrôle <xref:System.Windows.Forms.Button> remplit la première colonne et la deuxième colonne.  Notez également qu'une ligne supplémentaire a été ajoutée pour tenir compte de cette modification.  
+2.  Dans le **propriétés** windows, remplacez la valeur de la `ColumnSpan` propriété **2**. Notez que le <xref:System.Windows.Forms.Button> contrôle remplit la première colonne et la deuxième colonne. Notez également qu’une ligne supplémentaire a été ajoutée pour prendre en charge cette modification.  
   
-3.  Répétez l'étape 2 pour la propriété `RowSpan`.  
+3.  Répétez l’étape 2 pour le `RowSpan` propriété.  
   
-## Insertion de contrôles par un double\-clic dans la boîte à outils  
- Vous pouvez remplir votre <xref:System.Windows.Forms.TableLayoutPanel> contrôle en double\-cliquant sur les contrôles de la **Boîte à outils**.  
+## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>Insertion de contrôles en double-cliquant dessus dans la boîte à outils  
+ Vous pouvez remplir votre <xref:System.Windows.Forms.TableLayoutPanel> contrôle en double-cliquant sur les contrôles dans le **boîte à outils**.  
   
-#### Pour insérer des contrôles par un double\-clic dans la boîte à outils  
+#### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>Pour insérer des contrôles en double-cliquant dessus dans la boîte à outils  
   
-1.  Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **Boîte à outils** vers votre formulaire.  
+1.  Faites glisser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle depuis la **boîte à outils** vers votre formulaire.  
   
-2.  Double\-cliquez sur l'icône du contrôle <xref:System.Windows.Forms.Button> dans la **Boîte à outils**.  Notez qu'un nouveau contrôle de bouton apparaît dans la première cellule du contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  
+2.  Double-cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> dans la **boîte à outils**. Notez qu’un nouveau contrôle de bouton apparaît dans le <xref:System.Windows.Forms.TableLayoutPanel> première cellule du contrôle.  
   
-3.  Double\-cliquez sur plusieurs autres contrôles dans la **Boîte à outils**.  Notez que les nouveaux contrôles apparaissent successivement dans les cellules inoccupées du contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  Notez également que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> se développe pour tenir compte des nouveaux contrôles si aucune cellule ouverte n'est disponible.  
+3.  Double-cliquez sur plusieurs autres contrôles dans la **boîte à outils**. Notez que les nouveaux contrôles apparaissent successivement dans le <xref:System.Windows.Forms.TableLayoutPanel> cellules inoccupé du contrôle. Notez également que le <xref:System.Windows.Forms.TableLayoutPanel> contrôle s’étend pour prendre en charge les nouveaux contrôles si aucune cellule ouverte n’est disponible.  
   
-## Gestion automatique des dépassements de capacité  
- Lorsque vous insérez des contrôles dans le contrôle <xref:System.Windows.Forms.TableLayoutPanel>, vous pouvez manquer de cellules vides pour vos nouveaux contrôles.  Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> gère cette situation automatiquement en augmentant le nombre de cellules.  
+## <a name="automatic-handling-of-overflows"></a>Gestion automatique des dépassements de capacité  
+ Lorsque vous insérez des contrôles dans le <xref:System.Windows.Forms.TableLayoutPanel> (contrôle), vous pouvez exécuter en dehors des cellules vides pour vos nouveaux contrôles. Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle gère cette situation automatiquement en augmentant le nombre de cellules.  
   
-#### Pour observer la gestion automatique des dépassements de capacité  
+#### <a name="to-observe-automatic-handling-of-overflows"></a>Pour observer la gestion automatique des dépassements de capacité  
   
-1.  S'il y a encore des cellules vides dans le contrôle <xref:System.Windows.Forms.TableLayoutPanel>, continuez à insérer de nouveaux contrôles <xref:System.Windows.Forms.Button> jusqu'à ce que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> soit complet.  
+1.  S’il existe encore des cellules vides dans le <xref:System.Windows.Forms.TableLayoutPanel> contrôler, continuez à insérer de nouveaux <xref:System.Windows.Forms.Button> contrôle jusqu'à ce que le <xref:System.Windows.Forms.TableLayoutPanel> contrôle est plein.  
   
-2.  Une fois que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> est complet, double\-cliquez sur l'icône <xref:System.Windows.Forms.Button> dans la **Boîte à outils** pour insérer un autre contrôle <xref:System.Windows.Forms.Button>.  Notez que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> crée de nouvelles cellules pour tenir compte du nouveau contrôle.  Insérez d'autres contrôles et observez le comportement de redimensionnement.  
+2.  Une fois la <xref:System.Windows.Forms.TableLayoutPanel> contrôle est plein, double-cliquez sur le <xref:System.Windows.Forms.Button> icône dans le **boîte à outils** pour insérer un autre <xref:System.Windows.Forms.Button> contrôle. Notez que le <xref:System.Windows.Forms.TableLayoutPanel> contrôle crée de nouvelles cellules pour tenir compte du nouveau contrôle. Insérer d’autres contrôles et observez le comportement de redimensionnement.  
   
-3.  Affectez à la propriété <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> du contrôle <xref:System.Windows.Forms.TableLayoutPanel> la valeur <xref:System.Windows.Forms.TableLayoutPanelGrowStyle>.  Double\-cliquez sur l'icône <xref:System.Windows.Forms.Button> dans la **Boîte à outils** pour insérer des contrôles <xref:System.Windows.Forms.Button> jusqu'à ce que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> soit complet.  Double\-cliquez de nouveau sur l'icône <xref:System.Windows.Forms.Button> dans la **Boîte à outils**.  Remarquez que vous obtenez un message d'erreur du **Concepteur Windows Forms** qui vous informe qu'il n'est pas possible de créer des lignes et des colonnes supplémentaires.  
+3.  Affectez la valeur <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize> à la propriété <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> du contrôle <xref:System.Windows.Forms.TableLayoutPanel>. Double-cliquez sur le <xref:System.Windows.Forms.Button> icône dans le **boîte à outils** à insérer <xref:System.Windows.Forms.Button> contrôle jusqu'à ce que le <xref:System.Windows.Forms.TableLayoutPanel> contrôle est plein. Double-cliquez sur le <xref:System.Windows.Forms.Button> icône dans le **boîte à outils** à nouveau. Notez que vous recevez un message d’erreur à partir de la **Concepteur Windows Forms** vous informant que les lignes et colonnes supplémentaires ne peut pas être créés.  
   
-## Insertion d'un contrôle en dessinant son plan  
- Vous pouvez insérer un contrôle dans un contrôle <xref:System.Windows.Forms.TableLayoutPanel> et spécifier sa taille en dessinant son plan dans une cellule.  
+## <a name="inserting-a-control-by-drawing-its-outline"></a>Insertion d’un contrôle en dessinant son contour  
+ Vous pouvez insérer un contrôle dans un <xref:System.Windows.Forms.TableLayoutPanel> contrôler et spécifier sa taille en dessinant son contour dans une cellule.  
   
-#### Pour insérer un contrôle en dessinant son plan  
+#### <a name="to-insert-a-control-by-drawing-its-outline"></a>Pour insérer un contrôle en dessinant son contour  
   
-1.  Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **Boîte à outils** vers votre formulaire.  
+1.  Faites glisser un <xref:System.Windows.Forms.TableLayoutPanel> contrôle depuis la **boîte à outils** vers votre formulaire.  
   
-2.  Dans la **Boîte à outils**, cliquez sur l'icône du contrôle <xref:System.Windows.Forms.Button>.  Ne le faites pas glisser sur le formulaire.  
+2.  Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.  
   
-3.  Placez le pointeur de la souris sur le contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  Notez que le pointeur se transforme en croix avec l'icône du contrôle <xref:System.Windows.Forms.Button> jointe.  
+3.  Déplacez le pointeur de la souris sur le <xref:System.Windows.Forms.TableLayoutPanel> contrôle. Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.Button> .  
   
 4.  Cliquez et maintenez le bouton de la souris enfoncé.  
   
-5.  Faites glisser le pointeur de la souris pour dessiner le plan du contrôle <xref:System.Windows.Forms.Button>.  Lorsque la taille vous convient, relâchez le bouton de souris.  Notez que le contrôle <xref:System.Windows.Forms.Button> est créé dans la cellule dans laquelle vous avez dessiné le plan du contrôle.  
+5.  Faites glisser le pointeur de la souris pour tracer le contour du contrôle <xref:System.Windows.Forms.Button> . Quand la taille vous convient, relâchez le bouton de la souris. Notez que le <xref:System.Windows.Forms.Button> contrôle est créé dans la cellule dans laquelle vous avez dessiné le plan du contrôle.  
   
-## Les contrôles multiples dans les cellules ne sont pas autorisés  
- Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> ne peut contenir qu'un seul contrôle enfant par cellule.  
+## <a name="multiple-controls-within-cells-are-not-permitted"></a>Plusieurs contrôles dans les cellules ne sont pas autorisées.  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle peut contenir uniquement un seul contrôle enfant par cellule.  
   
-#### Pour montrer que les contrôles multiples dans les cellules ne sont pas autorisés  
+#### <a name="to-demonstrate-that-multiple-controls-within-cells-are-not-permitted"></a>Pour illustrer que plusieurs contrôles dans les cellules ne sont pas autorisées  
   
--   Faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **Boîte à outils** dans le contrôle <xref:System.Windows.Forms.TableLayoutPanel> et déposez\-le dans l'une des cellules occupées.  Notez que le contrôle <xref:System.Windows.Forms.TableLayoutPanel> ne vous permet pas de déposer le contrôle <xref:System.Windows.Forms.Button> dans la cellule occupée.  
+-   Faites glisser un <xref:System.Windows.Forms.Button> contrôle depuis la **boîte à outils** dans le <xref:System.Windows.Forms.TableLayoutPanel> contrôler et déposez-le dans une des cellules occupées. Notez que la <xref:System.Windows.Forms.TableLayoutPanel> contrôle ne vous permet pas de supprimer le <xref:System.Windows.Forms.Button> contrôle dans la cellule occupée.  
   
-## Échange de contrôles  
- Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> vous permet d'échanger des contrôles qui occupent deux cellules différentes.  
+## <a name="swapping-controls"></a>Échange de contrôles  
+ Le <xref:System.Windows.Forms.TableLayoutPanel> contrôle vous permet d’échanger des contrôles occupée par les deux cellules différentes.  
   
-#### Pour échanger des contrôles  
+#### <a name="to-swap-controls"></a>Permutation des contrôles  
   
--   Faites glisser l'un des contrôles <xref:System.Windows.Forms.Button> d'une cellule occupée et déposez\-le sur une autre cellule occupée.  Notez que les deux contrôles sont déplacés d'une cellule dans l'autre.  
+-   Faites glisser un de le <xref:System.Windows.Forms.Button> contrôles cellule occupée et déposez-le sur une autre cellule occupée. Notez que les deux contrôles sont déplacés à partir d’une cellule dans l’autre.  
   
-## Étapes suivantes  
- Vous pouvez obtenir une disposition complexe à l'aide d'une combinaison de panneaux de disposition et de contrôles.  Voici quelques suggestions pour une exploration plus approfondie :  
+## <a name="next-steps"></a>Étapes suivantes  
+ Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Voici quelques suggestions à explorer :  
   
--   Essayez de redimensionner l'un des contrôles <xref:System.Windows.Forms.Button> à une plus grande taille et notez l'effet produit sur la disposition.  
+-   Essayez de redimensionner l’un de le <xref:System.Windows.Forms.Button> à une taille plus grande et notez l’effet sur la disposition des contrôles.  
   
--   Collez une sélection de plusieurs contrôles dans le contrôle <xref:System.Windows.Forms.TableLayoutPanel> et notez comment les contrôles sont insérés.  
+-   Collez une sélection de plusieurs contrôles dans le <xref:System.Windows.Forms.TableLayoutPanel> contrôler et notez la façon dont les contrôles sont insérés.  
   
--   Les panneaux de disposition peuvent contenir d'autres panneaux de disposition.  Essayez de déposer un contrôle <xref:System.Windows.Forms.TableLayoutPanel> dans le contrôle existant.  
+-   Les panneaux de disposition peuvent contenir d’autres panneaux de disposition. Faites l’expérience de déposer un contrôle <xref:System.Windows.Forms.TableLayoutPanel> dans le contrôle existant.  
   
--   Ancrez le contrôle <xref:System.Windows.Forms.TableLayoutPanel> au formulaire parent.  Redimensionnez le formulaire et notez l'effet produit sur la disposition.  
+-   Ancrer le <xref:System.Windows.Forms.TableLayoutPanel> contrôle au formulaire parent. Redimensionnez le formulaire et observez-en l’effet sur la disposition.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.FlowLayoutPanel>   
- <xref:System.Windows.Forms.TableLayoutPanel>   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide des lignes d'alignement \(SnapLines\)](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [Microsoft Windows User Experience, Official Guidelines for User Interface Developers and Designers. Redmond, WA: Microsoft Press, 1999. \(USBN: 0\-7356\-0566\-1\)](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)   
- [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/fr-fr/e193b4fc-912a-4917-b036-b76c7a6f58ab)   
- [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/fr-fr/c5240b6e-aaca-4286-9bae-778a416edb9c)   
- [Meilleures pratiques pour le contrôle TableLayoutPanel](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)   
- [Vue d'ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.FlowLayoutPanel>  
+ <xref:System.Windows.Forms.TableLayoutPanel>  
+ [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [Expérience utilisateur Microsoft Windows, Recommandations officielles à destination des développeurs et des concepteurs d’interfaces utilisateur. Redmond, WA: Microsoft Press, 1999. (USBN : 0-7356-0566-1)](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)  
+ [Procédure pas à pas : création d’un Windows Form redimensionnable pour l’entrée de données](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab)  
+ [Procédure pas à pas : Création d’un formulaire Windows localisable](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c)  
+ [Meilleures pratiques pour le contrôle TableLayoutPanel](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)  
+ [Vue d’ensemble de la propriété AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [Guide pratique pour fixer des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ [Guide pratique pour ancrer des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
  [Procédure pas à pas : disposition des contrôles Windows Forms avec les propriétés Padding, Margins et AutoSize](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)

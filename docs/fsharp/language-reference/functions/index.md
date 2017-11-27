@@ -1,6 +1,6 @@
 ---
 title: Fonctions (F#)
-description: Fonctions (F#)
+description: 'En savoir plus sur les fonctions dans F # et comment F # prend en charge les constructions de programmation fonctionnelle courants.'
 keywords: visual f#, f#, programmation fonctionnelle
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 7a5fff4746157b430c6f1a492c23e9ea3d7b82c3
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: 9750e37647a3e382c7a8308c3ffede15729012d8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="functions"></a>Fonctions
 
 Les fonctions sont l’unité fondamentale de l’exécution d’un programme dans tout langage de programmation. Comme dans d’autres langages, une fonction F# a un nom, peut avoir des paramètres et accepter des arguments, et contient un corps. F# prend également en charge des constructions de programmation fonctionnelle, telles que le traitement des fonctions comme valeurs, l’utilisation de fonctions sans nom dans les expressions, la composition de fonctions pour former de nouvelles fonctions, les fonctions curryfiées et la définition implicite de fonctions par l’intermédiaire de l’application partielle d’arguments de fonction.
@@ -116,7 +115,7 @@ Vous fournissez ensuite, selon vos besoins, l’argument supplémentaire pour le
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet107.fs)]
     
 ## <a name="recursive-functions"></a>Fonctions récursives
-Les *fonctions récursives* sont des fonctions qui s’appellent. Elles nécessitent la spécification du mot clé **rec** après le mot clé **let**. Appelez la fonction récursive à partir du corps de la fonction, comme vous le feriez pour tout autre appel de fonction. La fonction récursive suivante calcule le *n*e nombre de Fibonacci. La séquence de nombres de Fibonacci est connue depuis l’antiquité ; il s’agit d’une séquence dans laquelle chaque nombre consécutif est la somme des deux nombres précédents dans la séquence.
+Les *fonctions récursives* sont des fonctions qui s’appellent. Elles nécessitent la spécification du mot clé **rec** après le mot clé **let**. Appelez la fonction récursive à partir du corps de la fonction, comme vous le feriez pour tout autre appel de fonction. La fonction récursive suivante calcule le  *n* ème nombre de Fibonacci. La séquence de nombres de Fibonacci est connue depuis l’antiquité ; il s’agit d’une séquence dans laquelle chaque nombre consécutif est la somme des deux nombres précédents dans la séquence.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
@@ -188,11 +187,11 @@ let result2 = Compose2 2
 
 // Pipelining
 // Pipeline operator
-// ( <| ) : ('T -> 'U) -> 'T -> 'U
+// ( |> ) : 'T1 -> ('T1 -> 'U) -> 'U
 let Pipeline1 x = addOne <| timesTwo x
 
 // Backward pipeline operator
-// ( |> ) : 'T1 -> ('T1 -> 'U) -> 'U
+// ( <| ) : ('T -> 'U) -> 'T -> 'U
 let Pipeline2 x = addOne x |> timesTwo
 
 // Result is 5
@@ -210,4 +209,3 @@ Vous pouvez surcharger les méthodes d’un type, mais pas les fonctions. Pour p
 [Valeurs](../values/index.md)
 
 [Informations de référence sur le langage F#](../index.md)
-

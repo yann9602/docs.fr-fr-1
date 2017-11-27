@@ -1,39 +1,43 @@
 ---
-title: "Comment&#160;: utiliser les tests d&#39;atteinte avec une r&#233;gion | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "tests de positionnement, utiliser les régions"
-  - "régions, test des accès"
+title: "Comment : utiliser les tests d'atteinte avec une région"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- hit tests [Windows Forms], using regions
+- regions [Windows Forms], hit testing
 ms.assetid: 3a4c07cb-a40a-4d14-ad35-008f531910a8
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: adc55d137a5578dbe8649afa02ab8525d4913cd8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: utiliser les tests d&#39;atteinte avec une r&#233;gion
-L'objectif du test d'atteinte est de déterminer si le curseur est positionné sur un objet donné, tel qu'une icône ou un bouton.  
+# <a name="how-to-use-hit-testing-with-a-region"></a>Comment : utiliser les tests d'atteinte avec une région
+L’objectif du test de positionnement est pour déterminer si le curseur se trouve sur un objet donné, tel qu’une icône ou un bouton.  
   
-## Exemple  
- L'exemple suivant crée une région en forme de signe plus constituée par l'union de deux régions rectangulaires.  Supposez que le  `point`  de la variable contienne l'emplacement du clic le plus récent.  Le code vérifie si le  `point`  se trouve dans la région en forme de signe plus.  Dans l'affirmative \(une atteinte\), la région est remplie par un pinceau rouge opaque.  Sinon, elle est remplie par un pinceau rouge semi\-transparent.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant crée une région en forme de plus par l’union de deux régions rectangulaires. Supposons que la variable `point` contient l’emplacement du clic plus récent. Le code vérifie si `point` se trouve dans la région en forme de plus. Si le point se trouve dans la région (une atteinte), la région est remplie avec un pinceau rouge opaque. Dans le cas contraire, la région est remplie avec un pinceau rouge translucide.  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.MiscLegacyTopics#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#31)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## Voir aussi  
- <xref:System.Drawing.Region>   
- [Régions dans GDI\+](../../../../docs/framework/winforms/advanced/regions-in-gdi.md)   
- [Comment : utiliser le découpage avec une région](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Region>  
+ [Régions dans GDI+](../../../../docs/framework/winforms/advanced/regions-in-gdi.md)  
+ [Guide pratique pour utiliser le découpage avec une région](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)

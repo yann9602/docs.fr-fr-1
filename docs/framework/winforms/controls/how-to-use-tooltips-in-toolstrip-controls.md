@@ -1,52 +1,53 @@
 ---
-title: "Comment&#160;: utiliser des info-bulles dans des contr&#244;les ToolStrip | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "barres d'outils (Windows Forms), ajouter des info-bulles"
-  - "ToolStrip (contrôle Windows Forms), ajouter des info-bulles"
-  - "info-bulles (Windows Forms), ajouter"
+title: "Comment : utiliser des info-bulles dans des contrôles ToolStrip"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ToolStrip control [Windows Forms], adding tooltips
+- toolbars [Windows Forms], adding tooltips
+- tooltips [Windows Forms], adding
 ms.assetid: c5d86024-a7c5-44ee-8b3f-2daf53d80d3e
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bc52dd1b629829564532fd93650737f51e5d7f24
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: utiliser des info-bulles dans des contr&#244;les ToolStrip
-Vous pouvez afficher <xref:System.Windows.Forms.ToolTip> pour le contrôle <xref:System.Windows.Forms.ToolStrip> de votre choix en affectant à la propriété <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> du contrôle la valeur `true`.  
+# <a name="how-to-use-tooltips-in-toolstrip-controls"></a>Comment : utiliser des info-bulles dans des contrôles ToolStrip
+Vous pouvez afficher un <xref:System.Windows.Forms.ToolTip> pour le <xref:System.Windows.Forms.ToolStrip> contrôle souhaité en définissant sa <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> propriété `true`.  
   
-### Pour afficher une info\-bulle  
+### <a name="to-display-a-tooltip"></a>Pour afficher une info-bulle  
   
--   Affectez à la propriété <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> du contrôle la valeur `true`.  
+-   Définir le <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> propriété du contrôle à `true`.  
   
-     La valeur par défaut de <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A?displayProperty=fullName> est `true`, et la valeur par défaut de <xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A?displayProperty=fullName> et de <xref:System.Windows.Forms.StatusStrip.ShowItemToolTips%2A?displayProperty=fullName> est `false`.  
+     La valeur par défaut <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A?displayProperty=nameWithType> est `true`et la valeur par défaut de <xref:System.Windows.Forms.MenuStrip.ShowItemToolTips%2A?displayProperty=nameWithType> et <xref:System.Windows.Forms.StatusStrip.ShowItemToolTips%2A?displayProperty=nameWithType> est `false`.  
   
-### Pour utiliser la propriété ToolTipText pour le texte d'info\-bulle d'un ToolStripButton  
+### <a name="to-use-the-tooltiptext-property-for-the-tooltip-text-of-a-toolstripbutton"></a>Pour utiliser la propriété ToolTipText pour le texte d’info-bulle d’un ToolStripButton  
   
-1.  Affectez à la propriété <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> du bouton la valeur `true`.  
+1.  Définir le <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A> propriété du bouton `true`.  
   
-2.  Affectez à la propriété <xref:System.Windows.Forms.ToolStripButton.AutoToolTip%2A?displayProperty=fullName> du bouton la valeur `false`.  
+2.  Définir le <xref:System.Windows.Forms.ToolStripButton.AutoToolTip%2A?displayProperty=nameWithType> propriété du bouton `false`.  
   
-     La propriété `AutoToolTip` a par défaut la valeur `true` pour <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripDropDownButton> et <xref:System.Windows.Forms.ToolStripSplitButton>.  
+     Le `AutoToolTip` propriété `true` par défaut pour <xref:System.Windows.Forms.ToolStripButton>, <xref:System.Windows.Forms.ToolStripDropDownButton>, et <xref:System.Windows.Forms.ToolStripSplitButton>.  
   
-     <xref:System.Windows.Forms.ToolStripButton> utilise par défaut sa propriété `Text` pour le texte <xref:System.Windows.Forms.ToolTip>.  Utilisez cette procédure pour afficher un texte personnalisé dans <xref:System.Windows.Forms.ToolStripButton> <xref:System.Windows.Forms.ToolTip>.  
+     A <xref:System.Windows.Forms.ToolStripButton> utilise son `Text` propriété pour la <xref:System.Windows.Forms.ToolTip> texte par défaut. Utilisez cette procédure pour afficher un texte personnalisé dans un <xref:System.Windows.Forms.ToolStripButton> <xref:System.Windows.Forms.ToolTip>.  
   
 > [!NOTE]
->  Si vous affectez à <xref:System.Windows.Forms.ToolStripItemDisplayStyle> la valeur <xref:System.Windows.Forms.ToolStripItemDisplayStyle> ou <xref:System.Windows.Forms.ToolStripItemDisplayStyle>, aucun texte ne figure sur le bouton, mais l'info\-bulle s'affiche néanmoins.  
+>  Si vous définissez <xref:System.Windows.Forms.ToolStripItemDisplayStyle> à <xref:System.Windows.Forms.ToolStripItemDisplayStyle.None> ou <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Image>, aucun texte ne s’affiche sur le bouton, mais l’info-bulle apparaît toujours.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A>   
- <xref:System.Windows.Forms.ToolStripButton>   
- <xref:System.Windows.Forms.ToolStripDropDownButton>   
- <xref:System.Windows.Forms.ToolStripSplitButton>   
- [Vue d'ensemble du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ToolStrip.ShowItemToolTips%2A>  
+ <xref:System.Windows.Forms.ToolStripButton>  
+ <xref:System.Windows.Forms.ToolStripDropDownButton>  
+ <xref:System.Windows.Forms.ToolStripSplitButton>  
+ [Vue d’ensemble du contrôle ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)

@@ -1,27 +1,22 @@
 ---
-title: "Comment : rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 4bb38d2c-bc7c-4196-8909-aaf41fb86b28
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d5f052084651fe96d2bdcb2a86f8c3d23ac246e1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3c4904ef70b2c978d73514302e726aba8f14fc20
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Comment : rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (Visual Basic)
 Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
@@ -74,5 +69,4 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
-
+ [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

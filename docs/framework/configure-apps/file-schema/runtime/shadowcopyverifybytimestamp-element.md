@@ -1,71 +1,73 @@
 ---
-title: "&lt;shadowCopyVerifyByTimestamp&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<shadowCopyTimeStampVerification> (élément)"
-  - "shadowCopyTimeStampVerification (élément)"
+title: "&lt;shadowCopyVerifyByTimestamp&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <shadowCopyTimeStampVerification> element
+- shadowCopyTimeStampVerification element
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 261962819e9b2b37682a13bffb53d2912a660566
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;shadowCopyVerifyByTimestamp&gt;, &#233;l&#233;ment
-Spécifie si les clichés instantanés utilisent le comportement au démarrage par défaut introduit par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] ou rétablissent le comportement au démarrage des versions antérieures du .NET Framework.  
+# <a name="ltshadowcopyverifybytimestampgt-element"></a>&lt;shadowCopyVerifyByTimestamp&gt; élément
+Indique si les clichés instantanés utilisent le comportement de démarrage par défaut introduit dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], ou reviennent au comportement de démarrage des versions précédentes du .NET Framework.  
   
-## Syntaxe  
+ \<configuration > élément  
+\<runtime > élément  
+\<shadowCopyVerifyByTimestamp > élément  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <shadowCopyVerifyByTimestamp enabled="true|false" />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|activé|Attribut requis.<br /><br /> Spécifie si les domaines d'application qui utilisent des clichés instantanés comparent les horodatages des assemblys au démarrage de façon à déterminer si un assembly a été mis à jour avant la création de son cliché instantané.|  
+|---------------|-----------------|  
+|enabled|Attribut requis.<br /><br /> Spécifie si les domaines d’application qui utilisent les clichés instantanés comparer les horodatages des assemblys au démarrage, afin de déterminer si un assembly a été mis à jour avant la création de l’assembly de clichés instantanés.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|true|Au démarrage, copie uniquement des assemblys mis à jour puisqu'ils ont été copiés en dernier vers le répertoire de cliché instantané.  Valeur par défaut pour [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].|  
-|false|Rétablit le comportement au démarrage des versions antérieures du .NET Framework, qui consiste à copier tous les fichiers au démarrage.|  
+|-----------|-----------------|  
+|true|Au démarrage, copie uniquement les assemblys qui ont été mis à jour depuis leur dernière copie dans le répertoire des clichés instantanés. Ceci est la valeur par défaut pour le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].|  
+|false|Rétablit le comportement de démarrage des versions antérieures du .NET Framework, qui consiste à copier tous les fichiers au démarrage.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- Depuis le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], les assemblys font l'objet de clichés instantanés uniquement si leurs horodatages indiquent qu'ils ont été modifiés depuis leur dernière copie dans le répertoire de clichés instantanés.  Cela améliore les temps de démarrage de nombreuses applications qui utilisent les clichés instantanés, comme décrit dans [Clichés instantanés d'assemblys](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md).  Les applications qui ont un pourcentage et une fréquence élevé de mises à jour d'assembly ne peut pas bénéficier de cette modification du comportement.  Dans ce cas, vous pouvez utiliser cet élément pour restaurer le comportement depuis les précédentes versions de .NET Framework.  
+## <a name="remarks"></a>Remarques  
+ En commençant par le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], les assemblys sont des clichés instantanés uniquement si leurs horodatages indiquent qu’ils ont été modifiés depuis leur dernière copie dans le répertoire des clichés instantanés. Cela améliore les temps de démarrage pour de nombreuses applications qui utilisent les clichés instantanés, comme décrit dans [clichés instantanés d’assemblys](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md). Les applications disposant d’un pourcentage élevé et la fréquence des mises à jour de l’assembly ne peuvent pas bénéficier de ce changement de comportement. Dans ce cas, vous pouvez utiliser cet élément pour restaurer le comportement des versions antérieures du .NET Framework.  
   
-## Exemple  
- L'exemple suivant indique comment désactiver le comportement au démarrage par défaut des clichés instantanés dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et rétablir le comportement au démarrage des versions antérieures du .NET Framework.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment désactiver le comportement de démarrage par défaut de clichés instantanés dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]et de rétablir le comportement au démarrage des versions antérieures du .NET Framework.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <shadowCopyVerifyByTimestamp enabled="false" />  
@@ -73,7 +75,7 @@ Spécifie si les clichés instantanés utilisent le comportement au démarrage p
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Clichés instantanés d'assemblys](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)

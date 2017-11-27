@@ -1,69 +1,71 @@
 ---
-title: "Styles et mod&#232;les TextBox | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), TextBox"
-  - "éléments (WPF), TextBox"
-  - "états (WPF), TextBox"
-  - "styles (WPF), TextBox"
-  - "modèles (WPF), TextBox"
-  - "TextBox (WPF), styles et modèles"
+title: "Styles et modèles TextBox"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ControlTemplate [WPF], TextBox
+- parts [WPF], TextBox
+- states [WPF], TextBox
+- styles [WPF], TextBox
+- templates [WPF], TextBox
+- TextBox [WPF], styles and templates
 ms.assetid: aa99130c-43a1-450f-9b46-c40ae0db0cca
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7f5cfd1c0715c7f9610f85201cd40a3973a2be64
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les TextBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TextBox>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="textbox-styles-and-templates"></a>Styles et modèles TextBox
+Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.TextBox> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## Composants de TextBox  
- Le tableau ci\-dessous répertorie les composants nommés du contrôle <xref:System.Windows.Controls.TextBox>.  
+## <a name="textbox-parts"></a>Parties de la zone de texte  
+ Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.TextBox> contrôle.  
   
-||||  
-|-|-|-|  
 |Élément|Type|Description|  
-|PART\_ContentHost|<xref:System.Windows.FrameworkElement>|Élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>.  Le texte du <xref:System.Windows.Controls.TextBox> s'affiche dans cet élément.|  
+|-|-|-|  
+|PART_ContentHost|<xref:System.Windows.FrameworkElement>|Un élément visuel qui peut contenir un <xref:System.Windows.FrameworkElement>. Le texte de la <xref:System.Windows.Controls.TextBox> s’affiche dans cet élément.|  
   
-## États de TextBox  
- Le tableau ci\-dessous répertorie les états visuels du contrôle <xref:System.Windows.Controls.TextBox>.  
+## <a name="textbox-states"></a>États de la zone de texte  
+ Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.TextBox> contrôle.  
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
-|---------------------|--------------------------|-----------------|  
-|Normal|CommonStates|État par défaut.|  
+|----------------------|---------------------------|-----------------|  
+|Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
-|ReadOnly|CommonStates|L'utilisateur ne peut pas modifier le texte du <xref:System.Windows.Controls.TextBox>.|  
-|Focused|FocusStates|Le contrôle a le focus.|  
-|Unfocused|FocusStates|Le contrôle n'a pas le focus.|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
+|ReadOnly|CommonStates|L’utilisateur ne peut pas modifier le texte dans le <xref:System.Windows.Controls.TextBox>.|  
+|Avec focus|FocusStates|Le contrôle a le focus.|  
+|Sans focus|FocusStates|Le contrôle n’a pas le focus.|  
+|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
+|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
   
-## TextBox ControlTemplate, exemple  
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.TextBox>.  
+## <a name="textbox-controltemplate-example"></a>Exemple de ControlTemplate de zone de texte  
+ L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.TextBox> contrôle.  
   
- [!code-xml[ControlTemplateExamples#TextBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#textbox)]  
+ [!code-xaml[ControlTemplateExamples#TextBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#textbox)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ L’exemple précédent utilise une ou plusieurs des ressources suivantes.  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez          [Style avec ControlTemplates, exemple \(page éventuellement en anglais\)](http://go.microsoft.com/fwlink/?LinkID=160041) .  
+ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

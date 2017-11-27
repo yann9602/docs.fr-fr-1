@@ -1,36 +1,40 @@
 ---
-title: "Applications Windows utilisant des rappels | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Applications Windows utilisant des rappels
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 83286fa5909dde8cde081ef34864be8f27b57122
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Applications Windows utilisant des rappels
-Dans la plupart des scénarios de traitement asynchrone, vous devez démarrer une opération de base de données et continuer à exécuter d'autres processus sans attendre que l'opération de base de données soit terminée.  Toutefois, de nombreux scénarios exigent de faire quelque chose une fois l'opération de base de données terminée.  Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière\-plan tout en autorisant le thread d'interface utilisateur à rester réactif.  Toutefois, une fois l'opération de base de données terminée, vous pouvez utiliser les résultats pour remplir le formulaire.  La meilleure façon d'implémenter ce type de scénario consiste à utiliser un rappel.  
+# <a name="windows-applications-using-callbacks"></a>Applications Windows utilisant des rappels
+Dans la plupart des scénarios de traitement asynchrone, vous devez démarrer une opération de base de données et continuer à exécuter d'autres processus sans attendre que l'opération de base de données soit terminée. Toutefois, de nombreux scénarios exigent de faire quelque chose une fois l'opération de base de données terminée. Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière-plan tout en autorisant le thread d'interface utilisateur à rester réactif. Toutefois, une fois l'opération de base de données terminée, vous pouvez utiliser les résultats pour remplir le formulaire. La meilleure façon d'implémenter ce type de scénario consiste à utiliser un rappel.  
   
- Vous définissez un rappel en spécifiant un délégué <xref:System.AsyncCallback> dans la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> ou <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A>.  Le délégué est appelé une fois l'opération terminée.  Vous pouvez transmettre au délégué une référence au <xref:System.Data.SqlClient.SqlCommand> proprement dit, facilitant l'accès à l'objet <xref:System.Data.SqlClient.SqlCommand> et appeler la méthode `End` appropriée sans devoir utiliser une variable globale.  
+ Vous définissez un rappel en spécifiant un délégué <xref:System.AsyncCallback> dans la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> ou <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A>. Le délégué est appelé une fois l'opération terminée. Vous pouvez transmettre au délégué une référence au <xref:System.Data.SqlClient.SqlCommand> proprement dit, facilitant l'accès à l'objet <xref:System.Data.SqlClient.SqlCommand> et appeler la méthode `End` appropriée sans devoir utiliser une variable globale.  
   
-## Exemple  
- L'application Windows suivante illustre l'utilisation de la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, exécutant une instruction Transact\-SQL qui inclut un retard de quelques secondes \(émulant une commande de longue durée\).  
+## <a name="example"></a>Exemple  
+ L'application Windows suivante illustre l'utilisation de la méthode <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, exécutant une instruction Transact-SQL qui inclut un retard de quelques secondes (émulant une commande de longue durée).  
   
- Cet exemple montre un certain nombre de techniques importantes, notamment l'appel d'une méthode qui interagit avec le formulaire à partir d'un thread séparé.  En outre, cet exemple montre comment empêcher des utilisateurs d'exécuter une commande plusieurs fois simultanément et s'assurer que le formulaire ne se ferme pas avant l'appel de la procédure de rappel.  
+ Cet exemple montre un certain nombre de techniques importantes, notamment l'appel d'une méthode qui interagit avec le formulaire à partir d'un thread séparé. En outre, cet exemple montre comment empêcher des utilisateurs d'exécuter une commande plusieurs fois simultanément et s'assurer que le formulaire ne se ferme pas avant l'appel de la procédure de rappel.  
   
- Pour configurer cet exemple, créez une application Windows.  Placez un contrôle <xref:System.Windows.Forms.Button> et deux contrôles <xref:System.Windows.Forms.Label> sur le formulaire \(en acceptant le nom par défaut pour chaque contrôle\).  Ajoutez le code suivant à la classe du formulaire, en modifiant la chaîne de connexion de façon appropriée pour votre environnement.  
+ Pour configurer cet exemple, créez une application Windows. Placez un contrôle <xref:System.Windows.Forms.Button> et deux contrôles <xref:System.Windows.Forms.Label> sur le formulaire (en acceptant le nom par défaut pour chaque contrôle). Ajoutez le code suivant à la classe du formulaire, en modifiant la chaîne de connexion de façon appropriée pour votre environnement.  
   
- \[Visual Basic\]  
-  
-```  
+```vb  
 ' Add these to the top of the class:  
 Imports System  
 Imports System.Data  
@@ -384,6 +388,6 @@ private void Form1_Load(object sender, System.EventArgs e)
 }  
 ```  
   
-## Voir aussi  
- [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

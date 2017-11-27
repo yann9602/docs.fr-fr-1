@@ -1,15 +1,12 @@
 ---
 title: "Types de données en Visual Basic"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - data types [Visual Basic], declaring
 - typing
@@ -17,30 +14,14 @@ helpviewer_keywords:
 - Visual Basic code, data types
 - data types [Visual Basic], improving speed with
 ms.assetid: 5e1b9aaf-c7ca-4b29-9b22-0e82ed8e85e2
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8b90a5e58d135a3769761ca431fd0c05f79e045f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 20a24c8632e1f2193cfa86319a824dfcc038d9d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="data-types-in-visual-basic"></a>Types de données en Visual Basic
 Le *type de données* d’un élément de programmation fait référence au type de données qu’il peut contenir et à la façon dont il stocke ces données. Les types de données s’appliquent à toutes les valeurs qui peuvent être stockées dans la mémoire de l’ordinateur ou qui participent à l’évaluation d’une expression. Chaque variable, littéral, constante, énumération, propriété, paramètre de procédure, argument de procédure et valeur de retour de procédure possède un type de données.  
@@ -62,15 +43,14 @@ Le *type de données* d’un élément de programmation fait référence au type
  Pour obtenir la liste des types de données Visual Basic, consultez [Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Caractères de type](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
- [Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)   
- [Types génériques dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Conversions de type en Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
+ [Caractères de type](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
+ [Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
+ [Types génériques en Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
+ [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Tuples](tuples.md)     
- [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
+ [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [Types de données](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
  [Utilisation efficace des types de données](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
-

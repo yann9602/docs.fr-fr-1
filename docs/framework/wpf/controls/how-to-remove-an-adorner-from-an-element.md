@@ -1,37 +1,42 @@
 ---
-title: "Comment&#160;: supprimer un ornement d&#39;un &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ornements, supprimer"
+title: "Comment : supprimer un ornement d'un élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: adorners [WPF], removing
 ms.assetid: 97cf4d9f-0596-429e-8526-32a30aa4ae99
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fe11dc8df1a29518ba05792877bd26670f96b29d
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: supprimer un ornement d&#39;un &#233;l&#233;ment
-Cet exemple montre comment supprimer par programme un ornement spécifique d'un <xref:System.Windows.UIElement> spécifié.  
+# <a name="how-to-remove-an-adorner-from-an-element"></a>Comment : supprimer un ornement d'un élément
+Cet exemple montre comment supprimer par programme un ornement spécifique d’un <xref:System.Windows.UIElement>.  
   
-## Exemple  
- Cet exemple de code en clair supprime le premier ornement du tableau des ornements retourné par <xref:System.Windows.Documents.AdornerLayer.GetAdorners%2A>.  Cet exemple récupère les ornements d'un <xref:System.Windows.UIElement> nommé *myTextBox*.  Si l'élément spécifié dans l'appel à <xref:System.Windows.Documents.AdornerLayer.GetAdorners%2A> n'a pas d'ornements, `null` est retourné.  Ce code recherche explicitement un tableau null, et il est particulièrement adapté aux applications dans lesquelles un tableau null est supposé être relativement commun.  
+## <a name="example"></a>Exemple  
+ Cet exemple de code en clair supprime le premier ornement du tableau des ornements retourné par <xref:System.Windows.Documents.AdornerLayer.GetAdorners%2A>.  Cet exemple se trouve récupère les ornements d’un <xref:System.Windows.UIElement> nommé *myTextBox*.  Si l’élément spécifié dans l’appel à <xref:System.Windows.Documents.AdornerLayer.GetAdorners%2A> n’a pas d’ornements, `null` est retourné.  Ce code vérifie un tableau null explicitement et est idéale pour les applications où un tableau null est censé être relativement courante.  
   
  [!code-csharp[AdornersMiscCode#_RemoveSpecificAdornerLong](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdornersMiscCode/CSharp/Window1.xaml.cs#_removespecificadornerlong)]
  [!code-vb[AdornersMiscCode#_RemoveSpecificAdornerLong](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdornersMiscCode/visualbasic/window1.xaml.vb#_removespecificadornerlong)]  
   
-## Exemple  
- Cet exemple de code condensé est fonctionnellement équivalent à l'exemple en clair ci\-dessus.  Ce code ne recherche pas explicitement un tableau null. Par conséquent, une exception <xref:System.NullReferenceException> peut être levée.  Ce code est particulièrement adapté aux applications dans lesquelles un tableau null est supposé rare.  
+## <a name="example"></a>Exemple  
+ Cet exemple de code condensé est fonctionnellement équivalent à l’exemple détaillé ci-dessus. Ce code ne vérifie pas explicitement un tableau null, il est donc possible qu’un <xref:System.NullReferenceException> exception peut être déclenchée.  Ce code est mieux adapté aux applications où un tableau null est supposé être rares.  
   
  [!code-csharp[AdornersMiscCode#_RemoveSpecificAdornerShort](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdornersMiscCode/CSharp/Window1.xaml.cs#_removespecificadornershort)]
  [!code-vb[AdornersMiscCode#_RemoveSpecificAdornerShort](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdornersMiscCode/visualbasic/window1.xaml.vb#_removespecificadornershort)]  
   
-## Voir aussi  
- [Vue d'ensemble des ornements](../../../../docs/framework/wpf/controls/adorners-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ [Vue d’ensemble des ornements](../../../../docs/framework/wpf/controls/adorners-overview.md)

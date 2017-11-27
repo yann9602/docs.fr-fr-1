@@ -1,66 +1,67 @@
 ---
-title: "Styles et mod&#232;les ScrollViewer | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate (WPF), ScrollViewer"
-  - "éléments (WPF), ScrollViewer"
-  - "ScrollViewer (WPF), styles et modèles"
-  - "états (WPF), ScrollViewer"
-  - "styles (WPF), ScrollViewer"
-  - "modèles (WPF), ScrollViewer"
+title: "Styles et modèles ScrollViewer"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- parts [WPF], ScrollViewer
+- states [WPF], ScrollViewer
+- styles [WPF], ScrollViewer
+- templates [WPF], ScrollViewer
+- ControlTemplate [WPF], ScrollViewer
+- ScrollViewer [WPF], styles and templates
 ms.assetid: dffdd822-ae69-4946-abaf-710860cd65b2
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ac02896708744bc9b1c2d017da4e6f56ac32b53a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Styles et mod&#232;les ScrollViewer
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ScrollViewer>.  Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour donner une apparence unique au contrôle.  Pour plus d'informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+# <a name="scrollviewer-styles-and-templates"></a>Styles et modèles ScrollViewer
+Cette rubrique décrit les styles et modèles pour la <xref:System.Windows.Controls.ScrollViewer> contrôle. Vous pouvez modifier la valeur par défaut <xref:System.Windows.Controls.ControlTemplate> pour donner une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## Composants de ScrollViewer  
- Le tableau ci\-dessous répertorie les composants nommés du contrôle <xref:System.Windows.Controls.ScrollViewer>.  
+## <a name="scrollviewer-parts"></a>Composants de ScrollViewer  
+ Le tableau suivant répertorie les composants nommés pour le <xref:System.Windows.Controls.ScrollViewer> contrôle.  
   
-||||  
-|-|-|-|  
 |Élément|Type|Description|  
-|PART\_ScrollContentPresenter|<xref:System.Windows.Controls.ScrollContentPresenter>|Espace réservé du contenu dans le <xref:System.Windows.Controls.ScrollViewer>.|  
-|PART\_HorizontalScrollBar|<xref:System.Windows.Controls.Primitives.ScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar> utilisé pour faire défiler le contenu horizontalement.|  
-|PART\_VerticalScrollBar|<xref:System.Windows.Controls.Primitives.ScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar> utilisé pour faire défiler le contenu verticalement.|  
-  
-## États de ScrollViewer  
- Le tableau suivant répertorie les états visuels du contrôle <xref:System.Windows.Controls.ScrollViewer>.  
-  
-||||  
 |-|-|-|  
+|PART_ScrollContentPresenter|<xref:System.Windows.Controls.ScrollContentPresenter>|L’espace réservé pour le contenu dans le <xref:System.Windows.Controls.ScrollViewer>.|  
+|PART_HorizontalScrollBar|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le <xref:System.Windows.Controls.Primitives.ScrollBar> utilisé pour faire défiler le contenu horizontalement.|  
+|PART_VerticalScrollBar|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le <xref:System.Windows.Controls.Primitives.ScrollBar> utilisé pour faire défiler le contenu verticalement.|  
+  
+## <a name="scrollviewer-states"></a>États de ScrollViewer  
+ Le tableau suivant répertorie les états visuels pour le <xref:System.Windows.Controls.ScrollViewer> contrôle.  
+  
 |Nom VisualState|Nom VisualStateGroup|Description|  
-|Valid|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `false`.|  
-|InvalidFocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle et a le focus.|  
-|InvalidUnfocused|ValidationStates|La propriété jointe de <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> est `true`, a le contrôle, mais n'a pas le focus.|  
+|-|-|-|  
+|Valide|ValidationStates|Le contrôle utilise le <xref:System.Windows.Controls.Validation> classe et le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `false`.|  
+|InvalidFocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle a le focus.|  
+|InvalidUnfocused|ValidationStates|Le <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> propriété jointe est `true` a le contrôle n’a pas le focus.|  
   
-## ScrollViewer ControlTemplate, exemple  
- L'exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour le contrôle <xref:System.Windows.Controls.ScrollViewer>.  
+## <a name="scrollviewer-controltemplate-example"></a>ScrollViewer ControlTemplate, exemple  
+ L’exemple suivant montre comment définir un <xref:System.Windows.Controls.ControlTemplate> pour la <xref:System.Windows.Controls.ScrollViewer> contrôle.  
   
- [!code-xml[ControlTemplateExamples#ScrollViewer](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/scrollviewer.xaml#scrollviewer)]  
+ [!code-xaml[ControlTemplateExamples#ScrollViewer](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/scrollviewer.xaml#scrollviewer)]  
   
- L'exemple précédent utilise une ou plusieurs des ressources suivantes.  
+ L’exemple précédent utilise une ou plusieurs des ressources suivantes.  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Pour l'exemple complet, consultez [Style avec ControlTemplates, exemple](http://go.microsoft.com/fwlink/?LinkID=160041).  
+ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041) (Exemple de style avec ControlTemplates).  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [Styles et modèles Control](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [Personnalisation des contrôles](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
