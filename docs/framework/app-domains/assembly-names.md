@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - names [.NET Framework], assemblies
 - assemblies [.NET Framework], names
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 624cc6ad264f32b9a43917d9bae751f57b4421a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7029fb2b436c9ba49f2dfd3da07c5147222fbeaf
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-names"></a>Noms d'assemblys
 Le nom d’un assembly est stocké dans des métadonnées, et il a un impact significatif sur l’étendue de l’assembly et sur son utilisation dans une application. Un assembly avec nom fort a un nom qualifié complet qui inclut le nom, la culture, la clé publique et le numéro de version de l’assembly. Ceci est fréquemment appelé le nom d’affichage et, pour les assemblys chargés, il peut être obtenu avec la propriété <xref:System.Reflection.Assembly.FullName%2A>.  
@@ -34,7 +32,7 @@ myTypes, Version=1.0.1234.0, Culture=en-US, PublicKeyToken=b77a5c561934e089c, Pr
 ```  
   
 > [!NOTE]
->  Une architecture de processeur est ajoutée à l’identité de l’assembly dans le .NET Framework version 2.0, pour permettre des versions d’assemblys spécifiques au processeur. Vous pouvez créer des versions d’un assembly dont l’identité diffère seulement par l’architecture de processeur, par exemple des versions spécifiques à des processeurs 32 bits et 64 bits. L’architecture de processeur n’est pas obligatoire pour les noms forts. Pour plus d'informations, consultez <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=fullName>.  
+>  Une architecture de processeur est ajoutée à l’identité de l’assembly dans le .NET Framework version 2.0, pour permettre des versions d’assemblys spécifiques au processeur. Vous pouvez créer des versions d’un assembly dont l’identité diffère seulement par l’architecture de processeur, par exemple des versions spécifiques à des processeurs 32 bits et 64 bits. L’architecture de processeur n’est pas obligatoire pour les noms forts. Pour plus d'informations, consultez <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A?displayProperty=nameWithType>.  
   
  Dans cet exemple, le nom qualifié complet indique que l’assembly `myTypes` a un nom fort avec un jeton de clé publique, a comme valeur Anglais (États-Unis) pour la culture et a comme numéro de version 1.0.1234.0. Son architecture de processeur est « msil », ce qui signifie qu’il sera compilé juste-à-temps (JIT)-compilé en code 32 bits ou 64 bits, en fonction du système d’exploitation et du processeur.  
   
@@ -60,7 +58,7 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 ## <a name="naming-application-components"></a>Nommage des composants d’application  
  Le runtime ne prend pas en compte pas le nom de fichier pour déterminer l’identité d’un assembly. L’identité de l’assembly, qui est constituée du nom, de la version, de la culture et du nom fort de l’assembly, doit être claire pour le runtime.  
   
- Par exemple, si vous avez un assembly appelé monAssembly.exe qui référence un assembly appelé monAssembly.dll, la liaison se fait correctement si vous exécutez monAssembly.exe. Cependant, si une autre application exécute monAssembly.exe en utilisant la méthode <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=fullName>, le runtime détermine que « monAssembly » est déjà chargé quand monAssembly.exe demande la liaison à « monAssembly ». Dans ce cas, monAssembly.dll n’est jamais chargé. Comme monAssembly.exe ne contient pas le type demandé, une <xref:System.TypeLoadException> se produit.  
+ Par exemple, si vous avez un assembly appelé monAssembly.exe qui référence un assembly appelé monAssembly.dll, la liaison se fait correctement si vous exécutez monAssembly.exe. Cependant, si une autre application exécute monAssembly.exe en utilisant la méthode <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType>, le runtime détermine que « monAssembly » est déjà chargé quand monAssembly.exe demande la liaison à « monAssembly ». Dans ce cas, monAssembly.dll n’est jamais chargé. Comme monAssembly.exe ne contient pas le type demandé, une <xref:System.TypeLoadException> se produit.  
   
  Pour éviter ce problème, vérifiez que les assemblys qui composent votre application n’ont pas le même nom d’assembly ou que vous placez les assemblys portant le même nom dans des répertoires différents.  
   
@@ -68,10 +66,9 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 >  Si vous placez un assembly avec nom fort dans le Global Assembly Cache, le nom de fichier de l’assembly doit correspondre au nom de l’assembly (sans l’extension de nom de fichier, comme .exe ou .dll). Par exemple, si le nom de fichier d’un assembly est monAssembly.dll, le nom de l’assembly doit être monAssembly. Les assemblys privés déployés uniquement dans le répertoire racine de l’application peuvent avoir un nom d’assembly différent du nom du fichier.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide pratique pour déterminer le nom qualifié complet d’un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)   
- [Création d’assemblys](../../../docs/framework/app-domains/create-assemblies.md)   
- [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)   
- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)   
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [Guide pratique pour déterminer le nom qualifié complet d'un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+ [Création d’assemblys](../../../docs/framework/app-domains/create-assemblies.md)  
+ [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)  
+ [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)  
+ [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)
-

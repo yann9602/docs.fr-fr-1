@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 3026a0d853cb17dcf05d3b98d814044d743e48dc
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="distinguishing-delegates-and-events"></a>Différenciation des délégués et des événements
 
 [Précédent](modern-events.md)
@@ -55,4 +53,3 @@ Comparez cela à de nombreuses conceptions basées sur les délégués, où un d
 ## <a name="evaluate-carefully"></a>Évaluez avec soin
 
 Les considérations ci-dessus ne sont pas des règles absolues. Il s’agit plutôt de conseils qui vous aideront à décider de ce qui convient le mieux à votre utilisation particulière. Les deux fonctionnalités étant similaires, vous pouvez même les prototyper et évaluer celle dont l’utilisation serait plus naturelle. Elles gèrent également toutes deux les scénarios de liaison tardive. Utilisez celle qui correspond le mieux à votre conception.
-

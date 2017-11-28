@@ -1,30 +1,21 @@
 ---
 title: AttributeUsage (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 22c45568-9a6a-4c2f-8480-f38c1caa0a99
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 81e7440279a2d7dfa801394ee0e9af6181da3c13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c008c1a696e93bc3b756a926a046aa5a6942bc10
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="attributeusage-c"></a>AttributeUsage (C#)
 Détermine de quelle manière une classe d’attributs personnalisés peut être utilisée. `AttributeUsage` est un attribut qui peut être appliqué à des définitions d’attributs personnalisés pour contrôler le mode d’application du nouvel attribut. Voici le code quand les paramètres par défaut sont appliqués de manière explicite :  
@@ -154,12 +145,11 @@ A2
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Attribute>   
- <xref:System.Reflection>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Attributs](https://msdn.microsoft.com/library/5x6cd29c)   
- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
- [Attributs](../../../../csharp/programming-guide/concepts/attributes/index.md)   
- [Création d’attributs personnalisés (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)   
+ <xref:System.Attribute>  
+ <xref:System.Reflection>  
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)  
+ [Attributs](https://msdn.microsoft.com/library/5x6cd29c)  
+ [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
+ [Attributs](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+ [Création d’attributs personnalisés (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
  [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
-

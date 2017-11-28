@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 3b1f5725-ac94-4f17-8e5f-244442438a4d
-ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
 ms.openlocfilehash: 9c2cc090dfd5405def0cd6ab9ec1771be4a332a5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="common-type-system--common-language-specification"></a>Système de type commun (CTS, Common Type System) et spécification CLS (Common Language Specification)
 
 Là encore, ce sont deux termes largement utilisés dans l’environnement .NET ; ils sont véritablement essentiels pour comprendre comment une implémentation de .NET permet le développement dans plusieurs langages et comment elle fonctionne.
@@ -61,4 +59,3 @@ Vous pouvez consulter les documents de la section [Autres ressources](#more-reso
 
 *   [Système de type commun](https://msdn.microsoft.com/library/zcx1eb1e.aspx)
 *   [CLS (Common Language Specification)](https://msdn.microsoft.com/library/12a7a7h3.aspx)
-

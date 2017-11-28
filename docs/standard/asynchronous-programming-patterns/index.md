@@ -12,18 +12,16 @@ helpviewer_keywords:
 - asynchronous design patterns, .NET Framework
 - .NET Framework, asynchronous design patterns
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: a527824ba11928d59bc700f253c5a4d77056abf0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
 
 Le .NET Framework propose trois modèles d’exécution d’opérations asynchrones :  
@@ -91,4 +89,3 @@ Pour plus d'informations sur les modèles TAP, APM et EAP, consultez les liens f
 [Programmation asynchrone en C#](~/docs/csharp/async.md)   
 [Programmation asynchrone en F#](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
 [Programmation asynchrone avec Async et Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)
-

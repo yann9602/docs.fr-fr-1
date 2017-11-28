@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: da7a31a0-8072-4f23-82aa-8a19184cb701
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 199bb132df201175dbdbdd19634de5c3551b5f3b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
 
 Vous pouvez créer deux types de déploiement pour les applications .NET Core :
@@ -82,4 +80,3 @@ Pour obtenir des exemples étape par étape de déploiement d’applications .NE
 [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md)   
 [Packages, métapackages et frameworks](../packages.md)   
 [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)
-

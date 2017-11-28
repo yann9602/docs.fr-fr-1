@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - failed assembly binds
 - Fuslogvw.exe
@@ -22,16 +16,15 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-caps.latest.revision: 35
+caps.latest.revision: "35"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 1ad02ade9c9e60e53fa8fb91d9a38d6ec12bc2e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 381464ecc911dedb0dd394ded7c29fe143423142
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)
 La Visionneuse du journal de liaison d’assembly affiche des détails sur les liaisons d’assemblys. Ces informations vous permettent d'identifier les raisons pour lesquelles le .NET Framework ne parvient pas à trouver un assembly au moment de l'exécution. Ces échecs résultent généralement d'un assembly déployé au mauvais emplacement, d'une image native qui n'est plus valide ou d'une incompatibilité entre les numéros de version ou les cultures. L'échec de la localisation d'un assembly par le Common Language Runtime s'affiche d'ordinaire sous la forme de <xref:System.TypeLoadException> dans votre application.  
@@ -221,7 +214,7 @@ Discarding native image.
      Consultez la Remarque importante relative aux assemblys chargés comme étant indépendants du domaine.  
   
 > [!IMPORTANT]
->  Lorsqu'un assembly est chargé comme étant indépendant du domaine, par exemple en définissant la propriété <xref:System.AppDomainSetup.LoaderOptimization%2A> à <xref:System.LoaderOptimization.MultiDomain?displayProperty=fullName> ou <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=fullName>, l'activation de l'enregistrement peut entraîner une fuite de mémoire dans certains cas. Cela peut arriver si une entrée de journal est faite lorsqu'un module indépendant du domaine est chargé dans un domaine d'application, et qu'ultérieurement le domaine d'application est déchargé. L'entrée de journal ne peut pas être diffusée avant la fin du processus. Certains débogueurs activent automatiquement l'enregistrement.  
+>  Lorsqu'un assembly est chargé comme étant indépendant du domaine, par exemple en définissant la propriété <xref:System.AppDomainSetup.LoaderOptimization%2A> à <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> ou <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, l'activation de l'enregistrement peut entraîner une fuite de mémoire dans certains cas. Cela peut arriver si une entrée de journal est faite lorsqu'un module indépendant du domaine est chargé dans un domaine d'application, et qu'ultérieurement le domaine d'application est déchargé. L'entrée de journal ne peut pas être diffusée avant la fin du processus. Certains débogueurs activent automatiquement l'enregistrement.  
   
 #### <a name="to-enable-a-custom-log-path"></a>Pour activer un chemin de journal personnalisé  
   
@@ -244,9 +237,8 @@ Discarding native image.
     >  Cette zone est activée uniquement sur Windows 8 ou version ultérieure.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.TypeLoadException>   
- [Outils](../../../docs/framework/tools/index.md)   
- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)   
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ <xref:System.TypeLoadException>  
+ [Outils](../../../docs/framework/tools/index.md)  
+ [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)  
+ [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
+ms.openlocfilehash: c4c26e2b7b0693ec940958a9b7d2d306001090e7
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: da116ce67428e9349e03dea60b35abd52dcffee2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
-
 # <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
 LINQ (Language-Integrated Query) est le nom d’un ensemble de technologies basé sur l’intégration de fonctions de requête directement dans le langage C#. En règle générale, les requêtes de données sont exprimées comme de simples chaînes, sans vérification de type au moment de l’exécution, ni prise en charge d’IntelliSense. En outre, il vous faut apprendre un langage de requête différent pour chaque type de source de données : bases de données SQL, documents XML, services web, etc. Avec LINQ, une requête est une construction de langage de premier ordre, comme les classes, les méthodes et les événements.
@@ -26,7 +24,7 @@ Pour un développeur qui écrit des requêtes, la partie « intégrée au langag
 
 L’exemple suivant montre l’opération de requête complète. L’opération complète comprend la création d’une source de données, la définition de l’expression de requête et l’exécution de la requête dans une instruction `foreach`.
 
-[!code-cs[csProgGuideLINQ#11](../../../samples/snippets/csharp/concepts/linq/index_1.cs)]
+[!code-csharp[csProgGuideLINQ#11](../../../samples/snippets/csharp/concepts/linq/index_1.cs)]
 
 ## <a name="query-expression-overview"></a>Vue d’ensemble des expressions de requête
 
@@ -58,6 +56,5 @@ Pour approfondir votre connaissance de LINQ, commencez par vous familiariser ave
 Pour approfondir votre compréhension de LINQ en général, consultez la page [LINQ en C#](linq-in-csharp.md).
 
 Pour commencer à travailler avec LINQ en C#, consultez le didacticiel [Travailler avec LINQ](../tutorials/working-with-linq.md).
-
 
 

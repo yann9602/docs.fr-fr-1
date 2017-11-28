@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,16 +19,15 @@ helpviewer_keywords:
 - version boundaries
 - type boundaries
 ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7dfa8bab1d142462d49524495e3e5dc0b4960a4d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: faa41efa7f3ad898557e966d141aa8f5108d60bd
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>Assemblys dans le Common Language Runtime
 Les assemblys sont les composantes des applications .NET Framework. Ils forment l’unité fondamentale de déploiement, de gestion de version, de réutilisation, de portée d’activation et des autorisations de sécurité. Un assembly est une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Un assembly fournit au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Pour le runtime, un type n'existe pas en dehors du contexte d'un assembly.  
@@ -52,7 +50,7 @@ Les assemblys sont les composantes des applications .NET Framework. Ils forment 
   
  Les assemblys peuvent être statiques ou dynamiques. Les assemblys statiques peuvent inclure des types .NET Framework (interfaces et classes), ainsi que des ressources d'assembly (bitmaps, fichiers JPEG, fichiers de ressources, etc.). Les assemblys statiques sont stockés sur le disque dans des fichiers exécutables portables (PE). Vous pouvez également utiliser le .NET Framework pour créer des assemblys dynamiques, directement exécutés à partir de la mémoire et non enregistrés sur le disque avant leur exécution. Vous pouvez enregistrer des assemblys dynamiques sur le disque une fois qu'ils ont été exécutés.  
   
- Pour créer des assemblys, différentes possibilités s'offrent à vous. Vous pouvez utiliser les outils de développement, comme Visual Studio, que vous avez utilisés par le passé pour créer des fichiers .dll ou .exe. Vous pouvez utiliser les outils fournis dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] pour créer des assemblys avec des modules créés dans d'autres environnements de développement. Vous pouvez également utiliser les API du Common Language Runtime, comme <xref:System.Reflection.Emit?displayProperty=fullName>, pour créer des assemblys dynamiques.  
+ Pour créer des assemblys, différentes possibilités s'offrent à vous. Vous pouvez utiliser les outils de développement, comme Visual Studio, que vous avez utilisés par le passé pour créer des fichiers .dll ou .exe. Vous pouvez utiliser les outils fournis dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] pour créer des assemblys avec des modules créés dans d'autres environnements de développement. Vous pouvez également utiliser les API du Common Language Runtime, comme <xref:System.Reflection.Emit?displayProperty=nameWithType>, pour créer des assemblys dynamiques.  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
@@ -71,5 +69,4 @@ Les assemblys sont les composantes des applications .NET Framework. Ils forment 
 |[Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Décrit comment le .NET Framework résout les références d'assembly au moment de l'exécution.|  
   
 ## <a name="reference"></a>Référence  
- <xref:System.Reflection.Assembly?displayProperty=fullName>
-
+ <xref:System.Reflection.Assembly?displayProperty=nameWithType>

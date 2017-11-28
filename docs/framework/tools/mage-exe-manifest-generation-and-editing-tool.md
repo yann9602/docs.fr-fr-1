@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-caps.latest.revision: 68
+caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
+ms.openlocfilehash: 5bb802df171990eca411dda37fc4743de15fc169
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 67551eb207461d5ac68db9f23b48ff7266c39ae9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
 L'outil Manifest Generation and Editing (Mage.exe) est un outil de ligne de commande qui prend en charge la création et la modification de manifestes de déploiement et d'application. En tant qu'outil en ligne de commande, Mage.exe peut être exécuté à partir de scripts de commandes et d'autres applications Windows, notamment les applications [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] .  
@@ -210,9 +203,8 @@ mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)   
- [Procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)   
- [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview)   
- [MageUI.exe (outil Manifest Generation and Editing, client graphique)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)   
+ [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)  
+ [Procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
+ [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview)  
+ [MageUI.exe (outil Manifest Generation and Editing, client graphique)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

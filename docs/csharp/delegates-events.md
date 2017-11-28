@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 4e80e053-8022-4987-a8a0-209caec0315d
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: e511b5057cb83119819a1403d56f23f738488a3f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="delegates--events"></a>Délégués et événements
 
 Cette rubrique est couverte par les articles suivants :
@@ -54,4 +52,3 @@ Cette rubrique est couverte par les articles suivants :
 
     Cet article explique comment faire la distinction entre l’utilisation des événements et des délégués dans vos conceptions.
  
-

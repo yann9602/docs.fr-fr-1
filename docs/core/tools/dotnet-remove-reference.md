@@ -8,12 +8,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 7cb84c2dc7fc4d16b00bd6459132390ab80131f3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-remove-reference"></a>dotnet remove reference
 
@@ -45,7 +44,7 @@ Références entre projets (P2P) à supprimer. Vous pouvez spécifier un ou plus
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `-f|--framework <FRAMEWORK>`
 
@@ -64,4 +63,3 @@ Supprimer plusieurs références de projet du projet dans le répertoire actuel�
 Supprimer plusieurs références de projet à l’aide du modèle Glob sous Unix/Linux :
 
 `dotnet remove app/app.csproj reference **/*.csproj`
-

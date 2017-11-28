@@ -1,30 +1,21 @@
 ---
 title: "Paramètres et valeurs de retour pour les procédures multithread (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: ba63c30c-d9f0-4962-b5c7-9d83ba851e6a
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: fec0ad955439f0cd683ad56c8d6433eed2417304
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5e377a006409dbae49b3c00297f69e8d55a01295
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="parameters-and-return-values-for-multithreaded-procedures-c"></a>Paramètres et valeurs de retour pour les procédures multithread (C#)
 Fournir des paramètres et retourner des valeurs dans une application multithread est complexe, car le constructeur de la classe thread doit recevoir une référence à une procédure qui n’accepte aucun argument et ne retourne aucune valeur. Les sections suivantes présentent plusieurs moyens simples pour fournir des paramètres et retourner des valeurs à partir de procédures exécutées sur des threads distincts.  
@@ -135,11 +126,10 @@ private void BackgroundWorker1_RunWorkerCompleted(
  Vous pouvez fournir des paramètres et retourner des valeurs aux threads de Thread Pool en utilisant la variable d’objet d’état `ByVal` facultative de la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>. Les threads de Timer Thread prennent également en charge un objet d’état à cet effet. Pour plus d’informations sur la mise en pool de threads et les composants Timer Thread, consultez [Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md) et [Composants Timer Thread (C#)](../../../../csharp/programming-guide/concepts/threading/thread-timers.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)   
- [Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)   
- [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)   
- [Événements](../../../../csharp/programming-guide/events/index.md)   
- [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
- [Délégués](../../../../csharp/programming-guide/delegates/index.md)   
+ [Procédure pas à pas : multithreading avec le composant BackgroundWorker (C#)](../../../../csharp/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)  
+ [Mise en pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-pooling.md)  
+ [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)  
+ [Événements](../../../../csharp/programming-guide/events/index.md)  
+ [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)  
+ [Délégués](../../../../csharp/programming-guide/delegates/index.md)  
  [Multithreading dans les composants](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)
-

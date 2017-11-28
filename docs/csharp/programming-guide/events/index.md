@@ -1,41 +1,22 @@
 ---
 title: "Événements (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - classes [C#], events
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: f714bded446e62ac6165d691d2404249275178e8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6a913a615de8185bb358376def1e2a051bdaa951
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="events-c-programming-guide"></a>Événements (Guide de programmation C#)
 Les événements permettent à une [classe](../../../csharp/language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit. La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.  
@@ -83,9 +64,8 @@ Les événements permettent à une [classe](../../../csharp/language-reference/k
  [Delegates and Events](http://go.microsoft.com/fwlink/?LinkId=195418) dans [Learning C# 3.0: Master the fundamentals of C# 3.0](http://go.microsoft.com/fwlink/?LinkId=195412)  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.EventHandler>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Délégués](../../../csharp/programming-guide/delegates/index.md)   
- [Création de gestionnaires d’événements dans Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)   
+ <xref:System.EventHandler>  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Délégués](../../../csharp/programming-guide/delegates/index.md)  
+ [Création de gestionnaires d’événements dans les Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)  
  [Programmation multithread avec le modèle asynchrone basé sur les événements](https://msdn.microsoft.com/library/hkasytyf)
-

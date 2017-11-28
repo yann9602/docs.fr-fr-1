@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -20,16 +19,15 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7a41a6bf29ec9310d88778b55aa0c27672ba0568
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 46b25b9eb518d2dadb3ec069c5d4d61a929262f2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="application-domains"></a>Domaines d'application
 Les systèmes d'exploitation et les environnements d'exécution assurent généralement une certaine forme d'isolation entre les applications. Par exemple, Windows utilise des processus pour isoler des applications. Cette isolation est nécessaire pour que le code en cours d'exécution dans une application ne puisse pas affecter de manière négative d'autres applications non liées.  
@@ -65,7 +63,7 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
     > [!NOTE]
     >  Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
   
--   Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type **System.IO.FileNotFound**. Pour plus d’informations, consultez [Objets distants](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=fullName>.  
+-   Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type **System.IO.FileNotFound**. Pour plus d’informations, consultez [Objets distants](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 -   La portée du comportement de code est définie par l'application dans laquelle il s'exécute. En d'autres termes, le domaine d'application fournit des paramètres de configuration tels que les stratégies de version d'application, l'emplacement des assemblys distants auxquels il accède et des informations sur l'emplacement où se trouvent les assemblys qui sont chargés dans le domaine.  
   
@@ -110,12 +108,12 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
   
  Il n'existe pas de corrélation un-à-un entre les domaines d'application et les threads. Plusieurs threads peuvent s'exécuter dans un seul domaine d'application à tout moment donné et un thread particulier n'est pas limité à un seul domaine d'application. En d'autres termes, les threads sont libres de franchir les limites de domaine d'application et un nouveau n'est pas créé pour chaque domaine d'application.  
   
- À tout moment donné, chaque thread s'exécute dans un domaine d'application. Aucun, un ou plusieurs threads peuvent s'exécuter dans n'importe quel domaine d'application donné. Le runtime assure le suivi des threads s'exécutant dans les domaines d'application. Vous pouvez rechercher le domaine dans lequel un thread s'exécute à tout moment en appelant la méthode <xref:System.Threading.Thread.GetDomain%2A?displayProperty=fullName>.  
+ À tout moment donné, chaque thread s'exécute dans un domaine d'application. Aucun, un ou plusieurs threads peuvent s'exécuter dans n'importe quel domaine d'application donné. Le runtime assure le suivi des threads s'exécutant dans les domaines d'application. Vous pouvez rechercher le domaine dans lequel un thread s'exécute à tout moment en appelant la méthode <xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType>.  
   
 ### <a name="application-domains-and-cultures"></a>Domaines d'application et cultures  
- La culture, représentée par un objet <xref:System.Globalization.CultureInfo>, est associée aux threads. Vous pouvez obtenir la culture associée au thread en cours d'exécution à l'aide de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> et vous pouvez obtenir ou définir la culture associée au thread en cours d'exécution à l'aide de la propriété <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName>. Si la culture associée à un thread a été définie explicitement à l'aide de la propriété <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName>, elle continue d'être associée à ce thread lorsque le thread traverse les limites du domaine d'application. Sinon, la culture associée au thread à un moment donné est déterminée par la valeur de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=fullName> dans le domaine d'application dans lequel le thread s'exécute :  
+ La culture, représentée par un objet <xref:System.Globalization.CultureInfo>, est associée aux threads. Vous pouvez obtenir la culture associée au thread en cours d'exécution à l'aide de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> et vous pouvez obtenir ou définir la culture associée au thread en cours d'exécution à l'aide de la propriété <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>. Si la culture associée à un thread a été définie explicitement à l'aide de la propriété <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>, elle continue d'être associée à ce thread lorsque le thread traverse les limites du domaine d'application. Sinon, la culture associée au thread à un moment donné est déterminée par la valeur de la propriété <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> dans le domaine d'application dans lequel le thread s'exécute :  
   
--   Si la valeur de la propriété n'est pas `null`, la culture retournée par la propriété est associée au thread (et, par conséquent, retournée par les propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName> et <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName>).  
+-   Si la valeur de la propriété n'est pas `null`, la culture retournée par la propriété est associée au thread (et, par conséquent, retournée par les propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>).  
   
 -   Si la valeur de la propriété est `null`, la culture système en cours est associée au thread.  
   
@@ -171,5 +169,4 @@ Value (to append) = COMPLUS_LoaderOptimization=1
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Référence  
- <xref:System.MarshalByRefObject?displayProperty=fullName>
-
+ <xref:System.MarshalByRefObject?displayProperty=nameWithType>

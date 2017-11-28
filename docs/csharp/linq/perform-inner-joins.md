@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 12/1/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
+ms.openlocfilehash: fdf75c0b7195742bdce70566ebb3880bb0565f31
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2b73b954dbb090484a320302a3af72509fccd9d3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="perform-inner-joins"></a>Effectuer des jointures internes
 
@@ -37,7 +35,7 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
 ## <a name="simple-key-join-example"></a>Exemple de jointure de clé simple  
  L’exemple suivant crée deux collections qui contiennent des objets de deux types définis par l’utilisateur, `Person` et `Pet`. La requête utilise la clause `join` dans C# pour faire correspondre les objets `Person` avec les objets `Pet` dont la propriété `Owner` est `Person`. La clause `select` dans C# définit l’apparence des objets résultants. Dans cet exemple, les objets résultants sont des types anonymes qui se composent du prénom du propriétaire et du nom de l’animal domestique.  
   
- [!code-cs[CsLINQProgJoining#1](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_1.cs)]  
+ [!code-csharp[CsLINQProgJoining#1](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_1.cs)]  
   
  Notez que l’objet `Person` dont la propriété `LastName` est « Huff » n’apparaît pas dans le jeu de résultats, car il n’y a pas d’objet `Pet` ayant une propriété `Pet.Owner` égale à `Person`.  
   
@@ -48,7 +46,7 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
   
  L’exemple suivant utilise une liste d’objets `Employee` et une liste d’objets `Student` pour déterminer quels employés sont également étudiants. Ces deux types ont des propriétés `FirstName` et `LastName` de type <xref:System.String>. Les fonctions qui créent les clés de jointure à partir des éléments de chaque liste retournent un type anonyme qui se compose des propriétés `FirstName` et `LastName` de chaque élément. L’opération de jointure effectue une comparaison d’égalité de ces clés composites et retourne les paires d’objets de chaque liste où il y a correspondance entre le prénom et le nom.  
   
- [!code-cs[CsLINQProgJoining#2](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_2.cs)]  
+ [!code-csharp[CsLINQProgJoining#2](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_2.cs)]  
   
 ## <a name="example"></a>Exemple  
   
@@ -61,7 +59,7 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
   
  La deuxième clause `join` dans C# met en corrélation les types anonymes retournés par la première jointure avec les objets `Dog` de la liste de chiens fournie, sur la base d’une clé composite constituée de la propriété `Owner` de type `Person` et de la première lettre du nom de l’animal. Elle retourne une séquence de types anonymes qui contiennent les propriétés `Cat.Name` et `Dog.Name` de chaque paire correspondante. Comme il s’agit d’une jointure interne, seuls les objets de la première source de données qui ont une correspondance dans la deuxième source de données sont retournés.  
   
- [!code-cs[CsLINQProgJoining#3](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_3.cs)]  
+ [!code-csharp[CsLINQProgJoining#3](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_3.cs)]  
   
 ## <a name="example"></a>Exemple  
   
@@ -74,13 +72,12 @@ Dans le domaine des bases de données relationnelles, une *jointure interne* pro
   
  Le résultat de `query1` est équivalent au jeu de résultats qui aurait été obtenu en utilisant la clause `join` sans la clause `into` pour effectuer une jointure interne. La variable `query2` illustre cette requête équivalente.  
   
- [!code-cs[CsLINQProgJoining#4](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]  
+ [!code-csharp[CsLINQProgJoining#4](../../../samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq.Enumerable.Join%2A>   
- <xref:System.Linq.Enumerable.GroupJoin%2A>   
- [Effectuer des jointures groupées](perform-grouped-joins.md)   
- [Effectuer des jointures externes gauches](perform-left-outer-joins.md)   
- [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)   
+ <xref:System.Linq.Enumerable.Join%2A>  
+ <xref:System.Linq.Enumerable.GroupJoin%2A>  
+ [Effectuer des jointures groupées](perform-grouped-joins.md)  
+ [Effectuer des jointures externes gauches](perform-left-outer-joins.md)  
+ [Types anonymes](../programming-guide/classes-and-structs/anonymous-types.md)  
  
-

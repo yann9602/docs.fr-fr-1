@@ -1,12 +1,9 @@
 ---
 title: "Référence C#"
-ms.date: 2017-02-14
+ms.date: 02/14/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - Visual C#, language reference
 - language reference [C#]
@@ -14,30 +11,14 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-caps.latest.revision: 43
+caps.latest.revision: "43"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 6f885dcf17bb1e6d6cf4ba628b586f2107675c4a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: 1ad08fd188e901f49e01803816407870af37729d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="c-reference"></a>Référence C#
 Cette section fournit des ressources de référence sur les mots clés, les opérateurs, les caractères spéciaux, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur du langage C#.  
@@ -65,13 +46,7 @@ Cette section fournit des ressources de référence sur les mots clés, les opé
  Fournit des pointeurs vers la dernière version des spécifications C# au format Microsoft Word.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
-<!--
- [C# FAQ](http://go.microsoft.com/fwlink/?LinkId=70367)  
- Provides a growing list of C# Frequently Asked Questions in the C# Developer Center.  
--->  
- [Articles de la Base de connaissance Microsoft sur C#.](http://go.microsoft.com/fwlink/?LinkId=70368)  
- Ouvre une page de recherche Microsoft pour rechercher les articles de la Base de connaissances qui sont disponibles sur MSDN.  
-  
+
  [C#](../../csharp/index.md) Fournit un portail vers la documentation Visual C#.  
   
  [Utilisation de l’environnement de développement Visual Studio pour C#](/visualstudio/csharp-ide/using-the-visual-studio-development-environment-for-csharp)  
@@ -79,4 +54,3 @@ Cette section fournit des ressources de référence sur les mots clés, les opé
   
  [Guide de programmation C#](../../csharp/programming-guide/index.md)  
  Inclut des informations sur l’utilisation du langage de programmation C#.
-

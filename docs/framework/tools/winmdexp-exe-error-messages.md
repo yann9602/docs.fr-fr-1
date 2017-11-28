@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -160,26 +159,20 @@ f1_keywords:
 - WME1015
 - WME1047
 - WME9
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Winmdexp.exe, error messages
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 83f7b1f91b70281b4cce57632977bfc4685a58fb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3797621322fd88d57133602b1cb3c3173fedbe6e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="winmdexpexe-error-messages"></a>Messages d'erreur Winmdexp.exe
 Le processus de génération appelle [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) quand vous utilisez le modèle de composant  **[!INCLUDE[wrt](../../../includes/wrt-md.md)]** dans [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], et les messages d’erreur de Winmdexp.exe apparaissent donc dans la **liste d’erreurs**. Winmdexp.exe fonctionne sur un module compilé avec l’option `/target:winmdobj`. Comme il nécessite un module compilé en entrée, ses messages d’erreur ne s’affichent pas, sauf si la compilation réussit.  
@@ -189,6 +182,5 @@ Le processus de génération appelle [Winmdexp.exe (outil d’exportation de mé
  Si l’erreur n’est pas abordée dans cet article et que vous pensez que le message ne contient pas suffisamment d’informations pour résoudre le problème, utilisez le lien de commentaires dans cet article et incluez-y le message d’erreur. Vous pouvez aussi rapporter un bogue sur le [site web Microsoft Connect](http://go.microsoft.com/fwlink/p/?LinkId=251130). Vous pouvez également rechercher plus d’informations sur les [Forums Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=251129).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)   
+ [Winmdexp.exe (outil d’exportation de métadonnées Windows Runtime)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md)  
  [Diagnostic des conditions d’erreur du composant Windows Runtime](http://go.microsoft.com/fwlink/p/?LinkId=251127)
-

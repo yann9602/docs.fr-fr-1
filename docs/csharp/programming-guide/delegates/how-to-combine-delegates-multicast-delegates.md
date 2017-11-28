@@ -1,50 +1,31 @@
 ---
-title: "Guide pratique pour combiner des délégués (délégués multicast) (Guide de programmation C#)"
-ms.date: 2015-07-20
+title: "Comment : combiner des délégués (délégués multicast) (Guide de programmation C#)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - delegates [C#], combining
 - multicast delegates [C#]
 ms.assetid: 4e689450-6d0c-46de-acfd-f961018ae5dd
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: ddb4ecbbf456179e91aa0003c2dc5653f153411f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 617af10d3fb5f9371d5893b87a91a48639d44a53
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a>Guide pratique pour combiner des délégués (délégués multicast) (Guide de programmation C#)
+# <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a>Comment : combiner des délégués (délégués multicast) (Guide de programmation C#)
 Cet exemple explique comment créer des délégués multicast. Une propriété utile des objets [délégués](../../../csharp/language-reference/keywords/delegate.md) est que plusieurs objets peuvent être assignés à une instance de délégué à l’aide de l’opérateur `+`. Le délégué multicast contient une liste des délégués assignés. Quand le délégué multicast est appelé, il appelle les délégués dans la liste, dans l’ordre. Seuls des délégués de même type peuvent être combinés.  
   
  Vous pouvez utiliser l’opérateur `-` pour supprimer un délégué de composant d’un délégué multicast.  
   
 ## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]  
+ [!code-csharp[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.MulticastDelegate>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ <xref:System.MulticastDelegate>  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
  [Événements](../../../csharp/programming-guide/events/index.md)
-

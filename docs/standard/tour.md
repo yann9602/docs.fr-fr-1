@@ -1,5 +1,5 @@
 ---
-title: "Visite guidée de .NET | Microsoft Docs"
+title: "Présentation de .NET"
 description: "Visite guidée de certaines fonctionnalités principales de .NET."
 keywords: ".NET, .NET Core, Présentation, Langages de programmation, Non sécurisé, Gestion de la mémoire, Cohérence des types, Asynchrone"
 author: cartermp
@@ -10,21 +10,19 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
+ms.openlocfilehash: 809f0eaddf298b0d6a57e217c2bcf5450675c3e9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
-ms.openlocfilehash: c64a3113cf4e9e9ff203ed2cf449359f67ee9d10
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="tour-of-net"></a>Présentation de .NET
 
 .NET est une plateforme de développement généraliste. Elle comporte plusieurs fonctionnalités clés, telles que la prise en charge de plusieurs langages de programmation, des modèles de programmation asynchrone et simultanée et une interopérabilité native, qui permettent un large éventail de scénarios sur plusieurs plateformes.
 
 Cet article propose une visite guidée de certaines fonctionnalités principales de .NET. Consultez la rubrique [Composants architecturaux de .NET](components.md) pour en savoir plus sur les parties architecturales de .NET et sur leur finalité.
 
-## <a name="how-to-run-the-code-samples"></a>Comment exécuter les exemples de code
+## <a name="how-to-run-the-code-samples"></a>Guide pratique pour exécuter les exemples de code
 
 Pour savoir comment configurer un environnement de développement pour exécuter les exemples de code, consultez la rubrique [Bien démarrer](get-started.md). Copiez et collez les exemples de code à partir de cette page dans votre environnement pour les exécuter. 
 
@@ -142,11 +140,10 @@ L’exemple suivant est une version modifiée de la méthode `ToString()` à par
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Visite guidée de C#](../csharp/tour-of-csharp/index.md).
+Si vous êtes intéressé par une présentation des fonctionnalités de C#, consultez [Tour of C#](../csharp/tour-of-csharp/index.md) (Présentation de C#).
 
 Si vous êtes intéressé par une présentation des fonctionnalités de F#, consultez [Visite guidée de F#](../fsharp/tour.md).
 
 Si vous voulez vous familiariser avec l’écriture de votre propre code, visitez la page [Bien démarrer](get-started.md).
 
 Pour obtenir des informations sur les composants importants de .NET, consultez [Composants architecturaux de .NET](components.md).
-

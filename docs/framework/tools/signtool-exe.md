@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 06a8b2e41841dfa43609468cce60a3776137b720
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 78814d27e8416d37a018fa3bc1ab643d99970ec9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil Sign Tool)
 L'outil Signature est un outil en ligne de commande qui signe numériquement les fichiers, vérifie les signatures dans les fichiers et horodate les fichiers.  
@@ -91,7 +84,7 @@ signtool [command] [options] [file_name | ...]
 |`/csp`  *CSPName*|Spécifie le fournisseur de services de chiffrement (CSP) qui contient le conteneur de clés privées.|  
 |`/d`  *Desc*|Spécifie une description du contenu signé.|  
 |`/du`  *URL*|Spécifie une URL pour la description développée du contenu signé.|  
-|`/f`  *SignCertFile*|Spécifie le certificat de signature dans un fichier. Si le fichier est au format PFX (Personal Information Exchange) et protégé par un mot de passe, utilisez l'option `/p` pour spécifier le mot de passe. Si le fichier ne contient aucune clé privée, utilisez les options `/csp` et `/k` pour spécifier le nom du conteneur CSP et de clés privées.|  
+|`/f`  *SignCertFile*|Spécifie le certificat de signature dans un fichier. Si le fichier est au format PFX (Personal Information Exchange) et protégé par un mot de passe, utilisez l'option `/p` pour spécifier le mot de passe. Si le fichier ne contient aucune clé privée, utilisez les options `/csp` et `/kc` pour spécifier le nom du conteneur CSP et de clés privées.|  
 |`/fd`|Spécifie l’algorithme de condensat de fichiers à utiliser pour créer des signatures de fichiers. La valeur par défaut est SHA1.|  
 |`/i`  *IssuerName*|Spécifie le nom de l'émetteur du certificat de signature. Cette valeur peut être une sous-chaîne du nom d'émetteur entier.|  
 |`/kc`  *PrivKeyContainerName*|Spécifie le nom du conteneur de clés privées.|  
@@ -225,6 +218,5 @@ signtool verify /c MyCatalog.cat SystemFile.dll
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Outils](../../../docs/framework/tools/index.md)   
+ [Outils](../../../docs/framework/tools/index.md)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

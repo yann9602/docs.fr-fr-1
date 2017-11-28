@@ -1,25 +1,21 @@
 ---
 title: "Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 2c57d89120eee8c7f84d6e87b14f038378a0b3d1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e26cf7946a2ee8d83683a31666b13c6685fbc045
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="functional-programming-vs-imperative-programming-c"></a>Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)
 Cette rubrique compare et contraste la programmation fonctionnelle avec la programmation impérative (procédurale) plus traditionnelle.  
@@ -63,7 +59,6 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
  Heureusement, les langages C# et Visual Basic ne nécessitent pas de transition totale vers la programmation fonctionnelle, car ils prennent en charge les approches de programmation impératives et fonctionnelles. Un développeur peut choisir quelle approche convient le mieux à un scénario particulier. En fait, les programmes combinent souvent les deux approches.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction aux transformations fonctionnelles pures (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
- [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md)   
+ [Introduction aux transformations fonctionnelles pures (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+ [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md)  
  [Refactorisation dans des fonctions pures (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
-

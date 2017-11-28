@@ -1,42 +1,23 @@
 ---
 title: -out (Options du compilateur C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /out
-dev_langs:
-- CSharp
+f1_keywords: /out
 helpviewer_keywords:
 - /out compiler option [C#]
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 332e369b6fe2de79c9063daa9e6d5c0e83f0bcc8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a6db728bc98f5223fc35268a1cce41021ff530cc
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="out-c-compiler-options"></a>/out (Options du compilateur C#)
 L’option **/out** spécifie le nom du fichier de sortie.  
@@ -66,9 +47,9 @@ L’option **/out** spécifie le nom du fichier de sortie.
   
  Au moment de générer plusieurs fichiers de sortie lors d’une compilation en ligne de commande, gardez à l’esprit que seul un fichier de sortie peut faire office d’assembly et que seul le premier fichier de sortie spécifié (implicitement ou explicitement avec **/out**) peut être l’assembly.  
   
- Les modules générés dans le cadre d’une compilation deviennent des fichiers associés à un assembly également généré pendant la compilation. Utilisez [ildasm.exe](https://msdn.microsoft.com/library/f7dy01k1) pour afficher le manifeste d’assembly et identifier les fichiers associés.  
+ Les modules générés dans le cadre d’une compilation deviennent des fichiers associés à un assembly également généré pendant la compilation. Utilisez [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) pour afficher le manifeste d’assembly et identifier les fichiers associés.  
   
- L’option de compilateur /out est nécessaire pour faire d’un fichier exe la cible d’un assembly friend. Pour plus d’informations, consultez [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055).  
+ L’option de compilateur /out est nécessaire pour faire d’un fichier exe la cible d’un assembly friend. Pour plus d’informations, consultez [Assemblys friend](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -88,7 +69,6 @@ csc t.cs /out:mymodule.netmodule /target:module t2.cs
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
- [Assemblys friend](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)   
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)  
+ [Assemblys friend](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

@@ -8,19 +8,17 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- thread-safe collections, when to upgrade
+helpviewer_keywords: thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 0bfb5ef2679c4e20e99a10dcf82a251673811b41
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5166b7b7be38fae9bf809cb0b3aa79b76efd41ac
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Quand utiliser une collection thread-safe
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] propose cinq nouveaux types de collection spécialement conçus pour prendre en charge les opérations d’ajout et de suppression multithread. Pour garantir la cohérence de thread, ces nouveaux types utilisent différentes sortes de mécanismes de verrouillage et de synchronisation sans verrou efficaces. La synchronisation ajoute une surcharge à une opération. La quantité de la surcharge dépend du genre de synchronisation utilisé, du genre d’opérations exécutées et d’autres facteurs tels que le nombre de threads qui tentent d’accéder simultanément à la collection.  
@@ -42,36 +40,35 @@ ms.lasthandoff: 07/28/2017
  Augmentation des performances proportionnelle au nombre de cœurs de l’ordinateur. Un algorithme évolutif s’exécute plus vite sur huit cœurs que sur deux cœurs.  
   
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue(T) vs. Queue(T)  
- Dans les scénarios producteur-consommateur purs, où le temps de traitement de chaque élément est très court (quelques instructions), <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=fullName> peut offrir des avantages modestes en matière de performances par rapport à un <xref:System.Collections.Generic.Queue%601?displayProperty=fullName> qui a un verrou externe. Dans ce scénario, <xref:System.Collections.Concurrent.ConcurrentQueue%601> fonctionne mieux quand un thread dédié effectue la mise en file d’attente et qu’un autre thread dédié annule la mise en file d’attente. Si vous n’appliquez pas cette règle, <xref:System.Collections.Generic.Queue%601> peut même s’exécuter légèrement plus rapidement que <xref:System.Collections.Concurrent.ConcurrentQueue%601> sur les ordinateurs à plusieurs cœurs.  
+ Dans les scénarios producteur-consommateur purs, où le temps de traitement de chaque élément est très court (quelques instructions), <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> peut offrir des avantages modestes en matière de performances par rapport à un <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> qui a un verrou externe. Dans ce scénario, <xref:System.Collections.Concurrent.ConcurrentQueue%601> fonctionne mieux quand un thread dédié effectue la mise en file d’attente et qu’un autre thread dédié annule la mise en file d’attente. Si vous n’appliquez pas cette règle, <xref:System.Collections.Generic.Queue%601> peut même s’exécuter légèrement plus rapidement que <xref:System.Collections.Concurrent.ConcurrentQueue%601> sur les ordinateurs à plusieurs cœurs.  
   
  Quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, la règle de deux threads ne s’applique pas à <xref:System.Collections.Concurrent.ConcurrentQueue%601>, qui possède alors une très bonne scalabilité. <xref:System.Collections.Generic.Queue%601> n’évolue pas bien dans ce scénario.  
   
  Dans les scénarios producteur-consommateur mixtes, quand le temps de traitement est très court, un <xref:System.Collections.Generic.Queue%601> qui a un externe verrou évolue mieux que <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Toutefois, quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, <xref:System.Collections.Concurrent.ConcurrentQueue%601> évolue mieux.  
   
 ## <a name="concurrentstack-vs-stack"></a>Comparaison de ConcurrentStack et de Stack  
- Dans les scénarios producteur-consommateur purs, quand le temps de traitement est très court, <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=fullName> et <xref:System.Collections.Generic.Stack%601?displayProperty=fullName> qui a un verrou externe s’exécuteront probablement de la même manière avec un thread d’exécution de type push dédié et un thread d’exécution de type pop dédié. Toutefois, à mesure que le nombre de threads augmente, les deux types ralentissent à cause de l’augmentation des conflits, et <xref:System.Collections.Generic.Stack%601> peut fonctionner mieux que <xref:System.Collections.Concurrent.ConcurrentStack%601>. Quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, les deux types évoluent à peu près au même rythme.  
+ Dans les scénarios producteur-consommateur purs, quand le temps de traitement est très court, <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType> qui a un verrou externe s’exécuteront probablement de la même manière avec un thread d’exécution de type push dédié et un thread d’exécution de type pop dédié. Toutefois, à mesure que le nombre de threads augmente, les deux types ralentissent à cause de l’augmentation des conflits, et <xref:System.Collections.Generic.Stack%601> peut fonctionner mieux que <xref:System.Collections.Concurrent.ConcurrentStack%601>. Quand le temps de traitement est autour de 500 opérations en virgule flottante (FLOPS), ou plus, les deux types évoluent à peu près au même rythme.  
   
  Dans les scénarios producteur-consommateur mixtes, <xref:System.Collections.Concurrent.ConcurrentStack%601> est plus rapide à la fois pour les petites et les grandes charges de travail.  
   
  L’utilisation de <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> et de <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> peut accélérer considérablement les temps d’accès.  
   
 ## <a name="concurrentdictionary-vs-dictionary"></a>Comparaison de ConcurrentDictionary et de Dictionary  
- En général, vous devez utiliser un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName> dans tout scénario où vous ajoutez et mettez à jour des clés ou des valeurs simultanément à partir de plusieurs threads. Dans les scénarios qui impliquent des mises à jour fréquentes et des lectures relativement peu nombreuses, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> offre généralement des avantages modestes. Dans les scénarios qui impliquent de nombreuses lectures et de nombreuses mises à jour, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> est généralement beaucoup plus rapide, quel que soit le nombre de cœurs des ordinateurs.  
+ En général, vous devez utiliser un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> dans tout scénario où vous ajoutez et mettez à jour des clés ou des valeurs simultanément à partir de plusieurs threads. Dans les scénarios qui impliquent des mises à jour fréquentes et des lectures relativement peu nombreuses, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> offre généralement des avantages modestes. Dans les scénarios qui impliquent de nombreuses lectures et de nombreuses mises à jour, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> est généralement beaucoup plus rapide, quel que soit le nombre de cœurs des ordinateurs.  
   
  Dans les scénarios qui impliquent des mises à jour fréquentes, vous pouvez augmenter le degré d’accès concurrentiel dans <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, puis mesurer pour voir si les performances augmentent sur les ordinateurs qui ont plus de cœurs. Si vous modifiez le niveau d’accès concurrentiel, évitez, autant que possible, les opérations globales.  
   
  Si vous lisez uniquement une clé ou des valeurs, <xref:System.Collections.Generic.Dictionary%602> est plus rapide car aucune synchronisation n’est nécessaire si le dictionnaire n’est pas modifié par des threads.  
   
 ## <a name="concurrentbag"></a>ConcurrentBag  
- Dans les scénarios producteur-consommateur purs, <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=fullName> s’exécutera probablement plus lentement que les autres types de collections simultanées.  
+ Dans les scénarios producteur-consommateur purs, <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> s’exécutera probablement plus lentement que les autres types de collections simultanées.  
   
  Dans les scénarios producteur-consommateur mixtes, <xref:System.Collections.Concurrent.ConcurrentBag%601> est généralement beaucoup plus rapide et plus évolutif que les autres types de collections simultanées à la fois pour les petites et pour les grandes charges de travail.  
   
 ## <a name="blockingcollection"></a>BlockingCollection  
- Quand une sémantique de délimitation et de blocage est nécessaire, <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=fullName> s’exécutera probablement plus rapidement que toute implémentation personnalisée. Il prend également en charge une gestion enrichie des annulations, énumérations et exceptions.  
+ Quand une sémantique de délimitation et de blocage est nécessaire, <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> s’exécutera probablement plus rapidement que toute implémentation personnalisée. Il prend également en charge une gestion enrichie des annulations, énumérations et exceptions.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Collections.Concurrent?displayProperty=fullName>   
- [Collections thread-safe](../../../../docs/standard/collections/thread-safe/index.md)   
+ <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+ [Collections thread-safe](../../../../docs/standard/collections/thread-safe/index.md)  
  [Programmation parallèle](../../../../docs/standard/parallel-programming/index.md)
-

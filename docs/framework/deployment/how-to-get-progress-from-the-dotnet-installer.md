@@ -5,29 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - progress information, .NET Framework installer
 - .NET Framework, installing
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: ea2e878ca4894612dda77075d04c924c3db8e293
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 404a092c6c05bcef568b234c9abeaf7969703cce
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5
 Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est un runtime redistribuable. Si vous développez des applications pour cette version du .NET Framework, vous pouvez inclure (chaîner) le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] en tant que composant requis du programme d’installation de votre application. Pour présenter une expérience d’installation unifiée ou personnalisée, vous souhaiterez peut-être lancer le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] en mode silencieux et suivre sa progression tout en affichant la progression de l’installation de votre application. Pour activer le suivi en mode silencieux, le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] (qui peut être observé) définit un protocole en utilisant un segment d’E/S mappées en mémoire (MMIO) pour communiquer avec votre programme d’installation (l’observateur ou programme de chaînage). Ce protocole définit un moyen pour un programme de chaînage d’obtenir des informations sur la progression, d’obtenir des résultats détaillés, de répondre aux messages et d’annuler l’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
@@ -323,6 +317,5 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est un runtime redistrib
  Un serveur classique crée un nom de fichier MMIO aléatoire, crée le fichier (comme illustré dans l’exemple de code précédent, `Server::CreateSection`) et lance le redistribuable en utilisant la méthode `CreateProcess` et en passant le nom du canal avec l’option `-pipe someFileSectionName`. Le serveur doit implémenter les méthodes `OnProgress`, `Send` et `Finished` avec du code d’application propre à l’interface utilisateur.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
+ [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
  [Déploiement](../../../docs/framework/deployment/index.md)
-

@@ -7,18 +7,17 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: ca7c88675d54d99fdb3526244daaeffe32f32d45
 ms.openlocfilehash: 0d43db0bb0a62bb598f7db50c3b8e37936451550
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/17/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-help-reference"></a>dotnet help reference
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet help` : affiche une documentation en ligne plus détaillée pour la commande spécifiée.
 
@@ -47,4 +46,3 @@ Affiche une aide brève pour la commande.
 Ouvre la page de documentation de la commande [dotnet new](dotnet-new.md) :
 
 `dotnet help new`
-

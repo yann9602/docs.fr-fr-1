@@ -1,47 +1,28 @@
 ---
 title: "::, opérateur (référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- ::_CSharpKeyword
-dev_langs:
-- CSharp
+f1_keywords: ::_CSharpKeyword
 helpviewer_keywords:
 - ':: operator [C#]'
 - 'namespaces [C#], :: operator'
 - namespace alias qualifier operator (::) [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 6b4f1683e1250ed745e15ced88203ca942c75ff8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 97b9fa706669244ac579602a107c092e8593567d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="-operator-c-reference"></a>::, opérateur (référence C#)
 Le qualificateur d’alias d’espace de noms (`::`) s’utilise pour rechercher les identificateurs. Il se place toujours entre deux identificateurs, comme dans cet exemple :  
   
- [!code-cs[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/CSharp/namespace-alias-qualifer_1.cs)]  
+ [!code-csharp[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/CSharp/namespace-alias-qualifer_1.cs)]  
   
 ## <a name="remarks"></a>Remarques  
  Le qualificateur d’alias d’espace de noms peut être `global`. Il appelle alors une recherche dans l’espace de noms global, plutôt que dans un espace de noms avec alias.  
@@ -55,10 +36,9 @@ Le qualificateur d’alias d’espace de noms (`::`) s’utilise pour rechercher
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Opérateurs C#](../../../csharp/language-reference/operators/index.md)   
- [Mots clés d’espaces de noms](../../../csharp/language-reference/keywords/namespace-keywords.md)   
- [. , opérateur](../../../csharp/language-reference/operators/member-access-operator.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Opérateurs C#](../../../csharp/language-reference/operators/index.md)  
+ [Mots clés d’espaces de noms](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+ [. Opérateur](../../../csharp/language-reference/operators/member-access-operator.md)  
  [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)
-

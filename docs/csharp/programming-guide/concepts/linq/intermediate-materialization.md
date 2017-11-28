@@ -1,28 +1,24 @@
 ---
 title: "Matérialisation intermédiaire (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 46d347921e24bc5504c69534d7b5c087818a6c7f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3faf721dd4dd9cdda2f7d5f2d440c8d3c6623968
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="intermediate-materialization-c"></a>Matérialisation intermédiaire (C#)
-Si vous n’y prenez pas garde, dans certaines situations vous risquez de modifier de manière significative le profil de mémoire et de performances de votre application en provoquant la matérialisation prématurée de collections dans vos requêtes. Certains opérateurs de requête standard provoquent la matérialisation de leur collection source avant de générer un seul élément. Par exemple, <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=fullName> itère au sein de l'ensemble de sa collection source, trie tous les éléments, puis génère le premier élément. Cela signifie qu'il est coûteux d'obtenir le premier élément d'une collection ordonnée ; chaque élément ultérieur a un faible coût. Tout cela est logique : il serait impossible pour cet opérateur de requête de faire autrement.  
+Si vous n’y prenez pas garde, dans certaines situations vous risquez de modifier de manière significative le profil de mémoire et de performances de votre application en provoquant la matérialisation prématurée de collections dans vos requêtes. Certains opérateurs de requête standard provoquent la matérialisation de leur collection source avant de générer un seul élément. Par exemple, <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> itère au sein de l'ensemble de sa collection source, trie tous les éléments, puis génère le premier élément. Cela signifie qu'il est coûteux d'obtenir le premier élément d'une collection ordonnée ; chaque élément ultérieur a un faible coût. Tout cela est logique : il serait impossible pour cet opérateur de requête de faire autrement.  
   
 ## <a name="example"></a>Exemple  
  Cet exemple modifie l’exemple précédent. La méthode `AppendString` appelle <xref:System.Linq.Enumerable.ToList%2A> avant d'itérer la source. Cela provoque la matérialisation.  
@@ -100,4 +96,3 @@ Main: str >GHI!!!<
   
 ## <a name="see-also"></a>Voir aussi  
  [Didacticiel : chaînage de requêtes (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
-

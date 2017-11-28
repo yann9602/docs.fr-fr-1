@@ -9,12 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 18cf7a4b-29f0-4b14-85b8-80af754aabd8
+ms.openlocfilehash: 1d8fb092b578602b5d4f791a3fd14f47dfae1ba6
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 4582cb0ee091526423cce3fc1d8243029f34f59c
-ms.openlocfilehash: 3f2ee35db5b77efcce629b6315060a723429b19c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/16/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="ref-returns-and-ref-locals"></a>Retours ref et variables locales ref
 
@@ -86,15 +85,14 @@ Si `p` n’est pas défini comme une variable locale ref à l’aide du mot cl�
 
 L’exemple suivant définit une classe `NumberStore` qui stocke un tableau de valeurs entières. La méthode `FindNumber` retourne par référence le premier nombre supérieur ou égal au nombre passé comme argument. Si aucun nombre n’est supérieur ou égal à l’argument, la méthode retourne le nombre se trouvant à l’index 0. 
 
-[!CODE-cs[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#1)]
+[!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#1)]
 
 L’exemple suivant appelle la méthode `NumberStore.FindNumber` pour récupérer la première valeur supérieure ou égale à 16. L’appelant multiplie ensuite par deux la valeur retournée par la méthode. Comme le montre la sortie de l’exemple, cette modification est reflétée dans la valeur des éléments de tableau de l’instance `NumberStore`.
 
-[!CODE-cs[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#2)]
+[!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/ref-returns1.cs#2)]
 
 Si les valeurs de retour de référence ne sont pas prises en charge, une telle opération est généralement effectuée en retournant l’index de l’élément de tableau ainsi que sa valeur de retour. L’appelant peut ensuite utiliser cet index pour modifier la valeur dans un appel de méthode distinct. Toutefois, l’appelant peut également modifier l’index pour accéder à d’autres valeurs de tableau et éventuellement les modifier.  
  
 ## <a name="see-also"></a>Voir aussi
 
 [ref, mot clé](../../language-reference/keywords/ref.md)
-

@@ -1,38 +1,19 @@
 ---
 title: "Génériques dans le runtime (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- generics [C#], at run time
+helpviewer_keywords: generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 5ef0b63b293ec277ebf9331e8f282ce2c1692d31
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 661dff2d8ec2e12ab6a459660a5378f74e93b9c5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>Génériques dans le runtime (Guide de programmation C#)
 Quand une méthode ou un type générique est compilé dans le langage intermédiaire Microsoft (MSIL), il ou elle contient des métadonnées qui l’identifient comme ayant des paramètres de type. La façon dont le langage MSIL d’un type générique est utilisé diffère selon que le paramètre de type fourni est un type valeur ou référence.  
@@ -41,11 +22,11 @@ Quand une méthode ou un type générique est compilé dans le langage interméd
   
  Par exemple, supposons que votre code de programme ait déclaré une pile construite d’entiers :  
   
- [!code-cs[csProgGuideGenerics#42](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_1.cs)]  
+ [!code-csharp[csProgGuideGenerics#42](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_1.cs)]  
   
  À ce stade, le runtime génère une version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> dont l’entier a été substitué correctement à son paramètre. Maintenant, chaque fois que le code de programme utilise une pile d’entiers, le runtime réutilise la classe <xref:System.Collections.Generic.Stack%601> spécialisée générée. Dans l’exemple suivant, deux instances d’une pile d’entiers sont créées, et elles partagent une instance unique du code `Stack<int>` :  
   
- [!code-cs[csProgGuideGenerics#43](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_2.cs)]  
+ [!code-csharp[csProgGuideGenerics#43](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_2.cs)]  
   
  Toutefois, supposons qu’une autre classe <xref:System.Collections.Generic.Stack%601> avec un type valeur différent tel qu’un type `long` ou une structure définie par l’utilisateur comme son paramètre est créée à un autre endroit dans votre code. Le runtime génère alors une autre version du type générique et substitue un type `long` aux emplacements appropriés dans le langage MSIL. Les conversions ne sont plus nécessaires parce que chaque classe générique spécialisée contient le type valeur en mode natif.  
   
@@ -53,25 +34,24 @@ Quand une méthode ou un type générique est compilé dans le langage interméd
   
  Par exemple, supposons que vous ayez deux types référence, une classe `Customer` et une classe `Order`, et supposons également que vous ayez créé une pile de types `Customer` :  
   
- [!code-cs[csProgGuideGenerics#47](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_3.cs)]  
+ [!code-csharp[csProgGuideGenerics#47](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_3.cs)]  
   
- [!code-cs[csProgGuideGenerics#44](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_4.cs)]  
+ [!code-csharp[csProgGuideGenerics#44](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_4.cs)]  
   
  À ce stade, le runtime génère une version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> qui stocke des références d’objet qui seront remplies ultérieurement au lieu de stocker des données. Supposons que la ligne de code suivante crée une pile d’un autre type référence, qui est nommé `Order` :  
   
- [!code-cs[csProgGuideGenerics#45](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_5.cs)]  
+ [!code-csharp[csProgGuideGenerics#45](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_5.cs)]  
   
  Contrairement aux types valeur, une autre version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> n’est pas créée pour le type `Order`. À la place, une instance de la version spécialisée de la classe <xref:System.Collections.Generic.Stack%601> est créée et la variable `orders` est définie pour la référencer. Supposons que vous ayez rencontré ensuite une ligne de code pour créer une pile d’un type `Customer` :  
   
- [!code-cs[csProgGuideGenerics#46](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_6.cs)]  
+ [!code-csharp[csProgGuideGenerics#46](../../../csharp/programming-guide/generics/codesnippet/CSharp/generics-in-the-run-time_6.cs)]  
   
  Comme avec l’utilisation précédente de la classe <xref:System.Collections.Generic.Stack%601> créée à l’aide du type `Order`, une autre instance de la classe <xref:System.Collections.Generic.Stack%601> spécialisée est créée. Les pointeurs contenus ici sont configurés pour référencer une zone de mémoire de la taille d’un type `Customer`. Dans la mesure où le nombre de types référence peut varier de manière importante d’un programme à l’autre, l’implémentation C# de génériques réduit sensiblement le volume du code en ramenant à une unité le nombre de classes spécialisées créées par le compilateur pour les classes génériques de types référence.  
   
  De plus, quand une classe C# générique est instanciée à l’aide d’un paramètre de type valeur ou référence, la réflexion peut l’interroger au moment de l’exécution, et son type réel ainsi que son paramètre de type peuvent être vérifiés.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Collections.Generic>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)   
+ <xref:System.Collections.Generic>  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
  [Génériques](~/docs/standard/generics/index.md)
-

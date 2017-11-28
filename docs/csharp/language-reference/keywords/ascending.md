@@ -1,41 +1,22 @@
 ---
 title: "ascending (Référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - ascending
 - ascending_CSharpKeyword
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- ascending keyword [C#]
+helpviewer_keywords: ascending keyword [C#]
 ms.assetid: 57fbb619-8187-481c-b68e-3a91996fde69
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: bc5b0a17a4e1f47f83af060dc819ad72b2c45457
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3148ed8d97205737bd912896adcf43dc9d235f24
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ascending-c-reference"></a>ascending (Référence C#)
 Le mot clé contextuel `ascending` est utilisé dans la [clause orderby](../../../csharp/language-reference/keywords/orderby-clause.md) dans les expressions de requête afin de spécifier que l’ordre de tri est du plus petit au plus grand. `ascending` étant l’ordre de tri par défaut, vous n’avez pas à le spécifier.  
@@ -43,10 +24,9 @@ Le mot clé contextuel `ascending` est utilisé dans la [clause orderby](../../
 ## <a name="example"></a>Exemple  
  L’exemple suivant illustre l’utilisation de `ascending` dans une [clause orderby](../../../csharp/language-reference/keywords/orderby-clause.md).  
   
- [!code-cs[csrefKeywordsContextual#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/ascending_1.cs)]  
+ [!code-csharp[csrefKeywordsContextual#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/ascending_1.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)  
  [descending](../../../csharp/language-reference/keywords/descending.md)
-

@@ -1,40 +1,22 @@
 ---
 title: "Introduction au langage C# et au .NET Framework"
 description: "Apprenez les concepts de base de C# et .NET. Découvrez une vue d’ensemble du langage C# et de l’écosystème .NET."
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 2bc7dfbca102a5d2e891b48b676347822eae56f7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: c7fac541dd233111bfffb9c0f67ba048f8d271be
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction au langage C# et au .NET Framework
 C# est un langage élégant et de type sécurisé orienté objet qui permet aux développeurs de créer toute une gamme d'applications sûres et solides exécutées sur [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore. Visual C# fournit un éditeur de code avancé, des concepteurs d’interface utilisateur pratiques, un débogueur intégré et de nombreux autres outils pour faciliter le développement d’applications basées sur le langage C# et le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].  
@@ -69,10 +51,8 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
   
 -   Pour plus d’informations sur des aspects spécifiques du langage C#, consultez la [Référence de C#](../../csharp/language-reference/index.md).  
   
--   Pour plus d’informations sur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], consultez [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).  
-  
--   Pour découvrir les derniers articles et ressources de l’équipe Visual C#, consultez le [Centre de développement Visual C#](http://go.microsoft.com/fwlink/?LinkId=47811).  
-  
+-   Pour plus d’informations sur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], consultez [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).  
+
 ## <a name="net-framework-platform-architecture"></a>Architecture de la plateforme .NET Framework  
  C# s’exécute sur [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], un composant intégral de Windows qui inclut un système d’exécution virtuel appelé Common Language Runtime (CLR) et un ensemble unifié de bibliothèques de classes. CLR est l’implémentation commerciale par Microsoft de la Common Language Infrastructure (CLI), une norme internationale qui sert de base pour la création d’environnements de développement et d’exécution dans lesquels les langages et bibliothèques fonctionnent ensemble en toute transparence.  
   
@@ -86,8 +66,7 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
   
  Outre les services de runtime [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] inclut également une bibliothèque étendue de plus de 4 000 classes organisées en espaces de noms qui fournissent une grande variété de fonctionnalités utiles pour tous les éléments allant de l’entrée et la sortie de fichiers pour la manipulation de chaînes à l’analyse de XML, en passant par les contrôles Windows Forms. Une application C# standard utilise énormément la bibliothèque de classes [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour gérer les tâches fastidieuses.  
   
- Pour plus d’informations sur .NET Framework, consultez [Présentation de Microsoft .NET Framework](http://msdn.microsoft.com/en-us/d05daf50-00fe-45c7-8383-06fe41697355).  
+ Pour plus d’informations sur .NET Framework, consultez [Présentation de Microsoft .NET Framework](../../framework/get-started/overview.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [C#](../../csharp/index.md) [Bien démarrer avec Visual C# et Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
-

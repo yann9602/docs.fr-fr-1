@@ -1,42 +1,24 @@
 ---
 title: "Accès aux ports de l’ordinateur (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - serial ports
-- My.Computer.Ports object, tasks
+- My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e71e70734de24dab62f7fbad4359e3040d1cba51
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: db4fdbea07000ab92d5329f53d68c61db9d0547d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="accessing-the-computer39s-ports-visual-basic"></a>Accès aux ports de l’ordinateur (Visual Basic)
 L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accéder aux ports série de l’ordinateur.  
@@ -65,9 +47,8 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
  Décrit la propriété `SerialPortNames`, qui obtient une collection des noms des ports série sur l’ordinateur.  
   
  <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>  
- Décrit la méthode `OpenSerialPort`, qui crée et ouvre un objet <xref:System.IO.Ports.SerialPort?displayProperty=fullName>.  
+ Décrit la méthode `OpenSerialPort`, qui crée et ouvre un objet <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  <xref:System.IO.Ports.SerialPort>  
  Décrit la classe <xref:System.IO.Ports.SerialPort> du .NET Framework.
-

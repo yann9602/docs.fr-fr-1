@@ -1,42 +1,23 @@
 ---
 title: -platform (Options du compilateur C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /platform
-dev_langs:
-- CSharp
+f1_keywords: /platform
 helpviewer_keywords:
 - platform compiler option [C#]
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-caps.latest.revision: 46
+caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d03e12ae60b9a0145dcb58765ae00f756f84ca56
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 44d4cadbc45eb141ecb7a83345d2a7a834ce5299
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="platform-c-compiler-options"></a>/platform (Options du compilateur C#)
 Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’assembly.  
@@ -77,7 +58,7 @@ Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’ass
   
  Le paramètre **anycpu32bitpreferred** ne vaut que pour les fichiers exécutables (.EXE) et nécessite le .NET Framework 4.5.  
   
- Pour plus d’informations sur le développement d’une application s’exécutant sur un système d’exploitation Windows 64 bits, consultez [Applications 64 bits](https://msdn.microsoft.com/library/ms241064).  
+ Pour plus d’informations sur le développement d’une application s’exécutant sur un système d’exploitation Windows 64 bits, consultez [Applications 64 bits](../../../framework/64-bit-apps.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -99,6 +80,5 @@ csc /platform:anycpu filename.cs
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](index.md)   
+ [Options du compilateur C#](index.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

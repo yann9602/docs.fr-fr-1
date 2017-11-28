@@ -1,30 +1,21 @@
 ---
 title: "Regroupement des données (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 4aef8d10eaffb384fe919ffa6a1e742cb837f540
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2cf1b228a5ff4120bdf3b97a7ec9308f11d7b8ee
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="grouping-data-c"></a>Regroupement des données (C#)
 Le regroupement consiste à placer des données dans des groupes afin que les éléments de chaque groupe partagent un attribut commun.  
@@ -77,12 +68,11 @@ foreach (var group in query)
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq>   
- [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [group, clause](../../../../csharp/language-reference/keywords/group-clause.md)   
- [Guide pratique pour créer un groupe imbriqué](../../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)   
- [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)   
- [Guide pratique pour regrouper les résultats d’une requête](../../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)   
- [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)   
+ <xref:System.Linq>  
+ [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [group, clause](../../../../csharp/language-reference/keywords/group-clause.md)  
+ [Comment : créer un groupe imbriqué](../../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)  
+ [Guide pratique pour regrouper des fichiers par extension (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
+ [Comment : regrouper les résultats d’une requête](../../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)  
+ [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)  
  [Guide pratique pour fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
-

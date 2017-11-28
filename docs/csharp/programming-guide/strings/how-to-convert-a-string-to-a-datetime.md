@@ -1,42 +1,22 @@
 ---
 title: "Comment : convertir une chaîne en DateTime (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- strings [C#], converting to DateTIme
+helpviewer_keywords: strings [C#], converting to DateTIme
 ms.assetid: 88abef11-3a06-4b49-8dd2-61ed0e876fc3
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: b459f245f0090fff16918bceb12a0082f6944331
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 15ef1ec4debf242cdabc42f26add890bd4b61507
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="how-to-convert-a-string-to-a-datetime-c-programming-guide"></a>Comment : convertir une chaîne en DateTime (Guide de programmation C#)
-Les programmes permettent couramment aux utilisateurs d’entrer des dates sous forme de valeurs de chaîne. Pour convertir une date basée sur une chaîne en objet <xref:System.DateTime?displayProperty=fullName> , vous pouvez utiliser la méthode <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName> ou la méthode statique <xref:System.DateTime.Parse%28System.String%29?displayProperty=fullName> , comme le montre l’exemple suivant.  
+Les programmes permettent couramment aux utilisateurs d’entrer des dates sous forme de valeurs de chaîne. Pour convertir une date basée sur une chaîne en objet <xref:System.DateTime?displayProperty=nameWithType> , vous pouvez utiliser la méthode <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=nameWithType> ou la méthode statique <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> , comme le montre l’exemple suivant.  
   
  **Culture**.  Le format d’écriture des chaînes de date varie selon la culture.  Par exemple, aux États-Unis, le 20 janvier 2008 s’écrit 01/20/2008.  En France, cette date lève l’exception InvalidFormatException. Cela vient du fait que la France utilise le format de date jour/mois/année, alors que les États-Unis utilisent mois/jour/année.  
   
@@ -46,7 +26,7 @@ Les programmes permettent couramment aux utilisateurs d’entrer des dates sous 
   
  Un exemple simple de conversion d’une chaîne en dateTime est présenté ci-dessous.  
   
- Pour obtenir d’autres exemples de chaînes de date, consultez <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=fullName>.  
+ Pour obtenir d’autres exemples de chaînes de date, consultez <xref:System.Convert.ToDateTime%28System.String%29?displayProperty=nameWithType>.  
   
 ```csharp  
 string dateTime = "01/08/2008 14:50:50.42";  
@@ -70,8 +50,7 @@ Press any key to continue . . .
 ```  
   
 ## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideStrings#13](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-a-string-to-a-datetime_1.cs)]  
+ [!code-csharp[csProgGuideStrings#13](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-convert-a-string-to-a-datetime_1.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
  [Chaînes](../../../csharp/programming-guide/strings/index.md)
-

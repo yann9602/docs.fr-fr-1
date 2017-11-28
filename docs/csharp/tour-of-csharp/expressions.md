@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
+ms.openlocfilehash: 7b7e321e6554818924a8a2b68afa4c787807bcba
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 155804dd212d8eda8d81ce7e296a9fe308e9c69b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="expressions"></a>Expressions
 
 Les *expressions* sont construites à partir de *d’opérandes* et *d’opérateurs*. Les opérateurs d’une expression indiquent les opérations à appliquer aux opérandes. Parmi les exemples d’opérateurs figurent `+`, `-`, `*`, `/` et `new`. Les littéraux, les champs, les variables locales et les expressions sont des exemples d’opérandes.
@@ -45,7 +43,7 @@ Voici un résumé des opérateurs de C# répertoriant les catégories d’opéra
     - `new T(...){...}` : Création d'objet avec l'initialiseur
     - `new {...}` : Initialiseur d'objet anonyme
     - `new T[...]` : Création de tableau
-    - `typeof(T)` : Permet d’obtenir l’objet @System.Type pour `T`
+    - `typeof(T)` : Permet d’obtenir l’objet <xref:System.Type> pour `T`
     - `checked(x)` : Évaluer l'expression dans le contexte vérifié (checked)
     - `unchecked(x)` : Évaluer l'expression dans le contexte non vérifié (unchecked)
     - `default(T)` : Obtenir la valeur par défaut de type `T`
@@ -102,4 +100,3 @@ Voici un résumé des opérateurs de C# répertoriant les catégories d’opéra
 >[!div class="step-by-step"]
 [Précédent](types-and-variables.md)
 [Suivant](statements.md)
-

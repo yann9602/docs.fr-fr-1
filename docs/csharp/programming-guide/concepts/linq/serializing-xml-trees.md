@@ -1,30 +1,21 @@
 ---
 title: "Sérialisation d’arborescences XML (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b3937e54-4ce9-4236-ac96-14e7972aa594
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 27001dbc92afddc35be12b593f5ba082c29af5f0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f3b8ee68065a056cccbf02d96bf5f21e7ccea16b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="serializing-xml-trees-c"></a>Sérialisation d’arborescences XML (C#)
 Sérialiser une arborescence XML signifie générer du code XML à partir de l'arborescence XML. Vous pouvez sérialiser vers un fichier, vers une implémentation concrète de la classe <xref:System.IO.TextWriter> ou vers une implémentation concrète d'un objet <xref:System.Xml.XmlWriter>.  
@@ -42,4 +33,3 @@ Sérialiser une arborescence XML signifie générer du code XML à partir de l'a
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de programmation (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
-

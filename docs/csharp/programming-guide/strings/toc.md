@@ -7,5 +7,3 @@
 ## [Comment : rechercher des chaînes à l’aide d’expressions régulières](how-to-search-strings-using-regular-expressions.md)
 ## [Comment : déterminer si une chaîne représente une valeur numérique](how-to-determine-whether-a-string-represents-a-numeric-value.md)
 ## [Comment : convertir une chaîne en DateTime](how-to-convert-a-string-to-a-datetime.md)
-## [Comment : effectuer une conversion entre un codage hérité et Unicode](how-to-convert-between-legacy-encodings-and-unicode.md)
-## [Comment : convertir du RTF en texte brut](how-to-convert-rtf-to-plain-text.md)

@@ -1,39 +1,21 @@
 ---
 title: "Génériques et réflexion (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: cc2363eea7d5c601fc73f5f9eb14b4b07ad14cb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 201806cca08be0633d41e10ecb7641a0f03c975b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Génériques et réflexion (Guide de programmation C#)
 Étant donné que le common language runtime (CLR) a accès aux informations concernant les types génériques au moment de l’exécution, vous pouvez utiliser la réflexion pour obtenir des informations sur les types génériques de la même manière que pour les types non génériques. Pour plus d’informations, consultez [Génériques dans le runtime](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
@@ -68,8 +50,7 @@ ms.lasthandoff: 07/28/2017
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|Substitue les éléments d'un tableau de types aux paramètres de type de la définition de méthode générique actuelle et retourne un objet <xref:System.Reflection.MethodInfo> représentant la méthode construite résultante.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Génériques](../../../csharp/programming-guide/generics/index.md)   
- [Réflexion et types génériques](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Génériques](../../../csharp/programming-guide/generics/index.md)  
+ [Réflexion et types génériques](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
  [Génériques](~/docs/standard/generics/index.md)
-

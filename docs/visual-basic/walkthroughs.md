@@ -1,41 +1,23 @@
 ---
 title: "Procédures pas à pas relatives au langage Visual Basic"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic, walkthroughs
 - examples [Visual Basic]
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: c57ee0b94e5aafb6b1287707b10977e86ee631f1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4b4e9eba6d086d0094c8368d7c3d67c676fe0bd3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Procédures pas à pas relatives au langage Visual Basic
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.  
@@ -105,4 +87,3 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
   
  [Prise en charge du développement basé d’abord sur les tests avec la fonctionnalité Générer à partir de l’utilisation](http://msdn.microsoft.com/library/764c17a4-cd95-4c23-bf63-d92d9c5adfb2)  
  Explique comment effectuer le développement par test initial, dans lequel vous écrivez d’abord les tests unitaires et ensuite le code source pour garantir la réussite de ces tests.
-

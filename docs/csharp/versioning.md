@@ -10,14 +10,12 @@ ms.prod: visual-studio-dev-14
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 0b671333019c00abafcfb72533e30936f8fc6ad7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="versioning-in-c"></a>Gestion de version en C# #
 
 Dans ce didacticiel, vous allez apprendre la signification de la gestion de version .NET. Vous apprendrez également les facteurs à prendre en compte lors de la gestion de version de votre bibliothèque ainsi que de la mise à niveau vers une nouvelle version de la bibliothèque.
@@ -89,7 +87,7 @@ Vous utilisez le modificateur `new` pour masquer les membres hérités d’une c
 
 Prenons l’exemple suivant :
 
-[!code-csharp[Exemple d’utilisation du modificateur 'new'](../../samples/csharp/versioning/new/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'new' modifier](../../samples/csharp/versioning/new/Program.cs#sample)]
 
 **Sortie**
 
@@ -107,7 +105,7 @@ Quand aucun modificateur `new` n’est spécifié, une classe dérivée masque p
 
 Le modificateur `override` indique qu’une implémentation dérivée étend l’implémentation d’un membre de classe de base au lieu de la masquer. Le modificateur `virtual` doit être appliqué au membre de classe de base.
 
-[!code-csharp[Exemple d’utilisation du modificateur 'override'](../../samples/csharp/versioning/override/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
 
 **Sortie**
 
@@ -119,4 +117,3 @@ Derived Method One: Derived Method One
 Le modificateur `override` est évalué au moment de la compilation et génère une erreur s’il ne trouve pas un membre virtuel à substituer.
 
 Votre connaissance des techniques présentées et des situations dans lesquelles les utiliser sera très utile pour passer en douceur d’une version de bibliothèque à une autre.
-

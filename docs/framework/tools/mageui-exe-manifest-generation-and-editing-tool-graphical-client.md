@@ -5,29 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-caps.latest.revision: 38
+caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
+ms.openlocfilehash: a7b7b77622ee4305dde3d126cb2e062055aa9df4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f6daa65c15a35bc84d8d7c07a86f42ffd251274d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (outil Manifest Generation and Editing, client graphique)
 MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de commande Mage.exe, mais avec une interface utilisateur Windows. Avec cet outil, vous pouvez créer, modifier et signer les manifestes de déploiement et d'application. Les nouveaux manifestes créés avec MageUI.exe ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les versions antérieures de MageUI.exe doivent être utilisées pour cibler des versions précédentes de .NET Framework. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste, ou lors de la nouvelle signature de manifestes existants, MageUI.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour plus d’informations, consultez [Mage.exe (outil Manifest Generation and Editing)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
@@ -195,7 +188,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |----------------|-----------------|  
 |**Cette application doit vérifier les mises à jour**|Indique si [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour de l'application. Si cette case n'est pas cochée, l'application ne vérifie pas les mises à jour, sauf si vous la mettez à jour par programme à l'aide des API de l'espace de noms <xref:System.Deployment.Application>.|  
 |**Choisir le moment auquel l’application doit rechercher les mises à jour**|Fournit deux options pour les vérifications des mises à jour :<br /><br /> -   **Avant le démarrage de l’application**. La vérification des mises à jour est effectuée avant l'exécution de l'application.<br />-   **Après le démarrage de l’application**. La vérification des mises à jour commence une fois que le formulaire principal de l'application s'est initialisé et s'exécutera au prochain démarrage de l'application.|  
-|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] exécute une vérification des mises à jour chaque fois que l'utilisateur ouvre l'application.<br />-   **Vérifier tou(te)s les **: sélectionnez un délai et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
+|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] exécute une vérification des mises à jour chaque fois que l'utilisateur ouvre l'application.<br />-   **Vérifier tou(te)s les** : sélectionnez un délai et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
 |**Spécifier une version minimale requise pour cette application**|Facultatif. Spécifie qu'une version spécifique de votre application est une installation obligatoire, pour empêcher les utilisateurs d'utiliser une version antérieure.|  
 |**Version**|Obligatoire si la case **Spécifier une version minimale requise pour cette application** est cochée. Le numéro de version fourni doit être au format *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
   
@@ -207,7 +200,6 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |**Sélectionner un manifeste**|Vous permet de choisir le manifeste d'application. Tous les autres champs de cette page se renseignent quand vous choisissez un manifeste d'application.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)   
- [Procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)   
+ [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)  
+ [Procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
  [Mage.exe (outil Manifest Generation and Editing)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
-

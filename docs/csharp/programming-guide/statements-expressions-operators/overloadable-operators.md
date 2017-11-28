@@ -1,39 +1,21 @@
 ---
 title: "Opérateurs surchargeables (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, operator overloading
 - operator overloading [C#]
 ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 92dde781aa258267b7140228bc87621d26713f6d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 0dc2fcee3903b80816c98bab47e2b9a2e5ef78b0
-ms.openlocfilehash: 9e4f54f3a5b461be267301a2b8bc8de52ef9f776
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>Opérateurs surchargeables (Guide de programmation C#)
 
@@ -81,4 +63,3 @@ Pour plus d’informations, consultez [Guide pratique pour utiliser la surcharge
 [Opérateurs](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
 [Opérateurs C#](../../../csharp/language-reference/operators/index.md)  
 Article [Why are overloaded operators always static in C#?](http://go.microsoft.com/fwlink/?LinkId=112383)
-

@@ -14,16 +14,15 @@ helpviewer_keywords:
 - concurrency [.NET Framework]
 - .NET Framework, concurrency
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 589bb8fc36d95a48930e4b51a096e7db18905397
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="parallel-processing-and-concurrency-in-the-net-framework"></a>Traitement parallèle et concurrence dans le .NET Framework
 Le .NET Framework offre différentes façons d’utiliser plusieurs threads d’exécution pour maintenir la réactivité de votre application vis-à-vis de l’utilisateur tout en optimisant le niveau de performance de l’ordinateur de l’utilisateur.  
@@ -46,4 +45,3 @@ Le .NET Framework offre différentes façons d’utiliser plusieurs threads d’
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide de développement](../../docs/framework/development-guide.md)
-

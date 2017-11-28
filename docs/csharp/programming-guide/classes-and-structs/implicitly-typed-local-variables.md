@@ -1,46 +1,28 @@
 ---
 title: "Variables locales implicitement typées (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 26a4460acf70ff3748f12d74442f0ca568a587b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cc02c0f7ef5fbbbf3c60188426a8027f6a60fb89
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 Les variables locales peuvent être déclarées sans donner de type explicite. Le mot clé `var` indique au compilateur de déduire le type de la variable à partir de l’expression située à droite de l’instruction d’initialisation. Le type déduit peut être un type intégré, un type anonyme, un type défini par l’utilisateur ou un type défini dans la bibliothèque de classes .NET Framework. Pour plus d’informations sur l’initialisation des tableaux avec `var`, consultez [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
   
  Les exemples suivants montrent différentes manières de déclarer des variables locales avec `var` :  
   
- [!code-cs[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#43](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_1.cs)]  
   
  Il est important de comprendre que le mot clé `var` n’est pas « variant » et qu’il n’indique pas que la variable est peu typée ou à liaison tardive. Cela signifie simplement que le compilateur détermine et assigne le type qui convient le mieux.  
   
@@ -73,7 +55,7 @@ Les variables locales peuvent être déclarées sans donner de type explicite. L
   
  Du point de vue de votre code source, un type anonyme n’a pas de nom. Par conséquent, si une variable de requête a été initialisée avec `var`, la seule façon d’accéder aux propriétés de la séquence d’objets retournée consiste à utiliser `var` comme type pour la variable d’itération de l’instruction `foreach`.  
   
- [!code-cs[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
+ [!code-csharp[csProgGuideLINQ#44](../../../csharp/programming-guide/arrays/codesnippet/CSharp/implicitly-typed-local-variables_2.cs)]  
   
 ## <a name="remarks"></a>Remarques  
  Les restrictions suivantes s’appliquent aux déclarations de variables implicitement typées :  
@@ -92,20 +74,19 @@ Les variables locales peuvent être déclarées sans donner de type explicite. L
   
  Le mot clé `var` peut également être utile lorsque le type de la variable est fastidieux à taper, ou bien lorsqu’il est évident ou lorsqu’il n’aide pas à la lisibilité du code. Par exemple, `var` est utile avec les types génériques imbriqués tels que ceux utilisés avec les opérations de groupe. Dans la requête suivante, le type de la variable de requête est `IEnumerable<IGrouping<string, Student>>`. Tant que les personnes qui doivent gérer votre code comprennent ceci, le typage implicite peut tout à fait être utilisé pour rendre votre code plus concis et simplifier sa gestion.  
   
- [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/implicitly-typed-local-variables_3.cs)]  
   
  Toutefois, l’utilisation de `var` risque de rendre votre code plus difficile à comprendre pour les autres développeurs. C’est pourquoi, en général, la documentation C# utilise `var` uniquement lorsque cela est nécessaire.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)   
- [Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)   
- [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)   
- [Initialiseurs d’objets et de collections](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [var](../../../csharp/language-reference/keywords/var.md)   
- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)   
- [for](../../../csharp/language-reference/keywords/for.md)   
- [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
+ [Comment : utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
+ [Types anonymes](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
+ [Initialiseurs d’objets et de collections](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [var](../../../csharp/language-reference/keywords/var.md)  
+ [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [LINQ (Language Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
+ [for](../../../csharp/language-reference/keywords/for.md)  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
  [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)
-

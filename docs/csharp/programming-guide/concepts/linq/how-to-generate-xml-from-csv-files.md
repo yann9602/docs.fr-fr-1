@@ -1,25 +1,21 @@
 ---
 title: "Guide pratique pour générer du code XML à partir de fichiers CSV (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 9ec534c53445a1c0568dae36d54d9140e0220057
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 749919868364d0f35bd60246460013b07c004643
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-generate-xml-from-csv-files-c"></a>Guide pratique pour générer du code XML à partir de fichiers CSV (C#)
 Cet exemple montre comment utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d'un fichier de valeurs séparées par des virgules (CSV).  
@@ -121,4 +117,3 @@ Console.WriteLine(cust);
   
 ## <a name="see-also"></a>Voir aussi  
  [Projections et transformations (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
-

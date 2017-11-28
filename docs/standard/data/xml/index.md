@@ -8,22 +8,16 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 38382609fb21069fd69a84eb8b9de4701efeaf2c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 88d993122bf1498b08d2e523a71f7f1bed505c9a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="xml-documents-and-data"></a>Documents et données XML
 Le .NET Framework fournit un jeu de classes complet et intégré qui vous permet de créer facilement des applications capables de traiter du code XML. Les classes dans les espaces de noms suivants prennent en charge l’analyse et l’écriture de code XML, l’édition de donnés XML en mémoire, la validation de données et la transformation XSLT.  
@@ -42,23 +36,23 @@ Le .NET Framework fournit un jeu de classes complet et intégré qui vous perme
   
  Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Exemple :  
   
--   La classe <xref:System.Xml.XmlDocument?displayProperty=fullName> implémente les recommandations du [W3C relatives aux modèles objet de documents (DOM) de niveau 1](http://www.w3.org/TR/REC-DOM-Level-1/) et [2 (standard)](http://www.w3.org/TR/DOM-Level-2-Core/).  
+-   La classe <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implémente les recommandations du [W3C relatives aux modèles objet de documents (DOM) de niveau 1](http://www.w3.org/TR/REC-DOM-Level-1/) et [2 (standard)](http://www.w3.org/TR/DOM-Level-2-Core/).  
   
--   Les classes <xref:System.Xml.XmlReader?displayProperty=fullName> et <xref:System.Xml.XmlWriter?displayProperty=fullName> sont conformes aux recommandations du [W3C relatives à XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/) et aux [espaces de noms dans XML](http://www.w3.org/TR/REC-xml-names/).  
+-   Les classes <xref:System.Xml.XmlReader?displayProperty=nameWithType> et <xref:System.Xml.XmlWriter?displayProperty=nameWithType> sont conformes aux recommandations du [W3C relatives à XML 1.0](http://www.w3.org/TR/2006/REC-xml-20060816/) et aux [espaces de noms dans XML](http://www.w3.org/TR/REC-xml-names/).  
   
--   Les schémas de la classe <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=fullName> sont conformes aux recommandations du [W3C relatives aux structures (Part 1)](http://www.w3.org/TR/xmlschema-1/) et aux [types de données (Part 2) du schéma XML](http://www.w3.org/TR/xmlschema-2/).  
+-   Les schémas de la classe <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> sont conformes aux recommandations du [W3C relatives aux structures (Part 1)](http://www.w3.org/TR/xmlschema-1/) et aux [types de données (Part 2) du schéma XML](http://www.w3.org/TR/xmlschema-2/).  
   
--   Les classes de l’espace de noms <xref:System.Xml.Xsl?displayProperty=fullName> prennent en charge les transformations XSLT qui sont conformes à la recommandation [W3C XSLT 1.0](http://www.w3.org/TR/xslt).  
+-   Les classes de l’espace de noms <xref:System.Xml.Xsl?displayProperty=nameWithType> prennent en charge les transformations XSLT qui sont conformes à la recommandation [W3C XSLT 1.0](http://www.w3.org/TR/xslt).  
   
  Les classes XML du .NET Framework offrent les avantages suivants :  
   
 -   **Productivité** : [LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) facilite la programmation avec XML et offre une expérience de requête similaire à SQL.  
   
--   **Extensibilité** : les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.  
+-   **Extensibilité** : Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.  
   
--   **Architecture enfichable** : le .NET Framework propose une architecture dans laquelle les composants peuvent s'utiliser réciproquement et où les données peuvent être transmises en continu entre les composants. Par exemple, un magasin de données, tel qu'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>, peut être transformé à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>, et la sortie peut ensuite être soit transmise sous la forme de flux à un autre magasin, soit retournée sous la forme d'un flux à partir d'un service web.  
+-   **Architecture enfichable** : Le .NET Framework propose une architecture dans laquelle les composants peuvent s'utiliser réciproquement et où les données peuvent être transmises en continu entre les composants. Par exemple, un magasin de données, tel qu'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>, peut être transformé à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>, et la sortie peut ensuite être soit transmise sous la forme de flux à un autre magasin, soit retournée sous la forme d'un flux à partir d'un service web.  
   
--   **Performances** : pour améliorer les performances des applications, certaines des classes XML du .NET Framework prennent en charge un modèle basé sur les flux de données ayant les caractéristiques suivantes :  
+-   **Performances** Pour améliorer les performances des applications, certaines des classes XML du .NET Framework prennent en charge un modèle basé sur les flux de données ayant les caractéristiques suivantes :  
   
     -   Mise en cache minimale pour une analyse avant uniquement et de type pull (<xref:System.Xml.XmlReader>).  
   
@@ -101,4 +95,3 @@ Le .NET Framework fournit un jeu de classes complet et intégré qui vous perme
   
  [Centre de développement XML](http://go.microsoft.com/fwlink/?linkid=42458)  
  Fournit des informations techniques supplémentaires, des fichiers à télécharger, des groupes de discussion et d'autres ressources utiles aux développeurs XML.
-

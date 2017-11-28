@@ -1,38 +1,19 @@
 ---
 title: Guide pratique pour intercepter une exception non-CLS
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- exceptions [C#], non-CLS
+helpviewer_keywords: exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 473cace033983915c66647d14cae16dc7f5d5b9d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 18a19fe34b8ec13bd9fc6d25335d0931a22ce4a3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>Guide pratique pour intercepter une exception non-CLS
 Certains langages .NET, dont C++/CLI, permettent aux objets de lever des exceptions qui ne dérivent pas d’<xref:System.Exception>. De telles exceptions sont appelées *exceptions non-CLS* ou *non exceptions*. Dans [!INCLUDE[csprcs](~/includes/csprcs-md.md)], vous ne pouvez pas lever d’exceptions non-CLS, mais vous pouvez les intercepter de deux façons :  
@@ -52,7 +33,7 @@ Certains langages .NET, dont C++/CLI, permettent aux objets de lever des except
 2.  Accédez à l’exception d’origine via la propriété <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A>.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment intercepter une exception non-CLS levée à partir d’une bibliothèque de classes écrite en C++ /CLR. Notez que dans cet exemple, le code client [!INCLUDE[csprcs](~/includes/csprcs-md.md)] sait par avance que le type d’exception levé est un <xref:System.String?displayProperty=fullName>. Vous pouvez caster la propriété <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> en son type d’origine, tant que celui-ci est accessible à partir de votre code.  
+ L’exemple suivant montre comment intercepter une exception non-CLS levée à partir d’une bibliothèque de classes écrite en C++ /CLR. Notez que dans cet exemple, le code client [!INCLUDE[csprcs](~/includes/csprcs-md.md)] sait par avance que le type d’exception levé est un <xref:System.String?displayProperty=nameWithType>. Vous pouvez caster la propriété <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A> en son type d’origine, tant que celui-ci est accessible à partir de votre code.  
   
 ```  
 // Class library written in C++/CLR.  
@@ -84,6 +65,5 @@ Certains langages .NET, dont C++/CLI, permettent aux objets de lever des except
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Runtime.CompilerServices.RuntimeWrappedException>   
+ <xref:System.Runtime.CompilerServices.RuntimeWrappedException>  
  [Exceptions et gestion des exceptions](../../../csharp/programming-guide/exceptions/index.md)
-

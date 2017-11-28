@@ -1,39 +1,21 @@
 ---
 title: "Accès aux données dans les applications Visual Basic"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - data [Visual Basic]
 - Visual Basic, data access
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: da2fb9171a6b09ad94cea62877445bcb77c521ee
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4ff9885f66171ee0454bff058b342d1b5683d3e3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Accès aux données dans les applications Visual Basic
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] inclut plusieurs nouvelles fonctionnalités conçues pour vous aider à développer des applications qui accèdent à des données. Vous pouvez créer des formulaires liés aux données pour des applications Windows en faisant glisser des éléments de la [fenêtre Sources de données](/visualstudio/data-tools/add-new-data-sources) sur les formulaires. Vous pouvez également lier des contrôles aux données en faisant glisser des éléments de la **fenêtre Sources de données** sur des contrôles existants.  
@@ -80,4 +62,3 @@ ms.lasthandoff: 07/28/2017
 
  [Données dans les solutions Office](https://msdn.microsoft.com/library/xx069ybh)  
  Contient des liens vers des pages qui expliquent de quelle façon les données sont utilisées dans les solutions Office, notamment des informations sur la programmation orientée schéma, la mise en cache des données et l’accès aux données côté serveur.
-

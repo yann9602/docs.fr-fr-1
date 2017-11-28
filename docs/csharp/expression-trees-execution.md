@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 4ca87c8410a04e9198e9dd6c379760e7b6596585
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="executing-expression-trees"></a>Exécution d’arborescences d’expressions
 
 [Précédent -- Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)
@@ -130,4 +128,3 @@ Les arborescences d’expressions qui représentent des expressions lambda peuve
 L’arborescence d’expressions représente le code qui s’exécuterait pour toute construction donnée que vous créez. Tant que l’environnement dans lequel vous compilez et exécutez le code correspond à celui dans lequel vous créez une expression, tout fonctionne comme prévu. Si ce n’est pas le cas, les erreurs sont très prévisibles et seront interceptées lors de vos premiers tests de n’importe quel code utilisant les arborescences d’expressions.
 
 [Suivant -- Interprétation d’expressions](expression-trees-interpreting.md)
-

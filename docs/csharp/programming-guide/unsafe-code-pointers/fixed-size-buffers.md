@@ -1,40 +1,22 @@
 ---
 title: "Mémoires tampons de taille fixe (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
 ms.assetid: 6220d454-947c-4977-ac9d-9308c6ed5051
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 3f99c2c6d477fca988fcca77de5ca5c2f8addd4d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e1a3dcf953cb56fc3436fdd5e7ecb60478a12922
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Mémoires tampons de taille fixe (Guide de programmation C#)
 En C#, vous pouvez utiliser l’instruction [fixed](../../../csharp/language-reference/keywords/fixed-statement.md) pour créer une mémoire tampon avec un tableau de taille fixe dans une structure de données. Cela est utile lorsque vous utilisez du code existant, tel que du code écrit dans d’autres langages, des DLL préexistantes ou des projets COM. Le tableau fixe peut accepter tous les attributs ou modificateurs qui sont autorisés pour les membres de structures régulières. La seule restriction est que le tableau doit être de type `bool`, `byte`, `char`, `short`, `int`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `float` ou `double`.  
@@ -50,11 +32,11 @@ private fixed char name[30];
   
  Par exemple, avant C# 2.0, le `struct` suivant avait une taille de 8 octets. Le tableau `pathName` est une référence au tableau alloué par tas :  
   
- [!code-cs[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
+ [!code-csharp[csProgGuidePointers#19](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_1.cs)]  
   
  Avec C# 2.0, un `struct` peut maintenant contenir un tableau incorporé. Dans l’exemple suivant, le tableau `fixedBuffer` a une taille fixe. Pour accéder aux éléments du tableau, vous devez utiliser une instruction `fixed` pour établir un pointeur vers le premier élément. L’instruction `fixed` épingle une instance de `fixedBuffer` à un emplacement spécifique de la mémoire.  
   
- [!code-cs[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
+ [!code-csharp[csProgGuidePointers#20](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/fixed-size-buffers_2.cs)]  
   
  La taille du tableau `char` de 128 éléments est de 256 octets. Les mémoires tampons [char](../../../csharp/language-reference/keywords/char.md) de taille fixe acceptent toujours deux octets par caractère, quel que soit l’encodage. Ceci est vrai même lorsque les mémoires tampons char sont marshalées vers des méthodes ou des structs d’API avec `CharSet = CharSet.Auto` ou `CharSet = CharSet.Ansi`. Pour plus d'informations, consultez <xref:System.Runtime.InteropServices.CharSet>.  
   
@@ -74,8 +56,7 @@ private fixed char name[30];
 -   Les mémoires tampons unsafe peuvent uniquement être des champs d’instance de structs dans un contexte unsafe.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Pointeurs et code unsafe](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)  
  [Interopérabilité](../../../csharp/programming-guide/interop/index.md)
-

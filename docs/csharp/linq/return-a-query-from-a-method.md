@@ -7,16 +7,14 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: db220f79-c35b-41f2-886c-cd068672d42d
+ms.openlocfilehash: c1b69e3f5f0cd2c50ae80d2454e6b7f13dc30344
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 747345f0a765bc6cbe947a2b0c7bc025eb599550
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Guide pratique pour retourner une requête à partir d'une méthode (Guide de programmation C#)
 Cet exemple montre comment retourner une requête à partir d’une méthode en tant que valeur de retour et en tant que paramètre `out`.  
@@ -26,8 +24,7 @@ Cet exemple montre comment retourner une requête à partir d’une méthode en 
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, la première méthode retourne une requête comme valeur de retour et la seconde méthode retourne une requête comme paramètre `out`. Notez que, dans les deux cas, une requête est retournée et non pas les résultats d’une requête.  
   
- [!code-cs[csProgGuideLINQ#80](../../../samples/snippets/csharp/concepts/linq/how-to-return-a-query-from-a-method_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#80](../../../samples/snippets/csharp/concepts/linq/how-to-return-a-query-from-a-method_1.cs)]  
 
 ## <a name="see-also"></a>Voir aussi  
  [Expressions de requête LINQ](index.md)
-

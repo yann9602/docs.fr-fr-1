@@ -1,25 +1,21 @@
 ---
 title: Projections et transformations (LINQ to XML) (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: bb0457ab-1823-47e6-9d2d-c93c958cc913
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 81172ebb440bc2737bbe3f1de0f1dd3cf6e086c4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9dc3f97281f2cd13a44e52c441b537e9e2c640a6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="projections-and-transformations-linq-to-xml-c"></a>Projections et transformations (LINQ to XML) (C#)
 Cette section fournit des exemples de projections et de transformations [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -39,4 +35,3 @@ Cette section fournit des exemples de projections et de transformations [!INCLUD
   
 ## <a name="see-also"></a>Voir aussi  
  [Interrogation d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)
-

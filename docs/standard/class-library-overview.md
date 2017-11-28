@@ -41,16 +41,15 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 05af1b2a881cabb418adcaaee44a819ae323e62a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b88c85eaeabc7fa87b483c7302bd5e135e3fd276
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-class-library-overview"></a>Vue d'ensemble de la bibliothèque de classes .NET Framework
 Le [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] inclut des classes, interfaces et types valeur qui permettent d'accélérer et d'optimiser le processus de développement et de fournir l'accès aux fonctions du système. Pour faciliter l'interopérabilité entre les langages, la plupart des types .NET Framework sont conformes CLS (Common Language Specification) et peuvent, par conséquent, être utilisés à partir de n'importe quel langage de programmation dont le compilateur est conforme CLS.  
@@ -114,7 +113,6 @@ Objets ass|<xref:System.Object>|Racine de la hiérarchie d'objet.|**Objet**|**ob
  Pour plus d’informations sur les espaces de noms, consultez [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195). La documentation de référence fournit une vue d'ensemble de chaque espace de noms ainsi qu'une description formelle de chaque type et ses membres.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Système de type commun](../../docs/standard/base-types/common-type-system.md)   
- [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195)   
+ [Système de type commun](../../docs/standard/base-types/common-type-system.md)  
+ [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195)  
  [Vue d’ensemble](../../docs/framework/get-started/overview.md)
-

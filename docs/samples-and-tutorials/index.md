@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5c8b6e2d14a14724a040bed5cc58c5ffef3ce520
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="samples-and-tutorials"></a>Exemples et didacticiels
 
 La documentation .NET contient un ensemble d’exemples et de didacticiels qui vous renseignent sur .NET. Cette rubrique explique comment rechercher, afficher et télécharger des didacticiels et des exemples .NET Core, ASP.NET Core et C#. Vous trouverez des ressources utiles pour apprendre le langage de programmation F# sur le [site de F# Foundation](http://fsharp.org/learn.html). Si vous souhaitez explorer C# avec un éditeur de code en ligne, essayez ces [didacticiels interactifs](http://go.microsoft.com/fwlink/p/?LinkId=817234). Vous trouverez des instructions pour afficher et télécharger des exemples de code dans la section [Afficher et télécharger des exemples](#viewing-and-downloading-samples).
@@ -117,4 +115,3 @@ De nombreuses rubriques montrent le code source et les exemples qu’il est poss
    * Utiliser [Visual Studio](https://www.visualstudio.com/) ou [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/) : ouvrez l’exemple en sélectionnant **Fichier > Ouvrir > Projet / solution** dans la barre de menus, accédez au dossier de l’exemple de projet et sélectionnez le fichier projet (*.csproj* ou *.fsproj*).
    * Utiliser [Visual Studio Code](https://code.visualstudio.com/) : ouvrez l’exemple en sélectionnant **Fichier > Ouvrir le dossier** dans la barre de menus et en sélectionnant le dossier de l’exemple de projet.
    * Utiliser un autre IDE qui prend en charge les projets .NET Core.
-

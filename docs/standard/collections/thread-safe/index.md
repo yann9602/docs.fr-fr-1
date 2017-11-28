@@ -8,27 +8,25 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- thread-safe collections, overview
+helpviewer_keywords: thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: b5394cd2e9c9fa2b0cacb93ddf2cf05b33fabc71
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 19ecc67b38e2eab52994fb278211c6d9ff67ae7e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
-Le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=fullName>, qui inclut plusieurs classes de collections qui sont à la fois thread-safe et évolutives. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du nouveau code, utilisez les classes de collections simultanées chaque fois que la collection écrit simultanément dans plusieurs threads. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
+Le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui inclut plusieurs classes de collections qui sont à la fois thread-safe et évolutives. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du nouveau code, utilisez les classes de collections simultanées chaque fois que la collection écrit simultanément dans plusieurs threads. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>Synchronisation de threads dans les collections .NET Framework 1.0 et 2.0  
- Les collections introduites dans le .NET Framework 1.0 se trouvent dans l’espace de noms <xref:System.Collections?displayProperty=fullName>. Ces collections, qui incluent les <xref:System.Collections.ArrayList> et <xref:System.Collections.Hashtable> fréquemment utilisés, garantissent une certaine cohérence des threads par le biais de la propriété `Synchronized`, qui retourne un wrapper thread-safe autour de la collection. Le wrapper fonctionne en verrouillant l’ensemble de la collection à chaque opération d’ajout ou de suppression. Par conséquent, chaque thread qui tente d’accéder à la collection doit attendre son tour pour prendre le verrou. Ce fonctionnement n’est pas évolutif et peut provoquer une importante dégradation des performances pour les grandes collections. De même, la conception n’est pas complètement protégée contre la concurrence critique. Pour plus d’informations, consultez [Synchronisation dans les collections génériques](http://go.microsoft.com/fwlink/?LinkID=161130) sur le site Web MSDN.  
+ Les collections introduites dans le .NET Framework 1.0 se trouvent dans l’espace de noms <xref:System.Collections?displayProperty=nameWithType>. Ces collections, qui incluent les <xref:System.Collections.ArrayList> et <xref:System.Collections.Hashtable> fréquemment utilisés, garantissent une certaine cohérence des threads par le biais de la propriété `Synchronized`, qui retourne un wrapper thread-safe autour de la collection. Le wrapper fonctionne en verrouillant l’ensemble de la collection à chaque opération d’ajout ou de suppression. Par conséquent, chaque thread qui tente d’accéder à la collection doit attendre son tour pour prendre le verrou. Ce fonctionnement n’est pas évolutif et peut provoquer une importante dégradation des performances pour les grandes collections. De même, la conception n’est pas complètement protégée contre la concurrence critique. Pour plus d’informations, consultez [Synchronisation dans les collections génériques](http://go.microsoft.com/fwlink/?LinkID=161130) sur le site Web MSDN.  
   
- Les classes de collection introduites dans le .NET Framework 2.0 se trouvent dans l’espace de noms <xref:System.Collections.Generic?displayProperty=fullName>. Elles comprennent notamment <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>, etc. Ces classes garantissent une cohérence des types et des performances améliorées par rapport aux classes du .NET Framework 1.0. Toutefois, les classes de collections .NET Framework 2.0 ne fournissent pas de synchronisation des threads. Le code utilisateur doit fournir toute la synchronisation quand des éléments sont ajoutés ou supprimés simultanément sur plusieurs threads.  
+ Les classes de collection introduites dans le .NET Framework 2.0 se trouvent dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Elles comprennent notamment <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>, etc. Ces classes garantissent une cohérence des types et des performances améliorées par rapport aux classes du .NET Framework 1.0. Toutefois, les classes de collections .NET Framework 2.0 ne fournissent pas de synchronisation des threads. Le code utilisateur doit fournir toute la synchronisation quand des éléments sont ajoutés ou supprimés simultanément sur plusieurs threads.  
   
  Nous vous recommandons les classes de collections [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] simultanées, car elles offrent non seulement la cohérence des types des classes de collections .NET Framework 2.0, mais également une cohérence de thread plus efficace et plus complète que les collections [!INCLUDE[net_v10_short](../../../../includes/net-v10-short-md.md)].  
   
@@ -40,7 +38,7 @@ Le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] introduit
 > [!NOTE]
 >  Étant donné que les classes de collections simultanées prennent en charge <xref:System.Collections.ICollection>, elles fournissent des implémentations pour les propriétés <xref:System.Collections.ICollection.IsSynchronized%2A> et <xref:System.Collections.ICollection.SyncRoot%2A>, bien que ces propriétés ne soient pas pertinentes. `IsSynchronized` retourne toujours `false` et `SyncRoot` a toujours la valeur `null` (`Nothing` dans Visual Basic).  
   
- Le tableau suivant répertorie les types de collections dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=fullName>.  
+ Le tableau suivant répertorie les types de collections dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>.  
   
 |Type|Description|  
 |----------|-----------------|  
@@ -64,5 +62,4 @@ Le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] introduit
 |[Guide pratique pour créer un pool d'objets à l'aide d'un ConcurrentBag](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
 ## <a name="reference"></a>Référence  
- <xref:System.Collections.Concurrent?displayProperty=fullName>
-
+ <xref:System.Collections.Concurrent?displayProperty=nameWithType>

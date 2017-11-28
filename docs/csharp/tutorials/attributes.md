@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
+ms.openlocfilehash: dad02c64d22fe0f127057202c082680f13261d7b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cc8f38d96f7f1c41f04d64c2acc2f53805b6b012
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="using-attributes-in-c"></a>Utilisation d’attributs en C# #
 
 Les attributs fournissent un moyen permettant d’associer des informations au code de manière déclarative. Ils peuvent également fournir un élément réutilisable qui peut être appliqué à diverses cibles.
@@ -38,6 +36,8 @@ Maintenant que vous avez installé tous les outils, créez une nouvelle applicat
 
 Cette commande créera des fichiers de projet .NET Core bruts. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 Pour exécuter le programme, utilisez `dotnet run`. Vous devriez voir le résultat dans la « Hello, World » dans la console.
 
 ## <a name="how-to-add-attributes-to-code"></a>Guide pratique d’ajout d’attributs aux propriétés
@@ -45,14 +45,14 @@ Pour exécuter le programme, utilisez `dotnet run`. Vous devriez voir le résult
 En C#, les attributs sont des classes qui héritent de la classe de base `Attribute`. Toute classe qui hérite de `Attribute` peut être utilisée comme une sorte de « balise » sur les autres éléments de code.
 Par exemple, il existe un attribut appelé `ObsoleteAttribute`. Il sert à signaler que le code est obsolète et ne doit pas être plus utilisé. Vous pouvez placer cet attribut sur une classe, par exemple en utilisant des crochets.
 
-[!code-csharp[Exemple d’attribut obsolète](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
+[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
 
 Notez que si la classe est nommée `ObsoleteAttribute`, il est seulement nécessaire d’utiliser `[Obsolete]` dans le code. Il s’agit d’une convention que C# respecte.
 Vous pouvez utiliser le nom complet `[ObsoleteAttribute]` si vous le souhaitez.
 
 Lorsque vous marquez une classe comme étant obsolète, il est judicieux de fournir des informations indiquant *pourquoi* elle est obsolète, et/ou *quelle classe* utiliser à la place. Faites cela en passant un paramètre de chaîne à l’attribut obsolète.
 
-[!code-csharp[Exemple d’attribut obsolète avec des paramètres](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample2)]
+[!code-csharp[Obsolete attribute example with parameters](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample2)]
 
 La chaîne est passée comme argument à un constructeur `ObsoleteAttribute`, comme si vous écriviez `var attr = new ObsoleteAttribute("some string")`.
 
@@ -63,21 +63,21 @@ Vous ne pouvez pas utiliser une expression ou une variable. Vous êtes libre d�
 
 La création d’un attribut est aussi simple que l’héritage de la classe de base `Attribute`.
 
-[!code-csharp[Créer votre propre attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample1)]
+[!code-csharp[Create your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample1)]
 
 Avec les éléments ci-dessus, je peux maintenant utiliser `[MySpecial]` (ou `[MySpecialAttribute]`) en tant qu’attribut ailleurs dans la base de code.
 
-[!code-csharp[Utilisation de votre propre attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample2)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample2)]
 
 Les attributs dans la bibliothèque de classes de base .NET, comme `ObsoleteAttribute`, déclenchent certains comportements au sein du compilateur. Toutefois, un attribut que vous créez agit uniquement comme métadonnées et ne produit pas de code dans la classe d’attributs en cours d’exécution. Il revient à vous d’agir sur ces métadonnées ailleurs dans votre code (plus loin dans ce didacticiel).
 
 Il y a ici un « piège » à éviter. Comme mentionné ci-dessus, seuls certains types sont autorisés à être passés comme arguments lors de l’utilisation d’attributs. Toutefois, lorsque vous créez un type d’attribut, le compilateur C# ne vous empêche pas de créer ces paramètres. Dans l’exemple ci-dessous, j’ai créé un attribut avec un constructeur qui se compile correctement.
 
-[!code-csharp[Constructeur valide utilisé dans un attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGothca1)]
+[!code-csharp[Valid constructor used in an attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGothca1)]
 
 Toutefois, vous ne pourrez pas utiliser ce constructeur avec une syntaxe d’attribut.
 
-[!code-csharp[Tentative non valide d’utilisation du constructeur d’attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
+[!code-csharp[Invalid attempt to use the attribute constructor](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
 
 L’exemple ci-dessus entraîne une erreur du compilateur, comme `Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
@@ -103,11 +103,11 @@ Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples
 
 Lorsque vous créez une classe d’attributs, par défaut, C# vous permettra d’utiliser cet attribut sur une des cibles d’attribut possibles. Si vous souhaitez limiter votre attribut à certaines cibles, vous pouvez le faire à l’aide de `AttributeUsageAttribute` sur votre classe d’attributs. C’est exact, un attribut sur un attribut !
 
-[!code-csharp[Utilisation de votre propre attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
 
 Si vous tentez de placer l’attribut ci-dessus sur quelque chose qui n’est pas une classe ou un struct, vous obtiendrez une erreur du compilateur, comme `Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
 
-[!code-csharp[Utilisation de votre propre attribut](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
+[!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
 ## <a name="how-to-use-attributes-attached-to-a-code-element"></a>Guide d’utilisation des attributs associés à un élément de code
 
@@ -117,7 +117,7 @@ Pour rechercher et agir sur des attributs, la [Réflexion](../programming-guide/
 
 Par exemple, vous pouvez utiliser la réflexion pour obtenir des informations sur une classe : 
 
-[!code-csharp[Obtention d’informations de type avec la réflexion](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
+[!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
 Cela imprimera quelque chose comme : `The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
 
@@ -126,7 +126,7 @@ Vous pouvez également utiliser `GetCustomAttribute` et spécifier un type d’a
 
 Voici un exemple d’utilisation de `GetCustomAttributes` sur une instance de `MemberInfo` pour `MyClass` (avec un attribut `[Obsolete]` associé, comme vu précédemment).
 
-[!code-csharp[Obtention d’informations de type avec la réflexion](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample2)]
+[!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample2)]
 
 Cela imprimera ceci sur la console : `Attribute on MyClass: ObsoleteAttribute`. Essayez d’ajouter d’autres attributs à `MyClass`.
 
@@ -146,11 +146,10 @@ Si cette chaîne correspond à une directive `#define`, alors tous les appels à
 
 * `[CallerMemberName]`. Cet attribut peut être utilisé sur les paramètres et se trouve dans l’espace de noms `System.Runtime.CompilerServices`. Il s’agit d’un attribut utilisé pour injecter le nom de la méthode qui appelle une autre méthode. Cela est généralement utilisé comme moyen d’éliminer les « chaînes magiques » lors de l’implémentation de INotifyPropertyChanged dans divers frameworks d’interface utilisateur. En tant qu’exemple :
 
-[!code-csharp[Utilisation de CallerMemberName lors de l’implémentation de INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
+[!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 
 Dans le code ci-dessus, il est inutile d’avoir une chaîne littérale `"Name"`. Cela peut vous aider à éviter les bogues liés aux fautes de frappe et rend également plus simple la refactorisation/les changements de nom.
 
 ## <a name="summary"></a>Résumé
 
 Les attributs apportent la puissance déclarative dans C#. Mais ils constituent une forme de code en tant que métadonnées et n’agissent pas par eux-mêmes.
-

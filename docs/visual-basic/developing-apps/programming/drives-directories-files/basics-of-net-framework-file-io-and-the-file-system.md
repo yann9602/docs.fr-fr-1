@@ -1,15 +1,12 @@
 ---
 title: "Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - file access, file I/O in Visual Basic
 - file attributes, determining
@@ -18,30 +15,14 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 4a148aa9b7dad357aeaa6f88ec11098418005719
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b84e8bbaeb09bfe2ccddb17ecb9b0f8f71cd37c6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)
 Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travailler avec les lecteurs, les fichiers et les répertoires.  
@@ -126,8 +107,7 @@ Les classes de l’espace de noms <xref:System.IO> sont utilisées pour travaill
  Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les modifications dans les fichiers et répertoires de votre système ou sur n’importe quel ordinateur auquel vous avez accès par le biais du réseau. Par exemple, si un fichier est modifié, vous souhaiterez peut-être envoyer à un utilisateur une alerte signalant la modification. Quand des modifications se produisent, un ou plusieurs événements sont déclenchés, stockés dans une mémoire tampon et transmis au composant <xref:System.IO.FileSystemWatcher> pour traitement.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Composition de flux](https://msdn.microsoft.com/library/e4y2dch9)   
- [E/S de fichier et de flux](https://msdn.microsoft.com/library/k3352a4t)   
- [E/S sur fichier asynchrones](https://msdn.microsoft.com/library/kztecsys)   
+ [Composition de flux](https://msdn.microsoft.com/library/e4y2dch9)  
+ [Fichier et flux de données E/S](https://msdn.microsoft.com/library/k3352a4t)  
+ [E/S sur fichier asynchrones](https://msdn.microsoft.com/library/kztecsys)  
  [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
-

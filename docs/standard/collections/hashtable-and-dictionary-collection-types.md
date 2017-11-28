@@ -16,19 +16,18 @@ helpviewer_keywords:
 - hash function
 - collections [.NET Framework], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: aa2392775f0bd2d68c0aeb28aa0654b690b11808
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: b37d1d7ff75aebfcdf3e849931a5d2b3924d5d7a
-ms.openlocfilehash: 223174392019e0958360858740d7cae37d934f4c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Types collection Hashtable et Dictionary
-La classe <xref:System.Collections.Hashtable?displayProperty=fullName>, ainsi que les classes génériques <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName>, implémentent l'interface <xref:System.Collections.IDictionary?displayProperty=fullName>. La classe générique <xref:System.Collections.Generic.Dictionary%602> implémente également l'interface générique <xref:System.Collections.Generic.IDictionary%602>. Par conséquent, chaque élément de ces collections est une paire clé-valeur.  
+La classe <xref:System.Collections.Hashtable?displayProperty=nameWithType>, ainsi que les classes génériques <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>, implémentent l'interface <xref:System.Collections.IDictionary?displayProperty=nameWithType>. La classe générique <xref:System.Collections.Generic.Dictionary%602> implémente également l'interface générique <xref:System.Collections.Generic.IDictionary%602>. Par conséquent, chaque élément de ces collections est une paire clé-valeur.  
   
  Un objet <xref:System.Collections.Hashtable> est constitué de compartiments contenant les éléments de la collection. Un compartiment est un sous-groupe virtuel d'éléments dans la <xref:System.Collections.Hashtable>, ce qui rend la recherche et la récupération plus facile et plus rapide que dans la plupart des collections. Chaque compartiment est associé à un code de hachage qui est généré à l'aide d'une fonction de hachage et qui est basé sur la clé de l'élément.  
   
@@ -45,11 +44,10 @@ La classe <xref:System.Collections.Hashtable?displayProperty=fullName>, ainsi qu
  Les classes <xref:System.Collections.Generic.Dictionary%602> et <xref:System.Collections.Concurrent.ConcurrentDictionary%602> ont les mêmes fonctionnalités que la classe <xref:System.Collections.Hashtable>. Un dictionnaire <xref:System.Collections.Generic.Dictionary%602> d'un type spécifique (autre que <xref:System.Object>) offre de meilleures performances qu'une table <xref:System.Collections.Hashtable> pour les types valeur. La raison en est que les éléments de <xref:System.Collections.Hashtable> sont de type <xref:System.Object>. Par conséquent, le boxing et la conversion unboxing se produisent généralement quand vous stockez ou que vous récupérez un type valeur. La classe <xref:System.Collections.Concurrent.ConcurrentDictionary%602> doit être utilisée quand plusieurs threads sont susceptibles d’accéder simultanément à la collection.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Collections.Hashtable>   
- <xref:System.Collections.IDictionary>   
- <xref:System.Collections.IHashCodeProvider>   
- <xref:System.Collections.Generic.Dictionary%602>   
- <xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName>   
+ <xref:System.Collections.Hashtable>  
+ <xref:System.Collections.IDictionary>  
+ <xref:System.Collections.IHashCodeProvider>  
+ <xref:System.Collections.Generic.Dictionary%602>  
+ <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>  
  [Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)
-

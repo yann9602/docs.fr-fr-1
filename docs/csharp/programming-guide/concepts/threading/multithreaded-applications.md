@@ -1,30 +1,21 @@
 ---
 title: Applications multithread (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b7015cfb-d506-4eac-b2f8-b2caaa9cc977
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 48b056172e3260952155eb40a1a393d86da78344
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: dfe0f9c6e911295270df8464d1070a524412466d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="multithreaded-applications-c"></a>Applications multithread (C#)
 Avec C#, vous pouvez écrire des applications qui effectuent plusieurs tâches en même temps. Les tâches présentant le risque d’accaparer les ressources d’autres tâches peuvent s’exécuter sur des threads distincts : ce processus est appelé *multithreading* ou *threading libre*.  
@@ -91,8 +82,7 @@ newThread.Abort();
  Un *thread de premier plan* peut s’exécuter indéfiniment, tandis qu’un *thread d’arrière-plan* s’arrête dès que le dernier thread de premier plan s’est arrêté. Vous pouvez utiliser la propriété <xref:System.Threading.Thread.IsBackground%2A> pour déterminer ou modifier l’état d’arrière-plan d’un thread.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Threading.Thread>   
- [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)   
- [Paramètres et valeurs de retour pour les procédures multithread (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)   
+ <xref:System.Threading.Thread>  
+ [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)  
+ [Paramètres et valeurs de retour pour les procédures multithreads (C#)](../../../../csharp/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)  
  [Threading (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)
-

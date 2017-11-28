@@ -1,39 +1,21 @@
 ---
 title: "Mots clés d'instruction (Référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0a882d7c0e88f325d4a0bf471b5b38844b2b13f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: aae7d08eaca3491754444182ae1cfb82276e0939
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="statement-keywords-c-reference"></a>Mots clés d'instruction (Référence C#)
 Les instructions sont des instructions de programme. Sauf mention contraire dans les rubriques référencées dans le tableau suivant, les instructions sont exécutées en séquence. Le tableau suivant répertorie les mots clés d’instructions C#. Pour plus d’informations sur les instructions exprimées sans mots clés, consultez [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md).  
@@ -49,7 +31,6 @@ Les instructions sont des instructions de programme. Sauf mention contraire dans
 |[lock, instruction](../../../csharp/language-reference/keywords/lock-statement.md)|[lock](../../../csharp/language-reference/keywords/lock-statement.md)|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md)  
  [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-

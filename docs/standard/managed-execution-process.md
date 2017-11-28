@@ -1,5 +1,5 @@
 ---
-title: "Processus d'exécution managée"
+title: "processus d'exécution managée"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -16,18 +16,17 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: a47761acfabd3de77d65483d50fbe7a77f96e076
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cf4234f36745fdc13635ab2c6394f49aefabf7a8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="managed-execution-process"></a>Processus d'exécution managée
+# <a name="managed-execution-process"></a>processus d'exécution managée
 <a name="introduction"></a> Le processus d'exécution managé inclut les étapes suivantes,qui sont décrites en détail plus loin dans cette rubrique :  
   
 1.  [Choix d'un compilateur](#choosing_a_compiler)  
@@ -50,7 +49,7 @@ ms.lasthandoff: 08/21/2017
 ## <a name="choosing-a-compiler"></a>Choix d'un compilateur  
  Pour bénéficier des avantages qu'offre le Common Language Runtime (CLR), vous devez utiliser un ou plusieurs compilateurs de langage ciblant le runtime, tels que les compilateurs Visual Basic, C#, Visual C++, F# ou l'un des nombreux compilateurs tiers tels que les compilateurs Eiffel, Perl ou COBOL.  
   
- Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d'informations, consultez [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md).  
+ Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d'informations, consultez [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md).  
   
  [Retour au début](#introduction)  
   
@@ -116,13 +115,12 @@ ms.lasthandoff: 08/21/2017
  [Retour au début](#introduction)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble](../../docs/framework/get-started/overview.md)   
- [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md)   
- [Métadonnées et composants autodescriptifs](../../docs/standard/metadata-and-self-describing-components.md)   
- [Ilasm.exe (assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)   
- [Sécurité](../../docs/standard/security/index.md)   
- [Interopération avec du code non managé](../../docs/framework/interop/index.md)   
- [Déploiement](../../docs/framework/deployment/net-framework-applications.md)   
- [Assemblys dans le common language runtime](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)   
+ [Vue d’ensemble](../../docs/framework/get-started/overview.md)  
+ [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md)  
+ [Métadonnées et composants autodescriptifs](../../docs/standard/metadata-and-self-describing-components.md)  
+ [Ilasm.exe (assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
+ [Sécurité](../../docs/standard/security/index.md)  
+ [Interopération avec du code non managé](../../docs/framework/interop/index.md)  
+ [Déploiement](../../docs/framework/deployment/net-framework-applications.md)  
+ [Assemblys dans le Common Language Runtime](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [Domaines d’application](../../docs/framework/app-domains/application-domains.md)
-

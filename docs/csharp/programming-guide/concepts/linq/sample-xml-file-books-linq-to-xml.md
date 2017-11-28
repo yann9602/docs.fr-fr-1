@@ -1,30 +1,21 @@
 ---
 title: "Exemple de fichier XML : Livres (LINQ to XML)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b75ab1a2-fb76-4df9-bd01-c45ec22a29ef
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: d7160cb5de42716f4e3b093cd767ecc1a891a9ec
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fe9e95c56e0d31f0b294905c0890810d7ce3b086
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="sample-xml-file-books-linq-to-xml"></a>Exemple de fichier XML : Livres (LINQ to XML)
 Le fichier XML suivant est utilisé dans différents exemples de la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Le fichier contient des informations sur des livres.  
@@ -58,4 +49,3 @@ Le fichier XML suivant est utilisé dans différents exemples de la documentatio
   
 ## <a name="see-also"></a>Voir aussi  
  [Exemples de documents XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
-

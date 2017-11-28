@@ -1,41 +1,22 @@
 ---
 title: "Guide pratique pour publier des événements conformes aux indications du .NET Framework (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- events [C#], implementation guidelines
+helpviewer_keywords: events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 570729e432146b4ef97e4c487f644b12b354bb4a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 21badd504a54c7000fef76e901cc952134eff61e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Guide pratique pour publier des événements conformes aux indications du .NET Framework (Guide de programmation C#)
-La procédure suivante montre comment ajouter à vos classes et structs des événements qui respectent le modèle [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] standard. Tous les événements de la bibliothèque de classes [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :  
+La procédure suivante montre comment ajouter à vos classes et structures des événements qui respectent le modèle [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] standard. Tous les événements de la bibliothèque de classes [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :  
   
 ```csharp  
 public delegate void EventHandler(object sender, EventArgs e);  
@@ -94,11 +75,10 @@ public delegate void EventHandler(object sender, EventArgs e);
 ## <a name="example"></a>Exemple  
  L’exemple suivant est une illustration des étapes précédentes avec l’utilisation d’une classe EventArgs personnalisée et de <xref:System.EventHandler%601> comme type d’événement.  
   
- [!code-cs[csProgGuideEvents#2](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-publish-events-that-conform-to-net-framework-guidelines_1.cs)]  
+ [!code-csharp[csProgGuideEvents#2](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-publish-events-that-conform-to-net-framework-guidelines_1.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Delegate>   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Événements](../../../csharp/programming-guide/events/index.md)   
+ <xref:System.Delegate>  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Événements](../../../csharp/programming-guide/events/index.md)  
  [Délégués](../../../csharp/programming-guide/delegates/index.md)
-

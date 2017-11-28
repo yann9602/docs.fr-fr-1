@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 8594c863d67baf0237b63e61f28ca9ee315eeddf
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -52,7 +51,7 @@ Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour l
 
 `PROJECT`
 
-Projet à empaqueter. Il s’agit du chemin d’un [fichier csproj](csproj.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+Projet à empaqueter. Il s’agit du chemin d’accès d’un [fichier csproj](csproj.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
 
 ## <a name="options"></a>Options
 
@@ -66,7 +65,7 @@ Définit la configuration de build. La valeur par défaut est `Debug`.
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `--include-source`
 
@@ -116,7 +115,7 @@ Définit la configuration de build. La valeur par défaut est `Debug`.
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `--include-source`
 
@@ -173,4 +172,3 @@ Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionS
 Affectez `2.1.0` à la version du package à l’aide de la propriété MSBuild `PackageVersion` :
 
 `dotnet pack /p:PackageVersion=2.1.0`
-

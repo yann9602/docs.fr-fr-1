@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 74b87cdb-a244-4c13-908c-539118bfeef9
+ms.openlocfilehash: 21f42bbf4693c78a5be271b7769ef4489ed6d476
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b982d72b92cefb015c584ea6827dc60999ca9a00
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="managing-dependencies-with-net-core-sdk-10"></a>Gestion des dépendances avec le SDK .NET Core 1.0
 
 Le passage des projets .NET Core de project.json vers csproj et MSBuild s’est accompagné d’une unification du fichier projet et des ressources permettant le suivi des dépendances. Pour les projets .NET Core, cela est similaire à ce que project.json faisait. Il n’existe aucun fichier JSON ou XML distinct qui assure le suivi des dépendances NuGet. Avec ce changement, nous avons également introduit un autre type de *référence* dans la syntaxe csproj, appelé `<PackageReference>`. 
@@ -56,6 +54,8 @@ Dans cet exemple, nous allons utiliser le modèle par défaut qui est déposé p
 ```
 Ensuite, nous enregistrons le projet et exécutons la commande `dotnet restore` pour installer la dépendance. 
 
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
 Le projet complet ressemble à ceci :
 
 ```xml
@@ -73,4 +73,3 @@ Le projet complet ressemble à ceci :
 
 ## <a name="removing-a-dependency-from-the-project"></a>Suppression d’une dépendance du projet
 Pour supprimer une dépendance du fichier projet, il suffit de supprimer `<PackageReference>` de ce fichier.
-

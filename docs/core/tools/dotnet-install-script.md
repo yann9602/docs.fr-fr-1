@@ -10,17 +10,15 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: b64e7e6f-ffb4-4fc8-b43b-5731c89479c2
-ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
 ms.openlocfilehash: 2f15f37016fe824d76b501e4793e0b28bbdbe167
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet-install.ps1` | `dotnet-install.sh` : script utilisé pour installer les outils .NET Core CLI et le runtime partagé.
 
@@ -158,4 +156,3 @@ Mac OS/Linux :
 
 [Versions de .NET Core](https://github.com/dotnet/core/releases)   
 [Archive de téléchargement de .NET Core Runtime et du Kit SDK](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
-

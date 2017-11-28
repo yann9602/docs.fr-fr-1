@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 3af62252-1dfa-4336-8d2f-5cfdb57d7724
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 93bec65e3bbee93855d6f5bce5e2d6cea8bb9f3d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="organizing-your-project-to-support-net-framework-and-net-core"></a>Organisation de votre projet pour prendre en charge le .NET Framework et .NET Core
 
 Cet article vise à aider les propriétaires de projet qui souhaitent compiler leur solution côte à côte pour le .NET Framework et .NET Core. Il fournit plusieurs options pour organiser les projets de façon à aider les développeurs à atteindre cet objectif. La liste suivante fournit quelques scénarios classiques à prendre en compte quand vous devez décider comment configurer la disposition de votre projet avec .NET Core. La liste peut ne pas couvrir tout ce que vous souhaitez : établissez vos priorités en fonction des besoins de votre projet.
@@ -88,4 +86,3 @@ Consultez la [documentation relative au portage vers .NET Core][porting-doc] pou
 
 [option-csproj]: #replace-existing-projects-with-a-multi-targeted-net-core-project
 [option-csproj-folder]: #keep-existing-projects-and-create-a-net-core-project
-

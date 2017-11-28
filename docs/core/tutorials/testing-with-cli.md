@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 52ff1be3-d92e-4477-9c84-8c1771e87ab5
+ms.openlocfilehash: 62c81bf070a435f6105c313ae95340a5504233df
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1a0a0554b28600821fb15f64d31c6bce74a17136
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Organiser et tester des projets avec la ligne de commande .NET Core
 
 Ce didacticiel, qui fait suite à la rubrique [Bien démarrer avec .NET Core sur Windows/Linux/macOS à l’aide de la ligne de commande](using-with-xplat-cli.md), montre comment aller au-delà de la création d’une application console simple pour développer des applications avancées et bien organisées. Après une présentation des dossiers disponibles pour organiser votre code, ce didacticiel vous montre comment étendre une application console avec le framework de tests [xUnit](https://xunit.github.io/).
@@ -94,7 +92,6 @@ Créez la structure de dossiers suivante avec le contenu de fichier indiqué :
 Exécutez les commandes suivantes :
 
 ```console
-dotnet restore
 dotnet run
 ```
 
@@ -191,6 +188,9 @@ Le code suivant montre la structure complète du projet :
 ```
 
 Démarrez dans le répertoire *test/NewTypesTests*. Restaurez le projet de test avec la commande [`dotnet restore`](../tools/dotnet-restore.md). Exécutez les tests avec la commande [`dotnet test`](../tools/dotnet-test.md). Cette commande démarre le Test Runner spécifié dans le fichier projet.
+
+ [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+
  
 Comme prévu, les tests échouent et la console affiche la sortie suivante :
  

@@ -1,41 +1,22 @@
 ---
 title: "--, opérateur (référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- --_CSharpKeyword
-dev_langs:
-- CSharp
+f1_keywords: --_CSharpKeyword
 helpviewer_keywords:
 - -- operator [C#]
 - decrement operator (--) [C#]
 ms.assetid: 6b9cfe86-63c7-421f-9379-c9690fea8720
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 4eb68143103d44defeac7191e7c4ce7d1ee90e9b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 100e68f3b07164b0cfb398a32f47137f2726943f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="---operator-c-reference"></a>--, opérateur (référence C#)
 L’opérateur de décrémentation (`--`) décrémente son opérande de 1. L’opérateur de décrémentation peut figurer avant ou après son opérande : `--variable` et `variable--`. La première forme est une opération de décrément préfixé. Le résultat de l’opération est la valeur de l’opérande « après » sa décrémentation. La deuxième forme est une opération de décrément suffixé. Le résultat de l’opération est la valeur de l’opérande « avant » sa décrémentation.  
@@ -46,10 +27,9 @@ L’opérateur de décrémentation (`--`) décrémente son opérande de 1. L’
  Les types définis par l’utilisateur peuvent surcharger l’opérateur `--` (voir [operator](../../../csharp/language-reference/keywords/operator.md)). Les opérations sur les types intégraux sont en général autorisées sur l’énumération.  
   
 ## <a name="example"></a>Exemple  
- [!code-cs[csRefOperators#8](../../../csharp/language-reference/operators/codesnippet/CSharp/decrement-operator_1.cs)]  
+ [!code-csharp[csRefOperators#8](../../../csharp/language-reference/operators/codesnippet/CSharp/decrement-operator_1.cs)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
+ [Référence C#](../../../csharp/language-reference/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
  [Opérateurs C#](../../../csharp/language-reference/operators/index.md)
-

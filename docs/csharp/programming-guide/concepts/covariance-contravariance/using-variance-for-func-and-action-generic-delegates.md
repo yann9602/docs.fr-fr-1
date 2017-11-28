@@ -1,30 +1,21 @@
 ---
 title: "Utilisation de la variance pour les délégués génériques Func et Action (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 1b12a08579f70a07ebb90bfe723209b9f03460e9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 976057252a6cfa378008e9508145be7bc330fdc8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Utilisation de la variance pour les délégués génériques Func et Action (C#)
 Ces exemples montrent comment utiliser la covariance et la contravariance dans les délégués génériques `Func` et `Action` pour permettre de réutiliser des méthodes et fournir davantage de flexibilité dans votre code.  
@@ -99,6 +90,5 @@ class Program
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Covariance et contravariance (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)   
+ [Covariance et contravariance (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)  
  [Génériques](~/docs/standard/generics/index.md)
-

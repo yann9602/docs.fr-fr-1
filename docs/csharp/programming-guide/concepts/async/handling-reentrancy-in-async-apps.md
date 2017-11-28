@@ -1,30 +1,21 @@
 ---
 title: "Gestion de la réentrance dans Async Apps (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: a917f88d3d6105f836dc67ef8a9ec92efc300d7a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bd51c81c9589831146942ad9f0eae3642d4678e9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Gestion de la réentrance dans Async Apps (C#)
 Quand vous incluez du code asynchrone dans votre application, vous devez prendre en compte et éventuellement empêcher la réentrance, qui fait référence à une nouvelle entrée d'une opération asynchrone avant qu'elle soit terminée. Si vous n'identifiez pas et ne gérez pas les possibilités de réentrance, les résultats peuvent être inattendus.  
@@ -729,6 +720,5 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
 12. Apportez les modifications indiquées dans [Désactiver le bouton Démarrer](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), [Annuler et redémarrer l’opération](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) ou [Exécuter plusieurs opérations et mettre la sortie en file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour gérer la réentrance.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
+ [Procédure pas à pas : accès au web avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
  [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-

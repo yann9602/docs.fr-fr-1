@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: c0d7bcf6e07f4a49e15e6f6f4e028eebfe82d8bf
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="building-expression-trees"></a>Génération d’arborescences d’expressions
 
 [Précédent -- Interprétation d’expressions](expression-trees-interpreting.md)
@@ -180,4 +178,3 @@ Les API d’arborescence d’expressions comptent parmi les plus difficiles à p
 Il existe aussi actuellement des expressions C# qui ne peuvent pas être créées directement à l’aide de méthodes de classe `Expression`. En général, il s’agit des opérateurs et expressions les plus récents ajoutés dans C# 5 et C# 6. (Par exemple, les expressions `async` ne peuvent pas être générées et le nouvel opérateur `?.` ne peut pas être créé directement.)
 
 [Suivant -- Traduction d’expressions](expression-trees-translating.md)
-
