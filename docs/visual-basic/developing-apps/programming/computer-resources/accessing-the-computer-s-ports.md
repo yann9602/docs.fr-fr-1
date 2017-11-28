@@ -1,73 +1,54 @@
 ---
 title: "Accès aux ports de l’ordinateur (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - serial ports
-- My.Computer.Ports object, tasks
+- My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e71e70734de24dab62f7fbad4359e3040d1cba51
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: db4fdbea07000ab92d5329f53d68c61db9d0547d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# <a name="accessing-the-computer39s-ports-visual-basic"></a>Accès aux ports de l’ordinateur (Visual Basic)
-L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accéder aux ports série de l’ordinateur.  
+# <a name="accessing-the-computer39s-ports-visual-basic"></a><span data-ttu-id="720b0-102">Accès aux ports de l’ordinateur (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="720b0-102">Accessing the Computer&#39;s Ports (Visual Basic)</span></span>
+<span data-ttu-id="720b0-103">L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accéder aux ports série de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="720b0-103">The `My.Computer.Ports` object provides a property and a method for accessing the computer's serial ports.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique : afficher les ports série disponibles](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
- Montre comment afficher les ports série disponibles.  
+## <a name="in-this-section"></a><span data-ttu-id="720b0-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="720b0-104">In This Section</span></span>  
+ [<span data-ttu-id="720b0-105">Guide pratique : afficher les ports série disponibles</span><span class="sxs-lookup"><span data-stu-id="720b0-105">How to: Show Available Serial Ports</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
+ <span data-ttu-id="720b0-106">Montre comment afficher les ports série disponibles.</span><span class="sxs-lookup"><span data-stu-id="720b0-106">Demonstrates how to show available serial ports.</span></span>  
   
- [Guide pratique : passer des appels avec des modems attachés aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
- Montre comment utiliser un modem attaché au port série d’un ordinateur.  
+ [<span data-ttu-id="720b0-107">Guide pratique : passer des appels avec des modems attachés aux ports série</span><span class="sxs-lookup"><span data-stu-id="720b0-107">How to: Dial Modems Attached to Serial Ports</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
+ <span data-ttu-id="720b0-108">Montre comment utiliser un modem attaché au port série d’un ordinateur.</span><span class="sxs-lookup"><span data-stu-id="720b0-108">Demonstrates how to dial a modem attached to the serial port of a computer.</span></span>  
   
- [Guide pratique : envoyer des chaînes aux ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
- Montre comment envoyer une chaîne au port série d’un ordinateur.  
+ [<span data-ttu-id="720b0-109">Guide pratique : envoyer des chaînes aux ports série</span><span class="sxs-lookup"><span data-stu-id="720b0-109">How to: Send Strings to Serial Ports</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
+ <span data-ttu-id="720b0-110">Montre comment envoyer une chaîne au port série d’un ordinateur.</span><span class="sxs-lookup"><span data-stu-id="720b0-110">Demonstrates how to send a string to a computer's serial port.</span></span>  
   
- [Guide pratique : recevoir des chaînes des ports série](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
- Montre comment recevoir une chaîne du port série d’un ordinateur.  
+ [<span data-ttu-id="720b0-111">Guide pratique : recevoir des chaînes des ports série</span><span class="sxs-lookup"><span data-stu-id="720b0-111">How to: Receive Strings From Serial Ports</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
+ <span data-ttu-id="720b0-112">Montre comment recevoir une chaîne du port série d’un ordinateur.</span><span class="sxs-lookup"><span data-stu-id="720b0-112">Demonstrates how to receive a string from a computer's serial port.</span></span>  
   
- [Opérations relatives au port dans le .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
- Montre comment utiliser le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour effectuer des opérations relatives au port.  
+ [<span data-ttu-id="720b0-113">Opérations relatives au port dans le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="720b0-113">Port Operations in the .NET Framework</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
+ <span data-ttu-id="720b0-114">Montre comment utiliser le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour effectuer des opérations relatives au port.</span><span class="sxs-lookup"><span data-stu-id="720b0-114">Describes how to use the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] when performing port operations.</span></span>  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a><span data-ttu-id="720b0-115">Référence</span><span class="sxs-lookup"><span data-stu-id="720b0-115">Reference</span></span>  
  <xref:Microsoft.VisualBasic.Devices.Ports>  
- Décrit l’objet `My.Computer.Ports` et ses membres.  
+ <span data-ttu-id="720b0-116">Décrit l’objet `My.Computer.Ports` et ses membres.</span><span class="sxs-lookup"><span data-stu-id="720b0-116">Describes the `My.Computer.Ports` object and its members.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Ports.SerialPortNames%2A>  
- Décrit la propriété `SerialPortNames`, qui obtient une collection des noms des ports série sur l’ordinateur.  
+ <span data-ttu-id="720b0-117">Décrit la propriété `SerialPortNames`, qui obtient une collection des noms des ports série sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="720b0-117">Describes the `SerialPortNames` property, which gets a collection of the names of the serial ports on the computer.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>  
- Décrit la méthode `OpenSerialPort`, qui crée et ouvre un objet <xref:System.IO.Ports.SerialPort?displayProperty=fullName>.  
+ <span data-ttu-id="720b0-118">Décrit la méthode `OpenSerialPort`, qui crée et ouvre un objet <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="720b0-118">Describes the `OpenSerialPort` method, which creates and opens a <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> object.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a><span data-ttu-id="720b0-119">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="720b0-119">Related Sections</span></span>  
  <xref:System.IO.Ports.SerialPort>  
- Décrit la classe <xref:System.IO.Ports.SerialPort> du .NET Framework.
-
+ <span data-ttu-id="720b0-120">Décrit la classe <xref:System.IO.Ports.SerialPort> du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="720b0-120">Describes the .NET Framework <xref:System.IO.Ports.SerialPort> class.</span></span>

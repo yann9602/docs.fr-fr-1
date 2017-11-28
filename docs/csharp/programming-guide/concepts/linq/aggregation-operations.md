@@ -1,56 +1,46 @@
 ---
 title: "Opérations d’agrégation (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: f3bb029d2b7f9115d1c68db2844127329d34fe2e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6c453bdccdb3af026fe4f4fb79c6e33e44e7a8f0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="aggregation-operations-c"></a>Opérations d’agrégation (C#)
-Une opération d’agrégation calcule une valeur unique à partir d’une collection de valeurs. Par exemple, une opération d'agrégation peut être le calcul de la température quotidienne moyenne à partir des valeurs de température quotidiennes relevées sur un mois.  
+# <a name="aggregation-operations-c"></a><span data-ttu-id="f0eaf-102">Opérations d’agrégation (C#)</span><span class="sxs-lookup"><span data-stu-id="f0eaf-102">Aggregation Operations (C#)</span></span>
+<span data-ttu-id="f0eaf-103">Une opération d’agrégation calcule une valeur unique à partir d’une collection de valeurs.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-103">An aggregation operation computes a single value from a collection of values.</span></span> <span data-ttu-id="f0eaf-104">Par exemple, une opération d'agrégation peut être le calcul de la température quotidienne moyenne à partir des valeurs de température quotidiennes relevées sur un mois.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-104">An example of an aggregation operation is calculating the average daily temperature from a month's worth of daily temperature values.</span></span>  
   
- L’illustration suivante montre les résultats de deux opérations d’agrégation différentes sur une séquence de nombres. La première opération additionne les nombres. La deuxième opération retourne la valeur maximale dans la séquence.  
+ <span data-ttu-id="f0eaf-105">L’illustration suivante montre les résultats de deux opérations d’agrégation différentes sur une séquence de nombres.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-105">The following illustration shows the results of two different aggregation operations on a sequence of numbers.</span></span> <span data-ttu-id="f0eaf-106">La première opération additionne les nombres.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-106">The first operation sums the numbers.</span></span> <span data-ttu-id="f0eaf-107">La deuxième opération retourne la valeur maximale dans la séquence.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-107">The second operation returns the maximum value in the sequence.</span></span>  
   
- ![Opérations d’agrégation LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_aggregation.png "LINQ_Aggregation")  
+ <span data-ttu-id="f0eaf-108">![Opérations d’agrégation LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_aggregation.png "LINQ_Aggregation")</span><span class="sxs-lookup"><span data-stu-id="f0eaf-108">![LINQ Aggregation Operations](../../../../csharp/programming-guide/concepts/linq/media/linq_aggregation.png "LINQ_Aggregation")</span></span>  
   
- Les méthodes d’opérateurs de requête standard qui effectuent des opérations d’agrégation sont répertoriées dans la section suivante.  
+ <span data-ttu-id="f0eaf-109">Les méthodes d’opérateurs de requête standard qui effectuent des opérations d’agrégation sont répertoriées dans la section suivante.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-109">The standard query operator methods that perform aggregation operations are listed in the following section.</span></span>  
   
-## <a name="methods"></a>Méthodes  
+## <a name="methods"></a><span data-ttu-id="f0eaf-110">Méthodes</span><span class="sxs-lookup"><span data-stu-id="f0eaf-110">Methods</span></span>  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
+|<span data-ttu-id="f0eaf-111">Nom de la méthode</span><span class="sxs-lookup"><span data-stu-id="f0eaf-111">Method Name</span></span>|<span data-ttu-id="f0eaf-112">Description</span><span class="sxs-lookup"><span data-stu-id="f0eaf-112">Description</span></span>|<span data-ttu-id="f0eaf-113">Syntaxe d'expression de requête C#</span><span class="sxs-lookup"><span data-stu-id="f0eaf-113">C# Query Expression Syntax</span></span>|<span data-ttu-id="f0eaf-114">Informations complémentaires</span><span class="sxs-lookup"><span data-stu-id="f0eaf-114">More Information</span></span>|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Aggregate|Effectue une opération d’agrégation personnalisée sur les valeurs d’une collection.|Non applicable.|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
-|Average|Calcule la valeur moyenne d’une collection de valeurs.|Non applicable.|<xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Average%2A?displayProperty=nameWithType>|  
-|Nombre|Compte tous les éléments d’une collection, ou uniquement les éléments basés sur une fonction de prédicat.|Non applicable.|<xref:System.Linq.Enumerable.Count%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Count%2A?displayProperty=nameWithType>|  
-|LongCount|Compte tous les éléments d’une grande collection, ou uniquement les éléments basés sur une fonction de prédicat.|Non applicable.|<xref:System.Linq.Enumerable.LongCount%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LongCount%2A?displayProperty=nameWithType>|  
-|Max|Détermine la valeur maximale dans une collection.|Non applicable.|<xref:System.Linq.Enumerable.Max%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Max%2A?displayProperty=nameWithType>|  
-|Min|Détermine la valeur minimale dans une collection.|Non applicable.|<xref:System.Linq.Enumerable.Min%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Min%2A?displayProperty=nameWithType>|  
-|Sum|Calcule la somme des valeurs d’une collection.|Non applicable.|<xref:System.Linq.Enumerable.Sum%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Sum%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-115">Aggregate</span><span class="sxs-lookup"><span data-stu-id="f0eaf-115">Aggregate</span></span>|<span data-ttu-id="f0eaf-116">Effectue une opération d’agrégation personnalisée sur les valeurs d’une collection.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-116">Performs a custom aggregation operation on the values of a collection.</span></span>|<span data-ttu-id="f0eaf-117">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-117">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-118">Average</span><span class="sxs-lookup"><span data-stu-id="f0eaf-118">Average</span></span>|<span data-ttu-id="f0eaf-119">Calcule la valeur moyenne d’une collection de valeurs.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-119">Calculates the average value of a collection of values.</span></span>|<span data-ttu-id="f0eaf-120">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-120">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Average%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-121">Nombre</span><span class="sxs-lookup"><span data-stu-id="f0eaf-121">Count</span></span>|<span data-ttu-id="f0eaf-122">Compte tous les éléments d’une collection, ou uniquement les éléments basés sur une fonction de prédicat.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-122">Counts the elements in a collection, optionally only those elements that satisfy a predicate function.</span></span>|<span data-ttu-id="f0eaf-123">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-123">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Count%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Count%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-124">LongCount</span><span class="sxs-lookup"><span data-stu-id="f0eaf-124">LongCount</span></span>|<span data-ttu-id="f0eaf-125">Compte tous les éléments d’une grande collection, ou uniquement les éléments basés sur une fonction de prédicat.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-125">Counts the elements in a large collection, optionally only those elements that satisfy a predicate function.</span></span>|<span data-ttu-id="f0eaf-126">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-126">Not applicable.</span></span>|<xref:System.Linq.Enumerable.LongCount%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LongCount%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-127">Max</span><span class="sxs-lookup"><span data-stu-id="f0eaf-127">Max</span></span>|<span data-ttu-id="f0eaf-128">Détermine la valeur maximale dans une collection.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-128">Determines the maximum value in a collection.</span></span>|<span data-ttu-id="f0eaf-129">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-129">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Max%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Max%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-130">Min</span><span class="sxs-lookup"><span data-stu-id="f0eaf-130">Min</span></span>|<span data-ttu-id="f0eaf-131">Détermine la valeur minimale dans une collection.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-131">Determines the minimum value in a collection.</span></span>|<span data-ttu-id="f0eaf-132">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-132">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Min%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Min%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="f0eaf-133">Sum</span><span class="sxs-lookup"><span data-stu-id="f0eaf-133">Sum</span></span>|<span data-ttu-id="f0eaf-134">Calcule la somme des valeurs d’une collection.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-134">Calculates the sum of the values in a collection.</span></span>|<span data-ttu-id="f0eaf-135">Non applicable.</span><span class="sxs-lookup"><span data-stu-id="f0eaf-135">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Sum%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Sum%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq>   
- [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [Guide pratique pour calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md)   
- [Guide pratique pour rechercher le ou les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)   
- [Guide pratique pour rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)
-
+## <a name="see-also"></a><span data-ttu-id="f0eaf-136">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f0eaf-136">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="f0eaf-137">Présentation des opérateurs de requête standard (C#)</span><span class="sxs-lookup"><span data-stu-id="f0eaf-137">Standard Query Operators Overview (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="f0eaf-138">Guide pratique pour calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="f0eaf-138">How to: Compute Column Values in a CSV Text File (LINQ) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md)  
+ [<span data-ttu-id="f0eaf-139">Guide pratique pour interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="f0eaf-139">How to: Query for the Largest File or Files in a Directory Tree (LINQ) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md)  
+ [<span data-ttu-id="f0eaf-140">Guide pratique pour rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="f0eaf-140">How to: Query for the Total Number of Bytes in a Set of Folders (LINQ) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md)

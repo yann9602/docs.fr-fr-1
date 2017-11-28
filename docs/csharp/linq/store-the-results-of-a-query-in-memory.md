@@ -7,20 +7,18 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 5b863961-1750-4cf9-9607-acea5054d15a
+ms.openlocfilehash: 86a9c2d464eac83cabb5faa68987ad580fc31248
+ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 35d908bde06ef55ba2dc93a73211f7be33b9332c
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/18/2017
 ---
-# <a name="store-the-results-of-a-query-in-memory"></a>Stocker les résultats d’une requête dans la mémoire
+# <a name="store-the-results-of-a-query-in-memory"></a><span data-ttu-id="5ed42-104">Stocker les résultats d’une requête dans la mémoire</span><span class="sxs-lookup"><span data-stu-id="5ed42-104">Store the results of a query in memory</span></span>
 
-Une requête est en fait un ensemble d’instructions permettant de récupérer et d’organiser des données. Les requêtes sont exécutées de manière différée, à mesure que chaque élément dans le résultat est demandé. Lorsque vous utilisez `foreach` pour effectuer une itération sur les résultats, les éléments sont retournés lorsque vous y accédez. Pour évaluer une requête et stocker ses résultats sans exécuter une boucle `foreach`, appelez simplement l’une des méthodes suivantes sur la variable de requête :  
+<span data-ttu-id="5ed42-105">Une requête est en fait un ensemble d’instructions permettant de récupérer et d’organiser des données.</span><span class="sxs-lookup"><span data-stu-id="5ed42-105">A query is basically a set of instructions for how to retrieve and organize data.</span></span> <span data-ttu-id="5ed42-106">Les requêtes sont exécutées de manière différée, à mesure que chaque élément dans le résultat est demandé.</span><span class="sxs-lookup"><span data-stu-id="5ed42-106">Queries are executed lazily, as each subsequent item in the result is requested.</span></span> <span data-ttu-id="5ed42-107">Lorsque vous utilisez `foreach` pour effectuer une itération sur les résultats, les éléments sont retournés lorsque vous y accédez.</span><span class="sxs-lookup"><span data-stu-id="5ed42-107">When you use `foreach` to iterate the results, items are returned as accessed.</span></span> <span data-ttu-id="5ed42-108">Pour évaluer une requête et stocker ses résultats sans exécuter une boucle `foreach`, appelez simplement l’une des méthodes suivantes sur la variable de requête :</span><span class="sxs-lookup"><span data-stu-id="5ed42-108">To evaluate a query and store its results without executing a `foreach` loop, just call one of the following methods on the query variable:</span></span>  
   
 -   <xref:System.Linq.Enumerable.ToList%2A>  
   
@@ -30,12 +28,11 @@ Une requête est en fait un ensemble d’instructions permettant de récupérer 
   
 -   <xref:System.Linq.Enumerable.ToLookup%2A>  
   
- Lorsque vous stockez les résultats de requête, nous vous recommandons d’assigner l’objet de collection retourné à une nouvelle variable, comme indiqué dans l’exemple suivant :  
+ <span data-ttu-id="5ed42-109">Lorsque vous stockez les résultats de requête, nous vous recommandons d’assigner l’objet de collection retourné à une nouvelle variable, comme indiqué dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="5ed42-109">We recommend that when you store the query results, you assign the returned collection object to a new variable as shown in the following example:</span></span>  
   
-## <a name="example"></a>Exemple  
- [!code-cs[csProgGuideLINQ#25](../../../samples/snippets/csharp/concepts/linq/how-to-store-the-results-of-a-query-in-memory_1.cs)]  
+## <a name="example"></a><span data-ttu-id="5ed42-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="5ed42-110">Example</span></span>  
+ [!code-csharp[csProgGuideLINQ#25](../../../samples/snippets/csharp/concepts/linq/how-to-store-the-results-of-a-query-in-memory_1.cs)]  
   
 
-## <a name="see-also"></a>Voir aussi  
- [Expressions de requête LINQ](index.md)
-
+## <a name="see-also"></a><span data-ttu-id="5ed42-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5ed42-111">See Also</span></span>  
+ [<span data-ttu-id="5ed42-112">Expressions de requête LINQ</span><span class="sxs-lookup"><span data-stu-id="5ed42-112">LINQ Query Expressions</span></span>](index.md)

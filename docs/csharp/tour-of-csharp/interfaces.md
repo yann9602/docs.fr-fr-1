@@ -10,43 +10,41 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 673ac56f3f5732fcda02d313b6f4273708ae365f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="interfaces"></a><span data-ttu-id="9b756-104">Interfaces</span><span class="sxs-lookup"><span data-stu-id="9b756-104">Interfaces</span></span>
 
-# <a name="interfaces"></a>Interfaces
+<span data-ttu-id="9b756-105">Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures.</span><span class="sxs-lookup"><span data-stu-id="9b756-105">An ***interface*** defines a contract that can be implemented by classes and structs.</span></span> <span data-ttu-id="9b756-106">Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs.</span><span class="sxs-lookup"><span data-stu-id="9b756-106">An interface can contain methods, properties, events, and indexers.</span></span> <span data-ttu-id="9b756-107">Une interface ne fournit pas les implémentations des membres qu’elle définit, elle indique simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.</span><span class="sxs-lookup"><span data-stu-id="9b756-107">An interface does not provide implementations of the members it defines—it merely specifies the members that must be supplied by classes or structs that implement the interface.</span></span>
 
-Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas les implémentations des membres qu’elle définit, elle indique simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
-
-Les interfaces peuvent utiliser ***l’héritage multiple***. Dans l’exemple suivant, l’interface `IComboBox` hérite à la fois de `ITextBox` et `IListBox`.
+<span data-ttu-id="9b756-108">Les interfaces peuvent utiliser ***l’héritage multiple***.</span><span class="sxs-lookup"><span data-stu-id="9b756-108">Interfaces may employ ***multiple inheritance***.</span></span> <span data-ttu-id="9b756-109">Dans l’exemple suivant, l’interface `IComboBox` hérite à la fois de `ITextBox` et `IListBox`.</span><span class="sxs-lookup"><span data-stu-id="9b756-109">In the following example, the interface `IComboBox` inherits from both `ITextBox` and `IListBox`.</span></span>
 
 [!code-csharp[InterfacesOne](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L5-L17)]
 
-Les classes et les structs peuvent implémenter plusieurs interfaces. Dans l’exemple suivant, la classe `EditBox` implémente à la fois `IControl` et `IDataBound`.
+<span data-ttu-id="9b756-110">Les classes et les structs peuvent implémenter plusieurs interfaces.</span><span class="sxs-lookup"><span data-stu-id="9b756-110">Classes and structs can implement multiple interfaces.</span></span> <span data-ttu-id="9b756-111">Dans l’exemple suivant, la classe `EditBox` implémente à la fois `IControl` et `IDataBound`.</span><span class="sxs-lookup"><span data-stu-id="9b756-111">In the following example, the class `EditBox` implements both `IControl` and `IDataBound`.</span></span>
 
 [!code-csharp[InterfacesTwo](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L19-L27)]
 
-Lorsqu’une classe ou un struct implémente une interface spécifique, les instances de cette classe ou struct peuvent être converties implicitement en ce type d’interface. Exemple :
+<span data-ttu-id="9b756-112">Lorsqu’une classe ou un struct implémente une interface spécifique, les instances de cette classe ou struct peuvent être converties implicitement en ce type d’interface.</span><span class="sxs-lookup"><span data-stu-id="9b756-112">When a class or struct implements a particular interface, instances of that class or struct can be implicitly converted to that interface type.</span></span> <span data-ttu-id="9b756-113">Exemple :</span><span class="sxs-lookup"><span data-stu-id="9b756-113">For example</span></span>
 
 [!code-csharp[InterfacesThree](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L33-L35)]
 
-Si une instance n’est pas connue pour implémenter une interface donnée de façon statique, des casts de type dynamiques peuvent être utilisés. Par exemple, les instructions suivantes utilisent des casts de type dynamiques pour obtenir les implémentations des interfaces `IControl` et `IDataBound` d’un objet. Étant donné que le type réel au moment de l’exécution de l’objet est `EditBox`, les casts réussissent.
+<span data-ttu-id="9b756-114">Si une instance n’est pas connue pour implémenter une interface donnée de façon statique, des casts de type dynamiques peuvent être utilisés.</span><span class="sxs-lookup"><span data-stu-id="9b756-114">In cases where an instance is not statically known to implement a particular interface, dynamic type casts can be used.</span></span> <span data-ttu-id="9b756-115">Par exemple, les instructions suivantes utilisent des casts de type dynamiques pour obtenir les implémentations des interfaces `IControl` et `IDataBound` d’un objet.</span><span class="sxs-lookup"><span data-stu-id="9b756-115">For example, the following statements use dynamic type casts to obtain an object’s `IControl` and `IDataBound` interface implementations.</span></span> <span data-ttu-id="9b756-116">Étant donné que le type réel au moment de l’exécution de l’objet est `EditBox`, les casts réussissent.</span><span class="sxs-lookup"><span data-stu-id="9b756-116">Because the run-time actual type of the object is `EditBox`, the casts succeed.</span></span>
 
 [!code-csharp[InterfacesFour](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L40-L42)]
 
-Dans la classe `EditBox` précédente, la méthode `Paint` de l’interface `IControl` et la méthode `Bind` de l’interface `IDataBound` sont implémentées à l’aide des membres publics. C# prend également en charge les ***implémentations de membres d’interface*** explicites, permettant ainsi à la classe ou structure d’éviter d’avoir à créer des membres publics. Une implémentation de membre d’interface explicite est écrite à l’aide du nom de membre d’interface qualifié complet. Par exemple, la classe `EditBox` peut implémenter les méthodes `IControl.Paint` et `IDataBound.Bind` à l’aide des implémentations de membres d’interface explicites, comme suit.
+<span data-ttu-id="9b756-117">Dans la classe `EditBox` précédente, la méthode `Paint` de l’interface `IControl` et la méthode `Bind` de l’interface `IDataBound` sont implémentées à l’aide des membres publics.</span><span class="sxs-lookup"><span data-stu-id="9b756-117">In the previous `EditBox` class, the `Paint` method from the `IControl` interface and the `Bind` method from the `IDataBound` interface are implemented using public members.</span></span> <span data-ttu-id="9b756-118">C# prend également en charge les ***implémentations de membres d’interface*** explicites, permettant ainsi à la classe ou structure d’éviter d’avoir à créer des membres publics.</span><span class="sxs-lookup"><span data-stu-id="9b756-118">C# also supports explicit ***interface member implementations***, enabling the class or struct to avoid making the members public.</span></span> <span data-ttu-id="9b756-119">Une implémentation de membre d’interface explicite est écrite à l’aide du nom de membre d’interface qualifié complet.</span><span class="sxs-lookup"><span data-stu-id="9b756-119">An explicit interface member implementation is written using the fully qualified interface member name.</span></span> <span data-ttu-id="9b756-120">Par exemple, la classe `EditBox` peut implémenter les méthodes `IControl.Paint` et `IDataBound.Bind` à l’aide des implémentations de membres d’interface explicites, comme suit.</span><span class="sxs-lookup"><span data-stu-id="9b756-120">For example, the `EditBox` class could implement the `IControl.Paint` and `IDataBound.Bind` methods using explicit interface member implementations as follows.</span></span>
 
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L60-L64)]
 
-Les membres d’interface explicites sont accessibles uniquement via le type interface. Par exemple, l’implémentation de `IControl.Paint` fournie par la classe EditBox précédente ne peut être appelée en convertissant d’abord l’ `EditBox` en référence vers le type d’interface `IControl`.
+<span data-ttu-id="9b756-121">Les membres d’interface explicites sont accessibles uniquement via le type interface.</span><span class="sxs-lookup"><span data-stu-id="9b756-121">Explicit interface members can only be accessed via the interface type.</span></span> <span data-ttu-id="9b756-122">Par exemple, l’implémentation de `IControl.Paint` fournie par la classe EditBox précédente ne peut être appelée en convertissant d’abord l’ `EditBox` en référence vers le type d’interface `IControl`.</span><span class="sxs-lookup"><span data-stu-id="9b756-122">For example, the implementation of `IControl.Paint` provided by the previous EditBox class can only be invoked by first converting the `EditBox` reference to the `IControl` interface type.</span></span>
 
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L71-L74)]
 
 >[!div class="step-by-step"]
-[Précédent](arrays.md)
-[Suivant](enums.md)
-
+<span data-ttu-id="9b756-123">[Précédent](arrays.md)
+[Suivant](enums.md)</span><span class="sxs-lookup"><span data-stu-id="9b756-123">[Previous](arrays.md)
+[Next](enums.md)</span></span>

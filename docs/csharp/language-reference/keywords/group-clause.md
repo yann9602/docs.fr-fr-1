@@ -1,111 +1,92 @@
 ---
 title: "group, clause (Référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - group
 - group_CSharpKeyword
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: a2f67b2c90e1cced92d6fc7d47768b58bf155360
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: afd32358a406b2797059cf2b8d85d897c8737222
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="group-clause-c-reference"></a>group, clause (Référence C#)
-La clause `group` retourne une séquence d’objets <xref:System.Linq.IGrouping%602> qui contient zéro, un ou plusieurs éléments qui correspondent à la valeur de clé du groupe. Par exemple, vous pouvez regrouper une séquence de chaînes en fonction de la première lettre de chaque chaîne. Dans ce cas, la première lettre est la clé, elle a le type [char](../../../csharp/language-reference/keywords/char.md) et elle est stockée dans la propriété `Key` de chaque objet <xref:System.Linq.IGrouping%602>. Le compilateur déduit le type de la clé.  
+# <a name="group-clause-c-reference"></a><span data-ttu-id="938ff-102">group, clause (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="938ff-102">group clause (C# Reference)</span></span>
+<span data-ttu-id="938ff-103">La clause `group` retourne une séquence d’objets <xref:System.Linq.IGrouping%602> qui contient zéro, un ou plusieurs éléments qui correspondent à la valeur de clé du groupe.</span><span class="sxs-lookup"><span data-stu-id="938ff-103">The `group` clause returns a sequence of <xref:System.Linq.IGrouping%602> objects that contain zero or more items that match the key value for the group.</span></span> <span data-ttu-id="938ff-104">Par exemple, vous pouvez regrouper une séquence de chaînes en fonction de la première lettre de chaque chaîne.</span><span class="sxs-lookup"><span data-stu-id="938ff-104">For example, you can group a sequence of strings according to the first letter in each string.</span></span> <span data-ttu-id="938ff-105">Dans ce cas, la première lettre est la clé, elle a le type [char](../../../csharp/language-reference/keywords/char.md) et elle est stockée dans la propriété `Key` de chaque objet <xref:System.Linq.IGrouping%602>.</span><span class="sxs-lookup"><span data-stu-id="938ff-105">In this case, the first letter is the key and has a type [char](../../../csharp/language-reference/keywords/char.md), and is stored in the `Key` property of each <xref:System.Linq.IGrouping%602> object.</span></span> <span data-ttu-id="938ff-106">Le compilateur déduit le type de la clé.</span><span class="sxs-lookup"><span data-stu-id="938ff-106">The compiler infers the type of the key.</span></span>  
   
- Vous pouvez terminer une expression de requête avec une clause `group`, comme illustré dans l’exemple suivant :  
+ <span data-ttu-id="938ff-107">Vous pouvez terminer une expression de requête avec une clause `group`, comme illustré dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="938ff-107">You can end a query expression with a `group` clause, as shown in the following example:</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_1.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_1.cs)]  
   
- Si vous souhaitez effectuer des opérations de requête supplémentaires sur chaque groupe, vous pouvez spécifier un identificateur temporaire en utilisant le mot clé contextuel [into](../../../csharp/language-reference/keywords/into.md). Quand vous utilisez `into`, vous devez continuer la requête et finalement la terminer avec une instruction `select` ou une autre clause `group`, comme illustré dans l’extrait suivant :  
+ <span data-ttu-id="938ff-108">Si vous souhaitez effectuer des opérations de requête supplémentaires sur chaque groupe, vous pouvez spécifier un identificateur temporaire en utilisant le mot clé contextuel [into](../../../csharp/language-reference/keywords/into.md).</span><span class="sxs-lookup"><span data-stu-id="938ff-108">If you want to perform additional query operations on each group, you can specify a temporary identifier by using the [into](../../../csharp/language-reference/keywords/into.md) contextual keyword.</span></span> <span data-ttu-id="938ff-109">Quand vous utilisez `into`, vous devez continuer la requête et finalement la terminer avec une instruction `select` ou une autre clause `group`, comme illustré dans l’extrait suivant :</span><span class="sxs-lookup"><span data-stu-id="938ff-109">When you use `into`, you must continue with the query, and eventually end it with either a `select` statement or another `group` clause, as shown in the following excerpt:</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_2.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#11](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_2.cs)]  
   
- Des exemples d’utilisation plus complets de `group` avec et sans `into` sont fournis dans la section Exemple de cette rubrique.  
+ <span data-ttu-id="938ff-110">Des exemples d’utilisation plus complets de `group` avec et sans `into` sont fournis dans la section Exemple de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="938ff-110">More complete examples of the use of `group` with and without `into` are provided in the Example section of this topic.</span></span>  
   
-## <a name="enumerating-the-results-of-a-group-query"></a>Énumération des résultats d’une requête de groupe  
- Étant donné que les objets <xref:System.Linq.IGrouping%602> générés par une requête `group` sont essentiellement une liste de listes, vous devez utiliser une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquée pour accéder aux éléments dans chaque groupe. La boucle externe itère les clés de groupe, et la boucle interne itère chaque élément dans le groupe proprement dit. Un groupe peut avoir une clé mais pas d’éléments. Voici la boucle `foreach` qui exécute la requête dans les exemples de code précédents :  
+## <a name="enumerating-the-results-of-a-group-query"></a><span data-ttu-id="938ff-111">Énumération des résultats d’une requête de groupe</span><span class="sxs-lookup"><span data-stu-id="938ff-111">Enumerating the Results of a Group Query</span></span>  
+ <span data-ttu-id="938ff-112">Étant donné que les objets <xref:System.Linq.IGrouping%602> générés par une requête `group` sont essentiellement une liste de listes, vous devez utiliser une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquée pour accéder aux éléments dans chaque groupe.</span><span class="sxs-lookup"><span data-stu-id="938ff-112">Because the <xref:System.Linq.IGrouping%602> objects produced by a `group` query are essentially a list of lists, you must use a nested [foreach](../../../csharp/language-reference/keywords/foreach-in.md) loop to access the items in each group.</span></span> <span data-ttu-id="938ff-113">La boucle externe itère les clés de groupe, et la boucle interne itère chaque élément dans le groupe proprement dit.</span><span class="sxs-lookup"><span data-stu-id="938ff-113">The outer loop iterates over the group keys, and the inner loop iterates over each item in the group itself.</span></span> <span data-ttu-id="938ff-114">Un groupe peut avoir une clé mais pas d’éléments.</span><span class="sxs-lookup"><span data-stu-id="938ff-114">A group may have a key but no elements.</span></span> <span data-ttu-id="938ff-115">Voici la boucle `foreach` qui exécute la requête dans les exemples de code précédents :</span><span class="sxs-lookup"><span data-stu-id="938ff-115">The following is the `foreach` loop that executes the query in the previous code examples:</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_3.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#12](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_3.cs)]  
   
-## <a name="key-types"></a>Types de clés  
- Les clés de groupes peuvent être de tout type, comme une chaîne, un type numérique intégré, ou un type nommé ou un type anonyme défini par l’utilisateur.  
+## <a name="key-types"></a><span data-ttu-id="938ff-116">Types de clés</span><span class="sxs-lookup"><span data-stu-id="938ff-116">Key Types</span></span>  
+ <span data-ttu-id="938ff-117">Les clés de groupes peuvent être de tout type, comme une chaîne, un type numérique intégré, ou un type nommé ou un type anonyme défini par l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="938ff-117">Group keys can be any type, such as a string, a built-in numeric type, or a user-defined named type or anonymous type.</span></span>  
   
-### <a name="grouping-by-string"></a>Regroupement par chaîne  
- Les exemples de code précédents utilisaient un `char`. On aurait facilement pu spécifier une clé de chaîne à la place, par exemple le nom de famille complet :  
+### <a name="grouping-by-string"></a><span data-ttu-id="938ff-118">Regroupement par chaîne</span><span class="sxs-lookup"><span data-stu-id="938ff-118">Grouping by string</span></span>  
+ <span data-ttu-id="938ff-119">Les exemples de code précédents utilisaient un `char`.</span><span class="sxs-lookup"><span data-stu-id="938ff-119">The previous code examples used a `char`.</span></span> <span data-ttu-id="938ff-120">On aurait facilement pu spécifier une clé de chaîne à la place, par exemple le nom de famille complet :</span><span class="sxs-lookup"><span data-stu-id="938ff-120">A string key could easily have been specified instead, for example the complete last name:</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_4.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#13](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_4.cs)]  
   
-### <a name="grouping-by-bool"></a>Regroupement par valeur booléenne  
- L’exemple suivant illustre l’utilisation d’une valeur booléenne pour une clé afin de répartir les résultats en deux groupes. Notez que la valeur est générée par une sous-expression dans la clause `group`.  
+### <a name="grouping-by-bool"></a><span data-ttu-id="938ff-121">Regroupement par valeur booléenne</span><span class="sxs-lookup"><span data-stu-id="938ff-121">Grouping by bool</span></span>  
+ <span data-ttu-id="938ff-122">L’exemple suivant illustre l’utilisation d’une valeur booléenne pour une clé afin de répartir les résultats en deux groupes.</span><span class="sxs-lookup"><span data-stu-id="938ff-122">The following example shows the use of a bool value for a key to divide the results into two groups.</span></span> <span data-ttu-id="938ff-123">Notez que la valeur est générée par une sous-expression dans la clause `group`.</span><span class="sxs-lookup"><span data-stu-id="938ff-123">Note that the value is produced by a sub-expression in the `group` clause.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_5.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#14](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_5.cs)]  
   
-### <a name="grouping-by-numeric-range"></a>Regroupement par plage numérique  
- L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles. Notez l’utilisation de [let](../../../csharp/language-reference/keywords/let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`. Notez également que dans la clause `group`, pour éviter une exception « division par zéro », le code vérifie que l’étudiant n’a pas une moyenne égale à zéro. Pour plus d’informations sur la façon d’utiliser en toute sécurité des méthodes dans des expressions de requête, consultez [Guide pratique pour gérer des exceptions dans des expressions de requête](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).  
+### <a name="grouping-by-numeric-range"></a><span data-ttu-id="938ff-124">Regroupement par plage numérique</span><span class="sxs-lookup"><span data-stu-id="938ff-124">Grouping by numeric range</span></span>  
+ <span data-ttu-id="938ff-125">L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles.</span><span class="sxs-lookup"><span data-stu-id="938ff-125">The next example uses an expression to create numeric group keys that represent a percentile range.</span></span> <span data-ttu-id="938ff-126">Notez l’utilisation de [let](../../../csharp/language-reference/keywords/let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`.</span><span class="sxs-lookup"><span data-stu-id="938ff-126">Note the use of [let](../../../csharp/language-reference/keywords/let-clause.md) as a convenient location to store a method call result, so that you do not have to call the method two times in the `group` clause.</span></span> <span data-ttu-id="938ff-127">Notez également que dans la clause `group`, pour éviter une exception « division par zéro », le code vérifie que l’étudiant n’a pas une moyenne égale à zéro.</span><span class="sxs-lookup"><span data-stu-id="938ff-127">Note also in the `group` clause that to avoid a "divide by zero" exception the code checks to make sure that the student does not have an average of zero.</span></span> <span data-ttu-id="938ff-128">Pour plus d’informations sur la façon d’utiliser en toute sécurité des méthodes dans des expressions de requête, consultez [Guide pratique pour gérer des exceptions dans des expressions de requête](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="938ff-128">For more information about how to safely use methods in query expressions, see [How to: Handle Exceptions in Query Expressions](../../../csharp/programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_6.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#15](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_6.cs)]  
   
-### <a name="grouping-by-composite-keys"></a>Regroupement par clés composites  
- Utilisez une clé composite quand vous souhaitez regrouper des éléments en fonction de plusieurs clés. Vous créez une clé composite en utilisant un type anonyme ou un type nommé pour contenir l’élément clé. Dans l’exemple suivant, supposons qu’une classe `Person` a été déclarée avec les membres nommés `surname` et `city`. La clause `group` provoque la création d’un groupe distinct pour chaque ensemble de personnes ayant le même nom de famille et la même ville.  
+### <a name="grouping-by-composite-keys"></a><span data-ttu-id="938ff-129">Regroupement par clés composites</span><span class="sxs-lookup"><span data-stu-id="938ff-129">Grouping by Composite Keys</span></span>  
+ <span data-ttu-id="938ff-130">Utilisez une clé composite quand vous souhaitez regrouper des éléments en fonction de plusieurs clés.</span><span class="sxs-lookup"><span data-stu-id="938ff-130">Use a composite key when you want to group elements according to more than one key.</span></span> <span data-ttu-id="938ff-131">Vous créez une clé composite en utilisant un type anonyme ou un type nommé pour contenir l’élément clé.</span><span class="sxs-lookup"><span data-stu-id="938ff-131">You create a composite key by using an anonymous type or a named type to hold the key element.</span></span> <span data-ttu-id="938ff-132">Dans l’exemple suivant, supposons qu’une classe `Person` a été déclarée avec les membres nommés `surname` et `city`.</span><span class="sxs-lookup"><span data-stu-id="938ff-132">In the following example, assume that a class `Person` has been declared with members named `surname` and `city`.</span></span> <span data-ttu-id="938ff-133">La clause `group` provoque la création d’un groupe distinct pour chaque ensemble de personnes ayant le même nom de famille et la même ville.</span><span class="sxs-lookup"><span data-stu-id="938ff-133">The `group` clause causes a separate group to be created for each set of persons with the same last name and the same city.</span></span>  
   
 ```csharp  
 group person by new {name = person.surname, city = person.city};  
 ```  
   
- Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [Guide pratique pour implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Cette dernière rubrique contient un exemple de code qui illustre comment utiliser une clé composite avec un type nommé.  
+ <span data-ttu-id="938ff-134">Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode.</span><span class="sxs-lookup"><span data-stu-id="938ff-134">Use a named type if you must pass the query variable to another method.</span></span> <span data-ttu-id="938ff-135">Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>.</span><span class="sxs-lookup"><span data-stu-id="938ff-135">Create a special class using auto-implemented properties for the keys, and then override the <xref:System.Object.Equals%2A> and <xref:System.Object.GetHashCode%2A> methods.</span></span> <span data-ttu-id="938ff-136">Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes.</span><span class="sxs-lookup"><span data-stu-id="938ff-136">You can also use a struct, in which case you do not strictly have to override those methods.</span></span> <span data-ttu-id="938ff-137">Pour plus d’informations, consultez [Guide pratique pour implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Guide pratique pour interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md).</span><span class="sxs-lookup"><span data-stu-id="938ff-137">For more information see [How to: Implement a Lightweight Class with Auto-Implemented Properties](../../../csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) and [How to: Query for Duplicate Files in a Directory Tree](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md).</span></span> <span data-ttu-id="938ff-138">Cette dernière rubrique contient un exemple de code qui illustre comment utiliser une clé composite avec un type nommé.</span><span class="sxs-lookup"><span data-stu-id="938ff-138">The latter topic has a code example that demonstrates how to use a composite key with a named type.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre le modèle standard pour organiser des données sources en groupes quand aucune logique de requête supplémentaire n’est appliquée aux groupes. Il s’agit alors d’un regroupement sans continuation. Les éléments du tableau de chaînes sont regroupés en fonction de leur première lettre. Le résultat de la requête est un type <xref:System.Linq.IGrouping%602> contenant une propriété `Key` publique de type `char` et une collection <xref:System.Collections.Generic.IEnumerable%601> qui contient chaque élément du regroupement.  
+## <a name="example"></a><span data-ttu-id="938ff-139">Exemple</span><span class="sxs-lookup"><span data-stu-id="938ff-139">Example</span></span>  
+ <span data-ttu-id="938ff-140">L’exemple suivant montre le modèle standard pour organiser des données sources en groupes quand aucune logique de requête supplémentaire n’est appliquée aux groupes.</span><span class="sxs-lookup"><span data-stu-id="938ff-140">The following example shows the standard pattern for ordering source data into groups when no additional query logic is applied to the groups.</span></span> <span data-ttu-id="938ff-141">Il s’agit alors d’un regroupement sans continuation.</span><span class="sxs-lookup"><span data-stu-id="938ff-141">This is called a grouping without a continuation.</span></span> <span data-ttu-id="938ff-142">Les éléments du tableau de chaînes sont regroupés en fonction de leur première lettre.</span><span class="sxs-lookup"><span data-stu-id="938ff-142">The elements in an array of strings are grouped according to their first letter.</span></span> <span data-ttu-id="938ff-143">Le résultat de la requête est un type <xref:System.Linq.IGrouping%602> contenant une propriété `Key` publique de type `char` et une collection <xref:System.Collections.Generic.IEnumerable%601> qui contient chaque élément du regroupement.</span><span class="sxs-lookup"><span data-stu-id="938ff-143">The result of the query is an <xref:System.Linq.IGrouping%602> type that contains a public `Key` property of type `char` and an <xref:System.Collections.Generic.IEnumerable%601> collection that contains each item in the grouping.</span></span>  
   
- Le résultat d’une clause `group` est une séquence de séquences. Ainsi, pour accéder aux différents éléments de chaque groupe retourné, vous devez utiliser une boucle `foreach` imbriquée à l’intérieur de la boucle qui itère les clés de groupe, comme illustré dans l’exemple suivant.  
+ <span data-ttu-id="938ff-144">Le résultat d’une clause `group` est une séquence de séquences.</span><span class="sxs-lookup"><span data-stu-id="938ff-144">The result of a `group` clause is a sequence of sequences.</span></span> <span data-ttu-id="938ff-145">Ainsi, pour accéder aux différents éléments de chaque groupe retourné, vous devez utiliser une boucle `foreach` imbriquée à l’intérieur de la boucle qui itère les clés de groupe, comme illustré dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="938ff-145">Therefore, to access the individual elements within each returned group, use a nested `foreach` loop inside the loop that iterates the group keys, as shown in the following example.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_7.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#16](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_7.cs)]  
   
-## <a name="example"></a>Exemple  
- Cet exemple montre comment exécuter une logique supplémentaire sur les groupes après les avoir créés, à l’aide une *continuation* avec `into`. Pour plus d’informations, consultez [into](../../../csharp/language-reference/keywords/into.md). L’exemple suivant interroge chaque groupe pour sélectionner uniquement ceux dont la valeur de clé est une voyelle.  
+## <a name="example"></a><span data-ttu-id="938ff-146">Exemple</span><span class="sxs-lookup"><span data-stu-id="938ff-146">Example</span></span>  
+ <span data-ttu-id="938ff-147">Cet exemple montre comment exécuter une logique supplémentaire sur les groupes après les avoir créés, à l’aide une *continuation* avec `into`.</span><span class="sxs-lookup"><span data-stu-id="938ff-147">This example shows how to perform additional logic on the groups after you have created them, by using a *continuation* with `into`.</span></span> <span data-ttu-id="938ff-148">Pour plus d’informations, consultez [into](../../../csharp/language-reference/keywords/into.md).</span><span class="sxs-lookup"><span data-stu-id="938ff-148">For more information, see [into](../../../csharp/language-reference/keywords/into.md).</span></span> <span data-ttu-id="938ff-149">L’exemple suivant interroge chaque groupe pour sélectionner uniquement ceux dont la valeur de clé est une voyelle.</span><span class="sxs-lookup"><span data-stu-id="938ff-149">The following example queries each group to select only those whose key value is a vowel.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/group-clause_8.cs)]  
   
-## <a name="remarks"></a>Remarques  
- Lors de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.  
+## <a name="remarks"></a><span data-ttu-id="938ff-150">Remarques</span><span class="sxs-lookup"><span data-stu-id="938ff-150">Remarks</span></span>  
+ <span data-ttu-id="938ff-151">Lors de la compilation, les clauses `group` sont traduites en appels à la méthode <xref:System.Linq.Enumerable.GroupBy%2A>.</span><span class="sxs-lookup"><span data-stu-id="938ff-151">At compile time, `group` clauses are translated into calls to the <xref:System.Linq.Enumerable.GroupBy%2A> method.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq.IGrouping%602>   
- <xref:System.Linq.Enumerable.GroupBy%2A>   
- <xref:System.Linq.Enumerable.ThenBy%2A>   
- <xref:System.Linq.Enumerable.ThenByDescending%2A>   
- [Mots clés de requête (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [Guide pratique pour créer un groupe imbriqué](../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)   
- [Guide pratique pour regrouper les résultats d’une requête](../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)   
- [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)
-
+## <a name="see-also"></a><span data-ttu-id="938ff-152">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="938ff-152">See Also</span></span>  
+ <xref:System.Linq.IGrouping%602>  
+ <xref:System.Linq.Enumerable.GroupBy%2A>  
+ <xref:System.Linq.Enumerable.ThenBy%2A>  
+ <xref:System.Linq.Enumerable.ThenByDescending%2A>  
+ [<span data-ttu-id="938ff-153">Mots clés de requête (LINQ)</span><span class="sxs-lookup"><span data-stu-id="938ff-153">Query Keywords (LINQ)</span></span>](../../../csharp/language-reference/keywords/query-keywords.md)  
+ [<span data-ttu-id="938ff-154">Expressions de requête LINQ</span><span class="sxs-lookup"><span data-stu-id="938ff-154">LINQ Query Expressions</span></span>](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [<span data-ttu-id="938ff-155">Comment : créer un groupe imbriqué</span><span class="sxs-lookup"><span data-stu-id="938ff-155">How to: Create a Nested Group</span></span>](../../../csharp/programming-guide/linq-query-expressions/how-to-create-a-nested-group.md)  
+ [<span data-ttu-id="938ff-156">Comment : regrouper les résultats d’une requête</span><span class="sxs-lookup"><span data-stu-id="938ff-156">How to: Group Query Results</span></span>](../../../csharp/programming-guide/linq-query-expressions/how-to-group-query-results.md)  
+ [<span data-ttu-id="938ff-157">Guide pratique pour effectuer une sous-requête sur une opération de regroupement</span><span class="sxs-lookup"><span data-stu-id="938ff-157">How to: Perform a Subquery on a Grouping Operation</span></span>](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-a-subquery-on-a-grouping-operation.md)

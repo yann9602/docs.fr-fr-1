@@ -1,180 +1,160 @@
 ---
 title: "is (référence C#)"
 keywords: "mot clé is (C#), is (C#)"
-ms.date: 2017-02-17
+ms.date: 02/17/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - is_CSharpKeyword
 - is
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- is keyword [C#]
+helpviewer_keywords: is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 9f0242439caa21268a6c314409f41587890c4126
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 81117b1419c2a9c3babd6a7429052e2b23e08a70
-ms.openlocfilehash: 5aeb29a799ba24b5ab7db3eca62a91035b25b8f6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="is-c-reference"></a>is (référence C#) #
+# <a name="is-c-reference"></a><span data-ttu-id="9b1be-103">is (référence C#)</span><span class="sxs-lookup"><span data-stu-id="9b1be-103">is (C# Reference)</span></span> #
 
-Vérifie si un objet est compatible avec un type donné, ou (avec C# 7) teste une expression par rapport à un modèle.
+<span data-ttu-id="9b1be-104">Vérifie si un objet est compatible avec un type donné, ou (avec C# 7) teste une expression par rapport à un modèle.</span><span class="sxs-lookup"><span data-stu-id="9b1be-104">Checks if an object is compatible with a given type, or (starting with C# 7) tests an expression against a pattern.</span></span>
 
-## <a name="testing-for-type-compatibility"></a>Test de compatibilité de type ##
+## <a name="testing-for-type-compatibility"></a><span data-ttu-id="9b1be-105">Test de compatibilité de type</span><span class="sxs-lookup"><span data-stu-id="9b1be-105">Testing for type compatibility</span></span> ##
 
-Le mot clé `is` évalue la compatibilité de type au moment de l’exécution. Il détermine si une instance d’objet ou le résultat d’une expression peuvent être convertis en un type spécifié. Sa syntaxe est
+<span data-ttu-id="9b1be-106">Le mot clé `is` évalue la compatibilité de type au moment de l’exécution.</span><span class="sxs-lookup"><span data-stu-id="9b1be-106">The `is` keyword evaluates type compatibility at runtime.</span></span> <span data-ttu-id="9b1be-107">Il détermine si une instance d’objet ou le résultat d’une expression peuvent être convertis en un type spécifié.</span><span class="sxs-lookup"><span data-stu-id="9b1be-107">It determines whether an object instance or the result of an expression can be converted to a specified type.</span></span> <span data-ttu-id="9b1be-108">Sa syntaxe est</span><span class="sxs-lookup"><span data-stu-id="9b1be-108">It has the syntax</span></span>
 
 ```csharp
    expr is type
 ```
 
-où *expr* est une expression qui correspond à une instance d’un type, et où *type* est le nom du type dans lequel le résultat de *expr* doit être converti. L’instruction `is` est `true` si *expr* est non-Null et si l’objet qui résulte de l’évaluation de l’expression peut être converti en *type* ; sinon, elle retourne `false`.
+<span data-ttu-id="9b1be-109">où *expr* est une expression qui correspond à une instance d’un type, et où *type* est le nom du type dans lequel le résultat de *expr* doit être converti.</span><span class="sxs-lookup"><span data-stu-id="9b1be-109">where *expr* is an expression that evaluates to an instance of some type, and *type* is the name of the type to which the result of *expr* is to be converted.</span></span> <span data-ttu-id="9b1be-110">L’instruction `is` est `true` si *expr* est non-Null et si l’objet qui résulte de l’évaluation de l’expression peut être converti en *type* ; sinon, elle retourne `false`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-110">The `is` statement is `true` if *expr* is non-null and the object that results from evaluating the expression can be converted to *type*; otherwise, it returns `false`.</span></span>
 
-Par exemple, le code suivant détermine si `obj` peut être casté en une instance de type `Person` :
+<span data-ttu-id="9b1be-111">Par exemple, le code suivant détermine si `obj` peut être casté en une instance de type `Person` :</span><span class="sxs-lookup"><span data-stu-id="9b1be-111">For example, the following code determines if `obj` can be cast to an instance of the `Person` type:</span></span>
 
-[!code-cs[is#1](../../../../samples/snippets/csharp/language-reference/keywords/is/is1.cs#1)]
+[!code-csharp[is#1](../../../../samples/snippets/csharp/language-reference/keywords/is/is1.cs#1)]
 
-L’instruction `is` a la valeur true si :
+<span data-ttu-id="9b1be-112">L’instruction `is` a la valeur true si :</span><span class="sxs-lookup"><span data-stu-id="9b1be-112">The `is` statement is true if:</span></span>
 
-- *expr* est une instance du même type que *type*.
+- <span data-ttu-id="9b1be-113">*expr* est une instance du même type que *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-113">*expr* is an instance of the same type as *type*.</span></span>
 
-- *expr* est une instance d’un type qui dérive de *type*. En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.
+- <span data-ttu-id="9b1be-114">*expr* est une instance d’un type qui dérive de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-114">*expr* is an instance of a type that derives from *type*.</span></span> <span data-ttu-id="9b1be-115">En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-115">In other words, the result of *expr* can be upcast to an instance of *type*.</span></span>
 
-- *expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*. Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration. Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.
+- <span data-ttu-id="9b1be-116">*expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-116">*expr* has a compile-time type that is a base class of *type*, and *expr* has a runtime type that is *type* or is derived from *type*.</span></span> <span data-ttu-id="9b1be-117">Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration.</span><span class="sxs-lookup"><span data-stu-id="9b1be-117">The *compile-time type* of a variable is the variable's type as defined in its declaration.</span></span> <span data-ttu-id="9b1be-118">Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.</span><span class="sxs-lookup"><span data-stu-id="9b1be-118">The *runtime type* of a variable is the type of the instance that is assigned to that variable.</span></span>
 
-- *expr* est une instance d’un type qui implémente l’interface *type*.
+- <span data-ttu-id="9b1be-119">*expr* est une instance d’un type qui implémente l’interface *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-119">*expr* is an instance of a type that implements the *type* interface.</span></span>
 
-L’exemple suivant montre que l’expression `is` a la valeur `true` pour chacune de ces conversions.
+<span data-ttu-id="9b1be-120">L’exemple suivant montre que l’expression `is` a la valeur `true` pour chacune de ces conversions.</span><span class="sxs-lookup"><span data-stu-id="9b1be-120">The following example shows that the `is` expression evaluates to `true` for each of these conversions.</span></span>
 
-[!code-cs[is#3](../../../../samples/snippets/csharp/language-reference/keywords/is/is3.cs#3)]
+[!code-csharp[is#3](../../../../samples/snippets/csharp/language-reference/keywords/is/is3.cs#3)]
 
-Le mot clé `is` génère un avertissement au moment de la compilation si l’expression est connue pour être toujours soit `true`, soit `false`. Il tient compte uniquement des conversions de référence, des conversions boxing et des conversions unboxing. Il ne tient pas compte des conversions définies par l’utilisateur ni des conversions définies par les opérateurs [implicit](implicit.md) et [explicit](explicit.md) d’un type. L’exemple suivant génère des avertissements, car le résultat de la conversion est connu au moment de la compilation. Notez que l’expression `is` pour les conversions de `int` à `long` et `double` retourne la valeur false, puisque ces conversions sont gérées par l’opérateur [implicit](implicit.md).
+<span data-ttu-id="9b1be-121">Le mot clé `is` génère un avertissement au moment de la compilation si l’expression est connue pour être toujours soit `true`, soit `false`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-121">The `is` keyword generates a compile-time warning if the expression is known to always be either `true` or `false`.</span></span> <span data-ttu-id="9b1be-122">Il tient compte uniquement des conversions de référence, des conversions boxing et des conversions unboxing. Il ne tient pas compte des conversions définies par l’utilisateur ni des conversions définies par les opérateurs [implicit](implicit.md) et [explicit](explicit.md) d’un type.</span><span class="sxs-lookup"><span data-stu-id="9b1be-122">It only considers reference conversions, boxing conversions, and unboxing conversions; it does not consider user-defined conversions or conversions defined by a type's [implicit](implicit.md) and [explicit](explicit.md) operators.</span></span> <span data-ttu-id="9b1be-123">L’exemple suivant génère des avertissements, car le résultat de la conversion est connu au moment de la compilation.</span><span class="sxs-lookup"><span data-stu-id="9b1be-123">The following example generates warnings because the result of the conversion is known at compile-time.</span></span> <span data-ttu-id="9b1be-124">Notez que l’expression `is` pour les conversions de `int` à `long` et `double` retourne la valeur false, puisque ces conversions sont gérées par l’opérateur [implicit](implicit.md).</span><span class="sxs-lookup"><span data-stu-id="9b1be-124">Note that the `is` expression for conversions from `int` to `long` and `double` return false, since these conversions are handled by the [implicit](implicit.md) operator.</span></span>
 
-[!code-cs[is#2](../../../../samples/snippets/csharp/language-reference/keywords/is/is2.cs#2)]
+[!code-csharp[is#2](../../../../samples/snippets/csharp/language-reference/keywords/is/is2.cs#2)]
 
-`expr` peut correspondre à toute expression qui retourne une valeur, à l’exception des méthodes anonymes et des expressions lambda. L’exemple suivant utilise `is` pour évaluer la valeur de retour d’un appel de méthode.   
-[!code-cs[is#4](../../../../samples/snippets/csharp/language-reference/keywords/is/is4.cs#4)]
+<span data-ttu-id="9b1be-125">`expr` peut correspondre à toute expression qui retourne une valeur, à l’exception des méthodes anonymes et des expressions lambda.</span><span class="sxs-lookup"><span data-stu-id="9b1be-125">`expr` can be any expression that returns a value, with the exception of anonymous methods and lambda expressions.</span></span> <span data-ttu-id="9b1be-126">L’exemple suivant utilise `is` pour évaluer la valeur de retour d’un appel de méthode.</span><span class="sxs-lookup"><span data-stu-id="9b1be-126">The following example uses  `is` to evaluate the return value of a method call.</span></span>   
+[!code-csharp[is#4](../../../../samples/snippets/csharp/language-reference/keywords/is/is4.cs#4)]
 
-Avec C# 7, vous pouvez utiliser les critères spéciaux avec le [modèle de type](#type) pour écrire du code plus concis qui utilise l’instruction `is`.
+<span data-ttu-id="9b1be-127">Avec C# 7, vous pouvez utiliser les critères spéciaux avec le [modèle de type](#type) pour écrire du code plus concis qui utilise l’instruction `is`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-127">Starting with C# 7, you can use pattern matching with the [type pattern](#type) to write more concise code that uses the `is` statement.</span></span>
 
-## <a name="pattern-matching-with-is"></a>Utilisation des critères spéciaux avec `is` ##
+## <a name="pattern-matching-with-is"></a><span data-ttu-id="9b1be-128">Utilisation des critères spéciaux avec `is`</span><span class="sxs-lookup"><span data-stu-id="9b1be-128">Pattern matching with `is`</span></span> ##
 
-Avec C# 7, les instructions `is` et [switch](../../../csharp/language-reference/keywords/switch.md) prennent en charge les critères spéciaux. Le mot clé `is` prend en charge les modèles suivants :
+<span data-ttu-id="9b1be-129">Avec C# 7, les instructions `is` et [switch](../../../csharp/language-reference/keywords/switch.md) prennent en charge les critères spéciaux.</span><span class="sxs-lookup"><span data-stu-id="9b1be-129">Starting with C# 7, the `is` and [switch](../../../csharp/language-reference/keywords/switch.md) statements support pattern matching.</span></span> <span data-ttu-id="9b1be-130">Le mot clé `is` prend en charge les modèles suivants :</span><span class="sxs-lookup"><span data-stu-id="9b1be-130">The `is` keyword supports the following patterns:</span></span>
 
-- [Modèle de type](#type) : permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, caste l’expression en une variable de ce type.
+- <span data-ttu-id="9b1be-131">[Modèle de type](#type) : permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, caste l’expression en une variable de ce type.</span><span class="sxs-lookup"><span data-stu-id="9b1be-131">[Type pattern](#type),  which tests whether an expression can be converted to a specified type and, if it can be, casts it to a variable of that type.</span></span>
 
-- [Modèle de constante](#constant) : teste si une expression correspond à une valeur de constante spécifiée.
+- <span data-ttu-id="9b1be-132">[Modèle de constante](#constant) : teste si une expression correspond à une valeur de constante spécifiée.</span><span class="sxs-lookup"><span data-stu-id="9b1be-132">[Constant pattern](#constant), which tests whether an expression evaluates to a specified constant value.</span></span>
 
-- [Modèle de variable](#var) : correspondance qui réussit toujours et lie la valeur d’une expression à une variable locale. 
+- <span data-ttu-id="9b1be-133">[Modèle de variable](#var) : correspondance qui réussit toujours et lie la valeur d’une expression à une variable locale.</span><span class="sxs-lookup"><span data-stu-id="9b1be-133">[var pattern](#var), a match that always succeeds and binds the value of an expression to a new local variable.</span></span> 
 
-### <a name="type" /> Modèle de type </a>
+### <span data-ttu-id="9b1be-134"><a name="type" /> Modèle de type </a></span><span class="sxs-lookup"><span data-stu-id="9b1be-134"><a name="type" /> Type pattern </a></span></span>
 
-Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux, `is` permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, effectuer un cast de l’expression en une variable de ce type. Il s’agit d’une extension simple de l’instruction `is` qui permet une évaluation et une conversion de type concises. La forme générale du modèle de type `is` est la suivante :
+<span data-ttu-id="9b1be-135">Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux, `is` permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, effectuer un cast de l’expression en une variable de ce type.</span><span class="sxs-lookup"><span data-stu-id="9b1be-135">When using the type pattern to perform pattern matching, `is` tests whether an expression can be converted to a specified type and, if it can be, casts it to a variable of that type.</span></span> <span data-ttu-id="9b1be-136">Il s’agit d’une extension simple de l’instruction `is` qui permet une évaluation et une conversion de type concises.</span><span class="sxs-lookup"><span data-stu-id="9b1be-136">It is a straightforward extension of the `is` statement that enables concise type evaluation and conversion.</span></span> <span data-ttu-id="9b1be-137">La forme générale du modèle de type `is` est la suivante :</span><span class="sxs-lookup"><span data-stu-id="9b1be-137">The general form of the `is` type pattern is:</span></span>
 
 ```csharp
    expr is type varname 
 ```
 
-où *expr* est une expression qui correspond à une instance d’un type, où *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et où *varname* est l’objet dans lequel le résultat de *expr* est converti si le test `is` a la valeur `true`. 
+<span data-ttu-id="9b1be-138">où *expr* est une expression qui correspond à une instance d’un type, où *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et où *varname* est l’objet dans lequel le résultat de *expr* est converti si le test `is` a la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-138">where *expr* is an expression that evaluates to an instance of some type, *type* is the name of the type to which the result of *expr* is to be converted, and *varname* is the object to which the result of *expr* is converted if the `is` test is `true`.</span></span> 
 
-L’expression `is` est `true` si l’une des affirmations suivantes est vraie :
+<span data-ttu-id="9b1be-139">L’expression `is` est `true` si l’une des affirmations suivantes est vraie :</span><span class="sxs-lookup"><span data-stu-id="9b1be-139">The `is` expression is `true` if any of the following is true:</span></span>
 
-- *expr* est une instance du même type que *type*.
+- <span data-ttu-id="9b1be-140">*expr* est une instance du même type que *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-140">*expr* is an instance of the same type as *type*.</span></span>
 
-- *expr* est une instance d’un type qui dérive de *type*. En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.
+- <span data-ttu-id="9b1be-141">*expr* est une instance d’un type qui dérive de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-141">*expr* is an instance of a type that derives from *type*.</span></span> <span data-ttu-id="9b1be-142">En d’autres termes, le résultat de *expr* peut être upcasté en une instance de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-142">In other words, the result of *expr* can be upcast to an instance of *type*.</span></span>
 
-- *expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*. Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration. Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.
+- <span data-ttu-id="9b1be-143">*expr* a un type au moment de la compilation qui est une classe de base de *type* et *expr* a un type au moment de l’exécution égal à *type* ou dérivé de *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-143">*expr* has a compile-time type that is a base class of *type*, and *expr* has a runtime type that is *type* or is derived from *type*.</span></span> <span data-ttu-id="9b1be-144">Le *type au moment de la compilation* d’une variable est le type de la variable, tel qu’il est défini dans sa déclaration.</span><span class="sxs-lookup"><span data-stu-id="9b1be-144">The *compile-time type* of a variable is the variable's type as defined in its declaration.</span></span> <span data-ttu-id="9b1be-145">Le *type au moment de l’exécution* d’une variable est le type de l’instance qui est assignée à cette variable.</span><span class="sxs-lookup"><span data-stu-id="9b1be-145">The *runtime type* of a variable is the type of the instance that is assigned to that variable.</span></span>
 
-- *expr* est une instance d’un type qui implémente l’interface *type*.
+- <span data-ttu-id="9b1be-146">*expr* est une instance d’un type qui implémente l’interface *type*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-146">*expr* is an instance of a type that implements the *type* interface.</span></span>
 
-Si *exp* est `true` et si `is` est utilisé avec une instruction `if`, *varname* est assigné et sa portée locale se limite à l’instruction `if`.
+<span data-ttu-id="9b1be-147">Si *exp* est `true` et si `is` est utilisé avec une instruction `if`, *varname* est assigné et sa portée locale se limite à l’instruction `if`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-147">If *exp* is `true` and `is` is used with an `if` statement, *varname* is assigned and has local scope within the `if` statement only.</span></span>
 
-L’exemple suivant utilise le modèle de type `is` pour fournir l’implémentation de la méthode <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> d’un type.
+<span data-ttu-id="9b1be-148">L’exemple suivant utilise le modèle de type `is` pour fournir l’implémentation de la méthode <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> d’un type.</span><span class="sxs-lookup"><span data-stu-id="9b1be-148">The following example uses the `is` type pattern to provide the implementation of a type's <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> method.</span></span>
 
-[!code-cs[is#5](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern5.cs#5)]
+[!code-csharp[is#5](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern5.cs#5)]
 
-Sans critères spéciaux, ce code peut être écrit comme suit. L’utilisation de critères spéciaux de type génère un code lisible plus compact en éliminant la nécessité de tester si le résultat d’une conversion est un `null`.  
+<span data-ttu-id="9b1be-149">Sans critères spéciaux, ce code peut être écrit comme suit.</span><span class="sxs-lookup"><span data-stu-id="9b1be-149">Without pattern matching, this code might be written as follows.</span></span> <span data-ttu-id="9b1be-150">L’utilisation de critères spéciaux de type génère un code lisible plus compact en éliminant la nécessité de tester si le résultat d’une conversion est un `null`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-150">The use of type pattern matching produces more compact, readable code by eliminating the need to test whether the result of a conversion is a `null`.</span></span>  
 
-[!code-cs[is#6](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern6.cs#6)]
+[!code-csharp[is#6](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern6.cs#6)]
 
-Le modèle de type `is` génère également du code plus compact lorsqu’il détermine le type d’un type valeur. L’exemple suivant utilise le modèle de type `is` pour déterminer si un objet est une instance `Person` ou `Dog` avant d’afficher la valeur d’une propriété appropriée. 
+<span data-ttu-id="9b1be-151">Le modèle de type `is` génère également du code plus compact lorsqu’il détermine le type d’un type valeur.</span><span class="sxs-lookup"><span data-stu-id="9b1be-151">The `is` type pattern also produces more compact code when determining the type of a value type.</span></span> <span data-ttu-id="9b1be-152">L’exemple suivant utilise le modèle de type `is` pour déterminer si un objet est une instance `Person` ou `Dog` avant d’afficher la valeur d’une propriété appropriée.</span><span class="sxs-lookup"><span data-stu-id="9b1be-152">The following example uses the `is` type pattern to determine whether an object is a `Person` or a `Dog` instance before displaying the value of an appropriate property.</span></span> 
 
-[!code-cs[is#9](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern9.cs#9)]
+[!code-csharp[is#9](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern9.cs#9)]
 
-Le code équivalent sans critères spéciaux nécessite une attribution distincte comprenant un cast explicite.
+<span data-ttu-id="9b1be-153">Le code équivalent sans critères spéciaux nécessite une attribution distincte comprenant un cast explicite.</span><span class="sxs-lookup"><span data-stu-id="9b1be-153">The equivalent code without pattern matching requires a separate assignment that includes an explicit cast.</span></span>
 
-[!code-cs[is#10](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern10.cs#10)]
+[!code-csharp[is#10](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern10.cs#10)]
 
-### <a name="a-nameconstant--constant-pattern"></a><a name="constant" /> Modèle de constante ###
+### <a name="a-nameconstant--constant-pattern"></a><span data-ttu-id="9b1be-154"><a name="constant" /> Modèle de constante</span><span class="sxs-lookup"><span data-stu-id="9b1be-154"><a name="constant" /> Constant pattern</span></span> ###
 
-Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée. Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md). À compter de C# 7, ce modèle est également pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
+<span data-ttu-id="9b1be-155">Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée.</span><span class="sxs-lookup"><span data-stu-id="9b1be-155">When performing pattern matching with the constant pattern, `is` tests whether an expression equals a specified constant.</span></span> <span data-ttu-id="9b1be-156">Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md).</span><span class="sxs-lookup"><span data-stu-id="9b1be-156">In C# 6 and earlier versions, the constant pattern is supported by the [switch](switch.md) statement.</span></span> <span data-ttu-id="9b1be-157">À compter de C# 7, ce modèle est également pris en charge par l’instruction `is`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-157">Starting with C# 7, it is supported by the `is` statement as well.</span></span> <span data-ttu-id="9b1be-158">Sa syntaxe est la suivante :</span><span class="sxs-lookup"><span data-stu-id="9b1be-158">Its syntax is:</span></span>
 
 ```csharp
    expr is constant
 ```
 
-où *expr* est l’expression à évaluer, et où *constant* est la valeur à tester. *constant* peut correspondre à l’une des expressions constantes suivantes : 
+<span data-ttu-id="9b1be-159">où *expr* est l’expression à évaluer, et où *constant* est la valeur à tester.</span><span class="sxs-lookup"><span data-stu-id="9b1be-159">where *expr* is the expression to evaluate, and *constant* is the value to test for.</span></span> <span data-ttu-id="9b1be-160">*constant* peut correspondre à l’une des expressions constantes suivantes :</span><span class="sxs-lookup"><span data-stu-id="9b1be-160">*constant* can be any of the following constant expressions:</span></span> 
 
-- Une valeur littérale
+- <span data-ttu-id="9b1be-161">Une valeur littérale</span><span class="sxs-lookup"><span data-stu-id="9b1be-161">A literal value.</span></span>
 
-- Le nom d’une variable `const` déclarée
+- <span data-ttu-id="9b1be-162">Le nom d’une variable `const` déclarée</span><span class="sxs-lookup"><span data-stu-id="9b1be-162">The name of a declared `const` variable.</span></span>
 
-- Une constante d’énumération
+- <span data-ttu-id="9b1be-163">Une constante d’énumération</span><span class="sxs-lookup"><span data-stu-id="9b1be-163">An enumeration constant.</span></span>
 
-L’expression constante est évaluée de la manière suivante :
+<span data-ttu-id="9b1be-164">L’expression constante est évaluée de la manière suivante :</span><span class="sxs-lookup"><span data-stu-id="9b1be-164">The constant expression is evaluated as follows:</span></span>
 
-- Si *expr* et *constant* sont des types intégraux, l’opérateur d’égalité C# détermine si l’expression retourne `true` (autrement dit, si `expr == constant`).
+- <span data-ttu-id="9b1be-165">Si *expr* et *constant* sont des types intégraux, l’opérateur d’égalité C# détermine si l’expression retourne `true` (autrement dit, si `expr == constant`).</span><span class="sxs-lookup"><span data-stu-id="9b1be-165">If *expr* and *constant* are integral types, the C# equality operator determines whether the expression returns `true` (that is, whether `expr == constant`).</span></span>
 
-- Sinon, la valeur de l’expression est déterminée par un appel à la méthode statique [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)).  
+- <span data-ttu-id="9b1be-166">Sinon, la valeur de l’expression est déterminée par un appel à la méthode statique [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)).</span><span class="sxs-lookup"><span data-stu-id="9b1be-166">Otherwise, the value of the expression is determined by a call to the static [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)) method.</span></span>  
 
-L’exemple suivant combine le modèle de type et le modèle de constante pour tester si un objet est une instance `Dice` et, si c’est le cas, pour déterminer si la valeur obtenue après un lancer de dés est de 6.
+<span data-ttu-id="9b1be-167">L’exemple suivant combine le modèle de type et le modèle de constante pour tester si un objet est une instance `Dice` et, si c’est le cas, pour déterminer si la valeur obtenue après un lancer de dés est de 6.</span><span class="sxs-lookup"><span data-stu-id="9b1be-167">The following example combines the type and constant patterns to test whether an object is a `Dice` instance and, if it is, to determine whether the value of a dice roll is 6.</span></span>
 
-[!code-cs[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
+[!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
  
-### <a name="var" /> Modèle de variable </a>
+### <span data-ttu-id="9b1be-168"><a name="var" /> Modèle de variable </a></span><span class="sxs-lookup"><span data-stu-id="9b1be-168"><a name="var" /> var pattern </a></span></span>
 
-Une recherche de critères spéciaux qui utilise le modèle de variable réussit toujours. Sa syntaxe est la suivante :
+<span data-ttu-id="9b1be-169">Une recherche de critères spéciaux qui utilise le modèle de variable réussit toujours.</span><span class="sxs-lookup"><span data-stu-id="9b1be-169">A pattern match with the var pattern always succeeds.</span></span> <span data-ttu-id="9b1be-170">Sa syntaxe est la suivante :</span><span class="sxs-lookup"><span data-stu-id="9b1be-170">Its syntax is</span></span>
 
 ```csharp 
    expr is var varname
 ```
 
-où la valeur de *expr* est toujours assignée à une variable locale nommée *varname*. *varname* est une variable statique du même type que *expr*. L’exemple suivant utilise le modèle de variable pour assigner une expression à une variable nommée `obj`. Il affiche ensuite la valeur et le type de `obj`.
+<span data-ttu-id="9b1be-171">où la valeur de *expr* est toujours assignée à une variable locale nommée *varname*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-171">where the value of *expr* is always assigned to a local variable named *varname*.</span></span> <span data-ttu-id="9b1be-172">*varname* est une variable statique du même type que *expr*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-172">*varname* is a static variable of the same type as *expr*.</span></span> <span data-ttu-id="9b1be-173">L’exemple suivant utilise le modèle de variable pour assigner une expression à une variable nommée `obj`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-173">The following example uses the var pattern to assign an expression to a variable named `obj`.</span></span> <span data-ttu-id="9b1be-174">Il affiche ensuite la valeur et le type de `obj`.</span><span class="sxs-lookup"><span data-stu-id="9b1be-174">It then displays the value and the type of `obj`.</span></span>
 
-[!code-cs[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
+[!code-csharp[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
 
-Notez que si *expr* est `null`, l’expression `is` a toujours la valeur true et attribue `null` à *varname*. 
+<span data-ttu-id="9b1be-175">Notez que si *expr* est `null`, l’expression `is` a toujours la valeur true et attribue `null` à *varname*.</span><span class="sxs-lookup"><span data-stu-id="9b1be-175">Note that if *expr* is `null`, the `is` expression still is true and assigns `null` to *varname*.</span></span> 
 
-# <a name="c-language-specification"></a>Spécification du langage C#
+# <a name="c-language-specification"></a><span data-ttu-id="9b1be-176">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="9b1be-176">C# Language Specification</span></span>
   
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)   
- [typeof](../../../csharp/language-reference/keywords/typeof.md)   
- [as](../../../csharp/language-reference/keywords/as.md)   
- [Mots clés des opérateurs](../../../csharp/language-reference/keywords/operator-keywords.md)
-
+## <a name="see-also"></a><span data-ttu-id="9b1be-177">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9b1be-177">See also</span></span>  
+ [<span data-ttu-id="9b1be-178">Référence C#</span><span class="sxs-lookup"><span data-stu-id="9b1be-178">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="9b1be-179">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="9b1be-179">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="9b1be-180">typeof</span><span class="sxs-lookup"><span data-stu-id="9b1be-180">typeof</span></span>](../../../csharp/language-reference/keywords/typeof.md)  
+ [<span data-ttu-id="9b1be-181">as</span><span class="sxs-lookup"><span data-stu-id="9b1be-181">as</span></span>](../../../csharp/language-reference/keywords/as.md)  
+ [<span data-ttu-id="9b1be-182">Mots clés des opérateurs</span><span class="sxs-lookup"><span data-stu-id="9b1be-182">Operator Keywords</span></span>](../../../csharp/language-reference/keywords/operator-keywords.md)

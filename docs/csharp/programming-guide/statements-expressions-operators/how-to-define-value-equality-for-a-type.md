@@ -1,12 +1,9 @@
 ---
 title: "Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - overriding Equals method [C#]
 - object equivalence [C#]
@@ -14,78 +11,62 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 933be6aa27b5720a9a9d8d7b45e1eed73f9cd60b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e008be022765ff7d2bb440f0a37193b882038b76
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)
-Quand vous définissez une classe ou un struct, vous décidez s’il est judicieux de créer une définition personnalisée de l’égalité des valeurs (ou équivalence) pour le type. En général, vous implémentez l’égalité des valeurs quand des objets du type sont supposés être ajoutés à une collection quelconque, ou quand leur objectif principal est de stocker un ensemble de champs ou propriétés. Vous pouvez baser votre définition de l’égalité des valeurs sur une comparaison de tous les champs et propriétés du type, ou vous pouvez la baser sur un sous-ensemble. Dans les deux cas, et dans les classes et les structs, votre implémentation doit respecter les cinq garanties d’équivalence :  
+# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a><span data-ttu-id="882f7-102">Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="882f7-102">How to: Define Value Equality for a Type (C# Programming Guide)</span></span>
+<span data-ttu-id="882f7-103">Quand vous définissez une classe ou un struct, vous décidez s’il est judicieux de créer une définition personnalisée de l’égalité des valeurs (ou équivalence) pour le type.</span><span class="sxs-lookup"><span data-stu-id="882f7-103">When you define a class or struct, you decide whether it makes sense to create a custom definition of value equality (or equivalence) for the type.</span></span> <span data-ttu-id="882f7-104">En général, vous implémentez l’égalité des valeurs quand des objets du type sont supposés être ajoutés à une collection quelconque, ou quand leur objectif principal est de stocker un ensemble de champs ou propriétés.</span><span class="sxs-lookup"><span data-stu-id="882f7-104">Typically, you implement value equality when objects of the type are expected to be added to a collection of some sort, or when their primary purpose is to store a set of fields or properties.</span></span> <span data-ttu-id="882f7-105">Vous pouvez baser votre définition de l’égalité des valeurs sur une comparaison de tous les champs et propriétés du type, ou vous pouvez la baser sur un sous-ensemble.</span><span class="sxs-lookup"><span data-stu-id="882f7-105">You can base your definition of value equality on a comparison of all the fields and properties in the type, or you can base the definition on a subset.</span></span> <span data-ttu-id="882f7-106">Dans les deux cas, et dans les classes et les structs, votre implémentation doit respecter les cinq garanties d’équivalence :</span><span class="sxs-lookup"><span data-stu-id="882f7-106">But in either case, and in both classes and structs, your implementation should follow the five guarantees of equivalence:</span></span>  
   
-1.  x.`Equals`(x) retourne `true.` Il s’agit de la propriété réflexive.  
+1.  <span data-ttu-id="882f7-107">x.`Equals`(x) retourne `true.` Il s’agit de la propriété réflexive.</span><span class="sxs-lookup"><span data-stu-id="882f7-107">x.`Equals`(x) returns `true.` This is called the reflexive property.</span></span>  
   
-2.  x.`Equals`(y) retourne la même valeur que y.`Equals`(x). Il s’agit de la propriété symétrique.  
+2.  <span data-ttu-id="882f7-108">x.`Equals`(y) retourne la même valeur que y.`Equals`(x).</span><span class="sxs-lookup"><span data-stu-id="882f7-108">x.`Equals`(y) returns the same value as y.`Equals`(x).</span></span> <span data-ttu-id="882f7-109">Il s’agit de la propriété symétrique.</span><span class="sxs-lookup"><span data-stu-id="882f7-109">This is called the symmetric property.</span></span>  
   
-3.  Si (x.`Equals`(y) && y.`Equals`(z)) retourne `true`, x.`Equals`(z) retourne `true`. Il s’agit de la propriété transitive.  
+3.  <span data-ttu-id="882f7-110">Si (x.`Equals`(y) && y.`Equals`(z)) retourne `true`, x.`Equals`(z) retourne `true`.</span><span class="sxs-lookup"><span data-stu-id="882f7-110">if (x.`Equals`(y) && y.`Equals`(z)) returns `true`, then x.`Equals`(z) returns `true`.</span></span> <span data-ttu-id="882f7-111">Il s’agit de la propriété transitive.</span><span class="sxs-lookup"><span data-stu-id="882f7-111">This is called the transitive property.</span></span>  
   
-4.  Les appels successifs de x.`Equals`(y) retournent la même valeur tant que les objets référencés par x et y ne sont pas modifiés.  
+4.  <span data-ttu-id="882f7-112">Les appels successifs de x.`Equals`(y) retournent la même valeur tant que les objets référencés par x et y ne sont pas modifiés.</span><span class="sxs-lookup"><span data-stu-id="882f7-112">Successive invocations of x.`Equals`(y) return the same value as long as the objects referenced by x and y are not modified.</span></span>  
   
-5.  x.`Equals`(null) retourne `false`. Toutefois, null.Equals(null) lève une exception. Elle ne respecte pas la règle n°2 ci-dessus.  
+5.  <span data-ttu-id="882f7-113">x.`Equals`(null) retourne `false`.</span><span class="sxs-lookup"><span data-stu-id="882f7-113">x.`Equals`(null) returns `false`.</span></span> <span data-ttu-id="882f7-114">Toutefois, null.Equals(null) lève une exception. Elle ne respecte pas la règle n°2 ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="882f7-114">However, null.Equals(null) throws an exception; it does not obey rule number two above.</span></span>  
   
- Tout struct que vous définissez a déjà une implémentation par défaut de l’égalité des valeurs dont il hérite de la substitution <xref:System.ValueType?displayProperty=fullName> de la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Cette implémentation utilise la réflexion pour examiner tous les champs et propriétés du type. Bien que cette implémentation produise des résultats corrects, elle est relativement lente par rapport à une implémentation personnalisée que vous écrivez spécifiquement pour le type.  
+ <span data-ttu-id="882f7-115">Tout struct que vous définissez a déjà une implémentation par défaut de l’égalité des valeurs dont il hérite de la substitution <xref:System.ValueType?displayProperty=nameWithType> de la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="882f7-115">Any struct that you define already has a default implementation of value equality that it inherits from the <xref:System.ValueType?displayProperty=nameWithType> override of the <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="882f7-116">Cette implémentation utilise la réflexion pour examiner tous les champs et propriétés du type.</span><span class="sxs-lookup"><span data-stu-id="882f7-116">This implementation uses reflection to examine all the fields and properties in the type.</span></span> <span data-ttu-id="882f7-117">Bien que cette implémentation produise des résultats corrects, elle est relativement lente par rapport à une implémentation personnalisée que vous écrivez spécifiquement pour le type.</span><span class="sxs-lookup"><span data-stu-id="882f7-117">Although this implementation produces correct results, it is relatively slow compared to a custom implementation that you write specifically for the type.</span></span>  
   
- Les détails d’implémentation pour l’égalité des valeurs sont différents pour les classes et les structs. Toutefois, les classes et les structs nécessitent tous deux les mêmes étapes de base pour l’implémentation de l’égalité :  
+ <span data-ttu-id="882f7-118">Les détails d’implémentation pour l’égalité des valeurs sont différents pour les classes et les structs.</span><span class="sxs-lookup"><span data-stu-id="882f7-118">The implementation details for value equality are different for classes and structs.</span></span> <span data-ttu-id="882f7-119">Toutefois, les classes et les structs nécessitent tous deux les mêmes étapes de base pour l’implémentation de l’égalité :</span><span class="sxs-lookup"><span data-stu-id="882f7-119">However, both classes and structs require the same basic steps for implementing equality:</span></span>  
   
-1.  Substituez la méthode [virtual](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName>. Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=fullName>. (Voir l’étape 2.)  
+1.  <span data-ttu-id="882f7-120">Substituez la méthode [virtual](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="882f7-120">Override the [virtual](../../../csharp/language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="882f7-121">Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="882f7-121">In most cases, your implementation of `bool Equals( object obj )` should just call into the type-specific `Equals` method that is the implementation of the <xref:System.IEquatable%601?displayProperty=nameWithType> interface.</span></span> <span data-ttu-id="882f7-122">(Voir l’étape 2.)</span><span class="sxs-lookup"><span data-stu-id="882f7-122">(See step 2.)</span></span>  
   
-2.  Implémentez l’interface <xref:System.IEquatable%601?displayProperty=fullName> en fournissant une méthode `Equals` propre au type. C’est ici qu’est effectuée la comparaison d’équivalence. Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type. Ne levez pas d'exceptions à partir de la méthode `Equals`. Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe. Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base. (Ne faites pas cela si le type hérite directement d’<xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> effectue une vérification de l’égalité de référence.)  
+2.  <span data-ttu-id="882f7-123">Implémentez l’interface <xref:System.IEquatable%601?displayProperty=nameWithType> en fournissant une méthode `Equals` propre au type.</span><span class="sxs-lookup"><span data-stu-id="882f7-123">Implement the <xref:System.IEquatable%601?displayProperty=nameWithType> interface by providing a type-specific `Equals` method.</span></span> <span data-ttu-id="882f7-124">C’est ici qu’est effectuée la comparaison d’équivalence.</span><span class="sxs-lookup"><span data-stu-id="882f7-124">This is where the actual equivalence comparison is performed.</span></span> <span data-ttu-id="882f7-125">Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type.</span><span class="sxs-lookup"><span data-stu-id="882f7-125">For example, you might decide to define equality by comparing only one or two fields in your type.</span></span> <span data-ttu-id="882f7-126">Ne levez pas d'exceptions à partir de la méthode `Equals`.</span><span class="sxs-lookup"><span data-stu-id="882f7-126">Do not throw exceptions from `Equals`.</span></span> <span data-ttu-id="882f7-127">Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe.</span><span class="sxs-lookup"><span data-stu-id="882f7-127">For classes only: This method should examine only fields that are declared in the class.</span></span> <span data-ttu-id="882f7-128">Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base.</span><span class="sxs-lookup"><span data-stu-id="882f7-128">It should call `base.Equals` to examine fields that are in the base class.</span></span> <span data-ttu-id="882f7-129">(Ne faites pas cela si le type hérite directement d’<xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> effectue une vérification de l’égalité de référence.)</span><span class="sxs-lookup"><span data-stu-id="882f7-129">(Do not do this if the type inherits directly from <xref:System.Object>, because the <xref:System.Object> implementation of <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> performs a reference equality check.)</span></span>  
   
-3.  Facultatif, mais recommandé : Surchargez les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) et [! =](../../../csharp/language-reference/operators/not-equal-operator.md).  
+3.  <span data-ttu-id="882f7-130">Facultatif, mais recommandé : Surchargez les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) et [! =](../../../csharp/language-reference/operators/not-equal-operator.md).</span><span class="sxs-lookup"><span data-stu-id="882f7-130">Optional but recommended: Overload the [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) and [!=](../../../csharp/language-reference/operators/not-equal-operator.md) operators.</span></span>  
   
-4.  Substituez <xref:System.Object.GetHashCode%2A?displayProperty=fullName> pour que deux objets ayant une égalité des valeurs produisent le même code de hachage.  
+4.  <span data-ttu-id="882f7-131">Substituez <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> pour que deux objets ayant une égalité des valeurs produisent le même code de hachage.</span><span class="sxs-lookup"><span data-stu-id="882f7-131">Override <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> so that two objects that have value equality produce the same hash code.</span></span>  
   
-5.  Facultatif : Pour prendre en charge les définitions pour « supérieur à » ou « inférieur à », implémentez l’interface <xref:System.IComparable%601> pour votre type, et surchargez également les opérateurs [<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) et [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md).  
+5.  <span data-ttu-id="882f7-132">Facultatif : Pour prendre en charge les définitions pour « supérieur à » ou « inférieur à », implémentez l’interface <xref:System.IComparable%601> pour votre type, et surchargez également les opérateurs [<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) et [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md).</span><span class="sxs-lookup"><span data-stu-id="882f7-132">Optional: To support definitions for "greater than" or "less than," implement the <xref:System.IComparable%601> interface for your type, and also overload the [<=](../../../csharp/language-reference/operators/less-than-equal-operator.md) and [>=](../../../csharp/language-reference/operators/greater-than-equal-operator.md) operators.</span></span>  
   
- Le premier exemple qui suit illustre une implémentation de classe. Le deuxième exemple illustre une implémentation de struct.  
+ <span data-ttu-id="882f7-133">Le premier exemple qui suit illustre une implémentation de classe.</span><span class="sxs-lookup"><span data-stu-id="882f7-133">The first example that follows shows a class implementation.</span></span> <span data-ttu-id="882f7-134">Le deuxième exemple illustre une implémentation de struct.</span><span class="sxs-lookup"><span data-stu-id="882f7-134">The second example shows a struct implementation.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment implémenter l’égalité des valeurs dans une classe (type référence).  
+## <a name="example"></a><span data-ttu-id="882f7-135">Exemple</span><span class="sxs-lookup"><span data-stu-id="882f7-135">Example</span></span>  
+ <span data-ttu-id="882f7-136">L’exemple suivant montre comment implémenter l’égalité des valeurs dans une classe (type référence).</span><span class="sxs-lookup"><span data-stu-id="882f7-136">The following example shows how to implement value equality in a class (reference type).</span></span>  
   
- [!code-cs[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_1.cs)]  
+ [!code-csharp[csProgGuideStatements#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_1.cs)]  
   
- Sur les classes (types référence), l’implémentation par défaut des deux méthodes <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> effectue une comparaison d’égalité de référence, et non une vérification de l’égalité des valeurs. Quand un implémenteur substitue la méthode virtuelle, l’objectif est de lui donner une sémantique d’égalité des valeurs.  
+ <span data-ttu-id="882f7-137">Sur les classes (types référence), l’implémentation par défaut des deux méthodes <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> effectue une comparaison d’égalité de référence, et non une vérification de l’égalité des valeurs.</span><span class="sxs-lookup"><span data-stu-id="882f7-137">On classes (reference types), the default implementation of both <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> methods performs a reference equality comparison, not a value equality check.</span></span> <span data-ttu-id="882f7-138">Quand un implémenteur substitue la méthode virtuelle, l’objectif est de lui donner une sémantique d’égalité des valeurs.</span><span class="sxs-lookup"><span data-stu-id="882f7-138">When an implementer overrides the virtual method, the purpose is to give it value equality semantics.</span></span>  
   
- Les opérateurs `==` et `!=` peuvent être utilisés avec des classes, même si la classe ne les surcharge pas. Toutefois, le comportement par défaut consiste à effectuer une vérification de l’égalité de référence. Dans une classe, si vous surchargez la méthode `Equals`, vous devez surcharger les opérateurs `==` et `!=`, mais cela n’est pas obligatoire.  
+ <span data-ttu-id="882f7-139">Les opérateurs `==` et `!=` peuvent être utilisés avec des classes, même si la classe ne les surcharge pas.</span><span class="sxs-lookup"><span data-stu-id="882f7-139">The `==` and `!=` operators can be used with classes even if the class does not overload them.</span></span> <span data-ttu-id="882f7-140">Toutefois, le comportement par défaut consiste à effectuer une vérification de l’égalité de référence.</span><span class="sxs-lookup"><span data-stu-id="882f7-140">However, the default behavior is to perform a reference equality check.</span></span> <span data-ttu-id="882f7-141">Dans une classe, si vous surchargez la méthode `Equals`, vous devez surcharger les opérateurs `==` et `!=`, mais cela n’est pas obligatoire.</span><span class="sxs-lookup"><span data-stu-id="882f7-141">In a class, if you overload the `Equals` method, you should overload the `==` and `!=` operators, but it is not required.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment implémenter l’égalité des valeurs dans un struct (type valeur) :  
+## <a name="example"></a><span data-ttu-id="882f7-142">Exemple</span><span class="sxs-lookup"><span data-stu-id="882f7-142">Example</span></span>  
+ <span data-ttu-id="882f7-143">L’exemple suivant montre comment implémenter l’égalité des valeurs dans un struct (type valeur) :</span><span class="sxs-lookup"><span data-stu-id="882f7-143">The following example shows how to implement value equality in a struct (value type):</span></span>  
   
- [!code-cs[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_2.cs)]  
+ [!code-csharp[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_2.cs)]  
   
- Pour les structs, l’implémentation par défaut de <xref:System.Object.Equals%28System.Object%29?displayProperty=fullName> (qui est la version substituée dans <xref:System.ValueType?displayProperty=fullName>) effectue une vérification de l’égalité des valeurs à l’aide de la réflexion pour comparer les valeurs de chaque champ dans le type. Quand un implémenteur substitue la méthode `Equals` virtuelle dans un struct, l’objectif est de fournir un moyen plus efficace d’effectuer la vérification de l’égalité des valeurs, et éventuellement de baser la comparaison sur un sous-ensemble des propriétés ou du champ du struct.  
+ <span data-ttu-id="882f7-144">Pour les structs, l’implémentation par défaut de <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> (qui est la version substituée dans <xref:System.ValueType?displayProperty=nameWithType>) effectue une vérification de l’égalité des valeurs à l’aide de la réflexion pour comparer les valeurs de chaque champ dans le type.</span><span class="sxs-lookup"><span data-stu-id="882f7-144">For structs, the default implementation of <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> (which is the overridden version in <xref:System.ValueType?displayProperty=nameWithType>) performs a value equality check by using reflection to compare the values of every field in the type.</span></span> <span data-ttu-id="882f7-145">Quand un implémenteur substitue la méthode `Equals` virtuelle dans un struct, l’objectif est de fournir un moyen plus efficace d’effectuer la vérification de l’égalité des valeurs, et éventuellement de baser la comparaison sur un sous-ensemble des propriétés ou du champ du struct.</span><span class="sxs-lookup"><span data-stu-id="882f7-145">When an implementer overrides the virtual `Equals` method in a struct, the purpose is to provide a more efficient means of performing the value equality check and optionally to base the comparison on some subset of the struct's field or properties.</span></span>  
   
- Les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) et [!=](../../../csharp/language-reference/operators/not-equal-operator.md) ne peuvent pas opérer sur un struct, sauf si le struct les surcharge explicitement.  
+ <span data-ttu-id="882f7-146">Les opérateurs [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) et [!=](../../../csharp/language-reference/operators/not-equal-operator.md) ne peuvent pas opérer sur un struct, sauf si le struct les surcharge explicitement.</span><span class="sxs-lookup"><span data-stu-id="882f7-146">The [==](../../../csharp/language-reference/operators/equality-comparison-operator.md) and [!=](../../../csharp/language-reference/operators/not-equal-operator.md) operators cannot operate on a struct unless the struct explicitly overloads them.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Comparaisons d’égalité](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="882f7-147">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="882f7-147">See Also</span></span>  
+ [<span data-ttu-id="882f7-148">Comparaisons d’égalité</span><span class="sxs-lookup"><span data-stu-id="882f7-148">Equality Comparisons</span></span>](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)  
+ [<span data-ttu-id="882f7-149">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="882f7-149">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)

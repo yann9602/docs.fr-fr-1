@@ -1,55 +1,36 @@
 ---
 title: "Mots clés d'instruction (Référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0a882d7c0e88f325d4a0bf471b5b38844b2b13f3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: aae7d08eaca3491754444182ae1cfb82276e0939
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="statement-keywords-c-reference"></a>Mots clés d'instruction (Référence C#)
-Les instructions sont des instructions de programme. Sauf mention contraire dans les rubriques référencées dans le tableau suivant, les instructions sont exécutées en séquence. Le tableau suivant répertorie les mots clés d’instructions C#. Pour plus d’informations sur les instructions exprimées sans mots clés, consultez [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md).  
+# <a name="statement-keywords-c-reference"></a><span data-ttu-id="04fb2-102">Mots clés d'instruction (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="04fb2-102">Statement Keywords (C# Reference)</span></span>
+<span data-ttu-id="04fb2-103">Les instructions sont des instructions de programme.</span><span class="sxs-lookup"><span data-stu-id="04fb2-103">Statements are program instructions.</span></span> <span data-ttu-id="04fb2-104">Sauf mention contraire dans les rubriques référencées dans le tableau suivant, les instructions sont exécutées en séquence.</span><span class="sxs-lookup"><span data-stu-id="04fb2-104">Except as described in the topics referenced in the following table, statements are executed in sequence.</span></span> <span data-ttu-id="04fb2-105">Le tableau suivant répertorie les mots clés d’instructions C#.</span><span class="sxs-lookup"><span data-stu-id="04fb2-105">The following table lists the C# statement keywords.</span></span> <span data-ttu-id="04fb2-106">Pour plus d’informations sur les instructions exprimées sans mots clés, consultez [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md).</span><span class="sxs-lookup"><span data-stu-id="04fb2-106">For more information about statements that are not expressed with any keyword, see [Statements](../../../csharp/programming-guide/statements-expressions-operators/statements.md).</span></span>  
   
-|Catégorie|Mots clés C#|  
+|<span data-ttu-id="04fb2-107">Catégorie</span><span class="sxs-lookup"><span data-stu-id="04fb2-107">Category</span></span>|<span data-ttu-id="04fb2-108">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="04fb2-108">C# keywords</span></span>|  
 |--------------|------------------|  
-|[Instructions de sélection](../../../csharp/language-reference/keywords/selection-statements.md)|[if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)|  
-|[Instructions d’itération](../../../csharp/language-reference/keywords/iteration-statements.md)|[do](../../../csharp/language-reference/keywords/do.md), [for](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [in](../../../csharp/language-reference/keywords/foreach-in.md), [while](../../../csharp/language-reference/keywords/while.md)|  
-|[Instructions de saut](../../../csharp/language-reference/keywords/jump-statements.md)|[break](../../../csharp/language-reference/keywords/break.md), [continue](../../../csharp/language-reference/keywords/continue.md), [default](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)|  
-|[Instructions de gestion des exceptions](../../../csharp/language-reference/keywords/exception-handling-statements.md)|[throw](../../../csharp/language-reference/keywords/throw.md), [try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
-|[Checked et unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|[checked](../../../csharp/language-reference/keywords/checked.md), [unchecked](../../../csharp/language-reference/keywords/unchecked.md)|  
-[fixed, instruction](../../../csharp/language-reference/keywords/fixed-statement.md)|[fixed](../../../csharp/language-reference/keywords/fixed-statement.md)|  
-|[lock, instruction](../../../csharp/language-reference/keywords/lock-statement.md)|[lock](../../../csharp/language-reference/keywords/lock-statement.md)|  
+|[<span data-ttu-id="04fb2-109">Instructions de sélection</span><span class="sxs-lookup"><span data-stu-id="04fb2-109">Selection statements</span></span>](../../../csharp/language-reference/keywords/selection-statements.md)|<span data-ttu-id="04fb2-110">[if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)</span><span class="sxs-lookup"><span data-stu-id="04fb2-110">[if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)</span></span>|  
+|[<span data-ttu-id="04fb2-111">Instructions d’itération</span><span class="sxs-lookup"><span data-stu-id="04fb2-111">Iteration statements</span></span>](../../../csharp/language-reference/keywords/iteration-statements.md)|<span data-ttu-id="04fb2-112">[do](../../../csharp/language-reference/keywords/do.md), [for](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [in](../../../csharp/language-reference/keywords/foreach-in.md), [while](../../../csharp/language-reference/keywords/while.md)</span><span class="sxs-lookup"><span data-stu-id="04fb2-112">[do](../../../csharp/language-reference/keywords/do.md), [for](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [in](../../../csharp/language-reference/keywords/foreach-in.md), [while](../../../csharp/language-reference/keywords/while.md)</span></span>|  
+|[<span data-ttu-id="04fb2-113">Instructions de saut</span><span class="sxs-lookup"><span data-stu-id="04fb2-113">Jump statements</span></span>](../../../csharp/language-reference/keywords/jump-statements.md)|<span data-ttu-id="04fb2-114">[break](../../../csharp/language-reference/keywords/break.md), [continue](../../../csharp/language-reference/keywords/continue.md), [default](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)</span><span class="sxs-lookup"><span data-stu-id="04fb2-114">[break](../../../csharp/language-reference/keywords/break.md), [continue](../../../csharp/language-reference/keywords/continue.md), [default](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)</span></span>|  
+|[<span data-ttu-id="04fb2-115">Instructions de gestion des exceptions</span><span class="sxs-lookup"><span data-stu-id="04fb2-115">Exception handling statements</span></span>](../../../csharp/language-reference/keywords/exception-handling-statements.md)|<span data-ttu-id="04fb2-116">[throw](../../../csharp/language-reference/keywords/throw.md), [try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)</span><span class="sxs-lookup"><span data-stu-id="04fb2-116">[throw](../../../csharp/language-reference/keywords/throw.md), [try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)</span></span>|  
+|[<span data-ttu-id="04fb2-117">Checked et unchecked</span><span class="sxs-lookup"><span data-stu-id="04fb2-117">Checked and unchecked</span></span>](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|<span data-ttu-id="04fb2-118">[checked](../../../csharp/language-reference/keywords/checked.md), [unchecked](../../../csharp/language-reference/keywords/unchecked.md)</span><span class="sxs-lookup"><span data-stu-id="04fb2-118">[checked](../../../csharp/language-reference/keywords/checked.md), [unchecked](../../../csharp/language-reference/keywords/unchecked.md)</span></span>|  
+[<span data-ttu-id="04fb2-119">fixed, instruction</span><span class="sxs-lookup"><span data-stu-id="04fb2-119">fixed Statement</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)|[<span data-ttu-id="04fb2-120">fixed</span><span class="sxs-lookup"><span data-stu-id="04fb2-120">fixed</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)|  
+|[<span data-ttu-id="04fb2-121">lock, instruction</span><span class="sxs-lookup"><span data-stu-id="04fb2-121">lock Statement</span></span>](../../../csharp/language-reference/keywords/lock-statement.md)|[<span data-ttu-id="04fb2-122">lock</span><span class="sxs-lookup"><span data-stu-id="04fb2-122">lock</span></span>](../../../csharp/language-reference/keywords/lock-statement.md)|  
   
-## <a name="see-also"></a>Voir aussi  
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [Instructions](../../../csharp/programming-guide/statements-expressions-operators/statements.md)   
- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="04fb2-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="04fb2-123">See Also</span></span>  
+ [<span data-ttu-id="04fb2-124">Référence C#</span><span class="sxs-lookup"><span data-stu-id="04fb2-124">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="04fb2-125">Instructions</span><span class="sxs-lookup"><span data-stu-id="04fb2-125">Statements</span></span>](../../../csharp/programming-guide/statements-expressions-operators/statements.md)  
+ [<span data-ttu-id="04fb2-126">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="04fb2-126">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)

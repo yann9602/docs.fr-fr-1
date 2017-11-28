@@ -39,7 +39,7 @@
 #### [Marshaling d’un délégué comme méthode de rappel](marshaling-a-delegate-as-a-callback-method.md)
 ### [Marshaler des données avec COM Interop](marshaling-data-with-com-interop.md)
 #### [Comment : créer manuellement des wrappers](how-to-create-wrappers-manually.md)
-#### [Comment : migrer DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)
+#### [Guide pratique pour migrer le modèle DCOM de code managé vers WCF](how-to-migrate-managed-code-dcom-to-wcf.md)
 ## [Guide pratique pour mapper des HRESULT et des exceptions](how-to-map-hresults-and-exceptions.md)
 ## [Wrappers COM](com-wrappers.md)
 ### [Wrapper pouvant être appelé par le runtime](runtime-callable-wrapper.md)

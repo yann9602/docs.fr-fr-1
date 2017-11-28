@@ -1,106 +1,101 @@
 ---
 title: Comparaison de XPath et LINQ to XML2
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 87d361b1-daa9-4fd4-a53a-cbfa40111ad3
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 0890bd7d8edb19a16c864d0b845558d3302d6139
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a0b24eeeb79651f69178fa4e9c2e4a3359434556
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="comparison-of-xpath-and-linq-to-xml"></a>Comparaison de XPath et LINQ to XML
-XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offrent certaines fonctionnalités similaires. Tous deux peuvent être utilisés pour interroger une arborescence XML et retourner des résultats tels qu'une collection d'élément, une collection d'attributs, une collection de nœuds ou la valeur d'un élément ou attribut. Il existe toutefois certaines différences.  
+# <a name="comparison-of-xpath-and-linq-to-xml"></a><span data-ttu-id="85474-102">Comparaison de XPath et LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="85474-102">Comparison of XPath and LINQ to XML</span></span>
+<span data-ttu-id="85474-103">XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offrent certaines fonctionnalités similaires.</span><span class="sxs-lookup"><span data-stu-id="85474-103">XPath and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offer some similar functionality.</span></span> <span data-ttu-id="85474-104">Tous deux peuvent être utilisés pour interroger une arborescence XML et retourner des résultats tels qu'une collection d'élément, une collection d'attributs, une collection de nœuds ou la valeur d'un élément ou attribut.</span><span class="sxs-lookup"><span data-stu-id="85474-104">Both can be used to query an XML tree, returning such results as a collection of elements, a collection of attributes, a collection of nodes, or the value of an element or attribute.</span></span> <span data-ttu-id="85474-105">Il existe toutefois certaines différences.</span><span class="sxs-lookup"><span data-stu-id="85474-105">However, there are also some differences.</span></span>  
   
-## <a name="differences-between-xpath-and-linq-to-xml"></a>Différences entre XPath et LINQ to XML  
- XPath n'autorise pas la projection de nouveaux types. Il ne peut retourner que des collections de nœuds à partir de l'arborescence, tandis que [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] peut exécuter une requête et projeter un graphique d'objet ou une arborescence XML dans une nouvelle forme. Les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] englobent beaucoup plus de fonctionnalités et sont beaucoup plus puissantes que les expressions XPath.  
+## <a name="differences-between-xpath-and-linq-to-xml"></a><span data-ttu-id="85474-106">Différences entre XPath et LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="85474-106">Differences Between XPath and LINQ to XML</span></span>  
+ <span data-ttu-id="85474-107">XPath n'autorise pas la projection de nouveaux types.</span><span class="sxs-lookup"><span data-stu-id="85474-107">XPath does not allow projection of new types.</span></span> <span data-ttu-id="85474-108">Il ne peut retourner que des collections de nœuds à partir de l'arborescence, tandis que [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] peut exécuter une requête et projeter un graphique d'objet ou une arborescence XML dans une nouvelle forme.</span><span class="sxs-lookup"><span data-stu-id="85474-108">It can only return collections of nodes from the tree, whereas [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] can execute a query and project an object graph or an XML tree in a new shape.</span></span> <span data-ttu-id="85474-109">Les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] englobent beaucoup plus de fonctionnalités et sont beaucoup plus puissantes que les expressions XPath.</span><span class="sxs-lookup"><span data-stu-id="85474-109">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries encompass much more functionality and are much more powerful than XPath expressions.</span></span>  
   
- Les expressions XPath existent de manière isolée dans une chaîne. Le compilateur C# ne peut pas contribuer à l’analyse de l’expression XPath au moment de la compilation. En revanche, c’est lui qui analyse et compile les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Le compilateur est capable d'intercepter de nombreuses erreurs de requête.  
+ <span data-ttu-id="85474-110">Les expressions XPath existent de manière isolée dans une chaîne.</span><span class="sxs-lookup"><span data-stu-id="85474-110">XPath expressions exist in isolation within a string.</span></span> <span data-ttu-id="85474-111">Le compilateur C# ne peut pas contribuer à l’analyse de l’expression XPath au moment de la compilation.</span><span class="sxs-lookup"><span data-stu-id="85474-111">The C# compiler cannot help parse the XPath expression at compile time.</span></span> <span data-ttu-id="85474-112">En revanche, c’est lui qui analyse et compile les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="85474-112">By contrast, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries are parsed and compiled by the C# compiler.</span></span> <span data-ttu-id="85474-113">Le compilateur est capable d'intercepter de nombreuses erreurs de requête.</span><span class="sxs-lookup"><span data-stu-id="85474-113">The compiler is able to catch many query errors.</span></span>  
   
- Les résultats XPath ne sont pas fortement typés. Dans certaines circonstances, le résultat de l'évaluation d'une expression XPath est un objet et il incombe au développeur de déterminer le type correct et de convertir le résultat si nécessaire. En revanche, les projections à partir d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont fortement typées.  
+ <span data-ttu-id="85474-114">Les résultats XPath ne sont pas fortement typés.</span><span class="sxs-lookup"><span data-stu-id="85474-114">XPath results are not strongly typed.</span></span> <span data-ttu-id="85474-115">Dans certaines circonstances, le résultat de l'évaluation d'une expression XPath est un objet et il incombe au développeur de déterminer le type correct et de convertir le résultat si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="85474-115">In a number of circumstances, the result of evaluating an XPath expression is an object, and it is up to the developer to determine the proper type and cast the result as necessary.</span></span> <span data-ttu-id="85474-116">En revanche, les projections à partir d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont fortement typées.</span><span class="sxs-lookup"><span data-stu-id="85474-116">By contrast, the projections from a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query are strongly typed.</span></span>  
   
-## <a name="result-ordering"></a>Ordonnancement des résultats  
- La Recommandation XPath 1.0 stipule qu'une collection qui est le résultat de l'évaluation d'une expression XPath n'est pas ordonnée.  
+## <a name="result-ordering"></a><span data-ttu-id="85474-117">Ordonnancement des résultats</span><span class="sxs-lookup"><span data-stu-id="85474-117">Result Ordering</span></span>  
+ <span data-ttu-id="85474-118">La Recommandation XPath 1.0 stipule qu'une collection qui est le résultat de l'évaluation d'une expression XPath n'est pas ordonnée.</span><span class="sxs-lookup"><span data-stu-id="85474-118">The XPath 1.0 Recommendation states that a collection that is the result of evaluating an XPath expression is unordered.</span></span>  
   
- Toutefois, lors de l'itération d'une collection retournée par une méthode d'axe XPath [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], les nœuds de la collection sont retournés dans l'ordre du document. Cela est valable même lors de l'accès à des axes XPath où les prédicats sont exprimés dans l'ordre inverse du document, par exemple `preceding` et `preceding-sibling`.  
+ <span data-ttu-id="85474-119">Toutefois, lors de l'itération d'une collection retournée par une méthode d'axe XPath [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], les nœuds de la collection sont retournés dans l'ordre du document.</span><span class="sxs-lookup"><span data-stu-id="85474-119">However, when iterating through a collection returned by a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] XPath axis method, the nodes in the collection are returned in document order.</span></span> <span data-ttu-id="85474-120">Cela est valable même lors de l'accès à des axes XPath où les prédicats sont exprimés dans l'ordre inverse du document, par exemple `preceding` et `preceding-sibling`.</span><span class="sxs-lookup"><span data-stu-id="85474-120">This is the case even when accessing the XPath axes where predicates are expressed in terms of reverse document order, such as `preceding` and `preceding-sibling`.</span></span>  
   
- Par contraste, la plupart des axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] retournent les collections dans l'ordre du document, mais deux d'entre eux, <xref:System.Xml.Linq.XNode.Ancestors%2A> et <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, retournent les collections dans l'ordre inverse du document. Le tableau suivant énumère les axes et indique l'ordre de collection pour chacun d'eux :  
+ <span data-ttu-id="85474-121">Par contraste, la plupart des axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] retournent les collections dans l'ordre du document, mais deux d'entre eux, <xref:System.Xml.Linq.XNode.Ancestors%2A> et <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, retournent les collections dans l'ordre inverse du document.</span><span class="sxs-lookup"><span data-stu-id="85474-121">By contrast, most of the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axes return collections in document order, but two of them, <xref:System.Xml.Linq.XNode.Ancestors%2A> and <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, return collections in reverse document order.</span></span> <span data-ttu-id="85474-122">Le tableau suivant énumère les axes et indique l'ordre de collection pour chacun d'eux :</span><span class="sxs-lookup"><span data-stu-id="85474-122">The following table enumerates the axes, and indicates collection order for each:</span></span>  
   
-|Axe LINQ to XML|Classement|  
+|<span data-ttu-id="85474-123">Axe LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="85474-123">LINQ to XML axis</span></span>|<span data-ttu-id="85474-124">Classement</span><span class="sxs-lookup"><span data-stu-id="85474-124">Ordering</span></span>|  
 |----------------------|--------------|  
-|XContainer.DescendantNodes|Ordre du document|  
-|XContainer.Descendants|Ordre du document|  
-|XContainer.Elements|Ordre du document|  
-|XContainer.Nodes|Ordre du document|  
-|XContainer.NodesAfterSelf|Ordre du document|  
-|XContainer.NodesBeforeSelf|Ordre du document|  
-|XElement.AncestorsAndSelf|Ordre inverse du document|  
-|XElement.Attributes|Ordre du document|  
-|XElement.DescendantNodesAndSelf|Ordre du document|  
-|XElement.DescendantsAndSelf|Ordre du document|  
-|XNode.Ancestors|Ordre inverse du document|  
-|XNode.ElementsAfterSelf|Ordre du document|  
-|XNode.ElementsBeforeSelf|Ordre du document|  
-|XNode.NodesAfterSelf|Ordre du document|  
-|XNode.NodesBeforeSelf|Ordre du document|  
+|<span data-ttu-id="85474-125">XContainer.DescendantNodes</span><span class="sxs-lookup"><span data-stu-id="85474-125">XContainer.DescendantNodes</span></span>|<span data-ttu-id="85474-126">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-126">Document order</span></span>|  
+|<span data-ttu-id="85474-127">XContainer.Descendants</span><span class="sxs-lookup"><span data-stu-id="85474-127">XContainer.Descendants</span></span>|<span data-ttu-id="85474-128">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-128">Document order</span></span>|  
+|<span data-ttu-id="85474-129">XContainer.Elements</span><span class="sxs-lookup"><span data-stu-id="85474-129">XContainer.Elements</span></span>|<span data-ttu-id="85474-130">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-130">Document order</span></span>|  
+|<span data-ttu-id="85474-131">XContainer.Nodes</span><span class="sxs-lookup"><span data-stu-id="85474-131">XContainer.Nodes</span></span>|<span data-ttu-id="85474-132">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-132">Document order</span></span>|  
+|<span data-ttu-id="85474-133">XContainer.NodesAfterSelf</span><span class="sxs-lookup"><span data-stu-id="85474-133">XContainer.NodesAfterSelf</span></span>|<span data-ttu-id="85474-134">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-134">Document order</span></span>|  
+|<span data-ttu-id="85474-135">XContainer.NodesBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="85474-135">XContainer.NodesBeforeSelf</span></span>|<span data-ttu-id="85474-136">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-136">Document order</span></span>|  
+|<span data-ttu-id="85474-137">XElement.AncestorsAndSelf</span><span class="sxs-lookup"><span data-stu-id="85474-137">XElement.AncestorsAndSelf</span></span>|<span data-ttu-id="85474-138">Ordre inverse du document</span><span class="sxs-lookup"><span data-stu-id="85474-138">Reverse document order</span></span>|  
+|<span data-ttu-id="85474-139">XElement.Attributes</span><span class="sxs-lookup"><span data-stu-id="85474-139">XElement.Attributes</span></span>|<span data-ttu-id="85474-140">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-140">Document order</span></span>|  
+|<span data-ttu-id="85474-141">XElement.DescendantNodesAndSelf</span><span class="sxs-lookup"><span data-stu-id="85474-141">XElement.DescendantNodesAndSelf</span></span>|<span data-ttu-id="85474-142">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-142">Document order</span></span>|  
+|<span data-ttu-id="85474-143">XElement.DescendantsAndSelf</span><span class="sxs-lookup"><span data-stu-id="85474-143">XElement.DescendantsAndSelf</span></span>|<span data-ttu-id="85474-144">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-144">Document order</span></span>|  
+|<span data-ttu-id="85474-145">XNode.Ancestors</span><span class="sxs-lookup"><span data-stu-id="85474-145">XNode.Ancestors</span></span>|<span data-ttu-id="85474-146">Ordre inverse du document</span><span class="sxs-lookup"><span data-stu-id="85474-146">Reverse document order</span></span>|  
+|<span data-ttu-id="85474-147">XNode.ElementsAfterSelf</span><span class="sxs-lookup"><span data-stu-id="85474-147">XNode.ElementsAfterSelf</span></span>|<span data-ttu-id="85474-148">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-148">Document order</span></span>|  
+|<span data-ttu-id="85474-149">XNode.ElementsBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="85474-149">XNode.ElementsBeforeSelf</span></span>|<span data-ttu-id="85474-150">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-150">Document order</span></span>|  
+|<span data-ttu-id="85474-151">XNode.NodesAfterSelf</span><span class="sxs-lookup"><span data-stu-id="85474-151">XNode.NodesAfterSelf</span></span>|<span data-ttu-id="85474-152">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-152">Document order</span></span>|  
+|<span data-ttu-id="85474-153">XNode.NodesBeforeSelf</span><span class="sxs-lookup"><span data-stu-id="85474-153">XNode.NodesBeforeSelf</span></span>|<span data-ttu-id="85474-154">Ordre du document</span><span class="sxs-lookup"><span data-stu-id="85474-154">Document order</span></span>|  
   
-## <a name="positional-predicates"></a>Prédicats de position  
- Dans une expression XPath, les prédicats de position sont exprimés dans l'ordre du document pour de nombreux axes, mais dans l'ordre inverse du document pour les axes inversés, qui sont `preceding`, `preceding-sibling`, `ancestor` et `ancestor-or-self`. Par exemple, l'expression XPath `preceding-sibling::*[1]` retourne le frère qui précède. C'est le cas même si le jeu de résultats final est présenté dans l'ordre du document.  
+## <a name="positional-predicates"></a><span data-ttu-id="85474-155">Prédicats de position</span><span class="sxs-lookup"><span data-stu-id="85474-155">Positional Predicates</span></span>  
+ <span data-ttu-id="85474-156">Dans une expression XPath, les prédicats de position sont exprimés dans l'ordre du document pour de nombreux axes, mais dans l'ordre inverse du document pour les axes inversés, qui sont `preceding`, `preceding-sibling`, `ancestor` et `ancestor-or-self`.</span><span class="sxs-lookup"><span data-stu-id="85474-156">Within an XPath expression, positional predicates are expressed in terms of document order for many axes, but are expressed in reverse document order for reverse axes, which are `preceding`, `preceding-sibling`, `ancestor`, and `ancestor-or-self`.</span></span> <span data-ttu-id="85474-157">Par exemple, l'expression XPath `preceding-sibling::*[1]` retourne le frère qui précède.</span><span class="sxs-lookup"><span data-stu-id="85474-157">For example, the XPath expression `preceding-sibling::*[1]` returns the immediately preceding sibling.</span></span> <span data-ttu-id="85474-158">C'est le cas même si le jeu de résultats final est présenté dans l'ordre du document.</span><span class="sxs-lookup"><span data-stu-id="85474-158">This is the case even though the final result set is presented in document order.</span></span>  
   
- Par contraste, tous les prédicats de position dans LINQ to XML sont toujours exprimés dans l'ordre de l'axe. Par exemple, `anElement.ElementsBeforeSelf().ToList()[0]` retourne le premier élément enfant du parent de l'élément interrogé, mais pas l'enfant qui précède. Autre exemple : `anElement.Ancestors().ToList()[0]` retourne l'élément parent.  
+ <span data-ttu-id="85474-159">Par contraste, tous les prédicats de position dans LINQ to XML sont toujours exprimés dans l'ordre de l'axe.</span><span class="sxs-lookup"><span data-stu-id="85474-159">By contrast, all positional predicates in LINQ to XML are always expressed in terms of the order of the axis.</span></span> <span data-ttu-id="85474-160">Par exemple, `anElement.ElementsBeforeSelf().ToList()[0]` retourne le premier élément enfant du parent de l'élément interrogé, mais pas l'enfant qui précède.</span><span class="sxs-lookup"><span data-stu-id="85474-160">For example, `anElement.ElementsBeforeSelf().ToList()[0]` returns the first child element of the parent of the queried element, not the immediate preceding sibling.</span></span> <span data-ttu-id="85474-161">Autre exemple : `anElement.Ancestors().ToList()[0]` retourne l'élément parent.</span><span class="sxs-lookup"><span data-stu-id="85474-161">Another example: `anElement.Ancestors().ToList()[0]` returns the parent element.</span></span>  
   
- Notez que l'approche ci-dessus matérialise l'intégralité de la collection. Il ne s'agit pas de la méthode la plus efficace pour écrire cette requête. Elle a été écrite de cette façon afin d'illustrer le comportement des prédicats de position. Une méthode plus appropriée pour écrire la même requête consiste à utiliser la méthode <xref:System.Linq.Enumerable.First%2A>, comme suit : `anElement.ElementsBeforeSelf().First()`.  
+ <span data-ttu-id="85474-162">Notez que l'approche ci-dessus matérialise l'intégralité de la collection.</span><span class="sxs-lookup"><span data-stu-id="85474-162">Note that the above approach materializes the entire collection.</span></span> <span data-ttu-id="85474-163">Il ne s'agit pas de la méthode la plus efficace pour écrire cette requête.</span><span class="sxs-lookup"><span data-stu-id="85474-163">This is not the most efficient way to write that query.</span></span> <span data-ttu-id="85474-164">Elle a été écrite de cette façon afin d'illustrer le comportement des prédicats de position.</span><span class="sxs-lookup"><span data-stu-id="85474-164">It was written in that way to demonstrate the behavior of positional predicates.</span></span> <span data-ttu-id="85474-165">Une méthode plus appropriée pour écrire la même requête consiste à utiliser la méthode <xref:System.Linq.Enumerable.First%2A>, comme suit : `anElement.ElementsBeforeSelf().First()`.</span><span class="sxs-lookup"><span data-stu-id="85474-165">A more appropriate way to write the same query is to use the <xref:System.Linq.Enumerable.First%2A> method, as follows: `anElement.ElementsBeforeSelf().First()`.</span></span>  
   
- Si vous souhaitez rechercher l'élément qui précède dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous devez écrire l'expression suivante :  
+ <span data-ttu-id="85474-166">Si vous souhaitez rechercher l'élément qui précède dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous devez écrire l'expression suivante :</span><span class="sxs-lookup"><span data-stu-id="85474-166">If you wanted to find the immediately preceding element in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you would write the following expression:</span></span>  
   
  `ElementsBeforeSelf().Last()`  
   
-## <a name="performance-differences"></a>Différences en matière de performances  
- Les requêtes XPath qui utilisent la fonctionnalité XPath dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] présentent des performances inférieures à celles des requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+## <a name="performance-differences"></a><span data-ttu-id="85474-167">Différences en matière de performances</span><span class="sxs-lookup"><span data-stu-id="85474-167">Performance Differences</span></span>  
+ <span data-ttu-id="85474-168">Les requêtes XPath qui utilisent la fonctionnalité XPath dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] présentent des performances inférieures à celles des requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="85474-168">XPath queries that use the XPath functionality in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will not perform as well as [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries.</span></span>  
   
-## <a name="comparison-of-composition"></a>Comparaison de la composition  
- La composition d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est quelque peu parallèle à celle d'une expression XPath, bien qu'elle soit très différente en termes de syntaxe.  
+## <a name="comparison-of-composition"></a><span data-ttu-id="85474-169">Comparaison de la composition</span><span class="sxs-lookup"><span data-stu-id="85474-169">Comparison of Composition</span></span>  
+ <span data-ttu-id="85474-170">La composition d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est quelque peu parallèle à celle d'une expression XPath, bien qu'elle soit très différente en termes de syntaxe.</span><span class="sxs-lookup"><span data-stu-id="85474-170">Composition of a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query is somewhat parallel to composition of an XPath expression, although very different in syntax.</span></span>  
   
- Par exemple, si vous avez un élément dans une variable nommée `customers` et que vous souhaitez trouver un élément petit-enfant `CompanyName` sous tous les éléments enfants nommés `Customer`, vous devez écrire une expression XPath comme suit :  
+ <span data-ttu-id="85474-171">Par exemple, si vous avez un élément dans une variable nommée `customers` et que vous souhaitez trouver un élément petit-enfant `CompanyName` sous tous les éléments enfants nommés `Customer`, vous devez écrire une expression XPath comme suit :</span><span class="sxs-lookup"><span data-stu-id="85474-171">For example, if you have an element in a variable named `customers`, and you want to find a grandchild element named `CompanyName` under all child elements named `Customer`, you would write an XPath expression as follows:</span></span>  
   
 ```csharp  
 customers.XPathSelectElements("./Customer/CompanyName");  
 ```  
   
- La requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] équivalente est la suivante :  
+ <span data-ttu-id="85474-172">La requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] équivalente est la suivante :</span><span class="sxs-lookup"><span data-stu-id="85474-172">The equivalent [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query is:</span></span>  
   
 ```csharp  
 customers.Element("Customer").Elements("CompanyName");  
 ```  
   
- Il existe des parallèles similaires pour chacun des axes XPath.  
+ <span data-ttu-id="85474-173">Il existe des parallèles similaires pour chacun des axes XPath.</span><span class="sxs-lookup"><span data-stu-id="85474-173">There are similar parallels for each of the XPath axes.</span></span>  
   
-|Axe XPath|Axe LINQ to XML|  
+|<span data-ttu-id="85474-174">Axe XPath</span><span class="sxs-lookup"><span data-stu-id="85474-174">XPath axis</span></span>|<span data-ttu-id="85474-175">Axe LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="85474-175">LINQ to XML axis</span></span>|  
 |----------------|----------------------|  
-|enfant (l'axe par défaut)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
-|Parent (..)|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
-|axe des attributs (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> ou<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
-|axe des ancêtres|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
-|axe ancestor-or-self|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
-|axe des descendants (//)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> ou<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
-|descendant-or-self|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> ou<br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
-|frère suivant|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> ou<br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
-|frère précédent|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> ou<br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
-|suivant|Aucun équivalent direct.|  
-|précédent|Aucun équivalent direct.|  
+|<span data-ttu-id="85474-176">enfant (l'axe par défaut)</span><span class="sxs-lookup"><span data-stu-id="85474-176">child (the default axis)</span></span>|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-177">Parent (..)</span><span class="sxs-lookup"><span data-stu-id="85474-177">Parent (..)</span></span>|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-178">axe des attributs (@)</span><span class="sxs-lookup"><span data-stu-id="85474-178">attribute axis (@)</span></span>|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="85474-179">ou</span><span class="sxs-lookup"><span data-stu-id="85474-179">or</span></span><br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-180">axe des ancêtres</span><span class="sxs-lookup"><span data-stu-id="85474-180">ancestor axis</span></span>|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-181">axe ancestor-or-self</span><span class="sxs-lookup"><span data-stu-id="85474-181">ancestor-or-self axis</span></span>|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-182">axe des descendants (//)</span><span class="sxs-lookup"><span data-stu-id="85474-182">descendant axis (//)</span></span>|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="85474-183">ou</span><span class="sxs-lookup"><span data-stu-id="85474-183">or</span></span><br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-184">descendant-or-self</span><span class="sxs-lookup"><span data-stu-id="85474-184">descendant-or-self</span></span>|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="85474-185">ou</span><span class="sxs-lookup"><span data-stu-id="85474-185">or</span></span><br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-186">frère suivant</span><span class="sxs-lookup"><span data-stu-id="85474-186">following-sibling</span></span>|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="85474-187">ou</span><span class="sxs-lookup"><span data-stu-id="85474-187">or</span></span><br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-188">frère précédent</span><span class="sxs-lookup"><span data-stu-id="85474-188">preceding-sibling</span></span>|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> <span data-ttu-id="85474-189">ou</span><span class="sxs-lookup"><span data-stu-id="85474-189">or</span></span><br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="85474-190">suivant</span><span class="sxs-lookup"><span data-stu-id="85474-190">following</span></span>|<span data-ttu-id="85474-191">Aucun équivalent direct.</span><span class="sxs-lookup"><span data-stu-id="85474-191">No direct equivalent.</span></span>|  
+|<span data-ttu-id="85474-192">précédent</span><span class="sxs-lookup"><span data-stu-id="85474-192">preceding</span></span>|<span data-ttu-id="85474-193">Aucun équivalent direct.</span><span class="sxs-lookup"><span data-stu-id="85474-193">No direct equivalent.</span></span>|  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
-
+## <a name="see-also"></a><span data-ttu-id="85474-194">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="85474-194">See Also</span></span>  
+ [<span data-ttu-id="85474-195">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="85474-195">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

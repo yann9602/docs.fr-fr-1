@@ -7,170 +7,168 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 8594c863d67baf0237b63e61f28ca9ee315eeddf
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="dotnet-pack"></a>dotnet pack
+# <a name="dotnet-pack"></a><span data-ttu-id="c619e-103">dotnet pack</span><span class="sxs-lookup"><span data-stu-id="c619e-103">dotnet pack</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a><span data-ttu-id="c619e-104">Nom</span><span class="sxs-lookup"><span data-stu-id="c619e-104">Name</span></span>
 
-`dotnet pack` : Place le code dans un package NuGet.
+<span data-ttu-id="c619e-105">`dotnet pack` : Place le code dans un package NuGet.</span><span class="sxs-lookup"><span data-stu-id="c619e-105">`dotnet pack` - Packs the code into a NuGet package.</span></span>
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a><span data-ttu-id="c619e-106">Résumé</span><span class="sxs-lookup"><span data-stu-id="c619e-106">Synopsis</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="c619e-107">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="c619e-107">.NET Core 2.x</span></span>](#tab/netcore2x)
 
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies] [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="c619e-108">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="c619e-108">.NET Core 1.x</span></span>](#tab/netcore1x)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 ---
 
-## <a name="description"></a>Description
+## <a name="description"></a><span data-ttu-id="c619e-109">Description</span><span class="sxs-lookup"><span data-stu-id="c619e-109">Description</span></span>
 
-La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet. Si l’option `--include-symbols` est présente, un autre package contenant les symboles de débogage est créé.
+<span data-ttu-id="c619e-110">La commande `dotnet pack` génère le projet et crée les packages NuGet.</span><span class="sxs-lookup"><span data-stu-id="c619e-110">The `dotnet pack` command builds the project and creates NuGet packages.</span></span> <span data-ttu-id="c619e-111">Le résultat de cette commande est un package NuGet.</span><span class="sxs-lookup"><span data-stu-id="c619e-111">The result of this command is a NuGet package.</span></span> <span data-ttu-id="c619e-112">Si l’option `--include-symbols` est présente, un autre package contenant les symboles de débogage est créé.</span><span class="sxs-lookup"><span data-stu-id="c619e-112">If the `--include-symbols` option is present, another package containing the debug symbols is created.</span></span>
 
-Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
+<span data-ttu-id="c619e-113">Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package.</span><span class="sxs-lookup"><span data-stu-id="c619e-113">NuGet dependencies of the packed project are added to the *.nuspec* file, so they're properly resolved when the package is installed.</span></span> <span data-ttu-id="c619e-114">Les références entre projets ne sont pas empaquetées à l’intérieur du projet.</span><span class="sxs-lookup"><span data-stu-id="c619e-114">Project-to-project references aren't packaged inside the project.</span></span> <span data-ttu-id="c619e-115">Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.</span><span class="sxs-lookup"><span data-stu-id="c619e-115">Currently, you must have a package per project if you have project-to-project dependencies.</span></span>
 
-Par défaut, `dotnet pack` génère d’abord le projet. Pour éviter ce comportement, passez l’option `--no-build`. Elle est souvent utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code a déjà été créé.
+<span data-ttu-id="c619e-116">Par défaut, `dotnet pack` génère d’abord le projet.</span><span class="sxs-lookup"><span data-stu-id="c619e-116">By default, `dotnet pack` builds the project first.</span></span> <span data-ttu-id="c619e-117">Pour éviter ce comportement, passez l’option `--no-build`.</span><span class="sxs-lookup"><span data-stu-id="c619e-117">If you wish to avoid this behavior, pass the `--no-build` option.</span></span> <span data-ttu-id="c619e-118">Elle est souvent utile dans les scénarios de build d’intégration continue, pour lesquels vous savez que le code a déjà été créé.</span><span class="sxs-lookup"><span data-stu-id="c619e-118">This is often useful in Continuous Integration (CI) build scenarios where you know the code was previously built.</span></span>
 
-Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression. Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+<span data-ttu-id="c619e-119">Vous pouvez fournir des propriétés MSBuild à la commande `dotnet pack` pour le processus de compression.</span><span class="sxs-lookup"><span data-stu-id="c619e-119">You can provide MSBuild properties to the `dotnet pack` command for the packing process.</span></span> <span data-ttu-id="c619e-120">Pour plus d’informations, consultez [Propriétés des métadonnées NuGet](csproj.md#nuget-metadata-properties) et [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).</span><span class="sxs-lookup"><span data-stu-id="c619e-120">For more information, see [NuGet metadata properties](csproj.md#nuget-metadata-properties) and the [MSBuild Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference).</span></span>
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a><span data-ttu-id="c619e-121">Arguments</span><span class="sxs-lookup"><span data-stu-id="c619e-121">Arguments</span></span>
 
 `PROJECT`
 
-Projet à empaqueter. Il s’agit du chemin d’un [fichier csproj](csproj.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+<span data-ttu-id="c619e-122">Projet à empaqueter.</span><span class="sxs-lookup"><span data-stu-id="c619e-122">The project to pack.</span></span> <span data-ttu-id="c619e-123">Il s’agit du chemin d’accès d’un [fichier csproj](csproj.md) ou d’un répertoire.</span><span class="sxs-lookup"><span data-stu-id="c619e-123">It's either a path to a [csproj file](csproj.md) or to a directory.</span></span> <span data-ttu-id="c619e-124">Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.</span><span class="sxs-lookup"><span data-stu-id="c619e-124">If omitted, it defaults to the current directory.</span></span>
 
-## <a name="options"></a>Options
+## <a name="options"></a><span data-ttu-id="c619e-125">Options</span><span class="sxs-lookup"><span data-stu-id="c619e-125">Options</span></span>
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[<span data-ttu-id="c619e-126">.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="c619e-126">.NET Core 2.x</span></span>](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 
-Définit la configuration de build. La valeur par défaut est `Debug`.
+<span data-ttu-id="c619e-127">Définit la configuration de build.</span><span class="sxs-lookup"><span data-stu-id="c619e-127">Defines the build configuration.</span></span> <span data-ttu-id="c619e-128">La valeur par défaut est `Debug`.</span><span class="sxs-lookup"><span data-stu-id="c619e-128">The default value is `Debug`.</span></span>
 
-`--force` : force la résolution de toutes les dépendances même si la dernière restauration a réussi. Cette opération équivaut à supprimer le fichier *project.assets.json*.
+<span data-ttu-id="c619e-129">`--force` : force la résolution de toutes les dépendances même si la dernière restauration a réussi.</span><span class="sxs-lookup"><span data-stu-id="c619e-129">`--force` Forces all dependencies to be resolved even if the last restore was successful.</span></span> <span data-ttu-id="c619e-130">Cette opération équivaut à supprimer le fichier *project.assets.json*.</span><span class="sxs-lookup"><span data-stu-id="c619e-130">This is equivalent to deleting the *project.assets.json* file.</span></span>
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+<span data-ttu-id="c619e-131">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="c619e-131">Prints out a short help for the command.</span></span>
 
 `--include-source`
 
-Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.
+<span data-ttu-id="c619e-132">Inclut les fichiers sources dans le package NuGet.</span><span class="sxs-lookup"><span data-stu-id="c619e-132">Includes the source files in the NuGet package.</span></span> <span data-ttu-id="c619e-133">Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.</span><span class="sxs-lookup"><span data-stu-id="c619e-133">The sources files are included in the `src` folder within the `nupkg`.</span></span>
 
 `--include-symbols`
 
-Génère les symboles `nupkg`.
+<span data-ttu-id="c619e-134">Génère les symboles `nupkg`.</span><span class="sxs-lookup"><span data-stu-id="c619e-134">Generates the symbols `nupkg`.</span></span>
 
 `--no-build`
 
-Ne génère pas le projet avant de créer le package.
+<span data-ttu-id="c619e-135">Ne génère pas le projet avant de créer le package.</span><span class="sxs-lookup"><span data-stu-id="c619e-135">Doesn't build the project before packing.</span></span>
 
 `--no-dependencies`
 
-Ignore les références entre projets et restaure uniquement le projet racine.
+<span data-ttu-id="c619e-136">Ignore les références entre projets et restaure uniquement le projet racine.</span><span class="sxs-lookup"><span data-stu-id="c619e-136">Ignores project-to-project references and only restores the root project.</span></span>
 
 `--no-restore`
 
-N’effectue pas de restauration implicite à l’exécution de la commande.
+<span data-ttu-id="c619e-137">N’effectue pas de restauration implicite à l’exécution de la commande.</span><span class="sxs-lookup"><span data-stu-id="c619e-137">Doesn't perform an implicit restore when running the command.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Place les packages générés dans le répertoire spécifié.
+<span data-ttu-id="c619e-138">Place les packages générés dans le répertoire spécifié.</span><span class="sxs-lookup"><span data-stu-id="c619e-138">Places the built packages in the directory specified.</span></span>
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).
+<span data-ttu-id="c619e-139">Spécifie le runtime cible pour lequel restaurer les packages.</span><span class="sxs-lookup"><span data-stu-id="c619e-139">Specifies the target runtime to restore packages for.</span></span> <span data-ttu-id="c619e-140">Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="c619e-140">For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).</span></span>
 
 `-s|--serviceable`
 
-Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).
+<span data-ttu-id="c619e-141">Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package.</span><span class="sxs-lookup"><span data-stu-id="c619e-141">Sets the serviceable flag in the package.</span></span> <span data-ttu-id="c619e-142">Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).</span><span class="sxs-lookup"><span data-stu-id="c619e-142">For more information, see [.NET Blog: .NET 4.5.1 Supports Microsoft Security Updates for .NET NuGet Libraries](https://aka.ms/nupkgservicing).</span></span>
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.
+<span data-ttu-id="c619e-143">Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.</span><span class="sxs-lookup"><span data-stu-id="c619e-143">Defines the value for the `$(VersionSuffix)` MSBuild property in the project.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+<span data-ttu-id="c619e-144">Définit le niveau de détail de la commande.</span><span class="sxs-lookup"><span data-stu-id="c619e-144">Sets the verbosity level of the command.</span></span> <span data-ttu-id="c619e-145">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="c619e-145">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="c619e-146">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="c619e-146">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
-Définit la configuration de build. La valeur par défaut est `Debug`.
+<span data-ttu-id="c619e-147">Définit la configuration de build.</span><span class="sxs-lookup"><span data-stu-id="c619e-147">Defines the build configuration.</span></span> <span data-ttu-id="c619e-148">La valeur par défaut est `Debug`.</span><span class="sxs-lookup"><span data-stu-id="c619e-148">The default value is `Debug`.</span></span>
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+<span data-ttu-id="c619e-149">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="c619e-149">Prints out a short help for the command.</span></span>
 
 `--include-source`
 
-Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.
+<span data-ttu-id="c619e-150">Inclut les fichiers sources dans le package NuGet.</span><span class="sxs-lookup"><span data-stu-id="c619e-150">Includes the source files in the NuGet package.</span></span> <span data-ttu-id="c619e-151">Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.</span><span class="sxs-lookup"><span data-stu-id="c619e-151">The sources files are included in the `src` folder within the `nupkg`.</span></span>
 
 `--include-symbols`
 
-Génère les symboles `nupkg`.
+<span data-ttu-id="c619e-152">Génère les symboles `nupkg`.</span><span class="sxs-lookup"><span data-stu-id="c619e-152">Generates the symbols `nupkg`.</span></span>
 
 `--no-build`
 
-Ne génère pas le projet avant de créer le package.
+<span data-ttu-id="c619e-153">Ne génère pas le projet avant de créer le package.</span><span class="sxs-lookup"><span data-stu-id="c619e-153">Doesn't build the project before packing.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Place les packages générés dans le répertoire spécifié.
+<span data-ttu-id="c619e-154">Place les packages générés dans le répertoire spécifié.</span><span class="sxs-lookup"><span data-stu-id="c619e-154">Places the built packages in the directory specified.</span></span>
 
 `-s|--serviceable`
 
-Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).
+<span data-ttu-id="c619e-155">Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package.</span><span class="sxs-lookup"><span data-stu-id="c619e-155">Sets the serviceable flag in the package.</span></span> <span data-ttu-id="c619e-156">Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).</span><span class="sxs-lookup"><span data-stu-id="c619e-156">For more information, see [.NET Blog: .NET 4.5.1 Supports Microsoft Security Updates for .NET NuGet Libraries](https://aka.ms/nupkgservicing).</span></span>
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.
+<span data-ttu-id="c619e-157">Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.</span><span class="sxs-lookup"><span data-stu-id="c619e-157">Defines the value for the `$(VersionSuffix)` MSBuild property in the project.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+<span data-ttu-id="c619e-158">Définit le niveau de détail de la commande.</span><span class="sxs-lookup"><span data-stu-id="c619e-158">Sets the verbosity level of the command.</span></span> <span data-ttu-id="c619e-159">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="c619e-159">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
 ---
 
-## <a name="examples"></a>Exemples
+## <a name="examples"></a><span data-ttu-id="c619e-160">Exemples</span><span class="sxs-lookup"><span data-stu-id="c619e-160">Examples</span></span>
 
-Empaquetez le projet dans le répertoire actif :
+<span data-ttu-id="c619e-161">Empaquetez le projet dans le répertoire actif :</span><span class="sxs-lookup"><span data-stu-id="c619e-161">Pack the project in the current directory:</span></span>
 
 `dotnet pack`
 
-Empaqueter le projet `app1` :
+<span data-ttu-id="c619e-162">Empaqueter le projet `app1` :</span><span class="sxs-lookup"><span data-stu-id="c619e-162">Pack the `app1` project:</span></span>
 
 `dotnet pack ~/projects/app1/project.csproj`
     
-Empaqueter le projet dans le répertoire actif et placer les packages résultants dans le dossier `nupkgs` :
+<span data-ttu-id="c619e-163">Empaqueter le projet dans le répertoire actif et placer les packages résultants dans le dossier `nupkgs` :</span><span class="sxs-lookup"><span data-stu-id="c619e-163">Pack the project in the current directory and place the resulting packages into the `nupkgs` folder:</span></span>
 
 `dotnet pack --output nupkgs`
 
-Empaqueter le projet dans le répertoire actif du dossier `nupkgs` et ignorer l’étape de génération :
+<span data-ttu-id="c619e-164">Empaqueter le projet dans le répertoire actif du dossier `nupkgs` et ignorer l’étape de génération :</span><span class="sxs-lookup"><span data-stu-id="c619e-164">Pack the project in the current directory into the `nupkgs` folder and skip the build step:</span></span>
 
 `dotnet pack --no-build --output nupkgs`
 
-Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :
+<span data-ttu-id="c619e-165">Avec le suffixe de version du projet configuré comme `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` dans le fichier *.csproj*, empaqueter le projet actif et mettre à jour la version du package obtenue avec le suffixe donné :</span><span class="sxs-lookup"><span data-stu-id="c619e-165">With the project's version suffix configured as `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` in the *.csproj* file, pack the current project and update the resulting package version with the given suffix:</span></span>
 
 `dotnet pack --version-suffix "ci-1234"`
 
-Affectez `2.1.0` à la version du package à l’aide de la propriété MSBuild `PackageVersion` :
+<span data-ttu-id="c619e-166">Affectez `2.1.0` à la version du package à l’aide de la propriété MSBuild `PackageVersion` :</span><span class="sxs-lookup"><span data-stu-id="c619e-166">Set the package version to `2.1.0` with the `PackageVersion` MSBuild property:</span></span>
 
 `dotnet pack /p:PackageVersion=2.1.0`
-

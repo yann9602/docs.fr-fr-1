@@ -1,62 +1,43 @@
 ---
 title: "À l'intérieur d'un programme C#"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, about C# program
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 824ce9ce5cb98805acb1d75bf28a4bca45077d6c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 9bb64ea7199f5699ff166d1affb7f8126dcc6612
-ms.openlocfilehash: a67832641e3665dcabee6312d356c9d9488f3489
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/02/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="inside-a-c-program"></a>À l'intérieur d'un programme C#
-La section traite de la structure générale d’un programme C# et inclut l’exemple standard « Hello, World! ».  
+# <a name="inside-a-c-program"></a><span data-ttu-id="93ff1-102">À l'intérieur d'un programme C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-102">Inside a C# Program</span></span>
+<span data-ttu-id="93ff1-103">La section traite de la structure générale d’un programme C# et inclut l’exemple standard</span><span class="sxs-lookup"><span data-stu-id="93ff1-103">The section discusses the general structure of a C# program, and includes the standard "Hello, World!"</span></span> <span data-ttu-id="93ff1-104">« Hello, World! ».</span><span class="sxs-lookup"><span data-stu-id="93ff1-104">example.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a><span data-ttu-id="93ff1-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="93ff1-105">In This Section</span></span>  
   
--   [Hello World -- Votre premier programme](../../../csharp/programming-guide/inside-a-program/hello-world-your-first-program.md)  
+-   [<span data-ttu-id="93ff1-106">Hello World -- Votre premier programme</span><span class="sxs-lookup"><span data-stu-id="93ff1-106">Hello World -- Your First Program</span></span>](../../../csharp/programming-guide/inside-a-program/hello-world-your-first-program.md)  
   
--   [Structure générale d’un programme C#](../../../csharp/programming-guide/inside-a-program/general-structure-of-a-csharp-program.md)  
+-   [<span data-ttu-id="93ff1-107">Structure générale d’un programme C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-107">General Structure of a C# Program</span></span>](../../../csharp/programming-guide/inside-a-program/general-structure-of-a-csharp-program.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a><span data-ttu-id="93ff1-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="93ff1-108">Related Sections</span></span>  
   
--   [Bien démarrer avec C#](../../../csharp/getting-started/index.md)  
+-   [<span data-ttu-id="93ff1-109">Bien démarrer avec C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-109">Getting Started with C#</span></span>](../../../csharp/getting-started/index.md)  
   
--   [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+-   [<span data-ttu-id="93ff1-110">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
   
--   [Référence C#](../../../csharp/language-reference/index.md)  
+-   [<span data-ttu-id="93ff1-111">Référence C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-111">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
   
--   [\<paveover>Exemples d’applications C#](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
+-   [<span data-ttu-id="93ff1-112">\<paveover>Exemples d’applications C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-112">\<paveover>C# Sample Applications</span></span>](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="93ff1-113">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-113">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="93ff1-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="93ff1-114">See Also</span></span>  
+ [<span data-ttu-id="93ff1-115">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="93ff1-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)

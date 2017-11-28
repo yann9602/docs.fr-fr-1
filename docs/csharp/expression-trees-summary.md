@@ -10,28 +10,25 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: eb687ebd-1149-4453-9fc1-12a084495a66
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 8088ce0c138cdb05a6e4a4fb6467e43efd252ba7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="expression-trees-summary"></a><span data-ttu-id="64a3c-104">Récapitulatif concernant les arborescences d’expressions</span><span class="sxs-lookup"><span data-stu-id="64a3c-104">Expression Trees Summary</span></span>
 
-# <a name="expression-trees-summary"></a>Récapitulatif concernant les arborescences d’expressions
+[<span data-ttu-id="64a3c-105">Précédent -- Traduction d’expressions</span><span class="sxs-lookup"><span data-stu-id="64a3c-105">Previous -- Translating Expressions</span></span>](expression-trees-translating.md)
 
-[Précédent -- Traduction d’expressions](expression-trees-translating.md)
+<span data-ttu-id="64a3c-106">Dans cette série, vous avez vu comment utiliser des *arborescences d’expressions* pour créer des programmes dynamiques qui interprètent du code en tant que données et génèrent de nouvelles fonctionnalités en fonction de ce code.</span><span class="sxs-lookup"><span data-stu-id="64a3c-106">In this series, you've seen how you can use *expression trees* to create dynamic programs that interpret code as data and build new functionality based on that code.</span></span>
 
-Dans cette série, vous avez vu comment utiliser des *arborescences d’expressions* pour créer des programmes dynamiques qui interprètent du code en tant que données et génèrent de nouvelles fonctionnalités en fonction de ce code.
+<span data-ttu-id="64a3c-107">Vous pouvez examiner des arborescences d’expressions pour comprendre l’intention d’un algorithme.</span><span class="sxs-lookup"><span data-stu-id="64a3c-107">You can examine expression trees to understand the intent of an algorithm.</span></span> <span data-ttu-id="64a3c-108">Vous pouvez non seulement examiner ce code,</span><span class="sxs-lookup"><span data-stu-id="64a3c-108">You can not only examine that code.</span></span> <span data-ttu-id="64a3c-109">mais aussi créer de nouvelles arborescences d’expressions qui représentent des versions modifiées du code d’origine.</span><span class="sxs-lookup"><span data-stu-id="64a3c-109">You can build new expression trees that represent modified versions of the original code.</span></span>
 
-Vous pouvez examiner des arborescences d’expressions pour comprendre l’intention d’un algorithme. Vous pouvez non seulement examiner ce code, mais aussi créer de nouvelles arborescences d’expressions qui représentent des versions modifiées du code d’origine.
+<span data-ttu-id="64a3c-110">Vous pouvez également utiliser des arborescences d’expressions pour examiner un algorithme, et traduire celui-ci dans un autre langage ou environnement.</span><span class="sxs-lookup"><span data-stu-id="64a3c-110">You can also use expression trees to look at an algorithm, and translate that algorithm into another language or environment.</span></span> 
 
-Vous pouvez également utiliser des arborescences d’expressions pour examiner un algorithme, et traduire celui-ci dans un autre langage ou environnement. 
+## <a name="limitations"></a><span data-ttu-id="64a3c-111">Limitations</span><span class="sxs-lookup"><span data-stu-id="64a3c-111">Limitations</span></span>
 
-## <a name="limitations"></a>Limitations
+<span data-ttu-id="64a3c-112">Certains éléments de langage C# récents ne se traduisent pas correctement en arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="64a3c-112">There are some newer C# language elements that don't translate well into expression trees.</span></span> <span data-ttu-id="64a3c-113">Les arborescences d’expressions ne peuvent pas contenir d’expressions `await` ou d’expressions lambda `async`.</span><span class="sxs-lookup"><span data-stu-id="64a3c-113">Expression trees cannot contain `await` expressions, or `async` lambda expressions.</span></span> <span data-ttu-id="64a3c-114">La plupart des fonctionnalités ajoutées dans la version 6 de C# n’apparaissent pas exactement telles qu’écrites dans les arborescences d’expressions.</span><span class="sxs-lookup"><span data-stu-id="64a3c-114">Many of the features added in the C# 6 release don't appear exactly as written in expression trees.</span></span> <span data-ttu-id="64a3c-115">Au lieu de cela, les nouvelles fonctionnalités sont exposées dans les arborescences d’expressions dans la syntaxe antérieure équivalente.</span><span class="sxs-lookup"><span data-stu-id="64a3c-115">Instead, newer features will be exposed in expressions trees in the equivalent, earlier syntax.</span></span> <span data-ttu-id="64a3c-116">Cette limitation n’est peut-être pas aussi importante que vous pourriez le penser.</span><span class="sxs-lookup"><span data-stu-id="64a3c-116">This may not be as much of a limitation as you might think.</span></span> <span data-ttu-id="64a3c-117">En fait, elle signifie que votre code qui interprète des arborescences d’expressions continuera probablement de fonctionner de la même manière lors de l’introduction de nouvelles fonctionnalités de langage.</span><span class="sxs-lookup"><span data-stu-id="64a3c-117">In fact, it means that your code that interprets expression trees will likely still work the same when new language features are introduced.</span></span>
 
-Certains éléments de langage C# récents ne se traduisent pas correctement en arborescences d’expressions. Les arborescences d’expressions ne peuvent pas contenir d’expressions `await` ou d’expressions lambda `async`. La plupart des fonctionnalités ajoutées dans la version 6 de C# n’apparaissent pas exactement telles qu’écrites dans les arborescences d’expressions. Au lieu de cela, les nouvelles fonctionnalités sont exposées dans les arborescences d’expressions dans la syntaxe antérieure équivalente. Cette limitation n’est peut-être pas aussi importante que vous pourriez le penser. En fait, elle signifie que votre code qui interprète des arborescences d’expressions continuera probablement de fonctionner de la même manière lors de l’introduction de nouvelles fonctionnalités de langage.
-
-Même avec ces limitations, les arborescences d’expressions vous permettent de créer des algorithmes dynamiques qui reposent sur l’interprétation et la modification de code représenté sous la forme d’une structure de données. C’est un outil puissant et l’une des fonctionnalités de l’écosystème .NET qui permet aux bibliothèques enrichies telles qu’Entity Framework d’accomplir leur travail.
-
+<span data-ttu-id="64a3c-118">Même avec ces limitations, les arborescences d’expressions vous permettent de créer des algorithmes dynamiques qui reposent sur l’interprétation et la modification de code représenté sous la forme d’une structure de données.</span><span class="sxs-lookup"><span data-stu-id="64a3c-118">Even with these limitations, expression trees do enable you to create dynamic algorithms that rely on interpreting and modifying code that is represetned as a data structure.</span></span> <span data-ttu-id="64a3c-119">C’est un outil puissant et l’une des fonctionnalités de l’écosystème .NET qui permet aux bibliothèques enrichies telles qu’Entity Framework d’accomplir leur travail.</span><span class="sxs-lookup"><span data-stu-id="64a3c-119">It's a powerful tool, and it's one of the features of the .NET ecosystem that enables rich libraries such as Entity Framework to accomplish what they do.</span></span>
 

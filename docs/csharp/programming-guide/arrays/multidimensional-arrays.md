@@ -1,77 +1,58 @@
 ---
 title: Tableaux multidimensionnels (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: ab3a93c21ddb9541a6149967605b851ea5a50a3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0203046e2038e97cf791141f6863fd8940b22ea4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="multidimensional-arrays-c-programming-guide"></a>Tableaux multidimensionnels (Guide de programmation C#)
-Les tableaux peuvent avoir plusieurs dimensions. Par exemple, la déclaration suivante crée un tableau à deux dimensions composé de quatre lignes et deux colonnes.  
+# <a name="multidimensional-arrays-c-programming-guide"></a><span data-ttu-id="d96dd-102">Tableaux multidimensionnels (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="d96dd-102">Multidimensional Arrays (C# Programming Guide)</span></span>
+<span data-ttu-id="d96dd-103">Les tableaux peuvent avoir plusieurs dimensions.</span><span class="sxs-lookup"><span data-stu-id="d96dd-103">Arrays can have more than one dimension.</span></span> <span data-ttu-id="d96dd-104">Par exemple, la déclaration suivante crée un tableau à deux dimensions composé de quatre lignes et deux colonnes.</span><span class="sxs-lookup"><span data-stu-id="d96dd-104">For example, the following declaration creates a two-dimensional array of four rows and two columns.</span></span>  
   
- [!code-cs[csProgGuideArrays#11](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_1.cs)]  
+ [!code-csharp[csProgGuideArrays#11](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_1.cs)]  
   
- La déclaration suivante crée un tableau de trois dimensions, 4, 2 et 3.  
+ <span data-ttu-id="d96dd-105">La déclaration suivante crée un tableau de trois dimensions, 4, 2 et 3.</span><span class="sxs-lookup"><span data-stu-id="d96dd-105">The following declaration creates an array of three dimensions, 4, 2, and 3.</span></span>  
   
- [!code-cs[csProgGuideArrays#12](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_2.cs)]  
+ [!code-csharp[csProgGuideArrays#12](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_2.cs)]  
   
-## <a name="array-initialization"></a>Initialisation du tableau  
- Vous pouvez initialiser le tableau au moment de la déclaration, comme le montre l’exemple suivant.  
+## <a name="array-initialization"></a><span data-ttu-id="d96dd-106">Initialisation du tableau</span><span class="sxs-lookup"><span data-stu-id="d96dd-106">Array Initialization</span></span>  
+ <span data-ttu-id="d96dd-107">Vous pouvez initialiser le tableau au moment de la déclaration, comme le montre l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="d96dd-107">You can initialize the array upon declaration, as is shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideArrays#13](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_3.cs)]  
+ [!code-csharp[csProgGuideArrays#13](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_3.cs)]  
   
- Vous pouvez aussi initialiser le tableau sans spécifier de rang.  
+ <span data-ttu-id="d96dd-108">Vous pouvez aussi initialiser le tableau sans spécifier de rang.</span><span class="sxs-lookup"><span data-stu-id="d96dd-108">You also can initialize the array without specifying the rank.</span></span>  
   
- [!code-cs[csProgGuideArrays#14](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_4.cs)]  
+ [!code-csharp[csProgGuideArrays#14](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_4.cs)]  
   
- Si vous choisissez de déclarer une variable de tableau sans initialisation, vous devez utiliser l’opérateur `new` pour assigner un tableau à la variable. L’utilisation de `new` est illustrée dans l’exemple suivant.  
+ <span data-ttu-id="d96dd-109">Si vous choisissez de déclarer une variable de tableau sans initialisation, vous devez utiliser l’opérateur `new` pour assigner un tableau à la variable.</span><span class="sxs-lookup"><span data-stu-id="d96dd-109">If you choose to declare an array variable without initialization, you must use the `new` operator to assign an array to the variable.</span></span> <span data-ttu-id="d96dd-110">L’utilisation de `new` est illustrée dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="d96dd-110">The use of `new` is shown in the following example.</span></span>  
   
- [!code-cs[csProgGuideArrays#15](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_5.cs)]  
+ [!code-csharp[csProgGuideArrays#15](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_5.cs)]  
   
- L’exemple suivant assigne une valeur à un élément de tableau particulier.  
+ <span data-ttu-id="d96dd-111">L’exemple suivant assigne une valeur à un élément de tableau particulier.</span><span class="sxs-lookup"><span data-stu-id="d96dd-111">The following example assigns a value to a particular array element.</span></span>  
   
- [!code-cs[csProgGuideArrays#16](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_6.cs)]  
+ [!code-csharp[csProgGuideArrays#16](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_6.cs)]  
   
- De la même manière, l’exemple suivant obtient la valeur d’un élément de tableau particulier et l’affecte à la variable `elementValue`.  
+ <span data-ttu-id="d96dd-112">De la même manière, l’exemple suivant obtient la valeur d’un élément de tableau particulier et l’affecte à la variable `elementValue`.</span><span class="sxs-lookup"><span data-stu-id="d96dd-112">Similarly, the following example gets the value of a particular array element and assigns it to variable `elementValue`.</span></span>  
   
- [!code-cs[csProgGuideArrays#42](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_7.cs)]  
+ [!code-csharp[csProgGuideArrays#42](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_7.cs)]  
   
- L’exemple de code suivant initialise les éléments de tableau avec les valeurs par défaut (sauf pour les tableaux en escalier).  
+ <span data-ttu-id="d96dd-113">L’exemple de code suivant initialise les éléments de tableau avec les valeurs par défaut (sauf pour les tableaux en escalier).</span><span class="sxs-lookup"><span data-stu-id="d96dd-113">The following code example initializes the array elements to default values (except for jagged arrays).</span></span>  
   
- [!code-cs[csProgGuideArrays#17](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_8.cs)]  
+ [!code-csharp[csProgGuideArrays#17](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_8.cs)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Tableaux](../../../csharp/programming-guide/arrays/index.md)   
- [Tableaux unidimensionnels](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)   
- [Tableaux en escalier](../../../csharp/programming-guide/arrays/jagged-arrays.md)
-
+## <a name="see-also"></a><span data-ttu-id="d96dd-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d96dd-114">See Also</span></span>  
+ [<span data-ttu-id="d96dd-115">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="d96dd-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="d96dd-116">Tableaux</span><span class="sxs-lookup"><span data-stu-id="d96dd-116">Arrays</span></span>](../../../csharp/programming-guide/arrays/index.md)  
+ [<span data-ttu-id="d96dd-117">Tableaux unidimensionnels</span><span class="sxs-lookup"><span data-stu-id="d96dd-117">Single-Dimensional Arrays</span></span>](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
+ [<span data-ttu-id="d96dd-118">Tableaux en escalier</span><span class="sxs-lookup"><span data-stu-id="d96dd-118">Jagged Arrays</span></span>](../../../csharp/programming-guide/arrays/jagged-arrays.md)

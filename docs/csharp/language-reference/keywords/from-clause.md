@@ -1,78 +1,59 @@
 ---
 title: "from, clause (Référence C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - from_CSharpKeyword
 - from
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - from clause [C#]
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: f718f50d2b8d6f5c612113414a2106fed37fe0fa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f0165144acfa8d0928015e8222179f7e69f19644
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="from-clause-c-reference"></a>from, clause (Référence C#)
-Une expression de requête doit commencer par une clause `from`. Une expression de requête peut également contenir des sous-requêtes qui commencent elles aussi par une clause `from`. La clause `from` spécifie les éléments suivants :  
+# <a name="from-clause-c-reference"></a><span data-ttu-id="2b143-102">from, clause (Référence C#)</span><span class="sxs-lookup"><span data-stu-id="2b143-102">from clause (C# Reference)</span></span>
+<span data-ttu-id="2b143-103">Une expression de requête doit commencer par une clause `from`.</span><span class="sxs-lookup"><span data-stu-id="2b143-103">A query expression must begin with a `from` clause.</span></span> <span data-ttu-id="2b143-104">Une expression de requête peut également contenir des sous-requêtes qui commencent elles aussi par une clause `from`.</span><span class="sxs-lookup"><span data-stu-id="2b143-104">Additionally, a query expression can contain sub-queries, which also begin with a `from` clause.</span></span> <span data-ttu-id="2b143-105">La clause `from` spécifie les éléments suivants :</span><span class="sxs-lookup"><span data-stu-id="2b143-105">The `from` clause specifies the following:</span></span>  
   
--   La source de données sur laquelle la requête ou la sous-requête est exécutée.  
+-   <span data-ttu-id="2b143-106">La source de données sur laquelle la requête ou la sous-requête est exécutée.</span><span class="sxs-lookup"><span data-stu-id="2b143-106">The data source on which the query or sub-query will be run.</span></span>  
   
--   Une *variable de portée locale* qui représente chaque élément dans la séquence source.  
+-   <span data-ttu-id="2b143-107">Une *variable de portée locale* qui représente chaque élément dans la séquence source.</span><span class="sxs-lookup"><span data-stu-id="2b143-107">A local *range variable* that represents each element in the source sequence.</span></span>  
   
- La variable de portée et la source de données sont toutes les deux fortement typées. La source de données référencée dans la clause `from` doit avoir un type <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601> ou un type dérivé comme <xref:System.Linq.IQueryable%601>.  
+ <span data-ttu-id="2b143-108">La variable de portée et la source de données sont toutes les deux fortement typées.</span><span class="sxs-lookup"><span data-stu-id="2b143-108">Both the range variable and the data source are strongly typed.</span></span> <span data-ttu-id="2b143-109">La source de données référencée dans la clause `from` doit avoir un type <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601> ou un type dérivé comme <xref:System.Linq.IQueryable%601>.</span><span class="sxs-lookup"><span data-stu-id="2b143-109">The data source referenced in the `from` clause must have a type of <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, or a derived type such as <xref:System.Linq.IQueryable%601>.</span></span>  
   
- Dans l’exemple suivant, `numbers` est la source de données tandis que `num` est la variable de portée. Notez que les deux variables sont fortement typées même si le mot clé [var](../../../csharp/language-reference/keywords/var.md) est utilisé.  
+ <span data-ttu-id="2b143-110">Dans l’exemple suivant, `numbers` est la source de données tandis que `num` est la variable de portée.</span><span class="sxs-lookup"><span data-stu-id="2b143-110">In the following example, `numbers` is the data source and `num` is the range variable.</span></span> <span data-ttu-id="2b143-111">Notez que les deux variables sont fortement typées même si le mot clé [var](../../../csharp/language-reference/keywords/var.md) est utilisé.</span><span class="sxs-lookup"><span data-stu-id="2b143-111">Note that both variables are strongly typed even through the [var](../../../csharp/language-reference/keywords/var.md) keyword is used.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_1.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_1.cs)]  
   
-## <a name="the-range-variable"></a>Variable de portée  
- Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`. Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>. Pour plus d’informations, consultez [Guide pratique pour interroger une liste de tableaux avec LINQ](http://msdn.microsoft.com/library/c318b79a-fa4d-4de3-b62d-c1162beb267e).  
+## <a name="the-range-variable"></a><span data-ttu-id="2b143-112">Variable de portée</span><span class="sxs-lookup"><span data-stu-id="2b143-112">The Range Variable</span></span>  
+ <span data-ttu-id="2b143-113">Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>.</span><span class="sxs-lookup"><span data-stu-id="2b143-113">The compiler infers the type of the range variable when the data source implements <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="2b143-114">Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`.</span><span class="sxs-lookup"><span data-stu-id="2b143-114">For example, if the source has a type of `IEnumerable<Customer>`, then the range variable is inferred to be `Customer`.</span></span> <span data-ttu-id="2b143-115">Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>.</span><span class="sxs-lookup"><span data-stu-id="2b143-115">The only time that you must specify the type explicitly is when the source is a non-generic `IEnumerable` type such as <xref:System.Collections.ArrayList>.</span></span> <span data-ttu-id="2b143-116">Pour plus d’informations, consultez [Guide pratique pour interroger une liste de tableaux avec LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).</span><span class="sxs-lookup"><span data-stu-id="2b143-116">For more information, see [How to: Query an ArrayList with LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).</span></span>  
   
- Dans l’exemple précédent, `num` est déduit comme étant de type `int`. Comme la variable de portée est fortement typée, vous pouvez appeler des méthodes sur celle-ci ou l’utiliser dans d’autres opérations. Par exemple, au lieu d’écrire `select num`, vous pouvez écrire `select num.ToString()` pour que l’expression de requête retourne une séquence de chaînes à la place d’entiers. Vous pouvez également écrire `select n + 10` pour que l’expression retourne la séquence 14, 11, 13, 12, 10. Pour plus d’informations, consultez [select, clause](../../../csharp/language-reference/keywords/select-clause.md).  
+ <span data-ttu-id="2b143-117">Dans l’exemple précédent, `num` est déduit comme étant de type `int`.</span><span class="sxs-lookup"><span data-stu-id="2b143-117">In the previous example `num` is inferred to be of type `int`.</span></span> <span data-ttu-id="2b143-118">Comme la variable de portée est fortement typée, vous pouvez appeler des méthodes sur celle-ci ou l’utiliser dans d’autres opérations.</span><span class="sxs-lookup"><span data-stu-id="2b143-118">Because the range variable is strongly typed, you can call methods on it or use it in other operations.</span></span> <span data-ttu-id="2b143-119">Par exemple, au lieu d’écrire `select num`, vous pouvez écrire `select num.ToString()` pour que l’expression de requête retourne une séquence de chaînes à la place d’entiers.</span><span class="sxs-lookup"><span data-stu-id="2b143-119">For example, instead of writing `select num`, you could write `select num.ToString()` to cause the query expression to return a sequence of strings instead of integers.</span></span> <span data-ttu-id="2b143-120">Vous pouvez également écrire `select n + 10` pour que l’expression retourne la séquence 14, 11, 13, 12, 10.</span><span class="sxs-lookup"><span data-stu-id="2b143-120">Or you could write `select n + 10` to cause the expression to return the sequence 14, 11, 13, 12, 10.</span></span> <span data-ttu-id="2b143-121">Pour plus d’informations, consultez [select, clause](../../../csharp/language-reference/keywords/select-clause.md).</span><span class="sxs-lookup"><span data-stu-id="2b143-121">For more information, see [select clause](../../../csharp/language-reference/keywords/select-clause.md).</span></span>  
   
- La variable de portée est semblable à une variable d’itération dans une instruction [foreach](../../../csharp/language-reference/keywords/foreach-in.md) à une différence près, très importante : une variable de portée ne stocke jamais réellement de données de la source. Il s’agit juste d’un avantage syntaxique pratique qui permet à la requête de décrire ce qui se produira lors de son exécution. Pour plus d’informations, consultez [Introduction aux requêtes LINQ (C#)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
+ <span data-ttu-id="2b143-122">La variable de portée est semblable à une variable d’itération dans une instruction [foreach](../../../csharp/language-reference/keywords/foreach-in.md) à une différence près, très importante : une variable de portée ne stocke jamais réellement de données de la source.</span><span class="sxs-lookup"><span data-stu-id="2b143-122">The range variable is like an iteration variable in a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) statement except for one very important difference: a range variable never actually stores data from the source.</span></span> <span data-ttu-id="2b143-123">Il s’agit juste d’un avantage syntaxique pratique qui permet à la requête de décrire ce qui se produira lors de son exécution.</span><span class="sxs-lookup"><span data-stu-id="2b143-123">It just a syntactic convenience that enables the query to describe what will occur when the query is executed.</span></span> <span data-ttu-id="2b143-124">Pour plus d’informations, consultez [Introduction aux requêtes LINQ (C#)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).</span><span class="sxs-lookup"><span data-stu-id="2b143-124">For more information, see [Introduction to LINQ Queries (C#)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).</span></span>  
   
-## <a name="compound-from-clauses"></a>Clauses from composées  
- Dans certains cas, chaque élément dans la séquence source peut être une séquence ou contenir une séquence. Par exemple, votre source de données peut être un `IEnumerable<Student>` où chaque objet Student dans la séquence contient une liste de notes d’examens. Pour accéder à la liste interne dans chaque élément `Student`, vous pouvez utiliser des clauses `from` composées. Cette technique est proche de celle consistant à utiliser des instructions [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquées. Vous pouvez ajouter des clauses [where](../../../csharp/language-reference/keywords/partial-method.md) ou [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) à l’une et l’autre des clauses `from` pour filtrer les résultats. L’exemple suivant présente une séquence d’objets `Student` et chacun contient un `List` interne des entiers qui représentent des notes d’examens. Pour accéder à la liste interne, utilisez une clause `from` composée. Vous pouvez insérer des clauses entre les deux clauses `from` si nécessaire.  
+## <a name="compound-from-clauses"></a><span data-ttu-id="2b143-125">Clauses from composées</span><span class="sxs-lookup"><span data-stu-id="2b143-125">Compound from Clauses</span></span>  
+ <span data-ttu-id="2b143-126">Dans certains cas, chaque élément dans la séquence source peut être une séquence ou contenir une séquence.</span><span class="sxs-lookup"><span data-stu-id="2b143-126">In some cases, each element in the source sequence may itself be either a sequence or contain a sequence.</span></span> <span data-ttu-id="2b143-127">Par exemple, votre source de données peut être un `IEnumerable<Student>` où chaque objet Student dans la séquence contient une liste de notes d’examens.</span><span class="sxs-lookup"><span data-stu-id="2b143-127">For example, your data source may be an `IEnumerable<Student>` where each student object in the sequence contains a list of test scores.</span></span> <span data-ttu-id="2b143-128">Pour accéder à la liste interne dans chaque élément `Student`, vous pouvez utiliser des clauses `from` composées.</span><span class="sxs-lookup"><span data-stu-id="2b143-128">To access the inner list within each `Student` element, you can use compound `from` clauses.</span></span> <span data-ttu-id="2b143-129">Cette technique est proche de celle consistant à utiliser des instructions [foreach](../../../csharp/language-reference/keywords/foreach-in.md) imbriquées.</span><span class="sxs-lookup"><span data-stu-id="2b143-129">The technique is like using nested [foreach](../../../csharp/language-reference/keywords/foreach-in.md) statements.</span></span> <span data-ttu-id="2b143-130">Vous pouvez ajouter des clauses [where](../../../csharp/language-reference/keywords/partial-method.md) ou [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) à l’une et l’autre des clauses `from` pour filtrer les résultats.</span><span class="sxs-lookup"><span data-stu-id="2b143-130">You can add [where](../../../csharp/language-reference/keywords/partial-method.md) or [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) clauses to either `from` clause to filter the results.</span></span> <span data-ttu-id="2b143-131">L’exemple suivant présente une séquence d’objets `Student` et chacun contient un `List` interne des entiers qui représentent des notes d’examens.</span><span class="sxs-lookup"><span data-stu-id="2b143-131">The following example shows a sequence of `Student` objects, each of which contains an inner `List` of integers representing test scores.</span></span> <span data-ttu-id="2b143-132">Pour accéder à la liste interne, utilisez une clause `from` composée.</span><span class="sxs-lookup"><span data-stu-id="2b143-132">To access the inner list, use a compound `from` clause.</span></span> <span data-ttu-id="2b143-133">Vous pouvez insérer des clauses entre les deux clauses `from` si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="2b143-133">You can insert clauses between the two `from` clauses if necessary.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_2.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_2.cs)]  
   
-## <a name="using-multiple-from-clauses-to-perform-joins"></a>Utilisation de plusieurs clauses from pour effectuer des jointures  
- Une clause `from` composée est utilisée pour accéder aux collections internes dans une source de données unique. Toutefois, une requête peut également contenir plusieurs clauses `from` qui génèrent des requêtes supplémentaires de sources de données indépendantes. Cette technique vous permet d’effectuer certains types d’opérations de jointure qui ne sont pas possibles en utilisant la [clause join](../../../csharp/language-reference/keywords/join-clause.md).  
+## <a name="using-multiple-from-clauses-to-perform-joins"></a><span data-ttu-id="2b143-134">Utilisation de plusieurs clauses from pour effectuer des jointures</span><span class="sxs-lookup"><span data-stu-id="2b143-134">Using Multiple from Clauses to Perform Joins</span></span>  
+ <span data-ttu-id="2b143-135">Une clause `from` composée est utilisée pour accéder aux collections internes dans une source de données unique.</span><span class="sxs-lookup"><span data-stu-id="2b143-135">A compound `from` clause is used to access inner collections in a single data source.</span></span> <span data-ttu-id="2b143-136">Toutefois, une requête peut également contenir plusieurs clauses `from` qui génèrent des requêtes supplémentaires de sources de données indépendantes.</span><span class="sxs-lookup"><span data-stu-id="2b143-136">However, a query can also contain multiple `from` clauses that generate supplemental queries from independent data sources.</span></span> <span data-ttu-id="2b143-137">Cette technique vous permet d’effectuer certains types d’opérations de jointure qui ne sont pas possibles en utilisant la [clause join](../../../csharp/language-reference/keywords/join-clause.md).</span><span class="sxs-lookup"><span data-stu-id="2b143-137">This technique enables you to perform certain types of join operations that are not possible by using the [join clause](../../../csharp/language-reference/keywords/join-clause.md).</span></span>  
   
- L’exemple suivant montre comment utiliser deux clauses `from` pour former une jointure croisée complète de deux sources de données.  
+ <span data-ttu-id="2b143-138">L’exemple suivant montre comment utiliser deux clauses `from` pour former une jointure croisée complète de deux sources de données.</span><span class="sxs-lookup"><span data-stu-id="2b143-138">The following example shows how two `from` clauses can be used to form a complete cross join of two data sources.</span></span>  
   
- [!code-cs[cscsrefQueryKeywords#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_3.cs)]  
+ [!code-csharp[cscsrefQueryKeywords#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/from-clause_3.cs)]  
   
- Pour plus d’informations sur les opérations de jointure qui utilisent plusieurs clauses `from`, consultez [Guide pratique pour effectuer des opérations de jointure personnalisées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md).  
+ <span data-ttu-id="2b143-139">Pour plus d’informations sur les opérations de jointure qui utilisent plusieurs clauses `from`, consultez [Guide pratique pour effectuer des opérations de jointure personnalisées](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md).</span><span class="sxs-lookup"><span data-stu-id="2b143-139">For more information about join operations that use multiple `from` clauses, see [How to: Perform Custom Join Operations](../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md).</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Mots clés de requête (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md)   
- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="2b143-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2b143-140">See Also</span></span>  
+ [<span data-ttu-id="2b143-141">Mots clés de requête (LINQ)</span><span class="sxs-lookup"><span data-stu-id="2b143-141">Query Keywords (LINQ)</span></span>](../../../csharp/language-reference/keywords/query-keywords.md)  
+ [<span data-ttu-id="2b143-142">Expressions de requête LINQ</span><span class="sxs-lookup"><span data-stu-id="2b143-142">LINQ Query Expressions</span></span>](../../../csharp/programming-guide/linq-query-expressions/index.md)

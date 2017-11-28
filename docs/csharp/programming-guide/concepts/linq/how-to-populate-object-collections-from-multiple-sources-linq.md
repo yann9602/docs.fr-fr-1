@@ -1,43 +1,34 @@
 ---
 title: "Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: a3d3f0f9380e13addac38e32d4cc095d60e19bcf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 384449bf8202c707b1c7f5a75445410bc6270907
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)
-Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.  
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a><span data-ttu-id="1a2c0-102">Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="1a2c0-102">How to: Populate Object Collections from Multiple Sources (LINQ) (C#)</span></span>
+<span data-ttu-id="1a2c0-103">Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-103">This example shows how to merge data from different sources into a sequence of new types.</span></span>  
   
 > [!NOTE]
->  N’essayez pas de joindre des données du système de fichiers ou des données en mémoire avec des données qui se trouvent encore dans une base de données. Ces jointures interdomaines peuvent générer des résultats indéfinis, en raison des différentes façons par lesquelles les opérations de jointure peuvent être définies pour les requêtes de base de données et autres types de sources. En outre, une telle opération risque de provoquer une exception de mémoire insuffisante si la quantité de données dans la base de données est assez élevée. Pour joindre des données d’une base de données à des données en mémoire, appelez d’abord `ToList` ou `ToArray` sur la requête de base de données, puis effectuez la jointure sur la collection retournée.  
+>  <span data-ttu-id="1a2c0-104">N’essayez pas de joindre des données du système de fichiers ou des données en mémoire avec des données qui se trouvent encore dans une base de données.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-104">Do not try to join in-memory data or data in the file system with data that is still in a database.</span></span> <span data-ttu-id="1a2c0-105">Ces jointures interdomaines peuvent générer des résultats indéfinis, en raison des différentes façons par lesquelles les opérations de jointure peuvent être définies pour les requêtes de base de données et autres types de sources.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-105">Such cross-domain joins can yield undefined results because of different ways in which join operations might be defined for database queries and other types of sources.</span></span> <span data-ttu-id="1a2c0-106">En outre, une telle opération risque de provoquer une exception de mémoire insuffisante si la quantité de données dans la base de données est assez élevée.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-106">Additionally, there is a risk that such an operation could cause an out-of-memory exception if the amount of data in the database is large enough.</span></span> <span data-ttu-id="1a2c0-107">Pour joindre des données d’une base de données à des données en mémoire, appelez d’abord `ToList` ou `ToArray` sur la requête de base de données, puis effectuez la jointure sur la collection retournée.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-107">To join data from a database to in-memory data, first call `ToList` or `ToArray` on the database query, and then perform the join on the returned collection.</span></span>  
   
-### <a name="to-create-the-data-file"></a>Pour créer le fichier de données  
+### <a name="to-create-the-data-file"></a><span data-ttu-id="1a2c0-108">Pour créer le fichier de données</span><span class="sxs-lookup"><span data-stu-id="1a2c0-108">To create the data file</span></span>  
   
--   Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, comme décrit dans [Guide pratique pour joindre du contenu issu de différents fichiers (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).  
+-   <span data-ttu-id="1a2c0-109">Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, comme décrit dans [Guide pratique pour joindre du contenu issu de différents fichiers (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span><span class="sxs-lookup"><span data-stu-id="1a2c0-109">Copy the names.csv and scores.csv files into your project folder, as described in [How to: Join Content from Dissimilar Files (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.  
+## <a name="example"></a><span data-ttu-id="1a2c0-110">Exemple</span><span class="sxs-lookup"><span data-stu-id="1a2c0-110">Example</span></span>  
+ <span data-ttu-id="1a2c0-111">L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-111">The following example shows how to use a named type `Student` to store merged data from two in-memory collections of strings that simulate spreadsheet data in .csv format.</span></span> <span data-ttu-id="1a2c0-112">La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-112">The first collection of strings represents the student names and IDs, and the second collection represents the student ID (in the first column) and four exam scores.</span></span> <span data-ttu-id="1a2c0-113">L’ID est utilisé comme clé étrangère.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-113">The ID is used as the foreign key.</span></span>  
   
 ```csharp  
 class Student  
@@ -118,9 +109,9 @@ class PopulateCollection
  */  
 ```  
   
- Dans la clause [select](../../../../csharp/language-reference/keywords/select-clause.md), un initialiseur d’objet est utilisé pour instancier chaque nouvel objet `Student` à l’aide des données des deux sources.  
+ <span data-ttu-id="1a2c0-114">Dans la clause [select](../../../../csharp/language-reference/keywords/select-clause.md), un initialiseur d’objet est utilisé pour instancier chaque nouvel objet `Student` à l’aide des données des deux sources.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-114">In the [select](../../../../csharp/language-reference/keywords/select-clause.md) clause, an object initializer is used to instantiate each new `Student` object by using the data from the two sources.</span></span>  
   
- Si vous n’êtes pas obligé de stocker les résultats d’une requête, les types anonymes peuvent être plus pratiques que les types nommés. Les types nommés sont nécessaires si vous passez les résultats de requête en dehors de la méthode dans laquelle la requête est exécutée. L’exemple suivant effectue la même tâche que l’exemple précédent, mais il utilise des types anonymes plutôt que des types nommés :  
+ <span data-ttu-id="1a2c0-115">Si vous n’êtes pas obligé de stocker les résultats d’une requête, les types anonymes peuvent être plus pratiques que les types nommés.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-115">If you do not have to store the results of a query, anonymous types can be more convenient than named types.</span></span> <span data-ttu-id="1a2c0-116">Les types nommés sont nécessaires si vous passez les résultats de requête en dehors de la méthode dans laquelle la requête est exécutée.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-116">Named types are required if you pass the query results outside the method in which the query is executed.</span></span> <span data-ttu-id="1a2c0-117">L’exemple suivant effectue la même tâche que l’exemple précédent, mais il utilise des types anonymes plutôt que des types nommés :</span><span class="sxs-lookup"><span data-stu-id="1a2c0-117">The following example performs the same task as the previous example, but uses anonymous types instead of named types:</span></span>  
   
 ```csharp  
 // Merge the data sources by using an anonymous type.  
@@ -150,11 +141,10 @@ foreach (var student in queryNamesScores2)
 }  
 ```  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.  
+## <a name="compiling-the-code"></a><span data-ttu-id="1a2c0-118">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="1a2c0-118">Compiling the Code</span></span>  
+ <span data-ttu-id="1a2c0-119">Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.</span><span class="sxs-lookup"><span data-stu-id="1a2c0-119">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)   
- [Initialiseurs d’objets et de collections](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [Types anonymes](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
-
+## <a name="see-also"></a><span data-ttu-id="1a2c0-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1a2c0-120">See Also</span></span>  
+ [<span data-ttu-id="1a2c0-121">LINQ et chaînes (C#)</span><span class="sxs-lookup"><span data-stu-id="1a2c0-121">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="1a2c0-122">Initialiseurs d’objets et de collections</span><span class="sxs-lookup"><span data-stu-id="1a2c0-122">Object and Collection Initializers</span></span>](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [<span data-ttu-id="1a2c0-123">Types anonymes</span><span class="sxs-lookup"><span data-stu-id="1a2c0-123">Anonymous Types</span></span>](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

@@ -1,69 +1,50 @@
 ---
 title: "Exécution d'opérations de réseau (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - network operations, performing
 - My.Computer.Network object, tasks
 ms.assetid: 8ecc47ce-7730-49cd-b21d-3a13477eec6b
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 3a0a4d4bd6bc07f4ca60ac781365f49c4af9e156
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 35e91047d5bd833c149e3a98978ca0eb22737331
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="performing-network-operations-visual-basic"></a>Exécution d'opérations de réseau (Visual Basic)
-Les tableaux suivants listent les tâches associées à l’objet `My.Computer.Network`.  
+# <a name="performing-network-operations-visual-basic"></a><span data-ttu-id="82137-102">Exécution d'opérations de réseau (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="82137-102">Performing Network Operations (Visual Basic)</span></span>
+<span data-ttu-id="82137-103">Les tableaux suivants listent les tâches associées à l’objet `My.Computer.Network`.</span><span class="sxs-lookup"><span data-stu-id="82137-103">The following tables list tasks associated with the `My.Computer.Network` object.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique : charger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
- Montre comment charger un fichier et le stocker dans un emplacement distant à l’aide de `My.Computer.Network`.  
+## <a name="in-this-section"></a><span data-ttu-id="82137-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="82137-104">In This Section</span></span>  
+ [<span data-ttu-id="82137-105">Guide pratique : charger un fichier</span><span class="sxs-lookup"><span data-stu-id="82137-105">How to: Upload a File</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
+ <span data-ttu-id="82137-106">Montre comment charger un fichier et le stocker dans un emplacement distant à l’aide de `My.Computer.Network`.</span><span class="sxs-lookup"><span data-stu-id="82137-106">Demonstrates how to upload a file and store it to a remote location using `My.Computer.Network`.</span></span>  
   
- [Guide pratique : télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
- Montre comment télécharger un fichier à partir d’un emplacement distant à l’aide de `My.Computer.Network`.  
+ [<span data-ttu-id="82137-107">Guide pratique : télécharger un fichier</span><span class="sxs-lookup"><span data-stu-id="82137-107">How to: Download a File</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
+ <span data-ttu-id="82137-108">Montre comment télécharger un fichier à partir d’un emplacement distant à l’aide de `My.Computer.Network`.</span><span class="sxs-lookup"><span data-stu-id="82137-108">Demonstrates how to download a file from a remote location using `My.Computer.Network`.</span></span>  
   
- [Guide pratique : vérifier l’état de la connexion](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
- Montre comment déterminer si l’ordinateur dispose d’une connexion réseau active.  
+ [<span data-ttu-id="82137-109">Guide pratique : vérifier l’état de la connexion</span><span class="sxs-lookup"><span data-stu-id="82137-109">How to: Check Connection Status</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
+ <span data-ttu-id="82137-110">Montre comment déterminer si l’ordinateur dispose d’une connexion réseau active.</span><span class="sxs-lookup"><span data-stu-id="82137-110">Shows how to determine whether the computer has a working network connection.</span></span>  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a><span data-ttu-id="82137-111">Référence</span><span class="sxs-lookup"><span data-stu-id="82137-111">Reference</span></span>  
  <xref:Microsoft.VisualBasic.Devices.Network>  
- Liste les méthodes, les propriétés et les événements permettant d’utiliser le réseau.  
+ <span data-ttu-id="82137-112">Liste les méthodes, les propriétés et les événements permettant d’utiliser le réseau.</span><span class="sxs-lookup"><span data-stu-id="82137-112">Lists methods, properties, and events for working with the network.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>  
- Décrit la méthode `DownloadFile`.  
+ <span data-ttu-id="82137-113">Décrit la méthode `DownloadFile`.</span><span class="sxs-lookup"><span data-stu-id="82137-113">Describes the `DownloadFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.Ping%2A>  
- Décrit la méthode `Ping`.  
+ <span data-ttu-id="82137-114">Décrit la méthode `Ping`.</span><span class="sxs-lookup"><span data-stu-id="82137-114">Describes the `Ping` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>  
- Décrit la méthode `UploadFile`.  
+ <span data-ttu-id="82137-115">Décrit la méthode `UploadFile`.</span><span class="sxs-lookup"><span data-stu-id="82137-115">Describes the `UploadFile` method.</span></span>  
   
  <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>  
- Décrit la propriété `IsAvailable`.
-
+ <span data-ttu-id="82137-116">Décrit la propriété `IsAvailable`.</span><span class="sxs-lookup"><span data-stu-id="82137-116">Describes the `IsAvailable` property.</span></span>

@@ -1,37 +1,39 @@
 ---
-title: "Parallel Diagnostic Tools | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "parallel programming, debugging and profiling tools"
+title: "Outils de diagnostic parallèles"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: parallel programming, debugging and profiling tools
 ms.assetid: 38f7302a-ddf6-4179-ba19-f49e00395b9f
-caps.latest.revision: 6
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: ad6875d4937ab0ee68dcb9c6d6f51d079851cdc5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Parallel Diagnostic Tools
-[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)] fournit une prise en charge étendue du débogage et du profilage d'applications multithread.  
+# <a name="parallel-diagnostic-tools"></a><span data-ttu-id="544f4-102">Outils de diagnostic parallèles</span><span class="sxs-lookup"><span data-stu-id="544f4-102">Parallel Diagnostic Tools</span></span>
+[!INCLUDE[vs_dev10_ext](../../../includes/vs-dev10-ext-md.md)]<span data-ttu-id="544f4-103"> assure la prise en charge complète des applications de débogage et de profilage multithread.</span><span class="sxs-lookup"><span data-stu-id="544f4-103"> provides extensive support for debugging and profiling multi-threaded applications.</span></span>  
   
-## Débogage  
- Le débogueur Visual Studio ajoute de nouvelles fenêtres pour le débogage des applications parallèles.  Pour plus d'informations, consultez les rubriques suivantes :  
+## <a name="debugging"></a><span data-ttu-id="544f4-104">Débogage</span><span class="sxs-lookup"><span data-stu-id="544f4-104">Debugging</span></span>  
+ <span data-ttu-id="544f4-105">L’outil de débogage de Visual Studio ajoute de nouvelles fenêtres pour le débogage des applications parallèles.</span><span class="sxs-lookup"><span data-stu-id="544f4-105">The Visual Studio debugger adds new windows for debugging parallel applications.</span></span> <span data-ttu-id="544f4-106">Pour plus d’informations, consultez les rubriques suivantes :</span><span class="sxs-lookup"><span data-stu-id="544f4-106">For more information, see the following topics:</span></span>  
   
--   [Utilisation de la fenêtre Piles parallèles](../Topic/Using%20the%20Parallel%20Stacks%20Window.md)  
+-   [<span data-ttu-id="544f4-107">Utilisation de la fenêtre Piles parallèles</span><span class="sxs-lookup"><span data-stu-id="544f4-107">Using the Parallel Stacks Window</span></span>](/visualstudio/debugger/using-the-parallel-stacks-window)  
   
--   [Utilisation de la fenêtre Tâches](../Topic/Using%20the%20Tasks%20Window.md)  
+-   [<span data-ttu-id="544f4-108">Utilisation de la fenêtre Tâches</span><span class="sxs-lookup"><span data-stu-id="544f4-108">Using the Tasks Window</span></span>](/visualstudio/debugger/using-the-tasks-window)  
   
--   [Procédure pas à pas : débogage d'une application parallèle](../Topic/Walkthrough:%20Debugging%20a%20Parallel%20Application.md).  
+-   <span data-ttu-id="544f4-109">[Procédure pas à pas : débogage d’une application parallèle](/visualstudio/debugger/walkthrough-debugging-a-parallel-application)</span><span class="sxs-lookup"><span data-stu-id="544f4-109">[Walkthrough: Debugging a Parallel Application](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span></span>  
   
-## Profilage  
- Les affichages du rapport du visualiseur concurrentiel vous permettent de visualiser la manière dont les threads dans un programme parallèle interagissent les uns avec les autres ainsi qu'avec les threads d'autres processus sur le système.  Pour plus d'informations, consultez [Visualiseur concurrence](../Topic/Concurrency%20Visualizer.md).  
+## <a name="profiling"></a><span data-ttu-id="544f4-110">Profilage</span><span class="sxs-lookup"><span data-stu-id="544f4-110">Profiling</span></span>  
+ <span data-ttu-id="544f4-111">Les vues de rapport du visualiseur concurrentiel permettent de visualiser la façon dont les threads d’un programme parallèle interagissent entre eux et avec les threads d’autres processus sur le système.</span><span class="sxs-lookup"><span data-stu-id="544f4-111">The Concurrency Visualizer report views enable you to visualize how the threads in a parallel program interact with each other and with threads from other processes on the system.</span></span> <span data-ttu-id="544f4-112">Pour plus d’informations, consultez [Visualiseur concurrentiel](/visualstudio/profiling/concurrency-visualizer).</span><span class="sxs-lookup"><span data-stu-id="544f4-112">For more information, see [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer).</span></span>  
   
-## Voir aussi  
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a><span data-ttu-id="544f4-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="544f4-113">See Also</span></span>  
+ [<span data-ttu-id="544f4-114">Programmation parallèle</span><span class="sxs-lookup"><span data-stu-id="544f4-114">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)

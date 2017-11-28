@@ -1,33 +1,29 @@
 ---
 title: "Guide pratique pour créer une hiérarchie à l’aide de regroupements (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: aa0272e03022038c6dc464516998fad948f30e59
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 94b46f48698061368bba47bd7aa248610c0e8f30
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a>Guide pratique pour créer une hiérarchie à l’aide de regroupements (C#)
-Cet exemple montre comment grouper des données, puis générer du code XML basé sur le regroupement.  
+# <a name="how-to-create-hierarchy-using-grouping-c"></a><span data-ttu-id="18eb2-102">Guide pratique pour créer une hiérarchie à l’aide de regroupements (C#)</span><span class="sxs-lookup"><span data-stu-id="18eb2-102">How to: Create Hierarchy Using Grouping (C#)</span></span>
+<span data-ttu-id="18eb2-103">Cet exemple montre comment grouper des données, puis générer du code XML basé sur le regroupement.</span><span class="sxs-lookup"><span data-stu-id="18eb2-103">This example shows how to group data, and then generate XML based on the grouping.</span></span>  
   
-## <a name="example"></a>Exemple  
- Cet exemple groupe tout d'abord les données par catégorie, puis il génère un nouveau fichier XML dans lequel la hiérarchie XML reflète le regroupement.  
+## <a name="example"></a><span data-ttu-id="18eb2-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="18eb2-104">Example</span></span>  
+ <span data-ttu-id="18eb2-105">Cet exemple groupe tout d'abord les données par catégorie, puis il génère un nouveau fichier XML dans lequel la hiérarchie XML reflète le regroupement.</span><span class="sxs-lookup"><span data-stu-id="18eb2-105">This example first groups data by a category, then generates a new XML file in which the XML hierarchy reflects the grouping.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ <span data-ttu-id="18eb2-106">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="18eb2-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  
@@ -47,7 +43,7 @@ var newData =
 Console.WriteLine(newData);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="18eb2-107">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="18eb2-107">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -86,6 +82,5 @@ Console.WriteLine(newData);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [Techniques de requêtes avancées (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
-
+## <a name="see-also"></a><span data-ttu-id="18eb2-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18eb2-108">See Also</span></span>  
+ [<span data-ttu-id="18eb2-109">Techniques de requêtes avancées (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="18eb2-109">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

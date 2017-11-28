@@ -1,33 +1,24 @@
 ---
 title: AttributeUsage (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 22c45568-9a6a-4c2f-8480-f38c1caa0a99
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 81e7440279a2d7dfa801394ee0e9af6181da3c13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c008c1a696e93bc3b756a926a046aa5a6942bc10
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="attributeusage-c"></a>AttributeUsage (C#)
-Détermine de quelle manière une classe d’attributs personnalisés peut être utilisée. `AttributeUsage` est un attribut qui peut être appliqué à des définitions d’attributs personnalisés pour contrôler le mode d’application du nouvel attribut. Voici le code quand les paramètres par défaut sont appliqués de manière explicite :  
+# <a name="attributeusage-c"></a><span data-ttu-id="0fc3e-102">AttributeUsage (C#)</span><span class="sxs-lookup"><span data-stu-id="0fc3e-102">AttributeUsage (C#)</span></span>
+<span data-ttu-id="0fc3e-103">Détermine de quelle manière une classe d’attributs personnalisés peut être utilisée.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-103">Determines how a custom attribute class can be used.</span></span> <span data-ttu-id="0fc3e-104">`AttributeUsage` est un attribut qui peut être appliqué à des définitions d’attributs personnalisés pour contrôler le mode d’application du nouvel attribut.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-104">`AttributeUsage` is an attribute that can be applied to custom attribute definitions to control how the new attribute can be applied.</span></span> <span data-ttu-id="0fc3e-105">Voici le code quand les paramètres par défaut sont appliqués de manière explicite :</span><span class="sxs-lookup"><span data-stu-id="0fc3e-105">The default settings look like this when applied explicitly:</span></span>  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.All,  
@@ -36,16 +27,16 @@ Détermine de quelle manière une classe d’attributs personnalisés peut être
 class NewAttribute : System.Attribute { }  
 ```  
   
- Dans cet exemple, la classe `NewAttribute` peut être appliquée à toutes les entités de code acceptant un attribut, mais uniquement une fois par entité. Elle est héritée par les classes dérivées quand elle est appliquée à une classe de base.  
+ <span data-ttu-id="0fc3e-106">Dans cet exemple, la classe `NewAttribute` peut être appliquée à toutes les entités de code acceptant un attribut, mais uniquement une fois par entité.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-106">In this example, the `NewAttribute` class can be applied to any attribute-able code entity, but can be applied only once to each entity.</span></span> <span data-ttu-id="0fc3e-107">Elle est héritée par les classes dérivées quand elle est appliquée à une classe de base.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-107">It is inherited by derived classes when applied to a base class.</span></span>  
   
- Les arguments `AllowMultiple` et `Inherited` étant facultatifs, ce code produit le même résultat :  
+ <span data-ttu-id="0fc3e-108">Les arguments `AllowMultiple` et `Inherited` étant facultatifs, ce code produit le même résultat :</span><span class="sxs-lookup"><span data-stu-id="0fc3e-108">The `AllowMultiple` and `Inherited` arguments are optional, so this code has the same effect:</span></span>  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.All)]  
 class NewAttribute : System.Attribute { }  
 ```  
   
- Le premier argument `AttributeUsage` doit correspondre à un ou plusieurs éléments de l’énumération <xref:System.AttributeTargets>. Plusieurs types de cibles peuvent être liés avec l’opérateur OR, comme suit :  
+ <span data-ttu-id="0fc3e-109">Le premier argument `AttributeUsage` doit correspondre à un ou plusieurs éléments de l’énumération <xref:System.AttributeTargets>.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-109">The first `AttributeUsage` argument must be one or more elements of the <xref:System.AttributeTargets> enumeration.</span></span> <span data-ttu-id="0fc3e-110">Plusieurs types de cibles peuvent être liés avec l’opérateur OR, comme suit :</span><span class="sxs-lookup"><span data-stu-id="0fc3e-110">Multiple target types can be linked together with the OR operator, like this:</span></span>  
   
 ```csharp  
 using System;  
@@ -54,7 +45,7 @@ using System;
 class NewPropertyOrFieldAttribute : Attribute { }  
 ```  
   
- Si l’argument `AllowMultiple` est défini sur `true`, l’attribut qui en résulte peut être appliqué plusieurs fois à une même entité, comme suit :  
+ <span data-ttu-id="0fc3e-111">Si l’argument `AllowMultiple` est défini sur `true`, l’attribut qui en résulte peut être appliqué plusieurs fois à une même entité, comme suit :</span><span class="sxs-lookup"><span data-stu-id="0fc3e-111">If the `AllowMultiple` argument is set to `true`, then the resulting attribute can be applied more than once to a single entity, like this:</span></span>  
   
 ```csharp  
 using System;  
@@ -70,9 +61,9 @@ class Class1 { }
 class Class2 { }  
 ```  
   
- Dans ce cas, `MultiUseAttr` peut être appliqué à plusieurs reprises, car `AllowMultiple` est défini sur `true`. Les deux formats indiqués pour appliquer plusieurs attributs sont valides.  
+ <span data-ttu-id="0fc3e-112">Dans ce cas, `MultiUseAttr` peut être appliqué à plusieurs reprises, car `AllowMultiple` est défini sur `true`.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-112">In this case `MultiUseAttr` can be applied repeatedly because `AllowMultiple` is set to `true`.</span></span> <span data-ttu-id="0fc3e-113">Les deux formats indiqués pour appliquer plusieurs attributs sont valides.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-113">Both formats shown for applying multiple attributes are valid.</span></span>  
   
- Si `Inherited` est défini sur `false`, l’attribut n’est pas hérité par les classes qui sont dérivées d’une classe avec attributs. Exemple :  
+ <span data-ttu-id="0fc3e-114">Si `Inherited` est défini sur `false`, l’attribut n’est pas hérité par les classes qui sont dérivées d’une classe avec attributs.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-114">If `Inherited` is set to `false`, then the attribute is not inherited by classes that are derived from a class that is attributed.</span></span> <span data-ttu-id="0fc3e-115">Exemple :</span><span class="sxs-lookup"><span data-stu-id="0fc3e-115">For example:</span></span>  
   
 ```csharp  
 using System;  
@@ -86,15 +77,15 @@ class BClass { }
 class DClass : BClass { }  
 ```  
   
- Dans ce cas, `Attr1` n’est pas appliqué à `DClass` par héritage.  
+ <span data-ttu-id="0fc3e-116">Dans ce cas, `Attr1` n’est pas appliqué à `DClass` par héritage.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-116">In this case `Attr1` is not applied to `DClass` via inheritance.</span></span>  
   
-## <a name="remarks"></a>Remarques  
- L’attribut `AttributeUsage` est un attribut à usage unique : il ne peut pas être appliqué plusieurs fois à la même classe. `AttributeUsage` est un alias pour <xref:System.AttributeUsageAttribute>.  
+## <a name="remarks"></a><span data-ttu-id="0fc3e-117">Remarques</span><span class="sxs-lookup"><span data-stu-id="0fc3e-117">Remarks</span></span>  
+ <span data-ttu-id="0fc3e-118">L’attribut `AttributeUsage` est un attribut à usage unique : il ne peut pas être appliqué plusieurs fois à la même classe.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-118">The `AttributeUsage` attribute is a single-use attribute--it cannot be applied more than once to the same class.</span></span> <span data-ttu-id="0fc3e-119">`AttributeUsage` est un alias pour <xref:System.AttributeUsageAttribute>.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-119">`AttributeUsage` is an alias for <xref:System.AttributeUsageAttribute>.</span></span>  
   
- Pour plus d’informations, consultez [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).  
+ <span data-ttu-id="0fc3e-120">Pour plus d’informations, consultez [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span><span class="sxs-lookup"><span data-stu-id="0fc3e-120">For more information, see [Accessing Attributes by Using Reflection (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant illustre l’effet des arguments `Inherited` et `AllowMultiple` sur l’attribut `AttributeUsage`, et la manière dont les attributs personnalisés appliqués à une classe peuvent être énumérés.  
+## <a name="example"></a><span data-ttu-id="0fc3e-121">Exemple</span><span class="sxs-lookup"><span data-stu-id="0fc3e-121">Example</span></span>  
+ <span data-ttu-id="0fc3e-122">L’exemple suivant illustre l’effet des arguments `Inherited` et `AllowMultiple` sur l’attribut `AttributeUsage`, et la manière dont les attributs personnalisés appliqués à une classe peuvent être énumérés.</span><span class="sxs-lookup"><span data-stu-id="0fc3e-122">The following example demonstrates the effect of the `Inherited` and `AllowMultiple` arguments to the `AttributeUsage` attribute, and how the custom attributes applied to a class can be enumerated.</span></span>  
   
 ```csharp  
 using System;  
@@ -141,7 +132,7 @@ public class TestAttributeUsage
 }  
 ```  
   
-## <a name="sample-output"></a>Résultat de l'exemple  
+## <a name="sample-output"></a><span data-ttu-id="0fc3e-123">Résultat de l'exemple</span><span class="sxs-lookup"><span data-stu-id="0fc3e-123">Sample Output</span></span>  
   
 ```  
 Attributes on Base Class:  
@@ -153,13 +144,12 @@ A3
 A2  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.Attribute>   
- <xref:System.Reflection>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Attributs](https://msdn.microsoft.com/library/5x6cd29c)   
- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
- [Attributs](../../../../csharp/programming-guide/concepts/attributes/index.md)   
- [Création d’attributs personnalisés (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)   
- [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
-
+## <a name="see-also"></a><span data-ttu-id="0fc3e-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0fc3e-124">See Also</span></span>  
+ <xref:System.Attribute>  
+ <xref:System.Reflection>  
+ [<span data-ttu-id="0fc3e-125">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="0fc3e-125">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="0fc3e-126">Attributs</span><span class="sxs-lookup"><span data-stu-id="0fc3e-126">Attributes</span></span>](https://msdn.microsoft.com/library/5x6cd29c)  
+ [<span data-ttu-id="0fc3e-127">Réflexion (C#)</span><span class="sxs-lookup"><span data-stu-id="0fc3e-127">Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/reflection.md)  
+ [<span data-ttu-id="0fc3e-128">Attributs</span><span class="sxs-lookup"><span data-stu-id="0fc3e-128">Attributes</span></span>](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+ [<span data-ttu-id="0fc3e-129">Création d’attributs personnalisés (C#)</span><span class="sxs-lookup"><span data-stu-id="0fc3e-129">Creating Custom Attributes (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
+ [<span data-ttu-id="0fc3e-130">Accès à des attributs à l’aide de la réflexion (C#)</span><span class="sxs-lookup"><span data-stu-id="0fc3e-130">Accessing Attributes by Using Reflection (C#)</span></span>](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

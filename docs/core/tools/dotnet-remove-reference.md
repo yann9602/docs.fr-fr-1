@@ -8,60 +8,58 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: 7cb84c2dc7fc4d16b00bd6459132390ab80131f3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="dotnet-remove-reference"></a>dotnet remove reference
+# <a name="dotnet-remove-reference"></a><span data-ttu-id="bb45f-104">dotnet remove reference</span><span class="sxs-lookup"><span data-stu-id="bb45f-104">dotnet remove reference</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a><span data-ttu-id="bb45f-105">Nom</span><span class="sxs-lookup"><span data-stu-id="bb45f-105">Name</span></span>
 
-`dotnet remove reference` - Supprime des références entre projets.
+<span data-ttu-id="bb45f-106">`dotnet remove reference` - Supprime des références entre projets.</span><span class="sxs-lookup"><span data-stu-id="bb45f-106">`dotnet remove reference` - Removes project-to-project references.</span></span>
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a><span data-ttu-id="bb45f-107">Résumé</span><span class="sxs-lookup"><span data-stu-id="bb45f-107">Synopsis</span></span>
 
 `dotnet remove [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
-## <a name="description"></a>Description
+## <a name="description"></a><span data-ttu-id="bb45f-108">Description</span><span class="sxs-lookup"><span data-stu-id="bb45f-108">Description</span></span>
 
-La commande `dotnet remove reference` est une option pratique pour supprimer des références de projet d’un projet.
+<span data-ttu-id="bb45f-109">La commande `dotnet remove reference` est une option pratique pour supprimer des références de projet d’un projet.</span><span class="sxs-lookup"><span data-stu-id="bb45f-109">The `dotnet remove reference` command provides a convenient option to remove project references from a project.</span></span>
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a><span data-ttu-id="bb45f-110">Arguments</span><span class="sxs-lookup"><span data-stu-id="bb45f-110">Arguments</span></span>
 
 `PROJECT`
 
-Fichier projet cible. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel.
+<span data-ttu-id="bb45f-111">Fichier projet cible.</span><span class="sxs-lookup"><span data-stu-id="bb45f-111">Target project file.</span></span> <span data-ttu-id="bb45f-112">Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel.</span><span class="sxs-lookup"><span data-stu-id="bb45f-112">If not specified, the command searches the current directory for one.</span></span>
 
 `PROJECT_REFERENCES`
 
-Références entre projets (P2P) à supprimer. Vous pouvez spécifier un ou plusieurs projets. Les [modèles Glob](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.
+<span data-ttu-id="bb45f-113">Références entre projets (P2P) à supprimer.</span><span class="sxs-lookup"><span data-stu-id="bb45f-113">Project to project (P2P references to remove.</span></span> <span data-ttu-id="bb45f-114">Vous pouvez spécifier un ou plusieurs projets.</span><span class="sxs-lookup"><span data-stu-id="bb45f-114">You can specify one or multiple projects.</span></span> <span data-ttu-id="bb45f-115">Les [modèles Glob](https://en.wikipedia.org/wiki/Glob_(programming)) sont pris en charge sur les terminaux Unix/Linux.</span><span class="sxs-lookup"><span data-stu-id="bb45f-115">[Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux based terminals.</span></span>
 
-## <a name="options"></a>Options
+## <a name="options"></a><span data-ttu-id="bb45f-116">Options</span><span class="sxs-lookup"><span data-stu-id="bb45f-116">Options</span></span>
 
 `-h|--help`
 
-Affiche une aide élémentaire de la commande.
+<span data-ttu-id="bb45f-117">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="bb45f-117">Prints out a short help for the command.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-Ne supprime une référence que quand [framework](../../standard/frameworks.md) spécifique est ciblé.
+<span data-ttu-id="bb45f-118">Ne supprime une référence que quand [framework](../../standard/frameworks.md) spécifique est ciblé.</span><span class="sxs-lookup"><span data-stu-id="bb45f-118">Removes the reference only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
 
-## <a name="examples"></a>Exemples
+## <a name="examples"></a><span data-ttu-id="bb45f-119">Exemples</span><span class="sxs-lookup"><span data-stu-id="bb45f-119">Examples</span></span>
 
-Supprimer une référence de projet du projet spécifié :
+<span data-ttu-id="bb45f-120">Supprimer une référence de projet du projet spécifié :</span><span class="sxs-lookup"><span data-stu-id="bb45f-120">Remove a project reference from the specified project:</span></span>
 
 `dotnet remove app/app.csproj reference lib/lib.csproj`
 
-Supprimer plusieurs références de projet du projet dans le répertoire actuel :
+<span data-ttu-id="bb45f-121">Supprimer plusieurs références de projet du projet dans le répertoire actuel :</span><span class="sxs-lookup"><span data-stu-id="bb45f-121">Remove multiple project references from the project in the current directory:</span></span>
 
 `dotnet remove reference lib1/lib1.csproj lib2/lib2.csproj`
 
-Supprimer plusieurs références de projet à l’aide du modèle Glob sous Unix/Linux :
+<span data-ttu-id="bb45f-122">Supprimer plusieurs références de projet à l’aide du modèle Glob sous Unix/Linux :</span><span class="sxs-lookup"><span data-stu-id="bb45f-122">Remove multiple project references using a glob pattern on Unix/Linux:</span></span>
 
 `dotnet remove app/app.csproj reference **/*.csproj`
-

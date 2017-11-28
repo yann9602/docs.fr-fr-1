@@ -1,63 +1,43 @@
 ---
 title: "Structure générale d'un programme C# (guide de programmation C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- C# language, program structure
+helpviewer_keywords: C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8886f7601ce4d1de4a6b277a803ff87eb67bee78
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d55ac6a6d35e5f47ab26da681afe9fb5555331ec
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="general-structure-of-a-c-program-c-programming-guide"></a>Structure générale d'un programme C# (guide de programmation C#)
-Les programmes C# se composent d’un ou plusieurs fichiers. Chaque fichier peut contenir zéro ou plusieurs espaces de noms. Un espace de noms peut contenir des types tels que des classes, des structs, des interfaces, des énumérations et des délégués, en plus d’autres espaces de noms. Voici la structure d’un programme C# qui contient tous ces éléments.  
+# <a name="general-structure-of-a-c-program-c-programming-guide"></a><span data-ttu-id="fc7a2-102">Structure générale d'un programme C# (guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="fc7a2-102">General Structure of a C# Program (C# Programming Guide)</span></span>
+<span data-ttu-id="fc7a2-103">Les programmes C# se composent d’un ou plusieurs fichiers.</span><span class="sxs-lookup"><span data-stu-id="fc7a2-103">C# programs can consist of one or more files.</span></span> <span data-ttu-id="fc7a2-104">Chaque fichier peut contenir zéro ou plusieurs espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="fc7a2-104">Each file can contain zero or more namespaces.</span></span> <span data-ttu-id="fc7a2-105">Un espace de noms peut contenir des types tels que des classes, des structs, des interfaces, des énumérations et des délégués, en plus d’autres espaces de noms.</span><span class="sxs-lookup"><span data-stu-id="fc7a2-105">A namespace can contain types such as classes, structs, interfaces, enumerations, and delegates, in addition to other namespaces.</span></span> <span data-ttu-id="fc7a2-106">Voici la structure d’un programme C# qui contient tous ces éléments.</span><span class="sxs-lookup"><span data-stu-id="fc7a2-106">The following is the skeleton of a C# program that contains all of these elements.</span></span>  
   
- [!code-cs[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
+ [!code-csharp[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
   
-## <a name="related-sections"></a>Rubriques connexes  
- Pour plus d'informations :  
+## <a name="related-sections"></a><span data-ttu-id="fc7a2-107">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="fc7a2-107">Related Sections</span></span>  
+ <span data-ttu-id="fc7a2-108">Pour plus d'informations :</span><span class="sxs-lookup"><span data-stu-id="fc7a2-108">For more information:</span></span>  
   
--   [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+-   [<span data-ttu-id="fc7a2-109">Classes</span><span class="sxs-lookup"><span data-stu-id="fc7a2-109">Classes</span></span>](../../../csharp/programming-guide/classes-and-structs/classes.md)  
   
--   [Structures](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+-   [<span data-ttu-id="fc7a2-110">Structures</span><span class="sxs-lookup"><span data-stu-id="fc7a2-110">Structs</span></span>](../../../csharp/programming-guide/classes-and-structs/structs.md)  
   
--   [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)  
+-   [<span data-ttu-id="fc7a2-111">Espaces de noms</span><span class="sxs-lookup"><span data-stu-id="fc7a2-111">Namespaces</span></span>](../../../csharp/programming-guide/namespaces/index.md)  
   
--   [Interfaces](../../../csharp/programming-guide/interfaces/index.md)  
+-   [<span data-ttu-id="fc7a2-112">Interfaces</span><span class="sxs-lookup"><span data-stu-id="fc7a2-112">Interfaces</span></span>](../../../csharp/programming-guide/interfaces/index.md)  
   
--   [Délégués](../../../csharp/programming-guide/delegates/index.md)  
+-   [<span data-ttu-id="fc7a2-113">Délégués</span><span class="sxs-lookup"><span data-stu-id="fc7a2-113">Delegates</span></span>](../../../csharp/programming-guide/delegates/index.md)  
   
-## <a name="c-language-specification"></a>Spécification du langage C#  
+## <a name="c-language-specification"></a><span data-ttu-id="fc7a2-114">Spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="fc7a2-114">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [À l’intérieur d’un programme C#](../../../csharp/programming-guide/inside-a-program/index.md)   
- [Informations de référence sur C#](../../../csharp/language-reference/index.md)   
- [\<paveover>Exemples d’applications Visual C#](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)
-
+## <a name="see-also"></a><span data-ttu-id="fc7a2-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fc7a2-115">See Also</span></span>  
+ [<span data-ttu-id="fc7a2-116">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="fc7a2-116">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="fc7a2-117">À l’intérieur d’un programme C#</span><span class="sxs-lookup"><span data-stu-id="fc7a2-117">Inside a C# Program</span></span>](../../../csharp/programming-guide/inside-a-program/index.md)  
+ [<span data-ttu-id="fc7a2-118">Référence C#</span><span class="sxs-lookup"><span data-stu-id="fc7a2-118">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="fc7a2-119">\<paveover>Exemples d’applications C#</span><span class="sxs-lookup"><span data-stu-id="fc7a2-119">\<paveover>C# Sample Applications</span></span>](http://msdn.microsoft.com/en-us/9a9d7aaa-51d3-4224-b564-95409b0f3e15)

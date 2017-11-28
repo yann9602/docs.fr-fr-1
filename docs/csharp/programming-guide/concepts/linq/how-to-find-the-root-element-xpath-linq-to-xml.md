@@ -1,37 +1,33 @@
 ---
 title: "Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 22512cc4d85dd8d7a901b53dd6e888046b077af0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2731b773e436114bb2324ba1cea339cf9327adb9
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#)
-Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+# <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a><span data-ttu-id="d7b57-102">Guide pratique pour rechercher l’élément racine (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="d7b57-102">How to: Find the Root Element (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="d7b57-103">Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d7b57-103">This topic shows how to get the root element with XPath and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
- L’expression XPath est la suivante :  
+ <span data-ttu-id="d7b57-104">L’expression XPath est la suivante :</span><span class="sxs-lookup"><span data-stu-id="d7b57-104">The XPath expression is:</span></span>  
   
  `/PurchaseOrders`  
   
-## <a name="example"></a>Exemple  
- Cet exemple recherche l'élément racine.  
+## <a name="example"></a><span data-ttu-id="d7b57-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="d7b57-105">Example</span></span>  
+ <span data-ttu-id="d7b57-106">Cet exemple recherche l'élément racine.</span><span class="sxs-lookup"><span data-stu-id="d7b57-106">This example finds the root element.</span></span>  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ <span data-ttu-id="d7b57-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="d7b57-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -49,13 +45,12 @@ else
 Console.WriteLine(el1.Name);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ <span data-ttu-id="d7b57-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="d7b57-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
 PurchaseOrders  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
-
+## <a name="see-also"></a><span data-ttu-id="d7b57-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d7b57-109">See Also</span></span>  
+ [<span data-ttu-id="d7b57-110">LINQ to XML pour les utilisateurs XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="d7b57-110">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

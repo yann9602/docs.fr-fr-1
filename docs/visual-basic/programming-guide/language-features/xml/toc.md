@@ -17,6 +17,3 @@
 ### [Guide pratique : accéder à des éléments enfants XML](how-to-access-xml-child-elements.md)
 ### [Guide pratique : accéder à des attributs XML](how-to-access-xml-attributes.md)
 ### [Guide pratique : déclarer et utiliser des préfixes d’espaces de noms XML](how-to-declare-and-use-xml-namespace-prefixes.md)
-## [XML IntelliSense](xml-intellisense.md)
-### [Guide pratique : activer XML IntelliSense](how-to-enable-xml-intellisense.md)
-### [Assistant XML vers schéma](xml-to-schema-wizard.md)
