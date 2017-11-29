@@ -1,31 +1,34 @@
 ---
-title: "&lt;system.serviceModel&gt; de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;system.serviceModel&gt; de workflow'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 97247abe629d12b6c60d8157786b9b82e9e14f4b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;system.serviceModel&gt; de workflow
+# <a name="ltsystemservicemodelgt-of-workflow"></a>&lt;system.serviceModel&gt; de workflow
 Cette section de configuration contient tous les éléments de configuration de flux de travail.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
-```  
-  
+```xml  
 <system.ServiceModel>  
   <behaviors>  
     <serviceBehaviors>  
     <behavior name="String">  
-      <bufferReceive maxPendingMessagesPerChannel=”Integer” />  
+      <bufferReceive maxPendingMessagesPerChannel="Integer" />  
       <etwTracking profileName="String" />  
      <sendMessageChannelCache allowUnsafeCaching="Boolean" >          
         <channelSettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
@@ -44,14 +47,14 @@ Cette section de configuration contient tous les éléments de configuration de 
     </behavior>  
     </serviceBehaviors>  
   </behaviors>  
-  <tracking>    
+  <tracking>    
      <participants>   
       <add name="String"   
            profileName="String"  
            type="String" />   
      </participants>   
-    <trackingProfile name="String">  
-      <workflow activityDefinitionId="String">  
+    <trackingProfile name="String">  
+      <workflow activityDefinitionId="String">  
           <activityScheduledQueries>  
              <activityScheduledQuery activityName="String"  
                  childActivityName="String"/>  
@@ -83,34 +86,34 @@ Cette section de configuration contient tous les éléments de configuration de 
                  faultHandlerActivityName="String"/>  
           </faultPropagationQueries>  
          <workflowInstanceQueries>  
-            <workflowInstanceQuery>  
-              <states>  
-                 <state name="String"/>  
-              </states>  
-          </workflowInstanceQuery>  
+            <workflowInstanceQuery>  
+              <states>  
+                 <state name="String"/>  
+              </states>  
+          </workflowInstanceQuery>  
         </workflowInstanceQueries>  
-      </workflow>  
-    </trackingProfile>          
-   </profiles>  
+      </workflow>  
+    </trackingProfile>          
+   </profiles>  
   </tracking>  
 </system.ServiceModel>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
- None  
+### <a name="attributes"></a>Attributs  
+ Aucun  
   
-### Éléments enfants  
-  
-|Élément|Description|  
-|-------------|-----------------|  
-|[\<behaviors\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behaviors-of-workflow.md)|Cette section définit la collection **serviceBehaviors**.  Chaque élément dans la collection définit des éléments de comportement consommés par des services.  Chaque élément de comportement est identifié par son attribut **name** unique.|  
-|[\<tracking\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/tracking.md)|Représente une section de configuration permettant de définir les paramètres de suivi d'un service de flux de travail.<br /><br /> Pour plus d'informations sur le suivi du flux de travail et sa configuration, consultez [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md) et [Configuration du suivi d'un workflow](../../../../../docs/framework/windows-workflow-foundation//configuring-tracking-for-a-workflow.md).|  
-  
-### Éléments parents  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|\<configuration\>|Élément racine correspondant à tous les éléments de configuration qui se trouvent dans un fichier de configuration .NET.|
+|[\<comportements >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behaviors-of-workflow.md)|Cette section définit les **serviceBehaviors** collection.  Chaque élément dans la collection définit des éléments de comportement consommés par des services. Chaque élément de comportement est identifié par son unique **nom** attribut.|  
+|[\<suivi >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/tracking.md)|Représente une section de configuration permettant de définir les paramètres de suivi d'un service de flux de travail.<br /><br /> Pour plus d’informations dans le suivi de workflow et sa configuration, consultez [suivi et traçage de Workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) et [configuration du suivi d’un flux de travail](../../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md).|  
+  
+### <a name="parent-elements"></a>Éléments parents  
+  
+|Élément|Description|  
+|-------------|-----------------|  
+|\<configuration>|Élément racine correspondant à tous les éléments de configuration qui se trouvent dans un fichier de configuration .NET.|

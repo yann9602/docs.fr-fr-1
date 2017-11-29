@@ -1,27 +1,29 @@
 ---
-title: "Contr&#244;le de l&#39;auto-lancement de l&#39;h&#244;te de service WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "WcfOptions"
+title: "Contrôle de l'auto-lancement de l'hôte de service WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: WcfOptions
 ms.assetid: 6abe5d34-519b-4cef-8f02-3c0a7f125585
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dc89ed3ae41471af49fc92f31834f0ae268309dd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Contr&#244;le de l&#39;auto-lancement de l&#39;h&#244;te de service WCF
-Vous pouvez contrôler la fonction d'auto\-lancement de l'hôte du service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] \(WcfSvcHost.exe\) pour un projet de bibliothèque du service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] lorsque vous déboguez un autre projet dans la même solution [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] contenant plusieurs projets.  
+# <a name="controlling-auto-launching-of-wcf-service-host"></a>Contrôle de l'auto-lancement de l'hôte de service WCF
+Vous pouvez contrôler la fonction d'auto-lancement de l'hôte du service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (WcfSvcHost.exe) pour un projet de bibliothèque du service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] lorsque vous déboguez un autre projet dans la même solution [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] contenant plusieurs projets.  
   
- Pour ce faire, cliquez avec le bouton droit sur le projet de service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] dans l'**Explorateur de solutions**, sélectionnez **Propriétés**, puis cliquez sur l'onglet **Options WCF**.La case à cocher **Démarrer l'hôte de service WCF lors du débogage d'un autre projet dans la même solution** est activée par défaut.Vous pouvez la désélectionner afin que l'hôte du service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] de ce projet spécifique ne démarre pas lorsqu'un autre projet est débogué dans la même solution.  
+ Pour ce faire, cliquez sur le [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] projet de Service dans **l’Explorateur de solutions**, choisissez **propriétés**, puis cliquez sur **Options WCF** onglet. Le **démarrer WCF Service hôte lors du débogage d’un autre projet dans la même solution** case à cocher est activée par défaut. Vous pouvez la désactiver afin que l'hôte du service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] de ce projet spécifique ne démarre pas lorsqu'un autre projet est débogué dans la même solution.  
   
  Ce comportement n'affecte pas le débogage F5 ni les fonctionnalités d'ajout d'une référence de service pour ce projet.  
   
@@ -35,5 +37,5 @@ Vous pouvez contrôler la fonction d'auto\-lancement de l'hôte du service [!INC
   
 -   Projet de la bibliothèque du service de syndication  
   
-## Voir aussi  
- [Hôte de service WCF \(WcfSvcHost.exe\)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+## <a name="see-also"></a>Voir aussi  
+ [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

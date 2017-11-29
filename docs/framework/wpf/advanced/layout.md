@@ -1,160 +1,166 @@
 ---
-title: "Disposition | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles (WPF), système de disposition"
-  - "système de disposition (WPF)"
-  - "système de disposition WPF"
+title: Disposition
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WPF layout system [WPF]
+- controls [WPF], layout system
+- layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-caps.latest.revision: 31
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "31"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 82f5f69390f2b4d27f1f41050971afa9faede960
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Disposition
-Cette rubrique décrit le système de disposition [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  Comprendre comment et quand les calculs de disposition se produisent est essentiel pour la création d'interfaces utilisateur dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+# <a name="layout"></a>Disposition
+Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Pour créer des interfaces utilisateur dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il est essentiel de comprendre quand et comment interviennent les calculs de disposition.  
   
- Cette rubrique contient les sections suivantes :  
+ Cette rubrique contient les sections suivantes :  
   
--   [Zones englobantes d'élément](#LayoutSystem_BoundingBox)  
+-   [Zones englobantes d’élément](#LayoutSystem_BoundingBox)  
   
 -   [Système de disposition](#LayoutSystem_Overview)  
   
--   [Mesure et réorganisation d'enfants](#LayoutSystem_Measure_Arrange)  
+-   [Mesure et réorganisation d’enfants](#LayoutSystem_Measure_Arrange)  
   
--   [Comportements des éléments de volet et de disposition personnalisée](#LayoutSystem_PanelsCustom)  
+-   [Comportements des éléments de panneau et de disposition personnalisée](#LayoutSystem_PanelsCustom)  
   
--   [Considérations relatives aux performances de la disposition](#LayoutSystem_Performance)  
+-   [Considérations sur les performances de disposition](#LayoutSystem_Performance)  
   
--   [Rendu d'une précision inférieure au pixel et arrondi de disposition](#LayoutSystem_LayoutRounding)  
+-   [Rendu d’une précision inférieure au pixel et arrondi de disposition](#LayoutSystem_LayoutRounding)  
   
--   [Quoi d'autre ?](#LayoutSystem_whatsnext)  
+-   [Étapes suivantes](#LayoutSystem_whatsnext)  
   
 <a name="LayoutSystem_BoundingBox"></a>   
-## Zones englobantes d'élément  
- Lorsque la disposition est considérée dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il est important de comprendre le cadre englobant qui entoure tous les éléments.  Chaque <xref:System.Windows.FrameworkElement> consommé par le système de disposition peut être considéré comme un rectangle emboîté dans la disposition.  La classe <xref:System.Windows.Controls.Primitives.LayoutInformation> retourne les limites de l'allocation de disposition d'un élément, ou emplacement.  La taille du rectangle est déterminée par l'espace disponible à l'écran, la taille de toutes les contraintes, les propriétés spécifiques à la disposition \(marge et marge intérieure, par exemple\) et le comportement individuel de l'élément <xref:System.Windows.Controls.Panel> parent.  En traitant ces données, le système de disposition est en mesure de calculer la position de tous les enfants d'un <xref:System.Windows.Controls.Panel> particulier.  Il est important de se souvenir que les caractéristiques de dimensionnement définies sur l'élément parent, tel qu'une <xref:System.Windows.Controls.Border>\) affectent ses enfants.  
+## <a name="element-bounding-boxes"></a>Zones englobantes d’élément  
+ Avant de considérer la disposition dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il est important de comprendre ce qu’est la zone englobante qui entoure tous les éléments. Chaque <xref:System.Windows.FrameworkElement> consommée par la disposition du système peut être considéré comme un rectangle est fendue dans la disposition. La <xref:System.Windows.Controls.Primitives.LayoutInformation> classe retourne les limites d’allocation de la disposition d’un élément, ou emplacement. La taille du rectangle est déterminée par le calcul de l’espace disponible à l’écran, la taille de toutes les contraintes, les propriétés spécifiques à la disposition (par exemple, la marge et marge intérieure) et le comportement individuel du parent <xref:System.Windows.Controls.Panel> élément. Traitement des données, le système de disposition est en mesure de calculer la position de tous les enfants d’un particulier <xref:System.Windows.Controls.Panel>. Il est important de se rappeler que caractéristiques de dimensionnement définies sur l’élément parent, comme un <xref:System.Windows.Controls.Border>, affectent ses enfants.  
   
- Voici une illustration.  
+ L’illustration suivante représente une disposition simple.  
   
- ![Grille classique, sans cadre englobant superposé.](../../../../docs/framework/wpf/advanced/media/boundingbox1.png "boundingbox1")  
+ ![Grille classique, sans zone englobante superposée.](../../../../docs/framework/wpf/advanced/media/boundingbox1.png "boudingbox1")  
   
- Cette disposition peut être accomplie à l'aide du [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] suivant.  
+ Cette disposition peut être obtenue en utilisant le code [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] suivant.  
   
- [!code-xml[LayoutInformation#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml#1)]  
+ [!code-xaml[LayoutInformation#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml#1)]  
   
- Un élément <xref:System.Windows.Controls.TextBlock> unique est hébergé dans un <xref:System.Windows.Controls.Grid>.  Tandis que le texte remplit uniquement l'angle supérieur gauche de la première colonne, l'espace alloué pour le <xref:System.Windows.Controls.TextBlock> est réellement beaucoup plus grand.  Le cadre englobant de tout <xref:System.Windows.FrameworkElement> peut être extrait à l'aide de la méthode <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A>.  L'illustration suivante montre le cadre englobant pour l'élément <xref:System.Windows.Controls.TextBlock>.  
+ Un seul <xref:System.Windows.Controls.TextBlock> élément est hébergé dans un <xref:System.Windows.Controls.Grid>. Tandis que le texte remplit uniquement l’angle supérieur gauche de la première colonne, l’espace alloué pour le <xref:System.Windows.Controls.TextBlock> est réellement beaucoup plus grand. La zone englobante de n’importe quel <xref:System.Windows.FrameworkElement> peuvent être récupérés à l’aide de la <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> (méthode). L’illustration suivante montre le rectangle englobant pour le <xref:System.Windows.Controls.TextBlock> élément.  
   
- ![Le cadre englobant du TextBlock est maintenant visible.](../../../../docs/framework/wpf/advanced/media/boundingbox2.png "boundingbox2")  
+ ![La zone englobante du TextBlock est maintenant visible.](../../../../docs/framework/wpf/advanced/media/boundingbox2.png "boundingbox2")  
   
- Comme indiqué par le rectangle jaune, l'espace alloué pour l'élément <xref:System.Windows.Controls.TextBlock> est réellement beaucoup plus grand qu'il apparaît.  Comme des éléments supplémentaires sont ajoutés au <xref:System.Windows.Controls.Grid>, cette allocation pourrait réduire ou se développer, selon le type et la taille des éléments ajoutés.  
+ Comme indiqué par le rectangle jaune, l’espace alloué pour le <xref:System.Windows.Controls.TextBlock> élément est réellement beaucoup plus grand qu’il apparaît. Lorsque des éléments supplémentaires sont ajoutées à la <xref:System.Windows.Controls.Grid>, cette allocation pourrait réduire ou développer, selon le type et la taille des éléments sont ajoutés.  
   
- L'emplacement de disposition du <xref:System.Windows.Controls.TextBlock> est traduit dans un <xref:System.Windows.Shapes.Path> à l'aide de la méthode <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A>.  Cette technique peut être utile pour l'affichage du cadre englobant d'un élément.  
+ L’emplacement de disposition de la <xref:System.Windows.Controls.TextBlock> est convertie en un <xref:System.Windows.Shapes.Path> à l’aide de la <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> (méthode). Cette technique peut s’avérer utile pour afficher la zone englobante d’un élément.  
   
  [!code-csharp[LayoutInformation#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml.cs#2)]
  [!code-vb[LayoutInformation#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/LayoutInformation/VisualBasic/Window1.xaml.vb#2)]  
   
 <a name="LayoutSystem_Overview"></a>   
-## Système de disposition  
- Dans sa forme la plus simple, la disposition est un système récursif qui conduit au dimensionnement, au positionnement et au dessin d'un élément.  Plus spécifiquement, la disposition décrit le processus de mesure et de réorganisation des membres de la collection <xref:System.Windows.Controls.Panel.Children%2A> d'un élément <xref:System.Windows.Controls.Panel>.  La disposition est un processus intensif.  Plus grande est la collection <xref:System.Windows.Controls.Panel.Children%2A>, plus important sera le nombre de calculs qui doivent être faits.  Il est également possible de définir une complexité en fonction du comportement de disposition défini par l'élément <xref:System.Windows.Controls.Panel> qui possède la collection.  Un <xref:System.Windows.Controls.Panel> relativement simple, tel que <xref:System.Windows.Controls.Canvas>, peut avoir de bien meilleures performances qu'un <xref:System.Windows.Controls.Panel> plus complexe, tel que <xref:System.Windows.Controls.Grid>.  
+## <a name="the-layout-system"></a>Système de disposition  
+ Pour schématiser, une disposition est un système récursif qui conduit au dimensionnement, au positionnement et au tracé d’un élément. Plus spécifiquement, disposition décrit le processus de mesure et de réorganisation des membres d’un <xref:System.Windows.Controls.Panel> l’élément <xref:System.Windows.Controls.Panel.Children%2A> collection. La disposition est un processus intensif. Le plus grand le <xref:System.Windows.Controls.Panel.Children%2A> collection, plus le nombre de calculs qui doivent être effectuées. La complexité peut également être introduite en fonction du comportement de mise en page défini par le <xref:System.Windows.Controls.Panel> élément qui possède la collection. Relativement simple <xref:System.Windows.Controls.Panel>, tel que <xref:System.Windows.Controls.Canvas>, peut avoir de bien meilleures performances qu’un type plus complexe <xref:System.Windows.Controls.Panel>, tel que <xref:System.Windows.Controls.Grid>.  
   
- Chaque fois qu'un <xref:System.Windows.UIElement> enfant modifie sa position, il a la possibilité de déclencher une nouvelle passe via le système de disposition.  Il est par conséquent important de comprendre les événements qui peuvent appeler le système de disposition, car un appel inutile risque d'altérer les performances de l'application.  Les éléments suivants décrivent le processus qui se produit lorsque le système de disposition est appelé.  
+ Chaque fois qu’enfant <xref:System.Windows.UIElement> modifie sa position, il a la possibilité de déclencher une nouvelle passe par le système de disposition. Par conséquent, il est important de comprendre quels sont les événements qui peuvent appeler le système de disposition, car un appel inutile peut nuire aux performances de l’application. Le processus suivant décrit ce qui se produit quand le système de disposition est appelé.  
   
-1.  Un <xref:System.Windows.UIElement> enfant commence le processus de disposition par la mesure de ses propriétés principales.  
+1.  Un enfant <xref:System.Windows.UIElement> commence le processus de disposition en ayant en premier ses propriétés principales mesurées.  
   
-2.  Les propriétés de dimensionnement définies sur <xref:System.Windows.FrameworkElement> sont évaluées, telles que <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A> et <xref:System.Windows.FrameworkElement.Margin%2A>.  
+2.  Propriétés de dimensionnement définies sur <xref:System.Windows.FrameworkElement> sont évaluées, telles que <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, et <xref:System.Windows.FrameworkElement.Margin%2A>.  
   
-3.  La logique spécifique <xref:System.Windows.Controls.Panel> est appliquée, telle que le sens <xref:System.Windows.Controls.Dock> ou l'empilement <xref:System.Windows.Controls.StackPanel.Orientation%2A>.  
+3.  <xref:System.Windows.Controls.Panel>-logique spécifique est appliquée, telles que <xref:System.Windows.Controls.Dock> direction ou empilement <xref:System.Windows.Controls.StackPanel.Orientation%2A>.  
   
-4.  Le contenu est réorganisé une fois que tous les enfants ont été mesurés.  
+4.  Le contenu est réorganisé après que tous les enfants ont été mesurés.  
   
-5.  La collection <xref:System.Windows.Controls.Panel.Children%2A> est dessinée à l'écran.  
+5.  Le <xref:System.Windows.Controls.Panel.Children%2A> collection est dessinée à l’écran.  
   
-6.  Le processus est encore appelé si des <xref:System.Windows.Controls.Panel.Children%2A> supplémentaires sont ajoutés à la collection, un <xref:System.Windows.FrameworkElement.LayoutTransform%2A> est appliqué, ou la méthode <xref:System.Windows.UIElement.UpdateLayout%2A> est appelée.  
+6.  Le processus est appelé à nouveau si supplémentaires <xref:System.Windows.Controls.Panel.Children%2A> sont ajoutés à la collection, une <xref:System.Windows.FrameworkElement.LayoutTransform%2A> est appliqué, ou la <xref:System.Windows.UIElement.UpdateLayout%2A> méthode est appelée.  
   
- Ce processus et la manière de l'appeler sont définis de façon plus détaillée dans les sections suivantes.  
+ Ce processus et la façon dont il est appelé sont décrits plus en détail dans les sections suivantes.  
   
 <a name="LayoutSystem_Measure_Arrange"></a>   
-## Mesure et réorganisation d'enfants  
- Le système de disposition complète deux passes pour chaque membre de la collection <xref:System.Windows.Controls.Panel.Children%2A>, une passe de mesure et une passe de réorganisation.  Chaque <xref:System.Windows.Controls.Panel> enfant fournit ses propres méthodes <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> pour accomplir son propre comportement de disposition spécifique.  
+## <a name="measuring-and-arranging-children"></a>Mesure et réorganisation d’enfants  
+ Le système de disposition effectue deux passes pour chaque membre de la <xref:System.Windows.Controls.Panel.Children%2A> collection, une passe de mesure et une passe de réorganisation. Chaque enfant <xref:System.Windows.Controls.Panel> fournit son propre <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> permet d’obtenir son propre comportement de disposition spécifique.  
   
- Pendant la phase de mesure, chaque membre de la collection <xref:System.Windows.Controls.Panel.Children%2A> est évalué.  Le processus commence par un appel à la méthode <xref:System.Windows.UIElement.Measure%2A>.  Cette méthode est appelée dans l'implémentation de l'élément <xref:System.Windows.Controls.Panel> parent et n'a pas à être explicitement appelée pour que la disposition se produise.  
+ Pendant la passe de mesure, chaque membre de la <xref:System.Windows.Controls.Panel.Children%2A> regroupement est évalué. Le processus commence par un appel à la <xref:System.Windows.UIElement.Measure%2A> (méthode). Cette méthode est appelée dans l’implémentation du parent <xref:System.Windows.Controls.Panel> élément et n’a pas à être appelé explicitement pour la disposition se produise.  
   
- En premier lieu, les propriétés de taille natives de <xref:System.Windows.UIElement> sont évaluées, telles que <xref:System.Windows.UIElement.Clip%2A> et <xref:System.Windows.UIElement.Visibility%2A>.  Cela génère une valeur nommée `constraintSize` passée à <xref:System.Windows.FrameworkElement.MeasureCore%2A>.  
+ Propriétés de taille en premier lieu, natif de la <xref:System.Windows.UIElement> sont évaluées, telles que <xref:System.Windows.UIElement.Clip%2A> et <xref:System.Windows.UIElement.Visibility%2A>. Cela génère une valeur nommée `constraintSize` qui est passé à <xref:System.Windows.FrameworkElement.MeasureCore%2A>.  
   
- Deuxièmement, les propriétés d'infrastructure définies sur <xref:System.Windows.FrameworkElement> sont traitées, ce qui affecte la valeur de `constraintSize`.  Ces propriétés décrivent généralement les caractéristiques de dimensionnement du <xref:System.Windows.UIElement> sous\-jacent, \(<xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Margin%2A> et <xref:System.Windows.FrameworkElement.Style%2A>, par exemple\).  Chacune de ces propriétés peut modifier l'espace nécessaire à l'affichage de l'élément.  Puis <xref:System.Windows.FrameworkElement.MeasureOverride%2A> est appelé avec `constraintSize` comme un paramètre.  
+ Deuxièmement, les propriétés de l’infrastructure défini sur <xref:System.Windows.FrameworkElement> sont traités, ce qui affecte la valeur de `constraintSize`. Ces propriétés décrivent les caractéristiques de redimensionnement de l’objet sous-jacent <xref:System.Windows.UIElement>, telles que son <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, et <xref:System.Windows.FrameworkElement.Style%2A>. Chacune de ces propriétés peut changer l’espace nécessaire à l’affichage de l’élément. <xref:System.Windows.FrameworkElement.MeasureOverride%2A>est ensuite appelée avec `constraintSize` en tant que paramètre.  
   
 > [!NOTE]
->  Il existe une différence entre les propriétés de <xref:System.Windows.FrameworkElement.Height%2A> et <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.ActualHeight%2A> et <xref:System.Windows.FrameworkElement.ActualWidth%2A>.  Par exemple, la propriété <xref:System.Windows.FrameworkElement.ActualHeight%2A> est une valeur calculée en fonction d'autres entrées de hauteur et le système de disposition.  La valeur est définie par le système de disposition lui\-même, selon une passe de rendu réel, et peut par conséquent rester légèrement en retrait de la valeur définie des propriétés, telle que <xref:System.Windows.FrameworkElement.Height%2A>, qui est la base de la modification d'entrée.  
+>  Il existe une différence entre les propriétés de <xref:System.Windows.FrameworkElement.Height%2A> et <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.ActualHeight%2A> et <xref:System.Windows.FrameworkElement.ActualWidth%2A>. Par exemple, le <xref:System.Windows.FrameworkElement.ActualHeight%2A> propriété est une valeur calculée basée sur les autres entrées de hauteur et le système de disposition. La valeur est définie par le système de disposition, selon une passe de rendu et peut par conséquent rester légèrement derrière la valeur du jeu de propriétés, telles que <xref:System.Windows.FrameworkElement.Height%2A>, qui est la base de la modification d’entrée.  
 >   
->  Du fait que <xref:System.Windows.FrameworkElement.ActualHeight%2A> est une valeur calculée, vous devez savoir que des modifications multiples ou incrémentielles signalées peuvent se produire sur cette valeur résultant de différentes opérations par le système de disposition.  Le système de disposition peut calculer l'espace de mesure requis pour les éléments enfants, les contraintes par l'élément parent, et ainsi de suite.  
+>  Étant donné que <xref:System.Windows.FrameworkElement.ActualHeight%2A> est une valeur calculée, vous devez être conscient qu’il peut y avoir plusieurs ou incrémentielles signalées modifications à la suite de différentes opérations par le système de disposition. Celui-ci peut en effet calculer l’espace de mesure requis pour les éléments enfants, les contraintes de l’élément parent, et ainsi de suite.  
   
- L'objectif ultime de la phase de mesure est pour l'enfant de déterminer sa <xref:System.Windows.UIElement.DesiredSize%2A>, qui se produit pendant l'appel de <xref:System.Windows.FrameworkElement.MeasureCore%2A>.  La valeur <xref:System.Windows.UIElement.DesiredSize%2A> est stockée par <xref:System.Windows.UIElement.Measure%2A> pour une utilisation pendant la passe de réorganisation du contenu.  
+ Le but ultime de la phase de mesure est pour l’enfant de déterminer sa <xref:System.Windows.UIElement.DesiredSize%2A>, qui se produit pendant la <xref:System.Windows.FrameworkElement.MeasureCore%2A> appeler. Le <xref:System.Windows.UIElement.DesiredSize%2A> valeur est stockée en <xref:System.Windows.UIElement.Measure%2A> pour une utilisation pendant la passe de réorganisation de contenu.  
   
- La passe de réorganisation du contenu commence par un appel à la méthode <xref:System.Windows.UIElement.Arrange%2A>.  Pendant la passe de réorganisation, l'élément <xref:System.Windows.Controls.Panel> parent génère un rectangle qui représente les limites de l'enfant.  Cette valeur est passée à la méthode <xref:System.Windows.FrameworkElement.ArrangeCore%2A> pour traitement.  
+ La passe de réorganisation commence par un appel à la <xref:System.Windows.UIElement.Arrange%2A> (méthode). Pendant la passe de réorganisation, le parent <xref:System.Windows.Controls.Panel> élément génère un rectangle qui représente les limites de l’enfant. Cette valeur est passée à la <xref:System.Windows.FrameworkElement.ArrangeCore%2A> méthode pour le traitement.  
   
- La méthode <xref:System.Windows.FrameworkElement.ArrangeCore%2A> évalue la <xref:System.Windows.UIElement.DesiredSize%2A> de l'enfant et évalue toutes marges supplémentaires qui peuvent affecter la taille rendue de l'élément.  <xref:System.Windows.FrameworkElement.ArrangeCore%2A> génère une `arrangeSize`, qui est passée à la méthode <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> du <xref:System.Windows.Controls.Panel> en tant que paramètre.  <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> génère la `finalSize` de l'enfant.  Enfin, la méthode <xref:System.Windows.FrameworkElement.ArrangeCore%2A> effectue une dernière évaluation des propriétés de décalage, telles que la marge et l'alignement, par exemple\) et place l'enfant dans son emplacement de disposition.  L'enfant n'a pas besoin de remplir intégralement l'espace alloué \(et souvent ne le remplit pas\).  Le contrôle est alors retourné au <xref:System.Windows.Controls.Panel> parent, et le processus de disposition est complet.  
+ Le <xref:System.Windows.FrameworkElement.ArrangeCore%2A> méthode évalue la <xref:System.Windows.UIElement.DesiredSize%2A> de l’enfant et évalue toutes marges supplémentaires qui peuvent affecter la taille de rendu de l’élément. <xref:System.Windows.FrameworkElement.ArrangeCore%2A>génère un `arrangeSize`, qui est transmis à la <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> méthode de le <xref:System.Windows.Controls.Panel> en tant que paramètre. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>génère le `finalSize` de l’enfant. Enfin, le <xref:System.Windows.FrameworkElement.ArrangeCore%2A> méthode effectue une dernière évaluation des propriétés de décalage, telles que la marge et l’alignement et place l’enfant dans son emplacement de disposition. L’enfant n’a pas besoin de remplir intégralement l’espace alloué (et souvent ne le remplit pas). Contrôle est alors retourné au parent <xref:System.Windows.Controls.Panel> et le processus de disposition est terminé.  
   
 <a name="LayoutSystem_PanelsCustom"></a>   
-## Comportements des éléments de volet et de disposition personnalisée  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut un groupe d'éléments qui dérivent de <xref:System.Windows.Controls.Panel>.  Ces éléments <xref:System.Windows.Controls.Panel> permettent de nombreuses dispositions complexes.  Par exemple, l'empilement d'éléments peut être facilement accompli à l'aide de l'élément <xref:System.Windows.Controls.StackPanel>, tandis que les dispositions de flux plus complexes et libres sont possible à l'aide d'un <xref:System.Windows.Controls.Canvas>.  
+## <a name="panel-elements-and-custom-layout-behaviors"></a>Comportements des éléments de panneau et de disposition personnalisée  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]inclut un groupe d’éléments qui dérivent de <xref:System.Windows.Controls.Panel>. Ces <xref:System.Windows.Controls.Panel> éléments permettent de nombreuses dispositions complexes. Par exemple, empilement d’éléments peut facilement à l’aide de la <xref:System.Windows.Controls.StackPanel> élément, tandis que les dispositions de flux plus complexes et libres sont possibles en utilisant un <xref:System.Windows.Controls.Canvas>.  
   
- Le tableau suivant récapitule les éléments de disposition <xref:System.Windows.Controls.Panel> disponibles.  
+ Le tableau suivant récapitule la mise en page disponible <xref:System.Windows.Controls.Panel> éléments.  
   
-|Nom du volet|Description|  
-|------------------|-----------------|  
-|<xref:System.Windows.Controls.Canvas>|Définit une zone dans laquelle vous pouvez positionner explicitement des éléments enfants par leurs coordonnées relatives à la zone du <xref:System.Windows.Controls.Canvas>.|  
-|<xref:System.Windows.Controls.DockPanel>|Définit une zone dans laquelle vous pouvez réorganiser des éléments enfants soit horizontalement soit verticalement, les uns par rapport aux autres.|  
-|<xref:System.Windows.Controls.Grid>|Définit une grille flexible qui se compose de colonnes et des lignes.|  
-|<xref:System.Windows.Controls.StackPanel>|Réorganise des éléments enfants sur une seule ligne pouvant être orientée horizontalement ou verticalement.|  
-|<xref:System.Windows.Controls.VirtualizingPanel>|Fournit une infrastructure pour les éléments <xref:System.Windows.Controls.Panel> qui virtualisent leur collection de données enfants.  Il s'agit d'une classe abstraite.|  
-|<xref:System.Windows.Controls.WrapPanel>|Positionne de gauche à droite des éléments enfants dans une position séquentielle, en arrêtant le contenu à la ligne suivante au bord de la zone conteneur.  Le classement continue ensuite séquentiellement de haut en bas ou de droite à gauche, selon la valeur de la propriété <xref:System.Windows.Controls.WrapPanel.Orientation%2A>.|  
+|Nom du panneau|Description|  
+|----------------|-----------------|  
+|<xref:System.Windows.Controls.Canvas>|Définit une zone dans laquelle vous pouvez explicitement positionner des éléments enfants par des coordonnées relatives à la <xref:System.Windows.Controls.Canvas> zone.|  
+|<xref:System.Windows.Controls.DockPanel>|Définit une zone dans laquelle vous pouvez organiser des éléments enfants horizontalement ou verticalement, les uns par rapport aux autres.|  
+|<xref:System.Windows.Controls.Grid>|Définit une zone de grille flexible composée de colonnes et de lignes.|  
+|<xref:System.Windows.Controls.StackPanel>|Dispose des éléments enfants sur une seule ligne orientée horizontalement ou verticalement.|  
+|<xref:System.Windows.Controls.VirtualizingPanel>|Fournit une infrastructure pour <xref:System.Windows.Controls.Panel> éléments qui virtualisent leur collection de données enfants. Il s'agit d'une classe abstraite.|  
+|<xref:System.Windows.Controls.WrapPanel>|Positionne des éléments enfants dans un ordre séquentiel de gauche à droite, en faisant passer le contenu à la ligne suivante au bord de la zone conteneur. Classement séquentiellement de haut en bas ou de droite à gauche, selon la valeur de la <xref:System.Windows.Controls.WrapPanel.Orientation%2A> propriété.|  
   
- Pour les applications qui requièrent une disposition qui ne peut utiliser aucun des éléments <xref:System.Windows.Controls.Panel> prédéfinis, les comportements de disposition personnalisée peuvent être obtenus en héritant de <xref:System.Windows.Controls.Panel> et en substituant les méthodes <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>.  Pour obtenir un exemple, consultez [Panneau radial personnalisé, exemple](http://go.microsoft.com/fwlink/?LinkID=159982).  
+ Pour les applications qui requièrent une disposition qui n’est pas possible à l’aide des prédéfinis <xref:System.Windows.Controls.Panel> éléments, des comportements de disposition personnalisée peuvent être obtenus en héritant de <xref:System.Windows.Controls.Panel> et en remplaçant le <xref:System.Windows.FrameworkElement.MeasureOverride%2A> et <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> méthodes. Pour obtenir un exemple, consultez [Exemple de panneau radial personnalisé](http://go.microsoft.com/fwlink/?LinkID=159982).  
   
 <a name="LayoutSystem_Performance"></a>   
-## Considérations relatives aux performances de la disposition  
- La disposition est un processus récursif.  Chaque élément enfant dans une collection <xref:System.Windows.Controls.Panel.Children%2A> est traité pendant chaque appel du système de disposition.  Par conséquent, le déclenchement du système de disposition doit être évité lorsque ce n'est pas nécessaire.  Les considérations suivantes peuvent vous aider à accomplir de meilleures performances.  
+## <a name="layout-performance-considerations"></a>Considérations sur les performances de disposition  
+ La disposition est un processus récursif. Chaque élément enfant dans un <xref:System.Windows.Controls.Panel.Children%2A> collection est traitée pendant chaque appel du système de disposition. Par conséquent, il est préférable d’éviter de déclencher le système de disposition quand cela n’est pas nécessaire. Les considérations suivantes peuvent vous aider à bénéficier de meilleures performances.  
   
--   Identifiez les modifications de valeurs de propriétés qui forceront une mise à jour récursive par le système de disposition.  
+-   Identifiez les changements de valeurs de propriétés qui forceront le système de disposition à procéder à une mise à jour récursive.  
   
-     Les propriétés de dépendance dont les valeurs peuvent entraîner l'initialisation du système de disposition sont marquées avec des indicateurs publics.  <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> et <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> fournissent des indices utiles sur les modifications de valeurs de propriétés qui forceront une mise à jour récursive par le système de disposition.  En général, toute propriété qui peut affecter la taille du cadre englobant d'un élément doit avoir un indicateur <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> ayant pour valeur true.  Pour plus d'informations, consultez [Vue d'ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+     Les propriétés de dépendance dont les valeurs peuvent entraîner l’initialisation du système de disposition sont marquées avec des indicateurs publics. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>et <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> fournissent des indices utiles concernant la propriété des modifications de valeur force une récursive mettre à jour par le système de disposition. En règle générale, toute propriété qui peut affecter la taille du cadre englobant d’un élément doit avoir un <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> l’indicateur est défini sur true. Pour plus d’informations, consultez [Vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
--   Lorsque cela est possible, utilisez un <xref:System.Windows.UIElement.RenderTransform%2A> au lieu d'un <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
+-   Si possible, utilisez un <xref:System.Windows.UIElement.RenderTransform%2A> au lieu d’un <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
   
-     Une <xref:System.Windows.FrameworkElement.LayoutTransform%2A> peut être une méthode très utile pour affecter le contenu d'un [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].  Toutefois, si l'effet de la transformation ne doit pas avoir d'impact sur la position d'autres éléments, il vaut mieux utiliser à la place un <xref:System.Windows.UIElement.RenderTransform%2A>, parce que <xref:System.Windows.UIElement.RenderTransform%2A> n'appelle pas le système de disposition.  <xref:System.Windows.FrameworkElement.LayoutTransform%2A> applique sa transformation et force une mise à jour de la disposition récursive dont il faut tenir compte pour la nouvelle position de l'élément affecté.  
+     A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> peut être un moyen très utile pour affecter le contenu d’un [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Toutefois, si l’effet de la transformation n’a pas d’impact sur la position d’autres éléments, il est préférable d’utiliser un <xref:System.Windows.UIElement.RenderTransform%2A> à la place, car <xref:System.Windows.UIElement.RenderTransform%2A> n’appelle pas le système de disposition. <xref:System.Windows.FrameworkElement.LayoutTransform%2A>applique sa transformation et force une mise à jour de disposition récursive pour prendre en compte la nouvelle position de l’élément affecté.  
   
 -   Évitez les appels inutiles à <xref:System.Windows.UIElement.UpdateLayout%2A>.  
   
-     La méthode <xref:System.Windows.UIElement.UpdateLayout%2A> force une mise à jour de la disposition récursive et n'est pas souvent nécessaire.  À moins d'être sûr qu'une mise à jour complète est obligatoire, reposez\-vous sur le système de disposition pour appeler cette méthode à votre place.  
+     Le <xref:System.Windows.UIElement.UpdateLayout%2A> méthode force une mise à jour de disposition récursive et n’est pas souvent nécessaire. À moins d’être certain qu’une mise à jour complète est nécessaire, laissez le système de disposition appeler cette méthode à votre place.  
   
--   Lorsque vous utilisez une grande collection <xref:System.Windows.Controls.Panel.Children%2A>, envisagez d'utiliser un <xref:System.Windows.Controls.VirtualizingStackPanel> au lieu d'un <xref:System.Windows.Controls.StackPanel> normal.  
+-   Lorsque vous travaillez avec un grand <xref:System.Windows.Controls.Panel.Children%2A> collection, envisagez d’utiliser un <xref:System.Windows.Controls.VirtualizingStackPanel> au lieu d’une expression régulière <xref:System.Windows.Controls.StackPanel>.  
   
-     En virtualisant la collection enfant, le <xref:System.Windows.Controls.VirtualizingStackPanel> garde uniquement en mémoire les objets qui sont actuellement dans la [fenêtre d'affichage](GTMT) du parent.  En conséquence, les performances sont considérablement améliorées dans la plupart des scénarios.  
+     Par la virtualisation de la collection d’enfants, le <xref:System.Windows.Controls.VirtualizingStackPanel> conserve uniquement les objets en mémoire qui se trouvent actuellement dans la fenêtre d’affichage du parent. De ce fait, les performances sont considérablement améliorées dans la plupart des scénarios.  
   
 <a name="LayoutSystem_LayoutRounding"></a>   
-## Rendu d'une précision inférieure au pixel et arrondi de disposition  
- Le système graphique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise des unités indépendantes du périphérique pour garantir l'indépendance vis\-à\-vis du périphérique et de la résolution.  Chaque pixel indépendant du périphérique s'ajuste automatiquement sur le paramètre [!INCLUDE[TLA#tla_dpi](../../../../includes/tlasharptla-dpi-md.md)] du système.  Cela fournit aux applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] la mise à l'échelle appropriée pour différents paramètres [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] et rend l'application capable de prendre automatiquement en compte le paramètre [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)].  
+## <a name="sub-pixel-rendering-and-layout-rounding"></a>Rendu d’une précision inférieure au pixel et arrondi de disposition  
+ Le système graphique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise des unités indépendantes de l’appareil pour assurer une indépendance de la résolution et de l’appareil. Chaque pixel indépendant de l’appareil s’ajuste automatiquement au paramètre [!INCLUDE[TLA#tla_dpi](../../../../includes/tlasharptla-dpi-md.md)] du système. Cela permet aux applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de s’ajuster correctement aux différents paramètres [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] et de prendre automatiquement en charge [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)].  
   
- Cependant, cette indépendance [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] peut générer un rendu irrégulier des bords en raison de l'anticrénelage.  Ces artefacts, apparaissant généralement avec des bords flous ou semi\-transparents, peuvent se produire lorsque l'emplacement d'un bord tombe au milieu d'un pixel de périphérique au lieu d'être entre des pixels de périphériques.  Le système de disposition offre un moyen de réglage avec l'arrondi de disposition.  L'arrondi de disposition est l'endroit où le système de disposition arrondit des valeurs en pixels non intégrales pendant la passe de disposition.  
+ Cependant, cette indépendance [!INCLUDE[TLA2#tla_dpi](../../../../includes/tla2sharptla-dpi-md.md)] peut générer un rendu irrégulier des bords en raison de l’anticrénelage. Ces artefacts, qui se présentent généralement sous la forme de bords flous ou semi-transparents, peuvent apparaître quand l’emplacement d’un bord se trouve au milieu d’un pixel d’appareil et non entre des pixels d’appareil. Le système de disposition permet d’y remédier grâce à l’arrondi de disposition. L’arrondi de disposition intervient quand le système de disposition arrondit des valeurs de pixel non intégrales pendant la passe de disposition.  
   
- L'arrondi de disposition est désactivé par défaut.  Pour permettre l'arrondi de disposition, affectez à la propriété <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> la valeur `true` sur tout <xref:System.Windows.FrameworkElement>.  Étant donné qu'il s'agit d'une propriété de dépendance, la valeur sera propagée à tous les enfants dans l'arborescence d'éléments visuels.  Pour permettre l'arrondi de disposition pour l'interface utilisateur entière, affectez au conteneur racine <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> la valeur `true`.  Pour obtenir un exemple, consultez <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A>.  
+ L’arrondi de disposition est désactivé par défaut. Pour activer l’arrondi de disposition, définissez la <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> propriété `true` sur n’importe quel <xref:System.Windows.FrameworkElement>. S’agissant d’une propriété de dépendance, la valeur se propage à tous les enfants de l’arborescence d’éléments visuels. Pour activer l’arrondi de disposition pour l’interface utilisateur entière, définissez <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> à `true` sur le conteneur racine. Pour obtenir un exemple, consultez <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A>.  
   
 <a name="LayoutSystem_whatsnext"></a>   
-## Quoi d'autre ?  
- Comprendre comment les éléments sont mesurés et organisés est la première étape dans la connaissance de la disposition.  Pour plus d'informations sur les éléments <xref:System.Windows.Controls.Panel> disponibles, consultez [Vue d'ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md).  Pour mieux comprendre les différentes propriétés de positionnement qui peuvent affecter la disposition, consultez [Vue d'ensemble de l'alignement, des marges et du remplissage](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md).  Pour obtenir un exemple d'un élément <xref:System.Windows.Controls.Panel> personnalisé, consultez [Panneau radial personnalisé, exemple](http://go.microsoft.com/fwlink/?LinkID=159982) Lorsque vous êtes prêt à tout réunir dans une application légère, consultez [Procédure pas à pas : mise en route de WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+## <a name="whats-next"></a>Étapes suivantes  
+ Pour bien comprendre en quoi consiste la disposition, il convient dans un premier temps de comprendre comment les éléments sont mesurés et organisés. Pour plus d’informations sur les <xref:System.Windows.Controls.Panel> éléments, consultez [vue d’ensemble des panneaux](../../../../docs/framework/wpf/controls/panels-overview.md). Pour mieux comprendre les différentes propriétés de positionnement qui peuvent affecter la disposition, consultez [Vue d’ensemble de l’alignement, des marges et du remplissage](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md). Pour obtenir un exemple de personnalisé <xref:System.Windows.Controls.Panel> élément, consultez [panneau Radial personnalisé, exemple](http://go.microsoft.com/fwlink/?LinkID=159982). Lorsque vous êtes prêt à placer tous les éléments dans une application légère, consultez [procédure pas à pas : Ma première application de bureau WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
-## Voir aussi  
- <xref:System.Windows.FrameworkElement>   
- <xref:System.Windows.UIElement>   
- [Vue d'ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md)   
- [Vue d'ensemble de l'alignement, des marges et du remplissage](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.FrameworkElement>  
+ <xref:System.Windows.UIElement>  
+ [Vue d’ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Vue d'ensemble de l'alignement, des marges et du remplissage](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
  [Disposition et conception](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)

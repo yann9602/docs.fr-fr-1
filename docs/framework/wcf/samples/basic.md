@@ -1,33 +1,36 @@
 ---
-title: "Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Basic2
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 04e4d3bd-ab89-4b50-8f42-2a4430751a9c
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cb77e794119db2434a38ff7271912f50e483d766
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Basic
+# <a name="basic"></a>Basic
 Cette section inclut des sections d'exemples qui illustrent les fonctionnalités [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] de base.  
   
-## Dans cette section  
- [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
+## <a name="in-this-section"></a>Dans cette section  
+ [Prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
  Indique comment implémenter un service et un client standard à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [AJAX](../../../../docs/framework/wcf/samples/ajax.md)  
- Indique comment utiliser AJAX \(Asynchronous JavaScript And XML\).  
+ Indique comment utiliser AJAX (Asynchronous JavaScript And XML).  
   
  [Liaison](../../../../docs/framework/wcf/samples/binding.md)  
- Indique comment utiliser l'attribut de liaison d'un élément de point de terminaison.  
+ Indique comment utiliser l’attribut de liaison d’un élément de point de terminaison.  
   
  [Client](../../../../docs/framework/wcf/samples/client.md)  
  Illustre des applications clientes [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  

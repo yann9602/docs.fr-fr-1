@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 494e67b39187a2a38f29f994e17051430d90f708
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Comment : afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -165,4 +163,3 @@ ms.lasthandoff: 08/21/2017
 1.  Dans Visual Studio, appuyez sur **F5** pour démarrer le débogage de l’application. Si aucune erreur n’est trouvée, une nouvelle fenêtre de navigateur s’ouvre.  
   
 2.  Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, le site doit afficher le texte suivant : **« Vous êtes connecté »**.
-

@@ -1,35 +1,38 @@
 ---
-title: "OracleTypes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: OracleTypes
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e0fa5a76c304246d1518ad7491cfc5b8b741f913
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# OracleTypes
-Le fournisseur de données .NET Framework pour Oracle inclut plusieurs structures que vous pouvez utiliser avec des types de données Oracle.  Celles\-ci comprennent <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.  
+# <a name="oracletypes"></a>OracleTypes
+Le fournisseur de données .NET Framework pour Oracle inclut plusieurs structures que vous pouvez utiliser avec des types de données Oracle. Celles-ci comprennent <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.  
   
 > [!NOTE]
 >  Pour obtenir une liste complète de ces structures, voir <xref:System.Data.OracleClient>.  
   
- Les exemples C\# suivants :  
+ Les exemples C# suivants :  
   
 -   créent une table Oracle et la chargent de données.  
   
 -   Utilisez un <xref:System.Data.OracleClient.OracleDataReader> pour accéder aux données et utilisez plusieurs structures <xref:System.Data.OracleClient.OracleType> pour afficher les données.  
   
-## Création d'une table Oracle  
- Cet exemple crée une table Oracle et la charge de données.  Vous devez exécuter cet exemple avant d'exécuter l'exemple suivant.  
+## <a name="creating-an-oracle-table"></a>Création d'une table Oracle  
+ Cet exemple crée une table Oracle et la charge de données. Vous devez exécuter cet exemple avant d'exécuter l'exemple suivant.  
   
 ```csharp  
 public void Setup(string connectionString)  
@@ -58,8 +61,8 @@ public void Setup(string connectionString)
 }  
 ```  
   
-## Extraction de données de la table Oracle  
- Cet exemple utilise un **OracleDataReader** pour accéder aux données et emploie plusieurs structures **OracleType** pour afficher les données.  
+## <a name="retrieving-data-from-the-oracle-table"></a>Extraction de données de la table Oracle  
+ Cet exemple utilise une **OracleDataReader** pour accéder aux données et utilise plusieurs **OracleType** structures pour afficher les données.  
   
 ```csharp  
 public void ReadOracleTypesExample(string connectionString)  
@@ -122,6 +125,6 @@ public void ReadOracleTypesExample(string connectionString)
 }  
 ```  
   
-## Voir aussi  
- [Oracle et ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Oracle et ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

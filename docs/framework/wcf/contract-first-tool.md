@@ -1,37 +1,40 @@
 ---
-title: "Outil &#171;&#160;Contrat en premier&#160;&#187; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Outil « Contrat en premier »"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ea0821d9dd6073c1e652d36c71b817647b8710c0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Outil &#171;&#160;Contrat en premier&#160;&#187;
-Les contrats de service doit souvent être créés à partir de services existants.Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les classes de contrat de données peuvent être créées automatiquement à partir des services existants à l'aide de l'outil Contrat en premier.Pour utiliser l'outil Contrat en premier, le fichier de définition de schéma XML \(XSD\) doit être téléchargé localement ; l'outil ne peut pas importer les contrats de données distants via HTTP.  
+# <a name="contract-first-tool"></a>Outil « Contrat en premier »
+Les contrats de service doivent souvent être créés à partir de services existants. Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les classes de contrat de données peuvent être créées automatiquement à partir des services existants à l'aide de l'outil Contrat en premier. Pour utiliser l'outil Contrat en premier, le fichier de définition de schéma XML (XSD) doit être téléchargé localement ; l'outil ne peut pas importer les contrats de données distants via HTTP.  
   
- L'outil Contrat en premier est intégré dans [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] en tant que tâche de génération.Les fichiers de code générés par la tâche de génération sont créés à chaque fois que le projet est généré, afin que le projet puisse facilement adopter les modifications du contrat de service sous\-jacent.  
+ L'outil Contrat en premier est intégré dans [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] en tant que tâche de génération. Les fichiers de code générés par la tâche de génération sont créés à chaque fois que le projet est généré, afin que le projet puisse facilement adopter les modifications du contrat de service sous-jacent.  
   
  Les types de schémas que l'outil Contrat en premier peut importer sont les suivants :  
   
-```  
+```xml  
 <xsd:complexType>  
 <xsd:simpleType>  
 ```  
   
- Les types simples ne seront pas générés s'ils sont des primitives telles que `Int16` ou `String` ; les types complexes ne seront pas générés s'ils sont de type `Collection`.Les types ne seront pas non plus générés s'ils font partie d'un autre `xsd:complexType`.Dans tous ces cas, les types seront référencés dans les types existants du projet à la place.  
+ Les types simples ne seront pas générés s'ils sont des primitives telles que `Int16` ou `String` ; les types complexes ne seront pas générés s'ils sont de type `Collection`. Les types ne seront pas non plus générés s'ils font partie d'un autre `xsd:complexType`. Dans tous ces cas, les types seront référencés dans les types existants du projet à la place.  
   
-## Ajout d'un contrat de données à un projet  
- Pour utiliser l'outil Contrat en premier, le contrat de service \(XSD\) doit être ajouté au projet.Pour les besoins de cette présentation, le contrat suivant sera utilisé pour illustrer les fonctions Contrat en premier.Cette définition de service est un sous\-ensemble du contrat de service utilisé par l'API de recherche Bing.  
+## <a name="adding-a-data-contract-to-a-project"></a>Ajout d'un contrat de données à un projet  
+ Pour utiliser l'outil Contrat en premier, le contrat de service (XSD) doit être ajouté au projet. Pour les besoins de cette présentation, le contrat suivant sera utilisé pour illustrer les fonctions Contrat en premier. Cette définition de service est un sous-ensemble du contrat de service utilisé par l'API de recherche Bing.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -61,64 +64,63 @@ Les contrats de service doit souvent être créés à partir de services existan
     </xs:restriction>  
   </xs:simpleType>  
 </xs:schema>  
-  
 ```  
   
- Pour ajouter le contrat de service ci\-dessus au projet, cliquez avec le bouton droit sur le projet et sélectionnez **Ajouter un nouveau...**.Sélectionnez la définition de schéma ans le volet WCF de la boîte de dialogue Modèles et nommez le nouveau fichier SampleContract.xsd.Copiez et collez le code ci\-dessus dans le mode Code du nouveau fichier.  
+ Pour ajouter le contrat de service ci-dessus au projet, cliquez sur le projet et sélectionnez **ajouter un nouveau...** . Sélectionnez la définition de schéma dans le volet WCF de la boîte de dialogue Modèles et nommez le nouveau fichier SampleContract.xsd. Copiez et collez le code ci-dessus dans le mode Code du nouveau fichier.  
   
-## Configuration des options Contrat en premier  
- Les options Contrat en premier peuvent être configurées dans le menu Propriétés d'un projet [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].Pour activer le développement Contrat en premier, activez la case à cocher **Activer le XSD comme langage de définition de type** dans la page WCF de la fenêtre de propriétés du projet.  
+## <a name="configuring-contract-first-options"></a>Configuration des options Contrat en premier  
+ Les options Contrat en premier peuvent être configurées dans le menu Propriétés d'un projet [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Pour activer le développement contrat en premier, sélectionnez le **activer le XSD comme langage de définition de Type** case à cocher dans la page WCF de la fenêtre de propriétés du projet.  
   
- ![Options de projet WCF affichant un Contrat en premier](../../../docs/framework/wcf/media/contractfirstoptions.png "ContractFirstOptions")  
+ ![Les Options de projet WCF affichant contrat &#45; première](../../../docs/framework/wcf/media/contractfirstoptions.png "ContractFirstOptions")  
   
  Pour configurer les propriétés avancées, cliquez sur le bouton Avancées.  
   
- ![Propriétés avancées de Contrat en premier](../../../docs/framework/wcf/media/contractfirstadvanced.png "ContractFirstAdvanced")  
+ ![Contrat avancée &#45; Propriétés du premier](../../../docs/framework/wcf/media/contractfirstadvanced.png "ContractFirstAdvanced")  
   
- Les paramètres avancés suivants peuvent être configurés pour la génération du code à partir des contrats.Les paramètres peuvent être configurés pour tous les fichiers du projet ; les paramètres ne peuvent pas être configurés pour les fichiers individuels à ce stade.  
+ Les paramètres avancés suivants peuvent être configurés pour la génération du code à partir des contrats. Les paramètres peuvent être configurés pour tous les fichiers du projet ; les paramètres ne peuvent pas être configurés pour les fichiers individuels à ce stade.  
   
--   **Mode de sérialiseur** : ce paramètre détermine le sérialiseur utilisé pour lire les fichiers de contrat de service.Lorsque **Sérialiseur XML** est sélectionné, les options **Types de collections** et **Réutiliser les types** sont désactivées.Ces options s'appliquent uniquement au **Sérialiseur de contrat de données**.  
+-   **Mode de sérialiseur**: ce paramètre détermine le sérialiseur utilisé pour lire les fichiers de contrat de service. Lorsque **sérialiseur XML** est sélectionnée, le **des Types de Collection** et **réutiliser les Types** options sont désactivées. Ces options s’appliquent uniquement à la **sérialiseur de contrat de données**.  
   
--   **Types de réutilisation** : ce paramètre spécifie les bibliothèques utilisées pour la réutilisation du type.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **Réutiliser les Types**: ce paramètre spécifie les bibliothèques qui sont utilisées pour la réutilisation du type. Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **Type de collection** : ce paramètre spécifie le type qualifié complet ou qualifié d'assembly à utiliser pour le type de données de collection.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **Type de collection**: ce paramètre spécifie le type qualifié complet ou qualifié d’assembly à utiliser pour le type de données de collection. Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **Type de dictionnaire** : ce paramètre spécifie le type qualifié complet ou qualifié d'assembly à utiliser pour le type de données de dictionnaire.  
+-   **Type de dictionnaire**: ce paramètre spécifie le type qualifié complet ou qualifié d’assembly à utiliser pour le type de données de dictionnaire.  
   
--   **EnableDataBinding** : ce paramètre indique s'il faut implémenter l'interface <xref:System.ComponentModel.INotifyPropertyChanged> sur tous les types de données pour implémenter la liaison de données.  
+-   **EnableDataBinding**: ce paramètre spécifie s’il faut implémenter le <xref:System.ComponentModel.INotifyPropertyChanged> interface sur tous les types de données pour implémenter la liaison de données.  
   
--   **ExcludedTypes** : ce paramètre spécifie la liste de types qualifiés complets ou qualifiés d'assembly à exclure des assemblys référencés.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **ExcludedTypes**: ce paramètre spécifie la liste des types complet ou qualifié d’assembly à exclure des assemblys référencés. Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **GenerateInternalTypes** : ce paramètre spécifie s'il faut générer des classes qui sont marquées comme étant internes.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **GenerateInternalTypes**: ce paramètre spécifie s’il faut générer des classes marquées comme internes. Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **GenerateSerializableTypes** : ce paramètre spécifie s'il faut générer des classes avec l'attribut <xref:System.SerializableAttribute>.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **GenerateSerializableTypes**: ce paramètre spécifie s’il faut générer des classes avec le <xref:System.SerializableAttribute> attribut. Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **ImportXMLTypes** : ce paramètre spécifie s'il faut configurer le sérialiseur de contrat de données pour appliquer l'attribut <xref:System.SerializableAttribute> aux classes sans attribut <xref:System.Runtime.Serialization.DataContractAttribute>.Ce paramètre s'applique uniquement si **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**.  
+-   **/Importxmltypes**: ce paramètre spécifie s’il faut configurer le sérialiseur de contrat de données pour appliquer les <xref:System.SerializableAttribute> classes sans attribut le <xref:System.Runtime.Serialization.DataContractAttribute> attribut.  Ce paramètre s’applique uniquement si **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**.  
   
--   **SupportFx35TypedDataSets** : ce paramètre spécifie s'il faut fournir des fonctionnalités supplémentaires pour des groupes de données typées créés pour .NET Framework 3.5.Lorsque **Mode de sérialiseur** a la valeur **Sérialiseur XML**, l'extension <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> est ajoutée à l'importateur de schéma XML lorsque cette valeur a la valeur True.Lorsque **Mode de sérialiseur** a la valeur **Sérialiseur de contrat de données**, le type <xref:System.DateTimeOffset> est exclu des références lorsque cette valeur a la valeur False, afin que [DateTimeOffset](assetId:///DateTimeOffset?qualifyHint=False&amp;autoUpgrade=True) soit toujours généré pour les versions plus anciennes de l'infrastructure.  
+-   **SupportFx35TypedDataSets**: ce paramètre spécifie s’il faut fournir des fonctionnalités supplémentaires pour les jeux de données typés créés pour .net Framework 3.5. Lorsque **Mode de sérialiseur** a la valeur **sérialiseur XML**, le <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> extension ne sera ajoutée à l’importateur de schéma XML lorsque cette valeur est définie sur True. Lorsque **Mode de sérialiseur** a la valeur **sérialiseur de contrat de données**, le type <xref:System.DateTimeOffset> sera exclu des références lorsque cette valeur est définie sur False, afin qu’un <xref:System.DateTimeOffset> est toujours générée pour les versions antérieures du framework.  
   
--   **InputXsdFiles** : ce paramètre spécifie la liste de fichiers d'entrée.Chaque fichier doit contenir un schéma XML valide.  
+-   **InputXsdFiles**: ce paramètre spécifie la liste des fichiers d’entrée. Chaque fichier doit contenir un schéma XML valide.  
   
--   **Language** : ce paramètre spécifie le langage du code généré de contrat.Le paramètre doit être reconnaissable par <xref:System.CodeDom.Compiler.CodeDomProvider>.  
+-   **Langue**: ce paramètre spécifie le langage du code généré de contrat. Le paramètre doit être reconnaissable par <xref:System.CodeDom.Compiler.CodeDomProvider>.  
   
--   **NamespaceMappings** : ce paramètre spécifie les mappages d'espaces de noms cibles XSD aux espaces de noms CLR.Chaque mappage doit utiliser le format suivant :  
+-   **NamespaceMappings**: ce paramètre spécifie les mappages des espaces de noms cibles XSD aux espaces de noms CLR. Chaque mappage doit utiliser le format suivant :  
   
     ```xml  
-    “<Schema Namespace>, <CLR Namespace>”  
+    "<Schema Namespace>, <CLR Namespace>"  
     ```  
   
      Le sérialiseur XML n'accepte qu'un seul mappage au format suivant :  
   
     ```xml  
-    “*, <CLR Namespace>”  
+    "*, <CLR Namespace>"  
     ```  
   
--   **OutputDirectory** : ce paramètre spécifie le répertoire où les fichiers de code sont générés.  
+-   **OutputDirectory**: ce paramètre spécifie le répertoire où les fichiers de code sont générés.  
   
  Les paramètres seront utilisés pour générer des types de contrat de service à partir des fichiers de contrat de service lorsque le projet est généré.  
   
-## Utilisation du développement Contrat en premier  
- Après avoir ajouté le contrat de service au projet et confirmé les paramètres de génération, générez le projet en appuyant sur **F6**.Les types définis dans le contrat de service sont ensuite disponibles dans le projet.  
+## <a name="using-contract-first-development"></a>Utilisation du développement Contrat en premier  
+ Après l’ajout du contrat de service au projet et confirmer les paramètres de génération, générez le projet en appuyant sur **F6**. Les types définis dans le contrat de service sont ensuite disponibles dans le projet.  
   
  Pour utiliser les types définis dans le contrat de service, ajoutez une référence à `ContractTypes` sous l'espace de noms actuel :  
   
@@ -126,13 +128,13 @@ Les contrats de service doit souvent être créés à partir de services existan
 using MyProjectNamespace.ContractTypes;  
 ```  
   
- Les types définis dans le contrat de service peuvent ensuite être résolus dans le projet, comme indiqué ci\-dessous.  
+ Les types définis dans le contrat de service peuvent ensuite être résolus dans le projet, comme indiqué ci-dessous.  
   
- ![Utilisation de types dérivés d'un contrat de service](../../../docs/framework/wcf/media/contractfirsttypes.png "ContractFirstTypes")  
+ ![Utilisation de types dérivés à partir d’un contrat de service](../../../docs/framework/wcf/media/contractfirsttypes.png "ContractFirstTypes")  
   
- Les types générés par l'outil sont créés dans le fichier GeneratedXSDTypes.cs.Le fichier est créé dans le répertoire \<répertoire de projet\>\/obj\/\<build configuration\>\/XSDGeneratedCode\/ par défaut.L'exemple de schéma au début de cette rubrique est converti comme suit :  
+ Les types générés par l'outil sont créés dans le fichier GeneratedXSDTypes.cs. Le fichier est créé dans le \<répertoire du projet > /obj/\<configuration de build > répertoire /XSDGeneratedCode/ par défaut. L'exemple de schéma au début de cette rubrique est converti comme suit :  
   
-```scr  
+```csharp
 //------------------------------------------------------------------------------  
 // <auto-generated>  
 //     This code was generated by a tool.  
@@ -347,11 +349,10 @@ namespace TestXSD3.ContractTypes
         DisableQueryAlterations,  
     }  
 }  
-  
 ```  
   
-## Erreurs et avertissements  
+## <a name="errors-and-warnings"></a>Erreurs et avertissements  
  Les erreurs et les avertissements rencontrés lors de l'analyse du schéma XSD apparaissent comme des erreurs et des avertissements de build.  
   
-## Héritage de l'interface.  
- Il n'est pas possible d'utiliser l'héritage de l'interface avec un développement Contrat en premier ; cela est cohérent avec la façon dont les interfaces se comportent dans d'autres opérations.Afin d'utiliser une interface qui hérite d'une interface de base, utilisez deux points de terminaison distincts.Le premier point de terminaison utilise le contrat hérité et le second implémente l'interface de base.
+## <a name="interface-inheritance"></a>Héritage de l'interface  
+ Il n'est pas possible d'utiliser l'héritage de l'interface avec un développement Contrat en premier ; cela est cohérent avec la façon dont les interfaces se comportent dans d'autres opérations. Afin d'utiliser une interface qui hérite d'une interface de base, utilisez deux points de terminaison distincts. Le premier point de terminaison utilise le contrat hérité et le second implémente l'interface de base.

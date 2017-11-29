@@ -14,30 +14,27 @@ helpviewer_keywords:
 - application compatibility
 - .NET Framework application compatibility
 - .NET Framework changes
-caps.latest.revision: 19
+caps.latest.revision: "19"
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: e67fff19c4b187010b35519081f46e11effbad6c
+ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b3c7df2984c2c9e8af308ca8070f7207d11ba49e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/25/2017
 ---
-
 # <a name="application-compatibility-in-the-net-framework"></a>Compatibilité des applications dans le .NET Framework
 
 ## <a name="introduction"></a>Introduction
-
 La compatibilité est un objectif très important de chaque version de .NET. La compatibilité garantit que chaque version est additive et que les versions précédentes fonctionnent donc toujours. En revanche, les modifications apportées aux fonctionnalités précédentes (pour améliorer les performances, résoudre des problèmes de sécurité ou corriger des bogues) peuvent provoquer des problèmes de compatibilité dans le code ou des applications qui s’exécutent sous une version ultérieure. Le .NET Framework reconnaît les modifications de reciblage et du runtime. Les modifications de reciblage concernent les applications qui ciblent une version spécifique du .NET Framework, mais sont exécutées sur une version ultérieure. Les modifications du runtime concernent toutes les applications qui s’exécutent sur une version particulière.
 
 Chaque application cible une version spécifique du .NET Framework, qui peut être indiquée par :
 
-- La définition d’une version cible de .NET Framework dans Visual Studio.
-- La spécification de la version cible de .NET Framework dans un fichier projet.
-- L’application d’un <xref:System.Runtime.Versioning.TargetFrameworkAttribute> au code source.
+* La définition d’une version cible de .NET Framework dans Visual Studio.
+* La spécification de la version cible de .NET Framework dans un fichier projet.
+* L’application d’un <xref:System.Runtime.Versioning.TargetFrameworkAttribute> au code source.
 
 Lors de l’exécution sur une version plus récente que celle qui était ciblée, le .NET Framework utilise un subterfuge afin de simuler l’ancienne version ciblée. En d’autres termes, l’application s’exécute sur la version la plus récente du .NET Framework, mais agit comme si elle était exécutée sur la version antérieure. La plupart des problèmes de compatibilité entre les versions du .NET Framework sont atténués via ce modèle de subterfuge.
 
@@ -82,16 +79,14 @@ Chaque problème comprend les informations suivantes :
 -   Les ID des diagnostics disponibles
 
 ## <a name="usage"></a>Utilisation
-
 Pour commencer, sélectionnez le type de modification de la compatibilité ci-dessous :
 
-- [Modifications de reciblage](./retargeting/index.md)
-- [Modifications du runtime](./runtime/index.md)
+* [Modifications de reciblage](./retargeting/index.md)
+* [Modifications du runtime](./runtime/index.md)
 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)   
-[Nouveautés](../../../docs/framework/whats-new/index.md)   
-[Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)
-
+* [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+* [Nouveautés](../../../docs/framework/whats-new/index.md)
+* [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)

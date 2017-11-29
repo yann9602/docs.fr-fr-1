@@ -1,25 +1,31 @@
 ---
-title: "Proc&#233;dure&#160;: afficher des commandes LINQ to SQL | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : afficher des commandes LINQ to SQL"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 1decb05e-37ad-4ed6-ab2f-071eb4c4f628
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e53566f1311fa969dcb9c44f31664bd34b422e46
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: afficher des commandes LINQ to SQL
+# <a name="how-to-display-linq-to-sql-commands"></a>Comment : afficher des commandes LINQ to SQL
 Utilisez <xref:System.Data.Linq.DataContext.GetCommand%2A> pour afficher des commandes SQL et d'autres informations.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Dans l'exemple suivant, la fenêtre de console affiche la sortie de la requête, suivie des commandes SQL générées, du type des commandes et du type de connexion.  
   
  [!code-csharp[DLinqDebuggingSupport#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#3)]
@@ -29,14 +35,14 @@ Utilisez <xref:System.Data.Linq.DataContext.GetCommand%2A> pour afficher des com
   
 ```  
 Customers from London:  
-    Thomas Hardy  
-    Victoria Ashworth  
-    Elizabeth Brown  
-    Ann Devon  
-    Simon Crowther  
-    Marie Bertrand  
-    Hari Kumar  
-    Dominique Perrier  
+    Thomas Hardy  
+    Victoria Ashworth  
+    Elizabeth Brown  
+    Ann Devon  
+    Simon Crowther  
+    Marie Bertrand  
+    Hari Kumar  
+    Dominique Perrier  
 ```  
   
 ```  
@@ -52,5 +58,5 @@ Command Type: Text
 Connection: System.Data.SqlClient.SqlConnection  
 ```  
   
-## Voir aussi  
- [Prise en charge du débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+## <a name="see-also"></a>Voir aussi  
+ [Prise en charge le débogage](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

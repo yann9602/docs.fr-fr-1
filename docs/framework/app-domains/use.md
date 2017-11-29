@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 53180d5d3d9314c3f078ddca8f5c155b01981f4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b2dac2238ae9117d3678335748c680d594a8b5c6
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 Les domaines d’application fournissent une unité d’isolation pour le common language runtime. Ils sont créés et exécutés dans un processus. Les domaines d’application sont généralement créés par un hôte de runtime, qui est une application responsable du chargement du runtime dans un processus et de l’exécution du code utilisateur dans un domaine d’application. L’hôte de runtime crée un processus et un domaine d’application par défaut et exécute le code managé dans ce domaine d’application. Les hôtes de runtime comprennent ASP.NET, Microsoft Internet Explorer et le shell Windows.  
@@ -56,7 +54,7 @@ Les domaines d’application fournissent une unité d’isolation pour le common
  Explique comment recevoir une notification indiquant qu’une exception a été levée, avant que le common language runtime ne commence à rechercher des gestionnaires d’exceptions.  
   
  [Résoudre les chargements d'assemblys](../../../docs/framework/app-domains/resolve-assembly-loads.md)  
- Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=fullName> pour résoudre les échecs de chargement de l’assembly.  
+ Offre des conseils sur l’utilisation de l’événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour résoudre les échecs de chargement de l’assembly.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.AppDomain>  
@@ -77,4 +75,3 @@ Les domaines d’application fournissent une unité d’isolation pour le common
   
  [Vue d’ensemble de la réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.
-

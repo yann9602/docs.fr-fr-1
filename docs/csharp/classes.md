@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
 ms.openlocfilehash: 13cbd3a5b53ea9b0f1acb22684b6a28639d00751
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="classes"></a>Classes
 Une *classe* est une construction qui vous permet de créer des types personnalisés en regroupant des variables d’autres types, méthodes et événements. Une classe s’apparente à un plan. Elle définit les données et le comportement d’un type. Si la classe n’est pas déclarée comme static, le code client peut l’utiliser en créant des *objets* ou des *instances* assignés à une variable. La variable reste en mémoire jusqu’à ce que toutes les références à celle-ci soient hors de portée. À ce stade, le CLR la marque comme admissible pour le garbage collection. Si la classe est déclarée comme [static](language-reference/keywords/static.md), il existe une seule copie en mémoire et le code client peut y accéder uniquement par le biais de la classe elle-même, et non par une *variable d’instance*. Pour plus d’informations, consultez [Classes static et membres de classe static](programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
 
@@ -84,5 +82,4 @@ Pour plus d’informations, consultez [Spécification du langage C#](language-r
 [Constructeurs](programming-guide/classes-and-structs/constructors.md)   
 [Finaliseurs](programming-guide/classes-and-structs/destructors.md)   
 [Objets](programming-guide/classes-and-structs/objects.md)
-
 

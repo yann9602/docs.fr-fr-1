@@ -1,30 +1,21 @@
 ---
 title: Attributs courants (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: aded9c9b2e8c253eebd6c71782f0bff6ca0104ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98bb21ef0b5582202578b72fd6eaf459801747cc
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="common-attributes-c"></a>Attributs courants (C#)
 Cette rubrique décrit les attributs le plus couramment utilisés dans les programmes C#.  
@@ -67,7 +58,7 @@ Cette rubrique décrit les attributs le plus couramment utilisés dans les progr
 |<xref:System.Reflection.AssemblyFlagsAttribute>|Spécifie si un assembly prend en charge l’exécution côte à côte sur le même ordinateur, dans le même processus ou dans le même domaine d’application.|  
   
 ### <a name="informational-attributes"></a>Attributs d’informations  
- Vous pouvez utiliser les attributs d’informations pour fournir des informations supplémentaires sur le produit ou la société de l’assembly. Le tableau suivant présente les attributs d’informations définis dans l’espace de noms <xref:System.Reflection?displayProperty=fullName>.  
+ Vous pouvez utiliser les attributs d’informations pour fournir des informations supplémentaires sur le produit ou la société de l’assembly. Le tableau suivant présente les attributs d’informations définis dans l’espace de noms <xref:System.Reflection?displayProperty=nameWithType>.  
   
 |Attribut|Objectif|  
 |---------------|-------------|  
@@ -80,7 +71,7 @@ Cette rubrique décrit les attributs le plus couramment utilisés dans les progr
 |<xref:System.CLSCompliantAttribute>|Indique si l’assembly est conforme à la spécification CLS (Common Language Specification).|  
   
 ### <a name="assembly-manifest-attributes"></a>Attributs de manifeste de l’assembly  
- Vous pouvez utiliser les attributs de manifeste de l’assembly pour fournir des informations dans le manifeste de l’assembly. Cela inclut le titre, la description, l’alias par défaut et la configuration. Le tableau suivant présente les attributs de manifeste de l’assembly définis dans l’espace de noms <xref:System.Reflection?displayProperty=fullName>.  
+ Vous pouvez utiliser les attributs de manifeste de l’assembly pour fournir des informations dans le manifeste de l’assembly. Cela inclut le titre, la description, l’alias par défaut et la configuration. Le tableau suivant présente les attributs de manifeste de l’assembly définis dans l’espace de noms <xref:System.Reflection?displayProperty=nameWithType>.  
   
 |Attribut|Objectif|  
 |---------------|-------------|  
@@ -236,7 +227,7 @@ class SampleClass
 ##  <a name="CallerInfo"></a> Attributs d’informations de l’appelant  
  À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin du fichier de code source, le numéro de ligne dans le code source, ainsi que le nom de membre de l’appelant.  
   
- Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=fullName> :  
+ Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :  
   
 |Attribut|Description|Type|  
 |---|---|---|  
@@ -247,10 +238,9 @@ class SampleClass
  Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [Informations relatives à l’appelant (C#)](../../../../csharp/programming-guide/concepts/caller-information.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Reflection>   
- <xref:System.Attribute>   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Attributs](https://msdn.microsoft.com/library/5x6cd29c)   
- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)  
+ [Attributs](https://msdn.microsoft.com/library/5x6cd29c)  
+ [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
-

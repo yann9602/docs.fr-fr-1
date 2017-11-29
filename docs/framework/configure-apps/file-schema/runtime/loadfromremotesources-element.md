@@ -1,102 +1,104 @@
 ---
-title: "&lt;loadFromRemoteSources&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "loadFromRemoteSources, élément"
-  - "<loadFromRemoteSources>, élément"
+title: "&lt;loadFromRemoteSources&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- loadFromRemoteSources element
+- <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-caps.latest.revision: 31
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 31
+caps.latest.revision: "31"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 959073381ef936fa7c0b248419c8529deaee969f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;loadFromRemoteSources&gt;, &#233;l&#233;ment
-Spécifie si la confiance totale doit être accordée aux assemblys de sources distantes.  
+# <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadFromRemoteSources&gt; élément
+Spécifie si les assemblys à partir de sources distantes doivent se voir accorder une confiance totale.  
   
 > [!NOTE]
->  Si vous avez été dirigé vers cette rubrique en raison d'un message d'erreur dans la liste des erreurs de projet Visual Studio ou d'une erreur de build, consultez [Comment : utiliser un assembly à partir du Web dans Visual Studio](http://msdn.microsoft.com/fr-fr/d8635b63-89a0-41aa-90f4-f351b2111070).  
+>  Si vous avez été redirigé vers cette rubrique en raison d’un message d’erreur dans la liste d’erreurs de projet Visual Studio ou une erreur de build, consultez [Comment : utiliser un Assembly à partir du Web dans Visual Studio](http://msdn.microsoft.com/en-us/d8635b63-89a0-41aa-90f4-f351b2111070).  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<loadFromRemoteSources >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <loadFromRemoteSources    
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si la confiance totale doit être accordée à un assembly chargé à partir de sources distantes.|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si un assembly est chargé à partir de sources distantes doit-elle se voir accorder une confiance totale.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|N'accordez pas une confiance totale aux applications à partir de sources distantes.  Il s'agit de la valeur par défaut.|  
-|`true`|Accordez la confiance totale aux applications de sources distantes.|  
+|-----------|-----------------|  
+|`false`|N’accordez pas une confiance totale aux applications à partir de sources distantes. Il s'agit de la valeur par défaut.|  
+|`true`|Accorder une confiance totale aux applications à partir de sources distantes.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
-## Notes  
- Dans le .NET Framework version 3.5 et versions antérieures, si vous chargiez un assembly à partir d'un emplacement distant, l'assembly s'exécutait avec un niveau de confiance partiel, avec un jeu accordé qui dépendait de la zone dans laquelle il était chargé.  Par exemple, si vous avez chargé l'assembly à partir d'un site Web, il était chargé dans la zone Internet et se voyait accorder le jeu d'autorisations Internet.  En d'autres termes, il s'exécutait dans un bac à sable \(sandbox\) Internet.  Si vous essayez d'exécuter cet assembly avec [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] ou avec des versions ultérieures, une exception est levée ; vous devez créer explicitement un bac à sable \(sandbox\) pour l'assembly \(voir [Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable \(sandbox\)](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)\), ou l'exécuter avec une confiance totale.  
+## <a name="remarks"></a>Remarques  
+ Dans le .NET Framework version 3.5 et les versions antérieures, si vous avez chargé un assembly à partir d’un emplacement distant, l’assembly s’exécute une confiance partielle avec un jeu d’autorisations qui dépendaient de la zone dans laquelle il a été chargé. Par exemple, si vous avez chargé un assembly à partir d’un site Web, il a été chargé dans la zone Internet et accordé le jeu d’autorisations Internet. En d’autres termes, elle est exécutée dans un bac à sable Internet. Si vous essayez d’exécuter cet assembly dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures, une exception est levée ; vous devez soit créer explicitement un bac à sable pour l’assembly (consultez [Comment : exécuter Partially Trusted Code dans un bac à sable](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)), ou l’exécuter en mode confiance totale.  
   
- L'élément `<loadFromRemoteSources>` vous permet de spécifier que les assemblys qui auraient du s'exécuter avec un niveau de confiance partiel dans les versions antérieures du .NET Framework devront exécutés avec une confiance totale avec [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et avec les versions ultérieures.  Par défaut, les assemblys distants ne fonctionnent pas dans [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.  Pour exécuter un assembly distants, vous devez soit de exécutez\-le sous la forme d'un niveau de confiance totale ou créer <xref:System.AppDomain> sandboxed dans lequel l'exécuter.  
-  
-> [!NOTE]
->  Dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], les assemblys sur les partages réseau local sont exécutés comme complètement approuvé par défaut ; vous ne devez pas activer l'élément `<loadFromRemoteSources>`.  
+ Le `<loadFromRemoteSources>` élément vous permet de spécifier que les assemblys qui auraient été exécutées de confiance partiel dans les versions antérieures du .NET Framework doivent être exécutées entièrement confiance dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures. Par défaut, les assemblys à distance ne s’exécutent pas dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures. Pour exécuter un assembly distant, vous devez l’exécuter avec une confiance totale ou créer un bac à sable <xref:System.AppDomain> dans pour son exécution.  
   
 > [!NOTE]
->  Si une application a été copiée à partir du Web, elle est signalée par Windows comme une application Web, même si elle réside sur l'ordinateur local.  Vous pouvez modifier cette désignation en modifiant les propriétés de fichier ou utiliser l'élément `<loadFromRemoteSources>` pour accorder la confiance totale à l'assembly.  Ou bien, vous pouvez utiliser la méthode de <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> pour le chargement d'un assembly local que le système d'exploitation est marqué comme ayant été chargé à partir du Web.  
-  
- L'attribut `enabled` pour cet élément est efficace uniquement lorsque la sécurité d'accès du code est désactivée.  Par défaut, la stratégie CAS est désactivée dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures.  Si vous affectez à `enabled` la valeur `true`, les applications distantes sont de confiance totale.  
-  
- Si `<loadFromRemoteSources>` `enabled` n'a pas la valeur `true`, une exception est levée dans les conditions suivantes :  
-  
--   Le comportement de bac à sable du domaine actuel est différent de son comportement dans [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  La stratégie CAS doit être désactivée et le domaine actuel ne doit pas être en mode Bac à sable \(sandbox\).  
-  
--   L'assembly chargé ne provient pas de la zone `MyComputer`.  
+>  Dans le [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], assemblys sur des partages de réseau local sont exécutées avec une confiance totale par défaut ; vous n’avez pas à activer le `<loadFromRemoteSources>` élément.  
   
 > [!NOTE]
->  Vous pouvez obtenir une <xref:System.IO.FileLoadException> sur un PC virtuel Windows lorsque vous essayez de charger un fichier à partir des dossiers liés sur l'ordinateur d'hébergement.  Cette erreur peut également se produire lorsque vous essayez de charger un fichier d'un dossier lié \(plus [Services de bureau à distance](http://go.microsoft.com/fwlink/?LinkId=182775) des services Terminal Server\).  Pour éviter une exception, affectez à `enabled` la valeur `true`.  
+>  Si une application a été copiée à partir du web, il est signalé par Windows comme étant une application web, même s’il se trouve sur l’ordinateur local. Vous pouvez modifier cette désignation en modifiant les propriétés du fichier, ou vous pouvez utiliser la `<loadFromRemoteSources>` élément à accorder à l’assembly de confiance totale. En guise d’alternative, vous pouvez utiliser la <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> méthode pour charger un assembly local que le système d’exploitation a signalé comme ayant été chargé à partir du web.  
   
- La définition de l'élément `<loadFromRemoteSources>` à `true` empêche la levée de cette exception.  Cela vous permet de spécifier que vous ne comptez pas sur le Common Language Runtime pour passer en mode Bac à sable \(sandbox\) les assemblys chargés pour des raisons de sécurité, et qu'ils peuvent être autorisés à s'exécuter avec une confiance totale.  
+ Le `enabled` d’attribut pour cet élément est efficace uniquement lorsque la sécurité d’accès du code (CAS) est désactivée. Par défaut, la stratégie CAS est désactivée dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] et versions ultérieures. Si vous définissez `enabled` à `true`, applications distantes sont de confiance totale.  
+  
+ Si `<loadFromRemoteSources>``enabled` n’est pas définie `true`, une exception est levée dans les conditions suivantes :  
+  
+-   Le comportement de bac à sable du domaine actuel est différent de son comportement dans le [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)]. Cela nécessite la stratégie CAS doit être désactivée et le domaine actuel, ne pas à sable (sandbox).  
+  
+-   L’assembly en cours de chargement n’est pas à partir de la `MyComputer` zone.  
+  
+> [!NOTE]
+>  Vous risquez d’obtenir un <xref:System.IO.FileLoadException> dans une application Windows Virtual PC lorsque vous essayez de charger un fichier à partir des dossiers liés sur l’ordinateur hôte. Cette erreur peut également se produire lorsque vous essayez de charger un fichier à partir d’un dossier lié via [Services Bureau à distance](http://go.microsoft.com/fwlink/?LinkId=182775) (Terminal Services). Pour éviter l’exception, définissez `enabled` à `true`.  
+  
+ Définition de la `<loadFromRemoteSources>` élément `true` empêche cette exception ne soit levée. Il permet de spécifier que vous ne comptez pas sur le common language runtime pour le bac à sable les assemblys chargés pour la sécurité, et qu’ils soient autorisés à exécuter en tant qu’une confiance totale.  
   
 > [!IMPORTANT]
->  Si l'assembly ne doit pas s'exécuter avec une confiance totale, ne définissez pas cet élément de configuration.  Créez à la place un <xref:System.AppDomain> bac à sable dans lequel charger l'assembly.  
+>  Si l’assembly ne doit pas s’exécuter en mode confiance totale, ne définissez pas cet élément de configuration. Au lieu de cela, créez un bac à sable <xref:System.AppDomain> dans lequel charger l’assembly.  
   
-## Fichier de configuration  
- Cet élément est utilisé en général dans le fichier de configuration de l'application, mais peut être utilisée dans d'autres fichiers de configuration selon le contexte.  Pour plus d'informations, consultez l'article [Utilisations plus implicites de stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839) du blog de sécurité.NET.  
+## <a name="configuration-file"></a>Fichier de configuration  
+ Cet élément est généralement utilisé dans le fichier de configuration d’application, mais il peut être utilisé dans d’autres fichiers de configuration en fonction du contexte. Pour plus d’informations, consultez l’article [plus implicite utilise de la stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839) dans le blog de sécurité .NET.  
   
-## Exemple  
- L'exemple suivant indique comment accorder la confiance totale aux applications de sources distantes.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment accorder une confiance totale aux applications à partir de sources distantes.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <loadFromRemoteSources enabled="true"/>  
@@ -104,8 +106,8 @@ Spécifie si la confiance totale doit être accordée aux assemblys de sources d
 </configuration>  
 ```  
   
-## Voir aussi  
- [Utilisations plus implicites de stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)   
- [Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable \(sandbox\)](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)   
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Utilise plus implicite de stratégie CAS : loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)  
+ [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)

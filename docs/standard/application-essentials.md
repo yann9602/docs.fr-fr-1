@@ -1,5 +1,5 @@
 ---
-title: "Bases du développement d’application dans le .NET Framework"
+title: Application .NET Framework Essentials
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net
@@ -8,21 +8,19 @@ ms.suite:
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- .NET Framework development
+helpviewer_keywords: .NET Framework development
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 318bf7a77748dfcee5f28243409d31e8d3e5c9ff
 ms.openlocfilehash: 00bc12a16418038c74a5e8858a77818e66982727
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="net-framework-application-essentials"></a>Bases du développement d’application dans le .NET Framework
+# <a name="net-framework-application-essentials"></a>Application .NET Framework Essentials
 Cette section de la documentation .NET Framework fournit des informations sur des tâches de développement d’application de base dans le .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -77,4 +75,3 @@ Cette section de la documentation .NET Framework fournit des informations sur de
   
  [Sécurité](../../docs/standard/security/index.md)  
  Fournit des informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.
-

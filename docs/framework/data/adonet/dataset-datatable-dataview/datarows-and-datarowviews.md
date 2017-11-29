@@ -1,25 +1,31 @@
 ---
-title: "DataRows et DataRowViews | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: DataRows et DataRowViews
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8f5eec26-b809-4aca-8778-7e202356d856
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e342ce805880da848da1e17700c055aba2c74f19
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# DataRows et DataRowViews
-Un objet <xref:System.Data.DataView> expose une collection énumérable d'objets <xref:System.Data.DataRowView>.  Les objets **DataRowView** exposent des valeurs en tant que tableaux d'objets qui sont indexés soit en fonction du nom, soit en fonction de la référence ordinale de la colonne dans la table sous\-jacente.  Vous pouvez accéder à l'objet <xref:System.Data.DataRow> exposé par le **DataRowView** à l'aide de la propriété <xref:System.Data.DataRowView.Row%2A> du **DataRowView**.  
+# <a name="datarows-and-datarowviews"></a>DataRows et DataRowViews
+Un objet <xref:System.Data.DataView> expose une collection énumérable d'objets <xref:System.Data.DataRowView>. Le **DataRowView** objets exposent des valeurs en tant que tableaux d’objets qui sont indexées par le nom ou la référence ordinale de la colonne dans la table sous-jacente. Vous pouvez accéder à la <xref:System.Data.DataRow> qui est exposé par le **DataRowView** à l’aide de la <xref:System.Data.DataRowView.Row%2A> propriété de la **DataRowView**.  
   
- Lorsque vous affichez des valeurs à l'aide d'un **DataRowView**, la propriété <xref:System.Data.DataView.RowStateFilter%2A> du **DataView** détermine la version de ligne du **DataRow** sous\-jacent qui est exposée.  Pour plus d'informations sur l'accès à différentes versions de ligne à l'aide d'un **DataRow**, voir [États et versions de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+ Lorsque vous affichez des valeurs à l’aide un **DataRowView**, le <xref:System.Data.DataView.RowStateFilter%2A> propriété de la **DataView** détermine la version de ligne de sous-jacent **DataRow** est exposé. Pour plus d’informations sur les différentes versions de ligne à l’aide de l’accès à un **DataRow**, consultez [état des lignes et des Versions de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   
  L'exemple de code suivant affiche toutes les valeurs actuelles et d'origine d'une table.  
   
@@ -42,7 +48,6 @@ Public Shared Sub WriteView(thisDataView As DataView)
     Console.WriteLine()  
   Next  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -64,10 +69,10 @@ public static void WriteView(DataView thisDataView)
 }  
 ```  
   
-## Voir aussi  
- <xref:System.Data.DataRowVersion>   
- <xref:System.Data.DataViewRowState>   
- <xref:System.Data.DataView>   
- <xref:System.Data.DataRowView>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Data.DataRowVersion>  
+ <xref:System.Data.DataViewRowState>  
+ <xref:System.Data.DataView>  
+ <xref:System.Data.DataRowView>  
+ [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

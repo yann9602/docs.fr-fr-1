@@ -1,87 +1,89 @@
 ---
-title: "&lt;bypassTrustedAppStrongNames&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<bypassTrustedAppStrongNames> (élément)"
-  - "bypassTrustedAppStrongNames (élément)"
-  - "fonctionnalité consistant à ignorer les noms forts"
-  - "assemblys avec nom fort, charger dans des domaines d'application de confiance"
+title: "&lt;bypassTrustedAppStrongNames&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- strong-name bypass feature
+- bypassTrustedAppStrongNames element
+- strong-named assemblies, loading into trusted application domains
+- <bypassTrustedAppStrongNames> element
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 2b3e1cb839e9e7fd81a5452c0e034c3552b230cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;bypassTrustedAppStrongNames&gt;, &#233;l&#233;ment
-Spécifie s'il faut ignorer la validation de noms forts sur les assemblys de confiance totale chargés dans un <xref:System.AppDomain> de confiance totale.  
+# <a name="ltbypasstrustedappstrongnamesgt-element"></a>&lt;bypassTrustedAppStrongNames&gt; élément
+Spécifie s’il faut ignorer la validation des noms forts sur les assemblys de confiance totale sont chargés dans un niveau de confiance totale <xref:System.AppDomain>.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<bypassTrustedAppStrongNames >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <bypassTrustedAppStrongNames    
    enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si la fonctionnalité consistant à ignorer la validation des noms forts pour les assemblys de confiance totale est activée.  Lorsque cette fonctionnalité est activée, l'exactitude des noms forts n'est pas validée lorsque l'assembly est chargé.  La valeur par défaut est `true`.|  
+|---------------|-----------------|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si la fonctionnalité de contournement qui évite la validation des noms forts pour les assemblys de confiance totale est activée. Lorsque cette fonctionnalité est activée, les noms forts ne sont pas validées sont correctes lorsque l’assembly est chargé. La valeur par défaut est `true`.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`true`|Les signatures avec nom fort sur les assemblys de confiance totale ne sont pas validées lorsque les assemblys sont chargés dans un <xref:System.AppDomain> de confiance totale.  Il s'agit de la valeur par défaut.|  
-|`false`|Les signatures avec nom fort sur les assemblys de confiance totale sont validées lorsque les assemblys sont chargés dans un <xref:System.AppDomain> de confiance totale.  Seule l'exactitude de la signature avec nom fort est vérifiée. La signature n'est pas comparée à un autre nom fort en vue d'établir une correspondance.|  
+|-----------|-----------------|  
+|`true`|Les signatures avec nom fort sur les assemblys de confiance totale ne sont pas validées lorsque les assemblys sont chargés dans un niveau de confiance totale <xref:System.AppDomain>. Il s'agit de la valeur par défaut.|  
+|`false`|Les signatures avec nom fort sur les assemblys de confiance totale sont validées lorsque les assemblys sont chargés dans un niveau de confiance totale <xref:System.AppDomain>. La signature de nom fort est vérifiée uniquement pour la vérification de signature ; Il n’est pas comparé à un autre nom fort pour une correspondance.|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- La fonctionnalité consistant à ignorer les noms forts évite la surcharge inhérente à la vérification des signatures avec nom fort des assemblys de confiance totale.  
+## <a name="remarks"></a>Remarques  
+ La fonctionnalité de contournement de noms forts évite de vérification de signature de nom fort des assemblys de confiance totale.  
   
  Cette fonctionnalité s'applique à tout assembly signé avec un nom fort qui présente les caractéristiques suivantes :  
   
--   Confiance totale sans la preuve <xref:System.Security.Policy.StrongName> \(par exemple, dispose de la preuve de zone `MyComputer` \).  
+-   Confiance totale sans la <xref:System.Security.Policy.StrongName> preuve (par exemple, a `MyComputer` preuve de zone).  
   
 -   Chargé dans un <xref:System.AppDomain> de confiance totale.  
   
--   Chargé à partir d'un emplacement sous la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> de ce <xref:System.AppDomain>.  
+-   Chargé à partir d'un emplacement sous la propriété <xref:System.AppDomainSetup.ApplicationBase%2A> de cet <xref:System.AppDomain>.  
   
 -   Sans signature différée.  
   
 > [!NOTE]
->  Si la fonctionnalité consistant à ignorer la vérification a été désactivée pour toutes les applications de l'ordinateur en utilisant une clé de Registre, ce paramètre de fichier de configuration n'a aucun effet.  Pour plus d'informations, consultez [Comment : désactiver la fonctionnalité consistant à ignorer les noms forts](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
+>  Si cette fonctionnalité a été désactivée pour toutes les applications sur l’ordinateur à l’aide d’une clé de Registre, ce paramètre de fichier de configuration n’a aucun effet. Pour plus d’informations, consultez [Comment : désactiver la fonctionnalité de dérivation avec un nom fort](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
   
-## Exemple  
- L'exemple suivant indique comment spécifier le comportement qui valide la signature avec nom fort sur les assemblys de confiance totale.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment spécifier le comportement qui valide la signature de nom fort sur les assemblys de confiance totale.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <bypassTrustedAppStrongNames enabled="false"/>  
@@ -89,7 +91,7 @@ Spécifie s'il faut ignorer la validation de noms forts sur les assemblys de con
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Comment : désactiver la fonctionnalité consistant à ignorer les noms forts](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)

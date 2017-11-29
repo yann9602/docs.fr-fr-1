@@ -1,25 +1,28 @@
 ---
-title: "R&#233;f&#233;rence des suivis | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Référence des suivis"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bd960851-162d-4dcc-8c0c-0ec8f455d56d
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9e86953d250002b0cc630e864f79cddd221cdd03
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# R&#233;f&#233;rence des suivis
+# <a name="traces-reference"></a>Référence des suivis
 Cette section répertorie tous les suivis générés par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  `Administration`  
   
  [System.ServiceModel.Administration.WmiPut](../../../../../docs/framework/wcf/diagnostics/tracing/system-servicemodel-administration-wmiput.md)  

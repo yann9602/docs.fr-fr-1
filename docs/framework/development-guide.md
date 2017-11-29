@@ -5,23 +5,20 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- .NET Framework, development guide
+helpviewer_keywords: .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 429eae61ab311d2a7a68567c97f40e1fdc0a1f3e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7233827b9c331529cb70daf13aeb1308a053b1c1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
@@ -43,7 +40,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  Décrit comment utiliser WCF (Windows Communication Foundation) pour générer des applications orientées service, sécurisées et fiables.  
   
  [Création de workflows avec Windows Workflow Foundation](windows-workflow-foundation/index.md)     
- Fournit des informations sur le modèle de programmation, les exemples et les outils pour utiliser Windows Workflow Foundation (WF).   
+ Fournit des informations sur le modèle de programmation, les exemples et les outils pour utiliser Windows Workflow Foundation (WF).  
 
  [Applications de service Windows](../../docs/framework/windows-services/index.md)  
  Explique comment utiliser Visual Studio et le .NET Framework pour créer une application installée comme un service, la démarrer, l'arrêter et contrôler son comportement.  
@@ -94,4 +91,3 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
   
  [Exemples .NET Framework](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
  Fournit des liens vers la Galerie d'échantillons de code MSDN présentant des exemples d'applications qui illustrent les technologies .NET Framework.
-

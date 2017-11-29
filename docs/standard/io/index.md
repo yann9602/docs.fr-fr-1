@@ -16,16 +16,15 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 48a3c0e0e00e9fd55dd3e4dfde8e20522b801bc8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fbd31e6bff5502291fd24b57b55c81046da330d3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
 E/S de fichier et de flux (entrées/sorties) fait référence au transfert de données vers ou depuis un support de stockage. Dans le .NET Framework, les espaces de noms [System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) contiennent des types qui permettent la lecture et l'écriture, de façon synchrone ou asynchrone, sur les flux de données et les fichiers. Ces espaces de noms contiennent également les types qui exécutent la compression et la décompression sur les fichiers, et ceux qui permettent la communication via des canaux et des ports série.  
@@ -33,7 +32,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
  Un fichier est une collection ordonnée et nommée d'octets ayant un stockage persistant. Lorsque vous travaillez sur des fichiers, vous manipulez des chemins d'accès aux répertoires, du stockage disque et des noms de fichiers et de répertoires. En revanche, un flux est une séquence d'octets que vous pouvez lire et écrire dans un magasin de stockage, qui peut être l'un des nombreux supports de stockage (par exemple, des disques ou de la mémoire). De même qu'il existe d'autres magasins de stockage que les disques, il existe d'autres flux que les flux de fichiers, tels que les flux de réseau, de mémoire et de canaux.  
   
 ## <a name="files-and-directories"></a>Fichiers et répertoires  
- Utilisez les types de l'espace de noms <xref:System.IO?displayProperty=fullName> pour interagir avec les fichiers et les répertoires. Par exemple, obtenez et définissez les propriétés des fichiers et des répertoires, et extrayez les collections de fichiers et de répertoires en fonction de critères de recherche.  
+ Utilisez les types de l'espace de noms <xref:System.IO?displayProperty=nameWithType> pour interagir avec les fichiers et les répertoires. Par exemple, obtenez et définissez les propriétés des fichiers et des répertoires, et extrayez les collections de fichiers et de répertoires en fonction de critères de recherche.  
   
  Voici quelques classes de fichiers et de répertoires couramment utilisées :  
   
@@ -47,7 +46,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
 -   <xref:System.IO.Path> fournit des méthodes et des propriétés pour le traitement des chaînes de répertoire entre plateformes.  
   
- En plus d'utiliser ces classes, les utilisateurs de Visual Basic peuvent utiliser les méthodes et les propriétés fournies par la classe <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=fullName> pour l'E/S de fichier.  
+ En plus d'utiliser ces classes, les utilisateurs de Visual Basic peuvent utiliser les méthodes et les propriétés fournies par la classe <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> pour l'E/S de fichier.  
   
  Voir [Comment : copier des répertoires](../../../docs/standard/io/how-to-copy-directories.md), [Comment : créer une liste de répertoires](http://msdn.microsoft.com/en-us/4d2772b1-b991-4532-a8a6-6ef733277e69) et [Comment : énumérer des répertoires et des fichiers](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
   
@@ -83,7 +82,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
  Pour obtenir un exemple d'utilisation de flux de façon asynchrone, consultez [E/S sur fichier asynchrones](../../../docs/standard/io/asynchronous-file-i-o.md).  
   
 ## <a name="readers-and-writers"></a>Lecteurs et writers  
- L'espace de noms <xref:System.IO?displayProperty=fullName> fournit également des types pour la lecture des caractères encodés à partir des flux et l'écriture des caractères encodés dans les flux. En général, les flux sont conçus pour l'entrée et la sortie d'octets. Les types lecteur et writer gèrent la conversion des caractères encodés en octets et inversement pour permettre au flux de terminer l'opération. Chaque classe de lecteur et writer est associée à un flux, qui peut être récupéré via la propriété `BaseStream` de la classe.  
+ L'espace de noms <xref:System.IO?displayProperty=nameWithType> fournit également des types pour la lecture des caractères encodés à partir des flux et l'écriture des caractères encodés dans les flux. En général, les flux sont conçus pour l'entrée et la sortie d'octets. Les types lecteur et writer gèrent la conversion des caractères encodés en octets et inversement pour permettre au flux de terminer l'opération. Chaque classe de lecteur et writer est associée à un flux, qui peut être récupéré via la propriété `BaseStream` de la classe.  
   
  Voici quelques classes de lecteur et writer couramment utilisées :  
   
@@ -105,7 +104,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
  Pour plus d'informations, consultez [E/S de fichier asynchrone](../../../docs/standard/io/asynchronous-file-i-o.md).  
   
 ## <a name="compression"></a>Compression  
- La compression désigne le processus de réduction de la taille d'un fichier pour le stockage. La décompression consiste à extraire le contenu d'un fichier compressé afin qu'il soit dans un format utilisable. L'espace de noms <xref:System.IO.Compression?displayProperty=fullName> contient des types pour la compression et la décompression de fichiers et de flux.  
+ La compression désigne le processus de réduction de la taille d'un fichier pour le stockage. La décompression consiste à extraire le contenu d'un fichier compressé afin qu'il soit dans un format utilisable. L'espace de noms <xref:System.IO.Compression?displayProperty=nameWithType> contient des types pour la compression et la décompression de fichiers et de flux.  
   
  Les classes suivantes sont fréquemment utilisées lors de la compression et de la décompression de fichiers et de flux :  
   
@@ -156,7 +155,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
  Pour plus d'informations sur les opérations d'E/S dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], consultez [Démarrage rapide : lecture et écriture dans un fichier](http://go.microsoft.com/fwlink/p/?LinkId=243072) sur le centre de développement Windows.  
   
 ## <a name="io-and-security"></a>E/S et sécurité  
- Lorsque vous utilisez les classes de l'espace de noms <xref:System.IO?displayProperty=fullName>, vous devez suivre les spécifications de sécurité du système d'exploitation telles que les listes de contrôle d'accès (ACL) pour contrôler l'accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
+ Lorsque vous utilisez les classes de l'espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les spécifications de sécurité du système d'exploitation telles que les listes de contrôle d'accès (ACL) pour contrôler l'accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
   
  Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. À la place, utilisez le [stockage isolé](../../../docs/standard/io/isolated-storage.md) pour les applications .NET Framework traditionnelles ou les [données d'application](http://go.microsoft.com/fwlink/?LinkId=229175) pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
   
@@ -183,4 +182,3 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
 -   [Fichiers mappés en mémoire](../../../docs/standard/io/memory-mapped-files.md)  
   
  Décrit les fichiers mappés en mémoire, qui contiennent le contenu de fichiers stockés sur le disque dans la mémoire virtuelle. Vous pouvez utiliser des fichiers mappés en mémoire afin de modifier des fichiers très volumineux et de créer la mémoire partagée pour la communication entre processus.
-

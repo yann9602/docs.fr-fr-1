@@ -10,14 +10,15 @@ ms.prod: .net-core
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 069ad711-3eaa-45c6-94d7-b40249cc8b99
+dev_langs:
+- csharp
+- vb
+ms.openlocfilehash: 7c884985873679b25831c15ef5c8b6370ecd6460
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 3a25c1c3b540bac8ef963a8bbf708b0700c3e9e2
-ms.openlocfilehash: 30e46ae97563add2bdf34948349cf2d6214d0de8
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017
 
 Dans [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](library-with-visual-studio.md) ou [Génération d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](vb-library-with-visual-studio.md), vous avez créé une bibliothèque de classes simple qui ajoute une méthode d’extension à la classe <xref:System.String>. À présent, vous allez créer un test unitaire pour vérifier qu’elle fonctionne comme prévu. Vous allez ajouter votre projet de test unitaire à la solution créée dans la rubrique précédente.
@@ -103,7 +104,7 @@ Vous pouvez également appliquer l’attribut [\[ExpectedException\]](https://ms
 
 Dans le test de la méthode `StringLibrary.StartsWithUpper`, vous voulez fournir une série de chaînes qui commencent par une majuscule. Vous attendez que la méthode retourne `true` dans de tels cas, et vous pouvez donc appeler la méthode [Assert.IsTrue(Booléen, Chaîne)](https://msdn.microsoft.com/library/ms243754.aspx). De même, vous voulez fournir des chaînes qui commencent par autre chose qu’un caractère majuscule. Vous attendez que la méthode retourne `false` dans de tels cas, et vous pouvez donc appeler la méthode [Assert.IsFalse(Booléen, Chaîne)](https://msdn.microsoft.com/library/ms243805.aspx).
 
-Dans la mesure où votre méthode de bibliothèque gère les chaînes, vous voulez également vous assurer qu’elle gère correctement une [chaîne vide (`String.Empty`)](xref:System.String.Empty), une chaîne valide sans caractères et dont @System.String.Length a la valeur 0 et une chaîne `null` qui n’a pas été initialisée. Si vous appelez `StartsWithUpper` comme méthode d’extension sur une instance @System.String, il n’est pas possible de lui passer une chaîne `null`. Toutefois, vous pouvez également l’appeler directement comme méthode statique et passer un seul argument @System.String.
+Dans la mesure où votre méthode de bibliothèque gère les chaînes, vous voulez également vous assurer qu’elle gère correctement une [chaîne vide (`String.Empty`)](xref:System.String.Empty), une chaîne valide sans caractères et dont <xref:System.String.Length> a la valeur 0 et une chaîne `null` qui n’a pas été initialisée. Si vous appelez `StartsWithUpper` comme méthode d’extension sur une instance <xref:System.String>, il n’est pas possible de lui passer une chaîne `null`. Toutefois, vous pouvez également l’appeler directement comme méthode statique et passer un seul argument <xref:System.String>.
 
 Vous allez définir trois méthodes, chacune appelant sa méthode [Assert](https://msdn.microsoft.com/library/microsoft.visualstudio.testtools.unittesting.assert.aspx) de façon répétée pour chaque élément d’un tableau de chaînes. Comme la méthode de test échoue dès qu’elle rencontre le premier échec, vous appelez une surcharge de méthode qui permet de passer une chaîne indiquant la valeur de chaîne utilisée dans l’appel de méthode.
 
@@ -185,4 +186,3 @@ Pour tester la version Release :
 1. Exécutez les tests unitaires en sélectionnant **Test** > **Exécuter** > **Tous les Tests** dans la barre de menus. Les tests réussissent.
 
 Maintenant que vous avez fini de tester votre bibliothèque, l’étape suivante consiste à la rendre accessible aux appelants. Vous pouvez la regrouper avec une ou plusieurs applications, ou vous pouvez la distribuer comme package NuGet. Pour plus d’informations, consultez [Consommation d’une bibliothèque de classes standard .NET](./consuming-library-with-visual-studio.md).
-

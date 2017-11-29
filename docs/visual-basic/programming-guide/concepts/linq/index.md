@@ -1,31 +1,22 @@
 ---
 title: LINQ (Language-Integrated Query) (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a99371f7-097c-49a0-b62b-0e31c34aad0e
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eca96e5d9be109bf5b8a9eff1bdf289b5b16ac06
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 4c465d18ec8b728b9b06d3de70e55b1275d1a565
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a>LINQ (Language-Integrated Query) (Visual Basic)
 LINQ est un ensemble de fonctionnalités qui étend les puissantes fonctions de requête à la syntaxe du langage de Visual Basic. LINQ introduit des modèles standard et faciles à apprendre pour interroger et mettre à jour des données. Cette technologie peut être étendue pour prendre en charge virtuellement tout type de magasin de données.  Le .NET Framework inclut des assemblys du fournisseur LINQ qui permettent l’utilisation de LINQ avec les collections du .NET Framework, les bases de données SQL Server, les jeux de données ADO.NET et les documents XML.  
@@ -54,4 +45,3 @@ LINQ est un ensemble de fonctionnalités qui étend les puissantes fonctions de 
   
  [Activation d’une source de données pour l’interrogation LINQ](../../../../visual-basic/programming-guide/concepts/linq/enabling-a-data-source-for-linq-querying.md)  
  Présente les fournisseurs LINQ personnalisés, les arborescences d’expression LINQ et les autres façons d’étendre LINQ.
-

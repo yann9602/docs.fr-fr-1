@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
+ms.openlocfilehash: 1de856a139ac7a6dee25f1dae54924e33f14a33b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 14673f86d7d228bc1fc17a3154e0337b4c6e5f57
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="expression-trees-explained"></a>Explication des arborescences d’expressions
 
 [Précédent -- Vue d’ensemble](expression-trees.md)
@@ -50,7 +48,7 @@ Visuellement, l’instruction entière est une arborescence. Vous pouvez partir 
 
 Cela peut sembler compliqué, mais c’est très puissant. Suivant le même processus, vous pouvez décomposer des expressions beaucoup plus complexes. Examinons cette expression :
 ```csharp
-var finalAnswer = this.SecretSauceFuncion(
+var finalAnswer = this.SecretSauceFunction(
     currentState.createInterimResult(), currentState.createSecondValue(1, 2),
     decisionServer.considerFinalOptions("hello")) +
     MoreSecretSauce('A', DateTime.Now, true);
@@ -75,4 +73,3 @@ Les API d’arborescences d’expressions vous permettent de créer des arboresc
 La seule chose que vous ne pouvez pas faire est de modifier une arborescence d’expressions.  Les arborescences d’expressions sont des structures de données immuables. Si vous souhaitez muter (changer) une expression de l’arborescence, vous devez créer une nouvelle arborescence qui est une copie de l’original, mais avec les modifications souhaitées. 
 
 [Suivant -- Types de frameworks prenant en charge les arborescences d’expressions](expression-classes.md)
-

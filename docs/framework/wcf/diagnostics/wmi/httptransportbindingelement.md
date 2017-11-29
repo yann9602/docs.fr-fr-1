@@ -1,25 +1,28 @@
 ---
-title: "HttpTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: HttpTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 088a7bce-6bb2-4839-ad74-f68d4b1aa0f9
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6b1542406caf9bb3684ccf2d97ed441f1dc3d0db
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# HttpTransportBindingElement
+# <a name="httptransportbindingelement"></a>HttpTransportBindingElement
 HttpTransportBindingElement  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class HttpTransportBindingElement : TransportBindingElement  
@@ -39,101 +42,101 @@ class HttpTransportBindingElement : TransportBindingElement
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe HttpTransportBindingElement ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe HttpTransportBindingElement a les propriétés suivantes :  
   
-### AllowCookies  
+### <a name="allowcookies"></a>AllowCookies  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Valeur qui indique si le client accepte les cookies et les propage aux demandes suivantes.  
   
-### AuthenticationScheme  
+### <a name="authenticationscheme"></a>AuthenticationScheme  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Schéma d'authentification utilisé pour authentifier les demandes d'un client traitées par un écouteur HTTP.  
   
-### BypassProxyOnLocal  
+### <a name="bypassproxyonlocal"></a>BypassProxyOnLocal  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Valeur qui indique si les proxys sont ignorés pour les adresses locales.  
   
-### HostNameComparisonMode  
+### <a name="hostnamecomparisonmode"></a>HostNameComparisonMode  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
- Valeur qui indique si le nom d'hôte est utilisé pour accéder au service lors de la correspondance sur l'URI.  
+ Valeur qui indique si le nom d'hôte est utilisé pour atteindre le service lors de la correspondance avec l'URI.  
   
-### KeepAliveEnabled  
+### <a name="keepaliveenabled"></a>KeepAliveEnabled  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  En cas d'activation, les connexions HTTP sont maintenues indépendamment du niveau d'activité.  
   
-### MaxBufferSize  
+### <a name="maxbuffersize"></a>MaxBufferSize  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
- Taille maximale du pool de mémoires tampons.  
+ La taille maximale du pool de mémoires tampons.  
   
-### ProxyAddress  
+### <a name="proxyaddress"></a>ProxyAddress  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  URI qui contient l'adresse du proxy à utiliser pour les requêtes HTTP.  
   
-### ProxyAuthenticationScheme  
+### <a name="proxyauthenticationscheme"></a>ProxyAuthenticationScheme  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Schéma d'authentification utilisé pour authentifier les demandes d'un client traitées par un proxy HTTP.  
   
-### Realm  
+### <a name="realm"></a>Realm  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Domaine d'authentification.  
   
-### TransferMode  
+### <a name="transfermode"></a>TransferMode  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Valeur qui spécifie si les messages sont mis en mémoire tampon ou transmis en continu ou s'il s'agit d'une demande ou d'une réponse.  
   
-### UnsafeConnectionNtlmAuthentication  
+### <a name="unsafeconnectionntlmauthentication"></a>UnsafeConnectionNtlmAuthentication  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Valeur qui indique si le partage de connexion non sécurisé est activé sur le serveur.  
   
-### UseDefaultWebProxy  
+### <a name="usedefaultwebproxy"></a>UseDefaultWebProxy  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Valeur qui indique si les paramètres de proxy à l'échelle de l'ordinateur sont utilisés à la place des paramètres propres à l'utilisateur.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>

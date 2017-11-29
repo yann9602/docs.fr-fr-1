@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -23,16 +22,15 @@ helpviewer_keywords:
 - security [.NET Framework], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 11c66af3a855dac649d5f09944d68fb77a0e8619
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: be4fc9f9f2fc9ae57f22a7e59eca05a331ebfb32
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
 <a name="top"></a>Lorsque vous générez un assembly, vous pouvez spécifier un jeu d’autorisations que l’assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
@@ -69,7 +67,6 @@ ms.lasthandoff: 07/28/2017
  Comme l’affectation de nom fort et la signature à l’aide de l’[outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md) garantissent l’intégrité, vous pouvez baser la stratégie de sécurité d’accès du code sur ces deux formes de preuve d’assembly. L’affectation de nom fort et la signature à l’aide de l’[outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md) garantissent l’intégrité par les signatures numériques et les certificats. Toutes les technologies mentionnées (vérification du hachage, affectation de nom fort et signature à l’aide de l’[outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md)) fonctionnent ensemble pour que l’assembly ne soit pas altéré d’une manière ou d’une autre.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)   
- [Assemblys dans le common language runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)   
+ [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)  
+ [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
  [SignTool.exe (outil de signature)](../../../docs/framework/tools/signtool-exe.md)
-

@@ -1,25 +1,28 @@
 ---
-title: "Comment&#160;: utiliser MetadataResolver pour obtenir des m&#233;tadonn&#233;es de liaison dynamiquement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : utiliser MetadataResolver pour obtenir des métadonnées de liaison dynamiquement"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 56ffcb99-fff0-4479-aca0-e3909009f605
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ab95212d0f7b57b2bc076bed862b3d07c3c93df9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: utiliser MetadataResolver pour obtenir des m&#233;tadonn&#233;es de liaison dynamiquement
+# <a name="how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically"></a>Comment : utiliser MetadataResolver pour obtenir des métadonnées de liaison dynamiquement
 Cette rubrique indique comment utiliser la classe <xref:System.ServiceModel.Description.MetadataResolver> pour obtenir des métadonnées de liaison dynamiquement.  
   
-### Pour obtenir des métadonnées de liaison dynamiquement  
+### <a name="to-dynamically-obtain-binding-metadata"></a>Pour obtenir des métadonnées de liaison dynamiquement  
   
 1.  Créez un objet <xref:System.ServiceModel.EndpointAddress> avec l'adresse du point de terminaison de métadonnées.  
   
@@ -28,13 +31,13 @@ Cette rubrique indique comment utiliser la classe <xref:System.ServiceModel.Desc
       = new EndpointAddress(new   Uri("http://localhost:8080/SampleService/mex"));  
     ```  
   
-2.  Appelez <xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29>, qui passe le type de service et l'adresse du point de terminaison de métadonnées.Une collection de points de terminaison qui implémentent le contrat spécifié est alors retournée.Seules les informations de liaison sont importées à partir des métadonnées, les informations de contrat ne le sont pas.Le contrat fourni est utilisé à la place.  
+2.  Appelez <xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29>, qui passe le type de service et l'adresse du point de terminaison de métadonnées. Une collection de points de terminaison qui implémentent le contrat spécifié est alors retournée. Seules les informations de liaison sont importées à partir des métadonnées, les informations de contrat ne le sont pas. Le contrat fourni est utilisé à la place.  
   
     ```  
     ServiceEndpointCollection endpoints = MetadataResolver.Resolve(typeof(SampleServiceClient),metaAddress);  
     ```  
   
-3.  Vous pouvez ensuite itérer au sein de la collection de points de terminaison de service afin d'extraire les informations de liaison dont vous avez besoin.Le code suivant itère au sein des points de terminaison, crée un objet client de service qui passe la liaison et l'adresse associée au point de terminaison actuel, puis appelle une méthode sur le service.  
+3.  Vous pouvez ensuite itérer au sein de la collection de points de terminaison de service afin d'extraire les informations de liaison dont vous avez besoin. Le code suivant itère au sein des points de terminaison, crée un objet client de service qui passe la liaison et l’adresse associée au point de terminaison actuel, puis appelle une méthode sur le service.  
   
     ```  
     foreach (ServiceEndpoint point in endpoints)  
@@ -52,5 +55,5 @@ Cette rubrique indique comment utiliser la classe <xref:System.ServiceModel.Desc
     }  
     ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Métadonnées](../../../../docs/framework/wcf/feature-details/metadata.md)

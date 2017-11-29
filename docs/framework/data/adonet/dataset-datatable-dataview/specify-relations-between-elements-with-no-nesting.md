@@ -1,27 +1,30 @@
 ---
-title: "Sp&#233;cifier les relations entre des &#233;l&#233;ments qui ne sont pas imbriqu&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Spécifier les relations entre éléments sans imbrication"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 036085160e9e4817964754a85db627e4d4ba8654
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Sp&#233;cifier les relations entre des &#233;l&#233;ments qui ne sont pas imbriqu&#233;s
-Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est créée.  Vous pouvez toutefois spécifier explicitement des relations entre des éléments qui ne sont pas imbriqués, à l'aide de l'annotation **msdata:Relationship**.  
+# <a name="specify-relations-between-elements-with-no-nesting"></a>Spécifier les relations entre éléments sans imbrication
+Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est créée. Toutefois, vous pouvez spécifier explicitement des relations entre des éléments qui ne sont pas imbriqués à l’aide de la **msdata : Relationship** annotation.  
   
- L'exemple suivant représente un schéma XML dans lequel l'annotation **msdata:Relationship** est spécifiée entre les éléments non imbriqués **Order** et **OrderDetail**.  L'annotation **msdata:Relationship** est spécifiée en tant qu'élément enfant de l'élément **Schema**.  
+ L’exemple suivant montre un schéma XML dans lequel le **msdata : Relationship** annotation est spécifiée entre la **commande** et **OrderDetail** éléments qui ne sont pas imbriquées. Le **msdata : Relationship** annotation est spécifiée en tant qu’élément enfant de le **schéma** élément.  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
              xmlns:xs="http://www.w3.org/2001/XMLSchema"   
              xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -60,7 +63,7 @@ Lorsque des éléments ne sont pas imbriqués, aucune relation implicite n'est c
 </xs:schema>  
 ```  
   
- Le processus de mappage du schéma en langage XSD \(XML Schema Definition\) crée un <xref:System.Data.DataSet> comprenant les tables **Order** et **OrderDetail** et une relation est spécifiée entre ces deux tables, comme illustré ci\-après.  
+ Le processus de mappage de schéma XML Schema definition langage (XSD XML) crée un <xref:System.Data.DataSet> avec **commande** et **OrderDetail** tables et une relation est spécifiée entre ces deux tables, comme indiqué ci-dessous.  
   
 ```  
 RelationName: OrdOrderDetailRelation  
@@ -71,7 +74,7 @@ ChildColumns: OrderNo
 Nested: False  
 ```  
   
-## Voir aussi  
- [Génération des relations d'un DataSet à partir d'un schéma XSD \(XML Schema Definition\)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)   
- [Mappage de contraintes de schéma XML \(XSD\) à des contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Génération des Relations d’un DataSet à partir de schéma XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [Mappage de schéma (XSD) des contraintes aux contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

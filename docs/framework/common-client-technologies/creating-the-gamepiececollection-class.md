@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e4b037ee-1201-4a55-b198-0d6532ed6f35
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
+ms.openlocfilehash: b8b53e5890aaebbad2f0a5f0e058182193b11622
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b74702d71113c3a9dac654971e7d02f97016218b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-the-gamepiececollection-class"></a>Création de la classe GamePieceCollection
 La classe **GamePieceCollection** dérive de la classe générique List et contient des méthodes permettant de gérer plus facilement plusieurs objets **GamePiece**.  
@@ -40,9 +38,8 @@ La classe **GamePieceCollection** dérive de la classe générique List et conti
  [!code-csharp[ManipulationXNA#_GamePieceCollection_UpdateFromMouse](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiececollection.cs#_gamepiececollection_updatefrommouse)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Manipulations et inertie](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)   
- [Utilisation de manipulations et de l’inertie dans une application XNA](../../../docs/framework/common-client-technologies/use-manipulations-and-inertia-in-an-xna-application.md)   
- [Création de la classe GamePiece](../../../docs/framework/common-client-technologies/creating-the-gamepiece-class.md)   
- [Création de la classe Game1](../../../docs/framework/common-client-technologies/creating-the-game1-class.md)   
+ [Manipulations et inertie](../../../docs/framework/common-client-technologies/manipulations-and-inertia.md)  
+ [Utilisation de manipulations et de l'inertie dans une application XNA](../../../docs/framework/common-client-technologies/use-manipulations-and-inertia-in-an-xna-application.md)  
+ [Création de la classe GamePiece](../../../docs/framework/common-client-technologies/creating-the-gamepiece-class.md)  
+ [Création de la classe Game1](../../../docs/framework/common-client-technologies/creating-the-game1-class.md)  
  [Listes complètes des codes](../../../docs/framework/common-client-technologies/full-code-listings.md)
-

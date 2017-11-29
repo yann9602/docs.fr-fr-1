@@ -1,27 +1,18 @@
 ---
 title: "Itérateurs (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 6d4994ea57d9fd0df8dfca7ffa40c280499caee6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5d5543a48d0c835f5270067d1e5ad514c28842b2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="iterators-c"></a>Itérateurs (C#)
 Un *itérateur* peut être utilisé pour parcourir des collections, comme des listes et des tableaux.  
@@ -366,7 +357,7 @@ public class Stack<T> : IEnumerable<T>
   
  À chaque itération successive de la boucle `foreach` (ou de l’appel direct à `IEnumerator.MoveNext`), le corps du code de l’itérateur suivant reprend après l’instruction `yield return` précédente. Il continue ensuite jusqu’à l’instruction `yield return` suivante, jusqu’à atteindre la fin du corps de l’itérateur ou jusqu’à rencontrer une instruction `yield break`.  
   
- Les itérateurs ne prennent pas en charge la méthode <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName>. Pour réitérer à partir du début, vous devez obtenir un nouvel itérateur.  
+ Les itérateurs ne prennent pas en charge la méthode <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>. Pour réitérer à partir du début, vous devez obtenir un nouvel itérateur.  
   
  Pour plus d’informations, consultez la [spécification du langage C#](../../../csharp/language-reference/language-specification/index.md).  
   
@@ -380,10 +371,9 @@ public class Stack<T> : IEnumerable<T>
 -   Encapsuler la création de la liste dans l’itérateur. Dans la méthode d’itérateur, vous pouvez créer la liste et générer ensuite chaque résultat dans une boucle.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Collections.Generic>   
- <xref:System.Collections.Generic.IEnumerable%601>   
- [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)   
- [yield](../../../csharp/language-reference/keywords/yield.md)   
- [Utilisation de foreach avec des tableaux](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)   
+ <xref:System.Collections.Generic>  
+ <xref:System.Collections.Generic.IEnumerable%601>  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [yield](../../../csharp/language-reference/keywords/yield.md)  
+ [Utilisation de foreach avec des tableaux](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)  
  [Génériques](../../../csharp/programming-guide/generics/index.md)
-

@@ -1,43 +1,24 @@
 ---
 title: -win32res (Options du compilateur C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /win32res
-dev_langs:
-- CSharp
+f1_keywords: /win32res
 helpviewer_keywords:
 - win32res compiler option
 - /win32res compiler option [C#]
 - -win32res compiler option [C#]
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 96583542c62305cbaa5a24f66e9e54ec9b525c90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4552b526767584e62106b2b10f8a1e6394a23b46
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="win32res-c-compiler-options"></a>/win32res (Options du compilateur C#)
 L’option **/win32res** insère une ressource Win32 dans le fichier de sortie.  
@@ -53,7 +34,7 @@ L’option **/win32res** insère une ressource Win32 dans le fichier de sortie.
  Fichier de ressources que vous voulez ajouter à votre fichier de sortie.  
   
 ## <a name="remarks"></a>Remarques  
- Un fichier de ressources Win32 peut être créé avec le [compilateur de ressources](http://go.microsoft.com/fwlink/?LinkId=148370). Le compilateur de ressources est appelé lorsque vous compilez un programme Visual C++ ; un fichier .res est alors créé à partir du fichier .rc.  
+ Un fichier de ressources Win32 peut être créé avec le [compilateur de ressources](../../language-reference/compiler-options/resource-compiler-option.md). Le compilateur de ressources est appelé lorsque vous compilez un programme Visual C++ ; un fichier .res est alors créé à partir du fichier .rc.  
   
  Une ressource Win32 peut contenir des informations sur la version ou le fichier bitmap (icône) qui permettent d’identifier votre application dans l’Explorateur de fichiers. Si vous ne spécifiez pas l’option **/win32res**, le compilateur génère des informations de version en fonction de la version de l’assembly.  
   
@@ -75,6 +56,5 @@ csc /win32res:rf.res in.cs
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)   
+ [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)  
  [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)
-

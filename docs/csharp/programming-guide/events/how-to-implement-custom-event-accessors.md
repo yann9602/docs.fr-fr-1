@@ -1,12 +1,9 @@
 ---
-title: "Guide pratique pour implémenter des accesseurs d’événement personnalisés (Guide de programmation C#)"
-ms.date: 2015-07-20
+title: "Comment : implémenter des accesseurs d’événement personnalisés (Guide de programmation C#)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - accessors [C#], event accessors
 - add accessor [C#]
@@ -14,31 +11,16 @@ helpviewer_keywords:
 - events [C#], remove accessor
 - remove accessor [C#]
 ms.assetid: bf903abf-03a4-4f7b-ab6b-b7e59bc2ee1e
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 3ff5fedeeaa427bb62991f9b406c167647dc376d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 71e1c16c9c6426ffb95020e4d7211dc1000f6796
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-implement-custom-event-accessors-c-programming-guide"></a>Guide pratique pour implémenter des accesseurs d’événement personnalisés (Guide de programmation C#)
+# <a name="how-to-implement-custom-event-accessors-c-programming-guide"></a>Comment : implémenter des accesseurs d’événement personnalisés (Guide de programmation C#)
 Un événement constitue un genre spécial de délégué multicast qui peut être appelé uniquement à partir de la classe dans laquelle il est déclaré. Le code client s’abonne à l’événement en fournissant une référence à une méthode qui doit être appelée quand l’événement est déclenché. Ces méthodes sont ajoutées à la liste d’invocation du délégué par le biais des accesseurs d’événement, qui ressemblent aux accesseurs de propriété, sauf que les accesseurs d’événement sont nommés `add` et `remove`. Dans la plupart des cas, vous n’avez pas à fournir d’accesseurs d’événement personnalisés. Quand aucun accesseur d’événement personnalisé n’est fourni dans votre code, le compilateur les ajoute automatiquement. Toutefois, vous devez parfois fournir un comportement personnalisé. Ce genre de cas est illustré dans la rubrique [Guide pratique pour implémenter des événements d’interface](../../../csharp/programming-guide/events/how-to-implement-interface-events.md).  
   
 ## <a name="example"></a>Exemple  
@@ -65,6 +47,5 @@ event EventHandler IDrawingObject.OnDraw
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Événements](../../../csharp/programming-guide/events/index.md)   
+ [Événements](../../../csharp/programming-guide/events/index.md)  
  [event](../../../csharp/language-reference/keywords/event.md)
-

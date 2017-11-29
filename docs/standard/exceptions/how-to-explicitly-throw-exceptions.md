@@ -1,38 +1,41 @@
 ---
-title: "Comment&#160;: lever explicitement des exceptions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "exceptions, lever"
-  - "exceptions, try/catch (blocs)"
-  - "FileNotFoundException (classe)"
-  - "lever des exceptions de manière implicite"
-  - "try/catch (blocs)"
+title: "Comment : lever explicitement des exceptions"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- exceptions, try/catch blocks
+- FileNotFoundException class
+- try/catch blocks
+- exceptions, throwing
+- implicitly throwing exceptions
 ms.assetid: 72bdd157-caa9-4478-9ee3-cb4500b84528
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: c3fce332263dac3f9906d33fe3bd2590050b86f8
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/21/2017
 ---
-# Comment&#160;: lever explicitement des exceptions
-Vous pouvez lever explicitement une exception à l'aide de l'instruction `throw`.  Vous pouvez aussi lever de nouveau une exception interceptée à l'aide de l'instruction `throw`.  L'ajout d'informations à une exception qui est levée de nouveau pour fournir un complément d'information lors du débogage constitue une bonne pratique de programmation.  
-  
- L'exemple de code suivant utilise un bloc try\/catch pour intercepter une exception <xref:System.IO.FileNotFoundException> possible.  Le bloc try est suivi d'un bloc catch qui intercepte <xref:System.IO.FileNotFoundException>et copie un message vers la console si le fichier de données est introuvable.  L'instruction suivante est l'instruction throw qui lève de nouveau <xref:System.IO.FileNotFoundException> et ajoute des informations de texte à l'exception.  
-  
-## Exemple  
- [!code-csharp[Exception.Throwing#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
- [!code-vb[Exception.Throwing#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  
-  
-## Voir aussi  
- [Comment : utiliser le bloc try\/catch pour intercepter des exceptions](../../../docs/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md)   
- [Comment : utiliser des exceptions spécifiques dans un bloc catch](../../../docs/standard/exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)   
- [Comment : utiliser des blocs finally](../../../docs/standard/exceptions/how-to-use-finally-blocks.md)   
- [Notions de base de la gestion des exceptions](../../../docs/standard/exceptions/exception-handling-fundamentals.md)
+# <a name="how-to-explicitly-throw-exceptions"></a>Guide pratique pour lever explicitement des exceptions
+
+Vous pouvez lever explicitement une exception à l’aide de l’instruction `throw`. Vous pouvez aussi lever de nouveau une exception interceptée à l’aide de l’instruction `throw`. En codage, il est conseillé d’ajouter des informations à une exception levée une deuxième fois pour fournir plus d’informations durant le débogage.
+
+L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une exception <xref:System.IO.FileNotFoundException> possible. À la suite du bloc `try`, un bloc `catch` intercepte l’exception <xref:System.IO.FileNotFoundException> et écrit un message dans la console si le fichier de données est introuvable. L’instruction suivante est `throw`, qui lève une nouvelle exception <xref:System.IO.FileNotFoundException> et ajoute des informations de texte à l’exception.
+
+[!code-csharp[Exception.Throwing#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
+[!code-vb[Exception.Throwing#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  
+
+## <a name="see-also"></a>Voir aussi  
+[Exceptions](index.md)

@@ -1,30 +1,21 @@
 ---
 title: Regroupement des threads (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 98ae68c1-ace8-44b9-9317-8920ac9ef2b6
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 09dd597e8ac7a6b336f71891ccc89984ea659614
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d2f8e5a2d7a83dc6fef72ef87b4003ae49656d8f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="thread-pooling-c"></a>Regroupement des threads (C#)
 Un *pool de threads* est une collection de threads qui peut être utilisée pour effectuer plusieurs tâches en arrière-plan. (Voir [Threads (C#)](../../../../csharp/programming-guide/concepts/threading/index.md) pour obtenir des informations générales.) Cela laisse le thread principal libre d’effectuer d’autres tâches de façon asynchrone.  
@@ -37,7 +28,7 @@ Un *pool de threads* est une collection de threads qui peut être utilisée pour
   
  Vous pouvez implémenter votre propre pool de threads, mais il est plus facile d’utiliser le pool de threads fourni par le .NET Framework via la classe <xref:System.Threading.ThreadPool>.  
   
- Avec le regroupement de threads, vous appelez la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=fullName> avec un délégué pour la procédure que vous voulez exécuter, et C# crée le thread et exécute votre procédure.  
+ Avec le regroupement de threads, vous appelez la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> avec un délégué pour la procédure que vous voulez exécuter, et C# crée le thread et exécute votre procédure.  
   
 ## <a name="thread-pooling-example"></a>Exemple d’utilisation du regroupement des threads  
  L’exemple suivant montre comment utiliser le regroupement des threads pour démarrer plusieurs tâches.  
@@ -76,11 +67,10 @@ private void AnotherLongTask(Object state)
  Les structures ne permettent pas de retourner des valeurs au sein des objets d’état. Comme les structures sont des types valeur, les modifications apportées par le processus asynchrone ne modifient pas les membres de la structure d’origine. Utilisez des structures pour fournir des paramètres lorsque les valeurs de retour ne sont pas nécessaires.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>   
- <xref:System.Threading>   
- <xref:System.Threading.ThreadPool>   
- [Guide pratique pour utiliser un pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)   
- [Threads (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)   
- [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)   
+ <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ <xref:System.Threading>  
+ <xref:System.Threading.ThreadPool>  
+ [Guide pratique pour utiliser un pool de threads (C#)](../../../../csharp/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)  
+ [Threading (C#)](../../../../csharp/programming-guide/concepts/threading/index.md)  
+ [Applications multithread (C#)](../../../../csharp/programming-guide/concepts/threading/multithreaded-applications.md)  
  [Synchronisation des threads (C#)](../../../../csharp/programming-guide/concepts/threading/thread-synchronization.md)
-

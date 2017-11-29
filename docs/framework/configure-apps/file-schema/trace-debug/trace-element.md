@@ -1,87 +1,89 @@
 ---
-title: "&lt;trace&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#trace"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<trace> (élément)"
-  - "écouteurs"
-  - "trace (élément)"
-  - "écouteur de la trace, <trace> (élément)"
+title: "&lt;trace&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#trace
+helpviewer_keywords:
+- <trace> element
+- listeners
+- trace element
+- trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-caps.latest.revision: 13
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 157adb6c7317aa047976cdb9e30711d20c9e543b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;trace&gt;, &#233;l&#233;ment
-Contient des écouteurs qui collectent, stockent et routent des messages de traçage.  
+# <a name="lttracegt-element"></a>&lt;trace&gt; élément
+Contient les écouteurs qui collectent, stockent et acheminent les messages de traçage.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.Diagnostics >  
+\<trace >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <trace autoflush="true|false"   
        indentsize="indent value"  
        useGlobalLock="true| false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`autoflush`|Attribut facultatif.<br /><br /> Spécifie si les écouteurs de traçage vident automatiquement la mémoire tampon de sortie après chaque opération d'écriture.|  
-|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d'espaces pour la mise en retrait.|  
+|---------------|-----------------|  
+|`autoflush`|Attribut facultatif.<br /><br /> Spécifie si les écouteurs de suivi vidage automatique de la mémoire tampon de sortie après chaque opération d’écriture.|  
+|`indentsize`|Attribut facultatif.<br /><br /> Spécifie le nombre d’espaces pour mettre en retrait.|  
 |`useGlobalLock`|Attribut facultatif.<br /><br /> Indique si le verrouillage global doit être utilisé.|  
   
-## autoflush, attribut  
+## <a name="autoflush-attribute"></a>AutoFlush attribut  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|Ne vide pas automatiquement la mémoire tampon de sortie.  Il s'agit de la valeur par défaut.|  
+|-----------|-----------------|  
+|`false`|Ne vide pas automatiquement la mémoire tampon de sortie. Il s'agit de la valeur par défaut.|  
 |`true`|Vide automatiquement la mémoire tampon de sortie.|  
   
-## useGlobalLock, attribut  
+## <a name="usegloballock-attribute"></a>Attribut d’useGlobalLock  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`false`|N'utilise le verrouillage global que si l'écouteur est thread\-safe.|  
-|`true`|Utilise le verrouillage global que l'écouteur soit thread\-safe ou non.  Il s'agit de la valeur par défaut.|  
+|-----------|-----------------|  
+|`false`|N’utilise pas le verrouillage global si l’écouteur est thread-safe ; Sinon, utilise le verrouillage global.|  
+|`true`|Utilise le verrouillage global que l’écouteur soit thread-safe. Il s'agit de la valeur par défaut.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<listeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Spécifie un écouteur qui collecte, stocke et route des messages.|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Spécifie un écouteur qui collecte, stocke et achemine les messages.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`system.diagnostics`|Spécifie les écouteurs de traçage qui collectent, stockent et routent des messages, ainsi que le niveau auquel un commutateur de traçage est défini.|  
+|`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
-## Exemple  
- L'exemple suivant indique comment utiliser l'élément `<trace>` pour ajouter l'écouteur `MyListener` à la collection `Listeners`.  `MyListener` crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier.  Lorsque l'attribut `useGlobalLock` a la valeur `false`, le verrouillage global n'est pas utilisé si l'écouteur de la trace est thread\-safe.  Lorsque l'attribut `autoflush` a la valeur `true`, l'écouteur de la trace écrit dans le fichier, que la méthode <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=fullName> soit appelée ou non.  Lorsque l'attribut `indentsize` a la valeur 0 \(zéro\), l'écouteur met en retrait des espaces nuls lorsque la méthode <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=fullName> est appelée.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser le `<trace>` élément pour ajouter l’écouteur `MyListener` à la `Listeners` collection. `MyListener`Crée un fichier nommé `MyListener.log` et écrit la sortie dans le fichier. Le `useGlobalLock` attribut est défini sur `false`, ce qui entraîne le verrouillage global doit ne pas être utilisée si l’écouteur de trace est thread-safe. Le `autoflush` attribut a la valeur `true`, ce qui entraîne l’écouteur de trace à écrire dans le fichier indépendamment du fait que le <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> méthode est appelée. Le `indentsize` attribut est défini sur 0 (zéro), l’écouteur mettre en retrait des espaces nuls lorsque la <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> méthode est appelée.  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <trace useGlobalLock="false" autoflush="true" indentsize="0">  
@@ -93,9 +95,9 @@ Contient des écouteurs qui collectent, stockent et routent des messages de tra�
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.DefaultTraceListener>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.EventLogTraceListener>   
- [Schéma des paramètres de traçage et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.DefaultTraceListener>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.EventLogTraceListener>  
+ [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

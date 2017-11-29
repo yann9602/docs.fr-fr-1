@@ -1,50 +1,48 @@
 ---
-title: "R&#232;gles de conception de membres | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "instructions de conception de membres (.NET Framework), à propos des règles de conception de membres"
-  - "membres (.NET Framework), les règles de conception"
-  - "indications de conception de bibliothèques de classes (.NET Framework), membres"
-  - "règles de conception de membres (.NET Framework)"
+title: Instructions de conception des membres
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- member design guidelines [.NET Framework], about member design guidelines
+- members [.NET Framework], design guidelines
+- class library design guidelines [.NET Framework], members
+- member design guidelines [.NET Framework]
 ms.assetid: 0ce93180-1d7b-4f8c-9306-f828b2d66b8f
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 5df4ad5f6c947d8b3bf62c3bf7eb8426419e5f3f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# R&#232;gles de conception de membres
-Méthodes, propriétés, événements, constructeurs et les champs sont collectivement en tant que membres. Les membres sont finalement le moyen par lequel les fonctionnalités de framework sont exposées aux utilisateurs finaux d’une infrastructure.  
+# <a name="member-design-guidelines"></a>Instructions de conception des membres
+Méthodes, propriétés, événements, constructeurs et les champs sont collectivement en tant que membres. Les membres sont finalement les moyens par lesquels les fonctionnalités de framework sont exposées aux utilisateurs finaux d’une infrastructure.  
   
- Les membres peuvent être virtuel ou non virtuel, concret ou abstrait, statique ou instance et peuvent avoir plusieurs portées différentes d’accessibilité. Cette variété de tous les incroyable expressivité mais en même temps nécessite soins part du Concepteur de framework.  
+ Les membres peuvent être virtuel ou non virtuelle, concret ou abstrait, statique ou instance et peuvent avoir plusieurs étendues différentes d’accessibilité. Tous les différents fournit incroyable simplicité, mais en même temps requiert soins par le Concepteur de framework.  
   
- Ce chapitre propose des conseils de base à suivre lorsque vous concevez des membres de n’importe quel type.  
+ Ce chapitre propose des conseils de base qui doivent être suivies lors de la conception des membres de n’importe quel type.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Surcharge de membre](../../../docs/standard/design-guidelines/member-overloading.md)  
- [Conception des propriétés](../../../docs/standard/design-guidelines/property.md)  
+ [Conception de la propriété](../../../docs/standard/design-guidelines/property.md)  
  [Conception de constructeurs](../../../docs/standard/design-guidelines/constructor.md)  
  [Conception d’événements](../../../docs/standard/design-guidelines/event.md)  
- [Conception de champs](../../../docs/standard/design-guidelines/field.md)  
- [méthodes d’extension.](../../../docs/standard/design-guidelines/extension-methods.md)  
+ [Conception de champ](../../../docs/standard/design-guidelines/field.md)  
+ [Méthodes d’extension](../../../docs/standard/design-guidelines/extension-methods.md)  
  [Surcharges d’opérateur](../../../docs/standard/design-guidelines/operator-overloads.md)  
- [Conception de paramètres](../../../docs/standard/design-guidelines/parameter-design.md)  
+ [Conception de paramètre](../../../docs/standard/design-guidelines/parameter-design.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
-## Voir aussi  
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

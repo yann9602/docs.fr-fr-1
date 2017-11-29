@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,16 +14,15 @@ helpviewer_keywords:
 - assemblies [.NET Framework], creating
 - multifile assemblies
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: f5aa4b8fa5422ae126a6027c5fe3358925873782
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 583c448bd939cd4d1d16bff372afff4172dcf985
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-assemblies"></a>Création d'assemblys
 Vous pouvez créer des assemblys monofichiers ou multifichiers à l’aide d’un IDE, comme [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)], ou des compilateurs et des outils fournis par le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. L’assembly le plus simple est un fichier unique qui a un nom simple et qui est chargé dans un seul domaine d’application. Cet assembly ne peut pas être référencé par d’autres assemblys en dehors du répertoire de l’application et n’est pas soumis à la vérification de la version. Pour désinstaller l’application constituée de l’assembly, vous supprimez simplement le répertoire où il se trouve. Pour de nombreux développeurs, un assembly avec ces fonctionnalités est tout ce qui est nécessaire pour déployer une application.  
@@ -56,10 +54,9 @@ Vous pouvez créer des assemblys monofichiers ou multifichiers à l’aide d’u
  Des considérations particulières sont à prendre en compte quand des assemblys du common language runtime sont rendus disponibles pour des applications COM non managées. Pour plus d’informations sur l’utilisation de code non managé, consultez [Exposition de composants .NET Framework à COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)   
- [Gestion des versions des assemblys](../../../docs/framework/app-domains/assembly-versioning.md)   
- [Guide pratique pour générer un assembly monofichier](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)   
- [Guide pratique pour générer un assembly multifichier](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ [Contrôle de version des assemblys](../../../docs/framework/app-domains/assembly-versioning.md)  
+ [Guide pratique pour générer un assembly à fichier unique](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
+ [Guide pratique pour générer un assembly multifichier](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+ [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Assemblys multifichiers](../../../docs/framework/app-domains/multifile-assemblies.md)
-

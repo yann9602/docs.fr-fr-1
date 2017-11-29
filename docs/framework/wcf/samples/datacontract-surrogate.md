@@ -1,26 +1,29 @@
 ---
-title: "DataContract Surrogate | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: DataContract Surrogate
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 77eee3172b24bc0252ecb18d9ce6b283ba6e5c93
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# DataContract Surrogate
-Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l'exportation et l'importation de schémas à l'aide d'une classe de substitution d'un contrat de données.Cet exemple indique comment utiliser un substitut dans un scénario de client et serveur où les données sont sérialisées et transmises entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+# <a name="datacontract-surrogate"></a>DataContract Surrogate
+Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données. Cet exemple indique comment utiliser un substitut dans un scénario de client et serveur où les données sont sérialisées et transmises entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+>  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  L'exemple utilise le contrat de service suivant :  
   
@@ -54,10 +57,9 @@ class Employee
     [DataMember]  
     public Person person;  
 }  
-  
 ```  
   
- Dans le type `Employee`, la classe `Person` \(contenue dans l'exemple de code suivant\) ne peut pas être sérialisée par le <xref:System.Runtime.Serialization.DataContractSerializer>, celle\-ci ne correspondant pas à une classe de contrat de données valable.  
+ Dans le type `Employee`, la classe `Person` (contenue dans l'exemple de code suivant) ne peut pas être sérialisée par le <xref:System.Runtime.Serialization.DataContractSerializer>, celle-ci ne correspondant pas à une classe de contrat de données valable.  
   
 ```  
 public class Person  
@@ -72,9 +74,9 @@ public class Person
 }  
 ```  
   
- Vous pouvez appliquer l'attribut `DataContract` à la classe `Person`, mais cela n'est pas toujours possible.Par exemple, la classe `Person` peut être définie dans un assembly distinct sur lequel vous n'exercez aucun contrôle.  
+ Vous pouvez appliquer l'attribut `DataContract` à la classe `Person`, mais cela n'est pas toujours possible. Par exemple, la classe `Person` peut être définie dans un assembly distinct sur lequel vous n'exercez aucun contrôle.  
   
- L'une des solutions permettant alors de sérialiser la classe `Person` consiste à la remplacer par une autre classe signalée par l'attribut `DataContractAttribute`, puis à copier les données requises dans cette nouvelle classe.L'objectif de l'opération ci\-dessus est le suivant : présenter la classe `Person` comme DataContract au <xref:System.Runtime.Serialization.DataContractSerializer>.Remarque : il s'agit d'une solution parmi d'autres permettant de sérialiser les classes n'appartenant pas à un contrat de données.  
+ L'une des solutions permettant alors de sérialiser la classe `Person` consiste à la remplacer par une autre classe signalée par l'attribut `DataContractAttribute`, puis à copier les données requises dans cette nouvelle classe. L'objectif de l'opération ci-dessus est le suivant : présenter la classe `Person` comme DataContract au <xref:System.Runtime.Serialization.DataContractSerializer>. Remarque : il s'agit d'une solution parmi d'autres permettant de sérialiser les classes n'appartenant pas à un contrat de données.  
   
  L'exemple remplace logiquement la classe `Person` par une classe différente nommée `PersonSurrogated`.  
   
@@ -91,12 +93,11 @@ public class PersonSurrogated
     [DataMember]  
     public int Age;  
 }  
-  
 ```  
   
- Le substitut de contrat de données est utilisé pour effectuer ce remplacement.Un substitut de contrat de données est une classe qui implémente <xref:System.Runtime.Serialization.IDataContractSurrogate>.Dans cet exemple, la classe `AllowNonSerializableTypesSurrogate` implémente cette interface.  
+ Le substitut de contrat de données est utilisé pour effectuer ce remplacement. Un substitut de contrat de données est une classe qui implémente <xref:System.Runtime.Serialization.IDataContractSurrogate>. Dans cet exemple, la classe `AllowNonSerializableTypesSurrogate` implémente cette interface.  
   
- Dans l'implémentation d'interface, la première tâche consiste à définir un type mappant la classe `Person` à la classe `PersonSurrogated`.Ce processus de mappage est utilisé à la fois pendant la sérialisation et l'exportation des schémas.Il s'effectue en implémentant la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29>.  
+ Dans l'implémentation d'interface, la première tâche consiste à définir un type mappant la classe `Person` à la classe `PersonSurrogated`. Ce processus de mappage est utilisé à la fois pendant la sérialisation et l'exportation des schémas. Il s'effectue en implémentant la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29>.  
   
 ```  
 public Type GetDataContractType(Type type)  
@@ -107,7 +108,6 @@ public Type GetDataContractType(Type type)
     }  
     return type;  
 }  
-  
 ```  
   
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29> mappe une instance de la classe `Person` à une instance de la classe `PersonSurrogated` pendant la sérialisation, tel qu'illustré dans l'exemple de code suivant.  
@@ -126,7 +126,6 @@ public object GetObjectToSerialize(object obj, Type targetType)
     }  
     return obj;  
 }  
-  
 ```  
   
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> permet d'effectuer le mappage dans le sens inverse lors de la désérialisation, tel qu'illustré dans l'exemple de code suivant.  
@@ -146,7 +145,6 @@ Type targetType)
     }  
     return obj;  
 }  
-  
 ```  
   
  Pour mapper le contrat de données `PersonSurrogated` à la classe `Person` existante lors de l'importation des schémas, l'exemple implémente la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29>, tel qu'illustré dans l'exemple de code suivant.  
@@ -166,7 +164,6 @@ typeNamespace.Equals("http://schemas.datacontract.org/2004/07/DCSurrogateSample"
      }  
      return null;  
 }  
-  
 ```  
   
  L'exemple de code suivant achève l'implémentation de l'interface <xref:System.Runtime.Serialization.IDataContractSurrogate>.  
@@ -195,14 +192,13 @@ public void GetKnownCustomDataTypes(
     // It does not matter what we do here.  
     throw new NotImplementedException();  
 }  
-  
 ```  
   
- Dans cet exemple, le substitut est activé dans ServiceModel par un attribut appelé `AllowNonSerializableTypesAttribute`.Les développeurs doivent appliquer cet attribut dans leur contrat de service respectif, tel qu'illustré dans le contrat de service `IPersonnelDataService` ci\-dessus.Cet attribut implémente `IContractBehavior` et définit le substitut sur les opérations dans les méthodes `ApplyClientBehavior` et `ApplyDispatchBehavior`.  
+ Dans cet exemple, le substitut est activé dans ServiceModel par un attribut appelé `AllowNonSerializableTypesAttribute`. Les développeurs doivent appliquer cet attribut dans leur contrat de service respectif, tel qu'illustré dans le contrat de service `IPersonnelDataService` ci-dessus. Cet attribut implémente `IContractBehavior` et définit le substitut sur les opérations dans les méthodes `ApplyClientBehavior` et `ApplyDispatchBehavior`.  
   
- L'attribut n'est pas nécessaire dans ce cas. Il est utilisé à des fins d'illustration dans cet exemple.Les utilisateurs peuvent également activer un substitut en ajoutant manuellement un `IContractBehavior`, `IEndpointBehavior` ou `IOperationBehavior` similaire à l'aide du code ou de la configuration.  
+ L'attribut n'est pas nécessaire dans ce cas. Il est utilisé à des fins d'illustration dans cet exemple. Les utilisateurs peuvent également activer un substitut en ajoutant manuellement un `IContractBehavior`, `IEndpointBehavior` ou `IOperationBehavior` similaire à l'aide du code ou de la configuration.  
   
- L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré.Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement.L'exemple de code suivant illustre les modalités de ce processus.La définition du substitut sur ce comportement d'opération permet à ce dernier d'être sérialisé et désérialisé.  
+ L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré. Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement. L'exemple de code suivant illustre les modalités de ce processus. La définition du substitut sur ce comportement d'opération permet à ce dernier d'être sérialisé et désérialisé.  
   
 ```  
 public void ApplyClientBehavior(ContractDescription description, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime proxy)  
@@ -232,9 +228,9 @@ private static void ApplyDataContractSurrogate(OperationDescription description)
 }  
 ```  
   
- D'autres étapes sont nécessaires pour incorporer le substitut et ainsi pouvoir l'utiliser lors de la génération des métadonnées.Pour ce faire, l'une des solutions consiste à fournir une extension `IWsdlExportExtension`, tel qu'illustré dans cet exemple.Une autre solution consiste à modifier directement le `WsdlExporter`.  
+ D'autres étapes sont nécessaires pour incorporer le substitut et ainsi pouvoir l'utiliser lors de la génération des métadonnées. Pour ce faire, l'une des solutions consiste à fournir une extension `IWsdlExportExtension`, tel qu'illustré dans cet exemple. Une autre solution consiste à modifier directement le `WsdlExporter`.  
   
- L'attribut `AllowNonSerializableTypesAttribute` implémente `IWsdlExportExtension` et `IContractBehavior`.L'extension peut correspondre à `IContractBehavior` ou à `IEndpointBehavior` dans ce cas de figure.Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract.L'extrait de code suivant montre comment procéder.  
+ Le `AllowNonSerializableTypesAttribute` attribut implémente `IWsdlExportExtension` et `IContractBehavior`. L’extension peut être un `IContractBehavior` ou `IEndpointBehavior` dans ce cas. Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract. L'extrait de code suivant montre comment procéder.  
   
 ```  
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
@@ -261,26 +257,26 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 }  
 ```  
   
- Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi.Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client.L'opération GetEmployee doit réussir à trouver l'employé, puis afficher la mention « trouvé ».  
+ Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi. Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client. L’opération GetEmployee doit réussir à trouver l’employé et « trouvé ».  
   
 > [!NOTE]
->  Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées.Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées.Consultez l'exemple [Publication WSDL personnalisée](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) pour savoir comment utiliser un substitut afin de générer du code client.  
+>  Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées. Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées. Pour obtenir un exemple de comment un substitut peut être utilisé pour s’intégrer à la génération de code client, consultez le [personnalisé WSDL Publication](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) exemple.  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure figurant à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pour générer l'édition C\# de la solution, conformez aux instructions figurant dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Pour générer l’édition c# de la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

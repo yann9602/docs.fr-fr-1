@@ -1,23 +1,26 @@
 ---
-title: "SAML Token Provider | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: SAML Token Provider
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fc6eaa916507c7e1c530d4ee757097bf0bffcd34
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# SAML Token Provider
-Cet exemple montre comment implémenter un fournisseur de jetons SAML client personnalisé.  Un fournisseur de jetons dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permet de fournir des informations d'identification à l'infrastructure de sécurité.  En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est fourni avec le fournisseur de jetons du gestionnaire d'informations d'identification par défaut.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est également fourni avec un fournisseur de jetons [!INCLUDE[infocard](../../../../includes/infocard-md.md)].  Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :  
+# <a name="saml-token-provider"></a>SAML Token Provider
+Cet exemple montre comment implémenter un fournisseur de jetons SAML client personnalisé. Un fournisseur de jetons dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permet de fournir des informations d'identification à l'infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est fourni avec le fournisseur de jetons du gestionnaire d'informations d'identification par défaut. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est également fourni avec un fournisseur de jetons [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :  
   
 -   si vous avez un magasin d'informations d'identification avec lequel ces fournisseurs de jetons ne peuvent pas fonctionner ;  
   
@@ -33,13 +36,13 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 -   la façon dont un jeton SAML peut être transmis aux informations d'identification du client personnalisées ;  
   
--   la façon dont le jeton SAML est fourni à l'infrastructure cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ;  
+-   la façon dont le jeton SAML est fourni à l'infrastructure cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ;  
   
 -   la façon dont le serveur est authentifié auprès du client à l'aide du certificat X.509 du serveur.  
   
- Le service expose deux points de terminaison de communication avec le service, qui sont définis à l'aide du fichier de configuration App.config.  Chaque point de terminaison se compose d'une adresse, d'une liaison et d'un contrat.  La liaison est configurée avec un `wsFederationHttpBinding` standard, qui utilise la sécurité des messages.  Un point de terminaison attend une authentification du client à l'aide d'un jeton SAML qui utilise une clé de vérification symétrique tandis que l'autre attend une authentification du client avec un jeton SAML qui utilise une clé de vérification asymétrique.  Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`.  Le comportement `serviceCredentials` permet de configurer un certificat de service.  Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages.  La configuration suivante référence le certificat « localhost » installé pendant l'installation de l'exemple, comme décrit dans les instructions d'installation à la fin de cette rubrique.  Le comportement `serviceCredentials` permet également de configurer des certificats approuvés pour la signature des jetons SAML.  La configuration suivante référence le certificat « Alice » installé au cours de l'exemple.  
+ Le service expose deux points de terminaison de communication avec le service, qui sont définis à l'aide du fichier de configuration App.config. Chaque point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. La liaison est configurée avec un `wsFederationHttpBinding` standard, qui utilise la sécurité des messages. Un point de terminaison attend une authentification du client à l'aide d'un jeton SAML qui utilise une clé de vérification symétrique tandis que l'autre attend une authentification du client avec un jeton SAML qui utilise une clé de vérification asymétrique. Le service configure également le certificat de service à l'aide du comportement `serviceCredentials`. Le comportement `serviceCredentials` permet de configurer un certificat de service. Un certificat de service est utilisé par un client pour authentifier le service et fournir la protection des messages. La configuration suivante référence le certificat « localhost » installé pendant l'installation de l'exemple, comme décrit dans les instructions d'installation à la fin de cette rubrique. Le comportement `serviceCredentials` permet également de configurer des certificats approuvés pour la signature des jetons SAML. La configuration suivante référence le certificat « Alice » installé au cours de l'exemple.  
   
-```  
+```xml  
 <system.serviceModel>  
  <services>  
   <service   
@@ -118,13 +121,13 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 </system.serviceModel>  
 ```  
   
- Les étapes suivantes indiquent comment développer un fournisseur de jetons SAML personnalisé et l'intégrer à l'infrastructure de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] :  
+ Les étapes suivantes indiquent comment développer un fournisseur de jetons SAML personnalisé et l'intégrer à l'infrastructure de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] :  
   
 1.  Écrivez un fournisseur de jetons SAML personnalisé.  
   
      L'exemple implémente un fournisseur de jetons SAML personnalisé qui retourne un jeton de sécurité selon une assertion SAML fournie au moment de la construction.  
   
-     Pour effectuer cette tâche, le fournisseur de jetons personnalisé est dérivé de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> et remplace la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A>.  Cette méthode crée et retourne un nouveau `SecurityToken`.  
+     Pour effectuer cette tâche, le fournisseur de jetons personnalisé est dérivé de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> et remplace la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A>. Cette méthode crée et retourne un nouveau `SecurityToken`.  
   
     ```  
     protected override SecurityToken GetTokenCore(TimeSpan timeout)  
@@ -165,7 +168,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 2.  Écrivez un gestionnaire de jetons de sécurité personnalisé.  
   
-     La classe <xref:System.IdentityModel.Selectors.SecurityTokenManager> permet de créer <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pour la classe particulière <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> qui lui est transmise dans la méthode `CreateSecurityTokenProvider`.  Le gestionnaire de jetons de sécurité permet également de créer des authentificateurs et des sérialiseurs de jeton, mais ceux\-là ne sont pas traités dans cet exemple.  Dans cet exemple, le gestionnaire de jetons de sécurité personnalisé hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> et remplace la méthode `CreateSecurityTokenProvider` pour retourner le fournisseur de jetons SAML personnalisé lorsque les spécifications du jeton transmis indiquent que le jeton SAML est demandé.  Si la classe d'informations d'identification du client \(voir l'étape 3\) n'a pas spécifié d'assertion, le gestionnaire de jetons de sécurité crée une instance appropriée.  
+     La classe <xref:System.IdentityModel.Selectors.SecurityTokenManager> permet de créer <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pour la classe particulière <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> qui lui est transmise dans la méthode `CreateSecurityTokenProvider`. Le gestionnaire de jetons de sécurité permet également de créer des authentificateurs et des sérialiseurs de jeton, mais ceux-là ne sont pas traités dans cet exemple. Dans cet exemple, le gestionnaire de jetons de sécurité personnalisé hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> et remplace la méthode `CreateSecurityTokenProvider` pour retourner le fournisseur de jetons SAML personnalisé lorsque les spécifications du jeton transmis indiquent que le jeton SAML est demandé. Si la classe d'informations d'identification du client (voir l'étape 3) n'a pas spécifié d'assertion, le gestionnaire de jetons de sécurité crée une instance appropriée.  
   
     ```  
     public class SamlSecurityTokenManager :  
@@ -233,7 +236,6 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
        return base.CreateSecurityTokenProvider(tokenRequirement);  
       }  
     }  
-  
     ```  
   
 3.  Écrivez une information d'identification client personnalisée.  
@@ -304,18 +306,18 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
     client.ChannelFactory.Endpoint.Behaviors.Add(samlCC);  
     ```  
   
- Sur le service, les revendications associées à l'appelant sont affichées.  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client.  Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
+ Sur le service, les revendications associées à l'appelant sont affichées. Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.  
   
-## Fichier de commandes d'installation  
- Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec le certificat approprié pour exécuter une application auto\-hébergée qui requiert une sécurité basée sur le certificat du serveur.  Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.  
+## <a name="setup-batch-file"></a>Fichier de commandes d'installation  
+ Le fichier de commandes Setup.bat inclus avec cet exemple permet de configurer le serveur avec le certificat approprié pour exécuter une application auto-hébergée qui requiert une sécurité basée sur le certificat du serveur. Ce fichier de commandes doit être modifié pour fonctionner sur plusieurs ordinateurs ou sans hébergement.  
   
  Les éléments suivants fournissent une vue d'ensemble des différentes sections des fichiers de commandes afin qu'ils puissent être modifiés pour s'exécuter dans la configuration appropriée.  
   
 -   Création du certificat de serveur :  
   
-     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser.  La variable `%SERVER_NAME%` spécifie le nom du serveur.  Modifiez cette variable pour spécifier votre propre nom de serveur.  La valeur par défaut dans ce fichier de commandes est localhost.  
+     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat de serveur à utiliser. La variable `%SERVER_NAME%` spécifie le nom du serveur. Modifiez cette variable pour spécifier votre propre nom de serveur. La valeur par défaut dans ce fichier de commandes est localhost.  
   
-     Le certificat est stocké dans le magasin My \(personnel\) sous l'emplacement de magasins LocalMachine.  
+     Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasins LocalMachine.  
   
     ```  
     echo ************  
@@ -329,7 +331,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 -   Installation du certificat de serveur dans le magasin de certificats approuvés du client :  
   
-     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client.  Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client.  Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.  
+     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r LocalMachine -s TrustedPeople  
@@ -337,7 +339,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 -   Création du certificat d'émetteur :  
   
-     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat d'émetteur à utiliser.  La variable `%USER_NAME%` représente le nom de l'émetteur.  Modifiez cette variable pour spécifier votre propre nom d'émetteur.  La valeur par défaut dans ce fichier de commandes est Alice.  
+     Les lignes suivantes du fichier de commandes Setup.bat créent le certificat d'émetteur à utiliser. La variable `%USER_NAME%` représente le nom de l'émetteur. Modifiez cette variable pour spécifier votre propre nom d'émetteur. La valeur par défaut dans ce fichier de commandes est Alice.  
   
      Le certificat est stocké dans le magasin My sous l'emplacement de magasins CurrentUser.  
   
@@ -353,59 +355,58 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 -   Installation du certificat d'émetteur dans le magasin de certificats approuvés du serveur :  
   
-     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client.  Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client.  Si un certificat est déjà associé au certificat racine approuvé du client, par exemple un certificat Microsoft, le remplissage du magasin de certificats du serveur avec le certificat de l'émetteur n'est pas obligatoire.  
+     Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si un certificat est déjà associé au certificat racine approuvé du client, par exemple un certificat Microsoft, le remplissage du magasin de certificats du serveur avec le certificat de l'émetteur n'est pas obligatoire.  
   
     ```  
     certmgr.exe -add -r CurrentUser -s My -c -n %USER_NAME% -r LocalMachine -s TrustedPeople  
-  
     ```  
   
-#### Pour configurer et générer l'exemple  
+#### <a name="to-set-up-and-build-the-sample"></a>Pour configurer et générer l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Pour générer la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 > [!NOTE]
->  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez\-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
+>  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.  
   
-#### Pour exécuter l'exemple sur le même ordinateur  
+#### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur  
   
-1.  Ouvrez une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple.  Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
+1.  Ouvrez une fenêtre d'invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
   
     > [!NOTE]
-    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.  
+    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.  
   
-2.  Lancez Service.exe à partir de service\\bin.  
+2.  Lancez Service.exe à partir de service\bin.  
   
-3.  Lancez Client.exe à partir de \\client\\bin.  L'activité du client s'affiche sur son application de console.  
+3.  Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-4.  Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### Pour exécuter l'exemple sur plusieurs ordinateurs  
+#### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
 1.  Créez un répertoire sur l'ordinateur de service pour les fichiers binaires du service.  
   
-2.  Copiez les fichiers programme du service dans le répertoire de service sur l'ordinateur de service.  Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
+2.  Copiez les fichiers programme du service dans le répertoire de service sur l'ordinateur de service. Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
   
-3.  Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur.  Le fichier Service.exe.config doit être mis à jour pour refléter ce nouveau nom de certificat.  Vous pouvez créer le certificat de serveur en modifiant le fichier de commandes Setup.bat.  Notez que vous devez exécuter le fichier Setup.bat à partir d'une fenêtre d'invite de commandes de Visual Studio ouverte avec des privilèges d'administrateur.  Vous devez affecter à la variable `%SERVER_NAME%` le nom d'hôte complet de l'ordinateur utilisé pour héberger le service.  
+3.  Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Le fichier Service.exe.config doit être mis à jour pour refléter ce nouveau nom de certificat. Vous pouvez créer le certificat de serveur en modifiant le fichier de commandes Setup.bat. Notez que vous devez exécuter le fichier Setup.bat à partir d'une fenêtre d'invite de commandes de Visual Studio ouverte avec des privilèges d'administrateur. Vous devez affecter à la variable `%SERVER_NAME%` le nom d'hôte complet de l'ordinateur utilisé pour héberger le service.  
   
-4.  Copiez le certificat de serveur dans le magasin CurrentUser\-TrustedPeople du client.  Cette étape n'est pas nécessaire lorsque le certificat de serveur est publié par un émetteur de confiance du client.  
+4.  Copiez le certificat de serveur dans le magasin CurrentUser-TrustedPeople du client. Cette étape n'est pas nécessaire lorsque le certificat de serveur est publié par un émetteur de confiance du client.  
   
 5.  Dans le fichier Service.exe.config sur l'ordinateur de service, modifiez la valeur de l'adresse de base pour spécifier le nom de l'ordinateur complet au lieu de localhost.  
   
 6.  Sur l'ordinateur de service, exécutez Service.exe à partir d'une invite de commandes.  
   
-7.  Copiez les fichiers programme du client du dossier \\client\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur client.  
+7.  Copiez les fichiers programme du client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur client.  
   
 8.  Dans le fichier Client.exe.config de l'ordinateur client, modifiez la valeur d'adresse du point de terminaison afin qu'elle corresponde à la nouvelle adresse de votre service.  
   
 9. Sur l'ordinateur client, lancez `Client.exe` à partir d'une invite de commandes.  
   
-10. Si le client et le service ne parviennent pas à communiquer, consultez la rubrique [Troubleshooting Tips](http://msdn.microsoft.com/fr-fr/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### Pour procéder au nettoyage après exécution de l'exemple  
+#### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
 1.  Exécutez Cleanup.bat dans le dossier d'exemples après avoir exécuté l'exemple.  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

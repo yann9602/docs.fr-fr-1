@@ -1,73 +1,75 @@
 ---
-title: "&lt;add&gt; (&#233;l&#233;ment de &lt;namedCaches&gt;) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<add> (élément de <namedCaches>)"
-  - "add (élément de <namedCaches>)"
+title: "&lt;ajouter&gt; , élément pour &lt;namedCaches&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- add element for <namedCaches>
+- <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0baafcb53bf79a25618dad56c2dcf1412e48624b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;add&gt; (&#233;l&#233;ment de &lt;namedCaches&gt;)
-Ajoute une entrée `namedCache` à la collection `namedCaches` pour un cache mémoire.  
+# <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;ajouter&gt; , élément pour &lt;namedCaches&gt;
+Ajoute un `namedCache` entrée à la `namedCaches` collection pour un cache mémoire.  
   
-## Syntaxe  
+ \<System.Runtime.Caching >  
+\<memoryCache >  
+\<namedCaches >  
+\<add>  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <namedCaches>  
     <add name="default" />  
       <!-- child elements -->  
  </namedCaches>  
 ```  
   
-## Type  
+## <a name="type"></a>Type  
  `None`  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
-|||  
-|-|-|  
 |Attribut|Description|  
-|`CacheMemoryLimitMegabytes`|Valeur entière qui spécifie la taille autorisée maximale \(en mégaoctets\) qu'une instance d'un objet <xref:System.Runtime.Caching.MemoryCache> peut atteindre.  La valeur par défaut est 0, ce qui signifie que l'heuristique de redimensionnement automatique de la classe <xref:System.Runtime.Caching.MemoryCache> est utilisée par défaut.|  
+|-|-|  
+|`CacheMemoryLimitMegabytes`|Valeur entière qui spécifie la taille maximale autorisée (en mégaoctets) qui une instance d’un <xref:System.Runtime.Caching.MemoryCache> peut atteindre. La valeur par défaut est 0, ce qui signifie que le <xref:System.Runtime.Caching.MemoryCache> heuristiques de redimensionnement automatique de la classe sont utilisées par défaut.|  
 |`Name`|Nom du cache.|  
-|`PhysicalMemoryLimitPercentage`|Valeur entière entre 0 et 100 qui spécifie le pourcentage maximal de mémoire de l'ordinateur physiquement installée qui peut être consommée par le cache.  La valeur par défaut est 0, ce qui signifie que l'heuristique de redimensionnement automatique de la classe <xref:System.Runtime.Caching.MemoryCache> est utilisée par défaut.|  
-|`PollingInterval`|Valeur qui indique l'intervalle de temps à l'issue duquel l'implémentation de cache compare la charge de mémoire actuelle aux limites de mémoire absolue et sous forme de pourcentage définies pour l'instance de cache.  Cette valeur est entrée au format « HH:MM:SS ».|  
+|`PhysicalMemoryLimitPercentage`|Valeur entière comprise entre 0 et 100 qui spécifie le pourcentage maximal de mémoire d’ordinateur physiquement installée qui peut être utilisé par le cache. La valeur par défaut est 0, ce qui signifie que le <xref:System.Runtime.Caching.MemoryCache> heuristiques de redimensionnement automatique de la classe sont utilisées par défaut.|  
+|`PollingInterval`|Valeur qui indique l’intervalle de temps après lequel l’implémentation de cache compare la charge de mémoire actuelle aux limites de mémoire absolue et en pourcentage définies pour l’instance de cache. Cette valeur est entrée dans le format de « Hh : mm : ».|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  `None`  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<namedCaches\>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Contient une collection de paramètres de configuration pour les instances <xref:System.Runtime.Caching.MemoryCache> nommées.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Contient une collection de paramètres de configuration pour le nommé <xref:System.Runtime.Caching.MemoryCache> instances.|  
   
-## Notes  
- L'élément `add` ajoute une entrée à la collection `namedCaches` pour un cache mémoire.  Vous pouvez utiliser l'élément [clear](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) avant d'utiliser `add` pour garantir l'absence de tout autre cache nommé dans la collection.  Cet élément peut être utilisé dans les fichiers machine.config et Web.config.  
+## <a name="remarks"></a>Remarques  
+ Le `add` élément ajoute une entrée à la `namedCaches` collection pour un cache mémoire. Vous pouvez utiliser la [effacer](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) élément avant d’utiliser le `add` pour garantir qu’il n’existe aucun autre cache nommé dans la collection. Cet élément peut être utilisé dans le fichier machine.config et dans le fichier Web.config.  
   
-## Exemple  
- L'exemple suivant montre comment définir les paramètres de l'entrée `namedCache` par défaut sur la collection `namedCaches`  pour un cache mémoire.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment définir les paramètres de la valeur par défaut `namedCache` entrée à la `namedCaches` collection pour un cache mémoire.  
   
-```  
+```xml  
 <configuration>  
   
   <system.runtime.caching>  
@@ -84,5 +86,5 @@ Ajoute une entrée `namedCache` à la collection `namedCaches` pour un cache mé
 </configuration>  
 ```  
   
-## Voir aussi  
- [\<namedCaches\>, élément \(Paramètres de cache\)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+## <a name="see-also"></a>Voir aussi  
+ [\<namedCaches >, élément (paramètres de Cache)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

@@ -5,24 +5,22 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
 - programming assemblies
 ms.assetid: 25918b15-701d-42c7-95fc-c290d08648d6
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 368021062a3ad49d2c63f92797c59b8c0f1cddfc
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="programming-with-assemblies"></a>Programmation à l'aide d'assemblys
 Les assemblys sont les éléments de base du .NET Framework. Ils forment l’unité fondamentale de déploiement, de gestion de version, de réutilisation, de portée d’activation et des autorisations de sécurité. Un assembly fournit au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Il s’agit d’une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Pour le runtime, un type n'existe pas en dehors du contexte d'un assembly.  
@@ -94,4 +92,3 @@ Les assemblys sont les éléments de base du .NET Framework. Ils forment l’uni
   
  [Réflexion](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Explique comment utiliser la classe **Reflection** pour obtenir des informations sur un assembly.
-

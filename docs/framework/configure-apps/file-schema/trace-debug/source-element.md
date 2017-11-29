@@ -1,76 +1,73 @@
 ---
-title: "&lt;source&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#source"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<source> (élément)"
-  - "source (élément)"
-ms.assetid: ecf86505-735d-4844-aaba-266fdd134218
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+title: "&lt;source&gt; élément"
+ms.date: 09/29/2017
+ms.prod: .net-framework
+ms.technology: dotnet-clr
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#source
+helpviewer_keywords:
+- <source> element
+- source element
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 129888986a933fe875aade153f6becd8439d4704
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;source&gt;, &#233;l&#233;ment
-Spécifie une source de trace qui initie le traçage des messages.  
+# <a name="ltsourcegt-element"></a>&lt;source&gt; élément
+Spécifie une source de trace qui lance des messages de traçage.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.Diagnostics >  
+\<sources >  
+\<source >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <source>   
   <listeners>...</listeners>  
 </source>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
+|---------------|-----------------|  
 |`name`|Attribut facultatif.<br /><br /> Spécifie le nom de la source de trace.|  
-|`switchName`|Attribut facultatif.<br /><br /> Spécifie le nom d'une instance de commutateur de trace dans l'application.  Si le commutateur n'est pas identifié dans un élément `<switches>`, la valeur spécifie le niveau du commutateur.|  
-|`switchType`|Attribut facultatif.<br /><br /> Spécifie le type du commutateur de trace.  S'il est précisé, le type doit représenter un nom de classe valide et ne peut pas être une chaîne vide.|  
-|`extraAttribute`|Attribut facultatif.<br /><br /> Spécifie la valeur d'un attribut de source\-détail de trace identifié par la méthode d' <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> pour cette source de trace.|  
+|`switchName`|Attribut facultatif.<br /><br /> Spécifie le nom d’une instance de commutateur de trace dans l’application. Si le commutateur n’est pas identifié dans un `<switches>` élément, la valeur spécifie le niveau du commutateur.|  
+|`switchType`|Attribut facultatif.<br /><br /> Spécifie le type du commutateur de trace. Le cas échéant, le type doit être un nom de classe valide et ne peut pas être une chaîne vide.|  
+|`extraAttribute`|Attribut facultatif.<br /><br /> Spécifie la valeur d’un attribut spécifique à la source de trace identifié par le <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> méthode pour cette source de trace.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<listeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Contient des écouteurs qui collectent, stockent et routent des messages.|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Contient des écouteurs qui collectent, stocker et acheminer les messages.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`system.diagnostics`|Spécifie les écouteurs de traçage qui collectent, stockent et routent des messages, ainsi que le niveau auquel un commutateur de traçage est défini.|  
-|`sources`|Contient des sources de trace qui initient des messages de traçage.|  
+|`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
+|`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
   
-## Notes  
- Cet élément peut être utilisé dans le fichier de configuration machine \(Machine.config\) et dans le fichier de configuration de l'application.  
+## <a name="remarks"></a>Remarques  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (Machine.config) et le fichier de configuration d’application.  
   
-## Exemple  
- L'exemple suivant montre comment utiliser l'élément `<source>`  pour ajouter la source de trace `mySource` et définir le niveau du commutateur source nommé `sourceSwitch`.  Un écouteur de la trace console qui écrit les informations de traçage dans la console est ajouté.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser le `<source>` élément à ajouter la source de suivi `mySource` et pour définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté qui écrit des informations de traçage dans la console.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -90,6 +87,6 @@ Spécifie une source de trace qui initie le traçage des messages.
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres de traçage et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [Trace Switches](../../../../../docs/framework/debug-trace-profile/trace-switches.md)
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [Commutateurs de suivi](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

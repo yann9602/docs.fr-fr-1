@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - asynchronous thread aborts
 - AsynchronousThreadAbort MDA
@@ -21,16 +15,15 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 9a80b0cdd762a9dc26089aa450cf998b1832dbc1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6f7bfee4375a14a4456493333e65a953d406c732
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="asynchronousthreadabort-mda"></a>Assistant Débogage managé asynchronousThreadAbort
 L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quand un thread tente d’introduire un abandon asynchrone dans un autre thread. Les abandons de threads synchrones n’activent pas l’Assistant Débogage managé `asynchronousThreadAbort`.
@@ -43,7 +36,7 @@ L’Assistant Débogage managé (MDA) `asynchronousThreadAbort` est activé quan
  Les symptômes peuvent varier considérablement en raison du caractère aléatoire du problème.
 
 ## <a name="cause"></a>Cause
- Le code dans un thread a appelé la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=fullName> sur un thread cible pour introduire un abandon de thread asynchrone. L’abandon de thread est asynchrone, car le code qui effectue l’appel à <xref:System.Threading.Thread.Abort%2A> s’exécute sur un thread différent de la cible de l’opération d’abandon. Les abandons de threads synchrones ne doivent pas provoquer de problème, car le thread exécutant <xref:System.Threading.Thread.Abort%2A> doit l’avoir fait uniquement à un point de contrôle sécurisé où l’état de l’application est cohérent.
+ Le code dans un thread a appelé la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> sur un thread cible pour introduire un abandon de thread asynchrone. L’abandon de thread est asynchrone, car le code qui effectue l’appel à <xref:System.Threading.Thread.Abort%2A> s’exécute sur un thread différent de la cible de l’opération d’abandon. Les abandons de threads synchrones ne doivent pas provoquer de problème, car le thread exécutant <xref:System.Threading.Thread.Abort%2A> doit l’avoir fait uniquement à un point de contrôle sécurisé où l’état de l’application est cohérent.
 
  Les abandons de threads asynchrones présentent un problème, car ils sont traités à des points inattendus dans l’exécution du thread cible. Pour éviter cela, le code écrit pour s’exécuter sur un thread susceptible d’être abandonné de cette manière aurait besoin de gérer une exception <xref:System.Threading.ThreadAbortException> presque à chaque ligne de code, en prenant soin de remettre les données d’application dans un état cohérent. Il n’est pas réaliste de s’attendre à ce que le code soit écrit avec ce problème à l’esprit, ni d’écrire du code qui protège contre tous les cas possibles.
 
@@ -87,4 +80,3 @@ void FireMda()
 
 ## <a name="see-also"></a>Voir aussi
  <xref:System.Threading.Thread> [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-

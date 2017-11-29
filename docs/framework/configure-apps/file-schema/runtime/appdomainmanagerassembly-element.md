@@ -1,75 +1,77 @@
 ---
-title: "&lt;appDomainManagerAssembly&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<appDomainManagerAssembly> (élément)"
-  - "appDomainManagerAssembly (élément)"
+title: "&lt;appDomainManagerAssembly&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <appDomainManagerAssembly> element
+- appDomainManagerAssembly element
 ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 0e07b7bd18f19439f64ed8eaef5bda3bad5cef77
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;appDomainManagerAssembly&gt;, &#233;l&#233;ment
-Spécifie l'assembly qui fournit le gestionnaire de domaine d'application pour le domaine d'application par défaut dans le processus.  
+# <a name="ltappdomainmanagerassemblygt-element"></a>&lt;appDomainManagerAssembly&gt; élément
+Spécifie l’assembly qui fournit le Gestionnaire du domaine d’application par défaut du processus.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<appDomainManagerAssembly >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <appDomainManagerAssembly   
    value="assembly display name" />  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`value`|Attribut requis.  Spécifie le nom complet de l'assembly qui fournit le gestionnaire de domaine d'application pour le domaine d'application par défaut dans le processus.|  
+|---------------|-----------------|  
+|`value`|Attribut requis. Spécifie le nom complet de l’assembly qui fournit le Gestionnaire de domaine d’application pour le domaine d’application par défaut dans le processus.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- Pour spécifier le type du gestionnaire de domaine d'application, vous devez indiquer cet élément et l'élément [\<appDomainManagerType\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md).  Si l'un de ces éléments n'est pas spécifié, l'autre est ignoré.  
+## <a name="remarks"></a>Remarques  
+ Pour spécifier le type du Gestionnaire de domaine d’application, vous devez spécifier cet élément et la [ \<appDomainManagerType >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md) élément. Si un de ces éléments n’est pas spécifié, l’autre est ignorée.  
   
- Lorsque le domaine d'application par défaut est chargé, <xref:System.TypeLoadException> est levée si l'assembly spécifié n'existe pas ou ne contient pas le type indiqué par l'élément [\<appDomainManagerType\>](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md), et le processus ne peut pas démarrer.  Si l'assembly est trouvé mais que les informations de version ne correspondent pas, une <xref:System.IO.FileLoadException> est levée.  
+ Lorsque le domaine d’application par défaut est chargé, <xref:System.TypeLoadException> est levée si l’assembly spécifié n’existe pas ou si l’assembly ne contient pas le type spécifié par le [ \<appDomainManagerType >](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md) élément ; et le processus ne parvient pas à démarrer. Si l’assembly est trouvé, mais les informations de version ne correspondent pas, un <xref:System.IO.FileLoadException> est levée.  
   
- Lorsque vous spécifiez le type du gestionnaire de domaine d'application pour le domaine d'application par défaut, d'autres domaines d'application créés à partir du domaine d'application par défaut héritent du type du gestionnaire de domaine d'application.  Utilisez les propriétés <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName> et <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName> afin de spécifier un type de gestionnaire de domaine d'application différent pour un nouveau domaine d'application.  
+ Lorsque vous spécifiez le type de gestionnaire de domaine application pour le domaine d’application par défaut, le type de gestionnaire de domaine application héritent des autres domaines d’application créés à partir du domaine d’application par défaut. Utilisez le <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType> et <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType> des propriétés pour spécifier un type de gestionnaire de domaine d’application pour un domaine d’application.  
   
- La spécification du type du gestionnaire de domaine d'application requiert que l'application dispose d'une confiance totale. \(C'est le cas, par exemple, d'une application qui s'exécute sur le Bureau.\) Si l'application ne dispose pas d'une confiance totale, une <xref:System.TypeLoadException> est levée.  
+ En spécifiant le type de gestionnaire de domaine application nécessite que l’application d’avoir une confiance totale. (Par exemple, une application en cours d’exécution sur le bureau a une confiance totale.) Si l’application n’a pas d’une confiance totale, un <xref:System.TypeLoadException> est levée.  
   
- Pour obtenir des informations sur le format du nom complet de l'assembly, consultez la propriété <xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName>.  
+ Pour le format du nom complet d’assembly, consultez la <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> propriété.  
   
- Cet élément de configuration est disponible uniquement dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures.  
+ Cet élément de configuration est uniquement disponible dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures.  
   
-## Exemple  
- L'exemple suivant indique comment spécifier que le gestionnaire de domaine d'application pour le domaine d'application par défaut d'un processus est le type `MyMgr` dans l'assembly `AdMgrExample`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment spécifier que le Gestionnaire de domaine d’application pour le domaine d’application par défaut d’un processus est le `MyMgr` de type dans le `AdMgrExample` assembly.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <appDomainManagerType value="MyMgr" />  
@@ -79,10 +81,10 @@ Spécifie l'assembly qui fournit le gestionnaire de domaine d'application pour l
 </configuration>  
 ```  
   
-## Voir aussi  
- <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=fullName>   
- <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=fullName>   
- [\<appDomainManagerType\>, élément](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md)   
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [SetAppDomainManagerType, méthode](../Topic/ICLRControl::SetAppDomainManagerType%20Method.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.AppDomainSetup.AppDomainManagerType%2A?displayProperty=nameWithType>  
+ <xref:System.AppDomainSetup.AppDomainManagerAssembly%2A?displayProperty=nameWithType>  
+ [\<appDomainManagerType > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/appdomainmanagertype-element.md)  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [SetAppDomainManagerType (méthode)](../../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)

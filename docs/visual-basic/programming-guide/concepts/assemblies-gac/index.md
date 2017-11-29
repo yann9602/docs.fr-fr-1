@@ -1,31 +1,22 @@
 ---
 title: Assemblys et le Global Assembly Cache (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: fcf78ff1-f1ab-4a5d-b6d8-00d2046b6c80
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c5a1a3a651fc7d2b42f8ac55ab6f2d832f258bb0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 8a53a153851973c735a430056520b01c27b1ef59
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assemblies-and-the-global-assembly-cache-visual-basic"></a>Assemblys et le Global Assembly Cache (Visual Basic)
 Les assemblys constituent l’unité fondamentale dans le déploiement, la gestion de version, la portée d’activation et les autorisations de sécurité d’une application .NET. Les assemblys prennent la forme d’un fichier exécutable (.exe) ou d’un fichier de bibliothèque de liens dynamiques (.dll) et sont les blocs de construction du .NET Framework. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Vous pouvez comparer un assembly à une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité.  
@@ -51,7 +42,7 @@ Les assemblys constituent l’unité fondamentale dans le déploiement, la gesti
   
 -   Une table de fichiers décrivant tous les autres fichiers qui composent l’assembly, par exemple, les autres assemblys que vous avez créés et qui sont utilisés par votre fichier .exe ou .dll, ou même des fichiers bitmap ou Readme.  
   
--   Une *liste de référence de l’assembly*, qui est une liste de toutes les dépendances externes, fichiers .dll ou autres, nécessaires à votre application qui ont été créés par quelqu’un d’autre. Les références de l’assembly contiennent des références aux objets globaux et privés. Les objets globaux résident dans le GAC, une zone disponible pour d’autres applications, qui est comparable au répertoire System32. L’espace de noms <xref:Microsoft.VisualBasic?displayProperty=fullName> est un exemple d’un assembly dans le Global Assembly Cache. Les objets privés doivent être dans un répertoire au même niveau ou à un niveau inférieur que celui du répertoire dans lequel votre application est installée.  
+-   Une *liste de référence de l’assembly*, qui est une liste de toutes les dépendances externes, fichiers .dll ou autres, nécessaires à votre application qui ont été créés par quelqu’un d’autre. Les références de l’assembly contiennent des références aux objets globaux et privés. Les objets globaux résident dans le GAC, une zone disponible pour d’autres applications, qui est comparable au répertoire System32. L’espace de noms <xref:Microsoft.VisualBasic?displayProperty=nameWithType> est un exemple d’un assembly dans le Global Assembly Cache. Les objets privés doivent être dans un répertoire au même niveau ou à un niveau inférieur que celui du répertoire dans lequel votre application est installée.  
   
  Étant donné que les assemblys contiennent des informations sur le contenu, le contrôle de version et les dépendances, les applications créées avec Visual Basic n’utilisent pas les valeurs de registre Windows pour fonctionner correctement. Les assemblys réduisent les conflits de fichiers .dll et rendent vos applications plus fiables et plus faciles à déployer. Dans de nombreux cas, vous pouvez installer une application .NET simplement en copiant ses fichiers sur l’ordinateur cible.  
   
@@ -67,12 +58,11 @@ Les assemblys constituent l’unité fondamentale dans le déploiement, la gesti
 >  Pour générer un assembly dans Visual Studio, dans le menu **Générer**, choisissez **Générer**.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Assemblys dans le common language runtime](https://msdn.microsoft.com/library/k3677y81)   
- [Assemblies Friend (Visual Basic)](friend-assemblies.md)   
- [Comment : partager un assembly avec d’autres applications (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)   
- [Comment : charger et décharger des assemblys (Visual Basic)](how-to-load-and-unload-assemblies.md)   
- [Comment : déterminer si un fichier est un assembly (Visual Basic)](how-to-determine-if-a-file-is-an-assembly.md)   
- [Comment : créer et utiliser des assemblys à l’aide de la ligne de commande (Visual Basic)](how-to-create-and-use-assemblies-using-the-command-line.md)   
- [Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (Visual Basic)](walkthrough-embedding-types-from-managed-assemblies-in-vs.md)   
+ [Assemblys dans le Common Language Runtime](https://msdn.microsoft.com/library/k3677y81)  
+ [Assemblys friend (Visual Basic)](friend-assemblies.md)  
+ [Comment : partager un Assembly avec d’autres Applications (Visual Basic)](how-to-share-an-assembly-with-other-applications.md)  
+ [Comment : charger et décharger des assemblys (Visual Basic)](how-to-load-and-unload-assemblies.md)  
+ [Comment : déterminer si un fichier est un Assembly (Visual Basic)](how-to-determine-if-a-file-is-an-assembly.md)  
+ [Comment : créer et utiliser des assemblys à l’aide de la ligne de commande (Visual Basic)](how-to-create-and-use-assemblies-using-the-command-line.md)  
+ [Procédure pas à pas : Incorporation de Types provenant d’assemblys managés dans Visual Studio (Visual Basic)](walkthrough-embedding-types-from-managed-assemblies-in-vs.md)  
  [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio (Visual Basic)](walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)
-

@@ -5,28 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- Code contracts
+- csharp
+- vb
+helpviewer_keywords: Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 78553d77ea9a669f7cebdd9187e2436d3b095a75
-ms.openlocfilehash: c0eca978f32c4f96ad976718584c0bf92bf638ec
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ce74cfb9c4e0eb759fb8160ab06fa6fbde60081b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="code-contracts"></a>Contrats de code
 Les contrats de code offrent un moyen de spécifier des conditions préalables, des post-conditions et des invariants d'objet dans votre code. Les conditions préalables sont des exigences qui doivent être satisfaites à l'entrée d'une méthode ou d'une propriété. Les post-conditions décrivent les attentes à la sortie de la méthode ou de la propriété. Les invariants d'objet décrivent l'état attendu pour une classe présentant un état correct.  
@@ -50,7 +45,7 @@ Les contrats de code offrent un moyen de spécifier des conditions préalables, 
  Pour télécharger les outils et obtenir des instructions détaillées sur l’utilisation des contrats de code, consultez [Contrats de code](http://go.microsoft.com/fwlink/?LinkId=152461) sur le site web MSDN DevLabs.  
   
 ## <a name="preconditions"></a>Preconditions  
- Vous pouvez spécifier des conditions préalables à l'aide de la méthode <xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=fullName>. Les conditions préalables définissent l'état à l'appel d'une méthode. Elles sont généralement utilisées pour indiquer des valeurs de paramètre valides. Tous les membres spécifiés dans les conditions préalables doivent être au moins aussi accessibles que la méthode elle-même. Autrement, la condition préalable risque de ne pas être comprise par tous les appelants de la méthode. La condition ne doit pas avoir d'effets secondaires. Le comportement au moment de l'exécution des conditions préalables non réussies est déterminé par l'analyseur au moment de l'exécution.  
+ Vous pouvez spécifier des conditions préalables à l'aide de la méthode <xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType>. Les conditions préalables définissent l'état à l'appel d'une méthode. Elles sont généralement utilisées pour indiquer des valeurs de paramètre valides. Tous les membres spécifiés dans les conditions préalables doivent être au moins aussi accessibles que la méthode elle-même. Autrement, la condition préalable risque de ne pas être comprise par tous les appelants de la méthode. La condition ne doit pas avoir d'effets secondaires. Le comportement au moment de l'exécution des conditions préalables non réussies est déterminé par l'analyseur au moment de l'exécution.  
   
  Par exemple, la condition préalable suivante spécifie que le paramètre `x` ne doit pas être null.  
   
@@ -67,7 +62,7 @@ Les contrats de code offrent un moyen de spécifier des conditions préalables, 
   
 -   L'ensemble de ces instructions est suivi d'un appel de méthode <xref:System.Diagnostics.Contracts.Contract> explicite, tel qu'un appel à la méthode <xref:System.Diagnostics.Contracts.Contract.Requires%2A>, <xref:System.Diagnostics.Contracts.Contract.Ensures%2A>, <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A> ou <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A>.  
   
- Quand les instructions `if`-`then`-`throw` apparaissent sous cette forme, les outils les reconnaissent en tant qu’instructions `requires` héritées. Si aucun autre contrat ne suit la séquence `if`-`then`-`throw`, terminez le code par la méthode <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=fullName>.  
+ Quand les instructions `if`-`then`-`throw` apparaissent sous cette forme, les outils les reconnaissent en tant qu’instructions `requires` héritées. Si aucun autre contrat ne suit la séquence `if`-`then`-`throw`, terminez le code par la méthode <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType>.  
   
 ```  
 if ( x == null ) throw new ...  
@@ -87,7 +82,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
  `Contract.Ensures( this.F > 0 );`  
   
 ### <a name="exceptional-postconditions"></a>Post-conditions exceptionnelles  
- Les post-conditions exceptionnelles sont des post-conditions qui doivent être `true` quand une exception particulière est levée par une méthode. Vous pouvez les spécifier à l'aide de la méthode <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=fullName>, comme le montre l'exemple suivant.  
+ Les post-conditions exceptionnelles sont des post-conditions qui doivent être `true` quand une exception particulière est levée par une méthode. Vous pouvez les spécifier à l'aide de la méthode <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=nameWithType>, comme le montre l'exemple suivant.  
   
  `Contract.EnsuresOnThrow<T>( this.F > 0 );`  
   
@@ -193,7 +188,7 @@ Contract.Invariant(this.x > this.y);
   
 -   Méthodes dont le nom qualifié complet commence par « System.Diagnostics.Contracts.Contract », « System.String », « System.IO.Path » ou « System.Type ».  
   
--   Les délégués appelés, à condition que le type délégué lui-même soit attribué avec l'attribut <xref:System.Diagnostics.Contracts.PureAttribute>. Les types délégués <xref:System.Predicate%601?displayProperty=fullName> et <xref:System.Comparison%601?displayProperty=fullName> sont considérés comme purs.  
+-   Les délégués appelés, à condition que le type délégué lui-même soit attribué avec l'attribut <xref:System.Diagnostics.Contracts.PureAttribute>. Les types délégués <xref:System.Predicate%601?displayProperty=nameWithType> et <xref:System.Comparison%601?displayProperty=nameWithType> sont considérés comme purs.  
   
 <a name="visibility"></a>   
 ### <a name="visibility"></a>Visibilité  
@@ -202,5 +197,5 @@ Contract.Invariant(this.x > this.y);
 ## <a name="example"></a>Exemple  
  L'exemple suivant illustre l'utilisation des contrats de code.  
   
- [!code-csharp[ContractExample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#1)] [!code-vb[ContractExample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#1)]
-
+ [!code-csharp[ContractExample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#1)]
+ [!code-vb[ContractExample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#1)]

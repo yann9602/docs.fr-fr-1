@@ -18,16 +18,15 @@ helpviewer_keywords:
 - managed heap
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 7f8ee49861902002e69af96168def5883d73c3a5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8b06d21006b95b385792785cafaf75fa3e8cf4b1
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="automatic-memory-management"></a>Automatic Memory Management
 La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de [l'exécution managée](../../docs/standard/managed-execution-process.md). Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.  
@@ -60,7 +59,6 @@ La gestion automatique de la mémoire est un des services que le Common Language
  Pour la majorité des objets créés par votre application, vous pouvez laisser au « garbage collector » le soin de réaliser automatiquement les tâches de gestion de mémoire requises. Cependant, les ressources non managées requièrent un nettoyage explicite. Le type le plus répandu de ressource non managée est un objet qui enveloppe une ressource de système d'exploitation telle qu'un handle de fichier ou de fenêtre ou une connexion réseau. Bien que le « garbage collector » soit en mesure de suivre la durée de vie d'un objet managé qui encapsule une ressource non managée, il ne possède pas de connaissances spécifiques sur la façon de nettoyer une ressource. Lors de la création d'un objet qui encapsule une ressource non managée, il est recommandé de fournir le code nécessaire pour nettoyer la ressource non managée dans une méthode **Dispose** publique. En fournissant une méthode **Dispose**, vous donnez la possibilité aux utilisateurs de votre objet d'en libérer explicitement la mémoire lorsqu'ils ont fini de s'en servir. Lorsque vous utilisez un objet qui encapsule une ressource non managée, vous devez garder à l'esprit la méthode **Dispose** et l'appeler si nécessaire. Pour obtenir plus d’informations sur le nettoyage de ressources non managées et un exemple de modèle de conception pour l’implémentation de la méthode **Dispose**, consultez [Garbage collection](../../docs/standard/garbage-collection/index.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.GC>   
- [Garbage collection](../../docs/standard/garbage-collection/index.md)   
+ <xref:System.GC>  
+ [Nettoyage de la mémoire](../../docs/standard/garbage-collection/index.md)  
  [Processus d'exécution managée](../../docs/standard/managed-execution-process.md)
-

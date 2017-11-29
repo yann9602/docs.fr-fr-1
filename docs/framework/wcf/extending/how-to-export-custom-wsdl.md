@@ -1,29 +1,32 @@
 ---
-title: "Comment&#160;: exporter des informations WSDL personnalis&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : exporter des informations WSDL personnalisées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5c1e4b58-b76b-472b-9635-2f80d42a0734
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 95016b658a679a47b6b37d0c4130ef8e816165c2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: exporter des informations WSDL personnalis&#233;es
-Cette rubrique explique comment exporter des informations WSDL personnalisées.Pour cela, nous définirons un nouvel attribut de code appelé `WsdlDocumentationAttribute` qui ajoutera des informations personnalisées au WSDL généré par le service.  
+# <a name="how-to-export-custom-wsdl"></a>Comment : exporter des informations WSDL personnalisées
+Cette rubrique explique comment exporter des informations WSDL personnalisées. Pour cela, nous définirons un nouvel attribut de code appelé `WsdlDocumentationAttribute` qui ajoutera des informations personnalisées au WSDL généré par le service.  
   
-### Pour exporter des informations WSDL personnalisées  
+### <a name="to-export-custom-wsdl-information"></a>Pour exporter des informations WSDL personnalisées  
   
-1.  Implémentez l'interface <xref:System.ServiceModel.Description.IWsdlExportExtension>.Cette interface peut être implémentée sur une classe qui implémente chacune des interfaces suivantes : <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior> ou <xref:System.ServiceModel.Description.IEndpointBehavior>.Elle peut également être implémentée sur une classe dérivée de <xref:System.ServiceModel.Channels.BindingElement>.Cet exemple implémente <xref:System.ServiceModel.Description.IWsdlExportExtension> sur une classe d'attributs qui implémente <xref:System.ServiceModel.Description.IContractBehavior>.  
+1.  Implémentez l'interface <xref:System.ServiceModel.Description.IWsdlExportExtension>. Cette interface peut être implémentée sur une classe qui implémente chacune des interfaces suivantes : <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior> ou <xref:System.ServiceModel.Description.IEndpointBehavior>. Elle peut également être implémentée sur une classe dérivée de <xref:System.ServiceModel.Channels.BindingElement>. Cet exemple implémente <xref:System.ServiceModel.Description.IWsdlExportExtension> sur une classe d'attributs qui implémente <xref:System.ServiceModel.Description.IContractBehavior>.  
   
-2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> définit deux méthodes <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> et <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>.Ces méthodes vous permettent de modifier ou d'ajouter \(ou les deux\) des informations supplémentaires dans le <xref:System.ServiceModel.Description.WsdlContractConversionContext>.Cet exemple, dans la méthode <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>, récupère une collection d'objets <xref:System.ServiceModel.Description.OperationDescription> puis itère au sein de la collection à la recherche d'un `WsdlDocumentationAttribute`.S'il est trouvé, le texte associé à l'attribut est extrait, un élément Summary est généré, et celui\-ci est ajouté à `DocumentationElement` de l'opération.  
+2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> définit deux méthodes <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> et <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. Ces méthodes vous permettent de modifier ou d'ajouter (ou les deux) des informations supplémentaires dans le <xref:System.ServiceModel.Description.WsdlContractConversionContext>. Cet exemple, dans la méthode <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>, récupère une collection d'objets <xref:System.ServiceModel.Description.OperationDescription> puis itère au sein de la collection à la recherche d'un `WsdlDocumentationAttribute`. S'il est trouvé, le texte associé à l'attribut est extrait, un élément Summary est généré, et celui-ci est ajouté à `DocumentationElement` de l'opération.  
   
     ```  
             public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
@@ -60,7 +63,7 @@ Cette rubrique explique comment exporter des informations WSDL personnalisées.P
                 }  
     ```  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple de code suivant illustre l'implémentation complète de la classe `WsdlDocumentationAttribute`.  
   
 ```  
@@ -200,8 +203,7 @@ return lines;
       return returnsElement;  
     }  
   }  
-  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Métadonnées](../../../../docs/framework/wcf/feature-details/metadata.md)

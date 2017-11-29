@@ -1,25 +1,28 @@
 ---
-title: "ServiceDebugBehavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceDebugBehavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a5ec9061-1e95-43fb-b0d9-dbd0a7bc3c44
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2d6b866c90e3e6c6e72dc75f230bcf7b4e03a6bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceDebugBehavior
+# <a name="servicedebugbehavior"></a>ServiceDebugBehavior
 ServiceDebugBehavior  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class ServiceDebugBehavior : Behavior  
@@ -32,52 +35,52 @@ class ServiceDebugBehavior : Behavior
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe ServiceDebugBehavior ne définit pas de méthode.  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe ServiceDebugBehavior possède les propriétés suivantes :  
   
-### HttpHelpPageEnabled  
+### <a name="httphelppageenabled"></a>HttpHelpPageEnabled  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Vérifie si le service publie son WSDL à l'adresse contrôlée par l'attribut `HttpGetUrl`.  
   
-### HttpHelpPageUrl  
+### <a name="httphelppageurl"></a>HttpHelpPageUrl  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTP.  
   
-### HttpsHelpPageEnabled  
+### <a name="httpshelppageenabled"></a>HttpsHelpPageEnabled  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Vérifie si le service publie son WSDL sur HTTPS à l'adresse contrôlée par l'attribut `HttpsGetUrl`.  
   
-### HttpsHelpPageUrl  
+### <a name="httpshelppageurl"></a>HttpsHelpPageUrl  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Définit l'emplacement auquel le service WSDL est publié pour récupération à l'aide de HTTPS.  
   
-### IncludeExceptionDetailInFaults  
+### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
  Type de données : booléen  
   
  Type d'accès : lecture seule  
   
  Spécifie s'il convient d'inclure des informations d'exception gérées dans les détails des fautes SOAP renvoyées aux clients à des fins de débogage.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Description.ServiceDebugBehavior>

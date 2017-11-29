@@ -1,28 +1,31 @@
 ---
-title: "Comment&#160;: publier les m&#233;tadonn&#233;es d&#39;un service &#224; l&#39;aide d&#39;un fichier de configuration | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e94fe7135d51c4e1578ca69768b6d0ba2aa6ae6c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: publier les m&#233;tadonn&#233;es d&#39;un service &#224; l&#39;aide d&#39;un fichier de configuration
+# <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration
 C'est l'une des deux rubriques de procédure qui traitent de la publication des métadonnées pour un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Il y a deux façons de spécifier comment un service doit publier des métadonnées : à l'aide d'un fichier de configuration et à l'aide du code. Cette rubrique montre comment publier des métadonnées pour un service à l'aide d'un fichier de configuration.  
   
 > [!CAUTION]
->  Cette rubrique indique comment publier des métadonnées de manière non sécurisée. Tout client peut récupérer les métadonnées du service. Si vous avez besoin de votre service doit publier les métadonnées de manière sécurisée, consultez [point de terminaison de métadonnées sécurisé personnalisée](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
+>  Cette rubrique indique comment publier des métadonnées de manière non sécurisée. Tout client peut récupérer les métadonnées du service. Si vous avez besoin de votre service pour publier des métadonnées de manière sécurisée, consultez [point de terminaison de métadonnées sécurisé personnalisée](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publication des métadonnées dans le code, consultez [Comment : publier des métadonnées pour un Code à l’aide du Service](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). La publication des métadonnées permet aux clients de récupérer les métadonnées via une requête WS-Transfer GET ou une requête HTTP/GET à l'aide de la chaîne de requête `?wsdl`. Pour être sûr que le code fonctionne, créez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de base. Pour plus de simplicité, un service auto-hébergé de base est fourni dans le code suivant.  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publication de métadonnées dans le code, consultez [Comment : publier des métadonnées pour un Code à l’aide du Service](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). La publication des métadonnées permet aux clients de récupérer les métadonnées via une requête WS-Transfer GET ou une requête HTTP/GET à l'aide de la chaîne de requête `?wsdl`. Pour être sûr que le code fonctionne, créez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de base. Pour plus de simplicité, un service auto-hébergé de base est fourni dans le code suivant.  
   
 ```csharp  
 using System;  
@@ -95,7 +98,6 @@ namespace Metadata.Samples
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>Pour publier les métadonnées d'un service WCF à l'aide d'un fichier de configuration d'application  
@@ -178,7 +180,7 @@ namespace Metadata.Samples
   
 ### <a name="to-use-default-endpoints"></a>Pour utiliser les points de terminaison par défaut  
   
-1.  Pour configurer les métadonnées sur un service qui utilise les points de terminaison par défaut, spécifiez la <xref:System.ServiceModel.Description.ServiceMetadataBehavior> dans la configuration de fichier comme dans l’exemple précédent, mais ne spécifiez pas de points de terminaison. Le fichier de configuration se présenterait alors comme suit.  
+1.  Pour configurer des métadonnées sur un service qui utilise les points de terminaison par défaut, spécifiez <xref:System.ServiceModel.Description.ServiceMetadataBehavior> dans le fichier de configuration, comme dans l'exemple précédent, mais ne spécifiez aucun point de terminaison. Le fichier de configuration se présenterait alors comme suit.  
   
     ```xml  
     <configuration>  
@@ -195,7 +197,7 @@ namespace Metadata.Samples
     </configuration>  
     ```  
   
-     Étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> avec la `httpGetEnabled` la valeur `true`, le service de publication des métadonnées est activé, et comme aucun point de terminaison a été ajouté explicitement, le runtime ajoute les points de terminaison par défaut. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]points de terminaison par défaut, les liaisons et les comportements, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les Services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Étant donné que le service a un <xref:System.ServiceModel.Description.ServiceMetadataBehavior> avec le `httpGetEnabled` ayant la valeur `true`, la publication des métadonnées est activée pour le service, et comme aucun point de terminaison n'a été ajouté explicitement, le runtime ajoute les points de terminaison par défaut. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]points de terminaison par défaut, les liaisons et comportements, consultez [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md) et [simplifié la Configuration des Services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="example"></a>Exemple  
  L'exemple de code suivant affiche l'implémentation d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de base et le fichier de configuration qui publie les métadonnées pour le service.  
@@ -270,9 +272,9 @@ namespace Metadata.Samples
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>   
- [Comment : héberger un Service WCF dans une Application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)   
- [Auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md)   
- [Présentation de l’Architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)   
- [À l’aide de métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)   
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
+ [Guide pratique pour héberger un service WCF dans une application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
+ [L’auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md)  
+ [Vue d’ensemble de l’Architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
+ [À l’aide de métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  [Comment : publier les métadonnées d’un Service à l’aide de Code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)

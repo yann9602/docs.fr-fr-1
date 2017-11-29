@@ -10,15 +10,13 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 7819424510fe33c775cefb195f78697aef8b512d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
-# <a name="net-guide"></a>Guide .NET
+# <a name="net-guide"></a>Guide de .NET
 
 Le Guide .NET fournit une grande quantité d’informations sur .NET.  Selon votre connaissance de .NET, vous voudrez peut-être explorer les différentes sections de ce guide et d’autres sections de la documentation .NET.
 
@@ -53,7 +51,7 @@ Si vous vous intéressez à certains des principaux concepts de .NET, consultez�
 * [Composants architecturaux de .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Interopérabilité native](native-interop.md)
-* [Garbage Collection](garbagecollection/index.md)
+* [Nettoyage de la mémoire](garbagecollection/index.md)
 * [Types de base dans .NET](base-types/index.md)
 * [Collections](collections/index.md)
 * [Dates, heures et fuseaux horaires](datetime/index.md)
@@ -68,4 +66,3 @@ Vous pouvez également consulter le guide propre à chaque langage pour en savoi
 ## <a name="api-reference"></a>Informations de référence sur les API
 
 Consultez [Informations de référence sur les API .NET](../../api/index.md) pour découvrir l’éventail des API disponibles.
-

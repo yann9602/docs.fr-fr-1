@@ -1,39 +1,21 @@
 ---
 title: Polymorphisme (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 601c8cf626c846ca6c5d6bc2338e271e6b93544a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c278a6a931154af97cab5b1ff33124dd31a3fa2e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorphisme (Guide de programmation C#)
 Le polymorphisme est souvent considéré comme le troisième pilier d'une programmation orientée objet, après l'encapsulation et l'héritage. Le polymorphisme est le mot grec qui signifie « plusieurs formes » et il prend deux aspects distincts :  
@@ -50,7 +32,7 @@ Le polymorphisme est souvent considéré comme le troisième pilier d'une progra
   
  Tout d'abord, créez une classe de base appelée `Shape`, et des classes dérivées telles que `Rectangle`, `Circle`, et `Triangle`. Donnez à la classe `Shape` une méthode virtuelle appelée `Draw`, et substituez-la dans chaque classe dérivée pour dessiner une forme spécifique représentée par la classe. Créez un objet `List<Shape>` et ajoutez-lui un cercle, un triangle et un rectangle. Pour mettre à jour la surface de dessin, utilisez une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) pour l’itération dans la liste et appelez la méthode `Draw` sur chaque objet `Shape` de la liste. Même si chaque objet de la liste a un type déclaré égal à `Shape`, il s'agit du type au moment de l'exécution (la version substituée de la méthode dans chaque classe dérivée) qui est appelé.  
   
- [!code-cs[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
   
  En C#, chaque type est polymorphique, car tous les types, y compris les types définis par l'utilisateur, héritent de <xref:System.Object>.  
   
@@ -67,42 +49,42 @@ Le polymorphisme est souvent considéré comme le troisième pilier d'une progra
   
  Une classe dérivée ne peut substituer un membre de classe de base que si le membre de classe de base est déclaré comme étant [virtual](../../../csharp/language-reference/keywords/virtual.md) ou [abstract](../../../csharp/language-reference/keywords/abstract.md). Le membre dérivé doit utiliser le mot clé [override](../../../csharp/language-reference/keywords/override.md) pour indiquer explicitement que la méthode est conçue pour participer à l’appel virtuel. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
+ [!code-csharp[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
   
- Les champs ne peuvent pas être virtuels ; seuls les méthodes, propriétés, événements et indexeurs peuvent être virtuels. Quand une classe dérivée est substituée à un membre virtuel, ce membre est appelé lors de l'accès à une instance de cette classe en tant qu'instance de la classe de base. Le code suivant est fourni à titre d'exemple :  
+ Les champs ne peuvent pas être virtuels ; seuls les méthodes, propriétés, événements et indexeurs peuvent être virtuels. Quand une classe dérivée est substituée à un membre virtuel, ce membre est appelé lors de l'accès à une instance de cette classe en tant qu'instance de la classe de base. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
+ [!code-csharp[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
   
  Les méthodes et propriétés virtuelles permettent aux classes dérivées d'étendre une classe de base sans avoir besoin d'utiliser l'implémentation de classe de base d'une méthode. Pour plus d’informations, consultez [Versioning avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md). Une interface fournit un autre moyen pour définir une méthode ou un ensemble de méthodes dont l'implémentation est confiée aux classes dérivées. Pour plus d’informations, consultez [Interfaces](../../../csharp/programming-guide/interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Masquage des membres de classe de base par de nouveaux membres  
- Si vous voulez que votre membre dérivé ait le même nom qu’un membre d’une classe de base, mais que vous ne voulez pas qu’il participe à l’appel virtuel, vous pouvez utiliser le mot clé [new](../../../csharp/language-reference/keywords/new.md). Le mot clé `new` est placé avec le type de retour d'un membre de classe qui est remplacé. Le code suivant est fourni à titre d'exemple :  
+ Si vous voulez que votre membre dérivé ait le même nom qu’un membre d’une classe de base, mais que vous ne voulez pas qu’il participe à l’appel virtuel, vous pouvez utiliser le mot clé [new](../../../csharp/language-reference/keywords/new.md). Le mot clé `new` est placé avec le type de retour d'un membre de classe qui est remplacé. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
+ [!code-csharp[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
   
- Les membres de classe de base masqués sont toujours accessibles à partir du code client en effectuant un cast de l'instance de la classe dérivée vers une instance de la classe de base. Exemple :  
+ Les membres de classe de base masqués sont toujours accessibles à partir du code client en effectuant un cast de l'instance de la classe dérivée vers une instance de la classe de base. Par exemple :  
   
- [!code-cs[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
+ [!code-csharp[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
   
 ### <a name="preventing-derived-classes-from-overriding-virtual-members"></a>Empêcher les classes dérivées de remplacer les membres virtuels  
  Les membres virtuels restent virtuels indéfiniment, quel que soit le nombre de classes déclarées entre le membre virtuel et la classe qui l'a déclaré à l'origine. Si la classe A déclare un membre virtuel, et la classe B dérive de A, et la classe C dérive de B, la classe C hérite du membre virtuel et peut le remplacer, que la classe B ait ou non déclarée une substitution pour ce membre. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
+ [!code-csharp[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
   
  Une classe dérivée peut arrêter l’héritage virtuel en déclarant une substitution comme étant [sealed](../../../csharp/language-reference/keywords/sealed.md). Cela nécessite l'ajout du mot clé `sealed` avant le mot clé `override` dans la déclaration de membre de classe. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
+ [!code-csharp[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
   
  Dans l’exemple précédent, la méthode `DoWork` n’est plus virtuelle vis-à-vis des classes dérivées de C. Elle l’est toujours pour les instances de C, même si elles sont converties en type B ou A. Les méthodes sealed peuvent être remplacées par des classes dérivées à l’aide du mot clé `new`, comme le montre l’exemple suivant :  
   
- [!code-cs[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
+ [!code-csharp[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
   
  Dans ce cas, si `DoWork` est appelé sur D à l'aide d'une variable de type D, le nouveau `DoWork` est appelé. Si une variable de type C, B, ou A est utilisée pour accéder à une instance de D, un appel à `DoWork` suivra les règles de l'héritage virtuel, en routant ces appels vers l'implémentation de `DoWork` dans la classe C.  
   
 ### <a name="accessing-base-class-virtual-members-from-derived-classes"></a>Accès aux membres virtuels de la classe de base à partir de classes dérivées  
  Une classe dérivée qui a remplacé ou substitué une méthode ou une propriété peut encore accéder à la méthode ou la propriété dans la classe de base à l'aide du mot clé base. Le code suivant est fourni à titre d'exemple :  
   
- [!code-cs[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
+ [!code-csharp[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
   
  Pour plus d’informations, consultez [base](../../../csharp/language-reference/keywords/base.md).  
   
@@ -115,16 +97,15 @@ Le polymorphisme est souvent considéré comme le troisième pilier d'une progra
   
 -   [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)  
   
--   [Guide pratique pour substituer la méthode ToString](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
+-   [Comment : substituer la méthode ToString](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md)   
- [Classes abstract et sealed et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
- [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [Événements](../../../csharp/programming-guide/events/index.md)   
- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [Indexeurs](../../../csharp/programming-guide/indexers/index.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
+ [Classes abstract et sealed et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
+ [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+ [Événements](../../../csharp/programming-guide/events/index.md)  
+ [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [Indexeurs](../../../csharp/programming-guide/indexers/index.md)  
  [Types](../../../csharp/programming-guide/types/index.md)
-

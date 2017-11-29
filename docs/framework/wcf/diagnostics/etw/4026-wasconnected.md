@@ -1,35 +1,38 @@
 ---
-title: "4026 - WasConnected | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 4026 - WasConnected
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e0ba2cbf-28cf-4b8b-b40b-bfdb8a77afa0
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a65c1754d0c7cb49af069961afdda4e3bea85c69
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 4026 - WasConnected
-## Propriétés  
+# <a name="4026---wasconnected"></a>4026 - WasConnected
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
 |ID|4026|  
 |Mots clés|ActivationServices|  
 |Niveau|Verbose|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Analyse|  
+|Canal|Microsoft-Windows-Application Server-Applications/Analyse|  
   
-## Description  
+## <a name="description"></a>Description  
  Cet événement est émis lors le service WAS est connecté.  
   
-## Message  
+## <a name="message"></a>Message  
  WAS est connecté.  
   
-## Détails
+## <a name="details"></a>Détails

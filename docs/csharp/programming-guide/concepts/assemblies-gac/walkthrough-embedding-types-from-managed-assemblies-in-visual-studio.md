@@ -1,30 +1,21 @@
 ---
 title: "Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: cbd95c71525a92714ab5758855964e323345b2e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7b003e76229a06883adc22f933f08663330f0c9d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio (C#)
 Si vous incorporez des informations de type d’un assembly managé avec nom fort, vous pouvez coupler faiblement des types dans une application pour obtenir une indépendance de version. Autrement dit, votre programme peut être écrit de façon à ce qu’il utilise des types de plusieurs versions d’une bibliothèque managée sans que vous n’ayez à effectuer de recompilation pour chaque version.  
@@ -49,7 +40,7 @@ Si vous incorporez des informations de type d’un assembly managé avec nom for
   
 -   Les constantes ne sont pas incorporées.  
   
--   La classe <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName> ne prend pas en charge un type incorporé comme clé. Vous pouvez implémenter votre propre type de dictionnaire pour prendre en charge un type incorporé comme clé.  
+-   La classe <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> ne prend pas en charge un type incorporé comme clé. Vous pouvez implémenter votre propre type de dictionnaire pour prendre en charge un type incorporé comme clé.  
   
  Dans cette procédure pas à pas, vous exécuterez les étapes suivantes :  
   
@@ -250,8 +241,7 @@ Si vous incorporez des informations de type d’un assembly managé avec nom for
 6.  Dans l’Explorateur de fichiers, ouvrez le dossier du chemin de sortie (par exemple, C:\TypeEquivalenceSample). Double-cliquez sur le fichier TypeEquivalenceClient.exe pour exécuter le programme. Le programme reflète la nouvelle version de l’assembly TypeEquivalenceRuntime sans aucune recompilation.  
   
 ## <a name="see-also"></a>Voir aussi  
- [/link (Options du compilateur C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)   
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Programmation à l’aide d’assemblys](../../../../framework/app-domains/programming-with-assemblies.md)   
+ [/link (Options du compilateur C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)  
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)  
+ [Programmation à l’aide d’assemblys](../../../../framework/app-domains/programming-with-assemblies.md)  
  [Assemblys et le Global Assembly Cache (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
-

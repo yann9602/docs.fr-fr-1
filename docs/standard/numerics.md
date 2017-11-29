@@ -17,16 +17,15 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 6090f198815f1149e212c7a57b40187ded9264f4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 087c1cc56abf2a00544e22023ce72fae670df369
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="numerics-in-the-net-framework"></a>Valeurs numériques dans le .NET Framework
 Le .NET Framework prend en charge les primitives numériques standard pour les intégraux et les nombres à virgule flottante, ainsi que <xref:System.Numerics.BigInteger>, un type intégral sans limite théorique supérieure ou inférieure, <xref:System.Numerics.Complex>, un type qui représente des nombres complexes et un ensemble de types de vecteurs compatibles SIMD dans l’espace de noms <xref:System.Numerics>.  
@@ -38,14 +37,14 @@ Le .NET Framework prend en charge les primitives numériques standard pour les i
   
 |Type|Signé/Non signé|Taille (en octets)|Valeur minimale|Valeur maximale|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
-|<xref:System.Byte?displayProperty=fullName>|Non signé|1|0|255|  
-|<xref:System.Int16?displayProperty=fullName>|Signé|2|-32,768|32,767|  
-|<xref:System.Int32?displayProperty=fullName>|Signé|4|-2,147,483,648|2,147,483,647|  
-|<xref:System.Int64?displayProperty=fullName>|Signé|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
-|<xref:System.SByte?displayProperty=fullName>|Signé|1|-128|127|  
-|<xref:System.UInt16?displayProperty=fullName>|Non signé|2|0|65,535|  
-|<xref:System.UInt32?displayProperty=fullName>|Non signé|4|0|4,294,967,295|  
-|<xref:System.UInt64?displayProperty=fullName>|Non signé|8|0|18 446 744 073 709 551 615|  
+|<xref:System.Byte?displayProperty=nameWithType>|Non signé|1|0|255|  
+|<xref:System.Int16?displayProperty=nameWithType>|Signé|2|-32,768|32,767|  
+|<xref:System.Int32?displayProperty=nameWithType>|Signé|4|-2,147,483,648|2,147,483,647|  
+|<xref:System.Int64?displayProperty=nameWithType>|Signé|8|-9,223,372,036,854,775,808|9,223,372,036,854,775,807|  
+|<xref:System.SByte?displayProperty=nameWithType>|Signé|1|-128|127|  
+|<xref:System.UInt16?displayProperty=nameWithType>|Non signé|2|0|65,535|  
+|<xref:System.UInt32?displayProperty=nameWithType>|Non signé|4|0|4,294,967,295|  
+|<xref:System.UInt64?displayProperty=nameWithType>|Non signé|8|0|18 446 744 073 709 551 615|  
   
  Chaque type intégral prend en charge un ensemble standard d'opérateurs arithmétiques, de comparaison, d'égalité, de conversion explicite et de conversion implicite. Chaque entier comprend également des méthodes pour effectuer des comparaisons d'égalité et des comparaisons relatives, pour convertir la représentation sous forme de chaîne d'un nombre en cet entier et pour convertir un entier en sa représentation sous forme de chaîne. Certaines autres opérations mathématiques en dehors de celles qui sont gérées par les opérateurs standard, comme l'arrondi et l'identification de la valeur plus grande ou plus petite de deux entiers, sont disponibles à partir de la classe <xref:System.Math>. Vous pouvez également travailler avec les bits individuels d'une valeur d'entier en utilisant la classe <xref:System.BitConverter>.  
   
@@ -56,16 +55,16 @@ Le .NET Framework prend en charge les primitives numériques standard pour les i
   
 |Type|Taille (en octets)|Minimum|Maximum|  
 |----------|-----------------------|-------------|-------------|  
-|<xref:System.Double?displayProperty=fullName>|8|-1,79769313486232e308|1,79769313486232e308|  
-|<xref:System.Single?displayProperty=fullName>|4|-3,402823e38|3,402823e38|  
-|<xref:System.Decimal?displayProperty=fullName>|16|-79 228 162 514 264 337 593 543 950 335|79 228 162 514 264 337 593 543 950 335|  
+|<xref:System.Double?displayProperty=nameWithType>|8|-1,79769313486232e308|1,79769313486232e308|  
+|<xref:System.Single?displayProperty=nameWithType>|4|-3,402823e38|3,402823e38|  
+|<xref:System.Decimal?displayProperty=nameWithType>|16|-79 228 162 514 264 337 593 543 950 335|79 228 162 514 264 337 593 543 950 335|  
   
- Chaque type virgule flottante prend en charge un ensemble standard d'opérateurs arithmétiques, de comparaison, d'égalité, de conversion explicite et de conversion implicite. Chacun comprend également des méthodes pour effectuer des comparaisons d'égalité et des comparaisons relatives, pour convertir la représentation sous forme de chaîne d'un nombre en virgule flottante et pour convertir un en nombre en virgule flottante en sa représentation sous forme de chaîne. Certaines autres opérations mathématiques, algébriques et trigonométriques sont disponibles à partir de la classe <xref:System.Math>. Vous pouvez également travailler avec les bits individuels de valeurs <xref:System.Double> et <xref:System.Single> en utilisant la classe <xref:System.BitConverter>. La structure <xref:System.Decimal?displayProperty=fullName> a ses propres méthodes, <xref:System.Decimal.GetBits%2A?displayProperty=fullName> et <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=fullName> pour travailler avec les bits individuel d'une valeur décimale, ainsi que son propre ensemble de méthodes pour effectuer d'autres opérations mathématiques.  
+ Chaque type virgule flottante prend en charge un ensemble standard d'opérateurs arithmétiques, de comparaison, d'égalité, de conversion explicite et de conversion implicite. Chacun comprend également des méthodes pour effectuer des comparaisons d'égalité et des comparaisons relatives, pour convertir la représentation sous forme de chaîne d'un nombre en virgule flottante et pour convertir un en nombre en virgule flottante en sa représentation sous forme de chaîne. Certaines autres opérations mathématiques, algébriques et trigonométriques sont disponibles à partir de la classe <xref:System.Math>. Vous pouvez également travailler avec les bits individuels de valeurs <xref:System.Double> et <xref:System.Single> en utilisant la classe <xref:System.BitConverter>. La structure <xref:System.Decimal?displayProperty=nameWithType> a ses propres méthodes, <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> et <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType> pour travailler avec les bits individuel d'une valeur décimale, ainsi que son propre ensemble de méthodes pour effectuer d'autres opérations mathématiques.  
   
- Les types <xref:System.Double> et <xref:System.Single> sont destinés à être utilisé pour des valeurs par nature imprécises (par exemple la distance entre deux étoiles dans le système solaire) et les applications dans lesquelles un haut degré de précision et une erreur d'arrondi réduite ne sont pas des impératifs. Vous devez utiliser le type <xref:System.Decimal?displayProperty=fullName> pour les cas dans lesquels une plus grande précision est requise et où les erreurs d'arrondi ne sont pas souhaitables.  
+ Les types <xref:System.Double> et <xref:System.Single> sont destinés à être utilisé pour des valeurs par nature imprécises (par exemple la distance entre deux étoiles dans le système solaire) et les applications dans lesquelles un haut degré de précision et une erreur d'arrondi réduite ne sont pas des impératifs. Vous devez utiliser le type <xref:System.Decimal?displayProperty=nameWithType> pour les cas dans lesquels une plus grande précision est requise et où les erreurs d'arrondi ne sont pas souhaitables.  
   
 ## <a name="biginteger"></a>BigInteger  
- <xref:System.Numerics.BigInteger?displayProperty=fullName> est un type immuable qui représente un entier arbitrairement grand dont la valeur en théorie n'a pas de limite supérieure ou inférieure. Les méthodes du type <xref:System.Numerics.BigInteger> sont très proches de celles des autres types intégraux.  
+ <xref:System.Numerics.BigInteger?displayProperty=nameWithType> est un type immuable qui représente un entier arbitrairement grand dont la valeur en théorie n'a pas de limite supérieure ou inférieure. Les méthodes du type <xref:System.Numerics.BigInteger> sont très proches de celles des autres types intégraux.  
   
 ## <a name="complex"></a>Complex  
  Le type <xref:System.Numerics.Complex> représente un nombre complexe, c'est-à-dire un nombre avec une partie réelle et une partie imaginaire. Il prend en charge un ensemble standard d'opérateurs arithmétiques, de comparaison, d'égalité, de conversion explicite et de conversion implicite, ainsi que des méthodes mathématiques, algébriques et trigonométriques.  
@@ -87,4 +86,3 @@ Le .NET Framework prend en charge les primitives numériques standard pour les i
   
 ## <a name="see-also"></a>Voir aussi  
  [Application Essentials](../../docs/standard/application-essentials.md)
-

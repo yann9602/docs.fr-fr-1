@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - downloading Internet resources, default proxy
 - sending data, default proxy
@@ -32,16 +27,15 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a4a013b8a4ff60222bb88c6e9c4f14badd689b5d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 05f849810d28ebe69a773bd4bd9d536146df6357
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="configuring-internet-applications"></a>Configuration des applications Internet
 L’[élément de configuration \<system.Net> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) contient des informations de configuration réseau pour les applications. Avec l’[élément \<system.Net> (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md), vous pouvez définir des serveurs proxy, définir des paramètres de gestion de connexion, et inclure des modules de requête et d’authentification personnalisés dans votre application.  
@@ -113,7 +107,6 @@ L’[élément de configuration \<system.Net> (Paramètres réseau)](../../../do
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation réseau dans .NET Framework](../../../docs/framework/network-programming/index.md)   
- [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)   
+ [Programmation réseau dans le .NET Framework](../../../docs/framework/network-programming/index.md)  
+ [Schéma des paramètres réseau](../../../docs/framework/configure-apps/file-schema/network/index.md)  
  [\<system.Net>, élément (Paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
-

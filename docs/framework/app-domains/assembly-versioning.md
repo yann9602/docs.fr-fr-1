@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -16,16 +15,15 @@ helpviewer_keywords:
 - resolving assembly binding requests
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: a956e0c4521e4a1079b331868e811e68af2e710d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 124d53efb8d87a9b002abb4cb8359a1bbf6f479b
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="assembly-versioning"></a>Versioning des assemblys
 Tout le versioning des assemblys qui utilisent le Common Language Runtime est effectué au niveau de l'assembly. La version spécifique d'un assembly et les versions des assemblys dépendants sont enregistrées dans le manifeste d'assembly. La stratégie de version par défaut du runtime est la suivante : les applications s'exécutent uniquement avec les versions dans lesquelles elles ont été générées et testées, sauf en cas de substitution par une stratégie de version explicite dans des fichiers de configuration (le fichier de configuration de l'application, le fichier de stratégie de l'éditeur et le fichier de configuration de l'administrateur de l'ordinateur).  
@@ -78,11 +76,10 @@ Résolution d’une demande de liaison d’assembly
 > [!NOTE]
 >  Même si tout type de texte peut être spécifié, un message d'avertissement apparaît à la compilation si le format de la chaîne n'est pas celui qui est utilisé par le numéro de version de l'assembly ou si le format est correct mais contient des caractères génériques. Cet avertissement est sans incidence.  
   
- La version d'informations est représentée à l'aide de l'attribut personnalisé <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=fullName>. Pour plus d’informations sur les informations de l’attribut de version, consultez [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md).  
+ La version d'informations est représentée à l'aide de l'attribut personnalisé <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Pour plus d’informations sur les informations de l’attribut de version, consultez [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [Configuration d’applications](../../../docs/framework/configure-apps/index.md)   
- [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md)   
+ [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ [Configuration d'applications](../../../docs/framework/configure-apps/index.md)  
+ [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md)  
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
-

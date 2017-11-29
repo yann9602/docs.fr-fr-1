@@ -1,25 +1,31 @@
 ---
-title: "Comment&#160;: exposer un contrat &#224; des clients SOAP et Web | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : exposer un contrat à des clients SOAP et Web"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 06127af9c373987c02b2e53ff57e6f50a7f5baa5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: exposer un contrat &#224; des clients SOAP et Web
-Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disposition les points de terminaison uniquement aux clients SOAP.  Dans [Procédure : créer un service Web HTTP WCF de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), un point de terminaison est rendu disponible aux clients non\-SOAP.  Dans certains cas, vous pouvez souhaiter rendre le même contrat disponible pour les deux, comme point de terminaison Web et comme point de terminaison SOAP.  Cette rubrique explique comment procéder.  
+# <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>Comment : exposer un contrat à des clients SOAP et Web
+Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disposition les points de terminaison uniquement aux clients SOAP. Dans [Comment : créer un Service WCF Web HTTP de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md), un point de terminaison est mis à disposition des clients non-SOAP. Dans certains cas, vous pouvez souhaiter rendre le même contrat disponible pour les deux, comme point de terminaison Web et comme point de terminaison SOAP. Cette rubrique explique comment procéder.  
   
-### Pour définir le contrat de service  
+### <a name="to-define-the-service-contract"></a>Pour définir le contrat de service  
   
 1.  Définissez un contrat de service à l'aide d'une interface marquée avec les attributs <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.Web.WebInvokeAttribute> et <xref:System.ServiceModel.Web.WebGetAttribute>, comme illustré dans le code suivant.  
   
@@ -27,14 +33,14 @@ Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disp
      [!code-vb[htSoapWeb#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Par défaut, <xref:System.ServiceModel.Web.WebInvokeAttribute> mappe des appels POST à l'opération.  Toutefois, vous pouvez spécifier la méthode pour mapper à l'opération un paramètre pour "method\=".  <xref:System.ServiceModel.Web.WebGetAttribute> n'a pas de paramètre « method\= » et mappe uniquement des appels GET à l'opération de service.  
+    >  Par défaut, <xref:System.ServiceModel.Web.WebInvokeAttribute> mappe des appels POST à l'opération. Toutefois, vous pouvez spécifier la méthode pour mapper à l'opération un paramètre pour "method=". <xref:System.ServiceModel.Web.WebGetAttribute> n'a pas de paramètre « method= » et mappe uniquement des appels GET à l'opération de service.  
   
 2.  Implémentez le contrat de service, tel qu'indiqué dans le code suivant.  
   
      [!code-csharp[htSoapWeb#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#1)]
      [!code-vb[htSoapWeb#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#1)]  
   
-### Pour héberger le service  
+### <a name="to-host-the-service"></a>Pour héberger le service  
   
 1.  Créez un objet <xref:System.ServiceModel.ServiceHost>, tel qu'indiqué dans le code suivant.  
   
@@ -46,7 +52,7 @@ Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disp
      [!code-csharp[htSoapWeb#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#3)]
      [!code-vb[htSoapWeb#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#3)]  
   
-3.  Ajoutez un <xref:System.ServiceModel.Description.ServiceEndpoint> avec <xref:System.ServiceModel.WebHttpBinding> pour le point de terminaison non\-SOAP et ajoutez le <xref:System.ServiceModel.Description.WebHttpBehavior> au point de terminaison, tel qu'indiqué dans le code suivant.  
+3.  Ajoutez un <xref:System.ServiceModel.Description.ServiceEndpoint> avec <xref:System.ServiceModel.WebHttpBinding> pour le point de terminaison non-SOAP et ajoutez le <xref:System.ServiceModel.Description.WebHttpBehavior> au point de terminaison, tel qu'indiqué dans le code suivant.  
   
      [!code-csharp[htSoapWeb#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#4)]
      [!code-vb[htSoapWeb#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#4)]  
@@ -56,11 +62,11 @@ Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disp
      [!code-csharp[htSoapWeb#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#5)]
      [!code-vb[htSoapWeb#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#5)]  
   
-### Pour appeler des opérations de service mappées à GET dans Internet Explorer  
+### <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Pour appeler des opérations de service mappées à GET dans Internet Explorer  
   
-1.  Ouvrez Internet Explorer, entrez « `http://localhost:8000/Web/EchoWithGet?s=Hello, world!` » et appuyez sur ENTRÉE.  L'URL contient l'adresse de base du service \("http:\/\/localhost:8000\/"\), l'adresse relative du point de terminaison \(""\), l'opération de service à appeler \("EchoWithGet"\) et un point d'interrogation suivi d'une liste de paramètres séparés par une esperluette \(&\).  
+1.  Ouvrez Internet Explorer et tapez «`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`» et appuyez sur ENTRÉE. L'URL contient l'adresse de base du service ("http://localhost:8000/"), l'adresse relative du point de terminaison (""), l'opération de service à appeler ("EchoWithGet") et un point d'interrogation suivi d'une liste de paramètres séparés par une esperluette (&).  
   
-### Pour appeler des opérations de service sur le point de terminaison Web dans le code  
+### <a name="to-call-service-operations-on-the-web-endpoint-in-code"></a>Pour appeler des opérations de service sur le point de terminaison Web dans le code  
   
 1.  Créez une instance de <xref:System.ServiceModel.Web.WebChannelFactory%601> au sein d'un bloc `using`, comme illustré dans le code suivant.  
   
@@ -75,7 +81,7 @@ Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disp
      [!code-csharp[htSoapWeb#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#8)]
      [!code-vb[htSoapWeb#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#8)]  
   
-### Pour appeler des opérations de service sur le point de terminaison SOAP  
+### <a name="to-call-service-operations-on-the-soap-endpoint"></a>Pour appeler des opérations de service sur le point de terminaison SOAP  
   
 1.  Créez une instance de <xref:System.ServiceModel.ChannelFactory> au sein d'un bloc `using`, comme illustré dans le code suivant.  
   
@@ -87,27 +93,27 @@ Par défaut, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] met à disp
      [!code-csharp[htSoapWeb#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#11)]
      [!code-vb[htSoapWeb#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#11)]  
   
-### Pour fermer l'hôte de service  
+### <a name="to-close-the-service-host"></a>Pour fermer l'hôte de service  
   
 1.  Fermez l'hôte de service comme illustré dans le code suivant.  
   
      [!code-csharp[htSoapWeb#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#9)]
      [!code-vb[htSoapWeb#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#9)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Les éléments suivants représentent l'intégralité du code pour cette rubrique.  
   
  [!code-csharp[htSoapWeb#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#13)]
  [!code-vb[htSoapWeb#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#13)]  
   
-## Compilation du code  
+## <a name="compiling-the-code"></a>Compilation du code  
  Lors de la compilation de Service.cs, référencez System.ServiceModel.dll et System.ServiceModel.Web.dll.  
   
-## Voir aussi  
- <xref:System.ServiceModel.WebHttpBinding>   
- <xref:System.ServiceModel.Web.WebGetAttribute>   
- <xref:System.ServiceModel.Web.WebInvokeAttribute>   
- <xref:System.ServiceModel.Web.WebServiceHost>   
- <xref:System.ServiceModel.ChannelFactory>   
- <xref:System.ServiceModel.Description.WebHttpBehavior>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.WebHttpBinding>  
+ <xref:System.ServiceModel.Web.WebGetAttribute>  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute>  
+ <xref:System.ServiceModel.Web.WebServiceHost>  
+ <xref:System.ServiceModel.ChannelFactory>  
+ <xref:System.ServiceModel.Description.WebHttpBehavior>  
  [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

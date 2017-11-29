@@ -1,23 +1,29 @@
 ---
-title: "Ex&#233;cution d&#39;op&#233;rations de catalogue | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Exécution d'opérations du catalogue"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: e60f542f-6271-495b-a9e4-48553481c2a3
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f67f393dce518a76b80d91f7294ed19e9a0f411a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Ex&#233;cution d&#39;op&#233;rations de catalogue
-Pour exécuter une commande permettant de modifier une base de données ou un catalogue, comme l'instruction CREATE TABLE ou CREATE PROCEDURE, créez un objet **Command** à l'aide des instructions SQL appropriées et d'un objet **Connection**.  Exécutez la commande avec la méthode **ExecuteNonQuery** de l'objet **Command**.  
+# <a name="performing-catalog-operations"></a>Exécution d'opérations du catalogue
+Pour exécuter une commande pour modifier une base de données ou un catalogue, telles que l’instruction CREATE TABLE ou CREATE PROCEDURE, créez un **commande** de l’objet à l’aide d’instructions SQL appropriées et un **connexion** objet. Exécutez la commande avec le **ExecuteNonQuery** méthode de la **commande** objet.  
   
  L'exemple de code suivant crée une procédure stockée dans une base de données Microsoft SQL Server.  
   
@@ -49,7 +55,7 @@ SqlCommand command = new SqlCommand(queryString, connection);
 command.ExecuteNonQuery();  
 ```  
   
-## Voir aussi  
- [Utilisation de commandes pour modifier des données](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)   
- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [À l’aide des commandes pour modifier des données](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

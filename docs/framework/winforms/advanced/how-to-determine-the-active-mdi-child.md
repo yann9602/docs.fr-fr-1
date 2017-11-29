@@ -1,42 +1,46 @@
 ---
-title: "Comment&#160;: d&#233;terminer l&#39;enfant MDI actif | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "formulaires enfants"
-  - "Presse-papiers, copier les données dans"
-  - "MDI, activer des formulaires"
-  - "MDI, fenêtres enfants"
-  - "MDI, repérer le focus"
+title: "Comment : déterminer l'enfant MDI actif"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Clipboard [Windows Forms], copying data to
+- MDI [Windows Forms], child windows
+- child forms
+- MDI [Windows Forms], activating forms
+- MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 473cf67f01db8735eb3b32a7549296f827e66ef6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;terminer l&#39;enfant MDI actif
-Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui a le focus dans le formulaire enfant actif.  Supposons, par exemple, que vous voulez copier un texte sélectionné dans la zone de texte du formulaire enfant vers le Presse\-papiers.  Pour ce faire, vous devez créer une procédure copiant le texte sélectionné dans le Presse\-papiers à l'aide de l'événement <xref:System.Windows.Forms.Control.Click> de l'élément Copier du menu Edition standard.  
+# <a name="how-to-determine-the-active-mdi-child"></a>Comment : déterminer l'enfant MDI actif
+Parfois, vous devez fournir une commande qui fonctionne sur le contrôle qui a le focus sur le formulaire enfant actif. Par exemple, supposons que vous souhaitez copier le texte sélectionné dans le Presse-papiers à partir de la zone de texte du formulaire enfant. Vous devez créer une procédure qui copie le texte sélectionné vers le Presse-papiers à l’aide de la <xref:System.Windows.Forms.Control.Click> l’événement de l’élément de menu de copie dans le menu Edition standard.  
   
- Étant donné qu'une application MDI peut posséder plusieurs instances du même formulaire enfant, la procédure doit savoir quel formulaire utiliser.  Pour spécifier le formulaire à utiliser, faites appel à la propriété <xref:System.Windows.Forms.Form.ActiveMdiChild%2A>, laquelle retourne le formulaire enfant qui a le focus ou qui était actif en dernier.  
+ Comme une application MDI peut avoir plusieurs instances du même formulaire enfant, la procédure a besoin de connaître le formulaire à utiliser. Pour spécifier le formulaire, utilisez le <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> propriété, qui retourne le formulaire enfant qui a le focus ou qui était actif en dernier.  
   
- Lorsqu'il existe plusieurs contrôles dans un formulaire, vous devez également spécifier lequel est actif.  À l'instar de la propriété <xref:System.Windows.Forms.Form.ActiveMdiChild%2A>, la propriété <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> retourne le contrôle qui a le focus dans le formulaire enfant actif.  La procédure ci\-dessous montre une procédure de copie pouvant être appelée à partir d'un menu de formulaire enfant, un menu de formulaire MDI ou un bouton de la barre d'outils.  
+ Lorsque vous avez plusieurs contrôles dans un formulaire, vous devez également spécifier quel contrôle est actif. Comme le <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> propriété, le <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> propriété retourne le contrôle a le focus sur le formulaire enfant actif. La procédure ci-dessous illustre une procédure de copie qui peut être appelée à partir d’un menu de formulaire enfant, un menu sur le formulaire MDI ou un bouton de barre d’outils.  
   
-### Pour déterminer l'enfant MDI actif \(et copier son texte dans le Presse\-papiers\)  
+### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a>Pour déterminer l’enfant MDI actif (pour copier le texte dans le Presse-papiers)  
   
-1.  Dans une méthode, copiez le texte du contrôle actif du formulaire enfant actif dans le Presse\-papiers.  
+1.  Dans une méthode, copiez le texte du contrôle actif du formulaire enfant actif dans le Presse-papiers.  
   
     > [!NOTE]
-    >  Cet exemple suppose qu'il existe un formulaire MDI parent \(`Form1`\) doté d'une ou de plusieurs fenêtres MDI enfants contenant un contrôle <xref:System.Windows.Forms.RichTextBox>.  Pour plus d'informations, consultez [Création de formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).  
+    >  Cet exemple suppose qu’est un formulaire MDI parent (`Form1`) qui a une ou plusieurs fenêtres MDI enfants contenant un <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [création de formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniCopy_Click(ByVal sender As Object, _  
@@ -59,7 +63,6 @@ Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui 
           End If  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -88,12 +91,11 @@ Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui 
           }  
        }  
     }  
-  
     ```  
   
-## Voir aussi  
- [Applications d'interface multidocument \(MDI, Multiple Document Interface\)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)   
- [Comment : créer des formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [Comment : créer des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)   
- [Comment : envoyer des données à l'enfant MDI actif](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)   
- [Comment : réorganiser des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ [Applications d’interface multidocument (MDI, Multiple Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ [Guide pratique pour créer des formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [Guide pratique pour créer des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
+ [Guide pratique pour envoyer des données à l’enfant MDI actif](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
+ [Guide pratique pour réorganiser des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)

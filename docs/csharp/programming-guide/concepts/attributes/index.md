@@ -1,30 +1,21 @@
 ---
 title: Attributs (C#)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: f148f13f-a0d5-4f22-9c87-4b73d5dde270
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 2993ef3f424aa6487681e194f21e0f82193342ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ab55021a073f914905e29163ba2a669f69d6dcab
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 Les attributs fournissent une méthode puissante permettant d’associer des métadonnées ou des informations déclaratives avec du code (assemblys, types, méthodes, propriétés, etc.). Une fois associé à une entité de programme, l’attribut peut être interrogé à l’exécution à l’aide d’une technique appelée *réflexion*. Pour plus d’informations, consultez [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md).  
@@ -189,7 +180,6 @@ int Method3() { return 0; }
 -   [Informations relatives à l’appelant (C#)](../../../../csharp/programming-guide/concepts/caller-information.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)   
- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)   
+ [Guide de programmation C#](../../../../csharp/programming-guide/index.md)  
+ [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
  [Attributs](https://msdn.microsoft.com/library/5x6cd29c)
-

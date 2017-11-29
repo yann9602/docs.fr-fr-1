@@ -1,29 +1,35 @@
 ---
-title: "Interrogation de DataSets typ&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Interrogation de DataSets typés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ad712fa1-2baf-462a-b163-574cce6d376a
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bd78b4f47d7f48d7b4cbacdf53140758a05b7869
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Interrogation de DataSets typ&#233;s
-Si le schéma du <xref:System.Data.DataSet> est connu au moment du design de l'application, nous vous recommandons d'utiliser un <xref:System.Data.DataSet> typé lors de l'utilisation de [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  Un <xref:System.Data.DataSet> typé est dérivé d'un <xref:System.Data.DataSet>.  De ce fait, il hérite de l'ensemble des méthodes, événements et propriétés d'un <xref:System.Data.DataSet>.  En outre, un <xref:System.Data.DataSet> typé fournit des méthodes, événements et propriétés fortement typés.  Cela signifie que vous pouvez accéder à des tables et à des colonnes par leur nom au lieu d'utiliser les méthodes associées à des collections.  Cela rend les requêtes plus simples et plus lisibles.  Pour plus d'informations, consultez [DataSets typés](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
+# <a name="querying-typed-datasets"></a>Interrogation de DataSets typés
+Si le schéma du <xref:System.Data.DataSet> est connu au moment du design de l'application, nous vous recommandons d'utiliser un <xref:System.Data.DataSet> typé lors de l'utilisation de [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Typé <xref:System.Data.DataSet> est une classe qui dérive d’un <xref:System.Data.DataSet>. De ce fait, il hérite de l'ensemble des méthodes, événements et propriétés d'un <xref:System.Data.DataSet>. En outre, un typé <xref:System.Data.DataSet> fournit des méthodes fortement typées, propriétés et événements. Cela signifie que vous pouvez accéder à des tables et à des colonnes par leur nom au lieu d’utiliser les méthodes associées à des collections. Cela rend les requêtes plus simples et plus lisibles. Pour plus d’informations, consultez [typés](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
   
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] prend également en charge l'interrogation sur un <xref:System.Data.DataSet> typé.  Avec un <xref:System.Data.DataSet> typé, vous n'avez pas besoin d'utiliser la méthode générique <xref:System.Data.DataRowExtensions.Field%2A> ou la méthode <xref:System.Data.DataRowExtensions.SetField%2A> pour accéder aux données de colonne.  Les noms de propriétés sont disponibles au moment de la compilation parce que les informations de type sont incluses dans le <xref:System.Data.DataSet>. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] donne accès aux valeurs de colonne avec le type approprié, ce qui fait que les erreurs d'incompatibilité de types sont interceptées non pas à l'exécution, mais dès la compilation.  
+ [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]prend en charge l’interrogation sur typé également <xref:System.Data.DataSet>. Avec un typé <xref:System.Data.DataSet>, vous n’avez pas à utiliser le type générique <xref:System.Data.DataRowExtensions.Field%2A> méthode ou <xref:System.Data.DataRowExtensions.SetField%2A> méthode pour accéder aux données de colonne.  Noms de propriété sont disponibles au moment de la compilation, car les informations de type sont incluses dans le <xref:System.Data.DataSet>. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]fournit l’accès aux valeurs de colonne avec le type approprié, afin que les erreurs d’incompatibilité de type sont interceptées lorsque le code est compilé à la place de l’exécution.  
   
- Avant de procéder à l'interrogation d'un <xref:System.Data.DataSet> typé, vous devez générer la classe à l'aide du Concepteur de DataSet dans [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  Pour plus d'informations, consultez [Comment : créer un groupe de données typé](../Topic/Create%20and%20configure%20datasets%20in%20Visual%20Studio.md).  
+ Avant de procéder à l'interrogation d'un <xref:System.Data.DataSet> typé, vous devez générer la classe à l'aide du Concepteur de DataSet dans [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  Pour plus d’informations, consultez [Créer et configurer des datasets](/visualstudio/data-tools/create-and-configure-datasets-in-visual-studio).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre une requête sur un <xref:System.Data.DataSet> typé :  
   
 ```csharp  
@@ -60,7 +66,7 @@ For Each Dim onlineOrder In query
 Next  
 ```  
   
-## Voir aussi  
- [Interrogation de DataSets](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)   
- [Requêtes d'analyse croisée](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)   
- [Requêtes d'analyse unique](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)
+## <a name="see-also"></a>Voir aussi  
+ [Interrogation de DataSets](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
+ [Requêtes d’analyse croisée](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
+ [Requêtes d’analyse unique](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)

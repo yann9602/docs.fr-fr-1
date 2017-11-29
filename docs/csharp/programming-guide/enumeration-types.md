@@ -2,8 +2,7 @@
 title: "Types énumération (Guide de programmation C#)"
 ms.date: 09/10/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - enumerations [C#]
@@ -11,15 +10,14 @@ helpviewer_keywords:
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 13ec7d5d2a44cddb2b7f440c8d811c2e4060d432
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 6b58466f8dd70a3eefb73c3d1ac21ec42a370b47
-ms.openlocfilehash: 71ddf47259ce55a6a7c5a9e5f4999ed786154f52
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Types énumération (Guide de programmation C#)
 
@@ -68,7 +66,7 @@ Vous pouvez affecter n’importe quelle valeur aux éléments dans la liste d’
 
 Vous pouvez utiliser un type énumération pour définir des indicateurs binaires, ce qui permet à une instance du type énumération de stocker n’importe quelle combinaison des valeurs définies dans la liste d’énumérateurs. (Bien entendu, certaines combinaisons peuvent ne pas être significatives ou autorisées dans votre code de programme.)
 
-Pour créer un enum d’indicateurs binaires, vous devez appliquer l’attribut <xref:System.FlagsAttribute?displayProperty=fullName> et définir les valeurs de manière appropriée afin que les opérations au niveau du bit `AND`, `OR`, `NOT` et `XOR` puissent être effectuées sur elles. Dans l’enum d’indicateurs binaires, incluez une constante nommée avec une valeur zéro qui signifie « aucun indicateur n’est défini. » N’attribuez pas la valeur zéro à un indicateur si cela ne signifie pas « aucun indicateur n’est défini ».
+Pour créer un enum d’indicateurs binaires, vous devez appliquer l’attribut <xref:System.FlagsAttribute?displayProperty=nameWithType> et définir les valeurs de manière appropriée afin que les opérations au niveau du bit `AND`, `OR`, `NOT` et `XOR` puissent être effectuées sur elles. Dans l’enum d’indicateurs binaires, incluez une constante nommée avec une valeur zéro qui signifie « aucun indicateur n’est défini. » N’attribuez pas la valeur zéro à un indicateur si cela ne signifie pas « aucun indicateur n’est défini ».
 
 Dans l’exemple suivant, une autre version de l’enum `Day`, nommée `Days`, est définie. `Days` a l’attribut `Flags`, et à chaque valeur est affectée la puissance de deux supérieure suivante. Cela vous permet de créer une variable `Days` dont la valeur est `Days.Tuesday | Days.Thursday`.
 
@@ -82,20 +80,19 @@ Pour déterminer si un indicateur spécifique est défini, utilisez une opérati
 
 [!code-csharp[csProgGuideEnums#7](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#7)]
 
-Pour plus d’informations sur les éléments à prendre en compte quand vous définissez des types énumération avec l’attribut <xref:System.FlagsAttribute?displayProperty=fullName>, consultez <xref:System.Enum?displayProperty=fullName>.
+Pour plus d’informations sur les éléments à prendre en compte quand vous définissez des types énumération avec l’attribut <xref:System.FlagsAttribute?displayProperty=nameWithType>, consultez <xref:System.Enum?displayProperty=nameWithType>.
 
 ## <a name="using-the-systemenum-methods-to-discover-and-manipulate-enum-values"></a>Utilisation des méthodes System.Enum pour découvrir et manipuler des valeurs enum
 
-Tous les enums sont des instances du type <xref:System.Enum?displayProperty=fullName>. Vous ne pouvez pas dériver de nouvelles classes à partir de <xref:System.Enum?displayProperty=fullName>, mais vous pouvez utiliser ses méthodes pour découvrir des informations et manipuler les valeurs d’une instance enum.
+Tous les enums sont des instances du type <xref:System.Enum?displayProperty=nameWithType>. Vous ne pouvez pas dériver de nouvelles classes à partir de <xref:System.Enum?displayProperty=nameWithType>, mais vous pouvez utiliser ses méthodes pour découvrir des informations et manipuler les valeurs d’une instance enum.
 
 [!code-csharp[csProgGuideEnums#5](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEnums/CS/Enums.cs#5)]
 
-Pour plus d'informations, consultez <xref:System.Enum?displayProperty=fullName>.
+Pour plus d'informations, consultez <xref:System.Enum?displayProperty=nameWithType>.
 
 Vous pouvez également créer une méthode pour un enum à l’aide d’une méthode d’extension. Pour plus d’informations, consultez [Guide pratique pour créer une méthode pour une énumération](../../csharp/programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ## <a name="see-also"></a>Voir aussi
- <xref:System.Enum?displayProperty=fullName>   
- [Guide de programmation C#](../../csharp/programming-guide/index.md)   
+ <xref:System.Enum?displayProperty=nameWithType>  
+ [Guide de programmation C#](../../csharp/programming-guide/index.md)  
  [enum](../../csharp/language-reference/keywords/enum.md)
-

@@ -1,54 +1,62 @@
 ---
-title: "&lt;bufferReceive&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;bufferReceive&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: b23c3a54-10d4-4f13-ab6d-98b26b76f22a
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 623ff924e171282c399bddcdc212a0606a3416d6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;bufferReceive&gt;
+# <a name="ltbufferreceivegt"></a>&lt;bufferReceive&gt;
 Comportement de service qui permet à un service d'utiliser le traitement de la réception mise en mémoire tampon, ce qui permet à un service de flux de travail de traiter les messages dans le désordre.  
   
-## Syntaxe  
+\<système. ServiceModel >  
+\<comportements >  
+\<serviceBehaviors >  
+\<comportement >  
+\<bufferReceive >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-<behaviors>  
-  <serviceBehaviors>  
-    <behavior name=String">  
-      <bufferReceive maxPendingMessagesPerChannel=”Integer” />  
-    </behavior>  
-  </serviceBehaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <bufferReceive maxPendingMessagesPerChannel="Integer" />
+    </behavior>
+  </serviceBehaviors>
 </behaviors>  
-  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|maxPendingMessagesPerChannel|Entier qui spécifie le nombre maximal de messages en attente autorisé pour chaque canal.  La valeur par défaut est 512.  Cette propriété limite le nombre de messages non ordonnés qui peuvent être reçus par un service de flux de travail.|  
+|---------------|-----------------|  
+|maxPendingMessagesPerChannel|Entier qui spécifie le nombre maximal de messages en attente autorisé pour chaque canal. La valeur par défaut est 512. Cette propriété limite le nombre de messages non ordonnés qui peuvent être reçus par un service de flux de travail.|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior\> de \<serviceBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
+|[\<comportement > de \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
   
-## Voir aussi  
- <xref:System.ServiceModel.Activities.Description.BufferReceiveServiceBehavior>   
+## <a name="see-also"></a>Voir aussi  
+<!-- <xref:System.ServiceModel.Activities.Description.BufferReceiveServiceBehavior>  -->
  <xref:System.ServiceModel.Activities.Configuration.BufferedReceiveElement>

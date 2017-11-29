@@ -1,39 +1,21 @@
 ---
 title: Membres (Guide de programmation C#)
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 184d4f2976b8594c308efeb113a0490499e3460e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98446a2eb0415c92aa44cbddf8539477a00a2666
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="members-c-programming-guide"></a>Membres (Guide de programmation C#)
 Les classes et les structs ont des membres qui représentent leurs données et leur comportement. Les membres d’une classe incluent tous les membres déclarés de la classe, ainsi que tous les membres (à l’exception des constructeurs et des finaliseurs) déclarés dans toutes les classes de sa hiérarchie d’héritage. Les membres privés dans les classes de base sont hérités, mais ne sont pas accessibles à partir des classes dérivées.  
@@ -54,16 +36,15 @@ Les classes et les structs ont des membres qui représentent leurs données et l
 |[Types imbriqués](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|Les types imbriqués sont des types déclarés dans un autre type. Les types imbriqués sont souvent utilisés pour décrire les objets utilisés uniquement par les types qui les contiennent.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de programmation C#](../../../csharp/programming-guide/index.md)   
- [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)   
- [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [Champs](../../../csharp/programming-guide/classes-and-structs/fields.md)   
- [Indexeurs](../../../csharp/programming-guide/indexers/index.md)   
- [Événements](../../../csharp/programming-guide/events/index.md)   
- [Types imbriqués](../../../csharp/programming-guide/classes-and-structs/nested-types.md)   
- [Opérateurs](../../../csharp/programming-guide/statements-expressions-operators/operators.md)   
+ [Guide de programmation C#](../../../csharp/programming-guide/index.md)  
+ [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+ [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+ [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+ [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+ [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [Champs](../../../csharp/programming-guide/classes-and-structs/fields.md)  
+ [Indexeurs](../../../csharp/programming-guide/indexers/index.md)  
+ [Événements](../../../csharp/programming-guide/events/index.md)  
+ [Types imbriqués](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
+ [Opérateurs](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
  [Opérateurs surchargeables](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)
-

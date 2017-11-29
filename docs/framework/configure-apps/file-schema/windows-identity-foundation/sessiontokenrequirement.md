@@ -1,59 +1,69 @@
 ---
-title: "&lt;sessionTokenRequirement&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;sessionTokenRequirement&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
-caps.latest.revision: 3
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 8b729f588d2195992b231661f7bb718240141fdd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;sessionTokenRequirement&gt;
-Fournit la définition de la classe d' <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> ou les classes dérivées.  
+# <a name="ltsessiontokenrequirementgt"></a>&lt;sessionTokenRequirement&gt;
+Fournit la configuration pour la <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> classe ou les classes dérivées.  
   
-## Syntaxe  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<securityTokenHandlers >  
+\<add>  
+\<sessionTokenRequirement >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">  
-        <sessionTokenRequirement lifetime=TimeSpan >  
-        </sessionTokenRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">  
+        <sessionTokenRequirement lifetime=TimeSpan >  
+        </sessionTokenRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
+|---------------|-----------------|  
 |durée de vie|Spécifie la durée de vie des jetons de session.|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ None  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Ajoute le gestionnaire de jetons de sécurité spécifié à la collection du gestionnaire de jetons.|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Ajoute le Gestionnaire de jetons de sécurité spécifié à la collection de gestionnaires de jetons.|  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-```  
+```xml  
 <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">           
     <sessionTokenRequirement lifetime="10:00" />  
 </add>  

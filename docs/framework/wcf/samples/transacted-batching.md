@@ -1,61 +1,64 @@
 ---
-title: "Transacted Batching | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Transacted Batching
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
-caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dbd11f3dad60463a5650d7aa6e53f9e8f3f5021e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Transacted Batching
-Cet exemple montre comment traiter les lectures transactionnelles à l'aide de Message Queuing \(MSMQ\).  Le traitement transactionnel par lots est une fonctionnalité d'optimisation des performances pour les lectures transactionnelles dans les communications mises en file d'attente.  
+# <a name="transacted-batching"></a>Transacted Batching
+Cet exemple montre comment traiter les lectures transactionnelles à l'aide de Message Queuing (MSMQ). Le traitement transactionnel par lots est une fonctionnalité d'optimisation des performances pour les lectures transactionnelles dans les communications mises en file d'attente.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente.  Cela signifie que le client envoie ses messages à cette file d'attente.  Le service reçoit des messages de la file d'attente.  Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  
+ Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  
   
- Cet exemple illustre le traitement transactionnel par lots.  Le traitement transactionnel par lots est un comportement qui permet l'utilisation d'une transaction unique lors de la lecture de nombreux messages dans la file d'attente et leur traitement.  
+ Cet exemple illustre le traitement transactionnel par lots. Le traitement transactionnel par lots est un comportement qui permet l'utilisation d'une transaction unique lors de la lecture de nombreux messages dans la file d'attente et leur traitement.  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Si le service est exécuté en premier, il vérifie que la file d'attente existe.  Si la file d'attente n'existe pas, le service en crée une.  Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ.  Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
+2.  Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
   
     1.  Ouvrez le Gestionnaire de serveur dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-    2.  Développez l'onglet **Fonctionnalités**.  
+    2.  Développez le **fonctionnalités** onglet.  
   
-    3.  Cliquez avec le bouton droit sur **Files d'attente de messages privées**, puis cliquez sur **Nouveau**, **File d'attente privée**.  
+    3.  Avec le bouton droit **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.  
   
-    4.  Activez la case à cocher **Transactionnelle**.  
+    4.  Vérifiez le **transactionnel** boîte.  
   
-    5.  Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d'attente.  
+    5.  Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.  
   
     > [!NOTE]
-    >  Dans cet exemple, le client envoie des centaines de messages dans le cadre du lot.  Le traitement de ces messages par l'application du service peut prendre un certain temps.  
+    >  Dans cet exemple, le client envoie des centaines de messages dans le cadre du lot. Le traitement de ces messages par l'application du service peut prendre un certain temps.  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-### Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail ou sans intégration Active Directory  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail ou sans intégration Active Directory  
   
-1.  Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut.  Il y a deux propriétés pertinentes pour la sécurité de transport MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> et <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`.  Pour que MSMQ fournisse la fonction d'authentification et de signature, il doit faire partie d'un domaine et l'option d'intégration d'Active Directory doit être installée pour MSMQ.  Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.  
+1.  Avec <xref:System.ServiceModel.NetMsmqBinding>, la sécurité du transport est activée par défaut. Il existe deux propriétés pertinentes pour la sécurité de transport MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> et <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` par défaut, le mode d’authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine et l’option d’intégration d’Active Directory doit être installée pour MSMQ. Si vous exécutez cet exemple sur un ordinateur qui ne satisfait pas ces critères vous recevez une erreur.  
   
 2.  Si votre ordinateur ne fait pas partie d'un domaine ou ne dispose pas de l'intégration Active Directory, désactivez la sécurité de transport en affectant au mode d'authentification et niveau de protection la valeur `None` comme indiqué dans l'exemple de configuration suivant :  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <behaviors>  
         <serviceBehaviors>  
@@ -101,30 +104,29 @@ Cet exemple montre comment traiter les lectures transactionnelles à l'aide de M
       </bindings>  
   
     </system.serviceModel>  
-  
     ```  
   
-3.  Assurez\-vous de modifier la configuration sur le serveur et le client avant d'exécuter l'exemple.  
+3.  Assurez-vous de modifier la configuration sur le serveur et le client avant d'exécuter l'exemple.  
   
     > [!NOTE]
-    >  L'affectation de `None` à `security` `mode` revient à affecter `None` à la sécurité <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> et `Message`.  
+    >  L'affectation de `security``mode` à `None` revient à affecter <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> à la sécurité <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, `Message` et `None`.  
   
 4.  Pour exécuter la base de données sur un ordinateur distant, modifiez la chaîne de connexion pour qu'elle pointe vers l'ordinateur sur lequel se trouve la base de données.  
   
-## Configuration requise  
+## <a name="requirements"></a>Spécifications  
  Pour exécuter cet exemple, MSMQ doit être installé et SQL ou SQL Express est requis.  
   
-## Démonstrations  
- L'exemple montre le comportement du traitement transactionnel par lots.  Le traitement transactionnel par lots est une fonctionnalité d'optimisation des performances fournie le transport de mise en file d'attente MSMQ.  
+## <a name="demonstrates"></a>Démonstrations  
+ L'exemple montre le comportement du traitement transactionnel par lots. Le traitement transactionnel par lots est une fonctionnalité d'optimisation des performances fournie le transport de mise en file d'attente MSMQ.  
   
- Lorsque les transactions sont utilisées pour envoyer et recevoir des messages il y a en fait 2 transactions distinctes.  Lorsque le client envoie des messages dans l'étendue d'une transaction, la transaction est locale au client et au gestionnaire de files d'attente client.  Lorsque le service reçoit des messages dans l'étendue de la transaction, la transaction est locale au service et au gestionnaire de files d'attente de réception.  N'oubliez pas que le client et le service ne participent pas à la même transaction : ils utilisent des transactions différentes lorsqu'ils effectuent leurs opérations \(comme l'envoi et la réception\) avec la file d'attente.  
+ Lorsque les transactions sont utilisées pour envoyer et recevoir des messages il y a en fait 2 transactions distinctes. Lorsque le client envoie des messages dans l'étendue d'une transaction, la transaction est locale au client et au gestionnaire de files d'attente client. Lorsque le service reçoit des messages dans l'étendue de la transaction, la transaction est locale au service et au gestionnaire de files d'attente de réception. N'oubliez pas que le client et le service ne participent pas à la même transaction : ils utilisent des transactions différentes lorsqu'ils effectuent leurs opérations (comme l'envoi et la réception) avec la file d'attente.  
   
- Dans cet exemple, nous utilisons une transaction unique pour l'exécution de plusieurs opérations de service.  Elle est utilisée uniquement en tant que fonctionnalité d'optimisation des performances et ne concerne pas la sémantique de l'application.  L'exemple est basé sur [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
+ Dans cet exemple, nous utilisons une transaction unique pour l'exécution de plusieurs opérations de service. Elle est utilisée uniquement en tant que fonctionnalité d’optimisation des performances et ne concerne pas la sémantique de l’application. L’exemple est basé sur [transactionnel de liaison MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
   
-## Commentaires  
- Dans cet exemple, le client envoie un lot de messages au service à partir de l'étendue d'une transaction.  Pour afficher l'optimisation des performances, nous envoyons un grand nombre de messages ; dans ce cas, jusqu'à 2 500 messages.  
+## <a name="comments"></a>Commentaires  
+ Dans cet exemple, le client envoie un lot de messages au service à partir de l'étendue d'une transaction. Pour afficher l'optimisation des performances, nous envoyons un grand nombre de messages ; dans ce cas, jusqu'à 2 500 messages.  
   
- Les messages envoyés à la file d'attente sont ensuite reçus par le service dans l'étendue de la transaction définie par le service.  Sans traitement par lots, cela provoque 2 500 transactions pour chaque appel de l'opération de service.  Ceci influe sur les performances du système.  Étant donné que deux gestionnaires des ressources sont impliqués \(la file d'attente MSMQ et la base de données `Orders`\), chaque transaction est une transaction DTC.  Nous optimisons ceci par l'utilisation d'un nombre bien moins important de transactions en garantissant qu'un lot de messages et que les appels d'opération de service aient lieu dans la même transaction.  
+ Les messages envoyés à la file d'attente sont ensuite reçus par le service dans l'étendue de la transaction définie par le service. Sans traitement par lots, cela provoque 2 500 transactions pour chaque appel de l'opération de service. Ceci influe sur les performances du système. Étant donné que deux gestionnaires des ressources sont impliqués (la file d'attente MSMQ et la base de données `Orders`), chaque transaction est une transaction DTC. Nous optimisons ceci par l'utilisation d'un nombre bien moins important de transactions en garantissant qu'un lot de messages et que les appels d'opération de service aient lieu dans la même transaction.  
   
  Pour utiliser la fonctionnalité de traitement par lots, il faut :  
   
@@ -136,9 +138,9 @@ Cet exemple montre comment traiter les lectures transactionnelles à l'aide de M
   
  Dans cet exemple, nous affichons les gains de performance par la réduction du nombre de transactions en garantissant que 100 opérations de service sont appelées dans une même transaction avant de valider la transaction.  
   
- Le comportement de service définit un comportement d'opération avec la valeur `true` affectée à `TransactionScopeRequired`.  Ainsi, l'étendue de transaction qui est utilisée pour récupérer le message de la file d'attente est utilisée par tous les gestionnaires des ressources auxquels accède la méthode.  Dans cet exemple, nous utilisons une base de données classique pour stocker les informations de commande fournisseur contenues dans le message.  L'étendue de transaction garantie également que si la méthode lève une exception, le message est renvoyé dans la file d'attente.  Sans définir ce comportement d'opération, un canal mis en file d'attente crée une transaction pour lire le message à partir de la file d'attente et le valide automatiquement avant qu'il soit distribué afin que si l'opération échoue, le message soit perdu.  Dans la plupart des cas, les opérations de service s'inscrivent dans la transaction utilisée pour lire le message à partir de la file d'attente, comme indiqué dans le code suivant.  
+ Le comportement de service définit un comportement d'opération avec la valeur `TransactionScopeRequired` affectée à `true`. Ainsi, l'étendue de transaction qui est utilisée pour récupérer le message de la file d'attente est utilisée par tous les gestionnaires des ressources auxquels accède la méthode. Dans cet exemple, nous utilisons une base de données classique pour stocker les informations de commande fournisseur contenues dans le message. L'étendue de transaction garantie également que si la méthode lève une exception, le message est renvoyé dans la file d'attente. Sans définir ce comportement d'opération, un canal mis en file d'attente crée une transaction pour lire le message à partir de la file d'attente et le valide automatiquement avant qu'il soit distribué afin que si l'opération échoue, le message soit perdu. Dans la plupart des cas, les opérations de service s'inscrivent dans la transaction utilisée pour lire le message à partir de la file d'attente, comme indiqué dans le code suivant.  
   
- Notez que `ReleaseServiceInstanceOnTransactionComplete` a la valeur `false`.  C'est une spécification importante pour le traitement par lots.  La propriété `ReleaseServiceInstanceOnTransactionComplete` sur `ServiceBehaviorAttribute` indique que faire avec l'instance de service une fois la transaction terminée.  Par défaut, l'instance de service est diffusée lorsque la transaction est terminée.  La principale particularité du traitement par lots est l'utilisation d'une seule transaction pour lire et distribuer de nombreux messages dans la file d'attente.  Par conséquent, la diffusion de l'instance de service provoque par conséquent la fin prématurée de la transaction, empêchant l'utilisation du traitement par lots.  Si cette propriété a la valeur `true` et que le comportement du traitement transactionnel par lots est ajouté au point de terminaison, le comportement de la validation du traitement par lots lève une exception.  
+ Notez que `ReleaseServiceInstanceOnTransactionComplete` a la valeur `false`. C'est une spécification importante pour le traitement par lots. La propriété `ReleaseServiceInstanceOnTransactionComplete` sur `ServiceBehaviorAttribute` indique que faire avec l'instance de service une fois la transaction terminée. Par défaut, l'instance de service est diffusée lorsque la transaction est terminée. La principale particularité du traitement par lots est l'utilisation d'une seule transaction pour lire et distribuer de nombreux messages dans la file d'attente. Par conséquent, la diffusion de l'instance de service provoque par conséquent la fin prématurée de la transaction, empêchant l'utilisation du traitement par lots. Si cette propriété a la valeur `true` et que le comportement du traitement transactionnel par lots est ajouté au point de terminaison, le comportement de la validation du traitement par lots lève une exception.  
   
 ```  
 // Service class that implements the service contract.  
@@ -157,10 +159,9 @@ public class OrderProcessorService : IOrderProcessor
     }  
     …  
 }  
-  
 ```  
   
- La classe `Orders` encapsule le traitement de la commande.  Dans cet exemple, elle met à jour la base de données avec les informations du bon de commande.  
+ La classe `Orders` encapsule le traitement de la commande. Dans cet exemple, elle met à jour la base de données avec les informations du bon de commande.  
   
 ```  
 // Order Processing Logic  
@@ -236,7 +237,7 @@ public class Orders
   
  Le comportement du traitement par lots et sa configuration sont spécifiés dans la configuration de l'application de service.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <appSettings>  
@@ -281,15 +282,15 @@ public class Orders
 ```  
   
 > [!NOTE]
->  La taille de lot est une indication destinée au système.  Par exemple, si vous spécifiez une taille de lot de 20, alors 20 messages seront lus et distribués à l'aide d'une même transaction, puis cette dernière sera validée.  Mais il existe des cas où la transaction peut valider le lot avant que la taille de lot soit atteinte.  
+>  La taille de lot est une indication destinée au système. Par exemple, si vous spécifiez une taille de lot de 20, alors 20 messages seront lus et distribués à l'aide d'une même transaction, puis cette dernière sera validée. Mais il existe des cas où la transaction peut valider le lot avant que la taille de lot soit atteinte.  
 >   
->  Un délai d'attente est associé à chaque transaction ; il commence son cycle une fois la transaction créée.  Lorsque ce délai d'attente expire la transaction est abandonnée.  Ce délai d'attente peut toutefois expirer avant même que la taille de lot soit atteinte.  Pour éviter de retraiter le lot à cause de l'abandon, `TransactedBatchingBehavior` vérifie le temps restant sur la transaction.  Si 80 % du délai d'attente de transaction sont utilisés, la transaction est validée.  
+>  Un délai d'attente est associé à chaque transaction ; il commence son cycle une fois la transaction créée. Lorsque ce délai d'attente expire la transaction est abandonnée. Ce délai d'attente peut toutefois expirer avant même que la taille de lot soit atteinte. Pour éviter de retraiter le lot à cause de l'abandon, `TransactedBatchingBehavior` vérifie le temps restant sur la transaction. Si 80 % du délai d'attente de transaction sont utilisés, la transaction est validée.  
 >   
 >  S'il n'y a plus de messages dans la file d'attente, au lieu d'attendre que la taille de lot soit atteinte, la <xref:System.ServiceModel.Description.TransactedBatchingBehavior> valide la transaction.  
 >   
->  Le choix de la taille de lot dépend de votre application.  Si la taille de lot est trop petite, vous risquez de ne pas obtenir la performance désirée.  En revanche, si la taille de lot est trop grande, elle risque de diminuer les performances.  Par exemple, la transaction pourrait durer plus longtemps et verrouiller des enregistrements dans votre base de données ou la transaction pourrait se bloquer, ce qui entraînerait la restauration du lot et la nécessité de recommencer le travail.  
+>  Le choix de la taille de lot dépend de votre application. Si la taille de lot est trop petite, vous risquez de ne pas obtenir la performance désirée. En revanche, si la taille de lot est trop grande, elle risque de diminuer les performances. Par exemple, la transaction pourrait durer plus longtemps et verrouiller des enregistrements dans votre base de données ou la transaction pourrait se bloquer, ce qui entraînerait la restauration du lot et la nécessité de recommencer le travail.  
   
- Le client crée une étendue de transaction.  La communication avec la file d'attente a lieu dans l'étendue de la transaction, entraînant son traitement en tant qu'une unité atomique dans laquelle tous les messages sont envoyés à la file d'attente ou aucun des messages n'est envoyé à la file d'attente.  La transaction est validée par l'appel de la méthode <xref:System.Transactions.TransactionScope.Complete%2A> sur l'étendue de la transaction.  
+ Le client crée une étendue de transaction. La communication avec la file d'attente a lieu dans l'étendue de la transaction, entraînant son traitement en tant qu'une unité atomique dans laquelle tous les messages sont envoyés à la file d'attente ou aucun des messages n'est envoyé à la file d'attente. La transaction est validée par l'appel de la méthode <xref:System.Transactions.TransactionScope.Complete%2A> sur l'étendue de la transaction.  
   
 ```  
 //Client implementation code.  
@@ -340,7 +341,7 @@ class Client
 }  
 ```  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives.  Vous pouvez voir le service recevoir des messages du client.  Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  Vous pouvez exécuter le client, l'arrêter, puis démarrer le service et il recevra encore ses messages.  Vous pouvez voir une sortie en continu à mesure que les messages sont lus dans un lot et traités.  
+ Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client. Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément. Vous pouvez exécuter le client, l'arrêter, puis démarrer le service et il recevra encore ses messages. Vous pouvez voir une sortie en continu à mesure que les messages sont lus dans un lot et traités.  
   
 ```  
 The service is ready.  
@@ -375,12 +376,12 @@ Processing Purchase Order: ea94486b-7c86-4309-a42d-2f06c00656cd
 ```  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Batching`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Batching`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

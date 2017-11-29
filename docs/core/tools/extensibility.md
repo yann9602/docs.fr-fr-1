@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fffc3400-aeb9-4c07-9fea-83bc8dbdcbf3
+ms.openlocfilehash: a8f70505d1bb043ab21f87edbb5aa2d9f18a7071
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 434b27f6c2d44c63b4ce4deee094ac6c322cf2b5
-ms.openlocfilehash: 62de584fe5d7f1029e73e4c8c5f9b428c567751a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/09/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-cli-tools-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
 Ce document décrit les différentes méthodes permettant d’étendre les outils de l’interface de ligne de commande (CLI) .NET Core et explique les scénarios dans lesquels elles sont utilisées.
@@ -49,6 +47,8 @@ Enfin, ce modèle d’extensibilité prend en charge la création d’outils qui
 
 ### <a name="consuming-per-project-tools"></a>Utilisation des outils par projet
 Vous devez ajouter un élément `<DotNetCliToolReference>` à votre fichier projet pour chaque outil que vous souhaitez utiliser. À l’intérieur de l’élément `<DotNetCliToolReference>`, vous référencez le package dans lequel réside l’outil et spécifiez la version dont vous avez besoin. Après l’exécution de [`dotnet restore`](dotnet-restore.md), l’outil et ses dépendances sont restaurés.
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Étant donné que l’interface CLI utilise MSBuild comme moteur de génération, nous vous recommandons d’écrire ces parties de l’outil sous forme de [cibles](/visualstudio/msbuild/msbuild-targets) et [tâches](/visualstudio/msbuild/msbuild-tasks) MSBuild personnalisées puisqu’elles peuvent ensuite prendre part à l’ensemble du processus de génération. Elles peuvent aussi facilement récupérer tout ou partie des données produites par la génération, notamment l’emplacement des fichiers de sortie ou la configuration en cours de génération. Toutes ces informations deviennent un jeu de propriétés MSBuild qui peut être lu à partir de toutes les cibles. Vous verrez comment ajouter une cible personnalisée à l’aide de NuGet plus loin dans ce document.
 
@@ -165,4 +165,3 @@ echo "Hello World"
 Sur Mac OS, nous pouvons enregistrer ce script en tant que `dotnet-hello` et définir son bit exécutable avec `chmod +x dotnet-hello`. Nous pouvons ensuite créer un lien symbolique vers le script dans `/usr/local/bin` à l’aide de la commande `ln -s <full_path>/dotnet-hello /usr/local/bin/`. Cela permet d’appeler la commande à l’aide de la syntaxe `dotnet hello`.
 
 Sur Windows, nous pouvons enregistrer ce script en tant que `dotnet-hello.cmd` et le placer dans un emplacement figurant dans un chemin système (ou vous pouvez l’ajouter à un dossier qui existe déjà dans le chemin). Après cela, vous pouvez simplement utiliser `dotnet hello` pour exécuter cet exemple.
-

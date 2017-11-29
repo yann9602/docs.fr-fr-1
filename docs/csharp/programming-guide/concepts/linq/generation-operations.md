@@ -1,30 +1,21 @@
 ---
 title: "Opérations de génération (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 1c421b3a-5954-448c-bcac-a27798d1858f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 8bbc4b1c33e992d322ad8048a72b496515358c1c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fa3cfe74d96e600463562a8aae92b7caa229dd06
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="generation-operations-c"></a>Opérations de génération (C#)
 La génération fait référence à la création d’une nouvelle séquence de valeurs.  
@@ -41,6 +32,5 @@ La génération fait référence à la création d’une nouvelle séquence de v
 |Répéter|Génère une collection qui contient une valeur répétée.|Non applicable.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq>   
+ <xref:System.Linq>  
  [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-

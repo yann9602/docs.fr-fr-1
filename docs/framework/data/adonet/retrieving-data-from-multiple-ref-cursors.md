@@ -1,23 +1,27 @@
 ---
-title: "Extraction de donn&#233;es de plusieurs REF CURSOR &#224; l&#39;aide d&#39;un OracleDataReader | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Extraction de données à partir de plusieurs REF CURSOR à l'aide d'un OracleDataReader"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
 ms.assetid: 361e9bd4-447d-44b7-8629-3c11f1a7ffbb
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 502ddb1bd3c271c0d5dbd082eb401f18591594b4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Extraction de donn&#233;es de plusieurs REF CURSOR &#224; l&#39;aide d&#39;un OracleDataReader
-Cet exemple Microsoft Visual Basic exécute une procédure stockée PL\/SQL qui retourne deux paramètres REF CURSOR et lit les valeurs à l'aide d'un <xref:System.Data.OracleClient.OracleDataReader>.  
+# <a name="retrieving-data-from-multiple-ref-cursors-using-an-oracledatareader"></a>Extraction de données à partir de plusieurs REF CURSOR à l'aide d'un OracleDataReader
+Cet exemple Microsoft Visual Basic exécute une procédure stockée PL/SQL qui retourne deux paramètres REF CURSOR et lit les valeurs à l'aide d'un <xref:System.Data.OracleClient.OracleDataReader>.  
   
 ```vb  
 Private Sub Button1_Click( _  
@@ -55,6 +59,6 @@ Private Sub Button1_Click( _
 End Sub   
 ```  
   
-## Voir aussi  
- [REF CURSOR Oracle](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [REF CURSOR Oracle](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

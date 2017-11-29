@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 7db69de994770e122dd4a4233b9a44d572c32344
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Comment : activer WIF pour une application de service web WCF
 ## <a name="applies-to"></a>S'applique à  
@@ -267,4 +265,3 @@ ms.lasthandoff: 08/21/2017
     >  **TestService** et **LocalSTS** doivent s’exécuter avant que vous n’appuyiez sur **Entrée**. Une page web doit s’ouvrir pour le service et vous pouvez vérifier que **LocalSTS** s’exécute en regardant dans la zone de notification (barre d’état système).  
   
 3.  Si les revendications apparaissent dans la console, vous vous êtes correctement authentifié avec STS pour afficher les revendications du service WCF.
-

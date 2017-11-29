@@ -1,38 +1,42 @@
 ---
-title: "Substitution de la m&#233;thode OnPaint | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "OnPaint (méthode), substituer dans les contrôles personnalisés Windows Forms"
-  - "Paint (événement), gérer dans les contrôles personnalisés Windows Forms"
+title: "Substitution de la méthode OnPaint"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Paint event [Windows Forms], handling in Windows Forms custom control
+- OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 41205f7f0ec21e27b97d0b12415fca89ae526552
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Substitution de la m&#233;thode OnPaint
-Les étapes de base de la substitution d'un événement défini dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sont identiques et sont récapitulées dans la liste suivante.  
+# <a name="overriding-the-onpaint-method"></a>Substitution de la méthode OnPaint
+Les étapes de base pour la substitution d’un événement défini dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sont identiques et sont récapitulées dans la liste suivante.  
   
-#### Pour substituer un événement hérité  
+#### <a name="to-override-an-inherited-event"></a>Pour substituer un événement hérité  
   
-1.  Substituez la méthode `On`*NomÉvénement* protégée.  
+1.  Substituez la méthode protégée `On` *EventName* (méthode).  
   
-2.  Appelez la méthode `On`*NomÉvénement* de la classe de base à partir de la méthode `On`*NomÉvénement* substituée, de sorte que les délégués inscrits reçoivent l'événement.  
+2.  Appelez le `On` *EventName* méthode de la classe de base à partir de la `On` *EventName* (méthode), afin que les délégués inscrits reçoivent l’événement.  
   
- L'événement <xref:System.Windows.Forms.Control.Paint> est décrit en détail dans cette section, car tous les contrôles Windows Forms doivent substituer l'événement <xref:System.Windows.Forms.Control.Paint> qu'ils héritent de <xref:System.Windows.Forms.Control>.  La classe <xref:System.Windows.Forms.Control> de base ignore comment un contrôle dérivé doit être dessiné et ne fournit pas de logique de peinture dans la méthode <xref:System.Windows.Forms.Control.OnPaint%2A>.  La méthode <xref:System.Windows.Forms.Control.OnPaint%2A> de la classe <xref:System.Windows.Forms.Control> distribue simplement l'événement <xref:System.Windows.Forms.Control.Paint> aux récepteurs d'événements inscrits.  
+ Le <xref:System.Windows.Forms.Control.Paint> événement est décrit en détail ici, car tous les contrôles Windows Forms doivent substituer le <xref:System.Windows.Forms.Control.Paint> événement qu’il hérite <xref:System.Windows.Forms.Control>. La base de <xref:System.Windows.Forms.Control> classe ne sait pas comment un contrôle dérivé doit être dessiné et ne fournit pas de logique de peinture dans le <xref:System.Windows.Forms.Control.OnPaint%2A> (méthode). Le <xref:System.Windows.Forms.Control.OnPaint%2A> méthode <xref:System.Windows.Forms.Control> distribue simplement le <xref:System.Windows.Forms.Control.Paint> événement récepteurs d’événements inscrits.  
   
- Si vous avez utilisé l'exemple dans [Comment : développer un contrôle Windows Forms simple](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md), vous avez consulté un exemple de substitution de la méthode <xref:System.Windows.Forms.Control.OnPaint%2A>.  Le fragment de code suivant est extrait de cet exemple.  
+ Si vous avez utilisé l’exemple dans [Comment : développer un contrôle Windows Forms Simple](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md), vous avez consulté un exemple de substitution de la <xref:System.Windows.Forms.Control.OnPaint%2A> (méthode). Le fragment de code suivant provient de cet exemple.  
   
 ```vb  
 Public Class FirstControl  
@@ -62,7 +66,7 @@ public class FirstControl : Control{
 }   
 ```  
   
- La classe <xref:System.Windows.Forms.PaintEventArgs> contient les données de l'événement <xref:System.Windows.Forms.Control.Paint>.  Elle possède deux propriétés, comme illustré dans le code suivant.  
+ Le <xref:System.Windows.Forms.PaintEventArgs> classe contient des données pour le <xref:System.Windows.Forms.Control.Paint> événement. Il a deux propriétés, comme indiqué dans le code suivant.  
   
 ```vb  
 Public Class PaintEventArgs  
@@ -88,11 +92,11 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> est le rectangle à peindre, et la propriété <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> fait référence à un objet <xref:System.Drawing.Graphics>.  Les classes de l'espace de noms <xref:System.Drawing?displayProperty=fullName> sont des classes managées qui permettent d'accéder aux fonctionnalités de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], la nouvelle bibliothèque de graphiques Windows.  L'objet <xref:System.Drawing.Graphics> possède des méthodes pour le dessin de points, de chaînes, de lignes, d'arcs, d'ellipses et de nombreuses autres formes.  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>est le rectangle à peindre et la <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> propriété fait référence à un <xref:System.Drawing.Graphics> objet. Les classes dans le <xref:System.Drawing?displayProperty=nameWithType> espace de noms sont gérés les classes qui fournissent l’accès aux fonctionnalités de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], la nouvelle bibliothèque de graphiques Windows. Le <xref:System.Drawing.Graphics> objet possède des méthodes pour dessiner des points, des chaînes, lignes, arcs, ellipses et nombreuses autres formes.  
   
- Un contrôle appelle sa méthode <xref:System.Windows.Forms.Control.OnPaint%2A> chaque fois qu'il doit modifier son affichage visuel.  Cette méthode déclenche à son tour l'événement <xref:System.Windows.Forms.Control.Paint>.  
+ Un contrôle appelle sa <xref:System.Windows.Forms.Control.OnPaint%2A> méthode chaque fois qu’il doit modifier son affichage visuel. Cette méthode déclenche à son tour le <xref:System.Windows.Forms.Control.Paint> événement.  
   
-## Voir aussi  
- [Événements](../../../../docs/standard/events/index.md)   
- [Rendu d'un contrôle Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)   
- [Définition d'un événement](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)
+## <a name="see-also"></a>Voir aussi  
+ [Événements](../../../../docs/standard/events/index.md)  
+ [Rendu d'un contrôle Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
+ [Définition d’un événement](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)

@@ -1,58 +1,62 @@
 ---
-title: "Comment&#160;: cr&#233;er des touches d&#39;acc&#232;s rapide &#224; l&#39;aide des contr&#244;les Label Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "touches d'accès rapide, créer des touches pour les contrôles"
-  - "touches d'accès rapide, Windows Forms"
-  - "contrôles (Windows Forms), touches d'accès rapide"
-  - "contrôles de boîte de dialogue, mnémoniques"
-  - "raccourcis clavier, créer des touches pour les contrôles"
-  - "Label (contrôle Windows Forms), créer des touches d'accès"
-  - "mnémoniques"
-  - "mnémoniques, ajouter aux contrôles de boîte de dialogue"
-  - "UseMnemonic (propriété), Label (contrôle)"
-  - "contrôles Windows Forms, touches d'accès rapide"
+title: "Comment : créer des touches d'accès rapide à l'aide des contrôles Label Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- controls [Windows Forms], access keys
+- dialog box controls [Windows Forms], mnemonics
+- access keys [Windows Forms], creating for controls
+- Label control [Windows Forms], creating access keys
+- mnemonics [Windows Forms], adding to dialog box controls
+- mnemonics
+- Windows Forms controls, access keys
+- UseMnemonic property [Windows Forms], Label control
+- keyboard shortcuts [Windows Forms], creating for controls
+- access keys [Windows Forms], Windows Forms
 ms.assetid: 5ee8f823-80be-4a4f-96a4-412671e2e306
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4ad6cd99a6399adea2e69cbf844b9f134d2e592e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er des touches d&#39;acc&#232;s rapide &#224; l&#39;aide des contr&#244;les Label Windows Forms
-Le contrôle Windows Forms <xref:System.Windows.Forms.Label> peut servir à définir des touches d'accès rapide pour d'autres contrôles.  Lorsque vous définissez une touche d'accès rapide dans un contrôle Label, l'utilisateur, en appuyant sur la touche ALT en même temps que sur le caractère que vous avez indiqué, peut déplacer le focus sur le contrôle qui le suit dans l'ordre de tabulation.  Comme les étiquettes ne peuvent pas recevoir le focus, celui\-ci se déplace automatiquement jusqu'au contrôle suivant dans l'ordre de tabulation.  Utilisez cette technique pour assigner des touches d'accès rapide à des zones de texte, à des zones de liste modifiable, à des zones de liste ou encore à des grilles de données.  
+# <a name="how-to-create-access-keys-with-windows-forms-label-controls"></a>Comment : créer des touches d'accès rapide à l'aide des contrôles Label Windows Forms
+Windows Forms <xref:System.Windows.Forms.Label> contrôles peuvent être utilisés pour définir des touches d’accès rapide pour d’autres contrôles. Lorsque vous définissez une clé d’accès dans un contrôle label, l’utilisateur peut appuyer sur la touche ALT et le caractère que vous désignez pour déplacer le focus au contrôle qui le suit dans l’ordre de tabulation. Étant donné que les étiquettes ne peuvent pas recevoir le focus, le focus se déplace automatiquement vers le contrôle suivant dans l’ordre de tabulation. Utilisez cette technique pour affecter des clés d’accès aux zones de texte, zones de liste déroulante, zones de liste et des grilles de données.  
   
-### Pour assigner une touche d'accès rapide à un contrôle à l'aide d'un contrôle Label  
+### <a name="to-assign-an-access-key-to-a-control-with-a-label"></a>Pour affecter une touche d’accès à un contrôle avec une étiquette  
   
-1.  Dessinez le contrôle Label, puis l'autre contrôle.  
+1.  Dessiner d’abord l’étiquette, puis dessinez l’autre contrôle.  
   
      ou  
   
-     Dessinez les contrôles dans n'importe quel ordre et attribuez à la propriété <xref:System.Windows.Forms.Control.TabIndex%2A> du contrôle Label un numéro de rang inférieur d'une unité à celui de l'autre contrôle.  
+     Dessiner les contrôles dans n’importe quel ordre et définir le <xref:System.Windows.Forms.Control.TabIndex%2A> propriété de l’étiquette et l’autre contrôle moins 1.  
   
-2.  Affectez la valeur `true` à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> de l'étiquette.  
+2.  Définir l’étiquette <xref:System.Windows.Forms.Label.UseMnemonic%2A> propriété `true`.  
   
-3.  Entrez un signe & dans la propriété <xref:System.Windows.Forms.Label.Text%2A> du contrôle Label pour assigner la touche d'accès rapide de l'étiquette.  Pour plus d'informations, consultez [Création de touches d'accès rapide pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md).  
+3.  Utilisez une esperluette (&) dans l’étiquette <xref:System.Windows.Forms.Label.Text%2A> propriété à attribuer la clé d’accès pour l’étiquette. Pour plus d’informations, consultez [création de clés d’accès rapide pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md).  
   
     > [!NOTE]
-    >  Il peut arriver que vous vouliez afficher le symbole & dans un contrôle Label au lieu de vous en servir pour créer des touches d'accès rapide.  C'est le cas, par exemple, si vous liez un contrôle Label à un champ d'un recordset dont les données contiennent des et commerciaux \(signe &\).  Pour afficher ce symbole dans un contrôle Label, attribuez à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> la valeur `false`.  Si vous souhaitez afficher des et commerciaux et disposer également de touches d'accès rapide, attribuez à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> la valeur `true`, puis indiquez la touche d'accès rapide par un seul signe & et les et commerciaux par deux signes &.  
+    >  Vous souhaiterez afficher ce symbole dans un contrôle label, plutôt que de les utiliser pour créer des touches d’accès rapide. Cela peut se produire si vous liez un contrôle label à un champ dans un jeu d’enregistrements dont les données contiennent les et commerciaux. Pour afficher ce symbole dans un contrôle label, définissez la <xref:System.Windows.Forms.Label.UseMnemonic%2A> propriété `false`. Si vous souhaitez afficher des et commerciaux et également avoir une clé d’accès, définissez la <xref:System.Windows.Forms.Label.UseMnemonic%2A> propriété `true` et indiquer la clé d’accès avec une esperluette (&) et l’esperluette par deux signes &.  
   
     ```vb  
     Label1.UseMnemonic = True  
     Label1.Text = "&Print"  
     Label2.UseMnemonic = True  
     Label2.Text = "&Copy && Paste"  
-  
     ```  
   
     ```csharp  
@@ -60,7 +64,6 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.Label> peut servir à déf
     label1.Text = "&Print";  
     label2.UseMnemonic = true;  
     label2.Text = "&Copy && Paste";  
-  
     ```  
   
     ```cpp  
@@ -70,7 +73,7 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.Label> peut servir à déf
     label2->Text = "&Copy && Paste";  
     ```  
   
-## Voir aussi  
- [Comment : dimensionner un contrôle Label Windows Forms en fonction de son contenu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)   
- [Vue d'ensemble du contrôle Label](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Guide pratique pour dimensionner un contrôle Label Windows Forms en fonction de son contenu](../../../../docs/framework/winforms/controls/how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
+ [Vue d'ensemble du contrôle Label](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)  
  [Label, contrôle](../../../../docs/framework/winforms/controls/label-control-windows-forms.md)

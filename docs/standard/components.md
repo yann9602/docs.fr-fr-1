@@ -7,12 +7,11 @@ ms.date: 08/23/2017
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.translationtype: HT
-ms.sourcegitcommit: 1b028e5880f9e57e87c16eabeb442e0a46a369da
 ms.openlocfilehash: ce3368f4c34a8e4b20a7deb2a6c6e4d163927cd4
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/23/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="net-architectural-components"></a>Composants architecturaux de .NET
 
@@ -94,5 +93,4 @@ Vous avez accès à un ensemble complet d’outils et de composants d’infrastr
 [Guide C#](../csharp/index.md)  
 [Guide F#](../fsharp/index.md)  
 [VB.NET Guide](../visual-basic/index.md) (Guide VB.NET)  
-
 

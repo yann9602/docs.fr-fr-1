@@ -1,48 +1,46 @@
 ---
-title: "Comment&#160;: localiser des assemblys &#224; l&#39;aide de DEVPATH | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "configuration d'applications .NET Framework, assemblys"
-  - "fichiers app.config, emplacements des assemblys"
-  - "fichiers de configuration de l'application, spécifier l'emplacement d'un assembly"
-  - "assemblys (.NET Framework), emplacement"
-  - "DEVPATH"
-  - "rechercher des assemblys"
+title: "Comment : localiser des assemblys à l'aide de DEVPATH"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DEVPATH
+- .NET Framework application configuration, assemblies
+- application configuration files, specifying assembly's location
+- app.config files, assembly locations
+- locating assemblies
+- assemblies [.NET Framework], location
 ms.assetid: 44d2eadf-7eec-443c-a2ac-d601fd919e17
-caps.latest.revision: 8
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 70448f7ce4c00274dde14bace603e5c8852bf148
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: localiser des assemblys &#224; l&#39;aide de DEVPATH
-Les développeurs peuvent rencontrer la nécessité de s'assurer qu'un assembly partagé qu'ils sont en train de construire fonctionne correctement avec des applications multiples.  Plutôt que de placer systématiquement l'assembly dans le Global Assembly Cache pendant le développement, le programmeur pourra créer une variable d'environnement DEVPATH pointant vers le répertoire de sortie de l'assembly.  
+# <a name="how-to-locate-assemblies-by-using-devpath"></a>Comment : localiser des assemblys à l'aide de DEVPATH
+Les développeurs souhaitent peut-être vous assurer qu’un assembly partagé qu’ils développent fonctionne correctement avec plusieurs applications. Au lieu de mettre en permanence l’assembly dans le global assembly cache au cours du cycle de développement, le développeur peut créer une variable d’environnement DEVPATH pointant vers le répertoire de sortie de l’assembly.  
   
- Par exemple, supposons que vous soyez en train de créer un assembly partagé appelé MySharedAssembly et que le répertoire de sortie soit C:\\MySharedAssembly\\Debug.  Il vous suffit de placer C:\\MySharedAssembly\\Debug dans la variable DEVPATH.  Vous devez ensuite spécifier l'élément [\<developmentMode\>](../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md) dans le fichier de configuration machine.  Cet élément indique au Common Language Runtime d'utiliser DEVPATH pour localiser les assemblys.  
+ Par exemple, supposez que vous générez un assembly partagé appelé MySharedAssembly et le répertoire de sortie soit C:\MySharedAssembly\Debug. Vous pouvez placer C:\MySharedAssembly\Debug dans la variable DEVPATH. Vous devez spécifier le [ \<developmentMode >](../../../docs/framework/configure-apps/file-schema/runtime/developmentmode-element.md) élément dans le fichier de configuration machine. Cet élément indique le common language runtime d’utiliser DEVPATH pour localiser les assemblys.  
   
- L'assembly partagé doit pouvoir être retrouvé par le runtime.  Pour spécifier un répertoire privé pour résoudre des références d'assembly, utilisez les éléments [\<codeBase\>, élément](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) ou [\<probing\>, élément](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) dans un fichier de configuration, comme décrit dans [Spécification de l'emplacement d'un assembly](../../../docs/framework/configure-apps/specify-assembly-location.md).  Vous pouvez également placer l'assembly dans un sous\-répertoire du répertoire de l'application.  Pour plus d'informations, consultez [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ L’assembly partagé doit être détectable par le runtime.  Pour spécifier un répertoire privé pour la résolution des références d’assembly, utilisez le [ \<codeBase > élément](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) ou [ \<probing > élément](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) dans un fichier de configuration, comme décrit dans [Spécifiant l’emplacement d’un Assembly](../../../docs/framework/configure-apps/specify-assembly-location.md).  Vous pouvez également placer l’assembly dans un sous-répertoire du répertoire de l’application. Pour plus d’informations, consultez [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 > [!NOTE]
->  Il s'agit d'une caractéristique avancée, prévue uniquement pour le développement.  
+>  Il s’agit d’une fonctionnalité avancée, conçue uniquement pour le développement.  
   
- L'exemple suivant montre comment faire en sorte que le runtime recherche les assemblys dans les répertoires spécifiés par la variable d'environnement DEVPATH.  
+ L’exemple suivant montre comment le runtime recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
   
-```  
+```xml  
 <configuration>  
   <runtime>  
     <developmentMode developerInstallation="true"/>  
@@ -50,10 +48,10 @@ Les développeurs peuvent rencontrer la nécessité de s'assurer qu'un assembly 
 </configuration>  
 ```  
   
- La valeur par défaut de ce paramètre est False.  
+ Ce paramètre par défaut est false.  
   
 > [!NOTE]
->  Utilisez ce paramètre au moment du développement uniquement.  Le runtime ne vérifie pas les versions des assemblys avec nom fort qui se trouvent dans DEVPATH.  Il utilise simplement le premier assembly qu'il trouve.  
+>  Utilisez ce paramètre uniquement au moment du développement. Le runtime ne vérifie pas les versions sur les assemblys avec nom fort trouvés dans DEVPATH. Elle utilise simplement le premier assembly qu’il trouve.  
   
-## Voir aussi  
- [Configuring .NET Framework Apps](http://msdn.microsoft.com/fr-fr/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+## <a name="see-also"></a>Voir aussi  
+ [Configuration des applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

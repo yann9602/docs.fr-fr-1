@@ -1,43 +1,46 @@
 ---
-title: "Probl&#232;mes de s&#233;curit&#233; et conseils utiles pour le suivi | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Problèmes de sécurité et conseils utiles pour le suivi"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-caps.latest.revision: 11
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 07ac814253a563a0cbdad1014970af3d18c6fdde
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Probl&#232;mes de s&#233;curit&#233; et conseils utiles pour le suivi
+# <a name="security-concerns-and-useful-tips-for-tracing"></a>Problèmes de sécurité et conseils utiles pour le suivi
 Cette rubrique décrit comment empêcher l'exposition des informations sensibles et fournit également des conseils utiles en cas d'utilisation de WebHost.  
   
-## Utilisation d'un écouteur de suivi personnalisé avec WebHost  
- Si vous écrivez votre propre écouteur de suivi, vous devez savoir que les traces peuvent être perdues dans le cas d'un service hébergé sur le Web.Lorsque WebHost recycle, il arrête le processus en cours pendant qu'un doublon prend la relève.Toutefois, les deux processus doivent encore avoir accès à la même ressource pendant quelques temps, ce qui dépend du type d'écouteur.Dans ce cas, `XmlWriterTraceListener` crée un fichier de suivi pour le deuxième processus, alors que le suivi des événements Windows gère plusieurs processus dans la même session et donne accès au même fichier.Si votre propre écouteur ne fournit pas de fonctionnalités semblables, des traces peuvent être perdues lorsque le fichier est verrouillé par les deux processus.  
+## <a name="using-a-custom-trace-listener-with-webhost"></a>Utilisation d'un écouteur de suivi personnalisé avec WebHost  
+ Si vous écrivez votre propre écouteur de suivi, vous devez savoir que les traces peuvent être perdues dans le cas d'un service hébergé sur le Web. Lorsque WebHost recycle, il arrête le processus en cours pendant qu'un doublon prend la relève. Toutefois, les deux processus doivent encore avoir accès à la même ressource pendant quelques temps, ce qui dépend du type d'écouteur. Dans ce cas, `XmlWriterTraceListener` crée un fichier de suivi pour le deuxième processus, alors que le suivi des événements Windows gère plusieurs processus dans la même session et donne accès au même fichier. Si votre propre écouteur ne fournit pas de fonctionnalités semblables, des traces peuvent être perdues lorsque le fichier est verrouillé par les deux processus.  
   
- Vous devez également savoir qu'un écouteur de suivi personnalisé peut envoyer des traces et des messages sur le câble, par exemple à une base de données distante.En tant que responsable du déploiement d'applications, vous devez configurer les écouteurs personnalisés avec un contrôle d'accès approprié.Vous devez également appliquer un contrôle de sécurité sur toute information personnelle qui peut être exposée à l'emplacement distant.  
+ Vous devez également savoir qu'un écouteur de suivi personnalisé peut envoyer des traces et des messages sur le câble, par exemple à une base de données distante. En tant que responsable du déploiement d'applications, vous devez configurer les écouteurs personnalisés avec un contrôle d'accès approprié. Vous devez également appliquer un contrôle de sécurité sur toute information personnelle qui peut être exposée à l'emplacement distant.  
   
-## Enregistrement des informations sensibles  
- Les traces contiennent des en\-têtes de messages lorsqu'un message est dans la portée.Lorsque le suivi est activé, les informations personnelles dans les en\-têtes spécifiques à l'application, telles qu'une chaîne de requête, et les informations de corps, telles qu'un numéro de carte de crédit, peuvent devenir visibles dans les journaux.Le responsable du déploiement d'applications est chargé de mettre en vigueur le contrôle d'accès sur les fichiers de configuration et de suivi.Si vous ne souhaitez pas que ce type d'informations soit visible, vous devez désactiver le suivi ou éliminer une partie des données par filtrage si vous souhaitez partager les journaux de suivi.  
+## <a name="logging-sensitive-information"></a>Enregistrement des informations sensibles  
+ Les suivis contiennent des en-têtes de messages lorsqu'un message est dans la portée. Lorsque le suivi est activé, les informations personnelles dans les en-têtes spécifiques à l'application, telles qu'une chaîne de requête, et les informations de corps, telles qu'un numéro de carte de crédit, peuvent devenir visibles dans les journaux. Le responsable du déploiement d'applications est chargé de mettre en vigueur le contrôle d'accès sur les fichiers de configuration et de suivi. Si vous ne souhaitez pas que ce type d'informations soit visible, vous devez désactiver le suivi ou éliminer une partie des données par filtrage si vous souhaitez partager les journaux de suivi.  
   
  Les conseils suivants peuvent vous aider à empêcher que le contenu d'un fichier de suivi ne soit exposé involontairement :  
   
--   Assurez\-vous que les fichiers journaux sont protégés par des listes de contrôle d'accès dans les scénarios WebHost et à auto\-hébergement.  
+-   Assurez-vous que les fichiers journaux sont protégés par des listes de contrôle d'accès dans les scénarios WebHost et à auto-hébergement.  
   
--   Choisissez une extension de fichier qui ne peut pas être facilement fournie à l'aide d'une demande Web.Par exemple, l'extension de fichier .xml n'est pas un choix sûr.Vous pouvez vérifier le guide d'administration des services Internet \(IIS\) pour obtenir une liste des extensions qui peuvent être servies.  
+-   Choisissez une extension de fichier qui ne peut pas être facilement fournie à l'aide d'une demande Web. Par exemple, l'extension de fichier .xml n'est pas un choix sûr. Vous pouvez vérifier le guide d'administration des services Internet (IIS) pour obtenir une liste des extensions qui peuvent être servies.  
   
 -   Spécifiez un chemin d'accès absolu pour l'emplacement de fichier journal, qui doit être en dehors du répertoire public vroot WebHost afin d'empêcher qu'il soit accessible par un correspondant externe à l'aide d'un navigateur Web.  
   
- Par défaut, les clés et informations personnelles, telles que le nom d'utilisateur et le mot de passe, ne sont pas enregistrées dans les traces et les messages consignés.Toutefois, un administrateur d'ordinateur peut utiliser l'attribut `enableLoggingKnownPII` dans l'élément `machineSettings` du fichier Machine.config pour autoriser des applications qui s'exécutent sur l'ordinateur à enregistrer des informations d'identification personnelle PII \(Personally Identifiable Information\) connues comme suit :  
+ Par défaut, les clés et informations personnelles, telles que le nom d'utilisateur et le mot de passe, ne sont pas enregistrées dans les traces et les messages consignés. Toutefois, un administrateur d'ordinateur peut utiliser l'attribut `enableLoggingKnownPII` dans l'élément `machineSettings` du fichier Machine.config pour autoriser des applications qui s'exécutent sur l'ordinateur à enregistrer des informations d'identification personnelle PII (Personally Identifiable Information) connues comme suit :  
   
-```  
+```xml  
 <configuration>  
    <system.ServiceModel>  
       <machineSettings enableLoggingKnownPii="Boolean"/>  
@@ -47,7 +50,7 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
   
  Un responsable du déploiement d'applications peut ensuite utiliser l'attribut `logKnownPii` dans le fichier App.config ou Web.config pour activer la journalisation PII comme suit :  
   
-```  
+```xml  
 <system.diagnostics>  
   <sources>  
       <source name="System.ServiceModel.MessageLogging"  
@@ -62,11 +65,11 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
 </system.diagnostics>  
 ```  
   
- La journalisation PII est uniquement activée lorsque les deux paramètres ont la valeur `true`.La combinaison de deux commutateurs offre la souplesse nécessaire pour enregistrer les informations personnelles connues pour chaque application.  
+ La journalisation PII est uniquement activée lorsque les deux paramètres ont la valeur `true`. La combinaison de deux commutateurs offre la souplesse nécessaire pour enregistrer les informations personnelles connues pour chaque application.  
   
- Sachez que si vous spécifiez plusieurs sources personnalisées dans un fichier de configuration, seuls les attributs de la première sont lus.Les autres sont ignorés.Cela signifie que, pour le fichier App.config suivant, les informations personnelles ne sont pas enregistrées pour les deux sources, même si leur journalisation est explicitement activée pour la deuxième source.  
+ Sachez que si vous spécifiez plusieurs sources personnalisées dans un fichier de configuration, seuls les attributs de la première sont lus. Les autres sont ignorés. Cela signifie que, pour le fichier App.config suivant, les informations personnelles ne sont pas enregistrées pour les deux sources même si la journalisation PII est explicitement activée pour la deuxième source.  
   
-```  
+```xml  
 <system.diagnostics>  
   <sources>  
       <source name="System.ServiceModel.MessageLogging"  
@@ -89,13 +92,13 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
   
  Si l'élément `<machineSettings enableLoggingKnownPii="Boolean"/>` existe en dehors du fichier Machine.config, le système lève un <xref:System.Configuration.ConfigurationErrorsException>.  
   
- Les modifications ne sont effectives qu'au démarrage ou redémarrage de l'application.Un événement est enregistré au démarrage lorsque les deux attributs ont la valeur `true`.Un événement est également enregistré si `logKnownPii` a la valeur `true` mais que `enableLoggingKnownPii` a la valeur `false`.  
+ Les modifications ne sont effectives qu'au démarrage ou redémarrage de l'application. Un événement est enregistré au démarrage lorsque les deux attributs ont la valeur `true`. Un événement est également enregistré si `logKnownPii` a la valeur `true` mais que `enableLoggingKnownPii` a la valeur `false`.  
   
- Pour plus d'informations sur la journalisation PII, consultez l'exemple [PII Security Lockdown](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md).  
+ Pour plus d’informations sur la journalisation PII, consultez [verrouillage de sécurité des informations d’identification personnelle](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md) exemple.  
   
- L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs.Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées.Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en\-têtes des messages.Pour plus d'informations sur la confidentialité et les mesures à observer pour empêcher l'exposition des données personnelles, consultez [Confidentialité de l'utilisateur](http://go.microsoft.com/fwlink/?LinkID=94647) \(page éventuellement en anglais\).  
+ L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus approfondie sur la confidentialité et la protection des informations d’identification personnelle ne soient exposées, consultez [confidentialité de l’utilisateur](http://go.microsoft.com/fwlink/?LinkID=94647).  
   
- De plus, l'adresse IP de l'expéditeur du message est enregistrée une fois par connexion pour les transports orientés connexion, et une fois par message envoyé par d'autres transports.Cette opération est effectuée sans le consentement de l'expéditeur.Toutefois, cet enregistrement se produit uniquement aux niveaux de suivi Information ou Verbose, qui ne sont pas les niveaux de suivi par défaut ou recommandés dans les environnements de production, hormis pour le débogage en direct.  
+ De plus, l'adresse IP de l'expéditeur du message est enregistrée une fois par connexion pour les transports orientés connexion, et une fois par message envoyé par d'autres transports. Cette opération est effectuée sans le consentement de l'expéditeur. Toutefois, cet enregistrement se produit uniquement aux niveaux de suivi Information ou Verbose, qui ne sont pas les niveaux de suivi par défaut ou recommandés dans les environnements de production, hormis pour le débogage en direct.  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

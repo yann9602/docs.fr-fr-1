@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f654b1-1d2c-4105-8376-7c1959e23803
-ms.translationtype: HT
-ms.sourcegitcommit: e0271ba3392ce8861dc916714af8c16d4581ce4f
 ms.openlocfilehash: 9932555d5a5b029b4faaf3edcaa3ab523eebe77e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/13/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="net-core-tutorials"></a>Didacticiels .NET Core
 
 Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
@@ -58,4 +56,3 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 - [Créer un modèle personnalisé pour dotnet new](create-custom-template.md)
 
 Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).
-

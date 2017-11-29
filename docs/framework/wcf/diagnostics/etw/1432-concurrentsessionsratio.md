@@ -1,35 +1,38 @@
 ---
-title: "1432 - ConcurrentSessionsRatio | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1432 - ConcurrentSessionsRatio
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a8b6efce-cf46-485f-9cd6-58126b627032
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cc83ff6ec28b5dc72a1ff512736431274d804445
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 1432 - ConcurrentSessionsRatio
-## Propriétés  
+# <a name="1432---concurrentsessionsratio"></a>1432 - ConcurrentSessionsRatio
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
 |ID|1432|  
 |Mots clés|Quota|  
 |Niveau|Verbose|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Analyse|  
+|Canal|Microsoft-Windows-Application Server-Applications/Analyse|  
   
-## Description  
+## <a name="description"></a>Description  
  Cet événement est émis pour fournir les informations de ratio des sessions simultanées.  
   
-## Message  
- Ratio des sessions simultanées : %1\/%2  
+## <a name="message"></a>Message  
+ Ratio des sessions simultanées : %1/%2  
   
-## Détails
+## <a name="details"></a>Détails

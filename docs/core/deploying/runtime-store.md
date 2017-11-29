@@ -9,12 +9,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 9521d8b4-25fc-412b-a65b-4c975ebf6bfd
+ms.openlocfilehash: 607f8259fa6d8488a7fccf3c7d90b6cf40d5f237
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 57e9a2b8aa952860a380b60c44fd2df16ef6463c
-ms.openlocfilehash: e039190b49b35bd2675a175c6ff3631d6d344e4a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="runtime-package-store"></a>Magasin de packages de runtime
 
@@ -25,19 +24,11 @@ Cette fonctionnalité est implémentée en tant que *magasin de packages de runt
 \dotnet   
 &nbsp;&nbsp;\store   
 &nbsp;&nbsp;&nbsp;&nbsp;\x64   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\net47   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\netcoreapp2.0   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;\x86   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\net47   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\netcoreapp2.0   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.applicationinsights   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\microsoft.aspnetcore   
@@ -95,9 +86,9 @@ Le fichier *artifact.xml* suivant est issu de l’exécution de l’exemple pré
 
 ```xml
 <StoreArtifacts>
-  <Package Id="newtonsoft.json" Version="10.0.3" />
-  <Package Id="castle.core" Version="4.1.0" />
-  <Package Id="moq" Version="4.7.63" />
+  <Package Id="Newtonsoft.Json" Version="10.0.3" />
+  <Package Id="Castle.Core" Version="4.1.0" />
+  <Package Id="Moq" Version="4.7.63" />
 </StoreArtifacts>
 ```
 
@@ -155,6 +146,5 @@ La version de la dépendance indiquée dans le manifeste doit correspondre à la
 Quand le déploiement est *épuré* à la publication, seules les versions spécifiques des packages de manifestes que vous indiquez sont retirées de la sortie publiée. Les packages aux versions indiquées doivent être présents sur l’hôte pour que l’application démarre.
 
 ## <a name="see-also"></a>Voir aussi
- [dotnet-publish](../tools/dotnet-publish.md)   
- [dotnet-store](../tools/dotnet-store.md)   
-
+ [dotnet-publish](../tools/dotnet-publish.md)  
+ [dotnet-store](../tools/dotnet-store.md)  

@@ -1,29 +1,32 @@
 ---
-title: "Message Correlation | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Message Correlation
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 54b7b7d9ba247f329fbf3c9040c641e3194d3bfb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Message Correlation
-Cet exemple montre comment une application MSMQ \(Message Queuing\) peut envoyer un message MSMQ à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et comment les messages peuvent être corrélés entre les applications de l'émetteur et du récepteur, dans un scénario demande\-réponse.Cet exemple utilise la liaison msmqIntegrationBinding.Dans le cas présent, le service est une application console auto\-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente.k  
+# <a name="message-correlation"></a>Message Correlation
+Cet exemple montre comment une application MSMQ (Message Queuing) peut envoyer un message MSMQ à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et comment les messages peuvent être corrélés entre les applications de l'émetteur et du récepteur, dans un scénario demande-réponse. Cet exemple utilise la liaison msmqIntegrationBinding. Dans le cas présent, le service est une application console auto-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente. k  
   
- Le service traite le message reçu de l'expéditeur et lui renvoie un message de réponse.L'expéditeur met en corrélation la réponse qu'il a reçue à la demande qu'il a envoyée à l'origine.Les propriétés `MessageID` et `CorrelationID` du message sont utilisées pour mettre en corrélation les messages de demande et de réponse.  
+ Le service traite le message reçu de l'expéditeur et lui renvoie un message de réponse. L'expéditeur met en corrélation la réponse qu'il a reçue à la demande qu'il a envoyée à l'origine. Les propriétés `MessageID` et `CorrelationID` du message sont utilisées pour mettre en corrélation les messages de demande et de réponse.  
   
- Le contrat de service `IOrderProcessor` définit une opération de service unidirectionnelle qui convient à l'utilisation de la mise en file d'attente.Un message MSMQ n'ayant pas d'en\-tête Action, il n'est donc pas possible de mapper automatiquement des messages MSMQ différents aux contrats d'opération.Par conséquent, il ne peut y avoir qu'un seul contrat d'opération dans ce cas.Si vous souhaitez définir plusieurs contrats d'opération dans le service, l'application doit fournir des informations sur l'en\-tête dans le message MSMQ \(par exemple, l'étiquette ou correlationID\) qui peut être utilisé pour déterminer le contrat d'opération à distribuer.Cela est illustré dans [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
+ Le contrat de service `IOrderProcessor` définit une opération de service unidirectionnelle qui convient à l'utilisation de la mise en file d'attente. Un message MSMQ n'ayant pas d'en-tête Action, il n'est donc pas possible de mapper automatiquement des messages MSMQ différents aux contrats d'opération. Par conséquent, il ne peut y avoir qu'un seul contrat d'opération dans ce cas. Si vous souhaitez définir plusieurs contrats d'opération dans le service, l'application doit fournir des informations sur l'en-tête dans le message MSMQ (par exemple, l'étiquette ou correlationID) qui peut être utilisé pour déterminer le contrat d'opération à distribuer. Cela est illustré dans le [personnalisé Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
   
- En outre, le message MSMQ ne contient pas d'informations concernant les en\-têtes qui sont mappés à différents paramètres du contrat d'opération.Par conséquent, il ne peut y avoir qu'un seul paramètre dans le contrat d'opération.Le paramètre est de type <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`, lequel contient le message MSMQ sous\-jacent.Le type « T » dans la classe `MsmqMessage<T>` représente les données sérialisées dans le corps du message MSMQ.Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.  
+ En outre, le message MSMQ ne contient pas d'informations concernant les en-têtes qui sont mappés à différents paramètres du contrat d'opération. Par conséquent, il ne peut y avoir qu'un seul paramètre dans le contrat d'opération. Le paramètre est de type <!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`--> , `System.ServiceModel.MSMQIntegration.MsmqMessage` qui contient le message MSMQ sous-jacent. Le type « T » dans la classe `MsmqMessage<T>` représente les données sérialisées dans le corps du message MSMQ. Dans cet exemple, le type `PurchaseOrder` est sérialisé dans le corps du message MSMQ.  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -33,10 +36,9 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-  
 ```  
   
- L'opération de service traite le bon de commande et en affiche le contenu et l'état dans la fenêtre de console du service.L'<xref:System.ServiceModel.OperationBehaviorAttribute> configure l'opération pour l'inscrire dans une transaction avec la file d'attente et marquer la transaction comme complète lorsque l'opération est retournée.Le `PurchaseOrder` contient les détails de la commande qui doivent être traités par le service.  
+ L'opération de service traite le bon de commande et en affiche le contenu et l'état dans la fenêtre de console du service. L'<xref:System.ServiceModel.OperationBehaviorAttribute> configure l'opération pour l'inscrire dans une transaction avec la file d'attente et marquer la transaction comme complète lorsque l'opération est retournée. Le `PurchaseOrder` contient les détails de la commande qui doivent être traités par le service.  
   
 ```  
 // Service class that implements the service contract.  
@@ -71,15 +73,13 @@ public class OrderProcessorService : IOrderProcessor
         client.Close();  
     }  
 }  
-  
 ```  
   
- Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente.L'application qui reçoit et traite le message étant une application MSMQ et non pas une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], il n'y a pas de contrat de service implicite entre les deux applications.Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.  
+ Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente. L'application qui reçoit et traite le message étant une application MSMQ et non pas une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], il n'y a pas de contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.  
   
- Le proxy personnalisé est essentiellement le même pour toutes les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilisent la liaison `msmqIntegrationBinding` pour envoyer des messages.Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service.Il s'agit uniquement d'une opération d'envoi de message.  
+ Le proxy personnalisé est essentiellement le même pour toutes les applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilisent la liaison `msmqIntegrationBinding` pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.  
   
 ```  
-  
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderResponse  
 {  
@@ -107,10 +107,9 @@ public partial class OrderResponseClient : System.ServiceModel.ClientBase<IOrder
         base.Channel.SendOrderResponse(msg);  
     }  
 }  
-  
 ```  
   
- Le service est auto\-hébergé.Lors de l'utilisation du transport d'intégration MSMQ, la file d'attente utilisée doit être créée au préalable.Cela peut s'effectuer manuellement ou via le code.Dans cet exemple, le service contient le code <xref:System.Messaging> pour vérifier l'existence de la file d'attente et la créer si besoin.Le nom de la file d'attente est lu depuis le fichier de configuration.  
+ Le service est auto-hébergé. Lors de l'utilisation du transport d'intégration MSMQ, la file d'attente utilisée doit être créée au préalable. Cela peut s'effectuer manuellement ou via le code. Dans cet exemple, le service contient le code <xref:System.Messaging> pour vérifier l'existence de la file d'attente et la créer si besoin. Le nom de la file d'attente est lu depuis le fichier de configuration.  
   
 ```  
 public static void Main()  
@@ -134,12 +133,11 @@ public static void Main()
             serviceHost.Close();  
       }  
 }  
-  
 ```  
   
- La file d'attente MSMQ à laquelle les demandes de bon de commande sont envoyées est spécifiée dans la section appSettings du fichier de configuration.Les points de terminaison du client et du service sont définis dans la section system.serviceModel du fichier de configuration.Tous deux spécifient la liaison `msmqIntegrationbinding`.  
+ La file d'attente MSMQ à laquelle les demandes de bon de commande sont envoyées est spécifiée dans la section appSettings du fichier de configuration. Les points de terminaison du client et du service sont définis dans la section system.serviceModel du fichier de configuration. Tous deux spécifient la liaison `msmqIntegrationbinding`.  
   
-```  
+```xml  
 <appSettings>  
   <add key="orderQueueName" value=".\private$\Orders" />  
 </appSettings>  
@@ -174,10 +172,9 @@ public static void Main()
   </bindings>  
   
 </system.serviceModel>  
-  
 ```  
   
- L'application cliente utilise <xref:System.Messaging> pour envoyer un message durable et transactionnel à la file d'attente.Le corps du message contient le bon de commande.  
+ L'application cliente utilise <xref:System.Messaging> pour envoyer un message durable et transactionnel à la file d'attente. Le corps du message contient le bon de commande.  
   
 ```  
 static void PlaceOrder()  
@@ -221,21 +218,20 @@ static void PlaceOrder()
     orderMessageID = msg.Id;  
     Console.WriteLine("Placed the order, waiting for response...");  
 }  
-  
 ```  
   
  La file d'attente MSMQ à partir de laquelle les réponses à la commande sont reçues est spécifiée dans une section appSettings du fichier de configuration, comme le montre l'exemple de configuration suivant.  
   
 > [!NOTE]
->  Le nom de la file d'attente utilise un point \(.\) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès.L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma msmq.formatname et utilise « localhost » pour l'ordinateur local.Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.  
+>  Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L'adresse du point de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie un schéma msmq.formatname et utilise « localhost » pour l'ordinateur local. Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.  
   
-```  
+```xml  
 <appSettings>  
     <add key=" orderResponseQueueName" value=".\private$\Orders" />  
 </appSettings>  
 ```  
   
- L'application cliente enregistre l'`messageID` du message de demande de commande qu'elle envoie au service et attend une réponse du service.Une fois qu'une réponse arrive dans la file d'attente, le client le met en corrélation avec le message de commande qu'il a envoyé à l'aide de la propriété `correlationID` du message, qui contient l'`messageID` du message de commande que le client a envoyé au service à l'origine.  
+ L'application cliente enregistre l'`messageID` du message de demande de commande qu'elle envoie au service et attend une réponse du service. Une fois qu'une réponse arrive dans la file d'attente, le client le met en corrélation avec le message de commande qu'il a envoyé à l'aide de la propriété `correlationID` du message, qui contient l'`messageID` du message de commande que le client a envoyé au service à l'origine.  
   
 ```  
 static void DisplayOrderStatus()  
@@ -276,39 +272,38 @@ static void DisplayOrderStatus()
     }  
   }  
 }  
-  
 ```  
   
- Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives.Vous pouvez voir le service recevoir des messages du client et renvoyer une réponse au client.Le client affiche la réponse reçue du service.Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
+ Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client et renvoyer une réponse au client. Le client affiche la réponse reçue du service. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
 > [!NOTE]
->  Cet exemple requiert l'installation de MSMQ \(Message Queuing\).Consultez les instructions d'installation de MSMQ dans la section « Voir aussi ».  
+>  Cet exemple requiert l'installation de MSMQ (Message Queuing). Consultez les instructions d'installation de MSMQ dans la section « Voir aussi ».  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Assurez\-vous d'avoir effectué la procédure indiquée à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Si le service est exécuté en premier, il vérifie que la file d'attente existe.Si la file d'attente n'existe pas, le service en crée une.Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ.Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
+2.  Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
   
     1.  Ouvrez le Gestionnaire de serveur dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-    2.  Développez l'onglet **Fonctionnalités**.  
+    2.  Développez le **fonctionnalités** onglet.  
   
-    3.  Cliquez avec le bouton droit sur **Files d'attente de messages privées**, puis cliquez sur **Nouveau**, **File d'attente privée**.  
+    3.  Avec le bouton droit **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.  
   
-    4.  Activez la case à cocher **Transactionnelle**.  
+    4.  Vérifiez le **transactionnel** boîte.  
   
-    5.  Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d'attente.  
+    5.  Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, conformez\-vous aux instructions figurant dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Pour exécuter l'exemple dans une configuration à un seul ordinateur, conformez\-vous instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Pour exécuter l’exemple dans une configuration sur un seul ordinateur, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-### Pour exécuter l'exemple sur plusieurs ordinateurs  
+### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
-1.  Copiez les fichiers programme du service figurant dans le dossier \\service\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur de service.  
+1.  Copiez les fichiers programme du service figurant dans le dossier \service\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur de service.  
   
-2.  Copiez les fichiers programme du client du dossier \\client\\bin\\ \(situé dans le dossier correspondant à votre langue\) sur l'ordinateur client.  
+2.  Copiez les fichiers programme du client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l'ordinateur client.  
   
 3.  Dans le fichier Client.exe.config, dans orderQueueName, remplacez « . » par le nom de l'ordinateur de service.  
   
@@ -319,14 +314,14 @@ static void DisplayOrderStatus()
 6.  Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
-## Voir aussi  
- [Mise en file d'attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)   
- [Message Queuing \(page pouvant être en anglais\)](http://go.microsoft.com/fwlink/?LinkId=94968)
+## <a name="see-also"></a>Voir aussi  
+ [Queuing dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [Message Queuing](http://go.microsoft.com/fwlink/?LinkId=94968)

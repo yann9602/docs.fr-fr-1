@@ -7,12 +7,11 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.translationtype: HT
-ms.sourcegitcommit: a19ab54a6cc44bd7acd1e40a4ca94da52bf14297
 ms.openlocfilehash: c5a7ee0ba306cea641b0ff34f0b521c92bd03719
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -48,7 +47,7 @@ Exécutez les tests avec les noms qui correspondent aux valeurs fournies. Sépar
 
 `--TestAdapterPath|/TestAdapterPath`
 
-Utilisez des adaptateurs de test personnalisés à partir d’un chemin donné (le cas échéant) dans la série de tests.
+Utilisez des adaptateurs de test personnalisés à partir d’un chemin d’accès donné (le cas échéant) dans la série de tests.
 
 `--Platform|/Platform:<Platform type>`
 
@@ -68,7 +67,7 @@ Exécutez les tests qui correspondent à l'expression donnée. `<Expression>` es
 
 `-?|--Help|/?|/Help`
 
-Affiche une aide élémentaire de la commande.
+Affiche une aide brève pour la commande.
 
 `--logger|/logger:<Logger Uri/FriendlyName>`
 
@@ -129,4 +128,3 @@ Exécuter des tests `TestMethod1` :
 Exécuter des tests `TestMethod1` et `TestMethod2` :
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`
-

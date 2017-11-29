@@ -1,28 +1,34 @@
 ---
-title: "Retourner la valeur moyenne d&#39;une s&#233;quence num&#233;rique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Retourner la valeur moyenne d'une séquence numérique"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ee3b8673-a2e7-4b2d-9b5c-4972ff9e665d
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 87a23bce302ac7eed3081b5670cb8c532a550cde
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Retourner la valeur moyenne d&#39;une s&#233;quence num&#233;rique
+# <a name="return-the-average-value-from-a-numeric-sequence"></a>Retourner la valeur moyenne d'une séquence numérique
 L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une séquence de valeurs numériques.  
   
 > [!NOTE]
 >  La traduction [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de la `Average` de valeurs entières est calculée comme un entier, non comme un double.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  L'exemple suivant retourne la moyenne de valeurs `Freight` dans la table `Orders`.  
   
  Les résultats de l'exemple de base de données Northwind seraient `78.2442`.  
@@ -30,18 +36,18 @@ L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une s
  [!code-csharp[DLinqQueryExamples#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#1)]
  [!code-vb[DLinqQueryExamples#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#1)]  
   
-## Exemple  
- L'exemple suivant retourne le prix unitaire moyen de tous les produits \(`Products`\) dans la table `Products`.  
+## <a name="example"></a>Exemple  
+ L'exemple suivant retourne le prix unitaire moyen de tous les produits (`Products`) dans la table `Products`.  
   
  Les résultats de l'exemple de base de données Northwind seraient `28.8663`.  
   
  [!code-csharp[DLinqQueryExamples#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#2)]
  [!code-vb[DLinqQueryExamples#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#2)]  
   
-## Exemple  
- L'exemple suivant utilise l'opérateur `Average` pour rechercher ces `Products` dont le prix unitaire est plus élevé que le prix unitaire moyen de la catégorie à laquelle il appartient.  L'exemple affiche ensuite les résultats par groupes.  
+## <a name="example"></a>Exemple  
+ L'exemple suivant utilise l'opérateur `Average` pour rechercher ces `Products` dont le prix unitaire est plus élevé que le prix unitaire moyen de la catégorie à laquelle il appartient. L'exemple affiche ensuite les résultats par groupes.  
   
- Notez que cet exemple requiert l'utilisation du mot clé `var` en C\#, car le type de retour est anonyme.  
+ Notez que cet exemple requiert l'utilisation du mot clé `var` en C#, car le type de retour est anonyme.  
   
  [!code-csharp[DLinqQueryExamples#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#3)]
  [!code-vb[DLinqQueryExamples#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#3)]  
@@ -118,5 +124,5 @@ L'opérateur <xref:System.Linq.Enumerable.Average%2A> calcule la moyenne d'une s
   
  `Gravad lax`  
   
-## Voir aussi  
- [Requêtes d'agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
+## <a name="see-also"></a>Voir aussi  
+ [Requêtes d’agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)

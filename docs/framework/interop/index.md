@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - unmanaged code, interoperation
 - managed code, interoperation with unmanaged code
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, about interoperation
 - components [.NET Framework], interoperation with unmanaged code
 ms.assetid: ccb68ce7-b0e9-4ffb-839d-03b1cd2c1258
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ff86b062efddde6f97555efb97247f60a6e1db98
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/18/2017
-
+ms.openlocfilehash: 2db5b8c2425637e24086f54e8ef69b0e5aac3633
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Interopération avec du code non managé
 Le .NET Framework assure l’interaction avec les composants COM, les services COM+, les bibliothèques de types externes et de nombreux services de systèmes d’exploitation. Les types de données, les signatures de méthode et les mécanismes de gestion des erreurs varient selon les modèles objet managés et non managés. Pour simplifier l’interopérabilité entre les composants .NET Framework et le code non managé ainsi que pour faciliter la migration, le common language runtime dissimule à la fois aux clients et aux serveurs les différences entre ces modèles objet.  
@@ -55,7 +48,7 @@ Le .NET Framework assure l’interaction avec les composants COM, les services C
  [Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
  Fournit des conseils pour l'écriture de composants COM intégrés.  
   
- [Marshaling d’interopérabilité](../../../docs/framework/interop/interop-marshaling.md)  
+ [Marshaling d'interopérabilité](../../../docs/framework/interop/interop-marshaling.md)  
  Décrit le marshaling de COM Interop et de l’appel de code non managé.  
   
  [Guide pratique pour mapper des HRESULT et des exceptions](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)  
@@ -67,4 +60,3 @@ Le .NET Framework assure l’interaction avec les composants COM, les services C
 ## <a name="related-sections"></a>Rubriques connexes  
  [Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.
-

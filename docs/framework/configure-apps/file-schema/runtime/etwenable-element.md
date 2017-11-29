@@ -1,74 +1,76 @@
 ---
-title: "&lt;etwEnable&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<etwEnable> (élément)"
-  - "etwEnable (élément)"
+title: "&lt;etwEnable&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- etwEnable element
+- <etwEnable> element
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b36c52338754df0f4fd3c963848e36afeb140501
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;etwEnable&gt;, &#233;l&#233;ment
-Spécifie s'il convient d'activer le traçage d'événements pour Windows \(ETW\) pour les événements Common Language Runtime.  
+# <a name="ltetwenablegt-element"></a>&lt;etwEnable&gt; élément
+Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour les événements du common language runtime.  
   
-## Syntaxe  
+ \<configuration > élément  
+\<runtime > élément  
+\<etwEnabled >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
+  
+```xml  
 <etwEnable enabled="true|false"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|activé|Attribut requis.<br /><br /> Spécifie si ETW doit être activé.|  
+|---------------|-----------------|  
+|enabled|Attribut requis.<br /><br /> Spécifie si ETW doit être activé.|  
   
-## Attribut enabled  
+## <a name="enabled-attribute"></a>Attribut enabled  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|true|Enable ETW  C'est la valeur par défaut pour les versions de Windows qui commence avec les systèmes d'exploitation Windows Server 2008 et Windows Vista.|  
-|false|Désactive ETW.  C'est la valeur par défaut pour les versions antérieures de Windows.|  
+|-----------|-----------------|  
+|true|Activer ETW. Il s’agit de la valeur par défaut pour les versions de Windows qui commence avec les systèmes d’exploitation Windows Vista et Windows Server 2008.|  
+|False|Désactiver ETW. Il s’agit de la valeur par défaut pour les versions antérieures de Windows.|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- À partir de Windows Vista, ETW est activé par défaut.  Utilisez cet élément pour désactiver ETW pour une application.  Dans les versions antérieures de Windows, utilisez cet élément pour activer ETW pour une application.  
+## <a name="remarks"></a>Remarques  
+ À compter de Windows Vista, ETW est activé par défaut. Utilisez cet élément pour désactiver ETW pour une application. Dans les versions antérieures de Windows, utilisez cet élément pour activer ETW pour une application.  
   
 > [!NOTE]
->  ETW peut être activé ou désactivé globalement sur un serveur en utilisant un paramètre du Registre.  Consultez [Controlling .NET Framework Logging](../../../../../docs/framework/performance/controlling-logging.md).  
+>  ETW peut être activé ou désactivé globalement sur un serveur à l’aide d’un paramètre du Registre. Consultez [contrôle de l’enregistrement .NET Framework](../../../../../docs/framework/performance/controlling-logging.md).  
   
-## Exemple  
- L'exemple suivant indique comment activer le traçage ETW pour une application.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment activer le suivi ETW pour une application.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <etwEnable enabled="true" />  
@@ -76,7 +78,7 @@ Spécifie s'il convient d'activer le traçage d'événements pour Windows \(ETW\
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Controlling .NET Framework Logging](../../../../../docs/framework/performance/controlling-logging.md)
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Contrôle de l’enregistrement .NET Framework](../../../../../docs/framework/performance/controlling-logging.md)

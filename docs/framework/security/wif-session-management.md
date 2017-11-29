@@ -5,30 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 98bce126-18a9-401b-b20d-67ee462a5f8a
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d71b83231140dcc18e6d2351091fbfd4985e90a2
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 9c41b9c0c9abe3fc80d16dbd847c35c8b2da7038
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="wif-session-management"></a>Gestion de session WIF
-Quand un client tente d’abord d’accéder à une ressource protégée qui est hébergée par une partie de confiance, il doit d’abord s’authentifier auprès d’un service d’émission de jeton de sécurité (STS) qui est approuvé par la partie de confiance. Le service STS fournit ensuite un jeton de sécurité au client. Le client présente ce jeton à la partie de confiance, qui accorde l’accès client à la ressource protégée. Toutefois, vous souhaitez éviter au client d’avoir à s’authentifier de nouveau auprès du service STS pour chaque demande, en particulier car il peut même ne pas se trouver sur le même ordinateur ou dans le même domaine que la partie de confiance. Au lieu de cela, avec WIF (Windows Identity Foundation), le client et la partie de confiance établissent une session dans laquelle le client utilise un jeton de sécurité de session pour s’authentifier auprès de la partie de confiance pour toutes les demandes après la première. La partie de confiance peut utiliser ce jeton de sécurité de session, qui est stocké à l’intérieur d’un cookie, afin de reconstruire le <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName> du client.  
+Quand un client tente d’abord d’accéder à une ressource protégée qui est hébergée par une partie de confiance, il doit d’abord s’authentifier auprès d’un service d’émission de jeton de sécurité (STS) qui est approuvé par la partie de confiance. Le service STS fournit ensuite un jeton de sécurité au client. Le client présente ce jeton à la partie de confiance, qui accorde l’accès client à la ressource protégée. Toutefois, vous souhaitez éviter au client d’avoir à s’authentifier de nouveau auprès du service STS pour chaque demande, en particulier car il peut même ne pas se trouver sur le même ordinateur ou dans le même domaine que la partie de confiance. Au lieu de cela, avec WIF (Windows Identity Foundation), le client et la partie de confiance établissent une session dans laquelle le client utilise un jeton de sécurité de session pour s’authentifier auprès de la partie de confiance pour toutes les demandes après la première. La partie de confiance peut utiliser ce jeton de sécurité de session, qui est stocké à l’intérieur d’un cookie, afin de reconstruire le <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType> du client.  
   
  Le service STS définit l’authentification que le client doit fournir. Toutefois, le client peut avoir plusieurs informations d’identification avec lesquelles il peut s’authentifier auprès du service STS. Par exemple, il peut avoir un jeton Windows Live, un nom d’utilisateur et un mot de passe, un certificat, et un smartkey. Dans ce cas, le service STS accorde au client plusieurs identités, chacune correspondant à l’une des informations d’identification que le client présente. La partie de confiance peut utiliser une ou plusieurs de ces identités quand elle décide du niveau d’accès à accorder au client.  
   
- <xref:System.IdentityModel.Tokens.SessionSecurityToken?displayProperty=fullName> est utilisé pour reconstruire le <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=fullName> du client, qui contient toutes les identités du client dans <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>. Chaque <xref:System.Security.Claims.ClaimsIdentity?displayProperty=fullName> dans la collection contient les jetons de démarrage qui sont associés à cette identité.  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken?displayProperty=nameWithType> est utilisé pour reconstruire le <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType> du client, qui contient toutes les identités du client dans <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>. Chaque <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> dans la collection contient les jetons de démarrage qui sont associés à cette identité.  
   
- Si un nouveau jeton de session est émis avec l’ID de session du jeton de session d’origine, <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler?displayProperty=fullName> ne met pas à jour le jeton de session dans le cache de jeton. Vous devez toujours instancier un jeton de session avec un ID de session unique.  
+ Si un nouveau jeton de session est émis avec l’ID de session du jeton de session d’origine, <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler?displayProperty=nameWithType> ne met pas à jour le jeton de session dans le cache de jeton. Vous devez toujours instancier un jeton de session avec un ID de session unique.  
   
 > [!NOTE]
 >  Session.SecurityTokenHandler.ReadToken lève une exception <xref:System.Xml.XmlException> s’il reçoit une entrée non valide, par exemple si le cookie qui contient le jeton de session est endommagé. Nous vous recommandons d’intercepter cette exception et de fournir un comportement spécifique à l’application.  
@@ -38,7 +36,6 @@ Quand un client tente d’abord d’accéder à une ressource protégée qui est
  Pour fonctionner en mode de référence, Microsoft recommande de fournir un gestionnaire pour l’événement <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> dans le fichier **global.asax.cs** et de définir la propriété **IsReferenceMode** sur le jeton passé dans la propriété <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A>. Ces mises à jour garantissent que le jeton de session fonctionne en mode de référence pour chaque demande et est privilégié par rapport à une simple définition de la propriété <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A> sur le module d’authentification de session.  
   
 ## <a name="extensibility"></a>Extensibilité  
- Vous pouvez étendre le mécanisme de gestion de session, par exemple dans le but d’améliorer les performances. Vous pouvez notamment créer un gestionnaire de cookie personnalisé qui transforme ou optimise le jeton de sécurité de session entre son état en mémoire et ce qui entre dans le cookie. Pour ce faire, vous pouvez configurer la propriété <xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A?displayProperty=fullName> de <xref:System.IdentityModel.Services.SessionAuthenticationModule?displayProperty=fullName> pour utiliser un gestionnaire de cookie personnalisé qui dérive de <xref:System.IdentityModel.Services.CookieHandler?displayProperty=fullName>. <xref:System.IdentityModel.Services.ChunkedCookieHandler?displayProperty=fullName> est le gestionnaire de cookie par défaut, car les cookies dépassent la taille autorisée pour le protocole HTTP (Hypertext Transfer Protocol) ; si vous utilisez plutôt un gestionnaire de cookie personnalisé, vous devez implémenter la segmentation.  
+ Vous pouvez étendre le mécanisme de gestion de session, par exemple dans le but d’améliorer les performances. Vous pouvez notamment créer un gestionnaire de cookie personnalisé qui transforme ou optimise le jeton de sécurité de session entre son état en mémoire et ce qui entre dans le cookie. Pour ce faire, vous pouvez configurer la propriété <xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A?displayProperty=nameWithType> de <xref:System.IdentityModel.Services.SessionAuthenticationModule?displayProperty=nameWithType> pour utiliser un gestionnaire de cookie personnalisé qui dérive de <xref:System.IdentityModel.Services.CookieHandler?displayProperty=nameWithType>. <xref:System.IdentityModel.Services.ChunkedCookieHandler?displayProperty=nameWithType> est le gestionnaire de cookie par défaut, car les cookies dépassent la taille autorisée pour le protocole HTTP (Hypertext Transfer Protocol) ; si vous utilisez plutôt un gestionnaire de cookie personnalisé, vous devez implémenter la segmentation.  
   
  Pour plus d’informations, consultez l’exemple [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) (http://go.microsoft.com/fwlink/?LinkID=248408). Cet exemple montre un cache de sessions prêt pour une batterie de serveurs (par opposition à un tokenreplycache) afin que vous puissiez utiliser des sessions par référence au lieu d’échanger des cookies de grande taille. Cet exemple illustre également un moyen plus simple de sécuriser des cookies dans une batterie de serveurs. Le cache de sessions est basé sur WCF. En ce qui concerne la sécurisation de session, l’exemple illustre une nouvelle fonction dans WIF 4.5 d’une transformation de cookie basée sur MachineKey, qui peut être activée en collant simplement l’extrait approprié dans le fichier web.config. L’exemple lui-même n’est pas « en batterie de serveurs », mais il montre ce dont vous avez besoin pour que votre application soit prête pour une batterie de serveurs.
-

@@ -1,28 +1,31 @@
 ---
-title: "Int&#233;gration COM+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Intégration COM+"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6a687c1b-d0be-42fb-8f9b-20fea1317411
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ccdce7906135f413b925abec2353343bcf175427
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Int&#233;gration COM+
-Cette rubrique répertorie l'ensemble des exceptions générées par l'intégration COM\+.  
+# <a name="com-integration"></a>Intégration COM+
+Cette rubrique répertorie l'ensemble des exceptions générées par l'intégration COM+.  
   
-## Liste des exceptions  
+## <a name="exception-list"></a>Liste des exceptions  
   
-|Code de ressource|Chaîne de ressource|  
-|-----------------------|-------------------------|  
+|Code de la ressource|Chaîne de la ressource|  
+|-------------------|---------------------|  
 |CannotResolveTypeForParamInMessageDescription|Impossible de déterminer le type du paramètre spécifié dans l'espace de noms.|  
-|NoEqualSignFound|Le mot clé spécifié n'est pas suivi d'un signe d'égalité.Assurez\-vous que chaque mot clé est suivi d'un signe d'égalité et d'une valeur.|  
-|UdtNotFoundInAssembly|Impossible de trouver le type défini par l'utilisateur spécifié.Assurez\-vous que les type et bibliothèque de type adéquats sont enregistrés et spécifiés.|
+|NoEqualSignFound|Le mot clé spécifié n'est pas suivi d'un signe d'égalité. Assurez-vous que chaque mot clé est suivi d'un signe d'égalité et d'une valeur.|  
+|UdtNotFoundInAssembly|Impossible de trouver le type défini par l'utilisateur spécifié. Assurez-vous que les type et bibliothèque de type adéquats sont enregistrés et spécifiés.|
