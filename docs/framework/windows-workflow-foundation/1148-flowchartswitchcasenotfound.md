@@ -1,38 +1,42 @@
 ---
-title: "1148 - FlowchartSwitchCaseNotFound | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1148 - FlowchartSwitchCaseNotFound
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9ee7fcee-e040-4306-968e-ed840a1cb00c
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f95ea8aa8c3d6b012fb50a45b5a37c118928e048
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 1148 - FlowchartSwitchCaseNotFound
-## Propriétés  
+# <a name="1148---flowchartswitchcasenotfound"></a><span data-ttu-id="852d2-102">1148 - FlowchartSwitchCaseNotFound</span><span class="sxs-lookup"><span data-stu-id="852d2-102">1148 - FlowchartSwitchCaseNotFound</span></span>
+## <a name="properties"></a><span data-ttu-id="852d2-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="852d2-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|1148|  
-|Mots clés|WFActivities|  
-|Niveau|Information|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|<span data-ttu-id="852d2-104">ID</span><span class="sxs-lookup"><span data-stu-id="852d2-104">ID</span></span>|<span data-ttu-id="852d2-105">1148</span><span class="sxs-lookup"><span data-stu-id="852d2-105">1148</span></span>|  
+|<span data-ttu-id="852d2-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="852d2-106">Keywords</span></span>|<span data-ttu-id="852d2-107">WFActivities</span><span class="sxs-lookup"><span data-stu-id="852d2-107">WFActivities</span></span>|  
+|<span data-ttu-id="852d2-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="852d2-108">Level</span></span>|<span data-ttu-id="852d2-109">Information</span><span class="sxs-lookup"><span data-stu-id="852d2-109">Information</span></span>|  
+|<span data-ttu-id="852d2-110">Canal</span><span class="sxs-lookup"><span data-stu-id="852d2-110">Channel</span></span>|<span data-ttu-id="852d2-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="852d2-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## Description  
- Indique qu'une correspondance de cas ou un cas par défaut est introuvable dans un organigramme.  L'exécution de Flowchart va se terminer.  
+## <a name="description"></a><span data-ttu-id="852d2-112">Description</span><span class="sxs-lookup"><span data-stu-id="852d2-112">Description</span></span>  
+ <span data-ttu-id="852d2-113">Indique qu'une correspondance de cas ou un cas par défaut est introuvable dans un organigramme.</span><span class="sxs-lookup"><span data-stu-id="852d2-113">Indicates that neither a matching case or a default case in a Flowchart switch could be found.</span></span> <span data-ttu-id="852d2-114">L'exécution de Flowchart va se terminer.</span><span class="sxs-lookup"><span data-stu-id="852d2-114">Flowchart execution will end.</span></span>  
   
-## Message  
- Flowchart « %1 »\/FlowSwitch \- impossible de trouver l'activité Case ou un cas par défaut correspondant au résultat de l'expression.  L'exécution de Flowchart va se terminer.  
+## <a name="message"></a><span data-ttu-id="852d2-115">Message</span><span class="sxs-lookup"><span data-stu-id="852d2-115">Message</span></span>  
+ <span data-ttu-id="852d2-116">Flowchart « %1 »/FlowSwitch - impossible de trouver l'activité Case ou un cas par défaut correspondant au résultat de l'expression.</span><span class="sxs-lookup"><span data-stu-id="852d2-116">Flowchart '%1'/FlowSwitch - could find neither a Case activity nor a Default Case matching the Expression result.</span></span> <span data-ttu-id="852d2-117">L'exécution de Flowchart va se terminer.</span><span class="sxs-lookup"><span data-stu-id="852d2-117">Flowchart execution will end.</span></span>  
   
-## Détails  
+## <a name="details"></a><span data-ttu-id="852d2-118">Détails</span><span class="sxs-lookup"><span data-stu-id="852d2-118">Details</span></span>  
   
-|Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
-|Organigramme|xs:string|Nom complet de l'organigramme.|  
-|AppDomain|xs:string|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|
+|<span data-ttu-id="852d2-119">Nom d'élément de données</span><span class="sxs-lookup"><span data-stu-id="852d2-119">Data Item Name</span></span>|<span data-ttu-id="852d2-120">Type d'élément de données</span><span class="sxs-lookup"><span data-stu-id="852d2-120">Data Item Type</span></span>|<span data-ttu-id="852d2-121">Description</span><span class="sxs-lookup"><span data-stu-id="852d2-121">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="852d2-122">Organigramme</span><span class="sxs-lookup"><span data-stu-id="852d2-122">FlowChart</span></span>|<span data-ttu-id="852d2-123">xs:string</span><span class="sxs-lookup"><span data-stu-id="852d2-123">xs:string</span></span>|<span data-ttu-id="852d2-124">Nom complet de l'organigramme.</span><span class="sxs-lookup"><span data-stu-id="852d2-124">The display name of the FlowChart.</span></span>|  
+|<span data-ttu-id="852d2-125">AppDomain</span><span class="sxs-lookup"><span data-stu-id="852d2-125">AppDomain</span></span>|<span data-ttu-id="852d2-126">xs:string</span><span class="sxs-lookup"><span data-stu-id="852d2-126">xs:string</span></span>|<span data-ttu-id="852d2-127">Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.</span><span class="sxs-lookup"><span data-stu-id="852d2-127">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

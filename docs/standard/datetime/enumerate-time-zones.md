@@ -1,75 +1,87 @@
 ---
-title: "Comment&#160;: &#233;num&#233;rer les fuseaux horaires d&#39;un ordinateur | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "fuseaux horaires (énumération dans le .NET Framework)"
-  - "fuseaux horaires (.NET Framework), énumérer"
+title: "Comment : énumérer les fuseaux horaires présents sur un ordinateur"
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- time zones [.NET Framework], enumerating
+- enumerating time zones [.NET Framework]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f77afc8a0f2e6c110f4dc037c12ecc8b06908e60
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: &#233;num&#233;rer les fuseaux horaires d&#39;un ordinateur
-Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir accéder aux informations le concernant.  Les systèmes d'exploitation Windows XP et Windows Vista stockent ces informations dans le Registre.  Toutefois, bien qu'il existe de nombreux fuseaux horaires dans le monde, le Registre contient des informations relatives à un sous\-ensemble de fuseaux horaires uniquement.  De plus, le Registre est une structure dynamique dont le contenu peut être modifié délibérément ou accidentellement.  En conséquence, un fuseau horaire particulier ne peut pas toujours être défini ni disponible sur un système.  Pour de nombreuses applications qui utilisent des informations de fuseau horaire, il convient d'abord de déterminer si les fuseaux horaires requis sont disponibles sur le système local ou de fournir à l'utilisateur une liste des fuseaux horaires.  Il faut donc qu'une application énumère les fuseaux horaires définis sur un système local.  
-  
+# <a name="how-to-enumerate-time-zones-present-on-a-computer"></a><span data-ttu-id="32939-102">Comment : énumérer les fuseaux horaires présents sur un ordinateur</span><span class="sxs-lookup"><span data-stu-id="32939-102">How to: Enumerate time zones present on a computer</span></span>
+
+<span data-ttu-id="32939-103">Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir accéder aux informations le concernant.</span><span class="sxs-lookup"><span data-stu-id="32939-103">Successfully working with a designated time zone requires that information about that time zone be available to the system.</span></span> <span data-ttu-id="32939-104">Les systèmes d’exploitation Windows XP et Windows Vista stocker ces informations dans le Registre.</span><span class="sxs-lookup"><span data-stu-id="32939-104">The Windows XP and Windows Vista operating systems store this information in the registry.</span></span> <span data-ttu-id="32939-105">Il existe de nombreux fuseaux horaires dans le monde, mais le Registre contient des informations sur un sous-ensemble de ces fuseaux horaires uniquement.</span><span class="sxs-lookup"><span data-stu-id="32939-105">However, although the total number of time zones that exist throughout the world is large, the registry contains information about only a subset of them.</span></span> <span data-ttu-id="32939-106">De plus, le Registre est une structure dynamique dont le contenu peut être modifié délibérément ou accidentellement.</span><span class="sxs-lookup"><span data-stu-id="32939-106">In addition, the registry itself is a dynamic structure whose contents are subject to both deliberate and accidental change.</span></span> <span data-ttu-id="32939-107">Par conséquent, une application ne peut pas toujours supposer qu’un fuseau horaire particulier est défini et disponible sur un système.</span><span class="sxs-lookup"><span data-stu-id="32939-107">As a result, an application cannot always assume that a particular time zone is defined and available on a system.</span></span> <span data-ttu-id="32939-108">Pour de nombreuses applications qui utilisent des informations de fuseau horaire, il convient en premier lieu de déterminer si les fuseaux horaires requis sont disponibles sur le système local ou de fournir à l’utilisateur la liste des fuseaux horaires qu’il peut sélectionner.</span><span class="sxs-lookup"><span data-stu-id="32939-108">The first step for many applications that use time zone information applications is to determine whether required time zones are available on the local system, or to give the user a list of time zones from which to select.</span></span> <span data-ttu-id="32939-109">Il faut donc qu’une application énumère les fuseaux horaires définis sur un système local.</span><span class="sxs-lookup"><span data-stu-id="32939-109">This requires that an application enumerate the time zones defined on a local system.</span></span>
+
 > [!NOTE]
->  Si une application dépend de la présence d'un fuseau horaire particulier qui n'est pas défini sur un système local, elle peut sérialiser et désérialiser les informations relatives au fuseau horaire.  Le fuseau horaire peut ensuite être ajouté à un contrôle de liste pour que l'utilisateur de l'application puisse le sélectionner.  Pour plus d'informations, consultez [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) et [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).  
-  
-### Pour énumérer les fuseaux horaires présents sur le système local  
-  
-1.  Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=fullName>.  La méthode retourne une collection <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'objets <xref:System.TimeZoneInfo>.  Les entrées dans la collection sont triées par leur propriété <xref:System.TimeZoneInfo.DisplayName%2A>.  Par exemple :  
-  
-     [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
-     [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]  
-  
-2.  Énumérez les objets <xref:System.TimeZoneInfo> individuels dans la collection en utilisant une boucle `foreach` \(en C\#\) ou `For Each`…`Next` \(dans Visual Basic\) et exécutez tous les traitements nécessaires sur chaque objet.  Par exemple, le code suivant énumère la collection <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> d'objets <xref:System.TimeZoneInfo> retournée à l'étape 1 et affiche le nom complet de chaque fuseau horaire sur la console.  
-  
-     [!code-csharp[System.TimeZone2.Concepts#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#12)]
-     [!code-vb[System.TimeZone2.Concepts#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#12)]  
-  
-### Pour fournir à l'utilisateur une liste des fuseaux horaires présents sur le système local  
-  
-1.  Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=fullName>.  La méthode retourne une collection <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'objets <xref:System.TimeZoneInfo>.  
-  
-2.  Assignez la collection retournée à l'étape 1 à la propriété `DataSource` d'un contrôle de liste Windows Forms ou ASP.NET.  
-  
-3.  Récupérez l'objet <xref:System.TimeZoneInfo> que l'utilisateur a sélectionné.  
-  
- L'exemple suivant utilise une application Windows pour illustrer cette situation.  
-  
-## Exemple  
- Une application Windows qui affiche les fuseaux horaires définis sur un système dans une zone de liste est lancée.  Une boîte de dialogue s'affiche ensuite ; elle contient la valeur de la propriété <xref:System.TimeZoneInfo.DisplayName%2A> de l'objet de fuseau horaire sélectionné par l'utilisateur .  
-  
- [!code-csharp[System.TimeZone2.Concepts#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#2)]
- [!code-vb[System.TimeZone2.Concepts#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#2)]  
-  
- La plupart des contrôles de liste \(tels que le contrôle <xref:System.Windows.Forms.ListBox?displayProperty=fullName> ou <xref:System.Web.UI.WebControls.BulletedList?displayProperty=fullName> \) vous permettent d'assigner une collection de variables objet à leur propriété `DataSource` tant que cette collection implémente l'interface <xref:System.Collections.IEnumerable>. \(C'est le cas pour la classe générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>.\). Pour afficher un objet individuel dans la collection, le contrôle appelle la méthode `ToString` correspondante afin d'extraire la chaîne utilisée pour représenter l'objet.  Dans le cas d'objets <xref:System.TimeZoneInfo>, la méthode `ToString` retourne le nom complet de l'objet <xref:System.TimeZoneInfo> \(la valeur de sa propriété <xref:System.TimeZoneInfo.DisplayName%2A>\).  
-  
+> <span data-ttu-id="32939-110">Si une application s’appuie sur la présence d’un fuseau horaire particulier qui ne peut pas être définie sur un système local, l’application peut garantir sa présence à sérialiser et désérialiser des informations sur le fuseau horaire.</span><span class="sxs-lookup"><span data-stu-id="32939-110">If an application relies on the presence of a particular time zone that may not be defined on a local system, the application can ensure its presence by serializing and deserializing information about the time zone.</span></span> <span data-ttu-id="32939-111">Le fuseau horaire peut ensuite être ajouté à un contrôle de liste afin que l’utilisateur de l’application peut sélectionner.</span><span class="sxs-lookup"><span data-stu-id="32939-111">The time zone can then be added to a list control so that the application user can select it.</span></span> <span data-ttu-id="32939-112">Pour plus d’informations, consultez [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) et [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).</span><span class="sxs-lookup"><span data-stu-id="32939-112">For details, see [How to: Save Time Zones to an Embedded Resource](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) and [How to: Restore time zones from an embedded resource](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).</span></span>
+
+### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a><span data-ttu-id="32939-113">Pour énumérer les fuseaux horaires présents sur le système local</span><span class="sxs-lookup"><span data-stu-id="32939-113">To enumerate the time zones present on the local system</span></span>
+
+1. <span data-ttu-id="32939-114">Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="32939-114">Call the <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="32939-115">La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection de <xref:System.TimeZoneInfo> objets.</span><span class="sxs-lookup"><span data-stu-id="32939-115">The method returns a generic <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection of <xref:System.TimeZoneInfo> objects.</span></span> <span data-ttu-id="32939-116">Les entrées dans la collection sont triées par leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété.</span><span class="sxs-lookup"><span data-stu-id="32939-116">The entries in the collection are sorted by their <xref:System.TimeZoneInfo.DisplayName%2A> property.</span></span> <span data-ttu-id="32939-117">Exemple :</span><span class="sxs-lookup"><span data-stu-id="32939-117">For example:</span></span>
+
+   [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
+   [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]
+
+2. <span data-ttu-id="32939-118">Énumérer la personne <xref:System.TimeZoneInfo> objets dans la collection en utilisant un `foreach` boucle (en c#) ou un `For Each`...`Next`</span><span class="sxs-lookup"><span data-stu-id="32939-118">Enumerate the individual <xref:System.TimeZoneInfo> objects in the collection by using a `foreach` loop (in C#) or a `For Each`…`Next`</span></span> <span data-ttu-id="32939-119">boucle (en Visual Basic) et effectuer le traitement nécessaire sur chaque objet.</span><span class="sxs-lookup"><span data-stu-id="32939-119">loop (in Visual Basic), and perform any necessary processing on each object.</span></span> <span data-ttu-id="32939-120">Par exemple, le code suivant énumère les <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection de <xref:System.TimeZoneInfo> objets retournée à l’étape 1 et répertorie le nom complet de chaque fuseau horaire sur la console.</span><span class="sxs-lookup"><span data-stu-id="32939-120">For example, the following code enumerates the <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection of <xref:System.TimeZoneInfo> objects returned in step 1 and lists the display name of each time zone on the console.</span></span>
+
+   [!code-csharp[System.TimeZone2.Concepts#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#12)]
+   [!code-vb[System.TimeZone2.Concepts#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#12)]
+
+### <a name="to-present-the-user-with-a-list-of-time-zones-present-on-the-local-system"></a><span data-ttu-id="32939-121">À l’utilisateur avec une liste des fuseaux horaires présents sur le système local</span><span class="sxs-lookup"><span data-stu-id="32939-121">To present the user with a list of time zones present on the local system</span></span>
+
+1. <span data-ttu-id="32939-122">Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="32939-122">Call the <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="32939-123">La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection de <xref:System.TimeZoneInfo> objets.</span><span class="sxs-lookup"><span data-stu-id="32939-123">The method returns a generic <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> collection of <xref:System.TimeZoneInfo> objects.</span></span>
+
+2. <span data-ttu-id="32939-124">Assignez la collection retournée à l’étape 1 pour le `DataSource` propriété d’un Windows forms ou ASP.NET contrôle de liste.</span><span class="sxs-lookup"><span data-stu-id="32939-124">Assign the collection returned in step 1 to the `DataSource` property of a Windows forms or ASP.NET list control.</span></span>
+
+3. <span data-ttu-id="32939-125">Récupérer le <xref:System.TimeZoneInfo> objet que l’utilisateur a sélectionné.</span><span class="sxs-lookup"><span data-stu-id="32939-125">Retrieve the <xref:System.TimeZoneInfo> object that the user has selected.</span></span>
+
+<span data-ttu-id="32939-126">L’exemple fournit une illustration d’une application Windows.</span><span class="sxs-lookup"><span data-stu-id="32939-126">The example provides an illustration for a Windows application.</span></span>
+
+## <a name="example"></a><span data-ttu-id="32939-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="32939-127">Example</span></span>
+
+<span data-ttu-id="32939-128">L’exemple démarre une application Windows qui affiche les fuseaux horaires définis sur un système dans une zone de liste.</span><span class="sxs-lookup"><span data-stu-id="32939-128">The example starts a Windows application that displays the time zones defined on a system in a list box.</span></span> <span data-ttu-id="32939-129">L’exemple affiche ensuite une boîte de dialogue qui contient la valeur de la <xref:System.TimeZoneInfo.DisplayName%2A> la propriété de l’objet de fuseau horaire sélectionné par l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="32939-129">The example then displays a dialog box that contains the value of the <xref:System.TimeZoneInfo.DisplayName%2A> property of the time zone object selected by the user.</span></span>
+
+[!code-csharp[System.TimeZone2.Concepts#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#2)]
+[!code-vb[System.TimeZone2.Concepts#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#2)]
+
+<span data-ttu-id="32939-130">Plus les contrôles de liste (tels que le <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> ou <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType> contrôle) vous permettent d’assigner une collection de variables objet à leur `DataSource` propriété tant que cette collection implémente le <xref:System.Collections.IEnumerable> interface.</span><span class="sxs-lookup"><span data-stu-id="32939-130">Most list controls (such as the <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> or <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType> control) allow you to assign a collection of object variables to their `DataSource` property as long as that collection implements the <xref:System.Collections.IEnumerable> interface.</span></span> <span data-ttu-id="32939-131">(Générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> classe.) Pour afficher un objet dans la collection, le contrôle appelle l’objet `ToString` méthode pour extraire la chaîne qui est utilisée pour représenter l’objet.</span><span class="sxs-lookup"><span data-stu-id="32939-131">(The generic <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> class does this.) To display an individual object in the collection, the control calls that object's `ToString` method to extract the string that is used to represent the object.</span></span> <span data-ttu-id="32939-132">Dans le cas de <xref:System.TimeZoneInfo> objets, la `ToString` méthode retourne la <xref:System.TimeZoneInfo> nom complet de l’objet (la valeur de son <xref:System.TimeZoneInfo.DisplayName%2A> propriété).</span><span class="sxs-lookup"><span data-stu-id="32939-132">In the case of <xref:System.TimeZoneInfo> objects, the `ToString` method returns the <xref:System.TimeZoneInfo> object's display name (the value of its <xref:System.TimeZoneInfo.DisplayName%2A> property).</span></span>
+
 > [!NOTE]
->  Comme les contrôles de liste appellent la méthode `ToString` d'un objet, vous pouvez assigner une collection d'objets <xref:System.TimeZoneInfo> au contrôle, afficher un nom explicite pour chaque objet et récupérer l'objet <xref:System.TimeZoneInfo> que l'utilisateur a sélectionné.  Il n'est donc plus nécessaire d'extraire une chaîne pour chaque objet dans la collection, d'assigner la chaîne à une collection qui est assignée à son tour à la propriété `DataSource` du contrôle, de récupérer la chaîne que l'utilisateur a sélectionnée, puis d'utiliser cette chaîne pour extraire l'objet qu'il décrit.  
-  
-## Compilation du code  
- Cet exemple nécessite :  
-  
--   qu'une référence à System.Core.dll soit ajoutée au projet ;  
-  
--   que les espaces de noms suivants soient importés :  
-  
-     <xref:System> \(en code C\#\)  
-  
-     <xref:System.Collections.ObjectModel>  
-  
-## Voir aussi  
- [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)   
- [Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)   
- [Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)
+> <span data-ttu-id="32939-133">Étant donné que les contrôles de liste appellent d’un objet `ToString` (méthode), vous pouvez assigner une collection de <xref:System.TimeZoneInfo> au contrôle, les objets que le contrôle soit afficher un nom explicite pour chaque objet et récupérer le <xref:System.TimeZoneInfo> objet que l’utilisateur a sélectionné.</span><span class="sxs-lookup"><span data-stu-id="32939-133">Because list controls call an object's `ToString` method, you can assign a collection of <xref:System.TimeZoneInfo> objects to the control, have the control display a meaningful name for each object, and retrieve the <xref:System.TimeZoneInfo> object that the user has selected.</span></span> <span data-ttu-id="32939-134">Cela élimine la nécessité pour extraire une chaîne pour chaque objet dans la collection, affectez la chaîne à une collection qui est assignée à son tour du contrôle `DataSource` propriété, récupérer la chaîne de l’utilisateur a sélectionné, puis utiliser cette chaîne pour extraire l’objet qu’il décrit.</span><span class="sxs-lookup"><span data-stu-id="32939-134">This eliminates the need to extract a string for each object in the collection, assign the string to a collection that is in turn assigned to the control's `DataSource` property, retrieve the string the user has selected, and then use this string to extract the object that it describes.</span></span> 
+
+## <a name="compiling-the-code"></a><span data-ttu-id="32939-135">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="32939-135">Compiling the code</span></span>
+
+<span data-ttu-id="32939-136">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="32939-136">This example requires:</span></span>
+
+* <span data-ttu-id="32939-137">Une référence à System.Core.dll à ajouter au projet.</span><span class="sxs-lookup"><span data-stu-id="32939-137">That a reference to System.Core.dll be added to the project.</span></span>
+
+* <span data-ttu-id="32939-138">Que les espaces de noms suivants soient importés :</span><span class="sxs-lookup"><span data-stu-id="32939-138">That the following namespaces be imported:</span></span>
+
+  <span data-ttu-id="32939-139"><xref:System>(en c#)</span><span class="sxs-lookup"><span data-stu-id="32939-139"><xref:System> (in C# code)</span></span>
+
+  <xref:System.Collections.ObjectModel>
+
+## <a name="see-also"></a><span data-ttu-id="32939-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="32939-140">See also</span></span>
+
+<span data-ttu-id="32939-141">[Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)
+[Comment : enregistrer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
+[Comment : restaurer des fuseaux horaires dans une ressource incorporée](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)</span><span class="sxs-lookup"><span data-stu-id="32939-141">[Dates, times, and time zones](../../../docs/standard/datetime/index.md)
+[How to: Save time zones to an embedded resource](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
+[How to: Restore time zones from an embedded resource](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)</span></span>

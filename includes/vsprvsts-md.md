@@ -1,1 +1,1 @@
-Visual Studio Application Lifecycle Management
+<span data-ttu-id="ab432-101">Visual Studio Application Lifecycle Management</span><span class="sxs-lookup"><span data-stu-id="ab432-101">Visual Studio Application Lifecycle Management</span></span>

@@ -1,51 +1,55 @@
 ---
-title: "&#201;tendue du convoi des transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Étendue du convoi des transactions"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 37141708-a29f-4b6a-81fe-f8a11f825061
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b5fc8834fb72163a615633d81232e25768683278
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &#201;tendue du convoi des transactions
-Cet exemple montre comment créer un modèle d'activité de messagerie de convoi parallèle conjointement avec un <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour modéliser un protocole où un certain nombre d'opérations peuvent se produire dans n'importe quel ordre dans le cadre de la même transaction.Cet exemple montre également comment un <xref:System.ServiceModel.Activities.TransactedReceiveScope> crée automatiquement une transaction lorsque aucune transaction n'est passée au serveur, de sorte que le client n'utilise aucune transaction.  
+# <a name="transaction-convoy-scope"></a><span data-ttu-id="314c5-102">Étendue du convoi des transactions</span><span class="sxs-lookup"><span data-stu-id="314c5-102">Transaction Convoy Scope</span></span>
+<span data-ttu-id="314c5-103">Cet exemple montre comment créer un modèle d'activité de messagerie de convoi parallèle conjointement avec un <xref:System.ServiceModel.Activities.TransactedReceiveScope> pour modéliser un protocole où un certain nombre d'opérations peuvent se produire dans n'importe quel ordre dans le cadre de la même transaction.</span><span class="sxs-lookup"><span data-stu-id="314c5-103">This sample demonstrates how to create a Parallel Convoy messaging activity pattern in conjunction with a <xref:System.ServiceModel.Activities.TransactedReceiveScope> to model a protocol where a number of operations can happen in any order all under the same transaction.</span></span> <span data-ttu-id="314c5-104">Cet exemple montre également comment un <xref:System.ServiceModel.Activities.TransactedReceiveScope> crée automatiquement une transaction lorsque aucune transaction n'est passée au serveur, de sorte que le client n'utilise aucune transaction.</span><span class="sxs-lookup"><span data-stu-id="314c5-104">This sample also demonstrates how a <xref:System.ServiceModel.Activities.TransactedReceiveScope> automatically creates a new transaction when one is not flowed to the server, so the client does not make use of any transactions.</span></span>  
   
- Cet exemple est composé deux projets de workflow qui représentent le client et le serveur.Le projet client exécute un workflow qui commence en envoyant un message pour démarrer le workflow serveur, ce qui initialise une corrélation et démarre une étendue transactionnelle pour le reste des activités de messagerie.L'activité <xref:System.Activities.Statements.Sequence> cliente contient une paire <xref:System.ServiceModel.Activities.Send> et  <xref:System.ServiceModel.Activities.ReceiveReply> initiale, puis une activité <xref:System.Activities.Statements.Parallel> avec trois branches.Chaque branche envoie un message unidirectionnel au serveur.La propriété <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> de l'activité <xref:System.Activities.Statements.Parallel> a la valeur `false` afin que les trois branches se terminent.  
+ <span data-ttu-id="314c5-105">Cet exemple est composé deux projets de workflow qui représentent le client et le serveur.</span><span class="sxs-lookup"><span data-stu-id="314c5-105">The sample consists of two workflow projects that represent the client and server.</span></span> <span data-ttu-id="314c5-106">Le projet client exécute un workflow qui commence en envoyant un message pour démarrer le workflow serveur, ce qui initialise une corrélation et démarre une étendue transactionnelle pour le reste des activités de messagerie.</span><span class="sxs-lookup"><span data-stu-id="314c5-106">The client project runs a workflow that begins by sending a message to bootstrap the server workflow, which initializes a correlation and starts a transactional scope for the remainder of the messaging activities.</span></span> <span data-ttu-id="314c5-107">L'activité <xref:System.Activities.Statements.Sequence> cliente contient une paire <xref:System.ServiceModel.Activities.Send> et  <xref:System.ServiceModel.Activities.ReceiveReply> initiale, puis une activité <xref:System.Activities.Statements.Parallel> avec trois branches.</span><span class="sxs-lookup"><span data-stu-id="314c5-107">The client <xref:System.Activities.Statements.Sequence> activity contains an initial <xref:System.ServiceModel.Activities.Send> and <xref:System.ServiceModel.Activities.ReceiveReply> pair and then a <xref:System.Activities.Statements.Parallel> activity with three branches.</span></span> <span data-ttu-id="314c5-108">Chaque branche envoie un message unidirectionnel au serveur.</span><span class="sxs-lookup"><span data-stu-id="314c5-108">Each branch sends a one-way message to the server.</span></span> <span data-ttu-id="314c5-109">La propriété <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> de l'activité <xref:System.Activities.Statements.Parallel> a la valeur `false` afin que les trois branches se terminent.</span><span class="sxs-lookup"><span data-stu-id="314c5-109">The <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> property of the <xref:System.Activities.Statements.Parallel> activity is set to `false` so that all three branches complete.</span></span>  
   
- Le workflow serveur est semblable au workflow client, excepté que les activités de messagerie sont orientées vers le côté serveur de la communication et qu'elles sont contenues dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> afin que tout le travail effectué s'exécute dans le cadre de la même transaction.Lorsque le premier message est reçu sur le serveur, une transaction est créée et est rendue ambiante pour l'étendue du corps <xref:System.ServiceModel.Activities.TransactedReceiveScope>, afin que toute activité de cette étendue puisse accéder à la transaction.Ensuite, toutes les réceptions s'exécutent en parallèle.Toutes les réceptions doivent s'exécuter une seule et unique fois, tel que décrit par la condition d'achèvement sur l'activité parallèle.Il existe un point de persistance implicite à la fin du corps <xref:System.ServiceModel.Activities.TransactedReceiveScope> et l'opération de persistance est également exécutée dans le cadre de la même transaction.  
+ <span data-ttu-id="314c5-110">Le workflow serveur est semblable au workflow client, excepté que les activités de messagerie sont orientées vers le côté serveur de la communication et qu'elles sont contenues dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> afin que tout le travail effectué s'exécute dans le cadre de la même transaction.</span><span class="sxs-lookup"><span data-stu-id="314c5-110">The server workflow is similar to the client workflow except the messaging activities are oriented towards the server side of the communication and they are contained within a <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity so that all work done executes under the same transaction.</span></span> <span data-ttu-id="314c5-111">Lorsque le premier message est reçu sur le serveur, une transaction est créée et est rendue ambiante pour l'étendue du corps <xref:System.ServiceModel.Activities.TransactedReceiveScope>, afin que toute activité de cette étendue puisse accéder à la transaction.</span><span class="sxs-lookup"><span data-stu-id="314c5-111">When the first message is received on the server, a transaction is created and is made ambient for the scope of the <xref:System.ServiceModel.Activities.TransactedReceiveScope> body so that any activity within this scope can access the transaction.</span></span> <span data-ttu-id="314c5-112">Ensuite, toutes les réceptions s'exécutent en parallèle.</span><span class="sxs-lookup"><span data-stu-id="314c5-112">After this, all receives execute in parallel.</span></span> <span data-ttu-id="314c5-113">Toutes les réceptions doivent s'exécuter une seule et unique fois, tel que décrit par la condition d'achèvement sur l'activité parallèle.</span><span class="sxs-lookup"><span data-stu-id="314c5-113">All receives must execute exactly once as described by the completion condition on the parallel activity.</span></span> <span data-ttu-id="314c5-114">Il existe un point de persistance implicite à la fin du corps <xref:System.ServiceModel.Activities.TransactedReceiveScope> et l'opération de persistance est également exécutée dans le cadre de la même transaction.</span><span class="sxs-lookup"><span data-stu-id="314c5-114">An implicit persistence point exists at the end of the <xref:System.ServiceModel.Activities.TransactedReceiveScope> body and the persistence operation is also executed under the same transaction.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="314c5-115">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="314c5-115">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution ParallelConvoySample.sln.  
+1.  <span data-ttu-id="314c5-116">À l'aide de [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], ouvrez le fichier solution ParallelConvoySample.sln.</span><span class="sxs-lookup"><span data-stu-id="314c5-116">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the ParallelConvoySample.sln solution file.</span></span>  
   
-2.  Pour générer la solution, appuyez sur Ctrl\+Maj\+B.  
+2.  <span data-ttu-id="314c5-117">Pour générer la solution, appuyez sur Ctrl+Maj+B.</span><span class="sxs-lookup"><span data-stu-id="314c5-117">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  Vérifiez que les deux projets sont configurés pour démarrer.  
+3.  <span data-ttu-id="314c5-118">Vérifiez que les deux projets sont configurés pour démarrer.</span><span class="sxs-lookup"><span data-stu-id="314c5-118">Ensure both projects are set to start.</span></span>  
   
-    1.  Dans l'**Explorateur de solutions**, cliquez avec le bouton droit sur la solution, puis sélectionnez **Définir les projets de démarrage**.  
+    1.  <span data-ttu-id="314c5-119">Dans **l’Explorateur de solutions**, avec le bouton droit de la solution et sélectionnez **définir les projets de démarrage**.</span><span class="sxs-lookup"><span data-stu-id="314c5-119">In **Solution Explorer**, right-click the solution and select **Set Startup Projects**.</span></span>  
   
-    2.  Sélectionnez **Plusieurs projets de démarrage** et vérifiez que l'action pour les deux projets a la valeur **Démarrer**.  
+    2.  <span data-ttu-id="314c5-120">Sélectionnez **plusieurs projets de démarrage** et assurez-vous que l’action pour les deux projets est **Démarrer**.</span><span class="sxs-lookup"><span data-stu-id="314c5-120">Select **Multiple Startup Projects** and ensure the action for both projects is set to **Start**.</span></span>  
   
-4.  Pour exécuter la solution, appuyez sur CTRL\+F5.  
+4.  <span data-ttu-id="314c5-121">Pour exécuter la solution, appuyez sur Ctrl+F5.</span><span class="sxs-lookup"><span data-stu-id="314c5-121">To run the solution, press CTRL+F5.</span></span>  
   
-     Le serveur imprime `Server is running`, ce qui indique le serveur est prêt.  
+     <span data-ttu-id="314c5-122">Le serveur imprime `Server is running`, ce qui indique le serveur est prêt.</span><span class="sxs-lookup"><span data-stu-id="314c5-122">The server prints `Server is running`, which indicates the server is ready.</span></span>  
   
-     Appuyez sur n'importe quelle touche dans la fenêtre de console cliente pour démarrer l'exemple.  
+     <span data-ttu-id="314c5-123">Appuyez sur n'importe quelle touche dans la fenêtre de console cliente pour démarrer l'exemple.</span><span class="sxs-lookup"><span data-stu-id="314c5-123">Press any key in the client console window to start the sample.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="314c5-124">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="314c5-124">The samples may already be installed on your machine.</span></span> <span data-ttu-id="314c5-125">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="314c5-125">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="314c5-126">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="314c5-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="314c5-127">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="314c5-127">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`  
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedConvoyScope`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="314c5-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="314c5-128">See Also</span></span>

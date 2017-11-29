@@ -1,28 +1,31 @@
 ---
-title: "DataContract Surrogate | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: DataContract Surrogate
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 77eee3172b24bc0252ecb18d9ce6b283ba6e5c93
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# DataContract Surrogate
-Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l'exportation et l'importation de schémas à l'aide d'une classe de substitution d'un contrat de données.Cet exemple indique comment utiliser un substitut dans un scénario de client et serveur où les données sont sérialisées et transmises entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+# <a name="datacontract-surrogate"></a><span data-ttu-id="ab900-102">DataContract Surrogate</span><span class="sxs-lookup"><span data-stu-id="ab900-102">DataContract Surrogate</span></span>
+<span data-ttu-id="ab900-103">Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données.</span><span class="sxs-lookup"><span data-stu-id="ab900-103">This sample demonstrates how processes like serialization, deserialization, schema export, and schema import can be customized using a data contract surrogate class.</span></span> <span data-ttu-id="ab900-104">Cet exemple indique comment utiliser un substitut dans un scénario de client et serveur où les données sont sérialisées et transmises entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ab900-104">This sample shows how to use a surrogate in a client and server scenario where data is serialized and transmitted between a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service.</span></span>  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+>  <span data-ttu-id="ab900-105">La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="ab900-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- L'exemple utilise le contrat de service suivant :  
+ <span data-ttu-id="ab900-106">L'exemple utilise le contrat de service suivant :</span><span class="sxs-lookup"><span data-stu-id="ab900-106">The sample uses the following service contract:</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -37,9 +40,9 @@ public interface IPersonnelDataService
 }  
 ```  
   
- L'opération `AddEmployee` permet aux utilisateurs d'ajouter des données sur de nouveaux employés et l'opération `GetEmployee` permet de lancer une recherche sur les employés en fonction de leur nom.  
+ <span data-ttu-id="ab900-107">L'opération `AddEmployee` permet aux utilisateurs d'ajouter des données sur de nouveaux employés et l'opération `GetEmployee` permet de lancer une recherche sur les employés en fonction de leur nom.</span><span class="sxs-lookup"><span data-stu-id="ab900-107">The `AddEmployee` operation allows users to add data about new employees and the `GetEmployee` operation supports search for employees based on name.</span></span>  
   
- Ces opérations utilisent le type de données suivant :  
+ <span data-ttu-id="ab900-108">Ces opérations utilisent le type de données suivant :</span><span class="sxs-lookup"><span data-stu-id="ab900-108">These operations use the following data type:</span></span>  
   
 ```  
 [DataContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -54,10 +57,9 @@ class Employee
     [DataMember]  
     public Person person;  
 }  
-  
 ```  
   
- Dans le type `Employee`, la classe `Person` \(contenue dans l'exemple de code suivant\) ne peut pas être sérialisée par le <xref:System.Runtime.Serialization.DataContractSerializer>, celle\-ci ne correspondant pas à une classe de contrat de données valable.  
+ <span data-ttu-id="ab900-109">Dans le type `Employee`, la classe `Person` (contenue dans l'exemple de code suivant) ne peut pas être sérialisée par le <xref:System.Runtime.Serialization.DataContractSerializer>, celle-ci ne correspondant pas à une classe de contrat de données valable.</span><span class="sxs-lookup"><span data-stu-id="ab900-109">In the `Employee` type, the `Person` class (shown in the following sample code) cannot be serialized by the <xref:System.Runtime.Serialization.DataContractSerializer> because it is not a valid data contract class.</span></span>  
   
 ```  
 public class Person  
@@ -72,11 +74,11 @@ public class Person
 }  
 ```  
   
- Vous pouvez appliquer l'attribut `DataContract` à la classe `Person`, mais cela n'est pas toujours possible.Par exemple, la classe `Person` peut être définie dans un assembly distinct sur lequel vous n'exercez aucun contrôle.  
+ <span data-ttu-id="ab900-110">Vous pouvez appliquer l'attribut `DataContract` à la classe `Person`, mais cela n'est pas toujours possible.</span><span class="sxs-lookup"><span data-stu-id="ab900-110">You can apply the `DataContract` attribute to the `Person` class, but this is not always possible.</span></span> <span data-ttu-id="ab900-111">Par exemple, la classe `Person` peut être définie dans un assembly distinct sur lequel vous n'exercez aucun contrôle.</span><span class="sxs-lookup"><span data-stu-id="ab900-111">For example, the `Person` class can be defined in a separate assembly over which you have no control.</span></span>  
   
- L'une des solutions permettant alors de sérialiser la classe `Person` consiste à la remplacer par une autre classe signalée par l'attribut `DataContractAttribute`, puis à copier les données requises dans cette nouvelle classe.L'objectif de l'opération ci\-dessus est le suivant : présenter la classe `Person` comme DataContract au <xref:System.Runtime.Serialization.DataContractSerializer>.Remarque : il s'agit d'une solution parmi d'autres permettant de sérialiser les classes n'appartenant pas à un contrat de données.  
+ <span data-ttu-id="ab900-112">L'une des solutions permettant alors de sérialiser la classe `Person` consiste à la remplacer par une autre classe signalée par l'attribut `DataContractAttribute`, puis à copier les données requises dans cette nouvelle classe.</span><span class="sxs-lookup"><span data-stu-id="ab900-112">Given this restriction, one way to serialize the `Person` class is to substitute it with another class that is marked with `DataContractAttribute` and copy over necessary data to the new class.</span></span> <span data-ttu-id="ab900-113">L'objectif de l'opération ci-dessus est le suivant : présenter la classe `Person` comme DataContract au <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="ab900-113">The objective is to make the `Person` class appear as a DataContract to the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="ab900-114">Remarque : il s'agit d'une solution parmi d'autres permettant de sérialiser les classes n'appartenant pas à un contrat de données.</span><span class="sxs-lookup"><span data-stu-id="ab900-114">Note that this is one way to serialize non-data contract classes.</span></span>  
   
- L'exemple remplace logiquement la classe `Person` par une classe différente nommée `PersonSurrogated`.  
+ <span data-ttu-id="ab900-115">L'exemple remplace logiquement la classe `Person` par une classe différente nommée `PersonSurrogated`.</span><span class="sxs-lookup"><span data-stu-id="ab900-115">The sample logically replaces the `Person` class with a different class named `PersonSurrogated`.</span></span>  
   
 ```  
 [DataContract(Name="Person", Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -91,12 +93,11 @@ public class PersonSurrogated
     [DataMember]  
     public int Age;  
 }  
-  
 ```  
   
- Le substitut de contrat de données est utilisé pour effectuer ce remplacement.Un substitut de contrat de données est une classe qui implémente <xref:System.Runtime.Serialization.IDataContractSurrogate>.Dans cet exemple, la classe `AllowNonSerializableTypesSurrogate` implémente cette interface.  
+ <span data-ttu-id="ab900-116">Le substitut de contrat de données est utilisé pour effectuer ce remplacement.</span><span class="sxs-lookup"><span data-stu-id="ab900-116">The data contract surrogate is used to achieve this replacement.</span></span> <span data-ttu-id="ab900-117">Un substitut de contrat de données est une classe qui implémente <xref:System.Runtime.Serialization.IDataContractSurrogate>.</span><span class="sxs-lookup"><span data-stu-id="ab900-117">A data contract surrogate is a class that implements <xref:System.Runtime.Serialization.IDataContractSurrogate>.</span></span> <span data-ttu-id="ab900-118">Dans cet exemple, la classe `AllowNonSerializableTypesSurrogate` implémente cette interface.</span><span class="sxs-lookup"><span data-stu-id="ab900-118">In this sample, the `AllowNonSerializableTypesSurrogate` class implements this interface.</span></span>  
   
- Dans l'implémentation d'interface, la première tâche consiste à définir un type mappant la classe `Person` à la classe `PersonSurrogated`.Ce processus de mappage est utilisé à la fois pendant la sérialisation et l'exportation des schémas.Il s'effectue en implémentant la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29>.  
+ <span data-ttu-id="ab900-119">Dans l'implémentation d'interface, la première tâche consiste à définir un type mappant la classe `Person` à la classe `PersonSurrogated`.</span><span class="sxs-lookup"><span data-stu-id="ab900-119">In the interface implementation, the first task is to establish a type mapping from `Person` to `PersonSurrogated`.</span></span> <span data-ttu-id="ab900-120">Ce processus de mappage est utilisé à la fois pendant la sérialisation et l'exportation des schémas.</span><span class="sxs-lookup"><span data-stu-id="ab900-120">This is used both at serialization time as well as at schema export time.</span></span> <span data-ttu-id="ab900-121">Il s'effectue en implémentant la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29>.</span><span class="sxs-lookup"><span data-stu-id="ab900-121">This mapping is achieved by implementing the <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29> method.</span></span>  
   
 ```  
 public Type GetDataContractType(Type type)  
@@ -107,10 +108,9 @@ public Type GetDataContractType(Type type)
     }  
     return type;  
 }  
-  
 ```  
   
- La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29> mappe une instance de la classe `Person` à une instance de la classe `PersonSurrogated` pendant la sérialisation, tel qu'illustré dans l'exemple de code suivant.  
+ <span data-ttu-id="ab900-122">La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29> mappe une instance de la classe `Person` à une instance de la classe `PersonSurrogated` pendant la sérialisation, tel qu'illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab900-122">The <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29> method maps a `Person` instance to a `PersonSurrogated` instance during serialization, as shown in the following sample code.</span></span>  
   
 ```  
 public object GetObjectToSerialize(object obj, Type targetType)  
@@ -126,10 +126,9 @@ public object GetObjectToSerialize(object obj, Type targetType)
     }  
     return obj;  
 }  
-  
 ```  
   
- La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> permet d'effectuer le mappage dans le sens inverse lors de la désérialisation, tel qu'illustré dans l'exemple de code suivant.  
+ <span data-ttu-id="ab900-123">La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> permet d'effectuer le mappage dans le sens inverse lors de la désérialisation, tel qu'illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab900-123">The <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> method provides the reverse mapping for deserialization, as shown in the following sample code.</span></span>  
   
 ```  
 public object GetDeserializedObject(object obj,   
@@ -146,10 +145,9 @@ Type targetType)
     }  
     return obj;  
 }  
-  
 ```  
   
- Pour mapper le contrat de données `PersonSurrogated` à la classe `Person` existante lors de l'importation des schémas, l'exemple implémente la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29>, tel qu'illustré dans l'exemple de code suivant.  
+ <span data-ttu-id="ab900-124">Pour mapper le contrat de données `PersonSurrogated` à la classe `Person` existante lors de l'importation des schémas, l'exemple implémente la méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29>, tel qu'illustré dans l'exemple de code suivant.</span><span class="sxs-lookup"><span data-stu-id="ab900-124">To map the `PersonSurrogated` data contract to the existing `Person` class during schema import, the sample implements the <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29> method, as shown in the following sample code.</span></span>  
   
 ```  
 public Type GetReferencedTypeOnImport(string typeName,   
@@ -166,10 +164,9 @@ typeNamespace.Equals("http://schemas.datacontract.org/2004/07/DCSurrogateSample"
      }  
      return null;  
 }  
-  
 ```  
   
- L'exemple de code suivant achève l'implémentation de l'interface <xref:System.Runtime.Serialization.IDataContractSurrogate>.  
+ <span data-ttu-id="ab900-125">L'exemple de code suivant achève l'implémentation de l'interface <xref:System.Runtime.Serialization.IDataContractSurrogate>.</span><span class="sxs-lookup"><span data-stu-id="ab900-125">The following sample code completes the implementation of the <xref:System.Runtime.Serialization.IDataContractSurrogate> interface.</span></span>  
   
 ```  
 public System.CodeDom.CodeTypeDeclaration ProcessImportedType(  
@@ -195,14 +192,13 @@ public void GetKnownCustomDataTypes(
     // It does not matter what we do here.  
     throw new NotImplementedException();  
 }  
-  
 ```  
   
- Dans cet exemple, le substitut est activé dans ServiceModel par un attribut appelé `AllowNonSerializableTypesAttribute`.Les développeurs doivent appliquer cet attribut dans leur contrat de service respectif, tel qu'illustré dans le contrat de service `IPersonnelDataService` ci\-dessus.Cet attribut implémente `IContractBehavior` et définit le substitut sur les opérations dans les méthodes `ApplyClientBehavior` et `ApplyDispatchBehavior`.  
+ <span data-ttu-id="ab900-126">Dans cet exemple, le substitut est activé dans ServiceModel par un attribut appelé `AllowNonSerializableTypesAttribute`.</span><span class="sxs-lookup"><span data-stu-id="ab900-126">In this sample, the surrogate is enabled in ServiceModel by an attribute called `AllowNonSerializableTypesAttribute`.</span></span> <span data-ttu-id="ab900-127">Les développeurs doivent appliquer cet attribut dans leur contrat de service respectif, tel qu'illustré dans le contrat de service `IPersonnelDataService` ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="ab900-127">Developers would need to apply this attribute on their service contract as shown on the `IPersonnelDataService` service contract above.</span></span> <span data-ttu-id="ab900-128">Cet attribut implémente `IContractBehavior` et définit le substitut sur les opérations dans les méthodes `ApplyClientBehavior` et `ApplyDispatchBehavior`.</span><span class="sxs-lookup"><span data-stu-id="ab900-128">This attribute implements `IContractBehavior` and sets up the surrogate on operations in its `ApplyClientBehavior` and `ApplyDispatchBehavior` methods.</span></span>  
   
- L'attribut n'est pas nécessaire dans ce cas. Il est utilisé à des fins d'illustration dans cet exemple.Les utilisateurs peuvent également activer un substitut en ajoutant manuellement un `IContractBehavior`, `IEndpointBehavior` ou `IOperationBehavior` similaire à l'aide du code ou de la configuration.  
+ <span data-ttu-id="ab900-129">L'attribut n'est pas nécessaire dans ce cas. Il est utilisé à des fins d'illustration dans cet exemple.</span><span class="sxs-lookup"><span data-stu-id="ab900-129">The attribute is not necessary in this case - it is used for demonstration purposes in this sample.</span></span> <span data-ttu-id="ab900-130">Les utilisateurs peuvent également activer un substitut en ajoutant manuellement un `IContractBehavior`, `IEndpointBehavior` ou `IOperationBehavior` similaire à l'aide du code ou de la configuration.</span><span class="sxs-lookup"><span data-stu-id="ab900-130">Users can alternatively enable a surrogate by manually adding a similar `IContractBehavior`, `IEndpointBehavior` or `IOperationBehavior` using code or using configuration.</span></span>  
   
- L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré.Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement.L'exemple de code suivant illustre les modalités de ce processus.La définition du substitut sur ce comportement d'opération permet à ce dernier d'être sérialisé et désérialisé.  
+ <span data-ttu-id="ab900-131">L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré.</span><span class="sxs-lookup"><span data-stu-id="ab900-131">The `IContractBehavior` implementation looks for operations that use DataContract by checking if they have a `DataContractSerializerOperationBehavior` registered.</span></span> <span data-ttu-id="ab900-132">Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement.</span><span class="sxs-lookup"><span data-stu-id="ab900-132">If they do, it sets the `DataContractSurrogate` property on that behavior.</span></span> <span data-ttu-id="ab900-133">L'exemple de code suivant illustre les modalités de ce processus.</span><span class="sxs-lookup"><span data-stu-id="ab900-133">The following sample code shows how this is done.</span></span> <span data-ttu-id="ab900-134">La définition du substitut sur ce comportement d'opération permet à ce dernier d'être sérialisé et désérialisé.</span><span class="sxs-lookup"><span data-stu-id="ab900-134">Setting the surrogate on this operation behavior enables it for serialization and deserialization.</span></span>  
   
 ```  
 public void ApplyClientBehavior(ContractDescription description, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime proxy)  
@@ -232,9 +228,9 @@ private static void ApplyDataContractSurrogate(OperationDescription description)
 }  
 ```  
   
- D'autres étapes sont nécessaires pour incorporer le substitut et ainsi pouvoir l'utiliser lors de la génération des métadonnées.Pour ce faire, l'une des solutions consiste à fournir une extension `IWsdlExportExtension`, tel qu'illustré dans cet exemple.Une autre solution consiste à modifier directement le `WsdlExporter`.  
+ <span data-ttu-id="ab900-135">D'autres étapes sont nécessaires pour incorporer le substitut et ainsi pouvoir l'utiliser lors de la génération des métadonnées.</span><span class="sxs-lookup"><span data-stu-id="ab900-135">Additional steps need to be taken to plug in the surrogate for use during metadata generation.</span></span> <span data-ttu-id="ab900-136">Pour ce faire, l'une des solutions consiste à fournir une extension `IWsdlExportExtension`, tel qu'illustré dans cet exemple.</span><span class="sxs-lookup"><span data-stu-id="ab900-136">One mechanism to do this is to provide an `IWsdlExportExtension` which is what this sample demonstrates.</span></span> <span data-ttu-id="ab900-137">Une autre solution consiste à modifier directement le `WsdlExporter`.</span><span class="sxs-lookup"><span data-stu-id="ab900-137">Another way is to modify the `WsdlExporter` directly.</span></span>  
   
- L'attribut `AllowNonSerializableTypesAttribute` implémente `IWsdlExportExtension` et `IContractBehavior`.L'extension peut correspondre à `IContractBehavior` ou à `IEndpointBehavior` dans ce cas de figure.Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract.L'extrait de code suivant montre comment procéder.  
+ <span data-ttu-id="ab900-138">Le `AllowNonSerializableTypesAttribute` attribut implémente `IWsdlExportExtension` et `IContractBehavior`.</span><span class="sxs-lookup"><span data-stu-id="ab900-138">The `AllowNonSerializableTypesAttribute` attribute implements `IWsdlExportExtension` and `IContractBehavior`.</span></span> <span data-ttu-id="ab900-139">L’extension peut être un `IContractBehavior` ou `IEndpointBehavior` dans ce cas.</span><span class="sxs-lookup"><span data-stu-id="ab900-139">The extension can be either an `IContractBehavior` or `IEndpointBehavior` in this case.</span></span> <span data-ttu-id="ab900-140">Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract.</span><span class="sxs-lookup"><span data-stu-id="ab900-140">Its `IWsdlExportExtension.ExportContract` method implementation enables the surrogate by adding it to the `XsdDataContractExporter` used during schema generation for DataContract.</span></span> <span data-ttu-id="ab900-141">L'extrait de code suivant montre comment procéder.</span><span class="sxs-lookup"><span data-stu-id="ab900-141">The following code snippet shows how to do this.</span></span>  
   
 ```  
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
@@ -261,26 +257,26 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 }  
 ```  
   
- Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi.Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client.L'opération GetEmployee doit réussir à trouver l'employé, puis afficher la mention « trouvé ».  
+ <span data-ttu-id="ab900-142">Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi.</span><span class="sxs-lookup"><span data-stu-id="ab900-142">When you run the sample, the client calls AddEmployee followed by a GetEmployee call to check if the first call was successful.</span></span> <span data-ttu-id="ab900-143">Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client.</span><span class="sxs-lookup"><span data-stu-id="ab900-143">The result of the GetEmployee operation request is displayed in the client console window.</span></span> <span data-ttu-id="ab900-144">L’opération GetEmployee doit réussir à trouver l’employé et « trouvé ».</span><span class="sxs-lookup"><span data-stu-id="ab900-144">The GetEmployee operation must succeed in finding the employee and print "found".</span></span>  
   
 > [!NOTE]
->  Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées.Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées.Consultez l'exemple [Publication WSDL personnalisée](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) pour savoir comment utiliser un substitut afin de générer du code client.  
+>  <span data-ttu-id="ab900-145">Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="ab900-145">This sample shows how to plug in a surrogate for serialize, deserialize and metadata generation.</span></span> <span data-ttu-id="ab900-146">Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées.</span><span class="sxs-lookup"><span data-stu-id="ab900-146">It does not show how to plug in a surrogate for code generation from metadata.</span></span> <span data-ttu-id="ab900-147">Pour obtenir un exemple de comment un substitut peut être utilisé pour s’intégrer à la génération de code client, consultez le [personnalisé WSDL Publication](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) exemple.</span><span class="sxs-lookup"><span data-stu-id="ab900-147">To see a sample of how a surrogate can be used to plug into client code generation, see the [Custom WSDL Publication](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) sample.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="ab900-148">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="ab900-148">To set up, build, and run the sample</span></span>  
   
-1.  Assurez\-vous d'avoir effectué la procédure figurant à la section [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1.  <span data-ttu-id="ab900-149">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ab900-149">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  Pour générer l'édition C\# de la solution, conformez aux instructions figurant dans la rubrique [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  <span data-ttu-id="ab900-150">Pour générer l’édition c# de la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ab900-150">To build the C# edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  <span data-ttu-id="ab900-151">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="ab900-151">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="ab900-152">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="ab900-152">The samples may already be installed on your machine.</span></span> <span data-ttu-id="ab900-153">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="ab900-153">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="ab900-154">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="ab900-154">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ab900-155">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="ab900-155">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="ab900-156">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ab900-156">See Also</span></span>

@@ -1,64 +1,65 @@
 ---
-title: "Raccourcis clavier du contr&#244;le DataGrid Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGrid (contrôle Windows Forms), touches de navigation"
-  - "raccourcis clavier, DataGrid (contrôle)"
+title: "Raccourcis clavier du contrôle DataGrid Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- keyboard shortcuts [Windows Forms], DataGrid control
+- DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7ac73652d5f017fe43d1745866de38cd7eeccf8e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Raccourcis clavier du contr&#244;le DataGrid Windows Forms
+# <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a><span data-ttu-id="c74f3-102">Raccourcis clavier du contrôle DataGrid Windows Forms</span><span class="sxs-lookup"><span data-stu-id="c74f3-102">Keyboard Shortcuts for the Windows Forms DataGrid Control</span></span>
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  Pour plus d'informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <span data-ttu-id="c74f3-103">Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.</span><span class="sxs-lookup"><span data-stu-id="c74f3-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="c74f3-104">Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span><span class="sxs-lookup"><span data-stu-id="c74f3-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- Le tableau suivant répertorie les raccourcis clavier permettant de se déplacer au sein du contrôle <xref:System.Windows.Forms.DataGrid> Windows Forms :  
+ <span data-ttu-id="c74f3-105">Le tableau suivant répertorie les raccourcis clavier qui peuvent être utilisées pour la navigation dans les Windows Forms <xref:System.Windows.Forms.DataGrid> contrôle :</span><span class="sxs-lookup"><span data-stu-id="c74f3-105">The following table lists the keyboard shortcuts that can be used for navigation within the Windows Forms <xref:System.Windows.Forms.DataGrid> control:</span></span>  
   
-|Action|Raccourci|  
-|------------|---------------|  
-|Terminer une entrée de cellule et descendre à la cellule suivante.<br /><br /> Si le focus est placé sur le lien d'une table enfant, vous déplacer jusqu'à cette table.|ENTRÉE|  
-|En mode d'édition de cellule, annuler la modification de la cellule.<br /><br /> En sélection défilante, annuler la modification de la ligne.|ÉCHAP|  
-|Supprimer le caractère situé avant le point d'insertion lors de la modification d'une cellule.|RET.ARR|  
-|Supprimer le caractère situé après le point d'insertion lors de la modification d'une cellule.|DELETE|  
-|Vous déplacer sur la première cellule de la ligne en cours.|DÉBUT|  
-|Vous déplacer sur la dernière cellule de la ligne en cours.|FIN|  
-|Sélectionner les caractères de la cellule en cours et placer le point d'insertion à la fin de la ligne.  Revient à double\-cliquer sur une cellule.|F2|  
-|Si le focus est placé sur une cellule, vous déplacer sur la cellule suivante de la ligne.<br /><br /> Si le focus est placé sur la dernière cellule d'une ligne, vous déplacer jusqu'au premier lien de la table enfant de la ligne et le développer.<br /><br /> Si le focus est placé sur un lien enfant, vous déplacer jusqu'au lien enfant suivant.<br /><br /> Si le focus est placé sur le dernier lien enfant, vous déplacer sur la première cellule de la ligne suivante.|TAB|  
-|Si le focus est placé sur une cellule, vous déplacer sur la cellule précédente de la ligne.<br /><br /> Si le focus est placé sur la première cellule d'une ligne, vous déplacer jusqu'au dernier lien développé de la table enfant ou sur la dernière cellule de la ligne précédente.<br /><br /> Si le focus est placé sur un lien enfant, vous déplacer jusqu'au lien enfant précédent.<br /><br /> Si le focus est placé sur le premier lien enfant, vous déplacer sur la dernière cellule de la ligne précédente.|MAJ\+TAB|  
-|Vous déplacer sur le contrôle suivant dans l'ordre de tabulation.|CTRL\+TAB|  
-|Vous déplacer sur le contrôle précédent dans l'ordre de tabulation.|CTRL\+MAJ\+TAB|  
-|Si vous êtes dans une table enfant, vous déplacer jusqu'à la table parente.  Revient à cliquer sur le bouton Précédent.|ALT\+GAUCHE|  
-|Développer les liens de la table enfant.  ALT\+BAS développe tous les liens \(et non pas uniquement les liens sélectionnés\).|ALT\+BAS ou CTRL\+SIGNE PLUS|  
-|Réduire les liens de la table enfant.  ALT\+HAUT réduit tous les liens \(et non pas uniquement les liens sélectionnés\).|ALT\+HAUT ou CTRL\+SIGNE MOINS|  
-|Vous déplacer sur la cellule non vide la plus éloignée, dans la direction de la flèche.|CTRL\+FLÈCHE|  
-|Étendre la sélection d'une ligne dans la direction de la flèche \(sauf les liens de la table enfant\).|MAJ\+HAUT\/BAS|  
-|Étendre la sélection jusqu'à la ligne non vide la plus éloignée dans la direction de la flèche \(sauf les liens de la table enfant\).|CRTL\+MAJ\+HAUT\/BAS|  
-|Vous déplacer sur la première cellule en haut à gauche.|CTRL\+ORIGINE|  
-|Vous déplacer sur la dernière cellule située en bas à droite.|CTRL\+FIN|  
-|Étendre la sélection jusqu'à la première ligne.|CTRL\+MAJ\+ORIGINE|  
-|Étendre la sélection jusqu'à la dernière ligne.|CTRL\+MAJ\+FIN|  
-|Sélectionner la ligne en cours \(sauf les liens de la table enfant\).|MAJ\+ESPACE|  
-|Sélectionner toute la grille \(sauf les liens de la table enfant\).|CTRL\+A|  
-|Dans une table enfant, afficher la ligne parente.|CTRL\+PAGE SUIVANTE|  
-|Dans une table enfant, masquer la ligne parente.|CTRL\+PG.PRÉC|  
-|Étendre la sélection d'une page vers le bas \(sauf les liens de la table enfant\).|MAJ\+PG.SUIV|  
-|Étendre la sélection d'une page vers le haut \(sauf les liens de la table enfant\).|MAJ\+PG.PRÉC|  
-|Appeler la méthode <xref:System.Windows.Forms.DataGrid.EndEdit%2A> pour la ligne en cours.|CTRL\+ENTRÉE|  
-|En mode édition, entrer une valeur <xref:System.DBNull.Value?displayProperty=fullName> dans une cellule.|CTRL\+0|  
+|<span data-ttu-id="c74f3-106">Action</span><span class="sxs-lookup"><span data-stu-id="c74f3-106">Action</span></span>|<span data-ttu-id="c74f3-107">Raccourci</span><span class="sxs-lookup"><span data-stu-id="c74f3-107">Shortcut</span></span>|  
+|------------|--------------|  
+|<span data-ttu-id="c74f3-108">Terminer une entrée de cellule et déplacer vers le bas à la cellule suivante.</span><span class="sxs-lookup"><span data-stu-id="c74f3-108">Complete a cell entry and move down to the next cell.</span></span><br /><br /> <span data-ttu-id="c74f3-109">Si le focus est sur un lien de la table enfant, accédez à cette table.</span><span class="sxs-lookup"><span data-stu-id="c74f3-109">If focus is on a child table link, navigate to that table.</span></span>|<span data-ttu-id="c74f3-110">ENTRÉE</span><span class="sxs-lookup"><span data-stu-id="c74f3-110">ENTER</span></span>|  
+|<span data-ttu-id="c74f3-111">Annuler la modification de la cellule en mode édition de cellule.</span><span class="sxs-lookup"><span data-stu-id="c74f3-111">Cancel cell editing if in cell edit mode.</span></span><br /><br /> <span data-ttu-id="c74f3-112">En cas de sélection, annuler la modification de la ligne.</span><span class="sxs-lookup"><span data-stu-id="c74f3-112">If in marquee selection, cancel editing on the row.</span></span>|<span data-ttu-id="c74f3-113">ÉCHAP</span><span class="sxs-lookup"><span data-stu-id="c74f3-113">ESC</span></span>|  
+|<span data-ttu-id="c74f3-114">Supprimer le caractère avant le point d’insertion lors de la modification d’une cellule.</span><span class="sxs-lookup"><span data-stu-id="c74f3-114">Delete the character before the insertion point when editing a cell.</span></span>|<span data-ttu-id="c74f3-115">RETOUR ARRIÈRE</span><span class="sxs-lookup"><span data-stu-id="c74f3-115">BACKSPACE</span></span>|  
+|<span data-ttu-id="c74f3-116">Supprimer le caractère après le point d’insertion lors de la modification d’une cellule.</span><span class="sxs-lookup"><span data-stu-id="c74f3-116">Delete the character after the insertion point when editing a cell.</span></span>|<span data-ttu-id="c74f3-117">SUPPR</span><span class="sxs-lookup"><span data-stu-id="c74f3-117">DELETE</span></span>|  
+|<span data-ttu-id="c74f3-118">Déplacer vers la première cellule de la ligne actuelle.</span><span class="sxs-lookup"><span data-stu-id="c74f3-118">Move to the first cell in the current row.</span></span>|<span data-ttu-id="c74f3-119">ACCUEIL</span><span class="sxs-lookup"><span data-stu-id="c74f3-119">HOME</span></span>|  
+|<span data-ttu-id="c74f3-120">Déplacer vers la dernière cellule de la ligne actuelle.</span><span class="sxs-lookup"><span data-stu-id="c74f3-120">Move to the last cell in the current row.</span></span>|<span data-ttu-id="c74f3-121">FIN</span><span class="sxs-lookup"><span data-stu-id="c74f3-121">END</span></span>|  
+|<span data-ttu-id="c74f3-122">Mettez en surbrillance les caractères dans la cellule active et positionner le point d’insertion à la fin de la ligne.</span><span class="sxs-lookup"><span data-stu-id="c74f3-122">Highlight characters in the current cell and position the insertion point at the end of the line.</span></span> <span data-ttu-id="c74f3-123">Revient à double-cliquer sur une cellule.</span><span class="sxs-lookup"><span data-stu-id="c74f3-123">Same behavior as double-clicking a cell.</span></span>|<span data-ttu-id="c74f3-124">F2</span><span class="sxs-lookup"><span data-stu-id="c74f3-124">F2</span></span>|  
+|<span data-ttu-id="c74f3-125">Si le focus est sur une cellule, déplacez vers la cellule suivante dans la ligne.</span><span class="sxs-lookup"><span data-stu-id="c74f3-125">If focus is on a cell, move to the next cell in the row.</span></span><br /><br /> <span data-ttu-id="c74f3-126">Si le focus est sur la dernière cellule dans une ligne, déplacer vers le premier lien de table enfant de la ligne et le développer.</span><span class="sxs-lookup"><span data-stu-id="c74f3-126">If focus is on the last cell in a row, move to the first child table link of the row and expand it.</span></span><br /><br /> <span data-ttu-id="c74f3-127">Si le focus est sur un lien enfant, déplacer jusqu’au lien enfant suivant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-127">If focus is on a child link, move to the next child link.</span></span><br /><br /> <span data-ttu-id="c74f3-128">Si le focus est sur le dernier lien enfant, déplacer vers la première cellule de la ligne suivante.</span><span class="sxs-lookup"><span data-stu-id="c74f3-128">If focus is on the last child link, move to the first cell of the next row.</span></span>|<span data-ttu-id="c74f3-129">TAB</span><span class="sxs-lookup"><span data-stu-id="c74f3-129">TAB</span></span>|  
+|<span data-ttu-id="c74f3-130">Si le focus est sur une cellule, déplacez vers la cellule précédente dans la ligne.</span><span class="sxs-lookup"><span data-stu-id="c74f3-130">If focus is on a cell, move to the previous cell in the row.</span></span><br /><br /> <span data-ttu-id="c74f3-131">Si le focus est sur la première cellule dans une ligne, déplacer vers le dernier lien de table enfant étendues de la ligne précédente ou le déplacer vers la dernière cellule de la ligne précédente.</span><span class="sxs-lookup"><span data-stu-id="c74f3-131">If focus is on the first cell in a row, move to the last expanded child table link of the previous row, or move to the last cell of the previous row.</span></span><br /><br /> <span data-ttu-id="c74f3-132">Si le focus est sur un lien enfant, déplacer vers le lien enfant précédent.</span><span class="sxs-lookup"><span data-stu-id="c74f3-132">If focus is on a child link, move to the previous child link.</span></span><br /><br /> <span data-ttu-id="c74f3-133">Si le focus est sur le premier lien enfant, déplacer vers la dernière cellule de la ligne précédente.</span><span class="sxs-lookup"><span data-stu-id="c74f3-133">If focus is on the first child link, move to the last cell of the previous row.</span></span>|<span data-ttu-id="c74f3-134">MAJ+TAB</span><span class="sxs-lookup"><span data-stu-id="c74f3-134">SHIFT+TAB</span></span>|  
+|<span data-ttu-id="c74f3-135">Déplacer vers le contrôle suivant dans l’ordre de tabulation.</span><span class="sxs-lookup"><span data-stu-id="c74f3-135">Move to the next control in the tab order.</span></span>|<span data-ttu-id="c74f3-136">CTRL+TAB</span><span class="sxs-lookup"><span data-stu-id="c74f3-136">CTRL+TAB</span></span>|  
+|<span data-ttu-id="c74f3-137">Déplacer vers le contrôle précédent dans l’ordre de tabulation.</span><span class="sxs-lookup"><span data-stu-id="c74f3-137">Move to the previous control in the tab order.</span></span>|<span data-ttu-id="c74f3-138">CTRL+MAJ+TAB</span><span class="sxs-lookup"><span data-stu-id="c74f3-138">CTRL+SHIFT+TAB</span></span>|  
+|<span data-ttu-id="c74f3-139">Déplacer vers le haut de la table parent dans une table enfant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-139">Move up to the parent table if in a child table.</span></span> <span data-ttu-id="c74f3-140">Comportement de même qu’un clic sur le bouton précédent.</span><span class="sxs-lookup"><span data-stu-id="c74f3-140">Same behavior as clicking the Back button.</span></span>|<span data-ttu-id="c74f3-141">ALT + FLÈCHE GAUCHE</span><span class="sxs-lookup"><span data-stu-id="c74f3-141">ALT+LEFT ARROW</span></span>|  
+|<span data-ttu-id="c74f3-142">Développez les liens de la table enfant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-142">Expand child table links.</span></span> <span data-ttu-id="c74f3-143">ALT + flèche bas développe tous les liens, et pas seulement ceux sélectionnés.</span><span class="sxs-lookup"><span data-stu-id="c74f3-143">ALT+DOWN ARROW expands all links, not just the ones selected.</span></span>|<span data-ttu-id="c74f3-144">ALT + flèche bas ou CTRL + signe PLUS</span><span class="sxs-lookup"><span data-stu-id="c74f3-144">ALT+DOWN ARROW or CTRL+PLUS SIGN</span></span>|  
+|<span data-ttu-id="c74f3-145">Réduire les liens de la table enfant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-145">Collapse child table links.</span></span> <span data-ttu-id="c74f3-146">ALT + flèche haut réduit tous les liens, et pas seulement ceux sélectionnés.</span><span class="sxs-lookup"><span data-stu-id="c74f3-146">ALT+UP ARROW collapses all links, not just the ones selected.</span></span>|<span data-ttu-id="c74f3-147">ALT + flèche haut ou CTRL + signe moins</span><span class="sxs-lookup"><span data-stu-id="c74f3-147">ALT+UP ARROW or CTRL+MINUS SIGN</span></span>|  
+|<span data-ttu-id="c74f3-148">Déplacer vers la cellule plus lointain non vide dans la direction de la flèche.</span><span class="sxs-lookup"><span data-stu-id="c74f3-148">Move to the farthest nonblank cell in the direction of the arrow.</span></span>|<span data-ttu-id="c74f3-149">CTRL + FLÈCHE</span><span class="sxs-lookup"><span data-stu-id="c74f3-149">CTRL+ARROW</span></span>|  
+|<span data-ttu-id="c74f3-150">Étendre la sélection d’une ligne dans la direction de la flèche (sauf les liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-150">Extend the selection one row in the direction of the arrow (excluding child table links).</span></span>|<span data-ttu-id="c74f3-151">MAJ + HAUT/BAS</span><span class="sxs-lookup"><span data-stu-id="c74f3-151">SHIFT+UP/DOWN ARROW</span></span>|  
+|<span data-ttu-id="c74f3-152">Étendre la sélection à une ligne plus lointain non vide dans la direction de la flèche (sauf les liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-152">Extend the selection to farthest nonblank row in the direction of the arrow (excluding child table links).</span></span>|<span data-ttu-id="c74f3-153">CTRL + MAJ + HAUT/BAS</span><span class="sxs-lookup"><span data-stu-id="c74f3-153">CTRL+SHIFT+ UP/DOWN ARROW</span></span>|  
+|<span data-ttu-id="c74f3-154">Déplacer vers la cellule supérieure gauche.</span><span class="sxs-lookup"><span data-stu-id="c74f3-154">Move to the upper-left cell.</span></span>|<span data-ttu-id="c74f3-155">CTRL + ORIGINE</span><span class="sxs-lookup"><span data-stu-id="c74f3-155">CTRL+HOME</span></span>|  
+|<span data-ttu-id="c74f3-156">Déplacer vers la cellule inférieure droite.</span><span class="sxs-lookup"><span data-stu-id="c74f3-156">Move to the lower-right cell.</span></span>|<span data-ttu-id="c74f3-157">CTRL + FIN</span><span class="sxs-lookup"><span data-stu-id="c74f3-157">CTRL+END</span></span>|  
+|<span data-ttu-id="c74f3-158">Étendre la sélection à la ligne du haut.</span><span class="sxs-lookup"><span data-stu-id="c74f3-158">Extend the selection to the top row.</span></span>|<span data-ttu-id="c74f3-159">CTRL + MAJ + ORIGINE</span><span class="sxs-lookup"><span data-stu-id="c74f3-159">CTRL+SHIFT+HOME</span></span>|  
+|<span data-ttu-id="c74f3-160">Étendre la sélection vers la ligne inférieure.</span><span class="sxs-lookup"><span data-stu-id="c74f3-160">Extend the selection to the bottom row.</span></span>|<span data-ttu-id="c74f3-161">CTRL + MAJ + FIN</span><span class="sxs-lookup"><span data-stu-id="c74f3-161">CTRL+SHIFT+END</span></span>|  
+|<span data-ttu-id="c74f3-162">Sélectionnez la ligne en cours (à l’exclusion des liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-162">Select the current row (excluding child table links).</span></span>|<span data-ttu-id="c74f3-163">MAJ + ESPACE</span><span class="sxs-lookup"><span data-stu-id="c74f3-163">SHIFT+SPACEBAR</span></span>|  
+|<span data-ttu-id="c74f3-164">Sélectionnez l’intégralité de la grille (à l’exclusion des liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-164">Select the entire grid (excluding child table links).</span></span>|<span data-ttu-id="c74f3-165">CTRL+A</span><span class="sxs-lookup"><span data-stu-id="c74f3-165">CTRL+A</span></span>|  
+|<span data-ttu-id="c74f3-166">Afficher la ligne parente dans une table enfant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-166">Display the parent row when in a child table.</span></span>|<span data-ttu-id="c74f3-167">CTRL+PAGE SUIVANTE</span><span class="sxs-lookup"><span data-stu-id="c74f3-167">CTRL+PAGE DOWN</span></span>|  
+|<span data-ttu-id="c74f3-168">Masquer la ligne parente dans une table enfant.</span><span class="sxs-lookup"><span data-stu-id="c74f3-168">Hide the parent row when in a child table.</span></span>|<span data-ttu-id="c74f3-169">CTRL+PG.PRÉC</span><span class="sxs-lookup"><span data-stu-id="c74f3-169">CTRL+PAGE UP</span></span>|  
+|<span data-ttu-id="c74f3-170">Étendre la sélection à l’écran (à l’exclusion des liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-170">Extend the selection down one screen (excluding child table links).</span></span>|<span data-ttu-id="c74f3-171">MAJ+PG.SUIV</span><span class="sxs-lookup"><span data-stu-id="c74f3-171">SHIFT+PAGE DOWN</span></span>|  
+|<span data-ttu-id="c74f3-172">Étendre la sélection d’une page (à l’exclusion des liens de la table enfant).</span><span class="sxs-lookup"><span data-stu-id="c74f3-172">Extend the selection up one screen (excluding child table links).</span></span>|<span data-ttu-id="c74f3-173">MAJ+PG.PRÉC</span><span class="sxs-lookup"><span data-stu-id="c74f3-173">SHIFT+PAGE UP</span></span>|  
+|<span data-ttu-id="c74f3-174">Appelez le <xref:System.Windows.Forms.DataGrid.EndEdit%2A> méthode pour la ligne actuelle.</span><span class="sxs-lookup"><span data-stu-id="c74f3-174">Call the <xref:System.Windows.Forms.DataGrid.EndEdit%2A> method for the current row.</span></span>|<span data-ttu-id="c74f3-175">CTRL+ENTRÉE</span><span class="sxs-lookup"><span data-stu-id="c74f3-175">CTRL+ENTER</span></span>|  
+|<span data-ttu-id="c74f3-176">Entrez un <xref:System.DBNull.Value?displayProperty=nameWithType> valeur dans une cellule en mode édition.</span><span class="sxs-lookup"><span data-stu-id="c74f3-176">Enter a <xref:System.DBNull.Value?displayProperty=nameWithType> value into a cell when in edit mode.</span></span>|<span data-ttu-id="c74f3-177">CTRL+0</span><span class="sxs-lookup"><span data-stu-id="c74f3-177">CTRL+0</span></span>|  
   
-## Voir aussi  
- [Vue d'ensemble du contrôle DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)   
- [DataGrid, contrôle](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="c74f3-178">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c74f3-178">See Also</span></span>  
+ [<span data-ttu-id="c74f3-179">Vue d’ensemble du contrôle DataGrid</span><span class="sxs-lookup"><span data-stu-id="c74f3-179">DataGrid Control Overview</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
+ [<span data-ttu-id="c74f3-180">DataGrid, contrôle</span><span class="sxs-lookup"><span data-stu-id="c74f3-180">DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

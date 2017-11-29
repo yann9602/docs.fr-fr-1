@@ -1,42 +1,46 @@
 ---
-title: "Comment&#160;: d&#233;terminer l&#39;enfant MDI actif | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "formulaires enfants"
-  - "Presse-papiers, copier les données dans"
-  - "MDI, activer des formulaires"
-  - "MDI, fenêtres enfants"
-  - "MDI, repérer le focus"
+title: "Comment : déterminer l'enfant MDI actif"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Clipboard [Windows Forms], copying data to
+- MDI [Windows Forms], child windows
+- child forms
+- MDI [Windows Forms], activating forms
+- MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 473cf67f01db8735eb3b32a7549296f827e66ef6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;terminer l&#39;enfant MDI actif
-Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui a le focus dans le formulaire enfant actif.  Supposons, par exemple, que vous voulez copier un texte sélectionné dans la zone de texte du formulaire enfant vers le Presse\-papiers.  Pour ce faire, vous devez créer une procédure copiant le texte sélectionné dans le Presse\-papiers à l'aide de l'événement <xref:System.Windows.Forms.Control.Click> de l'élément Copier du menu Edition standard.  
+# <a name="how-to-determine-the-active-mdi-child"></a><span data-ttu-id="021dd-102">Comment : déterminer l'enfant MDI actif</span><span class="sxs-lookup"><span data-stu-id="021dd-102">How to: Determine the Active MDI Child</span></span>
+<span data-ttu-id="021dd-103">Parfois, vous devez fournir une commande qui fonctionne sur le contrôle qui a le focus sur le formulaire enfant actif.</span><span class="sxs-lookup"><span data-stu-id="021dd-103">On occasion, you will want to provide a command that operates on the control that has focus on the currently active child form.</span></span> <span data-ttu-id="021dd-104">Par exemple, supposons que vous souhaitez copier le texte sélectionné dans le Presse-papiers à partir de la zone de texte du formulaire enfant.</span><span class="sxs-lookup"><span data-stu-id="021dd-104">For example, suppose you want to copy selected text from the child form's text box to the Clipboard.</span></span> <span data-ttu-id="021dd-105">Vous devez créer une procédure qui copie le texte sélectionné vers le Presse-papiers à l’aide de la <xref:System.Windows.Forms.Control.Click> l’événement de l’élément de menu de copie dans le menu Edition standard.</span><span class="sxs-lookup"><span data-stu-id="021dd-105">You would create a procedure that copies selected text to the Clipboard using the <xref:System.Windows.Forms.Control.Click> event of the Copy menu item on the standard Edit menu.</span></span>  
   
- Étant donné qu'une application MDI peut posséder plusieurs instances du même formulaire enfant, la procédure doit savoir quel formulaire utiliser.  Pour spécifier le formulaire à utiliser, faites appel à la propriété <xref:System.Windows.Forms.Form.ActiveMdiChild%2A>, laquelle retourne le formulaire enfant qui a le focus ou qui était actif en dernier.  
+ <span data-ttu-id="021dd-106">Comme une application MDI peut avoir plusieurs instances du même formulaire enfant, la procédure a besoin de connaître le formulaire à utiliser.</span><span class="sxs-lookup"><span data-stu-id="021dd-106">Because an MDI application can have many instances of the same child form, the procedure needs to know which form to use.</span></span> <span data-ttu-id="021dd-107">Pour spécifier le formulaire, utilisez le <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> propriété, qui retourne le formulaire enfant qui a le focus ou qui était actif en dernier.</span><span class="sxs-lookup"><span data-stu-id="021dd-107">To specify the correct form, use the <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> property, which returns the child form that has the focus or that was most recently active.</span></span>  
   
- Lorsqu'il existe plusieurs contrôles dans un formulaire, vous devez également spécifier lequel est actif.  À l'instar de la propriété <xref:System.Windows.Forms.Form.ActiveMdiChild%2A>, la propriété <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> retourne le contrôle qui a le focus dans le formulaire enfant actif.  La procédure ci\-dessous montre une procédure de copie pouvant être appelée à partir d'un menu de formulaire enfant, un menu de formulaire MDI ou un bouton de la barre d'outils.  
+ <span data-ttu-id="021dd-108">Lorsque vous avez plusieurs contrôles dans un formulaire, vous devez également spécifier quel contrôle est actif.</span><span class="sxs-lookup"><span data-stu-id="021dd-108">When you have several controls on a form, you also need to specify which control is active.</span></span> <span data-ttu-id="021dd-109">Comme le <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> propriété, le <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> propriété retourne le contrôle a le focus sur le formulaire enfant actif.</span><span class="sxs-lookup"><span data-stu-id="021dd-109">Like the <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> property, the <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> property returns the control with the focus on the active child form.</span></span> <span data-ttu-id="021dd-110">La procédure ci-dessous illustre une procédure de copie qui peut être appelée à partir d’un menu de formulaire enfant, un menu sur le formulaire MDI ou un bouton de barre d’outils.</span><span class="sxs-lookup"><span data-stu-id="021dd-110">The procedure below illustrates a copy procedure that can be called from a child form menu, a menu on the MDI form, or a toolbar button.</span></span>  
   
-### Pour déterminer l'enfant MDI actif \(et copier son texte dans le Presse\-papiers\)  
+### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a><span data-ttu-id="021dd-111">Pour déterminer l’enfant MDI actif (pour copier le texte dans le Presse-papiers)</span><span class="sxs-lookup"><span data-stu-id="021dd-111">To determine the active MDI child (to copy its text to the Clipboard)</span></span>  
   
-1.  Dans une méthode, copiez le texte du contrôle actif du formulaire enfant actif dans le Presse\-papiers.  
+1.  <span data-ttu-id="021dd-112">Dans une méthode, copiez le texte du contrôle actif du formulaire enfant actif dans le Presse-papiers.</span><span class="sxs-lookup"><span data-stu-id="021dd-112">Within a method, copy the text of the active control of the active child form to the Clipboard.</span></span>  
   
     > [!NOTE]
-    >  Cet exemple suppose qu'il existe un formulaire MDI parent \(`Form1`\) doté d'une ou de plusieurs fenêtres MDI enfants contenant un contrôle <xref:System.Windows.Forms.RichTextBox>.  Pour plus d'informations, consultez [Création de formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).  
+    >  <span data-ttu-id="021dd-113">Cet exemple suppose qu’est un formulaire MDI parent (`Form1`) qui a une ou plusieurs fenêtres MDI enfants contenant un <xref:System.Windows.Forms.RichTextBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="021dd-113">This example assumes there is an MDI parent form (`Form1`) that has one or more MDI child windows containing a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="021dd-114">Pour plus d’informations, consultez [création de formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).</span><span class="sxs-lookup"><span data-stu-id="021dd-114">For more information, see [Creating MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md).</span></span>  
   
     ```vb  
     Public Sub mniCopy_Click(ByVal sender As Object, _  
@@ -59,7 +63,6 @@ Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui 
           End If  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -88,12 +91,11 @@ Vous aurez parfois besoin de fournir une commande opérant sur le contrôle qui 
           }  
        }  
     }  
-  
     ```  
   
-## Voir aussi  
- [Applications d'interface multidocument \(MDI, Multiple Document Interface\)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)   
- [Comment : créer des formulaires MDI parents](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [Comment : créer des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)   
- [Comment : envoyer des données à l'enfant MDI actif](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)   
- [Comment : réorganiser des formulaires MDI enfants](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a><span data-ttu-id="021dd-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="021dd-115">See Also</span></span>  
+ [<span data-ttu-id="021dd-116">Applications d’interface multidocument (MDI, Multiple Document Interface)</span><span class="sxs-lookup"><span data-stu-id="021dd-116">Multiple-Document Interface (MDI) Applications</span></span>](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ [<span data-ttu-id="021dd-117">Guide pratique pour créer des formulaires MDI parents</span><span class="sxs-lookup"><span data-stu-id="021dd-117">How to: Create MDI Parent Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [<span data-ttu-id="021dd-118">Guide pratique pour créer des formulaires MDI enfants</span><span class="sxs-lookup"><span data-stu-id="021dd-118">How to: Create MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
+ [<span data-ttu-id="021dd-119">Guide pratique pour envoyer des données à l’enfant MDI actif</span><span class="sxs-lookup"><span data-stu-id="021dd-119">How to: Send Data to the Active MDI Child</span></span>](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
+ [<span data-ttu-id="021dd-120">Guide pratique pour réorganiser des formulaires MDI enfants</span><span class="sxs-lookup"><span data-stu-id="021dd-120">How to: Arrange MDI Child Forms</span></span>](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)

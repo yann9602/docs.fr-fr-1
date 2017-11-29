@@ -1,27 +1,29 @@
 ---
-title: "Migration d&#39;applications .NET&#160;Remoting vers&#160;WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ", NET Remoting (WCF)"
+title: "Migration d'applications .NET Remoting vers WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: ',NET remoting [WCF]'
 ms.assetid: 24793465-65ae-4308-8c12-dce4fd12a583
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dff06fbc52c0f4371abf0bcc465fd6a6d8be5859
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Migration d&#39;applications .NET&#160;Remoting vers&#160;WCF
-**Cette rubrique est spécifique à une technologie héritée qui assure la compatibilité descendante avec des applications existantes et n'est pas recommandée en cas de nouveau développement.Les applications distribuées doivent maintenant être développées à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].**  
+# <a name="migrating-net-remoting-applications-to-wcf"></a><span data-ttu-id="8924a-102">Migration d'applications .NET Remoting vers WCF</span><span class="sxs-lookup"><span data-stu-id="8924a-102">Migrating .NET Remoting Applications to WCF</span></span>
+<span data-ttu-id="8924a-103">**Cette rubrique est spécifique à une technologie héritée qui assure la compatibilité descendante avec des applications existantes et n'est pas recommandée en cas de nouveau développement. Les applications distribuées doivent maintenant être développées à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].**</span><span class="sxs-lookup"><span data-stu-id="8924a-103">**This topic is specific to a legacy technology that is retained for backward compatibility with existing applications and is not recommended for new development. Distributed applications should now be developed using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].**</span></span>  
   
- Il existe deux manière de tirer parti de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec les applications .NET Remoting existantes : l'intégration et la migration.L'intégration vous permet d'exécuter .Net Remoting 2.0 et [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] côte à côte et ainsi d'exposer les mêmes objets métier sur ces deux technologies simultanément sans avoir à modifier votre code .Net Remoting 2.0 existant.L'intégration requiert l'utilisation de [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 2.0 ou version ultérieure.Si vous souhaitez tirer parti des fonctionnalités [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et que la compatibilité des câbles avec les systèmes Remoting 2.0 n'est pas nécessaire, vous pouvez migrer l'ensemble de votre service vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].La migration de .NET Remoting 2.0 vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requiert la modification de l'interface de l'objet distant et de ses paramètres de configuration.Ces deux rubriques sont traitées dans [De Remoting vers Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=74403) \(page pouvant être en anglais\).  
+ <span data-ttu-id="8924a-104">Il existe deux manière de tirer parti de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec les applications .NET Remoting existantes : l'intégration et la migration.</span><span class="sxs-lookup"><span data-stu-id="8924a-104">There are two ways to take advantage of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] with existing .NET Remoting applications: integration and migration.</span></span> <span data-ttu-id="8924a-105">L'intégration vous permet d'exécuter .Net Remoting 2.0 et [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] côte à côte et ainsi d'exposer les mêmes objets métier sur ces deux technologies simultanément sans avoir à modifier votre code .Net Remoting 2.0 existant.</span><span class="sxs-lookup"><span data-stu-id="8924a-105">Integration allows you to have .Net Remoting 2.0 and [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] running side by side, letting you expose the same business objects over both technologies simultaneously without having to modify your existing .Net Remoting 2.0 code.</span></span> <span data-ttu-id="8924a-106">L'intégration requiert l'utilisation de [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 2.0 ou version ultérieure.</span><span class="sxs-lookup"><span data-stu-id="8924a-106">Integration requires that you are running on [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 2.0 or greater.</span></span> <span data-ttu-id="8924a-107">Si vous souhaitez tirer parti des fonctionnalités [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et que la compatibilité des câbles avec les systèmes Remoting 2.0 n'est pas nécessaire, vous pouvez migrer l'ensemble de votre service vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8924a-107">If you want to take advantage of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] features and do not need wire compatibility with Remoting 2.0 systems, you can migrate your entire service to [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="8924a-108">La migration de .NET Remoting 2.0 vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requiert la modification de l'interface de l'objet distant et de ses paramètres de configuration.</span><span class="sxs-lookup"><span data-stu-id="8924a-108">Migration from .NET Remoting 2.0 to [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requires changes to the remote object's interface and its configuration settings.</span></span> <span data-ttu-id="8924a-109">Deux de ces rubriques sont abordés dans [à partir de la communication à distance de Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=74403).</span><span class="sxs-lookup"><span data-stu-id="8924a-109">Both of these topics are covered in [From Remoting to the Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=74403).</span></span>  
   
-## Voir aussi  
- [Vue d'ensemble conceptuelle](../../../../docs/framework/wcf/conceptual-overview.md)
+## <a name="see-also"></a><span data-ttu-id="8924a-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8924a-110">See Also</span></span>  
+ [<span data-ttu-id="8924a-111">Vue d’ensemble conceptuelle</span><span class="sxs-lookup"><span data-stu-id="8924a-111">Conceptual Overview</span></span>](../../../../docs/framework/wcf/conceptual-overview.md)

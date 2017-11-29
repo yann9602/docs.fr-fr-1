@@ -1,65 +1,62 @@
 ---
-title: "Windows Forms | Microsoft Docs"
+title: Windows Forms
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-winforms
+ms.technology: dotnet-winforms
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- jsharp
 helpviewer_keywords:
 - Windows Forms
 - user interface
-- user interface, forms
+- user interface [Windows Forms], forms
 ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
-caps.latest.revision: 25
+caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: 224597edb87943e4572a44a9d59f3b61cd6c198f
-ms.lasthandoff: 04/08/2017
-
+ms.openlocfilehash: 2799bd6652c9f575be8758f47c9770d3fde93580
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# <a name="windows-forms"></a>Windows Forms
-Les formulaires étant l'unité de base de votre application, il est essentiel de réfléchir à leur fonction et à leur conception. Si l'on y réfléchit bien, un formulaire est une feuille blanche que vous, en tant que développeur, améliorez avec des contrôles pour créer une interface utilisateur et avec du code pour manipuler des données. À cette fin, [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] offre un environnement de développement intégré (IDE) pour vous aider à écrire du code, ainsi qu'un jeu de contrôles complet écrit avec [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. En associant les fonctionnalités de ces contrôles à votre code, vous pouvez facilement et rapidement développer les solutions dont vous avez besoin.  
+# <a name="windows-forms"></a><span data-ttu-id="e87e2-102">Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-102">Windows Forms</span></span>
+<span data-ttu-id="e87e2-103">Les formulaires étant l'unité de base de votre application, il est essentiel de réfléchir à leur fonction et à leur conception.</span><span class="sxs-lookup"><span data-stu-id="e87e2-103">As forms are the base unit of your application, it is essential that you give some thought to their function and design.</span></span> <span data-ttu-id="e87e2-104">Si l'on y réfléchit bien, un formulaire est une feuille blanche que vous, en tant que développeur, améliorez avec des contrôles pour créer une interface utilisateur et avec du code pour manipuler des données.</span><span class="sxs-lookup"><span data-stu-id="e87e2-104">A form is ultimately a blank slate that you, as a developer, enhance with controls to create a user interface and with code to manipulate data.</span></span> <span data-ttu-id="e87e2-105">À cette fin, [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] offre un environnement de développement intégré (IDE) pour vous aider à écrire du code, ainsi qu'un jeu de contrôles complet écrit avec [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e87e2-105">To that end, [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] provides you with an integrated development environment (IDE) to aid in writing code, as well as a rich control set written with the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="e87e2-106">En associant les fonctionnalités de ces contrôles à votre code, vous pouvez facilement et rapidement développer les solutions dont vous avez besoin.</span><span class="sxs-lookup"><span data-stu-id="e87e2-106">By complementing the functionality of these controls with your code, you can easily and quickly develop the solutions you need.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
- [Bien démarrer avec Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
- Fournit des liens vers des rubriques expliquant comment exploiter toute la puissance des Windows Forms pour afficher des données, gérer l'entrée d'utilisateur et déployer vos applications facilement et avec une sécurité plus robuste.  
+## <a name="in-this-section"></a><span data-ttu-id="e87e2-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="e87e2-107">In This Section</span></span>  
+ [<span data-ttu-id="e87e2-108">Bien démarrer avec Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-108">Getting Started with Windows Forms</span></span>](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
+ <span data-ttu-id="e87e2-109">Fournit des liens vers des rubriques expliquant comment exploiter toute la puissance des Windows Forms pour afficher des données, gérer l'entrée d'utilisateur et déployer vos applications facilement et avec une sécurité plus robuste.</span><span class="sxs-lookup"><span data-stu-id="e87e2-109">Provides links to topics about how to harness the power of Windows Forms to display data, handle user input, and deploy your applications easily and with more robust security.</span></span>  
   
- [Amélioration des applications Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
- Fournit des liens vers des rubriques expliquant comment améliorer vos Windows Forms avec un large éventail de fonctionnalités.  
+ [<span data-ttu-id="e87e2-110">Amélioration des applications Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-110">Enhancing Windows Forms Applications</span></span>](../../../docs/framework/winforms/advanced/index.md)  
+ <span data-ttu-id="e87e2-111">Fournit des liens vers des rubriques expliquant comment améliorer vos Windows Forms avec un large éventail de fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="e87e2-111">Provides links to topics about how to enhance your Windows Forms with a variety of features.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](../../../docs/framework/winforms/controls/index.md)  
- Contient des liens vers des rubriques décrivant les contrôles Windows Forms et expliquant comment les implémenter.  
+## <a name="related-sections"></a><span data-ttu-id="e87e2-112">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="e87e2-112">Related Sections</span></span>  
+ [<span data-ttu-id="e87e2-113">Contrôles Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-113">Windows Forms Controls</span></span>](../../../docs/framework/winforms/controls/index.md)  
+ <span data-ttu-id="e87e2-114">Contient des liens vers des rubriques décrivant les contrôles Windows Forms et expliquant comment les implémenter.</span><span class="sxs-lookup"><span data-stu-id="e87e2-114">Contains links to topics that describe Windows Forms controls and show how to implement them.</span></span>  
   
- [Liaison de données Windows Forms](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- Contient des liens vers des rubriques décrivant l’architecture de liaison de données Windows Forms.  
+ [<span data-ttu-id="e87e2-115">Liaison de données Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-115">Windows Forms Data Binding</span></span>](../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ <span data-ttu-id="e87e2-116">Contient des liens vers des rubriques décrivant l’architecture de liaison de données Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e87e2-116">Contains links to topics that describe the Windows Forms data-binding architecture.</span></span>  
   
- [Vue d’ensemble des graphismes](../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
- Explique comment créer des graphismes, dessiner du texte et manipuler des images graphiques comme objets à l'aide de l'implémentation avancée de l'interface de conception graphique Windows.  
+ [<span data-ttu-id="e87e2-117">Vue d’ensemble des graphismes</span><span class="sxs-lookup"><span data-stu-id="e87e2-117">Graphics Overview</span></span>](../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
+ <span data-ttu-id="e87e2-118">Explique comment créer des graphismes, dessiner du texte et manipuler des images graphiques comme objets à l'aide de l'implémentation avancée de l'interface de conception graphique Windows.</span><span class="sxs-lookup"><span data-stu-id="e87e2-118">Discusses how to create graphics, draw text, and manipulate graphical images as objects using the advanced implementation of the Windows graphics design interface.</span></span>  
   
- [Sécurité et déploiement ClickOnce](http://msdn.microsoft.com/library/abab6d34-c3c2-45c1-a8b6-43c7d3131e7a)  
- Présente les principes du déploiement ClickOnce.  
+ [<span data-ttu-id="e87e2-119">Sécurité et déploiement ClickOnce</span><span class="sxs-lookup"><span data-stu-id="e87e2-119">ClickOnce Security and Deployment</span></span>](/visualstudio/deployment/clickonce-security-and-deployment)  
+ <span data-ttu-id="e87e2-120">Présente les principes du déploiement ClickOnce.</span><span class="sxs-lookup"><span data-stu-id="e87e2-120">Discusses the principles of ClickOnce deployment.</span></span>  
   
- [Différences de programmation entre Windows Forms et MFC](http://msdn.microsoft.com/library/f3bfcf45-cfd4-45a4-8cde-5f4dbb18ee51)  
- Décrit les différences entre les applications MFC et les Windows Forms.  
+ [<span data-ttu-id="e87e2-121">Différences de programmation entre Windows Forms et MFC</span><span class="sxs-lookup"><span data-stu-id="e87e2-121">Windows Forms/MFC Programming Differences</span></span>](/cpp/dotnet/windows-forms-mfc-programming-differences)  
+ <span data-ttu-id="e87e2-122">Décrit les différences entre les applications MFC et les Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e87e2-122">Discusses the differences between MFC applications and Windows Forms.</span></span>  
   
- [Accès aux données dans Visual Studio](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)  
- Décrit comment incorporer les fonctionnalités d'accès aux données à vos applications.  
+ [<span data-ttu-id="e87e2-123">Accès aux données dans Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e87e2-123">Accessing data in Visual Studio</span></span>](/visualstudio/data-tools/accessing-data-in-visual-studio)  
+ <span data-ttu-id="e87e2-124">Décrit comment incorporer les fonctionnalités d'accès aux données à vos applications.</span><span class="sxs-lookup"><span data-stu-id="e87e2-124">Discusses incorporating data access functionality into your applications.</span></span>  
   
- [Applications Windows Forms](http://msdn.microsoft.com/library/7092ee7f-8378-4def-aef8-1695bd97cf14)  
- Présente le processus de débogage des applications créées avec le modèle de projet Application Windows et comment modifier les configurations Debug et Release.  
+ [<span data-ttu-id="e87e2-125">Applications Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e87e2-125">Windows Forms Applications</span></span>](/visualstudio/debugger/debugging-preparation-windows-forms-applications)  
+ <span data-ttu-id="e87e2-126">Présente le processus de débogage des applications créées avec le modèle de projet Application Windows et comment modifier les configurations Debug et Release.</span><span class="sxs-lookup"><span data-stu-id="e87e2-126">Discusses the process of debugging applications created with the Windows Application project template, as well as how to change the Debug and Release configurations.</span></span>  
   
- [Déploiement d’applications, de services et de composants](https://msdn.microsoft.com/library/wtzawcsz)  
- Décrit le processus par lequel vous distribuez une application ou un composant terminé pour l'installer sur d'autres ordinateurs.  
+ [<span data-ttu-id="e87e2-127">Déploiement d’applications, de services et de composants</span><span class="sxs-lookup"><span data-stu-id="e87e2-127">Deploying Applications, Services, and Components</span></span>](https://msdn.microsoft.com/library/wtzawcsz)  
+ <span data-ttu-id="e87e2-128">Décrit le processus par lequel vous distribuez une application ou un composant terminé pour l'installer sur d'autres ordinateurs.</span><span class="sxs-lookup"><span data-stu-id="e87e2-128">Describes the process by which you distribute a finished application or component to be installed on other computers.</span></span>  
   
- [Génération d'applications console](../../../docs/standard/building-console-apps.md)  
- Décrit les principes fondamentaux de la création d'une application console à l'aide de la classe <xref:System.Console>.
+ [<span data-ttu-id="e87e2-129">Génération d'applications console</span><span class="sxs-lookup"><span data-stu-id="e87e2-129">Building Console Applications</span></span>](../../../docs/standard/building-console-apps.md)  
+ <span data-ttu-id="e87e2-130">Décrit les principes fondamentaux de la création d'une application console à l'aide de la classe <xref:System.Console>.</span><span class="sxs-lookup"><span data-stu-id="e87e2-130">Describes the basics of creating a console application using the <xref:System.Console> class.</span></span>

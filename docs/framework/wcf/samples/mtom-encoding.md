@@ -1,42 +1,45 @@
 ---
-title: "MTOM Encoding | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: MTOM Encoding
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 820e316f-4ee1-4eb5-ae38-b6a536e8a14f
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 46984ea1ac08aa1128a4f32144285f590eafb6c0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# MTOM Encoding
-Cet exemple montre l'utilisation de l'encodage de message MTOM \(Message Transmission Optimization Mechanism\) à l'aide de WSHttpBinding.MTOM est un mécanisme permettant de transmettre des pièces jointes binaires de grande taille avec des messages SOAP sous forme d'octets bruts, et d'obtenir ainsi des messages plus petits.  
+# <a name="mtom-encoding"></a><span data-ttu-id="d3cd5-102">MTOM Encoding</span><span class="sxs-lookup"><span data-stu-id="d3cd5-102">MTOM Encoding</span></span>
+<span data-ttu-id="d3cd5-103">Cet exemple montre l'utilisation de l'encodage de message MTOM (Message Transmission Optimization Mechanism) à l'aide de WSHttpBinding.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-103">This sample demonstrates the use of the Message Transmission Optimization Mechanism (MTOM) message encoding with a WSHttpBinding.</span></span> <span data-ttu-id="d3cd5-104">MTOM est un mécanisme permettant de transmettre des pièces jointes binaires de grande taille avec des messages SOAP sous forme d'octets bruts, et d'obtenir ainsi des messages plus petits.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-104">MTOM is a mechanism for transmitting large binary attachments with SOAP messages as raw bytes, allowing for smaller messages.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="d3cd5-105">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-105">The samples may already be installed on your machine.</span></span> <span data-ttu-id="d3cd5-106">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-106">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="d3cd5-107">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="d3cd5-107">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="d3cd5-108">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-108">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MTOM`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MTOM`  
   
- Par défaut, WSHttpBinding envoie et reçoit des messages sous forme de texte XML normal.Pour permettre l'envoi et la réception de messages MTOM, définissez l'attribut `messageEncoding` sur la configuration de la liaison \(tel qu'indiqué dans l'exemple de code suivant\), ou directement sur la liaison à l'aide de la propriété `MessageEncoding`.Le service ou le client peut maintenant envoyer et recevoir des messages MTOM.  
+ <span data-ttu-id="d3cd5-109">Par défaut, WSHttpBinding envoie et reçoit des messages sous forme de texte XML normal.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-109">By default, the WSHttpBinding sends and received messages as normal text XML.</span></span> <span data-ttu-id="d3cd5-110">Pour permettre l'envoi et la réception de messages MTOM, définissez l'attribut `messageEncoding` sur la configuration de la liaison (tel qu'indiqué dans l'exemple de code suivant), ou directement sur la liaison à l'aide de la propriété `MessageEncoding`.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-110">To enable sending and receiving MTOM messages, set the `messageEncoding` attribute on the binding's configuration (as in the following example code), or directly on the binding using the `MessageEncoding` property.</span></span> <span data-ttu-id="d3cd5-111">Le service ou le client peut maintenant envoyer et recevoir des messages MTOM.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-111">The service or client can now send and receive MTOM messages.</span></span>  
   
-```  
+```xml  
 <wsHttpBinding>  
-    <binding name="WSHttpBinding_IUpload" messageEncoding="Mtom"/>  
+  <binding name="WSHttpBinding_IUpload" messageEncoding="Mtom" />  
 </wsHttpBinding>  
 ```  
   
- L'encodeur MTOM permet d'optimiser des tableaux d'octets et des flux.Dans cet exemple, l'opération utilise un paramètre `Stream` et peut donc être optimisée.  
+ <span data-ttu-id="d3cd5-112">L'encodeur MTOM permet d'optimiser des tableaux d'octets et des flux.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-112">The MTOM encoder can optimize arrays of bytes and streams.</span></span> <span data-ttu-id="d3cd5-113">Dans cet exemple, l'opération utilise un paramètre `Stream` et peut donc être optimisée.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-113">In this sample, the operation uses a `Stream` parameter and can therefore be optimized.</span></span>  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -47,7 +50,7 @@ Cet exemple montre l'utilisation de l'encodage de message MTOM \(Message Transmi
   }  
 ```  
   
- Le contrat choisi pour cet exemple transmet les données binaires au service et reçoit le nombre d'octets téléchargé comme valeur de retour.Lorsque le service est installé et que le client est exécuté, il imprime le nombre 1 000, qui indique que tous l'ensemble des 1 000 octets ont été reçus.Le reste de la sortie répertorie les tailles de message optimisées et non optimisées des diverses charges utiles.  
+ <span data-ttu-id="d3cd5-114">Le contrat choisi pour cet exemple transmet les données binaires au service et reçoit le nombre d'octets téléchargé comme valeur de retour.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-114">The contract chosen for this sample transmits binary data to the service and receives the number of bytes uploaded as the return value.</span></span> <span data-ttu-id="d3cd5-115">Lorsque le service est installé et que le client est exécuté, il imprime le nombre 1 000, qui indique que tous l'ensemble des 1 000 octets ont été reçus.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-115">When the service is installed and the client is run, it prints out the number 1000, which indicates that all 1000 bytes were received.</span></span> <span data-ttu-id="d3cd5-116">Le reste de la sortie répertorie les tailles de message optimisées et non optimisées des diverses charges utiles.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-116">The remainder of the output lists optimized and non-optimized message sizes for various payloads.</span></span>  
   
 ```  
 Output:  
@@ -71,21 +74,20 @@ MTOM encoding with a 1000000 byte payload: 1001080
 Press <ENTER> to terminate client.  
 ```  
   
- Le but de l'utilisation de MTOM est d'optimiser la transmission de charges utiles binaires de grande taille.L'envoi d'un message SOAP à l'aide de MTOM entraîne une surcharge significative pour les charges utiles binaires de petite taille, mais s'avère très avantageux lorsqu'elles passent à quelques milliers d'octets.La raison à cela est que le texte XML normal encode des données binaires à l'aide de Base64, qui requiert quatre caractères tous les trois octets, et augmente la taille des données d'un tiers.MTOM peut transmettre des données binaires sous forme d'octets bruts, ce qui permet de gagner du temps lors de l'encodage et du décodage et d'obtenir des messages plus petits.Le seuil de quelques milliers d'octets est petit comparé aux photographies numériques et documents professionnels actuels.  
+ <span data-ttu-id="d3cd5-117">Le but de l'utilisation de MTOM est d'optimiser la transmission de charges utiles binaires de grande taille.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-117">The purpose for using MTOM is to optimize the transmission of large binary payloads.</span></span> <span data-ttu-id="d3cd5-118">L'envoi d'un message SOAP à l'aide de MTOM entraîne une surcharge significative pour les charges utiles binaires de petite taille, mais s'avère très avantageux lorsqu'elles passent à quelques milliers d'octets.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-118">Sending a SOAP message using MTOM has a noticeable overhead for small binary payloads, but becomes a great savings when they grow over a few thousand bytes.</span></span> <span data-ttu-id="d3cd5-119">La raison à cela est que le texte XML normal encode des données binaires à l'aide de Base64, qui requiert quatre caractères tous les trois octets, et augmente la taille des données d'un tiers.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-119">The reason for this is that normal text XML encodes binary data using Base64, which requires four characters for every three bytes, and increases the size of the data by one third.</span></span> <span data-ttu-id="d3cd5-120">MTOM peut transmettre des données binaires sous forme d'octets bruts, ce qui permet de gagner du temps lors de l'encodage et du décodage et d'obtenir des messages plus petits.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-120">MTOM is able to transmit binary data as raw bytes, saving the encoding/decoding time and resulting is smaller messages.</span></span> <span data-ttu-id="d3cd5-121">Le seuil de quelques milliers d'octets est petit comparé aux photographies numériques et documents professionnels actuels.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-121">The threshold of a few thousand bytes is small when compared to today's business documents and digital photographs.</span></span>  
   
-### Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="d3cd5-122">Pour configurer, générer et exécuter l'exemple</span><span class="sxs-lookup"><span data-stu-id="d3cd5-122">To set up, build, and run the sample</span></span>  
   
-1.  Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.  
+1.  <span data-ttu-id="d3cd5-123">Installez [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 à l'aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="d3cd5-123">Install [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 using the following command.</span></span>  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
-2.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2.  <span data-ttu-id="d3cd5-124">Assurez-vous d’avoir effectué la [procédure d’installation d’à usage unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="d3cd5-124">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-3.  Pour générer l'édition C\# ou Visual Basic .NET de la solution, suivez les instructions indiquées dans [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  <span data-ttu-id="d3cd5-125">Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="d3cd5-125">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-4.  Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, conformez\-vous aux instructions figurant dans la rubrique [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  <span data-ttu-id="d3cd5-126">Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="d3cd5-126">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-## Voir aussi
+## <a name="see-also"></a><span data-ttu-id="d3cd5-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d3cd5-127">See Also</span></span>
