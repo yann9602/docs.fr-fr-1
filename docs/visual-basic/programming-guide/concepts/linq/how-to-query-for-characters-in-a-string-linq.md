@@ -1,41 +1,71 @@
 ---
-title: "Comment : interroger des caractères dans une chaîne (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger des caractères dans une chaîne (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 499ebbe0-746c-4235-9dba-ce722c12b50e
-caps.latest.revision: 4
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dabd63e52707f3078c6cdc41db8c4f0e7dfbf70e
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "4"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ebc832763e271cc53e9c95827c301f82e9a7578a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Comment : interroger des caractères dans une chaîne (LINQ) (Visual Basic)
-Étant donné que la <xref:System.String>classe implémente l’objet générique <xref:System.Collections.Generic.IEnumerable%601>interface, toute chaîne peut être interrogée comme une séquence de caractères.</xref:System.Collections.Generic.IEnumerable%601> </xref:System.String> Toutefois, cela n’est pas une utilisation courante de LINQ. Pour les opérations de mise en correspondance de modèles complexes, utilisez la <xref:System.Text.RegularExpressions.Regex>classe.</xref:System.Text.RegularExpressions.Regex>  
+# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a><span data-ttu-id="7de07-102">Comment : interroger des caractères dans une chaîne (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7de07-102">How to: Query for Characters in a String (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="7de07-103">La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères.</span><span class="sxs-lookup"><span data-stu-id="7de07-103">Because the <xref:System.String> class implements the generic <xref:System.Collections.Generic.IEnumerable%601> interface, any string can be queried as a sequence of characters.</span></span> <span data-ttu-id="7de07-104">Toutefois, ceci n’est pas une utilisation courante de LINQ.</span><span class="sxs-lookup"><span data-stu-id="7de07-104">However, this is not a common use of LINQ.</span></span> <span data-ttu-id="7de07-105">Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.</span><span class="sxs-lookup"><span data-stu-id="7de07-105">For complex pattern matching operations, use the <xref:System.Text.RegularExpressions.Regex> class.</span></span>  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant interroge une chaîne pour déterminer le nombre de chiffres qu’elle contient. Notez que la requête est « réutilisée » après sa première exécution. Cela est possible, car la requête elle-même ne stocke pas les résultats réels.  
+## <a name="example"></a><span data-ttu-id="7de07-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="7de07-106">Example</span></span>  
+ <span data-ttu-id="7de07-107">L’exemple suivant interroge une chaîne pour déterminer le nombre de chiffres qu’elle contient.</span><span class="sxs-lookup"><span data-stu-id="7de07-107">The following example queries a string to determine the number of numeric digits it contains.</span></span> <span data-ttu-id="7de07-108">Notez que la requête est « réutilisée » après sa première exécution.</span><span class="sxs-lookup"><span data-stu-id="7de07-108">Note that the query is "reused" after it is executed the first time.</span></span> <span data-ttu-id="7de07-109">Ceci est possible car la requête proprement dite ne stocke pas de résultats réels.</span><span class="sxs-lookup"><span data-stu-id="7de07-109">This is possible because the query itself does not store any actual results.</span></span>  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
-## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+```vb  
+Class QueryAString  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   
- [Comment : combiner des requêtes LINQ avec des Expressions régulières (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+    Shared Sub Main()  
+  
+        ' A string is an IEnumerable data source.  
+        Dim aString As String = "ABCDE99F-J74-12-89A"  
+  
+        ' Select only those characters that are numbers  
+        Dim stringQuery = From ch In aString   
+                          Where Char.IsDigit(ch)   
+                          Select ch  
+        ' Execute the query  
+        For Each c As Char In stringQuery  
+            Console.Write(c & " ")  
+        Next  
+  
+        ' Call the Count method on the existing query.  
+        Dim count As Integer = stringQuery.Count()  
+        Console.WriteLine(System.Environment.NewLine & "Count = " & count)  
+  
+        ' Select all characters before the first '-'  
+        Dim stringQuery2 = aString.TakeWhile(Function(c) c <> "-")  
+  
+        ' Execute the second query  
+        For Each ch In stringQuery2  
+            Console.Write(ch)  
+        Next  
+  
+        Console.WriteLine(System.Environment.NewLine & "Press any key to exit")  
+        Console.ReadKey()  
+    End Sub  
+End Class  
+' Output:  
+' 9 9 7 4 1 2 8 9   
+' Count = 8  
+' ABCDE99F  
+```  
+  
+## <a name="compiling-the-code"></a><span data-ttu-id="7de07-110">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="7de07-110">Compiling the Code</span></span>  
+ <span data-ttu-id="7de07-111">Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.</span><span class="sxs-lookup"><span data-stu-id="7de07-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="7de07-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7de07-112">See Also</span></span>  
+ [<span data-ttu-id="7de07-113">LINQ et chaînes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7de07-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
+ [<span data-ttu-id="7de07-114">Comment : combiner des requêtes LINQ avec des Expressions régulières (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7de07-114">How to: Combine LINQ Queries with Regular Expressions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

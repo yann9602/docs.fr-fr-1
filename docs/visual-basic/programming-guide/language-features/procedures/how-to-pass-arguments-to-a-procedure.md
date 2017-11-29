@@ -1,83 +1,66 @@
 ---
-title: "Comment : passer des Arguments à une procédure (Visual Basic) | Documents Microsoft"
+title: "Comment : passer des arguments à une procédure (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - arguments [Visual Basic], passing to procedures
-- procedures, arguments
-- procedures, parameters
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], parameters
 - procedure arguments
 - Visual Basic code, procedures
 - procedure parameters
-- procedures, calling
-- argument passing, procedures
+- procedures [Visual Basic], calling
+- argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ddccd476b2347368d0435f637edf3882db306f45
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 3debb4fa6e7b15f9c321ef207d0cc04181a98da2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Comment : passer des arguments à une procédure (Visual Basic)
-Lorsque vous appelez une procédure, vous suivez le nom de la procédure avec une liste d’arguments entre parenthèses. Vous fournissez un argument correspondant à chaque paramètre requis que la procédure définit et vous pouvez éventuellement fournir des arguments à le `Optional` paramètres. Si vous ne fournissez pas une `Optional` paramètre dans l’appel, vous devez inclure une virgule pour marquer sa place dans la liste d’arguments si vous fournissez des arguments suivants.  
+# <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a><span data-ttu-id="8ce83-102">Comment : passer des arguments à une procédure (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8ce83-102">How to: Pass Arguments to a Procedure (Visual Basic)</span></span>
+<span data-ttu-id="8ce83-103">Lorsque vous appelez une procédure, vous suivez le nom de la procédure avec une liste d’arguments entre parenthèses.</span><span class="sxs-lookup"><span data-stu-id="8ce83-103">When you call a procedure, you follow the procedure name with an argument list in parentheses.</span></span> <span data-ttu-id="8ce83-104">Vous fournissez un argument correspondant à chaque paramètre requis la procédure, et vous pouvez éventuellement fournir des arguments à la `Optional` paramètres.</span><span class="sxs-lookup"><span data-stu-id="8ce83-104">You supply an argument corresponding to every required parameter the procedure defines, and you can optionally supply arguments to the `Optional` parameters.</span></span> <span data-ttu-id="8ce83-105">Si vous ne fournissez pas un `Optional` paramètre dans l’appel, vous devez inclure une virgule pour marquer sa place dans la liste d’arguments si vous fournissez des arguments suivants.</span><span class="sxs-lookup"><span data-stu-id="8ce83-105">If you do not supply an `Optional` parameter in the call, you must include a comma to mark its place in the argument list if you are supplying any subsequent arguments.</span></span>  
   
- Si vous souhaitez passer un argument d’un type de données différent de celui de son paramètre correspondant, tel que `Byte` à `String`, vous pouvez définir le commutateur de vérification de type ([Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) à `Off`. Si `Option Strict` est `On`, vous devez utiliser l’élargissement des conversions ou des mots clés de conversion explicite. Pour plus d’informations, consultez [Conversions étendues et restrictives](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) et [les fonctions de Conversion de Type](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
+ <span data-ttu-id="8ce83-106">Si vous avez l’intention de passer un argument d’un type de données différent de celui de son paramètre correspondant, tel que `Byte` à `String`, vous pouvez définir le commutateur de vérification de type ([Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) à `Off`.</span><span class="sxs-lookup"><span data-stu-id="8ce83-106">If you intend to pass an argument of a data type different from that of its corresponding parameter, such as `Byte` to `String`, you can set the type-checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) to `Off`.</span></span> <span data-ttu-id="8ce83-107">Si `Option Strict` est `On`, vous devez utiliser soit conversions étendues ou mots clés de conversion explicite.</span><span class="sxs-lookup"><span data-stu-id="8ce83-107">If `Option Strict` is `On`, you must use either widening conversions or explicit conversion keywords.</span></span> <span data-ttu-id="8ce83-108">Pour plus d’informations, consultez [Conversions étendues et restrictives](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) et [les fonctions de Conversion de Type](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).</span><span class="sxs-lookup"><span data-stu-id="8ce83-108">For more information, see [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) and [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).</span></span>  
   
- Pour plus d’informations, consultez [paramètres de procédure et les Arguments](./procedure-parameters-and-arguments.md).  
+ <span data-ttu-id="8ce83-109">Pour plus d’informations, consultez [les paramètres de procédure et les Arguments](./procedure-parameters-and-arguments.md).</span><span class="sxs-lookup"><span data-stu-id="8ce83-109">For more information, see [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md).</span></span>  
   
-### <a name="to-pass-one-or-more-arguments-to-a-procedure"></a>Pour passer un ou plusieurs arguments à une procédure  
+### <a name="to-pass-one-or-more-arguments-to-a-procedure"></a><span data-ttu-id="8ce83-110">Pour passer un ou plusieurs arguments à une procédure</span><span class="sxs-lookup"><span data-stu-id="8ce83-110">To pass one or more arguments to a procedure</span></span>  
   
-1.  Dans l’instruction appelante, suivre le nom de la procédure entre parenthèses.  
+1.  <span data-ttu-id="8ce83-111">Dans l’instruction appelante, suivez le nom de la procédure avec des parenthèses.</span><span class="sxs-lookup"><span data-stu-id="8ce83-111">In the calling statement, follow the procedure name with parentheses.</span></span>  
   
-2.  À l’intérieur des parenthèses, placez une liste d’arguments. Inclure un argument pour chaque paramètre requis que la procédure définit et séparez les arguments par des virgules.  
+2.  <span data-ttu-id="8ce83-112">À l’intérieur des parenthèses, placez une liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="8ce83-112">Inside the parentheses, put an argument list.</span></span> <span data-ttu-id="8ce83-113">Inclure un argument pour chaque paramètre requis que la procédure définit et séparez les arguments par des virgules.</span><span class="sxs-lookup"><span data-stu-id="8ce83-113">Include an argument for each required parameter the procedure defines, and separate the arguments with commas.</span></span>  
   
-3.  Assurez-vous que chaque argument est une expression valide qui correspond à un type de données convertible au type de la procédure définit pour le paramètre correspondant.  
+3.  <span data-ttu-id="8ce83-114">Assurez-vous que chaque argument est une expression valide qui correspond à un type de données convertible au type de la procédure définit pour le paramètre correspondant.</span><span class="sxs-lookup"><span data-stu-id="8ce83-114">Make sure each argument is a valid expression that evaluates to a data type convertible to the type the procedure defines for the corresponding parameter.</span></span>  
   
-4.  Si un paramètre est défini en tant que [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md), vous pouvez inclure dans la liste d’arguments ou l’omettre. Si vous l’omettez, la procédure utilise la valeur par défaut définie pour ce paramètre.  
+4.  <span data-ttu-id="8ce83-115">Si un paramètre est défini en tant que [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md), vous pouvez inclure dans la liste d’arguments ou l’omettre.</span><span class="sxs-lookup"><span data-stu-id="8ce83-115">If a parameter is defined as [Optional](../../../../visual-basic/language-reference/modifiers/optional.md), you can either include it in the argument list or omit it.</span></span> <span data-ttu-id="8ce83-116">Si vous l’omettez, la procédure utilise la valeur par défaut définie pour ce paramètre.</span><span class="sxs-lookup"><span data-stu-id="8ce83-116">If you omit it, the procedure uses the default value defined for that parameter.</span></span>  
   
-5.  Si vous omettez un argument pour un `Optional` paramètre et qu’un autre paramètre après lui dans la liste de paramètres, vous pouvez marquer la place de l’argument omis par une virgule supplémentaire dans la liste d’arguments.  
+5.  <span data-ttu-id="8ce83-117">Si vous omettez un argument pour un `Optional` paramètre et qu’un autre paramètre après lui dans la liste de paramètres, vous pouvez marquer la place de l’argument omis par une virgule supplémentaire dans la liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="8ce83-117">If you omit an argument for an `Optional` parameter and there is another parameter after it in the parameter list, you can mark the place of the omitted argument by an extra comma in the argument list.</span></span>  
   
-     L’exemple suivant appelle la [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>fonction.</xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>  
+     <span data-ttu-id="8ce83-118">L’exemple suivant appelle la [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> (fonction).</span><span class="sxs-lookup"><span data-stu-id="8ce83-118">The following example calls the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function.</span></span>  
   
-     [!code-vb[VbVbcnProcedures&#34;](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
+     [!code-vb[VbVbcnProcedures#34](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
   
-     L’exemple précédent fournit le premier argument requis, qui est la chaîne de message à afficher. Omet un argument pour le second paramètre facultatif qui spécifie les boutons à afficher dans la boîte de message. Étant donné que l’appel ne fournit pas de valeur, `MsgBox` utilise la valeur par défaut, `MsgBoxStyle.OKOnly`, qui affiche uniquement une **OK** bouton.  
+     <span data-ttu-id="8ce83-119">L’exemple précédent fournit le premier argument obligatoire, qui est la chaîne de message à afficher.</span><span class="sxs-lookup"><span data-stu-id="8ce83-119">The preceding example supplies the required first argument, which is the message string to be displayed.</span></span> <span data-ttu-id="8ce83-120">Omet un argument pour le deuxième paramètre facultatif qui spécifie les boutons à afficher sur la boîte de message.</span><span class="sxs-lookup"><span data-stu-id="8ce83-120">It omits an argument for the optional second parameter, which specifies the buttons to be displayed on the message box.</span></span> <span data-ttu-id="8ce83-121">Étant donné que l’appel ne fournit pas de valeur, `MsgBox` utilise la valeur par défaut, `MsgBoxStyle.OKOnly`, qui affiche uniquement une **OK** bouton.</span><span class="sxs-lookup"><span data-stu-id="8ce83-121">Because the call does not supply a value, `MsgBox` uses the default value, `MsgBoxStyle.OKOnly`, which displays only an **OK** button.</span></span>  
   
-     La deuxième virgule dans la liste d’arguments marque la place du deuxième argument omis et la dernière chaîne est passée au troisième paramètre facultatif de `MsgBox`, qui représente le texte à afficher dans la barre de titre.  
+     <span data-ttu-id="8ce83-122">La deuxième virgule dans la liste d’arguments marque la place du deuxième argument omis et la dernière chaîne est passée au troisième paramètre facultatif de `MsgBox`, qui est le texte à afficher dans la barre de titre.</span><span class="sxs-lookup"><span data-stu-id="8ce83-122">The second comma in the argument list marks the place of the omitted second argument, and the last string is passed to the optional third parameter of `MsgBox`, which is the text to be displayed in the title bar.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Procédures Sub](./sub-procedures.md)   
- [Procédures Function](./function-procedures.md)   
- [Procédures de propriété](./property-procedures.md)   
- [Procédures d’opérateur](./operator-procedures.md)   
- [Comment : définir un paramètre pour une procédure](./how-to-define-a-parameter-for-a-procedure.md)   
- [Passage des Arguments par valeur et par référence](./passing-arguments-by-value-and-by-reference.md)   
- [Procédures récursives](./recursive-procedures.md)   
- [Surcharge de procédure](./procedure-overloading.md)   
- [Objets et Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [Programmation orientée objet](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)
+## <a name="see-also"></a><span data-ttu-id="8ce83-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ce83-123">See Also</span></span>  
+ [<span data-ttu-id="8ce83-124">Procédures Sub</span><span class="sxs-lookup"><span data-stu-id="8ce83-124">Sub Procedures</span></span>](./sub-procedures.md)  
+ [<span data-ttu-id="8ce83-125">Procédures Function</span><span class="sxs-lookup"><span data-stu-id="8ce83-125">Function Procedures</span></span>](./function-procedures.md)  
+ [<span data-ttu-id="8ce83-126">Procédures de propriété</span><span class="sxs-lookup"><span data-stu-id="8ce83-126">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="8ce83-127">Procédures d’opérateur</span><span class="sxs-lookup"><span data-stu-id="8ce83-127">Operator Procedures</span></span>](./operator-procedures.md)  
+ [<span data-ttu-id="8ce83-128">Guide pratique : définir un paramètre pour une procédure</span><span class="sxs-lookup"><span data-stu-id="8ce83-128">How to: Define a Parameter for a Procedure</span></span>](./how-to-define-a-parameter-for-a-procedure.md)  
+ [<span data-ttu-id="8ce83-129">Passage d’un argument par valeur et par référence</span><span class="sxs-lookup"><span data-stu-id="8ce83-129">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="8ce83-130">Procédures récursives</span><span class="sxs-lookup"><span data-stu-id="8ce83-130">Recursive Procedures</span></span>](./recursive-procedures.md)  
+ [<span data-ttu-id="8ce83-131">Surcharge de procédure</span><span class="sxs-lookup"><span data-stu-id="8ce83-131">Procedure Overloading</span></span>](./procedure-overloading.md)  
+ [<span data-ttu-id="8ce83-132">Objets et classes</span><span class="sxs-lookup"><span data-stu-id="8ce83-132">Objects and Classes</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [<span data-ttu-id="8ce83-133">Programmation orientée objet</span><span class="sxs-lookup"><span data-stu-id="8ce83-133">Object-Oriented Programming</span></span>](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)

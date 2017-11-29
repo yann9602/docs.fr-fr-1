@@ -1,31 +1,27 @@
 ---
-title: "Comment : interroger les métadonnées d’un Assembly avec réflexion (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger un Assembly &#39; métadonnées avec la réflexion (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 53caa336-ab83-4181-b0f6-5c87c5f9e4ee
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7c1bc26d7b23135dd45ad58ea0bd2510b7157448
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 718f8d78ac71c8d6d28f762e756eb2a0219fce19
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-visual-basic"></a>Comment : interroger les métadonnées d’un Assembly avec réflexion (LINQ) (Visual Basic)
-L’exemple suivant montre comment LINQ peut être utilisé avec la réflexion pour récupérer des métadonnées spécifiques concernant des méthodes qui correspondent à un critère de recherche spécifié. Dans ce cas, la requête identifie les noms de toutes les méthodes dans l’assembly qui retournent des types énumérables tels que les tableaux.  
+# <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-visual-basic"></a><span data-ttu-id="ead49-102">Comment : interroger un Assembly &#39; métadonnées avec la réflexion (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ead49-102">How to: Query An Assembly&#39;s Metadata with Reflection (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="ead49-103">L’exemple suivant montre comment utiliser LINQ avec la réflexion pour récupérer des métadonnées spécifiques concernant des méthodes qui correspondent à un critère de recherche spécifié.</span><span class="sxs-lookup"><span data-stu-id="ead49-103">The following example shows how LINQ can be used with reflection to retrieve specific metadata about methods that match a specified search criterion.</span></span> <span data-ttu-id="ead49-104">Ici, la requête va rechercher les noms de toutes les méthodes dans l’assembly qui retournent des types énumérables tels que des tableaux.</span><span class="sxs-lookup"><span data-stu-id="ead49-104">In this case, the query will find the names of all the methods in the assembly that return enumerable types such as arrays.</span></span>  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="ead49-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="ead49-105">Example</span></span>  
   
 ```vb  
 Imports System.Reflection  
@@ -59,10 +55,10 @@ Module Module1
 End Module  
 ```  
   
- L’exemple utilise le <xref:System.Reflection.Assembly.GetTypes%2A>méthode pour retourner un tableau de types dans l’assembly spécifié.</xref:System.Reflection.Assembly.GetTypes%2A> Le [une Clause Where](../../../../visual-basic/language-reference/queries/where-clause.md) filtre est appliqué afin que seuls les types publics sont retournés. Pour chaque type public, une sous-requête est générée à l’aide de le <xref:System.Reflection.MethodInfo>tableau qui est retourné à partir de la <xref:System.Type.GetMethods%2A>appeler.</xref:System.Type.GetMethods%2A> </xref:System.Reflection.MethodInfo> Ces résultats sont filtrés pour retourner uniquement les méthodes dont le type de retour est un tableau ou un type qui implémente <xref:System.Collections.Generic.IEnumerable%601>.</xref:System.Collections.Generic.IEnumerable%601> Enfin, ces résultats sont regroupés en utilisant le nom de type en tant que clé.  
+ <span data-ttu-id="ead49-106">L’exemple utilise la méthode <xref:System.Reflection.Assembly.GetTypes%2A> pour retourner un tableau de types de l’assembly spécifié.</span><span class="sxs-lookup"><span data-stu-id="ead49-106">The example uses the <xref:System.Reflection.Assembly.GetTypes%2A> method to return an array of types in the specified assembly.</span></span> <span data-ttu-id="ead49-107">Le [une Clause Where](../../../../visual-basic/language-reference/queries/where-clause.md) filtre est appliqué afin que seuls les types publics sont retournés.</span><span class="sxs-lookup"><span data-stu-id="ead49-107">The [Where Clause](../../../../visual-basic/language-reference/queries/where-clause.md) filter is applied so that only public types are returned.</span></span> <span data-ttu-id="ead49-108">Pour chaque type public, une sous-requête est générée en utilisant le tableau <xref:System.Reflection.MethodInfo> qui est retourné à partir de l’appel <xref:System.Type.GetMethods%2A>.</span><span class="sxs-lookup"><span data-stu-id="ead49-108">For each public type, a subquery is generated by using the <xref:System.Reflection.MethodInfo> array that is returned from the <xref:System.Type.GetMethods%2A> call.</span></span> <span data-ttu-id="ead49-109">Ces résultats sont filtrés pour retourner uniquement les méthodes dont le type de retour est un tableau ou un type qui implémente <xref:System.Collections.Generic.IEnumerable%601>.</span><span class="sxs-lookup"><span data-stu-id="ead49-109">These results are filtered to return only those methods whose return type is an array or else a type that implements <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="ead49-110">Pour finir, ces résultats sont regroupés en utilisant le nom de type comme clé.</span><span class="sxs-lookup"><span data-stu-id="ead49-110">Finally, these results are grouped by using the type name as a key.</span></span>  
   
-## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+## <a name="compiling-the-code"></a><span data-ttu-id="ead49-111">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="ead49-111">Compiling the Code</span></span>  
+ <span data-ttu-id="ead49-112">Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.</span><span class="sxs-lookup"><span data-stu-id="ead49-112">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+## <a name="see-also"></a><span data-ttu-id="ead49-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ead49-113">See Also</span></span>  
+ [<span data-ttu-id="ead49-114">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ead49-114">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

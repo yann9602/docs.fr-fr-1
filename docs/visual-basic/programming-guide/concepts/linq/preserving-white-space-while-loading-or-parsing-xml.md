@@ -1,58 +1,50 @@
 ---
-title: "Conservation des espaces lors du chargement ou de l’analyse XML2 | Documents Microsoft"
+title: "Conservation des espaces lors du chargement ou de l’analyse XML2"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 39e4270acc0e9a9df5c3855f8c087f41d9612197
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d99cea37bb9817c40a6d3876b72ccdbd84d7e7ba
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Conservation des espaces lors du chargement ou de l'analyse de code XML
-Cette rubrique décrit comment contrôler le comportement d'espace blanc de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
+# <a name="preserving-white-space-while-loading-or-parsing-xml"></a><span data-ttu-id="e518d-102">Conservation des espaces blancs lors du chargement ou de l’analyse de code XML</span><span class="sxs-lookup"><span data-stu-id="e518d-102">Preserving White Space while Loading or Parsing XML</span></span>
+<span data-ttu-id="e518d-103">Cette rubrique décrit comment contrôler le comportement d'espace blanc de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e518d-103">This topic describes how to control the white space behavior of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
- Un scénario courant consiste à lire le code XML mis en retrait, à créer une arborescence XML en mémoire sans nœuds d'espaces (autrement dit, ne pas conserver les espaces), à effectuer certaines opérations sur le code XML, puis à enregistrer le code XML avec mise en retrait. Lorsque vous sérialisez le code XML avec mise en forme, seuls les espaces significatifs dans l'arborescence XML sont conservés. Il s'agit du comportement par défaut pour [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
+ <span data-ttu-id="e518d-104">Un scénario courant consiste à lire le code XML mis en retrait, à créer une arborescence XML en mémoire sans nœuds d'espaces (autrement dit, ne pas conserver les espaces), à effectuer certaines opérations sur le code XML, puis à enregistrer le code XML avec mise en retrait.</span><span class="sxs-lookup"><span data-stu-id="e518d-104">A common scenario is to read indented XML, create an in-memory XML tree without any white space text nodes (that is, not preserving white space), perform some operations on the XML, and then save the XML with indentation.</span></span> <span data-ttu-id="e518d-105">Lorsque vous sérialisez le code XML avec mise en forme, seuls les espaces significatifs dans l'arborescence XML sont conservés.</span><span class="sxs-lookup"><span data-stu-id="e518d-105">When you serialize the XML with formatting, only significant white space in the XML tree is preserved.</span></span> <span data-ttu-id="e518d-106">Il s'agit du comportement par défaut pour [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e518d-106">This is the default behavior for [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
- Un autre scénario courant consiste à lire et à modifier du code XML qui a déjà été intentionnellement mis en retrait. Vous ne souhaiterez peut-être modifier cette mise en retrait en aucune manière. Pour ce faire dans [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)], vous devez conserver les espaces lorsque vous chargez ou analysez le code XML et que vous désactivez la mise en forme lors de la sérialisation du code XML.  
+ <span data-ttu-id="e518d-107">Un autre scénario courant consiste à lire et à modifier du code XML qui a déjà été intentionnellement mis en retrait.</span><span class="sxs-lookup"><span data-stu-id="e518d-107">Another common scenario is to read and modify XML that has already been intentionally indented.</span></span> <span data-ttu-id="e518d-108">Vous ne souhaiterez peut-être modifier cette mise en retrait en aucune manière.</span><span class="sxs-lookup"><span data-stu-id="e518d-108">You might not want to change this indentation in any way.</span></span> <span data-ttu-id="e518d-109">Pour ce faire dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous devez conserver les espaces lorsque vous chargez ou analysez le code XML et que vous désactivez la mise en forme lors de la sérialisation du code XML.</span><span class="sxs-lookup"><span data-stu-id="e518d-109">To do this in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you preserve white space when you load or parse the XML and disable formatting when you serialize the XML.</span></span>  
   
- Cette rubrique décrit le comportement des espaces blancs des méthodes qui remplissent les arborescences XML. Pour plus d’informations sur le contrôle des espaces blancs lorsque vous sérialisez des arborescences XML, consultez [conserver un espace blanc tandis que sérialisation](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).  
+ <span data-ttu-id="e518d-110">Cette rubrique décrit le comportement des espaces blancs des méthodes qui remplissent les arborescences XML.</span><span class="sxs-lookup"><span data-stu-id="e518d-110">This topic describes the white space behavior of methods that populate XML trees.</span></span> <span data-ttu-id="e518d-111">Pour plus d’informations sur le contrôle des espaces blancs quand vous sérialisez des arborescences XML, consultez [Conservation des espaces blancs lors de la sérialisation](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).</span><span class="sxs-lookup"><span data-stu-id="e518d-111">For information about controlling white space when you serialize XML trees, see [Preserving White Space While Serializing](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md).</span></span>  
   
-## <a name="behavior-of-methods-that-populate-xml-trees"></a>Comportement des méthodes qui remplissent des arborescences XML  
- Les méthodes suivantes dans le <xref:System.Xml.Linq.XElement>et <xref:System.Xml.Linq.XDocument>classes de remplissent une arborescence XML.</xref:System.Xml.Linq.XDocument> </xref:System.Xml.Linq.XElement> Vous pouvez remplir une arborescence XML à partir d’un fichier, un <xref:System.IO.TextReader>, un <xref:System.Xml.XmlReader>, ou une chaîne :</xref:System.Xml.XmlReader> </xref:System.IO.TextReader>  
+## <a name="behavior-of-methods-that-populate-xml-trees"></a><span data-ttu-id="e518d-112">Comportement des méthodes qui remplissent des arborescences XML</span><span class="sxs-lookup"><span data-stu-id="e518d-112">Behavior of Methods that Populate XML Trees</span></span>  
+ <span data-ttu-id="e518d-113">Les méthodes suivantes dans les classes <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XDocument> remplissent une arborescence XML.</span><span class="sxs-lookup"><span data-stu-id="e518d-113">The following methods in the <xref:System.Xml.Linq.XElement> and <xref:System.Xml.Linq.XDocument> classes populate an XML tree.</span></span> <span data-ttu-id="e518d-114">Vous pouvez remplir une arborescence XML à partir d'un fichier, d'un objet <xref:System.IO.TextReader>, d'un objet <xref:System.Xml.XmlReader> ou d'une chaîne :</span><span class="sxs-lookup"><span data-stu-id="e518d-114">You can populate an XML tree from a file, a <xref:System.IO.TextReader>, an <xref:System.Xml.XmlReader>, or a string:</span></span>  
   
--   <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>  
+-   <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=fullName>  
+-   <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName></xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>  
+-   <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=fullName></xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=fullName>  
+-   <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>  
   
- Si la méthode ne prend pas <xref:System.Xml.Linq.LoadOptions>en tant qu’argument, la méthode ne conserve pas les espaces blancs non significatifs.</xref:System.Xml.Linq.LoadOptions>  
+ <span data-ttu-id="e518d-115">Si la méthode ne prend pas l'objet <xref:System.Xml.Linq.LoadOptions> comme argument, elle ne conservera pas les espaces non significatifs.</span><span class="sxs-lookup"><span data-stu-id="e518d-115">If the method does not take <xref:System.Xml.Linq.LoadOptions> as an argument, the method will not preserve insignificant white space.</span></span>  
   
- Dans la plupart des cas, si la méthode accepte <xref:System.Xml.Linq.LoadOptions>en tant qu’argument, vous pouvez éventuellement conserver les espaces blancs non significatifs en tant que nœuds de texte dans l’arborescence XML.</xref:System.Xml.Linq.LoadOptions> Toutefois, si la méthode charge les données XML un <xref:System.Xml.XmlReader>, le <xref:System.Xml.XmlReader>détermine si les espaces blancs sont conservés.</xref:System.Xml.XmlReader> </xref:System.Xml.XmlReader> Définition <xref:System.Xml.Linq.LoadOptions>n’a aucun effet.</xref:System.Xml.Linq.LoadOptions>  
+ <span data-ttu-id="e518d-116">Dans la plupart des cas, si la méthode prend l'objet <xref:System.Xml.Linq.LoadOptions> comme argument, vous pouvez, si vous le souhaitez, conserver les espaces non significatifs en tant que nœuds de texte dans l'arborescence XML.</span><span class="sxs-lookup"><span data-stu-id="e518d-116">In most cases, if the method takes <xref:System.Xml.Linq.LoadOptions> as an argument, you can optionally preserve insignificant white space as text nodes in the XML tree.</span></span> <span data-ttu-id="e518d-117">Toutefois, si la méthode charge le code XML à partir d'un objet <xref:System.Xml.XmlReader>, l'objet <xref:System.Xml.XmlReader> détermine si les espaces seront conservés.</span><span class="sxs-lookup"><span data-stu-id="e518d-117">However, if the method is loading the XML from an <xref:System.Xml.XmlReader>, then the <xref:System.Xml.XmlReader> determines whether white space will be preserved or not.</span></span> <span data-ttu-id="e518d-118">La définition de <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> n'aura aucun effet.</span><span class="sxs-lookup"><span data-stu-id="e518d-118">Setting <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> will have no effect.</span></span>  
   
- Avec ces méthodes, si les espaces blancs sont conservés, espaces blancs non significatifs sont insérés dans l’arborescence XML en tant que <xref:System.Xml.Linq.XText>nœuds.</xref:System.Xml.Linq.XText> Si les espaces ne sont pas conservés, aucun nœud de texte n'est inséré.  
+ <span data-ttu-id="e518d-119">Avec ces méthodes, si les espaces sont conservés, des espaces non significatifs sont insérés dans l'arborescence XML en tant que nœuds <xref:System.Xml.Linq.XText>.</span><span class="sxs-lookup"><span data-stu-id="e518d-119">With these methods, if white space is preserved, insignificant white space is inserted into the XML tree as <xref:System.Xml.Linq.XText> nodes.</span></span> <span data-ttu-id="e518d-120">Si les espaces ne sont pas conservés, aucun nœud de texte n'est inséré.</span><span class="sxs-lookup"><span data-stu-id="e518d-120">If white space is not preserved, text nodes are not inserted.</span></span>  
   
- Vous pouvez créer une arborescence XML à l’aide d’un <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> Les nœuds qui sont écrits dans le <xref:System.Xml.XmlWriter>sont remplis dans l’arborescence.</xref:System.Xml.XmlWriter> Toutefois, lorsque vous générez une arborescence XML à l’aide de cette méthode, tous les nœuds sont conservés, qu’ils soient constitués d’espaces ou non et que ces espaces soient significatifs ou non.  
+ <span data-ttu-id="e518d-121">Vous pouvez créer une arborescence XML à l'aide d'un objet <xref:System.Xml.XmlWriter>.</span><span class="sxs-lookup"><span data-stu-id="e518d-121">You can create an XML tree by using an <xref:System.Xml.XmlWriter>.</span></span> <span data-ttu-id="e518d-122">Les nœuds écrits dans l'objet <xref:System.Xml.XmlWriter> sont remplis dans l'arborescence.</span><span class="sxs-lookup"><span data-stu-id="e518d-122">Nodes that are written to the <xref:System.Xml.XmlWriter> are populated in the tree.</span></span> <span data-ttu-id="e518d-123">Toutefois, lorsque vous générez une arborescence XML à l’aide de cette méthode, tous les nœuds sont conservés, qu’ils soient constitués d’espaces ou non et que ces espaces soient significatifs ou non.</span><span class="sxs-lookup"><span data-stu-id="e518d-123">However, when you build an XML tree using this method, all nodes are preserved, regardless of whether the node is white space or not, or whether the white space is significant or not.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [L’analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="e518d-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e518d-124">See Also</span></span>  
+ [<span data-ttu-id="e518d-125">L’analyse XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e518d-125">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

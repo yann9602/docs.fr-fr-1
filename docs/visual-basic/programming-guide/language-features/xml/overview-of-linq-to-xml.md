@@ -1,94 +1,77 @@
 ---
-title: "Vue d’ensemble de LINQ to XML dans Visual Basic | Documents Microsoft"
+title: Vue d'ensemble de LINQ to XML dans Visual Basic
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - LINQ to XML [Visual Basic], about LINQ to XML
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 508d4a97b0636f10607326eb35c4c5d8c7860873
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: baa60939654857f40d323b6412978ed4ff918177
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="overview-of-linq-to-xml-in-visual-basic"></a>Vue d'ensemble de LINQ to XML dans Visual Basic
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]Fournit la prise en charge de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] par le biais des littéraux XML et les propriétés d’axe XML. Cela vous permet d’utiliser une syntaxe familière et pratique pour travailler avec XML dans votre [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] code. *Littéraux XML* vous permettent d’inclure du XML directement dans votre code. *Propriétés d’axe XML* vous permettent d’accéder aux nœuds enfants, nœuds descendants et attributs d’un littéral XML. Pour plus d’informations, consultez [vue d’ensemble des littéraux XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) et [l’accès à XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
+# <a name="overview-of-linq-to-xml-in-visual-basic"></a><span data-ttu-id="92aae-102">Vue d'ensemble de LINQ to XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="92aae-102">Overview of LINQ to XML in Visual Basic</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="92aae-103">Fournit la prise en charge de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] par le biais des littéraux XML et les propriétés d’axe XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-103"> provides support for [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] through XML literals and XML axis properties.</span></span> <span data-ttu-id="92aae-104">Cela vous permet d’utiliser une syntaxe familière et pratique pour l’utilisation de code XML dans votre [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] code.</span><span class="sxs-lookup"><span data-stu-id="92aae-104">This enables you to use a familiar, convenient syntax for working with XML in your [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] code.</span></span> <span data-ttu-id="92aae-105">*Littéraux XML* vous permettent d’inclure du XML directement dans votre code.</span><span class="sxs-lookup"><span data-stu-id="92aae-105">*XML literals* enable you to include XML directly in your code.</span></span> <span data-ttu-id="92aae-106">*Propriétés d’axe XML* vous permettent d’accéder aux nœuds enfants, nœuds descendants et attributs d’un littéral XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-106">*XML axis properties* enable you to access child nodes, descendant nodes, and attributes of an XML literal.</span></span> <span data-ttu-id="92aae-107">Pour plus d’informations, consultez [vue d’ensemble des littéraux XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) et [l’accès à un XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).</span><span class="sxs-lookup"><span data-stu-id="92aae-107">For more information, see [XML Literals Overview](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) and [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).</span></span>  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]est spécifiquement conçue pour tirer parti des API de programmation XML en mémoire [!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)]. Bien que vous puissiez appeler le [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] API directement, uniquement [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] vous permet de déclarer des littéraux XML et accéder directement aux propriétés d’axe XML.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="92aae-108">est conçu spécifiquement pour tirer parti des API de programmation XML en mémoire [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].</span><span class="sxs-lookup"><span data-stu-id="92aae-108"> is an in-memory XML programming API designed specifically to take advantage of [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].</span></span> <span data-ttu-id="92aae-109">Bien que vous puissiez appeler les [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] API directement, uniquement [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] vous permet de déclarer des littéraux XML et accéder directement aux propriétés d’axe XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-109">Although you can call the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] APIs directly, only [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] enables you to declare XML literals and directly access XML axis properties.</span></span>  
   
 > [!NOTE]
->  Littéraux XML et les propriétés d’axe XML ne sont pas pris en charge dans le code déclaratif dans une page ASP.NET. Pour utiliser les fonctionnalités XML de Visual Basic, placez votre code dans une page code-behind dans votre application ASP.NET.  
+>  <span data-ttu-id="92aae-110">Littéraux XML et les propriétés d’axe XML ne sont pas pris en charge dans le code déclaratif dans une page ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="92aae-110">XML literals and XML axis properties are not supported in declarative code in an ASP.NET page.</span></span> <span data-ttu-id="92aae-111">Pour utiliser les fonctionnalités XML de Visual Basic, placez votre code dans une page code-behind dans votre application ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="92aae-111">To use Visual Basic XML features, put your code in a code-behind page in your ASP.NET application.</span></span>  
   
- ![lien vers la vidéo](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo") pour des démonstrations vidéo connexes, consultez [How Do I Get Started with LINQ to XML ?](http://go.microsoft.com/fwlink/?LinkId=143034) et [comment créer des feuilles de calcul Excel à l’aide de LINQ to XML ?](http://go.microsoft.com/fwlink/?LinkId=143536).  
+ <span data-ttu-id="92aae-112">![lien vers la vidéo](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo") pour des démonstrations vidéo connexes, consultez [How Do I Get Started with LINQ to XML ?](http://go.microsoft.com/fwlink/?LinkId=143034) et [comment faire pour créer des feuilles de calcul Excel à l’aide de LINQ to XML ?](http://go.microsoft.com/fwlink/?LinkId=143536).</span><span class="sxs-lookup"><span data-stu-id="92aae-112">![link to video](../../../../visual-basic/programming-guide/language-features/xml/media/playvideo.gif "PlayVideo") For related video demonstrations, see [How Do I Get Started with LINQ to XML?](http://go.microsoft.com/fwlink/?LinkId=143034) and [How Do I Create Excel Spreadsheets using LINQ to XML?](http://go.microsoft.com/fwlink/?LinkId=143536).</span></span>  
   
-## <a name="creating-xml"></a>Création de code XML  
- Il existe deux façons de créer des arborescences XML en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]. Vous pouvez déclarer un littéral XML directement dans le code, ou vous pouvez utiliser la [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] API pour créer l’arborescence. Les deux processus permettent au code afin de refléter la structure finale de l’arborescence XML. Par exemple, l’exemple de code suivant crée un élément XML :  
+## <a name="creating-xml"></a><span data-ttu-id="92aae-113">Création de XML</span><span class="sxs-lookup"><span data-stu-id="92aae-113">Creating XML</span></span>  
+ <span data-ttu-id="92aae-114">Il existe deux façons de créer des arborescences XML en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span><span class="sxs-lookup"><span data-stu-id="92aae-114">There are two ways to create XML trees in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span> <span data-ttu-id="92aae-115">Vous pouvez déclarer un littéral XML directement dans le code, ou vous pouvez utiliser la [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] API pour créer l’arborescence.</span><span class="sxs-lookup"><span data-stu-id="92aae-115">You can declare an XML literal directly in code, or you can use the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] APIs to create the tree.</span></span> <span data-ttu-id="92aae-116">Les deux processus permettent au code afin de refléter la structure finale de l’arborescence XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-116">Both processes enable the code to reflect the final structure of the XML tree.</span></span> <span data-ttu-id="92aae-117">Par exemple, l’exemple de code suivant crée un élément XML :</span><span class="sxs-lookup"><span data-stu-id="92aae-117">For example, the following code example creates an XML element:</span></span>  
   
- [!code-vb[VbXmlSamples n °&5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_1.vb)]  
+ [!code-vb[VbXmlSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_1.vb)]  
   
- Pour plus d’informations, consultez [création de XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).  
+ <span data-ttu-id="92aae-118">Pour plus d’informations, consultez [création de XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).</span><span class="sxs-lookup"><span data-stu-id="92aae-118">For more information, see [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).</span></span>  
   
-## <a name="accessing-and-navigating-xml"></a>Accès et navigation dans XML  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]Fournit des propriétés d’axe XML pour l’accès et la navigation dans les structures XML. Ces propriétés permettent d’accéder aux éléments et attributs XML en spécifiant les noms des éléments enfants XML. Sinon, vous pouvez appeler explicitement la [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] méthodes de navigation et de recherche d’éléments et attributs. Par exemple, l’exemple de code suivant utilise les propriétés d’axe XML pour faire référence aux attributs et éléments enfants d’un élément XML. L’exemple de code utilise un [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] requête pour récupérer des éléments enfants et les sortir comme éléments XML, en effectuant efficacement une transformation.  
+## <a name="accessing-and-navigating-xml"></a><span data-ttu-id="92aae-119">Accès et navigation dans XML</span><span class="sxs-lookup"><span data-stu-id="92aae-119">Accessing and Navigating XML</span></span>  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="92aae-120">Fournit des propriétés d’axe XML pour l’accès et la navigation dans les structures XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-120"> provides XML axis properties for accessing and navigating XML structures.</span></span> <span data-ttu-id="92aae-121">Ces propriétés permettent d’accéder aux éléments et attributs XML en spécifiant les noms des éléments enfants XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-121">These properties enable you to access XML elements and attributes by specifying the XML child element names.</span></span> <span data-ttu-id="92aae-122">Ou bien, vous pouvez appeler explicitement la [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] méthodes de navigation et recherche d’éléments et attributs.</span><span class="sxs-lookup"><span data-stu-id="92aae-122">Alternatively, you can explicitly call the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] methods for navigating and locating elements and attributes.</span></span> <span data-ttu-id="92aae-123">Par exemple, l’exemple de code suivant utilise les propriétés d’axe XML pour faire référence aux attributs et éléments enfants d’un élément XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-123">For example, the following code example uses XML axis properties to refer to the attributes and child elements of an XML element.</span></span> <span data-ttu-id="92aae-124">L’exemple de code utilise un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requête pour récupérer des éléments enfants et les sortir comme éléments XML, en effectuant efficacement une transformation.</span><span class="sxs-lookup"><span data-stu-id="92aae-124">The code example uses a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query to retrieve child elements and output them as XML elements, effectively performing a transform.</span></span>  
   
- [!code-vb[VbXmlSamples n °&8;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_2.vb)]  
+ [!code-vb[VbXmlSamples#8](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_2.vb)]  
   
- Pour plus d’informations, consultez [l’accès à XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
+ <span data-ttu-id="92aae-125">Pour plus d’informations, consultez [l’accès à un XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).</span><span class="sxs-lookup"><span data-stu-id="92aae-125">For more information, see [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).</span></span>  
   
-## <a name="xml-namespaces"></a>Espaces de noms XML  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]vous permet de spécifier un alias pour un espace de noms XML global en utilisant la `Imports` instruction. L’exemple suivant montre comment utiliser le `Imports` pour importer un espace de noms XML :  
+## <a name="xml-namespaces"></a><span data-ttu-id="92aae-126">Espaces de noms XML</span><span class="sxs-lookup"><span data-stu-id="92aae-126">XML Namespaces</span></span>  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="92aae-127">vous permet de spécifier un alias pour un espace de noms XML global à l’aide de la `Imports` instruction.</span><span class="sxs-lookup"><span data-stu-id="92aae-127"> enables you to specify an alias to a global XML namespace by using the `Imports` statement.</span></span> <span data-ttu-id="92aae-128">L’exemple suivant montre comment utiliser la `Imports` instruction pour importer un espace de noms XML :</span><span class="sxs-lookup"><span data-stu-id="92aae-128">The following example shows how to use the `Imports` statement to import an XML namespace:</span></span>  
   
- [!code-vb[VbXMLSamples n °&1;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_3.vb)]  
+ [!code-vb[VbXMLSamples#1](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_3.vb)]  
   
- Vous pouvez utiliser un alias d’espace de noms XML lorsque vous accéder aux propriétés d’axe XML et déclarez des littéraux XML pour les documents XML et des éléments.  
+ <span data-ttu-id="92aae-129">Vous pouvez utiliser un alias d’espace de noms XML lorsque vous accéder aux propriétés d’axe XML et déclarez des littéraux XML pour les documents XML et des éléments.</span><span class="sxs-lookup"><span data-stu-id="92aae-129">You can use an XML namespace alias when you access XML axis properties and declare XML literals for XML documents and elements.</span></span>  
   
- Vous pouvez récupérer un <xref:System.Xml.Linq.XNamespace>objet pour un préfixe d’espace de noms particulier à l’aide de la [GetXmlNamespace, opérateur](../../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md).</xref:System.Xml.Linq.XNamespace>  
+ <span data-ttu-id="92aae-130">Vous pouvez récupérer un <xref:System.Xml.Linq.XNamespace> objet pour un préfixe d’espace de noms particulier à l’aide de la [opérateur GetXmlNamespace](../../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md).</span><span class="sxs-lookup"><span data-stu-id="92aae-130">You can retrieve an <xref:System.Xml.Linq.XNamespace> object for a particular namespace prefix by using the [GetXmlNamespace Operator](../../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md).</span></span>  
   
- Pour plus d’informations, consultez [l’instruction Imports (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
+ <span data-ttu-id="92aae-131">Pour plus d’informations, consultez [Imports, instruction (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="92aae-131">For more information, see [Imports Statement (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).</span></span>  
   
-### <a name="using-xml-namespaces-in-xml-literals"></a>À l’aide des espaces de noms XML dans les littéraux XML  
- L’exemple suivant montre comment créer un <xref:System.Xml.Linq.XElement>objet qui utilise l’espace de noms global `ns`:</xref:System.Xml.Linq.XElement>  
+### <a name="using-xml-namespaces-in-xml-literals"></a><span data-ttu-id="92aae-132">À l’aide des espaces de noms XML dans les littéraux XML</span><span class="sxs-lookup"><span data-stu-id="92aae-132">Using XML Namespaces in XML Literals</span></span>  
+ <span data-ttu-id="92aae-133">L’exemple suivant montre comment créer un <xref:System.Xml.Linq.XElement> objet qui utilise l’espace de noms global `ns`:</span><span class="sxs-lookup"><span data-stu-id="92aae-133">The following example shows how to create an <xref:System.Xml.Linq.XElement> object that uses the global namespace `ns`:</span></span>  
   
- [!code-vb[VbXMLSamples n °&2;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_4.vb)]  
+ [!code-vb[VbXMLSamples#2](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_4.vb)]  
   
- Le [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compilateur traduit les littéraux XML qui contiennent des alias d’espace de noms XML en code équivalent, qui utilise la notation XML pour l’utilisation d’espaces de noms XML, avec la `xmlns` attribut. Lors de la compilation, le code dans l’exemple précédent produit essentiellement le même code exécutable que l’exemple suivant :  
+ <span data-ttu-id="92aae-134">Le [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compilateur traduit les littéraux XML qui contiennent des alias d’espace de noms XML en code équivalent, qui utilise la notation XML pour l’utilisation d’espaces de noms XML, avec la `xmlns` attribut.</span><span class="sxs-lookup"><span data-stu-id="92aae-134">The [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler translates XML literals that contain XML namespace aliases into equivalent code that uses the XML notation for using XML namespaces, with the `xmlns` attribute.</span></span> <span data-ttu-id="92aae-135">Lors de la compilation, le code dans l’exemple précédent produit essentiellement le même code exécutable comme l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="92aae-135">When compiled, the code in the previous section's example produces essentially the same executable code as the following example:</span></span>  
   
- [!code-vb[VbXMLSamples n °&3;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_5.vb)]  
+ [!code-vb[VbXMLSamples#3](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_5.vb)]  
   
-### <a name="using-xml-namespaces-in-xml-axis-properties"></a>À l’aide des espaces de noms XML dans les propriétés d’axe XML  
- Espaces de noms XML déclarés dans les littéraux XML ne sont pas disponibles pour une utilisation dans les propriétés d’axe XML. Toutefois, espaces de noms globaux peut être utilisé avec les propriétés d’axe XML. Utilisez un signe deux-points pour séparer le préfixe d’espace de noms XML à partir du nom de l’élément local. Voici un exemple :  
+### <a name="using-xml-namespaces-in-xml-axis-properties"></a><span data-ttu-id="92aae-136">À l’aide des espaces de noms XML dans les propriétés d’axe XML</span><span class="sxs-lookup"><span data-stu-id="92aae-136">Using XML Namespaces in XML Axis Properties</span></span>  
+ <span data-ttu-id="92aae-137">Espaces de noms XML déclarés dans les littéraux XML ne sont pas disponibles pour une utilisation dans les propriétés d’axe XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-137">XML namespaces declared in XML literals are not available for use in XML axis properties.</span></span> <span data-ttu-id="92aae-138">Toutefois, espaces de noms globaux peut être utilisé avec les propriétés d’axe XML.</span><span class="sxs-lookup"><span data-stu-id="92aae-138">However, global namespaces can be used with the XML axis properties.</span></span> <span data-ttu-id="92aae-139">Utilisez un signe deux-points pour séparer le préfixe d’espace de noms XML à partir du nom de l’élément local.</span><span class="sxs-lookup"><span data-stu-id="92aae-139">Use a colon to separate the XML namespace prefix from the local element name.</span></span> <span data-ttu-id="92aae-140">Voici un exemple :</span><span class="sxs-lookup"><span data-stu-id="92aae-140">Following is an example:</span></span>  
   
- [!code-vb[VbXMLSamples n °&4;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_6.vb)]  
+ [!code-vb[VbXMLSamples#4](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/overview-of-linq-to-xml_6.vb)]  
   
-## <a name="see-also"></a>Voir aussi  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)   
- [Création de code XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
- [Accès au code XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)   
- [Manipulation de XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+## <a name="see-also"></a><span data-ttu-id="92aae-141">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="92aae-141">See Also</span></span>  
+ [<span data-ttu-id="92aae-142">XML</span><span class="sxs-lookup"><span data-stu-id="92aae-142">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ [<span data-ttu-id="92aae-143">Création de code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="92aae-143">Creating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ [<span data-ttu-id="92aae-144">Accès au code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="92aae-144">Accessing XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
+ [<span data-ttu-id="92aae-145">Manipulation de code XML dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="92aae-145">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)

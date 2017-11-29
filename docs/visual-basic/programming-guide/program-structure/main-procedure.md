@@ -1,50 +1,48 @@
 ---
-title: "Main Procedure in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Main"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Main procedure"
-  - "Main method [Visual Basic]"
-  - "main function"
+title: "Procédure Main dans Visual Basic"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Main
+helpviewer_keywords:
+- Main procedure
+- Main method [Visual Basic]
+- main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 90550ce3e62e4afbc94e2d383fa73db7178633d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Main Procedure in Visual Basic
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Toutes les applications Visual Basic doivent contenir une procédure appelée `Main`.  Cette procédure sert de point de départ et de contrôle général de l'application.  .NET Framework appelle votre procédure `Main` lorsqu'il a chargé votre application et qu'il est prêt à lui passer le contrôle.  À moins que vous ne créiez une application Windows Forms, vous devez écrire la procédure `Main` pour les applications qui s'exécutent seules.  
+# <a name="main-procedure-in-visual-basic"></a><span data-ttu-id="8ae00-102">Procédure Main dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8ae00-102">Main Procedure in Visual Basic</span></span>
+<span data-ttu-id="8ae00-103">Toutes les applications Visual Basic doivent contenir une procédure appelée `Main`.</span><span class="sxs-lookup"><span data-stu-id="8ae00-103">Every Visual Basic application must contain a procedure called `Main`.</span></span> <span data-ttu-id="8ae00-104">Cette procédure sert de point de départ et contrôle général pour votre application.</span><span class="sxs-lookup"><span data-stu-id="8ae00-104">This procedure serves as the starting point and overall control for your application.</span></span> <span data-ttu-id="8ae00-105">Le .NET Framework appelle votre `Main` procédure lorsqu’il a chargé votre application et est prêt à passer le contrôle.</span><span class="sxs-lookup"><span data-stu-id="8ae00-105">The .NET Framework calls your `Main` procedure when it has loaded your application and is ready to pass control to it.</span></span> <span data-ttu-id="8ae00-106">Sauf si vous créez une application Windows Forms, vous devez écrire le `Main` procédure pour les applications qui s’exécutent sur leurs propres.</span><span class="sxs-lookup"><span data-stu-id="8ae00-106">Unless you are creating a Windows Forms application, you must write the `Main` procedure for applications that run on their own.</span></span>  
   
- `Main` contient le code qui s'exécute en premier.  Dans `Main`, vous pouvez identifier le premier formulaire à être chargé lors du démarrage du programme, savoir si une copie de votre application s'exécute déjà sur le système, définir un ensemble de variables pour votre application ou ouvrir une base de données requise par l'application.  
+ <span data-ttu-id="8ae00-107">`Main`contient le code qui s’exécute en premier.</span><span class="sxs-lookup"><span data-stu-id="8ae00-107">`Main` contains the code that runs first.</span></span> <span data-ttu-id="8ae00-108">Dans `Main`, vous pouvez déterminer quel formulaire doit d’abord être chargé au démarrage du programme, savoir si une copie de votre application est déjà en cours d’exécution sur le système, définir un ensemble de variables pour votre application ou ouvrir une base de données requise par l’application.</span><span class="sxs-lookup"><span data-stu-id="8ae00-108">In `Main`, you can determine which form is to be loaded first when the program starts, find out if a copy of your application is already running on the system, establish a set of variables for your application, or open a database that the application requires.</span></span>  
   
-## Conditions de la procédure Main  
- Un fichier qui s'exécute seul \(généralement avec l'extension .exe\) doit contenir une procédure `Main`.  Une bibliothèque \(par exemple avec l'extension .dll\) ne s'exécute pas toute seule et ne requiert pas de procédure `Main`.  Les conditions relatives à ces différents types de projet que vous pouvez créer sont les suivantes :  
+## <a name="requirements-for-the-main-procedure"></a><span data-ttu-id="8ae00-109">Configuration requise pour la procédure principale</span><span class="sxs-lookup"><span data-stu-id="8ae00-109">Requirements for the Main Procedure</span></span>  
+ <span data-ttu-id="8ae00-110">Un fichier qui s’exécute sur sa propre (généralement avec l’extension .exe) doit contenir un `Main` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-110">A file that runs on its own (usually with extension .exe) must contain a `Main` procedure.</span></span> <span data-ttu-id="8ae00-111">Une bibliothèque (par exemple avec l’extension .dll) ne s’exécute pas son propre et ne requiert pas un `Main` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-111">A library (for example with extension .dll) does not run on its own and does not require a `Main` procedure.</span></span> <span data-ttu-id="8ae00-112">La configuration requise pour les différents types de projets que vous pouvez créer est les suivantes :</span><span class="sxs-lookup"><span data-stu-id="8ae00-112">The requirements for the different types of projects you can create are as follows:</span></span>  
   
--   Les applications console s'exécutent toutes seules et vous devez fournir au moins une procédure `Main`.  .  
+-   <span data-ttu-id="8ae00-113">Applications console s’exécutent leurs propres, et vous devez fournir au moins un `Main` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-113">Console applications run on their own, and you must supply at least one `Main` procedure.</span></span> <span data-ttu-id="8ae00-114">.</span><span class="sxs-lookup"><span data-stu-id="8ae00-114">.</span></span>  
   
--   Les applications Windows Forms s'exécutent toutes seules.  Toutefois, le compilateur Visual Basic génère automatiquement une procédure `Main` dans une telle application et vous n'avez pas besoin d'en écrire une.  
+-   <span data-ttu-id="8ae00-115">Applications Windows Forms s’exécutent sur leurs propres.</span><span class="sxs-lookup"><span data-stu-id="8ae00-115">Windows Forms applications run on their own.</span></span> <span data-ttu-id="8ae00-116">Toutefois, le compilateur Visual Basic génère automatiquement un `Main` procédure telle une application et que vous n’avez pas besoin d’écrire un.</span><span class="sxs-lookup"><span data-stu-id="8ae00-116">However, the Visual Basic compiler automatically generates a `Main` procedure in such an application, and you do not need to write one.</span></span>  
   
--   Les bibliothèques ne requièrent pas de procédure `Main`.  Celles\-ci comprennent les bibliothèques de contrôles Windows et les bibliothèques de contrôles Web.  Les applications Web sont déployées comme des bibliothèques de classes.  
+-   <span data-ttu-id="8ae00-117">Bibliothèques de classes ne nécessitent pas une `Main` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-117">Class libraries do not require a `Main` procedure.</span></span> <span data-ttu-id="8ae00-118">Il s’agit notamment des bibliothèques de contrôles Windows et les bibliothèques de contrôles Web.</span><span class="sxs-lookup"><span data-stu-id="8ae00-118">These include Windows Control Libraries and Web Control Libraries.</span></span> <span data-ttu-id="8ae00-119">Les applications Web sont déployées en tant que bibliothèques de classes.</span><span class="sxs-lookup"><span data-stu-id="8ae00-119">Web applications are deployed as class libraries.</span></span>  
   
-## Déclaration de la procédure Main  
- Il existe quatre méthodes possibles pour déclarer la procédure `Main` :  Elle peut prendre ou non des arguments, retourner ou non une valeur.  
+## <a name="declaring-the-main-procedure"></a><span data-ttu-id="8ae00-120">Déclaration de la procédure principale</span><span class="sxs-lookup"><span data-stu-id="8ae00-120">Declaring the Main Procedure</span></span>  
+ <span data-ttu-id="8ae00-121">Il existe quatre méthodes pour déclarer le `Main` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-121">There are four ways to declare the `Main` procedure.</span></span> <span data-ttu-id="8ae00-122">Il peut accepter des arguments ou non, et elle peut retourner une valeur ou non.</span><span class="sxs-lookup"><span data-stu-id="8ae00-122">It can take arguments or not, and it can return a value or not.</span></span>  
   
 > [!NOTE]
->  Si vous déclarez la procédure `Main` dans une classe, vous devez utiliser le mot clé `Shared`.  Dans un module, la procédure `Main` n'a pas besoin d'être partagée \(`Shared`\).  
+>  <span data-ttu-id="8ae00-123">Si vous déclarez `Main` dans une classe, vous devez utiliser le `Shared` (mot clé).</span><span class="sxs-lookup"><span data-stu-id="8ae00-123">If you declare `Main` in a class, you must use the `Shared` keyword.</span></span> <span data-ttu-id="8ae00-124">Dans un module, `Main` n’est pas nécessaire de `Shared`.</span><span class="sxs-lookup"><span data-stu-id="8ae00-124">In a module, `Main` does not need to be `Shared`.</span></span>  
   
--   La méthode la plus simple consiste à déclarer une procédure `Sub` que ne prend pas d'arguments et ne retourne pas de valeur.  
+-   <span data-ttu-id="8ae00-125">La façon la plus simple consiste à déclarer un `Sub` procédure qui n’a pas été acceptent des arguments ou une valeur de retour.</span><span class="sxs-lookup"><span data-stu-id="8ae00-125">The simplest way is to declare a `Sub` procedure that does not take arguments or return a value.</span></span>  
   
     ```  
     Module mainModule  
@@ -56,7 +54,7 @@ Toutes les applications Visual Basic doivent contenir une procédure appelée `M
     End Module  
     ```  
   
--   La procédure `Main` peut également retourner une valeur `Integer`, que le système d'exploitation utilise comme code de sortie du programme.  D'autres programmes peuvent tester ce code en examinant la valeur ERRORLEVEL Windows.  Pour retourner un code de sortie, vous devez déclarer `Main` comme une procédure `Function` et non comme une procédure `Sub`.  
+-   <span data-ttu-id="8ae00-126">`Main`peut également retourner un `Integer` valeur, que le système d’exploitation utilise comme code de sortie de votre programme.</span><span class="sxs-lookup"><span data-stu-id="8ae00-126">`Main` can also return an `Integer` value, which the operating system uses as the exit code for your program.</span></span> <span data-ttu-id="8ae00-127">Autres programmes peuvent tester ce code en examinant la valeur ERRORLEVEL Windows.</span><span class="sxs-lookup"><span data-stu-id="8ae00-127">Other programs can test this code by examining the Windows ERRORLEVEL value.</span></span> <span data-ttu-id="8ae00-128">Pour retourner un code de sortie, vous devez déclarer `Main` comme un `Function` procédure au lieu d’un `Sub` procédure.</span><span class="sxs-lookup"><span data-stu-id="8ae00-128">To return an exit code, you must declare `Main` as a `Function` procedure instead of a `Sub` procedure.</span></span>  
   
     ```  
     Module mainModule  
@@ -73,7 +71,7 @@ Toutes les applications Visual Basic doivent contenir une procédure appelée `M
     End Module  
     ```  
   
--   `Main` peut également prendre comme argument un tableau `String`.  Chaque chaîne du tableau contient un des arguments de ligne de commande utilisés pour appeler le programme.  Vous pouvez réaliser diverses actions en fonction de leurs valeurs.  
+-   <span data-ttu-id="8ae00-129">`Main`peut également prendre une `String` tableau en tant qu’argument.</span><span class="sxs-lookup"><span data-stu-id="8ae00-129">`Main` can also take a `String` array as an argument.</span></span> <span data-ttu-id="8ae00-130">Chaque chaîne dans le tableau contient un des arguments de ligne de commande utilisés pour appeler votre programme.</span><span class="sxs-lookup"><span data-stu-id="8ae00-130">Each string in the array contains one of the command-line arguments used to invoke your program.</span></span> <span data-ttu-id="8ae00-131">Vous pouvez effectuer des actions différentes en fonction de leurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="8ae00-131">You can take different actions depending on their values.</span></span>  
   
     ```  
     Module mainModule  
@@ -97,7 +95,7 @@ Toutes les applications Visual Basic doivent contenir une procédure appelée `M
     End Module  
     ```  
   
--   Vous pouvez déclarer `Main` de sorte à examiner les arguments de ligne de commande, sans qu'elle ne retourne toutefois un code de sortie.  
+-   <span data-ttu-id="8ae00-132">Vous pouvez déclarer `Main` à examiner les arguments de ligne de commande, mais pas retourner un code de sortie, comme suit.</span><span class="sxs-lookup"><span data-stu-id="8ae00-132">You can declare `Main` to examine the command-line arguments but not return an exit code, as follows.</span></span>  
   
     ```  
     Module mainModule  
@@ -117,15 +115,15 @@ Toutes les applications Visual Basic doivent contenir une procédure appelée `M
     End Module  
     ```  
   
-## Voir aussi  
- <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>   
- <xref:System.Array.Length%2A>   
- <xref:Microsoft.VisualBasic.Information.UBound%2A>   
- [Structure of a Visual Basic Program](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)   
- [NIB: Visual Basic Version of Hello, World](http://msdn.microsoft.com/fr-fr/9d030b60-e148-4366-a462-69532f02294c)   
- [\/main](../../../visual-basic/reference/command-line-compiler/main.md)   
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Integer Data Type](../../../visual-basic/language-reference/data-types/integer-data-type.md)   
- [String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md)
+## <a name="see-also"></a><span data-ttu-id="8ae00-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8ae00-133">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>  
+ <xref:System.Array.Length%2A>  
+ <xref:Microsoft.VisualBasic.Information.UBound%2A>  
+ [<span data-ttu-id="8ae00-134">Structure d’un programme Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8ae00-134">Structure of a Visual Basic Program</span></span>](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)  
+ [<span data-ttu-id="8ae00-135">NIB : Version de Visual Basic de Hello, World</span><span class="sxs-lookup"><span data-stu-id="8ae00-135">NIB: Visual Basic Version of Hello, World</span></span>](http://msdn.microsoft.com/en-us/9d030b60-e148-4366-a462-69532f02294c)  
+ [<span data-ttu-id="8ae00-136">/main</span><span class="sxs-lookup"><span data-stu-id="8ae00-136">/main</span></span>](../../../visual-basic/reference/command-line-compiler/main.md)  
+ [<span data-ttu-id="8ae00-137">Shared</span><span class="sxs-lookup"><span data-stu-id="8ae00-137">Shared</span></span>](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [<span data-ttu-id="8ae00-138">Sub (instruction)</span><span class="sxs-lookup"><span data-stu-id="8ae00-138">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="8ae00-139">Function (instruction)</span><span class="sxs-lookup"><span data-stu-id="8ae00-139">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="8ae00-140">Integer (type de données)</span><span class="sxs-lookup"><span data-stu-id="8ae00-140">Integer Data Type</span></span>](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [<span data-ttu-id="8ae00-141">String (type de données)</span><span class="sxs-lookup"><span data-stu-id="8ae00-141">String Data Type</span></span>](../../../visual-basic/language-reference/data-types/string-data-type.md)
