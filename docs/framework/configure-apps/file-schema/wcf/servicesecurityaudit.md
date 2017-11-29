@@ -1,73 +1,80 @@
 ---
-title: "&lt;serviceSecurityAudit&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;serviceSecurityAudit&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-caps.latest.revision: 17
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: f0c708c19761f6086e1b5c2fdd15904c76fe3de9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;serviceSecurityAudit&gt;
-Spécifie des paramètres qui activent l'audit d'événements de sécurité pendant des opérations de service.  
+# <a name="ltservicesecurityauditgt"></a><span data-ttu-id="06b34-102">&lt;serviceSecurityAudit&gt;</span><span class="sxs-lookup"><span data-stu-id="06b34-102">&lt;serviceSecurityAudit&gt;</span></span>
+<span data-ttu-id="06b34-103">Spécifie des paramètres qui activent l'audit d'événements de sécurité pendant des opérations de service.</span><span class="sxs-lookup"><span data-stu-id="06b34-103">Specifies settings that enable auditing of security events during service operations.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="06b34-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="06b34-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="06b34-105">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="06b34-105">\<behaviors></span></span>  
+<span data-ttu-id="06b34-106">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="06b34-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="06b34-107">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="06b34-107">\<behavior></span></span>  
+<span data-ttu-id="06b34-108">\<serviceSecurityAudit ></span><span class="sxs-lookup"><span data-stu-id="06b34-108">\<serviceSecurityAudit></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="06b34-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="06b34-109">Syntax</span></span>  
   
+```xml  
 <serviceSecurityAudit   
    auditLogLocation="Default/Application/Security"  
-   messageAuthenticationAuditLevel= None/Success/Failure/SuccessAndFailure"  
-   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessAndFailure"  
+   messageAuthenticationAuditLevel= None/Success/Failure/SuccessAndFailure"   serviceAuthorizationAuditLevel="None/Success/Failure/SuccessAndFailure"  
    suppressAuditFailure="Boolean"  
 />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="06b34-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="06b34-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="06b34-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="06b34-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="06b34-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="06b34-112">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|auditLogLocation|Spécifie l'emplacement du journal d'audit.  Les valeurs valides sont les suivantes :<br /><br /> -   Default : les événements de sécurité sont écrits dans le journal des applications sur Windows XP et dans le journal des événements sur Windows Server 2003 et Windows Vista.<br />-   Application : les événements d'audit sont écrits dans le journal des événements de l'application.<br />-   Security : les événements d'audit sont écrits dans le journal sécurité.<br /><br /> La valeur par défaut est Default.  Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLogLocation>.|  
-|suppressAuditFailure|Valeur booléenne qui spécifie le comportement permettant de supprimer les erreurs d'écriture dans le journal d'audit.<br /><br /> Les applications doivent être averties des erreurs d'écriture dans le journal d'audit.  Si votre application n'est pas conçue pour gérer les erreurs d'audit, vous devez utiliser cet attribut pour supprimer les erreurs d'écriture dans le journal d'audit.<br /><br /> Si cet attribut a pour valeur `true`, les exceptions autres qu'OutOfMemoryException, StackOverFlowException, ThreadAbortException et ArgumentException qui résultent de tentatives d'écriture d'événements d'audit sont contrôlées par le système et ne sont pas propagées dans l'application.  Si cet attribut a pour valeur `false`, toutes les exceptions qui résultent de tentatives d'écriture d'événements d'audit sont passées à l'application.<br /><br /> La valeur par défaut est `true`.|  
-|serviceAuthorizationAuditLevel|Spécifie les types d'événements d'autorisation enregistrés dans le journal d'audit.  Les valeurs valides sont les suivantes :<br /><br /> -   None : aucun audit d'événements d'autorisation de service n'est exécuté.<br />-   Success : seuls les événements d'autorisation de service réussis sont audités.<br />-   Failure : seuls les événements d'autorisation de service en échec sont audités.<br />-   SuccessAndFailure : les événements d'autorisation de service réussis et en échec sont audités.<br /><br /> La valeur par défaut est None.  Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLevel>.|  
-|messageAuthenticationAuditLevel|Spécifie le type d'événements d'audit d'authentification de message enregistrés.  Les valeurs valides sont les suivantes :<br /><br /> -   None : aucun événement d'audit n'est généré.<br />-   Success : seuls les événements de sécurité \(validation complète y compris la validation de la signature du message, le chiffrement et la validation de jeton\) réussis sont enregistrés.<br />-   Failure : seuls les événements en échec sont enregistrés.<br />-   SuccessAndFailure : les événements réussis et en échec sont enregistrés.<br /><br /> La valeur par défaut est None.  Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLevel>.|  
+|<span data-ttu-id="06b34-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="06b34-113">Attribute</span></span>|<span data-ttu-id="06b34-114">Description</span><span class="sxs-lookup"><span data-stu-id="06b34-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="06b34-115">auditLogLocation</span><span class="sxs-lookup"><span data-stu-id="06b34-115">auditLogLocation</span></span>|<span data-ttu-id="06b34-116">Spécifie l'emplacement du journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="06b34-116">Specifies the location of the audit log.</span></span> <span data-ttu-id="06b34-117">Les valeurs valides sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="06b34-117">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="06b34-118">-Valeur par défaut : Événements de sécurité sont écrits dans le journal des applications sur Windows XP et dans le journal des événements sur Windows Server 2003 et Windows Vista.</span><span class="sxs-lookup"><span data-stu-id="06b34-118">-   Default: Security events are written to the application log on Windows XP, and to the Event Log on Windows Server 2003 and Windows Vista.</span></span><br /><span data-ttu-id="06b34-119">-Application : Les événements d’Audit sont écrits dans le journal des événements.</span><span class="sxs-lookup"><span data-stu-id="06b34-119">-   Application: Audit events are written to the Application Event Log.</span></span><br /><span data-ttu-id="06b34-120">-Security : Les événements d’Audit sont écrits dans le journal des événements de sécurité.</span><span class="sxs-lookup"><span data-stu-id="06b34-120">-   Security: Audit events are written to the Security Event Log.</span></span><br /><br /> <span data-ttu-id="06b34-121">La valeur par défaut est Default.</span><span class="sxs-lookup"><span data-stu-id="06b34-121">The default value is Default.</span></span> <span data-ttu-id="06b34-122">Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLogLocation>.</span><span class="sxs-lookup"><span data-stu-id="06b34-122">For more information, see <xref:System.ServiceModel.AuditLogLocation>.</span></span>|  
+|<span data-ttu-id="06b34-123">suppressAuditFailure</span><span class="sxs-lookup"><span data-stu-id="06b34-123">suppressAuditFailure</span></span>|<span data-ttu-id="06b34-124">Valeur booléenne qui spécifie le comportement permettant de supprimer les erreurs d'écriture dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="06b34-124">A Boolean value that specifies the behavior for suppressing failures of writing to the audit log.</span></span><br /><br /> <span data-ttu-id="06b34-125">Les applications doivent être averties des erreurs d'écriture dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="06b34-125">Applications should be notified for failures of writing to the audit log.</span></span> <span data-ttu-id="06b34-126">Si votre application n'est pas conçue pour gérer les erreurs d'audit, vous devez utiliser cet attribut pour supprimer les erreurs d'écriture dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="06b34-126">If your application is not designed to handle audit failures, you should use this attribute to suppress failures in writing to the audit log.</span></span><br /><br /> <span data-ttu-id="06b34-127">Si cet attribut a pour valeur `true`, les exceptions autres qu'OutOfMemoryException, StackOverFlowException, ThreadAbortException et ArgumentException qui résultent de tentatives d'écriture d'événements d'audit sont contrôlées par le système et ne sont pas propagées dans l'application.</span><span class="sxs-lookup"><span data-stu-id="06b34-127">If this attribute is `true`, exceptions other than OutOfMemoryException, StackOverFlowException, ThreadAbortException, and ArgumentException that result from attempts to write audit events are handled by the system, and are not propagated to the application.</span></span> <span data-ttu-id="06b34-128">Si cet attribut a pour valeur `false`, toutes les exceptions qui résultent de tentatives d'écriture d'événements d'audit sont passées à l'application.</span><span class="sxs-lookup"><span data-stu-id="06b34-128">If this attribute is `false`, all exceptions that result from attempts to write audit events are passed up to the application.</span></span><br /><br /> <span data-ttu-id="06b34-129">La valeur par défaut est `true`.</span><span class="sxs-lookup"><span data-stu-id="06b34-129">The default is `true`.</span></span>|  
+|<span data-ttu-id="06b34-130">serviceAuthorizationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="06b34-130">serviceAuthorizationAuditLevel</span></span>|<span data-ttu-id="06b34-131">Spécifie les types d'événements d'autorisation enregistrés dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="06b34-131">Specifies the types of authorization events that are recorded in the audit log.</span></span> <span data-ttu-id="06b34-132">Les valeurs valides sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="06b34-132">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="06b34-133">-None : Aucun audit d’événements d’autorisation de service est effectuée.</span><span class="sxs-lookup"><span data-stu-id="06b34-133">-   None: No auditing of service authorization events is performed.</span></span><br /><span data-ttu-id="06b34-134">-Réussite : Seuls les événements d’autorisation service réussis sont audités.</span><span class="sxs-lookup"><span data-stu-id="06b34-134">-   Success: Only successful service authorization events are audited.</span></span><br /><span data-ttu-id="06b34-135">-Failure : Seuls les événements d’autorisation de service échec sont audités.</span><span class="sxs-lookup"><span data-stu-id="06b34-135">-   Failure: Only failure service authorization events are audited.</span></span><br /><span data-ttu-id="06b34-136">-SuccessAndFailure : Les événements d’autorisation du service réussite et d’échec sont audités.</span><span class="sxs-lookup"><span data-stu-id="06b34-136">-   SuccessAndFailure: Both success and failure service authorization events are audited.</span></span><br /><br /> <span data-ttu-id="06b34-137">La valeur par défaut est None.</span><span class="sxs-lookup"><span data-stu-id="06b34-137">The default value is None.</span></span> <span data-ttu-id="06b34-138">Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLevel>.</span><span class="sxs-lookup"><span data-stu-id="06b34-138">For more information, see <xref:System.ServiceModel.AuditLevel>.</span></span>|  
+|<span data-ttu-id="06b34-139">messageAuthenticationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="06b34-139">messageAuthenticationAuditLevel</span></span>|<span data-ttu-id="06b34-140">Spécifie le type d'événements d'audit d'authentification de message enregistrés.</span><span class="sxs-lookup"><span data-stu-id="06b34-140">Specifies the type of message authentication audit events logged.</span></span> <span data-ttu-id="06b34-141">Les valeurs valides sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="06b34-141">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="06b34-142">-None : Aucun événement d’audit est générées.</span><span class="sxs-lookup"><span data-stu-id="06b34-142">-   None: No audit events are generated.</span></span><br /><span data-ttu-id="06b34-143">-Réussite : Uniquement événements de sécurité (validation complète y compris la validation de signature de message, le chiffrement et validation du jeton) réussis sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="06b34-143">-   Success: Only successful security (full validation including message signature validation, cipher, and token validation) events are logged.</span></span><br /><span data-ttu-id="06b34-144">-Failure : Seuls les événements d’échec sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="06b34-144">-   Failure: Only failure events are logged.</span></span><br /><span data-ttu-id="06b34-145">-SuccessAndFailure : Les événements de réussite et d’échec sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="06b34-145">-   SuccessAndFailure: Both success and failure events are logged.</span></span><br /><br /> <span data-ttu-id="06b34-146">La valeur par défaut est None.</span><span class="sxs-lookup"><span data-stu-id="06b34-146">The default value is None.</span></span> <span data-ttu-id="06b34-147">Pour plus d'informations, consultez <xref:System.ServiceModel.AuditLevel>.</span><span class="sxs-lookup"><span data-stu-id="06b34-147">For more information, see <xref:System.ServiceModel.AuditLevel>.</span></span>|  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a><span data-ttu-id="06b34-148">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="06b34-148">Child Elements</span></span>  
+ <span data-ttu-id="06b34-149">Aucun.</span><span class="sxs-lookup"><span data-stu-id="06b34-149">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="06b34-150">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="06b34-150">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="06b34-151">Élément</span><span class="sxs-lookup"><span data-stu-id="06b34-151">Element</span></span>|<span data-ttu-id="06b34-152">Description</span><span class="sxs-lookup"><span data-stu-id="06b34-152">Description</span></span>|  
 |-------------|-----------------|  
-|[\<comportement\>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
+|[<span data-ttu-id="06b34-153">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="06b34-153">\<behavior></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|<span data-ttu-id="06b34-154">Spécifie un élément de comportement.</span><span class="sxs-lookup"><span data-stu-id="06b34-154">Specifies a behavior element.</span></span>|  
   
-## Notes  
- Cet élément de configuration sert à effectuer un audit des événements d'authentification [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  Lorsque l'audit est activé, il est possible de réaliser l'audit des tentatives d'authentification réussies ou échouées \(ou les deux\).  Les événements sont écrits dans l'un des trois journaux des événements : application, sécurité ou journal par défaut de la version du système d'exploitation.  Les journaux des événements peuvent être consultés à l'aide de l'Observateur d'événements Windows.  
+## <a name="remarks"></a><span data-ttu-id="06b34-155">Remarques</span><span class="sxs-lookup"><span data-stu-id="06b34-155">Remarks</span></span>  
+ <span data-ttu-id="06b34-156">Cet élément de configuration sert à effectuer un audit des événements d'authentification [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="06b34-156">This configuraton element is used to audit [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] authentication events.</span></span> <span data-ttu-id="06b34-157">Lorsque l'audit est activé, il est possible de réaliser l'audit des tentatives d'authentification réussies ou échouées (ou les deux).</span><span class="sxs-lookup"><span data-stu-id="06b34-157">When auditing is enabled, either successful or failed authentication attempts (or both) can be audited.</span></span> <span data-ttu-id="06b34-158">Les événements sont écrits dans l'un des trois journaux des événements : application, sécurité ou journal par défaut de la version du système d'exploitation.</span><span class="sxs-lookup"><span data-stu-id="06b34-158">The events are written to one of three event logs: application, security, or the default log for the operating system version.</span></span> <span data-ttu-id="06b34-159">Les journaux des événements peuvent être consultés à l'aide de l'Observateur d'événements Windows.</span><span class="sxs-lookup"><span data-stu-id="06b34-159">The event logs can all be viewed using the Windows Event viewer.</span></span>  
   
- Pour obtenir un exemple détaillé de l'utilisation de cet élément de configuration, consultez [Service Auditing Behavior](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).  
+ <span data-ttu-id="06b34-160">Pour obtenir un exemple détaillé de l’utilisation de cet élément de configuration, consultez [comportement de l’audit du Service](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).</span><span class="sxs-lookup"><span data-stu-id="06b34-160">For a detailed example of using this configuration element, see [Service Auditing Behavior](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md).</span></span>  
   
- Par défaut, sur Windows XP, les événements d'audit peuvent être consultés dans le journal des applications, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité.  L'emplacement des événements d'audit peut être spécifié en affectant la valeur 'Application' ou 'Security' à l'attribut `auditLogLocation`.  Pour plus d'informations, consultez [Comment : auditer des événements de sécurité](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  Si les événements sont écrits dans le journal de sécurité, LocalSecurityPolicy\-\> Enable Object Access doit être défini sur « Success » et « Failure ».  
+ <span data-ttu-id="06b34-161">Par défaut, sur Windows XP, les événements d’audit peuvent être consultés dans le journal des applications, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité.</span><span class="sxs-lookup"><span data-stu-id="06b34-161">By default, on Windows XP the audit events can be seen in the Application Log; while on Windows Server 2003 and Windows Vista, the audit events can be seen in the Security Log.</span></span> <span data-ttu-id="06b34-162">L'emplacement des événements d'audit peut être spécifié en affectant la valeur 'Application' ou 'Security' à l'attribut `auditLogLocation`.</span><span class="sxs-lookup"><span data-stu-id="06b34-162">The location of audit events can be specified by setting the `auditLogLocation` attribute to 'Application' or 'Security'.</span></span> <span data-ttu-id="06b34-163">Pour plus d’informations, consultez [Comment : auditer les événements de sécurité](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).</span><span class="sxs-lookup"><span data-stu-id="06b34-163">For more information, see [How to: Audit Security Events](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).</span></span> <span data-ttu-id="06b34-164">Si les événements sont écrits dans le journal de sécurité, LocalSecurityPolicy-> Enable Object Access doit être défini sur « Success » et « Failure ».</span><span class="sxs-lookup"><span data-stu-id="06b34-164">If the events are written in the Security Log, the LocalSecurityPolicy-> Enable Object Access should be set for "Success" and "Failure".</span></span>  
   
- Lors de la consultation du journal des événements, la source des événements d'audit est « ServiceModel Audit 3.0.0.0 ».  Les enregistrements de l'audit d'authentification du message portent la catégorie « MessageAuthentication », tandis que les enregistrements de l'audit d'autorisation du service portent la catégorie « ServiceAuthorization ».  
+ <span data-ttu-id="06b34-165">Lors de la consultation du journal des événements, la source des événements d'audit est « ServiceModel Audit 3.0.0.0 ».</span><span class="sxs-lookup"><span data-stu-id="06b34-165">When looking at the event log, the source of the audit events is "ServiceModel Audit 3.0.0.0".</span></span> <span data-ttu-id="06b34-166">Les enregistrements de l'audit d'authentification du message portent la catégorie « MessageAuthentication », tandis que les enregistrements de l'audit d'autorisation du service portent la catégorie « ServiceAuthorization ».</span><span class="sxs-lookup"><span data-stu-id="06b34-166">Message authentication audit records have a category of "MessageAuthentication" while service authorization audit records have a category of 'ServiceAuthorization'.</span></span>  
   
- Les événements de l'audit d'authentification du message permettent de savoir si le message a été falsifié, s'il a expiré et si le client peut s'authentifier auprès du service.  Ils fournissent des informations sur la réussite ou l'échec de l'authentification, l'identité du client, le point de terminaison auquel le message a été envoyé et l'action associée au message.  
+ <span data-ttu-id="06b34-167">Les événements de l'audit d'authentification du message permettent de savoir si le message a été falsifié, s'il a expiré et si le client peut s'authentifier auprès du service.</span><span class="sxs-lookup"><span data-stu-id="06b34-167">Message authentication audit events cover whether the message was tampered with, whether the message has expired and whether the client can authenticate to the service.</span></span> <span data-ttu-id="06b34-168">Ils fournissent des informations sur la réussite ou l'échec de l'authentification, l'identité du client, le point de terminaison auquel le message a été envoyé et l'action associée au message.</span><span class="sxs-lookup"><span data-stu-id="06b34-168">They provide information about whether the authentication succeeded or failed along with the identity of the client and the endpoint the message was sent to along with the action associated with the message.</span></span>  
   
- Les événements de l'audit d'autorisation du service permettent de connaître la décision d'autorisation prise par un gestionnaire d'autorisation du service.  Ils fournissent des informations sur la réussite ou l'échec de l'autorisation, l'identité du client, le point de terminaison auquel le message a été envoyé, l'action associée au message, l'identificateur du contexte d'autorisation généré à partir du message entrant et le type du gestionnaire d'autorisations qui a pris la décision d'accès.  
+ <span data-ttu-id="06b34-169">Les événements de l'audit d'autorisation du service permettent de connaître la décision d'autorisation prise par un gestionnaire d'autorisation du service.</span><span class="sxs-lookup"><span data-stu-id="06b34-169">Service authorization audit events cover the authorization decision made by a service authorization manager.</span></span> <span data-ttu-id="06b34-170">Ils fournissent des informations sur la réussite ou l'échec de l'autorisation, l'identité du client, le point de terminaison auquel le message a été envoyé, l'action associée au message, l'identificateur du contexte d'autorisation généré à partir du message entrant et le type du gestionnaire d'autorisations qui a pris la décision d'accès.</span><span class="sxs-lookup"><span data-stu-id="06b34-170">They provide information about whether authorization succeeded of failed along with the identity of the client, the endpoint the message was sent to, the action associated with the message, the identifier of the authorization context that was generated from the incoming message and the type of the authorization manager that made the access decision.</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="06b34-171">Exemple</span><span class="sxs-lookup"><span data-stu-id="06b34-171">Example</span></span>  
   
-```  
+```xml  
 <system.serviceModel>  
    <serviceBehaviors>  
       <behavior name="NewBehavior">  
@@ -80,10 +87,10 @@ Spécifie des paramètres qui activent l'audit d'événements de sécurité pend
 </behaviors>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>   
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>   
- [Comportements de sécurité](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [Audit](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)   
- [Comment : auditer des événements de sécurité](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)   
- [Service Auditing Behavior](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)
+## <a name="see-also"></a><span data-ttu-id="06b34-172">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="06b34-172">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
+ [<span data-ttu-id="06b34-173">Comportements de sécurité</span><span class="sxs-lookup"><span data-stu-id="06b34-173">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="06b34-174">L’audit</span><span class="sxs-lookup"><span data-stu-id="06b34-174">Auditing</span></span>](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
+ [<span data-ttu-id="06b34-175">Comment : auditer les événements de sécurité</span><span class="sxs-lookup"><span data-stu-id="06b34-175">How to: Audit Security Events</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [<span data-ttu-id="06b34-176">Comportement de l’audit de service</span><span class="sxs-lookup"><span data-stu-id="06b34-176">Service Auditing Behavior</span></span>](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)

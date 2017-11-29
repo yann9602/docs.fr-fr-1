@@ -1,32 +1,34 @@
 ---
-title: "&lt;messageLogging&gt;&lt;/messageLogging&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;enregistrement des messages&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e5b232e3faf1e0e8976b0c08264c8ba03988902a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;messageLogging&gt;&lt;/messageLogging&gt;
-Cet élément définit les paramètres pour les fonctions d'enregistrement des messages de Windows Communication Foundation (WCF).  
+# <a name="ltmessagelogginggt"></a><span data-ttu-id="31293-102">&lt;enregistrement des messages&gt;</span><span class="sxs-lookup"><span data-stu-id="31293-102">&lt;messageLogging&gt;</span></span>
+<span data-ttu-id="31293-103">Cet élément définit les paramètres pour les fonctions d'enregistrement des messages de Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="31293-103">This element defines the settings for the message-logging capabilities of Windows Communication Foundation (WCF).</span></span>  
   
- \<system.ServiceModel>  
-<>\>  
-<>\>  
+ <span data-ttu-id="31293-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="31293-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="31293-105">\<diagnostic ></span><span class="sxs-lookup"><span data-stu-id="31293-105">\<diagnostic></span></span>  
+<span data-ttu-id="31293-106">\<enregistrement des messages ></span><span class="sxs-lookup"><span data-stu-id="31293-106">\<messageLogging></span></span>  
   
-## <a name="syntax"></a>Syntaxe  
+## <a name="syntax"></a><span data-ttu-id="31293-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31293-107">Syntax</span></span>  
   
-```  
-  
+```xml  
 <system.serviceModel>  
    <diagnostics>  
        <messageLogging logEntireMessage="Boolean"  
@@ -43,40 +45,40 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 </system.serviceModel>  
 ```  
   
-## <a name="attributes-and-elements"></a>Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="31293-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="31293-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="31293-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="31293-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>Attributs  
+### <a name="attributes"></a><span data-ttu-id="31293-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="31293-110">Attributes</span></span>  
   
-|Attribut|Description|  
+|<span data-ttu-id="31293-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="31293-111">Attribute</span></span>|<span data-ttu-id="31293-112">Description</span><span class="sxs-lookup"><span data-stu-id="31293-112">Description</span></span>|  
 |---------------|-----------------|  
-|`logEntireMessage`|Valeur booléenne qui spécifie si le message entier (en-tête et corps du message) est enregistré. La valeur par défaut est `false` ce qui signifie que seul l'en-tête de message est enregistré. Ce paramètre affecte tous les niveaux d'enregistrement de message (messages de service, de transport et malformés).|  
-|`logMalformedMessages`|Valeur booléenne qui spécifie si les messages incorrects sont enregistrés. Les messages incorrects ne comptent pas pour le `maxMessagesToLog`. La valeur par défaut est `false`.|  
-|`logMessagesAtServiceLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du service (avant les transformations associées au chiffrement et au transport). La valeur par défaut est `false`.|  
-|`logMessagesAtTransportLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du transport. Tous les filtres spécifiés dans le fichier de configuration sont appliqués et seuls les messages qui correspondent aux filtres sont suivis. La valeur par défaut est `false`.|  
-|`maxMessagesToLog`|Entier positif qui spécifie le nombre maximal de messages à enregistrer. La valeur par défaut est 1000.|  
-|`maxSizeOfMessageToLog`|Entier positif qui spécifie la taille maximale, en octets, d'un message à enregistrer. Les messages plus grands que la limite ne seront pas enregistrés. Ce paramètre affecte tous les niveaux de suivi. La valeur par défaut est 262144(0x4000).|  
+|`logEntireMessage`|<span data-ttu-id="31293-113">Valeur booléenne qui spécifie si le message entier (en-tête et corps du message) est enregistré.</span><span class="sxs-lookup"><span data-stu-id="31293-113">A Boolean value that specifies whether the entire message (message header and body) is logged.</span></span> <span data-ttu-id="31293-114">La valeur par défaut est `false` ce qui signifie que seul l'en-tête de message est enregistré.</span><span class="sxs-lookup"><span data-stu-id="31293-114">The default is `false`, which means that only the message header is logged.</span></span> <span data-ttu-id="31293-115">Ce paramètre affecte tous les niveaux d'enregistrement de message (messages de service, de transport et malformés).</span><span class="sxs-lookup"><span data-stu-id="31293-115">This setting affects all message logging levels (service, transport, and malformed).</span></span>|  
+|`logMalformedMessages`|<span data-ttu-id="31293-116">Valeur booléenne qui spécifie si les messages incorrects sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="31293-116">A Boolean value that specifies whether malformed messages are logged.</span></span> <span data-ttu-id="31293-117">Les messages incorrects ne comptent pas pour le `maxMessagesToLog`.</span><span class="sxs-lookup"><span data-stu-id="31293-117">Malformed messages do not count toward the `maxMessagesToLog`.</span></span> <span data-ttu-id="31293-118">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="31293-118">The default is `false`.</span></span>|  
+|`logMessagesAtServiceLevel`|<span data-ttu-id="31293-119">Valeur booléenne qui spécifie si les messages sont suivis au niveau du service (avant les transformations associées au chiffrement et au transport).</span><span class="sxs-lookup"><span data-stu-id="31293-119">A Boolean value that specifies whether messages are traced at the service level (before encryption- and transport-related transforms).</span></span> <span data-ttu-id="31293-120">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="31293-120">The default is `false`.</span></span>|  
+|`logMessagesAtTransportLevel`|<span data-ttu-id="31293-121">Valeur booléenne qui spécifie si les messages sont suivis au niveau du transport.</span><span class="sxs-lookup"><span data-stu-id="31293-121">A Boolean value that specifies whether messages are traced at the transport level.</span></span> <span data-ttu-id="31293-122">Tous les filtres spécifiés dans le fichier de configuration sont appliqués et seuls les messages qui correspondent aux filtres sont suivis.</span><span class="sxs-lookup"><span data-stu-id="31293-122">Any filters specified in the config file are applied, and only messages that match the filters are traced.</span></span> <span data-ttu-id="31293-123">La valeur par défaut est `false`.</span><span class="sxs-lookup"><span data-stu-id="31293-123">The default is `false`.</span></span>|  
+|`maxMessagesToLog`|<span data-ttu-id="31293-124">Entier positif qui spécifie le nombre maximal de messages à enregistrer.</span><span class="sxs-lookup"><span data-stu-id="31293-124">A positive integer that specifies the maximum number of messages to log.</span></span> <span data-ttu-id="31293-125">La valeur par défaut est 1000.</span><span class="sxs-lookup"><span data-stu-id="31293-125">The default is 1000.</span></span>|  
+|`maxSizeOfMessageToLog`|<span data-ttu-id="31293-126">Entier positif qui spécifie la taille maximale, en octets, d'un message à enregistrer.</span><span class="sxs-lookup"><span data-stu-id="31293-126">A positive integer that specifies the maximum size, in bytes, of a message to log.</span></span> <span data-ttu-id="31293-127">Les messages plus grands que la limite ne seront pas enregistrés.</span><span class="sxs-lookup"><span data-stu-id="31293-127">Messages larger than the limit will not be logged.</span></span> <span data-ttu-id="31293-128">Ce paramètre affecte tous les niveaux de suivi.</span><span class="sxs-lookup"><span data-stu-id="31293-128">This setting affects all trace levels.</span></span> <span data-ttu-id="31293-129">La valeur par défaut est 262144(0x4000).</span><span class="sxs-lookup"><span data-stu-id="31293-129">The default is 262144(0x4000).</span></span>|  
   
-### <a name="child-elements"></a>Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="31293-130">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="31293-130">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="31293-131">Élément</span><span class="sxs-lookup"><span data-stu-id="31293-131">Element</span></span>|<span data-ttu-id="31293-132">Description</span><span class="sxs-lookup"><span data-stu-id="31293-132">Description</span></span>|  
 |-------------|-----------------|  
-|filtres|L'élément `filters` maintient une collection de filtres XPath. Lorsque l'enregistrement des messages de transport est activé (`logMessagesAtTransportLevel` a la valeur `true`), seuls les messages correspondant aux filtres sont enregistrés.<br /><br /> Les filtres sont appliqués uniquement à la couche transport. Le niveau de service et l'enregistrement du message incorrect ne sont pas affectés par les filtres.<br /><br /> Le seul attribut pour cet élément, `filter`, est un XpathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
+|<span data-ttu-id="31293-133">filtres</span><span class="sxs-lookup"><span data-stu-id="31293-133">filters</span></span>|<span data-ttu-id="31293-134">L'élément `filters` maintient une collection de filtres XPath.</span><span class="sxs-lookup"><span data-stu-id="31293-134">The `filters` element holds a collection of XPath filters.</span></span> <span data-ttu-id="31293-135">Lorsque l'enregistrement des messages de transport est activé (`logMessagesAtTransportLevel` a la valeur `true`), seuls les messages correspondant aux filtres sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="31293-135">When transport message logging is enabled (`logMessagesAtTransportLevel` is `true`), only messages matching the filters will be logged.</span></span><br /><br /> <span data-ttu-id="31293-136">Les filtres sont appliqués uniquement à la couche transport.</span><span class="sxs-lookup"><span data-stu-id="31293-136">Filters are applied only at the transport layer.</span></span> <span data-ttu-id="31293-137">Le niveau de service et l'enregistrement du message incorrect ne sont pas affectés par les filtres.</span><span class="sxs-lookup"><span data-stu-id="31293-137">Service level and malformed message logging are not affected by filters.</span></span><br /><br /> <span data-ttu-id="31293-138">Le seul attribut pour cet élément, `filter`, est un XpathFilter.</span><span class="sxs-lookup"><span data-stu-id="31293-138">The only attribute for this element, `filter`, is an XpathFilter.</span></span><br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
   
-### <a name="parent-elements"></a>Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="31293-139">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="31293-139">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="31293-140">Élément</span><span class="sxs-lookup"><span data-stu-id="31293-140">Element</span></span>|<span data-ttu-id="31293-141">Description</span><span class="sxs-lookup"><span data-stu-id="31293-141">Description</span></span>|  
 |-------------|-----------------|  
-|diagnostics|Définit des paramètres WCF pour l'inspection et le contrôle au moment de l'exécution pour l'administrateur.|  
+|<span data-ttu-id="31293-142">diagnostics</span><span class="sxs-lookup"><span data-stu-id="31293-142">diagnostics</span></span>|<span data-ttu-id="31293-143">Définit des paramètres WCF pour l'inspection et le contrôle au moment de l'exécution pour l'administrateur.</span><span class="sxs-lookup"><span data-stu-id="31293-143">Defines WCF settings for runtime inspection and control for the administrator.</span></span>|  
   
-## <a name="remarks"></a>Notes  
- Les messages sont entrés à trois niveaux différents dans la pile : les messages de service, de transport et incorrects. Chaque niveau peut être activé séparément.  
+## <a name="remarks"></a><span data-ttu-id="31293-144">Remarques</span><span class="sxs-lookup"><span data-stu-id="31293-144">Remarks</span></span>  
+ <span data-ttu-id="31293-145">Les messages sont entrés à trois niveaux différents dans la pile : les messages de service, de transport et incorrects.</span><span class="sxs-lookup"><span data-stu-id="31293-145">Messages are logged at three different levels in the stack: service, transport, and malformed.</span></span> <span data-ttu-id="31293-146">Chaque niveau peut être activé séparément.</span><span class="sxs-lookup"><span data-stu-id="31293-146">Each level can be activated separately.</span></span>  
   
- Les filtres XPath peuvent être ajoutés afin d'enregistrer des messages spécifiques aux niveaux de transport et de service. Si aucun filtre n'est défini, tous les messages sont enregistrés. Les filtres sont appliqués uniquement aux en-têtes du message. Le corps est ignoré. WCF ignore le corps du message pour améliorer la performance. Si vous souhaitez filtrer le contenu du corps, vous pouvez créer un écouteur personnalisé avec un filtre approprié.  
+ <span data-ttu-id="31293-147">Les filtres XPath peuvent être ajoutés afin d'enregistrer des messages spécifiques aux niveaux de transport et de service.</span><span class="sxs-lookup"><span data-stu-id="31293-147">XPath filters can be added to log specific messages at the transport and service levels.</span></span> <span data-ttu-id="31293-148">Si aucun filtre n'est défini, tous les messages sont enregistrés.</span><span class="sxs-lookup"><span data-stu-id="31293-148">If no filters are defined, all messages are logged.</span></span> <span data-ttu-id="31293-149">Les filtres sont appliqués uniquement aux en-têtes du message.</span><span class="sxs-lookup"><span data-stu-id="31293-149">Filters are applied only to the headers of the message.</span></span> <span data-ttu-id="31293-150">Le corps est ignoré.</span><span class="sxs-lookup"><span data-stu-id="31293-150">The body is ignored.</span></span> <span data-ttu-id="31293-151">WCF ignore le corps du message pour améliorer la performance.</span><span class="sxs-lookup"><span data-stu-id="31293-151">WCF ignores the message body to improve performance.</span></span> <span data-ttu-id="31293-152">Si vous souhaitez filtrer le contenu du corps, vous pouvez créer un écouteur personnalisé avec un filtre approprié.</span><span class="sxs-lookup"><span data-stu-id="31293-152">If you want to filter based on the content of the body, you can create a custom listener with a filter that does so.</span></span>  
   
- Vous devez créer un écouteur de trace pour activer le suivi de message. L’écouteur lui-même peut être tout écouteur qui fonctionne avec les <xref:System.Diagnostics> suivi de l’architecture. L'exemple suivant montre comment créer un écouteur de ce type.  
+ <span data-ttu-id="31293-153">Vous devez créer un écouteur de trace pour activer le suivi de message.</span><span class="sxs-lookup"><span data-stu-id="31293-153">You need to create a trace listener to activate message tracing.</span></span> <span data-ttu-id="31293-154">L'écouteur lui-même peut être tout écouteur qui fonctionne avec le <xref:System.Diagnostics> qui effectue le suivi de l'architecture.</span><span class="sxs-lookup"><span data-stu-id="31293-154">The listener itself can be any listener that works with the <xref:System.Diagnostics> tracing architecture.</span></span> <span data-ttu-id="31293-155">L'exemple suivant montre comment créer un écouteur de ce type.</span><span class="sxs-lookup"><span data-stu-id="31293-155">The following example demonstrates how to create such a listener.</span></span>  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
           <source name="System.ServiceModel" switchValue="Verbose">  
@@ -109,9 +111,9 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 </system.diagnostics>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a><span data-ttu-id="31293-156">Exemple</span><span class="sxs-lookup"><span data-stu-id="31293-156">Example</span></span>  
   
-```  
+```xml  
 <messageLogging logEntireMessage="true"  
     logMalformedMessages="true"  
     logMessagesAtServiceLevel="true"  
@@ -124,9 +126,9 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
  </messageLogging>  
 ```  
   
-## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement>   
- [Configuration de la journalisation de Message](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
+## <a name="see-also"></a><span data-ttu-id="31293-157">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="31293-157">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement>  
+ [<span data-ttu-id="31293-158">Configuration de la journalisation de Message</span><span class="sxs-lookup"><span data-stu-id="31293-158">Configuring Message Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)

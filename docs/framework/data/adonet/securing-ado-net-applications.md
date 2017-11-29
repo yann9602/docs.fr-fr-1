@@ -1,63 +1,66 @@
 ---
-title: "S&#233;curisation des applications ADO.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Sécurisation des applications ADO.NET"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 143447020f41368a3553a0c8cda78e80806b75ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# S&#233;curisation des applications ADO.NET
-L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur.  Une application qui accède à des données présente de nombreux points de défaillance possibles qu'un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles.  Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.  
+# <a name="securing-adonet-applications"></a><span data-ttu-id="cd67b-102">Sécurisation des applications ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cd67b-102">Securing ADO.NET Applications</span></span>
+<span data-ttu-id="cd67b-103">L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="cd67b-103">Writing a secure ADO.NET application involves more than avoiding common coding pitfalls such as not validating user input.</span></span> <span data-ttu-id="cd67b-104">Une application qui accède à des données présente de nombreux points de défaillance possibles qu'un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles.</span><span class="sxs-lookup"><span data-stu-id="cd67b-104">An application that accesses data has many potential points of failure that an attacker can exploit to retrieve, manipulate, or destroy sensitive data.</span></span> <span data-ttu-id="cd67b-105">Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.</span><span class="sxs-lookup"><span data-stu-id="cd67b-105">It is therefore important to understand all aspects of security, from the process of threat modeling during the design phase of your application, to its eventual deployment and ongoing maintenance.</span></span>  
   
- Le .NET Framework fournit de nombreux services, classes et outils utiles permettant de sécuriser et d'administrer des applications de base de données.  Le Common Language Runtime \(CLR\) fournit un environnement de type sécurisé pour l'exécution du code, avec une sécurité d'accès du code pour restreindre les autorisations de code managé.  L'adoption des procédés de codage sécurisés pour l'accès aux données permet de réduire les dommages infligés par un intrus potentiel.  
+ <span data-ttu-id="cd67b-106">Le .NET Framework fournit de nombreux services, classes et outils utiles permettant de sécuriser et d'administrer des applications de base de données.</span><span class="sxs-lookup"><span data-stu-id="cd67b-106">The .NET Framework provides many useful classes, services, and tools for securing and administering database applications.</span></span> <span data-ttu-id="cd67b-107">Le Common Language Runtime (CLR) fournit un environnement de type sécurisé pour l'exécution du code, avec une sécurité d'accès du code pour restreindre les autorisations de code managé.</span><span class="sxs-lookup"><span data-stu-id="cd67b-107">The common language runtime (CLR) provides a type-safe environment for code to run in, with code access security (CAS) to restrict further the permissions of managed code.</span></span> <span data-ttu-id="cd67b-108">L'adoption des procédés de codage sécurisés pour l'accès aux données permet de réduire les dommages infligés par un intrus potentiel.</span><span class="sxs-lookup"><span data-stu-id="cd67b-108">Following secure data access coding practices limits the damage that can be inflicted by a potential attacker.</span></span>  
   
- L'écriture d'un code sécurisé ne protège pas contre les défaillances de sécurité volontaires lors de l'utilisation de ressources non managées telles que des bases de données.  La plupart des bases de données de serveur, telles que SQL Server, possèdent leurs propres systèmes de sécurité qui renforcent la sécurité si ceux\-ci sont correctement implémentés.  Cependant, même une source de données équipée d'un système de sécurité robuste peut faire l'objet d'une attaque si elle n'est pas configurée de manière appropriée.  
+ <span data-ttu-id="cd67b-109">L'écriture d'un code sécurisé ne protège pas contre les défaillances de sécurité volontaires lors de l'utilisation de ressources non managées telles que des bases de données.</span><span class="sxs-lookup"><span data-stu-id="cd67b-109">Writing secure code does not guard against self-inflicted security holes when working with unmanaged resources such as databases.</span></span> <span data-ttu-id="cd67b-110">La plupart des bases de données de serveur, telles que SQL Server, possèdent leurs propres systèmes de sécurité qui renforcent la sécurité si ceux-ci sont correctement implémentés.</span><span class="sxs-lookup"><span data-stu-id="cd67b-110">Most server databases, such as SQL Server, have their own security systems, which enhance security when implemented correctly.</span></span> <span data-ttu-id="cd67b-111">Cependant, même une source de données équipée d'un système de sécurité robuste peut faire l'objet d'une attaque si elle n'est pas configurée de manière appropriée.</span><span class="sxs-lookup"><span data-stu-id="cd67b-111">However, even a data source with a robust security system can be victimized in an attack if it is not configured appropriately.</span></span>  
   
-## Dans cette section  
- [Vue d'ensemble de la sécurité](../../../../docs/framework/data/adonet/security-overview.md)  
- Fournit des recommandations pour la conception d'applications ADO.NET sécurisées.  
+## <a name="in-this-section"></a><span data-ttu-id="cd67b-112">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="cd67b-112">In This Section</span></span>  
+ [<span data-ttu-id="cd67b-113">Vue d’ensemble de la sécurité</span><span class="sxs-lookup"><span data-stu-id="cd67b-113">Security Overview</span></span>](../../../../docs/framework/data/adonet/security-overview.md)  
+ <span data-ttu-id="cd67b-114">Fournit des recommandations pour la conception d'applications ADO.NET sécurisées.</span><span class="sxs-lookup"><span data-stu-id="cd67b-114">Provides recommendations for designing secure ADO.NET applications.</span></span>  
   
- [Accès à des données sécurisées](../../../../docs/framework/data/adonet/secure-data-access.md)  
- Décrit comment utiliser des données à partir d'une source de données sécurisée.  
+ [<span data-ttu-id="cd67b-115">Sécuriser l’accès aux données</span><span class="sxs-lookup"><span data-stu-id="cd67b-115">Secure Data Access</span></span>](../../../../docs/framework/data/adonet/secure-data-access.md)  
+ <span data-ttu-id="cd67b-116">Décrit comment utiliser des données à partir d'une source de données sécurisée.</span><span class="sxs-lookup"><span data-stu-id="cd67b-116">Describes how to work with data from a secured data source.</span></span>  
   
- [Applications clientes sécurisées](../../../../docs/framework/data/adonet/secure-client-applications.md)  
- Décrit des considérations sur la sécurité pour les applications clientes.  
+ [<span data-ttu-id="cd67b-117">Sécuriser les Applications clientes</span><span class="sxs-lookup"><span data-stu-id="cd67b-117">Secure Client Applications</span></span>](../../../../docs/framework/data/adonet/secure-client-applications.md)  
+ <span data-ttu-id="cd67b-118">Décrit des considérations sur la sécurité pour les applications clientes.</span><span class="sxs-lookup"><span data-stu-id="cd67b-118">Describes security considerations for client applications.</span></span>  
   
- [Sécurité d'accès du code et ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)  
- Décrit comment utiliser la sécurité d'accès du code \(CAS\) pour protéger le code ADO.NET.  Explique également comment travailler avec une confiance partielle.  
+ [<span data-ttu-id="cd67b-119">Sécurité d’accès du code et ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cd67b-119">Code Access Security and ADO.NET</span></span>](../../../../docs/framework/data/adonet/code-access-security.md)  
+ <span data-ttu-id="cd67b-120">Décrit comment utiliser la sécurité d'accès du code (CAS) pour protéger le code ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="cd67b-120">Describes how CAS can help protect ADO.NET code.</span></span> <span data-ttu-id="cd67b-121">Explique également comment travailler avec une confiance partielle.</span><span class="sxs-lookup"><span data-stu-id="cd67b-121">Also discusses how to work with partial trust.</span></span>  
   
- [Confidentialité et sécurité des données](../../../../docs/framework/data/adonet/privacy-and-data-security.md)  
- Décrit les options de chiffrement pour les applications ADO.NET.  
+ [<span data-ttu-id="cd67b-122">Confidentialité et sécurité des données</span><span class="sxs-lookup"><span data-stu-id="cd67b-122">Privacy and Data Security</span></span>](../../../../docs/framework/data/adonet/privacy-and-data-security.md)  
+ <span data-ttu-id="cd67b-123">Décrit les options de chiffrement pour les applications ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="cd67b-123">Describes encryption options for ADO.NET applications.</span></span>  
   
-## Rubriques connexes  
- [Sécurité de SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- Décrit les fonctionnalités de sécurité SQL Server du point de vue d'un développeur.  
+## <a name="related-sections"></a><span data-ttu-id="cd67b-124">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="cd67b-124">Related Sections</span></span>  
+ [<span data-ttu-id="cd67b-125">Sécurité SQL Server</span><span class="sxs-lookup"><span data-stu-id="cd67b-125">SQL Server Security</span></span>](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ <span data-ttu-id="cd67b-126">Décrit les fonctionnalités de sécurité SQL Server du point de vue d’un développeur.</span><span class="sxs-lookup"><span data-stu-id="cd67b-126">Describes SQL Server security features from a developer's perspective.</span></span>  
   
- [Considérations sur la sécurité](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
- Décrit la sécurité des applications reposant sur Entity Framework.  
+ [<span data-ttu-id="cd67b-127">Considérations sur la sécurité</span><span class="sxs-lookup"><span data-stu-id="cd67b-127">Security Considerations</span></span>](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ <span data-ttu-id="cd67b-128">Décrit la sécurité des applications reposant sur Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="cd67b-128">Describes security for Entity Framework applications.</span></span>  
   
- [Sécurité](../../../../docs/standard/security/index.md)  
- Contient des liens vers des rubriques qui décrivent tous les aspects de la sécurité dans le .NET Framework.  
+ [<span data-ttu-id="cd67b-129">Sécurité</span><span class="sxs-lookup"><span data-stu-id="cd67b-129">Security</span></span>](../../../../docs/standard/security/index.md)  
+ <span data-ttu-id="cd67b-130">Contient des liens vers des rubriques qui décrivent tous les aspects de la sécurité dans le .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="cd67b-130">Contains links to topics describing all aspects of security in the .NET Framework.</span></span>  
   
- [Security Tools](http://msdn.microsoft.com/fr-fr/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
- Outils .NET Framework pour la sécurisation et l'administration de la stratégie de sécurité.  
+ [<span data-ttu-id="cd67b-131">Outils de sécurité</span><span class="sxs-lookup"><span data-stu-id="cd67b-131">Security Tools</span></span>](http://msdn.microsoft.com/en-us/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
+ <span data-ttu-id="cd67b-132">Outils .NET Framework pour la sécurisation et l'administration de la stratégie de sécurité.</span><span class="sxs-lookup"><span data-stu-id="cd67b-132">.NET Framework tools for securing and administering security policy.</span></span>  
   
- [Resources for Creating Secure Applications](http://msdn.microsoft.com/fr-fr/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
- Fournit des liens vers des rubriques pour la création d'applications sécurisées.  
+ [<span data-ttu-id="cd67b-133">Ressources pour la création d’Applications sécurisées</span><span class="sxs-lookup"><span data-stu-id="cd67b-133">Resources for Creating Secure Applications</span></span>](http://msdn.microsoft.com/en-us/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
+ <span data-ttu-id="cd67b-134">Fournit des liens vers des rubriques pour la création d'applications sécurisées.</span><span class="sxs-lookup"><span data-stu-id="cd67b-134">Provides links to topics for creating secure applications.</span></span>  
   
- [Bibliographie relative à la sécurité](../Topic/Security%20Bibliography.md)  
- Fournit des liens vers des ressources externes disponibles en ligne et sous forme de documentation.  
+ [<span data-ttu-id="cd67b-135">Bibliographie relative à la sécurité</span><span class="sxs-lookup"><span data-stu-id="cd67b-135">Security Bibliography</span></span>](/visualstudio/ide/security-bibliography)  
+ <span data-ttu-id="cd67b-136">Fournit des liens vers des ressources externes disponibles en ligne et sous forme de documentation.</span><span class="sxs-lookup"><span data-stu-id="cd67b-136">Provides links to external resources available online and in print.</span></span>  
   
-## Voir aussi  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="cd67b-137">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd67b-137">See Also</span></span>  
+ [<span data-ttu-id="cd67b-138">ADO.NET</span><span class="sxs-lookup"><span data-stu-id="cd67b-138">ADO.NET</span></span>](../../../../docs/framework/data/adonet/index.md)  
+ [<span data-ttu-id="cd67b-139">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="cd67b-139">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,46 +1,49 @@
 ---
-title: "terminaison d&#39;association | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: terminaison d'association
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2c345213-0296-4d90-ac6d-cef179798a75
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 7ceb6d40a47c73c4580a8fc33acc3c395a2c5a06
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# terminaison d&#39;association
-Une *terminaison d'association* identifie le [type d'entité](../../../../docs/framework/data/adonet/entity-type.md) sur une terminaison d'une [association](../../../../docs/framework/data/adonet/association-type.md) et le nombre d'instances de type d'entité pouvant exister à cette terminaison d'une association.  Les terminaisons d'association sont définies dans le cadre d'une association ; une association doit avoir exactement deux terminaisons d'association.  Les [propriétés de navigation](../../../../docs/framework/data/adonet/navigation-property.md) permettent la navigation d'une terminaison d'association à l'autre.  
+# <a name="association-end"></a><span data-ttu-id="e86b8-102">terminaison d'association</span><span class="sxs-lookup"><span data-stu-id="e86b8-102">association end</span></span>
+<span data-ttu-id="e86b8-103">Un *end d’association* identifie les [type d’entité](../../../../docs/framework/data/adonet/entity-type.md) à une extrémité d’une [association](../../../../docs/framework/data/adonet/association-type.md) et le numéro d’entité de type des instances qui peuvent exister à cette fin d’une association.</span><span class="sxs-lookup"><span data-stu-id="e86b8-103">An *association end* identifies the [entity type](../../../../docs/framework/data/adonet/entity-type.md) on one end of an [association](../../../../docs/framework/data/adonet/association-type.md) and the number of entity type instances that can exist at that end of an association.</span></span> <span data-ttu-id="e86b8-104">Les terminaisons d'association sont définies dans le cadre d'une association ; une association doit avoir exactement deux terminaisons d'association.</span><span class="sxs-lookup"><span data-stu-id="e86b8-104">Association ends are defined as part of an association; an association must have exactly two association ends.</span></span> <span data-ttu-id="e86b8-105">[Propriétés de navigation](../../../../docs/framework/data/adonet/navigation-property.md) permettent de naviguer à partir d’une terminaison d’association à l’autre.</span><span class="sxs-lookup"><span data-stu-id="e86b8-105">[Navigation properties](../../../../docs/framework/data/adonet/navigation-property.md) allow for navigation from one association end to the other.</span></span>  
   
- Une définition de terminaison d'association contient les informations suivantes :  
+ <span data-ttu-id="e86b8-106">Une définition de terminaison d'association contient les informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="e86b8-106">An association end definition contains the following information:</span></span>  
   
--   Un des types d'entité impliqués dans l'association.  \(Requis\)  
+-   <span data-ttu-id="e86b8-107">Un des types d'entité impliqués dans l'association.</span><span class="sxs-lookup"><span data-stu-id="e86b8-107">One of the entity types involved in the association.</span></span> <span data-ttu-id="e86b8-108">(Requis)</span><span class="sxs-lookup"><span data-stu-id="e86b8-108">(Required)</span></span>  
   
     > [!NOTE]
-    >  Pour une association donnée, le type d'entité spécifié pour chaque terminaison d'association peut être le même.  Ceci crée une association automatique.  
+    >  <span data-ttu-id="e86b8-109">Pour une association donnée, le type d'entité spécifié pour chaque terminaison d'association peut être le même.</span><span class="sxs-lookup"><span data-stu-id="e86b8-109">For a given association, the entity type specified for each association end can be the same.</span></span> <span data-ttu-id="e86b8-110">Ceci crée une association automatique.</span><span class="sxs-lookup"><span data-stu-id="e86b8-110">This creates a self-association.</span></span>  
   
--   [Multiplicité de terminaison d'association](../../../../docs/framework/data/adonet/association-end-multiplicity.md), qui indique le nombre d'instances de type d'entité pouvant figurer à une terminaison de l'association.  La multiplicité de terminaison d'association peut avoir une valeur égale à un \(1\), zéro ou un \(0..1\), ou plusieurs \(\*\).  
+-   <span data-ttu-id="e86b8-111">Un [multiplicité de terminaison d’association](../../../../docs/framework/data/adonet/association-end-multiplicity.md) qui indique le nombre d’instances de type d’entité qui peuvent être à l’extrémité de l’association.</span><span class="sxs-lookup"><span data-stu-id="e86b8-111">An [association end multiplicity](../../../../docs/framework/data/adonet/association-end-multiplicity.md) that indicates the number of entity type instances that can be at one end of the association.</span></span> <span data-ttu-id="e86b8-112">La multiplicité de terminaison d'association peut avoir une valeur égale à un (1), zéro ou un (0..1), ou plusieurs (*).</span><span class="sxs-lookup"><span data-stu-id="e86b8-112">An association end multiplicity can have a value of one (1), zero or one (0..1), or many (*).</span></span>  
   
--   Nom de la terminaison de l'association.  \(facultatif\)  
+-   <span data-ttu-id="e86b8-113">Nom de la terminaison de l'association.</span><span class="sxs-lookup"><span data-stu-id="e86b8-113">A name for the association end.</span></span> <span data-ttu-id="e86b8-114">(facultatif)</span><span class="sxs-lookup"><span data-stu-id="e86b8-114">(Optional)</span></span>  
   
--   Informations sur les opérations effectuées sur la terminaison d'association, telles que CASCADE sur DELETE.  \(facultatif\)  
+-   <span data-ttu-id="e86b8-115">Informations sur les opérations effectuées sur la terminaison d'association, telles que CASCADE sur DELETE.</span><span class="sxs-lookup"><span data-stu-id="e86b8-115">Information about operations that are performed on the association end, such as cascade on delete.</span></span> <span data-ttu-id="e86b8-116">(facultatif)</span><span class="sxs-lookup"><span data-stu-id="e86b8-116">(Optional)</span></span>  
   
-## Exemple  
- Le diagramme suivant montre un modèle conceptuel avec deux associations : `PublishedBy` et `WrittenBy`.  Les terminaisons d'association pour l'association `PublishedBy` sont les types d'entité `Book` et `Publisher`.  La multiplicité de la terminaison `Publisher` est un \(1\) et celle de la terminaison `Book` est plusieurs \(\*\), ce qui indique qu'un éditeur publie de nombreux livres et qu'un livre est publié par un seul éditeur.  
+## <a name="example"></a><span data-ttu-id="e86b8-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="e86b8-117">Example</span></span>  
+ <span data-ttu-id="e86b8-118">Le diagramme suivant montre un modèle conceptuel avec deux associations : `PublishedBy` et `WrittenBy`.</span><span class="sxs-lookup"><span data-stu-id="e86b8-118">The diagram below shows a conceptual model with two associations: `PublishedBy` and `WrittenBy`.</span></span> <span data-ttu-id="e86b8-119">Les terminaisons d'association pour l'association `PublishedBy` sont les types d'entité `Book` et `Publisher`.</span><span class="sxs-lookup"><span data-stu-id="e86b8-119">The association ends for the `PublishedBy` association are the `Book` and `Publisher` entity types.</span></span> <span data-ttu-id="e86b8-120">La multiplicité de la terminaison `Publisher` est un (1) et celle de la terminaison `Book` est plusieurs (*), ce qui indique qu'un éditeur publie de nombreux livres et qu'un livre est publié par un seul éditeur.</span><span class="sxs-lookup"><span data-stu-id="e86b8-120">The multiplicity of the `Publisher` end is one (1) and the multiplicity of the `Book` end is many (*), indicating that a publisher publishes many books and a book is published by one publisher.</span></span>  
   
- ![Exemple de modèle](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ <span data-ttu-id="e86b8-121">![Exemple de modèle](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span><span class="sxs-lookup"><span data-stu-id="e86b8-121">![Example Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span></span>  
   
- ADO.NET Entity Framework utilise un langage spécifique à un domaine \(DSL\), appelé [CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) \(Conceptual Schema Definition Language\), pour définir des modèles conceptuels.  Le CSDL suivant définit l'association `PublishedBy` présentée dans le diagramme ci\-dessus.  Notez que le type, le nom et la multiplicité de chaque terminaison d'association sont spécifiés par des attributs XML \(`Type`, `Role` et `Multiplicity`, respectivement\).  Des informations facultatives sur les opérations effectuées sur une terminaison sont spécifiées dans un élément XML \(`OnDelete`\).  Dans ce cas, si un éditeur est supprimé, tous les livres associés le sont aussi.  
+ <span data-ttu-id="e86b8-122">ADO.NET Entity Framework utilise un langage spécifique à un domaine (DSL) appelé conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels.</span><span class="sxs-lookup"><span data-stu-id="e86b8-122">The ADO.NET Entity Framework uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="e86b8-123">Le CSDL suivant définit l'association `PublishedBy` présentée dans le diagramme ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="e86b8-123">The CSDL below defines the `PublishedBy` association shown in the diagram above.</span></span> <span data-ttu-id="e86b8-124">Notez que le type, le nom et la multiplicité de chaque terminaison d'association sont spécifiés par des attributs XML (`Type`, `Role` et `Multiplicity`, respectivement).</span><span class="sxs-lookup"><span data-stu-id="e86b8-124">Note that the type, name, and multiplicity of each association end are specified by XML attributes (the `Type`, `Role`, and `Multiplicity` attributes, respectively).</span></span> <span data-ttu-id="e86b8-125">Des informations facultatives sur les opérations effectuées sur une terminaison sont spécifiées dans un élément XML (`OnDelete`).</span><span class="sxs-lookup"><span data-stu-id="e86b8-125">Optional information about operations performed on an end is specified in an XML element (the `OnDelete` element).</span></span> <span data-ttu-id="e86b8-126">Dans ce cas, si un éditeur est supprimé, tous les livres associés le sont aussi.</span><span class="sxs-lookup"><span data-stu-id="e86b8-126">In this case, if a publisher is deleted, so are all associated books.</span></span>  
   
  [!code-xml[EDM_Example_Model#AssociationEnd](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books3.edmx#associationend)]  
   
-## Voir aussi  
- [Concepts clés d'Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="e86b8-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e86b8-127">See Also</span></span>  
+ [<span data-ttu-id="e86b8-128">Concepts clés du modèle de données Entity</span><span class="sxs-lookup"><span data-stu-id="e86b8-128">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="e86b8-129">Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="e86b8-129">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

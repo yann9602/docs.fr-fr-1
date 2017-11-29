@@ -1,81 +1,83 @@
 ---
-title: "D&#233;bogage et gestion des erreurs | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Débogage et gestion des erreurs"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
-caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eec60855dc8ce3c611fa0fe3c8668973b43099b4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# D&#233;bogage et gestion des erreurs
-Cet exemple illustre l'utilisation du service de routage [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour établir un pontage de communication entre un client et un service qui utilisent des liaisons différentes.Il montre également comment utiliser un service de sauvegarde pour les scénarios de basculement.Le service de routage est un composant [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui facilite l'inclusion d'un routeur basé sur le contenu dans votre application.Cet exemple adapte l'exemple [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Calculator standard pour communiquer à l'aide du service de routage.  
+# <a name="bridging-and-error-handling"></a><span data-ttu-id="6ae39-102">Débogage et gestion des erreurs</span><span class="sxs-lookup"><span data-stu-id="6ae39-102">Bridging and Error Handling</span></span>
+<span data-ttu-id="6ae39-103">Cet exemple illustre l'utilisation du service de routage [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour établir un pontage de communication entre un client et un service qui utilisent des liaisons différentes.</span><span class="sxs-lookup"><span data-stu-id="6ae39-103">This sample demonstrates how the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] routing service is used for bridging communication between a client and a service that use different bindings.</span></span> <span data-ttu-id="6ae39-104">Il montre également comment utiliser un service de sauvegarde pour les scénarios de basculement.</span><span class="sxs-lookup"><span data-stu-id="6ae39-104">This sample also shows how to use a back-up service for failover scenarios.</span></span> <span data-ttu-id="6ae39-105">Le service de routage est un composant [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui facilite l'inclusion d'un routeur basé sur le contenu dans votre application.</span><span class="sxs-lookup"><span data-stu-id="6ae39-105">The routing service is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] component that makes it easy to include a content-based router in your application.</span></span> <span data-ttu-id="6ae39-106">Cet exemple adapte l'exemple [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Calculator standard pour communiquer à l'aide du service de routage.</span><span class="sxs-lookup"><span data-stu-id="6ae39-106">This sample adapts the standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Calculator Sample to communicate using the routing service.</span></span>  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  <span data-ttu-id="6ae39-107">Les exemples peuvent déjà être installés sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="6ae39-107">The samples may already be installed on your computer.</span></span> <span data-ttu-id="6ae39-108">Recherchez le répertoire (par défaut) suivant avant de continuer.</span><span class="sxs-lookup"><span data-stu-id="6ae39-108">Check for the following (default) directory before continuing.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, rendez\-vous sur la page \(éventuellement en anglais\) des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].Cet exemple se trouve dans le répertoire suivant.  
+>  <span data-ttu-id="6ae39-109">Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] .</span><span class="sxs-lookup"><span data-stu-id="6ae39-109">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="6ae39-110">Cet exemple se trouve dans le répertoire suivant.</span><span class="sxs-lookup"><span data-stu-id="6ae39-110">This sample is located in the following directory.</span></span>  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\RoutingServices\ErrorHandlingAndBridging`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\ErrorHandlingAndBridging`  
   
-## Détails de l'exemple  
- Dans cet exemple, le client Calculator est configuré pour envoyer des messages à un point de terminaison exposé par le routeur.Le service de routage \(Routing Service\) est configuré de façon à accepter tous les messages qui lui sont envoyés et les transférer à un point de terminaison qui correspond au service Calculator.Les points suivants décrivent la configuration du service Calculator principal, du service Calculator de sauvegarde et du client Calculator, ainsi que la façon dont la communication entre le client et le service s'effectue à l'aide du service de routage :  
+## <a name="sample-details"></a><span data-ttu-id="6ae39-111">Détails de l'exemple</span><span class="sxs-lookup"><span data-stu-id="6ae39-111">Sample Details</span></span>  
+ <span data-ttu-id="6ae39-112">Dans cet exemple, le client Calculator est configuré pour envoyer des messages à un point de terminaison exposé par le routeur.</span><span class="sxs-lookup"><span data-stu-id="6ae39-112">In this sample, the Calculator client is configured to send messages to an endpoint exposed by the router.</span></span> <span data-ttu-id="6ae39-113">Le service de routage (Routing Service) est configuré de façon à accepter tous les messages qui lui sont envoyés et les transférer à un point de terminaison qui correspond au service Calculator.</span><span class="sxs-lookup"><span data-stu-id="6ae39-113">The routing service is configured to accept all messages sent to it and to forward them to an endpoint that corresponds to the Calculator service.</span></span> <span data-ttu-id="6ae39-114">Les points suivants décrivent la configuration du service Calculator principal, du service Calculator de sauvegarde et du client Calculator, ainsi que la façon dont la communication entre le client et le service s'effectue à l'aide du service de routage :</span><span class="sxs-lookup"><span data-stu-id="6ae39-114">The following points describe the configuration of the primary Calculator service, the back-up Calculator service, and the Calculator client and how the communication between the client and the service happens using the routing service:</span></span>  
   
--   Le client Calculator est configuré pour utiliser BasicHttpBinding, alors que le service Calculator est configuré pour utiliser NetTcpBinding.Au besoin, le service de routage convertit automatiquement les messages avant de les envoyer au service Calculator et convertit également les réponses afin que le client Calculator puisse y accéder.  
+-   <span data-ttu-id="6ae39-115">Le client Calculator est configuré pour utiliser BasicHttpBinding, alors que le service Calculator est configuré pour utiliser NetTcpBinding.</span><span class="sxs-lookup"><span data-stu-id="6ae39-115">The Calculator client is configured to use BasicHttpBinding while the Calculator service is configured to use NetTcpBinding.</span></span> <span data-ttu-id="6ae39-116">Au besoin, le service de routage convertit automatiquement les messages avant de les envoyer au service Calculator et convertit également les réponses afin que le client Calculator puisse y accéder.</span><span class="sxs-lookup"><span data-stu-id="6ae39-116">The routing service automatically converts the messages as necessary before sending them to the Calculator service and it also converts the responses so that the Calculator client can access them.</span></span>  
   
--   Le service de routage connaît l'existence de deux services Calculator : le service Calculator principal et le service Calculator de sauvegarde.Le service de routage essaie d'abord de communiquer avec le point de terminaison du service Calculator principal.Si cette tentative échoue en raison d'une défaillance du point de terminaison, le service de routage essaie de communiquer avec le point de terminaison du service Calculator de sauvegarde.  
+-   <span data-ttu-id="6ae39-117">Le service de routage connaît l'existence de deux services Calculator : le service Calculator principal et le service Calculator de sauvegarde.</span><span class="sxs-lookup"><span data-stu-id="6ae39-117">The routing service knows about two Calculator services: the primary Calculator service and the back-up Calculator service.</span></span> <span data-ttu-id="6ae39-118">Le service de routage essaie d'abord de communiquer avec le point de terminaison du service Calculator principal.</span><span class="sxs-lookup"><span data-stu-id="6ae39-118">The routing service first attempts to communicate with the primary Calculator service endpoint.</span></span> <span data-ttu-id="6ae39-119">Si cette tentative échoue en raison d'une défaillance du point de terminaison, le service de routage essaie de communiquer avec le point de terminaison du service Calculator de sauvegarde.</span><span class="sxs-lookup"><span data-stu-id="6ae39-119">If this attempt fails due to the endpoint being down, the routing service then tries to communicate with the back-up Calculator service endpoint.</span></span>  
   
- Les messages envoyés à partir du client sont donc reçus par le routeur et reroutés au véritable service Calculator.Si le point de terminaison du service Calculator subit une défaillance, le service de routage route le message vers le point de terminaison du service Calculator de sauvegarde.Les messages du service Calculator de sauvegarde sont renvoyés au routeur du service, qui à son tour les retransmet au client Calculator.  
+ <span data-ttu-id="6ae39-120">Les messages envoyés à partir du client sont donc reçus par le routeur et reroutés au véritable service Calculator.</span><span class="sxs-lookup"><span data-stu-id="6ae39-120">Thus messages sent from the client are received by the router and are rerouted to the actual Calculator service.</span></span> <span data-ttu-id="6ae39-121">Si le point de terminaison du service Calculator subit une défaillance, le service de routage route le message vers le point de terminaison du service Calculator de sauvegarde.</span><span class="sxs-lookup"><span data-stu-id="6ae39-121">If the Calculator service endpoint is down, the routing service routes the message to the back-up Calculator service endpoint.</span></span> <span data-ttu-id="6ae39-122">Les messages du service Calculator de sauvegarde sont renvoyés au routeur du service, qui à son tour les retransmet au client Calculator.</span><span class="sxs-lookup"><span data-stu-id="6ae39-122">Messages from the back-up Calculator service are sent back to the service router, which in turn passes them back to the Calculator client.</span></span>  
   
 > [!NOTE]
->  Plusieurs points de terminaison peuvent être définis dans une même liste de sauvegarde.Dans ce cas, si le point de terminaison du service de sauvegarde subit une défaillance, le service de routage essaie de se connecter au point de terminaison de sauvegarde suivant dans la liste, jusqu'à ce qu'une connexion puisse être établie.  
+>  <span data-ttu-id="6ae39-123">Plusieurs points de terminaison peuvent être définis dans une même liste de sauvegarde.</span><span class="sxs-lookup"><span data-stu-id="6ae39-123">A back-up list can have more than one endpoint defined.</span></span> <span data-ttu-id="6ae39-124">Dans ce cas, si le point de terminaison du service de sauvegarde subit une défaillance, le service de routage essaie de se connecter au point de terminaison de sauvegarde suivant dans la liste, jusqu'à ce qu'une connexion puisse être établie.</span><span class="sxs-lookup"><span data-stu-id="6ae39-124">In this case if the back-up service endpoint is down, the routing service attempts to connect to the next back-up endpoint in the list until a successful connection occurs.</span></span>  
   
-#### Pour utiliser cet exemple  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="6ae39-125">Pour utiliser cet exemple</span><span class="sxs-lookup"><span data-stu-id="6ae39-125">To use this sample</span></span>  
   
-1.  À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez RouterBridgingAndErrorHandling.sln.  
+1.  <span data-ttu-id="6ae39-126">À l'aide de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], ouvrez RouterBridgingAndErrorHandling.sln.</span><span class="sxs-lookup"><span data-stu-id="6ae39-126">Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open RouterBridgingAndErrorHandling.sln.</span></span>  
   
-2.  Appuyez sur F5 ou sur CTRL\+MAJ\+B dans Visual Studio.  
+2.  <span data-ttu-id="6ae39-127">Appuyez sur F5 ou sur CTRL+MAJ+B dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="6ae39-127">Press F5 or CTRL+SHIFT+B in Visual Studio</span></span>  
   
-    1.  Si vous souhaitez lancer automatiquement les projets nécessaires lorsque vous appuyez sur F5, cliquez avec le bouton droit sur la solution, sélectionnez **Propriétés**, puis, dans le nœud **Projet de démarrage** situé sous **Propriétés communes**, sélectionnez **Plusieurs projets de démarrage** et indiquez **Démarrer** pour tous les projets.  
+    1.  <span data-ttu-id="6ae39-128">Si vous souhaitez lancer automatiquement les projets nécessaires lorsque vous appuyez sur F5, cliquez sur la solution, sélectionnez **propriétés**et dans le **projet de démarrage** nœud sous **depropriétéscommunes**, sélectionnez **plusieurs projets de démarrage**et tous les projets **Démarrer**.</span><span class="sxs-lookup"><span data-stu-id="6ae39-128">If you would like to auto-launch the necessary projects when you press F5, right-click the solution, select **Properties**, and in the **Startup Project** node under **Common Properties**, select **Multiple Startup Projects**, and set all projects to **Start**.</span></span>  
   
-    2.  Si vous générez le projet avec CTRL\+MAJ\+B, vous devez démarrer les applications suivantes :  
+    2.  <span data-ttu-id="6ae39-129">Si vous générez le projet avec CTRL+MAJ+B, vous devez démarrer les applications suivantes :</span><span class="sxs-lookup"><span data-stu-id="6ae39-129">If you build the project with CTRL+SHIFT+B, start the following applications:</span></span>  
   
-        1.  Client Calculator \(.\/CalculatorClient\/bin\/client.exe\)  
+        1.  <span data-ttu-id="6ae39-130">Client Calculator (./CalculatorClient/bin/client.exe)</span><span class="sxs-lookup"><span data-stu-id="6ae39-130">Calculator client (./CalculatorClient/bin/client.exe)</span></span>  
   
-        2.  Service Calculator \(.\/CalculatorService\/bin\/service.exe\)  
+        2.  <span data-ttu-id="6ae39-131">Service Calculator (./CalculatorService/bin/service.exe)</span><span class="sxs-lookup"><span data-stu-id="6ae39-131">Calculator service (./CalculatorService/bin/service.exe)</span></span>  
   
-        3.  Service Routing \(.\/RoutingService\/bin\/RoutingService.exe\)  
+        3.  <span data-ttu-id="6ae39-132">Service Routing (./RoutingService/bin/RoutingService.exe)</span><span class="sxs-lookup"><span data-stu-id="6ae39-132">Routing Service (./RoutingService/bin/RoutingService.exe)</span></span>  
   
-3.  Dans le client Calculator, appuyez sur ENTRÉE pour démarrer le client.  
+3.  <span data-ttu-id="6ae39-133">Dans le client Calculator, appuyez sur ENTRÉE pour démarrer le client.</span><span class="sxs-lookup"><span data-stu-id="6ae39-133">In the Calculator Client, press ENTER to start the client.</span></span>  
   
-     Vous devez voir la sortie suivante :  
+     <span data-ttu-id="6ae39-134">Vous devez voir la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="6ae39-134">You should see the following output:</span></span>  
   
     ```Output  
     Add(100,15.99) = 115.99  
     Subtract(145,76.54) = 68.46  
     Multiply(9,81.25) = 731.25  
     Divide(22,7) = 3.14285714285714  
-  
     ```  
   
-## Configurable au moyen d'un code ou d'un fichier App.config  
- L'exemple est fourni en étant configuré de façon à utiliser un fichier App.config pour définir le comportement du routeur.Vous pouvez également renommer le fichier App.config afin qu'il ne soit pas reconnu et supprimer les marques de commentaire de l'appel de méthode à `ConfigureRouterViaCode()`.Quelle que soit la méthode employée, le comportement de routeur obtenu est le même.  
+## <a name="configurable-via-code-or-appconfig"></a><span data-ttu-id="6ae39-135">Configurable au moyen d'un code ou d'un fichier App.config</span><span class="sxs-lookup"><span data-stu-id="6ae39-135">Configurable Via Code or App.config</span></span>  
+ <span data-ttu-id="6ae39-136">L'exemple est fourni en étant configuré de façon à utiliser un fichier App.config pour définir le comportement du routeur.</span><span class="sxs-lookup"><span data-stu-id="6ae39-136">The sample ships configured to use an App.config file to define the router’s behavior.</span></span> <span data-ttu-id="6ae39-137">Vous pouvez également renommer le fichier App.config afin qu'il ne soit pas reconnu et supprimer les marques de commentaire de l'appel de méthode à `ConfigureRouterViaCode()`.</span><span class="sxs-lookup"><span data-stu-id="6ae39-137">You can also change the name of the App.config file to something else so that it is not recognized and uncomment the method call to `ConfigureRouterViaCode()`.</span></span> <span data-ttu-id="6ae39-138">Quelle que soit la méthode employée, le comportement de routeur obtenu est le même.</span><span class="sxs-lookup"><span data-stu-id="6ae39-138">Either method results in the same behavior from the router.</span></span>  
   
-### Scénario  
- Cet exemple illustre le routeur du service agissant en tant que pont de protocole et gestionnaire d'erreurs.Dans ce scénario, aucun routage basé sur le contenu n'intervient ; le service de routage fait office de nœud de proxy transparent configuré pour passer les messages directement à un ensemble préconfiguré de points de terminaison de destination.Le service de routage assure aussi la gestion transparente des erreurs qui se produisent lorsqu'il tente d'effectuer des envois vers les points de terminaison avec lesquels il est configuré pour communiquer.En jouant le rôle de pont de protocole, le service de routage permet à l'utilisateur de définir un protocole pour la communication externe et un autre pour la communication interne.  
+### <a name="scenario"></a><span data-ttu-id="6ae39-139">Scénario</span><span class="sxs-lookup"><span data-stu-id="6ae39-139">Scenario</span></span>  
+ <span data-ttu-id="6ae39-140">Cet exemple illustre le routeur du service agissant en tant que pont de protocole et gestionnaire d'erreurs.</span><span class="sxs-lookup"><span data-stu-id="6ae39-140">This sample demonstrates the service router acting as a protocol bridge and error handler.</span></span> <span data-ttu-id="6ae39-141">Dans ce scénario, aucun routage basé sur le contenu n'intervient ; le service de routage fait office de nœud de proxy transparent configuré pour passer les messages directement à un ensemble préconfiguré de points de terminaison de destination.</span><span class="sxs-lookup"><span data-stu-id="6ae39-141">In this scenario, no content-based routing occurs; the routing service acts as a transparent proxy node configured to pass messages directly to a preconfigured set of destination endpoints.</span></span> <span data-ttu-id="6ae39-142">Le service de routage assure aussi la gestion transparente des erreurs qui se produisent lorsqu'il tente d'effectuer des envois vers les points de terminaison avec lesquels il est configuré pour communiquer.</span><span class="sxs-lookup"><span data-stu-id="6ae39-142">The routing service also performs the additional steps of transparently handling errors that occur when it tries to send to the endpoints that it is configured to communicate with.</span></span> <span data-ttu-id="6ae39-143">En jouant le rôle de pont de protocole, le service de routage permet à l'utilisateur de définir un protocole pour la communication externe et un autre pour la communication interne.</span><span class="sxs-lookup"><span data-stu-id="6ae39-143">By acting as a protocol bridge, the routing service enables the user to define one protocol for external communication and another for internal communication.</span></span>  
   
-### Scénario réel  
- Contoso souhaite fournir un point de terminaison de service pouvant interagir avec le monde extérieur, tout en optimisant les performances en interne.Il expose donc ses services au monde via un point de terminaison utilisant BasicHttpBinding, et recourt en interne au service de routage pour établir un pont entre cette connexion et le point de terminaison NetTcpBinding qu'utilisent ses services.En outre, Contoso souhaite que son offre de services présente une tolérance aux pannes temporaires dans chacun de ses services de production. À cette fin, il virtualise plusieurs points de terminaison derrière le service de routeur en s'appuyant sur les fonctionnalités de gestion des erreurs pour basculer automatiquement vers les points de terminaison de sauvegarde en cas de nécessité.  
+### <a name="real-world-scenario"></a><span data-ttu-id="6ae39-144">Scénario réel</span><span class="sxs-lookup"><span data-stu-id="6ae39-144">Real World Scenario</span></span>  
+ <span data-ttu-id="6ae39-145">Contoso souhaite fournir un point de terminaison de service pouvant interagir avec le monde extérieur, tout en optimisant les performances en interne.</span><span class="sxs-lookup"><span data-stu-id="6ae39-145">Contoso wants to provide an interoperable service endpoint to the world, while optimizing performance internally.</span></span> <span data-ttu-id="6ae39-146">Il expose donc ses services au monde via un point de terminaison utilisant BasicHttpBinding, et recourt en interne au service de routage pour établir un pont entre cette connexion et le point de terminaison NetTcpBinding qu'utilisent ses services.</span><span class="sxs-lookup"><span data-stu-id="6ae39-146">Thus it exposes its services to the world through an endpoint using the BasicHttpBinding, while internally using the routing service to bridge that connection to the endpoint using NetTcpBinding, which its services use.</span></span> <span data-ttu-id="6ae39-147">En outre, Contoso souhaite que son offre de services présente une tolérance aux pannes temporaires dans chacun de ses services de production. À cette fin, il virtualise plusieurs points de terminaison derrière le service de routeur en s'appuyant sur les fonctionnalités de gestion des erreurs pour basculer automatiquement vers les points de terminaison de sauvegarde en cas de nécessité.</span><span class="sxs-lookup"><span data-stu-id="6ae39-147">Furthermore, Contoso wants its service offering to be tolerant of temporary outages in any one of their production services and thus virtualizes multiple endpoints behind the router service using the ’s error handling capabilities to automatically failover to back-up endpoints when necessary.</span></span>  
   
-## Voir aussi  
- [Hébergement AppFabric et exemples de persistance](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a><span data-ttu-id="6ae39-148">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6ae39-148">See Also</span></span>  
+ [<span data-ttu-id="6ae39-149">Hébergement de AppFabric et exemples de persistance</span><span class="sxs-lookup"><span data-stu-id="6ae39-149">AppFabric Hosting and Persistence Samples</span></span>](http://go.microsoft.com/fwlink/?LinkId=193961)

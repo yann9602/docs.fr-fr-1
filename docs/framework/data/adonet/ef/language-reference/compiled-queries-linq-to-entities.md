@@ -1,82 +1,84 @@
 ---
-title: "Requ&#234;tes compil&#233;es (LINQ to Entities) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Requêtes compilées (LINQ to Entities)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: de490bac737520ffef5899c8515322c72b2a1144
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Requ&#234;tes compil&#233;es (LINQ to Entities)
-Lorsque vous possédez une application qui exécute de nombreuses fois des requêtes similaires d'un point de vue structurel dans Entity Framework, vous pouvez souvent améliorer les performances en compilant la requête une fois et en l'exécutant plusieurs fois avec des paramètres différents.  Par exemple, une application peut avoir besoin de récupérer tous les clients d'une ville spécifique ; la ville est spécifiée à l'exécution par l'utilisateur dans un formulaire.  À cette fin, LINQ to Entities prend en charge l'utilisation des requêtes compilées.  
+# <a name="compiled-queries--linq-to-entities"></a><span data-ttu-id="527b8-102">Requêtes compilées (LINQ to Entities)</span><span class="sxs-lookup"><span data-stu-id="527b8-102">Compiled Queries  (LINQ to Entities)</span></span>
+<span data-ttu-id="527b8-103">Lorsque vous possédez une application qui exécute de nombreuses fois des requêtes similaires d’un point de vue structurel dans Entity Framework, vous pouvez souvent améliorer les performances en compilant la requête une fois et en l’exécutant plusieurs fois avec des paramètres différents.</span><span class="sxs-lookup"><span data-stu-id="527b8-103">When you have an application that executes structurally similar queries many times in the Entity Framework, you can frequently increase performance by compiling the query one time and executing it several times with different parameters.</span></span> <span data-ttu-id="527b8-104">Par exemple, une application peut avoir besoin de récupérer tous les clients d'une ville spécifique ; la ville est spécifiée à l'exécution par l'utilisateur dans un formulaire.</span><span class="sxs-lookup"><span data-stu-id="527b8-104">For example, an application might have to retrieve all the customers in a particular city; the city is specified at runtime by the user in a form.</span></span> <span data-ttu-id="527b8-105">À cette fin, LINQ to Entities prend en charge l'utilisation des requêtes compilées.</span><span class="sxs-lookup"><span data-stu-id="527b8-105">LINQ to Entities supports using compiled queries for this purpose.</span></span>  
   
- Depuis le .NET Framework 4.5, les requêtes LINQ sont mises en cache automatiquement.  Cependant, vous pouvez toujours utiliser des requêtes LINQ compilées pour réduire ce coût dans les exécutions ultérieures et les requêtes compilées peuvent être plus efficaces que les requêtes LINQ qui sont automatiquement mises en cache.  Notez que les requêtes LINQ to Entities qui appliquent l'opérateur `Enumerable.Contains` aux collections en mémoire ne sont pas automatiquement mises en cache.  Le paramétrage des collections en mémoire dans les requêtes LINQ compilées n'est pas autorisé.  
+ <span data-ttu-id="527b8-106">Depuis le .NET Framework 4.5, les requêtes LINQ sont mises en cache automatiquement.</span><span class="sxs-lookup"><span data-stu-id="527b8-106">Starting with the .NET Framework 4.5, LINQ queries are cached automatically.</span></span> <span data-ttu-id="527b8-107">Cependant, vous pouvez toujours utiliser des requêtes LINQ compilées pour réduire ce coût dans les exécutions ultérieures et les requêtes compilées peuvent être plus efficaces que les requêtes LINQ qui sont automatiquement mises en cache.</span><span class="sxs-lookup"><span data-stu-id="527b8-107">However, you can still use compiled LINQ queries to reduce this cost in later executions and compiled queries can be more efficient than LINQ queries that are automatically cached.</span></span> <span data-ttu-id="527b8-108">Notez que les requêtes LINQ to Entities qui appliquent l'opérateur `Enumerable.Contains` aux collections en mémoire ne sont pas automatiquement mises en cache.</span><span class="sxs-lookup"><span data-stu-id="527b8-108">Note that LINQ to Entities queries that apply the `Enumerable.Contains` operator to in-memory collections are not automatically cached.</span></span> <span data-ttu-id="527b8-109">Le paramétrage des collections en mémoire dans les requêtes LINQ compilées n'est pas autorisé.</span><span class="sxs-lookup"><span data-stu-id="527b8-109">Also parameterizing in-memory collections in compiled LINQ queries is not allowed.</span></span>  
   
- La classe <xref:System.Data.Objects.CompiledQuery> permet la compilation et la mise en cache des requêtes en vue de leur réutilisation.  Conceptuellement, cette classe contient une méthode <xref:System.Data.Objects.CompiledQuery>'s `Compile` avec plusieurs surcharges.  Appelez la méthode `Compile` pour créer un nouveau délégué pour représenter la requête compilée.  Les méthodes `Compile`, fournies avec un objet <xref:System.Data.Objects.ObjectContext> et des valeurs de paramètres, retournent un délégué qui produit un résultat \(tel qu'une instance de <xref:System.Linq.IQueryable%601>\).  La requête compile une fois durant la première exécution uniquement.  Les options de fusion définies pour la requête au moment de la compilation ne peuvent pas être modifiées ultérieurement.  Une fois la requête compilée vous pouvez seulement fournir des paramètres de type primitif, mais vous ne pouvez pas remplacer des parties de la requête qui modifieraient le SQL généré.  Pour plus d'informations, consultez [Options de fusion Entity Framework et requêtes compilées](http://go.microsoft.com/fwlink/?LinkId=199591)  
+ <span data-ttu-id="527b8-110">La classe <xref:System.Data.Objects.CompiledQuery> permet la compilation et la mise en cache des requêtes en vue de leur réutilisation.</span><span class="sxs-lookup"><span data-stu-id="527b8-110">The <xref:System.Data.Objects.CompiledQuery> class provides compilation and caching of queries for reuse.</span></span> <span data-ttu-id="527b8-111">Conceptuellement, cette classe contient une méthode <xref:System.Data.Objects.CompiledQuery>'s `Compile` avec plusieurs surcharges.</span><span class="sxs-lookup"><span data-stu-id="527b8-111">Conceptually, this class contains a <xref:System.Data.Objects.CompiledQuery>'s `Compile` method with several overloads.</span></span> <span data-ttu-id="527b8-112">Appelez la méthode `Compile` pour créer un nouveau délégué pour représenter la requête compilée.</span><span class="sxs-lookup"><span data-stu-id="527b8-112">Call the `Compile` method to create a new delegate to represent the compiled query.</span></span> <span data-ttu-id="527b8-113">Les méthodes `Compile`, fournies avec un objet <xref:System.Data.Objects.ObjectContext> et des valeurs de paramètres, retournent un délégué qui produit un résultat (tel qu'une instance de <xref:System.Linq.IQueryable%601>).</span><span class="sxs-lookup"><span data-stu-id="527b8-113">The `Compile` methods, provided with a <xref:System.Data.Objects.ObjectContext> and parameter values, return a delegate that produces some result (such as an <xref:System.Linq.IQueryable%601> instance).</span></span> <span data-ttu-id="527b8-114">La requête compile une fois durant la première exécution uniquement.</span><span class="sxs-lookup"><span data-stu-id="527b8-114">The query compiles once during only the first execution.</span></span> <span data-ttu-id="527b8-115">Les options de fusion définies pour la requête au moment de la compilation ne peuvent pas être modifiées ultérieurement.</span><span class="sxs-lookup"><span data-stu-id="527b8-115">The merge options set for the query at the time of the compilation cannot be changed later.</span></span> <span data-ttu-id="527b8-116">Une fois la requête compilée vous pouvez seulement fournir des paramètres de type primitif, mais vous ne pouvez pas remplacer des parties de la requête qui modifieraient le SQL généré.</span><span class="sxs-lookup"><span data-stu-id="527b8-116">Once the query is compiled you can only supply parameters of primitive type but you cannot replace parts of the query that would change the generated SQL.</span></span> <span data-ttu-id="527b8-117">Pour plus d’informations, consultez [Options de fusion Entity Framework et requêtes compilées](http://go.microsoft.com/fwlink/?LinkId=199591)</span><span class="sxs-lookup"><span data-stu-id="527b8-117">For more information, see [Entity Framework Merge Options and Compiled Queries](http://go.microsoft.com/fwlink/?LinkId=199591)</span></span>  
   
- L'expression de requête [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] que compile la méthode `Compile` de <xref:System.Data.Objects.CompiledQuery> est représentée par l'un des délégués `Func` génériques, tels que <xref:System.Func%605>.  Au maximum, l'expression de requête peut encapsuler un paramètre `ObjectContext`, un paramètre de retour et seize paramètres de requête.  Si plus de seize paramètres de requête sont requis, vous pouvez créer une structure dont les propriétés représentent des paramètres de requête.  Vous pouvez alors utiliser les propriétés sur la structure dans l'expression de requête une fois les propriétés définies.  
+ <span data-ttu-id="527b8-118">Le [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] expression de requête qui la <xref:System.Data.Objects.CompiledQuery>de `Compile` méthode Compile est représentée par un de l’objet générique `Func` délégués, tels que <xref:System.Func%605>.</span><span class="sxs-lookup"><span data-stu-id="527b8-118">The [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] query expression that the <xref:System.Data.Objects.CompiledQuery>'s `Compile` method compiles is represented by one of the generic `Func` delegates, such as <xref:System.Func%605>.</span></span> <span data-ttu-id="527b8-119">Au maximum, l'expression de requête peut encapsuler un paramètre `ObjectContext`, un paramètre de retour et seize paramètres de requête.</span><span class="sxs-lookup"><span data-stu-id="527b8-119">At most, the query expression can encapsulate an `ObjectContext` parameter, a return parameter, and 16 query parameters.</span></span> <span data-ttu-id="527b8-120">Si plus de seize paramètres de requête sont requis, vous pouvez créer une structure dont les propriétés représentent des paramètres de requête.</span><span class="sxs-lookup"><span data-stu-id="527b8-120">If more than 16 query parameters are required, you can create a structure whose properties represent query parameters.</span></span> <span data-ttu-id="527b8-121">Vous pouvez alors utiliser les propriétés sur la structure dans l'expression de requête une fois les propriétés définies.</span><span class="sxs-lookup"><span data-stu-id="527b8-121">You can then use the properties on the structure in the query expression after you set the properties.</span></span>  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.Decimal> et retourne une séquence de commandes où le montant total dû est supérieur à 200,00 $ :  
+## <a name="example"></a><span data-ttu-id="527b8-122">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-122">Example</span></span>  
+ <span data-ttu-id="527b8-123">L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.Decimal> et retourne une séquence de commandes où le montant total dû est supérieur à 200,00 $ :</span><span class="sxs-lookup"><span data-stu-id="527b8-123">The following example compiles and then invokes a query that accepts a <xref:System.Decimal> input parameter and returns a sequence of orders where the total due is greater than or equal to $200.00:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery2)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery2)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui retourne une instance de <xref:System.Data.Objects.ObjectQuery%601> :  
+## <a name="example"></a><span data-ttu-id="527b8-124">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-124">Example</span></span>  
+ <span data-ttu-id="527b8-125">L'exemple suivant compile puis appelle une requête qui retourne une instance de <xref:System.Data.Objects.ObjectQuery%601> :</span><span class="sxs-lookup"><span data-stu-id="527b8-125">The following example compiles and then invokes a query that returns an <xref:System.Data.Objects.ObjectQuery%601> instance:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery1_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery1_mq)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery1_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery1_mq)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui retourne la moyenne des prix courants des produits sous la forme d'une valeur <xref:System.Decimal> :  
+## <a name="example"></a><span data-ttu-id="527b8-126">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-126">Example</span></span>  
+ <span data-ttu-id="527b8-127">L'exemple suivant compile puis appelle une requête qui retourne la moyenne des prix courants des produits sous la forme d'une valeur <xref:System.Decimal> :</span><span class="sxs-lookup"><span data-stu-id="527b8-127">The following example compiles and then invokes a query that returns the average of the product list prices as a <xref:System.Decimal> value:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery3_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery3_mq)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery3_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery3_mq)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.String> puis retourne un `Contact` dont l'adresse de messagerie commence par la chaîne spécifiée :  
+## <a name="example"></a><span data-ttu-id="527b8-128">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-128">Example</span></span>  
+ <span data-ttu-id="527b8-129">L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.String> puis retourne un `Contact` dont l'adresse de messagerie commence par la chaîne spécifiée :</span><span class="sxs-lookup"><span data-stu-id="527b8-129">The following example compiles and then invokes a query that accepts a <xref:System.String> input parameter and then returns a `Contact` whose e-mail address starts with the specified string:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery4_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery4_mq)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery4_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery4_mq)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui accepte les paramètres d'entrée <xref:System.DateTime> et <xref:System.Decimal> et retourne une séquence de commandes où la date de commande est ultérieure au 8 mars 2003 et le montant total dû est inférieur à 300,00 $ :  
+## <a name="example"></a><span data-ttu-id="527b8-130">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-130">Example</span></span>  
+ <span data-ttu-id="527b8-131">L'exemple suivant compile puis appelle une requête qui accepte les paramètres d'entrée <xref:System.DateTime> et <xref:System.Decimal> et retourne une séquence de commandes où la date de commande est ultérieure au 8 mars 2003 et le montant total dû est inférieur à 300,00 $ :</span><span class="sxs-lookup"><span data-stu-id="527b8-131">The following example compiles and then invokes a query that accepts <xref:System.DateTime> and <xref:System.Decimal> input parameters and returns a sequence of orders where the order date is later than March 8, 2003, and the total due is less than $300.00:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery5)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery5)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.DateTime> et retourne une séquence de commandes dont la date de commande est postérieure au 8 mars 2004.  Cette requête retourne les informations de commande sous la forme d'une séquence de types anonymes.  Les types anonymes sont déduits par le compilateur, si bien que vous ne pouvez pas spécifier les paramètres de type dans la méthode `Compile` de <xref:System.Data.Objects.CompiledQuery> et le type est défini dans la requête elle\-même.  
+## <a name="example"></a><span data-ttu-id="527b8-132">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-132">Example</span></span>  
+ <span data-ttu-id="527b8-133">L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.DateTime> et retourne une séquence de commandes dont la date de commande est postérieure au 8 mars 2004.</span><span class="sxs-lookup"><span data-stu-id="527b8-133">The following example compiles and then invokes a query that accepts a <xref:System.DateTime> input parameter and returns a sequence of orders where the order date is later than March 8, 2004.</span></span> <span data-ttu-id="527b8-134">Cette requête retourne les informations de commande sous la forme d'une séquence de types anonymes.</span><span class="sxs-lookup"><span data-stu-id="527b8-134">This query returns the order information as a sequence of anonymous types.</span></span> <span data-ttu-id="527b8-135">Les types anonymes sont déduits par le compilateur, si bien que vous ne pouvez pas spécifier les paramètres de type dans la méthode <xref:System.Data.Objects.CompiledQuery> de `Compile` et le type est défini dans la requête elle-même.</span><span class="sxs-lookup"><span data-stu-id="527b8-135">Anonymous types are inferred by the compiler, so you cannot specify type parameters in the <xref:System.Data.Objects.CompiledQuery>'s `Compile` method and the type is defined in the query itself.</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery6)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery6)]  
   
-## Exemple  
- L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée de la structure définie par l'utilisateur, puis retourne une séquence de commandes.  La structure définit les paramètres de requête de date de début, de date de fin et de montant total dû, et la requête retourne les commandes expédiées entre le 3 mars et le 8 mars 2003 dont le montant total dû est supérieur à 700,00 $.  
+## <a name="example"></a><span data-ttu-id="527b8-136">Exemple</span><span class="sxs-lookup"><span data-stu-id="527b8-136">Example</span></span>  
+ <span data-ttu-id="527b8-137">L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée de la structure définie par l'utilisateur, puis retourne une séquence de commandes.</span><span class="sxs-lookup"><span data-stu-id="527b8-137">The following example compiles and then invokes a query that accepts a user-defined structure input parameter and returns a sequence of orders.</span></span> <span data-ttu-id="527b8-138">La structure définit les paramètres de requête de date de début, de date de fin et de montant total dû, et la requête retourne les commandes expédiées entre le 3 mars et le 8 mars 2003 dont le montant total dû est supérieur à 700,00 $.</span><span class="sxs-lookup"><span data-stu-id="527b8-138">The structure defines start date, end date, and total due query parameters, and the query returns orders shipped between March 3 and March 8, 2003 with a total due greater than $700.00.</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#CompiledQuery7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#compiledquery7)]
  [!code-vb[DP L2E Conceptual Examples#CompiledQuery7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#compiledquery7)]  
   
- La structure qui définit les paramètres de requête :  
+ <span data-ttu-id="527b8-139">La structure qui définit les paramètres de requête :</span><span class="sxs-lookup"><span data-stu-id="527b8-139">The structure that defines the query parameters:</span></span>  
   
  [!code-csharp[DP L2E Conceptual Examples#MyParamsStruct](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myparamsstruct)]
  [!code-vb[DP L2E Conceptual Examples#MyParamsStruct](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myparamsstruct)]  
   
-## Voir aussi  
- [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)   
- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)   
- [Options de fusion Entity Framework et requêtes compilées](http://go.microsoft.com/fwlink/?LinkId=199591)
+## <a name="see-also"></a><span data-ttu-id="527b8-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="527b8-140">See Also</span></span>  
+ [<span data-ttu-id="527b8-141">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="527b8-141">ADO.NET Entity Framework</span></span>](../../../../../../docs/framework/data/adonet/ef/index.md)  
+ [<span data-ttu-id="527b8-142">LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="527b8-142">LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
+ [<span data-ttu-id="527b8-143">Options de fusion Entity Framework et requêtes compilées</span><span class="sxs-lookup"><span data-stu-id="527b8-143">Entity Framework Merge Options and Compiled Queries</span></span>](http://go.microsoft.com/fwlink/?LinkId=199591)

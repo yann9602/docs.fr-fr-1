@@ -1,44 +1,47 @@
 ---
-title: "Commandes et param&#232;tres | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Commandes et paramètres"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b623f810-d871-49a5-b0f5-078cc3c34db6
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e1bfd3e88df4bd90cbcebfa645c2a50159f836db
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Commandes et param&#232;tres
-Après avoir établi une connexion à une source de données, vous pouvez exécuter des commandes et retourner les résultats de la source de données à l'aide d'un objet <xref:System.Data.Common.DbCommand>.  Vous pouvez créer une commande en utilisant l'un des constructeurs de commande du fournisseur de données .NET Framework avec lequel vous travaillez.  Les constructeurs acceptent des arguments optionnels, comme une instruction SQL à exécuter au niveau de la source de données, un objet <xref:System.Data.Common.DbConnection> ou un objet <xref:System.Data.Common.DbTransaction>.  Vous pouvez également configurer ces objets en tant que propriétés de la commande.  Vous pouvez aussi créer une commande pour une connexion particulière à l'aide de la méthode <xref:System.Data.Common.DbConnection.CreateCommand%2A> d'un objet `DbConnection`.  L'instruction SQL en cours d'exécution par la commande peut être configurée à l'aide de la propriété <xref:System.Data.Common.DbCommand.CommandText%2A>.  
+# <a name="commands-and-parameters"></a><span data-ttu-id="09d30-102">Commandes et paramètres</span><span class="sxs-lookup"><span data-stu-id="09d30-102">Commands and Parameters</span></span>
+<span data-ttu-id="09d30-103">Après avoir établi une connexion à une source de données, vous pouvez exécuter des commandes et retourner les résultats de la source de données à l'aide d'un objet <xref:System.Data.Common.DbCommand>.</span><span class="sxs-lookup"><span data-stu-id="09d30-103">After establishing a connection to a data source, you can execute commands and return results from the data source using a <xref:System.Data.Common.DbCommand> object.</span></span> <span data-ttu-id="09d30-104">Vous pouvez créer une commande en utilisant l'un des constructeurs de commande du fournisseur de données .NET Framework avec lequel vous travaillez.</span><span class="sxs-lookup"><span data-stu-id="09d30-104">You can create a command using one of the command constructors for the .NET Framework data provider you are working with.</span></span> <span data-ttu-id="09d30-105">Les constructeurs acceptent des arguments optionnels, comme une instruction SQL à exécuter au niveau de la source de données, un objet <xref:System.Data.Common.DbConnection> ou un objet <xref:System.Data.Common.DbTransaction>.</span><span class="sxs-lookup"><span data-stu-id="09d30-105">Constructors can take optional arguments, such as an SQL statement to execute at the data source, a <xref:System.Data.Common.DbConnection> object, or a <xref:System.Data.Common.DbTransaction> object.</span></span> <span data-ttu-id="09d30-106">Vous pouvez également configurer ces objets en tant que propriétés de la commande.</span><span class="sxs-lookup"><span data-stu-id="09d30-106">You can also configure those objects as properties of the command.</span></span> <span data-ttu-id="09d30-107">Vous pouvez aussi créer une commande pour une connexion particulière à l'aide de la méthode <xref:System.Data.Common.DbConnection.CreateCommand%2A> d'un objet `DbConnection`.</span><span class="sxs-lookup"><span data-stu-id="09d30-107">You can also create a command for a particular connection using the <xref:System.Data.Common.DbConnection.CreateCommand%2A> method of a `DbConnection` object.</span></span> <span data-ttu-id="09d30-108">L'instruction SQL en cours d'exécution par la commande peut être configurée à l'aide de la propriété <xref:System.Data.Common.DbCommand.CommandText%2A>.</span><span class="sxs-lookup"><span data-stu-id="09d30-108">The SQL statement being executed by the command can be configured using the <xref:System.Data.Common.DbCommand.CommandText%2A> property.</span></span>  
   
- Chaque fournisseur de données .NET Framework inclus dans le .NET Framework possède un objet `Command`.  Le fournisseur de données .NET Framework pour OLE DB inclut un objet <xref:System.Data.OleDb.OleDbCommand>, le fournisseur de données .NET Framework pour SQL Server inclut un objet <xref:System.Data.SqlClient.SqlCommand>, le fournisseur de données .NET Framework pour ODBC inclut un objet <xref:System.Data.Odbc.OdbcCommand> et le fournisseur de données .NET Framework pour Oracle inclut un objet <xref:System.Data.OracleClient.OracleCommand>.  
+ <span data-ttu-id="09d30-109">Chaque fournisseur de données .NET Framework inclus dans le .NET Framework possède un objet `Command`.</span><span class="sxs-lookup"><span data-stu-id="09d30-109">Each .NET Framework data provider included with the .NET Framework has a `Command` object.</span></span> <span data-ttu-id="09d30-110">Le fournisseur de données .NET Framework pour OLE DB inclut un objet <xref:System.Data.OleDb.OleDbCommand>, le fournisseur de données .NET Framework pour SQL Server inclut un objet <xref:System.Data.SqlClient.SqlCommand>, le fournisseur de données .NET Framework pour ODBC inclut un objet <xref:System.Data.Odbc.OdbcCommand> et le fournisseur de données .NET Framework pour Oracle inclut un objet <xref:System.Data.OracleClient.OracleCommand>.</span><span class="sxs-lookup"><span data-stu-id="09d30-110">The .NET Framework Data Provider for OLE DB includes an <xref:System.Data.OleDb.OleDbCommand> object, the .NET Framework Data Provider for SQL Server includes a <xref:System.Data.SqlClient.SqlCommand> object, the .NET Framework Data Provider for ODBC includes an <xref:System.Data.Odbc.OdbcCommand> object, and the .NET Framework Data Provider for Oracle includes an <xref:System.Data.OracleClient.OracleCommand> object.</span></span>  
   
-## Dans cette section  
- [Exécution d'une commande](../../../../docs/framework/data/adonet/executing-a-command.md)  
- Décrit l'objet `Command` et son utilisation pour exécuter des requêtes et des commandes sur une source de données.  
+## <a name="in-this-section"></a><span data-ttu-id="09d30-111">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="09d30-111">In This Section</span></span>  
+ [<span data-ttu-id="09d30-112">Exécution d’une commande</span><span class="sxs-lookup"><span data-stu-id="09d30-112">Executing a Command</span></span>](../../../../docs/framework/data/adonet/executing-a-command.md)  
+ <span data-ttu-id="09d30-113">Décrit l'objet `Command` et son utilisation pour exécuter des requêtes et des commandes sur une source de données.</span><span class="sxs-lookup"><span data-stu-id="09d30-113">Describes the ADO.NET `Command` object and how to use it to execute queries and commands against a data source.</span></span>  
   
- [Configuration des paramètres et des types de données des paramètres](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- Décrit l'utilisation des paramètres `Command`, y compris la direction, les types de données et la syntaxe des paramètres.  
+ [<span data-ttu-id="09d30-114">Configuration des paramètres et des Types de données de paramètre</span><span class="sxs-lookup"><span data-stu-id="09d30-114">Configuring Parameters and Parameter Data Types</span></span>](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+ <span data-ttu-id="09d30-115">Décrit l'utilisation des paramètres `Command`, y compris la direction, les types de données et la syntaxe des paramètres.</span><span class="sxs-lookup"><span data-stu-id="09d30-115">Describes working with `Command` parameters, including direction, data types, and parameter syntax.</span></span>  
   
- [Génération de commandes à l'aide de CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)  
- Décrit l'utilisation de générateurs de commande pour générer automatiquement les commandes INSERT, UPDATE et DELETE pour un `DataAdapter` ayant une commande SELECT d'analyse unique.  
+ [<span data-ttu-id="09d30-116">Génération de commandes avec CommandBuilders</span><span class="sxs-lookup"><span data-stu-id="09d30-116">Generating Commands with CommandBuilders</span></span>](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)  
+ <span data-ttu-id="09d30-117">Décrit l'utilisation de générateurs de commande pour générer automatiquement les commandes INSERT, UPDATE et DELETE pour un `DataAdapter` ayant une commande SELECT d'analyse unique.</span><span class="sxs-lookup"><span data-stu-id="09d30-117">Describes how to use command builders to automatically generate INSERT, UPDATE, and DELETE commands for a `DataAdapter` that has a single-table SELECT command.</span></span>  
   
- [Obtention d'une valeur unique à partir d'une base de données](../../../../docs/framework/data/adonet/obtaining-a-single-value-from-a-database.md)  
- Décrit comment utiliser la méthode `ExecuteScalar` d'un objet `Command` pour retourner une valeur unique à partir d'une requête de base de données.  
+ [<span data-ttu-id="09d30-118">Obtention d’une valeur unique à partir d’une base de données</span><span class="sxs-lookup"><span data-stu-id="09d30-118">Obtaining a Single Value from a Database</span></span>](../../../../docs/framework/data/adonet/obtaining-a-single-value-from-a-database.md)  
+ <span data-ttu-id="09d30-119">Décrit comment utiliser la méthode `ExecuteScalar` d'un objet `Command` pour retourner une valeur unique à partir d'une requête de base de données.</span><span class="sxs-lookup"><span data-stu-id="09d30-119">Describes how to use the `ExecuteScalar` method of a `Command` object to return a single value from a database query.</span></span>  
   
- [Utilisation de commandes pour modifier des données](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- Explique comment utiliser un fournisseur de données pour exécuter des procédures stockées ou des instructions DDL \(Data Definition Language\).  
+ [<span data-ttu-id="09d30-120">À l’aide des commandes pour modifier des données</span><span class="sxs-lookup"><span data-stu-id="09d30-120">Using Commands to Modify Data</span></span>](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
+ <span data-ttu-id="09d30-121">Explique comment utiliser un fournisseur de données pour exécuter des procédures stockées ou des instructions DDL (Data Definition Language).</span><span class="sxs-lookup"><span data-stu-id="09d30-121">Describes how to use a data provider to execute stored procedures or data definition language (DDL) statements.</span></span>  
   
-## Voir aussi  
- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [Objets DataSet, DataTable et DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [Connexion à une source de données](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="09d30-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="09d30-122">See Also</span></span>  
+ [<span data-ttu-id="09d30-123">DataAdapters et DataReaders</span><span class="sxs-lookup"><span data-stu-id="09d30-123">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="09d30-124">DataSets, DataTables et DataViews</span><span class="sxs-lookup"><span data-stu-id="09d30-124">DataSets, DataTables, and DataViews</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="09d30-125">Connexion à une source de données</span><span class="sxs-lookup"><span data-stu-id="09d30-125">Connecting to a Data Source</span></span>](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
+ [<span data-ttu-id="09d30-126">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="09d30-126">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

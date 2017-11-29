@@ -1,70 +1,73 @@
 ---
-title: "&lt;service&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: '&lt;service&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9f909fe64e8997a39519fbde2e476a324319f57d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;service&gt;
-L'élément `service` contient les paramètres d'un service Windows Communication Foundation \(WCF\).  Il contient également les points de terminaison qui exposent le service.  
+# <a name="ltservicegt"></a><span data-ttu-id="55273-102">&lt;service&gt;</span><span class="sxs-lookup"><span data-stu-id="55273-102">&lt;service&gt;</span></span>
+<span data-ttu-id="55273-103">L'élément `service` contient les paramètres d'un service Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="55273-103">The `service` element contains the settings for a Windows Communication Foundation (WCF) service.</span></span> <span data-ttu-id="55273-104">Il contient également les points de terminaison qui exposent le service.</span><span class="sxs-lookup"><span data-stu-id="55273-104">It also contains endpoints that expose the service.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="55273-105">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="55273-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="55273-106">\<Services ></span><span class="sxs-lookup"><span data-stu-id="55273-106">\<services></span></span>  
+<span data-ttu-id="55273-107">\<service ></span><span class="sxs-lookup"><span data-stu-id="55273-107">\<service></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="55273-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="55273-108">Syntax</span></span>  
   
+```xml  
 <service behaviorConfiguration=String"  
         name="String"  
 </service>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="55273-109">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="55273-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="55273-110">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="55273-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="55273-111">Attributs</span><span class="sxs-lookup"><span data-stu-id="55273-111">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|behaviorConfiguration|Chaîne qui contient le nom du comportement à utiliser pour instancier le service.  Le nom du comportement doit être dans la portée, au niveau où le service est défini.  La valeur par défaut est une chaîne vide.|  
-|name|Attribut de chaîne requis indiquant le type de service à instancier.  Ce paramètre doit correspondre à un type valide.  Le format doit être `Namespace.Class.`|  
+|<span data-ttu-id="55273-112">Attribut</span><span class="sxs-lookup"><span data-stu-id="55273-112">Attribute</span></span>|<span data-ttu-id="55273-113">Description</span><span class="sxs-lookup"><span data-stu-id="55273-113">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="55273-114">behaviorConfiguration</span><span class="sxs-lookup"><span data-stu-id="55273-114">behaviorConfiguration</span></span>|<span data-ttu-id="55273-115">Chaîne qui contient le nom du comportement à utiliser pour instancier le service.</span><span class="sxs-lookup"><span data-stu-id="55273-115">A string that contains the behavior name of the behavior to be used to instantiate the service.</span></span> <span data-ttu-id="55273-116">Le nom du comportement doit être dans la portée, au niveau où le service est défini.</span><span class="sxs-lookup"><span data-stu-id="55273-116">The behavior name must be in scope at the point the service is defined.</span></span> <span data-ttu-id="55273-117">La valeur par défaut est une chaîne vide.</span><span class="sxs-lookup"><span data-stu-id="55273-117">The default value is an empty string.</span></span>|  
+|<span data-ttu-id="55273-118">name</span><span class="sxs-lookup"><span data-stu-id="55273-118">name</span></span>|<span data-ttu-id="55273-119">Attribut de chaîne requis indiquant le type de service à instancier.</span><span class="sxs-lookup"><span data-stu-id="55273-119">Required String attribute that specifies the type of the service to be instantiated.</span></span> <span data-ttu-id="55273-120">Ce paramètre doit correspondre à un type valide.</span><span class="sxs-lookup"><span data-stu-id="55273-120">This setting must equate to a valid type.</span></span> <span data-ttu-id="55273-121">Le format doit être `Namespace.Class.`</span><span class="sxs-lookup"><span data-stu-id="55273-121">The format should be `Namespace.Class.`</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="55273-122">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="55273-122">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="55273-123">Élément</span><span class="sxs-lookup"><span data-stu-id="55273-123">Element</span></span>|<span data-ttu-id="55273-124">Description</span><span class="sxs-lookup"><span data-stu-id="55273-124">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Point de terminaison \(endpoint\)\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Collection d'éléments `endpoint` qui exposent ce service.|  
-|[\<hôte\>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Spécifie l'hôte de cette instance de service.  Cet élément est de type <xref:System.ServiceModel.Configuration.HostElement>.|  
+|[<span data-ttu-id="55273-125">\<point de terminaison ></span><span class="sxs-lookup"><span data-stu-id="55273-125">\<endpoint></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|<span data-ttu-id="55273-126">Collection d'éléments `endpoint` qui exposent ce service.</span><span class="sxs-lookup"><span data-stu-id="55273-126">A collection of `endpoint` elements that expose this service.</span></span>|  
+|[<span data-ttu-id="55273-127">\<hôte ></span><span class="sxs-lookup"><span data-stu-id="55273-127">\<host></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|<span data-ttu-id="55273-128">Spécifie l'hôte de cette instance de service.</span><span class="sxs-lookup"><span data-stu-id="55273-128">Specifies the host of this service instance.</span></span> <span data-ttu-id="55273-129">Cet élément est de type <xref:System.ServiceModel.Configuration.HostElement>.</span><span class="sxs-lookup"><span data-stu-id="55273-129">This element is of type <xref:System.ServiceModel.Configuration.HostElement>.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="55273-130">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="55273-130">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="55273-131">Élément</span><span class="sxs-lookup"><span data-stu-id="55273-131">Element</span></span>|<span data-ttu-id="55273-132">Description</span><span class="sxs-lookup"><span data-stu-id="55273-132">Description</span></span>|  
 |-------------|-----------------|  
-|[\<services\>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Élément racine de tous les éléments de configuration WCF.|  
+|[<span data-ttu-id="55273-133">\<Services ></span><span class="sxs-lookup"><span data-stu-id="55273-133">\<services></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|<span data-ttu-id="55273-134">Élément racine de tous les éléments de configuration WCF.</span><span class="sxs-lookup"><span data-stu-id="55273-134">The root element of all WCF configuration elements.</span></span>|  
   
-## Notes  
- Les services sont définis dans la section `services` du fichier de configuration.  Un assembly peut contenir n'importe quel nombre de services.  Chacun dispose de sa propre section de configuration de `service`.  Cette section et son contenu définissent le contrat de service, le comportement et les points de terminaison de ce service en particulier.  
+## <a name="remarks"></a><span data-ttu-id="55273-135">Remarques</span><span class="sxs-lookup"><span data-stu-id="55273-135">Remarks</span></span>  
+ <span data-ttu-id="55273-136">Les services sont définis dans la section `services` du fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="55273-136">Services are defined in the `services` section of the configuration file.</span></span> <span data-ttu-id="55273-137">Un assembly peut contenir n'importe quel nombre de services.</span><span class="sxs-lookup"><span data-stu-id="55273-137">An assembly can contain any number of services.</span></span> <span data-ttu-id="55273-138">Chacun dispose de sa propre section de configuration de `service`.</span><span class="sxs-lookup"><span data-stu-id="55273-138">Each service has its own `service` configuration section.</span></span> <span data-ttu-id="55273-139">Cette section et son contenu définissent le contrat de service, le comportement et les points de terminaison de ce service en particulier.</span><span class="sxs-lookup"><span data-stu-id="55273-139">This section and its content define the service contract, behavior, and endpoints of the particular service.</span></span>  
   
- L'élément `behaviorConfiguration` est également facultatif.  Il identifie le comportement que le service adopte.  Le comportement spécifié dans cet attribut doit créer une liaison avec un comportement dans la portée du même fichier de configuration.  
+ <span data-ttu-id="55273-140">L'élément `behaviorConfiguration` est également facultatif.</span><span class="sxs-lookup"><span data-stu-id="55273-140">The `behaviorConfiguration` element is also optional.</span></span> <span data-ttu-id="55273-141">Il identifie le comportement que le service adopte.</span><span class="sxs-lookup"><span data-stu-id="55273-141">It identifies the behavior the service uses.</span></span> <span data-ttu-id="55273-142">Le comportement spécifié dans cet attribut doit créer une liaison avec un comportement dans la portée du même fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="55273-142">The behavior specified in this attribute must link to a behavior in scope in the same configuration file.</span></span>  
   
- Chaque service expose un ou plusieurs points de terminaison, qui ont leurs propres adresse et liaison.  Toutes les liaisons utilisées dans le fichier de configuration doivent être définies dans l'étendue du fichier.  La liaison est liée aux points de terminaison grâce à la combinaison des attributs `name` et `bindingConfiguration`.  L'attribut `name` décrit la section dans laquelle la liaison est définie.  L'attribut `bindingConfiguration` définit quelle configuration de la section de liaison est utilisée.  Une section de liaison peut définir plusieurs configurations.  
+ <span data-ttu-id="55273-143">Chaque service expose un ou plusieurs points de terminaison, qui ont leurs propres adresse et liaison.</span><span class="sxs-lookup"><span data-stu-id="55273-143">Each service exposes one or more endpoints, which has its own address and binding.</span></span> <span data-ttu-id="55273-144">Toutes les liaisons utilisées dans le fichier de configuration doivent être définies dans l'étendue du fichier.</span><span class="sxs-lookup"><span data-stu-id="55273-144">All bindings used within the configuration file must be defined in the scope of the file.</span></span> <span data-ttu-id="55273-145">La liaison est liée aux points de terminaison grâce à la combinaison des attributs `name` et `bindingConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="55273-145">Binding are linked to endpoints through the combination of the attributes `name` and `bindingConfiguration`.</span></span> <span data-ttu-id="55273-146">L'attribut `name` décrit la section dans laquelle la liaison est définie.</span><span class="sxs-lookup"><span data-stu-id="55273-146">The `name` attribute describes the section the binding is defined in.</span></span> <span data-ttu-id="55273-147">L'attribut `bindingConfiguration` définit quelle configuration de la section de liaison est utilisée.</span><span class="sxs-lookup"><span data-stu-id="55273-147">The `bindingConfiguration` attribute defines which configuration within the binding section is used.</span></span> <span data-ttu-id="55273-148">Une section de liaison peut définir plusieurs configurations.</span><span class="sxs-lookup"><span data-stu-id="55273-148">A binding section can define several configurations.</span></span>  
   
-## Exemple  
- Il s'agit d'un exemple de configuration de service.  
+## <a name="example"></a><span data-ttu-id="55273-149">Exemple</span><span class="sxs-lookup"><span data-stu-id="55273-149">Example</span></span>  
+ <span data-ttu-id="55273-150">Il s'agit d'un exemple de configuration de service.</span><span class="sxs-lookup"><span data-stu-id="55273-150">This is an example of a service configuration.</span></span>  
   
-```  
+```xml  
 <service behaviorConfiguration="testChannelBehavior"   
      name="HelloWorld">  
      <endpoint   
@@ -76,6 +79,6 @@ L'élément `service` contient les paramètres d'un service Windows Communicatio
 </service>  
 ```  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.ServiceElement>   
- [Configuration des services](../../../../../docs/framework/wcf/configuring-services.md)
+## <a name="see-also"></a><span data-ttu-id="55273-151">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="55273-151">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.ServiceElement>  
+ [<span data-ttu-id="55273-152">Configuration des services</span><span class="sxs-lookup"><span data-stu-id="55273-152">Configuring Services</span></span>](../../../../../docs/framework/wcf/configuring-services.md)

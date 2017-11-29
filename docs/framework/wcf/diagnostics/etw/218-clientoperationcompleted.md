@@ -1,43 +1,46 @@
 ---
-title: "218 - ClientOperationCompleted | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 218 - ClientOperationCompleted
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b069bced-7bb2-4e01-8227-e5dbda17af09
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ea826aa99e847f74c5a44113f2ae16d7322873f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 218 - ClientOperationCompleted
-## Propriétés  
+# <a name="218---clientoperationcompleted"></a><span data-ttu-id="21f18-102">218 - ClientOperationCompleted</span><span class="sxs-lookup"><span data-stu-id="21f18-102">218 - ClientOperationCompleted</span></span>
+## <a name="properties"></a><span data-ttu-id="21f18-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="21f18-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|218|  
-|Mots clés|Dépannage, ServiceModel|  
-|Niveau|Information|  
-|Canal|Microsoft\-Windows\-Serveur d'applications\-Applications\/Analyse|  
+|<span data-ttu-id="21f18-104">ID</span><span class="sxs-lookup"><span data-stu-id="21f18-104">ID</span></span>|<span data-ttu-id="21f18-105">218</span><span class="sxs-lookup"><span data-stu-id="21f18-105">218</span></span>|  
+|<span data-ttu-id="21f18-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="21f18-106">Keywords</span></span>|<span data-ttu-id="21f18-107">Dépannage, ServiceModel</span><span class="sxs-lookup"><span data-stu-id="21f18-107">Troubleshooting, ServiceModel</span></span>|  
+|<span data-ttu-id="21f18-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="21f18-108">Level</span></span>|<span data-ttu-id="21f18-109">Information</span><span class="sxs-lookup"><span data-stu-id="21f18-109">Information</span></span>|  
+|<span data-ttu-id="21f18-110">Canal</span><span class="sxs-lookup"><span data-stu-id="21f18-110">Channel</span></span>|<span data-ttu-id="21f18-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="21f18-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## Description  
- Cet événement est émis par les clients juste après la fin d'une opération.Dans le cas des opérations monodirectionnelles, il est émis juste après l'envoi réussi du message.Dans le cas des opérations demande\-réponse, il est émis juste après la réception de la réponse.  
+## <a name="description"></a><span data-ttu-id="21f18-112">Description</span><span class="sxs-lookup"><span data-stu-id="21f18-112">Description</span></span>  
+ <span data-ttu-id="21f18-113">Cet événement est émis par les clients juste après la fin d'une opération.</span><span class="sxs-lookup"><span data-stu-id="21f18-113">This event is emitted by clients just after an operation completes.</span></span> <span data-ttu-id="21f18-114">Dans le cas des opérations monodirectionnelles, il est émis juste après l'envoi réussi du message.</span><span class="sxs-lookup"><span data-stu-id="21f18-114">For one-way operations, this is just after the message is sent successfully.</span></span> <span data-ttu-id="21f18-115">Dans le cas des opérations demande-réponse, il est émis juste après la réception de la réponse.</span><span class="sxs-lookup"><span data-stu-id="21f18-115">For request-response operations this is after the response is received.</span></span>  
   
-## Message  
- Le client a terminé d'exécuter l'action '%1' associée au contrat '%2'.Le message a été envoyé à '%3'.  
+## <a name="message"></a><span data-ttu-id="21f18-116">Message</span><span class="sxs-lookup"><span data-stu-id="21f18-116">Message</span></span>  
+ <span data-ttu-id="21f18-117">Le client a terminé d'exécuter l'action '%1' associée au contrat '%2'.</span><span class="sxs-lookup"><span data-stu-id="21f18-117">The Client completed executing Action '%1' associated with the '%2' contract.</span></span> <span data-ttu-id="21f18-118">Le message a été envoyé à '%3'.</span><span class="sxs-lookup"><span data-stu-id="21f18-118">The message was sent to '%3'.</span></span>  
   
-## Détails  
+## <a name="details"></a><span data-ttu-id="21f18-119">Détails</span><span class="sxs-lookup"><span data-stu-id="21f18-119">Details</span></span>  
   
-|Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
-|Action|xs:string|En\-tête d'action SOAP du message sortant.|  
-|Nom de contrat|`xs:string`|Nom du contrat.Exemple : ICalculator.|  
-|Destination|`xs:string`|Adresse du point de terminaison de service auquel le message a été envoyé.|  
-|HostReference|`xs:string`|Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.Son format est défini de la façon suivante : 'Chemin d'accès virtuel de l'Application Nom du site Web&#124;Chemin d'accès virtuel du Service&#124;ServiceName.Exemple : 'Site Web par défaut\/CalculatorApplication&#124;\/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.|
+|<span data-ttu-id="21f18-120">Nom d'élément de données</span><span class="sxs-lookup"><span data-stu-id="21f18-120">Data Item Name</span></span>|<span data-ttu-id="21f18-121">Type d'élément de données</span><span class="sxs-lookup"><span data-stu-id="21f18-121">Data Item Type</span></span>|<span data-ttu-id="21f18-122">Description</span><span class="sxs-lookup"><span data-stu-id="21f18-122">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="21f18-123">Action</span><span class="sxs-lookup"><span data-stu-id="21f18-123">Action</span></span>|<span data-ttu-id="21f18-124">xs:string</span><span class="sxs-lookup"><span data-stu-id="21f18-124">xs:string</span></span>|<span data-ttu-id="21f18-125">En-tête d'action SOAP du message sortant.</span><span class="sxs-lookup"><span data-stu-id="21f18-125">The SOAP action header of the outgoing message.</span></span>|  
+|<span data-ttu-id="21f18-126">Nom de contrat</span><span class="sxs-lookup"><span data-stu-id="21f18-126">Contract Name</span></span>|`xs:string`|<span data-ttu-id="21f18-127">Nom du contrat.</span><span class="sxs-lookup"><span data-stu-id="21f18-127">The name of the contract.</span></span> <span data-ttu-id="21f18-128">Exemple : ICalculator.</span><span class="sxs-lookup"><span data-stu-id="21f18-128">Example: ICalculator.</span></span>|  
+|<span data-ttu-id="21f18-129">Destination</span><span class="sxs-lookup"><span data-stu-id="21f18-129">Destination</span></span>|`xs:string`|<span data-ttu-id="21f18-130">Adresse du point de terminaison de service auquel le message a été envoyé.</span><span class="sxs-lookup"><span data-stu-id="21f18-130">The address of the service endpoint that the message was sent to.</span></span>|  
+|<span data-ttu-id="21f18-131">HostReference</span><span class="sxs-lookup"><span data-stu-id="21f18-131">HostReference</span></span>|`xs:string`|<span data-ttu-id="21f18-132">Pour les services hébergés par le Web, ce champ identifie de manière unique le service dans la hiérarchie Web.</span><span class="sxs-lookup"><span data-stu-id="21f18-132">For Web-hosted services, this field uniquely identifies the service in the Web hierarchy.</span></span> <span data-ttu-id="21f18-133">Son format est défini en tant que ' chemin d’accès virtuel de Site Web de nom d’Application &#124; Chemin d’accès virtuel de service &#124; ServiceName'.</span><span class="sxs-lookup"><span data-stu-id="21f18-133">Its format is defined as 'Web Site Name Application Virtual Path&#124;Service Virtual Path&#124;ServiceName'.</span></span> <span data-ttu-id="21f18-134">Exemple : ' Default Web Site/CalculatorApplication &#124;/CalculatorService.svc &#124; CalculatorService ».</span><span class="sxs-lookup"><span data-stu-id="21f18-134">Example: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.</span></span>|  
+|<span data-ttu-id="21f18-135">AppDomain</span><span class="sxs-lookup"><span data-stu-id="21f18-135">AppDomain</span></span>|`xs:string`|<span data-ttu-id="21f18-136">Chaîne retournée par AppDomain.CurrentDomain.FriendlyName.</span><span class="sxs-lookup"><span data-stu-id="21f18-136">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

@@ -1,35 +1,38 @@
 ---
-title: "Prise en charge des transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Prise en charge des transactions
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8cceb26e-8d36-4365-8967-58e2e89e0187
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 7c1d438a83f090795a158ade1dfdbb7d2b2df863
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Prise en charge des transactions
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge trois modèles de transaction distincts.  Ces modèles sont présentés ci\-dessous dans l'ordre d'exécution des contrôles.  
+# <a name="transaction-support"></a><span data-ttu-id="898bc-102">Prise en charge des transactions</span><span class="sxs-lookup"><span data-stu-id="898bc-102">Transaction Support</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="898bc-103">prend en charge trois modèles de transaction distincts.</span><span class="sxs-lookup"><span data-stu-id="898bc-103"> supports three distinct transaction models.</span></span> <span data-ttu-id="898bc-104">Ces modèles sont présentés ci-dessous dans l'ordre d'exécution des contrôles.</span><span class="sxs-lookup"><span data-stu-id="898bc-104">The following lists these models in the order of checks performed.</span></span>  
   
-## Transaction locale explicite  
- Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, si la propriété <xref:System.Data.Linq.DataContext.Transaction%2A> a pour valeur une transaction \(`IDbTransaction`\), l'appel de <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est effectué dans le contexte de la même transaction.  
+## <a name="explicit-local-transaction"></a><span data-ttu-id="898bc-105">Transaction locale explicite</span><span class="sxs-lookup"><span data-stu-id="898bc-105">Explicit Local Transaction</span></span>  
+ <span data-ttu-id="898bc-106">Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, si la propriété <xref:System.Data.Linq.DataContext.Transaction%2A> a pour valeur une transaction (`IDbTransaction`), l'appel de <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est effectué dans le contexte de la même transaction.</span><span class="sxs-lookup"><span data-stu-id="898bc-106">When <xref:System.Data.Linq.DataContext.SubmitChanges%2A> is called, if the <xref:System.Data.Linq.DataContext.Transaction%2A> property is set to a (`IDbTransaction`) transaction, the <xref:System.Data.Linq.DataContext.SubmitChanges%2A> call is executed in the context of the same transaction.</span></span>  
   
- Il vous appartient de valider ou de restaurer la transaction une fois qu'elle s'est correctement exécutée.  La connexion qui correspond à la transaction doit être identique à celle utilisée pour construire le <xref:System.Data.Linq.DataContext>.  L'utilisation d'une autre connexion lève une exception.  
+ <span data-ttu-id="898bc-107">Il vous appartient de valider ou de restaurer la transaction une fois qu'elle s'est correctement exécutée.</span><span class="sxs-lookup"><span data-stu-id="898bc-107">It is your responsibility to commit or rollback the transaction after successful execution of the transaction.</span></span> <span data-ttu-id="898bc-108">La connexion qui correspond à la transaction doit être identique à celle utilisée pour construire le <xref:System.Data.Linq.DataContext>.</span><span class="sxs-lookup"><span data-stu-id="898bc-108">The connection corresponding to the transaction must match the connection used for constructing the <xref:System.Data.Linq.DataContext>.</span></span> <span data-ttu-id="898bc-109">L'utilisation d'une autre connexion lève une exception.</span><span class="sxs-lookup"><span data-stu-id="898bc-109">An exception is thrown if a different connection is used.</span></span>  
   
-## Transaction distribuable explicite  
- Vous pouvez appeler des API [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] \(y compris, mais de manière non limitative, <xref:System.Data.Linq.DataContext.SubmitChanges%2A>\) dans l'étendue d'un type <xref:System.Transactions.Transaction> actif.  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] détecte que l'appel est dans l'étendue d'une transaction et ne crée pas de nouvelle transaction.  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] évite également de fermer la connexion dans ce cas.  Vous pouvez effectuer une requête et exécuter <xref:System.Data.Linq.DataContext.SubmitChanges%2A> dans le contexte de ce type de transaction.  
+## <a name="explicit-distributable-transaction"></a><span data-ttu-id="898bc-110">Transaction distribuable explicite</span><span class="sxs-lookup"><span data-stu-id="898bc-110">Explicit Distributable Transaction</span></span>  
+ <span data-ttu-id="898bc-111">Vous pouvez appeler [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] API (y compris mais non limité à <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) dans la portée d’un actif <xref:System.Transactions.Transaction>.</span><span class="sxs-lookup"><span data-stu-id="898bc-111">You can call [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] APIs (including but not limited to <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) in the scope of an active <xref:System.Transactions.Transaction>.</span></span> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="898bc-112">détecte que l’appel est dans l’étendue d’une transaction et qu’il ne crée pas une nouvelle transaction.</span><span class="sxs-lookup"><span data-stu-id="898bc-112"> detects that the call is in the scope of a transaction and does not create a new transaction.</span></span> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="898bc-113">évite également dans ce cas la fermeture de la connexion.</span><span class="sxs-lookup"><span data-stu-id="898bc-113"> also avoids closing the connection in this case.</span></span> <span data-ttu-id="898bc-114">Vous pouvez effectuer une requête et exécuter <xref:System.Data.Linq.DataContext.SubmitChanges%2A> dans le contexte de ce type de transaction.</span><span class="sxs-lookup"><span data-stu-id="898bc-114">You can perform query and <xref:System.Data.Linq.DataContext.SubmitChanges%2A> executions in the context of such a transaction.</span></span>  
   
-## Transaction implicite  
- Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vérifie si l'appel se trouve dans la portée d'une <xref:System.Transactions.Transaction> ou si la propriété `Transaction` \(`IDbTransaction`\) a pour valeur une transaction locale démarrée par l'utilisateur.  S'il ne détecte aucune transaction, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] démarre une transaction locale \(`IDbTransaction`\) et l'utilise pour exécuter les commandes SQL générées.  Lorsque toutes les commandes SQL ont été exécutées correctement, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] valide la transaction locale et les retours.  
+## <a name="implicit-transaction"></a><span data-ttu-id="898bc-115">Transaction implicite</span><span class="sxs-lookup"><span data-stu-id="898bc-115">Implicit Transaction</span></span>  
+ <span data-ttu-id="898bc-116">Lorsque vous appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vérifie si l’appel est dans la portée d’un <xref:System.Transactions.Transaction> ou si le `Transaction` propriété (`IDbTransaction`) est définie sur une transaction locale démarrée par l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="898bc-116">When you call <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] checks to see whether the call is in the scope of a <xref:System.Transactions.Transaction> or if the `Transaction` property (`IDbTransaction`) is set to a user-started local transaction.</span></span> <span data-ttu-id="898bc-117">Si elle ne détecte aucune transaction, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] démarre une transaction locale (`IDbTransaction`) et l’utilise pour exécuter les commandes SQL générées.</span><span class="sxs-lookup"><span data-stu-id="898bc-117">If it finds neither transaction, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] starts a local transaction (`IDbTransaction`) and uses it to execute the generated SQL commands.</span></span> <span data-ttu-id="898bc-118">Lorsque toutes les commandes SQL ont été exécutées avec succès, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] valide la transaction locale et le retourne.</span><span class="sxs-lookup"><span data-stu-id="898bc-118">When all SQL commands have been successfully completed, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] commits the local transaction and returns.</span></span>  
   
-## Voir aussi  
- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
- [Procédure : mettre entre parenthèses des soumissions de données à l'aide de transactions](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)
+## <a name="see-also"></a><span data-ttu-id="898bc-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="898bc-119">See Also</span></span>  
+ [<span data-ttu-id="898bc-120">Informations générales</span><span class="sxs-lookup"><span data-stu-id="898bc-120">Background Information</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [<span data-ttu-id="898bc-121">Comment : mettre entre les envois de données à l’aide de Transactions</span><span class="sxs-lookup"><span data-stu-id="898bc-121">How to: Bracket Data Submissions by Using Transactions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-bracket-data-submissions-by-using-transactions.md)

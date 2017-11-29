@@ -1,75 +1,74 @@
 ---
-title: "Probl&#232;mes connus dans SqlClient pour Entity Framework | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Problèmes connus dans SqlClient pour l’Entity Framework"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 67d4c4f08661bbf2febefead64e62c8a84045f47
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Probl&#232;mes connus dans SqlClient pour Entity Framework
-Cette section décrit les problèmes connus liés au fournisseur de données .NET Framework pour SQL Server \(SqlClient\).  
+# <a name="known-issues-in-sqlclient-for-entity-framework"></a><span data-ttu-id="d060d-102">Problèmes connus dans SqlClient pour l’Entity Framework</span><span class="sxs-lookup"><span data-stu-id="d060d-102">Known Issues in SqlClient for Entity Framework</span></span>
+<span data-ttu-id="d060d-103">Cette section décrit les problèmes connus liés au fournisseur de données .NET Framework pour SQL Server (SqlClient).</span><span class="sxs-lookup"><span data-stu-id="d060d-103">This section describes known issues related to the .NET Framework Data Provider for SQL Server (SqlClient).</span></span>  
   
-## Espaces de fin dans les fonctions de chaîne  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] ignore les espaces de fin dans les valeurs de chaîne.  Par conséquent, le passage d'espaces de fin dans la chaîne peut provoquer des résultats imprévisibles, voire des défaillances.  
+## <a name="trailing-spaces-in-string-functions"></a><span data-ttu-id="d060d-104">Espaces de fin dans les fonctions de chaîne</span><span class="sxs-lookup"><span data-stu-id="d060d-104">Trailing Spaces in String Functions</span></span>  
+ [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]<span data-ttu-id="d060d-105"> ignore les espaces de fin dans les valeurs de chaîne.</span><span class="sxs-lookup"><span data-stu-id="d060d-105"> ignores trailing spaces in string values.</span></span> <span data-ttu-id="d060d-106">Par conséquent, le passage d'espaces de fin dans la chaîne peut provoquer des résultats imprévisibles, voire des défaillances.</span><span class="sxs-lookup"><span data-stu-id="d060d-106">Therefore, passing trailing spaces in the string can lead to unpredictable results, even failures.</span></span>  
   
- Si votre chaîne doit contenir des espaces de fin, envisagez d'ajouter un espace blanc à la fin, pour éviter que [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] ne les supprime.  Si les espaces de fin ne sont pas indispensables, ils doivent être supprimés avant le passage au pipeline de la requête.  
+ <span data-ttu-id="d060d-107">Si votre chaîne doit contenir des espaces de fin, envisagez d'ajouter un espace blanc à la fin, pour éviter que [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] ne les supprime.</span><span class="sxs-lookup"><span data-stu-id="d060d-107">If you have to have trailing spaces in your string, you should consider appending a white space character at the end, so that [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] does not trim the string.</span></span> <span data-ttu-id="d060d-108">Si les espaces de fin ne sont pas indispensables, ils doivent être supprimés avant le passage au pipeline de la requête.</span><span class="sxs-lookup"><span data-stu-id="d060d-108">If the trailing spaces are not required, they should be trimmed before they are passed down the query pipeline.</span></span>  
   
-## Fonction RIGHT  
- Si une valeur non `null` est passée comme premier argument et que 0 est passé comme deuxième argument à `RIGHT(nvarchar(max)`, 0`)` ou `RIGHT(varchar(max)`, 0`)`, c'est une valeur `NULL` qui sera retournée, et non une chaîne `empty`.  
+## <a name="right-function"></a><span data-ttu-id="d060d-109">Fonction RIGHT</span><span class="sxs-lookup"><span data-stu-id="d060d-109">RIGHT Function</span></span>  
+ <span data-ttu-id="d060d-110">Si une valeur non `null` est passée comme premier argument et que 0 est passé comme deuxième argument à `RIGHT(nvarchar(max)`, 0`)` ou `RIGHT(varchar(max)`, 0`)`, c'est une valeur `NULL` qui sera retournée, et non une chaîne `empty`.</span><span class="sxs-lookup"><span data-stu-id="d060d-110">If a non-`null` value is passed as a first argument and 0 is passed as a second argument to `RIGHT(nvarchar(max)`, 0`)` or `RIGHT(varchar(max)`, 0`)`, a `NULL` value will be returned instead of an `empty` string.</span></span>  
   
-## Opérateurs CROSS et OUTER APPLY  
- Les opérateurs CROSS et OUTER APPLY ont été introduits dans [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].  Dans certains cas, le pipeline de requête peut produire une instruction Transact\-SQL qui contient des opérateurs CROSS APPLY et\/ou OUTER APPLY.  Dans la mesure où certains fournisseurs principaux, notamment dans les versions de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] antérieures à [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], ne prennent pas en charge ces opérateurs, de telles requêtes ne peuvent pas être exécutées sur ces fournisseurs.  
+## <a name="cross-and-outer-apply-operators"></a><span data-ttu-id="d060d-111">Opérateurs CROSS et OUTER APPLY</span><span class="sxs-lookup"><span data-stu-id="d060d-111">CROSS and OUTER APPLY Operators</span></span>  
+ <span data-ttu-id="d060d-112">Les opérateurs CROSS et OUTER APPLY ont été introduits dans [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d060d-112">CROSS and OUTER APPLY operators were introduced in [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].</span></span> <span data-ttu-id="d060d-113">Dans certains cas, le pipeline de requête peut produire une instruction Transact-SQL qui contient des opérateurs CROSS APPLY et/ou OUTER APPLY.</span><span class="sxs-lookup"><span data-stu-id="d060d-113">In some cases the query pipeline might produce a Transact-SQL statement that contains CROSS APPLY and/or OUTER APPLY operators.</span></span> <span data-ttu-id="d060d-114">Dans la mesure où certains fournisseurs principaux, notamment dans les versions de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] antérieures à [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], ne prennent pas en charge ces opérateurs, de telles requêtes ne peuvent pas être exécutées sur ces fournisseurs.</span><span class="sxs-lookup"><span data-stu-id="d060d-114">Because some backend providers, including versions of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] earlier than [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)], do not support these operators, such queries cannot be executed on these backend providers.</span></span>  
   
- Vous trouverez ci\-dessous quelques scénarios classiques susceptibles d'aboutir à la présence d'opérateurs CROSS APPLY et\/ou OUTER APPLY dans la requête de sortie :  
+ <span data-ttu-id="d060d-115">Vous trouverez ci-dessous quelques scénarios classiques susceptibles d'aboutir à la présence d'opérateurs CROSS APPLY et/ou OUTER APPLY dans la requête de sortie :</span><span class="sxs-lookup"><span data-stu-id="d060d-115">The following are some typical scenarios that might lead to the presence of CROSS APPLY and/or OUTER APPLY operators in the output query:</span></span>  
   
--   sous\-requête corrélée avec pagination ;  
+-   <span data-ttu-id="d060d-116">sous-requête corrélée avec pagination ;</span><span class="sxs-lookup"><span data-stu-id="d060d-116">A correlated subquery with paging.</span></span>  
   
--   `AnyElement` sur une sous\-requête corrélée ou sur une collection produite par navigation ;  
+-   <span data-ttu-id="d060d-117">`AnyElement` sur une sous-requête corrélée ou sur une collection produite par navigation ;</span><span class="sxs-lookup"><span data-stu-id="d060d-117">An `AnyElement` over a correlated sub-query, or over a collection produced by navigation.</span></span>  
   
--   requêtes LINQ qui utilisent des méthodes de regroupement acceptant un sélecteur d'élément ;  
+-   <span data-ttu-id="d060d-118">requêtes LINQ qui utilisent des méthodes de regroupement acceptant un sélecteur d'élément ;</span><span class="sxs-lookup"><span data-stu-id="d060d-118">LINQ queries that use grouping methods that accept an element selector.</span></span>  
   
--   requête dans laquelle un CROSS APPLY ou un OUTER APPLY est explicitement spécifié ;  
+-   <span data-ttu-id="d060d-119">requête dans laquelle un CROSS APPLY ou un OUTER APPLY est explicitement spécifié ;</span><span class="sxs-lookup"><span data-stu-id="d060d-119">A query in which a CROSS APPLY or an OUTER APPLY is explicitly specified</span></span>  
   
--   requête dotée d'une construction DEREF sur une construction REF.  
+-   <span data-ttu-id="d060d-120">requête dotée d'une construction DEREF sur une construction REF.</span><span class="sxs-lookup"><span data-stu-id="d060d-120">A query that has a DEREF construct over a REF construct.</span></span>  
   
-## Opérateur SKIP  
- Si vous utilisez [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], l'utilisation de SKIP avec ORDER BY sur des colonnes non\-clés peut retourner des résultats incorrects.  Le nombre de lignes ignorées peut être supérieur au nombre de lignes spécifié si la colonne non\-clé contient des données en double.  Cela est dû à la manière dont la sous\-clause SKIP est traduite pour [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].  Par exemple, dans la requête suivante, plus de cinq lignes peuvent être ignorées si `E.NonKeyColumn` contient des valeurs en double :  
+## <a name="skip-operator"></a><span data-ttu-id="d060d-121">Opérateur SKIP</span><span class="sxs-lookup"><span data-stu-id="d060d-121">SKIP Operator</span></span>  
+ <span data-ttu-id="d060d-122">Si vous utilisez [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], l’utilisation de SKIP avec ORDER BY sur des colonnes non-clés peut retourner des résultats incorrects.</span><span class="sxs-lookup"><span data-stu-id="d060d-122">If you are using [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], using SKIP with ORDER BY on non-key columns might return incorrect results.</span></span> <span data-ttu-id="d060d-123">Le nombre de lignes ignorées peut être supérieur au nombre de lignes spécifié si la colonne non-clé contient des données en double.</span><span class="sxs-lookup"><span data-stu-id="d060d-123">More than the specified number of rows might be skipped if the non-key column has duplicate data in it.</span></span> <span data-ttu-id="d060d-124">Cela est dû à la manière dont la sous-clause SKIP est traduite pour [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d060d-124">This is due to how SKIP is translated for [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)].</span></span> <span data-ttu-id="d060d-125">Par exemple, dans la requête suivante, plus de cinq lignes peuvent être ignorées si `E.NonKeyColumn` a des valeurs en double :</span><span class="sxs-lookup"><span data-stu-id="d060d-125">For example, in the following query, more than five rows might be skipped if `E.NonKeyColumn` has duplicate values:</span></span>  
   
 ```  
 SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L  
 ```  
   
-## Ciblage de la version appropriée de SQL Server  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] cible la requête [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] selon la version de SQL Server spécifiée dans l'attribut `ProviderManifestToken` de l'élément Schema du fichier de modèle de stockage \(.ssdl\).  Cette version de SQL Server peut ne pas correspondre à celle à laquelle vous êtes connecté.  Par exemple, si vous utilisez SQL Server 2005, mais que votre attribut `ProviderManifestToken` a la valeur 2008, la requête [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] générée ne peut pas s'exécuter sur le serveur. Par exemple, une requête qui utilise les nouveaux types date\/heure introduits dans SQL Server 2008 ne s'exécutera pas sur les versions antérieures de SQL Server.  Si vous utilisez SQL Server 2005, mais que votre attribut `ProviderManifestToken` a la valeur 2000, la requête [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] générée peut être moins optimisée, ou vous pouvez recevoir une exception indiquant que la requête n'est pas prise en charge.  Pour plus d'informations, voir la section Opérateurs CROSS et OUTER APPLY, plus haut dans cette rubrique.  
+## <a name="targeting-the-correct-sql-server-version"></a><span data-ttu-id="d060d-126">Ciblage de la version appropriée de SQL Server</span><span class="sxs-lookup"><span data-stu-id="d060d-126">Targeting the Correct SQL Server Version</span></span>  
+ <span data-ttu-id="d060d-127">Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] cibles le [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] requête basée sur la version de SQL Server qui est spécifiée dans le `ProviderManifestToken` attribut de l’élément de schéma dans le fichier de modèle (.ssdl) de stockage.</span><span class="sxs-lookup"><span data-stu-id="d060d-127">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] targets the [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query based on the SQL Server version that is specified in the `ProviderManifestToken` attribute of the Schema element in the storage model (.ssdl) file.</span></span> <span data-ttu-id="d060d-128">Cette version de SQL Server peut ne pas correspondre à celle à laquelle vous êtes connecté.</span><span class="sxs-lookup"><span data-stu-id="d060d-128">This version might differ from the version of the actual SQL Server you are connected to.</span></span> <span data-ttu-id="d060d-129">Par exemple, si vous utilisez SQL Server 2005, mais que votre attribut `ProviderManifestToken` a la valeur 2008, la requête [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] générée ne peut pas s'exécuter sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="d060d-129">For example, if you are using SQL Server 2005, but your `ProviderManifestToken` attribute is set to 2008, the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query might not execute on the server.</span></span> <span data-ttu-id="d060d-130">Par exemple, une requête qui utilise les nouveaux types date/heure introduits dans SQL Server 2008 ne s'exécutera pas sur les versions antérieures de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="d060d-130">For example, a query that uses the new date time types that were introduced in SQL Server 2008 will not execute on earlier versions of the SQL Server.</span></span> <span data-ttu-id="d060d-131">Si vous utilisez SQL Server 2005, mais votre `ProviderManifestToken` attribut a la valeur 2000, généré [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] requête risque d’être moins optimisée, ou vous pouvez obtenir une exception indiquant que la requête n’est pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="d060d-131">If you are using SQL Server 2005, but your `ProviderManifestToken` attribute is set to 2000, the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] query might be less optimized, or you might get an exception that says that the query is not supported.</span></span> <span data-ttu-id="d060d-132">Pour plus d'informations, voir la section Opérateurs CROSS et OUTER APPLY, plus haut dans cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="d060d-132">For more information, see the CROSS and OUTER APPLY Operators section, earlier in this topic.</span></span>  
   
- Certains comportements de base de données dépendent du niveau de compatibilité défini pour la base de données.  Si votre attribut `ProviderManifestToken` a la valeur 2005 et que votre version de SQL Server est 2005, mais que le niveau de compatibilité d'une base de données est 80 \(SQL Server 2000\), le [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] généré ciblera bien SQL Server 2005, mais il est possible qu'il ne s'exécute pas comme prévu en raison du paramètre de niveau de compatibilité.  Par exemple, vous pouvez perdre des informations de classement si un nom de colonne dans la liste ORDER BY correspond à un nom de colonne dans le sélecteur.  
+ <span data-ttu-id="d060d-133">Certains comportements de base de données dépendent du niveau de compatibilité défini pour la base de données.</span><span class="sxs-lookup"><span data-stu-id="d060d-133">Certain database behaviors depend on the compatibility level set to the database.</span></span> <span data-ttu-id="d060d-134">Si votre attribut `ProviderManifestToken` a la valeur 2005 et que votre version de SQL Server est 2005, mais que le niveau de compatibilité d'une base de données est 80 (SQL Server 2000), le [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] généré ciblera bien SQL Server 2005, mais il est possible qu'il ne s'exécute pas comme prévu en raison du paramètre de niveau de compatibilité.</span><span class="sxs-lookup"><span data-stu-id="d060d-134">If your `ProviderManifestToken` attribute is set to 2005 and your SQL Server version is 2005, but the compatibility level of a database is set to "80" (SQL Server 2000), the generated [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] will be targeting SQL Server 2005, but might not execute as expected due to the compatibility level setting.</span></span> <span data-ttu-id="d060d-135">Par exemple, vous pouvez perdre des informations de classement si un nom de colonne dans la liste ORDER BY correspond à un nom de colonne dans le sélecteur.</span><span class="sxs-lookup"><span data-stu-id="d060d-135">For example, you might lose ordering information if a column name in the ORDER BY list matches a column name in the selector.</span></span>  
   
-## Requêtes imbriquées dans la projection  
- Les requêtes imbriquées d'une clause de projection peuvent être traduites en requêtes de produit cartésien sur le serveur.  Sur certains serveurs principaux dont SQL Server, cela peut avoir pour conséquences l'augmentation de volume de la table TempDB  et une diminution des performances du serveur.  
+## <a name="nested-queries-in-projection"></a><span data-ttu-id="d060d-136">Requêtes imbriquées dans la projection</span><span class="sxs-lookup"><span data-stu-id="d060d-136">Nested Queries in Projection</span></span>  
+ <span data-ttu-id="d060d-137">Les requêtes imbriquées d'une clause de projection peuvent être traduites en requêtes de produit cartésien sur le serveur.</span><span class="sxs-lookup"><span data-stu-id="d060d-137">Nested queries in a projection clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="d060d-138">Sur certains serveurs principaux dont SQL Server, cela peut avoir pour conséquences l'augmentation de volume de la table TempDB</span><span class="sxs-lookup"><span data-stu-id="d060d-138">On some back-end servers, including SLQ Server, this can cause the TempDB table to to get quite large.</span></span> <span data-ttu-id="d060d-139">et une diminution des performances du serveur.</span><span class="sxs-lookup"><span data-stu-id="d060d-139">This can decrease server performance.</span></span>  
   
- Vous trouverez ci\-dessous un exemple de requête imbriquée dans une clause de projection :  
+ <span data-ttu-id="d060d-140">Vous trouverez ci-dessous un exemple de requête imbriquée dans une clause de projection :</span><span class="sxs-lookup"><span data-stu-id="d060d-140">The following is an example of  a nested query in a projection clause:</span></span>  
   
 ```  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## Valeurs d'identité GUID générées par le serveur  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] prend en charge les valeurs d'identité de type GUID générées par le serveur, mais le fournisseur doit prendre en charge le retour de la valeur d'identité générée par le serveur après l'insertion d'une ligne.  Depuis [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, vous pouvez retourner le type de GUID généré par le serveur d'une base de données [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] via la [clause OUTPUT](http://go.microsoft.com/fwlink/?LinkId=169400) .  
+## <a name="server-generated-guid-identity-values"></a><span data-ttu-id="d060d-141">Valeurs d'identité GUID générées par le serveur</span><span class="sxs-lookup"><span data-stu-id="d060d-141">Server Generated GUID Identity Values</span></span>  
+ <span data-ttu-id="d060d-142">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] prend en charge les valeurs d'identité de type GUID générées par le serveur, mais le fournisseur doit prendre en charge le retour de la valeur d'identité générée par le serveur après l'insertion d'une ligne.</span><span class="sxs-lookup"><span data-stu-id="d060d-142">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] supports server-generated GUID type identity values, but the provider must support returning the server-generated identity value after a row was inserted.</span></span> <span data-ttu-id="d060d-143">En commençant par [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, vous pouvez retourner le type de GUID généré par le serveur dans un [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] de la base de données via le [clause OUTPUT](http://go.microsoft.com/fwlink/?LinkId=169400) .</span><span class="sxs-lookup"><span data-stu-id="d060d-143">Starting with [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2005, you can return the server-generated GUID type in a [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] database through the [OUTPUT clause](http://go.microsoft.com/fwlink/?LinkId=169400) .</span></span>  
   
-## Voir aussi  
- [SqlClient pour Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)   
- [Problèmes connus dans LINQ to Entities et éléments à prendre en considération](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)
+## <a name="see-also"></a><span data-ttu-id="d060d-144">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d060d-144">See Also</span></span>  
+ [<span data-ttu-id="d060d-145">SqlClient pour Entity Framework</span><span class="sxs-lookup"><span data-stu-id="d060d-145">SqlClient for the Entity Framework</span></span>](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)  
+ [<span data-ttu-id="d060d-146">Problèmes connus et des considérations dans LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="d060d-146">Known Issues and Considerations in LINQ to Entities</span></span>](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)

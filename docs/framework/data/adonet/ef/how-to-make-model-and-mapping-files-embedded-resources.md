@@ -1,58 +1,55 @@
 ---
-title: "Proc&#233;dure&#160;: faire des fichiers de mod&#232;le et de mappage des ressources incorpor&#233;es | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "ESQL"
-  - "jsharp"
+title: "Comment : transformer les fichiers modèle et les fichiers de mappage en ressources incorporées"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 98fb3ada369279a34ed08110644aabcbbe72a501
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: faire des fichiers de mod&#232;le et de mappage des ressources incorpor&#233;es
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] permet de déployer des fichiers de mappage et de modèle en tant que ressources incorporées d'une application.  L'assembly comprenant les fichiers de mappage et de modèle incorporés doit être chargé dans le même domaine d'application que la connexion d'entité.  Pour plus d'informations, consultez [Chaînes de connexion](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  Par défaut, les outils [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] incorporent les fichiers de mappage et de modèle. Lorsque vous définissez manuellement les fichiers de mappage et de modèle, utilisez cette procédure pour garantir que les fichiers sont déployés en tant que ressources incorporées avec une application [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+# <a name="how-to-make-model-and-mapping-files-embedded-resources"></a><span data-ttu-id="892d9-102">Comment : transformer les fichiers modèle et les fichiers de mappage en ressources incorporées</span><span class="sxs-lookup"><span data-stu-id="892d9-102">How to: Make Model and Mapping Files Embedded Resources</span></span>
+<span data-ttu-id="892d9-103">Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vous permet de déployer des fichiers de mappage et de modèle en tant que ressources incorporées d’une application.</span><span class="sxs-lookup"><span data-stu-id="892d9-103">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] enables you to deploy model and mapping files as embedded resources of an application.</span></span> <span data-ttu-id="892d9-104">L'assembly comprenant les fichiers de mappage et de modèle incorporés doit être chargé dans le même domaine d'application que la connexion d'entité.</span><span class="sxs-lookup"><span data-stu-id="892d9-104">The assembly with the embedded model and mapping files must be loaded in the same application domain as the entity connection.</span></span> <span data-ttu-id="892d9-105">Pour plus d’informations, consultez [les chaînes de connexion](../../../../../docs/framework/data/adonet/ef/connection-strings.md).</span><span class="sxs-lookup"><span data-stu-id="892d9-105">For more information, see [Connection Strings](../../../../../docs/framework/data/adonet/ef/connection-strings.md).</span></span> <span data-ttu-id="892d9-106">Par défaut, les outils [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] incorporent les fichiers de mappage et de modèle.</span><span class="sxs-lookup"><span data-stu-id="892d9-106">By default, the [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] tools embed the model and mapping files.</span></span> <span data-ttu-id="892d9-107">Lorsque vous définissez manuellement les fichiers de mappage et de modèle, utilisez cette procédure pour garantir que les fichiers sont déployés en tant que ressources incorporées avec une application [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="892d9-107">When you manually define the model and mapping files, use this procedure to ensure that the files are deployed as embedded resources together with an [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] application.</span></span>  
   
 > [!NOTE]
->  Pour conserver des ressources incorporées, vous devez répéter cette procédure chaque fois que les fichiers de mappage et de modèle sont modifiés.  
+>  <span data-ttu-id="892d9-108">Pour conserver des ressources incorporées, vous devez répéter cette procédure chaque fois que les fichiers de mappage et de modèle sont modifiés.</span><span class="sxs-lookup"><span data-stu-id="892d9-108">To maintain embedded resources, you must repeat this procedure whenever the model and mapping files are modified.</span></span>  
   
-### Pour incorporer les fichiers de mappage et de modèle  
+### <a name="to-embed-model-and-mapping-files"></a><span data-ttu-id="892d9-109">Pour incorporer les fichiers de mappage et de modèle</span><span class="sxs-lookup"><span data-stu-id="892d9-109">To embed model and mapping files</span></span>  
   
-1.  Dans l'**Explorateur de solutions**, sélectionnez le fichier conceptuel \(.csdl\).  
+1.  <span data-ttu-id="892d9-110">Dans **l’Explorateur de solutions**, sélectionnez le fichier conceptuel (.csdl).</span><span class="sxs-lookup"><span data-stu-id="892d9-110">In **Solution Explorer**, select the conceptual (.csdl) file.</span></span>  
   
-2.  Dans le volet **Propriétés**, affectez la valeur **Ressource incorporée** à **Action de génération**.  
+2.  <span data-ttu-id="892d9-111">Dans le **propriétés** volet, définissez **Action de génération** à **ressource incorporée**.</span><span class="sxs-lookup"><span data-stu-id="892d9-111">In the **Properties** pane, set **Build Action** to **Embedded Resource**.</span></span>  
   
-3.  Répétez les étapes 1 et 2 pour le fichier de stockage \(.ssdl\) et le fichier de mappage \(.msl\).  
+3.  <span data-ttu-id="892d9-112">Répétez les étapes 1 et 2 pour le fichier de stockage (.ssdl) et le fichier de mappage (.msl).</span><span class="sxs-lookup"><span data-stu-id="892d9-112">Repeat steps 1 and 2 for the storage (.ssdl) file and the mapping (.msl) file.</span></span>  
   
-4.  Dans l'**Explorateur de solutions**, double\-cliquez sur le fichier App.config, puis modifiez le paramètre `Metadata` dans l'attribut `connectionString` en appliquant l'un des formats suivants :  
+4.  <span data-ttu-id="892d9-113">Dans **l’Explorateur de solutions**, double-cliquez sur le fichier App.config et modifiez le `Metadata` paramètre dans le `connectionString` attribut basé sur l’un des formats suivants :</span><span class="sxs-lookup"><span data-stu-id="892d9-113">In **Solution Explorer**, double-click the App.config file and then modify the `Metadata` parameter in the `connectionString` attribute based on one of the following formats:</span></span>  
   
-    -   `Metadata=` `res://<assemblyFullName>/<resourceName>;`  
+    -   <span data-ttu-id="892d9-114">`Metadata=` `res://<assemblyFullName>/<resourceName>;`</span><span class="sxs-lookup"><span data-stu-id="892d9-114">`Metadata=` `res://<assemblyFullName>/<resourceName>;`</span></span>  
   
-    -   `Metadata=` `res://*/<resourceName>;`  
+    -   <span data-ttu-id="892d9-115">`Metadata=` `res://*/<resourceName>;`</span><span class="sxs-lookup"><span data-stu-id="892d9-115">`Metadata=` `res://*/<resourceName>;`</span></span>  
   
     -   `Metadata=res://*;`  
   
-     Pour plus d'informations, consultez [Chaînes de connexion](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  
+     <span data-ttu-id="892d9-116">Pour plus d’informations, consultez [les chaînes de connexion](../../../../../docs/framework/data/adonet/ef/connection-strings.md).</span><span class="sxs-lookup"><span data-stu-id="892d9-116">For more information, see [Connection Strings](../../../../../docs/framework/data/adonet/ef/connection-strings.md).</span></span>  
   
-## Exemple  
- La chaîne de connexion suivante référence les fichiers de mappage et de modèle incorporés pour le modèle de vente [AdventureWorks Sales Model](http://msdn.microsoft.com/fr-fr/f16cd988-673f-4376-b034-129ca93c7832).  Cette chaîne de connexion est stockée dans le fichier App.config du projet.  
+## <a name="example"></a><span data-ttu-id="892d9-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="892d9-117">Example</span></span>  
+ <span data-ttu-id="892d9-118">Fait référence à la chaîne de connexion pour les fichiers de mappage et de modèle incorporés le [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span><span class="sxs-lookup"><span data-stu-id="892d9-118">The following connection string references embedded model and mapping files for the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).</span></span> <span data-ttu-id="892d9-119">Cette chaîne de connexion est stockée dans le fichier App.config du projet.</span><span class="sxs-lookup"><span data-stu-id="892d9-119">This connection string is stored in the project's App.config file.</span></span>  
   
   
   
-## Voir aussi  
- [Modélisation et mappage](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)   
- [Procédure : définir la chaîne de connexion](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md)   
- [Procédure : générer une chaîne de connexion pour EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)   
- [ADO.NET Entity Data Model  Tools](http://msdn.microsoft.com/fr-fr/91076853-0881-421b-837a-f582f36be527)
+## <a name="see-also"></a><span data-ttu-id="892d9-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="892d9-120">See Also</span></span>  
+ [<span data-ttu-id="892d9-121">Modélisation et mappage</span><span class="sxs-lookup"><span data-stu-id="892d9-121">Modeling and Mapping</span></span>](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)  
+ [<span data-ttu-id="892d9-122">Comment : définir la chaîne de connexion</span><span class="sxs-lookup"><span data-stu-id="892d9-122">How to: Define the Connection String</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md)  
+ [<span data-ttu-id="892d9-123">Comment : créer une chaîne de connexion EntityConnection</span><span class="sxs-lookup"><span data-stu-id="892d9-123">How to: Build an EntityConnection Connection String</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
+ [<span data-ttu-id="892d9-124">Outils ADO.NET Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="892d9-124">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)

@@ -1,61 +1,69 @@
 ---
-title: "&lt;customTrackingQueries&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: '&lt;customTrackingQueries&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 4e9e732d-911d-45a3-a569-4b5e9cd1ffbe
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 19a4a58a15db72129f17655e7043f2ee3ae7ffa2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;customTrackingQueries&gt;
-Représente une collection de requêtes permettant d'effectuer le suivi des événements que vous définissez dans vos activités de code.  La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.  
+# <a name="ltcustomtrackingqueriesgt"></a><span data-ttu-id="dd272-102">&lt;customTrackingQueries&gt;</span><span class="sxs-lookup"><span data-stu-id="dd272-102">&lt;customTrackingQueries&gt;</span></span>
+<span data-ttu-id="dd272-103">Représente une collection de requêtes permettant d’effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="dd272-103">Represents a collection of queries that are used to track events that you define in your code activities.</span></span> <span data-ttu-id="dd272-104">La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.</span><span class="sxs-lookup"><span data-stu-id="dd272-104">The query is necessary for a tracking participant to subscribe to custom tracking records.</span></span>  
   
- Pour plus d'informations sur les requêtes de modèle de suivi, consultez [Modèles de suivi](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md).  
+ <span data-ttu-id="dd272-105">Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="dd272-105">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
   
-## Syntaxe  
+<span data-ttu-id="dd272-106">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="dd272-106">\<system.serviceModel></span></span>  
+<span data-ttu-id="dd272-107">\<suivi ></span><span class="sxs-lookup"><span data-stu-id="dd272-107">\<tracking></span></span>  
+<span data-ttu-id="dd272-108">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="dd272-108">\<trackingProfile></span></span>  
+<span data-ttu-id="dd272-109">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="dd272-109">\<workflow></span></span>  
+<span data-ttu-id="dd272-110">\<customTrackingQueries ></span><span class="sxs-lookup"><span data-stu-id="dd272-110">\<customTrackingQueries></span></span>  
   
-```vb  
+## <a name="syntax"></a><span data-ttu-id="dd272-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dd272-111">Syntax</span></span>  
   
-<tracking>  
-   <trackingProfile name="Name">  
-       <workflow>  
-          <customTrackingQueries>  
-             <customTrackingQuery activityName="String"  
-                 name="String"/>  
-          </customTrackingQueries>  
-       </workflow>  
-   </trackingProfile>  
+```xml  
+<tracking>
+  <trackingProfile name="Name">
+    <workflow>
+      <customTrackingQueries>
+        <customTrackingQuery activityName="String" 
+                             name="String" />
+      </customTrackingQueries>
+    </workflow>
+  </trackingProfile>
 </tracking>  
-  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="dd272-112">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="dd272-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="dd272-113">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="dd272-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
- Aucun  
+### <a name="attributes"></a><span data-ttu-id="dd272-114">Attributs</span><span class="sxs-lookup"><span data-stu-id="dd272-114">Attributes</span></span>  
+ <span data-ttu-id="dd272-115">Aucun</span><span class="sxs-lookup"><span data-stu-id="dd272-115">None.</span></span>  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="dd272-116">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="dd272-116">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="dd272-117">Élément</span><span class="sxs-lookup"><span data-stu-id="dd272-117">Element</span></span>|<span data-ttu-id="dd272-118">Description</span><span class="sxs-lookup"><span data-stu-id="dd272-118">Description</span></span>|  
 |-------------|-----------------|  
-|[\<customTrackingQuery\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|Requête qui permet d'effectuer le suivi des événements que vous définissez dans vos activités de code.|  
+|[<span data-ttu-id="dd272-119">\<customTrackingQuery ></span><span class="sxs-lookup"><span data-stu-id="dd272-119">\<customTrackingQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/customtrackingquery.md)|<span data-ttu-id="dd272-120">Requête qui permet d'effectuer le suivi des événements que vous définissez dans vos activités de code.</span><span class="sxs-lookup"><span data-stu-id="dd272-120">A query that is used to track events that you define in your code activities.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="dd272-121">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="dd272-121">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="dd272-122">Élément</span><span class="sxs-lookup"><span data-stu-id="dd272-122">Element</span></span>|<span data-ttu-id="dd272-123">Description</span><span class="sxs-lookup"><span data-stu-id="dd272-123">Description</span></span>|  
 |-------------|-----------------|  
-|[\<workflow\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété **activityDefinitionId**.|  
+|[<span data-ttu-id="dd272-124">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="dd272-124">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="dd272-125">Un élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par le **activityDefinitionId** propriété.</span><span class="sxs-lookup"><span data-stu-id="dd272-125">A configuration element that contains all queries for a specific workflow identified by the **activityDefinitionId** property.</span></span>|  
   
-## Voir aussi  
- [System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection](assetId:///System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?qualifyHint=False&amp;autoUpgrade=True)   
- [System.Activities.Tracking.CustomTrackingQuery](assetId:///System.Activities.Tracking.CustomTrackingQuery?qualifyHint=False&amp;autoUpgrade=True)   
- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md)   
- [Modèles de suivi](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)
+## <a name="see-also"></a><span data-ttu-id="dd272-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dd272-126">See Also</span></span>  
+ <span data-ttu-id="dd272-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="dd272-127"><xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType></span></span>       
+ <span data-ttu-id="dd272-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="dd272-128"><xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType></span></span>       
+ [<span data-ttu-id="dd272-129">Suivi et traçage de workflow</span><span class="sxs-lookup"><span data-stu-id="dd272-129">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="dd272-130">Profils de suivi</span><span class="sxs-lookup"><span data-stu-id="dd272-130">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

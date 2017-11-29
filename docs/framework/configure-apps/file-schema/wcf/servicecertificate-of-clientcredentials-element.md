@@ -1,64 +1,73 @@
 ---
-title: "&lt;serviceCertificate&gt;, &#233;l&#233;ment de &lt;clientCredentials&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;serviceCertificate&gt;, élément de &lt;clientCredentials&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e50c0ac5-f0df-4c90-b54b-fc602c1f84ea
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3bd2cf4cf96fd2b80fc08523b42bd8aa2379c2d4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;serviceCertificate&gt;, &#233;l&#233;ment de &lt;clientCredentials&gt;
-Spécifie un certificat à utiliser lors de l'authentification d'un service au client.  
+# <a name="ltservicecertificategt-of-ltclientcredentialsgt-element"></a><span data-ttu-id="deecd-102">&lt;serviceCertificate&gt;, élément de &lt;clientCredentials&gt;</span><span class="sxs-lookup"><span data-stu-id="deecd-102">&lt;serviceCertificate&gt; of &lt;clientCredentials&gt; Element</span></span>
+<span data-ttu-id="deecd-103">Spécifie un certificat à utiliser lors de l'authentification d'un service au client.</span><span class="sxs-lookup"><span data-stu-id="deecd-103">Specifies a certificate to use when authenticating a service to the client.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="deecd-104">\<système. ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="deecd-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="deecd-105">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="deecd-105">\<behaviors></span></span>  
+<span data-ttu-id="deecd-106">\<endpointBehaviors ></span><span class="sxs-lookup"><span data-stu-id="deecd-106">\<endpointBehaviors></span></span>  
+<span data-ttu-id="deecd-107">\<comportement ></span><span class="sxs-lookup"><span data-stu-id="deecd-107">\<behavior></span></span>  
+<span data-ttu-id="deecd-108">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="deecd-108">\<clientCredentials></span></span>  
+<span data-ttu-id="deecd-109">\<serviceCertificate ></span><span class="sxs-lookup"><span data-stu-id="deecd-109">\<serviceCertificate></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="deecd-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="deecd-110">Syntax</span></span>  
   
+```xml  
 <serviceCertificate />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="deecd-111">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="deecd-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="deecd-112">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="deecd-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
- Aucun  
+### <a name="attributes"></a><span data-ttu-id="deecd-113">Attributs</span><span class="sxs-lookup"><span data-stu-id="deecd-113">Attributes</span></span>  
+ <span data-ttu-id="deecd-114">Aucun</span><span class="sxs-lookup"><span data-stu-id="deecd-114">None.</span></span>  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="deecd-115">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="deecd-115">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="deecd-116">Élément</span><span class="sxs-lookup"><span data-stu-id="deecd-116">Element</span></span>|<span data-ttu-id="deecd-117">Description</span><span class="sxs-lookup"><span data-stu-id="deecd-117">Description</span></span>|  
 |-------------|-----------------|  
-|[\<defaultCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)|Spécifie un certificat X.509 à utiliser lorsqu'un service ou un service d'émission de jeton de sécurité n'en fournit pas un via un protocole de négociation.|  
-|[\<scopedCertificates\>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Représente une collection de certificats X.509 fournie par les services spécifiques \(étendus\) à des fins d'authentification.  Cette collection est utilisée en général pour spécifier les certificats de service pour les services d'émission de jeton de sécurité dans un scénario fédéré.|  
-|[\<authentification\>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)|Spécifie les comportements d'authentification des certificats de service utilisés par un client.|  
+|[<span data-ttu-id="deecd-118">\<defaultCertificate ></span><span class="sxs-lookup"><span data-stu-id="deecd-118">\<defaultCertificate></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)|<span data-ttu-id="deecd-119">Spécifie un certificat X.509 à utiliser lorsqu'un service ou un service d'émission de jeton de sécurité n'en fournit pas un via un protocole de négociation.</span><span class="sxs-lookup"><span data-stu-id="deecd-119">Specifies an X.509 certificate to be used when a service or STS does not provide one via a negotiation protocol.</span></span>|  
+|[<span data-ttu-id="deecd-120">\<scopedCertificates ></span><span class="sxs-lookup"><span data-stu-id="deecd-120">\<scopedCertificates></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|<span data-ttu-id="deecd-121">Représente une collection de certificats X.509 fournie par les services spécifiques (étendus) à des fins d’authentification.</span><span class="sxs-lookup"><span data-stu-id="deecd-121">Represents a collection of X.509 certificates provided by specific services (scoped) for authentication.</span></span> <span data-ttu-id="deecd-122">Cette collection est utilisée en général pour spécifier les certificats de service pour les services d’émission de jeton de sécurité dans un scénario fédéré.</span><span class="sxs-lookup"><span data-stu-id="deecd-122">This collection is typically used to specify the service certificates for Security Token Services in a federated scenario.</span></span>|  
+|[<span data-ttu-id="deecd-123">\<authentification ></span><span class="sxs-lookup"><span data-stu-id="deecd-123">\<authentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)|<span data-ttu-id="deecd-124">Spécifie les comportements d'authentification des certificats de service utilisés par un client.</span><span class="sxs-lookup"><span data-stu-id="deecd-124">Specifies authentication behaviors for service certificates used by a client.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="deecd-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="deecd-125">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="deecd-126">Élément</span><span class="sxs-lookup"><span data-stu-id="deecd-126">Element</span></span>|<span data-ttu-id="deecd-127">Description</span><span class="sxs-lookup"><span data-stu-id="deecd-127">Description</span></span>|  
 |-------------|-----------------|  
-|[\<clientCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Spécifie les informations d'identification utilisées par le client pour l'authentifier auprès d'un service.|  
+|[<span data-ttu-id="deecd-128">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="deecd-128">\<clientCredentials></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|<span data-ttu-id="deecd-129">Spécifie les informations d'identification utilisées par le client pour l'authentifier auprès d'un service.</span><span class="sxs-lookup"><span data-stu-id="deecd-129">Specifies the credentials used by the client to authenticate itself to a service.</span></span>|  
   
-## Notes  
- Cet élément de configuration spécifie les paramètres utilisés par le client pour valider le certificat présenté par le service à l'aide de l'authentification SSL.  Il contient également tout certificat pour le service explicitement configuré sur le client à utiliser pour chiffrer des messages au service à l'aide de la sécurité de message.  
+## <a name="remarks"></a><span data-ttu-id="deecd-130">Remarques</span><span class="sxs-lookup"><span data-stu-id="deecd-130">Remarks</span></span>  
+ <span data-ttu-id="deecd-131">Cet élément de configuration spécifie les paramètres utilisés par le client pour valider le certificat présenté par le service à l'aide de l'authentification SSL.</span><span class="sxs-lookup"><span data-stu-id="deecd-131">This configuration element specifies the settings used by the client to validate the certificate presented by the service using SSL authentication.</span></span> <span data-ttu-id="deecd-132">Il contient également tout certificat pour le service explicitement configuré sur le client à utiliser pour chiffrer des messages au service à l'aide de la sécurité de message.</span><span class="sxs-lookup"><span data-stu-id="deecd-132">It also contains any certificate for the service that is explicitly configured on the client to use for encrypting messages to the service using message security.</span></span>  
   
- Les attributs de l'élément `serviceCertificate` sont identiques aux attributs du [\<clientCertificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
+ <span data-ttu-id="deecd-133">Les attributs de la `serviceCertificate` élément sont identiques aux attributs de la [ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).</span><span class="sxs-lookup"><span data-stu-id="deecd-133">The attributes of the `serviceCertificate` element are identical to the attributes of the [\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).</span></span>  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>   
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ServiceCertificate%2A>   
- <xref:System.ServiceModel.Description.ClientCredentials>   
- <xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>   
- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>   
- [Comportements de sécurité](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [Sécurisation des clients](../../../../../docs/framework/wcf/securing-clients.md)   
- [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a><span data-ttu-id="deecd-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="deecd-134">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
+ <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ServiceCertificate%2A>  
+ <xref:System.ServiceModel.Description.ClientCredentials>  
+ <xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>  
+ <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
+ [<span data-ttu-id="deecd-135">Comportements de sécurité</span><span class="sxs-lookup"><span data-stu-id="deecd-135">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="deecd-136">Sécurisation des clients</span><span class="sxs-lookup"><span data-stu-id="deecd-136">Securing Clients</span></span>](../../../../../docs/framework/wcf/securing-clients.md)  
+ [<span data-ttu-id="deecd-137">Utilisation des certificats</span><span class="sxs-lookup"><span data-stu-id="deecd-137">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="deecd-138">Sécurisation des Services et Clients</span><span class="sxs-lookup"><span data-stu-id="deecd-138">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

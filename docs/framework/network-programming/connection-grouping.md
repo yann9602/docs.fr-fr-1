@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Internet, connections
 - connections [.NET Framework], grouping
@@ -19,23 +14,21 @@ helpviewer_keywords:
 - network resources, connections
 - connection pooling
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8f16a539bb7c2bef494c7b5551e1f12bc71de60f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b947051d809d5e8f5be3410b269c872bfc108ec8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="connection-grouping"></a>Regroupement de connexions
-Le regroupement de connexions associe des requêtes spécifiques au sein d’une application unique à un pool de connexions défini. Cela peut être requis par une application de couche intermédiaire qui se connecte à un serveur principal pour le compte d’un utilisateur et qui utilise un protocole d’authentification prenant en charge la délégation, tel que Kerberos, ou par une application de couche intermédiaire qui fournit ses propres informations d’identification, comme dans l’exemple ci-dessous. Par exemple, supposez qu’un utilisateur (Jean) visite un site web interne qui affiche des informations sur son salaire. Après avoir authentifié Jean, le serveur d’applications de couche intermédiaire utilise ses informations d’identification pour se connecter au serveur principal afin de récupérer des informations sur son salaire. Ensuite, Suzanne accède au site et demande à consulter les informations relatives à son salaire. Étant donné que l’application de couche intermédiaire a déjà établi une connexion à l’aide des informations d’identification de Jean, le serveur principal répond avec les informations relatives à Jean. Toutefois, si l’application assigne chaque requête envoyée au serveur principal à un groupe de connexions formé à partir du nom d’utilisateur, alors chaque utilisateur appartient à un pool de connexions distinct et ne peut pas partager accidentellement des informations d’authentification avec un autre utilisateur.  
+# <a name="connection-grouping"></a><span data-ttu-id="e1bf4-102">Regroupement de connexions</span><span class="sxs-lookup"><span data-stu-id="e1bf4-102">Connection Grouping</span></span>
+<span data-ttu-id="e1bf4-103">Le regroupement de connexions associe des requêtes spécifiques au sein d’une application unique à un pool de connexions défini.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-103">Connection grouping associates specific requests within a single application to a defined connection pool.</span></span> <span data-ttu-id="e1bf4-104">Cela peut être requis par une application de couche intermédiaire qui se connecte à un serveur principal pour le compte d’un utilisateur et qui utilise un protocole d’authentification prenant en charge la délégation, tel que Kerberos, ou par une application de couche intermédiaire qui fournit ses propres informations d’identification, comme dans l’exemple ci-dessous.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-104">This can be required by a middle-tier application that connects to a back-end server on behalf of a user and uses an authentication protocol that supports delegation, such as Kerberos, or by a middle-tier application that supplies its own credentials, as in the example below.</span></span> <span data-ttu-id="e1bf4-105">Par exemple, supposez qu’un utilisateur (Jean) visite un site web interne qui affiche des informations sur son salaire.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-105">For example, suppose a user, Joe, visits an internal Web site that displays his payroll information.</span></span> <span data-ttu-id="e1bf4-106">Après avoir authentifié Jean, le serveur d’applications de couche intermédiaire utilise ses informations d’identification pour se connecter au serveur principal afin de récupérer des informations sur son salaire.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-106">After authenticating Joe, the middle-tier application server uses Joe's credentials to connect to the back-end server to retrieve his payroll information.</span></span> <span data-ttu-id="e1bf4-107">Ensuite, Suzanne accède au site et demande à consulter les informations relatives à son salaire.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-107">Next, Susan visits the site and requests her payroll information.</span></span> <span data-ttu-id="e1bf4-108">Étant donné que l’application de couche intermédiaire a déjà établi une connexion à l’aide des informations d’identification de Jean, le serveur principal répond avec les informations relatives à Jean.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-108">Because the middle-tier application has already made a connection using Joe's credentials, the back-end server responds with Joe's information.</span></span> <span data-ttu-id="e1bf4-109">Toutefois, si l’application assigne chaque requête envoyée au serveur principal à un groupe de connexions formé à partir du nom d’utilisateur, alors chaque utilisateur appartient à un pool de connexions distinct et ne peut pas partager accidentellement des informations d’authentification avec un autre utilisateur.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-109">However, if the application assigns each request sent to the back-end server to a connection group formed from the user name, then each user belongs to a separate connection pool and cannot accidentally share authentication information with another user.</span></span>  
   
- Pour assigner une requête à un groupe de connexions spécifique, vous devez affecter un nom à la propriété <xref:System.Net.WebRequest.ConnectionGroupName%2A> de votre <xref:System.Net.WebRequest> avant d’exécuter la requête.  
+ <span data-ttu-id="e1bf4-110">Pour assigner une requête à un groupe de connexions spécifique, vous devez affecter un nom à la propriété <xref:System.Net.WebRequest.ConnectionGroupName%2A> de votre <xref:System.Net.WebRequest> avant d’exécuter la requête.</span><span class="sxs-lookup"><span data-stu-id="e1bf4-110">To assign a request to a specific connection group, you must assign a name to the <xref:System.Net.WebRequest.ConnectionGroupName%2A> property of your <xref:System.Net.WebRequest> before making the request.</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Gestion des connexions](../../../docs/framework/network-programming/managing-connections.md)   
- [Guide pratique pour assigner des informations utilisateur aux connexions de groupe](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)
-
+## <a name="see-also"></a><span data-ttu-id="e1bf4-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e1bf4-111">See Also</span></span>  
+ [<span data-ttu-id="e1bf4-112">Gestion des connexions</span><span class="sxs-lookup"><span data-stu-id="e1bf4-112">Managing Connections</span></span>](../../../docs/framework/network-programming/managing-connections.md)  
+ [<span data-ttu-id="e1bf4-113">Guide pratique pour assigner des informations utilisateur aux connexions de groupe</span><span class="sxs-lookup"><span data-stu-id="e1bf4-113">How to: Assign User Information to Group Connections</span></span>](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)

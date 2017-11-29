@@ -1,71 +1,61 @@
 ---
-title: "&lt;activityStateQueries&gt; de WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;activityStateQueries&gt; de WCF'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9e45db49-ed85-4fdf-bd65-0d5477e31823
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fbdd10680da784255a72069a0c1cc240cbe3f15e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;activityStateQueries&gt; de WCF
-Représente une collection de requêtes qui permettent d'effectuer le suivi des changements dans le cycle de vie des activités qui composent une instance de workflow.  Par exemple, vous pouvez effectuer le suivi du nombre de fois où l'activité Envoyer un message se termine dans une instance de flux de travail.  Cette requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des objets d'enregistrement d'état d'activité.  Les états disponibles auxquels s'abonner sont spécifiés dans ActivityStates.  
+# <a name="ltactivitystatequeriesgt-of-wcf"></a><span data-ttu-id="67b7c-102">&lt;activityStateQueries&gt; de WCF</span><span class="sxs-lookup"><span data-stu-id="67b7c-102">&lt;activityStateQueries&gt; of WCF</span></span>
+<span data-ttu-id="67b7c-103">Représente une collection de requêtes qui permettent d’effectuer le suivi des changements dans le cycle de vie des activités qui composent une instance de workflow.</span><span class="sxs-lookup"><span data-stu-id="67b7c-103">Represents a collection of queries that are used to track life cycle changes of the activities that make up a workflow instance.</span></span> <span data-ttu-id="67b7c-104">Pouvez par exemple, si vous souhaitez effectuer le suivi de chaque fois que l’activité « Envoyer du courrier électronique » se termine dans une instance de workflow.</span><span class="sxs-lookup"><span data-stu-id="67b7c-104">For example, you may want to keep track of every time the "Send E-Mail" activity completes within a workflow instance.</span></span> <span data-ttu-id="67b7c-105">Cette requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des objets d'enregistrement d'état d'activité.</span><span class="sxs-lookup"><span data-stu-id="67b7c-105">This query is necessary for a tracking participant to subscribe to activity state record objects.</span></span> <span data-ttu-id="67b7c-106">Les états disponibles auxquels s'abonner sont spécifiés dans ActivityStates.</span><span class="sxs-lookup"><span data-stu-id="67b7c-106">The available states to subscribe to are specified in ActivityStates.</span></span>  
   
- Pour plus d'informations sur les requêtes de modèle de suivi, consultez [Modèles de suivi](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md).  
+ <span data-ttu-id="67b7c-107">Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span><span class="sxs-lookup"><span data-stu-id="67b7c-107">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="67b7c-108">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="67b7c-108">\<system.serviceModel></span></span>  
+<span data-ttu-id="67b7c-109">\<suivi ></span><span class="sxs-lookup"><span data-stu-id="67b7c-109">\<tracking></span></span>  
+<span data-ttu-id="67b7c-110">\<trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="67b7c-110">\<trackingProfile></span></span>  
+<span data-ttu-id="67b7c-111">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="67b7c-111">\<workflow></span></span>  
+<span data-ttu-id="67b7c-112">\<activityStateQueries ></span><span class="sxs-lookup"><span data-stu-id="67b7c-112">\<activityStateQueries></span></span>  
   
-```vb  
+## <a name="syntax"></a><span data-ttu-id="67b7c-113">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="67b7c-113">Syntax</span></span>  
   
-<tracking>  
-   <trackingProfile name="Name">  
-       <workflow>  
-          <activityStateQueries>  
-             <activityStateQuery activityName="String" />  
-                <arguments>  
-                   <argument name="String"/>  
-                </arguments>  
-                <states>  
-                   <state name="String"/>  
-                </states>  
-                <variables>  
-                   <variable name="String"/>  
-                </variables>  
-          </activityStateQueries>  
-       </workflow>  
-   </trackingProfile>  
-</tracking>  
-  
+```xml  
+<tracking>   <trackingProfile name="Name">       <workflow>          <activityStateQueries>             <activityStateQuery activityName="String" />                <arguments>                   <argument name="String"/>                </arguments>                <states>                   <state name="String"/>                </states>                <variables>                   <variable name="String"/>                </variables>          </activityStateQueries>       </workflow>   </trackingProfile></tracking>  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="67b7c-114">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="67b7c-114">Attributes and Elements</span></span>  
+ <span data-ttu-id="67b7c-115">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="67b7c-115">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
- Aucun  
+### <a name="attributes"></a><span data-ttu-id="67b7c-116">Attributs</span><span class="sxs-lookup"><span data-stu-id="67b7c-116">Attributes</span></span>  
+ <span data-ttu-id="67b7c-117">Aucun</span><span class="sxs-lookup"><span data-stu-id="67b7c-117">None.</span></span>  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="67b7c-118">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="67b7c-118">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="67b7c-119">Élément</span><span class="sxs-lookup"><span data-stu-id="67b7c-119">Element</span></span>|<span data-ttu-id="67b7c-120">Description</span><span class="sxs-lookup"><span data-stu-id="67b7c-120">Description</span></span>|  
 |-------------|-----------------|  
-|[\<activityStateQuery\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md)|Une requête qui permet d'effectuer le suivi de la gestion des erreurs qui se produisent dans une activité. Cet événement se produit chaque fois qu'un FaultHandler traite une erreur.|  
+|[<span data-ttu-id="67b7c-121">\<activityStateQuery ></span><span class="sxs-lookup"><span data-stu-id="67b7c-121">\<activityStateQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md)|<span data-ttu-id="67b7c-122">Requête utilisée pour effectuer le suivi de la gestion des erreurs qui se produisent dans une activité.</span><span class="sxs-lookup"><span data-stu-id="67b7c-122">A query that is used to track the handling of faults that occur within an activity.</span></span>  <span data-ttu-id="67b7c-123">Cet événement se produit chaque fois qu'un FaultHandler traite une erreur.</span><span class="sxs-lookup"><span data-stu-id="67b7c-123">This event occurs each time a FaultHandler processes a fault.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="67b7c-124">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="67b7c-124">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="67b7c-125">Élément</span><span class="sxs-lookup"><span data-stu-id="67b7c-125">Element</span></span>|<span data-ttu-id="67b7c-126">Description</span><span class="sxs-lookup"><span data-stu-id="67b7c-126">Description</span></span>|  
 |-------------|-----------------|  
-|[\<workflow\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété `activityDefinitionId`.|  
+|[<span data-ttu-id="67b7c-127">\<flux de travail ></span><span class="sxs-lookup"><span data-stu-id="67b7c-127">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="67b7c-128">Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété `activityDefinitionId`.</span><span class="sxs-lookup"><span data-stu-id="67b7c-128">A configuration element that contains all queries for a specific workflow identified by the `activityDefinitionId` property.</span></span>|  
   
-## Voir aussi  
- [System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElementCollection](assetId:///System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElementCollection?qualifyHint=False&amp;autoUpgrade=True)   
- [System.Activities.Tracking.ActivityStateQuery](assetId:///System.Activities.Tracking.ActivityStateQuery?qualifyHint=False&amp;autoUpgrade=True)   
- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation//workflow-tracking-and-tracing.md)   
- [Modèles de suivi](../../../../../docs/framework/windows-workflow-foundation//tracking-profiles.md)
+## <a name="see-also"></a><span data-ttu-id="67b7c-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="67b7c-129">See Also</span></span>  
+ <span data-ttu-id="67b7c-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElementCollection></span><span class="sxs-lookup"><span data-stu-id="67b7c-130"><xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityStateQueryElementCollection></span></span>    
+ <span data-ttu-id="67b7c-131"><xref:System.Activities.Tracking.ActivityStateQuery></span><span class="sxs-lookup"><span data-stu-id="67b7c-131"><xref:System.Activities.Tracking.ActivityStateQuery></span></span>    
+ [<span data-ttu-id="67b7c-132">Suivi et traçage de workflow</span><span class="sxs-lookup"><span data-stu-id="67b7c-132">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="67b7c-133">Profils de suivi</span><span class="sxs-lookup"><span data-stu-id="67b7c-133">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

@@ -1,69 +1,71 @@
 ---
-title: "&lt;performanceCounters&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/performanceCounters"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#performanceCounters"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<perfomanceCounters> (élément)"
-  - "performanceCounters (élément)"
+title: "&lt;performanceCounters&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/performanceCounters
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#performanceCounters
+helpviewer_keywords:
+- performanceCounters element
+- <perfomanceCounters> element
 ms.assetid: a71f605b-c7d9-4501-a5c3-abcbb964a43f
-caps.latest.revision: 10
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: f7fdbb244663e5114880437a5a508270c80a9c79
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;performanceCounters&gt;, &#233;l&#233;ment
-Spécifie la taille de la mémoire globale partagée par les compteurs de performance.  
+# <a name="ltperformancecountersgt-element"></a><span data-ttu-id="f0fee-102">&lt;performanceCounters&gt; élément</span><span class="sxs-lookup"><span data-stu-id="f0fee-102">&lt;performanceCounters&gt; Element</span></span>
+<span data-ttu-id="f0fee-103">Spécifie la taille de la mémoire globale partagée par les compteurs de performances.</span><span class="sxs-lookup"><span data-stu-id="f0fee-103">Specifies the size of the global memory shared by performance counters.</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="f0fee-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="f0fee-104">\<configuration></span></span>  
+<span data-ttu-id="f0fee-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="f0fee-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="f0fee-106">\<performanceCounters ></span><span class="sxs-lookup"><span data-stu-id="f0fee-106">\<performanceCounters></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="f0fee-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f0fee-107">Syntax</span></span>  
+  
+```xml  
 <performanceCounters filemappingsize="524288" />  
 ```  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f0fee-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="f0fee-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="f0fee-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="f0fee-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="f0fee-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="f0fee-110">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|filemappingsize|Attribut requis.<br /><br /> Spécifie la taille, en octets, de la mémoire globale partagée par les compteurs de performance.  La valeur par défaut est 524288.|  
+|<span data-ttu-id="f0fee-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="f0fee-111">Attribute</span></span>|<span data-ttu-id="f0fee-112">Description</span><span class="sxs-lookup"><span data-stu-id="f0fee-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="f0fee-113">FileMappingSize</span><span class="sxs-lookup"><span data-stu-id="f0fee-113">filemappingsize</span></span>|<span data-ttu-id="f0fee-114">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="f0fee-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="f0fee-115">Spécifie la taille, en octets, de la mémoire globale partagée par les compteurs de performances.</span><span class="sxs-lookup"><span data-stu-id="f0fee-115">Specifies the size, in bytes, of the global memory shared by performance counters.</span></span> <span data-ttu-id="f0fee-116">La valeur par défaut est 524288.</span><span class="sxs-lookup"><span data-stu-id="f0fee-116">The default is 524288.</span></span>|  
   
-### Éléments enfants  
- Aucun.  
+### <a name="child-elements"></a><span data-ttu-id="f0fee-117">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="f0fee-117">Child Elements</span></span>  
+ <span data-ttu-id="f0fee-118">Aucun.</span><span class="sxs-lookup"><span data-stu-id="f0fee-118">None.</span></span>  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="f0fee-119">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="f0fee-119">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="f0fee-120">Élément</span><span class="sxs-lookup"><span data-stu-id="f0fee-120">Element</span></span>|<span data-ttu-id="f0fee-121">Description</span><span class="sxs-lookup"><span data-stu-id="f0fee-121">Description</span></span>|  
 |-------------|-----------------|  
-|`Configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
+|`Configuration`|<span data-ttu-id="f0fee-122">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f0fee-122">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="f0fee-123">Spécifie l'élément racine de la section de configuration ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="f0fee-123">Specifies the root element for the ASP.NET configuration section.</span></span>|  
   
-## Notes  
- Les compteurs de performance utilisent un fichier mappé en mémoire, ou mémoire partagée, pour publier les données de performance.  La taille de la mémoire partagée détermine le nombre d'instances qui peuvent être utilisées en même temps.  Il existe deux types de mémoire partagée : la mémoire partagée globale et la mémoire partagée séparée.  La mémoire partagée globale est utilisée par toutes les catégories de compteurs de performance installés avec les versions 1.0 ou 1.1 du .NET Framework.  Les catégories de compteurs de performance installés avec le .NET Framework version 2.0 utilise une mémoire partagée distincte, chaque catégorie de compteurs de performance disposant de sa propre mémoire.  
+## <a name="remarks"></a><span data-ttu-id="f0fee-124">Remarques</span><span class="sxs-lookup"><span data-stu-id="f0fee-124">Remarks</span></span>  
+ <span data-ttu-id="f0fee-125">Compteurs de performance utilisent un fichier mappé en mémoire, ou mémoire partagée, pour publier les données de performances.</span><span class="sxs-lookup"><span data-stu-id="f0fee-125">Performance counters use a memory mapped file, or shared memory, to publish performance data.</span></span>  <span data-ttu-id="f0fee-126">La taille de la mémoire partagée détermine le nombre d’instances peut être utilisé à la fois.</span><span class="sxs-lookup"><span data-stu-id="f0fee-126">The size of the shared memory determines how many instances can be used at once.</span></span>  <span data-ttu-id="f0fee-127">Il existe deux types de mémoire partagée : mémoire partagée globale et mémoire partagée séparée.</span><span class="sxs-lookup"><span data-stu-id="f0fee-127">There are two types of shared memory: global shared memory and separate shared memory.</span></span>  <span data-ttu-id="f0fee-128">La mémoire partagée globale est utilisée par toutes les catégories de compteur de performance installés avec les versions de .NET Framework 1.0 ou 1.1.</span><span class="sxs-lookup"><span data-stu-id="f0fee-128">The global shared memory is used by all performance counter categories installed with the .NET Framework versions 1.0 or 1.1.</span></span>  <span data-ttu-id="f0fee-129">Catégories de compteur de performance installés avec le .NET Framework version 2.0 utilisent une mémoire partagée distincte, chaque catégorie de compteur de performance possédant sa propre mémoire.</span><span class="sxs-lookup"><span data-stu-id="f0fee-129">Performance counter categories installed with the .NET Framework version 2.0 use separate shared memory, with each performance counter category having its own memory.</span></span>  
   
- La taille de la mémoire partagée globale peut être définie uniquement dans un fichier de configuration.  La taille par défaut est de 524 288 octets, la taille maximale de 33 554 432 octets et la taille minimale de 32 768 octets.  Dans la mesure où la mémoire partagée globale est partagée par tous les processus et toutes les catégories, c'est le premier créateur qui spécifie sa taille.  Si vous définissez la taille dans le fichier de configuration de votre application, cette taille est utilisée uniquement si votre application est la première application qui déclenche l'exécution des compteurs de performance.  Par conséquent, l'emplacement correct pour spécifier la valeur de `filemappingsize` est le fichier Machine.config.  La mémoire de la mémoire partagée globale ne peut pas être libérée par les compteurs de performance individuels, de sorte que la mémoire partagée globale finit par être épuisée si un grand nombre d'instances de compteur de performance avec des noms différents sont créées.  
+ <span data-ttu-id="f0fee-130">La taille de la mémoire partagée globale peut être définie uniquement avec un fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="f0fee-130">The size of global shared memory can be set only with a configuration file.</span></span>  <span data-ttu-id="f0fee-131">La taille par défaut est 524 288 octets, la taille maximale est de 33 554 432 octets et la taille minimale est de 32 768 octets.</span><span class="sxs-lookup"><span data-stu-id="f0fee-131">The default size is 524,288 byes, the maximum size is 33,554,432 bytes, and the minimum size is 32,768 bytes.</span></span>  <span data-ttu-id="f0fee-132">Étant donné que la mémoire partagée globale est partagée par tous les processus et les catégories, le créateur du premier spécifie la taille.</span><span class="sxs-lookup"><span data-stu-id="f0fee-132">Since the global shared memory is shared by all processes and categories, the first creator specifies the size.</span></span>  <span data-ttu-id="f0fee-133">Si vous définissez la taille de votre fichier de configuration d’application, cette taille est utilisée uniquement si votre application est la première application qui provoque les compteurs de performances à exécuter.</span><span class="sxs-lookup"><span data-stu-id="f0fee-133">If you define the size in your application configuration file, that size is only used if your application is the first application that causes the performance counters to execute.</span></span>  <span data-ttu-id="f0fee-134">Par conséquent, l’emplacement correct pour spécifier le `filemappingsize` valeur est le fichier Machine.config.</span><span class="sxs-lookup"><span data-stu-id="f0fee-134">Therefore the correct location to specify the `filemappingsize` value is the Machine.config file.</span></span>  <span data-ttu-id="f0fee-135">La mémoire dans la mémoire partagée globale ne peut pas être libérée par les compteurs de performances individuels, forScope mémoire partagée globale est épuisée si un grand nombre d’instances de compteur de performance avec des noms différents est créé.</span><span class="sxs-lookup"><span data-stu-id="f0fee-135">Memory in the global shared memory cannot be released by individual performance counters, so eventually global shared memory is exhausted if a large number of performance counter instances with different names are created.</span></span>  
   
- En ce qui concerne la taille de la mémoire partagée séparée, c'est la valeur DWORD FileMappingSize de la clé de Registre HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\*\<category name\>*\\Performance qui est d'abord référencée, suivie de la valeur spécifiée pour la mémoire partagée globale dans le fichier de configuration.  Si la valeur FileMappingSize n'existe pas, la taille de la mémoire partagée séparée est définie avec une valeur représentant un quart \(1\/4\) du paramètre global spécifié dans le fichier de configuration.  
+ <span data-ttu-id="f0fee-136">La taille de mémoire partagée séparée, la valeur DWORD FileMappingSize dans le Registre de clé HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<nom de la catégorie >*\Performance est référencé. tout d’abord, suivi par la valeur spécifiée pour la mémoire partagée globale dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="f0fee-136">For the size of separate shared memory, the DWORD FileMappingSize value in the registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<category name>*\Performance is referenced first, followed by the value specified for the global shared memory in the configuration file.</span></span> <span data-ttu-id="f0fee-137">Si la valeur FileMappingSize n’existe pas, alors que la taille de la mémoire partagée séparée est définie à un quart (1/4) le paramètre global dans le fichier de configuration.</span><span class="sxs-lookup"><span data-stu-id="f0fee-137">If the FileMappingSize value does not exist, then the separate shared memory size is set to one fourth (1/4) the global setting in the configuration file.</span></span>  
   
-## Voir aussi  
- <xref:System.Diagnostics.PerformanceCounter>   
- <xref:System.Diagnostics.PerformanceCounterCategory>   
- <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>   
+## <a name="see-also"></a><span data-ttu-id="f0fee-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f0fee-138">See Also</span></span>  
+ <xref:System.Diagnostics.PerformanceCounter>  
+ <xref:System.Diagnostics.PerformanceCounterCategory>  
+ <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A>  
  <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>

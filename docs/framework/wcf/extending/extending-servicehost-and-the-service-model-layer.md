@@ -1,42 +1,44 @@
 ---
-title: "Extension de ServiceHost et de la couche de mod&#232;le de service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "extension des modèles de service (WCF)"
+title: "Extension de ServiceHost et de la couche de modèle de service"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: extending service models [WCF]
 ms.assetid: 954c138a-1cd0-45a0-8abe-e4d2b8ff5400
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1a1a439735375d96bee2d09f13d50e43783df964
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Extension de ServiceHost et de la couche de mod&#232;le de service
-La couche de modèle de service est chargée d'extraire des messages entrants des canaux sous\-jacents, de les traduire dans des appels de méthode dans le code d'application et de renvoyer les résultats à l'appelant.Les extensions de modèle de service modifient ou implémentent le comportement et les fonctionnalités d'exécution et de communication qui impliquent des fonctionnalités de répartiteur ou client, des comportements personnalisés, l'interception de messages et de paramètres et d'autres fonctionnalités d'extensibilité.  
+# <a name="extending-servicehost-and-the-service-model-layer"></a><span data-ttu-id="ec4ed-102">Extension de ServiceHost et de la couche de modèle de service</span><span class="sxs-lookup"><span data-stu-id="ec4ed-102">Extending ServiceHost and the Service Model Layer</span></span>
+<span data-ttu-id="ec4ed-103">La couche du modèle de service est chargée de tirer des messages entrants des canaux sous-jacents, de les traduire dans des appels de méthode dans le code d’application et de renvoyer les résultats à l’appelant.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-103">The service model layer is responsible for pulling incoming messages out of the underlying channels, translating them into method invocations in application code, and sending the results back to the caller.</span></span> <span data-ttu-id="ec4ed-104">Les extensions de modèle de service modifient ou implémentent le comportement et les fonctionnalités d’exécution ou de communication qui impliquent des fonctionnalités de répartiteur ou client, des comportements personnalisés, l’interception de messages et de paramètres, ainsi que d’autres fonctionnalités d’extensibilité.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-104">Service model extensions modify or implement execution or communication behavior and features involving client or dispatcher functionality, custom behaviors, message and parameter interception, and other extensibility functionality.</span></span>  
   
-## Dans cette section  
- [Extension de clients](../../../../docs/framework/wcf/extending/extending-clients.md)  
- Décrit les interfaces qui peuvent intercepter et modifier l'exécution du client, ainsi que les classes dans lesquelles vous pouvez insérer vos extensions personnalisées dans les applications clientes.Par exemple, vous pouvez exécuter la journalisation des messages client personnalisée, exécuter une sérialisation personnalisée des messages, et ainsi de suite.  
+## <a name="in-this-section"></a><span data-ttu-id="ec4ed-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="ec4ed-105">In This Section</span></span>  
+ [<span data-ttu-id="ec4ed-106">Extension de Clients</span><span class="sxs-lookup"><span data-stu-id="ec4ed-106">Extending Clients</span></span>](../../../../docs/framework/wcf/extending/extending-clients.md)  
+ <span data-ttu-id="ec4ed-107">Décrit les interfaces qui peuvent intercepter et modifier l’exécution du client, ainsi que les classes dans lesquelles vous pouvez insérer vos extensions personnalisées dans les applications clientes.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-107">Describes the interfaces that can intercept and modify the client runtime, as well as the classes into which you can insert your custom extensions in client applications.</span></span> <span data-ttu-id="ec4ed-108">Par exemple, vous pouvez exécuter la journalisation des messages client personnalisée, exécuter une sérialisation personnalisée des messages, et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-108">For example, you can perform custom client message logging, perform custom message serialization, and so on.</span></span>  
   
- [Extension des répartiteurs](../../../../docs/framework/wcf/extending/extending-dispatchers.md)  
- Décrit les interfaces qui peuvent intercepter et modifier l'exécution d'un service, ainsi que les classes dans lesquelles vous pouvez insérer vos extensions personnalisées dans les applications de service.Par exemple, vous pouvez exécuter la journalisation personnalisée du service, une validation des messages côté service, une répartition personnalisée, et ainsi de suite.  
+ [<span data-ttu-id="ec4ed-109">Extension des répartiteurs</span><span class="sxs-lookup"><span data-stu-id="ec4ed-109">Extending Dispatchers</span></span>](../../../../docs/framework/wcf/extending/extending-dispatchers.md)  
+ <span data-ttu-id="ec4ed-110">Décrit les interfaces qui peuvent intercepter et modifier l’exécution d’un service, ainsi que les classes dans lesquelles vous pouvez insérer vos extensions personnalisées dans les applications de service.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-110">Describes the interfaces that can intercept and modify the service runtime, as well as the classes into which you can insert your custom extensions in service applications.</span></span> <span data-ttu-id="ec4ed-111">Par exemple, vous pouvez exécuter la journalisation personnalisée du service, une validation des messages côté service, une répartition personnalisée, et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-111">For example, you can perform custom service logging, service-side message validation, custom dispatching, and so on.</span></span>  
   
- [Objets extensibles](../../../../docs/framework/wcf/extending/extensible-objects.md)  
- Décrit les cinq objets extensibles et le modèle <xref:System.ServiceModel.IExtensibleObject%601>.Le modèle d'objet extensible est utilisé pour étendre des classes d'exécution existantes à l'aide de nouvelles fonctionnalités ou ajouter un nouvel état à un objet.Les extensions, attachées à l'un des objets extensibles, permettent aux comportements à des étapes très différentes du traitement d'accéder à l'état partagé et aux fonctionnalités attachés à un objet extensible commun qui leur est accessible.  
+ [<span data-ttu-id="ec4ed-112">Objets extensibles</span><span class="sxs-lookup"><span data-stu-id="ec4ed-112">Extensible Objects</span></span>](../../../../docs/framework/wcf/extending/extensible-objects.md)  
+ <span data-ttu-id="ec4ed-113">Décrit les cinq objets extensibles et le modèle <xref:System.ServiceModel.IExtensibleObject%601>.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-113">Describes the five extensible objects and the <xref:System.ServiceModel.IExtensibleObject%601> pattern.</span></span> <span data-ttu-id="ec4ed-114">Le modèle d'objet extensible est utilisé pour étendre des classes d'exécution existantes à l'aide de nouvelles fonctionnalités ou ajouter un nouvel état à un objet.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-114">The extensible object pattern is used to either extend existing runtime classes with new functionality or to add new state to an object.</span></span> <span data-ttu-id="ec4ed-115">Les extensions, attachées à l’un des objets extensibles, permettent aux comportements à des étapes différentes du traitement, d’accéder à l’état partagé et aux fonctionnalités attachés à un objet extensible commun qui leur est accessible.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-115">Extensions, attached to one of the extensible objects, enable behaviors at very different stages in processing to access shared state and functionality attached to a common extensible object that they can access.</span></span>  
   
- [Configuration et extension de l'exécution à l'aide de comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)  
- Pour modifier des paramètres ou insérer des extensions dans l'exécution de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous devez utiliser les comportements.WCF inclut des comportements implémentés par le système pour contrôler la limitation, l'instanciation et de nombreux autres aspects des services et des opérations.Cette section décrit comment créer vos propres comportements personnalisés et les rendre disponibles pour les utiliser par programme et à l'aide de fichiers de configuration.  
+ [<span data-ttu-id="ec4ed-116">Configuration et extension de l’exécution des comportements</span><span class="sxs-lookup"><span data-stu-id="ec4ed-116">Configuring and Extending the Runtime with Behaviors</span></span>](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)  
+ <span data-ttu-id="ec4ed-117">Pour modifier des paramètres ou insérer des extensions dans l'exécution de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous devez utiliser les comportements.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-117">To change settings on or insert extensions in the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] runtime, you use Behaviors.</span></span> <span data-ttu-id="ec4ed-118">WCF inclut des comportements implémentés par le système pour contrôler la limitation, l'instanciation et de nombreux autres aspects des services et des opérations.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-118">WCF includes system-implemented behaviors for controlling throttling, instancing, and many other aspects of services and operations.</span></span> <span data-ttu-id="ec4ed-119">Cette section décrit comment créer vos propres comportements personnalisés et les rendre disponibles pour les utiliser par programme et à l'aide de fichiers de configuration.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-119">This section describes how to create your own custom behaviors and how to make them available for use both programmatically and using configuration files.</span></span>  
   
- [Extension de l'hébergement à l'aide de ServiceHostFactory](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)  
- Décrit comment développer <xref:System.ServiceModel.ServiceHostBase?displayProperty=fullName> et <xref:System.ServiceModel.ServiceHost?displayProperty=fullName> et comment utiliser les classes <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=fullName> pour personnaliser l'environnement hôte.  
+ [<span data-ttu-id="ec4ed-120">Extension de l’hébergement à l’aide de ServiceHostFactory</span><span class="sxs-lookup"><span data-stu-id="ec4ed-120">Extending Hosting Using ServiceHostFactory</span></span>](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)  
+ <span data-ttu-id="ec4ed-121">Décrit comment développer <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> et <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> et comment utiliser les classes <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType> pour personnaliser l'environnement hôte.</span><span class="sxs-lookup"><span data-stu-id="ec4ed-121">Describes how to extend <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>, <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>, and use the <xref:System.ServiceModel.Activation.ServiceHostFactory?displayProperty=nameWithType> classes to customize the host environment.</span></span>  
   
-## Référence  
+## <a name="reference"></a><span data-ttu-id="ec4ed-122">Référence</span><span class="sxs-lookup"><span data-stu-id="ec4ed-122">Reference</span></span>  
   
-## Rubriques connexes
+## <a name="related-sections"></a><span data-ttu-id="ec4ed-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="ec4ed-123">Related Sections</span></span>

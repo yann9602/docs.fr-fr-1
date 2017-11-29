@@ -1,30 +1,36 @@
 ---
-title: "Configuration des comportements clients | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Configuration des comportements clients
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6f16f32128c7223fa600802ae593d36286847dc8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Configuration des comportements clients
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] configure les comportements de deux manières : en faisant référence aux configurations de comportement, qui sont définies dans la section `<behavior>` du fichier de configuration d'une application cliente, ou par programme dans l'application appelante.  Cette rubrique décrit ces deux approches.  
+# <a name="configuring-client-behaviors"></a><span data-ttu-id="85ae6-102">Configuration des comportements clients</span><span class="sxs-lookup"><span data-stu-id="85ae6-102">Configuring Client Behaviors</span></span>
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]<span data-ttu-id="85ae6-103"> configure les comportements de deux manières : en faisant référence aux configurations de comportement, qui sont définies dans la section `<behavior>` du fichier de configuration d'une application cliente, ou par programme dans l'application appelante.</span><span class="sxs-lookup"><span data-stu-id="85ae6-103"> configures behaviors in two ways: either by referring to behavior configurations -- which are defined in the `<behavior>` section of a client application configuration file – or programmatically in the calling application.</span></span> <span data-ttu-id="85ae6-104">Cette rubrique décrit ces deux approches.</span><span class="sxs-lookup"><span data-stu-id="85ae6-104">This topic describes both approaches.</span></span>  
   
- Lors de l'utilisation d'un fichier de configuration, la configuration du comportement est une collection nommée de paramètres de configuration.  Le nom de chaque configuration de comportement doit être unique.  Cette chaîne est utilisée dans l'attribut `behaviorConfiguration` d'une configuration de point de terminaison pour lier le point de terminaison au comportement.  
+ <span data-ttu-id="85ae6-105">Lors de l'utilisation d'un fichier de configuration, la configuration du comportement est une collection nommée de paramètres de configuration.</span><span class="sxs-lookup"><span data-stu-id="85ae6-105">When using a configuration file, behavior configuration is a named collection of configuration settings.</span></span> <span data-ttu-id="85ae6-106">Le nom de chaque configuration de comportement doit être unique.</span><span class="sxs-lookup"><span data-stu-id="85ae6-106">The name of each behavior configuration must be unique.</span></span> <span data-ttu-id="85ae6-107">Cette chaîne est utilisée dans l'attribut `behaviorConfiguration` d'une configuration de point de terminaison pour lier le point de terminaison au comportement.</span><span class="sxs-lookup"><span data-stu-id="85ae6-107">This string is used in the `behaviorConfiguration` attribute of an endpoint configuration to link the endpoint to the behavior.</span></span>  
   
-## Exemple  
- Le code de configuration suivant définit un comportement appelé `myBehavior`.  Le point de terminaison de client référence ce comportement dans l'attribut `behaviorConfiguration`.  
+## <a name="example"></a><span data-ttu-id="85ae6-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="85ae6-108">Example</span></span>  
+ <span data-ttu-id="85ae6-109">Le code de configuration suivant définit un comportement appelé `myBehavior`.</span><span class="sxs-lookup"><span data-stu-id="85ae6-109">The following configuration code defines a behavior called `myBehavior`.</span></span> <span data-ttu-id="85ae6-110">Le point de terminaison de client référence ce comportement dans l'attribut `behaviorConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="85ae6-110">The client endpoint references this behavior in the `behaviorConfiguration` attribute.</span></span>  
   
-```  
+```xml  
 <configuration>  
     <system.serviceModel>  
         <behaviors>  
@@ -46,14 +52,14 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## Utilisation de comportements par programme  
- Vous pouvez également configurer ou insérer par programme des comportements en localisant la propriété `Behaviors` appropriée sur l'objet client [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ou l'objet de fabrication de canaux client avant d'ouvrir le client.  
+## <a name="using-behaviors-programmatically"></a><span data-ttu-id="85ae6-111">Utilisation de comportements par programme</span><span class="sxs-lookup"><span data-stu-id="85ae6-111">Using Behaviors Programmatically</span></span>  
+ <span data-ttu-id="85ae6-112">Vous pouvez également configurer ou insérer par programme des comportements en localisant la propriété `Behaviors` appropriée sur l'objet client [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ou l'objet de fabrication de canaux client avant d'ouvrir le client.</span><span class="sxs-lookup"><span data-stu-id="85ae6-112">You can also configure or insert behaviors programmatically by locating the appropriate `Behaviors` property on the [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] client object or on the client channel factory object prior to opening the client.</span></span>  
   
-## Exemple  
- L'exemple de code suivant indique comment insérer par programme un comportement en accédant à la propriété <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> sur <xref:System.ServiceModel.Description.ServiceEndpoint> retournée à partir de la propriété <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> avant la création de l'objet de canal.  
+## <a name="example"></a><span data-ttu-id="85ae6-113">Exemple</span><span class="sxs-lookup"><span data-stu-id="85ae6-113">Example</span></span>  
+ <span data-ttu-id="85ae6-114">L'exemple de code suivant indique comment insérer par programme un comportement en accédant à la propriété <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> sur <xref:System.ServiceModel.Description.ServiceEndpoint> retournée à partir de la propriété <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> avant la création de l'objet de canal.</span><span class="sxs-lookup"><span data-stu-id="85ae6-114">The following code example shows how to programmatically insert a behavior by accessing the <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> property on the <xref:System.ServiceModel.Description.ServiceEndpoint> returned from the <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> property prior to the creation of the channel object.</span></span>  
   
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
  [!code-vb[ChannelFactoryBehaviors#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
   
-## Voir aussi  
- [\<comportements\>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+## <a name="see-also"></a><span data-ttu-id="85ae6-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="85ae6-115">See Also</span></span>  
+ [<span data-ttu-id="85ae6-116">\<comportements ></span><span class="sxs-lookup"><span data-stu-id="85ae6-116">\<behaviors></span></span>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)

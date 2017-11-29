@@ -1,66 +1,74 @@
 ---
-title: "&lt;knownType&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;knownType&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ee2b7be3-7148-4a3a-b861-48e7330615e5
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ccb7152197a021821936e178e0de77b9dfabce45
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;knownType&gt;
-Indique un type devant être utilisé par le <xref:System.Runtime.Serialization.DataContractSerializer> pendant la désérialisation.  L'élément indique un « type connu » renvoyé par un champ ou une propriété d'un « type déclaré ». Pour plus d'informations, consultez [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+# <a name="ltknowntypegt"></a><span data-ttu-id="373f8-102">&lt;knownType&gt;</span><span class="sxs-lookup"><span data-stu-id="373f8-102">&lt;knownType&gt;</span></span>
+<span data-ttu-id="373f8-103">Indique un type devant être utilisé par le <xref:System.Runtime.Serialization.DataContractSerializer> pendant la désérialisation.</span><span class="sxs-lookup"><span data-stu-id="373f8-103">Specifies a type to be used by <xref:System.Runtime.Serialization.DataContractSerializer> during deserialization.</span></span> <span data-ttu-id="373f8-104">L'élément indique un « type connu » renvoyé par un champ ou une propriété d'un « type déclaré ».</span><span class="sxs-lookup"><span data-stu-id="373f8-104">The element specifies a "known type" that is returned by a field or property of a "declared type."</span></span> <span data-ttu-id="373f8-105">Pour plus d’informations, consultez [Types connus de contrat de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).</span><span class="sxs-lookup"><span data-stu-id="373f8-105">For more information, see [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).</span></span>  
   
-## Syntaxe  
+ <span data-ttu-id="373f8-106">\<System.Runtime.Serialization ></span><span class="sxs-lookup"><span data-stu-id="373f8-106">\<system.runtime.serialization></span></span>  
+<span data-ttu-id="373f8-107">\<dataContractSerializer ></span><span class="sxs-lookup"><span data-stu-id="373f8-107">\<dataContractSerializer></span></span>  
+<span data-ttu-id="373f8-108">\<declaredTypes > élément</span><span class="sxs-lookup"><span data-stu-id="373f8-108">\<declaredTypes> Element</span></span>  
+<span data-ttu-id="373f8-109">\<Ajouter > de \<declaredTypes ></span><span class="sxs-lookup"><span data-stu-id="373f8-109">\<add> of \<declaredTypes></span></span>  
+<span data-ttu-id="373f8-110">\<knownType > élément</span><span class="sxs-lookup"><span data-stu-id="373f8-110">\<knownType> Element</span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="373f8-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="373f8-111">Syntax</span></span>  
   
+```xml  
 <knownType type="String">  
      <parameter index="Integer"  
                 type="String" />  
 </knownType>  
 ```  
   
-## Type  
+## <a name="type"></a><span data-ttu-id="373f8-112">Type</span><span class="sxs-lookup"><span data-stu-id="373f8-112">Type</span></span>  
  `string`  
   
-## Attributs et éléments  
- Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
+## <a name="attributes-and-elements"></a><span data-ttu-id="373f8-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="373f8-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="373f8-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="373f8-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### Attributs  
+### <a name="attributes"></a><span data-ttu-id="373f8-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="373f8-115">Attributes</span></span>  
   
-|Attribut|Description|  
-|--------------|-----------------|  
-|type|Indique le type \(espace de noms compris\), le nom de l'assembly, la version, la culture et le jeton de clé publique.|  
+|<span data-ttu-id="373f8-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="373f8-116">Attribute</span></span>|<span data-ttu-id="373f8-117">Description</span><span class="sxs-lookup"><span data-stu-id="373f8-117">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="373f8-118">type</span><span class="sxs-lookup"><span data-stu-id="373f8-118">type</span></span>|<span data-ttu-id="373f8-119">Indique le type (espace de noms compris), le nom de l'assembly, la version, la culture et le jeton de clé publique.</span><span class="sxs-lookup"><span data-stu-id="373f8-119">Specifies the type (including namespace), assembly name, version, culture, and public key token.</span></span>|  
   
-### Éléments enfants  
+### <a name="child-elements"></a><span data-ttu-id="373f8-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="373f8-120">Child Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="373f8-121">Élément</span><span class="sxs-lookup"><span data-stu-id="373f8-121">Element</span></span>|<span data-ttu-id="373f8-122">Description</span><span class="sxs-lookup"><span data-stu-id="373f8-122">Description</span></span>|  
 |-------------|-----------------|  
-|[\<paramètre\>](../../../../../docs/framework/configure-apps/file-schema/wcf/parameter.md)|Indique un index de paramètre lorsque le type déclaré est générique.|  
+|[<span data-ttu-id="373f8-123">\<paramètre ></span><span class="sxs-lookup"><span data-stu-id="373f8-123">\<parameter></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/parameter.md)|<span data-ttu-id="373f8-124">Indique un index de paramètre lorsque le type déclaré est générique.</span><span class="sxs-lookup"><span data-stu-id="373f8-124">Specifies a parameter index when the declared type is a generic type.</span></span>|  
   
-### Éléments parents  
+### <a name="parent-elements"></a><span data-ttu-id="373f8-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="373f8-125">Parent Elements</span></span>  
   
-|Élément|Description|  
+|<span data-ttu-id="373f8-126">Élément</span><span class="sxs-lookup"><span data-stu-id="373f8-126">Element</span></span>|<span data-ttu-id="373f8-127">Description</span><span class="sxs-lookup"><span data-stu-id="373f8-127">Description</span></span>|  
 |-------------|-----------------|  
-|[\<ajouter\>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)|Ajoute un type déclaré à la collection de types déclarés.|  
+|[<span data-ttu-id="373f8-128">\<add></span><span class="sxs-lookup"><span data-stu-id="373f8-128">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)|<span data-ttu-id="373f8-129">Ajoute un type déclaré à la collection de types déclarés.</span><span class="sxs-lookup"><span data-stu-id="373f8-129">Adds a declared type to the collection of declared types.</span></span>|  
   
-## Notes  
- Pour plus d'informations sur les types connus, consultez [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer>.  
+## <a name="remarks"></a><span data-ttu-id="373f8-130">Remarques</span><span class="sxs-lookup"><span data-stu-id="373f8-130">Remarks</span></span>  
+ <span data-ttu-id="373f8-131">Pour plus d’informations sur les types connus, consultez [Types connus de contrat de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) et <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="373f8-131">For more information about known types, see [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) and <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
- Pour obtenir un exemple d'utilisation de cet élément, consultez [\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md).  
+ <span data-ttu-id="373f8-132">Consultez le [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) pour obtenir un exemple d’utilisation de cet élément.</span><span class="sxs-lookup"><span data-stu-id="373f8-132">See the [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) for an example of using this element.</span></span>  
   
-## Exemple  
+## <a name="example"></a><span data-ttu-id="373f8-133">Exemple</span><span class="sxs-lookup"><span data-stu-id="373f8-133">Example</span></span>  
   
-```  
+```xml  
 <add type="MyCompany.Library.Shape,   
            MyAssembly, Version=2.0.0.0, Culture=neutral,  
            PublicKeyToken=XXXXXX, processorArchitecture=MSIL">  
@@ -71,8 +79,8 @@ Indique un type devant être utilisé par le <xref:System.Runtime.Serialization.
 </add>  
 ```  
   
-## Voir aussi  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)   
- [\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)   
- [\<ajouter\>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+## <a name="see-also"></a><span data-ttu-id="373f8-134">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="373f8-134">See Also</span></span>  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ [<span data-ttu-id="373f8-135">Types connus de contrat de données</span><span class="sxs-lookup"><span data-stu-id="373f8-135">Data Contract Known Types</span></span>](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [<span data-ttu-id="373f8-136">\<dataContractSerializer ></span><span class="sxs-lookup"><span data-stu-id="373f8-136">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
+ [<span data-ttu-id="373f8-137">\<add></span><span class="sxs-lookup"><span data-stu-id="373f8-137">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
