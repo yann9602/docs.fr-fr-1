@@ -5,87 +5,85 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 676a03678cbdf6fe08e628806df2a1853fb71718
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Comment : générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification Windows
-## <a name="applies-to"></a>S'applique à  
+# <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a><span data-ttu-id="9dacf-102">Comment : générer une application ASP.NET prenant en charge les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-102">How To: Build Claims-Aware ASP.NET Application Using Windows Authentication</span></span>
+## <a name="applies-to"></a><span data-ttu-id="9dacf-103">S'applique à</span><span class="sxs-lookup"><span data-stu-id="9dacf-103">Applies To</span></span>  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+-   <span data-ttu-id="9dacf-104">Microsoft® Windows® Identity Foundation (WIF)</span><span class="sxs-lookup"><span data-stu-id="9dacf-104">Microsoft® Windows® Identity Foundation (WIF)</span></span>  
   
--   Web Forms ASP.NET®  
+-   <span data-ttu-id="9dacf-105">Web Forms ASP.NET®</span><span class="sxs-lookup"><span data-stu-id="9dacf-105">ASP.NET® Web Forms</span></span>  
   
-## <a name="summary"></a>Résumé  
- Cette procédure fournit des procédures pas à pas détaillées pour la création d’une simple application Web Forms ASP.NET prenant en charge les revendications et qui utilise l’authentification Windows. Elle fournit également des instructions pour tester l’application afin de vérifier que les revendications s’affichent quand un utilisateur se connecte à l’aide de l’authentification Windows.  
+## <a name="summary"></a><span data-ttu-id="9dacf-106">Résumé</span><span class="sxs-lookup"><span data-stu-id="9dacf-106">Summary</span></span>  
+ <span data-ttu-id="9dacf-107">Cette procédure fournit des procédures pas à pas détaillées pour la création d’une simple application Web Forms ASP.NET prenant en charge les revendications et qui utilise l’authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="9dacf-107">This How-To provides detailed step-by-step procedures for creating a simple claims-aware ASP.NET Web Forms application that uses Windows authentication.</span></span> <span data-ttu-id="9dacf-108">Elle fournit également des instructions pour tester l’application afin de vérifier que les revendications s’affichent quand un utilisateur se connecte à l’aide de l’authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="9dacf-108">It also provides instructions for how to test the application to verify that claims are presented when a user signs in using Windows authentication.</span></span>  
   
-## <a name="contents"></a>Sommaire  
+## <a name="contents"></a><span data-ttu-id="9dacf-109">Sommaire</span><span class="sxs-lookup"><span data-stu-id="9dacf-109">Contents</span></span>  
   
--   Objectifs  
+-   <span data-ttu-id="9dacf-110">Objectifs</span><span class="sxs-lookup"><span data-stu-id="9dacf-110">Objectives</span></span>  
   
--   Vue d'ensemble  
+-   <span data-ttu-id="9dacf-111">Vue d'ensemble</span><span class="sxs-lookup"><span data-stu-id="9dacf-111">Overview</span></span>  
   
--   Résumé des étapes  
+-   <span data-ttu-id="9dacf-112">Résumé des étapes</span><span class="sxs-lookup"><span data-stu-id="9dacf-112">Summary of Steps</span></span>  
   
--   Étape 1 : Créer une application Web Forms ASP.NET simple  
+-   <span data-ttu-id="9dacf-113">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="9dacf-113">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
+-   <span data-ttu-id="9dacf-114">Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-114">Step 2 – Configure ASP.NET Web Forms Application for Claims Using Windows Authentication</span></span>  
   
--   Étape 3 : tester votre solution  
+-   <span data-ttu-id="9dacf-115">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="9dacf-115">Step 3 – Test Your Solution</span></span>  
   
-## <a name="objectives"></a>Objectifs  
+## <a name="objectives"></a><span data-ttu-id="9dacf-116">Objectifs</span><span class="sxs-lookup"><span data-stu-id="9dacf-116">Objectives</span></span>  
   
--   Configurer une application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
+-   <span data-ttu-id="9dacf-117">Configurer une application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-117">Configure an ASP.NET Web Forms application for claims using Windows authentication</span></span>  
   
--   Tester l’application Web Forms ASP.NET pour vérifier si elle fonctionne correctement  
+-   <span data-ttu-id="9dacf-118">Tester l’application Web Forms ASP.NET pour vérifier si elle fonctionne correctement</span><span class="sxs-lookup"><span data-stu-id="9dacf-118">Test the ASP.NET Web Forms application to see if it is working properly</span></span>  
   
-## <a name="overview"></a>Vue d'ensemble  
- Dans .NET 4.5, WIF et son autorisation basée sur les revendications ont été ajoutés en tant que partie intégrante du .NET Framework. Auparavant, si vous vouliez obtenir des revendications d’un utilisateur ASP.NET, vous deviez installer WIF et convertir les interfaces en objets Entité de sécurité tels que `Thread.CurrentPrincipal` ou `HttpContext.Current.User`. À présent, les revendications sont prises en charge automatiquement par ces objets Entité de sécurité.  
+## <a name="overview"></a><span data-ttu-id="9dacf-119">Vue d'ensemble</span><span class="sxs-lookup"><span data-stu-id="9dacf-119">Overview</span></span>  
+ <span data-ttu-id="9dacf-120">Dans .NET 4.5, WIF et son autorisation basée sur les revendications ont été ajoutés en tant que partie intégrante du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9dacf-120">In .NET 4.5, WIF and its claims-based authorization have been included as an integral part of the Framework.</span></span> <span data-ttu-id="9dacf-121">Auparavant, si vous vouliez obtenir des revendications d’un utilisateur ASP.NET, vous deviez installer WIF et convertir les interfaces en objets Entité de sécurité tels que `Thread.CurrentPrincipal` ou `HttpContext.Current.User`.</span><span class="sxs-lookup"><span data-stu-id="9dacf-121">Previously, if you wanted claims from an ASP.NET user, you were required to install WIF, and then cast interfaces to Principal objects such as `Thread.CurrentPrincipal` or `HttpContext.Current.User`.</span></span> <span data-ttu-id="9dacf-122">À présent, les revendications sont prises en charge automatiquement par ces objets Entité de sécurité.</span><span class="sxs-lookup"><span data-stu-id="9dacf-122">Now, claims are served automatically by these Principal objects.</span></span>  
   
- L’authentification Windows a bénéficié de l’ajout de WIF dans .NET 4.5, car tous les utilisateurs authentifiés par les informations d’identification Windows sont automatiquement associés à des revendications. Vous pouvez commencer à utiliser ces revendications immédiatement dans une application ASP.NET qui utilise l’authentification Windows, comme l’illustre cette procédure.  
+ <span data-ttu-id="9dacf-123">L’authentification Windows a bénéficié de l’ajout de WIF dans .NET 4.5, car tous les utilisateurs authentifiés par les informations d’identification Windows sont automatiquement associés à des revendications.</span><span class="sxs-lookup"><span data-stu-id="9dacf-123">Windows authentication has benefited from WIF’s inclusion in .NET 4.5 because all users authenticated by Windows credentials automatically have claims associated with them.</span></span> <span data-ttu-id="9dacf-124">Vous pouvez commencer à utiliser ces revendications immédiatement dans une application ASP.NET qui utilise l’authentification Windows, comme l’illustre cette procédure.</span><span class="sxs-lookup"><span data-stu-id="9dacf-124">You can begin using these claims immediately in an ASP.NET application that uses Windows authentication, as this How-To demonstrates.</span></span>  
   
-## <a name="summary-of-steps"></a>Résumé des étapes  
+## <a name="summary-of-steps"></a><span data-ttu-id="9dacf-125">Résumé des étapes</span><span class="sxs-lookup"><span data-stu-id="9dacf-125">Summary of Steps</span></span>  
   
--   Étape 1 : Créer une application Web Forms ASP.NET simple  
+-   <span data-ttu-id="9dacf-126">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="9dacf-126">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
+-   <span data-ttu-id="9dacf-127">Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-127">Step 2 – Configure ASP.NET Web Forms Application for Claims Using Windows Authentication</span></span>  
   
--   Étape 3 : tester votre solution  
+-   <span data-ttu-id="9dacf-128">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="9dacf-128">Step 3 – Test Your Solution</span></span>  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Étape 1 : Créer une application Web Forms ASP.NET simple  
- Lors de cette étape, vous allez créer une application Web Forms ASP.NET.  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a><span data-ttu-id="9dacf-129">Étape 1 : Créer une application Web Forms ASP.NET simple</span><span class="sxs-lookup"><span data-stu-id="9dacf-129">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
+ <span data-ttu-id="9dacf-130">Lors de cette étape, vous allez créer une application Web Forms ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="9dacf-130">In this step, you will create a new ASP.NET Web Forms application.</span></span>  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une simple application ASP.NET  
+#### <a name="to-create-a-simple-aspnet-application"></a><span data-ttu-id="9dacf-131">Pour créer une simple application ASP.NET</span><span class="sxs-lookup"><span data-stu-id="9dacf-131">To create a simple ASP.NET application</span></span>  
   
-1.  Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
+1.  <span data-ttu-id="9dacf-132">Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.</span><span class="sxs-lookup"><span data-stu-id="9dacf-132">Start Visual Studio, then click **File**, **New**, and then **Project**.</span></span>  
   
-2.  Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web Forms ASP.NET**.  
+2.  <span data-ttu-id="9dacf-133">Dans la fenêtre **Nouveau projet**, cliquez sur **Application Web Forms ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="9dacf-133">In the **New Project** window, click **ASP.NET Web Forms Application**.</span></span>  
   
-3.  Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.  
+3.  <span data-ttu-id="9dacf-134">Dans **Nom**, entrez `TestApp` et appuyez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="9dacf-134">In **Name**, enter `TestApp` and press **OK**.</span></span>  
   
-4.  Une fois le projet **TestApp** créé, cliquez dessus dans l’**Explorateur de solutions**. Les propriétés du projet s’affichent dans le volet **Propriétés** sous l’**Explorateur de solutions**. Affectez à la propriété **Authentification Windows** la valeur **Enabled** (Activée).  
+4.  <span data-ttu-id="9dacf-135">Une fois le projet **TestApp** créé, cliquez dessus dans l’**Explorateur de solutions**.</span><span class="sxs-lookup"><span data-stu-id="9dacf-135">After the **TestApp** project has been created, click on it in **Solution Explorer**.</span></span> <span data-ttu-id="9dacf-136">Les propriétés du projet s’affichent dans le volet **Propriétés** sous l’**Explorateur de solutions**.</span><span class="sxs-lookup"><span data-stu-id="9dacf-136">The project’s properties will appear in the **Properties** pane below **Solution Explorer**.</span></span> <span data-ttu-id="9dacf-137">Affectez à la propriété **Authentification Windows** la valeur **Enabled** (Activée).</span><span class="sxs-lookup"><span data-stu-id="9dacf-137">Set the **Windows Authentication** property to **Enabled**.</span></span>  
   
     > [!WARNING]
-    >  L’authentification Windows étant désactivée par défaut dans les nouvelles applications ASP.NET, vous devez l’activer manuellement.  
+    >  <span data-ttu-id="9dacf-138">L’authentification Windows étant désactivée par défaut dans les nouvelles applications ASP.NET, vous devez l’activer manuellement.</span><span class="sxs-lookup"><span data-stu-id="9dacf-138">Windows authentication is disabled by default in new ASP.NET applications, so you must manually enable it.</span></span>  
   
-## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
- Dans cette étape, vous allez ajouter une entrée de configuration au fichier de configuration *Web.config* et modifier le fichier *Default.aspx* pour afficher les informations sur les revendications d’un compte.  
+## <a name="step-2--configure-aspnet-web-forms-application-for-claims-using-windows-authentication"></a><span data-ttu-id="9dacf-139">Étape 2 : configurer l’application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-139">Step 2 – Configure ASP.NET Web Forms Application for Claims Using Windows Authentication</span></span>  
+ <span data-ttu-id="9dacf-140">Dans cette étape, vous allez ajouter une entrée de configuration au fichier de configuration *Web.config* et modifier le fichier *Default.aspx* pour afficher les informations sur les revendications d’un compte.</span><span class="sxs-lookup"><span data-stu-id="9dacf-140">In this step you will add a configuration entry to the *Web.config* configuration file and modify the *Default.aspx* file to display claims information for an account.</span></span>  
   
-#### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a>Pour configurer une application ASP.NET pour les revendications à l’aide de l’authentification Windows  
+#### <a name="to-configure-aspnet-application-for-claims-using-windows-authentication"></a><span data-ttu-id="9dacf-141">Pour configurer une application ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-141">To configure ASP.NET application for claims using Windows authentication</span></span>  
   
-1.  Dans le fichier *Default.aspx* du projet **TestApp**, remplacez le balisage existant par le suivant :  
+1.  <span data-ttu-id="9dacf-142">Dans le fichier *Default.aspx* du projet **TestApp**, remplacez le balisage existant par le suivant :</span><span class="sxs-lookup"><span data-stu-id="9dacf-142">In the **TestApp** project’s *Default.aspx* file, replace the existing markup with the following:</span></span>  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -105,9 +103,9 @@ ms.lasthandoff: 08/21/2017
     </asp:Content>  
     ```  
   
-     Cette étape ajoute un contrôle GridView à votre page *Default.aspx* qui sera remplie avec les revendications récupérées à partir de l’authentification Windows.  
+     <span data-ttu-id="9dacf-143">Cette étape ajoute un contrôle GridView à votre page *Default.aspx* qui sera remplie avec les revendications récupérées à partir de l’authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="9dacf-143">This step adds a GridView control to your *Default.aspx* page that will be populated with the claims retrieved from Windows authentication.</span></span>  
   
-2.  Enregistrez le fichier *Default.aspx*, puis ouvrez son fichier code-behind nommé *Default.aspx.cs*. Remplacez le code existant par le code ci-dessous :  
+2.  <span data-ttu-id="9dacf-144">Enregistrez le fichier *Default.aspx*, puis ouvrez son fichier code-behind nommé *Default.aspx.cs*.</span><span class="sxs-lookup"><span data-stu-id="9dacf-144">Save the *Default.aspx* file, then open its code-behind file named *Default.aspx.cs*.</span></span> <span data-ttu-id="9dacf-145">Remplacez le code existant par le code ci-dessous :</span><span class="sxs-lookup"><span data-stu-id="9dacf-145">Replace the existing code with the following:</span></span>  
   
     ```csharp  
     using System;  
@@ -128,15 +126,15 @@ ms.lasthandoff: 08/21/2017
     }  
     ```  
   
-     Le code ci-dessus affiche les revendications relatives à un utilisateur authentifié.  
+     <span data-ttu-id="9dacf-146">Le code ci-dessus affiche les revendications relatives à un utilisateur authentifié.</span><span class="sxs-lookup"><span data-stu-id="9dacf-146">The above code will display claims about an authenticated user.</span></span>  
   
-3.  Pour modifier le type d’authentification de l’application, modifiez le bloc **\<authentication>** dans la section **\<system.web>** du fichier *Web.config* de la racine du projet afin d’inclure uniquement l’entrée de configuration suivante :  
+3.  <span data-ttu-id="9dacf-147">Pour modifier le type d’authentification de l’application, modifiez le bloc **\<authentication>** dans la section **\<system.web>** du fichier *Web.config* de la racine du projet afin d’inclure uniquement l’entrée de configuration suivante :</span><span class="sxs-lookup"><span data-stu-id="9dacf-147">To change the application’s authentication type, modify the **\<authentication>** block in the **\<system.web>** section of the project’s root *Web.config* file so that it only includes the following configuration entry:</span></span>  
   
     ```xml  
     <authentication mode="Windows" />  
     ```  
   
-4.  Enfin, modifiez le bloc **\<authorization>** dans la section **\<system.web>** du même fichier *Web.config* pour forcer l’authentification :  
+4.  <span data-ttu-id="9dacf-148">Enfin, modifiez le bloc **\<authorization>** dans la section **\<system.web>** du même fichier *Web.config* pour forcer l’authentification :</span><span class="sxs-lookup"><span data-stu-id="9dacf-148">Finally, modify the **\<authorization>** block in the **\<system.web>** section of the same *Web.config* file to force authentication:</span></span>  
   
     ```xml  
     <authorization>  
@@ -144,10 +142,9 @@ ms.lasthandoff: 08/21/2017
     </authorization>  
     ```  
   
-## <a name="step-3--test-your-solution"></a>Étape 3 : tester votre solution  
- Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications s’affichent quand un utilisateur se connecte à l’aide de l’authentification Windows.  
+## <a name="step-3--test-your-solution"></a><span data-ttu-id="9dacf-149">Étape 3 : tester votre solution</span><span class="sxs-lookup"><span data-stu-id="9dacf-149">Step 3 – Test Your Solution</span></span>  
+ <span data-ttu-id="9dacf-150">Dans cette étape, vous allez tester votre application Web Forms ASP.NET et vérifier que les revendications s’affichent quand un utilisateur se connecte à l’aide de l’authentification Windows.</span><span class="sxs-lookup"><span data-stu-id="9dacf-150">In this step you will test your ASP.NET Web Forms application, and verify that claims are presented when a user signs in with Windows authentication.</span></span>  
   
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a>Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-windows-authentication"></a><span data-ttu-id="9dacf-151">Pour tester votre application Web Forms ASP.NET pour les revendications à l’aide de l’authentification Windows</span><span class="sxs-lookup"><span data-stu-id="9dacf-151">To test your ASP.NET Web Forms application for claims using Windows authentication</span></span>  
   
-1.  Appuyez sur **F5** pour générer et exécuter l’application. La page *Default.aspx* doit s’afficher, avec le nom de votre compte Windows (dont le nom de domaine) comme utilisateur authentifié dans la partie supérieure droite de la page. Le contenu de la page doit inclure un tableau rempli avec les revendications récupérées à partir de votre compte Windows.
-
+1.  <span data-ttu-id="9dacf-152">Appuyez sur **F5** pour générer et exécuter l’application.</span><span class="sxs-lookup"><span data-stu-id="9dacf-152">Press **F5** to build and run the application.</span></span> <span data-ttu-id="9dacf-153">La page *Default.aspx* doit s’afficher, avec le nom de votre compte Windows (dont le nom de domaine) comme utilisateur authentifié dans la partie supérieure droite de la page.</span><span class="sxs-lookup"><span data-stu-id="9dacf-153">You should be presented with *Default.aspx*, and your Windows account name (including domain name) should already appear as the authenticated user in the top right of the page.</span></span> <span data-ttu-id="9dacf-154">Le contenu de la page doit inclure un tableau rempli avec les revendications récupérées à partir de votre compte Windows.</span><span class="sxs-lookup"><span data-stu-id="9dacf-154">The page’s content should include a table filled with claims retrieved from your Windows account.</span></span>

@@ -5,38 +5,35 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e471b042-d5e3-491c-bc81-758655016a3a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 02aa885ca5ce761d8b34b4f867f8eb4fe9f1912a
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: b86f690848795b3e7880de42cc0860ec19b9cb9a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="wcf-directive-syntax"></a>Syntaxe de directive WCF
-Spécifie des paramètres utilisés par les directives [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] dans les fichiers .svc afin de diriger les compilateurs. Chaque directive peut contenir un ou plusieurs attributs (associés à des valeurs) qui sont spécifiques à cette directive. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] dispose uniquement de la directive [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).  
+# <a name="wcf-directive-syntax"></a><span data-ttu-id="c0012-102">Syntaxe de directive WCF</span><span class="sxs-lookup"><span data-stu-id="c0012-102">WCF Directive Syntax</span></span>
+<span data-ttu-id="c0012-103">Spécifie des paramètres utilisés par les directives [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] dans les fichiers .svc afin de diriger les compilateurs.</span><span class="sxs-lookup"><span data-stu-id="c0012-103">Specifies settings used by the [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] directives in the .svc files to direct the compilers.</span></span> <span data-ttu-id="c0012-104">Chaque directive peut contenir un ou plusieurs attributs (associés à des valeurs) qui sont spécifiques à cette directive.</span><span class="sxs-lookup"><span data-stu-id="c0012-104">Each directive can contain one or more attributes (paired with values) that are specific to that directive.</span></span> [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]<span data-ttu-id="c0012-105"> dispose uniquement de la directive [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).</span><span class="sxs-lookup"><span data-stu-id="c0012-105"> has only the [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) directive.</span></span>  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a><span data-ttu-id="c0012-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="c0012-106">In This Section</span></span>  
  [@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)  
- Définit des attributs spécifiques à une page qui sont utilisés par le compilateur .svc. Ne peut être inclus que dans des fichiers .svc.  
+ <span data-ttu-id="c0012-107">Définit des attributs spécifiques à une page qui sont utilisés par le compilateur .svc.</span><span class="sxs-lookup"><span data-stu-id="c0012-107">Defines page-specific attributes used by the .svc compiler.</span></span> <span data-ttu-id="c0012-108">Ne peut être inclus que dans des fichiers .svc.</span><span class="sxs-lookup"><span data-stu-id="c0012-108">Can be included only in .svc files.</span></span>  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [How to: Host a WCF Service in IIS (Comment : héberger un service WCF dans IIS)](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
- Décrit l’utilisation de la directive @ServiceHost lors de l’hébergement d’un service dans les services IIS  
+## <a name="related-sections"></a><span data-ttu-id="c0012-109">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="c0012-109">Related Sections</span></span>  
+ [<span data-ttu-id="c0012-110">How to: Host a WCF Service in IIS (Comment : héberger un service WCF dans IIS)</span><span class="sxs-lookup"><span data-stu-id="c0012-110">How to: Host a WCF Service in IIS</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
+ <span data-ttu-id="c0012-111">Décrit l’utilisation de la directive @ServiceHost lors de l’hébergement d’un service dans les services IIS</span><span class="sxs-lookup"><span data-stu-id="c0012-111">Describes how the @ServiceHost directive is used when hosting a service in Internet Information Services (IIS)</span></span>  
   
- [How to: Host a WCF Service in WAS (Comment : héberger un service WCF dans WAS)](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
- Décrit l’utilisation de la directive @ServiceHost lors de l’hébergement d’un service dans le service WAS  
+ [<span data-ttu-id="c0012-112">How to: Host a WCF Service in WAS (Comment : héberger un service WCF dans WAS)</span><span class="sxs-lookup"><span data-stu-id="c0012-112">How to: Host a WCF Service in WAS</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
+ <span data-ttu-id="c0012-113">Décrit l’utilisation de la directive @ServiceHost lors de l’hébergement d’un service dans le service WAS</span><span class="sxs-lookup"><span data-stu-id="c0012-113">Describes how the @ServiceHost directive is used when hosting a service in Windows Process Activation Service (WAS)</span></span>  
   
-## <a name="see-also"></a>Voir aussi  
- [Hébergement](../../../../../docs/framework/wcf/feature-details/hosting.md)   
- [Hébergement dans les services IIS (Internet Information Services)](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [Hébergement dans le service d’activation des processus Windows](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)
-
+## <a name="see-also"></a><span data-ttu-id="c0012-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c0012-114">See Also</span></span>  
+ [<span data-ttu-id="c0012-115">Hébergement d’applications WPF</span><span class="sxs-lookup"><span data-stu-id="c0012-115">Hosting</span></span>](../../../../../docs/framework/wcf/feature-details/hosting.md)  
+ [<span data-ttu-id="c0012-116">Hébergement dans Internet Information Services</span><span class="sxs-lookup"><span data-stu-id="c0012-116">Hosting in Internet Information Services</span></span>](../../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [<span data-ttu-id="c0012-117">Hébergement dans le service d’activation des processus Windows</span><span class="sxs-lookup"><span data-stu-id="c0012-117">Hosting in Windows Process Activation Service</span></span>](../../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)

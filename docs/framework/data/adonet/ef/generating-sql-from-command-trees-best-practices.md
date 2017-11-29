@@ -1,26 +1,29 @@
 ---
-title: "G&#233;n&#233;ration SQL &#224; partir d&#39;arborescences de commandes - meilleures pratiques | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Génération SQL à partir d’arborescences de commandes - meilleures pratiques"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 06d2711d9dac203645c127fa86581a9888db3cb1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# G&#233;n&#233;ration SQL &#224; partir d&#39;arborescences de commandes - meilleures pratiques
-Les arborescences de commandes de requête de sortie modèlent de façon précise les requêtes pouvant être exprimées en SQL.  Toutefois, les développeurs de fournisseur sont confrontés à des problèmes courants lors de la génération SQL d'une arborescence de commandes de sortie.  Cette rubrique expose ces difficultés.  Dans la rubrique suivante, le fournisseur d'exemples indique comment résoudre ces problèmes.  
+# <a name="generating-sql-from-command-trees---best-practices"></a><span data-ttu-id="ff098-102">Génération SQL à partir d’arborescences de commandes - meilleures pratiques</span><span class="sxs-lookup"><span data-stu-id="ff098-102">Generating SQL from Command Trees - Best Practices</span></span>
+<span data-ttu-id="ff098-103">Les arborescences de commandes de requête de sortie modèlent de façon précise les requêtes pouvant être exprimées en SQL.</span><span class="sxs-lookup"><span data-stu-id="ff098-103">Output query command trees closely model queries expressible in SQL.</span></span> <span data-ttu-id="ff098-104">Toutefois, les développeurs de fournisseur sont confrontés à des problèmes courants lors de la génération SQL d'une arborescence de commandes de sortie.</span><span class="sxs-lookup"><span data-stu-id="ff098-104">However, there are certain common challenges for provider writers when generating SQL from an output command tree.</span></span> <span data-ttu-id="ff098-105">Cette rubrique expose ces difficultés.</span><span class="sxs-lookup"><span data-stu-id="ff098-105">This topic discusses these challenges.</span></span> <span data-ttu-id="ff098-106">Dans la rubrique suivante, le fournisseur d'exemples indique comment résoudre ces problèmes.</span><span class="sxs-lookup"><span data-stu-id="ff098-106">In the next topic, the sample provider shows how to address these challenges.</span></span>  
   
-## Grouper des nœuds DbExpression dans une instruction SQL SELECT  
- Une instruction SQL type possède une structure imbriquée de la forme suivante :  
+## <a name="group-dbexpression-nodes-in-a-sql-select-statement"></a><span data-ttu-id="ff098-107">Grouper des nœuds DbExpression dans une instruction SQL SELECT</span><span class="sxs-lookup"><span data-stu-id="ff098-107">Group DbExpression Nodes in a SQL SELECT Statement</span></span>  
+ <span data-ttu-id="ff098-108">Une instruction SQL type possède une structure imbriquée de la forme suivante :</span><span class="sxs-lookup"><span data-stu-id="ff098-108">A typical SQL statement has a nested structure of the following shape:</span></span>  
   
 ```  
 SELECT …  
@@ -30,11 +33,11 @@ GROUP BY …
 ORDER BY …  
 ```  
   
- Une ou plusieurs clauses peuvent être vides.  Une instruction SELECT imbriquée peut se produire dans une des lignes.  
+ <span data-ttu-id="ff098-109">Une ou plusieurs clauses peuvent être vides.</span><span class="sxs-lookup"><span data-stu-id="ff098-109">One or more clauses may be empty.</span></span>  <span data-ttu-id="ff098-110">Une instruction SELECT imbriquée peut se produire dans une des lignes.</span><span class="sxs-lookup"><span data-stu-id="ff098-110">A nested SELECT statement could occur in any of the lines.</span></span>  
   
- Une éventuelle traduction d'une arborescence de commandes de requête en instruction SQL SELECT produirait une sous\-requête pour chaque opérateur de relation.  Cela entraîne toutefois des sous\-requêtes imbriquées inutiles et difficiles à lire.  Dans certaines banques de données, la requête risque de mal s'effectuer.  
+ <span data-ttu-id="ff098-111">Une éventuelle traduction d'une arborescence de commandes de requête en instruction SQL SELECT produirait une sous-requête pour chaque opérateur de relation.</span><span class="sxs-lookup"><span data-stu-id="ff098-111">A possible translation of a query command tree into a SQL SELECT statement would produce one subquery for every relational operator.</span></span> <span data-ttu-id="ff098-112">Cela entraîne toutefois des sous-requêtes imbriquées inutiles et difficiles à lire.</span><span class="sxs-lookup"><span data-stu-id="ff098-112">However, that would lead to unnecessary nested subqueries that would be difficult to read.</span></span>  <span data-ttu-id="ff098-113">Dans certaines banques de données, la requête risque de mal s'effectuer.</span><span class="sxs-lookup"><span data-stu-id="ff098-113">On some data stores, the query may perform poorly.</span></span>  
   
- Prenons comme exemple l'arborescence de commandes de requête suivante.  
+ <span data-ttu-id="ff098-114">Prenons comme exemple l'arborescence de commandes de requête suivante.</span><span class="sxs-lookup"><span data-stu-id="ff098-114">As an example, consider the following query command tree</span></span>  
   
 ```  
 Project (  
@@ -46,7 +49,7 @@ a.x,
 )  
 ```  
   
- Une traduction inefficace produit :  
+ <span data-ttu-id="ff098-115">Une traduction inefficace produit :</span><span class="sxs-lookup"><span data-stu-id="ff098-115">An inefficient translation would produce:</span></span>  
   
 ```  
 SELECT a.x  
@@ -55,11 +58,11 @@ FROM (   SELECT *
          WHERE b.y = 5) as a  
 ```  
   
- Notez que chaque nœud d'expression relationnelle devient une nouvelle instruction SQL SELECT.  
+ <span data-ttu-id="ff098-116">Notez que chaque nœud d'expression relationnelle devient une nouvelle instruction SQL SELECT.</span><span class="sxs-lookup"><span data-stu-id="ff098-116">Note that every relational expression node becomes a new SQL SELECT statement.</span></span>  
   
- Il est donc important de regrouper autant de nœuds d'expression que possible en une instruction SQL SELECT unique tout en préservant leur exactitude.  
+ <span data-ttu-id="ff098-117">Il est donc important de regrouper autant de nœuds d'expression que possible en une instruction SQL SELECT unique tout en préservant leur exactitude.</span><span class="sxs-lookup"><span data-stu-id="ff098-117">Therefore, it is important to aggregate as many expression nodes as possible into a single SQL SELECT statement while preserving correctness.</span></span>  
   
- Cette agrégation pour l'exemple présenté ci\-dessus aurait pour résultat :  
+ <span data-ttu-id="ff098-118">Cette agrégation pour l'exemple présenté ci-dessus aurait pour résultat :</span><span class="sxs-lookup"><span data-stu-id="ff098-118">The result of such aggregation for the example presented above would be:</span></span>  
   
 ```  
 SELECT b.x   
@@ -67,10 +70,10 @@ FROM TableA as b
 WHERE b.y = 5  
 ```  
   
-## Aplanir des jointures dans une instruction SQL SELECT  
- Un cas d'agrégation de plusieurs nœuds en une instruction SQL SELECT unique consiste en l'agrégation de plusieurs expressions de jointure en une instruction SQL SELECT unique.  DbJoinExpression représente une jointure unique entre deux entrées.  Dans le cadre d'une instruction SQL SELECT unique, plusieurs jointures peuvent toutefois être spécifiées.  Dans ce cas les jointures sont effectuées dans l'ordre spécifié.  
+## <a name="flatten-joins-in-a-sql-select-statement"></a><span data-ttu-id="ff098-119">Aplanir des jointures dans une instruction SQL SELECT</span><span class="sxs-lookup"><span data-stu-id="ff098-119">Flatten Joins in a SQL SELECT Statement</span></span>  
+ <span data-ttu-id="ff098-120">Un cas d'agrégation de plusieurs nœuds en une instruction SQL SELECT unique consiste en l'agrégation de plusieurs expressions de jointure en une instruction SQL SELECT unique.</span><span class="sxs-lookup"><span data-stu-id="ff098-120">One case of aggregating multiple nodes into a single SQL SELECT statement is aggregating multiple join expressions into a single SQL SELECT statement.</span></span> <span data-ttu-id="ff098-121">DbJoinExpression représente une jointure unique entre deux entrées.</span><span class="sxs-lookup"><span data-stu-id="ff098-121">DbJoinExpression represents a single join between two inputs.</span></span> <span data-ttu-id="ff098-122">Dans le cadre d'une instruction SQL SELECT unique, plusieurs jointures peuvent toutefois être spécifiées.</span><span class="sxs-lookup"><span data-stu-id="ff098-122">However, as part of a single SQL SELECT statement, more than one join can be specified.</span></span> <span data-ttu-id="ff098-123">Dans ce cas les jointures sont effectuées dans l'ordre spécifié.</span><span class="sxs-lookup"><span data-stu-id="ff098-123">In that case the joins are performed in the order specified.</span></span>  
   
- Les jointures externes à gauche \(jointures qui apparaissent en tant qu'enfant gauche d'une autre jointure\) peuvent être aplanies plus facilement dans une instruction SQL SELECT unique.  Prenons comme exemple l'arborescence de commandes de requête suivante :  
+ <span data-ttu-id="ff098-124">Les jointures externes à gauche (jointures qui apparaissent en tant qu'enfant gauche d'une autre jointure) peuvent être aplanies plus facilement dans une instruction SQL SELECT unique.</span><span class="sxs-lookup"><span data-stu-id="ff098-124">Left spine joins, (joins that appear as a left child of another join) can be more easily flattened into a single SQL SELECT statement.</span></span> <span data-ttu-id="ff098-125">Prenons comme exemple l'arborescence de commandes de requête suivante :</span><span class="sxs-lookup"><span data-stu-id="ff098-125">For example, consider the following query command tree:</span></span>  
   
 ```  
 InnerJoin(  
@@ -83,7 +86,7 @@ InnerJoin(
 )  
 ```  
   
- Cela peut être traduit correctement par :  
+ <span data-ttu-id="ff098-126">Cela peut être traduit correctement par :</span><span class="sxs-lookup"><span data-stu-id="ff098-126">This can be correctly translated into:</span></span>  
   
 ```  
 SELECT *  
@@ -92,7 +95,7 @@ LEFT OUTER JOIN TableB as c ON b.y = c.x
 INNER JOIN TableC as d ON b.y = d.z  
 ```  
   
- Toutefois, les jointures externes qui ne sont pas à gauche ne sont pas faciles à aplanir et vous ne devez pas essayer de le faire.  Par exemple, les jointures dans l'arborescence de commandes de requête suivante :  
+ <span data-ttu-id="ff098-127">Toutefois, les jointures externes qui ne sont pas à gauche ne sont pas faciles à aplanir et vous ne devez pas essayer de le faire.</span><span class="sxs-lookup"><span data-stu-id="ff098-127">However, non-left spine joins cannot easily be flattened, and you should not try to flatten them.</span></span> <span data-ttu-id="ff098-128">Par exemple, les jointures dans l'arborescence de commandes de requête suivante :</span><span class="sxs-lookup"><span data-stu-id="ff098-128">For example, the joins in the following query command tree:</span></span>  
   
 ```  
 InnerJoin(  
@@ -105,7 +108,7 @@ InnerJoin(
 )  
 ```  
   
- se traduirait en une instruction SQL SELECT avec une sous\-requête.  
+ <span data-ttu-id="ff098-129">se traduirait en une instruction SQL SELECT avec une sous-requête.</span><span class="sxs-lookup"><span data-stu-id="ff098-129">Would be translated to a SQL SELECT statement with a sub-query.</span></span>  
   
 ```  
 SELECT *  
@@ -117,33 +120,33 @@ INNER JOIN (SELECT *
 ON b.y = d.z  
 ```  
   
-## Redirection d'alias d'entrée  
- Pour expliquer la redirection d'alias d'entrée, considérez la structure des expressions relationnelles, telles que DbFilterExpression, DbProjectExpression, DbCrossJoinExpression, DbJoinExpression, DbSortExpression, DbGroupByExpression, DbApplyExpression et DbSkipExpression.  
+## <a name="input-alias-redirecting"></a><span data-ttu-id="ff098-130">Redirection d'alias d'entrée</span><span class="sxs-lookup"><span data-stu-id="ff098-130">Input Alias Redirecting</span></span>  
+ <span data-ttu-id="ff098-131">Pour expliquer la redirection d'alias d'entrée, considérez la structure des expressions relationnelles, telles que DbFilterExpression, DbProjectExpression, DbCrossJoinExpression, DbJoinExpression, DbSortExpression, DbGroupByExpression, DbApplyExpression et DbSkipExpression.</span><span class="sxs-lookup"><span data-stu-id="ff098-131">To explain input alias redirecting, consider the structure of the relational expressions, such as DbFilterExpression, DbProjectExpression, DbCrossJoinExpression, DbJoinExpression, DbSortExpression, DbGroupByExpression, DbApplyExpression, and DbSkipExpression.</span></span>  
   
- Chacun de ces types possède une ou plusieurs propriétés Input qui décrivent une collection d'entrée. Une variable de liaison correspondant à chaque entrée est utilisée pour représenter chaque élément de cette entrée pendant la traversée d'une collection.  La variable de liaison est utilisée en cas de référence à l'élément d'entrée, par exemple dans la propriété Predicate d'un DbFilterExpression ou la propriété Projection d'un DbProjectExpression.  
+ <span data-ttu-id="ff098-132">Chacun de ces types possède une ou plusieurs propriétés Input qui décrivent une collection d'entrée. Une variable de liaison correspondant à chaque entrée est utilisée pour représenter chaque élément de cette entrée pendant la traversée d'une collection.</span><span class="sxs-lookup"><span data-stu-id="ff098-132">Each of these types has one or more Input properties that describe an input collection, and a binding variable corresponding to each input is used to represent each element of that input during a collection traversal.</span></span> <span data-ttu-id="ff098-133">La variable de liaison est utilisée en cas de référence à l'élément d'entrée, par exemple dans la propriété Predicate d'un DbFilterExpression ou la propriété Projection d'un DbProjectExpression.</span><span class="sxs-lookup"><span data-stu-id="ff098-133">The binding variable is used when referring to the input element, for example in the Predicate property of a DbFilterExpression or the Projection property of a DbProjectExpression.</span></span>  
   
- Lors de l'agrégation de nœuds d'expression relationnelle supplémentaires en instruction SQL SELECT unique et lors de l'évaluation d'une expression appartenant à une expression relationnelle \(par exemple faisant partie de la propriété Projection d'un DbProjectExpression\), la variable de liaison utilisée risque de ne pas être identique à l'alias de l'entrée, étant donné que plusieurs liaisons d'expression doivent être redirigées vers une étendue unique.  Ce problème s'appelle le changement de nom d'alias.  
+ <span data-ttu-id="ff098-134">Lors de l'agrégation de nœuds d'expression relationnelle supplémentaires en instruction SQL SELECT unique et lors de l'évaluation d'une expression appartenant à une expression relationnelle (par exemple faisant partie de la propriété Projection d'un DbProjectExpression), la variable de liaison utilisée risque de ne pas être identique à l'alias de l'entrée, étant donné que plusieurs liaisons d'expression doivent être redirigées vers une étendue unique.</span><span class="sxs-lookup"><span data-stu-id="ff098-134">When aggregating more relational expression nodes into a single SQL SELECT statement, and evaluating an expression that is part of a relational expression (for example part of the Projection property of a DbProjectExpression) the binding variable that it uses may not be the same as the alias of the input, as multiple expression bindings would have to be redirected to a single extent.</span></span>  <span data-ttu-id="ff098-135">Ce problème s'appelle le changement de nom d'alias.</span><span class="sxs-lookup"><span data-stu-id="ff098-135">This problem is called alias renaming.</span></span>  
   
- Prenons le premier exemple de cette rubrique.  Si nous effectuons une traduction naïve et que nous traduisons Projection a.x \(DbPropertyExpression \(a, x\)\), il est correct de le traduire par `a.x` parce que nous avons attribué à l'entrée « a » comme alias pour correspondre à la variable de liaison.  Toutefois, lorsque vous regroupez les deux nœuds dans une instruction SQL SELECT unique, vous devez traduire le même DbPropertyExpression en `b.x`, car l'entrée a « b » pour alias.  
+ <span data-ttu-id="ff098-136">Prenons le premier exemple de cette rubrique.</span><span class="sxs-lookup"><span data-stu-id="ff098-136">Consider the first example in this topic.</span></span> <span data-ttu-id="ff098-137">Si nous effectuons une traduction naïve et que nous traduisons Projection a.x (DbPropertyExpression (a, x)), il est correct de le traduire par `a.x` parce que nous avons attribué à l'entrée « a » comme alias pour correspondre à la variable de liaison.</span><span class="sxs-lookup"><span data-stu-id="ff098-137">If doing the naïve translation and translating the Projection a.x (DbPropertyExpression(a, x)), it is correct to translate it into `a.x` because we have aliased the input as "a" to match the binding variable.</span></span>  <span data-ttu-id="ff098-138">Toutefois, lorsque vous regroupez les deux nœuds dans une instruction SQL SELECT unique, vous devez traduire le même DbPropertyExpression en `b.x`, car l'entrée a « b » pour alias.</span><span class="sxs-lookup"><span data-stu-id="ff098-138">However, when aggregating both the nodes into a single SQL SELECT statement, you need to translate the same DbPropertyExpression into `b.x`, as the input has been aliased with "b".</span></span>  
   
-## Aplanissement d'alias de jointure  
- Contrairement à toute autre expression relationnelle dans une arborescence de commandes de sortie, DbJoinExpression produit un type de résultat qui consiste en une ligne composée de deux colonnes, chacune correspondant à l'une des entrées.  Lorsqu'un DbPropertyExpresssion est généré pour accéder à une propriété scalaire provenant d'une jointure, c'est par\-dessus un autre DbPropertyExpresssion.  
+## <a name="join-alias-flattening"></a><span data-ttu-id="ff098-139">Aplanissement d'alias de jointure</span><span class="sxs-lookup"><span data-stu-id="ff098-139">Join Alias Flattening</span></span>  
+ <span data-ttu-id="ff098-140">Contrairement à toute autre expression relationnelle dans une arborescence de commandes de sortie, DbJoinExpression produit un type de résultat qui consiste en une ligne composée de deux colonnes, chacune correspondant à l'une des entrées.</span><span class="sxs-lookup"><span data-stu-id="ff098-140">Unlike any other relational expression in an output command tree, the DbJoinExpression outputs a result type that is a row consisting of two columns, each of which corresponds to one of the inputs.</span></span> <span data-ttu-id="ff098-141">Lorsqu'un DbPropertyExpresssion est généré pour accéder à une propriété scalaire provenant d'une jointure, c'est par-dessus un autre DbPropertyExpresssion.</span><span class="sxs-lookup"><span data-stu-id="ff098-141">When a DbPropertyExpresssion is built to access a scalar property originating from a join, it is over another DbPropertyExpresssion.</span></span>  
   
- Les exemples incluent « a.b.y » dans l'exemple 2 et « b.c.y » dans l'exemple 3.  Toutefois dans les instructions SQL correspondantes, ils sont référencés en tant que « b.y ».  Cette redéfinition d'alias est appelée aplanissement d'alias de jointure.  
+ <span data-ttu-id="ff098-142">Les exemples incluent « a.b.y » dans l'exemple 2 et « b.c.y » dans l'exemple 3.</span><span class="sxs-lookup"><span data-stu-id="ff098-142">Examples include "a.b.y" in example 2 and "b.c.y" in example 3.</span></span> <span data-ttu-id="ff098-143">Toutefois dans les instructions SQL correspondantes, ils sont référencés en tant que « b.y ».</span><span class="sxs-lookup"><span data-stu-id="ff098-143">However in the corresponding SQL statements these are referred as "b.y".</span></span> <span data-ttu-id="ff098-144">Cette redéfinition d'alias est appelée aplanissement d'alias de jointure.</span><span class="sxs-lookup"><span data-stu-id="ff098-144">This re-aliasing is called join alias flattening.</span></span>  
   
-## Changement du nom de colonne et du nom d'alias d'étendue  
- Si une requête SQL SELECT ayant une jointure doit être exécutée avec une projection, lors de l'énumération de toutes les colonnes participantes des entrées, un conflit de noms peut se produire, si plusieurs entrées ont le même nom de colonne.  Utilisez un nom différent pour la colonne afin d'éviter le conflit.  
+## <a name="column-name-and-extent-alias-renaming"></a><span data-ttu-id="ff098-145">Changement du nom de colonne et du nom d'alias d'étendue</span><span class="sxs-lookup"><span data-stu-id="ff098-145">Column Name and Extent Alias Renaming</span></span>  
+ <span data-ttu-id="ff098-146">Si une requête SQL SELECT ayant une jointure doit être exécutée avec une projection, lors de l'énumération de toutes les colonnes participantes des entrées, un conflit de noms peut se produire, si plusieurs entrées ont le même nom de colonne.</span><span class="sxs-lookup"><span data-stu-id="ff098-146">If a SQL SELECT query that has a join has to be completed with a projection, when enumerating all the participating columns from the inputs, a name collision may occur, as more than one input may have the same column name.</span></span> <span data-ttu-id="ff098-147">Utilisez un nom différent pour la colonne afin d'éviter le conflit.</span><span class="sxs-lookup"><span data-stu-id="ff098-147">Use a different name for the column to avoid the collision.</span></span>  
   
- Lors de l'aplanissement des jointures, les tables participantes \(ou sous\-requêtes\) peuvent également avoir des conflits d'alias, auquel cas elles doivent être renommées.  
+ <span data-ttu-id="ff098-148">Lors de l'aplanissement des jointures, les tables participantes (ou sous-requêtes) peuvent également avoir des conflits d'alias, auquel cas elles doivent être renommées.</span><span class="sxs-lookup"><span data-stu-id="ff098-148">Also, when flattening joins, participating tables (or subqueries) may have colliding aliases in which case these need to be renamed.</span></span>  
   
-## Éviter SELECT \*  
- N'utilisez pas `SELECT *` pour sélectionner des tables de base.  Le modèle de stockage dans une application [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] peut inclure uniquement un sous\-ensemble des colonnes présentes dans la table de base de données.  Dans ce cas, `SELECT *` peut produire un résultat incorrect.  À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.  
+## <a name="avoid-select-"></a><span data-ttu-id="ff098-149">Éviter SELECT *</span><span class="sxs-lookup"><span data-stu-id="ff098-149">Avoid SELECT *</span></span>  
+ <span data-ttu-id="ff098-150">N'utilisez pas `SELECT *` pour sélectionner des tables de base.</span><span class="sxs-lookup"><span data-stu-id="ff098-150">Do not use `SELECT *` to select from base tables.</span></span> <span data-ttu-id="ff098-151">Le modèle de stockage dans un [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] application peut inclure uniquement un sous-ensemble des colonnes qui se trouvent dans la table de base de données.</span><span class="sxs-lookup"><span data-stu-id="ff098-151">The storage model in an [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] application may only include a subset of the columns that are in the database table.</span></span> <span data-ttu-id="ff098-152">Dans ce cas, `SELECT *` peut produire un résultat incorrect.</span><span class="sxs-lookup"><span data-stu-id="ff098-152">In this case, `SELECT *` may produce an incorrect result.</span></span> <span data-ttu-id="ff098-153">À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.</span><span class="sxs-lookup"><span data-stu-id="ff098-153">Instead, you should specify all participating columns by using the column names from the result type of the participating expressions.</span></span>  
   
-## Réutilisation d'expressions  
- Les expressions peuvent être réutilisées dans l'arborescence de commandes de requête passée par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Ne supposez pas que chaque expression apparaît une seule fois dans l'arborescence de commandes de requête.  
+## <a name="reuse-of-expressions"></a><span data-ttu-id="ff098-154">Réutilisation d'expressions</span><span class="sxs-lookup"><span data-stu-id="ff098-154">Reuse of Expressions</span></span>  
+ <span data-ttu-id="ff098-155">Les expressions peuvent être réutilisées dans l'arborescence de commandes de requête transmise par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ff098-155">Expressions may be reused in the query command tree passed by the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span> <span data-ttu-id="ff098-156">Ne partez pas du principe que chaque expression apparaît une seule fois que dans l'arborescence de commandes de requête.</span><span class="sxs-lookup"><span data-stu-id="ff098-156">Do not assume that each expression appears only once in the query command tree.</span></span>  
   
-## Mappage de types primitifs  
- Lorsque vous mappez des types conceptuels \(EDM\) à des types de fournisseur, vous devez mapper au type le plus large \(Int32\) afin que toutes les valeurs possibles puissent correspondre.  Évitez également de mapper à des types qui ne peuvent pas être utilisés pour de nombreuses opérations, comme les types BLOB \(par exemple, `ntext` dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]\).  
+## <a name="mapping-primitive-types"></a><span data-ttu-id="ff098-157">Mappage de types primitifs</span><span class="sxs-lookup"><span data-stu-id="ff098-157">Mapping Primitive Types</span></span>  
+ <span data-ttu-id="ff098-158">Lorsque vous mappez des types conceptuels (EDM) à des types de fournisseur, vous devez mapper au type le plus large (Int32) afin que toutes les valeurs possibles puissent correspondre.</span><span class="sxs-lookup"><span data-stu-id="ff098-158">When mapping conceptual (EDM) types to provider types, you should map to the widest type (Int32) so that all possible values fit.</span></span> <span data-ttu-id="ff098-159">Évitez également de mapper à des types qui ne peuvent pas être utilisés pour de nombreuses opérations, comme les types BLOB (par exemple, `ntext` dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]).</span><span class="sxs-lookup"><span data-stu-id="ff098-159">Also, avoid mapping to types that cannot be used for many operations, like BLOB types (for example, `ntext` in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]).</span></span>  
   
-## Voir aussi  
- [Génération SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
+## <a name="see-also"></a><span data-ttu-id="ff098-160">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ff098-160">See Also</span></span>  
+ [<span data-ttu-id="ff098-161">Génération SQL</span><span class="sxs-lookup"><span data-stu-id="ff098-161">SQL Generation</span></span>](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
