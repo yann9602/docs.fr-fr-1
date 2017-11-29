@@ -1,60 +1,61 @@
 ---
-title: "Fonctionnalit&#233;s par d&#233;faut du contr&#244;le DataGridView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "grilles de données, fonctionnalité par défaut du contrôle DataGridView"
-  - "DataGridView (contrôle Windows Forms), fonctionnalité par défaut"
+title: "Fonctionnalités par défaut du contrôle DataGridView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data grids [Windows Forms], default functionality in DataGridView control
+- DataGridView control [Windows Forms], default functionality
 ms.assetid: 4405f697-cad1-4839-9bcd-8ddb09d9f00e
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5d6b15085c301f074ef6fcf9e60a75299c4b245b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Fonctionnalit&#233;s par d&#233;faut du contr&#244;le DataGridView Windows Forms
-Le contrôle <xref:System.Windows.Forms.DataGridView> Windows Forms fournit aux utilisateurs un nombre significatif de fonctionnalités par défaut.  
+# <a name="default-functionality-in-the-windows-forms-datagridview-control"></a>Fonctionnalités par défaut du contrôle DataGridView Windows Forms
+Windows Forms <xref:System.Windows.Forms.DataGridView> contrôle permet aux utilisateurs d’une quantité importante de fonctionnalités par défaut.  
   
-## Fonctionnalités par défaut  
- Par défaut, un contrôle <xref:System.Windows.Forms.DataGridView> :  
+## <a name="default-functionality"></a>Fonctionnalité par défaut  
+ Par défaut, un <xref:System.Windows.Forms.DataGridView> contrôle :  
   
--   affiche automatiquement des en\-têtes de colonne et de ligne qui restent visibles lors du défilement vertical du tableau ;  
+-   Affiche automatiquement les en-têtes de colonne et les en-têtes de lignes restent visibles pendant que la table fait défiler verticalement.  
   
--   possède un en\-tête de ligne qui contient un indicateur de sélection pour la ligne actuelle.  
+-   A un en-tête de ligne qui contient un indicateur de sélection de la ligne actuelle.  
   
--   possède un rectangle de sélection dans la première cellule ;  
+-   A un rectangle de sélection dans la première cellule.  
   
--   possède des colonnes qui peuvent être automatiquement redimensionnées en double\-cliquant sur les séparateurs de colonne.  
+-   Contient des colonnes qui peuvent être redimensionnés automatiquement quand l’utilisateur double-clique sur les séparateurs de colonnes.  
   
--   prend automatiquement en charge des styles visuels sur Windows XP et la famille Windows Server 2003 lorsque la méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> est appelée à partir de la méthode `Main` de l'application.  
+-   Prend en charge automatiquement les styles visuels sur Windows XP et la famille Windows Server 2003 lorsque la <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> méthode est appelée à partir de l’application `Main` (méthode).  
   
- De plus, le contenu d'un contrôle <xref:System.Windows.Forms.DataGridView> peut être modifié par défaut :  
+ En outre, le contenu d’un <xref:System.Windows.Forms.DataGridView> contrôle peut être modifié par défaut :  
   
--   Si l'utilisateur double\-clique ou appuie sur la touche F2 dans une cellule, le contrôle passe automatiquement la cellule en mode Édition et met à jour son contenu en tant que types utilisateur.  
+-   Si l’utilisateur double-clique ou appuie sur F2 dans une cellule, le contrôle met la cellule en mode édition et le contenu de la cellule en tant que l’utilisateur tape des mises à jour automatiquement.  
   
--   Si l'utilisateur fait défiler la grille jusqu'en bas, il verra une ligne permettant d'ajouter de nouveaux enregistrements.  Lorsque l'utilisateur clique sur cette ligne, une nouvelle ligne est ajoutée au contrôle <xref:System.Windows.Forms.DataGridView>, avec les valeurs par défaut.  Lorsque l'utilisateur appuie sur la touche Échap, cette nouvelle ligne disparaît.  
+-   Si l’utilisateur fait défiler jusqu'à la fin de la grille, il voit qu’une ligne pour ajouter de nouveaux enregistrements est présente. Lorsque l’utilisateur clique sur cette ligne, une nouvelle ligne est ajoutée à la <xref:System.Windows.Forms.DataGridView> contrôle, avec les valeurs par défaut. Lorsque l’utilisateur appuie sur ÉCHAP, cette nouvelle ligne disparaît.  
   
--   Si l'utilisateur clique sur un en\-tête de ligne, la ligne entière est sélectionnée.  
+-   Si l’utilisateur clique sur un en-tête de ligne, la ligne entière est sélectionnée.  
   
- Lorsque vous liez un contrôle <xref:System.Windows.Forms.DataGridView> à une source de données en définissant sa propriété <xref:System.Windows.Forms.DataGridView.DataSource%2A>, le contrôle :  
+ Lorsque vous liez un <xref:System.Windows.Forms.DataGridView> contrôle à une source de données en définissant ses <xref:System.Windows.Forms.DataGridView.DataSource%2A> propriété, le contrôle :  
   
--   utilise automatiquement les noms des colonnes de la source de données comme texte d'en\-tête de colonne ;  
+-   Utilise automatiquement les noms des colonnes de la source de données en tant que le texte d’en-tête de colonne.  
   
--   Est rempli avec le contenu de la source de données.  Des colonnes <xref:System.Windows.Forms.DataGridView> sont créées automatiquement pour chaque colonne de la source de données.  
+-   Est rempli avec le contenu de la source de données. <xref:System.Windows.Forms.DataGridView>les colonnes sont créées automatiquement pour chaque colonne dans la source de données.  
   
--   crée une ligne pour chaque ligne visible du tableau ;  
+-   Crée une ligne pour chaque ligne visible dans la table.  
   
--   trie automatiquement les lignes en fonction des données sous\-jacentes lorsque l'utilisateur clique sur un en\-tête de colonne.  
+-   Trie automatiquement les lignes selon les données sous-jacentes lorsque l’utilisateur clique sur un en-tête de colonne.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.DataGridView>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.DataGridView>  
  [DataGridView, contrôle](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

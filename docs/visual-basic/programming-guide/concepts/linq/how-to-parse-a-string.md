@@ -1,38 +1,30 @@
 ---
-title: "Comment : analyser une chaîne (Visual Basic) | Documents Microsoft"
+title: "Comment : analyser une chaîne (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d062efd2e207f5db39e3be044450fd3f9a5d9e11
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 10b80c72cae70437ff812c4b67b2532d708f1e69
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>Comment : analyser une chaîne (Visual Basic)
 Cette rubrique montre comment créer une arborescence XML en c#.  
   
 ## <a name="example"></a>Exemple  
- Vous pouvez analyser une chaîne en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] à l’aide de la `XElement.Parse` méthode. Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
+ Vous pouvez analyser une chaîne en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] à l’aide de la `XElement.Parse` (méthode). Toutefois, il est plus efficace d'utiliser des littéraux XML, comme illustré dans le code suivant, car leur impact sur les performances n'est pas aussi sévère que l'analyse de code XML à partir d'une chaîne.  
   
- Lorsque vous utilisez des littéraux XML, il vous suffit de copier et coller votre code XML dans votre programme [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+ Lorsque vous utilisez des littéraux XML, il vous suffit de copier et coller votre code XML dans votre programme [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
 > [!NOTE]
 >  L'analyse de texte ou le chargement d'un document XML à partir d'un fichier texte est moins efficace que la construction fonctionnelle. Si vous initialisez une arborescence XML à partir de code, la construction fonctionnelle requiert moins de temps processeur que l’analyse de texte.  

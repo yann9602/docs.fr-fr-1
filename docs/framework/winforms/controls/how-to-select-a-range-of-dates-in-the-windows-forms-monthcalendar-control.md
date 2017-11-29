@@ -1,34 +1,39 @@
 ---
-title: "Comment&#160;: s&#233;lectionner une plage de dates dans le contr&#244;le MonthCalendar Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "calendriers, sélectionner une plage de dates"
-  - "dates, sélectionner une plage dans les contrôles Calendar"
-  - "exemples (Windows Forms), contrôles calendar"
-  - "MonthCalendar (contrôle Windows Forms), sélectionner une plage de dates"
+title: "Comment : sélectionner une plage de dates dans le contrôle MonthCalendar Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- dates [Windows Forms], selecting range in calendar controls
+- examples [Windows Forms], calendar controls
+- calendars [Windows Forms], selecting date range
+- MonthCalendar control [Windows Forms], selecting date range
 ms.assetid: 95d9ab95-b0f8-4c19-9f63-b5cd4593a5d0
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7d6a8d156e6e9a8c5331bd3db1c8e584be5ac154
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: s&#233;lectionner une plage de dates dans le contr&#244;le MonthCalendar Windows Forms
-Une fonctionnalité importante du contrôle <xref:System.Windows.Forms.MonthCalendar> Windows Forms permet à l'utilisateur de sélectionner une plage de dates.  Cette fonctionnalité est une amélioration de la fonctionnalité de sélection de date du contrôle <xref:System.Windows.Forms.DateTimePicker> qui permet uniquement à l'utilisateur de sélectionner une seule valeur de date\/d'heure.  Vous pouvez définir une plage de dates ou obtenir une plage de sélection définie par l'utilisateur en utilisant des propriétés du contrôle <xref:System.Windows.Forms.MonthCalendar>.  L'exemple de code suivant montre comment définir une plage de sélection.  
+# <a name="how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control"></a>Comment : sélectionner une plage de dates dans le contrôle MonthCalendar Windows Forms
+Une fonctionnalité importante des Windows Forms <xref:System.Windows.Forms.MonthCalendar> contrôle est que l’utilisateur peut sélectionner une plage de dates. Cette fonctionnalité est une amélioration de la fonctionnalité de sélection de date le <xref:System.Windows.Forms.DateTimePicker> contrôle, qui permet uniquement à l’utilisateur de sélectionner une valeur de date/heure unique. Vous pouvez définir une plage de dates ou obtenir une plage de sélection définie par l’utilisateur à l’aide des propriétés de la <xref:System.Windows.Forms.MonthCalendar> contrôle. L’exemple de code suivant montre comment définir une plage de sélection.  
   
-### Pour sélectionner une plage de dates  
+### <a name="to-select-a-range-of-dates"></a>Pour sélectionner une plage de dates  
   
-1.  Créez des objets <xref:System.DateTime> qui représentent la première et la dernière dates d'une plage.  
+1.  Créer <xref:System.DateTime> objets qui représentent les première et dernière dates dans une plage.  
   
     ```vb  
     Dim projectStart As Date = New DateTime(2001, 2, 13)  
@@ -60,7 +65,7 @@ Une fonctionnalité importante du contrôle <xref:System.Windows.Forms.MonthCale
        SelectionRange(projectStart, projectEnd);  
     ```  
   
-     \- ou \-  
+     – ou –  
   
      Définissez les propriétés <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> et <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A>.  
   
@@ -79,8 +84,8 @@ Une fonctionnalité importante du contrôle <xref:System.Windows.Forms.MonthCale
     monthCalendar1->SelectionEnd = projectEnd;  
     ```  
   
-## Voir aussi  
- [MonthCalendar, contrôle](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)   
- [Comment : modifier l'apparence du contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)   
- [Comment : afficher en gras certains jours à l'aide du contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)   
- [Comment : afficher plusieurs mois dans le contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)
+## <a name="see-also"></a>Voir aussi  
+ [MonthCalendar, contrôle](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
+ [Guide pratique pour modifier l'apparence du contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)  
+ [Guide pratique pour afficher en gras certains jours à l'aide du contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)  
+ [Guide pratique pour afficher plusieurs mois dans le contrôle MonthCalendar Windows Forms](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)

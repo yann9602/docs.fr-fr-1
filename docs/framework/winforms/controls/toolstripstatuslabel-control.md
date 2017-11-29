@@ -1,43 +1,44 @@
 ---
-title: "ToolStripStatusLabel, contr&#244;le | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "barres d'état"
-  - "ToolStrip (contrôle Windows Forms), ToolStripStatusLabel"
-  - "ToolStripStatusLabel (contrôle Windows Forms)"
+title: "ToolStripStatusLabel, contrôle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ToolStripStatusLabel control [Windows Forms]
+- status bars
+- ToolStrip control [Windows Forms], ToolStripStatusLabel
 ms.assetid: 099bc74a-a29f-4f15-af0d-7c517ef50c7e
-caps.latest.revision: 4
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: efdde6367d54d4cdc8d9992d2b3f44a366227069
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# ToolStripStatusLabel, contr&#244;le
-Le <xref:System.Windows.Forms.ToolStripStatusLabel> fournit une zone d'affichage dans une <xref:System.Windows.Forms.StatusStrip> pour le texte, les images, ou les deux.  
+# <a name="toolstripstatuslabel-control"></a>ToolStripStatusLabel, contrôle
+Le <xref:System.Windows.Forms.ToolStripStatusLabel> fournit une zone d’affichage dans un <xref:System.Windows.Forms.StatusStrip> du texte, images ou les deux.  
   
-## Dans cette section  
- [Vue d'ensemble du contrôle ToolStripStatusLabel](../../../../docs/framework/winforms/controls/toolstripstatuslabel-control-overview.md)  
+## <a name="in-this-section"></a>Dans cette section  
+ [Vue d’ensemble du contrôle ToolStripStatusLabel](../../../../docs/framework/winforms/controls/toolstripstatuslabel-control-overview.md)  
  Fournit des rubriques qui décrivent la fonction et les principaux concepts du contrôle Windows Forms <xref:System.Windows.Forms.ToolStripStatusLabel>.  
   
-## Référence  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
- Fournit de la documentation de référence pour le contrôle <xref:System.Windows.Forms.ToolStripStatusLabel>.  
+ Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.ToolStripStatusLabel>.  
   
  <xref:System.Windows.Forms.StatusStrip>  
- Fournit de la documentation de référence pour le contrôle <xref:System.Windows.Forms.StatusStrip>.  
+ Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.StatusStrip>.  
   
  <xref:System.Windows.Forms.ToolStripProgressBar>  
- Fournit de la documentation de référence pour le contrôle <xref:System.Windows.Forms.ToolStripProgressBar>.  
+ Fournit la documentation de référence pour le contrôle <xref:System.Windows.Forms.ToolStripProgressBar>.  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

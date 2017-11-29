@@ -1,25 +1,28 @@
 ---
-title: "Messages rejet&#233;s mis en file d&#39;attente | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Messages rejetés mis en file d'attente"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8eb75a76-4fb3-4d33-bd9f-6d91e09c5843
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 65ecc6bb231063c2d23d8a2572bd5ed688393cfc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Messages rejet&#233;s mis en file d&#39;attente
+# <a name="queued-rejected-messages"></a>Messages rejetés mis en file d'attente
 Nom du compteur : Messages rejetés mis en file d'attente.  
   
-## Description  
+## <a name="description"></a>Description  
  Nombre de messages vers ce service qui ont été rejetés par le transport de mise en file d'attente.  
   
- Consultez [Gestion des messages incohérents](http://go.microsoft.com/fwlink/?LinkID=96233) \(page pouvant être en anglais\) pour plus d'informations sur le moment auquel les messages sont rejetés.
+ Consultez [des messages incohérents](http://go.microsoft.com/fwlink/?LinkID=96233) pour plus d’informations sur lorsque les messages sont rejetés.

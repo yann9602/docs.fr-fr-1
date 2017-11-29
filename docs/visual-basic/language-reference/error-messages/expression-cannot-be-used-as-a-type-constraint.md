@@ -1,58 +1,56 @@
 ---
-title: "&#39;&lt;expression&gt;&#39; cannot be used as a type constraint | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc32061"
-  - "vbc32061"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32061"
+title: "&#39; &lt;expression&gt;&#39; ne peut pas être utilisé comme contrainte de type"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc32061
+- vbc32061
+helpviewer_keywords: BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 054c05747491afb02601df00225a703560cbe91c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;&lt;expression&gt;&#39; cannot be used as a type constraint
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
+# <a name="39ltexpressiongt39-cannot-be-used-as-a-type-constraint"></a>&#39; &lt;expression&gt;&#39; ne peut pas être utilisé comme contrainte de type
 Une liste de contraintes contient une expression qui ne représente pas une contrainte valide sur un paramètre de type.  
   
- Une liste de contraintes impose des exigences sur l'argument de type passé au paramètre de type.  Vous pouvez spécifier les éléments requis suivants selon n'importe quelle combinaison :  
+ Une liste de contraintes impose des exigences sur l’argument de type passé au paramètre de type. Vous pouvez spécifier les exigences suivantes dans toute combinaison :  
   
--   L'argument de type doit implémenter une ou plusieurs interfaces  
+-   L’argument de type doit implémenter une ou plusieurs interfaces  
   
--   L'argument de type doit hériter d'une classe au plus  
+-   L’argument de type doit hériter d’une classe au plus  
   
--   L'argument de type doit exposer un constructeur sans paramètre accessible par le code de création \(contrainte `New` à inclure\)  
+-   L’argument de type doit exposer un constructeur sans paramètre accessible par le code de création (ajoutez la contrainte `New` )  
   
- Si vous n'incluez aucune classe ou interface spécifique dans la liste de contraintes, vous pouvez imposer une condition plus générale en spécifiant l'un des éléments suivants :  
+ Si vous n’incluez pas de classe ni d’interface spécifique dans la liste de contraintes, vous pouvez imposer une condition plus générale en spécifiant l’une des obligations suivantes :  
   
--   l'argument de type doit être un type valeur \(contrainte `Structure` à inclure\) ;  
+-   L’argument de type doit être un type valeur (ajoutez la contrainte `Structure` )  
   
--   l'argument de type doit être un type de référence \(contrainte `Class` à inclure\) ;  
+-   L’argument de type doit être un type référence (ajoutez la contrainte `Class` )  
   
- Vous ne pouvez pas spécifier `Structure` et `Class` pour le même paramètre de type, de même que vous ne pouvez pas spécifier l'un ou l'autre plusieurs fois.  
+ Vous ne pouvez pas spécifier à la fois `Structure` et `Class` pour le même paramètre de type et vous ne pouvez pas spécifier l’une des deux plusieurs fois.  
   
- **ID d'erreur :** BC32061  
+ **ID d’erreur :** BC32061  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Vérifiez que l'expression et ses éléments sont correctement orthographiés.  
+-   Vérifiez que l’expression et ses éléments sont correctement orthographiés.  
   
--   Si l'expression ne répond pas à la précédente liste d'exigences, supprimez\-la de la liste des contraintes.  
+-   Si l’expression ne répond pas à la précédente liste d’exigences, supprimez-la de la liste des contraintes.  
   
--   Si l'expression fait référence à une interface ou une classe, vérifiez que le compilateur a accès à cette interface ou classe.  Vous devrez peut\-être qualifier son nom et ajouter une référence à votre projet.  Pour plus d'informations, consultez « Références aux projets » dans [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+-   Si l’expression fait référence à une interface ou une classe, vérifiez que le compilateur a accès à cette interface ou classe. Vous devrez peut-être qualifier son nom et ajouter une référence à votre projet. Pour plus d’informations, consultez « Références aux projets » dans [références aux éléments de déclaré](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
-## Voir aussi  
- [Types génériques Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Value Types and Reference Types](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Comment : ajouter ou supprimer des références à l'aide de la boîte de dialogue Ajouter une référence](http://msdn.microsoft.com/fr-fr/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)
+## <a name="see-also"></a>Voir aussi  
+ [Types génériques en Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [Types valeur et types référence](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [Références aux éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [NIB Comment : ajouter ou supprimer des références à l’aide de la boîte de dialogue Ajouter une référence](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)

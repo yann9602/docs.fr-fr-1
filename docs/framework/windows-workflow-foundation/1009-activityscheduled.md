@@ -1,39 +1,43 @@
 ---
-title: "1009 - ActivityScheduled | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1009 - ActivityScheduled
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 307e38b6-d47e-47a4-9708-e74d8314b1a1
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d9463fbf2e7f2ac3424488dc3fca322a91d11126
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# 1009 - ActivityScheduled
-## Propriétés  
+# <a name="1009---activityscheduled"></a>1009 - ActivityScheduled
+## <a name="properties"></a>Propriétés  
   
 |||  
 |-|-|  
 |ID|1009|  
 |Mots clés|WFRuntime|  
 |Niveau|Information|  
-|Canal|Microsoft\-Windows\-Application Server\-Applications\/Débogage|  
+|Canal|Microsoft-Windows-Application Server-Applications/Débogage|  
   
-## Description  
+## <a name="description"></a>Description  
  Indique qu'une activité est planifiée en vue de son exécution.  
   
-## Message  
+## <a name="message"></a>Message  
  L'activité parent « %1 », DisplayName : « %2 », InstanceId : « %3 » a planifié l'activité enfant « %4 », DisplayName : « %5 », InstanceId : « %6 ».  
   
-## Détails  
+## <a name="details"></a>Détails  
   
 |Nom d'élément de données|Type d'élément de données|Description|  
-|------------------------------|-------------------------------|-----------------|  
+|--------------------|--------------------|-----------------|  
 |ParentActivity|xs:string|Nom de type de l'activité parente.|  
 |ParentDisplayName|xs:string|Nom complet de l'activité parente.|  
 |ParentInstanceId|xs:string|ID d'instance de l'activité parente.|  

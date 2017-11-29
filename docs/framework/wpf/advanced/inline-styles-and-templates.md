@@ -1,47 +1,50 @@
 ---
-title: "Mod&#232;les et styles intralignes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "styles intralignes"
-  - "modèles inline"
-  - "styles, inline"
-  - "modèles, inline"
+title: "Modèles et styles intralignes"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inline templates [WPF]
+- styles [WPF], inline
+- templates [WPF], inline
+- inline styles [WPF]
 ms.assetid: 69a1a3f9-acb5-4e2c-9c43-2e376c055ac4
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2acb455db8f8bdc5a95bfd2462b651cebbb692c3
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Mod&#232;les et styles intralignes
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit des objets <xref:System.Windows.Style> et des objets de modèle \(sous\-classes <xref:System.Windows.FrameworkTemplate>\) pour définir l'apparence visuelle d'un élément dans les ressources, afin qu'ils puissent être utilisés à plusieurs reprises.  Pour cette raison, les attributs en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui prennent les types <xref:System.Windows.Style> et <xref:System.Windows.FrameworkTemplate> font presque toujours référence aux styles et modèles existant des ressources plutôt que d'en définir de nouveaux intralignes.  
+# <a name="inline-styles-and-templates"></a>Modèles et styles intralignes
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]Fournit des <xref:System.Windows.Style> objets et les objets de modèle (<xref:System.Windows.FrameworkTemplate> sous-classes) afin de définir l’apparence visuelle d’un élément dans les ressources, afin qu’ils peuvent être utilisés plusieurs fois. Pour cette raison, les attributs dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui prennent les types <xref:System.Windows.Style> et <xref:System.Windows.FrameworkTemplate> presque toujours font référence aux styles et modèles existant des ressources plutôt que définir de nouveaux inline.  
   
-## Limitations des styles et modèles intralignes  
- En [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], vous pouvez techniquement définir les propriétés de style et de modèle de l'une des deux manières suivantes.  Vous pouvez utiliser la syntaxe d'attribut pour faire référence à un style défini dans une ressource, par exemple `<`*object*`Style="{StaticResource`*myResourceKey*`}" .../>`.  Ou bien vous pouvez utiliser la syntaxe de l'élément de propriété pour définir un style intraligne, par exemple :  
+## <a name="limitations-of-inline-styles-and-templates"></a>Limitations des modèles et des Styles intralignes  
+ Dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], pouvant techniquement définir les propriétés de style et de modèle de deux façons. Vous pouvez utiliser la syntaxe d’attribut pour faire référence à un style qui a été défini dans une ressource, par exemple `<` *objet*`Style="{StaticResource`*myResourceKey*`}" .../>`. Ou vous pouvez utiliser la syntaxe d’élément de propriété pour définir un style intraligne, par exemple :  
   
- `<` *object* `>`  
+ `<`*objet*`>`  
   
- `<` *object* `.Style>`  
+ `<`*objet*`.Style>`  
   
  `<` `Style`  `.../>`  
   
- `</` *object* `.Style>`  
+ `</`*objet*`.Style>`  
   
- `</` *object* `>`  
+ `</`*objet*`>`  
   
- L'utilisation d'attribut est beaucoup plus fréquente.  Un style qui est défini intraligne et mais n'est pas paramétré dans les ressources se limite forcément à l'élément contenant et ne peut pas être réutilisé aussi facilement car il n'a aucune clé de ressource.  En général, un style défini par une ressource est plus versatile et utile et est plus conforme au principe de modèle de programmation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] général, qui consiste à séparer la logique du programme dans le code de la conception dans le balisage.  
+ L’utilisation de l’attribut est beaucoup plus courante. Un style qui est définie en ligne et les ressources non définies dans nécessairement consacré à l’élément conteneur uniquement et ne peut pas être réutilisé aussi facilement car il n’a aucune clé de ressource. En général un style de la ressource définie est plus souple et utile et est plus conforme générales [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] principe de séparer la logique de programme dans le code de la conception dans le balisage modèle de programmation.  
   
- Aucune raison ne justifie habituellement de définir un style ou un modèle intraligne, même si vous projetez seulement d'utiliser ce style ou modèle à cet emplacement.  La plupart des éléments qui peuvent prendre un style ou un modèle prennent également en charge une propriété et un modèle de contenu.  Si vous utilisez seulement une arborescence logique créée une fois dans un style ou un modèle, il sera même plus facile de renseigner simplement cette propriété de contenu avec les éléments enfants équivalents dans les balises directes.  Vous ignorerez ainsi les mécanismes de style et de modèle.  
+ En général il n’existe aucune raison pour laquelle définir un style ou un modèle en ligne, même si vous comptez utiliser uniquement ce style ou modèle à cet emplacement. La plupart des éléments qui peuvent prendre un style ou un modèle prennent également en charge une propriété de contenu et un modèle de contenu. Si vous utilisez uniquement l’arborescence logique de créer dans un style ou de la création de modèles qu’une seule fois, il est encore plus facile de renseigner simplement cette propriété de contenu avec les éléments enfants équivalents dans les balises directes. Cela permettrait de contourner les mécanismes de style et de modèle complètement.  
   
- Il est également possible d'utiliser pour les styles et les modèles d'autres syntaxes activées par les extensions de balisage qui renvoient un objet.  Deux extensions associées à des scénarios possibles comprennent [TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) et <xref:System.Windows.Data.Binding>.  
+ Autres syntaxes activées par les extensions de balisage qui retournent un objet sont également possibles pour les styles et modèles. Deux extensions des scénarios possibles incluent [TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) et <xref:System.Windows.Data.Binding>.  
   
-## Voir aussi  
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a>Voir aussi  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)

@@ -1,25 +1,28 @@
 ---
-title: "Point de terminaison | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Point de terminaison
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fe63370d-81a1-40f3-97c2-59cb357c78d2
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ef4e27f6e7a45fe705aa09827702a64c960b6a16
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Point de terminaison
+# <a name="endpoint"></a>Point de terminaison
 Point de terminaison  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class Endpoint  
@@ -39,102 +42,102 @@ class Endpoint
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe Endpoint définit la méthode suivante.  
   
 |Méthode|Description|  
-|-------------|-----------------|  
+|------------|-----------------|  
 |[GetOperationCounterInstanceName](../../../../../docs/framework/wcf/diagnostics/wmi/getoperationcounterinstancename.md)|Récupère le nom d'instance du compteur de performance d'opération|  
   
-## Propriétés  
+## <a name="properties"></a>Propriétés  
  La classe Endpoint a les propriétés suivantes :  
   
-### Address  
+### <a name="address"></a>Address  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  URI qui contient l'adresse du point de terminaison.  
   
-### AddressHeaders  
+### <a name="addressheaders"></a>AddressHeaders  
  Type de données : tableau de chaînes  
   
  Type d'accès : lecture seule  
   
- Collection d'en\-têtes d'adresse jointe à ce point de terminaison.  
+ Collection d'en-têtes d'adresse jointe à ce point de terminaison.  
   
-### AddressIdentity  
+### <a name="addressidentity"></a>AddressIdentity  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Identité du point de terminaison.  
   
-### AppDomainId  
+### <a name="appdomainid"></a>AppDomainId  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  ID du domaine d'application qui héberge le point de terminaison.  
   
-### Comportements  
+### <a name="behaviors"></a>Comportements  
  Type de données : tableau de comportements  
   
  Type d'accès : lecture seule  
   
  Collection de comportements implémentée par ce point de terminaison.  
   
-### Binding  
+### <a name="binding"></a>Binding  
  Type de données : liaison  
   
  Type d'accès : lecture seule  
   
  Liaison utilisée par ce point de terminaison.  
   
-### ContractName  
+### <a name="contractname"></a>ContractName  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Chaîne qui spécifie quel contrat est exposé par ce point de terminaison.  
   
-### CounterInstanceName  
+### <a name="counterinstancename"></a>CounterInstanceName  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Nom de l'instance des compteurs de performance du point de terminaison.  
   
-### ListenUri  
+### <a name="listenuri"></a>ListenUri  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  URI sur lequel le point de terminaison écoute.  
   
-### Nom  
+### <a name="name"></a>Nom  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  Nom unique de ce point de terminaison.  
   
-### ProcessId  
+### <a name="processid"></a>ProcessId  
  Type de données : sint32  
   
  Type d'accès : lecture seule  
   
  ID du processus qui héberge le point de terminaison.  
   
-### ref  
+### <a name="ref"></a>ref  
  Type de données: contrat  
   
  Type d'accès : lecture seule  
   
  Le contrat exposé par ce point de terminaison.  
   
-## Spécifications  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|

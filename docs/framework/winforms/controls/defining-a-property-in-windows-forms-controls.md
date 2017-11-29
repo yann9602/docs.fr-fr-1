@@ -1,39 +1,43 @@
 ---
-title: "D&#233;finition d&#39;une propri&#233;t&#233; dans les contr&#244;les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles personnalisés (Windows Forms), définir les propriétés dans le code"
-  - "propriétés (Windows Forms), définir dans le code"
+title: "Définition d'une propriété dans les contrôles Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- properties [Windows Forms], defining in code
+- custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c3c25b9c408e5b8f0b76cdf87375875cdb06a13
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# D&#233;finition d&#39;une propri&#233;t&#233; dans les contr&#244;les Windows Forms
-Pour une vue d'ensemble des propriétés, consultez [Properties Overview](../Topic/Properties%20Overview.md).  Vous devez tenir compte de certaines remarques importantes lors de la définition d'une propriété :  
+# <a name="defining-a-property-in-windows-forms-controls"></a>Définition d'une propriété dans les contrôles Windows Forms
+Vous trouverez une vue d’ensemble de propriétés sur la page [Vue d’ensemble des propriétés](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Il est important de prendre en compte plusieurs points avant de définir une propriété :  
   
--   Vous devez appliquer des attributs aux propriétés que vous définissez.  Les attributs spécifient la manière dont le concepteur doit afficher une propriété.  Pour plus d'informations, consultez [Design\-Time Attributes for Components](../Topic/Design-Time%20Attributes%20for%20Components.md).  
+-   Vous devez appliquer des attributs aux propriétés que vous définissez. Les attributs spécifient la manière dont le concepteur doit afficher une propriété. Pour plus d’informations, consultez la page [Attributs au moment du design des composants](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3).  
   
--   Si la modification de la propriété affecte l'affichage du contrôle, appelez la méthode <xref:System.Windows.Forms.Control.Invalidate%2A> \(que votre contrôle hérite de <xref:System.Windows.Forms.Control>\) de l'accesseur `set`.  <xref:System.Windows.Forms.Control.Invalidate%2A> appelle alors la méthode <xref:System.Windows.Forms.Control.OnPaint%2A>, redessinant ainsi le contrôle.  Plusieurs appels à <xref:System.Windows.Forms.Control.Invalidate%2A> entraînent un appel unique à <xref:System.Windows.Forms.Control.OnPaint%2A> pour davantage d'efficacité.  
+-   Si la modification de la propriété affecte l’affichage visuel du contrôle, appelez le <xref:System.Windows.Forms.Control.Invalidate%2A> (méthode) (qui hérite de votre contrôle <xref:System.Windows.Forms.Control>) à partir de la `set` accesseur. <xref:System.Windows.Forms.Control.Invalidate%2A>à son tour appelle la <xref:System.Windows.Forms.Control.OnPaint%2A> (méthode), qui redessine le contrôle. Appels multiples à <xref:System.Windows.Forms.Control.Invalidate%2A> entraînant un appel unique à <xref:System.Windows.Forms.Control.OnPaint%2A> pour plus d’efficacité.  
   
--   La bibliothèque de classes .NET Framework fournit des convertisseurs de type pour les types de données courants, tels que les entiers, les nombres décimaux, les valeurs booléennes, etc.  Un convertisseur de type a généralement pour objectif de convertir une chaîne en valeur \(des données de type chaîne en autres types de données\).  Les types de données courants sont associés aux convertisseurs de type par défaut qui convertissent des valeurs en chaînes et des chaînes en types de données appropriés.  Si vous définissez une propriété de type de données personnalisé \(c'est\-à\-dire non standard\), vous devez appliquer un attribut qui spécifie le convertisseur de type à associer à cette propriété.  Vous pouvez également utiliser un attribut pour associer un éditeur de types muni d'une interface utilisateur personnalisé à une propriété.  Un éditeur de types muni d'une interface utilisateur fournit une interface utilisateur pour la modification d'une propriété ou d'un type de données.  Un sélecteur de couleur constitue un exemple d'éditeur de types muni d'une interface utilisateur.  Vous trouverez des exemples d'attributs à la fin de cette rubrique.  
+-   La bibliothèque de classes .NET Framework fournit des convertisseurs de type pour les types de données courants : entiers, nombres décimaux, valeurs booléennes, etc. L’objectif d’un convertisseur de type consiste généralement à fournir une conversion de chaînes en valeurs (des données de chaîne vers d’autres types de données). Les types de données courants sont associés à des convertisseurs de type par défaut qui convertissent les valeurs en chaînes et les chaînes vers les types de données adéquats. Si vous définissez une propriété d’un type de donnée personnalisé (autrement dit, non standard), il vous faudra appliquer un attribut qui spécifie le convertisseur de type à associer à cette propriété. Vous pouvez également utiliser un attribut pour associer un éditeur de type avec interface utilisateur personnalisé à une propriété. Un éditeur de type avec interface utilisateur fournit une interface utilisateur permettant de modifier un type de données ou une propriété. Par exemple, un sélecteur de couleurs est un éditeur de type avec interface utilisateur. Des exemples d’attributs sont donnés à la fin de cette rubrique.  
   
     > [!NOTE]
-    >  Si aucun convertisseur de type ou éditeur de types muni d'une interface utilisateur n'est disponible pour votre propriété personnalisée, vous pouvez en implémenter un comme décrit dans [Extending Design\-Time Support](../Topic/Extending%20Design-Time%20Support.md).  
+    >  S’il n’y a pas de convertisseur de type ou d’éditeur de type avec interface utilisateur disponible pour votre propriété personnalisée, vous pouvez en implémenter un en suivant les instructions de la page [Étendre la prise en charge au moment du design](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
   
- Le fragment de code suivant définit une propriété personnalisée appelée `EndColor` pour le contrôle personnalisé `FlashTrackBar`.  
+ Le fragment de code suivant montre définit une propriété personnalisée nommée `EndColor` pour le contrôle personnalisé `FlashTrackBar`.  
   
 ```vb  
 Public Class FlashTrackBar  
@@ -66,7 +70,6 @@ Public Class FlashTrackBar
    End Property  
    ...  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -102,7 +105,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
- Le fragment de code suivant associe un convertisseur de type et un éditeur de types muni d'une interface utilisateur à la propriété `Value`.  Dans ce cas, `Value` est un entier et possède un convertisseur de type par défaut, mais l'attribut <xref:System.ComponentModel.TypeConverterAttribute> applique un convertisseur de type personnalisé \(`FlashTrackBarValueConverter`\) qui permet au concepteur de l'afficher sous la forme d'un pourcentage.  L'éditeur de types muni d'une interface utilisateur, `FlashTrackBarValueEditor`, permet d'afficher le pourcentage.  Cet exemple montre également que le convertisseur de type ou l'éditeur spécifié par l'attribut <xref:System.ComponentModel.TypeConverterAttribute> ou <xref:System.ComponentModel.EditorAttribute> substitue le convertisseur par défaut.  
+ Le fragment de code suivant associe un convertisseur de type et un éditeur de type avec interface utilisateur à la propriété `Value`. Dans ce cas `Value` est un entier et possède un convertisseur de type par défaut, mais la <xref:System.ComponentModel.TypeConverterAttribute> attribut s’applique à un convertisseur de type personnalisé (`FlashTrackBarValueConverter`) qui permet au concepteur pour l’afficher sous forme de pourcentage. L’éditeur de type avec interface utilisateur, `FlashTrackBarValueEditor`, permet d’afficher visuellement le pourcentage. Cet exemple montre également que le convertisseur de type ou l’éditeur spécifié par le <xref:System.ComponentModel.TypeConverterAttribute> ou <xref:System.ComponentModel.EditorAttribute> attribut remplace le convertisseur par défaut.  
   
 ```vb  
 <Category("Flash"), _  
@@ -113,7 +116,6 @@ Description("The current value of the track bar.  You can enter an actual value 
 Public ReadOnly Property Value() As Integer  
 ...  
 End Property  
-  
 ```  
   
 ```csharp  
@@ -128,8 +130,8 @@ public int Value {
 }  
 ```  
   
-## Voir aussi  
- [Propriétés dans les contrôles Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)   
- [Définition de valeurs par défaut avec les méthodes ShouldSerialize et Reset](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)   
- [Événements de modification de propriété](../../../../docs/framework/winforms/controls/property-changed-events.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Propriétés dans les contrôles Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
+ [Définition de valeurs par défaut avec les méthodes ShouldSerialize et Reset](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)  
+ [Événements de modification de propriété](../../../../docs/framework/winforms/controls/property-changed-events.md)  
  [Attributs dans les contrôles Windows Forms](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)

@@ -1,35 +1,27 @@
 ---
-title: "Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 541da47893217e2915a6b001d1141eaadfa9e9e8
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 19224bf51c95acdccbeb019631fdc884231610b4
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)
-L’exemple suivant montre comment trier les lignes de texte structuré, telles que les valeurs séparées par des virgules, par n’importe quel champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs de scores.csv représentent le numéro d’identification d’un étudiant, suivi d’une série de quatre examens.  
+L’exemple suivant montre comment trier les lignes d’un texte structuré, telles que des valeurs séparées par des virgules, à l’aide d’un champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs du fichier scores.csv correspondent au numéro d’identification d’un étudiant, suivi d’une série de quatre notes d’examen.  
   
-### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier qui contient des données  
+### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier contenant des données  
   
 1.  Copier les données de scores.csv de la rubrique [Comment : joindre contenu à partir de différents fichiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) et l’enregistrer dans votre dossier de solution.  
   
@@ -86,10 +78,10 @@ End Class
 ' 115, 35, 72, 91, 70  
 ```  
   
- Cet exemple montre également comment retourner une variable de requête d’une fonction.  
+ Cet exemple montre également comment retourner une variable de requête à partir d’une fonction.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

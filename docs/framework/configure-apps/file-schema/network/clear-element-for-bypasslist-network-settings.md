@@ -1,70 +1,72 @@
 ---
-title: "&lt;clear&gt;, &#233;l&#233;ment de bypasslist (param&#232;tres r&#233;seau) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist/clear"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#clear"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<bypasslist>, clear (élément)"
-  - "<clear> (élément), bypasslist"
-  - "bypasslist, clear (élément)"
-  - "clear (élément), bypasslist"
+title: "&lt;Désactivez&gt; , élément pour bypasslist (paramètres réseau)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist/clear
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#clear
+helpviewer_keywords:
+- clear element, bypasslist
+- <clear> element, bypasslist
+- <bypasslist>, clear element
+- bypasslist, clear element
 ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
-caps.latest.revision: 14
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 5ee20b9177d519010c40351e335973dce10256f4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;clear&gt;, &#233;l&#233;ment de bypasslist (param&#232;tres r&#233;seau)
+# <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;Désactivez&gt; , élément pour bypasslist (paramètres réseau)
 Efface la liste de contournement du proxy.  
   
-## Syntaxe  
+ \<configuration>  
+\<System.NET >  
+\<defaultProxy >  
+\<BypassList >  
+\<Désactivez >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <clear/>  
-  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
  Aucun  
   
-### Éléments enfants  
- Aucun  
+### <a name="child-elements"></a>Éléments enfants  
+ Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un jeu d'expressions régulières décrivant les adresses qui n'utilisent pas de proxy.|  
+|[BypassList](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.|  
   
-## Notes  
- L'élément `clear` efface toutes les entrées dans la liste de contournement.  
+## <a name="remarks"></a>Remarques  
+ Le `clear` élément efface toutes les entrées de la liste d’exclusion.  
   
-## Fichiers de configuration  
- Cet élément peut être utilisé dans le fichier de configuration de l'application ou dans le fichier de configuration machine \(Machine.config\).  
+## <a name="configuration-files"></a>Fichiers de configuration  
+ Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## Exemple  
- L'exemple de code suivant efface la liste de contournement du proxy, puis ajoute deux adresses à cette liste.  La première contourne le proxy pour tous les serveurs du domaine contoso.com ; la deuxième contourne le proxy pour tous les serveurs dont l'adresse IP commence par 192.168.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant efface la liste d’exclusion, puis ajoute deux adresses à la liste d’exclusion. La première contourne le proxy pour tous les serveurs dans le domaine contoso.com ; la deuxième contourne le proxy pour tous les serveurs dont l’adresse IP commence par 192.168.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
@@ -78,6 +80,6 @@ Efface la liste de contournement du proxy.
 </configuration>   
 ```  
   
-## Voir aussi  
- <xref:System.Net.WebProxy?displayProperty=fullName>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

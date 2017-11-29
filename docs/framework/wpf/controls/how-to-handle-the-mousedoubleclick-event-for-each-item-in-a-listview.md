@@ -1,44 +1,49 @@
 ---
-title: "Comment&#160;: g&#233;rer l&#39;&#233;v&#233;nement MouseDoubleClick pour chaque &#233;l&#233;ment d&#39;un ListView | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contrôles ListView, MouseDoubleClick (événement)"
+title: "Comment : gérer l'événement MouseDoubleClick pour chaque élément d'un ListView"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: ListView controls [WPF], MouseDoubleClick event
 ms.assetid: 81b39369-655a-4585-ac58-4640e5bb8fed
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 53c40e9e3b02bdf33a073a93d28b619e399e375f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: g&#233;rer l&#39;&#233;v&#233;nement MouseDoubleClick pour chaque &#233;l&#233;ment d&#39;un ListView
-Pour gérer un événement pour un élément dans un <xref:System.Windows.Controls.ListView>, vous devez ajouter un gestionnaire d'événements à chaque <xref:System.Windows.Controls.ListViewItem>.  Lorsqu'un <xref:System.Windows.Controls.ListView> est lié à une source de données, vous ne créez pas explicitement d'<xref:System.Windows.Controls.ListViewItem>, mais vous pouvez gérer l'événement pour chaque élément en ajoutant un <xref:System.Windows.EventSetter> à un style d'un <xref:System.Windows.Controls.ListViewItem>.  
+# <a name="how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview"></a>Comment : gérer l'événement MouseDoubleClick pour chaque élément d'un ListView
+Pour gérer un événement pour un élément dans un <xref:System.Windows.Controls.ListView>, vous devez ajouter un gestionnaire d’événements à chaque <xref:System.Windows.Controls.ListViewItem>. Lorsqu’un <xref:System.Windows.Controls.ListView> est lié à une source de données, vous ne créez pas explicitement un <xref:System.Windows.Controls.ListViewItem>, mais vous pouvez gérer l’événement pour chaque élément en ajoutant un <xref:System.Windows.EventSetter> à un style d’un <xref:System.Windows.Controls.ListViewItem>.  
   
-## Exemple  
- L'exemple suivant crée un <xref:System.Windows.Controls.ListView> lié aux données et crée un <xref:System.Windows.Style> afin d'ajouter un gestionnaire d'événements à chaque <xref:System.Windows.Controls.ListViewItem>.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant crée une propriété <xref:System.Windows.Controls.ListView> et crée un <xref:System.Windows.Style> pour ajouter un gestionnaire d’événements dans chaque <xref:System.Windows.Controls.ListViewItem>.  
   
- [!code-xml[ListViewHowTos#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#1)]  
-[!code-xml[ListViewHowTos#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#5)]  
-[!code-xml[ListViewHowTos#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#2)]  
+ [!code-xaml[ListViewHowTos#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#1)]  
+[!code-xaml[ListViewHowTos#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#5)]  
+[!code-xaml[ListViewHowTos#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml#2)]  
   
- L'exemple suivant gère l'événement <xref:System.Windows.Controls.Control.MouseDoubleClick>.  
+ L’exemple suivant gère le <xref:System.Windows.Controls.Control.MouseDoubleClick> événement.  
   
  [!code-csharp[ListViewHowTos#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewHowTos/CSharp/Window1.xaml.cs#6)]
  [!code-vb[ListViewHowTos#6](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ListViewHowTos/VisualBasic/Window1.xaml.vb#6)]  
   
 > [!NOTE]
->  Bien que la procédure la plus courante consiste à lier un <xref:System.Windows.Controls.ListView> à une source de données, vous pouvez utiliser un style pour ajouter un gestionnaire d'événements à chaque <xref:System.Windows.Controls.ListViewItem> dans un <xref:System.Windows.Controls.ListView> non lié aux données, indépendamment du fait que vous créiez un <xref:System.Windows.Controls.ListViewItem> de manière explicite.  Pour plus d'information sur les contrôles <xref:System.Windows.Controls.ListViewItem> créés explicitement et implicitement, consultez <xref:System.Windows.Controls.ItemsControl>.  
+>  Bien qu’il soit plus courante consiste à lier un <xref:System.Windows.Controls.ListView> à une source de données, vous pouvez utiliser un style pour ajouter un gestionnaire d’événements dans chaque <xref:System.Windows.Controls.ListViewItem> dans un non-liés aux données <xref:System.Windows.Controls.ListView> que vous créiez explicitement une <xref:System.Windows.Controls.ListViewItem>.  Pour plus d’informations sur créés explicitement et implicitement <xref:System.Windows.Controls.ListViewItem> contrôles, consultez <xref:System.Windows.Controls.ItemsControl>.  
   
-## Voir aussi  
- <xref:System.Xml.XmlElement>   
- [Vue d'ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)   
- [Vue d'ensemble de ListView](../../../../docs/framework/wpf/controls/listview-overview.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Xml.XmlElement>  
+ [Vue d’ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Effectuer une liaison à des données XML à l’aide d’un XMLDataProvider et de requêtes XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)  
+ [Vue d’ensemble de ListView](../../../../docs/framework/wpf/controls/listview-overview.md)

@@ -1,25 +1,28 @@
 ---
-title: "Proc&#233;dure&#160;: impl&#233;menter une application cliente qui utilise le proxy de d&#233;couverte pour rechercher un service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 09c75ff3c19110a4ed97d8b95a4f63174cba0406
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: impl&#233;menter une application cliente qui utilise le proxy de d&#233;couverte pour rechercher un service
-Cette rubrique est la troisième d'une série de trois qui expliquent comment implémenter un proxy de découverte.Dans la rubrique précédente, [Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), vous avez implémenté un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui s'enregistre avec le proxy de découverte.Dans cette rubrique, vous créez un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilise le proxy de découverte pour rechercher le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+# <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>Procédure : implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service
+Cette rubrique est la troisième d'une série de trois qui expliquent comment implémenter un proxy de découverte. Dans la rubrique précédente, [Comment : implémenter un Service détectable qui s’enregistre avec le Proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md), vous implémenté un [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service qui s’inscrit auprès du proxy de découverte. Dans cette rubrique, vous créez un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilise le proxy de découverte pour rechercher le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
-### Implémenter le client  
+### <a name="implement-the-client"></a>Implémenter le client  
   
 1.  Ajoutez à la solution `DiscoveryProxyExample` un nouveau projet d'application console nommé `Client`.  
   
@@ -32,9 +35,9 @@ Cette rubrique est la troisième d'une série de trois qui expliquent comment im
 3.  Ajoutez au projet le fichier GeneratedClient.cs qui se trouve en bas de cette rubrique.  
   
     > [!NOTE]
-    >  Ce fichier est habituellement généré à l'aide d'un outil tel que Svcutil.exe.Il est fourni dans cette rubrique pour simplifier la tâche.  
+    >  Ce fichier est habituellement généré à l'aide d'un outil tel que Svcutil.exe. Il est fourni dans cette rubrique pour simplifier la tâche.  
   
-4.  Ouvrez le fichier Program.cs et ajoutez la méthode suivante.Cette méthode prend une adresse de point de terminaison et l'utilise pour initialiser le client du service \(proxy\).  
+4.  Ouvrez le fichier Program.cs et ajoutez la méthode suivante. Cette méthode prend une adresse de point de terminaison et l'utilise pour initialiser le client du service (proxy).  
   
     ```  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
@@ -67,7 +70,6 @@ Cette rubrique est la troisième d'une série de trois qui expliquent comment im
                 // Closing the client gracefully closes the connection and cleans up resources  
                 client.Close();  
             }  
-  
     ```  
   
 5.  Ajoutez le code suivant à la méthode `Main`.  
@@ -107,12 +109,11 @@ Cette rubrique est la troisième d'une série de trois qui expliquent comment im
                 Console.WriteLine("Press <ENTER> to exit.");  
                 Console.ReadLine();  
             }  
-  
     ```  
   
- Vous avez terminé l'implémentation de l'application cliente.Continuez avec [Procédure : tester le proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).  
+ Vous avez terminé l'implémentation de l'application cliente. Continuer à [Comment : tester le Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Les éléments suivants représentent l'intégralité du code pour cette rubrique.  
   
 ```  
@@ -205,7 +206,6 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -291,7 +291,7 @@ namespace Microsoft.Samples.Discovery
 }  
 ```  
   
-## Voir aussi  
- [Vue d'ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
- [Procédure : implémenter un proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)   
- [Procédure : implémenter un service détectable qui s'enregistre avec le proxy de découverte.](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+## <a name="see-also"></a>Voir aussi  
+ [Vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [Comment : implémenter un Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
+ [Comment : implémenter un Service détectable qui s’enregistre avec le Proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)

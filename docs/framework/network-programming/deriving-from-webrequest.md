@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - WebRequest class, pluggable protocols
 - protocol-specific request handler
@@ -21,26 +16,25 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 2ea66dd7fcb474977511b872ba3f917eee90ed2f
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 56a536ccdd9b4ad67bc6a07f4a6d2a225f6fa565
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="deriving-from-webrequest"></a>dérivation de WebRequest
 La classe <xref:System.Net.WebRequest> est une classe de base abstraite qui fournit les méthodes et les propriétés de base pour la création d’un gestionnaire de demande propre au protocole qui correspond au modèle de protocole enfichable .NET Framework. Les applications qui utilisent la classe **WebRequest** peuvent demander des données à l’aide de n’importe quel protocole pris en charge, sans avoir besoin de spécifier le protocole utilisé.  
   
- Deux critères doivent être remplis pour qu’une classe propre au protocole soit utilisée comme protocole enfichable : la classe doit implémenter l’interface <xref:System.Net.IWebRequestCreate> et elle doit s’inscrire auprès de la méthode <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName>. La classe doit remplacer toutes les propriétés et les méthodes abstraites de **WebRequest** pour fournir l’interface enfichable.  
+ Deux critères doivent être remplis pour qu’une classe propre au protocole soit utilisée comme protocole enfichable : la classe doit implémenter l’interface <xref:System.Net.IWebRequestCreate> et elle doit s’inscrire auprès de la méthode <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType>. La classe doit remplacer toutes les propriétés et les méthodes abstraites de **WebRequest** pour fournir l’interface enfichable.  
   
  Les instances de **WebRequest** sont destinées à un usage unique ; si vous souhaitez exécuter une autre requête, créez un nouveau **WebRequest**. **WebRequest** prend en charge l’interface <xref:System.Runtime.Serialization.ISerializable> pour permettre aux développeurs de sérialiser un modèle **WebRequest** puis de recréer le modèle pour des requêtes supplémentaires.  
   
 ## <a name="iwebrequest-create-method"></a>Méthode IWebRequest Create  
- La méthode <xref:System.Net.IWebRequestCreate.Create%2A> est chargée d’initialiser une nouvelle instance de la classe propre au protocole. Quand un nouveau **WebRequest** est créé, la méthode <xref:System.Net.WebRequest.Create%2A?displayProperty=fullName> fait correspondre l’URI demandé avec les préfixes URI inscrits auprès de la méthode **RegisterPrefix**. La méthode **Create** du descendant propre au protocole approprié doit retourner une instance initialisée du descendant capable d’effectuer une transaction de requête/réponse standard pour le protocole sans avoir besoin de champs propres au protocole modifiés.  
+ La méthode <xref:System.Net.IWebRequestCreate.Create%2A> est chargée d’initialiser une nouvelle instance de la classe propre au protocole. Quand un nouveau **WebRequest** est créé, la méthode <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> fait correspondre l’URI demandé avec les préfixes URI inscrits auprès de la méthode **RegisterPrefix**. La méthode **Create** du descendant propre au protocole approprié doit retourner une instance initialisée du descendant capable d’effectuer une transaction de requête/réponse standard pour le protocole sans avoir besoin de champs propres au protocole modifiés.  
   
 ## <a name="connectiongroupname-property"></a>Propriété ConnectionGroupName  
  La propriété <xref:System.Net.WebRequest.ConnectionGroupName%2A> sert à nommer un groupe de connexions à une ressource afin que plusieurs requêtes puissent être effectuées sur une même connexion. Pour implémenter le partage de connexion, vous devez utiliser une méthode de groupement et d’assignation des connexions propre au protocole. Par exemple, la classe <xref:System.Net.ServicePointManager> fournie implémente le partage de connexion pour la classe <xref:System.Net.HttpWebRequest>. La classe **ServicePointManager** crée un <xref:System.Net.ServicePoint> qui fournit une connexion à un serveur spécifique pour chaque groupe de connexions.  
@@ -59,7 +53,7 @@ La classe <xref:System.Net.WebRequest> est une classe de base abstraite qui four
 ## <a name="headers-property"></a>Propriété Headers  
  La propriété <xref:System.Net.WebRequest.Headers%2A> contient une collection arbitraire de paires nom/valeur de métadonnées associées à la requête. Toutes les métadonnées nécessaires au protocole qui peuvent être exprimées sous forme de paire nom/valeur peuvent être incluses dans la propriété **Headers**. En général, vous devez définir ces informations avant d’appeler la méthode <xref:System.Net.WebRequest.GetRequestStream%2A> ou <xref:System.Net.WebRequest.GetResponse%2A> ; une fois que la requête a été effectuée, les métadonnées sont considérées comme étant en lecture seule.  
   
- Vous n’êtes pas obligé d’utiliser la propriété **Headers** pour utiliser des métadonnées d’en-tête. Les métadonnées propres au protocole peuvent être exposées en tant que propriétés ; par exemple, la propriété <xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=fullName> expose l’en-tête HTTP **User-Agent**. Quand vous exposez des métadonnées d’en-tête en tant que propriété, vous ne devez pas autoriser la définition de la même propriété à l’aide de la propriété **Headers**.  
+ Vous n’êtes pas obligé d’utiliser la propriété **Headers** pour utiliser des métadonnées d’en-tête. Les métadonnées propres au protocole peuvent être exposées en tant que propriétés ; par exemple, la propriété <xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=nameWithType> expose l’en-tête HTTP **User-Agent**. Quand vous exposez des métadonnées d’en-tête en tant que propriété, vous ne devez pas autoriser la définition de la même propriété à l’aide de la propriété **Headers**.  
   
 ## <a name="method-property"></a>Propriété Method  
  La propriété <xref:System.Net.WebRequest.Method%2A> contient le verbe ou l’action que la requête souhaite que le serveur effectue. La valeur par défaut de la propriété **Method** doit activer une action de requête/réponse standard sans qu’il soit obligatoire de définir des propriétés propres au protocole. Par exemple, la méthode <xref:System.Net.HttpWebResponse.Method%2A> est GET par défaut, ce qui demande une ressource à un serveur web et retourne la réponse.  
@@ -104,9 +98,8 @@ La classe <xref:System.Net.WebRequest> est une classe de base abstraite qui four
  La méthode **GetResponse** est responsable de la création d’un descendant **WebResponse** approprié pour contenir la réponse entrante.  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Net.WebRequest>   
- <xref:System.Net.HttpWebRequest>   
- <xref:System.Net.FileWebRequest>   
- [Programmation de protocoles enfichables](../../../docs/framework/network-programming/programming-pluggable-protocols.md)   
+ <xref:System.Net.WebRequest>  
+ <xref:System.Net.HttpWebRequest>  
+ <xref:System.Net.FileWebRequest>  
+ [Programmation de protocoles enfichables](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
  [Dérivation à partir de WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)
-

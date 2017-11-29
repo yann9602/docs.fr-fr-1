@@ -1,43 +1,49 @@
 ---
-title: "Comment&#160;: g&#233;n&#233;rer une bo&#238;te de dialogue d&#39;interface utilisateur standard &#224; l&#39;aide de Grid | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "boîtes de dialogue, créer"
-  - "Grid (contrôle), créer, boîte de dialogue"
+title: "Comment : générer une boîte de dialogue d'interface utilisateur standard à l'aide de Grid"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- dialog boxes [WPF], creating
+- Grid control [WPF], creating [WPF], dialog box
 ms.assetid: d6ac3d51-844b-4d29-96d8-81a696a7b960
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 641e74d8c9f8db1afde19c008de08f0029b0bf90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: g&#233;n&#233;rer une bo&#238;te de dialogue d&#39;interface utilisateur standard &#224; l&#39;aide de Grid
-Cet exemple montre comment créer une boîte de dialogue d'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] standard à l'aide de l'élément <xref:System.Windows.Controls.Grid>.  
+# <a name="how-to-build-a-standard-ui-dialog-box-by-using-grid"></a>Comment : générer une boîte de dialogue d'interface utilisateur standard à l'aide de Grid
+Cet exemple montre comment créer une norme [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] boîte de dialogue à l’aide de la <xref:System.Windows.Controls.Grid> élément.  
   
-## Exemple  
- L'exemple suivant crée une boîte de dialogue identique à la boîte de dialogue **Exécuter** du système d'exploitation [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)].  
+## <a name="example"></a>Exemple  
+ L’exemple suivant crée une boîte de dialogue similaire à la **exécuter** boîte de dialogue de la [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] système d’exploitation.  
   
- L'exemple crée une <xref:System.Windows.Controls.Grid> et utilise les classes <xref:System.Windows.Controls.ColumnDefinition> et <xref:System.Windows.Controls.RowDefinition> pour définir cinq colonnes et quatre lignes.  
+ L’exemple crée un <xref:System.Windows.Controls.Grid> et utilise le <xref:System.Windows.Controls.ColumnDefinition> et <xref:System.Windows.Controls.RowDefinition> classes pour définir cinq colonnes et quatre lignes.  
   
- Ensuite, l'exemple ajoute et positionne une <xref:System.Windows.Controls.Image>, `RunIcon.png` pour représenter l'image affichée dans la boîte de dialogue.  L'image est placée dans la première colonne, première ligne, de la <xref:System.Windows.Controls.Grid> \(angle supérieur gauche\).  
+ L’exemple ajoute et positionne un <xref:System.Windows.Controls.Image>, `RunIcon.png`, pour représenter l’image qui se trouve dans la boîte de dialogue. L’image est placée dans la première colonne et ligne de la <xref:System.Windows.Controls.Grid> (angle supérieur gauche).  
   
- Ensuite, l'exemple ajoute un élément <xref:System.Windows.Controls.TextBlock> à la première colonne, ce qui couvre les colonnes restantes de la première ligne.  Il ajoute un autre élément <xref:System.Windows.Controls.TextBlock> à la deuxième ligne de la première colonne, pour représenter la zone de texte **Ouvrir**.  Un <xref:System.Windows.Controls.TextBlock> suit et représente la zone de saisie de données.  
+ Ensuite, l’exemple ajoute un <xref:System.Windows.Controls.TextBlock> élément à la première colonne, qui couvre les colonnes restantes de la première ligne. Il ajoute un autre <xref:System.Windows.Controls.TextBlock> élément à la deuxième ligne de la première colonne, pour représenter le **ouvrir** zone de texte. A <xref:System.Windows.Controls.TextBlock> suit, qui représente la zone d’entrée de données.  
   
- Enfin, l'exemple ajoute trois éléments <xref:System.Windows.Controls.Button> à la dernière ligne, qui représentent les événements **OK**, **Annuler** et **Parcourir**.  
+ Enfin, l’exemple ajoute trois <xref:System.Windows.Controls.Button> à la dernière ligne, les éléments qui représentent les **OK**, **Annuler**, et **Parcourir** événements.  
   
  [!code-csharp[GridRunDialog#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridRunDialog/CSharp/window1.xaml.cs#1)]
  [!code-vb[GridRunDialog#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GridRunDialog/VisualBasic/grid_vb.vb#1)]  
   
-## Voir aussi  
- <xref:System.Windows.Controls.Grid>   
- <xref:System.Windows.GridUnitType>   
- [Vue d'ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md)   
- [Rubriques Comment](../../../../docs/framework/wpf/controls/grid-how-to-topics.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Controls.Grid>  
+ <xref:System.Windows.GridUnitType>  
+ [Vue d’ensemble de Panel](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Rubriques de guide pratique](../../../../docs/framework/wpf/controls/grid-how-to-topics.md)

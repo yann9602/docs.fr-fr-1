@@ -1,28 +1,34 @@
 ---
-title: "Proc&#233;dure&#160;: utiliser des proc&#233;dures stock&#233;es qui prennent des param&#232;tres | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : utiliser des procédures stockées qui prennent des paramètres"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: fbd4e0b7534a213f56c5c6ba60208d3024535bd7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: utiliser des proc&#233;dures stock&#233;es qui prennent des param&#232;tres
+# <a name="how-to-use-stored-procedures-that-take-parameters"></a>Comment : utiliser des procédures stockées qui prennent des paramètres
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mappe des paramètres de sortie à des paramètres de référence et, pour les types valeur, déclare le paramètre comme Nullable.  
   
- Pour obtenir un exemple d'utilisation d'un paramètre d'entrée dans une requête qui retourne un jeu de lignes, consultez [Procédure : retourner des jeux de lignes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-return-rowsets.md).  
+ Pour obtenir un exemple montrant comment utiliser un paramètre d’entrée dans une requête qui retourne un ensemble de lignes, consultez [Comment : retourner des jeux de lignes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-return-rowsets.md).  
   
-## Exemple  
- L'exemple suivant prend un paramètre d'entrée unique \(ID client\) et retourne un paramètre de sortie \(total des ventes pour ce client\).  
+## <a name="example"></a>Exemple  
+ L'exemple suivant prend un paramètre d'entrée unique (ID client) et retourne un paramètre de sortie (total des ventes pour ce client).  
   
 ```  
 CREATE PROCEDURE [dbo].[CustOrderTotal]   
@@ -37,14 +43,14 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
  [!code-csharp[DLinqSprox#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/northwind-sprox.cs#2)]
  [!code-vb[DLinqSprox#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#2)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Vous appelleriez cette procédure stockée comme suit :  
   
  [!code-csharp[DLinqSprox#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#3)]
  [!code-vb[DLinqSprox#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#3)]  
   
-## Voir aussi  
- [Procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)   
- [Téléchargement d'exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)   
- [Utilisation de types Nullable](../Topic/Using%20Nullable%20Types%20\(C%23%20Programming%20Guide\).md)   
- [Nullable Value Types](../Topic/Nullable%20Value%20Types%20\(Visual%20Basic\).md)
+## <a name="see-also"></a>Voir aussi  
+ [Procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
+ [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [Utilisation de types Nullable](~/docs/csharp/programming-guide/nullable-types/using-nullable-types.md)  
+ [Types valeur Nullable](~/docs/visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

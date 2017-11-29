@@ -1,81 +1,84 @@
 ---
-title: "&lt;publisherPolicy&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/publisherPolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/publisherPolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#publisherPolicy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<publisherPolicy> (élément)"
-  - "balises conteneurs, <publisherPolicy> (élément)"
-  - "publisherPolicy (élément)"
+title: "&lt;publisherPolicy&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/publisherPolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/publisherPolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#publisherPolicy
+helpviewer_keywords:
+- publisherPolicy element
+- container tags, <publisherPolicy> element
+- <publisherPolicy> element
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 654887c870a7f620c52fa402d6324de39fdb2feb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;publisherPolicy&gt;, &#233;l&#233;ment
+# <a name="ltpublisherpolicygt-element"></a>&lt;publisherPolicy&gt; élément
 Spécifie si le runtime applique la stratégie de l'éditeur.  
   
-## Syntaxe  
+ \<configuration>  
+\<runtime >  
+\<assemblyBinding >  
+\<dependentAssembly >  
+\<publisherPolicy >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <publisherPolicy apply="yes|no"/>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
   
 |Attribut|Description|  
-|--------------|-----------------|  
-|`apply`|Spécifie si la stratégie de l'éditeur doit être appliquée.|  
+|---------------|-----------------|  
+|`apply`|Spécifie s’il faut appliquer la stratégie d’éditeur.|  
   
-## appliquer l'attribut  
+## <a name="apply-attribute"></a>appliquer l’attribut  
   
 |Valeur|Description|  
-|------------|-----------------|  
-|`yes`|Applique la stratégie de l'éditeur.  Il s'agit de l'option par défaut.|  
-|`no`|N'applique pas la stratégie de l'éditeur.|  
+|-----------|-----------------|  
+|`yes`|Applique la stratégie de serveur de publication. Il s'agit du paramètre par défaut.|  
+|`no`|N’applique pas la stratégie d’éditeur.|  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les liaisons d'assembly et l'opération garbage collection.|  
+|`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## Notes  
- Lorsqu'un fournisseur de composant publie une nouvelle version d'un assembly, il peut inclure une stratégie de l'éditeur pour que les applications qui utilisent l'ancienne version utilisent désormais la nouvelle.  Pour spécifier si la stratégie de l'éditeur doit être appliquée à un assembly particulier, placez l'élément **\<publisherPolicy\>** dans l'élément **\<dependentAssembly\>**.  
+## <a name="remarks"></a>Remarques  
+ Lorsqu’un fournisseur de composant publie une nouvelle version d’un assembly, le fournisseur peut inclure une stratégie d’éditeur pour les applications qui utilisent l’ancienne version désormais utilisent la nouvelle version. Pour spécifier s’il faut appliquer la stratégie d’éditeur pour un assembly particulier, placez le  **\<publisherPolicy >** élément dans le  **\<dependentAssembly >** élément.  
   
- La valeur par défaut de l'attribut **apply** est **yes**.  L'assignation de la valeur **no** à l'attribut **apply** a pour effet d'annuler tout paramétrage précédent de cet attribut à la valeur **yes**.  
+ Le paramètre par défaut pour le **appliquer** attribut est **Oui**. Définition de la **appliquer** attribut **aucun** remplacements précédents **Oui** paramètres d’un assembly.  
   
- Une autorisation est nécessaire pour qu'une application ignore explicitement la stratégie d'éditeur à l'aide de l'élément [\<publisherPolicy apply\="no"\/\>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) dans le fichier de configuration de l'application.  L'autorisation est accordée en définissant l'indicateur [BindingRedirects](frlrfSystemSecurityPermissionsSecurityPermissionFlagClassTopic) sur la [classe SecurityPermission](frlrfSystemSecurityPermissionsSecurityPermissionClassTopic).  Pour plus d'informations, consultez [Autorisation de sécurité pour la redirection de liaison d'assembly](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
+ Autorisation est requise pour une application ignore explicitement la stratégie du serveur de publication à l’aide du [ \<publisherPolicy appliquer = « no » / >](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) élément dans le fichier de configuration d’application. L’autorisation est accordée en définissant le <xref:System.Security.Permissions.SecurityPermissionFlag> indicateur sur le <xref:System.Security.Permissions.SecurityPermission>. Pour plus d’informations, consultez [autorisation de sécurité pour la Redirection de liaison d’Assembly](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
   
-## Exemple  
- L'exemple suivant désactive la stratégie de l'éditeur pour l'assembly `myAssembly`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant désactive la stratégie de serveur de publication pour l’assembly, `myAssembly`.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -90,8 +93,8 @@ Spécifie si le runtime applique la stratégie de l'éditeur.
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des paramètres d'exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Redirection des versions d'assemblys](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

@@ -1,39 +1,42 @@
 ---
-title: "Proc&#233;dure&#160;: ajouter la d&#233;tectabilit&#233; par programme &#224; un service et un client WCF | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : ajouter la détectabilité par programme à un service et un client WCF"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f94d99542a07711f618bc02316e6f61f6df647d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Proc&#233;dure&#160;: ajouter la d&#233;tectabilit&#233; par programme &#224; un service et un client WCF
+# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Procédure : ajouter la détectabilité par programme à un service et un client WCF
 Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] détectable. Il est basé sur le [auto-hébergement](http://go.microsoft.com/fwlink/?LinkId=145523) exemple.  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Pour configurer l'exemple existant de service Self-Host pour la découverte  
   
 1.  Ouvrez la solution Self-Host dans [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. L'exemple se trouve dans le répertoire TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
-2.  Ajoutez au projet du service une référence à `System.ServiceModel.Discovery.dll`. Un message d'erreur s'affiche éventuellement, indiquant « System. ServiceModel.Discovery.dll ou une de ses dépendances requiert une version ultérieure de le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] à celle spécifiée dans le projet... » Si vous voyez ce message, cliquez sur le projet dans l’Explorateur de solutions et choisissez **propriétés**. Dans le **propriétés du projet** fenêtre, assurez-vous que le **Framework cible** est [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+2.  Ajoutez au projet du service une référence à `System.ServiceModel.Discovery.dll`. Vous pouvez voir un message d’erreur indiquant « System. ServiceModel.Discovery.dll ou une de ses dépendances requiert une version ultérieure de la [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] à celle spécifiée dans le projet... » Si vous voyez ce message, cliquez sur le projet dans l’Explorateur de solutions et choisissez **propriétés**. Dans le **propriétés du projet** fenêtre, assurez-vous que le **Framework cible** est [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
   
 3.  Ouvrez le fichier Service.cs et ajoutez l'instruction `using` suivante.  
   
-    ```  
+    ```csharp  
     using System.ServiceModel.Discovery;  
     ```  
   
-4.  Dans le `Main()` (méthode), à l’intérieur du `using` instruction, ajouter un <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> instance à l’hôte de service.  
+4.  Dans la méthode `Main()`, à l'intérieur de l'instruction `using`, ajoutez une instance <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> à l'hôte du service.  
   
-    ```  
+    ```csharp  
     public static void Main()  
     {  
         // Create a ServiceHost for the CalculatorService type.  
@@ -47,11 +50,11 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
     }  
     ```  
   
-     Le <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> Spécifie que le service n’est appliqué à est détectable.  
+     L'instance <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> spécifie que le service auquel elle s'applique est détectable.  
   
-5.  Ajouter un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> à l’hôte de service juste après le code qui ajoute les <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.  
+5.  Ajoutez un objet <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> à l'hôte du service, juste après le code qui ajoute l'instance <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.  
   
-    ```  
+    ```csharp  
     // Add ServiceDiscoveryBehavior  
     serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());  
   
@@ -67,22 +70,21 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
 2.  Ajoutez une référence à `System.ServiceModel.dll` et à `System.ServiceModel.Discovery.dll`.  
   
-3.  Copiez les fichiers GeneratedClient.cs et App.config du projet client existant dans le nouveau projet DiscoveryClientApp. Pour ce faire, cliquez sur les fichiers dans le **l’Explorateur de solutions**, sélectionnez **copie**, puis sélectionnez le **DiscoveryClientApp** de projet, avec le bouton droit et sélectionnez **coller**.  
+3.  Copiez les fichiers GeneratedClient.cs et App.config du projet client existant dans le nouveau projet DiscoveryClientApp. Pour ce faire, cliquez sur les fichiers dans le **l’Explorateur de solutions**, sélectionnez **copie**, puis sélectionnez le **DiscoveryClientApp** de projet, avec le bouton droit et sélectionnez **Coller**.  
   
 4.  Ouvrez Program.cs.  
   
 5.  Ajoutez les instructions `using` suivantes.  
   
-    ```  
+    ```csharp  
     using System.ServiceModel;  
     using System.ServiceModel.Discovery;  
     using Microsoft.ServiceModel.Samples;  
-  
     ```  
   
 6.  Ajoutez une méthode statique nommée `FindCalculatorServiceAddress()` à la classe `Program`.  
   
-    ```  
+    ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
     {  
     }  
@@ -90,9 +92,9 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
      Cette méthode utilise la découverte pour rechercher le service `CalculatorService`.  
   
-7.  À l’intérieur de la `FindCalculatorServiceAddress` (méthode), créer un nouveau <xref:System.ServiceModel.Discovery.DiscoveryClient> instance, en passant un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> au constructeur.  
+7.  À l'intérieur de la méthode `FindCalculatorServiceAddress`, créez une instance <xref:System.ServiceModel.Discovery.DiscoveryClient>, en transmettant un objet <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> au constructeur.  
   
-    ```  
+    ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
     {  
         // Create DiscoveryClient  
@@ -100,18 +102,18 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
     }  
     ```  
   
-     Cela indique à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui le <xref:System.ServiceModel.Discovery.DiscoveryClient> classe doit utiliser le point de terminaison de découverte UDP standard pour envoyer et recevoir des messages de découverte.  
+     Cela indique à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] que la classe <xref:System.ServiceModel.Discovery.DiscoveryClient> doit utiliser le point de terminaison de découverte UDP standard pour envoyer et recevoir des messages de découverte.  
   
-8.  Sur la ligne suivante, appelez le <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> (méthode) et spécifiez un <xref:System.ServiceModel.Discovery.FindCriteria> instance qui contient le contrat de service que vous souhaitez rechercher. Le contrat à spécifier dans le cas présent est `ICalculator`.  
+8.  Sur la ligne suivante, appelez la méthode <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> et spécifiez une instance <xref:System.ServiceModel.Discovery.FindCriteria> qui contient le contrat de service que vous souhaitez rechercher. Le contrat à spécifier dans le cas présent est `ICalculator`.  
   
-    ```  
+    ```csharp  
     // Find ICalculatorService endpoints              
     FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
     ```  
   
-9. Après l’appel à <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, vérifiez s’il existe au moins un service correspondant et retournez le <xref:System.ServiceModel.EndpointAddress> du premier service correspondant. Autrement, retournez une valeur `null`.  
+9. Après l'appel à la méthode <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, vérifiez s'il existe au moins un service correspondant et retournez l'objet <xref:System.ServiceModel.EndpointAddress> du premier service correspondant. Autrement, retournez une valeur `null`.  
   
-    ```  
+    ```csharp  
     if (findResponse.Endpoints.Count > 0)  
     {  
         return findResponse.Endpoints[0].Address;  
@@ -124,7 +126,7 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
 10. Ajoutez une méthode statique nommée `InvokeCalculatorService` à la classe `Program`.  
   
-    ```  
+    ```csharp  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
     {  
     }  
@@ -134,21 +136,21 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
 11. À l'intérieur de la méthode `InvokeCalculatorService`, créez une instance de la classe `CalculatorServiceClient`. Cette classe est définie par le [auto-hébergement](http://go.microsoft.com/fwlink/?LinkId=145523) exemple. Elle a été générée à l'aide de Svcutil.exe.  
   
-    ```  
+    ```csharp  
     // Create a client  
     CalculatorClient client = new CalculatorClient();  
     ```  
   
 12. Sur la ligne suivante, définissez l'adresse du point de terminaison du client sur l'adresse du point de terminaison retournée par l'objet `FindCalculatorServiceAddress()`.  
   
-    ```  
+    ```csharp  
     // Connect to the discovered service endpoint  
     client.Endpoint.Address = endpointAddress;  
     ```  
   
 13. Immédiatement après le code de l'étape précédente, appelez les méthodes exposées par le service de calculatrice.  
   
-    ```  
+    ```csharp  
     Console.WriteLine("Invoking CalculatorService at {0}", endpointAddress);  
   
     double value1 = 100.00D;  
@@ -177,7 +179,7 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
 14. Ajoutez un code à la méthode `Main()` dans la classe `Program` pour appeler `FindCalculatorServiceAddress`.  
   
-    ```  
+    ```csharp  
     public static void Main()  
     {  
         EndpointAddress endpointAddress = FindCalculatorServiceAddress();  
@@ -186,7 +188,7 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
   
 15. Sur la ligne suivante, appelez `InvokeCalculatorService()` et passez l'adresse du point de terminaison retournée par `FindCalculatorServiceAddress()`.  
   
-    ```  
+    ```csharp  
     if (endpointAddress != null)  
     {  
         InvokeCalculatorService(endpointAddress);  
@@ -228,10 +230,9 @@ Cette rubrique explique comment rendre un service [!INCLUDE[indigo1](../../../..
     ```  
   
 ## <a name="example"></a>Exemple  
- L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur le [auto-héberger](http://go.microsoft.com/fwlink/?LinkId=145523) exemple, seuls les fichiers modifiés sont répertoriés. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]l’exemple Self-Host, consultez [Instructions d’installation](http://go.microsoft.com/fwlink/?LinkId=145522).  
+ L'intégralité du code utilisé dans cet exemple est présentée ci-dessous. Étant donné que ce code est basé sur le [auto-hébergement](http://go.microsoft.com/fwlink/?LinkId=145523) exemple, uniquement les fichiers modifiés sont répertoriés. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]l’exemple d’auto-hébergement, consultez [Instructions d’installation](http://go.microsoft.com/fwlink/?LinkId=145522).  
   
-```  
-  
+```csharp  
 // Service.cs  
 using System;  
 using System.Configuration;  
@@ -267,7 +268,7 @@ namespace Microsoft.ServiceModel.Samples
 }  
 ```  
   
-```  
+```csharp  
 // Program.cs  
 using System;  
 using System.Collections.Generic;  
@@ -348,9 +349,7 @@ namespace DiscoveryClientApp
     }  
 }  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
+
 ## <a name="see-also"></a>Voir aussi  
- [Présentation de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
+ [Vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
  [Modèle objet de découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

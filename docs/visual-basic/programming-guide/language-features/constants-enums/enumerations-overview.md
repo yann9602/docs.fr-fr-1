@@ -1,45 +1,44 @@
 ---
-title: "Enumerations Overview (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Visual Basic code, enumerations"
-  - "enumerations [Visual Basic], about enumerations"
+title: "Vue d'ensemble des énumérations (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- Visual Basic code, enumerations
+- enumerations [Visual Basic], about enumerations
 ms.assetid: b42a38ee-5e77-4f99-a037-e3a127ead89c
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5d50e6bae880e5dc4dcde203708c6b07c05bb4e8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Enumerations Overview (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Les énumérations offrent un moyen pratique d'utiliser des ensembles de constantes connexes et d'associer des valeurs de constantes à des noms.  Par exemple, vous pouvez déclarer une énumération pour un ensemble de constantes entières associées aux jours de la semaine, et utiliser ensuite les noms des jours dans le code plutôt que leurs valeurs entières.  
+# <a name="enumerations-overview-visual-basic"></a>Vue d'ensemble des énumérations (Visual Basic)
+Les énumérations offrent un moyen pratique d’utiliser des ensembles de constantes associées et pour associer des valeurs constantes avec des noms. Par exemple, vous pouvez déclarer une énumération pour un ensemble de constantes entières associées aux jours de la semaine puis utiliser les noms des jours au lieu de leur valeur entière dans votre code.  
   
-## Tâches impliquant des énumérations  
- Le tableau suivant répertorie des tâches courantes qui impliquent des énumérations.  
+## <a name="tasks-involving-enumerations"></a>Tâches impliquant des énumérations  
+ Le tableau suivant répertorie les tâches courantes impliquant des énumérations.  
   
-|Pour|Consultez|  
-|----------|---------------|  
-|Rechercher une énumération prédéfinie|[Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
-|Déclarer une énumération|[How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
-|Qualifier complètement le nom d'une énumération|[Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
-|Faire référence à un membre d'énumération|[How to: Refer to an Enumeration Member](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
-|Itérer au sein d'une énumération|[How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
-|Déterminer la chaîne associée à une énumération|[How to: Determine the String Associated with an Enumeration Value](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
-|Déterminer quand utiliser une énumération|[When to Use an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
+|Pour|Voir|  
+|----------------|---------|  
+|Rechercher une énumération prédéfinie|[Constantes et énumérations](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
+|Déclarer une énumération|[Comment : déclarer une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
+|Nom qualifié complet d’une énumération|[Énumérations et qualification de noms](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
+|Faire référence à un membre d’énumération|[Guide pratique : faire référence à un membre d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
+|Parcourir une énumération|[Comment : parcourir une énumération dans Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
+|Déterminer la chaîne associée à une énumération|[Guide pratique : déterminer la chaîne associée à une valeur d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
+|Déterminer quand utiliser une énumération|[Quand utiliser une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
   
-## Voir aussi  
- [Constants Overview](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)   
- [User\-Defined Constants](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)   
- [How to: Declare A Constant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)   
- [Constant and Literal Data Types](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)   
- [Enum Statement](../../../../visual-basic/language-reference/statements/enum-statement.md)
+## <a name="see-also"></a>Voir aussi  
+ [Vue d’ensemble des constantes](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)  
+ [Constantes définies par l’utilisateur](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)  
+ [Guide pratique : déclarer une constante](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)  
+ [Constantes et types de données littérales](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)  
+ [Enum (instruction)](../../../../visual-basic/language-reference/statements/enum-statement.md)

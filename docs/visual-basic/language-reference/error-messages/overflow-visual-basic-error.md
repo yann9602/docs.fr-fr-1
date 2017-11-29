@@ -1,35 +1,33 @@
 ---
-title: "Overflow (Visual Basic Error) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30036"
-  - "vbc30036"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30036"
+title: "Dépassement de capacité (erreur Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30036
+- vbc30036
+helpviewer_keywords: BC30036
 ms.assetid: b2c83de9-a132-449a-870b-e7c409d4d7ee
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1a1b12002e230c7f90f2da5ebb24c5298fccbe6f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Overflow (Visual Basic Error)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Un littéral représente une valeur en dehors des limites du type de données auquel il est assigné.  
+# <a name="overflow-visual-basic-error"></a>Dépassement de capacité (erreur Visual Basic)
+Un littéral représente une valeur en dehors des limites du type de données à laquelle elle est assignée.  
   
- **ID d'erreur :** BC30036  
+ **ID d’erreur :** BC30036  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Consultez l'intervalle correspondant au type de données cible et réécrivez le littéral afin qu'il soit conforme à cet intervalle.  
+-   Consultez la plage de valeurs pour la cible de type de données et réécrire le littéral pour être conforme à cette plage.  
   
-## Voir aussi  
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)
+## <a name="see-also"></a>Voir aussi  
+ [Types de données](../../../visual-basic/language-reference/data-types/data-type-summary.md)

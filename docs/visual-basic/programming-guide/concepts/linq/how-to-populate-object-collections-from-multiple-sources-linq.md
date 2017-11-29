@@ -1,43 +1,35 @@
 ---
-title: "Comment : remplir des Collections d’objets issues de plusieurs Sources (LINQ) (Visual Basic) | Documents Microsoft"
+title: "Comment : remplir des Collections d’objets à partir de plusieurs Sources (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 25f504d862ef2176dc90a31fbccf18777b9d3d0a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 3b52042078667ccfbefadcdf1cef5ab0873cc97b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Comment : remplir des Collections d’objets issues de plusieurs Sources (LINQ) (Visual Basic)
-Cet exemple montre comment fusionner des données provenant de sources différentes en une séquence de nouveaux types.  
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Comment : remplir des Collections d’objets à partir de plusieurs Sources (LINQ) (Visual Basic)
+Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.  
   
 > [!NOTE]
->  N’essayez pas de joindre des données ou des données en mémoire dans le système de fichiers avec des données qui se trouve toujours dans une base de données. Ces jointures interdomaines peuvent générer des résultats indéfinis en raison de différentes façons dans lequel les opérations de jointure peuvent être définies pour les requêtes de base de données et d’autres types de sources. En outre, il est un risque qu’une telle opération pourrait provoquer une exception de mémoire insuffisante si la quantité de données dans la base de données est suffisante. Pour joindre des données d’une base de données en mémoire, appelez d’abord `ToList` ou `ToArray` sur la base de données de requête, puis effectuez la jointure sur la collection retournée.  
+>  N’essayez pas de joindre des données du système de fichiers ou des données en mémoire avec des données qui se trouvent encore dans une base de données. Ces jointures interdomaines peuvent générer des résultats indéfinis, en raison des différentes façons par lesquelles les opérations de jointure peuvent être définies pour les requêtes de base de données et autres types de sources. En outre, une telle opération risque de provoquer une exception de mémoire insuffisante si la quantité de données dans la base de données est assez élevée. Pour joindre des données d’une base de données à des données en mémoire, appelez d’abord `ToList` ou `ToArray` sur la requête de base de données, puis effectuez la jointure sur la collection retournée.  
   
 ### <a name="to-create-the-data-file"></a>Pour créer le fichier de données  
   
 -   Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, comme décrit dans [Comment : joindre contenu à partir de différents fichiers (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker les données fusionnées à partir de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms des étudiants et les ID et la deuxième collection représente l’ID de l’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.  
+ L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.  
   
 ```vb  
 Class Student  
@@ -114,7 +106,7 @@ End Class
   
  Dans le [Clause Select](../../../../visual-basic/language-reference/queries/select-clause.md) clause, un initialiseur d’objet est utilisé pour instancier chaque nouvel `Student` objet en utilisant les données des deux sources.  
   
- Si vous n’êtes pas obligé de stocker les résultats d’une requête, les types anonymes peuvent être plus pratiques que les types nommés. Types nommés sont requis si vous passez les résultats de requête en dehors de la méthode dans laquelle la requête est exécutée. L’exemple suivant effectue la même tâche que l’exemple précédent, mais utilise des types anonymes au lieu de types nommés :  
+ Si vous n’êtes pas obligé de stocker les résultats d’une requête, les types anonymes peuvent être plus pratiques que les types nommés. Les types nommés sont nécessaires si vous passez les résultats de requête en dehors de la méthode dans laquelle la requête est exécutée. L’exemple suivant effectue la même tâche que l’exemple précédent, mais il utilise des types anonymes plutôt que des types nommés :  
   
 ```vb  
 ' Merge the data by using an anonymous type.   
@@ -141,7 +133,7 @@ Next
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet qui cible le .NET Framework version 3.5 ou une version ultérieure avec une référence à System.Core.dll et une `Imports` instruction pour l’espace de noms System.Linq.  
+ Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et une déclaration `Imports` pour l’espace de noms System.Linq.  
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ et chaînes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

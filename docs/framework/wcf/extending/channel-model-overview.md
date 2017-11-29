@@ -1,39 +1,41 @@
 ---
-title: "Vue d&#39;ensemble du mod&#232;le de canal | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "modèle de canal (WCF)"
+title: "Vue d'ensemble du modèle de canal"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 19dfb8d6a75496cf193831c1d9e6e71ee6bb1a7a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Vue d&#39;ensemble du mod&#232;le de canal
-La pile de canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est une pile de communication superposée qui traitent les messages à l'aide d'un ou plusieurs canaux.Le canal de transport, qui figure tout en bas de la pile, est chargé d'adapter la pile de canaux au transport sous\-jacent \(par exemple, au transport TCP, HTTP, SMTP ainsi qu'à d'autres types de transports\).Les canaux fournissent un modèle de programmation de bas niveau pour l'envoi et la réception des messages.Ce modèle de programmation s'appuie sur plusieurs interfaces et autres types désignés collectivement par le terme « modèle de canal [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ».Cette rubrique aborde les thèmes suivants : formes de canal, construction d'un écouteur de canal de base \(côté service\) et fabrication de canal \(côté client\).  
+# <a name="channel-model-overview"></a>Vue d'ensemble du modèle de canal
+La pile de canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est une pile de communication superposée qui traitent les messages à l'aide d'un ou plusieurs canaux. Le canal de transport, qui figure tout en bas de la pile, est chargé d'adapter la pile de canaux au transport sous-jacent (par exemple, au transport TCP, HTTP, SMTP ainsi qu'à d'autres types de transports). Les canaux fournissent un modèle de programmation de bas niveau pour l'envoi et la réception des messages. Ce modèle de programmation s'appuie sur plusieurs interfaces et autres types désignés collectivement par le terme « modèle de canal [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ». Cette rubrique aborde les thèmes suivants : formes de canal, construction d'un écouteur de canal de base (côté service) et fabrication de canal (côté client).  
   
-## Pile de canaux  
- Les points de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] communiquent avec le reste du monde à l'aide d'une pile de communication appelée pile de canaux.Le diagramme suivant compare la pile de canaux avec d'autres piles de communication, notamment avec la pile TCP\/IP.  
+## <a name="channel-stack"></a>Pile de canaux  
+ Les points de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] communiquent avec le reste du monde à l'aide d'une pile de communication appelée pile de canaux. Le diagramme suivant compare la pile de canaux avec d'autres piles de communication, notamment avec la pile TCP/IP.  
   
- ![Modèle de canal de distribution](../../../../docs/framework/wcf/extending/media/wcfc-channelstackhighlevelc.gif "wcfc\_ChannelStackHighLevelc")  
+ ![Modèle de canal](../../../../docs/framework/wcf/extending/media/wcfc-channelstackhighlevelc.gif "wcfc_ChannelStackHighLevelc")  
   
- Pour commencer, leurs points communs : chaque couche de la pile fournit une abstraction du monde figurant en dessous d'elle et expose cette abstraction uniquement à la couche se trouvant immédiatement au\-dessus d'elle.Chaque couche utilise uniquement l'abstraction de la couche se trouvant immédiatement en dessous d'elle.Lorsque deux piles communiquent, chacune de leurs couches communique avec la couche lui correspondant de l'autre pile, par exemple la couche IP avec la couche IP, la couche TCP avec la couche TCP, etc.  
+ Pour commencer, leurs points communs : chaque couche de la pile fournit une abstraction du monde figurant en dessous d'elle et expose cette abstraction uniquement à la couche se trouvant immédiatement au-dessus d'elle. Chaque couche utilise uniquement l'abstraction de la couche se trouvant immédiatement en dessous d'elle. Lorsque deux piles communiquent, chacune de leurs couches communique avec la couche lui correspondant de l'autre pile, par exemple la couche IP avec la couche IP, la couche TCP avec la couche TCP, etc.  
   
- À présent, leurs différences : alors que la pile TCP a été conçue pour fournir une abstraction du réseau physique, la pile de canaux a été conçue pour fournir une abstraction de la manière dont les messages sont remis, à savoir le transport, mais également pour fournir d'autres fonctionnalités permettant de connaître le contenu des messages, le protocole utilisé pour communiquer \(notamment le transport\), etc.Par exemple, l'élément de liaison de session fiable fait partie de la pile de canaux mais ne figure pas en dessous du transport ou du transport lui\-même.Pour obtenir une abstraction, le canal inférieur dans la pile doit adapter le protocole de transport sous\-jacent à l'architecture de la pile de canaux, puis en s'appuyant sur les canaux figurant plus haut dans la pile doit fournir des fonctionnalités de communication, notamment en matière de garanties de fiabilité et de sécurité.  
+ À présent, leurs différences : alors que la pile TCP a été conçue pour fournir une abstraction du réseau physique, la pile de canaux a été conçue pour fournir une abstraction de la manière dont les messages sont remis, à savoir le transport, mais également pour fournir d'autres fonctionnalités permettant de connaître le contenu des messages, le protocole utilisé pour communiquer (notamment le transport), etc. Par exemple, l'élément de liaison de session fiable fait partie de la pile de canaux mais ne figure pas en dessous du transport ou du transport lui-même. Pour obtenir une abstraction, le canal inférieur dans la pile doit adapter le protocole de transport sous-jacent à l'architecture de la pile de canaux, puis en s'appuyant sur les canaux figurant plus haut dans la pile doit fournir des fonctionnalités de communication, notamment en matière de garanties de fiabilité et de sécurité.  
   
- Les messages circulent via la pile de communication sous forme d'objets <xref:System.ServiceModel.Channels.Message>.Comme illustré sur le schéma ci\-dessus, le canal inférieur est appelé canal de transport.Ce canal est chargé de l'envoi des messages depuis leur expéditeur et de leur réception par leur destinataire.Il lui incombe notamment de transformer l'objet <xref:System.ServiceModel.Channels.Message> dans le format utilisé pour communiquer avec les autres correspondants.Au\-dessus de ce canal de transport, peuvent figurer un nombre indéfini de canaux de protocole, chacun d'entre eux offrant des fonctionnalités de communication spécifiques, par exemple en matière de garantie de remise fiable.Les canaux de protocole interviennent sur les messages qui circulent dans la pile sous forme d'objet <xref:System.ServiceModel.Channels.Message>.En principe, leur tâche consiste à transformer ces messages, par exemple en y ajoutant des en\-têtes ou en chiffrant leur contenu. Elle peut également consister à envoyer ou recevoir leurs propres messages de contrôle de protocole, par exemple des accusés de réception.  
+ Les messages circulent via la pile de communication sous forme d'objets <xref:System.ServiceModel.Channels.Message>. Comme illustré sur le schéma ci-dessus, le canal inférieur est appelé canal de transport. Ce canal est chargé de l'envoi des messages depuis leur expéditeur et de leur réception par leur destinataire. Il lui incombe notamment de transformer l'objet <xref:System.ServiceModel.Channels.Message> dans le format utilisé pour communiquer avec les autres correspondants. Au-dessus de ce canal de transport, peuvent figurer un nombre indéfini de canaux de protocole, chacun d'entre eux offrant des fonctionnalités de communication spécifiques, par exemple en matière de garantie de remise fiable. Les canaux de protocole interviennent sur les messages qui circulent dans la pile sous forme d'objet <xref:System.ServiceModel.Channels.Message>. En principe, leur tâche consiste à transformer ces messages, par exemple en y ajoutant des en-têtes ou en chiffrant leur contenu. Elle peut également consister à envoyer ou recevoir leurs propres messages de contrôle de protocole, par exemple des accusés de réception.  
   
-## Formes de canal  
- Chaque canal implémente une ou plusieurs interfaces également désignées par les termes « interfaces de forme de canal » ou « formes de canal ».Ces formes de canal fournissent des méthodes orientées communication, par exemple les méthodes « envoyer et recevoir » ou « demande\-réponse » implémentées par le canal ou appelées par l'utilisateur du canal.L'interface <xref:System.ServiceModel.Channels.IChannel> constitue l'élément de base des formes de canal. Elle fournit en outre une méthode `GetProperty`\<T\> conçue sous forme de mécanisme superposé qui permet d'accéder aux fonctionnalités arbitraires exposées par les canaux de la pile.Les cinq formes de canal qui étendent un objet <xref:System.ServiceModel.Channels.IChannel> sont :  
+## <a name="channel-shapes"></a>Formes de canal  
+ Chaque canal implémente une ou plusieurs interfaces également désignées par les termes « interfaces de forme de canal » ou « formes de canal ». Ces formes de canal fournissent des méthodes orientées communication, par exemple les méthodes « envoyer et recevoir » ou « demande-réponse » implémentées par le canal ou appelées par l'utilisateur du canal. À la base de formes de canal est la <xref:System.ServiceModel.Channels.IChannel> interface, qui est une interface qui fournit un `GetProperty` \<T > méthode conçu comme un mécanisme superposé pour accéder aux fonctionnalités arbitraires exposées par les canaux de la pile. Les cinq formes de canal qui étendent un objet <xref:System.ServiceModel.Channels.IChannel> sont :  
   
 -   <xref:System.ServiceModel.Channels.IInputChannel>  
   
@@ -45,7 +47,7 @@ La pile de canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est un
   
 -   <xref:System.ServiceModel.Channels.IDuplexChannel>  
   
- À chacune de ces formes correspond un équivalent qui étend <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=fullName> pour prendre en charge des sessions.Ces équivalents sont :  
+ À chacune de ces formes correspond un équivalent qui étend <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> pour prendre en charge des sessions. Ces équivalents sont :  
   
 -   <xref:System.ServiceModel.Channels.IInputSessionChannel>  
   
@@ -57,31 +59,31 @@ La pile de canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est un
   
 -   <xref:System.ServiceModel.Channels.IDuplexSessionChannel>  
   
- Les modèles des formes de canal s'inspirent de certains des principaux modèles d'échange de messages pris en charge par les protocoles de transport existants.Par exemple, la messagerie unidirectionnelle correspond à une paire <xref:System.ServiceModel.Channels.IInputChannel>\/<xref:System.ServiceModel.Channels.IOutputChannel>, la demande\-réponse correspond aux paires <xref:System.ServiceModel.Channels.IRequestChannel>\/<xref:System.ServiceModel.Channels.IReplyChannel> et les communications duplex bidirectionnelles correspondent à <xref:System.ServiceModel.Channels.IDuplexChannel> \(ce qui étend à la fois <xref:System.ServiceModel.Channels.IInputChannel> et <xref:System.ServiceModel.Channels.IOutputChannel>\).  
+ Les modèles des formes de canal s’inspirent de certains des principaux modèles d’échange de messages pris en charge par les protocoles de transport existants. Par exemple, la messagerie unidirectionnelle correspond à un <xref:System.ServiceModel.Channels.IInputChannel> / <xref:System.ServiceModel.Channels.IOutputChannel> paire de demande-réponse correspond à <xref:System.ServiceModel.Channels.IRequestChannel> / <xref:System.ServiceModel.Channels.IReplyChannel> paires et les communications duplex bidirectionnelles correspondent à <xref:System.ServiceModel.Channels.IDuplexChannel> (ce qui étend à la fois <xref:System.ServiceModel.Channels.IInputChannel> et <xref:System.ServiceModel.Channels.IOutputChannel>).  
   
-## Programmation avec la pile de canaux  
- Les piles de canaux sont créées en principe à l'aide d'un modèle de fabrication, plus précisément à l'aide de liaisons.Du côté expédition, une liaison est utilisée pour générer une fabrication <xref:System.ServiceModel.ChannelFactory>, qui génère ensuite une pile de canaux et renvoie une référence au canal figurant en haut de la pile.L'application peut utiliser ensuite ce canal pour envoyer des messages.Pour plus d'informations, consultez [Programmation au niveau du canal client](../../../../docs/framework/wcf/extending/client-channel-level-programming.md).  
+## <a name="programming-with-the-channel-stack"></a>Programmation avec la pile de canaux  
+ Les piles de canaux sont créées en principe à l'aide d'un modèle de fabrication, plus précisément à l'aide de liaisons. Du côté expédition, une liaison est utilisée pour générer une fabrication <xref:System.ServiceModel.ChannelFactory>, qui génère ensuite une pile de canaux et renvoie une référence au canal figurant en haut de la pile. L'application peut utiliser ensuite ce canal pour envoyer des messages. Pour plus d’informations, consultez [de programmation au niveau du canal de Client](../../../../docs/framework/wcf/extending/client-channel-level-programming.md).  
   
- Du côté réception, une liaison est utilisée pour générer un écouteur <xref:System.ServiceModel.Channels.IChannelListener>, qui écoute les messages entrants.L'écouteur <xref:System.ServiceModel.Channels.IChannelListener> envoie des messages à l'application écoutant en créant des piles de canaux et en remettant la référence d'application au canal supérieur.L'application utilise ensuite ce canal pour recevoir les messages entrants.Pour plus d'informations, consultez [Programmation de service au niveau du canal](../../../../docs/framework/wcf/extending/service-channel-level-programming.md).  
+ Du côté réception, une liaison est utilisée pour générer un écouteur <xref:System.ServiceModel.Channels.IChannelListener>, qui écoute les messages entrants. L'écouteur <xref:System.ServiceModel.Channels.IChannelListener> envoie des messages à l'application écoutant en créant des piles de canaux et en remettant la référence d'application au canal supérieur. L'application utilise ensuite ce canal pour recevoir les messages entrants. Pour plus d’informations, consultez [de programmation au niveau du canal de Service](../../../../docs/framework/wcf/extending/service-channel-level-programming.md).  
   
-## Modèle d'objet de canal  
- Le modèle d'objet de canal correspond à l'ensemble principal d'interfaces nécessaire à l'implémentation des canaux, des écouteurs de canal et des fabrications de canaux.Certaines classes de base sont également disponibles pour faciliter les implémentations personnalisées.  
+## <a name="the-channel-object-model"></a>Modèle d'objet de canal  
+ Le modèle d'objet de canal correspond à l'ensemble principal d'interfaces nécessaire à l'implémentation des canaux, des écouteurs de canal et des fabrications de canaux. Certaines classes de base sont également disponibles pour faciliter les implémentations personnalisées.  
   
- Les écouteurs de canal sont chargés d'écouter les messages entrants, puis de les remettre à la couche supérieure à l'aide des canaux qu'ils ont eux\-mêmes créés.  
+ Les écouteurs de canal sont chargés d'écouter les messages entrants, puis de les remettre à la couche supérieure à l'aide des canaux qu'ils ont eux-mêmes créés.  
   
  Les fabrications de canaux sont chargées de créer les canaux utilisés pour l'envoi des messages et de fermer ces mêmes canaux à leur propre fermeture.  
   
- <xref:System.ServiceModel.ICommunicationObject> est la principale interface qui définit la machine à états de base que tous les objets de communication implémentent.<xref:System.ServiceModel.Channels.CommunicationObject> fournit une implémentation de cette interface principale dont d'autres classes de canal peuvent dériver au lieu de réimplémenter l'interface.Toutefois, ceci n'est pas obligatoire : un canal personnalisé peut implémenter <xref:System.ServiceModel.ICommunicationObject> directement et ne pas hériter de <xref:System.ServiceModel.Channels.CommunicationObject>.Aucune des classes de l'illustration 3 n'est considérée comme faisant partie du modèle de canal. Elles sont disponibles afin d'aider les implémenteurs de canaux personnalisés à construire ces derniers.  
+ <xref:System.ServiceModel.ICommunicationObject> est la principale interface qui définit la machine à états de base que tous les objets de communication implémentent. <xref:System.ServiceModel.Channels.CommunicationObject> fournit une implémentation de cette interface principale dont d'autres classes de canal peuvent dériver au lieu de réimplémenter l'interface. Toutefois, ceci n'est pas obligatoire : un canal personnalisé peut implémenter <xref:System.ServiceModel.ICommunicationObject> directement et ne pas hériter de <xref:System.ServiceModel.Channels.CommunicationObject>. Aucune des classes de l'illustration 3 n'est considérée comme faisant partie du modèle de canal. Elles sont disponibles afin d'aider les implémenteurs de canaux personnalisés à construire ces derniers.  
   
- ![Modèle de canal de distribution](../../../../docs/framework/wcf/extending/media/wcfc-wcfcchannelsigure3omumtreec.gif "wcfc\_WCFCChannelsigure3OMUMTreec")  
+ ![Modèle de canal](../../../../docs/framework/wcf/extending/media/wcfc-wcfcchannelsigure3omumtreec.gif "wcfc_WCFCChannelsigure3OMUMTreec")  
   
  Les rubriques suivantes contiennent des informations sur le modèle d'objet de canal ainsi que sur diverses zones de développement qui facilitent la construction de canaux personnalisés.  
   
 |Rubrique|Description|  
-|--------------|-----------------|  
-|[Service : écouteurs de canal et canaux](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)|Contient des informations sur les écouteurs de canal, qui écoutent les canaux entrants dans une application de service.|  
-|[Client : fabrications de canaux et canaux](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)|Contient des informations sur les fabrications de canaux, lesquelles créent des canaux pour pouvoir se connecter aux applications de service.|  
-|[Fonctionnement des modifications d'état](../../../../docs/framework/wcf/extending/understanding-state-changes.md)|Contient des informations qui expliquent comment l'état des modèles d'interface <xref:System.ServiceModel.ICommunicationObject?displayProperty=fullName> change dans les canaux.|  
-|[Sélection d'un modèle d'échange de messages](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)|Présente les six modèles d'échange de messages de base pris en charge par les canaux.|  
-|[Gestion des exceptions et des erreurs](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)|Contient des instructions indiquant comment gérer les erreurs et les exceptions qui surviennent sur les canaux personnalisés.|  
-|[Prise en charge de la configuration et des métadonnées](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)|Contient des instructions indiquant comment procéder pour assurer la prise en charge des canaux personnalisés à partir du modèle d'application ainsi que pour exporter et importer des métadonnées à l'aide de liaisons et d'éléments de liaison.|
+|-----------|-----------------|  
+|[Service : Écouteurs de canal et canaux](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)|Contient des informations sur les écouteurs de canal, qui écoutent les canaux entrants dans une application de service.|  
+|[Client : Fabriques de canaux et canaux](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)|Contient des informations sur les fabrications de canaux, lesquelles créent des canaux pour pouvoir se connecter aux applications de service.|  
+|[Modifications de la description de l’état](../../../../docs/framework/wcf/extending/understanding-state-changes.md)|Contient des informations qui expliquent comment l'état des modèles d'interface <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> change dans les canaux.|  
+|[Choix d’un modèle d’échange de messages](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)|Présente les six modèles d’échange de messages de base pris en charge par les canaux.|  
+|[La gestion des Exceptions et des erreurs](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)|Contient des instructions indiquant comment gérer les erreurs et les exceptions qui surviennent sur les canaux personnalisés.|  
+|[Configuration et la prise en charge des métadonnées](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)|Contient des instructions indiquant comment procéder pour assurer la prise en charge des canaux personnalisés à partir du modèle d’application ainsi que pour exporter et importer des métadonnées à l’aide de liaisons et d’éléments de liaison.|

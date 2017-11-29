@@ -1,48 +1,46 @@
 ---
-title: "Membres prot&#233;g&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "membres (.NET Framework), protégés"
-  - "membres protégés"
-  - "classes (.NET Framework), non scellés"
-  - "membres de classes (.NET Framework), protégés"
-  - "classes unsealed"
-  - "personnalisation du comportement de classe"
+title: "Membres protégés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- members [.NET Framework], protected
+- protected members
+- classes [.NET Framework], unsealed
+- classes [.NET Framework], protected members
+- unsealed classes
+- customizing class behavior
 ms.assetid: aa0b58ee-3956-494d-ab48-471ae5db8740
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7c3aacd0f08641c01200f0b1791a78413a306590
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Membres prot&#233;g&#233;s
-Les membres protégés par elles\-mêmes ne fournissent pas tout extensibilité, mais elles peuvent rendre extensibilité via le sous\-classement plus puissant. Ils permettent d’exposer les options de personnalisation avancée sans compliquer inutilement l’interface publique principale.  
+# <a name="protected-members"></a>Membres protégés
+Les membres protégés par eux-mêmes ne fournissent pas de n’importe quel d’extensibilité, mais elles peuvent rendre les extensibilité via le sous-classement plus puissant. Ils peuvent être utilisés pour exposer les options de personnalisation avancée sans compliquer inutilement de l’interface publique principale.  
   
- Concepteurs doivent être prudent avec les membres protégés, car le nom « protégé » peut donner un faux sentiment de sécurité. Toute personne est en mesure de sous\-classe d’une classe non verrouillée et les membres de l’accès protégé, et donc les mêmes pratiques de codage défensifs utilisés pour les membres publics s’appliquent aux membres protégés.  
+ Concepteurs de Framework doivent être prudent avec les membres protégés, car le nom « protégé » peut donner un sentiment de sécurité. Toute personne est en mesure de sous-classe d’une classe unsealed et les membres de l’accès protégé, et par conséquent, les mêmes défensives pratiques de codage utilisés pour les membres publics s’appliquent à des membres protégés.  
   
- **✓ envisagez** à l’aide de membres pour la personnalisation avancée protégés.  
+ **✓ Envisagez** à l’aide de membres pour la personnalisation avancée protégés.  
   
- **✓ faire** traite les membres protégés dans les classes unsealed public pour les besoins de sécurité, la documentation et compatibilité analysis.  
+ **✓ FAIRE** considérer les membres protégés dans les classes unsealed comme public à des fins de sécurité, la documentation et compatibilité analysis.  
   
  Toute personne peut hériter d’une classe et accéder aux membres protégés.  
   
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [Framework Design Guidelines : Conventions, langages et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison\-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
-## Voir aussi  
- [Instructions de conception d’infrastructure](../../../docs/standard/design-guidelines/index.md)   
- [Conception pour l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+## <a name="see-also"></a>Voir aussi  
+ [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
+ [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

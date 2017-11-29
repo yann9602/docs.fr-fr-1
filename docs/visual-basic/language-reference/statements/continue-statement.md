@@ -1,54 +1,52 @@
 ---
-title: "Continue Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.continue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Continue statement [Visual Basic]"
-  - "loops, transferring to next iteration"
+title: Continue, instruction (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.continue
+helpviewer_keywords:
+- Continue statement [Visual Basic]
+- loops, transferring to next iteration
 ms.assetid: 3ad00103-358b-4af3-a3a8-1b9ea0e995d3
-caps.latest.revision: 21
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4a47819600a6c1d58f09c2f8ed3443632e9dab68
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Continue Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Transfère immédiatement le contrôle vers l'itération suivante d'une boucle.  
+# <a name="continue-statement-visual-basic"></a>Continue, instruction (Visual Basic)
+Transfère le contrôle immédiatement à l’itération suivante d’une boucle.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
-Continue { Do | For | While }  
+Continue { Do | For | While }  
 ```  
   
-## Notes  
- Vous pouvez effectuer un transfert de l'intérieur d'une boucle `Do`, `For` ou `While` vers l'itération suivante de cette même boucle.  Le contrôle passe immédiatement au test de condition de la boucle, qui équivaut à effectuer un transfert vers l'instruction `For` ou `While` ou vers l'instruction `Do` ou `Loop` qui contient la clause `Until` ou `While`.  
+## <a name="remarks"></a>Remarques  
+ Vous pouvez transférer à partir d’à l’intérieur d’un `Do`, `For`, ou `While` boucle à l’itération suivante de cette boucle. Contrôle passe immédiatement au test de condition de la boucle, ce qui revient à effectuer un transfert à la `For` ou `While` instruction, ou à la `Do` ou `Loop` instruction qui contient le `Until` ou `While` clause.  
   
- Vous pouvez utiliser `Continue` à n'importe quel emplacement de la boucle qui autorise les transferts.  Les règles qui autorisent le transfert de contrôle sont identiques à celles de l'[GoTo Statement](../../../visual-basic/language-reference/statements/goto-statement.md).  
+ Vous pouvez utiliser `Continue` à n’importe quel emplacement de la boucle qui autorise les transferts. Les règles qui autorisent le transfert de contrôle sont identiques à celles de la [instruction GoTo](../../../visual-basic/language-reference/statements/goto-statement.md).  
   
- Par exemple, si une boucle est entièrement contenue dans un bloc `Try`, un bloc `Catch` ou un bloc `Finally`, vous pouvez utiliser `Continue` pour effectuer un transfert hors de la boucle.  En revanche, si la structure `Try`...`End Try` est contenue dans la boucle, vous ne pouvez pas utiliser `Continue` pour transférer le contrôle hors du bloc `Finally`, et vous pouvez l'utiliser pour le transférer hors d'un bloc `Try` ou `Catch` uniquement si le transfert s'effectue entièrement hors de la structure `Try`...`End Try`.  
+ Par exemple, si une boucle est entièrement contenue dans un `Try` bloc, un `Catch` bloc, ou un `Finally` bloc, vous pouvez utiliser `Continue` pour transférer hors de la boucle. If, d’autre part, le `Try`... `End Try` structure est contenue dans la boucle, vous ne pouvez pas utiliser `Continue` pour transférer le contrôle de la `Finally` bloc et vous pouvez l’utiliser pour transférer d’un `Try` ou `Catch` bloquer uniquement si vous transférez complètement hors de la `Try`... `End Try` structure.  
   
- Si vous disposez de boucles imbriquées du même type, par exemple, une boucle `Do` dans une autre boucle `Do`, une instruction `Continue Do` passe à l'itération suivante de la boucle `Do` la plus profonde qui la contient.  Vous ne pouvez pas utiliser `Continue` pour passer à l'itération suivante d'une boucle conteneur du même type.  
+ Si vous avez des boucles imbriquées du même type, par exemple un `Do` boucle dans une autre `Do` boucle, une `Continue Do` instruction passe à l’itération suivante de la plus profonde `Do` boucle qui le contient. Vous ne pouvez pas utiliser `Continue` pour passer à l’itération suivante d’une boucle conteneur du même type.  
   
- Si vous disposez de boucles imbriquées de types différents, par exemple une boucle `Do` dans une boucle `For`, vous pouvez passer à l'itération suivante de l'une ou l'autre des boucles à l'aide de `Continue Do` ou `Continue For`.  
+ Si vous avez des boucles imbriquées de types différents, par exemple un `Do` mises en boucle dans un `For` boucle, vous pouvez passer à l’itération suivante d’une boucle à l’aide `Continue Do` ou `Continue For`.  
   
-## Exemple  
- L'exemple de code suivant utilise l'instruction `Continue While` pour passer à la colonne suivante d'un tableau si un diviseur est nul.  L'instruction `Continue While` est à l'intérieur d'une boucle `For`.  Elle effectue un transfert vers l'instruction `While col < lastcol`, qui est l'itération suivante de la boucle `While` la plus profonde qui contient la boucle `For`.  
+## <a name="example"></a>Exemple  
+ Le code suivant exemple utilise la `Continue While` instruction pour passer à la colonne suivante d’un tableau si un diviseur est égale à zéro. Le `Continue While` se trouve dans un `For` boucle. Elle transfère vers le `While col < lastcol` instruction, qui est l’itération suivante de la plus profonde `While` boucle qui contient le `For` boucle.  
   
  [!code-vb[VbVbalrStatements#14](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/continue-statement_1.vb)]  
   
-## Voir aussi  
- [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   
- [For...Next, instruction](../../../visual-basic/language-reference/statements/for-next-statement.md)   
- [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md)   
- [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+## <a name="see-also"></a>Voir aussi  
+ [Do...Loop (instruction)](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [For...Next (instruction)](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [While...End While (instruction)](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
+ [Try...Catch...Finally (instruction)](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

@@ -1,69 +1,71 @@
 ---
-title: "&lt;cryptoNameMapping&gt;, &#233;l&#233;ment | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptoNameMapping"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/cryptoNameMapping"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<cryptoNameMapping> (élément)"
-  - "cryptoNameMapping (élément)"
+title: "&lt;cryptoNameMapping&gt; élément"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptoNameMapping
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/cryptoNameMapping
+helpviewer_keywords:
+- <cryptoNameMapping> element
+- cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
-caps.latest.revision: 12
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 2156c6441190b530c48a70e67e93e4806d20b199
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;cryptoNameMapping&gt;, &#233;l&#233;ment
-Contient les mises en correspondance des classes avec les noms conviviaux.  
+# <a name="ltcryptonamemappinggt-element"></a>&lt;cryptoNameMapping&gt; élément
+Contient des mappages de classes à des noms conviviaux.  
   
-## Syntaxe  
+ \<configuration>  
+\<mscorlib >  
+\<cryptographySettings >  
+\<cryptoNameMapping >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
-      <cryptoNameMapping>   
+```xml  
+      <cryptoNameMapping>   
 </cryptoNameMapping>  
 ```  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
- Aucun.  
+### <a name="attributes"></a>Attributs  
+ Aucun  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|`cryptoClasses`|Contient une liste des classes de chiffrement associées à un nom convivial figurant dans l'élément **\<nameEntry\>**.|  
-|`nameEntry`|Associe un nom de classe à un nom d'algorithme convivial, ce qui permet à une seule classe d'avoir plusieurs noms conviviaux.|  
+|`cryptoClasses`|Contient la liste des classes de chiffrement qui ont un mappage à un nom convivial dans l’élément **\<nameEntry>**.|  
+|`nameEntry`|Mappe un nom de classe à un nom d’algorithme convivial, ce qui permet à une classe d’avoir plusieurs noms conviviaux.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`cryptographySettings`|Contient des paramètres de chiffrement.|  
-|`cryptoNameMapping`|Contient les mises en correspondance des classes avec les noms conviviaux.|  
-|`mscorlib`|Contient l'élément \<cryptographySettings\> .|  
+|`cryptoNameMapping`|Contient des mappages de classes à des noms conviviaux.|  
+|`mscorlib`|Contient le \<cryptographySettings > élément.|  
   
-## Exemple  
- L'exemple suivant illustre l'utilisation de l'élément **\<cryptoNameMapping\>** pour référencer une classe de chiffrement et configurer le runtime.  Vous pouvez ensuite passer la chaîne "RSA" à la méthode <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=fullName> et utiliser la méthode <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pour retourner un objet `MyCryptoRSAClass`.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment utiliser le  **\<cryptoNameMapping >** élément pour référencer une classe de chiffrement et configurer le runtime. Vous pouvez ensuite passer la chaîne « RSA » pour le <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et l’utilisation du <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
-```  
+```xml  
 <configuration>  
    <mscorlib>  
       <cryptographySettings>  
@@ -82,8 +84,8 @@ Contient les mises en correspondance des classes avec les noms conviviaux.
 </configuration>  
 ```  
   
-## Voir aussi  
- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)   
- [Services de chiffrement](../../../../../docs/standard/security/cryptographic-services.md)   
- [Configuration de classes de chiffrement](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+## <a name="see-also"></a>Voir aussi  
+ [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+ [Services de chiffrement](../../../../../docs/standard/security/cryptographic-services.md)  
+ [Configuration des classes de chiffrement](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

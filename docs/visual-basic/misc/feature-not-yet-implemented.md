@@ -1,25 +1,27 @@
 ---
-title: "Cette fonctionnalit&#233; n’est pas encore impl&#233;ment&#233;e | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID32768"
+title: "Cette fonctionnalité n’est pas encore implémentée"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID32768
 ms.assetid: 487361ea-7158-479f-ad25-9e7c9b5ea3a6
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4a925a8d459c7a8ac6fed2b77aa757dee36f2998
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Cette fonctionnalit&#233; n’est pas encore impl&#233;ment&#233;e
+# <a name="feature-not-yet-implemented"></a>Cette fonctionnalité n’est pas encore implémentée
 Vous avez tenté d’accéder à une fonctionnalité qui n’est pas implémentée actuellement en Visual Basic.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
 -   Supprimez la référence.  
   
-## Voir aussi  
- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)   
- [PAVEOVER Support technique et accessibilité](http://msdn.microsoft.com/fr-fr/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)
+## <a name="see-also"></a>Voir aussi  
+ [Types d’erreurs](../../visual-basic/programming-guide/language-features/error-types.md)  
+ [PAVEOVER Support technique et accessibilité](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)

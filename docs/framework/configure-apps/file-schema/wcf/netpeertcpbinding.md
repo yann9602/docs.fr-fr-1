@@ -5,23 +5,20 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- netPeerBinding element
+helpviewer_keywords: netPeerBinding element
 ms.assetid: 2dd77ada-a176-47c7-a740-900b279f1aad
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: db7fcfcd4d86bd3ed2bfc7aff033684a0ea14d74
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: bf978034e25d0d644803eed98fc73a60952d817b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltnetpeertcpbindinggt"></a>&lt;netPeerTcpBinding&gt;
 Définit une liaison pour la messagerie TCP spécifique au canal homologue.  
@@ -114,12 +111,11 @@ Définit une liaison pour la messagerie TCP spécifique au canal homologue.
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.ServiceModel.NetPeerTcpBinding>   
- <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement>   
- [Liaisons](../../../../../docs/framework/wcf/bindings.md)   
- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<liaison >](../../../../../docs/framework/misc/binding.md)   
- [NET homologue TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)   
+ <xref:System.ServiceModel.NetPeerTcpBinding>  
+ <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement>  
+ [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<liaison >](../../../../../docs/framework/misc/binding.md)  
+ [NET homologue TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)  
  [Mise en réseau pair à pair](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
-

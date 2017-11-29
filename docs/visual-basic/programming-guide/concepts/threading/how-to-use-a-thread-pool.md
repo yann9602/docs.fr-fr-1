@@ -1,37 +1,29 @@
 ---
-title: "Comment : utiliser un Pool de threads (Visual Basic) | Documents Microsoft"
+title: "Comment : utiliser un Pool de threads (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 90a0bb24-39f8-41f5-a217-b52a7d4fed0b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d60bceea0ed956075233f5f045131ffb2eb37eef
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 42a4120900203eb7eb5ad8463fba4491636882b1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-a-thread-pool-visual-basic"></a>Comment : utiliser un Pool de threads (Visual Basic)
-*Regroupement des threads* est une forme de multithreading dans les tâches qui sont ajoutées à une file d’attente et automatiquement lancées lorsque les threads sont créés. Pour plus d’informations, consultez [(Visual Basic) le regroupement de threads](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md).  
+Le *regroupement de threads* est une forme de multithreading dans lequel les tâches sont ajoutées à une file d’attente et sont automatiquement lancées lorsque les threads sont créés. Pour plus d’informations, consultez [(Visual Basic) le regroupement de threads](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md).  
   
- L’exemple suivant utilise le pool de threads .NET Framework pour calculer le `Fibonacci` résultat pour dix nombres compris entre 20 et 40. Chaque `Fibonacci` résultat est représenté par le `Fibonacci` (classe), qui fournit une méthode nommée `ThreadPoolCallback` qui effectue le calcul. Un objet qui représente chaque `Fibonacci` valeur est créée et le `ThreadPoolCallback` est passé à la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>, qui assigne un thread disponible du pool pour exécuter la méthode.</xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ L’exemple suivant utilise le pool de threads .NET Framework pour calculer le résultat de `Fibonacci` pour dix nombres compris entre 20 et 40. Chaque résultat `Fibonacci` est représenté par la classe `Fibonacci`, qui fournit une méthode nommée `ThreadPoolCallback` qui effectue le calcul. Un objet représentant chaque valeur `Fibonacci` est créé, et la méthode `ThreadPoolCallback` est passée à <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>, qui assigne un thread disponible du pool pour exécuter la méthode.  
   
- Étant donné que chaque `Fibonacci` objet se voit attribuer une valeur semi aléatoire à calculer, et parce que chaque thread sera en concurrence pour le temps processeur, vous ne pouvez pas savoir à l’avance la durée nécessaire pour calculer les dix résultats. C’est pourquoi chaque `Fibonacci` objet est passé à une instance de la <xref:System.Threading.ManualResetEvent>classe pendant la construction.</xref:System.Threading.ManualResetEvent> Chaque objet signale à l’objet événement fourni lorsque son calcul est terminé, ce qui permet au thread principal de bloquer l’exécution avec <xref:System.Threading.WaitHandle.WaitAll%2A>jusqu'à ce que toutes les dix `Fibonacci` objets aient calculé un résultat.</xref:System.Threading.WaitHandle.WaitAll%2A> Le `Main` méthode affiche ensuite chaque `Fibonacci` résultat.  
+ Étant donné que chaque objet `Fibonacci` se voit attribuer une valeur semi-aléatoire à calculer, et parce que chaque thread est en concurrence pour le temps processeur, vous ne pouvez pas savoir à l’avance la durée nécessaire pour calculer les dix résultats. C’est pourquoi chaque objet `Fibonacci` reçoit une instance de la classe <xref:System.Threading.ManualResetEvent> pendant la construction. Chaque objet signale l’objet d’événement fourni quand son calcul est terminé, ce qui permet au thread principal de bloquer l’exécution avec <xref:System.Threading.WaitHandle.WaitAll%2A> jusqu’à ce que les dix objets `Fibonacci` aient calculé un résultat. La méthode `Main` affiche ensuite chaque résultat `Fibonacci`.  
   
 ## <a name="example"></a>Exemple  
   
@@ -113,7 +105,7 @@ Module Module1
 End Module  
 ```  
   
- Voici un exemple de la sortie.  
+ Voici un exemple de sortie.  
   
 ```  
 launching 10 tasks...  
@@ -151,14 +143,14 @@ Fibonacci(27) = 196418
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Threading.Mutex></xref:System.Threading.Mutex>   
- <xref:System.Threading.WaitHandle.WaitAll%2A></xref:System.Threading.WaitHandle.WaitAll%2A>   
- <xref:System.Threading.ManualResetEvent></xref:System.Threading.ManualResetEvent>   
- <xref:System.Threading.EventWaitHandle.Set%2A></xref:System.Threading.EventWaitHandle.Set%2A>   
- <xref:System.Threading.ThreadPool></xref:System.Threading.ThreadPool>   
- <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A></xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>   
- <xref:System.Threading.ManualResetEvent></xref:System.Threading.ManualResetEvent>   
- [(Visual Basic) de regroupement des threads](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)   
- [Threads (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)   
- @System.Threading.Monitor   
- [Sécurité](http://msdn.microsoft.com/library/9a9621d7-8883-4a4f-a874-65e8e09e20a6)
+ <xref:System.Threading.Mutex>  
+ <xref:System.Threading.WaitHandle.WaitAll%2A>  
+ <xref:System.Threading.ManualResetEvent>  
+ <xref:System.Threading.EventWaitHandle.Set%2A>  
+ <xref:System.Threading.ThreadPool>  
+ <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ <xref:System.Threading.ManualResetEvent>  
+ <xref:System.Threading.Monitor>  
+ [Regroupement des threads (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)  
+ [Threads (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)  
+ [Sécurité](../../../../standard/security/index.md)

@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -23,16 +21,15 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 66c3a64a12e791cedbd4e978de2c1b6e06eabb98
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 6f96463b4f9cb7e61c403cfd77f747c8aefd99a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="listening-with-sockets"></a>écoute avec des sockets
 Les sockets de serveur et d’écoute ouvrent un port sur le réseau, puis attendent qu’un client se connecte à ce port. Cet exemple montre comment créer un service distant pour un réseau TCP/IP, cependant, il existe d’autres protocoles et familles d’adresses réseau.  
@@ -56,11 +53,15 @@ IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
  Une fois le point de terminaison local déterminé, le <xref:System.Net.Sockets.Socket> doit être associé à ce point de terminaison à l’aide de la méthode <xref:System.Net.Sockets.Socket.Bind%2A>, puis configuré pour écouter le point de terminaison à l’aide de la méthode <xref:System.Net.Sockets.Socket.Listen%2A>. **Bind** lève une exception si la combinaison adresse-port est déjà utilisée. L’exemple suivant montre comment associer un **Socket** à un **IPEndPoint**.  
   
 ```vb  
+Dim listener As New Socket(ipAddress.AddressFamily, _  
+    SocketType.Stream, ProtocolType.Tcp) 
 listener.Bind(localEndPoint)  
 listener.Listen(100)  
 ```  
   
 ```csharp  
+Socket listener = new Socket(ipAddress.AddressFamily,
+    SocketType.Stream, ProtocolType.Tcp);
 listener.Bind(localEndPoint);  
 listener.Listen(100);  
 ```  
@@ -68,9 +69,8 @@ listener.Listen(100);
  La méthode **Listen** prend un seul paramètre qui spécifie combien de connexions au **Socket** peuvent être mises en attente avant qu’une erreur « Serveur occupé » soit retournée au client qui souhaite se connecter. Dans ce cas, jusqu’à 100 clients peuvent être placés dans la file d’attente de connexion avant qu’une réponse « Serveur occupé » ne soit retournée au 101e client.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation d’un socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
- [Utilisation d’un socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)   
- [Utilisation de sockets clients](../../../docs/framework/network-programming/using-client-sockets.md)   
- [Guide pratique pour créer un socket](../../../docs/framework/network-programming/how-to-create-a-socket.md)   
+ [À l’aide d’un Socket serveur synchrone](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Utilisation d’un Socket serveur asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)  
+ [Utilisation de Sockets clients](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [Guide pratique pour créer un socket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [Sockets](../../../docs/framework/network-programming/sockets.md)
-

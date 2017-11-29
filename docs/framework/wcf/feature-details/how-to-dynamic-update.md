@@ -1,23 +1,26 @@
 ---
-title: "Proc&#233;dure&#160;: mise &#224; jour dynamique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Procédure : mise à jour dynamique"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-caps.latest.revision: 4
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 70f9bb374405496c62650ee3fb715f059e91cd7c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Proc&#233;dure&#160;: mise &#224; jour dynamique
-Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage.Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
+# <a name="how-to-dynamic-update"></a>Procédure : mise à jour dynamique
+Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
   
 > [!NOTE]
 >  Dans de nombreuses implémentations, la configuration est entièrement dynamique et ne s'appuie pas sur une configuration par défaut ; mais dans certains scénarios, comme celui de cette rubrique, il est préférable de disposer d'un état de configuration par défaut lorsque le service démarre.  
@@ -25,11 +28,11 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
 > [!NOTE]
 >  Les mises à jour dynamiques se produisent uniquement en mémoire et n'entraînent aucune modification des fichiers de configuration.  
   
- Les deux services regularCalc et roundingCalc prennent en charge les mêmes opérations : addition, soustraction, multiplication et division ; toutefois, roundingCalc arrondit tous les calculs à la valeur entière la plus proche avant de les retourner.Un fichier de configuration sert à configurer le service de manière à router tous les messages vers le service regularCalc.Après le démarrage du service de routage, la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> est utilisée pour reconfigurer le service de manière à router les messages vers le service roundingCalc.  
+ Les deux services regularCalc et roundingCalc prennent en charge les mêmes opérations : addition, soustraction, multiplication et division ; toutefois, roundingCalc arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Un fichier de configuration sert à configurer le service de manière à router tous les messages vers le service regularCalc. Après le démarrage du service de routage, la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> est utilisée pour reconfigurer le service de manière à router les messages vers le service roundingCalc.  
   
-### Implémenter la configuration initiale  
+### <a name="implement-initial-configuration"></a>Implémenter la configuration initiale  
   
-1.  Créez la configuration du service de routage de base, en spécifiant les points de terminaison de service exposés par le service.L'exemple suivant définit un point de terminaison de service unique, qui sera utilisé pour recevoir des messages.Il définit également un point de terminaison client qui permettra d'envoyer des messages au regularCalc.  
+1.  Créez la configuration du service de routage de base, en spécifiant les points de terminaison de service exposés par le service. L'exemple suivant définit un point de terminaison de service unique, qui sera utilisé pour recevoir des messages. Il définit également un point de terminaison client qui permettra d'envoyer des messages au regularCalc.  
   
     ```xml  
     <services>  
@@ -56,7 +59,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </client>  
     ```  
   
-2.  Définissez le filtre utilisé pour router les messages vers les points de terminaison de destination.Dans cet exemple, le filtre MatchAll est utilisé pour router tous les messages vers le regularCalcEndpoint défini précédemment.L'exemple suivant définit le filtre et la table de filtres.  
+2.  Définissez le filtre utilisé pour router les messages vers les points de terminaison de destination. Dans cet exemple, le filtre MatchAll est utilisé pour router tous les messages vers le regularCalcEndpoint défini précédemment. L'exemple suivant définit le filtre et la table de filtres.  
   
     ```xml  
     <filters>  
@@ -69,10 +72,9 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
           <add filterName="MatchAllFilter" endpointName="regularCalcEndpoint"/>  
       </filterTable>  
     </filterTables>  
-  
     ```  
   
-3.  Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage.L'exemple suivant montre l'association de « filterTable1 » au point de terminaison de service.  
+3.  Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’association de « filterTable1 » avec le point de terminaison de service.  
   
     ```xml  
     <behaviors>  
@@ -85,8 +87,8 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </behaviors>  
     ```  
   
-## Implémenter la configuration dynamique  
- La configuration dynamique du service de routage s'effectue uniquement dans le code, en créant un objet <xref:System.ServiceModel.Routing.RoutingConfiguration> et en utilisant la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> pour remplacer la configuration actuelle.Pour cet exemple, le service de routage est auto\-hébergé dans une application console.Une fois l'application démarrée, vous pouvez modifier la configuration de routage en entrant 'regular' ou 'rounding' dans la fenêtre de console, pour configurer le point de terminaison de destination vers lequel router les messages : regularCalc si vous entrez 'regular' ou roundingCalc si vous entrez 'rounding'.  
+## <a name="implement-dynamic-configuration"></a>Implémenter la configuration dynamique  
+ La configuration dynamique du service de routage s'effectue uniquement dans le code, en créant un objet <xref:System.ServiceModel.Routing.RoutingConfiguration> et en utilisant la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> pour remplacer la configuration actuelle.  Pour cet exemple, le service de routage est auto-hébergé dans une application console. Une fois l'application démarrée, vous pouvez modifier la configuration de routage en entrant 'regular' ou 'rounding' dans la fenêtre de console, pour configurer le point de terminaison de destination vers lequel router les messages : regularCalc si vous entrez 'regular' ou roundingCalc si vous entrez 'rounding'.  
   
 1.  Les instructions using suivantes doivent être ajoutées afin de prendre en charge le service de routage.  
   
@@ -98,10 +100,9 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     using System.ServiceModel.Description;  
     using System.ServiceModel.Dispatcher;  
     using System.ServiceModel.Routing;  
-  
     ```  
   
-2.  Le code suivant sert à auto\-héberger le service de routage en tant qu'application console.Ce code initialise le service de routage en utilisant la configuration décrite dans l'étape précédente, contenue dans le fichier de configuration de l'application.La boucle while contient le code utilisé pour modifier la configuration de routage.  
+2.  Le code suivant sert à auto-héberger le service de routage en tant qu'application console. Ce code initialise le service de routage en utilisant la configuration décrite dans l'étape précédente, contenue dans le fichier de configuration de l'application. La boucle while contient le code utilisé pour modifier la configuration de routage.  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -124,10 +125,9 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
             }  
         }  
     }  
-  
     ```  
   
-3.  Pour mettre à jour de manière dynamique la configuration de routage, il faut créer une nouvelle configuration de routage.Celle\-ci doit contenir l'ensemble des points de terminaison, filtres et tables de filtres nécessaires pour la nouvelle configuration de routage, car elle doit remplacer complètement la configuration de routage existante.Pour utiliser la nouvelle configuration de routage, vous devez appeler la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> et transmettre la nouvelle configuration.  
+3.  Pour mettre à jour de manière dynamique la configuration de routage, il faut créer une nouvelle configuration de routage. Celle-ci doit contenir l'ensemble des points de terminaison, filtres et tables de filtres nécessaires pour la nouvelle configuration de routage, car elle doit remplacer complètement la configuration de routage existante. Pour utiliser la nouvelle configuration de routage, vous devez appeler la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> et transmettre la nouvelle configuration.  
   
      Ajoutez le code suivant à la boucle while définie précédemment pour permettre la reconfiguration du service en fonction de l'entrée utilisateur.  
   
@@ -170,10 +170,10 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     ```  
   
     > [!NOTE]
-    >  Dans la mesure où la méthode qui permet de fournir un nouvel objet RoutingConfiguration est contenue dans l'extension de service RoutingExtension, les nouveaux objets RoutingConfiguration peuvent être fournis n'importe où dans le modèle d'extensibilité WCF qui détient ou peut obtenir une référence à ServiceHost ou aux ServiceExtensions \(comme dans une autre ServiceExtension\).Pour obtenir un exemple de mise à jour dynamique de l'objet RoutingConfiguration selon ce procédé, consultez [Reconfiguration dynamique](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md).  
+    >  Dans la mesure où la méthode qui permet de fournir un nouvel objet RoutingConfiguration est contenue dans l’extension de service RoutingExtension, les nouveaux objets RoutingConfiguration peuvent être fournis n’importe où dans le modèle d’extensibilité WCF qui détient ou peut obtenir une référence à ServiceHost ou aux ServiceExtensions (comme dans une autre ServiceExtension). Pour obtenir un exemple de mise à jour dynamique de la RoutingConfiguration de cette manière, consultez [Reconfiguration dynamique](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md).  
   
-## Exemple  
- L'intégralité de l'application console utilisée dans cet exemple est présentée ci\-dessous.  
+## <a name="example"></a>Exemple  
+ L'intégralité de l'application console utilisée dans cet exemple est présentée ci-dessous.  
   
 ```  
 //-----------------------------------------------------------------  
@@ -248,11 +248,10 @@ namespace Microsoft.Samples.AdvancedFilters
         }  
     }  
 }  
-  
 ```  
   
-## Exemple  
- L'intégralité du fichier de configuration utilisé dans cet exemple est présentée ci\-dessous.  
+## <a name="example"></a>Exemple  
+ L'intégralité du fichier de configuration utilisé dans cet exemple est présentée ci-dessous.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -305,8 +304,7 @@ namespace Microsoft.Samples.AdvancedFilters
     </routing>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Services de routage](../../../../docs/framework/wcf/samples/routing-services.md)

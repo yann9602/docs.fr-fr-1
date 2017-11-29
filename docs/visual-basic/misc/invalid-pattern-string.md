@@ -1,20 +1,23 @@
 ---
-title: "Cha&#238;ne de mod&#232;le non valide | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
+title: "Chaîne de modèle non valide"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: ec1aecdb-5339-4a93-be71-eec56b1d7438
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f824a5844d6d2b365358030119826266a4b42ef3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Cha&#238;ne de mod&#232;le non valide
+# <a name="invalid-pattern-string"></a>Chaîne de modèle non valide
 La chaîne de modèle spécifiée dans l’opération `Like` d’une recherche n’est pas valide.  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
 1.  Examinez les caractères valides des expressions de liste.  
   
@@ -24,5 +27,5 @@ La chaîne de modèle spécifiée dans l’opération `Like` d’une recherche n
   
 4.  Terminez les plages de modèles par un crochet fermant.  
   
-## Voir aussi  
- [Like Operator](../../visual-basic/language-reference/operators/like-operator.md)
+## <a name="see-also"></a>Voir aussi  
+ [Like (opérateur)](../../visual-basic/language-reference/operators/like-operator.md)

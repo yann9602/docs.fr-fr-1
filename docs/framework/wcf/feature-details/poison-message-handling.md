@@ -1,22 +1,25 @@
 ---
-title: "Gestion des messages incoh&#233;rents | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Gestion des messages incohérents"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 719210e91fc98c7ceb0f6c51252cfcdfe2f1339c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Gestion des messages incoh&#233;rents
+# <a name="poison-message-handling"></a>Gestion des messages incohérents
 A *message incohérent* est un message qui a dépassé le nombre maximal de tentatives de remise à l’application. Cette situation peut survenir lorsqu'une application basée sur file d'attente ne peut pas traiter un message car des erreurs se sont produites. Pour faire face aux demandes de fiabilité, une application en file d'attente reçoit des messages sous une transaction. L'abandon de la transaction dans laquelle un message en file d'attente a été reçu laisse le message dans la file d'attente afin qu'une nouvelle tentative de remise puisse être effectuée sous une nouvelle transaction. Si le problème qui a provoqué l'abandon de la transaction n'est pas résolu, l'application réceptrice peut être bloquée dans une réception et un abandon en boucle du même message jusqu'à ce que le nombre maximal de tentatives de remise soit dépassé et qu'un message incohérent soit généré.  
   
  Un message peut devenir incohérent pour de nombreuses raisons. Les raisons les plus courantes sont spécifiques à l'application. Par exemple, si une application lit un message à partir d'une file d'attente et exécute un traitement de base de données, il est possible qu'elle ne parvienne pas à obtenir un verrou sur la base de données, provoquant ainsi l'abandon de la transaction. Parce que la transaction de base de données a été abandonnée, le message reste dans la file d'attente, ce qui conduit l'application à relire le message une deuxième fois et à tenter de nouveau d'acquérir un verrou sur la base de données. Les messages peuvent également devenir incohérents s'ils contiennent des informations non valides. Par exemple, une commande fournisseur peut contenir un numéro de client non valide. Dans ces cas-là, l'application peut abandonner volontairement la transaction et forcer le message à devenir un message incohérent.  
@@ -40,7 +43,7 @@ A *message incohérent* est un message qui a dépassé le nombre maximal de tent
   
 -   Reject. Cette option est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle fait en sorte que Message Queuing (MSMQ) renvoie un accusé de réception négatif au gestionnaire de files d'attente émetteur, signalant que l'application ne peut pas recevoir le message. Le message est placé dans la file d'attente de lettres mortes du gestionnaire de files d'attente émetteur.  
   
--   Move. Cette option est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle déplace le message incohérent vers une file d'attente de messages incohérents pour un traitement ultérieur par une application de gestion de messages incohérents. La file d'attente de messages incohérents est une sous-file d'attente de la file d'attente d'application. Une application de gestion de messages incohérents peut être un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui lit des messages à partir de la file d'attente de messages incohérents. La file d’attente de messages incohérent est une sous-file d’attente de la file d’attente de l’application et peut être adressée comme net.msmq://*-nom de l’ordinateur*>/*applicationQueue*; poison, où *-nom de l’ordinateur* est le nom de l’ordinateur sur lequel réside la file d’attente et le *applicationQueue* est le nom de la file d’attente spécifique à l’application.  
+-   Move. Cette option est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle déplace le message incohérent vers une file d'attente de messages incohérents pour un traitement ultérieur par une application de gestion de messages incohérents. La file d'attente de messages incohérents est une sous-file d'attente de la file d'attente d'application. Une application de gestion de messages incohérents peut être un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui lit des messages à partir de la file d'attente de messages incohérents. La file d’attente de messages incohérent est une sous-file d’attente de la file d’attente de l’application et peuvent être adressé en tant que net.msmq://\<*-nom de l’ordinateur*>/*applicationQueue*; poison, où  *nom de l’ordinateur* est le nom de l’ordinateur sur lequel réside la file d’attente et le *applicationQueue* est le nom de la file d’attente spécifique à l’application.  
   
  Voici le nombre maximal de tentatives de remise effectuées pour un message :  
   
@@ -67,11 +70,11 @@ A *message incohérent* est un message qui a dépassé le nombre maximal de tent
 >  Vous pouvez modifier les propriétés dans ces liaisons en fonction des spécifications de votre service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. L'ensemble du mécanisme de gestion de messages incohérents est local à l'application de réception. Le processus est invisible à l'application émettrice, à moins que l'application de réception ne s'arrête finalement et ne renvoie un accusé de réception négatif à l'expéditeur. Dans ce cas, le message est déplacé vers la file d'attente de lettres mortes de l'expéditeur.  
   
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>Recommandation : Gestion de MsmqPoisonMessageException  
- Lorsque le service détermine qu’un message est incohérent, le transport en file d’attente lève une <xref:System.ServiceModel.MsmqPoisonMessageException> qui contient la `LookupId` du message incohérent.  
+ Lorsque le service détermine qu'un message est incohérent, le transport de mise en file d'attente lève une <xref:System.ServiceModel.MsmqPoisonMessageException> qui contient le `LookupId` du message incohérent.  
   
- Une application de réception peut implémenter la <xref:System.ServiceModel.Dispatcher.IErrorHandler> interface pour gérer toute erreur requise par l’application. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Extension du contrôle de traitement et de création de rapports](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md).  
+ Une application de réception peut implémenter l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler> pour gérer toute erreur requise par l'application. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Extension du contrôle à la gestion des erreurs et création de rapports](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md).  
   
- Il est possible que l'application requière un système de gestion automatisée des messages empoisonnés qui déplace ceux-ci vers une file d'attente de messages empoisonnés afin que le service puisse accéder au reste des messages dans la file d'attente. Le seul scénario à l’aide du mécanisme de gestionnaire d’erreurs pour écouter les exceptions de message incohérent est lorsque le <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> est défini sur <xref:System.ServiceModel.ReceiveErrorHandling>. L'exemple de message empoisonné pour Message Queuing 3.0 illustre ce comportement. La section suivante décrit les étapes à suivre pour gérer des messages incohérents et fournit quelques recommandations :  
+ Il est possible que l'application requière un système de gestion automatisée des messages empoisonnés qui déplace ceux-ci vers une file d'attente de messages empoisonnés afin que le service puisse accéder au reste des messages dans la file d'attente. Le seul scénario dans lequel on utilise le mécanisme de gestionnaire d'erreurs pour écouter les exceptions de message incohérent est lorsque le paramètre <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> a la valeur <xref:System.ServiceModel.ReceiveErrorHandling.Fault>. L'exemple de message empoisonné pour Message Queuing 3.0 illustre ce comportement. La section suivante décrit les étapes à suivre pour gérer des messages incohérents et fournit quelques recommandations :  
   
 1.  Assurez-vous que vos paramètres de messages empoisonnés reflètent les besoins de votre application. Lors de l'utilisation des paramètres, assurez-vous de bien comprendre les différences entre les fonctions de Message Queuing sur [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
@@ -87,12 +90,12 @@ A *message incohérent* est un message qui a dépassé le nombre maximal de tent
   
   
   
- De plus, si `ReceiveErrorHandling` a la valeur `Fault`, `ServiceHost` renverra une erreur s'il rencontre le message empoisonné. Vous pouvez vous raccorder à l’événement d’erreur et arrêter le service, appliquer des actions correctives, puis redémarrer. Par exemple, le `LookupId` dans le <xref:System.ServiceModel.MsmqPoisonMessageException> propagées à la `IErrorHandler` peut être noté et quand les erreurs d’hôte de service, peut utiliser le `System.Messaging` API afin de recevoir le message de la file d’attente à l’aide la `LookupId` pour supprimer le message de la file d’attente et de stocker le message dans un magasin externe ou une autre file d’attente. Vous pouvez ensuite redémarrer `ServiceHost` pour continuer le traitement normal. Le [des messages incohérents dans MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md) illustre ce comportement.  
+ De plus, si `ReceiveErrorHandling` a la valeur `Fault`, `ServiceHost` renverra une erreur s'il rencontre le message empoisonné. Vous pouvez vous raccorder à l'événement d'erreur et arrêter le service, appliquer des mesures correctives, puis redémarrer. Par exemple, `LookupId` dans le <xref:System.ServiceModel.MsmqPoisonMessageException> propagé au `IErrorHandler` peut être noté, et lorsque l'hôte de service renvoie une erreur, vous pouvez utiliser l'API `System.Messaging` pour recevoir le message de la file d'attente à l'aide de `LookupId`, supprimer le message de la file d'attente, puis stocker le message dans un magasin externe ou une autre file d'attente. Vous pouvez ensuite redémarrer `ServiceHost` pour continuer le traitement normal. Le [des messages incohérents dans MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md) illustre ce comportement.  
   
 ## <a name="transaction-time-out-and-poison-messages"></a>Délai d’expiration de transaction et messages incohérents  
- Une classe d'erreurs peut se produire entre le canal de transport de mise en file d'attente et le code utilisateur. Ces erreurs peuvent être détectées par des couches intermédiaires, telles que la couche de sécurité de message ou la logique de distribution de service. Par exemple, un certificat X.509 manquant détecté dans la couche de sécurité SOAP et une action manquante sont des cas où le message est distribué à l'application. Lorsque cela se produit, le modèle de service supprime le message. Étant donné que le message est lu dans une transaction et qu'aucun résultat pour cette transaction ne peut être fourni, le délai d'attente de transaction finit par expirer, la transaction est abandonnée et le message est remis dans la file d'attente. En d’autres termes, pour une certaine classe d’erreurs, la transaction n’abandonne pas immédiatement mais attend l’expiration du délai d’attente. Vous pouvez modifier le délai d’expiration de transaction de service en utilisant <xref:System.ServiceModel.ServiceBehaviorAttribute>.  
+ Une classe d'erreurs peut se produire entre le canal de transport de mise en file d'attente et le code utilisateur. Ces erreurs peuvent être détectées par des couches intermédiaires, telles que la couche de sécurité de message ou la logique de distribution de service. Par exemple, un certificat X.509 manquant détecté dans la couche de sécurité SOAP et une action manquante sont des cas où le message est distribué à l'application. Lorsque cela se produit, le modèle de service supprime le message. Étant donné que le message est lu dans une transaction et qu'aucun résultat pour cette transaction ne peut être fourni, le délai d'attente de transaction finit par expirer, la transaction est abandonnée et le message est remis dans la file d'attente. En d'autres termes, pour une certaine classe d'erreurs, la transaction n'abandonne pas immédiatement mais attend l'expiration du délai d'attente. Vous pouvez modifier le délai d'expiration de transaction pour un service à l'aide de <xref:System.ServiceModel.ServiceBehaviorAttribute>.  
   
- Pour modifier le délai d’expiration de transaction à l’échelle de l’ordinateur, modifiez le fichier machine.config et définissez le délai d’expiration de transaction approprié. Il est important de noter que, en fonction du délai d'expiration défini dans la transaction, cette dernière finit par abandonner et revenir dans la file d'attente et son compteur d'abandons est incrémenté. Pour finir, le message devient empoisonné et la disposition correcte est effectuée conformément aux paramètres utilisateur.  
+ Pour modifier le délai d'expiration de transaction à l'échelle de l'ordinateur, modifiez le fichier machine.config et définissez le délai d'expiration de transaction approprié. Il est important de noter que, en fonction du délai d'expiration défini dans la transaction, cette dernière finit par abandonner et revenir dans la file d'attente et son compteur d'abandons est incrémenté. Pour finir, le message devient empoisonné et la disposition correcte est effectuée conformément aux paramètres utilisateur.  
   
 ## <a name="sessions-and-poison-messages"></a>Sessions et messages incohérents  
  Une session subit les mêmes procédures de nouvelle tentative et de gestion des messages incohérents qu'un simple message. Les propriétés indiquées précédemment pour les messages empoisonnés s'appliquent à la session entière. En d'autres termes, la session entière est soumise à une nouvelle tentative et finit dans une ultime file d'attente de messages empoisonnés ou dans la file d'attente de lettres mortes de l'expéditeur si le message est refusé.  
@@ -113,6 +116,6 @@ A *message incohérent* est un message qui a dépassé le nombre maximal de tent
 -   Message Queuing dans [!INCLUDE[wv](../../../../includes/wv-md.md)] prend en charge la propriété d'un message qui compte le nombre de tentatives de remise du message. Cette propriété du nombre d'abandons n'est pas disponible sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] ni sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] conserve le nombre d'abandons en mémoire, si bien qu'il est possible que cette propriété ne contienne pas une valeur exacte lorsque le même message est lu par plusieurs services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans une batterie de serveurs.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble des files d’attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)   
- [Différences de fonctionnalités de file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)   
- [Spécification et gestion des erreurs dans les contrats et les Services](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+ [Vue d’ensemble des files d’attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [Différences de fonctionnalités de file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
+ [Spécification et gestion des erreurs dans les contrats et les services](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

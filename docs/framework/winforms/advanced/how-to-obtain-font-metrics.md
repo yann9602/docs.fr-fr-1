@@ -1,66 +1,70 @@
 ---
-title: "Comment&#160;: obtenir la m&#233;trique des polices | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "métriques des polices, obtenir"
-  - "polices, obtenir les métriques"
+title: "Comment : obtenir la métrique des polices"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- fonts [Windows Forms], obtaining metrics
+- font metrics [Windows Forms], obtaining
 ms.assetid: ff7c0616-67f7-4fa2-84ee-b8d642f2b09b
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5b45f3f903c02d056fc457b652b01fb7b59413a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: obtenir la m&#233;trique des polices
-La classe <xref:System.Drawing.FontFamily> fournit les méthodes suivantes qui récupèrent diverses métriques pour une combinaison famille\/style particulière :  
+# <a name="how-to-obtain-font-metrics"></a>Comment : obtenir la métrique des polices
+La <xref:System.Drawing.FontFamily> classe fournit les méthodes suivantes qui récupèrent diverses métriques pour une combinaison famille/style particulière :  
   
--   <xref:System.Drawing.FontFamily.GetEmHeight%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetEmHeight%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetCellAscent%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetCellAscent%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetCellDescent%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetCellDescent%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetLineSpacing%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetLineSpacing%2A>(FontStyle)  
   
- Les nombres retournés par ces méthodes sont exprimés en unités de design de police, et sont donc indépendants de la taille et des unités d'un objet <xref:System.Drawing.Font> particulier.  
+ Les nombres retournés par ces méthodes sont en unités de design de police, afin qu’ils soient indépendants de la taille et les unités d’un particulier <xref:System.Drawing.Font> objet.  
   
- L'illustration suivante présente les diverses métriques.  
+ L’illustration suivante montre les diverses métriques.  
   
  ![Polices du texte](../../../../docs/framework/winforms/advanced/media/fontstext7a.png "fontstext7A")  
   
-## Exemple  
- L'exemple suivant affiche la métrique du style Regular de la famille de polices Arial.  Le code crée également un objet <xref:System.Drawing.Font> \(basé sur la famille Arial\) d'une taille de 16 pixels et affiche la métrique \(en pixels\) de cet objet <xref:System.Drawing.Font> particulier.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant affiche les métriques pour le style normal de la famille de polices Arial. Le code crée également un <xref:System.Drawing.Font> objet (basé sur la famille Arial) avec la taille de 16 pixels et affiche la métrique (en pixels) pour ce particulier <xref:System.Drawing.Font> objet.  
   
- L'illustration suivante montre la sortie de l'exemple de code.  
+ L’illustration suivante montre la sortie de l’exemple de code.  
   
  ![Polices du texte](../../../../docs/framework/winforms/advanced/media/csfontstext8.png "csFontsText8")  
   
- Notez les deux premières lignes de la sortie présentée dans l'illustration précédente.  L'objet <xref:System.Drawing.Font> retourne la taille 16 et l'objet <xref:System.Drawing.FontFamily> la hauteur 2 048.  Ces deux nombres \(16 et 2 048\) constituent les éléments clés de la conversion entre les unités de design de police et les unités \(dans ce cas des pixels\) de l'objet <xref:System.Drawing.Font>.  
+ Notez les deux premières lignes de sortie dans l’illustration précédente. Le <xref:System.Drawing.Font> objet retourne une taille de 16 et le <xref:System.Drawing.FontFamily> object retourne une hauteur de 2 048. Ces deux nombres (16 et 2 048) sont essentiels à la conversion entre les unités de design de police et les unités (dans ce cas des pixels) de la <xref:System.Drawing.Font> objet.  
   
- Par exemple, vous pouvez convertir la hampe d'unités de design en pixels de la façon suivante :  
+ Par exemple, vous pouvez convertir la hauteur d’unités de design en pixels comme suit :  
   
  ![Polices du texte](../../../../docs/framework/winforms/advanced/media/fontstext9.png "FontsText9")  
   
- Le code suivant positionne le texte verticalement en définissant les données membres <xref:System.Drawing.PointF.Y%2A> d'un objet <xref:System.Drawing.PointF>.  La coordonnée y augmente de `font.Height` pour chaque ligne de texte.  La propriété <xref:System.Drawing.Font.Height%2A> d'un objet <xref:System.Drawing.Font> retourne l'interligne \(en pixels\) pour cet objet <xref:System.Drawing.Font> particulier.  Dans cet exemple, le nombre retourné par <xref:System.Drawing.Font.Height%2A> est 19.  Notez que ce nombre \(arrondi à un entier\) est identique à celui qui est obtenu en convertissant la métrique d'interligne en pixels.  
+ Le code suivant positionne le texte verticalement en définissant le <xref:System.Drawing.PointF.Y%2A> membre de données d’un <xref:System.Drawing.PointF> objet. Coordonnée y est augmentée `font.Height` pour chaque nouvelle ligne de texte. Le <xref:System.Drawing.Font.Height%2A> propriété d’un <xref:System.Drawing.Font> objet retourne l’interligne (en pixels) pour ce particulier <xref:System.Drawing.Font> objet. Dans cet exemple, le nombre retourné par <xref:System.Drawing.Font.Height%2A> est 19. Notez que cela est le même que le nombre (arrondi à un entier) obtenu en convertissant la métrique d’interligne en pixels.  
   
- Notez que la hauteur exprimée en em \(appelée également taille ou taille exprimée en em\) n'est pas la somme du jambage ascendant et du jambage descendant.  La somme du jambage ascendant et du jambage descendant s'appelle la hauteur de cellule.  La hauteur de cellule moins l'espacement interne est égale à la hauteur exprimée en em.  La hauteur de cellule plus l'espacement externe est égale à l'interligne.  
+ Notez que la hauteur du carré cadratin (également appelée taille "em" ou de taille) n’est pas la somme de la hauteur et la profondeur. La somme de la hauteur et la profondeur est appelée à la hauteur des cellules. La hauteur de cellule moins l’espacement interne est égale à la hauteur du carré cadratin. La hauteur de cellule plus l’espacement externe est égale à l’interligne.  
   
  [!code-csharp[System.Drawing.FontsAndText#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.FontsAndText#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#71)]  
   
-## Compilation du code  
- L'exemple précédent est destiné à une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+## <a name="compiling-the-code"></a>Compilation du code  
+ L'exemple précédent est conçu pour une utilisation avec Windows Forms et nécessite <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## Voir aussi  
- [Graphiques et dessins dans les Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Graphiques et dessins dans Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [Utilisation de polices et de texte](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

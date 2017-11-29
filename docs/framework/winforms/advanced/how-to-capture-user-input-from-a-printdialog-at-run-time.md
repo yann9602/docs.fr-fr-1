@@ -1,69 +1,70 @@
 ---
-title: "Comment&#160;: capturer une entr&#233;e d&#39;utilisateur &#224; partir d&#39;un composant PrintDialog au moment de l&#39;ex&#233;cution | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "options d'impression"
-  - "options d'impression, modifier au moment de l'exécution"
-  - "imprimer (Windows Forms), options"
-  - "au moment de l'exécution, modifier les options d'impression"
+title: "Comment : capturer une entrée d'utilisateur à partir d'un composant PrintDialog au moment de l'exécution"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- print options [Windows Forms], changing at run time
+- printing [Windows Forms], options
+- print options
+- run time [Windows Forms], changing print options
 ms.assetid: 438501d8-9a70-4fb3-aae6-e46579aba0c6
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6c942cb5f005177b74dd25a9725b4990553adbb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: capturer une entr&#233;e d&#39;utilisateur &#224; partir d&#39;un composant PrintDialog au moment de l&#39;ex&#233;cution
-Alors que vous pouvez définir les options liées à l'impression au moment du design, vous souhaiterez quelquefois modifier ces options au moment de l'exécution, très probablement à cause des choix faits par l'utilisateur.  Vous pouvez capturer une entrée d'utilisateur pour imprimer un document à l'aide des composants <xref:System.Windows.Forms.PrintDialog> et <xref:System.Drawing.Printing.PrintDocument>.  
+# <a name="how-to-capture-user-input-from-a-printdialog-at-run-time"></a>Comment : capturer une entrée d'utilisateur à partir d'un composant PrintDialog au moment de l'exécution
+Vous pouvez configurer les options relatives à l’impression au moment du design, vous devez parfois modifier ces options en cours d’exécution, probablement en raison des choix effectués par l’utilisateur. Vous pouvez capturer l’entrée d’utilisateur pour l’impression d’un document à l’aide de la <xref:System.Windows.Forms.PrintDialog> et <xref:System.Drawing.Printing.PrintDocument> composants.  
   
-### Pour modifier les options d'impression par programme  
+### <a name="to-change-print-options-programmatically"></a>Pour modifier les options d’impression par programmation  
   
-1.  Ajoutez les composants <xref:System.Windows.Forms.PrintDialog> et <xref:System.Drawing.Printing.PrintDocument> à votre formulaire.  
+1.  Ajouter un <xref:System.Windows.Forms.PrintDialog> et une <xref:System.Drawing.Printing.PrintDocument> à votre formulaire.  
   
-2.  Définissez la propriété <xref:System.Windows.Forms.PrintDialog.Document%2A> du contrôle <xref:System.Windows.Forms.PrintDialog> en fonction du composant <xref:System.Drawing.Printing.PrintDocument> ajouté au formulaire.  
+2.  Définir le <xref:System.Windows.Forms.PrintDialog.Document%2A> propriété de la <xref:System.Windows.Forms.PrintDialog> à la <xref:System.Drawing.Printing.PrintDocument> ajouté au formulaire.  
   
     ```vb  
     PrintDialog1.Document = PrintDocument1  
-  
     ```  
   
     ```csharp  
     printDialog1.Document = PrintDocument1;  
-  
     ```  
   
     ```cpp  
     printDialog1->Document = PrintDocument1;  
     ```  
   
-3.  Affichez le composant <xref:System.Windows.Forms.PrintDialog> en utilisant la méthode <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>.  
+3.  Afficher le <xref:System.Windows.Forms.PrintDialog> composant à l’aide de la <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> (méthode).  
   
     ```vb  
     PrintDialog1.ShowDialog()  
-  
     ```  
   
     ```csharp  
     printDialog1.ShowDialog();  
-  
     ```  
   
     ```cpp  
     printDialog1->ShowDialog();  
     ```  
   
-4.  Les choix d'impression de l'utilisateur qui figurent dans la boîte de dialogue seront copiés vers la propriété <xref:System.Drawing.Printing.PrinterSettings> du composant <xref:System.Drawing.Printing.PrintDocument>.  
+4.  Choix de l’impression de l’utilisateur à partir de la boîte de dialogue seront copiés dans le <xref:System.Drawing.Printing.PrinterSettings> propriété de la <xref:System.Drawing.Printing.PrintDocument> composant.  
   
-## Voir aussi  
- [Comment : imprimer un fichier texte composé de plusieurs pages dans les Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)   
- [Prise en charge de l'impression dans les Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+## <a name="see-also"></a>Voir aussi  
+ [Comment : imprimer un fichier texte composé de plusieurs pages dans les Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)  
+ [Prise en charge de l’impression dans les Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

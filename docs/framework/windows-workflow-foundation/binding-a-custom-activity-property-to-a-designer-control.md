@@ -1,29 +1,33 @@
 ---
-title: "Liaison d&#39;une propri&#233;t&#233; d&#39;activit&#233; personnalis&#233;e &#224; un contr&#244;le de concepteur | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Liaison d’une propriété d’activité personnalisée à un contrôle de concepteur"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2e8061ea-10f5-407c-a31f-d0d74ce12f27
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e9edc168dc6e4111e5f2d58a62c2b0341f74aa04
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Liaison d&#39;une propri&#233;t&#233; d&#39;activit&#233; personnalis&#233;e &#224; un contr&#244;le de concepteur
-La liaison contrôle de concepteur de zone de texte à un argument d'activité est assez simple . Toutefois, la liaison d'un contrôle de concepteur complexe \(tel qu'une zone de liste déroulante\) à un argument d'activité peut poser des problèmes.Cette rubrique explique comment lier un argument d'activité à un contrôle de zone de liste déroulante sur un concepteur d'activités personnalisées.  
+# <a name="binding-a-custom-activity-property-to-a-designer-control"></a>Liaison d’une propriété d’activité personnalisée à un contrôle de concepteur
+La liaison contrôle de concepteur de zone de texte à un argument d'activité est assez simple . Toutefois, la liaison d'un contrôle de concepteur complexe (tel qu'une zone de liste déroulante) à un argument d'activité peut poser des problèmes. Cette rubrique explique comment lier un argument d'activité à un contrôle de zone de liste déroulante sur un concepteur d'activités personnalisées.  
   
-#### Création du convertisseur d'éléments de zone de liste déroulante  
+#### <a name="creating-the-combo-box-item-converter"></a>Création du convertisseur d'éléments de zone de liste déroulante  
   
 1.  Créez une solution vide appelée CustomProperty dans Visual Studio.  
   
-2.  Créez une classe appelée ComboBoxItemConverter.Ajoutez une référence à System.Windows.Data et faites dériver la classe de <xref:System.Windows.Data.IValueConverter>.Faites en sorte que Visual Studio implémente l'interface pour générer des stubs pour <xref:System.Windows.Data.IValueConverter.Convert%2A> et <xref:System.Windows.Data.IValueConverter.ConvertBack%2A>.  
+2.  Créez une classe appelée ComboBoxItemConverter. Ajoutez une référence à System.Windows.Data et faites dériver la classe de <xref:System.Windows.Data.IValueConverter>. Faites en sorte que Visual Studio implémente l'interface pour générer des stubs pour `Convert` et `ConvertBack`.  
   
-3.  Ajoutez le code suivant à la méthode <xref:System.Windows.Data.IValueConverter.Convert%2A>.Ce code convertit l'<xref:System.Activities.InArgument%601> de l'activité de type <xref:System.String> en la valeur à placer dans le concepteur.  
+3.  Ajoutez le code suivant à la méthode `Convert`. Ce code convertit l'<xref:System.Activities.InArgument%601> de l'activité de type <xref:System.String> en la valeur à placer dans le concepteur.  
   
     ```  
     ModelItem modelItem = value as ModelItem;  
@@ -48,10 +52,9 @@ La liaison contrôle de concepteur de zone de texte à un argument d'activité e
         }  
     }  
     return null;  
-  
     ```  
   
-     L'expression dans l'extrait de code ci\-dessus peut aussi être créée en utilisant <xref:Microsoft.CSharp.Activities.CSharpValue%601> plutôt que <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
+     L'expression dans l'extrait de code ci-dessus peut également être créée à l'aide de <xref:Microsoft.CSharp.Activities.CSharpValue%601> à la place de <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
   
     ```  
     ModelItem modelItem = value as ModelItem;  
@@ -76,10 +79,9 @@ La liaison contrôle de concepteur de zone de texte à un argument d'activité e
         }  
     }  
     return null;  
-  
     ```  
   
-4.  Ajoutez le code suivant à la méthode <xref:System.Windows.Data.IValueConverter.ConvertBack%2A>.Ce code convertit à nouveau l'élément de zone de liste déroulante entrant en <xref:System.Activities.InArgument%601>.  
+4.  Ajoutez le code suivant à la méthode `ConvertBack`. Ce code convertit à nouveau l'élément de zone de liste déroulante entrant en <xref:System.Activities.InArgument%601>.  
   
     ```  
     // Convert combo box value to InArgument<string>  
@@ -87,10 +89,9 @@ La liaison contrôle de concepteur de zone de texte à un argument d'activité e
                 VisualBasicValue<string> vbArgument = new VisualBasicValue<string>(itemContent);  
                 InArgument<string> inArgument = new InArgument<string>(vbArgument);  
                 return inArgument;  
-  
     ```  
   
-     L'expression dans l'extrait de code ci\-dessus peut aussi être créée en utilisant <xref:Microsoft.CSharp.Activities.CSharpValue%601> plutôt que <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
+     L'expression dans l'extrait de code ci-dessus peut également être créée à l'aide de <xref:Microsoft.CSharp.Activities.CSharpValue%601> à la place de <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
   
     ```  
     // Convert combo box value to InArgument<string>  
@@ -98,16 +99,15 @@ La liaison contrôle de concepteur de zone de texte à un argument d'activité e
                 CSharpValue<string> csArgument = new CSharpValue<string>(itemContent);  
                 InArgument<string> inArgument = new InArgument<string>(csArgument);  
                 return inArgument;  
-  
     ```  
   
-#### Ajout de ComboBoxItemConverter au concepteur personnalisé d'une activité  
+#### <a name="adding-the-comboboxitemconverter-to-the-custom-designer-of-an-activity"></a>Ajout de ComboBoxItemConverter au concepteur personnalisé d'une activité  
   
-1.  Ajoutez un nouvel élément au projet.Dans la boîte de dialogue Nouvel élément, sélectionnez le nœud de workflow et ActivityDesigner comme type de nouvel élément.Nommez le CustomPropertyDesigner de l'élément.  
+1.  Ajoutez un nouvel élément au projet. Dans la boîte de dialogue Nouvel élément, sélectionnez le nœud de workflow et ActivityDesigner comme type de nouvel élément. Nommez le CustomPropertyDesigner de l'élément.  
   
-2.  Ajoutez une zone de liste déroulante au nouveau concepteur.Dans la propriété Items, ajoutez plusieurs éléments à la zone de liste déroulante, avec les valeurs de contenu « Item1 » et « Item2 ».  
+2.  Ajoutez une zone de liste déroulante au nouveau concepteur. Dans la propriété Items, ajoutez plusieurs éléments à la zone de liste déroulante, avec les valeurs de contenu « Item1 » et « Item2 ».  
   
-3.  Modifiez le code XAML de la zone de liste déroulante pour ajouter le nouveau convertisseur d'éléments comme convertisseur à utiliser pour la zone de liste déroulante.Le convertisseur est ajouté comme ressource dans le segment ActivityDesigner.Resources et spécifie le convertisseur dans l'attribut Converter pour la <xref:System.Windows.Controls.ComboBox>.Notez que l'espace de noms du projet est spécifié dans les attributs Namespaces pour le concepteur d'activité ; si le concepteur doit être utilisé dans un projet différent, cet espace de noms devra être modifié.  
+3.  Modifiez le code XAML de la zone de liste déroulante pour ajouter le nouveau convertisseur d'éléments comme convertisseur à utiliser pour la zone de liste déroulante. Le convertisseur est ajouté comme ressource dans le segment ActivityDesigner.Resources et spécifie le convertisseur dans l'attribut Converter pour la <xref:System.Windows.Controls.ComboBox>. Notez que l'espace de noms du projet est spécifié dans les attributs Namespaces pour le concepteur d'activité ; si le concepteur doit être utilisé dans un projet différent, cet espace de noms devra être modifié.  
   
     ```  
     <sap:ActivityDesigner x:Class="CustomProperty.CustomPropertyDesigner"  
@@ -129,18 +129,16 @@ La liaison contrôle de concepteur de zone de texte à un argument d'activité e
             </ComboBox>  
         </Grid>  
     </sap:ActivityDesigner>  
-  
     ```  
   
-4.  Créez un élément de type <xref:System.Activities.CodeActivity>.Le code par défaut créé par l'IDE pour l'activité suffira pour cet exemple.  
+4.  Créez un élément de type <xref:System.Activities.CodeActivity>. Le code par défaut créé par l'IDE pour l'activité suffira pour cet exemple.  
   
 5.  Ajoutez l'attribut suivant à la définition de classe :  
   
     ```  
     [Designer(typeof(CustomPropertyDesigner))]  
-  
     ```  
   
      Cette ligne associe le nouveau concepteur à la nouvelle classe.  
   
- La nouvelle activité doit maintenant être associée au concepteur.Pour tester la nouvelle activité, ajoutez\-la à un workflow et affectez les deux valeurs à la zone de liste déroulante.La fenêtre de propriétés doit être mise à jour pour refléter la valeur de la zone de liste déroulante.
+ La nouvelle activité doit maintenant être associée au concepteur. Pour tester la nouvelle activité, ajoutez-la à un workflow et affectez les deux valeurs à la zone de liste déroulante. La fenêtre de propriétés doit être mise à jour pour refléter la valeur de la zone de liste déroulante.

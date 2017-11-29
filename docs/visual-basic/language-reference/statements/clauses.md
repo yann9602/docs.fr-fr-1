@@ -1,28 +1,26 @@
 ---
-title: "Clauses (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "clauses [Visual Basic]"
+title: Clauses (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords: clauses [Visual Basic]
 ms.assetid: 5e89f5f3-d129-4ed1-8857-30cd71cff95e
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1a4166cc480541f913dd47952782a6015c5348a2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Clauses (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Les rubriques de cette section documentent les clauses à l'exécution de Visual Basic.  
+# <a name="clauses-visual-basic"></a>Clauses (Visual Basic)
+Les rubriques de cette section de document clauses du runtime Visual Basic.  
   
-## Dans cette section  
+## <a name="in-this-section"></a>Dans cette section  
  [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
   
  [As](../../../visual-basic/language-reference/statements/as-clause.md)  
@@ -37,7 +35,7 @@ Les rubriques de cette section documentent les clauses à l'exécution de Visual
   
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)  
   
-## Rubriques connexes  
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)  
+## <a name="related-sections"></a>Rubriques connexes  
+ [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

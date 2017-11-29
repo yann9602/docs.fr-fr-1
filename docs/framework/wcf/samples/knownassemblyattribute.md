@@ -1,26 +1,29 @@
 ---
-title: "KnownAssemblyAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: KnownAssemblyAttribute
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e2ffa42fabed3fe32f557cee9c4cb14a331d7350
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# KnownAssemblyAttribute
-Cet exemple montre comment les processus de sérialisation et de désérialisation peuvent être personnalisés à l'aide de la classe <xref:System.Runtime.Serialization.DataContractResolver>.  Cet exemple montre comment ajouter dynamiquement des types connus pendant la sérialisation et la désérialisation.  
+# <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
+Cet exemple montre comment les processus de sérialisation et de désérialisation peuvent être personnalisés à l'aide de la classe <xref:System.Runtime.Serialization.DataContractResolver>. Cet exemple montre comment ajouter dynamiquement des types connus pendant la sérialisation et la désérialisation.  
   
-## Détails de l'exemple  
- Cet exemple est composé de quatre projets.  L'un d'eux correspond au service, qui sera hébergé par IIS et définit le contrat de service suivant.  
+## <a name="sample-details"></a>Détails de l'exemple  
+ Cet exemple est composé de quatre projets. L'un d'eux correspond au service, qui sera hébergé par IIS et définit le contrat de service suivant.  
   
 ```  
 // Definition of a service contract.  
@@ -43,7 +46,6 @@ public interface IDataContractCalculator
     [OperationContract]  
     List<ComplexNumber> CombineLists(List<ComplexNumber> list1, List<ComplexNumber> list2);  
 }  
-  
 ```  
   
  Le contrat de service est implémenté tel qu'indiqué dans le code suivant.  
@@ -90,10 +92,9 @@ public interface IDataContractCalculator
         return result;  
     }  
 }  
-  
 ```  
   
- Un autre projet correspond au client, qui communique avec le serveur et appelle les méthodes qu'il expose.  La définition du client est représentée dans l'exemple suivant.  
+ Un autre projet correspond au client, qui communique avec le serveur et appelle les méthodes qu'il expose. La définition du client est représentée dans l'exemple suivant.  
   
 ```  
  // Client implementation code.  
@@ -194,14 +195,13 @@ public interface IDataContractCalculator
         Console.ReadLine();  
     }  
 }  
-  
 ```  
   
- La définition du contrat de service est marquée avec l'attribut `KnownAssembly`.  Cet attribut contient le nom d'une bibliothèque de types, qui seront tous reconnus au moment de l'exécution, tant par le service que par le client.  
+ La définition du contrat de service est marquée avec l'attribut `KnownAssembly`. Cet attribut contient le nom d'une bibliothèque de types, qui seront tous reconnus au moment de l'exécution, tant par le service que par le client.  
   
- L'attribut `KnownAssembly` implémente `IContractBehavior` afin de définir un `DataContractSerializer` assorti d'un `DataContractResolver` défini pour chacun des comportements d'opération.  Le `DataContractResolver` effectue une réflexion sur l'assembly au moment de sa création, et crée le dictionnaire avec le mappage entre les types et les noms utilisés lors de la sérialisation et de la désérialisation des différents types.  De cette façon, les types `ResolveType` et `ResolveName` doivent rechercher les données requises dans le dictionnaire.  
+ L'attribut `KnownAssembly` implémente `IContractBehavior` afin de définir un `DataContractSerializer` assorti d'un `DataContractResolver` défini pour chacun des comportements d'opération. Le `DataContractResolver` effectue une réflexion sur l'assembly au moment de sa création, et crée le dictionnaire avec le mappage entre les types et les noms utilisés lors de la sérialisation et de la désérialisation des différents types. De cette façon, les types `ResolveType` et `ResolveName` doivent rechercher les données requises dans le dictionnaire.  
   
- Le `DataContractResolver` défini pour cet exemple est représenté ci\-dessous.  
+ Le `DataContractResolver` défini pour cet exemple est représenté ci-dessous.  
   
 ```  
 public class MyDataContractResolver : DataContractResolver  
@@ -283,10 +283,9 @@ public class MyDataContractResolver : DataContractResolver
            }  
        }  
    }  
-  
 ```  
   
- La bibliothèque de types utilisée dans cet exemple est représentée ci\-dessous.  
+ La bibliothèque de types utilisée dans cet exemple est représentée ci-dessous.  
   
 ```  
  [DataContract]  
@@ -329,7 +328,6 @@ public class ComplexNumberWithMagnitude : ComplexNumber
         set { }  
     }  
 }  
-  
 ```  
   
  Notez que `ComplexNumber` n'a pas besoin de connaître le type `ComplexNumberWithMagnitude` de façon statique, car il est reconnu au moment de l'exécution.  
@@ -354,34 +352,33 @@ Lists combined:
 2 + 2i  
 3 + 3i  
 4 + 4i  
-  
 ```  
   
-#### Pour configurer, générer et exécuter l'exemple  
+#### <a name="to-set-up-run-and-build-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1.  Cliquez avec le bouton droit sur la solution **KnownAssemblyAttribute** et sélectionnez **Propriétés**.  
+1.  Avec le bouton droit de la solution **KnownAssemblyAttribute** et sélectionnez **propriétés**.  
   
-2.  Dans **Propriétés communes**, sélectionnez **Projet de démarrage**, puis cliquez sur **Plusieurs projets de démarrage**.  
+2.  Dans **propriétés communes**, sélectionnez **projet de démarrage**, puis cliquez sur **plusieurs projets de démarrage**.  
   
-3.  Ajoutez l'action **Démarrer** aux projets **Service** et **Client**.  
+3.  Ajouter le **Démarrer** action à la **Service** et **Client** projets.  
   
-4.  Cliquez sur **OK**, puis appuyez sur **F5** pour exécuter l'exemple.  
+4.  Cliquez sur **OK**, puis appuyez sur **F5** pour exécuter l’exemple.  
   
 5.  Si l'application ne s'exécute pas correctement, procédez comme suit pour vous assurer que votre environnement a été correctement configuré :  
   
-6.  Assurez\-vous d'avoir effectué la [Procédure d'installation unique pour les exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150774).  
+6.  Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150774).  
   
-7.  Pour générer la solution, suivez les instructions de la page [Génération des exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150775).  
+7.  Pour générer la solution, suivez les instructions de [générer les exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150775).  
   
-8.  Pour exécuter l'exemple sur un seul ou plusieurs ordinateurs, suivez les instructions de la page [Exécution des exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150776).  
+8.  Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=150776).  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur.  Recherchez le répertoire \(par défaut\) suivant avant de continuer.  
+>  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples`  
+>  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n'existe pas, accédez à la page des [exemples Windows Communication Foundation \(WCF\) et Windows Workflow Foundation \(WF\) pour .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à la page [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] . Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<LecteurInstall>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
   
-## Voir aussi
+## <a name="see-also"></a>Voir aussi

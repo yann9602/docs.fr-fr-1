@@ -1,41 +1,44 @@
 ---
-title: "FUNCTION (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: FUNCTION (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 40c8f218238492bbbc4af543aa6f9a635454b359
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# FUNCTION (Entity SQL)
+# <a name="function-entity-sql"></a>FUNCTION (Entity SQL)
 Définit une fonction dans la portée d'une commande de requête Entity SQL.  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
-  
-FUNCTION function-name( [ { parameter_name <type_definition>   
+FUNCTION function-name  
+( [ { parameter_name <type_definition>   
         [ ,...n ]  
   ]  
 ) AS ( function_expression )   
   
 <type_definition>::=  
-    { data_type | COLLECTION ( <type_definition>)   
-                | REF (data_type)   
-                | ROW (row_expression)   
+    { data_type | COLLECTION ( <type_definition> )   
+                | REF ( data_type )   
+                | ROW ( row_expression )   
         }   
 ```  
   
-## Arguments  
+## <a name="arguments"></a>Arguments  
  `function-name`  
  Nom de la fonction.  
   
@@ -48,19 +51,19 @@ FUNCTION function-name( [ { parameter_name <type_definition>
  `data_type`  
  Nom d'un type pris en charge.  
   
- COLLECTION \( \<type\_definition`>` \)  
+ COLLECTION ( <type_definition`>` )  
  Expression qui retourne une collection de types, lignes ou références pris en charge.  
   
- REF **\(** `data_type` **\)**  
+ REF **(**`data_type`**)**  
  Expression qui retourne une référence à un type d'entité.  
   
- ROW **\(** `row_expression` **\)**  
+ ROW **(**`row_expression`**)**  
  Expression qui retourne des enregistrements anonymes, structurellement typés à partir d'une ou plusieurs valeurs. Pour plus d'informations, consultez [ROW](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md).  
   
-## Notes  
- Plusieurs fonctions du même nom peuvent être déclarées inline, à condition que les signatures des fonctions soient différentes. Pour plus d'informations, consultez [Résolution de surcharge des fonctions](../../../../../../docs/framework/data/adonet/ef/language-reference/function-overload-resolution-entity-sql.md).  
+## <a name="remarks"></a>Remarques  
+ Plusieurs fonctions du même nom peuvent être déclarées inline, à condition que les signatures des fonctions soient différentes. Pour plus d'informations, consultez [Function Overload Resolution](../../../../../../docs/framework/data/adonet/ef/language-reference/function-overload-resolution-entity-sql.md).  
   
- Une fonction incluse peut être appelée dans une commande Entity SQL après seulement qu'elle a été définie dans cette commande. Toutefois, une fonction incluse peut être appelée au sein d'une autre fonction incluse avant ou après la définition de la fonction appelée. Dans l'exemple suivant, la fonction  A appelle la fonction B avant que la fonction  B soit définie :  
+ Une fonction incluse peut être appelée dans une commande Entity SQL après seulement qu'elle a été définie dans cette commande. Toutefois, une fonction incluse peut être appelée au sein d'une autre fonction incluse avant ou après la définition de la fonction appelée. Dans l'exemple suivant, la fonction  A appelle la fonction B avant que la fonction  B soit définie :  
   
  `Function A() as ('A calls B. ' + B())`  
   
@@ -68,20 +71,20 @@ FUNCTION function-name( [ { parameter_name <type_definition>
   
  `A()`  
   
- Pour plus d’informations, consultez [Comment : appeler une fonction définie par l’utilisateur](http://msdn.microsoft.com/fr-fr/ad131b86-8b4e-4747-8605-d4fc64fb9d02).  
+ Pour plus d’informations, consultez [Comment : appeler une fonction définie par l’utilisateur](http://msdn.microsoft.com/en-us/ad131b86-8b4e-4747-8605-d4fc64fb9d02).  
   
- Les fonctions peuvent également être déclarées dans le modèle lui\-même. Les fonctions déclarées dans le modèle sont exécutées de la même façon que les fonctions déclarées inline dans la commande. Pour plus d'informations, consultez [Fonctions définies par l'utilisateur](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).  
+ Les fonctions peuvent également être déclarées dans le modèle lui-même. Les fonctions déclarées dans le modèle sont exécutées de la même façon que les fonctions déclarées inline dans la commande. Pour plus d’informations, consultez [les fonctions définies par l’utilisateur](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  La commande Entity SQL suivante définit une fonction `Products` qui accepte une valeur entière pour filtrer les produits retournés.  
   
  [!code-csharp[DP EntityServices Concepts 2#FUNCTION1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function1)]  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  La commande Entity SQL suivante définit une fonction `StringReturnsCollection` qui accepte une collection de chaînes pour filtrer les contacts retournés.  
   
  [!code-csharp[DP EntityServices Concepts 2#FUNCTION2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function2)]  
   
-## Voir aussi  
- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
  [Langage Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)

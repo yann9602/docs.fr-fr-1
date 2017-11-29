@@ -1,43 +1,47 @@
 ---
-title: "Comment&#160;: afficher des bo&#238;tes de dialogue pour les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "boîtes de dialogue, afficher pour les Windows Forms"
-  - "boîtes de dialogue Windows Forms, afficher"
-  - "Windows Forms, appeler un formulaire à partir d'un autre"
-  - "Windows Forms, afficher"
+title: "Comment : afficher des boîtes de dialogue pour les Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Windows Forms, displaying
+- Windows Forms dialog boxes [Windows Forms], displaying
+- Windows Forms, calling one form from another
+- dialog boxes [Windows Forms], displaying for Windows Forms
 ms.assetid: aaac1b38-c651-495a-8d3d-5a9bfb32fee3
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a3f827e9052260c1b836246d38c55e2cb2a9e5cc
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: afficher des bo&#238;tes de dialogue pour les Windows Forms
-Les boîtes de dialogue s'affichent comme n'importe quel autre formulaire d'une application.  Le formulaire de démarrage est automatiquement chargé lorsque l'application est exécutée.  Pour faire apparaître dans l'application un deuxième formulaire ou une deuxième boîte de dialogue, écrivez du code pour le charger et l'afficher.  De la même manière, pour faire disparaître un formulaire ou une boîte de dialogue, écrivez du code pour le décharger ou le masquer.  
+# <a name="how-to-display-dialog-boxes-for-windows-forms"></a>Comment : afficher des boîtes de dialogue pour les Windows Forms
+Afficher une boîte de dialogue de la même façon que vous affichez toute autre forme dans une application. Le formulaire de démarrage charge automatiquement lorsque l’application est exécutée. Pour rendre un deuxième formulaire ou une boîte de dialogue s’affichent dans l’application, écrire du code pour charger et l’afficher. De même, pour rendre le formulaire ou la boîte de dialogue zone disparaissent, écrire du code pour décharger ou le masquer.  
   
-### Pour afficher une boîte de dialogue  
+### <a name="to-display-a-dialog-box"></a>Pour afficher une boîte de dialogue  
   
-1.  Naviguez jusqu'au gestionnaire d'événements avec lequel vous voulez ouvrir la boîte de dialogue.  L'ouverture peut résulter de la sélection d'une commande de menu, d'un clic sur un bouton ou de tout autre événement choisi.  
+1.  Accédez au gestionnaire d’événements avec lequel vous souhaitez ouvrir la boîte de dialogue. Cela peut se produire lorsqu’une commande de menu est sélectionnée, un clic sur un bouton ou de tout autre événement se produit.  
   
-2.  Dans le gestionnaire d'événements, ajoutez le code d'ouverture de la boîte de dialogue.  Dans cet exemple, un événement Click sur un bouton est utilisé pour afficher la boîte de dialogue :  
+2.  Dans le Gestionnaire d’événements, ajoutez le code pour ouvrir la boîte de dialogue. Dans cet exemple, un événement de clic de bouton est utilisé pour afficher la boîte de dialogue :  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
        Dim dlg1 as new Form()  
        dlg1.ShowDialog()  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -46,7 +50,6 @@ Les boîtes de dialogue s'affichent comme n'importe quel autre formulaire d'une 
        Form dlg1 = new Form();  
        dlg1.ShowDialog();  
     }  
-  
     ```  
   
     ```cpp  

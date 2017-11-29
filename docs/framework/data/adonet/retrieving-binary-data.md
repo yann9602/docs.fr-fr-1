@@ -1,30 +1,36 @@
 ---
-title: "R&#233;cup&#233;ration de donn&#233;es binaires | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Extraction de données binaires"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bd524ed605f1fe125480bae0949745f4f045f03a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# R&#233;cup&#233;ration de donn&#233;es binaires
-Par défaut, le **DataReader** charge les données entrantes comme une ligne dès qu'une ligne de données complète est disponible.  Les objets binaires volumineux ou BLOB doivent néanmoins être traités différemment car ils peuvent renfermer plusieurs gigaoctets de données qu'une seule ligne ne suffirait pas à contenir.  La méthode **Command.ExecuteReader** a une surcharge qui prendra un argument <xref:System.Data.CommandBehavior> pour modifier le comportement par défaut du **DataReader**.  Vous pouvez passer <xref:System.Data.CommandBehavior> à la méthode **ExecuteReader** pour modifier le comportement par défaut du **DataReader** de sorte qu'au lieu de charger des lignes de données, il chargera les données de façon séquentielle au fur et à mesure de leur réception.  Cela est idéal pour charger les BLOB ou d'autres grosses structures de données.  Notez que ce comportement peut différer selon votre source de données.  Par exemple, un BLOB retourné de Microsoft Access est entièrement chargé dans la mémoire, au lieu que les données soient chargées de façon séquentielle à mesure qu'elles arrivent.  
+# <a name="retrieving-binary-data"></a>Extraction de données binaires
+Par défaut, le **DataReader** charge les données entrantes comme une ligne dès qu’une ligne de données complète est disponible. Les objets binaires volumineux ou BLOB doivent néanmoins être traités différemment car ils peuvent renfermer plusieurs gigaoctets de données qu'une seule ligne ne suffirait pas à contenir. Le **Command.ExecuteReader** méthode a une surcharge qui prendra un <xref:System.Data.CommandBehavior> argument pour modifier le comportement par défaut de la **DataReader**. Vous pouvez passer <xref:System.Data.CommandBehavior.SequentialAccess> à la **ExecuteReader** méthode permettant de modifier le comportement par défaut de la **DataReader** afin qu’au lieu de charger des lignes de données, il chargera les données séquentiellement qu’elles sont reçues. Cela est idéal pour charger les BLOB ou d'autres grosses structures de données. Notez que ce comportement peut différer selon votre source de données. Par exemple, un BLOB retourné de Microsoft Access est entièrement chargé dans la mémoire, au lieu que les données soient chargées de façon séquentielle à mesure qu'elles arrivent.  
   
- Lors de la configuration du **DataReader** pour qu'il utilise **SequentialAccess**, il est important de noter l'ordre dans lequel vous accédez aux champs retournés.  Le comportement par défaut du **DataReader**, qui charge une ligne entière dès qu'elle est disponible, vous permet d'accéder aux champs retournés dans n'importe quel ordre jusqu'à la lecture de la ligne suivante.  Lors de l'utilisation de **SequentialAccess**, cependant, vous devez accéder dans l'ordre aux différents champs retournés par le **DataReader**.  Par exemple, si votre requête retourne trois colonnes, la troisième étant un BLOB, vous devez retourner les valeurs des premier et deuxième champs avant d'accéder aux données BLOB du troisième champ.  Si vous accédez au troisième champ avant le premier ou le deuxième, les valeurs de ces champs ne seront plus disponibles.  Cela s'explique par le fait que **SequentialAccess** a modifié le **DataReader** pour retourner les données dans l'ordre et les données ne sont plus disponibles après que **DataReader** en a dépassé la fin.  
+ Lors de la définition du **DataReader** à utiliser **SequentialAccess**, il est important de noter l’ordre dans lequel vous accéder aux champs retournés. Le comportement par défaut de la **DataReader**, qui charge une ligne entière dès qu’elle est disponible, vous permet d’accéder aux champs retournés dans n’importe quel ordre jusqu'à la lecture de la ligne suivante. Lorsque vous utilisez **SequentialAccess** Toutefois, vous devez accéder les champs retournés par le **DataReader** dans l’ordre. Par exemple, si votre requête retourne trois colonnes, la troisième étant un BLOB, vous devez retourner les valeurs des premier et deuxième champs avant d'accéder aux données BLOB du troisième champ. Si vous accédez au troisième champ avant le premier ou le deuxième, les valeurs de ces champs ne seront plus disponibles. C’est parce que **SequentialAccess** a modifié la **DataReader** pour retourner des données dans l’ordre et les données n’est pas disponible après la **DataReader** a.  
   
- Lorsque vous accédez aux données du champ BLOB, utilisez l'accesseur typé **GetBytes** ou **GetChars** du **DataReader** qui remplit un tableau avec les données.  Vous pouvez également utiliser **GetString** pour les données de type caractère ; toutefois,  pour économiser les ressources système, vous souhaitez peut\-être ne pas charger la valeur entière du BLOB dans une seule variable chaîne.  Au lieu de cela, vous pouvez spécifier une taille de mémoire tampon spécifique des données à retourner ainsi qu'un emplacement de départ pour le premier octet ou le premier caractère lu des données retournées.  **GetBytes** et **GetChars** retourneront une valeur `long`, qui représente le nombre d'octets ou de caractères retournés.  Si vous passez un tableau null à **GetBytes** ou **GetChars**, la valeur de type long retournée sera le nombre total d'octets ou de caractères contenus dans le BLOB.  Vous pouvez éventuellement spécifier un index dans le tableau comme position de départ pour les données en cours de lecture.  
+ Lorsque vous accédez aux données du champ BLOB, utilisez le **GetBytes** ou **GetChars** tapé les accesseurs de la **DataReader**, qui remplit un tableau avec les données. Vous pouvez également utiliser **GetString** pour les données de type caractère ; toutefois. pour économiser les ressources système, vous souhaitez peut-être ne pas charger la valeur entière du BLOB dans une seule variable chaîne. Au lieu de cela, vous pouvez spécifier une taille de mémoire tampon spécifique des données à retourner ainsi qu'un emplacement de départ pour le premier octet ou le premier caractère lu des données retournées. **GetBytes** et **GetChars** retournera un `long` valeur, qui représente le nombre d’octets ou de caractères retournés. Si vous passez un tableau null à **GetBytes** ou **GetChars**, la valeur de type long retournée sera le nombre total d’octets ou de caractères dans l’objet BLOB. Vous pouvez éventuellement spécifier un index dans le tableau comme position de départ pour les données en cours de lecture.  
   
-## Exemple  
- L'exemple suivant retourne l'ID et le logo de l'éditeur de l'exemple de la base de données **pubs** dans Microsoft SQL Server.  L'ID de l'éditeur \(`pub_id`\) est un champ texte et le logo est une image \(un BLOB\).  Étant donné que le champ **logo** est une bitmap, l'exemple retourne des données binaires au moyen de **GetBytes**.  Notez que pour la ligne de données actuelle, il faut accéder à l'ID de l'éditeur avant d'accéder au logo car l'accès aux champs doit être séquentiel.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant retourne l’ID de l’éditeur et le logo de la **pubs** base de données dans Microsoft SQL Server. L'ID de l'éditeur (`pub_id`) est un champ texte et le logo est une image (un BLOB). Étant donné que la **logo** champ est une image bitmap, l’exemple retourne des données binaires à l’aide **GetBytes**. Notez que pour la ligne de données actuelle, il faut accéder à l'ID de l'éditeur avant d'accéder au logo car l'accès aux champs doit être séquentiel.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -88,7 +94,6 @@ Loop
 ' Close the reader and the connection.  
 reader.Close()  
 connection.Close()  
-  
 ```  
   
 ```csharp  
@@ -145,7 +150,7 @@ while (reader.Read())
   }  
   
   // Write the remaining buffer.  
-  writer.Write(outByte, 0, (int)retval - 1);  
+  writer.Write(outByte, 0, (int)retval);  
   writer.Flush();  
   
   // Close the output file.  
@@ -158,7 +163,7 @@ reader.Close();
 connection.Close();  
 ```  
   
-## Voir aussi  
- [Working with DataReaders](http://msdn.microsoft.com/fr-fr/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [Données binaires et de valeur élevée SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Utilisation de DataReaders](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [Données binaires et de valeur élevée SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

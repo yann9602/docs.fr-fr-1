@@ -1,35 +1,32 @@
 ---
-title: "Equals Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Equals"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Equals keyword"
+title: Equals, clause (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Equals
+helpviewer_keywords: Equals keyword [Visual Basic]
 ms.assetid: 3f5a7f21-3d54-4479-8197-bab62b34ac2e
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b9481aa79e4729ad279237edc4457af6e602940d
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Equals Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
+# <a name="equals-clause-visual-basic"></a>Equals, clause (Visual Basic)
 Compare les clés des collections qui sont jointes.  
   
-## Notes  
- Le mot clé `Equals` est utilisé dans les contextes suivants :  
+## <a name="remarks"></a>Remarques  
+ Le `Equals` mot clé est utilisé dans les contextes suivants :  
   
- [Group Join Clause](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join (clause)](../../../visual-basic/language-reference/queries/group-join-clause.md)  
   
- [Join Clause](../../../visual-basic/language-reference/queries/join-clause.md)  
+ [Join (clause)](../../../visual-basic/language-reference/queries/join-clause.md)  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Mots clés](../../../visual-basic/language-reference/keywords/index.md)

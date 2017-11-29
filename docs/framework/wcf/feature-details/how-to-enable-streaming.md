@@ -1,22 +1,28 @@
 ---
-title: "Comment&#160;: activer la diffusion en continu | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Comment : activer la diffusion en continu"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8436ceefea936ddbf708aa3f79c5f7bd8153ac66
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: activer la diffusion en continu
+# <a name="how-to-enable-streaming"></a>Comment : activer la diffusion en continu
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut envoyer des messages utilisant des transferts par mise en mémoire tampon ou par diffusion en continu. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
   
  Pour activer la diffusion en continu, définissez le `OperationContract` convenablement et activez la diffusion en continu au niveau du transport.  
@@ -27,7 +33,7 @@ caps.handback.revision: 13
   
     1.  Le paramètre qui gère les données diffusées en continu doit être le seul paramètre dans la méthode. Par exemple, si le message d'entrée est celui à diffuser en continu, l'opération ne doit avoir qu'un seul paramètre d'entrée. De la même façon, si le message de sortie doit être diffusé en continu, l'opération ne doit avoir qu'un seul paramètre de sortie ou qu'une seule valeur de retour.  
   
-    2.  Au moins un des types de la valeur de paramètre et de retour doit être <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, ou <xref:System.Xml.Serialization.IXmlSerializable>.  
+    2.  Au moins l'un des types de paramètre et de valeur de retour doit être <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>ou <xref:System.Xml.Serialization.IXmlSerializable>.  
   
      Ce qui suit est un exemple de contrat de diffusion des données en continu.  
   
@@ -52,7 +58,7 @@ caps.handback.revision: 13
   
     1.  L'extrait de code de configuration suivant tiré de l'exemple présente l'affectation du mode de diffusion en continu à la propriété `TransferMode` sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   
-         <!-- TODO: review snippet reference [!code[c_HowTo_EnableStreaming#103](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]  -->  
+         [!code-xml[c_HowTo_EnableStreaming#103](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]   
   
     2.  L'extrait de code suivant affiche l'affectation à la propriété `TransferMode` la diffusion en continu sur la `basicHttpBinding` et sur une liaison HTTP personnalisée.  
   
@@ -71,7 +77,7 @@ caps.handback.revision: 13
   
 ### <a name="writing-a-custom-stream"></a>Écriture d'un flux personnalisé  
   
-1.  Pour effectuer un traitement spécial sur chaque bloc d’un flux de données alors qu’il est envoyé ou reçu, dérivez une classe de flux personnalisée de <xref:System.IO.Stream>. Pour donner un exemple d'un flux personnalisé, le code suivant contient une méthode `GetReversedStream` et une classe `ReverseStream`-.  
+1.  Pour effectuer un traitement spécial sur chaque bloc d'un flux alors qu'il est envoyé ou reçu, dérivez une classe de flux personnalisé de <xref:System.IO.Stream>. Pour donner un exemple d'un flux personnalisé, le code suivant contient une méthode `GetReversedStream` et une classe `ReverseStream`-.  
   
      `GetReversedStream` crée et retourne une nouvelle instance de `ReverseStream`. Le traitement réel se produit lorsque le système lit l'objet `ReverseStream`. La méthode `ReverseStream.Read` lit un bloc d'octets du fichier sous-jacent, les inverse, puis retourne les octets inversés. Cette méthode n'inverse pas l'ensemble du contenu du fichier, mais uniquement un bloc d'octets à la fois. Cet exemple montre comment vous pouvez traiter un flux pendant que le contenu est lu ou écrit à partir du flux.  
   
@@ -79,5 +85,5 @@ caps.handback.revision: 13
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Données volumineuses et diffusion en continu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)   
- [Flux de données](../../../../docs/framework/wcf/samples/stream.md)
+ [Données volumineuses et diffusion en continu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
+ [Flux](../../../../docs/framework/wcf/samples/stream.md)

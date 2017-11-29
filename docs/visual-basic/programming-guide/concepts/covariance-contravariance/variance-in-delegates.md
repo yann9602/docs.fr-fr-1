@@ -1,35 +1,27 @@
 ---
-title: "Variance dans les délégués (Visual Basic) | Documents Microsoft"
+title: "Variance dans les délégués (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 38e9353f-74f8-4211-a8f0-7a495414df4a
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cbab7da8c97ca202f8a4d0a1a65b8fa240cca32d
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9fe76a32f76f760497021289ec1c6ce673cec1b8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="variance-in-delegates-visual-basic"></a>Variance dans les délégués (Visual Basic)
-.NET framework 3.5 introduit la prise en charge de la variance pour faire correspondre les signatures de méthode aux types délégués dans tous les délégués dans c# et Visual Basic. Cela signifie que vous pouvez affecter aux délégués non seulement les méthodes qui ont à faire correspondre les signatures, mais également des méthodes qui retournent plus dérivés (covariance) de types ou qui acceptent des paramètres ayant des types moins dérivés (contravariance) que ceux spécifiés par le type délégué. Cela inclut les délégués génériques et non génériques.  
+.NET framework 3.5 a introduit la prise en charge de la variance pour la correspondance des signatures de méthode avec des types de délégués dans tous les délégués en c# et Visual Basic. Cela signifie que vous pouvez assigner aux délégués non seulement les méthodes ayant des signatures correspondantes, mais également des méthodes qui retournent des types plus dérivés (covariance) ou qui acceptent des paramètres ayant des types moins dérivés (contravariance) que ceux spécifiés par le type délégué. Cela inclut à la fois des délégués génériques et non génériques.  
   
- Par exemple, prenons le code suivant, qui a deux classes et deux délégués : générique et non générique.  
+ Par exemple, considérez le code suivant, qui a deux classes et deux délégués : génériques et non génériques.  
   
 ```vb  
 Public Class First  
@@ -43,7 +35,7 @@ Public Delegate Function SampleDelegate(ByVal a As Second) As First
 Public Delegate Function SampleGenericDelegate(Of A, R)(ByVal a As A) As R  
 ```  
   
- Lorsque vous créez des délégués de la `SampleDelegate` ou `SampleDelegate(Of A, R)` types, vous pouvez affecter l’une des méthodes suivantes à ces délégués.  
+ Quand vous créez des délégués des types `SampleDelegate` ou `SampleDelegate(Of A, R)`, vous pouvez assigner l’une des méthodes suivantes à ces délégués.  
   
 ```vb  
 ' Matching signature.  
@@ -92,14 +84,14 @@ Dim dGeneric As SampleGenericDelegate(Of Second, First) = AddressOf ASecondRFirs
 Dim dGenericConversion As SampleGenericDelegate(Of Second, First) = AddressOf AFirstRSecond  
 ```  
   
- Pour plus d’exemples, consultez [à l’aide de la Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) et [à l’aide de la Variance pour les délégués Func et Action générique (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+ Pour plus d’exemples, consultez [à l’aide de la Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) et [à l’aide de la Variance pour Func et Action de délégués génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
-## <a name="variance-in-generic-type-parameters"></a>Variance dans les paramètres de Type générique  
- Dans .NET Framework 4 et versions ultérieures, vous pouvez activer la conversion implicite entre les délégués, afin que les délégués génériques qui ont des types différents spécifiés par les paramètres de type générique peuvent être affectés à l’autre, si les types sont héritées de l’autre comme requis par la variance.  
+## <a name="variance-in-generic-type-parameters"></a>Variance dans les paramètres de type générique  
+ Dans .NET Framework 4 et versions ultérieures vous pouvez activer la conversion implicite entre les délégués, afin que les délégués génériques qui ont des types différents spécifiés par les paramètres de type générique peuvent être affectées à l’autre, si les types sont héritées de l’autre comme requis par variance.  
   
- Pour activer la conversion implicite, vous devez déclarer explicitement les paramètres génériques d’un délégué comme covariant ou contravariant à l’aide de la `in` ou `out` (mot clé).  
+ Pour activer la conversion implicite, vous devez déclarer explicitement les paramètres génériques dans un délégué comme covariant ou contravariant à l’aide du mot clé `in` ou `out`.  
   
- L’exemple de code suivant montre comment vous pouvez créer un délégué ayant un paramètre de type générique covariant.  
+ L’exemple de code suivant indique comment vous pouvez créer un délégué ayant un paramètre de type générique covariant.  
   
 ```vb  
 ' Type T is declared covariant by using the out keyword.  
@@ -112,9 +104,9 @@ Sub Test()
 End Sub  
 ```  
   
- Si vous utilisez uniquement prise en charge de la variance pour faire correspondre les signatures de méthode avec des types délégués et n’utilisent pas le `in` et `out` mots clés, vous pouvez trouver que quelquefois vous pouvez instancier des délégués avec des expressions ou méthodes lambda identiques, mais vous ne pouvez pas assigner un délégué à un autre.  
+ Si vous utilisez uniquement la prise en charge de la variance pour faire correspondre les signatures de méthode aux types délégués et que vous n’utilisez pas les mots clés `in` et `out`, vous pouvez réaliser qu’il est parfois possible d’instancier des délégués avec des expressions ou méthodes lambda identiques, mais que vous ne pouvez pas assigner un délégué à un autre.  
   
- Dans l’exemple de code suivant, `SampleGenericDelegate(Of String)` ne peut pas être converti explicitement en `SampleGenericDelegate(Of Object)`, bien que `String` hérite `Object`. Vous pouvez résoudre ce problème en marquant le paramètre générique `T` avec la `out` (mot clé).  
+ Dans l’exemple de code suivant, `SampleGenericDelegate(Of String)` ne peut pas être converti explicitement en `SampleGenericDelegate(Of Object)`, bien que `String` hérite `Object`. Vous pouvez résoudre ce problème en marquant le paramètre générique `T` avec le mot clé `out`.  
   
 ```vb  
 Public Delegate Function SampleGenericDelegate(Of T)() As T  
@@ -134,48 +126,68 @@ Sub Test()
 End Sub  
 ```  
   
-### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Paramètres de Type des délégués génériques qui ont de variante dans le .NET Framework  
- .NET framework 4 a introduit la prise en charge des paramètres de type générique dans plusieurs délégués génériques existants :  
+### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Délégués génériques ayant des paramètres de type variant dans le .NET Framework  
+ .NET Framework 4 a introduit la prise en charge de la variance pour les paramètres de type générique dans plusieurs délégués génériques existants :  
   
--   `Action`délégués de la <xref:System>espace de noms, par exemple, <xref:System.Action%601>et <xref:System.Action%602></xref:System.Action%602> </xref:System.Action%601> </xref:System>  
+-   Les délégués `Action` de l’espace de noms <xref:System>, par exemple, <xref:System.Action%601> et <xref:System.Action%602>  
   
--   `Func`délégués de la <xref:System>espace de noms, par exemple, <xref:System.Func%601>et <xref:System.Func%602></xref:System.Func%602> </xref:System.Func%601> </xref:System>  
+-   Les délégués `Func` de l’espace de noms <xref:System>, par exemple, <xref:System.Func%601> et <xref:System.Func%602>  
   
--   Le <xref:System.Predicate%601>délégué</xref:System.Predicate%601>  
+-   Le délégué <xref:System.Predicate%601>  
   
--   Le <xref:System.Comparison%601>délégué</xref:System.Comparison%601>  
+-   Le délégué <xref:System.Comparison%601>  
   
--   Le <xref:System.Converter%602>délégué</xref:System.Converter%602>  
+-   Le délégué <xref:System.Converter%602>  
   
- Pour plus d’informations et d’exemples, consultez [à l’aide de la Variance pour les délégués Func et Action générique (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+ Pour plus d’informations et d’exemples, consultez [à l’aide de la Variance pour Func et Action de délégués génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
-### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>Déclarer des paramètres de Type Variant dans les délégués génériques  
- Si un délégué générique est covariant ou les paramètres de type générique contravariant, il peut être appelé une *des délégués génériques variants*.  
+### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>Déclaration de paramètres de type variant dans les délégués génériques  
+ Si un délégué générique possède des paramètres de type générique covariant ou contravariant, il peut être désigné sous le nom de *délégué générique variant*.  
   
- Vous pouvez déclarer un paramètre de type générique covariant dans un délégué générique à l’aide de la `out` (mot clé). Le type covariant peut être utilisé uniquement comme type de retour de méthode et non comme un type d’arguments de méthode. L’exemple de code suivant montre comment déclarer un délégué générique covariant.  
+ Vous pouvez déclarer un paramètre de type générique covariant dans un délégué générique à l’aide du mot clé `out`. Le type covariant peut être utilisé uniquement comme type de retour de méthode et non comme type d’arguments de méthode. L’exemple de code suivant indique comment déclarer un délégué générique covariant.  
   
-<CodeContentPlaceHolder>5</CodeContentPlaceHolder>  
- Vous pouvez déclarer un contravariant de paramètre de type générique dans un délégué générique à l’aide de la `in` (mot clé). Le type contravariant peut être utilisé uniquement comme type d’arguments de méthode et non comme un type de retour de méthode. L’exemple de code suivant montre comment déclarer un délégué générique contravariant.  
+```vb  
+Public Delegate Function DCovariant(Of Out R)() As R  
+```  
   
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
+ Vous pouvez déclarer un paramètre de type générique contravariant dans un délégué générique à l’aide du mot clé `in`. Le type contravariant peut être utilisé uniquement comme type d’arguments de méthode et non comme type de retour de méthode. L’exemple de code suivant indique comment déclarer un délégué générique contravariant.  
+  
+```vb  
+Public Delegate Sub DContravariant(Of In A)(ByVal a As A)  
+```  
+  
 > [!IMPORTANT]
->  `ByRef`paramètres en Visual Basic ne peut pas être marquées en tant que variant.  
+>  `ByRef`paramètres Visual Basic ne peut pas être marquées en tant que variant.  
   
- Il est également possible de prendre en charge de variance et la covariance dans le même délégué, mais pour les paramètres de type différents. L'exemple suivant le démontre.  
+ Il est également possible de prendre en charge à la fois la variance et la covariance dans le même délégué, mais pour des paramètres de type différents. L'exemple suivant le démontre.  
   
-<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
+```vb  
+Public Delegate Function DVariant(Of In A, Out R)(ByVal a As A) As R  
+```  
+  
 ### <a name="instantiating-and-invoking-variant-generic-delegates"></a>Instanciation et appel de délégués génériques variants  
- Vous pouvez instancier et appeler des délégués variants comme vous instanciez et appelez des délégués invariants. Dans l’exemple suivant, le délégué est instancié par une expression lambda.  
+ Vous pouvez instancier et appeler des délégués variants de la même façon que vous instanciez et appelez des délégués invariants. Dans l’exemple suivant, le délégué est instancié par une expression lambda.  
   
-<CodeContentPlaceHolder>8</CodeContentPlaceHolder>  
-### <a name="combining-variant-generic-delegates"></a>Combinaison de délégués génériques variants  
- Vous ne devez pas combiner les délégués variants. Le <xref:System.Delegate.Combine%2A>méthode ne prend pas en charge la conversion des délégués variants et attend les délégués d’être exactement du même type.</xref:System.Delegate.Combine%2A> Cela peut entraîner une exception runtime lorsque vous combinez des délégués à l’aide du <xref:System.Delegate.Combine%2A>(méthode) (en c# et Visual Basic) ou à l’aide de la `+` (opérateur) (en c#), comme illustré dans l’exemple de code suivant.</xref:System.Delegate.Combine%2A>  
+```vb  
+Dim dvariant As DVariant(Of String, String) = Function(str) str + " "  
+dvariant("test")  
+```  
   
-<CodeContentPlaceHolder>9</CodeContentPlaceHolder>  
-## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>Variance dans les paramètres de Type générique pour les Types valeur et référence  
- Variance pour les paramètres de type générique est pris en charge pour les types de référence. Par exemple, `DVariant(Of Int)`ne peut pas être converti implicitement en `DVariant(Of Object)` ou `DVariant(Of Long)`, car entier est un type valeur.  
+### <a name="combining-variant-generic-delegates"></a>Combinaison des délégués génériques variants  
+ Vous ne devez pas combiner les délégués variants. La méthode <xref:System.Delegate.Combine%2A> ne prend pas en charge la conversion des délégués variants et nécessite le même type pour tous les délégués. Cela peut entraîner une exception runtime lorsque vous combinez des délégués à l’aide du <xref:System.Delegate.Combine%2A> (méthode) (en c# et Visual Basic) ou à l’aide de la `+` (opérateur) (en c#), comme illustré dans l’exemple de code suivant.  
   
- L’exemple suivant montre que la variance de type générique à laquelle les paramètres n'est pas pris en charge pour les types valeur.  
+```vb  
+Dim actObj As Action(Of Object) = Sub(x) Console.WriteLine("object: {0}", x)  
+Dim actStr As Action(Of String) = Sub(x) Console.WriteLine("string: {0}", x)  
+  
+' The following statement throws an exception at run time.  
+' Dim actCombine = [Delegate].Combine(actStr, actObj)  
+```  
+  
+## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>Variance dans les paramètres de type générique pour les types valeur et référence  
+ La variance pour les paramètres de type générique est prise en charge uniquement pour les types référence. Par exemple, `DVariant(Of Int)`ne peut pas être converti implicitement en `DVariant(Of Object)` ou `DVariant(Of Long)`, car l’entier est un type valeur.  
+  
+ L’exemple suivant montre que la variance dans les paramètres de type générique n’est pas prise en charge pour les types valeur.  
   
 ```vb  
 ' The type T is covariant.  
@@ -198,8 +210,8 @@ End Sub
 ```  
   
 ## <a name="relaxed-delegate-conversion-in-visual-basic"></a>Conversion simplifiée des délégués dans Visual Basic  
- Conversion simplifiée des délégués permet davantage de flexibilité pour faire correspondre les signatures de méthode aux types délégués. Par exemple, il vous permet d’omettre des spécifications de paramètres et omettre les valeurs de retour de fonction lorsque vous assignez une méthode à un délégué. Pour plus d’informations, consultez [la Conversion simplifiée des délégués](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+ Conversion simplifiée des délégués permet une plus grande souplesse dans la correspondance des signatures de méthode avec des types délégués. Par exemple, il vous permet d’omettre des spécifications de paramètres et omettre les valeurs de retour de fonction lorsque vous assignez une méthode à un délégué. Pour plus d’informations, consultez [Conversion souple en délégué](../../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Génériques](https://msdn.microsoft.com/library/ms172192)   
- [Utilisation de la Variance pour les délégués Func et Action générique (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+ [Génériques](~/docs/standard/generics/index.md)  
+ [Utilisation de la variance pour les délégués génériques Func et Action (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

@@ -1,44 +1,42 @@
 ---
-title: "Initializer expected | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30996"
-  - "bc30996"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30996"
+title: Initialiseur attendu
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30996
+- bc30996
+helpviewer_keywords: BC30996
 ms.assetid: 6e183fe0-8888-43ed-a062-01571079455f
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 46ff91ec240212571f7ec9f26e82d9d128263545
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Initializer expected
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Vous avez essayé de déclarer une instance d'une classe en utilisant un initialiseur d'objet dans lequel la liste d'initialisation est vide, comme indiqué dans l'exemple suivant.  
+# <a name="initializer-expected"></a>Initialiseur attendu
+Vous avez tenté de déclarer une instance d’une classe à l’aide d’un initialiseur d’objet dans lequel la liste d’initialisation est vide, comme indiqué dans l’exemple suivant.  
   
  `' Not valid.`  
   
  `' Dim aStudent As New Student With {}`  
   
- Au moins un champ ou une propriété doit être initialisé dans la liste d'initialiseurs, comme indiqué dans l'exemple suivant.  
+ Au moins un champ ou une propriété doit être initialisée dans la liste d’initialiseurs, comme indiqué dans l’exemple suivant.  
   
  `Dim aStudent As New Student With {.year = "Senior"}`  
   
- **ID d'erreur :** BC30996  
+ **ID d’erreur :** BC30996  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1.  Initialisez au moins un champ ou une propriété dans l'initialiseur ou n'utilisez pas d'initialiseur d'objet.  
+1.  Initialisation d’au moins un champ ou une propriété dans l’initialiseur ou n’utilisez pas un initialiseur d’objet.  
   
-## Voir aussi  
- [Object Initializers: Named and Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
- [How to: Declare an Object by Using an Object Initializer](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
+## <a name="see-also"></a>Voir aussi  
+ [Initialiseurs d’objets : types nommés et anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [Guide pratique : déclarer un objet à l’aide d’un initialiseur d’objet](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)

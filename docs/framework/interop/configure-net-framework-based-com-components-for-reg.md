@@ -1,19 +1,13 @@
 ---
-title: "Guide pratique pour configurer les composants COM .NET Framework pour l'activation sans inscription"
+title: "Comment : configurer les composants COM .NET Framework pour l'activation sans inscription"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - components [.NET Framework], manifest
 - application manifests [.NET Framework]
@@ -21,18 +15,17 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cb323bfdff40aafa65c050d4d42f66047d63f650
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d373d6abc82e482a3b1df873295573f0e34eeda2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Guide pratique pour configurer les composants COM .NET Framework pour l'activation sans inscription
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Comment : configurer les composants COM .NET Framework pour l'activation sans inscription
 L’activation sans inscription des composants .NET Framework n’est que légèrement plus compliquée que pour les composants COM. L’installation requiert deux manifestes :  
   
 -   Les applications COM doivent avoir un manifeste d’application de style Win32 pour identifier le composant managé.  
@@ -52,7 +45,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-     Pour plus d’informations sur les éléments de manifeste et leurs attributs, recherchez « Application Manifests Reference » dans MSDN Library.  
+     Pour plus d’informations sur les éléments de manifeste et leurs attributs, consultez [manifestes d’Application](https://msdn.microsoft.com/library/windows/desktop/aa374191.aspx).  
   
 3.  Identifiez le propriétaire du manifeste. Dans l’exemple suivant, le fichier manifeste appartient à `myComApp` version 1.  
   
@@ -92,7 +85,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
 5.  Nommez et enregistrez le fichier manifeste. Le nom d’un manifeste d’application est le nom de l’exécutable d’assembly suivi de l’extension .manifest. Par exemple, le nom du fichier manifeste d’application de myComApp.exe est myComApp.exe.manifest.  
   
- Vous pouvez installer un manifeste d’application dans le même répertoire que l’application COM. Vous pouvez également l’ajouter en tant que ressource au fichier .exe de l’application. Pour plus d’informations, recherchez « Side-by-side Assemblies » dans MSDN Library.  
+ Vous pouvez installer un manifeste d’application dans le même répertoire que l’application COM. Vous pouvez également l’ajouter en tant que ressource au fichier .exe de l’application. Pour plus d’informations, pour plus d’informations, consultez [à propos des assemblys côte à côte](https://msdn.microsoft.com/library/windows/desktop/ff951640.aspx).  
   
 #### <a name="to-create-a-component-manifest"></a>Pour créer un manifeste de composant  
   
@@ -188,8 +181,7 @@ L’activation sans inscription des composants .NET Framework n’est que légè
      `myresource.res` est de nouveau le nom du fichier de ressources contenant la ressource incorporée.  
   
 ## <a name="see-also"></a>Voir aussi  
- [COM Interop sans inscription](../../../docs/framework/interop/registration-free-com-interop.md)   
- [Configuration requise pour COM Interop sans inscription](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)   
- [Configuration des composants COM pour l’activation sans inscription](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)   
+ [COM Interop sans inscription](../../../docs/framework/interop/registration-free-com-interop.md)  
+ [Configuration requise pour COM Interop sans inscription](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)  
+ [Configuration des composants COM pour l’Activation sans inscription](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)  
  [Activation sans inscription de composants .NET : une procédure pas à pas](http://go.microsoft.com/fwlink/?LinkId=158812)
-

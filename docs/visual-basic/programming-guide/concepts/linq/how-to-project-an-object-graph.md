@@ -1,32 +1,28 @@
 ---
-title: "Procédure : projeter un graphique d’objet (Visual Basic) | Documents Microsoft"
+title: "Comment : projeter un graphique d’objet (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e634d2520e5b40d6ccb8ac11ce47f726980ef8cd
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 946c09035c2856203c544c6e5378624989b0e96b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-project-an-object-graph-visual-basic"></a>Procédure : projeter un graphique d’objet (Visual Basic)
+# <a name="how-to-project-an-object-graph-visual-basic"></a>Comment : projeter un graphique d’objet (Visual Basic)
 Cette rubrique montre comment projeter, ou remplir, un graphique d'objet à partir de données XML.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant remplit un graphique d’objet avec la `Address`, `PurchaseOrder`, et `PurchaseOrderItem` classes à partir de la [exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) document XML.  
+ Le code suivant remplit un graphique d’objet avec les classes `Address`, `PurchaseOrder` et `PurchaseOrderItem` à partir du document XML [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Class Address  
@@ -307,10 +303,9 @@ Sub Main()
     }  
     Console.WriteLine(purchOrder)  
 End Sub  
-  
 ```  
   
- Dans cet exemple, le résultat de la [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] requête est retournée comme un <xref:System.Collections.Generic.IEnumerable%601>de `PurchaseOrderItem`.</xref:System.Collections.Generic.IEnumerable%601> Les éléments de la `PurchaseOrder` classe sont de type <xref:System.Collections.Generic.IEnumerable%601>de `PurchaseOrderItem`.</xref:System.Collections.Generic.IEnumerable%601> Le code utilise le <xref:System.Linq.Enumerable.ToList%2A>méthode d’extension pour créer un <xref:System.Collections.Generic.List%601>à partir des résultats de la requête.</xref:System.Collections.Generic.List%601> </xref:System.Linq.Enumerable.ToList%2A>  
+ Dans cet exemple, le résultat de la requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] est retourné en tant que <xref:System.Collections.Generic.IEnumerable%601> de `PurchaseOrderItem`. Les éléments de la classe `PurchaseOrder` sont de type <xref:System.Collections.Generic.IEnumerable%601> de `PurchaseOrderItem`. Le code utilise la méthode d’extension <xref:System.Linq.Enumerable.ToList%2A> pour créer une collection <xref:System.Collections.Generic.List%601> à partir des résultats de la requête.  
   
  L'exemple produit la sortie suivante :  
   
@@ -352,6 +347,6 @@ ShipDate: 5/21/1999
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Linq.Enumerable.Select%2A></xref:System.Linq.Enumerable.Select%2A>   
- <xref:System.Linq.Enumerable.ToList%2A></xref:System.Linq.Enumerable.ToList%2A>   
+ <xref:System.Linq.Enumerable.Select%2A>  
+ <xref:System.Linq.Enumerable.ToList%2A>  
  [Projections et Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

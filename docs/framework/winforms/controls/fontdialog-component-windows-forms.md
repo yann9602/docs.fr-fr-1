@@ -1,44 +1,45 @@
 ---
-title: "FontDialog, composant (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Police (boîte de dialogue), Windows Forms"
-  - "FontDialog (composant Windows Forms)"
-  - "polices, boîte de dialogue"
+title: FontDialog, composant (Windows Forms)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- fonts [Windows Forms], dialog box
+- FontDialog component [Windows Forms]
+- Font dialog box [Windows Forms], Windows Forms
 ms.assetid: 54015df3-aab2-4338-84e5-ba78cedbfdfc
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e92ce3e74ee4da518b78f8ab4ac5015a50a547b1
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# FontDialog, composant (Windows Forms)
-Le composant Windows Forms <xref:System.Windows.Forms.FontDialog> est une boîte de dialogue préconfigurée.  Il est identique à la boîte de dialogue **Police** exposée par le système d'exploitation Windows.  Le composant hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  
+# <a name="fontdialog-component-windows-forms"></a>FontDialog, composant (Windows Forms)
+Le composant Windows Forms <xref:System.Windows.Forms.FontDialog>  est une boîte de dialogue préconfigurée. Il s’agit du même **police** boîte de dialogue exposée par le système d’exploitation Windows. Le composant hérite la <xref:System.Windows.Forms.CommonDialog> classe.  
   
-## Dans cette section  
- [Vue d'ensemble du composant FontDialog](../../../../docs/framework/winforms/controls/fontdialog-component-overview-windows-forms.md)  
- Présente les concepts généraux du composant <xref:System.Windows.Forms.FontDialog>, lequel sert à afficher une boîte de dialogue préconfigurée.  Les utilisateurs peuvent utiliser la boîte de dialogue pour manipuler des polices et leurs paramètres.  
+## <a name="in-this-section"></a>Dans cette section  
+ [Vue d’ensemble du composant FontDialog](../../../../docs/framework/winforms/controls/fontdialog-component-overview-windows-forms.md)  
+ Présente les concepts généraux de le <xref:System.Windows.Forms.FontDialog> composant, qui vous permet d’afficher une boîte de dialogue préconfigurée. Les utilisateurs peuvent utiliser la boîte de dialogue pour manipuler les polices et leurs paramètres.  
   
- [Comment : afficher une liste de polices à l'aide du composant FontDialog](../../../../docs/framework/winforms/controls/how-to-show-a-font-list-with-the-fontdialog-component.md)  
- Explique comment sélectionner une police lors de l'exécution via une instance du composant <xref:System.Windows.Forms.FontDialog>.  
+ [Guide pratique pour afficher une liste de polices à l'aide du composant FontDialog](../../../../docs/framework/winforms/controls/how-to-show-a-font-list-with-the-fontdialog-component.md)  
+ Explique comment choisir une police au moment de l’exécution via une instance de la <xref:System.Windows.Forms.FontDialog> composant.  
   
-## Référence  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.FontDialog>  
- Fournit des informations de référence sur la classe <xref:System.Windows.Forms.FontDialog> et sur ses membres.  
+ Fournit des informations de référence sur la classe <xref:System.Windows.Forms.FontDialog> et ses membres.  
   
-## Rubriques connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles et composants de boîte de dialogue](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  
- Décrit un ensemble de contrôles et de composants qui permettent des interactions standard entre l'utilisateur et l'application ou le système.  
+ Décrit un ensemble de contrôles et composants qui permettent aux utilisateurs d’effectuer des interactions standards avec l’application ou le système.  
   
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Fournit la liste complète des contrôles Windows Forms, ainsi que des liens vers des informations sur leur utilisation.
+ Fournit une liste complète des contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

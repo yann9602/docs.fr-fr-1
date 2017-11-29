@@ -1,31 +1,35 @@
 ---
-title: "Propri&#233;t&#233;s d&#39;ex&#233;cution de workflow | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Propriétés d'exécution de workflow"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d119d721964df7ea1c007eadd17a8db54f4f8cd9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Propri&#233;t&#233;s d&#39;ex&#233;cution de workflow
-Par le biais du stockage local des threads \(TLS\), le CLR maintient un contexte d'exécution pour chaque thread.Ce contexte d'exécution gouverne des propriétés de thread connues, telles que l'identité de thread, la transaction ambiante et le jeu d'autorisations actuel ainsi que les propriétés de thread définies par l'utilisateur \(comme les emplacements nommés\).  
+# <a name="workflow-execution-properties"></a>Propriétés d'exécution de workflow
+Par le biais du stockage local des threads (TLS), le CLR maintient un contexte d’exécution pour chaque thread. Ce contexte d'exécution gouverne des propriétés de thread connues, telles que l'identité de thread, la transaction ambiante et le jeu d'autorisations actuel, en plus des propriétés de thread définies par l'utilisateur (comme les emplacements nommés).  
   
- Contrairement aux programmes qui ciblent directement le CLR, les programmes de workflow sont hiérarchiquement des arborescences de portée d'activités qui s'exécutent dans un environnement de thread agnostique.Cela implique que les mécanismes de TLS standard ne peuvent pas être utilisés directement pour déterminer quel contexte se trouve dans la portée d'un élément de travail donné.Par exemple, deux branches parallèles d'exécution peuvent utiliser des transactions différentes, mais le planificateur peut entrelacer leur exécution sur le même thread de CLR.  
+ Contrairement aux programmes qui ciblent directement le CLR, les programmes de workflow sont hiérarchiquement des arborescences de portée d'activités qui s'exécutent dans un environnement de thread agnostique. Cela implique que les mécanismes de TLS standard ne peuvent pas être utilisés directement pour déterminer quel contexte se trouve dans la portée d'un élément de travail donné. Par exemple, deux branches parallèles d'exécution peuvent utiliser des transactions différentes, mais le planificateur peut entrelacer leur exécution sur le même thread de CLR.  
   
- Les propriétés d'exécution de workflow fournissent un mécanisme permettant d'ajouter des propriétés spécifiques au contexte à l'environnement d'une activité.Ainsi, une activité peut déclarer les propriétés incluses dans la portée pour la sous\-arborescence associée, tout en fournissant des connexions pour la configuration et la destruction de TLS afin d'interagir correctement avec les objets CLR.  
+ Les propriétés d'exécution de workflow fournissent un mécanisme permettant d'ajouter des propriétés spécifiques au contexte à l'environnement d'une activité. Ainsi, une activité peut déclarer les propriétés incluses dans la portée pour la sous-arborescence associée, tout en fournissant des connexions pour la configuration et la destruction de TLS afin d'interagir correctement avec les objets CLR.  
   
-## Création et utilisation de propriétés d'exécution de workflow  
- Les propriétés d'exécution du workflow implémentent généralement l'interface  <xref:System.Activities.IExecutionProperty>, même si les propriétés axées sur la messagerie peuvent implémenter <xref:> System.ServiceModel.Activities.ISendMessageCallback?qualifyHint=False&autoUpgrade=True et <xref:> System.ServiceModel.Activities.IReceiveMessageCallback?qualifyHint=False&autoUpgrade=True à la place.Pour créer une propriété d'exécution de workflow, créez une classe qui implémente l'interface <xref:System.Activities.IExecutionProperty> et qui implémente les membres <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> et <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>.Ces membres fournissent à la propriété d'exécution la possibilité de configurer et détruire correctement le stockage local des threads lors de chaque impulsion de travail de l'activité qui contient la propriété, y compris ses activités enfants.Dans cet exemple, `ConsoleColorProperty` est créé afin de définir `Console.ForegroundColor`.  
+## <a name="creating-and-using-workflow-execution-properties"></a>Création et utilisation de propriétés d'exécution de workflow  
+ Les propriétés d'exécution du workflow implémentent généralement l'interface <xref:System.Activities.IExecutionProperty>, même si les propriétés axées sur la messagerie peuvent implémenter <xref:System.ServiceModel.Activities.ISendMessageCallback> et <xref:System.ServiceModel.Activities.IReceiveMessageCallback> à la place. Pour créer une propriété d'exécution de workflow, créez une classe qui implémente l'interface <xref:System.Activities.IExecutionProperty> et qui implémente les membres <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> et <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>. Ces membres fournissent à la propriété d'exécution la possibilité de configurer et détruire correctement le stockage local des threads lors de chaque impulsion de travail de l'activité qui contient la propriété, y compris ses activités enfants. Dans cet exemple, `ConsoleColorProperty` est créé afin de définir `Console.ForegroundColor`.  
   
 > [!NOTE]
->  L'exemple de code suivant de cette rubrique est basé sur l'exemple [Propriétés d'exécution](../../../docs/framework/windows-workflow-foundation/samples/execution-properties.md).  
+>  L’exemple de code suivant dans cette rubrique est basé sur le [propriétés d’exécution](../../../docs/framework/windows-workflow-foundation/samples/execution-properties.md) exemple.  
   
 ```csharp  
 class ConsoleColorProperty : IExecutionProperty  
@@ -53,7 +57,7 @@ class ConsoleColorProperty : IExecutionProperty
 }  
 ```  
   
- Les auteurs d'activité peuvent utiliser cette propriété en l'inscrivant dans la substitution d'exécution de l'activité.Dans cet exemple, une activité `ConsoleColorScope` est définie afin d'inscrire `ConsoleColorProperty` en l'ajoutant à la collection <xref:System.Activities.NativeActivityContext.Properties%2A> du contexte <xref:System.Activities.NativeActivityContext> actuel.  
+ Les auteurs d'activité peuvent utiliser cette propriété en l'inscrivant dans la substitution d'exécution de l'activité. Dans cet exemple, une activité `ConsoleColorScope` est définie afin d'inscrire `ConsoleColorProperty` en l'ajoutant à la collection <xref:System.Activities.NativeActivityContext.Properties%2A> du contexte <xref:System.Activities.NativeActivityContext> actuel.  
   
 ```csharp  
 public sealed class ConsoleColorScope : NativeActivity  
@@ -78,7 +82,7 @@ public sealed class ConsoleColorScope : NativeActivity
 }  
 ```  
   
- Lorsque le corps de l'activité commence une impulsion de travail, la méthode <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> de la propriété est appelée, et quand l'impulsion de travail est terminée, la méthode <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A> est appelée.Dans cet exemple, un workflow est créé afin d'utiliser une activité <xref:System.Activities.Statements.Parallel> avec trois branches.Les deux premières branches utilisent l'activité `ConsoleColorScope`, contrairement à la troisième branche.Les trois branches contiennent deux activités <xref:System.Activities.Statements.WriteLine> et une activité <xref:System.Activities.Statements.Delay>.Lorsque l'activité <xref:System.Activities.Statements.Parallel> est exécutée, les activités contenues dans les branches sont exécutées de façon entrelacée, et lors de l'exécution de chaque activité enfant, la couleur de console correcte est appliquée par `ConsoleColorProperty`.  
+ Lorsque le corps de l'activité commence une impulsion de travail, la méthode <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> de la propriété est appelée, et quand l'impulsion de travail est terminée, la méthode <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A> est appelée. Dans cet exemple, un workflow est créé afin d'utiliser une activité <xref:System.Activities.Statements.Parallel> avec trois branches. Les deux premières branches utilisent l'activité `ConsoleColorScope`, contrairement à la troisième branche. Les trois branches contiennent deux activités <xref:System.Activities.Statements.WriteLine> et une activité <xref:System.Activities.Statements.Delay>. Lorsque l'activité <xref:System.Activities.Statements.Parallel> est exécutée, les activités contenues dans les branches sont exécutées de façon entrelacée, et lors de l'exécution de chaque activité enfant, la couleur de console correcte est appliquée par `ConsoleColorProperty`.  
   
 ```csharp  
 Activity wf = new Parallel  
@@ -169,7 +173,7 @@ End default text.
   
  Les propriétés d'exécution de workflow peuvent être utilisées par les auteurs d'activités personnalisées, tout en fournissant également le mécanisme nécessaire pour gérer les activités telles que les activités <xref:System.ServiceModel.Activities.CorrelationScope> et <xref:System.Activities.Statements.TransactionScope>.  
   
-## Voir aussi  
- <xref:System.Activities.IExecutionProperty>   
- <xref:System.Activities.IPropertyRegistrationCallback>   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Activities.IExecutionProperty>  
+ <xref:System.Activities.IPropertyRegistrationCallback>  
  <xref:System.Activities.RegistrationContext>

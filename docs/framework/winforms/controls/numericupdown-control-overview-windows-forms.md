@@ -1,39 +1,39 @@
 ---
-title: "Vue d&#39;ensemble du contr&#244;le NumericUpDown (Windows Forms) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "NumericUpDown"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôle toupie numérique, Windows Forms"
-  - "NumericUpDown (contrôle Windows Forms), à propos du contrôle NumericUpDown"
-  - "contrôle toupie, Windows Forms"
+title: "Vue d'ensemble du contrôle NumericUpDown (Windows Forms)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: NumericUpDown
+helpviewer_keywords:
+- numeric spin button control [Windows Forms], Windows Forms
+- NumericUpDown control [Windows Forms], about NumericUpDown control
+- spin button control [Windows Forms], Windows Forms
 ms.assetid: cff3cf30-4d46-4381-87df-37bfe83c71c5
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e1afb128fd5e098a59fa2636f09998a2a463c926
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble du contr&#244;le NumericUpDown (Windows Forms)
-Le contrôle Windows Forms <xref:System.Windows.Forms.NumericUpDown> se présente comme une zone de texte à laquelle sont associées deux flèches permettant le déplacement vers le haut et vers le bas dans une liste.  Il affiche et définit une valeur numérique provenant d'une liste d'options de valeurs numériques fixes.  L'utilisateur peut augmenter et diminuer cette valeur numérique en cliquant sur les flèches Haut et Bas, en appuyant sur les touches HAUT et BAS ou en tapant le nombre de son choix dans la zone de texte du contrôle.  La touche HAUT rapproche ce nombre de la valeur maximale ; à l'inverse, la touche BAS le rapproche de la valeur minimale.  
+# <a name="numericupdown-control-overview-windows-forms"></a>Vue d'ensemble du contrôle NumericUpDown (Windows Forms)
+Le <xref:System.Windows.Forms.NumericUpDown> contrôle se présente comme une combinaison d’une zone de texte et une paire de flèches sur lesquelles l’utilisateur peut cliquer pour ajuster une valeur. Le contrôle affiche et définit une valeur numérique unique à partir d’une liste de choix de valeurs numériques fixes. L’utilisateur peut augmenter et diminuer le nombre par le haut et vers le bas flèches, en appuyant sur les touches de direction haut et bas ou en tapant un nombre dans la zone de texte du contrôle. En cliquant sur la flèche haut déplace le numéro de la valeur maximale ; en cliquant sur la touche de direction bas déplace le nombre vers la valeur minimale.  
   
- À cause de ses fonctionnalités polyvalentes, ce contrôle est un choix évident, par exemple, si vous souhaitez créer un contrôle de volume pour une application du lecteur de la musique.  Le contrôle <xref:System.Windows.Forms.NumericUpDown> est utilisé dans beaucoup d'applications du Panneau de configuration Windows.  
+ En raison de ses fonctionnalités polyvalentes, ce contrôle est, par exemple, un choix évident, si vous souhaitez créer un contrôle de volume pour une application de lecteur de musique. Le <xref:System.Windows.Forms.NumericUpDown> contrôle est utilisé dans de nombreuses applications du Panneau de configuration Windows.  
   
-## Propriétés et méthodes principales  
- Les nombres affichés dans la zone de texte du contrôle peuvent être dans divers formats, y compris hexadécimal.  Pour plus d'informations, consultez [Comment : définir le format du contrôle NumericUpDown Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md).  Les propriétés clés du contrôle sont <xref:System.Windows.Forms.NumericUpDown.Value%2A>, <xref:System.Windows.Forms.NumericUpDown.Maximum%2A> \(valeur par défaut 100\), <xref:System.Windows.Forms.NumericUpDown.Minimum%2A> \(valeur par défaut 0\) et <xref:System.Windows.Forms.NumericUpDown.Increment%2A> \(valeur par défaut 1\).  La propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A> définit le nombre actuellement sélectionné dans le contrôle.  La propriété <xref:System.Windows.Forms.NumericUpDown.Increment%2A> définit l'écart duquel le nombre est augmenté ou diminué lorsque l'utilisateur clique sur la flèche Haut ou Bas.  Lorsque le focus quitte le contrôle, toute valeur entrée est validée par rapport aux valeurs numériques maximale et minimale.  Vous pouvez augmenter la vitesse des déplacements du contrôle à travers les nombres, lorsque l'utilisateur appuie continuellement sur la flèche haut ou flèche, avec la propriété <xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>.  Les principales méthodes du contrôle sont <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> et <xref:System.Windows.Forms.NumericUpDown.DownButton%2A>.  
+## <a name="key-properties-and-methods"></a>Méthodes et propriétés de clé  
+ Les nombres affichés dans la zone de texte du contrôle peuvent être dans divers formats, y compris hexadécimales. Pour plus d’informations, consultez [Comment : mettre en forme le contrôle NumericUpDown Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md). Les principales propriétés du contrôle sont <xref:System.Windows.Forms.NumericUpDown.Value%2A>, <xref:System.Windows.Forms.NumericUpDown.Maximum%2A> (valeur par défaut 100), <xref:System.Windows.Forms.NumericUpDown.Minimum%2A> (valeur par défaut 0), et <xref:System.Windows.Forms.NumericUpDown.Increment%2A> (valeur par défaut 1). Le <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété définit le nombre actuellement sélectionné dans le contrôle. Le <xref:System.Windows.Forms.NumericUpDown.Increment%2A> propriété définit le montant que le nombre est ajusté par lorsque l’utilisateur clique sur un haut ou flèche vers le bas. Lorsque le focus quitte le contrôle, toute valeur entrée est validée sur les valeurs numériques minimales et maximales. Vous pouvez augmenter la vitesse à laquelle le contrôle se déplace à travers les nombres, lorsque l’utilisateur appuie continuellement sur le haut ou flèche bas, avec la <xref:System.Windows.Forms.NumericUpDown.Accelerations%2A> propriété. Les principales méthodes du contrôle sont <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> et <xref:System.Windows.Forms.NumericUpDown.DownButton%2A>.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.NumericUpDown>   
- [NumericUpDown, contrôle](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)   
- [Comment : définir le format du contrôle NumericUpDown Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.NumericUpDown>  
+ [NumericUpDown, contrôle](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)  
+ [Guide pratique pour définir le format du contrôle NumericUpDown Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
  [TextBox, contrôle](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

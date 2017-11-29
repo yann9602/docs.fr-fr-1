@@ -1,43 +1,44 @@
 ---
-title: "Comment&#160;: afficher un contr&#244;le dans la bo&#238;te de dialogue Choisir des &#233;l&#233;ments de bo&#238;te &#224; outils | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "global assembly cache, boîte de dialogue Choisir des éléments de boîte à outils"
-  - "AssemblyFoldersEx, boîte de dialogue Choisir des éléments de boîte à outils"
-  - "contrôles, affichage dans la boîte de dialogue Choisir des éléments de boîte à outils"
-  - "inscription des dossiers d’assembly, boîte de dialogue Choisir des éléments de boîte à outils"
-  - "Choisir des éléments de boîte à outils (boîte de dialogue), affichage de contrôles"
+title: "Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- global assembly cache [Windows Forms], Choose Toolbox Items dialog box
+- AssemblyFoldersEx [Windows Forms], Choose Toolbox Items dialog box
+- controls [Windows Forms], display in Choose Toolbox Items dialog box
+- assembly folder registration [Windows Forms], Choose Toolbox Items dialog box
+- Choose Toolbox Items dialog box [Windows Forms], display control
 ms.assetid: 01ef6eba-d044-40f0-951d-78eff7ebd9a9
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f7bbb13e8a2b877d0f503e091b5bb8b1e7e89d00
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: afficher un contr&#244;le dans la bo&#238;te de dialogue Choisir des &#233;l&#233;ments de bo&#238;te &#224; outils
-Lorsque vous développez et distribuez des contrôles, vous souhaiterez peut\-être que ces contrôles s'affichent dans la boîte de dialogue **Choisir des éléments de boîte à outils**, laquelle s'affiche lorsque vous cliquez avec le bouton droit sur la **boîte à outils** et que vous sélectionnez **Choisir les éléments**.  Vous pouvez autoriser votre contrôle à s'afficher dans cette boîte de dialogue à l'aide de la procédure d'inscription AssemblyFoldersEx.  
+# <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils
+Lorsque vous développez et distribuez des contrôles, vous pouvez que ces contrôles s’affichent dans le **choisir des éléments de boîte à outils** boîte de dialogue qui s’affiche lorsque vous cliquez sur le **boîte à outils** et sélectionnez  **Choisissez les éléments**. Vous pouvez activer votre contrôle s’affiche dans cette boîte de dialogue à l’aide de la procédure d’inscription AssemblyFoldersEx.  
   
-### Pour afficher votre contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils  
+### <a name="to-display-your-control-in-the-choose-toolbox-items-dialog-box"></a>Pour afficher votre contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils  
   
--   Installez votre assembly de contrôle dans le Global Assembly Cache.  Pour plus d'informations, consultez [Comment : installer un assembly dans le Global Assembly Cache](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md).  
+-   Installer votre assembly de contrôle dans le global assembly cache. Pour plus d’informations, consultez [Comment : installer un Assembly dans le Global Assembly Cache](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
   
      ou  
   
--   Enregistrez votre contrôle et ses assemblys au moment du design associés à l'aide de la procédure d'inscription AssemblyFoldersEx.  AssemblyFoldersEx est un emplacement de Registre où les fournisseurs tiers stockent des chemins d'accès pour chaque version de l'infrastructure qu'ils prennent en charge.  La résolution au moment du design peut utiliser cet emplacement de Registre pour rechercher des assemblys de référence.  Le script de registre peut spécifier les contrôles que vous souhaitez voir s'afficher dans la Boîte à outils.  Pour plus d'informations, consultez [Déploiement d'un contrôle personnalisé et d'assemblys au moment du design](http://msdn.microsoft.com/fr-fr/96158eb0-b691-4ae1-9e7b-3c65a1b798cb).  
+-   Inscrire votre contrôle et ses assemblys au moment du design associés à l’aide de la procédure d’inscription AssemblyFoldersEx. AssemblyFoldersEx est un emplacement de Registre dans lequel stockent les chemins d’accès pour chaque version de l’infrastructure qu’ils prennent en charge des fournisseurs tiers. Au moment du design résolution peut ressembler à cet emplacement de Registre pour rechercher des assemblys de référence. Le script de Registre peut spécifier les contrôles que vous souhaitez voir apparaître dans la boîte à outils. Pour plus d’informations, consultez [déploiement d’un contrôle personnalisé et des assemblys au moment du Design (Visual Studio 2013)](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb).  
   
-## Voir aussi  
- [Choose Toolbox Items Dialog Box \(Visual Studio\)](http://msdn.microsoft.com/fr-fr/bd07835f-18a8-433e-bccc-7141f65263bb)   
- [Déploiement d'un contrôle personnalisé et d'assemblys au moment du design](http://msdn.microsoft.com/fr-fr/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)   
- [Développement de contrôles Windows Forms au moment du design](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)   
- [Comment : installer un assembly dans le Global Assembly Cache](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Choisir des éléments de boîte à outils, boîte de dialogue (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb)  
+ [Déploiement d’un contrôle personnalisé et des assemblys au moment du Design (Visual Studio 2013)](http://msdn.microsoft.com/en-us/96158eb0-b691-4ae1-9e7b-3c65a1b798cb)  
+ [Développement de contrôles Windows Forms au moment du design](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
+ [Guide pratique pour installer un assembly dans le Global Assembly Cache](../../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
  [Procédure pas à pas : remplissage automatique de la boîte à outils avec des composants personnalisés](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

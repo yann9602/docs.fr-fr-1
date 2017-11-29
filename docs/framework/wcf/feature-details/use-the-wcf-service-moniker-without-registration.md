@@ -1,35 +1,37 @@
 ---
-title: "Comment&#160;: utiliser le moniker de service Windows Communication Foundation sans inscription | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "COM (WCF), monikers de service sans inscription"
+title: "Comment : utiliser le moniker de service Windows Communication Foundation sans inscription"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7e859f0eddf93191a01230508742c0777ec73751
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Comment&#160;: utiliser le moniker de service Windows Communication Foundation sans inscription
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Comment : utiliser le moniker de service Windows Communication Foundation sans inscription
 Pour se connecter à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et communiquer avec ce dernier, une application cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doit être en possession des détails de l'adresse du service, de la configuration de liaison et du contrat de service.  
   
- Le moniker de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obtient généralement le contrat requis par le biais de l'inscription préalable des types d'attributs requis, mais cela n'est pas toujours possible.  À la place de l'inscription, le moniker peut obtenir la définition du contrat sous la forme d'un document WSDL \(Web Services Definition Language\) en utilisant le paramètre `wsdl` ou par le biais de l'échange de métadonnées en utilisant le paramètre `mexAddress`.  
+ Le moniker de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] obtient généralement le contrat requis par le biais de l'inscription préalable des types d'attributs requis, mais cela n'est pas toujours possible. À la place de l'inscription, le moniker peut obtenir la définition du contrat sous la forme d'un document WSDL (Web Services Definition Language) en utilisant le paramètre `wsdl` ou par le biais de l'échange de métadonnées en utilisant le paramètre `mexAddress`.  
   
- Cela permet de prendre en charge des scénarios comme la distribution d'une feuille de calcul Excel dans laquelle certaines valeurs de cellules sont calculées par le biais d'interactions de services Web.  Dans ce scénario, il peut ne pas être possible d'inscrire l'assembly de contrat de service sur tous les clients susceptibles d'ouvrir le document.  Les paramètres `wsdl` et `mexAddress` offrent une solution autonome.  
+ Cela permet de prendre en charge des scénarios comme la distribution d'une feuille de calcul Excel dans laquelle certaines valeurs de cellules sont calculées par le biais d'interactions de services Web. Dans ce scénario, il peut ne pas être possible d'inscrire l'assembly de contrat de service sur tous les clients susceptibles d'ouvrir le document. Les paramètres `wsdl` et `mexAddress` offrent une solution autonome.  
   
 > [!NOTE]
->  L'authentification mutuelle doit être utilisée pour la protection contre la falsification ou l'usurpation de demandes et de réponses.  Il est en particulier important pour les clients d'avoir la garantie que le point de terminaison d'échange de métadonnées qui répond est le tiers de confiance attendu.  
+>  L'authentification mutuelle doit être utilisée pour la protection contre la falsification ou l'usurpation de demandes et de réponses. Il est en particulier important pour les clients d'avoir la garantie que le point de terminaison d'échange de métadonnées qui répond est le tiers de confiance attendu.  
   
-## Exemple  
- Cet exemple montre l'utilisation du moniker de service avec un contrat MEX.  Un service associé au contrat suivant est exposé avec un wsHttpBinding.  
+## <a name="example"></a>Exemple  
+ Cet exemple montre l'utilisation du moniker de service avec un contrat MEX. Un service associé au contrat suivant est exposé avec un wsHttpBinding.  
   
 ```  
 using System.ServiceModel;  
@@ -59,10 +61,10 @@ contract=IAffiliate, contractNamespace=http://Microsoft.ServiceModel.Demo,
 binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/  
 ```  
   
- Pendant l'exécution de l'application cliente, le client exécute un `WS-MetadataExchange` avec le paramètre `mexAddress`.  Les détails de l'adresse, de la liaison et du contrat peuvent alors être retournés pour un certains nombre de services.  Les paramètres `address`, `contract`, `contractNamespace`, `binding` et `bindingNamespace` sont utilisés pour identifier le service concerné.  Une fois ces paramètres mis en correspondance, le moniker construit un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec la définition de contrat appropriée, puis des appels peuvent être effectués à l'aide du client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], comme avec le contrat typé.  
+ Pendant l'exécution de l'application cliente, le client exécute un `WS-MetadataExchange` avec le paramètre `mexAddress`. Les détails de l'adresse, de la liaison et du contrat peuvent alors être retournés pour un certains nombre de services. Les paramètres `address`, `contract`, `contractNamespace`, `binding` et `bindingNamespace` sont utilisés pour identifier le service concerné. Une fois ces paramètres mis en correspondance, le moniker construit un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec la définition de contrat appropriée, puis des appels peuvent être effectués à l'aide du client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], comme avec le contrat typé.  
   
 > [!NOTE]
->  Si le moniker est incorrect ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide.  Si vous recevez cette erreur, assurez\-vous que le moniker que vous utilisez est correct et que le service est disponible.  
+>  Si le moniker est incorrect ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide. Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
   
-## Voir aussi  
- [Comment : inscrire et configurer un moniker de service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+## <a name="see-also"></a>Voir aussi  
+ [Comment : inscrire et configurer un Moniker de Service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

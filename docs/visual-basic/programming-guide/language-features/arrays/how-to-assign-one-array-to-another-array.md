@@ -1,35 +1,34 @@
 ---
-title: "How to: Assign One Array to Another Array (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "covariance, arrays"
-  - "arrays [Visual Basic], assigning"
-  - "arrays [Visual Basic], covariance"
+title: "Comment : assigner un tableau à un autre tableau (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- covariance, arrays
+- arrays [Visual Basic], assigning
+- arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 0dd2d678bbfdeaa6b12b5b5a4f69d0fbca8c1944
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Assign One Array to Another Array (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/includes/vs2017banner.md)]
-
-Étant donné que les tableaux sont des objets, ils peuvent être utilisés dans des instructions d'assignation comme les autres types d'objets.  Une variable tableau maintient un pointeur vers les données constituant les éléments de tableau et les informations relatives au rang et à la longueur. Une assignation ne copie que ce pointeur.  
+# <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Comment : assigner un tableau à un autre tableau (Visual Basic)
+Étant donné que les tableaux sont des objets, vous pouvez les utiliser dans les instructions d’assignation comme les autres types d’objet. Une variable tableau conserve un pointeur vers les données constituant les éléments du tableau et les informations de classement et de longueur et une attribution de copie uniquement ce pointeur.  
   
-### Pour assigner un tableau à un autre tableau  
+### <a name="to-assign-one-array-to-another-array"></a>Pour assigner un tableau à un autre tableau  
   
-1.  Vérifiez que les deux tableaux ont le même rang \(nombre de dimensions\) et des types de données d'élément compatibles.  
+1.  Assurez-vous que les deux tableaux ont le même rang (nombre de dimensions) et les types de données d’élément compatibles.  
   
-2.  Utilisez une instruction d'assignation standard pour assigner le tableau source au tableau de destination.  Ne faites pas suivre les noms du tableau de parenthèses.  
+2.  Utilisez une instruction d’assignation standard pour assigner le tableau source dans le tableau de destination. Ne suivez pas les noms du tableau de parenthèses.  
   
     ```  
     Dim formArray() As System.Windows.Forms.Form  
@@ -37,22 +36,22 @@ caps.handback.revision: 18
     controlArray = formArray  
     ```  
   
- Les règles suivantes s'appliquent lors de l'assignation d'un tableau à un autre :  
+ Lorsque vous affectez un tableau à un autre, les règles suivantes s’appliquent :  
   
--   **Rangs identiques.** Le rang \(nombre de dimensions\) du tableau de destination doit être identique à celui du tableau source.  
+-   **Rangs identiques.** Le rang (nombre de dimensions) du tableau de destination doit être identique à celui du tableau source.  
   
-     Si les rangs des deux tableaux sont identiques, les dimensions n'ont pas besoin de l'être.  Le nombre d'éléments dans une dimension donnée peut varier lors de l'assignation.  
+     Condition les rangs des deux tableaux sont égaux, les dimensions n’avez pas besoin être égale. Le nombre d’éléments dans une dimension donnée peut changer pendant l’affectation.  
   
--   **Types d'éléments.** Les deux tableaux doivent avoir des éléments de *type référence* ou de *type valeur*.  Pour plus d'informations, consultez [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+-   **Types d’élément.** Soit les deux tableaux doivent avoir *type référence* éléments ou les deux tableaux doit avoir *type valeur* éléments. Pour plus d’informations, consultez [les Types valeur et Types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
-    -   Si les deux tableaux ont des éléments de type valeur, les types de données d'élément doivent être exactement identiques.  La seule exception est que vous pouvez assigner un tableau d'éléments `Enum` à un tableau du type de base de `Enum`.  
+    -   Si les deux tableaux ont des éléments de type valeur, les types de données d’élément doivent être exactement le même. La seule exception à cela est que vous pouvez assigner un tableau de `Enum` éléments dans un tableau du type de base de ce `Enum`.  
   
-    -   Si les deux tableaux ont des éléments de type référence, le type d'élément source doit dériver du type d'élément de destination.  Si c'est le cas, les deux tableaux ont la même relation d'héritage que leurs éléments.  Cette situation s'appelle la *covariance de tableau*.  
+    -   Si les deux tableaux ont référence des éléments de type, le type d’élément source doit dériver du type d’élément de destination. Lorsque c’est le cas, les deux tableaux ont la même relation d’héritage que leurs éléments. Il s’agit *covariance de tableau*.  
   
- Le compilateur signale une erreur si les règles énoncées ci\-dessus ne sont pas respectées ; par exemple, si les types de données ne sont pas compatibles ou si les rangs ne sont pas identiques.  Vous pouvez ajouter une gestion des erreurs à votre code pour vous assurer que les tableaux sont compatibles avant d'effectuer une assignation.  Vous pouvez également faire appel au mot clé [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md) si vous souhaitez éviter de lever une exception.  
+ Le compilateur signale une erreur si les règles ci-dessus sont violées, par exemple si les types de données ne sont pas compatibles. Vous pouvez ajouter à votre code pour vous assurer que les tableaux sont compatibles avant de tenter une assignation de gestion des erreurs. Vous pouvez également utiliser le [opérateur TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md) mot clé si vous souhaitez éviter de lever une exception.  
   
-## Voir aussi  
- [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [Troubleshooting Arrays](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)   
- [Enum Statement](../../../../visual-basic/language-reference/statements/enum-statement.md)   
- [Array Conversions](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+## <a name="see-also"></a>Voir aussi  
+ [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
+ [Dépannage des tableaux](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)  
+ [Enum (instruction)](../../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Conversions de tableau](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)

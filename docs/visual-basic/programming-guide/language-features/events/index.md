@@ -1,42 +1,24 @@
 ---
 title: "Événements (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 84f8385e1b2f16c4bcfa53ef2c77e1f0cf61e5e3
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: c85936d366f377b3da45b4e342c3373aae959984
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="events-visual-basic"></a>Événements (Visual Basic)
 On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] comme une série de procédures qui s’exécutent de façon séquentielle, mais, en réalité, la plupart des programmes sont pilotés par des événements, ce qui signifie que le flux d’exécution est déterminé par des occurrences externes nommées *événements*.  
@@ -81,7 +63,7 @@ On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] co
   
 -   Il n’est pas possible d’utiliser une variable `WithEvents` comme variable objet. Autrement dit, vous ne pouvez pas la déclarer comme `Object` : vous devez spécifier le nom de classe lorsque vous déclarez la variable.  
   
--   Dans le mesure où les événements partagés ne sont pas liés aux instances de classe, vous ne pouvez pas utiliser `WithEvents` pour les gérer de façon déclarative. De même, vous ne pouvez pas utiliser `WithEvents` ni `Handles` pour gérer les événements d’une `Structure`. Dans les deux cas, vous pouvez utiliser l’instruction `AddHandler` pour gérer ces événements.  
+-   Événements partagés ne sont pas liés aux instances de classe, vous ne pouvez pas utiliser `WithEvents` pour les gérer de façon déclarative. De même, vous ne pouvez pas utiliser `WithEvents` ni `Handles` pour gérer les événements d’une `Structure`. Dans les deux cas, vous pouvez utiliser l’instruction `AddHandler` pour gérer ces événements.  
   
 -   Il n’est pas possible de créer des tableaux de variables `WithEvents`.  
   
@@ -133,4 +115,3 @@ On peut se représenter un projet [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] co
 |[Événements](../../../../standard/events/index.md)|Fournit une vue d’ensemble du modèle d’événement dans [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].|  
 |[Création de gestionnaires d’événements dans Windows Forms](https://msdn.microsoft.com/library/dacysss4.aspx)|Explique comment utiliser des événements associés à des objets Windows Forms.|  
 |[Délégués](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Fournit une vue d’ensemble des délégués en Visual Basic.|
-

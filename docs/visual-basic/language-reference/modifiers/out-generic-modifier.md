@@ -1,67 +1,64 @@
 ---
-title: "Out (Generic Modifier) (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.VarianceOut"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Out keyword [Visual Basic]"
-  - "covariance, Out keyword [Visual Basic]"
+title: "Out (modificateur générique) (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.VarianceOut
+helpviewer_keywords:
+- Out keyword [Visual Basic]
+- covariance, Out keyword [Visual Basic]
 ms.assetid: c4418369-1518-4a46-9a1e-054c61038eca
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 94d18200e6d7ce0ad63a229223ae77d99302e0e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Out (Generic Modifier) (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Pour les paramètres de type générique, le mot clé `Out` spécifie que le type est covariant.  
+# <a name="out-generic-modifier-visual-basic"></a>Out (modificateur générique) (Visual Basic)
+Paramètres de type générique, la `Out` (mot clé) Spécifie que le type est covariant.  
   
-## Notes  
- La covariance vous permet d'utiliser un type plus dérivé que celui spécifié par le paramètre générique.  Cela permet la conversion implicite des classes qui implémentent des interfaces variantes et la conversion implicite des types délégués.  
+## <a name="remarks"></a>Remarques  
+ La covariance permet d’utiliser un type plus dérivé que celui spécifié par le paramètre générique. Cela permet la conversion implicite des classes qui implémentent des interfaces variantes, ainsi que la conversion implicite des types délégués.  
   
- Pour plus d'informations, consultez [Covariance et contravariance](../Topic/Covariance%20and%20Contravariance%20\(C%23%20and%20Visual%20Basic\).md).  
+ Pour plus d’informations, consultez [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).  
   
-## Règles  
- Vous pouvez utiliser le mot clé `Out` dans les interfaces et les délégués génériques.  
+## <a name="rules"></a>Règles  
+ Vous pouvez utiliser le mot clé `Out` dans les interfaces et délégués génériques.  
   
- Dans une interface générique, un paramètre de type peut être déclaré covariant s'il satisfait aux conditions suivantes :  
+ Dans une interface générique, un paramètre de type peut être déclaré covariant s’il satisfait aux conditions suivantes :  
   
--   Le paramètre de type est utilisé uniquement comme type de retour de méthodes d'interface et non comme type d'arguments de méthode.  
+-   Le paramètre de type est utilisé uniquement comme type de retour des méthodes d’interface, mais pas comme type des arguments de méthode.  
   
     > [!NOTE]
-    >  Il existe une exception à cette règle.  Si dans une interface covariante vous avez un délégué générique contravariant comme paramètre de méthode, vous pouvez utiliser le type covariant comme paramètre de type générique pour ce délégué.  Pour plus d'informations sur les délégués génériques covariants et contravariants, consultez [Variance dans les délégués](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md) et [Utilisation de la variance pour les délégués génériques Func et Action](../Topic/Using%20Variance%20for%20Func%20and%20Action%20Generic%20Delegates%20\(C%23%20and%20Visual%20Basic\).md).  
+    >  Il existe une exception à cette règle. Si une interface covariante a un délégué générique contravariant comme paramètre de méthode, vous pouvez utiliser le type covariant comme paramètre de type générique pour ce délégué. Pour plus d’informations sur les délégués génériques covariants et contravariants, consultez [Variance dans les délégués](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca) et [Utilisation de la variance pour les délégués génériques Func et Action](http://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290).  
   
--   Le paramètre de type n'est pas utilisé comme contrainte générique pour les méthodes d'interface.  
+-   Le paramètre de type n’est pas utilisé comme contrainte générique pour les méthodes d’interface.  
   
- Dans un délégué générique, un paramètre de type peut être déclaré covariant s'il est utilisé uniquement comme type de retour de méthode et non pour les arguments de méthode.  
+ Dans un délégué générique, un paramètre de type peut être déclaré covariant s’il est utilisé uniquement comme un type de retour de méthode et pas utilisé pour les arguments de méthode.  
   
- La covariance et la contravariance sont prises en charge pour les types référence mais pas pour les types valeur.  
+ La covariance et la contravariance sont prises en charge pour les types référence, mais pas pour les types valeur.  
   
- En Visual Basic, vous ne pouvez pas déclarer d'événements dans des interfaces covariantes sans spécifier le type délégué.  De même, les interfaces covariantes ne peuvent pas avoir de classes, d'enums ou de structures imbriqués, mais elles peuvent inclure des interfaces imbriquées.  
+ En Visual Basic, vous ne pouvez pas déclarer des événements des interfaces covariants sans spécifier le type délégué. En outre, les interfaces covariants ne peut pas avoir de classes, d’enums ou de structures imbriqués, mais ont des interfaces imbriquées.  
   
-## Comportement  
- Une interface ayant un paramètre de type covariant permet à ses méthodes de retourner des types plus dérivés que ceux spécifiés par le paramètre de type.  Par exemple, comme dans .NET Framework 4, dans <xref:System.Collections.Generic.IEnumerable%601>, le type T est covariant, vous pouvez assigner un objet de type `IEnumerabe(Of String)` à un objet de type `IEnumerable(Of Object)` sans utiliser des méthodes de conversion spéciales.  
+## <a name="behavior"></a>Comportement  
+ Une interface qui possède un paramètre de type covariant permet à ses méthodes de retourner des types plus dérivés que ceux spécifiés par le paramètre de type. Par exemple, comme dans le .NET Framework 4, dans <xref:System.Collections.Generic.IEnumerable%601>, le type T est covariant, vous pouvez assigner un objet du type `IEnumerabe(Of String)` à un objet du type `IEnumerable(Of Object)` sans utiliser de méthode de conversion spéciale.  
   
- Un autre délégué du même type peut être assigné à un délégué covariant, mais avec un paramètre de type générique plus dérivé.  
+ Un délégué covariant peut être assigné à un autre délégué du même type, mais avec un paramètre de type générique plus dérivé.  
   
-## Exemple  
- L'exemple suivant indique comment déclarer, étendre et implémenter une interface générique covariante.  Il montre également comment utiliser la conversion implicite pour les classes qui implémentent une interface covariante.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant montre comment déclarer, étendre et implémenter une interface générique covariante. Il montre également comment utiliser la conversion implicite pour les classes qui implémentent une interface covariante.  
   
  [!code-vb[vbVarianceKeywords#3](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/out-generic-modifier_1.vb)]  
   
-## Exemple  
- L'exemple suivant indique comment déclarer, instancier et appeler un délégué générique covariant.  Il montre également comment vous pouvez utiliser la conversion implicite pour les types délégués.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant montre comment déclarer, instancier et appeler un délégué générique covariant. Il montre également comment vous pouvez utiliser la conversion implicite pour les types délégués.  
   
  [!code-vb[vbVarianceKeywords#4](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/out-generic-modifier_2.vb)]  
   
-## Voir aussi  
- [Variance dans les interfaces génériques](../Topic/Variance%20in%20Generic%20Interfaces%20\(C%23%20and%20Visual%20Basic\).md)   
+## <a name="see-also"></a>Voir aussi  
+ [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
  [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)

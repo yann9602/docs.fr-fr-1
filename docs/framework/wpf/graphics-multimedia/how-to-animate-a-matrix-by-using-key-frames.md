@@ -1,48 +1,51 @@
 ---
-title: "Comment&#160;: animer une matrice &#224; l&#39;aide d&#39;images cl&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "animation, propriétés Matrix avec des images clés"
-  - "images clés, animer des propriétés Matrix avec"
-  - "propriétés Matrix, animer avec des images clés"
+title: "Comment : animer une matrice à l'aide d'images clés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- animation [WPF], Matrix properties with key frames
+- Matrix properties [WPF], animating with key frames
+- key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c8c67b5c8e179485083a40aa8a196fbee3e0fc24
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: animer une matrice &#224; l&#39;aide d&#39;images cl&#233;s
-Cet exemple indique comment animer la propriété <xref:System.Windows.Media.MatrixTransform.Matrix%2A> d'un <xref:System.Windows.Media.MatrixTransform> à l'aide d'images clés.  
+# <a name="how-to-animate-a-matrix-by-using-key-frames"></a>Comment : animer une matrice à l'aide d'images clés
+Cet exemple montre comment animer la <xref:System.Windows.Media.MatrixTransform.Matrix%2A> propriété d’un <xref:System.Windows.Media.MatrixTransform> à l’aide d’images clés.  
   
-## Exemple  
- L'exemple suivant utilise la classe <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> pour animer la propriété <xref:System.Windows.Media.MatrixTransform.Matrix%2A> d'un <xref:System.Windows.Media.MatrixTransform>.  L'exemple utilise l'objet <xref:System.Windows.Media.MatrixTransform> pour transformer l'apparence et la position d'un <xref:System.Windows.Controls.Button>.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant utilise le <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> classe pour animer la <xref:System.Windows.Media.MatrixTransform.Matrix%2A> propriété d’un <xref:System.Windows.Media.MatrixTransform>. L’exemple utilise le <xref:System.Windows.Media.MatrixTransform> objet à transformer l’apparence et la position d’un <xref:System.Windows.Controls.Button>.  
   
- Cette animation utilise la classe <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> pour créer deux images clés et effectue les opérations suivantes avec elles :  
+ Cette animation utilise la <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> classe pour créer deux images clés et effectue les opérations suivantes avec eux :  
   
-1.  Anime la première <xref:System.Windows.Media.Matrix> pendant les 0,2 premières secondes.  L'exemple modifie les propriétés <xref:System.Windows.Media.Matrix.M11%2A> et <xref:System.Windows.Media.Matrix.M12%2A> de la <xref:System.Windows.Media.Matrix>.  À la suite de cette modification, le bouton s'étire et s'incline.  L'exemple modifie également les propriétés <xref:System.Windows.Media.Matrix.OffsetX%2A> et <xref:System.Windows.Media.Matrix.OffsetY%2A> afin que le bouton change de position.  
+1.  Réalise une animation de la première <xref:System.Windows.Media.Matrix> pendant les premières secondes 0,2. L’exemple modifie la <xref:System.Windows.Media.Matrix.M11%2A> et <xref:System.Windows.Media.Matrix.M12%2A> propriétés de la <xref:System.Windows.Media.Matrix>. Cette modification, le bouton Étirer et être faussées. L’exemple modifie également le <xref:System.Windows.Media.Matrix.OffsetX%2A> et <xref:System.Windows.Media.Matrix.OffsetY%2A> propriétés afin que le bouton change de position.  
   
-2.  Anime la deuxième <xref:System.Windows.Media.Matrix> à 1,0 seconde.  Le bouton se déplace à une autre position et n'est plus incliné ni étiré.  
+2.  Anime la deuxième <xref:System.Windows.Media.Matrix> à 1 seconde. Le bouton se déplace vers un autre alors que le bouton n’est plus incliné ni étiré.  
   
-3.  Répète l'animation indéfiniment.  
+3.  Répète l’animation indéfiniment.  
   
 > [!NOTE]
->  Les images clés qui dérivent de l'objet <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> créent des sauts soudains entre les valeurs ; autrement dit, le mouvement de l'animation est saccadé.  
+>  Images clés qui dérivent de la <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> soudains entre les valeurs de création d’objet, le déplacement de l’animation est saccadé.  
   
- [!code-xml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
+ [!code-xaml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
   
- Pour obtenir l'exemple complet, consultez [Animation d'image clé, exemple](http://go.microsoft.com/fwlink/?LinkID=160012).  
+ Pour l’exemple complet, consultez la page [Animation d’image clé, exemple](http://go.microsoft.com/fwlink/?LinkID=160012).  
   
-## Voir aussi  
- <xref:System.Windows.Media.MatrixTransform.Matrix%2A>   
- <xref:System.Windows.Media.MatrixTransform>   
- [Vue d'ensemble des animations d'image clé](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)   
- [Rubriques "Comment" relatives aux images clés](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Media.MatrixTransform.Matrix%2A>  
+ <xref:System.Windows.Media.MatrixTransform>  
+ [Vue d'ensemble des animations d'image clé](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
+ [Guides pratiques relatifs aux images clés](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

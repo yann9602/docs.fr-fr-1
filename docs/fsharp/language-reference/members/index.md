@@ -1,6 +1,6 @@
 ---
 title: Membres (F#)
-description: Membres (F#)
+description: "En savoir plus sur les membres de l’objet dans le langage de programmation F #."
 keywords: visual f#, f#, programmation fonctionnelle
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: e472f50a-4939-4e62-abbc-471f8f265790
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: fe14657b25d122296a6826daba37ea99b6ee64b4
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: ca34c8d073594791ec268a85ad56f50cc6d9e435
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="members"></a>Membres
 
 Cette section décrit les membres de types d’objet F#.
@@ -44,4 +43,3 @@ Les champs privés et les liaisons `do`, qui sont uniquement utilisés avec des 
 |[Surcharge d'opérateur](../operator-overloading.md)|Décrit la définition d’opérateurs personnalisés pour les types.|
 |[Événements](events.md)|Décrit la définition d’événements et la prise en charge de la gestion des événements en F#.|
 |[Champs explicites : mot clé `val`](explicit-fields-the-val-keyword.md)|Décrit la définition de champs non initialisés dans un type.|
-

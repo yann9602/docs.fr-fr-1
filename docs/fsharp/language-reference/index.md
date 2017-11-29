@@ -1,6 +1,6 @@
 ---
 title: "Informations de référence sur le langage F#"
-description: "Informations de référence sur le langage F#"
+description: "Rechercher des informations de fonctionnalité des langage F # à partir de cette référence pour les jetons de langage, concepts, types, expressions et les rubriques de prise en charge du compilateur de construction."
 keywords: visual f#, f#, programmation fonctionnelle
 author: cartermp
 ms.author: phcart
@@ -10,16 +10,15 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: b1707be1-7b7c-4fdd-a717-d9c190bc5fb5
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: e0b7058513b0487902b2a57b889e77df1abfef98
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: 0d26d5a6f47ce8a92aefe338ea8c39295d042794
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="f-language-reference"></a>Informations de référence sur le langage F#
 
-Cette section contient des informations de référence sur le langage F#, langage de programmation multiparadigme ciblant la plateforme .NET. Le langage F# prend en charge les modèles de programmation fonctionnelle, orientée objet et impérative.
+Cette section est une référence pour le langage F #, un langage de programmation multiparadigme ciblant .NET. Le langage F# prend en charge les modèles de programmation fonctionnelle, orientée objet et impérative.
 
 
 ## <a name="f-tokens"></a>Jetons F#

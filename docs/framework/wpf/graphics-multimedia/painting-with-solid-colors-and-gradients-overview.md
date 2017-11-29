@@ -1,185 +1,188 @@
 ---
-title: "Vue d&#39;ensemble de la peinture avec des couleurs unies ou des d&#233;grad&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "pinceaux, peindre avec des dégradés"
-  - "pinceaux, peindre avec des couleurs unies"
-  - "dégradés, peindre avec"
-  - "peindre avec des dégradés"
-  - "peindre avec des couleurs unies"
-  - "couleurs unies, peindre avec"
+title: "Vue d'ensemble de la peinture avec des couleurs unies ou des dégradés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- solid colors [WPF], painting with
+- painting with gradients [WPF]
+- gradients [WPF], painting with
+- brushes [WPF], painting with solid colors
+- brushes [WPF], painting with gradients
+- painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f26ab394ea94b27257b6d0b662f3a78f3e68ca99
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Vue d&#39;ensemble de la peinture avec des couleurs unies ou des d&#233;grad&#233;s
-Cette rubrique décrit comment utiliser les objets <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush> et <xref:System.Windows.Media.RadialGradientBrush> pour peindre avec des couleurs unies, des dégradés linéaires et des dégradés radiaux.  
+# <a name="painting-with-solid-colors-and-gradients-overview"></a>Vue d'ensemble de la peinture avec des couleurs unies ou des dégradés
+Cette rubrique explique comment utiliser <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, et <xref:System.Windows.Media.RadialGradientBrush> objets à peindre avec des couleurs unies, des dégradés linéaires et des dégradés radiaux.  
   
-   
+
   
 <a name="solidcolor"></a>   
-## Peinture d'une zone avec une couleur unie  
- Une des opérations les plus courantes, sur n'importe quelle plateforme, est de peindre une zone de <xref:System.Windows.Media.Color> unie.  Pour effectuer cette tâche, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit la classe <xref:System.Windows.Media.SolidColorBrush>.  Les sections suivantes décrivent les différentes manières de peindre avec <xref:System.Windows.Media.SolidColorBrush>.  
+## <a name="painting-an-area-with-a-solid-color"></a>Peindre une zone avec une couleur unie  
+ Une des opérations plus courantes dans n’importe quelle plateforme consiste à peindre une zone avec un solide <xref:System.Windows.Media.Color>. Pour accomplir cette tâche, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit la <xref:System.Windows.Media.SolidColorBrush> classe. Les sections suivantes décrivent les différentes manières de peindre avec un <xref:System.Windows.Media.SolidColorBrush>.  
   
 <a name="solidcolorinxaml"></a>   
-### Utilisation de SolidColorBrush en "XAML"  
- Pour peindre une zone d'une couleur unie en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], utilisez une des options suivantes.  
+### <a name="using-a-solidcolorbrush-in-xaml"></a>Utiliser un élément SolidColorBrush en « XAML »  
+ Pour peindre une zone avec une couleur unie en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], utilisez l’une des options suivantes.  
   
--   Sélectionnez un pinceau de couleur unie prédéfinie par son nom.  Par exemple, vous pouvez affecter au <xref:System.Windows.Controls.Control.Background%2A> d'un bouton la valeur "Red" ou "MediumBlue".  Pour obtenir la liste des autres pinceaux de couleur unie prédéfinie, consultez les propriétés statiques de la classe <xref:System.Windows.Media.Brushes>.  Voici un exemple :  
+-   Sélectionnez un pinceau couleur unie prédéfinie en fonction d’un nom.  Par exemple, vous pouvez définir un bouton <xref:System.Windows.Controls.Control.Background%2A> « Rouge » ou « MediumBlue ».  Pour une liste d’autres prédéfinies pinceaux de couleur unie, consultez les propriétés statiques de la <xref:System.Windows.Media.Brushes> classe. Voici un exemple.  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
   
--   Choisissez une couleur dans la palette de couleurs 32 bits en spécifiant les quantités de rouge, de vert et de bleu à combiner pour obtenir une seule couleur unie.  Le format utilisé pour définir une couleur de la palette 32 bits est "*\#rrvvbb*", où *rr* est un nombre hexadécimal à deux chiffres spécifiant la quantité relative de rouge, *vv* la quantité de vert et *bb* la quantité de bleu.  De plus, la couleur peut être spécifiée par "\#*aarrvvbb*" où *aa* spécifie la valeur *alpha*, ou transparence, de la couleur.  Cette approche vous permet de créer des couleurs qui sont partiellement transparentes.  Dans l'exemple suivant, <xref:System.Windows.Controls.Control.Background%2A> d'un <xref:System.Windows.Controls.Button> est défini à la valeur rouge entièrement opaque à l'aide de la notation hexadécimale.  
+-   Choisissez une couleur dans la palette de couleurs 32 bits en spécifiant les quantités de rouge, de vert et de bleu à combiner en une seule couleur unie.  Le format pour spécifier une couleur de la palette 32 bits est « *#rrggbb* », où *rr* est un nombre hexadécimal à deux chiffres spécifiant la quantité relative de rouge, où *gg* spécifie la quantité de vert et où *bb* spécifie la quantité de bleu.  En outre, la couleur peut être spécifiée sous la forme « #*aarrggbb* » où *aa* spécifie la valeur *alpha*, ou transparence, de la couleur. Cette approche vous permet de créer des couleurs qui sont partiellement transparentes.  Dans l’exemple suivant, la <xref:System.Windows.Controls.Control.Background%2A> d’un <xref:System.Windows.Controls.Button> est défini sur rouge entièrement opaque à l’aide de la notation hexadécimale.  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
   
--   Utilisez la syntaxe de balise de propriété pour décrire <xref:System.Windows.Media.SolidColorBrush>.  Cette syntaxe est plus documentée, mais elle vous permet de spécifier des paramètres supplémentaires, tel que l'opacité du pinceau.  Dans l'exemple suivant, les propriétés <xref:System.Windows.Controls.Control.Background%2A> de deux éléments <xref:System.Windows.Controls.Button> ont la valeur rouge entièrement opaque.  La première couleur du pinceau est décrite à l'aide d'un nom de couleur prédéfinie.  La deuxième couleur du pinceau est décrite à l'aide de la notation hexadécimale.  
+-   Utiliser la syntaxe de balise de propriété pour décrire un <xref:System.Windows.Media.SolidColorBrush>. Cette syntaxe est plus détaillée mais vous permet de spécifier des paramètres supplémentaires, tels que l’opacité du pinceau. Dans l’exemple suivant, la <xref:System.Windows.Controls.Control.Background%2A> propriétés de deux <xref:System.Windows.Controls.Button> éléments ont la valeur rouge entièrement opaque. La première couleur du pinceau est décrite à l’aide d’un nom de couleur prédéfinie. La deuxième couleur du pinceau est décrite à l’aide de la notation hexadécimale.  
   
-     [!code-xml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
+     [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
   
 <a name="solidcolorsincode"></a>   
-### Peinture avec SolidColorBrush dans du code  
- Pour peindre une zone d'une couleur unie dans du code, utilisez l'une des options suivantes.  
+### <a name="painting-with-a-solidcolorbrush-in-code"></a>Peindre avec un élément SolidColorBrush dans le code  
+ Pour peindre une zone avec une couleur unie dans le code, utilisez l’une des options suivantes.  
   
--   Utilisez un des pinceaux prédéfinis fournis par la classe <xref:System.Windows.Media.Brushes>.  Dans l'exemple suivant, le <xref:System.Windows.Controls.Control.Background%2A> du <xref:System.Windows.Controls.Button> a la valeur <xref:System.Windows.Media.Brushes.Red%2A>.  
+-   Utilisez une des pinceaux prédéfinis fournis par le <xref:System.Windows.Media.Brushes> classe. Dans l’exemple suivant, la <xref:System.Windows.Controls.Control.Background%2A> d’un <xref:System.Windows.Controls.Button> a la valeur <xref:System.Windows.Media.Brushes.Red%2A>.  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedBrush1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedbrush1csharp)]  
   
--   Créez un <xref:System.Windows.Media.SolidColorBrush> et affectez sa propriété <xref:System.Windows.Media.SolidColorBrush.Color%2A> à l'aide d'une structure <xref:System.Windows.Media.Color>.  Vous pouvez utiliser une couleur prédéfinie de la classe <xref:System.Windows.Media.Colors> ou vous pouvez créer une <xref:System.Windows.Media.Color> à l'aide de la méthode statique <xref:System.Windows.Media.Color.FromArgb%2A>.  
+-   Créer un <xref:System.Windows.Media.SolidColorBrush> et définir son <xref:System.Windows.Media.SolidColorBrush.Color%2A> à l’aide de la propriété un <xref:System.Windows.Media.Color> structure. Vous pouvez utiliser une couleur prédéfinie dans le <xref:System.Windows.Media.Colors> classe ou vous pouvez créer un <xref:System.Windows.Media.Color> à l’aide de la méthode statique <xref:System.Windows.Media.Color.FromArgb%2A> (méthode).  
   
-     L'exemple suivant montre comment affecter la propriété <xref:System.Windows.Media.SolidColorBrush.Color%2A> d'un <xref:System.Windows.Media.SolidColorBrush> à l'aide d'une couleur prédéfinie.  
+     L’exemple suivant montre comment définir la <xref:System.Windows.Media.SolidColorBrush.Color%2A> propriété d’un <xref:System.Windows.Media.SolidColorBrush> à l’aide d’une couleur prédéfinie.  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedColor1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedcolor1csharp)]  
   
- La méthode statique <xref:System.Windows.Media.Color.FromArgb%2A> vous permet de spécifier les valeurs [alpha](GTMT), rouge, vert et bleu de la couleur.  La plage de ces valeurs s'étend en général de 0 à 255.  Par exemple, une valeur [alpha](GTMT) de 0 indique qu'une couleur est complètement transparente, tandis qu'une valeur de 255 indique que la couleur est complètement opaque.  De même, une valeur de rouge de 0 indique que cette couleur ne contient pas de rouge, tandis qu'une valeur de 255 indique que cette couleur contient la quantité maximum de rouge possible.  Dans l'exemple suivant, la couleur d'un pinceau est décrite en spécifiant les valeurs alpha, rouge, vert et bleu.  
+ La méthode statique <xref:System.Windows.Media.Color.FromArgb%2A> vous permet de spécifier les valeurs de la couleur alpha, rouge, vert et bleu. La plage par défaut pour chacune de ces valeurs est comprise entre 0 et 255. Par exemple, une valeur alpha de 0 indique qu’une couleur est entièrement transparente, tandis qu’une valeur de 255 indique que la couleur est entièrement opaque. De même, une valeur de rouge de 0 indique qu’une couleur n’est pas composée de rouge, tandis qu’une valeur de 255 indique qu’une couleur est composée de la quantité maximale de rouge possible.  Dans l’exemple suivant, la couleur d’un pinceau est décrite en spécifiant des valeurs alpha, de rouge, de vert et de bleu.  
   
  [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushfromArgbExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushfromargbexample1csharp)]  
   
- Pour obtenir des informations sur d'autres manières de spécifier la couleur, consultez la rubrique de référence <xref:System.Windows.Media.Color>.  
+ Comment spécifier des couleurs, consultez la <xref:System.Windows.Media.Color> rubrique de référence.  
   
 <a name="gradient"></a>   
-## Peinture d'une zone avec un dégradé  
- Les pinceaux à dégradé permettent de peindre une zone avec plusieurs couleurs qui fusionnent le long d'un axe.  Vous pouvez les utiliser pour créer des impressions d'ombre et de lumière, afin de donner à vos contrôles une apparence 3D.  Vous pouvez également les utiliser pour simuler du verre, du chrome, de l'eau et d'autres surfaces lisses.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit deux types de pinceaux de dégradé : <xref:System.Windows.Media.LinearGradientBrush> et <xref:System.Windows.Media.RadialGradientBrush>.  
+## <a name="painting-an-area-with-a-gradient"></a>Peindre une zone avec un dégradé  
+ Un pinceau de dégradé peint une zone avec plusieurs couleurs qui se mélangent le long d’un axe. Vous pouvez les utiliser pour créer des impressions de lumière et d’ombre et ainsi donner à vos contrôles une apparence 3D. Vous pouvez également les utiliser pour simuler le verre, le chrome, l’eau et d’autres surfaces lisses.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit deux types de pinceaux de dégradé : <xref:System.Windows.Media.LinearGradientBrush> et <xref:System.Windows.Media.RadialGradientBrush>.  
   
 <a name="lineargradientbrush"></a>   
-## Dégradés linéaires  
- <xref:System.Windows.Media.LinearGradientBrush> peint une zone avec un dégradé défini le long d'une ligne, l'*axe de dégradé*.  Vous pouvez spécifier les couleurs du dégradé et leur emplacement le long de l'axe de dégradé à l'aide des objets <xref:System.Windows.Media.GradientStop>.  Vous pouvez également modifier l'axe de dégradé, ce qui vous permet de créer des dégradés horizontaux et verticaux et d'inverser le sens du dégradé.  L'axe de dégradé est décrit dans la section suivante.  Par défaut, un dégradé est créé en diagonale.  
+## <a name="linear-gradients"></a>Dégradés linéaires  
+ A <xref:System.Windows.Media.LinearGradientBrush> peint une zone avec un dégradé défini le long d’une ligne, la *axe du dégradé*.  Vous spécifiez des couleurs de dégradé et leur emplacement le long de l’axe du dégradé à l’aide <xref:System.Windows.Media.GradientStop> objets.  Vous pouvez également modifier l’axe du dégradé, ce qui vous permet de créer des dégradés horizontaux et verticaux et d’inverser le sens du dégradé. L’axe du dégradé est décrit dans la section suivante. Par défaut, un dégradé diagonal est créé.  
   
- L'exemple suivant affiche le code qui crée un dégradé linéaire de quatre couleurs.  
+ L’exemple suivant montre le code qui crée un dégradé linéaire avec quatre couleurs.  
   
- [!code-xml[GradientBrushExamples_snip#DiagonalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#diagonalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#DiagonalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#diagonalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#DiagonalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#diagonalgradient1csharp)]  
   
  Ce code génère le dégradé suivant :  
   
- ![Dégradé linéaire en diagonale](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.png "wcpsdk\_graphicsmm\_diaglgradient\_nolabel")  
+ ![Un dégradé linéaire diagonal](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.jpg "wcpsdk_graphicsmm_diaglgradient_nolabel")  
   
- **Remarque :** les exemples de dégradés de cette rubrique utilisent le système de coordonnées par défaut pour définir les points de départ et d'arrivée.  Le système de coordonnées par défaut est relatif par rapport à une zone englobante : 0 indique 0 % de la zone englobante, et 1 indique 100 % de la zone englobante.  Vous pouvez modifier ce système de coordonnées en affectant à la propriété <xref:System.Windows.Media.GradientBrush.MappingMode%2A> la valeur <xref:System.Windows.Media.BrushMappingMode>.  Un système de coordonnées absolues n'est pas relatif par rapport à une zone englobante.  Les valeurs sont interprétées directement dans l'espace local.  
+ **Remarque :** les exemples de dégradé présentés dans cette rubrique utilisent le système de coordonnées par défaut pour la définition des points de départ et des points de fin. Le système de coordonnées par défaut est relatif à un rectangle englobant : 0 indique 0 % du rectangle englobant et 1 indique 100 % du rectangle englobant. Vous pouvez modifier ce système de coordonnées en définissant le <xref:System.Windows.Media.GradientBrush.MappingMode%2A> valeur à la propriété <xref:System.Windows.Media.BrushMappingMode.Absolute>. Un système de coordonnées absolu n’est pas relatif à un rectangle englobant. Les valeurs sont interprétées directement dans l’espace local.  
   
- <xref:System.Windows.Media.GradientStop> est le bloc de construction de base d'un pinceau à dégradé.  Un point de dégradé spécifie une <xref:System.Windows.Media.GradientStop.Color%2A> à un <xref:System.Windows.Media.GradientStop.Offset%2A> le long de l'axe de dégradé.  
+ Le <xref:System.Windows.Media.GradientStop> est le bloc de construction de base d’un pinceau de dégradé.  Un point de dégradé spécifie une <xref:System.Windows.Media.GradientStop.Color%2A> à un <xref:System.Windows.Media.GradientStop.Offset%2A> le long de l’axe du dégradé.  
   
--   La propriété <xref:System.Windows.Media.GradientStop.Color%2A> du point de dégradé spécifie la couleur du point de dégradé.  Vous pouvez définir la couleur en utilisant une couleur prédéfinie \(fournie par la classe <xref:System.Windows.Media.Colors>\) ou en spécifiant les valeurs ScRVB ou ARVB.  En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez aussi utiliser une notation hexadécimale pour décrire une couleur.  Pour plus d'informations, consultez la structure <xref:System.Windows.Media.Color>.  
+-   Du point de dégradé <xref:System.Windows.Media.GradientStop.Color%2A> propriété spécifie la couleur du point de dégradé. Vous pouvez définir la couleur à l’aide d’une couleur prédéfinie (fournie par la <xref:System.Windows.Media.Colors> classe) ou en spécifiant des valeurs ScRGB ou ARVB. En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous pouvez également utiliser la notation hexadécimale pour décrire une couleur. Pour plus d’informations, consultez le <xref:System.Windows.Media.Color> structure.  
   
--   La propriété <xref:System.Windows.Media.GradientStop.Offset%2A> du point de dégradé définit la position de la couleur du point de dégradé sur l'axe de dégradé.  L'offset est un <xref:System.Double> dont les valeurs s'étendent de 0 à 1.  Plus la valeur de l'offset d'un point de dégradé est proche de 0, plus la couleur est proche de celle du début du dégradé.  Plus la valeur de l'offset du dégradé est proche de 1, plus la couleur est proche de la fin du dégradé.  
+-   Du point de dégradé <xref:System.Windows.Media.GradientStop.Offset%2A> propriété spécifie la position de couleur de dégradé sur l’axe du dégradé. Le décalage est un <xref:System.Double> qui comprise entre 0 et 1. Plus une valeur de décalage de point de dégradé est proche de 0, plus la couleur est proche du début du dégradé. Plus une valeur de décalage de point de dégradé est proche de 1, plus la couleur est proche de la fin du dégradé.  
   
- La couleur de chaque point entre deux points de dégradé est interpolée de façon linéaire sous la forme d'une combinaison des couleurs des deux points de dégradé englobants.  L'illustration suivante met en évidence les points de dégradé de l'exemple précédent.  Les cercles indiquent l'emplacement des points de dégradé et une ligne en pointillés montre l'axe de dégradé.  
+ La couleur de chaque point entre les points de dégradé est interpolée de façon linéaire comme une combinaison de la couleur spécifiée par les deux points de dégradé liés. L’illustration suivante met en évidence les points de dégradé de l’exemple précédent. Les cercles indiquent l’emplacement des points de dégradé et une ligne en pointillés montre l’axe du dégradé.  
   
- ![Points de dégradé dans un dégradé linéaire](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk\_graphicsmm\_4gradientstops")  
+ ![Points de dégradé dans un dégradé linéaire](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk_graphicsmm_4gradientstops")  
   
- Le premier point de dégradé spécifie la couleur jaune à un offset de `0.0`.  Le deuxième point de dégradé spécifie la couleur rouge à un offset de `0.25`.  Les points situés entre ces deux points de dégradé passent graduellement du jaune au rouge lorsqu'on se déplace de la gauche vers la droite le long de l'axe de dégradé.  Le troisième point de dégradé spécifie la couleur bleue à un offset de `0.75`.  Les points situés entre le deuxième et le troisième point de dégradé passent progressivement du rouge au bleu.  Le quatrième point de dégradé spécifie la couleur vert citron à un offset de `1.0`.  Les points situés entre le troisième et le quatrième point de dégradé passent progressivement du bleu au vert citron.  
+ Le premier point de dégradé spécifie la couleur jaune pour un décalage de `0.0`.  Le deuxième point de dégradé spécifie la couleur rouge pour un décalage de `0.25`.  Les points entre ces deux points passent graduellement du jaune au rouge lorsque vous passez de gauche à droite le long de l’axe du dégradé.  Le troisième point de dégradé spécifie la couleur bleue pour un décalage de `0.75`.  Les points situés entre le deuxième et le troisième point de dégradé passent progressivement du rouge au bleu. Le quatrième point de dégradé spécifie la couleur vert citron pour un décalage de `1.0`. Les points situés entre le troisième et le quatrième point de dégradé passent progressivement du bleu au vert citron.  
   
 <a name="gradientaxis"></a>   
-### L'axe de dégradé  
- Comme mentionné précédemment, les points de dégradé d'un pinceau à dégradé linéaire sont positionnés le long d'une ligne, l'axe de dégradé.  Vous pouvez modifier l'orientation et la taille de la ligne à l'aide des propriétés <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> du pinceau.  En manipulant les propriétés <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> du pinceau, vous pouvez créer des dégradés horizontaux et verticaux, inverser le sens du dégradé, concentrer la dispersion du dégradé, etc.  
+### <a name="the-gradient-axis"></a>Axe du dégradé  
+ Comme mentionné précédemment, les points de dégradé d’un pinceau dégradé linéaire sont positionnés le long d’une ligne, l’axe du dégradé. Vous pouvez modifier l’orientation et la taille de la ligne à l’aide du pinceau <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> propriétés. En manipulant du pinceau <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, vous pouvez créer horizontale et des dégradés verticaux, inverser le sens du dégradé, réduisent la dispersion du dégradé et bien plus encore.  
   
- Par défaut, les propriétés <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> du pinceau à dégradé linéaire sont relatives par rapport à la zone qui est peinte.  Le point \(0,0\) représente l'angle supérieur gauche de la zone qui est peinte, et \(1,1\) représente l'angle inférieur droit de la zone qui est peinte.  La valeur par défaut de la propriété <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> de <xref:System.Windows.Media.LinearGradientBrush> est \(0,0\), et la valeur par défaut de <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> est \(1,1\), ce qui crée un dégradé diagonal qui commence à l'angle supérieur gauche et qui s'étend jusqu'à l'angle inférieur droit de la zone qui est peinte.  L'illustration suivante représente l'axe de dégradé d'un pinceau à dégradé linéaire avec les valeurs par défaut de <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>.  
+ Par défaut, le pinceau de dégradé linéaire <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> sont relatives à la zone qui est peinte. Le point (0,0) représente l’angle supérieur gauche de la zone que vous êtes en train de peindre, tandis que (1,1) représente le coin inférieur droit de la zone que vous êtes en train de peindre. La valeur par défaut <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> d’un <xref:System.Windows.Media.LinearGradientBrush> est (0,0) et sa valeur par défaut <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> est (1,1), ce qui crée un dégradé diagonal qui commence à l’angle supérieur gauche et l’extension à l’angle inférieur droit de la zone qui est peinte. L’illustration suivante montre l’axe de dégradé d’un pinceau de dégradé linéaire avec la valeur par défaut <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>.  
   
- ![Axe du dégradé pour un dégradé linéaire en diagonale](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk\_graphicsmm\_diagonalgradientaxis")  
+ ![Axe du dégradé pour un dégradé linéaire diagonal](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk_graphicsmm_diagonalgradientaxis")  
   
- L'exemple suivant montre comment créer un dégradé horizontal en spécifiant les propriétés <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> du pinceau.  Remarquez que les points de dégradé sont identiques à ceux des exemples précédents ; en modifiant simplement <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, le dégradé est passé de diagonal en horizontal.  
+ L’exemple suivant montre comment créer une horizontale dégradé en spécifiant le pinceau <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>. Notez que les points de dégradé sont les mêmes que dans les exemples précédents ; en modifiant simplement la <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> et <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, le dégradé a été modifié de diagonal à horizontal.  
   
- [!code-xml[GradientBrushExamples_snip#HorizontalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#horizontalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#HorizontalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#horizontalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#HorizontalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#horizontalgradient1csharp)]  
   
- L'illustration suivante montre le dégradé qui est créé.  L'axe de dégradé est indiqué par une ligne en pointillés, et les points de dégradé sont indiqués par des cercles.  
+ L’illustration suivante montre le dégradé qui est créé. L’axe du dégradé est indiqué avec une ligne en pointillés et les points de dégradé sont indiqués par des cercles.  
   
- ![Axe du dégradé pour un dégradé linéaire horizontal](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.png "wcpsdk\_graphicsmm\_horizontalgradient")  
+ ![Axe du dégradé pour un dégradé linéaire horizontal](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.jpg "wcpsdk_graphicsmm_horizontalgradient")  
   
- L'exemple suivant montre comment créer un dégradé vertical.  
+ L’exemple suivant montre comment créer un dégradé vertical.  
   
- [!code-xml[GradientBrushExamples_snip#VerticalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#verticalgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#VerticalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#verticalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#VerticalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#verticalgradient1csharp)]  
   
- L'illustration suivante montre le dégradé qui est créé.  L'axe de dégradé est indiqué par une ligne en pointillés, et les points de dégradé sont indiqués par des cercles.  
+ L’illustration suivante montre le dégradé qui est créé. L’axe du dégradé est indiqué avec une ligne en pointillés et les points de dégradé sont indiqués par des cercles.  
   
- ![Axe du dégradé pour un dégradé vertical](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-verticalgradient.png "wcpsdk\_graphicsmm\_verticalgradient")  
+ ![Axe du dégradé pour un dégradé vertical](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-verticalgradient.jpg "wcpsdk_graphicsmm_verticalgradient")  
   
 <a name="radialgradients"></a>   
-## Dégradés radiaux  
- De même que <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush> peint une zone avec des couleurs qui fusionnent le long d'un axe.  Les exemples précédents montraient que l'axe d'un pinceau à dégradé linéaire est une ligne droite.  Un axe de pinceau à dégradé radial est défini par un cercle ; ses couleurs "rayonnent" de son origine vers l'extérieur.  
+## <a name="radial-gradients"></a>Dégradés radiaux  
+ Comme un <xref:System.Windows.Media.LinearGradientBrush>, un <xref:System.Windows.Media.RadialGradientBrush> peint une zone avec des couleurs qui fusionnent le long d’un axe. Les exemples précédents ont montré comment un axe de pinceau dégradé linéaire est une ligne droite. Un axe de pinceau dégradé radial est défini par un cercle ; ses couleurs « rayonnent » de l’extérieur vers son origine.  
   
- Dans l'exemple suivant, un pinceau à dégradé radial est utilisé pour peindre l'intérieur d'un rectangle.  
+ Dans l’exemple suivant, un pinceau dégradé radial est utilisé pour peindre l’intérieur d’un rectangle.  
   
- [!code-xml[GradientBrushExamples_snip#RadialGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/RadialGradientBrushExample.xaml#radialgradient1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#RadialGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/RadialGradientBrushExample.xaml#radialgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#RadialGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/RadialGradientBrushExample.cs#radialgradient1csharp)]  
   
- L'illustration suivante montre le dégradé créé dans l'exemple précédent.  Les points de dégradé du pinceau sont mis en surbrillance.  Notez que, même si les résultats sont différents, les points de dégradé de cet exemple sont identiques aux points de dégradé des précédents exemples de pinceau à dégradé linéaire.  
+ L’illustration suivante montre le dégradé créé dans l’exemple précédent. Les points de dégradé du pinceau ont été mis en évidence. Notez que, même si les résultats sont différents, les points de dégradé de cet exemple sont identiques aux points de dégradé des exemples précédents de pinceau dégradé linéaire.  
   
- ![Arrêts du dégradé dans un dégradé radial](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk\_graphicsmm\_4gradientstops\_rg")  
+ ![Points de dégradé dans un dégradé radial](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk_graphicsmm_4gradientstops_rg")  
   
- <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A> spécifie le point de départ de l'axe de dégradé d'un pinceau à dégradé radial.  L'axe de dégradé rayonne de l'origine du dégradé vers le cercle du dégradé.  Le cercle de dégradé d'un pinceau est défini par ses propriétés <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A> et <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A>.  
+ Le <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A> Spécifie le point de départ de l’axe du dégradé d’un pinceau de dégradé radial. L’axe du dégradé rayonne de l’origine du dégradé vers le cercle du dégradé. Cercle de dégradé d’un pinceau est défini par son <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, et <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> propriétés.  
   
- L'illustration suivante montre plusieurs dégradés radiaux dont les paramètres <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>, <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A> et <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> sont différents.  
+ L’illustration suivante montre plusieurs dégradés radiaux avec différents <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>, <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, et <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> paramètres.  
   
- ![Paramètres de RadialGradientBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.png "wcpsdk\_graphicsmm\_originscirclesandradii")  
-Des objets RadialGradientBrush de paramètres GradientOrigin, Center, RadiusX et RadiusY différents.  
+ ![Paramètres de RadialGradientBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.gif "wcpsdk_graphicsmm_originscirclesandradii")  
+Éléments RadialGradientBrushes avec divers paramètres GradientOrigin, Center, RadiusX et Radius.  
   
 <a name="specifyinggradientcolors"></a>   
-## Spécification de points de dégradé transparents ou partiellement transparents  
- Les points de dégradé ne fournissant pas de propriété d'opacité, vous devez spécifier le canal alpha des couleurs à l'aide de la notation hexadécimale [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] dans le balisage ou utiliser la méthode <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=fullName> pour créer des points de dégradé transparents ou partiellement transparents.  Les sections suivantes expliquent comment créer des points de dégradé partiellement transparents en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et dans du code.  Pour plus d'informations sur le paramétrage de l'opacité du pinceau entier, consultez la section [Spécification de l'opacité d'un pinceau](#brushesAndOpacity).  
+## <a name="specifying-transparent-or-partially-transparent-gradient-stops"></a>Spécifier des points de dégradé transparents ou partiellement transparents  
+ Points de dégradé ne fournissant pas de propriété d’opacité, vous devez spécifier le canal alpha des couleurs à l’aide de [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] notation hexadécimale dans le balisage ou utiliser la <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> méthode pour créer un dégradé qui sont entièrement ou partiellement transparent. Les sections suivantes expliquent comment créer des points de dégradé partiellement transparents en [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et dans le code.  
   
 <a name="argbsyntax"></a>   
-### Spécification de l'opacité de la couleur en « XAML »  
- En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous utilisez la notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] pour spécifier l'opacité des couleurs individuelles.  La notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] utilise la syntaxe suivante :  
+### <a name="specifying-color-opacity-in-xaml"></a>Spécifier l’opacité de couleur en « XAML »  
+ En [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous utilisez la notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] pour spécifier l’opacité des couleurs individuelles. La notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] utilise la syntaxe suivante :  
   
- `#`**aa** *rrvvbb*  
+ `#` **aa** *rrggbb*  
   
- Dans la ligne précédente, *aa* représente une valeur hexadécimale à deux chiffres utilisée pour spécifier l'opacité de la couleur.  *rr*, *vv* et *bb* représentent chacun une valeur hexadécimale à deux chiffres utilisée pour spécifier les quantités de rouge, de vert et de bleu dans la couleur.  Chaque chiffre hexadécimal peut avoir une valeur de 0 à 9 ou de A à F.  0 est la plus petite valeur et F est la plus grande.   Une valeur alpha 00 spécifie une couleur qui est totalement transparente, alors qu'une valeur alpha FF crée une couleur qui est totalement opaque.  Dans l'exemple suivant, la notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] est utilisée pour spécifier deux couleurs.  La première est partiellement transparente \(elle a une valeur alpha de x20\), tandis que la deuxième est complètement opaque.  
+ *aa* dans la ligne précédente représente une valeur hexadécimale à deux chiffres utilisée pour spécifier l’opacité de la couleur. *rr*, *gg* et *bb* représentent une valeur hexadécimale à deux chiffres utilisée pour spécifier la quantité de rouge, de vert et de bleu dans la couleur. Chaque chiffre hexadécimal peut avoir une valeur comprise entre 0 et 9 ou A et F. 0 est la plus petite valeur et F est la plus grande. Une valeur alpha de 00 indique qu’une couleur est entièrement transparente, tandis qu’une valeur alpha de FF crée une couleur entièrement opaque.  Dans l’exemple suivant, la notation hexadécimale [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] est utilisée pour spécifier deux couleurs. La première est partiellement transparente (elle a une valeur alpha de x20), tandis que la deuxième est entièrement opaque.  
   
- [!code-xml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
+ [!code-xaml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
   
 <a name="fromscrgbsyntax"></a>   
-### Spécification de l'opacité de la couleur dans du code  
- Lorsque vous utilisez du code, la méthode statique <xref:System.Windows.Media.Color.FromArgb%2A> vous permet de spécifier une valeur alpha lorsque vous créez une couleur.  La méthode prend quatre paramètres de type <xref:System.Byte>.  Le premier paramètre spécifie le canal alpha de la couleur ; les trois autres paramètres spécifient les valeurs du rouge, du vert et du bleu de la couleur.  Chaque valeur doit être comprise entre 0 et 255 inclus.  Une valeur alpha de 0 spécifie que la couleur est totalement transparente, tandis qu'une valeur de 255 spécifie que la couleur est totalement opaque.  Dans l'exemple suivant, la méthode <xref:System.Windows.Media.Color.FromArgb%2A> est utilisée pour produire deux couleurs.  La première couleur est partiellement transparente \(sa valeur alpha est 32\), tandis que la deuxième est complètement opaque.  
+### <a name="specifying-color-opacity-in-code"></a>Spécifier l’opacité de couleur dans le code  
+ Lors de l’utilisation de code, la méthode statique <xref:System.Windows.Media.Color.FromArgb%2A> méthode vous permet de spécifier une valeur alpha lorsque vous créez une couleur. La méthode accepte quatre paramètres de type <xref:System.Byte>. Le premier paramètre spécifie le canal alpha de la couleur ; les trois autres paramètres spécifient les valeurs de rouge, de vert et de bleu de la couleur. Cette valeur doit être comprise entre 0 et 255 inclus. Une valeur alpha de 0 indique que la couleur est entièrement transparente, tandis qu’une valeur alpha de 255 indique que la couleur est entièrement opaque. Dans l’exemple suivant, la <xref:System.Windows.Media.Color.FromArgb%2A> méthode est utilisée pour produire deux couleurs. La première couleur est partiellement transparente (elle a une valeur alpha de 32), tandis que la deuxième est entièrement opaque.  
   
  [!code-csharp[GradientBrushExamples_snip#TransparentGradientStopExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/GradientStopsExample.cs#transparentgradientstopexample1csharp)]  
   
- Vous pouvez également utiliser la méthode <xref:System.Windows.Media.Color.FromScRgb%2A>, qui vous permet d'utiliser des valeurs ScRVB pour créer une couleur.  
+ Vous pouvez également utiliser le <xref:System.Windows.Media.Color.FromScRgb%2A> (méthode), ce qui vous permet d’utiliser les valeurs ScRGB pour créer une couleur.  
   
 <a name="otherbrushes"></a>   
-## Peinture avec des objets d'image, de dessin, de modèle et visuels  
- Les classes <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush> et <xref:System.Windows.Media.VisualBrush> vous permettent de peindre une zone avec des objets d'image, de dessin ou visuels.  Pour plus d'informations sur la peinture avec des objets d'image, de dessin et de modèle, consultez [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+## <a name="painting-with-images-drawings-visuals-and-patterns"></a>Peindre avec des images, des dessins, des objets visuels et des motifs  
+ <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, et <xref:System.Windows.Media.VisualBrush> classes permettent de peindre une zone avec des images, des dessins ou des éléments visuels. Pour plus d’informations sur la peinture avec des images, des dessins et des motifs, consultez [Peinture avec des images, des dessins et des objets visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
-## Voir aussi  
- <xref:System.Windows.Media.Brush>   
- <xref:System.Windows.Media.SolidColorBrush>   
- <xref:System.Windows.Media.LinearGradientBrush>   
- <xref:System.Windows.Media.RadialGradientBrush>   
- [Peinture avec des objets d'image, de dessin et visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   
- [Vue d'ensemble des transformations du pinceau](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Media.Brush>  
+ <xref:System.Windows.Media.SolidColorBrush>  
+ <xref:System.Windows.Media.LinearGradientBrush>  
+ <xref:System.Windows.Media.RadialGradientBrush>  
+ [Peinture avec des images, des dessins et des objets visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
+ [Vue d'ensemble des transformations du pinceau](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)  
  [Couches de rendu graphiques](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)

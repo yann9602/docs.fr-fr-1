@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.TxCompletionStatusCompletedForTACOSC | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.TxCompletionStatusCompletedForTACOSC
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 089b982d-63a1-4ef2-8ef2-ad83758c9ec4
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4ba442e3bc7f01da9a2c55d1740970b65670fda4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.TxCompletionStatusCompletedForTACOSC
+# <a name="systemservicemodeltxcompletionstatuscompletedfortacosc"></a>System.ServiceModel.TxCompletionStatusCompletedForTACOSC
 La transaction spécifiée a été effectuée à la fermeture de la session.  
   
-## Description  
+## <a name="description"></a>Description  
  Suivi généré lorsque la session active en cours est fermée et que `TransactionAutoCompleteOnSessionClose` a la valeur `true`.  
   
-## Voir aussi  
- [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

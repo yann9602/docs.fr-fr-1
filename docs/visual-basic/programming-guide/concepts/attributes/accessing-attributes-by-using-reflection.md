@@ -1,35 +1,27 @@
 ---
-title: "Accéder à des attributs à l’aide de la réflexion (Visual Basic) | Documents Microsoft"
+title: "Accéder à des attributs à l’aide de la réflexion (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4763eccc5d1a6bdf3e89c1c4d825d5ff5c6caa3e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a4397200b5a2aa5f337dd3479b5405c1a9f245a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accéder à des attributs à l’aide de la réflexion (Visual Basic)
-Le fait que vous pouvez définir des attributs personnalisés et les placer dans votre code source serait peu d’intérêt la possibilité de récupérer ces informations et en agissant sur elle. En utilisant la réflexion, vous pouvez récupérer les informations qui a été définies avec des attributs personnalisés. La méthode clé est `GetCustomAttributes`, qui retourne un tableau d’objets qui sont les équivalents de l’exécution des attributs du code source. Cette méthode a plusieurs versions surchargées. Pour plus d’informations, consultez <xref:System.Attribute>.</xref:System.Attribute>  
+La définition d’attributs personnalisés et leur ajout à votre code source présentent peu d’intérêt si vous ne pouvez pas ensuite récupérer et manipuler ces informations. La réflexion vous permet de récupérer les informations qui ont été définies à l’aide d’attributs personnalisés. La méthode clé est `GetCustomAttributes`. Elle retourne un tableau d’objets qui sont les équivalents des attributs du code source au moment de l’exécution. Cette méthode a plusieurs versions surchargées. Pour plus d'informations, consultez <xref:System.Attribute>.  
   
- Une spécification d’attribut tels que :  
+ Par exemple, cette spécification d’attribut :  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1)>   
@@ -38,17 +30,17 @@ Class SampleClass
 End Class  
 ```  
   
- est semblable à ceci :  
+ est semblable à celle-ci d’un point de vue conceptuel :  
   
 ```vb  
 Dim anonymousAuthorObject As Author = New Author("P. Ackerman")  
 anonymousAuthorObject.version = 1.1  
 ```  
   
- Toutefois, le code n’est pas exécuté jusqu'à ce que `SampleClass` est interrogée sur les attributs. Appel de `GetCustomAttributes` sur `SampleClass` entraîne une `Author` objet et l’initialisation comme illustré ci-dessus. Si la classe a d’autres attributs, les autres objets d’attribut sont construits de la même façon. `GetCustomAttributes`Renvoie la `Author` objet et autres objets d’attribut dans un tableau. Vous pouvez ensuite itérer sur ce tableau, déterminer les attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations à partir des objets des attributs.  
+ Toutefois, le code n’est pas exécuté tant qu’une requête n’est pas effectuée sur `SampleClass` pour obtenir les attributs. L’appel de `GetCustomAttributes` sur `SampleClass` entraîne la construction et l’initialisation d’un objet `Author` comme illustré ci-dessus. Si la classe a d’autres attributs, les autres objets attribut sont construits de la même façon. `GetCustomAttributes` retourne ensuite l’objet `Author` et les autres objets attribut dans un tableau. Vous pouvez ensuite itérer sur ce tableau, déterminer quels attributs ont été appliqués en fonction du type de chaque élément du tableau et extraire des informations des objets attribut.  
   
 ## <a name="example"></a>Exemple  
- Voici un exemple complet. Un attribut personnalisé est défini, appliqué à plusieurs entités et récupéré par réflexion.  
+ Voici un exemple complet. Un attribut personnalisé est défini, appliqué à plusieurs entités, puis récupéré par réflexion.  
   
 ```vb  
 ' Multiuse attribute  
@@ -117,10 +109,10 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Reflection></xref:System.Reflection>   
- <xref:System.Attribute></xref:System.Attribute>   
- [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)   
- [Récupération des informations stockées dans les attributs](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)   
- [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
- [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)   
- [Création d’attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+ <xref:System.Reflection>  
+ <xref:System.Attribute>  
+ [Guide de programmation Visual Basic](../../../../visual-basic/programming-guide/index.md)  
+ [Récupération des informations stockées dans les attributs](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
+ [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
+ [Attributs (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
+ [Créer des attributs personnalisés (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)

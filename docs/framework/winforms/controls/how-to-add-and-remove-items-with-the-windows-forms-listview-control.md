@@ -1,45 +1,49 @@
 ---
-title: "Comment&#160;: ajouter et supprimer des &#233;l&#233;ments avec le contr&#244;le ListView Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Liste (vues), ajouter des éléments de liste"
-  - "ListView (contrôle Windows Forms), ajouter des éléments de liste"
-  - "ListView (contrôle Windows Forms), remplir"
+title: "Comment : ajouter et supprimer des éléments avec le contrôle ListView Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ListView control [Windows Forms], populating
+- list views [Windows Forms], adding list items
+- ListView control [Windows Forms], adding list items
 ms.assetid: 1b35a80a-edd8-495f-a807-a28c4aae52c6
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4b7c9d92e4ba58ae5c5f2cbff1c79fd7a3ae673a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter et supprimer des &#233;l&#233;ments avec le contr&#244;le ListView Windows Forms
-Pour ajouter un élément à un contrôle <xref:System.Windows.Forms.ListView> Windows Forms, vous devez le spécifier, puis lui assigner des propriétés.  L'ajout ou la suppression d'éléments peut s'effectuer à n'importe quel moment.  
+# <a name="how-to-add-and-remove-items-with-the-windows-forms-listview-control"></a>Comment : ajouter et supprimer des éléments avec le contrôle ListView Windows Forms
+Le processus d’ajout d’un élément à un Windows Forms <xref:System.Windows.Forms.ListView> contrôle se compose principalement de la spécification de l’élément et lui assigner des propriétés. Ajouter ou supprimer des éléments de liste peut être effectuée à tout moment.  
   
-### Pour ajouter des éléments par programme  
+### <a name="to-add-items-programmatically"></a>Pour ajouter par programmation des éléments  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A> de la propriété <xref:System.Windows.Forms.ListView.Items%2A>.  
+1.  Utilisez le <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A> méthode de la <xref:System.Windows.Forms.ListView.Items%2A> propriété.  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#11)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#11)]  
   
-### Pour supprimer des éléments par programme  
+### <a name="to-remove-items-programmatically"></a>Pour supprimer des éléments par programme  
   
-1.  Utilisez la méthode <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> ou <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> de la propriété <xref:System.Windows.Forms.ListView.Items%2A>.  La méthode <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> supprime un seul élément, alors que la méthode <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> supprime tous les éléments de la liste.  
+1.  Utilisez le <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> ou <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> méthode de la <xref:System.Windows.Forms.ListView.Items%2A> propriété. Le <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> méthode supprime un élément unique ; le <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> méthode supprime tous les éléments de la liste.  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#12)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#12)]  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ListView>   
- [ListView, contrôle](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)   
- [Vue d'ensemble du contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ListView>  
+ [Contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
+ [Vue d’ensemble du contrôle ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)

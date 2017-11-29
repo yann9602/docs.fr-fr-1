@@ -1,29 +1,25 @@
 ---
-title: "Comment : rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic) | Documents Microsoft"
+title: "Comment : rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 72c3aed5-9522-4454-a876-2070aad13f2e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 4763181b56037f3efe7e3a2e4e31651b515e1424
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 78bedc9b3f6143b1574d9063ea7ee0f08550681e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-visual-basic"></a>Comment : rechercher l’élément racine (XPath-LINQ to XML) (Visual Basic)
-Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)].  
+Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
  L’expression XPath est la suivante :  
   
@@ -32,7 +28,7 @@ Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE
 ## <a name="example"></a>Exemple  
  Cet exemple recherche l'élément racine.  
   
- Cet exemple utilise le document XML suivant : [exemple de fichier XML : plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -59,4 +55,4 @@ PurchaseOrders
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML pour les utilisateurs de XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

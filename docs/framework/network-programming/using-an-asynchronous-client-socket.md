@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -25,16 +23,15 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3f8bffcd94f3fb9c516e2201bd932480ab51c1a5
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 263d8a82bf70ac86e776f28d660ef08c58a33384
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Utilisation d’un socket client asynchrone
 Un socket client asynchrone n’interrompt pas l’exécution de l’application durant les opérations réseau. Au lieu de cela, il utilise le modèle de programmation asynchrone standard de .NET Framework pour traiter la connexion réseau sur un thread pendant que l’application continue de s’exécuter sur le thread d’origine. Les sockets asynchrones sont appropriés pour les applications qui utilisent le réseau de manière intensive ou qui ne peuvent pas être interrompues en attendant la fin des opérations réseau.  
@@ -43,9 +40,9 @@ Un socket client asynchrone n’interrompt pas l’exécution de l’application
   
  Les opérations asynchrones nécessitent une méthode de rappel pour retourner le résultat de l’opération. Si votre application n’a pas besoin de connaître le résultat, la méthode de rappel n’est pas utile. L’exemple de code dans cette section montre comment utiliser une méthode pour démarrer une connexion à un appareil réseau, une méthode de rappel pour terminer la connexion, une méthode pour démarrer l’envoi des données, une méthode de rappel pour terminer l’envoi, une méthode pour démarrer la réception des données et une méthode de rappel pour terminer la réception des données.  
   
- Les sockets asynchrones utilisent plusieurs threads du pool de threads système pour traiter les connexions réseau. Un seul thread est chargé du démarrage de l’envoi ou de la réception des données. Les autres threads terminent la connexion à l’appareil réseau et l’envoi ou la réception des données. Dans les exemples suivants, les instances de la classe <xref:System.Threading.ManualResetEvent?displayProperty=fullName> sont utilisées pour interrompre l’exécution du thread principal et signaler à ce thread la reprise possible de l’exécution.  
+ Les sockets asynchrones utilisent plusieurs threads du pool de threads système pour traiter les connexions réseau. Un seul thread est chargé du démarrage de l’envoi ou de la réception des données. Les autres threads terminent la connexion à l’appareil réseau et l’envoi ou la réception des données. Dans les exemples suivants, les instances de la classe <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> sont utilisées pour interrompre l’exécution du thread principal et signaler à ce thread la reprise possible de l’exécution.  
   
- Dans l’exemple suivant, pour connecter un socket asynchrone à un appareil réseau, la méthode `Connect` initialise un **Socket**, puis appelle la méthode <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=fullName>, en passant un point de terminaison distant qui représente le périphérique réseau, la méthode de rappel de connexion, ainsi qu’un objet d’état (le **Socket** client) qui sert à passer les informations d’état entre les appels asynchrones. L’exemple implémente la méthode `Connect` qui connecte le **Socket** spécifié au point de terminaison spécifié. Il suppose l’utilisation d’un **ManualResetEvent** global nommé `connectDone`.  
+ Dans l’exemple suivant, pour connecter un socket asynchrone à un appareil réseau, la méthode `Connect` initialise un **Socket**, puis appelle la méthode <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType>, en passant un point de terminaison distant qui représente le périphérique réseau, la méthode de rappel de connexion, ainsi qu’un objet d’état (le **Socket** client) qui sert à passer les informations d’état entre les appels asynchrones. L’exemple implémente la méthode `Connect` qui connecte le **Socket** spécifié au point de terminaison spécifié. Il suppose l’utilisation d’un **ManualResetEvent** global nommé `connectDone`.  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -298,7 +295,6 @@ private static void ReceiveCallback( IAsyncResult ar ) {
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation d’un socket client synchrone](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
- [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)   
+ [Utilisation d’un Socket Client synchrone](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
+ [Écoute avec des sockets](../../../docs/framework/network-programming/listening-with-sockets.md)  
  [Exemple de socket client asynchrone](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)
-

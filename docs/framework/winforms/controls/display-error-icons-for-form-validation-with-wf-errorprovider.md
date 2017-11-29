@@ -1,40 +1,45 @@
 ---
-title: "Comment&#160;: afficher des ic&#244;nes d&#39;erreur pour la validation de formulaire &#224; l&#39;aide du composant ErrorProvider Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "icônes d'erreur"
-  - "messages d'erreur, afficher les icônes"
-  - "ErrorProvider (composant Windows Forms), afficher les icônes d'erreur"
-  - "erreurs (Windows Forms), afficher aux utilisateurs"
+title: "Comment : afficher des icônes d’erreur pour la validation de formulaire à l’aide du composant ErrorProvider Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- errors [Windows Forms], displaying to users
+- error icons
+- ErrorProvider component [Windows Forms], displaying error icons
+- error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 02638ab59c0ba1c0eb0f8090be118b3d5a9111f8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: afficher des ic&#244;nes d&#39;erreur pour la validation de formulaire &#224; l&#39;aide du composant ErrorProvider Windows Forms
-Le composant <xref:System.Windows.Forms.ErrorProvider> Windows Forms vous permet d'afficher une icône d'erreur lorsque l'utilisateur entre des données incorrectes.  Le formulaire doit contenir au moins deux contrôles pour que vous puissiez passer de l'un à l'autre et ainsi appeler le code de validation.  
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>Comment : afficher des icônes d’erreur pour la validation de formulaire à l’aide du composant ErrorProvider Windows Forms
+Vous pouvez utiliser Windows Forms <xref:System.Windows.Forms.ErrorProvider> composant affiche une icône d’erreur lorsque l’utilisateur entre des données non valides. Vous devez disposer d’au moins deux contrôles du formulaire afin d’onglet entre eux et ainsi appeler le code de validation.  
   
-### Pour afficher une icône d'erreur lorsque la valeur d'un contrôle est incorrecte  
+### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a>Pour afficher une icône d’erreur lorsque la valeur d’un contrôle n’est pas valide  
   
-1.  Ajoutez deux contrôles, par exemple des zones de texte, à un Windows Form.  
+1.  Ajoutez deux contrôles, par exemple, les zones de texte, à un Windows Form.  
   
-2.  Ajoutez un composant <xref:System.Windows.Forms.ErrorProvider> au formulaire.  
+2.  Ajouter un <xref:System.Windows.Forms.ErrorProvider> composant au formulaire.  
   
-3.  Sélectionnez le premier contrôle et ajoutez du code à son gestionnaire d'événements <xref:System.Windows.Forms.Control.Validating>.  Pour que ce code s'exécute sans problème, la procédure doit être connectée à l'événement.  Pour plus d'informations, consultez [Comment : créer des gestionnaires d'événements pour les Windows Forms au moment de l'exécution](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+3.  Sélectionnez le premier contrôle et ajoutez du code à ses <xref:System.Windows.Forms.Control.Validating> Gestionnaire d’événements. Dans l’ordre pour ce code s’exécute correctement, la procédure doit être connectée à l’événement. Pour plus d’informations, consultez [Comment : créer des gestionnaires d’événements à exécuter pour les Windows Forms](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
   
-     Le code suivant teste la validité des données entrées par l'utilisateur ; si ces données sont incorrectes, la méthode <xref:System.Windows.Forms.ErrorProvider.SetError%2A> est appelée.  Le premier argument de la méthode <xref:System.Windows.Forms.ErrorProvider.SetError%2A> spécifie le contrôle en regard duquel l'icône doit être affichée.  Le deuxième argument est le texte d'erreur à afficher.  
+     Le code suivant teste la validité des données entrées par l’utilisateur ; Si les données ne seront pas valides, le <xref:System.Windows.Forms.ErrorProvider.SetError%2A> méthode est appelée. Le premier argument de la <xref:System.Windows.Forms.ErrorProvider.SetError%2A> méthode spécifie le contrôle à afficher à côté de l’icône. Le deuxième argument est le texte d’erreur à afficher.  
   
     ```vb  
     Private Sub TextBox1_Validating(ByVal Sender As Object, _  
@@ -47,7 +52,6 @@ Le composant <xref:System.Windows.Forms.ErrorProvider> Windows Forms vous permet
              ErrorProvider1.SetError(TextBox1, "")  
           End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -64,7 +68,6 @@ Le composant <xref:System.Windows.Forms.ErrorProvider> Windows Forms vous permet
           errorProvider1.SetError(textBox1, "Not an integer value.");  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -84,12 +87,11 @@ Le composant <xref:System.Windows.Forms.ErrorProvider> Windows Forms vous permet
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d'événements.  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.  
   
     ```csharp  
     this.textBox1.Validating += new  
     System.ComponentModel.CancelEventHandler(this.textBox1_Validating);  
-  
     ```  
   
     ```cpp  
@@ -98,9 +100,9 @@ Le composant <xref:System.Windows.Forms.ErrorProvider> Windows Forms vous permet
        (this, &Form1::textBox1_Validating);  
     ```  
   
-4.  Exécutez le projet.  Tapez des données incorrectes \(non numériques, dans cet exemple\) dans le premier contrôle, puis utilisez la touche TABULATION pour passer au second.  Lorsque l'icône d'erreur s'affiche, placez le pointeur de la souris sur cette icône pour afficher le texte d'erreur.  
+4.  Exécutez le projet. Type des données non valides (dans cet exemple, non numérique) dans le premier contrôle, puis onglet à la seconde. Lorsque l’icône d’erreur est affiché, placez le pointeur de la souris pour afficher le texte d’erreur.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ErrorProvider.SetError%2A>   
- [Vue d'ensemble du composant ErrorProvider](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)   
- [Comment : afficher des erreurs d'un groupe de données à l'aide du composant ErrorProvider Windows Forms](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ErrorProvider.SetError%2A>  
+ [Vue d’ensemble du composant ErrorProvider](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
+ [Guide pratique pour afficher des erreurs d'un groupe de données à l'aide du composant ErrorProvider Windows Forms](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)

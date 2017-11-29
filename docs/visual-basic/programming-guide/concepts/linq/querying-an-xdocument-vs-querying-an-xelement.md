@@ -1,34 +1,30 @@
 ---
-title: Comparaison de l&quot;interrogation d&quot;un XDocument et d&quot;un Un XElement (Visual Basic) | Documents Microsoft
+title: "Comparaison de l'interrogation d'un XDocument et d'un Interrogation d’un XElement (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 2d111f84-0ded-4cde-8d93-5440557a726d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 29044cd118bfd8ecc12bddca722ee3656d455e0f
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3ee3c0c1cda12a74f50b4937263d80f526b5d7ba
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>Comparaison de l'interrogation d'un XDocument et d'un Un XElement (Visual Basic)
-Lorsque vous chargez un document <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>, vous remarquerez que vous devez écrire des requêtes légèrement différemment lorsque vous chargez via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>.</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> </xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>  
+# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>Comparaison de l'interrogation d'un XDocument et d'un Interrogation d’un XElement (Visual Basic)
+Lorsque vous chargez un document par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, vous remarquerez que vous devez écrire des requêtes de manière légèrement différente comparé au chargement par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  
   
 ## <a name="comparison-of-xdocumentload-and-xelementload"></a>Comparaison de XDocument.Load et XElement.Load  
- Lorsque vous chargez un document XML dans un <xref:System.Xml.Linq.XElement>via <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>, le <xref:System.Xml.Linq.XElement>à la racine du document XML arborescence contient l’élément racine du document chargé.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> </xref:System.Xml.Linq.XElement> Toutefois, lorsque vous chargez le même document XML dans un <xref:System.Xml.Linq.XDocument>via <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>, la racine de l’arborescence est un <xref:System.Xml.Linq.XDocument>nœud et l’élément racine du document chargé est le <xref:System.Xml.Linq.XElement>nœud du <xref:System.Xml.Linq.XDocument>.</xref:System.Xml.Linq.XDocument> </xref:System.Xml.Linq.XElement> enfant autorisé</xref:System.Xml.Linq.XDocument> </xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName> </xref:System.Xml.Linq.XDocument> Les axes [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] opèrent relativement au nœud racine.  
+ Lorsque vous chargez un document XML dans <xref:System.Xml.Linq.XElement> par le biais de <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, l'objet <xref:System.Xml.Linq.XElement> à la racine de l'arborescence XML contient l'élément racine du document chargé. Toutefois, lorsque vous chargez le même document XML dans un objet <xref:System.Xml.Linq.XDocument> par le biais de <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, la racine de l'arborescence est un nœud <xref:System.Xml.Linq.XDocument> et l'élément racine du document chargé est le nœud <xref:System.Xml.Linq.XElement> enfant autorisé de l'objet <xref:System.Xml.Linq.XDocument>. Les axes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] opèrent relativement au nœud racine.  
   
- Ce premier exemple charge une arborescence XML à l’aide de <xref:System.Xml.Linq.XElement.Load%2A>.</xref:System.Xml.Linq.XElement.Load%2A> Il interroge ensuite les éléments enfants de la racine de l'arborescence.  
+ Ce premier exemple charge une arborescence XML à l'aide de <xref:System.Xml.Linq.XElement.Load%2A>. Il interroge ensuite les éléments enfants de la racine de l'arborescence.  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -59,7 +55,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- L’exemple suivant est identique à celle ci-dessus, sauf que l’arborescence XML est chargée dans un <xref:System.Xml.Linq.XDocument>au lieu d’un <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XDocument>  
+ L'exemple suivant est identique au précédent, hormis le fait que l'arborescence XML est chargée dans un objet <xref:System.Xml.Linq.XDocument> au lieu d'un objet <xref:System.Xml.Linq.XElement>.  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -94,7 +90,7 @@ Querying tree loaded with XDocument.Load
   
  Notez que la même requête a retourné le nœud `Root` au lieu des trois nœuds enfants.  
   
- Pour gérer cette situation consiste à utiliser le <xref:System.Xml.Linq.XDocument.Root%2A>propriété avant d’accéder aux méthodes d’axe, comme suit :</xref:System.Xml.Linq.XDocument.Root%2A>  
+ L'une des solutions à ce problème consiste à utiliser la propriété <xref:System.Xml.Linq.XDocument.Root%2A> avant d'accéder aux méthodes d'axe, comme suit :  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -115,7 +111,7 @@ For Each e As XElement In childList
 Next  
 ```  
   
- Cette requête s’exécute maintenant de la même manière que la requête sur l’arborescence enracinée dans <xref:System.Xml.Linq.XElement>.</xref:System.Xml.Linq.XElement> L'exemple produit la sortie suivante :  
+ Cette requête s'exécute maintenant de la même manière que la requête sur l'arborescence enracinée dans <xref:System.Xml.Linq.XElement>. L'exemple produit la sortie suivante :  
   
 ```  
 Querying tree loaded with XDocument.Load  

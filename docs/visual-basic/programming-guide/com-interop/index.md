@@ -1,42 +1,24 @@
 ---
 title: COM Interop (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic code, COM interop
-- COM interop, in Visual Basic
+- COM interop [Visual Basic], in Visual Basic
 ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 29275519a00ad0c33a5b85e592532ce456daefe0
-ms.contentlocale: fr-fr
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 87c87852024412b7a7ed55a2c429842ce75a13a8
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="com-interop-visual-basic"></a>COM Interop (Visual Basic)
 Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. Cette section traite de certains des problèmes liés à la création et à l’utilisation des objets COM avec [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
@@ -84,4 +66,3 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
   
  [Application d’attributs d’interopérabilité](https://msdn.microsoft.com/library/d4w8x20h)  
  Aborde les attributs que vous pouvez utiliser lors de l’utilisation de code non managé.
-

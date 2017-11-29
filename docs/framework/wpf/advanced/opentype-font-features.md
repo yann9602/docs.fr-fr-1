@@ -1,327 +1,333 @@
 ---
-title: "Fonctionnalit&#233;s des polices OpenType | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "polices OpenType"
-  - "typographie, technologie de police OpenType"
-  - "OpenType (technologie de police)"
+title: "Fonctionnalités des polices OpenType"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- fonts [WPF], OpenType
+- typography [WPF], OpenType font technology
+- OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-caps.latest.revision: 38
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 37
+caps.latest.revision: "38"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7c80769a1563953fc412afc6baeffcb91b49667d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Fonctionnalit&#233;s des polices OpenType
-Cette rubrique fournit une vue d’ensemble de certaines des fonctionnalités clés de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] technologie de police dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
+# <a name="opentype-font-features"></a>Fonctionnalités des polices OpenType
+Cette rubrique fournit une vue d’ensemble de quelques-unes des fonctionnalités clés de la technologie de police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
-   
+
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>Format des polices OpenType  
- Le [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] format de police est une extension de la [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format de police, la prise en charge des données des polices PostScript. Le [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] format de police a été développé conjointement par [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] et Adobe Corporation. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]la prise en charge des services du système d’exploitation et les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] polices offrent aux utilisateurs un moyen simple pour installer et utiliser des polices, si les polices contiennent [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] plans ou les plans CFF (PostScript).  
+ Le format de police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] est une extension du format de police [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)], qui ajoute une prise en charge des données de police PostScript. Le format de police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] a été développé conjointement par [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] et Adobe Corporation. Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] et les services du système d’exploitation qui prennent en charge les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] offrent aux utilisateurs un moyen simple d’installer et d’utiliser des polices, que celles-ci contiennent des contours [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] ou des contours CFF (PostScript).  
   
- Le [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] format de police résout les problèmes de développement suivantes :  
+ Le format de police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] répond aux problèmes suivants que rencontrent les développeurs :  
   
--   Prise en charge étendue de multi-plateforme.  
+-   Prise en charge multi-plateforme élargie.  
   
--   Meilleure prise en charge pour les jeux de caractères internationaux.  
+-   Meilleure prise en charge des jeux de caractères internationaux.  
   
--   Une meilleure protection des données des polices.  
+-   Meilleure protection des données de police.  
   
--   Fichiers plus petits pour faciliter la distribution de la police.  
+-   Taille des fichiers plus petite permettant une distribution plus efficace des polices.  
   
 -   Prise en charge élargie des contrôles typographiques avancés.  
   
 > [!NOTE]
->  Le Kit de développement logiciel Windows contient un jeu d’exemples [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] les polices que vous pouvez utiliser avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications. Ces polices fournissent la plupart des fonctionnalités illustrées dans le reste de cette rubrique. Pour plus d’informations, consultez [exemple de Pack de polices OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md).  
+>  Le Kit de développement logiciel (SDK) Windows contient un jeu d’exemples de polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] que vous pouvez utiliser avec les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Ces polices offrent la plupart des fonctionnalités illustrées dans le reste de cette rubrique. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md).  
   
- Consultez le [spécification OpenType](http://go.microsoft.com/fwlink/?LinkId=96731) pour des détails sur les [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] format de police.  
+ Consultez la [spécification OpenType](http://go.microsoft.com/fwlink/?LinkId=96731) pour plus d’informations sur le format de police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)].  
   
 ### <a name="advanced-typographic-extensions"></a>Extensions typographiques avancées  
- Les tableaux typographiques avancés ([!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] tableaux de disposition) étendent les fonctionnalités de polices avec des [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] ou CFF contours. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]Polices de mise en page contiennent des informations supplémentaires qui étend les fonctionnalités des polices pour prendre en charge la typographie internationale de haute qualité. La plupart des [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] polices exposent uniquement un sous-ensemble du total [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonctionnalités disponibles. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices fournissent les fonctionnalités suivantes.  
+ Les tableaux typographiques avancés (tableaux de disposition [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]) étendent les fonctionnalités des polices avec des contours [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] ou CFF. Les polices de disposition [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] contiennent des informations supplémentaires qui étendent les fonctionnalités des polices pour une prise en charge de la typographie internationale de haute qualité. La plupart des polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] exposent uniquement une partie des fonctionnalités [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] disponibles. Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] offrent les fonctionnalités suivantes :  
   
--   Mappage riche entre caractères et glyphes prenant en charge des ligatures, des formulaires de position, remplaçants et autres substitutions de polices.  
+-   Mappage riche entre les caractères et les glyphes qui prennent en charge les ligatures, les formes positionnelles, les alternatives et les substitutions de police.  
   
--   Prise en charge des pièces jointes de positionnement et le glyphe à deux dimensions.  
+-   Prise en charge du positionnement à deux dimensions et de l’attachement de glyphes.  
   
--   Informations de script et de langage explicites contenues dans police, une application de traitement de texte peut ajuster son comportement en conséquence.  
+-   Présence d’informations explicites de script et de langage dans la police, ce qui permet à une application de traitement de texte d’ajuster son comportement en conséquence.  
   
- Le [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] tableaux de disposition sont décrites plus en détail dans les [« Font File Tables »](http://www.microsoft.com/typography/otspec/otff.htm) section de la [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] spécification.  
+ Les tableaux de disposition [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] sont décrits plus en détail dans la section relative aux [tableaux de fichiers de police](http://www.microsoft.com/typography/otspec/otff.htm) de la spécification [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)].  
   
- Le reste de cette vue d’ensemble introduit l’ampleur et la flexibilité de quelques-unes des visuellement intéressantes [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonctionnalités exposées par les propriétés de la <xref:System.Windows.Documents.Typography> objet. Pour plus d’informations sur cet objet, consultez [typographie classe](#typography_class).  
+ Le reste de cette vue d’ensemble présente l’ampleur et la flexibilité de quelques-unes des visuellement intéressantes [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] les fonctionnalités qui sont exposées par les propriétés de la <xref:System.Windows.Documents.Typography> objet. Pour plus d’informations sur cet objet, consultez [Classe Typography](#typography_class).  
   
 <a name="variants"></a>   
 ## <a name="variants"></a>Variantes  
- Les variantes sont utilisées pour restituer différents styles typographiques, tels que des exposants et des indices.  
+ Les variantes servent à restituer différents styles typographiques, tels que les exposants et les indices.  
   
 ### <a name="superscripts-and-subscripts"></a>Exposants et indices  
  Le <xref:System.Windows.Documents.Typography.Variants%2A> propriété vous permet de définir des valeurs d’exposant et d’indice pour une [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] police.  
   
- Le texte suivant affiche des exposants pour la police Palatino Linotype.  
+ Le texte suivant présente des exposants avec la police Palatino Linotype.  
   
- ![Texte utilisant des exposants OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont14.png "opentypefont14")  
+ ![Texte utilisant des exposants OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont14.gif "opentypefont14")  
 Texte utilisant des exposants OpenType  
   
- L’exemple de balise suivant montre comment définir des exposants pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des exposants pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#12)]  
+ [!code-xaml[OpenTypeFontSamples#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#12)]  
   
- Le texte suivant affiche des indices pour la police Palatino Linotype.  
+ Le texte suivant présente des indices avec la police Palatino Linotype.  
   
- ![Texte utilisant des indices OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont15.png "opentypefont15")  
+ ![Texte utilisant des indices OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont15.gif "opentypefont15")  
 Texte utilisant des indices OpenType  
   
- L’exemple de balise suivant montre comment définir des indices pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des indices pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#13)]  
+ [!code-xaml[OpenTypeFontSamples#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#13)]  
   
-### <a name="decorative-uses-of-superscripts-and-subscripts"></a>Utilisations décoratives d’exposants et indices  
- Vous pouvez également utiliser des exposants et des indices pour créer des effets décoratifs de texte à casse mixte. Le texte suivant affiche le texte en exposant et indice pour la police Palatino Linotype. Notez que les majuscules ne sont pas affectés.  
+### <a name="decorative-uses-of-superscripts-and-subscripts"></a>Utilisations décoratives d’exposants et d’indices  
+ Vous pouvez aussi utiliser des exposants et des indices pour créer des effets décoratifs de texte à casse mixte. Le texte suivant présente des exposants et des indices avec la police Palatino Linotype. Notez que les majuscules ne sont pas affectées.  
   
- ![Texte utilisant des indices et des exposants OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont16.png "opentypefont16")  
+ ![Texte utilisant des exposants OpenType et indices](../../../../docs/framework/wpf/advanced/media/opentypefont16.gif "opentypefont16")  
 Texte utilisant des exposants et des indices OpenType  
   
- L’exemple de balise suivant montre comment définir des exposants et des indices pour une police, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des exposants et des indices pour une police, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#14)]  
+ [!code-xaml[OpenTypeFontSamples#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#14)]  
   
 <a name="capitals"></a>   
 ## <a name="capitals"></a>Majuscules  
- Les majuscules sont un jeu de formats typographiques qui restituent le texte dans des glyphes de type majuscule. En règle générale, lorsque le texte est restitué en majuscules, l’espacement entre les lettres peut apparaître trop serré et le poids et proportion des lettres trop lourds. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]prend en charge les formats de style pour les majuscules, y compris les petites majuscules, les majuscules menues, titres et l’espacement des majuscules. Ces formats de style permettent de contrôler l’apparence de majuscules.  
+ Les majuscules représentent un jeu de formes typographiques qui restituent le texte dans des glyphes de type majuscule. En règle générale, quand le texte est entièrement restitué en majuscules, l’espacement entre les lettres peut sembler trop serré et le poids et la proportion des lettres trop lourds. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prend en charge plusieurs formats de style pour les majuscules, à savoir les petites majuscules, les mini-majuscules, les caractères de titre et l’espacement des majuscules. Ces formats de style permettent de contrôler l’apparence des majuscules.  
   
- Le texte suivant affiche des majuscules standard pour la police Pescadero, suivis par les lettres sous la forme « SmallCaps » et « AllSmallCaps ». Dans ce cas, la même taille de police est utilisée pour les trois mots.  
+ Le texte suivant présente des majuscules standard avec la police Pescadero, suivies de lettres de type « SmallCaps » et « AllSmallCaps ». Dans ce cas, la taille de police utilisée est identique pour les trois mots.  
   
- ![Texte utilisant des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont11.png "opentypefont11")  
+ ![Texte utilisant des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont11.gif "opentypefont11")  
 Texte utilisant des majuscules OpenType  
   
- L’exemple de balise suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet. Lorsque le format « SmallCaps » est utilisé, toute majuscule principale est ignorée.  
+ Le balisage suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet. Quand le format « SmallCaps » est utilisé, les majuscules de début sont ignorées.  
   
- [!code-xml[OpenTypeFontSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
+ [!code-xaml[OpenTypeFontSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
   
-### <a name="titling-capitals"></a>Des majuscules de titre  
- Des majuscules sont conçues pour donner un aspect plus élégant que les majuscules normales et poids et proportion. Des majuscules sont généralement utilisés dans une police plus grande comme en-têtes. Le texte suivant affiche les normales et des majuscules pour la police Pescadero. Remarquez les traits plus fins du texte sur la deuxième ligne.  
+### <a name="titling-capitals"></a>Majuscules de titres  
+ Le poids et les proportions des majuscules de titres ont été réduits pour leur conférer un aspect plus élégant que les majuscules normales. Les majuscules de titres sont généralement utilisées dans les titres avec des tailles de police supérieures. Le texte suivant présente des majuscules normales et des majuscules de titres avec la police Pescadero. Comme vous pouvez le constater, le plein est plus fin dans le texte de la deuxième ligne.  
   
- ![Texte utilisant des majuscules de titre OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont20.png "OpenTypeFont20")  
-Texte utilisant des majuscules de titre OpenType  
+ ![Texte utilisant des majuscules de titre de OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont20.gif "OpenTypeFont20")  
+Texte utilisant des majuscules de titres OpenType  
   
- L’exemple de balise suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet17)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet17)]  
   
 ### <a name="capital-spacing"></a>Espacement des majuscules  
- L’espacement des majuscules est une fonctionnalité qui vous permet de fournir plus d’espacement lors de l’utilisation des majuscules dans le texte. Les lettres majuscules sont généralement conçus pour fusionner avec les lettres minuscules. L’espacement qui apparaît attirant entre et une lettre majuscule et une minuscule peuvent sembler trop serrés lorsque toutes les lettres majuscules sont utilisées. Le texte suivant affiche l’espacement normal et de capital pour la police Pescadero.  
+ L’espacement des majuscules est une fonctionnalité qui permet d’accroître l’espacement du texte quand celui-ci se compose uniquement de majuscules. Les majuscules sont généralement conçues pour se mêler aux minuscules. L’espacement employé entre une majuscule et une minuscule peut paraître trop serré quand toutes les lettres sont des majuscules. Le texte suivant présente l’espacement normal et l’espacement de majuscules avec la police Pescadero.  
   
- ![Texte utilisant l’espacement des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont21.png "OpenTypeFont21")  
+ ![Texte à l’aide de l’espacement des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont21.gif "OpenTypeFont21")  
 Texte utilisant l'espacement des majuscules OpenType  
   
- L’exemple de balise suivant montre comment définir l’espacement des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir l’espacement des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet18)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet18)]  
   
 <a name="ligatures"></a>   
 ## <a name="ligatures"></a>Ligatures  
- Les ligatures sont deux ou plusieurs des glyphes qui sont formés en un glyphe unique pour créer le texte plus lisible ou attrayant. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices prennent en charge quatre types de ligatures :  
+ Une ligature est un glyphe formé de deux ou plusieurs glyphes dans le but de créer un texte plus lisible ou esthétique. Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prennent en charge quatre types de ligature :  
   
--   **Des ligatures standard**. Conçu pour améliorer la lisibilité. Les ligatures standard incluent « fi », « fl » et « ff ».  
+-   **Ligatures standard** : conçues pour améliorer la lisibilité. Par exemple, « fi », « fl » et « ff » sont des ligatures standard.  
   
--   **Ligatures contextuelles**. Conçu pour améliorer la lisibilité en fournissant le meilleur comportement de jointure entre les caractères qui composent la ligature.  
+-   **Ligatures contextuelles** : conçues pour améliorer la lisibilité en offrant un meilleur comportement de jointure entre les caractères qui composent la ligature.  
   
--   **Des ligatures discrétionnaires**. Conçu pour être décoratives et pas spécifiquement conçu pour une meilleure lisibilité.  
+-   **Ligatures discrétionnaires** : conçues à des fins esthétiques et pas spécifiquement pour la lisibilité.  
   
--   **Ligatures historiques**. Conçu pour être historiques et pas spécifiquement conçu pour une meilleure lisibilité.  
+-   **Ligatures historiques** : conçues en fonction de critères historiques et pas spécifiquement pour la lisibilité.  
   
- Le texte suivant affiche des glyphes de ligature standard pour la police Pericles.  
+ Le texte suivant présente des glyphes à ligatures standard avec la police Pericles.  
   
- ![Texte utilisant des ligatures standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont04.png "opentypefont04")  
+ ![Texte utilisant des ligatures standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont04.gif "opentypefont04")  
 Texte utilisant des ligatures standard OpenType  
   
- L’exemple de balise suivant montre comment définir des ligatures standard pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des ligatures standard pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#4)]  
+ [!code-xaml[OpenTypeFontSamples#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#4)]  
   
- Le texte suivant affiche des glyphes de ligatures discrétionnaires pour la police Pericles.  
+ Le texte suivant présente des glyphes à ligatures discrétionnaires avec la police Pericles.  
   
- ![Texte utilisant des ligatures discrétionnaires OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont05.png "opentypefont05")  
+ ![Texte utilisant des ligatures discrétionnaires OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont05.gif "opentypefont05")  
 Texte utilisant des ligatures discrétionnaires OpenType  
   
- L’exemple de balise suivant montre comment définir des glyphes de ligatures discrétionnaires pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des ligatures discrétionnaires pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#5)]  
+ [!code-xaml[OpenTypeFontSamples#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#5)]  
   
- Par défaut, [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] polices dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] autorisent les ligatures standard. Par exemple, si vous utilisez la police Palatino Linotype, les ligatures standard « fi », « ff » et « fl » apparaissent comme un glyphe de caractères combinés. Notez que la paire de caractères de chaque ligature standard touch.  
+ Par défaut, les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] autorisent les ligatures standard. Par exemple, si vous utilisez la police Palatino Linotype, les ligatures standard « fi », « ff » et « fl » apparaissent comme un glyphe de caractères combinés. Notez que les deux caractères de chaque ligature standard se touchent.  
   
- ![Texte utilisant des ligatures standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont06.png "opentypefont06")  
+ ![Texte utilisant des ligatures standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont06.gif "opentypefont06")  
 Texte utilisant des ligatures standard OpenType  
   
- Toutefois, vous pouvez désactiver les fonctionnalités de ligature standard afin qu’une ligature standard tels que « ff » affiche comme deux glyphes séparés, plutôt que comme un glyphe de caractères combinés.  
+ Vous pouvez cependant désactiver les fonctionnalités de ligature standard de sorte qu’une ligature standard comme « ff » s’affiche comme deux glyphes distincts et non comme un glyphe de caractères combinés.  
   
- ![Texte utilisant des ligatures standard OpenType désactivées](../../../../docs/framework/wpf/advanced/media/opentypefont07.png "opentypefont07")  
+ ![Texte utilisant des ligatures standard OpenType désactivées](../../../../docs/framework/wpf/advanced/media/opentypefont07.gif "opentypefont07")  
 Texte utilisant des ligatures standard OpenType désactivées  
   
- L’exemple de balise suivant montre comment désactiver des glyphes de ligature standard pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment désactiver des glyphes de ligatures standard pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#6)]  
+ [!code-xaml[OpenTypeFontSamples#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#6)]  
   
 <a name="swashes"></a>   
-## <a name="swashes"></a>Glyphes ornés  
- Glyphes ornés sont des glyphes décoratifs qui utilisent une ornementation élaborée souvent associée calligraphique. Le texte suivant affiche des glyphes standard et ornés pour la police Pescadero.  
+## <a name="swashes"></a>Lettres ornées  
+ Les lettres ornées sont des glyphes décoratifs qui utilisent une ornementation élaborée souvent associée à la calligraphie. Le texte suivant présente des glyphes standard et des glyphes à lettres ornées avec la police Pescadero.  
   
- ![Texte utilisant des glyphes standard et ornés OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont08.png "opentypefont08")  
+ ![Texte utilisant des glyphes standard et ornés OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont08.gif "opentypefont08")  
 Texte utilisant des glyphes standard et ornés OpenType  
   
- Glyphes ornés sont souvent utilisés comme éléments décoratifs dans des expressions courtes telles que les annonces d’événement. Le texte suivant utilise des glyphes ornés pour accentuer les majuscules du nom de l’événement.  
+ Les lettres ornées sont souvent utilisés comme éléments décoratifs dans des expressions courtes annonçant par exemple un événement. Le texte suivant utilise des lettres ornées pour mettre en relief les majuscules du nom de l’événement.  
   
- ![Texte utilisant des glyphes ornés OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont09.png "opentypefont09")  
-Texte utilisant des glyphes ornés OpenType  
+ ![Texte utilisant des glyphes ornés OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont09.gif "opentypefont09")  
+Texte utilisant des lettres ornées OpenType  
   
- L’exemple de balise suivant montre comment définir des glyphes ornés pour une police, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des glyphes ornés pour une police, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#7)]  
+ [!code-xaml[OpenTypeFontSamples#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#7)]  
   
-### <a name="contextual-swashes"></a>Glyphes ornés contextuels  
- Certaines combinaisons des glyphes ornés peuvent provoquer une apparence peu attrayante, telles que les hampes inférieures chevauchant les lettres adjacentes. À l’aide d’un ornés contextuels vous permet d’utiliser un glyphe ornés de substitution qui produit une meilleure apparence. Le texte suivant illustre le même mot avant et après qu’un ornés contextuels est appliqué.  
+### <a name="contextual-swashes"></a>Lettres ornées contextuelles  
+ Certaines combinaisons de glyphes à lettres ornées peuvent donner des résultats peu esthétiques, avec notamment le chevauchement de hampes descendantes dans les lettres adjacentes. En utilisant des lettres ornées contextuelles, vous pouvez obtenir un meilleur résultat visuel. Le texte suivant présente le même mot avant et après l’application d’une lettre ornée contextuelle.  
   
- ![Texte utilisant des glyphes ornés contextuels OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont19.png "OpenTypeFont19")  
+ ![Texte utilisant des glyphes ornés contextuels OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont19.gif "OpenTypeFont19")  
 Texte utilisant des glyphes ornés contextuels OpenType  
   
- L’exemple de balise suivant montre comment définir un paraphe contextuel pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir un paraphe contextuel pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet16)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet16)]  
   
 <a name="alternates"></a>   
-## <a name="alternates"></a>Alterne  
- Les variantes sont des glyphes qui peuvent être remplacées par un glyphe standard. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices, telles que la police Pericles utilisée dans les exemples suivants, peuvent contenir des glyphes que vous pouvez utiliser pour créer différentes apparences pour le texte. Le texte suivant affiche des glyphes standard pour la police Pericles.  
+## <a name="alternates"></a>Alternatives  
+ Les alternatives sont des glyphes qui peuvent être remplacés par un glyphe standard. Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)], telles que la police Pericles utilisée dans les exemples suivants, peuvent contenir des glyphes de style alternatif dont vous pouvez vous servir pour donner à du texte différentes apparences. Le texte suivant présente des glyphes standard avec la police Pericles.  
   
- ![Texte utilisant des glyphes standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont01.png "opentypefont01")  
+ ![Texte utilisant des glyphes standards OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont01.gif "opentypefont01")  
 Texte utilisant des glyphes standard OpenType  
   
- Le Pericles [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] police contient des glyphes supplémentaires qui offrent des remplaçants stylistiques au jeu de glyphes standard. Le texte suivant affiche des glyphes de style alternatifs.  
+ La police [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Pericles contient des glyphes supplémentaires qui représentent des styles alternatifs au jeu de glyphes standard. Le texte suivant présente des glyphes de style alternatif.  
   
- ![Texte utilisant des glyphes de style d’alternatifs OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont02.png "opentypefont02")  
+ ![Texte utilisant des glyphes de style alternatifs OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont02.gif "opentypefont02")  
 Texte utilisant des glyphes de style alternatifs OpenType  
   
- L’exemple de balise suivant montre comment définir des glyphes de style alternatifs pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des glyphes de style alternatifs pour la police Pericles, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#2)]  
+ [!code-xaml[OpenTypeFontSamples#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#2)]  
   
- Le texte suivant affiche plusieurs autres glyphes de remplaçants stylistiques pour la police Pericles.  
+ Le texte suivant présente plusieurs autres glyphes de style alternatif pour la police Pericles.  
   
- ![Texte utilisant des glyphes de style d’alternatifs OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont03.png "opentypefont03")  
+ ![Texte utilisant des glyphes de style alternatifs OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont03.gif "opentypefont03")  
 Texte utilisant des glyphes de style alternatifs OpenType  
   
- Le balisage suivant montre comment définir ces autres glyphes de style alternatifs.  
+ L’exemple de balisage suivant montre comment définir ces autres glyphes de style alternatif.  
   
- [!code-xml[OpenTypeFontSamples#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#3)]  
+ [!code-xaml[OpenTypeFontSamples#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#3)]  
   
 ### <a name="random-contextual-alternates"></a>Alternatives contextuelles aléatoires  
- Les alternatives contextuelles aléatoires fournissent plusieurs glyphes de substitution pour un caractère unique. En cas d’implémentation avec les polices d’écriture, cette fonctionnalité peut simuler l’écriture manuscrite à l’aide d’un jeu de glyphes choisis au hasard avec de légères différences dans l’apparence. Le texte suivant utilise les alternatives contextuelles aléatoires pour la police Lindsey. Notez que la lettre « a » varie légèrement dans l’apparence  
+ Les alternatives contextuelles aléatoires proposent plusieurs glyphes de substitution pour un même caractère. Quand elle est implémentée avec des polices de caractères d’écriture, cette fonctionnalité peut simuler l’écriture manuscrite à partir d’un jeu de glyphes choisis de façon aléatoire avec de légères différences d’apparence. Le texte suivant présente des alternatives contextuelles aléatoires avec la police Lindsey. Notez que la lettre « a » présente de légères variations.  
   
- ![Texte utilisant les alternatives contextuelles aléatoires OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont23.png "OpenTypeFont23")  
-Texte utilisant les alternatives contextuelles aléatoires OpenType  
+ ![Texte utilisant les alternatives contextuelles aléatoires OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont23.gif "OpenTypeFont23")  
+Texte utilisant des alternatives contextuelles aléatoires OpenType  
   
- L’exemple de balise suivant montre comment définir les alternatives contextuelles aléatoires pour la police Lindsey, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir les alternatives contextuelles aléatoires pour la police Lindsey, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet20)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet20)]  
   
-### <a name="historical-forms"></a>Formulaires historiques  
- Les formats historiques sont des conventions typographiques qui étaient courantes dans le passé. Le texte suivant affiche l’expression, « Boston, Massachusetts », à l’aide d’un format historique de glyphes pour la police Palatino Linotype.  
+### <a name="historical-forms"></a>Formes historiques  
+ Les formes historiques sont des conventions typographiques qui étaient courantes dans le passé. Dans le texte, l’expression « Boston, Massachusetts » présente une forme historique de glyphes avec la police Palatino Linotype.  
   
- ![Texte utilisant des formulaires historiques OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont10.png "opentypefont10")  
-Texte utilisant des formulaires historiques OpenType  
+ ![Texte utilisant des formulaires historiques OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont10.gif "opentypefont10")  
+Texte utilisant des formes historiques OpenType  
   
- L’exemple de balise suivant montre comment définir des formulaires historiques pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des formulaires historiques pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#8)]  
+ [!code-xaml[OpenTypeFontSamples#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#8)]  
   
 <a name="numerical_styles"></a>   
 ## <a name="numerical-styles"></a>Styles numériques  
- Les polices OpenType prennent en charge un grand nombre de fonctionnalités qui peut être utilisé avec des valeurs numériques en texte.  
+ Les polices OpenType prennent en charge un grand nombre de fonctionnalités qui peuvent être utilisées avec des valeurs numériques dans du texte.  
   
 ### <a name="fractions"></a>Fractions  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices prennent en charge les styles pour les fractions, y compris barré et sur deux.  
+ Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prennent en charge les fractions représentées avec une barre oblique ou horizontale.  
   
- Le texte suivant affiche des styles de fraction pour la police Palatino Linotype.  
+ Le texte suivant présente des styles de fraction avec la police Palatino Linotype.  
   
- ![Texte utilisant OpenType fractions barrées et empilées](../../../../docs/framework/wpf/advanced/media/opentypefont12.png "opentypefont12")  
+ ![Texte à l’aide de OpenType avec barres obliques et fractions](../../../../docs/framework/wpf/advanced/media/opentypefont12.gif "opentypefont12")  
 Texte utilisant des fractions OpenType avec barres obliques et barres horizontales  
   
- L’exemple de balise suivant montre comment définir des styles de fraction pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des styles de fraction pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#10)]  
+ [!code-xaml[OpenTypeFontSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#10)]  
   
-### <a name="old-style-numerals"></a>Chiffres de Style ancien  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices prennent en charge un format numérique de style ancien. Ce format est utile pour afficher des chiffres dans les styles qui ne sont plus standards. Le texte suivant affiche une date du 18e siècle dans les formats de chiffres standard et de style ancien pour la police Palatino Linotype.  
+### <a name="old-style-numerals"></a>Chiffres de style ancien  
+ Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prennent en charge un format de chiffres de style ancien. Ce format est utile pour présenter les chiffres dans des styles qui ne sont plus courants. Le texte suivant présente une date du 18e siècle dans des formats numériques de style ancien avec la police Palatino Linotype.  
   
- ![Texte utilisant les chiffres OpenType de style ancien](../../../../docs/framework/wpf/advanced/media/opentypefont24.png "OpenTypeFont24")  
+ ![Texte utilisant des chiffres OpenType de style ancien](../../../../docs/framework/wpf/advanced/media/opentypefont24.gif "OpenTypeFont24")  
 Texte utilisant les chiffres OpenType de style ancien  
   
- Le texte suivant affiche des chiffres standard pour la police Palatino Linotype, suivi par des chiffres de style ancien.  
+ Le texte suivant présente des chiffres standard avec la police Palatino Linotype, suivis de chiffres de style ancien.  
   
- ![Texte utilisant des jeux de chiffres de style ancien OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont13.png "opentypefont13")  
+ ![Texte à l’aide d’anciens jeux de chiffres style OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont13.gif "opentypefont13")  
 Texte utilisant les jeux de chiffres OpenType de style ancien  
   
- L’exemple de balise suivant montre comment définir des chiffres de style ancien pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des chiffres de style ancien pour la police Palatino Linotype, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#11)]  
+ [!code-xaml[OpenTypeFontSamples#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#11)]  
   
-### <a name="proportional-and-tabular-figures"></a>Illustrations proportionnelles et tabulaires  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices prennent en charge une fonctionnalité d’illustration proportionnelle et tabulaire pour contrôler l’alignement des largeurs lors de l’utilisation de chiffres. Nombres proportionnels traitent chaque chiffre comme ayant une largeur différente : « 1 » est plus étroit que « 5 ». Les illustrations tabulaires sont traitées comme des chiffres de largeur égale afin qu’ils s’alignent verticalement, ce qui améliore la lisibilité des informations de type financier.  
+### <a name="proportional-and-tabular-figures"></a>Chiffres proportionnels et tabulaires  
+ Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prennent en charge les chiffres proportionnels et tabulaires dans le but de contrôler l’alignement des chiffres par rapport à leur largeur. Les chiffres proportionnels sont considérés comme ayant chacun une largeur différente (« 1 » est plus étroit que « 5 »). À l’inverse, les chiffres tabulaires sont considérés comme ayant la même largeur, ce qui permet de les aligner verticalement et d’améliorer leur lisibilité dans les documents financiers.  
   
- Le texte suivant affiche deux illustrations proportionnelles dans la première colonne à l’aide de la police Miramonte. Notez la différence de largeur entre les chiffres « 5 » et « 1 ». La deuxième colonne affiche deux valeurs numériques identiques avec les largeurs ajustées à l’aide de la fonctionnalité d’illustration tabulaire.  
+ Le texte ci-dessous présente deux chiffres proportionnels dans la première colonne avec la police Miramonte. Comme vous pouvez le constater, les chiffres « 5 » et « 1 » n’ont pas la même largeur. La deuxième colonne présente ces deux mêmes valeurs numériques avec des largeurs ajustées au moyen de la fonctionnalité des chiffres tabulaires.  
   
- ![Texte utilisant les chiffres OpenType proportionnels se tabulaire](../../../../docs/framework/wpf/advanced/media/opentypefont22.png "OpenTypeFont22")  
-Texte utilisant les chiffres OpenType proportionnelles et tabulaires  
+ ![Texte utilisant les chiffres tabulaires et proportionnels OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont22.gif "OpenTypeFont22")  
+Texte utilisant les chiffres tabulaires et proportionnels OpenType  
   
- L’exemple de balise suivant montre comment définir des illustrations proportionnelles et tabulaires pour la police Miramonte, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
+ Le balisage suivant montre comment définir des illustrations proportionnelles et tabulaires pour la police Miramonte, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]  
   
 ### <a name="slashed-zero"></a>Zéro barré  
- [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]polices prennent en charge un barré zéro format de chiffre à mettre en évidence la différence entre la lettre « O » et le chiffre « 0 ». Le barré que chiffre zéro est souvent utilisée pour les identificateurs dans les informations financières et commerciales.  
+ Les polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prennent en charge le format numérique zéro barré pour distinguer la lettre « O » du chiffre « 0 ». Le chiffre zéro barré est souvent utilisé pour les identificateurs dans les informations financières et commerciales.  
   
- Le texte suivant affiche un identificateur de commande d’exemple à l’aide de la police Miramonte. La première ligne utilise des chiffres standard. La deuxième ligne utilisée barré chiffres zéro pour fournir un meilleur contraste avec la lettre « O » majuscule.  
+ Le texte suivant présente un exemple d’identificateur de commande avec la police Miramonte. La première ligne contient des chiffres standard. La deuxième ligne contient des chiffres zéro barré pour mieux les distinguer de la lettre « O » majuscule.  
   
- ![Des chiffres zéro barré de texte à l’aide de OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont17.png "OpenTypeFont17")  
-Texte utilisant des chiffres zéro avec barre oblique OpenType  
+ ![Des chiffres zéro barré de texte à l’aide de OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont17.gif "OpenTypeFont17")  
+Texte utilisant des chiffres zéro barré OpenType  
   
  Le balisage suivant montre comment définir des chiffres zéro pour la police Miramonte, à l’aide des propriétés de barré le <xref:System.Windows.Documents.Typography> objet.  
   
- [!code-xml[OpenTypeFontSamples#OpenTypeFontSnippet15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet15)]  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet15)]  
   
 <a name="typography_class"></a>   
-## <a name="typography-class"></a>Classe de typographie  
- Le <xref:System.Windows.Documents.Typography> objet expose l’ensemble des fonctionnalités qui un [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prend en charge de la police. En définissant les propriétés de <xref:System.Windows.Documents.Typography> dans le balisage, vous pouvez créer facilement des documents qui tirent parti de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonctionnalités.  
+## <a name="typography-class"></a>Classe Typography  
+ Le <xref:System.Windows.Documents.Typography> objet expose l’ensemble des fonctionnalités qui une [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] prend en charge de la police. En définissant les propriétés de <xref:System.Windows.Documents.Typography> dans le balisage, vous pouvez créer facilement des documents qui tirent parti de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonctionnalités.  
   
- Le texte suivant affiche des majuscules standard pour la police Pescadero, suivis par les lettres sous la forme « SmallCaps » et « AllSmallCaps ». Dans ce cas, la même taille de police est utilisée pour les trois mots.  
+ Le texte suivant présente des majuscules standard avec la police Pescadero, suivies de lettres de type « SmallCaps » et « AllSmallCaps ». Dans ce cas, la taille de police utilisée est identique pour les trois mots.  
   
- ![Texte utilisant des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont11.png "opentypefont11")  
+ ![Texte utilisant des majuscules OpenType](../../../../docs/framework/wpf/advanced/media/opentypefont11.gif "opentypefont11")  
 Texte utilisant des majuscules OpenType  
   
- L’exemple de balise suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet. Lorsque le format « SmallCaps » est utilisé, toute majuscule principale est ignorée.  
+ Le balisage suivant montre comment définir des majuscules pour la police Pescadero, à l’aide des propriétés de la <xref:System.Windows.Documents.Typography> objet. Quand le format « SmallCaps » est utilisé, les majuscules de début sont ignorées.  
   
- [!code-xml[OpenTypeFontSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
+ [!code-xaml[OpenTypeFontSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]  
   
- L’exemple de code suivant effectue la même tâche que le balisage précédent.  
+ L’exemple de code suivant effectue la même tâche que l’exemple de balisage précédent.  
   
  [!code-csharp[TypographyCodeSnippets#TypographyCodeSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TypographyCodeSnippets/CSharp/Page1.xaml.cs#typographycodesnippet1)]
  [!code-vb[TypographyCodeSnippets#TypographyCodeSnippet1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TypographyCodeSnippets/visualbasic/page1.xaml.vb#typographycodesnippet1)]  
   
-### <a name="typography-class-properties"></a>Propriétés de classe de typographie  
- Le tableau suivant répertorie les propriétés, valeurs et paramètres par défaut de la <xref:System.Windows.Documents.Typography> objet.  
+### <a name="typography-class-properties"></a>Propriétés de la classe Typography  
+ Le tableau suivant répertorie les propriétés, les valeurs et les paramètres par défaut de la <xref:System.Windows.Documents.Typography> objet.  
   
-|Propriété|Valeur (s)|Valeur par défaut|  
+|Propriété|Valeur(s)|Valeur par défaut|  
 |--------------|----------------|-------------------|  
 |<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Valeur numérique - octet|0|  
-|<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals> | <xref:System.Windows.FontCapitals>|<xref:System.Windows.FontCapitals?displayProperty=fullName>|  
+|<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals.AllPetiteCaps> &#124; <xref:System.Windows.FontCapitals.AllSmallCaps> &#124; <xref:System.Windows.FontCapitals.Normal> &#124; <xref:System.Windows.FontCapitals.PetiteCaps> &#124; <xref:System.Windows.FontCapitals.SmallCaps> &#124; <xref:System.Windows.FontCapitals.Titling> &#124; <xref:System.Windows.FontCapitals.Unicase>|<xref:System.Windows.FontCapitals.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.CapitalSpacing%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.CaseSensitiveForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.ContextualAlternates%2A>|<xref:System.Boolean>|`true`|  
@@ -329,19 +335,19 @@ Texte utilisant des majuscules OpenType
 |<xref:System.Windows.Documents.Typography.ContextualSwashes%2A>|Valeur numérique - octet|0|  
 |<xref:System.Windows.Documents.Typography.DiscretionaryLigatures%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.EastAsianExpertForms%2A>|<xref:System.Boolean>|`false`|  
-|<xref:System.Windows.Documents.Typography.EastAsianLanguage%2A>|<xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage> | <xref:System.Windows.FontEastAsianLanguage>|<xref:System.Windows.FontEastAsianLanguage?displayProperty=fullName>|  
-|<xref:System.Windows.Documents.Typography.EastAsianWidths%2A>|<xref:System.Windows.FontEastAsianWidths> | <xref:System.Windows.FontEastAsianWidths> | <xref:System.Windows.FontEastAsianWidths> | <xref:System.Windows.FontEastAsianWidths> | <xref:System.Windows.FontEastAsianWidths> | <xref:System.Windows.FontEastAsianWidths>|<xref:System.Windows.FontEastAsianWidths?displayProperty=fullName>|  
-|<xref:System.Windows.Documents.Typography.Fraction%2A>|<xref:System.Windows.FontFraction> | <xref:System.Windows.FontFraction> | <xref:System.Windows.FontFraction>|<xref:System.Windows.FontFraction?displayProperty=fullName>|  
+|<xref:System.Windows.Documents.Typography.EastAsianLanguage%2A>|<xref:System.Windows.FontEastAsianLanguage.HojoKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis04> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis78> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis83> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis90> &#124; <xref:System.Windows.FontEastAsianLanguage.NlcKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Normal> &#124; <xref:System.Windows.FontEastAsianLanguage.Simplified> &#124; <xref:System.Windows.FontEastAsianLanguage.Traditional> &#124; <xref:System.Windows.FontEastAsianLanguage.TraditionalNames>|<xref:System.Windows.FontEastAsianLanguage.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.EastAsianWidths%2A>|<xref:System.Windows.FontEastAsianWidths.Full> &#124; <xref:System.Windows.FontEastAsianWidths.Half> &#124; <xref:System.Windows.FontEastAsianWidths.Normal> &#124; <xref:System.Windows.FontEastAsianWidths.Proportional> &#124; <xref:System.Windows.FontEastAsianWidths.Quarter> &#124; <xref:System.Windows.FontEastAsianWidths.Third>|<xref:System.Windows.FontEastAsianWidths.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.Fraction%2A>|<xref:System.Windows.FontFraction.Normal> &#124; <xref:System.Windows.FontFraction.Slashed> &#124; <xref:System.Windows.FontFraction.Stacked>|<xref:System.Windows.FontFraction.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.HistoricalForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.HistoricalLigatures%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.Kerning%2A>|<xref:System.Boolean>|`true`|  
 |<xref:System.Windows.Documents.Typography.MathematicalGreek%2A>|<xref:System.Boolean>|`false`|  
-|<xref:System.Windows.Documents.Typography.NumeralAlignment%2A>|<xref:System.Windows.FontNumeralAlignment> | <xref:System.Windows.FontNumeralAlignment> | <xref:System.Windows.FontNumeralAlignment>|<xref:System.Windows.FontNumeralAlignment?displayProperty=fullName>|  
-|<xref:System.Windows.Documents.Typography.NumeralStyle%2A>|<xref:System.Boolean>|<xref:System.Windows.FontNumeralStyle?displayProperty=fullName>|  
+|<xref:System.Windows.Documents.Typography.NumeralAlignment%2A>|<xref:System.Windows.FontNumeralAlignment.Normal> &#124; <xref:System.Windows.FontNumeralAlignment.Proportional> &#124; <xref:System.Windows.FontNumeralAlignment.Tabular>|<xref:System.Windows.FontNumeralAlignment.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.NumeralStyle%2A>|<xref:System.Boolean>|<xref:System.Windows.FontNumeralStyle.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.SlashedZero%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StandardLigatures%2A>|<xref:System.Boolean>|`true`|  
-|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|valeur numérique-octet|0|  
-|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|valeur numérique-octet|0|  
+|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|Valeur numérique - octet|0|  
+|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|Valeur numérique - octet|0|  
 |<xref:System.Windows.Documents.Typography.StylisticSet1%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet2%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet3%2A>|<xref:System.Boolean>|`false`|  
@@ -362,11 +368,11 @@ Texte utilisant des majuscules OpenType
 |<xref:System.Windows.Documents.Typography.StylisticSet18%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet19%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet20%2A>|<xref:System.Boolean>|`false`|  
-|<xref:System.Windows.Documents.Typography.Variants%2A>|<xref:System.Windows.FontVariants> | <xref:System.Windows.FontVariants> | <xref:System.Windows.FontVariants> | <xref:System.Windows.FontVariants> | <xref:System.Windows.FontVariants> | <xref:System.Windows.FontVariants>|<xref:System.Windows.FontVariants?displayProperty=fullName>|  
+|<xref:System.Windows.Documents.Typography.Variants%2A>|<xref:System.Windows.FontVariants.Inferior> &#124; <xref:System.Windows.FontVariants.Normal> &#124; <xref:System.Windows.FontVariants.Ordinal> &#124; <xref:System.Windows.FontVariants.Ruby> &#124; <xref:System.Windows.FontVariants.Subscript> &#124; <xref:System.Windows.FontVariants.Superscript>|<xref:System.Windows.FontVariants.Normal?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Windows.Documents.Typography>   
- [Spécification OpenType](http://go.microsoft.com/fwlink/?LinkId=96731)   
- [Typographie dans WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)   
- [Exemple de Pack de polices OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)   
- [Empaqueter des polices avec des Applications](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)
+ <xref:System.Windows.Documents.Typography>  
+ [Spécification OpenType](http://go.microsoft.com/fwlink/?LinkId=96731)  
+ [Typographie dans WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
+ [Exemple de pack de polices OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)  
+ [Empaquetage de polices avec des applications](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)

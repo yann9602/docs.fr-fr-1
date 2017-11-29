@@ -1,46 +1,50 @@
 ---
-title: "Splines cardinales dans GDI+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "splines cardinales"
-  - "GDI+, splines cardinales"
-  - "splines, cardinales"
+title: Splines cardinales dans GDI+
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- splines [Windows Forms], cardinal
+- GDI+, cardinal splines
+- cardinal splines
 ms.assetid: 09b3797a-6294-422d-9adf-a5a0a7695c0c
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0ad417ee61026f6573f19e70409511e0b28e4d78
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Splines cardinales dans GDI+
-Une spline cardinale est une séquence de courbes reliées entre elles pour former une courbe plus grande.  La spline est spécifiée par un tableau de points et un paramètre de tension.  Une spline cardinale passe par tous les points du tableau sans former d'angles et sans créer de brusques changements de tension de la courbe.  L'illustration suivante représente un ensemble de points et une spline cardinale qui passe par tous ces points.  
+# <a name="cardinal-splines-in-gdi"></a>Splines cardinales dans GDI+
+Une spline cardinale est une séquence de courbes reliées entre elles pour former une courbe plus grande. La spline est spécifiée par un tableau de points et un paramètre de tension. Une spline cardinale passe correctement sur chaque point dans le tableau ; Il existe des angles aigus et aucune modification brusque dans la précision de la courbe. L’illustration suivante montre un ensemble de points et une spline cardinale qui passe par chaque point dans le jeu.  
   
- ![Spline cardinale](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.png "Aboutgdip02\_art09")  
+ ![Spline cardinale](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.gif "Aboutgdip02_art09")  
   
-## Splines physiques et mathématiques  
- Dans le domaine industriel, une spline \(appelée fausse languette\) est une petite pièce de bois \(ou autre matériau flexible\).  Avant l'introduction des splines mathématiques, les dessinateurs industriels utilisaient des fausses languettes pour dessiner des courbes.  Ils plaçaient la fausse languette sur une feuille de papier et la fixaient en divers points prédéfinis.  Il suffisait ensuite de suivre le bord de la fausse languette avec un stylo ou un crayon pour dessiner la courbe.  Un même ensemble de points pouvait produire des courbes différentes en fonction des propriétés de la fausse languette.  Par exemple, une fausse languette présentant une forte résistance à la flexion ne donnait pas la même courbe qu'une fausse languette très souple.  
+## <a name="physical-and-mathematical-splines"></a>Splines physiques et mathématiques  
+ Une spline physique est un élément dynamique de bois ou autre matériau flexible. Avant l’arrivée des splines mathématiques, les concepteurs utilisés splines physiques pour dessiner des courbes. Un concepteur est placer la spline sur une feuille de papier et ancrez-la à un ensemble donné de points. Le concepteur peut ensuite créer une courbe en dessinant le long de la spline avec un stylet ou un crayon. Un ensemble donné de points peut produire des courbes, en fonction des propriétés de la spline physique différentes. Par exemple, une spline avec une forte résistance à pliage produirait une courbe différente à une spline extrêmement flexible.  
   
- En mathématiques, les formules utilisées pour les splines sont basées sur les propriétés de baguettes flexibles ; elles produisent donc des courbes analogues à celles que l'on obtenait avec des fausses languettes.  À partir d'un même ensemble de points, des fausses languettes de flexibilité différente produisaient des courbes différentes ; de même, les splines mathématiques définies avec le même ensemble de points mais des paramètres de tension différents donnent des courbes différentes.  L'illustration suivante représente quatre splines cardinales passant par le même ensemble de points.  La tension est indiquée pour chaque spline.  La valeur 0 correspond à une tension physique infinie qui force la courbe à prendre le chemin le plus court \(ligne droite\) entre les points.  La valeur 1 correspond à une tension physique nulle qui permet de relier les points par un tracé de courbure minimum.  Avec des valeurs de tension supérieures à 1, la courbe se comporte comme un ressort qui se détend pour prendre le chemin le plus long entre les points.  
+ Les formules de splines mathématiques sont basées sur les propriétés de profilés flexibles, afin des courbes produites par des splines mathématiques sont similaires aux courbes qui ont été générés une fois par splines physiques. Comme splines physiques de différents tension produira différentes courbes via un ensemble donné de points, des splines mathématiques avec des valeurs différentes pour le paramètre de tension produira différentes courbes via un ensemble donné de points. L’illustration suivante montre quatre splines cardinales passant par le même ensemble de points. La tension est indiquée pour chaque spline. La valeur 0 correspond à une tension physique infinie qui force la courbe à prendre le plus court (ligne droite) entre les points. La valeur 1 correspond à aucune tension physique, ce qui permet la spline prendre le chemin d’accès de courbure minimum. Avec les valeurs de tension supérieures à 1, la courbe se comporte comme un ressort, envoyée à prendre le chemin le plus long.  
   
- ![Splines cardinales](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.png "Aboutgdip02\_art10")  
+ ![Splines cardinales](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.gif "Aboutgdip02_art10")  
   
- Les quatre splines de l'illustration précédente partagent la même tangente au point de départ.  La tangente est une ligne qui va du point de départ au point suivant de la courbe.  De même, la tangente commune en fin de courbe est une ligne qui va du dernier à l'avant\-dernier point de la courbe.  
+ Les quatre splines de l’illustration précédente partagent la même tangente au point de départ. La tangente est la ligne dessinée à partir du point de départ au point suivant le long de la courbe. De même, la tangente partagée sur le point de fin est la ligne tracée à partir du point de fin au point précédent sur la courbe.  
   
- Pour dessiner une spline cardinale, il vous faut une instance de la classe <xref:System.Drawing.Graphics>, un objet <xref:System.Drawing.Pen> et un tableau d'objets <xref:System.Drawing.Point>. L'instance de la classe <xref:System.Drawing.Graphics> fournit la méthode <xref:System.Drawing.Graphics.DrawCurve%2A> qui dessine la spline et l'objet <xref:System.Drawing.Pen> stocke les attributs de la spline, notamment la largeur et la couleur de la ligne.  Le tableau d'objets <xref:System.Drawing.Point> stocke les points par lesquels la courbe doit passer.  L'exemple de code suivant montre comment dessiner une spline cardinale qui passe par les points définis dans  `myPointArray`.  Le troisième paramètre indique la tension.  
+ Pour dessiner une spline cardinale, vous avez besoin d’une instance de la <xref:System.Drawing.Graphics> (classe), un <xref:System.Drawing.Pen>et un tableau de <xref:System.Drawing.Point> objets de l’instance de la <xref:System.Drawing.Graphics> classe fournit le <xref:System.Drawing.Graphics.DrawCurve%2A> méthode, qui dessine la spline, et le <xref:System.Drawing.Pen> stocke les attributs de la spline, telles que la largeur de ligne et la couleur. Le tableau de <xref:System.Drawing.Point> objets stocke les points de la courbe doit passer. L’exemple de code suivant montre comment dessiner une spline cardinale qui passe par les points dans `myPointArray`. Le troisième paramètre est la tension.  
   
  [!code-csharp[LinesCurvesAndShapes#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#31)]
  [!code-vb[LinesCurvesAndShapes#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#31)]  
   
-## Voir aussi  
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [Génération et dessin de courbes](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

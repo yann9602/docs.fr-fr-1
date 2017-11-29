@@ -1,49 +1,31 @@
 ---
-title: "Valeur de checksum erronée, pas de chiffre hexadécimal ou un nombre impair de chiffres hexadécimaux | Documents Microsoft"
-ms.date: 2015-07-20
+title: "Valeur de checksum erronée, pas de chiffre hexadécimal ou de nombre impair de chiffres hexadécimaux"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - bc42033
 - vbc42033
-dev_langs:
-- VB
-helpviewer_keywords:
-- BC42033
+helpviewer_keywords: BC42033
 ms.assetid: 4575554d-3615-46e4-9c6a-18e9c338e4ed
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bacb392b680bd236583ef6374f135678ed3304f3
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 1158742c8eaa51bcbb5607795f16ae6c2b570db4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits"></a>Valeur de checksum erronée, pas de chiffre hexadécimal ou de nombre impair de chiffres hexadécimaux
 Une valeur de checksum contient des chiffres hexadécimaux non valides ou comporte un nombre impair de chiffres.  
   
  Quand ASP.NET génère un fichier source Visual Basic (extension .vb), il calcule une checksum et la place dans un fichier source masqué, identifié par `#externalchecksum`. L'utilisateur peut également générer un fichier .vb pour effectuer cela, mais il est préférable de réserver ce processus à un usage interne.  
   
- Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou leur traitement en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou leur traitement en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID d’erreur :** BC42033  
   
@@ -56,5 +38,5 @@ Une valeur de checksum contient des chiffres hexadécimaux non valides ou compor
 3.  Si l'avertissement n'est toujours pas résolu, ou si vous n'utilisez pas ASP.NET, rassemblez des informations sur ses circonstances et avertissez les services de support technique Microsoft.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble d’ASP.NET](https://msdn.microsoft.com/library/4w3ex9c2.aspx)   
- [Nous contacter](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+ [ASP.NET Overview](https://msdn.microsoft.com/library/4w3ex9c2.aspx) (Vue d’ensemble d’ASP.NET)  
+ [Nous contacter](/visualstudio/ide/talk-to-us)

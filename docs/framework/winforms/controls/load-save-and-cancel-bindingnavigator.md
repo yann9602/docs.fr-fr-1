@@ -1,80 +1,80 @@
 ---
-title: "Comment&#160;: ajouter des boutons Charger, Enregistrer et Annuler au contr&#244;le BindingNavigator Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), manipulation"
-  - "BindingNavigator (contrôle Windows Forms), ajout de boutons"
+title: "Comment : ajouter des boutons Charger, Enregistrer et Annuler au contrôle BindingNavigator Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [Windows Forms], manipulating
+- BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4bc4f53c404e3767b9f98ca5ab46b19db31f9c6e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: ajouter des boutons Charger, Enregistrer et Annuler au contr&#244;le BindingNavigator Windows Forms
-Le contrôle <xref:System.Windows.Forms.BindingNavigator> est un contrôle <xref:System.Windows.Forms.ToolStrip> spécial destiné à la navigation et à la manipulation des contrôles de votre formulaire qui sont liés aux données.  
+# <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Comment : ajouter des boutons Charger, Enregistrer et Annuler au contrôle BindingNavigator Windows Forms
+Le <xref:System.Windows.Forms.BindingNavigator> contrôle est à usage spécial <xref:System.Windows.Forms.ToolStrip> contrôle qui est destiné à la navigation et la manipulation de contrôles liés aux données sur votre formulaire.  
   
- Dans la mesure où il s'agit d'un contrôle <xref:System.Windows.Forms.ToolStrip>, le composant <xref:System.Windows.Forms.BindingNavigator> peut être modifié facilement pour inclure des commandes supplémentaires ou alternatives pour l'utilisateur.  
+ Car il s’agit d’un <xref:System.Windows.Forms.ToolStrip> (contrôle), le <xref:System.Windows.Forms.BindingNavigator> composant peut facilement être modifié pour inclure des commandes supplémentaires ou alternatives pour l’utilisateur.  
   
- Dans la procédure suivante, un contrôle <xref:System.Windows.Forms.TextBox> est lié aux données, et le contrôle <xref:System.Windows.Forms.ToolStrip> jouté au formulaire est modifié pour intégrer des boutons de chargement, d'enregistrement et d'annulation.  
+ Dans la procédure suivante, un <xref:System.Windows.Forms.TextBox> contrôle est lié aux données et le <xref:System.Windows.Forms.ToolStrip> contrôle qui est ajouté au formulaire est modifiée pour inclure charger, enregistrer et annuler des boutons.  
   
-### Pour ajouter des boutons de chargement, d'enregistrement et d'annulation au composant BindingNavigator  
+### <a name="to-add-load-save-and-cancel-buttons-to-the-bindingnavigator-component"></a>Pour ajouter une charge, enregistrer et annuler des boutons pour le composant de BindingNavigator  
   
 1.  Ajoutez un contrôle <xref:System.Windows.Forms.TextBox> à votre formulaire.  
   
-2.  Liez\-le à un <xref:System.Windows.Forms.BindingSource>, qui est lié à une source de données.  Pour cet exemple, le <xref:System.Windows.Forms.BindingSource> est lié à une base de données.  
+2.  Lier à un <xref:System.Windows.Forms.BindingSource>, qui est lié à une source de données. Pour cet exemple, le <xref:System.Windows.Forms.BindingSource> est lié à une base de données.  
   
-3.  Après la génération du groupe de données et de l'adaptateur de table, faites glisser un contrôle <xref:System.Windows.Forms.BindingNavigator> jusqu'au formulaire.  
+3.  Une fois que l’adaptateur de jeu de données et de table sont générées, faites glisser un <xref:System.Windows.Forms.BindingNavigator> contrôle au formulaire.  
   
-4.  Attribuez à la propriété <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> du contrôle <xref:System.Windows.Forms.BindingNavigator> la valeur <xref:System.Windows.Forms.BindingSource> sur le formulaire qui est lié aux contrôles.  
+4.  Définir le <xref:System.Windows.Forms.BindingNavigator> du contrôle <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> propriété le <xref:System.Windows.Forms.BindingSource> sur le formulaire qui est lié aux contrôles.  
   
 5.  Sélectionnez le contrôle <xref:System.Windows.Forms.BindingNavigator>.  
   
-6.  Cliquez sur le glyphe de balise active \(![Glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) afin que la boîte de dialogue **Tâches BindingNavigator** apparaisse, puis sélectionnez **Modifier les éléments**.  
+6.  Cliquez sur le glyphe de balise active (![glyphe de balise active](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) afin que la **tâches BindingNavigator** boîte de dialogue s’affiche et sélectionnez **modifier les éléments**.  
   
-     Vous voyez s'afficher l'**éditeur de collections Items**.  
+     Le **éditeur de collections Items** s’affiche.  
   
-7.  Dans l'**éditeur de collections Items**, tapez le texte suivant :  
+7.  Dans le **éditeur de collections Items**, procédez comme suit :  
   
-    1.  Ajoutez un <xref:System.Windows.Forms.ToolStripSeparator> et trois éléments <xref:System.Windows.Forms.ToolStripButton> en sélectionnant le type approprié de <xref:System.Windows.Forms.ToolStripItem> et cliquant sur le bouton **Ajouter**.  
+    1.  Ajouter un <xref:System.Windows.Forms.ToolStripSeparator> et trois <xref:System.Windows.Forms.ToolStripButton> éléments en sélectionnant le type approprié de <xref:System.Windows.Forms.ToolStripItem> et en cliquant sur le **ajouter** bouton.  
   
-    2.  Attribuez à la propriété <xref:System.Windows.Forms.ToolStripItem.Name%2A> des boutons les valeurs  `` LoadButton,  `` SaveButton et   `` CancelButton, respectivement.  
+    2.  Définir le <xref:System.Windows.Forms.ToolStripItem.Name%2A> propriété des boutons pour**LoadButton**,**SaveButton**, et**CancelButton**, respectivement.  
   
-    3.  Attribuez à la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A> des boutons les valeurs  `` Load \(charger\)`,` Save \(enregistrer\) et  `` Cancel \(annuler\).  
+    3.  Définir le <xref:System.Windows.Forms.ToolStripItem.Text%2A> propriété des boutons pour**charge** `,` **enregistrer**, et**Annuler**.  
   
-    4.  Attribuez à la propriété <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> de chacun des boutons la valeur  `` Text \(texte\).  Vous pouvez également attribuer à cette propriété la valeur  `` Image ``  ou  `` ImageAndText ``  et définir l'image à afficher dans la propriété <xref:System.Windows.Forms.ToolStripItem.Image%2A>.  
+    4.  Définir le <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> propriété pour chacun des boutons pour**texte**. Vous pouvez également définir cette propriété**Image**ou**ImageAndText**et définir l’image à afficher dans le <xref:System.Windows.Forms.ToolStripItem.Image%2A> propriété.  
   
-    5.  Cliquez sur **OK** pour fermer la boîte de dialogue. Les boutons sont ajoutés au <xref:System.Windows.Forms.ToolStrip>.  
+    5.  Cliquez sur **OK** pour fermer la boîte de dialogue. Les boutons sont ajoutés à la <xref:System.Windows.Forms.ToolStrip>.  
   
-8.  Cliquez avec le bouton droit sur le formulaire et choisissez **Afficher le code**.  
+8.  Avec le bouton droit de la forme et choisissez **afficher le Code**.  
   
-9. Dans l'éditeur de code, recherchez la ligne de code qui charge des données dans l'adaptateur de table.  Ce code a été généré lorsque vous installez la liaison de données à l'étape 2.  Le code doit se présenter comme suit : `TableAdapterName.Fill(DataSetName.TableName)`.  Il figurera très probablement dans l'événement <xref:System.Windows.Forms.Form.Load> du formulaire.  
+9. Dans l’éditeur de Code, recherchez la ligne de code qui charge des données dans l’adaptateur de table. Ce code a été généré lorsque vous configurez la liaison de données à l’étape 2. Le code doit être semblable au suivant : `TableAdapterName.Fill(DataSetName.TableName)`. Il figurera très probablement être sous la forme <xref:System.Windows.Forms.Form.Load> événements.  
   
-10. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolStripItem.Click>Load ``  `` <xref:System.Windows.Forms.ToolStripButton> que vous avez créé précédemment et déplacez\-y ce code de chargement de données.  
+10. Créer un gestionnaire d’événements pour le <xref:System.Windows.Forms.ToolStripItem.Click> l’événement de la**charge** <xref:System.Windows.Forms.ToolStripButton> créé précédemment et de placer ce code de chargement de données.  
   
-     Votre code doit ressembler au suivant :  
+     Votre code doit à présent ressembler à ce qui suit :  
   
-     \[Visual Basic\]  
-  
-    ```  
+    ```vb  
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click  
         TableAdapterName.Fill(DataSetName.TableName)  
     End Sub  
     ```  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     private void LoadButton_Click(System.Object sender,   
         System.EventArgs e)  
     {  
@@ -82,19 +82,15 @@ Le contrôle <xref:System.Windows.Forms.BindingNavigator> est un contrôle <xref
     }  
     ```  
   
-11. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolStripItem.Click>**Enregistrer** `` <xref:System.Windows.Forms.ToolStripButton> que vous avez créé précédemment et écrivez le code pour mettre à jour les données dans la table à laquelle le contrôle est lié.  
+11. Créer un gestionnaire d’événements pour le <xref:System.Windows.Forms.ToolStripItem.Click> l’événement de la **enregistrer** <xref:System.Windows.Forms.ToolStripButton> vous avez créé précédemment et d’écrire du code pour mettre à jour les données dans la table, le contrôle est lié à.  
   
-     \[Visual Basic\]  
-  
-    ```  
+    ```vb  
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click  
         TableAdapterName.Update(DataSetName.TableName)  
     End Sub  
     ```  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     private void SaveButton_Click(System.Object sender,   
         System.EventArgs e)  
     {  
@@ -103,21 +99,17 @@ Le contrôle <xref:System.Windows.Forms.BindingNavigator> est un contrôle <xref
     ```  
   
     > [!NOTE]
-    >  Dans certains cas, le composant <xref:System.Windows.Forms.BindingNavigator> aura déjà un bouton  `` **Enregistrer**, mais aucun code n'aura été généré par le Concepteur Windows Forms.  Dans ce cas, vous pouvez placer le code précédent dans le gestionnaire d'événements <xref:System.Windows.Forms.ToolStripItem.Click> de ce bouton, au lieu de créer un bouton entièrement nouveau sur le <xref:System.Windows.Forms.ToolStrip>.  Toutefois, le bouton étant désactivé par défaut, vous devez attribuer à la propriété <xref:System.Windows.Forms.ToolBarButton.Enabled%2A> du bouton la valeur `true` pour que le bouton fonctionne correctement.  
+    >  Dans certains cas, le <xref:System.Windows.Forms.BindingNavigator> composant a déjà un**enregistrer** bouton, mais aucun code n’aura été généré par le Concepteur Windows Forms. Dans ce cas, vous pouvez placer le code précédent dans le <xref:System.Windows.Forms.ToolStripItem.Click> Gestionnaire d’événements pour ce bouton, au lieu de créer un nouveau bouton sur le <xref:System.Windows.Forms.ToolStrip>. Toutefois, le bouton est désactivé par défaut, vous devez donc définir la <xref:System.Windows.Forms.ToolBarButton.Enabled%2A> propriété du bouton `true` pour que le bouton fonctionne correctement.  
   
-12. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolStripItem.Click>Annuler ``  `` <xref:System.Windows.Forms.ToolStripButton> que vous avez créé précédemment et écrivez le code pour annuler toutes les modifications apportées à l'enregistrement des données qui est affiché.  
+12. Créer un gestionnaire d’événements pour le <xref:System.Windows.Forms.ToolStripItem.Click> l’événement de la**Annuler** <xref:System.Windows.Forms.ToolStripButton> créé précédemment et d’écrire du code pour annuler toute modification apportée à l’enregistrement de données qui s’affiche.  
   
-     \[Visual Basic\]  
-  
-    ```  
+    ```vb  
     Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelButton.Click  
         BindingSourceName.CancelEdit()  
     End Sub  
     ```  
   
-     \[C\#\]  
-  
-    ```  
+    ```csharp  
     private void CancelButton_Click(System.Object sender, System.EventArgs e)  
     {  
         BindingSourceName.CancelEdit();  
@@ -125,11 +117,11 @@ Le contrôle <xref:System.Windows.Forms.BindingNavigator> est un contrôle <xref
     ```  
   
     > [!NOTE]
-    >  La méthode <xref:System.Windows.Forms.BindingSource.CancelEdit%2A> à une portée qui couvre la ligne de données.  Enregistrez toutes les modifications que vous apportez en consultant cet enregistrement individuel avant de naviguer jusqu'à l'enregistrement suivant.  
+    >  Le <xref:System.Windows.Forms.BindingSource.CancelEdit%2A> (méthode) est limitée à la ligne de données. Enregistrez les modifications apportées lors de l’affichage de cet enregistrement individuel avant de naviguer jusqu'à l’enregistrement suivant.  
   
-## Voir aussi  
- <xref:System.Windows.Forms.BindingNavigator>   
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.ToolStrip>   
- [BindingNavigator, contrôle](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.BindingNavigator>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ [BindingNavigator, contrôle](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
  [Vue d'ensemble du composant BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)

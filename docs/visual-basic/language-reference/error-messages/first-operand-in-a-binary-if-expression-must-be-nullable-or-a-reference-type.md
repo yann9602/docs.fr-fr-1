@@ -1,33 +1,31 @@
 ---
-title: "First operand in a binary &#39;If&#39; expression must be nullable or a reference type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc33107"
-  - "vbc33107"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC33107"
+title: "Le premier opérande d’un fichier binaire &#39; si &#39; l’expression doit être null ou un type référence"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc33107
+- vbc33107
+helpviewer_keywords: BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f66b110c02076120c55a3bff28c3d7614bf8be26
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# First operand in a binary &#39;If&#39; expression must be nullable or a reference type
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Une expression `If` peut accepter soit deux soit trois arguments.  Lorsque vous envoyez uniquement deux arguments, le premier argument doit être un type référence ou un type Nullable.  Si le premier argument est évalué à une valeur autre que `Nothing`, sa valeur est retournée.  Si le premier argument est évalué à la valeur `Nothing`, la valeur du deuxième argument est évaluée et retournée.  
+# <a name="first-operand-in-a-binary-39if39-expression-must-be-nullable-or-a-reference-type"></a>Le premier opérande d’un fichier binaire &#39; si &#39; l’expression doit être null ou un type référence
+Un `If` expression peut prendre deux ou trois arguments. Lorsque vous envoyez uniquement deux arguments, le premier argument doit être un type référence ou un type nullable. Si le premier argument évalue à une valeur autre que `Nothing`, sa valeur est retournée. Si le premier argument prend la valeur `Nothing`, le deuxième argument est évalué et retourné.  
   
- Par exemple, le code suivant contient deux expressions `If`, l'une avec trois arguments et l'autre avec deux arguments.  Les expressions sont calculées et retournent la même valeur.  
+ Par exemple, le code suivant contient deux `If` expressions, une avec trois arguments et l’autre avec deux arguments. Les expressions calculer et retournent la même valeur.  
   
-```vb#  
+```vb  
 ' firstChoice is a nullable value type.  
 Dim firstChoice? As Integer = Nothing  
 Dim secondChoice As Integer = 1128  
@@ -39,7 +37,7 @@ Console.WriteLine(If(firstChoice, secondChoice))
   
  Les expressions suivantes provoquent cette erreur :  
   
-```vb#  
+```vb  
 Dim choice1 = 4  
 Dim choice2 = 5  
 Dim booleanVar = True  
@@ -50,18 +48,18 @@ Dim booleanVar = True
 'Console.WriteLine(If(booleanVar, "Test returns True."))  
 ```  
   
- **ID d'erreur :** BC33107  
+ **ID d’erreur :** BC33107  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Si vous ne pouvez pas modifier le code afin que le premier argument soit un type Nullable ou un type référence, envisagez la conversion en une expression `If` à trois arguments, ou en une instruction `If...Then...Else`.  
+-   Si vous ne pouvez pas modifier le code afin que le premier argument est un type nullable ou un type référence, envisagez de convertir à un argument de trois `If` expression, ou à un `If...Then...Else` instruction.  
   
-    ```vb#  
-    Console.WriteLine(If(choice1 < choice2, 1, 2))  
-    Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))  
-    ```  
+```vb  
+Console.WriteLine(If(choice1 < choice2, 1, 2))  
+Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))  
+```  
   
-## Voir aussi  
- [If Operator](../../../visual-basic/language-reference/operators/if-operator.md)   
- [If...Then...Else Statement](../../../visual-basic/language-reference/statements/if-then-else-statement.md)   
- [Nullable Value Types](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+## <a name="see-also"></a>Voir aussi  
+ [If (opérateur)](../../../visual-basic/language-reference/operators/if-operator.md)  
+ [If...Then...Else (instruction)](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
+ [Types valeur Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

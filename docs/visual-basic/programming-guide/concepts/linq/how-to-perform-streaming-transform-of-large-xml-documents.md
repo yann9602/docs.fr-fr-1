@@ -1,44 +1,36 @@
 ---
-title: "Comment : effectuer une transformation de diffusion en continu de Documents XML volumineux (Visual Basic) | Documents Microsoft"
+title: "Comment : effectuer une transformation de diffusion en continu de Documents XML volumineux (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 3d954cc9-4b3c-4b47-8132-ff7541cff53b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f35e42e29e316fe1610a011263aa68e622fb95a5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d211cbd1c94d485e0c41d23eb12dcae28ae7ad6e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>Comment : effectuer une transformation de diffusion en continu de Documents XML volumineux (Visual Basic)
-Vous devez parfois transformer des fichiers XML volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un très grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de diffusion en continu à la place.  
+Vous devez parfois transformer des fichiers XML volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un très grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de streaming à la place.  
   
- Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Norme de certain opérateurs de requête, tel que <xref:System.Linq.Enumerable.OrderBy%2A>, itérer au sein de leur source, recueillent toutes les données, trier et puis produisent le premier élément de la séquence.</xref:System.Linq.Enumerable.OrderBy%2A> Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire pour votre application.  
+ Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire pour votre application.  
   
- Même si vous utilisez la technique décrite dans [procédure : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), si vous tentez d’assembler une arborescence XML qui contient le document transformé, l’utilisation sera trop élevée de mémoire.  
+ Même si vous utilisez la technique décrite dans [Comment : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), si vous tentez d’assembler une arborescence XML qui contient le document transformé, l’utilisation sera trop élevée de mémoire.  
   
- Il existe deux approches principales. Une approche consiste à utiliser les caractéristiques de traitement différé de <xref:System.Xml.Linq.XStreamingElement>.</xref:System.Xml.Linq.XStreamingElement> Une autre approche consiste à créer un <xref:System.Xml.XmlWriter>et utiliser les fonctions de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] pour écrire des éléments à un <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> </xref:System.Xml.XmlWriter> Cette rubrique illustre les deux approches.  
+ Il existe deux approches principales. L'une d'elles consiste à utiliser les caractéristiques de traitement différé de <xref:System.Xml.Linq.XStreamingElement>. Une autre consiste à créer un objet <xref:System.Xml.XmlWriter> et à utiliser les fonctionnalités de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour écrire des éléments dans un objet <xref:System.Xml.XmlWriter>. Cette rubrique illustre les deux approches.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant s’appuie sur l’exemple de [procédure : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
+ L’exemple suivant s’appuie sur l’exemple de [Comment : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
   
- Cet exemple utilise les fonctions d’exécution différée <xref:System.Xml.Linq.XStreamingElement>pour diffuser la sortie.</xref:System.Xml.Linq.XStreamingElement> Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
+ Il utilise les capacités d'exécution différée de <xref:System.Xml.Linq.XStreamingElement> pour diffuser la sortie en continu. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
   
  Notez que l'axe personnalisé (`StreamCustomerItem`) est spécifiquement écrit de sorte qu'il s'attende à recevoir un document possédant des éléments `Customer`, `Name` et `Item`, et que ces éléments seront disposés comme dans le document  Source.xml suivant. Une implémentation plus robuste serait toutefois préparée à analyser un document non valide.  
   
@@ -263,15 +255,15 @@ End Class
 ```  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant s’appuie également sur l’exemple de [procédure : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
+ L’exemple suivant génère également sur l’exemple de [Comment : diffuser des fragments XML en continu avec accès aux informations d’en-tête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
   
- Cet exemple utilise la fonction de [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] pour écrire des éléments à un <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
+ Il utilise la fonctionnalité de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour écrire des éléments dans un <xref:System.Xml.XmlWriter>. Cet exemple peut transformer un document de grande taille tout en conservant un faible encombrement mémoire.  
   
  Notez que l'axe personnalisé (`StreamCustomerItem`) est spécifiquement écrit de sorte qu'il s'attende à recevoir un document possédant des éléments `Customer`, `Name` et `Item`, et que ces éléments seront disposés comme dans le document  Source.xml suivant. Une implémentation plus robuste, toutefois, validerait le document source avec un fichier XSD ou serait préparée à analyser un document non valide.  
   
  Cet exemple utilise le même document source, Source.xml, que l'exemple précédent dans cette rubrique. Il produit également exactement la même sortie.  
   
- Utilisation <xref:System.Xml.Linq.XStreamingElement>pour la diffusion de la sortie que XML est préférable à l’écriture dans un <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter> </xref:System.Xml.Linq.XStreamingElement>  
+ L'utilisation de l'objet <xref:System.Xml.Linq.XStreamingElement> pour diffuser en continu le code XML de sortie est préférable à l'écriture dans un objet <xref:System.Xml.XmlWriter>.  
   
 ```vb  
 Module Module1  
@@ -457,4 +449,4 @@ End Class
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [LINQ to XML (Visual Basic) de la programmation avancée](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ [Avancées programmation LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

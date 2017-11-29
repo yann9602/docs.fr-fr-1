@@ -9,11 +9,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: ff7cd60619f8583376442c202f27a4309790fff8
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
+ms.openlocfilehash: 0ddb7508841087571c0cd095b1d1518e4aad50ff
+ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="introduction-to-classes"></a>Introduction aux classes
 
@@ -98,7 +98,7 @@ Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`
 
 ```csharp
 var account = new BankAccount("<name", 1000);
-Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance".);
+Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
 ```
 
 Tapez `dotnet run` pour observer ce qui se passe.  

@@ -1,29 +1,33 @@
 ---
-title: "Comment&#160;: lire un son incorpor&#233; dans une ressource &#224; partir d&#39;un Windows Form | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "lecture des sons, des ressources"
-  - "ressources (Windows Forms), lire des sons"
-  - "lire des sons, des ressources"
-  - "SoundPlayer (classe), lire des sons à partir des ressources"
+title: "Guide pratique pour émettre un son incorporé dans une ressource à partir d'un Windows Form"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- sounds [Windows Forms], playing from resources
+- resources [Windows Forms], playing sounds
+- playing sounds [Windows Forms], from resources
+- SoundPlayer class [Windows Forms], playing sounds from resources
 ms.assetid: 7d148bb6-8a1e-47d7-a08d-35828d2e688f
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 82e143a6c405d4f3065c18a1a118891e0e692b93
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: lire un son incorpor&#233; dans une ressource &#224; partir d&#39;un Windows Form
+# <a name="how-to-play-a-sound-embedded-in-a-resource-from-a-windows-form"></a>Guide pratique pour émettre un son incorporé dans une ressource à partir d'un Windows Form
 Vous pouvez utiliser la <xref:System.Media.SoundPlayer> classe pour lire un son à partir d’une ressource incorporée.  
   
 ## <a name="example"></a>Exemple  
@@ -33,13 +37,13 @@ Vous pouvez utiliser la <xref:System.Media.SoundPlayer> classe pour lire un son 
 ## <a name="compiling-the-code"></a>Compilation du code  
  Cet exemple nécessite :  
   
- L’importation de la <xref:System.Media?displayProperty=fullName> espace de noms.  
+ L’importation du <xref:System.Media?displayProperty=nameWithType> espace de noms.  
   
- En tant que ressource incorporée dans votre projet, y compris le fichier audio.  
+ L’inclusion du fichier audio en tant que ressource incorporée dans votre projet.  
   
- En remplaçant «<>\>» avec le nom de l’assembly dans lequel le fichier audio est incorporé. N’incluez pas le suffixe « .dll ».  
+ Le remplacement de « \<AssemblyName » par le nom de l’assembly dans lequel le fichier audio est incorporé. N’incluez pas le suffixe « .dll ».  
   
 ## <a name="see-also"></a>Voir aussi  
- <xref:System.Media.SoundPlayer>   
- [Comment : lire un son à partir d’un Windows Form](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)   
- [Comment : mettre en boucle un son sur un Windows Form](../../../../docs/framework/winforms/controls/how-to-loop-a-sound-playing-on-a-windows-form.md)
+ <xref:System.Media.SoundPlayer>  
+ [Guide pratique pour lire un son à partir d’un Windows Form](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)  
+ [Guide pratique pour mettre en boucle l’émission d’un son dans un Windows Form](../../../../docs/framework/winforms/controls/how-to-loop-a-sound-playing-on-a-windows-form.md)

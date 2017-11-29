@@ -1,27 +1,33 @@
 ---
-title: "Synchronisation d&#39;un DataSet avec un XmlDataDocument | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Synchronisation d’un DataSet et d’un XmlDataDocument"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: bea557d8a09ba874fb4b6a3f3a54c09dac4778cc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Synchronisation d&#39;un DataSet avec un XmlDataDocument
-Cette section décrit l'une des étapes du traitement d'un bon de commande à l'aide d'un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>.  Les exemples suivants créent un **DataSet** avec un schéma minimal ne correspondant qu'à une partie du document XML source.  Ces exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document XML source, de sorte que le **DataSet** pourra être utilisé pour exposer un sous\-ensemble du document XML.  
+# <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronisation d’un DataSet et d’un XmlDataDocument
+Cette section décrit l'une des étapes du traitement d'un bon de commande à l'aide d'un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples suivants créent un **DataSet** avec un schéma minimal correspondant uniquement une partie du document XML source. Les exemples utilisent une **XmlDataDocument** pour préserver la fidélité du document XML source, l’activation de la **DataSet** à être utilisé pour exposer un sous-ensemble du document XML.  
   
  Le document XML suivant contient toutes les informations relatives à un bon de commande : les informations client, les articles commandés, les informations de livraison, etc.  
   
-```  
+```xml  
 <?xml version="1.0" standalone="yes"?>  
 <PurchaseOrder>  
   <Customers>  
@@ -113,11 +119,11 @@ Cette section décrit l'une des étapes du traitement d'un bon de commande à l'
 </PurchaseOrder>  
 ```  
   
- L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société.  L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés.  Pour n'exposer que les références des produits à partir du document XML, créez un **DataSet** fortement typé avec un schéma, écrit sous la forme d'un schéma en langage XSD \(XML Schema Definition\), qui corresponde aux produits et quantités commandés.  Pour plus d'informations sur les objets **DataSet** fortement typés, voir [DataSets typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
+ L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société. L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés. Pour exposer uniquement les informations de produit à partir du document XML, créer un fortement typées **DataSet** avec un schéma, écrit sous forme de schéma XML Schema definition language (XSD), qui corresponde aux produits et quantités commandés. Pour plus d’informations sur fortement typées **DataSet** , consultez [typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
   
- Le code suivant montre le schéma à partir duquel le **DataSet** fortement typé de cet exemple est généré.  
+ Le code suivant montre le schéma à partir de laquelle fortement typé **DataSet** est généré pour cet exemple.  
   
-```  
+```xml  
 <?xml version="1.0" standalone="yes"?>  
 <xs:schema id="OrderDetail" xmlns=""   
                             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
@@ -161,11 +167,11 @@ Cette section décrit l'une des étapes du traitement d'un bon de commande à l'
 </xs:schema>  
 ```  
   
- Notez que seules les informations des éléments **OrderDetails** et **Products** du document XML d'origine sont inclus dans le schéma du **DataSet**.  Synchroniser le **DataSet** avec un **XmlDataDocument** permet de s'assurer que les éléments qui ne sont pas inclus dans le **DataSet** seront conservés avec le document XML.  
+ Notez que seules les informations à partir de la **OrderDetails** et **produits** éléments du document XML d’origine sont inclus dans le schéma pour le **DataSet**. Synchronisation de la **DataSet** avec un **XmlDataDocument** garantit que les éléments non inclus dans le **DataSet** seront conservés avec le document XML.  
   
- Grâce au **DataSet** fortement typé généré à partir du schéma XML \(avec l'espace de noms **Northwind.FillOrder**\), une partie du document XML d'origine peut être exposée via la synchronisation du **DataSet** avec le **XmlDataDocument** chargé à partir du document XML source.  Notez que le **DataSet** généré à partir du schéma contient une structure, mais pas de données.  Les données sont fournies lorsque vous chargez le XML dans le **XmlDataDocument**.  Si vous tentez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception sera levée.  
+ Avec fortement typé **DataSet** généré à partir du schéma XML (avec un espace de noms **Northwind.FillOrder**), une partie du document XML d’origine peut être exposée en synchronisant le  **Jeu de données** avec la **XmlDataDocument** chargé à partir du document XML source. Notez que la **DataSet** généré à partir du schéma contient la structure, mais aucune donnée. Les données sont renseignées lorsque vous chargez le XML dans le **XmlDataDocument**. Si vous tentez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception sera levée.  
   
- Après mise à jour du **DataSet** \(et du **XmlDataDocument**\), le **XmlDataDocument** peut écrire le document XML modifié, en laissant intacts les éléments ignorés par le **DataSet**, comme illustré ci\-après.  Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut\-être au service livraison de la société.  
+ Après le **DataSet** (et **XmlDataDocument**) a été mis à jour, le **XmlDataDocument** peut écrire le document XML modifié avec les éléments ignorés par le **DataSet** intact, comme indiqué ci-dessous. Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut-être au service livraison de la société.  
   
 ```vb  
 Imports System  
@@ -235,6 +241,6 @@ public class Sample
 }  
 ```  
   
-## Voir aussi  
- [Synchronisation des objets DataSet et XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [Synchronisation DataSet et XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,56 +1,59 @@
 ---
-title: "How to: Specify the Security Context for Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Windows Service applications, security"
-  - "security [Visual Studio], contexts"
-  - "contexts, Visual Studio security"
-  - "security [Visual Studio], service applications"
-  - "ServiceProcessInstaller class, security context"
-  - "services, security"
-  - "ServiceInstaller class, security context"
+title: "Comment : spécifier le contexte de sécurité des services"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Service applications, security
+- security [Visual Studio], contexts
+- contexts, Visual Studio security
+- security [Visual Studio], service applications
+- ServiceProcessInstaller class, security context
+- services, security
+- ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
-caps.latest.revision: 10
-author: "ghogen"
-ms.author: "ghogen"
-manager: "douge"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: ghogen
+ms.author: ghogen
+manager: douge
+ms.openlocfilehash: 50a9c6ff7f02cda4475aa5390181fa5d410af161
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Specify the Security Context for Services
-Par défaut, les services s'exécutent dans un contexte de sécurité différent de celui de l'utilisateur connecté.  Les services s'exécutent dans le contexte du compte système par défaut, appelé `LocalSystem`, qui leur confère des privilèges d'accès aux ressources système différents de ceux qui sont accordés à l'utilisateur.  Vous pouvez modifier ce comportement en spécifiant un compte d'utilisateur différent de celui dans lequel votre service devrait normalement s'exécuter.  
+# <a name="how-to-specify-the-security-context-for-services"></a>Comment : spécifier le contexte de sécurité des services
+Par défaut, les services s’exécutent dans un contexte de sécurité autre que celle de l’utilisateur connecté. Les services s’exécutés dans le contexte du compte système par défaut, appelée `LocalSystem`, ce qui leur donne différents privilèges d’accès aux ressources système que l’utilisateur. Vous pouvez modifier ce comportement pour spécifier un autre compte d’utilisateur sous lequel votre service doit s’exécuter.  
   
- Pour définir le contexte de sécurité, utilisez la propriété <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> du processus dans lequel s'exécute le service.  Cette propriété vous permet d'attribuer au service l'un des quatre types de comptes suivants :  
+ Vous définissez le contexte de sécurité en manipulant le <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> propriété du processus dans lequel le service s’exécute. Cette propriété vous permet de définir le service à un des quatre types de comptes :  
   
--   `User`, qui indique au système qu'il doit demander un nom d'utilisateur et un mot de passe valides lorsque le service est installé et s'exécute dès lors qu'un compte est spécifié par un utilisateur unique sur le réseau ;  
+-   `User`, ce qui entraîne le système demande un nom d’utilisateur valide et un mot de passe lorsque le service est installé et s’exécute dans le contexte d’un compte spécifié par un utilisateur unique sur le réseau ;  
   
--   `LocalService`, qui s'exécute dans le contexte d'un compte agissant en tant qu'utilisateur non privilégié sur l'ordinateur local, et qui présente les informations d'identification anonymes à un serveur distant quelconque ;  
+-   `LocalService`, qui s’exécute dans le contexte d’un compte qui agit comme un utilisateur non privilégié sur l’ordinateur local et présente des informations d’identification anonymes à tout serveur distant ;  
   
--   `LocalSystem`, qui s'exécute dans le contexte d'un compte qui fournit des privilèges locaux étendus, et présente les informations d'identification de l'ordinateur à un serveur distant quelconque ;  
+-   `LocalSystem`, qui s’exécute dans le contexte d’un compte qui fournit des privilèges locaux étendus et présente les informations d’identification de l’ordinateur à tout serveur distant ;  
   
--   `NetworkService`, qui s'exécute dans le contexte d'un compte agissant en tant qu'utilisateur non privilégié sur l'ordinateur local, et qui présente les informations d'identification de l'ordinateur à un serveur distant quelconque.  
+-   `NetworkService`, qui s’exécute dans le contexte d’un compte qui agit comme un utilisateur non privilégié sur l’ordinateur local et présente des informations d’identification de l’ordinateur à tout serveur distant.  
   
- Pour plus d'informations, consultez l'énumération <xref:System.ServiceProcess.ServiceAccount>.  
+ Pour plus d’informations, consultez l’énumération <xref:System.ServiceProcess.ServiceAccount>.  
   
-### Pour spécifier le contexte de sécurité d'un service  
+### <a name="to-specify-the-security-context-for-a-service"></a>Pour spécifier le contexte de sécurité pour un service  
   
-1.  Après avoir créé le service, ajoutez les programmes d'installation nécessaires.  Pour plus d’informations, consultez [How to: Add Installers to Your Service Application](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1.  Après avoir créé votre service, ajoutez les programmes d’installation nécessaires pour celui-ci. Pour plus d’informations, consultez [Comment : ajouter des programmes d’installation à votre Application de Service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-2.  Dans le Concepteur, accédez à la classe `ProjectInstaller` et cliquez sur le programme d'installation de processus de service correspondant à votre service.  
+2.  Dans le concepteur, accédez à la `ProjectInstaller` classe, puis cliquez sur le programme d’installation du processus de service pour le service que vous utilisez.  
   
     > [!NOTE]
-    >  Pour chaque application de service, la classe `ProjectInstaller` comprend au moins deux composants d'installation : un qui installe les processus pour tous les services du projet et un autre pour chaque service contenu dans l'application.  Dans le cas présent, vous voulez sélectionner <xref:System.ServiceProcess.ServiceProcessInstaller>.  
+    >  Pour chaque application de service, il existe au moins deux composants d’installation dans le `ProjectInstaller` classe : un qui installe les processus pour tous les services dans le projet et un programme d’installation pour chaque service de l’application. Dans ce cas, vous souhaitez sélectionner <xref:System.ServiceProcess.ServiceProcessInstaller>.  
   
-3.  Dans la fenêtre **Propriétés**, affectez la valeur appropriée à <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>.  
+3.  Dans le **propriétés** , configurez la <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> la valeur appropriée.  
   
-## Voir aussi  
- [Introduction to Windows Service Applications](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)   
- [How to: Add Installers to Your Service Application](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)   
- [How to: Create Windows Services](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+## <a name="see-also"></a>Voir aussi  
+ [Introduction aux Applications de Service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Comment : ajouter des programmes d’installation à votre Application de Service](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
+ [Comment : créer des Services Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)

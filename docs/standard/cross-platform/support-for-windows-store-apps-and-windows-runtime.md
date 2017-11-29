@@ -1,47 +1,45 @@
 ---
-title: "Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "Applications Windows Store, prise en charge par le .NET Framework"
-  - "Windows Runtime, prise en charge par le .NET Framework"
-  - ".NET pour les applications du Windows Store"
-  - ".NET Framework, et applications Windows Store"
-  - ".NET Framework, et Windows Runtime"
+title: Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Store apps, .NET Framework support for
+- Windows Runtime, .NET Framework support for
+- .NET for Windows Store apps
+- .NET Framework, and Windows Store apps
+- .NET Framework, and Windows Runtime
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
-caps.latest.revision: 20
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a8ee68c53173f0919a9200ed5ac82fed3e27affc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime
+# <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime
 Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieurs scénarios de développement de logiciel avec le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Ces scénarios se répartissent en trois catégories :  
   
--   Développement [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avec les contrôles XAML, comme décrit dans les applications [feuille de route pour Windows Store en c# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=242212), [applications de développement Windows Store (VB / C# / C++ et XAML)](http://go.microsoft.com/fwlink/p/?LinkId=238311), et [vue d’ensemble des applications .NET pour Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312) dans le centre de développement Windows.  
+-   Développement [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avec les contrôles XAML, comme décrit dans les applications [feuille de route pour Windows Store en c# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=242212), [des applications de développement Windows Store (VB / C# / C++ et XAML)](http://go.microsoft.com/fwlink/p/?LinkId=238311)et [Vue d’ensemble des applications .NET pour le Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312) dans le centre de développement Windows.  
   
 -   Développement de bibliothèques de classes à utiliser dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] que vous créez avec le .NET Framework.  
   
 -   Développement de composants [!INCLUDE[wrt](../../../includes/wrt-md.md)], empaquetés dans des fichiers .WinMD, qui peuvent être utilisés par n’importe quel langage de programmation qui prend en charge le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Par exemple, consultez [création de composants Windows Runtime en c# et Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=238313) dans le centre de développement Windows.  
   
- Cette rubrique décrit la prise en charge fournie par le .NET Framework pour ces trois catégories, et décrit les scénarios pour les composants [!INCLUDE[wrt](../../../includes/wrt-md.md)]. La première section comprend des informations de base sur la relation entre le .NET Framework et le [!INCLUDE[wrt](../../../includes/wrt-md.md)], et explique certaines singularités que vous pouvez rencontrer dans le système d’aide et l’IDE. Le [deuxième section](#WindowsRuntimeComponents) décrit des scénarios de développement [!INCLUDE[wrt](../../../includes/wrt-md.md)] composants.  
+ Cette rubrique décrit la prise en charge fournie par le .NET Framework pour ces trois catégories, et décrit les scénarios pour les composants [!INCLUDE[wrt](../../../includes/wrt-md.md)]. La première section comprend des informations de base sur la relation entre le .NET Framework et le [!INCLUDE[wrt](../../../includes/wrt-md.md)], et explique certaines singularités que vous pouvez rencontrer dans le système d’aide et l’IDE. Le [deuxième section](#WindowsRuntimeComponents) présente des scénarios de développement [!INCLUDE[wrt](../../../includes/wrt-md.md)] composants.  
   
 ## <a name="the-basics"></a>Principes de base  
  Le .NET Framework prend en charge les trois scénarios de développement répertoriés précédemment en fournissant [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], et en prenant en charge le [!INCLUDE[wrt](../../../includes/wrt-md.md)] proprement dit.  
   
--   [.NET pour les applications Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=247912) fournit une vue simplifiée des bibliothèques de classes .NET Framework et incluent uniquement les types et membres que vous pouvez utiliser pour créer [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] applications et [!INCLUDE[wrt](../../../includes/wrt-md.md)] des composants.  
+-   [.NET pour les applications Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=247912) fournit une vue simplifiée des bibliothèques de classes .NET Framework et d’inclure uniquement les types et membres que vous pouvez utiliser pour créer [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] applications et [!INCLUDE[wrt](../../../includes/wrt-md.md)] composants.  
   
     -   Quand vous utilisez Visual Studio ([!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] ou version ultérieure) pour développer une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ou un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)], un jeu d’assemblys de référence permet de s’assurer que vous voyez uniquement les types et les membres pertinents.  
   
@@ -49,9 +47,9 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
   
     -   Les fonctionnalités qui ne font qu’envelopper l’API du système d’exploitation sont également supprimées, car le [!INCLUDE[wrt](../../../includes/wrt-md.md)] est facile à appeler à partir du code managé.  
   
-     Pour en savoir plus sur les [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], consultez la [vue d’ensemble des applications .NET pour Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312) dans le développement Windows Center.To en savoir plus sur le processus de sélection des API, consultez le [.NET pour les applications Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=251061) entrée dans le blog .NET.  
+     Pour en savoir plus sur les [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], consultez la [vue d’ensemble des applications .NET pour le Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312) dans le développement Windows Center.To en savoir plus sur le processus de sélection d’API, consultez le [.NET pour les applications Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=251061) entrée dans le .NET blog.  
   
--   Le [Windows Runtime](http://go.microsoft.com/fwlink/p/?LinkId=238319) fournit des éléments d’interface de l’utilisateur pour la création de [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] les applications et permet d’accéder aux fonctionnalités du système d’exploitation. Comme le .NET Framework, le [!INCLUDE[wrt](../../../includes/wrt-md.md)] a des métadonnées qui permettent aux compilateurs C# et Visual Basic d’utiliser les bibliothèques de classes [!INCLUDE[wrt](../../../includes/wrt-md.md)] de la même façon que les bibliothèques de classes .NET Framework. Le .NET Framework simplifie l’utilisation du [!INCLUDE[wrt](../../../includes/wrt-md.md)] en masquant certaines différences :  
+-   Le [Windows Runtime](http://go.microsoft.com/fwlink/p/?LinkId=238319) fournit des éléments d’interface de l’utilisateur pour la génération [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] applications et donne accès aux fonctionnalités du système d’exploitation. Comme le .NET Framework, le [!INCLUDE[wrt](../../../includes/wrt-md.md)] a des métadonnées qui permettent aux compilateurs C# et Visual Basic d’utiliser les bibliothèques de classes [!INCLUDE[wrt](../../../includes/wrt-md.md)] de la même façon que les bibliothèques de classes .NET Framework. Le .NET Framework simplifie l’utilisation du [!INCLUDE[wrt](../../../includes/wrt-md.md)] en masquant certaines différences :  
   
     -   Certaines différences dans les modèles de programmation entre le .NET Framework et le [!INCLUDE[wrt](../../../includes/wrt-md.md)], tels que le modèle pour ajouter et supprimer des gestionnaires d’événements, sont masquées. Vous utilisez simplement le modèle .NET Framework.  
   
@@ -60,16 +58,16 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
  La plupart du temps, la prise en charge du [!INCLUDE[wrt](../../../includes/wrt-md.md)] par le .NET Framework est transparente. La section suivante décrit certaines des différences apparentes entre le code managé et le [!INCLUDE[wrt](../../../includes/wrt-md.md)].  
   
 <a name="AboutReferenceDocumentation"></a>   
-### <a name="the-net-framework-and-the-includewrttokenwrtmdmd-reference-documentation"></a>Le .NET Framework et la documentation de référence du [!INCLUDE[wrt](../../../includes/wrt-md.md)]  
- Les ensembles de documentation Windows et .NET Framework sont séparés. Si vous appuyez sur F1 pour afficher l’aide sur un type ou un membre, la documentation de référence de l’ensemble approprié s’affiche. Toutefois, si vous parcourez les [Windows Runtime référence](http://go.microsoft.com/fwlink/p/?LinkId=238319) vous pouvez rencontrer des exemples qui semblent doivent :  
+### <a name="the-net-framework-and-the-includewrtincludeswrt-mdmd-reference-documentation"></a>Le .NET Framework et la documentation de référence du [!INCLUDE[wrt](../../../includes/wrt-md.md)]  
+ Les ensembles de documentation Windows et .NET Framework sont séparés. Si vous appuyez sur F1 pour afficher l’aide sur un type ou un membre, la documentation de référence de l’ensemble approprié s’affiche. Toutefois, si vous y accédez via le [référence Windows Runtime](http://go.microsoft.com/fwlink/p/?LinkId=238319) vous pouvez rencontrer des exemples qui semblent doivent :  
   
--   Rubriques telles que la [interface IIterable](http://go.microsoft.com/fwlink/p/?LinkId=238321) n’avez pas la syntaxe de déclaration pour Visual Basic ou c#. Au lieu de cela, une note apparaît au-dessus de la section syntaxe (dans ce cas, « .NET : cette interface s’affiche en tant que m<>\>»). Cela est dû au fait que le .NET Framework et le [!INCLUDE[wrt](../../../includes/wrt-md.md)] fournissent une fonctionnalité similaire avec des interfaces différentes. En outre, il existe des différences de comportement : `IIterable` a un `First` méthode au lieu d’un <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> méthode pour retourner l’énumérateur. Au lieu de vous contraindre à apprendre une autre manière d’effectuer une tâche courante, le .NET Framework prend en charge le [!INCLUDE[wrt](../../../includes/wrt-md.md)] en donnant l’apparence que votre code managé utilise le type que vous connaissez. Vous ne verrez pas l’interface `IIterable` dans l’IDE. Ainsi, la seule façon dont vous pouvez la rencontrer dans la documentation de référence [!INCLUDE[wrt](../../../includes/wrt-md.md)] est en parcourant directement cette documentation.  
+-   Rubriques telles que la [interface IIterable](http://go.microsoft.com/fwlink/p/?LinkId=238321) n’avez pas la syntaxe de déclaration pour Visual Basic ou c#. Au lieu de cela, une note apparaît au-dessus de la section syntaxe (dans ce cas, « .NET : cette interface s’affiche en tant que System.Collections.Generic.IEnumerable\<T > »). Cela est dû au fait que le .NET Framework et le [!INCLUDE[wrt](../../../includes/wrt-md.md)] fournissent une fonctionnalité similaire avec des interfaces différentes. En outre, il existe des différences de comportement : `IIterable` a une méthode `First` plutôt qu’une méthode <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> pour retourner l’énumérateur. Au lieu de vous contraindre à apprendre une autre manière d’effectuer une tâche courante, le .NET Framework prend en charge le [!INCLUDE[wrt](../../../includes/wrt-md.md)] en donnant l’apparence que votre code managé utilise le type que vous connaissez. Vous ne verrez pas l’interface `IIterable` dans l’IDE. Ainsi, la seule façon dont vous pouvez la rencontrer dans la documentation de référence [!INCLUDE[wrt](../../../includes/wrt-md.md)] est en parcourant directement cette documentation.  
   
--   Le [SyndicationFeed constructeur](http://go.microsoft.com/fwlink/p/?LinkId=238322) documentation illustre un problème étroitement lié : ses types de paramètre semblent différente pour différentes langues. Pour c# et Visual Basic, les types de paramètre sont <xref:System.String?displayProperty=fullName> et <xref:System.Uri?displayProperty=fullName>. Là encore, c’est parce que le .NET Framework a ses propres types `String` et `Uri`, et pour ces types couramment utilisés, il est inutile d’obliger les utilisateurs du .NET Framework à apprendre une autre manière de faire les choses. Dans l’IDE, le .NET Framework masque les types [!INCLUDE[wrt](../../../includes/wrt-md.md)] correspondants.  
+-   Le [SyndicationFeed constructeur](http://go.microsoft.com/fwlink/p/?LinkId=238322) documentation illustre un problème étroitement lié : ses types de paramètre semblent être différente pour différentes langues. Pour C# et Visual Basic, les types de paramètres sont <xref:System.String?displayProperty=nameWithType> et <xref:System.Uri?displayProperty=nameWithType>. Là encore, c’est parce que le .NET Framework a ses propres types `String` et `Uri`, et pour ces types couramment utilisés, il est inutile d’obliger les utilisateurs du .NET Framework à apprendre une autre manière de faire les choses. Dans l’IDE, le .NET Framework masque les types [!INCLUDE[wrt](../../../includes/wrt-md.md)] correspondants.  
   
 -   Dans certains cas, tels que les [Windows.UI.Xaml.GridLength](http://go.microsoft.com/fwlink/p/?LinkId=251059) structure, le .NET Framework fournit un type avec le même nom mais des fonctionnalités. Par exemple, un ensemble de rubriques sur les constructeurs et les propriétés sont associées à `GridLength`, mais elles ont des blocs de syntaxe uniquement pour Visual Basic et C#, car les membres sont disponibles uniquement dans le code managé. Dans le [!INCLUDE[wrt](../../../includes/wrt-md.md)], les structures ont uniquement des champs. Le [!INCLUDE[wrt](../../../includes/wrt-md.md)] structure requiert une classe d’assistance, [Windows.UI.Xaml.GridLengthHelper](http://go.microsoft.com/fwlink/p/?LinkId=251060), pour fournir des fonctionnalités équivalentes. Vous ne verrez par cette classe d’assistance dans l’IDE quand vous écrirez du code managé.  
   
--   Dans l’IDE, [!INCLUDE[wrt](../../../includes/wrt-md.md)] types s’affichent pour dériver de <xref:System.Object?displayProperty=fullName>. Ils semblent avoir des membres hérités de <xref:System.Object>, tel que <xref:System.Object.ToString%2A?displayProperty=fullName>. Ces membres fonctionnent comme si les types réellement héritent <xref:System.Object>, et [!INCLUDE[wrt](../../../includes/wrt-md.md)] types peuvent être convertis en <xref:System.Object>. Cette fonctionnalité fait partie de la prise en charge fournie par le .NET Framework pour le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Toutefois, si vous affichez les types dans la documentation de référence du [!INCLUDE[wrt](../../../includes/wrt-md.md)], aucun membre n’apparaît. La documentation de ces membres hérités apparentes est fournie par le <xref:System.Object?displayProperty=fullName> documentation de référence.  
+-   Dans l’IDE, les types [!INCLUDE[wrt](../../../includes/wrt-md.md)] semblent dériver de <xref:System.Object?displayProperty=nameWithType>. Ils semblent avoir des membres hérités de <xref:System.Object>, tels que <xref:System.Object.ToString%2A?displayProperty=nameWithType>. Ces membres fonctionnent comme si les types héritaient réellement de <xref:System.Object>, et les types [!INCLUDE[wrt](../../../includes/wrt-md.md)] peuvent être convertis en <xref:System.Object>. Cette fonctionnalité fait partie de la prise en charge fournie par le .NET Framework pour le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Toutefois, si vous affichez les types dans la documentation de référence du [!INCLUDE[wrt](../../../includes/wrt-md.md)], aucun membre n’apparaît. La documentation sur ces membres hérités apparents est fournie par la documentation de référence sur <xref:System.Object?displayProperty=nameWithType>.  
   
 <a name="DifferencesVisibleInIDE"></a>   
 ### <a name="differences-that-are-visible-in-the-ide"></a>Différences visibles dans l’IDE  
@@ -93,7 +91,7 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
   
  La façon dont les interfaces apparaissent dans le code managé affecte la façon dont les types qui implémentent ces interfaces apparaissent. Par exemple, la classe `PropertySet` implémente `IMap<K, V>`, qui s'affiche dans le code managé sous la forme `IDictionary<TKey, TValue>`. `PropertySet` apparaît comme ayant implémenté `IDictionary<TKey, TValue>` au lieu de `IMap<K, V>`, donc en code managé une méthode `Add` semble se comporter comme la méthode `Add` sur les dictionnaires .NET Framework. Il ne semble pas avoir de méthode `Insert`.  
   
- Pour plus d’informations sur l’utilisation de .NET Framework pour créer un [!INCLUDE[wrt](../../../includes/wrt-md.md)] composant et une procédure pas à pas qui montre comment utiliser un composant avec JavaScript, consultez [création de composants Windows Runtime en c# et Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=238313) dans le centre de développement Windows.  
+ Pour plus d’informations sur l’utilisation de .NET Framework pour créer un [!INCLUDE[wrt](../../../includes/wrt-md.md)] composant et une procédure pas à pas qui montre comment utiliser un tel composant avec JavaScript, consultez [création de composants Windows Runtime en c# et Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=238313) dans le Centre de développement Windows.  
   
 ### <a name="primitive-types"></a>Types primitifs  
  Pour permettre l’utilisation naturelle du [!INCLUDE[wrt](../../../includes/wrt-md.md)] dans le code managé, les types primitifs .NET Framework s’affichent au lieu des types primitifs [!INCLUDE[wrt](../../../includes/wrt-md.md)] dans votre code. Dans le .NET Framework, les types primitifs comme la structure `Int32` ont de nombreuses propriétés et méthodes utiles, telles que la méthode `Int32.TryParse`. En revanche, les types primitifs et les structures dans le [!INCLUDE[wrt](../../../includes/wrt-md.md)] ont uniquement des champs. Quand vous utilisez des primitives dans du code managé, elles semblent être des types .NET Framework, et vous pouvez en utiliser les propriétés et les méthodes comme vous le faites habituellement. La liste suivante fournit un résumé :  
@@ -110,10 +108,10 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
   
  Comme avec les types d’interface, le seul moment où vous pouvez voir la preuve de cette représentation est quand votre projet .NET Framework est un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] utilisé par une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] générée à l’aide de JavaScript.  
   
- Autres basiques fréquemment utilisés [!INCLUDE[wrt](../../../includes/wrt-md.md)] types qui apparaissent dans le code managé comme leurs équivalents .NET Framework incluent la `Windows.Foundation.DateTime` structure, qui apparaît dans le code managé en tant que la <xref:System.DateTimeOffset?displayProperty=fullName> structure et la `Windows.Foundation.TimeSpan` structure qui apparaît sous la forme la <xref:System.TimeSpan?displayProperty=fullName> structure.  
+ Parmi les autres types [!INCLUDE[wrt](../../../includes/wrt-md.md)] fréquemment utilisés qui apparaissent dans le code managé comme leurs équivalents .NET Framework figurent la structure `Windows.Foundation.DateTime` (qui apparaît dans le code managé comme structure <xref:System.DateTimeOffset?displayProperty=nameWithType>) et la structure `Windows.Foundation.TimeSpan` (qui apparaît sous la forme d’une structure <xref:System.TimeSpan?displayProperty=nameWithType>).  
   
 ### <a name="other-differences"></a>Autres différences  
- Dans certains cas, le fait que les types .NET Framework soient affichés dans votre code au lieu des types [!INCLUDE[wrt](../../../includes/wrt-md.md)] nécessite une action de votre part. Par exemple, le [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) classe apparaît comme <xref:System.Uri?displayProperty=fullName> dans le code .NET Framework. <xref:System.Uri?displayProperty=fullName> permet à un URI relatif, mais [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) nécessite un URI absolu. Ainsi, quand vous transmettez un URI à une méthode [!INCLUDE[wrt](../../../includes/wrt-md.md)], vous devez vérifier qu’il est absolu. (Voir [en transmettant un URI vers le Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md).)  
+ Dans certains cas, le fait que les types .NET Framework soient affichés dans votre code au lieu des types [!INCLUDE[wrt](../../../includes/wrt-md.md)] nécessite une action de votre part. Par exemple, le [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) classe apparaît sous la forme <xref:System.Uri?displayProperty=nameWithType> dans le code .NET Framework. <xref:System.Uri?displayProperty=nameWithType>permet à un URI relatif, mais [Windows.Foundation.Uri](http://go.microsoft.com/fwlink/p/?LinkId=238376) requiert un URI absolu. Ainsi, quand vous transmettez un URI à une méthode [!INCLUDE[wrt](../../../includes/wrt-md.md)], vous devez vérifier qu’il est absolu. (Consultez [transmission d’un URI au Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md).)  
   
 <a name="WindowsRuntimeComponents"></a>   
 ## <a name="scenarios-for-developing-windows-runtime-components"></a>Scénarios pour le développement de composants Windows Runtime  
@@ -131,9 +129,9 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
     > [!NOTE]
     >  Si votre composant doit être utilisé uniquement avec C# ou Visual Basic, il n’existe aucune raison d’en faire un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Si au lieu de cela vous en faites une bibliothèque de classes .NET Framework ordinaire, vous n’avez pas à limiter sa surface d’API publique aux types [!INCLUDE[wrt](../../../includes/wrt-md.md)].  
   
--   Vous pouvez libérer des versions des composants réutilisables à l’aide de la [!INCLUDE[wrt](../../../includes/wrt-md.md)] [VersionAttribute](http://go.microsoft.com/fwlink/p/?LinkId=238563) attribut pour identifier les types (et les membres dans un type) ont été ajoutés dans les différentes versions.  
+-   Vous pouvez lancer des versions des composants réutilisables à l’aide de la [!INCLUDE[wrt](../../../includes/wrt-md.md)] [VersionAttribute](http://go.microsoft.com/fwlink/p/?LinkId=238563) attribut pour identifier les types (et les membres dans un type) ont été ajoutées dans différentes versions.  
   
--   Les types dans votre composant peuvent dériver de types [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Les contrôles peuvent dériver des types primitifs contrôle dans les [Windows.UI.Xaml.Controls.Primitives](http://go.microsoft.com/fwlink/p/?LinkId=238564) espace de noms ou à partir de plusieurs terminé comme contrôles [bouton](http://go.microsoft.com/fwlink/p/?LinkId=238565).  
+-   Les types dans votre composant peuvent dériver de types [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Contrôles peuvent dériver des types primitifs de contrôle dans le [Windows.UI.Xaml.Controls.Primitives](http://go.microsoft.com/fwlink/p/?LinkId=238564) espace de noms ou à partir de plusieurs terminé comme contrôles [bouton](http://go.microsoft.com/fwlink/p/?LinkId=238565).  
   
     > [!IMPORTANT]
     >  À compter de [!INCLUDE[win8](../../../includes/win8-md.md)] et [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], tous les types publics dans un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] managé doivent être sealed. Un type dans un autre composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] ne peut pas dériver d’eux. Si vous souhaitez fournir un comportement polymorphe dans votre composant, vous pouvez créer une interface et l’implémenter dans les types polymorphes.  
@@ -142,11 +140,11 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
   
  Les sections suivantes fournissent des exemples de scénarios courants.  
   
-### <a name="application-logic-for-a-includewin8appnamelongtokenwin8appnamelongmdmd-app-with-javascript"></a>Logique d’application pour une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avec JavaScript  
+### <a name="application-logic-for-a-includewin8appnamelongincludeswin8-appname-long-mdmd-app-with-javascript"></a>Logique d’application pour une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avec JavaScript  
  Quand vous développez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pour Windows à l’aide de JavaScript, vous constaterez peut-être que certaines parties de la logique d’application sont plus performantes (ou plus faciles à développer) dans du code managé. JavaScript ne peut pas utiliser les bibliothèques de classes .NET Framework directement, mais vous pouvez faire de la bibliothèque de classes un fichier .WinMD. Dans ce scénario, le composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] étant partie intégrante de l’application, il est inutile de fournir des attributs de version.  
   
-### <a name="reusable-includewin8appnamelongtokenwin8appnamelongmdmd-ui-controls"></a>Contrôles d’interface utilisateur [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] réutilisables  
- Vous pouvez empaqueter un ensemble de contrôles d’interface utilisateur associés dans un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] réutilisable. Le composant peut être commercialisé seul ou utilisé comme élément dans les applications que vous créez. Dans ce scénario, il est pratique d’utiliser la [!INCLUDE[wrt](../../../includes/wrt-md.md)] [VersionAttribute](http://go.microsoft.com/fwlink/p/?LinkId=238563) attribut pour améliorer la compatibilité.  
+### <a name="reusable-includewin8appnamelongincludeswin8-appname-long-mdmd-ui-controls"></a>Contrôles d’interface utilisateur [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] réutilisables  
+ Vous pouvez empaqueter un ensemble de contrôles d’interface utilisateur associés dans un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] réutilisable. Le composant peut être commercialisé seul ou utilisé comme élément dans les applications que vous créez. Dans ce scénario, il est judicieux d’utiliser le [!INCLUDE[wrt](../../../includes/wrt-md.md)] [VersionAttribute](http://go.microsoft.com/fwlink/p/?LinkId=238563) attribut pour améliorer la compatibilité.  
   
 ### <a name="reusable-application-logic-from-existing-net-framework-apps"></a>Logique d’application réutilisable à partir d’applications .NET Framework existantes  
  Vous pouvez empaqueter du code managé de vos applications de bureau existantes comme composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] autonome. Cela vous permet d’utiliser le composant dans des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] générées à l’aide de C++ ou JavaScript, ainsi que dans des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] générées à l’aide de C# ou Visual Basic. Le contrôle de version est une option s’il existe plusieurs scénarios de réutilisation du code.  
@@ -155,9 +153,9 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Vue d’ensemble des applications .NET pour Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312)|Décrit les types .NET Framework et les membres que vous pouvez utiliser pour créer des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] et des composants [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Dans le Centre de développement Windows.)|  
+|[Vue d’ensemble des applications .NET pour le Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=238312)|Décrit les types .NET Framework et les membres que vous pouvez utiliser pour créer des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] et des composants [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Dans le Centre de développement Windows.)|  
 |[Feuille de route pour les applications du Windows Store à l’aide de c# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=242212)|Fournit des ressources clés pour vous aider à commencer à développer des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] à l’aide de C# ou Visual Basic, notamment de nombreuses rubriques de démarrage rapide, des instructions et des bonnes pratiques. (Dans le Centre de développement Windows.)|  
 |[Développement d’applications du Windows Store (VB / C# / C++ et XAML)](http://go.microsoft.com/fwlink/p/?LinkId=238311)|Fournit des ressources clés pour vous aider à commencer à développer des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] à l’aide de C# ou Visual Basic, notamment de nombreuses rubriques de démarrage rapide, des instructions et des bonnes pratiques. (Dans le Centre de développement Windows.)|  
 |[Création de composants Windows Runtime en c# et Visual Basic](http://go.microsoft.com/fwlink/p/?LinkId=238313)|Décrit comment créer un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] à l’aide du .NET Framework, explique comment l’utiliser dans le cadre d’une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] conçue pour Windows à l’aide de JavaScript, et décrit comment déboguer la combinaison avec Visual Studio. (Dans le Centre de développement Windows.)|  
-|[Référence de Windows Runtime](http://go.microsoft.com/fwlink/?LinkId=238319)|Fournit une documentation de référence pour le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Dans le Centre de développement Windows.)|  
-|[Passage d’un URI vers le Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md)|Décrit un problème qui peut se produire quand vous transmettez un URI du code managé au [!INCLUDE[wrt](../../../includes/wrt-md.md)], et comment l’éviter.|
+|[Référence Windows Runtime](http://go.microsoft.com/fwlink/?LinkId=238319)|Fournit une documentation de référence pour le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Dans le Centre de développement Windows.)|  
+|[Transmission d’un URI au Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md)|Décrit un problème qui peut se produire quand vous transmettez un URI du code managé au [!INCLUDE[wrt](../../../includes/wrt-md.md)], et comment l’éviter.|
