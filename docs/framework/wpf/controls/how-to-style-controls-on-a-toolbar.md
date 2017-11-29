@@ -1,29 +1,32 @@
 ---
-title: "Comment&#160;: donner un style aux contr&#244;les d&#39;une barre d&#39;outils | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "personnaliser les contrôles dans la barre d'outils"
-  - "appliquer un style aux contrôles dans la barre d'outils"
-  - "barres d'outils"
+title: "Comment : donner un style aux contrôles d'une barre d'outils"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- styling controls on toolbar [WPF]
+- toolbars [WPF]
+- customizing controls on toolbar [WPF]
 ms.assetid: ba6ae056-d6a9-4c24-90f8-467ab0bc0b1a
-caps.latest.revision: 4
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ce090ace11262e4809dbecadd5fe89d7dfaf62e5
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: donner un style aux contr&#244;les d&#39;une barre d&#39;outils
-<xref:System.Windows.Controls.ToolBar> définit des objets <xref:System.Windows.ResourceKey> pour spécifier le style des contrôles dans <xref:System.Windows.Controls.ToolBar>.  Pour affecter un style à un contrôle <xref:System.Windows.Controls.ToolBar>, définissez l'attribut `x:key` du style de <xref:System.Windows.ResourceKey> défini dans <xref:System.Windows.Controls.ToolBar>.  
+# <a name="how-to-style-controls-on-a-toolbar"></a>Comment : donner un style aux contrôles d'une barre d'outils
+Le <xref:System.Windows.Controls.ToolBar> définit <xref:System.Windows.ResourceKey> objets pour spécifier le style des contrôles dans le <xref:System.Windows.Controls.ToolBar>.  Pour définir le style d’un contrôle dans un <xref:System.Windows.Controls.ToolBar>, définissez le `x:key` attribut de style à un <xref:System.Windows.ResourceKey> défini dans <xref:System.Windows.Controls.ToolBar>.  
   
- <xref:System.Windows.Controls.ToolBar> définit les objets de <xref:System.Windows.ResourceKey> suivants :  
+ Le <xref:System.Windows.Controls.ToolBar> définit les éléments suivants <xref:System.Windows.ResourceKey> objets :  
   
 -   <xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A>  
   
@@ -41,11 +44,11 @@ caps.handback.revision: 4
   
 -   <xref:System.Windows.Controls.ToolBar.ToggleButtonStyleKey%2A>  
   
-## Exemple  
- L'exemple suivant définit les styles des contrôles dans <xref:System.Windows.Controls.ToolBar>.  
+## <a name="example"></a>Exemple  
+ L’exemple suivant définit les styles des contrôles dans un <xref:System.Windows.Controls.ToolBar>.  
   
- [!code-xml[ToolBar_snip#ToolBarAllStyles](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarallstyles)]  
-[!code-xml[ToolBar_snip#ToolBar](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbar)]  
+ [!code-xaml[ToolBar_snip#ToolBarAllStyles](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarallstyles)]  
+[!code-xaml[ToolBar_snip#ToolBar](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbar)]  
   
-## Voir aussi  
- [Application d'un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a>Voir aussi  
+ [Application d’un style et création de modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md)

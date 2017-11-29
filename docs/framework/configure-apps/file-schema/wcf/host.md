@@ -1,28 +1,35 @@
 ---
-title: "&lt;h&#244;te&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;ordinateur hôte&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bded8d718259bf4fc84bfe790db069a77fc2a703
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;h&#244;te&gt;
+# <a name="lthostgt"></a>&lt;ordinateur hôte&gt;
 Spécifie les paramètres d'un hôte de service.  
   
-## Syntaxe  
+ \<système. ServiceModel >  
+\<Services >  
+\<service >  
+\<hôte >  
   
-```  
+## <a name="syntax"></a>Syntaxe  
   
+```xml  
 <host>  
       <baseAddresses>  
          <baseAddress baseAddress="string" />  
@@ -32,29 +39,29 @@ Spécifie les paramètres d'un hôte de service.
 </host>  
 ```  
   
-## Type  
+## <a name="type"></a>Type  
  `Type`  
   
-## Attributs et éléments  
+## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### Attributs  
+### <a name="attributes"></a>Attributs  
  Aucun  
   
-### Éléments enfants  
+### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<baseAddresses\>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)|Collection d'éléments `baseAddress` qui spécifie les adresses de base utilisées par l'hôte de service.|  
-|[\<timeOuts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/timeouts.md)|Élément de configuration qui spécifie la durée d'ouverture ou de fermeture autorisée de l'hôte de service.|  
+|[\<baseAddresses >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)|Collection d'éléments `baseAddress` qui spécifie les adresses de base utilisées par l'hôte de service.|  
+|[\<délais d’attente >](../../../../../docs/framework/configure-apps/file-schema/wcf/timeouts.md)|Élément de configuration qui spécifie la durée d'ouverture ou de fermeture autorisée de l'hôte de service.|  
   
-### Éléments parents  
+### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<service\>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Spécifie les paramètres d'un service [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].|  
+|[\<service >](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Spécifie les paramètres d'un service [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].|  
   
-## Voir aussi  
- <xref:System.ServiceModel.Configuration.HostElement>   
- <xref:System.ServiceModel.ServiceHost>   
- [Hébergement](../../../../../docs/framework/wcf/feature-details/hosting.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.ServiceModel.Configuration.HostElement>  
+ <xref:System.ServiceModel.ServiceHost>  
+ [Hébergement d’applications WPF](../../../../../docs/framework/wcf/feature-details/hosting.md)

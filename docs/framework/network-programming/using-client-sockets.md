@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -24,16 +22,15 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6d18e1f2575481522e54c6c50256418ac026dfb7
-ms.contentlocale: fr-fr
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3df78be14da96d0bb7b8875a5c7532c003d1dbc8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-client-sockets"></a>Utilisation de sockets clients
 Avant de démarrer une conversation via un <xref:System.Net.Sockets.Socket>, vous devez créer un canal de données entre votre application et l’appareil distant. Il existe d’autres protocoles et familles d’adresses réseau, mais cet exemple montre comment créer une connexion TCP/IP à un service distant.  
@@ -90,8 +87,7 @@ try {
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Utilisation d’un socket client synchrone](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
- [Utilisation d’un socket client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
- [Guide pratique pour créer un socket](../../../docs/framework/network-programming/how-to-create-a-socket.md)   
+ [Utilisation d’un Socket Client synchrone](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
+ [Utilisation d’un Socket Client asynchrone](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [Guide pratique pour créer un socket](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [Sockets](../../../docs/framework/network-programming/sockets.md)
-

@@ -1,46 +1,37 @@
 ---
-title: "Comment : interroger un ArrayList avec LINQ (Visual Basic) | Documents Microsoft"
+title: "Comment : interroger un ArrayList avec LINQ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f48b06c23b1e28fccb953638954a8d9afefe574e
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 6740d8a7c6d4a31ccd3730249695c24c6417785d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Comment : interroger un ArrayList avec LINQ (Visual Basic)
-Lorsque vous utilisez LINQ pour requête non générique <xref:System.Collections.IEnumerable>collections telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour répercuter le type spécifique des objets dans la collection.</xref:System.Collections.ArrayList> </xref:System.Collections.IEnumerable> Par exemple, si vous avez un <xref:System.Collections.ArrayList>de `Student` objets, votre [à partir de la Clause](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :</xref:System.Collections.ArrayList>  
+Quand vous utilisez LINQ pour interroger des collections <xref:System.Collections.IEnumerable> non génériques telles que <xref:System.Collections.ArrayList>, vous devez déclarer explicitement le type de la variable de portée pour qu’il reflète le type spécifique des objets de la collection. Par exemple, si vous avez un <xref:System.Collections.ArrayList> de `Student` objets, votre [à partir de la Clause](../../../../visual-basic/language-reference/queries/from-clause.md) doit ressembler à ceci :  
   
 ```  
 Dim query = From student As Student In arrList   
 ...  
 ```  
   
- En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément de la <xref:System.Collections.ArrayList>à un `Student`.</xref:System.Collections.ArrayList>  
+ En spécifiant le type de la variable de portée, vous effectuez un cast de chaque élément du `Student` en <xref:System.Collections.ArrayList>.  
   
- L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler le <xref:System.Linq.Enumerable.Cast%2A>méthode.</xref:System.Linq.Enumerable.Cast%2A> <xref:System.Linq.Enumerable.Cast%2A>lève une exception si le cast spécifié ne peut pas être effectué.</xref:System.Linq.Enumerable.Cast%2A> <xref:System.Linq.Enumerable.Cast%2A>et <xref:System.Linq.Enumerable.OfType%2A>sont les deux méthodes d’opérateur de requête Standard qui opèrent sur non générique <xref:System.Collections.IEnumerable>types.</xref:System.Collections.IEnumerable> </xref:System.Linq.Enumerable.OfType%2A></xref:System.Linq.Enumerable.Cast%2A> Dans Visual Basic, vous devez appeler explicitement la <xref:System.Linq.Enumerable.Cast%2A>méthode sur la source de données pour garantir un type de variable de plage spécifique.</xref:System.Linq.Enumerable.Cast%2A> Pour plus d’informations, consultez[relations des types dans des opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ L’utilisation d’une variable de portée explicitement typée dans une expression de requête équivaut à appeler la méthode <xref:System.Linq.Enumerable.Cast%2A>. <xref:System.Linq.Enumerable.Cast%2A> lève une exception si le cast spécifié ne peut pas être effectué. <xref:System.Linq.Enumerable.Cast%2A> et <xref:System.Linq.Enumerable.OfType%2A> sont les deux méthodes d’opérateur de requête standard qui fonctionnent sur les types <xref:System.Collections.IEnumerable> non génériques. En Visual Basic, vous devez appeler explicitement la <xref:System.Linq.Enumerable.Cast%2A> méthode sur la source de données pour garantir un type de variable de portée spécifique. Pour plus d’informations, consultez[relations des types dans les opérations de requête (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre une requête simple sur un <xref:System.Collections.ArrayList>.</xref:System.Collections.ArrayList> Notez que cet exemple utilise des initialiseurs d’objets lorsque le code appelle la <xref:System.Collections.ArrayList.Add%2A>(méthode), mais cela n’est pas une obligation.</xref:System.Collections.ArrayList.Add%2A>  
+ L’exemple suivant montre une requête simple sur un <xref:System.Collections.ArrayList>. Notez que cet exemple utilise des initialiseurs d’objets quand le code appelle la méthode <xref:System.Collections.ArrayList.Add%2A>, mais cela n’est pas une obligation.  
   
 ```vb  
 Imports System.Collections  
@@ -96,4 +87,3 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-

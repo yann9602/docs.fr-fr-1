@@ -1,26 +1,22 @@
 ---
-title: Exemple qui imprime des parties de Document Office Open XML (Visual Basic) | Documents Microsoft
+title: Exemple qui imprime des parties de Document Office Open XML (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 72e8cd6126cd049cafff6e18e1ef609f600cf7c9
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 96596c86674f5df2b9949a07adab2f313a07633d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Exemple qui imprime des parties de Document Office Open XML (Visual Basic)
 Cette rubrique montre comment ouvrir un document Office Open XML et accéder à ses parties.  
@@ -28,7 +24,7 @@ Cette rubrique montre comment ouvrir un document Office Open XML et accéder à 
 ## <a name="example"></a>Exemple  
  L'exemple suivant ouvre un document Office Open XML et imprime la partie document et la partie de style sur la console.  
   
- Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans le <xref:System.IO.Packaging?displayProperty=fullName>espace de noms.</xref:System.IO.Packaging?displayProperty=fullName>  
+ Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Const fileName As String = "SampleDoc.docx"  
@@ -78,4 +74,4 @@ End Using
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Détails d’Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+ [Détails d’Office ouvrent les Documents WordprocessingML XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

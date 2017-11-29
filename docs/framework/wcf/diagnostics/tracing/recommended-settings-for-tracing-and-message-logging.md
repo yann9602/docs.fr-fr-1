@@ -1,28 +1,31 @@
 ---
-title: "Param&#232;tres recommand&#233;s pour le suivi et l&#39;enregistrement des messages | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Paramètres recommandés pour le suivi et l'enregistrement des messages"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b6986c775db50ea5b763288f8f3b9bdcf1bf7e67
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Param&#232;tres recommand&#233;s pour le suivi et l&#39;enregistrement des messages
+# <a name="recommended-settings-for-tracing-and-message-logging"></a>Paramètres recommandés pour le suivi et l'enregistrement des messages
 Cette rubrique décrit les paramètres de suivi et d'enregistrement des messages recommandés pour différents environnements d'exploitation.  
   
-## Paramètres recommandés pour un environnement de production  
- Pour un environnement de production, si vous utilisez les sources de suivi WCF, affectez à `switchValue` la valeur Warning.  Si vous utilisez la source de suivi WCF `System.ServiceModel`, affectez à l'attribut `switchValue` la valeur `Warning` et à l'attribut `propagateActivity` la valeur `true`.  Si vous utilisez une source de suivi définie par l'utilisateur, affectez à l'attribut `switchValue` la valeur `Warning, ActivityTracing`.  Cela peut s'effectuer manuellement à l'aide de [Outil Éditeur de configuration \(SvcConfigEditor.exe\)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  Si vous ne prévoyez pas d'augmentation des performances, vous pouvez affecter la valeur `Information` à l'attribut `switchValue` dans tous les cas mentionnés précédemment, ce qui génère une quantité assez élevée de données de suivi.  L'exemple suivant illustre ces paramètres recommandés.  
+## <a name="recommended-settings-for-a-production-environment"></a>Paramètres recommandés pour un environnement de production  
+ Pour un environnement de production, si vous utilisez les sources de suivi WCF, affectez à `switchValue` la valeur Warning. Si vous utilisez la source de suivi WCF `System.ServiceModel`, affectez à l'attribut `switchValue` la valeur `Warning` et à l'attribut `propagateActivity` la valeur `true`. Si vous utilisez une source de suivi définie par l'utilisateur, affectez à l'attribut `switchValue` la valeur `Warning, ActivityTracing`. Cela peut être effectuée manuellement à l’aide de la [l’outil Éditeur de Configuration (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Si vous ne prévoyez pas d'augmentation des performances, vous pouvez affecter la valeur `switchValue` à l'attribut `Information` dans tous les cas mentionnés précédemment, ce qui génère une quantité assez élevée de données de suivi. L'exemple suivant illustre ces paramètres recommandés.  
   
-```  
+```xml  
 <configuration>  
  <system.diagnostics>  
   <sources>  
@@ -54,12 +57,12 @@ Cette rubrique décrit les paramètres de suivi et d'enregistrement des messages
 </configuration>  
 ```  
   
-## Paramètres recommandés pour le déploiement ou le débogage  
- Pour l'environnement de déploiement ou de débogage , choisissez `Information` ou `Verbose`, avec `ActivityTracing` pour une source de suivi `System.ServiceModel` ou définie par l'utilisateur.  Pour améliorer le débogage, vous devez également ajouter une source de suivi supplémentaire \(`System.ServiceModel.MessageLogging`\) à la configuration afin d'activer l'enregistrement des messages.  Remarquez que l'attribut `switchValue` n'a aucun impact sur cette source de suivi.  
+## <a name="recommended-settings-for-deployment-or-debugging"></a>Paramètres recommandés pour le déploiement ou le débogage  
+ Pour l'environnement de déploiement ou de débogage , choisissez `Information` ou `Verbose`, avec `ActivityTracing` pour une source de suivi `System.ServiceModel` ou définie par l'utilisateur. Pour améliorer le débogage, vous devez également ajouter une source de suivi supplémentaire (`System.ServiceModel.MessageLogging`) à la configuration afin d'activer l'enregistrement des messages. Remarquez que l'attribut `switchValue` n'a aucun impact sur cette source de suivi.  
   
  L'exemple suivant illustre les paramètres recommandés, à l'aide d'un écouteur partagé qui utilise le `XmlWriterTraceListener`.  
   
-```  
+```xml  
 <configuration>  
  <system.diagnostics>  
   <sources>  
@@ -103,11 +106,11 @@ Cette rubrique décrit les paramètres de suivi et d'enregistrement des messages
 </configuration>  
 ```  
   
-## Utilisation de WMI pour modifier des paramètres  
- Vous pouvez utiliser WMI pour modifier des paramètres de configuration pendant l'exécution \(en activant l'attribut `wmiProviderEnabled` dans la configuration, comme cela est indiqué dans l'exemple de configuration précédent\).  Par exemple, vous pouvez utiliser WMI dans le CIM Studio pour modifier les niveaux de source de suivi de Warning à Information au moment de l'exécution.  Vous devez savoir que le coût de performance du débogage en direct de cette manière peut être très élevé.  Pour plus d'informations sur l'utilisation de WMI, consultez la rubrique [Utilisation de Windows Management Instrumentation pour les diagnostics](../../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+## <a name="using-wmi-to-modify-settings"></a>Utilisation de WMI pour modifier des paramètres  
+ Vous pouvez utiliser WMI pour modifier des paramètres de configuration pendant l'exécution (en activant l'attribut `wmiProviderEnabled` dans la configuration, comme cela est indiqué dans l'exemple de configuration précédent). Par exemple, vous pouvez utiliser WMI dans le CIM Studio pour modifier les niveaux de source de suivi de Warning à Information au moment de l'exécution. Vous devez savoir que le coût de performance du débogage en direct de cette manière peut être très élevé. Pour plus d’informations sur l’utilisation de WMI, consultez le [à l’aide de Windows Management Instrumentation pour les Diagnostics](../../../../../docs/framework/wcf/diagnostics/wmi/index.md) rubrique.  
   
-## Activer des événements corrélés dans le suivi ASP.NET  
- Les événements ASP.NET ne définissent pas l'ID de corrélation \(ActivityID\), sauf si le suivi de l'élément ASP.NET est activé.  Pour afficher correctement les événements corrélés, vous devez activer le suivi des événements ASP.NET à l'aide de la commande suivante dans la console de commande qui peut être appelée en cliquant sur **Démarrer**, **Exécuter** et en tapant **cmd**,  
+## <a name="enable-correlated-events-in-aspnet-tracing"></a>Activer des événements corrélés dans le suivi ASP.NET  
+ Les événements ASP.NET ne définissent pas l'ID de corrélation (ActivityID), sauf si le suivi de l'élément ASP.NET est activé. Pour afficher les événements en corrélation correctement, vous devez activer des événements ASP.NET suivi à l’aide de la commande suivante dans la console de commande, qui peut être appelée en accédant à **Démarrer**, **exécuter** et type **cmd** ,  
   
 ```  
 logman start mytrace -pf logman.providers -o test.etl –ets  
@@ -119,5 +122,5 @@ logman start mytrace -pf logman.providers -o test.etl –ets
 logman stop mytrace -ets  
 ```  
   
-## Voir aussi  
- [Utilisation de Windows Management Instrumentation pour les diagnostics](../../../../../docs/framework/wcf/diagnostics/wmi/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [À l’aide de Windows Management Instrumentation pour les Diagnostics](../../../../../docs/framework/wcf/diagnostics/wmi/index.md)

@@ -1,54 +1,69 @@
 ---
-title: "Byte Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Byte"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Byte data type"
-  - "data types [Visual Basic], assigning"
+title: "Byte, type de données (Visual Basic)"
+ms.date: 04/20/2017
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Byte
+helpviewer_keywords:
+- Byte data type
+- data types [Visual Basic], assigning
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 6475ff3ed905abb022a9ef60204c04b45130ae22
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Byte Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
+# <a name="byte-data-type-visual-basic"></a>Type de données Byte (Visual Basic)
+Blocages entiers non signés 8 bits (1 octet) que de valeurs comprises entre 0 et 255.
 
-Contient des entiers 8 bits \(1 octet\) non signés dont la valeur est comprise entre 0 et 255.  
+## <a name="remarks"></a>Remarques
+
+Utilisez le `Byte` type de données pour contenir les données binaires.  
   
-## Notes  
- Utilisez le type de données `Byte` pour contenir les données binaires.  
+La valeur par défaut de `Byte` est 0.
+
+## <a name="literal-assignments"></a>Attributions de littéral
+
+Vous pouvez déclarer et initialiser une `Byte` variable en lui assignant un décimal littéral, un littéral hexadécimal, un littéral octal, ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage d’un `Byte` (autrement dit, si elle est inférieure à <xref:System.Byte.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.Byte.MaxValue?displayProperty=nameWithType>), une erreur de compilation se produit.
+
+Dans l’exemple suivant, les entiers égal à 201 sont représentées sous forme de nombre décimal, hexadécimal, et les littéraux binaires sont converties implicitement à partir [entier](integer-data-type.md) à `byte` valeurs.
+
+[!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Byte)]
+
+> [!NOTE]
+> Vous utilisez le préfixe `&h` ou `&H` pour désigner un littéral hexadécimal, le préfixe `&b` ou `&B` pour désigner un littéral binaire et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
+
+À partir de Visual Basic 2017, vous pouvez également utiliser le caractère de soulignement, `_`, comme un séparateur de chiffres pour améliorer la lisibilité, comme l’exemple suivant montre le.
+
+[!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ByteS)]  
+
+## <a name="programming-tips"></a>Conseils de programmation
+
+-   **Nombres négatifs.** Étant donné que `Byte` est un type non signé, il ne peut pas représenter un nombre négatif. Si vous utilisez le moins unaire (`-`) opérateur sur une expression qui correspond au type `Byte`, Visual Basic convertit l’expression à `Short` première.
   
- La valeur par défaut de `Byte` est 0.  
+-   **Conversions de format.** Lorsque Visual Basic lit ou écrit des fichiers, ou lorsqu’il appelle la DLL, des méthodes et propriétés, il peut convertir automatiquement entre les formats de données. Données binaires stockées dans `Byte` tableaux et des variables sont conservées pendant les conversions de format. Vous ne devez pas utiliser un `String` variable pour les données binaires, car son contenu peut être endommagé lors de la conversion entre les formats Unicode et ANSI.
+
+-   **Étendues.** Le `Byte` type de données s’étend à `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, ou `Double`. Cela signifie que vous pouvez convertir `Byte` à un de ces types sans rencontrer un <xref:System.OverflowException?displayProperty=nameWithType> erreur.
   
-## Conseils de programmation  
-  
--   **Nombres négatifs.** Dans la mesure où `Byte` est un type non signé, il ne peut représenter un nombre négatif.  Si vous utilisez l'opérateur moins unaire \(`-`\) dans une expression qui correspond au type `Byte`, Visual Basic convertit d'abord l'expression en `Short`.  
-  
--   **Conversions de format.** Lorsque Visual Basic lit ou écrit des fichiers, ou lorsqu'il appelle des DLL, des méthodes et des propriétés, il peut convertir automatiquement entre différents formats de données.  Les données binaires stockées dans des variables et des tableaux `Byte` sont préservées durant les conversions de format.  Vous ne devez pas utiliser une variable de type `String` pour des données binaires ; en effet, son contenu peut être endommagé pendant la conversion du format ANSI au format Unicode.  
-  
--   **Extension.** Le type de données `Byte` s'étend à `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single` ou `Double`.  Ceci signifie que vous pouvez convertir `Byte` en ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=fullName>.  
-  
--   **Caractères de type.**  `Byte` n'a aucun caractère de type de littéral ou caractère de type d'identificateur.  
-  
--   **Type Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Byte?displayProperty=fullName>.  
-  
-## Exemple  
- Dans l'exemple suivant, `b` est une variable `Byte`.  Les instructions montrent la plage de la variable et l'application d'opérateurs de décalage de bits vers lui.  
-  
- [!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/byte-data-type_1.vb)]  
-  
-## Voir aussi  
- <xref:System.Byte?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Résumé de la conversion](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+-   **Caractères de type.** `Byte`n’a aucun caractère de type littéral ou un caractère de type identificateur.
+
+-   **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Byte?displayProperty=nameWithType>.
+
+## <a name="example"></a>Exemple
+
+ Dans l’exemple suivant, `b` est un `Byte` variable. Les instructions montrent la plage de la variable et l’application d’opérateurs de décalage de bits.
+
+[!code-vb[VbVbalrDataTypes#16](../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/byte-data-type_1.vb)]  
+
+## <a name="see-also"></a>Voir aussi
+
+ <xref:System.Byte?displayProperty=nameWithType>  
+ [Types de données](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

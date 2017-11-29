@@ -1,38 +1,42 @@
 ---
-title: "Trac&#233;s graphiques dans GDI+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "dessiner, chemins d'accès"
-  - "GDI+, dessiner des chemins d'accès"
-  - "graphiques, chemins d'accès"
-  - "chemins d'accès, dessiner"
+title: "Tracés graphiques dans GDI+"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- graphics [Windows Forms], paths
+- GDI+, drawing paths
+- paths [Windows Forms], drawing
+- drawing [Windows Forms], paths
 ms.assetid: a5500dec-666c-41fd-9da3-2169dd89c5eb
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e027228ea1cc047f213c28ac3a4984c2f0227c5a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Trac&#233;s graphiques dans GDI+
-Les tracés sont formés de combinaisons de lignes, de rectangles et de courbes simples.  Dans la rubrique [Vue d'ensemble des graphismes vectoriels](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md), nous avons vu que les blocs de construction de base suivants étaient les plus utiles pour dessiner des images :  
+# <a name="graphics-paths-in-gdi"></a>Tracés graphiques dans GDI+
+Chemins d’accès sont formées en combinant des lignes, des rectangles et des courbes simples. Rappelez la [vue d’ensemble des graphiques vectoriels](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md) que les blocs de construction de base suivantes se sont avérés les plus utiles pour dessiner des images :  
   
 -   Lignes  
   
 -   Rectangles  
   
--   Ellipses  
+-   Points de suspension  
   
--   Arcs  
+-   Arcs de cercle  
   
 -   Polygones  
   
@@ -40,41 +44,41 @@ Les tracés sont formés de combinaisons de lignes, de rectangles et de courbes 
   
 -   Splines de Bézier  
   
- Dans GDI\+, l'objet <xref:System.Drawing.Drawing2D.GraphicsPath> permet de réunir dans une entité unique une séquence de tels blocs.  La séquence entière de lignes, rectangles, polygones et courbes peut ensuite être dessinée à l'aide d'un seul appel à la méthode <xref:System.Drawing.Graphics.DrawPath%2A> de la classe <xref:System.Drawing.Graphics>.  L'illustration suivante représente un tracé créé en combinant une ligne, un arc, une spline de Bézier et une spline cardinale.  
+ Dans GDI +, le <xref:System.Drawing.Drawing2D.GraphicsPath> objet vous permet de collecter une séquence de ces blocs de construction en une seule unité. L’ensemble de lignes, rectangles, polygones et courbes peut ensuite être dessinée avec un seul appel à la <xref:System.Drawing.Graphics.DrawPath%2A> méthode de la <xref:System.Drawing.Graphics> classe. L’illustration suivante montre un chemin d’accès créé en combinant une ligne, un arc, une spline de Bézier et une spline cardinale.  
   
- ![Chemin d'accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.png "Aboutgdip02\_art14")  
+ ![Chemin d’accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.gif "Aboutgdip02_art14")  
   
-## Utilisation d'un tracé  
- La classe <xref:System.Drawing.Drawing2D.GraphicsPath> fournit les méthodes suivantes pour créer une séquence d'éléments à dessiner : <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> \(pour les splines cardinales\) et <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>.  Chacune de ces méthodes est surchargée, c'est\-à\-dire qu'elle prend en charge plusieurs listes de paramètres différentes.  Par exemple, une variante de la méthode <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> reçoit quatre entiers, tandis qu'une autre variante de la méthode <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> reçoit deux objets <xref:System.Drawing.Point>.  
+## <a name="using-a-path"></a>À l’aide d’un chemin d’accès  
+ Le <xref:System.Drawing.Drawing2D.GraphicsPath> classe fournit les méthodes suivantes pour créer une séquence d’éléments à dessiner : <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> (pour les splines cardinales) et <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>. Chacune de ces méthodes est surchargée ; Autrement dit, chaque méthode prend en charge plusieurs listes de paramètres différentes. Par exemple, une variante de la <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> reçoit quatre entiers et une autre variante de la <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> méthode reçoit deux <xref:System.Drawing.Point> objets.  
   
- Les méthodes permettant d'ajouter des lignes, des rectangles et des splines de Bézier à un tracé sont associées à des méthodes au pluriel qui ajoutent plusieurs éléments au tracé en un seul appel : <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A> et <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>.  Par ailleurs, les méthodes <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> et <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> sont également associées à d'autres méthodes, à savoir <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> et <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>, qui ajoutent une courbe fermée ou un secteur au tracé.  
+ Les méthodes d’ajout des lignes, des rectangles et des splines de Bézier à un chemin d’accès ont des méthodes au pluriel qui ajoutent plusieurs éléments pour le chemin d’accès dans un seul appel : <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>, et <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>. En outre, le <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> et <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> méthodes ont des méthodes, <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> et <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>, qui ajoutent une courbe fermée ou un graphique à secteurs pour le chemin d’accès.  
   
- Pour dessiner un tracé, il vous faut un objet <xref:System.Drawing.Graphics>, un objet <xref:System.Drawing.Pen> et un objet <xref:System.Drawing.Drawing2D.GraphicsPath>.  L'objet <xref:System.Drawing.Graphics> fournit la méthode <xref:System.Drawing.Graphics.DrawPath%2A> et l'objet <xref:System.Drawing.Pen> stocke des attributs \(largeur et couleur notamment\) de la ligne utilisée pour représenter le tracé.  L'objet <xref:System.Drawing.Drawing2D.GraphicsPath> stocke la séquence de lignes et de courbes qui constitue le tracé.  L'objet <xref:System.Drawing.Pen> et l'objet <xref:System.Drawing.Drawing2D.GraphicsPath> sont passés en tant qu'arguments à la méthode <xref:System.Drawing.Graphics.DrawPath%2A>.  L'exemple suivant dessine un tracé constitué d'une ligne, d'une ellipse et d'une spline de Bézier :  
+ Pour dessiner un tracé, vous avez besoin une <xref:System.Drawing.Graphics> objet, un <xref:System.Drawing.Pen> objet et un <xref:System.Drawing.Drawing2D.GraphicsPath> objet. Le <xref:System.Drawing.Graphics> objet fournit les <xref:System.Drawing.Graphics.DrawPath%2A> (méthode) et le <xref:System.Drawing.Pen> objet stocke des attributs, tels que la largeur et la couleur, de la ligne utilisée pour afficher le chemin d’accès. Le <xref:System.Drawing.Drawing2D.GraphicsPath> objet stocke la séquence de lignes et des courbes qui composent le chemin d’accès. Le <xref:System.Drawing.Pen> objet et la <xref:System.Drawing.Drawing2D.GraphicsPath> objet sont passés comme arguments à la <xref:System.Drawing.Graphics.DrawPath%2A> (méthode). L’exemple suivant dessine un chemin d’accès qui se compose d’une ligne, une ellipse et d’une spline de Bézier :  
   
  [!code-csharp[LinesCurvesAndShapes#101](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#101)]
  [!code-vb[LinesCurvesAndShapes#101](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#101)]  
   
- L'illustration suivante représente ce tracé.  
+ L’illustration suivante montre le chemin d’accès.  
   
- ![Chemin d'accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.png "Aboutgdip02\_art15")  
+ ![Chemin d’accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.gif "Aboutgdip02_art15")  
   
- Outre des lignes, des rectangles et des courbes, vous pouvez ajouter d'autres tracés à un tracé.  Vous pouvez ainsi combiner des tracés existants pour former des tracés plus complexes et de plus grande taille.  
+ Outre l’ajout des lignes, des rectangles et des courbes à un chemin d’accès, vous pouvez ajouter des chemins d’accès à un chemin d’accès. Cela vous permet de combiner des tracés existants pour former des chemins d’accès volumineuses et complexes.  
   
  [!code-csharp[LinesCurvesAndShapes#102](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#102)]
  [!code-vb[LinesCurvesAndShapes#102](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#102)]  
   
- Vous pouvez ajouter deux autres éléments à un tracé : des chaînes et des secteurs.  Un secteur est une portion de l'intérieur d'une ellipse.  L'exemple suivant crée un tracé constitué d'un arc, d'une spline cardinale et d'un secteur.  
+ Il existe deux autres éléments que vous pouvez ajouter à un chemin d’accès : chaînes et des secteurs. Un graphique à secteurs est une partie de l’intérieur d’une ellipse. L’exemple suivant crée un chemin d’accès à partir d’un arc, une spline cardinale, une chaîne et un graphique en secteurs :  
   
  [!code-csharp[LinesCurvesAndShapes#103](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#103)]
  [!code-vb[LinesCurvesAndShapes#103](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#103)]  
   
- L'illustration suivante représente ce tracé.  Notez qu'un tracé n'est pas obligatoirement constitué d'éléments liés ; l'arc, la spline cardinale, la chaîne et le secteur sont séparés.  
+ L’illustration suivante montre le chemin d’accès. Notez qu’un chemin d’accès ne dispose pas être connectés ; l’arc, une spline cardinale, chaîne et à secteurs sont séparés.  
   
- ![Chemins d'accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.png "Aboutgdip02\_Art16")  
+ ![Chemins d’accès](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.gif "Aboutgdip02_Art16")  
   
-## Voir aussi  
- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=fullName>   
- <xref:System.Drawing.Point?displayProperty=fullName>   
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [Comment : créer des objets graphiques pour le dessin](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>  
+ <xref:System.Drawing.Point?displayProperty=nameWithType>  
+ [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [Guide pratique pour créer des objets graphiques pour le dessin](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
  [Génération et dessin de tracés](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)

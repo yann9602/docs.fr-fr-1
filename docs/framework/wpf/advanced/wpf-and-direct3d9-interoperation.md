@@ -1,141 +1,145 @@
 ---
-title: "Interop&#233;rabilit&#233; WPF et Direct3D9 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Direct3D9 (interopérabilité WPF), créer du contenu Direct3D9"
-  - "WPF, créer du contenu Direct3D9"
+title: "Interopérabilité WPF et Direct3D9"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: cpp
+helpviewer_keywords:
+- WPF [WPF], creating Direct3D9 content
+- Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-caps.latest.revision: 25
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b1bd4d7486f546a340a4c722d140c6c7f5cee707
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Interop&#233;rabilit&#233; WPF et Direct3D9
-Vous pouvez inclure du contenu Direct3D9 dans une application Windows Presentation Foundation \(WPF\).  Cette rubrique décrit comment créer du contenu Direct3D9 qui puisse interopérer efficacement avec WPF.  
+# <a name="wpf-and-direct3d9-interoperation"></a>Interopérabilité WPF et Direct3D9
+Vous pouvez inclure le contenu Direct3D9 dans une application Windows Presentation Foundation (WPF). Cette rubrique décrit comment créer le contenu Direct3D9 afin qu’elle interagit efficacement avec WPF.  
   
 > [!NOTE]
->  Lorsque vous utilisez du contenu Direct3D9 dans WPF, vous devez également tenir compte des performances.  Pour plus d'informations sur l'optimisation des performances, consultez [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+>  Lorsque vous utilisez le contenu Direct3D9 dans WPF, vous devez également réfléchir aux performances. Pour plus d’informations sur la façon d’optimiser les performances, consultez [considérations sur les performances de Direct3D9 et interopérabilité WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
-## Tampons d'affichage  
- La classe <xref:System.Windows.Interop.D3DImage> gère deux mémoires tampons d'affichage, appelées *mémoire tampon d'arrière\-plan* et *tampon d'affichage*.  La mémoire tampon d'arrière\-plan est votre surface Direct3D9.  Les modifications apportées à la mémoire tampon d'arrière\-plan sont copiées en avant dans le tampon d'affichage lorsque vous appelez la méthode <xref:System.Windows.Interop.D3DImage.Unlock%2A>.  
+## <a name="display-buffers"></a>Mémoires tampons d’affichage  
+ Le <xref:System.Windows.Interop.D3DImage> classe gère deux mémoires tampons d’affichage, qui sont appelés les *mémoire tampon d’arrière-plan* et *tampon d’affichage*. La mémoire tampon d’arrière-plan est votre surface Direct3D9. Modifications apportées à la mémoire tampon d’arrière-plan sont copiées en avant dans le tampon d’affichage lorsque vous appelez le <xref:System.Windows.Interop.D3DImage.Unlock%2A> (méthode).  
   
- L'illustration suivante montre la relation entre la mémoire tampon d'arrière\-plan et le tampon d'affichage.  
+ L’illustration suivante montre la relation entre la mémoire tampon d’arrière-plan et le tampon d’affichage.  
   
- ![Tampons d'affichage D3DImage](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage\_buffers")  
+ ![Mémoires tampons d’affichage D3DImage](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage_buffers")  
   
-## Création d'un périphérique Direct3D9  
- Pour restituer du contenu Direct3D9, vous devez créer un périphérique Direct3D9.  Vous pouvez utiliser deux objets Direct3D9 pour créer un périphérique : `IDirect3D9` et `IDirect3D9Ex`.  Utilisez ces objets pour créer respectivement des périphériques `IDirect3DDevice9` et `IDirect3DDevice9Ex`.  
+## <a name="direct3d9-device-creation"></a>Création d’un périphérique Direct3D9  
+ Pour restituer le contenu Direct3D9, vous devez créer un périphérique Direct3D9. Il existe deux objets Direct3D9 que vous pouvez utiliser pour créer un appareil, `IDirect3D9` et `IDirect3D9Ex`. Permet de créer ces objets `IDirect3DDevice9` et `IDirect3DDevice9Ex` périphériques, respectivement.  
   
- Vous pouvez créer un périphérique en appelant l'une des méthodes suivantes :  
+ Créer un périphérique en appelant une des méthodes suivantes.  
   
 -   `IDirect3D9 * Direct3DCreate9(UINT SDKVersion);`  
   
 -   `HRESULT Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D);`  
   
- Sur Windows Vista ou le système d'exploitation ultérieure, utilisez la méthode d' `Direct3DCreate9Ex` avec un affichage configuré pour utiliser le modèle \(WDDM\) de pilote d'affichage de windows.  Utilisez la méthode `Direct3DCreate9` sur toute autre plateforme.  
+ Sur Windows Vista ou version ultérieure, utilisez le `Direct3DCreate9Ex` méthode avec un affichage qui est configuré pour utiliser le modèle de pilote d’affichage de Windows (WDDM). Utilisez la `Direct3DCreate9` méthode sur n’importe quelle autre plateforme.  
   
-### Disponibilité de la méthode Direct3DCreate9Ex  
- Le d3d9.dll a la méthode d' `Direct3DCreate9Ex` que sur Windows Vista ou le système d'exploitation ultérieurement.  Si vous liez directement la fonction sur Windows XP, votre application risque de ne pas se charger.  Pour déterminer si la méthode `Direct3DCreate9Ex` est prise en charge, chargez la DLL et recherchez l'adresse de procédure.  Le code suivant indique comment tester la méthode `Direct3DCreate9Ex`.  Pour obtenir l'exemple de code complet, consultez [Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
+### <a name="availability-of-the-direct3dcreate9ex-method"></a>Disponibilité de la méthode Direct3DCreate9Ex  
+ Le fichier d3d9.dll a la `Direct3DCreate9Ex` méthode uniquement sur Windows Vista ou version ultérieure. Si vous liez directement la fonction sur Windows XP, le chargement de votre application échoue. Pour déterminer si le `Direct3DCreate9Ex` méthode est prise en charge, de charger la DLL et recherchez l’adresse de procédure. Le code suivant montre comment tester le `Direct3DCreate9Ex` (méthode). Pour obtenir un exemple de code complet, consultez [procédure pas à pas : création de contenu Direct3D9 pour l’hébergement dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureD3DObjects](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensured3dobjects)]  
   
-### Création HWND  
- La création d'un périphérique passe par un HWND.  En général, vous créez un HWND factice pour le Direct3D9.  L'exemple de code suivant montre comment créer un HWND factice.  
+### <a name="hwnd-creation"></a>Création de HWND  
+ Création d’un appareil nécessite un HWND. En règle générale, vous créez un HWND factice pour le Direct3D9 à utiliser. L’exemple de code suivant montre comment créer un HWND factice.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureHWND](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensurehwnd)]  
   
-### Paramètres Present  
- La création d'un périphérique requiert également une structure `D3DPRESENT_PARAMETERS`, mais seuls quelques paramètres sont importants.  Ces paramètres sont choisis pour réduire l'encombrement de la mémoire.  
+### <a name="present-parameters"></a>Paramètres présents  
+ Création d’un périphérique requiert également une `D3DPRESENT_PARAMETERS` struct, mais seuls quelques paramètres sont importants. Ces paramètres sont choisis pour réduire l’encombrement mémoire.  
   
- Affectez la valeur 1 aux champs `BackBufferHeight` et `BackBufferWidth`.  L'affectation de la valeur 0 entraîne l'affection des dimensions du HWND.  
+ Définir le `BackBufferHeight` et `BackBufferWidth` champs à 1. Les définissant sur 0 provoque leur être définie sur les dimensions du HWND.  
   
- Définissez toujours les indicateurs `D3DCREATE_MULTITHREADED` et `D3DCREATE_FPU_PRESERVE` pour éviter d'endommager la mémoire utilisée par Direct3D9 et empêcher Direct3D9 de modifier les paramètres FPU.  
+ Toujours défini le `D3DCREATE_MULTITHREADED` et `D3DCREATE_FPU_PRESERVE` pour éviter endommager la mémoire utilisée par Direct3D9 et empêcher Direct3D9 de modifier les paramètres FPU.  
   
- Le code suivant indique comment initialiser la structure `D3DPRESENT_PARAMETERS`.  
+ Le code suivant montre comment initialiser le `D3DPRESENT_PARAMETERS` struct.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_Init](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_init)]  
   
-## Création de la cible de rendu de la mémoire tampon d'arrière\-plan  
- Pour afficher du contenu Direct3D9 dans un <xref:System.Windows.Interop.D3DImage>, vous pouvez créer et assigner une surface Direct3D9 en appelant la méthode <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>.  
+## <a name="creating-the-back-buffer-render-target"></a>Création de la cible de rendu de mémoire tampon d’arrière-plan  
+ Pour afficher le contenu Direct3D9 dans un <xref:System.Windows.Interop.D3DImage>, vous créez une surface Direct3D9 et l’assigner en appelant le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> (méthode).  
   
-### Vérification de la prise en charge des adaptateurs  
- Avant de créer une surface, vérifiez que tous les adaptateurs prennent en charge les propriétés de surface dont vous avez besoin.  Même si vous restituez sur un seul adaptateur, la fenêtre WPF peut s'afficher sur tout adaptateur du système.  Vous devez toujours écrire du code Direct3D9 qui gère des configurations multi\-adaptateur et vérifier la prise en charge de tous les adaptateurs, car WPF peut déplacer la surface d'un adaptateur à un autre en fonction de leur disponibilité.  
+### <a name="verifying-adapter-support"></a>Vérification de la prise en charge de l’adaptateur  
+ Avant de créer une surface, vérifiez que toutes les cartes prennent en charge les propriétés de surface que vous avez besoin. Même si vous effectuez le rendu qu’une seule carte, la fenêtre WPF peut s’afficher sur n’importe quelle carte dans le système. Vous devez toujours écrire du code Direct3D9 qui gère les configurations de carte multi, et vous devez vérifier tous les adaptateurs pour la prise en charge, car WPF peut déplacer la surface parmi les adaptateurs disponibles.  
   
- L'exemple de code suivant indique comment vérifier la prise en charge de Direct3D9 par tous les adaptateurs du système.  
+ L’exemple de code suivant montre comment vérifier toutes les cartes sur le système pour Direct3D9 prennent en charge.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_TestSurfaceSettings](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_testsurfacesettings)]  
   
-### Création de la surface  
- Avant de créer une surface, vérifiez que les fonctions du périphérique assurent de bonnes performance sur le système d'exploitation cible.  Pour plus d'informations, consultez [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+### <a name="creating-the-surface"></a>Création de la Surface  
+ Avant de créer une surface, vérifiez que les fonctionnalités prennent en charge les bonnes performances sur le système d’exploitation cible. Pour plus d’informations, consultez [considérations sur les performances de Direct3D9 et interopérabilité WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
- Une fois les fonctions du périphérique vérifiées, vous pouvez créer la surface.  L'exemple de code suivant indique comment créer la cible de rendu.  
+ Lorsque vous avez vérifié les fonctionnalités de l’appareil, vous pouvez créer la surface. L’exemple de code suivant illustre la création de la cible de rendu.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_CreateSurface](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_createsurface)]  
   
-### WDDM  
- Sous Windows Vista et les systèmes d'exploitation ultérieurs, configurés pour utiliser le WDDM, vous pouvez créer une texture de cible de rendu et passer le niveau 0 surfaces à la méthode d' <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> .  Cette méthode n'est pas recommandée sur Windows XP, car vous ne pouvez pas créer de texture de cible de rendu verrouillable et les performances sont limitées.  
+### <a name="wddm"></a>WDDM  
+ Sur Windows Vista et les systèmes d’exploitation ultérieurs, qui sont configurés pour utiliser le WDDM, vous pouvez créer une texture de cible de rendu et passer la surface de niveau 0 pour le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> (méthode). Cette approche n’est pas recommandée sur Windows XP, car vous ne pouvez pas créer une texture de cible de rendu verrouillable et les performances seront réduites.  
   
-## Gestion de l'état du périphérique  
- La classe <xref:System.Windows.Interop.D3DImage> gère deux mémoires tampons d'affichage, appelées *mémoire tampon d'arrière\-plan* et *tampon d'affichage*.  La mémoire tampon d'arrière\-plan est votre surface Direct3D.  Les modifications apportées à la mémoire tampon d'arrière\-plan sont en avant copié dans le tampon d'affichage lorsque vous appelez la méthode d' <xref:System.Windows.Interop.D3DImage.Unlock%2A> , où elle est affichée sur le matériel.  Parfois, le tampon d'affichage est pas disponible.  Ce manque de disponibilité peut être provoqué par un verrouillage d'écran, des applications Direct3D utilisant exclusivement le plein écran, le changement d'utilisateur ou d'autres activités système.  Lorsque cela se produit, est averti votre application WPF en gérant l'événement d' <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> .  Comment votre application répond dans le tampon d'affichage devenant pas disponible dépend de si WPF est activé retomber au rendu logiciel.  La méthode d' <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> a une surcharge qui accepte un paramètre qui spécifie si WPF revient au rendu logiciel.  
+## <a name="handling-device-state"></a>Gestion d’état de l’appareil  
+ Le <xref:System.Windows.Interop.D3DImage> classe gère deux mémoires tampons d’affichage, qui sont appelés les *mémoire tampon d’arrière-plan* et *tampon d’affichage*. La mémoire tampon d’arrière-plan est votre surface Direct3D.  Modifications apportées à la mémoire tampon d’arrière-plan sont copiées en avant dans le tampon d’affichage lorsque vous appelez le <xref:System.Windows.Interop.D3DImage.Unlock%2A> méthode, où il est affiché sur le matériel. Parfois, le tampon d’affichage n’est plus disponible. Ce manque de disponibilité peut résulter de verrouillage de l’écran, les applications Direct3D exclusives plein écran, changement d’utilisateur ou autres activités du système. Lorsque cela se produit, votre application WPF est notifiée en gérant le <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> événement.  Comment votre application répond à la mémoire tampon avant de devenir indisponibles dépend de l’activation à revenir au rendu logiciel WPF. Le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> méthode a une surcharge qui accepte un paramètre qui spécifie si les WPF revient au rendu logiciel.  
   
- Lorsque vous appelez la surcharge d' <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29> ou appeler la surcharge d' <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> avec le jeu de paramètres d' `enableSoftwareFallback` à `false`, le système de rendu libère sa référence à la mémoire tampon d'arrière\-plan lorsque le tampon d'affichage est pas disponible et que rien n'est affiché.  Lorsque le tampon d'affichage est à nouveau disponible, le système de rendu déclenche l'événement d' <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> pour informer votre application WPF.  Vous pouvez créer un gestionnaire d'événements pour l'événement d' <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> redémarre s'afficher de nouveau avec une surface valide Direct3D.  Pour redémarrer le rendu, vous devez appeler <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>.  
+ Lorsque vous appelez le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29> surcharge ou appelez le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> surcharger avec la `enableSoftwareFallback` paramètre la valeur `false`, le système de rendu libère sa référence à la mémoire tampon d’arrière-plan lorsque le tampon d’affichage n’est plus disponible et que rien n’est affiché. Lorsque le tampon d’affichage est à nouveau disponible, le système de rendu déclenche le <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> événement pour avertir votre application WPF.  Vous pouvez créer un gestionnaire d’événements pour le <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> événement pour redémarrer le rendu avec une surface Direct3D valide. Pour redémarrer le rendu, vous devez appeler <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>.  
   
- Lorsque vous appelez la surcharge d' <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> avec le jeu de paramètres d' `enableSoftwareFallback` à `true`, le système de rendu conserve sa référence à la mémoire tampon d'arrière\-plan lorsque le tampon d'affichage est pas disponible, il n'est donc pas nécessaire d'appeler <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> lorsque le tampon d'affichage est à nouveau disponible.  
+ Lorsque vous appelez le <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> surcharger avec la `enableSoftwareFallback` paramètre la valeur `true`, le système de rendu conserve sa référence à la mémoire tampon d’arrière-plan lorsque le tampon d’affichage n’est plus disponible, il est donc inutile d’appeler <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> lors de l’avant mémoire tampon est à nouveau disponible.  
   
- Lorsque le rendu logiciel est activé, il peut y avoir des situations où le périphérique de l'utilisateur est pas disponible, mais le système de rendu conserve une référence à la surface Direct3D.  Pour vérifier si un périphérique Direct3D9 est pas disponible, appelez la méthode d' `TestCooperativeLevel` .  Pour contrôler les périphériques d'un Direct3D9Ex appelez la méthode d' `CheckDeviceState` , car la méthode d' `TestCooperativeLevel` est déconseillée et retourne toujours le succès.  Si le périphérique d'utilisateur est devenu pas disponible, appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> pour libérer la référence WPF à la mémoire tampon d'arrière\-plan.  Si vous devez réinitialiser le périphérique, appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> avec le jeu de paramètres d' `backBuffer` à `null`, puis appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> de nouveau avec `backBuffer` fixent Direct3D à une surface valide.  
+ Lorsque le rendu logiciel est activé, il peut arriver dans lequel le périphérique l’utilisateur n’est plus disponible, mais le système de rendu conserve une référence à la surface Direct3D. Pour vérifier si un périphérique Direct3D9 n’est pas disponible, appelez le `TestCooperativeLevel` (méthode). Pour vérifier un appel de périphériques Direct3D9Ex le `CheckDeviceState` (méthode), car le `TestCooperativeLevel` méthode est déconseillée et retourne toujours une valeur. Si l’appareil de l’utilisateur n’est plus disponible, appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> pour libérer la référence de WPF à la mémoire tampon d’arrière-plan.  Si vous devez réinitialiser votre appareil, appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> avec la `backBuffer` paramètre la valeur `null`, puis appelez <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> avec `backBuffer` défini sur une surface Direct3D valide.  
   
- Appelez la méthode `Reset` pour récupérer à partir d'un périphérique non valide uniquement si vous implémentez la prise en charge multi\-adaptateur.  Sinon, libérez toutes les interfaces Direct3D9 et recréez\-les complètement.  Si la disposition des adaptateurs a changé, les objets Direct3D9 créés avant le changement ne sont pas mis à jour.  
+ Appelez le `Reset` méthode pour récupérer à partir d’un périphérique non valide uniquement si vous implémentez la prise en charge comportant plusieurs carte. Sinon, libérer toutes les interfaces Direct3D9 et recréez-les complètement. Si la disposition des adaptateurs a changé, les objets Direct3D9 créés avant la modification ne sont pas mis à jour.  
   
-## Gestion du redimensionnement  
- Si <xref:System.Windows.Interop.D3DImage> s'affiche à une résolution autre que sa taille native, elle est mise à l'échelle selon <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>actuel, mais qu' <xref:System.Windows.Media.Effects.SamplingMode> est substituée pour <xref:System.Windows.Media.BitmapScalingMode>.  
+## <a name="handling-resizing"></a>Gestion du redimensionnement  
+ Si un <xref:System.Windows.Interop.D3DImage> s’affiche avec une résolution autre que sa taille d’origine, il est mis à l’échelle en fonction d’actuel <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>, sauf que <xref:System.Windows.Media.Effects.SamplingMode.Bilinear> est remplacé par <xref:System.Windows.Media.BitmapScalingMode.Fant>.  
   
- Si vous avez besoin d'une meilleure fidélité, vous devez créer une surface lorsque le conteneur du <xref:System.Windows.Interop.D3DImage> change de taille.  
+ Si vous avez besoin d’une fidélité, vous devez créer un nouveau surface lorsque le conteneur de la <xref:System.Windows.Interop.D3DImage> change de taille.  
   
- Il existe trois méthodes de gestion du redimensionnement.  
+ Il existe trois approches possibles pour gérer le redimensionnement.  
   
--   Participez au système de disposition et créez une surface lorsque la taille change.  Ne créez pas trop de surfaces, sinon vous risquez de saturer ou de fragmenter la mémoire vidéo.  
+-   Inclus dans le système de disposition et créer une surface lorsque la taille change. Ne créez pas trop de surfaces, car vous risquez de saturer ou de fragmenter la mémoire vidéo.  
   
--   Attendez qu'un événement de redimensionnement ne se produise pas pendant une période déterminée pour créer la surface.  
+-   Patientez jusqu'à ce qu’un événement de redimensionnement n’a pas eu lieu pour une période de temps pour créer la nouvelle surface.  
   
--   Créez un <xref:System.Windows.Threading.DispatcherTimer> qui vérifie les dimensions de conteneur plusieurs fois par seconde.  
+-   Créer un <xref:System.Windows.Threading.DispatcherTimer> qui vérifie les dimensions de conteneur plusieurs fois par seconde.  
   
-## Optimisation multi\-moniteur  
- Lorsque le système de rendu déplace un <xref:System.Windows.Interop.D3DImage> vers un autre moniteur, cela risque d'altérer considérablement les performances.  
+## <a name="multi-monitor-optimization"></a>Optimisation de plusieurs écran  
+ Vous risquez considérablement les performances lorsque le système de rendu déplace un <xref:System.Windows.Interop.D3DImage> vers un autre moniteur.  
   
- Sur WDDM, à partir du moment où les moniteurs sont connectés à la même carte vidéo et que vous utilisez `Direct3DCreate9Ex`, les performances ne sont pas altérées.  Si les moniteurs sont connectés à des cartes vidéo séparées, les performances s'en trouvent altérées.  Sur Windows XP, les performances sont toujours altérées.  
+ Sur WDDM, tant que les analyses sont sur le même vidéo carte et que vous utilisez `Direct3DCreate9Ex`, il n’existe aucune diminution des performances. Si les analyses se trouvent sur des cartes vidéos séparées, les performances sont réduites. Sous Windows XP, les performances sont toujours réduites.  
   
- Lorsque le <xref:System.Windows.Interop.D3DImage> se déplace vers un autre moniteur, vous pouvez créer une surface sur l'adaptateur correspondant pour restaurer de bonnes performances.  
+ Lorsque le <xref:System.Windows.Interop.D3DImage> se déplace vers un autre moniteur, vous pouvez créer une surface sur l’adaptateur correspondant pour restaurer de bonnes performances.  
   
- Pour éviter l'altération des performances, écrivez du code spécifiquement pour le cas multi\-moniteur.  La procédure ci\-dessous indique une façon d'écrire du code multi\-moniteur :  
+ Pour éviter l’altération des performances, écrire du code spécifiquement pour le cas de plusieurs écran. La liste suivante montre une manière d’écrire du code de plusieurs écran.  
   
-1.  Recherchez un point du <xref:System.Windows.Interop.D3DImage> dans l'espace à l'écran avec la méthode `Visual.ProjectToScreen`.  
+1.  Rechercher un point de la <xref:System.Windows.Interop.D3DImage> dans l’espace à l’écran avec le `Visual.ProjectToScreen` (méthode).  
   
-2.  Utilisez la méthode GDI `MonitorFromPoint` pour rechercher le moniteur qui affiche le point.  
+2.  Utilisez la `MonitorFromPoint` méthode GDI pour rechercher le moniteur qui affiche le point.  
   
-3.  Utilisez la méthode `IDirect3D9::GetAdapterMonitor` pour rechercher l'adaptateur Direct3D9 auquel le moniteur est connecté.  
+3.  Utilisez la `IDirect3D9::GetAdapterMonitor` consiste à trouver la carte Direct3D9 l’analyse sur.  
   
-4.  Si l'adaptateur n'est pas le même que l'adaptateur avec la mémoire tampon d'arrière\-plan, créez une mémoire tampon d'arrière\-plan sur le nouveau moniteur et assignez\-la à la mémoire tampon d'arrière\-plan <xref:System.Windows.Interop.D3DImage>.  
+4.  Si l’adaptateur n’est pas le même que l’adaptateur avec la mémoire tampon d’arrière-plan, créez une nouvelle mémoire tampon d’arrière-plan sur le nouveau moniteur et assignez-la à la <xref:System.Windows.Interop.D3DImage> mémoire tampon d’arrière-plan.  
   
 > [!NOTE]
->  Si le <xref:System.Windows.Interop.D3DImage> chevauche des moniteurs, les performances s'en trouvent altérées, sauf si WDDM et `IDirect3D9Ex` se trouvent sur le même adaptateur.  Il est impossible d'améliorer les performances dans ce cas.  
+>  Si le <xref:System.Windows.Interop.D3DImage> chevauche moniteurs, les performances seront lents, sauf dans le cas de WDDM et `IDirect3D9Ex` sur la même carte. Il n’existe aucun moyen pour améliorer les performances dans ce cas.  
   
- L'exemple de code suivant indique comment rechercher le moniteur actuel.  
+ L’exemple de code suivant montre comment rechercher le moniteur actuel.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_SetAdapter](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_setadapter)]  
   
- Mettez à jour le moniteur lorsque la position ou la taille du conteneur <xref:System.Windows.Interop.D3DImage> change ou mettez à jour le moniteur à l'aide d'un `DispatcherTimer` qui s'actualise plusieurs fois par seconde.  
+ Mettre à jour le moniteur lors de la <xref:System.Windows.Interop.D3DImage> les modifications de taille ou la position du conteneur, ou la mise à jour de l’analyse à l’aide un `DispatcherTimer` qui met à jour plusieurs fois par seconde.  
   
-## Rendu logiciel WPF  
- WPF restitue de façon synchrone le thread d'interface utilisateur dans le logiciel dans les cas suivants :  
+## <a name="wpf-software-rendering"></a>Rendu logiciel WPF  
+ WPF restitue de façon synchrone sur le thread d’interface utilisateur dans le logiciel dans les situations suivantes.  
   
 -   Impression  
   
@@ -143,17 +147,17 @@ Vous pouvez inclure du contenu Direct3D9 dans une application Windows Presentati
   
 -   <xref:System.Windows.Media.Imaging.RenderTargetBitmap>  
   
- Lorsque l'un de ces cas se produit, le système de rendu appelle la méthode <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> pour copier la mémoire tampon matérielle dans le logiciel.  L'implémentation par défaut appelle la méthode `GetRenderTargetData` avec la surface.  Comme cet appel se produit en dehors du modèle Verrouillage\/Déverrouillage, il risque d'échouer.  Dans ce cas, la méthode `CopyBackBuffer` retourne `null` et aucune image n'est affichée.  
+ Lorsqu’une de ces situations se produit, le système de rendu appelle la <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> méthode pour copier la mémoire tampon matérielle dans le logiciel. L’implémentation par défaut appelle la `GetRenderTargetData` méthode avec la surface. Étant donné que cet appel se produit en dehors du modèle de verrouiller/déverrouiller, il risque d’échouer. Dans ce cas, le `CopyBackBuffer` méthode renvoie `null` et aucune image n’est affichée.  
   
- Vous pouvez remplacer la méthode <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A>, appeler l'implémentation de base et, si elle retourne `null`, vous pouvez retourner un espace réservé <xref:System.Windows.Media.Imaging.BitmapSource>.  
+ Vous pouvez remplacer le <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> méthode, appelez l’implémentation de base, et si elle retourne `null`, vous pouvez retourner un espace réservé <xref:System.Windows.Media.Imaging.BitmapSource>.  
   
- Vous pouvez également implémenter votre propre rendu logiciel au lieu d'appeler l'implémentation de base.  
+ Vous pouvez également implémenter votre propre rendu logiciel au lieu d’appeler l’implémentation de base.  
   
 > [!NOTE]
->  Si WPF effectue une restitution complète dans le logiciel, <xref:System.Windows.Interop.D3DImage> n'est pas indiqué, car WPF ne possède pas de tampon d'affichage.  
+>  Si WPF est rendu complètement dans le logiciel, <xref:System.Windows.Interop.D3DImage> n’est pas affiché, car WPF ne possède pas un tampon d’affichage.  
   
-## Voir aussi  
- <xref:System.Windows.Interop.D3DImage>   
- [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)   
- [Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Interop.D3DImage>  
+ [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
+ [Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
  [Procédure pas à pas : hébergement de contenu Direct3D9 dans WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

@@ -1,47 +1,52 @@
 ---
-title: "Comment&#160;: d&#233;finir une ic&#244;ne pour un bouton de barre d&#39;outils | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "boutons (Windows Forms), icônes"
-  - "exemples (Windows Forms), barres d'outils"
-  - "icônes (Windows Forms), boutons de barre d'outils"
-  - "images (Windows Forms), boutons de barre d'outils"
-  - "ToolBar (contrôle Windows Forms), ajouter des icônes aux boutons"
-  - "barres d'outils (Windows Forms), ajouter des icônes aux boutons"
+title: "Comment : définir une icône pour un bouton de barre d'outils"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- toolbars [Windows Forms], adding icons to buttons
+- buttons [Windows Forms], icons
+- examples [Windows Forms], toolbars
+- images [Windows Forms], toolbar buttons
+- icons [Windows Forms], toolbar buttons
+- ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1d9f1dc73e6a74d8d69fedf6650102b77bd4f96a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: d&#233;finir une ic&#244;ne pour un bouton de barre d&#39;outils
+# <a name="how-to-define-an-icon-for-a-toolbar-button"></a>Comment : définir une icône pour un bouton de barre d'outils
 > [!NOTE]
 >  Le contrôle <xref:System.Windows.Forms.ToolStrip> remplace le contrôle <xref:System.Windows.Forms.ToolBar> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.ToolBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
- Les boutons <xref:System.Windows.Forms.ToolBar> sont capables d'afficher des icônes pour faciliter l'identification par les utilisateurs.  Pour cela, il faut ajouter des images au composant [ImageList, composant](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md), puis associer le composant <xref:System.Windows.Forms.ImageList> au contrôle <xref:System.Windows.Forms.ToolBar>.  
+ <xref:System.Windows.Forms.ToolBar>boutons sont en mesure d’afficher des icônes pour faciliter l’identification par les utilisateurs. Pour cela ajouter des images à le [composant ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) composant et en associant le <xref:System.Windows.Forms.ImageList> composant portant le la <xref:System.Windows.Forms.ToolBar> contrôle.  
   
-### Pour définir l'icône d'un bouton de barre d'outils par programme  
+### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>Pour définir une icône pour un bouton de barre d’outils par programmation  
   
-1.  Dans une procédure, instanciez un composant <xref:System.Windows.Forms.ImageList> et un contrôle <xref:System.Windows.Forms.ToolBar>.  
+1.  Dans une procédure, instanciez un <xref:System.Windows.Forms.ImageList> composant et un <xref:System.Windows.Forms.ToolBar> contrôle.  
   
-2.  Dans la même procédure, assignez une image au composant <xref:System.Windows.Forms.ImageList>.  
+2.  Dans la même procédure, assignez une image à la <xref:System.Windows.Forms.ImageList> composant.  
   
-3.  Dans la même procédure, assignez le contrôle <xref:System.Windows.Forms.ImageList> au contrôle <xref:System.Windows.Forms.ToolBar> et assignez la propriété <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A> de chaque bouton de barre d'outils.  
+3.  Dans la même procédure, assignez le <xref:System.Windows.Forms.ImageList> le contrôle à la <xref:System.Windows.Forms.ToolBar> contrôler et d’affecter le <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A> propriété des boutons de barre d’outils individuels.  
   
-     Dans l'exemple de code suivant, le chemin d'accès défini pour l'emplacement de l'image est le dossier **Mes documents**.  La plupart des ordinateurs exécutant le système d'exploitation Windows disposent, en effet, de ce dossier.  Ceci permet également aux utilisateurs disposant de niveaux d'accès minimaux au système d'exécuter l'application en toute sécurité.  L'exemple suivant suppose un formulaire auquel un contrôle <xref:System.Windows.Forms.PictureBox> a déjà été ajouté.  
+     Dans l’exemple de code suivant, le chemin d’accès défini pour l’emplacement de l’image est la **Mes Documents** dossier. Pour cela, car vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce répertoire. Cela permet également aux utilisateurs avec des niveaux d’accès minimum au système d’exécuter l’application en toute sécurité. L’exemple ci-dessous illustre un formulaire avec un <xref:System.Windows.Forms.PictureBox> contrôle déjà été ajouté.  
   
-     Si vous avez suivi les étapes ci\-dessus, votre code doit être similaire au code suivant.  
+     Les étapes ci-dessus, doit avoir écrit code similaire à celle affichée ci-dessous.  
   
     ```vb  
     Public Sub InitializeMyToolBar()  
@@ -66,7 +71,6 @@ caps.handback.revision: 14
     ' Assign the ImageIndex property of the ToolBarButton.  
        ToolBarButton1.ImageIndex = 0  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -93,7 +97,6 @@ caps.handback.revision: 14
        // Assign ImageIndex property of the ToolBarButton.  
        toolBarButton1.ImageIndex = 0;  
     }  
-  
     ```  
   
     ```cpp  
@@ -122,8 +125,8 @@ caps.handback.revision: 14
        }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ToolBar>   
- [Comment : déclencher des événements de menu pour les boutons de barre d'outils](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)   
- [ToolBar, contrôle](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)   
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ToolBar>  
+ [Guide pratique pour déclencher des événements de menu pour les boutons de barre d’outils](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  
+ [ToolBar, contrôle](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)  
  [ImageList, composant](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)

@@ -1,83 +1,83 @@
 ---
-title: "Disposition des contr&#244;les dans les Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VisualSelection"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "contrôles (Windows Forms), positionner"
-  - "Contrôles Windows Forms, positionner sur le formulaire"
+title: "Disposition des contrôles dans les Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VisualSelection
+helpviewer_keywords:
+- controls [Windows Forms], positioning
+- Windows Forms controls, positioning on form
 ms.assetid: b2d62ed8-c391-4a7e-b72e-6bbabfca73dc
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b5709f07edc90b9094561870d31fbe28697974ac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# Disposition des contr&#244;les dans les Windows Forms
+# <a name="arranging-controls-on-windows-forms"></a>Disposition des contrôles dans les Windows Forms
 En plaçant et manipulant des contrôles sur les formulaires de différentes façons, vous pouvez créer des interfaces utilisateur intuitives et fonctionnelles pour les utilisateurs.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Comment : aligner plusieurs contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-align-multiple-controls-on-windows-forms.md)  
- Explique comment aligner la position d’un nombre de contrôles sur votre formulaire Windows.  
+ [Guide pratique pour aligner plusieurs contrôles dans des Windows Forms](../../../../docs/framework/winforms/controls/how-to-align-multiple-controls-on-windows-forms.md)  
+ Explique comment aligner la position de plusieurs contrôles sur votre Windows Form.  
   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
- Explique comment définir les contrôles à redimensionner dynamiquement au moment de l’exécution.  
+ [Guide pratique pour ancrer des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
+ Explique comment définir les contrôles pour qu’ils se redimensionnent dynamiquement à l’exécution.  
   
- [Comment : copier des contrôles entre des Windows Forms](../../../../docs/framework/winforms/controls/how-to-copy-controls-between-windows-forms.md)  
- Explique comment copier des contrôles entre les formulaires.  
+ [Guide pratique pour copier des contrôles entre des Windows Forms](../../../../docs/framework/winforms/controls/how-to-copy-controls-between-windows-forms.md)  
+ Explique comment dupliquer des contrôles entre des formulaires.  
   
- [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
- Explique comment rendre des contrôles « stick » à rivés d’un formulaire.  
+ [Guide pratique pour fixer des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ Explique comment « fixer » des contrôles aux côtés d’un formulaire.  
   
- [Comment : superposer des objets dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)  
- Explique comment définir des contrôles sur l’axe z (ordre de plan).  
+ [Guide pratique pour superposer des objets dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md)  
+ Explique comment établir les contrôles qui figurent en haut de l’axe Z (position Z).  
   
- [Comment : verrouiller des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md)  
- Explique comment attacher des contrôles de façon permanente à l’écran.  
+ [Guide pratique pour verrouiller des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-lock-controls-to-windows-forms.md)  
+ Explique comment attacher des contrôles de façon permanente au formulaire.  
   
- [Comment : positionner des contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-position-controls-on-windows-forms.md)  
+ [Guide pratique pour positionner des contrôles dans des Windows Forms](../../../../docs/framework/winforms/controls/how-to-position-controls-on-windows-forms.md)  
  Explique comment définir les coordonnées des contrôles sur un formulaire.  
   
- [Comment : redimensionner des contrôles dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)  
+ [Guide pratique pour redimensionner des contrôles sur des Windows Forms](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)  
  Explique comment définir la taille des contrôles sur un formulaire.  
   
- [Comment : définir les Options de grille pour tous les Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-grid-options-for-all-windows-forms.md)  
- Explique comment définir la taille de la grille qui couvre un formulaire.  
+ [Guide pratique pour définir des options de grille pour tous les Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-grid-options-for-all-windows-forms.md)  
+ Explique comment calibrer la taille de la grille qui couvre un formulaire.  
   
- [Comment : définir l’ordre de tabulation dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-tab-order-on-windows-forms.md)  
- Explique comment définir l’ordre dans lequel les contrôles ont le focus lorsque l’utilisateur appuie sur TAB.  
+ [Guide pratique pour définir l’ordre de tabulation dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-set-the-tab-order-on-windows-forms.md)  
+ Explique comment définir l’ordre dans lequel les contrôles ont le focus quand l’utilisateur appuie sur Tab.  
   
- [Comment : réorganiser des contrôles avec les lignes d’alignement et de la grille dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms.md)  
+ [Guide pratique pour organiser les contrôles à l’aide des lignes d’alignement et de la grille dans les Windows Forms](../../../../docs/framework/winforms/controls/how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms.md)  
  Explique comment aligner les contrôles sur la grille dans un formulaire.  
   
- [Comment : réassignation de contrôles existants à un Parent différent](../../../../docs/framework/winforms/controls/how-to-reassign-existing-controls-to-a-different-parent.md)  
- Explique comment assigner des contrôles existants dans un nouveau conteneur parent.  
+ [Guide pratique pour réaffecter des contrôles existants à un autre parent](../../../../docs/framework/winforms/controls/how-to-reassign-existing-controls-to-a-different-parent.md)  
+ Explique comment affecter des contrôles existants à un nouveau conteneur parent.  
   
- [Procédure pas à pas : Disposition des Windows Forms des contrôles avec la propriété AutoSize, marges et marge intérieure](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
+ [Procédure pas à pas : disposition des contrôles Windows Forms avec les propriétés Padding, Margins et AutoSize](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)  
  Décrit comment vous pouvez placer des contrôles sur vos formulaires à l’aide de la <xref:System.Windows.Forms.Control.Margin%2A>, <xref:System.Windows.Forms.Control.Padding%2A>, et <xref:System.Windows.Forms.Control.AutoSize%2A> propriétés dans le **Concepteur Forms**.  
   
- [Procédure pas à pas : Organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
- Montre les différents rôles de disposition remplies par les lignes d’alignement.  
+ [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide des lignes d’alignement](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ Montre les différents rôles de disposition joués par les lignes d’alignement.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Comment : désigner un bouton Windows Forms comme bouton Annuler à l’aide du Concepteur](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-cancel-button-using-the-designer.md)  
- Fournit des instructions pour l’établissement d’un bouton en tant que le contrôle d’annulation du formulaire.  
+ [Guide pratique pour désigner un bouton Windows Forms comme bouton Annuler à l’aide du concepteur](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-cancel-button-using-the-designer.md)  
+ Explique comment définir un bouton comme contrôle pour annuler le formulaire.  
   
- [Comment : désigner un bouton Windows Forms comme bouton accepter à l’aide du Concepteur](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-accept-button-using-the-designer.md)  
- Explique comment définir un bouton (souvent un « OK ») en tant que le bouton « Accepter l’entrée » lorsque vous appuyez sur entrée indépendamment de focus à la fois dans la boîte de dialogue.  
+ [Guide pratique pour désigner un bouton Windows Forms comme bouton Accepter à l’aide du concepteur](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-accept-button-using-the-designer.md)  
+ Explique comment définir un bouton (souvent un bouton « OK ») comme bouton « accepter l’entrée » quand l’utilisateur appuie sur Entrée, quel que soit l’endroit où se trouve le focus dans la boîte de dialogue.  
   
- [Comment : grouper des contrôles RadioButton Windows Forms en un ensemble](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
- Explique comment définir un ensemble de `RadioButton` contrôles comme se rapportant à l’autre.  
+ [Guide pratique pour grouper des contrôles RadioButton Windows Forms en un ensemble fonctionnant indépendamment](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
+ Explique comment définir un ensemble de contrôles `RadioButton` comme étant liés les uns aux autres.  
   
  [Contrôles Windows Forms](../../../../docs/framework/winforms/controls/index.md)  
- Fournit des informations générales à propos des contrôles.
+ Fournit des informations générales sur les contrôles.

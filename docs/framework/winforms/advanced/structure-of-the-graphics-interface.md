@@ -1,37 +1,38 @@
 ---
-title: "Structure de l&#39;interface graphique | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "GDI+, utiliser l'interface managée"
-  - "graphiques, structure de classe"
+title: Structure de l'interface graphique
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GDI+, using managed interface
+- graphics [Windows Forms], class structure
 ms.assetid: 010a1e46-656b-40a1-8d5d-87aa05ee1243
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cd1da930df151869ea3e891da7057f44ed0a4603
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Structure de l&#39;interface graphique
-L'interface de classe managée de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] contient environ 60 classes, 50 énumérations et 8 structures.  La classe <xref:System.Drawing.Graphics> est au cœur des fonctionnalités [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] ; il s'agit de la classe qui permet de dessiner des lignes, des courbes, des illustrations, des images et du texte.  
+# <a name="structure-of-the-graphics-interface"></a>Structure de l'interface graphique
+L’interface de classe managée à [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] contient environ 60 classes, 50 énumérations et 8 structures. Le <xref:System.Drawing.Graphics> classe est au cœur de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fonctionnalité ; il s’agit de la classe qui permet de dessiner des lignes, des courbes, des chiffres, des images et texte.  
   
-## Classes importantes  
- Beaucoup de classes fonctionnent en collaboration avec la classe <xref:System.Drawing.Graphics>.  Par exemple, la méthode <xref:System.Drawing.Graphics.DrawLine%2A> reçoit un objet <xref:System.Drawing.Pen>, qui contient les attributs \(couleur, largeur, style de ligne, etc.\) de la ligne à dessiner.  La méthode <xref:System.Drawing.Graphics.FillRectangle%2A> peut recevoir un pointeur vers un objet <xref:System.Drawing.Drawing2D.LinearGradientBrush>, qui fonctionne avec l'objet <xref:System.Drawing.Graphics> pour remplir un rectangle avec des changements de couleurs progressifs.  Les objets <xref:System.Drawing.Font> et <xref:System.Drawing.StringFormat> influencent la manière dont un objet <xref:System.Drawing.Graphics> dessine du texte.  Un objet <xref:System.Drawing.Drawing2D.Matrix> stocke et manipule la transformation universelle d'un objet <xref:System.Drawing.Graphics> qui permet de faire pivoter, de mettre à l'échelle et de retourner des images.  
+## <a name="important-classes"></a>Classes importantes  
+ De nombreuses classes fonctionnent en collaboration avec la <xref:System.Drawing.Graphics> classe. Par exemple, le <xref:System.Drawing.Graphics.DrawLine%2A> méthode reçoit un <xref:System.Drawing.Pen> objet, qui contient les attributs (couleur, largeur, style de ligne, etc.) de la ligne à dessiner. Le <xref:System.Drawing.Graphics.FillRectangle%2A> méthode peut recevoir un pointeur vers un <xref:System.Drawing.Drawing2D.LinearGradientBrush> objet, qui fonctionne avec le <xref:System.Drawing.Graphics> objet pour remplir un rectangle avec une couleur. <xref:System.Drawing.Font>et <xref:System.Drawing.StringFormat> objets influencent la manière dont un <xref:System.Drawing.Graphics> objet dessine du texte. A <xref:System.Drawing.Drawing2D.Matrix> objet stocke et manipule la transformation universelle d’un <xref:System.Drawing.Graphics> objet, qui est utilisé pour faire pivoter, de mettre à l’échelle et de retourner des images.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit plusieurs structures \(par exemple, <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Point> et <xref:System.Drawing.Size>\) pour l'organisation de données graphiques.  Par ailleurs, certaines classes sont essentiellement utilisées comme des types de données structurés.  Par exemple, la classe <xref:System.Drawing.Imaging.BitmapData> est une application d'assistance pour la classe <xref:System.Drawing.Bitmap>, et la classe <xref:System.Drawing.Drawing2D.PathData> est une application d'assistance pour la classe <xref:System.Drawing.Drawing2D.GraphicsPath>.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]fournit plusieurs structures (par exemple, <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Point>, et <xref:System.Drawing.Size>) pour organiser les données de graphique. En outre, certaines classes sont des types de données principalement comme structurés. Par exemple, le <xref:System.Drawing.Imaging.BitmapData> classe est une application d’assistance pour le <xref:System.Drawing.Bitmap> (classe) et le <xref:System.Drawing.Drawing2D.PathData> classe est une application auxiliaire pour la <xref:System.Drawing.Drawing2D.GraphicsPath> classe.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] définit plusieurs énumérations, qui sont des collections de constantes connexes.  Par exemple, l'énumération <xref:System.Drawing.Drawing2D.LineJoin> contient les éléments <xref:System.Drawing.Drawing2D.LineJoin>, <xref:System.Drawing.Drawing2D.LineJoin> et <xref:System.Drawing.Drawing2D.LineJoin>, qui spécifient les styles pouvant être utilisés pour joindre deux lignes.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]définit plusieurs énumérations, qui sont des collections de constantes associées. Par exemple, le <xref:System.Drawing.Drawing2D.LineJoin> énumération contient les éléments <xref:System.Drawing.Drawing2D.LineJoin.Bevel>, <xref:System.Drawing.Drawing2D.LineJoin.Miter>, et <xref:System.Drawing.Drawing2D.LineJoin.Round>, qui spécifient les styles qui peuvent être utilisés pour joindre deux lignes.  
   
-## Voir aussi  
- [Vue d'ensemble des graphismes](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)   
- [À propos du code managé GDI\+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Vue d’ensemble des graphismes](../../../../docs/framework/winforms/advanced/graphics-overview-windows-forms.md)  
+ [À propos du code managé GDI+](../../../../docs/framework/winforms/advanced/about-gdi-managed-code.md)  
  [Utilisation de classes graphiques managées](../../../../docs/framework/winforms/advanced/using-managed-graphics-classes.md)

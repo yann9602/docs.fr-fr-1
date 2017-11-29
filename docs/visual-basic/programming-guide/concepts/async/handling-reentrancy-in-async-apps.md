@@ -1,31 +1,22 @@
 ---
-title: "Gestion de la réentrance dans Async Apps (Visual Basic) | Documents Microsoft"
+title: "Gestion de la réentrance dans Async Apps (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 64a708e3b88f48ad30d3f3ad25141a31f3d8f73d
-ms.contentlocale: fr-fr
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 45dfc4dd4ab42c3ce8edd7e41b7b0401bb0db672
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Gestion de la réentrance dans Async Apps (Visual Basic)
 Quand vous incluez du code asynchrone dans votre application, vous devez prendre en compte et éventuellement empêcher la réentrance, qui fait référence à une nouvelle entrée d'une opération asynchrone avant qu'elle soit terminée. Si vous n'identifiez pas et ne gérez pas les possibilités de réentrance, les résultats peuvent être inattendus.  
@@ -38,19 +29,19 @@ Quand vous incluez du code asynchrone dans votre application, vous devez prendre
   
     -   [Désactiver le bouton Démarrer](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
-    -   [Annuler et redémarrer l’opération.](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+    -   [Annuler et redémarrer l’opération](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
-    -   [Exécuter plusieurs opérations et la sortie de la file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+    -   [Exécuter plusieurs opérations et mettre la sortie en file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
 -   [Examen et exécution de l’exemple d’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
 > [!NOTE]
->  Pour exécuter l’exemple, vous devez disposer de Visual Studio 2012 ou plus récent et le .NET Framework 4.5 ou ultérieure, installé sur votre ordinateur.  
+>  Pour exécuter l’exemple, Visual Studio version 2012, ou une version ultérieure, et .NET Framework version 4.5, ou une version ultérieure, doivent être installés sur votre ordinateur.  
   
-##  <a name="BKMK_RecognizingReentrancy"></a>Identification de la réentrance  
- Dans l’exemple dans cette rubrique, les utilisateurs choisissent un **Démarrer** bouton pour lancer une application asynchrone qui télécharge une série de sites Web et calcule le nombre total d’octets téléchargés. Une version synchrone de l’exemple répondrait de la même façon quel que soit le nombre de fois où un utilisateur clique sur le bouton car, après la première fois, le thread d’interface utilisateur ignore ces événements jusqu’à ce que l’application arrête de s’exécuter. Dans une application asynchrone, en revanche, le thread d'interface utilisateur continue de répondre et vous pouvez entrer à nouveau l'opération asynchrone avant qu'elle soit terminée.  
+##  <a name="BKMK_RecognizingReentrancy"></a> Identification de la réentrance  
+ Dans l’exemple de cette rubrique, les utilisateurs choisissent un bouton **Démarrer** pour lancer une application asynchrone qui télécharge une série de sites web et calcule le nombre total d’octets téléchargés. Une version synchrone de l’exemple répondrait de la même façon quel que soit le nombre de fois où un utilisateur clique sur le bouton car, après la première fois, le thread d’interface utilisateur ignore ces événements jusqu’à ce que l’application arrête de s’exécuter. Dans une application asynchrone, en revanche, le thread d'interface utilisateur continue de répondre et vous pouvez entrer à nouveau l'opération asynchrone avant qu'elle soit terminée.  
   
- L’exemple suivant illustre la manière attendue de sortie si l’utilisateur choisit le **Démarrer** ne bouton qu’une seule fois. La liste des sites web téléchargés apparaît avec la taille, en octets, de chaque site. Le nombre total d'octets apparaît à la fin.  
+ L’exemple suivant illustre la sortie attendue si l’utilisateur choisit le bouton **Démarrer** une seule fois. La liste des sites web téléchargés apparaît avec la taille, en octets, de chaque site. Le nombre total d'octets apparaît à la fin.  
   
 ```  
 1. msdn.microsoft.com/library/hh191443.aspx                83732  
@@ -102,27 +93,27 @@ TOTAL bytes returned:  890591
 TOTAL bytes returned:  890591  
 ```  
   
- Vous pouvez passer en revue le code qui produit cette sortie en accédant à la fin de cette rubrique. Vous pouvez utiliser le code en téléchargeant la solution sur votre ordinateur local, puis en le projet WebsiteDownload ou en utilisant le code à la fin de cette rubrique pour créer votre propre projet pour plus d’informations et des instructions, consultez la page [examen et exécution de l’exemple d’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645).  
+ Vous pouvez passer en revue le code qui produit cette sortie en accédant à la fin de cette rubrique. Vous pouvez faire des essais avec le code en téléchargeant la solution sur votre ordinateur local, puis en exécutant le projet WebsiteDownload ou en utilisant le code donné à la fin de cette rubrique pour créer votre propre projet. Pour plus d’informations et d’instructions, consultez [Examen et exécution de l’exemple d’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645).  
   
-##  <a name="BKMK_HandlingReentrancy"></a>Gestion de la réentrance  
+##  <a name="BKMK_HandlingReentrancy"></a> Gestion de la réentrance  
  Vous pouvez gérer la réentrance de différentes façons, selon ce que vous voulez que votre application fasse. Cette rubrique présente les exemples suivants :  
   
 -   [Désactiver le bouton Démarrer](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
-     Désactiver la **Démarrer** bouton pendant que l’opération est en cours d’exécution afin que l’utilisateur peut l’interrompre.  
+     Désactivez le bouton **Démarrer** pendant que l’opération est en cours d’exécution afin que l’utilisateur ne puisse pas l’interrompre.  
   
--   [Annuler et redémarrer l’opération.](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Annuler et redémarrer l’opération](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
-     Annuler toute opération qui est en cours d’exécution lorsque l’utilisateur choisit le **Démarrer** bouton Nouveau et continuez permettent l’opération la plus récemment demandée.  
+     Annulez toute opération encore en cours d’exécution quand l’utilisateur choisit le bouton **Démarrer** à nouveau, puis laissez l’opération demandée le plus récemment continuer.  
   
--   [Exécuter plusieurs opérations et la sortie de la file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Exécuter plusieurs opérations et mettre la sortie en file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
   
      Autorisez toutes les opérations demandées à s'exécuter de façon asynchrone, mais coordonnez l'affichage de la sortie de sorte que les résultats de chaque opération apparaissent ensemble et dans l'ordre.  
   
-###  <a name="BKMK_DisableTheStartButton"></a>Désactiver le bouton Démarrer  
- Vous pouvez bloquer le **Démarrer** bouton pendant une opération est en cours d’exécution en désactivant le bouton en haut de la `StartButton_Click` Gestionnaire d’événements. Ensuite, vous pouvez réactiver le bouton depuis un bloc `Finally` quand l'opération se termine pour que les utilisateurs puissent exécuter à nouveau l'application.  
+###  <a name="BKMK_DisableTheStartButton"></a> Désactiver le bouton Démarrer  
+ Vous pouvez bloquer le bouton **Démarrer** pendant l’exécution d’une opération en désactivant le bouton en haut du gestionnaire d’événements `StartButton_Click`. Ensuite, vous pouvez réactiver le bouton depuis un bloc `Finally` quand l'opération se termine pour que les utilisateurs puissent exécuter à nouveau l'application.  
   
- Le code suivant illustre ces modifications, marquées par des astérisques. Vous pouvez ajouter les modifications apportées au code à la fin de cette rubrique, ou vous pouvez télécharger l’application finie de [Async exemples : réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571). Le nom du projet est DisableStartButton.  
+ Le code suivant illustre ces modifications, marquées par des astérisques. Vous pouvez ajouter les modifications apportées au code à la fin de cette rubrique, ou vous pouvez télécharger l’application finalisée dans la rubrique [Exemples Async : la réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571). Le nom du projet est DisableStartButton.  
   
 ```vb  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -147,14 +138,14 @@ End Sub
   
  Suite aux modifications, le bouton ne répond pas pendant que `AccessTheWebAsync` télécharge les sites Web, donc le processus ne peut pas être entré de nouveau.  
   
-###  <a name="BKMK_CancelAndRestart"></a>Annuler et redémarrer l’opération.  
- Au lieu de la désactivation de la **Démarrer** bouton, vous pouvez maintenir le bouton active mais, si l’utilisateur choisit ce bouton, annuler l’opération qui est déjà en cours d’exécution et permettre de continuer l’opération la plus récemment démarrée.  
+###  <a name="BKMK_CancelAndRestart"></a> Annuler et redémarrer l’opération  
+ Au lieu de désactiver le bouton **Démarrer**, vous pouvez garder le bouton actif. Toutefois, si l’utilisateur choisit de nouveau ce bouton, annulez l’opération qui est déjà en cours d’exécution et laissez continuer l’opération le plus récemment démarrée.  
   
  Pour plus d’informations sur l’annulation, consultez [réglage (Visual Basic) de votre Application Async](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).  
   
- Pour configurer ce scénario, apportez les modifications suivantes au code de base qui est fourni dans [examen et exécution de l’exemple d’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645). Vous pouvez également télécharger l’application finie de [Async exemples : réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571). Le nom de ce projet est CancelAndRestart.  
+ Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645). Vous pouvez également télécharger l’application finalisée dans la rubrique [Exemples Async : la réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571). Le nom de ce projet est CancelAndRestart.  
   
-1.  Déclarez une <xref:System.Threading.CancellationTokenSource>variable, `cts`, qui est dans la portée de toutes les méthodes.</xref:System.Threading.CancellationTokenSource>  
+1.  Déclarez une variable <xref:System.Threading.CancellationTokenSource>, `cts`, qui est dans la portée de toutes les méthodes.  
   
     ```vb  
     Class MainWindow // Or Class MainPage  
@@ -180,7 +171,7 @@ End Sub
     cts = newCTS  
     ```  
   
-4.  À la fin de `StartButton_Click`, le processus en cours est terminé, ainsi que la valeur de `cts` à `Nothing`.  
+4.  À la fin de `StartButton_Click`, le processus en cours est terminé, par conséquent, définissez la valeur de `cts` à `Nothing`.  
   
     ```vb  
     ' *** When the process completes, signal that another process can proceed.  
@@ -228,7 +219,7 @@ End Sub
   
 -   Ajoutez un paramètre pour accepter le jeton d'annulation en provenance de `StartButton_Click`.  
   
--   Utilisez la <xref:System.Net.Http.HttpClient.GetAsync%2A>méthode pour télécharger les sites Web, car `GetAsync` accepte un <xref:System.Threading.CancellationToken>argument.</xref:System.Threading.CancellationToken> </xref:System.Net.Http.HttpClient.GetAsync%2A>  
+-   Utilisez la méthode <xref:System.Net.Http.HttpClient.GetAsync%2A> pour télécharger les sites Web car `GetAsync` accepte un argument <xref:System.Threading.CancellationToken>.  
   
 -   Avant d'appeler `DisplayResults` pour afficher les résultats de chaque site Web téléchargé, vérifiez `ct` pour vous assurer que l'opération en cours n'a pas été annulée.  
   
@@ -272,7 +263,7 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
 End Function  
 ```  
   
- Si vous choisissez la **Démarrer** plusieurs fois pendant l’exécution de cette application, il doit produire des résultats qui ressemblent à la sortie suivante.  
+ Si vous choisissez le bouton **Démarrer** plusieurs fois pendant l’exécution de cette application, les résultats produits doivent ressembler à la sortie suivante.  
   
 ```  
 1. msdn.microsoft.com/library/hh191443.aspx                83732  
@@ -302,14 +293,14 @@ TOTAL bytes returned:  890591
   
  Pour éliminer les listes partielles, supprimez les commentaires de la première ligne de code dans `StartButton_Click` pour effacer la zone de texte chaque fois que l'utilisateur redémarre l'opération.  
   
-###  <a name="BKMK_RunMultipleOperations"></a>Exécuter plusieurs opérations et la sortie de la file d’attente  
- Ce troisième exemple est la plus compliquée car l’application démarre une autre opération asynchrone chaque fois que l’utilisateur choisit le **Démarrer** bouton et toutes les opérations exécutées jusqu'à la fin. Toutes les opérations demandées téléchargent des sites web de la liste de façon asynchrone, mais la sortie des opérations est présentée séquentiellement. Autrement dit, l’activité de téléchargement réelle est entrelacée, comme l’indique la [réentrance reconnaissant](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) présente, mais la liste des résultats de chaque groupe est présenté séparément.  
+###  <a name="BKMK_RunMultipleOperations"></a> Exécuter plusieurs opérations et mettre la sortie en file d’attente  
+ Ce troisième exemple est le plus compliqué, car l’application démarre une autre opération asynchrone chaque fois que l’utilisateur choisit le bouton **Démarrer**, et toutes les opérations s’exécutent jusqu’à leur achèvement. Toutes les opérations demandées téléchargent des sites web de la liste de façon asynchrone, mais la sortie des opérations est présentée séquentiellement. Autrement dit, l’activité de téléchargement réelle est entrelacée, comme le montre la sortie dans [Identification de la réentrance](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), mais la liste des résultats de chaque groupe est présentée séparément.  
   
- Les opérations de partagent global <xref:System.Threading.Tasks.Task>, `pendingWork`, qui sert d’un opérateur de contrôle pour le processus d’affichage.</xref:System.Threading.Tasks.Task>  
+ Les opérations partagent un <xref:System.Threading.Tasks.Task> global, `pendingWork`, qui sert d'opérateur de contrôle d'appels pour le processus d'affichage.  
   
- Vous pouvez exécuter cet exemple en collant les modifications dans le code dans [création de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), ou vous pouvez suivre les instructions de [téléchargement de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour télécharger l’exemple, puis exécutez le projet QueueResults.  
+ Vous pouvez exécuter cet exemple en collant les modifications dans le code indiqué dans [Génération de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), ou vous pouvez suivre les instructions données dans [Téléchargement de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour télécharger l’exemple, puis exécuter le projet QueueResults.  
   
- La sortie suivante montre le résultat si l’utilisateur choisit le **Démarrer** ne bouton qu’une seule fois. L’étiquette de la lettre A, indique que le résultat est la première fois à partir de la **Démarrer** bouton est choisi. Les numéros indiquent l'ordre des URL dans la liste des cibles de téléchargement.  
+ La sortie suivante montre le résultat obtenu si l’utilisateur choisit le bouton **Démarrer** une seule fois. L’étiquette A indique que le résultat part de la première fois que le bouton **Démarrer** est choisi. Les numéros indiquent l'ordre des URL dans la liste des cibles de téléchargement.  
   
 ```  
 #Starting group A.  
@@ -329,7 +320,7 @@ TOTAL bytes returned:  918876
 #Group A is complete.  
 ```  
   
- Si l’utilisateur choisit le **Démarrer** trois fois, l’application génère une sortie semblable aux lignes suivantes. Les lignes d'information qui commencent par un signe dièse (#) suivent la progression de l'application.  
+ Si l’utilisateur choisit le bouton **Démarrer** trois fois, l’application produit une sortie semblable aux lignes suivantes. Les lignes d'information qui commencent par un signe dièse (#) suivent la progression de l'application.  
   
 ```  
 #Starting group A.  
@@ -385,7 +376,7 @@ TOTAL bytes returned:  920526
 #Group C is complete.  
 ```  
   
- Les groupes B et C démarrent avant que le groupe A ait terminé, mais la sortie de chaque groupe apparaît séparément. Toutes les opérations effectuées pour le groupe A apparaît en premier, suivie de toutes les opérations effectuées pour le groupe B et ensuite toutes les opérations effectuées pour le groupe C. L’application toujours affiche les groupes dans l’ordre et, pour chaque groupe, affiche toujours les informations sur les sites Web individuels dans l’ordre où les URL apparaissent dans la liste des URL.  
+ Les groupes B et C démarrent avant que le groupe A ait terminé, mais la sortie de chaque groupe apparaît séparément. Toute la sortie du groupe A apparaît en premier, suivie de toute la sortie du groupe B, puis de toute la sortie du groupe C. L’application affiche toujours les groupes dans l’ordre et, pour chaque groupe, elle affiche toujours les informations sur les sites web, dans l’ordre où les URL apparaissent dans la liste des URL.  
   
  Toutefois, vous ne pouvez pas prévoir l'ordre dans lequel les téléchargements se produisent réellement. Après le démarrage de plusieurs groupes, les tâches de téléchargement qu'ils génèrent sont toutes actives. Vous ne pouvez pas supposer que A-1 sera téléchargé avant B-1 ni que A-1 sera téléchargé avant A-2.  
   
@@ -403,7 +394,7 @@ Class MainWindow    ' Class MainPage in Windows Store app.
  La variable `Task`, `pendingWork`, supervise le processus d'affichage et empêche tout groupe d'interrompre l'opération d'affichage d'un autre groupe. La variable de caractère `group`, étiquette la sortie de différents groupes pour vérifier que les résultats apparaissent dans l'ordre attendu.  
   
 #### <a name="the-click-event-handler"></a>Gestionnaire d'événements Click  
- Le Gestionnaire d’événements `StartButton_Click`, incrémente la lettre du groupe chaque fois que l’utilisateur choisit le **Démarrer** bouton. Ensuite, le gestionnaire appelle `AccessTheWebAsync` pour exécuter l'opération de téléchargement.  
+ Le gestionnaire d’événements, `StartButton_Click`, incrémente la lettre du groupe chaque fois que l’utilisateur choisit le bouton **Démarrer**. Ensuite, le gestionnaire appelle `AccessTheWebAsync` pour exécuter l'opération de téléchargement.  
   
 ```vb  
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -428,7 +419,7 @@ End Sub
 ```  
   
 #### <a name="the-accessthewebasync-method"></a>Méthode AccessTheWebAsync  
- Cet exemple fractionne `AccessTheWebAsync` en deux méthodes. La première méthode, `AccessTheWebAsync`, démarre toutes les tâches de téléchargement d'un groupe et configure `pendingWork` pour contrôler le processus d'affichage. La méthode utilise un Language Integrated Query (requête LINQ) et <xref:System.Linq.Enumerable.ToArray%2A>pour démarrer toutes les tâches de téléchargement en même temps.</xref:System.Linq.Enumerable.ToArray%2A>  
+ Cet exemple fractionne `AccessTheWebAsync` en deux méthodes. La première méthode, `AccessTheWebAsync`, démarre toutes les tâches de téléchargement d'un groupe et configure `pendingWork` pour contrôler le processus d'affichage. La méthode utilise une requête LINQ (Language Integrated Query) et <xref:System.Linq.Enumerable.ToArray%2A> pour démarrer toutes les tâches de téléchargement en même temps.  
   
  `AccessTheWebAsync` appelle ensuite `FinishOneGroupAsync` pour attendre la fin de chaque téléchargement et en afficher la longueur.  
   
@@ -464,7 +455,7 @@ End Function
 #### <a name="the-finishonegroupasync-method"></a>Méthode FinishOneGroupAsync  
  Cette méthode parcourt les tâches de téléchargement dans un groupe, en attendant chacune d’elles, en affichant la longueur du site web téléchargé et en ajoutant la longueur au total.  
   
- La première instruction dans `FinishOneGroupAsync` utilise `pendingWork` pour vous assurer que la saisie de la méthode n’interfère pas avec une opération qui est déjà dans le processus d’affichage ou qui est déjà en attente. Si une telle opération est en cours, l'opération d'entrée doit attendre son tour.  
+ La première instruction dans `FinishOneGroupAsync` utilise `pendingWork` pour vérifier que l’entrée de la méthode n’interfère pas avec une opération qui est déjà dans le processus d’affichage ou qui est déjà en train d’attendre. Si une telle opération est en cours, l'opération d'entrée doit attendre son tour.  
   
 ```vb  
 Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks As Task(Of Byte())(), grp As Char) As Task  
@@ -491,7 +482,7 @@ Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks
 End Function  
 ```  
   
- Vous pouvez exécuter cet exemple en collant les modifications dans le code dans [création de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), ou vous pouvez suivre les instructions de [téléchargement de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour télécharger l’exemple, puis exécutez le projet QueueResults.  
+ Vous pouvez exécuter cet exemple en collant les modifications dans le code indiqué dans [Génération de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), ou vous pouvez suivre les instructions données dans [Téléchargement de l’application](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour télécharger l’exemple, puis exécuter le projet QueueResults.  
   
 #### <a name="points-of-interest"></a>Points d'intérêt  
  Les lignes d'information qui commencent par un signe dièse (#) dans la sortie clarifient le fonctionnement de cet exemple.  
@@ -534,7 +525,7 @@ End Function
     TOTAL bytes returned:  915908  
     ```  
   
--   Le `pendingWork` tâche `Nothing` au début de `FinishOneGroupAsync` uniquement pour un groupe, lequel démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.  
+-   Le `pendingWork` tâche est `Nothing` au début de `FinishOneGroupAsync` uniquement pour le groupe A, ce qui a démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.  
   
 -   Les deux lignes suivantes apparaissent toujours ensemble dans la sortie. Le code n'est jamais interrompu entre le démarrage d'une opération de groupe dans `StartButton_Click` et l'affectation d'une tâche pour le groupe à `pendingWork`.  
   
@@ -545,15 +536,15 @@ End Function
   
      Une fois qu'un groupe entre `StartButton_Click`, l'opération ne termine pas une expression await tant que l'opération n'entre pas `FinishOneGroupAsync`. Par conséquent, aucune autre opération ne peut obtenir le contrôle au cours de ce segment de code.  
   
-##  <a name="BKMD_SettingUpTheExample"></a>Examen et exécution de l’exemple d’application  
+##  <a name="BKMD_SettingUpTheExample"></a> Examen et exécution de l’exemple d’application  
  Pour mieux comprendre l’exemple d’application, vous pouvez le télécharger, le créer vous-même ou passer en revue le code à la fin de cette rubrique sans implémenter l’application.  
   
 > [!NOTE]
->  Pour exécuter l’exemple comme une application de bureau Windows Presentation Foundation (WPF), vous devez disposer de Visual Studio 2012 ou plus récent et le .NET Framework 4.5 ou ultérieure, installé sur votre ordinateur.  
+>  Pour exécuter l’exemple comme une application de bureau WPF, Visual Studio version 2012, ou une version ultérieure, et .NET Framework version 4.5, ou une version ultérieure, doivent être installés sur votre ordinateur.  
   
-###  <a name="BKMK_DownloadingTheApp"></a>Téléchargement de l’application  
+###  <a name="BKMK_DownloadingTheApp"></a> Téléchargement de l’application  
   
-1.  Téléchargez le fichier compressé [Async exemples : réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571).  
+1.  Téléchargez le fichier compressé dans la rubrique [Exemples Async : la réentrance dans les applications de bureau .NET](http://go.microsoft.com/fwlink/?LinkId=266571).  
   
 2.  Décompressez le fichier que vous avez téléchargé, puis démarrez Visual Studio.  
   
@@ -561,12 +552,12 @@ End Function
   
 4.  Accédez au dossier qui contient l’exemple de code décompressé, puis ouvrez le fichier solution (.sln).  
   
-5.  Dans **l’Explorateur de solutions**, ouvrez le menu contextuel du projet que vous souhaitez exécuter, puis choisissez **définir comme StartupProject de la**.  
+5.  Dans l’**Explorateur de solutions**, ouvrez le menu contextuel du projet à modifier, puis choisissez **Définir comme StartUpProject**.  
   
 6.  Appuyez sur les touches CTRL+F5 pour générer et exécuter le projet.  
   
-###  <a name="BKMK_BuildingTheApp"></a>Création de l’application  
- La section suivante fournit le code pour générer l’exemple comme une application WPF.  
+###  <a name="BKMK_BuildingTheApp"></a> Génération de l’application  
+ La section suivante fournit le code pour générer l’exemple comme une application WPF.  
   
 ##### <a name="to-build-a-wpf-app"></a>Pour générer une application WPF  
   
@@ -580,15 +571,15 @@ End Function
   
 4.  Dans la liste des types de projets, choisissez **Application WPF**.  
   
-5.  Nommez le projet `WebsiteDownloadWPF`, puis choisissez le **OK** bouton.  
+5.  Nommez le projet `WebsiteDownloadWPF`, puis cliquez sur le bouton **OK**.  
   
-     Le nouveau projet s’affiche dans **l’Explorateur de solutions**.  
+     Le nouveau projet s’affiche dans l’**Explorateur de solutions**.  
   
 6.  Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .  
   
-     Si l’onglet n’est pas visible, ouvrez le menu contextuel pour MainWindow.xaml dans **l’Explorateur de solutions**, puis choisissez **afficher le Code**.  
+     Si l’onglet n’est pas visible, ouvrez le menu contextuel de MainWindow.xaml dans l’**Explorateur de solutions**, puis choisissez **Afficher le code**.  
   
-7.  Dans le **XAML** du MainWindow.xaml, remplacez le code par le code suivant.  
+7.  Dans la vue **XAML** de MainWindow.xaml, remplacez le code par le code suivant.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -606,11 +597,11 @@ End Function
     </Window>  
     ```  
   
-     Une fenêtre simple contenant une zone de texte et un bouton s’affiche dans le **conception** vue de MainWindow.xaml.  
+     Une fenêtre simple contenant une zone de texte et un bouton apparaît dans la vue **Design** de MainWindow.xaml.  
   
-8.  Ajoutez une référence pour <xref:System.Net.Http>.</xref:System.Net.Http>  
+8.  Ajoutez une référence pour <xref:System.Net.Http>.  
   
-9. Dans **l’Explorateur de solutions**, ouvrez le menu contextuel pour MainWindow.xaml.vb, puis choisissez **afficher le Code**.  
+9. Dans **l’Explorateur de solutions**, ouvrez le menu contextuel pour MainWindow.XAML, puis choisissez **afficher le Code**.  
   
 10. Dans MainWindow.xaml.vb, remplacez le code par le code suivant.  
   
@@ -690,11 +681,10 @@ End Function
     End Class  
     ```  
   
-11. Appuyez sur les touches CTRL + F5 pour exécuter le programme, puis choisissez le **Démarrer** plusieurs fois.  
+11. Appuyez sur les touches CTRL+F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** plusieurs fois.  
   
-12. Apportez les modifications à partir de [désactiver le bouton Démarrer](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), [Annuler et redémarrer l’opération](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), ou [exécuter plusieurs opérations et file d’attente de la sortie](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour gérer la réentrance.  
+12. Apportez les modifications indiquées dans [Désactiver le bouton Démarrer](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), [Annuler et redémarrer l’opération](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) ou [Exécuter plusieurs opérations et mettre la sortie en file d’attente](http://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pour gérer la réentrance.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : Accès Web en utilisant Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
+ [Procédure pas à pas : accès au web avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
  [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-

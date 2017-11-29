@@ -1,56 +1,60 @@
 ---
-title: "Anticr&#233;nelage avec des lignes et des courbes | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "anticrénelage"
-  - "anticrénelage, modes de lissage"
-  - "GDI+, anticrénelage"
+title: "Anticrénelage avec des lignes et des courbes"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- antialiasing
+- antialiasing [Windows Forms], smoothing modes
+- GDI+, antialiasing
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d69d635fbdd8720937cd189826c1496b8126ddef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Anticr&#233;nelage avec des lignes et des courbes
-Lorsque vous utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pour dessiner une ligne, vous fournissez le point de début et le point de fin de cette ligne, mais vous n'avez pas à préciser d'informations sur les pixels individuels.  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fonctionne en collaboration avec le logiciel du pilote d'affichage pour déterminer quels pixels activer pour afficher la ligne sur un périphérique d'affichage particulier.  
+# <a name="antialiasing-with-lines-and-curves"></a>Anticrénelage avec des lignes et des courbes
+Lorsque vous utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pour dessiner une ligne, vous fournissez le point de départ et le point de fin de la ligne, mais il est inutile de fournir des informations sur les pixels individuels sur la ligne. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]fonctionne en association avec le logiciel de pilote d’affichage pour déterminer quels pixels seront activées pour afficher la ligne sur un périphérique d’affichage particulier.  
   
-## Crénelage  
- Prenez le segment de droite rouge qui va du point \(4, 2\) au point \(16, 10\).  Supposez que le système de coordonnées a son origine dans le coin supérieur gauche et que l'unité de mesure est le pixel.  Supposez également que l'axe des abscisses \(x\) pointe vers la droite et que l'axe des ordonnées \(y\) pointe vers le bas.  L'illustration suivante représente une vue agrandie de la ligne rouge dessinée sur un arrière\-plan multicolore.  
+## <a name="aliasing"></a>Utilisation d’alias  
+ Envisagez la ligne droite rouge qui va du point (4, 2) au point (16, 10). Supposons que le système de coordonnées a son origine dans le coin supérieur gauche et que l’unité de mesure est le pixel. Supposons également que l’axe des x point vers la droite et les points de l’axe des y vers le bas. L’illustration suivante montre une vue agrandie de la ligne rouge dessinée sur un arrière-plan multicolore.  
   
- ![Ligne sans anticrénelage](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.png "AboutGdip02\_Art33")  
+ ![Ligne, sans anticrénelage](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.gif "AboutGdip02_Art33")  
   
- Les pixels rouges utilisés pour le rendu de la ligne sont opaques.  Il n'y a pas de pixels partiellement transparents dans cette ligne.  Ce type de rendu donne à la ligne un aspect d'escalier.  Cette technique qui représente une ligne comme un escalier est appelée crénelage ; l'escalier est un alias pour la ligne théorique.  
+ Les pixels rouges utilisés pour rendre la ligne sont opaques. Il n’y a aucun pixel partiellement transparent dans la ligne. Ce type de rendu donne une apparence en escalier à la ligne et la ligne ressemble escalier. Cette technique qui représente une ligne comme un escalier est appelée crénelage ; l’escalier est un alias pour la ligne théorique.  
   
-## Anticrénelage  
- Une technique plus élaborée de rendu de ligne consiste à utiliser des pixels partiellement transparents et des pixels opaques.  Les pixels sont définis comme étant de couleur rouge franche ou comme étant une fusion de rouge et de la couleur d'arrière\-plan en fonction de leur proximité par rapport à la ligne.  Ce type de rendu est appelé anticrénelage et donne une ligne plus lisse pour l'œil humain.  L'illustration suivante montre comment certains pixels sont fusionnés avec l'arrière\-plan pour produire une ligne non crénelée.  
+## <a name="antialiasing"></a>anticrénelage  
+ Une technique plus sophistiquée pour le rendu d’une ligne implique l’utilisation de pixels partiellement transparents et pixels opaques. Pixels sont définies sur rouge pur, ou un mélange de rouge et de la couleur d’arrière-plan, en fonction de leur proximité qu’ils sont à la ligne. Ce type de rendu est appelé anticrénelage et donne une ligne le œil humain perçoit plus lisse. L’illustration suivante montre comment certains pixels sont fusionnés avec l’arrière-plan pour produire une ligne non crénelé.  
   
- ![Anticrénelage d'une ligne](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.png "AboutGdip02\_Art34")  
+ ![Anticrénelage d’une ligne](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.gif "AboutGdip02_Art34")  
   
- L'anticrénelage \(ou lissage\) peut également être appliqué aux courbes.  L'illustration suivante représente une vue agrandie d'une ellipse lissée.  
+ L’anticrénelage, également appelé lissage, peut également être appliqué aux courbes. L’illustration suivante montre une vue agrandie d’une ellipse lissée.  
   
- ![Anticrénelage de courbes](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.png "AboutGdip02\_Art35")  
+ ![Anticrénelage de courbes](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.gif "AboutGdip02_Art35")  
   
- L'illustration suivante montre la même ellipse en taille réelle, sans anticrénelage et avec anticrénelage.  
+ L’illustration suivante montre la même ellipse en taille réelle, sans anticrénelage et avec anticrénelage.  
   
- ![Exemple d'anticrénelage](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02\_Art36")  
+ ![Exemple d’anticrénelage](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")  
   
- Pour dessiner des lignes et des courbes qui utilisent l'anticrénelage, créez une instance de la classe <xref:System.Drawing.Graphics> et affectez à sa propriété <xref:System.Drawing.Graphics.SmoothingMode%2A> la valeur <xref:System.Drawing.Drawing2D.SmoothingMode> ou <xref:System.Drawing.Drawing2D.SmoothingMode>.  Appelez ensuite l'une des méthodes de dessin de la même classe <xref:System.Drawing.Graphics>.  
+ Pour dessiner des lignes et des courbes qui utilisent l’anticrénelage, créez une instance de la <xref:System.Drawing.Graphics> puis définissez son <xref:System.Drawing.Graphics.SmoothingMode%2A> propriété <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> ou <xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>. Appelez ensuite l’une des méthodes de dessin de ce même <xref:System.Drawing.Graphics> classe.  
   
  [!code-csharp[LinesCurvesAndShapes#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#81)]
  [!code-vb[LinesCurvesAndShapes#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#81)]  
   
-## Voir aussi  
- <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=fullName>   
- [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [Comment : utiliser l'anticrénelage avec du texte](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>  
+ [Lignes, courbes et formes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [Guide pratique pour utiliser l‘anticrénelage avec du texte](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)

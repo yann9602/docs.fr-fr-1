@@ -1,40 +1,32 @@
 ---
-title: "Introduction aux littéraux XML dans Visual Basic2 | Documents Microsoft"
+title: "Introduction aux littéraux XML dans Visual Basic2"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 391dd14f971f91d4d128841a7ebd24981266846a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 7ac96691b5b9274f67039f36bbdbfaf8abd03705
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Introduction aux littéraux XML en Visual Basic
-Cette section fournit des informations sur la création d'arborescences XML en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+Cette section fournit des informations sur la création d'arborescences XML en [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
- Pour plus d’informations sur les résultats de requêtes LINQ comme contenu pour une arborescence XML, consultez [Construction fonctionnelle (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Pour plus d’informations sur les résultats des requêtes LINQ en tant que le contenu pour une arborescence XML, consultez [Construction fonctionnelle (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- Pour plus d’informations sur les littéraux XML en [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], consultez [vue d’ensemble de LINQ to XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Pour plus d’informations sur les littéraux XML dans [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], consultez [vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
-## <a name="creating-xml-trees"></a>Création d’arborescences XML  
- L’exemple suivant montre comment créer un <xref:System.Xml.Linq.XElement>, dans ce cas `contacts`:</xref:System.Xml.Linq.XElement>  
+## <a name="creating-xml-trees"></a>Création d'arborescences XML  
+ L'exemple suivant montre comment créer un objet <xref:System.Xml.Linq.XElement>, dans le cas présent `contacts` :  
   
 ```vb  
 Dim contacts As XElement = _  
@@ -53,7 +45,7 @@ Dim contacts As XElement = _
 ```  
   
 ### <a name="creating-an-xelement-with-simple-content"></a>Création d'un XElement avec du contenu simple  
- Vous pouvez créer un <xref:System.Xml.Linq.XElement>qui contient du contenu simple, comme suit :</xref:System.Xml.Linq.XElement>  
+ Vous pouvez créer un objet <xref:System.Xml.Linq.XElement> qui contient du contenu simple, comme suit :  
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
@@ -67,7 +59,7 @@ Console.WriteLine(n)
 ```  
   
 ### <a name="creating-an-empty-element"></a>Création d'un élément vide  
- Vous pouvez créer un vide <xref:System.Xml.Linq.XElement>, comme suit :</xref:System.Xml.Linq.XElement>  
+ Vous pouvez créer un objet <xref:System.Xml.Linq.XElement> vide comme suit :  
   
 ```vb  
 Dim n As XElement = <Customer/>  
@@ -81,7 +73,7 @@ Console.WriteLine(n)
 ```  
   
 ### <a name="using-embedded-expressions"></a>Utilisation d'expressions incorporées  
- L'une des caractéristiques importantes des littéraux XML est qu'ils autorisent la présence d'expressions incorporées. Les expressions incorporées vous permettent d’évaluer une expression et d’insérer les résultats de l’expression dans l’arborescence XML. Si l’expression correspond à un type de <xref:System.Xml.Linq.XElement>, un élément est inséré dans l’arborescence.</xref:System.Xml.Linq.XElement> Si l’expression correspond à un type de <xref:System.Xml.Linq.XAttribute>, un attribut est inséré dans l’arborescence.</xref:System.Xml.Linq.XAttribute> Vous pouvez insérer des éléments et des attributs dans l’arborescence uniquement où ils sont valides.  
+ L'une des caractéristiques importantes des littéraux XML est qu'ils autorisent la présence d'expressions incorporées. Les expressions incorporées vous permettent d'évaluer une expression et d'insérer les résultats de l'expression dans l'arborescence XML. Si l'expression est évaluée à un type de <xref:System.Xml.Linq.XElement>, un élément est inséré dans l'arborescence. Si l'expression est évaluée à un type de <xref:System.Xml.Linq.XAttribute>, un attribut est inséré dans l'arborescence. Vous pouvez insérer des éléments et des attributs dans l'arborescence uniquement où ils sont valides.  
   
  Il est important de noter que seule une expression unique peut aller dans une expression incorporée. Vous ne pouvez pas incorporer plusieurs instructions. Si une expression s'étend au-delà d'une seule ligne, vous devez utiliser le caractère de continuation de ligne.  
   

@@ -1,60 +1,58 @@
 ---
-title: "Objets Principal et Identity | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "GenericIdentity (objets)"
-  - "GenericPrincipal (objets)"
-  - "objets d'identité, à propos des objets d'identité"
-  - "objets principaux, à propos des objets principaux"
-  - "sécurité (.NET Framework), objets d'identité"
-  - "sécurité (.NET Framework), principaux"
-  - "WindowsIdentity (objets)"
-  - "WindowsPrincipal (objets)"
+title: Objets Principal et Identity
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WindowsIdentity objects
+- GenericIdentity objects
+- GenericPrincipal objects
+- identity objects, about identity objects
+- security [.NET Framework], identity objects
+- principal objects, about principal objects
+- security [.NET Framework], principals
+- WindowsPrincipal objects
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
-caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "9"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ce3c5ce3d79a36320eee6b7312518d2559509127
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Objets Principal et Identity
-Un code managé peut découvrir l'identité ou le rôle d'une entité de sécurité par le biais d'un objet [Principal](frlrfSystemSecurityPrincipalIPrincipalClassTopic) ; ce dernier contient une référence à un objet [Identity](frlrfSystemSecurityPrincipalIIdentityClassTopic).  Il peut être utile d'établir un parallèle entre les objets Identity et Principal et des concepts plus familiers tels que les comptes d'utilisateurs et de groupes.  Dans la majorité des environnements de réseau, les comptes d'utilisateurs représentent des personnes ou des programmes, tandis que les comptes de groupes représentent diverses catégories d'utilisateurs et les droits qu'ils possèdent.  De la même façon, les objets Identity de .NET Framework représentent des utilisateurs tandis que les rôles correspondent à des appartenances et à des contextes de sécurité.  Dans .NET Framework, l'objet Principal encapsule à la fois un objet Identity et un rôle. Les applications .NET Framework octroient des droits à l'entité de sécurité en fonction de son identité ou, plus fréquemment, de son appartenance à un rôle.  
+# <a name="principal-and-identity-objects"></a>Objets Principal et Identity
+Le code managé peut découvrir l’identité ou le rôle d’un principal via une <xref:System.Security.Principal.IPrincipal> objet, qui contient une référence à un <xref:System.Security.Principal.IIdentity> objet. Il peut être utile de comparer des objets identity et principal à des concepts familiers comme les comptes des utilisateurs et des groupes. Dans la plupart des environnements de réseau, les comptes d’utilisateur représentent des personnes ou des programmes, tandis que les comptes de groupe représentent des catégories d’utilisateurs et les droits qu’ils possèdent. De même, les objets identity .NET Framework représentent des utilisateurs, tandis que les rôles représentent des appartenances et des contextes de sécurité. Dans le .NET Framework, l’objet principal encapsule un objet identity et un rôle. Les applications .NET Framework accordent des droits au principal en fonction de son identité ou, plus fréquemment, de son appartenance au rôle.  
   
-## Objets Identity  
- Un objet Identity encapsule des informations sur l'utilisateur ou sur l'entité en cours de validation.  À la base, les objets Identity contiennent un nom et un type d'authentification.  Le nom peut être celui d'un utilisateur ou d'un compte Windows, tandis que le type d'authentification peut être un protocole de connexion pris en charge, tel que Kerberos V5 ou une valeur personnalisée.  Le .NET Framework définit un objet <xref:System.Security.Principal.GenericIdentity> qui peut être utilisé pour la majorité des scénarios de connexion personnalisés et un objet <xref:System.Security.Principal.WindowsIdentity> plus spécifique que vous pouvez utiliser lorsque votre application doit avoir recours à l'authentification Windows.  En outre, vous pouvez définir votre propre classe d'identité qui encapsule des informations personnalisées sur les utilisateurs.  
+## <a name="identity-objects"></a>Objets Identity  
+ L’objet identity encapsule des informations sur l’utilisateur ou l’une entité en cours de validation. Au niveau de base, les objets identity contiennent un nom et un type d’authentification. Le nom peut être un nom d’utilisateur ou le nom d’un compte Windows, tandis que le type d’authentification peut être un protocole de connexion pris en charge, tel que Kerberos V5, ou une valeur personnalisée. Le .NET Framework définit un <xref:System.Security.Principal.GenericIdentity> objet qui peut être utilisé pour la plupart des scénarios de connexion personnalisés et plus spécialisé <xref:System.Security.Principal.WindowsIdentity> objet qui peut être utilisé lorsque vous souhaitez que votre application s’appuient sur l’authentification Windows. En outre, vous pouvez définir votre propre classe d’identité qui encapsule des informations utilisateur personnalisées.  
   
- L'interface <xref:System.Security.Principal.IIdentity> définit les propriétés permettant d'accéder à un nom et à un type d'authentification, tel que Kerberos V5 ou NTLM.  Toutes les classes **Identity** implémentent l'interface **IIdentity**.  Aucune relation n'est obligatoire entre un objet **Identity** et le jeton de traitement Windows NT sous lequel un thread est actuellement exécuté.  Toutefois, si l'objet **Identity** est un objet **WindowsIdentity**, il est supposé que l'identité représente un jeton de sécurité Windows NT.  
+ Le <xref:System.Security.Principal.IIdentity> interface définit les propriétés pour accéder à un nom et un type d’authentification, telles que Kerberos V5 ou NTLM. Toutes les classes **Identity** implémentent l’interface **IIdentity**. Aucune relation n’est requise entre un objet **Identity** et le jeton de processus Windows NT sous lequel un thread est en cours d’exécution. Toutefois, si l’objet **Identity** est un objet **WindowsIdentity**, l’identité est supposée représenter un jeton de sécurité Windows NT.  
   
-## Objets Principal  
- L'objet principal représente le contexte de sécurité dans lequel le code est exécuté.  Les applications qui implémentent la sécurité basée sur les rôles accordent des droits en fonction du rôle associé à un objet Principal.  Comme les objets d'identité, le .NET Framework fournit un objet <xref:System.Security.Principal.GenericPrincipal> et un objet <xref:System.Security.Principal.WindowsPrincipal>.  Vous pouvez aussi définir des classes Principal personnalisées.  
+## <a name="principal-objects"></a>Objets Principal  
+ L’objet principal représente le contexte de sécurité dans lequel le code est exécuté. Les applications qui implémentent une sécurité basée sur les rôles accordent des droits en fonction du rôle associé à un objet principal. Comme pour les objets d’identité, le .NET Framework fournit un <xref:System.Security.Principal.GenericPrincipal> objet et un <xref:System.Security.Principal.WindowsPrincipal> objet. Vous pouvez également définir vos propres classes principal personnalisées.  
   
- L'interface <xref:System.Security.Principal.IPrincipal> définit une propriété permettant d'accéder à un objet **Identity** associé, ainsi qu'une méthode permettant de déterminer si l'utilisateur identifié par l'objet **Principal** est membre d'un rôle donné.  Toutes les classes **Principal** implémentent l'interface **IPrincipal**, de même que toutes les autres propriétés et méthodes supplémentaires requises.  Par exemple, le Common Language Runtime fournit la classe **WindowsPrincipal** qui implémente des fonctionnalités supplémentaires pour le mappage à des rôles de l'appartenance à des groupes Windows NT ou Windows 2000.  
+ Le <xref:System.Security.Principal.IPrincipal> interface définit une propriété pour accéder à un **identité** ainsi que d’une méthode permettant de déterminer si l’utilisateur identifié par l’objet le **Principal** objet est un membre d’un rôle donné. Toutes les classes **Principal** implémentent l’interface **IPrincipal** ainsi que les propriétés et méthodes supplémentaires nécessaires. Par exemple, le common language runtime fournit la classe **WindowsPrincipal** qui implémente des fonctionnalités supplémentaires pour mapper l’appartenance au groupe Windows NT ou Windows 2000 avec des rôles.  
   
- Un objet **Principal** est lié à un objet de contexte d'appel \(<xref:System.Runtime.Remoting.Messaging.CallContext>\) dans un domaine d'application \(<xref:System.AppDomain>\).  Un contexte d'appel par défaut est toujours créé avec chaque nouveau **AppDomain** et il existe donc toujours un contexte d'appel en mesure d'accepter l'objet **Principal**.  Lorsqu'un nouveau thread est créé, un objet **CallContext** est également créé pour celui\-ci.  La référence de l'objet **Principal** est automatiquement copiée du thread en cours de création vers l'objet **CallContext** du nouveau thread.  Si le runtime n'est pas en mesure de déterminer l'objet **Principal** correspondant au créateur du thread, il se conforme à la stratégie par défaut applicable à la création des objets **Principal** et **Identity**.  
+ A **Principal** objet est lié à un contexte d’appel (<xref:System.Runtime.Remoting.Messaging.CallContext>) objet dans un domaine d’application (<xref:System.AppDomain>). Un contexte d’appel par défaut est toujours créé avec chaque nouveau **AppDomain**. Un contexte d’appel est donc toujours disponible pour accepter l’objet **Principal**. Lorsqu’un nouveau thread est créé, un objet **CallContext** est également créé pour le thread. La référence de l’objet **Principal** est automatiquement copiée du thread de création dans l’objet **CallContext** du nouveau thread. Si le runtime ne peut pas déterminer quel objet **Principal** appartient au créateur du thread, il suit la stratégie par défaut de création d’un objet **Principal** et **Identity**.  
   
- Une stratégie paramétrable, propre au domaine d'application, définit les règles qui déterminent le type d'objet **Principal** à associer à un nouveau domaine d'application.  Si la stratégie de sécurité le permet, le runtime peut créer des objets **Principal** et **Identity** qui reflètent le jeton de système d'exploitation associé au thread d'exécution en cours.  Par défaut, le runtime utilise des objets **Principal** et **Identity** qui représentent des utilisateurs non authentifiés.  Ces objets **Principal** et **Identity** par défaut ne sont pas créés tant que le code ne tente pas d'y accéder.  
+ Une stratégie spécifique de domaine d’application configurable définit les règles permettant de déterminer le type d’objet **Principal** à associer à un nouveau domaine d’application. Si la stratégie de sécurité le permet, le runtime peut créer des objets **Principal** et **Identity** qui correspondent au jeton de système d’exploitation associé au thread en cours d’exécution. Par défaut, le runtime utilise des objets **Principal** et **Identity** qui représentent des utilisateurs non authentifiés. Le runtime ne crée pas ces objets **Principal** et **Identity** par défaut tant que le code ne tente pas d’y accéder.  
   
- Le code de confiance qui crée un domaine d'application peut définir la stratégie du domaine d'application qui gouverne la construction des objets **Principal** et **Identity** par défaut.  Cette stratégie spécifique au domaine d'application est applicable à tous les threads d'exécution dudit domaine d'application.  Un hôte de confiance non managé peut par nature définir cette stratégie. Toutefois, le code managé qui la définit doit disposer de la <xref:System.Security.Permissions.SecurityPermission?displayProperty=fullName> pour contrôler la stratégie de domaine.  
+ Le code approuvé créant un domaine d’application peut définir la stratégie de domaine d’application qui régit la construction des objets **Principal** et **Identity** par défaut. Cette stratégie spécifique du domaine d’application s’applique à tous les threads d’exécution dans ce domaine d’application. Un hôte de confiance non managé possède la possibilité de définir cette stratégie de manière intrinsèque, mais le code managé qui définit cette stratégie doit avoir le <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> pour contrôler la stratégie de domaine.  
   
- Lors de la transmission d'un objet **Principal** vers plusieurs domaines d'application au cours d'un même traitement \(et donc sur le même ordinateur\), l'infrastructure de communication à distance copie une référence à l'objet **Principal** associé au contexte de l'appelant dans le contexte de l'appelé.  
+ Lors de la transmission d’un objet **Principal** entre des domaines d’application, mais dans le même processus (et donc sur le même ordinateur), l’infrastructure distante copie une référence à l’objet **Principal** associé au contexte de l’appelant dans le contexte de l’appelé.  
   
-## Voir aussi  
- [Comment : créer un objet WindowsPrincipal](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)   
- [Comment : créer des objets GenericPrincipal et GenericIdentity](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)   
- [Remplacement d'un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md)   
- [Emprunt et restauration d'identité](../../../docs/standard/security/impersonating-and-reverting.md)   
- [Sécurité basée sur les rôles](../../../docs/standard/security/role-based-security.md)   
+## <a name="see-also"></a>Voir aussi  
+ [Comment : créer un objet WindowsPrincipal](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)  
+ [Comment : créer des objets GenericPrincipal et GenericIdentity](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)  
+ [Remplacement d’un objet Principal](../../../docs/standard/security/replacing-a-principal-object.md)  
+ [Emprunt d’identité et restauration](../../../docs/standard/security/impersonating-and-reverting.md)  
+ [Sécurité basée sur les rôles](../../../docs/standard/security/role-based-security.md)  
  [Concepts fondamentaux sur la sécurité](../../../docs/standard/security/key-security-concepts.md)

@@ -1,72 +1,78 @@
 ---
-title: "Mise &#224; jour de sources de donn&#233;es avec des DataAdapters | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Mise à jour des sources de données avec les DataAdapter"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5c0e032c7f4483648826ed8c03a8bdaa0ce5e4a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Mise &#224; jour de sources de donn&#233;es avec des DataAdapters
-La méthode `Update` de l'objet <xref:System.Data.Common.DataAdapter> est appelée pour répercuter les modifications d'un objet <xref:System.Data.DataSet> dans la source de données.  La méthode `Update`, comme la méthode `Fill`, prend comme arguments une instance d'un `DataSet` et un objet <xref:System.Data.DataTable> optionnel ou un nom de `DataTable`.  L'instance `DataSet` est le `DataSet` qui contient les modifications apportées et le `DataTable` identifie la table de laquelle les modifications doivent être récupérées.  Si aucun `DataTable` n'est spécifié, le premier `DataTable` du `DataSet` est utilisé.  
+# <a name="updating-data-sources-with-dataadapters"></a>Mise à jour des sources de données avec les DataAdapter
+La méthode `Update` de l'objet <xref:System.Data.Common.DataAdapter> est appelée pour répercuter les modifications d'un objet <xref:System.Data.DataSet> dans la source de données. La méthode `Update`, comme la méthode `Fill`, prend comme arguments une instance d'un `DataSet` et un objet <xref:System.Data.DataTable> optionnel ou un nom de `DataTable`. L'instance `DataSet` est le `DataSet` qui contient les modifications apportées et le `DataTable` identifie la table de laquelle les modifications doivent être récupérées. Si aucun `DataTable` n'est spécifié, le premier `DataTable` du `DataSet` est utilisé.  
   
- Lorsque vous appelez la méthode `Update`, le `DataAdapter` analyse les modifications apportées et exécute la commande appropriée \(INSERT, UPDATE ou DELETE\).  Lorsque le `DataAdapter` rencontre une modification apportée à un objet <xref:System.Data.DataRow>, il utilise la propriété <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, ou <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> pour traiter la modification.  Cela vous permet d'optimiser les performances de votre application ADO.NET en spécifiant la syntaxe de commande au moment du design et, si possible, par le biais de l'utilisation de procédures stockées.  Vous devez explicitement définir les commandes avant d'appeler la méthode `Update`.  Si la méthode `Update` est appelée et si la commande appropriée n'existe pas pour une mise à jour particulière \(par exemple, pas de `DeleteCommand` pour les lignes supprimées\), une exception est levée.  
-  
-> [!NOTE]
->  Si vous utilisez des procédures stockées SQL Server pour modifier ou supprimer des données à l'aide de `DataAdapter`, assurez\-vous que vous n'utilisez pas SET NOCOUNT ON dans la définition de procédure stockée.  En effet, le nombre de lignes affectées retourné serait alors la valeur zéro, ce que `DataAdapter` interprète comme un conflit d'accès concurrentiel.  Dans ce cas, l'exception <xref:System.Data.DBConcurrencyException> est levée.  
-  
- Des paramètres de commande peuvent être utilisés pour spécifier les valeurs d'entrée et de sortie d'une instruction SQL ou d'une procédure stockée pour chaque ligne modifiée dans un `DataSet`.  Pour plus d'informations, consultez [Paramètres de DataAdapter](../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
+ Lorsque vous appelez la méthode `Update`, le `DataAdapter` analyse les modifications apportées et exécute la commande appropriée (INSERT, UPDATE ou DELETE). Lorsque le `DataAdapter` rencontre une modification apportée à un objet <xref:System.Data.DataRow>, il utilise la propriété <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, ou <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> pour traiter la modification. Cela vous permet d'optimiser les performances de votre application ADO.NET en spécifiant la syntaxe de commande au moment du design et, si possible, par le biais de l'utilisation de procédures stockées. Vous devez explicitement définir les commandes avant d'appeler la méthode `Update`. Si la méthode `Update` est appelée et si la commande appropriée n'existe pas pour une mise à jour particulière (par exemple, pas de `DeleteCommand` pour les lignes supprimées), une exception est levée.  
   
 > [!NOTE]
->  Il est important de comprendre la différence entre la suppression d'une ligne dans un objet <xref:System.Data.DataTable> et la suppression de la ligne.  Lorsque vous appelez la méthode `Remove` ou `RemoveAt`, la ligne est immédiatement supprimée.  Aucune ligne correspondante dans la source de données principale ne sera affectée si vous passez ensuite le `DataTable` ou le `DataSet` à un `DataAdapter` et appelez la méthode `Update`.  Lorsque vous utilisez la méthode `Delete`, la ligne reste dans le `DataTable` et est marquée pour suppression.  Si vous passez ensuite le `DataTable` ou le `DataSet` à un `DataAdapter` et appelez la méthode `Update`, la ligne correspondante dans la source de données principale est supprimée.  
+>  Si vous utilisez des procédures stockées SQL Server pour modifier ou supprimer des données à l'aide de `DataAdapter`, assurez-vous que vous n'utilisez pas SET NOCOUNT ON dans la définition de procédure stockée. En effet, le nombre de lignes affectées retourné serait alors la valeur zéro, ce que `DataAdapter` interprète comme un conflit d'accès concurrentiel. Dans ce cas, l'exception <xref:System.Data.DBConcurrencyException> est levée.  
   
- Si votre `DataTable` est mappé à une table de base de données unique ou est généré par celle\-ci, vous pouvez tirer parti de l'objet <xref:System.Data.Common.DbCommandBuilder> pour générer automatiquement les objets `DeleteCommand`, `InsertCommand` et `UpdateCommand` du `DataAdapter`.  Pour plus d'informations, consultez [Génération de commandes à l'aide de CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md).  
+ Des paramètres de commande peuvent être utilisés pour spécifier les valeurs d'entrée et de sortie d'une instruction SQL ou d'une procédure stockée pour chaque ligne modifiée dans un `DataSet`. Pour plus d’informations, consultez [paramètres DataAdapter](../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
   
-## Utilisation d'UpdatedRowSource pour mapper des valeurs à un DataSet  
- Vous pouvez contrôler la façon dont les valeurs retournées depuis la source de données sont de nouveau mappées au `DataTable` suite à un appel de la méthode Update d'un `DataAdapter`, en utilisant la propriété <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> d'un objet <xref:System.Data.Common.DbCommand>.  En affectant l'une des valeurs d'énumération <xref:System.Data.UpdateRowSource> à la propriété `UpdatedRowSource`, vous pouvez contrôler si les paramètres de sortie retournés par les commandes `DataAdapter` sont ignorés ou appliqués à la ligne modifiée dans le `DataSet`.  Vous pouvez aussi spécifier si la première ligne retournée \(si elle existe\) doit être appliquée à la ligne modifiée dans le `DataTable`.  
+> [!NOTE]
+>  Il est important de comprendre la différence entre la suppression d'une ligne dans un objet <xref:System.Data.DataTable> et la suppression de la ligne. Lorsque vous appelez la méthode `Remove` ou `RemoveAt`, la ligne est immédiatement supprimée. Aucune ligne correspondante dans la source de données principale ne sera affectée si vous passez ensuite le `DataTable` ou le `DataSet` à un `DataAdapter` et appelez la méthode `Update`. Lorsque vous utilisez la méthode `Delete`, la ligne reste dans le `DataTable` et est marquée pour suppression. Si vous passez ensuite le `DataTable` ou le `DataSet` à un `DataAdapter` et appelez la méthode `Update`, la ligne correspondante dans la source de données principale est supprimée.  
+  
+ Si votre `DataTable` est mappé à une table de base de données unique ou est généré par celle-ci, vous pouvez tirer parti de l'objet <xref:System.Data.Common.DbCommandBuilder> pour générer automatiquement les objets `DeleteCommand`, `InsertCommand` et `UpdateCommand` du `DataAdapter`. Pour plus d’informations, consultez [génération de commandes avec CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md).  
+  
+## <a name="using-updatedrowsource-to-map-values-to-a-dataset"></a>Utilisation d'UpdatedRowSource pour mapper des valeurs à un DataSet  
+ Vous pouvez contrôler la façon dont les valeurs retournées depuis la source de données sont de nouveau mappées au `DataTable` suite à un appel de la méthode Update d'un `DataAdapter`, en utilisant la propriété <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> d'un objet <xref:System.Data.Common.DbCommand>. En affectant l'une des valeurs d'énumération `UpdatedRowSource` à la propriété <xref:System.Data.UpdateRowSource>, vous pouvez contrôler si les paramètres de sortie retournés par les commandes `DataAdapter` sont ignorés ou appliqués à la ligne modifiée dans le `DataSet`. Vous pouvez aussi spécifier si la première ligne retournée (si elle existe) doit être appliquée à la ligne modifiée dans le `DataTable`.  
   
  Le tableau suivant décrit les différentes valeurs de l'énumération `UpdateRowSource` et la façon dont elles affectent le comportement d'une commande utilisée avec un `DataAdapter`.  
   
 |Énumération UpdatedRowSource|Description|  
 |----------------------------------|-----------------|  
-|<xref:System.Data.UpdateRowSource>|Les paramètres de sortie et la première ligne d'un jeu de résultats retourné peuvent être mappés à la ligne modifiée dans le `DataSet`.|  
-|<xref:System.Data.UpdateRowSource>|Seules les données de la première ligne d'un jeu de résultats retourné peuvent être mappées à la ligne modifiée dans le `DataSet`.|  
-|<xref:System.Data.UpdateRowSource>|Les paramètres de sortie ou les lignes d'un jeu de résultats retourné sont ignorés.|  
-|<xref:System.Data.UpdateRowSource>|Seuls les paramètres de sortie peuvent être mappés à la ligne modifiée dans le `DataSet`.|  
+|<xref:System.Data.UpdateRowSource.Both>|Les paramètres de sortie et la première ligne d'un jeu de résultats retourné peuvent être mappés à la ligne modifiée dans le `DataSet`.|  
+|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Seules les données de la première ligne d'un jeu de résultats retourné peuvent être mappées à la ligne modifiée dans le `DataSet`.|  
+|<xref:System.Data.UpdateRowSource.None>|Les paramètres de sortie ou les lignes d'un jeu de résultats retourné sont ignorés.|  
+|<xref:System.Data.UpdateRowSource.OutputParameters>|Seuls les paramètres de sortie peuvent être mappés à la ligne modifiée dans le `DataSet`.|  
   
- La méthode `Update` répercute vos modifications dans la source de données, cependant d'autres clients peuvent avoir modifié les données au niveau de la source depuis la dernière fois où vous avez rempli le `DataSet`.  Pour actualiser votre `DataSet` avec des données en cours, utilisez le `DataAdapter` et la méthode `Fill`.  De nouvelles lignes seront ajoutées à la table et les informations mises à jour seront incorporées dans les lignes existantes.  La méthode `Fill` détermine si une nouvelle ligne sera ajoutée ou si une ligne existante sera mise à jour en se basant sur les valeurs de clé primaire des lignes du `DataSet` et des lignes retournées par `SelectCommand`.  Si une valeur de clé primaire d'une ligne du `DataSet` correspond à celle d'une ligne des résultats retournés par `SelectCommand`, la méthode `Fill` met à jour la ligne existante en y insérant les informations de la ligne retournée par `SelectCommand` et affecte la valeur `Unchanged` à la propriété <xref:System.Data.DataRow.RowState%2A>.  Si la valeur de clé primaire d'une ligne retournée par `SelectCommand` n'a pas de correspondance dans les lignes du `DataSet`, la méthode `Fill` ajoute une nouvelle ligne avec un `RowState` ayant la valeur `Unchanged`.  
+ La méthode `Update` répercute vos modifications dans la source de données, cependant d'autres clients peuvent avoir modifié les données au niveau de la source depuis la dernière fois où vous avez rempli le `DataSet`. Pour actualiser votre `DataSet` avec des données en cours, utilisez le `DataAdapter` et la méthode `Fill`. De nouvelles lignes seront ajoutées à la table et les informations mises à jour seront incorporées dans les lignes existantes. La méthode `Fill` détermine si une nouvelle ligne sera ajoutée ou si une ligne existante sera mise à jour en se basant sur les valeurs de clé primaire des lignes du `DataSet` et des lignes retournées par `SelectCommand`. Si une valeur de clé primaire d'une ligne du `Fill` correspond à celle d'une ligne des résultats retournés par `DataSet`, la méthode `SelectCommand` met à jour la ligne existante en y insérant les informations de la ligne retournée par `SelectCommand` et affecte la valeur <xref:System.Data.DataRow.RowState%2A> à la propriété `Unchanged`. Si la valeur de clé primaire d'une ligne retournée par `SelectCommand` n'a pas de correspondance dans les lignes du `DataSet`, la méthode `Fill` ajoute une nouvelle ligne avec un `RowState` ayant la valeur `Unchanged`.  
   
 > [!NOTE]
->  Si `SelectCommand` retourne les résultats d'un OUTER JOIN, le `DataAdapter` ne définit pas la valeur `PrimaryKey` du `DataTable` résultant.  Vous devez définir vous\-même la `PrimaryKey` pour garantir une résolution correcte des lignes dupliquées.  Pour plus d'informations, consultez [Définition des clés primaires](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
+>  Si `SelectCommand` retourne les résultats d'un OUTER JOIN, le `DataAdapter` ne définit pas la valeur `PrimaryKey` du `DataTable` résultant. Vous devez définir vous-même la `PrimaryKey` pour garantir une résolution correcte des lignes dupliquées. Pour plus d’informations, consultez [définition des clés primaires](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
   
- Pour gérer les exceptions qui peuvent se produire suite à l'appel de la méthode `Update`, vous pouvez utiliser l'événement `RowUpdated` pour répondre aux erreurs de mise à jour des lignes \(voir [Gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)\). Vous pouvez aussi affecter la valeur `true` à `DataAdapter.ContinueUpdateOnError` avant d'appeler `Update` et répondre aux informations d'erreur stockées dans la propriété `RowError` d'une ligne particulière lorsque la mise à jour est terminée \(voir [Informations sur les erreurs de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)\).  
+ Pour gérer les exceptions qui peuvent se produire lors de l’appel le `Update` (méthode), vous pouvez utiliser la `RowUpdated` événement pour répondre aux erreurs de mise à jour de ligne qu’ils ont lieu (consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)), ou vous pouvez définir `DataAdapter.ContinueUpdateOnError` à `true` avant d’appeler `Update`et répondre aux informations d’erreur stockées dans le `RowError` propriété d’une ligne particulière lors de la mise à jour est terminée (consultez [informations d’erreur de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)).  
   
- **Remarque** L'appel de `AcceptChanges` sur le `DataSet`, le `DataTable` ou le `DataRow` provoquera la substitution de toutes les valeurs `Original` d'un `DataRow` par les valeurs `Current` du `DataRow`.  Si les valeurs de champ qui identifient la ligne comme étant unique ont été modifiées, après l'appel de `AcceptChanges`, les valeurs `Original` ne correspondront plus aux valeurs de la source de données.  `AcceptChanges` est appelé automatiquement pour chaque ligne au cours de l'appel de la méthode Update d'un `DataAdapter`.  Vous pouvez conserver les valeurs d'origine au cours d'un appel de la méthode Update en commençant par affecter la valeur false à la propriété `AcceptChangesDuringUpdate` du `DataAdapter`, ou en créant un gestionnaire d'événements pour l'événement `RowUpdated` et en affectant la valeur <xref:System.Data.UpdateStatus> à <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A>.  Pour plus d’informations, consultez [Fusion du contenu d'un DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md) et [Gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ **Remarque** appel `AcceptChanges` sur la `DataSet`, `DataTable`, ou `DataRow` tous les `Original` les valeurs pour un `DataRow` soit remplacée par la `Current` les valeurs pour le `DataRow`. Si les valeurs de champ qui identifient la ligne comme étant unique ont été modifiées, après l'appel de `AcceptChanges`, les valeurs `Original` ne correspondront plus aux valeurs de la source de données. `AcceptChanges` est appelé automatiquement pour chaque ligne au cours de l'appel de la méthode Update d'un `DataAdapter`. Vous pouvez conserver les valeurs d'origine au cours d'un appel de la méthode Update en commençant par affecter la valeur false à la propriété `AcceptChangesDuringUpdate` du `DataAdapter`, ou en créant un gestionnaire d'événements pour l'événement `RowUpdated` et en affectant la valeur <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> à <xref:System.Data.UpdateStatus.SkipCurrentRow>. Pour plus d’informations, consultez [la fusion de contenu d’un DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md) et [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
-## Exemple  
- Les exemples suivants montrent comment exécuter des mises à jour de lignes modifiées en définissant de manière explicite le `UpdateCommand` d'un `DataAdapter` et en appelant sa méthode `Update` .  Notez que le paramètre spécifié dans la clause WHERE de l'instruction UPDATE est défini pour utiliser la valeur `Original` du `SourceColumn`.  Cela est important car la valeur `Current` peut avoir été modifiée et ne pas correspondre à la valeur dans la source de données.  La valeur `Original` est la valeur qui a été utilisée pour remplir le `DataTable` à partir de la source de données.  
+## <a name="example"></a>Exemple  
+ Les exemples suivants montrent comment effectuer des mises à jour des lignes modifiées en définissant explicitement le `UpdateCommand` d’un `DataAdapter` et en appelant sa `Update` (méthode). Notez que le paramètre spécifié dans la clause WHERE de l'instruction UPDATE est défini pour utiliser la valeur `Original` du `SourceColumn`. Cela est important car la valeur `Current` peut avoir été modifiée et ne pas correspondre à la valeur dans la source de données. La valeur `Original` est la valeur qui a été utilisée pour remplir le `DataTable` à partir de la source de données.  
   
  [!code-csharp[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/VB/source.vb#1)]  
   
-## Colonnes AutoIncrement  
- Si les tables de votre source de données ont des colonnes à incrémentation automatique, vous pouvez remplir les colonnes de votre `DataSet` soit en retournant la valeur d'auto\-incrémentation comme paramètre de sortie d'une procédure stockée et en la mappant à une colonne dans une table, soit en utilisant l'événement `RowUpdated` du `DataAdapter` pour exécuter une instruction SELECT supplémentaire.  Pour plus d'informations et pour obtenir un exemple, consultez [Extraction des valeurs de champs Identité ou NuméroAuto](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).  
+## <a name="autoincrement-columns"></a>Colonnes AutoIncrement  
+ Si les tables de votre source de données ont des colonnes à incrémentation automatique, vous pouvez remplir les colonnes de votre `DataSet` soit en retournant la valeur d'auto-incrémentation comme paramètre de sortie d'une procédure stockée et en la mappant à une colonne dans une table, soit en utilisant l'événement `RowUpdated` du `DataAdapter` pour exécuter une instruction SELECT supplémentaire. Pour plus d’informations et obtenir un exemple, consultez [la récupération des valeurs d’identité ou NuméroAuto](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).  
   
-## Ordre des insertions, mises à jour et suppressions  
- Dans de nombreuses circonstances, l'ordre dans lequel les modifications apportées dans le `DataSet` sont transmises à la source de données est important.  Par exemple, si une valeur de clé primaire d'une ligne existante est mise à jour et qu'une nouvelle ligne est ajoutée avec la nouvelle valeur de clé primaire en tant que clé primaire, il est important de traiter la mise à jour avant l'insertion.  
+## <a name="ordering-of-inserts-updates-and-deletes"></a>Ordre des insertions, mises à jour et suppressions  
+ Dans de nombreuses circonstances, l'ordre dans lequel les modifications apportées dans le `DataSet` sont transmises à la source de données est important. Par exemple, si une valeur de clé primaire d'une ligne existante est mise à jour et qu'une nouvelle ligne est ajoutée avec la nouvelle valeur de clé primaire en tant que clé primaire, il est important de traiter la mise à jour avant l'insertion.  
   
- Vous pouvez utiliser la méthode `Select` du `DataTable` pour retourner un tableau `DataRow` qui fait uniquement référence à des lignes ayant un `RowState` particulier.  Vous pouvez ensuite passer le tableau `DataRow` retourné à la méthode `Update` du `DataAdapter` pour traiter les lignes modifiées.  En spécifiant un sous\-ensemble des lignes à mettre à jour, vous pouvez contrôler l'ordre dans lequel les insertions, mises à jour et suppressions sont traitées.  
+ Vous pouvez utiliser la méthode `Select` du `DataTable` pour retourner un tableau `DataRow` qui fait uniquement référence à des lignes ayant un `RowState` particulier. Vous pouvez ensuite passer le tableau `DataRow` retourné à la méthode `Update` du `DataAdapter` pour traiter les lignes modifiées. En spécifiant un sous-ensemble des lignes à mettre à jour, vous pouvez contrôler l'ordre dans lequel les insertions, mises à jour et suppressions sont traitées.  
   
-## Exemple  
+## <a name="example"></a>Exemple  
  Le code suivant garantit, par exemple, que seront d'abord traitées les lignes supprimées de la table puis les lignes mises à jour et enfin les lignes insérées.  
   
 ```vb  
@@ -99,14 +105,14 @@ adapter.Update(table.Select(null, null,
 adapter.Update(table.Select(null, null, DataViewRowState.Added));  
 ```  
   
-## Utiliser un DataAdapter pour récupérer et mettre à jour des données  
+## <a name="use-a-dataadapter-to-retrieve-and-update-data"></a>Utiliser un DataAdapter pour récupérer et mettre à jour des données  
  Vous pouvez utiliser un DataAdapter pour récupérer et mettre à jour les données.  
   
--   Cet exemple utilise DataAdapter.AcceptChangesDuringFill pour cloner les données dans la base de données.  Si la propriété a la valeur False, AcceptChanges n'est pas appelé lors du remplissage de la table, et les lignes récemment ajoutées sont traitées comme des lignes insérées.  Ainsi, l'exemple utilise ces lignes pour insérer de nouvelles lignes dans la base de données.  
+-   Cet exemple utilise DataAdapter.AcceptChangesDuringFill pour cloner les données dans la base de données. Si la propriété a la valeur False, AcceptChanges n'est pas appelé lors du remplissage de la table, et les lignes récemment ajoutées sont traitées comme des lignes insérées. Ainsi, l'exemple utilise ces lignes pour insérer de nouvelles lignes dans la base de données.  
   
 -   Cet exemple utilise DataAdapter.TableMappings pour définir le mappage entre la table source et DataTable.  
   
--   Cet exemple utilise DataAdapter.FillLoadOption pour déterminer comment l'adaptateur remplit DataTable à partir de DbDataReader.  Lorsque vous créez un DataTable, vous pouvez uniquement écrire les données de la base de données dans la version actuelle ou la version d'origine en définissant la propriété comme LoadOption.Upsert ou LoadOption.PreserveChanges.  
+-   Cet exemple utilise DataAdapter.FillLoadOption pour déterminer comment l'adaptateur remplit DataTable à partir de DbDataReader. Lorsque vous créez un DataTable, vous pouvez uniquement écrire les données de la base de données dans la version actuelle ou la version d'origine en définissant la propriété comme LoadOption.Upsert ou LoadOption.PreserveChanges.  
   
 -   L'exemple met également à jour la table à l'aide de DbDataAdapter.UpdateBatchSize pour effectuer des opérations par lots.  
   
@@ -132,7 +138,7 @@ CREATE TABLE [dbo].[Course]([CourseID] [nvarchar](10) NOT NULL,
 [Title] [nvarchar](100) NOT NULL,  
 [Credits] [int] NOT NULL,  
 [DepartmentID] [int] NOT NULL,  
- CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED   
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED  
 (  
 [CourseID] ASC,  
 [Year] ASC  
@@ -149,7 +155,7 @@ CREATE TABLE [dbo].[Department]([DepartmentID] [int] IDENTITY(1,1) NOT NULL,
 [Budget] [money] NOT NULL,  
 [StartDate] [datetime] NOT NULL,  
 [Administrator] [int] NULL,  
- CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED   
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED  
 (  
 [DepartmentID] ASC  
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]  
@@ -176,7 +182,7 @@ ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
 GO  
 ```  
   
- Des projets C\# et Visual Basic avec cet exemple de code se trouvent sur [Exemples de code pour les développeurs](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D).  
+ Les projets c# et Visual Basic avec cet exemple de code se trouvent sur [exemples de Code pour développeurs](http://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D).  
   
 ```  
 using System;  
@@ -372,10 +378,10 @@ class Program {
 }  
 ```  
   
-## Voir aussi  
- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [États et versions de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)   
- [AcceptChanges et RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)   
- [Fusion du contenu d'un DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)   
- [Extraction des valeurs de champs Identité ou NuméroAuto](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)   
- [Fournisseurs managés ADO.NET et Centre de développement de DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Voir aussi  
+ [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [État des lignes et des Versions de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
+ [AcceptChanges et RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
+ [Fusion de contenu de DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)  
+ [La récupération des valeurs d’identité ou NuméroAuto](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
+ [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

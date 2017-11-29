@@ -1,56 +1,75 @@
 ---
-title: "Short Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Short"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "numbers, whole"
-  - "whole numbers"
-  - "integral data types"
-  - "integer numbers"
-  - "numbers, integer"
-  - "integers, data types"
-  - "integers, types"
-  - "data types [Visual Basic], integral"
-  - "S literal type character"
-  - "Short data type"
-  - "literal type characters, S"
+title: "Short, type de données (Visual Basic)"
+ms.date: 04/20/2017
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+author: rpetrusha
+ms.author: ronpet
+f1_keywords: vb.Short
+helpviewer_keywords:
+- numbers [Visual Basic], whole
+- whole numbers
+- integral data types [Visual Basic]
+- integer numbers
+- numbers [Visual Basic], integer
+- integers [Visual Basic], data types
+- integers [Visual Basic], types
+- data types [Visual Basic], integral
+- S literal type character [Visual Basic]
+- Short data type
+- literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+ms.openlocfilehash: fef948debed69cf9fb7b0e6bb65eb0ddbe497a92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Short Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Contient des entiers 16 bits \(2 octets\) signés dont la valeur est comprise entre \-32,768 et 32,767.  
+# <a name="short-data-type-visual-basic"></a>Type de données short (Visual Basic)
+Contient des entiers 16 bits (2 octets) de valeurs comprises entre-32 768 à 32 767 signés.  
   
-## Notes  
- Utilisez le type de données `Short` pour contenir des valeurs entières qui ne nécessitent pas la largeur complète des données de type `Integer`.  Dans certains cas, le Common Language Runtime peut comprimer les variables `Short` ensemble et d'enregistrer la consommation de mémoire.  
+## <a name="remarks"></a>Remarques  
+ Utilisez le `Short` type de données pour contenir des valeurs entières qui ne nécessitent pas la largeur totale des données de `Integer`. Dans certains cas, le common language runtime peut pack votre `Short` variables étroitement ensemble et d’enregistrer la consommation de mémoire.  
   
  La valeur par défaut de `Short` est 0.  
   
-## Conseils de programmation  
+## <a name="literal-assignments"></a>Attributions de littéral
+
+Vous pouvez déclarer et initialiser une `Short` variable en lui assignant un décimal littéral, un littéral hexadécimal, un littéral octal, ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage de `Short` (autrement dit, s’il est inférieur à <xref:System.Int16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.Int16.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
+
+Dans l’exemple suivant, les entiers égal à 1,034 sont représentées sous forme de nombre décimal, hexadécimal, et les littéraux binaires sont converties implicitement à partir [entier](integer-data-type.md) à `Short` valeurs.
+
+[!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Short)]
+
+> [!NOTE]
+> Vous utilisez le préfixe `&h` ou `&H` pour désigner un littéral hexadécimal, le préfixe `&b` ou `&B` pour désigner un littéral binaire et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
+
+À partir de Visual Basic 2017, vous pouvez également utiliser le caractère de soulignement, `_`, comme un séparateur de chiffres pour améliorer la lisibilité, comme l’exemple suivant montre le.
+
+[!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
+
+Littéraux numériques peuvent également inclure le `S` [caractère de type](../../programming-guide\language-features\data-types/type-characters.md) pour désigner le `Short` type de données, comme le montre l’exemple suivant.
+
+```vb
+Dim number = &H0326S
+```
+
+## <a name="programming-tips"></a>Conseils de programmation
+
+-   **Étendues.** Le `Short` type de données s’étend à `Integer`, `Long`, `Decimal`, `Single`, ou `Double`. Cela signifie que vous pouvez convertir `Short` en l'un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=nameWithType>.  
   
--   **Extension.** Le type de données `Short` s'étend à `Integer`, `Long`, `Decimal`, `Single`, ou `Double`.  Ceci signifie que vous pouvez convertir `Short` en un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=fullName>.  
+-   **Caractères de type.** L'ajout du caractère de type littéral `S` à un littéral force ce dernier en type de données `Short`. `Short`n’a aucun caractère de type d’identificateur.  
   
--   **Caractères de type.** L'ajout du caractère de type de littéral `S` à un littéral force ce dernier en un type de données `Short`.  `Short` n'a aucun caractère de type identificateur.  
+-   **Type .NET Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int16?displayProperty=nameWithType>.  
   
--   **Type Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int16?displayProperty=fullName>.  
-  
-## Voir aussi  
- <xref:System.Int16?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Résumé de la conversion](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Integer Data Type](../../../visual-basic/language-reference/data-types/integer-data-type.md)   
- [Long Data Type](../../../visual-basic/language-reference/data-types/long-data-type.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>Voir aussi
+
+ <xref:System.Int16?displayProperty=nameWithType>  
+ [Types de données](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [Integer (type de données)](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [Long (type de données)](../../../visual-basic/language-reference/data-types/long-data-type.md)  
+ [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

@@ -1,35 +1,33 @@
 ---
-title: "&#39;&lt;typename&gt;&#39; is a type and cannot be used as an expression | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30108"
-  - "vbc30108"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30108"
+title: "&#39; &lt;typename&gt;&#39; est un type et ne peut pas être utilisé en tant qu’expression"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30108
+- vbc30108
+helpviewer_keywords: BC30108
 ms.assetid: 7931361d-78e2-40ca-ac69-e3374273b248
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2cffc528055b78fccb9953ee781dbec0af416002
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# &#39;&lt;typename&gt;&#39; is a type and cannot be used as an expression
-[!INCLUDE[vs2017banner](../../../visual-basic/includes/vs2017banner.md)]
-
-Un nom de type apparaît lorsqu'une expression est requise.  Une expression doit être constituée d'une combinaison de variables, de constantes, de littéraux, de propriétés et d'appels de procédure `Function`.  
+# <a name="39lttypenamegt39-is-a-type-and-cannot-be-used-as-an-expression"></a>&#39; &lt;typename&gt;&#39; est un type et ne peut pas être utilisé en tant qu’expression
+Un nom de type se produit là où une expression est requise. Une expression doit se composer d’une combinaison de variables, de constantes, de littéraux, de propriétés et d’appels de procédure `Function` .  
   
- **ID d'erreur :** BC30108  
+ **ID d’erreur :** BC30108  
   
-### Pour corriger cette erreur  
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
--   Supprimez le nom de type et construisez l'expression à l'aide d'éléments valides.  
+-   Supprimez le nom de type et construisez l’expression à l’aide d’éléments valides.  
   
-## Voir aussi  
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>Voir aussi  
+ [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

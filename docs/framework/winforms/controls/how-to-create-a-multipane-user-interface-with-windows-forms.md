@@ -1,42 +1,46 @@
 ---
-title: "Comment&#160;: cr&#233;er une interface utilisateur &#224; plusieurs volets &#224; l&#39;aide des Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ListView (contrôle Windows Forms), exemples"
-  - "Panel (contrôle Windows Forms), exemples"
-  - "RichTextBox (contrôle Windows Forms), exemples"
-  - "SplitContainer (contrôle Windows Forms), exemples"
-  - "Splitter (contrôle Windows Forms), exemples"
-  - "TreeView (contrôle Windows Forms), exemples"
+title: "Comment : créer une interface utilisateur à plusieurs volets à l'aide des Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- SplitContainer control [Windows Forms], examples
+- ListView control [Windows Forms], examples
+- RichTextBox control [Windows Forms], examples
+- Panel control [Windows Forms], examples
+- TreeView control [Windows Forms], examples
+- Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6db621912e76d24b05c8dcdca7f1d3f4e62c2838
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: cr&#233;er une interface utilisateur &#224; plusieurs volets &#224; l&#39;aide des Windows Forms
-Dans la procédure suivante, vous créerez une interface utilisateur à plusieurs volets qui est semblable à celle qui est utilisée dans Microsoft Outlook, avec une liste **Dossier**, un volet **Messages** et un volet **Aperçu**.  Cette disposition est obtenue principalement en ancrant des contrôles sur le formulaire.  
+# <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Comment : créer une interface utilisateur à plusieurs volets à l'aide des Windows Forms
+Dans la procédure suivante, vous allez créer une interface utilisateur à plusieurs volets semblable à celle utilisée dans Microsoft Outlook, avec une **dossier** liste, un **Messages** volet et un **aperçu** volet. Cette disposition est obtenue principalement par le biais d’ancrage de contrôles dans le formulaire.  
   
- Lorsque vous ancrez un contrôle, vous déterminez le bord du conteneur parent auquel un contrôle est attaché.  Par conséquent, si vous affectez à la propriété <xref:System.Windows.Forms.SplitContainer.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle>, le bord droit du contrôle sera ancré au bord droit de son contrôle parent.  En outre, le bord ancré du contrôle est redimensionné pour correspondre à celui de son contrôle conteneur.  Pour plus d'informations sur le fonctionnement de la propriété <xref:System.Windows.Forms.SplitContainer.Dock%2A>, consultez [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
+ Lorsque vous ancrez un contrôle, vous déterminez le bord du conteneur parent auquel un contrôle est attaché. Par conséquent, si vous définissez la <xref:System.Windows.Forms.SplitContainer.Dock%2A> propriété <xref:System.Windows.Forms.DockStyle.Right>, le bord droit du contrôle sera ancré sur le bord droit de son contrôle parent. En outre, le bord ancré du contrôle est redimensionné pour correspondre à celui de son contrôle conteneur. Pour plus d’informations sur la façon dont <xref:System.Windows.Forms.SplitContainer.Dock%2A> fonctionne de la propriété, consultez [Comment : ancrer des contrôles aux Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
   
- Cette procédure se concentre sur la disposition du contrôle <xref:System.Windows.Forms.SplitContainer> et des autres contrôles sur le formulaire, et non sur l'ajout de fonctionnalités pour que l'application ressemble à Microsoft Outlook.  
+ Cette procédure se concentre sur la disposition du <xref:System.Windows.Forms.SplitContainer> et d’autres contrôles sur le formulaire, et non sur l’ajout de fonctionnalités pour que l’application ressemble à Microsoft Outlook.  
   
- Pour créer cette interface utilisateur, vous placez tous les contrôles dans un contrôle <xref:System.Windows.Forms.SplitContainer> qui contient un contrôle <xref:System.Windows.Forms.TreeView> dans le panneau gauche.  Le panneau droit du contrôle <xref:System.Windows.Forms.SplitContainer> contient un deuxième contrôle <xref:System.Windows.Forms.SplitContainer> avec un contrôle <xref:System.Windows.Forms.ListView> au\-dessus d'un contrôle <xref:System.Windows.Forms.RichTextBox>.  Ces contrôles <xref:System.Windows.Forms.SplitContainer> permettent un redimensionnement indépendant des autres contrôles sur le formulaire.  Les techniques présentées dans cette procédure vous aideront à créer vos propres interfaces utilisateur personnalisées.  
+ Pour créer cette interface utilisateur, vous placez tous les contrôles dans un <xref:System.Windows.Forms.SplitContainer> contrôle, qui contient un <xref:System.Windows.Forms.TreeView> contrôle dans le volet gauche. Le volet droit de la <xref:System.Windows.Forms.SplitContainer> contrôle contient un deuxième <xref:System.Windows.Forms.SplitContainer> contrôler avec un <xref:System.Windows.Forms.ListView> contrôle ci-dessus un <xref:System.Windows.Forms.RichTextBox> contrôle. Ces <xref:System.Windows.Forms.SplitContainer> contrôles permettent un redimensionnement indépendant des autres contrôles sur le formulaire. Vous pouvez adapter les techniques présentées dans cette procédure pour élaborer les interfaces utilisateur de votre choix.  
   
-### Pour créer par programme une interface utilisateur du style Outlook  
+### <a name="to-create-an-outlook-style-user-interface-programmatically"></a>Pour créer une interface utilisateur de style Outlook par programmation  
   
-1.  Dans un formulaire, déclarez chaque contrôle constituant votre interface utilisateur.  Pour cet exemple, utilisez les contrôles <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer> et <xref:System.Windows.Forms.RichTextBox> pour reproduire l'interface utilisateur Microsoft Outlook.  
+1.  Dans un formulaire, déclarez chaque contrôle constituant votre interface utilisateur. Pour cet exemple, utilisez le <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer>, et <xref:System.Windows.Forms.RichTextBox> permettant de reproduire l’interface utilisateur de Microsoft Outlook.  
   
     ```vb  
     Private WithEvents treeView1 As System.Windows.Forms.TreeView  
@@ -46,7 +50,6 @@ Dans la procédure suivante, vous créerez une interface utilisateur à plusieur
         System.Windows.Forms.SplitContainer  
     Private WithEvents splitContainer2 As _  
         System.Windows.Forms.SplitContainer  
-  
     ```  
   
     ```csharp  
@@ -55,10 +58,9 @@ Dans la procédure suivante, vous créerez une interface utilisateur à plusieur
     private System.Windows.Forms.RichTextBox richTextBox1;  
     private System.Windows.Forms. SplitContainer splitContainer2;  
     private System.Windows.Forms. SplitContainer splitContainer1;  
-  
     ```  
   
-2.  Créez une procédure définissant votre interface utilisateur.  Le code suivant définit les propriétés de telle sorte que le formulaire ressemble à l'interface utilisateur de Microsoft Outlook.  Toutefois, en utilisant d'autres contrôles ou en les ancrant différemment, il est tout aussi facile de créer d'autres interfaces utilisateur présentant une souplesse équivalente.  
+2.  Créer une procédure qui définit votre interface utilisateur. Le code suivant définit les propriétés afin que le formulaire ressemble à l’interface utilisateur dans Microsoft Outlook. Toutefois, à l’aide d’autres contrôles ou station d’accueil différemment, il est tout aussi facile de créer d’autres interfaces utilisateur qui sont tout aussi flexibles.  
   
     ```vb  
     Public Sub CreateOutlookUI()  
@@ -120,7 +122,6 @@ Dans la procédure suivante, vous créerez une interface utilisateur à plusieur
         Me.Controls.Add(Me.splitContainer2)  
         Me.Text = "Intricate UI Example"  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -171,24 +172,21 @@ Dans la procédure suivante, vous créerez une interface utilisateur à plusieur
         this.Controls.Add(this.splitContainer2);  
         this.Text = "Intricate UI Example";  
     }  
-  
     ```  
   
-3.  Dans [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], ajoutez un appel à la procédure que vous venez de créer dans la procédure `New()`.  Dans [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], ajoutez cette ligne de code au constructeur de la classe Form.  
+3.  Dans [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], ajoutez un appel à la procédure que vous venez de créer dans le `New()` procédure. Dans [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], ajoutez la ligne de code au constructeur de la classe de formulaire.  
   
     ```vb  
     ' Add this to the New procedure.  
     CreateOutlookUI()  
-  
     ```  
   
     ```csharp  
     // Add this to the form class's constructor.  
     createOutlookUI();  
-  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.SplitContainer>   
- [SplitContainer, contrôle](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)   
- [Comment : créer une interface utilisateur à plusieurs volets avec des Windows Forms à l'aide du concepteur](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.SplitContainer>  
+ [SplitContainer, contrôle](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
+ [Guide pratique pour créer une interface utilisateur à plusieurs volets avec des Windows Forms à l'aide du concepteur](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)

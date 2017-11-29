@@ -1,39 +1,42 @@
 ---
-title: "Utilisation d&#39;un &#233;diteur d&#39;expressions personnalis&#233; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Utilisation d'un éditeur d'expressions personnalisé"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dcf9970b2b4986c3948704d848c67d8a3c6f7d9c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Utilisation d&#39;un &#233;diteur d&#39;expressions personnalis&#233;
-Un éditeur d'expressions personnalisé peut être implémenté pour fournir une expérience d'édition d'expressions plus riche ou plus simple.Il existe plusieurs scénarios dans lesquels vous souhaiterez peut\-être utiliser un éditeur d'expressions personnalisé :  
+# <a name="using-a-custom-expression-editor"></a>Utilisation d'un éditeur d'expressions personnalisé
+Un éditeur d'expressions personnalisé peut être implémenté pour fournir une expérience d'édition d'expressions plus riche ou plus simple. Il existe plusieurs scénarios dans lesquels vous souhaiterez peut-être utiliser un éditeur d'expressions personnalisé :  
   
--   Pour assurer la prise en charge d'IntelliSense et d'autres fonctionnalités d'édition riches dans un concepteur de workflow réhébergé.Ces fonctionnalités doivent être fournies car l'éditeur d'expressions [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] par défaut ne peut pas être utilisé dans les applications réhébergées.  
+-   Pour assurer la prise en charge d'IntelliSense et d'autres fonctionnalités d'édition riches dans un concepteur de workflow réhébergé. Ces fonctionnalités doivent être fournies car l'éditeur d'expressions [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] par défaut ne peut pas être utilisé dans les applications réhébergées.  
   
 -   Pour simplifier l'édition d'expressions pour les utilisateurs analystes d'entreprise, afin qu'ils ne soient pas, par exemple, obligés de se familiariser avec [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] ou de traiter des expressions [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)].  
   
  Trois étapes de base sont nécessaires pour implémenter un éditeur d'expressions personnalisé :  
   
-1.  Implémentez l'interface <xref:System.Activities.Presentation.View.IExpressionEditorService>.Cette interface gère la création et la destruction des éditeurs d'expression.  
+1.  Implémentez l'interface <xref:System.Activities.Presentation.View.IExpressionEditorService>. Cette interface gère la création et la destruction des éditeurs d'expression.  
   
-2.  Implémentez l'interface <xref:System.Activities.Presentation.View.IExpressionEditorInstance>.Cette interface implémente l'interface utilisateur d'édition d'expressions.  
+2.  Implémentez l'interface <xref:System.Activities.Presentation.View.IExpressionEditorInstance>. Cette interface implémente l'interface utilisateur d'édition d'expressions.  
   
 3.  Publiez <xref:System.Activities.Presentation.View.IExpressionEditorService> dans votre application de workflow réhébergée.  
   
-## Implémentation d'un éditeur d'expressions personnalisé dans une bibliothèque de classes  
- Voici un exemple de code pour une classe `MyEditorService` \(preuve de concept\) qui implémente l'interface <xref:System.Activities.Presentation.View.IExpressionEditorService> contenue dans un projet de bibliothèque MyExpressionEditorService.  
+## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a>Implémentation d'un éditeur d'expressions personnalisé dans une bibliothèque de classes  
+ Voici un exemple de code pour une classe `MyEditorService` (preuve de concept) qui implémente l'interface <xref:System.Activities.Presentation.View.IExpressionEditorService> contenue dans un projet de bibliothèque MyExpressionEditorService.  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Activities.Presentation.View;  
@@ -75,13 +78,11 @@ namespace MyExpressionEditorService
   
     }  
 }  
-  
 ```  
   
- Voici le code d'une classe `MyExpressionEditorInstance` qui implémente l'interface <xref:System.Activities.Presentation.View.IExpressionEditorInstance> dans un projet de bibliothèque MyExpressionEditorService.  
+ Voici le code d'une classe `MyExpressionEditorInstance` qu'implémente l'interface <xref:System.Activities.Presentation.View.IExpressionEditorInstance> dans un projet de bibliothèque MyExpressionEditorService.  
   
 ```  
-  
 using System;  
 using System.Activities.Presentation.View;  
 using System.Windows;  
@@ -227,14 +228,12 @@ namespace MyExpressionEditorService
         }  
     }  
 }  
-  
 ```  
   
-### Publication d'un éditeur d'expressions personnalisé dans un projet WPF  
- Voici le code qui montre comment héberger à nouveau le concepteur dans une application [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] et comment créer et publier le service `MyEditorService`.Avant d'utiliser ce code, ajoutez une référence au projet de bibliothèque MyExpressionEditorService du projet qui contient l'application avalon2.  
+### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>Publication d'un éditeur d'expressions personnalisé dans un projet WPF  
+ Voici le code qui montre comment héberger à nouveau le concepteur dans une application [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] et comment créer et publier le service `MyEditorService`. Avant d'utiliser ce code, ajoutez une référence au projet de bibliothèque MyExpressionEditorService du projet qui contient l'application avalon2.  
   
 ```  
-  
 using System.Windows;  
 using System.Windows.Controls;  
 using System.Activities.Presentation;  
@@ -283,13 +282,12 @@ namespace WpfApplication1
         }  
     }  
 }  
-  
 ```  
   
-### Remarques  
- Si vous utilisez un contrôle **ExpressionTextBox** dans un concepteur d'activités personnalisées, il n'est pas nécessaire d'utiliser les méthodes <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> et <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> de l'interface <xref:System.Activities.Presentation.View.IExpressionEditorService> pour créer et détruire les éditeurs d'expressions.La classe <xref:System.Activities.Presentation.View.ExpressionTextBox> gère cet aspect pour vous.  
+### <a name="notes"></a>Remarques  
+ Si vous utilisez un **ExpressionTextBox** contrôle dans un concepteur d’activités personnalisées, il n’est pas nécessaire créer et détruire les éditeurs d’expressions à l’aide de la <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> et <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> méthodes de la <xref:System.Activities.Presentation.View.IExpressionEditorService> interface. La classe <xref:System.Activities.Presentation.View.ExpressionTextBox> gère cet aspect pour vous.  
   
-## Voir aussi  
- <xref:System.Activities.Presentation.View.IExpressionEditorService>   
- <xref:System.Activities.Presentation.View.IExpressionEditorInstance>   
- [Utilisation d'ExpressionTextBox dans un concepteur d'activités personnalisées](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Activities.Presentation.View.IExpressionEditorService>  
+ <xref:System.Activities.Presentation.View.IExpressionEditorInstance>  
+ [Utilisation d’ExpressionTextBox dans un concepteur d’activités personnalisées](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

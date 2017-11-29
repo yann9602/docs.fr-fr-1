@@ -1,42 +1,46 @@
 ---
-title: "Comment&#160;: r&#233;pertorier les encodeurs install&#233;s | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "codecs d'image, répertorier"
-  - "encodeurs d'image, répertorier"
+title: "Comment : répertorier les encodeurs installés"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- image codecs [Windows Forms], listing
+- image encoders [Windows Forms], listing
 ms.assetid: 49e8e4e9-7a67-42d9-86bf-08821cdc282e
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 70f913acb2620b5c01e1aec1f1eb98b041b82a59
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: r&#233;pertorier les encodeurs install&#233;s
-Vous pouvez répertorier les encodeurs d'images disponibles sur un ordinateur afin de déterminer si votre application peut enregistrer dans un format de fichier d'image spécifique.  La classe <xref:System.Drawing.Imaging.ImageCodecInfo> fournit les méthodes statiques <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A> permettant de déterminer les encodeurs d'image disponibles.  <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A> retourne un tableau d'objets <xref:System.Drawing.Imaging.ImageCodecInfo>.  
+# <a name="how-to-list-installed-encoders"></a>Comment : répertorier les encodeurs installés
+Vous souhaiterez répertorier les encodeurs d’image disponibles sur un ordinateur, pour déterminer si votre application peut enregistrer dans un format de fichier d’image spécifique. Le <xref:System.Drawing.Imaging.ImageCodecInfo> classe fournit le <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A> méthodes statiques afin que vous puissiez déterminer quelle image encodeurs sont disponibles. <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A>Retourne un tableau de <xref:System.Drawing.Imaging.ImageCodecInfo> objets.  
   
-## Exemple  
- L'exemple de code suivant présente la liste des encodeurs installés et leurs valeurs de propriété.  
+## <a name="example"></a>Exemple  
+ L’exemple de code suivant génère la liste des encodeurs installés et leurs valeurs de propriété.  
   
  [!code-csharp[UsingImageEncodersDecoders#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/UsingImageEncodersDecoders/CS/Form1.cs#1)]
  [!code-vb[UsingImageEncodersDecoders#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/UsingImageEncodersDecoders/VB/Form1.vb#1)]  
   
-## Compilation du code  
- Cet exemple nécessite :  
+## <a name="compiling-the-code"></a>Compilation du code  
+ Cet exemple nécessite :  
   
--   Une application Windows Forms.  
+-   une application Windows Forms ;  
   
--   <xref:System.Windows.Forms.PaintEventArgs>, un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+-   A <xref:System.Windows.Forms.PaintEventArgs>, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## Voir aussi  
- [Comment : répertorier les décodeurs installés](../../../../docs/framework/winforms/advanced/how-to-list-installed-decoders.md)   
- [Utilisation d'encodeurs et de décodeurs d'images dans GDI\+ managé](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)
+## <a name="see-also"></a>Voir aussi  
+ [Guide pratique pour répertorier les décodeurs installés](../../../../docs/framework/winforms/advanced/how-to-list-installed-decoders.md)  
+ [Utilisation d’encodeurs et de décodeurs d’images dans GDI+ managé](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)

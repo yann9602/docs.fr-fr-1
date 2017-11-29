@@ -1,43 +1,47 @@
 ---
-title: "Comment&#160;: acc&#233;der &#224; des &#233;l&#233;ments sp&#233;cifiques d&#39;un contr&#244;le ComboBox, ListBox ou CheckedListBox Windows Forms | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "CheckedListBox (contrôle Windows Forms), accéder aux éléments"
-  - "zones de liste déroulante, accéder aux éléments"
-  - "ComboBox (contrôle Windows Forms), accéder aux éléments"
-  - "zones de liste, accéder aux éléments"
-  - "ListBox (contrôle Windows Forms), accéder aux éléments"
-  - "ListBox (contrôle Windows Forms), retourner des informations sur les éléments"
+title: "Comment : accéder à des éléments spécifiques d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- ComboBox control [Windows Forms], accessing items
+- ListBox control [Windows Forms], returning item information
+- list boxes [Windows Forms], accessing items
+- ListBox control [Windows Forms], accessing items
+- combo boxes [Windows Forms], accessing items
+- CheckedListBox control [Windows Forms], accessing items
 ms.assetid: 1216742f-bcf9-4ff8-8a62-d7c9053c2b96
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4ddcf6941f90556db26e2945c6b4460dfa585dbf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Comment&#160;: acc&#233;der &#224; des &#233;l&#233;ments sp&#233;cifiques d&#39;un contr&#244;le ComboBox, ListBox ou CheckedListBox Windows Forms
-Il est essentiel de pouvoir accéder aux éléments d'une zone de liste déroulante, d'une zone de liste ou d'une zone de liste de cases à cocher Windows Forms.  Vous pouvez ainsi déterminer par programme ce qui figure dans une liste, à n'importe quelle position.  
+# <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Comment : accéder à des éléments spécifiques d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms
+L’accès à des éléments spécifiques dans une zone de liste déroulante Windows Forms, une zone de liste ou une zone de liste de cases est une tâche essentielle. Il vous permet de déterminer par programme les nouveautés dans la liste, à n’importe quelle position donnée.  
   
-### Pour accéder à un élément de liste  
+### <a name="to-access-a-specific-item"></a>Pour accéder à un élément spécifique  
   
-1.  Interrogez la collection `Items`  en utilisant l'index de l'élément concerné :  
+1.  Requête le `Items` collection à l’aide de l’index de l’élément spécifique :  
   
     ```vb  
     Private Function GetItemText(i As Integer) As String  
        ' Return the text of the item using the index:  
        Return ComboBox1.Items(i).ToString  
     End Function  
-  
     ```  
   
     ```csharp  
@@ -46,7 +50,6 @@ Il est essentiel de pouvoir accéder aux éléments d'une zone de liste déroula
        // Return the text of the item using the index:  
        return (comboBox1.Items[i].ToString());  
     }  
-  
     ```  
   
     ```cpp  
@@ -58,8 +61,8 @@ Il est essentiel de pouvoir accéder aux éléments d'une zone de liste déroula
        }  
     ```  
   
-## Voir aussi  
- <xref:System.Windows.Forms.ComboBox>   
- <xref:System.Windows.Forms.ListBox>   
- <xref:System.Windows.Forms.CheckedListBox>   
- [Contrôles Windows Forms utilisés pour l'affichage de listes d'options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+## <a name="see-also"></a>Voir aussi  
+ <xref:System.Windows.Forms.ComboBox>  
+ <xref:System.Windows.Forms.ListBox>  
+ <xref:System.Windows.Forms.CheckedListBox>  
+ [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

@@ -1,27 +1,29 @@
 ---
-title: "Regroupement de messages mis en file d&#39;attente dans une session | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "files d’attente (WCF). regroupement de messages"
+title: Regroupement de messages mis en file d'attente dans une session
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-caps.latest.revision: 30
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0dbd9d28d56d8d473b9e92d977da409b74290224
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/21/2017
 ---
-# Regroupement de messages mis en file d&#39;attente dans une session
+# <a name="grouping-queued-messages-in-a-session"></a>Regroupement de messages mis en file d'attente dans une session
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit une session qui vous permet de regrouper un ensemble de messages connexes à traiter par une application de réception unique. Les messages qui font partie d'une session doivent faire partie de la même transaction. Étant donné que tous les messages font partie de la même transaction, si un message n'est pas traité, la session entière est restaurée. Les sessions ont des comportements semblables en ce qui concerne les files d'attente de lettres mortes et les files d'attente de messages incohérents. La propriété Durée de vie (Time to Live ou TTL) définie sur une liaison mise en file d'attente configurée pour les sessions est appliquée à la session dans son ensemble. Si seulement quelques-uns des messages de la session sont envoyés avant l'expiration de la durée de vie, la session entière est placée dans la file d'attente de lettres mortes. De même, lorsque les messages d'une session ne parviennent pas à être envoyés à une application depuis la file d'attente de l'application, la session entière est placée dans la file d'attente de messages incohérents (si disponible).  
   
 ## <a name="message-grouping-example"></a>Exemple de regroupement de messages  
@@ -31,13 +33,13 @@ caps.handback.revision: 30
   
 #### <a name="to-set-up-a-service-contract-to-use-sessions"></a>Pour paramétrer un contrat de service pour qu'il utilise des sessions  
   
-1.  Définissez un contrat de service qui requiert une session. Faites ceci avec la <xref:System.ServiceModel.OperationContractAttribute> attribut et en spécifiant :  
+1.  Définissez un contrat de service qui requiert une session. Faites ceci avec l'attribut <xref:System.ServiceModel.OperationContractAttribute> et en spécifiant :  
   
     ```  
     SessionMode=SessionMode.Required  
     ```  
   
-2.  Marquez les opérations du contrat comme étant unidirectionnelles, parce que ces méthodes ne retournent rien. Cela est effectué avec le <xref:System.ServiceModel.OperationContractAttribute> attribut et en spécifiant :  
+2.  Marquez les opérations du contrat comme étant unidirectionnelles, parce que ces méthodes ne retournent rien. Faites ceci avec l'attribut <xref:System.ServiceModel.OperationContractAttribute> et en spécifiant :  
   
     ```  
     [OperationContract(IsOneWay = true)]  
@@ -49,17 +51,17 @@ caps.handback.revision: 30
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
     ```  
   
-4.  Chaque opération de service requiert une transaction. Spécifiez ceci avec la <xref:System.ServiceModel.OperationBehaviorAttribute> attribut. L'opération qui complète la transaction doit également affecter à `TransactionAutoComplete` la valeur `true`.  
+4.  Chaque opération de service requiert une transaction. Spécifiez ceci avec l'attribut <xref:System.ServiceModel.OperationBehaviorAttribute>. L'opération qui complète la transaction doit également affecter à `TransactionAutoComplete` la valeur `true`.  
   
     ```  
     [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]   
     ```  
   
-5.  Configurez un point de terminaison qui utilise la liaison `NetProfileMsmqBinding` fournie par le système.  
+5.  Configurez un point de terminaison qui utilise la liaison `NetMsmqBinding` fournie par le système.  
   
-6.  Créer une file d’attente transactionnelle à l’aide de <xref:System.Messaging>. Vous pouvez également créer la file d'attente en utilisant Message Queuing (MSMQ) ou MMC. Dans ce cas, créez une file d’attente transactionnelle.  
+6.  Créez une file d'attente transactionnelle en utilisant <xref:System.Messaging>. Vous pouvez également créer la file d'attente en utilisant Message Queuing (MSMQ) ou MMC. Dans ce cas, créez une file d'attente transactionnelle.  
   
-7.  Créer un hôte de service pour le service à l’aide de <xref:System.ServiceModel.ServiceHost>.  
+7.  Créez un hôte de service pour le service en utilisant <xref:System.ServiceModel.ServiceHost>.  
   
 8.  Ouvrez l'hôte de service pour rendre le service disponible.  
   
@@ -69,7 +71,7 @@ caps.handback.revision: 30
   
 1.  Créez une étendue de transaction pour écrire dans la file d’attente transactionnelle.  
   
-2.  Créer le [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client à l’aide de la [Service Model Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) outil.  
+2.  Créer le [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client à l’aide de la [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) outil.  
   
 3.  Passez la commande.  
   
@@ -93,5 +95,5 @@ caps.handback.revision: 30
   
   
 ## <a name="see-also"></a>Voir aussi  
- [Files d’attente et sessions](../../../../docs/framework/wcf/samples/sessions-and-queues.md)   
+ [Files d’attente et sessions](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
  [Vue d’ensemble des files d’attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)

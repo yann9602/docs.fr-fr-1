@@ -1,70 +1,74 @@
 ---
-title: "Comment&#160;: remplir une forme avec une image | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "bitmaps (Windows Forms), remplir les formes avec"
-  - "images (Windows Forms), remplir les formes avec"
-  - "formes, mettre en mosaïque avec les images"
-  - "pinceaux de texture, mettre les images en mosaïque avec"
+title: "Comment : remplir une forme avec une image"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- texture brushes [Windows Forms], tiling images with
+- images [Windows Forms], filling shapes with
+- shapes [Windows Forms], tiling with images
+- bitmaps [Windows Forms], filling shapes with
 ms.assetid: 6d407891-6e5c-4495-a546-3da5604e9fb8
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8f825371d3849e96ace627e660fd7c59bd290185
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: remplir une forme avec une image
-À l'instar de carreaux d'un sol carrelé, des images rectangulaires peuvent être placées côte à côte pour remplir une forme \(en mosaïque\).  Pour remplir avec une mosaïque l'intérieur d'une forme, utilisez une brosse texturée.  Lorsque vous construisez un objet <xref:System.Drawing.TextureBrush>, l'un des arguments que vous passez au constructeur est un objet <xref:System.Drawing.Image>.  Lorsque vous utilisez la brosse texturée pour peindre l'intérieur d'une forme, la forme est remplie par des copies répétées de cette image.  
+# <a name="how-to-tile-a-shape-with-an-image"></a>Comment : remplir une forme avec une image
+Tout comme les vignettes peuvent être placés à côté des autres pour couvrir un étage, rectangulaires images peuvent être placés en regard de l’autre pour remplir une forme (mosaïque) de. Pour disposer en mosaïque de l’intérieur d’une forme, utilisez un pinceau de la texture. Lorsque vous construisez un <xref:System.Drawing.TextureBrush> de l’objet, un des arguments que vous passez au constructeur est un <xref:System.Drawing.Image> objet. Lorsque vous utilisez le pinceau de la texture pour peindre l’intérieur d’une forme, la forme est remplie avec les copies répétées de cette image.  
   
- La propriété WrapMode \(mode habillage\) de l'objet <xref:System.Drawing.TextureBrush> détermine l'orientation de l'image lors de sa répétition dans une grille rectangulaire.  Toutes les images de la mosaïque dans la grille peuvent avoir la même orientation, ou vous pouvez prévoir une rotation d'une position d'image à la suivante.  La rotation peut être horizontale, verticale ou les deux.  Les exemples suivants illustrent une mosaïque avec différents types de rotation.  
+ La propriété de mode de renvoi à la ligne de la <xref:System.Drawing.TextureBrush> objet détermine comment l’image est orientée il est répété dans une grille rectangulaire. Vous pouvez effectuer toutes les vignettes dans la grille ont la même orientation, ou vous pouvez ajuster l’image à retourner à partir d’une position à l’autre. La rotation peut être horizontale, verticale ou les deux. Les exemples suivants illustrent une mosaïque avec différents types de rotation.  
   
-### Pour disposer une image en mosaïque  
+### <a name="to-tile-an-image"></a>Pour disposer en mosaïque d’une image  
   
--   Cet exemple utilise l'image 75×75 suivante pour disposer un rectangle 200×200 en mosaïque.  
+-   Cet exemple utilise l’image 75 × 75 suivante pour disposer en mosaïque un rectangle 200 × 200.  
   
- ![Mosaïque 1](../../../../docs/framework/winforms/advanced/media/tile1.png "tile1")  
+ ![Vignette 1](../../../../docs/framework/winforms/advanced/media/tile1.gif "tile1")  
   
--   L'illustration suivante montre comment la mosaïque de l'image remplit le rectangle.  Notez que toutes les images de la mosaïque ont la même orientation, sans rotation.  
+-   L’illustration suivante montre comment le rectangle d’affichage en mosaïque avec l’image. Notez que toutes les vignettes ont la même orientation ; Il n’existe aucun retournement.  
   
- ![Mosaïque 2](../../../../docs/framework/winforms/advanced/media/tile2.png "tile2")  
+ ![Vignette 2](../../../../docs/framework/winforms/advanced/media/tile2.gif "tile2")  
   
  [!code-csharp[System.Drawing.UsingABrush#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.UsingABrush#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#31)]  
   
-### Pour faire pivoter une image horizontalement lors de la disposition en mosaïque  
+### <a name="to-flip-an-image-horizontally-while-tiling"></a>Pour faire pivoter une image horizontalement lors de la disposition en mosaïque  
   
--   Cet exemple utilise la même image 75×75 pour remplir un rectangle 200×200.  Le mode habillage prévoit une rotation horizontale de l'image.  L'illustration suivante montre comment la mosaïque de l'image remplit le rectangle.  Notez que, lors du passage d'une image à la suivante dans une ligne donnée, l'image effectue une rotation horizontale.  
+-   Cet exemple utilise la même image 75 × 75 pour remplir un rectangle 200 × 200. Le mode habillage est défini pour retourner l’image horizontalement. L’illustration suivante montre comment le rectangle d’affichage en mosaïque avec l’image. Notez que lorsque vous passez d’une image à la suivante dans une ligne donnée, l’image est retournée horizontalement.  
   
- ![Mosaïque 3](../../../../docs/framework/winforms/advanced/media/tile3.png "tile3")  
+ ![Vignette 3](../../../../docs/framework/winforms/advanced/media/tile3.gif "tile3")  
   
  [!code-csharp[System.Drawing.UsingABrush#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#32)]
  [!code-vb[System.Drawing.UsingABrush#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#32)]  
   
-### Pour faire pivoter une image verticalement lors de la disposition en mosaïque  
+### <a name="to-flip-an-image-vertically-while-tiling"></a>Pour faire pivoter une image verticalement lors de la disposition en mosaïque  
   
--   Cet exemple utilise la même image 75×75 pour remplir un rectangle 200×200.  Le mode habillage prévoit une rotation verticale de l'image.  
+-   Cet exemple utilise la même image 75 × 75 pour remplir un rectangle 200 × 200. Le mode habillage est défini pour retourner l’image verticalement.  
   
      [!code-csharp[System.Drawing.UsingABrush#33](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#33)]
      [!code-vb[System.Drawing.UsingABrush#33](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#33)]  
   
-### Pour faire pivoter une image horizontalement et verticalement lors de la disposition en mosaïque  
+### <a name="to-flip-an-image-horizontally-and-vertically-while-tiling"></a>Pour faire pivoter une image horizontalement et verticalement lors de la disposition en mosaïque  
   
--   Cet exemple utilise la même image 75×75 pour disposer un rectangle 200×200 en mosaïque.  Le mode habillage prévoit des rotations horizontale et verticale de l'image.  L'illustration suivante montre comment la mosaïque de l'image remplit le rectangle.  Notez que, lors du passage d'une image à la suivante dans une ligne donnée, l'image effectue une rotation horizontale, et lorsque vous passez d'une image à la suivante dans une colonne donnée, l'image effectue une rotation verticale.  
+-   Cet exemple utilise la même image 75 × 75 pour disposer en mosaïque un rectangle 200 × 200. Le mode habillage est défini pour retourner l’image à la fois horizontalement et verticalement. L’illustration suivante montre comment le rectangle d’affichage en mosaïque par l’image. Notez que lorsque vous passez d’une image à la suivante dans une ligne donnée, l’image est retournée horizontalement, et lorsque vous passez d’une image à la suivante dans une colonne donnée, l’image est retournée verticalement.  
   
- ![Mosaïque 5](../../../../docs/framework/winforms/advanced/media/tile5.png "tile5")  
+ ![Vignette 5](../../../../docs/framework/winforms/advanced/media/tile5.gif "tile5")  
   
  [!code-csharp[System.Drawing.UsingABrush#34](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#34)]
  [!code-vb[System.Drawing.UsingABrush#34](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#34)]  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  [Utilisation d'un pinceau pour remplir des formes](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

@@ -1,25 +1,28 @@
 ---
-title: "SynchronousReceiveBehavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: SynchronousReceiveBehavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b31a26a9-ae96-4df0-8406-e07d6f59087c
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1a606c25f5050e8439151f928addfb2e9c64cb8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# SynchronousReceiveBehavior
+# <a name="synchronousreceivebehavior"></a>SynchronousReceiveBehavior
 SynchronousReceiveBehavior  
   
-## Syntaxe  
+## <a name="syntax"></a>Syntaxe  
   
 ```  
 class SynchronousReceiveBehavior : Behavior  
@@ -27,14 +30,14 @@ class SynchronousReceiveBehavior : Behavior
 };  
 ```  
   
-## Méthodes  
+## <a name="methods"></a>Méthodes  
  La classe SynchronousReceiveBehavior hérite de Behavior mais ne définit pas de méthodes ou de propriétés supplémentaires.  
   
-## Configuration requise  
+## <a name="requirements"></a>Spécifications  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
-|---------|------------------------------------|  
-|Espace de noms|Défini dans root\\ServiceModel|  
+|---------|-----------------------------------|  
+|Espace de noms|Défini dans root\ServiceModel|  
   
-## Voir aussi  
+## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>

@@ -1,49 +1,50 @@
 ---
-title: "Comment&#160;: cr&#233;er un contr&#244;le avec touche d&#39;acc&#232;s rapide et habillage du texte | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "touches d'accès rapide, contrôle pour"
-  - "contrôles, touches d'accès rapide"
-  - "contrôles, habillage du texte"
-  - "clés, contrôle pour"
-  - "habillage du texte"
-  - "renvoyer automatiquement du texte à la ligne"
+title: "Comment : créer un contrôle avec touche d'accès rapide et habillage du texte"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- access keys [WPF], control for
+- controls [WPF], text wrapping
+- wrapping text [WPF]
+- keys [WPF], control for
+- controls [WPF], access keys
+- text wrapping [WPF]
 ms.assetid: 205099d9-2551-4302-a25e-a15af9f67e04
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a759011425a3f09a7b91b728442f8e8ea7b92fa
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/22/2017
 ---
-# Comment&#160;: cr&#233;er un contr&#244;le avec touche d&#39;acc&#232;s rapide et habillage du texte
-Cet exemple montre comment créer un contrôle pourvu d'une [touche d'accès rapide](GTMT) et prenant en charge l'habillage du texte.  L'exemple utilise un contrôle <xref:System.Windows.Controls.Label> pour illustrer ces concepts.  
+# <a name="how-to-create-a-control-that-has-an-access-key-and-text-wrapping"></a>Comment : créer un contrôle avec touche d'accès rapide et habillage du texte
+Cet exemple montre comment créer un contrôle avec touche d’accès rapide, prenant en charge l’habillage du texte. L’exemple utilise un <xref:System.Windows.Controls.Label> contrôle pour illustrer ces concepts.  
   
-## Exemple  
- **Ajouter de l'habillage du texte à votre étiquette**  
+## <a name="example"></a>Exemple  
+ **Ajouter l’habillage du texte à votre étiquette**  
   
- Le contrôle <xref:System.Windows.Controls.Label> ne prend pas en charge l'habillage du texte.  Si vous avez besoin d'une étiquette couvrant plusieurs lignes, vous pouvez imbriquer un autre élément qui prend en charge l'habillage du texte et le placer à l'intérieur de l'étiquette.  L'exemple suivant montre comment utiliser un <xref:System.Windows.Controls.TextBlock> pour faire une étiquette couvrant plusieurs lignes de texte.  
+ Le <xref:System.Windows.Controls.Label> contrôle ne prend pas en charge l’habillage du texte. Si vous avez besoin d’une étiquette couvrant plusieurs lignes, vous pouvez imbriquer un autre élément qui prend en charge l’habillage du texte d’habillage et le placer dans l’étiquette. L’exemple suivant montre comment utiliser un <xref:System.Windows.Controls.TextBlock> pour faire une étiquette couvrant plusieurs lignes de texte.  
   
- <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#5)]  -->
- <!-- TODO: review snippet reference [!code-xml[Label#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#5)]  -->  
+ [!code-xaml[LabelSnippet#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#5)]  
   
- **Ajouter une touche d'accès rapide et de l'habillage du texte à votre étiquette**  
+ **Ajouter une touche d’accès rapide et l’habillage du texte à votre étiquette**  
   
- Si vous avez besoin d'un <xref:System.Windows.Controls.Label> possédant une touche d'accès rapide \(mnémonique\), utilisez l'élément <xref:System.Windows.Controls.AccessText> situé à l'intérieur du <xref:System.Windows.Controls.Label>.  
+ Si vous avez besoin d’un <xref:System.Windows.Controls.Label> qui a une clé d’accès (mnémonique), utilisez la <xref:System.Windows.Controls.AccessText> élément qui se trouve dans le <xref:System.Windows.Controls.Label>.  
   
- Des contrôles tels que <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.RadioButton>, <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.Expander> et <xref:System.Windows.Controls.GroupBox> possèdent des modèles de contrôle par défaut.  Ces modèles contiennent un <xref:System.Windows.Controls.ContentPresenter>.  L'une des propriétés que vous pouvez définir sur le <xref:System.Windows.Controls.ContentPresenter> est <xref:System.Windows.Controls.ContentPresenter.RecognizesAccessKey%2A>\= "vrai", que vous pouvez utiliser pour spécifier une touche d'accès rapide pour le contrôle.  
+ Les contrôles tels que <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.RadioButton>, <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.Expander>, et <xref:System.Windows.Controls.GroupBox> ont des modèles de contrôle par défaut. Ces modèles contiennent un <xref:System.Windows.Controls.ContentPresenter>. Une des propriétés que vous pouvez définir sur le <xref:System.Windows.Controls.ContentPresenter> est <xref:System.Windows.Controls.ContentPresenter.RecognizesAccessKey%2A>= « true », ce qui vous permet de spécifier une clé d’accès pour le contrôle.  
   
- L'exemple suivant montre comment créer un <xref:System.Windows.Controls.Label> pourvu d'une touche d'accès rapide et prenant en charge l'habillage du texte.  Pour activer l'habillage du texte, l'exemple définit la propriété <xref:System.Windows.Controls.AccessText.TextWrapping%2A> et utilise un caractère de soulignement pour spécifier la touche d'accès rapide.  \(Le caractère qui suit immédiatement le caractère de soulignement est la touche d'accès rapide.\)  
+ L’exemple suivant montre comment créer un <xref:System.Windows.Controls.Label> qui a une clé d’accès et prend en charge d’habillage du texte. Pour activer l’habillage du texte, l’exemple définit le <xref:System.Windows.Controls.AccessText.TextWrapping%2A> propriété et utilise un caractère de soulignement pour spécifier la clé d’accès. (Le caractère qui suit immédiatement le caractère de soulignement est la touche d’accès rapide.)  
   
- <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Label/XAML/Pane1.xaml#4)]  -->
- <!-- TODO: review snippet reference [!code-xml[Label#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Label/CS/Pane1.xaml#4)]  -->  
+ [!code-xaml[LabelSnippet#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#4)]  
   
-## Voir aussi  
- [How to: Set the Target Property of a Label](http://msdn.microsoft.com/fr-fr/b24c6977-ebcb-4855-a9bb-3fd4435af8f8)
+## <a name="see-also"></a>Voir aussi  
+ [How to: Set the Target Property of a Label](http://msdn.microsoft.com/en-us/b24c6977-ebcb-4855-a9bb-3fd4435af8f8) (Comment : définir la propriété Target d’une étiquette)
