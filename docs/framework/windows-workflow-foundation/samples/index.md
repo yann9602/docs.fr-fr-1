@@ -4,36 +4,34 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.topic: article
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: e76d0e3722be1246a46604aba19eb38aecc54e83
 ms.openlocfilehash: 7b7f13a5119b429d8a80f48cf670b897ed97e094
-ms.contentlocale: fr-fr
-ms.lasthandoff: 09/15/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="windows-workflow-wf-samples"></a>Exemples Windows Workflow (WF)
-Ces exemples fournissent des instructions sur les divers aspects de [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+# <a name="windows-workflow-wf-samples"></a><span data-ttu-id="9d8a2-102">Exemples Windows Workflow (WF)</span><span class="sxs-lookup"><span data-stu-id="9d8a2-102">Windows Workflow (WF) Samples</span></span>
+<span data-ttu-id="9d8a2-103">Ces exemples fournissent des instructions sur les divers aspects de [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9d8a2-103">These samples provide instruction on various aspects of [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-Les exemples peuvent être téléchargés à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkId=150780).  
+<span data-ttu-id="9d8a2-104">Les exemples peuvent être téléchargés à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="9d8a2-104">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>  
   
 > [!NOTE]
->  Ces exemples ont été créés avec [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] et [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], mais sont compatibles avec [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] et [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]. Des exemples supplémentaires pour [!INCLUDE[wf2](../../../../includes/wf2-md.md)] dans [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] sont disponibles sur [Code MSDN](http://aka.ms/WF45Samples).
+>  <span data-ttu-id="9d8a2-105">Ces exemples ont été créés avec [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] et [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], mais sont compatibles avec [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] et [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9d8a2-105">These samples were created with [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], but are compatible with [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].</span></span> <span data-ttu-id="9d8a2-106">Des exemples supplémentaires pour [!INCLUDE[wf2](../../../../includes/wf2-md.md)] dans [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] sont disponibles sur [Code MSDN](http://aka.ms/WF45Samples).</span><span class="sxs-lookup"><span data-stu-id="9d8a2-106">Additional samples for [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] can be found on [Code MSDN](http://aka.ms/WF45Samples).</span></span>
   
-## <a name="in-this-section"></a>Dans cette section  
- [Application](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
- Fournit des exemples relatifs aux applications de workflow.  
+## <a name="in-this-section"></a><span data-ttu-id="9d8a2-107">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="9d8a2-107">In this section</span></span>  
+ [<span data-ttu-id="9d8a2-108">Application</span><span class="sxs-lookup"><span data-stu-id="9d8a2-108">Application</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
+ <span data-ttu-id="9d8a2-109">Fournit des exemples relatifs aux applications de workflow.</span><span class="sxs-lookup"><span data-stu-id="9d8a2-109">Provides samples that are related to workflow applications.</span></span>  
   
- [Basic](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
- Fournit des exemples qui illustrent les fonctionnalités [!INCLUDE[wf](../../../../includes/wf-md.md)] de base.  
+ [<span data-ttu-id="9d8a2-110">Basic</span><span class="sxs-lookup"><span data-stu-id="9d8a2-110">Basic</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
+ <span data-ttu-id="9d8a2-111">Fournit des exemples qui illustrent les fonctionnalités [!INCLUDE[wf](../../../../includes/wf-md.md)] de base.</span><span class="sxs-lookup"><span data-stu-id="9d8a2-111">Provides samples that demonstrate basic [!INCLUDE[wf](../../../../includes/wf-md.md)] functionality.</span></span>  
   
- [Scénario](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
- Fournit des exemples de scénarios [!INCLUDE[wf](../../../../includes/wf-md.md)].  
+ [<span data-ttu-id="9d8a2-112">Scénario</span><span class="sxs-lookup"><span data-stu-id="9d8a2-112">Scenario</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
+ <span data-ttu-id="9d8a2-113">Fournit des exemples de scénarios [!INCLUDE[wf](../../../../includes/wf-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9d8a2-113">Provides examples of [!INCLUDE[wf](../../../../includes/wf-md.md)] scenarios.</span></span>  
   
- Les exemples de cette section se servent de nouvelles fonctionnalités C# 3.0. Pour plus d’informations sur certaines nouvelles fonctionnalités de C# 3.0 que vous ne connaissez peut-être pas, consultez [Vue d’ensemble de C# 3.0](http://go.microsoft.com/fwlink/?LinkId=193972).  
+ <span data-ttu-id="9d8a2-114">Les exemples de cette section se servent de nouvelles fonctionnalités C# 3.0.</span><span class="sxs-lookup"><span data-stu-id="9d8a2-114">The samples contained in this section make use of new features in C# 3.0.</span></span> <span data-ttu-id="9d8a2-115">Pour plus d’informations sur certaines nouvelles fonctionnalités de C# 3.0 que vous ne connaissez peut-être pas, consultez [Vue d’ensemble de C# 3.0](http://go.microsoft.com/fwlink/?LinkId=193972).</span><span class="sxs-lookup"><span data-stu-id="9d8a2-115">For details on some new features of C# 3.0 that may be unfamiliar, please see the [C# 3.0 Overview](http://go.microsoft.com/fwlink/?LinkId=193972).</span></span>  
   
- Les exemples peuvent être téléchargés à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkId=150780).
-
+ <span data-ttu-id="9d8a2-116">Les exemples peuvent être téléchargés à partir du [Centre de téléchargement Microsoft](http://go.microsoft.com/fwlink/?LinkId=150780).</span><span class="sxs-lookup"><span data-stu-id="9d8a2-116">The samples can be downloaded from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=150780).</span></span>
